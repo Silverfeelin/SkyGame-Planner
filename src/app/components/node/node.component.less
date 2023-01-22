@@ -1,0 +1,28 @@
+:host {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.item-container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cost {
+  float: right;
+  text-align: right;
+  right: calc(50% + 3px);
+  position: relative;
+
+  mat-icon { fill: var(--color-candle); }
+}
+
+.seasonal mat-icon { fill: var(--color-candle-seasonal); }
+
+mat-icon {
+  width: 18px;
+  vertical-align: text-bottom;
+}

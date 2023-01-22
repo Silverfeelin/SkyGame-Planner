@@ -1,0 +1,4 @@
+<ng-container *ngIf="src">
+  <img class="img" *ngIf="!isSvg" [src]="safeString || safeUrl">
+  <mat-icon *ngIf="isSvg && safeString" [svgIcon]="safeString"></mat-icon>
+</ng-container>

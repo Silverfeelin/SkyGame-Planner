@@ -1,0 +1,321 @@
+{
+  "items": [
+    // #region 2019
+    {
+      "guid": "G8L1RpBnVa",
+      "name": "Season of Gratitude",
+      "shortName": "Gratitude",
+      "icon": "",
+      "year": 2019,
+      "start": "2019-07-19",
+      "end": "2019-09-02",
+      "spirits": [
+        "0yGgX4Yk3c",
+        "Q-N8n-0b8O",
+        "lmydkMDQeP",
+        "JROKFatVLC",
+        "eToUA1mSjz",
+        "KZaVtTUdlR"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Gratitude"
+      }
+    },
+    {
+      "guid": "uiFl2HzDmB",
+      "name": "Season of Lightseekers",
+      "shortName": "Lightseekers",
+      "icon": "",
+      "year": 2019,
+      "start": "2019-09-23",
+      "end": "2019-11-10",
+      "spirits": [
+        "U9RJMJseUK",
+        "jncJKA4IaM",
+        "8OYabqG_jZ",
+        "bHCSyFQ4u-",
+        "tZG5hNcINX",
+        "mZZ-MkZJ1x"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Lightseekers"
+      }
+    },
+    {
+      "guid": "5bhsXpyg91",
+      "name": "Season of Belonging",
+      "shortName": "Belonging",
+      "icon": "",
+      "year": 2019,
+      "start": "2019-11-18",
+      "end": "2020-01-12",
+      "spirits": [
+        "5u3TXZON81",
+        "f3AD39Q2Il",
+        "CcOE42N9Mc",
+        "7EzWoLR1w4",
+        "LO75aDy9Zc",
+        "gcEV41jg3U"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Belonging"
+      }
+    },
+    // #endregion
+    // #region 2020
+    {
+      "guid": "z-rb3dmo-q",
+      "name": "Season of Rhythm",
+      "shortName": "Rhythm",
+      "icon": "",
+      "year": 2020,
+      "start": "2020-01-24",
+      "end": "2020-04-05",
+      "spirits": [
+        "Q5pn7wxwUD",
+        "PYsLThJYPx",
+        "RUGuLBBPcg",
+        "9y_5scrYa9",
+        "OJECJaFI5p",
+        "CH6e-TQz6n"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Rhythm"
+      }
+    },
+    {
+      "guid": "gsl-Y5swe5",
+      "name": "Season of Enchantment",
+      "shortName": "Enchantment",
+      "icon": "",
+      "year": 2020,
+      "start": "2020-04-20",
+      "end": "2020-06-21",
+      "spirits": [
+        "HphxLKhDBZ",
+        "kQiNS82DDY",
+        "OaysgoHcZI",
+        "UJVa4nb2nn",
+        "Be41CnHkEI",
+        "hgjklF3nQI"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Enchantment"
+      }
+    },
+    {
+      "guid": "8Q1fHX8DFj",
+      "name": "Season of Sanctuary",
+      "shortName": "Sanctuary",
+      "icon": "",
+      "year": 2020,
+      "start": "2020-07-13",
+      "end": "2020-09-21",
+      "spirits": [
+        "jx7koL5guD",
+        "MEw6did3kI",
+        "IDEim-HNOZ",
+        "z4xqXUkx_6",
+        "uxtR1vVL8c",
+        "8N9cC4SvzM"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Sanctuary"
+      }
+    },
+    {
+      "guid": "TX01TQvRs7",
+      "name": "Season of Prophecy",
+      "shortName": "Prophecy",
+      "icon": "",
+      "year": 2020,
+      "start": "2020-10-05",
+      "end": "2020-12-13",
+      "spirits": [
+        "9Rgsos9xqE",
+        "oIeqSdqyWu",
+        "5DD07qmTqQ",
+        "kH5B_M20Fl"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Prophecy"
+      }
+    },
+    // #endregion
+    // #region 2021
+    {
+      "guid": "z-QZ_L-pbi",
+      "name": "Season of Dreams",
+      "shortName": "Dreams",
+      "icon": "",
+      "year": 2021,
+      "start": "2021-01-04",
+      "end": "2021-03-15",
+      "spirits": [
+        "KhFZE8z0-I",
+        "7tMB-HjDin",
+        "Jd8rEzWHVg",
+        "Ej3SZgZ2WL"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Dreams"
+      }
+    },
+    {
+      "guid": "kQLraEsT-1",
+      "name": "Season of Assembly",
+      "shortName": "Assembly",
+      "icon": "",
+      "year": 2021,
+      "start": "2021-04-05",
+      "end": "2021-06-13",
+      "spirits": [
+        "94UEgV7ic1",
+        "RG-Z1xwway",
+        "lE8DJQLcg5",
+        "H30afxXKT1",
+        "NGSlfCM_wu",
+        "MZZ5RA0AMG"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly"
+      }
+    },
+    {
+      "guid": "CuK1lMQzge",
+      "name": "Season of The Little Prince",
+      "shortName": "TLP",
+      "icon": "",
+      "year": 2021,
+      "start": "2021-07-06",
+      "end": "2021-09-19",
+      "spirits": [
+        "JOCCkr0TlW",
+        "V7gj-cBqK1",
+        "z5dtSO-gis",
+        "iweb5Sk2Xk",
+        "l7zP8zUFHX",
+        "dEQ1GVQOx7"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince"
+      }
+    },
+    {
+      "guid": "TglVHTYxoq",
+      "name": "Season of Flight",
+      "shortName": "Flight",
+      "icon": "",
+      "year": 2021,
+      "start": "2021-10-04",
+      "end": "2021-12-19",
+      "spirits": [
+        "9Wl9kwxoFk",
+        "VQadeqBPEO",
+        "_7-rIO21Ea",
+        "hovmkrquOR"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight"
+      }
+    },
+    // #endregion
+    // #region 2022
+    {
+      "guid": "pZsVF-bi97",
+      "name": "Season of Abyss",
+      "shortName": "Abyss",
+      "icon": "",
+      "year": 2022,
+      "start": "2022-01-17",
+      "end": "2022-03-27",
+      "spirits": [
+        "4gwH1Tn9he",
+        "aVOtIknTMO",
+        "zVs_gAo_wy",
+        "gTIay-wjmN"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss"
+      }
+    },
+    {
+      "guid": "2MkRJ7z5ey",
+      "name": "Season of Performance",
+      "shortName": "Performance",
+      "icon": "",
+      "year": 2022,
+      "start": "2022-04-11",
+      "end": "2022-06-26",
+      "spirits": [
+        "4iotcmsn0K",
+        "fEcI6neh6f",
+        "KYhwsjTkp-",
+        "S6KVcMgi-3"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance"
+      }
+    },
+    {
+      "guid": "L1q_rU86hu",
+      "name": "Season of Shattering",
+      "shortName": "Shattering",
+      "icon": "",
+      "year": 2022,
+      "start": "2022-07-11",
+      "end": "2022-09-26",
+      "spirits": [
+        "KqGJfPvqrM",
+        "di5Qar2yOI",
+        "3rebltHxWX",
+        "V7PbSxO67Q"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering"
+      }
+    },
+    {
+      "guid": "tZerEjZbMC",
+      "name": "Season of AURORA",
+      "shortName": "AURORA",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/15-Aurora.png",
+      "year": 2022,
+      "start": "2022-10-17",
+      "end": "2023-01-02",
+      "spirits": [
+        "20Xw7fuZWr",
+        "g_lZ76kjbS",
+        "XvcpNrqatq",
+        "95RfXrjMx1"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA"
+      }
+    },
+    // #endregion
+    // #region 2023
+    {
+      "guid": "qFSiDH3zaq",
+      "name": "Season of Remembrance",
+      "shortName": "Remembrance",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
+      "year": 2023,
+      "start": "2023-01-16",
+      "end": "2023-04-02",
+      "spirits": [
+        "O1olUBrkJ5",
+        "V43JRVL_QD",
+        "DAG_zfwis5",
+        "zq6qjCsQ_f"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance"
+      }
+    },
+    // #endregion
+  ],
+  "_wiki": {
+    "href": "https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events"
+  }
+}

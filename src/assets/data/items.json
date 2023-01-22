@@ -1,0 +1,1791 @@
+{
+  "items": [
+    // #region Gratitude
+    // Sassy Drifter
+    {
+      "guid": "SadZcfujh7",
+      "type": "Stance",
+      "name": "Sassy Stance",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_02_sassy_drifter_emote.png"
+    },
+    {
+      "guid": "VIQ3DJwLpu",
+      "type": "Hair",
+      "name": "Sassy Drifter Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Mimi-4117_02_sassy_drifter_hat.png"
+    },
+    {
+      "guid": "ifJ-lyNM8J",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Bo8Xc6gcCn",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "xROh6OVPnJ",
+      "type": "Mask",
+      "name": "Sassy Drifter Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Mimi-4117_02_sassy_drifter_mask.png"
+    },
+    {
+      "guid": "eqQzpRMNPk",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "8PUHxsxGKL",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Stretching Guru
+    {
+      "guid": "bXiNLPtQyh",
+      "type": "Emote",
+      "name": "Yoga",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+    },
+    {
+      "guid": "hFbdz8Wvye",
+      "type": "Emote",
+      "name": "Yoga",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+    },
+    {
+      "guid": "L5rpNhBlkt",
+      "type": "Hair",
+      "name": "Stretching Guru Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Mimi-4117_02_stretching_guru_hat.png"
+    },
+    {
+      "guid": "FK3tNWjyTF",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "j6B0Gx5Bra",
+      "type": "Emote",
+      "name": "Yoga",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+    },
+    {
+      "guid": "JuLs_5VIyb",
+      "type": "Emote",
+      "name": "Yoga",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+    },
+    {
+      "guid": "mhaC8geOXk",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "k9UvQv3vi0",
+      "type": "Cape",
+      "name": "Stretching Guru Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Icon_cape_gratitude_red-Morybel-0146.png"
+    },
+    {
+      "guid": "03JHyNx8wL",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "tCx3SpS6Do",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Provoking Performer
+    {
+      "guid": "YnKXRCy5y9",
+      "type": "Emote",
+      "name": "Kabuki",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+    },
+    {
+      "guid": "LPnwWeKlf0",
+      "type": "Emote",
+      "name": "Kabuki",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+    },
+    {
+      "guid": "kWs-MLO3ZE",
+      "type": "Music",
+      "name": "Music Sheet 7",
+      "sheet": 7,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "Yg9fTjQQAK",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "oTQGUs9w8K",
+      "type": "Emote",
+      "name": "Kabuki",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+    },
+    {
+      "guid": "znqKbunN1C",
+      "type": "Emote",
+      "name": "Kabuki",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+    },
+    {
+      "guid": "HzMNk4W-bM",
+      "type": "Hair",
+      "name": "Provoking Performer Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_02_provoking_performer_hat.png"
+    },
+    {
+      "guid": "wSjNwu664c",
+      "type": "Mask",
+      "name": "Provoking Performer Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Mimi-4117_02_provoking_performer_mask.png"
+    },
+    {
+      "guid": "SEpK8eiz2W",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "Foy_7SpHIY",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "usBrZiK7JN",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Leaping Dancer
+    {
+      "guid": "2EjYbZlJwr",
+      "type": "Emote",
+      "name": "Leap",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+    },
+    {
+      "guid": "Q5LhJRWFiF",
+      "type": "Emote",
+      "name": "Leap",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+    },
+    {
+      "guid": "eL5WjOsMrx",
+      "type": "Instrument",
+      "name": "Small Bell",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_instrument.png"
+    },
+    {
+      "guid": "g5MvmNr1oa",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "QVo-MuF4gw",
+      "type": "Emote",
+      "name": "Leap",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+    },
+    {
+      "guid": "Q4z_OukNlE",
+      "type": "Emote",
+      "name": "Leap",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+    },
+    {
+      "guid": "upDiBXJC_V",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "RX-66s3KFD",
+      "type": "Mask",
+      "name": "Leaping Dancer Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Mimi-4117_02_leaping_dancer_mask.png"
+    },
+    {
+      "guid": "gMt6VYu2uG",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "6AIXGyi9jl",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Saluting Protector
+    {
+      "guid": "zRlUm_oL2p",
+      "type": "Emote",
+      "name": "Acknowledge",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+    },
+    {
+      "guid": "tUzGovgVRK",
+      "type": "Emote",
+      "name": "Acknowledge",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+    },
+    {
+      "guid": "_hk1ya3nj0",
+      "type": "Music",
+      "name": "Music Sheet 8",
+      "sheet": 8,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "7Jr0a40jVD",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "dor3unMei7",
+      "type": "Emote",
+      "name": "Acknowledge",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+    },
+    {
+      "guid": "K82EgKZAwe",
+      "type": "Emote",
+      "name": "Acknowledge",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+    },
+    {
+      "guid": "7WktQVTwtR",
+      "type": "Cape",
+      "name": "Saluting Protector Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Icon_cape_gratitude_white-Morybel-0146.png"
+    },
+    {
+      "guid": "XOhMscNvdq",
+      "type": "Mask",
+      "name": "Saluting Protector Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_02_saluting_protector_mask.png"
+    },
+    {
+      "guid": "ffOE0uszzI",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "ou4hoCwWmt",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "QTfwfRnYwz",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Greeting Shaman
+    {
+      "guid": "NpbuKXMxKS",
+      "type": "Emote",
+      "name": "Kung Fu",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+    },
+    {
+      "guid": "5QWjZVAA-9",
+      "type": "Emote",
+      "name": "Kung Fu",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+    },
+    {
+      "guid": "2EXRXNdvSH",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "aFozSzjdTL",
+      "type": "Instrument",
+      "name": "Large Bell",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mimi-4117_02_greeting_shaman_instrument.png"
+    },
+    {
+      "guid": "j3BNKt3Qmi",
+      "type": "Emote",
+      "name": "Kung Fu",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+    },
+    {
+      "guid": "7MpXlundFS",
+      "type": "Emote",
+      "name": "Kung Fu",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+    },
+    {
+      "guid": "ThuqWhRFev",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "O_E6Y4gBQ8",
+      "type": "Mask",
+      "name": "Greeting Shaman Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Mimi-4117_02_greeting_shaman_mask.png"
+    },
+    {
+      "guid": "tCd_6CN6Fb",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "y7P0HNe1o0",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
+    // #region Lightseekers
+    // Piggyback Lightseeker
+    {
+      "guid": "G9wVSFG6I_",
+      "type": "Emote",
+      "name": "Piggyback",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
+    },
+    {
+      "guid": "lw79vLwEkP",
+      "type": "Mask",
+      "name": "Piggyback Lightseeker Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Mimi-4117_03_piggyback_lightseeker_mask.png"
+    },
+    {
+      "guid": "2jrLzRaf6h",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "oEMhNzGfdl",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "HtVnkK980q",
+      "type": "Emote",
+      "name": "Piggyback",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
+    },
+    {
+      "guid": "BGoYhVYvBZ",
+      "type": "Hair",
+      "name": "Piggyback Lightseeker Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Mimi-4117_03_piggyback_lightseeker_hair.png"
+    },
+    {
+      "guid": "ILUnt_OrWQ",
+      "type": "Cape",
+      "name": "Piggyback Lightseeker Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png"
+    },
+    {
+      "guid": "bmCPTysPOr",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "ihS0cOlgFz",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Doublefive Light Catcher
+    {
+      "guid": "9sYCtuZch3",
+      "type": "Emote",
+      "name": "Double-Five",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    },
+    {
+      "guid": "GbSWbAV_W1",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Ur7gRzB_VK",
+      "type": "Hair",
+      "name": "Doublefive Light Catcher Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Mimi-4117_03_doublefive_light_catcher_hat.png"
+    },
+    {
+      "guid": "lz89xViG6m",
+      "type": "Mask",
+      "name": "Doublefive Light Catcher Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_03_doublefive_light_catcher_mask.png"
+    },
+    {
+      "guid": "nfeBnolyEY",
+      "type": "Emote",
+      "name": "Double-Five",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    },
+    {
+      "guid": "YgxtYX7GjD",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "qR79V6fLUy",
+      "type": "Instrument",
+      "name": "Flute",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_03_doublefive_light_catcher_instrument.png"
+    },
+    {
+      "guid": "17rzgAzvhl",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "NHkpPS7ryo",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Laidback Pioneer
+    {
+      "guid": "_o__3iD1Rh",
+      "type": "Stance",
+      "name": "Laidback Stance",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_03_laidback_pioneer_emote.png"
+    },
+    {
+      "guid": "rj8Dzz64e9",
+      "type": "Mask",
+      "name": "Laidback Pioneer Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Mimi-4117_03_laidback_pioneer_mask.png"
+    },
+    {
+      "guid": "_HKt5SUf0w",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "fg5RXP9p-W",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "4sdZPgk41b",
+      "type": "Music",
+      "name": "Music Sheet 9",
+      "sheet": 9,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "qPAqxHGUVI",
+      "type": "Hair",
+      "name": "Laidback Pioneer Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Mimi-4117_03_laidback_pioneer_hair.png"
+    },
+    {
+      "guid": "7CHTap5JN4",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Sf9uzy0A0A",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Hi8NBjG271",
+      "type": "Prop",
+      "name": "Laidback Pioneer Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Mimi-4117_03_laidback_pioneer_item.png"
+    },
+    {
+      "guid": "bb9Od8wEmp",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "DFHjlCXHoD",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Twirling Champion
+    {
+      "guid": "tmhe-C2cN3",
+      "type": "Emote",
+      "name": "Triple Axel",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+    },
+    {
+      "guid": "zjAeiE3x_t",
+      "type": "Emote",
+      "name": "Triple Axel",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+    },
+    {
+      "guid": "10pNNxAeD8",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "0L89TCDEtN",
+      "type": "Mask",
+      "name": "Twirling Champion Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_03_twirling_champion_mask.png"
+    },
+    {
+      "guid": "zhwG9yJ2mi",
+      "type": "Emote",
+      "name": "Triple Axel",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+    },
+    {
+      "guid": "touhpuoYRG",
+      "type": "Emote",
+      "name": "Triple Axel",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+    },
+    {
+      "guid": "EjjybJGcTN",
+      "type": "Hair",
+      "name": "Twirling Champion Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Mimi-4117_03_twirling_champion_hair.png"
+    },
+    {
+      "guid": "PIRW3pt_BE",
+      "type": "Instrument",
+      "name": "Panflute",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Mimi-4117_03_twirling_champion_instrument.png"
+    },
+    {
+      "guid": "-wPyZeJ1nD",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "_2Q4y97jsM",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "myvAPXLC4n",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Crab Whisperer
+    {
+      "guid": "ySbxSrn-4l",
+      "type": "Emote",
+      "name": "Crab Call",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Mimi-4117_03_crab_whisperer_emote.png"
+    },
+    {
+      "guid": "wTgGX3U9yp",
+      "type": "Mask",
+      "name": "Crab Whisperer Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Mimi-4117_03_crab_whisperer_mask.png"
+    },
+    {
+      "guid": "Whp-r1yq-s",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "wcb5UMzT9u",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "NqdFQpeUSh",
+      "type": "Music",
+      "name": "Music Sheet 10",
+      "sheet": 10,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "HwpnDB-aPF",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "b_Dt_cckli",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "A3jFFEXAKu",
+      "type": "Hair",
+      "name": "Crab Whisperer Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Mimi-4117_03_crab_whisperer_hat.png"
+    },
+    {
+      "guid": "dotE5ejKYP",
+      "type": "Cape",
+      "name": "Crab Whisperer Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png"
+    },
+    {
+      "guid": "ApWt6AdQ8O",
+      "type": "Prop",
+      "name": "Crab Whisperer Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Icon_prop_summer_tube.png"
+    },
+    {
+      "guid": "t70cADZFZh",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "FE2ZZ9OIVd",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Shushing Light Scholar
+    {
+      "guid": "Bnrptwn3vv",
+      "type": "Emote",
+      "name": "Shush",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+    },
+    {
+      "guid": "TqyXKGohBg",
+      "type": "Emote",
+      "name": "Shush",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+    },
+    {
+      "guid": "zHdPCsbdpI",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "rGAnOKoXlu",
+      "type": "Mask",
+      "name": "Shushing Light Scholar Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Mimi-4117_03_shushing_light_scholar_mask.png"
+    },
+    {
+      "guid": "kYxJuHr1mX",
+      "type": "Emote",
+      "name": "Shush",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+    },
+    {
+      "guid": "MtnosL0i54",
+      "type": "Emote",
+      "name": "Shush",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+    },
+    {
+      "guid": "03HWIT9WGG",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "bj5HUEsP0R",
+      "type": "Cape",
+      "name": "Shushing Light Scholar Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png"
+    },
+    {
+      "guid": "G5MF6MpvH3",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "OLN8fLoqVT",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
+    // #region Belonging
+    // Confetti Cousin
+    {
+      "guid": "EdkgJhVl7F",
+      "type": "Emote",
+      "name": "Confetti",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+    },
+    {
+      "guid": "_KkFXT0brp",
+      "type": "Emote",
+      "name": "Confetti",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+    },
+    {
+      "guid": "6XXpBOqRQg",
+      "type": "Special",
+      "name": "SmallBlessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+    },
+    {
+      "guid": "3Nz4lttfEb",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "0nUupQHHcx",
+      "type": "Emote",
+      "name": "Confetti",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+    },
+    {
+      "guid": "u2qrLrrl7v",
+      "type": "Emote",
+      "name": "Confetti",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+    },
+    {
+      "guid": "86vG43eb7E",
+      "type": "Cape",
+      "name": "Confetti Cousin Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Icon_cape_belonging_red-Morybel-0146.png"
+    },
+    {
+      "guid": "4NjsRif40c",
+      "type": "Hair",
+      "name": "Confetti Cousin Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Mimi-4117_04_confetti_cousin_hair.png"
+    },
+    {
+      "guid": "prawwGcU-k",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    },
+    {
+      "guid": "zO2Dc3mn5_",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "ygMdfJClM7",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "EcCAR69gcW",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Boogie Kid
+    {
+      "guid": "o46E_Adz2z",
+      "type": "Emote",
+      "name": "Boogie Dance",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+    },
+    {
+      "guid": "jn9V5Dc56I",
+      "type": "Emote",
+      "name": "Boogie Dance",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+    },
+    {
+      "guid": "e6O-OC9gqr",
+      "type": "Special",
+      "name": "SmallBlessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+    },
+    {
+      "guid": "WDRmw94dkS",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "AnOX8p-Z5f",
+      "type": "Emote",
+      "name": "Boogie Dance",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+    },
+    {
+      "guid": "ThC1rC0jC4",
+      "type": "Emote",
+      "name": "Boogie Dance",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+    },
+    {
+      "guid": "yoEqaQiYU-",
+      "type": "Mask",
+      "name": "Boogie Kid Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Mimi-4117_04_boogie_kid_mask.png"
+    },
+    {
+      "guid": "qrP9vZPLlk",
+      "type": "Outfit",
+      "name": "Boogie Kid Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Mimi-4117_04_boogie_kid_pants.png"
+    },
+    {
+      "guid": "C0sPzUPUwR",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    },
+    {
+      "guid": "CBICwZAmcI",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "z7pwTLLnQg",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "9xE4f1SUd_",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Sparkler Parent
+    {
+      "guid": "eEwMzjwfoS",
+      "type": "Emote",
+      "name": "Sparkler",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+    },
+    {
+      "guid": "sSgceH7emy",
+      "type": "Emote",
+      "name": "Sparkler",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+    },
+    {
+      "guid": "Sn97dM5q4N",
+      "type": "Special",
+      "name": "SmallBlessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+    },
+    {
+      "guid": "5i57DI6cGK",
+      "type": "Mask",
+      "name": "Sparkler Parent Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Mimi-4117_04_sparkler_parent_mask.png"
+    },
+    {
+      "guid": "l663HjIDEd",
+      "type": "Emote",
+      "name": "Sparkler",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+    },
+    {
+      "guid": "X81UhfMlB2",
+      "type": "Emote",
+      "name": "Sparkler",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+    },
+    {
+      "guid": "hySf4FUV-w",
+      "type": "Hair",
+      "name": "Sparkler Parent Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Mimi-4117_04_sparkler_parent_hair.png"
+    },
+    {
+      "guid": "M97mhUyiZZ",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "vbf2ST93iK",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    },
+    {
+      "guid": "Wcse-or-FC",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "ig7MtymJ-I",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "3EhqC6gdQV",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "3KTXA81fSx",
+      "type": "Prop",
+      "name": "Sparkler Parent Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Spell_-_Pinwheel.png"
+    },
+    // Wise Grandparent
+    {
+      "guid": "N_FirAVIZf",
+      "type": "Stance",
+      "name": "Wise Stance",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Belonging_stance_think.png"
+    },
+    {
+      "guid": "IH3RuM1Ze3",
+      "type": "Special",
+      "name": "SmallBlessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+    },
+    {
+      "guid": "eXcIcaFA0k",
+      "type": "Music",
+      "name": "Music Sheet 11",
+      "sheet": 11,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "lLKKdQz_He",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "r1pKcM3jiU",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "huLyzyJN5_",
+      "type": "Mask",
+      "name": "Wise Grandparent Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mimi-4117_04_wise_grandparent_mask.png"
+    },
+    {
+      "guid": "bBWdMDYc1G",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "YF_dvs5rGr",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "WCPTi8XYZy",
+      "type": "Cape",
+      "name": "Wise Grandparent Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_cape_belonging_white-Morybel-0146.png"
+    },
+    {
+      "guid": "F2_k73blau",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    },
+    {
+      "guid": "gAPhpTaLvI",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "6nLnP1NR8J",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "1OPToAPwEU",
+      "type": "Prop",
+      "name": "Wise Grandparent Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_prop_vault_lantern.png"
+    },
+    // Pleaful Parent
+    {
+      "guid": "CtEU0Osb2E",
+      "type": "Emote",
+      "name": "Don't Go!",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+    },
+    {
+      "guid": "oqndH_vtJJ",
+      "type": "Emote",
+      "name": "Don't Go!",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+    },
+    {
+      "guid": "7UiHJRDHqW",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Zvi-5bPtxs",
+      "type": "Instrument",
+      "name": "Guitar",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mimi-4117_04_pleaful_parent_instrument.png"
+    },
+    {
+      "guid": "sTSrAZzgqU",
+      "type": "Emote",
+      "name": "Don't Go!",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+    },
+    {
+      "guid": "D5hLl-_xZd",
+      "type": "Emote",
+      "name": "Don't Go!",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+    },
+    {
+      "guid": "qOLmnCFyh6",
+      "type": "Mask",
+      "name": "Pleaful Parent Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_04_pleaful_parent_mask.png"
+    },
+    {
+      "guid": "mH0YjUsODC",
+      "type": "Cape",
+      "name": "Pleaful Parent Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_belonging_blue-Morybel-0146.png"
+    },
+    {
+      "guid": "N6IzrxN7yL",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    },
+    {
+      "guid": "IcFD26XkI9",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "bJQo41PHdC",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "kNUvnIGq1b",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Hairtousle Teen
+    {
+      "guid": "YUAzM6p_2j",
+      "type": "Emote",
+      "name": "Hair Tousle",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
+    },
+    {
+      "guid": "guVzYkoOF-",
+      "type": "Special",
+      "name": "SmallBlessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+    },
+    {
+      "guid": "GL1iz0Ybx0",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "7Ul11Zqefz",
+      "type": "Music",
+      "name": "Music Sheet 12",
+      "sheet": 12,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "0f9auBppfc",
+      "type": "Emote",
+      "name": "Hair Tousle",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
+    },
+    {
+      "guid": "n2TnJPoi1J",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "bBQbGQh1PU",
+      "type": "Hat",
+      "name": "Hairtousle Teen Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png"
+    },
+    {
+      "guid": "Ph__M3uulY",
+      "type": "Instrument",
+      "name": "Ukulele",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_04_hairtousle_teen_instrument.png"
+    },
+    {
+      "guid": "HnQU571BtR",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "r_JERY8CWa",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    },
+    {
+      "guid": "XMk1ifj2qw",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "v1TQ9ZX3q5",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
+    // #region Rhythm
+    // Troupe Greeter
+    {
+      "guid": "T9ZZMbXM0p",
+      "type": "Emote",
+      "name": "Welcome",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
+    },
+    {
+      "guid": "Lpi2B9yp7E",
+      "type": "Emote",
+      "name": "Welcome",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
+    },
+    {
+      "guid": "TMuwOqLcFB",
+      "type": "Music",
+      "name": "Music Sheet 1",
+      "sheet": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "GbIQpDNVKS",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "8p1dB9WsP1",
+      "type": "Emote",
+      "name": "Welcome",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
+    },
+    {
+      "guid": "T835b5bBNS",
+      "type": "Emote",
+      "name": "Welcome",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
+    },
+    {
+      "guid": "SekRzXgjfv",
+      "type": "Mask",
+      "name": "Troupe Greeter Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Mimi-4117_05_troupe_greeter_mask.png"
+    },
+    {
+      "guid": "T4suf1MdTj",
+      "type": "Outfit",
+      "name": "Troupe Greeter Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_05_troupe_greeter_pants.png"
+    },
+    {
+      "guid": "QyPz9F--8K",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png"
+    },
+    {
+      "guid": "ixu-bQFMqR",
+      "type": "Music",
+      "name": "Music Sheet 4",
+      "sheet": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "gOrgKYIV3P",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "Pe1Hflmudo",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "7gjw9rjbK9",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Festival Spin Dancer
+    {
+      "guid": "72q94N8VCj",
+      "type": "Emote",
+      "name": "Spin Dance",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
+    },
+    {
+      "guid": "Uszoh-ONkR",
+      "type": "Emote",
+      "name": "Spin Dance",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
+    },
+    {
+      "guid": "Uo7t1apko6",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "sASnDAINbr",
+      "type": "Music",
+      "name": "Music Sheet 2",
+      "sheet": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "ZaNb7p2iqw",
+      "type": "Emote",
+      "name": "Spin Dance",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
+    },
+    {
+      "guid": "9v5mmfY2I4",
+      "type": "Emote",
+      "name": "Spin Dance",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
+    },
+    {
+      "guid": "stQCebAgsm",
+      "type": "Hair",
+      "name": "Festival Spin Dancer Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Mimi-4117_05_festive_spin_dancer_hair.png"
+    },
+    {
+      "guid": "kmgKsVBs4o",
+      "type": "Outfit",
+      "name": "Festival Spin Dancer Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png"
+    },
+    {
+      "guid": "sM8bW--Gst",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png"
+    },
+    {
+      "guid": "4XuHymnqlr",
+      "type": "Music",
+      "name": "Music Sheet 5",
+      "sheet": 5,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "UiAXJpkHYm",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "EAFp1hfc6-",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "fD5KSC2ILf",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "6PvpUYPLPO",
+      "type": "Prop",
+      "name": "Festival Spin Dancer Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Icon_prop_rhythm_flag.png"
+    },
+    // Admiring Actor
+    {
+      "guid": "mYHK8KGcDb",
+      "type": "Emote",
+      "name": "Blow Kiss",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
+    },
+    {
+      "guid": "DQhS5AkEKu",
+      "type": "Emote",
+      "name": "Blow Kiss",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
+    },
+    {
+      "guid": "023wYIm0DT",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "GEC1VNDUG2",
+      "type": "Music",
+      "name": "Music Sheet 6",
+      "sheet": 6,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "R62rXvPti6",
+      "type": "Emote",
+      "name": "Blow Kiss",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
+    },
+    {
+      "guid": "X1oM2uVzop",
+      "type": "Emote",
+      "name": "Blow Kiss",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
+    },
+    {
+      "guid": "uMURxUHDKr",
+      "type": "Outfit",
+      "name": "Admiring Actor Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png"
+    },
+    {
+      "guid": "xOj2WwukD8",
+      "type": "Mask",
+      "name": "Admiring Actor Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Mimi-4117_05_admiring_actor_mask.png"
+    },
+    {
+      "guid": "aiHkWPkE3L",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png"
+    },
+    {
+      "guid": "0wbgRYUeyH",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "xn4mqXmkpr",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "3KEvIQ3_Z9",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // Troupe Juggler
+    {
+      "guid": "bcJTF4AAEe",
+      "type": "Emote",
+      "name": "Juggle",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
+    },
+    {
+      "guid": "rt7_sCQiHh",
+      "type": "Emote",
+      "name": "Juggle",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
+    },
+    {
+      "guid": "hsTWje5YU_",
+      "type": "Hair",
+      "name": "Troupe Juggler Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_05_troupe_juggler_hair.png"
+    },
+    {
+      "guid": "QC2E3iIpQB",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "S9zHdixzVO",
+      "type": "Emote",
+      "name": "Juggle",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
+    },
+    {
+      "guid": "HlohlGb5MA",
+      "type": "Emote",
+      "name": "Juggle",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
+    },
+    {
+      "guid": "l4AT0gf-aR",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "MIKr5rkFuk",
+      "type": "Cape",
+      "name": "Troupe Juggler Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png"
+    },
+    {
+      "guid": "52NbrdHrAf",
+      "type": "Outfit",
+      "name": "Troupe Juggler Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png"
+    },
+    {
+      "guid": "Zus3hdmlgm",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "zEMCohlgcF",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png"
+    },
+    {
+      "guid": "J4SWAguEQD",
+      "type": "Prop",
+      "name": "Troupe Juggler Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Icon_prop_torch_lantern.png"
+    },
+    {
+      "guid": "AzgiEH8D4t",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "F9m8tlM-EH",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Respectful Pianist
+    {
+      "guid": "g3peZ7bo5z",
+      "type": "Emote",
+      "name": "Respect",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
+    },
+    {
+      "guid": "4hiIWJy7qv",
+      "type": "Emote",
+      "name": "Respect",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
+    },
+    {
+      "guid": "mK47aJa3Uy",
+      "type": "Hair",
+      "name": "Respectful Pianist Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Mimi-4117_05_respectful_pianist_hair.png"
+    },
+    {
+      "guid": "yzAU4AmksH",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "DYLsc2p_1T",
+      "type": "Emote",
+      "name": "Respect",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
+    },
+    {
+      "guid": "khMbyOBwco",
+      "type": "Emote",
+      "name": "Respect",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
+    },
+    {
+      "guid": "PlN5rXjRFt",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "M1MCfh7sVo",
+      "type": "Instrument",
+      "name": "Winter Piano",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Mimi-4117_05_respectful_pianist_instrument.png"
+    },
+    {
+      "guid": "Wr27LIf-FU",
+      "type": "Mask",
+      "name": "Respectful Pianist Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Mimi-4117_05_respectful_pianist_mask.png"
+    },
+    {
+      "guid": "Z53BOww_Mb",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "J0eCOP0qGn",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png"
+    },
+    {
+      "guid": "kKmbn6_yY5",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "TbSbFkTkre",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // Thoughtful Director
+    {
+      "guid": "qwrbhllE1N",
+      "type": "Emote",
+      "name": "Thinking",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
+    },
+    {
+      "guid": "zPUl7UL87P",
+      "type": "Emote",
+      "name": "Thinking",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
+    },
+    {
+      "guid": "_QvFsX4gGf",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "qlaJxxLwAM",
+      "type": "Mask",
+      "name": "Thoughtful Director Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Mimi-4117_05_thoughtful_director_mask.png"
+    },
+    {
+      "guid": "cSzED5jEt_",
+      "type": "Emote",
+      "name": "Thinking",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
+    },
+    {
+      "guid": "SLjFXYFsjW",
+      "type": "Emote",
+      "name": "Thinking",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
+    },
+    {
+      "guid": "DVcrj6XSgH",
+      "type": "Instrument",
+      "name": "Xylophone",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mimi-4117_05_thoughtful_director_instrument.png"
+    },
+    {
+      "guid": "qyOm1SIyJp",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "M7UTERtYg8",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Bm0aFDGHk2",
+      "type": "Cape",
+      "name": "Thoughtful Director Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_rhythm_blue-Morybel-0146.png"
+    },
+    {
+      "guid": "LbyGyRZRft",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png"
+    },
+    {
+      "guid": "jRziaKdlTE",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "TmI0zjdYQb",
+      "type": "Special",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
+    // #region Enchantment
+    // #endregion
+    // #region Sanctuary
+    // #endregion
+    // #region Prophecy
+    // #endregion
+    // #region Dreams
+    // #endregion
+    // #region Assembly
+    // #endregion
+    // #region The Little Prince
+    // #endregion
+    // #region Flight
+    // #endregion
+    // #region Abyss
+    // #endregion
+    // #region Performance
+    // #endregion
+    // #region Shattering
+    // #endregion
+    // #region AURORA
+    // #endregion
+  ]
+}

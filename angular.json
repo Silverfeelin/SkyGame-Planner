@@ -30,7 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles/vars.less",
+              "src/styles/styles.less",
+              "src/styles/icons.less"
             ],
             "scripts": []
           },
@@ -77,25 +80,6 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "SkyGame-Planner:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "less",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.less"
-            ],
-            "scripts": []
           }
         }
       }

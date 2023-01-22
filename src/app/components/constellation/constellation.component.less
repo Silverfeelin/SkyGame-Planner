@@ -1,0 +1,57 @@
+:host {
+  display: inline-block;
+}
+
+/** Contains the 3 columns */
+.container {
+  display: inline-flex;
+  gap: 32px;
+  width: min-content;
+}
+
+/** Contains column nodes */
+.column {
+  display: flex;
+  gap: 40px;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  counter-reset: item-counter;
+  width: var(--item-size);
+}
+
+.left, .right {
+  padding-bottom: 48px;
+}
+
+.item {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+.arrow {
+  position: absolute;
+  background: #fff;
+  width: 1px;
+}
+
+.arrow-left {
+  transform: rotate(-45deg);
+  height: 32px;
+  left: -18px;
+  top: 0;
+}
+
+.arrow-up {
+  height: 24px;
+  top: -30px;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
+.arrow-right {
+  transform: rotate(45deg);
+  height: 32px;
+  right: -18px;
+  top: 0;
+}

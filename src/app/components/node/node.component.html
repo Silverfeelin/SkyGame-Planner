@@ -1,0 +1,20 @@
+<div>
+  <div *ngIf="node.item" class="item-container" (click)="toggleNode()" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+    <app-item [item]="node.item" [highlight]="hover"></app-item>
+  </div>
+  <div class="cost" *ngIf="node?.c">
+    {{ node.c }}<mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost seasonal" *ngIf="node?.sc">
+    {{ node.sc }}<mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost" *ngIf="node?.h">
+    {{ node.h }}<mat-icon svgIcon="heart" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost seasonal" *ngIf="node?.sh">
+    {{ node.sh }}<mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost ascend" *ngIf="node?.ac">
+    {{ node.ac }}<mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
+  </div>
+</div>

@@ -1,0 +1,358 @@
+{
+  "items": [
+    // #region Gratitude
+    // Sassy Drifter
+    {
+      "guid": "emS7DU5ndh",
+      "node": "v8X3R8lQih"
+    },
+    {
+      "guid": "Uh6NO_DWSl",
+      "node": "zZ-WfLA81q"
+    },
+    {
+      "guid": "JJbhmlelLL",
+      "node": "eB7JlaXCF6"
+    },
+    {
+      "guid": "pZDG-_wbBc",
+      "node": "Q7zPPVDuOn"
+    },
+    {
+      "guid": "YaJ9ra8eTo",
+      "node": "6QrSy1t5iF"
+    },
+    // Stretching Guru
+    {
+      "guid": "s4j4vrnNCR",
+      "node": "jlY1bt_XXs"
+    },
+    {
+      "guid": "gIK6X2JYpE",
+      "node": "TFOo4LdfVf"
+    },
+    {
+      "guid": "vKfEfiNpqz",
+      "node": "ik0br-8Z8-"
+    },
+    // Provoking Performer
+    {
+      "guid": "R-TxhzmvlY",
+      "node": "5SmSyDjqYg"
+    },
+    {
+      "guid": "25t8U35SfA",
+      "node": "7dNo8lIHkR"
+    },
+    {
+      "guid": "yB8WfHNA3d",
+      "node": "Uk7fZ4cqe_"
+    },
+    // Leaping Dancer
+    {
+      "guid": "C1UHeaHfp1",
+      "node": "5PLmQ_H_ah"
+    },
+    {
+      "guid": "sKZVPSw0GC",
+      "node": "e2U1NLqWO5"
+    },
+    {
+      "guid": "AxzlWSe9No",
+      "node": "SJromvHwIe"
+    },
+    // Saluting Protector
+    {
+      "guid": "uHs_ggtE0U",
+      "node": "qr6pd7epIs"
+    },
+    {
+      "guid": "F82qa2RCg0",
+      "node": "h8rV8V6JZg"
+    },
+    // Greeting Shaman
+    {
+      "guid": "3xelLnykRC",
+      "node": "8f2CTxUNd3"
+    },
+    {
+      "guid": "jfvcMbFZig",
+      "node": "WXTXoDXIct"
+    },
+    {
+      "guid": "h_IeIebgIv",
+      "node": "YVFk7GK-1S"
+    },
+    // #endregion
+    // #region Lightseekers
+    // Piggyback Lightseeker
+    {
+      "guid": "tKkz-7Fmh_",
+      "node": "iLwPqKU2ea"
+    },
+    {
+      "guid": "uwL9xZVrWv",
+      "node": "1NdM174Pmi"
+    },
+    {
+      "guid": "DzGt3o1MRV",
+      "node": "pkfttmeuJ9"
+    },
+    // Doublefive Light Catcher
+    {
+      "guid": "DCA--qiCxD",
+      "node": "wwxSGrYetC"
+    },
+    {
+      "guid": "MkEa8fGi0f",
+      "node": "OGH56sAN8n"
+    },
+    {
+      "guid": "dP0sb2HbFV",
+      "node": "OxemVkZ3FB"
+    },
+    {
+      "guid": "EkF4ZphKwE",
+      "node": "JCJhN7Y1vu"
+    },
+    // Laidback Pioneer
+    {
+      "guid": "ry-1r9mcwO",
+      "node": "u7doiPY1Nv"
+    },
+    {
+      "guid": "hkSlUfqs8g",
+      "node": "dJaOSaZrXz"
+    },
+    {
+      "guid": "W7kaAlXaPN",
+      "node": "r6_Sg6lb6X"
+    },
+    {
+      "guid": "pYPMMB_Dq3",
+      "node": "7ng19Cq_Jj"
+    },
+    // Twirling Champion
+    {
+      "guid": "9lQ4T3H65f",
+      "node": "-4dScFEOsV"
+    },
+    {
+      "guid": "XQQUcPvto0",
+      "node": "Lgm2kGtzkB"
+    },
+    {
+      "guid": "wZ2F3G7vNl",
+      "node": "j93frthyDg"
+    },
+    // Crab Whisperer
+    {
+      "guid": "cSFOWVeiTO",
+      "node": "jgPKwx1mOG"
+    },
+    {
+      "guid": "CK5udCxbxD",
+      "node": "YRjXKzKw6K"
+    },
+    {
+      "guid": "uDrPqK6h-W",
+      "node": "XgGAf1kIql"
+    },
+    // Shushing Light Scholar
+    {
+      "guid": "hHNCjL8SHU",
+      "node": "TzQj7y6KIj"
+    },
+    {
+      "guid": "HbNYgbHR0y",
+      "node": "DZtoOUD1tE"
+    },
+    {
+      "guid": "7EPxUJB5ja",
+      "node": "Y7EBUe-rds"
+    },
+    // #endregion
+    // #region Belonging
+    // Confetti Cousin
+    {
+      "guid": "Fqwmr7P65R",
+      "node": "GRu4BRtjHZ"
+    },
+    {
+      "guid": "H0e14P-QP-",
+      "node": "sXll4e8o7W"
+    },
+    {
+      "guid": "g42b6kNt2t",
+      "node": "stzDGiVyGD"
+    },
+    // Boogie Kid
+    {
+      "guid": "IeFmlorSVS",
+      "node": "z5oUNmiK-N"
+    },
+    {
+      "guid": "s4E4raZm8m",
+      "node": "SQxZV2Yocu"
+    },
+    {
+      "guid": "uroAaSXx6d",
+      "node": "tPH54zQyph"
+    },
+    // Sparkler Parent
+    {
+      "guid": "sM-gGfmBb9",
+      "node": "OLZ0CipXv0"
+    },
+    {
+      "guid": "7AoT-1pu0r",
+      "node": "hIyG0l1eEi"
+    },
+    {
+      "guid": "wgGPcd5dFh",
+      "node": "Hmi8rqYN8v"
+    },
+    {
+      "guid": "dx5nJDfwbs",
+      "node": "iWWVxqNfsG"
+    },
+    // Wise Grandparent
+    {
+      "guid": "zNWw5D3we3",
+      "node": "N5kAA32DUp"
+    },
+    {
+      "guid": "OIgzLkB3PG",
+      "node": "V5LN7cxwlO"
+    },
+    {
+      "guid": "qopMx3CQmv",
+      "node": "pgvISTDu9j"
+    },
+    // Pleaful Parent
+    {
+      "guid": "wDOnrwqC2i",
+      "node": "nz1968HiKq"
+    },
+    {
+      "guid": "YObY1L9RA8",
+      "node": "4j-pbPwedf"
+    },
+    {
+      "guid": "_E8Hmqr3_o",
+      "node": "4pXD5-dfkC"
+    },
+    {
+      "guid": "etKP-Cgstm",
+      "node": "tWum6AhN4V"
+    },
+    // Hairtousle Teen
+    {
+      "guid": "pDzxAL2j5O",
+      "node": "EkBbVkJtl8"
+    },
+    {
+      "guid": "BK4-JErpU4",
+      "node": "XVJ8WZ7uLV"
+    },
+    {
+      "guid": "S2bnFEoHfA",
+      "node": "_AaLjqBGlE"
+    },
+    // #endregion
+    // #region Rhythm
+    // Troupe Greeter
+    {
+      "guid": "TaMnSq1POX",
+      "node": "MqVWf5rygO"
+    },
+    {
+      "guid": "-FpRr0eGiH",
+      "node": "tqreJYg8Ki"
+    },
+    {
+      "guid": "Nsu1l8VRE1",
+      "node": "Hr6ZlBxtI3"
+    },
+    // Festival Spin Dancer
+    {
+      "guid": "61W5eVdFni",
+      "node": "QsIyX1p15K"
+    },
+    {
+      "guid": "DojWg5mEe6",
+      "node": "o5oqumztZA"
+    },
+    {
+      "guid": "TJkfnu_b2k",
+      "node": "6gh0YkF_aO"
+    },
+    // Admiring Actor
+    {
+      "guid": "4biI_rOvS2",
+      "node": "mnR3OjpKYr"
+    },
+    {
+      "guid": "5Z618XQ2aq",
+      "node": "74IGh9F_Kc"
+    },
+    {
+      "guid": "D4sQ9EBRXx",
+      "node": "0lmwIR1mFV"
+    },
+    // Troupe Juggler
+    {
+      "guid": "XBUCLd5Dbw",
+      "node": "O4pZrHbZdI"
+    },
+    {
+      "guid": "fIYU5OSqoy",
+      "node": "VnUCuufhCC"
+    },
+    // Respectful Pianist
+    {
+      "guid": "434ok25Yjz",
+      "node": "qACxZ97wkA"
+    },
+    {
+      "guid": "Rgva1Rdc7E",
+      "node": "Ap9SrZM1Jn"
+    },
+    // Thoughtful Director
+    {
+      "guid": "mvyFMGjUT4",
+      "node": "PCDjGhRPYP"
+    },
+    {
+      "guid": "3qK9PNQr6p",
+      "node": "iD4csgN6V5"
+    },
+    {
+      "guid": "z3G7ZlrrIb",
+      "node": "-oDoA-NFf6"
+    },
+    // #endregion
+    // #region Enchantment
+    // #endregion
+    // #region Sanctuary
+    // #endregion
+    // #region Prophecy
+    // #endregion
+    // #region Dreams
+    // #endregion
+    // #region Assembly
+    // #endregion
+    // #region The Little Prince
+    // #endregion
+    // #region Flight
+    // #endregion
+    // #region Abyss
+    // #endregion
+    // #region Performance
+    // #endregion
+    // #region Shattering
+    // #endregion
+    // #region AURORA
+    // #endregion
+  ]
+}

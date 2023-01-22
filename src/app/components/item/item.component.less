@@ -1,0 +1,52 @@
+:host {
+  display: inline-block;
+  position: relative;
+  border: 0;
+  border-radius: 10px;;
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  transition: var(--animation-short);
+  filter: drop-shadow(0 0 0 #0000);
+}
+
+:host:hover {
+  .img {
+    transition: var(--animation-short);
+    filter: drop-shadow(0 0 4px #fffa73);
+  }
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.emote-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 12px;
+}
+
+.unlock-check {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  color: var(--color-unlock-check);
+  opacity: 0;
+  transition: opacity var(--animation-short);
+
+  &::before {
+    filter: drop-shadow(0px 1px 0px var(--color-unlock-check-shadow));
+  }
+
+  &.unlocked {
+    opacity: 1;
+    transition: opacity var(--animation-short);
+  }
+}
