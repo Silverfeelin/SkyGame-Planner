@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -8,16 +8,24 @@ import { StorageService } from 'src/app/services/storage.service';
   templateUrl: './node.component.html',
   styleUrls: ['./node.component.less']
 })
-export class NodeComponent {
+export class NodeComponent implements OnChanges {
   @Input() node!: INode;
-  @Input() tooltipPlacement = 'bottom';
+  @Input() position = 'center';
 
   hover?: boolean;
+  tooltipPlacement = 'bottom';
 
   constructor(
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
   ) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['position']) {
+      const pos = changes['position'].currentValue;
+      this.tooltipPlacement = pos === 'left' ? 'right' : pos === 'right' ? 'left' : 'bottom';
+    }
   }
 
   mouseEnter(event: MouseEvent): void {
