@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
 import { INode } from 'src/app/interfaces/node.interface';
-import { SelectionService } from 'src/app/services/selection.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-status-bar',
@@ -13,13 +13,13 @@ export class StatusBarComponent implements OnInit, OnDestroy {
   private readonly _subscriptions: Array<SubscriptionLike> = [];
 
   constructor(
-    private readonly _selectionService: SelectionService
+    private readonly _selectionService: EventService
   ) {
 
   }
 
   ngOnInit(): void {
-    this._subscriptions.push(this._selectionService.nodeChanged.subscribe(n => this.nodeChanged(n)))
+    this._subscriptions.push(this._selectionService.hoverNodeChanged.subscribe(n => this.nodeChanged(n)))
   }
 
   nodeChanged(node?: INode): void {

@@ -1,5 +1,7 @@
 <div>
-  <div *ngIf="node.item" class="item-container" (click)="toggleNode()" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">
+  <div *ngIf="node.item" class="item-container" [ngbTooltip]="nodeHover" [placement]="tooltipPlacement" container="body"
+    (click)="toggleNode()" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
+  >
     <app-item [item]="node.item" [highlight]="hover"></app-item>
   </div>
   <div class="cost" *ngIf="node?.c">
@@ -17,4 +19,11 @@
   <div class="cost ascend" *ngIf="node?.ac">
     {{ node.ac }}<mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
   </div>
+  <mat-icon class="unlock-check" [class.unlocked]="node.unlocked || node.item?.unlocked" [class.self]="node.unlocked" fontIcon="done"></mat-icon>
 </div>
+
+<ng-template #nodeHover>
+  <ng-container *ngIf="node.item">
+    <span class="ws-nw">{{node.item.name}}</span>
+  </ng-container>
+</ng-template>

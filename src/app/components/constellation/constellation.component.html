@@ -1,25 +1,63 @@
-<div class="container">
-  <div class="column left">
-    <div class="item" *ngFor="let node of left">
-      <app-node *ngIf="node" [node]="node"></app-node>
-      <!-- For now left nodes only go up. -->
-      <div *ngIf="node?.n" class="arrow arrow-up"></div>
+<div class="content">
+  <div class="constellation">
+    <div class="column left">
+      <div class="item" *ngFor="let node of left">
+        <app-node *ngIf="node" [node]="node" [tooltipPlacement]="'right'"></app-node>
+        <!-- For now left nodes only go up. -->
+        <div *ngIf="node?.n" class="arrow arrow-up"></div>
+      </div>
+    </div>
+    <div class="column center">
+      <div class="item" *ngFor="let node of center">
+        <app-node *ngIf="node" [node]="node"></app-node>
+        <!-- Center node arrows -->
+        <div *ngIf="node?.nw" class="arrow arrow-left"></div>
+        <div *ngIf="node?.n" class="arrow arrow-up"></div>
+        <div *ngIf="node?.ne" class="arrow arrow-right"></div>
+      </div>
+    </div>
+    <div class="column right">
+      <div class="item" *ngFor="let node of right">
+        <app-node *ngIf="node" [node]="node" [tooltipPlacement]="'left'"></app-node>
+        <!-- For now right nodes only go up. -->
+        <div *ngIf="node?.n" class="arrow arrow-up"></div>
+      </div>
     </div>
   </div>
-  <div class="column center">
-    <div class="item" *ngFor="let node of center">
-      <app-node *ngIf="node" [node]="node"></app-node>
-      <!-- Center node arrows -->
-      <div *ngIf="node?.nw" class="arrow arrow-left"></div>
-      <div *ngIf="node?.n" class="arrow arrow-up"></div>
-      <div *ngIf="node?.ne" class="arrow arrow-right"></div>
-    </div>
-  </div>
-  <div class="column right">
-    <div class="item" *ngFor="let node of right">
-      <app-node *ngIf="node" [node]="node"></app-node>
-      <!-- For now right nodes only go up. -->
-      <div *ngIf="node?.n" class="arrow arrow-up"></div>
+  <div class="footer">
+    <div class="name" [title]="name">{{ name || '' }}</div>
+    <div class="hr"></div>
+    <div class="costs" [ngbTooltip]="costHover" placement="top">
+      <div class="cost" *ngIf="totalCost?.c">
+        {{ totalCost.c }}
+        <span class="remaining-cost">({{ remainingCost.c || 0 }})</span>
+        <mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+      </div>
+      <div class="cost seasonal" *ngIf="totalCost?.sc">
+        {{ totalCost.sc }}
+        <span class="remaining-cost">({{ remainingCost.sc || 0 }})</span>
+        <mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+      </div>
+      <div class="cost" *ngIf="totalCost?.h">
+        {{ totalCost.h }}
+        <span class="remaining-cost">({{ remainingCost.h || 0 }})</span>
+        <mat-icon svgIcon="heart" [inline]="false"></mat-icon>
+      </div>
+      <div class="cost seasonal" *ngIf="totalCost?.sh">
+        {{ totalCost.sh }}
+        <span class="remaining-cost">({{ remainingCost.sh || 0 }})</span>
+        <mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+      </div>
+      <div class="cost ascend" *ngIf="totalCost?.ac">
+        {{ totalCost.ac }}
+        <span class="remaining-cost">({{ remainingCost.ac || 0 }})</span>
+        <mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
+      </div>
     </div>
   </div>
 </div>
+
+<ng-template #costHover>
+  <span>Total cost of all the items in this constellation.</span><br/>
+  <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
+</ng-template>

@@ -15,6 +15,8 @@ import { RealmsComponent } from './components/realms/realms.component';
 import { IconComponent } from './components/icon/icon.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { CreditsComponent } from './components/credits/credits.component';
+import { ConstellationsComponent } from './components/constellations/constellations.component';
+import { ItemsComponent } from './components/items/items.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CreditsComponent } from './components/credits/credits.component';
     RealmsComponent,
     IconComponent,
     StatusBarComponent,
-    CreditsComponent
+    CreditsComponent,
+    ConstellationsComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,

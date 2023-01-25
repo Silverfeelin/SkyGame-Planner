@@ -13,8 +13,13 @@ nav {
   text-align: center;
 }
 
+.header, .item {
+  border-bottom: 1px solid var(--color-menu-border);
+}
+
 .items {
   position: relative;
+  font-size: 18px;
 }
 
 .item {
@@ -26,9 +31,14 @@ nav {
   background-color: var(--color-menu-background-highlight);
 }
 
-.header, .item {
-  border-bottom: 1px solid var(--color-menu-border);
+.item mat-icon {
+  vertical-align: sub;
 }
+
+.item span {
+  padding-left: 10px;
+}
+
 
 a:hover, a:focus, a:active, a:visited {
   color: unset;

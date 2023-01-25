@@ -1,3 +1,3 @@
 <app-icon class="img" *ngIf="item.icon" [src]="item.icon" [opacity]="(item.unlocked || highlight) ? undefined : 0.5"></app-icon>
 <span class="emote-level" *ngIf="item.type === ItemType.Emote">Lv{{item.level}}</span>
-<mat-icon class="unlock-check" [class.unlocked]="item.unlocked" aria-hidden="false" fontIcon="done"></mat-icon>
+

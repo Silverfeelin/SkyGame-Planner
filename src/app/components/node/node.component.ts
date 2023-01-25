@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { INode } from 'src/app/interfaces/node.interface';
-import { SelectionService } from 'src/app/services/selection.service';
+import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -10,26 +10,24 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class NodeComponent {
   @Input() node!: INode;
+  @Input() tooltipPlacement = 'bottom';
 
   hover?: boolean;
 
-  /**
-   *
-   */
   constructor(
-    private readonly _selectionService: SelectionService,
-    private readonly _storageService: StorageService
+    private readonly _eventService: EventService,
+    private readonly _storageService: StorageService,
   ) {
   }
 
   mouseEnter(event: MouseEvent): void {
     this.hover = true;
-    this._selectionService.setSelectedNode(this.node);
+    this._eventService.setHoveredNode(this.node);
   }
 
   mouseLeave(event: MouseEvent): void {
     this.hover = false;
-    this._selectionService.setSelectedNode(undefined);
+    this._eventService.setHoveredNode(undefined);
   }
 
   toggleNode(): void {
@@ -45,6 +43,9 @@ export class NodeComponent {
     } else {
       this.lockItem();
     }
+
+    // Notify listeners.
+    this._eventService.toggleItem(item);
   }
 
   unlockItem(): void {

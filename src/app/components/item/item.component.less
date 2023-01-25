@@ -32,21 +32,3 @@
   left: 0;
   font-size: 12px;
 }
-
-.unlock-check {
-  position: absolute;
-  right: 0px;
-  bottom: 0;
-  color: var(--color-unlock-check);
-  opacity: 0;
-  transition: opacity var(--animation-short);
-
-  &::before {
-    filter: drop-shadow(0px 1px 0px var(--color-unlock-check-shadow));
-  }
-
-  &.unlocked {
-    opacity: 1;
-    transition: opacity var(--animation-short);
-  }
-}

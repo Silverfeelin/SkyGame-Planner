@@ -4,27 +4,28 @@
   </div>
   <div class="items">
     <!-- Constellations-->
-    <div class="item">
+    <div class="item" [routerLink]="'constellation'">
+      <mat-icon fontIcon="auto_awesome"></mat-icon>
       <span>Constellations</span>
     </div>
     <!-- Seasons -->
-    <div class="item">
+    <div class="item" [routerLink]="'season'">
+      <mat-icon fontIcon="ac_unit"></mat-icon>
       <span>Seasons</span>
     </div>
     <!-- Traveling Spirits -->
-    <div class="item">
+    <div class="item" [routerLink]="'ts'">
+      <mat-icon fontIcon="hikings"></mat-icon>
       <span>Traveling Spirits</span>
     </div>
     <!-- Items -->
-    <div class="item">
+    <div class="item" [routerLink]="'item'">
+      <mat-icon fontIcon="checkroom"></mat-icon>
       <span>Items</span>
-    </div>
-    <!-- Realms -->
-    <div class="item">
-      <span>Realms</span>
     </div>
     <!-- Credits -->
     <div class="item" [routerLink]="'credits'">
+      <mat-icon fontIcon="info"></mat-icon>
       <span>Credits</span>
     </div>
   </div>

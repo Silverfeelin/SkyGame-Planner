@@ -1,23 +1,11 @@
 import { IConfig, IGuid } from "./base.interface";
 import { IConstellation } from "./constellation.interface";
+import { ICost } from "./cost.interface";
 import { IItem } from "./item.interface";
 
 export interface INodeConfig extends IConfig<INode> {}
 
-export interface INode extends IGuid {
-  // #region Costs
-  /** Cost in candles. */
-  c?: number;
-  /** Cost in hearts. */
-  h?: number;
-  /** Cost in seasonal candles. */
-  sc?: number;
-  /** Cost in seasonal hearts. */
-  sh?: number;
-  /** Cost in ascended candles. */
-  ac?: number;
-  // #endregion
-
+export interface INode extends IGuid, ICost {
   // #region References
   /** Item unlocked through this node. */
   item?: IItem;

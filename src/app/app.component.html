@@ -2,7 +2,7 @@
 <div class="content">
   <router-outlet></router-outlet>
   <ng-container *ngIf="constellations">
-    <app-constellation [constellation]="constellations[0]"></app-constellation>
+    <app-constellation [constellation]="constellations[0]" [name]="'Handstanding Thrillseeker'"></app-constellation>
     <app-constellation [constellation]="constellations[1]"></app-constellation>
     <app-constellation [constellation]="constellations[5]"></app-constellation>
     <app-constellation [constellation]="constellations[6]"></app-constellation>

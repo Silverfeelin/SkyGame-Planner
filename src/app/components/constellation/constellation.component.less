@@ -2,8 +2,14 @@
   display: inline-block;
 }
 
+.content {
+  border: 1px solid var(--color-menu-background);
+  border-radius: var(--border-radius-round);
+  overflow: hidden;
+}
+
 /** Contains the 3 columns */
-.container {
+.constellation {
   display: inline-flex;
   gap: 32px;
   width: min-content;
@@ -55,3 +61,47 @@
   right: -18px;
   top: 0;
 }
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  background: var(--color-menu-background);
+}
+
+.name {
+  padding: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.hr {
+  --width: calc(100% - 20px);
+  height: 1px;
+  width: var(--width);
+  margin-left: calc((100% - var(--width)) / 2);
+  background: var(--color-border-highlight);
+}
+
+.costs {
+  padding: 4px;
+}
+
+.cost {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0 4px;
+}
+.cost mat-icon {
+  width: 17px;
+  vertical-align: sub;
+  height: auto;
+}
+
+.remaining-cost {
+  color: var(--color-accent);
+}
+
+.seasonal mat-icon { fill: var(--color-candle-seasonal); }
