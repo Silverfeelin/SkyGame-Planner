@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-realms',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./realms.component.less']
 })
 export class RealmsComponent {
-
+  constructor(
+    private readonly _dataService: DataService
+  ) {}
 }

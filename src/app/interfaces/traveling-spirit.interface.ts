@@ -1,5 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
-import { IConstellation } from "./constellation.interface";
+import { ISpiritTree } from "./constellation.interface";
 import { IDate } from "./date.interface";
 import { ISpirit } from "./spirit.interface";
 
@@ -11,5 +11,5 @@ export interface ITravelingSpirit extends IGuid {
 
   /* References */
   spirit?: ISpirit;
-  constellation?: IConstellation;
+  constellation?: ISpiritTree;
 }

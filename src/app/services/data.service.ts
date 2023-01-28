@@ -6,7 +6,7 @@ import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
 import { ICandleConfig } from '../interfaces/candle.interface';
 import { IConnectionConfig } from '../interfaces/connection.interface';
-import { IConstellationConfig } from '../interfaces/constellation.interface';
+import { ISpiritTreeConfig } from '../interfaces/constellation.interface';
 import { IEventConfig } from '../interfaces/event.interface';
 import { IItem, IItemConfig } from '../interfaces/item.interface';
 import { INode, INodeConfig } from '../interfaces/node.interface';
@@ -15,9 +15,8 @@ import { IRealmConfig } from '../interfaces/realm.interface';
 import { ISeasonConfig } from '../interfaces/season.interface';
 import { IShopConfig } from '../interfaces/shop.interface';
 import { ISpirit, ISpiritConfig } from '../interfaces/spirit.interface'
-import { ITravelingSpirit, ITravelingSpiritConfig } from '../interfaces/traveling-spirit.interface';
+import { ITravelingSpiritConfig } from '../interfaces/traveling-spirit.interface';
 import { IWingedLight, IWingedLightConfig } from '../interfaces/winged-light.interface';
-import { IDate } from '../interfaces/date.interface';
 import moment, { Moment } from 'moment';
 import { DateHelper } from '../helpers/date-helper';
 import { StorageService } from './storage.service';
@@ -29,7 +28,6 @@ export class DataService {
   areaConfig!: IAreaConfig;
   candleConfig!: ICandleConfig;
   connectionConfig!: IConnectionConfig;
-  constellationConfig!: IConstellationConfig;
   eventConfig!: IEventConfig;
   itemConfig!: IItemConfig;
   nodeConfig!: INodeConfig;
@@ -38,6 +36,7 @@ export class DataService {
   seasonConfig!: ISeasonConfig;
   shopConfig!: IShopConfig;
   spiritConfig!: ISpiritConfig;
+  spiritTreeConfig!: ISpiritTreeConfig;
   travelingSpiritConfig!: ITravelingSpiritConfig;
   wingedLightConfig!: IWingedLightConfig;
 
@@ -59,7 +58,6 @@ export class DataService {
       areaConfig: get('areas.json'),
       candleConfig: get('candles.json'),
       connectionConfig: get('connections.json'),
-      constellationConfig: get('constellations.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
       nodeConfig: get('nodes.json'),
@@ -68,6 +66,7 @@ export class DataService {
       seasonConfig: get('seasons.json'),
       shopConfig: get('shops.json'),
       spiritConfig: get('spirits.json'),
+      spiritTreeConfig: get('spirit-trees.json'),
       travelingSpiritConfig:  get('traveling-spirits.json'),
       wingedLightConfig: get('winged-lights.json')
     }).subscribe({
@@ -93,7 +92,7 @@ export class DataService {
     this.initializeAreas();
     this.initializeSeasons();
     this.initializeTravelingSpirits();
-    this.initializeConstellations();
+    this.initializeSpiritTrees();
 
     if (isDevMode()) {
       this.validate();
@@ -158,12 +157,12 @@ export class DataService {
     })
   }
 
-  private initializeConstellations(): void {
-    this.constellationConfig.items.forEach(constellation => {
+  private initializeSpiritTrees(): void {
+    this.spiritTreeConfig.items.forEach(spiritTree => {
         // Map Constellation to Node.
-        const node = this.guidMap.get(constellation.node as any) as INode;
-        constellation.node = node;
-        node.constellation = constellation;
+        const node = this.guidMap.get(spiritTree.node as any) as INode;
+        spiritTree.node = node;
+        node.spiritTree = spiritTree;
         this.initializeNode(node);
     })
   }
@@ -200,7 +199,7 @@ export class DataService {
       areaConfig: this.areaConfig,
       candleConfig: this.candleConfig,
       connectionConfig: this.connectionConfig,
-      constellationConfig: this.constellationConfig,
+      spiritTreeConfig: this.spiritTreeConfig,
       eventConfig: this.eventConfig,
       itemConfig: this.itemConfig,
       nodeConfig: this.nodeConfig,

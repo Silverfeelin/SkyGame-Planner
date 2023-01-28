@@ -1,9 +1,9 @@
 import { IConfig, IGuid } from "./base.interface";
 import { INode } from "./node.interface";
 
-export interface IConstellationConfig extends IConfig<IConstellation> {}
+export interface ISpiritTreeConfig extends IConfig<ISpiritTree> {}
 
-export interface IConstellation extends IGuid {
+export interface ISpiritTree extends IGuid {
   /* References */
   node: INode;
 }

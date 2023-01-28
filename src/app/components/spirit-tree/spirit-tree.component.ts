@@ -1,19 +1,19 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { IConstellation } from 'src/app/interfaces/constellation.interface';
+import { ISpiritTree } from 'src/app/interfaces/constellation.interface';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
-  selector: 'app-constellation',
-  templateUrl: './constellation.component.html',
-  styleUrls: ['./constellation.component.less']
+  selector: 'app-spirit-tree',
+  templateUrl: './spirit-tree.component.html',
+  styleUrls: ['./spirit-tree.component.less']
 })
-export class ConstellationComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() constellation!: IConstellation;
+export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
+  @Input() constellation!: ISpiritTree;
   @Input() name?: string;
 
   nodes: Array<INode> = [];
