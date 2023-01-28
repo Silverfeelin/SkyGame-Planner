@@ -17,6 +17,9 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
 import { CreditsComponent } from './components/credits/credits.component';
 import { ConstellationsComponent } from './components/constellations/constellations.component';
 import { ItemsComponent } from './components/items/items.component';
+import { GridComponent } from './components/grid/grid.component';
+import { GridColumnirective } from './components/grid/grid-column/grid-column.directive';
+import { EventsComponent } from './components/events/events.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ItemsComponent } from './components/items/items.component';
     StatusBarComponent,
     CreditsComponent,
     ConstellationsComponent,
-    ItemsComponent
+    ItemsComponent,
+    GridComponent,
+    GridColumnirective,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
