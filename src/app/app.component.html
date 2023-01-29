@@ -1,11 +1,17 @@
-<app-menu></app-menu>
-<div class="content">
-  <router-outlet></router-outlet>
-  <ng-container *ngIf="spiritTrees">
-    <app-spirit-tree [constellation]="spiritTrees[0]" [name]="'Handstanding Thrillseeker'"></app-spirit-tree>
-    <app-spirit-tree [constellation]="spiritTrees[1]"></app-spirit-tree>
-    <app-spirit-tree [constellation]="spiritTrees[5]"></app-spirit-tree>
-    <app-spirit-tree [constellation]="spiritTrees[6]"></app-spirit-tree>
-  </ng-container>
-  <app-status-bar></app-status-bar>
+<div class="loading fade-in" *ngIf="!ready">
+  <mat-icon class="spin" fontIcon="cached"></mat-icon>
 </div>
+
+<ng-container *ngIf="ready">
+  <app-menu></app-menu>
+  <div class="content">
+    <router-outlet></router-outlet>
+    <ng-container *ngIf="spiritTrees">
+      <app-spirit-tree [constellation]="spiritTrees[0]" [name]="'Handstanding Thrillseeker'"></app-spirit-tree>
+      <app-spirit-tree [constellation]="spiritTrees[1]"></app-spirit-tree>
+      <app-spirit-tree [constellation]="spiritTrees[5]"></app-spirit-tree>
+      <app-spirit-tree [constellation]="spiritTrees[6]"></app-spirit-tree>
+    </ng-container>
+    <app-status-bar></app-status-bar>
+  </div>
+</ng-container>

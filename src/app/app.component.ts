@@ -14,6 +14,7 @@ export class AppComponent {
   title = 'SkyGame-Planner';
 
   spiritTrees?: Array<ISpiritTree>;
+  ready = false;
 
   constructor(
     private readonly _dataService: DataService,
@@ -27,5 +28,6 @@ export class AppComponent {
 
   onData(): void {
     this.spiritTrees = this._dataService.spiritTreeConfig.items;
+    this.ready = true;
   }
 }

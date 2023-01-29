@@ -10,6 +10,24 @@ a {
   text-decoration: none;
 }
 
+// Scrollbar
+body { scrollbar-width: thin; }
+::-webkit-scrollbar {
+  --size: 10px;
+  width: var(--size);
+  height: var(--size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-item-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-highlight);
+}
+
+// Global classes
+.p-rel { position: relative !important; }
+.p-abs { position: absolute !important; }
 .t-left { text-align: left !important; }
 .t.center { text-align: center !important; }
 .t-right { text-align: right !important; }

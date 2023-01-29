@@ -1,37 +1,39 @@
-<nav>
-  <div class="header">
-    <span class="title">Sky Planner</span>
-  </div>
-  <div class="items">
-    <!-- Realms -->
-    <div class="item" [routerLink]="'realm'">
-      <mat-icon fontIcon="auto_awesome"></mat-icon>
-      <span>Realms</span>
+<aside>
+  <nav>
+    <div class="header d-none d-lg-inline-block">
+      <span class="title">Sky Planner</span>
     </div>
-    <!-- Seasons -->
-    <div class="item" [routerLink]="'season'">
-      <mat-icon fontIcon="ac_unit"></mat-icon>
-      <span>Seasons</span>
+    <div class="items">
+      <!-- Realms -->
+      <a class="item" [routerLink]="'realm'" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
+        <mat-icon fontIcon="auto_awesome"></mat-icon>
+        <span class="name">Realms</span>
+      </a>
+      <!-- Seasons -->
+      <a class="item" [routerLink]="'season'" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
+        <mat-icon fontIcon="ac_unit"></mat-icon>
+        <span class="name">Seasons</span>
+      </a>
+      <!-- Traveling Spirits -->
+      <a class="item" [routerLink]="'ts'" [ngbTooltip]="wide ? '' : 'Traveling Spirits'" placement="right" container="body">
+        <mat-icon fontIcon="hikings"></mat-icon>
+        <span class="name">Traveling Spirits</span>
+      </a>
+      <!-- Traveling Spirits -->
+      <a class="item" [routerLink]="'event'" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
+        <mat-icon fontIcon="celebration"></mat-icon>
+        <span class="name">Events</span>
+      </a>
+      <!-- Items -->
+      <a class="item" [routerLink]="'item'" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
+        <mat-icon fontIcon="checkroom"></mat-icon>
+        <span class="name">Items</span>
+      </a>
+      <!-- Credits -->
+      <a class="item" [routerLink]="'credits'" [ngbTooltip]="wide ? '' : 'Credits'" placement="right" container="body">
+        <mat-icon fontIcon="info"></mat-icon>
+        <span class="name">Credits</span>
+      </a>
     </div>
-    <!-- Traveling Spirits -->
-    <div class="item" [routerLink]="'ts'">
-      <mat-icon fontIcon="hikings"></mat-icon>
-      <span>Traveling Spirits</span>
-    </div>
-    <!-- Traveling Spirits -->
-    <div class="item" [routerLink]="'event'">
-      <mat-icon fontIcon="celebration"></mat-icon>
-      <span>Events</span>
-    </div>
-    <!-- Items -->
-    <div class="item" [routerLink]="'item'">
-      <mat-icon fontIcon="checkroom"></mat-icon>
-      <span>Items</span>
-    </div>
-    <!-- Credits -->
-    <div class="item" [routerLink]="'credits'">
-      <mat-icon fontIcon="info"></mat-icon>
-      <span>Credits</span>
-    </div>
-  </div>
-</nav>
+  </nav>
+</aside>

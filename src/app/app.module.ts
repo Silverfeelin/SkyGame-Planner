@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -43,6 +44,7 @@ import { EventsComponent } from './components/events/events.component';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
+    LayoutModule,
     MatIconModule
   ],
   providers: [],

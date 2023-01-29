@@ -1,8 +1,44 @@
+.loading {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: scaleX(-1);
+
+  mat-icon {
+    scale: 3;
+  }
+
+  @keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+  }
+
+  .spin {
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fade-in 2s ease-in;
+  animation-fill-mode: forwards;
+}
 
 .content {
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--menu-width);
+  bottom: var(--status-height);
   padding: 10px;
-  margin-left: var(--menu-width);
+  overflow: auto;
 }
 
 app-status-bar {
@@ -13,7 +49,7 @@ app-status-bar {
   right: 0;
   padding: 0px 10px;
   background: var(--color-status-background);
-  height: 24px;
+  height: var(--status-height);
   // border-top: 1px solid #222230;
 }
 

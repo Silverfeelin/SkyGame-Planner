@@ -1,10 +1,10 @@
-nav {
+aside {
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
   width: var(--menu-width);
-  background-color: var(--color-menu-background);
+  background-color: var(--color-item-background);
 }
 
 .header {
@@ -14,7 +14,7 @@ nav {
 }
 
 .header, .item {
-  border-bottom: 1px solid var(--color-menu-border);
+  border-bottom: 1px solid var(--color-border-lowlight);
 }
 
 .items {
@@ -23,12 +23,13 @@ nav {
 }
 
 .item {
+  display: block;
   padding: 15px 10px;
   cursor: pointer;
 }
 
 .item:hover {
-  background-color: var(--color-menu-background-highlight);
+  background-color: var(--color-item-background-highlight);
 }
 
 .item mat-icon {
@@ -44,3 +45,14 @@ a:hover, a:focus, a:active, a:visited {
   color: unset;
 }
 
+/* RESPONSIVE */
+
+.name {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .name {
+    display: inline-block;
+  }
+}
