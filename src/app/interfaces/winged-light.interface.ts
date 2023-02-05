@@ -7,7 +7,7 @@ export interface IWingedLightConfig extends IConfig<IWingedLight> {}
 export interface IWingedLight extends IGuid {
   description: string;
 
-  /* References */
+  /// References ///
   area?: IArea;
 
   _wiki?: IWiki;

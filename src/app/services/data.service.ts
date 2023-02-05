@@ -6,7 +6,7 @@ import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
 import { ICandleConfig } from '../interfaces/candle.interface';
 import { IConnectionConfig } from '../interfaces/connection.interface';
-import { ISpiritTreeConfig } from '../interfaces/constellation.interface';
+import { ISpiritTree, ISpiritTreeConfig } from '../interfaces/spirit-tree.interface';
 import { IEventConfig } from '../interfaces/event.interface';
 import { IItem, IItemConfig } from '../interfaces/item.interface';
 import { INode, INodeConfig } from '../interfaces/node.interface';
@@ -14,7 +14,7 @@ import { IQuestConfig } from '../interfaces/quest.interface';
 import { IRealmConfig } from '../interfaces/realm.interface';
 import { ISeasonConfig } from '../interfaces/season.interface';
 import { IShopConfig } from '../interfaces/shop.interface';
-import { ISpirit, ISpiritConfig } from '../interfaces/spirit.interface'
+import { ISpirit, ISpiritConfig, SpiritType } from '../interfaces/spirit.interface'
 import { ITravelingSpiritConfig } from '../interfaces/traveling-spirit.interface';
 import { IWingedLight, IWingedLightConfig } from '../interfaces/winged-light.interface';
 import moment, { Moment } from 'moment';
@@ -120,6 +120,11 @@ export class DataService {
         spirit = this.guidMap.get(spirit as any) as ISpirit;
         area.spirits![i] = spirit;
         spirit.area = area;
+
+        // Update metadata
+        if (area?.realm && spirit.type === SpiritType.Regular) {
+          area.realm.regularSpiritCount = (area.realm.regularSpiritCount ?? 0) + 1;
+        }
       });
 
       // Map Winged Light to Area.
@@ -143,7 +148,8 @@ export class DataService {
   }
 
   private initializeTravelingSpirits(): void {
-    this.travelingSpiritConfig.items.forEach(ts => {
+    const tsCounts: {[key: string]: number} = {};
+    this.travelingSpiritConfig.items.forEach((ts, i) => {
       // Initialize dates
       ts.date = DateHelper.fromInterface(ts.date)!;
       ts.endDate = DateHelper.fromInterface(ts.endDate)
@@ -154,6 +160,16 @@ export class DataService {
       ts.spirit = spirit;
       spirit.ts ??= [];
       spirit.ts.push(ts);
+
+      tsCounts[spirit.name] ??= 0;
+      tsCounts[spirit.name]++;
+      ts.number = i+1;
+      ts.visit = tsCounts[spirit.name];
+
+      // Map TS to Spirit Tree.
+      const tree = this.guidMap.get(ts.tree as any) as ISpiritTree;
+      ts.tree = tree;
+      tree.ts = ts;
     })
   }
 
@@ -211,6 +227,7 @@ export class DataService {
       travelingSpiritConfig: this.travelingSpiritConfig,
       wingedLightConfig: this.wingedLightConfig
     };
+    (window as any).skyGuids = this.guidMap;
     console.log('Data:', (window as any).skyData);
   }
 

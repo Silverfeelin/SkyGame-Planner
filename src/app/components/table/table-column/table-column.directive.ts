@@ -1,8 +1,8 @@
 import { Directive, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[appGridColumn]'
+  selector: '[appTableColumn]'
 })
-export class GridColumnirective {
+export class TableColumnDirective {
   constructor(public template: TemplateRef<any>) {}
 }

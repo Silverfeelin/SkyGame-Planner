@@ -1,5 +1,319 @@
 {
   "items": [
+    // #region Isle
+    // Pointing Candlemaker
+    {
+      "guid": "UJAYu7Uazn",
+      "node": "TvTVj7KrE3"
+    },
+    // Ushering Stargazer
+    {
+      "guid": "iO5Y6DGiiW",
+      "node": "la5LuzVr3o"
+    },
+    // Rejecting Voyager
+    {
+      "guid": "45994RiYac",
+      "node": "eUTopR_CDA"
+    },
+    // #endregion
+    // #region Prairie
+    // Butterfly Charmer
+    {
+      "guid": "V0j-dhLEIw",
+      "node": "4uNOt6mgV6"
+    },
+    // Applauding Bellmaker
+    {
+      "guid": "hQKUIRG3JQ",
+      "node": "rnOFxvQ8yB"
+    },
+    // Waving Bellmaker
+    {
+      "guid": "9HHikEqkYY",
+      "node": "wuxyhkhW4K"
+    },
+    // Slumbering Shipwright
+    {
+      "guid": "HOyyuoXAP9",
+      "node": "Y25JKDR8q0"
+    },
+    // Laughing Light Catcher
+    {
+      "guid": "Es47LhZ5hx",
+      "node": "bQCdZEnHLj"
+    },
+    // Bird Whisperer
+    {
+      "guid": "anlwK70JVL",
+      "node": "VOhxITfbm_"
+    },
+    // Exhausted Dock Worker
+    {
+      "guid": "ALHvJCosOd",
+      "node": "RMoSSq_rSG"
+    },
+    // Ceremonial Worshiper
+    {
+      "guid": "NU6qrcE5Ju",
+      "node": "MImCpY6QaA"
+    },
+    // #endregion
+    // #region Forest
+    // Shivering Trailblazer
+    {
+      "guid": "qV_AsI1GHV",
+      "node": "29JfYP1U6x"
+    },
+    // Blushing Prospector
+    {
+      "guid": "LMcXyV8-2j",
+      "node": "88eWC8NaHK"
+    },
+    // Hide'n'Seek Pioneer
+    {
+      "guid": "R7ffBM1PMH",
+      "node": "4Qtw5zIpON"
+    },
+    // Pouty Porter
+    {
+      "guid": "u_KTXvnqG5",
+      "node": "KsjglEe6SI"
+    },
+    // Dismayed Hunter
+    {
+      "guid": "f34xxhWuw1",
+      "node": "vFmHI2l-5v"
+    },
+    // Apologetic Lumberjack
+    {
+      "guid": "8mHCSAJMJt",
+      "node": "2aPjMjZxVC"
+    },
+    // Tearful Light Miner
+    {
+      "guid": "et4Q9BpF6x",
+      "node": "OHiyG0ecDH"
+    },
+    // Whale Whisperer
+    {
+      "guid": "Mker9XnSXM",
+      "node": "T8jA7xBoO6"
+    },
+    // #endregion
+    // #region Valley
+    // Confident Sightseer
+    {
+      "guid": "DJhTrzv4Yb",
+      "node": "QXUQtHaV4V"
+    },
+    // Handstanding Thrillseeker
+    {
+      "guid": "J49-S6yLbL",
+      "node": "c_m1Wyxrwd"
+    },
+    // Manta Whisperer
+    {
+      "guid": "XRXDlNt2KM",
+      "node": "fUhhICR_SG"
+    },
+    // Backflipping Champion
+    {
+      "guid": "wnFJK6iIdP",
+      "node": "SiSq-1YcL1"
+    },
+    // Cheerful Spectator
+    {
+      "guid": "mHTyXPh-yi",
+      "node": "Kak3sj4SiH"
+    },
+    // Bowing Medalist
+    {
+      "guid": "_aHaMwt5OW",
+      "node": "U09Vg1Bo4G"
+    },
+    // Proud Victor
+    {
+      "guid": "kTUUniUQiN",
+      "node": "u5yiirWvsH"
+    },
+    // #endregion
+    // #region Wasteland
+    // Frightened Refugee
+    {
+      "guid": "2tMrFxgXJy",
+      "node": "dXj9dEGxGF"
+    },
+    // Fainting Warrior
+    {
+      "guid": "7peV6o1G9r",
+      "node": "CdzqIK7HYf"
+    },
+    // Courageous Soldier
+    {
+      "guid": "3W0wLUVJL6",
+      "node": "GZpqRE7Qt9"
+    },
+    // Stealthy Survivor
+    {
+      "guid": "dcgTVFAm6m",
+      "node": "oyQABzBGuU"
+    },
+    // Saluting Captain
+    {
+      "guid": "_WJq0WK8Ds",
+      "node": "PoOWkpwfYx"
+    },
+    // Lookout Scout
+    {
+      "guid": "oU4Uu2zMzG",
+      "node": "Zc_avVFlQx"
+    },
+    // #endregion
+    // #region Vault
+    // Levitating Adept
+    {
+      "guid": "das41f_Q-7",
+      "node": "7VjqIMArcP"
+    },
+    // Meditating Monastic
+    {
+      "guid": "MzxOaKTjwc",
+      "node": "oDypNKciuf"
+    },
+    // Memory Whisperer
+    {
+      "guid": "Vv98PNmcao",
+      "node": "HrhoyxoLVs"
+    },
+    // Polite Scholar
+    {
+      "guid": "Z1PFz0tm12",
+      "node": "9IwUGyaG5-"
+    },
+    // Praying Acolyte
+    {
+      "guid": "5sAVyZ3QBX",
+      "node": "ItpocgQi8H"
+    },
+    // #endregion
+
+    // #region Elders
+    // Isle Elder
+    {
+      "guid": "9_S8rQmBlX",
+      "node": "4eQ9GIhhcJ"
+    },
+    // Prairie Elder
+    {
+      "guid": "eUgsBX5PrB",
+      "node": "6dVXKBi60V"
+    },
+    // Forest Elder
+    {
+      "guid": "TVSuWzpcpt",
+      "node": "ncEK0wS3c6"
+    },
+    // Valley Elders
+    {
+      "guid": "EZP7ISiCn5",
+      "node": "lxz9_FA5lW"
+    },
+    // Wasteland Elder
+    {
+      "guid": "VMIKm__4n_",
+      "node": "6COu8N6od3"
+    },
+    // Vault Elder
+    {
+      "guid": "ntRHO7rHJt",
+      "node": "cr2m1Ibgsl"
+    },
+    // #endregion
+
+    // #region Season Guides
+    // Gratitude Guide
+    {
+      "guid": "e_dcWfqWdl",
+      "node": "jav8BsPwoS"
+    },
+    // Lightseekers Guide
+    {
+      "guid": "RDhnSDRp_-",
+      "node": "ow2YTE45OX"
+    },
+    // Belonging Guide
+    {
+      "guid": "KEuVAhun2o",
+      "node": "xG-_J9ehcK"
+    },
+    // Rhythm Guide
+    {
+      "guid": "Qg7qDyBGmz",
+      "node": "gahXCMXhRk"
+    },
+    // Enchantment Guide
+    {
+      "guid": "MBr5qVDM3P",
+      "node": "kt2WO262jv"
+    },
+    // Sanctuary Guide
+    {
+      "guid": "yZlWqKpS7C",
+      "node": "Fv3eD2B046"
+    },
+    // Prophecy Guide
+    {
+      "guid": "SQZ7rff2Ck",
+      "node": "CRDwOv02Yn"
+    },
+    // Dreams Guide
+    {
+      "guid": "f74U1Fp5Nk",
+      "node": "E6A7ecGOwR"
+    },
+    // Assembly Guide
+    {
+      "guid": "FvRPGlaPpW",
+      "node": "dBH2AWEdO9"
+    },
+    // The Rose
+    {
+      "guid": "oL3CS56h9y",
+      "node": "2D-adfJXBK"
+    },
+    // Flight Guide
+    {
+      "guid": "23Vo9a04Sm",
+      "node": "Tviv_8P0R_"
+    },
+    // Abyss Guide
+    {
+      "guid": "xz8rpLZQmm",
+      "node": "xns82LP3Gt"
+    },
+    // Performance Guide
+    {
+      "guid": "QPaLIzQqeU",
+      "node": "VIzdFH49NS"
+    },
+    // The Void of Shattering
+    {
+      "guid": "BK8jQyPH_n",
+      "node": "jodai-lqNE"
+    },
+    // AURORA Guide
+    {
+      "guid": "P1nzgnNVFT",
+      "node": "NlJnO3uHyG"
+    },
+    // Remembrance Guide
+    {
+      "guid": "fchA5IwiRm",
+      "node": "N8gfMfr2VV"
+    },
+    // #endregion
+
     // #region Gratitude
     // Sassy Drifter
     {
@@ -97,6 +411,10 @@
     {
       "guid": "DzGt3o1MRV",
       "node": "pkfttmeuJ9"
+    },
+    {
+      "guid": "nk8pRkgqr_",
+      "node": "7tpH4Bmsyo"
     },
     // Doublefive Light Catcher
     {
@@ -333,26 +651,424 @@
     },
     // #endregion
     // #region Enchantment
+    // Nodding Muralist
+    {
+      "guid": "zKvpYwiaFo",
+      "node": "j1crjoTmuk"
+    },
+    {
+      "guid": "qr3oEgGfHz",
+      "node": "7wRuXI3kxj"
+    },
+    {
+      "guid": "I0Gnoj9xMX",
+      "node": "FZ-is-F5e_"
+    },
+    // Indifferent Alchemist
+    {
+      "guid": "t5FoVLTpxP",
+      "node": "3r1FbFbCtb"
+    },
+    {
+      "guid": "72dYLMlmgE",
+      "node": "mMzIb74FLo"
+    },
+    {
+      "guid": "3o1XOorJ6U",
+      "node": "JCfGhRIufT"
+    },
+    // Crab Walker
+    {
+      "guid": "_IpcZ_U6zY",
+      "node": "P3b21yQSwC"
+    },
+    {
+      "guid": "Q8KOAVQUVi",
+      "node": "y9eOQPn2jd"
+    },
+    // Scarecrow Farmer
+    {
+      "guid": "jRTuid-Y21",
+      "node": "jztFaDx20s"
+    },
+    {
+      "guid": "oX97wBGbTq",
+      "node": "QlmUhxCBdD"
+    },
+    // Snoozing Carpenter
+    {
+      "guid": "jJoNEIUqgP",
+      "node": "YkM_tSjB34"
+    },
+    {
+      "guid": "vAzPwOoABz",
+      "node": "swYJ7bBjcp"
+    },
+    // Playfighting Herbalist
+    {
+      "guid": "LSFtagpL9R",
+      "node": "wsKSTuhwpG"
+    },
+    {
+      "guid": "vuRDSv8Neq",
+      "node": "w5ho__6Czh"
+    },
     // #endregion
     // #region Sanctuary
+    // Jelly Whisperer
+    {
+      "guid": "GVghUxleba",
+      "node": "Rl_priwPb9"
+    },
+    {
+      "guid": "NuBYBnu8jU",
+      "node": "5Of6SeZovV"
+    },
+    // Timid Bookworm
+    {
+      "guid": "rMbkkmBZQM",
+      "node": "B4rizR4xxx"
+    },
+    {
+      "guid": "C2NzE6XBs8",
+      "node": "DO8c4nzYyI"
+    },
+    {
+      "guid": "zBx6Xvp_Mh",
+      "node": "kgHeL_lWRC"
+    },
+    // Rallying Thrillseeker
+    {
+      "guid": "MLnvMI_SQf",
+      "node": "VoHSiNLHP4"
+    },
+    {
+      "guid": "YXL_-pLNs2",
+      "node": "Km9Kt5vTXq"
+    },
+    {
+      "guid": "99d9-5srLE",
+      "node": "CSea5Yn312"
+    },
+    // Hiking Grouch
+    {
+      "guid": "NGPhozyesb",
+      "node": "_n42ZUm0ev"
+    },
+    {
+      "guid": "oe3uZn1UeY",
+      "node": "cYKWaAJnb2"
+    },
+    // Grateful Shell Collector
+    {
+      "guid": "a0T7_evTz6",
+      "node": "1fmBVbUjab"
+    },
+    {
+      "guid": "qlsUydVjy3",
+      "node": "cg3bQs-LUF"
+    },
+    // Chill Sunbather
+    {
+      "guid": "MwCPwxfL0B",
+      "node": "-_0EoMUmXu"
+    },
+    {
+      "guid": "x41Mbv166z",
+      "node": "OQ4LkbbPmX"
+    },
     // #endregion
     // #region Prophecy
+    // Prophet of Water
+    {
+      "guid": "NZRfrbFo5E",
+      "node": "6GpHoGx5-0"
+    },
+    {
+      "guid": "NgyO7nqVwS",
+      "node": "OXaaqS6Q89"
+    },
+    {
+      "guid": "aW1PjCF1-b",
+      "node": "v3mmy9-76J"
+    },
+    // Prophet of Earth
+    {
+      "guid": "26RNODjYdR",
+      "node": "HI3hEkeep2"
+    },
+    {
+      "guid": "XWtTNBu8Oc",
+      "node": "OPq_xJifA9"
+    },
+    // Prophet of Air
+    {
+      "guid": "llk8KwqtQo",
+      "node": "eBz4SjTCbE"
+    },
+    {
+      "guid": "79Ttb2xGMp",
+      "node": "HgEsD5Goxw"
+    },
+    // Prophet of Fire
+    {
+      "guid": "u0qm82zESx",
+      "node": "joPtiDGThJ"
+    },
+    {
+      "guid": "uOI62Ag71R",
+      "node": "7ZxpZlwKJ3"
+    },
     // #endregion
     // #region Dreams
+    // Bearhug Hermit
+    {
+      "guid": "Dz7xSJMui2",
+      "node": "ZCa7gd50nR"
+    },
+    {
+      "guid": "XDrtg4QXU9",
+      "node": "o64LV_PfVs"
+    },
+    // Dancing Performer
+    {
+      "guid": "zUy1Dlkzbl",
+      "node": "6i1ljkdw6g"
+    },
+    // Peeking Postman
+    {
+      "guid": "sxbsSa-E47",
+      "node": "rcw4aWBVCb"
+    },
+    {
+      "guid": "aMvUAm6DsJ",
+      "node": "_fxwGV2qpQ"
+    },
+    // Spinning Mentor
+    {
+      "guid": "duRfvp3IvK",
+      "node": "3OmVOrRC43"
+    },
+    {
+      "guid": "hkmtCkwn9U",
+      "node": "F2z8PZwU61"
+    },
     // #endregion
     // #region Assembly
+    // Baffled Botanist
+    {
+      "guid": "u-NLeQNopc",
+      "node": "ANlyLKl8ho"
+    },
+    {
+      "guid": "5fHIIjUjsS",
+      "node": "A4mNW2Sf8E"
+    },
+    // Scolding Student
+    {
+      "guid": "tJ92dz1ans",
+      "node": "xEpQNLe0ur"
+    },
+    {
+      "guid": "JCRJfVL3CR",
+      "node": "iDh_8vdUb5"
+    },
+    // Scaredy Cadet
+    {
+      "guid": "BTXu36Anhy",
+      "node": "15h4Sx9Xjj"
+    },
+    // Marching Adventurer
+    {
+      "guid": "MaqbAvyQQ8",
+      "node": "x1a7G7bveD"
+    },
+    // Chuckling Scout
+    {
+      "guid": "n43yrGprN_",
+      "node": "7UtgKGCYKK"
+    },
+    // Daydream Forester
+    {
+      "guid": "oeVXh5azl3",
+      "node": "rPiu3Qdyxw"
+    },
+    {
+      "guid": "FnSlorCsvc",
+      "node": "MV2_-tldoA"
+    },
     // #endregion
     // #region The Little Prince
+    // Beckoning Ruler
+    {
+      "guid": "GpFO-QB9kn",
+      "node": "WVTukTL1td"
+    },
+    {
+      "guid": "ooYxMwO4D_",
+      "node": "CyW-WrLl5B"
+    },
+    // Gloating Narcissist
+    {
+      "guid": "G8NMsyrbeV",
+      "node": "xT68D-1o-1"
+    },
+    // Stretching Lamplighter
+    {
+      "guid": "tGROdiGKVT",
+      "node": "5jVf4BFkJD"
+    },
+    // Slouching Soldier
+    {
+      "guid": "evynWpUlaz",
+      "node": "yyUs-AZ_f8"
+    },
+    // Sneezing Geographer
+    {
+      "guid": "eY5I6thUk8",
+      "node": "u3evPD761Y"
+    },
+    // Star Collector
+    {
+      "guid": "Ikiuyl-Nm1",
+      "node": "9ADrzfFPhx"
+    },
     // #endregion
     // #region Flight
+    // Lively Navigator
+    {
+      "guid": "8XT3GDeonb",
+      "node": "C04G6KylaW"
+    },
+    {
+      "guid": "C7q6_1idl7",
+      "node": "0AwW-9AjqL"
+    },
+    // Light Whisperer
+    {
+      "guid": "DHbvqLtLCU",
+      "node": "zI5GRFCBhX"
+    },
+    // Tinkering Chimesmith
+    {
+      "guid": "66idlQe3mK",
+      "node": "wcUvdoaglf"
+    },
+    // Talented Builder
+    {
+      "guid": "4Zj4C2RUj1",
+      "node": "et9DvsI31i"
+    },
     // #endregion
     // #region Abyss
+    // Anxious Angler
+    {
+      "guid": "M-25cEcvw-",
+      "node": "WLTEZBaXZ6"
+    },
+    // Ceasing Commodore
+    {
+      "guid": "1c2RnFkkmb",
+      "node": "Wt_FOZCmQf"
+    },
+    // Bumbling Boatswain
+    {
+      "guid": "oNXi897gvR",
+      "node": "8rargE3UTh"
+    },
+    // Cackling Cannoneer
+    {
+      "guid": "ag2kvsRKRN",
+      "node": "lNBxGQzzj6"
+    },
     // #endregion
     // #region Performance
+    // Frantic Stagehand
+    {
+      "guid": "i0lRmQ31MS",
+      "node": "eUh0KO-9lY"
+    },
+    // Forgetful Storyteller
+    {
+      "guid": "UEf6UQn_yl",
+      "node": "DAX89eU3v8"
+    },
+    // Mellow Musician
+    {
+      "guid": "18DZaVJ0JB",
+      "node": "iNZGYBUTH6"
+    },
+    // Modest Dancer
+    {
+      "guid": "pYtg2G6fMP",
+      "node": "p7a3ZfuSbK"
+    },
     // #endregion
     // #region Shattering
+    // Ancient Light (Jellyfish)
+    {
+      "guid": "xLwRm1AfSm",
+      "node": "bfQU2rdu6e"
+    },
+    // Ancient Light (Manta)
+    {
+      "guid": "1fhyjtk7uy",
+      "node": "ijzEaeq_aP"
+    },
+    // Ancient Darkness (Plant)
+    {
+      "guid": "b6rp9fopvO",
+      "node": "cJ_Vhjb_UA"
+    },
+    // Ancient Darkness (Dragon)
+    {
+      "guid": "7RgA-evqca",
+      "node": "7fR7V84jZg"
+    },
     // #endregion
     // #region AURORA
+    // Running Wayfarer
+    {
+      "guid": "U8EBIguISN",
+      "node": "hnLmvU_fg8"
+    },
+    // Mindful Miner
+    {
+      "guid": "bMfsxhWfRe",
+      "node": "7ZiCvfqa6X"
+    },
+    // Warrior of Love
+    {
+      "guid": "mfj2dmg6Dd",
+      "node": "Zrb2hCvgkb"
+    },
+    // Seed of Hope
+    {
+      "guid": "W7fm2UpXGb",
+      "node": "4ohNhhcV87"
+    },
+    // #endregion
+    // #region Remembrance
+    // Bereft Veteran
+    {
+      "guid": "zWD_AxgIGC",
+      "node": "9bB4SRcAvm"
+    },
+    // Pleading Child
+    {
+      "guid": "wU4H1ZfZot",
+      "node": "GjeQ3Fdpac"
+    },
+    // Tiptoeing Tea-Brewer
+    {
+      "guid": "gOAqpgTH4R",
+      "node": "FAsuN4N2hI"
+    },
+    // Wounded Warrior
+    {
+      "guid": "Cze45b5NuK",
+      "node": "6nhyx0XwCf"
+    },
     // #endregion
   ]
 }

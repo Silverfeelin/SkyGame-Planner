@@ -1,5 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
-import { ISpiritTree } from "./constellation.interface";
+import { ISpiritTree } from "./spirit-tree.interface";
 import { ICost } from "./cost.interface";
 import { IItem } from "./item.interface";
 
@@ -21,6 +21,6 @@ export interface INode extends IGuid, ICost {
   prev?: INode;
   // #endregion
 
-  /* Progress */
+  /// Progress ///
   unlocked?: boolean;
 }

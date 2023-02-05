@@ -1,0 +1,13 @@
+<table class="">
+  <tbody>
+    <ng-container *ngFor="let row of rows">
+      <tr>
+        <ng-container *ngFor="let column of columns">
+          <td>
+            <ng-container [ngTemplateOutlet]="column.template" [ngTemplateOutletContext]="{row}"></ng-container>
+          </td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

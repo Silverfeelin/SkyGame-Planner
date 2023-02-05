@@ -10,8 +10,11 @@ export interface IRealm extends IGuid {
   name: string;
   shortName: string;
 
-  /* References */
+  /// References ///
   areas?: Array<IArea>;
+
+  /// Metadata ///
+  regularSpiritCount?: number;
 
   _wiki?: IWiki;
 }

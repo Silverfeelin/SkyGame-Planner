@@ -14,10 +14,10 @@ export interface IItem extends IGuid {
   // Music
   sheet?: number;
 
-  /* References */
+  /// References ///
   nodes?: Array<INode>;
 
-  /* Progress */
+  /// Progress ///
   unlocked?: boolean;
 }
 
@@ -50,6 +50,8 @@ export enum ItemType {
   Spell = 'Spell',
   /** All music sheets. */
   Music = 'Music',
+  /** All quests. */
+  Quest = 'Quest',
   /** Special (non-)items such as candle blessings. */
   Special = 'Special'
 }

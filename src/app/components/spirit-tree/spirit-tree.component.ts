@@ -1,7 +1,7 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { ISpiritTree } from 'src/app/interfaces/constellation.interface';
+import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
@@ -22,6 +22,7 @@ export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
   right: Array<INode> = [];
 
   itemMap = new Map<string, INode>();
+  hasCost!: boolean;
   totalCost!: ICost;
   remainingCost!: ICost;
 
@@ -55,9 +56,11 @@ export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
     this.totalCost = { c: 0, h: 0, sc: 0, sh: 0, ac: 0 };
     this.remainingCost = { c: 0, h: 0, sc: 0, sh: 0, ac: 0 };
     this.nodes = []; this.left = []; this.center = []; this.right = [];
+    this.hasCost = false;
 
     if (!this.constellation) { return; }
     this.initializeNode(this.constellation.node, 0, 0);
+    this.hasCost = !CostHelper.isEmpty(this.totalCost);
   }
 
   subscribeItemChanged(): void {
@@ -88,9 +91,9 @@ export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
     if (node.sh) { this.totalCost.sh! += node.sh };
     if (node.ac) { this.totalCost.ac! += node.ac };
 
-    if (node.nw) { this.initializeNode(node.nw, -1, level); }
-    if (node.ne) { this.initializeNode(node.ne, 1, level); }
-    if (node.n) { this.initializeNode(node.n, 0, level + 1); }
+    if (node.nw) { this.initializeNode(node.nw, direction -1, level); }
+    if (node.ne) { this.initializeNode(node.ne, direction + 1, level); }
+    if (node.n) { this.initializeNode(node.n, direction, level + 1); }
   }
 
   calculateRemainingCosts(): void {

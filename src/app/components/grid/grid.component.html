@@ -1,5 +1,0 @@
-<ng-container *ngFor="let row of rows">
-  <ng-container *ngFor="let gridColumn of gridColumns">
-    <ng-container [ngTemplateOutlet]="gridColumn.template" [ngTemplateOutletContext]="{row}"></ng-container>
-  </ng-container>
-</ng-container>

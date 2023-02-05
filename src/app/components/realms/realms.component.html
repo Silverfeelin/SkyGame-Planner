@@ -1,7 +1,3 @@
-<!-- <app-grid [rows]="gridRows">
-  <ng-template appGridColumn let-row="row">{{ row | json }}</ng-template>
-</app-grid> -->
-
 <div class="realms">
   <div class="realm p-rel" *ngFor="let realm of realms">
     <h1>{{realm.name}}</h1>
@@ -16,12 +12,8 @@
       Areas
     </div> -->
     <!-- Spirits -->
-    <div class="mt-2 item">
-      Spirits
-    </div>
-    <!-- Elder -->
-    <div class="mt-2 item">
-      Elder
+    <div *ngIf="realm.regularSpiritCount" class="mt-2 item nav" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular' }">
+      Spirits&nbsp;<span class="c-accent">({{ realm.regularSpiritCount }})</span>
     </div>
   </div>
 </div>

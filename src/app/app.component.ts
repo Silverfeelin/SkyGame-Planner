@@ -1,7 +1,8 @@
 import { Component } from '@angular/core'
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ISpiritTree } from './interfaces/constellation.interface';
+import { NodeHelper } from './helpers/node-helper';
+import { ISpiritTree } from './interfaces/spirit-tree.interface';
 import { DataService } from './services/data.service';
 import { StorageService } from './services/storage.service';
 
@@ -27,7 +28,8 @@ export class AppComponent {
   }
 
   onData(): void {
-    this.spiritTrees = this._dataService.spiritTreeConfig.items;
+    this.spiritTrees = this._dataService.spiritTreeConfig.items.filter(v => NodeHelper.find(v.node,
+      n => !!n.sh || n.guid == 'jav8BsPwoS' || n.guid === 'ow2YTE45OX'));
     this.ready = true;
   }
 }

@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="constellation">
+  <div class="spirit-tree">
     <div class="column left">
       <div class="item" *ngFor="let node of left">
         <app-node *ngIf="node" [node]="node" [position]="'left'"></app-node>
@@ -26,8 +26,8 @@
   </div>
   <div class="footer">
     <div class="name" [title]="name">{{ name || '' }}</div>
-    <div class="hr"></div>
-    <div class="costs" [ngbTooltip]="costHover" placement="top">
+    <div *ngIf="hasCost" class="hr"></div>
+    <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" placement="top">
       <div class="cost" *ngIf="totalCost?.c">
         {{ totalCost.c }}
         <span class="remaining-cost">({{ remainingCost.c || 0 }})</span>
@@ -46,7 +46,7 @@
       <div class="cost seasonal" *ngIf="totalCost?.sh">
         {{ totalCost.sh }}
         <span class="remaining-cost">({{ remainingCost.sh || 0 }})</span>
-        <mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+        <mat-icon svgIcon="heart" [inline]="false"></mat-icon>
       </div>
       <div class="cost ascend" *ngIf="totalCost?.ac">
         {{ totalCost.ac }}
@@ -58,6 +58,6 @@
 </div>
 
 <ng-template #costHover>
-  <span>Total cost of all the items in this constellation.</span><br/>
+  <span>Total cost of all the items in this tree.</span><br/>
   <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
 </ng-template>

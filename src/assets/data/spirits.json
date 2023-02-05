@@ -3,568 +3,788 @@
     // #region Isle
     {
       "guid": "qSs575DZ6P",
+      "type": "Regular",
       "name": "Pointing Candlemaker"
     },
     {
       "guid": "Tw-J4oXgie",
+      "type": "Regular",
       "name": "Ushering Stargazer"
     },
     {
       "guid": "bmYjIuJ6Qf",
+      "type": "Regular",
       "name": "Rejecting Voyager"
     },
     // #endregion
     // #region Prairie
     {
       "guid": "ulvP8R6C6a",
+      "type": "Regular",
       "name": "Butterfly Charmer"
     },
     {
       "guid": "WFjSczlPTV",
+      "type": "Regular",
       "name": "Applauding Bellmaker"
     },
     {
       "guid": "48jm5EQzfU",
+      "type": "Regular",
       "name": "Waving Bellmaker"
     },
     {
       "guid": "R4ILdPamhd",
+      "type": "Regular",
       "name": "Slumbering Shipwright"
     },
     {
       "guid": "K3CIxcDSjq",
+      "type": "Regular",
       "name": "Laughing Light Catcher"
     },
     {
       "guid": "KM1xzU9v5P",
+      "type": "Regular",
       "name": "Bird Whisperer"
     },
     {
       "guid": "MyLI80npmW",
+      "type": "Regular",
       "name": "Exhausted Dock Worker"
     },
     {
       "guid": "gtbbZnpLbt",
+      "type": "Regular",
       "name": "Ceremonial Worshiper"
     },
     // #endregion
     // #region Forest
     {
       "guid": "LwcCtbnGuF",
+      "type": "Regular",
       "name": "Shivering Trailblazer"
     },
     {
       "guid": "xbGBFC0rnu",
+      "type": "Regular",
       "name": "Blushing Prospector"
     },
     {
       "guid": "p-WdkJpGB5",
+      "type": "Regular",
       "name": "Hide'n'Seek Pioneer"
     },
     {
       "guid": "waSFuoNQsR",
+      "type": "Regular",
       "name": "Pouty Porter"
     },
     {
       "guid": "L_0YoE4O8Z",
+      "type": "Regular",
       "name": "Dismayed Hunter"
     },
     {
       "guid": "puj9z07ew0",
+      "type": "Regular",
       "name": "Apologetic Lumberjack"
     },
     {
       "guid": "gF3qSnQNxx",
+      "type": "Regular",
       "name": "Tearful Light Miner"
     },
     {
       "guid": "R_zBE7HaWV",
+      "type": "Regular",
       "name": "Whale Whisperer"
     },
     // #endregion
     // #region Valley
     {
       "guid": "4KCKJxR56G",
+      "type": "Regular",
       "name": "Confident Sightseer"
     },
     {
       "guid": "yUp189PWVS",
+      "type": "Regular",
       "name": "Handstanding Thrillseeker"
     },
     {
       "guid": "CfXORyMFx4",
+      "type": "Regular",
       "name": "Manta Whisperer"
     },
     {
       "guid": "H5iKZChQIK",
+      "type": "Regular",
       "name": "Backflipping Champion"
     },
     {
       "guid": "IIt-zYJC2N",
+      "type": "Regular",
       "name": "Cheerful Spectator"
     },
     {
       "guid": "fRtK3WFMm1",
+      "type": "Regular",
       "name": "Bowing Medalist"
     },
     {
       "guid": "CQJO8mQ0do",
+      "type": "Regular",
       "name": "Proud Victor"
     },
     // #endregion
     // #region Wasteland
     {
       "guid": "TqswdiTmEC",
+      "type": "Regular",
       "name": "Frightened Refugee"
     },
     {
       "guid": "k8nqBtLJ0R",
+      "type": "Regular",
       "name": "Fainting Warrior"
     },
     {
       "guid": "_4VyRWxD3V",
+      "type": "Regular",
       "name": "Courageous Soldier"
     },
     {
       "guid": "trJkBr3myf",
+      "type": "Regular",
       "name": "Stealthy Survivor"
     },
     {
       "guid": "6GO0ISasq7",
+      "type": "Regular",
       "name": "Saluting Captain"
     },
     {
       "guid": "nwpDbbbWcw",
+      "type": "Regular",
       "name": "Lookout Scout"
     },
     // #endregion
     // #region Vault
     {
       "guid": "Im7m8syitV",
+      "type": "Regular",
       "name": "Levitating Adept"
     },
     {
       "guid": "Gi75RcvXd0",
+      "type": "Regular",
       "name": "Meditating Monastic"
     },
     {
       "guid": "HeJISF946a",
+      "type": "Regular",
       "name": "Memory Whisperer"
     },
     {
       "guid": "1OGD_H3a7X",
+      "type": "Regular",
       "name": "Polite Scholar"
     },
     {
       "guid": "_8CvQjUnQg",
+      "type": "Regular",
       "name": "Praying Acolyte"
     },
     // #endregion
     // #region Office
     {
       "guid": "Ayoc2XvMTy",
+      "type": "Special",
       "name": "Office Spirit #1"
     },
     {
       "guid": "izKBXplld6",
+      "type": "Special",
       "name": "Office Spirit #2"
     },
     {
       "guid": "cpTFBZ-im4",
+      "type": "Special",
       "name": "Office Spirit #3"
     },
     {
       "guid": "bQCZEuAuZe",
+      "type": "Special",
       "name": "Office Spirit #4"
     },
     {
       "guid": "MKdRGA66hC",
+      "type": "Special",
       "name": "Office Spirit #5"
     },
     {
       "guid": "HmibyU0UEG",
+      "type": "Special",
       "name": "Office Spirit #6"
     },
     {
       "guid": "GUwL23XDTb",
+      "type": "Special",
       "name": "Office Spirit #7"
     },
     // #endregion
+
     // #region Elders
     {
       "guid": "l8tl0mHCWH",
+      "type": "Elder",
       "name": "Isle Elder"
     },
     {
       "guid": "iu6tmCPpex",
+      "type": "Elder",
       "name": "Prairie Elder"
     },
     {
       "guid": "aj2x9H8ECy",
+      "type": "Elder",
       "name": "Forest Elder"
     },
     {
       "guid": "NgLbFXaB4z",
+      "type": "Elder",
       "name": "Valley Elders"
     },
     {
       "guid": "JQR4EGE6io",
+      "type": "Elder",
       "name": "Wasteland Elder"
     },
     {
       "guid": "NLbS2a-y2u",
+      "type": "Elder",
       "name": "Vault Elder"
     },
     // #endregion
+
+    // #region Season Guides
+    {
+      "guid": "jM6IlC8yk8",
+      "type": "Guide",
+      "name": "Gratitude Guide"
+    },
+    {
+      "guid": "UNKzFTE5mB",
+      "type": "Guide",
+      "name": "Lightseekers Guide"
+    },
+    {
+      "guid": "5rr1zr2_j5",
+      "type": "Guide",
+      "name": "Belonging Guide"
+    },
+    {
+      "guid": "zldsm5S962",
+      "type": "Guide",
+      "name": "Rhythm Guide"
+    },
+    {
+      "guid": "ZomY9nil8V",
+      "type": "Guide",
+      "name": "Enchantment Guide"
+    },
+    {
+      "guid": "0IoADuWn1P",
+      "type": "Guide",
+      "name": "Sanctuary Guide"
+    },
+    {
+      "guid": "DKFofCESGJ",
+      "type": "Guide",
+      "name": "Prophecy Guide"
+    },
+    {
+      "guid": "sj6YhQZQvM",
+      "type": "Guide",
+      "name": "Dreams Guide"
+    },
+    {
+      "guid": "cpwvdVEzKN",
+      "type": "Guide",
+      "name": "Assembly Guide"
+    },
+    {
+      "guid": "HfafU7Pfui",
+      "type": "Guide",
+      "name": "The Rose"
+    },
+    {
+      "guid": "FF8u1g9XI_",
+      "type": "Guide",
+      "name": "Flight Guide"
+    },
+    {
+      "guid": "WFqMqmjVv9",
+      "type": "Guide",
+      "name": "Abyss Guide"
+    },
+    {
+      "guid": "qSggZYj_x3",
+      "type": "Guide",
+      "name": "Performance Guide"
+    },
+    {
+      "guid": "q8g57aJV8r",
+      "type": "Guide",
+      "name": "The Void of Shattering"
+    },
+    {
+      "guid": "OaAUJHNIjE",
+      "type": "Guide",
+      "name": "AURORA Guide"
+    },
+    {
+      "guid": "ZGSnOxK9gb",
+      "type": "Guide",
+      "name": "Remembrance Guide"
+    },
+    // #endregion
+
     // #region Gratitude
     {
       "guid": "0yGgX4Yk3c",
+      "type": "Season",
       "name": "Sassy Drifter"
     },
     {
       "guid": "Q-N8n-0b8O",
+      "type": "Season",
       "name": "Stretching Guru"
     },
     {
       "guid": "lmydkMDQeP",
+      "type": "Season",
       "name": "Provoking Performer"
     },
     {
       "guid": "JROKFatVLC",
+      "type": "Season",
       "name": "Leaping Dancer"
     },
     {
       "guid": "eToUA1mSjz",
+      "type": "Season",
       "name": "Saluting Protector"
     },
     {
       "guid": "KZaVtTUdlR",
+      "type": "Season",
       "name": "Greeting Shaman"
     },
     // #endregion
     // #region Lightseekers
     {
       "guid": "U9RJMJseUK",
+      "type": "Season",
       "name": "Piggyback Lightseeker"
     },
     {
       "guid": "jncJKA4IaM",
+      "type": "Season",
       "name": "Doublefive Light Catcher"
     },
     {
       "guid": "8OYabqG_jZ",
+      "type": "Season",
       "name": "Laidback Pioneer"
     },
     {
       "guid": "bHCSyFQ4u-",
+      "type": "Season",
       "name": "Twirling Champion"
     },
     {
       "guid": "tZG5hNcINX",
+      "type": "Season",
       "name": "Crab Whisperer"
     },
     {
       "guid": "mZZ-MkZJ1x",
+      "type": "Season",
       "name": "Shushing Light Scholar"
     },
     // #endregion
     // #region Belonging
     {
+      "guid": "FzPlgFRy98",
+      "type": "Season",
+      "name": "Belonging Guide"
+    },
+    {
       "guid": "5u3TXZON81",
+      "type": "Season",
       "name": "Confetti Cousin"
     },
     {
       "guid": "f3AD39Q2Il",
+      "type": "Season",
       "name": "Boogie Kid"
     },
     {
       "guid": "CcOE42N9Mc",
+      "type": "Season",
       "name": "Sparkler Parent"
     },
     {
       "guid": "7EzWoLR1w4",
+      "type": "Season",
       "name": "Wise Grandparent"
     },
     {
       "guid": "LO75aDy9Zc",
+      "type": "Season",
       "name": "Pleaful Parent"
     },
     {
       "guid": "gcEV41jg3U",
+      "type": "Season",
       "name": "Hairtousle Teen"
     },
     // #endregion
     // #region Rhythm
     {
       "guid": "Q5pn7wxwUD",
+      "type": "Season",
       "name": "Troupe Greeter"
     },
     {
       "guid": "PYsLThJYPx",
+      "type": "Season",
       "name": "Festival Spin Dancer"
     },
     {
       "guid": "RUGuLBBPcg",
+      "type": "Season",
       "name": "Admiring Actor"
     },
     {
       "guid": "9y_5scrYa9",
+      "type": "Season",
       "name": "Troupe Juggler"
     },
     {
       "guid": "OJECJaFI5p",
+      "type": "Season",
       "name": "Respectful Pianist"
     },
     {
       "guid": "CH6e-TQz6n",
+      "type": "Season",
       "name": "Thoughtful Director"
     },
     // #endregion
     // #region Enchantment
     {
       "guid": "HphxLKhDBZ",
+      "type": "Season",
       "name": "Nodding Muralist"
     },
     {
       "guid": "kQiNS82DDY",
+      "type": "Season",
       "name": "Indifferent Alchemist"
     },
     {
       "guid": "OaysgoHcZI",
+      "type": "Season",
       "name": "Crab Walker"
     },
     {
       "guid": "UJVa4nb2nn",
+      "type": "Season",
       "name": "Scarecrow Farmer"
     },
     {
       "guid": "Be41CnHkEI",
+      "type": "Season",
       "name": "Snoozing Carpenter"
     },
     {
       "guid": "hgjklF3nQI",
+      "type": "Season",
       "name": "Playfighting Herbalist"
     },
     // #endregion
     // #region Sanctuary
     {
       "guid": "jx7koL5guD",
+      "type": "Season",
       "name": "Jelly Whisperer"
     },
     {
       "guid": "MEw6did3kI",
+      "type": "Season",
       "name": "Timid Bookworm"
     },
     {
       "guid": "IDEim-HNOZ",
+      "type": "Season",
       "name": "Rallying Thrillseeker"
     },
     {
       "guid": "z4xqXUkx_6",
+      "type": "Season",
       "name": "Hiking Grouch"
     },
     {
       "guid": "uxtR1vVL8c",
+      "type": "Season",
       "name": "Grateful Shell Collector"
     },
     {
       "guid": "8N9cC4SvzM",
+      "type": "Season",
       "name": "Chill Sunbather"
     },
     // #endregion
     // #region Prophecy
     {
       "guid": "9Rgsos9xqE",
+      "type": "Season",
       "name": "Prophet of Water"
     },
     {
       "guid": "oIeqSdqyWu",
+      "type": "Season",
       "name": "Prophet of Earth"
     },
     {
       "guid": "5DD07qmTqQ",
+      "type": "Season",
       "name": "Prophet of Air"
     },
     {
       "guid": "kH5B_M20Fl",
+      "type": "Season",
       "name": "Prophet of Fire"
     },
     // #endregion
     // #region Dreams
     {
       "guid": "KhFZE8z0-I",
+      "type": "Season",
       "name": "Bearhug Hermit"
     },
     {
       "guid": "7tMB-HjDin",
+      "type": "Season",
       "name": "Dancing Performer"
     },
     {
       "guid": "Jd8rEzWHVg",
+      "type": "Season",
       "name": "Peeking Postman"
     },
     {
       "guid": "Ej3SZgZ2WL",
+      "type": "Season",
       "name": "Spinning Mentor"
     },
     // #endregion
     // #region Assembly
     {
       "guid": "94UEgV7ic1",
+      "type": "Season",
       "name": "Baffled Botanist"
     },
     {
       "guid": "RG-Z1xwway",
+      "type": "Season",
       "name": "Scolding Student"
     },
     {
       "guid": "lE8DJQLcg5",
+      "type": "Season",
       "name": "Scaredy Cadet"
     },
     {
       "guid": "H30afxXKT1",
+      "type": "Season",
       "name": "Marching Adventurer"
     },
     {
       "guid": "NGSlfCM_wu",
+      "type": "Season",
       "name": "Chuckling Scout"
     },
     {
       "guid": "MZZ5RA0AMG",
+      "type": "Season",
       "name": "Daydream Forester"
     },
     // #endregion
     // #region TLP
     {
       "guid": "JOCCkr0TlW",
+      "type": "Season",
       "name": "Beckoning Ruler"
     },
     {
       "guid": "V7gj-cBqK1",
+      "type": "Season",
       "name": "Gloating Narcissist"
     },
     {
       "guid": "z5dtSO-gis",
+      "type": "Season",
       "name": "Stretching Lamplighter"
     },
     {
       "guid": "iweb5Sk2Xk",
+      "type": "Season",
       "name": "Slouching Soldier"
     },
     {
       "guid": "l7zP8zUFHX",
+      "type": "Season",
       "name": "Sneezing Geographer"
     },
     {
       "guid": "dEQ1GVQOx7",
+      "type": "Season",
       "name": "Star Collector"
     },
     // #endregion
     // #region Flight
     {
       "guid": "9Wl9kwxoFk",
+      "type": "Season",
       "name": "Lively Navigator"
     },
     {
       "guid": "VQadeqBPEO",
+      "type": "Season",
       "name": "Light Whisperer"
     },
     {
       "guid": "_7-rIO21Ea",
+      "type": "Season",
       "name": "Tinkering Chimesmith"
     },
     {
       "guid": "hovmkrquOR",
+      "type": "Season",
       "name": "Talented Builder"
     },
     // #endregion
     // #region Abyss
     {
       "guid": "4gwH1Tn9he",
+      "type": "Season",
       "name": "Anxious Angler"
     },
     {
       "guid": "aVOtIknTMO",
+      "type": "Season",
       "name": "Ceasing Commodore"
     },
     {
       "guid": "zVs_gAo_wy",
+      "type": "Season",
       "name": "Bumbling Boatswain"
     },
     {
       "guid": "gTIay-wjmN",
+      "type": "Season",
       "name": "Cackling Cannoneer"
     },
     // #endregion
     // #region Performance
     {
       "guid": "4iotcmsn0K",
+      "type": "Season",
       "name": "Frantic Stagehand"
     },
     {
       "guid": "fEcI6neh6f",
+      "type": "Season",
       "name": "Forgetful Storyteller"
     },
     {
       "guid": "KYhwsjTkp-",
+      "type": "Season",
       "name": "Mellow Musician"
     },
     {
       "guid": "S6KVcMgi-3",
+      "type": "Season",
       "name": "Modest Dancer"
     },
     // #endregion
     // #region Shattering
     {
       "guid": "KqGJfPvqrM",
+      "type": "Season",
       "name": "Light (Jellyfish)"
     },
     {
       "guid": "di5Qar2yOI",
+      "type": "Season",
       "name": "Light (Manta)"
     },
     {
       "guid": "3rebltHxWX",
+      "type": "Season",
       "name": "Dark (Dragon)"
     },
     {
       "guid": "V7PbSxO67Q",
+      "type": "Season",
       "name": "Dark (Plants)"
     },
     // #endregion
     // #region AURORA
     {
       "guid": "20Xw7fuZWr",
+      "type": "Season",
       "name": "Running Wayfarer"
     },
     {
       "guid": "g_lZ76kjbS",
+      "type": "Season",
       "name": "Mindful Miner"
     },
     {
       "guid": "XvcpNrqatq",
+      "type": "Season",
       "name": "Warrior of Love"
     },
     {
       "guid": "95RfXrjMx1",
+      "type": "Season",
       "name": "Seed of Hope"
     },
     // #endregion
     // #region Remembrance
     {
       "guid": "O1olUBrkJ5",
+      "type": "Season",
       "name": "Bereft Veteran"
     },
     {
       "guid": "V43JRVL_QD",
+      "type": "Season",
       "name": "Pleading Child"
     },
     {
       "guid": "DAG_zfwis5",
+      "type": "Season",
       "name": "Tiptoeing Tea-Brewer"
     },
     {
       "guid": "zq6qjCsQ_f",
+      "type": "Season",
       "name": "Wounded Warrior"
     },
     // #endregion

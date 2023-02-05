@@ -9,7 +9,7 @@ export interface IAreaConfig extends IConfig<IArea> {}
 export interface IArea extends IGuid {
   name: string;
 
-  /* References */
+  /// References ///
   realm?: IRealm;
   spirits?: Array<ISpirit>;
   wingedLights?: Array<IWingedLight>;

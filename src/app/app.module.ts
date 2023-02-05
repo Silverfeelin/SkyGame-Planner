@@ -17,9 +17,10 @@ import { IconComponent } from './components/icon/icon.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { CreditsComponent } from './components/credits/credits.component';
 import { ItemsComponent } from './components/items/items.component';
-import { GridComponent } from './components/grid/grid.component';
-import { GridColumnirective } from './components/grid/grid-column/grid-column.directive';
+import { TableComponent } from './components/table/table.component';
+import { TableColumnDirective } from './components/table/table-column/table-column.directive';
 import { EventsComponent } from './components/events/events.component';
+import { SpiritsComponent } from './components/spirits/spirits.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +36,10 @@ import { EventsComponent } from './components/events/events.component';
     StatusBarComponent,
     CreditsComponent,
     ItemsComponent,
-    GridComponent,
-    GridColumnirective,
-    EventsComponent
+    TableComponent,
+    TableColumnDirective,
+    EventsComponent,
+    SpiritsComponent
   ],
   imports: [
     BrowserModule,
