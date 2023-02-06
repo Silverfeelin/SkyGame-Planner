@@ -6,6 +6,7 @@ import { ICost } from 'src/app/interfaces/cost.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-spirit-tree',
@@ -33,6 +34,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
   constructor(
     private readonly _eventService: EventService,
+    private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef
   ) {
   }
@@ -109,5 +111,37 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this.nodes.filter(n => !n.unlocked && !n.item?.unlocked).forEach(n => {
       CostHelper.add(this.remainingCost, n);
     });
+  }
+
+  unlockAll(): void {
+    const itemNodes = this.nodes.filter(n => n.item);
+    const items: Array<IItem> = itemNodes.map(n => n.item!);
+    const shouldUnlock = items.filter(v => !v.unlocked).length;
+
+    const msg = `Are you sure you want to ${shouldUnlock?'UNLOCK':'REMOVE'} all items from this tree?`;
+    if (!confirm(msg)) { return; }
+
+    if (shouldUnlock) {
+      // Unlock all locked items.
+      itemNodes.filter(n => !n.item!.unlocked).forEach(node => {
+        node.item!.unlocked = true;
+        node.unlocked = true;
+
+        this._storageService.add(node.item!.guid, node.guid);
+        this._eventService.toggleItem(node.item!);
+      });
+    } else {
+      // Lock all unlocked items.
+      itemNodes.filter(n => n.item!.unlocked).forEach(node => {
+        node.item!.unlocked = false;
+        const refNodes = node.item!.nodes || [];
+        refNodes.forEach(n => n.unlocked = false);
+
+        this._storageService.remove(node.item!.guid, ...refNodes.map(n => n.guid));
+        this._eventService.toggleItem(node.item!);
+      });
+    }
+
+    this._storageService.save();
   }
 }

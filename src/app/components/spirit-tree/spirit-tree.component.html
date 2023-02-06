@@ -1,5 +1,8 @@
 <div class="content" [class.highlight]="highlight">
   <div class="spirit-tree-scroll">
+    <div class="unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" placement="bottom-end">
+      <mat-icon fontIcon="lock_open"></mat-icon>
+    </div>
     <div class="spirit-tree">
       <div class="column left">
         <div class="item" *ngFor="let node of left">
