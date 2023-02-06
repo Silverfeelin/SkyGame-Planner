@@ -27,7 +27,10 @@
     </div>
   </div>
   <div class="footer">
-    <div *ngIf="name" class="name" [title]="name">{{ name || '' }}</div>
+    <div *ngIf="name" class="name">
+      {{ name }}
+      <span *ngIf="tsDate" class="c-accent ts-date">({{ tsDate | date:'dd-MM-yyyy' }})</span>
+    </div>
     <div *ngIf="name && hasCost" class="hr"></div>
     <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" placement="top">
       <div class="cost" *ngIf="totalCost?.c">
@@ -58,6 +61,7 @@
     </div>
   </div>
 </div>
+
 
 <ng-template #costHover>
   <span>Total cost of all the items in this tree.</span><br/>

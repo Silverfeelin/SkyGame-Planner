@@ -238,7 +238,7 @@ export class DataService {
       wingedLightConfig: this.wingedLightConfig
     };
     (window as any).skyGuids = this.guidMap;
-    console.log('Data:', (window as any).skyData);
+    console.log('To view loaded data, see `skyData`.');
   }
 
   // #region GUIDs

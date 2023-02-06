@@ -75,7 +75,6 @@ export class SpiritsComponent implements OnInit, OnDestroy {
       const itemSet = new Set<IItem>();
       trees.forEach(tree => {
         // Get all nodes
-        console.log(NodeHelper.getItems(tree!.node));
         NodeHelper.getItems(tree!.node).forEach(item => {
           if (itemSet.has(item)) { return; }
           itemSet.add(item);

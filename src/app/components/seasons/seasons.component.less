@@ -24,8 +24,25 @@ h1 {
 }
 
 .wiki {
-  right: 3px;
-  top: 6px;
+  width: 28px;
+  height: 28px;
+  right: var(--padding-content);
+  top: var(--padding-content);
+  border-radius: var(--border-radius-round);
+  background: var(--color-background);
+
+  a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  mat-icon {
+    position: absolute;
+    top: 1px;
+    right: 3px;
+  }
 }
 
 .item {
@@ -40,4 +57,12 @@ h1 {
   &:hover {
     color: var(--color-link-hover);
   }
+}
+
+.menu-icon {
+  position: absolute;
+}
+
+.menu-label {
+  padding-left: 32px;
 }

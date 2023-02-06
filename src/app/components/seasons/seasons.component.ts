@@ -25,6 +25,7 @@ export class SeasonsComponent implements OnInit {
   ngOnInit(): void {
     let year = this.seasons.at(-1)!.year + 1;
     this.yearMap = {};
+    this.spiritCount = {};
     for (let i = this.seasons.length -1; i >= 0; i--) {
       const season = this.seasons[i];
       if (season.year < year) {
@@ -32,12 +33,9 @@ export class SeasonsComponent implements OnInit {
         this.years.push(year);
         this.yearMap[year] = [];
       }
-    }
 
-    this.spiritCount = {};
-    this.seasons.forEach(season => {
-      this.yearMap[season.year].push(season);
+      this.yearMap[year].push(season);
       this.spiritCount[season.guid] = season.spirits.filter(s => s.type === SpiritType.Season).length;
-    });
+    }
   }
 }

@@ -8,13 +8,19 @@
       </h1>
       <!-- Wiki -->
       <div class="wiki p-abs" *ngIf="season._wiki?.href">
-        <a [href]="season._wiki!.href" title="Open wiki" target="_blank">
+        <a [href]="season._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
           <mat-icon fontIcon="question_mark"></mat-icon>
         </a>
       </div>
+      <!-- Overview -->
+      <div class="mt-2 item link" [routerLink]="['/season', season.guid]">
+        <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+        <span class="menu-label">Overview</span>
+      </div>
       <!-- Spirits -->
       <div class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
-        Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span>
+        <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
+        <span class="menu-label">Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span></span>
       </div>
     </div>
   </div>

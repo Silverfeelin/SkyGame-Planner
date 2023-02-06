@@ -3,7 +3,7 @@
     <h1>{{realm.name}}</h1>
     <!-- Wiki -->
     <div class="wiki p-abs" *ngIf="realm._wiki?.href">
-      <a [href]="realm._wiki!.href" title="Open wiki" target="_blank">
+      <a [href]="realm._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
         <mat-icon fontIcon="question_mark"></mat-icon>
       </a>
     </div>
@@ -13,7 +13,8 @@
     </div> -->
     <!-- Spirits -->
     <div *ngIf="spiritCount[realm.guid]" class="mt-2 item nav" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular,Elder' }">
-      Spirits&nbsp;<span class="c-accent">({{ spiritCount[realm.guid] }})</span>
+      <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
+      <span class="menu-label">Spirits&nbsp;<span class="c-accent">({{ spiritCount[realm.guid] }})</span></span>
     </div>
   </div>
 </div>

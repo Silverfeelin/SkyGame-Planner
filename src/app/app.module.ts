@@ -23,6 +23,7 @@ import { EventsComponent } from './components/events/events.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TableHeaderDirective } from './components/table/table-column/table-header.directive';
 import { SpiritComponent } from './components/spirit/spirit.component';
+import { SeasonComponent } from './components/season/season.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SpiritComponent } from './components/spirit/spirit.component';
     TableHeaderDirective,
     EventsComponent,
     SpiritsComponent,
-    SpiritComponent
+    SpiritComponent,
+    SeasonComponent
   ],
   imports: [
     BrowserModule,

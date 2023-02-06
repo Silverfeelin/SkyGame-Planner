@@ -27,6 +27,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   totalCost!: ICost;
   remainingCost!: ICost;
 
+  tsDate?: Date;
+
   _itemSub?: SubscriptionLike;
 
   constructor(
@@ -46,6 +48,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.initializeNodes();
       this.subscribeItemChanged();
       this.calculateRemainingCosts();
+
+      this.tsDate = this.tree.ts?.date instanceof Date ? this.tree.ts.date : undefined;
     }
   }
 

@@ -6,15 +6,24 @@
   <div class="trees-wrapper">
     <!-- Spirit tree -->
     <div class="tree-wrapper">
-      <app-spirit-tree *ngIf="spirit.tree" [tree]="spirit.tree" [highlight]="highlightTree === spirit.tree.guid"></app-spirit-tree>
+      <app-spirit-tree *ngIf="spirit.tree"
+        [tree]="spirit.tree" [name]="'Spirit tree'"
+        [highlight]="highlightTree === spirit.tree.guid"></app-spirit-tree>
     </div>
     <!-- Traveling Spirit trees -->
     <ng-container *ngIf="spirit.ts">
-      <ng-container *ngFor="let ts of spirit.ts">
+      <ng-container *ngFor="let ts of spirit.ts; let ti = index;">
         <div class="tree-wrapper">
-          <app-spirit-tree [tree]="ts.tree" [highlight]="highlightTree === ts.tree.guid"></app-spirit-tree>
+          <app-spirit-tree
+            [tree]="ts.tree" [name]="'Traveling Spirit #' + ts.number"
+            [highlight]="highlightTree === ts.tree.guid"></app-spirit-tree>
         </div>
       </ng-container>
     </ng-container>
   </div>
 </div>
+
+<ng-template #costHover>
+  <span>Total cost of all the items in this tree.</span><br/>
+  <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
+</ng-template>

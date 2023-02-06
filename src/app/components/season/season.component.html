@@ -1,0 +1,25 @@
+
+<div *ngIf="season" class="season">
+  <h1>
+    {{ season.name }}
+  </h1>
+  <div class="trees-wrapper">
+    <!-- Guide tree -->
+    <div class="tree-wrapper">
+      <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name"></app-spirit-tree>
+    </div>
+    <!-- Traveling Spirit trees -->
+    <ng-container *ngIf="spirits">
+      <ng-container *ngFor="let spirit of spirits;">
+        <div class="tree-wrapper" *ngIf="spirit.tree">
+          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name"></app-spirit-tree>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #costHover>
+  <span>Total cost of all the items in this tree.</span><br/>
+  <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
+</ng-template>
