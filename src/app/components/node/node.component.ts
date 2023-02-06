@@ -24,7 +24,7 @@ export class NodeComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['position']) {
       const pos = changes['position'].currentValue;
-      this.tooltipPlacement = pos === 'left' ? 'right' : pos === 'right' ? 'left' : 'bottom';
+      this.tooltipPlacement = pos === 'left' ? 'bottom-start' : pos === 'right' ? 'bottom-end' : 'bottom';
     }
   }
 

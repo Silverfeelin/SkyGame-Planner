@@ -5,5 +5,11 @@
 </span>
 
 <div class="right">
-  <mat-icon class="wingbuffs" svgIcon="flaps"></mat-icon>
+  <div class="wing-buffs" [ngbTooltip]="wbHover" placement="top-end" container="body">
+    {{ wingBuffCount }}&nbsp;<mat-icon class="wingbuffs" svgIcon="flaps"></mat-icon>
+  </div>
 </div>
+
+<ng-template #wbHover>
+    <span class="ws-nw">Unlocked {{ wingBuffCount }} out of {{ wingBuffs.length }}.</span>
+</ng-template>

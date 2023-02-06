@@ -52,6 +52,8 @@ export enum ItemType {
   Music = 'Music',
   /** All quests. */
   Quest = 'Quest',
-  /** Special (non-)items such as candle blessings. */
+  /** All wing buffs */
+  WingBuff = 'WingBuff',
+  /** Other special (non-)items such as candle blessings. */
   Special = 'Special'
 }
