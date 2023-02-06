@@ -1,12 +1,24 @@
+.spirit {
+  background: var(--color-item-background);
+  padding: var(--padding-content);
+  border-radius: var(--border-radius-round);
+}
+
+.trees-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  background: var(--color-background);
+  padding: var(--padding-content);
+  border-radius: var(--border-radius-round);
+}
+
+app-spirit-tree {
+  vertical-align: bottom;
+}
+
 .tree-wrapper {
   display: inline-block;
-  margin: 5px;
-
-  &:first-child {
-    margin-left: unset;
-  }
-
-  &:last-child {
-    margin-right: unset;
-  }
 }

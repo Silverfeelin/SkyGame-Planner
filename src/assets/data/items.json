@@ -3274,6 +3274,8 @@
     },
     {
       "guid": "-vYFjLWhNW",
+      "type": "Special",
+      "name": "Hug",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
     },
     {
@@ -3569,6 +3571,8 @@
     },
     {
       "guid": "a1zSVQ8GlN",
+      "type": "Quest",
+      "name": "Quest",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
