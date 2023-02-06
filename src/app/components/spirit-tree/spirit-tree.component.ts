@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
@@ -12,7 +12,7 @@ import { EventService } from 'src/app/services/event.service';
   templateUrl: './spirit-tree.component.html',
   styleUrls: ['./spirit-tree.component.less']
 })
-export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
+export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;
   @Input() name?: string;
   @Input() highlight?: boolean;
@@ -30,12 +30,15 @@ export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
   _itemSub?: SubscriptionLike;
 
   constructor(
-    private readonly _eventService: EventService
+    private readonly _eventService: EventService,
+    private readonly _elementRef: ElementRef
   ) {
   }
 
-  ngOnInit(): void {
-
+  ngAfterViewInit(): void {
+    const element = this._elementRef.nativeElement as HTMLElement;
+    const scrollElem = element.querySelector('.spirit-tree-scroll');
+    if (scrollElem) { scrollElem.scrollTop = 1000; }
   }
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -1,26 +1,28 @@
 <div class="content" [class.highlight]="highlight">
-  <div class="spirit-tree">
-    <div class="column left">
-      <div class="item" *ngFor="let node of left">
-        <app-node *ngIf="node" [node]="node" [position]="'left'"></app-node>
-        <!-- For now left nodes only go up. -->
-        <div *ngIf="node?.n" class="arrow arrow-up"></div>
+  <div class="spirit-tree-scroll">
+    <div class="spirit-tree">
+      <div class="column left">
+        <div class="item" *ngFor="let node of left">
+          <app-node *ngIf="node" [node]="node" [position]="'left'"></app-node>
+          <!-- For now left nodes only go up. -->
+          <div *ngIf="node?.n" class="arrow arrow-up"></div>
+        </div>
       </div>
-    </div>
-    <div class="column center">
-      <div class="item" *ngFor="let node of center">
-        <app-node *ngIf="node" [node]="node" [position]="'center'"></app-node>
-        <!-- Center node arrows -->
-        <div *ngIf="node?.nw" class="arrow arrow-left"></div>
-        <div *ngIf="node?.n" class="arrow arrow-up"></div>
-        <div *ngIf="node?.ne" class="arrow arrow-right"></div>
+      <div class="column center">
+        <div class="item" *ngFor="let node of center">
+          <app-node *ngIf="node" [node]="node" [position]="'center'"></app-node>
+          <!-- Center node arrows -->
+          <div *ngIf="node?.nw" class="arrow arrow-left"></div>
+          <div *ngIf="node?.n" class="arrow arrow-up"></div>
+          <div *ngIf="node?.ne" class="arrow arrow-right"></div>
+        </div>
       </div>
-    </div>
-    <div class="column right">
-      <div class="item" *ngFor="let node of right">
-        <app-node *ngIf="node" [node]="node" [position]="'right'"></app-node>
-        <!-- For now right nodes only go up. -->
-        <div *ngIf="node?.n" class="arrow arrow-up"></div>
+      <div class="column right">
+        <div class="item" *ngFor="let node of right">
+          <app-node *ngIf="node" [node]="node" [position]="'right'"></app-node>
+          <!-- For now right nodes only go up. -->
+          <div *ngIf="node?.n" class="arrow arrow-up"></div>
+        </div>
       </div>
     </div>
   </div>
