@@ -1,3 +1,23 @@
 <app-table [rows]="rows">
-  <ng-template [appTableColumn] let-row="row">{{ row }}</ng-template>
+  <ng-template [appTableHeader]>Spirit</ng-template>
+  <ng-template [appTableHeader]>Type</ng-template>
+  <ng-template [appTableHeader]>Location</ng-template>
+  <ng-template [appTableHeader]>Unlocked</ng-template>
+
+  <ng-template [appTableColumn] let-row="row" [link]="['/spirit', ':guid']">
+    {{ row.name }}
+  </ng-template>
+  <ng-template [appTableColumn] let-row="row">
+    {{ row.type }}
+  </ng-template>
+  <ng-template [appTableColumn] let-row="row">
+    <a [routerLink]="row.areaGuid ? ['/area', row.areaGuid] : undefined">
+      {{ row.area?.name }}
+    </a>
+  </ng-template>
+  <ng-template [appTableColumn] let-row="row">
+    <span *ngIf="row.totalItems" [class.completed]="row.unlockedItems === row.totalItems">
+      {{ row.unlockedItems }} / {{ row.totalItems }}
+    </span>
+  </ng-template>
 </app-table>

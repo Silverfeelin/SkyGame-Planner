@@ -1,0 +1,14 @@
+<ng-container *ngIf="spirit">
+  <!-- Spirit tree -->
+  <div class="tree-wrapper">
+    <app-spirit-tree *ngIf="spirit.tree" [tree]="spirit.tree" [highlight]="highlightTree === spirit.tree.guid"></app-spirit-tree>
+  </div>
+  <!-- Traveling Spirit trees -->
+  <ng-container *ngIf="spirit.ts">
+    <ng-container *ngFor="let ts of spirit.ts">
+      <div class="tree-wrapper">
+        <app-spirit-tree [tree]="ts.tree" [highlight]="highlightTree === ts.tree.guid"></app-spirit-tree>
+      </div>
+    </ng-container>
+  </ng-container>
+</ng-container>

@@ -21,6 +21,8 @@ import { TableComponent } from './components/table/table.component';
 import { TableColumnDirective } from './components/table/table-column/table-column.directive';
 import { EventsComponent } from './components/events/events.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
+import { TableHeaderDirective } from './components/table/table-column/table-header.directive';
+import { SpiritComponent } from './components/spirit/spirit.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +40,10 @@ import { SpiritsComponent } from './components/spirits/spirits.component';
     ItemsComponent,
     TableComponent,
     TableColumnDirective,
+    TableHeaderDirective,
     EventsComponent,
-    SpiritsComponent
+    SpiritsComponent,
+    SpiritComponent
   ],
   imports: [
     BrowserModule,

@@ -15,9 +15,12 @@ export interface ISpirit extends IGuid {
 
   /// References ///
 
-  /** Main spirit tree. */
+  /** Main spirit tree.
+  * For regular spirits this is the constellation tree.
+  * For season spirits this is the seasonal tree.
+  */
   tree?: ISpiritTree;
-  /** Area this spirit can be found in. */
+  /** Area this spirit can be found in normally. */
   area?: IArea;
   /** Season this spirit is part of. */
   season?: ISeason;

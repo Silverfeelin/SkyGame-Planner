@@ -91,6 +91,7 @@ export class DataService {
     this.initializeRealms();
     this.initializeAreas();
     this.initializeSeasons();
+    this.initializeSpirits();
     this.initializeTravelingSpirits();
     this.initializeSpiritTrees();
 
@@ -120,11 +121,6 @@ export class DataService {
         spirit = this.guidMap.get(spirit as any) as ISpirit;
         area.spirits![i] = spirit;
         spirit.area = area;
-
-        // Update metadata
-        if (area?.realm && spirit.type === SpiritType.Regular) {
-          area.realm.regularSpiritCount = (area.realm.regularSpiritCount ?? 0) + 1;
-        }
       });
 
       // Map Winged Light to Area.
@@ -137,15 +133,29 @@ export class DataService {
   }
 
   private initializeSeasons(): void {
-    this.seasonConfig.items.forEach(season => {
+    this.seasonConfig.items.forEach((season, i) => {
+      season.number = i + 1;
+
       // Map Spirits to Seasons.
-      season.spirits?.forEach((spirit, i) => {
+      season.spirits?.forEach((spirit, si) => {
         spirit = this.guidMap.get(spirit as any) as ISpirit;
-        season.spirits![i] = spirit;
+        season.spirits![si] = spirit;
         spirit.season = season;
       });
     });
   }
+
+  private initializeSpirits(): void {
+    this.spiritConfig.items.forEach(spirit => {
+      // Map spirits to spirit tree.
+      if (spirit.tree) {
+        const tree = this.guidMap.get(spirit.tree as any) as ISpiritTree;
+        tree.spirit = spirit;
+        spirit.tree = tree;
+      }
+    });
+  }
+
 
   private initializeTravelingSpirits(): void {
     const tsCounts: {[key: string]: number} = {};
@@ -250,10 +260,6 @@ export class DataService {
   // #region Validation
 
   private validate(): void {
-    const spirits = new Set<string>(this.areaConfig.items.flatMap(a => a.spirits || []).map(s => s.guid));
-    const xSpirits = this.spiritConfig.items.filter(s => !spirits.has(s.guid));
-    if (xSpirits.length) { console.error('Spirits not found in areas:', xSpirits)};
-
     const wl = new Set<string>(this.areaConfig.items.flatMap(a => a.wingedLights || []).map(w => w.guid));
     const xWl = this.wingedLightConfig.items.filter(w => !wl.has(w.guid));
     if (xWl.length) { console.error('Winged Light not found in areas:', xWl)};

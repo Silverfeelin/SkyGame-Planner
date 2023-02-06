@@ -13,8 +13,9 @@ import { EventService } from 'src/app/services/event.service';
   styleUrls: ['./spirit-tree.component.less']
 })
 export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
-  @Input() constellation!: ISpiritTree;
+  @Input() tree!: ISpiritTree;
   @Input() name?: string;
+  @Input() highlight?: boolean;
 
   nodes: Array<INode> = [];
   left: Array<INode> = [];
@@ -38,7 +39,7 @@ export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['constellation']) {
+    if (changes['tree']) {
       this.initializeNodes();
       this.subscribeItemChanged();
       this.calculateRemainingCosts();
@@ -58,8 +59,8 @@ export class SpiritTreeComponent implements OnInit, OnChanges, OnDestroy {
     this.nodes = []; this.left = []; this.center = []; this.right = [];
     this.hasCost = false;
 
-    if (!this.constellation) { return; }
-    this.initializeNode(this.constellation.node, 0, 0);
+    if (!this.tree) { return; }
+    this.initializeNode(this.tree.node, 0, 0);
     this.hasCost = !CostHelper.isEmpty(this.totalCost);
   }
 

@@ -14,7 +14,6 @@ export interface IRealm extends IGuid {
   areas?: Array<IArea>;
 
   /// Metadata ///
-  regularSpiritCount?: number;
 
   _wiki?: IWiki;
 }

@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" [class.highlight]="highlight">
   <div class="spirit-tree">
     <div class="column left">
       <div class="item" *ngFor="let node of left">
@@ -25,8 +25,8 @@
     </div>
   </div>
   <div class="footer">
-    <div class="name" [title]="name">{{ name || '' }}</div>
-    <div *ngIf="hasCost" class="hr"></div>
+    <div *ngIf="name" class="name" [title]="name">{{ name || '' }}</div>
+    <div *ngIf="name && hasCost" class="hr"></div>
     <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" placement="top">
       <div class="cost" *ngIf="totalCost?.c">
         {{ totalCost.c }}

@@ -1,22 +1,21 @@
 <div class="year" *ngFor="let year of years">
   <h1 class="">{{year}}</h1>
   <div class="seasons">
-    <div class="season p-rel" *ngFor="let season of yearMap[year]">
-      <h1>{{ season.name }}</h1>
+    <div class="season p-rel" *ngFor="let season of yearMap[year]; let i = index;">
+      <h1>
+        <span class="c-accent season-number">#{{ season.number }}</span>
+        {{ season.name }}
+      </h1>
       <!-- Wiki -->
       <div class="wiki p-abs" *ngIf="season._wiki?.href">
         <a [href]="season._wiki!.href" title="Open wiki" target="_blank">
           <mat-icon fontIcon="question_mark"></mat-icon>
         </a>
       </div>
-      <!-- Areas -->
-      <!-- <div class="mt-2 item areas">
-        Areas
-      </div> -->
-      <!-- Guide -->
-      <div class="mt-2 item">Season Guide</div>
       <!-- Spirits -->
-      <div class="mt-2 item">Spirits</div>
+      <div class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
+        Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span>
+      </div>
     </div>
   </div>
 </div>

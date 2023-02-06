@@ -12,8 +12,8 @@
       Areas
     </div> -->
     <!-- Spirits -->
-    <div *ngIf="realm.regularSpiritCount" class="mt-2 item nav" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular' }">
-      Spirits&nbsp;<span class="c-accent">({{ realm.regularSpiritCount }})</span>
+    <div *ngIf="spiritCount[realm.guid]" class="mt-2 item nav" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular,Elder' }">
+      Spirits&nbsp;<span class="c-accent">({{ spiritCount[realm.guid] }})</span>
     </div>
   </div>
 </div>

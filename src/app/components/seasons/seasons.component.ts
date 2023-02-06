@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ISeason } from 'src/app/interfaces/season.interface';
+import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -8,9 +9,12 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./seasons.component.less']
 })
 export class SeasonsComponent implements OnInit {
-  years: Array<number> = [];
-  yearMap: { [year: number]: Array<ISeason> } = {};
   seasons!: Array<ISeason>;
+
+  years: Array<number> = [];
+  yearMap!: { [year: number]: Array<ISeason> };
+  spiritCount!: { [key: string]: number };
+
 
   constructor(
     private readonly _dataService: DataService
@@ -20,6 +24,7 @@ export class SeasonsComponent implements OnInit {
 
   ngOnInit(): void {
     let year = this.seasons.at(-1)!.year + 1;
+    this.yearMap = {};
     for (let i = this.seasons.length -1; i >= 0; i--) {
       const season = this.seasons[i];
       if (season.year < year) {
@@ -29,8 +34,10 @@ export class SeasonsComponent implements OnInit {
       }
     }
 
+    this.spiritCount = {};
     this.seasons.forEach(season => {
       this.yearMap[season.year].push(season);
+      this.spiritCount[season.guid] = season.spirits.filter(s => s.type === SpiritType.Season).length;
     });
   }
 }
