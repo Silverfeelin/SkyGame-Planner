@@ -1,11 +1,15 @@
 import { IArea } from "./area.interface";
 import { IConfig, IGuid } from "./base.interface";
+import { IEventInstanceSpirit } from "./event.interface";
+import { IReturningSpirit } from "./returning-spirits.interface";
 import { ISeason } from "./season.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { ITravelingSpirit } from "./traveling-spirit.interface";
 import { IWiki } from "./wiki.interface";
 
 export interface ISpiritConfig extends IConfig<ISpirit> {}
+
+export type SpiritType =  'Regular' | 'Elder' | 'Guide' | 'Season' | 'Event' | 'Special';
 
 export interface ISpirit extends IGuid {
   /** Name of the spirit. */
@@ -26,6 +30,10 @@ export interface ISpirit extends IGuid {
   season?: ISeason;
   /** All Traveling Spirit visits of this spirit. */
   ts?: Array<ITravelingSpirit>;
+  /** All visits as returning spirits.  */
+  returns?: Array<IReturningSpirit>;
+  /** All visits during events. */
+  events?: Array<IEventInstanceSpirit>;
 
   /// Progress ///
 
@@ -38,10 +46,4 @@ export interface ISpirit extends IGuid {
   _wiki?: IWiki
 }
 
-export enum SpiritType {
-  Regular = 'Regular',
-  Elder = 'Elder',
-  Guide = 'Guide',
-  Season = 'Season',
-  Special = 'Special'
-}
+

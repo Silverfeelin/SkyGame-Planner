@@ -7278,6 +7278,18 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
     },
+    {
+      "guid": "Q__8vMZJrq",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "fCfPXR_Dlv",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
     // Marching Adventurer
     {
       "guid": "dNoANrAQV0",
@@ -7349,6 +7361,18 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
     },
+    {
+      "guid": "RIEAODPW5E",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "3ay5Vg6AUH",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
     // Chuckling Scout
     {
       "guid": "iSTnFoyozE",
@@ -7419,6 +7443,18 @@
       "type": "Special",
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    },
+    {
+      "guid": "TvvR0_zlpM",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "qv1U79CflM",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
     // Daydream Forester
     {
@@ -7779,6 +7815,18 @@
       "type": "Special",
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    },
+    {
+      "guid": "_fp_Ppz4Ks",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "gsoIYnO0ON",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
     // Sneezing Geographer
     {
@@ -9599,6 +9647,74 @@
       "type": "Special",
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png"
+    },
+    // #endregion
+
+    // #region Events
+    // Days of Healing (2020)
+    {
+      "guid": "cM5zZKzBkO",
+      "type": "Hat",
+      "name": "Flower Hair Accessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png"
+    },
+    // Days of Summer Lights (2020)
+    {
+      "guid": "5xJ_mCzZQy",
+      "type": "Held",
+      "name": "Summer Lights Lantern",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_prop_days_of_summer_lantern.png"
+    },
+    // Days of Summer Lights (2021)
+    {
+      "guid": "EEFIpR6x7Q",
+      "type": "Hat",
+      "name": "Summer Lights Bunny Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png"
+    },
+    // Days of Summer (2021)
+    {
+      "guid": "4CYafmMUql",
+      "type": "Held",
+      "name": "Summer Umbrella",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Icon_prop_summer_umbrella.png"
+    },
+    {
+      "guid": "OcPUaAgUo8",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "E_yfCZYU5C",
+      "type": "Hat",
+      "name": "Summer Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_hair_summer_hat_headpiece.png"
+    },
+    {
+      "guid": "bBQVuucGUm",
+      "type": "Prop",
+      "name": "Double Deck Chairs",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Summer_beach_chairs.png"
+    },
+    // Kizuna AI Collab (2022)
+    {
+      "guid": "FLMn1Hib7k",
+      "type": "Hair",
+      "name": "Kizuna AI Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Kizuna-AI-Hairstyle-Icon.png"
+    },
+    {
+      "guid": "daH57TClK7",
+      "type": "Hat",
+      "name": "Kizuna AI Bow",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Kizuna-AI-Hair-Accessory-Icon.png"
+    },
+    {
+      "guid": "u7q3xg2y55",
+      "type": "Cape",
+      "name": "Kizuna AI Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Kizuna-AI-cape-icon-Morybel-0146.png"
     },
     // #endregion
   ]

@@ -362,6 +362,10 @@
       "guid": "yB8WfHNA3d",
       "node": "Uk7fZ4cqe_"
     },
+    {
+      "guid": "JHT-EOASCu",
+      "node": "4iDQf4wkrh"
+    },
     // Leaping Dancer
     {
       "guid": "C1UHeaHfp1",
@@ -516,6 +520,10 @@
     {
       "guid": "uroAaSXx6d",
       "node": "tPH54zQyph"
+    },
+    {
+      "guid": "2opAUtbkkR",
+      "node": "jfUwNEL-ns"
     },
     // Sparkler Parent
     {
@@ -685,6 +693,10 @@
     {
       "guid": "Q8KOAVQUVi",
       "node": "y9eOQPn2jd"
+    },
+    {
+      "guid": "QLWLr4rc8I",
+      "node": "eSIjEKp26k"
     },
     // Scarecrow Farmer
     {
@@ -864,6 +876,10 @@
       "guid": "5fHIIjUjsS",
       "node": "A4mNW2Sf8E"
     },
+    {
+      "guid": "Wr_6cQV3n6",
+      "node": "LeORFeGFaA"
+    },
     // Scolding Student
     {
       "guid": "tJ92dz1ans",
@@ -878,15 +894,27 @@
       "guid": "BTXu36Anhy",
       "node": "15h4Sx9Xjj"
     },
+    {
+      "guid": "Yy0m8oXKyK",
+      "node": "I-40Dn5_LO"
+    },
     // Marching Adventurer
     {
       "guid": "MaqbAvyQQ8",
       "node": "x1a7G7bveD"
     },
+    {
+      "guid": "fHPe43oCch",
+      "node": "ZQOPWn4zx8"
+    },
     // Chuckling Scout
     {
       "guid": "n43yrGprN_",
       "node": "7UtgKGCYKK"
+    },
+    {
+      "guid": "uztQlhHGhL",
+      "node": "vZDpA5hBMT"
     },
     // Daydream Forester
     {
@@ -922,6 +950,10 @@
     {
       "guid": "evynWpUlaz",
       "node": "yyUs-AZ_f8"
+    },
+    {
+      "guid": "VmZAJo0AL6",
+      "node": "mIKBqWIbmY"
     },
     // Sneezing Geographer
     {
@@ -1068,6 +1100,14 @@
     {
       "guid": "Cze45b5NuK",
       "node": "6nhyx0XwCf"
+    },
+    // #endregion
+
+    // #region Events
+    // Days of Summer
+    {
+      "guid": "mHHOSQWAM0",
+      "node": "M55c-swNeS"
     },
     // #endregion
   ]

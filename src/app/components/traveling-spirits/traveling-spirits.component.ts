@@ -32,6 +32,6 @@ export class TravelingSpiritsComponent implements OnInit {
         unlockedItems,
         totalItems
       };
-    });
+    }).reverse();
   }
 }

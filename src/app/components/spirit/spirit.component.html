@@ -20,6 +20,16 @@
         </div>
       </ng-container>
     </ng-container>
+    <!-- Visits -->
+    <ng-container *ngIf="spirit.returns">
+      <ng-container *ngFor="let visit of spirit.returns; let vi = index;">
+        <div class="tree-wrapper">
+          <app-spirit-tree
+            [tree]="visit.tree" [name]="'Visit #' + (vi+1)"
+            [highlight]="highlightTree === visit.tree.guid"></app-spirit-tree>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
 </div>
 

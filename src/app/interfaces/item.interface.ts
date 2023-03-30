@@ -1,4 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
+import { IIAP } from "./iap.interface";
 import { INode } from "./node.interface";
 
 export interface IItemConfig extends IConfig<IItem> {}
@@ -15,7 +16,11 @@ export interface IItem extends IGuid {
   sheet?: number;
 
   /// References ///
+
+  /** Spirit tree nodes that unlock this item. */
   nodes?: Array<INode>;
+  /** IAPs that unlock this item. */
+  iaps?: Array<IIAP>;
 
   /// Progress ///
   unlocked?: boolean;

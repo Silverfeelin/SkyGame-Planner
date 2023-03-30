@@ -1,3 +1,48 @@
 {
-  "items": []
+  "items": [
+    // #region Events
+    // Days of Healing (2020)
+    {
+      "guid": "mw6o6Ezv3e",
+      "type": "store",
+      "iaps": [
+        "mw6o6Ezv3e"
+      ]
+    },
+    // Days of Summer Lights (2020)
+    {
+      "guid": "mbEzwlWA7W",
+      "type": "store",
+      "iaps": [
+        "_NudGPNXnY"
+      ]
+    },
+    // Days of Summer Lights (2021)
+    {
+      "guid": "hmIkJrBgwH",
+      "type": "store",
+      "iaps": [
+        "_NudGPNXnY",
+        "uqlKywsZyd"
+      ]
+    },
+    // Days of Summer (2021)
+    {
+      "guid": "dgkpvIdu6r",
+      "type": "store",
+      "iaps": [
+        "of257qu0my"
+      ]
+    },
+    // Kizuna AI Collab (2022)
+    {
+      "guid": "djY7Ysc5Yf",
+      "type": "store",
+      "iaps": [
+        "nnDO8UAwSC"
+      ]
+    }
+    // Kizuna
+    // #endregion
+  ]
 }

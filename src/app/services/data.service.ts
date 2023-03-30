@@ -13,13 +13,14 @@ import { INode, INodeConfig } from '../interfaces/node.interface';
 import { IQuestConfig } from '../interfaces/quest.interface';
 import { IRealmConfig } from '../interfaces/realm.interface';
 import { ISeasonConfig } from '../interfaces/season.interface';
-import { IShopConfig } from '../interfaces/shop.interface';
+import { IShop, IShopConfig } from '../interfaces/shop.interface';
 import { ISpirit, ISpiritConfig, SpiritType } from '../interfaces/spirit.interface'
 import { ITravelingSpiritConfig } from '../interfaces/traveling-spirit.interface';
 import { IWingedLight, IWingedLightConfig } from '../interfaces/winged-light.interface';
 import moment, { Moment } from 'moment';
 import { DateHelper } from '../helpers/date-helper';
 import { StorageService } from './storage.service';
+import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,7 @@ export class DataService {
   spiritConfig!: ISpiritConfig;
   spiritTreeConfig!: ISpiritTreeConfig;
   travelingSpiritConfig!: ITravelingSpiritConfig;
+  returningSpiritsConfig!: IReturningSpiritsConfig;
   wingedLightConfig!: IWingedLightConfig;
 
   guidMap = new Map<string, IGuid>();
@@ -68,6 +70,7 @@ export class DataService {
       spiritConfig: get('spirits.json'),
       spiritTreeConfig: get('spirit-trees.json'),
       travelingSpiritConfig:  get('traveling-spirits.json'),
+      returningSpiritsConfig:  get('returning-spirits.json'),
       wingedLightConfig: get('winged-lights.json')
     }).subscribe({
       next: (data:  {[k: string]: string}) => { this.onConfigs(data); },
@@ -93,7 +96,9 @@ export class DataService {
     this.initializeSeasons();
     this.initializeSpirits();
     this.initializeTravelingSpirits();
+    this.initializeReturningSpirits();
     this.initializeSpiritTrees();
+    this.initializeEvents();
 
     if (isDevMode()) {
       this.validate();
@@ -135,6 +140,8 @@ export class DataService {
   private initializeSeasons(): void {
     this.seasonConfig.items.forEach((season, i) => {
       season.number = i + 1;
+      season.start = DateHelper.fromString(season.start as string)!;
+      season.end = DateHelper.fromString(season.end as string)!;
 
       // Map Spirits to Seasons.
       season.spirits?.forEach((spirit, si) => {
@@ -155,7 +162,6 @@ export class DataService {
       }
     });
   }
-
 
   private initializeTravelingSpirits(): void {
     const tsCounts: {[key: string]: number} = {};
@@ -183,6 +189,31 @@ export class DataService {
     })
   }
 
+  private initializeReturningSpirits(): void {
+    this.returningSpiritsConfig.items.forEach((rs, i) => {
+      // Initialize dates
+      rs.date = DateHelper.fromInterface(rs.date)!;
+      rs.endDate = DateHelper.fromInterface(rs.endDate)!;
+
+      // Map Visits.
+      rs.spirits?.forEach((visit, si) => {
+        this.registerGuid(visit);
+
+        visit.return = rs;
+        // Map Visit to Spirit.
+        const spirit = this.guidMap.get(visit.spirit as any) as ISpirit;
+        rs.spirits![si].spirit = spirit;
+        spirit.returns ??= [];
+        spirit.returns.push(visit);
+
+        // Map Visit to Spirit Tree.
+        const tree = this.guidMap.get(visit.tree as any) as ISpiritTree;
+        rs.spirits![si].tree = tree;
+        tree.visit = visit;
+      });
+    });
+  }
+
   private initializeSpiritTrees(): void {
     this.spiritTreeConfig.items.forEach(spiritTree => {
         // Map Constellation to Node.
@@ -206,6 +237,7 @@ export class DataService {
 
     if (typeof node.item === 'string') {
       const item = this.guidMap.get(node.item as any) as IItem;
+      if (!item) { console.error('Item not found', node.item); }
       node.item = item;
       item.nodes ??= [];
       item.nodes.push(node);
@@ -218,6 +250,36 @@ export class DataService {
 
   private initializeItem(item: IItem): void {
     item.unlocked = this._storageService.unlocked.has(item.guid);
+  }
+
+  private initializeEvents(): void {
+    this.eventConfig.items.forEach(event => {
+      event.instances?.forEach((instance, i) => {
+        this.registerGuid(instance);
+        instance.number = i + 1;
+
+        // Initialize dates
+        instance.date = DateHelper.fromInterface(instance.date)!;
+        instance.endDate = DateHelper.fromInterface(instance.endDate)!;
+
+        // Map Instance to Event.
+        instance.event = event;
+
+        instance.shops?.forEach(shop => {
+          shop = this.guidMap.get(shop as any) as IShop;
+          instance.shops![i] = shop;
+          shop.event = instance;
+        });
+
+        instance.spirits?.forEach(eventSpirit => {
+          const spirit = this.guidMap.get(eventSpirit.spirit as any) as ISpirit;
+          if (!spirit) { console.error( 'Spirit not found', eventSpirit.spirit); }
+          eventSpirit.spirit = spirit;
+          eventSpirit.spirit.events = [];
+          eventSpirit.spirit.events.push(eventSpirit);
+        });
+      });
+    });
   }
 
   private exposeData(): void {
@@ -235,6 +297,7 @@ export class DataService {
       shopConfig: this.shopConfig,
       spiritConfig: this.spiritConfig,
       travelingSpiritConfig: this.travelingSpiritConfig,
+      returningSpiritsConfig: this.returningSpiritsConfig,
       wingedLightConfig: this.wingedLightConfig
     };
     (window as any).skyGuids = this.guidMap;

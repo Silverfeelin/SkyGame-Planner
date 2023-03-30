@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'season/:guid', component: SeasonComponent },
   { path: 'spirit', component: SpiritsComponent },
   { path: 'spirit/:guid', component: SpiritComponent },
-  { path: 'ts', component: TravelingSpiritsComponent }
+  { path: 'ts', component: TravelingSpiritsComponent },
+  { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];
 
 @NgModule({

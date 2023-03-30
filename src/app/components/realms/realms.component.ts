@@ -23,7 +23,7 @@ export class RealmsComponent implements OnInit {
     for (const realm of this.realms) {
       // Count spirits in area.
       this.spiritCount[realm.guid] = realm.areas?.reduce((a, v) => {
-        return a + (v.spirits ?? []).filter(s => s.type === SpiritType.Regular || s.type === SpiritType.Elder).length
+        return a + (v.spirits ?? []).filter(s => s.type === 'Regular' || s.type === 'Elder').length
       }, 0) ?? 0;
     }
   }

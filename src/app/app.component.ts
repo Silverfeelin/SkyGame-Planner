@@ -10,8 +10,6 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'SkyGame-Planner';
-
   spiritTrees?: Array<ISpiritTree>;
   ready = false;
 

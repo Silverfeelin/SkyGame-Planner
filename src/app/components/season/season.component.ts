@@ -30,10 +30,10 @@ export class SeasonComponent {
     this.spirits = [];
     this.season?.spirits?.forEach(spirit => {
       switch (spirit.type) {
-        case SpiritType.Guide:
+        case 'Guide':
           this.guide = spirit;
           break;
-        case SpiritType.Season:
+        case 'Season':
           this.spirits.push(spirit);
           break;
       }

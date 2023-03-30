@@ -35,7 +35,7 @@ export class SeasonsComponent implements OnInit {
       }
 
       this.yearMap[year].push(season);
-      this.spiritCount[season.guid] = season.spirits.filter(s => s.type === SpiritType.Season).length;
+      this.spiritCount[season.guid] = season.spirits.filter(s => s.type === 'Season').length;
     }
   }
 }

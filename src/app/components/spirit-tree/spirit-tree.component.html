@@ -33,6 +33,7 @@
     <div *ngIf="name" class="name">
       {{ name }}
       <span *ngIf="tsDate" class="c-accent ts-date">({{ tsDate | date:'dd-MM-yyyy' }})</span>
+      <span *ngIf="rsDate" class="c-accent ts-date">({{ rsDate | date:'dd-MM-yyyy' }})</span>
     </div>
     <div *ngIf="name && hasCost" class="hr"></div>
     <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" placement="top">

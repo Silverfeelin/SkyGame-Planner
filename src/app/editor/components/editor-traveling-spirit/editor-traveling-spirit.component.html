@@ -1,0 +1,70 @@
+<div>
+  There are currently {{ tsCount }} TS registered. Add #{{ tsCount + 1 }} now.
+</div>
+
+<div>
+  Spirit:
+  <select class="mono" [(ngModel)]="spirit" (ngModelChange)="spiritChanged()">
+    <option *ngFor="let option of spiritOptions" [value]="option.guid">{{ option.name }}</option>
+  </select>
+</div>
+
+<div>
+  Date:
+  <input type="date" [(ngModel)]="date">
+</div>
+
+<div>
+  Nodes<br/>
+
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let node of formNodes; let i = index;">
+      <div *ngIf="i%3===1"
+        class="grid-item-connection grid-item-nw" [class.green]="node.nw"
+        (click)="toggleConnection(node, 'nw')">NW</div>
+      <div class="grid-item-connection grid-item-n" [class.green]="node.n"
+        (click)="toggleConnection(node, 'n')">N</div>
+      <div *ngIf="i%3===1"
+        class="grid-item-connection grid-item-ne" [class.green]="node.ne"
+        (click)="toggleConnection(node, 'ne')">NE</div>
+
+      <div>
+        Item<br/>
+        <select class="mono" [(ngModel)]="node.item">
+          <option value=""></option>
+          <option *ngFor="let option of itemOptions" [value]="option.guid">
+            {{ option.name }}
+            <span>
+              <ng-container *ngIf="option.level">({{option.level}})</ng-container>
+            </span>
+            <span>({{ option.guid }})</span>
+          </option>
+        </select>
+      </div>
+
+      <div>
+        Cost<br/>
+        C:<input class="cost" type="number" [(ngModel)]="node.c">
+        H:<input class="cost" type="number" [(ngModel)]="node.h">
+        AC:<input class="cost" type="number" [(ngModel)]="node.ac">
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" (click)="submit()">Generate</button>
+
+<div *ngIf="result">
+  <button type="button" (click)="copyToClipboard('ts')">
+    Copy TS
+  </button>
+  <button type="button" (click)="copyToClipboard('tree')">
+    Copy Tree
+  </button>
+  <button type="button" (click)="copyToClipboard('nodes')">
+    Copy Nodes
+  </button>
+  <button type="button" (click)="copyToClipboard('items')">
+    Copy Items
+  </button>
+</div>

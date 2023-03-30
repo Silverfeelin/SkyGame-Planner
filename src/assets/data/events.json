@@ -1,3 +1,101 @@
 {
-  "items": []
+  "items": [
+    // #region Recurring
+    // #endregion
+    // #region Old
+    // Days of Healing (2020)
+    {
+      "guid": "Bqvtgwzj5I",
+      "name": "Days of Healing",
+      "instances": [
+        {
+          "guid": "Btpq48TBPD",
+          "date": { "day": 18, "month": 5, "year": 2020 },
+          "endDate": { "day": 22, "month": 6, "year": 2020 },
+          "shops": [
+            "mw6o6Ezv3e"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Healing"
+      }
+    },
+    // Children's Day (2021)
+    {
+      "guid": "His_r9JBBt",
+      "name": "Children's Day",
+      "instances": [
+        {
+          "guid": "PShOLpIdTP",
+          "date": { "day": 3, "month": 5, "year": 2021 },
+          "endDate": { "day": 9, "month": 5, "year": 2021 }
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Special_Events"
+      }
+    },
+    // Days of Summer Lights
+    // Kizuna AI Collab (2022)
+    {
+      "guid": "FBZvsjNRwi",
+      "name": "Kizuna AI Collaboration",
+      "instances": [
+        {
+          "guid": "rGOuzt_d-o",
+          "date": { "day": 25, "month": 2, "year": 2022 },
+          "endDate": { "day": 10, "month": 3, "year": 2022 },
+          "shops": [
+            "djY7Ysc5Yf"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI"
+      }
+    },
+    // Days of Summer
+    {
+      "guid": "uv2xDBpU7W",
+      "name": "Days of Summer",
+      "instances": [
+        {
+          "guid": "-tLqiqDLxU",
+          "date": { "day": 12, "month": 8, "year": 2021 },
+          "endDate": { "day": 25, "month": 8, "year": 2021 },
+          "shops": [
+            "dgkpvIdu6r"
+          ],
+          "spirits": [
+            { "guid": "DfPcIzdjQ9", "spirit": "aMY1ZPzcEx", "tree": "mHHOSQWAM0" }
+          ]
+        }
+      ]
+    },
+    // Days of Summer Lights
+    {
+      "guid": "tQQ7aeJbRJ",
+      "name": "Days of Summer Lights",
+      "instances": [
+        {
+          "guid": "FOV5DDicTL",
+          "date": { "day": 8, "month": 9, "year": 2020 },
+          "endDate": { "day": 20, "month": 9, "year": 2020 },
+          "shops": [
+            "mbEzwlWA7W"
+          ]
+        },
+        {
+          "guid": "ZPF9Lep4IR",
+          "date": { "day": 20, "month": 9, "year": 2021 },
+          "endDate": { "day": 3, "month": 10, "year": 2021 },
+          "shops": [
+            "hmIkJrBgwH"
+          ]
+        }
+      ]
+    },
+    // #endregion
+  ]
 }

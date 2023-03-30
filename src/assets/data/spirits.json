@@ -922,5 +922,13 @@
       "tree": "Cze45b5NuK"
     },
     // #endregion
+
+    // #region Events
+    {
+      "guid": "aMY1ZPzcEx",
+      "type": "Event",
+      "name": "Days of Summer Guide"
+    },
+    // #endregion
   ]
 }

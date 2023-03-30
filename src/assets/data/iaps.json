@@ -1,0 +1,54 @@
+{
+  "items": [
+    // #region Events
+    // Days of Healing (2020)
+    {
+      "guid": "mw6o6Ezv3e",
+      "name": "Healing Pack",
+      "price": 19.99,
+      "items": [
+        "cM5zZKzBkO"
+      ],
+      "c": 75
+    },
+    // Days of Summer Lights (2020)
+    {
+      "guid": "_NudGPNXnY",
+      "name": "Summer Lights Lantern",
+      "price": 19.99,
+      "items": [
+        "5xJ_mCzZQy"
+      ]
+    },
+    // Days of Summer Lights (2021)
+    {
+      "guid": "uqlKywsZyd",
+      "name": "Summer Lights Bunny Hat",
+      "price": 2.99,
+      "items": [
+        "EEFIpR6x7Q"
+      ]
+    },
+    // Days of Summer (2021)
+    {
+      "guid": "of257qu0my",
+      "name": "Summer Umbrella",
+      "price": 19.99,
+      "items": [
+        "4CYafmMUql"
+      ]
+    },
+    // Kizuna AI Collab (2022)
+    {
+      "guid": "nnDO8UAwSC",
+      "name": "Kizuna AI Pack",
+      "price": 19.99,
+      "items": [
+        "FLMn1Hib7k",
+        "daH57TClK7",
+        "u7q3xg2y55"
+      ]
+    }
+    // #endregion
+  ]
+}
