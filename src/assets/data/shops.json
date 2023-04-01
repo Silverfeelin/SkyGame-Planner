@@ -1,12 +1,60 @@
 {
   "items": [
     // #region Events
+    // #region Days of Fortune (2021)
+    {
+      "guid": "cgSX8-JQkw",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "P0xxZcQSx5",
+        "ED9dHqWNc9",
+        "KbPeQWUPlV",
+      ]
+    },
+    // #endregion
+    // #region Days of Fortune (2022)
+    {
+      "guid": "etiMAAMrUG",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "OT4AzH9NaZ",
+        "YoxGgvFzsV",
+        "h4gJ7No20s",
+        "pTTfhnjNgn",
+        "exZs0drSPp",
+      ]
+    },
+    // #endregion
+    // #region Days of Fortune (2023)
+    {
+      "guid": "wgSxDUgZTU",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "r2n8t9EH20",
+        "pSgQ6p1m0V",
+        "Kz45-rQStP",
+        "LGhtWH5wmF",
+        "btFQ4ccT5r",
+      ]
+    },
+    {
+      "guid": "eYY7XDLRsH",
+      "type": "store",
+      "iaps": [
+        "f2wGOnTOGl",
+        "kYwAczfKLX",
+      ]
+    },
+    // #endregion
     // Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",
       "type": "store",
       "iaps": [
-        "mw6o6Ezv3e"
+        "mec9z8iJUX"
       ]
     },
     // Days of Summer Lights (2020)
@@ -22,7 +70,7 @@
       "guid": "hmIkJrBgwH",
       "type": "store",
       "iaps": [
-        "_NudGPNXnY",
+        "Cb-na1jU70",
         "uqlKywsZyd"
       ]
     },

@@ -41,9 +41,62 @@ body { scrollbar-width: thin; }
 // Global classes
 .c-main { color: var(--color) !important; }
 .c-accent { color: var(--color-accent) !important; }
+.c-new { color: var(--color-new) !important; }
+.c-old { color: var(--color-old) !important; }
 .p-rel { position: relative !important; }
 .p-abs { position: absolute !important; }
 .t-left { text-align: left !important; }
 .t.center { text-align: center !important; }
 .t-right { text-align: right !important; }
 .ws-nw { white-space: nowrap !important; }
+.d-inline-block { display: inline-block !important; }
+
+// Global layout
+@import "card-grid.less";
+@import "card-container.less";
+
+.unlock-check {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  color: var(--color-unlock-check-ref);
+  opacity: 0;
+  transition: opacity var(--animation-short);
+
+  &::before {
+    filter: drop-shadow(0px 1px 0px var(--color-unlock-check-shadow));
+  }
+
+  &.unlocked {
+    opacity: 1;
+    transition: opacity var(--animation-short);
+  }
+
+  &.self {
+    color: var(--color-unlock-check)
+  }
+}
+
+.point {
+  cursor: pointer;
+}
+
+.unlock-all {
+  position: absolute;
+  cursor: pointer;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-border-highlight);
+  border-radius: var(--border-radius-round);
+  background-color: var(--color-item-background);
+
+  mat-icon {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+  }
+}
+
+mat-icon.seasonal { fill: var(--color-candle-seasonal); }

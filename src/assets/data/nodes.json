@@ -13100,6 +13100,150 @@
     // #endregion
 
     // #region Events
+    // #region Days of Fortune (2021)
+    {
+      "guid": "9V57DrIUNo",
+      "item": "pbysQn-V2i",
+      "c": 2,
+      "nw": "Az_U8BGpMk",
+      "n": "2pPxuA2Yjc"
+    },
+    {
+      "guid": "Az_U8BGpMk",
+      "item": "0u6O0j9F_c",
+      "c": 3
+    },
+    {
+      "guid": "2pPxuA2Yjc",
+      "item": "Dy2jMmz7Hd",
+      "c": 2,
+      "nw": "ktrXlNJUIT",
+      "n": "pDFF2KDbnG"
+    },
+    {
+      "guid": "ktrXlNJUIT",
+      "item": "hLJjrHH-Ag",
+      "c": 54
+    },
+    {
+      "guid": "pDFF2KDbnG",
+      "item": "q9ajERIjGs",
+      "c": 2,
+      "n": "KSrqSxlx3H"
+    },
+    {
+      "guid": "KSrqSxlx3H",
+      "item": "LgDGqWw-NO",
+      "c": 66
+    },
+    // #endregion
+    // #region Days of Fortune (2022)
+    {
+      "guid": "cnCiI7zstu",
+      "item": "pbysQn-V2i",
+      "c": 2,
+      "nw": "DlxcQINI40",
+      "n": "cGuRtpZLwU"
+    },
+    {
+      "guid": "DlxcQINI40",
+      "item": "0u6O0j9F_c",
+      "c": 3
+    },
+    {
+      "guid": "cGuRtpZLwU",
+      "item": "Dy2jMmz7Hd",
+      "c": 2,
+      "nw": "bEUbxjMRvq",
+      "n": "1b70Zgeynk"
+    },
+    {
+      "guid": "bEUbxjMRvq",
+      "item": "hLJjrHH-Ag",
+      "c": 54
+    },
+    {
+      "guid": "1b70Zgeynk",
+      "item": "q9ajERIjGs",
+      "c": 2,
+      "n": "Gj44aHY_rU"
+    },
+    {
+      "guid": "Gj44aHY_rU",
+      "item": "LgDGqWw-NO",
+      "c": 66
+    },
+    {
+      "guid": "XAJZaI3Zif",
+      "item": "85rt7aX0Qq",
+      "c": 5,
+      "nw": "81Ldm1DaMt",
+      "n": "SwN_PyccDt"
+    },
+    {
+      "guid": "81Ldm1DaMt",
+      "item": "c1YroXxA9Z",
+      "c": 58
+    },
+    {
+      "guid": "SwN_PyccDt",
+      "item": "1QMUTwskc3",
+      "n": "eKfj1HVEaa"
+    },
+    {
+      "guid": "eKfj1HVEaa",
+      "item": "K_D28ouaKt",
+      "c": 5
+    },
+    // #endregion
+    // #region Days of Fortune (2023)
+    {
+      "guid": "zkh35ZE3J_",
+      "item": "pPtoh_z_ph",
+      "c": 5,
+      "nw": "NAufvGrLAf",
+      "n": "jNaGzBoCEn"
+    },
+    {
+      "guid": "NAufvGrLAf",
+      "item": "D_k9C9QybE",
+      "c": 62
+    },
+    {
+      "guid": "jNaGzBoCEn",
+      "item": "KgJzDWAIzH",
+      "n": "bptsnUCakk"
+    },
+    {
+      "guid": "bptsnUCakk",
+      "item": "s6wWch93R2",
+      "c": 5,
+      "nw": "u7MxulWrxC",
+      "n": "Qov7N8B_tG"
+    },
+    {
+      "guid": "u7MxulWrxC",
+      "item": "hLJjrHH-Ag",
+      "c": 56
+    },
+    {
+      "guid": "Qov7N8B_tG",
+      "item": "-fbFEz_cA_",
+      "c": 5,
+      "nw": "X0hXarEhX4",
+      "n": "jjieuPpyL3"
+    },
+    {
+      "guid": "X0hXarEhX4",
+      "item": "LgDGqWw-NO",
+      "c": 66
+    },
+    {
+      "guid": "jjieuPpyL3",
+      "item": "c1YroXxA9Z",
+      "c": 58
+    },
+    // #endregion
     // Days of Summer
     {
       "guid": "M55c-swNeS",

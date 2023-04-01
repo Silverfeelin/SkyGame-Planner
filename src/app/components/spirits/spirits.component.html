@@ -4,7 +4,8 @@
   <ng-template [appTableHeader]>Location</ng-template>
   <ng-template [appTableHeader]>Unlocked</ng-template>
 
-  <ng-template [appTableColumn] let-row="row" [link]="['/spirit', ':guid']">
+  <ng-template [appTableColumn] let-row="row"
+    [link]="['/spirit', ':guid']" [queryParams]="{ tree: ':tree' }">
     {{ row.name }}
   </ng-template>
   <ng-template [appTableColumn] let-row="row">

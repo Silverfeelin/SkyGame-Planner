@@ -3,6 +3,7 @@ import { IConfig, IGuid } from "./base.interface";
 import { IEventInstanceSpirit } from "./event.interface";
 import { IReturningSpirit } from "./returning-spirits.interface";
 import { ISeason } from "./season.interface";
+import { IShop } from "./shop.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { ITravelingSpirit } from "./traveling-spirit.interface";
 import { IWiki } from "./wiki.interface";
@@ -34,6 +35,8 @@ export interface ISpirit extends IGuid {
   returns?: Array<IReturningSpirit>;
   /** All visits during events. */
   events?: Array<IEventInstanceSpirit>;
+  /** All shop instances. */
+  shops?: Array<IShop>;
 
   /// Progress ///
 

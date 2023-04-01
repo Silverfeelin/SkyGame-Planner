@@ -1,5 +1,5 @@
-<div class="realms">
-  <div class="realm p-rel" *ngFor="let realm of realms">
+<div class="card-grid">
+  <div class="card p-rel" *ngFor="let realm of realms">
     <h1>{{realm.name}}</h1>
     <!-- Wiki -->
     <div class="wiki p-abs" *ngIf="realm._wiki?.href">
@@ -12,7 +12,7 @@
       Areas
     </div> -->
     <!-- Spirits -->
-    <div *ngIf="spiritCount[realm.guid]" class="mt-2 item nav" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular,Elder' }">
+    <div *ngIf="spiritCount[realm.guid]" class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular,Elder' }">
       <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
       <span class="menu-label">Spirits&nbsp;<span class="c-accent">({{ spiritCount[realm.guid] }})</span></span>
     </div>

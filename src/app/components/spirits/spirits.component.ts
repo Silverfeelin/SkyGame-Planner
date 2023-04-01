@@ -2,10 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { NodeHelper } from 'src/app/helpers/node-helper';
+import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
+import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
@@ -17,6 +19,8 @@ import { EventService } from 'src/app/services/event.service';
 })
 export class SpiritsComponent implements OnInit, OnDestroy {
   spirits: Array<ISpirit> = [];
+  queryTree: {[spiritGuid: string]: ISpiritTree} = {};
+  spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
   rows: Array<any> = [];
 
   // _itemSub?: Subscription;
@@ -41,15 +45,27 @@ export class SpiritsComponent implements OnInit, OnDestroy {
   }
 
   onQueryChanged(q: ParamMap): void {
-    const spiritSet = new Set<ISpirit>();
+    this.spirits = [];
+    this.spiritTrees = {};
+    this.queryTree = {};
 
     // Filter by type
     const type = q.get('type');
     const typeSet = type ? new Set<string>(type.split(',')) : undefined;
 
-    const addSpirit = (s: ISpirit): boolean => {
+    const addSpirit = (s: ISpirit, tree?: ISpiritTree): boolean => {
+      // Don't add spirit if type is filtered out.
       if (typeSet && !typeSet.has(s.type)) { return false; }
-      spiritSet.add(s);
+
+      this.spirits.push(s);
+      const trees: Array<ISpiritTree> = [];
+      this.spiritTrees[s.guid] = trees;
+
+      // Add all trees
+      if (tree) { trees.push(tree); }
+      if (s.tree) { trees.push(s.tree); }
+      if (s.ts?.length) { s.ts.forEach(t => trees.push(t.tree)); }
+
       return true;
     };
 
@@ -63,7 +79,14 @@ export class SpiritsComponent implements OnInit, OnDestroy {
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;
     season?.spirits?.forEach(s => addSpirit(s));
 
-    this.spirits = [...spiritSet];
+    // Load from event instance.
+    const eventInstanceGuid = q.get('eventInstance');
+    const eventInstance = eventInstanceGuid ? this._dataService.guidMap.get(eventInstanceGuid) as IEventInstance : undefined;
+    eventInstance?.spirits?.forEach(s => {
+      addSpirit(s.spirit!, s.tree!)
+      this.queryTree[s.spirit!.guid] = s.tree!;
+    });
+
     this.initTable();
   }
 
@@ -71,7 +94,7 @@ export class SpiritsComponent implements OnInit, OnDestroy {
     this.rows = this.spirits.map(s => {
       // Count items from all spirit trees.
       let unlockedItems = 0, totalItems = 0;
-      const trees = [s.tree, ...(s?.ts || []).map(t => t.tree)].filter(t => t);
+      const trees = this.spiritTrees[s.guid]!;
       const itemSet = new Set<IItem>();
       trees.forEach(tree => {
         // Get all nodes
@@ -86,6 +109,7 @@ export class SpiritsComponent implements OnInit, OnDestroy {
       return {
         ...s,
         areaGuid: s.area?.guid,
+        tree: this.queryTree[s.guid]?.guid,
         unlockedItems, totalItems
       }
     });

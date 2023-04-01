@@ -56,12 +56,8 @@ export class TableComponent implements OnChanges, AfterContentInit {
             if (params[k] == null) { isValid = false; }
           });
 
-          if (isValid) {
-            row['gridData'][ci].link = parts;
-            row['gridData'][ci].queryParams = params;
-          } else {
-            console.error('Table cell link invalid: ', parts, params);
-          }
+          row['gridData'][ci].link = parts;
+          row['gridData'][ci].queryParams = params;
         }
       });
     });

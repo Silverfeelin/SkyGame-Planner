@@ -924,6 +924,23 @@
     // #endregion
 
     // #region Events
+    // Days of Fortune
+    {
+      "guid": "FHqOvIFRz-",
+      "type": "Event",
+      "name": "Auspicious Visitor"
+    },
+    {
+      "guid": "dK38RIPIOG",
+      "type": "Event",
+      "name": "Fortune IAP Staff"
+    },
+    {
+      "guid": "zS4AGUTIgF",
+      "type": "Event",
+      "name": "Fortune IGC Staff"
+    },
+    // Days of Summer
     {
       "guid": "aMY1ZPzcEx",
       "type": "Event",

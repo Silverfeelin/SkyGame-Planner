@@ -1,4 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
+import { IEventInstance, IEventInstanceSpirit } from "./event.interface";
 import { INode } from "./node.interface";
 import { IReturningSpirit } from "./returning-spirits.interface";
 import { ISpirit } from "./spirit.interface";
@@ -12,4 +13,5 @@ export interface ISpiritTree extends IGuid {
   ts?: ITravelingSpirit;
   visit?: IReturningSpirit;
   spirit?: ISpirit;
+  eventInstanceSpirit?: IEventInstanceSpirit;
 }

@@ -8,11 +8,14 @@ import { IWiki } from "./wiki.interface";
 export interface IEventConfig extends IConfig<IEvent> {}
 
 export interface IEvent extends IGuid {
+  /** Name of the event. */
   name: string;
+
+  /** If true, the event recurs regularly (generally yearly). */
+  recurring?: boolean;
 
   /// References
   instances?: Array<IEventInstance>;
-
 
   _wiki?: IWiki;
 }
@@ -33,4 +36,5 @@ export interface IEventInstance extends IGuid {
 export interface IEventInstanceSpirit extends IGuid {
   spirit: ISpirit;
   tree: ISpiritTree;
+  eventInstance?: IEventInstance;
 }

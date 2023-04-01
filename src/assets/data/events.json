@@ -1,8 +1,56 @@
 {
   "items": [
-    // #region Recurring
-    // #endregion
-    // #region Old
+    // Days of Fortune
+    {
+      "guid": "qmi9ZWGfja",
+      "name": "Days of Fortune",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "ez8mFkEq4E",
+          "date": { "day": 24, "month": 1, "year": 2020 },
+          "endDate": { "day": 27, "month": 1, "year": 2020 }
+        },
+        {
+          "guid": "IX3dslxEQW",
+          "date": { "day": 8, "month": 2, "year": 2021 },
+          "endDate": { "day": 1, "month": 3, "year": 2021 },
+          "shops": [
+            "cgSX8-JQkw"
+          ],
+          "spirits": [
+            { "guid": "mrr49FVi5R", "spirit": "FHqOvIFRz-", "tree": "grBXyl9kdw" }
+          ]
+        },
+        {
+          "guid": "ikMsv8FNMy",
+          "date": { "day": 24, "month": 1, "year": 2022 },
+          "endDate": { "day": 6, "month": 2, "year": 2022 },
+          "shops": [
+            "etiMAAMrUG"
+          ],
+          "spirits": [
+            { "guid": "YPStqurD9K", "spirit": "FHqOvIFRz-", "tree": "Cfa81cTc1x" },
+            { "guid": "GlnH4VVPCa", "spirit": "zS4AGUTIgF", "tree": "jnq2S5ihN_" }
+          ]
+        },
+        {
+          "guid": "187kTuPAdi",
+          "date": { "day": 20, "month": 1, "year": 2023 },
+          "endDate": { "day": 2, "month": 2, "year": 2023 },
+          "shops": [
+            "wgSxDUgZTU",
+            "eYY7XDLRsH"
+          ],
+          "spirits": [
+            { "guid": "1QcP-L-MqO", "spirit": "FHqOvIFRz-", "tree": "Oi0WztDirX" },
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune"
+      }
+    },
     // Days of Healing (2020)
     {
       "guid": "Bqvtgwzj5I",
@@ -36,7 +84,6 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Special_Events"
       }
     },
-    // Days of Summer Lights
     // Kizuna AI Collab (2022)
     {
       "guid": "FBZvsjNRwi",
@@ -55,7 +102,7 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI"
       }
     },
-    // Days of Summer
+    // Days of Summer (2021)
     {
       "guid": "uv2xDBpU7W",
       "name": "Days of Summer",
@@ -71,9 +118,12 @@
             { "guid": "DfPcIzdjQ9", "spirit": "aMY1ZPzcEx", "tree": "mHHOSQWAM0" }
           ]
         }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer"
+      }
     },
-    // Days of Summer Lights
+    // Days of Summer Lights (2020/2021)
     {
       "guid": "tQQ7aeJbRJ",
       "name": "Days of Summer Lights",
@@ -94,7 +144,10 @@
             "hmIkJrBgwH"
           ]
         }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
+      }
     },
     // #endregion
   ]

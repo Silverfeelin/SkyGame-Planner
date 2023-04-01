@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { IRealm } from 'src/app/interfaces/realm.interface';
-import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({

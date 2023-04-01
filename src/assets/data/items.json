@@ -9651,6 +9651,152 @@
     // #endregion
 
     // #region Events
+    // #region Days of Fortune
+    {
+      "guid": "hLJjrHH-Ag",
+      "type": "Mask",
+      "name": "Fortune Bull Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Icon_mask_ox.png"
+    },
+    {
+      "guid": "LgDGqWw-NO",
+      "type": "Hair",
+      "name": "Fortune Lion Headdress",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_new_years_headpiece.png"
+    },
+    {
+      "guid": "aRgiKoKavp",
+      "type": "Hat",
+      "name": "Fortune Orange",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Icon_hair_event_orange_headpiece.png"
+    },
+    {
+      "guid": "udspGJd38_",
+      "type": "Hat",
+      "name": "Fortune Wool Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Icon_hair_event_wool_hat.png"
+    },
+    {
+      "guid": "o8CAzM0x1c",
+      "type": "Cape",
+      "name": "Fortune Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Icon_cape_fortune-Morybel-0146.png"
+    },
+    {
+      "guid": "HnCWgj7aoA",
+      "type": "Mask",
+      "name": "Fortune Blushing Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_mask_blush.png"
+    },
+    {
+      "guid": "rNDDbcjS4G",
+      "type": "Hair",
+      "name": "Fortune Bun Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Icon_hair_event_high_buns.png"
+    },
+    {
+      "guid": "c1YroXxA9Z",
+      "type": "Mask",
+      "name": "Fortune Tiger Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Days_of_Fortune_-_Tiger_mask_head_icon.png"
+    },
+    {
+      "guid": "OjSfpOgFoR",
+      "type": "Hat",
+      "name": "Fortune Fish Accessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days_of_Fortune_-_Fish_accessory_Icon.png"
+    },
+    {
+      "guid": "mzF6ZaHa1s",
+      "type": "Cape",
+      "name": "Fortune Fish Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Days_of_Fortune_-_Fish_cape_icon-Morybel-0146.png"
+    },
+    {
+      "guid": "A26TJj3cSl",
+      "type": "Hair",
+      "name": "Fortune Fish Hood",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Fortune_-_Fish_head_iconl.png"
+    },
+    {
+      "guid": "ADJiva5H2Z",
+      "type": "Outfit",
+      "name": "Fortune Muralist's Smock",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "uzos22Ysp3",
+      "type": "Held",
+      "name": "Fortune Enchanted Umbrella",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Prosperous-Party-Parasol-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "D_k9C9QybE",
+      "type": "Mask",
+      "name": "Fortune Rabbit Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "pbysQn-V2i",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "0u6O0j9F_c",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "Dy2jMmz7Hd",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "q9ajERIjGs",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "85rt7aX0Qq",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "K_D28ouaKt",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "KgJzDWAIzH",
+      "type": "Special",
+      "name": "Double-Five",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    },
+    {
+      "guid": "pPtoh_z_ph",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "s6wWch93R2",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "-fbFEz_cA_",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
     // Days of Healing (2020)
     {
       "guid": "cM5zZKzBkO",
@@ -9696,6 +9842,13 @@
       "type": "Prop",
       "name": "Double Deck Chairs",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Summer_beach_chairs.png"
+    },
+    // Days of Summer (2022)
+    {
+      "guid": "1QMUTwskc3",
+      "type": "Special",
+      "name": "Double-Five",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
     },
     // Kizuna AI Collab (2022)
     {

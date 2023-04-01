@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreditsComponent } from './components/credits/credits.component';
+import { EventInstanceComponent } from './components/event-instance/event-instance.component';
+import { EventComponent } from './components/event/event.component';
 import { EventsComponent } from './components/events/events.component';
 import { ItemsComponent } from './components/items/items.component';
 import { RealmsComponent } from './components/realms/realms.component';
 import { SeasonComponent } from './components/season/season.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
+import { ShopsComponent } from './components/shops/shops.component';
 import { SpiritComponent } from './components/spirit/spirit.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
@@ -13,6 +16,8 @@ import { TravelingSpiritsComponent } from './components/traveling-spirits/travel
 const routes: Routes = [
   { path: 'credits', component: CreditsComponent },
   { path: 'event', component: EventsComponent },
+  { path: 'event/:guid', component: EventComponent },
+  { path: 'event-instance/:guid', component: EventInstanceComponent },
   { path: 'item', component: ItemsComponent },
   { path: 'realm', component: RealmsComponent },
   { path: 'season', component: SeasonsComponent },
@@ -20,6 +25,7 @@ const routes: Routes = [
   { path: 'spirit', component: SpiritsComponent },
   { path: 'spirit/:guid', component: SpiritComponent },
   { path: 'ts', component: TravelingSpiritsComponent },
+  { path: 'shop', component: ShopsComponent },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];
 

@@ -1,9 +1,9 @@
 <div class="year" *ngFor="let year of years">
   <h1 class="">{{year}}</h1>
-  <div class="seasons">
-    <div class="season p-rel" *ngFor="let season of yearMap[year]; let i = index;">
+  <div class="card-grid card-grid-even">
+    <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;">
       <h1>
-        <span class="c-accent season-number">#{{ season.number }}</span>
+        <span class="c-accent number">#{{ season.number }}</span>
         {{ season.name }}
       </h1>
       <!-- Wiki -->

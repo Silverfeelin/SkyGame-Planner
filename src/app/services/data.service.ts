@@ -21,6 +21,7 @@ import moment, { Moment } from 'moment';
 import { DateHelper } from '../helpers/date-helper';
 import { StorageService } from './storage.service';
 import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
+import { IIAP } from '../interfaces/iap.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -67,6 +68,7 @@ export class DataService {
       realmConfig: get('realms.json'),
       seasonConfig: get('seasons.json'),
       shopConfig: get('shops.json'),
+      iapConfig: get('iaps.json'),
       spiritConfig: get('spirits.json'),
       spiritTreeConfig: get('spirit-trees.json'),
       travelingSpiritConfig:  get('traveling-spirits.json'),
@@ -99,6 +101,7 @@ export class DataService {
     this.initializeReturningSpirits();
     this.initializeSpiritTrees();
     this.initializeEvents();
+    this.initializeShops();
 
     if (isDevMode()) {
       this.validate();
@@ -254,29 +257,66 @@ export class DataService {
 
   private initializeEvents(): void {
     this.eventConfig.items.forEach(event => {
-      event.instances?.forEach((instance, i) => {
-        this.registerGuid(instance);
-        instance.number = i + 1;
+      event.instances?.forEach((eventInstance, iInstance) => {
+        this.registerGuid(eventInstance);
+        eventInstance.number = iInstance + 1;
 
         // Initialize dates
-        instance.date = DateHelper.fromInterface(instance.date)!;
-        instance.endDate = DateHelper.fromInterface(instance.endDate)!;
+        eventInstance.date = DateHelper.fromInterface(eventInstance.date)!;
+        eventInstance.endDate = DateHelper.fromInterface(eventInstance.endDate)!;
 
         // Map Instance to Event.
-        instance.event = event;
+        eventInstance.event = event;
 
-        instance.shops?.forEach(shop => {
+        // Map shops to instance.
+        eventInstance.shops?.forEach((shop, iShop) => {
           shop = this.guidMap.get(shop as any) as IShop;
-          instance.shops![i] = shop;
-          shop.event = instance;
+          eventInstance.shops![iShop] = shop;
+          shop.event = eventInstance;
         });
 
-        instance.spirits?.forEach(eventSpirit => {
+        // Initialize event spirits.
+        eventInstance.spirits?.forEach(eventSpirit => {
+          eventSpirit.eventInstance = eventInstance;
+
           const spirit = this.guidMap.get(eventSpirit.spirit as any) as ISpirit;
           if (!spirit) { console.error( 'Spirit not found', eventSpirit.spirit); }
           eventSpirit.spirit = spirit;
           eventSpirit.spirit.events = [];
           eventSpirit.spirit.events.push(eventSpirit);
+
+          const tree = this.guidMap.get(eventSpirit.tree as any) as ISpiritTree;
+          if (!tree) { console.error( 'Tree not found', eventSpirit.tree); }
+          eventSpirit.tree = tree;
+          tree.eventInstanceSpirit = eventSpirit;
+        });
+      });
+    });
+  }
+
+  private initializeShops(): void {
+    this.shopConfig.items.forEach(shop => {
+      // Map Shop to Spirit.
+      if (shop.spirit) {
+        const spirit = this.guidMap.get(shop.spirit as any) as ISpirit;
+        shop.spirit = spirit;
+        spirit.shops ??= [];
+        spirit.shops.push(shop);
+      }
+
+      shop.iaps?.forEach((iap, iIap) => {
+        iap = this.guidMap.get(iap as any) as IIAP;
+        shop.iaps![iIap] = iap;
+        iap.shop = shop;
+
+        iap.bought = this._storageService.unlocked.has(iap.guid);
+
+        iap.items?.forEach((itemGuid, iItem) => {
+          const item = this.guidMap.get(itemGuid as any) as IItem;
+          if (!item) { console.error('Item not found', itemGuid); }
+          iap.items![iItem] = item;
+          item.iaps ??= [];
+          item.iaps.push(iap);
         });
       });
     });

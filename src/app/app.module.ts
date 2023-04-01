@@ -24,6 +24,9 @@ import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TableHeaderDirective } from './components/table/table-column/table-header.directive';
 import { SpiritComponent } from './components/spirit/spirit.component';
 import { SeasonComponent } from './components/season/season.component';
+import { ShopsComponent } from './components/shops/shops.component';
+import { EventComponent } from './components/event/event.component';
+import { EventInstanceComponent } from './components/event-instance/event-instance.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { SeasonComponent } from './components/season/season.component';
     EventsComponent,
     SpiritsComponent,
     SpiritComponent,
-    SeasonComponent
+    SeasonComponent,
+    ShopsComponent,
+    EventComponent,
+    EventInstanceComponent
   ],
   imports: [
     BrowserModule,

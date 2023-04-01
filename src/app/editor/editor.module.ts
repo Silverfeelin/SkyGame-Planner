@@ -4,11 +4,13 @@ import { EditorDashboardComponent } from './components/dashboard/editor-dashboar
 import { EditorRoutingModule } from './editor-routing.module';
 import { EditorTravelingSpiritComponent } from './components/editor-traveling-spirit/editor-traveling-spirit.component';
 import { FormsModule } from '@angular/forms';
+import { EditorTreeComponent } from './components/editor-tree/editor-tree.component';
 
 @NgModule({
   declarations: [
     EditorDashboardComponent,
-    EditorTravelingSpiritComponent
+    EditorTravelingSpiritComponent,
+    EditorTreeComponent
   ],
   imports: [
     CommonModule,
