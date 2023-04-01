@@ -8,7 +8,6 @@ import { ItemsComponent } from './components/items/items.component';
 import { RealmsComponent } from './components/realms/realms.component';
 import { SeasonComponent } from './components/season/season.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
-import { ShopsComponent } from './components/shops/shops.component';
 import { SpiritComponent } from './components/spirit/spirit.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
@@ -25,7 +24,6 @@ const routes: Routes = [
   { path: 'spirit', component: SpiritsComponent },
   { path: 'spirit/:guid', component: SpiritComponent },
   { path: 'ts', component: TravelingSpiritsComponent },
-  { path: 'shop', component: ShopsComponent },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];
 
