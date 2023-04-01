@@ -3622,7 +3622,7 @@
     {
       "guid": "lia3qGhqvA",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3634,7 +3634,7 @@
     {
       "guid": "vOXpY0l3FA",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3650,9 +3650,15 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Icon_high_five.png"
     },
     {
+      "guid": "p3BbbHjDD9",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
       "guid": "uMOURZju5o",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3664,7 +3670,7 @@
     {
       "guid": "LHvJcN3c1o",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3678,6 +3684,96 @@
       "type": "Special",
       "name": "Double-Five",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    },
+    {
+      "guid": "Hgv4K5wpAl",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "TMVanCtb1T",
+      "type": "Quest",
+      "name": "Quest 5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "IRDLs3NTMx",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "Pf7HGPSK2I",
+      "type": "Quest",
+      "name": "Quest 6",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "h81gLcnMDK",
+      "type": "Prop",
+      "name": "Potted Plant",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/SoRemembrance-Prop-Plants-Morybel-0146.png"
+    },
+    {
+      "guid": "2pixQYfTCD",
+      "type": "Quest",
+      "name": "Quest 7",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "8RhUhFkRd5",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "xpntoR6DSl",
+      "type": "Quest",
+      "name": "Quest 8",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "6jVOMj3-8W",
+      "type": "Prop",
+      "name": "Crab Plush",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SoRemembrance-Prop-Crab-Plush-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "TV24ErY4KC",
+      "type": "Prop",
+      "name": "Manta Plush",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SoRemembrance-Prop-Manta-Plush-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "tJB9vtMmBJ",
+      "type": "Special",
+      "name": "Hug",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
+    },
+    {
+      "guid": "4B5cAwYmjl",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "bU0whqWAde",
+      "type": "Quest",
+      "name": "Quest 9",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "tCEMb-VdXV",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "4a7FBf31jp",
+      "type": "Quest",
+      "name": "Quest 10",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     // #endregion
 

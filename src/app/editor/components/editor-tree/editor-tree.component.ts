@@ -107,15 +107,6 @@ export class EditorTreeComponent implements OnInit {
     return undefined;
   }
 
-  getNextThursday(): Date {
-    const now = moment();
-
-    now.isoWeekday(4);
-    if (now.isoWeek() % 2 === 0) { now.add(7, 'days'); }
-
-    return now.toDate();
-  }
-
   nodeToFormNodes(mainNode: INode): Array<IFormNode> {
     const formNodes = new Array<IFormNode>();
 
