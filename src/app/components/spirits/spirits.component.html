@@ -1,12 +1,12 @@
+<h1>Spirits</h1>
 <app-table [rows]="rows">
   <ng-template [appTableHeader]>Spirit</ng-template>
   <ng-template [appTableHeader]>Type</ng-template>
   <ng-template [appTableHeader]>Location</ng-template>
   <ng-template [appTableHeader]>Unlocked</ng-template>
 
-  <ng-template [appTableColumn] let-row="row"
-    [link]="['/spirit', ':guid']" [queryParams]="{ tree: ':tree' }">
-    {{ row.name }}
+  <ng-template [appTableColumn] let-row="row">
+    <a [routerLink]="['/spirit', row.guid]" [queryParams]="{ tree: row.tree }">{{ row.name }}</a>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">
     {{ row.type }}

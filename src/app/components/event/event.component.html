@@ -13,8 +13,8 @@
   <ng-template [appTableColumn] let-row="row">
     {{ row.number }}
   </ng-template>
-  <ng-template [appTableColumn] let-row="row" [link]="['/event-instance', ':guid']">
-    {{ row.name }}
+  <ng-template [appTableColumn] let-row="row">
+    <a [routerLink]="['/event-instance', row.guid]">{{ row.name }}</a>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">
     {{ row.year }}
@@ -31,7 +31,7 @@
   <ng-template [appTableColumn] let-row="row">
     {{ row.iaps }}
     <ng-container *ngIf="row.returningIaps">
-      (<span class="returning" [ngbTooltip]="'Contains returning IAPs.'" container="body"><mat-icon fontIcon="undo"></mat-icon>{{ row.returningIaps }}</span>)
+      (<span class="returning" [ngbTooltip]="'Contains ' + row.returningIaps + ' returning IAPs.'" container="body"><mat-icon fontIcon="undo"></mat-icon>{{ row.returningIaps }}</span>)
     </ng-container>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">

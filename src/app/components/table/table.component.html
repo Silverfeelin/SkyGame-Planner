@@ -13,8 +13,7 @@
       <ng-container *ngFor="let row of rows">
         <tr>
           <ng-container *ngFor="let column of columns; let ci = index;">
-            <td [class.link]="row['gridData']?.[ci]?.['link']"
-              [routerLink]="row['gridData']?.[ci]?.['link']" [queryParams]="row['gridData']?.[ci]?.['queryParams']">
+            <td>
               <ng-container [ngTemplateOutlet]="column.template" [ngTemplateOutletContext]="{row}"></ng-container>
             </td>
           </ng-container>

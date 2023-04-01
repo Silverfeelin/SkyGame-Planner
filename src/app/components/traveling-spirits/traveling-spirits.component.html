@@ -8,8 +8,10 @@
   <ng-template [appTableColumn] let-row="row">
     {{ row.number }}
   </ng-template>
-  <ng-template [appTableColumn] let-row="row" [link]="['/spirit', ':spiritGuid']" [queryParams]="{ highlightTree: ':treeGuid' }">
-    {{ row.spirit.name }}
+  <ng-template [appTableColumn] let-row="row">
+    <a [routerLink]="['/spirit', row.spiritGuid]" [queryParams]="{ highlightTree: row.treeGuid }">
+      {{ row.spirit.name }}
+    </a>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">
     {{ row.date | date:'dd-MM-yyyy' }}
