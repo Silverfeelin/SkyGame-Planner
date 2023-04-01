@@ -1,25 +1,24 @@
-<div class="recurring">
-  <h1 class="">Recurring events</h1>
-  <div class="card-grid card-grid-even">
-    <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
-      <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
-    </div>
+<h1>Events</h1>
+<div class="card-wrapper">
+  <h2 class="mb-0">Recurring events</h2>
+</div>
+<div class="card-grid card-grid-even mt-2">
+  <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
+    <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
   </div>
 </div>
 
-<div class="old">
-  <h1 class="">Past events</h1>
-  <div class="card-grid card-grid-even">
-    <div class="card p-rel" *ngFor="let event of old; let i = index;">
-      <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
-    </div>
+<div class="card-wrapper mt-2">
+  <h2 class="mb-0">Past events</h2>
+</div>
+<div class="card-grid card-grid-even mt-2">
+  <div class="card p-rel" *ngFor="let event of old; let i = index;">
+    <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
   </div>
 </div>
 
 <ng-template #eventDiv let-event>
-  <h1>
-    {{ event.name }}
-  </h1>
+  <h2>{{ event.name }}</h2>
   <!-- Wiki -->
   <div class="wiki p-abs" *ngIf="event._wiki?.href">
     <a [href]="event._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
@@ -31,6 +30,14 @@
     <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
     <span class="menu-label">
       Overview
+    </span>
+  </a>
+  <!-- Overview -->
+  <a class="mt-2 item" *ngIf="lastInstances[event.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.guid]).guid]">
+    <mat-icon class="menu-icon" fontIcon="schedule"></mat-icon>
+    <span class="menu-label">
+      Most recent
+      <span class="c-accent">({{ $any(lastInstances[event.guid]).date | date:'yyyy' }})</span>
     </span>
   </a>
 </ng-template>
