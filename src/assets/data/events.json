@@ -270,6 +270,28 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
       }
     },
+    // Days of Sunlight
+    {
+      "guid": "HIw19Tr9eP",
+      "name": "Days of Sunlight",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "So_OVA37Ck",
+          "date": { "day": 22, "month": 8, "year": 2022 },
+          "endDate": { "day": 11, "month": 9, "year": 2022 },
+          "shops": [
+            "mmxpUMHHS8"
+          ],
+          "spirits": [
+            { "guid": "tDfqpF3f03", "spirit": "c9XXzlKzhd", "tree": "vIhlnkdWTh" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight"
+      }
+    },
     // Lazy Days
     {
       "guid": "eVaYOCFqcC",
@@ -388,27 +410,6 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
-      }
-    },
-    // Days of Sunlight (2022)
-    {
-      "guid": "HIw19Tr9eP",
-      "name": "Days of Sunlight",
-      "instances": [
-        {
-          "guid": "So_OVA37Ck",
-          "date": { "day": 22, "month": 8, "year": 2022 },
-          "endDate": { "day": 11, "month": 9, "year": 2022 },
-          "shops": [
-            "mmxpUMHHS8"
-          ],
-          "spirits": [
-            { "guid": "tDfqpF3f03", "spirit": "c9XXzlKzhd", "tree": "vIhlnkdWTh" }
-          ]
-        }
-      ],
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight"
       }
     },
     // #endregion
