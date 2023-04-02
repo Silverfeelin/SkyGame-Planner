@@ -16,6 +16,8 @@ export interface IIAP extends IGuid {
   c?: number;
   /** Season candles included in purchase. */
   sc?: number;
+  /** Season Gift Passes included in purchase. */
+  sp?: number;
 
   /// References ///
 

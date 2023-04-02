@@ -3,6 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ISpiritTree } from './interfaces/spirit-tree.interface';
 import { DataService } from './services/data.service';
+import { DebugService } from './services/debug.service';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class AppComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _debugService: DebugService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry
   ) {

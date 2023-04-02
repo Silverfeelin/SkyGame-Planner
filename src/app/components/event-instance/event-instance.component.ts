@@ -4,6 +4,7 @@ import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
+import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -15,9 +16,11 @@ import { StorageService } from 'src/app/services/storage.service';
 export class EventInstanceComponent {
   instance!: IEventInstance;
   shops?: Array<IShop>;
+  iapNames: { [iapGuid: string]: string | undefined } = {};
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _debugService: DebugService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
     private readonly _route: ActivatedRoute
@@ -37,10 +40,34 @@ export class EventInstanceComponent {
       const bNew = b.iaps?.filter(iap => !iap.returning).length ?? 0;
       return bNew - aNew;
     });
+
+    // Loop over all IAPs
+    const eventName = this.instance.event?.name;
+    if (eventName) {
+      this.shops?.forEach(shop => {
+        shop.iaps?.forEach(iap => {
+          // Remove event name from IAP to save space.
+          let name = iap.name?.replace(`${eventName} `, '');
+          // Keep event name if a single word is left.
+          if (name?.indexOf(' ') === -1) {
+            name = eventName.startsWith('Days of ') ? iap.name?.substring(8) : iap.name;
+          }
+          this.iapNames[iap.guid] = name;
+        });
+      });
+    }
   }
 
 
-  togglePurchased(iap: IIAP): void {
+  togglePurchased(event: MouseEvent, iap: IIAP): void {
+    if (this._debugService.copyShop) {
+      debugger;
+      event.stopImmediatePropagation();
+      event.preventDefault();
+      navigator.clipboard.writeText(iap.shop?.guid ?? '');
+      return;
+    }
+
     if (!iap) { return; }
 
     const unlock = !iap.bought;

@@ -5,12 +5,14 @@ import { EditorRoutingModule } from './editor-routing.module';
 import { EditorTravelingSpiritComponent } from './components/editor-traveling-spirit/editor-traveling-spirit.component';
 import { FormsModule } from '@angular/forms';
 import { EditorTreeComponent } from './components/editor-tree/editor-tree.component';
+import { EditorShopComponent } from './components/editor-shop/editor-shop.component';
 
 @NgModule({
   declarations: [
     EditorDashboardComponent,
     EditorTravelingSpiritComponent,
-    EditorTreeComponent
+    EditorTreeComponent,
+    EditorShopComponent
   ],
   imports: [
     CommonModule,

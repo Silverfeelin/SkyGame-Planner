@@ -1103,7 +1103,7 @@
     },
     // #endregion
 
-    // #region Events
+    // #region Days of Fortune
     // Days of Fortune (2021)
     {
       "guid": "grBXyl9kdw",
@@ -1123,6 +1123,58 @@
       "guid": "Oi0WztDirX",
       "node": "zkh35ZE3J_"
     },
+    // #endregion
+    // #region Days of Love
+    // Days of Love 2021
+    {
+      "guid": "3pb_Tfne7M",
+      "node": "IZbM47BixN"
+    },
+    // Days of Love 2022
+    {
+      "guid": "CIOxUbOvxM",
+      "node": "dpb9d6_p4i"
+    },
+    {
+      "guid": "TdnkeRcqGR",
+      "node": "YMjY2A84bM"
+    },
+    // Days of Love 2023
+    {
+      "guid": "O8EcMfr4-R",
+      "node": "0OwYXsTmje"
+    },
+    {
+      "guid": "NuqYNp7i8O",
+      "node": "uXmw3Tu3PQ"
+    },
+    // #endregion
+    // #region Days of Bloom
+    // Days of Bloom 2021
+    {
+      "guid": "c8KLFXw7Qh",
+      "node": "cQSMKHE-9K"
+    },
+    // Days of Bloom 2022
+    {
+      "guid": "qXCroH8_X9",
+      "node": "5qLFwCCKZS"
+    },
+    // Days of Bloom 2023
+    {
+      "guid": "fLuM8drQ4H",
+      "node": "JNRuX5nyjB"
+    },
+    {
+      "guid": "Cz7AcNalLH",
+      "node": "svvcWfAB17"
+    },
+    {
+      "guid": "yvuc0d_gC7",
+      "node": "KXsWsk9Zou"
+    },
+    // #endregion
+    // #region Old Events
     // Days of Summer
     {
       "guid": "mHHOSQWAM0",

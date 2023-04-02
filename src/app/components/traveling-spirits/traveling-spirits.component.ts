@@ -7,16 +7,12 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './traveling-spirits.component.html',
   styleUrls: ['./traveling-spirits.component.less']
 })
-export class TravelingSpiritsComponent implements OnInit {
+export class TravelingSpiritsComponent {
   rows: Array<any> = [];
 
   constructor(
     private readonly _dataService: DataService
   ) {
-
-  }
-
-  ngOnInit(): void {
     this.rows = this._dataService.travelingSpiritConfig.items.map(ts => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;

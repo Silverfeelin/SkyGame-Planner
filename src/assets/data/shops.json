@@ -1,6 +1,5 @@
 {
   "items": [
-    // #region Events
     // #region Days of Fortune (2021)
     {
       "guid": "cgSX8-JQkw",
@@ -49,7 +48,116 @@
       ]
     },
     // #endregion
-    // Days of Healing (2020)
+    // #region Days of Love (2020)
+    {
+      "guid": "b6QkhZumfk",
+      "type": "store",
+      "iaps": [
+        "FlOGVYjyiY"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2021)
+    {
+      "guid": "AVZC5sL-ZT",
+      "type": "store",
+      "iaps": [
+        "-gWkeP967A",
+        "SMZdQolABl"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2022)
+    {
+      "guid": "Qui5cN01A3",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "8K7K3lo1Au",
+        "W4ZTCF4QNi"
+      ]
+    },
+    {
+      "guid": "0UnDE-9JQY",
+      "type": "store",
+      "iaps": [
+        "2Izzp9weB5"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2023)
+    {
+      "guid": "dosWjd_0Ur",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "Ez2DeNbquI",
+        "9Zfj0X2wNt",
+        "P17exQBRvH"
+      ]
+    },
+    {
+      "guid": "4mcmO11hCE",
+      "type": "store",
+      "iaps": [
+        "65mCMf_2ZQ",
+        "GfzBBN17Gm"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2021)
+    {
+      "guid": "EF1SdxSqWT",
+      "type": "store",
+      "iaps": [
+        "mdWojLD1RZ"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2022)
+    {
+      "guid": "BtRb90bYtH",
+      "type": "store",
+      "iaps": [
+        "SJrMMErd7U"
+      ]
+    },
+    {
+      "guid": "m1hOAdOvnx",
+      "type": "spirit",
+      "spirit": "UNKzFTE5mB",
+      "iaps": [
+        "rUGalz2aN1"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2023)
+    {
+      "guid": "VU-iQQPPoN",
+      "type": "object",
+      "name": "Home Bloom Crate",
+      "iaps": [
+        "skAZ2yHQ5q"
+      ]
+    },
+    {
+      "guid": "i1aaE0u8xS",
+      "type": "object",
+      "name": "Forest Bloom Crate",
+      "iaps": [
+        "HQNwM6uvpQ"
+      ]
+    },
+    {
+      "guid": "VPnMsfufZ3",
+      "type": "store",
+      "iaps": [
+        "zwPqSQZWLt",
+        "mEvjH3h1gv"
+      ]
+    },
+    // #endregion
+    // #region Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",
       "type": "store",
@@ -57,7 +165,8 @@
         "mec9z8iJUX"
       ]
     },
-    // Days of Summer Lights (2020)
+    // #endregion
+    // #region Days of Summer Lights (2020)
     {
       "guid": "mbEzwlWA7W",
       "type": "store",
@@ -65,7 +174,8 @@
         "_NudGPNXnY"
       ]
     },
-    // Days of Summer Lights (2021)
+    // #endregion
+    // #region Days of Summer Lights (2021)
     {
       "guid": "hmIkJrBgwH",
       "type": "store",
@@ -74,7 +184,8 @@
         "uqlKywsZyd"
       ]
     },
-    // Days of Summer (2021)
+    // #endregion
+    // #region Days of Summer (2021)
     {
       "guid": "dgkpvIdu6r",
       "type": "store",
@@ -82,7 +193,8 @@
         "of257qu0my"
       ]
     },
-    // Kizuna AI Collab (2022)
+    // #endregion
+    // #region Kizuna AI Collab (2022)
     {
       "guid": "djY7Ysc5Yf",
       "type": "store",
@@ -90,7 +202,6 @@
         "nnDO8UAwSC"
       ]
     }
-    // Kizuna
     // #endregion
   ]
 }

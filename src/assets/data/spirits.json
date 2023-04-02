@@ -924,27 +924,32 @@
     // #endregion
 
     // #region Events
-    // Days of Fortune
     {
-      "guid": "FHqOvIFRz-",
+      "guid": "9VkjVkgKhb",
       "type": "Event",
       "name": "Auspicious Visitor"
     },
     {
       "guid": "dK38RIPIOG",
       "type": "Event",
-      "name": "Fortune IAP Staff"
+      "name": "Event Staff (IAP)"
     },
     {
       "guid": "zS4AGUTIgF",
       "type": "Event",
-      "name": "Fortune IGC Staff"
+      "name": "Event Staff (IGC)"
     },
     // Days of Summer
     {
       "guid": "aMY1ZPzcEx",
       "type": "Event",
       "name": "Days of Summer Guide"
+    },
+    // Days of Bloom
+    {
+      "guid": "IqShB-6_rY",
+      "type": "Event",
+      "name": "Days of Bloom Guide"
     },
     // #endregion
   ]

@@ -1,13 +1,21 @@
 .card-grid {
   display: grid;
-  grid-template-columns: var(--columns-items);
+  grid-template-columns: var(--column-items);
 
-  &.card-grid-even {
-    grid-template-columns: var(--columns-items-even);
+  &.card-grid-1 {
+    grid-template-columns: var(--column-items-1);
   }
 
-  &.card-grid-single {
-    grid-template-columns: 1fr !important;
+  &.card-grid-2 {
+    grid-template-columns: var(--column-items-2);
+  }
+
+  &.card-grid-3 {
+    grid-template-columns: var(--column-items-3);
+  }
+
+  &.card-grid-4 {
+    grid-template-columns: var(--column-items-4);
   }
 
   gap: 4px;

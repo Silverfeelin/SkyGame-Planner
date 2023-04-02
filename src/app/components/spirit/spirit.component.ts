@@ -11,7 +11,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./spirit.component.less']
 })
 export class SpiritComponent {
-  spirit?: ISpirit;
+  spirit!: ISpirit;
   tree?: ISpiritTree;
 
   highlightTree?: string;
@@ -36,6 +36,6 @@ export class SpiritComponent {
 
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
-    this.spirit = guid ? this._dataService.guidMap.get(guid) as ISpirit : undefined;
+    this.spirit = this._dataService.guidMap.get(guid!) as ISpirit;
   }
 }

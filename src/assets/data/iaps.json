@@ -1,6 +1,5 @@
 {
   "items": [
-    // #region Events
     // #region Days of Fortune (2021)
     {
       "guid": "P0xxZcQSx5",
@@ -143,7 +142,189 @@
       ]
     },
     // #endregion
-    // Days of Healing (2020)
+    // #region Days of Love (2020)
+    {
+      "guid": "FlOGVYjyiY",
+      "name": "Days of Love Pack",
+      "price": 19.99,
+      "sp": 1,
+      "items": [
+        "w7byhvh3Xa"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2021)
+    {
+      "guid": "-gWkeP967A",
+      "name": "Days of Love Swing Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "w7byhvh3Xa"
+      ]
+    },
+    {
+      "guid": "SMZdQolABl",
+      "name": "Days of Love Seesaw Pack",
+      "price": 19.99,
+      "sc": 35,
+      "items": [
+        "yWCpBlHsWa"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2022)
+    {
+      "guid": "8K7K3lo1Au",
+      "name": "Days of Love Swing Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "w7byhvh3Xa"
+      ]
+    },
+    {
+      "guid": "W4ZTCF4QNi",
+      "name": "Days of Love Seesaw Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "yWCpBlHsWa"
+      ]
+    },
+    {
+      "guid": "2Izzp9weB5",
+      "name": "Days of Love Gondola Pack",
+      "price": 19.99,
+      "sc": 35,
+      "items": [
+        "EZ_nfEHgOx"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2023)
+    {
+      "guid": "Ez2DeNbquI",
+      "name": "Days of Love Swing Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "w7byhvh3Xa"
+      ]
+    },
+    {
+      "guid": "9Zfj0X2wNt",
+      "name": "Days of Love Seesaw Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "yWCpBlHsWa"
+      ]
+    },
+    {
+      "guid": "P17exQBRvH",
+      "name": "Days of Love Gondola Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "EZ_nfEHgOx"
+      ]
+    },
+    {
+      "guid": "65mCMf_2ZQ",
+      "name": "Days of Love Serendipitous Scepter",
+      "price": 14.99,
+      "items": [
+        "Tf45PqqIsn"
+      ]
+    },
+    {
+      "guid": "GfzBBN17Gm",
+      "name": "Days of Love Classy Cravat",
+      "price": 4.99,
+      "items": [
+        "PuFWddickP"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2021)
+    {
+      "guid": "mdWojLD1RZ",
+      "name": "Bloom Teaset",
+      "price": 19.99,
+      "c": 35,
+      "items": [
+        "sTIyha_lg1"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2022)
+    {
+      "guid": "rUGalz2aN1",
+      "name": "Pink Bloom Teaset",
+      "price": 19.99,
+      "returning": true,
+      "c": 35,
+      "items": [
+        "sTIyha_lg1"
+      ]
+    },
+    {
+      "guid": "SJrMMErd7U",
+      "name": "Purple Bloom Teaset",
+      "price": 19.99,
+      "c": 35,
+      "items": [
+        "l6GE013zrh"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2023)
+    {
+      "guid": "skAZ2yHQ5q",
+      "name": "Pink Bloom Teaset",
+      "price": 19.99,
+      "returning": true,
+      "c": 35,
+      "items": [
+        "sTIyha_lg1"
+      ]
+    },
+    {
+      "guid": "HQNwM6uvpQ",
+      "name": "Purple Bloom Teaset",
+      "price": 19.99,
+      "returning": true,
+      "c": 35,
+      "items": [
+        "l6GE013zrh"
+      ]
+    },
+    {
+      "guid": "zwPqSQZWLt",
+      "name": "Bloom Picnic Basket",
+      "price": 19.99,
+      "sp": 1,
+      "items": [
+        "_0PZEyTNxt"
+      ]
+    },
+    {
+      "guid": "mEvjH3h1gv",
+      "name": "Bloom Gardening Tunic",
+      "price": 9.99,
+      "items": [
+        "wUPw1TRQSI"
+      ]
+    },
+    // #endregion
+    // #region Days of Healing (2020)
     {
       "guid": "mec9z8iJUX",
       "name": "Healing Pack",
@@ -153,19 +334,21 @@
       ],
       "c": 75
     },
-    // Days of Summer Lights (2020)
+    // #endregion
+    // #region Days of Summer Lights (2020)
     {
       "guid": "_NudGPNXnY",
-      "name": "Summer Lights Lantern",
+      "name": "Days of Summer Lights Lantern",
       "price": 19.99,
       "items": [
         "5xJ_mCzZQy"
       ]
     },
-    // Days of Summer Lights (2021)
+    // #endregion
+    // #region Days of Summer Lights (2021)
     {
       "guid": "Cb-na1jU70",
-      "name": "Summer Lights Lantern",
+      "name": "Days of Summer Lights Lantern",
       "price": 19.99,
       "returning": true,
       "items": [
@@ -174,22 +357,24 @@
     },
     {
       "guid": "uqlKywsZyd",
-      "name": "Summer Lights Bunny Hat",
+      "name": "Days of Summer Lights Bunny Hat",
       "price": 2.99,
       "items": [
         "EEFIpR6x7Q"
       ]
     },
-    // Days of Summer (2021)
+    // #endregion
+    // #region Days of Summer (2021)
     {
       "guid": "of257qu0my",
-      "name": "Summer Umbrella",
+      "name": "Days of Summer Umbrella",
       "price": 19.99,
       "items": [
         "4CYafmMUql"
       ]
     },
-    // Kizuna AI Collab (2022)
+    // #endregion
+    // #region Kizuna AI Collab (2022)
     {
       "guid": "nnDO8UAwSC",
       "name": "Kizuna AI Pack",

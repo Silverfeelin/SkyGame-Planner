@@ -1,8 +1,10 @@
 <h1>Spirit</h1>
-<div *ngIf="spirit" class="card-container">
-  <h2>
-    {{ spirit.name }}
-  </h2>
+
+<div class="card-wrapper mt-2">
+  <h2 class="mb-0">{{ spirit.name }}</h2>
+</div>
+
+<div class="card-container mt-2">
   <div class="card-container-inner">
     <!-- Added tree-->
     <div *ngIf="tree" class="tree-wrapper p-inline-block">

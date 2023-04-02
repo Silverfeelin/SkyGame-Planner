@@ -9746,90 +9746,89 @@
     },
     // #endregion
 
-    // #region Events
     // #region Days of Fortune
     {
       "guid": "hLJjrHH-Ag",
       "type": "Mask",
-      "name": "Fortune Bull Mask",
+      "name": "Days of Fortune Bull Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Icon_mask_ox.png"
     },
     {
       "guid": "LgDGqWw-NO",
       "type": "Hair",
-      "name": "Fortune Lion Headdress",
+      "name": "Days of Fortune Lion Headdress",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_new_years_headpiece.png"
     },
     {
       "guid": "aRgiKoKavp",
       "type": "Hat",
-      "name": "Fortune Orange",
+      "name": "Days of Fortune Orange",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Icon_hair_event_orange_headpiece.png"
     },
     {
       "guid": "udspGJd38_",
       "type": "Hat",
-      "name": "Fortune Wool Hat",
+      "name": "Days of Fortune Wool Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Icon_hair_event_wool_hat.png"
     },
     {
       "guid": "o8CAzM0x1c",
       "type": "Cape",
-      "name": "Fortune Cape",
+      "name": "Days of Fortune Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Icon_cape_fortune-Morybel-0146.png"
     },
     {
       "guid": "HnCWgj7aoA",
       "type": "Mask",
-      "name": "Fortune Blushing Mask",
+      "name": "Days of Fortune Blushing Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_mask_blush.png"
     },
     {
       "guid": "rNDDbcjS4G",
       "type": "Hair",
-      "name": "Fortune Bun Hair",
+      "name": "Days of Fortune Bun Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Icon_hair_event_high_buns.png"
     },
     {
       "guid": "c1YroXxA9Z",
       "type": "Mask",
-      "name": "Fortune Tiger Mask",
+      "name": "Days of Fortune Tiger Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Days_of_Fortune_-_Tiger_mask_head_icon.png"
     },
     {
       "guid": "OjSfpOgFoR",
       "type": "Hat",
-      "name": "Fortune Fish Accessory",
+      "name": "Days of Fortune Fish Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days_of_Fortune_-_Fish_accessory_Icon.png"
     },
     {
       "guid": "mzF6ZaHa1s",
       "type": "Cape",
-      "name": "Fortune Fish Cape",
+      "name": "Days of Fortune Fish Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Days_of_Fortune_-_Fish_cape_icon-Morybel-0146.png"
     },
     {
       "guid": "A26TJj3cSl",
       "type": "Hair",
-      "name": "Fortune Fish Hood",
+      "name": "Days of Fortune Fish Hood",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Fortune_-_Fish_head_iconl.png"
     },
     {
       "guid": "ADJiva5H2Z",
       "type": "Outfit",
-      "name": "Fortune Muralist's Smock",
+      "name": "Days of Fortune Muralist's Smock",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png"
     },
     {
       "guid": "uzos22Ysp3",
       "type": "Held",
-      "name": "Fortune Enchanted Umbrella",
+      "name": "Days of Fortune Enchanted Umbrella",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Prosperous-Party-Parasol-icon-Morybel-0146.png"
     },
     {
       "guid": "D_k9C9QybE",
       "type": "Mask",
-      "name": "Fortune Rabbit Mask",
+      "name": "Days of Fortune Rabbit Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png"
     },
     {
@@ -9893,28 +9892,215 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     // #endregion
-    // Days of Healing (2020)
+    // #region Days of Love
+    {
+      "guid": "w7byhvh3Xa",
+      "type": "Prop",
+      "name": "Days of Love Swing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_prop_days_of_love_swing.png"
+    },
+    {
+      "guid": "rFRaOxnvXF",
+      "type": "Mask",
+      "name": "Days of Love Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Icon_mask_rose.png"
+    },
+    {
+      "guid": "yWCpBlHsWa",
+      "type": "Prop",
+      "name": "Days of Love Seesaw",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Icon_prop_days_of_love_seesaw.png"
+    },
+    {
+      "guid": "VBR5HI2-dU",
+      "type": "Hat",
+      "name": "Days of Love Flower Crown",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Days_of_Love_-_Flower_head_accessory-icon.png"
+    },
+    {
+      "guid": "EZ_nfEHgOx",
+      "type": "Prop",
+      "name": "Days of Love Gondola",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Days_of_Love_Gondola_icon.png"
+    },
+    {
+      "guid": "P-7ozR83J8",
+      "type": "Prop",
+      "name": "Days of Love Flowery Archway",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Days-of-Love-Arch-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "Tf45PqqIsn",
+      "type": "Held",
+      "name": "Days of Love Serendipitous Scepter",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Days-of-Love-Wand-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "PuFWddickP",
+      "type": "Necklace",
+      "name": "Days of Love Classy Cravat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Days-of-Love-Neck-Bow-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "favBojugBT",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "WvuURRT3uz",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "Xwm0wt-rGW",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "vHuVUQDOrn",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "uVGyKSBO2w",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "xnwijMdXiD",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "u9p21db6W4",
+      "type": "Special",
+      "name": "Double-Five",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    },
+    {
+      "guid": "wl-Qf1WBIh",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
+    // #region Days of Bloom
+    {
+      "guid": "wFSLA6un_V",
+      "type": "Cape",
+      "name": "Pink Bloom Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_cape_bloom-Morybel-0146.png"
+    },
+    {
+      "guid": "uKLD12UrPr",
+      "type": "Hair",
+      "name": "Bloom Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Icon_hair_bloom.png"
+    },
+    {
+      "guid": "sTIyha_lg1",
+      "type": "Prop",
+      "name": "Pink Bloom Teaset",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_prop_days_of_bloom_tea_table.png"
+    },
+    {
+      "guid": "MzWv4Qp2S7",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "xinA3TgIh2",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "89R9XC2DIg",
+      "type": "Cape",
+      "name": "Purple Bloom Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Purple_Bloom_Cape-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "gNU9s-K-M1",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "l6GE013zrh",
+      "type": "Prop",
+      "name": "Purple Bloom Teaset",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Purple_Bloom_Teaset_icon-Morybel-0146.png"
+    },
+    {
+      "guid": "yJBxs4D0QI",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "YTBtAMps8R",
+      "type": "Cape",
+      "name": "Red Bloom Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Days-of-Bloom-Tulip-Cape-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "LRLEa6LYVP",
+      "type": "Prop",
+      "name": "Bloom Butterfly Fountain",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Days-of-Bloom-Butterfly-Fountain-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "Zw4kk5CO_l",
+      "type": "Special",
+      "name": "Forgotten Ark Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "wUPw1TRQSI",
+      "type": "Outfit",
+      "name": "Bloom Gardening Tunic",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Days-of-Bloom-Gardener-outfit-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "_0PZEyTNxt",
+      "type": "Prop",
+      "name": "Bloom Picnic Basket",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Bloom-Picnic-Blanket-Icon-Morybel-0146.png"
+    },
+    // #endregion
+    // #region Days of Healing (2020)
     {
       "guid": "cM5zZKzBkO",
       "type": "Hat",
       "name": "Flower Hair Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png"
     },
-    // Days of Summer Lights (2020)
+    // #endregion
+    // #region Days of Summer Lights (2020)
     {
       "guid": "5xJ_mCzZQy",
       "type": "Held",
       "name": "Summer Lights Lantern",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_prop_days_of_summer_lantern.png"
     },
-    // Days of Summer Lights (2021)
+    // #endregion
+    // #region Days of Summer Lights (2021)
     {
       "guid": "EEFIpR6x7Q",
       "type": "Hat",
       "name": "Summer Lights Bunny Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png"
     },
-    // Days of Summer (2021)
+    // #endregion
+    // #region Days of Summer (2021)
     {
       "guid": "4CYafmMUql",
       "type": "Held",
@@ -9939,14 +10125,16 @@
       "name": "Double Deck Chairs",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Summer_beach_chairs.png"
     },
-    // Days of Summer (2022)
+    // #endregion
+    // #region Days of Summer (2022)
     {
       "guid": "1QMUTwskc3",
       "type": "Special",
       "name": "Double-Five",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
     },
-    // Kizuna AI Collab (2022)
+    // #endregion
+    // #region Kizuna AI Collab (2022)
     {
       "guid": "FLMn1Hib7k",
       "type": "Hair",

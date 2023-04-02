@@ -11,7 +11,7 @@ body {
 
 a {
   color: var(--color);
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 a:hover {
@@ -49,6 +49,8 @@ body { scrollbar-width: thin; }
 .t.center { text-align: center !important; }
 .t-right { text-align: right !important; }
 .ws-nw { white-space: nowrap !important; }
+.ws-pw { white-space: pre-wrap !important; }
+.ws-pl { white-space: pre-line !important; }
 .d-inline-block { display: inline-block !important; }
 
 // Global layout
@@ -92,6 +94,7 @@ body { scrollbar-width: thin; }
   border: 1px solid var(--color-border-highlight);
   border-radius: var(--border-radius-round);
   background-color: var(--color-item-background);
+  z-index: 1;
 
   mat-icon {
     position: absolute;

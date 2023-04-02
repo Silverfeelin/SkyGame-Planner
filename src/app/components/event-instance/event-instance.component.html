@@ -1,6 +1,6 @@
 <h1>{{ instance.event.name }} <span class="c-accent">{{ $any(instance.date) | date:'yyyy' }}</span></h1>
 <!-- <div class="card-container">
-  <div class="card-grid card-grid-single">
+  <div class="card-grid card-grid-1">
     <div class="card p-rel">
       <div class="item">
         <mat-icon class="menu-icon" [fontIcon]="'undo'"></mat-icon>
@@ -13,74 +13,84 @@
 </div> -->
 
 <!-- Spirits -->
+<div class="card-wrapper mt-2">
+  <h2 class="mb-0">Spirits</h2>
+</div>
+
 <div class="card-container mt-2" *ngIf="instance.spirits?.length">
-  <h2>Spirits</h2>
   <div class="card-container-inner">
     <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
-      <app-spirit-tree [tree]="spirit.tree" [name]="spirit.spirit.name"></app-spirit-tree>
+      <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name"></app-spirit-tree>
     </div>
   </div>
 </div>
 
 <!-- IAPs -->
 <ng-container *ngIf="shops?.length">
+  <div class="card-wrapper mt-2">
+    <h2 class="mb-0">In-App Purchases</h2>
+  </div>
+
+  <div class="card-grid card-grid-4 mt-2" >
+  <!-- Render IAPs in order of sorted shops. -->
   <ng-container *ngFor="let shop of shops">
-    <h2 class="mt-2">
-      <span *ngIf="shop.type === 'store'">Premium Candle Store</span>
-      <span *ngIf="shop.type !== 'store'">{{ shop.name ?? shop.spirit?.name }}</span>
-    </h2>
-    <div class="card-grid card-grid-even" *ngIf="shop.iaps?.length">
-      <div class="card p-rel" *ngFor="let iap of shop.iaps">
-        <h3>
-          <ng-container *ngIf="iap.name">{{ iap.name }}</ng-container>
-        </h3>
-
-        <!-- Returning -->
-        <div class="mt-2 item">
-          <mat-icon class="menu-icon" [fontIcon]="iap.returning ? 'undo' : 'grade'"></mat-icon>
-          <span class="menu-label">
-            <span *ngIf="iap.returning" class="c-old">Returning IAP</span>
-            <span *ngIf="!iap.returning" class="c-new">New  IAP</span>
-          </span>
-        </div>
-
-        <!-- Price -->
-        <div class="mt-2 item">
-          <mat-icon class="menu-icon" fontIcon="attach_money"></mat-icon>
-          <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'">
-            {{ iap.price }}
-          </span>
-        </div>
-
-        <!-- Currencies -->
-        <div class="mt-2 item" *ngIf="iap.c || iap.sc">
-          <ng-container *ngIf="iap.c">
-            <mat-icon class="menu-icon" svgIcon="candle"></mat-icon>
+    <ng-container *ngIf="shop.iaps?.length">
+        <div class="card p-rel" *ngFor="let iap of shop.iaps">
+          <h3 [ngbTooltip]="iap.name" container="body">
+            {{ iapNames[iap.guid] }}
+          </h3>
+          <!-- Returning -->
+          <div class="mt-2 item">
+            <mat-icon class="menu-icon" [fontIcon]="iap.returning ? 'undo' : 'grade'"></mat-icon>
             <span class="menu-label">
-              {{ iap.c }}
+              <span *ngIf="iap.returning" class="c-old">Returning IAP</span>
+              <span *ngIf="!iap.returning" class="c-new">New  IAP</span>
             </span>
-          </ng-container>
-          <ng-container *ngIf="iap.sc">
-            <mat-icon class="menu-icon" svgIcon="season-candle"></mat-icon>
+          </div>
+          <!-- Location -->
+          <div class="mt-2 item">
+            <mat-icon class="menu-icon" [fontIcon]="'location_on'"></mat-icon>
             <span class="menu-label">
-              {{ iap.sc }}
+              <span *ngIf="shop.type === 'store'">Premium Candle Store</span>
+              <span *ngIf="shop.type !== 'store'">{{ shop.name ?? shop.spirit?.name }}</span>
             </span>
-          </ng-container>
-        </div>
-
-        <!-- Items -->
-        <div class="mt-2 item iap-items">
-          <div class="iap-item point p-rel" *ngFor="let item of iap.items" (click)="togglePurchased(iap)">
-            <app-item [item]="item" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item>
-            <mat-icon class="unlock-check" [class.unlocked]="iap.bought || item?.unlocked" [class.self]="iap.bought" fontIcon="done"></mat-icon>
-            <ng-template #itemHover>
-              <ng-container *ngIf="item">
-                <span class="ws-nw">{{item.name}}</span>
-              </ng-container>
-            </ng-template>
+          </div>
+          <!-- Price -->
+          <div class="mt-2 item">
+            <mat-icon class="menu-icon" fontIcon="attach_money"></mat-icon>
+            <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
+              {{ iap.price }}
+            </span>
+          </div>
+          <!-- Currencies -->
+          <div class="mt-2 item" *ngIf="iap.c || iap.sc">
+            <ng-container *ngIf="iap.c">
+              <mat-icon class="menu-icon" svgIcon="candle"></mat-icon>
+              <span class="menu-label">
+                {{ iap.c }}
+              </span>
+            </ng-container>
+            <ng-container *ngIf="iap.sc">
+              <mat-icon class="menu-icon" svgIcon="season-candle"></mat-icon>
+              <span class="menu-label">
+                {{ iap.sc }}
+              </span>
+            </ng-container>
+          </div>
+          <!-- Items -->
+          <div class="mt-2 item iap-items">
+            <div class="iap-item point p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
+              <app-item [item]="item" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item>
+              <mat-icon class="unlock-check" [class.unlocked]="iap.bought || item?.unlocked" [class.self]="iap.bought" fontIcon="done"></mat-icon>
+              <ng-template #itemHover>
+                <ng-container *ngIf="item">
+                  <span class="ws-nw">{{item.name}}</span>
+                </ng-container>
+              </ng-template>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </ng-container>
+      </ng-container>
+    </ng-container>
+  </div>
 </ng-container>

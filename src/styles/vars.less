@@ -31,20 +31,36 @@
   --border-radius-round: 8px;
   --padding-content: 10px;
 
-  --columns-items: 1fr;
-  --columns-items-even: 1fr;
+  --column-items: 1fr;
+  --column-items-1: 1fr;
+  --column-items-2: 1fr;
+  --column-items-3: 1fr;
+  --column-items-4: 1fr;
+}
+
+@media screen and (min-width: 720px) {
+  :root {
+    --column-items-4: repeat(2, 1fr);
+  }
 }
 
 @media screen and (min-width: 992px) {
   :root {
     --menu-width: 240px;
-    --columns-items: repeat(2, 1fr);
-    --columns-items-even: repeat(2, 1fr);
+    --column-items: repeat(2, 1fr);
+    --column-items-1: 1fr;
+    --column-items-2: repeat(2, 1fr);
+    --column-items-3: repeat(2, 1fr);
+    --column-items-4: repeat(3, 1fr);
   }
 }
 
 @media screen and (min-width: 1400px) {
   :root {
-    --columns-items: repeat(3, 1fr);
+    --column-items: repeat(3, 1fr);
+    --column-items-1: 1fr;
+    --column-items-2: repeat(2, 1fr);
+    --column-items-3: repeat(3, 1fr);
+    --column-items-4: repeat(4, 1fr);
   }
 }

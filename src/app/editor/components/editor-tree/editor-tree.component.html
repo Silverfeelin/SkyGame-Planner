@@ -13,7 +13,7 @@
         (click)="toggleConnection(node, 'ne')">NE</div>
 
       <div>
-        Item<br/>
+        Item<br/><input (input)="itemInputChanged($event, i)">
         <select class="mono" [(ngModel)]="node.item">
           <option value=""></option>
           <option *ngFor="let option of itemOptions" [value]="option.guid">

@@ -34,6 +34,9 @@ export interface IEventInstance extends IGuid {
 }
 
 export interface IEventInstanceSpirit extends IGuid {
+  /** Custom name to better identify spirit. */
+  name?: string;
+
   spirit: ISpirit;
   tree: ISpiritTree;
   eventInstance?: IEventInstance;

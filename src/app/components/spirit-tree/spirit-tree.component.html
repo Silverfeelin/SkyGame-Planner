@@ -1,6 +1,6 @@
 <div class="content" [class.highlight]="highlight">
   <div class="spirit-tree-scroll">
-    <div class="unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" placement="bottom-end">
+    <div class="unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
       <mat-icon fontIcon="lock_open"></mat-icon>
     </div>
     <div class="spirit-tree">
@@ -36,7 +36,7 @@
       <span *ngIf="rsDate" class="c-accent ts-date">({{ rsDate | date:'dd-MM-yyyy' }})</span>
     </div>
     <div *ngIf="name && hasCost" class="hr"></div>
-    <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" placement="top">
+    <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" container="body" placement="top">
       <div class="cost" *ngIf="totalCost?.c">
         {{ totalCost.c }}
         <span class="remaining-cost">({{ remainingCost.c || 0 }})</span>

@@ -19,7 +19,7 @@
             "cgSX8-JQkw"
           ],
           "spirits": [
-            { "guid": "mrr49FVi5R", "spirit": "FHqOvIFRz-", "tree": "grBXyl9kdw" }
+            { "guid": "mrr49FVi5R", "spirit": "9VkjVkgKhb", "tree": "grBXyl9kdw" }
           ]
         },
         {
@@ -30,7 +30,7 @@
             "etiMAAMrUG"
           ],
           "spirits": [
-            { "guid": "YPStqurD9K", "spirit": "FHqOvIFRz-", "tree": "Cfa81cTc1x" },
+            { "guid": "YPStqurD9K", "spirit": "9VkjVkgKhb", "tree": "Cfa81cTc1x" },
             { "guid": "GlnH4VVPCa", "spirit": "zS4AGUTIgF", "tree": "jnq2S5ihN_" }
           ]
         },
@@ -43,12 +43,117 @@
             "eYY7XDLRsH"
           ],
           "spirits": [
-            { "guid": "1QcP-L-MqO", "spirit": "FHqOvIFRz-", "tree": "Oi0WztDirX" },
+            { "guid": "1QcP-L-MqO", "spirit": "9VkjVkgKhb", "tree": "Oi0WztDirX" },
           ]
         }
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune"
+      }
+    },
+    // Days of Love
+    {
+      "guid": "f6OPOFuRDv",
+      "name": "Days of Love",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "chP-KuuCxn",
+          "date": { "day": 12, "month": 2, "year": 2020 },
+          "endDate": { "day": 19, "month": 2, "year": 2020 },
+          "shops": [
+            "b6QkhZumfk"
+          ]
+        },
+        {
+          "guid": "5SgNZL-cnc",
+          "date": { "day": 12, "month": 2, "year": 2021 },
+          "endDate": { "day": 21, "month": 2, "year": 2021 },
+          "shops": [
+            "AVZC5sL-ZT"
+          ],
+          "spirits": [
+            { "guid": "YRfQif1oS6", "spirit": "9VkjVkgKhb", "tree": "3pb_Tfne7M" }
+          ]
+        },
+        {
+          "guid": "dOegXUb7Em",
+          "date": { "day": 7, "month": 2, "year": 2022 },
+          "endDate": { "day": 22, "month": 2, "year": 2022 },
+          "shops": [
+            "Qui5cN01A3",
+            "0UnDE-9JQY"
+          ],
+          "spirits": [
+            { "guid": "TpqW3-jpkZ", "spirit": "9VkjVkgKhb", "tree": "CIOxUbOvxM" },
+            { "guid": "Zt2a-8SSJr", "spirit": "zS4AGUTIgF", "tree": "TdnkeRcqGR" }
+          ]
+        },
+        {
+          "guid": "6398vKUGFN",
+          "date": { "day": 13, "month": 2, "year": 2023 },
+          "endDate": { "day": 26, "month": 2, "year": 2023 },
+          "spirits": [
+            { "guid": "tfefmhWEme", "spirit": "9VkjVkgKhb", "tree": "O8EcMfr4-R" },
+            { "guid": "tfefmhWEme", "spirit": "zS4AGUTIgF", "tree": "NuqYNp7i8O" }
+          ],
+          "shops": [
+            "dosWjd_0Ur",
+            "4mcmO11hCE"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
+      }
+    },
+    // Days of Bloom
+    {
+      "guid": "jZ3AhcgPl8",
+      "name": "Days of Bloom",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "zAEvyLfhYt",
+          "date": { "day": 22, "month": 3, "year": 2021 },
+          "endDate": { "day": 4, "month": 4, "year": 2021 },
+          "shops": [
+            "EF1SdxSqWT"
+          ],
+          "spirits": [
+            { "guid": "zUOcOmooWr", "spirit": "IqShB-6_rY", "tree": "c8KLFXw7Qh" }
+          ]
+        },
+        {
+          "guid": "ALuYqQsmXM",
+          "date": { "day": 28, "month": 3, "year": 2022 },
+          "endDate": { "day": 10, "month": 4, "year": 2022 },
+          "shops": [
+            "BtRb90bYtH",
+            "m1hOAdOvnx"
+          ],
+          "spirits": [
+            { "guid": "FwSpcuPQeQ", "spirit": "IqShB-6_rY", "tree": "qXCroH8_X9" }
+          ]
+        },
+        {
+          "guid": "-qKo3_DMbw",
+          "date": { "day": 20, "month": 3, "year": 2023 },
+          "endDate": { "day": 9, "month": 4, "year": 2023 },
+          "shops": [
+            "VU-iQQPPoN",
+            "i1aaE0u8xS",
+            "VPnMsfufZ3"
+          ],
+          "spirits": [
+            { "guid": "WoKuKe4AAh", "spirit": "IqShB-6_rY", "tree": "fLuM8drQ4H", "name": "Bloom Guide (Forgotten Ark)" }, // Located at Ark
+            { "guid": "KOrEqiUw_f", "spirit": "IqShB-6_rY", "tree": "Cz7AcNalLH", "name": "Bloom Guide (Home)" }, // Located at Home
+            { "guid": "erbbY6_Azk", "spirit": "IqShB-6_rY", "tree": "yvuc0d_gC7", "name": "Bloom Guide (Hidden Forest)" } // Located at HF
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
       }
     },
     // Days of Healing (2020)

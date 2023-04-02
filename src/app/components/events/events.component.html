@@ -2,7 +2,7 @@
 <div class="card-wrapper">
   <h2 class="mb-0">Recurring events</h2>
 </div>
-<div class="card-grid card-grid-even mt-2">
+<div class="card-grid card-grid-2 mt-2">
   <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
     <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
   </div>
@@ -11,7 +11,7 @@
 <div class="card-wrapper mt-2">
   <h2 class="mb-0">Past events</h2>
 </div>
-<div class="card-grid card-grid-even mt-2">
+<div class="card-grid card-grid-2 mt-2">
   <div class="card p-rel" *ngFor="let event of old; let i = index;">
     <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
   </div>

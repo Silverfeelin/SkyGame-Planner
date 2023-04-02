@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import moment from 'moment';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -35,8 +36,9 @@ export class EditorTreeComponent implements OnInit {
   result?: ISpiritTree;
 
   constructor(
-    private readonly dataService: DataService,
-    private readonly dataJsonService: DataJsonService
+    private readonly _dataService: DataService,
+    private readonly _dataJsonService: DataJsonService,
+    private readonly _route: ActivatedRoute
   ) {
       this.formNodes = [];
       for (let i = 0; i < 24; i++) { this.formNodes.push({
@@ -47,10 +49,16 @@ export class EditorTreeComponent implements OnInit {
   ngOnInit(): void {
     this.formNodes.forEach(n => n.item = undefined);
 
+    const copyTree = this._route.snapshot.queryParams['copy'];
+    if (copyTree) {
+      const tree = this._dataService.guidMap.get(copyTree) as ISpiritTree;
+      this.formNodes = this.nodeToFormNodes(tree.node);
+    }
+
     this.itemOptions = [];
 
     // Add items
-    this.itemOptions.push(...this.dataService.itemConfig.items);
+    this.itemOptions.push(...this._dataService.itemConfig.items);
 
     // Create new items
     this.itemOptions.push({ guid: 'DON\'T PICK', name: '-- NEW ITEMS --', type: ItemType.Special });
@@ -64,6 +72,18 @@ export class EditorTreeComponent implements OnInit {
 
   toggleConnection(node: any, direction: string) {
     node[direction] = !node[direction];
+  }
+
+  itemInputChanged(event: Event, i: number): void {
+    const target = (event.target as HTMLInputElement);
+    const value = target?.value as string;
+    if (!value) { return; }
+    const item = this._dataService.guidMap.get(value) as IItem;
+    if (!item) { return; }
+    target.value = '';
+
+    this.formNodes[i].item = item.guid;
+    target.blur();
   }
 
   submit(): void {
@@ -93,15 +113,15 @@ export class EditorTreeComponent implements OnInit {
   getForClipboard(type: string): string | undefined {
     switch (type) {
       case 'tree':
-        return this.dataJsonService.spiritTreesToJson([this.result!]);
+        return this._dataJsonService.spiritTreesToJson([this.result!]);
       case 'nodes':
-        return this.dataJsonService.nodesToJson(NodeHelper.all(this.result!.node));
+        return this._dataJsonService.nodesToJson(NodeHelper.all(this.result!.node));
       case 'items': {
         const nodes = NodeHelper.all(this.result!.node);
         const newItems = nodes
-          .filter(n => n.item?.guid && !this.dataService.guidMap.has(n.item.guid))
+          .filter(n => n.item?.guid && !this._dataService.guidMap.has(n.item.guid))
           .map(n => n.item!);
-        return this.dataJsonService.itemsToJson(newItems);
+        return this._dataJsonService.itemsToJson(newItems);
       }
     }
     return undefined;

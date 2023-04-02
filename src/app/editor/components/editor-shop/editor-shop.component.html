@@ -1,0 +1,14 @@
+<div>
+  Shop to copy: <input type="text" [(ngModel)]="copyShopGuid"  (ngModelChange)="shopGuidChanged()"/><br/>
+  Returning IAPs: <input type="checkbox" [(ngModel)]="returning"/>
+  <button type="button" (click)="submit()">Submit</button>
+</div>
+
+<div *ngIf="result">
+  <button type="button" (click)="copyToClipboard('shop')">
+    Copy Shop
+  </button>
+  <button type="button" (click)="copyToClipboard('iaps')">
+    Copy IAPs
+  </button>
+</div>

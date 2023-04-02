@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./season.component.less']
 })
 export class SeasonComponent {
-  season?: ISeason;
+  season!: ISeason;
 
   guide?: ISpirit;
   spirits: Array<ISpirit> = [];
@@ -24,7 +24,7 @@ export class SeasonComponent {
 
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
-    this.season = guid ? this._dataService.guidMap.get(guid) as ISeason : undefined;
+    this.season = this._dataService.guidMap.get(guid!) as ISeason;
 
     this.guide = undefined;
     this.spirits = [];
