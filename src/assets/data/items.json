@@ -6269,12 +6269,6 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
     },
     {
-      "guid": "ZCOzHqrm1J",
-      "type": "Prop",
-      "name": "Hiking Grouch Prop",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Icon_prop_days_of_summer_beach_chairs.png"
-    },
-    {
       "guid": "EPaUByqgl2",
       "type": "Special",
       "name": "Heart",
@@ -9832,6 +9826,12 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png"
     },
     {
+      "guid": "1QMUTwskc3",
+      "type": "Special",
+      "name": "Double-Five",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    },
+    {
       "guid": "pbysQn-V2i",
       "type": "Special",
       "name": "Blessing",
@@ -10076,6 +10076,321 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Bloom-Picnic-Blanket-Icon-Morybel-0146.png"
     },
     // #endregion
+    // #region Days of Nature
+    {
+      "guid": "YUqENRc8rQ",
+      "type": "Cape",
+      "name": "Earth Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Icon_cape_earth.png"
+    },
+    {
+      "guid": "KZ6aQtgCqt",
+      "type": "Necklace",
+      "name": "Ocean Necklace",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Icon_pendant_shell_pendant.png"
+    },
+    {
+      "guid": "MjA9EoD-pe",
+      "type": "Cape",
+      "name": "Ocean Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png"
+    },
+    {
+      "guid": "znjZlpHSt4",
+      "type": "Cape",
+      "name": "Nature Turtle Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Nature-2022-turtle-cape-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "_Y-80G-t_2",
+      "type": "Necklace",
+      "name": "Nature Turtle Buddy",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Nature-2022-turtle-accessory-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "OvPPfhXnwW",
+      "type": "Hat",
+      "name": "Nature Coral Crown",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Nature-2022-Coral-Hair-accessory-Morybel-0146.png"
+    },
+    {
+      "guid": "hbH9xhhETJ",
+      "type": "Special",
+      "name": "Sanctuary Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "J3SQU_2koY",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
+    // #region Days of Rainbow
+    {
+      "guid": "4XMYa4Wj-M",
+      "type": "Hat",
+      "name": "Rainbow Braid",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png"
+    },
+    {
+      "guid": "BUTwFt6PGm",
+      "type": "Cape",
+      "name": "Rainbow Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Icon_cape_rainbow-Morybel-0146.png"
+    },
+    {
+      "guid": "EJok2mGotV",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "mcOKuxsaZN",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "AxTtrCwyk7",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "2LbATcLuxE",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "3yvqidoaoB",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "wpqgJDwbFe",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "KQRXGIBq17",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "wOwsBf1jXn",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "zXpvNVNGvR",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "E7IOFDe4AR",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "6wkd0VIgYR",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "hf004Ftxtx",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "trb50TnftT",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "KpS-2FdasB",
+      "type": "Hat",
+      "name": "Rainbow Hair Flower",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Icon_hair_rainbow_flower.png"
+    },
+    {
+      "guid": "cMLcvRtjoh",
+      "type": "Hair",
+      "name": "Rainbow Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_rainbow_hat.png"
+    },
+    {
+      "guid": "gNWmRUkpFo",
+      "type": "Hat",
+      "name": "Double Rainbow Flower",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "f-X2dDeB9w",
+      "type": "Hat",
+      "name": "Rainbow Earrings",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "j51xlBBIZX",
+      "type": "Hat",
+      "name": "Rainbow Headphones",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "0rrPORrk7O",
+      "type": "Outfit",
+      "name": "Rainbow Trousers",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Days-of-Rainbow-2022-pant-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "N5_6M8ooTl",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    {
+      "guid": "W5Y_p83sp1",
+      "type": "Special",
+      "name": "Random Trail Spell",
+      "icon": "#trail"
+    },
+    // #endregion
+    // #region Sky Anniversary
+    {
+      "guid": "lDm3gx6ZkS",
+      "type": "Hat",
+      "name": "1 Year Sky Anniversary Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png"
+    },
+    {
+      "guid": "uH4Rjnkh74",
+      "type": "Hat",
+      "name": "2 Year Sky Anniversary Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png"
+    },
+    {
+      "guid": "ktsAnnjGgb",
+      "type": "Hat",
+      "name": "Sky Anniversary Pennants",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_prop_days_of_sky_pennants.png"
+    },
+    {
+      "guid": "0hJ9DXTWh2",
+      "type": "Spell",
+      "name": "Small Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "iy8LsNTGIS",
+      "type": "Spell",
+      "name": "Small Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "S5U6SxnhOI",
+      "type": "Spell",
+      "name": "Small Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "WDlSvYds8f",
+      "type": "Spell",
+      "name": "Small Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "2yUc4WdquD",
+      "type": "Spell",
+      "name": "Small Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "zcVZSmzfxl",
+      "type": "Spell",
+      "name": "Medium Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "l_2PxLbjkf",
+      "type": "Spell",
+      "name": "Medium Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "KBAo9IAdqk",
+      "type": "Spell",
+      "name": "Medium Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "t7h71OQ6DP",
+      "type": "Spell",
+      "name": "Medium Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "svEXRvagb3",
+      "type": "Hat",
+      "name": "3 Year Sky Anniversary Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "9jMnZ23AYP",
+      "type": "Music",
+      "name": "Music Sheet #E2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "FjtQU-Da97",
+      "type": "Spell",
+      "name": "Small Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "MWjOfJMKoO",
+      "type": "Spell",
+      "name": "Medium Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "8A96KlMPQC",
+      "type": "Prop",
+      "name": "Sky Anniversary Balloons",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Days-of-Sky-2022-balloon-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "ADtwifMcnN",
+      "type": "Prop",
+      "name": "Sky Anniversary Light Fence",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-decorative-prop-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "Xbb3BpzDZT",
+      "type": "Prop",
+      "name": "Sky Anniversary Confetti Launcher",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Days-of-Sky-2022-canon-icon-Morybel-0146.png"
+    },
+    // #endregion
+    // #region Lazy Days
+    {
+      "guid": "ywWEH9D5_m",
+      "type": "Hat",
+      "name": "Bunny Accessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png"
+    },
+    // #endregion
+
     // #region Days of Healing (2020)
     {
       "guid": "cM5zZKzBkO",
@@ -10123,15 +10438,13 @@
       "guid": "bBQVuucGUm",
       "type": "Prop",
       "name": "Double Deck Chairs",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Summer_beach_chairs.png"
+      "icon": "#double-deck-chairs"
     },
-    // #endregion
-    // #region Days of Summer (2022)
     {
-      "guid": "1QMUTwskc3",
-      "type": "Special",
-      "name": "Double-Five",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+      "guid": "eruG9WiyJZ",
+      "type": "Hat",
+      "name": "Days of Summer Shell Hairpin",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_hair_summer_shell_pin_headpiece.png"
     },
     // #endregion
     // #region Kizuna AI Collab (2022)
@@ -10152,6 +10465,32 @@
       "type": "Cape",
       "name": "Kizuna AI Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Kizuna-AI-cape-icon-Morybel-0146.png"
+    },
+    // #endregion
+    // #region Days of Sunlight (2022)
+    {
+      "guid": "vRGrnOst90",
+      "type": "Special",
+      "name": "Elevated Clearing Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "Ay3g-0JAeW",
+      "type": "Necklace",
+      "name": "Jelly Shoulder Buddy",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Days-of-Sunlight-Jellyfish-Neck-Accessory-Morybel-0146.png"
+    },
+    {
+      "guid": "JNgfLtgLfc",
+      "type": "Prop",
+      "name": "Campfire Tent",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Sunlight-Tent-Prop-Morybel-0146.png"
+    },
+    {
+      "guid": "TXYOTW9Qyn",
+      "type": "Prop",
+      "name": "Campfire Snack Kit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Days-of-Sunlight-Snack-kit-icon-Morybel-0146.png"
     },
     // #endregion
   ]

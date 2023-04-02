@@ -13,6 +13,7 @@ import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'season', pathMatch: 'full' },
   { path: 'credits', component: CreditsComponent },
   { path: 'event', component: EventsComponent },
   { path: 'event/:guid', component: EventComponent },
@@ -28,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

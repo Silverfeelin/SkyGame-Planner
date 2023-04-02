@@ -153,7 +153,143 @@
         }
       ],
       "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom"
+      }
+    },
+    // Days of Nature
+    {
+      "guid": "f6J1-3yeJF",
+      "name": "Days of Nature",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "aSrD3lSoFW",
+          "date": { "day": 22, "month": 4, "year": 2020 },
+          "endDate": { "day": 26, "month": 4, "year": 2020 },
+          "shops": [
+            "jYaYDMPEUR"
+          ]
+        },
+        {
+          "guid": "dZSkc1dV7U",
+          "date": { "day": 19, "month": 4, "year": 2021 },
+          "endDate": { "day": 2, "month": 5, "year": 2021 },
+          "shops": [
+            "E6LZlAW128",
+            "oc3Izvti83"
+          ]
+        },
+        {
+          "guid": "qSiOZI_8sQ",
+          "date": { "day": 18, "month": 4, "year": 2022 },
+          "endDate": { "day": 1, "month": 5, "year": 2022 },
+          "shops": [
+            "HzR1C5d1am",
+            "NNulaStjmr"
+          ],
+          "spirits": [
+            { "guid": "4A_HnQqlA9", "spirit": "3M1KSVgf49", "tree": "FDmDW9e9td" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature"
+      }
+    },
+    // Days of Rainbow
+    {
+      "guid": "yVDpWb7Goo",
+      "name": "Days of Rainbow",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "lm7oA1sthb",
+          "date": { "day": 10, "month": 6, "year": 2020 },
+          "endDate": { "day": 14, "month": 6, "year": 2020 }
+        },
+        {
+          "guid": "ZoR4kXzQLS",
+          "date": { "day": 14, "month": 6, "year": 2021 },
+          "endDate": { "day": 27, "month": 6, "year": 2021 },
+          "shops": [
+            "CwN0xJF-1M"
+          ],
+          "spirits": [
+            { "guid": "QB8tU5kao9", "spirit": "uPzMm5H7ag", "tree": "U2ZiRYwoR2" }
+          ]
+        },
+        {
+          "guid": "l1kxnP--Ws",
+          "date": { "day": 30, "month": 6, "year": 2022 },
+          "endDate": { "day": 13, "month": 7, "year": 2022 },
+          "shops": [
+            "ntVyLMOody",
+            "jaDbvOGhtj"
+          ],
+          "spirits": [
+            { "guid": "Qep3FZt66w", "spirit": "uPzMm5H7ag", "tree": "cfK8l5Lor8" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
+      }
+    },
+    // Sky Anniversary
+    {
+      "guid": "qMS8yJXaln",
+      "name": "Sky Anniversary",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "H0unHE7F96",
+          "date": { "day": 13, "month": 7, "year": 2020 },
+          "endDate": { "day": 19, "month": 7, "year": 2020 },
+          "spirits": [
+            { "guid": "sxHFGaW1VO", "spirit": "mYOzGrzNHU", "tree": "I-LjDT1eZf" }
+          ]
+        },
+        {
+          "guid": "ayRFBo_qZ6",
+          "date": { "day": 12, "month": 7, "year": 2021 },
+          "endDate": { "day": 25, "month": 7, "year": 2021 },
+          "spirits": [
+            { "guid": "gMu5acbcwu", "spirit": "mYOzGrzNHU", "tree": "HcWMbpEdVn" }
+          ]
+        },
+        {
+          "guid": "ekBn-JK2zq",
+          "date": { "day": 18, "month": 7, "year": 2022 },
+          "endDate": { "day": 3, "month": 8, "year": 2022 },
+          "spirits": [
+            { "guid": "V4S-zpi_yY", "spirit": "mYOzGrzNHU", "tree": "SzK6rWR3nd" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
+      }
+    },
+    // Lazy Days
+    {
+      "guid": "eVaYOCFqcC",
+      "name": "Lazy Days",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "Kj5S3mVVH9",
+          "date": { "day": 26, "month": 9, "year": 2022 },
+          "endDate": { "day": 16, "month": 10, "year": 2022 },
+          "shops": [
+            "txCjbkOUCb"
+          ],
+          "spirits": [
+            { "guid": "k2AhzKJA_Z", "spirit": "aMY1ZPzcEx", "tree": "GoEvcTR42k" }
+          ]
+        },
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days"
       }
     },
     // Days of Healing (2020)
@@ -252,6 +388,27 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
+      }
+    },
+    // Days of Sunlight (2022)
+    {
+      "guid": "HIw19Tr9eP",
+      "name": "Days of Sunlight",
+      "instances": [
+        {
+          "guid": "So_OVA37Ck",
+          "date": { "day": 22, "month": 8, "year": 2022 },
+          "endDate": { "day": 11, "month": 9, "year": 2022 },
+          "shops": [
+            "mmxpUMHHS8"
+          ],
+          "spirits": [
+            { "guid": "tDfqpF3f03", "spirit": "c9XXzlKzhd", "tree": "vIhlnkdWTh" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight"
       }
     },
     // #endregion

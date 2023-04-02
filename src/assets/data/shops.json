@@ -157,6 +157,94 @@
       ]
     },
     // #endregion
+    // #region Days of Nature (2020)
+    {
+      "guid": "jYaYDMPEUR",
+      "type": "store",
+      "iaps": [
+        "JDYVILff0q"
+      ]
+    },
+    // #endregion
+    // #region Days of Nature (2021)
+    {
+      "guid": "E6LZlAW128",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "zHnD_0mTCj"
+      ]
+    },
+    {
+      "guid": "oc3Izvti83",
+      "type": "store",
+      "iaps": [
+        "OHsxWZOsgs",
+        "wH4Rolvr0R"
+      ]
+    },
+    // #endregion
+    // #region Days of Nature (2022)
+    {
+      "guid": "HzR1C5d1am",
+      "type": "store",
+      "iaps": [
+        "6z9qTWUzk7",
+        "236RtTEBQ3"
+      ]
+    },
+    {
+      "guid": "NNulaStjmr",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "svdsqPs2us",
+        "iZB1SPwUdk",
+        "F3Kmy1dVb4"
+      ]
+    },
+    // #endregion
+    // #region Days of Rainbow (2021)
+    {
+      "guid": "CwN0xJF-1M",
+      "type": "store",
+      "iaps": [
+        "phpvRx9BAL",
+        "o64dAgrcEN"
+      ]
+    },
+    // #endregion
+    // #region Days of Rainbow (2022)
+    {
+      "guid": "ntVyLMOody",
+      "type": "spirit",
+      "spirit": "9eBpHjtudy",
+      "iaps": [
+        "HEeaH4p5wn"
+      ]
+    },
+    {
+      "guid": "jaDbvOGhtj",
+      "type": "store",
+      "iaps": [
+        "ynQuCl7q9Z",
+        "T_daeF3aRQ",
+        "rWoC4IM-tj"
+      ]
+    },
+    // #endregion
+    // #region Lazy Days (2022)
+    {
+      "guid": "txCjbkOUCb",
+      "type": "store",
+      "iaps": [
+        "mIrP9HEc7D",
+        "koxW3plFiV",
+        "rZUb4m5wQN",
+        "iluPHW_7kb"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",
@@ -190,7 +278,8 @@
       "guid": "dgkpvIdu6r",
       "type": "store",
       "iaps": [
-        "of257qu0my"
+        "of257qu0my",
+        "09o4l_zgOw"
       ]
     },
     // #endregion
@@ -201,7 +290,16 @@
       "iaps": [
         "nnDO8UAwSC"
       ]
-    }
+    },
     // #endregion
+    // #region Days of Sunlight (2022)
+    {
+      "guid": "mmxpUMHHS8",
+      "type": "store",
+      "iaps": [
+        "AZxrY1dz75",
+        "xapvROJehm"
+      ]
+    },
   ]
 }

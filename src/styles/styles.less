@@ -1,6 +1,7 @@
 
 body {
   background: var(--color-background);
+  // background: linear-gradient(to right, var(--color-background), var(--color-background-gradient-100));
   color: var(--color);
   font-family: 'Roboto', sans-serif;
 }
@@ -32,6 +33,9 @@ body { scrollbar-width: thin; }
 ::-webkit-scrollbar-thumb {
   background: var(--color-border-highlight);
 }
+::-webkit-scrollbar-corner {
+  background: var(--color-border-highlight);
+}
 
 // Bootstrap
 .tooltip-inner {
@@ -41,8 +45,8 @@ body { scrollbar-width: thin; }
 // Global classes
 .c-main { color: var(--color) !important; }
 .c-accent { color: var(--color-accent) !important; }
-.c-new { color: var(--color-new) !important; }
-.c-old { color: var(--color-old) !important; }
+.c-full { color: var(--color-new) !important; }
+.c-partial { color: var(--color-old) !important; }
 .p-rel { position: relative !important; }
 .p-abs { position: absolute !important; }
 .t-left { text-align: left !important; }
@@ -57,6 +61,10 @@ body { scrollbar-width: thin; }
 @import "card-grid.less";
 @import "card-container.less";
 @import "card-wrapper.less";
+
+p:last-child {
+  margin-bottom: 0;
+}
 
 .unlock-check {
   position: absolute;
@@ -103,4 +111,4 @@ body { scrollbar-width: thin; }
   }
 }
 
-mat-icon.seasonal { fill: var(--color-candle-seasonal); }
+mat-icon.seasonal { fill: var(--color-seasonal); }

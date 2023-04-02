@@ -57,8 +57,7 @@ export class DataJsonService {
         type: item.type,
         name: item.name,
         icon: item.icon,
-        level: item.level,
-        sheet: item.sheet
+        level: item.level
       };
     }));
   }

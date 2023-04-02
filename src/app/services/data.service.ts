@@ -354,6 +354,7 @@ export class DataService {
 
   private registerGuid(obj: IGuid): void {
     if (!obj.guid) { throw new Error(`GUID not defined on: ${JSON.stringify(obj)}`); }
+    if (obj.guid.length !== 10) { console.error('GUID unexpected length:', obj.guid); }
     if (this.guidMap.has(obj.guid)) { throw new Error(`GUID ${obj.guid} already registered!`) }
     this.guidMap.set(obj.guid, obj);
   }

@@ -16,15 +16,15 @@
         </a>
       </div>
       <!-- Overview -->
-      <div class="mt-2 item link" [routerLink]="['/season', season.guid]">
+      <a class="mt-2 item link" [routerLink]="['/season', season.guid]">
         <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
         <span class="menu-label">Overview</span>
-      </div>
+      </a>
       <!-- Spirits -->
-      <div class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
+      <a class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
         <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
         <span class="menu-label">Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span></span>
-      </div>
+      </a>
     </div>
   </div>
 </div>

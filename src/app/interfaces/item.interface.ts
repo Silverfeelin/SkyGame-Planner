@@ -12,9 +12,6 @@ export interface IItem extends IGuid {
   // Emote
   level?: number;
 
-  // Music
-  sheet?: number;
-
   /// References ///
 
   /** Spirit tree nodes that unlock this item. */

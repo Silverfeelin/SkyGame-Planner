@@ -23,6 +23,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   center: Array<INode> = [];
   right: Array<INode> = [];
 
+  hasCostAtRoot = false;
+
   itemMap = new Map<string, INode>();
   hasCost!: boolean;
   totalCost!: ICost;
@@ -73,6 +75,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (!this.tree) { return; }
     this.initializeNode(this.tree.node, 0, 0);
     this.hasCost = !CostHelper.isEmpty(this.totalCost);
+    this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node);
   }
 
   subscribeItemChanged(): void {

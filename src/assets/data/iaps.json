@@ -324,6 +324,180 @@
       ]
     },
     // #endregion
+    // #region Days of Nature (2020)
+    {
+      "guid": "JDYVILff0q",
+      "name": "Earth Cape",
+      "price": 4.99,
+      "items": [
+        "YUqENRc8rQ"
+      ]
+    },
+    // #endregion
+    // #region Days of Nature (2021)
+    {
+      "guid": "zHnD_0mTCj",
+      "name": "Earth Cape",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "YUqENRc8rQ"
+      ]
+    },
+    {
+      "guid": "OHsxWZOsgs",
+      "name": "Ocean Necklace",
+      "price": 1.99,
+      "items": [
+        "KZ6aQtgCqt"
+      ]
+    },
+    {
+      "guid": "wH4Rolvr0R",
+      "name": "Ocean Cape",
+      "price": 14.99,
+      "items": [
+        "MjA9EoD-pe"
+      ]
+    },
+    // #endregion
+    // #region Days of Nature (2022)
+    {
+      "guid": "svdsqPs2us",
+      "name": "Ocean Necklace",
+      "price": 1.99,
+      "returning": true,
+      "items": [
+        "KZ6aQtgCqt"
+      ]
+    },
+    {
+      "guid": "iZB1SPwUdk",
+      "name": "Ocean Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "MjA9EoD-pe"
+      ]
+    },
+    {
+      "guid": "F3Kmy1dVb4",
+      "name": "Earth Cape",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "YUqENRc8rQ"
+      ]
+    },
+    {
+      "guid": "6z9qTWUzk7",
+      "name": "Nature Turtle Cape",
+      "price": 4.99,
+      "items": [
+        "znjZlpHSt4"
+      ]
+    },
+    {
+      "guid": "236RtTEBQ3",
+      "name": "Nature Turtle Pack",
+      "price": 4.99,
+      "c": 75,
+      "items": [
+        "_Y-80G-t_2"
+      ]
+    },
+    // #endregion
+    // #region Days of Rainbow (2021)
+    {
+      "guid": "phpvRx9BAL",
+      "name": "Rainbow Pack",
+      "price": 19.99,
+      "c": 75,
+      "items": [
+        "KpS-2FdasB"
+      ]
+    },
+    {
+      "guid": "o64dAgrcEN",
+      "name": "Rainbow Hat",
+      "price": 9.99,
+      "items": [
+        "cMLcvRtjoh"
+      ]
+    },
+    // #endregion
+    // #region Days of Rainbow (2022)
+    {
+      "guid": "HEeaH4p5wn",
+      "name": "Rainbow Hat",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "cMLcvRtjoh"
+      ]
+    },
+    {
+      "guid": "ynQuCl7q9Z",
+      "name": "Double Rainbow Pack",
+      "price": 9.99,
+      "items": [
+        "gNWmRUkpFo"
+      ]
+    },
+    {
+      "guid": "T_daeF3aRQ",
+      "name": "Rainbow Earring",
+      "price": 2.99,
+      "items": [
+        "f-X2dDeB9w"
+      ]
+    },
+    {
+      "guid": "rWoC4IM-tj",
+      "name": "Rainbow Headphones",
+      "price": 9.99,
+      "items": [
+        "j51xlBBIZX"
+      ]
+    },
+    // #endregion
+    // #region Lazy Days (2022)
+    {
+      "guid": "iluPHW_7kb",
+      "name": "Lantern Pack",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "5xJ_mCzZQy"
+      ]
+    },
+    {
+      "guid": "koxW3plFiV",
+      "name": "Summer Parasol",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "4CYafmMUql"
+      ]
+    },
+    {
+      "guid": "rZUb4m5wQN",
+      "name": "Seashell Hairpin",
+      "price": 0.99,
+      "returning": true,
+      "items": [
+        "eruG9WiyJZ"
+      ]
+    },
+    {
+      "guid": "mIrP9HEc7D",
+      "name": "Bunny Accessory",
+      "price": 2.99,
+      "items": [
+        "ywWEH9D5_m"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mec9z8iJUX",
@@ -373,6 +547,14 @@
         "4CYafmMUql"
       ]
     },
+    {
+      "guid": "09o4l_zgOw",
+      "name": "Days of Summer Shell Hair Pin",
+      "price": 0.99,
+      "items": [
+        "eruG9WiyJZ"
+      ]
+    },
     // #endregion
     // #region Kizuna AI Collab (2022)
     {
@@ -384,7 +566,26 @@
         "daH57TClK7",
         "u7q3xg2y55"
       ]
-    }
+    },
+    // #endregion
+    // #region Days of Sunlight
+    {
+      "guid": "AZxrY1dz75",
+      "name": "Jelly Shoulder Buddy",
+      "price": 2.99,
+      "items": [
+        "Ay3g-0JAeW"
+      ]
+    },
+    {
+      "guid": "xapvROJehm",
+      "name": "Campfire Snack Kit",
+      "price": 19.99,
+      "sc": 35,
+      "items": [
+        "TXYOTW9Qyn"
+      ]
+    },
     // #endregion
   ]
 }

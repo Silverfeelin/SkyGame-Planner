@@ -1,33 +1,25 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IEventInstance } from 'src/app/interfaces/event.interface';
+import { SpiritHelper } from 'src/app/helpers/spirit-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
-import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-spirits',
   templateUrl: './spirits.component.html',
   styleUrls: ['./spirits.component.less']
 })
-export class SpiritsComponent implements OnInit, OnDestroy {
+export class SpiritsComponent {
   spirits: Array<ISpirit> = [];
   queryTree: {[spiritGuid: string]: ISpiritTree} = {};
   spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
   rows: Array<any> = [];
 
-  // _itemSub?: Subscription;
-
-  /**
-   *
-   */
   constructor(
     private readonly _dataService: DataService,
     private readonly _route: ActivatedRoute
@@ -35,14 +27,6 @@ export class SpiritsComponent implements OnInit, OnDestroy {
     _route.queryParamMap.subscribe(q => { this.onQueryChanged(q); });
   }
 
-  ngOnInit(): void {
-    // For updating real-time. Only needed if spirit trees are rendered on same page.
-    // this._itemSub = this._eventService.itemToggled.subscribe(i => this.onItemToggled(i));
-  }
-
-  ngOnDestroy(): void {
-    // this._itemSub?.unsubscribe();
-  }
 
   onQueryChanged(q: ParamMap): void {
     this.spirits = [];
@@ -53,18 +37,12 @@ export class SpiritsComponent implements OnInit, OnDestroy {
     const type = q.get('type');
     const typeSet = type ? new Set<string>(type.split(',')) : undefined;
 
-    const addSpirit = (s: ISpirit, tree?: ISpiritTree): boolean => {
+    const addSpirit = (s: ISpirit): boolean => {
       // Don't add spirit if type is filtered out.
       if (typeSet && !typeSet.has(s.type)) { return false; }
 
       this.spirits.push(s);
-      const trees: Array<ISpiritTree> = [];
-      this.spiritTrees[s.guid] = trees;
-
-      // Add all trees
-      if (tree) { trees.push(tree); }
-      if (s.tree) { trees.push(s.tree); }
-      if (s.ts?.length) { s.ts.forEach(t => trees.push(t.tree)); }
+      this.spiritTrees[s.guid] = SpiritHelper.getTrees(s);
 
       return true;
     };
@@ -78,14 +56,6 @@ export class SpiritsComponent implements OnInit, OnDestroy {
     const seasonGuid = q.get('season');
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;
     season?.spirits?.forEach(s => addSpirit(s));
-
-    // Load from event instance.
-    const eventInstanceGuid = q.get('eventInstance');
-    const eventInstance = eventInstanceGuid ? this._dataService.guidMap.get(eventInstanceGuid) as IEventInstance : undefined;
-    eventInstance?.spirits?.forEach(s => {
-      addSpirit(s.spirit!, s.tree!)
-      this.queryTree[s.spirit!.guid] = s.tree!;
-    });
 
     this.initTable();
   }
@@ -106,11 +76,28 @@ export class SpiritsComponent implements OnInit, OnDestroy {
         });
       });
 
+      // Count items from last spirit tree.
+      let unlockedLast = 0, totalLast = 0;
+      const lastTree = trees.at(-1);
+      if (lastTree) {
+        // Count items from last tree.
+        NodeHelper.getItems(lastTree!.node).forEach(item => {
+          if (item.unlocked) { unlockedLast++; }
+          totalLast++;
+        });
+      }
+
+      const tooltip = unlockedItems === totalItems ? 'All items unlocked.'
+        : unlockedLast && unlockedLast === totalLast ? 'All items unlocked in most recent visit.'
+        : undefined;
+
       return {
         ...s,
         areaGuid: s.area?.guid,
         tree: this.queryTree[s.guid]?.guid,
-        unlockedItems, totalItems
+        unlockedItems, totalItems,
+        unlockedLast, totalLast,
+        tooltip
       }
     });
   }

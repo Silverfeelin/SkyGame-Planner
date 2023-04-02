@@ -9045,7 +9045,7 @@
     },
     {
       "guid": "69sFZrdG2P",
-      "item": "ZCOzHqrm1J",
+      "item": "bBQVuucGUm",
       "h": 16
     },
     {
@@ -13568,6 +13568,276 @@
       "c": 105
     },
     // #endregion
+    // #region Days of Nature (2022)
+    {
+      "guid": "cxhB2Ybq7_",
+      "item": "hbH9xhhETJ",
+      "n": "6dP6upsJu3"
+    },
+    {
+      "guid": "6dP6upsJu3",
+      "item": "J3SQU_2koY",
+      "c": 5,
+      "n": "JXqZkdPLsp"
+    },
+    {
+      "guid": "JXqZkdPLsp",
+      "item": "OvPPfhXnwW",
+      "h": 20
+    },
+    // #endregion
+    // #region Days of Rainbow (2021)
+    {
+      "guid": "hUF5hywM3c",
+      "item": "EJok2mGotV",
+      "c": 5,
+      "nw": "2NUFS0p20z",
+      "n": "ouYrGUoWBT",
+      "ne": "uqWYaTmG15"
+    },
+    {
+      "guid": "2NUFS0p20z",
+      "item": "mcOKuxsaZN",
+      "c": 10
+    },
+    {
+      "guid": "uqWYaTmG15",
+      "item": "4XMYa4Wj-M",
+      "h": 20
+    },
+    {
+      "guid": "ouYrGUoWBT",
+      "item": "AxTtrCwyk7",
+      "c": 5,
+      "nw": "LMSDuWnb94",
+      "n": "2sBGjA2T4q",
+      "ne": "0Y40tIFVEA"
+    },
+    {
+      "guid": "LMSDuWnb94",
+      "item": "2LbATcLuxE",
+      "c": 10
+    },
+    {
+      "guid": "0Y40tIFVEA",
+      "item": "BUTwFt6PGm",
+      "c": 175
+    },
+    {
+      "guid": "2sBGjA2T4q",
+      "item": "3yvqidoaoB",
+      "c": 5,
+      "nw": "t7D9UyRnwS",
+      "n": "ytpOm6zN9a"
+    },
+    {
+      "guid": "t7D9UyRnwS",
+      "item": "wpqgJDwbFe",
+      "c": 10
+    },
+    {
+      "guid": "ytpOm6zN9a",
+      "item": "KQRXGIBq17",
+      "c": 5,
+      "nw": "Us05bEp3VN",
+      "n": "GJ82on9Dt9"
+    },
+    {
+      "guid": "Us05bEp3VN",
+      "item": "wOwsBf1jXn",
+      "c": 10
+    },
+    {
+      "guid": "GJ82on9Dt9",
+      "item": "zXpvNVNGvR",
+      "c": 5,
+      "nw": "e_IBPCjRsQ",
+      "n": "HAy5x7aa9a"
+    },
+    {
+      "guid": "e_IBPCjRsQ",
+      "item": "E7IOFDe4AR",
+      "c": 10
+    },
+    {
+      "guid": "HAy5x7aa9a",
+      "item": "6wkd0VIgYR",
+      "c": 5,
+      "nw": "POV1fKlpQA",
+      "n": "3H-e7dMGsU"
+    },
+    {
+      "guid": "POV1fKlpQA",
+      "item": "hf004Ftxtx",
+      "c": 10
+    },
+    {
+      "guid": "3H-e7dMGsU",
+      "item": "trb50TnftT",
+      "c": 5
+    },
+    // #endregion
+    // #region Days of Rainbow (2022)
+    {
+      "guid": "Af7yfGmO9l",
+      "item": "N5_6M8ooTl",
+      "c": 5,
+      "nw": "Zm5pEUwavf",
+      "n": "LkZxzuGRkZ"
+    },
+    {
+      "guid": "Zm5pEUwavf",
+      "item": "4XMYa4Wj-M",
+      "h": 20
+    },
+    {
+      "guid": "LkZxzuGRkZ",
+      "item": "W5Y_p83sp1",
+      "c": 5,
+      "nw": "byrXBXECCN",
+      "n": "MgLeIHGQcR"
+    },
+    {
+      "guid": "byrXBXECCN",
+      "item": "BUTwFt6PGm",
+      "c": 175
+    },
+    {
+      "guid": "MgLeIHGQcR",
+      "item": "0rrPORrk7O",
+      "c": 95
+    },
+    // #endregion
+    // #region Sky Anniversary (2020)
+    {
+      "guid": "lNIMl5bvaC",
+      "item": "lDm3gx6ZkS",
+      "h": 3
+    },
+    // #endregion
+    // #region Sky Anniversary (2021)
+    {
+      "guid": "9Xxqrj_Ldv",
+      "item": "0hJ9DXTWh2",
+      "c": 2,
+      "nw": "i_5jS_FrXm",
+      "n": "rtlTTJtPGn",
+      "ne": "O2SSGsVsAx"
+    },
+    {
+      "guid": "i_5jS_FrXm",
+      "item": "zcVZSmzfxl",
+      "c": 4,
+      "n": "F8jgBZD5Yr"
+    },
+    {
+      "guid": "F8jgBZD5Yr",
+      "item": "l_2PxLbjkf",
+      "c": 4,
+      "n": "oYok4NShiP"
+    },
+    {
+      "guid": "oYok4NShiP",
+      "item": "KBAo9IAdqk",
+      "c": 4,
+      "n": "084emDkRNd"
+    },
+    {
+      "guid": "084emDkRNd",
+      "item": "t7h71OQ6DP",
+      "c": 4
+    },
+    {
+      "guid": "O2SSGsVsAx",
+      "item": "uH4Rjnkh74",
+      "h": 3
+    },
+    {
+      "guid": "rtlTTJtPGn",
+      "item": "iy8LsNTGIS",
+      "c": 2,
+      "n": "QSduu5cV0T"
+    },
+    {
+      "guid": "QSduu5cV0T",
+      "item": "S5U6SxnhOI",
+      "c": 2,
+      "n": "rgDdTaRorG"
+    },
+    {
+      "guid": "rgDdTaRorG",
+      "item": "WDlSvYds8f",
+      "c": 2,
+      "n": "jFsfjX55m8"
+    },
+    {
+      "guid": "jFsfjX55m8",
+      "item": "2yUc4WdquD",
+      "c": 2,
+      "n": "YdJg6DkXC-"
+    },
+    {
+      "guid": "YdJg6DkXC-",
+      "item": "ktsAnnjGgb",
+      "c": 20
+    },
+    // #endregion
+    // #region Sky Anniversary (2022)
+    {
+      "guid": "gwVoKjjsPr",
+      "item": "svEXRvagb3",
+      "h": 3,
+      "nw": "PXlH34_ZV7",
+      "n": "yMnLvW-1eP",
+      "ne": "e3mTbzCGtr"
+    },
+    {
+      "guid": "PXlH34_ZV7",
+      "item": "9jMnZ23AYP",
+      "h": 3
+    },
+    {
+      "guid": "e3mTbzCGtr",
+      "item": "ktsAnnjGgb",
+      "c": 20
+    },
+    {
+      "guid": "yMnLvW-1eP",
+      "item": "FjtQU-Da97",
+      "c": 2,
+      "nw": "wk_cBWSWVM",
+      "n": "KiO_zy4O-9",
+      "ne": "rkCqHx9aLE"
+    },
+    {
+      "guid": "wk_cBWSWVM",
+      "item": "8A96KlMPQC",
+      "c": 30
+    },
+    {
+      "guid": "rkCqHx9aLE",
+      "item": "ADtwifMcnN",
+      "c": 20
+    },
+    {
+      "guid": "KiO_zy4O-9",
+      "item": "MWjOfJMKoO",
+      "c": 4,
+      "n": "5WhXdwgjfI"
+    },
+    {
+      "guid": "5WhXdwgjfI",
+      "item": "Xbb3BpzDZT",
+      "h": 20
+    },
+    // #endregion
+    // #region Lazy Days (2022)
+    {
+      "guid": "umrXZ_3yaW",
+      "item": "E_yfCZYU5C",
+      "c": 44
+    },
+    // #endregion
     // #region Days of Summer
     {
       "guid": "M55c-swNeS",
@@ -13585,6 +13855,18 @@
       "guid": "Z_7p5fJl5I",
       "item": "E_yfCZYU5C",
       "c": 44
+    },
+    // #endregion
+    // #region Days of Sunlight (2022)
+    {
+      "guid": "gDi7N-6Sap",
+      "item": "vRGrnOst90",
+      "n": "A1MDv0ObZ-"
+    },
+    {
+      "guid": "A1MDv0ObZ-",
+      "item": "JNgfLtgLfc",
+      "c": 70
     },
     // #endregion
   ]

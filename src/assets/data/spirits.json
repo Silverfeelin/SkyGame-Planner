@@ -951,6 +951,35 @@
       "type": "Event",
       "name": "Days of Bloom Guide"
     },
+    // Days of Nature
+    {
+      "guid": "3M1KSVgf49",
+      "type": "Event",
+      "name": "Days of Nature Guide"
+    },
+    // Days of Rainbow
+    {
+      "guid": "uPzMm5H7ag",
+      "type": "Event",
+      "name": "Days of Rainbow Guide"
+    },
+    {
+      "guid": "9eBpHjtudy",
+      "type": "Event",
+      "name": "Days of Rainbow IAP Guide"
+    },
+    // Sky Anniversary
+    {
+      "guid": "mYOzGrzNHU",
+      "type": "Event",
+      "name": "Anniversary Guide"
+    },
+    // Days of Sunlight
+    {
+      "guid": "c9XXzlKzhd",
+      "type": "Event",
+      "name": "Days of Sunlight Guide"
+    },
     // #endregion
   ]
 }

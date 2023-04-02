@@ -31,19 +31,19 @@
   animation-fill-mode: forwards;
 }
 
-.content {
-  position: fixed;
-  top: 0;
-  right: 0;
+::ng-deep body {
+  position: relative;
   left: var(--menu-width);
-  bottom: var(--status-height);
+  margin-bottom: var(--status-height);
+  width: calc(100% - var(--menu-width));
+  //height: calc(100% - var(--status-height));
   padding: 10px;
-  overflow: auto;
 }
 
 app-status-bar {
   display: block;
   position: fixed;
+  z-index: 50;
   bottom: 0;
   left: var(--menu-width);
   right: 0;

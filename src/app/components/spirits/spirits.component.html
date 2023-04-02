@@ -17,7 +17,11 @@
     </a>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">
-    <span *ngIf="row.totalItems" [class.completed]="row.unlockedItems === row.totalItems">
+    <span *ngIf="row.totalItems"
+      [class.partial]="row.unlockedLast && row.unlockedLast === row.totalLast"
+      [class.completed]="row.unlockedItems === row.totalItems"
+      [ngbTooltip]="row.tooltip" container="body" placement="left"
+    >
       {{ row.unlockedItems }} / {{ row.totalItems }}
     </span>
   </ng-template>

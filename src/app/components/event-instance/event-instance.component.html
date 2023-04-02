@@ -1,29 +1,22 @@
-<h1>{{ instance.event.name }} <span class="c-accent">{{ $any(instance.date) | date:'yyyy' }}</span></h1>
-<!-- <div class="card-container">
-  <div class="card-grid card-grid-1">
-    <div class="card p-rel">
-      <div class="item">
-        <mat-icon class="menu-icon" [fontIcon]="'undo'"></mat-icon>
-        <span class="menu-label">
-          Test
-        </span>
+<h1>
+  {{ instance.event.name }}
+  <span class="c-accent">{{ $any(instance.date) | date:'yyyy' }}</span>
+</h1>
+
+<!-- Spirits -->
+<ng-container *ngIf="instance.spirits?.length">
+  <div class="card-wrapper mt-2" >
+    <h2 class="mb-0">Spirits</h2>
+  </div>
+
+  <div class="card-container mt-2">
+    <div class="card-container-inner">
+      <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
+        <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name"></app-spirit-tree>
       </div>
     </div>
   </div>
-</div> -->
-
-<!-- Spirits -->
-<div class="card-wrapper mt-2">
-  <h2 class="mb-0">Spirits</h2>
-</div>
-
-<div class="card-container mt-2" *ngIf="instance.spirits?.length">
-  <div class="card-container-inner">
-    <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
-      <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name"></app-spirit-tree>
-    </div>
-  </div>
-</div>
+</ng-container>
 
 <!-- IAPs -->
 <ng-container *ngIf="shops?.length">
@@ -43,8 +36,8 @@
           <div class="mt-2 item">
             <mat-icon class="menu-icon" [fontIcon]="iap.returning ? 'undo' : 'grade'"></mat-icon>
             <span class="menu-label">
-              <span *ngIf="iap.returning" class="c-old">Returning IAP</span>
-              <span *ngIf="!iap.returning" class="c-new">New  IAP</span>
+              <span *ngIf="iap.returning" class="c-partial">Returning IAP</span>
+              <span *ngIf="!iap.returning" class="c-full">New  IAP</span>
             </span>
           </div>
           <!-- Location -->
@@ -63,17 +56,23 @@
             </span>
           </div>
           <!-- Currencies -->
-          <div class="mt-2 item" *ngIf="iap.c || iap.sc">
+          <div class="mt-2 item" *ngIf="iap.c || iap.sc || iap.sp">
             <ng-container *ngIf="iap.c">
-              <mat-icon class="menu-icon" svgIcon="candle"></mat-icon>
+              <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
               <span class="menu-label">
                 {{ iap.c }}
               </span>
             </ng-container>
             <ng-container *ngIf="iap.sc">
-              <mat-icon class="menu-icon" svgIcon="season-candle"></mat-icon>
+              <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
               <span class="menu-label">
                 {{ iap.sc }}
+              </span>
+            </ng-container>
+            <ng-container *ngIf="iap.sp">
+              <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
+              <span class="menu-label">
+                {{ iap.sp }}
               </span>
             </ng-container>
           </div>
