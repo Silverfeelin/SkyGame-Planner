@@ -314,6 +314,60 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days"
       }
     },
+    // Days of Mischief
+    {
+      "guid": "sZKQF_CWdu",
+      "name": "Days of Mischief",
+      "recurring": true,
+      "instances": [
+        {
+          "guid": "PIL2A60uh2",
+          "date": { "day": 20, "month": 10, "year": 2019 },
+          "endDate": { "day": 31, "month": 10, "year": 2019 },
+          "shops": [
+            "jhMTGpLlxV"
+          ]
+        },
+        {
+          "guid": "kD-fP3SDqe",
+          "date": { "day": 22, "month": 10, "year": 2020 },
+          "endDate": { "day": 4, "month": 11, "year": 2020 },
+          "shops": [
+            "GJiMxfksmu"
+          ]
+        },
+        {
+          "guid": "Y4Ktig-rT6",
+          "date": { "day": 18, "month": 10, "year": 2021 },
+          "endDate": { "day": 7, "month": 11, "year": 2021 },
+          "shops": [
+            "G95tJMU080",
+            "h4SPErtdmX",
+            "txm1D8yjKM"
+          ],
+          "spirits": [
+            { "guid": "ACtiGG4_cq", "spirit": "TgUgZjfoMI", "tree": "EUQHt6adrz" }
+          ]
+        },
+        {
+          "guid": "cAAT3VXGVV",
+          "date": { "day": 24, "month": 10, "year": 2022 },
+          "endDate": { "day": 13, "month": 11, "year": 2022 },
+          "shops": [
+            "NTt-KZd_Za",
+            "MGl2DwfM6Y",
+            "vl6JA53gfO",
+            "JfjTkXjClo"
+          ],
+          "spirits": [
+            { "guid": "PNYNgV6au9", "spirit": "TgUgZjfoMI", "tree": "4YsCmESmY1" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief"
+      }
+    },
     // Days of Healing (2020)
     {
       "guid": "Bqvtgwzj5I",

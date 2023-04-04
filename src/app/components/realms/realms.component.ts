@@ -9,12 +9,14 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class RealmsComponent implements OnInit {
   realms!: Array<IRealm>;
+  visibleRealms!: Array<IRealm>;
   spiritCount!: { [key: string]: number };
 
   constructor(
     private readonly _dataService: DataService
   ) {
     this.realms = _dataService.realmConfig.items;
+    this.visibleRealms = this.realms.filter(r => !r.hidden);
   }
 
   ngOnInit(): void {

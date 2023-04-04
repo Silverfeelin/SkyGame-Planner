@@ -980,6 +980,32 @@
       "type": "Event",
       "name": "Days of Sunlight Guide"
     },
+    // Days of Mischief
+    {
+      "guid": "ihZx_rVl70",
+      "type": "Event",
+      "name": "Mischief Staff (Samantha)"
+    },
+    {
+      "guid": "TgUgZjfoMI",
+      "type": "Event",
+      "name": "Mischief Staff (Skidmore)"
+    },
+    {
+      "guid": "smphYk9cPX",
+      "type": "Event",
+      "name": "Mischief Staff (Nat)"
+    },
+    {
+      "guid": "GzpxxWwGVG",
+      "type": "Event",
+      "name": "Mischief Staff (Yoshi)"
+    },
+    {
+      "guid": "GwPybX8w0t",
+      "type": "Event",
+      "name": "Samantha clone 42"
+    },
     // #endregion
   ]
 }

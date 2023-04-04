@@ -1,6 +1,6 @@
-<h1>Events</h1>
+<h1 class="h2">Events</h1>
 <div class="card-wrapper">
-  <h2 class="mb-0">Recurring events</h2>
+  <h2 class="h3 mb-0">Recurring events</h2>
 </div>
 <div class="card-grid card-grid-2 mt-2">
   <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
@@ -9,7 +9,7 @@
 </div>
 
 <div class="card-wrapper mt-2">
-  <h2 class="mb-0">Past events</h2>
+  <h2 class="h3 mb-0">Past events</h2>
 </div>
 <div class="card-grid card-grid-2 mt-2">
   <div class="card p-rel" *ngFor="let event of old; let i = index;">
@@ -18,7 +18,7 @@
 </div>
 
 <ng-template #eventDiv let-event>
-  <h2>{{ event.name }}</h2>
+  <h2 class="h3">{{ event.name }}</h2>
   <!-- Wiki -->
   <div class="wiki p-abs" *ngIf="event._wiki?.href">
     <a [href]="event._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">

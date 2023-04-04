@@ -9,7 +9,7 @@ export interface IIAP extends IGuid {
   price?: number;
   /** Name of the IAP. */
   name?: string;
-  /** If true this is a returning IAP. */
+  /** If true this is a returning IAP or catch-up pack. */
   returning?: boolean;
 
   /** Regular candles included in purchase. */

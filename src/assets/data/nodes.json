@@ -13838,6 +13838,85 @@
       "c": 44
     },
     // #endregion
+    // #region Days of Mischief (2021)
+    {
+      "guid": "UYRvaTIPiX",
+      "item": "VFeHTgImrJ",
+      "c": 5,
+      "nw": "TgYQuB42TM",
+      "n": "WZaThWQhGB"
+    },
+    {
+      "guid": "TgYQuB42TM",
+      "item": "si_8YhNtmr",
+      "c": 66
+    },
+    {
+      "guid": "WZaThWQhGB",
+      "item": "Wa9V43Etw5",
+      "c": 5,
+      "nw": "sSQ6nSnzku",
+      "n": "8hotO0ld4E"
+    },
+    {
+      "guid": "sSQ6nSnzku",
+      "item": "-HtIAPjYsa",
+      "c": 99
+    },
+    {
+      "guid": "8hotO0ld4E",
+      "item": "9G7XqSuA41",
+      "c": 5,
+      "n": "KGqWmRAAX5"
+    },
+    {
+      "guid": "KGqWmRAAX5",
+      "item": "MyVdnRoxY0",
+      "h": 33
+    },
+    // #endregion
+    // #region Days of Mischief (2022)
+    {
+      "guid": "3Czsl3VjA8",
+      "item": "VFeHTgImrJ",
+      "c": 5,
+      "nw": "kGWVn9vaxZ",
+      "n": "kSa2n7fGK9"
+    },
+    {
+      "guid": "kGWVn9vaxZ",
+      "item": "si_8YhNtmr",
+      "c": 66
+    },
+    {
+      "guid": "kSa2n7fGK9",
+      "item": "Wa9V43Etw5",
+      "c": 5,
+      "nw": "K7eOyXjK8L",
+      "n": "S7oQ_T5jde"
+    },
+    {
+      "guid": "K7eOyXjK8L",
+      "item": "-HtIAPjYsa",
+      "c": 99
+    },
+    {
+      "guid": "S7oQ_T5jde",
+      "item": "9G7XqSuA41",
+      "c": 5,
+      "nw": "Lm3NhH0VQf",
+      "n": "zwVuaN7J6t"
+    },
+    {
+      "guid": "Lm3NhH0VQf",
+      "item": "MyVdnRoxY0",
+      "h": 33
+    },
+    {
+      "guid": "zwVuaN7J6t",
+      "item": "MnzYzRK9sY",
+      "c": 44
+    },
     // #region Days of Summer
     {
       "guid": "M55c-swNeS",

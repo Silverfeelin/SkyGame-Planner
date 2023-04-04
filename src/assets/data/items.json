@@ -10390,6 +10390,116 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png"
     },
     // #endregion
+    // #region Days of Mischief
+    {
+      "guid": "4D33RG4tNB",
+      "type": "Cape",
+      "name": "Spooky Bat Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Icon_cape_bat-Morybel-0146.png"
+    },
+    {
+      "guid": "Dlp71JdHg2",
+      "type": "Hair",
+      "name": "Hungry Pumpkin Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Icon_hair_mischief_pumpkin.png"
+    },
+    {
+      "guid": "cMNnwUbQed",
+      "type": "Hat",
+      "name": "Mischief Witch Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Icon_hair_mischief_witch_hat.png"
+    },
+    {
+      "guid": "gEGMIX0DMp",
+      "type": "Cape",
+      "name": "Mischief Web Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_cape_spider-Morybel-0146.png"
+    },
+    {
+      "guid": "VFeHTgImrJ",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "Wa9V43Etw5",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "9G7XqSuA41",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "MyVdnRoxY0",
+      "type": "Prop",
+      "name": "Mischief Spooky Dining Set",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Icon_2021_mischief_table.png"
+    },
+    {
+      "guid": "-HtIAPjYsa",
+      "type": "Cape",
+      "name": "Mischief Withered Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_leaf_cape-Morybel-0146.png"
+    },
+    {
+      "guid": "si_8YhNtmr",
+      "type": "Hair",
+      "name": "Mischief Witch Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_2021_mischief_long_hair.png"
+    },
+    {
+      "guid": "nMt5KsLO6Y",
+      "type": "Prop",
+      "name": "Mischief Pumpkin Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Icon_2021_mischief_pumpkin_prop.png"
+    },
+    {
+      "guid": "ARZC1Eg2jx",
+      "type": "Hair",
+      "name": "Mischief Spider Quiff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Icon_2021_mischief_iap_hair.png"
+    },
+    {
+      "guid": "CZ4aNN-JZV",
+      "type": "Outfit",
+      "name": "Mischief Witch Jumper",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Icon_2021_mischief_jumper.png"
+    },
+    {
+      "guid": "evuvua13dC",
+      "type": "Hat",
+      "name": "Mischief Withered Antlers",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png"
+    },
+    {
+      "guid": "MnzYzRK9sY",
+      "type": "Hair",
+      "name": "Mischief Tufted Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Days-of-Mischief-Cat-Hair-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "QeNQhxg3mv",
+      "type": "Mask",
+      "name": "Cat Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Mischief-Cat-Mask-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "pG1_D61KMT",
+      "type": "Cape",
+      "name": "Cat Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Cat-Cape-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "nz4W7amLch",
+      "type": "Prop",
+      "name": "Feline Familiar",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Days-of-Mischief-Cat-Prop-Icon-Morybel-0146.png"
+    },
+    // #endregion
 
     // #region Days of Healing (2020)
     {

@@ -1,4 +1,4 @@
-<h1>
+<h1 class="h2">
   {{ instance.event.name }}
   <span class="c-accent">{{ $any(instance.date) | date:'yyyy' }}</span>
 </h1>
@@ -6,7 +6,7 @@
 <!-- Spirits -->
 <ng-container *ngIf="instance.spirits?.length">
   <div class="card-wrapper mt-2" >
-    <h2 class="mb-0">Spirits</h2>
+    <h2 class="h3 mb-0">Spirits</h2>
   </div>
 
   <div class="card-container mt-2">
@@ -21,7 +21,7 @@
 <!-- IAPs -->
 <ng-container *ngIf="shops?.length">
   <div class="card-wrapper mt-2">
-    <h2 class="mb-0">In-App Purchases</h2>
+    <h2 class="h3 mb-0">In-App Purchases</h2>
   </div>
 
   <div class="card-grid card-grid-4 mt-2" >
@@ -29,7 +29,7 @@
   <ng-container *ngFor="let shop of shops">
     <ng-container *ngIf="shop.iaps?.length">
         <div class="card p-rel" *ngFor="let iap of shop.iaps">
-          <h3 [ngbTooltip]="iap.name" container="body">
+          <h3 class="h4" [ngbTooltip]="iap.name" container="body">
             {{ iapNames[iap.guid] }}
           </h3>
           <!-- Returning -->

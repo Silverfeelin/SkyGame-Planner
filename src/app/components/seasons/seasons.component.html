@@ -1,14 +1,14 @@
-<h1>Seasons</h1>
+<h1 class="h2">Seasons</h1>
 <div class="year mt-2" *ngFor="let year of years">
   <div class="card-wrapper">
-    <h2 class="mb-0">{{year}}</h2>
+    <h2 class="h3 mb-0">{{year}}</h2>
   </div>
   <div class="card-grid card-grid-2 mt-2">
     <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;">
-      <h1>
+      <h2 class="h3">
         <span class="c-accent number">#{{ season.number }}</span>
         {{ season.name }}
-      </h1>
+      </h2>
       <!-- Wiki -->
       <div class="wiki p-abs" *ngIf="season._wiki?.href">
         <a [href]="season._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">

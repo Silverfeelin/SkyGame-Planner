@@ -245,6 +245,99 @@
       ]
     },
     // #endregion
+    // #region Days of Mischief (2019)
+    {
+      "guid": "jhMTGpLlxV",
+      "type": "store",
+      "iaps": [
+        "H9VzxM1qIj",
+        "OL4LXHgY8W"
+      ]
+    },
+    // #endregion
+    // #region Days of Mischief (2020)
+    {
+      "guid": "GJiMxfksmu",
+      "type": "store",
+      "iaps": [
+        "iMCpfyWz9M",
+        "HSKDIn896y",
+        "Po8Q28AVSl",
+        "7-zZ6474F5",
+        "NF0tvGFN7T"
+      ]
+    },
+    // #endregion
+    // #region Days of Mischief (2021)
+    {
+      "guid": "txm1D8yjKM",
+      "type": "spirit",
+      "spirit": "GzpxxWwGVG",
+      "iaps": [
+        "kWLCPaGAbJ",
+        "qsG4Q8p1DT",
+        "DU6TNI8EZ-"
+      ]
+    },
+    {
+      "guid": "h4SPErtdmX",
+      "type": "spirit",
+      "spirit": "smphYk9cPX",
+      "iaps": [
+        "-e3FXCMnQ9",
+        "USb4-jY7V2"
+      ]
+    },
+    {
+      "guid": "G95tJMU080",
+      "type": "store",
+      "iaps": [
+        "hD6xfWsujC",
+        "RoNGpI5-2k",
+        "xAmLnyE6vE",
+        "3pWFv5hZ7F"
+      ]
+    },
+    // #endregion
+    // #region Days of Mischief (2022)
+    {
+      "guid": "NTt-KZd_Za",
+      "type": "store",
+      "iaps": [
+        "5G4gDL_3JS",
+        "OWK46yMzBT"
+      ]
+    },
+    {
+      "guid": "MGl2DwfM6Y",
+      "type": "spirit",
+      "spirit": "GwPybX8w0t",
+      "iaps": [
+        "YGzHOyzdID",
+        "qqwDpONxI7",
+        "GrOexyslc-",
+        "Z3aaCQvESq"
+      ]
+    },
+    {
+      "guid": "vl6JA53gfO",
+      "type": "spirit",
+      "spirit": "smphYk9cPX",
+      "iaps": [
+        "_XakvSmYcJ",
+        "XhSWQUV17M"
+      ]
+    },
+    {
+      "guid": "JfjTkXjClo",
+      "type": "spirit",
+      "spirit": "GzpxxWwGVG",
+      "iaps": [
+        "6YG733Io27",
+        "vcS6dtpG8N"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",

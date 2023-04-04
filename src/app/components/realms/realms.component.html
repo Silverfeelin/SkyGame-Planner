@@ -1,12 +1,14 @@
+<h1 class="h2">Realms</h1>
 <div class="card-grid card-grid-3">
-  <div class="card p-rel" *ngFor="let realm of realms">
-    <h1>{{realm.name}}</h1>
+  <div class="card p-rel" *ngFor="let realm of visibleRealms">
+    <h2 class="h3">{{realm.name}}</h2>
     <!-- Wiki -->
     <div class="wiki p-abs" *ngIf="realm._wiki?.href">
       <a [href]="realm._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
         <mat-icon fontIcon="question_mark"></mat-icon>
       </a>
     </div>
+    <div *ngIf="realm.imagePath" class="p-rel img" [style.background-image]="'url('+realm.imagePath+')'"></div>
     <!-- Areas -->
     <!-- <div class="mt-2 item areas">
       Areas
