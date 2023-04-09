@@ -929,11 +929,13 @@
       "type": "Event",
       "name": "Auspicious Visitor"
     },
+    // Unknown IAP spirits
     {
       "guid": "dK38RIPIOG",
       "type": "Event",
       "name": "Event Staff (IAP)"
     },
+    // Unknown IGC spirits
     {
       "guid": "zS4AGUTIgF",
       "type": "Event",
@@ -1005,6 +1007,12 @@
       "guid": "GwPybX8w0t",
       "type": "Event",
       "name": "Samantha clone 42"
+    },
+    // Days of Feast
+    {
+      "guid": "j1UqKci8Hb",
+      "type": "Event",
+      "name": "Days of Feast Staff"
     },
     // #endregion
   ]

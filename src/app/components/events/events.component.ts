@@ -28,10 +28,12 @@ export class EventsComponent {
       }
 
       if (event.instances) {
-        const instances = [...event.instances].reverse();
-        // find last instance based on event.date before current date
+        const instances = [...event.instances];
+        const reverseInstances = [...instances].reverse();
+
+        // Find last instance based on event.date.
         const now = new Date();
-        const lastInstance = instances.find(instance => instance.date < now);
+        const lastInstance = instances.find(i => now >= i.date && now <= i.endDate) ?? reverseInstances.find(instance => instance.date < now);
         this.lastInstances[event.guid] = lastInstance;
       }
     });

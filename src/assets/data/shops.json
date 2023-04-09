@@ -338,6 +338,84 @@
       ]
     },
     // #endregion
+    // #region Days of Feast (2019)
+    {
+      "guid": "eWS8HsX6SC",
+      "type": "store",
+      "iaps": [
+        "-vTNb2irO1"
+      ]
+    },
+    // #endregion
+    // #region Days of Feast (2020)
+    {
+      "guid": "48VKbivxaf",
+      "type": "store",
+      "iaps": [
+        "jEMAHe1jhH",
+        "DEPpjByhKf"
+      ]
+    },
+    {
+      "guid": "akRGCtzW3O",
+      "type": "store",
+      "name": "Premium Candle Store (Limited)",
+      "iaps": [
+        "D9kl00q4D4"
+      ]
+    },
+    // #endregion
+    // #region Days of Feast (2021)
+    {
+      "guid": "xegEfESIKJ",
+      "type": "store",
+      "iaps": [
+        "Te8lhAUlsm",
+        "mKOdlx1odg",
+        "VyP_B7mzgq"
+      ]
+    },
+    {
+      "guid": "oGKtAz6EKJ",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "mEwEf3bX1A",
+        "I_VfOruw8e",
+        "tZMJShnWbU"
+      ]
+    },
+    // #endregion
+    // #region Days of Feast (2022)
+    {
+      "guid": "sqzCydXmsy",
+      "type": "store",
+      "iaps": [
+        "bf3CFJIRXv",
+        "UQJntPLj4l"
+      ]
+    },
+    {
+      "guid": "2C_rKjKCNo",
+      "type": "object",
+      "name": "Winter Home Igloo Shelf",
+      "iaps": [
+        "Q-WT2eyG6L",
+        "lq3Dwhq32Z",
+        "kqNRH1s8es"
+      ]
+    },
+    {
+      "guid": "zoFI7O9DM0",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "Z7KMfWIAOH",
+        "VF7BZ5mVFR",
+        "Y3425SOY4l"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",

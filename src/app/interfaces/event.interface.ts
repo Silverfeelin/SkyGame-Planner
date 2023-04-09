@@ -11,6 +11,8 @@ export interface IEvent extends IGuid {
   /** Name of the event. */
   name: string;
 
+  /** Path to overview image. */
+  imageUrl?: string;
   /** If true, the event recurs regularly (generally yearly). */
   recurring?: boolean;
 

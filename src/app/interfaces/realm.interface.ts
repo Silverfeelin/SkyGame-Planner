@@ -11,7 +11,7 @@ export interface IRealm extends IGuid {
   shortName: string;
 
   /** Path to realm overview image. */
-  imagePath?: string;
+  imageUrl?: string;
   /** Hidden from main view. */
   hidden?: boolean;
 

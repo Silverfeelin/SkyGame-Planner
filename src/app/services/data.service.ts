@@ -173,6 +173,7 @@ export class DataService {
       ts.date = DateHelper.fromInterface(ts.date)!;
       ts.endDate = DateHelper.fromInterface(ts.endDate)
         ?? moment(ts.date).add(3, 'day').toDate();
+      ts.endDate = moment(ts.endDate).endOf('day').toDate();
 
       // Map TS to Spirit.
       const spirit = this.guidMap.get(ts.spirit as any) as ISpirit;
@@ -197,6 +198,7 @@ export class DataService {
       // Initialize dates
       rs.date = DateHelper.fromInterface(rs.date)!;
       rs.endDate = DateHelper.fromInterface(rs.endDate)!;
+      rs.endDate = moment(rs.endDate).endOf('day').toDate();
 
       // Map Visits.
       rs.spirits?.forEach((visit, si) => {
@@ -264,6 +266,7 @@ export class DataService {
         // Initialize dates
         eventInstance.date = DateHelper.fromInterface(eventInstance.date)!;
         eventInstance.endDate = DateHelper.fromInterface(eventInstance.endDate)!;
+        eventInstance.endDate = moment(eventInstance.endDate).endOf('day').toDate();
 
         // Map Instance to Event.
         eventInstance.event = event;

@@ -5,6 +5,7 @@
       "guid": "qmi9ZWGfja",
       "name": "Days of Fortune",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfFortune.webp",
       "instances": [
         {
           "guid": "ez8mFkEq4E",
@@ -56,6 +57,7 @@
       "guid": "f6OPOFuRDv",
       "name": "Days of Love",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfLove.webp",
       "instances": [
         {
           "guid": "chP-KuuCxn",
@@ -112,6 +114,7 @@
       "guid": "jZ3AhcgPl8",
       "name": "Days of Bloom",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfBloom.webp",
       "instances": [
         {
           "guid": "zAEvyLfhYt",
@@ -161,6 +164,7 @@
       "guid": "f6J1-3yeJF",
       "name": "Days of Nature",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfNature.webp",
       "instances": [
         {
           "guid": "aSrD3lSoFW",
@@ -201,6 +205,7 @@
       "guid": "yVDpWb7Goo",
       "name": "Days of Rainbow",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfRainbow.webp",
       "instances": [
         {
           "guid": "lm7oA1sthb",
@@ -240,6 +245,7 @@
       "guid": "qMS8yJXaln",
       "name": "Sky Anniversary",
       "recurring": true,
+      "imageUrl": "/assets/game/events/SkyAnniversary.webp",
       "instances": [
         {
           "guid": "H0unHE7F96",
@@ -275,6 +281,8 @@
       "guid": "HIw19Tr9eP",
       "name": "Days of Sunlight",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfSunlight.webp",
+      "imagePosition": "top",
       "instances": [
         {
           "guid": "So_OVA37Ck",
@@ -297,6 +305,7 @@
       "guid": "eVaYOCFqcC",
       "name": "Lazy Days",
       "recurring": true,
+      "imageUrl": "/assets/game/events/LazyDays.webp",
       "instances": [
         {
           "guid": "Kj5S3mVVH9",
@@ -319,6 +328,7 @@
       "guid": "sZKQF_CWdu",
       "name": "Days of Mischief",
       "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfMischief.webp",
       "instances": [
         {
           "guid": "PIL2A60uh2",
@@ -368,6 +378,100 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief"
       }
     },
+    // Days of Giving
+    {
+      "guid": "3Q-XQzfVXR",
+      "name": "Days of Giving",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfGiving.webp",
+      "instances": [
+        {
+          "guid": "og6aDjf82v",
+          "date": { "day": 26, "month": 11, "year": 2019 },
+          "endDate": { "day": 3, "month": 12, "year": 2019 }
+        },
+        {
+          "guid": "O1rBha4CPe",
+          "date": { "day": 23, "month": 11, "year": 2020 },
+          "endDate": { "day": 30, "month": 11, "year": 2020 }
+        },
+        {
+          "guid": "ZFIKCp1_ZW",
+          "date": { "day": 23, "month": 11, "year": 2021 },
+          "endDate": { "day": 29, "month": 11, "year": 2021 }
+        },
+        {
+          "guid": "7X6qW51tj5",
+          "date": { "day": 22, "month": 11, "year": 2022 },
+          "endDate": { "day": 28, "month": 11, "year": 2022 }
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Giving"
+      }
+    },
+    // Days of Feast
+    {
+      "guid": "MtDAWRpBqJ",
+      "name": "Days of Feast",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfFeast.webp",
+      "instances": [
+        {
+          "guid": "-9T61aYKrW",
+          "date": { "day": 22, "month": 12, "year": 2019 },
+          "endDate": { "day": 2, "month": 1, "year": 2020 },
+          "shops": [
+            "eWS8HsX6SC"
+          ]
+        },
+        {
+          "guid": "3kgcZhndZH",
+          "date": { "day": 21, "month": 12, "year": 2020 },
+          "endDate": { "day": 3, "month": 1, "year": 2021 },
+          "shops": [
+            "48VKbivxaf",
+            "akRGCtzW3O"
+          ],
+          "spirits": [
+            { "guid": "jqWTR2dvEc", "spirit": "j1UqKci8Hb", "tree": "zNffCKbbb2" }
+          ]
+        },
+        {
+          "guid": "J4c68B1pj7",
+          "date": { "day": 20, "month": 12, "year": 2021 },
+          "endDate": { "day": 9, "month": 1, "year": 2022 },
+          "shops": [
+            "xegEfESIKJ",
+            "oGKtAz6EKJ"
+          ],
+          "spirits": [
+            { "guid": "DxybajHFDM", "spirit": "5rr1zr2_j5", "tree": "VjpAJQcwN0" },
+            { "guid": "p7u0Zl6gak", "spirit": "j1UqKci8Hb", "tree": "GOwoxyHK4k" }
+          ]
+        },
+        {
+          "guid": "-nF-0Ar_uz",
+          "date": { "day": 19, "month": 12, "year": 2022 },
+          "endDate": { "day": 8, "month": 1, "year": 2023 },
+          "shops": [
+            "sqzCydXmsy",
+            "2C_rKjKCNo",
+            "zoFI7O9DM0"
+          ],
+          "spirits": [
+            { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },
+            { "guid": "d2BGP3fI-Y", "spirit": "5rr1zr2_j5", "tree": "WiF93W3zoc" },
+            { "guid": "eXRAJOweQm", "spirit": "j1UqKci8Hb", "tree": "6SsyXPH5Ow" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast"
+      }
+    },
+    // Add Days of Feast from this Article: LINK
+
     // Days of Healing (2020)
     {
       "guid": "Bqvtgwzj5I",

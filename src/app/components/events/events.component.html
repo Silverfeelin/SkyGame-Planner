@@ -2,7 +2,7 @@
 <div class="card-wrapper">
   <h2 class="h3 mb-0">Recurring events</h2>
 </div>
-<div class="card-grid card-grid-2 mt-2">
+<div class="card-grid card-grid-4 mt-2">
   <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
     <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
   </div>
@@ -11,7 +11,7 @@
 <div class="card-wrapper mt-2">
   <h2 class="h3 mb-0">Past events</h2>
 </div>
-<div class="card-grid card-grid-2 mt-2">
+<div class="card-grid card-grid-3 mt-2">
   <div class="card p-rel" *ngFor="let event of old; let i = index;">
     <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
   </div>
@@ -25,6 +25,10 @@
       <mat-icon fontIcon="question_mark"></mat-icon>
     </a>
   </div>
+  <!-- Image -->
+  <div *ngIf="event.imageUrl" class="p-rel img"
+    [style.background-image]="'url('+event.imageUrl+')'"
+    [style.background-position]="event.imagePosition || undefined"></div>
   <!-- Overview -->
   <a class="mt-2 item" [routerLink]="['/event', event.guid]">
     <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
@@ -32,7 +36,7 @@
       Overview
     </span>
   </a>
-  <!-- Overview -->
+  <!-- Jump to last -->
   <a class="mt-2 item" *ngIf="lastInstances[event.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.guid]).guid]">
     <mat-icon class="menu-icon" fontIcon="schedule"></mat-icon>
     <span class="menu-label">
