@@ -11,6 +11,7 @@ import { SeasonsComponent } from './components/seasons/seasons.component';
 import { SpiritComponent } from './components/spirit/spirit.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
+import { ShopsComponent } from './components/shops/shops.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'realm', pathMatch: 'full' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'realm', component: RealmsComponent },
   { path: 'season', component: SeasonsComponent },
   { path: 'season/:guid', component: SeasonComponent },
+  { path: 'shop', component: ShopsComponent },
   { path: 'spirit', component: SpiritsComponent },
   { path: 'spirit/:guid', component: SpiritComponent },
   { path: 'ts', component: TravelingSpiritsComponent },

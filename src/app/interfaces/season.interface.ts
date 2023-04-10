@@ -1,4 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
+import { IShop } from "./shop.interface";
 import { ISpirit } from "./spirit.interface";
 import { IWiki } from "./wiki.interface";
 
@@ -9,6 +10,9 @@ export interface ISeason extends IGuid {
   name: string;
   /** Short name of the season. */
   shortName: string;
+
+  /** Path to the season icon. */
+  iconUrl?: string;
 
   /** Year of the season. */
   year: number;
@@ -27,6 +31,9 @@ export interface ISeason extends IGuid {
   * @remarks Includes season guide.
   */
   spirits: Array<ISpirit>;
+
+  /** Season IAP shops. */
+  shops?: Array<IShop>;
 
   /// Metadata ///
 

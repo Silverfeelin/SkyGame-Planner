@@ -1,13 +1,25 @@
 <h1 class="h2">Seasons</h1>
-<div class="year mt-2" *ngFor="let year of years">
-  <div class="card-wrapper">
+
+<div class="card-wrapper mt-2">
+  <div class="card-flex">
+    <a class="card-flex-item" *ngFor="let season of reverseSeasons"
+      [routerLink]="['/season', season.guid]"
+      [ngbTooltip]="season.name" placement="bottom" container="body">
+      <img class="season-icon" [src]="season.iconUrl" />
+    </a>
+  </div>
+</div>
+
+<div class="mt-2" *ngFor="let year of years">
+  <div class="card-wrapper wrapper-year">
     <h2 class="h3 mb-0">{{year}}</h2>
   </div>
   <div class="card-grid card-grid-2 mt-2">
     <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;">
       <h2 class="h3">
-        <span class="c-accent number">#{{ season.number }}</span>
+        <img class="season-icon season-icon-medium" [src]="season.iconUrl" />
         {{ season.name }}
+        <span class="h5 c-accent number">#{{ season.number }}</span>
       </h2>
       <!-- Wiki -->
       <div class="wiki p-abs" *ngIf="season._wiki?.href">

@@ -1,56 +1,13 @@
-<h1 class="h2">{{ season.name }}</h1>
-
-<!-- Spirits -->
-<div class="card-wrapper mt-2">
-  <h2 class="h3 mb-0">Spirits</h2>
-</div>
-
-<div class="card-container card-container-scroll-x mt-2">
-  <div class="card-container-inner">
-    <!-- Guide tree -->
-    <div class="tree-wrapper">
-      <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name"></app-spirit-tree>
-    </div>
-    <!-- Traveling Spirit trees -->
-    <ng-container *ngIf="spirits">
-      <ng-container *ngFor="let spirit of spirits;">
-        <div class="tree-wrapper" *ngIf="spirit.tree">
-          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name">
-            <!-- Link to spirit -->
-            <div name>
-              <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
-                {{ spirit.name }}
-              </a>
-            </div>
-          </app-spirit-tree>
-        </div>
-      </ng-container>
-    </ng-container>
-  </div>
-</div>
-
+<h1 class="h2">Permanent In-App Purchases</h1>
 <!-- IAPs -->
-<ng-container *ngIf="shops.length">
-  <div class="card-wrapper mt-2">
-    <h2 class="h3 mb-0">In-App Purchases</h2>
-  </div>
-
+<ng-container *ngIf="shops?.length">
   <div class="card-grid card-grid-4 mt-2" >
-    <!-- Render IAPs in order of sorted shops. -->
     <ng-container *ngFor="let shop of shops">
       <ng-container *ngIf="shop.iaps?.length">
         <div class="card p-rel" *ngFor="let iap of shop.iaps">
           <h3 class="h4" [ngbTooltip]="iap.name" container="body">
             {{ iap.name }}
           </h3>
-          <!-- Returning -->
-          <div class="mt-2 item">
-            <mat-icon class="menu-icon" [fontIcon]="iap.returning ? 'undo' : 'grade'"></mat-icon>
-            <span class="menu-label">
-              <span *ngIf="iap.returning" class="c-partial">Returning IAP</span>
-              <span *ngIf="!iap.returning" class="c-full">New  IAP</span>
-            </span>
-          </div>
           <!-- Location -->
           <div class="mt-2 item">
             <mat-icon class="menu-icon" [fontIcon]="'location_on'"></mat-icon>
@@ -104,10 +61,4 @@
       </ng-container>
     </ng-container>
   </div>
-
 </ng-container>
-
-<ng-template #costHover>
-  <span>Total cost of all the items in this tree.</span><br/>
-  <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
-</ng-template>

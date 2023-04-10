@@ -22,5 +22,12 @@ export class AppComponent {
 
   onData(): void {
     this.ready = true;
+
+    document.addEventListener('keydown', (event) => {
+      if (event.ctrlKey && event.shiftKey && event.key.toUpperCase() === 'F') {
+        event.preventDefault();
+        // TODO: Search page.
+      }
+    });
   }
 }

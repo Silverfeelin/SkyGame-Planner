@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { IIAP } from 'src/app/interfaces/iap.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
+import { IShop } from 'src/app/interfaces/shop.interface';
 import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { IAPService } from 'src/app/services/iap.service';
 
 @Component({
   selector: 'app-season',
@@ -14,9 +17,11 @@ export class SeasonComponent {
 
   guide?: ISpirit;
   spirits: Array<ISpirit> = [];
+  shops: Array<IShop> = [];
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _iapService: IAPService,
     private readonly _route: ActivatedRoute
   ) {
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
@@ -24,6 +29,10 @@ export class SeasonComponent {
 
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
+    this.initializeSeason(guid!);
+  }
+
+  private initializeSeason(guid: string): void {
     this.season = this._dataService.guidMap.get(guid!) as ISeason;
 
     this.guide = undefined;
@@ -38,5 +47,11 @@ export class SeasonComponent {
           break;
       }
     });
+
+    this.shops = this.season.shops ?? [];
+  }
+
+  togglePurchased(event: MouseEvent, iap: IIAP): void {
+    this._iapService.togglePurchased(iap);
   }
 }

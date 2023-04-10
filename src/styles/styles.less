@@ -1,6 +1,5 @@
 body {
   background: var(--color-background);
-  // background: linear-gradient(to right, var(--color-background), var(--color-background-gradient-100));
   color: var(--color);
   font-family: 'Roboto', sans-serif;
 }
@@ -55,8 +54,10 @@ body { scrollbar-width: thin; }
 .ws-pw { white-space: pre-wrap !important; }
 .ws-pl { white-space: pre-line !important; }
 .d-inline-block { display: inline-block !important; }
+.fw-bold { font-weight: bold !important; }
 
 // Global layout
+@import "card-flex.less";
 @import "card-grid.less";
 @import "card-container.less";
 @import "card-wrapper.less";
@@ -83,7 +84,7 @@ p:last-child {
   }
 
   &.self {
-    color: var(--color-unlock-check)
+    color: var(--color-unlock-check);
   }
 }
 

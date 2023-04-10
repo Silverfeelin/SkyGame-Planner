@@ -1,5 +1,109 @@
 {
   "items": [
+    // #region Permanent
+    {
+      "guid": "BTcODyaWw0",
+      "type": "store",
+      "permanent": true,
+      "iaps": [
+        "h7MofWX407"
+      ]
+    },
+    {
+      "guid": "wKkwWi5qdC",
+      "type": "spirit",
+      "spirit": "ExkE9a7QJ0",
+      "permanent": true,
+      "iaps": [
+        "37HKvA4bBc",
+        "3uTp2mfgQj"
+      ]
+    },
+    {
+      "guid": "QtpcAqvc4g",
+      "type": "store",
+      "name": "Premium Candle Store (Switch)",
+      "permanent": true,
+      "iaps": [
+        "1HjO9K58mP"
+      ]
+    },
+    {
+      "guid": "asYb2Serjg",
+      "type": "store",
+      "name": "Premium Candle Store (PS)",
+      "permanent": true,
+      "iaps": [
+        "c4cZcnuZPk"
+      ]
+    },
+    {
+      "guid": "RLDuUaL17F",
+      "type": "object",
+      "name": "Beta reward (unavailable)",
+      "permanent": true,
+      "iaps": [
+        "IquijQ-cfu"
+      ]
+    },
+    {
+      "guid": "SnbeExzeMM",
+      "type": "object",
+      "name": "Harmony Hall",
+      "permanent": true,
+      "iaps": [
+        "dyqX00yWC0",
+        "5VJfMMrFV1",
+        "Q0Cze2DKAF"
+      ]
+    },
+    // #endregion
+    // #region Season of The Little Prince
+    {
+      "guid": "EXatrm6wtE",
+      "type": "store",
+      "iaps": [
+        "EaPiJFN8nV",
+        "-gcPJFCEYm"
+      ]
+    },
+    {
+      "guid": "hM_gIGksSB",
+      "type": "store",
+      "name": "Premium Candle Store (Limited)",
+      "iaps": [
+        "GQhF2oh9WV"
+      ]
+    },
+    // #endregion
+    // #region Season of AURORA
+    {
+      "guid": "g52YibkF9n",
+      "type": "store",
+      "iaps": [
+        "g0xUcfeLuu",
+        "pREv6Dms5y"
+      ]
+    },
+    {
+      "guid": "LO-BcdXa5D",
+      "type": "object",
+      "name": "Runaway Mannequin",
+      "iaps": [
+        "6uocGtwo0k",
+        "J3R9Dby8UH"
+      ]
+    },
+    {
+      "guid": "3jAHLp9lZp",
+      "type": "object",
+      "name": "To The Love Mannequin",
+      "iaps": [
+        "o57dLz05Mz",
+        "8xvcHtifMn"
+      ]
+    },
+    // #endregion
     // #region Days of Fortune (2021)
     {
       "guid": "cgSX8-JQkw",

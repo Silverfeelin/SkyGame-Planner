@@ -1,6 +1,7 @@
 import { Component, ContentChildren, Input } from '@angular/core';
 import { TableColumnDirective } from './table-column/table-column.directive';
 import { TableHeaderDirective } from './table-column/table-header.directive';
+import { TableFooterDirective } from './table-column/table-footer.directive';
 
 @Component({
   selector: 'app-table',
@@ -15,6 +16,9 @@ export class TableComponent {
 
   @ContentChildren(TableColumnDirective)
   columns?: Array<TableColumnDirective>;
+
+  @ContentChildren(TableFooterDirective)
+  footers?: Array<TableFooterDirective>;
 }
 
 

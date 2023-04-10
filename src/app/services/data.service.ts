@@ -22,6 +22,7 @@ import { DateHelper } from '../helpers/date-helper';
 import { StorageService } from './storage.service';
 import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
 import { IIAP } from '../interfaces/iap.interface';
+import { NodeHelper } from '../helpers/node-helper';
 
 @Injectable({
   providedIn: 'root'
@@ -102,6 +103,7 @@ export class DataService {
     this.initializeSpiritTrees();
     this.initializeEvents();
     this.initializeShops();
+    this.initializeItems();
 
     if (isDevMode()) {
       this.validate();
@@ -146,11 +148,18 @@ export class DataService {
       season.start = DateHelper.fromString(season.start as string)!;
       season.end = DateHelper.fromString(season.end as string)!;
 
-      // Map Spirits to Seasons.
+      // Map Spirits to Season.
       season.spirits?.forEach((spirit, si) => {
         spirit = this.guidMap.get(spirit as any) as ISpirit;
         season.spirits![si] = spirit;
         spirit.season = season;
+      });
+
+      // Map Shops to Season
+      season.shops?.forEach((shop, si) => {
+        shop = this.guidMap.get(shop as any) as IShop;
+        season.shops![si] = shop;
+        shop.season = season;
       });
     });
   }
@@ -221,7 +230,7 @@ export class DataService {
 
   private initializeSpiritTrees(): void {
     this.spiritTreeConfig.items.forEach(spiritTree => {
-        // Map Constellation to Node.
+        // Map Spirit Tree to Node.
         const node = this.guidMap.get(spiritTree.node as any) as INode;
         spiritTree.node = node;
         node.spiritTree = spiritTree;
@@ -246,15 +255,17 @@ export class DataService {
       node.item = item;
       item.nodes ??= [];
       item.nodes.push(node);
-      this.initializeItem(item);
     }
 
     node.unlocked = this._storageService.unlocked.has(node.guid);
     return node;
   }
 
-  private initializeItem(item: IItem): void {
-    item.unlocked = this._storageService.unlocked.has(item.guid);
+  private initializeItems(): void {
+    this.itemConfig.items.forEach(item => {
+      item.unlocked ||= this._storageService.unlocked.has(item.guid);
+      item.order ??= 999999;
+    });
   }
 
   private initializeEvents(): void {

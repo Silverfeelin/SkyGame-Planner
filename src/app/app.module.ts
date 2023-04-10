@@ -22,10 +22,12 @@ import { TableColumnDirective } from './components/table/table-column/table-colu
 import { EventsComponent } from './components/events/events.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TableHeaderDirective } from './components/table/table-column/table-header.directive';
+import { TableFooterDirective } from './components/table/table-column/table-footer.directive';
 import { SpiritComponent } from './components/spirit/spirit.component';
 import { SeasonComponent } from './components/season/season.component';
 import { EventComponent } from './components/event/event.component';
 import { EventInstanceComponent } from './components/event-instance/event-instance.component';
+import { ShopsComponent } from './components/shops/shops.component';
 
 @NgModule({
   declarations: [
@@ -44,12 +46,14 @@ import { EventInstanceComponent } from './components/event-instance/event-instan
     TableComponent,
     TableColumnDirective,
     TableHeaderDirective,
+    TableFooterDirective,
     EventsComponent,
     SpiritsComponent,
     SpiritComponent,
     SeasonComponent,
     EventComponent,
-    EventInstanceComponent
+    EventInstanceComponent,
+    ShopsComponent
   ],
   imports: [
     BrowserModule,

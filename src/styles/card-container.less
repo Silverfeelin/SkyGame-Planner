@@ -11,8 +11,18 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-end;
-  gap: 10px;
+  gap: var(--padding-content);
   background: var(--color-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius-round);
+}
+
+
+.card-container.card-container-scroll-x {
+  overflow-x: auto;
+  max-width: calc(var(--menu-width) - 2 * var(--padding-content));
+
+  .card-container-inner {
+    overflow: auto;
+  }
 }

@@ -1,5 +1,40 @@
 {
   "items": [
+    // #region Base
+    {
+      "guid": "EEQZwFIJRs",
+      "type": "Outfit",
+      "name": "Base Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Icon_pants_default.png",
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "guid": "Em7ZxGZAN5",
+      "type": "Mask",
+      "name": "Base Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_default.png",
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "guid": "QmNo-bmeLi",
+      "type": "Hair",
+      "name": "Base Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_default.png",
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "guid": "AImwzhXmNV",
+      "type": "Cape",
+      "name": "Base Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_cape_brown-Morybel-0146.png",
+      "unlocked": true,
+      "order": 1
+    },
+    // #endregion
+
     // #region Isle
     // Pointing Candlemaker
     {
@@ -58,7 +93,8 @@
       "guid": "um3PQEl09a",
       "type": "Outfit",
       "name": "Pointing Candlemaker Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/PointingCandlemaker-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/PointingCandlemaker-3.png",
+      "order": 6
     },
     {
       "guid": "BXigzQaKYN",
@@ -123,7 +159,8 @@
       "guid": "Vz2Gpg4FSQ",
       "type": "Outfit",
       "name": "Ushering Stargazer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/UsheringStargazer-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/UsheringStargazer-3.png",
+      "order": 7
     },
     {
       "guid": "miD4u_Gk8Q",
@@ -188,7 +225,8 @@
       "guid": "fR9CRzzD25",
       "type": "Mask",
       "name": "Rejecting Voyager Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/RejectingVoyager-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/RejectingVoyager-3.png",
+      "order": 3
     },
     {
       "guid": "910IbnbJI5",
@@ -255,7 +293,8 @@
       "guid": "1qBmwSZFkz",
       "type": "Outfit",
       "name": "Butterfly Charmer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/ButterflyCharmer-4.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/ButterflyCharmer-4.png",
+      "order": 5
     },
     {
       "guid": "Ijg-IuoyS6",
@@ -397,7 +436,8 @@
       "guid": "UMv2RWtO9g",
       "type": "Mask",
       "name": "Waving Bellmaker Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png",
+      "order": 10302
     },
     {
       "guid": "kU0OvflFtz",
@@ -630,7 +670,8 @@
       "guid": "1AvXszxZaV",
       "type": "Mask",
       "name": "Exhausted Dock Worker Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/ExhaustedDockWorker-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/ExhaustedDockWorker-2.png",
+      "order": 4
     },
     // Ceremonial Worshiper
     {
@@ -691,7 +732,8 @@
       "guid": "Y2XIZBa7Ir",
       "type": "Outfit",
       "name": "Shivering Trailblazer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/ShiveringTrailblazer-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/ShiveringTrailblazer-2.png",
+      "order": 2
     },
     {
       "guid": "KGyA9HZ8dq",
@@ -838,7 +880,8 @@
       "guid": "gLeirt4C--",
       "type": "Mask",
       "name": "Hide'n'Seek Pioneer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/HideNSeekPioneer-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/HideNSeekPioneer-3.png",
+      "order": 2
     },
     {
       "guid": "EzJWXIGt7T",
@@ -850,7 +893,8 @@
       "guid": "bwJ7i7NrlR",
       "type": "Outfit",
       "name": "Hide'n'Seek Pioneer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/HideNSeekPioneer-4.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/HideNSeekPioneer-4.png",
+      "order": 9
     },
     // Pouty Porter
     {
@@ -1069,7 +1113,8 @@
       "guid": "tOREuHRkdm",
       "type": "Mask",
       "name": "Apologetic Lumberjack Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/ApologeticLumberjack-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/ApologeticLumberjack-3.png",
+      "order": 5
     },
     // Tearful Light Miner
     {
@@ -1217,7 +1262,8 @@
       "guid": "N9G6m1vBZh",
       "type": "Outfit",
       "name": "Confident Sightseer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/ConfidentSightseer-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/ConfidentSightseer-3.png",
+      "order": 8
     },
     // Handstanding Thrillseeker
     {
@@ -1391,7 +1437,8 @@
       "guid": "7VBgFCqs5x",
       "type": "Mask",
       "name": "Backflipping Champion Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/BackflippingChampion-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/BackflippingChampion-3.png",
+      "order": 6
     },
     // Cheerful Spectator
     {
@@ -1521,7 +1568,8 @@
       "guid": "HpwvctsUt0",
       "type": "Mask",
       "name": "Bowing Medalist Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/BowingMedalist-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/BowingMedalist-3.png",
+      "order": 7
     },
     // Proud Victor
     {
@@ -1564,7 +1612,8 @@
       "guid": "92GkXR2RZh",
       "type": "Mask",
       "name": "Proud Victor Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/ProudVictor-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/ProudVictor-3.png",
+      "order": 10101
     },
     {
       "guid": "RnDoRx7ilh",
@@ -1708,7 +1757,8 @@
       "guid": "Gk83uBgUnZ",
       "type": "Mask",
       "name": "Fainting Warrior Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/FaintingWarrior-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/FaintingWarrior-3.png",
+      "order": 10301
     },
     // Courageous Soldier
     {
@@ -1948,7 +1998,8 @@
       "guid": "Ud5Scw26Il",
       "type": "Mask",
       "name": "Lookout Scout Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/LookoutScout-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/LookoutScout-3.png",
+      "order": 8
     },
     // #endregion
     // #region Vault
@@ -2015,7 +2066,8 @@
       "guid": "CKVi0baUvl",
       "type": "Mask",
       "name": "Levitating Adept Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/LevitatingAdept-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/LevitatingAdept-3.png",
+      "order": 9
     },
     // Meditating Monastic
     {
@@ -2093,7 +2145,8 @@
       "guid": "wXOGyF57AN",
       "type": "Outfit",
       "name": "Memory Whisperer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/MemoryWhisperer-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/MemoryWhisperer-2.png",
+      "order": 4
     },
     {
       "guid": "3AsQwFFxdG",
@@ -2148,7 +2201,8 @@
       "guid": "3T-ZS6ZooQ",
       "type": "Outfit",
       "name": "Polite Scholar Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/PoliteScholar-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/PoliteScholar-2.png",
+      "order": 3
     },
     {
       "guid": "HjG7tXdZsG",
@@ -2271,7 +2325,8 @@
       "guid": "md88nKjoJF",
       "type": "Mask",
       "name": "Isle Elder Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
+      "order": 51
     },
     // Prairie Elder
     {
@@ -2284,7 +2339,8 @@
       "guid": "tM_21JOpuH",
       "type": "Mask",
       "name": "Prairie Elder Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
+      "order": 52
     },
     // Forest Elder
     {
@@ -2297,7 +2353,8 @@
       "guid": "ay0lwFyush",
       "type": "Mask",
       "name": "Forest Elder Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
+      "order": 53
     },
     // Valley Elders
     {
@@ -2334,20 +2391,23 @@
       "guid": "-InWbdW4EP",
       "type": "Necklace",
       "name": "Gratitude Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/1_Gratitude.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/1_Gratitude.png",
+      "order": 1
     },
     {
       "guid": "kHq2VDev2Y",
       "type": "Mask",
       "name": "Gratitude Deer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Icon_mask_gratitude_ult_deer.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Icon_mask_gratitude_ult_deer.png",
+      "order": 105
     },
     // Lightseekers Guide
     {
       "guid": "jYGGefMrlS",
       "type": "Necklace",
       "name": "Lightseekers Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/2_Lightseekers.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/2_Lightseekers.png",
+      "order": 2
     },
     {
       "guid": "2o3CEU9QhM",
@@ -2360,7 +2420,8 @@
       "guid": "CmonO-Vfc4",
       "type": "Necklace",
       "name": "Belonging Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/3_Belonging.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/3_Belonging.png",
+      "order": 3
     },
     {
       "guid": "LtrFT8BOI9",
@@ -2373,18 +2434,20 @@
       "guid": "Xbz7dLYzOi",
       "type": "Necklace",
       "name": "Rhythm Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/4_Rhythm.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/4_Rhythm.png",
+      "order": 4
     },
     {
       "guid": "l948FBq_MN",
       "type": "Mask",
-      "name": "Rhythm Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_mask_rhythm_ult.png"
+      "name": "Rhythm Ultimate Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_mask_rhythm_ult.png",
+      "order": 401
     },
     {
       "guid": "wXiFi4y6YU",
       "type": "Hair",
-      "name": "Rhythm Hair",
+      "name": "Rhythm Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Icon_hair_rhythm_ultimate.png"
     },
     // Enchantment Guide
@@ -2392,7 +2455,8 @@
       "guid": "l47AxvwiAp",
       "type": "Necklace",
       "name": "Enchantment Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/5_Enchantment.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/5_Enchantment.png",
+      "order": 5
     },
     {
       "guid": "FlOSNmw_38",
@@ -2489,7 +2553,8 @@
       "guid": "Lqnd-vg9Lk",
       "type": "Necklace",
       "name": "Sanctuary Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png",
+      "order": 6
     },
     {
       "guid": "Hvq52gCeih",
@@ -2586,19 +2651,21 @@
       "guid": "DxQ_9zIh5h",
       "type": "Necklace",
       "name": "Prophecy Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/7_Prophecy.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/7_Prophecy.png",
+      "order": 7
     },
     {
       "guid": "wGQSuhVWXD",
       "type": "Instrument",
-      "name": "Prophecy Drum",
+      "name": "Prophecy Ultimate Drum",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_instrument_prophecy_drum.png"
     },
     {
       "guid": "GYWFafVVd_",
       "type": "Mask",
-      "name": "Prophecy Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png"
+      "name": "Prophecy Ultimate Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png",
+      "order": 705
     },
     {
       "guid": "C__QqZMFNy",
@@ -2659,18 +2726,20 @@
       "guid": "-w8MPNCSjY",
       "type": "Necklace",
       "name": "Dreams Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/8_Dreams.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/8_Dreams.png",
+      "order": 8
     },
     {
       "guid": "HgkvwqNp19",
       "type": "Mask",
-      "name": "Dreams Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Icon_mask_dreams_ult.png"
+      "name": "Dreams Ultimate Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Icon_mask_dreams_ult.png",
+      "order": 804
     },
     {
       "guid": "w1EkwcgG88",
       "type": "Cape",
-      "name": "Dreams Cape",
+      "name": "Dreams Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png"
     },
     {
@@ -2744,30 +2813,32 @@
       "guid": "Hfu-dI_t7e",
       "type": "Necklace",
       "name": "Assembly Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/9_Assembly.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/9_Assembly.png",
+      "order": 9
     },
     {
       "guid": "bOx0bcbPix",
       "type": "Mask",
-      "name": "Assembly Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_mask_assembly_ult.png"
+      "name": "Assembly Ultimate Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_mask_assembly_ult.png",
+      "order": 901
     },
     {
       "guid": "_qNmWZx0rp",
       "type": "Hair",
-      "name": "Assembly Hair",
+      "name": "Assembly Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Icon_hair_assembly_ultimate.png"
     },
     {
       "guid": "B59f4_ru60",
       "type": "Instrument",
-      "name": "Assembly Bugle",
+      "name": "Assembly Ultimate Bugle",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_instrument_assembly_bugle.png"
     },
     {
       "guid": "ZdKPdWs2xL",
       "type": "Cape",
-      "name": "Assembly Cape",
+      "name": "Assembly Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png"
     },
     {
@@ -2877,31 +2948,34 @@
       "guid": "TQUcvFL8k7",
       "type": "Necklace",
       "name": "Little Prince Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png",
+      "order": 90
     },
     {
       "guid": "dTnb7tLoOB",
       "type": "Hair",
-      "name": "Little Prince Hair",
+      "name": "Little Prince Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Icon_hair_prince_ultimate.png"
     },
     {
       "guid": "BD7KBFgGf0",
       "type": "Outfit",
-      "name": "Little Prince Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Icon_pants_prince_pjs.png"
+      "name": "Little Prince Ultimate Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Icon_pants_prince_pjs.png",
+      "order": 1003
     },
     {
       "guid": "mABAiqym_P",
       "type": "Prop",
-      "name": "Little Prince Rose Prop",
+      "name": "Little Prince Ultimate Rose",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Icon_prop_little_prince_rose.png"
     },
     {
       "guid": "l_C7GM60an",
       "type": "Outfit",
       "name": "Sword Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Icon_pants_prince_sword.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Icon_pants_prince_sword.png",
+      "order": 1002
     },
     {
       "guid": "wR4TWPuEyR",
@@ -2992,19 +3066,21 @@
       "guid": "4Yk3OcGKKp",
       "type": "Necklace",
       "name": "Flight Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
+      "order": 101
     },
     {
       "guid": "cbWKMsAh7H",
       "type": "Hat",
-      "name": "Flight Hat",
+      "name": "Flight Ultimate Hair Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png"
     },
     {
       "guid": "SxX0bNDJaR",
       "type": "Outfit",
-      "name": "Flight Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png"
+      "name": "Flight Ultimate Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png",
+      "order": 1101
     },
     {
       "guid": "TI-CpaXFhK",
@@ -3083,25 +3159,27 @@
       "guid": "Ya2cCEllDX",
       "type": "Necklace",
       "name": "Abyss Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/12_Abyss.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/12_Abyss.png",
+      "order": 112
     },
     {
       "guid": "rfwNbdvXQz",
       "type": "Hat",
-      "name": "Abyss Hat",
+      "name": "Abyss Ultimate Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png"
     },
     {
       "guid": "8Oy0j-LGR_",
       "type": "Cape",
-      "name": "Abyss Cape",
+      "name": "Abyss Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SOAbyss-Ultime-gift-Cape-vector-Morybel-0146.png"
     },
     {
       "guid": "zYUN2fkYOQ",
       "type": "Mask",
       "name": "Abyss Ultimate Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/SOAbyss-Ultime-gift-underwater-mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/SOAbyss-Ultime-gift-underwater-mask.png",
+      "order": 1204
     },
     {
       "guid": "q_hFj239P3",
@@ -3166,8 +3244,9 @@
     {
       "guid": "P2xV7cdviC",
       "type": "Mask",
-      "name": "Abyss Oxygen Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SOAbyss-additional-mask-Morybel-0146.png"
+      "name": "Abyss Guide Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SOAbyss-additional-mask-Morybel-0146.png",
+      "order": 1205
     },
     // Performance Guide
     {
@@ -3180,24 +3259,26 @@
       "guid": "RjZyODIr_2",
       "type": "Necklace",
       "name": "Performance Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/13_SOPerformance_logo.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/13_SOPerformance_logo.png",
+      "order": 123
     },
     {
       "guid": "DBRlaSaues",
       "type": "Mask",
       "name": "Performance Ultimate Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/SOPerformance-ultimate-mask-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/SOPerformance-ultimate-mask-icon.png",
+      "order": 1301
     },
     {
       "guid": "sYYg6rFPj6",
       "type": "Cape",
-      "name": "Performance Cape",
+      "name": "Performance Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png"
     },
     {
       "guid": "Lw93RiDG46",
       "type": "Hair",
-      "name": "Performance Hair",
+      "name": "Performance Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/SOPerformance-ultimate-hair-icon.png"
     },
     {
@@ -3233,8 +3314,9 @@
     {
       "guid": "HsIlEsnI4A",
       "type": "Mask",
-      "name": "Performance Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Morybel-0146-SOPerformance-ultimate-mask-icon-f2p.png"
+      "name": "Performance Guide Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Morybel-0146-SOPerformance-ultimate-mask-icon-f2p.png",
+      "order": 1304
     },
     {
       "guid": "WKPWSGukRo",
@@ -3325,7 +3407,8 @@
       "guid": "bpUKMY2cpm",
       "type": "Necklace",
       "name": "Shattering Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png",
+      "order": 134
     },
     {
       "guid": "FjxHIvszIu",
@@ -3427,25 +3510,27 @@
     {
       "guid": "JCRIpETL35",
       "type": "Necklace",
-      "name": "AURORA Guide Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/15-Aurora.png"
+      "name": "AURORA Pendant",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/15-Aurora.png",
+      "order": 145
     },
     {
       "guid": "Gon7mR-WVa",
       "type": "Hair",
-      "name": "AURORA Guide Hair",
+      "name": "AURORA Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/SoAurora-Ultimate-Hair-icon-Morybel-0146.png"
     },
     {
       "guid": "kr95Zsf1Cs",
       "type": "Outfit",
-      "name": "AURORA Guide Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/SoAurora-Ultimate-Outfit-icon-Morybel-0146.png"
+      "name": "AURORA Ultimate Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/SoAurora-Ultimate-Outfit-icon-Morybel-0146.png",
+      "order": 1502
     },
     {
       "guid": "Gp3p9OdxMA",
       "type": "Cape",
-      "name": "AURORA Guide Cape",
+      "name": "AURORA Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAurora-Ultimate-Cape-icon-Morybel-0146.png"
     },
     {
@@ -3585,14 +3670,16 @@
     {
       "guid": "pugHKsR-io",
       "type": "Outfit",
-      "name": "AURORA Guide Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/SoAurora-Additional-Green-Outfit-Icon-Morybel-0146.png"
+      "name": "Cure for Me Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/SoAurora-Additional-Green-Outfit-Icon-Morybel-0146.png",
+      "order": 1503
     },
     {
       "guid": "-66QzAlj3l",
       "type": "Mask",
-      "name": "AURORA Guide Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/SoAurora-Additional-Mask-Icon-Morybel-0146.png"
+      "name": "Cure for Me Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/SoAurora-Additional-Mask-Icon-Morybel-0146.png",
+      "order": 1505
     },
     // Remembrance Guide
     {
@@ -3605,13 +3692,15 @@
       "guid": "YU30BrQAM1",
       "type": "Necklace",
       "name": "Remembrance Pendant",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
+      "order": 156
     },
     {
       "guid": "IKrJLeNVIL",
       "type": "Necklace",
       "name": "Remembrance Sash",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SoRemembrance-Ultimate-Gift-Sash-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SoRemembrance-Ultimate-Gift-Sash-Icon-Morybel-0146.png",
+      "order": 1602
     },
     {
       "guid": "x-JyLNAyBY",
@@ -3807,7 +3896,8 @@
       "guid": "xROh6OVPnJ",
       "type": "Mask",
       "name": "Sassy Drifter Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Mimi-4117_02_sassy_drifter_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Mimi-4117_02_sassy_drifter_mask.png",
+      "order": 106
     },
     {
       "guid": "eqQzpRMNPk",
@@ -3938,7 +4028,8 @@
       "guid": "wSjNwu664c",
       "type": "Mask",
       "name": "Provoking Performer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Mimi-4117_02_provoking_performer_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Mimi-4117_02_provoking_performer_mask.png",
+      "order": 101
     },
     {
       "guid": "SEpK8eiz2W",
@@ -4009,7 +4100,8 @@
       "guid": "RX-66s3KFD",
       "type": "Mask",
       "name": "Leaping Dancer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Mimi-4117_02_leaping_dancer_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Mimi-4117_02_leaping_dancer_mask.png",
+      "order": 102
     },
     {
       "guid": "gMt6VYu2uG",
@@ -4075,7 +4167,8 @@
       "guid": "XOhMscNvdq",
       "type": "Mask",
       "name": "Saluting Protector Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_02_saluting_protector_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_02_saluting_protector_mask.png",
+      "order": 103
     },
     {
       "guid": "ffOE0uszzI",
@@ -4146,7 +4239,8 @@
       "guid": "O_E6Y4gBQ8",
       "type": "Mask",
       "name": "Greeting Shaman Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Mimi-4117_02_greeting_shaman_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Mimi-4117_02_greeting_shaman_mask.png",
+      "order": 104
     },
     {
       "guid": "tCd_6CN6Fb",
@@ -4174,7 +4268,8 @@
       "guid": "lw79vLwEkP",
       "type": "Mask",
       "name": "Piggyback Lightseeker Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Mimi-4117_03_piggyback_lightseeker_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Mimi-4117_03_piggyback_lightseeker_mask.png",
+      "order": 201
     },
     {
       "guid": "2jrLzRaf6h",
@@ -4243,7 +4338,8 @@
       "guid": "lz89xViG6m",
       "type": "Mask",
       "name": "Doublefive Light Catcher Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_03_doublefive_light_catcher_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_03_doublefive_light_catcher_mask.png",
+      "order": 202
     },
     {
       "guid": "nfeBnolyEY",
@@ -4287,7 +4383,8 @@
       "guid": "rj8Dzz64e9",
       "type": "Mask",
       "name": "Laidback Pioneer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Mimi-4117_03_laidback_pioneer_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Mimi-4117_03_laidback_pioneer_mask.png",
+      "order": 203
     },
     {
       "guid": "_HKt5SUf0w",
@@ -4369,7 +4466,8 @@
       "guid": "0L89TCDEtN",
       "type": "Mask",
       "name": "Twirling Champion Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_03_twirling_champion_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_03_twirling_champion_mask.png",
+      "order": 204
     },
     {
       "guid": "zhwG9yJ2mi",
@@ -4426,7 +4524,8 @@
       "guid": "wTgGX3U9yp",
       "type": "Mask",
       "name": "Crab Whisperer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Mimi-4117_03_crab_whisperer_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Mimi-4117_03_crab_whisperer_mask.png",
+      "order": 205
     },
     {
       "guid": "Whp-r1yq-s",
@@ -4514,7 +4613,8 @@
       "guid": "rGAnOKoXlu",
       "type": "Mask",
       "name": "Shushing Light Scholar Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Mimi-4117_03_shushing_light_scholar_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Mimi-4117_03_shushing_light_scholar_mask.png",
+      "order": 206
     },
     {
       "guid": "kYxJuHr1mX",
@@ -4678,13 +4778,15 @@
       "guid": "yoEqaQiYU-",
       "type": "Mask",
       "name": "Boogie Kid Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Mimi-4117_04_boogie_kid_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Mimi-4117_04_boogie_kid_mask.png",
+      "order": 301
     },
     {
       "guid": "qrP9vZPLlk",
       "type": "Outfit",
       "name": "Boogie Kid Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Mimi-4117_04_boogie_kid_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Mimi-4117_04_boogie_kid_pants.png",
+      "order": 301
     },
     {
       "guid": "C0sPzUPUwR",
@@ -4735,7 +4837,8 @@
       "guid": "5i57DI6cGK",
       "type": "Mask",
       "name": "Sparkler Parent Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Mimi-4117_04_sparkler_parent_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Mimi-4117_04_sparkler_parent_mask.png",
+      "order": 304
     },
     {
       "guid": "l663HjIDEd",
@@ -4829,7 +4932,8 @@
       "guid": "huLyzyJN5_",
       "type": "Mask",
       "name": "Wise Grandparent Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mimi-4117_04_wise_grandparent_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mimi-4117_04_wise_grandparent_mask.png",
+      "order": 302
     },
     {
       "guid": "bBWdMDYc1G",
@@ -4918,7 +5022,8 @@
       "guid": "qOLmnCFyh6",
       "type": "Mask",
       "name": "Pleaful Parent Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_04_pleaful_parent_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_04_pleaful_parent_mask.png",
+      "order": 303
     },
     {
       "guid": "mH0YjUsODC",
@@ -5074,13 +5179,15 @@
       "guid": "SekRzXgjfv",
       "type": "Mask",
       "name": "Troupe Greeter Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Mimi-4117_05_troupe_greeter_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Mimi-4117_05_troupe_greeter_mask.png",
+      "order": 402
     },
     {
       "guid": "T4suf1MdTj",
       "type": "Outfit",
       "name": "Troupe Greeter Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_05_troupe_greeter_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_05_troupe_greeter_pants.png",
+      "order": 401
     },
     {
       "guid": "QyPz9F--8K",
@@ -5165,7 +5272,8 @@
       "guid": "kmgKsVBs4o",
       "type": "Outfit",
       "name": "Festival Spin Dancer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png",
+      "order": 403
     },
     {
       "guid": "sM8bW--Gst",
@@ -5250,13 +5358,15 @@
       "guid": "uMURxUHDKr",
       "type": "Outfit",
       "name": "Admiring Actor Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png",
+      "order": 404
     },
     {
       "guid": "xOj2WwukD8",
       "type": "Mask",
       "name": "Admiring Actor Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Mimi-4117_05_admiring_actor_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Mimi-4117_05_admiring_actor_mask.png",
+      "order": 403
     },
     {
       "guid": "aiHkWPkE3L",
@@ -5339,7 +5449,8 @@
       "guid": "52NbrdHrAf",
       "type": "Outfit",
       "name": "Troupe Juggler Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png",
+      "order": 402
     },
     {
       "guid": "Zus3hdmlgm",
@@ -5428,7 +5539,8 @@
       "guid": "Wr27LIf-FU",
       "type": "Mask",
       "name": "Respectful Pianist Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Mimi-4117_05_respectful_pianist_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Mimi-4117_05_respectful_pianist_mask.png",
+      "order": 405
     },
     {
       "guid": "Z53BOww_Mb",
@@ -5479,7 +5591,8 @@
       "guid": "qlaJxxLwAM",
       "type": "Mask",
       "name": "Thoughtful Director Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Mimi-4117_05_thoughtful_director_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Mimi-4117_05_thoughtful_director_mask.png",
+      "order": 404
     },
     {
       "guid": "cSzED5jEt_",
@@ -5558,7 +5671,8 @@
       "guid": "GyXhQOu4fZ",
       "type": "Mask",
       "name": "Nodding Muralist Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Mimi-4117_06_nodding_muralist_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Mimi-4117_06_nodding_muralist_mask.png",
+      "order": 501
     },
     {
       "guid": "H1vYsFTrFX",
@@ -5635,7 +5749,8 @@
       "guid": "JR7mtV1Ukg",
       "type": "Mask",
       "name": "Indifferent Alchemist Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Mimi-4117_06_indifferent_alchemist_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Mimi-4117_06_indifferent_alchemist_mask.png",
+      "order": 503
     },
     {
       "guid": "8qHEcZWhOt",
@@ -5789,7 +5904,8 @@
       "guid": "r1UK3P6AGy",
       "type": "Mask",
       "name": "Scarecrow Farmer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_06_scarecrow_farmer_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_06_scarecrow_farmer_mask.png",
+      "order": 504
     },
     {
       "guid": "ixFFdCm9cG",
@@ -5924,7 +6040,8 @@
       "guid": "y37rCd0HV4",
       "type": "Mask",
       "name": "Playfighting Herbalist Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Mimi-4117_06_playfighting_herbalist_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Mimi-4117_06_playfighting_herbalist_mask.png",
+      "order": 502
     },
     {
       "guid": "6rWMw26PJt",
@@ -6038,7 +6155,8 @@
       "guid": "6PJ8TATvNk",
       "type": "Outfit",
       "name": "Jelly Whisperer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_07_jelly_whisperer_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_07_jelly_whisperer_pants.png",
+      "order": 601
     },
     {
       "guid": "Bje_pivCRi",
@@ -6171,7 +6289,8 @@
       "guid": "5-gKx3HDnl",
       "type": "Outfit",
       "name": "Rallying Thrillseeker Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Rallying_trillseeker_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Rallying_trillseeker_pants.png",
+      "order": 602
     },
     {
       "guid": "54b2G8bBMD",
@@ -6222,7 +6341,8 @@
       "guid": "GgNJdLqzxy",
       "type": "Mask",
       "name": "Hiking Grouch Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Mimi-4117_07_hiking_grouch_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Mimi-4117_07_hiking_grouch_mask.png",
+      "order": 602
     },
     {
       "guid": "AjOxFBIEsi",
@@ -6260,7 +6380,8 @@
       "guid": "_5IHtakDvf",
       "type": "Necklace",
       "name": "Hiking Grouch Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Icon_pendant_bowtie.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Icon_pendant_bowtie.png",
+      "order": 601
     },
     {
       "guid": "YrbSTdQtFE",
@@ -6382,7 +6503,8 @@
       "guid": "yHf5YnLXUu",
       "type": "Mask",
       "name": "Chill Sunbather Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Mimi-4117_07_chill_sunbather_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Mimi-4117_07_chill_sunbather_mask.png",
+      "order": 602
     },
     {
       "guid": "phajnn85-p",
@@ -6505,7 +6627,8 @@
       "guid": "Gu5Pw8cvcR",
       "type": "Mask",
       "name": "Prophet of Water Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mimi-4117_08_prophet_of_water_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mimi-4117_08_prophet_of_water_mask.png",
+      "order": 701
     },
     {
       "guid": "FV0-jNlCiN",
@@ -6601,7 +6724,8 @@
       "guid": "JTPr5NiPEz",
       "type": "Mask",
       "name": "Prophet of Earth Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Mimi-4117_08_prophet_of_earth_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Mimi-4117_08_prophet_of_earth_mask.png",
+      "order": 702
     },
     {
       "guid": "lLXZyOJ40J",
@@ -6684,7 +6808,8 @@
       "guid": "3j1vIMlhqg",
       "type": "Mask",
       "name": "Prophet of Air Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Mimi-4117_08_prophet_of_air_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Mimi-4117_08_prophet_of_air_mask.png",
+      "order": 703
     },
     {
       "guid": "mfNUas_ov2",
@@ -6780,13 +6905,15 @@
       "guid": "LMQrrhg9E8",
       "type": "Mask",
       "name": "Prophet of Fire Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Mimi-4117_08_prophet_of_fire_mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Mimi-4117_08_prophet_of_fire_mask.png",
+      "order": 704
     },
     {
       "guid": "V9HhQcek_9",
       "type": "Outfit",
       "name": "Prophet of Fire Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_fire_pants.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_fire_pants.png",
+      "order": 701
     },
     {
       "guid": "zVnzmsZF8k",
@@ -6870,7 +6997,8 @@
       "guid": "n4sSWlUIbO",
       "type": "Outfit",
       "name": "Bearhug Hermit Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png",
+      "order": 802
     },
     {
       "guid": "ot6npOIfpu",
@@ -6941,7 +7069,8 @@
       "guid": "4Hk-52OgPb",
       "type": "Mask",
       "name": "Dancing Performer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Icon_mask_dreams_dancing.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Icon_mask_dreams_dancing.png",
+      "order": 802
     },
     {
       "guid": "hmWCBGAmfU",
@@ -7007,7 +7136,8 @@
       "guid": "xFj09irsLt",
       "type": "Outfit",
       "name": "Peeking Postman Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Icon_pants_dreams_peeking.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Icon_pants_dreams_peeking.png",
+      "order": 801
     },
     {
       "guid": "t-tF3kbiyu",
@@ -7025,7 +7155,8 @@
       "guid": "Htee_duioI",
       "type": "Mask",
       "name": "Peeking Postman Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_mask_dreams_peeking.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_mask_dreams_peeking.png",
+      "order": 801
     },
     {
       "guid": "rMvOpBb6uw",
@@ -7090,7 +7221,8 @@
       "guid": "V5TIjYorQs",
       "type": "Mask",
       "name": "Spinning Mentor Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_mask_dreams_spinning.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_mask_dreams_spinning.png",
+      "order": 803
     },
     {
       "guid": "wisiiK9diZ",
@@ -7175,7 +7307,8 @@
       "guid": "JQSXDCKUPE",
       "type": "Mask",
       "name": "Baffled Botanist Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Icon_mask_assembly_baffled.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Icon_mask_assembly_baffled.png",
+      "order": 906
     },
     {
       "guid": "Z68GLvFuLv",
@@ -7232,7 +7365,8 @@
       "guid": "WKIqwWYgD9",
       "type": "Mask",
       "name": "Scolding Student Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_assembly_scold.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_assembly_scold.png",
+      "order": 905
     },
     {
       "guid": "Iw7f-6mtyr",
@@ -7315,7 +7449,8 @@
       "guid": "-02LBs9S2V",
       "type": "Mask",
       "name": "Scaredy Cadet Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_mask_assembly_scared.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_mask_assembly_scared.png",
+      "order": 907
     },
     {
       "guid": "-LT5Xt5vpH",
@@ -7431,7 +7566,8 @@
       "guid": "NJXnW8a4Rq",
       "type": "Mask",
       "name": "Marching Adventurer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_mask_assembly_march.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_mask_assembly_march.png",
+      "order": 902
     },
     {
       "guid": "deXq8qb84g",
@@ -7482,7 +7618,8 @@
       "guid": "6QmWZYs5KC",
       "type": "Mask",
       "name": "Chuckling Scout Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_mask_assembly_chuckle.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_mask_assembly_chuckle.png",
+      "order": 903
     },
     {
       "guid": "5g7KTy0iPz",
@@ -7514,7 +7651,8 @@
       "guid": "VToGfUfrj1",
       "type": "Outfit",
       "name": "Chuckling Scout Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Icon_pants_assembly_ult.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Icon_pants_assembly_ult.png",
+      "order": 901
     },
     {
       "guid": "osxMEOwG_r",
@@ -7565,7 +7703,8 @@
       "guid": "qoLywJXaJA",
       "type": "Mask",
       "name": "Daydream Forester Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Icon_mask_assembly_daydream.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Icon_mask_assembly_daydream.png",
+      "order": 904
     },
     {
       "guid": "H65ejfWOVQ",
@@ -7632,7 +7771,7 @@
     },
     // #endregion
     // #region The Little Prince
-    // Beckoning Ruler
+    // #region Beckoning Ruler
     {
       "guid": "1YJ13EOwIQ",
       "type": "Emote",
@@ -7677,7 +7816,8 @@
       "guid": "_as4dWfvGY",
       "type": "Mask",
       "name": "Beckoning Ruler Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_mask_prince_king.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_mask_prince_king.png",
+      "order": 1001
     },
     {
       "guid": "kVPk2WIqVT",
@@ -7703,7 +7843,8 @@
       "name": "Wing Buff",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
-    // Gloating Narcissist
+    // #endregion
+    // #region Gloating Narcissist
     {
       "guid": "qcsiXdqfGT",
       "type": "Emote",
@@ -7755,7 +7896,8 @@
       "guid": "O6DreyTJS7",
       "type": "Outfit",
       "name": "Gloating Narcissist Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Icon_pants_prince_narcissist.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Icon_pants_prince_narcissist.png",
+      "order": 1001
     },
     {
       "guid": "8PpkvJHDLx",
@@ -7775,7 +7917,8 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
-    // Stretching Lamplighter
+    // #endregion
+    // #region Stretching Lamplighter
     {
       "guid": "UhtkKIM3ol",
       "type": "Emote",
@@ -7834,7 +7977,8 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
-    // Slouching Soldier
+    // #endregion
+    // #region Slouching Soldier
     {
       "guid": "5J5FDssiU9",
       "type": "Emote",
@@ -7918,7 +8062,8 @@
       "name": "Wing Buff",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
-    // Sneezing Geographer
+    // #endregion
+    // #region Sneezing Geographer
     {
       "guid": "zgI2lfTGvf",
       "type": "Emote",
@@ -7977,7 +8122,8 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
-    // Star Collector
+    // #endregion
+    // #region Star Collector
     {
       "guid": "drH3NXwa4B",
       "type": "Emote",
@@ -7996,7 +8142,8 @@
       "guid": "67-Dpp1kUH",
       "type": "Necklace",
       "name": "Star Collector Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Icon_pendant_little_prince_neckerchief.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Icon_pendant_little_prince_neckerchief.png",
+      "order": 1001
     },
     {
       "guid": "zTfcCNFzZ4",
@@ -8048,6 +8195,27 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
+    // #endregion
+    // #region Limited items
+    {
+      "guid": "yjuL6T_ZOo",
+      "type": "Cape",
+      "name": "Little Prince Scarf Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_cape_littleprince_scarf-Morybel-0146.png"
+    },
+    {
+      "guid": "dncileSEYL",
+      "type": "Cape",
+      "name": "Little Prince Asteroid Jacket",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_cape_littleprince_asteroid-Morybel-0146.png"
+    },
+    {
+      "guid": "nrNcYrcZXy",
+      "type": "Prop",
+      "name": "Little Prince Fox",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_prop_little_prince_fox.png"
+    },
+    // #endregion
     // #endregion
     // #region Flight
     // Lively Navigator
@@ -8175,7 +8343,8 @@
       "guid": "Y7j3ljNdYp",
       "type": "Outfit",
       "name": "Light Whisperer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png",
+      "order": 1104
     },
     {
       "guid": "CJLgEjb1TE",
@@ -8200,7 +8369,8 @@
       "guid": "5Z5JqDkAtl",
       "type": "Outfit",
       "name": "Tinkering Chimesmith Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png",
+      "order": 1103
     },
     {
       "guid": "dkLuIrNJyl",
@@ -8270,7 +8440,8 @@
       "guid": "RcLkR7XRbn",
       "type": "Necklace",
       "name": "Talented Builder Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Icon_season_of_flight_neckpiece_talented_builder.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Icon_season_of_flight_neckpiece_talented_builder.png",
+      "order": 1101
     },
     {
       "guid": "YPTs9XT_4y",
@@ -8302,7 +8473,8 @@
       "guid": "g-vZeE8cmg",
       "type": "Outfit",
       "name": "Talented Builder Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png",
+      "order": 1102
     },
     {
       "guid": "cZfBtj_CYb",
@@ -8343,7 +8515,8 @@
       "guid": "xFJMNfae6Y",
       "type": "Mask",
       "name": "Anxious Angler Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/SOAbyss-Anxious-Angler-mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/SOAbyss-Anxious-Angler-mask.png",
+      "order": 1206
     },
     {
       "guid": "Qqsui-W6Gr",
@@ -8387,7 +8560,8 @@
       "guid": "xCPJYG39hD",
       "type": "Outfit",
       "name": "Anxious Angler Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Anxious-Angler-outfit.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Anxious-Angler-outfit.png",
+      "order": 1201
     },
     {
       "guid": "uuWINBT49F",
@@ -8432,7 +8606,8 @@
       "guid": "aoo9OjQKpZ",
       "type": "Mask",
       "name": "Ceasing Commodore Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/SOAbyss-Ceasing-Commodore-mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/SOAbyss-Ceasing-Commodore-mask.png",
+      "order": 1202
     },
     {
       "guid": "2f5GDzfDYI",
@@ -8497,7 +8672,8 @@
       "guid": "XOzWZOzj71",
       "type": "Mask",
       "name": "Bumbling Boatswain Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/SOAbyss-Bumbling-Boatswain-mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/SOAbyss-Bumbling-Boatswain-mask.png",
+      "order": 1201
     },
     {
       "guid": "_FVDOa59ap",
@@ -8588,7 +8764,8 @@
       "guid": "1qIdoVpmEe",
       "type": "Mask",
       "name": "Cackling Cannoneer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SOAbyss-Cackling-Cannoneer-mask.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SOAbyss-Cackling-Cannoneer-mask.png",
+      "order": 1203
     },
     {
       "guid": "taXu6vkY9d",
@@ -8692,13 +8869,15 @@
       "guid": "kealNieHwv",
       "type": "Mask",
       "name": "Frantic Stagehand Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/SoPerformance_-_Frantic_Stagehand-mask-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/SoPerformance_-_Frantic_Stagehand-mask-icon-Morybel-0146.png",
+      "order": 1303
     },
     {
       "guid": "xoEQI_2ykm",
       "type": "Outfit",
       "name": "Frantic Stagehand Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoPerformance_-_Frantic_Stagehand-outfit-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoPerformance_-_Frantic_Stagehand-outfit-icon-Morybel-0146.png",
+      "order": 1302
     },
     {
       "guid": "DDgj-h-IrD",
@@ -8731,7 +8910,8 @@
       "guid": "wOewFkj_yn",
       "type": "Mask",
       "name": "Forgetful Storyteller Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SoPerformance_-_Forgetful_Storyteller-mask-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SoPerformance_-_Forgetful_Storyteller-mask-icon-Morybel-0146.png",
+      "order": 1305
     },
     {
       "guid": "Z53G2IN-L3",
@@ -8769,7 +8949,8 @@
       "guid": "no0xArAFGq",
       "type": "Outfit",
       "name": "Forgetful Storyteller Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/SOPerformance_-Forgetful_Storyteller_-_Outfit-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/SOPerformance_-Forgetful_Storyteller_-_Outfit-icon-Morybel-0146.png",
+      "order": 1303
     },
     {
       "guid": "KoLgRv-HIL",
@@ -8808,7 +8989,8 @@
       "guid": "Eof0QFAYZa",
       "type": "Mask",
       "name": "Mellow Musician Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Morybel-0146-SoPerformance_-_Mellow_Musician-mask-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Morybel-0146-SoPerformance_-_Mellow_Musician-mask-icon.png",
+      "order": 1306
     },
     {
       "guid": "VVchsNQluM",
@@ -8897,7 +9079,8 @@
       "guid": "6OKB4wddwP",
       "type": "Mask",
       "name": "Modest Dancer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/SOPerformance-Modest-Dancer-maks-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/SOPerformance-Modest-Dancer-maks-icon.png",
+      "order": 1302
     },
     {
       "guid": "DdEoFUb-N7",
@@ -8922,7 +9105,8 @@
       "guid": "DFn3TnXyGw",
       "type": "Outfit",
       "name": "Modest Dancer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOPerformance-Modest-Dancer-_outfit-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOPerformance-Modest-Dancer-_outfit-icon.png",
+      "order": 1301
     },
     {
       "guid": "zBs2Y94DY2",
@@ -9029,7 +9213,8 @@
       "guid": "AIQsgTditY",
       "type": "Outfit",
       "name": "Manta Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/SOShattering-Light-Outfit-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/SOShattering-Light-Outfit-Icon-Morybel-0146.png",
+      "order": 1401
     },
     {
       "guid": "vy75RHL_2w",
@@ -9060,7 +9245,8 @@
       "guid": "Vt42pGqgXc",
       "type": "Mask",
       "name": "Darkness Plant Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/SOShattering-Dark-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/SOShattering-Dark-Mask-Icon-Morybel-0146.png",
+      "order": 1401
     },
     {
       "guid": "ORKBuwdSG2",
@@ -9098,7 +9284,8 @@
       "guid": "w2bnlVRUvy",
       "type": "Necklace",
       "name": "Dragon Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOShattering-Dark-Crab-neck-accessory-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOShattering-Dark-Crab-neck-accessory-Icon-Morybel-0146.png",
+      "order": 1401
     },
     {
       "guid": "Q0WsJq5xHA",
@@ -9138,7 +9325,7 @@
     },
     // #endregion
     // #region AURORA
-    // Running Wayfarer
+    // #region Running Wayfarer
     {
       "guid": "X_lxvfKdkA",
       "type": "Emote",
@@ -9157,7 +9344,8 @@
       "guid": "638hblC6bQ",
       "type": "Mask",
       "name": "Running Wayfarer Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoAurora-Running-Wayfarer-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoAurora-Running-Wayfarer-Mask-Icon-Morybel-0146.png",
+      "order": 1502
     },
     {
       "guid": "PgvQKPZzVg",
@@ -9222,7 +9410,8 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
     },
-    // Mindful Miner
+    // #endregion
+    // #region Mindful Miner
     {
       "guid": "CQGQ8vhjlp",
       "type": "Emote",
@@ -9247,7 +9436,8 @@
       "guid": "VqZUTcuqCB",
       "type": "Mask",
       "name": "Mindful Miner Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/SoAurora-Mindful-Miner-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/SoAurora-Mindful-Miner-Mask-Icon-Morybel-0146.png",
+      "order": 1504
     },
     {
       "guid": "ZHoxzFOP4e",
@@ -9285,7 +9475,8 @@
       "guid": "xr-9fu2xP9",
       "type": "Outfit",
       "name": "Mindful Miner Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoAurora-Mindful-Miner-Outfit-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoAurora-Mindful-Miner-Outfit-Icon-Morybel-0146.png",
+      "order": 1501
     },
     {
       "guid": "BCBI4KXEMD",
@@ -9305,7 +9496,8 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
     },
-    // Warrior of Love
+    // #endregion
+    // #region Warrior of Love
     {
       "guid": "flYQ-k3_cR",
       "type": "Emote",
@@ -9324,7 +9516,8 @@
       "guid": "hXFmvmGkGK",
       "type": "Mask",
       "name": "Warrior of Love Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SoAurora-Warrior-of-Love-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SoAurora-Warrior-of-Love-Mask-Icon-Morybel-0146.png",
+      "order": 1503
     },
     {
       "guid": "iFrJQHkU4B",
@@ -9389,7 +9582,8 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
     },
-    // Seed of Hope
+    // #endregion
+    // #region Seed of Hope
     {
       "guid": "LCZ4mS88Ml",
       "type": "Emote",
@@ -9414,7 +9608,8 @@
       "guid": "tWcl7ReMPu",
       "type": "Mask",
       "name": "Seed of Hope Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SoAurora-Seed-of-Hope-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SoAurora-Seed-of-Hope-Mask-Icon-Morybel-0146.png",
+      "order": 1501
     },
     {
       "guid": "HG2o6PBbZx",
@@ -9474,6 +9669,53 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
     },
     // #endregion
+    // #region Limited items
+    {
+      "guid": "i0BYuPKZYe",
+      "type": "Hat",
+      "name": "Tiara We Can Touch",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "wZGUtak1mb",
+      "type": "Hair",
+      "name": "AURORA Runaway Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Aurora-Runaway-Hair-Morybel-0146.png"
+    },
+    {
+      "guid": "9kbdAvVwR4",
+      "type": "Outfit",
+      "name": "AURORA Runaway Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Aurora-Runaway-outfit-Morybel-0146.png",
+      "order": 1504
+    },
+    {
+      "guid": "4kOgGOEAQT",
+      "type": "Outfit",
+      "name": "To The Love Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/SoAurora-To-The-Love-Outfit-Icon-Morybel-0146.png",
+      "order": 1505
+    },
+    {
+      "guid": "K0NBv__mv8",
+      "type": "Instrument",
+      "name": "Voice of AURORA",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Aurora-Voice-of-Aurora-Icon-Morybel-0146-.png"
+    },
+    {
+      "guid": "JFV-ZmGQiu",
+      "type": "Cape",
+      "name": "Giving In Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Giving-In-Cape-IAP-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "EQYKoHE95s",
+      "type": "Cape",
+      "name": "Wings of AURORA",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAURORA-Wings-of-AURORA-Cape-Icon-Morybel-0146.png"
+    },
+    // #endregion
+    // #endregion
     // #region Remembrance
     // Bereft Veteran
     {
@@ -9494,7 +9736,8 @@
       "guid": "woyw0Ddh2s",
       "type": "Mask",
       "name": "Bereft Veteran Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/SoRemembrance-Bereft-Veteran-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/SoRemembrance-Bereft-Veteran-Mask-Icon-Morybel-0146.png",
+      "order": 1601
     },
     {
       "guid": "P4dn6-tr_h",
@@ -9565,7 +9808,8 @@
       "guid": "-uVJsYJF-Z",
       "type": "Necklace",
       "name": "Pleading Child Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/SoRemembrance-Pleading-Child-Necklace-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/SoRemembrance-Pleading-Child-Necklace-Icon-Morybel-0146.png",
+      "order": 1601
     },
     {
       "guid": "VFAQfNQAa1",
@@ -9603,7 +9847,8 @@
       "guid": "eP_tdKr4R7",
       "type": "Outfit",
       "name": "Pleading Child Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/SoRemembrance-Pleading-Child-Outfit-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/SoRemembrance-Pleading-Child-Outfit-Icon-Morybel-0146.png",
+      "order": 1601
     },
     {
       "guid": "j4QIVxv1ux",
@@ -9668,7 +9913,8 @@
       "guid": "4tYFGTPkMo",
       "type": "Outfit",
       "name": "Tiptoeing Tea-Brewer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit-Icon-Morybel-0146.png",
+      "order": 1603
     },
     {
       "guid": "XimZaRVH06",
@@ -9706,13 +9952,15 @@
       "guid": "3k0FrWDlWs",
       "type": "Mask",
       "name": "Wounded Warrior Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/SoRemembrance-Wounded-Warrior-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/SoRemembrance-Wounded-Warrior-Mask-Icon-Morybel-0146.png",
+      "order": 1602
     },
     {
       "guid": "XPEhyUKiiy",
       "type": "Outfit",
       "name": "Wounded Warrior Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SoRemembrance-Wounded-Warrior-Outfit-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SoRemembrance-Wounded-Warrior-Outfit-Icon-Morybel-0146.png",
+      "order": 1602
     },
     {
       "guid": "Q5VIpSkhzr",
@@ -9745,7 +9993,8 @@
       "guid": "hLJjrHH-Ag",
       "type": "Mask",
       "name": "Days of Fortune Bull Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Icon_mask_ox.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Icon_mask_ox.png",
+      "order": 10601
     },
     {
       "guid": "LgDGqWw-NO",
@@ -9775,7 +10024,8 @@
       "guid": "HnCWgj7aoA",
       "type": "Mask",
       "name": "Days of Fortune Blushing Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_mask_blush.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_mask_blush.png",
+      "order": 10401
     },
     {
       "guid": "rNDDbcjS4G",
@@ -9787,7 +10037,8 @@
       "guid": "c1YroXxA9Z",
       "type": "Mask",
       "name": "Days of Fortune Tiger Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Days_of_Fortune_-_Tiger_mask_head_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Days_of_Fortune_-_Tiger_mask_head_icon.png",
+      "order": 10701
     },
     {
       "guid": "OjSfpOgFoR",
@@ -9811,7 +10062,8 @@
       "guid": "ADJiva5H2Z",
       "type": "Outfit",
       "name": "Days of Fortune Muralist's Smock",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png",
+      "order": 10400
     },
     {
       "guid": "uzos22Ysp3",
@@ -9823,7 +10075,8 @@
       "guid": "D_k9C9QybE",
       "type": "Mask",
       "name": "Days of Fortune Rabbit Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png",
+      "order": 10201
     },
     {
       "guid": "1QMUTwskc3",
@@ -9903,7 +10156,8 @@
       "guid": "rFRaOxnvXF",
       "type": "Mask",
       "name": "Days of Love Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Icon_mask_rose.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Icon_mask_rose.png",
+      "order": 10501
     },
     {
       "guid": "yWCpBlHsWa",
@@ -9939,7 +10193,8 @@
       "guid": "PuFWddickP",
       "type": "Necklace",
       "name": "Days of Love Classy Cravat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Days-of-Love-Neck-Bow-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Days-of-Love-Neck-Bow-Icon-Morybel-0146.png",
+      "order": 10101
     },
     {
       "guid": "favBojugBT",
@@ -10067,7 +10322,8 @@
       "guid": "wUPw1TRQSI",
       "type": "Outfit",
       "name": "Bloom Gardening Tunic",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Days-of-Bloom-Gardener-outfit-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Days-of-Bloom-Gardener-outfit-icon-Morybel-0146.png",
+      "order": 10100
     },
     {
       "guid": "_0PZEyTNxt",
@@ -10087,7 +10343,8 @@
       "guid": "KZ6aQtgCqt",
       "type": "Necklace",
       "name": "Ocean Necklace",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Icon_pendant_shell_pendant.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Icon_pendant_shell_pendant.png",
+      "order": 10301
     },
     {
       "guid": "MjA9EoD-pe",
@@ -10105,7 +10362,8 @@
       "guid": "_Y-80G-t_2",
       "type": "Necklace",
       "name": "Nature Turtle Buddy",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Nature-2022-turtle-accessory-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Nature-2022-turtle-accessory-icon-Morybel-0146.png",
+      "order": 10501
     },
     {
       "guid": "OvPPfhXnwW",
@@ -10251,7 +10509,8 @@
       "guid": "0rrPORrk7O",
       "type": "Outfit",
       "name": "Rainbow Trousers",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Days-of-Rainbow-2022-pant-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Days-of-Rainbow-2022-pant-icon-Morybel-0146.png",
+      "order": 10300
     },
     {
       "guid": "N5_6M8ooTl",
@@ -10467,7 +10726,8 @@
       "guid": "CZ4aNN-JZV",
       "type": "Outfit",
       "name": "Mischief Witch Jumper",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Icon_2021_mischief_jumper.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Icon_2021_mischief_jumper.png",
+      "order": 10200
     },
     {
       "guid": "evuvua13dC",
@@ -10485,7 +10745,8 @@
       "guid": "QeNQhxg3mv",
       "type": "Mask",
       "name": "Cat Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Mischief-Cat-Mask-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Mischief-Cat-Mask-Icon-Morybel-0146.png",
+      "order": 10901
     },
     {
       "guid": "pG1_D61KMT",
@@ -10535,7 +10796,8 @@
       "guid": "RFMVpbZOil",
       "type": "Necklace",
       "name": "Feast Necktie",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Icon_pendant_holly_pendant.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Icon_pendant_holly_pendant.png",
+      "order": 10201
     },
     {
       "guid": "FG23AJzDOD",
@@ -10583,7 +10845,8 @@
       "guid": "c0_xJdJKvM",
       "type": "Necklace",
       "name": "Winter Feast Scarf",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Days_of_Feast_Scarf_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Days_of_Feast_Scarf_icon.png",
+      "order": 10601
     },
     {
       "guid": "Gsl445SG4s",
@@ -10631,7 +10894,8 @@
       "guid": "TLljjPrjAq",
       "type": "Mask",
       "name": "Feast Goggles",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Days-of-Feast-Yeti-Goggles-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Days-of-Feast-Yeti-Goggles-Icon-Morybel-0146.png",
+      "order": 10801
     },
     {
       "guid": "ZvfG2eU17I",
@@ -10740,7 +11004,8 @@
       "guid": "Ay3g-0JAeW",
       "type": "Necklace",
       "name": "Jelly Shoulder Buddy",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Days-of-Sunlight-Jellyfish-Neck-Accessory-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Days-of-Sunlight-Jellyfish-Neck-Accessory-Morybel-0146.png",
+      "order": 10401
     },
     {
       "guid": "JNgfLtgLfc",
@@ -10754,6 +11019,103 @@
       "name": "Campfire Snack Kit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Days-of-Sunlight-Snack-kit-icon-Morybel-0146.png"
     },
+    // #endregion
+
+
+    // #region Permanent IAP
+    {
+      "guid": "Z5JkGSWLbw",
+      "type": "Cape",
+      "name": "Orange Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Icon_cape_orange-Morybel-0146.png"
+    },
+    {
+      "guid": "DI0RLfo9Sj",
+      "type": "Cape",
+      "name": "Founder's Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Icon_cape_tgc_b-Morybel-0146.png"
+    },
+    {
+      "guid": "xaX_sfWwKV",
+      "type": "Cape",
+      "name": "Beta Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Beta-cape-Morybel-0146.png"
+    },
+    {
+      "guid": "1xIwQnxHV-",
+      "type": "Instrument",
+      "name": "Fledgling Harp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/SOPerformance-Fledgling-harp-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "bOQzUAzYfV",
+      "type": "Instrument",
+      "name": "Rhythm Guitar",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SOPerformance-Rhythm-Guitar-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "McTvO9Z8EQ",
+      "type": "Instrument",
+      "name": "Triumph Handpan",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SOPerformance-Triumph-Handpan-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "hcuS6xsmHg",
+      "type": "Instrument",
+      "name": "Blue Electric Guitar",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Days-of-Sky-2022-instrument-blue-electric-guitar-icon-Morybel-0146.png"
+    },
+    // #endregion
+
+
+    // #region Platform exclusives
+    // #region Switch
+    {
+      "guid": "KtlqKC7whS",
+      "type": "Cape",
+      "name": "Nintendo Blue Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Icon_cape_nintendo_blue-Morybel-0146.png"
+    },
+    {
+      "guid": "4c9HLTfREP",
+      "type": "Cape",
+      "name": "Nintendo Red Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Icon_cape_nintendo_red-Morybel-0146.png"
+    },
+    {
+      "guid": "MHArTLwxyq",
+      "type": "Hair",
+      "name": "Nintendo Elf Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Icon_hair_Nintendo_elf.png"
+    },
+    {
+      "guid": "BDfLuCSmaF",
+      "type": "Instrument",
+      "name": "Vessel Flute",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_instrument_vessel_flute.png"
+    },
+    // #endregion
+    // #region PS
+    {
+      "guid": "sDNG_Nt7Ew",
+      "type": "Mask",
+      "name": "Journey Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Journey-Pack-Mask-icon-Morybel-0146.png",
+      "order": 20001
+    },
+    {
+      "guid": "6Nac-p14-9",
+      "type": "Cape",
+      "name": "Journey Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png"
+    },
+    {
+      "guid": "8P8dL_Zp8q",
+      "type": "Hair",
+      "name": "Journey Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png"
+    },
+    // #endregion
     // #endregion
   ]
 }

@@ -1,15 +1,22 @@
 import { IConfig, IGuid } from "./base.interface";
+import { IEvent } from "./event.interface";
 import { IIAP } from "./iap.interface";
 import { INode } from "./node.interface";
+import { ISeason } from "./season.interface";
 
 export interface IItemConfig extends IConfig<IItem> {}
 
 export interface IItem extends IGuid {
+  /** Item type. */
   type: ItemType;
+  /** Item name. */
   name: string;
+  /** Path to item icon. */
   icon?: string;
+  /** Item order (within category). */
+  order?: number;
 
-  // Emote
+  /** Emote level. */
   level?: number;
 
   /// References ///

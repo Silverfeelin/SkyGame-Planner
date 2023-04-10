@@ -236,6 +236,10 @@
     // #endregion
     // #region Office
     {
+      "guid": "ExkE9a7QJ0",
+      "name": "Office NPC"
+    },
+    {
       "guid": "Ayoc2XvMTy",
       "type": "Special",
       "name": "Office Spirit #1"

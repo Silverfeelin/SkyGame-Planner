@@ -10,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SeasonsComponent implements OnInit {
   seasons!: Array<ISeason>;
+  reverseSeasons!: Array<ISeason>;
 
   years: Array<number> = [];
   yearMap!: { [year: number]: Array<ISeason> };
@@ -20,6 +21,7 @@ export class SeasonsComponent implements OnInit {
     private readonly _dataService: DataService
   ) {
     this.seasons = _dataService.seasonConfig.items;
+    this.reverseSeasons = this.seasons.slice().reverse();
   }
 
   ngOnInit(): void {

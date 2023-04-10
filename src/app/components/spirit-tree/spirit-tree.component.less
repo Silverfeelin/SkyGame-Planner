@@ -54,7 +54,7 @@
 
 .arrow {
   position: absolute;
-  background: #fff;
+  background: var(--color);
   width: 1px;
 }
 
@@ -92,6 +92,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   vertical-align: bottom;
+}
+
+.name-default:not(:only-child) {
+  display: none;
 }
 
 .ts-date {

@@ -19,6 +19,8 @@ export class SpiritsComponent {
   queryTree: {[spiritGuid: string]: ISpiritTree} = {};
   spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
   rows: Array<any> = [];
+  unlockedItems = 0;
+  totalItems = 0;
 
   constructor(
     private readonly _dataService: DataService,
@@ -61,6 +63,8 @@ export class SpiritsComponent {
   }
 
   initTable(): void {
+    this.unlockedItems = 0;
+    this.totalItems = 0;
     this.rows = this.spirits.map(s => {
       // Count items from all spirit trees.
       let unlockedItems = 0, totalItems = 0;
@@ -90,6 +94,9 @@ export class SpiritsComponent {
       const tooltip = unlockedItems === totalItems ? 'All items unlocked.'
         : unlockedLast && unlockedLast === totalLast ? 'All items unlocked in most recent visit.'
         : undefined;
+
+      this.unlockedItems += unlockedItems;
+      this.totalItems += totalItems;
 
       return {
         ...s,

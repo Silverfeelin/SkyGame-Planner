@@ -1,31 +1,36 @@
 <aside>
   <nav>
-    <div class="header d-none d-lg-inline-block">
+    <div class="header">
       <span class="title">Sky Planner</span>
     </div>
     <div class="items">
       <!-- Realms -->
-      <a class="item" [routerLink]="'realm'" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
+      <a class="item" [routerLink]="'realm'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
         <mat-icon fontIcon="auto_awesome"></mat-icon>
         <span class="name">Realms</span>
       </a>
       <!-- Seasons -->
-      <a class="item" [routerLink]="'season'" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
+      <a class="item" [routerLink]="'season'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
         <mat-icon fontIcon="ac_unit"></mat-icon>
         <span class="name">Seasons</span>
       </a>
       <!-- Traveling Spirits -->
-      <a class="item" [routerLink]="'ts'" [ngbTooltip]="wide ? '' : 'Traveling Spirits'" placement="right" container="body">
+      <a class="item" [routerLink]="'ts'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Traveling Spirits'" placement="right" container="body">
         <mat-icon fontIcon="hikings"></mat-icon>
         <span class="name">Traveling Spirits</span>
       </a>
-      <!-- Traveling Spirits -->
-      <a class="item" [routerLink]="'event'" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
+      <!-- Events -->
+      <a class="item" [routerLink]="'event'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
         <mat-icon fontIcon="celebration"></mat-icon>
         <span class="name">Events</span>
       </a>
+      <!-- Shop -->
+      <a class="item" [routerLink]="'shop'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">
+        <mat-icon fontIcon="shopping_cart"></mat-icon>
+        <span class="name">Permanent IAP</span>
+      </a>
       <!-- Items -->
-      <a class="item" [routerLink]="'item'" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
+      <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
         <mat-icon fontIcon="checkroom"></mat-icon>
         <span class="name">Items</span>
       </a>
@@ -40,7 +45,7 @@
         <span class="name">GitHub</span>
       </a>
       <!-- Credits -->
-      <a class="item" [routerLink]="'credits'" [ngbTooltip]="wide ? '' : 'Credits'" placement="right" container="body">
+      <a class="item" [routerLink]="'credits'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Credits'" placement="right" container="body">
         <mat-icon fontIcon="info"></mat-icon>
         <span class="name">Credits</span>
       </a>

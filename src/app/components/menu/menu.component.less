@@ -6,16 +6,13 @@ aside {
   width: var(--menu-width);
   background-color: var(--color-item-background);
   z-index: 100;
+  overflow-y: auto;
 }
 
 .header {
   padding: 10px;
   font-size: 24px;
-  text-align: center;
-}
-
-.header, .item {
-  border-bottom: 1px solid var(--color-border-lowlight);
+  text-align: left;
 }
 
 .items {
@@ -27,6 +24,10 @@ aside {
   display: block;
   padding: 15px 10px;
   cursor: pointer;
+}
+
+.item.active {
+  background-color: var(--color-item-background-highlight);
 }
 
 .item:hover {
@@ -48,11 +49,15 @@ a:hover, a:focus, a:active, a:visited {
 
 /* RESPONSIVE */
 
-.name {
+.header, .name {
   display: none;
 }
 
 @media screen and (min-width: 992px) {
+  .header {
+    display: block;
+  }
+
   .name {
     display: inline-block;
   }

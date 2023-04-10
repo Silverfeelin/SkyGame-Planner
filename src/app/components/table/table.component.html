@@ -20,5 +20,14 @@
         </tr>
       </ng-container>
     </tbody>
+    <tfoot *ngIf="footers?.length">
+      <tr>
+        <ng-container *ngFor="let footer of footers">
+          <td [attr.colspan]="footer.colspan" [style.text-align]="footer.textAlign">
+            <ng-container [ngTemplateOutlet]="footer.template"></ng-container>
+          </td>
+        </ng-container>
+      </tr>
+    </tfoot>
   </table>
 </div>
