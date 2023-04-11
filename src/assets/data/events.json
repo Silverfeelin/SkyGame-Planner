@@ -570,6 +570,24 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
       }
     },
+    // Harmony Hall Grand Opening
+    {
+      "guid": "P281ctf0XE",
+      "name": "Harmony Hall Grand Opening",
+      "instances": [
+        {
+          "guid": "7eNLae0wS1",
+          "date": { "day": 23, "month": 5, "year": 2022 },
+          "endDate": { "day": 5, "month": 6, "year": 2022 },
+          "spirits": [
+            { "guid": "2Xcu_VsRwC", "spirit": "fEcI6neh6f", "tree": "15T8Gelv5Z" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#The_Grand_Opening"
+      }
+    },
     // #endregion
   ]
 }

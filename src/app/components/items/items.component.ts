@@ -44,6 +44,7 @@ export class ItemsComponent {
     this.shownItems = this.typeItems[this.type] ?? [];
     this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
     this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held;
+    //this.showNone = false;
     this.offsetNone = this.showNone ? 1 : 0;
   }
 

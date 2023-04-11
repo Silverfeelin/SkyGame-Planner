@@ -55,7 +55,8 @@
       "guid": "X6dudcTAFc",
       "type": "Hair",
       "name": "Pointing Candlemaker Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/PointingCandlemaker-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/PointingCandlemaker-2.png",
+      "order": 2
     },
     {
       "guid": "NWIQpbYHLo",
@@ -121,7 +122,8 @@
       "guid": "e4wyPtwoPO",
       "type": "Hair",
       "name": "Ushering Stargazer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/UsheringStargazer-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/UsheringStargazer-2.png",
+      "order": 3
     },
     {
       "guid": "1ZLo5PaJfy",
@@ -193,7 +195,8 @@
       "guid": "g95lk3pzSR",
       "type": "Hair",
       "name": "Rejecting Voyager Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/RejectingVoyager-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/RejectingVoyager-2.png",
+      "order": 4
     },
     {
       "guid": "e9M_zvbglZ",
@@ -261,7 +264,8 @@
       "guid": "eZMt8EziXY",
       "type": "Cape",
       "name": "Butterfly Charmer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png",
+      "order": 21
     },
     {
       "guid": "1jZ8Qe_xa_",
@@ -311,8 +315,9 @@
     {
       "guid": "9YJ5i3uu4Z",
       "type": "Cape",
-      "name": "Butterfly Charmer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png"
+      "name": "Butterfly Charmer Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png",
+      "order": 30
     },
     // Applauding Bellmaker
     {
@@ -339,7 +344,8 @@
       "guid": "PffQbv7Rw5",
       "type": "Hair",
       "name": "Applauding Bellmaker Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/ApplaudingBellmaker-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/ApplaudingBellmaker-2.png",
+      "order": 7
     },
     {
       "guid": "AuD34CrWXr",
@@ -398,7 +404,8 @@
       "guid": "-N-LV3VirV",
       "type": "Hair",
       "name": "Waving Bellmaker Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-2.png",
+      "order": 5
     },
     {
       "guid": "aLhHdfg2-U",
@@ -470,7 +477,8 @@
       "guid": "ISKgSOaoko",
       "type": "Hair",
       "name": "Slumbering Shipwright Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/SlumberingShipwright-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/SlumberingShipwright-2.png",
+      "order": 6
     },
     {
       "guid": "2Tq3S0Mp9W",
@@ -561,7 +569,8 @@
       "guid": "XEoOJENom1",
       "type": "Hair",
       "name": "Laughing Light Catcher Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/LaughingLightCatcher-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/LaughingLightCatcher-3.png",
+      "order": 22
     },
     {
       "guid": "xUzhvncppN",
@@ -611,7 +620,8 @@
       "guid": "0_BW6Cnzkn",
       "type": "Hair",
       "name": "Bird Whisperer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BirdWhisperer-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BirdWhisperer-3.png",
+      "order": 23
     },
     // Exhausted Dock Worker
     {
@@ -771,7 +781,8 @@
       "guid": "5oWTpEPXWn",
       "type": "Hair",
       "name": "Shivering Trailblazer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/ShiveringTrailblazer-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/ShiveringTrailblazer-3.png",
+      "order": 24
     },
     // Blushing Prospector
     {
@@ -798,7 +809,8 @@
       "guid": "aKz1gRuXma",
       "type": "Hair",
       "name": "Blushing Prospector Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/BlushingProspector-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/BlushingProspector-2.png",
+      "order": 12
     },
     {
       "guid": "io5TEFueP2",
@@ -850,7 +862,8 @@
       "guid": "LqipUD_Mmh",
       "type": "Hair",
       "name": "Hide'n'Seek Pioneer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/HideNSeekPioneer-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/HideNSeekPioneer-2.png",
+      "order": 10
     },
     {
       "guid": "ujMcX760lx",
@@ -921,7 +934,8 @@
       "guid": "UX_lsf-RuX",
       "type": "Hair",
       "name": "Pouty Porter Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/PoutyPorter-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/PoutyPorter-2.png",
+      "order": 11
     },
     {
       "guid": "dqLly-GV_Z",
@@ -959,7 +973,8 @@
       "guid": "7Mh9pQzRHj",
       "type": "Cape",
       "name": "Pouty Porter Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png",
+      "order": 24
     },
     {
       "guid": "bD_9EMf-5h",
@@ -970,8 +985,9 @@
     {
       "guid": "gwRIgeL-d2",
       "type": "Cape",
-      "name": "Pouty Porter Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png"
+      "name": "Pouty Porter Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png",
+      "order": 33
     },
     // Dismayed Hunter
     {
@@ -998,7 +1014,8 @@
       "guid": "KZh9gbVJU2",
       "type": "Hair",
       "name": "Dismayed Hunter Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/DismayedHunter-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/DismayedHunter-2.png",
+      "order": 25
     },
     {
       "guid": "spruafydlq",
@@ -1036,7 +1053,8 @@
       "guid": "PIu602lYaG",
       "type": "Cape",
       "name": "Dismayed Hunter Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png",
+      "order": 26
     },
     {
       "guid": "czac1httCU",
@@ -1047,8 +1065,9 @@
     {
       "guid": "mo8clKxyAN",
       "type": "Cape",
-      "name": "Dismayed Hunter Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png"
+      "name": "Dismayed Hunter Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png",
+      "order": 35
     },
     // Apologetic Lumberjack
     {
@@ -1075,7 +1094,8 @@
       "guid": "VizeW9_N4M",
       "type": "Hair",
       "name": "Apologetic Lumberjack Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/ApologeticLumberjack-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/ApologeticLumberjack-2.png",
+      "order": 9
     },
     {
       "guid": "VqqKTWMSnf",
@@ -1141,7 +1161,8 @@
       "guid": "7ypZrcAvXa",
       "type": "Hair",
       "name": "Tearful Light Miner Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/TearfulLightMiner-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/TearfulLightMiner-2.png",
+      "order": 8
     },
     {
       "guid": "DK3PP0plU_",
@@ -1232,7 +1253,8 @@
       "guid": "sNTC_fhMeO",
       "type": "Hair",
       "name": "Confident Sightseer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/ConfidentSightseer-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/ConfidentSightseer-2.png",
+      "order": 13
     },
     {
       "guid": "vcs3OK_8Oz",
@@ -1322,7 +1344,8 @@
       "guid": "RvpMLaVQSd",
       "type": "Cape",
       "name": "Handstanding Thrillseeker Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/HandstandingThrillseeker-2-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/HandstandingThrillseeker-2-Morybel-0146.png",
+      "order": 27
     },
     {
       "guid": "7OqhuAzGBC",
@@ -1333,8 +1356,9 @@
     {
       "guid": "vscrkSHo4p",
       "type": "Cape",
-      "name": "Handstanding Thrillseeker Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/HandstandingThrillseeker-tier-2.png"
+      "name": "Handstanding Thrillseeker Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/HandstandingThrillseeker-tier-2.png",
+      "order": 36
     },
     // Manta Whisperer
     {
@@ -1399,7 +1423,8 @@
       "guid": "NPM3TvV95I",
       "type": "Hair",
       "name": "Backflipping Champion Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/BackflippingChampion-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/BackflippingChampion-2.png",
+      "order": 27
     },
     {
       "guid": "QooyrTgJZK",
@@ -1465,7 +1490,8 @@
       "guid": "RtX7BAaov2",
       "type": "Hair",
       "name": "Cheerful Spectator Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/CheerfulSpectator-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/CheerfulSpectator-2.png",
+      "order": 28
     },
     {
       "guid": "JV9h2D6_iD",
@@ -1530,7 +1556,8 @@
       "guid": "wNv_ZY93TS",
       "type": "Hair",
       "name": "Bowing Medalist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/BowingMedalist-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/BowingMedalist-2.png",
+      "order": 26
     },
     {
       "guid": "wK07Svwcme",
@@ -1582,7 +1609,8 @@
       "guid": "o104MA8jIE",
       "type": "Cape",
       "name": "Proud Victor Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/ProudVictor-2-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/ProudVictor-2-Morybel-0146.png",
+      "order": 22
     },
     {
       "guid": "iiOkKg45h6",
@@ -1624,8 +1652,9 @@
     {
       "guid": "4iqOdYFTuk",
       "type": "Cape",
-      "name": "Proud Victor Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/ProudVictor-4.png"
+      "name": "Proud Victor Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/ProudVictor-4.png",
+      "order": 31
     },
     // #endregion
     // #region Wasteland
@@ -1654,7 +1683,8 @@
       "guid": "LY0kFk4zt9",
       "type": "Hair",
       "name": "Frightened Refugee Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/FrightenedRefugee-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/FrightenedRefugee-2.png",
+      "order": 14
     },
     {
       "guid": "rpcAA2zHTE",
@@ -1719,7 +1749,8 @@
       "guid": "_oYTtTvbrv",
       "type": "Hair",
       "name": "Fainting Warrior Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/FaintingWarrior-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/FaintingWarrior-2.png",
+      "order": 16
     },
     {
       "guid": "AA61MCzDqt",
@@ -1771,7 +1802,8 @@
       "guid": "l1nLKz7suC",
       "type": "Hair",
       "name": "Courageous Soldier Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/CourageousSoldier-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/CourageousSoldier-2.png",
+      "order": 15
     },
     {
       "guid": "tuTiMOIa-h",
@@ -1801,7 +1833,8 @@
       "guid": "3lA6dG5lJz",
       "type": "Cape",
       "name": "Courageous Soldier Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CourageousSoldier-3-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CourageousSoldier-3-Morybel-0146.png",
+      "order": 23
     },
     {
       "guid": "btPY0Ht6nP",
@@ -1812,8 +1845,9 @@
     {
       "guid": "ggrTorky-R",
       "type": "Cape",
-      "name": "Courageous Soldier Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/CourageousSoldier-4.png"
+      "name": "Courageous Soldier Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/CourageousSoldier-4.png",
+      "order": 32
     },
     // Stealthy Survivor
     {
@@ -1826,7 +1860,8 @@
       "guid": "DGzYI5od5x",
       "type": "Hair",
       "name": "Stealthy Survivor Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/StealthySurvivor-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/StealthySurvivor-2.png",
+      "order": 17
     },
     {
       "guid": "q2xUgGYeb-",
@@ -1856,7 +1891,8 @@
       "guid": "NDJlGR97m-",
       "type": "Cape",
       "name": "Stealthy Survivor Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/StealthySurvivor-3-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/StealthySurvivor-3-Morybel-0146.png",
+      "order": 28
     },
     {
       "guid": "Q4T-saGcNA",
@@ -1867,8 +1903,9 @@
     {
       "guid": "ya7BleEI6V",
       "type": "Cape",
-      "name": "Stealthy Survivor Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_black_tier_2.png"
+      "name": "Stealthy Survivor Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_black_tier_2.png",
+      "order": 37
     },
     // Saluting Captain
     {
@@ -1895,7 +1932,8 @@
       "guid": "S793LWvPuI",
       "type": "Hair",
       "name": "Saluting Captain Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SalutingCaptain-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SalutingCaptain-2.png",
+      "order": 18
     },
     {
       "guid": "6t4fJL9LTh",
@@ -2028,7 +2066,8 @@
       "guid": "feolA3Sbwy",
       "type": "Hair",
       "name": "Levitating Adept Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/LevitatingAdept-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/LevitatingAdept-2.png",
+      "order": 19
     },
     {
       "guid": "J3zEc7Reur",
@@ -2094,7 +2133,8 @@
       "guid": "tBRghYOFon",
       "type": "Hair",
       "name": "Meditating Monastic Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Meditating-Monastic-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Meditating-Monastic-2.png",
+      "order": 20
     },
     {
       "guid": "gsduxoZUwm",
@@ -2176,7 +2216,8 @@
       "guid": "ec8jU3Gerw",
       "type": "Cape",
       "name": "Memory Whisperer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png",
+      "order": 29
     },
     {
       "guid": "0W2hMqYmmo",
@@ -2187,8 +2228,9 @@
     {
       "guid": "fRVPpavon7",
       "type": "Cape",
-      "name": "Memory Whisperer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png"
+      "name": "Memory Whisperer Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png",
+      "order": 38
     },
     // Polite Scholar
     {
@@ -2259,7 +2301,8 @@
       "guid": "exlIascN2K",
       "type": "Hair",
       "name": "Praying Acolyte Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/PrayingAcolyte-2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/PrayingAcolyte-2.png",
+      "order": 21
     },
     {
       "guid": "K91m7VZ7Tg",
@@ -2297,7 +2340,8 @@
       "guid": "WwlWwMfCen",
       "type": "Cape",
       "name": "Praying Acolyte Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png",
+      "order": 25
     },
     {
       "guid": "DkdobTs2WM",
@@ -2308,8 +2352,9 @@
     {
       "guid": "DyXPylwH7w",
       "type": "Cape",
-      "name": "Praying Acolyte Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png"
+      "name": "Praying Acolyte Cape 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png",
+      "order": 34
     },
     // #endregion
 
@@ -2319,7 +2364,8 @@
       "guid": "7FqA0RC1D4",
       "type": "Hair",
       "name": "Isle Elder Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_hair_elder_isle.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_hair_elder_isle.png",
+      "order": 51
     },
     {
       "guid": "md88nKjoJF",
@@ -2333,7 +2379,8 @@
       "guid": "x_pH3kjLjO",
       "type": "Hair",
       "name": "Prairie Elder Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Icon_hair_elder_prairie.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Icon_hair_elder_prairie.png",
+      "order": 52
     },
     {
       "guid": "tM_21JOpuH",
@@ -2347,7 +2394,8 @@
       "guid": "T0wsTbmzvv",
       "type": "Hair",
       "name": "Forest Elder Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Icon_hair_elder_forest.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Icon_hair_elder_forest.png",
+      "order": 53
     },
     {
       "guid": "ay0lwFyush",
@@ -2360,28 +2408,32 @@
     {
       "guid": "YdtLj5dJE7",
       "type": "Hair",
-      "name": "Valley Elders Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Icon_hair_elder_valley_2.png"
+      "name": "Valley Elder Hair 1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Icon_hair_elder_valley_2.png",
+      "order": 54
     },
     {
       "guid": "AjiVTxnCly",
       "type": "Hair",
-      "name": "Valley Elders Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Icon_hair_elder_valley_1.png"
+      "name": "Valley Elder Hair 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Icon_hair_elder_valley_1.png",
+      "order": 55
     },
     // Wasteland Elder
     {
       "guid": "SSrCZW8Cf-",
       "type": "Hair",
       "name": "Wasteland Elder Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Icon_hair_elder_wasteland.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Icon_hair_elder_wasteland.png",
+      "order": 56
     },
     // Vault Elder
     {
       "guid": "RIkdOtUAeN",
       "type": "Hair",
       "name": "Vault Elder Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_hair_elder_vault.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_hair_elder_vault.png",
+      "order": 57
     },
     // #endregion
 
@@ -2448,7 +2500,8 @@
       "guid": "wXiFi4y6YU",
       "type": "Hair",
       "name": "Rhythm Ultimate Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Icon_hair_rhythm_ultimate.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Icon_hair_rhythm_ultimate.png",
+      "order": 1404
     },
     // Enchantment Guide
     {
@@ -2461,14 +2514,16 @@
     {
       "guid": "FlOSNmw_38",
       "type": "Hat",
-      "name": "Enchantment Hair Tassel",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_enchantment_ultimate_tassles.png"
+      "name": "Enchantment Ultimate Hair Tassel",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_enchantment_ultimate_tassles.png",
+      "order": 1501
     },
     {
       "guid": "EUVtYtLoeB",
       "type": "Hair",
-      "name": "Enchantment Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Icon_hair_enchantment_ultimate.png"
+      "name": "Enchantment Ultimate Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Icon_hair_enchantment_ultimate.png",
+      "order": 1507
     },
     {
       "guid": "TX3Mc_wTaK",
@@ -2559,14 +2614,15 @@
     {
       "guid": "Hvq52gCeih",
       "type": "Instrument",
-      "name": "Sanctuary Handpan",
+      "name": "Sanctuary Ultimate Handpan",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Icon_instrument_sanctuary_hand_pan.png"
     },
     {
       "guid": "OPjLSqWOhA",
       "type": "Cape",
-      "name": "Sanctuary Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_sanctuary_manta-Morybel-0146.png"
+      "name": "Sanctuary Ultimate Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_sanctuary_manta-Morybel-0146.png",
+      "order": 1602
     },
     {
       "guid": "agaCWhY93E",
@@ -2740,7 +2796,8 @@
       "guid": "w1EkwcgG88",
       "type": "Cape",
       "name": "Dreams Ultimate Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png",
+      "order": 1804
     },
     {
       "guid": "IEocuR75Kz",
@@ -2827,7 +2884,8 @@
       "guid": "_qNmWZx0rp",
       "type": "Hair",
       "name": "Assembly Ultimate Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Icon_hair_assembly_ultimate.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Icon_hair_assembly_ultimate.png",
+      "order": 1901
     },
     {
       "guid": "B59f4_ru60",
@@ -2839,7 +2897,8 @@
       "guid": "ZdKPdWs2xL",
       "type": "Cape",
       "name": "Assembly Ultimate Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png",
+      "order": 1901
     },
     {
       "guid": "srvkkR75YW",
@@ -2955,7 +3014,8 @@
       "guid": "dTnb7tLoOB",
       "type": "Hair",
       "name": "Little Prince Ultimate Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Icon_hair_prince_ultimate.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Icon_hair_prince_ultimate.png",
+      "order": 2006
     },
     {
       "guid": "BD7KBFgGf0",
@@ -3073,7 +3133,8 @@
       "guid": "cbWKMsAh7H",
       "type": "Hat",
       "name": "Flight Ultimate Hair Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png",
+      "order": 2104
     },
     {
       "guid": "SxX0bNDJaR",
@@ -3166,13 +3227,15 @@
       "guid": "rfwNbdvXQz",
       "type": "Hat",
       "name": "Abyss Ultimate Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png",
+      "order": 2202
     },
     {
       "guid": "8Oy0j-LGR_",
       "type": "Cape",
       "name": "Abyss Ultimate Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SOAbyss-Ultime-gift-Cape-vector-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SOAbyss-Ultime-gift-Cape-vector-Morybel-0146.png",
+      "order": 2205
     },
     {
       "guid": "zYUN2fkYOQ",
@@ -3273,13 +3336,15 @@
       "guid": "sYYg6rFPj6",
       "type": "Cape",
       "name": "Performance Ultimate Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png",
+      "order": 2301
     },
     {
       "guid": "Lw93RiDG46",
       "type": "Hair",
       "name": "Performance Ultimate Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/SOPerformance-ultimate-hair-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/SOPerformance-ultimate-hair-icon.png",
+      "order": 2301
     },
     {
       "guid": "zEvxnuBJf1",
@@ -3413,14 +3478,16 @@
     {
       "guid": "FjxHIvszIu",
       "type": "Cape",
-      "name": "Shattering Manta Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-ultimate-Cape-manta-Icon-Morybel-0146.png"
+      "name": "Shattering Ultimate Manta Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-ultimate-Cape-manta-Icon-Morybel-0146.png",
+      "order": 2405
     },
     {
       "guid": "1IhlCcq61j",
       "type": "Cape",
-      "name": "Shattering Darkness Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/SOShattering-ultimate-Cape-krill-Icon-Morybel-0146.png"
+      "name": "Shattering Ultimate Krill Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/SOShattering-ultimate-Cape-krill-Icon-Morybel-0146.png",
+      "order": 2402
     },
     {
       "guid": "AGUEuqLXVv",
@@ -3518,7 +3585,8 @@
       "guid": "Gon7mR-WVa",
       "type": "Hair",
       "name": "AURORA Ultimate Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/SoAurora-Ultimate-Hair-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/SoAurora-Ultimate-Hair-icon-Morybel-0146.png",
+      "order": 2506
     },
     {
       "guid": "kr95Zsf1Cs",
@@ -3531,7 +3599,8 @@
       "guid": "Gp3p9OdxMA",
       "type": "Cape",
       "name": "AURORA Ultimate Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAurora-Ultimate-Cape-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAurora-Ultimate-Cape-icon-Morybel-0146.png",
+      "order": 2506
     },
     {
       "guid": "0vCi-aJZlj",
@@ -3878,7 +3947,8 @@
       "guid": "VIQ3DJwLpu",
       "type": "Hair",
       "name": "Sassy Drifter Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Mimi-4117_02_sassy_drifter_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Mimi-4117_02_sassy_drifter_hat.png",
+      "order": 1101
     },
     {
       "guid": "ifJ-lyNM8J",
@@ -3930,7 +4000,8 @@
       "guid": "L5rpNhBlkt",
       "type": "Hair",
       "name": "Stretching Guru Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Mimi-4117_02_stretching_guru_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Mimi-4117_02_stretching_guru_hat.png",
+      "order": 1103
     },
     {
       "guid": "FK3tNWjyTF",
@@ -3962,7 +4033,8 @@
       "guid": "k9UvQv3vi0",
       "type": "Cape",
       "name": "Stretching Guru Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Icon_cape_gratitude_red-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Icon_cape_gratitude_red-Morybel-0146.png",
+      "order": 1102
     },
     {
       "guid": "03JHyNx8wL",
@@ -4022,7 +4094,8 @@
       "guid": "HzMNk4W-bM",
       "type": "Hair",
       "name": "Provoking Performer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_02_provoking_performer_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_02_provoking_performer_hat.png",
+      "order": 1102
     },
     {
       "guid": "wSjNwu664c",
@@ -4161,7 +4234,8 @@
       "guid": "7WktQVTwtR",
       "type": "Cape",
       "name": "Saluting Protector Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Icon_cape_gratitude_white-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Icon_cape_gratitude_white-Morybel-0146.png",
+      "order": 1101
     },
     {
       "guid": "XOhMscNvdq",
@@ -4294,13 +4368,15 @@
       "guid": "BGoYhVYvBZ",
       "type": "Hair",
       "name": "Piggyback Lightseeker Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Mimi-4117_03_piggyback_lightseeker_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Mimi-4117_03_piggyback_lightseeker_hair.png",
+      "order": 1203
     },
     {
       "guid": "ILUnt_OrWQ",
       "type": "Cape",
       "name": "Piggyback Lightseeker Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png",
+      "order": 1202
     },
     {
       "guid": "bmCPTysPOr",
@@ -4332,7 +4408,8 @@
       "guid": "Ur7gRzB_VK",
       "type": "Hair",
       "name": "Doublefive Light Catcher Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Mimi-4117_03_doublefive_light_catcher_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Mimi-4117_03_doublefive_light_catcher_hat.png",
+      "order": 1205
     },
     {
       "guid": "lz89xViG6m",
@@ -4409,7 +4486,8 @@
       "guid": "qPAqxHGUVI",
       "type": "Hair",
       "name": "Laidback Pioneer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Mimi-4117_03_laidback_pioneer_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Mimi-4117_03_laidback_pioneer_hair.png",
+      "order": 1204
     },
     {
       "guid": "7CHTap5JN4",
@@ -4487,7 +4565,8 @@
       "guid": "EjjybJGcTN",
       "type": "Hair",
       "name": "Twirling Champion Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Mimi-4117_03_twirling_champion_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Mimi-4117_03_twirling_champion_hair.png",
+      "order": 1202
     },
     {
       "guid": "PIRW3pt_BE",
@@ -4562,13 +4641,15 @@
       "guid": "A3jFFEXAKu",
       "type": "Hair",
       "name": "Crab Whisperer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Mimi-4117_03_crab_whisperer_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Mimi-4117_03_crab_whisperer_hat.png",
+      "order": 1201
     },
     {
       "guid": "dotE5ejKYP",
       "type": "Cape",
       "name": "Crab Whisperer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png",
+      "order": 1201
     },
     {
       "guid": "ApWt6AdQ8O",
@@ -4640,7 +4721,8 @@
       "guid": "bj5HUEsP0R",
       "type": "Cape",
       "name": "Shushing Light Scholar Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png",
+      "order": 1203
     },
     {
       "guid": "G5MF6MpvH3",
@@ -4701,13 +4783,15 @@
       "guid": "86vG43eb7E",
       "type": "Cape",
       "name": "Confetti Cousin Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Icon_cape_belonging_red-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Icon_cape_belonging_red-Morybel-0146.png",
+      "order": 1301
     },
     {
       "guid": "4NjsRif40c",
       "type": "Hair",
       "name": "Confetti Cousin Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Mimi-4117_04_confetti_cousin_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Mimi-4117_04_confetti_cousin_hair.png",
+      "order": 1301
     },
     {
       "guid": "prawwGcU-k",
@@ -4858,7 +4942,8 @@
       "guid": "hySf4FUV-w",
       "type": "Hair",
       "name": "Sparkler Parent Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Mimi-4117_04_sparkler_parent_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Mimi-4117_04_sparkler_parent_hair.png",
+      "order": 1302
     },
     {
       "guid": "M97mhUyiZZ",
@@ -4951,7 +5036,8 @@
       "guid": "WCPTi8XYZy",
       "type": "Cape",
       "name": "Wise Grandparent Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_cape_belonging_white-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_cape_belonging_white-Morybel-0146.png",
+      "order": 1303
     },
     {
       "guid": "F2_k73blau",
@@ -5029,7 +5115,8 @@
       "guid": "mH0YjUsODC",
       "type": "Cape",
       "name": "Pleaful Parent Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_belonging_blue-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_belonging_blue-Morybel-0146.png",
+      "order": 1302
     },
     {
       "guid": "N6IzrxN7yL",
@@ -5099,7 +5186,8 @@
       "guid": "bBQbGQh1PU",
       "type": "Hat",
       "name": "Hairtousle Teen Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png",
+      "order": 1301
     },
     {
       "guid": "Ph__M3uulY",
@@ -5266,7 +5354,8 @@
       "guid": "stQCebAgsm",
       "type": "Hair",
       "name": "Festival Spin Dancer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Mimi-4117_05_festive_spin_dancer_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Mimi-4117_05_festive_spin_dancer_hair.png",
+      "order": 1401
     },
     {
       "guid": "kmgKsVBs4o",
@@ -5411,7 +5500,8 @@
       "guid": "hsTWje5YU_",
       "type": "Hair",
       "name": "Troupe Juggler Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_05_troupe_juggler_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_05_troupe_juggler_hair.png",
+      "order": 1402
     },
     {
       "guid": "QC2E3iIpQB",
@@ -5443,7 +5533,8 @@
       "guid": "MIKr5rkFuk",
       "type": "Cape",
       "name": "Troupe Juggler Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png",
+      "order": 1001
     },
     {
       "guid": "52NbrdHrAf",
@@ -5501,7 +5592,8 @@
       "guid": "mK47aJa3Uy",
       "type": "Hair",
       "name": "Respectful Pianist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Mimi-4117_05_respectful_pianist_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Mimi-4117_05_respectful_pianist_hair.png",
+      "order": 1403
     },
     {
       "guid": "yzAU4AmksH",
@@ -5630,7 +5722,8 @@
       "guid": "Bm0aFDGHk2",
       "type": "Cape",
       "name": "Thoughtful Director Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_rhythm_blue-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_rhythm_blue-Morybel-0146.png",
+      "order": 1002
     },
     {
       "guid": "LbyGyRZRft",
@@ -5704,7 +5797,8 @@
       "guid": "0HHq0_mt50",
       "type": "Hair",
       "name": "Nodding Muralist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Mimi-4117_06_nodding_muralist_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Mimi-4117_06_nodding_muralist_hat.png",
+      "order": 1501
     },
     {
       "guid": "v62Pvt6COk",
@@ -5770,7 +5864,8 @@
       "guid": "ad7KAaSuU8",
       "type": "Hair",
       "name": "Indifferent Alchemist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Mimi-4117_06_indifferent_alchemist_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Mimi-4117_06_indifferent_alchemist_hat.png",
+      "order": 1505
     },
     {
       "guid": "vbQP5KFpu1",
@@ -5788,7 +5883,8 @@
       "guid": "ipSfkZ8Rql",
       "type": "Cape",
       "name": "Indifferent Alchemist Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_cape_enchangment_purple_fold-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_cape_enchangment_purple_fold-Morybel-0146.png",
+      "order": 1503
     },
     {
       "guid": "lndQWUoKUV",
@@ -5827,7 +5923,8 @@
       "guid": "TyRibJeEa5",
       "type": "Hair",
       "name": "Crab Walker Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Mimi-4117_06_crab_walker_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Mimi-4117_06_crab_walker_hat.png",
+      "order": 1504
     },
     {
       "guid": "q1ZDkQme8T",
@@ -5859,7 +5956,8 @@
       "guid": "FyM7E9zFoH",
       "type": "Cape",
       "name": "Crab Walker Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Icon_cape_enchantment_purple-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Icon_cape_enchantment_purple-Morybel-0146.png",
+      "order": 1501
     },
     {
       "guid": "u0wTYjUD5l",
@@ -5925,7 +6023,8 @@
       "guid": "PxvVMovhCo",
       "type": "Hair",
       "name": "Scarecrow Farmer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Mimi-4117_06_scarecrow_farmer_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Mimi-4117_06_scarecrow_farmer_hat.png",
+      "order": 1502
     },
     {
       "guid": "wRsxoaUmkd",
@@ -5976,7 +6075,8 @@
       "guid": "1pSVV2aJ5S",
       "type": "Hair",
       "name": "Snoozing Carpenter Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Mimi-4117_06_snoozing_carpenter_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Mimi-4117_06_snoozing_carpenter_hair.png",
+      "order": 1503
     },
     {
       "guid": "xfv-AbRiCY",
@@ -5996,7 +6096,8 @@
       "guid": "9KhfuEDkFe",
       "type": "Cape",
       "name": "Snoozing Carpenter Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Icon_cape_enchantment_orange-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Icon_cape_enchantment_orange-Morybel-0146.png",
+      "order": 1502
     },
     {
       "guid": "l8RClua3lo",
@@ -6073,13 +6174,15 @@
       "guid": "8vNIpRiWxo",
       "type": "Hair",
       "name": "Playfighting Herbalist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_06_playfighting_herbalist_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_06_playfighting_herbalist_hair.png",
+      "order": 1506
     },
     {
       "guid": "RBXxOaKIyg",
       "type": "Cape",
       "name": "Playfighting Herbalist Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Icon_cape_enchantment_orange_fold-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Icon_cape_enchantment_orange_fold-Morybel-0146.png",
+      "order": 1504
     },
     {
       "guid": "ReCxjTw9UV",
@@ -6137,7 +6240,8 @@
       "guid": "hC1gh9FWhv",
       "type": "Hair",
       "name": "Jelly Whisperer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png",
+      "order": 1601
     },
     {
       "guid": "RO94m-cztD",
@@ -6206,7 +6310,8 @@
       "guid": "e6JjMLgK2V",
       "type": "Hair",
       "name": "Timid Bookworm Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_07_timid_bookworm_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_07_timid_bookworm_hair.png",
+      "order": 1602
     },
     {
       "guid": "7CJwk5hiQ8",
@@ -6224,7 +6329,8 @@
       "guid": "NrFOa0B40l",
       "type": "Cape",
       "name": "Timid Bookworm Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Icon_cape_sanctuary_butterfly-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Icon_cape_sanctuary_butterfly-Morybel-0146.png",
+      "order": 1601
     },
     {
       "guid": "SiVbCUdTSq",
@@ -6263,7 +6369,8 @@
       "guid": "DH-qXh6CMZ",
       "type": "Hair",
       "name": "Rallying Thrillseeker Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Mimi-4117_07_rallying_thrillseeker_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Mimi-4117_07_rallying_thrillseeker_hair.png",
+      "order": 1603
     },
     {
       "guid": "NjfPHc_tyD",
@@ -6362,7 +6469,8 @@
       "guid": "hGLEh1ula3",
       "type": "Hair",
       "name": "Hiking Grouch Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Mimi-4117_07_hiking_grouch_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Mimi-4117_07_hiking_grouch_hair.png",
+      "order": 1604
     },
     {
       "guid": "WbAIZr5KdV",
@@ -6426,7 +6534,8 @@
       "guid": "yiZSilInIg",
       "type": "Hair",
       "name": "Grateful Shell Collector Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_07_grateful_shell_collector_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_07_grateful_shell_collector_hair.png",
+      "order": 1605
     },
     {
       "guid": "xl7jZqLFwD",
@@ -6446,7 +6555,8 @@
       "guid": "ygwSSn-NvK",
       "type": "Cape",
       "name": "Grateful Shell Collector Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_cape_sanctuary_shell-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_cape_sanctuary_shell-Morybel-0146.png",
+      "order": 1603
     },
     {
       "guid": "Hvo9QMJcsx",
@@ -6524,7 +6634,8 @@
       "guid": "V7FLu_Hn4y",
       "type": "Hair",
       "name": "Chill Sunbather Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_07_chill_sunbather_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_07_chill_sunbather_hat.png",
+      "order": 1606
     },
     {
       "guid": "xgjzgnv6Zt",
@@ -6536,7 +6647,8 @@
       "guid": "QdmHwCR2Wk",
       "type": "Cape",
       "name": "Chill Sunbather Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Icon_cape_sanctuary_flower-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Icon_cape_sanctuary_flower-Morybel-0146.png",
+      "order": 1604
     },
     {
       "guid": "3Jxn5gYmSk",
@@ -6595,7 +6707,8 @@
       "guid": "JeLUbTDjy3",
       "type": "Hair",
       "name": "Prophet of Water Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Mimi-4117_08_prophet_of_water_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Mimi-4117_08_prophet_of_water_hair.png",
+      "order": 1701
     },
     {
       "guid": "3H28hhg2kF",
@@ -6621,7 +6734,8 @@
       "guid": "OMRQQpGTCh",
       "type": "Cape",
       "name": "Prophet of Water Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Icon_cape_prophecy_blue-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Icon_cape_prophecy_blue-Morybel-0146.png",
+      "order": 1702
     },
     {
       "guid": "Gu5Pw8cvcR",
@@ -6679,7 +6793,8 @@
       "guid": "kQMCuUAOtU",
       "type": "Hair",
       "name": "Prophet of Earth Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Mimi-4117_08_prophet_of_earth_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Mimi-4117_08_prophet_of_earth_hair.png",
+      "order": 1702
     },
     {
       "guid": "LeCZYinpa1",
@@ -6718,7 +6833,8 @@
       "guid": "K1EZHVX9Sb",
       "type": "Cape",
       "name": "Prophet of Earth Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Icon_cape_prophecy_maroon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Icon_cape_prophecy_maroon-Morybel-0146.png",
+      "order": 1703
     },
     {
       "guid": "JTPr5NiPEz",
@@ -6776,7 +6892,8 @@
       "guid": "PN1kAtqtky",
       "type": "Hair",
       "name": "Prophet of Air Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_air_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_air_hair.png",
+      "order": 1703
     },
     {
       "guid": "dAxR-om8Q8",
@@ -6815,7 +6932,8 @@
       "guid": "mfNUas_ov2",
       "type": "Cape",
       "name": "Prophet of Air Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Icon_cape_prophecy_purple-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Icon_cape_prophecy_purple-Morybel-0146.png",
+      "order": 1701
     },
     {
       "guid": "nkZG2sDqNq",
@@ -6872,7 +6990,8 @@
       "guid": "IRhRDSL-8R",
       "type": "Hair",
       "name": "Prophet of Fire Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Mimi-4117_08_prophet_of_fire_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Mimi-4117_08_prophet_of_fire_hair.png",
+      "order": 1704
     },
     {
       "guid": "oWEC_F0xLY",
@@ -6959,7 +7078,8 @@
       "guid": "xI0_ep59HH",
       "type": "Hat",
       "name": "Bearhug Hermit Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png",
+      "order": 1801
     },
     {
       "guid": "Ml3Snz_cos",
@@ -6991,7 +7111,8 @@
       "guid": "C1z7gdAqFH",
       "type": "Hair",
       "name": "Bearhug Hermit Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Icon_hair_dreams_hermit.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Icon_hair_dreams_hermit.png",
+      "order": 1801
     },
     {
       "guid": "n4sSWlUIbO",
@@ -7043,7 +7164,8 @@
       "guid": "fasyzIliRV",
       "type": "Hair",
       "name": "Dancing Performer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Icon_hair_dreams_dancing.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Icon_hair_dreams_dancing.png",
+      "order": 1802
     },
     {
       "guid": "IWzRV-xeez",
@@ -7076,7 +7198,8 @@
       "guid": "hmWCBGAmfU",
       "type": "Cape",
       "name": "Dancing Performer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Icon_cape_dreams_dancing-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Icon_cape_dreams_dancing-Morybel-0146.png",
+      "order": 1802
     },
     {
       "guid": "xpq4O_F_Md",
@@ -7149,7 +7272,8 @@
       "guid": "hPlYrRFFLa",
       "type": "Cape",
       "name": "Peeking Postman Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Icon_cape_dreams_peeking-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Icon_cape_dreams_peeking-Morybel-0146.png",
+      "order": 1801
     },
     {
       "guid": "Htee_duioI",
@@ -7195,7 +7319,8 @@
       "guid": "J9R4HX-ZHf",
       "type": "Hair",
       "name": "Spinning Mentor Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_dreams_3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_dreams_3.png",
+      "order": 1803
     },
     {
       "guid": "PdvK8FPKcD",
@@ -7240,7 +7365,8 @@
       "guid": "oyvK6kO527",
       "type": "Cape",
       "name": "Spinning Mentor Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_cape_dreams_spinning-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_cape_dreams_spinning-Morybel-0146.png",
+      "order": 1803
     },
     {
       "guid": "88bStTJrBZ",
@@ -7287,7 +7413,8 @@
       "guid": "mDc9qQKCBy",
       "type": "Hair",
       "name": "Baffled Botanist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_hair_assembly_baffled.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_hair_assembly_baffled.png",
+      "order": 1904
     },
     {
       "guid": "turlkU87QA",
@@ -7392,7 +7519,8 @@
       "guid": "6NGF44qiL6",
       "type": "Hair",
       "name": "Scolding Student Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_assembly_scolding.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_assembly_scolding.png",
+      "order": 1905
     },
     {
       "guid": "LtEVJrA6l0",
@@ -7410,7 +7538,8 @@
       "guid": "mF5qoEBPBj",
       "type": "Cape",
       "name": "Scolding Student Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_cape_assembly_green-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_cape_assembly_green-Morybel-0146.png",
+      "order": 1902
     },
     {
       "guid": "Cx1DkhRWOu",
@@ -7483,7 +7612,8 @@
       "guid": "g8AB_9bQIK",
       "type": "Hair",
       "name": "Scaredy Cadet Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_hair_assembly_scared.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_hair_assembly_scared.png",
+      "order": 1906
     },
     {
       "guid": "1tF2KjdUWO",
@@ -7534,7 +7664,8 @@
       "guid": "InfpXXK1sw",
       "type": "Hair",
       "name": "Marching Adventurer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Icon_hair_assembly_march.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Icon_hair_assembly_march.png",
+      "order": 1903
     },
     {
       "guid": "uG2bC9p_bN",
@@ -7749,7 +7880,8 @@
       "guid": "Pn_wGqjtoX",
       "type": "Hair",
       "name": "Daydream Forester Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Icon_hair_assembly_daydream.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Icon_hair_assembly_daydream.png",
+      "order": 1902
     },
     {
       "guid": "7g_8zuBGSl",
@@ -7796,7 +7928,8 @@
       "guid": "k0po-n3Zem",
       "type": "Hair",
       "name": "Beckoning Ruler Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Icon_hair_prince_king.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Icon_hair_prince_king.png",
+      "order": 2004
     },
     {
       "guid": "W4i9e6Vt6d",
@@ -7903,7 +8036,8 @@
       "guid": "8PpkvJHDLx",
       "type": "Hair",
       "name": "Gloating Narcissist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Icon_hair_prince_narcissist.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Icon_hair_prince_narcissist.png",
+      "order": 2002
     },
     {
       "guid": "dfbZt6pAtK",
@@ -7943,7 +8077,8 @@
       "guid": "SkVA_XphTc",
       "type": "Hair",
       "name": "Stretching Lamplighter Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_hair_prince_lightkeeper.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_hair_prince_lightkeeper.png",
+      "order": 2003
     },
     {
       "guid": "0f_f0iJMqN",
@@ -7963,7 +8098,8 @@
       "guid": "eCR2_3ev_B",
       "type": "Cape",
       "name": "Stretching Lamplighter Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Icon_cape_littleprince_3-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Icon_cape_littleprince_3-Morybel-0146.png",
+      "order": 2003
     },
     {
       "guid": "GwDxjRK6RF",
@@ -8003,7 +8139,8 @@
       "guid": "2BhjMSGnvW",
       "type": "Hair",
       "name": "Slouching Soldier Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Icon_hair_prince_shame.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Icon_hair_prince_shame.png",
+      "order": 2001
     },
     {
       "guid": "ZZ21lI_L9o",
@@ -8036,7 +8173,8 @@
       "guid": "CeSrlEJgtF",
       "type": "Cape",
       "name": "Slouching Soldier Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_cape_littleprince_tattered-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_cape_littleprince_tattered-Morybel-0146.png",
+      "order": 2002
     },
     {
       "guid": "Z2HUOvQYHC",
@@ -8082,7 +8220,8 @@
       "guid": "A_Mhqh3fL1",
       "type": "Hair",
       "name": "Sneezing Geographer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_hair_prince_sneezing.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_hair_prince_sneezing.png",
+      "order": 2005
     },
     {
       "guid": "WWW05wPhax",
@@ -8114,7 +8253,8 @@
       "guid": "asWC0_56LS",
       "type": "Cape",
       "name": "Sneezing Geographer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Icon_cape_littleprince4-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Icon_cape_littleprince4-Morybel-0146.png",
+      "order": 2004
     },
     {
       "guid": "cFHGX3dd0C",
@@ -8175,7 +8315,8 @@
       "guid": "Yv8nA1qNwO",
       "type": "Cape",
       "name": "Star Collector Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_cape_littleprince_1-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_cape_littleprince_1-Morybel-0146.png",
+      "order": 2001
     },
     {
       "guid": "ER8iz-GQjz",
@@ -8201,13 +8342,15 @@
       "guid": "yjuL6T_ZOo",
       "type": "Cape",
       "name": "Little Prince Scarf Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_cape_littleprince_scarf-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_cape_littleprince_scarf-Morybel-0146.png",
+      "order": 2005
     },
     {
       "guid": "dncileSEYL",
       "type": "Cape",
       "name": "Little Prince Asteroid Jacket",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_cape_littleprince_asteroid-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_cape_littleprince_asteroid-Morybel-0146.png",
+      "order": 2006
     },
     {
       "guid": "nrNcYrcZXy",
@@ -8243,13 +8386,15 @@
       "guid": "QiLz0mb3x4",
       "type": "Hair",
       "name": "Lively Navigator Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Icon_season_of_flight_hair_3_lively_navigator.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Icon_season_of_flight_hair_3_lively_navigator.png",
+      "order": 2104
     },
     {
       "guid": "DeouBCkpib",
       "type": "Hat",
       "name": "Lively Navigator Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png",
+      "order": 2103
     },
     {
       "guid": "cOMtRe-wEZ",
@@ -8281,7 +8426,8 @@
       "guid": "UjA8CZwZ9i",
       "type": "Cape",
       "name": "Lively Navigator Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png",
+      "order": 2102
     },
     {
       "guid": "ygAEEh8bZ5",
@@ -8313,13 +8459,15 @@
       "guid": "Dt5aDX9Osc",
       "type": "Hat",
       "name": "Light Whisperer Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png",
+      "order": 2101
     },
     {
       "guid": "k_dtQhg8Ii",
       "type": "Hair",
       "name": "Light Whisperer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Icon_season_of_flight_hair_4_light_whisperer.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Icon_season_of_flight_hair_4_light_whisperer.png",
+      "order": 2103
     },
     {
       "guid": "T_syKqfzht",
@@ -8337,7 +8485,8 @@
       "guid": "1IwU-ZZu1g",
       "type": "Cape",
       "name": "Light Whisperer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png",
+      "order": 2101
     },
     {
       "guid": "Y7j3ljNdYp",
@@ -8376,7 +8525,8 @@
       "guid": "dkLuIrNJyl",
       "type": "Hat",
       "name": "Tinkering Chimesmith Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png",
+      "order": 2102
     },
     {
       "guid": "S4y9T9zWU1",
@@ -8400,7 +8550,8 @@
       "guid": "ARYCvmatxR",
       "type": "Hair",
       "name": "Tinkering Chimesmith Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_season_of_flight_hair_2_tinkering_chimesmith.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_season_of_flight_hair_2_tinkering_chimesmith.png",
+      "order": 2102
     },
     {
       "guid": "NhS59J9jxl",
@@ -8480,7 +8631,8 @@
       "guid": "cZfBtj_CYb",
       "type": "Hair",
       "name": "Talented Builder Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_season_of_flight_hair_1_talented_builder.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_season_of_flight_hair_1_talented_builder.png",
+      "order": 2101
     },
     {
       "guid": "LZEuZ8aSr1",
@@ -8522,7 +8674,8 @@
       "guid": "Qqsui-W6Gr",
       "type": "Hair",
       "name": "Anxious Angler Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/SOAbyss-Anxious-Angler-hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/SOAbyss-Anxious-Angler-hat.png",
+      "order": 2203
     },
     {
       "guid": "dlrQtOHGom",
@@ -8554,7 +8707,8 @@
       "guid": "Q0E7lpa192",
       "type": "Cape",
       "name": "Anxious Angler Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Anxious-Angler-cape-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Anxious-Angler-cape-Morybel-0146.png",
+      "order": 2203
     },
     {
       "guid": "xCPJYG39hD",
@@ -8600,7 +8754,8 @@
       "guid": "WwuCeXn8wy",
       "type": "Hair",
       "name": "Ceasing Commodore Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOAbyss-Ceasing-Commodore-hairstyle.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOAbyss-Ceasing-Commodore-hairstyle.png",
+      "order": 2202
     },
     {
       "guid": "aoo9OjQKpZ",
@@ -8633,7 +8788,8 @@
       "guid": "_qGl7VRl35",
       "type": "Cape",
       "name": "Ceasing Commodore Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/SOAbyss-Ceasing-Commodore-cape-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/SOAbyss-Ceasing-Commodore-cape-Morybel-0146.png",
+      "order": 2201
     },
     {
       "guid": "3QYgeQvXXu",
@@ -8712,13 +8868,15 @@
       "guid": "nv2UT24TMx",
       "type": "Cape",
       "name": "Bumbling Boatswain Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Bumbling-Boatswain-Cape-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Bumbling-Boatswain-Cape-Morybel-0146.png",
+      "order": 2204
     },
     {
       "guid": "rBTLwfPTsK",
       "type": "Hat",
       "name": "Bumbling Boatswain Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SOAbyss-Bumbling-Boatswain-hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SOAbyss-Bumbling-Boatswain-hat.png",
+      "order": 2201
     },
     {
       "guid": "uIUpG8NhpS",
@@ -8791,7 +8949,8 @@
       "guid": "J4wT0OrTrf",
       "type": "Cape",
       "name": "Cackling Cannoneer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/SOAbyss-Cackling-Cannoneer-Cape-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/SOAbyss-Cackling-Cannoneer-Cape-Morybel-0146.png",
+      "order": 2202
     },
     {
       "guid": "nvrfT_eHKC",
@@ -8809,7 +8968,8 @@
       "guid": "OuUFDFFKlQ",
       "type": "Hair",
       "name": "Cackling Cannoneer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/SOAbyss-Cackling-Cannoneer-hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/SOAbyss-Cackling-Cannoneer-hair.png",
+      "order": 2201
     },
     {
       "guid": "eaJhgWMfS8",
@@ -8837,7 +8997,8 @@
       "guid": "BtWvDojIDg",
       "type": "Hair",
       "name": "Frantic Stagehand Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/SoPerformance_-_Frantic_Stagehand-hairstyle-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/SoPerformance_-_Frantic_Stagehand-hairstyle-icon-Morybel-0146.png",
+      "order": 2303
     },
     {
       "guid": "LE-qwy-wie",
@@ -8917,7 +9078,8 @@
       "guid": "Z53G2IN-L3",
       "type": "Hair",
       "name": "Forgetful Storyteller Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/SoPerformance_-_Forgetful_Storyteller-hairstyle-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/SoPerformance_-_Forgetful_Storyteller-hairstyle-icon-Morybel-0146.png",
+      "order": 2304
     },
     {
       "guid": "P736zjG-Qh",
@@ -8956,7 +9118,8 @@
       "guid": "KoLgRv-HIL",
       "type": "Cape",
       "name": "Forgetful Storyteller Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SOPerformance_-Forgetful_Storyteller_-_Cape_-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SOPerformance_-Forgetful_Storyteller_-_Cape_-icon-Morybel-0146.png",
+      "order": 2302
     },
     {
       "guid": "PcFVY_0aGF",
@@ -9008,7 +9171,8 @@
       "guid": "q0yCSOGypV",
       "type": "Cape",
       "name": "Mellow Musician Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Morybel-0146-SoPerformance_-_Mellow_Musician-cape-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Morybel-0146-SoPerformance_-_Mellow_Musician-cape-icon.png",
+      "order": 2303
     },
     {
       "guid": "NXnXPRAcrO",
@@ -9040,7 +9204,8 @@
       "guid": "Z6kNG4kwEC",
       "type": "Hair",
       "name": "Mellow Musician Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Morybel-0146-SoPerformance_-_Mellow_Musician-hairstyle-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Morybel-0146-SoPerformance_-_Mellow_Musician-hairstyle-icon.png",
+      "order": 2305
     },
     {
       "guid": "9toLO3MI0O",
@@ -9112,7 +9277,8 @@
       "guid": "zBs2Y94DY2",
       "type": "Hair",
       "name": "Modest Dancer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOPerformance-Modest-Dancer-hairstyle-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOPerformance-Modest-Dancer-hairstyle-icon.png",
+      "order": 2302
     },
     {
       "guid": "vsbQqT8eYs",
@@ -9127,7 +9293,8 @@
       "guid": "JmM2DNyEcO",
       "type": "Hair",
       "name": "Jellyfish Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOShattering-Light-hairstyle-royal-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOShattering-Light-hairstyle-royal-Icon-Morybel-0146.png",
+      "order": 2403
     },
     {
       "guid": "M0Y-0b8NQT",
@@ -9145,13 +9312,15 @@
       "guid": "yz2xNFAX1w",
       "type": "Hat",
       "name": "Jellyfish Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/SOShattering-Light-Hair-accessory-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/SOShattering-Light-Hair-accessory-Icon-Morybel-0146.png",
+      "order": 2402
     },
     {
       "guid": "9i_q3w0Ar0",
       "type": "Cape",
       "name": "Jellyfish Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SOShattering-Light-Cape-Jellyfish-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SOShattering-Light-Cape-Jellyfish-Icon-Morybel-0146.png",
+      "order": 2404
     },
     {
       "guid": "WFZROEmMhb",
@@ -9189,13 +9358,15 @@
       "guid": "nhgIi8TLn0",
       "type": "Hair",
       "name": "Manta Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/SOShattering-Light-Hairstyle-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/SOShattering-Light-Hairstyle-Icon-Morybel-0146.png",
+      "order": 2402
     },
     {
       "guid": "SH89J0uzGJ",
       "type": "Cape",
       "name": "Manta Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/SOShattering-Light-Cape-manta-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/SOShattering-Light-Cape-manta-Icon-Morybel-0146.png",
+      "order": 2403
     },
     {
       "guid": "ghtp-3LOnd",
@@ -9227,7 +9398,8 @@
       "guid": "gn5YaEC0t8",
       "type": "Hat",
       "name": "Darkness Plant Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/SOShattering-Dark-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/SOShattering-Dark-Hair-Icon-Morybel-0146.png",
+      "order": 2401
     },
     {
       "guid": "CDhsAxgt-H",
@@ -9271,7 +9443,8 @@
       "guid": "lNfpmsYUYk",
       "type": "Cape",
       "name": "Darkness Plant Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SOShattering-Dark-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SOShattering-Dark-Cape-Icon-Morybel-0146.png",
+      "order": 2401
     },
     {
       "guid": "U2qFIy_QVc",
@@ -9309,7 +9482,8 @@
       "guid": "TsL-GHL_RI",
       "type": "Hair",
       "name": "Dragon Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOShattering-Dark-Dragon-hairstyle-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOShattering-Dark-Dragon-hairstyle-Icon-Morybel-0146.png",
+      "order": 2401
     },
     {
       "guid": "mecgn4HFLj",
@@ -9363,7 +9537,8 @@
       "guid": "VKeEo_F_7G",
       "type": "Hair",
       "name": "Running Wayfarer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Running-Wayfarer-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Running-Wayfarer-Hair-Icon-Morybel-0146.png",
+      "order": 2502
     },
     {
       "guid": "D0ERFYJm23",
@@ -9396,7 +9571,8 @@
       "guid": "Xor6jAu_Ns",
       "type": "Cape",
       "name": "Running Wayfarer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/SoAurora-Running-Wayfarer-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/SoAurora-Running-Wayfarer-Cape-Icon-Morybel-0146.png",
+      "order": 2502
     },
     {
       "guid": "tL1MtYN1eq",
@@ -9457,7 +9633,8 @@
       "guid": "VqtNIgq8G0",
       "type": "Hair",
       "name": "Mindful Miner Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/SoAurora-Mindful-Miner-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/SoAurora-Mindful-Miner-Hair-Icon-Morybel-0146.png",
+      "order": 2504
     },
     {
       "guid": "srhC02hNn2",
@@ -9482,7 +9659,8 @@
       "guid": "BCBI4KXEMD",
       "type": "Cape",
       "name": "Mindful Miner Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoAurora-Mindful-Miner-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoAurora-Mindful-Miner-Cape-Icon-Morybel-0146.png",
+      "order": 2504
     },
     {
       "guid": "9OuUG5PkCa",
@@ -9535,7 +9713,8 @@
       "guid": "ndKNh6XHP4",
       "type": "Hair",
       "name": "Warrior of Love Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/SoAurora-Warrior-of-Love-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/SoAurora-Warrior-of-Love-Hair-Icon-Morybel-0146.png",
+      "order": 2503
     },
     {
       "guid": "N_a1zpGl8Q",
@@ -9574,7 +9753,8 @@
       "guid": "rozdAD65kd",
       "type": "Cape",
       "name": "Warrior of Love Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SoAurora-Warrior-of-Love-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SoAurora-Warrior-of-Love-Cape-Icon-Morybel-0146.png",
+      "order": 2503
     },
     {
       "guid": "rltwyawKJ-",
@@ -9642,7 +9822,8 @@
       "guid": "-RfQBaoydI",
       "type": "Hair",
       "name": "Seed of Hope Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SoAurora-Seed-of-Hope-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SoAurora-Seed-of-Hope-Hair-Icon-Morybel-0146.png",
+      "order": 2501
     },
     {
       "guid": "fkcBt-ngs9",
@@ -9660,7 +9841,8 @@
       "guid": "d18Zpgi-f_",
       "type": "Cape",
       "name": "Seed of Hope Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoAurora-Seed-of-Hope-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoAurora-Seed-of-Hope-Cape-Icon-Morybel-0146.png",
+      "order": 2501
     },
     {
       "guid": "YcidiKgDRm",
@@ -9674,13 +9856,15 @@
       "guid": "i0BYuPKZYe",
       "type": "Hat",
       "name": "Tiara We Can Touch",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png",
+      "order": 2501
     },
     {
       "guid": "wZGUtak1mb",
       "type": "Hair",
       "name": "AURORA Runaway Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Aurora-Runaway-Hair-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Aurora-Runaway-Hair-Morybel-0146.png",
+      "order": 2505
     },
     {
       "guid": "9kbdAvVwR4",
@@ -9706,13 +9890,15 @@
       "guid": "JFV-ZmGQiu",
       "type": "Cape",
       "name": "Giving In Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Giving-In-Cape-IAP-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Giving-In-Cape-IAP-Icon-Morybel-0146.png",
+      "order": 2507
     },
     {
       "guid": "EQYKoHE95s",
       "type": "Cape",
       "name": "Wings of AURORA",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAURORA-Wings-of-AURORA-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAURORA-Wings-of-AURORA-Cape-Icon-Morybel-0146.png",
+      "order": 2505
     },
     // #endregion
     // #endregion
@@ -9755,7 +9941,8 @@
       "guid": "3Ja8-MaUke",
       "type": "Hair",
       "name": "Bereft Veteran Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoRemembrance-Bereft-Veteran-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoRemembrance-Bereft-Veteran-Hair-Icon-Morybel-0146.png",
+      "order": 2602
     },
     {
       "guid": "FIaYs2Unva",
@@ -9775,7 +9962,8 @@
       "guid": "aVXNBBz0Qs",
       "type": "Cape",
       "name": "Bereft Veteran Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SoRemembrance-Bereft-Veteran-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SoRemembrance-Bereft-Veteran-Cape-Icon-Morybel-0146.png",
+      "order": 2601
     },
     {
       "guid": "UfkQ77aqyH",
@@ -9827,7 +10015,8 @@
       "guid": "CfVWayXiTh",
       "type": "Hair",
       "name": "Pleading Child Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SoRemembrance-Pleading-Child-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SoRemembrance-Pleading-Child-Hair-Icon-Morybel-0146.png",
+      "order": 2601
     },
     {
       "guid": "LWXpz1a8d_",
@@ -9887,7 +10076,8 @@
       "guid": "XOnAJpU3ZZ",
       "type": "Hair",
       "name": "Tiptoeing Tea-Brewer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SoRemembrance-Tiptoeing-Tea-Brewer-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SoRemembrance-Tiptoeing-Tea-Brewer-Hair-Icon-Morybel-0146.png",
+      "order": 2603
     },
     {
       "guid": "ilnoN5oAS7",
@@ -9920,7 +10110,8 @@
       "guid": "XimZaRVH06",
       "type": "Cape",
       "name": "Tiptoeing Tea-Brewer Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Icon-Morybel-0146.png",
+      "order": 2603
     },
     {
       "guid": "vetrUtBCCZ",
@@ -9978,7 +10169,8 @@
       "guid": "IA0nV9vsgZ",
       "type": "Cape",
       "name": "Wounded Warrior Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/SoRemembrance-Wounded-Warrior-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/SoRemembrance-Wounded-Warrior-Cape-Icon-Morybel-0146.png",
+      "order": 2602
     },
     {
       "guid": "wXaEysCEQ2",
@@ -10000,25 +10192,29 @@
       "guid": "LgDGqWw-NO",
       "type": "Hair",
       "name": "Days of Fortune Lion Headdress",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_new_years_headpiece.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_new_years_headpiece.png",
+      "order": 303
     },
     {
       "guid": "aRgiKoKavp",
       "type": "Hat",
       "name": "Days of Fortune Orange",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Icon_hair_event_orange_headpiece.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Icon_hair_event_orange_headpiece.png",
+      "order": 11101
     },
     {
       "guid": "udspGJd38_",
-      "type": "Hat",
+      "type": "Hair",
       "name": "Days of Fortune Wool Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Icon_hair_event_wool_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Icon_hair_event_wool_hat.png",
+      "order": 301
     },
     {
       "guid": "o8CAzM0x1c",
       "type": "Cape",
       "name": "Days of Fortune Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Icon_cape_fortune-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Icon_cape_fortune-Morybel-0146.png",
+      "order": 10001
     },
     {
       "guid": "HnCWgj7aoA",
@@ -10031,7 +10227,8 @@
       "guid": "rNDDbcjS4G",
       "type": "Hair",
       "name": "Days of Fortune Bun Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Icon_hair_event_high_buns.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Icon_hair_event_high_buns.png",
+      "order": 302
     },
     {
       "guid": "c1YroXxA9Z",
@@ -10044,19 +10241,22 @@
       "guid": "OjSfpOgFoR",
       "type": "Hat",
       "name": "Days of Fortune Fish Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days_of_Fortune_-_Fish_accessory_Icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days_of_Fortune_-_Fish_accessory_Icon.png",
+      "order": 11301
     },
     {
       "guid": "mzF6ZaHa1s",
       "type": "Cape",
       "name": "Days of Fortune Fish Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Days_of_Fortune_-_Fish_cape_icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Days_of_Fortune_-_Fish_cape_icon-Morybel-0146.png",
+      "order": 10002
     },
     {
       "guid": "A26TJj3cSl",
       "type": "Hair",
       "name": "Days of Fortune Fish Hood",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Fortune_-_Fish_head_iconl.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Fortune_-_Fish_head_iconl.png",
+      "order": 501
     },
     {
       "guid": "ADJiva5H2Z",
@@ -10169,7 +10369,8 @@
       "guid": "VBR5HI2-dU",
       "type": "Hat",
       "name": "Days of Love Flower Crown",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Days_of_Love_-_Flower_head_accessory-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Days_of_Love_-_Flower_head_accessory-icon.png",
+      "order": 10201
     },
     {
       "guid": "EZ_nfEHgOx",
@@ -10250,13 +10451,15 @@
       "guid": "wFSLA6un_V",
       "type": "Cape",
       "name": "Pink Bloom Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_cape_bloom-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_cape_bloom-Morybel-0146.png",
+      "order": 10101
     },
     {
       "guid": "uKLD12UrPr",
       "type": "Hair",
       "name": "Bloom Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Icon_hair_bloom.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Icon_hair_bloom.png",
+      "order": 601
     },
     {
       "guid": "sTIyha_lg1",
@@ -10280,7 +10483,8 @@
       "guid": "89R9XC2DIg",
       "type": "Cape",
       "name": "Purple Bloom Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Purple_Bloom_Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Purple_Bloom_Cape-Icon-Morybel-0146.png",
+      "order": 10103
     },
     {
       "guid": "gNU9s-K-M1",
@@ -10304,7 +10508,8 @@
       "guid": "YTBtAMps8R",
       "type": "Cape",
       "name": "Red Bloom Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Days-of-Bloom-Tulip-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Days-of-Bloom-Tulip-Cape-Icon-Morybel-0146.png",
+      "order": 10102
     },
     {
       "guid": "LRLEa6LYVP",
@@ -10337,7 +10542,8 @@
       "guid": "YUqENRc8rQ",
       "type": "Cape",
       "name": "Earth Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Icon_cape_earth.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Icon_cape_earth.png",
+      "order": 10201
     },
     {
       "guid": "KZ6aQtgCqt",
@@ -10350,13 +10556,15 @@
       "guid": "MjA9EoD-pe",
       "type": "Cape",
       "name": "Ocean Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png",
+      "order": 10202
     },
     {
       "guid": "znjZlpHSt4",
       "type": "Cape",
       "name": "Nature Turtle Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Nature-2022-turtle-cape-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Nature-2022-turtle-cape-icon-Morybel-0146.png",
+      "order": 10203
     },
     {
       "guid": "_Y-80G-t_2",
@@ -10369,7 +10577,8 @@
       "guid": "OvPPfhXnwW",
       "type": "Hat",
       "name": "Nature Coral Crown",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Nature-2022-Coral-Hair-accessory-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Nature-2022-Coral-Hair-accessory-Morybel-0146.png",
+      "order": 10401
     },
     {
       "guid": "hbH9xhhETJ",
@@ -10389,13 +10598,15 @@
       "guid": "4XMYa4Wj-M",
       "type": "Hat",
       "name": "Rainbow Braid",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png",
+      "order": 10103
     },
     {
       "guid": "BUTwFt6PGm",
       "type": "Cape",
       "name": "Rainbow Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Icon_cape_rainbow-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Icon_cape_rainbow-Morybel-0146.png",
+      "order": 10301
     },
     {
       "guid": "EJok2mGotV",
@@ -10479,31 +10690,36 @@
       "guid": "KpS-2FdasB",
       "type": "Hat",
       "name": "Rainbow Hair Flower",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Icon_hair_rainbow_flower.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Icon_hair_rainbow_flower.png",
+      "order": 10101
     },
     {
       "guid": "cMLcvRtjoh",
       "type": "Hair",
       "name": "Rainbow Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_rainbow_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_rainbow_hat.png",
+      "order": 701
     },
     {
       "guid": "gNWmRUkpFo",
       "type": "Hat",
       "name": "Double Rainbow Flower",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory-icon-Morybel-0146.png",
+      "order": 10102
     },
     {
       "guid": "f-X2dDeB9w",
       "type": "Hat",
       "name": "Rainbow Earrings",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png",
+      "order": 10104
     },
     {
       "guid": "j51xlBBIZX",
       "type": "Hat",
       "name": "Rainbow Headphones",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png",
+      "order": 10105
     },
     {
       "guid": "0rrPORrk7O",
@@ -10530,17 +10746,19 @@
       "guid": "lDm3gx6ZkS",
       "type": "Hat",
       "name": "1 Year Sky Anniversary Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png",
+      "order": 10701
     },
     {
       "guid": "uH4Rjnkh74",
       "type": "Hat",
       "name": "2 Year Sky Anniversary Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png",
+      "order": 10702
     },
     {
       "guid": "ktsAnnjGgb",
-      "type": "Hat",
+      "type": "Prop",
       "name": "Sky Anniversary Pennants",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_prop_days_of_sky_pennants.png"
     },
@@ -10602,7 +10820,8 @@
       "guid": "svEXRvagb3",
       "type": "Hat",
       "name": "3 Year Sky Anniversary Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png",
+      "order": 10703
     },
     {
       "guid": "9jMnZ23AYP",
@@ -10641,38 +10860,34 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Days-of-Sky-2022-canon-icon-Morybel-0146.png"
     },
     // #endregion
-    // #region Lazy Days
-    {
-      "guid": "ywWEH9D5_m",
-      "type": "Hat",
-      "name": "Bunny Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png"
-    },
-    // #endregion
     // #region Days of Mischief
     {
       "guid": "4D33RG4tNB",
       "type": "Cape",
       "name": "Spooky Bat Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Icon_cape_bat-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Icon_cape_bat-Morybel-0146.png",
+      "order": 10401
     },
     {
       "guid": "Dlp71JdHg2",
       "type": "Hair",
       "name": "Hungry Pumpkin Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Icon_hair_mischief_pumpkin.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Icon_hair_mischief_pumpkin.png",
+      "order": 101
     },
     {
       "guid": "cMNnwUbQed",
-      "type": "Hat",
+      "type": "Hair",
       "name": "Mischief Witch Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Icon_hair_mischief_witch_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Icon_hair_mischief_witch_hat.png",
+      "order": 102
     },
     {
       "guid": "gEGMIX0DMp",
       "type": "Cape",
       "name": "Mischief Web Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_cape_spider-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_cape_spider-Morybel-0146.png",
+      "order": 10402
     },
     {
       "guid": "VFeHTgImrJ",
@@ -10702,13 +10917,15 @@
       "guid": "-HtIAPjYsa",
       "type": "Cape",
       "name": "Mischief Withered Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_leaf_cape-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_leaf_cape-Morybel-0146.png",
+      "order": 10403
     },
     {
       "guid": "si_8YhNtmr",
       "type": "Hair",
       "name": "Mischief Witch Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_2021_mischief_long_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_2021_mischief_long_hair.png",
+      "order": 104
     },
     {
       "guid": "nMt5KsLO6Y",
@@ -10720,7 +10937,8 @@
       "guid": "ARZC1Eg2jx",
       "type": "Hair",
       "name": "Mischief Spider Quiff",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Icon_2021_mischief_iap_hair.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Icon_2021_mischief_iap_hair.png",
+      "order": 103
     },
     {
       "guid": "CZ4aNN-JZV",
@@ -10733,13 +10951,15 @@
       "guid": "evuvua13dC",
       "type": "Hat",
       "name": "Mischief Withered Antlers",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png",
+      "order": 10601
     },
     {
       "guid": "MnzYzRK9sY",
       "type": "Hair",
       "name": "Mischief Tufted Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Days-of-Mischief-Cat-Hair-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Days-of-Mischief-Cat-Hair-Icon-Morybel-0146.png",
+      "order": 105
     },
     {
       "guid": "QeNQhxg3mv",
@@ -10752,7 +10972,8 @@
       "guid": "pG1_D61KMT",
       "type": "Cape",
       "name": "Cat Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Cat-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Cat-Cape-Icon-Morybel-0146.png",
+      "order": 10404
     },
     {
       "guid": "nz4W7amLch",
@@ -10766,25 +10987,29 @@
       "guid": "z2M4HqpR9C",
       "type": "Hair",
       "name": "Feast Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Icon_hair_feast_santa_hat.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Icon_hair_feast_santa_hat.png",
+      "order": 201
     },
     {
       "guid": "rQQmknOn9a",
       "type": "Hat",
       "name": "Days of Feast Horns",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Icon_hair_feast_antlers.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Icon_hair_feast_antlers.png",
+      "order": 10901
     },
     {
       "guid": "gnC7YQCAug",
       "type": "Cape",
       "name": "Snowflake Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Icon_cape_snowflake-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Icon_cape_snowflake-Morybel-0146.png",
+      "order": 10503
     },
     {
       "guid": "GoESQXsRjl",
       "type": "Cape",
       "name": "Days of Feast Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Icon_cape_santa-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Icon_cape_santa-Morybel-0146.png",
+      "order": 10501
     },
     {
       "guid": "oHChsGl8AZ",
@@ -10839,7 +11064,8 @@
       "guid": "hZr0q9nYbz",
       "type": "Hair",
       "name": "Winter Feast Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Days_of_Feast_Whool_hat_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Days_of_Feast_Whool_hat_icon.png",
+      "order": 202
     },
     {
       "guid": "c0_xJdJKvM",
@@ -10876,13 +11102,15 @@
       "guid": "VZyiD3Wmtp",
       "type": "Hat",
       "name": "Snowflake Hair Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Days_of_Feast_Snowflake_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Days_of_Feast_Snowflake_icon.png",
+      "order": 11001
     },
     {
       "guid": "B3YJxxJKJX",
       "type": "Cape",
       "name": "Winter Ancestor Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Days_of_Feast_Elder_Cape_icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Days_of_Feast_Elder_Cape_icon-Morybel-0146.png",
+      "order": 10502
     },
     {
       "guid": "9N8OVpagTM",
@@ -10913,7 +11141,8 @@
       "guid": "Nep9ocMylo",
       "type": "Cape",
       "name": "Cozy Hermit Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Days-of-Feast-Yeti-Fur-Cape-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Days-of-Feast-Yeti-Fur-Cape-icon-Morybel-0146.png",
+      "order": 10504
     },
     // #endregion
 
@@ -10922,7 +11151,8 @@
       "guid": "cM5zZKzBkO",
       "type": "Hat",
       "name": "Flower Hair Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png",
+      "order": 10001
     },
     // #endregion
     // #region Days of Summer Lights (2020)
@@ -10958,7 +11188,8 @@
       "guid": "E_yfCZYU5C",
       "type": "Hat",
       "name": "Summer Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_hair_summer_hat_headpiece.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_hair_summer_hat_headpiece.png",
+      "order": 10501
     },
     {
       "guid": "bBQVuucGUm",
@@ -10970,7 +11201,8 @@
       "guid": "eruG9WiyJZ",
       "type": "Hat",
       "name": "Days of Summer Shell Hairpin",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_hair_summer_shell_pin_headpiece.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_hair_summer_shell_pin_headpiece.png",
+      "order": 10301
     },
     // #endregion
     // #region Kizuna AI Collab (2022)
@@ -10978,19 +11210,22 @@
       "guid": "FLMn1Hib7k",
       "type": "Hair",
       "name": "Kizuna AI Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Kizuna-AI-Hairstyle-Icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Kizuna-AI-Hairstyle-Icon.png",
+      "order": 401
     },
     {
       "guid": "daH57TClK7",
       "type": "Hat",
       "name": "Kizuna AI Bow",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Kizuna-AI-Hair-Accessory-Icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Kizuna-AI-Hair-Accessory-Icon.png",
+      "order": 11401
     },
     {
       "guid": "u7q3xg2y55",
       "type": "Cape",
       "name": "Kizuna AI Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Kizuna-AI-cape-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Kizuna-AI-cape-icon-Morybel-0146.png",
+      "order": 10601
     },
     // #endregion
     // #region Days of Sunlight (2022)
@@ -11021,25 +11256,73 @@
     },
     // #endregion
 
+    // #region Harmony Hall
+    {
+      "guid": "jMLNrp_Yw8",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "pTJsrRigHt",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "SrABR87rf4",
+      "type": "Music",
+      "name": "Music Sheet #HH1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "Mh5ipZClSq",
+      "type": "Music",
+      "name": "Music Sheet #HH2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "WDyyhzD1Dk",
+      "type": "Music",
+      "name": "Music Sheet #HH3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "MFDYVKkfuf",
+      "type": "Music",
+      "name": "Music Sheet #HH4",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "q6MtlTHWMK",
+      "type": "Hat",
+      "name": "Musical Hairpin",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/SOPerformance-hair-accessory-icon-Morybel-0146.png",
+      "order": 10801
+    },
+    // #endregion
 
     // #region Permanent IAP
     {
       "guid": "Z5JkGSWLbw",
       "type": "Cape",
       "name": "Orange Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Icon_cape_orange-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Icon_cape_orange-Morybel-0146.png",
+      "order": 4
     },
     {
       "guid": "DI0RLfo9Sj",
       "type": "Cape",
       "name": "Founder's Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Icon_cape_tgc_b-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Icon_cape_tgc_b-Morybel-0146.png",
+      "order": 3
     },
     {
       "guid": "xaX_sfWwKV",
       "type": "Cape",
       "name": "Beta Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Beta-cape-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Beta-cape-Morybel-0146.png",
+      "order": 2
     },
     {
       "guid": "1xIwQnxHV-",
@@ -11067,26 +11350,28 @@
     },
     // #endregion
 
-
     // #region Platform exclusives
     // #region Switch
     {
       "guid": "KtlqKC7whS",
       "type": "Cape",
-      "name": "Nintendo Blue Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Icon_cape_nintendo_blue-Morybel-0146.png"
+      "name": "Nintendo Blue Switch Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Icon_cape_nintendo_blue-Morybel-0146.png",
+      "order": 10702
     },
     {
       "guid": "4c9HLTfREP",
       "type": "Cape",
-      "name": "Nintendo Red Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Icon_cape_nintendo_red-Morybel-0146.png"
+      "name": "Nintendo Red Switch Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Icon_cape_nintendo_red-Morybel-0146.png",
+      "order": 10701
     },
     {
       "guid": "MHArTLwxyq",
       "type": "Hair",
       "name": "Nintendo Elf Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Icon_hair_Nintendo_elf.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Icon_hair_Nintendo_elf.png",
+      "order": 801
     },
     {
       "guid": "BDfLuCSmaF",
@@ -11107,13 +11392,15 @@
       "guid": "6Nac-p14-9",
       "type": "Cape",
       "name": "Journey Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png",
+      "order": 10801
     },
     {
       "guid": "8P8dL_Zp8q",
       "type": "Hair",
       "name": "Journey Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png",
+      "order": 901
     },
     // #endregion
     // #endregion

@@ -14182,5 +14182,48 @@
       "c": 70
     },
     // #endregion
+    // #region Harmony Hall Grand Opening
+    {
+      "guid": "WoT0pqpHnJ",
+      "item": "jMLNrp_Yw8",
+      "c": 5,
+      "nw": "LBfqKVtB55",
+      "n": "K_PPpV5u3c",
+      "ne": "Tdq4OT4v_3"
+    },
+    {
+      "guid": "LBfqKVtB55",
+      "item": "SrABR87rf4",
+      "c": 10
+    },
+    {
+      "guid": "Tdq4OT4v_3",
+      "item": "Mh5ipZClSq",
+      "c": 10
+    },
+    {
+      "guid": "K_PPpV5u3c",
+      "item": "pTJsrRigHt",
+      "c": 5,
+      "nw": "GEg7m_wECO",
+      "n": "DyGD4G_4UD",
+      "ne": "emAAtdF3Rt"
+    },
+    {
+      "guid": "GEg7m_wECO",
+      "item": "WDyyhzD1Dk",
+      "c": 10
+    },
+    {
+      "guid": "emAAtdF3Rt",
+      "item": "MFDYVKkfuf",
+      "c": 10
+    },
+    {
+      "guid": "DyGD4G_4UD",
+      "item": "q6MtlTHWMK",
+      "c": 50
+    },
+    // #endregion
   ]
 }
