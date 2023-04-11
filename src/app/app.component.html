@@ -4,6 +4,9 @@
 
 <ng-container *ngIf="ready">
   <app-menu></app-menu>
+  <div *ngIf="dataLoss" class="data-loss">
+    <div class="data-loss-inner">Data was changed in another tab. Please refresh this tab to avoid losing changes!</div>
+  </div>
   <div class="content">
     <router-outlet></router-outlet>
     <app-status-bar></app-status-bar>

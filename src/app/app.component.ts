@@ -10,6 +10,7 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent {
   ready = false;
+  dataLoss = false;
 
   constructor(
     private readonly _dataService: DataService,
@@ -18,6 +19,10 @@ export class AppComponent {
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icons.svg'));
+
+    window.addEventListener('storage', () => {
+      this.dataLoss = true;
+    });
   }
 
   onData(): void {
