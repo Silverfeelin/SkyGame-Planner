@@ -8262,6 +8262,18 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
+    {
+      "guid": "0SEXPk-k62",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "96EMnX8wn_",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
     // #endregion
     // #region Star Collector
     {
