@@ -412,6 +412,12 @@
       "name": "Remembrance Guide",
       "tree": "fchA5IwiRm"
     },
+    {
+      "guid": "_ZYvHXY8HB",
+      "type": "Guide",
+      "name": "Passage Guide",
+      "tree": "LrH-L-oKn1"
+    },
     // #endregion
 
     // #region Gratitude
@@ -924,6 +930,32 @@
       "type": "Season",
       "name": "Wounded Warrior",
       "tree": "Cze45b5NuK"
+    },
+    // #endregion
+    // #region Passage
+    {
+      "guid": "udBbDIhZtD",
+      "type": "Season",
+      "name": "Oddball Outcast",
+      "tree": "77QNb1vN1h"
+    },
+    {
+      "guid": "noQs_dBSQu",
+      "type": "Season",
+      "name": "Tumbling Troublemaker",
+      "tree": "6QPtn4qXTG"
+    },
+    {
+      "guid": "-BIU0YAs1Q",
+      "type": "Season",
+      "name": "Melancholy Mope",
+      "tree": "bZU_1hDxB9"
+    },
+    {
+      "guid": "IKkPcAF07c",
+      "type": "Season",
+      "name": "Overactive Overachiever",
+      "tree": "qdWXiEhm46"
     },
     // #endregion
 

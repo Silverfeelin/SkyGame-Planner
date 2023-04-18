@@ -3296,7 +3296,7 @@
       "item": "Gp3p9OdxMA",
       "sh": 1
     },
-    // Remembrance Guide
+    // #region Remembrance Guide
     {
       "guid": "N8gfMfr2VV",
       "item": "c0KdEygWIK",
@@ -3462,6 +3462,77 @@
       "item": "x-JyLNAyBY",
       "sh": 2
     },
+    // #endregion
+    // #region Passage Guide
+    {
+      "guid": "dSSO_hBPjf",
+      "item": "s_2ZN-bnbP",
+      "n": "dBj9hABf3E",
+      "ne": "lRjQukmKjd"
+    },
+    {
+      "guid": "lRjQukmKjd",
+      "item": "SSNqKMOI2E",
+      "n": "WcvmuMq3K-"
+    },
+    {
+      "guid": "WcvmuMq3K-",
+      "item": "8Kf_oq9FWL",
+      "sh": 2,
+      "n": "GIBxV4HFwm"
+    },
+    {
+      "guid": "GIBxV4HFwm",
+      "item": "HYdEzP1Gat",
+      "sh": 2
+    },
+    {
+      "guid": "dBj9hABf3E",
+      "item": "wUo9ZKVEpq",
+      "nw": "flX8ILZRu5",
+      "n": "BigUX_n0P2"
+    },
+    {
+      "guid": "flX8ILZRu5",
+      "item": "c53WkGR334"
+    },
+    {
+      "guid": "BigUX_n0P2",
+      "item": "WUiJnkBm0n",
+      "nw": "Cia1Bxeivk",
+      "n": "TVMrH02Bgx"
+    },
+    {
+      "guid": "Cia1Bxeivk",
+      "item": "kA-N6gBSIG",
+      "c": 48
+    },
+    {
+      "guid": "TVMrH02Bgx",
+      "item": "gM93l96JzS",
+      "nw": "HCPPxPsnJT",
+      "ne": "WLiLVNkrNV",
+      "n": "u5QFXViCSA"
+    },
+    {
+      "guid": "HCPPxPsnJT",
+      "item": "0FSzrtLVBr"
+    },
+    {
+      "guid": "WLiLVNkrNV",
+      "item": "oM9Xecb_kS",
+      "c": 44
+    },
+    {
+      "guid": "u5QFXViCSA",
+      "item": "YoluGOPKvu",
+      "n": "xBoxl_xrLg"
+    },
+    {
+      "guid": "xBoxl_xrLg",
+      "item": "86bhs1nb7d"
+    },
+    // #endregion
     // #endregion
 
     // #region Gratitude
@@ -13309,6 +13380,248 @@
     {
       "guid": "hI2s9jDb9T",
       "item": "wXaEysCEQ2",
+      "sc": 3
+    },
+    // #endregion
+    // #region Passage
+    // Oddball Outcast
+    {
+      "guid": "dUbS4mxFs5",
+      "item": "q1lSh8QVkN",
+      "nw": "5KOMevSZjw",
+      "n": "XqsBj201DT"
+    },
+    {
+      "guid": "5KOMevSZjw",
+      "item": "WMCReW0LQD"
+    },
+    {
+      "guid": "XqsBj201DT",
+      "item": "uE2-9qAMKP",
+      "sc": 14,
+      "nw": "zDu6q9PZ16",
+      "n": "eyXoCbP5dp"
+    },
+    {
+      "guid": "zDu6q9PZ16",
+      "item": "vCidIP_ecS"
+    },
+    {
+      "guid": "eyXoCbP5dp",
+      "item": "ZnoeUymwNI",
+      "sc": 18,
+      "nw": "ctOoLMoqj2",
+      "n": "Q38-kiYT7-"
+    },
+    {
+      "guid": "ctOoLMoqj2",
+      "item": "HbhTdZAnuN"
+    },
+    {
+      "guid": "Q38-kiYT7-",
+      "item": "kQ7Yvu-g4k",
+      "sc": 24,
+      "nw": "OnFs178Wku",
+      "n": "2zrqG6cBs3"
+    },
+    {
+      "guid": "OnFs178Wku",
+      "item": "piGSeoIPd_"
+    },
+    {
+      "guid": "2zrqG6cBs3",
+      "item": "Py6sIw6EvE",
+      "sc": 32,
+      "nw": "B704wt7Ums",
+      "n": "FSfFboevg3"
+    },
+    {
+      "guid": "B704wt7Ums",
+      "item": "yeajwByRBg"
+    },
+    {
+      "guid": "FSfFboevg3",
+      "item": "TPVlNAKn3p",
+      "sc": 3
+    },
+    // Tumbling Troublemaker
+    {
+      "guid": "R1hBDJIu16",
+      "item": "FEzWv1XXku",
+      "nw": "cIfMgIqH9x",
+      "n": "u2psXUE0cn"
+    },
+    {
+      "guid": "cIfMgIqH9x",
+      "item": "DjPVeBb0wn"
+    },
+    {
+      "guid": "u2psXUE0cn",
+      "item": "jPw-NMJBwY",
+      "sc": 8,
+      "nw": "RW0omjIQLq",
+      "n": "pJb1Nr3khE"
+    },
+    {
+      "guid": "RW0omjIQLq",
+      "item": "rbV0FWIENC"
+    },
+    {
+      "guid": "pJb1Nr3khE",
+      "item": "IxNpykF933",
+      "sc": 18,
+      "nw": "9DFjBFM9e8",
+      "n": "3GbtED2nJe"
+    },
+    {
+      "guid": "9DFjBFM9e8",
+      "item": "Gnl7Kf2xWO"
+    },
+    {
+      "guid": "3GbtED2nJe",
+      "item": "_FpZ5LnbhK",
+      "sc": 28,
+      "nw": "J8lchvifPb",
+      "n": "E5buEn19Yl"
+    },
+    {
+      "guid": "J8lchvifPb",
+      "item": "mfA3I1hs5x"
+    },
+    {
+      "guid": "E5buEn19Yl",
+      "item": "0K5eWw2_Tq",
+      "sc": 32,
+      "nw": "_1tAp0B45P",
+      "n": "48y1nj5IV1"
+    },
+    {
+      "guid": "_1tAp0B45P",
+      "item": "Gz6U0Ahkg5"
+    },
+    {
+      "guid": "48y1nj5IV1",
+      "item": "23CqDqp6fd",
+      "sc": 3
+    },
+    // Melancholy Mope
+    {
+      "guid": "wjswIwiyKF",
+      "item": "Z9YH4KCszX",
+      "nw": "qkncbPXeNv",
+      "n": "Wgvn-yvP06"
+    },
+    {
+      "guid": "qkncbPXeNv",
+      "item": "ozw69gqvhQ"
+    },
+    {
+      "guid": "Wgvn-yvP06",
+      "item": "LNt-MN76Pf",
+      "sc": 6,
+      "nw": "8yE_-XcvG7",
+      "n": "U-aVBVuvsq"
+    },
+    {
+      "guid": "8yE_-XcvG7",
+      "item": "leQJ72gAGH"
+    },
+    {
+      "guid": "U-aVBVuvsq",
+      "item": "gCyH_EJYEW",
+      "sc": 18,
+      "nw": "YALq6maM6b",
+      "n": "3k6hN7fMjl"
+    },
+    {
+      "guid": "YALq6maM6b",
+      "item": "Mz9HHVc0_f"
+    },
+    {
+      "guid": "3k6hN7fMjl",
+      "item": "AZb8ZxAeDb",
+      "sc": 26,
+      "nw": "F9gHUsr4LF",
+      "n": "Dz6H0yRGVT"
+    },
+    {
+      "guid": "F9gHUsr4LF",
+      "item": "9v4_Si1oJn"
+    },
+    {
+      "guid": "Dz6H0yRGVT",
+      "item": "aaYJbWm6oV",
+      "sc": 28,
+      "nw": "I-xyPPj7Iv",
+      "n": "DCprobzBUp"
+    },
+    {
+      "guid": "I-xyPPj7Iv",
+      "item": "_gwNMhGG0C"
+    },
+    {
+      "guid": "DCprobzBUp",
+      "item": "3JT5fm0Cy2",
+      "sc": 3
+    },
+    // Overactive Overachiever
+    {
+      "guid": "caUGXMJb3Z",
+      "item": "7aW4_cS3Ob",
+      "nw": "Czc9aNddzX",
+      "n": "jcEka4RBcR"
+    },
+    {
+      "guid": "Czc9aNddzX",
+      "item": "nRbYecsrpX"
+    },
+    {
+      "guid": "jcEka4RBcR",
+      "item": "34YUB3swNm",
+      "sc": 14,
+      "nw": "g2OQrkHibV",
+      "n": "hX31WFiuHY"
+    },
+    {
+      "guid": "g2OQrkHibV",
+      "item": "kk4P3a0tb_"
+    },
+    {
+      "guid": "hX31WFiuHY",
+      "item": "BwA9_RCi47",
+      "sc": 22,
+      "nw": "8pOQ5gvUub",
+      "n": "pOjomtU0J4"
+    },
+    {
+      "guid": "8pOQ5gvUub",
+      "item": "bs7ZBPqzge"
+    },
+    {
+      "guid": "pOjomtU0J4",
+      "item": "GaLyg5WMaC",
+      "sc": 30,
+      "nw": "mRr8ny5mtY",
+      "n": "QY5reHbqLq"
+    },
+    {
+      "guid": "mRr8ny5mtY",
+      "item": "wrDJpYzeKo"
+    },
+    {
+      "guid": "QY5reHbqLq",
+      "item": "tJWzqr-uXs",
+      "sc": 32,
+      "nw": "eFZtP_Q2cR",
+      "n": "KhXUu-c2Os"
+    },
+    {
+      "guid": "eFZtP_Q2cR",
+      "item": "k90TESSTBg"
+    },
+    {
+      "guid": "KhXUu-c2Os",
+      "item": "-Xg9VMYldT",
       "sc": 3
     },
     // #endregion

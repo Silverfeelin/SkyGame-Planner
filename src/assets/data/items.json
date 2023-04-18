@@ -3023,9 +3023,9 @@
     {
       "guid": "TQUcvFL8k7",
       "type": "Necklace",
-      "name": "Little Prince Pendant",
+      "name": "The Little Prince Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png",
-      "order": 90
+      "order": 10
     },
     {
       "guid": "dTnb7tLoOB",
@@ -3145,7 +3145,7 @@
       "type": "Necklace",
       "name": "Flight Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
-      "order": 101
+      "order": 11
     },
     {
       "guid": "cbWKMsAh7H",
@@ -3239,7 +3239,7 @@
       "type": "Necklace",
       "name": "Abyss Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/12_Abyss.png",
-      "order": 112
+      "order": 12
     },
     {
       "guid": "rfwNbdvXQz",
@@ -3341,7 +3341,7 @@
       "type": "Necklace",
       "name": "Performance Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/13_SOPerformance_logo.png",
-      "order": 123
+      "order": 13
     },
     {
       "guid": "DBRlaSaues",
@@ -3492,7 +3492,7 @@
       "type": "Necklace",
       "name": "Shattering Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png",
-      "order": 134
+      "order": 14
     },
     {
       "guid": "FjxHIvszIu",
@@ -3598,7 +3598,7 @@
       "type": "Necklace",
       "name": "AURORA Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/15-Aurora.png",
-      "order": 145
+      "order": 15
     },
     {
       "guid": "Gon7mR-WVa",
@@ -3781,7 +3781,7 @@
       "type": "Necklace",
       "name": "Remembrance Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
-      "order": 156
+      "order": 16
     },
     {
       "guid": "IKrJLeNVIL",
@@ -3958,6 +3958,92 @@
       "name": "Quest 10",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
+    // #region Passage Guide
+    {
+      "guid": "s_2ZN-bnbP",
+      "type": "Special",
+      "name": "Isle Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "wUo9ZKVEpq",
+      "type": "Quest",
+      "name": "Quest 1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "c53WkGR334",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "WUiJnkBm0n",
+      "type": "Quest",
+      "name": "Quest 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "kA-N6gBSIG",
+      "type": "Mask",
+      "name": "Passage Guide Mask 1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Passage-additional-mask-Serow-icon-Morybel-0146.png",
+      "order": 1701
+    },
+    {
+      "guid": "gM93l96JzS",
+      "type": "Quest",
+      "name": "Quest 3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "0FSzrtLVBr",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "oM9Xecb_kS",
+      "type": "Mask",
+      "name": "Passage Guide Mask 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-additional-mask-Boar-icon-Morybel-0146.png",
+      "order": 1702
+    },
+    {
+      "guid": "YoluGOPKvu",
+      "type": "Quest",
+      "name": "Quest 4",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "86bhs1nb7d",
+      "type": "Quest",
+      "name": "Quest 5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    // Passage Ultimates
+    {
+      "guid": "SSNqKMOI2E",
+      "type": "Necklace",
+      "name": "Passage Pendant",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/17_SOPassage_logo.png",
+      "order": 17
+    },
+    {
+      "guid": "8Kf_oq9FWL",
+      "type": "Mask",
+      "name": "Passage Ultimate Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Passage-Ultimate-Guide-Mask-icon-Morybel-0146.png",
+      "order": 1703
+    },
+    {
+      "guid": "HYdEzP1Gat",
+      "type": "Cape",
+      "name": "Passage Ultimate Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Passage-Ultimate-Guide-Cape-icon-Morybel-0146.png",
+      "order": 2703
+    },
+    // #endregion
     // #endregion
 
     // #region Gratitude
@@ -6528,7 +6614,7 @@
     {
       "guid": "_5IHtakDvf",
       "type": "Necklace",
-      "name": "Hiking Grouch Necklace",
+      "name": "Hiking Grouch Bowtie",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Icon_pendant_bowtie.png",
       "order": 601
     },
@@ -8345,7 +8431,7 @@
     {
       "guid": "67-Dpp1kUH",
       "type": "Necklace",
-      "name": "Star Collector Necklace",
+      "name": "Star Collector Neckpiece",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Icon_pendant_little_prince_neckerchief.png",
       "order": 1001
     },
@@ -8657,7 +8743,7 @@
     {
       "guid": "RcLkR7XRbn",
       "type": "Necklace",
-      "name": "Talented Builder Necklace",
+      "name": "Talented Builder Neckpiece",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Icon_season_of_flight_neckpiece_talented_builder.png",
       "order": 1101
     },
@@ -10247,6 +10333,304 @@
       "type": "Special",
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png"
+    },
+    // #endregion
+    // #region Passage
+    // Oddball Outcast
+    {
+      "guid": "q1lSh8QVkN",
+      "type": "Emote",
+      "name": "Hacky sack",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "WMCReW0LQD",
+      "type": "Emote",
+      "name": "Hacky sack",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "uE2-9qAMKP",
+      "type": "Hair",
+      "name": "Oddball Outcast Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Passage-Oddball-Outcast-Hairstyle-icon-Morybel-0146.png",
+      "order": 2701
+    },
+    {
+      "guid": "vCidIP_ecS",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "ZnoeUymwNI",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "HbhTdZAnuN",
+      "type": "Necklace",
+      "name": "Oddball Outcast Neckpiece",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Passage-Oddball-Outcast-neck-accessory-icon-Morybel-0146.png",
+      "order": 1701
+    },
+    {
+      "guid": "kQ7Yvu-g4k",
+      "type": "Emote",
+      "name": "Hacky sack",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "piGSeoIPd_",
+      "type": "Emote",
+      "name": "Hacky sack",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "Py6sIw6EvE",
+      "type": "Outfit",
+      "name": "Oddball Outcast Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Oddball-Outcast-outfit-icon-Morybel-0146.png",
+      "order": 1601
+    },
+    {
+      "guid": "yeajwByRBg",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "TPVlNAKn3p",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    },
+    // Tumbling Troublemaker
+    {
+      "guid": "FEzWv1XXku",
+      "type": "Emote",
+      "name": "Somersault",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "DjPVeBb0wn",
+      "type": "Emote",
+      "name": "Somersault",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "jPw-NMJBwY",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "rbV0FWIENC",
+      "type": "Hair",
+      "name": "Tumbling Troublemaker Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Passage-Tumbling-Troublemaker-Hair-icon-Morybel-0146.png",
+      "order": 2702
+    },
+    {
+      "guid": "IxNpykF933",
+      "type": "Emote",
+      "name": "Somersault",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "Gnl7Kf2xWO",
+      "type": "Emote",
+      "name": "Somersault",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "_FpZ5LnbhK",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "mfA3I1hs5x",
+      "type": "Cape",
+      "name": "Tumbling Troublemaker Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Passage-Tumbling-Troublemaker-Cape-icon-Morybel-0146.png",
+      "order": 2701
+    },
+    {
+      "guid": "0K5eWw2_Tq",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "Gz6U0Ahkg5",
+      "type": "Hat",
+      "name": "Tumbling Troublemaker Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Passage-Tumbling-Troublemaker-Hair-Accessory-icon-Morybel-0146.png",
+      "order": 2701
+    },
+    {
+      "guid": "23CqDqp6fd",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    },
+    // Melancholy Mope
+    {
+      "guid": "Z9YH4KCszX",
+      "type": "Emote",
+      "name": "Moping",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "ozw69gqvhQ",
+      "type": "Emote",
+      "name": "Moping",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "LNt-MN76Pf",
+      "type": "Hat",
+      "name": "Melancholy Mope Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Passage-Melancholy-Mope-Hair-accessory-icon-Morybel-0146.png",
+      "order": 2702
+    },
+    {
+      "guid": "leQJ72gAGH",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "gCyH_EJYEW",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "Mz9HHVc0_f",
+      "type": "Hair",
+      "name": "Melancholy Mope Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-Melancholy-Mope-Hair-icon-Morybel-0146.png",
+      "order": 2703
+    },
+    {
+      "guid": "AZb8ZxAeDb",
+      "type": "Emote",
+      "name": "Moping",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "9v4_Si1oJn",
+      "type": "Emote",
+      "name": "Moping",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "aaYJbWm6oV",
+      "type": "Outfit",
+      "name": "Melancholy Mope Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Passage-Melancholy-Mope-Outfit-icon-Morybel-0146.png",
+      "order": 1602
+    },
+    {
+      "guid": "_gwNMhGG0C",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "3JT5fm0Cy2",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    },
+    // Overactive Overachiever
+    {
+      "guid": "7aW4_cS3Ob",
+      "type": "Emote",
+      "name": "Pull-up",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "nRbYecsrpX",
+      "type": "Emote",
+      "name": "Pull-up",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "34YUB3swNm",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "kk4P3a0tb_",
+      "type": "Instrument",
+      "name": "Manta Flute",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Passage-Overactive-Overachiever-Instrument-icon-Morybel-0146.png",
+      "order": 1651
+    },
+    {
+      "guid": "BwA9_RCi47",
+      "type": "Emote",
+      "name": "Pull-up",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "bs7ZBPqzge",
+      "type": "Emote",
+      "name": "Pull-up",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "GaLyg5WMaC",
+      "type": "Cape",
+      "name": "Overactive Overachiever Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Passage-Overactive-Overachiever-Cape-Icon-Morybel-0146.png",
+      "order": 2702
+    },
+    {
+      "guid": "wrDJpYzeKo",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "tJWzqr-uXs",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "k90TESSTBg",
+      "type": "Hair",
+      "name": "Overactive Overachiever Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Passage-Overactive-Overachiever-Hair-icon-Morybel-0146.png",
+      "order": 2704
+    },
+    {
+      "guid": "-Xg9VMYldT",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
     },
     // #endregion
 

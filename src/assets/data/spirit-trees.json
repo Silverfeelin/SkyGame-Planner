@@ -312,6 +312,11 @@
       "guid": "fchA5IwiRm",
       "node": "N8gfMfr2VV"
     },
+    // Passage Guide
+    {
+      "guid": "LrH-L-oKn1",
+      "node": "dSSO_hBPjf"
+    },
     // #endregion
 
     // #region Gratitude
@@ -1108,6 +1113,28 @@
     {
       "guid": "Cze45b5NuK",
       "node": "6nhyx0XwCf"
+    },
+    // #endregion
+    // #region Passage
+    // Oddball Outcast
+    {
+      "guid": "77QNb1vN1h",
+      "node": "dUbS4mxFs5"
+    },
+    // Tumbling Troublemaker
+    {
+      "guid": "6QPtn4qXTG",
+      "node": "R1hBDJIu16"
+    },
+    // Melancholy Mope
+    {
+      "guid": "bZU_1hDxB9",
+      "node": "wjswIwiyKF"
+    },
+    // Overactive Overachiever
+    {
+      "guid": "qdWXiEhm46",
+      "node": "caUGXMJb3Z"
     },
     // #endregion
 
