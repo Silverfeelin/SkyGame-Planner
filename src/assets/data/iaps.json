@@ -576,6 +576,71 @@
       ]
     },
     // #endregion
+    // #region Days of Nature (2023)
+    {
+      "guid": "5RnFOO5fyy",
+      "name": "Nature Glasses Pack",
+      "price": 19.99,
+      "c": 75,
+      "items": [
+        "IOBWcIpOY9"
+      ]
+    },
+    {
+      "guid": "7anZDnNjVZ",
+      "name": "Nature Sonorous Seashell",
+      "price": 4.99,
+      "items": [
+        "gHfkqCK-A8"
+      ]
+    },
+    {
+      "guid": "DDArA8ChK7",
+      "name": "Nature Turtle Cape",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "znjZlpHSt4"
+      ]
+    },
+    {
+      "guid": "4S27PaHoQ1",
+      "name": "Nature Turtle Pack",
+      "price": 4.99,
+      "returning": true,
+      "c": 75,
+      "items": [
+        "_Y-80G-t_2"
+      ]
+    },
+    {
+      "guid": "qA31Hf7t5b",
+      "name": "Ocean Necklace",
+      "price": 1.99,
+      "returning": true,
+      "items": [
+        "KZ6aQtgCqt"
+      ]
+    },
+    {
+      "guid": "ACq6i6UXTe",
+      "name": "Ocean Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "MjA9EoD-pe"
+      ]
+    },
+    {
+      "guid": "oOCf91th7-",
+      "name": "Earth Cape",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "YUqENRc8rQ"
+      ]
+    },
+    // #endregion
     // #region Days of Rainbow (2021)
     {
       "guid": "phpvRx9BAL",

@@ -316,6 +316,28 @@
       ]
     },
     // #endregion
+    // #region Days of Nature (2023)
+    {
+      "guid": "KCnEUzQsIn",
+      "type": "store",
+      "iaps": [
+        "5RnFOO5fyy",
+        "7anZDnNjVZ"
+      ]
+    },
+    {
+      "guid": "7eYyfPCMwJ",
+      "type": "spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "DDArA8ChK7",
+        "4S27PaHoQ1",
+        "qA31Hf7t5b",
+        "ACq6i6UXTe",
+        "oOCf91th7-"
+      ]
+    },
+    // #endregion
     // #region Days of Rainbow (2021)
     {
       "guid": "CwN0xJF-1M",
@@ -584,5 +606,6 @@
         "xapvROJehm"
       ]
     },
+    // #endregion
   ]
 }

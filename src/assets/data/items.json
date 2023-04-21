@@ -11056,6 +11056,24 @@
       "name": "Blessing",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
+    {
+      "guid": "RLhtVkyDy3",
+      "type": "Cape",
+      "name": "Nature School Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Days-of-Nature-Fish-Vortex-cape-icon-Ray.png"
+    },
+    {
+      "guid": "IOBWcIpOY9",
+      "type": "Mask",
+      "name": "Nature Glasses",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Nature-Glasses-icon-Ray.png"
+    },
+    {
+      "guid": "gHfkqCK-A8",
+      "type": "Prop",
+      "name": "Nature Sonorous Seashell",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Days-of-Nature-Sonorous-Seashell-icon-Ray.png"
+    },
     // #endregion
     // #region Days of Rainbow
     {
