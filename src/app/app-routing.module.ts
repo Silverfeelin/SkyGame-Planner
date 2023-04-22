@@ -14,21 +14,23 @@ import { TravelingSpiritsComponent } from './components/traveling-spirits/travel
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 
+const title = (title: string) => `${title} - Sky Planner`;
+
 const routes: Routes = [
   { path: '', redirectTo: 'realm', pathMatch: 'full' },
-  { path: 'credits', component: CreditsComponent },
-  { path: 'event', component: EventsComponent },
-  { path: 'event/:guid', component: EventComponent },
-  { path: 'event-instance/:guid', component: EventInstanceComponent },
-  { path: 'item', component: ItemsComponent },
-  { path: 'realm', component: RealmsComponent },
-  { path: 'season', component: SeasonsComponent },
-  { path: 'season/:guid', component: SeasonComponent },
-  { path: 'shop', component: ShopsComponent },
-  { path: 'spirit', component: SpiritsComponent },
-  { path: 'spirit/:guid', component: SpiritComponent },
-  { path: 'ts', component: TravelingSpiritsComponent },
-  { path: 'wing-buffs', component: WingBuffsComponent },
+  { path: 'credits', component: CreditsComponent, title: title('Credits') },
+  { path: 'event', component: EventsComponent, title: title('Events') },
+  { path: 'event/:guid', component: EventComponent, title: title('Event') },
+  { path: 'event-instance/:guid', component: EventInstanceComponent, title: title('Event') },
+  { path: 'item', component: ItemsComponent, title: title('Items') },
+  { path: 'realm', component: RealmsComponent, title: title('Realms') },
+  { path: 'season', component: SeasonsComponent, title: title('Seasons') },
+  { path: 'season/:guid', component: SeasonComponent, title: title('Season') },
+  { path: 'shop', component: ShopsComponent, title: title('Shops') },
+  { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
+  { path: 'spirit/:guid', component: SpiritComponent, title: title('Spirit') },
+  { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
+  { path: 'wing-buffs', component: WingBuffsComponent, title: title('Wing Buffs') },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];
 
