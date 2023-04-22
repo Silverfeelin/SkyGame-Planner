@@ -1,0 +1,1055 @@
+{
+  "items": [
+    // #region Isle
+    {
+      "guid": "qSs575DZ6P",
+      "type": "Regular",
+      "name": "Pointing Candlemaker",
+      "tree": "UJAYu7Uazn"
+    },
+    {
+      "guid": "Tw-J4oXgie",
+      "type": "Regular",
+      "name": "Ushering Stargazer",
+      "tree": "iO5Y6DGiiW"
+    },
+    {
+      "guid": "bmYjIuJ6Qf",
+      "type": "Regular",
+      "name": "Rejecting Voyager",
+      "tree": "45994RiYac"
+    },
+    // #endregion
+    // #region Prairie
+    {
+      "guid": "ulvP8R6C6a",
+      "type": "Regular",
+      "name": "Butterfly Charmer",
+      "tree": "V0j-dhLEIw"
+    },
+    {
+      "guid": "WFjSczlPTV",
+      "type": "Regular",
+      "name": "Applauding Bellmaker",
+      "tree": "hQKUIRG3JQ"
+    },
+    {
+      "guid": "48jm5EQzfU",
+      "type": "Regular",
+      "name": "Waving Bellmaker",
+      "tree": "9HHikEqkYY"
+    },
+    {
+      "guid": "R4ILdPamhd",
+      "type": "Regular",
+      "name": "Slumbering Shipwright",
+      "tree": "HOyyuoXAP9"
+    },
+    {
+      "guid": "K3CIxcDSjq",
+      "type": "Regular",
+      "name": "Laughing Light Catcher",
+      "tree": "Es47LhZ5hx"
+    },
+    {
+      "guid": "KM1xzU9v5P",
+      "type": "Regular",
+      "name": "Bird Whisperer",
+      "tree": "anlwK70JVL"
+    },
+    {
+      "guid": "MyLI80npmW",
+      "type": "Regular",
+      "name": "Exhausted Dock Worker",
+      "tree": "ALHvJCosOd"
+    },
+    {
+      "guid": "gtbbZnpLbt",
+      "type": "Regular",
+      "name": "Ceremonial Worshiper",
+      "tree": "NU6qrcE5Ju"
+    },
+    // #endregion
+    // #region Forest
+    {
+      "guid": "LwcCtbnGuF",
+      "type": "Regular",
+      "name": "Shivering Trailblazer",
+      "tree": "qV_AsI1GHV"
+    },
+    {
+      "guid": "xbGBFC0rnu",
+      "type": "Regular",
+      "name": "Blushing Prospector",
+      "tree": "LMcXyV8-2j"
+    },
+    {
+      "guid": "p-WdkJpGB5",
+      "type": "Regular",
+      "name": "Hide'n'Seek Pioneer",
+      "tree": "R7ffBM1PMH"
+    },
+    {
+      "guid": "waSFuoNQsR",
+      "type": "Regular",
+      "name": "Pouty Porter",
+      "tree": "u_KTXvnqG5"
+    },
+    {
+      "guid": "L_0YoE4O8Z",
+      "type": "Regular",
+      "name": "Dismayed Hunter",
+      "tree": "f34xxhWuw1"
+    },
+    {
+      "guid": "puj9z07ew0",
+      "type": "Regular",
+      "name": "Apologetic Lumberjack",
+      "tree": "8mHCSAJMJt"
+    },
+    {
+      "guid": "gF3qSnQNxx",
+      "type": "Regular",
+      "name": "Tearful Light Miner",
+      "tree": "et4Q9BpF6x"
+    },
+    {
+      "guid": "R_zBE7HaWV",
+      "type": "Regular",
+      "name": "Whale Whisperer",
+      "tree": "Mker9XnSXM"
+    },
+    // #endregion
+    // #region Valley
+    {
+      "guid": "4KCKJxR56G",
+      "type": "Regular",
+      "name": "Confident Sightseer",
+      "tree": "DJhTrzv4Yb"
+    },
+    {
+      "guid": "yUp189PWVS",
+      "type": "Regular",
+      "name": "Handstanding Thrillseeker",
+      "tree": "J49-S6yLbL"
+    },
+    {
+      "guid": "CfXORyMFx4",
+      "type": "Regular",
+      "name": "Manta Whisperer",
+      "tree": "XRXDlNt2KM"
+    },
+    {
+      "guid": "H5iKZChQIK",
+      "type": "Regular",
+      "name": "Backflipping Champion",
+      "tree": "wnFJK6iIdP"
+    },
+    {
+      "guid": "IIt-zYJC2N",
+      "type": "Regular",
+      "name": "Cheerful Spectator",
+      "tree": "mHTyXPh-yi"
+    },
+    {
+      "guid": "fRtK3WFMm1",
+      "type": "Regular",
+      "name": "Bowing Medalist",
+      "tree": "_aHaMwt5OW"
+    },
+    {
+      "guid": "CQJO8mQ0do",
+      "type": "Regular",
+      "name": "Proud Victor",
+      "tree": "kTUUniUQiN"
+    },
+    // #endregion
+    // #region Wasteland
+    {
+      "guid": "TqswdiTmEC",
+      "type": "Regular",
+      "name": "Frightened Refugee",
+      "tree": "2tMrFxgXJy"
+    },
+    {
+      "guid": "k8nqBtLJ0R",
+      "type": "Regular",
+      "name": "Fainting Warrior",
+      "tree": "7peV6o1G9r"
+    },
+    {
+      "guid": "_4VyRWxD3V",
+      "type": "Regular",
+      "name": "Courageous Soldier",
+      "tree": "3W0wLUVJL6"
+    },
+    {
+      "guid": "trJkBr3myf",
+      "type": "Regular",
+      "name": "Stealthy Survivor",
+      "tree": "dcgTVFAm6m"
+    },
+    {
+      "guid": "6GO0ISasq7",
+      "type": "Regular",
+      "name": "Saluting Captain",
+      "tree": "_WJq0WK8Ds"
+    },
+    {
+      "guid": "nwpDbbbWcw",
+      "type": "Regular",
+      "name": "Lookout Scout",
+      "tree": "oU4Uu2zMzG"
+    },
+    // #endregion
+    // #region Vault
+    {
+      "guid": "Im7m8syitV",
+      "type": "Regular",
+      "name": "Levitating Adept",
+      "tree": "das41f_Q-7"
+    },
+    {
+      "guid": "Gi75RcvXd0",
+      "type": "Regular",
+      "name": "Meditating Monastic",
+      "tree": "MzxOaKTjwc"
+    },
+    {
+      "guid": "HeJISF946a",
+      "type": "Regular",
+      "name": "Memory Whisperer",
+      "tree": "Vv98PNmcao"
+    },
+    {
+      "guid": "1OGD_H3a7X",
+      "type": "Regular",
+      "name": "Polite Scholar",
+      "tree": "Z1PFz0tm12"
+    },
+    {
+      "guid": "_8CvQjUnQg",
+      "type": "Regular",
+      "name": "Praying Acolyte",
+      "tree": "5sAVyZ3QBX"
+    },
+    // #endregion
+    // #region Office
+    {
+      "guid": "ExkE9a7QJ0",
+      "name": "Office NPC"
+    },
+    {
+      "guid": "Ayoc2XvMTy",
+      "type": "Special",
+      "name": "Office Spirit #1"
+    },
+    {
+      "guid": "izKBXplld6",
+      "type": "Special",
+      "name": "Office Spirit #2"
+    },
+    {
+      "guid": "cpTFBZ-im4",
+      "type": "Special",
+      "name": "Office Spirit #3"
+    },
+    {
+      "guid": "bQCZEuAuZe",
+      "type": "Special",
+      "name": "Office Spirit #4"
+    },
+    {
+      "guid": "MKdRGA66hC",
+      "type": "Special",
+      "name": "Office Spirit #5"
+    },
+    {
+      "guid": "HmibyU0UEG",
+      "type": "Special",
+      "name": "Office Spirit #6"
+    },
+    {
+      "guid": "GUwL23XDTb",
+      "type": "Special",
+      "name": "Office Spirit #7"
+    },
+    // #endregion
+
+    // #region Elders
+    {
+      "guid": "l8tl0mHCWH",
+      "type": "Elder",
+      "name": "Isle Elder",
+      "tree": "9_S8rQmBlX"
+    },
+    {
+      "guid": "iu6tmCPpex",
+      "type": "Elder",
+      "name": "Prairie Elder",
+      "tree": "eUgsBX5PrB"
+    },
+    {
+      "guid": "aj2x9H8ECy",
+      "type": "Elder",
+      "name": "Forest Elder",
+      "tree": "TVSuWzpcpt"
+    },
+    {
+      "guid": "NgLbFXaB4z",
+      "type": "Elder",
+      "name": "Valley Elders",
+      "tree": "EZP7ISiCn5"
+    },
+    {
+      "guid": "JQR4EGE6io",
+      "type": "Elder",
+      "name": "Wasteland Elder",
+      "tree": "VMIKm__4n_"
+    },
+    {
+      "guid": "NLbS2a-y2u",
+      "type": "Elder",
+      "name": "Vault Elder",
+      "tree": "ntRHO7rHJt"
+    },
+    // #endregion
+
+    // #region Season Guides
+    {
+      "guid": "jM6IlC8yk8",
+      "type": "Guide",
+      "name": "Gratitude Guide",
+      "tree": "e_dcWfqWdl"
+    },
+    {
+      "guid": "UNKzFTE5mB",
+      "type": "Guide",
+      "name": "Lightseekers Guide",
+      "tree": "RDhnSDRp_-"
+    },
+    {
+      "guid": "5rr1zr2_j5",
+      "type": "Guide",
+      "name": "Belonging Guide",
+      "tree": "KEuVAhun2o"
+    },
+    {
+      "guid": "zldsm5S962",
+      "type": "Guide",
+      "name": "Rhythm Guide",
+      "tree": "Qg7qDyBGmz"
+    },
+    {
+      "guid": "ZomY9nil8V",
+      "type": "Guide",
+      "name": "Enchantment Guide",
+      "tree": "MBr5qVDM3P"
+    },
+    {
+      "guid": "0IoADuWn1P",
+      "type": "Guide",
+      "name": "Sanctuary Guide",
+      "tree": "yZlWqKpS7C"
+    },
+    {
+      "guid": "DKFofCESGJ",
+      "type": "Guide",
+      "name": "Prophecy Guide",
+      "tree": "SQZ7rff2Ck"
+    },
+    {
+      "guid": "sj6YhQZQvM",
+      "type": "Guide",
+      "name": "Dreams Guide",
+      "tree": "f74U1Fp5Nk"
+    },
+    {
+      "guid": "cpwvdVEzKN",
+      "type": "Guide",
+      "name": "Assembly Guide",
+      "tree": "FvRPGlaPpW"
+    },
+    {
+      "guid": "HfafU7Pfui",
+      "type": "Guide",
+      "name": "The Rose",
+      "tree": "oL3CS56h9y"
+    },
+    {
+      "guid": "FF8u1g9XI_",
+      "type": "Guide",
+      "name": "Flight Guide",
+      "tree": "23Vo9a04Sm"
+    },
+    {
+      "guid": "WFqMqmjVv9",
+      "type": "Guide",
+      "name": "Abyss Guide",
+      "tree": "xz8rpLZQmm"
+    },
+    {
+      "guid": "qSggZYj_x3",
+      "type": "Guide",
+      "name": "Performance Guide",
+      "tree": "QPaLIzQqeU"
+    },
+    {
+      "guid": "q8g57aJV8r",
+      "type": "Guide",
+      "name": "The Void of Shattering",
+      "tree": "BK8jQyPH_n"
+    },
+    {
+      "guid": "OaAUJHNIjE",
+      "type": "Guide",
+      "name": "AURORA Guide",
+      "tree": "P1nzgnNVFT"
+    },
+    {
+      "guid": "ZGSnOxK9gb",
+      "type": "Guide",
+      "name": "Remembrance Guide",
+      "tree": "fchA5IwiRm"
+    },
+    {
+      "guid": "_ZYvHXY8HB",
+      "type": "Guide",
+      "name": "Passage Guide",
+      "tree": "LrH-L-oKn1"
+    },
+    // #endregion
+
+    // #region Gratitude
+    {
+      "guid": "0yGgX4Yk3c",
+      "type": "Season",
+      "name": "Sassy Drifter",
+      "tree": "emS7DU5ndh"
+    },
+    {
+      "guid": "Q-N8n-0b8O",
+      "type": "Season",
+      "name": "Stretching Guru",
+      "tree": "s4j4vrnNCR"
+    },
+    {
+      "guid": "lmydkMDQeP",
+      "type": "Season",
+      "name": "Provoking Performer",
+      "tree": "R-TxhzmvlY"
+    },
+    {
+      "guid": "JROKFatVLC",
+      "type": "Season",
+      "name": "Leaping Dancer",
+      "tree": "C1UHeaHfp1"
+    },
+    {
+      "guid": "eToUA1mSjz",
+      "type": "Season",
+      "name": "Saluting Protector",
+      "tree": "uHs_ggtE0U"
+    },
+    {
+      "guid": "KZaVtTUdlR",
+      "type": "Season",
+      "name": "Greeting Shaman",
+      "tree": "3xelLnykRC"
+    },
+    // #endregion
+    // #region Lightseekers
+    {
+      "guid": "U9RJMJseUK",
+      "type": "Season",
+      "name": "Piggyback Lightseeker",
+      "tree": "tKkz-7Fmh_"
+    },
+    {
+      "guid": "jncJKA4IaM",
+      "type": "Season",
+      "name": "Doublefive Light Catcher",
+      "tree": "DCA--qiCxD"
+    },
+    {
+      "guid": "8OYabqG_jZ",
+      "type": "Season",
+      "name": "Laidback Pioneer",
+      "tree": "ry-1r9mcwO"
+    },
+    {
+      "guid": "bHCSyFQ4u-",
+      "type": "Season",
+      "name": "Twirling Champion",
+      "tree": "9lQ4T3H65f"
+    },
+    {
+      "guid": "tZG5hNcINX",
+      "type": "Season",
+      "name": "Crab Whisperer",
+      "tree": "cSFOWVeiTO"
+    },
+    {
+      "guid": "mZZ-MkZJ1x",
+      "type": "Season",
+      "name": "Shushing Light Scholar",
+      "tree": "hHNCjL8SHU"
+    },
+    // #endregion
+    // #region Belonging
+    {
+      "guid": "5u3TXZON81",
+      "type": "Season",
+      "name": "Confetti Cousin",
+      "tree": "Fqwmr7P65R"
+    },
+    {
+      "guid": "f3AD39Q2Il",
+      "type": "Season",
+      "name": "Boogie Kid",
+      "tree": "IeFmlorSVS"
+    },
+    {
+      "guid": "CcOE42N9Mc",
+      "type": "Season",
+      "name": "Sparkler Parent",
+      "tree": "sM-gGfmBb9"
+    },
+    {
+      "guid": "7EzWoLR1w4",
+      "type": "Season",
+      "name": "Wise Grandparent",
+      "tree": "zNWw5D3we3"
+    },
+    {
+      "guid": "LO75aDy9Zc",
+      "type": "Season",
+      "name": "Pleaful Parent",
+      "tree": "wDOnrwqC2i"
+    },
+    {
+      "guid": "gcEV41jg3U",
+      "type": "Season",
+      "name": "Hairtousle Teen",
+      "tree": "pDzxAL2j5O"
+    },
+    // #endregion
+    // #region Rhythm
+    {
+      "guid": "Q5pn7wxwUD",
+      "type": "Season",
+      "name": "Troupe Greeter",
+      "tree": "TaMnSq1POX"
+    },
+    {
+      "guid": "PYsLThJYPx",
+      "type": "Season",
+      "name": "Festival Spin Dancer",
+      "tree": "61W5eVdFni"
+    },
+    {
+      "guid": "RUGuLBBPcg",
+      "type": "Season",
+      "name": "Admiring Actor",
+      "tree": "4biI_rOvS2"
+    },
+    {
+      "guid": "9y_5scrYa9",
+      "type": "Season",
+      "name": "Troupe Juggler",
+      "tree": "XBUCLd5Dbw"
+    },
+    {
+      "guid": "OJECJaFI5p",
+      "type": "Season",
+      "name": "Respectful Pianist",
+      "tree": "434ok25Yjz"
+    },
+    {
+      "guid": "CH6e-TQz6n",
+      "type": "Season",
+      "name": "Thoughtful Director",
+      "tree": "mvyFMGjUT4"
+    },
+    // #endregion
+    // #region Enchantment
+    {
+      "guid": "HphxLKhDBZ",
+      "type": "Season",
+      "name": "Nodding Muralist",
+      "tree": "zKvpYwiaFo"
+    },
+    {
+      "guid": "kQiNS82DDY",
+      "type": "Season",
+      "name": "Indifferent Alchemist",
+      "tree": "t5FoVLTpxP"
+    },
+    {
+      "guid": "OaysgoHcZI",
+      "type": "Season",
+      "name": "Crab Walker",
+      "tree": "_IpcZ_U6zY"
+    },
+    {
+      "guid": "UJVa4nb2nn",
+      "type": "Season",
+      "name": "Scarecrow Farmer",
+      "tree": "jRTuid-Y21"
+    },
+    {
+      "guid": "Be41CnHkEI",
+      "type": "Season",
+      "name": "Snoozing Carpenter",
+      "tree": "jJoNEIUqgP"
+    },
+    {
+      "guid": "hgjklF3nQI",
+      "type": "Season",
+      "name": "Playfighting Herbalist",
+      "tree": "LSFtagpL9R"
+    },
+    // #endregion
+    // #region Sanctuary
+    {
+      "guid": "jx7koL5guD",
+      "type": "Season",
+      "name": "Jelly Whisperer",
+      "tree": "GVghUxleba"
+    },
+    {
+      "guid": "MEw6did3kI",
+      "type": "Season",
+      "name": "Timid Bookworm",
+      "tree": "rMbkkmBZQM"
+    },
+    {
+      "guid": "IDEim-HNOZ",
+      "type": "Season",
+      "name": "Rallying Thrillseeker",
+      "tree": "MLnvMI_SQf"
+    },
+    {
+      "guid": "z4xqXUkx_6",
+      "type": "Season",
+      "name": "Hiking Grouch",
+      "tree": "NGPhozyesb"
+    },
+    {
+      "guid": "uxtR1vVL8c",
+      "type": "Season",
+      "name": "Grateful Shell Collector",
+      "tree": "a0T7_evTz6"
+    },
+    {
+      "guid": "8N9cC4SvzM",
+      "type": "Season",
+      "name": "Chill Sunbather",
+      "tree": "MwCPwxfL0B"
+    },
+    // #endregion
+    // #region Prophecy
+    {
+      "guid": "9Rgsos9xqE",
+      "type": "Season",
+      "name": "Prophet of Water",
+      "tree": "NZRfrbFo5E"
+    },
+    {
+      "guid": "oIeqSdqyWu",
+      "type": "Season",
+      "name": "Prophet of Earth",
+      "tree": "26RNODjYdR"
+    },
+    {
+      "guid": "5DD07qmTqQ",
+      "type": "Season",
+      "name": "Prophet of Air",
+      "tree": "llk8KwqtQo"
+    },
+    {
+      "guid": "kH5B_M20Fl",
+      "type": "Season",
+      "name": "Prophet of Fire",
+      "tree": "u0qm82zESx"
+    },
+    // #endregion
+    // #region Dreams
+    {
+      "guid": "KhFZE8z0-I",
+      "type": "Season",
+      "name": "Bearhug Hermit",
+      "tree": "Dz7xSJMui2"
+    },
+    {
+      "guid": "7tMB-HjDin",
+      "type": "Season",
+      "name": "Dancing Performer",
+      "tree": "zUy1Dlkzbl"
+    },
+    {
+      "guid": "Jd8rEzWHVg",
+      "type": "Season",
+      "name": "Peeking Postman",
+      "tree": "sxbsSa-E47"
+    },
+    {
+      "guid": "Ej3SZgZ2WL",
+      "type": "Season",
+      "name": "Spinning Mentor",
+      "tree": "duRfvp3IvK"
+    },
+    // #endregion
+    // #region Assembly
+    {
+      "guid": "94UEgV7ic1",
+      "type": "Season",
+      "name": "Baffled Botanist",
+      "tree": "u-NLeQNopc"
+    },
+    {
+      "guid": "RG-Z1xwway",
+      "type": "Season",
+      "name": "Scolding Student",
+      "tree": "tJ92dz1ans"
+    },
+    {
+      "guid": "lE8DJQLcg5",
+      "type": "Season",
+      "name": "Scaredy Cadet",
+      "tree": "BTXu36Anhy"
+    },
+    {
+      "guid": "H30afxXKT1",
+      "type": "Season",
+      "name": "Marching Adventurer",
+      "tree": "MaqbAvyQQ8"
+    },
+    {
+      "guid": "NGSlfCM_wu",
+      "type": "Season",
+      "name": "Chuckling Scout",
+      "tree": "n43yrGprN_"
+    },
+    {
+      "guid": "MZZ5RA0AMG",
+      "type": "Season",
+      "name": "Daydream Forester",
+      "tree": "oeVXh5azl3"
+    },
+    // #endregion
+    // #region TLP
+    {
+      "guid": "JOCCkr0TlW",
+      "type": "Season",
+      "name": "Beckoning Ruler",
+      "tree": "GpFO-QB9kn"
+    },
+    {
+      "guid": "V7gj-cBqK1",
+      "type": "Season",
+      "name": "Gloating Narcissist",
+      "tree": "G8NMsyrbeV"
+    },
+    {
+      "guid": "z5dtSO-gis",
+      "type": "Season",
+      "name": "Stretching Lamplighter",
+      "tree": "tGROdiGKVT"
+    },
+    {
+      "guid": "iweb5Sk2Xk",
+      "type": "Season",
+      "name": "Slouching Soldier",
+      "tree": "evynWpUlaz"
+    },
+    {
+      "guid": "l7zP8zUFHX",
+      "type": "Season",
+      "name": "Sneezing Geographer",
+      "tree": "eY5I6thUk8"
+    },
+    {
+      "guid": "dEQ1GVQOx7",
+      "type": "Season",
+      "name": "Star Collector",
+      "tree": "Ikiuyl-Nm1"
+    },
+    // #endregion
+    // #region Flight
+    {
+      "guid": "9Wl9kwxoFk",
+      "type": "Season",
+      "name": "Lively Navigator",
+      "tree": "8XT3GDeonb"
+    },
+    {
+      "guid": "VQadeqBPEO",
+      "type": "Season",
+      "name": "Light Whisperer",
+      "tree": "DHbvqLtLCU"
+    },
+    {
+      "guid": "_7-rIO21Ea",
+      "type": "Season",
+      "name": "Tinkering Chimesmith",
+      "tree": "66idlQe3mK"
+    },
+    {
+      "guid": "hovmkrquOR",
+      "type": "Season",
+      "name": "Talented Builder",
+      "tree": "4Zj4C2RUj1"
+    },
+    // #endregion
+    // #region Abyss
+    {
+      "guid": "4gwH1Tn9he",
+      "type": "Season",
+      "name": "Anxious Angler",
+      "tree": "M-25cEcvw-"
+    },
+    {
+      "guid": "aVOtIknTMO",
+      "type": "Season",
+      "name": "Ceasing Commodore",
+      "tree": "1c2RnFkkmb"
+    },
+    {
+      "guid": "zVs_gAo_wy",
+      "type": "Season",
+      "name": "Bumbling Boatswain",
+      "tree": "oNXi897gvR"
+    },
+    {
+      "guid": "gTIay-wjmN",
+      "type": "Season",
+      "name": "Cackling Cannoneer",
+      "tree": "ag2kvsRKRN"
+    },
+    // #endregion
+    // #region Performance
+    {
+      "guid": "4iotcmsn0K",
+      "type": "Season",
+      "name": "Frantic Stagehand",
+      "tree": "i0lRmQ31MS"
+    },
+    {
+      "guid": "fEcI6neh6f",
+      "type": "Season",
+      "name": "Forgetful Storyteller",
+      "tree": "UEf6UQn_yl"
+    },
+    {
+      "guid": "KYhwsjTkp-",
+      "type": "Season",
+      "name": "Mellow Musician",
+      "tree": "18DZaVJ0JB"
+    },
+    {
+      "guid": "S6KVcMgi-3",
+      "type": "Season",
+      "name": "Modest Dancer",
+      "tree": "pYtg2G6fMP"
+    },
+    // #endregion
+    // #region Shattering
+    {
+      "guid": "KqGJfPvqrM",
+      "type": "Season",
+      "name": "Light (Jellyfish)",
+      "tree": "xLwRm1AfSm"
+    },
+    {
+      "guid": "di5Qar2yOI",
+      "type": "Season",
+      "name": "Light (Manta)",
+      "tree": "1fhyjtk7uy"
+    },
+    {
+      "guid": "3rebltHxWX",
+      "type": "Season",
+      "name": "Dark (Dragon)",
+      "tree": "b6rp9fopvO"
+    },
+    {
+      "guid": "V7PbSxO67Q",
+      "type": "Season",
+      "name": "Dark (Plants)",
+      "tree": "7RgA-evqca"
+    },
+    // #endregion
+    // #region AURORA
+    {
+      "guid": "20Xw7fuZWr",
+      "type": "Season",
+      "name": "Running Wayfarer",
+      "tree": "U8EBIguISN"
+    },
+    {
+      "guid": "g_lZ76kjbS",
+      "type": "Season",
+      "name": "Mindful Miner",
+      "tree": "bMfsxhWfRe"
+    },
+    {
+      "guid": "XvcpNrqatq",
+      "type": "Season",
+      "name": "Warrior of Love",
+      "tree": "mfj2dmg6Dd"
+    },
+    {
+      "guid": "95RfXrjMx1",
+      "type": "Season",
+      "name": "Seed of Hope",
+      "tree": "W7fm2UpXGb"
+    },
+    // #endregion
+    // #region Remembrance
+    {
+      "guid": "O1olUBrkJ5",
+      "type": "Season",
+      "name": "Bereft Veteran",
+      "tree": "zWD_AxgIGC"
+    },
+    {
+      "guid": "V43JRVL_QD",
+      "type": "Season",
+      "name": "Pleading Child",
+      "tree": "wU4H1ZfZot"
+    },
+    {
+      "guid": "DAG_zfwis5",
+      "type": "Season",
+      "name": "Tiptoeing Tea-Brewer",
+      "tree": "gOAqpgTH4R"
+    },
+    {
+      "guid": "zq6qjCsQ_f",
+      "type": "Season",
+      "name": "Wounded Warrior",
+      "tree": "Cze45b5NuK"
+    },
+    // #endregion
+    // #region Passage
+    {
+      "guid": "udBbDIhZtD",
+      "type": "Season",
+      "name": "Oddball Outcast",
+      "tree": "77QNb1vN1h"
+    },
+    {
+      "guid": "noQs_dBSQu",
+      "type": "Season",
+      "name": "Tumbling Troublemaker",
+      "tree": "6QPtn4qXTG"
+    },
+    {
+      "guid": "-BIU0YAs1Q",
+      "type": "Season",
+      "name": "Melancholy Mope",
+      "tree": "bZU_1hDxB9"
+    },
+    {
+      "guid": "IKkPcAF07c",
+      "type": "Season",
+      "name": "Overactive Overachiever",
+      "tree": "qdWXiEhm46"
+    },
+    // #endregion
+
+    // #region Events
+    {
+      "guid": "9VkjVkgKhb",
+      "type": "Event",
+      "name": "Auspicious Visitor"
+    },
+    // Unknown IAP spirits
+    {
+      "guid": "dK38RIPIOG",
+      "type": "Event",
+      "name": "Event Staff (IAP)"
+    },
+    // Unknown IGC spirits
+    {
+      "guid": "zS4AGUTIgF",
+      "type": "Event",
+      "name": "Event Staff (IGC)"
+    },
+    // Days of Summer
+    {
+      "guid": "aMY1ZPzcEx",
+      "type": "Event",
+      "name": "Days of Summer Guide"
+    },
+    // Days of Bloom
+    {
+      "guid": "IqShB-6_rY",
+      "type": "Event",
+      "name": "Days of Bloom Guide"
+    },
+    // Days of Nature
+    {
+      "guid": "3M1KSVgf49",
+      "type": "Event",
+      "name": "Days of Nature Guide"
+    },
+    // Days of Rainbow
+    {
+      "guid": "uPzMm5H7ag",
+      "type": "Event",
+      "name": "Days of Rainbow Guide"
+    },
+    {
+      "guid": "9eBpHjtudy",
+      "type": "Event",
+      "name": "Days of Rainbow IAP Guide"
+    },
+    // Sky Anniversary
+    {
+      "guid": "mYOzGrzNHU",
+      "type": "Event",
+      "name": "Anniversary Guide"
+    },
+    // Days of Sunlight
+    {
+      "guid": "c9XXzlKzhd",
+      "type": "Event",
+      "name": "Days of Sunlight Guide"
+    },
+    // Days of Mischief
+    {
+      "guid": "ihZx_rVl70",
+      "type": "Event",
+      "name": "Mischief Staff (Samantha)"
+    },
+    {
+      "guid": "TgUgZjfoMI",
+      "type": "Event",
+      "name": "Mischief Staff (Skidmore)"
+    },
+    {
+      "guid": "smphYk9cPX",
+      "type": "Event",
+      "name": "Mischief Staff (Nat)"
+    },
+    {
+      "guid": "GzpxxWwGVG",
+      "type": "Event",
+      "name": "Mischief Staff (Yoshi)"
+    },
+    {
+      "guid": "GwPybX8w0t",
+      "type": "Event",
+      "name": "Samantha clone 42"
+    },
+    // Days of Feast
+    {
+      "guid": "j1UqKci8Hb",
+      "type": "Event",
+      "name": "Days of Feast Staff"
+    },
+    // #endregion
+  ]
+}

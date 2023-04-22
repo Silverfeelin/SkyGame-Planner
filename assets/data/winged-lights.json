@@ -1,0 +1,523 @@
+{
+  "items": [
+    // #region Dawn
+    // Sand Dunes
+    {
+      "guid": "zhBAUiJptT",
+      "description": "On top of a small boat. The introductory winged light."
+    },
+    {
+      "guid": "-8ZzA17gRA",
+      "description": "On top of the mountain at the very start of Isle of Dawn."
+    },
+    {
+      "guid": "gfQnk_B1mN",
+      "description": "On the ramp leading up to the Isle Temple."
+    },
+    // Sand Dunes Candle Cave
+    {
+      "guid": "OS7R6fkcT9",
+      "description": "Behind a light gate on the right side of the realm."
+    },
+    // Butterfly Cave
+    {
+      "guid": "vGCXUjMLfB",
+      "description": "Inside the Butterfly Cave, near the end of the cave."
+    },
+    // Trials
+    {
+      "guid": "LOr9OqWHQv",
+      "description": "At the end of the Trial of Water."
+    },
+    {
+      "guid": "BPnMAjL286",
+      "description": "At the end of the Trial of Earth."
+    },
+    {
+      "guid": "7IpuFMAIXe",
+      "description": "At the end of the Trial of Air."
+    },
+    {
+      "guid": "89a0rCfJL-",
+      "description": "At the end of the Trial of Fire."
+    },
+    // #endregion
+    // #region Prairie
+    // Butterfly Fields
+    {
+      "guid": "CuJ61KtkL2",
+      "description": "On top of the muffin rock."
+    },
+    {
+      "guid": "fl1Z3bEx81",
+      "description": "At the gate leading up to the Village Islands."
+    },
+    // Butterfly Fields WL Cave
+    {
+      "guid": "YmuL-2fCV7",
+      "description": "Inside a small cave on the left side of the Butterfly Fields."
+    },
+    // Village Islands
+    {
+      "guid": "_SJva8zUYc",
+      "description": "On a rock platform in the middle of the area."
+    },
+    {
+      "guid": "4lNlq0Raah",
+      "description": "On the back side of the middle of three islands, behind the bell."
+    },
+    // Bellmaker Cave
+    {
+      "guid": "D22kvZx25W",
+      "description": "Inside the cave on the left island with the Applauding Bellmaker."
+    },
+    // 8-Player
+    {
+      "guid": "Sc2aim9ro1",
+      "description": "Inside a tree after solving the 8-player puzzle."
+    },
+    // Koi Pond
+    {
+      "guid": "vz0IBqoGta",
+      "description": "Directly above the Prairie Temple entrance."
+    },
+    {
+      "guid": "RPvwKSjUXE",
+      "description": "Near the top of the Prairie Temple."
+    },
+    // Bird Nest
+    {
+      "guid": "GNDWMxbvTD",
+      "description": "On a low island between the first tower and entrance to the Village Islands."
+    },
+    {
+      "guid": "PBt-1vrXFA",
+      "description": "On a high island left of the entrance to Sanctuary Islands."
+    },
+    // Caves
+    {
+      "guid": "tGV1WQd1yk",
+      "description": "In a small hole on the left side of the Prairie Caves. Above Stretching Guru."
+    },
+    {
+      "guid": "K-eoMvklId",
+      "description": "In an elevated cave closer to the end of the cave. On the opposite side of the light gate towards the Exhausted Dock Worker."
+    },
+    // Sanctuary Islands
+    {
+      "guid": "NIEbxjzi9w",
+      "description": "On the floating islands when entering Sanctuary Islands, near the Jellyfish."
+    },
+    {
+      "guid": "saQGYqh8gS",
+      "description": "At the very bottom of the waterfalls in the middle of the island."
+    },
+    {
+      "guid": "cBNCxRNiPa",
+      "description": "On the right of the three floating islands a distance away from the main island."
+    },
+    {
+      "guid": "qN0TPwjnam",
+      "description": "On the back side of the main island, close to a geyser and the home shrine."
+    },
+    {
+      "guid": "MzhGgNL7T0",
+      "description": "At the very top of the main island."
+    },
+    {
+      "guid": "4Sh9Wwka_r",
+      "description": "At the end of the spiral cave with crabs and the large dark plant."
+    },
+    {
+      "guid": "nHuasNjUrd",
+      "description": "In the Jellyfish cave accessed from the beach on the back side of the main island."
+    },
+    {
+      "guid": "20LOTTTfr_",
+      "description": "On the left side inside the main island caves, on an elevated ledge with a small bridge."
+    },
+    // #endregion
+    // #region Forest
+    // Forest Clearing
+    {
+      "guid": "0o9-mt5q1s",
+      "description": "On a platform in a tree to the right before going through the gate to the Rainy Forest."
+    },
+    // Rainy Forest
+    {
+      "guid": "zJCYOFxRNR",
+      "description": "Directly in front of a gate towards the Forest Brook."
+    },
+    // Forest Brook
+    {
+      "guid": "E_vpwUyVcM",
+      "description": "Inside a tree house to the right of the area, above the entrance to the Elevated Clearing."
+    },
+    {
+      "guid": "5F7jGqG9xU",
+      "description": "Inside a tree house to the back side of the area, above the caves."
+    },
+    {
+      "guid": "irgdECMxtI",
+      "description": "In a small cave to the left side of the area, behind some dark plants."
+    },
+    {
+      "guid": "Zv6jq5_IzP",
+      "description": "At the end of the area, directly in front of the entrance to the Broken Bridge."
+    },
+    // Elevated Clearing
+    {
+      "guid": "MpcHkLWwol",
+      "description": "On the platform in the trees connected by a rope bridge."
+    },
+    {
+      "guid": "DIK2gBZ_FA",
+      "description": "On a rock platform close to the (missing) bridge."
+    },
+    // Underground Cavern
+    {
+      "guid": "iaLuQ06e4T",
+      "description": "On top of a small pillar after following birds to an elevated platform on the left side of the cave."
+    },
+    {
+      "guid": "pBAU_FHObL",
+      "description": "In a small cave to the left with butterfly jars. The winged light can be found above by releasing butterflies and deep calling."
+    },
+    {
+      "guid": "3NFT1aCRpY",
+      "description": "Behind a gate on the right side of the area."
+    },
+    {
+      "guid": "xF6rfLZpef",
+      "description": "At the end of the cave, next to the gate to the Broken Bridge."
+    },
+    // Broken Bridge
+    {
+      "guid": "XlmWJaLSNr",
+      "description": "Inside a hollow tree on the right side."
+    },
+    {
+      "guid": "J1boiLeD4w",
+      "description": "Inside a tower to the left side."
+    },
+    {
+      "guid": "uFoLDIogSU",
+      "description": "At the end of the broken bridge."
+    },
+    // Forest Temple
+    {
+      "guid": "s_UlGNscIQ",
+      "description": "On the left side beyond the temple shrine."
+    },
+    // Treehouse
+    {
+      "guid": "H7uvC7nb8U",
+      "description": "Up above in a hollow part of a tree on the right side."
+    },
+    {
+      "guid": "7_WXb7Uu8Z",
+      "description": "Down through a tunnel in the main tree."
+    },
+    // Wind Paths
+    {
+      "guid": "CZ99GFJVyE",
+      "description": "In one of the air tunnels of the main island."
+    },
+    // #endregion
+    // #region Valley
+    // Ice Rink
+    {
+      "guid": "5BM1uqQvM4",
+      "description": "On the left side down the slope towards the Ice Rink."
+    },
+    {
+      "guid": "vKEMuduC0F",
+      "description": "In the center of the Ice Rink."
+    },
+    {
+      "guid": "_rmaySa6NL",
+      "description": "To the left below the ice."
+    },
+    // Citadel
+    {
+      "guid": "DjuNbgmKq5",
+      "description": "At the top of the Citadel."
+    },
+    {
+      "guid": "D9Z9c3mRDf",
+      "description": "In a window on the side of one of the tallest towers. "
+    },
+    // Sliding Race
+    {
+      "guid": "Tmg19lVERk",
+      "description": "Near the end of the first sliding race section."
+    },
+    // Flying Race
+    {
+      "guid": "sfDl46vj4O",
+      "description": "In the right of two buildings with a skywalk."
+    },
+    {
+      "guid": "N6KMjaxez6",
+      "description": "Atop a spire between rocks."
+    },
+    // Race End
+    {
+      "guid": "HqV6qmTkzQ",
+      "description": "On the slope before reaching the Coliseum."
+    },
+    // Coliseum
+    {
+      "guid": "McAh-VzlJH",
+      "description": "On the shoulder of the statue left of the temple door."
+    },
+    // Valley Temple
+    {
+      "guid": "E-f38yRTaj",
+      "description": "In a room through the upper hole of the left wall."
+    },
+    // Village of Dreams
+    {
+      "guid": "U6oebtceIH",
+      "description": "In a cave just below the hot springs."
+    },
+    {
+      "guid": "xF36ISKLHe",
+      "description": "In a cave near the top of smaller mountain on the left of the village."
+    },
+    {
+      "guid": "orOMQkGltm",
+      "description": "On top of a small tower between the two elevators to Hermit Valley."
+    },
+    // Hermit Valley
+    {
+      "guid": "KFqwmitUni",
+      "description": "On the back side of Hermit's cave."
+    },
+    {
+      "guid": "8_EY7L74TI",
+      "description": "Looking down at the elevator, in a cave on the right side."
+    },
+    // Village Theatre
+    {
+      "guid": "JRTI3BsjIZ",
+      "description": "Hidden behind some boxes backstage."
+    },
+    // #endregion
+    // #region Wasteland
+    // Broken Temple
+    {
+      "guid": "M_ouc0fx7z",
+      "description": "On the beach directly in front of where you land."
+    },
+    {
+      "guid": "-jaWbsOO-B",
+      "description": "On the pillars above where you land."
+    },
+    // Graveyard
+    {
+      "guid": "cfkB_RA0cA",
+      "description": "On a platform in the opening Krill section."
+    },
+    {
+      "guid": "F-YgRDMZyG",
+      "description": "Between two walls on the right after the first Krill section."
+    },
+    {
+      "guid": "Y3PENqw0Mj",
+      "description": "On a large flat rock to the right, close to the campfire."
+    },
+    {
+      "guid": "lL0L9y28hd",
+      "description": "On the ground under some cover in the left Krill's path."
+    },
+    {
+      "guid": "arkcy1Y5HK",
+      "description": "On a small platform on the side of the mountain with ribcage"
+    },
+    {
+      "guid": "NmYlVIsugI",
+      "description": "At the stairs leading to the Battlefield."
+    },
+    // Crab Fields
+    {
+      "guid": "pZ5N0156oQ",
+      "description": "Facing the two vertical pipes at the start, on the wall directly to the left."
+    },
+    {
+      "guid": "U8Bo3YBBh2",
+      "description": "Inside the lower back of the ship."
+    },
+    {
+      "guid": "rSQzx1yNcr",
+      "description": "Next to a large pipe right of the climb to the Battlefield."
+    },
+    // Battlefield
+    {
+      "guid": "3rn0JHgV53",
+      "description": "Near the top of the main building."
+    },
+    {
+      "guid": "MVmgO5kOUE",
+      "description": "Behind the right pillar at the end."
+    },
+    // Wasteland Temple
+    {
+      "guid": "NtcClN4SsY",
+      "description": "In front of the temple shrine."
+    },
+    // Forgotten Ark
+    {
+      "guid": "1zsvpsvviY",
+      "description": "On top of the Forgotten Ark."
+    },
+    {
+      "guid": "wtWGz0QLVx",
+      "description": "Inside the cave at the center back of the area."
+    },
+    // Treasure Reef
+    {
+      "guid": "ij47DZ1EJi",
+      "description": "At the top of the tallest tower."
+    },
+    {
+      "guid": "LoX2Z_gAeA",
+      "description": "In the submerged ruins with the hexagonal top visible above water."
+    },
+    // #endregion
+    // #region Vault
+    // Social Space
+    {
+      "guid": "r9CmlnAmRm",
+      "description": "On a ladder to the right of the Starlight Desert entrance."
+    },
+    // Third Floor
+    {
+      "guid": "Hn7mU7ktxt",
+      "description": "On top of a gazebo."
+    },
+    // Fourth Floor
+    {
+      "guid": "Zzvpdwh0wl",
+      "description": "In a small roofed building around the altitude of the mantas."
+    },
+    {
+      "guid": "I-vGwH81iB",
+      "description": "At the highest point of this floor, surrounded by small pillars."
+    },
+    // Fifth Floor
+    {
+      "guid": "vP7uVXrDUu",
+      "description": "On top of one of the floating bones."
+    },
+    // Summit
+    {
+      "guid": "uiNKKn25L-",
+      "description": "In front of the temple shrine."
+    },
+    // Archives
+    {
+      "guid": "W9fiK8mWQK",
+      "description": "At the first junction, to the left behind some jars."
+    },
+    {
+      "guid": "4uUGCJEgq3",
+      "description": "Up a ladder near the end of the archives maze."
+    },
+    // Starlight Desert
+    {
+      "guid": "DFxZJcPENY",
+      "description": "On top of the lighthouse to the left."
+    },
+    {
+      "guid": "Qz-2auzQan",
+      "description": "On top of the jar to the right."
+    },
+    {
+      "guid": "r_r5vLWj-6",
+      "description": "On the bottom floor of the king's island."
+    },
+    // Remembrance
+    {
+      "guid": "_RSC0jqGCh",
+      "description": "In a locked cell on the outside of the main building."
+    },
+    // #endregion
+    // #region Eden
+    // First area
+    {
+      "guid": "DSTxmpHUbB",
+      "description": "In the building at the end of this area."
+    },
+    // Fourth area
+    {
+      "guid": "1kVW4x7nYj",
+      "description": "Right in front of the tunnel near the end."
+    },
+    {
+      "guid": "kxJmOLwH6e",
+      "description": "First in the tunnel before the point of no return."
+    },
+    {
+      "guid": "3zT-KHGHA_",
+      "description": "Second in the tunnel before the point of no return."
+    },
+    {
+      "guid": "ahUFYVXgT8",
+      "description": "Third in the tunnel before the point of no return."
+    },
+    {
+      "guid": "NYSbSHTslP",
+      "description": "Fourth in the tunnel before the point of no return."
+    },
+    {
+      "guid": "uqOdibxRjD",
+      "description": "Fifth in the tunnel before the point of no return."
+    },
+    {
+      "guid": "WulN9av6-P",
+      "description": "Sixth in the tunnel before the point of no return."
+    },
+    {
+      "guid": "wyDIoyrZbw",
+      "description": "Seventh in the tunnel before the point of no return."
+    },
+    {
+      "guid": "ng2YT7SXkx",
+      "description": "Eight in the tunnel before the point of no return."
+    },
+    // #endregion
+    // #region Orbit
+    {
+      "guid": "DvYGWvjeOC",
+      "description": "Automatically received after leaving Orbit."
+    },
+    // #endregion
+    // #region Void Shard
+    {
+      "guid": "ONPX94C2vq",
+      "description": "Up above in the Jellyfish memory."
+    },
+    {
+      "guid": "VQXUW28_aU",
+      "description": "Up above in the Crab memory."
+    },
+    {
+      "guid": "lI5ByPVjjf",
+      "description": "Up above in the Manta memory."
+    },
+    {
+      "guid": "GXM5vGN1Px",
+      "description": "On the ground in the Krill memory."
+    },
+    {
+      "guid": "L79hQ4XPwg",
+      "description": "Near the eye of the closests whale in the Whale memory."
+    },
+    {
+      "guid": "3_zUodfrew",
+      "description": "At the top of the shard in the Elder memory."
+    }
+    // #endregion
+  ]
+}

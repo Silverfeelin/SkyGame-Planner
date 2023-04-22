@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "guid": "TJBbJd4iQY",
+      "date": { "day": 6, "month": 3, "year": 2023 },
+      "endDate": { "day": 19, "month": 3, "year": 2023 },
+      "spirits": [
+        { "guid": "StIWLq-J8E", "spirit": "94UEgV7ic1", "tree": "Wr_6cQV3n6" },
+        { "guid": "JSaaGAkVDq", "spirit": "lE8DJQLcg5", "tree": "Yy0m8oXKyK" },
+        { "guid": "o_tmR_1217", "spirit": "H30afxXKT1", "tree": "fHPe43oCch" },
+        { "guid": "Ivm3vQWGas", "spirit": "NGSlfCM_wu", "tree": "uztQlhHGhL" }
+      ]
+    },
+    {
+      "guid": "7tvWNUHLPq",
+      "date": { "day": 13, "month": 4, "year": 2023 },
+      "endDate": { "day": 13, "month": 4, "year": 2023 },
+      "spirits": [
+        { "guid": "dvrEFaKH9W", "spirit": "lmydkMDQeP", "tree": "KcxP_uWRx_" }
+      ]
+    }
+  ]
+}

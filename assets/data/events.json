@@ -1,0 +1,605 @@
+{
+  "items": [
+    // Days of Fortune
+    {
+      "guid": "qmi9ZWGfja",
+      "name": "Days of Fortune",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfFortune.webp",
+      "instances": [
+        {
+          "guid": "ez8mFkEq4E",
+          "date": { "day": 24, "month": 1, "year": 2020 },
+          "endDate": { "day": 27, "month": 1, "year": 2020 }
+        },
+        {
+          "guid": "IX3dslxEQW",
+          "date": { "day": 8, "month": 2, "year": 2021 },
+          "endDate": { "day": 1, "month": 3, "year": 2021 },
+          "shops": [
+            "cgSX8-JQkw"
+          ],
+          "spirits": [
+            { "guid": "mrr49FVi5R", "spirit": "9VkjVkgKhb", "tree": "grBXyl9kdw" }
+          ]
+        },
+        {
+          "guid": "ikMsv8FNMy",
+          "date": { "day": 24, "month": 1, "year": 2022 },
+          "endDate": { "day": 6, "month": 2, "year": 2022 },
+          "shops": [
+            "etiMAAMrUG"
+          ],
+          "spirits": [
+            { "guid": "YPStqurD9K", "spirit": "9VkjVkgKhb", "tree": "Cfa81cTc1x" },
+            { "guid": "GlnH4VVPCa", "spirit": "zS4AGUTIgF", "tree": "jnq2S5ihN_" }
+          ]
+        },
+        {
+          "guid": "187kTuPAdi",
+          "date": { "day": 20, "month": 1, "year": 2023 },
+          "endDate": { "day": 2, "month": 2, "year": 2023 },
+          "shops": [
+            "wgSxDUgZTU",
+            "eYY7XDLRsH"
+          ],
+          "spirits": [
+            { "guid": "1QcP-L-MqO", "spirit": "9VkjVkgKhb", "tree": "Oi0WztDirX" },
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune"
+      }
+    },
+    // Days of Love
+    {
+      "guid": "f6OPOFuRDv",
+      "name": "Days of Love",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfLove.webp",
+      "instances": [
+        {
+          "guid": "chP-KuuCxn",
+          "date": { "day": 12, "month": 2, "year": 2020 },
+          "endDate": { "day": 19, "month": 2, "year": 2020 },
+          "shops": [
+            "b6QkhZumfk"
+          ]
+        },
+        {
+          "guid": "5SgNZL-cnc",
+          "date": { "day": 12, "month": 2, "year": 2021 },
+          "endDate": { "day": 21, "month": 2, "year": 2021 },
+          "shops": [
+            "AVZC5sL-ZT"
+          ],
+          "spirits": [
+            { "guid": "YRfQif1oS6", "spirit": "9VkjVkgKhb", "tree": "3pb_Tfne7M" }
+          ]
+        },
+        {
+          "guid": "dOegXUb7Em",
+          "date": { "day": 7, "month": 2, "year": 2022 },
+          "endDate": { "day": 22, "month": 2, "year": 2022 },
+          "shops": [
+            "Qui5cN01A3",
+            "0UnDE-9JQY"
+          ],
+          "spirits": [
+            { "guid": "TpqW3-jpkZ", "spirit": "9VkjVkgKhb", "tree": "CIOxUbOvxM" },
+            { "guid": "Zt2a-8SSJr", "spirit": "zS4AGUTIgF", "tree": "TdnkeRcqGR" }
+          ]
+        },
+        {
+          "guid": "6398vKUGFN",
+          "date": { "day": 13, "month": 2, "year": 2023 },
+          "endDate": { "day": 26, "month": 2, "year": 2023 },
+          "spirits": [
+            { "guid": "tfefmhWEme", "spirit": "9VkjVkgKhb", "tree": "O8EcMfr4-R" },
+            { "guid": "tfefmhWEme", "spirit": "zS4AGUTIgF", "tree": "NuqYNp7i8O" }
+          ],
+          "shops": [
+            "dosWjd_0Ur",
+            "4mcmO11hCE"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
+      }
+    },
+    // Days of Bloom
+    {
+      "guid": "jZ3AhcgPl8",
+      "name": "Days of Bloom",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfBloom.webp",
+      "instances": [
+        {
+          "guid": "zAEvyLfhYt",
+          "date": { "day": 22, "month": 3, "year": 2021 },
+          "endDate": { "day": 4, "month": 4, "year": 2021 },
+          "shops": [
+            "EF1SdxSqWT"
+          ],
+          "spirits": [
+            { "guid": "zUOcOmooWr", "spirit": "IqShB-6_rY", "tree": "c8KLFXw7Qh" }
+          ]
+        },
+        {
+          "guid": "ALuYqQsmXM",
+          "date": { "day": 28, "month": 3, "year": 2022 },
+          "endDate": { "day": 10, "month": 4, "year": 2022 },
+          "shops": [
+            "BtRb90bYtH",
+            "m1hOAdOvnx"
+          ],
+          "spirits": [
+            { "guid": "FwSpcuPQeQ", "spirit": "IqShB-6_rY", "tree": "qXCroH8_X9" }
+          ]
+        },
+        {
+          "guid": "-qKo3_DMbw",
+          "date": { "day": 20, "month": 3, "year": 2023 },
+          "endDate": { "day": 9, "month": 4, "year": 2023 },
+          "shops": [
+            "VU-iQQPPoN",
+            "i1aaE0u8xS",
+            "VPnMsfufZ3"
+          ],
+          "spirits": [
+            { "guid": "WoKuKe4AAh", "spirit": "IqShB-6_rY", "tree": "fLuM8drQ4H", "name": "Bloom Guide (Forgotten Ark)" }, // Located at Ark
+            { "guid": "KOrEqiUw_f", "spirit": "IqShB-6_rY", "tree": "Cz7AcNalLH", "name": "Bloom Guide (Home)" }, // Located at Home
+            { "guid": "erbbY6_Azk", "spirit": "IqShB-6_rY", "tree": "yvuc0d_gC7", "name": "Bloom Guide (Hidden Forest)" } // Located at HF
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom"
+      }
+    },
+    // Days of Nature
+    {
+      "guid": "f6J1-3yeJF",
+      "name": "Days of Nature",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfNature.webp",
+      "instances": [
+        {
+          "guid": "aSrD3lSoFW",
+          "date": { "day": 22, "month": 4, "year": 2020 },
+          "endDate": { "day": 26, "month": 4, "year": 2020 },
+          "shops": [
+            "jYaYDMPEUR"
+          ]
+        },
+        {
+          "guid": "dZSkc1dV7U",
+          "date": { "day": 19, "month": 4, "year": 2021 },
+          "endDate": { "day": 2, "month": 5, "year": 2021 },
+          "shops": [
+            "E6LZlAW128",
+            "oc3Izvti83"
+          ]
+        },
+        {
+          "guid": "qSiOZI_8sQ",
+          "date": { "day": 18, "month": 4, "year": 2022 },
+          "endDate": { "day": 1, "month": 5, "year": 2022 },
+          "shops": [
+            "HzR1C5d1am",
+            "NNulaStjmr"
+          ],
+          "spirits": [
+            { "guid": "4A_HnQqlA9", "spirit": "3M1KSVgf49", "tree": "FDmDW9e9td" }
+          ]
+        },
+        {
+          "guid": "T3MrkNukUj",
+          "date": { "day": 20, "month": 4, "year": 2023 },
+          "endDate": { "day": 7, "month": 5, "year": 2023 },
+          "shops": [
+            "KCnEUzQsIn",
+            "7eYyfPCMwJ"
+          ],
+          "spirits": [
+            { "guid": "yQqAEm21ED", "spirit": "3M1KSVgf49", "tree": "EbPTRRdRBC" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature"
+      }
+    },
+    // Days of Rainbow
+    {
+      "guid": "yVDpWb7Goo",
+      "name": "Days of Rainbow",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfRainbow.webp",
+      "instances": [
+        {
+          "guid": "lm7oA1sthb",
+          "date": { "day": 10, "month": 6, "year": 2020 },
+          "endDate": { "day": 14, "month": 6, "year": 2020 }
+        },
+        {
+          "guid": "ZoR4kXzQLS",
+          "date": { "day": 14, "month": 6, "year": 2021 },
+          "endDate": { "day": 27, "month": 6, "year": 2021 },
+          "shops": [
+            "CwN0xJF-1M"
+          ],
+          "spirits": [
+            { "guid": "QB8tU5kao9", "spirit": "uPzMm5H7ag", "tree": "U2ZiRYwoR2" }
+          ]
+        },
+        {
+          "guid": "l1kxnP--Ws",
+          "date": { "day": 30, "month": 6, "year": 2022 },
+          "endDate": { "day": 13, "month": 7, "year": 2022 },
+          "shops": [
+            "ntVyLMOody",
+            "jaDbvOGhtj"
+          ],
+          "spirits": [
+            { "guid": "Qep3FZt66w", "spirit": "uPzMm5H7ag", "tree": "cfK8l5Lor8" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
+      }
+    },
+    // Sky Anniversary
+    {
+      "guid": "qMS8yJXaln",
+      "name": "Sky Anniversary",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/SkyAnniversary.webp",
+      "instances": [
+        {
+          "guid": "H0unHE7F96",
+          "date": { "day": 13, "month": 7, "year": 2020 },
+          "endDate": { "day": 19, "month": 7, "year": 2020 },
+          "spirits": [
+            { "guid": "sxHFGaW1VO", "spirit": "mYOzGrzNHU", "tree": "I-LjDT1eZf" }
+          ]
+        },
+        {
+          "guid": "ayRFBo_qZ6",
+          "date": { "day": 12, "month": 7, "year": 2021 },
+          "endDate": { "day": 25, "month": 7, "year": 2021 },
+          "spirits": [
+            { "guid": "gMu5acbcwu", "spirit": "mYOzGrzNHU", "tree": "HcWMbpEdVn" }
+          ]
+        },
+        {
+          "guid": "ekBn-JK2zq",
+          "date": { "day": 18, "month": 7, "year": 2022 },
+          "endDate": { "day": 3, "month": 8, "year": 2022 },
+          "spirits": [
+            { "guid": "V4S-zpi_yY", "spirit": "mYOzGrzNHU", "tree": "SzK6rWR3nd" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
+      }
+    },
+    // Days of Sunlight
+    {
+      "guid": "HIw19Tr9eP",
+      "name": "Days of Sunlight",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfSunlight.webp",
+      "imagePosition": "top",
+      "instances": [
+        {
+          "guid": "So_OVA37Ck",
+          "date": { "day": 22, "month": 8, "year": 2022 },
+          "endDate": { "day": 11, "month": 9, "year": 2022 },
+          "shops": [
+            "mmxpUMHHS8"
+          ],
+          "spirits": [
+            { "guid": "tDfqpF3f03", "spirit": "c9XXzlKzhd", "tree": "vIhlnkdWTh" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight"
+      }
+    },
+    // Lazy Days
+    {
+      "guid": "eVaYOCFqcC",
+      "name": "Lazy Days",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/LazyDays.webp",
+      "instances": [
+        {
+          "guid": "Kj5S3mVVH9",
+          "date": { "day": 26, "month": 9, "year": 2022 },
+          "endDate": { "day": 16, "month": 10, "year": 2022 },
+          "shops": [
+            "txCjbkOUCb"
+          ],
+          "spirits": [
+            { "guid": "k2AhzKJA_Z", "spirit": "aMY1ZPzcEx", "tree": "GoEvcTR42k" }
+          ]
+        },
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days"
+      }
+    },
+    // Days of Mischief
+    {
+      "guid": "sZKQF_CWdu",
+      "name": "Days of Mischief",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfMischief.webp",
+      "instances": [
+        {
+          "guid": "PIL2A60uh2",
+          "date": { "day": 20, "month": 10, "year": 2019 },
+          "endDate": { "day": 31, "month": 10, "year": 2019 },
+          "shops": [
+            "jhMTGpLlxV"
+          ]
+        },
+        {
+          "guid": "kD-fP3SDqe",
+          "date": { "day": 22, "month": 10, "year": 2020 },
+          "endDate": { "day": 4, "month": 11, "year": 2020 },
+          "shops": [
+            "GJiMxfksmu"
+          ]
+        },
+        {
+          "guid": "Y4Ktig-rT6",
+          "date": { "day": 18, "month": 10, "year": 2021 },
+          "endDate": { "day": 7, "month": 11, "year": 2021 },
+          "shops": [
+            "G95tJMU080",
+            "h4SPErtdmX",
+            "txm1D8yjKM"
+          ],
+          "spirits": [
+            { "guid": "ACtiGG4_cq", "spirit": "TgUgZjfoMI", "tree": "EUQHt6adrz" }
+          ]
+        },
+        {
+          "guid": "cAAT3VXGVV",
+          "date": { "day": 24, "month": 10, "year": 2022 },
+          "endDate": { "day": 13, "month": 11, "year": 2022 },
+          "shops": [
+            "NTt-KZd_Za",
+            "MGl2DwfM6Y",
+            "vl6JA53gfO",
+            "JfjTkXjClo"
+          ],
+          "spirits": [
+            { "guid": "PNYNgV6au9", "spirit": "TgUgZjfoMI", "tree": "4YsCmESmY1" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief"
+      }
+    },
+    // Days of Giving
+    {
+      "guid": "3Q-XQzfVXR",
+      "name": "Days of Giving",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfGiving.webp",
+      "instances": [
+        {
+          "guid": "og6aDjf82v",
+          "date": { "day": 26, "month": 11, "year": 2019 },
+          "endDate": { "day": 3, "month": 12, "year": 2019 }
+        },
+        {
+          "guid": "O1rBha4CPe",
+          "date": { "day": 23, "month": 11, "year": 2020 },
+          "endDate": { "day": 30, "month": 11, "year": 2020 }
+        },
+        {
+          "guid": "ZFIKCp1_ZW",
+          "date": { "day": 23, "month": 11, "year": 2021 },
+          "endDate": { "day": 29, "month": 11, "year": 2021 }
+        },
+        {
+          "guid": "7X6qW51tj5",
+          "date": { "day": 22, "month": 11, "year": 2022 },
+          "endDate": { "day": 28, "month": 11, "year": 2022 }
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Giving"
+      }
+    },
+    // Days of Feast
+    {
+      "guid": "MtDAWRpBqJ",
+      "name": "Days of Feast",
+      "recurring": true,
+      "imageUrl": "/assets/game/events/DaysOfFeast.webp",
+      "instances": [
+        {
+          "guid": "-9T61aYKrW",
+          "date": { "day": 22, "month": 12, "year": 2019 },
+          "endDate": { "day": 2, "month": 1, "year": 2020 },
+          "shops": [
+            "eWS8HsX6SC"
+          ]
+        },
+        {
+          "guid": "3kgcZhndZH",
+          "date": { "day": 21, "month": 12, "year": 2020 },
+          "endDate": { "day": 3, "month": 1, "year": 2021 },
+          "shops": [
+            "48VKbivxaf",
+            "akRGCtzW3O"
+          ],
+          "spirits": [
+            { "guid": "jqWTR2dvEc", "spirit": "j1UqKci8Hb", "tree": "zNffCKbbb2" }
+          ]
+        },
+        {
+          "guid": "J4c68B1pj7",
+          "date": { "day": 20, "month": 12, "year": 2021 },
+          "endDate": { "day": 9, "month": 1, "year": 2022 },
+          "shops": [
+            "xegEfESIKJ",
+            "oGKtAz6EKJ"
+          ],
+          "spirits": [
+            { "guid": "DxybajHFDM", "spirit": "5rr1zr2_j5", "tree": "VjpAJQcwN0" },
+            { "guid": "p7u0Zl6gak", "spirit": "j1UqKci8Hb", "tree": "GOwoxyHK4k" }
+          ]
+        },
+        {
+          "guid": "-nF-0Ar_uz",
+          "date": { "day": 19, "month": 12, "year": 2022 },
+          "endDate": { "day": 8, "month": 1, "year": 2023 },
+          "shops": [
+            "sqzCydXmsy",
+            "2C_rKjKCNo",
+            "zoFI7O9DM0"
+          ],
+          "spirits": [
+            { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },
+            { "guid": "d2BGP3fI-Y", "spirit": "5rr1zr2_j5", "tree": "WiF93W3zoc" },
+            { "guid": "eXRAJOweQm", "spirit": "j1UqKci8Hb", "tree": "6SsyXPH5Ow" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast"
+      }
+    },
+    // Add Days of Feast from this Article: LINK
+
+    // Days of Healing (2020)
+    {
+      "guid": "Bqvtgwzj5I",
+      "name": "Days of Healing",
+      "instances": [
+        {
+          "guid": "Btpq48TBPD",
+          "date": { "day": 18, "month": 5, "year": 2020 },
+          "endDate": { "day": 22, "month": 6, "year": 2020 },
+          "shops": [
+            "mw6o6Ezv3e"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Healing"
+      }
+    },
+    // Children's Day (2021)
+    {
+      "guid": "His_r9JBBt",
+      "name": "Children's Day",
+      "instances": [
+        {
+          "guid": "PShOLpIdTP",
+          "date": { "day": 3, "month": 5, "year": 2021 },
+          "endDate": { "day": 9, "month": 5, "year": 2021 }
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Special_Events"
+      }
+    },
+    // Kizuna AI Collab (2022)
+    {
+      "guid": "FBZvsjNRwi",
+      "name": "Kizuna AI Collaboration",
+      "instances": [
+        {
+          "guid": "rGOuzt_d-o",
+          "date": { "day": 25, "month": 2, "year": 2022 },
+          "endDate": { "day": 10, "month": 3, "year": 2022 },
+          "shops": [
+            "djY7Ysc5Yf"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI"
+      }
+    },
+    // Days of Summer (2021)
+    {
+      "guid": "uv2xDBpU7W",
+      "name": "Days of Summer",
+      "instances": [
+        {
+          "guid": "-tLqiqDLxU",
+          "date": { "day": 12, "month": 8, "year": 2021 },
+          "endDate": { "day": 25, "month": 8, "year": 2021 },
+          "shops": [
+            "dgkpvIdu6r"
+          ],
+          "spirits": [
+            { "guid": "DfPcIzdjQ9", "spirit": "aMY1ZPzcEx", "tree": "mHHOSQWAM0" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer"
+      }
+    },
+    // Days of Summer Lights (2020/2021)
+    {
+      "guid": "tQQ7aeJbRJ",
+      "name": "Days of Summer Lights",
+      "instances": [
+        {
+          "guid": "FOV5DDicTL",
+          "date": { "day": 8, "month": 9, "year": 2020 },
+          "endDate": { "day": 20, "month": 9, "year": 2020 },
+          "shops": [
+            "mbEzwlWA7W"
+          ]
+        },
+        {
+          "guid": "ZPF9Lep4IR",
+          "date": { "day": 20, "month": 9, "year": 2021 },
+          "endDate": { "day": 3, "month": 10, "year": 2021 },
+          "shops": [
+            "hmIkJrBgwH"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
+      }
+    },
+    // Harmony Hall Grand Opening
+    {
+      "guid": "P281ctf0XE",
+      "name": "Harmony Hall Grand Opening",
+      "instances": [
+        {
+          "guid": "7eNLae0wS1",
+          "date": { "day": 23, "month": 5, "year": 2022 },
+          "endDate": { "day": 5, "month": 6, "year": 2022 },
+          "spirits": [
+            { "guid": "2Xcu_VsRwC", "spirit": "fEcI6neh6f", "tree": "15T8Gelv5Z" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#The_Grand_Opening"
+      }
+    },
+    // #endregion
+  ]
+}
