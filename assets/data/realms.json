@@ -4,7 +4,7 @@
       "guid": "8E6CJZxsxj",
       "name": "Home",
       "shortName": "Home",
-      "imageUrl": "/assets/game/realms/Home.webp",
+      "imageUrl": "assets/game/realms/Home.webp",
       "areas": [
         "zewkN917oz"
       ],
@@ -16,7 +16,7 @@
       "guid": "E1RwpAdA8l",
       "name": "Isle of Dawn",
       "shortName": "Dawn",
-      "imageUrl": "/assets/game/realms/Isle.webp",
+      "imageUrl": "assets/game/realms/Isle.webp",
       "areas": [
         "oEnKoTrbCt",
         "bf21F4I7SD",
@@ -39,7 +39,7 @@
       "guid": "tuaosLljJS",
       "name": "Daylight Prairie",
       "shortName": "Prairie",
-      "imageUrl": "/assets/game/realms/Prairie.webp",
+      "imageUrl": "assets/game/realms/Prairie.webp",
       "areas": [
         "Cmo9TPPpyH",
         "z3uQqa5KVZ",
@@ -62,7 +62,7 @@
       "guid": "mz64Wq0_df",
       "name": "Hidden Forest",
       "shortName": "Forest",
-      "imageUrl": "/assets/game/realms/Forest.webp",
+      "imageUrl": "assets/game/realms/Forest.webp",
       "areas": [
         "A2--yR5CJk",
         "tU23ZgPP_g",
@@ -83,7 +83,7 @@
       "guid": "VtkTo1WWuD",
       "name": "Valley of Triumph",
       "shortName": "Valley",
-      "imageUrl": "/assets/game/realms/Valley.webp",
+      "imageUrl": "assets/game/realms/Valley.webp",
       "areas": [
         "LUkrOYNjEy",
         "u3rc8C3sMb",
@@ -107,7 +107,7 @@
       "guid": "rAjzHXfPpb",
       "name": "Golden Wasteland",
       "shortName": "Wasteland",
-      "imageUrl": "/assets/game/realms/Wasteland.webp",
+      "imageUrl": "assets/game/realms/Wasteland.webp",
       "areas": [
         "R4I-lYbUUO",
         "LNcVZMfuWm",
@@ -128,7 +128,7 @@
       "guid": "y-6n1F5E77",
       "name": "Vault of Knowledge",
       "shortName": "Vault",
-      "imageUrl": "/assets/game/realms/Vault.webp",
+      "imageUrl": "assets/game/realms/Vault.webp",
       "areas": [
         "QM7Kuv1Ekg",
         "wKZdWMMIWa",
@@ -158,7 +158,7 @@
       "guid": "GKnbJhLIRi",
       "name": "Eye of Eden",
       "shortName": "Eden",
-      "imageUrl": "/assets/game/realms/Eden.webp",
+      "imageUrl": "assets/game/realms/Eden.webp",
       "areas": [
         "vWlW190-P1",
         "aXSrTx3fzL",

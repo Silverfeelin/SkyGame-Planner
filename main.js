@@ -191,7 +191,7 @@ class AppComponent {
     this._dataService.onData.subscribe(() => {
       this.onData();
     });
-    _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('/assets/icons/icons.svg'));
+    _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
     window.addEventListener('storage', () => {
       this.dataLoss = true;
     });

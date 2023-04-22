@@ -5,7 +5,7 @@
       "guid": "qmi9ZWGfja",
       "name": "Days of Fortune",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfFortune.webp",
+      "imageUrl": "assets/game/events/DaysOfFortune.webp",
       "instances": [
         {
           "guid": "ez8mFkEq4E",
@@ -57,7 +57,7 @@
       "guid": "f6OPOFuRDv",
       "name": "Days of Love",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfLove.webp",
+      "imageUrl": "assets/game/events/DaysOfLove.webp",
       "instances": [
         {
           "guid": "chP-KuuCxn",
@@ -114,7 +114,7 @@
       "guid": "jZ3AhcgPl8",
       "name": "Days of Bloom",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfBloom.webp",
+      "imageUrl": "assets/game/events/DaysOfBloom.webp",
       "instances": [
         {
           "guid": "zAEvyLfhYt",
@@ -164,7 +164,7 @@
       "guid": "f6J1-3yeJF",
       "name": "Days of Nature",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfNature.webp",
+      "imageUrl": "assets/game/events/DaysOfNature.webp",
       "instances": [
         {
           "guid": "aSrD3lSoFW",
@@ -217,7 +217,7 @@
       "guid": "yVDpWb7Goo",
       "name": "Days of Rainbow",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfRainbow.webp",
+      "imageUrl": "assets/game/events/DaysOfRainbow.webp",
       "instances": [
         {
           "guid": "lm7oA1sthb",
@@ -257,7 +257,7 @@
       "guid": "qMS8yJXaln",
       "name": "Sky Anniversary",
       "recurring": true,
-      "imageUrl": "/assets/game/events/SkyAnniversary.webp",
+      "imageUrl": "assets/game/events/SkyAnniversary.webp",
       "instances": [
         {
           "guid": "H0unHE7F96",
@@ -293,7 +293,7 @@
       "guid": "HIw19Tr9eP",
       "name": "Days of Sunlight",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfSunlight.webp",
+      "imageUrl": "assets/game/events/DaysOfSunlight.webp",
       "imagePosition": "top",
       "instances": [
         {
@@ -317,7 +317,7 @@
       "guid": "eVaYOCFqcC",
       "name": "Lazy Days",
       "recurring": true,
-      "imageUrl": "/assets/game/events/LazyDays.webp",
+      "imageUrl": "assets/game/events/LazyDays.webp",
       "instances": [
         {
           "guid": "Kj5S3mVVH9",
@@ -340,7 +340,7 @@
       "guid": "sZKQF_CWdu",
       "name": "Days of Mischief",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfMischief.webp",
+      "imageUrl": "assets/game/events/DaysOfMischief.webp",
       "instances": [
         {
           "guid": "PIL2A60uh2",
@@ -395,7 +395,7 @@
       "guid": "3Q-XQzfVXR",
       "name": "Days of Giving",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfGiving.webp",
+      "imageUrl": "assets/game/events/DaysOfGiving.webp",
       "instances": [
         {
           "guid": "og6aDjf82v",
@@ -427,7 +427,7 @@
       "guid": "MtDAWRpBqJ",
       "name": "Days of Feast",
       "recurring": true,
-      "imageUrl": "/assets/game/events/DaysOfFeast.webp",
+      "imageUrl": "assets/game/events/DaysOfFeast.webp",
       "instances": [
         {
           "guid": "-9T61aYKrW",
