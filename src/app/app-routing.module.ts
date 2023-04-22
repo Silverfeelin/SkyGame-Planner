@@ -12,6 +12,7 @@ import { SpiritComponent } from './components/spirit/spirit.component';
 import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
 import { ShopsComponent } from './components/shops/shops.component';
+import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'realm', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'spirit', component: SpiritsComponent },
   { path: 'spirit/:guid', component: SpiritComponent },
   { path: 'ts', component: TravelingSpiritsComponent },
+  { path: 'wing-buffs', component: WingBuffsComponent },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];
 

@@ -28,6 +28,7 @@ import { SeasonComponent } from './components/season/season.component';
 import { EventComponent } from './components/event/event.component';
 import { EventInstanceComponent } from './components/event-instance/event-instance.component';
 import { ShopsComponent } from './components/shops/shops.component';
+import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ShopsComponent } from './components/shops/shops.component';
     SeasonComponent,
     EventComponent,
     EventInstanceComponent,
-    ShopsComponent
+    ShopsComponent,
+    WingBuffsComponent
   ],
   imports: [
     BrowserModule,

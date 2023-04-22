@@ -30,12 +30,10 @@ export class NodeComponent implements OnChanges {
 
   mouseEnter(event: MouseEvent): void {
     this.hover = true;
-    this._eventService.setHoveredNode(this.node);
   }
 
   mouseLeave(event: MouseEvent): void {
     this.hover = false;
-    this._eventService.setHoveredNode(undefined);
   }
 
   toggleNode(): void {

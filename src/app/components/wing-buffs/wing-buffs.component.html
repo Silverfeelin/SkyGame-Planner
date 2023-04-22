@@ -1,0 +1,33 @@
+<h1 class="h2">Wing Buffs</h1>
+<app-table [rows]="rows">
+  <ng-template [appTableHeader]>Spirit</ng-template>
+  <ng-template [appTableHeader]>Type</ng-template>
+  <ng-template [appTableHeader]>Origin</ng-template>
+  <ng-template [appTableHeader]>Unlocked</ng-template>
+
+  <ng-template [appTableColumn] let-row="row">
+    <a [routerLink]="['/spirit', row.guid]">
+      {{ row.name }}
+    </a>
+  </ng-template>
+  <ng-template [appTableColumn] let-row="row">
+    {{ row.type }}
+  </ng-template>
+  <ng-template [appTableColumn] let-row="row">
+    <a *ngIf="row.season" [routerLink]="['/season', row.season.guid]">{{ row.season.name }}</a>
+    <a *ngIf="row.type === 'Regular'">{{ row.area.realm.name }}</a>
+  </ng-template>
+
+  <ng-template [appTableColumn] let-row="row">
+    <span [class.completed]="row.unlocked === row.total">
+      {{ row.unlocked }} / {{ row.total }}
+    </span>
+  </ng-template>
+
+  <!-- Footers -->
+  <ng-template [appTableFooter] [colspan]="3" [textAlign]="'right'">Total:</ng-template>
+  <ng-template [appTableFooter]>
+    <span [class.completed]="unlocked === total">{{ unlocked }} / {{ total }}</span>
+  </ng-template>
+
+</app-table>

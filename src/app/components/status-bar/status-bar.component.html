@@ -1,13 +1,8 @@
-<span>
-  {{ node?.item?.name }}
-</span>
-<span>
-</span>
-
 <div class="right">
-  <div class="wing-buffs" [ngbTooltip]="wbHover" placement="top-end" container="body">
+  <a class="wing-buffs" [routerLink]="['/wing-buffs']"
+    [ngbTooltip]="wbHover" placement="top-end" container="body">
     {{ wingBuffCount }}&nbsp;<mat-icon class="wingbuffs" svgIcon="flaps"></mat-icon>
-  </div>
+  </a>
 </div>
 
 <ng-template #wbHover>

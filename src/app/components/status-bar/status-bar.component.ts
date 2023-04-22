@@ -11,8 +11,6 @@ import { EventService } from 'src/app/services/event.service';
   styleUrls: ['./status-bar.component.less']
 })
 export class StatusBarComponent implements OnInit, OnDestroy {
-  node?: INode;
-
   wingBuffs: Array<IItem> = [];
   wingBuffCount = 0;
 
@@ -26,15 +24,10 @@ export class StatusBarComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this._subscriptions.push(this._eventService.hoverNodeChanged.subscribe(n => this.nodeChanged(n)));
     this._subscriptions.push(this._eventService.itemToggled.subscribe(n => this.itemToggled(n)));
 
     this.wingBuffs = this._dataService.itemConfig.items.filter(item => item.type === ItemType.WingBuff);
     this.wingBuffCount = this.wingBuffs.filter(w => w.unlocked).length;
-  }
-
-  nodeChanged(node?: INode): void {
-    this.node = node;
   }
 
   itemToggled(item: IItem): void {
