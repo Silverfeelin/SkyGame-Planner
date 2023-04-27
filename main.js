@@ -729,9 +729,9 @@ function EventInstanceComponent_ng_container_6_ng_container_5_ng_container_1_div
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", shop_r5.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !shop_r5.name && shop_r5.type === "store");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !shop_r5.name && shop_r5.type === "Store");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !shop_r5.name && shop_r5.type !== "store");
+    _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngIf", !shop_r5.name && shop_r5.type !== "Store");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵproperty"]("ngbTooltip", "Price of the IAP in USD.");
     _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵadvance"](1);
@@ -2659,9 +2659,9 @@ function SeasonComponent_ng_container_10_ng_container_5_ng_container_1_div_1_Tem
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", shop_r10.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !shop_r10.name && shop_r10.type === "store");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !shop_r10.name && shop_r10.type === "Store");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !shop_r10.name && shop_r10.type !== "store");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", !shop_r10.name && shop_r10.type !== "Store");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngbTooltip", "Price of the IAP in USD.");
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
@@ -3177,9 +3177,9 @@ function ShopsComponent_ng_container_2_ng_container_2_ng_container_1_div_1_Templ
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", shop_r2.name);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !shop_r2.name && shop_r2.type === "store");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !shop_r2.name && shop_r2.type === "Store");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !shop_r2.name && shop_r2.type !== "store");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !shop_r2.name && shop_r2.type !== "Store");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngbTooltip", "Price of the IAP in USD.");
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
@@ -4737,8 +4737,19 @@ class TravelingSpiritsComponent {
         totalItems
       };
     }).reverse();
+    // const tsSet = new Set<string>();
+    // const reverseTs = this._dataService.travelingSpiritConfig.items.slice().reverse();
+    // const cost: ICost = {};
+    // for (const ts of reverseTs) {
+    //   if (tsSet.has(ts.spirit.guid)) continue;
+    //   tsSet.add(ts.spirit.guid);
+    //   const nodes = NodeHelper.all(ts.tree.node);
+    //   nodes.forEach(n => CostHelper.add(cost, n));
+    // }
+    // console.log('cost', cost, 'spirits', tsSet.size);
   }
 }
+
 TravelingSpiritsComponent.ɵfac = function TravelingSpiritsComponent_Factory(t) {
   return new (t || TravelingSpiritsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdirectiveInject"](src_app_services_data_service__WEBPACK_IMPORTED_MODULE_1__.DataService));
 };
@@ -5313,7 +5324,6 @@ class DataService {
     });
     return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.forkJoin)({
       areaConfig: get('areas.json'),
-      candleConfig: get('candles.json'),
       connectionConfig: get('connections.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
@@ -5391,8 +5401,8 @@ class DataService {
   initializeSeasons() {
     this.seasonConfig.items.forEach((season, i) => {
       season.number = i + 1;
-      season.start = _helpers_date_helper__WEBPACK_IMPORTED_MODULE_2__.DateHelper.fromString(season.start);
-      season.end = _helpers_date_helper__WEBPACK_IMPORTED_MODULE_2__.DateHelper.fromString(season.end);
+      season.date = _helpers_date_helper__WEBPACK_IMPORTED_MODULE_2__.DateHelper.fromString(season.date);
+      season.endDate = _helpers_date_helper__WEBPACK_IMPORTED_MODULE_2__.DateHelper.fromString(season.endDate);
       // Map Spirits to Season.
       season.spirits?.forEach((spirit, si) => {
         spirit = this.guidMap.get(spirit);
@@ -5571,8 +5581,6 @@ class DataService {
   exposeData() {
     window.skyData = {
       areaConfig: this.areaConfig,
-      candleConfig: this.candleConfig,
-      connectionConfig: this.connectionConfig,
       spiritTreeConfig: this.spiritTreeConfig,
       eventConfig: this.eventConfig,
       itemConfig: this.itemConfig,

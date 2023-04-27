@@ -8577,6 +8577,66 @@
       "item": "9KhfuEDkFe",
       "c": 65
     },
+    // #region TS 86
+    {
+      "guid": "Z29y6osfM2",
+      "item": "RzstnkbQ8d",
+      "nw": "SWt6XHHDc5",
+      "n": "4bsRGZKC7b"
+    },
+    {
+      "guid": "SWt6XHHDc5",
+      "item": "o9Wt1MLcrz",
+      "h": 4
+    },
+    {
+      "guid": "4bsRGZKC7b",
+      "item": "6Iufn25pjn",
+      "c": 5,
+      "nw": "l0K_2aK8Qs",
+      "n": "MgSh3dXhEb",
+      "ne": "U2tCBfgNmh"
+    },
+    {
+      "guid": "l0K_2aK8Qs",
+      "item": "1pSVV2aJ5S",
+      "c": 34
+    },
+    {
+      "guid": "U2tCBfgNmh",
+      "item": "tP6qPGAogz",
+      "c": 3
+    },
+    {
+      "guid": "MgSh3dXhEb",
+      "item": "f4K2zz9mXc",
+      "ac": 2,
+      "n": "N3vaUDdgdj"
+    },
+    {
+      "guid": "N3vaUDdgdj",
+      "item": "xfv-AbRiCY",
+      "h": 3,
+      "nw": "Jvuk3aNqhq",
+      "n": "iF88W3PKyj"
+    },
+    {
+      "guid": "Jvuk3aNqhq",
+      "item": "IL31Z--01u",
+      "h": 6
+    },
+    {
+      "guid": "iF88W3PKyj",
+      "item": "l8RClua3lo",
+      "c": 5,
+      "n": "zhA9VgXCtD"
+    },
+    {
+      "guid": "zhA9VgXCtD",
+      "item": "9KhfuEDkFe",
+      "c": 65
+    },
+    // #endregion
     // Playfighting Herbalist
     {
       "guid": "wsKSTuhwpG",

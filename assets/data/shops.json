@@ -3,7 +3,7 @@
     // #region Permanent
     {
       "guid": "BTcODyaWw0",
-      "type": "store",
+      "type": "Store",
       "permanent": true,
       "iaps": [
         "h7MofWX407"
@@ -11,7 +11,7 @@
     },
     {
       "guid": "wKkwWi5qdC",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "ExkE9a7QJ0",
       "permanent": true,
       "iaps": [
@@ -21,7 +21,7 @@
     },
     {
       "guid": "QtpcAqvc4g",
-      "type": "store",
+      "type": "Store",
       "name": "Premium Candle Store (Switch)",
       "permanent": true,
       "iaps": [
@@ -30,7 +30,7 @@
     },
     {
       "guid": "asYb2Serjg",
-      "type": "store",
+      "type": "Store",
       "name": "Premium Candle Store (PS)",
       "permanent": true,
       "iaps": [
@@ -39,7 +39,7 @@
     },
     {
       "guid": "RLDuUaL17F",
-      "type": "object",
+      "type": "Object",
       "name": "Beta reward (unavailable)",
       "permanent": true,
       "iaps": [
@@ -48,7 +48,7 @@
     },
     {
       "guid": "SnbeExzeMM",
-      "type": "object",
+      "type": "Object",
       "name": "Harmony Hall",
       "permanent": true,
       "iaps": [
@@ -61,7 +61,7 @@
     // #region Season of The Little Prince
     {
       "guid": "EXatrm6wtE",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "EaPiJFN8nV",
         "-gcPJFCEYm"
@@ -69,7 +69,7 @@
     },
     {
       "guid": "hM_gIGksSB",
-      "type": "store",
+      "type": "Store",
       "name": "Premium Candle Store (Limited)",
       "iaps": [
         "GQhF2oh9WV"
@@ -79,7 +79,7 @@
     // #region Season of AURORA
     {
       "guid": "g52YibkF9n",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "g0xUcfeLuu",
         "pREv6Dms5y"
@@ -87,7 +87,7 @@
     },
     {
       "guid": "LO-BcdXa5D",
-      "type": "object",
+      "type": "Object",
       "name": "Runaway Mannequin",
       "iaps": [
         "6uocGtwo0k",
@@ -96,7 +96,7 @@
     },
     {
       "guid": "3jAHLp9lZp",
-      "type": "object",
+      "type": "Object",
       "name": "To The Love Mannequin",
       "iaps": [
         "o57dLz05Mz",
@@ -105,7 +105,7 @@
     },
     {
       "guid": "ph-oKFD2TA",
-      "type": "object",
+      "type": "Object",
       "name": "Wings of AURORA Mannequin",
       "iaps": [
         "Ool0q97DwR"
@@ -115,55 +115,55 @@
     // #region Days of Fortune (2021)
     {
       "guid": "cgSX8-JQkw",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "P0xxZcQSx5",
         "ED9dHqWNc9",
-        "KbPeQWUPlV",
+        "KbPeQWUPlV"
       ]
     },
     // #endregion
     // #region Days of Fortune (2022)
     {
       "guid": "etiMAAMrUG",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "OT4AzH9NaZ",
         "YoxGgvFzsV",
         "h4gJ7No20s",
         "pTTfhnjNgn",
-        "exZs0drSPp",
+        "exZs0drSPp"
       ]
     },
     // #endregion
     // #region Days of Fortune (2023)
     {
       "guid": "wgSxDUgZTU",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "r2n8t9EH20",
         "pSgQ6p1m0V",
         "Kz45-rQStP",
         "LGhtWH5wmF",
-        "btFQ4ccT5r",
+        "btFQ4ccT5r"
       ]
     },
     {
       "guid": "eYY7XDLRsH",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "f2wGOnTOGl",
-        "kYwAczfKLX",
+        "kYwAczfKLX"
       ]
     },
     // #endregion
     // #region Days of Love (2020)
     {
       "guid": "b6QkhZumfk",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "FlOGVYjyiY"
       ]
@@ -172,7 +172,7 @@
     // #region Days of Love (2021)
     {
       "guid": "AVZC5sL-ZT",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "-gWkeP967A",
         "SMZdQolABl"
@@ -182,7 +182,7 @@
     // #region Days of Love (2022)
     {
       "guid": "Qui5cN01A3",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "8K7K3lo1Au",
@@ -191,7 +191,7 @@
     },
     {
       "guid": "0UnDE-9JQY",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "2Izzp9weB5"
       ]
@@ -200,7 +200,7 @@
     // #region Days of Love (2023)
     {
       "guid": "dosWjd_0Ur",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "Ez2DeNbquI",
@@ -210,7 +210,7 @@
     },
     {
       "guid": "4mcmO11hCE",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "65mCMf_2ZQ",
         "GfzBBN17Gm"
@@ -220,7 +220,7 @@
     // #region Days of Bloom (2021)
     {
       "guid": "EF1SdxSqWT",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "mdWojLD1RZ"
       ]
@@ -229,14 +229,14 @@
     // #region Days of Bloom (2022)
     {
       "guid": "BtRb90bYtH",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "SJrMMErd7U"
       ]
     },
     {
       "guid": "m1hOAdOvnx",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "UNKzFTE5mB",
       "iaps": [
         "rUGalz2aN1"
@@ -246,7 +246,7 @@
     // #region Days of Bloom (2023)
     {
       "guid": "VU-iQQPPoN",
-      "type": "object",
+      "type": "Object",
       "name": "Home Bloom Crate",
       "iaps": [
         "skAZ2yHQ5q"
@@ -254,7 +254,7 @@
     },
     {
       "guid": "i1aaE0u8xS",
-      "type": "object",
+      "type": "Object",
       "name": "Forest Bloom Crate",
       "iaps": [
         "HQNwM6uvpQ"
@@ -262,7 +262,7 @@
     },
     {
       "guid": "VPnMsfufZ3",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "zwPqSQZWLt",
         "mEvjH3h1gv"
@@ -272,7 +272,7 @@
     // #region Days of Nature (2020)
     {
       "guid": "jYaYDMPEUR",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "JDYVILff0q"
       ]
@@ -281,7 +281,7 @@
     // #region Days of Nature (2021)
     {
       "guid": "E6LZlAW128",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "zHnD_0mTCj"
@@ -289,7 +289,7 @@
     },
     {
       "guid": "oc3Izvti83",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "OHsxWZOsgs",
         "wH4Rolvr0R"
@@ -299,7 +299,7 @@
     // #region Days of Nature (2022)
     {
       "guid": "HzR1C5d1am",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "6z9qTWUzk7",
         "236RtTEBQ3"
@@ -307,7 +307,7 @@
     },
     {
       "guid": "NNulaStjmr",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "svdsqPs2us",
@@ -319,7 +319,7 @@
     // #region Days of Nature (2023)
     {
       "guid": "KCnEUzQsIn",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "5RnFOO5fyy",
         "7anZDnNjVZ"
@@ -327,7 +327,7 @@
     },
     {
       "guid": "7eYyfPCMwJ",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "8N9cC4SvzM",
       "iaps": [
         "DDArA8ChK7",
@@ -341,7 +341,7 @@
     // #region Days of Rainbow (2021)
     {
       "guid": "CwN0xJF-1M",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "phpvRx9BAL",
         "o64dAgrcEN"
@@ -351,7 +351,7 @@
     // #region Days of Rainbow (2022)
     {
       "guid": "ntVyLMOody",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "9eBpHjtudy",
       "iaps": [
         "HEeaH4p5wn"
@@ -359,7 +359,7 @@
     },
     {
       "guid": "jaDbvOGhtj",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "ynQuCl7q9Z",
         "T_daeF3aRQ",
@@ -370,7 +370,7 @@
     // #region Lazy Days (2022)
     {
       "guid": "txCjbkOUCb",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "mIrP9HEc7D",
         "koxW3plFiV",
@@ -382,7 +382,7 @@
     // #region Days of Mischief (2019)
     {
       "guid": "jhMTGpLlxV",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "H9VzxM1qIj",
         "OL4LXHgY8W"
@@ -392,7 +392,7 @@
     // #region Days of Mischief (2020)
     {
       "guid": "GJiMxfksmu",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "iMCpfyWz9M",
         "HSKDIn896y",
@@ -405,7 +405,7 @@
     // #region Days of Mischief (2021)
     {
       "guid": "txm1D8yjKM",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "GzpxxWwGVG",
       "iaps": [
         "kWLCPaGAbJ",
@@ -415,7 +415,7 @@
     },
     {
       "guid": "h4SPErtdmX",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "smphYk9cPX",
       "iaps": [
         "-e3FXCMnQ9",
@@ -424,7 +424,7 @@
     },
     {
       "guid": "G95tJMU080",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "hD6xfWsujC",
         "RoNGpI5-2k",
@@ -436,7 +436,7 @@
     // #region Days of Mischief (2022)
     {
       "guid": "NTt-KZd_Za",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "5G4gDL_3JS",
         "OWK46yMzBT"
@@ -444,7 +444,7 @@
     },
     {
       "guid": "MGl2DwfM6Y",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "GwPybX8w0t",
       "iaps": [
         "YGzHOyzdID",
@@ -455,7 +455,7 @@
     },
     {
       "guid": "vl6JA53gfO",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "smphYk9cPX",
       "iaps": [
         "_XakvSmYcJ",
@@ -464,7 +464,7 @@
     },
     {
       "guid": "JfjTkXjClo",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "GzpxxWwGVG",
       "iaps": [
         "6YG733Io27",
@@ -475,7 +475,7 @@
     // #region Days of Feast (2019)
     {
       "guid": "eWS8HsX6SC",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "-vTNb2irO1"
       ]
@@ -484,7 +484,7 @@
     // #region Days of Feast (2020)
     {
       "guid": "48VKbivxaf",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "jEMAHe1jhH",
         "DEPpjByhKf"
@@ -492,7 +492,7 @@
     },
     {
       "guid": "akRGCtzW3O",
-      "type": "store",
+      "type": "Store",
       "name": "Premium Candle Store (Limited)",
       "iaps": [
         "D9kl00q4D4"
@@ -502,7 +502,7 @@
     // #region Days of Feast (2021)
     {
       "guid": "xegEfESIKJ",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "Te8lhAUlsm",
         "mKOdlx1odg",
@@ -511,7 +511,7 @@
     },
     {
       "guid": "oGKtAz6EKJ",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "mEwEf3bX1A",
@@ -523,7 +523,7 @@
     // #region Days of Feast (2022)
     {
       "guid": "sqzCydXmsy",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "bf3CFJIRXv",
         "UQJntPLj4l"
@@ -531,7 +531,7 @@
     },
     {
       "guid": "2C_rKjKCNo",
-      "type": "object",
+      "type": "Object",
       "name": "Winter Home Igloo Shelf",
       "iaps": [
         "Q-WT2eyG6L",
@@ -541,7 +541,7 @@
     },
     {
       "guid": "zoFI7O9DM0",
-      "type": "spirit",
+      "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
         "Z7KMfWIAOH",
@@ -553,7 +553,7 @@
     // #region Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "mec9z8iJUX"
       ]
@@ -562,7 +562,7 @@
     // #region Days of Summer Lights (2020)
     {
       "guid": "mbEzwlWA7W",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "_NudGPNXnY"
       ]
@@ -571,7 +571,7 @@
     // #region Days of Summer Lights (2021)
     {
       "guid": "hmIkJrBgwH",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "Cb-na1jU70",
         "uqlKywsZyd"
@@ -581,7 +581,7 @@
     // #region Days of Summer (2021)
     {
       "guid": "dgkpvIdu6r",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "of257qu0my",
         "09o4l_zgOw"
@@ -591,7 +591,7 @@
     // #region Kizuna AI Collab (2022)
     {
       "guid": "djY7Ysc5Yf",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "nnDO8UAwSC"
       ]
@@ -600,7 +600,7 @@
     // #region Days of Sunlight (2022)
     {
       "guid": "mmxpUMHHS8",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "AZxrY1dz75",
         "xapvROJehm"
