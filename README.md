@@ -1,6 +1,6 @@
 # Sky Planner
 
-## [Link to website](https://silverfeelin.github.io/SkyGame-Planner/realm)
+## [Link to website](https://silverfeelin.github.io/SkyGame-Planner)
 
 Sky Planner is a tool to track items and progress in [Sky: Children of the Light](https://www.thatskygame.com/).
 
