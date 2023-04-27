@@ -9,7 +9,10 @@ export interface INode extends IGuid, ICost {
   // #region References
   /** Item unlocked through this node. */
   item?: IItem;
-  /** Spirit tree containing this node */
+  /**
+   * Spirit tree containing this node.
+   * @remarks Only the first node has this reference, other nodes have a reference to their `prev` node.
+   * */
   spiritTree?: ISpiritTree;
   /** Node north west of this node. */
   nw?: INode;

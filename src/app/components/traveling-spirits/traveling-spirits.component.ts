@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CostHelper } from 'src/app/helpers/cost-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
+import { ICost } from 'src/app/interfaces/cost.interface';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -29,5 +31,17 @@ export class TravelingSpiritsComponent {
         totalItems
       };
     }).reverse();
+
+    // const tsSet = new Set<string>();
+    // const reverseTs = this._dataService.travelingSpiritConfig.items.slice().reverse();
+    // const cost: ICost = {};
+    // for (const ts of reverseTs) {
+    //   if (tsSet.has(ts.spirit.guid)) continue;
+    //   tsSet.add(ts.spirit.guid);
+    //   const nodes = NodeHelper.all(ts.tree.node);
+    //   nodes.forEach(n => CostHelper.add(cost, n));
+    // }
+
+    // console.log('cost', cost, 'spirits', tsSet.size);
   }
 }

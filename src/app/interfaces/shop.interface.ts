@@ -8,7 +8,7 @@ import { IWiki } from "./wiki.interface";
 
 export interface IShopConfig extends IConfig<IShop> {}
 
-export type ShopType = 'store' | 'spirit' | 'object';
+export type ShopType = 'Store' | 'Spirit' | 'Object';
 
 export interface IShop extends IGuid {
   type: ShopType;

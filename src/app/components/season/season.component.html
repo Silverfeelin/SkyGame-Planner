@@ -56,8 +56,8 @@
             <mat-icon class="menu-icon" [fontIcon]="'location_on'"></mat-icon>
             <span class="menu-label">
               <span *ngIf="shop.name">{{ shop.name }}</span>
-              <span *ngIf="!shop.name && shop.type === 'store'">Premium Candle Store</span>
-              <span *ngIf="!shop.name && shop.type !== 'store'">{{ shop.name ?? shop.spirit?.name }}</span>
+              <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
+              <span *ngIf="!shop.name && shop.type !== 'Store'">{{ shop.name ?? shop.spirit?.name }}</span>
             </span>
           </div>
           <!-- Price -->

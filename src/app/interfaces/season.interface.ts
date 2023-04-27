@@ -18,9 +18,9 @@ export interface ISeason extends IGuid {
   year: number;
 
   /** Start date of the season. */
-  start: Date | string;
+  date: Date | string;
   /** Inclusive end date of the season. */
-  end: Date | string;
+  endDate: Date | string;
 
   /** Season number, starting at 1 for Gratitude. */
   number: number;

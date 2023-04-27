@@ -4,8 +4,6 @@ import { Injectable, isDevMode } from '@angular/core';
 import { forkJoin, ReplaySubject, Subscription } from 'rxjs';
 import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
-import { ICandleConfig } from '../interfaces/candle.interface';
-import { IConnectionConfig } from '../interfaces/connection.interface';
 import { ISpiritTree, ISpiritTreeConfig } from '../interfaces/spirit-tree.interface';
 import { IEventConfig } from '../interfaces/event.interface';
 import { IItem, IItemConfig } from '../interfaces/item.interface';
@@ -29,8 +27,6 @@ import { NodeHelper } from '../helpers/node-helper';
 })
 export class DataService {
   areaConfig!: IAreaConfig;
-  candleConfig!: ICandleConfig;
-  connectionConfig!: IConnectionConfig;
   eventConfig!: IEventConfig;
   itemConfig!: IItemConfig;
   nodeConfig!: INodeConfig;
@@ -60,7 +56,6 @@ export class DataService {
 
     return forkJoin({
       areaConfig: get('areas.json'),
-      candleConfig: get('candles.json'),
       connectionConfig: get('connections.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
@@ -145,8 +140,8 @@ export class DataService {
   private initializeSeasons(): void {
     this.seasonConfig.items.forEach((season, i) => {
       season.number = i + 1;
-      season.start = DateHelper.fromString(season.start as string)!;
-      season.end = DateHelper.fromString(season.end as string)!;
+      season.date = DateHelper.fromString(season.date as string)!;
+      season.endDate = DateHelper.fromString(season.endDate as string)!;
 
       // Map Spirits to Season.
       season.spirits?.forEach((spirit, si) => {
@@ -339,8 +334,6 @@ export class DataService {
   private exposeData(): void {
     (window as any).skyData = {
       areaConfig: this.areaConfig,
-      candleConfig: this.candleConfig,
-      connectionConfig: this.connectionConfig,
       spiritTreeConfig: this.spiritTreeConfig,
       eventConfig: this.eventConfig,
       itemConfig: this.itemConfig,
