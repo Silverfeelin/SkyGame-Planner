@@ -5,19 +5,31 @@
       "guid": "qSs575DZ6P",
       "type": "Regular",
       "name": "Pointing Candlemaker",
-      "tree": "UJAYu7Uazn"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Isle-Spirit-Pointing-Candlemaker.png",
+      "tree": "UJAYu7Uazn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker"
+      }
     },
     {
       "guid": "Tw-J4oXgie",
       "type": "Regular",
       "name": "Ushering Stargazer",
-      "tree": "iO5Y6DGiiW"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Isle-Spirit-Ushering-Stargazer.png",
+      "tree": "iO5Y6DGiiW",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer"
+      }
     },
     {
       "guid": "bmYjIuJ6Qf",
       "type": "Regular",
       "name": "Rejecting Voyager",
-      "tree": "45994RiYac"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Isle-Spirit-Rejecting-Voyager.png",
+      "tree": "45994RiYac",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager"
+      }
     },
     // #endregion
     // #region Prairie
@@ -25,49 +37,81 @@
       "guid": "ulvP8R6C6a",
       "type": "Regular",
       "name": "Butterfly Charmer",
-      "tree": "V0j-dhLEIw"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Prairie-Spirit-Butterfly-Charmer.png",
+      "tree": "V0j-dhLEIw",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer"
+      }
     },
     {
       "guid": "WFjSczlPTV",
       "type": "Regular",
       "name": "Applauding Bellmaker",
-      "tree": "hQKUIRG3JQ"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Prairie-Spirit-Applauding-Bellmaker.png",
+      "tree": "hQKUIRG3JQ",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker"
+      }
     },
     {
       "guid": "48jm5EQzfU",
       "type": "Regular",
       "name": "Waving Bellmaker",
-      "tree": "9HHikEqkYY"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Prairie-Spirit-Waving-Bellmaker.png",
+      "tree": "9HHikEqkYY",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker"
+      }
     },
     {
       "guid": "R4ILdPamhd",
       "type": "Regular",
       "name": "Slumbering Shipwright",
-      "tree": "HOyyuoXAP9"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/15/Prairie-Spirit-Slumbering-Shipwright.png",
+      "tree": "HOyyuoXAP9",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright"
+      }
     },
     {
       "guid": "K3CIxcDSjq",
       "type": "Regular",
       "name": "Laughing Light Catcher",
-      "tree": "Es47LhZ5hx"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prairie-Spirit-Laughing-Light-Catcher.png",
+      "tree": "Es47LhZ5hx",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher"
+      }
     },
     {
       "guid": "KM1xzU9v5P",
       "type": "Regular",
       "name": "Bird Whisperer",
-      "tree": "anlwK70JVL"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Prairie-Spirit-Bird-Whisperer.png",
+      "tree": "anlwK70JVL",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer"
+      }
     },
     {
       "guid": "MyLI80npmW",
       "type": "Regular",
       "name": "Exhausted Dock Worker",
-      "tree": "ALHvJCosOd"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Prairie-Spirit-Exhausted-Dock-Worker.png",
+      "tree": "ALHvJCosOd",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker"
+      }
     },
     {
       "guid": "gtbbZnpLbt",
       "type": "Regular",
       "name": "Ceremonial Worshiper",
-      "tree": "NU6qrcE5Ju"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Prairie-Spirit-Ceremonial-Worshiper.png",
+      "tree": "NU6qrcE5Ju",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceremonial_Worshiper"
+      }
     },
     // #endregion
     // #region Forest
@@ -75,49 +119,81 @@
       "guid": "LwcCtbnGuF",
       "type": "Regular",
       "name": "Shivering Trailblazer",
-      "tree": "qV_AsI1GHV"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Forest-Spirit-Shivering-Trailblazer.png",
+      "tree": "qV_AsI1GHV",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer"
+      }
     },
     {
       "guid": "xbGBFC0rnu",
       "type": "Regular",
       "name": "Blushing Prospector",
-      "tree": "LMcXyV8-2j"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Forest-Spirit-Blushing-Prospector.png",
+      "tree": "LMcXyV8-2j",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector"
+      }
     },
     {
       "guid": "p-WdkJpGB5",
       "type": "Regular",
       "name": "Hide'n'Seek Pioneer",
-      "tree": "R7ffBM1PMH"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Forest-Spirit-Hide-n-Seek-Pioneer.png",
+      "tree": "R7ffBM1PMH",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide'n'Seek_Pioneer"
+      }
     },
     {
       "guid": "waSFuoNQsR",
       "type": "Regular",
       "name": "Pouty Porter",
-      "tree": "u_KTXvnqG5"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Forest-Spirit-Pouty-Porter.png",
+      "tree": "u_KTXvnqG5",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter"
+      }
     },
     {
       "guid": "L_0YoE4O8Z",
       "type": "Regular",
       "name": "Dismayed Hunter",
-      "tree": "f34xxhWuw1"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/Forest-Spirit-Dismayed-Hunter.png",
+      "tree": "f34xxhWuw1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter"
+      }
     },
     {
       "guid": "puj9z07ew0",
       "type": "Regular",
       "name": "Apologetic Lumberjack",
-      "tree": "8mHCSAJMJt"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Forest-Spirit-Apologetic-Lumberjack.png",
+      "tree": "8mHCSAJMJt",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack"
+      }
     },
     {
       "guid": "gF3qSnQNxx",
       "type": "Regular",
       "name": "Tearful Light Miner",
-      "tree": "et4Q9BpF6x"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Forest-Spirit-Tearful-Light-Miner.png",
+      "tree": "et4Q9BpF6x",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner"
+      }
     },
     {
       "guid": "R_zBE7HaWV",
       "type": "Regular",
       "name": "Whale Whisperer",
-      "tree": "Mker9XnSXM"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Forest-Spirit-Whale-Whisperer.png",
+      "tree": "Mker9XnSXM",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Whale_Whisperer"
+      }
     },
     // #endregion
     // #region Valley
@@ -125,43 +201,71 @@
       "guid": "4KCKJxR56G",
       "type": "Regular",
       "name": "Confident Sightseer",
-      "tree": "DJhTrzv4Yb"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Valley-Spirit-Confident-Sightseer.png",
+      "tree": "DJhTrzv4Yb",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer"
+      }
     },
     {
       "guid": "yUp189PWVS",
       "type": "Regular",
       "name": "Handstanding Thrillseeker",
-      "tree": "J49-S6yLbL"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Valley-Spirit-Handstanding-Thrillseeker.png",
+      "tree": "J49-S6yLbL",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker"
+      }
     },
     {
       "guid": "CfXORyMFx4",
       "type": "Regular",
       "name": "Manta Whisperer",
-      "tree": "XRXDlNt2KM"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Valley-Spirit-Manta-Whisperer.png",
+      "tree": "XRXDlNt2KM",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Manta_Whisperer"
+      }
     },
     {
       "guid": "H5iKZChQIK",
       "type": "Regular",
       "name": "Backflipping Champion",
-      "tree": "wnFJK6iIdP"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Valley-Spirit-Backflipping-Champion.png",
+      "tree": "wnFJK6iIdP",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion"
+      }
     },
     {
       "guid": "IIt-zYJC2N",
       "type": "Regular",
       "name": "Cheerful Spectator",
-      "tree": "mHTyXPh-yi"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Valley-Spirit-Cheerful-Spectator.png",
+      "tree": "mHTyXPh-yi",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator"
+      }
     },
     {
       "guid": "fRtK3WFMm1",
       "type": "Regular",
       "name": "Bowing Medalist",
-      "tree": "_aHaMwt5OW"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Valley-Spirit-Bowing-Medalist.png",
+      "tree": "_aHaMwt5OW",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist"
+      }
     },
     {
       "guid": "CQJO8mQ0do",
       "type": "Regular",
       "name": "Proud Victor",
-      "tree": "kTUUniUQiN"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Valley-Spirit-Proud-Victor.png",
+      "tree": "kTUUniUQiN",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor"
+      }
     },
     // #endregion
     // #region Wasteland
@@ -169,37 +273,61 @@
       "guid": "TqswdiTmEC",
       "type": "Regular",
       "name": "Frightened Refugee",
-      "tree": "2tMrFxgXJy"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Wasteland-Spirit-Frightened-Refugee.png",
+      "tree": "2tMrFxgXJy",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee"
+      }
     },
     {
       "guid": "k8nqBtLJ0R",
       "type": "Regular",
       "name": "Fainting Warrior",
-      "tree": "7peV6o1G9r"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Wasteland-Spirit-Fainting-Warrior.png",
+      "tree": "7peV6o1G9r",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior"
+      }
     },
     {
       "guid": "_4VyRWxD3V",
       "type": "Regular",
       "name": "Courageous Soldier",
-      "tree": "3W0wLUVJL6"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Wasteland-Spirit-Courageous-Soldier.png",
+      "tree": "3W0wLUVJL6",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier"
+      }
     },
     {
       "guid": "trJkBr3myf",
       "type": "Regular",
       "name": "Stealthy Survivor",
-      "tree": "dcgTVFAm6m"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Wasteland-Spirit-Stealthy-Survivor.png",
+      "tree": "dcgTVFAm6m",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor"
+      }
     },
     {
       "guid": "6GO0ISasq7",
       "type": "Regular",
       "name": "Saluting Captain",
-      "tree": "_WJq0WK8Ds"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Wasteland-Spirit-Saluting-Captain.png",
+      "tree": "_WJq0WK8Ds",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain"
+      }
     },
     {
       "guid": "nwpDbbbWcw",
       "type": "Regular",
       "name": "Lookout Scout",
-      "tree": "oU4Uu2zMzG"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Wasteland-Spirit-Lookout-Scout.png",
+      "tree": "oU4Uu2zMzG",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout"
+      }
     },
     // #endregion
     // #region Vault
@@ -207,72 +335,116 @@
       "guid": "Im7m8syitV",
       "type": "Regular",
       "name": "Levitating Adept",
-      "tree": "das41f_Q-7"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Vault-Spirit-Levitating-Adept.png",
+      "tree": "das41f_Q-7",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept"
+      }
     },
     {
       "guid": "Gi75RcvXd0",
       "type": "Regular",
       "name": "Meditating Monastic",
-      "tree": "MzxOaKTjwc"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Vault-Spirit-Meditating-Monastic.png",
+      "tree": "MzxOaKTjwc",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic"
+      }
     },
     {
       "guid": "HeJISF946a",
       "type": "Regular",
       "name": "Memory Whisperer",
-      "tree": "Vv98PNmcao"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Vault-Spirit-Memory-Whisperer.png",
+      "tree": "Vv98PNmcao",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer"
+      }
     },
     {
       "guid": "1OGD_H3a7X",
       "type": "Regular",
       "name": "Polite Scholar",
-      "tree": "Z1PFz0tm12"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Vault-Spirit-Polite-Scholar.png",
+      "tree": "Z1PFz0tm12",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar"
+      }
     },
     {
       "guid": "_8CvQjUnQg",
       "type": "Regular",
       "name": "Praying Acolyte",
-      "tree": "5sAVyZ3QBX"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Vault-Spirit-Praying-Acolyte.png",
+      "tree": "5sAVyZ3QBX",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte"
+      }
     },
     // #endregion
     // #region Office
     {
       "guid": "ExkE9a7QJ0",
-      "name": "Office NPC"
+      "name": "Office NPC",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "Ayoc2XvMTy",
       "type": "Special",
-      "name": "Office Spirit #1"
+      "name": "Office Spirit #1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "izKBXplld6",
       "type": "Special",
-      "name": "Office Spirit #2"
+      "name": "Office Spirit #2",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "cpTFBZ-im4",
       "type": "Special",
-      "name": "Office Spirit #3"
+      "name": "Office Spirit #3",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "bQCZEuAuZe",
       "type": "Special",
-      "name": "Office Spirit #4"
+      "name": "Office Spirit #4",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "MKdRGA66hC",
       "type": "Special",
-      "name": "Office Spirit #5"
+      "name": "Office Spirit #5",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "HmibyU0UEG",
       "type": "Special",
-      "name": "Office Spirit #6"
+      "name": "Office Spirit #6",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     {
       "guid": "GUwL23XDTb",
       "type": "Special",
-      "name": "Office Spirit #7"
+      "name": "Office Spirit #7",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+      }
     },
     // #endregion
 
@@ -281,37 +453,61 @@
       "guid": "l8tl0mHCWH",
       "type": "Elder",
       "name": "Isle Elder",
-      "tree": "9_S8rQmBlX"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Elder-Spirit-Isle.png",
+      "tree": "9_S8rQmBlX",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder"
+      }
     },
     {
       "guid": "iu6tmCPpex",
       "type": "Elder",
       "name": "Prairie Elder",
-      "tree": "eUgsBX5PrB"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Elder-Spirit-Prairie.png",
+      "tree": "eUgsBX5PrB",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder"
+      }
     },
     {
       "guid": "aj2x9H8ECy",
       "type": "Elder",
       "name": "Forest Elder",
-      "tree": "TVSuWzpcpt"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Elder-Spirit-Forest.png",
+      "tree": "TVSuWzpcpt",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder"
+      }
     },
     {
       "guid": "NgLbFXaB4z",
       "type": "Elder",
       "name": "Valley Elders",
-      "tree": "EZP7ISiCn5"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Elder-Spirits-Valley.png",
+      "tree": "EZP7ISiCn5",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders"
+      }
     },
     {
       "guid": "JQR4EGE6io",
       "type": "Elder",
       "name": "Wasteland Elder",
-      "tree": "VMIKm__4n_"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Elder-Spirit-Wasteland.png",
+      "tree": "VMIKm__4n_",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Wasteland_Elder"
+      }
     },
     {
       "guid": "NLbS2a-y2u",
       "type": "Elder",
       "name": "Vault Elder",
-      "tree": "ntRHO7rHJt"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Elder-Spirit-Vault.png",
+      "tree": "ntRHO7rHJt",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder"
+      }
     },
     // #endregion
 
@@ -320,103 +516,171 @@
       "guid": "jM6IlC8yk8",
       "type": "Guide",
       "name": "Gratitude Guide",
-      "tree": "e_dcWfqWdl"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Gratitude-Guide-Spirit.png",
+      "tree": "e_dcWfqWdl",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide"
+      }
     },
     {
       "guid": "UNKzFTE5mB",
       "type": "Guide",
       "name": "Lightseekers Guide",
-      "tree": "RDhnSDRp_-"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Lightseekers-Guide-Spirit.png",
+      "tree": "RDhnSDRp_-",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide"
+      }
     },
     {
       "guid": "5rr1zr2_j5",
       "type": "Guide",
       "name": "Belonging Guide",
-      "tree": "KEuVAhun2o"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Belonging-Guide-Spirit.png",
+      "tree": "KEuVAhun2o",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide"
+      }
     },
     {
       "guid": "zldsm5S962",
       "type": "Guide",
       "name": "Rhythm Guide",
-      "tree": "Qg7qDyBGmz"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Rhythm-Guide-Spirit.png",
+      "tree": "Qg7qDyBGmz",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide"
+      }
     },
     {
       "guid": "ZomY9nil8V",
       "type": "Guide",
       "name": "Enchantment Guide",
-      "tree": "MBr5qVDM3P"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Enchantment-Guide-Spirit.png",
+      "tree": "MBr5qVDM3P",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide"
+      }
     },
     {
       "guid": "0IoADuWn1P",
       "type": "Guide",
       "name": "Sanctuary Guide",
-      "tree": "yZlWqKpS7C"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sanctuary-Guide-Spirit.png",
+      "tree": "yZlWqKpS7C",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide"
+      }
     },
     {
       "guid": "DKFofCESGJ",
       "type": "Guide",
       "name": "Prophecy Guide",
-      "tree": "SQZ7rff2Ck"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Prophecy-Guide-Spirit.png",
+      "tree": "SQZ7rff2Ck",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide"
+      }
     },
     {
       "guid": "sj6YhQZQvM",
       "type": "Guide",
       "name": "Dreams Guide",
-      "tree": "f74U1Fp5Nk"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Dreams-Guide-Spirit.png",
+      "tree": "f74U1Fp5Nk",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide"
+      }
     },
     {
       "guid": "cpwvdVEzKN",
       "type": "Guide",
       "name": "Assembly Guide",
-      "tree": "FvRPGlaPpW"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Guide-Spirit.png",
+      "tree": "FvRPGlaPpW",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide"
+      }
     },
     {
       "guid": "HfafU7Pfui",
       "type": "Guide",
       "name": "The Rose",
-      "tree": "oL3CS56h9y"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Little-Prince-Guide-Spirit.png",
+      "tree": "oL3CS56h9y",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose"
+      }
     },
     {
       "guid": "FF8u1g9XI_",
       "type": "Guide",
       "name": "Flight Guide",
-      "tree": "23Vo9a04Sm"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Flight_Guide.png",
+      "tree": "23Vo9a04Sm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide"
+      }
     },
     {
       "guid": "WFqMqmjVv9",
       "type": "Guide",
       "name": "Abyss Guide",
-      "tree": "xz8rpLZQmm"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/SOAbyss-Abyss-Guide.png",
+      "tree": "xz8rpLZQmm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide"
+      }
     },
     {
       "guid": "qSggZYj_x3",
       "type": "Guide",
       "name": "Performance Guide",
-      "tree": "QPaLIzQqeU"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/SOP-Ultimate-guide.png",
+      "tree": "QPaLIzQqeU",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide"
+      }
     },
     {
       "guid": "q8g57aJV8r",
       "type": "Guide",
       "name": "The Void of Shattering",
-      "tree": "BK8jQyPH_n"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Shattering-Guide-The-Void-of-Shattering.png",
+      "tree": "BK8jQyPH_n",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering"
+      }
     },
     {
       "guid": "OaAUJHNIjE",
       "type": "Guide",
       "name": "AURORA Guide",
-      "tree": "P1nzgnNVFT"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/SoAurora-Seasonal-guide.png",
+      "tree": "P1nzgnNVFT",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide"
+      }
     },
     {
       "guid": "ZGSnOxK9gb",
       "type": "Guide",
       "name": "Remembrance Guide",
-      "tree": "fchA5IwiRm"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/SoRemembrance-Ultimate-guide.png",
+      "tree": "fchA5IwiRm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide"
+      }
     },
     {
       "guid": "_ZYvHXY8HB",
       "type": "Guide",
       "name": "Passage Guide",
-      "tree": "LrH-L-oKn1"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Passage-Ultimate-guide.png",
+      "tree": "LrH-L-oKn1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide"
+      }
     },
     // #endregion
 
@@ -425,37 +689,61 @@
       "guid": "0yGgX4Yk3c",
       "type": "Season",
       "name": "Sassy Drifter",
-      "tree": "emS7DU5ndh"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Gratitude-Spirit-Sassy-Drifter.png",
+      "tree": "emS7DU5ndh",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter"
+      }
     },
     {
       "guid": "Q-N8n-0b8O",
       "type": "Season",
       "name": "Stretching Guru",
-      "tree": "s4j4vrnNCR"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Gratitude-Spirit-Stretching-Guru.png",
+      "tree": "s4j4vrnNCR",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru"
+      }
     },
     {
       "guid": "lmydkMDQeP",
       "type": "Season",
       "name": "Provoking Performer",
-      "tree": "R-TxhzmvlY"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Gratitude-Spirit-Provoking-Performer.png",
+      "tree": "R-TxhzmvlY",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer"
+      }
     },
     {
       "guid": "JROKFatVLC",
       "type": "Season",
       "name": "Leaping Dancer",
-      "tree": "C1UHeaHfp1"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Gratitude-Spirit-Leaping-Dancer.png",
+      "tree": "C1UHeaHfp1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer"
+      }
     },
     {
       "guid": "eToUA1mSjz",
       "type": "Season",
       "name": "Saluting Protector",
-      "tree": "uHs_ggtE0U"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Gratitude-Spirit-Saluting-Protector.png",
+      "tree": "uHs_ggtE0U",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector"
+      }
     },
     {
       "guid": "KZaVtTUdlR",
       "type": "Season",
       "name": "Greeting Shaman",
-      "tree": "3xelLnykRC"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Gratitude-Spirit-Greeting-Shaman.png",
+      "tree": "3xelLnykRC",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman"
+      }
     },
     // #endregion
     // #region Lightseekers
@@ -463,37 +751,61 @@
       "guid": "U9RJMJseUK",
       "type": "Season",
       "name": "Piggyback Lightseeker",
-      "tree": "tKkz-7Fmh_"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Lightseeker-Spirit-Piggyback-Lightseeker.png",
+      "tree": "tKkz-7Fmh_",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker"
+      }
     },
     {
       "guid": "jncJKA4IaM",
       "type": "Season",
       "name": "Doublefive Light Catcher",
-      "tree": "DCA--qiCxD"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Lightseekers-Spirit-Doublefive-Light-Catcher.png",
+      "tree": "DCA--qiCxD",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher"
+      }
     },
     {
       "guid": "8OYabqG_jZ",
       "type": "Season",
       "name": "Laidback Pioneer",
-      "tree": "ry-1r9mcwO"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Lightseekers-Spirit-Laidback-Pioneer.png",
+      "tree": "ry-1r9mcwO",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer"
+      }
     },
     {
       "guid": "bHCSyFQ4u-",
       "type": "Season",
       "name": "Twirling Champion",
-      "tree": "9lQ4T3H65f"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Lightseekers-Spirit-Twirling-Champion.png",
+      "tree": "9lQ4T3H65f",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion"
+      }
     },
     {
       "guid": "tZG5hNcINX",
       "type": "Season",
       "name": "Crab Whisperer",
-      "tree": "cSFOWVeiTO"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Lightseekers-Spirit-Crab-Whisperer.png",
+      "tree": "cSFOWVeiTO",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer"
+      }
     },
     {
       "guid": "mZZ-MkZJ1x",
       "type": "Season",
       "name": "Shushing Light Scholar",
-      "tree": "hHNCjL8SHU"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Lightseekers-Spirit-Shushing-Light-Scholar.png",
+      "tree": "hHNCjL8SHU",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar"
+      }
     },
     // #endregion
     // #region Belonging
@@ -501,37 +813,61 @@
       "guid": "5u3TXZON81",
       "type": "Season",
       "name": "Confetti Cousin",
-      "tree": "Fqwmr7P65R"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Belonging-Spirit-Confetti-Cousin.png",
+      "tree": "Fqwmr7P65R",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin"
+      }
     },
     {
       "guid": "f3AD39Q2Il",
       "type": "Season",
       "name": "Boogie Kid",
-      "tree": "IeFmlorSVS"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Belonging-Spirit-Boogie-Kid.png",
+      "tree": "IeFmlorSVS",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid"
+      }
     },
     {
       "guid": "CcOE42N9Mc",
       "type": "Season",
       "name": "Sparkler Parent",
-      "tree": "sM-gGfmBb9"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Belonging-Spirit-Sparkler-Parent.png",
+      "tree": "sM-gGfmBb9",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent"
+      }
     },
     {
       "guid": "7EzWoLR1w4",
       "type": "Season",
       "name": "Wise Grandparent",
-      "tree": "zNWw5D3we3"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Belonging-Spirit-Wise-Grandpa.png",
+      "tree": "zNWw5D3we3",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent"
+      }
     },
     {
       "guid": "LO75aDy9Zc",
       "type": "Season",
       "name": "Pleaful Parent",
-      "tree": "wDOnrwqC2i"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Belonging-Spirit-Pleaful-Parent.png",
+      "tree": "wDOnrwqC2i",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent"
+      }
     },
     {
       "guid": "gcEV41jg3U",
       "type": "Season",
       "name": "Hairtousle Teen",
-      "tree": "pDzxAL2j5O"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Belonging-Spirit-Hairtousle-Teen.png",
+      "tree": "pDzxAL2j5O",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen"
+      }
     },
     // #endregion
     // #region Rhythm
@@ -539,37 +875,61 @@
       "guid": "Q5pn7wxwUD",
       "type": "Season",
       "name": "Troupe Greeter",
-      "tree": "TaMnSq1POX"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Rhythm-Spirit-Troupe-Greeter.png",
+      "tree": "TaMnSq1POX",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter"
+      }
     },
     {
       "guid": "PYsLThJYPx",
       "type": "Season",
       "name": "Festival Spin Dancer",
-      "tree": "61W5eVdFni"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Rhythm-Spirit-Festival-Spin-Dancer.png",
+      "tree": "61W5eVdFni",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer"
+      }
     },
     {
       "guid": "RUGuLBBPcg",
       "type": "Season",
       "name": "Admiring Actor",
-      "tree": "4biI_rOvS2"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Rhythm-Spirit-Admiring-Actor.png",
+      "tree": "4biI_rOvS2",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor"
+      }
     },
     {
       "guid": "9y_5scrYa9",
       "type": "Season",
       "name": "Troupe Juggler",
-      "tree": "XBUCLd5Dbw"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Rhythm-Spirit-Troupe-Juggler.png",
+      "tree": "XBUCLd5Dbw",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler"
+      }
     },
     {
       "guid": "OJECJaFI5p",
       "type": "Season",
       "name": "Respectful Pianist",
-      "tree": "434ok25Yjz"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Rhythm-Spirit-Respectful-Pianist.png",
+      "tree": "434ok25Yjz",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist"
+      }
     },
     {
       "guid": "CH6e-TQz6n",
       "type": "Season",
       "name": "Thoughtful Director",
-      "tree": "mvyFMGjUT4"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Rhythm-Spirit-Thoughtful-Director.png",
+      "tree": "mvyFMGjUT4",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director"
+      }
     },
     // #endregion
     // #region Enchantment
@@ -577,37 +937,61 @@
       "guid": "HphxLKhDBZ",
       "type": "Season",
       "name": "Nodding Muralist",
-      "tree": "zKvpYwiaFo"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Enchantment-Spirit-Nodding-Muralist.png",
+      "tree": "zKvpYwiaFo",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist"
+      }
     },
     {
       "guid": "kQiNS82DDY",
       "type": "Season",
       "name": "Indifferent Alchemist",
-      "tree": "t5FoVLTpxP"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Enchantment-Spirit-Indifferent-Alchemist.png",
+      "tree": "t5FoVLTpxP",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist"
+      }
     },
     {
       "guid": "OaysgoHcZI",
       "type": "Season",
       "name": "Crab Walker",
-      "tree": "_IpcZ_U6zY"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Enchantment-Spirit-Crab-Walker.png",
+      "tree": "_IpcZ_U6zY",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker"
+      }
     },
     {
       "guid": "UJVa4nb2nn",
       "type": "Season",
       "name": "Scarecrow Farmer",
-      "tree": "jRTuid-Y21"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Enchantment-Spirit-Scarecrow-Farmer.png",
+      "tree": "jRTuid-Y21",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer"
+      }
     },
     {
       "guid": "Be41CnHkEI",
       "type": "Season",
       "name": "Snoozing Carpenter",
-      "tree": "jJoNEIUqgP"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Enchantment-Spirit-Snoozing-Carpenter.png",
+      "tree": "jJoNEIUqgP",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter"
+      }
     },
     {
       "guid": "hgjklF3nQI",
       "type": "Season",
       "name": "Playfighting Herbalist",
-      "tree": "LSFtagpL9R"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Enchantment-Spirit-Playfighting-Herbalist.png",
+      "tree": "LSFtagpL9R",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist"
+      }
     },
     // #endregion
     // #region Sanctuary
@@ -615,37 +999,61 @@
       "guid": "jx7koL5guD",
       "type": "Season",
       "name": "Jelly Whisperer",
-      "tree": "GVghUxleba"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Sanctuary-Spirit-Jelly-Whisperer.png",
+      "tree": "GVghUxleba",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer"
+      }
     },
     {
       "guid": "MEw6did3kI",
       "type": "Season",
       "name": "Timid Bookworm",
-      "tree": "rMbkkmBZQM"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Sanctuary-Spirit-Timid-Bookworm.png",
+      "tree": "rMbkkmBZQM",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm"
+      }
     },
     {
       "guid": "IDEim-HNOZ",
       "type": "Season",
       "name": "Rallying Thrillseeker",
-      "tree": "MLnvMI_SQf"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Sanctuary-Spirit-Rallying-Thrillseeker.png",
+      "tree": "MLnvMI_SQf",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker"
+      }
     },
     {
       "guid": "z4xqXUkx_6",
       "type": "Season",
       "name": "Hiking Grouch",
-      "tree": "NGPhozyesb"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Sanctuary-Spirit-Hiking-Grouch.png",
+      "tree": "NGPhozyesb",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch"
+      }
     },
     {
       "guid": "uxtR1vVL8c",
       "type": "Season",
       "name": "Grateful Shell Collector",
-      "tree": "a0T7_evTz6"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Sanctuary-Spirit-Grateful-Shell-Collector.png",
+      "tree": "a0T7_evTz6",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector"
+      }
     },
     {
       "guid": "8N9cC4SvzM",
       "type": "Season",
       "name": "Chill Sunbather",
-      "tree": "MwCPwxfL0B"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Sanctuary-Spirit-Chill-Sunbather.png",
+      "tree": "MwCPwxfL0B",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather"
+      }
     },
     // #endregion
     // #region Prophecy
@@ -653,25 +1061,41 @@
       "guid": "9Rgsos9xqE",
       "type": "Season",
       "name": "Prophet of Water",
-      "tree": "NZRfrbFo5E"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Prophecy-Spirit-Prophet-of-Water.png",
+      "tree": "NZRfrbFo5E",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water"
+      }
     },
     {
       "guid": "oIeqSdqyWu",
       "type": "Season",
       "name": "Prophet of Earth",
-      "tree": "26RNODjYdR"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Prophecy-Spirit-Prophet-of-Earth.png",
+      "tree": "26RNODjYdR",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth"
+      }
     },
     {
       "guid": "5DD07qmTqQ",
       "type": "Season",
       "name": "Prophet of Air",
-      "tree": "llk8KwqtQo"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Prophecy-Spirit-Prophet-of-Air.png",
+      "tree": "llk8KwqtQo",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air"
+      }
     },
     {
       "guid": "kH5B_M20Fl",
       "type": "Season",
       "name": "Prophet of Fire",
-      "tree": "u0qm82zESx"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Prophecy-Spirit-Prophet-of-Fire.png",
+      "tree": "u0qm82zESx",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire"
+      }
     },
     // #endregion
     // #region Dreams
@@ -679,25 +1103,41 @@
       "guid": "KhFZE8z0-I",
       "type": "Season",
       "name": "Bearhug Hermit",
-      "tree": "Dz7xSJMui2"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Dreams-Spirit-Bearhug-Hermit.png",
+      "tree": "Dz7xSJMui2",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit"
+      }
     },
     {
       "guid": "7tMB-HjDin",
       "type": "Season",
       "name": "Dancing Performer",
-      "tree": "zUy1Dlkzbl"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Dreams-Spirit-Dancing-Performer.png",
+      "tree": "zUy1Dlkzbl",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer"
+      }
     },
     {
       "guid": "Jd8rEzWHVg",
       "type": "Season",
       "name": "Peeking Postman",
-      "tree": "sxbsSa-E47"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Dreams-Spirit-Peeking-Postman.png",
+      "tree": "sxbsSa-E47",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman"
+      }
     },
     {
       "guid": "Ej3SZgZ2WL",
       "type": "Season",
       "name": "Spinning Mentor",
-      "tree": "duRfvp3IvK"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Dreams-Spirit-Spinning-Mentor.png",
+      "tree": "duRfvp3IvK",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor"
+      }
     },
     // #endregion
     // #region Assembly
@@ -705,37 +1145,61 @@
       "guid": "94UEgV7ic1",
       "type": "Season",
       "name": "Baffled Botanist",
-      "tree": "u-NLeQNopc"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Assembly-Spirit-Baffled-Botanist.png",
+      "tree": "u-NLeQNopc",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist"
+      }
     },
     {
       "guid": "RG-Z1xwway",
       "type": "Season",
       "name": "Scolding Student",
-      "tree": "tJ92dz1ans"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-Spirit-Scolding-Student.png",
+      "tree": "tJ92dz1ans",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student"
+      }
     },
     {
       "guid": "lE8DJQLcg5",
       "type": "Season",
       "name": "Scaredy Cadet",
-      "tree": "BTXu36Anhy"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Assembly-Spirit-Scaredy-Cadet.png",
+      "tree": "BTXu36Anhy",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet"
+      }
     },
     {
       "guid": "H30afxXKT1",
       "type": "Season",
       "name": "Marching Adventurer",
-      "tree": "MaqbAvyQQ8"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Assembly-Spirit-Marching-Adventurer.png",
+      "tree": "MaqbAvyQQ8",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer"
+      }
     },
     {
       "guid": "NGSlfCM_wu",
       "type": "Season",
       "name": "Chuckling Scout",
-      "tree": "n43yrGprN_"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Assembly-Spirit-Chuckling-Scout.png",
+      "tree": "n43yrGprN_",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout"
+      }
     },
     {
       "guid": "MZZ5RA0AMG",
       "type": "Season",
       "name": "Daydream Forester",
-      "tree": "oeVXh5azl3"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Assembly-Spirit-Daydream-Forester.png",
+      "tree": "oeVXh5azl3",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester"
+      }
     },
     // #endregion
     // #region TLP
@@ -743,37 +1207,61 @@
       "guid": "JOCCkr0TlW",
       "type": "Season",
       "name": "Beckoning Ruler",
-      "tree": "GpFO-QB9kn"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Little-Prince-Spirit-Beckoning-Ruler.png",
+      "tree": "GpFO-QB9kn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler"
+      }
     },
     {
       "guid": "V7gj-cBqK1",
       "type": "Season",
       "name": "Gloating Narcissist",
-      "tree": "G8NMsyrbeV"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Little-Prince-Spirit-Gloating-Narcissist.png",
+      "tree": "G8NMsyrbeV",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist"
+      }
     },
     {
       "guid": "z5dtSO-gis",
       "type": "Season",
       "name": "Stretching Lamplighter",
-      "tree": "tGROdiGKVT"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Little-Prince-Spirit-Stretching-Lamplighter.png",
+      "tree": "tGROdiGKVT",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter"
+      }
     },
     {
       "guid": "iweb5Sk2Xk",
       "type": "Season",
       "name": "Slouching Soldier",
-      "tree": "evynWpUlaz"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Little-Prince-Spirit-Slouching-Soldier.png",
+      "tree": "evynWpUlaz",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier"
+      }
     },
     {
       "guid": "l7zP8zUFHX",
       "type": "Season",
       "name": "Sneezing Geographer",
-      "tree": "eY5I6thUk8"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Little-Prince-Spirit-Sneezing-Geographer.png",
+      "tree": "eY5I6thUk8",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer"
+      }
     },
     {
       "guid": "dEQ1GVQOx7",
       "type": "Season",
       "name": "Star Collector",
-      "tree": "Ikiuyl-Nm1"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Little-Prince-Spirit-Star-Collector.png",
+      "tree": "Ikiuyl-Nm1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector"
+      }
     },
     // #endregion
     // #region Flight
@@ -781,25 +1269,41 @@
       "guid": "9Wl9kwxoFk",
       "type": "Season",
       "name": "Lively Navigator",
-      "tree": "8XT3GDeonb"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Flight-Spirit-Lively-Navigator.png",
+      "tree": "8XT3GDeonb",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator"
+      }
     },
     {
       "guid": "VQadeqBPEO",
       "type": "Season",
       "name": "Light Whisperer",
-      "tree": "DHbvqLtLCU"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Flight-Spirit-Light-Whisperer.png",
+      "tree": "DHbvqLtLCU",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer"
+      }
     },
     {
       "guid": "_7-rIO21Ea",
       "type": "Season",
       "name": "Tinkering Chimesmith",
-      "tree": "66idlQe3mK"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Flight-Spirit-Tinkering-Chimesmith.png",
+      "tree": "66idlQe3mK",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith"
+      }
     },
     {
       "guid": "hovmkrquOR",
       "type": "Season",
       "name": "Talented Builder",
-      "tree": "4Zj4C2RUj1"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Flight-Spirit-Talented-Builder.png",
+      "tree": "4Zj4C2RUj1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder"
+      }
     },
     // #endregion
     // #region Abyss
@@ -807,25 +1311,41 @@
       "guid": "4gwH1Tn9he",
       "type": "Season",
       "name": "Anxious Angler",
-      "tree": "M-25cEcvw-"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Abyss-Spirit-Anxious-Angler.png",
+      "tree": "M-25cEcvw-",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler"
+      }
     },
     {
       "guid": "aVOtIknTMO",
       "type": "Season",
       "name": "Ceasing Commodore",
-      "tree": "1c2RnFkkmb"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Abyss-Spirit-Ceasing-Commodore.png",
+      "tree": "1c2RnFkkmb",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore"
+      }
     },
     {
       "guid": "zVs_gAo_wy",
       "type": "Season",
       "name": "Bumbling Boatswain",
-      "tree": "oNXi897gvR"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Abyss-Spirit-Bumbling-Boatswain.png",
+      "tree": "oNXi897gvR",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain"
+      }
     },
     {
       "guid": "gTIay-wjmN",
       "type": "Season",
       "name": "Cackling Cannoneer",
-      "tree": "ag2kvsRKRN"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Abyss-Spirit-Cackling-Cannoneer.png",
+      "tree": "ag2kvsRKRN",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer"
+      }
     },
     // #endregion
     // #region Performance
@@ -833,51 +1353,83 @@
       "guid": "4iotcmsn0K",
       "type": "Season",
       "name": "Frantic Stagehand",
-      "tree": "i0lRmQ31MS"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Performance-Spirit-Frantic-Stagehand.png",
+      "tree": "i0lRmQ31MS",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand"
+      }
     },
     {
       "guid": "fEcI6neh6f",
       "type": "Season",
       "name": "Forgetful Storyteller",
-      "tree": "UEf6UQn_yl"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Performance-Spirit-Forgetful-Storyteller.png",
+      "tree": "UEf6UQn_yl",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller"
+      }
     },
     {
       "guid": "KYhwsjTkp-",
       "type": "Season",
       "name": "Mellow Musician",
-      "tree": "18DZaVJ0JB"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Performance-Spirit-Mellow-Musician.png",
+      "tree": "18DZaVJ0JB",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician"
+      }
     },
     {
       "guid": "S6KVcMgi-3",
       "type": "Season",
       "name": "Modest Dancer",
-      "tree": "pYtg2G6fMP"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Performance-Spirit-Modest-Dancer.png",
+      "tree": "pYtg2G6fMP",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer"
+      }
     },
     // #endregion
     // #region Shattering
     {
       "guid": "KqGJfPvqrM",
       "type": "Season",
-      "name": "Light (Jellyfish)",
-      "tree": "xLwRm1AfSm"
+      "name": "Ancient Light (Jellyfish)",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Shattering-Ancient_Light.png",
+      "tree": "xLwRm1AfSm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light"
+      }
     },
     {
       "guid": "di5Qar2yOI",
       "type": "Season",
-      "name": "Light (Manta)",
-      "tree": "1fhyjtk7uy"
+      "name": "Ancient Light (Manta)",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Shattering-Ancient_Light.png",
+      "tree": "1fhyjtk7uy",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light"
+      }
     },
     {
       "guid": "3rebltHxWX",
       "type": "Season",
-      "name": "Dark (Dragon)",
-      "tree": "b6rp9fopvO"
+      "name": "Ancient Darkness (Dragon)",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Shattering-Ancient_Darkness.png",
+      "tree": "b6rp9fopvO",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness"
+      }
     },
     {
       "guid": "V7PbSxO67Q",
       "type": "Season",
-      "name": "Dark (Plants)",
-      "tree": "7RgA-evqca"
+      "name": "Ancient Darkness (Plants)",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Shattering-Ancient_Darkness.png",
+      "tree": "7RgA-evqca",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness"
+      }
     },
     // #endregion
     // #region AURORA
@@ -885,25 +1437,41 @@
       "guid": "20Xw7fuZWr",
       "type": "Season",
       "name": "Running Wayfarer",
-      "tree": "U8EBIguISN"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Aurora-Spirit-Running-Wayfairer.png",
+      "tree": "U8EBIguISN",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer"
+      }
     },
     {
       "guid": "g_lZ76kjbS",
       "type": "Season",
       "name": "Mindful Miner",
-      "tree": "bMfsxhWfRe"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Aurora-Spirit-Mindful-Miner.png",
+      "tree": "bMfsxhWfRe",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner"
+      }
     },
     {
       "guid": "XvcpNrqatq",
       "type": "Season",
       "name": "Warrior of Love",
-      "tree": "mfj2dmg6Dd"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Aurora-Spirit-Warrior-of-Love.png",
+      "tree": "mfj2dmg6Dd",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love"
+      }
     },
     {
       "guid": "95RfXrjMx1",
       "type": "Season",
       "name": "Seed of Hope",
-      "tree": "W7fm2UpXGb"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Aurora-Spirit-Seed-of-Hope.png",
+      "tree": "W7fm2UpXGb",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope"
+      }
     },
     // #endregion
     // #region Remembrance
@@ -911,25 +1479,41 @@
       "guid": "O1olUBrkJ5",
       "type": "Season",
       "name": "Bereft Veteran",
-      "tree": "zWD_AxgIGC"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Remembrance-Spirit-Bereft-Veteran.png",
+      "tree": "zWD_AxgIGC",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran"
+      }
     },
     {
       "guid": "V43JRVL_QD",
       "type": "Season",
       "name": "Pleading Child",
-      "tree": "wU4H1ZfZot"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Remembrance-Spirit-Pleading-Child.png",
+      "tree": "wU4H1ZfZot",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child"
+      }
     },
     {
       "guid": "DAG_zfwis5",
       "type": "Season",
       "name": "Tiptoeing Tea-Brewer",
-      "tree": "gOAqpgTH4R"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Remembrance-Spirit-Tiptoeing-Tea-Brewer.png",
+      "tree": "gOAqpgTH4R",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer"
+      }
     },
     {
       "guid": "zq6qjCsQ_f",
       "type": "Season",
       "name": "Wounded Warrior",
-      "tree": "Cze45b5NuK"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Remembrance-Spirit-Wounded-Warrior.png",
+      "tree": "Cze45b5NuK",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior"
+      }
     },
     // #endregion
     // #region Passage
@@ -937,25 +1521,41 @@
       "guid": "udBbDIhZtD",
       "type": "Season",
       "name": "Oddball Outcast",
-      "tree": "77QNb1vN1h"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Passage-Oddball-Outcast-Cutout.png",
+      "tree": "77QNb1vN1h",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast"
+      }
     },
     {
       "guid": "noQs_dBSQu",
       "type": "Season",
       "name": "Tumbling Troublemaker",
-      "tree": "6QPtn4qXTG"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Passage-Tumbling-Troublemaker-Cutout.png",
+      "tree": "6QPtn4qXTG",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker"
+      }
     },
     {
       "guid": "-BIU0YAs1Q",
       "type": "Season",
       "name": "Melancholy Mope",
-      "tree": "bZU_1hDxB9"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Passage-Melancholy-Mope-Cutout.png",
+      "tree": "bZU_1hDxB9",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope"
+      }
     },
     {
       "guid": "IKkPcAF07c",
       "type": "Season",
       "name": "Overactive Overachiever",
-      "tree": "qdWXiEhm46"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Passage-Overactive-Overachiever-Cutout.png",
+      "tree": "qdWXiEhm46",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever"
+      }
     },
     // #endregion
 

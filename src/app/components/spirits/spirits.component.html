@@ -1,5 +1,10 @@
-<h1 class="h2">Spirits</h1>
-<app-table [rows]="rows">
+<h1 class="h2">
+  Spirits
+  <a (click)="changeMode()" class="h6 link">Change view</a>
+</h1>
+
+<!-- #region List -->
+<app-table [rows]="rows" *ngIf="mode === 'grid'">
   <!-- Headers-->
   <ng-template [appTableHeader]>Spirit</ng-template>
   <ng-template [appTableHeader]>Type</ng-template>
@@ -7,22 +12,31 @@
   <ng-template [appTableHeader]>Unlocked</ng-template>
 
   <!-- Body -->
+  <!-- Name -->
   <ng-template [appTableColumn] let-row="row">
     <a [routerLink]="['/spirit', row.guid]" [queryParams]="{ tree: row.tree }">{{ row.name }}</a>
   </ng-template>
+  <!-- Image -->
+  <!-- <ng-template [appTableColumn] let-row="row">
+    <img *ngIf="row.imageUrl" [src]="row.imageUrl" [alt]="row.name" />
+  </ng-template> -->
+  <!-- Type -->
   <ng-template [appTableColumn] let-row="row">
-    {{ row.type }}
+    <ng-container *ngTemplateOutlet="type; context:{row}"></ng-container>
   </ng-template>
+  <!-- Location -->
   <ng-template [appTableColumn] let-row="row">
-    <a [routerLink]="row.areaGuid ? ['/area', row.areaGuid] : undefined">
+    <!-- <a [routerLink]="row.areaGuid ? ['/area', row.areaGuid] : undefined"> -->
+    <a [routerLink]="undefined">
       {{ row.area?.name }}
     </a>
   </ng-template>
+  <!-- Progress -->
   <ng-template [appTableColumn] let-row="row">
     <span *ngIf="row.totalItems"
       [class.partial]="row.unlockedLast && row.unlockedLast === row.totalLast"
       [class.completed]="row.unlockedItems === row.totalItems"
-      [ngbTooltip]="row.tooltip" container="body" placement="left"
+      [ngbTooltip]="row.unlockTooltip" container="body" placement="left"
     >
       {{ row.unlockedItems }} / {{ row.totalItems }}
     </span>
@@ -34,3 +48,65 @@
     <span [class.completed]="unlockedItems === totalItems">{{ unlockedItems }} / {{ totalItems }}</span>
   </ng-template>
 </app-table>
+<!-- #endregion-->
+
+<!-- #region Cards -->
+<div class="card-grid card-grid-4 mt-2" *ngIf="mode === 'cards'">
+  <div class="card p-rel" *ngFor="let row of rows">
+    <h2 class="h3">
+      <ng-container *ngTemplateOutlet="type; context:{row}"></ng-container>
+      {{row.name}}
+    </h2>
+    <!-- Wiki -->
+    <div class="wiki p-abs" *ngIf="row._wiki?.href">
+      <a [href]="row._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
+        <mat-icon fontIcon="question_mark"></mat-icon>
+      </a>
+    </div>
+    <!-- Image -->
+    <div *ngIf="row.imageUrl" class="p-rel item spirit-img">
+      <img [src]="row.imageUrl">
+    </div>
+    <!-- Info -->
+    <a class="mt-2 item link" [routerLink]="['/spirit', row.guid]" [queryParams]="{ tree: row.tree }">
+      <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
+      <span class="menu-label">Information</span>
+    </a>
+    <!-- Progress -->
+    <div class="mt-2 p-rel item">
+      <mat-icon class="menu-icon" fontIcon="lock_open"></mat-icon>
+      <div class="d-inline-block menu-label">
+        <span *ngIf="row.totalItems"
+        [class.partial]="row.unlockedLast && row.unlockedLast === row.totalLast"
+        [class.completed]="row.unlockedItems === row.totalItems"
+        [ngbTooltip]="row.unlockTooltip" container="body" placement="bottom"
+        >
+          {{ row.unlockedItems }} / {{ row.totalItems }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- #endregion -->
+
+<!-- Templates -->
+
+<!-- Type -->
+<ng-template #type let-row="row">
+  <ng-container [ngSwitch]="row.type">
+    <mat-icon *ngSwitchCase="'Elder'" [svgIcon]="'ascended-candle'"
+      [ngbTooltip]="'Elder Spirit'" container="body" placement="bottom">
+    </mat-icon>
+    <mat-icon *ngSwitchCase="'Guide'" [svgIcon]="'season-heart'"
+      [ngbTooltip]="'Season Guide'" container="body" placement="bottom">
+    </mat-icon>
+    <mat-icon *ngSwitchCase="'Regular'" [svgIcon]="'candle'"
+      [ngbTooltip]="'Regular Spirit'" container="body" placement="bottom">
+    </mat-icon>
+    <mat-icon *ngSwitchCase="'Season'" [svgIcon]="'season-candle'"
+      [ngbTooltip]="'Season Spirit'" container="body" placement="bottom">
+    </mat-icon>
+    <span *ngSwitchDefault>{{ row.type }}</span>
+  </ng-container>
+</ng-template>

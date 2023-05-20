@@ -2,6 +2,7 @@
   "items": [
     {
       "guid": "TJBbJd4iQY",
+      "name": "Special Visit #1",
       "date": { "day": 6, "month": 3, "year": 2023 },
       "endDate": { "day": 19, "month": 3, "year": 2023 },
       "spirits": [
@@ -13,11 +14,23 @@
     },
     {
       "guid": "7tvWNUHLPq",
+      "name": "TS Error",
       "date": { "day": 13, "month": 4, "year": 2023 },
       "endDate": { "day": 13, "month": 4, "year": 2023 },
       "spirits": [
         { "guid": "dvrEFaKH9W", "spirit": "lmydkMDQeP", "tree": "KcxP_uWRx_" }
       ]
-    }
+    },
+    {
+      "guid": "qEAUu9cHFK",
+      "name": "Special Visit #2",
+      "date": { "day": 15, "month": 5, "year": 2023 },
+      "endDate": { "day": 21, "month": 5, "year": 2023 },
+      "spirits": [
+        { "guid": "bzGKWgFMKF", "spirit": "9Rgsos9xqE", "tree": "6vAMrTPmU-" },
+        { "guid": "pz5xSDZ_fX", "spirit": "oIeqSdqyWu", "tree": "5IfMzJYMAs" },
+        { "guid": "vozTqgFZQE", "spirit": "5DD07qmTqQ", "tree": "_l09Yw8HoO" }
+      ]
+    },
   ]
 }

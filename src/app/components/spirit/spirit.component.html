@@ -2,6 +2,12 @@
 
 <div class="card-wrapper mt-2">
   <h2 class="h3 mb-0">{{ spirit.name }}</h2>
+  <!-- Wiki link -->
+  <div *ngIf="spirit._wiki?.href" class="wiki">
+    <a [href]="spirit._wiki!.href" target="_blank">
+      <mat-icon fontIcon="question_mark"></mat-icon>
+    </a>
+  </div>
 </div>
 
 <div class="card-container mt-2">
@@ -31,15 +37,10 @@
       <ng-container *ngFor="let visit of spirit.returns; let vi = index;">
         <div class="tree-wrapper p-inline-block">
           <app-spirit-tree
-            [tree]="visit.tree" [name]="'Visit #' + (vi+1)"
+            [tree]="visit.tree" [name]="visit.return.name || 'Visit #' + (vi+1)"
             [highlight]="highlightTree === visit.tree.guid"></app-spirit-tree>
         </div>
       </ng-container>
     </ng-container>
   </div>
 </div>
-
-<ng-template #costHover>
-  <span>Total cost of all the items in this tree.</span><br/>
-  <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
-</ng-template>

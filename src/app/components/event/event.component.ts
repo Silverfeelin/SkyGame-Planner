@@ -4,6 +4,20 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
 
+interface IRow {
+  number: number;
+  name: string;
+  year: number;
+  guid: string;
+  date: Date;
+  endDate: Date;
+  iaps: number;
+  returningIaps: number;
+  spirits: number;
+  unlockedItems: number;
+  totalItems: number;
+}
+
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -13,7 +27,7 @@ export class EventComponent implements OnInit {
   event!: IEvent;
   instances!: Array<IEventInstance>;
 
-  rows: Array<any> = [];
+  rows: Array<IRow> = [];
 
   constructor(
     private readonly _dataService: DataService,
@@ -59,8 +73,8 @@ export class EventComponent implements OnInit {
         name: this.event.name,
         year: (instance.date as Date).getFullYear(),
         guid: instance.guid,
-        date: instance.date,
-        endDate: instance.endDate,
+        date: instance.date as Date,
+        endDate: instance.endDate as Date,
         iaps,
         returningIaps,
         spirits: instance.spirits?.length ?? 0,

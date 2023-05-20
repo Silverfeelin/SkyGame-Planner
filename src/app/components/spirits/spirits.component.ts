@@ -9,12 +9,16 @@ import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
+type ViewMode = 'grid' | 'cards';
+
 @Component({
   selector: 'app-spirits',
   templateUrl: './spirits.component.html',
   styleUrls: ['./spirits.component.less']
 })
 export class SpiritsComponent {
+  mode: ViewMode = 'cards';
+
   spirits: Array<ISpirit> = [];
   queryTree: {[spiritGuid: string]: ISpiritTree} = {};
   spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
@@ -26,9 +30,14 @@ export class SpiritsComponent {
     private readonly _dataService: DataService,
     private readonly _route: ActivatedRoute
   ) {
+    this.mode = localStorage.getItem('spirits.mode') as ViewMode || 'grid';
     _route.queryParamMap.subscribe(q => { this.onQueryChanged(q); });
   }
 
+  changeMode(): void {
+    this.mode = this.mode === 'grid' ? 'cards' : 'grid';
+    localStorage.setItem('spirits.mode', this.mode);
+  }
 
   onQueryChanged(q: ParamMap): void {
     this.spirits = [];
@@ -91,7 +100,7 @@ export class SpiritsComponent {
         });
       }
 
-      const tooltip = unlockedItems === totalItems ? 'All items unlocked.'
+      const unlockTooltip = unlockedItems === totalItems ? 'All items unlocked.'
         : unlockedLast && unlockedLast === totalLast ? 'All items unlocked in most recent visit.'
         : undefined;
 
@@ -104,7 +113,7 @@ export class SpiritsComponent {
         tree: this.queryTree[s.guid]?.guid,
         unlockedItems, totalItems,
         unlockedLast, totalLast,
-        tooltip
+        unlockTooltip
       }
     });
   }

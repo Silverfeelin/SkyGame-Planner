@@ -227,6 +227,7 @@ export class DataService {
     this.spiritTreeConfig.items.forEach(spiritTree => {
         // Map Spirit Tree to Node.
         const node = this.guidMap.get(spiritTree.node as any) as INode;
+        if (!node) { console.error('Node not found', spiritTree.node); }
         spiritTree.node = node;
         node.spiritTree = spiritTree;
         this.initializeNode(node);

@@ -8,13 +8,20 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
-a {
+a, .link {
   color: var(--color);
   // text-decoration: none;
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
 }
 
-a:hover {
-  color: var(--color-link-hover);
+// a with link
+
+
+.link {
+  text-decoration: underline;
 }
 
 // Scrollbar
@@ -109,6 +116,12 @@ p:last-child {
     left: 1px;
     top: 1px;
   }
+}
+
+// Prevent SVG icon clipping.
+mat-icon {
+  font-size: 24px;
+  line-height: 24px;
 }
 
 mat-icon.seasonal { fill: var(--color-seasonal); }

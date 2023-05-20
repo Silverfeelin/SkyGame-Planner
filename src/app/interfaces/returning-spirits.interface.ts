@@ -6,6 +6,8 @@ import { ISpirit } from "./spirit.interface";
 export interface IReturningSpiritsConfig extends IConfig<IReturningSpirits> {}
 
 export interface IReturningSpirits extends IGuid {
+  /** Name of the occassion. */
+  name?: string;
   /** First day of TS visit. */
   date: Date | IDate;
   /** Last day of TS visit. */
