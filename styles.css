@@ -86,11 +86,16 @@ body {
 .mono {
   font-family: 'Roboto Mono', monospace;
 }
-a {
+a,
+.link {
   color: var(--color);
 }
-a:hover {
+a:hover,
+.link:hover {
   color: var(--color-link-hover);
+}
+.link {
+  text-decoration: underline;
 }
 body {
   scrollbar-width: thin;
@@ -308,6 +313,10 @@ p:last-child {
   position: absolute;
   left: 1px;
   top: 1px;
+}
+mat-icon {
+  font-size: 24px;
+  line-height: 24px;
 }
 mat-icon.seasonal {
   fill: var(--color-seasonal);

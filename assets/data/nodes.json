@@ -9541,7 +9541,7 @@
     },
     // #endregion
     // #region Prophecy
-    // Prophet of Water
+    // #region Prophet of Water
     {
       "guid": "6GpHoGx5-0",
       "item": "GkHHcjKlV-",
@@ -9735,7 +9735,78 @@
       "item": "OMRQQpGTCh",
       "c": 75
     },
-    // Prophet of Earth
+    {
+      "guid": "9GhluZ7XjZ",
+      "item": "GkHHcjKlV-",
+      "nw": "F8LNqevmqn",
+      "n": "dQ0U0EKmG0",
+      "ne": "HhcP-Ie2-B"
+    },
+    {
+      "guid": "F8LNqevmqn",
+      "item": "a1mWcW4Pll",
+      "h": 4
+    },
+    {
+      "guid": "HhcP-Ie2-B",
+      "item": "5HoXo6DF--",
+      "c": 15
+    },
+    {
+      "guid": "dQ0U0EKmG0",
+      "item": "mY3HmHBokS",
+      "c": 5,
+      "nw": "UqbwwqyleJ",
+      "n": "mKb1daH7gX",
+      "ne": "0wqr5Qt9ks"
+    },
+    {
+      "guid": "UqbwwqyleJ",
+      "item": "JeLUbTDjy3",
+      "c": 44
+    },
+    {
+      "guid": "0wqr5Qt9ks",
+      "item": "03A3OtJzWu",
+      "c": 3
+    },
+    {
+      "guid": "mKb1daH7gX",
+      "item": "bdJ0TZ1V3e",
+      "ac": 2,
+      "n": "S7-BF8WQWx"
+    },
+    {
+      "guid": "S7-BF8WQWx",
+      "item": "3H28hhg2kF",
+      "h": 3,
+      "nw": "OH9-Kyg9N8",
+      "n": "aExWaifHkZ",
+      "ne": "uEjvyPdwr_"
+    },
+    {
+      "guid": "OH9-Kyg9N8",
+      "item": "DyDCYzuiZU",
+      "h": 6
+    },
+    {
+      "guid": "uEjvyPdwr_",
+      "item": "Gu5Pw8cvcR",
+      "c": 54
+    },
+    {
+      "guid": "aExWaifHkZ",
+      "item": "sQcUGrjRP2",
+      "c": 5,
+      "n": "HLD9K_xEa0"
+    },
+    {
+      "guid": "HLD9K_xEa0",
+      "item": "OMRQQpGTCh",
+      "c": 75
+    },
+    // #endregion
+    // #region Prophet of Earth
     {
       "guid": "HI3hEkeep2",
       "item": "N3W56zu42m",
@@ -9877,7 +9948,90 @@
       "item": "JTPr5NiPEz",
       "c": 44
     },
-    // Prophet of Air
+    {
+      "guid": "NkHq0TPo1n",
+      "item": "N3W56zu42m",
+      "nw": "3AmAUwNFj1",
+      "n": "OrV0IGBr_7",
+      "ne": "OQstsD--3N"
+    },
+    {
+      "guid": "3AmAUwNFj1",
+      "item": "VWQdrhMcwH",
+      "h": 4
+    },
+    {
+      "guid": "OQstsD--3N",
+      "item": "DecMXt7qEo",
+      "c": 15
+    },
+    {
+      "guid": "OrV0IGBr_7",
+      "item": "LeCZYinpa1",
+      "c": 5,
+      "nw": "WN3vFmdFXn",
+      "n": "AJxwkKN889",
+      "ne": "cgWz1XzsMJ"
+    },
+    {
+      "guid": "WN3vFmdFXn",
+      "item": "kQMCuUAOtU",
+      "c": 44
+    },
+    {
+      "guid": "cgWz1XzsMJ",
+      "item": "56kpMv8q44",
+      "c": 3
+    },
+    {
+      "guid": "AJxwkKN889",
+      "item": "oPDDsasR3N",
+      "ac": 2,
+      "n": "pZMIiBe6Mq"
+    },
+    {
+      "guid": "pZMIiBe6Mq",
+      "item": "EIVC6EkYVC",
+      "h": 3,
+      "nw": "rdpkcpogco",
+      "n": "D_Jq-_wcAB",
+      "ne": "Cav6TOePkE"
+    },
+    {
+      "guid": "rdpkcpogco",
+      "item": "WNpYia1GaL",
+      "h": 6
+    },
+    {
+      "guid": "Cav6TOePkE",
+      "item": "cCVggJ8g_b",
+      "c": 15
+    },
+    {
+      "guid": "D_Jq-_wcAB",
+      "item": "kCfooUCOgs",
+      "c": 5,
+      "n": "gqNUA05v92"
+    },
+    {
+      "guid": "gqNUA05v92",
+      "item": "MWE3iO0pwv",
+      "c": 5,
+      "nw": "d0BZ5foKPF",
+      "n": "2q-1EeClg_"
+    },
+    {
+      "guid": "d0BZ5foKPF",
+      "item": "K1EZHVX9Sb",
+      "c": 75
+    },
+    {
+      "guid": "2q-1EeClg_",
+      "item": "JTPr5NiPEz",
+      "c": 44
+    },
+    // #endregion
+    // #region Prophet of Air
     {
       "guid": "eBz4SjTCbE",
       "item": "p07giC7q6F",
@@ -10007,6 +10161,77 @@
       "item": "mfNUas_ov2",
       "c": 75
     },
+    {
+      "guid": "5q6cX7B5Dv",
+      "item": "p07giC7q6F",
+      "nw": "3n9Q3AO6Dd",
+      "n": "Pc7FIKanez",
+      "ne": "BE7DFyDfTR"
+    },
+    {
+      "guid": "3n9Q3AO6Dd",
+      "item": "1COJ0_lu9H",
+      "h": 3
+    },
+    {
+      "guid": "BE7DFyDfTR",
+      "item": "GivrsXeHVe",
+      "c": 15
+    },
+    {
+      "guid": "Pc7FIKanez",
+      "item": "dAxR-om8Q8",
+      "c": 5,
+      "nw": "5TE_9i_tai",
+      "n": "6_ebl5Stk6",
+      "ne": "t8KAXCj23i"
+    },
+    {
+      "guid": "5TE_9i_tai",
+      "item": "PN1kAtqtky",
+      "c": 44
+    },
+    {
+      "guid": "t8KAXCj23i",
+      "item": "IjJzTQyhJx",
+      "c": 3
+    },
+    {
+      "guid": "6_ebl5Stk6",
+      "item": "80vjlRu4nQ",
+      "ac": 2,
+      "n": "kxKJSKTP1y"
+    },
+    {
+      "guid": "kxKJSKTP1y",
+      "item": "vmZnZiDaRp",
+      "h": 3,
+      "nw": "7EDv6MbaDK",
+      "n": "QmCfR94Xgt",
+      "ne": "_ko0aVcyYG"
+    },
+    {
+      "guid": "7EDv6MbaDK",
+      "item": "sS5uFB29XN",
+      "h": 6
+    },
+    {
+      "guid": "_ko0aVcyYG",
+      "item": "3j1vIMlhqg",
+      "c": 54
+    },
+    {
+      "guid": "QmCfR94Xgt",
+      "item": "0uuQGhhylI",
+      "c": 5,
+      "n": "shHZhGcxtT"
+    },
+    {
+      "guid": "shHZhGcxtT",
+      "item": "mfNUas_ov2",
+      "c": 75
+    },
+    // #endregion
     // Prophet of Fire
     {
       "guid": "joPtiDGThJ",
@@ -12095,7 +12320,7 @@
       "item": "CJLgEjb1TE",
       "sc": 3
     },
-    // Tinkering Chimesmith
+    // #region Tinkering Chimesmith
     {
       "guid": "wcUvdoaglf",
       "item": "Jgp0s63dVZ",
@@ -12150,6 +12375,59 @@
       "item": "NhS59J9jxl",
       "sc": 3
     },
+    {
+      "guid": "lvTfufFX7Q",
+      "item": "Jgp0s63dVZ",
+      "n": "9eCQ_W3L5r"
+    },
+    {
+      "guid": "9eCQ_W3L5r",
+      "item": "DquDtwH3Jy",
+      "c": 5,
+      "nw": "mb7MKtmeoL",
+      "n": "YSV46JnzyL",
+      "ne": "PCE5rtTnLi"
+    },
+    {
+      "guid": "mb7MKtmeoL",
+      "item": "ARYCvmatxR",
+      "c": 45
+    },
+    {
+      "guid": "PCE5rtTnLi",
+      "item": "aoeuPfrcxy",
+      "c": 3
+    },
+    {
+      "guid": "YSV46JnzyL",
+      "item": "3yhb7QqakI",
+      "ac": 2,
+      "n": "6AXsXUxvm-"
+    },
+    {
+      "guid": "6AXsXUxvm-",
+      "item": "S4y9T9zWU1",
+      "c": 5,
+      "nw": "RwnyroYE0y",
+      "n": "N28p3aI88u",
+      "ne": "a46WleRgOu"
+    },
+    {
+      "guid": "RwnyroYE0y",
+      "item": "dkLuIrNJyl",
+      "c": 35
+    },
+    {
+      "guid": "a46WleRgOu",
+      "item": "5Z5JqDkAtl",
+      "c": 70
+    },
+    {
+      "guid": "N28p3aI88u",
+      "item": "t3hOiGsS79",
+      "c": 75
+    },
+    // #endregion
     // Talented Builder
     {
       "guid": "et9DvsI31i",

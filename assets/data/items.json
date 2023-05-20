@@ -8653,7 +8653,7 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
     },
-    // Tinkering Chimesmith
+    // #region Tinkering Chimesmith
     {
       "guid": "Jgp0s63dVZ",
       "type": "Stance",
@@ -8712,6 +8712,19 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
     },
+    {
+      "guid": "aoeuPfrcxy",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "3yhb7QqakI",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
     // Talented Builder
     {
       "guid": "b_qHNPnLGc",
