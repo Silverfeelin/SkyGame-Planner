@@ -2370,6 +2370,7 @@
     {
       "guid": "7FqA0RC1D4",
       "type": "Hair",
+      "group": "Elder",
       "name": "Isle Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_hair_elder_isle.png",
       "order": 51
@@ -2377,6 +2378,7 @@
     {
       "guid": "md88nKjoJF",
       "type": "Mask",
+      "group": "Elder",
       "name": "Isle Elder Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
       "order": 51
@@ -2385,6 +2387,7 @@
     {
       "guid": "x_pH3kjLjO",
       "type": "Hair",
+      "group": "Elder",
       "name": "Prairie Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Icon_hair_elder_prairie.png",
       "order": 52
@@ -2392,6 +2395,7 @@
     {
       "guid": "tM_21JOpuH",
       "type": "Mask",
+      "group": "Elder",
       "name": "Prairie Elder Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
       "order": 52
@@ -2400,6 +2404,7 @@
     {
       "guid": "T0wsTbmzvv",
       "type": "Hair",
+      "group": "Elder",
       "name": "Forest Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Icon_hair_elder_forest.png",
       "order": 53
@@ -2407,6 +2412,7 @@
     {
       "guid": "ay0lwFyush",
       "type": "Mask",
+      "group": "Elder",
       "name": "Forest Elder Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
       "order": 53
@@ -2415,6 +2421,7 @@
     {
       "guid": "YdtLj5dJE7",
       "type": "Hair",
+      "group": "Elder",
       "name": "Valley Elder Hair 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Icon_hair_elder_valley_2.png",
       "order": 54
@@ -2422,6 +2429,7 @@
     {
       "guid": "AjiVTxnCly",
       "type": "Hair",
+      "group": "Elder",
       "name": "Valley Elder Hair 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Icon_hair_elder_valley_1.png",
       "order": 55
@@ -2430,6 +2438,7 @@
     {
       "guid": "SSrCZW8Cf-",
       "type": "Hair",
+      "group": "Elder",
       "name": "Wasteland Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Icon_hair_elder_wasteland.png",
       "order": 56
@@ -2438,6 +2447,7 @@
     {
       "guid": "RIkdOtUAeN",
       "type": "Hair",
+      "group": "Elder",
       "name": "Vault Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_hair_elder_vault.png",
       "order": 57
@@ -2445,10 +2455,11 @@
     // #endregion
 
     // #region Season Guides
-    // Gratitude Guide
+    // #region Gratitude Guide
     {
       "guid": "-InWbdW4EP",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Gratitude Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/1_Gratitude.png",
       "order": 1
@@ -2456,14 +2467,17 @@
     {
       "guid": "kHq2VDev2Y",
       "type": "Mask",
+      "group": "Ultimate",
       "name": "Gratitude Ultimate Deer Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Icon_mask_gratitude_ult_deer.png",
       "order": 105
     },
-    // Lightseekers Guide
+    // #endregion
+    // #region Lightseekers Guide
     {
       "guid": "jYGGefMrlS",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Lightseekers Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/2_Lightseekers.png",
       "order": 2
@@ -2471,14 +2485,17 @@
     {
       "guid": "2o3CEU9QhM",
       "type": "Held",
+      "group": "Ultimate",
       "name": "Lightseekers Ultimate Umbrella",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Icon_prop_lightseekers_large_umbrella.png",
       "order": 3101
     },
-    // Belonging Guide
+    // #endregion
+    // #region Belonging Guide
     {
       "guid": "CmonO-Vfc4",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Belonging Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/3_Belonging.png",
       "order": 3
@@ -2486,14 +2503,17 @@
     {
       "guid": "LtrFT8BOI9",
       "type": "Prop",
+      "group": "Ultimate",
       "name": "Belonging Ultimate Fireplace",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Icon_prop_belonging_bonfire.png",
       "order": 901
     },
-    // Rhythm Guide
+    // #endregion
+    // #region Rhythm Guide
     {
       "guid": "Xbz7dLYzOi",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Rhythm Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/4_Rhythm.png",
       "order": 4
@@ -2501,6 +2521,7 @@
     {
       "guid": "l948FBq_MN",
       "type": "Mask",
+      "group": "Ultimate",
       "name": "Rhythm Ultimate Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_mask_rhythm_ult.png",
       "order": 401
@@ -2508,14 +2529,17 @@
     {
       "guid": "wXiFi4y6YU",
       "type": "Hair",
+      "group": "Ultimate",
       "name": "Rhythm Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Icon_hair_rhythm_ultimate.png",
       "order": 1404
     },
-    // Enchantment Guide
+    // #endregion
+    // #region Enchantment Guide
     {
       "guid": "l47AxvwiAp",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Enchantment Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/5_Enchantment.png",
       "order": 5
@@ -2523,6 +2547,7 @@
     {
       "guid": "FlOSNmw_38",
       "type": "Hat",
+      "group": "Ultimate",
       "name": "Enchantment Ultimate Hair Tassel",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_enchantment_ultimate_tassles.png",
       "order": 1501
@@ -2530,6 +2555,7 @@
     {
       "guid": "EUVtYtLoeB",
       "type": "Hair",
+      "group": "Ultimate",
       "name": "Enchantment Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Icon_hair_enchantment_ultimate.png",
       "order": 1507
@@ -2537,7 +2563,7 @@
     {
       "guid": "TX3Mc_wTaK",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2549,7 +2575,7 @@
     {
       "guid": "xetNt922-X",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2561,7 +2587,7 @@
     {
       "guid": "jE6TSih_f4",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2573,7 +2599,7 @@
     {
       "guid": "5BkWZkgMA_",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2585,7 +2611,7 @@
     {
       "guid": "uXMhRXIsiE",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 5",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2597,7 +2623,7 @@
     {
       "guid": "TyFTGUX8JI",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 6",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2612,10 +2638,12 @@
       "name": "Hug",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
     },
-    // Sanctuary Guide
+    // #endregion
+    // #region Sanctuary Guide
     {
       "guid": "Lqnd-vg9Lk",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Sanctuary Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png",
       "order": 6
@@ -2623,6 +2651,7 @@
     {
       "guid": "Hvq52gCeih",
       "type": "Instrument",
+      "group": "Ultimate",
       "name": "Sanctuary Ultimate Handpan",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Icon_instrument_sanctuary_hand_pan.png",
       "order": 2301
@@ -2630,6 +2659,7 @@
     {
       "guid": "OPjLSqWOhA",
       "type": "Cape",
+      "group": "Ultimate",
       "name": "Sanctuary Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_sanctuary_manta-Morybel-0146.png",
       "order": 1602
@@ -2637,7 +2667,7 @@
     {
       "guid": "agaCWhY93E",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2649,7 +2679,7 @@
     {
       "guid": "nB-bu8Dml0",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2661,7 +2691,7 @@
     {
       "guid": "MxHThCBuGJ",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2673,7 +2703,7 @@
     {
       "guid": "5lW7La3717",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2685,7 +2715,7 @@
     {
       "guid": "-_zTpwlBr-",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 5",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2697,7 +2727,7 @@
     {
       "guid": "t9AbIPO4jo",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 6",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2712,10 +2742,12 @@
       "name": "Hug",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
     },
-    // Prophecy Guide
+    // #endregion
+    // #region Prophecy Guide
     {
       "guid": "DxQ_9zIh5h",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Prophecy Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/7_Prophecy.png",
       "order": 7
@@ -2723,6 +2755,7 @@
     {
       "guid": "wGQSuhVWXD",
       "type": "Instrument",
+      "group": "Ultimate",
       "name": "Prophecy Ultimate Drum",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_instrument_prophecy_drum.png",
       "order": 2501
@@ -2730,6 +2763,7 @@
     {
       "guid": "GYWFafVVd_",
       "type": "Mask",
+      "group": "Ultimate",
       "name": "Prophecy Ultimate Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png",
       "order": 705
@@ -2737,7 +2771,7 @@
     {
       "guid": "C__QqZMFNy",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2749,7 +2783,7 @@
     {
       "guid": "4BLJ-WV8ex",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2761,7 +2795,7 @@
     {
       "guid": "phnJrWRFNt",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2773,7 +2807,7 @@
     {
       "guid": "vW_bfSM4YI",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2788,17 +2822,20 @@
       "name": "Hug",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
     },
-    // Dreams Guide
+    // #endregion
+    // #region Dreams Guide
     {
       "guid": "-w8MPNCSjY",
       "type": "Necklace",
       "name": "Dreams Pendant",
+      "group": "Ultimate",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/8_Dreams.png",
       "order": 8
     },
     {
       "guid": "HgkvwqNp19",
       "type": "Mask",
+      "group": "Ultimate",
       "name": "Dreams Ultimate Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Icon_mask_dreams_ult.png",
       "order": 804
@@ -2806,6 +2843,7 @@
     {
       "guid": "w1EkwcgG88",
       "type": "Cape",
+      "group": "Ultimate",
       "name": "Dreams Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png",
       "order": 1804
@@ -2813,7 +2851,7 @@
     {
       "guid": "IEocuR75Kz",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2825,7 +2863,7 @@
     {
       "guid": "Ee2bEKMr-j",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2837,7 +2875,7 @@
     {
       "guid": "AxqrNrIvYZ",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2849,7 +2887,7 @@
     {
       "guid": "lgkuCpwOmm",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2861,7 +2899,7 @@
     {
       "guid": "fLXHdJRrG8",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 5",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2876,10 +2914,12 @@
       "name": "Hug",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
     },
-    // Assembly Guide
+    // #endregion
+    // #region Assembly Guide
     {
       "guid": "Hfu-dI_t7e",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Assembly Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/9_Assembly.png",
       "order": 9
@@ -2887,6 +2927,7 @@
     {
       "guid": "bOx0bcbPix",
       "type": "Mask",
+      "group": "Ultimate",
       "name": "Assembly Ultimate Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_mask_assembly_ult.png",
       "order": 901
@@ -2894,6 +2935,7 @@
     {
       "guid": "_qNmWZx0rp",
       "type": "Hair",
+      "group": "Ultimate",
       "name": "Assembly Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Icon_hair_assembly_ultimate.png",
       "order": 1901
@@ -2901,6 +2943,7 @@
     {
       "guid": "B59f4_ru60",
       "type": "Instrument",
+      "group": "Ultimate",
       "name": "Assembly Ultimate Bugle",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_instrument_assembly_bugle.png",
       "order": 1701
@@ -2908,6 +2951,7 @@
     {
       "guid": "ZdKPdWs2xL",
       "type": "Cape",
+      "group": "Ultimate",
       "name": "Assembly Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png",
       "order": 1901
@@ -2915,7 +2959,7 @@
     {
       "guid": "srvkkR75YW",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2933,7 +2977,7 @@
     {
       "guid": "lT9zT9m0fm",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2946,7 +2990,7 @@
     {
       "guid": "zvNA-aFO_N",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2964,7 +3008,7 @@
     {
       "guid": "W1uCIbviNd",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2977,7 +3021,7 @@
     {
       "guid": "kUyRgMkRv4",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 5",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -2996,7 +3040,7 @@
     {
       "guid": "iJ4O7SASJW",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 6",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3019,10 +3063,12 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Icon_prop_assembly_tent.png",
       "order": 1801
     },
-    // The Rose
+    // #endregion
+    // #region The Rose
     {
       "guid": "TQUcvFL8k7",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "The Little Prince Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png",
       "order": 10
@@ -3030,6 +3076,7 @@
     {
       "guid": "dTnb7tLoOB",
       "type": "Hair",
+      "group": "Ultimate",
       "name": "Little Prince Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Icon_hair_prince_ultimate.png",
       "order": 2006
@@ -3037,6 +3084,7 @@
     {
       "guid": "BD7KBFgGf0",
       "type": "Outfit",
+      "group": "Ultimate",
       "name": "Little Prince Ultimate Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Icon_pants_prince_pjs.png",
       "order": 1003
@@ -3044,6 +3092,7 @@
     {
       "guid": "mABAiqym_P",
       "type": "Prop",
+      "group": "Ultimate",
       "name": "Little Prince Ultimate Rose",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Icon_prop_little_prince_rose.png",
       "order": 2201
@@ -3058,7 +3107,7 @@
     {
       "guid": "wR4TWPuEyR",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3070,7 +3119,7 @@
     {
       "guid": "JfTzg2wE_D",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3082,7 +3131,7 @@
     {
       "guid": "xPgHPO9vgx",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3094,7 +3143,7 @@
     {
       "guid": "9TVb-6wg42",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3106,7 +3155,7 @@
     {
       "guid": "ew2cXMYp1M",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 5",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3118,7 +3167,7 @@
     {
       "guid": "cam2MsfMpk",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 6",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3130,7 +3179,7 @@
     {
       "guid": "YMx3PU8Czn",
       "type": "Quest",
-      "name": "Quest",
+      "name": "Quest 7",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -3139,10 +3188,12 @@
       "name": "Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
     },
-    // Flight Guide
+    // #endregion
+    // #region Flight Guide
     {
       "guid": "4Yk3OcGKKp",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Flight Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
       "order": 11
@@ -3233,10 +3284,12 @@
       "name": "Hug",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
     },
-    // Abyss Guide
+    // #endregion
+    // #region Abyss Guide
     {
       "guid": "Ya2cCEllDX",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Abyss Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/12_Abyss.png",
       "order": 12
@@ -3329,7 +3382,8 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SOAbyss-additional-mask-Morybel-0146.png",
       "order": 1205
     },
-    // Performance Guide
+    // #endregion
+    // #region Performance Guide
     {
       "guid": "372sosqEJH",
       "type": "Special",
@@ -3339,6 +3393,7 @@
     {
       "guid": "RjZyODIr_2",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Performance Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/13_SOPerformance_logo.png",
       "order": 13
@@ -3480,7 +3535,8 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOPerformance-flower-pot-icon-Morybel-0146.png",
       "order": 2401
     },
-    // The Void of Shattering
+    // #endregion
+    // #region The Void of Shattering
     {
       "guid": "vfm49a5KVd",
       "type": "Special",
@@ -3490,6 +3546,7 @@
     {
       "guid": "bpUKMY2cpm",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Shattering Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png",
       "order": 14
@@ -3586,7 +3643,8 @@
       "name": "Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
     },
-    // AURORA Guide
+    // #endregion
+    // #region AURORA Guide
     {
       "guid": "YXvxchiY37",
       "type": "Special",
@@ -3596,6 +3654,7 @@
     {
       "guid": "JCRIpETL35",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "AURORA Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/15-Aurora.png",
       "order": 15
@@ -3769,7 +3828,8 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/SoAurora-Additional-Mask-Icon-Morybel-0146.png",
       "order": 1505
     },
-    // Remembrance Guide
+    // #endregion
+    // #region Remembrance Guide
     {
       "guid": "c0KdEygWIK",
       "type": "Special",
@@ -3779,6 +3839,7 @@
     {
       "guid": "YU30BrQAM1",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Remembrance Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
       "order": 16
@@ -3958,6 +4019,7 @@
       "name": "Quest 10",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
+    // #endregion
     // #region Passage Guide
     {
       "guid": "s_2ZN-bnbP",
@@ -4025,6 +4087,7 @@
     {
       "guid": "SSNqKMOI2E",
       "type": "Necklace",
+      "group": "Ultimate",
       "name": "Passage Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/17_SOPassage_logo.png",
       "order": 17
@@ -10409,7 +10472,7 @@
       "type": "Outfit",
       "name": "Oddball Outcast Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Oddball-Outcast-outfit-icon-Morybel-0146.png",
-      "order": 1601
+      "order": 1702
     },
     {
       "guid": "yeajwByRBg",
@@ -10557,7 +10620,7 @@
       "type": "Outfit",
       "name": "Melancholy Mope Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Passage-Melancholy-Mope-Outfit-icon-Morybel-0146.png",
-      "order": 1602
+      "order": 1701
     },
     {
       "guid": "_gwNMhGG0C",

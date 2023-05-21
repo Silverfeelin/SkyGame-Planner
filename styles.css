@@ -38,6 +38,8 @@
   --item-size: 64px;
   --item-size-medium: 48px;
   --item-size-small: 32px;
+  --icon-size-group: 24px;
+  --icon-size-cost: 18px;
   --animation-short: 150ms;
   --animation-medium: 300ms;
   --menu-width: 44px;
@@ -319,6 +321,10 @@ mat-icon {
   line-height: 24px;
 }
 mat-icon.seasonal {
+  fill: var(--color-seasonal);
+}
+.seasonal {
+  color: var(--color-seasonal);
   fill: var(--color-seasonal);
 }
 
