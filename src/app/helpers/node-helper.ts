@@ -16,7 +16,7 @@ export class NodeHelper {
   }
 
   /** Gets the root node from a given node. */
-  static getRoot(node: INode): INode {
+  static getRoot(node?: INode): INode | undefined {
     if (!node) { return node; }
     while (node.prev) { node = node.prev; }
     return node;
@@ -27,8 +27,10 @@ export class NodeHelper {
   * @param nodes Array to add items to.
   * @returns `nodes` or new array with all nodes.
   */
-  static all(node: INode, nodes?: Array<INode>): Array<INode> {
+  static all(node?: INode, nodes?: Array<INode>): Array<INode> {
     nodes ??= [];
+    if (!node) { return nodes; }
+
     nodes.push(node);
     if (node.nw) { this.all(node.nw , nodes); }
     if (node.ne) { this.all(node.ne , nodes); }
@@ -36,7 +38,7 @@ export class NodeHelper {
     return nodes;
   }
 
-  static getItems(node: INode): Array<IItem> {
+  static getItems(node?: INode): Array<IItem> {
     const itemSet = new Set<IItem>();
     this.all(node).filter(n => n.item).forEach(n => itemSet.add(n.item!));
     return [...itemSet];

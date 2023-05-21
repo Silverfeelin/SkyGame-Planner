@@ -10,6 +10,7 @@ import { DebugService } from 'src/app/services/debug.service';
 export class ItemComponent {
   @Input() item!: IItem;
   @Input() highlight?: boolean;
+  @Input() showSubIcons?: boolean;
 
   ItemType = ItemType;
 

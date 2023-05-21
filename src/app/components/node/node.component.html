@@ -13,8 +13,8 @@
   <div class="cost" *ngIf="node?.h">
     {{ node.h }}<mat-icon svgIcon="heart" [inline]="false"></mat-icon>
   </div>
-  <div class="cost seasonal" *ngIf="node?.sh">
-    {{ node.sh }}<mat-icon svgIcon="season-heart" [inline]="false"></mat-icon>
+  <div class="cost" *ngIf="node?.sh">
+    {{ node.sh }}<mat-icon class="seasonal" svgIcon="season-heart" [inline]="false"></mat-icon>
   </div>
   <div class="cost ascend" *ngIf="node?.ac">
     {{ node.ac }}<mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>

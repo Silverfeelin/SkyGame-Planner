@@ -10,6 +10,13 @@
   </div>
 </div>
 
+<!-- Spirit image -->
+<div class="card-container mt-2">
+  <div class="card-container-inner spirit-img">
+    <img *ngIf="spirit.imageUrl" [src]="spirit.imageUrl" [alt]="spirit.name" />
+  </div>
+</div>
+
 <div class="card-container mt-2">
   <div class="card-container-inner">
     <!-- Added tree-->

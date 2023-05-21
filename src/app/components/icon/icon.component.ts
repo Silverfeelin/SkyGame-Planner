@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { SubscriptionLike } from 'rxjs';
 import { ImageService } from 'src/app/services/image.service';
@@ -6,7 +6,8 @@ import { ImageService } from 'src/app/services/image.service';
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.less']
+  styleUrls: ['./icon.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IconComponent implements OnChanges {
   @Input() src?: string;

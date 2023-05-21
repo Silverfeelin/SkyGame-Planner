@@ -74,7 +74,12 @@
     <ng-container *ngFor="let item of shownItems; let i = index">
       <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % columns) ? undefined : 'block'"></div>
       <div class="card-flex-item">
-        <app-item [item]="item" [ngbTooltip]="item.name" container="body" placement="bottom" [class.item-unlocked]="item.unlocked"></app-item>
+        <app-item [item]="item" [showSubIcons]="true"
+          (click)="openItem(item)"
+          [class.item-unlocked]="item.unlocked"
+          [class.a]="item.nodes?.length || item.iaps?.length"
+          [ngbTooltip]="item.name" container="body" placement="bottom" >
+        </app-item>
         <mat-icon class="unlock-check self" [class.unlocked]="item.unlocked" fontIcon="done"></mat-icon>
       </div>
     </ng-container>

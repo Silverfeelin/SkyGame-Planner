@@ -1,14 +1,15 @@
-import { IConfig, IGuid } from "./base.interface";
-import { IEvent } from "./event.interface";
-import { IIAP } from "./iap.interface";
-import { INode } from "./node.interface";
-import { ISeason } from "./season.interface";
+import { IConfig, IGuid } from './base.interface';
+import { IIAP } from './iap.interface';
+import { INode } from './node.interface';
+import { ISeason } from './season.interface';
 
 export interface IItemConfig extends IConfig<IItem> {}
 
 export interface IItem extends IGuid {
   /** Item type. */
   type: ItemType;
+  /** Item group. */
+  group?: ItemGroup;
   /** Item name. */
   name: string;
   /** Path to item icon. */
@@ -25,6 +26,8 @@ export interface IItem extends IGuid {
   nodes?: Array<INode>;
   /** IAPs that unlock this item. */
   iaps?: Array<IIAP>;
+  /** Season the item was introduced in. */
+  season?: ISeason;
 
   /// Progress ///
   unlocked?: boolean;
@@ -66,3 +69,5 @@ export enum ItemType {
   /** Other special (non-)items such as candle blessings. */
   Special = 'Special'
 }
+
+export type ItemGroup = 'Elder' | 'Season' | 'SeasonPass' | 'Ultimate';

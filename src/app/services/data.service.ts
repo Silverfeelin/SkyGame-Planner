@@ -99,6 +99,7 @@ export class DataService {
     this.initializeEvents();
     this.initializeShops();
     this.initializeItems();
+    this.initializeSeasonItems();
 
     if (isDevMode()) {
       this.validate();
@@ -257,13 +258,6 @@ export class DataService {
     return node;
   }
 
-  private initializeItems(): void {
-    this.itemConfig.items.forEach(item => {
-      item.unlocked ||= this._storageService.unlocked.has(item.guid);
-      item.order ??= 999999;
-    });
-  }
-
   private initializeEvents(): void {
     this.eventConfig.items.forEach(event => {
       event.instances?.forEach((eventInstance, iInstance) => {
@@ -330,6 +324,24 @@ export class DataService {
         });
       });
     });
+  }
+
+  private initializeItems(): void {
+    this.itemConfig.items.forEach(item => {
+      item.unlocked ||= this._storageService.unlocked.has(item.guid);
+      item.order ??= 999999;
+    });
+  }
+
+  private initializeSeasonItems(): void {
+    for (const season of this.seasonConfig.items) {
+      for (const spirit of season.spirits ?? []) {
+        if (!spirit?.tree?.node) { continue; }
+        for (const item of NodeHelper.getItems(spirit.tree.node)) {
+          item.season = season;
+        }
+      }
+    }
   }
 
   private exposeData(): void {

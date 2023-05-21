@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -89,6 +90,34 @@ export class ItemsComponent {
     // Sort by order.
     for (const type in ItemType) {
       this.typeItems[type].sort((a, b) => a.order! - b.order!);
+    }
+  }
+
+  openItem(item: IItem): void {
+    if (item.nodes?.length) {
+      // Find spirit from item.
+      const tree = NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree;
+
+      const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
+      if (tree?.eventInstanceSpirit) {
+        void this._router.navigate(['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid]);
+      } else if (spirit) {
+        void this._router.navigate(['/spirit', spirit.guid]);
+      } else {
+        alert('Item source not found.');
+      }
+    } else if (item.iaps?.length) {
+      // Find shop from item.
+      const shop = item.iaps.at(-1)?.shop;
+      if (shop?.permanent) {
+        void this._router.navigate(['/shop']);
+      } else if (shop?.event) {
+        void this._router.navigate(['/event-instance', shop.event.guid]);
+      } else if (shop?.season) {
+        void this._router.navigate(['/season', shop.season.guid]);
+      } else {
+        alert('Item source not found.');
+      }
     }
   }
 }

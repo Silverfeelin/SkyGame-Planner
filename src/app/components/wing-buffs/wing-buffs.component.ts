@@ -38,7 +38,7 @@ export class WingBuffsComponent implements OnInit {
     for (const item of itemSet) {
       if (!item.nodes?.length) { continue; }
       const rootNode = NodeHelper.getRoot(item.nodes[0]);
-      const spiritTree = rootNode.spiritTree;
+      const spiritTree = rootNode!.spiritTree;
       let spirit: ISpirit | undefined;
       let isSeasonal = false;
       if (spiritTree?.spirit) {
