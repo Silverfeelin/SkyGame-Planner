@@ -9296,7 +9296,7 @@
       "item": "_5IHtakDvf",
       "c": 50
     },
-    // Grateful Shell Collector
+    // #region Grateful Shell Collector
     {
       "guid": "1fmBVbUjab",
       "item": "dpF382RUvu",
@@ -9409,6 +9409,71 @@
       "item": "ygwSSn-NvK",
       "c": 70
     },
+    {
+      "guid": "JjqPlnSCp4",
+      "item": "dpF382RUvu",
+      "nw": "StPYqdcYyl",
+      "n": "oPUI6IcNIT",
+      "ne": "3-rAoOC351"
+    },
+    {
+      "guid": "StPYqdcYyl",
+      "item": "IDDSw982ER",
+      "h": 4
+    },
+    {
+      "guid": "3-rAoOC351",
+      "item": "HiXJr_6Tz-",
+      "c": 45
+    },
+    {
+      "guid": "oPUI6IcNIT",
+      "item": "Tjzcojypzb",
+      "c": 5,
+      "nw": "TPvncglZr_",
+      "n": "U9k5k6h_vg",
+      "ne": "1Wqd_Raiut"
+    },
+    {
+      "guid": "TPvncglZr_",
+      "item": "yiZSilInIg",
+      "c": 34
+    },
+    {
+      "guid": "1Wqd_Raiut",
+      "item": "U6jwP1QUVY",
+      "c": 3
+    },
+    {
+      "guid": "U9k5k6h_vg",
+      "item": "A2K4NAA5tg",
+      "ac": 2,
+      "n": "_hlwX8V2Sm"
+    },
+    {
+      "guid": "_hlwX8V2Sm",
+      "item": "xl7jZqLFwD",
+      "h": 3,
+      "nw": "6MOOrbHDZt",
+      "n": "n5_rW_311a"
+    },
+    {
+      "guid": "6MOOrbHDZt",
+      "item": "B66Wbe_vYk",
+      "h": 6
+    },
+    {
+      "guid": "n5_rW_311a",
+      "item": "Hvo9QMJcsx",
+      "c": 5,
+      "n": "iJio0etUq3"
+    },
+    {
+      "guid": "iJio0etUq3",
+      "item": "ygwSSn-NvK",
+      "c": 70
+    },
+    // #endregion
     // Chill Sunbather
     {
       "guid": "-_0EoMUmXu",
