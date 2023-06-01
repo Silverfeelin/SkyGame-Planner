@@ -14570,6 +14570,48 @@
       "c": 95
     },
     // #endregion
+    // #region Days of Color (2023)
+    {
+      "guid": "DThw1pOZyJ",
+      "item": "wcZ2_DxHMp",
+      "n": "JjJjDDCCpM"
+    },
+    {
+      "guid": "JjJjDDCCpM",
+      "item": "N5_6M8ooTl",
+      "c": 5,
+      "nw": "8FyOnr8T0P",
+      "n": "FzdICgyz0S"
+    },
+    {
+      "guid": "8FyOnr8T0P",
+      "item": "4XMYa4Wj-M",
+      "h": 20
+    },
+    {
+      "guid": "FzdICgyz0S",
+      "item": "W5Y_p83sp1",
+      "c": 5,
+      "nw": "ZzB5tSWqyE",
+      "n": "PJAVPutFWX",
+      "ne": "8256sEh9Bd"
+    },
+    {
+      "guid": "ZzB5tSWqyE",
+      "item": "BUTwFt6PGm",
+      "c": 175
+    },
+    {
+      "guid": "8256sEh9Bd",
+      "item": "0rrPORrk7O",
+      "c": 95
+    },
+    {
+      "guid": "PJAVPutFWX",
+      "item": "2OuY3ABFCZ",
+      "ec": 104
+    },
+    // #endregion
     // #region Sky Anniversary (2020)
     {
       "guid": "lNIMl5bvaC",

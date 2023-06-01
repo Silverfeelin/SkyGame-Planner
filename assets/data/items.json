@@ -11298,6 +11298,30 @@
       "name": "Random Trail Spell",
       "icon": "#trail"
     },
+    {
+      "guid": "wcZ2_DxHMp",
+      "type": "Special",
+      "name": "Oreo Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "9ETwx3n-UZ",
+      "type": "Outfit",
+      "name": "Dark Rainbow Tunic",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Days-of-Color-Dark-Rainbow-Tunic-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "krzIL86J83",
+      "type": "Hat",
+      "name": "Dark Rainbow Earrings",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "2OuY3ABFCZ",
+      "type": "Cape",
+      "name": "Dark Rainbow Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Days-of-Color-Dark-Rainbow-Cape-icon-Morybel-0146.png"
+    },
     // #endregion
     // #region Sky Anniversary
     {

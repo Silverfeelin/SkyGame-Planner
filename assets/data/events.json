@@ -212,12 +212,32 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature"
       }
     },
+    // Days of Color
+    {
+      "guid": "0Xk69mVo9E",
+      "name": "Days of Color",
+      "recurring": true,
+      "imageUrl": "assets/game/events/DaysOfRainbow.webp",
+      "instances": [
+        {
+          "guid": "7H5NE9-K72",
+          "date": { "day": 1, "month": 6, "year": 2023 },
+          "endDate": { "day": 14, "month": 6, "year": 2023 },
+          "shops": [
+            "30CKPEMCtZ",
+            "vMM_7I_p9N"
+          ],
+          "spirits": [
+            { "guid": "aPWzZTzbkC", "spirit": "uPzMm5H7ag", "tree": "RcVnZHdgZ6" }
+          ]
+        }
+      ]
+    },
     // Days of Rainbow
     {
       "guid": "yVDpWb7Goo",
       "name": "Days of Rainbow",
-      "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfRainbow.webp",
+      "recurring": false,
       "instances": [
         {
           "guid": "lm7oA1sthb",

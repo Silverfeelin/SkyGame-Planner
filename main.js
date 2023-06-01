@@ -2088,28 +2088,28 @@ __webpack_require__.r(__webpack_exports__);
 
 function NodeComponent_div_1_Template(rf, ctx) {
   if (rf & 1) {
-    const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function NodeComponent_div_1_Template_div_click_0_listener() {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9);
-      const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r8.toggleNode());
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10);
+      const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r9.toggleNode());
     })("mouseenter", function NodeComponent_div_1_Template_div_mouseenter_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9);
-      const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r10.mouseEnter($event));
-    })("mouseleave", function NodeComponent_div_1_Template_div_mouseleave_0_listener($event) {
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r9);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10);
       const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r11.mouseLeave($event));
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r11.mouseEnter($event));
+    })("mouseleave", function NodeComponent_div_1_Template_div_mouseleave_0_listener($event) {
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r10);
+      const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+      return _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵresetView"](ctx_r12.mouseLeave($event));
     });
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](1, "app-item", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngbTooltip", _r6)("placement", ctx_r0.tooltipPlacement);
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵreference"](10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngbTooltip", _r7)("placement", ctx_r0.tooltipPlacement);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("item", ctx_r0.node.item)("highlight", ctx_r0.hover);
   }
@@ -2189,27 +2189,42 @@ function NodeComponent_div_6_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("inline", false);
   }
 }
-function NodeComponent_ng_template_8_ng_container_0_Template(rf, ctx) {
+function NodeComponent_div_7_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](2, "mat-icon", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate1"](" ", ctx_r6.node.ec, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("inline", false);
+  }
+}
+function NodeComponent_ng_template_9_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerStart"](0);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "span", 15);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "span", 16);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementContainerEnd"]();
   }
   if (rf & 2) {
-    const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
+    const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r12.node.item.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtextInterpolate"](ctx_r13.node.item.name);
   }
 }
-function NodeComponent_ng_template_8_Template(rf, ctx) {
+function NodeComponent_ng_template_9_Template(rf, ctx) {
   if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, NodeComponent_ng_template_8_ng_container_0_Template, 3, 1, "ng-container", 14);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, NodeComponent_ng_template_9_ng_container_0_Template, 3, 1, "ng-container", 15);
   }
   if (rf & 2) {
-    const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r7.node.item);
+    const ctx_r8 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx_r8.node.item);
   }
 }
 class NodeComponent {
@@ -2284,9 +2299,9 @@ NodeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["�
     position: "position"
   },
   features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵNgOnChangesFeature"]],
-  decls: 10,
-  vars: 11,
-  consts: [["class", "item-container", "container", "body", 3, "ngbTooltip", "placement", "click", "mouseenter", "mouseleave", 4, "ngIf"], ["class", "cost", 4, "ngIf"], ["class", "cost ascend", 4, "ngIf"], ["fontIcon", "done", 1, "unlock-check"], ["nodeHover", ""], ["container", "body", 1, "item-container", 3, "ngbTooltip", "placement", "click", "mouseenter", "mouseleave"], [3, "item", "highlight"], [1, "cost"], ["svgIcon", "candle", 3, "inline"], ["svgIcon", "season-candle", 3, "inline"], ["svgIcon", "heart", 3, "inline"], ["svgIcon", "season-heart", 1, "seasonal", 3, "inline"], [1, "cost", "ascend"], ["svgIcon", "ascended-candle", 3, "inline"], [4, "ngIf"], [1, "ws-nw"]],
+  decls: 11,
+  vars: 12,
+  consts: [["class", "item-container", "container", "body", 3, "ngbTooltip", "placement", "click", "mouseenter", "mouseleave", 4, "ngIf"], ["class", "cost", 4, "ngIf"], ["class", "cost ascend", 4, "ngIf"], ["fontIcon", "done", 1, "unlock-check"], ["nodeHover", ""], ["container", "body", 1, "item-container", 3, "ngbTooltip", "placement", "click", "mouseenter", "mouseleave"], [3, "item", "highlight"], [1, "cost"], ["svgIcon", "candle", 3, "inline"], ["svgIcon", "season-candle", 3, "inline"], ["svgIcon", "heart", 3, "inline"], ["svgIcon", "season-heart", 1, "seasonal", 3, "inline"], [1, "cost", "ascend"], ["svgIcon", "ascended-candle", 3, "inline"], ["svgIcon", "ticket", 3, "inline"], [4, "ngIf"], [1, "ws-nw"]],
   template: function NodeComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div");
@@ -2296,9 +2311,10 @@ NodeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](4, NodeComponent_div_4_Template, 3, 2, "div", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](5, NodeComponent_div_5_Template, 3, 2, "div", 1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](6, NodeComponent_div_6_Template, 3, 2, "div", 2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](7, "mat-icon", 3);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](7, NodeComponent_div_7_Template, 3, 2, "div", 1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelement"](8, "mat-icon", 3);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
-      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](8, NodeComponent_ng_template_8_Template, 1, 1, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](9, NodeComponent_ng_template_9_Template, 1, 1, "ng-template", null, 4, _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplateRefExtractor"]);
     }
     if (rf & 2) {
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("data-position", ctx.position);
@@ -2314,6 +2330,8 @@ NodeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.node == null ? null : ctx.node.sh);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.node == null ? null : ctx.node.ac);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
+      _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.node == null ? null : ctx.node.ec);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("unlocked", ctx.node.unlocked || (ctx.node.item == null ? null : ctx.node.item.unlocked))("self", ctx.node.unlocked);
     }
@@ -3643,6 +3661,26 @@ function SpiritTreeComponent_div_14_div_5_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("inline", false);
   }
 }
+function SpiritTreeComponent_div_14_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 32);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](2, "span", 33);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelement"](4, "mat-icon", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
+  }
+  if (rf & 2) {
+    const ctx_r29 = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"](" ", ctx_r29.totalCost.ec, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtextInterpolate1"]("(", ctx_r29.remainingCost.ec || 0, ")");
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("inline", false);
+  }
+}
 function SpiritTreeComponent_div_14_Template(rf, ctx) {
   if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](0, "div", 28);
@@ -3651,6 +3689,7 @@ function SpiritTreeComponent_div_14_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](3, SpiritTreeComponent_div_14_div_3_Template, 5, 3, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](4, SpiritTreeComponent_div_14_div_4_Template, 5, 3, "div", 30);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](5, SpiritTreeComponent_div_14_div_5_Template, 5, 3, "div", 31);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](6, SpiritTreeComponent_div_14_div_6_Template, 5, 3, "div", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]();
   }
   if (rf & 2) {
@@ -3667,6 +3706,8 @@ function SpiritTreeComponent_div_14_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx_r5.totalCost == null ? null : ctx_r5.totalCost.sh);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx_r5.totalCost == null ? null : ctx_r5.totalCost.ac);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵproperty"]("ngIf", ctx_r5.totalCost == null ? null : ctx_r5.totalCost.ec);
   }
 }
 function SpiritTreeComponent_ng_template_15_Template(rf, ctx) {
@@ -3717,20 +3758,8 @@ class SpiritTreeComponent {
   initializeNodes() {
     // Reset data
     this.itemMap.clear();
-    this.totalCost = {
-      c: 0,
-      h: 0,
-      sc: 0,
-      sh: 0,
-      ac: 0
-    };
-    this.remainingCost = {
-      c: 0,
-      h: 0,
-      sc: 0,
-      sh: 0,
-      ac: 0
-    };
+    this.totalCost = src_app_helpers_cost_helper__WEBPACK_IMPORTED_MODULE_0__.CostHelper.create();
+    this.remainingCost = src_app_helpers_cost_helper__WEBPACK_IMPORTED_MODULE_0__.CostHelper.create();
     this.nodes = [];
     this.left = [];
     this.center = [];
@@ -3763,26 +3792,7 @@ class SpiritTreeComponent {
     const arr = direction < 0 ? this.left : direction > 0 ? this.right : this.center;
     arr[level] = node;
     // Add costs to total
-    if (node.c) {
-      this.totalCost.c += node.c;
-    }
-    ;
-    if (node.h) {
-      this.totalCost.h += node.h;
-    }
-    ;
-    if (node.sc) {
-      this.totalCost.sc += node.sc;
-    }
-    ;
-    if (node.sh) {
-      this.totalCost.sh += node.sh;
-    }
-    ;
-    if (node.ac) {
-      this.totalCost.ac += node.ac;
-    }
-    ;
+    src_app_helpers_cost_helper__WEBPACK_IMPORTED_MODULE_0__.CostHelper.add(this.totalCost, node);
     if (node.nw) {
       this.initializeNode(node.nw, direction - 1, level);
     }
@@ -3794,7 +3804,7 @@ class SpiritTreeComponent {
     }
   }
   calculateRemainingCosts() {
-    this.remainingCost = {};
+    this.remainingCost = src_app_helpers_cost_helper__WEBPACK_IMPORTED_MODULE_0__.CostHelper.create();
     this.nodes.filter(n => !n.unlocked && !n.item?.unlocked).forEach(n => {
       src_app_helpers_cost_helper__WEBPACK_IMPORTED_MODULE_0__.CostHelper.add(this.remainingCost, n);
     });
@@ -3843,7 +3853,7 @@ SpiritTreeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
   ngContentSelectors: _c1,
   decls: 17,
   vars: 11,
-  consts: [[1, "content"], [1, "spirit-tree-scroll"], ["container", "body", "placement", "bottom-end", 1, "unlock-all", 3, "ngbTooltip", "click"], ["fontIcon", "lock_open"], [1, "spirit-tree"], [1, "column", "left"], ["class", "item", 4, "ngFor", "ngForOf"], [1, "column", "center"], [1, "column", "right"], [1, "footer"], ["class", "name", 4, "ngIf"], ["class", "hr", 4, "ngIf"], ["class", "costs", "container", "body", "placement", "top", 3, "ngbTooltip", 4, "ngIf"], ["costHover", ""], [1, "item"], [3, "node", "position", 4, "ngIf"], ["class", "arrow arrow-up", 4, "ngIf"], [3, "node", "position"], [1, "arrow", "arrow-up"], ["class", "arrow arrow-left", 4, "ngIf"], ["class", "arrow arrow-right", 4, "ngIf"], [1, "arrow", "arrow-left"], [1, "arrow", "arrow-right"], [1, "name"], [1, "name-default"], ["class", "c-accent ts-date", 4, "ngIf"], [1, "c-accent", "ts-date"], [1, "hr"], ["container", "body", "placement", "top", 1, "costs", 3, "ngbTooltip"], ["class", "cost", 4, "ngIf"], ["class", "cost seasonal", 4, "ngIf"], ["class", "cost ascend", 4, "ngIf"], [1, "cost"], [1, "remaining-cost"], ["svgIcon", "candle", 3, "inline"], ["svgIcon", "candle", 1, "seasonal", 3, "inline"], ["svgIcon", "heart", 3, "inline"], [1, "cost", "seasonal"], [1, "cost", "ascend"], ["svgIcon", "ascended-candle", 3, "inline"]],
+  consts: [[1, "content"], [1, "spirit-tree-scroll"], ["container", "body", "placement", "bottom-end", 1, "unlock-all", 3, "ngbTooltip", "click"], ["fontIcon", "lock_open"], [1, "spirit-tree"], [1, "column", "left"], ["class", "item", 4, "ngFor", "ngForOf"], [1, "column", "center"], [1, "column", "right"], [1, "footer"], ["class", "name", 4, "ngIf"], ["class", "hr", 4, "ngIf"], ["class", "costs", "container", "body", "placement", "top", 3, "ngbTooltip", 4, "ngIf"], ["costHover", ""], [1, "item"], [3, "node", "position", 4, "ngIf"], ["class", "arrow arrow-up", 4, "ngIf"], [3, "node", "position"], [1, "arrow", "arrow-up"], ["class", "arrow arrow-left", 4, "ngIf"], ["class", "arrow arrow-right", 4, "ngIf"], [1, "arrow", "arrow-left"], [1, "arrow", "arrow-right"], [1, "name"], [1, "name-default"], ["class", "c-accent ts-date", 4, "ngIf"], [1, "c-accent", "ts-date"], [1, "hr"], ["container", "body", "placement", "top", 1, "costs", 3, "ngbTooltip"], ["class", "cost", 4, "ngIf"], ["class", "cost seasonal", 4, "ngIf"], ["class", "cost ascend", 4, "ngIf"], [1, "cost"], [1, "remaining-cost"], ["svgIcon", "candle", 3, "inline"], ["svgIcon", "candle", 1, "seasonal", 3, "inline"], ["svgIcon", "heart", 3, "inline"], [1, "cost", "seasonal"], [1, "cost", "ascend"], ["svgIcon", "ascended-candle", 3, "inline"], ["svgIcon", "ticket", 3, "inline"]],
   template: function SpiritTreeComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵprojectionDef"](_c0);
@@ -3865,7 +3875,7 @@ SpiritTreeComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementStart"](11, "div", 9);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](12, SpiritTreeComponent_div_12_Template, 6, 3, "div", 10);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](13, SpiritTreeComponent_div_13_Template, 1, 0, "div", 11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](14, SpiritTreeComponent_div_14_Template, 6, 6, "div", 12);
+      _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](14, SpiritTreeComponent_div_14_Template, 7, 7, "div", 12);
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵelementEnd"]()();
       _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplate"](15, SpiritTreeComponent_ng_template_15_Template, 5, 0, "ng-template", null, 13, _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵtemplateRefExtractor"]);
     }
@@ -5366,6 +5376,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CostHelper": () => (/* binding */ CostHelper)
 /* harmony export */ });
 class CostHelper {
+  static create() {
+    return {
+      c: 0,
+      h: 0,
+      sc: 0,
+      sh: 0,
+      ac: 0,
+      ec: 0
+    };
+  }
   static isEmpty(value) {
     return !value.c && !value.h && !value.sc && !value.sh && !value.ac;
   }
@@ -5385,6 +5405,9 @@ class CostHelper {
     if (value.ac) {
       target.ac = (target.ac || 0) + value.ac;
     }
+    if (value.ec) {
+      target.ec = (target.ec || 0) + value.ec;
+    }
   }
   static subtract(target, value) {
     if (value.c) {
@@ -5401,6 +5424,9 @@ class CostHelper {
     }
     if (value.ac) {
       target.ac = (target.ac || 0) - value.ac;
+    }
+    if (value.ec) {
+      target.ec = (target.ec || 0) - value.ec;
     }
   }
 }
