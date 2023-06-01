@@ -9,4 +9,6 @@ export interface ICost {
     sh?: number;
     /** Cost in ascended candles. */
     ac?: number;
+    /** Cost in event currency. */
+    ec?: number;
 }

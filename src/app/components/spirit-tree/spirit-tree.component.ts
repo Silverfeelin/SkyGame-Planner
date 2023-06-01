@@ -67,8 +67,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   initializeNodes(): void {
     // Reset data
     this.itemMap.clear();
-    this.totalCost = { c: 0, h: 0, sc: 0, sh: 0, ac: 0 };
-    this.remainingCost = { c: 0, h: 0, sc: 0, sh: 0, ac: 0 };
+    this.totalCost = CostHelper.create();
+    this.remainingCost = CostHelper.create();
     this.nodes = []; this.left = []; this.center = []; this.right = [];
     this.hasCost = false;
 
@@ -100,11 +100,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     arr[level] = node;
 
     // Add costs to total
-    if (node.c) { this.totalCost.c! += node.c };
-    if (node.h) { this.totalCost.h! += node.h };
-    if (node.sc) { this.totalCost.sc! += node.sc };
-    if (node.sh) { this.totalCost.sh! += node.sh };
-    if (node.ac) { this.totalCost.ac! += node.ac };
+    CostHelper.add(this.totalCost, node);
 
     if (node.nw) { this.initializeNode(node.nw, direction -1, level); }
     if (node.ne) { this.initializeNode(node.ne, direction + 1, level); }
@@ -112,7 +108,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   }
 
   calculateRemainingCosts(): void {
-    this.remainingCost = {};
+    this.remainingCost = CostHelper.create();
     this.nodes.filter(n => !n.unlocked && !n.item?.unlocked).forEach(n => {
       CostHelper.add(this.remainingCost, n);
     });

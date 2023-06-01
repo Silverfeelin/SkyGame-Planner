@@ -65,6 +65,11 @@
         <span class="remaining-cost">({{ remainingCost.ac || 0 }})</span>
         <mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
       </div>
+      <div class="cost" *ngIf="totalCost?.ec">
+        {{ totalCost.ec }}
+        <span class="remaining-cost">({{ remainingCost.ec || 0 }})</span>
+        <mat-icon svgIcon="ticket" [inline]="false"></mat-icon>
+      </div>
     </div>
   </div>
 </div>

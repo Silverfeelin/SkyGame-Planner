@@ -367,6 +367,28 @@
       ]
     },
     // #endregion
+    // #region Days of Color (2023)
+    {
+      "guid": "30CKPEMCtZ",
+      "type": "Spirit",
+      "spirit": "9eBpHjtudy",
+      "iaps": [
+        "rr0QGIp9XU",
+        "rGTp0gsGiq",
+        "fLf2W0LRmp",
+        "ZyQyOGjhxq",
+        "i8YKacC-T9"
+      ]
+    },
+    {
+      "guid": "vMM_7I_p9N",
+      "type": "Store",
+      "iaps": [
+        "JZeO-kuj4g",
+        "c_adKtYeV1"
+      ]
+    },
+    // #endregion
     // #region Lazy Days (2022)
     {
       "guid": "txCjbkOUCb",

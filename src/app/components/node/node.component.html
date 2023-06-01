@@ -19,6 +19,9 @@
   <div class="cost ascend" *ngIf="node?.ac">
     {{ node.ac }}<mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
   </div>
+  <div class="cost" *ngIf="node?.ec">
+    {{ node.ec }}<mat-icon svgIcon="ticket" [inline]="false"></mat-icon>
+  </div>
   <mat-icon class="unlock-check" [class.unlocked]="node.unlocked || node.item?.unlocked" [class.self]="node.unlocked" fontIcon="done"></mat-icon>
 </div>
 

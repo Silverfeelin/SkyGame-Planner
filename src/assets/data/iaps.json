@@ -695,6 +695,71 @@
       ]
     },
     // #endregion
+    // #region Days of Color (2023)
+    {
+      "guid": "rr0QGIp9XU",
+      "name": "Rainbow Pack",
+      "price": 19.99,
+      "returning": true,
+      "c": 75,
+      "items": [
+        "KpS-2FdasB"
+      ]
+    },
+    {
+      "guid": "rGTp0gsGiq",
+      "name": "Rainbow Hat",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "cMLcvRtjoh"
+      ]
+    },
+    {
+      "guid": "fLf2W0LRmp",
+      "name": "Rainbow Earring",
+      "price": 2.99,
+      "returning": true,
+      "items": [
+        "f-X2dDeB9w"
+      ]
+    },
+    {
+      "guid": "ZyQyOGjhxq",
+      "name": "Double Rainbow Pack",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "gNWmRUkpFo"
+      ]
+    },
+    {
+      "guid": "i8YKacC-T9",
+      "name": "Rainbow Headphones",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "j51xlBBIZX"
+      ]
+    },
+    {
+      "guid": "JZeO-kuj4g",
+      "name": "Dark Rainbow Pack",
+      "price": 9.99,
+      "c": 40,
+      "items": [
+        "krzIL86J83"
+      ]
+    },
+    {
+      "guid": "c_adKtYeV1",
+      "name": "Dark Rainbow Tunic",
+      "price": 14.99,
+      "items": [
+        "9ETwx3n-UZ"
+      ]
+    },
+    // #endregion
     // #region Lazy Days (2022)
     {
       "guid": "iluPHW_7kb",
