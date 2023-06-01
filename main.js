@@ -348,7 +348,7 @@ CreditsComponent.ɵfac = function CreditsComponent_Factory(t) {
 CreditsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
   type: CreditsComponent,
   selectors: [["app-credits"]],
-  decls: 80,
+  decls: 85,
   vars: 0,
   consts: [[1, "h2"], [1, "card-container"], [1, "h3"], ["fontIcon", "note"], [1, "card-container-inner"], ["href", "https://github.com/Silverfeelin/SkyGame-Planner/", "target", "_blank"], ["href", "https://github.com/Silverfeelin/SkyGame-Planner/blob/master/LICENSE", "target", "_blank"], ["href", "https://www.thatskygame.com/", "target", "_blank"], ["href", "https://thatgamecompany.com/", "target", "_blank"], [1, "card-container-inner", "mt-2"], [1, "ws-pl"], ["href", "https://github.com/Silverfeelin/SkyGame-Planner/blob/master/package.json", "target", "_blank"], ["href", "https://www.npmjs.com/", "target", "_blank"], [1, "card-container", "mt-2"], ["fontIcon", "favorite"], ["href", "https://sky-children-of-the-light.fandom.com/wiki/Sky:_Children_of_the_Light_Wiki", "target", "_blank"], ["href", "https://www.fandom.com/licensing", "target", "_blank"], ["href", "https://www.youtube.com/channel/UCTdBaJiejXA0WSOkPX0YO0w", "target", "_blank"], ["href", "https://www.youtube.com/@noobmode", "target", "_blank"], ["href", "https://www.youtube.com/@AppUnwrapper", "target", "_blank"], ["href", "https://www.youtube.com/@SkyBat", "target", "_blank"]],
   template: function CreditsComponent_Template(rf, ctx) {
@@ -447,6 +447,11 @@ CreditsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](77, " were used as a reference to find missing information for older events.");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](78, "br");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](79, " Go check out their content! ");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()();
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](80, "div", 9)(81, "div", 10);
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](82, " Thank you for the suggestions to improve Sky Planner:");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](83, "br");
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](84, " Daw. ");
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]()()();
     }
   },
