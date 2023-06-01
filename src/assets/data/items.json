@@ -11164,7 +11164,7 @@
       "type": "Cape",
       "name": "Rainbow Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Icon_cape_rainbow-Morybel-0146.png",
-      "order": 10301
+      "order": 10302
     },
     {
       "guid": "EJok2mGotV",
@@ -11277,7 +11277,7 @@
       "type": "Hat",
       "name": "Rainbow Headphones",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png",
-      "order": 10105
+      "order": 10106
     },
     {
       "guid": "0rrPORrk7O",
@@ -11308,19 +11308,22 @@
       "guid": "9ETwx3n-UZ",
       "type": "Outfit",
       "name": "Dark Rainbow Tunic",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Days-of-Color-Dark-Rainbow-Tunic-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Days-of-Color-Dark-Rainbow-Tunic-icon-Morybel-0146.png",
+      "order": 10301
     },
     {
       "guid": "krzIL86J83",
       "type": "Hat",
       "name": "Dark Rainbow Earrings",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png",
+      "order": 10105
     },
     {
       "guid": "2OuY3ABFCZ",
       "type": "Cape",
       "name": "Dark Rainbow Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Days-of-Color-Dark-Rainbow-Cape-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Days-of-Color-Dark-Rainbow-Cape-icon-Morybel-0146.png",
+      "order": 10301
     },
     // #endregion
     // #region Sky Anniversary
