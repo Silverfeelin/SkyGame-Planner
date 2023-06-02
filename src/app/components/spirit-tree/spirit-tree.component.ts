@@ -17,6 +17,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() tree!: ISpiritTree;
   @Input() name?: string;
   @Input() highlight?: boolean;
+  @Input() highlightItem?: string;
 
   nodes: Array<INode> = [];
   left: Array<INode> = [];

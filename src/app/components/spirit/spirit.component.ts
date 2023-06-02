@@ -4,6 +4,12 @@ import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
+interface ITree {
+  date?: Date;
+  name: string;
+  tree: ISpiritTree;
+}
+
 @Component({
   selector: 'app-spirit',
   templateUrl: './spirit.component.html',
@@ -11,9 +17,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SpiritComponent {
   spirit!: ISpirit;
-  tree?: ISpiritTree;
+  trees: Array<ITree> = [];
 
   highlightTree?: string;
+  highlightItem?: string;
 
   constructor(
     private readonly _dataService: DataService,
@@ -25,16 +32,37 @@ export class SpiritComponent {
 
   onQueryChanged(p: ParamMap): void {
     this.highlightTree = p.get('highlightTree') || undefined;
-
-    // Add tree from query (i.e. event spirit).
-    const addTree = p.get('tree') || undefined;
-    if (addTree) {
-      this.tree = this._dataService.guidMap.get(addTree) as ISpiritTree;
-    }
+    this.highlightItem = p.get('highlightItem') || undefined;
   }
 
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.spirit = this._dataService.guidMap.get(guid!) as ISpirit;
+    this.trees = [];
+
+    // Sort TS and returns by date.
+    const ts = (this.spirit.ts || []).map(ts => {
+      return {
+        date: ts.date as Date,
+        name: 'Traveling Spirit #' + ts.number,
+        tree: ts.tree
+      };
+    });
+
+    const visits = (this.spirit.returns || []).map((v, vi) => {
+      return {
+        date: v.return.date as Date,
+        name: v.return.name || 'Visit #' + (vi+1),
+        tree: v.tree
+      };
+    });
+
+    const sortedTrees = ts.concat(visits);
+    sortedTrees.sort((a, b) => b.date.getTime() - a.date.getTime());
+
+    this.trees = sortedTrees;
+    if (this.spirit.tree) {
+      this.trees.push({ name: 'Spirit tree', tree: this.spirit.tree });
+    }
   }
 }

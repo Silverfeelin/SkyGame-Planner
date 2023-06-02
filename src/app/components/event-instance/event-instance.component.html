@@ -12,7 +12,7 @@
   <div class="card-container mt-2">
     <div class="card-container-inner">
       <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
-        <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name"></app-spirit-tree>
+        <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name" [highlightItem]="highlightItem"></app-spirit-tree>
       </div>
     </div>
   </div>

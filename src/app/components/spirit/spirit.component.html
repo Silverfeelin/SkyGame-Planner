@@ -17,37 +17,13 @@
   </div>
 </div>
 
-<div class="card-container mt-2">
-  <div class="card-container-inner">
-    <!-- Added tree-->
-    <div *ngIf="tree" class="tree-wrapper p-inline-block">
-      <app-spirit-tree [tree]="tree" [name]="'Spirit tree'" [highlight]="false"></app-spirit-tree>
+<div class="card-container mt-2 spirit-trees">
+  <div class="card-container-inner spirit-trees-inner">
+    <div *ngFor="let item of trees" class="tree-wrapper p-inline-block">
+      <app-spirit-tree
+        [tree]="item.tree" [name]="item.name"
+        [highlight]="highlightTree === item.tree.guid"
+        [highlightItem]="highlightItem"></app-spirit-tree>
     </div>
-    <!-- Spirit tree -->
-    <div class="tree-wrapper p-inline-block">
-      <app-spirit-tree *ngIf="spirit.tree"
-        [tree]="spirit.tree" [name]="'Spirit tree'"
-        [highlight]="highlightTree === spirit.tree.guid"></app-spirit-tree>
-    </div>
-    <!-- Traveling Spirit trees -->
-    <ng-container *ngIf="spirit.ts">
-      <ng-container *ngFor="let ts of spirit.ts; let ti = index;">
-        <div class="tree-wrapper p-inline-block">
-          <app-spirit-tree
-            [tree]="ts.tree" [name]="'Traveling Spirit #' + ts.number"
-            [highlight]="highlightTree === ts.tree.guid"></app-spirit-tree>
-        </div>
-      </ng-container>
-    </ng-container>
-    <!-- Visits -->
-    <ng-container *ngIf="spirit.returns">
-      <ng-container *ngFor="let visit of spirit.returns; let vi = index;">
-        <div class="tree-wrapper p-inline-block">
-          <app-spirit-tree
-            [tree]="visit.tree" [name]="visit.return.name || 'Visit #' + (vi+1)"
-            [highlight]="highlightTree === visit.tree.guid"></app-spirit-tree>
-        </div>
-      </ng-container>
-    </ng-container>
   </div>
 </div>

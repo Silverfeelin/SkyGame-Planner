@@ -20,7 +20,6 @@ export class SpiritsComponent {
   mode: ViewMode = 'cards';
 
   spirits: Array<ISpirit> = [];
-  queryTree: {[spiritGuid: string]: ISpiritTree} = {};
   spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
   rows: Array<any> = [];
   unlockedItems = 0;
@@ -42,7 +41,6 @@ export class SpiritsComponent {
   onQueryChanged(q: ParamMap): void {
     this.spirits = [];
     this.spiritTrees = {};
-    this.queryTree = {};
 
     // Filter by type
     const type = q.get('type');
@@ -110,7 +108,6 @@ export class SpiritsComponent {
       return {
         ...s,
         areaGuid: s.area?.guid,
-        tree: this.queryTree[s.guid]?.guid,
         unlockedItems, totalItems,
         unlockedLast, totalLast,
         unlockTooltip

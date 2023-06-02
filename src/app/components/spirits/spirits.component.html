@@ -14,7 +14,7 @@
   <!-- Body -->
   <!-- Name -->
   <ng-template [appTableColumn] let-row="row">
-    <a [routerLink]="['/spirit', row.guid]" [queryParams]="{ tree: row.tree }">{{ row.name }}</a>
+    <a [routerLink]="['/spirit', row.guid]">{{ row.name }}</a>
   </ng-template>
   <!-- Image -->
   <!-- <ng-template [appTableColumn] let-row="row">
@@ -68,7 +68,7 @@
       <img [src]="row.imageUrl">
     </div>
     <!-- Info -->
-    <a class="mt-2 item link" [routerLink]="['/spirit', row.guid]" [queryParams]="{ tree: row.tree }">
+    <a class="mt-2 item link" [routerLink]="['/spirit', row.guid]">
       <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
       <span class="menu-label">Information</span>
     </a>

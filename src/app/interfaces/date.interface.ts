@@ -3,8 +3,3 @@ export interface IDate {
   month: number;
   year: number;
 }
-
-export interface IPeriod {
-  start: Date;
-  end: Date;
-}

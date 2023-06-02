@@ -11,6 +11,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class NodeComponent implements OnChanges {
   @Input() node!: INode;
   @Input() position = 'center';
+  @Input() highlight?: boolean;
 
   hover?: boolean;
   tooltipPlacement = 'bottom';

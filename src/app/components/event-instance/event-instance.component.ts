@@ -5,9 +5,7 @@ import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
 import { DebugService } from 'src/app/services/debug.service';
-import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
-import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-event-instance',
@@ -18,18 +16,22 @@ export class EventInstanceComponent {
   instance!: IEventInstance;
   shops?: Array<IShop>;
   iapNames: { [iapGuid: string]: string | undefined } = {};
+  highlightItem?: string;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _debugService: DebugService,
-    private readonly _eventService: EventService,
     private readonly _iapService: IAPService,
-    private readonly _storageService: StorageService,
     private readonly _route: ActivatedRoute
   ) {
+    _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
   }
 
+
+  onQueryChanged(p: ParamMap): void {
+    this.highlightItem = p.get('highlightItem') || undefined;
+  }
 
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
@@ -59,7 +61,6 @@ export class EventInstanceComponent {
       });
     }
   }
-
 
   togglePurchased(event: MouseEvent, iap: IIAP): void {
     if (this._debugService.copyShop) {

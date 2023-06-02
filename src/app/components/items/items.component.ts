@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, ParamMap, Router } from '@angular/router';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -95,19 +95,20 @@ export class ItemsComponent {
 
   openItem(item: IItem): void {
     if (item.nodes?.length) {
-      // Find spirit from item.
+      // Find spirit from last appearance of item.
       const tree = NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree;
+      const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
 
       const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
       if (tree?.eventInstanceSpirit) {
-        void this._router.navigate(['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid]);
+        void this._router.navigate(['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid], extras);
       } else if (spirit) {
-        void this._router.navigate(['/spirit', spirit.guid]);
+        void this._router.navigate(['/spirit', spirit.guid], extras);
       } else {
         alert('Item source not found.');
       }
     } else if (item.iaps?.length) {
-      // Find shop from item.
+      // Find shop from last appearance of item.
       const shop = item.iaps.at(-1)?.shop;
       if (shop?.permanent) {
         void this._router.navigate(['/shop']);

@@ -1,4 +1,4 @@
-<div [attr.data-position]="position">
+<div [attr.data-position]="position" [class.highlight]="highlight">
   <div *ngIf="node.item" class="item-container" [ngbTooltip]="nodeHover" [placement]="tooltipPlacement" container="body"
     (click)="toggleNode()" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
   >
