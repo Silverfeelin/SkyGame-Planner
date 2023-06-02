@@ -327,6 +327,10 @@ mat-icon.seasonal {
   color: var(--color-seasonal);
   fill: var(--color-seasonal);
 }
+.highlight {
+  border: 1px solid var(--color-border-complement);
+  border-radius: var(--border-radius-round);
+}
 
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[8].rules[1].use[0]!./src/styles/icons.less?ngGlobalStyle ***!
