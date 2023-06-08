@@ -4048,7 +4048,7 @@
     {
       "guid": "kA-N6gBSIG",
       "type": "Mask",
-      "name": "Passage Guide Mask 1",
+      "name": "Passage Serow Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Passage-additional-mask-Serow-icon-Morybel-0146.png",
       "order": 1701
     },
@@ -4067,7 +4067,7 @@
     {
       "guid": "oM9Xecb_kS",
       "type": "Mask",
-      "name": "Passage Guide Mask 2",
+      "name": "Passage Boar Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-additional-mask-Boar-icon-Morybel-0146.png",
       "order": 1702
     },
@@ -4082,6 +4082,24 @@
       "type": "Quest",
       "name": "Quest 5",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "zozW0cQQhx",
+      "type": "Mask",
+      "name": "Passage Monkey Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Passage-additional-mask-Monkey-Morybel-0146.png"
+    },
+    {
+      "guid": "ZAwpq_6GeO",
+      "type": "Prop",
+      "name": "Hacky Sack Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Passage-Hacky-Sack-prop-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "9mhT-2bV4K",
+      "type": "Mask",
+      "name": "Racoon Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Passage-additional-mask-Racoon-Morybel-0146.png"
     },
     // Passage Ultimates
     {
