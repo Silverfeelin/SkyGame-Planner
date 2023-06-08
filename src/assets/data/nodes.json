@@ -7239,7 +7239,7 @@
       "item": "kmgKsVBs4o",
       "c": 65
     },
-    // Admiring Actor
+    // #region Admiring Actor
     {
       "guid": "mnR3OjpKYr",
       "item": "mYHK8KGcDb",
@@ -7416,6 +7416,71 @@
       "item": "xOj2WwukD8",
       "c": 42
     },
+    {
+      "guid": "8KWiZVp4dY",
+      "item": "mYHK8KGcDb",
+      "nw": "Em84nbOMgs",
+      "n": "T1Oisc-PtB"
+    },
+    {
+      "guid": "Em84nbOMgs",
+      "item": "DQhS5AkEKu",
+      "h": 4
+    },
+    {
+      "guid": "T1Oisc-PtB",
+      "item": "023wYIm0DT",
+      "c": 5,
+      "nw": "Za4oIi8Cpt",
+      "n": "zbHH4jwpSL",
+      "ne": "klzqrS5ixu"
+    },
+    {
+      "guid": "Za4oIi8Cpt",
+      "item": "GEC1VNDUG2",
+      "c": 15
+    },
+    {
+      "guid": "klzqrS5ixu",
+      "item": "0wbgRYUeyH",
+      "c": 3
+    },
+    {
+      "guid": "zbHH4jwpSL",
+      "item": "xn4mqXmkpr",
+      "ac": 2,
+      "n": "lMlu_c5vUV"
+    },
+    {
+      "guid": "lMlu_c5vUV",
+      "item": "R62rXvPti6",
+      "h": 3,
+      "nw": "-BgnVFcRt-",
+      "n": "2oFvz171AZ"
+    },
+    {
+      "guid": "-BgnVFcRt-",
+      "item": "X1oM2uVzop",
+      "h": 6
+    },
+    {
+      "guid": "2oFvz171AZ",
+      "item": "3KEvIQ3_Z9",
+      "c": 5,
+      "nw": "OYyY5aaNRd",
+      "n": "8yhG2dy5R5"
+    },
+    {
+      "guid": "OYyY5aaNRd",
+      "item": "uMURxUHDKr",
+      "c": 65
+    },
+    {
+      "guid": "8yhG2dy5R5",
+      "item": "xOj2WwukD8",
+      "c": 42
+    },
+    // #endregion
     // Troupe Juggler
     {
       "guid": "O4pZrHbZdI",
