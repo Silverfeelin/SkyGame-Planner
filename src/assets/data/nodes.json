@@ -6108,7 +6108,7 @@
       "item": "qrP9vZPLlk",
       "c": 60
     },
-    // Sparkler Parent
+    // #region Sparkler Parent
     {
       "guid": "OLZ0CipXv0",
       "item": "eEwMzjwfoS",
@@ -6337,6 +6337,71 @@
       "item": "3KTXA81fSx",
       "c": 33
     },
+    {
+      "guid": "zRyhFIRmdS",
+      "item": "eEwMzjwfoS",
+      "nw": "jjSLWEcLHd",
+      "n": "zxZzI8-x8h"
+    },
+    {
+      "guid": "jjSLWEcLHd",
+      "item": "sSgceH7emy",
+      "h": 4
+    },
+    {
+      "guid": "zxZzI8-x8h",
+      "item": "M97mhUyiZZ",
+      "c": 5,
+      "nw": "OTNy8Nb2wR",
+      "n": "G373c89XDz",
+      "ne": "tSQ6AtLgDq"
+    },
+    {
+      "guid": "OTNy8Nb2wR",
+      "item": "5i57DI6cGK",
+      "c": 36
+    },
+    {
+      "guid": "tSQ6AtLgDq",
+      "item": "Wcse-or-FC",
+      "c": 3
+    },
+    {
+      "guid": "G373c89XDz",
+      "item": "ig7MtymJ-I",
+      "ac": 2,
+      "n": "SKQPxGIRaX"
+    },
+    {
+      "guid": "SKQPxGIRaX",
+      "item": "l663HjIDEd",
+      "h": 3,
+      "nw": "KST7DOYMsq",
+      "n": "yDYZZU_gxb"
+    },
+    {
+      "guid": "KST7DOYMsq",
+      "item": "X81UhfMlB2",
+      "h": 6
+    },
+    {
+      "guid": "yDYZZU_gxb",
+      "item": "3EhqC6gdQV",
+      "c": 5,
+      "nw": "RohFc5zy3Q",
+      "n": "kIik1Om7ep"
+    },
+    {
+      "guid": "RohFc5zy3Q",
+      "item": "hySf4FUV-w",
+      "c": 34
+    },
+    {
+      "guid": "kIik1Om7ep",
+      "item": "3KTXA81fSx",
+      "c": 33
+    },
+    // #endregion
     // Wise Grandparent
     {
       "guid": "N5kAA32DUp",
