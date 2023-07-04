@@ -12,7 +12,7 @@ If you have any suggestions, please let me know by opening a new ticket on the [
 
 All data is read from JSON files located in `/src/assets/data/` and available under the object `skyData` in the console. The below diagram shows the structure of this data.
 
-References in JSON are made through 10-length [nanoids](https://github.com/ai/nanoid). For example the reference `"spirit": "1234567890"` in JSON is resolved by looking up the spirit with `"guid: "1234567890"`.
+References in JSON are made through 10-length [nanoids](https://github.com/ai/nanoid). For example the reference `"spirit": "1234567890"` in JSON is resolved by looking up the spirit with `"guid": "1234567890"`.
 
 ![Data structure](https://raw.githubusercontent.com/Silverfeelin/SkyGame-Planner/master/diagrams/SkyPlannerData.jpg)
 
