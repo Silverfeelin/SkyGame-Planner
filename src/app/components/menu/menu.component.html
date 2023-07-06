@@ -34,6 +34,13 @@
         <mat-icon fontIcon="checkroom"></mat-icon>
         <span class="name">Items</span>
       </a>
+      <hr/>
+      <!-- Settings -->
+      <a class="item" [routerLink]="'settings'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Settings'" placement="right" container="body">
+        <mat-icon fontIcon="settings"></mat-icon>
+        <span class="name">Settings</span>
+      </a>
+      <hr/>
       <!-- Sky Clock -->
       <a class="item" href="https://sky-clock.netlify.app/" target="_blank" [ngbTooltip]="wide ? '' : 'Sky Clock'" placement="right" container="body">
         <mat-icon fontIcon="schedule"></mat-icon>
