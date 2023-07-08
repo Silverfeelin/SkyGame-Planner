@@ -49,12 +49,13 @@
     {
       "guid": "SnbeExzeMM",
       "type": "Object",
-      "name": "Harmony Hall",
+      "name": "Harmony Hall Counter",
       "permanent": true,
       "iaps": [
         "dyqX00yWC0",
         "5VJfMMrFV1",
-        "Q0Cze2DKAF"
+        "Q0Cze2DKAF",
+        "frvgJDX_Cu"
       ]
     },
     // #endregion
@@ -386,6 +387,16 @@
       "iaps": [
         "JZeO-kuj4g",
         "c_adKtYeV1"
+      ]
+    },
+    // #endregion
+    // #region Days of Music (2023)
+    {
+      "guid": "Vu7frzDGdC",
+      "type": "Object",
+      "name": "Harmony Hall Counter",
+      "iaps": [
+        "wOIgE1EUcy"
       ]
     },
     // #endregion

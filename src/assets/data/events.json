@@ -272,6 +272,34 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
       }
     },
+    // Days of Music
+    {
+      "guid": "Uks5FcTCmY",
+      "name": "Days of Music",
+      "recurring": true,
+      "imageUrl": "assets/game/events/DaysOfMusic.webp",
+      "instances": [
+        {
+          "guid": "7eNLae0wS1",
+          "date": { "day": 23, "month": 5, "year": 2022 },
+          "endDate": { "day": 5, "month": 6, "year": 2022 },
+          "spirits": [
+            { "guid": "2Xcu_VsRwC", "spirit": "fEcI6neh6f", "tree": "15T8Gelv5Z" }
+          ]
+        },
+        {
+          "guid": "3k4_OrNBWj",
+          "date": { "day": 3, "month": 7, "year": 2023 },
+          "endDate": { "day": 16, "month": 7, "year": 2023 },
+          "shops": [
+            "Vu7frzDGdC"
+          ],
+          "spirits": [
+            { "guid": "Flt5-UZMV_", "spirit": "fEcI6neh6f", "tree": "l1qSIM0q3H" }
+          ]
+        }
+      ]
+    },
     // Sky Anniversary
     {
       "guid": "qMS8yJXaln",
@@ -600,24 +628,6 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
-      }
-    },
-    // Harmony Hall Grand Opening
-    {
-      "guid": "P281ctf0XE",
-      "name": "Harmony Hall Grand Opening",
-      "instances": [
-        {
-          "guid": "7eNLae0wS1",
-          "date": { "day": 23, "month": 5, "year": 2022 },
-          "endDate": { "day": 5, "month": 6, "year": 2022 },
-          "spirits": [
-            { "guid": "2Xcu_VsRwC", "spirit": "fEcI6neh6f", "tree": "15T8Gelv5Z" }
-          ]
-        }
-      ],
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#The_Grand_Opening"
       }
     },
     // #endregion
