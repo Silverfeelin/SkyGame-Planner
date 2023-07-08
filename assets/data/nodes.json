@@ -14835,6 +14835,79 @@
       "ec": 104
     },
     // #endregion
+    // #region Days of Music (2023)
+    {
+      "guid": "MRl3tWIDfb",
+      "item": "jMLNrp_Yw8",
+      "c": 5,
+      "nw": "5geA-lVn2Z",
+      "n": "tmTskkt9ZM",
+      "ne": "7uIRheJK7-"
+    },
+    {
+      "guid": "5geA-lVn2Z",
+      "item": "SrABR87rf4",
+      "c": 10
+    },
+    {
+      "guid": "7uIRheJK7-",
+      "item": "Mh5ipZClSq",
+      "c": 10
+    },
+    {
+      "guid": "tmTskkt9ZM",
+      "item": "pTJsrRigHt",
+      "c": 5,
+      "nw": "MM09sHb4bA",
+      "n": "eU7utCmpSm",
+      "ne": "g41eIjq_R1"
+    },
+    {
+      "guid": "MM09sHb4bA",
+      "item": "WDyyhzD1Dk",
+      "c": 10
+    },
+    {
+      "guid": "g41eIjq_R1",
+      "item": "MFDYVKkfuf",
+      "c": 10
+    },
+    {
+      "guid": "eU7utCmpSm",
+      "item": "rJb-2yon2M",
+      "c": 5,
+      "nw": "u6xePuwCdC",
+      "n": "cOdoKfRbmr",
+      "ne": "lXD4Z7SHiU"
+    },
+    {
+      "guid": "u6xePuwCdC",
+      "item": "q6MtlTHWMK",
+      "c": 50
+    },
+    {
+      "guid": "lXD4Z7SHiU",
+      "item": "rMC7kQhgYk",
+      "ec": 102
+    },
+    {
+      "guid": "cOdoKfRbmr",
+      "item": "jaYkyH7kRV",
+      "c": 5,
+      "nw": "PWq6vq43oh",
+      "n": "ZDatLjcahX"
+    },
+    {
+      "guid": "PWq6vq43oh",
+      "item": "6uObjDNBAm",
+      "ec": 43
+    },
+    {
+      "guid": "ZDatLjcahX",
+      "item": "pUCJ7_2QWR",
+      "c": 5
+    },
+    // #endregion
     // #region Sky Anniversary (2020)
     {
       "guid": "lNIMl5bvaC",

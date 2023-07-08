@@ -11933,6 +11933,42 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/SOPerformance-hair-accessory-icon-Morybel-0146.png",
       "order": 10801
     },
+    {
+      "guid": "rMC7kQhgYk",
+      "type": "Instrument",
+      "name": "Triupmh Saxophone",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Triumph-Saxophone-instrument-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "6uObjDNBAm",
+      "type": "Hat",
+      "name": "Marching Band Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "pUCJ7_2QWR",
+      "type": "Music",
+      "name": "Music Sheet #HH5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "5V_r38RVGd",
+      "type": "Instrument",
+      "name": "Triumph Violin",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Triumph-Violon-Instrument-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "rJb-2yon2M",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "jaYkyH7kRV",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
     // #endregion
 
     // #region Permanent IAP

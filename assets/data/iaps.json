@@ -60,6 +60,14 @@
         "McTvO9Z8EQ"
       ]
     },
+    {
+      "guid": "frvgJDX_Cu",
+      "name": "Triumph Violin",
+      "price": 19.99,
+      "items": [
+        "5V_r38RVGd"
+      ]
+    },
     // #endregion
     // #region Platform exclusives
     {
@@ -760,6 +768,15 @@
       ]
     },
     // #endregion
+    // #region Days of Music (2023)
+    {
+      "guid": "wOIgE1EUcy",
+      "name": "Triumph Violin",
+      "price": 19.99,
+      "items": [
+        "5V_r38RVGd"
+      ]
+    },
     // #region Lazy Days (2022)
     {
       "guid": "iluPHW_7kb",
