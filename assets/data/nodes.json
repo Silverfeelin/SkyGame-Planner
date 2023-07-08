@@ -10896,7 +10896,7 @@
       "item": "xFj09irsLt",
       "c": 70
     },
-    // Spinning Mentor
+    // #region Spinning Mentor
     {
       "guid": "3OmVOrRC43",
       "item": "NOJ5yfbV_j",
@@ -11020,6 +11020,71 @@
       "item": "oyvK6kO527",
       "c": 70
     },
+    {
+      "guid": "nrOckEzeMt",
+      "item": "NOJ5yfbV_j",
+      "nw": "Os7p48w4W-",
+      "n": "3JRw5yzxub"
+    },
+    {
+      "guid": "Os7p48w4W-",
+      "item": "tp172HbBKC",
+      "h": 4
+    },
+    {
+      "guid": "3JRw5yzxub",
+      "item": "PdvK8FPKcD",
+      "c": 5,
+      "nw": "slKIq2vBLm",
+      "n": "JPutHsWyA3",
+      "ne": "GwIfb52Emx"
+    },
+    {
+      "guid": "slKIq2vBLm",
+      "item": "J9R4HX-ZHf",
+      "c": 44
+    },
+    {
+      "guid": "GwIfb52Emx",
+      "item": "gpC-MX1PGn",
+      "c": 3
+    },
+    {
+      "guid": "JPutHsWyA3",
+      "item": "1xmzB8zsYs",
+      "ac": 2,
+      "n": "Ioqz6zeJSD"
+    },
+    {
+      "guid": "Ioqz6zeJSD",
+      "item": "CCeCnDEyRM",
+      "h": 3,
+      "nw": "lHkF6VAd0M",
+      "n": "g099TOLvuT",
+      "ne": "_ONfgGJBnk"
+    },
+    {
+      "guid": "lHkF6VAd0M",
+      "item": "SUGO6FwRX8",
+      "h": 6
+    },
+    {
+      "guid": "_ONfgGJBnk",
+      "item": "V5TIjYorQs",
+      "c": 42
+    },
+    {
+      "guid": "g099TOLvuT",
+      "item": "wisiiK9diZ",
+      "c": 5,
+      "n": "L2XGXD1JJ3"
+    },
+    {
+      "guid": "L2XGXD1JJ3",
+      "item": "oyvK6kO527",
+      "c": 70
+    },
+    // #endregion
     // #endregion
     // #region Assembly
     // Baffled Botanist
