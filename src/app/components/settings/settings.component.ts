@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
 import moment from 'moment';
 import { ThemeService } from 'src/app/services/theme.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-settings',
@@ -12,6 +13,7 @@ export class SettingsComponent {
   unlockedCount: number;
 
   constructor(
+    private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
     private readonly _themeService: ThemeService
   ) {
@@ -77,6 +79,7 @@ export class SettingsComponent {
     this._storageService.unlocked.clear();
     this._storageService.add(...unlocked);
     this._storageService.save();
+    this._dataService.reloadUnlocked();
     this.unlockedCount = this._storageService.unlocked.size;
   }
 
@@ -86,6 +89,7 @@ export class SettingsComponent {
 
     this._storageService.unlocked.clear();
     this._storageService.save();
+    this._dataService.reloadUnlocked();
     this.unlockedCount = 0;
   }
 
