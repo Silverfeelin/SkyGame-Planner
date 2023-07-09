@@ -29,6 +29,7 @@ import { EventComponent } from './components/event/event.component';
 import { EventInstanceComponent } from './components/event-instance/event-instance.component';
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component
     EventComponent,
     EventInstanceComponent,
     ShopsComponent,
-    WingBuffsComponent
+    WingBuffsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

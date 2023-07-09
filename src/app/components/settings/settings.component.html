@@ -1,0 +1,26 @@
+<h1 class="h2">Settings</h1>
+<div class="card-container">
+  <h2 class="h3">
+    <mat-icon fontIcon="swap_horiz"></mat-icon>
+    Import / Export
+  </h2>
+  <div class="card-container-inner mt-2">
+    <div class="ws-pl">
+      Import or export your progression.
+      The export file serves as a backup of all your unlocked items in Sky Planner.
+    </div>
+  </div>
+  <div class="card-container-inner mt-2">
+    <button type="button" class="item" (click)="import()">
+      Import data
+    </button>
+    <button type="button" class="item" (click)="export()">
+      Export data <span class="c-accent">({{unlockedCount}})</span>
+    </button>
+  </div>
+  <div class="card-container-inner mt-2">
+    <button type="button" class="item clear-data" (click)="clear()">
+      Clear data
+    </button>
+  </div>
+</div>

@@ -13,6 +13,7 @@ import { SpiritsComponent } from './components/spirits/spirits.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'realm', component: RealmsComponent, title: title('Realms') },
   { path: 'season', component: SeasonsComponent, title: title('Seasons') },
   { path: 'season/:guid', component: SeasonComponent, title: title('Season') },
+  { path: 'settings', component: SettingsComponent, title: title('Settings') },
   { path: 'shop', component: ShopsComponent, title: title('Shops') },
   { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
   { path: 'spirit/:guid', component: SpiritComponent, title: title('Spirit') },
