@@ -4,6 +4,11 @@
       <span class="title">Sky Planner</span>
     </div>
     <div class="items">
+      <!-- Items -->
+      <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
+        <mat-icon fontIcon="checkroom"></mat-icon>
+        <span class="name">Items</span>
+      </a>
       <!-- Realms -->
       <a class="item" [routerLink]="'realm'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
         <mat-icon fontIcon="auto_awesome"></mat-icon>
@@ -14,26 +19,22 @@
         <mat-icon fontIcon="ac_unit"></mat-icon>
         <span class="name">Seasons</span>
       </a>
-      <!-- Traveling Spirits -->
-      <a class="item" [routerLink]="'ts'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Traveling Spirits'" placement="right" container="body">
-        <mat-icon fontIcon="hikings"></mat-icon>
-        <span class="name">Traveling Spirits</span>
-      </a>
       <!-- Events -->
       <a class="item" [routerLink]="'event'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
         <mat-icon fontIcon="celebration"></mat-icon>
         <span class="name">Events</span>
+      </a>
+      <!-- Traveling Spirits -->
+      <a class="item" [routerLink]="'ts'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Traveling Spirits'" placement="right" container="body">
+        <mat-icon fontIcon="hikings"></mat-icon>
+        <span class="name">Traveling Spirits</span>
       </a>
       <!-- Shop -->
       <a class="item" [routerLink]="'shop'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">
         <mat-icon fontIcon="shopping_cart"></mat-icon>
         <span class="name">Permanent IAP</span>
       </a>
-      <!-- Items -->
-      <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
-        <mat-icon fontIcon="checkroom"></mat-icon>
-        <span class="name">Items</span>
-      </a>
+
       <hr/>
       <!-- Settings -->
       <a class="item" [routerLink]="'settings'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Settings'" placement="right" container="body">

@@ -1,52 +1,55 @@
-<h1 class="h2">Items</h1>
+<div class="card container">
+  <h1 class="h2 mb-0">Items</h1>
+</div>
 
 <!-- Categories -->
-<div class="card-wrapper mt-2">
-  <div class="card-flex">
+<div class="card container mt-2">
+  <h2 class="h3">Type</h2>
+  <div class="flex">
     <!-- Outfits -->
-    <div class="card-flex-item category" [class.active]="type === 'Outfit'"
+    <div class="flex-item category" [class.active]="type === 'Outfit'"
     [ngbTooltip]="'Outfits'" container="body" placement="bottom"
       (click)="selectCategory('Outfit')">
       <mat-icon svgIcon="outfit"></mat-icon>
     </div>
     <!-- Masks -->
-    <div class="card-flex-item category" [class.active]="type === 'Mask'"
+    <div class="flex-item category" [class.active]="type === 'Mask'"
     [ngbTooltip]="'Masks'" container="body" placement="bottom"
       (click)="selectCategory('Mask')">
       <mat-icon svgIcon="mask"></mat-icon>
     </div>
     <!-- Necklaces -->
-    <div class="card-flex-item category" [class.active]="type === 'Necklace'"
+    <div class="flex-item category" [class.active]="type === 'Necklace'"
     [ngbTooltip]="'Necklaces'" container="body" placement="bottom"
       (click)="selectCategory('Necklace')">
       <mat-icon svgIcon="necklace"></mat-icon>
     </div>
     <!-- Hair -->
-    <div class="card-flex-item category" [class.active]="type === 'Hair'"
+    <div class="flex-item category" [class.active]="type === 'Hair'"
     [ngbTooltip]="'Hair'" container="body" placement="bottom"
       (click)="selectCategory('Hair')">
       <mat-icon svgIcon="hair"></mat-icon>
     </div>
     <!-- Hats -->
-    <div class="card-flex-item category" [class.active]="type === 'Hat'"
+    <div class="flex-item category" [class.active]="type === 'Hat'"
     [ngbTooltip]="'Hats'" container="body" placement="bottom"
       (click)="selectCategory('Hat')">
       <mat-icon svgIcon="hat"></mat-icon>
     </div>
     <!-- Capes -->
-    <div class="card-flex-item category" [class.active]="type === 'Cape'"
+    <div class="flex-item category" [class.active]="type === 'Cape'"
     [ngbTooltip]="'Capes'" container="body" placement="bottom"
       (click)="selectCategory('Cape')">
       <mat-icon svgIcon="cape"></mat-icon>
     </div>
     <!-- Held -->
-    <div class="card-flex-item category" [class.active]="type === 'Held'"
+    <div class="flex-item category" [class.active]="type === 'Held'"
     [ngbTooltip]="'Held props'" container="body" placement="bottom"
       (click)="selectCategory('Held')">
       <mat-icon svgIcon="held"></mat-icon>
     </div>
     <!-- Prop -->
-    <div class="card-flex-item category" [class.active]="type === 'Prop'"
+    <div class="flex-item category" [class.active]="type === 'Prop'"
     [ngbTooltip]="'Props'" container="body" placement="bottom"
       (click)="selectCategory('Prop')">
       <mat-icon svgIcon="prop"></mat-icon>
@@ -55,8 +58,8 @@
 </div>
 
 <!-- Items -->
-<div class="card-wrapper mt-2" *ngIf="shownItems?.length">
-  <div class="unlock-bar card-container-inner">
+<div class="card container mt-2" *ngIf="shownItems?.length">
+  <div class="unlock-bar container-flex">
     <span [class.completed]="shownUnlocked == shownItems.length">
       {{ shownUnlocked }} / {{ shownItems.length }}
     </span>
@@ -65,15 +68,15 @@
     </div>
   </div>
 
-  <div class="card-flex item-grid mt-2" [class.gap-half-y]="columns">
-    <div class="card-flex-item" *ngIf="showNone && columns">
+  <div class="flex item-grid mt-2" [class.gap-half-y]="columns">
+    <div class="flex-item" *ngIf="showNone && columns">
       <div class="item-none">
         <mat-icon class="" svgIcon="none"></mat-icon>
       </div>
     </div>
     <ng-container *ngFor="let item of shownItems; let i = index">
       <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % columns) ? undefined : 'block'"></div>
-      <div class="card-flex-item">
+      <div class="flex-item">
         <app-item [item]="item" [showSubIcons]="true"
           (click)="openItem(item)"
           [class.item-unlocked]="item.unlocked"

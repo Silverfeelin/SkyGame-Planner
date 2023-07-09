@@ -18,7 +18,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 const title = (title: string) => `${title} - Sky Planner`;
 
 const routes: Routes = [
-  { path: '', redirectTo: 'realm', pathMatch: 'full' },
+  { path: '', redirectTo: 'item', pathMatch: 'full' },
   { path: 'credits', component: CreditsComponent, title: title('Credits') },
   { path: 'event', component: EventsComponent, title: title('Events') },
   { path: 'event/:guid', component: EventComponent, title: title('Event') },

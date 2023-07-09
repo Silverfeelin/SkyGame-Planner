@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StorageService } from 'src/app/services/storage.service';
 import moment from 'moment';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-settings',
@@ -11,7 +12,8 @@ export class SettingsComponent {
   unlockedCount: number;
 
   constructor(
-    private readonly _storageService: StorageService
+    private readonly _storageService: StorageService,
+    private readonly _themeService: ThemeService
   ) {
     this.unlockedCount = this._storageService.unlocked.size;
   }
@@ -85,5 +87,9 @@ export class SettingsComponent {
     this._storageService.unlocked.clear();
     this._storageService.save();
     this.unlockedCount = 0;
+  }
+
+  setTheme(theme?: string): void {
+    this._themeService.set(theme);
   }
 }

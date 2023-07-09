@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -14,10 +15,13 @@ export class AppComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _themeService: ThemeService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });
+    this._themeService.init();
+
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
     window.addEventListener('storage', () => {

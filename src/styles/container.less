@@ -1,4 +1,4 @@
-.card-container {
+.container {
   background: var(--color-item-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius-round);
@@ -6,23 +6,29 @@
   min-width: 100%;
 }
 
-.card-container-inner {
+.container.shaded {
+  box-shadow: var(--shadow-card);
+}
+
+.container-flex {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-end;
   gap: var(--padding-content);
+}
+
+.container-flex, .container-inner {
   background: var(--color-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius-round);
 }
 
-
-.card-container.card-container-scroll-x {
+.container.container-scroll-x {
   overflow-x: auto;
   max-width: calc(var(--menu-width) - 2 * var(--padding-content));
 
-  .card-container-inner {
+  .container-flex {
     overflow: auto;
   }
 }

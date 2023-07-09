@@ -1,21 +1,32 @@
-<h1 class="h2">Events</h1>
-<div class="card-wrapper">
-  <h2 class="h3 mb-0">Recurring events</h2>
+<div class="card container">
+  <h1 class="h2 mb-0">Events</h1>
 </div>
-<div class="card-grid card-grid-4 mt-2">
-  <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
-    <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
+
+<!-- Recurring -->
+<div class="card container mt-2">
+  <h2 class="h3 mb">Recurring events</h2>
+  <div class="container-inner">
+    <div class="grid grid-4">
+      <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
+        <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="card-wrapper mt-2">
-  <h2 class="h3 mb-0">Past events</h2>
-</div>
-<div class="card-grid card-grid-3 mt-2">
-  <div class="card p-rel" *ngFor="let event of old; let i = index;">
-    <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
+<!-- Past -->
+<div class="card container mt-2">
+  <h2 class="h3">Past events</h2>
+  <div class="container-inner">
+    <div class="grid grid-3">
+      <div class="card p-rel" *ngFor="let event of old; let i = index;">
+        <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
+      </div>
+    </div>
   </div>
 </div>
+
+
 
 <ng-template #eventDiv let-event>
   <h2 class="h3">{{ event.name }}</h2>

@@ -1,31 +1,24 @@
-.card-grid {
+.grid {
   display: grid;
   grid-template-columns: var(--column-items);
 
-  &.card-grid-1 {
+  &.grid-1 {
     grid-template-columns: var(--column-items-1);
   }
 
-  &.card-grid-2 {
+  &.grid-2 {
     grid-template-columns: var(--column-items-2);
   }
 
-  &.card-grid-3 {
+  &.grid-3 {
     grid-template-columns: var(--column-items-3);
   }
 
-  &.card-grid-4 {
+  &.grid-4 {
     grid-template-columns: var(--column-items-4);
   }
 
   gap: 4px;
-
-  .card {
-    padding: 10px 10px;
-    border-radius: var(--border-radius-round);
-    background: var(--color-item-background);
-    box-shadow: inset 0px 5px 5px -5px var(--color-item-background-highlight);
-  }
 
   h1 {
     margin-left: 5px;
