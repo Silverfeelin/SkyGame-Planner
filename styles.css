@@ -11,13 +11,16 @@
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[8].rules[1].use[0]!./src/styles/vars.less?ngGlobalStyle ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************/
-:root {
+:root,
+[data-theme="dark"] {
   --color: #fff;
   --color-accent: #999;
   --color-background: #111118;
+  --color-background-subtle: #11111860;
   --color-background-dark: #0b0b0f;
-  --color-item-background: #1c1c28;
+  --color-item-background: #1f1f2c;
   --color-item-background-highlight: #252535;
+  --color-border: #1c1c28;
   --color-border-lowlight: #111118;
   --color-border-highlight: #515167;
   --color-border-complement: #d8d897;
@@ -35,6 +38,10 @@
   --color-link-hover: #9797d8;
   --color-item: #828282;
   --color-item-highlight: #c5b167;
+  --color-danger: #fff;
+  --color-danger-background: #5a1818;
+  --color-danger-accent: #9d3b3b;
+  --shadow-card: inset 0px 5px 5px -5px #323248, inset 0px -5px 5px -5px #111118;
   --item-size: 64px;
   --item-size-medium: 48px;
   --item-size-small: 32px;
@@ -76,6 +83,37 @@
     --column-items-4: repeat(4, 1fr);
   }
 }
+[data-theme="light"] {
+  --color: #1e2229;
+  --color-accent: #999;
+  --color-background: #fff;
+  --color-background-subtle: #ffffff60;
+  --color-background-dark: #eeeef2;
+  --color-item-background: #e4e4ea;
+  --color-item-background-highlight: #c8c8cf;
+  --color-border: #d0d0d8;
+  --color-border-lowlight: #111118;
+  --color-border-highlight: #51515a;
+  --color-border-complement: #d8d897;
+  --color-status-background: #d6d6e0;
+  --color-candle: #888;
+  --color-new: #279827;
+  --color-old: #f78d75;
+  --color-wing-buff: #feff87;
+  --color-seasonal: #fdab2b;
+  --color-unlock-check: var(--color-new);
+  --color-unlock-check-background: #75c875;
+  --color-unlock-check-background-subtle: #75c87560;
+  --color-unlock-check-ref: var(--color-old);
+  --color-unlock-check-shadow: #000;
+  --color-link-hover: #6666ae;
+  --color-item: #828282;
+  --color-item-highlight: #c5b167;
+  --color-danger: #fff;
+  --color-danger-background: #af3838;
+  --color-danger-accent: #e89191;
+  --shadow-card: inset 0px 5px 5px -5px #b7b7ce, inset 0px -5px 5px -5px #c6c6de;
+}
 
 /*!**********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[8].rules[0].oneOf[0].use[2]!./node_modules/less-loader/dist/cjs.js??ruleSet[1].rules[8].rules[1].use[0]!./src/styles/styles.less?ngGlobalStyle ***!
@@ -98,6 +136,14 @@ a:hover,
 }
 .link {
   text-decoration: underline;
+  cursor: pointer;
+}
+button {
+  color: var(--color);
+  padding: 6px 8px;
+  background: var(--color-item-background);
+  border: 1px solid var(--color-border-highlight);
+  border-radius: var(--border-radius-round);
 }
 body {
   scrollbar-width: thin;
@@ -161,50 +207,50 @@ body {
 .fw-bold {
   font-weight: bold !important;
 }
-.card-flex {
+.flex {
   position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: var(--padding-content);
 }
-.card-flex-item {
+.flex-item {
   position: relative;
   width: var(--item-size);
   height: var(--item-size);
   background: var(--color-background);
   border-radius: var(--border-radius-round);
 }
-.card-grid {
-  display: grid;
-  grid-template-columns: var(--column-items);
-  gap: 4px;
-}
-.card-grid.card-grid-1 {
-  grid-template-columns: var(--column-items-1);
-}
-.card-grid.card-grid-2 {
-  grid-template-columns: var(--column-items-2);
-}
-.card-grid.card-grid-3 {
-  grid-template-columns: var(--column-items-3);
-}
-.card-grid.card-grid-4 {
-  grid-template-columns: var(--column-items-4);
-}
-.card-grid .card {
+.card {
   padding: 10px 10px;
   border-radius: var(--border-radius-round);
   background: var(--color-item-background);
   box-shadow: inset 0px 5px 5px -5px var(--color-item-background-highlight);
 }
-.card-grid h1 {
+.grid {
+  display: grid;
+  grid-template-columns: var(--column-items);
+  gap: 4px;
+}
+.grid.grid-1 {
+  grid-template-columns: var(--column-items-1);
+}
+.grid.grid-2 {
+  grid-template-columns: var(--column-items-2);
+}
+.grid.grid-3 {
+  grid-template-columns: var(--column-items-3);
+}
+.grid.grid-4 {
+  grid-template-columns: var(--column-items-4);
+}
+.grid h1 {
   margin-left: 5px;
 }
-.card-grid h1 .number {
+.grid h1 .number {
   font-size: 1.5rem;
   vertical-align: middle;
 }
-.card-grid .wiki {
+.grid .wiki {
   width: 28px;
   height: 28px;
   right: var(--padding-content);
@@ -212,68 +258,66 @@ body {
   border-radius: var(--border-radius-round);
   background: var(--color-background);
 }
-.card-grid .wiki a {
+.grid .wiki a {
   position: relative;
   display: inline-block;
   width: 100%;
   height: 100%;
 }
-.card-grid .wiki mat-icon {
+.grid .wiki mat-icon {
   position: absolute;
   top: 1px;
   right: 3px;
 }
-.card-grid .item {
+.grid .item {
   padding: 10px;
   background: var(--color-background);
   border-radius: var(--border-radius-round);
 }
-.card-grid .link {
+.grid .link {
   cursor: pointer;
 }
-.card-grid .link:hover {
+.grid .link:hover {
   color: var(--color-link-hover);
 }
-.card-grid .item.link {
+.grid .item.link {
   display: block;
 }
-.card-grid .menu-icon {
+.grid .menu-icon {
   position: absolute;
 }
-.card-grid .menu-label {
+.grid .menu-label {
   padding-left: 32px;
 }
-.card-container {
+.container {
   background: var(--color-item-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius-round);
   width: min-content;
   min-width: 100%;
 }
-.card-container-inner {
+.container.shaded {
+  box-shadow: var(--shadow-card);
+}
+.container-flex {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: flex-end;
   gap: var(--padding-content);
+}
+.container-flex,
+.container-inner {
   background: var(--color-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius-round);
 }
-.card-container.card-container-scroll-x {
+.container.container-scroll-x {
   overflow-x: auto;
   max-width: calc(var(--menu-width) - 2 * var(--padding-content));
 }
-.card-container.card-container-scroll-x .card-container-inner {
+.container.container-scroll-x .container-flex {
   overflow: auto;
-}
-.card-wrapper {
-  position: relative;
-  box-shadow: inset 0px 5px 5px -5px #4C4C6B;
-  box-shadow: inset 0px 5px 5px -5px #323248, inset 0px -5px 5px -5px #111118;
-  padding: 10px 10px;
-  border-radius: var(--border-radius-round);
-  background: var(--color-item-background);
 }
 p:last-child {
   margin-bottom: 0;
@@ -319,6 +363,13 @@ p:last-child {
 mat-icon {
   font-size: 24px;
   line-height: 24px;
+}
+mat-icon.currency {
+  fill: var(--color-candle);
+}
+.currency {
+  color: var(--color-candle);
+  fill: var(--color-candle);
 }
 mat-icon.seasonal {
   fill: var(--color-seasonal);
