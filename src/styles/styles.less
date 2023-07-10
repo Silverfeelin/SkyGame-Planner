@@ -20,6 +20,15 @@ a, .link {
 // a with link
 .link {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+button {
+  color: var(--color);
+  padding: 6px 8px;
+  background: var(--color-item-background);
+  border: 1px solid var(--color-border-highlight);
+  border-radius: var(--border-radius-round);
 }
 
 // Scrollbar
@@ -62,10 +71,10 @@ body { scrollbar-width: thin; }
 .fw-bold { font-weight: bold !important; }
 
 // Global layout
-@import "card-flex.less";
-@import "card-grid.less";
-@import "card-container.less";
-@import "card-wrapper.less";
+@import "flex.less";
+@import "card.less";
+@import "grid.less";
+@import "container.less";
 
 p:last-child {
   margin-bottom: 0;
@@ -122,6 +131,8 @@ mat-icon {
   line-height: 24px;
 }
 
+mat-icon.currency { fill: var(--color-candle); }
+.currency { color: var(--color-candle); fill: var(--color-candle); }
 mat-icon.seasonal { fill: var(--color-seasonal); }
 .seasonal { color: var(--color-seasonal); fill: var(--color-seasonal); }
 

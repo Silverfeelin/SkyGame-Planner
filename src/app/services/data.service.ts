@@ -333,6 +333,7 @@ export class DataService {
     });
   }
 
+
   private initializeSeasonItems(): void {
     for (const season of this.seasonConfig.items) {
       for (const spirit of season.spirits ?? []) {
@@ -362,6 +363,15 @@ export class DataService {
     };
     (window as any).skyGuids = this.guidMap;
     console.log('To view loaded data, see `skyData`.');
+  }
+
+  reloadUnlocked(): void {
+    this.itemConfig.items.forEach(item => {
+      item.unlocked = this._storageService.unlocked.has(item.guid);
+    });
+    this.nodeConfig.items.forEach(node => {
+      node.unlocked = this._storageService.unlocked.has(node.guid);
+    });
   }
 
   // #region GUIDs

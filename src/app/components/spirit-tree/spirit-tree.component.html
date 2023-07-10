@@ -43,7 +43,7 @@
       <div class="cost" *ngIf="totalCost?.c">
         {{ totalCost.c }}
         <span class="remaining-cost">({{ remainingCost.c || 0 }})</span>
-        <mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+        <mat-icon class="currency" svgIcon="candle" [inline]="false"></mat-icon>
       </div>
       <div class="cost" *ngIf="totalCost?.sc">
         {{ totalCost.sc }}
@@ -53,12 +53,12 @@
       <div class="cost" *ngIf="totalCost?.h">
         {{ totalCost.h }}
         <span class="remaining-cost">({{ remainingCost.h || 0 }})</span>
-        <mat-icon svgIcon="heart" [inline]="false"></mat-icon>
+        <mat-icon class="currency" svgIcon="heart" [inline]="false"></mat-icon>
       </div>
-      <div class="cost seasonal" *ngIf="totalCost?.sh">
+      <div class="cost" *ngIf="totalCost?.sh">
         {{ totalCost.sh }}
         <span class="remaining-cost">({{ remainingCost.sh || 0 }})</span>
-        <mat-icon svgIcon="heart" [inline]="false"></mat-icon>
+        <mat-icon class="seasonal" svgIcon="heart" [inline]="false"></mat-icon>
       </div>
       <div class="cost ascend" *ngIf="totalCost?.ac">
         {{ totalCost.ac }}

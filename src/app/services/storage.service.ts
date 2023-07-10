@@ -7,7 +7,8 @@ export class StorageService {
   unlocked = new Set<string>();
 
   constructor() {
-    const guids: Array<string> = localStorage.getItem('unlocked')?.split(',') || [];
+    const unlocked = localStorage.getItem('unlocked');
+    const guids: Array<string> = unlocked?.length && unlocked.split(',') || [];
     guids.forEach(g => this.unlocked.add(g));
   }
 
@@ -19,8 +20,12 @@ export class StorageService {
     guids?.forEach(g => this.unlocked.delete(g));
   }
 
+  serializeUnlocked(): string {
+    return [...this.unlocked].join(',');
+  }
+
   save(): void {
-    const items = [...this.unlocked].join(',');
-    localStorage.setItem('unlocked', items);
+    const unlocked = this.serializeUnlocked();
+    localStorage.setItem('unlocked', unlocked);
   }
 }

@@ -1,0 +1,51 @@
+<div class="card container">
+  <h1 class="h2 mb-0">Settings</h1>
+</div>
+
+<!-- Import -->
+<div class="card container mt-2">
+  <h2 class="h3 mb-0">
+    <mat-icon fontIcon="swap_horiz"></mat-icon>
+    Import / Export
+  </h2>
+  <div class="container-flex mt-2">
+    <div class="ws-pl">
+      Import or export your progression.
+      The exported file serves as a backup of all your unlocked items in Sky Planner.
+    </div>
+  </div>
+  <div class="container-flex mt-2">
+    <button type="button" class="item" (click)="import()">
+      Import data
+    </button>
+    <button type="button" class="item" (click)="export()">
+      Export data <span class="c-accent">({{unlockedCount}})</span>
+    </button>
+  </div>
+  <div class="container-flex mt-2">
+    <button type="button" class="item clear-data" (click)="clear()">
+      Clear data
+    </button>
+  </div>
+</div>
+
+<!-- Theme -->
+<div class="card container mt-2">
+  <h2 class="h3 mb-0">
+    <mat-icon fontIcon="color_lens"></mat-icon>
+    Theme
+  </h2>
+  <div class="container-flex mt-2">
+    <div class="ws-pl">
+      Change the theme of the application.
+    </div>
+  </div>
+  <div class="container-flex mt-2">
+    <button type="button" class="item" data-theme="light" (click)="setTheme('light')">
+      Light
+    </button>
+    <button type="button" class="item" data-theme="dark" (click)="setTheme('')">
+      Dark
+    </button>
+  </div>
+</div>
