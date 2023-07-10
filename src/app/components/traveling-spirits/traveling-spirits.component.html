@@ -18,7 +18,7 @@
       </a>
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
-      <span class="ws-nw">{{ row.date | date:'dd-MM-yyyy' }}</span>
+      <span class="ws-nw">{{ row.date | date:dateFormat }}</span>
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
       {{ row.visit }}
