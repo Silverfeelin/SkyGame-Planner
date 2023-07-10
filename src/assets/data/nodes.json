@@ -4209,7 +4209,7 @@
       "item": "wSjNwu664c",
       "c": 42
     },
-    // Leaping Dancer
+    // #region Leaping Dancer
     {
       "guid": "5PLmQ_H_ah",
       "item": "2EjYbZlJwr",
@@ -4368,6 +4368,65 @@
       "item": "RX-66s3KFD",
       "c": 54
     },
+    {
+      "guid": "UMIJMK6KSN",
+      "item": "2EjYbZlJwr",
+      "nw": "GZf2kQJvkU",
+      "n": "xXlRRtVGcA"
+    },
+    {
+      "guid": "GZf2kQJvkU",
+      "item": "Q5LhJRWFiF",
+      "h": 4
+    },
+    {
+      "guid": "xXlRRtVGcA",
+      "item": "g5MvmNr1oa",
+      "c": 5,
+      "nw": "CckgWQWh6g",
+      "n": "ra1NSznMhv",
+      "ne": "InMyCGaRqj"
+    },
+    {
+      "guid": "CckgWQWh6g",
+      "item": "eL5WjOsMrx",
+      "c": 40
+    },
+    {
+      "guid": "InMyCGaRqj",
+      "item": "gMt6VYu2uG",
+      "c": 3
+    },
+    {
+      "guid": "ra1NSznMhv",
+      "item": "6AIXGyi9jl",
+      "ac": 2,
+      "n": "QP3T0EO4pV"
+    },
+    {
+      "guid": "QP3T0EO4pV",
+      "item": "QVo-MuF4gw",
+      "h": 3,
+      "nw": "1R20RgAdO1",
+      "n": "JuntDWw171"
+    },
+    {
+      "guid": "1R20RgAdO1",
+      "item": "Q4z_OukNlE",
+      "h": 6
+    },
+    {
+      "guid": "JuntDWw171",
+      "item": "upDiBXJC_V",
+      "c": 5,
+      "n": "UAgz76Y_gL"
+    },
+    {
+      "guid": "UAgz76Y_gL",
+      "item": "RX-66s3KFD",
+      "c": 54
+    },
+    // #endregion
     // Saluting Protector
     {
       "guid": "qr6pd7epIs",
@@ -4475,7 +4534,7 @@
       "item": "XOhMscNvdq",
       "c": 42
     },
-    // Greeting Shaman
+    // #region Greeting Shaman
     {
       "guid": "8f2CTxUNd3",
       "item": "NpbuKXMxKS",
@@ -4634,6 +4693,65 @@
       "item": "O_E6Y4gBQ8",
       "c": 54
     },
+    {
+      "guid": "Fxq3bK7lhC",
+      "item": "NpbuKXMxKS",
+      "nw": "AGdnjNIAnM",
+      "n": "U4cbOtklI7"
+    },
+    {
+      "guid": "AGdnjNIAnM",
+      "item": "5QWjZVAA-9",
+      "h": 4
+    },
+    {
+      "guid": "U4cbOtklI7",
+      "item": "2EXRXNdvSH",
+      "c": 5,
+      "nw": "Gb69eEddzM",
+      "n": "wM81bqkYeL",
+      "ne": "D0RKE9Quh1"
+    },
+    {
+      "guid": "Gb69eEddzM",
+      "item": "aFozSzjdTL",
+      "c": 45
+    },
+    {
+      "guid": "D0RKE9Quh1",
+      "item": "tCd_6CN6Fb",
+      "c": 3
+    },
+    {
+      "guid": "wM81bqkYeL",
+      "item": "y7P0HNe1o0",
+      "ac": 2,
+      "n": "eO83EnQPZf"
+    },
+    {
+      "guid": "eO83EnQPZf",
+      "item": "j3BNKt3Qmi",
+      "h": 3,
+      "nw": "c-wq0Oxq3h",
+      "n": "kz_Uu8Kf4o"
+    },
+    {
+      "guid": "c-wq0Oxq3h",
+      "item": "7MpXlundFS",
+      "h": 6
+    },
+    {
+      "guid": "kz_Uu8Kf4o",
+      "item": "ThuqWhRFev",
+      "c": 5,
+      "n": "uASylhVFKH"
+    },
+    {
+      "guid": "uASylhVFKH",
+      "item": "O_E6Y4gBQ8",
+      "c": 54
+    },
+    // #endregion
     // #endregion
     // #region Lightseekers
     // Piggyback Lightseeker
@@ -7689,7 +7807,7 @@
       "item": "MIKr5rkFuk",
       "c": 75
     },
-    // Respectful Pianist
+    // #region Respectful Pianist
     {
       "guid": "qACxZ97wkA",
       "item": "g3peZ7bo5z",
@@ -7813,7 +7931,72 @@
       "item": "Wr27LIf-FU",
       "c": 48
     },
-    // Thoughtful Director
+    {
+      "guid": "LcfK6L-cii",
+      "item": "g3peZ7bo5z",
+      "nw": "Z5Ux8L2VWb",
+      "n": "JdneZVaMk4"
+    },
+    {
+      "guid": "Z5Ux8L2VWb",
+      "item": "4hiIWJy7qv",
+      "h": 4
+    },
+    {
+      "guid": "JdneZVaMk4",
+      "item": "yzAU4AmksH",
+      "c": 5,
+      "nw": "joq2zmumHE",
+      "n": "8ymMOQauF0",
+      "ne": "J_cdOWolr4"
+    },
+    {
+      "guid": "joq2zmumHE",
+      "item": "mK47aJa3Uy",
+      "c": 26
+    },
+    {
+      "guid": "J_cdOWolr4",
+      "item": "kKmbn6_yY5",
+      "c": 3
+    },
+    {
+      "guid": "8ymMOQauF0",
+      "item": "TbSbFkTkre",
+      "ac": 2,
+      "n": "ce7cpPBxcW"
+    },
+    {
+      "guid": "ce7cpPBxcW",
+      "item": "DYLsc2p_1T",
+      "h": 3,
+      "nw": "Y3TVH8uZQ1",
+      "n": "lK1Lkbn25c"
+    },
+    {
+      "guid": "Y3TVH8uZQ1",
+      "item": "khMbyOBwco",
+      "h": 6
+    },
+    {
+      "guid": "lK1Lkbn25c",
+      "item": "PlN5rXjRFt",
+      "c": 5,
+      "nw": "QKwcBtLjVA",
+      "n": "4arGPbML1O"
+    },
+    {
+      "guid": "QKwcBtLjVA",
+      "item": "M1MCfh7sVo",
+      "c": 75
+    },
+    {
+      "guid": "4arGPbML1O",
+      "item": "Wr27LIf-FU",
+      "c": 48
+    },
+    // #endregion
+    // #region Thoughtful Director
     {
       "guid": "PCDjGhRPYP",
       "item": "qwrbhllE1N",
@@ -8001,6 +8184,71 @@
       "item": "Bm0aFDGHk2",
       "c": 75
     },
+    {
+      "guid": "2BnbI8iGU9",
+      "item": "qwrbhllE1N",
+      "nw": "qCVp6GCF5I",
+      "n": "DnISBxmDe7"
+    },
+    {
+      "guid": "qCVp6GCF5I",
+      "item": "zPUl7UL87P",
+      "h": 4
+    },
+    {
+      "guid": "DnISBxmDe7",
+      "item": "_QvFsX4gGf",
+      "c": 5,
+      "nw": "fUKkqgT_5y",
+      "n": "_hzcAtdonR",
+      "ne": "3MYTn10E3S"
+    },
+    {
+      "guid": "fUKkqgT_5y",
+      "item": "qlaJxxLwAM",
+      "c": 42
+    },
+    {
+      "guid": "3MYTn10E3S",
+      "item": "jRziaKdlTE",
+      "c": 3
+    },
+    {
+      "guid": "_hzcAtdonR",
+      "item": "TmI0zjdYQb",
+      "ac": 2,
+      "n": "rYMbLZm8KQ"
+    },
+    {
+      "guid": "rYMbLZm8KQ",
+      "item": "cSzED5jEt_",
+      "h": 3,
+      "nw": "SUMhxkauzE",
+      "n": "iBRvOP-wRU"
+    },
+    {
+      "guid": "SUMhxkauzE",
+      "item": "SLjFXYFsjW",
+      "h": 6
+    },
+    {
+      "guid": "iBRvOP-wRU",
+      "item": "qyOm1SIyJp",
+      "c": 5,
+      "nw": "4rbPmDDo4b",
+      "n": "VjdeQ0OFgu"
+    },
+    {
+      "guid": "4rbPmDDo4b",
+      "item": "DVcrj6XSgH",
+      "c": 65
+    },
+    {
+      "guid": "VjdeQ0OFgu",
+      "item": "Bm0aFDGHk2",
+      "c": 75
+    },
+    // #endregion
     // #endregion
     // #region Enchantment
     // Nodding Muralist
