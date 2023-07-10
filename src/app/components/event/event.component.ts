@@ -26,13 +26,16 @@ interface IRow {
 export class EventComponent implements OnInit {
   event!: IEvent;
   instances!: Array<IEventInstance>;
+  dateFormat: string;
 
   rows: Array<IRow> = [];
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _route: ActivatedRoute
-  ) { }
+  ) {
+    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
+  }
 
   ngOnInit(): void {
     this._route.paramMap.subscribe(p => this.onParamsChanged(p));

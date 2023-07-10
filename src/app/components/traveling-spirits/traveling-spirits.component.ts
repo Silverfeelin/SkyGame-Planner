@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { CostHelper } from 'src/app/helpers/cost-helper';
+import { Component } from '@angular/core';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { ICost } from 'src/app/interfaces/cost.interface';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -11,10 +9,12 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class TravelingSpiritsComponent {
   rows: Array<any> = [];
+  dateFormat: string;
 
   constructor(
     private readonly _dataService: DataService
   ) {
+    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
     this.rows = this._dataService.travelingSpiritConfig.items.map(ts => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;

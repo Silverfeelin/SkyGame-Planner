@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
@@ -34,6 +34,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   tsDate?: Date;
   rsDate?: Date;
 
+  dateFormat: string;
+
   _itemSub?: SubscriptionLike;
 
   constructor(
@@ -41,6 +43,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef
   ) {
+    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
   }
 
   ngAfterViewInit(): void {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { StorageService } from 'src/app/services/storage.service';
 import moment from 'moment';
+import { StorageService } from 'src/app/services/storage.service';
 import { ThemeService } from 'src/app/services/theme.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,6 +11,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SettingsComponent {
   unlockedCount: number;
+  today = new Date();
+  dateFormat: string;
 
   constructor(
     private readonly _dataService: DataService,
@@ -18,6 +20,7 @@ export class SettingsComponent {
     private readonly _themeService: ThemeService
   ) {
     this.unlockedCount = this._storageService.unlocked.size;
+    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
   }
 
   export(): void {
@@ -95,5 +98,10 @@ export class SettingsComponent {
 
   setTheme(theme?: string): void {
     this._themeService.set(theme);
+  }
+
+  setDateFormat(format: string): void {
+    this.dateFormat = format;
+    localStorage.setItem('date.format', this.dateFormat);
   }
 }
