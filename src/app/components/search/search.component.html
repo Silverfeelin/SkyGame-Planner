@@ -1,0 +1,25 @@
+<!-- Search -->
+<div class="card container">
+  <div class="search">
+    <input #input type="search" class="input" (input)="search()" placeholder="Tip: use Ctrl+Shift+F to start a new search.">
+    <mat-icon fontIcon="search"></mat-icon>
+  </div>
+</div>
+
+<!-- Search results -->
+<div class="mt-2">
+  <app-table *ngIf="searchResults?.length" [rows]="searchResults">
+    <ng-template [appTableHeader] [fit]="true">Type</ng-template>
+    <ng-template [appTableHeader]>Name</ng-template>
+
+    <!-- Type -->
+    <ng-template [appTableColumn] let-row="row">
+      <span *ngIf="row.type === 'Item'; else type">{{ row.data.type }}</span>
+      <ng-template #type><span>{{ row.type }}</span></ng-template>
+    </ng-template>
+    <!-- Name -->
+    <ng-template [appTableColumn] let-row="row">
+      <span [innerHTML]="row.highlightedName || row.name"></span>
+    </ng-template>
+  </app-table>
+</div>

@@ -11,6 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ItemsComponent {
   type?: ItemType;
+  typeEmote: ItemType = ItemType.Emote;
 
   items!: Array<IItem>;
 
@@ -18,6 +19,8 @@ export class ItemsComponent {
 
   typeItems: { [key: string]: Array<IItem> } = {};
   typeUnlocked: { [key: string]: number } = {};
+  emotes: { [key: string]: IItem } = {};
+  emoteLevels: { [key: string]: number } = {};
 
   shownItems: Array<IItem> = [];
   shownUnlocked: number = 0;
@@ -43,6 +46,9 @@ export class ItemsComponent {
 
     this.type = type as ItemType || ItemType.Outfit;
     this.shownItems = this.typeItems[this.type] ?? [];
+    if (this.type === ItemType.Emote) {
+      this.shownItems = Object.values(this.emotes);
+    }
     this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
     this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held;
     //this.showNone = false;
@@ -81,6 +87,15 @@ export class ItemsComponent {
     // Load all items. Group subtypes together based on which wardrobe they appear in.
     this.items = this._dataService.itemConfig.items.slice();
     this.items.forEach(item => {
+      if (item.type === 'Emote') {
+        // Save highest level emote.
+        if (!this.emoteLevels[item.name] || item.level! > this.emoteLevels[item.name]) { this.emoteLevels[item.name] = item.level!; }
+        // Save highest unlocked emote.
+        if (!this.emotes[item.name] || item.unlocked) {
+          this.emotes[item.name] = item;
+        }
+        return;
+      }
       addItem(item.type, item);
 
       // Subtypes.
@@ -108,14 +123,18 @@ export class ItemsComponent {
         alert('Item source not found.');
       }
     } else if (item.iaps?.length) {
-      // Find shop from last appearance of item.
-      const shop = item.iaps.at(-1)?.shop;
+      // Find shop in priority of unlocked > permanent > last appearance.
+      const iap = item.iaps.find(iap => iap.bought)
+        || item.iaps.find(iap => iap?.shop?.permanent)
+        || item.iaps.at(-1);
+      const shop = iap?.shop;
+      const nav: NavigationExtras = { queryParams: { highlightIap: iap?.guid }};
       if (shop?.permanent) {
-        void this._router.navigate(['/shop']);
+        void this._router.navigate(['/shop'], nav);
       } else if (shop?.event) {
-        void this._router.navigate(['/event-instance', shop.event.guid]);
+        void this._router.navigate(['/event-instance', shop.event.guid], nav);
       } else if (shop?.season) {
-        void this._router.navigate(['/season', shop.season.guid]);
+        void this._router.navigate(['/season', shop.season.guid], nav);
       } else {
         alert('Item source not found.');
       }

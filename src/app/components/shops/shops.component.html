@@ -7,7 +7,7 @@
   <div class="grid grid-4 mt-2" >
     <ng-container *ngFor="let shop of shops">
       <ng-container *ngIf="shop.iaps?.length">
-        <div class="card p-rel" *ngFor="let iap of shop.iaps">
+        <div class="card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
           <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
             {{ iap.name }}
           </h3>

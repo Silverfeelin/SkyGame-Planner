@@ -21,7 +21,6 @@ export class TableComponent {
   footers?: Array<TableFooterDirective>;
 }
 
-
 export interface IRow {
   [key: string]: any;
 }

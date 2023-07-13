@@ -33,6 +33,31 @@
       "unlocked": true,
       "order": 1
     },
+    {
+      "guid": "cj9Kr-LnJs",
+      "type": "Stance",
+      "name": "Base Stance",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Stance_basic_stand.png",
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "guid": "_59vOU9i2_",
+      "type": "Call",
+      "name": "Base Call",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Voice_basic_call.png",
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "guid": "pIYsXjTR_g",
+      "type": "Emote",
+      "name": "Sit",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Emote-basic_sit.png",
+      "unlocked": true,
+      "order": 1
+    },
     // #endregion
 
     // #region Isle
@@ -42,7 +67,8 @@
       "type": "Emote",
       "name": "Point",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png",
+      "order": 101
     },
     {
       "guid": "FEF2-KzQfp",
@@ -109,7 +135,8 @@
       "type": "Emote",
       "name": "Come",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png",
+      "order": 111
     },
     {
       "guid": "9MxRR5To8o",
@@ -176,7 +203,8 @@
       "type": "Emote",
       "name": "No Thanks",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png",
+      "order": 121
     },
     {
       "guid": "I101mvqSaI",
@@ -245,7 +273,8 @@
       "type": "Emote",
       "name": "Butterfly",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png",
+      "order": 161
     },
     {
       "guid": "UerEKNAbKh",
@@ -325,7 +354,8 @@
       "type": "Emote",
       "name": "Clap",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png",
+      "order": 171
     },
     {
       "guid": "t0pk8Z0cui",
@@ -385,7 +415,8 @@
       "type": "Emote",
       "name": "Wave",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png",
+      "order": 181
     },
     {
       "guid": "VRZyKNt7QI",
@@ -458,7 +489,8 @@
       "type": "Emote",
       "name": "Yawn",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png",
+      "order": 201
     },
     {
       "guid": "f3IKpWrXWd",
@@ -518,7 +550,8 @@
       "type": "Emote",
       "name": "Laugh",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png",
+      "order": 191
     },
     {
       "guid": "Ozy3lpnc37",
@@ -584,7 +617,8 @@
       "guid": "FGr955bSRr",
       "type": "Call",
       "name": "Bird Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/BirdWhisperer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/BirdWhisperer-1.png",
+      "order": 11
     },
     {
       "guid": "EhvbJDQHCw",
@@ -630,7 +664,8 @@
       "type": "Emote",
       "name": "Wipe Brow",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png",
+      "order": 211
     },
     {
       "guid": "Z2rsK4f5ny",
@@ -690,7 +725,8 @@
       "type": "Emote",
       "name": "Teamwork",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CeremonialWorshiper-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CeremonialWorshiper-1.png",
+      "order": 221
     },
     {
       "guid": "nYnRDefjmx",
@@ -724,7 +760,8 @@
       "type": "Emote",
       "name": "Shiver",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png",
+      "order": 271
     },
     {
       "guid": "CjN1GNyRo5",
@@ -791,7 +828,8 @@
       "type": "Emote",
       "name": "Shy",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png",
+      "order": 301
     },
     {
       "guid": "MPG42915f5",
@@ -858,7 +896,8 @@
       "type": "Emote",
       "name": "Hide and Seek",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/HideNSeekPioneer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/HideNSeekPioneer-1.png",
+      "order": 281
     },
     {
       "guid": "LqipUD_Mmh",
@@ -917,7 +956,8 @@
       "type": "Emote",
       "name": "Angry",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png",
+      "order": 291
     },
     {
       "guid": "YkzYpoa9me",
@@ -997,7 +1037,8 @@
       "type": "Emote",
       "name": "Shocked",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png",
+      "order": 311
     },
     {
       "guid": "n8IVtB9J3F",
@@ -1077,7 +1118,8 @@
       "type": "Emote",
       "name": "Apologize",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png",
+      "order": 321
     },
     {
       "guid": "2WUjYDii5w",
@@ -1144,7 +1186,8 @@
       "type": "Emote",
       "name": "Crying",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png",
+      "order": 331
     },
     {
       "guid": "SuEWxrvIA6",
@@ -1209,7 +1252,8 @@
       "guid": "70FpYsoCa7",
       "type": "Call",
       "name": "Whale Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/WhaleWhisperer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/WhaleWhisperer-1.png",
+      "order": 21
     },
     {
       "guid": "w6Sae7jydQ",
@@ -1249,7 +1293,8 @@
       "guid": "HdmcYW9N-f",
       "type": "Stance",
       "name": "Confident Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/ConfidentSightseer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/ConfidentSightseer-1.png",
+      "order": 21
     },
     {
       "guid": "sNTC_fhMeO",
@@ -1295,7 +1340,8 @@
       "type": "Emote",
       "name": "Handstand",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png",
+      "order": 401
     },
     {
       "guid": "SK5gSmxvBt",
@@ -1367,7 +1413,8 @@
       "guid": "XyTNAnvs9N",
       "type": "Call",
       "name": "Manta Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/MantaWhisperer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/MantaWhisperer-1.png",
+      "order": 31
     },
     {
       "guid": "YSZMv-rKxL",
@@ -1406,7 +1453,8 @@
       "type": "Emote",
       "name": "Backflip",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png",
+      "order": 411
     },
     {
       "guid": "XDvPc5hCdm",
@@ -1473,7 +1521,8 @@
       "type": "Emote",
       "name": "Cheer",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png",
+      "order": 431
     },
     {
       "guid": "4xvMNOz0ZB",
@@ -1492,7 +1541,7 @@
       "guid": "RtX7BAaov2",
       "type": "Hair",
       "name": "Cheerful Spectator Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/CheerfulSpectator-2.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/CheerfulSpectator-Hair-Credit-Ed.png",
       "order": 28
     },
     {
@@ -1531,7 +1580,7 @@
       "guid": "o8VUub-4vw",
       "type": "Instrument",
       "name": "Piano",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CheerfulSpectator-3.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CheerfulSpectator-Piano-Credit-Ed.png",
       "order": 1001
     },
     // Bowing Medalist
@@ -1540,7 +1589,8 @@
       "type": "Emote",
       "name": "Bow",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png",
+      "order": 421
     },
     {
       "guid": "7RooNO25P9",
@@ -1606,7 +1656,8 @@
       "guid": "6Gz1udO5fI",
       "type": "Stance",
       "name": "Proud Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/ProudVictor-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/ProudVictor-1.png",
+      "order": 41
     },
     {
       "guid": "o104MA8jIE",
@@ -1667,7 +1718,8 @@
       "type": "Emote",
       "name": "Duck",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png",
+      "order": 541
     },
     {
       "guid": "4LkrX4-CoT",
@@ -1734,7 +1786,8 @@
       "type": "Emote",
       "name": "Faint",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png",
+      "order": 551
     },
     {
       "guid": "zKMOiu2THu",
@@ -1800,7 +1853,8 @@
       "guid": "dCMS94p34P",
       "type": "Stance",
       "name": "Courageous Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/CourageousSoldier-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/CourageousSoldier-1.png",
+      "order": 11
     },
     {
       "guid": "l1nLKz7suC",
@@ -1858,7 +1912,8 @@
       "guid": "ztAW0vBZfY",
       "type": "Stance",
       "name": "Sneaky Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/StealthySurvivor-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/StealthySurvivor-1.png",
+      "order": 31
     },
     {
       "guid": "DGzYI5od5x",
@@ -1917,7 +1972,8 @@
       "type": "Emote",
       "name": "Salute",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png",
+      "order": 581
     },
     {
       "guid": "m9AevsoO_k",
@@ -1984,7 +2040,8 @@
       "type": "Emote",
       "name": "Look Around",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png",
+      "order": 571
     },
     {
       "guid": "dH24Ov55wg",
@@ -2053,7 +2110,8 @@
       "type": "Emote",
       "name": "Telekinesis",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png",
+      "order": 661
     },
     {
       "guid": "l6TWStE9Xr",
@@ -2120,7 +2178,8 @@
       "type": "Emote",
       "name": "Float",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png",
+      "order": 671
     },
     {
       "guid": "hu9E5_AnJh",
@@ -2186,7 +2245,8 @@
       "guid": "I1fk2fnGDK",
       "type": "Call",
       "name": "Cosmic Manta Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/MemoryWhisperer-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/MemoryWhisperer-1.png",
+      "order": 41
     },
     {
       "guid": "wXOGyF57AN",
@@ -2244,7 +2304,8 @@
       "guid": "8QnR-XHmJg",
       "type": "Stance",
       "name": "Polite Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/PoliteScholar-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/PoliteScholar-1.png",
+      "order": 51
     },
     {
       "guid": "3T-ZS6ZooQ",
@@ -2289,7 +2350,8 @@
       "type": "Emote",
       "name": "Pray",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png",
+      "order": 681
     },
     {
       "guid": "3kiNK4eee-",
@@ -3691,7 +3753,8 @@
       "type": "Emote",
       "name": "Silent Clap",
       "level": 2,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png",
+      "order": 961
     },
     {
       "guid": "iZ1lQxrYIi",
@@ -3723,9 +3786,10 @@
     {
       "guid": "uEYrMRIKMS",
       "type": "Emote",
-      "name": "Quest 3",
+      "name": "Conduct",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoAurora-Ultimate-Expression-Dance-2-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoAurora-Ultimate-Expression-Dance-2-Icon-Morybel-0146.png",
+      "order": 951
     },
     {
       "guid": "VdWQyivAwr",
@@ -3765,7 +3829,8 @@
       "type": "Emote",
       "name": "Skipping",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Ultimate-Expression-Dance-3-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Ultimate-Expression-Dance-3-Icon-Morybel-0146.png",
+      "order": 971
     },
     {
       "guid": "IJUeE1lOwt",
@@ -4145,7 +4210,8 @@
       "guid": "SadZcfujh7",
       "type": "Stance",
       "name": "Sassy Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_02_sassy_drifter_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_02_sassy_drifter_emote.png",
+      "order": 61
     },
     {
       "guid": "VIQ3DJwLpu",
@@ -4191,7 +4257,8 @@
       "type": "Emote",
       "name": "Yoga",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png",
+      "order": 691
     },
     {
       "guid": "hFbdz8Wvye",
@@ -4258,7 +4325,8 @@
       "type": "Emote",
       "name": "Kabuki",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png",
+      "order": 341
     },
     {
       "guid": "LPnwWeKlf0",
@@ -4332,7 +4400,8 @@
       "type": "Emote",
       "name": "Leap",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png",
+      "order": 441
     },
     {
       "guid": "Q5LhJRWFiF",
@@ -4399,7 +4468,8 @@
       "type": "Emote",
       "name": "Acknowledge",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png",
+      "order": 591
     },
     {
       "guid": "tUzGovgVRK",
@@ -4473,7 +4543,8 @@
       "type": "Emote",
       "name": "Kung Fu",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png",
+      "order": 601
     },
     {
       "guid": "5QWjZVAA-9",
@@ -4661,7 +4732,8 @@
       "guid": "_o__3iD1Rh",
       "type": "Stance",
       "name": "Laidback Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_03_laidback_pioneer_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_03_laidback_pioneer_emote.png",
+      "order": 71
     },
     {
       "guid": "rj8Dzz64e9",
@@ -4733,7 +4805,8 @@
       "type": "Emote",
       "name": "Triple Axel",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
+      "order": 451
     },
     {
       "guid": "zjAeiE3x_t",
@@ -4806,7 +4879,8 @@
       "guid": "ySbxSrn-4l",
       "type": "Call",
       "name": "Crab Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Mimi-4117_03_crab_whisperer_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Mimi-4117_03_crab_whisperer_emote.png",
+      "order": 51
     },
     {
       "guid": "wTgGX3U9yp",
@@ -4885,7 +4959,8 @@
       "type": "Emote",
       "name": "Shush",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
+      "order": 701
     },
     {
       "guid": "TqyXKGohBg",
@@ -4954,7 +5029,8 @@
       "type": "Emote",
       "name": "Confetti",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png",
+      "order": 461
     },
     {
       "guid": "_KkFXT0brp",
@@ -5033,7 +5109,8 @@
       "type": "Emote",
       "name": "Boogie Dance",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png",
+      "order": 471
     },
     {
       "guid": "jn9V5Dc56I",
@@ -5112,7 +5189,8 @@
       "type": "Emote",
       "name": "Sparkler",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png",
+      "order": 711
     },
     {
       "guid": "sSgceH7emy",
@@ -5197,7 +5275,8 @@
       "guid": "N_FirAVIZf",
       "type": "Stance",
       "name": "Wise Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Belonging_stance_think.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Belonging_stance_think.png",
+      "order": 81
     },
     {
       "guid": "IH3RuM1Ze3",
@@ -5281,7 +5360,8 @@
       "type": "Emote",
       "name": "Don't Go!",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png",
+      "order": 611
     },
     {
       "guid": "oqndH_vtJJ",
@@ -5441,7 +5521,8 @@
       "type": "Emote",
       "name": "Welcome",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png",
+      "order": 131
     },
     {
       "guid": "Lpi2B9yp7E",
@@ -5528,7 +5609,8 @@
       "type": "Emote",
       "name": "Spin Dance",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png",
+      "order": 481
     },
     {
       "guid": "Uszoh-ONkR",
@@ -5622,7 +5704,8 @@
       "type": "Emote",
       "name": "Blow Kiss",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png",
+      "order": 231
     },
     {
       "guid": "DQhS5AkEKu",
@@ -5702,7 +5785,8 @@
       "type": "Emote",
       "name": "Juggle",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png",
+      "order": 491
     },
     {
       "guid": "rt7_sCQiHh",
@@ -5795,7 +5879,8 @@
       "type": "Emote",
       "name": "Respect",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png",
+      "order": 561
     },
     {
       "guid": "4hiIWJy7qv",
@@ -5881,7 +5966,8 @@
       "type": "Emote",
       "name": "Thinking",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png",
+      "order": 721
     },
     {
       "guid": "zPUl7UL87P",
@@ -5969,7 +6055,8 @@
       "type": "Emote",
       "name": "Nod",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png",
+      "order": 141
     },
     {
       "guid": "D72h3-WjJD",
@@ -6042,7 +6129,8 @@
       "type": "Emote",
       "name": "Shrug",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png",
+      "order": 351
     },
     {
       "guid": "5bwnWkR0DG",
@@ -6128,7 +6216,8 @@
       "type": "Emote",
       "name": "Crab Walk",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png",
+      "order": 501
     },
     {
       "guid": "PcsXYI_YLj",
@@ -6201,7 +6290,8 @@
       "type": "Emote",
       "name": "Boo",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png",
+      "order": 621
     },
     {
       "guid": "DGC8JcQK5y",
@@ -6274,7 +6364,8 @@
       "type": "Emote",
       "name": "Doze",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png",
+      "order": 731
     },
     {
       "guid": "o9Wt1MLcrz",
@@ -6440,7 +6531,8 @@
       "guid": "U7lPqW1fa0",
       "type": "Call",
       "name": "Jellyfish Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/SoS_jelly_fish_call.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/SoS_jelly_fish_call.png",
+      "order": 61
     },
     {
       "guid": "jx_1R13Z_n",
@@ -6511,7 +6603,8 @@
       "guid": "QnA3xwSNod",
       "type": "Stance",
       "name": "Timid Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/SoS_shy_stance.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/SoS_shy_stance.png",
+      "order": 91
     },
     {
       "guid": "YIR2Pbzuc0",
@@ -6576,7 +6669,8 @@
       "type": "Emote",
       "name": "Rally Cheer",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png",
+      "order": 511
     },
     {
       "guid": "Q3SUBd3Vbl",
@@ -6649,7 +6743,8 @@
       "type": "Emote",
       "name": "Grumpy",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png",
+      "order": 361
     },
     {
       "guid": "91x-6KiNlb",
@@ -6735,7 +6830,8 @@
       "type": "Emote",
       "name": "Grateful",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png",
+      "order": 241
     },
     {
       "guid": "IDDSw982ER",
@@ -6815,7 +6911,8 @@
       "type": "Emote",
       "name": "Belly Scratch",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png",
+      "order": 251
     },
     {
       "guid": "LZqy5g4Xpa",
@@ -6910,7 +7007,8 @@
       "type": "Emote",
       "name": "Deep Breath",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png",
+      "order": 751
     },
     {
       "guid": "a1mWcW4Pll",
@@ -7003,7 +7101,8 @@
       "type": "Emote",
       "name": "Dust Off",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png",
+      "order": 631
     },
     {
       "guid": "VWQdrhMcwH",
@@ -7103,7 +7202,8 @@
       "type": "Emote",
       "name": "Balance",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png",
+      "order": 741
     },
     {
       "guid": "1COJ0_lu9H",
@@ -7196,7 +7296,8 @@
       "type": "Emote",
       "name": "Chest Pound",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png",
+      "order": 641
     },
     {
       "guid": "lv8aUui_2g",
@@ -7371,7 +7472,8 @@
       "type": "Emote",
       "name": "Show Dance",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png",
+      "order": 531
     },
     {
       "guid": "VR8uQXAzzZ",
@@ -7446,7 +7548,8 @@
       "type": "Emote",
       "name": "Peek",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png",
+      "order": 371
     },
     {
       "guid": "iNGMlJTDL0",
@@ -7533,7 +7636,8 @@
       "type": "Emote",
       "name": "Spin Trick",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png",
+      "order": 521
     },
     {
       "guid": "tp172HbBKC",
@@ -7621,7 +7725,8 @@
       "type": "Emote",
       "name": "Facepalm",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png",
+      "order": 391
     },
     {
       "guid": "rsYXcsOjgR",
@@ -7707,7 +7812,8 @@
       "type": "Emote",
       "name": "Scold",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png",
+      "order": 151
     },
     {
       "guid": "sEIwClFXji",
@@ -7793,7 +7899,8 @@
       "type": "Emote",
       "name": "Eww",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png",
+      "order": 381
     },
     {
       "guid": "owZSOBEp_z",
@@ -7880,7 +7987,8 @@
       "type": "Emote",
       "name": "Marching",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png",
+      "order": 651
     },
     {
       "guid": "0xqk-p9fsY",
@@ -7966,7 +8074,8 @@
       "type": "Emote",
       "name": "Chuckle",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png",
+      "order": 261
     },
     {
       "guid": "ymKZH8BJwt",
@@ -8052,7 +8161,8 @@
       "type": "Emote",
       "name": "Bubbles",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png",
+      "order": 761
     },
     {
       "guid": "nT-zyxTRzs",
@@ -8140,7 +8250,8 @@
       "type": "Emote",
       "name": "Beckon",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png",
+      "order": 771
     },
     {
       "guid": "_ws5QlV4Tp",
@@ -8214,7 +8325,8 @@
       "type": "Emote",
       "name": "Gloat",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png",
+      "order": 781
     },
     {
       "guid": "SNhn8BVb7a",
@@ -8289,7 +8401,8 @@
       "type": "Emote",
       "name": "Stretch",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png",
+      "order": 791
     },
     {
       "guid": "NwYn4D2Gag",
@@ -8351,7 +8464,8 @@
       "type": "Emote",
       "name": "Slouch",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png",
+      "order": 801
     },
     {
       "guid": "Gx5YAc7jLr",
@@ -8438,7 +8552,8 @@
       "type": "Emote",
       "name": "Sneeze",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png",
+      "order": 811
     },
     {
       "guid": "muRzuaFzwA",
@@ -8512,7 +8627,8 @@
       "type": "Emote",
       "name": "Hand-Rub",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png",
+      "order": 821
     },
     {
       "guid": "kNbIj8-u0w",
@@ -8612,7 +8728,8 @@
       "type": "Emote",
       "name": "Navigate",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png",
+      "order": 841
     },
     {
       "guid": "H6h0oeRVom",
@@ -8692,7 +8809,8 @@
       "guid": "YiLDQF0uDU",
       "type": "Call",
       "name": "Baby Manta Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Season_of_Flight_-_Light_Whisperer_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Season_of_Flight_-_Light_Whisperer_icon.png",
+      "order": 71
     },
     {
       "guid": "Ld2u4cjPes",
@@ -8751,7 +8869,8 @@
       "guid": "Jgp0s63dVZ",
       "type": "Stance",
       "name": "Tinker Stance",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Season_of_Flight_-_Tinkering_Chimesmith_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Season_of_Flight_-_Tinkering_Chimesmith_icon.png",
+      "order": 101
     },
     {
       "guid": "DquDtwH3Jy",
@@ -8824,7 +8943,8 @@
       "type": "Emote",
       "name": "Voilà",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png",
+      "order": 831
     },
     {
       "guid": "zRFUMdaCAK",
@@ -8907,7 +9027,8 @@
       "type": "Emote",
       "name": "Anxious",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png",
+      "order": 881
     },
     {
       "guid": "3ixBHha-wW",
@@ -8994,7 +9115,8 @@
       "type": "Emote",
       "name": "Calm Down",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png",
+      "order": 851
     },
     {
       "guid": "FETTumn6J-",
@@ -9068,7 +9190,8 @@
       "type": "Emote",
       "name": "Ouch",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png",
+      "order": 871
     },
     {
       "guid": "ACcdP5GR4g",
@@ -9155,7 +9278,8 @@
       "type": "Emote",
       "name": "Evil Laugh",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png",
+      "order": 861
     },
     {
       "guid": "0iyXmNvh_C",
@@ -9311,7 +9435,8 @@
       "type": "Emote",
       "name": "Awww",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png",
+      "order": 901
     },
     {
       "guid": "7tsa9wtqVi",
@@ -9398,7 +9523,8 @@
       "type": "Emote",
       "name": "Headbob",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png",
+      "order": 891
     },
     {
       "guid": "EQQjcs9sT0",
@@ -9766,7 +9892,8 @@
       "type": "Emote",
       "name": "Waving Light",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png",
+      "order": 911
     },
     {
       "guid": "JzE9JvMkF_",
@@ -9854,7 +9981,8 @@
       "type": "Emote",
       "name": "Raise the Roof",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png",
+      "order": 921
     },
     {
       "guid": "wgHUFR0hL_",
@@ -9942,7 +10070,8 @@
       "type": "Emote",
       "name": "Twirl",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png",
+      "order": 931
     },
     {
       "guid": "84y87tOlc7",
@@ -10030,7 +10159,8 @@
       "type": "Emote",
       "name": "Rhythmic Clap",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png",
+      "order": 941
     },
     {
       "guid": "Xp7ou1f01j",
@@ -10171,7 +10301,8 @@
       "type": "Emote",
       "name": "Grieving",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png",
+      "order": 1001
     },
     {
       "guid": "ms8gAS7UHk",
@@ -10245,7 +10376,8 @@
       "type": "Emote",
       "name": "Pleading",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png",
+      "order": 981
     },
     {
       "guid": "oxlHVEQ-KD",
@@ -10319,7 +10451,8 @@
       "type": "Emote",
       "name": "Tiptoeing",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png",
+      "order": 991
     },
     {
       "guid": "-XSUgHYCU-",
@@ -10390,10 +10523,10 @@
     // Wounded Warrior
     {
       "guid": "6dT44er9LL",
-      "type": "Emote",
-      "name": "Injured",
-      "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/SoRemembrance-Wounded-Warrior-Emote-Icon-Morybel-0146.png"
+      "type": "Stance",
+      "name": "Injured Stance",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/SoRemembrance-Wounded-Warrior-Emote-Icon-Morybel-0146.png",
+      "order": 111
     },
     {
       "guid": "y16WNw3qVP",
@@ -10448,7 +10581,8 @@
       "type": "Emote",
       "name": "Hacky sack",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png",
+      "order": 1011
     },
     {
       "guid": "WMCReW0LQD",
@@ -10522,7 +10656,8 @@
       "type": "Emote",
       "name": "Somersault",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png",
+      "order": 1021
     },
     {
       "guid": "DjPVeBb0wn",
@@ -10596,7 +10731,8 @@
       "type": "Emote",
       "name": "Moping",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png",
+      "order": 1031
     },
     {
       "guid": "ozw69gqvhQ",
@@ -10670,7 +10806,8 @@
       "type": "Emote",
       "name": "Pull-up",
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png",
+      "order": 1041
     },
     {
       "guid": "nRbYecsrpX",
