@@ -10,6 +10,7 @@
 <div class="mt-2">
   <app-table *ngIf="searchResults?.length" [rows]="searchResults">
     <ng-template [appTableHeader] [fit]="true">Type</ng-template>
+    <ng-template [appTableHeader] [fit]="true" [textAlign]="'center'">Icon</ng-template>
     <ng-template [appTableHeader]>Name</ng-template>
 
     <!-- Type -->
@@ -17,9 +18,30 @@
       <span *ngIf="row.type === 'Item'; else type">{{ row.data.type }}</span>
       <ng-template #type><span>{{ row.type }}</span></ng-template>
     </ng-template>
+    <!-- Icon -->
+    <ng-template [appTableColumn] let-row="row">
+      <div class="result-icon" *ngIf="row.data.imageUrl">
+        <app-icon [src]="row.data.imageUrl" [width]="'auto'"></app-icon>
+      </div>
+      <div class="result-icon" *ngIf="row.data.iconUrl">
+        <app-icon [src]="row.data.iconUrl"></app-icon>
+        <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked" fontIcon="done"></mat-icon>
+      </div>
+      <div class="result-icon" *ngIf="row.data.icon">
+        <app-icon [src]="row.data.icon"></app-icon>
+        <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked" fontIcon="done"></mat-icon>
+      </div>
+    </ng-template>
     <!-- Name -->
     <ng-template [appTableColumn] let-row="row">
-      <span [innerHTML]="row.highlightedName || row.name"></span>
+      <a [class.link]="row.route" [routerLink]="row.route" [queryParams]="row.queryParams">
+        <span [innerHTML]="row.highlightedName || row.name"></span>
+      </a>
     </ng-template>
   </app-table>
+  <div class="container mt-2" *ngIf="searchResults?.length! >= 25">
+    <div class="container-inner">
+      <span class="link" (click)="focusInput()">Refine your search for more results.</span>
+    </div>
+  </div>
 </div>

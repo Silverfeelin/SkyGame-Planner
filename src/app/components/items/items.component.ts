@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, ParamMap, Router } from '@angular/router';
-import { NodeHelper } from 'src/app/helpers/node-helper';
+import { Component } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -109,35 +109,12 @@ export class ItemsComponent {
   }
 
   openItem(item: IItem): void {
-    if (item.nodes?.length) {
-      // Find spirit from last appearance of item.
-      const tree = NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree;
-      const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
-
-      const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
-      if (tree?.eventInstanceSpirit) {
-        void this._router.navigate(['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid], extras);
-      } else if (spirit) {
-        void this._router.navigate(['/spirit', spirit.guid], extras);
-      } else {
-        alert('Item source not found.');
-      }
-    } else if (item.iaps?.length) {
-      // Find shop in priority of unlocked > permanent > last appearance.
-      const iap = item.iaps.find(iap => iap.bought)
-        || item.iaps.find(iap => iap?.shop?.permanent)
-        || item.iaps.at(-1);
-      const shop = iap?.shop;
-      const nav: NavigationExtras = { queryParams: { highlightIap: iap?.guid }};
-      if (shop?.permanent) {
-        void this._router.navigate(['/shop'], nav);
-      } else if (shop?.event) {
-        void this._router.navigate(['/event-instance', shop.event.guid], nav);
-      } else if (shop?.season) {
-        void this._router.navigate(['/season', shop.season.guid], nav);
-      } else {
-        alert('Item source not found.');
-      }
+    const route = NavigationHelper.getItemSource(item);
+    if (!route) {
+      alert('Could not find item source.');
+      return;
     }
+
+    this._router.navigate(route.route, route.extras);
   }
 }
