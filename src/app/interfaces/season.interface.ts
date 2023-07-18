@@ -13,6 +13,8 @@ export interface ISeason extends IGuid {
 
   /** Path to the season icon. */
   iconUrl?: string;
+  imageUrl?: string;
+  imagePosition?: string;
 
   /** Year of the season. */
   year: number;

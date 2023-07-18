@@ -29,6 +29,10 @@
           <mat-icon fontIcon="question_mark"></mat-icon>
         </a>
       </div>
+      <!-- Image -->
+      <div *ngIf="season.imageUrl" class="p-rel img"
+        [style.background-image]="'url('+season.imageUrl+')'"
+        [style.background-position]="season.imagePosition || undefined"></div>
       <!-- Overview -->
       <a class="mt-2 item link" [routerLink]="['/season', season.guid]">
         <mat-icon class="menu-icon" fontIcon="article"></mat-icon>

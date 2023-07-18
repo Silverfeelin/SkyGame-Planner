@@ -20,16 +20,16 @@
     </ng-template>
     <!-- Icon -->
     <ng-template [appTableColumn] let-row="row">
-      <div class="result-icon" *ngIf="row.data.imageUrl">
-        <app-icon [src]="row.data.imageUrl" [width]="'auto'"></app-icon>
-      </div>
-      <div class="result-icon" *ngIf="row.data.iconUrl">
+      <div #iconUrl class="result-icon" *ngIf="row.data.iconUrl">
         <app-icon [src]="row.data.iconUrl"></app-icon>
         <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked" fontIcon="done"></mat-icon>
       </div>
-      <div class="result-icon" *ngIf="row.data.icon">
+      <div #icon class="result-icon" *ngIf="row.data.icon">
         <app-icon [src]="row.data.icon"></app-icon>
         <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked" fontIcon="done"></mat-icon>
+      </div>
+      <div #imageUrl class="result-icon" *ngIf="!(row.data.iconUrl || row.data.icon) && row.data.imageUrl">
+        <app-icon [src]="row.data.imageUrl" [width]="'auto'"></app-icon>
       </div>
     </ng-template>
     <!-- Name -->
