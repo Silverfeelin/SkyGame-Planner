@@ -64,6 +64,11 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
       return { name: season.name, type: 'Season', data: season, search: season.name }
     }));
 
+    // Add events
+    SearchComponent.items.push(...this._dataService.eventConfig.items.map(event => {
+      return { name: event.name, type: 'Event', data: event, search: event.name }
+    }));
+
     // Prepare search strings.
     SearchComponent.items.forEach(item => {
       if (typeof(item.search) !== 'string') { return; }
@@ -133,6 +138,9 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
         break;
       case 'Season':
         item.route = ['/season', item.data.guid];
+        break;
+      case 'Event':
+        item.route = ['/event', item.data.guid];
         break;
     }
   }
