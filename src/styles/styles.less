@@ -25,10 +25,25 @@ a, .link {
 
 button {
   color: var(--color);
-  padding: 6px 8px;
+  padding: var(--padding-input);
   background: var(--color-item-background);
   border: 1px solid var(--color-border-highlight);
   border-radius: var(--border-radius-round);
+}
+
+input {
+  display: block;
+  width: 100%;
+  color: var(--color);
+  padding: var(--padding-input);
+  border-radius: var(--border-radius-round);
+  background: var(--color-background);
+  border: 1px solid var(--color-border-highlight);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-border-highlight);
+  }
 }
 
 // Scrollbar

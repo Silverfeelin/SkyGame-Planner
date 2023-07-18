@@ -4,6 +4,11 @@
       <span class="title">Sky Planner</span>
     </div>
     <div class="items">
+      <!-- Search -->
+      <a class="item" [routerLink]="'search'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Search'" placement="right" container="body">
+        <mat-icon fontIcon="search"></mat-icon>
+        <span class="name">Search</span>
+      </a>
       <!-- Items -->
       <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
         <mat-icon fontIcon="checkroom"></mat-icon>
@@ -11,7 +16,7 @@
       </a>
       <!-- Realms -->
       <a class="item" [routerLink]="'realm'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
-        <mat-icon fontIcon="auto_awesome"></mat-icon>
+        <mat-icon fontIcon="map"></mat-icon>
         <span class="name">Realms</span>
       </a>
       <!-- Seasons -->

@@ -17,6 +17,7 @@ export class EventInstanceComponent {
   shops?: Array<IShop>;
   iapNames: { [iapGuid: string]: string | undefined } = {};
   highlightItem?: string;
+  highlightIap?: string;
 
   constructor(
     private readonly _dataService: DataService,
@@ -31,6 +32,7 @@ export class EventInstanceComponent {
 
   onQueryChanged(p: ParamMap): void {
     this.highlightItem = p.get('highlightItem') || undefined;
+    this.highlightIap = p.get('highlightIap') || undefined;
   }
 
   onParamsChanged(params: ParamMap): void {

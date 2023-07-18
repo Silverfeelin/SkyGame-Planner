@@ -30,6 +30,7 @@ import { EventInstanceComponent } from './components/event-instance/event-instan
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     EventInstanceComponent,
     ShopsComponent,
     WingBuffsComponent,
-    SettingsComponent
+    SettingsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

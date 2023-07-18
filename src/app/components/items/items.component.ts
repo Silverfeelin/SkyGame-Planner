@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, ParamMap, Router } from '@angular/router';
-import { NodeHelper } from 'src/app/helpers/node-helper';
+import { Component } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,6 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ItemsComponent {
   type?: ItemType;
+  typeEmote: ItemType = ItemType.Emote;
 
   items!: Array<IItem>;
 
@@ -18,6 +19,8 @@ export class ItemsComponent {
 
   typeItems: { [key: string]: Array<IItem> } = {};
   typeUnlocked: { [key: string]: number } = {};
+  emotes: { [key: string]: IItem } = {};
+  emoteLevels: { [key: string]: number } = {};
 
   shownItems: Array<IItem> = [];
   shownUnlocked: number = 0;
@@ -43,6 +46,9 @@ export class ItemsComponent {
 
     this.type = type as ItemType || ItemType.Outfit;
     this.shownItems = this.typeItems[this.type] ?? [];
+    if (this.type === ItemType.Emote) {
+      this.shownItems = Object.values(this.emotes);
+    }
     this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
     this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held;
     //this.showNone = false;
@@ -81,6 +87,15 @@ export class ItemsComponent {
     // Load all items. Group subtypes together based on which wardrobe they appear in.
     this.items = this._dataService.itemConfig.items.slice();
     this.items.forEach(item => {
+      if (item.type === 'Emote') {
+        // Save highest level emote.
+        if (!this.emoteLevels[item.name] || item.level! > this.emoteLevels[item.name]) { this.emoteLevels[item.name] = item.level!; }
+        // Save highest unlocked emote.
+        if (!this.emotes[item.name] || item.unlocked) {
+          this.emotes[item.name] = item;
+        }
+        return;
+      }
       addItem(item.type, item);
 
       // Subtypes.
@@ -94,31 +109,12 @@ export class ItemsComponent {
   }
 
   openItem(item: IItem): void {
-    if (item.nodes?.length) {
-      // Find spirit from last appearance of item.
-      const tree = NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree;
-      const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
-
-      const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
-      if (tree?.eventInstanceSpirit) {
-        void this._router.navigate(['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid], extras);
-      } else if (spirit) {
-        void this._router.navigate(['/spirit', spirit.guid], extras);
-      } else {
-        alert('Item source not found.');
-      }
-    } else if (item.iaps?.length) {
-      // Find shop from last appearance of item.
-      const shop = item.iaps.at(-1)?.shop;
-      if (shop?.permanent) {
-        void this._router.navigate(['/shop']);
-      } else if (shop?.event) {
-        void this._router.navigate(['/event-instance', shop.event.guid]);
-      } else if (shop?.season) {
-        void this._router.navigate(['/season', shop.season.guid]);
-      } else {
-        alert('Item source not found.');
-      }
+    const route = NavigationHelper.getItemSource(item);
+    if (!route) {
+      alert('Could not find item source.');
+      return;
     }
+
+    this._router.navigate(route.route, route.extras);
   }
 }

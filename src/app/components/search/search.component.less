@@ -1,0 +1,26 @@
+.search {
+  position: relative;
+
+  input {
+    padding-left: 32px;
+  }
+
+  mat-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: opacity var(--animation-short);
+  }
+}
+
+.result-icon {
+  position: relative;
+  display: inline-block;
+  width: var(--item-size);
+  height: var(--item-size);
+  text-align: center;
+  overflow: hidden;
+  border-radius: var(--border-radius-round);
+}

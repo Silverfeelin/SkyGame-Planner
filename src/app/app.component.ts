@@ -3,6 +3,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
 import { ThemeService } from './services/theme.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent {
     private readonly _dataService: DataService,
     private readonly _themeService: ThemeService,
     private readonly _domSanitizer: DomSanitizer,
-    private readonly _matIconRegistry: MatIconRegistry
+    private readonly _matIconRegistry: MatIconRegistry,
+    private readonly _router: Router
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });
     this._themeService.init();
@@ -35,7 +37,9 @@ export class AppComponent {
     document.addEventListener('keydown', (event) => {
       if (event.ctrlKey && event.shiftKey && event.key.toUpperCase() === 'F') {
         event.preventDefault();
-        // TODO: Search page.
+        void this._router.navigate(['/'], { skipLocationChange: true }).then(() => {
+          void this._router.navigate(['/search']);
+        });
       }
     });
   }

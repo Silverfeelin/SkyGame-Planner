@@ -26,7 +26,7 @@
         <!-- Render IAPs in order of sorted shops. -->
         <ng-container *ngFor="let shop of shops">
           <ng-container *ngIf="shop.iaps?.length">
-            <div class="card p-rel" *ngFor="let iap of shop.iaps">
+            <div class="card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
               <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
                 {{ iapNames[iap.guid] }}
               </h3>

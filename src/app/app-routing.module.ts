@@ -14,6 +14,7 @@ import { TravelingSpiritsComponent } from './components/traveling-spirits/travel
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { SearchComponent } from './components/search/search.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'event-instance/:guid', component: EventInstanceComponent, title: title('Event') },
   { path: 'item', component: ItemsComponent, title: title('Items') },
   { path: 'realm', component: RealmsComponent, title: title('Realms') },
+  { path: 'search', component: SearchComponent, title: title('Search') },
   { path: 'season', component: SeasonsComponent, title: title('Seasons') },
   { path: 'season/:guid', component: SeasonComponent, title: title('Season') },
   { path: 'settings', component: SettingsComponent, title: title('Settings') },

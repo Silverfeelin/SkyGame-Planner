@@ -15,6 +15,9 @@ export class IconComponent implements OnChanges {
   @HostBinding('style.opacity')
   @Input() opacity?: number;
 
+  @Input() width?: string;
+  @Input() height?: string;
+
   safeString?: string;
   safeUrl?: SafeUrl;
   isSvg = false;
