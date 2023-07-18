@@ -27,7 +27,7 @@
   --color-status-background: #222230;
   --color-candle: #ddd;
   --color-new: #32cd32;
-  --color-old: #cacd32;
+  --color-old: #ffa93e;
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
   --color-unlock-check: var(--color-new);
@@ -53,6 +53,7 @@
   --status-height: 24px;
   --border-radius-round: 8px;
   --padding-content: 10px;
+  --padding-input: 6px 8px;
   --column-items: 1fr;
   --column-items-1: 1fr;
   --column-items-2: 1fr;
@@ -140,10 +141,23 @@ a:hover,
 }
 button {
   color: var(--color);
-  padding: 6px 8px;
+  padding: var(--padding-input);
   background: var(--color-item-background);
   border: 1px solid var(--color-border-highlight);
   border-radius: var(--border-radius-round);
+}
+input {
+  display: block;
+  width: 100%;
+  color: var(--color);
+  padding: var(--padding-input);
+  border-radius: var(--border-radius-round);
+  background: var(--color-background);
+  border: 1px solid var(--color-border-highlight);
+}
+input:focus {
+  outline: none;
+  border-color: var(--color-border-highlight);
 }
 body {
   scrollbar-width: thin;
