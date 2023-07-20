@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { INode } from 'src/app/interfaces/node.interface';
+import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -17,6 +18,7 @@ export class NodeComponent implements OnChanges {
   tooltipPlacement = 'bottom';
 
   constructor(
+    private readonly _debug: DebugService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
   ) {
@@ -37,9 +39,17 @@ export class NodeComponent implements OnChanges {
     this.hover = false;
   }
 
-  toggleNode(): void {
+  toggleNode(event: MouseEvent): void {
     if (!this.node.item) { return; }
     const item = this.node.item;
+
+
+    if (this._debug.copyNode) {
+      event.stopImmediatePropagation();
+      event.preventDefault();
+      this.copyDebug(this.node);
+      return;
+    }
 
     // Unlock (or lock) based on the item status.
     const unlock = !item.unlocked;
@@ -53,6 +63,22 @@ export class NodeComponent implements OnChanges {
 
     // Notify listeners.
     this._eventService.toggleItem(item);
+  }
+
+  copyDebug(node: INode): void {
+    const data = {
+      nw: !!node.nw,
+      n: !!node.n,
+      ne: !!node.ne,
+      item: node.item?.guid,
+      c: node.c,
+      h: node.h,
+      sc: node.sc,
+      sh: node.sh,
+      ac: node.ac,
+      ec: node.ec,
+    };
+    navigator.clipboard.writeText(JSON.stringify(data));
   }
 
   unlockItem(): void {

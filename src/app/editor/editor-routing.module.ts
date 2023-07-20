@@ -4,12 +4,14 @@ import { EditorDashboardComponent } from './components/dashboard/editor-dashboar
 import { EditorTravelingSpiritComponent } from './components/editor-traveling-spirit/editor-traveling-spirit.component';
 import { EditorTreeComponent } from './components/editor-tree/editor-tree.component';
 import { EditorShopComponent } from './components/editor-shop/editor-shop.component';
+import { EditorItemComponent } from './components/editor-item/editor-item.component';
 
 const routes: Routes = [
   { path: '', component: EditorDashboardComponent },
   { path: 'ts', component: EditorTravelingSpiritComponent },
   { path: 'tree', component: EditorTreeComponent },
   { path: 'shop', component: EditorShopComponent },
+  { path: 'item', component: EditorItemComponent },
 ];
 
 @NgModule({

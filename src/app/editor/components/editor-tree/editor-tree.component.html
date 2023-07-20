@@ -13,24 +13,25 @@
         (click)="toggleConnection(node, 'ne')">NE</div>
 
       <div>
-        Item<br/><input (input)="itemInputChanged($event, i)">
-        <select class="mono" [(ngModel)]="node.item">
-          <option value=""></option>
-          <option *ngFor="let option of itemOptions" [value]="option.guid">
-            {{ option.name }}
-            <span>
-              <ng-container *ngIf="option.level">({{option.level}})</ng-container>
-            </span>
-            <span>({{ option.guid }})</span>
-          </option>
-        </select>
+        <div class="d-inline-block">{{node.itemRef?.name || ''}}&nbsp;</div>
+        <div class="d-inline-block "><b *ngIf="node.item" (click)="copyNodeToClipboard(node)">{{node.item}}</b></div>
+
+        <input (input)="itemInputChanged($event, i)" (keydown)="itemInputEnter($event, i)">
       </div>
 
-      <div>
-        Cost<br/>
-        C:<input class="cost" type="number" [(ngModel)]="node.c">
-        H:<input class="cost" type="number" [(ngModel)]="node.h">
-        AC:<input class="cost" type="number" [(ngModel)]="node.ac">
+      <div class="mt-1">
+        <mat-icon svgIcon="candle"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.c">
+        <mat-icon svgIcon="heart"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.h">
+        <mat-icon svgIcon="candle" class="seasonal"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.sc">
+        <mat-icon svgIcon="heart" class="seasonal"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.sh">
+        <mat-icon svgIcon="ascended-candle"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.ac">
+        <mat-icon svgIcon="ticket" [inline]="false"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.ec">
       </div>
     </div>
   </div>

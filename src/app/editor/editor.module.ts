@@ -6,17 +6,21 @@ import { EditorTravelingSpiritComponent } from './components/editor-traveling-sp
 import { FormsModule } from '@angular/forms';
 import { EditorTreeComponent } from './components/editor-tree/editor-tree.component';
 import { EditorShopComponent } from './components/editor-shop/editor-shop.component';
+import { EditorItemComponent } from './components/editor-item/editor-item.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     EditorDashboardComponent,
     EditorTravelingSpiritComponent,
     EditorTreeComponent,
-    EditorShopComponent
+    EditorShopComponent,
+    EditorItemComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    MatIconModule,
     EditorRoutingModule
   ]
 })
