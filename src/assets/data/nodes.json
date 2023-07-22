@@ -14752,6 +14752,123 @@
       "sc": 3
     },
     // #endregion
+    // #region Ascetic Monk
+    {
+      "guid": "BiYQCvfbCi",
+      "item": "VASzthgEAN",
+      "nw": "XFdTm_SNX9",
+      "n": "yLL5TgdWma"
+    },
+    {
+      "guid": "XFdTm_SNX9",
+      "item": "PkVcGrnkjj"
+    },
+    {
+      "guid": "yLL5TgdWma",
+      "item": "SRiKVsKG8i",
+      "sc": 6,
+      "nw": "Q2i3DDjrJ_",
+      "n": "Ct1bCNldM4"
+    },
+    {
+      "guid": "Q2i3DDjrJ_",
+      "item": "aU8YW34Cau"
+    },
+    {
+      "guid": "Ct1bCNldM4",
+      "item": "3Kwn4gx5Sw",
+      "sc": 18,
+      "nw": "CkGWQjiM7G",
+      "n": "Frls00Mrx6"
+    },
+    {
+      "guid": "CkGWQjiM7G",
+      "item": "bZBOWw8mZD"
+    },
+    {
+      "guid": "Frls00Mrx6",
+      "item": "jC14SXIUVC",
+      "sc": 26,
+      "nw": "8n_SNiqgTh",
+      "n": "n_z6MLECA6"
+    },
+    {
+      "guid": "8n_SNiqgTh",
+      "item": "fy4bnUxzOX"
+    },
+    {
+      "guid": "n_z6MLECA6",
+      "item": "6OKxFB9NFg",
+      "sc": 32,
+      "nw": "KWMynKMNRn",
+      "n": "05LgfKpSLL"
+    },
+    {
+      "guid": "KWMynKMNRn",
+      "item": "VNMvBdmw24"
+    },
+    {
+      "guid": "05LgfKpSLL",
+      "item": "AylwqeZPDJ",
+      "sc": 3
+    },
+    // #endregion
+    // #region Nightbird Whisperer
+    {
+      "guid": "m08hmEsLt4",
+      "item": "7j3bbradN0",
+      "n": "x0EFx1BiqD"
+    },
+    {
+      "guid": "x0EFx1BiqD",
+      "item": "ygFxGKMla2",
+      "sc": 12,
+      "nw": "r2KQ9lLUaj",
+      "n": "uJG7U2FFYf"
+    },
+    {
+      "guid": "r2KQ9lLUaj",
+      "item": "yT9McjxgAb"
+    },
+    {
+      "guid": "uJG7U2FFYf",
+      "item": "R3MB6a6ATI",
+      "sc": 24,
+      "nw": "0-Itmsp_gF",
+      "n": "a6U0IaxtXi"
+    },
+    {
+      "guid": "0-Itmsp_gF",
+      "item": "uh-hCG0TaB"
+    },
+    {
+      "guid": "a6U0IaxtXi",
+      "item": "InwVEtmmcp",
+      "sc": 28,
+      "nw": "Uxi7ugWClS",
+      "n": "rbworvhgX6"
+    },
+    {
+      "guid": "Uxi7ugWClS",
+      "item": "5J7MR1HC1a"
+    },
+    {
+      "guid": "rbworvhgX6",
+      "item": "H3tjnno3A8",
+      "sc": 36,
+      "nw": "i6F-hfKsyn",
+      "n": "mJCTs19whf"
+    },
+    {
+      "guid": "i6F-hfKsyn",
+      "item": "yFMhqJAJL5"
+    },
+    {
+      "guid": "mJCTs19whf",
+      "item": "4iahXDrqQd",
+      "sc": 3
+    },
+    // #endregion
     // #endregion
 
     // #region Days of Fortune (2021)

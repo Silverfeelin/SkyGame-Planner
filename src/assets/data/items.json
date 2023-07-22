@@ -11087,6 +11087,138 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
     },
     // #endregion
+    // #region Ascetic Monk
+    {
+      "guid": "VASzthgEAN",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "PkVcGrnkjj",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "SRiKVsKG8i",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "aU8YW34Cau",
+      "type": "Mask",
+      "name": "Ascetic Monk Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Ascetic-Monk-Mask-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "3Kwn4gx5Sw",
+      "type": "Hair",
+      "name": "Ascetic Monk Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Ascetic-Monk-Hair-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "bZBOWw8mZD",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "jC14SXIUVC",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "fy4bnUxzOX",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "6OKxFB9NFg",
+      "type": "Outfit",
+      "name": "Ascetic Monk Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Ascetic-Monk-Outfit-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "VNMvBdmw24",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "AylwqeZPDJ",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    },
+    // #endregion
+    // #region Nightbird Whisperer
+    {
+      "guid": "7j3bbradN0",
+      "type": "Call",
+      "name": "Nightbird Call",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Nightbird-Whisperer-Call-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "ygFxGKMla2",
+      "type": "Hair",
+      "name": "Nightbird Whisperer Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Nightbird-Whisperer-Hair-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "yT9McjxgAb",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "R3MB6a6ATI",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "uh-hCG0TaB",
+      "type": "Hat",
+      "name": "Nightbird Whisperer Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nightbird-Whisperer-Head-accessory-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "InwVEtmmcp",
+      "type": "Outfit",
+      "name": "Nightbird Whisperer Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Nightbird-Whisperer-Outfit-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "5J7MR1HC1a",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "H3tjnno3A8",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "yFMhqJAJL5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nightbird-Whisperer-Footwear-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "4iahXDrqQd",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    },
+    // #endregion
     // #endregion
 
     // #region Days of Fortune

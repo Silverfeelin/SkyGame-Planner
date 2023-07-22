@@ -1588,6 +1588,25 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist"
       }
     },
+    {
+      "guid": "EMMZ8KSCjP",
+      "type": "Season",
+      "name": "Ascetic Monk",
+      "tree": "QxacM-TYol",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk"
+      }
+    },
+    {
+      "guid": "vdv3KApSxB",
+      "type": "Season",
+      "name": "Nightbird Whisperer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Nightbird-Whisperer-Spirit-cutout.png",
+      "tree": "jj9mjfGi30",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer"
+      }
+    },
     // #endregion
 
     // #region Events
