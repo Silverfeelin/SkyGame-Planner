@@ -6361,6 +6361,8 @@ var ItemType;
   ItemType["Necklace"] = "Necklace";
   /** All cosmetics in the pants category. */
   ItemType["Outfit"] = "Outfit";
+  /** All cosmetics in the boots category. */
+  ItemType["Boots"] = "Boots";
   /** All cosmetics in the cape category. */
   ItemType["Cape"] = "Cape";
   /** All musical instruments in the held category. */
