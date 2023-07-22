@@ -2162,7 +2162,7 @@
     // #endregion
 
     // #region Season Guides
-    // Gratitude Guide
+    // #region Gratitude Guide
     {
       "guid": "jav8BsPwoS",
       "item": "-InWbdW4EP",
@@ -2172,7 +2172,8 @@
       "guid": "UlZx8WcHeb",
       "item": "kHq2VDev2Y"
     },
-    // Lightseekers Guide
+    // #endregion
+    // #region Lightseekers Guide
     {
       "guid": "ow2YTE45OX",
       "item": "jYGGefMrlS",
@@ -2182,7 +2183,8 @@
       "guid": "j32mxvIF5N",
       "item": "2o3CEU9QhM"
     },
-    // Belonging Guide
+    // #endregion
+    // #region Belonging Guide
     {
       "guid": "xG-_J9ehcK",
       "item": "CmonO-Vfc4",
@@ -2193,7 +2195,8 @@
       "item": "LtrFT8BOI9",
       "sh": 6
     },
-    // Rhythm Guide
+    // #endregion
+    // #region Rhythm Guide
     {
       "guid": "gahXCMXhRk",
       "item": "Xbz7dLYzOi",
@@ -2210,7 +2213,8 @@
       "item": "wXiFi4y6YU",
       "sh": 4
     },
-    // Enchantment Guide
+    // #endregion
+    // #region Enchantment Guide
     {
       "guid": "kt2WO262jv",
       "item": "TX3Mc_wTaK",
@@ -2298,7 +2302,8 @@
       "item": "EUVtYtLoeB",
       "sh": 4
     },
-    // Sanctuary Guide
+    // #endregion
+    // #region Sanctuary Guide
     {
       "guid": "Fv3eD2B046",
       "item": "agaCWhY93E",
@@ -2386,7 +2391,8 @@
       "item": "OPjLSqWOhA",
       "sh": 3
     },
-    // Prophecy Guide
+    // #endregion
+    // #region Prophecy Guide
     {
       "guid": "CRDwOv02Yn",
       "item": "C__QqZMFNy",
@@ -2452,7 +2458,8 @@
       "item": "GYWFafVVd_",
       "sh": 2
     },
-    // Dreams Guide
+    // #endregion
+    // #region Dreams Guide
     {
       "guid": "E6A7ecGOwR",
       "item": "IEocuR75Kz",
@@ -2529,7 +2536,8 @@
       "item": "w1EkwcgG88",
       "sh": 2
     },
-    // Assembly Guide
+    // #endregion
+    // #region Assembly Guide
     {
       "guid": "dBH2AWEdO9",
       "item": "srvkkR75YW",
@@ -2650,7 +2658,8 @@
       "guid": "Ji2B6vFsuJ",
       "item": "ZdKPdWs2xL"
     },
-    // The Rose
+    // #endregion
+    // #region The Rose
     {
       "guid": "2D-adfJXBK",
       "item": "wR4TWPuEyR",
@@ -2756,7 +2765,8 @@
       "item": "mABAiqym_P",
       "sh": 2
     },
-    // Flight Guide
+    // #endregion
+    // #region Flight Guide
     {
       "guid": "Tviv_8P0R_",
       "item": "TI-CpaXFhK",
@@ -2838,7 +2848,8 @@
       "item": "SxX0bNDJaR",
       "sh": 2
     },
-    // Abyss Guide
+    // #endregion
+    // #region Abyss Guide
     {
       "guid": "xns82LP3Gt",
       "item": "q_hFj239P3",
@@ -2922,7 +2933,8 @@
       "item": "zYUN2fkYOQ",
       "sh": 1
     },
-    // Performance Guide
+    // #endregion
+    // #region Performance Guide
     {
       "guid": "VIzdFH49NS",
       "item": "372sosqEJH",
@@ -3051,7 +3063,8 @@
       "item": "Lw93RiDG46",
       "sh": 1
     },
-    // The Void of Shattering
+    // #endregion
+    // #region The Void of Shattering
     {
       "guid": "jodai-lqNE",
       "item": "vfm49a5KVd",
@@ -3145,7 +3158,8 @@
       "item": "1IhlCcq61j",
       "sh": 2
     },
-    // AURORA Guide
+    // #endregion
+    // #region AURORA Guide
     {
       "guid": "NlJnO3uHyG",
       "item": "YXvxchiY37",
@@ -3296,6 +3310,7 @@
       "item": "Gp3p9OdxMA",
       "sh": 1
     },
+    // #endregion
     // #region Remembrance Guide
     {
       "guid": "N8gfMfr2VV",
@@ -3559,6 +3574,55 @@
       "guid": "RAzgLPfsBN",
       "item": "9mhT-2bV4K",
       "c": 52
+    },
+    // #endregion
+    // #region Moments Guide
+    {
+      "guid": "bWmPbtc36n",
+      "item": "K_OhSP_gST",
+      "nw": "nla9RZusTP",
+      "n": "V0aNfjCk_Z",
+      "ne": "AsJwsdTjU4"
+    },
+    {
+      "guid": "AsJwsdTjU4",
+      "item": "RtX7BAaov2",
+      "ne": "9tzFO12e02"
+    },
+    {
+      "guid": "9tzFO12e02",
+      "item": "lbckL2aX2B",
+      "n": "VQzAr7Sh76"
+    },
+    {
+      "guid": "VQzAr7Sh76",
+      "item": "DS5QeApzvs",
+      "sh": 1,
+      "n": "b6cfikXL46"
+    },
+    {
+      "guid": "b6cfikXL46",
+      "item": "W-3Nh_yWGv",
+      "sh": 2,
+      "n": "vRNYKRs1OX"
+    },
+    {
+      "guid": "vRNYKRs1OX",
+      "item": "nBg1iBLlGM",
+      "sh": 1
+    },
+    {
+      "guid": "nla9RZusTP",
+      "item": "PXOxK5ZTiw"
+    },
+    {
+      "guid": "V0aNfjCk_Z",
+      "item": "bZLp8uDLBH",
+      "nw": "z7PRDaD43u"
+    },
+    {
+      "guid": "z7PRDaD43u",
+      "item": "IncDUgOVKU"
     },
     // #endregion
     // #endregion
@@ -12258,7 +12322,7 @@
       "item": "k0po-n3Zem",
       "c": 48
     },
-    // Gloating Narcissist
+    // #region Gloating Narcissist
     {
       "guid": "xT68D-1o-1",
       "item": "qcsiXdqfGT",
@@ -12318,6 +12382,72 @@
       "item": "FwEOtz5Dti",
       "sc": 3
     },
+    // TS 92
+    {
+      "guid": "fDGRn9D-OD",
+      "item": "qcsiXdqfGT",
+      "nw": "OSFMlptEWp",
+      "n": "du7IYsZPPD",
+      "ne": "qvgFciC9bE"
+    },
+    {
+      "guid": "OSFMlptEWp",
+      "item": "qcsiXdqfGT",
+      "h": 4
+    },
+    {
+      "guid": "qvgFciC9bE",
+      "item": "7Gw70uLjM6",
+      "c": 3
+    },
+    {
+      "guid": "du7IYsZPPD",
+      "item": "NWaw3Mjl-W",
+      "c": 5,
+      "nw": "XMZDXOlZMG",
+      "n": "CZvfLqa3-_",
+      "ne": "R8Xp3ogGYG"
+    },
+    {
+      "guid": "XMZDXOlZMG",
+      "item": "IlbDThInaP",
+      "c": 15
+    },
+    {
+      "guid": "R8Xp3ogGYG",
+      "item": "8PpkvJHDLx",
+      "c": 46
+    },
+    {
+      "guid": "CZvfLqa3-_",
+      "item": "4VUhcjR1wd",
+      "ac": 2,
+      "n": "eLdpAde-jN"
+    },
+    {
+      "guid": "eLdpAde-jN",
+      "item": "XhRW44vwiq",
+      "h": 3,
+      "nw": "7XH5j8EQ6R",
+      "n": "GBnFs8elWY"
+    },
+    {
+      "guid": "7XH5j8EQ6R",
+      "item": "g-tnZqaKbi",
+      "h": 6
+    },
+    {
+      "guid": "GBnFs8elWY",
+      "item": "VLGb7wljbi",
+      "c": 5,
+      "n": "S3gaY9qAdC"
+    },
+    {
+      "guid": "S3gaY9qAdC",
+      "item": "O6DreyTJS7",
+      "c": 65
+    },
+    // #endregion
     // Stretching Lamplighter
     {
       "guid": "5jVf4BFkJD",
@@ -14499,6 +14629,247 @@
       "sc": 3
     },
     // #endregion
+    // #region Moments
+    // #region Reassuring Ranger
+    {
+      "guid": "9oV5mmsmWT",
+      "item": "DLJd5rdOFB",
+      "nw": "NXiZm5Jk6l",
+      "n": "0PHcnV_j-G"
+    },
+    {
+      "guid": "NXiZm5Jk6l",
+      "item": "qwdvtBnaPL"
+    },
+    {
+      "guid": "0PHcnV_j-G",
+      "item": "YCHk6Fvi12",
+      "sc": 16,
+      "nw": "fS-dZ609qx",
+      "n": "rWAmz2UQzG"
+    },
+    {
+      "guid": "fS-dZ609qx",
+      "item": "LFU_2aPHk8"
+    },
+    {
+      "guid": "rWAmz2UQzG",
+      "item": "3m-6xEWbtg",
+      "sc": 26,
+      "nw": "FyoWZtp9Nr",
+      "n": "tw-Zz-a51Y"
+    },
+    {
+      "guid": "FyoWZtp9Nr",
+      "item": "g_PxUjAXIJ"
+    },
+    {
+      "guid": "tw-Zz-a51Y",
+      "item": "CvnVKxfWdq",
+      "sc": 30,
+      "nw": "O1M-Znedi9",
+      "n": "LxOQhLgcBg"
+    },
+    {
+      "guid": "O1M-Znedi9",
+      "item": "JSnhIHtrE5"
+    },
+    {
+      "guid": "LxOQhLgcBg",
+      "item": "ldRJqNu7QX",
+      "sc": 36,
+      "nw": "uwHawqWL9a",
+      "n": "MIoG47BbGJ"
+    },
+    {
+      "guid": "uwHawqWL9a",
+      "item": "W42gdCa79_"
+    },
+    {
+      "guid": "MIoG47BbGJ",
+      "item": "GzNoAzbA_0",
+      "sc": 3
+    },
+    // #endregion
+    // #region Jolly Geologist
+    {
+      "guid": "o4BiBgXh33",
+      "item": "X8TxVCwAoY",
+      "nw": "FQ7qu-F-Ie",
+      "n": "nPlBrW84qt"
+    },
+    {
+      "guid": "FQ7qu-F-Ie",
+      "item": "zPG9h4NM2q"
+    },
+    {
+      "guid": "nPlBrW84qt",
+      "item": "eesH4ixwlq",
+      "sc": 8,
+      "nw": "H-YVKJwuMK",
+      "n": "G3Uyqwg-41"
+    },
+    {
+      "guid": "H-YVKJwuMK",
+      "item": "cXuwp1MnHZ"
+    },
+    {
+      "guid": "G3Uyqwg-41",
+      "item": "5_eEcizGMw",
+      "sc": 20,
+      "nw": "bZlgoUjzYr",
+      "n": "K_rVAvT6-U"
+    },
+    {
+      "guid": "bZlgoUjzYr",
+      "item": "xlEzjV6XFr"
+    },
+    {
+      "guid": "K_rVAvT6-U",
+      "item": "t8vsyexQQz",
+      "sc": 28,
+      "nw": "2OoMEagNva",
+      "n": "NbOstIgvmK"
+    },
+    {
+      "guid": "2OoMEagNva",
+      "item": "BmakKYb2wG"
+    },
+    {
+      "guid": "NbOstIgvmK",
+      "item": "1T0D06zFUX",
+      "sc": 34,
+      "nw": "K36g_5MoE9",
+      "n": "Bb-9MVW6Zt"
+    },
+    {
+      "guid": "K36g_5MoE9",
+      "item": "hE65fn-mBH"
+    },
+    {
+      "guid": "Bb-9MVW6Zt",
+      "item": "VsraqNSiML",
+      "sc": 3
+    },
+    // #endregion
+    // #region Ascetic Monk
+    {
+      "guid": "BiYQCvfbCi",
+      "item": "VASzthgEAN",
+      "nw": "XFdTm_SNX9",
+      "n": "yLL5TgdWma"
+    },
+    {
+      "guid": "XFdTm_SNX9",
+      "item": "PkVcGrnkjj"
+    },
+    {
+      "guid": "yLL5TgdWma",
+      "item": "SRiKVsKG8i",
+      "sc": 6,
+      "nw": "Q2i3DDjrJ_",
+      "n": "Ct1bCNldM4"
+    },
+    {
+      "guid": "Q2i3DDjrJ_",
+      "item": "aU8YW34Cau"
+    },
+    {
+      "guid": "Ct1bCNldM4",
+      "item": "3Kwn4gx5Sw",
+      "sc": 18,
+      "nw": "CkGWQjiM7G",
+      "n": "Frls00Mrx6"
+    },
+    {
+      "guid": "CkGWQjiM7G",
+      "item": "bZBOWw8mZD"
+    },
+    {
+      "guid": "Frls00Mrx6",
+      "item": "jC14SXIUVC",
+      "sc": 26,
+      "nw": "8n_SNiqgTh",
+      "n": "n_z6MLECA6"
+    },
+    {
+      "guid": "8n_SNiqgTh",
+      "item": "fy4bnUxzOX"
+    },
+    {
+      "guid": "n_z6MLECA6",
+      "item": "6OKxFB9NFg",
+      "sc": 32,
+      "nw": "KWMynKMNRn",
+      "n": "05LgfKpSLL"
+    },
+    {
+      "guid": "KWMynKMNRn",
+      "item": "VNMvBdmw24"
+    },
+    {
+      "guid": "05LgfKpSLL",
+      "item": "AylwqeZPDJ",
+      "sc": 3
+    },
+    // #endregion
+    // #region Nightbird Whisperer
+    {
+      "guid": "m08hmEsLt4",
+      "item": "7j3bbradN0",
+      "n": "x0EFx1BiqD"
+    },
+    {
+      "guid": "x0EFx1BiqD",
+      "item": "ygFxGKMla2",
+      "sc": 12,
+      "nw": "r2KQ9lLUaj",
+      "n": "uJG7U2FFYf"
+    },
+    {
+      "guid": "r2KQ9lLUaj",
+      "item": "yT9McjxgAb"
+    },
+    {
+      "guid": "uJG7U2FFYf",
+      "item": "R3MB6a6ATI",
+      "sc": 24,
+      "nw": "0-Itmsp_gF",
+      "n": "a6U0IaxtXi"
+    },
+    {
+      "guid": "0-Itmsp_gF",
+      "item": "uh-hCG0TaB"
+    },
+    {
+      "guid": "a6U0IaxtXi",
+      "item": "InwVEtmmcp",
+      "sc": 28,
+      "nw": "Uxi7ugWClS",
+      "n": "rbworvhgX6"
+    },
+    {
+      "guid": "Uxi7ugWClS",
+      "item": "5J7MR1HC1a"
+    },
+    {
+      "guid": "rbworvhgX6",
+      "item": "H3tjnno3A8",
+      "sc": 36,
+      "nw": "i6F-hfKsyn",
+      "n": "mJCTs19whf"
+    },
+    {
+      "guid": "i6F-hfKsyn",
+      "item": "yFMhqJAJL5"
+    },
+    {
+      "guid": "mJCTs19whf",
+      "item": "4iahXDrqQd",
+      "sc": 3
+    },
+    // #endregion
+    // #endregion
 
     // #region Days of Fortune (2021)
     {
@@ -15275,6 +15646,78 @@
     },
     {
       "guid": "5WhXdwgjfI",
+      "item": "Xbb3BpzDZT",
+      "h": 20
+    },
+    // #endregion
+    // #region Sky Anniversary (2023)
+    {
+      "guid": "Eeq1DptgjA",
+      "item": "wHQI_tvpiL",
+      "nw": "WwnfArj4x3",
+      "n": "x1HqwMRfnF",
+      "ne": "DHjjBDBSPb"
+    },
+    {
+      "guid": "WwnfArj4x3",
+      "item": "9jMnZ23AYP",
+      "h": 10
+    },
+    {
+      "guid": "DHjjBDBSPb",
+      "item": "dLtGhTPX8z",
+      "ec": 8
+    },
+    {
+      "guid": "x1HqwMRfnF",
+      "item": "FjtQU-Da97",
+      "c": 2,
+      "nw": "nVKLueSGgf",
+      "n": "ejnPGbXlRV",
+      "ne": "urdqDRIfi3"
+    },
+    {
+      "guid": "nVKLueSGgf",
+      "item": "ktsAnnjGgb",
+      "c": 20
+    },
+    {
+      "guid": "urdqDRIfi3",
+      "item": "9jISGFNSLT",
+      "ec": 46
+    },
+    {
+      "guid": "ejnPGbXlRV",
+      "item": "MWjOfJMKoO",
+      "c": 4,
+      "nw": "aoPxXjJ91K",
+      "n": "Leo9rWU0dZ",
+      "ne": "mZCq3fzRji"
+    },
+    {
+      "guid": "aoPxXjJ91K",
+      "item": "ADtwifMcnN",
+      "c": 20
+    },
+    {
+      "guid": "mZCq3fzRji",
+      "item": "BQi3QIoOwq",
+      "ec": 46
+    },
+    {
+      "guid": "Leo9rWU0dZ",
+      "item": "gkRaYwffnu",
+      "c": 4,
+      "nw": "WJvrh21HT_",
+      "n": "r7T2vjFSqQ"
+    },
+    {
+      "guid": "WJvrh21HT_",
+      "item": "8A96KlMPQC",
+      "c": 30
+    },
+    {
+      "guid": "r7T2vjFSqQ",
       "item": "Xbb3BpzDZT",
       "h": 20
     },
