@@ -4202,6 +4202,61 @@
       "order": 2703
     },
     // #endregion
+    // #region Moments Guide
+    {
+      "guid": "K_OhSP_gST",
+      "type": "Held",
+      "name": "Camera",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Moments-Guide-Prop-Camera-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "PXOxK5ZTiw",
+      "type": "Special",
+      "name": "Prairie Caves Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "bZLp8uDLBH",
+      "type": "Quest",
+      "name": "Quest 1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "IncDUgOVKU",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    // Moments Ultimates
+    {
+      "guid": "lbckL2aX2B",
+      "type": "Necklace",
+      "name": "Moments Pendant",
+      "group": "Ultimate",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Season-of-Moments-icon.png"
+    },
+    {
+      "guid": "DS5QeApzvs",
+      "type": "Mask",
+      "name": "Moments Ultimate Glasses",
+      "group": "Ultimate",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Moments-Guide-Head-accessory-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "W-3Nh_yWGv",
+      "type": "Held",
+      "name": "Moments Ultimate Camera",
+      "group": "Ultimate",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Moments-Guide-Prop-Ultimate-Camera-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "nBg1iBLlGM",
+      "type": "Hat",
+      "name": "Moments Ultimate Hat",
+      "group": "Ultimate",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Moments-Guide-Ultimate-Hair-accessory-icon-Credit-Morybel.png"
+    },
+    // #endregion
     // #endregion
 
     // #region Gratitude
@@ -8394,6 +8449,18 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
+    {
+      "guid": "7Gw70uLjM6",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "4VUhcjR1wd",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
     // #endregion
     // #region Stretching Lamplighter
     {
@@ -10876,6 +10943,283 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
     },
     // #endregion
+    // #region Moments
+    // #region Reassuring Ranger
+    {
+      "guid": "DLJd5rdOFB",
+      "type": "Emote",
+      "name": "Side Hug",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "qwdvtBnaPL",
+      "type": "Emote",
+      "name": "Side Hug",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "YCHk6Fvi12",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "LFU_2aPHk8",
+      "type": "Necklace",
+      "name": "Reassuring Ranger Face Accessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Head-accessory-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "3m-6xEWbtg",
+      "type": "Mask",
+      "name": "Reassuring Ranger Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Reassuring-Ranger-Mask-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "g_PxUjAXIJ",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "CvnVKxfWdq",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "JSnhIHtrE5",
+      "type": "Cape",
+      "name": "Reassuring Ranger Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Reassuring-Ranger-Cape-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "ldRJqNu7QX",
+      "type": "Hat",
+      "name": "Reassuring Ranger Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Reassuring-Ranger-Hair-accessory-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "W42gdCa79_",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "GzNoAzbA_0",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    },
+    // #endregion
+    // #region Jolly Geologist
+    {
+      "guid": "X8TxVCwAoY",
+      "type": "Emote",
+      "name": "Jolly Dance",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "zPG9h4NM2q",
+      "type": "Emote",
+      "name": "Jolly Dance",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "eesH4ixwlq",
+      "type": "Necklace",
+      "name": "Jolly Geologist Face Accessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Jolly-Geologist-Head-accessory-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "cXuwp1MnHZ",
+      "type": "Hair",
+      "name": "Jolly Geologist Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Jolly-Geologist-Hair-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "5_eEcizGMw",
+      "type": "Emote",
+      "name": "Jolly Dance",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "xlEzjV6XFr",
+      "type": "Emote",
+      "name": "Jolly Dance",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "t8vsyexQQz",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "BmakKYb2wG",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "1T0D06zFUX",
+      "type": "Music",
+      "name": "Music Sheet 37",
+      "sheet": 37,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+    },
+    {
+      "guid": "hE65fn-mBH",
+      "type": "Prop",
+      "name": "Jolly Geologist Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Jolly-Geologist-Prop-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "VsraqNSiML",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    },
+    // #endregion
+    // #region Ascetic Monk
+    {
+      "guid": "VASzthgEAN",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "PkVcGrnkjj",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "SRiKVsKG8i",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "aU8YW34Cau",
+      "type": "Mask",
+      "name": "Ascetic Monk Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Ascetic-Monk-Mask-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "3Kwn4gx5Sw",
+      "type": "Hair",
+      "name": "Ascetic Monk Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Ascetic-Monk-Hair-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "bZBOWw8mZD",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "jC14SXIUVC",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 3,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "fy4bnUxzOX",
+      "type": "Emote",
+      "name": "Blindfold Balance Pose",
+      "level": 4,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "6OKxFB9NFg",
+      "type": "Outfit",
+      "name": "Ascetic Monk Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Ascetic-Monk-Outfit-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "VNMvBdmw24",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "AylwqeZPDJ",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    },
+    // #endregion
+    // #region Nightbird Whisperer
+    {
+      "guid": "7j3bbradN0",
+      "type": "Call",
+      "name": "Nightbird Call",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Nightbird-Whisperer-Call-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "ygFxGKMla2",
+      "type": "Hair",
+      "name": "Nightbird Whisperer Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Nightbird-Whisperer-Hair-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "yT9McjxgAb",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "R3MB6a6ATI",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "uh-hCG0TaB",
+      "type": "Hat",
+      "name": "Nightbird Whisperer Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nightbird-Whisperer-Head-accessory-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "InwVEtmmcp",
+      "type": "Outfit",
+      "name": "Nightbird Whisperer Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Nightbird-Whisperer-Outfit-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "5J7MR1HC1a",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "H3tjnno3A8",
+      "type": "Special",
+      "name": "Special Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    },
+    {
+      "guid": "yFMhqJAJL5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nightbird-Whisperer-Footwear-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "4iahXDrqQd",
+      "type": "Special",
+      "name": "Season Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    },
+    // #endregion
+    // #endregion
 
     // #region Days of Fortune
     {
@@ -11614,6 +11958,43 @@
       "name": "Sky Anniversary Confetti Launcher",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Days-of-Sky-2022-canon-icon-Morybel-0146.png",
       "order": 4201
+    },
+    // 2023
+    {
+      "guid": "gkRaYwffnu",
+      "type": "Spell",
+      "name": "Medium Birthday Cake",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "dEWiCE1-6D",
+      "name": "Oreo Plush",
+      "type": "Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Sky-Anniversary-Oreo-prop-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "wHQI_tvpiL",
+      "type": "Special",
+      "name": "Office Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "guid": "dLtGhTPX8z",
+      "name": "4 Year Sky Anniversary Hat",
+      "type": "Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "9jISGFNSLT",
+      "name": "Sky Anniversary Musical Shell",
+      "type": "Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Sky-Anniversary-Musical-shell-prop-icon-Morybel-0146.png"
+    },
+    {
+      "guid": "BQi3QIoOwq",
+      "name": "Sky Anniversary Disco Light",
+      "type": "Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sky-Anniversary-Disco-Light-Prop-icon-Morybel-0146.png"
     },
     // #endregion
     // #region Days of Mischief

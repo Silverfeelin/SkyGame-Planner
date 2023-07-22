@@ -317,6 +317,11 @@
       "guid": "LrH-L-oKn1",
       "node": "dSSO_hBPjf"
     },
+    // Moments Guide
+    {
+      "guid": "DFxVkg9lpF",
+      "node": "bWmPbtc36n"
+    },
     // #endregion
 
     // #region Gratitude
@@ -998,6 +1003,10 @@
       "guid": "G8NMsyrbeV",
       "node": "xT68D-1o-1"
     },
+    {
+      "guid": "H-X89atUtF",
+      "node": "fDGRn9D-OD"
+    },
     // Stretching Lamplighter
     {
       "guid": "tGROdiGKVT",
@@ -1189,6 +1198,28 @@
       "node": "caUGXMJb3Z"
     },
     // #endregion
+    // #region Moments
+    // Reassuring Ranger
+    {
+      "guid": "AfSb4eiW7H",
+      "node": "9oV5mmsmWT"
+    },
+    // Jolly Geologist
+    {
+      "guid": "C6mpLeVi_m",
+      "node": "o4BiBgXh33"
+    },
+    // Ascetic Monk
+    {
+      "guid": "QxacM-TYol",
+      "node": "BiYQCvfbCi"
+    },
+    // Nightbird Whisperer
+    {
+      "guid": "jj9mjfGi30",
+      "node": "m08hmEsLt4"
+    },
+    // #endregion
 
     // #region Days of Fortune
     // Days of Fortune (2021)
@@ -1313,6 +1344,11 @@
     {
       "guid": "SzK6rWR3nd",
       "node": "gwVoKjjsPr"
+    },
+    // Sky Anniversary 2023
+    {
+      "guid": "JDrrgPjDCY",
+      "node": "Eeq1DptgjA"
     },
     // #endregion
     // #region Lazy Days

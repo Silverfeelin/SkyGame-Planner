@@ -3,15 +3,15 @@
 </div>
 
 <div class="card container mt-2">
-  <h2 class="h3">{{ spirit.name }}</h2>
+  <h2 class="h3 mb-0">{{ spirit.name }}</h2>
   <!-- Wiki link -->
   <div *ngIf="spirit._wiki?.href" class="wiki">
     <a [href]="spirit._wiki!.href" target="_blank">
       <mat-icon fontIcon="question_mark"></mat-icon>
     </a>
   </div>
-  <div class="container-flex spirit-img">
-    <img *ngIf="spirit.imageUrl" [src]="spirit.imageUrl" [alt]="spirit.name" />
+  <div *ngIf="spirit.imageUrl" class="container-flex spirit-img mt-2">
+    <img [src]="spirit.imageUrl" [alt]="spirit.name" />
   </div>
 </div>
 

@@ -333,10 +333,22 @@
           "spirits": [
             { "guid": "V4S-zpi_yY", "spirit": "mYOzGrzNHU", "tree": "SzK6rWR3nd" }
           ]
+        },
+        {
+          "guid": "edzNCG6Irb",
+          // July 17 to 30, 2023
+          "date": { "day": 17, "month": 7, "year": 2023 },
+          "endDate": { "day": 30, "month": 7, "year": 2023 },
+          "spirits": [
+            { "guid": "8r_2g1eTMp", "spirit": "mYOzGrzNHU", "tree": "JDrrgPjDCY" }
+          ],
+          "shops": [
+            "RCDqXv4la1"
+          ]
         }
       ],
       "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary"
       }
     },
     // Days of Sunlight

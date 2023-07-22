@@ -5,6 +5,7 @@ import { Injectable, NgZone } from "@angular/core";
 })
 export class DebugService {
   private _copyItem = false;
+  private _copyNode = false;
   private _copyShop = false;
 
   constructor(
@@ -21,6 +22,17 @@ export class DebugService {
 
   get copyItem(): boolean {
     return this._copyItem;
+  }
+
+  // copyNode
+  set copyNode(value: boolean) {
+    this._zone.run(() => {
+      this._copyNode = !!value;
+    });
+  }
+
+  get copyNode(): boolean {
+    return this._copyNode;
   }
 
   set copyShop(value: boolean) {

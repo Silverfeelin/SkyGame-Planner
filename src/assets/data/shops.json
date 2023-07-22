@@ -400,6 +400,15 @@
       ]
     },
     // #endregion
+    // #region Sky Anniversary (2023)
+    {
+      "guid": "RCDqXv4la1",
+      "type": "store",
+      "iaps": [
+        "HYun7FYMGn"
+      ]
+    },
+    // #endregion
     // #region Lazy Days (2022)
     {
       "guid": "txCjbkOUCb",

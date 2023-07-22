@@ -29,7 +29,6 @@
         (click)="toggleConnection(node, 'ne')">NE</div>
 
       <div>
-        Item<br/>
         <select class="mono" [(ngModel)]="node.item">
           <option value=""></option>
           <option *ngFor="let option of itemOptions" [value]="option.guid">
@@ -43,10 +42,12 @@
       </div>
 
       <div>
-        Cost<br/>
-        C:<input class="cost" type="number" [(ngModel)]="node.c">
-        H:<input class="cost" type="number" [(ngModel)]="node.h">
-        AC:<input class="cost" type="number" [(ngModel)]="node.ac">
+        <mat-icon svgIcon="candle"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.c">
+        <mat-icon svgIcon="heart"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.h">
+        <mat-icon svgIcon="ascended-candle"></mat-icon>
+        <input class="cost" type="number" [(ngModel)]="node.ac">
       </div>
     </div>
   </div>

@@ -682,6 +682,16 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide"
       }
     },
+    {
+      "guid": "PN_V8C4WOq",
+      "type": "Guide",
+      "name": "Moments Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Moments-Ultimate-Guide.png",
+      "tree": "DFxVkg9lpF",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide"
+      }
+    },
     // #endregion
 
     // #region Gratitude
@@ -1555,6 +1565,46 @@
       "tree": "qdWXiEhm46",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever"
+      }
+    },
+    // #endregion
+    // #region Moments
+    {
+      "guid": "jh-fGKllmH",
+      "type": "Season",
+      "name": "Reassuring Ranger",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Reassuring-Ranger-Spirit-cutout.png",
+      "tree": "AfSb4eiW7H",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger"
+      }
+    },
+    {
+      "guid": "6EywAKsW_z",
+      "type": "Season",
+      "name": "Jolly Geologist",
+      "tree": "C6mpLeVi_m",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist"
+      }
+    },
+    {
+      "guid": "EMMZ8KSCjP",
+      "type": "Season",
+      "name": "Ascetic Monk",
+      "tree": "QxacM-TYol",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk"
+      }
+    },
+    {
+      "guid": "vdv3KApSxB",
+      "type": "Season",
+      "name": "Nightbird Whisperer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Nightbird-Whisperer-Spirit-cutout.png",
+      "tree": "jj9mjfGi30",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer"
       }
     },
     // #endregion

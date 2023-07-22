@@ -1,0 +1,10 @@
+Name
+<input type="text" class="form-control" placeholder="Name" [(ngModel)]="name">
+Type
+<select class="form-control" [(ngModel)]="type">
+  <option *ngFor="let option of typeOptions">{{option}}</option>
+</select>
+Icon
+<input type="text" class="form-control" placeholder="Icon" [(ngModel)]="icon">
+
+<button type="button" class="btn btn-primary" (click)="generate()">Generate</button>

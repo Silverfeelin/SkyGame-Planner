@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import fuzzysort from 'fuzzysort';
 import moment from 'moment';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -17,10 +18,14 @@ interface IFormNode {
   ne?: boolean
 
   item?: string;
+  itemRef?: IItem;
 
   c?: number;
   h?: number;
+  sc?: number;
+  sh?: number;
   ac?: number;
+  ec?: number;
 }
 
 @Component({
@@ -78,12 +83,37 @@ export class EditorTreeComponent implements OnInit {
     const target = (event.target as HTMLInputElement);
     const value = target?.value as string;
     if (!value) { return; }
+
+    const jsonNode = this.getNodeFromJson(value);
+    if (jsonNode) {
+      this.formNodes[i] = jsonNode;
+      return;
+    }
+
     const item = this._dataService.guidMap.get(value) as IItem;
     if (!item) { return; }
-    target.value = '';
 
     this.formNodes[i].item = item.guid;
+    this.formNodes[i].itemRef = item;
+
+    target.value = '';
     target.blur();
+  }
+
+  itemInputEnter(event: KeyboardEvent, i: number): void {
+    if (event.key !== 'Enter') { return; }  // Only handle enter key
+
+    const target = (event.target as HTMLInputElement);
+    const value = target?.value as string;
+    if (!value) { return; }
+    const results = fuzzysort.go(value, this.itemOptions, { key: 'name', limit: 1 });
+    const item = results?.[0].obj as IItem;
+    if (!item) { return; }
+
+    this.formNodes[i].item = item.guid;
+    this.formNodes[i].itemRef = item;
+
+    target.value = '';
   }
 
   submit(): void {
@@ -137,9 +167,13 @@ export class EditorTreeComponent implements OnInit {
     const defineNode = (i: number, node: INode) => {
       formNodes[i] = {
         item: node.item?.guid,
+        itemRef: node.item,
         c: node.c,
         h: node.h,
         ac: node.ac,
+        ec: node.ec,
+        sc: node.sc,
+        sh: node.sh,
         n: !!node.n,
         nw: !!node.nw,
         ne: !!node.ne
@@ -154,6 +188,24 @@ export class EditorTreeComponent implements OnInit {
     defineNode(i, mainNode);
 
     return formNodes;
+  }
+
+  copyNodeToClipboard(node: IFormNode): void {
+    const n = {...node};
+    delete n.itemRef;
+
+    navigator.clipboard.writeText(JSON.stringify(n));
+  }
+
+  getNodeFromJson(json: string): IFormNode | undefined {
+    try {
+      const node = JSON.parse(json) as IFormNode;
+      if (node.item) {
+        node.itemRef = this._dataService.guidMap.get(node.item) as IItem;
+      }
+
+      return node;
+    } catch { return undefined; }
   }
 
   formNodeToNodes(node?: INode, i = 22): INode {
@@ -202,7 +254,10 @@ export class EditorTreeComponent implements OnInit {
       item: this.itemOptions.find(i => i.guid === formNode.item),
       c: formNode.c,
       h: formNode.h,
-      ac: formNode.ac
+      ac: formNode.ac,
+      ec: formNode.ec,
+      sc: formNode.sc,
+      sh: formNode.sh
     };
   }
 
