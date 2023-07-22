@@ -44,8 +44,8 @@ export enum ItemType {
   Necklace = 'Necklace',
   /** All cosmetics in the pants category. */
   Outfit = 'Outfit',
-  /** All cosmetics in the boots category. */
-  Boots = 'Boots',
+  /** All cosmetics in the shoes category. */
+  Shoes = 'Shoes',
   /** All cosmetics in the cape category. */
   Cape = 'Cape',
   /** All musical instruments in the held category. */
