@@ -13,7 +13,7 @@
       <ng-container *ngFor="let row of rows">
         <tr>
           <ng-container *ngFor="let column of columns; let ci = index;">
-            <td [class.fit]="headers?.[ci]?.fit" [style.textAlign]="headers?.[ci]?.textAlign">
+            <td>
               <ng-container [ngTemplateOutlet]="column.template" [ngTemplateOutletContext]="{row}"></ng-container>
             </td>
           </ng-container>

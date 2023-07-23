@@ -3,7 +3,8 @@
 </div>
 <div class="card p-0 mt-2">
   <app-table [rows]="rows">
-    <ng-template [appTableHeader]>#</ng-template>
+    <ng-template [appTableHeader] [fit]="true">#</ng-template>
+    <ng-template [appTableHeader] [fit]="true" [textAlign]="'center'"></ng-template>
     <ng-template [appTableHeader]>Spirit</ng-template>
     <ng-template [appTableHeader]>Date</ng-template>
     <ng-template [appTableHeader]>Visit</ng-template>
@@ -11,6 +12,11 @@
 
     <ng-template [appTableColumn] let-row="row">
       {{ row.number }}
+    </ng-template>
+    <ng-template [appTableColumn] let-row="row">
+      <div class="spirit-img t-center">
+        <app-icon *ngIf="row.spirit.imageUrl" [src]="row.spirit.imageUrl" [width]="'auto'" [lazy]="true"></app-icon>
+      </div>
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
       <a [routerLink]="['/spirit', row.spiritGuid]" [queryParams]="{ highlightTree: row.treeGuid }">
