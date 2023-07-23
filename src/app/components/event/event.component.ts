@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import dayjs from 'dayjs';
+import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -9,8 +11,8 @@ interface IRow {
   name: string;
   year: number;
   guid: string;
-  date: Date;
-  endDate: Date;
+  date: dayjs.Dayjs;
+  endDate: dayjs.Dayjs;
   iaps: number;
   returningIaps: number;
   spirits: number;
@@ -34,7 +36,7 @@ export class EventComponent implements OnInit {
     private readonly _dataService: DataService,
     private readonly _route: ActivatedRoute
   ) {
-    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
+    this.dateFormat = DateHelper.displayFormat;
   }
 
   ngOnInit(): void {
@@ -74,10 +76,10 @@ export class EventComponent implements OnInit {
       return {
         number: i+1,
         name: this.event.name,
-        year: (instance.date as Date).getFullYear(),
+        year: instance.date.year(),
         guid: instance.guid,
-        date: instance.date as Date,
-        endDate: instance.endDate as Date,
+        date: instance.date,
+        endDate: instance.endDate,
         iaps,
         returningIaps,
         spirits: instance.spirits?.length ?? 0,

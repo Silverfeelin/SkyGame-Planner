@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DateHelper } from 'src/app/helpers/date-helper';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -11,6 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 export class SeasonsComponent implements OnInit {
   seasons!: Array<ISeason>;
   reverseSeasons!: Array<ISeason>;
+  currentSeason?: ISeason;
 
   years: Array<number> = [];
   yearMap!: { [year: number]: Array<ISeason> };
@@ -30,6 +32,11 @@ export class SeasonsComponent implements OnInit {
     this.spiritCount = {};
     for (let i = this.seasons.length -1; i >= 0; i--) {
       const season = this.seasons[i];
+
+      if (!this.currentSeason && DateHelper.isActive(season.date, season.endDate)) {
+        this.currentSeason = season;
+      }
+
       if (season.year < year) {
         year = season.year;
         this.years.push(year);

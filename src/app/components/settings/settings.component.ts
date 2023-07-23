@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { StorageService } from 'src/app/services/storage.service';
 import { ThemeService } from 'src/app/services/theme.service';
 import { DataService } from 'src/app/services/data.service';
+import { DateHelper } from 'src/app/helpers/date-helper';
 
 @Component({
   selector: 'app-settings',
@@ -11,8 +12,9 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SettingsComponent {
   unlockedCount: number;
-  today = new Date();
+  today = dayjs();
   dateFormat: string;
+  dateFormats: Array<string>;
 
   constructor(
     private readonly _dataService: DataService,
@@ -20,7 +22,8 @@ export class SettingsComponent {
     private readonly _themeService: ThemeService
   ) {
     this.unlockedCount = this._storageService.unlocked.size;
-    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
+    this.dateFormats = DateHelper.displayFormats;
+    this.dateFormat = DateHelper.displayFormat;
   }
 
   export(): void {
@@ -36,7 +39,7 @@ export class SettingsComponent {
       url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `SkyPlanner_${moment().format('YYYY-MM-DD')}.json`;
+      link.download = `SkyPlanner_${dayjs().format('YYYY-MM-DD')}.json`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -102,6 +105,7 @@ export class SettingsComponent {
 
   setDateFormat(format: string): void {
     this.dateFormat = format;
-    localStorage.setItem('date.format', this.dateFormat);
+    DateHelper.displayFormat = format;
+    localStorage.setItem('date.format', format);
   }
 }

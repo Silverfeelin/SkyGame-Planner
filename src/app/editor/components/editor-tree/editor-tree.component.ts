@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import fuzzysort from 'fuzzysort';
-import moment from 'moment';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataJsonService } from 'src/app/services/data-json.service';
 import { DataService } from 'src/app/services/data.service';
 

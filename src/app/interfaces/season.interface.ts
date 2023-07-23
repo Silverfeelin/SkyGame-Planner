@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { IConfig, IGuid } from "./base.interface";
 import { IShop } from "./shop.interface";
 import { ISpirit } from "./spirit.interface";
@@ -20,9 +21,9 @@ export interface ISeason extends IGuid {
   year: number;
 
   /** Start date of the season. */
-  date: Date | string;
+  date: dayjs.Dayjs;
   /** Inclusive end date of the season. */
-  endDate: Date | string;
+  endDate: dayjs.Dayjs;
 
   /** Season number, starting at 1 for Gratitude. */
   number: number;

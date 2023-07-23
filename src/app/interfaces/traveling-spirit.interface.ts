@@ -2,14 +2,15 @@ import { IConfig, IGuid } from "./base.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { IDate } from "./date.interface";
 import { ISpirit } from "./spirit.interface";
+import dayjs from 'dayjs';
 
 export interface ITravelingSpiritConfig extends IConfig<ITravelingSpirit> {}
 
 export interface ITravelingSpirit extends IGuid {
   /** First day of TS visit. */
-  date: Date | IDate;
+  date: dayjs.Dayjs;
   /** Last day of TS visit. */
-  endDate: Date | IDate;
+  endDate: dayjs.Dayjs;
 
   /** Traveling Spirit number, starting at 1 for the first TS visit. */
   number: number;

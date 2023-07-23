@@ -31,6 +31,7 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SearchComponent } from './components/search/search.component';
+import { DayjsPipe } from './pipes/dayjs.pipe';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SearchComponent } from './components/search/search.component';
     ShopsComponent,
     WingBuffsComponent,
     SettingsComponent,
-    SearchComponent
+    SearchComponent,
+    DayjsPipe
   ],
   imports: [
     BrowserModule,

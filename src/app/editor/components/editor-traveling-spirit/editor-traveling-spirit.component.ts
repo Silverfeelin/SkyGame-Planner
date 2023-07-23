@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
@@ -49,8 +49,8 @@ export class EditorTravelingSpiritComponent {
         .filter(s => s.type === 'Season')
         .sort((a, b) => a.name.localeCompare(b.name));
 
-      const lastDate = dataService.travelingSpiritConfig.items.at(-1)?.date as Date;
-      this.date = moment(lastDate).add(2, 'weeks').isoWeekday(4).format('YYYY-MM-DD');
+      const lastDate = dataService.travelingSpiritConfig.items.at(-1)!.date!;
+      this.date = lastDate.add(2, 'weeks').isoWeekday(4).format('YYYY-MM-DD');
 
       this.formNodes = [];
       for (let i = 0; i < 24; i++) { this.formNodes.push({
@@ -114,10 +114,11 @@ export class EditorTravelingSpiritComponent {
     };
 
     // Create ts
+    const date = dayjs(new Date(this.date!));
     const ts: ITravelingSpirit = {
       guid: nanoid(10),
-      date: new Date(this.date!),
-      endDate: moment(this.date).add(4, 'days').toDate(),
+      date: date,
+      endDate: date.add(4, 'days'),
       spirit,
       tree,
       number: this.tsCount + 1,
@@ -155,15 +156,6 @@ export class EditorTravelingSpiritComponent {
       }
     }
     return undefined;
-  }
-
-  getNextThursday(): Date {
-    const now = moment();
-
-    now.isoWeekday(4);
-    if (now.isoWeek() % 2 === 0) { now.add(7, 'days'); }
-
-    return now.toDate();
   }
 
   nodeToFormNodes(mainNode: INode): Array<IFormNode> {

@@ -1,5 +1,5 @@
+import dayjs from 'dayjs';
 import { IConfig, IGuid } from "./base.interface";
-import { IDate } from "./date.interface";
 import { IShop } from "./shop.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { ISpirit } from "./spirit.interface";
@@ -23,8 +23,8 @@ export interface IEvent extends IGuid {
 }
 
 export interface IEventInstance extends IGuid {
-  date: Date | IDate;
-  endDate: Date | IDate;
+  date: dayjs.Dayjs;
+  endDate: dayjs.Dayjs;
 
   /** Event instance number starting at 1. */
   number: number;

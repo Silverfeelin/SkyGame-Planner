@@ -7,7 +7,7 @@
   <h2 class="h3 mb">Recurring events</h2>
   <div class="container-inner">
     <div class="grid grid-4">
-      <div class="card p-rel" *ngFor="let event of recurring; let i = index;">
+      <div class="card p-rel" *ngFor="let event of recurring; let i = index;" [class.active]="currentEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
@@ -19,14 +19,12 @@
   <h2 class="h3">Past events</h2>
   <div class="container-inner">
     <div class="grid grid-3">
-      <div class="card p-rel" *ngFor="let event of old; let i = index;">
+      <div class="card p-rel" *ngFor="let event of old; let i = index;" [class.active]="currentEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
   </div>
 </div>
-
-
 
 <ng-template #eventDiv let-event>
   <h2 class="h3">{{ event.name }}</h2>
@@ -52,7 +50,7 @@
     <mat-icon class="menu-icon" fontIcon="schedule"></mat-icon>
     <span class="menu-label">
       Most recent
-      <span class="c-accent">({{ $any(lastInstances[event.guid]).date | date:'yyyy' }})</span>
+      <span class="c-accent">({{ $any(lastInstances[event.guid]).date | dayjs:'YYYY' }})</span>
     </span>
   </a>
 </ng-template>

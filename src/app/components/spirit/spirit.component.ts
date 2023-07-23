@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import dayjs from 'dayjs';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
 interface ITree {
-  date?: Date;
+  date?: dayjs.Dayjs;
   name: string;
   tree: ISpiritTree;
 }
@@ -43,7 +44,7 @@ export class SpiritComponent {
     // Sort TS and returns by date.
     const ts = (this.spirit.ts || []).map(ts => {
       return {
-        date: ts.date as Date,
+        date: ts.date,
         name: 'Traveling Spirit #' + ts.number,
         tree: ts.tree
       };
@@ -51,14 +52,14 @@ export class SpiritComponent {
 
     const visits = (this.spirit.returns || []).map((v, vi) => {
       return {
-        date: v.return.date as Date,
+        date: v.return.date,
         name: v.return.name || 'Visit #' + (vi+1),
         tree: v.tree
       };
     });
 
     const sortedTrees = ts.concat(visits);
-    sortedTrees.sort((a, b) => b.date.getTime() - a.date.getTime());
+    sortedTrees.sort((a, b) => b.date.diff(a.date));
 
     this.trees = sortedTrees;
     if (this.spirit.tree) {

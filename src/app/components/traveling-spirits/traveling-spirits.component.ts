@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
 
@@ -14,7 +15,7 @@ export class TravelingSpiritsComponent {
   constructor(
     private readonly _dataService: DataService
   ) {
-    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
+    this.dateFormat = DateHelper.displayFormat;
     this.rows = this._dataService.travelingSpiritConfig.items.map(ts => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;

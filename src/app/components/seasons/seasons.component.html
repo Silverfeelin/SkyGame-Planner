@@ -17,7 +17,7 @@
     <h2 class="h3 mb-0">{{year}}</h2>
   </div>
   <div class="grid grid-2 mt-2">
-    <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;">
+    <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;" [class.active]="season === currentSeason">
       <h2 class="h3">
         <img class="season-icon season-icon-medium" [src]="season.iconUrl" />
         {{ season.name }}
