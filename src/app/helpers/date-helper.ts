@@ -1,14 +1,43 @@
+import dayjs from 'dayjs';
 import { IDate } from "../interfaces/date.interface";
 
 export class DateHelper {
-  static fromInterface(date: Date | IDate): Date | undefined {
-    if (!date) { return; }
-    if (date instanceof Date) { return date; }
-    return new Date(date.year, date.month - 1, date.day);
+  static displayFormat: string;
+  static displayFormats: Array<string> = [
+    'DD-MM-YYYY',
+    'MM/DD/YYYY',
+    'YYYY-MM-DD',
+  ];
+
+  static isActive(start: dayjs.Dayjs, end: dayjs.Dayjs): boolean {
+    const now = dayjs();
+    const s = dayjs.tz(start);
+    const e = dayjs.tz(end).add(1, 'day');
+
+    return now.isAfter(s) && now.isBefore(e);
   }
 
-  static fromString(date: string): Date | undefined {
+  static fromInterfaceLocal(date: IDate | dayjs.Dayjs): dayjs.Dayjs | undefined {
     if (!date) { return; }
-    return new Date(Date.parse(date));
+    if (dayjs.isDayjs(date)) { return date; }
+    return dayjs(`${date.year}-${date.month}-${date.day}`);
+  }
+
+  static fromInterfaceSky(date: IDate | dayjs.Dayjs): dayjs.Dayjs | undefined {
+    if (!date) { return; }
+    if (dayjs.isDayjs(date)) { return date; }
+    return dayjs.tz(`${date.year}-${date.month}-${date.day}`);
+  }
+
+  static fromStringLocal(date: string | dayjs.Dayjs): dayjs.Dayjs | undefined {
+    if (!date) { return; }
+    if (dayjs.isDayjs(date)) { return date; }
+    return dayjs(date);
+  }
+
+  static fromStringSky(date: string | dayjs.Dayjs): dayjs.Dayjs | undefined {
+    if (!date) { return; }
+    if (dayjs.isDayjs(date)) { return date; }
+    return dayjs.tz(date);
   }
 }

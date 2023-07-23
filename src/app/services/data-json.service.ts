@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { IItem } from '../interfaces/item.interface';
 import { INode } from '../interfaces/node.interface';
 import { ISpiritTree } from '../interfaces/spirit-tree.interface';
@@ -14,10 +14,10 @@ export class DataJsonService {
 
   travelingSpiritsToJson(ts: Array<ITravelingSpirit>): string {
     return this.stringify(ts.map(ts => {
-      const date = moment(ts.date);
+      const d = ts.date;
       return {
         guid: ts.guid,
-        date: { day: date.date(), month: date.month() + 1, year: date.year() },
+        date: { day: d.date(), month: d.month() + 1, year: d.year() },
         spirit: ts.spirit.guid,
         tree: ts.tree.guid
       };

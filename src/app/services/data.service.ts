@@ -12,15 +12,16 @@ import { IQuestConfig } from '../interfaces/quest.interface';
 import { IRealmConfig } from '../interfaces/realm.interface';
 import { ISeasonConfig } from '../interfaces/season.interface';
 import { IShop, IShopConfig } from '../interfaces/shop.interface';
-import { ISpirit, ISpiritConfig, SpiritType } from '../interfaces/spirit.interface'
+import { ISpirit, ISpiritConfig } from '../interfaces/spirit.interface'
 import { ITravelingSpiritConfig } from '../interfaces/traveling-spirit.interface';
 import { IWingedLight, IWingedLightConfig } from '../interfaces/winged-light.interface';
-import moment, { Moment } from 'moment';
 import { DateHelper } from '../helpers/date-helper';
 import { StorageService } from './storage.service';
 import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
 import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
+import dayjs from 'dayjs';
+import { IDate } from '../interfaces/date.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -141,8 +142,8 @@ export class DataService {
   private initializeSeasons(): void {
     this.seasonConfig.items.forEach((season, i) => {
       season.number = i + 1;
-      season.date = DateHelper.fromString(season.date as string)!;
-      season.endDate = DateHelper.fromString(season.endDate as string)!;
+      season.date = DateHelper.fromStringSky(season.date)!;
+      season.endDate = DateHelper.fromStringSky(season.endDate)!;
 
       // Map Spirits to Season.
       season.spirits?.forEach((spirit, si) => {
@@ -175,10 +176,9 @@ export class DataService {
     const tsCounts: {[key: string]: number} = {};
     this.travelingSpiritConfig.items.forEach((ts, i) => {
       // Initialize dates
-      ts.date = DateHelper.fromInterface(ts.date)!;
-      ts.endDate = DateHelper.fromInterface(ts.endDate)
-        ?? moment(ts.date).add(3, 'day').toDate();
-      ts.endDate = moment(ts.endDate).endOf('day').toDate();
+      ts.date = DateHelper.fromInterfaceSky(ts.date)!;
+      ts.endDate = DateHelper.fromInterfaceSky(ts.endDate)?.endOf('day')
+        ?? dayjs(ts.date).add(3, 'day').endOf('day');
 
       // Map TS to Spirit.
       const spirit = this.guidMap.get(ts.spirit as any) as ISpirit;
@@ -201,9 +201,8 @@ export class DataService {
   private initializeReturningSpirits(): void {
     this.returningSpiritsConfig.items.forEach((rs, i) => {
       // Initialize dates
-      rs.date = DateHelper.fromInterface(rs.date)!;
-      rs.endDate = DateHelper.fromInterface(rs.endDate)!;
-      rs.endDate = moment(rs.endDate).endOf('day').toDate();
+      rs.date = DateHelper.fromInterfaceSky(rs.date)!;
+      rs.endDate = DateHelper.fromInterfaceSky(rs.endDate)!.endOf('day');
 
       // Map Visits.
       rs.spirits?.forEach((visit, si) => {
@@ -265,9 +264,8 @@ export class DataService {
         eventInstance.number = iInstance + 1;
 
         // Initialize dates
-        eventInstance.date = DateHelper.fromInterface(eventInstance.date)!;
-        eventInstance.endDate = DateHelper.fromInterface(eventInstance.endDate)!;
-        eventInstance.endDate = moment(eventInstance.endDate).endOf('day').toDate();
+        eventInstance.date = DateHelper.fromInterfaceSky(eventInstance.date)!;
+        eventInstance.endDate = DateHelper.fromInterfaceSky(eventInstance.endDate)!.endOf('day');
 
         // Map Instance to Event.
         eventInstance.event = event;

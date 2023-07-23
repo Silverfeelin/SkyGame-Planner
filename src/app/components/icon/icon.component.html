@@ -1,5 +1,5 @@
 <ng-container *ngIf="src">
   <img class="img" *ngIf="!isSvg" [src]="safeString || safeUrl"
-    [style.width]="width" [style.height]="height">
+    [style.width]="width" [style.height]="height" [attr.loading]="lazy ? 'lazy' : undefined">
   <mat-icon *ngIf="isSvg && safeString" [svgIcon]="safeString"></mat-icon>
 </ng-container>

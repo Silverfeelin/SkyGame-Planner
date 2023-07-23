@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { IConfig, IGuid } from "./base.interface";
 import { IDate } from "./date.interface";
 import { IEventInstance } from "./event.interface";
@@ -14,8 +15,8 @@ export interface IShop extends IGuid {
   type: ShopType;
   name?: string;
 
-  date?: Date | IDate;
-  endDate?: Date | IDate;
+  date?: dayjs.Dayjs;
+  endDate?: dayjs.Dayjs;
 
   permanent?: boolean;
 

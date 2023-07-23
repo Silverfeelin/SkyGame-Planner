@@ -7,6 +7,8 @@ import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import dayjs from 'dayjs';
+import { DateHelper } from 'src/app/helpers/date-helper';
 
 @Component({
   selector: 'app-spirit-tree',
@@ -31,8 +33,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   totalCost!: ICost;
   remainingCost!: ICost;
 
-  tsDate?: Date;
-  rsDate?: Date;
+  tsDate?: dayjs.Dayjs;
+  rsDate?: dayjs.Dayjs;
 
   dateFormat: string;
 
@@ -43,7 +45,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef
   ) {
-    this.dateFormat = localStorage.getItem('date.format') || 'dd-MM-yyyy';
+    this.dateFormat = DateHelper.displayFormat;
   }
 
   ngAfterViewInit(): void {
@@ -58,8 +60,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.subscribeItemChanged();
       this.calculateRemainingCosts();
 
-      this.tsDate = this.tree.ts?.date instanceof Date ? this.tree.ts.date : undefined;
-      this.rsDate = this.tree.visit?.return?.date instanceof Date ? this.tree.visit.return.date : undefined;
+      this.tsDate = this.tree.ts?.date;
+      this.rsDate = this.tree.visit?.return?.date;
     }
   }
 

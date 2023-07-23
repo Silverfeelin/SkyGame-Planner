@@ -4,6 +4,11 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
 import { ThemeService } from './services/theme.service';
 import { Router } from '@angular/router';
+import dayjs from 'dayjs';
+import * as utc from 'dayjs/plugin/utc';
+import * as isoWeek from 'dayjs/plugin/isoWeek';
+import * as timezone from 'dayjs/plugin/timezone';
+import { DateHelper } from './helpers/date-helper';
 
 @Component({
   selector: 'app-root',
@@ -23,12 +28,28 @@ export class AppComponent {
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });
     this._themeService.init();
+    this.initDisplayDate();
 
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
     window.addEventListener('storage', () => {
       this.dataLoss = true;
     });
+
+    dayjs.extend(utc.default);
+    dayjs.extend(isoWeek.default);
+    dayjs.extend(timezone.default);
+
+    dayjs.tz.setDefault('America/Los_Angeles');
+
+    (window as any).dayjs = dayjs;
+  }
+
+  initDisplayDate(): void {
+    DateHelper.displayFormat = localStorage.getItem('date.format') || '';
+    if (!DateHelper.displayFormat || !DateHelper.displayFormats.includes(DateHelper.displayFormat)) {
+      DateHelper.displayFormat = DateHelper.displayFormats[0];
+    }
   }
 
   onData(): void {

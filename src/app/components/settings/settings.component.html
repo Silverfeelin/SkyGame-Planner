@@ -62,14 +62,8 @@
     </div>
   </div>
   <div class="container-flex mt-2">
-    <button [class.active]="dateFormat === 'dd-MM-yyyy'" type="button" class="item" (click)="setDateFormat('dd-MM-yyyy')">
-      {{ today | date:'dd-MM-yyyy' }}
-    </button>
-    <button [class.active]="dateFormat === 'MM/dd/yyyy'" type="button" class="item" (click)="setDateFormat('MM/dd/yyyy')">
-      {{ today | date:'MM/dd/yyyy' }}
-    </button>
-    <button [class.active]="dateFormat === 'yyyy-MM-dd'" type="button" class="item" (click)="setDateFormat('yyyy-MM-dd')">
-      {{ today | date:'yyyy-MM-dd' }}
+    <button *ngFor="let format of dateFormats" [class.active]="dateFormat === format" type="button" class="item" (click)="setDateFormat(format)">
+      {{ today | dayjs:format }}
     </button>
   </div>
 </div>

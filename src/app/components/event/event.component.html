@@ -23,10 +23,10 @@
       {{ row.year }}
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
-      {{ row.date | date:dateFormat }}
+      {{ row.date | dayjs:dateFormat }}
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
-      {{ row.endDate | date:dateFormat }}
+      {{ row.endDate | dayjs:dateFormat }}
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
       {{ row.spirits }}

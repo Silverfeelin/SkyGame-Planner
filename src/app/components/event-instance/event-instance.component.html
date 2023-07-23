@@ -1,7 +1,7 @@
 <div class="card container">
   <h1 class="h2 mb-0">
     {{ instance.event.name }}
-    <span class="c-accent">{{ $any(instance.date) | date:'yyyy' }}</span>
+    <span class="c-accent">{{ instance.date | dayjs:'yyyy' }}</span>
   </h1>
 </div>
 
