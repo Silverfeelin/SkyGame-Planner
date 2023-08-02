@@ -63,7 +63,7 @@
   </div>
   <div class="container-flex mt-2">
     <button *ngFor="let format of dateFormats" [class.active]="dateFormat === format" type="button" class="item" (click)="setDateFormat(format)">
-      {{ today | dayjs:format }}
+      {{ format | lowercase }}
     </button>
   </div>
 </div>

@@ -5,8 +5,11 @@ export class DateHelper {
   static displayFormat: string;
   static displayFormats: Array<string> = [
     'DD-MM-YYYY',
+    'DD/MM/YYYY',
+    'MM-DD-YYYY',
     'MM/DD/YYYY',
     'YYYY-MM-DD',
+    'YYYY/MM/DD'
   ];
 
   static isActive(start: dayjs.Dayjs, end: dayjs.Dayjs): boolean {
