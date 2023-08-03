@@ -12007,7 +12007,8 @@
     },
     {
       "guid": "JEgYMfqHne",
-      "item": "VToGfUfrj1"
+      "item": "VToGfUfrj1",
+      "hiddenItems": ["_k3jPMWKOY"]
     },
     {
       "guid": "C5tGMZPgSy",
@@ -12076,6 +12077,7 @@
     {
       "guid": "-T6nNl3m7T",
       "item": "VToGfUfrj1",
+      "hiddenItems": ["_k3jPMWKOY"],
       "c": 65
     },
     {
@@ -14269,6 +14271,7 @@
     {
       "guid": "S0kW5aLVv2",
       "item": "eP_tdKr4R7",
+      "hiddenItems": ["2LXsbFTewq"],
       "sc": 36,
       "nw": "q96oSanWkm",
       "n": "bZER38vgLj"
