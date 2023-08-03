@@ -32,10 +32,12 @@ import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component
 import { SettingsComponent } from './components/settings/settings.component';
 import { SearchComponent } from './components/search/search.component';
 import { DayjsPipe } from './pipes/dayjs.pipe';
+import { RealmComponent } from './components/realm/realm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DayjsPipe,
     SpiritTreeComponent,
     NodeComponent,
     ItemComponent,
@@ -61,7 +63,7 @@ import { DayjsPipe } from './pipes/dayjs.pipe';
     WingBuffsComponent,
     SettingsComponent,
     SearchComponent,
-    DayjsPipe
+    RealmComponent
   ],
   imports: [
     BrowserModule,
