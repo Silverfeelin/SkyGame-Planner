@@ -10767,7 +10767,7 @@
       "c": 75
     },
     // #endregion
-    // Prophet of Fire
+    // #region Prophet of Fire
     {
       "guid": "joPtiDGThJ",
       "item": "-9bN5PmMbs",
@@ -10903,6 +10903,90 @@
       "item": "V9HhQcek_9",
       "c": 75
     },
+    // TS 93
+    {
+      "guid": "oX0jkbaHdf",
+      "item": "-9bN5PmMbs",
+      "nw": "c2D24QsPw7",
+      "n": "rmgiviyIUe",
+      "ne": "L-1x4eJPF7"
+    },
+    {
+      "guid": "c2D24QsPw7",
+      "item": "lv8aUui_2g",
+      "h": 4
+    },
+    {
+      "guid": "L-1x4eJPF7",
+      "item": "c3sT_itCFa",
+      "c": 15
+    },
+    {
+      "guid": "rmgiviyIUe",
+      "item": "g179e4N2B0",
+      "c": 5,
+      "nw": "UjxwpyPebb",
+      "n": "S6hHzSuxQv",
+      "ne": "_JU4bixDdB"
+    },
+    {
+      "guid": "UjxwpyPebb",
+      "item": "IRhRDSL-8R",
+      "c": 44
+    },
+    {
+      "guid": "_JU4bixDdB",
+      "item": "gUIFoHfDB3",
+      "c": 3
+    },
+    {
+      "guid": "S6hHzSuxQv",
+      "item": "sgNUEM3cDR",
+      "ac": 2,
+      "n": "pjEqRFxFPr"
+    },
+    {
+      "guid": "pjEqRFxFPr",
+      "item": "oWEC_F0xLY",
+      "h": 3,
+      "nw": "YdTzCw2ACX",
+      "n": "TLDoWfjbv_",
+      "ne": "WFyNMkH6-f"
+    },
+    {
+      "guid": "YdTzCw2ACX",
+      "item": "ofbkhI0JKU",
+      "h": 6
+    },
+    {
+      "guid": "WFyNMkH6-f",
+      "item": "lKskRU-rAW",
+      "c": 15
+    },
+    {
+      "guid": "TLDoWfjbv_",
+      "item": "MPV7Sn8MqR",
+      "c": 5,
+      "nw": "1_GcBErqUH",
+      "n": "Dwvn6YTyou",
+      "ne": "CxZSbV7PXd"
+    },
+    {
+      "guid": "1_GcBErqUH",
+      "item": "LMQrrhg9E8",
+      "c": 54
+    },
+    {
+      "guid": "CxZSbV7PXd",
+      "item": "pxqSrkf9NH",
+      "h": 13
+    },
+    {
+      "guid": "Dwvn6YTyou",
+      "item": "V9HhQcek_9",
+      "c": 75
+    },
+    // #endregion
     // #endregion
     // #region Dreams
     // Bearhug Hermit

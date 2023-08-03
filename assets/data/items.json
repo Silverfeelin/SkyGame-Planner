@@ -7436,9 +7436,15 @@
     {
       "guid": "pxqSrkf9NH",
       "type": "Prop",
-      "name": "Prophet of Fire Prop",
+      "name": "Prophet of Fire Cauldron",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Fire_of_Prophet_TS_cauldron.png",
       "order": 1101
+    },
+    {
+      "guid": "c3sT_itCFa",
+      "type": "Prop",
+      "name": "Prophet of Fire Sticker",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/SoProphecy-Prophet-of-Fire-Sticker-Prop-Icon-Ed.png"
     },
     // #endregion
     // #region Dreams
