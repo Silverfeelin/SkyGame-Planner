@@ -13,6 +13,11 @@
     </div>
     <!-- Image -->
     <div *ngIf="realm.imageUrl" class="p-rel img" [style.background-image]="'url('+realm.imageUrl+')'"></div>
+    <!-- Overview --> <!-- For now only show overview if realm has spirits. -->
+    <a *ngIf="spiritCount[realm.guid]" class="mt-2 item link" [routerLink]="['/realm', realm.guid]">
+      <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+      <span class="menu-label">Overview</span>
+    </a>
     <!-- Areas -->
     <!-- <div class="mt-2 item areas">
       Areas
