@@ -34,6 +34,12 @@
   </div>
 </div>
 
+<ng-template #discord>
+  <div class="d-inline-block">
+    <img class="img-discord" src="/assets/external/discord-mark-blue.svg" loading="lazy">
+  </div>
+</ng-template>
+
 <div class="container mt-2">
   <h2 class="h3">
     <mat-icon fontIcon="favorite"></mat-icon>
@@ -45,16 +51,39 @@
         Various assets such as icons are loaded directly from the
         <a href="https://sky-children-of-the-light.fandom.com/wiki/Sky:_Children_of_the_Light_Wiki" target="_blank">Sky:CotL Fandom wiki</a>.
       </p>
-      <p>
+      <p class="mb-0">
         This project only <i>links</i> to these original assets. For more information refer to
         <a href="https://www.fandom.com/licensing" target="_blank">Fandom licensing page</a>.<br/>
-        In particular many icons from the wiki are contributed to the wiki by Morybel#0146, Mimi#4117 and ray808080#6797.
+        In particular many icons from the wiki are contributed to the wiki by:
       </p>
+      <div class="flex-credits">
+        <div class="flex-credit">
+          <div class="credit-name">Morybel</div>
+          <div class="credit-handle">
+            <ng-container *ngTemplateOutlet="discord"></ng-container>
+            <span class="credit-handle-name">morybel</span>
+          </div>
+        </div>
+        <div class="flex-credit">
+          <div class="credit-name">Mimi</div>
+          <div class="credit-handle">
+            <ng-container *ngTemplateOutlet="discord"></ng-container>
+            <span class="credit-handle-name">mimi4117</span>
+          </div>
+        </div>
+        <div class="flex-credit">
+          <div class="credit-name">ray808080</div>
+          <div class="credit-handle">
+            <ng-container *ngTemplateOutlet="discord"></ng-container>
+            <span class="credit-handle-name">ray808080</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container-flex mt-2">
     <div class="ws-pl">
-      Some Traveling Spirit price corrections were made based on infographics by Jed#9275.
+      Some Traveling Spirit price corrections were made based on infographics by Jed#9275 (new Discord handle unknown).
     </div>
   </div>
   <div class="container-flex mt-2">
@@ -72,6 +101,6 @@
   <div class="container-flex mt-2">
     <div class="ws-pl">
       Thank you for the suggestions to improve Sky Planner:<br/>
-      Daw.
+      Daw, Morybel, oWishy <i><a href="https://github.com/Silverfeelin/SkyGame-Planner/issues?q=is%3Aissue" target="_blank">and more</a></i>.
   </div>
 </div>
