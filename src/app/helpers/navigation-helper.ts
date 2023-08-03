@@ -10,9 +10,11 @@ export interface INavigationTarget {
 export class NavigationHelper {
   /** Navigates to the source of the given item. */
   static getItemSource(item: IItem): INavigationTarget | undefined {
-    if (item.nodes?.length) {
+    if (item.nodes?.length || item.hiddenNodes?.length) {
       // Find spirit from last appearance of item.
-      const tree = NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree;
+      const tree = item?.nodes?.length
+        ? NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree
+        : NodeHelper.getRoot(item.hiddenNodes!.at(-1))?.spiritTree;
       const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
 
       const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;

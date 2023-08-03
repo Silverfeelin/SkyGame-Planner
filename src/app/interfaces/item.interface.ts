@@ -24,6 +24,8 @@ export interface IItem extends IGuid {
 
   /** Spirit tree nodes that unlock this item. */
   nodes?: Array<INode>;
+  /** Spirit tree nodes that unlock this item without showing the item. Generally ones added retroactively. */
+  hiddenNodes?: Array<INode>;
   /** IAPs that unlock this item. */
   iaps?: Array<IIAP>;
   /** Season the item was introduced in. */

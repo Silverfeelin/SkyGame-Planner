@@ -9,6 +9,9 @@ export interface INode extends IGuid, ICost {
   // #region References
   /** Item unlocked through this node. */
   item?: IItem;
+  /** Items unlocked through this node that are not visible in the node. Generally ones added retroactively. */
+  hiddenItems?: Array<IItem>;
+
   /**
    * Spirit tree containing this node.
    * @remarks Only the first node has this reference, other nodes have a reference to their `prev` node.

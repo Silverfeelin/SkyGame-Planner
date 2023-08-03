@@ -21,7 +21,7 @@ import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interfa
 import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
 import dayjs from 'dayjs';
-import { IDate } from '../interfaces/date.interface';
+import { CostHelper } from '../helpers/cost-helper';
 
 @Injectable({
   providedIn: 'root'
@@ -87,7 +87,7 @@ export class DataService {
 
     // Register all GUIDs.
     this.initializeGuids(configArray);
-    console.log(`Loaded ${configArray.length} configs.`);
+    console.debug(`Loaded ${configArray.length} configs.`);
 
     // Create object references.
     this.initializeRealms();
@@ -101,6 +101,9 @@ export class DataService {
     this.initializeShops();
     this.initializeItems();
     this.initializeSeasonItems();
+
+    // Save for any corrections made during init.
+    this._storageService.save();
 
     if (isDevMode()) {
       this.validate();
@@ -247,13 +250,32 @@ export class DataService {
 
     if (typeof node.item === 'string') {
       const item = this.guidMap.get(node.item as any) as IItem;
-      if (!item) { console.error('Item not found', node.item); }
+      if (!item) { console.error('Node item not found', node, node.item); }
       node.item = item;
       item.nodes ??= [];
       item.nodes.push(node);
     }
 
     node.unlocked = this._storageService.unlocked.has(node.guid);
+
+    if (node.hiddenItems?.length) {
+      node.hiddenItems.forEach((itemGuid, i) => {
+        if (typeof itemGuid !== 'string') return;
+        const item = this.guidMap.get(itemGuid as any) as IItem;
+        if (!item) { console.error('Node hidden item not found', node, itemGuid); }
+
+        node.hiddenItems![i] = item;
+        item.hiddenNodes ??= [];
+        item.hiddenNodes.push(node);
+
+        // Mark hidden item as unlocked.
+        if (node.unlocked) {
+          item.unlocked = true;
+          this._storageService.unlocked.add(item.guid);
+        }
+      });
+    }
+
     return node;
   }
 
@@ -319,6 +341,11 @@ export class DataService {
           iap.items![iItem] = item;
           item.iaps ??= [];
           item.iaps.push(iap);
+
+          if (iap.bought) {
+            item.unlocked = true;
+            this._storageService.unlocked.add(item.guid);
+          }
         });
       });
     });
@@ -359,8 +386,15 @@ export class DataService {
       returningSpiritsConfig: this.returningSpiritsConfig,
       wingedLightConfig: this.wingedLightConfig
     };
+
     (window as any).skyGuids = this.guidMap;
-    console.log('To view loaded data, see `skyData`.');
+    (window as any).NodeHelper = NodeHelper;
+    (window as any).DateHelper = DateHelper;
+    (window as any).CostHelper = CostHelper;
+
+    const c = 'color:cyan;';
+    console.log('To view loaded data, see %cwindow.skyData%c.', c, '');
+    console.log('You can also use the helpers %cNodeHelper%c, %cDateHelper%c and %cCostHelper%c.', c, '', c, '', c, '');
   }
 
   reloadUnlocked(): void {

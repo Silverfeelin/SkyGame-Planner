@@ -25,6 +25,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   left: Array<INode> = [];
   center: Array<INode> = [];
   right: Array<INode> = [];
+  hiddenItems: { [itemGuid: string]: INode } = {};
 
   hasCostAtRoot = false;
 
@@ -111,6 +112,11 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (node.nw) { this.initializeNode(node.nw, direction -1, level); }
     if (node.ne) { this.initializeNode(node.ne, direction + 1, level); }
     if (node.n) { this.initializeNode(node.n, direction, level + 1); }
+
+    // Store hidden items for highlighting.
+    if (node.hiddenItems?.length) {
+      node.hiddenItems.forEach(item => this.hiddenItems[item.guid] = node);
+    }
   }
 
   calculateRemainingCosts(): void {

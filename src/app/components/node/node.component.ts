@@ -83,28 +83,51 @@ export class NodeComponent implements OnChanges {
 
   unlockItem(): void {
     if (!this.node.item) { return; }
+    const guids: Array<string> = [];
 
     // Unlock the item.
     this.node.item.unlocked = true;
+    guids.push(this.node.item.guid);
+
     // Unlock the node to track costs. Other nodes are not unlocked but will appear unlocked by the item status.
     this.node.unlocked = true;
+    guids.push(this.node.guid);
+
+    // Unlock hidden items.
+    this.node.hiddenItems?.forEach(item => {
+      item.unlocked = true;
+      guids.push(item.guid);
+    });
 
     // Save data.
-    this._storageService.add(this.node.item.guid, this.node.guid);
+    this._storageService.add(...guids);
     this._storageService.save();
   }
 
   lockItem(): void {
     if (!this.node.item) { return; }
+    const guids: Array<string> = [];
 
-    // Remove unlock from item.
-    this.node.item.unlocked = false;
-    // Remove unlock from all nodes since the unlocked node might be from a different constellation.
-    const nodes = this.node.item.nodes || [];
-    nodes.forEach(n => n.unlocked = false);
+    // Get all associated items.
+    const hiddenItems = this.node.hiddenItems || [];
+    const items = [this.node.item, ...hiddenItems];
+
+    // Remove unlock from items.
+    for (const item of items) {
+      item.unlocked = false;
+      guids.push(item.guid);
+
+      // Remove unlock from all nodes that contain this item.
+      const nodes = item.nodes || [];
+      nodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
+
+      // Remove unlock from all hidden nodes that contain this item.
+      const hiddenNodes = item.hiddenNodes || [];
+      hiddenNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
+    }
 
     // Save data.
-    this._storageService.remove(this.node.item.guid, ...nodes?.map(n => n.guid));
+    this._storageService.remove(...guids);
     this._storageService.save();
   }
 }

@@ -104,7 +104,7 @@
         <app-item [item]="item" [showSubIcons]="true"
           (click)="openItem(item)"
           [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
-          [class.a]="item.nodes?.length || item.iaps?.length"
+          [class.a]="item.nodes?.length || item.hiddenNodes?.length || item.iaps?.length"
           [ngbTooltip]="item.name" container="body" placement="bottom" >
         </app-item>
         <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked" fontIcon="done"></mat-icon>
