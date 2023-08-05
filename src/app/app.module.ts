@@ -33,11 +33,13 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SearchComponent } from './components/search/search.component';
 import { DayjsPipe } from './pipes/dayjs.pipe';
 import { RealmComponent } from './components/realm/realm.component';
+import { ItemTypePipe } from './pipes/item-type.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DayjsPipe,
+    ItemTypePipe,
     SpiritTreeComponent,
     NodeComponent,
     ItemComponent,

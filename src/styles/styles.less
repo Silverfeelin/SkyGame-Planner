@@ -84,6 +84,7 @@ body { scrollbar-width: thin; }
 .ws-pl { white-space: pre-line !important; }
 .d-inline-block { display: inline-block !important; }
 .fw-bold { font-weight: bold !important; }
+.v-top { vertical-align: top !important; }
 
 // Global layout
 @import "flex.less";
@@ -102,6 +103,7 @@ p:last-child {
   color: var(--color-unlock-check-ref);
   opacity: 0;
   transition: opacity var(--animation-short);
+  pointer-events: none;
 
   &::before {
     filter: drop-shadow(0px 1px 0px var(--color-unlock-check-shadow));

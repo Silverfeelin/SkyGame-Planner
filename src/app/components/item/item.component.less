@@ -7,6 +7,11 @@
   height: var(--item-size);
 }
 
+:host.large {
+  width: var(--item-size-large);
+  height: var(--item-size-large);
+}
+
 .img {
   width: 100%;
   height: 100%;
@@ -14,7 +19,7 @@
   filter: drop-shadow(0 0 0 #0000);
 }
 
-:host:hover {
+:host.hoverable:hover {
   .img {
     transition: var(--animation-short);
     filter: drop-shadow(0 0 4px #fffa73);

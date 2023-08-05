@@ -41,4 +41,39 @@ export class NavigationHelper {
 
     return undefined;
   }
+
+  static getPreviewLink(item: IItem): string {
+    let type: string;
+    switch (item.type) {
+      case 'Hat': type = 'Hair_Accessories'; break;
+      case 'Hair': type = 'Hair'; break;
+      case 'Mask': type = 'Masks'; break;
+      //case 'FaceAccessory': type = 'Face_Accessories'; break;
+      case 'Necklace': type = 'Necklaces'; break;
+      case 'Outfit': type = 'Outfits'; break;
+      case 'Shoes': type = 'Shoes'; break;
+      case 'Cape': type = 'Capes'; break;
+      case 'Instrument': type = 'Props'; break;
+      case 'Held': type = 'Props'; break;
+      case 'Prop': type = 'Props'; break;
+      default: type = '';
+    }
+
+    if (!type) return '';
+    const url = new URL(`https://sky-children-of-the-light.fandom.com/wiki/${type}`);
+    const spirit = NodeHelper.getRoot(item.nodes?.at(-1) ?? item.hiddenNodes?.at(-1))?.spiritTree?.spirit;
+
+    // Select preview item automatically
+    if (spirit) {
+      url.searchParams.append('tabber-active', spirit.name);
+    } else {
+      url.searchParams.append('tabber-active', item.name);
+    }
+
+    // Jump to preview section.
+    url.hash = item.type === 'Held' || item.type === 'Instrument' ? 'Held_Props_Display'
+      : item.type === 'Prop' ? 'Placeable_Props_Display' : 'Display';
+
+    return url.toString();
+  }
 }

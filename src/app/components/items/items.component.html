@@ -101,14 +101,35 @@
     <ng-container *ngFor="let item of shownItems; let i = index">
       <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % columns) ? undefined : 'block'"></div>
       <div class="flex-item">
-        <app-item [item]="item" [showSubIcons]="true"
-          (click)="openItem(item)"
+        <app-item [item]="item" [showSubIcons]="true" class="a"
+          (click)="selectItem($event, item)"
+          [class.highlight]="item && item === selectedItem"
           [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
-          [class.a]="item.nodes?.length || item.hiddenNodes?.length || item.iaps?.length"
-          [ngbTooltip]="item.name" container="body" placement="bottom" >
+          [ngbTooltip]="item.name" container="body" placement="auto" >
         </app-item>
         <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked" fontIcon="done"></mat-icon>
       </div>
     </ng-container>
   </div>
+</div>
+
+<div #itemDiv [hidden]="!selectedItem" class="grid grid-1 item-info mt-2">
+  <ng-container *ngIf="selectedItem">
+    <div class="card">
+      <h2 class="h3">{{ selectedItem.name }}</h2>
+      <div class="info-grid">
+        <div class="flex-item flex-item-large info-grid-icon d-inline-block">
+          <app-item [item]="selectedItem" [large]="true" [hoverHighlight]="false"></app-item>
+        </div>
+        <a *ngIf="selectedItemNav" class="info-grid-find container-inner" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
+          <mat-icon class="menu-icon" fontIcon="search"></mat-icon>
+          <span class="menu-label">Find item</span>
+        </a>
+        <a *ngIf="previewHref" class="info-grid-find container-inner" [href]="previewHref" target="_blank">
+          <mat-icon class="menu-icon" fontIcon="visibility"></mat-icon>
+          <span class="menu-label">Preview</span>
+        </a>
+      </div>
+    </div>
+  </ng-container>
 </div>

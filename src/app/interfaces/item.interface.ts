@@ -42,6 +42,8 @@ export enum ItemType {
   Hair = 'Hair',
   /** All cosmetics in the mask category. */
   Mask = 'Mask',
+  /** All cosmetics in the face accessory category. */
+  FaceAccessory = 'FaceAccessory',
   /** All cosmetics in the nacklace category.*/
   Necklace = 'Necklace',
   /** All cosmetics in the pants category. */
