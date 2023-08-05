@@ -61,7 +61,8 @@ export class NavigationHelper {
 
     if (!type) return '';
     const url = new URL(`https://sky-children-of-the-light.fandom.com/wiki/${type}`);
-    const spirit = NodeHelper.getRoot(item.nodes?.at(-1) ?? item.hiddenNodes?.at(-1))?.spiritTree?.spirit;
+    const spiritTree = NodeHelper.getRoot(item.nodes?.at(-1) ?? item.hiddenNodes?.at(-1))?.spiritTree
+    const spirit = spiritTree?.spirit ?? spiritTree?.ts?.spirit ?? spiritTree?.visit?.spirit;
 
     // Select preview item automatically
     if (spirit) {
