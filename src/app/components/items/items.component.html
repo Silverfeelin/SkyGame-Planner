@@ -1,9 +1,9 @@
-<div class="card container">
+<div class="card card-inset container">
   <h1 class="h2 mb-0">Items</h1>
 </div>
 
 <!-- Categories -->
-<div class="card container mt-2">
+<div class="card card-inset container mt-2">
   <h2 class="h3">Type</h2>
   <div class="flex">
     <!-- Outfits -->
@@ -82,7 +82,7 @@
 </div>
 
 <!-- Items -->
-<div class="card container mt-2" *ngIf="shownItems?.length">
+<div class="card card-inset container mt-2" *ngIf="shownItems?.length">
   <div class="unlock-bar container-flex">
     <span [class.completed]="shownUnlocked == shownItems.length">
       {{ shownUnlocked }} / {{ shownItems.length }}
@@ -115,7 +115,7 @@
 
 <div #itemDiv [hidden]="!selectedItem" class="grid grid-1 item-info mt-2">
   <ng-container *ngIf="selectedItem">
-    <div class="card">
+    <div class="card card-inset">
       <h2 class="h3">{{ selectedItem.name }}</h2>
       <div class="info-grid">
         <div class="flex-item flex-item-large info-grid-icon d-inline-block">

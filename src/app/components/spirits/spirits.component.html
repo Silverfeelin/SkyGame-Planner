@@ -1,4 +1,4 @@
-<div class="card container">
+<div class="card card-inset container">
   <h1 class="h2 mb-0">
     Spirits
     <a (click)="changeMode()" class="h6 link">Change view</a>
@@ -6,7 +6,7 @@
 </div>
 
 <!-- #region List -->
-<div class="mt-2 card p-0" *ngIf="mode === 'grid'">
+<div class="mt-2 card card-inset p-0" *ngIf="mode === 'grid'">
   <app-table [rows]="rows">
     <!-- Headers-->
     <ng-template [appTableHeader]>Spirit</ng-template>
@@ -25,7 +25,7 @@
     </ng-template> -->
     <!-- Type -->
     <ng-template [appTableColumn] let-row="row">
-      <ng-container *ngTemplateOutlet="type; context:{row}"></ng-container>
+      <app-spirit-type-icon [type]="row.type"></app-spirit-type-icon>
     </ng-template>
     <!-- Location -->
     <ng-template [appTableColumn] let-row="row">
@@ -56,9 +56,9 @@
 
 <!-- #region Cards -->
 <div class="grid grid-4 mt-2" *ngIf="mode === 'cards'">
-  <div class="card p-rel" *ngFor="let row of rows">
+  <div class="card card-inset p-rel" *ngFor="let row of rows">
     <h2 class="h3">
-      <ng-container *ngTemplateOutlet="type; context:{row}"></ng-container>
+      <app-spirit-type-icon [type]="row.type"></app-spirit-type-icon>
       {{row.name}}
     </h2>
     <!-- Wiki -->

@@ -1,4 +1,4 @@
-<div class="card container">
+<div class="card card-inset container">
   <h1 class="h2 mb-0">
     {{ instance.event.name }}
     <span class="c-accent">{{ instance.date | dayjs:'YYYY' }}</span>
@@ -7,7 +7,7 @@
 
 <!-- Spirits -->
 <ng-container *ngIf="instance.spirits?.length">
-  <div class="card container mt-2" >
+  <div class="card card-inset container mt-2" >
     <h2 class="h3">Spirits</h2>
     <div class="container-flex">
       <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
@@ -19,14 +19,14 @@
 
 <!-- IAPs -->
 <ng-container *ngIf="shops?.length">
-  <div class="card container mt-2">
+  <div class="card card-inset container mt-2">
     <h2 class="h3">In-App Purchases</h2>
     <div class="container-inner">
       <div class="grid grid-4">
         <!-- Render IAPs in order of sorted shops. -->
         <ng-container *ngFor="let shop of shops">
           <ng-container *ngIf="shop.iaps?.length">
-            <div class="card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
+            <div class="card card-inset p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
               <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
                 {{ iapNames[iap.guid] }}
               </h3>

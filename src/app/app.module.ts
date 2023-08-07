@@ -34,6 +34,7 @@ import { SearchComponent } from './components/search/search.component';
 import { DayjsPipe } from './pipes/dayjs.pipe';
 import { RealmComponent } from './components/realm/realm.component';
 import { ItemTypePipe } from './pipes/item-type.pipe';
+import { SpiritTypeIconComponent } from './components/spirit-type-icon/spirit-type-icon.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { ItemTypePipe } from './pipes/item-type.pipe';
     WingBuffsComponent,
     SettingsComponent,
     SearchComponent,
-    RealmComponent
+    RealmComponent,
+    SpiritTypeIconComponent
   ],
   imports: [
     BrowserModule,
