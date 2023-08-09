@@ -15,8 +15,76 @@
   </div>
 </div>
 
+<div class="card container mt-2">
+  <div class="spirit-grid">
+    <div *ngIf="spirit.imageUrl" class="spirit-grid-img spirit-grid-item card-item">
+      <img [src]="spirit.imageUrl" [alt]="spirit.name" />
+    </div>
+    <div class="spirit-grid-item card-item">
+      <b>{{spirit.name}}</b>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="map"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="location_on"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+    <div class="spirit-grid-item card-item card-item-icon">
+      <mat-icon fontIcon="menu"></mat-icon>
+      <span class="menu-label">Test</span>
+    </div>
+  </div>
+</div>
+
 <div class="card container mt-2 spirit-trees">
-  <div class="container-flex spirit-trees-inner">
+  <h2 class="h3 mb-0">Spirit tree</h2>
+  <div class="container-flex spirit-trees-inner mt-2">
     <div *ngFor="let item of trees" class="tree-wrapper p-inline-block">
       <app-spirit-tree
         [tree]="item.tree" [name]="item.name"
