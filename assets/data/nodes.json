@@ -5582,7 +5582,7 @@
       "item": "EjjybJGcTN",
       "c": 34
     },
-    // Crab Whisperer
+    // #region Crab Whisperer
     {
       "guid": "jgPKwx1mOG",
       "item": "ySbxSrn-4l",
@@ -5741,6 +5741,66 @@
       "item": "dotE5ejKYP",
       "c": 70
     },
+    // RS4
+    {
+      "guid": "CQcGqx0roE",
+      "item": "ySbxSrn-4l",
+      "nw": "cOvaodKirb",
+      "n": "ZeVymI00bm"
+    },
+    {
+      "guid": "cOvaodKirb",
+      "item": "ApWt6AdQ8O",
+      "c": 20
+    },
+    {
+      "guid": "ZeVymI00bm",
+      "item": "Whp-r1yq-s",
+      "c": 5,
+      "nw": "ZK5ugPf4U-",
+      "n": "xvL9PAoS7-",
+      "ne": "dHOrJZGcRM"
+    },
+    {
+      "guid": "ZK5ugPf4U-",
+      "item": "wTgGX3U9yp",
+      "c": 30
+    },
+    {
+      "guid": "dHOrJZGcRM",
+      "item": "t70cADZFZh",
+      "c": 3
+    },
+    {
+      "guid": "xvL9PAoS7-",
+      "item": "FE2ZZ9OIVd",
+      "ac": 2,
+      "n": "7S5FM7MHMo"
+    },
+    {
+      "guid": "7S5FM7MHMo",
+      "item": "wcb5UMzT9u",
+      "c": 5,
+      "nw": "twMublSOWO",
+      "n": "emHZ95wPIY",
+      "ne": "hRBe1Dmnid"
+    },
+    {
+      "guid": "twMublSOWO",
+      "item": "NqdFQpeUSh",
+      "c": 15
+    },
+    {
+      "guid": "hRBe1Dmnid",
+      "item": "A3jFFEXAKu",
+      "c": 42
+    },
+    {
+      "guid": "emHZ95wPIY",
+      "item": "dotE5ejKYP",
+      "c": 70
+    },
+    // #endregion
     // Shushing Light Scholar
     {
       "guid": "TzQj7y6KIj",
@@ -7139,7 +7199,7 @@
     },
     // #endregion
     // #region Rhythm
-    // Troupe Greeter
+    // #region Troupe Greeter
     {
       "guid": "MqVWf5rygO",
       "item": "T9ZZMbXM0p",
@@ -7316,6 +7376,72 @@
       "item": "SekRzXgjfv",
       "c": 48
     },
+    // RS4
+    {
+      "guid": "qoew2jYQLu",
+      "item": "T9ZZMbXM0p",
+      "nw": "e1U_Uhhyf7",
+      "n": "eVSZTd5UOi"
+    },
+    {
+      "guid": "e1U_Uhhyf7",
+      "item": "Lpi2B9yp7E",
+      "h": 4
+    },
+    {
+      "guid": "eVSZTd5UOi",
+      "item": "GbIQpDNVKS",
+      "c": 5,
+      "nw": "zlZ8PUytxL",
+      "n": "rgm9CE6XFB",
+      "ne": "His0m6iC_j"
+    },
+    {
+      "guid": "zlZ8PUytxL",
+      "item": "ixu-bQFMqR",
+      "c": 15
+    },
+    {
+      "guid": "His0m6iC_j",
+      "item": "gOrgKYIV3P",
+      "c": 3
+    },
+    {
+      "guid": "rgm9CE6XFB",
+      "item": "Pe1Hflmudo",
+      "ac": 2,
+      "n": "AXD7HzlV2z"
+    },
+    {
+      "guid": "AXD7HzlV2z",
+      "item": "8p1dB9WsP1",
+      "h": 3,
+      "nw": "dpF3nW6NWc",
+      "n": "JzSPrUMpet"
+    },
+    {
+      "guid": "dpF3nW6NWc",
+      "item": "T835b5bBNS",
+      "h": 6
+    },
+    {
+      "guid": "JzSPrUMpet",
+      "item": "7gjw9rjbK9",
+      "c": 5,
+      "nw": "rzuSTdqEfX",
+      "n": "jTQHWinNTp"
+    },
+    {
+      "guid": "rzuSTdqEfX",
+      "item": "T4suf1MdTj",
+      "c": 70
+    },
+    {
+      "guid": "jTQHWinNTp",
+      "item": "SekRzXgjfv",
+      "c": 48
+    },
+    // #endregion
     // Festival Spin Dancer
     {
       "guid": "QsIyX1p15K",
@@ -9636,7 +9762,7 @@
       "item": "5-gKx3HDnl",
       "c": 70
     },
-    // Hiking Grouch
+    // #region Hiking Grouch
     {
       "guid": "_n42ZUm0ev",
       "item": "_-Am5v5QWs",
@@ -9766,6 +9892,78 @@
       "item": "_5IHtakDvf",
       "c": 50
     },
+    // RS4
+    {
+      "guid": "2kNPgPfrtO",
+      "item": "_-Am5v5QWs",
+      "nw": "MoC-4dQ-DU",
+      "n": "dl52WiuX1P",
+      "ne": "QXfBXn8Br4"
+    },
+    {
+      "guid": "MoC-4dQ-DU",
+      "item": "91x-6KiNlb",
+      "h": 4
+    },
+    {
+      "guid": "QXfBXn8Br4",
+      "item": "bBQVuucGUm",
+      "h": 16
+    },
+    {
+      "guid": "dl52WiuX1P",
+      "item": "7C6gIvwkZa",
+      "c": 5,
+      "nw": "Yn5_fEhdVo",
+      "n": "B03j6HALPB",
+      "ne": "10kWRocvyC"
+    },
+    {
+      "guid": "Yn5_fEhdVo",
+      "item": "GgNJdLqzxy",
+      "c": 34
+    },
+    {
+      "guid": "10kWRocvyC",
+      "item": "EPaUByqgl2",
+      "c": 3
+    },
+    {
+      "guid": "B03j6HALPB",
+      "item": "_HEZdAIAU1",
+      "ac": 2,
+      "n": "bysR562FBH"
+    },
+    {
+      "guid": "bysR562FBH",
+      "item": "AjOxFBIEsi",
+      "h": 3,
+      "nw": "XavyKLyQ3f",
+      "n": "iHlsffUVPM",
+      "ne": "blZ-1PxIRQ"
+    },
+    {
+      "guid": "XavyKLyQ3f",
+      "item": "F9ZODZ6Qs8",
+      "h": 6
+    },
+    {
+      "guid": "blZ-1PxIRQ",
+      "item": "hGLEh1ula3",
+      "c": 42
+    },
+    {
+      "guid": "iHlsffUVPM",
+      "item": "WbAIZr5KdV",
+      "c": 5,
+      "n": "owv454TomN"
+    },
+    {
+      "guid": "owv454TomN",
+      "item": "_5IHtakDvf",
+      "c": 50
+    },
+    // #endregion
     // #region Grateful Shell Collector
     {
       "guid": "1fmBVbUjab",
@@ -13455,7 +13653,7 @@
       "item": "Ohs7fG8rmn",
       "sc": 3
     },
-    // Cackling Cannoneer
+    // #region Cackling Cannoneer
     {
       "guid": "lNBxGQzzj6",
       "item": "d_Qmk0N-T9",
@@ -13526,6 +13724,78 @@
       "item": "eaJhgWMfS8",
       "sc": 3
     },
+    // RS4
+    {
+      "guid": "tqaWjBRyj4",
+      "item": "d_Qmk0N-T9",
+      "nw": "Gw-_rKjg-0",
+      "n": "ipWgIyhfvJ"
+    },
+    {
+      "guid": "Gw-_rKjg-0",
+      "item": "0iyXmNvh_C",
+      "h": 4
+    },
+    {
+      "guid": "ipWgIyhfvJ",
+      "item": "kZRarc4FE0",
+      "c": 5,
+      "nw": "lTD1SdkFnL",
+      "n": "k3N5JYOOD0",
+      "ne": "xNo8MO2xNn"
+    },
+    {
+      "guid": "lTD1SdkFnL",
+      "item": "1qIdoVpmEe",
+      "c": 40
+    },
+    {
+      "guid": "xNo8MO2xNn",
+      "item": "VVjIxRu0sP",
+      "c": 3
+    },
+    {
+      "guid": "k3N5JYOOD0",
+      "item": "A0ldX-rd76",
+      "ac": 2,
+      "n": "SoZuEOSC2w"
+    },
+    {
+      "guid": "SoZuEOSC2w",
+      "item": "heGFa0OjPp",
+      "h": 3,
+      "nw": "901JKY2WYT",
+      "n": "5XT98pJaH-",
+      "ne": "yAQp1Zq8Gp"
+    },
+    {
+      "guid": "901JKY2WYT",
+      "item": "Vc0XWt8AUm",
+      "h": 6
+    },
+    {
+      "guid": "yAQp1Zq8Gp",
+      "item": "OuUFDFFKlQ",
+      "c": 50
+    },
+    {
+      "guid": "5XT98pJaH-",
+      "item": "BZEJEX6j57",
+      "c": 5,
+      "nw": "qZDDZzyVsl",
+      "n": "-4nIup0gl4"
+    },
+    {
+      "guid": "qZDDZzyVsl",
+      "item": "J4wT0OrTrf",
+      "c": 70
+    },
+    {
+      "guid": "-4nIup0gl4",
+      "item": "a4LXqflNKy",
+      "c": 15
+    },
+    // #endregion
     // #endregion
     // #region Performance
     // Frantic Stagehand
