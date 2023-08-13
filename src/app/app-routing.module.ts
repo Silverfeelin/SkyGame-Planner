@@ -18,6 +18,8 @@ import { SearchComponent } from './components/search/search.component';
 import { RealmComponent } from './components/realm/realm.component';
 import { TitleResolver } from './resolvers/title.resolver';
 import { EventInstanceTitleResolver } from './resolvers/event-instance-title.resolver';
+import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
+import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -38,6 +40,8 @@ const routes: Routes = [
   { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
   { path: 'spirit/:guid', component: SpiritComponent, title: TitleResolver },
   { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
+  { path: 'rs', component: ReturningSpiritsComponent, title: title('Returning Spirits') },
+  { path: 'rs/:guid', component: ReturningSpiritComponent, title: TitleResolver },
   { path: 'wing-buffs', component: WingBuffsComponent, title: title('Wing Buffs') },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];

@@ -4,6 +4,7 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
+import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
@@ -56,6 +57,12 @@ export class SpiritsComponent {
       return true;
     };
 
+    const addTree = (s: ISpirit, tree: ISpiritTree): boolean => {
+      this.spirits.push(s);
+      this.spiritTrees[s.guid] = [tree];
+      return true;
+    };
+
     // Load from realm.
     const realmGuid = q.get('realm');
     const realm = realmGuid ? this._dataService.guidMap.get(realmGuid) as IRealm : undefined;
@@ -65,6 +72,11 @@ export class SpiritsComponent {
     const seasonGuid = q.get('season');
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;
     season?.spirits?.forEach(s => addSpirit(s));
+
+    // Load from returning spirits
+    const rsGuid = q.get('rs');
+    const rs = rsGuid ? this._dataService.guidMap.get(rsGuid) as IReturningSpirits : undefined;
+    rs?.spirits?.forEach(s => addTree(s.spirit, s.tree));
 
     this.initTable();
   }

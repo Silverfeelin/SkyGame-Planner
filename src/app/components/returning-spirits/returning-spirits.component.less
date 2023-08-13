@@ -1,0 +1,30 @@
+.completed {
+  color: var(--color-unlock-check);
+}
+
+.spirit-img {
+  display: none;
+}
+
+.spirit-img:not(:first-child) {
+  margin-left: var(--padding-content);
+}
+
+@media screen and (min-width: 992px) {
+  .spirit-img {
+    display: inline-block;
+    width: var(--item-size);
+    height: var(--item-size);
+  }
+
+  .spirit-count {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .spirit-img {
+    width: calc(2 * var(--item-size));
+    height: calc(2 * var(--item-size));
+  }
+}

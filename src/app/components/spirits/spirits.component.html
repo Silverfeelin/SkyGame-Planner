@@ -69,7 +69,7 @@
     </div>
     <!-- Image -->
     <div *ngIf="row.imageUrl" class="p-rel item spirit-img">
-      <img [src]="row.imageUrl">
+      <img [src]="row.imageUrl" loading="lazy">
     </div>
     <!-- Info -->
     <a class="mt-2 item link" [routerLink]="['/spirit', row.guid]">

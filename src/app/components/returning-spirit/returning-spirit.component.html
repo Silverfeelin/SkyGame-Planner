@@ -1,5 +1,5 @@
 <div class="card container">
-  <h1 class="h2 mb-0">{{ realm.name }}</h1>
+  <h1 class="h2 mb-0">{{ rs.name }}</h1>
 </div>
 
 <!-- Spirits -->
@@ -7,14 +7,14 @@
   <h2 class="h3">Spirits</h2>
   <div class="container-flex">
     <!-- Spirit trees -->
-    <ng-container *ngIf="spirits">
-      <ng-container *ngFor="let spirit of spirits;">
+    <ng-container *ngIf="rs.spirits?.length">
+      <ng-container *ngFor="let spirit of rs.spirits;">
         <div class="tree-wrapper" *ngIf="spirit.tree">
-          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name">
+          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.spirit.name">
             <!-- Link to spirit -->
             <div name>
-              <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
-                {{ spirit.name }}
+              <a [routerLink]="['/spirit', spirit.spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
+                {{ spirit.spirit.name }}
               </a>
             </div>
           </app-spirit-tree>

@@ -139,7 +139,7 @@ export class EditorTravelingSpiritComponent {
     navigator.clipboard.writeText(value);
   }
 
-  getForClipboard(type: string): string | undefined {
+getForClipboard(type: string): string | undefined {
     switch (type) {
       case 'ts':
         return this.dataJsonService.travelingSpiritsToJson([this.result!]);
