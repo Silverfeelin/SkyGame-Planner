@@ -3,16 +3,12 @@
 </div>
 <div class="card p-0 mt-2">
   <app-table [rows]="rows">
-    <ng-template [appTableHeader] [fit]="true">#</ng-template>
     <ng-template [appTableHeader]>Name</ng-template>
     <ng-template [appTableHeader]>Spirits</ng-template>
     <ng-template [appTableHeader]>Start</ng-template>
     <ng-template [appTableHeader]>End</ng-template>
     <ng-template [appTableHeader]>Unlocked</ng-template>
 
-    <ng-template [appTableColumn] let-row="row">
-      {{ row.number }}
-    </ng-template>
     <ng-template [appTableColumn] let-row="row">
       <a  [routerLink]="['/rs', row.guid]" [queryParams]="{ rs: row.guid }">
         {{ row.name }}
