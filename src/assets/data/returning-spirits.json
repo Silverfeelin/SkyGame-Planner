@@ -43,6 +43,18 @@
         { "guid": "hFrCvf2A6H", "spirit": "CH6e-TQz6n", "tree": "GLaxu7pDA1" },
         { "guid": "RH2eAIN8_q", "spirit": "KZaVtTUdlR", "tree": "iznzX-F_eT" }
       ]
+    },
+    {
+      "guid": "ttGkPFNNOT",
+      "name": "Special Visit #4",
+      "date": { "day": 7, "month": 8, "year": 2023 },
+      "endDate": { "day": 13, "month": 8, "year": 2023 },
+      "spirits": [
+        { "guid": "gy-9CQ4Syi", "spirit": "z4xqXUkx_6", "tree": "9em8s0MS9A" },
+        { "guid": "kfw1NERKJg", "spirit": "gTIay-wjmN", "tree": "-dB5Tod28p" },
+        { "guid": "viFzD6mWuj", "spirit": "tZG5hNcINX", "tree": "Iej9LFKqlb" },
+        { "guid": "uwiepwLqKg", "spirit": "Q5pn7wxwUD", "tree": "SWBKW2vcEc" }
+      ]
     }
   ]
 }

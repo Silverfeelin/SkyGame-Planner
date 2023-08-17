@@ -8801,7 +8801,7 @@
     // #endregion
     // #endregion
     // #region Flight
-    // Lively Navigator
+    // #region Lively Navigator
     {
       "guid": "mugeVvl6Vc",
       "type": "Emote",
@@ -8883,6 +8883,19 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
     },
+    {
+      "guid": "Y2M5HKFn62",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "JmcNphV2vc",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
     // Light Whisperer
     {
       "guid": "YiLDQF0uDU",
@@ -9438,6 +9451,24 @@
       "type": "Special",
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
+    },
+    {
+      "guid": "VVjIxRu0sP",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "A0ldX-rd76",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "BZEJEX6j57",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     // #endregion
     // #region Performance

@@ -14,7 +14,7 @@
       {{ row.number }}
     </ng-template>
     <ng-template [appTableColumn] let-row="row">
-      <div class="spirit-img t-center">
+      <div class="card spirit-img t-center">
         <app-icon *ngIf="row.spirit.imageUrl" [src]="row.spirit.imageUrl" [width]="'auto'" [lazy]="true"></app-icon>
       </div>
     </ng-template>
