@@ -14,6 +14,11 @@
         <mat-icon fontIcon="checkroom"></mat-icon>
         <span class="name">Items</span>
       </a>
+      <!-- Wing Buffs-->
+      <a class="item" [routerLink]="'wing-buff'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Wing Buffs'" placement="right" container="body">
+        <mat-icon svgIcon="flaps"></mat-icon>
+        <span class="name">Wing Buffs</span>
+      </a>
       <!-- Realms -->
       <a class="item" [routerLink]="'realm'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
         <mat-icon fontIcon="map"></mat-icon>

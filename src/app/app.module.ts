@@ -14,7 +14,6 @@ import { SeasonsComponent } from './components/seasons/seasons.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
 import { RealmsComponent } from './components/realms/realms.component';
 import { IconComponent } from './components/icon/icon.component';
-import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { CreditsComponent } from './components/credits/credits.component';
 import { ItemsComponent } from './components/items/items.component';
 import { TableComponent } from './components/table/table.component';
@@ -51,7 +50,6 @@ import { SpiritTypeIconComponent } from './components/spirit-type-icon/spirit-ty
     TravelingSpiritsComponent,
     RealmsComponent,
     IconComponent,
-    StatusBarComponent,
     CreditsComponent,
     ItemsComponent,
     TableComponent,

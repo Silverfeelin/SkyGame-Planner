@@ -41,10 +41,10 @@
     </div>
   </div>
   <div class="container-flex mt-2">
-    <button type="button" class="item" data-theme="light" (click)="setTheme('light')">
+    <button type="button" class="item" [class.highlight]="currentTheme ===  'light'" data-theme="light" (click)="setTheme('light')">
       Light
     </button>
-    <button type="button" class="item" data-theme="dark" (click)="setTheme('')">
+    <button type="button" class="item" [class.highlight]="currentTheme ===  'dark'" data-theme="dark" (click)="setTheme('')">
       Dark
     </button>
   </div>
@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="container-flex mt-2">
-    <button *ngFor="let format of dateFormats" [class.active]="dateFormat === format" type="button" class="item" (click)="setDateFormat(format)">
+    <button *ngFor="let format of dateFormats" [class.highlight]="dateFormat === format" type="button" class="item" (click)="setDateFormat(format)">
       {{ format | lowercase }}
     </button>
   </div>

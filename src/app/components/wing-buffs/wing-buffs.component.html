@@ -1,33 +1,45 @@
-<h1 class="h2">Wing Buffs</h1>
-<app-table [rows]="rows">
-  <ng-template [appTableHeader]>Spirit</ng-template>
-  <ng-template [appTableHeader]>Type</ng-template>
-  <ng-template [appTableHeader]>Origin</ng-template>
-  <ng-template [appTableHeader]>Unlocked</ng-template>
 
-  <ng-template [appTableColumn] let-row="row">
-    <a [routerLink]="['/spirit', row.guid]">
-      {{ row.name }}
-    </a>
-  </ng-template>
-  <ng-template [appTableColumn] let-row="row">
-    <app-spirit-type-icon [type]="row.type"></app-spirit-type-icon>
-  </ng-template>
-  <ng-template [appTableColumn] let-row="row">
-    <a *ngIf="row.season" [routerLink]="['/season', row.season.guid]">{{ row.season.name }}</a>
-    <a *ngIf="row.type === 'Regular'" [routerLink]="['/realm', row.area.realm.guid]">{{ row.area.realm.name }}</a>
-  </ng-template>
+<div class="card card-inset container">
+  <h1 class="h2 mb-0">Wing Buffs</h1>
+</div>
 
-  <ng-template [appTableColumn] let-row="row">
-    <span [class.completed]="row.unlocked === row.total">
-      {{ row.unlocked }} / {{ row.total }}
-    </span>
-  </ng-template>
+<!-- -->
+<div class="card card-inset container mt-2">
+  <div class="container-inner">
+    <div>You have unlocked <b [class.completed]="unlocked === total">{{ unlocked }}</b> out of <b [class.completed]="unlocked === total">{{ total }}</b> wing buffs.</div>
+  </div>
+</div>
 
-  <!-- Footers -->
-  <ng-template [appTableFooter] [colspan]="3" [textAlign]="'right'">Total:</ng-template>
-  <ng-template [appTableFooter]>
-    <span [class.completed]="unlocked === total">{{ unlocked }} / {{ total }}</span>
-  </ng-template>
+<div class="mt-2">
+  <app-table [rows]="rows">
+    <ng-template [appTableHeader]>Spirit</ng-template>
+    <ng-template [appTableHeader]>Type</ng-template>
+    <ng-template [appTableHeader]>Origin</ng-template>
+    <ng-template [appTableHeader]>Unlocked</ng-template>
 
-</app-table>
+    <ng-template [appTableColumn] let-row="row">
+      <a [routerLink]="['/spirit', row.guid]">
+        {{ row.name }}
+      </a>
+    </ng-template>
+    <ng-template [appTableColumn] let-row="row">
+      <app-spirit-type-icon [type]="row.type"></app-spirit-type-icon>
+    </ng-template>
+    <ng-template [appTableColumn] let-row="row">
+      <a *ngIf="row.season" [routerLink]="['/season', row.season.guid]">{{ row.season.name }}</a>
+      <a *ngIf="row.type === 'Regular'" [routerLink]="['/realm', row.area.realm.guid]">{{ row.area.realm.name }}</a>
+    </ng-template>
+
+    <ng-template [appTableColumn] let-row="row">
+      <span [class.completed]="row.unlocked === row.total">
+        {{ row.unlocked }} / {{ row.total }}
+      </span>
+    </ng-template>
+
+    <!-- Footers -->
+    <ng-template [appTableFooter] [colspan]="3" [textAlign]="'right'">Total:</ng-template>
+    <ng-template [appTableFooter]>
+      <span [class.completed]="unlocked === total">{{ unlocked }} / {{ total }}</span>
+    </ng-template>
+  </app-table>
+</div>

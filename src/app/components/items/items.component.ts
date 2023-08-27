@@ -54,7 +54,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this._previewObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        console.log(entry);
         this._scrollToPreview = !entry.isIntersecting || entry.intersectionRatio < 0.5;
       });
     }, { threshold: [0.5] });

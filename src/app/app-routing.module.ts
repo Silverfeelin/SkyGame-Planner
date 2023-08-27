@@ -42,7 +42,7 @@ const routes: Routes = [
   { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
   { path: 'rs', component: ReturningSpiritsComponent, title: title('Returning Spirits') },
   { path: 'rs/:guid', component: ReturningSpiritComponent, title: TitleResolver },
-  { path: 'wing-buffs', component: WingBuffsComponent, title: title('Wing Buffs') },
+  { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
 ];
 

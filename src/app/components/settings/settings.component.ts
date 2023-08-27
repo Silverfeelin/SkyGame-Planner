@@ -15,6 +15,7 @@ export class SettingsComponent {
   today = dayjs();
   dateFormat: string;
   dateFormats: Array<string>;
+  currentTheme: string;
 
   constructor(
     private readonly _dataService: DataService,
@@ -24,6 +25,7 @@ export class SettingsComponent {
     this.unlockedCount = this._storageService.unlocked.size;
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
+    this.currentTheme = this._themeService.theme || 'dark';
   }
 
   export(): void {
@@ -101,6 +103,7 @@ export class SettingsComponent {
 
   setTheme(theme?: string): void {
     this._themeService.set(theme);
+    this.currentTheme = this._themeService.theme || 'dark';
   }
 
   setDateFormat(format: string): void {

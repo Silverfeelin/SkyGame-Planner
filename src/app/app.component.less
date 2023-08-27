@@ -34,23 +34,8 @@
 ::ng-deep body {
   position: relative;
   left: var(--menu-width);
-  margin-bottom: var(--status-height);
   width: calc(100% - var(--menu-width));
-  //height: calc(100% - var(--status-height));
   padding: var(--padding-content);
-}
-
-app-status-bar {
-  display: block;
-  position: fixed;
-  z-index: 50;
-  bottom: 0;
-  left: var(--menu-width);
-  right: 0;
-  padding: 0px var(--padding-content);
-  background: var(--color-status-background);
-  height: var(--status-height);
-  // border-top: 1px solid #222230;
 }
 
 .data-loss {
