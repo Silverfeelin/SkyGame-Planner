@@ -12,6 +12,8 @@ import { DataService } from 'src/app/services/data.service';
 export class RealmComponent {
   realm!: IRealm;
 
+  highlightTree?: string;
+
   spirits: Array<ISpirit> = [];
 
   constructor(
@@ -23,6 +25,7 @@ export class RealmComponent {
   }
 
   onQueryChanged(params: ParamMap): void {
+    this.highlightTree = params.get('highlightTree') || undefined;
   }
 
   onParamsChanged(params: ParamMap): void {

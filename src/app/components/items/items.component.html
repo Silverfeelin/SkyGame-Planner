@@ -118,9 +118,9 @@
     <div class="card card-inset">
       <h2 class="h3">{{ selectedItem.name }}</h2>
       <div class="info-grid">
-        <div class="flex-item flex-item-large info-grid-icon d-inline-block">
+        <a class="flex-item flex-item-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
           <app-item [item]="selectedItem" [large]="true" [hoverHighlight]="false"></app-item>
-        </div>
+        </a>
         <a *ngIf="selectedItemNav" class="info-grid-find container-inner" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
           <mat-icon class="menu-icon" fontIcon="search"></mat-icon>
           <span class="menu-label">Find item</span>

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import dayjs from 'dayjs';
+import { IEvent } from 'src/app/interfaces/event.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
+import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 import { DataService } from 'src/app/services/data.service';
 
 interface ITree {
@@ -19,6 +21,8 @@ interface ITree {
 export class SpiritComponent {
   spirit!: ISpirit;
   trees: Array<ITree> = [];
+  typeName?: string;
+  event?: IEvent;
 
   highlightTree?: string;
   highlightItem?: string;
@@ -39,6 +43,10 @@ export class SpiritComponent {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.spirit = this._dataService.guidMap.get(guid!) as ISpirit;
+    this.typeName = new SpiritTypePipe().transform(this.spirit.type);
+
+    this.event = this.spirit?.events?.at(-1)?.eventInstance?.event;
+
     this.trees = [];
 
     // Sort TS and returns by date.

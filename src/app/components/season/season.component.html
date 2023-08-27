@@ -8,13 +8,13 @@
   <div class="container-flex">
     <!-- Guide tree -->
     <div class="tree-wrapper">
-      <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name"></app-spirit-tree>
+      <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name" [highlight]="highlightTree === guide!.tree!.guid"></app-spirit-tree>
     </div>
     <!-- Traveling Spirit trees -->
     <ng-container *ngIf="spirits">
       <ng-container *ngFor="let spirit of spirits;">
         <div class="tree-wrapper" *ngIf="spirit.tree">
-          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name">
+          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
             <!-- Link to spirit -->
             <div name>
               <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">

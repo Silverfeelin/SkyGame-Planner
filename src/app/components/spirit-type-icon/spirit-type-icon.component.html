@@ -1,15 +1,18 @@
 <ng-container [ngSwitch]="type">
+  <mat-icon *ngSwitchCase="'Regular'" [svgIcon]="'candle'"
+    [ngbTooltip]="'Regular Spirit'" container="body" placement="bottom">
+  </mat-icon>
+  <mat-icon *ngSwitchCase="'Special'" [svgIcon]="'candle'"
+    [ngbTooltip]="'Special Spirit'" container="body" placement="bottom">
+  </mat-icon>
   <mat-icon *ngSwitchCase="'Elder'" [svgIcon]="'ascended-candle'"
     [ngbTooltip]="'Elder Spirit'" container="body" placement="bottom">
   </mat-icon>
   <mat-icon *ngSwitchCase="'Guide'" [svgIcon]="'season-heart'"
     [ngbTooltip]="'Season Guide'" container="body" placement="bottom">
   </mat-icon>
-  <mat-icon *ngSwitchCase="'Regular'" [svgIcon]="'candle'"
-    [ngbTooltip]="'Regular Spirit'" container="body" placement="bottom">
-  </mat-icon>
   <mat-icon *ngSwitchCase="'Season'" [svgIcon]="'season-candle'"
-    [ngbTooltip]="'Season Spirit'" container="body" placement="bottom">
+    [ngbTooltip]="'Seasonal Spirit'" container="body" placement="bottom">
   </mat-icon>
-  <span *ngSwitchDefault>{{ type }}</span>
+  <span *ngSwitchDefault></span>
 </ng-container>
