@@ -1325,5 +1325,78 @@
       ]
     },
     // #endregion
+    // #region AURORA Encore Concerts
+    {
+      "guid": "SE1PMpYNqc",
+      "name": "Musical Voyage Sneakers",
+      "price": 6.99,
+      "items": [
+        "LrI5FQ8vdi"
+      ]
+    },
+    {
+      "guid": "nVHTeXM_ta",
+      "name": "Tiara We Can Touch",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "i0BYuPKZYe"
+      ]
+    },
+    {
+      "guid": "v-SU-ROcQr",
+      "name": "Voice of AURORA",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "K0NBv__mv8"
+      ]
+    },
+    {
+      "guid": "I1zcPgQt_W",
+      "name": "Runaway Hairstyle",
+      "price": 2.99,
+      "returning": true,
+      "items": [
+        "wZGUtak1mb"
+      ]
+    },
+    {
+      "guid": "Gij-TiHA3i",
+      "name": "Runaway Outfit",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "9kbdAvVwR4"
+      ]
+    },
+    {
+      "guid": "OTJsDJNj98",
+      "name": "To The Love Outfit",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "4kOgGOEAQT"
+      ]
+    },
+    {
+      "guid": "zMYBkYtUM2",
+      "name": "Giving In Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "JFV-ZmGQiu"
+      ]
+    },
+    {
+      "guid": "Nn_ORL__wP",
+      "name": "Wings of AURORA",
+      "price": 24.99,
+      "returning": true,
+      "items": [
+        "EQYKoHE95s"
+      ]
+    },
+    // #endregion
   ]
 }

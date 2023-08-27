@@ -43,6 +43,7 @@ export class DataJsonService {
         sc: node.sc,
         sh: node.sh,
         ac: node.ac,
+        ec: node.ec,
         nw: node.nw?.guid,
         n: node.n?.guid,
         ne: node.ne?.guid

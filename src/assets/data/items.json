@@ -10402,6 +10402,26 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAURORA-Wings-of-AURORA-Cape-Icon-Morybel-0146.png",
       "order": 2505
     },
+    {
+      "guid": "LrI5FQ8vdi",
+      "type": "Shoes",
+      "name": "AURORA Musical Voyage Sneakers",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Aurora-Record-Breaker-Sneakers-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "T71hdAEX-_",
+      "name": "Cure for Me",
+      "type": "Emote",
+      "level": 1,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "nNSNKcR0jV",
+      "name": "Cure for Me",
+      "type": "Emote",
+      "level": 2,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png"
+    },
     // #endregion
     // #endregion
     // #region Remembrance

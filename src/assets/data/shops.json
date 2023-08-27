@@ -649,5 +649,42 @@
       ]
     },
     // #endregion
+    // #region AURORA Encore Concerts
+    {
+      "guid": "wX_deEZTy9",
+      "type": "Store",
+      "iaps": [
+        "SE1PMpYNqc",
+        "nVHTeXM_ta",
+        "v-SU-ROcQr"
+      ]
+    },
+    {
+      "guid": "JX7iEUoVkg",
+      "type": "Object",
+      "name": "Runaway Mannequin",
+      "iaps": [
+        "I1zcPgQt_W",
+        "Gij-TiHA3i"
+      ]
+    },
+    {
+      "guid": "LxwKC9-ULx",
+      "type": "Object",
+      "name": "To The Love Mannequin",
+      "iaps": [
+        "OTJsDJNj98",
+        "zMYBkYtUM2"
+      ]
+    },
+    {
+      "guid": "r8AP1_WzAv",
+      "type": "Object",
+      "name": "Wings of AURORA Mannequin",
+      "iaps": [
+        "Nn_ORL__wP"
+      ]
+    },
+    // #endregion
   ]
 }

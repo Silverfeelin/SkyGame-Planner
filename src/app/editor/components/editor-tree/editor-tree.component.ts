@@ -43,7 +43,7 @@ export class EditorTreeComponent implements OnInit {
     private readonly _route: ActivatedRoute
   ) {
       this.formNodes = [];
-      for (let i = 0; i < 24; i++) { this.formNodes.push({
+      for (let i = 0; i < 30; i++) { this.formNodes.push({
         n: !((i+2) % 3)
       }); }
   }
@@ -157,7 +157,7 @@ export class EditorTreeComponent implements OnInit {
   nodeToFormNodes(mainNode: INode): Array<IFormNode> {
     const formNodes = new Array<IFormNode>();
 
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 30; i++) {
       formNodes.push({});
     }
 
@@ -181,7 +181,7 @@ export class EditorTreeComponent implements OnInit {
       if (node.ne) { defineNode(i + 1, node.ne); }
     };
 
-    let i = 22;
+    let i = 28;
     defineNode(i, mainNode);
 
     return formNodes;
@@ -205,7 +205,7 @@ export class EditorTreeComponent implements OnInit {
     } catch { return undefined; }
   }
 
-  formNodeToNodes(node?: INode, i = 22): INode {
+  formNodeToNodes(node?: INode, i = 28): INode {
     const formNode = this.formNodes[i];
     node ??= this.formNodeToNode(formNode)!;
     if (!formNode) { return node; }

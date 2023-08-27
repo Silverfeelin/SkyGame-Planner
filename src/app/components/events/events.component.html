@@ -2,24 +2,54 @@
   <h1 class="h2 mb-0">Events</h1>
 </div>
 
+<!-- Active events -->
+<div class="card card-inset container mt-2 highlight" *ngIf="hasActiveEvents">
+  <h2 class="h3 mb">Active events</h2>
+  <div class="container-inner">
+    <div class="grid grid-4">
+      <div class="card card-inset p-rel" *ngFor="let event of activeEvents | keyvalue; let i = index;">
+        <h2 class="h3">{{ event.value.name }}</h2>
+        <!-- Wiki -->
+        <div class="wiki p-abs" *ngIf="event.value._wiki?.href">
+          <a [href]="event.value._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
+            <mat-icon fontIcon="question_mark"></mat-icon>
+          </a>
+        </div>
+        <!-- Image -->
+        <div *ngIf="event.value.imageUrl" class="p-rel img"
+          [style.background-image]="'url('+event.value.imageUrl+')'"
+          [style.background-position]="event.value.imagePosition || undefined"></div>
+        <!-- Overview -->
+        <a class="mt-2 item" *ngIf="lastInstances[event.value.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.value.guid]).guid]">
+          <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+          <span class="menu-label">
+            Overview
+            <span class="c-accent">({{ $any(lastInstances[event.value.guid]).date | dayjs:'YYYY' }})</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Recurring -->
 <div class="card card-inset container mt-2">
   <h2 class="h3 mb">Recurring events</h2>
   <div class="container-inner">
     <div class="grid grid-4">
-      <div class="card card-inset p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="currentEvents[event.guid]">
+      <div class="card card-inset p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Past -->
+<!-- Other -->
 <div class="card card-inset container mt-2">
-  <h2 class="h3">Past events</h2>
+  <h2 class="h3">Other events</h2>
   <div class="container-inner">
-    <div class="grid grid-3">
-      <div class="card card-inset p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="currentEvents[event.guid]">
+    <div class="grid grid-4">
+      <div class="card card-inset p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
