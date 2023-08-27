@@ -1,7 +1,27 @@
-
 .card {
-  padding: 10px 10px;
+  padding: var(--padding-content);
   border-radius: var(--border-radius-round);
   background: var(--color-item-background);
+}
+
+.card-inset {
   box-shadow: inset 0px 5px 5px -5px var(--color-item-background-highlight);
+}
+
+.card-item {
+  padding: var(--padding-content);
+  background: var(--color-background);
+  border-radius: var(--border-radius-round);
+}
+
+.card-item-icon {
+  position: relative;
+
+  mat-icon {
+    position: absolute;
+  }
+
+  span {
+    padding-left: 32px;
+  }
 }

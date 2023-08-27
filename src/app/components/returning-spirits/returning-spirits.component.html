@@ -10,7 +10,7 @@
     <ng-template [appTableHeader]>Unlocked</ng-template>
 
     <ng-template [appTableColumn] let-row="row">
-      <a  [routerLink]="['/rs', row.guid]" [queryParams]="{ rs: row.guid }">
+      <a  [routerLink]="['/rs', row.guid]">
         {{ row.name }}
       </a>
     </ng-template>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { ItemType } from 'src/app/interfaces/item.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 

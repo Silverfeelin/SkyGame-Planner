@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ArrayHelper } from 'src/app/helpers/array-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
@@ -48,35 +49,40 @@ export class SpiritsComponent {
     const typeSet = type ? new Set<string>(type.split(',')) : undefined;
 
     const addSpirit = (s: ISpirit): boolean => {
-      // Don't add spirit if type is filtered out.
-      if (typeSet && !typeSet.has(s.type)) { return false; }
-
       this.spirits.push(s);
       this.spiritTrees[s.guid] = SpiritHelper.getTrees(s);
 
       return true;
     };
 
-    const addTree = (s: ISpirit, tree: ISpiritTree): boolean => {
-      this.spirits.push(s);
-      this.spiritTrees[s.guid] = [tree];
-      return true;
-    };
+    const searchArrays: Array<Array<ISpirit>> = [];
 
     // Load from realm.
     const realmGuid = q.get('realm');
     const realm = realmGuid ? this._dataService.guidMap.get(realmGuid) as IRealm : undefined;
-    realm?.areas?.forEach(a => a.spirits?.forEach(s => addSpirit(s)));
+    if (realm) {
+      const spirits = realm.areas?.flatMap(a => a.spirits || []) || [];
+      searchArrays.push(spirits);
+    }
 
     // Load from season.
     const seasonGuid = q.get('season');
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;
-    season?.spirits?.forEach(s => addSpirit(s));
+    if (season) {
+      const spirits = season.spirits || [];
+      searchArrays.push(spirits);
+    }
 
-    // Load from returning spirits
-    const rsGuid = q.get('rs');
-    const rs = rsGuid ? this._dataService.guidMap.get(rsGuid) as IReturningSpirits : undefined;
-    rs?.spirits?.forEach(s => addTree(s.spirit, s.tree));
+    // Get intersection using all search parameters.
+    let spirits = searchArrays.length
+      ? ArrayHelper.intersection(...searchArrays)
+      : this._dataService.spiritConfig.items;
+
+    // Filter by type.
+    spirits = typeSet ? spirits.filter(s => typeSet.has(s.type)) : spirits;
+
+    // Add spirits to list.
+    spirits.forEach(addSpirit);
 
     this.initTable();
   }

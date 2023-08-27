@@ -1,16 +1,16 @@
-<div class="card container">
+<div class="card card-inset container">
   <h1 class="h2 mb-0">{{ realm.name }}</h1>
 </div>
 
 <!-- Spirits -->
-<div class="card container container-scroll-x mt-2">
-  <h2 class="h3">Spirits</h2>
+<div class="card card-inset container container-scroll-x mt-2">
+  <h2 class="h3">Realm Spirits</h2>
   <div class="container-flex">
     <!-- Spirit trees -->
     <ng-container *ngIf="spirits">
       <ng-container *ngFor="let spirit of spirits;">
         <div class="tree-wrapper" *ngIf="spirit.tree">
-          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name">
+          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
             <!-- Link to spirit -->
             <div name>
               <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">

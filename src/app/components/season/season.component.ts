@@ -15,6 +15,7 @@ import { IAPService } from 'src/app/services/iap.service';
 export class SeasonComponent {
   season!: ISeason;
   highlightIap?: string;
+  highlightTree?: string;
 
   guide?: ISpirit;
   spirits: Array<ISpirit> = [];
@@ -31,6 +32,7 @@ export class SeasonComponent {
 
   onQueryChanged(params: ParamMap): void {
     this.highlightIap = params.get('highlightIap') || undefined;
+    this.highlightTree = params.get('highlightTree') || undefined;
   }
 
   onParamsChanged(params: ParamMap): void {

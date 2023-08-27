@@ -129,7 +129,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
     switch (item.type) {
       case 'Item':
-        const target = NavigationHelper.getItemSource(item.data as IItem);
+        const target = NavigationHelper.getItemLink(item.data as IItem);
         item.route = target?.route;
         item.queryParams = target?.extras?.queryParams || undefined;
         break;

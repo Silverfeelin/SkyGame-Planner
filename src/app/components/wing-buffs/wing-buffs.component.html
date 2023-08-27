@@ -11,11 +11,11 @@
     </a>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">
-    {{ row.type }}
+    <app-spirit-type-icon [type]="row.type"></app-spirit-type-icon>
   </ng-template>
   <ng-template [appTableColumn] let-row="row">
     <a *ngIf="row.season" [routerLink]="['/season', row.season.guid]">{{ row.season.name }}</a>
-    <a *ngIf="row.type === 'Regular'">{{ row.area.realm.name }}</a>
+    <a *ngIf="row.type === 'Regular'" [routerLink]="['/realm', row.area.realm.guid]">{{ row.area.realm.name }}</a>
   </ng-template>
 
   <ng-template [appTableColumn] let-row="row">

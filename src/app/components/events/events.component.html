@@ -1,13 +1,13 @@
-<div class="card container">
+<div class="card card-inset container">
   <h1 class="h2 mb-0">Events</h1>
 </div>
 
 <!-- Recurring -->
-<div class="card container mt-2">
+<div class="card card-inset container mt-2">
   <h2 class="h3 mb">Recurring events</h2>
   <div class="container-inner">
     <div class="grid grid-4">
-      <div class="card p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="currentEvents[event.guid]">
+      <div class="card card-inset p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="currentEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
@@ -15,11 +15,11 @@
 </div>
 
 <!-- Past -->
-<div class="card container mt-2">
+<div class="card card-inset container mt-2">
   <h2 class="h3">Past events</h2>
   <div class="container-inner">
     <div class="grid grid-3">
-      <div class="card p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="currentEvents[event.guid]">
+      <div class="card card-inset p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="currentEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
@@ -38,11 +38,11 @@
   <div *ngIf="event.imageUrl" class="p-rel img"
     [style.background-image]="'url('+event.imageUrl+')'"
     [style.background-position]="event.imagePosition || undefined"></div>
-  <!-- Overview -->
+  <!-- List -->
   <a class="mt-2 item" [routerLink]="['/event', event.guid]">
     <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
     <span class="menu-label">
-      Overview
+      List
     </span>
   </a>
   <!-- Jump to last -->

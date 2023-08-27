@@ -3,20 +3,66 @@
 </div>
 
 <div class="card container mt-2">
-  <h2 class="h3 mb-0">{{ spirit.name }}</h2>
-  <!-- Wiki link -->
-  <div *ngIf="spirit._wiki?.href" class="wiki">
-    <a [href]="spirit._wiki!.href" target="_blank">
+  <h2 class="h3 mb-0">
+    <app-spirit-type-icon [type]="spirit.type"></app-spirit-type-icon>
+    {{ spirit.name }}
+  </h2>
+  <div class="spirit-grid mt-2">
+    <!-- Preview image -->
+    <div class="spirit-grid-img spirit-grid-item card-item">
+      <div class="spirit-img"  *ngIf="spirit.imageUrl">
+        <img [src]="spirit.imageUrl" [alt]="spirit.name" />
+      </div>
+    </div>
+    <!-- 1: Wiki -->
+    <a class="spirit-grid-item card-item card-item-icon" *ngIf="spirit._wiki?.href" [href]="spirit._wiki!.href" target="_blank">
       <mat-icon fontIcon="question_mark"></mat-icon>
+      <span class="menu-label">Wiki</span>
     </a>
-  </div>
-  <div *ngIf="spirit.imageUrl" class="container-flex spirit-img mt-2">
-    <img [src]="spirit.imageUrl" [alt]="spirit.name" />
+    <!-- 2: Season -->
+    <a class="spirit-grid-item card-item card-item-icon" *ngIf="spirit.type === 'Season' || spirit.type === 'Guide'" [routerLink]="['/season', spirit.season?.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
+      <mat-icon fontIcon="ac_unit"></mat-icon>
+      <span class="menu-label">
+        {{ spirit.season?.name }}
+      </span>
+    </a>
+    <!-- 2: Event -->
+    <div class="spirit-grid-item card-item card-item-icon" *ngIf="spirit.type === 'Event'">
+      <mat-icon fontIcon="event"></mat-icon>
+      <a *ngIf="event" class="menu-label" [routerLink]="['/event', event.guid]">
+        {{ event.name }}
+      </a>
+    </div>
+    <!-- 2: Regular -->
+    <a class="spirit-grid-item card-item card-item-icon" *ngIf="spirit.type === 'Regular' || spirit.type === 'Elder' || spirit.type === 'Special'" [routerLink]="['/spirit']" [queryParams]="{type: spirit.type}">
+      <mat-icon fontIcon="person"></mat-icon>
+      <span class="menu-label" *ngIf="spirit.type === 'Regular'">
+        Regular Spirit
+      </span>
+      <span class="menu-label" *ngIf="spirit.type === 'Elder' || spirit.type === 'Special'">
+        {{ spirit.type }}
+      </span>
+    </a>
+    <!-- Realm -->
+    <div class="spirit-grid-item card-item card-item-icon" *ngIf="spirit.area?.realm">
+      <mat-icon fontIcon="map"></mat-icon>
+      <a class="menu-label" [routerLink]="['/realm', spirit.area!.realm!.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
+        {{ spirit.area!.realm!.name }}
+      </a>
+    </div>
+    <!-- Area -->
+    <div class="spirit-grid-item card-item card-item-icon" *ngIf="spirit.area">
+      <mat-icon fontIcon="location_on"></mat-icon>
+      <span class="menu-label">
+        {{ spirit.area!.name }}
+      </span>
+    </div>
   </div>
 </div>
 
 <div class="card container mt-2 spirit-trees">
-  <div class="container-flex spirit-trees-inner">
+  <h2 class="h3 mb-0">Spirit tree</h2>
+  <div class="container-flex spirit-trees-inner mt-2">
     <div *ngFor="let item of trees" class="tree-wrapper p-inline-block">
       <app-spirit-tree
         [tree]="item.tree" [name]="item.name"

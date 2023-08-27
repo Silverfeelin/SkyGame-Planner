@@ -8,7 +8,20 @@ export interface INavigationTarget {
 }
 
 export class NavigationHelper {
-  /** Navigates to the source of the given item. */
+  /** Gets a link to navigate to the items page with the item selected. */
+  static getItemLink(item: IItem): INavigationTarget | undefined {
+    return {
+      route: ['/item'],
+      extras: {
+        queryParams: {
+          type: item.type,
+          item: item.guid
+        }
+      }
+    }
+  }
+
+  /** Gets a link to navigates to the source of the given item (i.e. spirit). */
   static getItemSource(item: IItem): INavigationTarget | undefined {
     if (item.nodes?.length || item.hiddenNodes?.length) {
       // Find spirit from last appearance of item.

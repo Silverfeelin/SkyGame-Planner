@@ -361,10 +361,20 @@ export class DataService {
 
   private initializeSeasonItems(): void {
     for (const season of this.seasonConfig.items) {
+      // Spirit items
       for (const spirit of season.spirits ?? []) {
         if (!spirit?.tree?.node) { continue; }
         for (const item of NodeHelper.getItems(spirit.tree.node)) {
           item.season = season;
+        }
+      }
+
+      // IAP items
+      for (const shop of season.shops ?? []) {
+        for (const iap of shop.iaps ?? []) {
+          for (const item of iap.items ?? []) {
+            item.season = season;
+          }
         }
       }
     }
