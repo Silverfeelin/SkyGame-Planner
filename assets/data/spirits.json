@@ -97,7 +97,7 @@
       "guid": "MyLI80npmW",
       "type": "Regular",
       "name": "Exhausted Dock Worker",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Prairie-Spirit-Exhausted-Dock-Worker.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Prairie-Spirit-Exausted-Dock-Worker.png",
       "tree": "ALHvJCosOd",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker"
@@ -139,7 +139,7 @@
       "guid": "p-WdkJpGB5",
       "type": "Regular",
       "name": "Hide'n'Seek Pioneer",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Forest-Spirit-Hide-n-Seek-Pioneer.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Forest-Spirit-_Hide-n-Seek-Pioneer.png",
       "tree": "R7ffBM1PMH",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide'n'Seek_Pioneer"
@@ -386,6 +386,7 @@
     {
       "guid": "ExkE9a7QJ0",
       "name": "Office NPC",
+      "type": "Special",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -511,7 +512,7 @@
     },
     // #endregion
 
-    // #region Season Guides
+    // #region Gratitude
     {
       "guid": "jM6IlC8yk8",
       "type": "Guide",
@@ -522,179 +523,6 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide"
       }
     },
-    {
-      "guid": "UNKzFTE5mB",
-      "type": "Guide",
-      "name": "Lightseekers Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Lightseekers-Guide-Spirit.png",
-      "tree": "RDhnSDRp_-",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide"
-      }
-    },
-    {
-      "guid": "5rr1zr2_j5",
-      "type": "Guide",
-      "name": "Belonging Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Belonging-Guide-Spirit.png",
-      "tree": "KEuVAhun2o",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide"
-      }
-    },
-    {
-      "guid": "zldsm5S962",
-      "type": "Guide",
-      "name": "Rhythm Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Rhythm-Guide-Spirit.png",
-      "tree": "Qg7qDyBGmz",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide"
-      }
-    },
-    {
-      "guid": "ZomY9nil8V",
-      "type": "Guide",
-      "name": "Enchantment Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Enchantment-Guide-Spirit.png",
-      "tree": "MBr5qVDM3P",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide"
-      }
-    },
-    {
-      "guid": "0IoADuWn1P",
-      "type": "Guide",
-      "name": "Sanctuary Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sanctuary-Guide-Spirit.png",
-      "tree": "yZlWqKpS7C",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide"
-      }
-    },
-    {
-      "guid": "DKFofCESGJ",
-      "type": "Guide",
-      "name": "Prophecy Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Prophecy-Guide-Spirit.png",
-      "tree": "SQZ7rff2Ck",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide"
-      }
-    },
-    {
-      "guid": "sj6YhQZQvM",
-      "type": "Guide",
-      "name": "Dreams Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Dreams-Guide-Spirit.png",
-      "tree": "f74U1Fp5Nk",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide"
-      }
-    },
-    {
-      "guid": "cpwvdVEzKN",
-      "type": "Guide",
-      "name": "Assembly Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Guide-Spirit.png",
-      "tree": "FvRPGlaPpW",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide"
-      }
-    },
-    {
-      "guid": "HfafU7Pfui",
-      "type": "Guide",
-      "name": "The Rose",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Little-Prince-Guide-Spirit.png",
-      "tree": "oL3CS56h9y",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose"
-      }
-    },
-    {
-      "guid": "FF8u1g9XI_",
-      "type": "Guide",
-      "name": "Flight Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Flight_Guide.png",
-      "tree": "23Vo9a04Sm",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide"
-      }
-    },
-    {
-      "guid": "WFqMqmjVv9",
-      "type": "Guide",
-      "name": "Abyss Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/SOAbyss-Abyss-Guide.png",
-      "tree": "xz8rpLZQmm",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide"
-      }
-    },
-    {
-      "guid": "qSggZYj_x3",
-      "type": "Guide",
-      "name": "Performance Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/SOP-Ultimate-guide.png",
-      "tree": "QPaLIzQqeU",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide"
-      }
-    },
-    {
-      "guid": "q8g57aJV8r",
-      "type": "Guide",
-      "name": "The Void of Shattering",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Shattering-Guide-The-Void-of-Shattering.png",
-      "tree": "BK8jQyPH_n",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering"
-      }
-    },
-    {
-      "guid": "OaAUJHNIjE",
-      "type": "Guide",
-      "name": "AURORA Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/SoAurora-Seasonal-guide.png",
-      "tree": "P1nzgnNVFT",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide"
-      }
-    },
-    {
-      "guid": "ZGSnOxK9gb",
-      "type": "Guide",
-      "name": "Remembrance Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/SoRemembrance-Ultimate-guide.png",
-      "tree": "fchA5IwiRm",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide"
-      }
-    },
-    {
-      "guid": "_ZYvHXY8HB",
-      "type": "Guide",
-      "name": "Passage Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Passage-Ultimate-guide.png",
-      "tree": "LrH-L-oKn1",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide"
-      }
-    },
-    {
-      "guid": "PN_V8C4WOq",
-      "type": "Guide",
-      "name": "Moments Guide",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Moments-Ultimate-Guide.png",
-      "tree": "DFxVkg9lpF",
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide"
-      }
-    },
-    // #endregion
-
-    // #region Gratitude
     {
       "guid": "0yGgX4Yk3c",
       "type": "Season",
@@ -758,6 +586,16 @@
     // #endregion
     // #region Lightseekers
     {
+      "guid": "UNKzFTE5mB",
+      "type": "Guide",
+      "name": "Lightseekers Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Lightseekers-Guide-Spirit.png",
+      "tree": "RDhnSDRp_-",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide"
+      }
+    },
+    {
       "guid": "U9RJMJseUK",
       "type": "Season",
       "name": "Piggyback Lightseeker",
@@ -819,6 +657,16 @@
     },
     // #endregion
     // #region Belonging
+    {
+      "guid": "5rr1zr2_j5",
+      "type": "Guide",
+      "name": "Belonging Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Belonging-Guide-Spirit.png",
+      "tree": "KEuVAhun2o",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide"
+      }
+    },
     {
       "guid": "5u3TXZON81",
       "type": "Season",
@@ -882,6 +730,16 @@
     // #endregion
     // #region Rhythm
     {
+      "guid": "zldsm5S962",
+      "type": "Guide",
+      "name": "Rhythm Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Rhythm-Guide-Spirit.png",
+      "tree": "Qg7qDyBGmz",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide"
+      }
+    },
+    {
       "guid": "Q5pn7wxwUD",
       "type": "Season",
       "name": "Troupe Greeter",
@@ -943,6 +801,16 @@
     },
     // #endregion
     // #region Enchantment
+    {
+      "guid": "ZomY9nil8V",
+      "type": "Guide",
+      "name": "Enchantment Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Enchantment-Guide-Spirit.png",
+      "tree": "MBr5qVDM3P",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide"
+      }
+    },
     {
       "guid": "HphxLKhDBZ",
       "type": "Season",
@@ -1006,6 +874,16 @@
     // #endregion
     // #region Sanctuary
     {
+      "guid": "0IoADuWn1P",
+      "type": "Guide",
+      "name": "Sanctuary Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sanctuary-Guide-Spirit.png",
+      "tree": "yZlWqKpS7C",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide"
+      }
+    },
+    {
       "guid": "jx7koL5guD",
       "type": "Season",
       "name": "Jelly Whisperer",
@@ -1068,6 +946,16 @@
     // #endregion
     // #region Prophecy
     {
+      "guid": "DKFofCESGJ",
+      "type": "Guide",
+      "name": "Prophecy Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Prophecy-Guide-Spirit.png",
+      "tree": "SQZ7rff2Ck",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide"
+      }
+    },
+    {
       "guid": "9Rgsos9xqE",
       "type": "Season",
       "name": "Prophet of Water",
@@ -1110,6 +998,16 @@
     // #endregion
     // #region Dreams
     {
+      "guid": "sj6YhQZQvM",
+      "type": "Guide",
+      "name": "Dreams Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Dreams-Guide-Spirit.png",
+      "tree": "f74U1Fp5Nk",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide"
+      }
+    },
+    {
       "guid": "KhFZE8z0-I",
       "type": "Season",
       "name": "Bearhug Hermit",
@@ -1151,6 +1049,16 @@
     },
     // #endregion
     // #region Assembly
+    {
+      "guid": "cpwvdVEzKN",
+      "type": "Guide",
+      "name": "Assembly Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Guide-Spirit.png",
+      "tree": "FvRPGlaPpW",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide"
+      }
+    },
     {
       "guid": "94UEgV7ic1",
       "type": "Season",
@@ -1214,6 +1122,16 @@
     // #endregion
     // #region TLP
     {
+      "guid": "HfafU7Pfui",
+      "type": "Guide",
+      "name": "The Rose",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Little-Prince-Guide-Spirit.png",
+      "tree": "oL3CS56h9y",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose"
+      }
+    },
+    {
       "guid": "JOCCkr0TlW",
       "type": "Season",
       "name": "Beckoning Ruler",
@@ -1276,6 +1194,16 @@
     // #endregion
     // #region Flight
     {
+      "guid": "FF8u1g9XI_",
+      "type": "Guide",
+      "name": "Flight Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Flight_Guide.png",
+      "tree": "23Vo9a04Sm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide"
+      }
+    },
+    {
       "guid": "9Wl9kwxoFk",
       "type": "Season",
       "name": "Lively Navigator",
@@ -1317,6 +1245,16 @@
     },
     // #endregion
     // #region Abyss
+    {
+      "guid": "WFqMqmjVv9",
+      "type": "Guide",
+      "name": "Abyss Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/SOAbyss-Abyss-Guide.png",
+      "tree": "xz8rpLZQmm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide"
+      }
+    },
     {
       "guid": "4gwH1Tn9he",
       "type": "Season",
@@ -1360,6 +1298,16 @@
     // #endregion
     // #region Performance
     {
+      "guid": "qSggZYj_x3",
+      "type": "Guide",
+      "name": "Performance Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/SOP-Ultimate-guide.png",
+      "tree": "QPaLIzQqeU",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide"
+      }
+    },
+    {
       "guid": "4iotcmsn0K",
       "type": "Season",
       "name": "Frantic Stagehand",
@@ -1401,6 +1349,16 @@
     },
     // #endregion
     // #region Shattering
+    {
+      "guid": "q8g57aJV8r",
+      "type": "Guide",
+      "name": "The Void of Shattering",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Shattering-Guide-The-Void-of-Shattering.png",
+      "tree": "BK8jQyPH_n",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering"
+      }
+    },
     {
       "guid": "KqGJfPvqrM",
       "type": "Season",
@@ -1444,6 +1402,16 @@
     // #endregion
     // #region AURORA
     {
+      "guid": "OaAUJHNIjE",
+      "type": "Guide",
+      "name": "AURORA Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/SoAurora-Seasonal-guide.png",
+      "tree": "P1nzgnNVFT",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide"
+      }
+    },
+    {
       "guid": "20Xw7fuZWr",
       "type": "Season",
       "name": "Running Wayfarer",
@@ -1485,6 +1453,16 @@
     },
     // #endregion
     // #region Remembrance
+    {
+      "guid": "ZGSnOxK9gb",
+      "type": "Guide",
+      "name": "Remembrance Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/SoRemembrance-Ultimate-guide.png",
+      "tree": "fchA5IwiRm",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide"
+      }
+    },
     {
       "guid": "O1olUBrkJ5",
       "type": "Season",
@@ -1528,6 +1506,16 @@
     // #endregion
     // #region Passage
     {
+      "guid": "_ZYvHXY8HB",
+      "type": "Guide",
+      "name": "Passage Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Passage-Ultimate-guide.png",
+      "tree": "LrH-L-oKn1",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide"
+      }
+    },
+    {
       "guid": "udBbDIhZtD",
       "type": "Season",
       "name": "Oddball Outcast",
@@ -1569,6 +1557,16 @@
     },
     // #endregion
     // #region Moments
+    {
+      "guid": "PN_V8C4WOq",
+      "type": "Guide",
+      "name": "Moments Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Moments-Ultimate-Guide.png",
+      "tree": "DFxVkg9lpF",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide"
+      }
+    },
     {
       "guid": "jh-fGKllmH",
       "type": "Season",
