@@ -16545,5 +16545,147 @@
       "c": 50
     },
     // #endregion
+    // #region AURORA Encore Concerts
+    {
+      "guid": "7x-cdEvdiH",
+      "item": "YXvxchiY37",
+      "nw": "qdKYRFqly0",
+      "n": "sxpAroaINS",
+      "ne": "qJVNjnm6z-"
+    },
+    {
+      "guid": "qdKYRFqly0",
+      "item": "T71hdAEX-_",
+      "ec": 12
+    },
+    {
+      "guid": "qJVNjnm6z-",
+      "item": "nNSNKcR0jV",
+      "ec": 33
+    },
+    {
+      "guid": "sxpAroaINS",
+      "item": "0vCi-aJZlj",
+      "nw": "RW1dABs-mq",
+      "n": "XJO-kapyAV"
+    },
+    {
+      "guid": "RW1dABs-mq",
+      "item": "7L0kmOL8-h",
+      "h": 3
+    },
+    {
+      "guid": "XJO-kapyAV",
+      "item": "iZ1lQxrYIi",
+      "nw": "-thPKrpfKF",
+      "n": "G2IAe3B0fv"
+    },
+    {
+      "guid": "-thPKrpfKF",
+      "item": "3cRBKxvpUY",
+      "c": 5,
+      "n": "TGYaaEs-PL"
+    },
+    {
+      "guid": "TGYaaEs-PL",
+      "item": "RNEBgyMjrV",
+      "h": 5
+    },
+    {
+      "guid": "G2IAe3B0fv",
+      "item": "hwdDrpL-K5",
+      "n": "nYw_lsXzV_"
+    },
+    {
+      "guid": "nYw_lsXzV_",
+      "item": "uEYrMRIKMS",
+      "nw": "BJWhVg7ea5",
+      "n": "-dBLgE9Xk9",
+      "ne": "D2pjnNbG7b"
+    },
+    {
+      "guid": "BJWhVg7ea5",
+      "item": "VdWQyivAwr",
+      "h": 3
+    },
+    {
+      "guid": "D2pjnNbG7b",
+      "item": "WaJAeLkow7",
+      "c": 5,
+      "n": "mmUFqLxFWG"
+    },
+    {
+      "guid": "mmUFqLxFWG",
+      "item": "KhbsMGJgui",
+      "h": 5
+    },
+    {
+      "guid": "-dBLgE9Xk9",
+      "item": "GL-0kVxHfU",
+      "nw": "pNCYynnHS1",
+      "n": "PSlA16fLAi"
+    },
+    {
+      "guid": "pNCYynnHS1",
+      "item": "QmFZUU1klg",
+      "c": 3
+    },
+    {
+      "guid": "PSlA16fLAi",
+      "item": "uSlZPzJdDo",
+      "nw": "n1OfLQFwBo",
+      "n": "_nwvSaIURK",
+      "ne": "oTlFAGtQhR"
+    },
+    {
+      "guid": "n1OfLQFwBo",
+      "item": "IJUeE1lOwt",
+      "h": 3
+    },
+    {
+      "guid": "oTlFAGtQhR",
+      "item": "AR3AyfDRZu",
+      "c": 5,
+      "n": "MFiYRhXSEh"
+    },
+    {
+      "guid": "MFiYRhXSEh",
+      "item": "qKwEFLirdj",
+      "h": 5
+    },
+    {
+      "guid": "_nwvSaIURK",
+      "item": "KJ846bsf8j",
+      "nw": "BdlXHtsaGS",
+      "n": "fiizh3W2yu"
+    },
+    {
+      "guid": "BdlXHtsaGS",
+      "item": "uVFQgZBbyy",
+      "c": 20
+    },
+    {
+      "guid": "fiizh3W2yu",
+      "item": "a1zSVQ8GlN",
+      "nw": "zUhIiG4pMg",
+      "n": "V40gjGcSxQ",
+      "ne": "qjkOQckNsF"
+    },
+    {
+      "guid": "zUhIiG4pMg",
+      "item": "xed4G-_mSE",
+      "c": 20
+    },
+    {
+      "guid": "qjkOQckNsF",
+      "item": "pugHKsR-io",
+      "c": 200
+    },
+    {
+      "guid": "V40gjGcSxQ",
+      "item": "-66QzAlj3l",
+      "c": 50
+    },
+    // #endregion
   ]
 }

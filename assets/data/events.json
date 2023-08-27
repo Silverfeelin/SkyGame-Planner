@@ -217,7 +217,7 @@
       "guid": "0Xk69mVo9E",
       "name": "Days of Color",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfRainbow.webp",
+      "imageUrl": "assets/game/events/DaysOfColor.webp",
       "instances": [
         {
           "guid": "7H5NE9-K72",
@@ -237,6 +237,7 @@
     {
       "guid": "yVDpWb7Goo",
       "name": "Days of Rainbow",
+      "imageUrl": "assets/game/events/DaysOfRainbow.webp",
       "recurring": false,
       "instances": [
         {
@@ -545,7 +546,6 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast"
       }
     },
-    // Add Days of Feast from this Article: LINK
 
     // Days of Healing (2020)
     {
@@ -602,6 +602,7 @@
     {
       "guid": "uv2xDBpU7W",
       "name": "Days of Summer",
+      "imageUrl": "assets/game/events/DaysOfSummer.webp",
       "instances": [
         {
           "guid": "-tLqiqDLxU",
@@ -623,6 +624,7 @@
     {
       "guid": "tQQ7aeJbRJ",
       "name": "Days of Summer Lights",
+      "imageUrl": "assets/game/events/DaysOfSummerLights.webp",
       "instances": [
         {
           "guid": "FOV5DDicTL",
@@ -643,6 +645,31 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
+      }
+    },
+    // AURORA Encore Concerts
+    {
+      "guid": "284-OJ0if4",
+      "name": "AURORA Encore Concerts",
+      "imageUrl": "assets/game/events/AURORAEncore.webp",
+      "instances": [
+        {
+          "guid": "yNyYTdO1xU",
+          "date": { "day": 23, "month": 8, "year": 2023 },
+          "endDate": { "day": 3, "month": 9, "year": 2023 },
+          "shops": [
+            "wX_deEZTy9",
+            "JX7iEUoVkg",
+            "LxwKC9-ULx",
+            "r8AP1_WzAv"
+          ],
+          "spirits": [
+            { "guid": "7lXseoma3X", "spirit": "OaAUJHNIjE", "tree": "Nx8MFZDTe-" }
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts"
       }
     },
     // #endregion
