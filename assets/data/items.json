@@ -2342,7 +2342,8 @@
       "guid": "DTMwTb6_mu",
       "type": "Hair",
       "name": "Polite Scholar Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/PoliteScholar-3.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/PoliteScholar-3.png",
+      "order": 99999
     },
     // Praying Acolyte
     {
@@ -4171,7 +4172,8 @@
       "guid": "ZAwpq_6GeO",
       "type": "Prop",
       "name": "Hacky Sack Prop",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Passage-Hacky-Sack-prop-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Passage-Hacky-Sack-prop-icon-Morybel-0146.png",
+      "order": 3101
     },
     {
       "guid": "9mhT-2bV4K",
@@ -4209,7 +4211,8 @@
       "guid": "K_OhSP_gST",
       "type": "Held",
       "name": "Camera",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Moments-Guide-Prop-Camera-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Moments-Guide-Prop-Camera-icon-Credit-Morybel.png",
+      "order": 4001
     },
     {
       "guid": "PXOxK5ZTiw",
@@ -4235,7 +4238,8 @@
       "type": "Necklace",
       "name": "Moments Pendant",
       "group": "Ultimate",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Season-of-Moments-icon.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Season-of-Moments-icon.png",
+      "order": 18
     },
     {
       "guid": "DS5QeApzvs",
@@ -4250,14 +4254,16 @@
       "type": "Held",
       "name": "Moments Ultimate Camera",
       "group": "Ultimate",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Moments-Guide-Prop-Ultimate-Camera-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Moments-Guide-Prop-Ultimate-Camera-icon-Credit-Morybel.png",
+      "order": 4002
     },
     {
       "guid": "nBg1iBLlGM",
       "type": "Hat",
       "name": "Moments Ultimate Hat",
       "group": "Ultimate",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Moments-Guide-Ultimate-Hair-accessory-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Moments-Guide-Ultimate-Hair-accessory-icon-Credit-Morybel.png",
+      "order": 2801
     },
     // #endregion
     // #endregion
@@ -7008,10 +7014,10 @@
     },
     {
       "guid": "V7FLu_Hn4y",
-      "type": "Hair",
-      "name": "Chill Sunbather Hair",
+      "type": "Hat",
+      "name": "Chill Sunbather Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_07_chill_sunbather_hat.png",
-      "order": 1606
+      "order": 1
     },
     {
       "guid": "xgjzgnv6Zt",
@@ -7137,7 +7143,7 @@
     {
       "guid": "5HoXo6DF--",
       "type": "Prop",
-      "name": "Prophet of Water Prop",
+      "name": "Prophet of Water Sticker",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoProphecy-Prophet-of-Water-Sticker-Prop-Icon-Morybel-0146.png",
       "order": 501
     },
@@ -7232,7 +7238,7 @@
     {
       "guid": "DecMXt7qEo",
       "type": "Prop",
-      "name": "Prophet of Earth Prop",
+      "name": "Prophet of Earth Sticker",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_prop_prophet_of_earth_.png",
       "order": 601
     },
@@ -7332,7 +7338,7 @@
     {
       "guid": "GivrsXeHVe",
       "type": "Prop",
-      "name": "Prophet of Air Prop",
+      "name": "Prophet of Air Sticker",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Prophet-of-air-prop-Ray.png",
       "order": 701
     },
@@ -7447,7 +7453,8 @@
       "guid": "c3sT_itCFa",
       "type": "Prop",
       "name": "Prophet of Fire Sticker",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/SoProphecy-Prophet-of-Fire-Sticker-Prop-Icon-Ed.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/SoProphecy-Prophet-of-Fire-Sticker-Prop-Icon-Ed.png",
+      "order": 702
     },
     // #endregion
     // #region Dreams
@@ -9977,7 +9984,7 @@
       "type": "Instrument",
       "name": "Dark Horn",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/SOShattering-Dark-Horn-Icon-Morybel-0146.png",
-      "order": 1901
+      "order": 2751
     },
     {
       "guid": "TsL-GHL_RI",
@@ -10738,7 +10745,7 @@
       "type": "Hair",
       "name": "Oddball Outcast Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Passage-Oddball-Outcast-Hairstyle-icon-Morybel-0146.png",
-      "order": 2701
+      "order": 2704
     },
     {
       "guid": "vCidIP_ecS",
@@ -10819,7 +10826,7 @@
       "type": "Hair",
       "name": "Tumbling Troublemaker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Passage-Tumbling-Troublemaker-Hair-icon-Morybel-0146.png",
-      "order": 2702
+      "order": 2701
     },
     {
       "guid": "IxNpykF933",
@@ -10907,7 +10914,7 @@
       "type": "Hair",
       "name": "Melancholy Mope Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-Melancholy-Mope-Hair-icon-Morybel-0146.png",
-      "order": 2703
+      "order": 2702
     },
     {
       "guid": "AZb8ZxAeDb",
@@ -10969,7 +10976,7 @@
       "type": "Instrument",
       "name": "Manta Flute",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Passage-Overactive-Overachiever-Instrument-icon-Morybel-0146.png",
-      "order": 1651
+      "order": 2851
     },
     {
       "guid": "BwA9_RCi47",
@@ -11009,7 +11016,7 @@
       "type": "Hair",
       "name": "Overactive Overachiever Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Passage-Overactive-Overachiever-Hair-icon-Morybel-0146.png",
-      "order": 2704
+      "order": 2703
     },
     {
       "guid": "-Xg9VMYldT",
@@ -11070,13 +11077,15 @@
       "guid": "JSnhIHtrE5",
       "type": "Cape",
       "name": "Reassuring Ranger Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Reassuring-Ranger-Cape-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Reassuring-Ranger-Cape-icon-Credit-Morybel.png",
+      "order": 2801
     },
     {
       "guid": "ldRJqNu7QX",
       "type": "Hat",
       "name": "Reassuring Ranger Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Reassuring-Ranger-Hair-accessory-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Reassuring-Ranger-Hair-accessory-icon-Credit-Morybel.png",
+      "order": 2803
     },
     {
       "guid": "W42gdCa79_",
@@ -11117,7 +11126,8 @@
       "guid": "cXuwp1MnHZ",
       "type": "Hair",
       "name": "Jolly Geologist Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Jolly-Geologist-Hair-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Jolly-Geologist-Hair-icon-Credit-Morybel.png",
+      "order": 2803
     },
     {
       "guid": "5_eEcizGMw",
@@ -11156,7 +11166,8 @@
       "guid": "hE65fn-mBH",
       "type": "Prop",
       "name": "Jolly Geologist Prop",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Jolly-Geologist-Prop-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Jolly-Geologist-Prop-icon-Credit-Morybel.png",
+      "order": 3201
     },
     {
       "guid": "VsraqNSiML",
@@ -11196,8 +11207,9 @@
     {
       "guid": "3Kwn4gx5Sw",
       "type": "Hair",
-      "name": "Ascetic Monk Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Ascetic-Monk-Hair-icon-Credit-Morybel.png"
+      "name": "Ascetic Monk Tattoo",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Ascetic-Monk-Hair-icon-Credit-Morybel.png",
+      "order": 2802
     },
     {
       "guid": "bZBOWw8mZD",
@@ -11223,7 +11235,8 @@
       "guid": "6OKxFB9NFg",
       "type": "Outfit",
       "name": "Ascetic Monk Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Ascetic-Monk-Outfit-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Ascetic-Monk-Outfit-icon-Credit-Morybel.png",
+      "order": 1801
     },
     {
       "guid": "VNMvBdmw24",
@@ -11249,7 +11262,8 @@
       "guid": "ygFxGKMla2",
       "type": "Hair",
       "name": "Nightbird Whisperer Hair",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Nightbird-Whisperer-Hair-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Nightbird-Whisperer-Hair-icon-Credit-Morybel.png",
+      "order": 2801
     },
     {
       "guid": "yT9McjxgAb",
@@ -11267,13 +11281,15 @@
       "guid": "uh-hCG0TaB",
       "type": "Hat",
       "name": "Nightbird Whisperer Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nightbird-Whisperer-Head-accessory-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nightbird-Whisperer-Head-accessory-icon-Credit-Morybel.png",
+      "order": 2802
     },
     {
       "guid": "InwVEtmmcp",
       "type": "Outfit",
       "name": "Nightbird Whisperer Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Nightbird-Whisperer-Outfit-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Nightbird-Whisperer-Outfit-icon-Credit-Morybel.png",
+      "order": 1802
     },
     {
       "guid": "5J7MR1HC1a",
@@ -11316,7 +11332,7 @@
       "type": "Hair",
       "name": "Days of Fortune Lion Headdress",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_new_years_headpiece.png",
-      "order": 303
+      "order": 352
     },
     {
       "guid": "aRgiKoKavp",
@@ -11351,7 +11367,7 @@
       "type": "Hair",
       "name": "Days of Fortune Bun Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Icon_hair_event_high_buns.png",
-      "order": 302
+      "order": 351
     },
     {
       "guid": "c1YroXxA9Z",
@@ -11729,7 +11745,8 @@
       "guid": "RLhtVkyDy3",
       "type": "Cape",
       "name": "Nature School Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Days-of-Nature-Fish-Vortex-cape-icon-Ray.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Days-of-Nature-Fish-Vortex-cape-icon-Ray.png",
+      "order": 10204
     },
     {
       "guid": "IOBWcIpOY9",
@@ -11742,7 +11759,8 @@
       "guid": "gHfkqCK-A8",
       "type": "Prop",
       "name": "Nature Sonorous Seashell",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Days-of-Nature-Sonorous-Seashell-icon-Ray.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Days-of-Nature-Sonorous-Seashell-icon-Ray.png",
+      "order": 5701
     },
     // #endregion
     // #region Days of Rainbow
@@ -12053,7 +12071,8 @@
       "guid": "dEWiCE1-6D",
       "name": "Oreo Plush",
       "type": "Prop",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Sky-Anniversary-Oreo-prop-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Sky-Anniversary-Oreo-prop-icon-Morybel-0146.png",
+      "order": 5803
     },
     {
       "guid": "wHQI_tvpiL",
@@ -12065,19 +12084,22 @@
       "guid": "dLtGhTPX8z",
       "name": "4 Year Sky Anniversary Hat",
       "type": "Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png",
+      "order": 10704
     },
     {
       "guid": "9jISGFNSLT",
       "name": "Sky Anniversary Musical Shell",
       "type": "Prop",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Sky-Anniversary-Musical-shell-prop-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Sky-Anniversary-Musical-shell-prop-icon-Morybel-0146.png",
+      "order": 5801
     },
     {
       "guid": "BQi3QIoOwq",
       "name": "Sky Anniversary Disco Light",
       "type": "Prop",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sky-Anniversary-Disco-Light-Prop-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sky-Anniversary-Disco-Light-Prop-icon-Morybel-0146.png",
+      "order": 5802
     },
     // #endregion
     // #region Days of Mischief
@@ -12253,7 +12275,7 @@
       "type": "Necklace",
       "name": "Feast Necktie",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Icon_pendant_holly_pendant.png",
-      "order": 10201
+      "order": 10602
     },
     {
       "guid": "FG23AJzDOD",
@@ -12544,14 +12566,16 @@
     {
       "guid": "rMC7kQhgYk",
       "type": "Instrument",
-      "name": "Triupmh Saxophone",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Triumph-Saxophone-instrument-icon-Morybel-0146.png"
+      "name": "Triumph Saxophone",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Triumph-Saxophone-instrument-icon-Morybel-0146.png",
+      "order": 3401
     },
     {
       "guid": "6uObjDNBAm",
-      "type": "Hat",
+      "type": "Hair",
       "name": "Marching Band Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png",
+      "order": 326
     },
     {
       "guid": "pUCJ7_2QWR",
@@ -12563,7 +12587,8 @@
       "guid": "5V_r38RVGd",
       "type": "Instrument",
       "name": "Triumph Violin",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Triumph-Violon-Instrument-icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Triumph-Violon-Instrument-icon-Morybel-0146.png",
+      "order": 3402
     },
     {
       "guid": "rJb-2yon2M",
