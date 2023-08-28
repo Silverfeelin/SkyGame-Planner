@@ -61,7 +61,7 @@ export class NavigationHelper {
       case 'Hat': type = 'Hair_Accessories'; break;
       case 'Hair': type = 'Hair'; break;
       case 'Mask': type = 'Masks'; break;
-      //case 'FaceAccessory': type = 'Face_Accessories'; break;
+      case 'FaceAccessory': type = 'Face_Accessories'; break;
       case 'Necklace': type = 'Necklaces'; break;
       case 'Outfit': type = 'Outfits'; break;
       case 'Shoes': type = 'Shoes'; break;
