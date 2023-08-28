@@ -254,10 +254,10 @@
     },
     {
       "guid": "fR9CRzzD25",
-      "type": "Mask",
-      "name": "Rejecting Voyager Mask",
+      "type": "FaceAccessory",
+      "name": "Rejecting Voyager Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/RejectingVoyager-3.png",
-      "order": 3
+      "order": 1
     },
     {
       "guid": "910IbnbJI5",
@@ -475,7 +475,7 @@
       "type": "Mask",
       "name": "Waving Bellmaker Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png",
-      "order": 10302
+      "order": 51
     },
     {
       "guid": "kU0OvflFtz",
@@ -714,10 +714,10 @@
     },
     {
       "guid": "1AvXszxZaV",
-      "type": "Mask",
-      "name": "Exhausted Dock Worker Mask",
+      "type": "FaceAccessory",
+      "name": "Exhausted Dock Worker Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/ExhaustedDockWorker-2.png",
-      "order": 4
+      "order": 2
     },
     // Ceremonial Worshiper
     {
@@ -1175,10 +1175,10 @@
     },
     {
       "guid": "tOREuHRkdm",
-      "type": "Mask",
-      "name": "Apologetic Lumberjack Mask",
+      "type": "FaceAccessory",
+      "name": "Apologetic Lumberjack Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/ApologeticLumberjack-3.png",
-      "order": 5
+      "order": 3
     },
     // Tearful Light Miner
     {
@@ -1510,10 +1510,10 @@
     },
     {
       "guid": "7VBgFCqs5x",
-      "type": "Mask",
-      "name": "Backflipping Champion Mask",
+      "type": "FaceAccessory",
+      "name": "Backflipping Champion Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/BackflippingChampion-3.png",
-      "order": 6
+      "order": 4
     },
     // Cheerful Spectator
     {
@@ -1646,10 +1646,10 @@
     },
     {
       "guid": "HpwvctsUt0",
-      "type": "Mask",
-      "name": "Bowing Medalist Mask",
+      "type": "FaceAccessory",
+      "name": "Bowing Medalist Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/BowingMedalist-3.png",
-      "order": 7
+      "order": 5
     },
     // Proud Victor
     {
@@ -1695,7 +1695,7 @@
       "type": "Mask",
       "name": "Proud Victor Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/ProudVictor-3.png",
-      "order": 10101
+      "order": 99999
     },
     {
       "guid": "RnDoRx7ilh",
@@ -2097,10 +2097,10 @@
     },
     {
       "guid": "Ud5Scw26Il",
-      "type": "Mask",
-      "name": "Lookout Scout Mask",
+      "type": "FaceAccessory",
+      "name": "Lookout Scout Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/LookoutScout-3.png",
-      "order": 8
+      "order": 6
     },
     // #endregion
     // #region Vault
@@ -2167,10 +2167,10 @@
     },
     {
       "guid": "CKVi0baUvl",
-      "type": "Mask",
-      "name": "Levitating Adept Mask",
+      "type": "FaceAccessory",
+      "name": "Levitating Adept Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/LevitatingAdept-3.png",
-      "order": 9
+      "order": 7
     },
     // Meditating Monastic
     {
@@ -2439,9 +2439,9 @@
     },
     {
       "guid": "md88nKjoJF",
-      "type": "Mask",
+      "type": "FaceAccessory",
       "group": "Elder",
-      "name": "Isle Elder Mask",
+      "name": "Isle Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
       "order": 51
     },
@@ -2456,9 +2456,9 @@
     },
     {
       "guid": "tM_21JOpuH",
-      "type": "Mask",
+      "type": "FaceAccessory",
       "group": "Elder",
-      "name": "Prairie Elder Mask",
+      "name": "Prairie Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
       "order": 52
     },
@@ -2473,9 +2473,9 @@
     },
     {
       "guid": "ay0lwFyush",
-      "type": "Mask",
+      "type": "FaceAccessory",
       "group": "Elder",
-      "name": "Forest Elder Mask",
+      "name": "Forest Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
       "order": 53
     },
@@ -2608,11 +2608,11 @@
     },
     {
       "guid": "FlOSNmw_38",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "group": "Ultimate",
-      "name": "Enchantment Ultimate Hair Tassel",
+      "name": "Enchantment Ultimate Hair Tassels",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_enchantment_ultimate_tassles.png",
-      "order": 1501
+      "order": 1001
     },
     {
       "guid": "EUVtYtLoeB",
@@ -3358,10 +3358,10 @@
     },
     {
       "guid": "rfwNbdvXQz",
-      "type": "Hat",
-      "name": "Abyss Ultimate Hat",
+      "type": "FaceAccessory",
+      "name": "Abyss Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png",
-      "order": 2202
+      "order": 1201
     },
     {
       "guid": "8Oy0j-LGR_",
@@ -4115,7 +4115,7 @@
       "type": "Mask",
       "name": "Passage Serow Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Passage-additional-mask-Serow-icon-Morybel-0146.png",
-      "order": 1701
+      "order": 1702
     },
     {
       "guid": "gM93l96JzS",
@@ -4134,7 +4134,7 @@
       "type": "Mask",
       "name": "Passage Boar Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-additional-mask-Boar-icon-Morybel-0146.png",
-      "order": 1702
+      "order": 1703
     },
     {
       "guid": "YoluGOPKvu",
@@ -4158,7 +4158,8 @@
       "guid": "zozW0cQQhx",
       "type": "Mask",
       "name": "Passage Monkey Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Passage-additional-mask-Monkey-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Passage-additional-mask-Monkey-Morybel-0146.png",
+      "order": 1705
     },
     {
       "guid": "Hs7ZfjulPo",
@@ -4175,8 +4176,9 @@
     {
       "guid": "9mhT-2bV4K",
       "type": "Mask",
-      "name": "Racoon Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Passage-additional-mask-Racoon-Morybel-0146.png"
+      "name": "Pasasge Racoon Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Passage-additional-mask-Racoon-Morybel-0146.png",
+      "order": 1704
     },
     // Passage Ultimates
     {
@@ -4192,7 +4194,7 @@
       "type": "Mask",
       "name": "Passage Ultimate Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Passage-Ultimate-Guide-Mask-icon-Morybel-0146.png",
-      "order": 1703
+      "order": 1701
     },
     {
       "guid": "HYdEzP1Gat",
@@ -4237,10 +4239,11 @@
     },
     {
       "guid": "DS5QeApzvs",
-      "type": "Mask",
+      "type": "FaceAccessory",
       "name": "Moments Ultimate Glasses",
       "group": "Ultimate",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Moments-Guide-Head-accessory-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Moments-Guide-Head-accessory-icon-Credit-Morybel.png",
+      "order": 901
     },
     {
       "guid": "W-3Nh_yWGv",
@@ -5532,10 +5535,10 @@
     },
     {
       "guid": "bBQbGQh1PU",
-      "type": "Hat",
-      "name": "Hairtousle Teen Hat",
+      "type": "FaceAccessory",
+      "name": "Hairtousle Teen Earmuffs",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png",
-      "order": 1301
+      "order": 1701
     },
     {
       "guid": "Ph__M3uulY",
@@ -6984,10 +6987,10 @@
     },
     {
       "guid": "yHf5YnLXUu",
-      "type": "Mask",
-      "name": "Chill Sunbather Mask",
+      "type": "FaceAccessory",
+      "name": "Chill Sunbather Sunglasses",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Mimi-4117_07_chill_sunbather_mask.png",
-      "order": 602
+      "order": 601
     },
     {
       "guid": "phajnn85-p",
@@ -7464,10 +7467,10 @@
     },
     {
       "guid": "xI0_ep59HH",
-      "type": "Hat",
-      "name": "Bearhug Hermit Hat",
+      "type": "FaceAccessory",
+      "name": "Bearhug Hermit Horns",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png",
-      "order": 1801
+      "order": 1101
     },
     {
       "guid": "Ml3Snz_cos",
@@ -10355,10 +10358,10 @@
     // #region Limited items
     {
       "guid": "i0BYuPKZYe",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Tiara We Can Touch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png",
-      "order": 2501
+      "order": 1301
     },
     {
       "guid": "wZGUtak1mb",
@@ -10850,10 +10853,10 @@
     },
     {
       "guid": "Gz6U0Ahkg5",
-      "type": "Hat",
-      "name": "Tumbling Troublemaker Hat",
+      "type": "FaceAccessory",
+      "name": "Tumbling Troublemaker Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Passage-Tumbling-Troublemaker-Hair-Accessory-icon-Morybel-0146.png",
-      "order": 2701
+      "order": 1402
     },
     {
       "guid": "23CqDqp6fd",
@@ -10879,10 +10882,10 @@
     },
     {
       "guid": "LNt-MN76Pf",
-      "type": "Hat",
-      "name": "Melancholy Mope Hat",
+      "type": "FaceAccessory",
+      "name": "Melancholy Mope Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Passage-Melancholy-Mope-Hair-accessory-icon-Morybel-0146.png",
-      "order": 2702
+      "order": 1401
     },
     {
       "guid": "leQJ72gAGH",
@@ -11036,15 +11039,17 @@
     },
     {
       "guid": "LFU_2aPHk8",
-      "type": "Necklace",
-      "name": "Reassuring Ranger Face Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Head-accessory-icon-Credit-Morybel.png"
+      "type": "FaceAccessory",
+      "name": "Reassuring Ranger Wheat Stalk",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Head-accessory-icon-Credit-Morybel.png",
+      "order": 1501
     },
     {
       "guid": "3m-6xEWbtg",
       "type": "Mask",
       "name": "Reassuring Ranger Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Reassuring-Ranger-Mask-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Reassuring-Ranger-Mask-icon-Credit-Morybel.png",
+      "order": 1801
     },
     {
       "guid": "g_PxUjAXIJ",
@@ -11100,9 +11105,10 @@
     },
     {
       "guid": "eesH4ixwlq",
-      "type": "Necklace",
+      "type": "FaceAccessory",
       "name": "Jolly Geologist Face Accessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Jolly-Geologist-Head-accessory-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Jolly-Geologist-Head-accessory-icon-Credit-Morybel.png",
+      "order": 1502
     },
     {
       "guid": "cXuwp1MnHZ",
@@ -11181,7 +11187,8 @@
       "guid": "aU8YW34Cau",
       "type": "Mask",
       "name": "Ascetic Monk Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Ascetic-Monk-Mask-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Ascetic-Monk-Mask-icon-Credit-Morybel.png",
+      "order": 1802
     },
     {
       "guid": "3Kwn4gx5Sw",
@@ -11722,9 +11729,10 @@
     },
     {
       "guid": "IOBWcIpOY9",
-      "type": "Mask",
+      "type": "FaceAccessory",
       "name": "Nature Glasses",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Nature-Glasses-icon-Ray.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Nature-Glasses-icon-Ray.png",
+      "order": 801
     },
     {
       "guid": "gHfkqCK-A8",
@@ -11736,10 +11744,10 @@
     // #region Days of Rainbow
     {
       "guid": "4XMYa4Wj-M",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Rainbow Braid",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png",
-      "order": 10103
+      "order": 1601
     },
     {
       "guid": "BUTwFt6PGm",
@@ -11849,17 +11857,17 @@
     },
     {
       "guid": "f-X2dDeB9w",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Rainbow Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png",
-      "order": 10104
+      "order": 1602
     },
     {
       "guid": "j51xlBBIZX",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Rainbow Headphones",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png",
-      "order": 10106
+      "order": 1801
     },
     {
       "guid": "0rrPORrk7O",
@@ -11895,10 +11903,10 @@
     },
     {
       "guid": "krzIL86J83",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Dark Rainbow Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png",
-      "order": 10105
+      "order": 1603
     },
     {
       "guid": "2OuY3ABFCZ",
@@ -12165,10 +12173,10 @@
     },
     {
       "guid": "evuvua13dC",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Mischief Withered Antlers",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png",
-      "order": 10601
+      "order": 2001
     },
     {
       "guid": "MnzYzRK9sY",
@@ -12209,10 +12217,10 @@
     },
     {
       "guid": "rQQmknOn9a",
-      "type": "Hat",
+      "type": "FaceAccessory",
       "name": "Days of Feast Horns",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Icon_hair_feast_antlers.png",
-      "order": 10901
+      "order": 1901
     },
     {
       "guid": "gnC7YQCAug",
@@ -12340,10 +12348,10 @@
     },
     {
       "guid": "TLljjPrjAq",
-      "type": "Mask",
+      "type": "FaceAccessory",
       "name": "Feast Goggles",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Days-of-Feast-Yeti-Goggles-Icon-Morybel-0146.png",
-      "order": 10801
+      "order": 701
     },
     {
       "guid": "ZvfG2eU17I",

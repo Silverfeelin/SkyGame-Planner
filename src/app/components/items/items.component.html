@@ -24,6 +24,12 @@
       (click)="selectCategory('Mask')">
       <mat-icon svgIcon="mask"></mat-icon>
     </div>
+    <!-- Face Accessories -->
+    <div class="flex-item category" [class.highlight]="type === 'FaceAccessory'"
+    [ngbTooltip]="'Face accessories'" container="body" placement="bottom"
+      (click)="selectCategory('FaceAccessory')">
+      <mat-icon svgIcon="face-acc"></mat-icon>
+    </div>
     <!-- Necklaces -->
     <div class="flex-item category" [class.highlight]="type === 'Necklace'"
     [ngbTooltip]="'Necklaces'" container="body" placement="bottom"
