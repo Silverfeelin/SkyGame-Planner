@@ -8192,7 +8192,8 @@
       "guid": "_k3jPMWKOY",
       "type": "Shoes",
       "name": "Chuckling Scout Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Chuckling-Scout-shoes-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Chuckling-Scout-shoes-icon-Credit-Morybel.png",
+      "order": 1
     },
     {
       "guid": "osxMEOwG_r",
@@ -10409,7 +10410,8 @@
       "guid": "LrI5FQ8vdi",
       "type": "Shoes",
       "name": "AURORA Musical Voyage Sneakers",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Aurora-Record-Breaker-Sneakers-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Aurora-Record-Breaker-Sneakers-icon-Credit-Morybel.png",
+      "order": 401
     },
     {
       "guid": "T71hdAEX-_",
@@ -10570,7 +10572,8 @@
       "guid": "2LXsbFTewq",
       "type": "Shoes",
       "name": "Pleading Child Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Pleading-Child-Shoes-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Pleading-Child-Shoes-icon-Credit-Morybel.png",
+      "order": 101
     },
     {
       "guid": "j4QIVxv1ux",
@@ -11288,7 +11291,8 @@
       "guid": "yFMhqJAJL5",
       "type": "Shoes",
       "name": "Nightbird Whisperer Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nightbird-Whisperer-Footwear-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nightbird-Whisperer-Footwear-icon-Credit-Morybel.png",
+      "order": 201
     },
     {
       "guid": "4iahXDrqQd",
@@ -12169,7 +12173,8 @@
       "guid": "h-fwwT4T5y",
       "type": "Shoes",
       "name": "Mischief Witch Jumper Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Mischief-Witch-Jumper-Shoes-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Mischief-Witch-Jumper-Shoes-icon-Credit-Morybel.png",
+      "order": 301
     },
     {
       "guid": "evuvua13dC",
