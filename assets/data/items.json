@@ -1513,7 +1513,7 @@
       "type": "FaceAccessory",
       "name": "Backflipping Champion Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/BackflippingChampion-3.png",
-      "order": 4
+      "order": 5
     },
     // Cheerful Spectator
     {
@@ -1649,7 +1649,7 @@
       "type": "FaceAccessory",
       "name": "Bowing Medalist Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/BowingMedalist-3.png",
-      "order": 5
+      "order": 4
     },
     // Proud Victor
     {
