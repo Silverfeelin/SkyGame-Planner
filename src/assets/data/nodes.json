@@ -9365,7 +9365,7 @@
     },
     // #endregion
     // #region Sanctuary
-    // Jelly Whisperer
+    // #region Jelly Whisperer
     {
       "guid": "Rl_priwPb9",
       "item": "U7lPqW1fa0",
@@ -9461,6 +9461,60 @@
       "item": "6PJ8TATvNk",
       "c": 65
     },
+    // TS 95
+    {
+      "guid": "noMwATo1aS",
+      "item": "U7lPqW1fa0",
+      "n": "h92uY1pDjV"
+    },
+    {
+      "guid": "h92uY1pDjV",
+      "item": "D4-m11eQ83",
+      "c": 5,
+      "nw": "LwInSYi8U0",
+      "n": "4NXxKRpWE7",
+      "ne": "spu6sqdalZ"
+    },
+    {
+      "guid": "LwInSYi8U0",
+      "item": "jx_1R13Z_n",
+      "c": 15
+    },
+    {
+      "guid": "spu6sqdalZ",
+      "item": "Pl-VskaTkm",
+      "c": 3
+    },
+    {
+      "guid": "4NXxKRpWE7",
+      "item": "_JrDD-30_-",
+      "ac": 2,
+      "n": "8FL6Bh46XF"
+    },
+    {
+      "guid": "8FL6Bh46XF",
+      "item": "hC1gh9FWhv",
+      "c": 42,
+      "n": "A7Rrj-jDHS"
+    },
+    {
+      "guid": "A7Rrj-jDHS",
+      "item": "RO94m-cztD",
+      "c": 5,
+      "nw": "5Lx1KJdRu_",
+      "n": "foYlAVInFc"
+    },
+    {
+      "guid": "5Lx1KJdRu_",
+      "item": "Qx7W5fQows",
+      "h": 15
+    },
+    {
+      "guid": "foYlAVInFc",
+      "item": "6PJ8TATvNk",
+      "c": 65
+    },
+    // #endregion
     // Timid Bookworm
     {
       "guid": "B4rizR4xxx",
