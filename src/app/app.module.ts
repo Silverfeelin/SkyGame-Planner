@@ -36,6 +36,7 @@ import { ItemTypePipe } from './pipes/item-type.pipe';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 import { SpiritTypeIconComponent } from './components/spirit-type-icon/spirit-type-icon.component';
+import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { SpiritTypeIconComponent } from './components/spirit-type-icon/spirit-ty
     RealmComponent,
     ReturningSpiritsComponent,
     ReturningSpiritComponent,
-    SpiritTypeIconComponent
+    SpiritTypeIconComponent,
+    SpiritsOverviewComponent
   ],
   imports: [
     BrowserModule,

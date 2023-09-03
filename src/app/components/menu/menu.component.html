@@ -14,6 +14,11 @@
         <mat-icon fontIcon="checkroom"></mat-icon>
         <span class="name">Items</span>
       </a>
+      <!-- Spirits -->
+      <a class="item" [routerLink]="'spirits'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Spirits'" placement="right" container="body">
+        <mat-icon fontIcon="person"></mat-icon>
+        <span class="name">Spirits</span>
+      </a>
       <!-- Wing Buffs-->
       <a class="item" [routerLink]="'wing-buff'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Wing Buffs'" placement="right" container="body">
         <mat-icon svgIcon="flaps"></mat-icon>
@@ -26,23 +31,14 @@
       </a>
       <!-- Seasons -->
       <a class="item" [routerLink]="'season'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
-        <mat-icon fontIcon="ac_unit"></mat-icon>
+        <img *ngIf="seasonIconUrl; else seasonIcon" [src]="seasonIconUrl" class="icon">
+        <ng-template #seasonIcon><mat-icon fontIcon="ac_unit"></mat-icon></ng-template>
         <span class="name">Seasons</span>
       </a>
       <!-- Events -->
       <a class="item" [routerLink]="'event'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
         <mat-icon fontIcon="celebration"></mat-icon>
         <span class="name">Events</span>
-      </a>
-      <!-- Traveling Spirits -->
-      <a class="item" [routerLink]="'ts'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Traveling Spirits'" placement="right" container="body">
-        <mat-icon fontIcon="hikings"></mat-icon>
-        <span class="name">Traveling Spirits</span>
-      </a>
-      <!-- Returning Spirits -->
-      <a class="item" [routerLink]="'rs'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Returning Spirits'" placement="right" container="body">
-        <mat-icon fontIcon="cached"></mat-icon>
-        <span class="name">Returning Spirits</span>
       </a>
       <!-- Shop -->
       <a class="item" [routerLink]="'shop'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">

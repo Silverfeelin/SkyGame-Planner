@@ -21,7 +21,8 @@
     </a>
     <!-- 2: Season -->
     <a class="spirit-grid-item card-item card-item-icon" *ngIf="spirit.type === 'Season' || spirit.type === 'Guide'" [routerLink]="['/season', spirit.season?.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
-      <mat-icon fontIcon="ac_unit"></mat-icon>
+      <img *ngIf="spirit.season?.iconUrl; else seasonIcon" [src]="spirit.season!.iconUrl" class="icon">
+      <ng-template #seasonIcon><mat-icon fontIcon="ac_unit"></mat-icon></ng-template>
       <span class="menu-label">
         {{ spirit.season?.name }}
       </span>

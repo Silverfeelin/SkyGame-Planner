@@ -2,9 +2,6 @@
   padding: var(--padding-content);
   border-radius: var(--border-radius-round);
   background: var(--color-item-background);
-}
-
-.card-inset {
   box-shadow: inset 0px 5px 5px -5px var(--color-item-background-highlight);
 }
 
@@ -17,7 +14,7 @@
 .card-item-icon {
   position: relative;
 
-  mat-icon {
+  > mat-icon, > img.icon {
     position: absolute;
   }
 

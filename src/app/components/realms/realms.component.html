@@ -1,9 +1,9 @@
-<div class="card card-inset container">
+<div class="card container">
   <h1 class="h2 mb-0">Realms</h1>
 </div>
 
 <div class="grid grid-3 mt-2">
-  <div class="card card-inset p-rel" *ngFor="let realm of visibleRealms">
+  <div class="card p-rel" *ngFor="let realm of visibleRealms">
     <h2 class="h3">{{realm.name}}</h2>
     <!-- Wiki -->
     <div class="wiki p-abs" *ngIf="realm._wiki?.href">
@@ -22,10 +22,5 @@
     <!-- <div class="mt-2 item areas">
       Areas
     </div> -->
-    <!-- Spirits -->
-    <a *ngIf="spiritCount[realm.guid]" class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ realm: realm.guid, type: 'Regular,Elder' }">
-      <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
-      <span class="menu-label">Spirits&nbsp;<span class="c-accent">({{ spiritCount[realm.guid] }})</span></span>
-    </a>
   </div>
 </div>

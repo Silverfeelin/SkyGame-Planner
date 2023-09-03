@@ -1,13 +1,13 @@
-<div class="card card-inset container">
+<div class="card container">
   <h1 class="h2 mb-0">Events</h1>
 </div>
 
 <!-- Active events -->
-<div class="card card-inset container mt-2 highlight" *ngIf="hasActiveEvents">
+<div class="card container mt-2 highlight" *ngIf="hasActiveEvents">
   <h2 class="h3 mb">Active events</h2>
   <div class="container-inner">
     <div class="grid grid-4">
-      <div class="card card-inset p-rel" *ngFor="let event of activeEvents | keyvalue; let i = index;">
+      <div class="card p-rel" *ngFor="let event of activeEvents | keyvalue; let i = index;">
         <h2 class="h3">{{ event.value.name }}</h2>
         <!-- Wiki -->
         <div class="wiki p-abs" *ngIf="event.value._wiki?.href">
@@ -33,11 +33,11 @@
 </div>
 
 <!-- Recurring -->
-<div class="card card-inset container mt-2">
+<div class="card container mt-2">
   <h2 class="h3 mb">Recurring events</h2>
   <div class="container-inner">
     <div class="grid grid-4">
-      <div class="card card-inset p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
+      <div class="card p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>
@@ -45,11 +45,11 @@
 </div>
 
 <!-- Other -->
-<div class="card card-inset container mt-2">
+<div class="card container mt-2">
   <h2 class="h3">Other events</h2>
   <div class="container-inner">
     <div class="grid grid-4">
-      <div class="card card-inset p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
+      <div class="card p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
         <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
       </div>
     </div>

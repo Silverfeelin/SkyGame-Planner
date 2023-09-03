@@ -38,9 +38,27 @@ export class NodeHelper {
     return nodes;
   }
 
-  static getItems(node?: INode): Array<IItem> {
+  /** Gets all items from the node tree.
+   * @param node Node to start from.
+   * @param includeHidden Include hidden items (see INode.hiddenItems).
+   * @returns Array of items.
+   */
+  static getItems(node?: INode, includeHidden?: boolean): Array<IItem> {
     const itemSet = new Set<IItem>();
-    this.all(node).filter(n => n.item).forEach(n => itemSet.add(n.item!));
+    this.all(node).filter(n => n.item).forEach(n => {
+      itemSet.add(n.item!);
+      includeHidden && n.hiddenItems?.forEach(i => itemSet.add(i));
+    });
     return [...itemSet];
+  }
+
+  /** Gets all nodes leading up to this node.
+   * @param node Target node.
+   * @returns Array in order from root node to given node.
+   */
+  static trace(node?: INode): Array<INode> {
+    const nodes: Array<INode> = [];
+    while (node) { nodes.push(node); node = node.prev; }
+    return nodes.reverse();
   }
 }

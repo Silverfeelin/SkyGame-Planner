@@ -17,6 +17,11 @@ a, .link {
   }
 }
 
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
 // a with link
 .link {
   text-decoration: underline;
@@ -150,10 +155,22 @@ p:last-child {
   }
 }
 
+.menu-icon {
+  position: absolute;
+}
+
+.menu-label {
+  padding-left: 32px;
+}
+
 // Prevent SVG icon clipping.
 mat-icon {
   font-size: 24px;
   line-height: 24px;
+}
+
+mat-icon svg {
+  vertical-align: unset;
 }
 
 mat-icon.currency { fill: var(--color-candle); }

@@ -61,8 +61,9 @@ export class SpiritsComponent {
     const realmGuid = q.get('realm');
     const realm = realmGuid ? this._dataService.guidMap.get(realmGuid) as IRealm : undefined;
     if (realm) {
-      const spirits = realm.areas?.flatMap(a => a.spirits || []) || [];
-      searchArrays.push(spirits);
+      const spirits = new Set(realm.areas?.flatMap(a => a.spirits || []) || []);
+      const ordered = this._dataService.spiritConfig.items.filter(s => spirits.has(s));
+      searchArrays.push(ordered);
     }
 
     // Load from season.
@@ -107,17 +108,28 @@ export class SpiritsComponent {
 
       // Count items from last spirit tree.
       let unlockedLast = 0, totalLast = 0;
+      let unlockedFree = 0, totalFree = 0;
+      let unlockedPass = 0, totalPass = 0;
       const lastTree = trees.at(-1);
       if (lastTree) {
         // Count items from last tree.
         NodeHelper.getItems(lastTree!.node).forEach(item => {
           if (item.unlocked) { unlockedLast++; }
           totalLast++;
+
+          if (item.group === 'Ultimate') {
+            item.unlocked && unlockedPass++;
+            totalPass++;
+          } else {
+            item.unlocked && unlockedFree++;
+            totalFree++;
+          }
         });
       }
 
       const unlockTooltip = unlockedItems === totalItems ? 'All items unlocked.'
         : unlockedLast && unlockedLast === totalLast ? 'All items unlocked in most recent visit.'
+        : (unlockedFree || totalPass) && unlockedFree === totalFree ? 'All free items unlocked.'
         : undefined;
 
       this.unlockedItems += unlockedItems;
@@ -127,6 +139,8 @@ export class SpiritsComponent {
         ...s,
         areaGuid: s.area?.guid,
         unlockedItems, totalItems,
+        unlockedFree, totalFree,
+        unlockedPass, totalPass,
         unlockedLast, totalLast,
         unlockTooltip
       }

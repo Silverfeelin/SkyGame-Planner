@@ -15,6 +15,7 @@ export class RealmComponent {
   highlightTree?: string;
 
   spirits: Array<ISpirit> = [];
+  seasonSpiritCount = 0;
 
   constructor(
     private readonly _dataService: DataService,
@@ -37,9 +38,15 @@ export class RealmComponent {
     this.realm = this._dataService.guidMap.get(guid!) as IRealm;
 
     this.spirits = [];
+    this.seasonSpiritCount = 0;
+
     this.realm?.areas?.forEach(area => {
-      area.spirits?.filter(s => s.type === 'Regular' || s.type === 'Elder').forEach(spirit => {
-        this.spirits.push(spirit);
+      area.spirits?.forEach(spirit => {
+        if (spirit.type === 'Regular' || spirit.type === 'Elder') {
+          this.spirits.push(spirit);
+        } else if (spirit.type === 'Season') {
+          this.seasonSpiritCount++;
+        }
       });
     });
   }

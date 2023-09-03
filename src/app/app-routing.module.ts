@@ -20,6 +20,7 @@ import { TitleResolver } from './resolvers/title.resolver';
 import { EventInstanceTitleResolver } from './resolvers/event-instance-title.resolver';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
+import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -37,6 +38,7 @@ const routes: Routes = [
   { path: 'season/:guid', component: SeasonComponent, title: TitleResolver },
   { path: 'settings', component: SettingsComponent, title: title('Settings') },
   { path: 'shop', component: ShopsComponent, title: title('Shops') },
+  { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
   { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
   { path: 'spirit/:guid', component: SpiritComponent, title: TitleResolver },
   { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
