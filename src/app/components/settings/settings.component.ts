@@ -25,7 +25,7 @@ export class SettingsComponent {
     this.unlockedCount = this._storageService.unlocked.size;
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
-    this.currentTheme = this._themeService.theme || 'dark';
+    this.currentTheme = this._themeService.theme || 'sky';
   }
 
   export(): void {
@@ -103,7 +103,7 @@ export class SettingsComponent {
 
   setTheme(theme?: string): void {
     this._themeService.set(theme);
-    this.currentTheme = this._themeService.theme || 'dark';
+    this.currentTheme = this._themeService.theme || 'sky';
   }
 
   setDateFormat(format: string): void {

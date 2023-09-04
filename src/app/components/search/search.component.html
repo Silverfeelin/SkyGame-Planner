@@ -15,7 +15,7 @@
 
     <!-- Type -->
     <ng-template [appTableColumn] let-row="row">
-      <span *ngIf="row.type === 'Item'; else type">{{ row.data.type }}</span>
+      <span *ngIf="row.type === 'Item'; else type">{{ row.data.type | itemType }}</span>
       <ng-template #type><span>{{ row.type }}</span></ng-template>
     </ng-template>
     <!-- Icon -->
