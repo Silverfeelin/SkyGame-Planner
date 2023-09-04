@@ -3,16 +3,16 @@
 </div>
 
 <!-- Navigation -->
-<div class="card container container-scroll-x mt-2" *ngIf="seasonSpiritCount">
+<div class="card container container-scroll-x mt-2" *ngIf="seasonSpiritCount || spirits?.length">
   <h2 class="h3">Navigation</h2>
   <div class="grid grid-2">
-    <a class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+    <a *ngIf="spirits?.length" class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
       <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
       <span class="menu-label">
-        Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
+        Spirits&nbsp;<span class="c-accent">({{ spirits.length }})</span>
       </span>
     </a>
-    <a class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+    <a *ngIf="seasonSpiritCount" class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
       <app-spirit-type-icon class="menu-icon" [type]="'Season'"></app-spirit-type-icon>
       <span class="menu-label">
         Season Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
