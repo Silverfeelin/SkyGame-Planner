@@ -16,7 +16,7 @@
   <div class="card container wrapper-year">
     <h2 class="h3 mb-0">{{year}}</h2>
   </div>
-  <div class="grid grid-2 mt-2">
+  <div class="grid grid-2 gap-medium mt-2">
     <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;" [class.highlight]="season === currentSeason">
       <h2 class="h3">
         <img class="season-icon season-icon-medium" [src]="season.iconUrl" />

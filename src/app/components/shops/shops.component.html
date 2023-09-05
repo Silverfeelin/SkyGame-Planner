@@ -4,7 +4,7 @@
 
 <!-- IAPs -->
 <ng-container *ngIf="shops?.length">
-  <div class="grid grid-4 mt-2" >
+  <div class="grid grid-4 gap-medium mt-2" >
     <ng-container *ngFor="let shop of shops">
       <ng-container *ngIf="shop.iaps?.length">
         <div class="card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
