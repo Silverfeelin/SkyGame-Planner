@@ -1306,7 +1306,7 @@
       ]
     },
     // #endregion
-    // #region Days of Sunlight
+    // #region Days of Sunlight (2022)
     {
       "guid": "AZxrY1dz75",
       "name": "Jelly Shoulder Buddy",
@@ -1322,6 +1322,79 @@
       "sc": 35,
       "items": [
         "TXYOTW9Qyn"
+      ]
+    },
+    // #endregion
+    // #region Days of Sunlight (2023)
+    {
+      "guid": "0jnacyurfU",
+      "name": "Sunlight Surfboard",
+      "price": 14.99,
+      "items": [
+        "NEmfcbHb-I"
+      ]
+    },
+    {
+      "guid": "JHaelZdmil",
+      "name": "Sunlight Chunky Sandals",
+      "price": 9.99,
+      "items": [
+        "gsACsrp16_"
+      ]
+    },
+    {
+      "guid": "Nr7NNKujcY",
+      "name": "Campfire Snack Kit",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "TXYOTW9Qyn"
+      ]
+    },
+    {
+      "guid": "oQuUvFGDlF",
+      "name": "Jelly Shoulder Buddy",
+      "price": 2.99,
+      "returning": true,
+      "items": [
+        "Ay3g-0JAeW"
+      ]
+    },
+    {
+      "guid": "zU6I_T7cDS",
+      "name": "Bunny Accessory",
+      "price": 2.99,
+      "returning": true,
+      "items": [
+        "EEFIpR6x7Q"
+      ]
+    },
+    {
+      "guid": "U_mor32-_t",
+      "name": "Summer Parasol",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "4CYafmMUql"
+      ]
+    },
+    {
+      "guid": "_qV-f7qVx2",
+      "name": "Seashell Hairpin",
+      "price": 0.99,
+      "returning": true,
+      "items": [
+        "eruG9WiyJZ"
+      ]
+    },
+    {
+      "guid": "xGLl7eg2uG",
+      "name": "Lantern Pack",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "5xJ_mCzZQy"
       ]
     },
     // #endregion

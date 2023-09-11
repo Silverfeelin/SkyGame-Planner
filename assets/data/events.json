@@ -370,6 +370,18 @@
           "spirits": [
             { "guid": "tDfqpF3f03", "spirit": "c9XXzlKzhd", "tree": "vIhlnkdWTh" }
           ]
+        },
+        {
+          "guid": "bupHF1FUFd",
+          "date": { "day": 11, "month": 9, "year": 2023 },
+          "endDate": { "day": 24, "month": 9, "year": 2023 },
+          "shops": [
+            "L1jsCQoiBo",
+            "F_bgB5MF5H"
+          ],
+          "spirits": [
+            { "guid": "yTYOjJ9Z9t", "spirit": "c9XXzlKzhd", "tree": "QKeMWsP0vc" }
+          ]
         }
       ],
       "_wiki": {

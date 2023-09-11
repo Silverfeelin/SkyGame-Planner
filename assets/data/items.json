@@ -12518,6 +12518,50 @@
       "order": 5301
     },
     // #endregion
+    // #region Days of Sunlight (2023)
+    {
+      "guid": "QjK8cvBTfX",
+      "type": "Cape",
+      "name": "Sunlight Pink Towel Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Sunlight-Pink-Towel-Cape-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "FaGQYktG04",
+      "type": "Cape",
+      "name": "Sunlight Orange Towel Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Sunlight-Orange-Towel-Cape-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "NBkEtlvG6-",
+      "type": "Cape",
+      "name": "Sunlight Blue Towel Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Sunlight-Blue-Towel-Cape-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "03n8xOK3J3",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "SPf60927Mk",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "gsACsrp16_",
+      "name": "Sunlight Chunky Sandals",
+      "type": "Shoes",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Sunlight-Chunky-Sandals-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "NEmfcbHb-I",
+      "name": "Sunlight Surfboard",
+      "type": "Prop",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Sunlight-Surfboard-icon-Credit-Morybel.png"
+    },
+    // #endregion
 
     // #region Harmony Hall
     {
