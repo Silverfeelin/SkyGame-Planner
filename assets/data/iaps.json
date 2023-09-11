@@ -1375,6 +1375,7 @@
       "name": "Summer Parasol",
       "price": 19.99,
       "returning": true,
+      "sc": 35,
       "items": [
         "4CYafmMUql"
       ]
