@@ -16556,6 +16556,54 @@
       "c": 70
     },
     // #endregion
+    // #region Days of Sunlight (2023)
+    {
+      "guid": "WyUSJvIpdD",
+      "item": "vRGrnOst90",
+      "nw": "A3z1WZoUkW",
+      "n": "Fd-RRznG5I",
+      "ne": "q5aSssj8Ys"
+    },
+    {
+      "guid": "A3z1WZoUkW",
+      "item": "JNgfLtgLfc",
+      "c": 90
+    },
+    {
+      "guid": "q5aSssj8Ys",
+      "item": "E_yfCZYU5C",
+      "c": 44
+    },
+    {
+      "guid": "Fd-RRznG5I",
+      "item": "03n8xOK3J3",
+      "c": 5,
+      "nw": "O1ivjFMzpY",
+      "n": "kfBV1htozd"
+    },
+    {
+      "guid": "O1ivjFMzpY",
+      "item": "QjK8cvBTfX",
+      "ec": 22
+    },
+    {
+      "guid": "kfBV1htozd",
+      "item": "SPf60927Mk",
+      "c": 5,
+      "nw": "7Kx4Z6XhpU",
+      "n": "ycMD3bgOUA"
+    },
+    {
+      "guid": "7Kx4Z6XhpU",
+      "item": "FaGQYktG04",
+      "ec": 25
+    },
+    {
+      "guid": "ycMD3bgOUA",
+      "item": "NBkEtlvG6-",
+      "ec": 31
+    },
+    // #endregion
     // #region Harmony Hall Grand Opening
     {
       "guid": "WoT0pqpHnJ",

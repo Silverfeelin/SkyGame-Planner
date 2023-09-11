@@ -19,6 +19,7 @@ export class EditorItemComponent {
     'Mask',
     'Necklace',
     'Outfit',
+    'Shoes',
     'Cape',
     'Instrument',
     'Held',

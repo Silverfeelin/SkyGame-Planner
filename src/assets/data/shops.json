@@ -649,6 +649,30 @@
       ]
     },
     // #endregion
+    // #region Days of Sunlight (2023)
+    {
+      "guid": "L1jsCQoiBo",
+      "type": "Store",
+      "iaps": [
+        "0jnacyurfU",
+        "JHaelZdmil"
+      ]
+    },
+    {
+      "guid": "F_bgB5MF5H",
+      "type": "Spirit",
+      "spirit": "p-WdkJpGB5",
+      "name": "Hide'n'Seek Pioneer (event)",
+      "iaps": [
+        "Nr7NNKujcY",
+        "oQuUvFGDlF",
+        "_qV-f7qVx2",
+        "zU6I_T7cDS",
+        "xGLl7eg2uG",
+        "U_mor32-_t"
+      ]
+    },
+    // #endregion
     // #region AURORA Encore Concerts
     {
       "guid": "wX_deEZTy9",
