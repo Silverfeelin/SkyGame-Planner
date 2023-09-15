@@ -13066,7 +13066,7 @@
       "item": "asWC0_56LS",
       "c": 70
     },
-    // Star Collector
+    // #region Star Collector
     {
       "guid": "9ADrzfFPhx",
       "item": "drH3NXwa4B",
@@ -13126,6 +13126,76 @@
       "item": "5JtJF4xKf9",
       "sc": 3
     },
+    // TS 96
+    {
+      "guid": "_Jou88z740",
+      "item": "drH3NXwa4B",
+      "nw": "CbC60iHLHM",
+      "ne": "3OuCQ0tj4a",
+      "n": "Si_GoqAUUy"
+    },
+    {
+      "guid": "CbC60iHLHM",
+      "item": "kNbIj8-u0w",
+      "h": 4
+    },
+    {
+      "guid": "3OuCQ0tj4a",
+      "item": "nn7KvR3hzq",
+      "c": 3
+    },
+    {
+      "guid": "Si_GoqAUUy",
+      "item": "zTfcCNFzZ4",
+      "c": 5,
+      "nw": "ho_FPrXCGv",
+      "n": "ZOI4iPvC8t"
+    },
+    {
+      "guid": "ho_FPrXCGv",
+      "item": "67-Dpp1kUH",
+      "c": 40
+    },
+    {
+      "guid": "ZOI4iPvC8t",
+      "item": "Yyd-f73kdt",
+      "c": null,
+      "ac": 2,
+      "n": "XI5vgvSoPy"
+    },
+    {
+      "guid": "XI5vgvSoPy",
+      "item": "kUOyMedcLK",
+      "h": 3,
+      "ac": null,
+      "nw": "GCm3KoIHPG",
+      "n": "ic3jZlQMa4"
+    },
+    {
+      "guid": "GCm3KoIHPG",
+      "item": "f2efm6-cUw",
+      "h": 6
+    },
+    {
+      "guid": "ic3jZlQMa4",
+      "item": "BUc00xon-T",
+      "c": 5,
+      "h": null,
+      "nw": "tI_cI9reE_",
+      "n": "DhmwGrx3oo"
+    },
+    {
+      "guid": "tI_cI9reE_",
+      "item": "Yv8nA1qNwO",
+      "c": 75,
+      "h": null
+    },
+    {
+      "guid": "DhmwGrx3oo",
+      "item": "ER8iz-GQjz",
+      "c": 70
+    },
+    // #endregion
     // #endregion
     // #region Flight
     // #region Lively Navigator
