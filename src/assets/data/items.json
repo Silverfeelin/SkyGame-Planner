@@ -8786,6 +8786,18 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
     },
+    {
+      "guid": "Yyd-f73kdt",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "guid": "nn7KvR3hzq",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
     // #endregion
     // #region Limited items
     {
