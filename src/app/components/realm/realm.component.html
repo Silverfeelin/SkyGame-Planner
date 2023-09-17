@@ -1,42 +1,52 @@
-<div class="card container">
-  <h1 class="h2 mb-0">{{ realm.name }}</h1>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">{{ realm.name }}</h1>
+  </div>
 </div>
 
 <!-- Navigation -->
-<div class="card container container-scroll-x mt-2" *ngIf="seasonSpiritCount || spirits?.length">
-  <h2 class="h3">Navigation</h2>
-  <div class="grid grid-2">
-    <a *ngIf="spirits?.length" class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
-      <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
-      <span class="menu-label">
-        Spirits&nbsp;<span class="c-accent">({{ spirits.length }})</span>
-      </span>
-    </a>
-    <a *ngIf="seasonSpiritCount" class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
-      <app-spirit-type-icon class="menu-icon" [type]="'Season'"></app-spirit-type-icon>
-      <span class="menu-label">
-        Season Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
-      </span>
-    </a>
+<div class="sky-card mt" *ngIf="seasonSpiritCount || spirits?.length">
+  <div class="sky-card-header">
+    <h2 class="h3">Navigation</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <a *ngIf="spirits?.length" class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+        <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
+        <span class="menu-label">
+          Spirits&nbsp;<span class="c-accent">({{ spirits.length }})</span>
+        </span>
+      </a>
+      <a *ngIf="seasonSpiritCount" class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+        <app-spirit-type-icon class="menu-icon" [type]="'Season'"></app-spirit-type-icon>
+        <span class="menu-label">
+          Season Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
+        </span>
+      </a>
+    </div>
   </div>
 </div>
 
 <!-- Spirits -->
-<div class="card container container-scroll-x mt-2" *ngIf="spirits?.length">
-  <h2 class="h3">Spirit Trees</h2>
-  <div class="container-flex">
-    <!-- Spirit trees -->
-    <ng-container *ngFor="let spirit of spirits;">
-      <div class="tree-wrapper" *ngIf="spirit.tree">
-        <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
-          <!-- Link to spirit -->
-          <div name>
-            <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
-              {{ spirit.name }}
-            </a>
-          </div>
-        </app-spirit-tree>
-      </div>
-    </ng-container>
+<div class="sky-card mt" *ngIf="spirits?.length">
+  <div class="sky-card-header">
+    <h2 class="h3">Spirit Trees</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="scroll-x sky-flex">
+      <!-- Spirit trees -->
+      <ng-container *ngFor="let spirit of spirits;">
+        <div class="tree-wrapper" *ngIf="spirit.tree">
+          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
+            <!-- Link to spirit -->
+            <div name>
+              <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
+                {{ spirit.name }}
+              </a>
+            </div>
+          </app-spirit-tree>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>

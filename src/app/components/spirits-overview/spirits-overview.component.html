@@ -1,45 +1,51 @@
-<div class="card container">
-  <h1 class="h2 mb-0">Spirits</h1>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Spirits</h1>
+  </div>
 </div>
 
-<div class="card container mt-2">
-  <h2 class="h3">Navigation</h2>
-  <div class="grid grid-2 gap-medium">
-    <a class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular' }">
-      <app-spirit-type-icon [type]="'Regular'" class="menu-icon"></app-spirit-type-icon>
-      <span class="menu-label">
-        Regular Spirits <span class="c-accent">({{ spiritCounts['Regular'] }})</span>
-      </span>
-    </a>
-    <a class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Elder' }">
-      <app-spirit-type-icon [type]="'Elder'" class="menu-icon"></app-spirit-type-icon>
-      <span class="menu-label">
-        Elder Spirits <span class="c-accent">({{ spiritCounts['Elder'] }})</span>
-      </span>
-    </a>
-    <a class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season' }">
-      <app-spirit-type-icon [type]="'Season'" class="menu-icon"></app-spirit-type-icon>
-      <span class="menu-label">
-        Season Spirits <span class="c-accent">({{ spiritCounts['Season'] }})</span>
-      </span>
-    </a>
-    <a class="container-inner" [routerLink]="['/spirit']" [queryParams]="{ type: 'Guide' }">
-      <app-spirit-type-icon [type]="'Guide'" class="menu-icon"></app-spirit-type-icon>
-      <span class="menu-label">
-        Season Guides <span class="c-accent">({{ spiritCounts['Guide'] }})</span>
-      </span>
-    </a>
-    <a class="container-inner" [routerLink]="['/ts']">
-      <mat-icon class="menu-icon" fontIcon="hikings"></mat-icon>
-      <span class="menu-label">
-        Traveling Spirits <span class="c-accent">({{ tsCount }})</span>
-      </span>
-    </a>
-    <a class="container-inner" [routerLink]="['/rs']">
-      <mat-icon class="menu-icon" fontIcon="flight"></mat-icon>
-      <span class="menu-label">
-        Special Visits <span class="c-accent">({{ rsCount }})</span>
-      </span>
-    </a>
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3">Navigation</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <a class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular' }">
+        <app-spirit-type-icon [type]="'Regular'" class="menu-icon"></app-spirit-type-icon>
+        <span class="menu-label">
+          Regular Spirits <span class="c-accent">({{ spiritCounts['Regular'] }})</span>
+        </span>
+      </a>
+      <a class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Elder' }">
+        <app-spirit-type-icon [type]="'Elder'" class="menu-icon"></app-spirit-type-icon>
+        <span class="menu-label">
+          Elder Spirits <span class="c-accent">({{ spiritCounts['Elder'] }})</span>
+        </span>
+      </a>
+      <a class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season' }">
+        <app-spirit-type-icon [type]="'Season'" class="menu-icon"></app-spirit-type-icon>
+        <span class="menu-label">
+          Season Spirits <span class="c-accent">({{ spiritCounts['Season'] }})</span>
+        </span>
+      </a>
+      <a class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Guide' }">
+        <app-spirit-type-icon [type]="'Guide'" class="menu-icon"></app-spirit-type-icon>
+        <span class="menu-label">
+          Season Guides <span class="c-accent">({{ spiritCounts['Guide'] }})</span>
+        </span>
+      </a>
+      <a class="container" [routerLink]="['/ts']">
+        <mat-icon class="menu-icon" fontIcon="hikings"></mat-icon>
+        <span class="menu-label">
+          Traveling Spirits <span class="c-accent">({{ tsCount }})</span>
+        </span>
+      </a>
+      <a class="container" [routerLink]="['/rs']">
+        <mat-icon class="menu-icon" fontIcon="flight"></mat-icon>
+        <span class="menu-label">
+          Special Visits <span class="c-accent">({{ rsCount }})</span>
+        </span>
+      </a>
+    </div>
   </div>
 </div>

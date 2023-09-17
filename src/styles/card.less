@@ -1,18 +1,56 @@
-.card {
-  padding: var(--padding-content);
+.sky-card-header {
+  position: relative;
   border-radius: var(--border-radius);
-  border-color: var(--color-border);
-  background: var(--color-item-background);
-  box-shadow: inset 0px 5px 5px -5px var(--color-item-background-highlight);
+  border: 1px solid var(--color-border);
+  padding: var(--padding-content);
+  background: var(--color-card-header-background);
 }
 
-.card-item {
+.header-sticky {
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+.sky-card-header {
+  > h1, > h2, > h3, > h4, > h5, > h6 {
+    &:only-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.sky-card-header .wiki {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sky-card-header:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.sky-card-body {
+  position: relative;
+  border: 1px solid var(--color-border);
+  background: var(--color-card-background);
+  border-radius: var(--border-radius);
+  padding: var(--padding-content);
+}
+
+.sky-card-body:not(:first-child) {
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.sky-card-item {
   padding: var(--padding-content);
   background: var(--color-background);
   border-radius: var(--border-radius);
 }
 
-.card-item-icon {
+.sky-card-item-icon {
   position: relative;
 
   > mat-icon, > img.icon {

@@ -1,48 +1,56 @@
-<div class="card container">
-  <h1 class="h2 mb-0">Seasons</h1>
-</div>
-
-<div class="card container mt-2">
-  <div class="flex">
-    <a class="flex-item" *ngFor="let season of reverseSeasons"
-      [routerLink]="['/season', season.guid]"
-      [ngbTooltip]="season.name" placement="bottom" container="body">
-      <img class="season-icon" [src]="season.iconUrl" />
-    </a>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2">Seasons</h1>
   </div>
 </div>
 
-<div class="mt-2" *ngFor="let year of years">
-  <div class="card container wrapper-year">
-    <h2 class="h3 mb-0">{{year}}</h2>
-  </div>
-  <div class="grid grid-2 gap-medium mt-2">
-    <div class="card p-rel" *ngFor="let season of yearMap[year]; let i = index;" [class.highlight]="season === currentSeason">
-      <h2 class="h3">
-        <img class="season-icon season-icon-medium" [src]="season.iconUrl" />
-        {{ season.name }}
-        <span class="h5 c-accent number">#{{ season.number }}</span>
-      </h2>
-      <!-- Wiki -->
-      <div class="wiki p-abs" *ngIf="season._wiki?.href">
-        <a [href]="season._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
-          <mat-icon fontIcon="question_mark"></mat-icon>
-        </a>
-      </div>
-      <!-- Image -->
-      <div *ngIf="season.imageUrl" class="p-rel img"
-        [style.background-image]="'url('+season.imageUrl+')'"
-        [style.background-position]="season.imagePosition || undefined"></div>
-      <!-- Overview -->
-      <a class="mt-2 item link" [routerLink]="['/season', season.guid]">
-        <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
-        <span class="menu-label">Overview</span>
-      </a>
-      <!-- Spirits -->
-      <a class="mt-2 item link" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
-        <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
-        <span class="menu-label">Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span></span>
+<div class="sky-card mt">
+  <div class="sky-card-body">
+    <div class="flex">
+      <a class="flex-item" *ngFor="let season of reverseSeasons"
+        [routerLink]="['/season', season.guid]"
+        [ngbTooltip]="season.name" placement="bottom" container="body">
+        <img class="season-icon" [src]="season.iconUrl" />
       </a>
     </div>
   </div>
 </div>
+
+<ng-container *ngFor="let year of years">
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h2 class="h3">{{year}}</h2>
+    </div>
+
+    <div class="sky-card-body">
+      <div class="grid grid-2">
+        <div class="sky-card p-rel" *ngFor="let season of yearMap[year]; let i = index;" [class.highlight]="season === currentSeason">
+          <div class="sky-card-header">
+            <h2 class="h3 mb-0">
+              <img class="season-icon season-icon-small" [src]="season.iconUrl" />
+              {{ season.name }}
+              <span class="h5 c-accent number">#{{ season.number }}</span>
+            </h2>
+          </div>
+          <div class="sky-card-body">
+            <!-- Image -->
+            <div *ngIf="season.imageUrl" class="img sky-border-solid"
+              [style.background-image]="'url('+season.imageUrl+')'"
+              [style.background-position]="season.imagePosition || undefined">
+            </div>
+            <!-- Overview -->
+            <a class="item link mt" [routerLink]="['/season', season.guid]">
+              <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+              <span class="menu-label">Overview</span>
+            </a>
+            <!-- Spirits -->
+            <a class="item link mt" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
+              <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
+              <span class="menu-label">Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

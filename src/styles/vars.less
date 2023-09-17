@@ -2,39 +2,49 @@
 :root, [data-theme="sky"] {
   --color: #fff;
   --color-accent: #999;
-  --color-background: #111118c0;
-  --color-background-subtle: #11111860;
-  --color-background-dark: #0b0b0f;
-  --color-item: #828282;
-  --color-item-background: #1f1f2cc0;
-  --color-item-background-highlight: #252535c0;
-  --color-item-background-hover: #2c2c3c;
-  --color-item-active: #c5b167;
+  --color-background: hsla(240, 17%, 12%, 0.8);
+  --color-border: hsla(240, 17%, 8%, 0.5);
+  --color-border-solid: hsl(240, 17%, 15%);
+  --color-button-background: hsla(240, 17%, 12%, 0.8);
+  --color-button-hover-background: hsla(240, 17%, 25%, 0.8);
+  --color-card-background: hsla(240, 17%, 15%, 0.35);
+  --color-card-header-background: hsla(240, 17%, 12%, 0.75);
+  --color-danger: #fff;
+  --color-danger-accent: #9d3b3b;
+  --color-danger-background: #5a1818;
   --color-highlight: #d28efd;
-  --color-border: #444460;
-  --color-border-lowlight: #111118;
-  --color-border-highlight: #515167;
-  --color-border-complement: #d8d897;
+  --color-image-inset: hsla(240, 17%, 12%, 0.8);
+  --color-input-border: hsl(240, 17%, 35%);
+  --color-item: #828282;
+  --color-item-active: #c5b167;
+  --color-link-hover: #9797d8;
+  --color-menu-background: hsla(240, 17%, 15%, 0.6);
+  --color-menu-border: hsl(240, 17%, 80%);
+  --color-menu-item-active-background: hsl(240, 17%, 18%);
+  --color-menu-item-background: transparent;
+  --color-scroll-thumb: #1f1f2c;
+  --color-scroll-track: #37374C;
+  --color-table-header-background: hsla(240, 17%, 3%, 0.75);
+  --color-tree-background: hsla(240, 17%, 15%, 0.5);
+  --color-tree-footer-background: hsla(240, 17%, 15%, 0.8);
+  --color-tree-footer-border: hsl(240, 17%, 40%);
+  --color-tree-line: #fff;
+  --color-tree-unlock-background: hsla(240, 17%, 15%, 0.8);
+  --color-unlock-check: var(--color-new);
+  --color-unlock-check-background: #14511460;
+  --color-unlock-check-ref: var(--color-old);
+  --color-unlock-check-shadow: #000;
+
   --color-candle: #ddd;
   --color-new: #32cd32;
   --color-old: #ffa93e;
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
-  --color-unlock-check: var(--color-new);
-  --color-unlock-check-background: #145114;
-  --color-unlock-check-background-subtle: #14511460;
-  --color-unlock-check-ref: var(--color-old);
-  --color-unlock-check-shadow: #000;
-  --color-link-hover: #9797d8;
-  --color-danger: #fff;
-  --color-danger-background: #5a1818;
-  --color-danger-accent: #9d3b3b;
 
   // Direct link because relative path didn't compile.
   --background: url('https://silverfeelin.github.io/SkyGame-Planner/assets/game/background.webp');
   --background-filter: blur(4px) brightness(0.8);
 
-  --shadow-card: inset 0px 5px 5px -5px #323248, inset 0px -5px 5px -5px #111118;
   --shadow-highlight: 0px 0px 5px 1px var(--color-highlight);
 
   --item-size: 64px;
@@ -50,10 +60,13 @@
 
   --menu-width: 44px;
 
-  --border-radius: 0;
+  --border: 1px solid var(--color-border);
+  --border-solid: 1px solid var(--color-border-solid);
+  --border-radius: 8px;
   --border-highlight: 1px solid var(--color-highlight);
 
   --padding-content: 10px;
+  --padding-content-half: 5px;
   --padding-input: 6px 8px;
 
   --column-items: 1fr;
@@ -92,44 +105,68 @@
 
 // #region Dark theme
 [data-theme="dark"] {
+
+  --color-danger: #fff;
+  --color-danger-background: #5a1818;
+  --color-danger-accent: #9d3b3b;
+  --color-scroll-track: #1f1f2c;
+  --color-scroll-thumb: #515167;
+
+  --border: 1px solid var(--color-border);
+  --border-solid: 1px solid var(--color-border-solid);
+  --background: var(--color-background);
+  --background-filter: none;
+
+  // NEW
   --color: #fff;
   --color-accent: #999;
-  --color-background: #111118;
-  --color-background-subtle: #11111860;
-  --color-background-dark: #0b0b0f;
-  --color-item: #828282;
-  --color-item-background: #1f1f2c;
-  --color-item-background-highlight: #252535;
-  --color-item-background-hover: #2c2c3c;
-  --color-item-active: #c5b167;
+  --color-background: hsl(230, 25%, 8%);
+  --color-border: hsl(230, 25%, 20%);
+  --color-border-solid: hsl(230, 25%, 20%);
+  --color-button-background: hsl(230, 25%, 15%);
+  --color-button-hover-background: hsl(230, 25%, 25%);
+  --color-card-background: hsl(230, 25%, 12%);
+  --color-card-header-background: hsl(230, 25%, 20%);
+  --color-danger: #fff;
+  --color-danger-accent: #9d3b3b;
+  --color-danger-background: #5a1818;
   --color-highlight: #d28efd;
-  --color-border: #1c1c28;
-  --color-border-lowlight: #111118;
-  --color-border-highlight: #515167;
-  --color-border-complement: #d8d897;
+  --color-image-inset: hsla(230, 25%, 20%, 0.7);
+  --color-input-border: hsl(230, 25%, 50%);
+  --color-item: #828282;
+  --color-item-active: #c5b167;
+  --color-link-hover: #9797d8;
+  --color-menu-background: hsl(230, 25%, 20%);
+  --color-menu-border: hsl(230, 25%, 80%);
+  --color-menu-item-active-background: hsl(230, 25%, 40%);
+  --color-menu-item-background: transparent;
+  --color-scroll-thumb: hsl(230, 25%, 60%);
+  --color-scroll-track: hsl(230, 25%, 30%);
+  --color-table-header-background: hsl(230, 25%, 30%);
+  --color-tree-background: hsl(230, 25%, 10%);
+  --color-tree-footer-background: hsl(230, 25%, 15%);
+  --color-tree-footer-border: hsl(230, 25%, 50%);
+  --color-tree-line: hsl(230, 25%, 80%);
+  --color-tree-unlock-background: hsl(230, 25%, 30%);
+  --color-unlock-check: var(--color-new);
+  --color-unlock-check-background: #14511460;
+  --color-unlock-check-ref: var(--color-old);
+  --color-unlock-check-shadow: #000;
+
   --color-candle: #ddd;
   --color-new: #32cd32;
   --color-old: #ffa93e;
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
-  --color-unlock-check: var(--color-new);
-  --color-unlock-check-background: #145114;
-  --color-unlock-check-background-subtle: #14511460;
-  --color-unlock-check-ref: var(--color-old);
-  --color-unlock-check-shadow: #000;
-  --color-link-hover: #9797d8;
-  --color-danger: #fff;
-  --color-danger-background: #5a1818;
-  --color-danger-accent: #9d3b3b;
 
   --background: var(--color-background);
   --background-filter: none;
 
-  --shadow-card: inset 0px 5px 5px -5px #323248, inset 0px -5px 5px -5px #111118;
-  --shadow-highlight: 0px 0px 5px 1px var(--color-highlight);
-
-  --border-radius: 8px;
+  // Overrides so these capture this theme color.
+  --border: 1px solid var(--color-border);
+  --border-solid: 1px solid var(--color-border-solid);
   --border-highlight: 1px solid var(--color-highlight);
+  --shadow-highlight: 0px 0px 5px 1px var(--color-highlight);
 }
 // #endregion
 
@@ -137,41 +174,53 @@
 [data-theme="light"] {
   --color: #1e2229;
   --color-accent: #777;
-  --color-background: #fff;
-  --color-background-subtle: #ffffff60;
-  --color-background-dark: #eeeef2;
-  --color-item: #828282;
-  --color-item-background: #e4e4ea;
-  --color-item-background-highlight: #c8c8cf;
-  --color-item-background-hover: #d0d0d8;
-  --color-item-active: #c5b167;
+  --color-background: hsl(220, 15%, 90%);
+  --color-border: hsl(220, 25%, 55%);
+  --color-border-solid: hsl(220, 15%, 55%);
+  --color-button-background: hsl(220, 15%, 85%);
+  --color-button-hover-background: hsl(220, 15%, 75%);
+  --color-card-background: hsl(220, 15%, 85%);
+  --color-card-header-background: hsl(220, 15%, 75%);
+  --color-danger: #fff;
+  --color-danger-accent: #e89191;
+  --color-danger-background: #af3838;
   --color-highlight: #0071c7;
-  --color-border:  #d0d0d8;
-  --color-border-lowlight: #111118;
-  --color-border-highlight: #51515a;
-  --color-border-complement: #dc9452;
+  --color-image-inset: hsla(220, 15%, 20%, 0.7);
+  --color-input-border: hsl(220, 15%, 50%);
+  --color-item: #828282;
+  --color-item-active: #c5b167;
+  --color-link-hover: #6666ae;
+  --color-menu-background: hsl(220, 15%, 75%);
+  --color-menu-border: hsl(220, 15%, 20%);
+  --color-menu-item-active-background: hsl(220, 15%, 60%);
+  --color-menu-item-background: transparent;
+  --color-scroll-thumb: hsl(220, 15%, 40%);
+  --color-scroll-track: hsl(220, 15%, 70%);
+  --color-table-header-background: hsl(220, 15%, 70%);
+  --color-tree-background: hsl(220, 15%, 90%);
+
+  --color-tree-footer-background: hsl(220, 15%, 85%);
+  --color-tree-footer-border: hsl(220, 15%, 50%);
+  --color-tree-line: hsl(220, 15%, 20%);
+  --color-tree-unlock-background: hsl(220, 15%, 70%);
+  --color-unlock-check: var(--color-new);
+  --color-unlock-check-background: #75c87560;
+  --color-unlock-check-ref: var(--color-old);
+  --color-unlock-check-shadow: #000;
+
   --color-candle: #888;
   --color-new: #279827;
   --color-old: #f78d75;
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
-  --color-unlock-check: var(--color-new);
-  --color-unlock-check-background: #75c875;
-  --color-unlock-check-background-subtle: #75c87560;
-  --color-unlock-check-ref: var(--color-old);
-  --color-unlock-check-shadow: #000;
-  --color-link-hover: #6666ae;
-  --color-danger: #fff;
-  --color-danger-background: #af3838;
-  --color-danger-accent: #e89191;
 
   --background: var(--color-background);
   --background-filter: none;
 
-  --shadow-card: inset 0px 5px 5px -5px #b7b7ce, inset 0px -5px 5px -5px #c6c6de;
-  --shadow-highlight: 0px 0px 5px 1px var(--color-highlight);
-
-  --border-radius: 8px;
+  // Overrides so these capture this theme color.
+  --border: 1px solid var(--color-border);
+  --border-solid: 1px solid var(--color-border-solid);
   --border-highlight: 1px solid var(--color-highlight);
+  --shadow-highlight: 0px 0px 5px 1px var(--color-highlight);
 }
 // #endregion

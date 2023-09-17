@@ -54,12 +54,12 @@ a, .link {
 button {
   color: var(--color);
   padding: var(--padding-input);
-  background: var(--color-item-background);
-  border: 1px solid var(--color-border-highlight);
+  background: var(--color-button-background);
+  border: 1px solid var(--color-input-border);
   border-radius: var(--border-radius);
 
   &:hover {
-    background: var(--color-item-background-hover);
+    background: var(--color-button-hover-background);
   }
 }
 
@@ -70,12 +70,25 @@ input, select {
   padding: var(--padding-input);
   border-radius: var(--border-radius);
   background: var(--color-background);
-  border: 1px solid var(--color-border-highlight);
+  border: 1px solid var(--color-input-border);
 
   &:focus {
     outline: none;
-    border-color: var(--color-border-highlight);
+    border-color: var(--color-input-border);
   }
+}
+
+.border {
+  border: 1px solid var(--color-border);
+}
+
+.sky-flex {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  gap: var(--padding-content);
 }
 
 .menu-label {
@@ -85,19 +98,19 @@ input, select {
 // Scrollbar
 body { scrollbar-width: thin; }
 ::-webkit-scrollbar {
-  --size: 10px;
+  --size: 12px;
   width: var(--size);
   height: var(--size);
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-item-background);
+  background: var(--color-scroll-track);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-highlight);
+  background: var(--color-scroll-thumb);
 }
 ::-webkit-scrollbar-corner {
-  background: var(--color-border-highlight);
+  background: var(--color-scroll--humb);
 }
 
 // Bootstrap
@@ -121,6 +134,34 @@ body { scrollbar-width: thin; }
 .d-inline-block { display: inline-block !important; }
 .fw-bold { font-weight: bold !important; }
 .v-top { vertical-align: top !important; }
+
+.mt { margin-top: var(--padding-content) !important; }
+.mr { margin-right: var(--padding-content) !important; }
+.mb { margin-bottom: var(--padding-content) !important; }
+.ml { margin-left: var(--padding-content) !important; }
+.pad { padding: var(--padding-content) !important; }
+.pt { padding-top: var(--padding-content) !important; }
+.pr { padding-right: var(--padding-content) !important; }
+.pb { padding-bottom: var(--padding-content) !important; }
+.pl { padding-left: var(--padding-content) !important; }
+.mt-half { margin-top: var(--padding-content-half) !important; }
+.mr-half { margin-right: var(--padding-content-half) !important; }
+.mb-half { margin-bottom: var(--padding-content-half) !important; }
+.ml-half { margin-left: var(--padding-content-half) !important; }
+.pad-half { padding: var(--padding-content-half) !important; }
+.pt-half { padding-top: var(--padding-content-half) !important; }
+.pr-half { padding-right: var(--padding-content-half) !important; }
+.pb-half { padding-bottom: var(--padding-content-half) !important; }
+.pl-half { padding-left: var(--padding-content-half) !important; }
+.gap-half { gap: var(--padding-content-half) !important; }
+
+.sky-border { border: var(--border); }
+.sky-border-solid { border: var(--border-solid); }
+
+.br-0 { border-radius: 0 !important}
+
+.flex-wrap { flex-wrap: wrap !important; }
+.flex-nowrap { flex-wrap: nowrap !important; }
 
 // Global layout
 @import "flex.less";
@@ -159,6 +200,38 @@ p:last-child {
   cursor: pointer;
 }
 
+.wiki {
+  width: 30px;
+  height: 30px;
+  right: var(--padding-content);
+  top: var(--padding-content);
+  border-radius: var(--border-radius);
+  background-color: #5ECCF2;
+  background-image: url(/assets/external/sky-wiki-favicon-solid.png);
+  background-size: 24px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  a {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  mat-icon {
+    position: absolute;
+    top: 1px;
+    right: 3px;
+  }
+
+  img {
+    position: absolute;
+    top: 3px;
+    right: 4px;
+  }
+}
+
 .unlock-all {
   position: absolute;
   cursor: pointer;
@@ -166,9 +239,9 @@ p:last-child {
   right: 10px;
   width: 28px;
   height: 28px;
-  border: 1px solid var(--color-border-highlight);
+  border: 1px solid var(--color-input-border);
   border-radius: var(--border-radius);
-  background-color: var(--color-item-background);
+  background-color: var(--color-tree-unlock-background);
   z-index: 1;
 
   mat-icon {
@@ -205,4 +278,11 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
   border: var(--border-highlight);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-highlight);
+}
+
+.scroll-x {
+  overflow-x: auto;
+  width: min-content;
+  min-width: 100%;
+  max-width: calc(var(--menu-width) - 2 * var(--padding-content));
 }

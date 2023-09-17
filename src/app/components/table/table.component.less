@@ -1,16 +1,13 @@
 .table-container {
   min-width: fit-content;
-  padding: var(--padding-content);
-  border-radius: var(--border-radius);
-  background: var(--color-item-background);
 }
 
 table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 0 5px;
-  margin-top: -5px;
-  margin-bottom: -5px;
+  border-spacing: 0 var(--padding-content-half);
+  margin-top: calc(-1 * var(--padding-content-half));
+  margin-bottom: calc(-1 * var(--padding-content-half));
 }
 
 td {
@@ -18,20 +15,24 @@ td {
 }
 
 th, tfoot td {
-  background-color: var(--color-background-dark);
+  background-color: var(--color-table-header-background);
 }
 
 th, td {
   padding: var(--padding-content);
+  border-top: var(--border-solid);
+  border-bottom: var(--border-solid);
 
   &:first-child {
     border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
+    border-left: var(--border-solid);
   }
 
   &:last-child {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+    border-right: var(--border-solid);
   }
 }
 

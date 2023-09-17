@@ -4,7 +4,7 @@ aside {
   top: 0;
   bottom: 0;
   width: var(--menu-width);
-  background-color: var(--color-item-background);
+  background-color: var(--color-menu-background);
   z-index: 100;
   overflow-y: auto;
   border-right: 1px solid var(--color-border);
@@ -29,6 +29,7 @@ aside {
   display: block;
   padding: 10px;
   cursor: pointer;
+  background-color: var(--color-menu-item-background);
 }
 
 .bottom {
@@ -36,11 +37,11 @@ aside {
 }
 
 .item.active {
-  background-color: var(--color-item-background-highlight);
+  background-color: var(--color-menu-item-active-background);
 }
 
 .item:hover {
-  background-color: var(--color-item-background-highlight);
+  background-color: var(--color-menu-item-active-background);
 }
 
 .item mat-icon {
@@ -57,7 +58,7 @@ a:hover, a:focus, a:active, a:visited {
 
 hr {
   margin: 0;
-  color: var(--color-border-highlight);
+  color: var(--color-menu-border);
   //border-top: 2px solid;
 }
 

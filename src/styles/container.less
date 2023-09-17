@@ -1,35 +1,8 @@
 .container {
-  background: var(--color-item-background);
-  padding: var(--padding-content);
-  border-radius: var(--border-radius);
-  width: min-content;
-  min-width: 100%;
-}
-
-.container.shaded {
-  box-shadow: var(--shadow-card);
-}
-
-.container-flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  gap: var(--padding-content);
-}
-
-.container-flex, .container-inner {
-  position: relative;
   background: var(--color-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius);
-}
-
-.container.container-scroll-x {
-  overflow-x: auto;
-  max-width: calc(var(--menu-width) - 2 * var(--padding-content));
-
-  .container-flex {
-    overflow: auto;
-  }
+  border: var(--border-solid);
+  width: min-content;
+  min-width: 100%;
 }

@@ -27,7 +27,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
   static items: Array<ISearchItem> = [];
 
-  searchResults: Array<ISearchItem> = [];
+  searchResults?: Array<ISearchItem>;
   searchSubscription?: SubscriptionLike;
 
   constructor(
@@ -107,7 +107,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
     // Clear results.
     if (!value) {
-      this.searchResults = [];
+      this.searchResults = undefined;
       return;
     }
 

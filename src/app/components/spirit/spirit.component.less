@@ -16,11 +16,6 @@
   max-width: 100%;
 }
 
-.spirit-trees-inner {
-  overflow: auto;
-  max-width: 100%;
-}
-
 .spirit-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -44,19 +39,20 @@
 
 .spirit-img {
   width: auto;
-  height: 200px;
+  height: 208px;
 }
 
 .spirit-grid-item {
   width: 100%;
   overflow: auto;
+  border: var(--border-solid);
 }
 
 @media screen and (min-width: 720px) {
   // Put preview next to first 4 items.
   .spirit-grid {
     grid-template-columns: 160px 1fr;
-    grid-template-rows: repeat(4, 44px) 1fr;
+    grid-template-rows: 46px;
   }
 
   .spirit-grid-img {

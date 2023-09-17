@@ -1,53 +1,60 @@
-<div class="card container">
-  <h1 class="h2 mb-0">Special Visits</h1>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Special Visits</h1>
+  </div>
 </div>
-<div class="card container mt-2">
-  <a class="container-inner" href="https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits" target="_blank">
-    <mat-icon class="menu-icon" fontIcon="question_mark"></mat-icon>
-    <span class="menu-label">Wiki</span>
-  </a>
-</div>
-<div class="card p-0 mt-2">
-  <app-table [rows]="rows">
-    <ng-template [appTableHeader]>Name</ng-template>
-    <ng-template [appTableHeader]>Spirits</ng-template>
-    <ng-template [appTableHeader]>Start</ng-template>
-    <ng-template [appTableHeader]>End</ng-template>
-    <ng-template [appTableHeader]>Unlocked</ng-template>
 
-    <ng-template [appTableColumn] let-row="row">
-      <a  [routerLink]="['/rs', row.guid]">
-        {{ row.name }}
-      </a>
-    </ng-template>
-    <ng-template [appTableColumn] let-row="row" [tdClass]="'ws-nw'">
-      <!--Spirit images -->
-      <a class="card spirit-img t-center" *ngFor="let spiritVisit of row.spirits"
-        [routerLink]="['/spirit', spiritVisit.spirit.guid]" [queryParams]="{ highlightTree: spiritVisit.tree.guid }"
-        [ngbTooltip]="spiritVisit.spirit.name" container="body" placement="bottom"
-      >
-        <app-icon *ngIf="spiritVisit.spirit.imageUrl" [src]="spiritVisit.spirit.imageUrl" [width]="'auto'" [lazy]="true"></app-icon>
-      </a>
-      <!-- Spirit count for small devices -->
-      <div class="spirit-count">
-        {{ row.spirits?.length || 0 }}
-      </div>
-    </ng-template>
-    <!-- <ng-template [appTableColumn] let-row="row">
-      <a  [routerLink]="['/spirits']" [queryParams]="{ highlightTree: row.treeGuid }">
-        {{ spiritVisit.spirit.name }}
-      </a>
-    </ng-template> -->
-    <ng-template [appTableColumn] let-row="row">
-      <span class="ws-nw">{{ row.date | dayjs:dateFormat }}</span>
-    </ng-template>
-    <ng-template [appTableColumn] let-row="row">
-      <span class="ws-nw">{{ row.endDate | dayjs:dateFormat }}</span>
-    </ng-template>
-    <ng-template [appTableColumn] let-row="row">
-      <span *ngIf="row.totalItems" [class.completed]="row.unlockedItems === row.totalItems">
-        {{ row.unlockedItems }} / {{ row.totalItems }}
-      </span>
-    </ng-template>
-  </app-table>
+<div class="sky-card mt">
+  <div class="sky-card-body">
+    <a class="container d-inline-block" href="https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits" target="_blank">
+      <mat-icon class="menu-icon" fontIcon="question_mark"></mat-icon>
+      <span class="menu-label">Wiki</span>
+    </a>
+  </div>
+</div>
+
+<div class="sky-card p-0 mt">
+  <div class="sky-card-body">
+    <app-table [rows]="rows">
+      <ng-template [appTableHeader]>Name</ng-template>
+      <ng-template [appTableHeader]>Spirits</ng-template>
+      <ng-template [appTableHeader]>Start</ng-template>
+      <ng-template [appTableHeader]>End</ng-template>
+      <ng-template [appTableHeader]>Unlocked</ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        <a  [routerLink]="['/rs', row.guid]">
+          {{ row.name }}
+        </a>
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row" [tdClass]="'ws-nw'">
+        <!--Spirit images -->
+        <a class="sky-card spirit-img t-center" *ngFor="let spiritVisit of row.spirits"
+          [routerLink]="['/spirit', spiritVisit.spirit.guid]" [queryParams]="{ highlightTree: spiritVisit.tree.guid }"
+          [ngbTooltip]="spiritVisit.spirit.name" container="body" placement="bottom"
+        >
+          <app-icon *ngIf="spiritVisit.spirit.imageUrl" [src]="spiritVisit.spirit.imageUrl" [width]="'auto'" [lazy]="true"></app-icon>
+        </a>
+        <!-- Spirit count for small devices -->
+        <div class="spirit-count">
+          {{ row.spirits?.length || 0 }}
+        </div>
+      </ng-template>
+      <!-- <ng-template [appTableColumn] let-row="row">
+        <a  [routerLink]="['/spirits']" [queryParams]="{ highlightTree: row.treeGuid }">
+          {{ spiritVisit.spirit.name }}
+        </a>
+      </ng-template> -->
+      <ng-template [appTableColumn] let-row="row">
+        <span class="ws-nw">{{ row.date | dayjs:dateFormat }}</span>
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        <span class="ws-nw">{{ row.endDate | dayjs:dateFormat }}</span>
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        <span *ngIf="row.totalItems" [class.completed]="row.unlockedItems === row.totalItems">
+          {{ row.unlockedItems }} / {{ row.totalItems }}
+        </span>
+      </ng-template>
+    </app-table>
+  </div>
 </div>

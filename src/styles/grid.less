@@ -18,11 +18,7 @@
     grid-template-columns: var(--column-items-4);
   }
 
-  gap: 4px;
-
-  &.gap-medium {
-    gap: var(--padding-content);
-  }
+  gap: var(--padding-content);
 
   h1 {
     margin-left: 5px;
@@ -33,32 +29,11 @@
     vertical-align: middle;
   }
 
-  .wiki {
-    width: 28px;
-    height: 28px;
-    right: var(--padding-content);
-    top: var(--padding-content);
-    border-radius: var(--border-radius);
-    background: var(--color-background);
-
-    a {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      height: 100%;
-    }
-
-    mat-icon {
-      position: absolute;
-      top: 1px;
-      right: 3px;
-    }
-  }
-
   .item {
     padding: var(--padding-content);
     background: var(--color-background);
     border-radius: var(--border-radius);
+    border: var(--border-solid);
   }
 
   .link {

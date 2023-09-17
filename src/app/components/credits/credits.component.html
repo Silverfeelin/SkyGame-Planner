@@ -1,11 +1,18 @@
-<h1 class="h2">Credits</h1>
-<div class="container">
-  <h2 class="h3">
-    <mat-icon fontIcon="note"></mat-icon>
-    License
-  </h2>
-  <div class="container-flex">
-    <div>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2">Credits</h1>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3">
+      <mat-icon fontIcon="note"></mat-icon>
+      License
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
       <p>
         Source code is publicly available
         <a href="https://github.com/Silverfeelin/SkyGame-Planner/" target="_blank">on GitHub</a>
@@ -22,14 +29,12 @@
       <p>
         Sky Planner is non-commercial and is made available for informational purposes.
       </p>
-    </div>
-  </div>
-  <div class="container-flex mt-2">
-    <div class="ws-pl">
-      This project uses many public packages. These are listed in the
-      <a href="https://github.com/Silverfeelin/SkyGame-Planner/blob/master/package.json" target="_blank">package.json</a>
-      file.<br/>
-      For respective licenses, please look up the packages on <a href="https://www.npmjs.com/" target="_blank">npm</a>.
+      <p>
+        This project uses many public packages. These are listed in the
+        <a href="https://github.com/Silverfeelin/SkyGame-Planner/blob/master/package.json" target="_blank">package.json</a>
+        file.<br/>
+        For respective licenses, please look up the packages on <a href="https://www.npmjs.com/" target="_blank">npm</a>.
+      </p>
     </div>
   </div>
 </div>
@@ -40,13 +45,15 @@
   </div>
 </ng-template>
 
-<div class="container mt-2">
-  <h2 class="h3">
-    <mat-icon fontIcon="favorite"></mat-icon>
-    Attribution
-  </h2>
-  <div class="container-flex">
-    <div class="ws-pl">
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3">
+      <mat-icon fontIcon="favorite"></mat-icon>
+      Attribution
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
       <p>
         Various assets such as icons are loaded directly from the
         <a href="https://sky-children-of-the-light.fandom.com/wiki/Sky:_Children_of_the_Light_Wiki" target="_blank">Sky:CotL Fandom wiki</a>.
@@ -59,49 +66,45 @@
       <div class="flex-credits">
         <div class="flex-credit">
           <div class="credit-name">Morybel</div>
-          <div class="credit-handle">
+          <div class="credit-handle c-accent">
             <ng-container *ngTemplateOutlet="discord"></ng-container>
             <span class="credit-handle-name">morybel</span>
           </div>
         </div>
         <div class="flex-credit">
           <div class="credit-name">Mimi</div>
-          <div class="credit-handle">
+          <div class="credit-handle c-accent">
             <ng-container *ngTemplateOutlet="discord"></ng-container>
             <span class="credit-handle-name">mimi4117</span>
           </div>
         </div>
         <div class="flex-credit">
           <div class="credit-name">Ray</div>
-          <div class="credit-handle">
+          <div class="credit-handle c-accent">
             <ng-container *ngTemplateOutlet="discord"></ng-container>
             <span class="credit-handle-name">ray808080</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-flex mt-2">
-    <div class="ws-pl">
-      Some Traveling Spirit price corrections were made based on infographics by Jed#9275 (new Discord handle unknown).
+    <div class="container ws-pl mt">
+      <p>
+        Some Traveling Spirit price corrections were made based on infographics by Jed#9275 (new Discord handle unknown).
+      </p>
+      <p>
+        Some YouTube videos by
+        <a href="https://www.youtube.com/channel/UCTdBaJiejXA0WSOkPX0YO0w" target="_blank">nastymold</a>,
+        <a href="https://www.youtube.com/@noobmode" target="_blank">Noob Mode</a>,
+        <a href="https://www.youtube.com/@AppUnwrapper" target="_blank">App Unwrapper</a>
+        and
+        <a href="https://www.youtube.com/@SkyBat" target="_blank">Sky Bat</a>
+        were used as a reference to find missing information for older events.<br/>
+        Go check out their content!
+      </p>
+      <p>
+        Thank you for the suggestions to improve Sky Planner:<br/>
+        Daw, Morybel, oWishy <i><a href="https://github.com/Silverfeelin/SkyGame-Planner/issues?q=is%3Aissue" target="_blank">and more</a></i>.
+      </p>
     </div>
-  </div>
-  <div class="container-flex mt-2">
-    <div class="ws-pl">
-      Some YouTube videos by
-      <a href="https://www.youtube.com/channel/UCTdBaJiejXA0WSOkPX0YO0w" target="_blank">nastymold</a>,
-      <a href="https://www.youtube.com/@noobmode" target="_blank">Noob Mode</a>,
-      <a href="https://www.youtube.com/@AppUnwrapper" target="_blank">App Unwrapper</a>
-      and
-      <a href="https://www.youtube.com/@SkyBat" target="_blank">Sky Bat</a>
-      were used as a reference to find missing information for older events.<br/>
-      Go check out their content!
-    </div>
-  </div>
-  <div class="container-flex mt-2">
-    <div class="ws-pl">
-      Thank you for the suggestions to improve Sky Planner:<br/>
-      Daw, Morybel, oWishy
-      <i><a href="https://github.com/Silverfeelin/SkyGame-Planner/issues?q=is%3Aissue" target="_blank">and more</a></i>.
   </div>
 </div>

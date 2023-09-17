@@ -1,72 +1,78 @@
-<div class="card container">
-  <h1 class="h2 mb-0">Settings</h1>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Settings</h1>
+  </div>
 </div>
 
 <!-- Import -->
-<div class="card container mt-2">
-  <h2 class="h3 mb-0">
-    <mat-icon fontIcon="swap_horiz"></mat-icon>
-    Import / Export
-  </h2>
-  <div class="container-flex mt-2">
-    <div class="ws-pl">
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      <mat-icon fontIcon="swap_horiz"></mat-icon>
+      Import / Export
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
       Import or export your progression.
       The exported file serves as a backup of all your unlocked items in Sky Planner.
+      <div class="sky-flex mt">
+        <button type="button" class="item" (click)="import()">
+          Import data
+        </button>
+        <button type="button" class="item" (click)="export()">
+          Export data <span class="c-accent">({{unlockedCount}})</span>
+        </button>
+        <button type="button" class="item clear-data" (click)="clear()">
+          Clear data
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="container-flex mt-2">
-    <button type="button" class="item" (click)="import()">
-      Import data
-    </button>
-    <button type="button" class="item" (click)="export()">
-      Export data <span class="c-accent">({{unlockedCount}})</span>
-    </button>
-  </div>
-  <div class="container-flex mt-2">
-    <button type="button" class="item clear-data" (click)="clear()">
-      Clear data
-    </button>
   </div>
 </div>
 
 <!-- Theme -->
-<div class="card container mt-2">
-  <h2 class="h3 mb-0">
-    <mat-icon fontIcon="color_lens"></mat-icon>
-    Theme
-  </h2>
-  <div class="container-flex mt-2">
-    <div class="ws-pl">
-      Change the theme of the application.
-    </div>
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      <mat-icon fontIcon="color_lens"></mat-icon>
+      Theme
+    </h2>
   </div>
-  <div class="container-flex mt-2">
-    <button type="button" class="item" [class.highlight]="currentTheme ===  'sky'" data-theme="sky" (click)="setTheme('')">
-      Sky
-    </button>
-    <button type="button" class="item" [class.highlight]="currentTheme ===  'light'" data-theme="light" (click)="setTheme('light')">
-      Light
-    </button>
-    <button type="button" class="item" [class.highlight]="currentTheme ===  'dark'" data-theme="dark" (click)="setTheme('dark')">
-      Dark
-    </button>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
+      Change the theme of the application.
+      <div class="sky-flex mt">
+        <button type="button" class="item btn-sky" [class.highlight]="currentTheme ===  'sky'" data-theme="sky" (click)="setTheme('')">
+          Sky
+        </button>
+        <button type="button" class="item" [class.highlight]="currentTheme ===  'light'" data-theme="light" (click)="setTheme('light')">
+          Light
+        </button>
+        <button type="button" class="item" [class.highlight]="currentTheme ===  'dark'" data-theme="dark" (click)="setTheme('dark')">
+          Dark
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
 <!-- Date -->
-<div class="card container mt-2">
-  <h2 class="h3 mb-0">
-    <mat-icon fontIcon="date_range"></mat-icon>
-    Date
-  </h2>
-  <div class="container-inner mt-2">
-    <div class="ws-pl">
-      Change the date displayed in the application. Today's date is {{ today | dayjs: dateFormat }}.
-    </div>
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      <mat-icon fontIcon="date_range"></mat-icon>
+      Date
+    </h2>
   </div>
-  <div class="container-flex mt-2">
-    <button *ngFor="let format of dateFormats" [class.highlight]="dateFormat === format" type="button" class="item" (click)="setDateFormat(format)">
-      {{ format | lowercase }}
-    </button>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
+      Change the date displayed in the application. Today's date is {{ today | dayjs: dateFormat }}.
+      <div class="sky-flex flex-wrap mt">
+        <button *ngFor="let format of dateFormats" [class.highlight]="dateFormat === format" type="button" class="item ws-nw" (click)="setDateFormat(format)">
+          {{ format | lowercase }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>

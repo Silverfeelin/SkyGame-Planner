@@ -3,12 +3,12 @@
 }
 
 .content {
-  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   overflow: hidden;
 }
 
 .spirit-tree-scroll {
+  background: var(--color-tree-background);
   position: relative;
   // max-height: 600px;
   overflow-y: auto;
@@ -50,7 +50,7 @@
 
 .arrow {
   position: absolute;
-  background: var(--color);
+  background: var(--color-tree-line);
   width: 1px;
 }
 
@@ -79,7 +79,7 @@
 
 .footer {
   text-align: center;
-  background: var(--color-item-background);
+  background: var(--color-tree-footer-background);
 }
 
 .name {
@@ -104,7 +104,7 @@
   height: 1px;
   width: var(--width);
   margin-left: calc((100% - var(--width)) / 2);
-  background: var(--color-border-highlight);
+  background: var(--color-tree-footer-border);
 }
 
 .costs {

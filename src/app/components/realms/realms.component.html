@@ -1,26 +1,26 @@
-<div class="card container">
-  <h1 class="h2 mb-0">Realms</h1>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Realms</h1>
+  </div>
 </div>
 
-<div class="grid grid-3 gap-medium mt-2">
-  <div class="card p-rel" *ngFor="let realm of visibleRealms">
-    <h2 class="h3">{{realm.name}}</h2>
-    <!-- Wiki -->
-    <div class="wiki p-abs" *ngIf="realm._wiki?.href">
-      <a [href]="realm._wiki!.href" target="_blank" [ngbTooltip]="'Open wiki'" placement="left" container="body">
-        <mat-icon fontIcon="question_mark"></mat-icon>
-      </a>
+<div class="grid grid-3 mt">
+  <div class="sky-card p-rel" *ngFor="let realm of visibleRealms">
+    <div class="sky-card-header">
+      <h2 class="h3 mb-0">{{realm.name}}</h2>
     </div>
     <!-- Image -->
-    <div *ngIf="realm.imageUrl" class="p-rel img" [style.background-image]="'url('+realm.imageUrl+')'"></div>
-    <!-- Overview --> <!-- For now only show overview if realm has spirits. -->
-    <a *ngIf="spiritCount[realm.guid]" class="mt-2 item link" [routerLink]="['/realm', realm.guid]">
-      <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
-      <span class="menu-label">Overview</span>
-    </a>
-    <!-- Areas -->
-    <!-- <div class="mt-2 item areas">
-      Areas
-    </div> -->
+    <div class="sky-card-body">
+      <div *ngIf="realm.imageUrl" class="p-rel img sky-border-solid" [style.background-image]="'url('+realm.imageUrl+')'"></div>
+      <!-- Overview --> <!-- For now only show overview if realm has spirits. -->
+      <a *ngIf="spiritCount[realm.guid]" class="item link mt" [routerLink]="['/realm', realm.guid]">
+        <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+        <span class="menu-label">Overview</span>
+      </a>
+      <!-- Areas -->
+      <!-- <div class="mt item areas">
+        Areas
+      </div> -->
+    </div>
   </div>
 </div>

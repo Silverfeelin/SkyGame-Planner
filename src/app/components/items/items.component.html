@@ -1,141 +1,156 @@
-<div class="card container">
-  <h1 class="h2 mb-0">Items</h1>
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Items</h1>
+  </div>
 </div>
 
 <!-- Categories -->
-<div class="card container mt-2">
-  <h2 class="h3">Type</h2>
-  <div class="flex">
-    <!-- Outfits -->
-    <div class="flex-item category" [class.highlight]="type === 'Outfit'"
-    [ngbTooltip]="'Outfits'" container="body" placement="bottom"
-      (click)="selectCategory('Outfit')">
-      <mat-icon svgIcon="outfit"></mat-icon>
-    </div>
-    <!-- Shoes -->
-    <div class="flex-item category" [class.highlight]="type === 'Shoes'"
-    [ngbTooltip]="'Shoes'" container="body" placement="bottom"
-      (click)="selectCategory('Shoes')">
-      <mat-icon svgIcon="shoes"></mat-icon>
-    </div>
-    <!-- Masks -->
-    <div class="flex-item category" [class.highlight]="type === 'Mask'"
-    [ngbTooltip]="'Masks'" container="body" placement="bottom"
-      (click)="selectCategory('Mask')">
-      <mat-icon svgIcon="mask"></mat-icon>
-    </div>
-    <!-- Face Accessories -->
-    <div class="flex-item category" [class.highlight]="type === 'FaceAccessory'"
-    [ngbTooltip]="'Face accessories'" container="body" placement="bottom"
-      (click)="selectCategory('FaceAccessory')">
-      <mat-icon svgIcon="face-acc"></mat-icon>
-    </div>
-    <!-- Necklaces -->
-    <div class="flex-item category" [class.highlight]="type === 'Necklace'"
-    [ngbTooltip]="'Necklaces'" container="body" placement="bottom"
-      (click)="selectCategory('Necklace')">
-      <mat-icon svgIcon="necklace"></mat-icon>
-    </div>
-    <!-- Hair -->
-    <div class="flex-item category" [class.highlight]="type === 'Hair'"
-    [ngbTooltip]="'Hair'" container="body" placement="bottom"
-      (click)="selectCategory('Hair')">
-      <mat-icon svgIcon="hair"></mat-icon>
-    </div>
-    <!-- Hats -->
-    <div class="flex-item category" [class.highlight]="type === 'Hat'"
-    [ngbTooltip]="'Hats'" container="body" placement="bottom"
-      (click)="selectCategory('Hat')">
-      <mat-icon svgIcon="hat"></mat-icon>
-    </div>
-    <!-- Capes -->
-    <div class="flex-item category" [class.highlight]="type === 'Cape'"
-    [ngbTooltip]="'Capes'" container="body" placement="bottom"
-      (click)="selectCategory('Cape')">
-      <mat-icon svgIcon="cape"></mat-icon>
-    </div>
-    <!-- Held -->
-    <div class="flex-item category" [class.highlight]="type === 'Held'"
-    [ngbTooltip]="'Held props'" container="body" placement="bottom"
-      (click)="selectCategory('Held')">
-      <mat-icon svgIcon="held"></mat-icon>
-    </div>
-    <!-- Prop -->
-    <div class="flex-item category" [class.highlight]="type === 'Prop'"
-    [ngbTooltip]="'Props'" container="body" placement="bottom"
-      (click)="selectCategory('Prop')">
-      <mat-icon svgIcon="prop"></mat-icon>
-    </div>
-    <!-- Emote -->
-    <div class="flex-item category" [class.highlight]="type === 'Emote'"
-    [ngbTooltip]="'Emotes'" container="body" placement="bottom"
-      (click)="selectCategory('Emote')">
-      <mat-icon svgIcon="emote"></mat-icon>
-    </div>
-    <!-- Stance -->
-    <div class="flex-item category" [class.highlight]="type === 'Stance'"
-    [ngbTooltip]="'Stances'" container="body" placement="bottom"
-      (click)="selectCategory('Stance')">
-      <mat-icon svgIcon="stance"></mat-icon>
-    </div>
-    <!-- Call -->
-    <div class="flex-item category" [class.highlight]="type === 'Call'"
-    [ngbTooltip]="'Calls'" container="body" placement="bottom"
-      (click)="selectCategory('Call')">
-      <mat-icon svgIcon="call"></mat-icon>
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Type</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="flex">
+      <!-- Outfits -->
+      <div class="flex-item category" [class.highlight]="type === 'Outfit'"
+      [ngbTooltip]="'Outfits'" container="body" placement="bottom"
+        (click)="selectCategory('Outfit')">
+        <mat-icon svgIcon="outfit"></mat-icon>
+      </div>
+      <!-- Shoes -->
+      <div class="flex-item category" [class.highlight]="type === 'Shoes'"
+      [ngbTooltip]="'Shoes'" container="body" placement="bottom"
+        (click)="selectCategory('Shoes')">
+        <mat-icon svgIcon="shoes"></mat-icon>
+      </div>
+      <!-- Masks -->
+      <div class="flex-item category" [class.highlight]="type === 'Mask'"
+      [ngbTooltip]="'Masks'" container="body" placement="bottom"
+        (click)="selectCategory('Mask')">
+        <mat-icon svgIcon="mask"></mat-icon>
+      </div>
+      <!-- Face Accessories -->
+      <div class="flex-item category" [class.highlight]="type === 'FaceAccessory'"
+      [ngbTooltip]="'Face accessories'" container="body" placement="bottom"
+        (click)="selectCategory('FaceAccessory')">
+        <mat-icon svgIcon="face-acc"></mat-icon>
+      </div>
+      <!-- Necklaces -->
+      <div class="flex-item category" [class.highlight]="type === 'Necklace'"
+      [ngbTooltip]="'Necklaces'" container="body" placement="bottom"
+        (click)="selectCategory('Necklace')">
+        <mat-icon svgIcon="necklace"></mat-icon>
+      </div>
+      <!-- Hair -->
+      <div class="flex-item category" [class.highlight]="type === 'Hair'"
+      [ngbTooltip]="'Hair'" container="body" placement="bottom"
+        (click)="selectCategory('Hair')">
+        <mat-icon svgIcon="hair"></mat-icon>
+      </div>
+      <!-- Hats -->
+      <div class="flex-item category" [class.highlight]="type === 'Hat'"
+      [ngbTooltip]="'Hats'" container="body" placement="bottom"
+        (click)="selectCategory('Hat')">
+        <mat-icon svgIcon="hat"></mat-icon>
+      </div>
+      <!-- Capes -->
+      <div class="flex-item category" [class.highlight]="type === 'Cape'"
+      [ngbTooltip]="'Capes'" container="body" placement="bottom"
+        (click)="selectCategory('Cape')">
+        <mat-icon svgIcon="cape"></mat-icon>
+      </div>
+      <!-- Held -->
+      <div class="flex-item category" [class.highlight]="type === 'Held'"
+      [ngbTooltip]="'Held props'" container="body" placement="bottom"
+        (click)="selectCategory('Held')">
+        <mat-icon svgIcon="held"></mat-icon>
+      </div>
+      <!-- Prop -->
+      <div class="flex-item category" [class.highlight]="type === 'Prop'"
+      [ngbTooltip]="'Props'" container="body" placement="bottom"
+        (click)="selectCategory('Prop')">
+        <mat-icon svgIcon="prop"></mat-icon>
+      </div>
+      <!-- Emote -->
+      <div class="flex-item category" [class.highlight]="type === 'Emote'"
+      [ngbTooltip]="'Emotes'" container="body" placement="bottom"
+        (click)="selectCategory('Emote')">
+        <mat-icon svgIcon="emote"></mat-icon>
+      </div>
+      <!-- Stance -->
+      <div class="flex-item category" [class.highlight]="type === 'Stance'"
+      [ngbTooltip]="'Stances'" container="body" placement="bottom"
+        (click)="selectCategory('Stance')">
+        <mat-icon svgIcon="stance"></mat-icon>
+      </div>
+      <!-- Call -->
+      <div class="flex-item category" [class.highlight]="type === 'Call'"
+      [ngbTooltip]="'Calls'" container="body" placement="bottom"
+        (click)="selectCategory('Call')">
+        <mat-icon svgIcon="call"></mat-icon>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- Items -->
-<div class="card container mt-2" *ngIf="shownItems?.length">
-  <div class="unlock-bar container-flex">
-    <span [class.completed]="shownUnlocked == shownItems.length">
-      {{ shownUnlocked }} / {{ shownItems.length }}
-    </span>
-    <div class="column-toggle">
-      <mat-icon fontIcon="apps" (click)="setColumns()" [ngbTooltip]="'Toggle column size'" container="body" placement="left"></mat-icon>
+<div class="sky-card mt" *ngIf="shownItems?.length">
+  <div class="sky-card-header">
+    <div class="unlock-bar">
+      You have unlocked
+      <b [class.completed]="shownUnlocked == shownItems.length">{{ shownUnlocked }}</b>
+      out of
+      <b [class.completed]="shownUnlocked == shownItems.length">{{ shownItems.length }}</b>
+      items.
+      <div class="column-toggle">
+        <mat-icon fontIcon="apps" (click)="setColumns()" [ngbTooltip]="'Toggle column size'" container="body" placement="left"></mat-icon>
+      </div>
     </div>
   </div>
 
-  <div class="flex item-grid mt-2" [class.gap-half-y]="columns">
-    <div class="flex-item" *ngIf="showNone && columns">
-      <div class="item-none">
-        <mat-icon class="" svgIcon="none"></mat-icon>
+  <div class="sky-card-body">
+    <div class="flex item-grid" [class.gap-half-y]="columns">
+      <div class="flex-item" *ngIf="showNone && columns">
+        <div class="item-none">
+          <mat-icon class="" svgIcon="none"></mat-icon>
+        </div>
       </div>
+      <ng-container *ngFor="let item of shownItems; let i = index">
+        <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % columns) ? undefined : 'block'"></div>
+        <div class="flex-item">
+          <app-item [item]="item" [showSubIcons]="true" class="a"
+            (click)="selectItem($event, item)"
+            [class.highlight]="item && item === selectedItem"
+            [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
+            [ngbTooltip]="item.name" container="body" placement="auto" >
+          </app-item>
+          <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked" fontIcon="done"></mat-icon>
+        </div>
+      </ng-container>
     </div>
-    <ng-container *ngFor="let item of shownItems; let i = index">
-      <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % columns) ? undefined : 'block'"></div>
-      <div class="flex-item">
-        <app-item [item]="item" [showSubIcons]="true" class="a"
-          (click)="selectItem($event, item)"
-          [class.highlight]="item && item === selectedItem"
-          [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
-          [ngbTooltip]="item.name" container="body" placement="auto" >
-        </app-item>
-        <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked" fontIcon="done"></mat-icon>
-      </div>
-    </ng-container>
   </div>
 </div>
 
-<div #itemDiv [hidden]="!selectedItem" class="grid grid-1 item-info mt-2">
-  <ng-container *ngIf="selectedItem">
-    <div class="card">
+<!-- Selected item -->
+<div #itemDiv [hidden]="!selectedItem" class="grid grid-1 item-info mt">
+  <div class="sky-card" *ngIf="selectedItem">
+    <div class="sky-card-header">
       <h2 class="h3">{{ selectedItem.name }}</h2>
+    </div>
+    <div class="sky-card-body">
       <div class="info-grid">
         <a class="flex-item flex-item-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
           <app-item [item]="selectedItem" [large]="true" [hoverHighlight]="false"></app-item>
         </a>
-        <a *ngIf="selectedItemNav" class="info-grid-find container-inner" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
+        <a *ngIf="selectedItemNav" class="info-grid-find container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
           <mat-icon class="menu-icon" fontIcon="search"></mat-icon>
           <span class="menu-label">Find item</span>
         </a>
-        <a *ngIf="previewHref" class="info-grid-find container-inner" [href]="previewHref" target="_blank">
+        <a *ngIf="previewHref" class="info-grid-find container" [href]="previewHref" target="_blank">
           <mat-icon class="menu-icon" fontIcon="visibility"></mat-icon>
           <span class="menu-label">Preview</span>
         </a>
       </div>
     </div>
-  </ng-container>
+  </div>
 </div>
