@@ -1,6 +1,8 @@
 import { NavigationExtras } from '@angular/router';
 import { NodeHelper } from './node-helper';
 import { IItem } from '../interfaces/item.interface';
+import dayjs, { Dayjs } from 'dayjs';
+import { INode } from '../interfaces/node.interface';
 
 export interface INavigationTarget {
   route: Array<any>;
@@ -23,11 +25,33 @@ export class NavigationHelper {
 
   /** Gets a link to navigates to the source of the given item (i.e. spirit). */
   static getItemSource(item: IItem): INavigationTarget | undefined {
+    // Find spirit from last appearance of item.
     if (item.nodes?.length || item.hiddenNodes?.length) {
-      // Find spirit from last appearance of item.
-      const tree = item?.nodes?.length
-        ? NodeHelper.getRoot(item.nodes.at(-1))?.spiritTree
-        : NodeHelper.getRoot(item.hiddenNodes!.at(-1))?.spiritTree;
+      const nodes = [ ...(item.nodes || []), ...(item.hiddenNodes || []) ];
+      let lastNode: INode | undefined;
+      let lastDate = dayjs('2000-1-1');
+      for (const node of nodes) {
+        // Prioritize unlocked node.
+        if (node.unlocked) {
+          lastNode = node;
+          break;
+        }
+
+        const tree = NodeHelper.getRoot(node)?.spiritTree;
+        if (!tree) { continue; }
+
+        const date = tree?.eventInstanceSpirit?.eventInstance ? tree.eventInstanceSpirit.eventInstance.date
+          : tree?.ts ? tree.ts.date
+          : tree?.visit ? tree.visit.return.date
+          : dayjs('2000-1-2');
+
+        if (date.diff(lastDate) < 0) { continue; }
+        lastDate = date;
+        lastNode = node;
+      }
+
+      if (!lastNode) { return undefined; }
+      const tree = NodeHelper.getRoot(lastNode)?.spiritTree;
       const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
 
       const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
