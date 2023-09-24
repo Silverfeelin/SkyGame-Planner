@@ -207,6 +207,14 @@ export class DataService {
       rs.date = DateHelper.fromInterfaceSky(rs.date)!;
       rs.endDate = DateHelper.fromInterfaceSky(rs.endDate)!.endOf('day');
 
+      // Map RS to Area.
+      if (rs.area) {
+        const area = this.guidMap.get(rs.area as any) as IArea;
+        rs.area = area;
+        area.rs ??= [];
+        area.rs.push(rs);
+      }
+
       // Map Visits.
       rs.spirits?.forEach((visit, si) => {
         this.registerGuid(visit);

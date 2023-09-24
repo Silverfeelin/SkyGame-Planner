@@ -6,17 +6,17 @@
     <div class="items">
       <!-- Search -->
       <a class="item" [routerLink]="'search'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Search'" placement="right" container="body">
-        <mat-icon fontIcon="search"></mat-icon>
+        <mat-icon>search</mat-icon>
         <span class="name">Search</span>
       </a>
       <!-- Items -->
       <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
-        <mat-icon fontIcon="checkroom"></mat-icon>
+        <mat-icon>checkroom</mat-icon>
         <span class="name">Items</span>
       </a>
       <!-- Spirits -->
       <a class="item" [routerLink]="'spirits'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Spirits'" placement="right" container="body">
-        <mat-icon fontIcon="person"></mat-icon>
+        <mat-icon>person</mat-icon>
         <span class="name">Spirits</span>
       </a>
       <!-- Wing Buffs-->
@@ -26,46 +26,46 @@
       </a>
       <!-- Realms -->
       <a class="item" [routerLink]="'realm'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
-        <mat-icon fontIcon="map"></mat-icon>
+        <mat-icon>map</mat-icon>
         <span class="name">Realms</span>
       </a>
       <!-- Seasons -->
       <a class="item" [routerLink]="'season'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
         <img *ngIf="seasonIconUrl; else seasonIcon" [src]="seasonIconUrl" class="icon">
-        <ng-template #seasonIcon><mat-icon fontIcon="ac_unit"></mat-icon></ng-template>
+        <ng-template #seasonIcon><mat-icon>ac_unit</mat-icon></ng-template>
         <span class="name">Seasons</span>
       </a>
       <!-- Events -->
       <a class="item" [routerLink]="'event'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
-        <mat-icon fontIcon="celebration"></mat-icon>
+        <mat-icon>celebration</mat-icon>
         <span class="name">Events</span>
       </a>
       <!-- Shop -->
       <a class="item" [routerLink]="'shop'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">
-        <mat-icon fontIcon="shopping_cart"></mat-icon>
+        <mat-icon>shopping_cart</mat-icon>
         <span class="name">Permanent IAP</span>
       </a>
 
       <!-- Sky Clock -->
       <hr class="bottom"/>
       <a class="item" href="https://sky-clock.netlify.app/" target="_blank" [ngbTooltip]="wide ? '' : 'Sky Clock'" placement="right" container="body">
-        <mat-icon fontIcon="schedule"></mat-icon>
+        <mat-icon>schedule</mat-icon>
         <span class="name">Sky Clock</span>
       </a>
       <hr/>
       <!-- Settings -->
       <a class="item" [routerLink]="'settings'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Settings'" placement="right" container="body">
-        <mat-icon fontIcon="settings"></mat-icon>
+        <mat-icon>settings</mat-icon>
         <span class="name">Settings</span>
       </a>
       <!-- GitHub -->
       <a class="item" href="https://github.com/Silverfeelin/SkyGame-Planner/" target="_blank" [ngbTooltip]="wide ? '' : 'GitHub'" placement="right" container="body">
-        <mat-icon fontIcon="code"></mat-icon>
+        <mat-icon>code</mat-icon>
         <span class="name">GitHub</span>
       </a>
       <!-- Credits -->
       <a class="item" [routerLink]="'credits'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Credits'" placement="right" container="body">
-        <mat-icon fontIcon="info"></mat-icon>
+        <mat-icon>info</mat-icon>
         <span class="name">Credits</span>
       </a>
     </div>

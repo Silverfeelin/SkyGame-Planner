@@ -82,6 +82,15 @@ input, select {
   border: 1px solid var(--color-border);
 }
 
+.active {
+  color: var(--color-active);
+}
+
+.expired {
+  color: var(--color-expired);
+  font-style: italic;
+}
+
 .sky-flex {
   position: relative;
   display: flex;
@@ -122,6 +131,7 @@ body { scrollbar-width: thin; }
 .c-main { color: var(--color) !important; }
 .c-accent { color: var(--color-accent) !important; }
 .c-full { color: var(--color-new) !important; }
+.c-completed { color: var(--color-new) !important; }
 .c-partial { color: var(--color-old) !important; }
 .p-rel { position: relative !important; }
 .p-abs { position: absolute !important; }
@@ -201,14 +211,14 @@ p:last-child {
 }
 
 .wiki {
-  width: 30px;
-  height: 30px;
-  right: var(--padding-content);
-  top: var(--padding-content);
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
   border-radius: var(--border-radius);
   background-color: #5ECCF2;
-  background-image: url(/assets/external/sky-wiki-favicon-solid.png);
-  background-size: 24px 24px;
+  background-image: url(/assets/external/sky-wiki-favicon-full.png);
+  background-size: 32px 32px;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -261,11 +271,12 @@ p:last-child {
 
 // Prevent SVG icon clipping.
 mat-icon {
+  font-variation-settings: 'FILL' 1;
   font-size: 24px;
   line-height: 24px;
 }
 
-mat-icon svg {
+mat-icon:not(.icon-middle) svg {
   vertical-align: unset;
 }
 

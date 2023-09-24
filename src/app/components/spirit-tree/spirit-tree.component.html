@@ -1,7 +1,7 @@
 <div class="content sky-border-solid" [class.highlight]="highlight">
   <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot">
     <div class="unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
-      <mat-icon fontIcon="lock_open"></mat-icon>
+      <mat-icon>lock_open</mat-icon>
     </div>
     <div class="spirit-tree">
       <div class="column left">
@@ -43,32 +43,32 @@
       <div class="cost" *ngIf="totalCost?.c">
         {{ totalCost.c }}
         <span class="remaining-cost">({{ remainingCost.c || 0 }})</span>
-        <mat-icon class="currency" svgIcon="candle" [inline]="false"></mat-icon>
+        <mat-icon class="currency icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
       </div>
       <div class="cost" *ngIf="totalCost?.sc">
         {{ totalCost.sc }}
         <span class="remaining-cost">({{ remainingCost.sc || 0 }})</span>
-        <mat-icon class="seasonal" svgIcon="candle" [inline]="false"></mat-icon>
+        <mat-icon class="seasonal icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
       </div>
       <div class="cost" *ngIf="totalCost?.h">
         {{ totalCost.h }}
         <span class="remaining-cost">({{ remainingCost.h || 0 }})</span>
-        <mat-icon class="currency" svgIcon="heart" [inline]="false"></mat-icon>
+        <mat-icon class="currency icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
       </div>
       <div class="cost" *ngIf="totalCost?.sh">
         {{ totalCost.sh }}
         <span class="remaining-cost">({{ remainingCost.sh || 0 }})</span>
-        <mat-icon class="seasonal" svgIcon="heart" [inline]="false"></mat-icon>
+        <mat-icon class="seasonal icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
       </div>
       <div class="cost ascend" *ngIf="totalCost?.ac">
         {{ totalCost.ac }}
         <span class="remaining-cost">({{ remainingCost.ac || 0 }})</span>
-        <mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
+        <mat-icon class="icon-middle" svgIcon="ascended-candle" [inline]="false"></mat-icon>
       </div>
       <div class="cost" *ngIf="totalCost?.ec">
         {{ totalCost.ec }}
         <span class="remaining-cost">({{ remainingCost.ec || 0 }})</span>
-        <mat-icon svgIcon="ticket" [inline]="false"></mat-icon>
+        <mat-icon class="icon-middle" svgIcon="ticket" [inline]="false"></mat-icon>
       </div>
     </div>
   </div>

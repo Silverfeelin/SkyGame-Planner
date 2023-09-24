@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { SubscriptionLike } from 'rxjs';
+import { DateHelper } from 'src/app/helpers/date-helper';
+import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
 import { DebugService } from 'src/app/services/debug.service';
+import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
 
 @Component({
@@ -12,23 +16,46 @@ import { IAPService } from 'src/app/services/iap.service';
   templateUrl: './event-instance.component.html',
   styleUrls: ['./event-instance.component.less']
 })
-export class EventInstanceComponent {
+export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;
+  state: 'future' | 'active' | 'ended' | undefined;
   shops?: Array<IShop>;
   iapNames: { [iapGuid: string]: string | undefined } = {};
   highlightItem?: string;
   highlightIap?: string;
 
+  c: number = 0;
+  cLeft: number = 0;
+  ec: number = 0;
+  ecLeft: number = 0;
+
+  private _itemSub?: SubscriptionLike;
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _debugService: DebugService,
+    private readonly _eventService: EventService,
     private readonly _iapService: IAPService,
     private readonly _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
+    this.subscribeItemChanged();
   }
 
+  ngOnDestroy(): void {
+    this._itemSub?.unsubscribe();
+  }
+
+  subscribeItemChanged(): void {
+    this._itemSub?.unsubscribe();
+    this._itemSub = this._eventService.itemToggled
+      .subscribe(v => this.onItemChanged());
+  }
+
+  onItemChanged(): void {
+    this.calculateCandles();
+  }
 
   onQueryChanged(p: ParamMap): void {
     this.highlightItem = p.get('highlightItem') || undefined;
@@ -38,6 +65,7 @@ export class EventInstanceComponent {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.instance = this._dataService.guidMap.get(guid!) as IEventInstance;
+    this.state = DateHelper.getStateFromPeriod(this.instance.date, this.instance.endDate);
     this.shops = this.instance.shops ? [...this.instance.shops] : undefined;
 
     // Sort shops to prioritize ones with new items.
@@ -62,11 +90,12 @@ export class EventInstanceComponent {
         });
       });
     }
+
+    this.calculateCandles();
   }
 
   togglePurchased(event: MouseEvent, iap: IIAP): void {
     if (this._debugService.copyShop) {
-      debugger;
       event.stopImmediatePropagation();
       event.preventDefault();
       navigator.clipboard.writeText(iap.shop?.guid ?? '');
@@ -75,4 +104,21 @@ export class EventInstanceComponent {
 
     this._iapService.togglePurchased(iap);
   }
+
+  calculateCandles(): void {
+    this.c = this.cLeft = this.ec = this.ecLeft = 0;
+
+    this.instance.spirits?.map(s => s.tree).forEach(tree => {
+      if (!tree) { return; }
+      NodeHelper.all(tree.node).forEach(n => {
+        this.c += n.c || 0;
+        this.ec += n.ec || 0;
+        if (!n.unlocked && !n.item?.unlocked) {
+          this.cLeft += n.c || 0;
+          this.ecLeft += n.ec || 0;
+        }
+      });
+    });
+  }
+
 }

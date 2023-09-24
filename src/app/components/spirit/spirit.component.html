@@ -21,27 +21,27 @@
       </div>
       <!-- 1: Wiki -->
       <a class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit._wiki?.href" [href]="spirit._wiki!.href" target="_blank">
-        <mat-icon fontIcon="question_mark"></mat-icon>
+        <mat-icon>question_mark</mat-icon>
         <span class="menu-label">Wiki</span>
       </a>
       <!-- 2: Season -->
       <a class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.type === 'Season' || spirit.type === 'Guide'" [routerLink]="['/season', spirit.season?.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
         <img *ngIf="spirit.season?.iconUrl; else seasonIcon" [src]="spirit.season!.iconUrl" class="icon">
-        <ng-template #seasonIcon><mat-icon fontIcon="ac_unit"></mat-icon></ng-template>
+        <ng-template #seasonIcon><mat-icon>ac_unit</mat-icon></ng-template>
         <span class="menu-label">
           {{ spirit.season?.name }}
         </span>
       </a>
       <!-- 2: Event -->
       <div class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.type === 'Event'">
-        <mat-icon fontIcon="event"></mat-icon>
+        <mat-icon>event</mat-icon>
         <a *ngIf="event" class="menu-label" [routerLink]="['/event', event.guid]">
           {{ event.name }}
         </a>
       </div>
       <!-- 2: Regular -->
       <a class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.type === 'Regular' || spirit.type === 'Elder' || spirit.type === 'Special'" [routerLink]="['/spirit']" [queryParams]="{type: spirit.type}">
-        <mat-icon fontIcon="person"></mat-icon>
+        <mat-icon>person</mat-icon>
         <span class="menu-label" *ngIf="spirit.type === 'Regular'">
           Regular Spirit
         </span>
@@ -51,14 +51,14 @@
       </a>
       <!-- Realm -->
       <div class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.area?.realm">
-        <mat-icon fontIcon="map"></mat-icon>
+        <mat-icon>map</mat-icon>
         <a class="menu-label" [routerLink]="['/realm', spirit.area!.realm!.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
           {{ spirit.area!.realm!.name }}
         </a>
       </div>
       <!-- Area -->
       <div class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.area">
-        <mat-icon fontIcon="location_on"></mat-icon>
+        <mat-icon>location_on</mat-icon>
         <span class="menu-label">
           {{ spirit.area!.name }}
         </span>

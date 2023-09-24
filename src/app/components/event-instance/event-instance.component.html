@@ -5,6 +5,52 @@
       <span class="c-accent">{{ instance.date | dayjs:'YYYY' }}</span>
     </h1>
   </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <!-- Wiki -->
+      <div class="container colspan-2" *ngIf="instance.event?._wiki?.href">
+        <mat-icon class="menu-icon">question_mark</mat-icon>
+        <span class="menu-label">
+          <a [href]="instance.event._wiki?.href" target="_blank">Wiki</a>
+        </span>
+      </div>
+      <!-- Date -->
+      <div class="container" [class.expired]="state === 'ended'">
+        <mat-icon class="menu-icon">calendar_month</mat-icon>
+        <span class="menu-label">
+          {{ instance.date | dayjs }}
+          to
+          {{ instance.endDate | dayjs }}
+        </span>
+      </div>
+      <!-- Duration -->
+      <div class="container" [class.expired]="state === 'ended'">
+        <mat-icon class="menu-icon">schedule</mat-icon>
+        <span class="menu-label">
+          <app-duration [start]="instance.date" [end]="instance.endDate"></app-duration>
+          <span *ngIf="state === 'active' || state === 'future'" class="c-accent">
+            (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
+          </span>
+        </span>
+      </div>
+      <!-- Event currency -->
+      <div class="container">
+        <mat-icon class="menu-icon" svgIcon="ticket"></mat-icon>
+        <span class="menu-label">
+          {{ ec }} event currency
+          <span class="c-accent" *ngIf="ecLeft">({{ ecLeft }} needed)</span>
+        </span>
+      </div>
+      <!-- Candles -->
+      <div class="container">
+        <mat-icon class="menu-icon" svgIcon="candle"></mat-icon>
+        <span class="menu-label">
+          {{ c }} candles
+          <span class="c-accent" *ngIf="cLeft">({{ cLeft }} needed)</span>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Spirits -->
@@ -39,7 +85,7 @@
               <div class="sky-card-body">
                 <!-- Returning -->
                 <div class="item">
-                  <mat-icon class="menu-icon" [fontIcon]="iap.returning ? 'undo' : 'grade'"></mat-icon>
+                  <mat-icon class="menu-icon">{{ iap.returning ? 'undo' : 'grade' }}</mat-icon>
                   <span class="menu-label">
                     <span *ngIf="iap.returning" class="c-partial">Returning IAP</span>
                     <span *ngIf="!iap.returning" class="c-full">New  IAP</span>
@@ -47,7 +93,7 @@
                 </div>
                 <!-- Location -->
                 <div class="mt-half item">
-                  <mat-icon class="menu-icon" [fontIcon]="'location_on'"></mat-icon>
+                  <mat-icon class="menu-icon">location_on</mat-icon>
                   <span class="menu-label">
                     <span *ngIf="shop.name">{{ shop.name }}</span>
                     <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
@@ -56,7 +102,7 @@
                 </div>
                 <!-- Price -->
                 <div class="mt-half item">
-                  <mat-icon class="menu-icon" fontIcon="attach_money"></mat-icon>
+                  <mat-icon class="menu-icon">attach_money</mat-icon>
                   <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
                     {{ iap.price }}
                   </span>
@@ -86,7 +132,7 @@
                 <div class="mt-half item iap-items">
                   <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
                     <app-item [item]="item" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item>
-                    <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought" fontIcon="done"></mat-icon>
+                    <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought">done</mat-icon>
                     <ng-template #itemHover>
                       <ng-container *ngIf="item">
                         <span class="ws-nw">{{item.name}}</span>

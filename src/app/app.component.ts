@@ -30,6 +30,7 @@ export class AppComponent {
     this._themeService.init();
     this.initDisplayDate();
 
+    _matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
     window.addEventListener('storage', () => {

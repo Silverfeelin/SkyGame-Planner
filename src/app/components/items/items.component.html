@@ -103,7 +103,7 @@
       <b [class.completed]="shownUnlocked == shownItems.length">{{ shownItems.length }}</b>
       items.
       <div class="column-toggle">
-        <mat-icon fontIcon="apps" (click)="setColumns()" [ngbTooltip]="'Toggle column size'" container="body" placement="left"></mat-icon>
+        <mat-icon (click)="setColumns()" [ngbTooltip]="'Toggle column size'" container="body" placement="left">apps</mat-icon>
       </div>
     </div>
   </div>
@@ -124,7 +124,7 @@
             [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
             [ngbTooltip]="item.name" container="body" placement="auto" >
           </app-item>
-          <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked" fontIcon="done"></mat-icon>
+          <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked">done</mat-icon>
         </div>
       </ng-container>
     </div>
@@ -143,11 +143,11 @@
           <app-item [item]="selectedItem" [large]="true" [hoverHighlight]="false"></app-item>
         </a>
         <a *ngIf="selectedItemNav" class="info-grid-find container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
-          <mat-icon class="menu-icon" fontIcon="search"></mat-icon>
+          <mat-icon class="menu-icon">search</mat-icon>
           <span class="menu-label">Find item</span>
         </a>
         <a *ngIf="previewHref" class="info-grid-find container" [href]="previewHref" target="_blank">
-          <mat-icon class="menu-icon" fontIcon="visibility"></mat-icon>
+          <mat-icon class="menu-icon">visibility</mat-icon>
           <span class="menu-label">Preview</span>
         </a>
       </div>

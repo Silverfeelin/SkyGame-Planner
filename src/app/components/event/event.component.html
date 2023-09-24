@@ -36,7 +36,7 @@
       <ng-template [appTableColumn] let-row="row">
         {{ row.iaps }}
         <ng-container *ngIf="row.returningIaps">
-          (<span class="returning" [ngbTooltip]="'Contains ' + row.returningIaps + ' returning IAPs.'" container="body"><mat-icon fontIcon="undo"></mat-icon>{{ row.returningIaps }}</span>)
+          (<span class="returning" [ngbTooltip]="'Contains ' + row.returningIaps + ' returning IAPs.'" container="body"><mat-icon>undo</mat-icon>{{ row.returningIaps }}</span>)
         </ng-container>
       </ng-template>
       <ng-template [appTableColumn] let-row="row">

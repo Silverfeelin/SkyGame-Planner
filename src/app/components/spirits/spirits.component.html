@@ -72,12 +72,12 @@
       </div>
       <!-- Info -->
       <a class="mt item link" [routerLink]="['/spirit', row.guid]">
-        <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
+        <mat-icon class="menu-icon">list</mat-icon>
         <span class="menu-label">Information</span>
       </a>
       <!-- Progress -->
       <div class="mt p-rel item">
-        <mat-icon class="menu-icon" fontIcon="lock_open"></mat-icon>
+        <mat-icon class="menu-icon">lock_open</mat-icon>
         <div class="d-inline-block menu-label">
           <span *ngIf="row.totalItems"
           [class.partial]="(row.unlockedLast && row.unlockedLast === row.totalLast) || ((row.unlockedFree || row.totalPass) && row.unlockedFree === row.totalFree)"

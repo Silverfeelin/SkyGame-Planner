@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import dayjs from 'dayjs';
+import { DateHelper } from 'src/app/helpers/date-helper';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -10,6 +12,8 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ReturningSpiritComponent {
   rs!: IReturningSpirits;
+
+  state: 'future' | 'active' | 'ended' | undefined;
 
   constructor(
     private readonly _dataService: DataService,
@@ -29,5 +33,6 @@ export class ReturningSpiritComponent {
 
   private initializeRs(guid: string): void {
     this.rs = this._dataService.guidMap.get(guid!) as IReturningSpirits;
+    this.state = DateHelper.getStateFromPeriod(this.rs.date, this.rs.endDate);
   }
 }

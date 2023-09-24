@@ -43,4 +43,17 @@ export class DateHelper {
     if (dayjs.isDayjs(date)) { return date; }
     return dayjs.tz(date);
   }
+
+  /** Returns the days between two dates, rounded down. */
+  static daysBetween(a: dayjs.Dayjs, b: dayjs.Dayjs): number {
+    const hours = Math.abs(a.diff(b, 'hour'));
+    return Math.floor(hours / 24);
+  }
+
+  static getStateFromPeriod(start: dayjs.Dayjs, end: dayjs.Dayjs, date?: dayjs.Dayjs): 'future' | 'active' | 'ended' {
+    date ??= dayjs();
+    if (start.isAfter(date)) { return 'future'; }
+    if (date.isAfter(end)) { return 'ended'; }
+    return 'active';
+  }
 }

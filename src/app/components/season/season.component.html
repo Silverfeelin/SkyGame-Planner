@@ -2,6 +2,52 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">{{ season.name }}</h1>
   </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <!-- Wiki -->
+      <div class="container colspan-2" *ngIf="season._wiki?.href">
+        <mat-icon class="menu-icon">question_mark</mat-icon>
+        <span class="menu-label">
+          <a [href]="season._wiki?.href" target="_blank">Wiki</a>
+        </span>
+      </div>
+      <!-- Date -->
+      <div class="container" [class.expired]="state === 'ended'">
+        <mat-icon class="menu-icon">calendar_month</mat-icon>
+        <span class="menu-label">
+          {{ season.date | dayjs }}
+          to
+          {{ season.endDate | dayjs }}
+        </span>
+      </div>
+      <!-- Duration -->
+      <div class="container" [class.expired]="state === 'ended'">
+        <mat-icon class="menu-icon">schedule</mat-icon>
+        <span class="menu-label">
+          <app-duration [start]="season.date" [end]="season.endDate"></app-duration>
+          <span *ngIf="state === 'active' || state === 'future'" class="c-accent">
+            (<app-days-left [start]="season.date" [end]="season.endDate"></app-days-left>)
+          </span>
+        </span>
+      </div>
+      <!-- Candles -->
+      <div class="container">
+        <mat-icon class="menu-icon" svgIcon="season-candle"></mat-icon>
+        <span class="menu-label">
+          {{ sc }} season candles
+          <span class="c-accent" *ngIf="scLeft">({{ scLeft }} needed)</span>
+        </span>
+      </div>
+      <!-- Hearts -->
+      <div class="container">
+        <mat-icon class="menu-icon" svgIcon="season-heart"></mat-icon>
+        <span class="menu-label">
+          {{ sh }} season hearts
+          <span class="c-accent" *ngIf="shLeft">({{ shLeft }} needed)</span>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Spirits -->
@@ -54,7 +100,7 @@
               <div class="sky-card-body">
                 <!-- Returning -->
                 <div class="item">
-                  <mat-icon class="menu-icon" [fontIcon]="iap.returning ? 'undo' : 'grade'"></mat-icon>
+                  <mat-icon class="menu-icon">{{ iap.returning ? 'undo' : 'grade' }}</mat-icon>
                   <span class="menu-label">
                     <span *ngIf="iap.returning" class="c-partial">Returning IAP</span>
                     <span *ngIf="!iap.returning" class="c-full">New  IAP</span>
@@ -62,7 +108,7 @@
                 </div>
                 <!-- Location -->
                 <div class="mt-half item">
-                  <mat-icon class="menu-icon" [fontIcon]="'location_on'"></mat-icon>
+                  <mat-icon class="menu-icon">location_on</mat-icon>
                   <span class="menu-label">
                     <span *ngIf="shop.name">{{ shop.name }}</span>
                     <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
@@ -71,7 +117,7 @@
                 </div>
                 <!-- Price -->
                 <div class="mt-half item">
-                  <mat-icon class="menu-icon" fontIcon="attach_money"></mat-icon>
+                  <mat-icon class="menu-icon">attach_money</mat-icon>
                   <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
                     {{ iap.price }}
                   </span>
@@ -101,7 +147,7 @@
                 <div class="mt-half item iap-items">
                   <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
                     <app-item [item]="item" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item>
-                    <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought" fontIcon="done"></mat-icon>
+                    <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought">done</mat-icon>
                     <ng-template #itemHover>
                       <ng-container *ngIf="item">
                         <span class="ws-nw">{{item.name}}</span>

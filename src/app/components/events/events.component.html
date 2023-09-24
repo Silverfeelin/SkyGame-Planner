@@ -2,6 +2,12 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Events</h1>
   </div>
+  <div class="sky-card-body">
+    <a class="container d-inline-block" href="https://sky-children-of-the-light.fandom.com/wiki/Special_Events" target="_blank">
+      <mat-icon class="menu-icon">question_mark</mat-icon>
+      <span class="menu-label">Wiki</span>
+    </a>
+  </div>
 </div>
 
 <!-- Active events -->
@@ -23,7 +29,7 @@
           </div>
           <!-- Overview -->
           <a class="item link mt" *ngIf="lastInstances[event.value.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.value.guid]).guid]">
-            <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+            <mat-icon class="menu-icon">article</mat-icon>
             <span class="menu-label">
               Overview
               <span class="c-accent">({{ $any(lastInstances[event.value.guid]).date | dayjs:'YYYY' }})</span>
@@ -76,14 +82,14 @@
     </div>
     <!-- List -->
     <a class="item link" [class.mt]="event.imageUrl" [routerLink]="['/event', event.guid]">
-      <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+      <mat-icon class="menu-icon">article</mat-icon>
       <span class="menu-label">
         List
       </span>
     </a>
     <!-- Jump to last -->
     <a class="item link mt" *ngIf="lastInstances[event.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.guid]).guid]">
-      <mat-icon class="menu-icon" fontIcon="schedule"></mat-icon>
+      <mat-icon class="menu-icon">schedule</mat-icon>
       <span class="menu-label">
         Most recent
         <span class="c-accent">({{ $any(lastInstances[event.guid]).date | dayjs:'YYYY' }})</span>

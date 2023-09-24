@@ -3,7 +3,7 @@
   <div class="sky-card-body">
     <div class="search">
       <input #input type="search" class="input" (input)="search()" placeholder="Tip: use Ctrl+Shift+F to start a new search.">
-      <mat-icon fontIcon="search"></mat-icon>
+      <mat-icon>search</mat-icon>
     </div>
   </div>
 </div>
@@ -28,11 +28,11 @@
       <ng-template [appTableColumn] let-row="row">
         <div #iconUrl class="result-icon" *ngIf="row.data.iconUrl">
           <app-icon [src]="row.data.iconUrl"></app-icon>
-          <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked" fontIcon="done"></mat-icon>
+          <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked">done</mat-icon>
         </div>
         <div #icon class="result-icon" *ngIf="row.data.icon">
           <app-icon [src]="row.data.icon"></app-icon>
-          <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked" fontIcon="done"></mat-icon>
+          <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked">done</mat-icon>
         </div>
         <div #imageUrl class="result-icon" *ngIf="!(row.data.iconUrl || row.data.icon) && row.data.imageUrl">
           <app-icon [src]="row.data.imageUrl" [width]="'auto'"></app-icon>

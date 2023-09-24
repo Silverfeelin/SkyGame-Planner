@@ -37,6 +37,9 @@ import { ReturningSpiritsComponent } from './components/returning-spirits/return
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 import { SpiritTypeIconComponent } from './components/spirit-type-icon/spirit-type-icon.component';
 import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
+import { DaysLeftComponent } from './components/util/days-left/days-left.component';
+import { CostComponent } from './components/util/cost/cost.component';
+import { DurationComponent } from './components/util/duration/duration.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,10 @@ import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-
     ReturningSpiritsComponent,
     ReturningSpiritComponent,
     SpiritTypeIconComponent,
-    SpiritsOverviewComponent
+    SpiritsOverviewComponent,
+    DaysLeftComponent,
+    CostComponent,
+    DurationComponent
   ],
   imports: [
     BrowserModule,

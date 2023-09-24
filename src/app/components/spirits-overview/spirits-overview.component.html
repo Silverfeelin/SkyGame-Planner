@@ -2,12 +2,6 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Spirits</h1>
   </div>
-</div>
-
-<div class="sky-card mt">
-  <div class="sky-card-header">
-    <h2 class="h3">Navigation</h2>
-  </div>
   <div class="sky-card-body">
     <div class="grid grid-2">
       <a class="container" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular' }">
@@ -35,13 +29,13 @@
         </span>
       </a>
       <a class="container" [routerLink]="['/ts']">
-        <mat-icon class="menu-icon" fontIcon="hikings"></mat-icon>
+        <mat-icon class="menu-icon">hikings</mat-icon>
         <span class="menu-label">
           Traveling Spirits <span class="c-accent">({{ tsCount }})</span>
         </span>
       </a>
       <a class="container" [routerLink]="['/rs']">
-        <mat-icon class="menu-icon" fontIcon="flight"></mat-icon>
+        <mat-icon class="menu-icon">flight</mat-icon>
         <span class="menu-label">
           Special Visits <span class="c-accent">({{ rsCount }})</span>
         </span>

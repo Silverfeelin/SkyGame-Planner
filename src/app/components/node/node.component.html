@@ -5,24 +5,24 @@
     <app-item [item]="node.item" [highlight]="hover"></app-item>
   </div>
   <div class="cost" *ngIf="node?.c">
-    {{ node.c }}<mat-icon svgIcon="candle" [inline]="false"></mat-icon>
+    {{ node.c }}<mat-icon class="icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
   </div>
   <div class="cost" *ngIf="node?.sc">
-    {{ node.sc }}<mat-icon svgIcon="season-candle" [inline]="false"></mat-icon>
+    {{ node.sc }}<mat-icon class="icon-middle" svgIcon="season-candle" [inline]="false"></mat-icon>
   </div>
   <div class="cost" *ngIf="node?.h">
-    {{ node.h }}<mat-icon svgIcon="heart" [inline]="false"></mat-icon>
+    {{ node.h }}<mat-icon class="icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
   </div>
   <div class="cost" *ngIf="node?.sh">
-    {{ node.sh }}<mat-icon class="seasonal" svgIcon="season-heart" [inline]="false"></mat-icon>
+    {{ node.sh }}<mat-icon class="seasonal icon-middle" svgIcon="season-heart" [inline]="false"></mat-icon>
   </div>
   <div class="cost ascend" *ngIf="node?.ac">
-    {{ node.ac }}<mat-icon svgIcon="ascended-candle" [inline]="false"></mat-icon>
+    {{ node.ac }}<mat-icon class="icon-middle" svgIcon="ascended-candle" [inline]="false"></mat-icon>
   </div>
   <div class="cost" *ngIf="node?.ec">
-    {{ node.ec }}<mat-icon svgIcon="ticket" [inline]="false"></mat-icon>
+    {{ node.ec }}<mat-icon class="icon-middle" svgIcon="ticket" [inline]="false"></mat-icon>
   </div>
-  <mat-icon class="unlock-check" [class.unlocked]="node.unlocked || node.item?.unlocked" [class.self]="node.unlocked" fontIcon="done"></mat-icon>
+  <mat-icon class="unlock-check" [class.unlocked]="node.unlocked || node.item?.unlocked" [class.self]="node.unlocked">done</mat-icon>
 </div>
 
 <ng-template #nodeHover>

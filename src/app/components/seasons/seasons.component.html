@@ -2,11 +2,12 @@
   <div class="sky-card-header">
     <h1 class="h2">Seasons</h1>
   </div>
-</div>
-
-<div class="sky-card mt">
   <div class="sky-card-body">
-    <div class="flex">
+    <a class="container d-inline-block" href="https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events" target="_blank">
+      <mat-icon class="menu-icon">question_mark</mat-icon>
+      <span class="menu-label">Wiki</span>
+    </a>
+    <div class="flex mt">
       <a class="flex-item" *ngFor="let season of reverseSeasons"
         [routerLink]="['/season', season.guid]"
         [ngbTooltip]="season.name" placement="bottom" container="body">
@@ -40,12 +41,12 @@
             </div>
             <!-- Overview -->
             <a class="item link mt" [routerLink]="['/season', season.guid]">
-              <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+              <mat-icon class="menu-icon">article</mat-icon>
               <span class="menu-label">Overview</span>
             </a>
             <!-- Spirits -->
             <a class="item link mt" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
-              <mat-icon class="menu-icon" fontIcon="list"></mat-icon>
+              <mat-icon class="menu-icon">list</mat-icon>
               <span class="menu-label">Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span></span>
             </a>
           </div>

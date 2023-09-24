@@ -2,6 +2,12 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Permanent In-App Purchases</h1>
   </div>
+  <div class="sky-card-body">
+    <a class="container d-inline-block" href="https://sky-children-of-the-light.fandom.com/wiki/Premium_Candle_Shop" target="_blank">
+      <mat-icon class="menu-icon">question_mark</mat-icon>
+      <span class="menu-label">Wiki</span>
+    </a>
+  </div>
 </div>
 
 <!-- IAPs -->
@@ -17,7 +23,7 @@
         <div class="sky-card-body">
           <!-- Location -->
           <div class="item">
-            <mat-icon class="menu-icon" [fontIcon]="'location_on'"></mat-icon>
+            <mat-icon class="menu-icon">location_on</mat-icon>
             <span class="menu-label">
               <span *ngIf="shop.name">{{ shop.name }}</span>
               <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
@@ -26,7 +32,7 @@
           </div>
           <!-- Price -->
           <div class="item mt-half">
-            <mat-icon class="menu-icon" fontIcon="attach_money"></mat-icon>
+            <mat-icon class="menu-icon">attach_money</mat-icon>
             <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
               {{ iap.price }}
             </span>
@@ -56,7 +62,7 @@
           <div class="item iap-items mt-half">
             <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
               <app-item [item]="item" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item>
-              <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought" fontIcon="done"></mat-icon>
+              <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought">done</mat-icon>
               <ng-template #itemHover>
                 <ng-container *ngIf="item">
                   <span class="ws-nw">{{item.name}}</span>

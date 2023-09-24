@@ -2,6 +2,12 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Realms</h1>
   </div>
+  <div class="sky-card-body">
+    <a class="container d-inline-block" href="https://sky-children-of-the-light.fandom.com/wiki/Realms" target="_blank">
+      <mat-icon class="menu-icon">question_mark</mat-icon>
+      <span class="menu-label">Wiki</span>
+    </a>
+  </div>
 </div>
 
 <div class="grid grid-3 mt">
@@ -13,8 +19,8 @@
     <div class="sky-card-body">
       <div *ngIf="realm.imageUrl" class="p-rel img sky-border-solid" [style.background-image]="'url('+realm.imageUrl+')'"></div>
       <!-- Overview --> <!-- For now only show overview if realm has spirits. -->
-      <a *ngIf="spiritCount[realm.guid]" class="item link mt" [routerLink]="['/realm', realm.guid]">
-        <mat-icon class="menu-icon" fontIcon="article"></mat-icon>
+      <a class="item link mt" [routerLink]="['/realm', realm.guid]">
+        <mat-icon class="menu-icon">article</mat-icon>
         <span class="menu-label">Overview</span>
       </a>
       <!-- Areas -->
