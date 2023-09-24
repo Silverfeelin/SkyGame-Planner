@@ -5,16 +5,21 @@
       "name": "Special Visit #1",
       "date": { "day": 6, "month": 3, "year": 2023 },
       "endDate": { "day": 19, "month": 3, "year": 2023 },
+      "area": "-y0hYE5huj",
       "spirits": [
         { "guid": "StIWLq-J8E", "spirit": "94UEgV7ic1", "tree": "Wr_6cQV3n6" },
         { "guid": "JSaaGAkVDq", "spirit": "lE8DJQLcg5", "tree": "Yy0m8oXKyK" },
         { "guid": "o_tmR_1217", "spirit": "H30afxXKT1", "tree": "fHPe43oCch" },
         { "guid": "Ivm3vQWGas", "spirit": "NGSlfCM_wu", "tree": "uztQlhHGhL" }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#March_6,_2023"
+      }
     },
     {
       "guid": "7tvWNUHLPq",
       "name": "TS Error",
+      "area": "zewkN917oz",
       "date": { "day": 13, "month": 4, "year": 2023 },
       "endDate": { "day": 13, "month": 4, "year": 2023 },
       "spirits": [
@@ -24,17 +29,22 @@
     {
       "guid": "qEAUu9cHFK",
       "name": "Special Visit #2",
+      "area": "Xr2ZiVSV7p",
       "date": { "day": 15, "month": 5, "year": 2023 },
       "endDate": { "day": 21, "month": 5, "year": 2023 },
       "spirits": [
         { "guid": "bzGKWgFMKF", "spirit": "9Rgsos9xqE", "tree": "6vAMrTPmU-" },
         { "guid": "pz5xSDZ_fX", "spirit": "oIeqSdqyWu", "tree": "5IfMzJYMAs" },
         { "guid": "vozTqgFZQE", "spirit": "5DD07qmTqQ", "tree": "_l09Yw8HoO" }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#May_15,_2023"
+      }
     },
     {
       "guid": "3O8bFSoepH",
       "name": "Special Visit #3",
+      "area": "3YSSmw01DR",
       "date": { "day": 3, "month": 7, "year": 2023 },
       "endDate": { "day": 16, "month": 7, "year": 2023 },
       "spirits": [
@@ -42,11 +52,15 @@
         { "guid": "yBDtfZh_p_", "spirit": "OJECJaFI5p", "tree": "Z_9kLMM40B" },
         { "guid": "hFrCvf2A6H", "spirit": "CH6e-TQz6n", "tree": "GLaxu7pDA1" },
         { "guid": "RH2eAIN8_q", "spirit": "KZaVtTUdlR", "tree": "iznzX-F_eT" }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#July_3,_2023"
+      }
     },
     {
       "guid": "ttGkPFNNOT",
       "name": "Special Visit #4",
+      "area": "aUAXUdnBge",
       "date": { "day": 7, "month": 8, "year": 2023 },
       "endDate": { "day": 13, "month": 8, "year": 2023 },
       "spirits": [
@@ -54,7 +68,10 @@
         { "guid": "kfw1NERKJg", "spirit": "gTIay-wjmN", "tree": "-dB5Tod28p" },
         { "guid": "viFzD6mWuj", "spirit": "tZG5hNcINX", "tree": "Iej9LFKqlb" },
         { "guid": "uwiepwLqKg", "spirit": "Q5pn7wxwUD", "tree": "SWBKW2vcEc" }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#August_7,_2023"
+      }
     }
   ]
 }
