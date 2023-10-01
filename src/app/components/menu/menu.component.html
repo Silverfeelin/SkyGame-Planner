@@ -1,9 +1,10 @@
 <aside>
   <nav>
-    <div class="header">
+    <a class="header" [routerLink]="'/'">
       <span class="title">Sky Planner</span>
-    </div>
+    </a>
     <div class="items">
+      <hr/>
       <!-- Search -->
       <a class="item" [routerLink]="'search'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Search'" placement="right" container="body">
         <mat-icon>search</mat-icon>

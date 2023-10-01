@@ -1,1 +1,37 @@
-<p>cost works!</p>
+<div class="costs" [ngbTooltip]="costHover" container="body" placement="bottom">
+  <div class="cost" *ngIf="cost?.c">
+    <span *ngIf="cost">{{ cost.c }}</span>
+    <span *ngIf="remaining && !completed" class="c-accent"> ({{ remaining.c || 0 }})</span>
+    <mat-icon class="currency cost-icon icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost" *ngIf="cost?.sc">
+    <span *ngIf="cost">{{ cost.sc }}</span>
+    <span *ngIf="remaining && !completed" class="c-accent"> ({{ remaining.sc || 0 }})</span>
+    <mat-icon class="seasonal cost-icon icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost" *ngIf="cost?.h">
+    <span *ngIf="cost">{{ cost.h }}</span>
+    <span *ngIf="remaining && !completed" class="c-accent"> ({{ remaining.h || 0 }})</span>
+    <mat-icon class="currency cost-icon icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost" *ngIf="cost?.sh">
+    <span *ngIf="cost">{{ cost.sh }}</span>
+    <span *ngIf="remaining && !completed" class="c-accent"> ({{ remaining.sh || 0 }})</span>
+    <mat-icon class="seasonal cost-icon icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost ascend" *ngIf="cost?.ac">
+    <span *ngIf="cost">{{ cost.ac }}</span>
+    <span *ngIf="remaining && !completed" class="c-accent"> ({{ remaining.ac || 0 }})</span>
+    <mat-icon class="cost-icon icon-middle" svgIcon="ascended-candle" [inline]="false"></mat-icon>
+  </div>
+  <div class="cost" *ngIf="cost?.ec">
+    <span *ngIf="cost">{{ cost.ec }}</span>
+    <span *ngIf="remaining && !completed" class="c-accent"> ({{ remaining.ec || 0 }})</span>
+    <mat-icon class="cost-icon icon-middle" svgIcon="ticket" [inline]="false"></mat-icon>
+  </div>
+</div>
+
+<ng-template #costHover>
+  <span>Total cost of all the items.</span><br/>
+  <span *ngIf="remaining" class="c-accent">Remaining cost of items not yet unlocked.</span>
+</ng-template>

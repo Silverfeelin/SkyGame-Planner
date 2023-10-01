@@ -1,0 +1,60 @@
+
+.spirit-img {
+  position: relative;
+
+  img {
+    border-radius: var(--border-radius);
+    padding: 5px 0;
+    width: auto;
+    height: 192px;
+    max-height: 192px;
+  }
+}
+
+.title-select:not(:empty) + .title-default {
+  display: none;
+}
+
+.spirit-img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/assets/game/realms/Home.webp);
+  background-size: cover;
+  background-position: bottom;
+  filter: brightness(0.6) blur(4px);
+}
+
+.spirit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 8px;
+}
+
+.spirit-grid-img {
+  position: relative;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.spirit-img {
+  width: auto;
+  height: var(--img-preview-height);
+}
+
+.spirit-grid-item {
+  width: 100%;
+  overflow: auto;
+  border: var(--border-solid);
+}

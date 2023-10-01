@@ -22,13 +22,16 @@
           to
           {{ instance.endDate | dayjs }}
         </span>
+        <span *ngIf="state === 'future'" class="c-accent">
+          (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
+        </span>
       </div>
       <!-- Duration -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">schedule</mat-icon>
         <span class="menu-label">
           <app-duration [start]="instance.date" [end]="instance.endDate"></app-duration>
-          <span *ngIf="state === 'active' || state === 'future'" class="c-accent">
+          <span *ngIf="state === 'active'" class="c-accent">
             (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
           </span>
         </span>

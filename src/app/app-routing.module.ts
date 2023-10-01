@@ -21,11 +21,12 @@ import { EventInstanceTitleResolver } from './resolvers/event-instance-title.res
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
 const routes: Routes = [
-  { path: '', redirectTo: 'item', pathMatch: 'full' },
+  { path: '', component: DashboardComponent, title: 'Sky Planner' },
   { path: 'credits', component: CreditsComponent, title: title('Credits') },
   { path: 'event', component: EventsComponent, title: title('Events') },
   { path: 'event/:guid', component: EventComponent, title: TitleResolver },

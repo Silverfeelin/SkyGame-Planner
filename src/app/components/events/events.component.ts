@@ -13,9 +13,7 @@ export class EventsComponent {
   recurring!: Array<IEvent>;
   old!: Array<IEvent>;
   lastInstances: { [eventGuid: string]: IEventInstance | undefined } = {};
-  activeEvents: { [eventGuid: string]: IEvent } = {};
   eventMap: { [eventGuid: string]: IEvent } = {};
-  hasActiveEvents = false;
 
   constructor(
     private readonly _dataService: DataService
@@ -37,13 +35,6 @@ export class EventsComponent {
       if (event.instances) {
         const instances = [...event.instances];
         const reverseInstances = [...instances].reverse();
-
-        // Mark active if one of the last two instances is active (check 2 in case last item is in future).
-        const isActive = instances.slice(-2).find(i => DateHelper.isActive(i.date, i.endDate)) ? true : false;
-        if (isActive) {
-          this.activeEvents[event.guid] = event;
-          this.hasActiveEvents = true;
-        }
 
         // Find last instance based on event.date.
         const now = dayjs();

@@ -1,0 +1,64 @@
+<div class="sky-card p-rel" *ngIf="event">
+  <div class="sky-card-header">
+    <h2 class="h3">{{ event.name }}</h2>
+  </div>
+  <div class="sky-card-body event-body">
+    <div class="grid grid-1">
+      <!-- Image -->
+      <div *ngIf="sections['img'] && event.imageUrl" class="event-img sky-border-solid"
+        [style.order]="1"
+        [style.background-image]="'url('+event.imageUrl+')'"
+        [style.background-position]="event.imagePosition || undefined">
+      </div>
+      <!-- Date -->
+      <div *ngIf="sections['date'] && instance"
+        class="item" [style.order]="sections['date']"
+      >
+        <mat-icon class="menu-icon">calendar_month</mat-icon>
+        <span class="menu-label">
+          {{ instance.date | dayjs }} to {{ instance.endDate | dayjs }}
+          <span class="c-accent">
+            (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
+          </span>
+        </span>
+      </div>
+      <!-- Overview -->
+      <a *ngIf="sections['overview'] && instance" [routerLink]="['/event-instance', instance.guid]"
+        class="item link" [style.order]="sections['overview']"
+      >
+        <mat-icon class="menu-icon">article</mat-icon>
+        <span class="menu-label">
+          Overview
+        </span>
+      </a>
+      <!-- List -->
+      <a *ngIf="sections['list']" [routerLink]="['/event', event.guid]"
+        class="item link" [style.order]="sections['list']"
+      >
+        <mat-icon class="menu-icon">list</mat-icon>
+        <span class="menu-label">
+          List
+        </span>
+      </a>
+      <!-- Jump to last -->
+      <a *ngIf="sections['recent'] && lastInstance" [routerLink]="['/event-instance', lastInstance.guid]"
+        class="item link" [style.order]="sections['recent']"
+      >
+        <mat-icon class="menu-icon">schedule</mat-icon>
+        <span class="menu-label">
+          Most recent
+          <span class="c-accent">({{ lastInstance.date | dayjs:'YYYY' }})</span>
+        </span>
+      </a>
+      <!-- Cost -->
+      <div *ngIf="sections['cost'] && cost"
+        class="item" [style.order]="sections['cost']"
+      >
+        <mat-icon class="menu-icon">sell</mat-icon>
+        <span class="menu-label">
+          <app-cost [cost]="cost" [remaining]="remainingCost"></app-cost>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

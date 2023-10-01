@@ -40,6 +40,10 @@ import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-
 import { DaysLeftComponent } from './components/util/days-left/days-left.component';
 import { CostComponent } from './components/util/cost/cost.component';
 import { DurationComponent } from './components/util/duration/duration.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SeasonCardComponent } from './components/season-card/season-card.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +81,11 @@ import { DurationComponent } from './components/util/duration/duration.component
     SpiritsOverviewComponent,
     DaysLeftComponent,
     CostComponent,
-    DurationComponent
+    DurationComponent,
+    DashboardComponent,
+    SeasonCardComponent,
+    EventCardComponent,
+    SpiritCardComponent
   ],
   imports: [
     BrowserModule,
