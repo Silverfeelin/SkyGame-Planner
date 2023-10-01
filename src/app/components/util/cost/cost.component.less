@@ -5,15 +5,12 @@
 .cost {
   position: relative;
   display: inline-block;
-  padding: 0 26px 0 6px;
+  padding: 0 8px 0 30px;
 }
 
-.cost:first-child {
-  padding-left: 0;
-}
 
-.cost:not(:last-child) {
-  border-right: 1px solid var(--color-cost-border);
+.cost:not(:first-child), .cost-border-left .cost {
+  border-left: 1px solid var(--color-cost-border);
 }
 
 mat-icon {
@@ -24,4 +21,5 @@ mat-icon {
 .cost mat-icon.cost-icon {
   position: absolute;
   top: -2px;
+  left: 4px;
 }

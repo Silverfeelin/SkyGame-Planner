@@ -42,7 +42,9 @@
     >
       <mat-icon class="menu-icon">sell</mat-icon>
       <span class="menu-label">
-        <app-cost [cost]="cost" [remaining]="remainingCost"></app-cost>
+        <div class="d-inline-block">
+          <app-cost [cost]="cost" [remaining]="remainingCost" [borderLeft]="true"></app-cost>
+        </div>
       </span>
     </div>
   </div>

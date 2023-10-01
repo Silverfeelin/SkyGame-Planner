@@ -11,6 +11,7 @@ import { ICost } from 'src/app/interfaces/cost.interface';
 export class CostComponent implements OnChanges {
   @Input() cost?: ICost;
   @Input() remaining?: ICost;
+  @Input() borderLeft = false;
 
   completed = false;
 
