@@ -1668,6 +1668,13 @@
       "type": "Event",
       "name": "Days of Sunlight Guide"
     },
+    // Days of Style
+    {
+      "guid": "F6BUqVCHvp",
+      "type": "Event",
+      "name": "Style Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Days_of_Style_Guide_2023.png"
+    },
     // Days of Mischief
     {
       "guid": "ihZx_rVl70",
