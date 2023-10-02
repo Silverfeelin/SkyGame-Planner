@@ -825,6 +825,40 @@
       ]
     },
     // #endregion
+    // #region Days of Style (2023)
+    {
+      "guid": "n3KEOOprwe",
+      "name": "Style Wide-Leg Jeans",
+      "price": 9.99,
+      "items": [
+        "E7RAu04_xI"
+      ]
+    },
+    {
+      "guid": "dwa7xvLVxV",
+      "name": "Style Bunny Slippers",
+      "price": 6.99,
+      "items": [
+        "MuQrbnmbdp"
+      ]
+    },
+    {
+      "guid": "vRbHAZeLEz",
+      "name": "Style Heart Sunglasses",
+      "price": 4.99,
+      "items": [
+        "3HeVKqT39a"
+      ]
+    },
+    {
+      "guid": "LRfQWHH7ot",
+      "name": "Style Flame Sunglasses",
+      "price": 2.99,
+      "items": [
+        "BWUjIgnjnu"
+      ]
+    },
+    // #endregion
     // #region Days of Mischief (2019)
     {
       "guid": "H9VzxM1qIj",
