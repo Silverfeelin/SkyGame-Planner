@@ -16342,6 +16342,43 @@
       "c": 44
     },
     // #endregion
+    // #region Days of Style (2023)
+    {
+      "guid": "n7lKdvhcO1",
+      "item": "TalOg0V1he",
+      "c": 5,
+      "nw": "S5GXLZ9zHB",
+      "n": "GVGidLpY4z",
+      "ne": "f39CmUA-Ft"
+    },
+    {
+      "guid": "S5GXLZ9zHB",
+      "item": "o4cIshT_hD",
+      "ec": 10
+    },
+    {
+      "guid": "f39CmUA-Ft",
+      "item": "TbSEPp5DAI",
+      "ec": 8
+    },
+    {
+      "guid": "GVGidLpY4z",
+      "item": "KHEaIkjXoV",
+      "c": 5,
+      "nw": "w2UlUBG-Qw",
+      "n": "nrsmxWuvcH"
+    },
+    {
+      "guid": "w2UlUBG-Qw",
+      "item": "qscApTevys",
+      "ec": 14
+    },
+    {
+      "guid": "nrsmxWuvcH",
+      "item": "d_p_flDgEV",
+      "ec": 18
+    },
+    // #endregion
     // #region Days of Mischief (2021)
     {
       "guid": "UYRvaTIPiX",
