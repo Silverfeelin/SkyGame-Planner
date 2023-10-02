@@ -9,6 +9,7 @@ import * as utc from 'dayjs/plugin/utc';
 import * as isoWeek from 'dayjs/plugin/isoWeek';
 import * as timezone from 'dayjs/plugin/timezone';
 import { DateHelper } from './helpers/date-helper';
+import { EventService } from './services/event.service';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _eventService: EventService,
     private readonly _themeService: ThemeService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
@@ -55,14 +57,5 @@ export class AppComponent {
 
   onData(): void {
     this.ready = true;
-
-    document.addEventListener('keydown', (event) => {
-      if (event.ctrlKey && event.shiftKey && event.key.toUpperCase() === 'F') {
-        event.preventDefault();
-        void this._router.navigate(['/'], { skipLocationChange: true }).then(() => {
-          void this._router.navigate(['/search']);
-        });
-      }
-    });
   }
 }

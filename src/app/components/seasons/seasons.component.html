@@ -25,32 +25,7 @@
 
     <div class="sky-card-body">
       <div class="grid grid-2">
-        <div class="sky-card p-rel" *ngFor="let season of yearMap[year]; let i = index;" [class.highlight]="season === currentSeason">
-          <div class="sky-card-header">
-            <h2 class="h3 mb-0">
-              <img class="season-icon season-icon-small" [src]="season.iconUrl" />
-              {{ season.name }}
-              <span class="h5 c-accent number">#{{ season.number }}</span>
-            </h2>
-          </div>
-          <div class="sky-card-body">
-            <!-- Image -->
-            <div *ngIf="season.imageUrl" class="img sky-border-solid"
-              [style.background-image]="'url('+season.imageUrl+')'"
-              [style.background-position]="season.imagePosition || undefined">
-            </div>
-            <!-- Overview -->
-            <a class="item link mt" [routerLink]="['/season', season.guid]">
-              <mat-icon class="menu-icon">article</mat-icon>
-              <span class="menu-label">Overview</span>
-            </a>
-            <!-- Spirits -->
-            <a class="item link mt" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
-              <mat-icon class="menu-icon">list</mat-icon>
-              <span class="menu-label">Spirits <span class="c-accent">({{ spiritCount[season.guid] }})</span></span>
-            </a>
-          </div>
-        </div>
+        <app-season-card *ngFor="let season of yearMap[year]; let i = index;" [season]="season"></app-season-card>
       </div>
     </div>
   </div>

@@ -10,37 +10,6 @@
   </div>
 </div>
 
-<!-- Active events -->
-<div class="sky-card mt" *ngIf="hasActiveEvents">
-  <div class="sky-card-header">
-    <h2 class="h3">Active events</h2>
-  </div>
-  <div class="sky-card-body">
-    <div class="grid grid-4" *ngIf="hasActiveEvents">
-      <div class="sky-card p-rel highlight" *ngFor="let event of activeEvents | keyvalue; let i = index;">
-        <div class="sky-card-header">
-          <h2 class="h3 mb-0">{{ event.value.name }}</h2>
-        </div>
-        <div class="sky-card-body">
-          <!-- Image -->
-          <div *ngIf="event.value.imageUrl" class="img sky-border-solid"
-            [style.background-image]="'url('+event.value.imageUrl+')'"
-            [style.background-position]="event.value.imagePosition || undefined">
-          </div>
-          <!-- Overview -->
-          <a class="item link mt" *ngIf="lastInstances[event.value.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.value.guid]).guid]">
-            <mat-icon class="menu-icon">article</mat-icon>
-            <span class="menu-label">
-              Overview
-              <span class="c-accent">({{ $any(lastInstances[event.value.guid]).date | dayjs:'YYYY' }})</span>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Recurring -->
 <div class="sky-card mt">
   <div class="sky-card-header">
@@ -48,9 +17,7 @@
   </div>
   <div class="sky-card-body">
     <div class="grid grid-4">
-      <div class="sky-card p-rel" *ngFor="let event of recurring; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
-        <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
-      </div>
+      <app-event-card [event]="event" *ngFor="let event of recurring; let i = index;" [options]="{show: ['img', 'list', 'recent']}"></app-event-card>
     </div>
   </div>
 </div>
@@ -62,38 +29,7 @@
   </div>
   <div class="sky-card-body">
     <div class="grid grid-4">
-      <div class="sky-card p-rel" *ngFor="let event of old; let i = index;" [class.highlight]="!!activeEvents[event.guid]">
-        <ng-container *ngTemplateOutlet="eventDiv; context: {$implicit: event}"></ng-container>
-      </div>
+      <app-event-card [event]="event" *ngFor="let event of old; let i = index;" [options]="{show: ['img', 'list', 'recent']}"></app-event-card>
     </div>
   </div>
 </div>
-
-<!-- Event template -->
-<ng-template #eventDiv let-event>
-  <div class="sky-card-header">
-    <h2 class="h3">{{ event.name }}</h2>
-  </div>
-  <div class="sky-card-body">
-    <!-- Image -->
-    <div *ngIf="event.imageUrl" class="img sky-border-solid"
-      [style.background-image]="'url('+event.imageUrl+')'"
-      [style.background-position]="event.imagePosition || undefined">
-    </div>
-    <!-- List -->
-    <a class="item link" [class.mt]="event.imageUrl" [routerLink]="['/event', event.guid]">
-      <mat-icon class="menu-icon">article</mat-icon>
-      <span class="menu-label">
-        List
-      </span>
-    </a>
-    <!-- Jump to last -->
-    <a class="item link mt" *ngIf="lastInstances[event.guid]" [routerLink]="['/event-instance', $any(lastInstances[event.guid]).guid]">
-      <mat-icon class="menu-icon">schedule</mat-icon>
-      <span class="menu-label">
-        Most recent
-        <span class="c-accent">({{ $any(lastInstances[event.guid]).date | dayjs:'YYYY' }})</span>
-      </span>
-    </a>
-  </div>
-</ng-template>

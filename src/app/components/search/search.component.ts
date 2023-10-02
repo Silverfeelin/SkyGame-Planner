@@ -1,10 +1,11 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import fuzzysort from 'fuzzysort';
 import { SubscriptionLike, debounceTime, fromEvent } from 'rxjs';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
+import { EventService } from 'src/app/services/event.service';
 
 interface ISearchItem {
   name: string;
@@ -27,11 +28,14 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
   static items: Array<ISearchItem> = [];
 
+  demoText = 'Gratitude';
   searchResults?: Array<ISearchItem>;
   searchSubscription?: SubscriptionLike;
+  resetSubscription?: SubscriptionLike;
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _eventService: EventService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _route: ActivatedRoute,
     private readonly _router: Router
@@ -79,6 +83,16 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     if (!this.input) { return; }
 
+    // Focus input on search hotkey.
+    this.resetSubscription = this._eventService.searchReset.subscribe(() => {
+      if (!this.input?.nativeElement) { return; }
+      this.input.nativeElement.value = '';
+      this.search();
+      this.updateCurrentRoute();
+      this.input.nativeElement.focus();
+      this._changeDetectorRef.markForCheck();
+    });
+
     // Set the input value.
     const search = this._route.snapshot.queryParamMap.get('search');
     if (search) {
@@ -96,13 +110,22 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
   }
 
   updateCurrentRoute(): void {
-    void this._router.navigate([], {
-      queryParams: { search: this.input?.nativeElement.value || '' },
-      replaceUrl: true
-    });
+    const value = this.input?.nativeElement.value || '';
+    let url = window.location.pathname;
+    if (value) { url += `?search=${encodeURIComponent(value)}`; }
+    window.history.replaceState(window.history.state, '', url);
+  }
+
+  searchDemo(evt: Event): void {
+    if (!this.input?.nativeElement) { return; }
+    this.input.nativeElement.value = (evt.target as HTMLElement).innerText;
+    this.search();
+    this.updateCurrentRoute();
+    this._changeDetectorRef.markForCheck();
   }
 
   search(): void {
+    const wasEmpty = this.searchResults?.length === 0;
     const value = this.input?.nativeElement.value || '';
 
     // Clear results.
@@ -119,6 +142,13 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
       return result.obj;
     });
+
+    // Show random season as example search.
+    if (!wasEmpty && !this.searchResults.length) {
+      const items = this._dataService.seasonConfig.items;
+      const item = items[Math.floor(Math.random() * items.length)];
+      this.demoText = item.shortName;
+    }
 
     this._changeDetectorRef.markForCheck();
   }

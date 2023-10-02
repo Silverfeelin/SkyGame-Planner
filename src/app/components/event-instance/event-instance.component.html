@@ -8,12 +8,10 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <!-- Wiki -->
-      <div class="container colspan-2" *ngIf="instance.event?._wiki?.href">
+      <a class="container colspan-2" *ngIf="instance.event?._wiki?.href" [href]="instance.event._wiki?.href" target="_blank">
         <mat-icon class="menu-icon">question_mark</mat-icon>
-        <span class="menu-label">
-          <a [href]="instance.event._wiki?.href" target="_blank">Wiki</a>
-        </span>
-      </div>
+        <span class="menu-label">Wiki</span>
+      </a>
       <!-- Date -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>
@@ -22,13 +20,16 @@
           to
           {{ instance.endDate | dayjs }}
         </span>
+        <span *ngIf="state === 'future'" class="c-accent">
+          (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
+        </span>
       </div>
       <!-- Duration -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">schedule</mat-icon>
         <span class="menu-label">
           <app-duration [start]="instance.date" [end]="instance.endDate"></app-duration>
-          <span *ngIf="state === 'active' || state === 'future'" class="c-accent">
+          <span *ngIf="state === 'active'" class="c-accent">
             (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
           </span>
         </span>

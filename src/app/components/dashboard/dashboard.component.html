@@ -1,0 +1,29 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2">Sky Planner</h1>
+  </div>
+</div>
+
+<div class="mt">
+  <app-search></app-search>
+</div>
+
+<div class="sky-card mt" *ngIf="!season && !eventInstance && !ts">
+  <div class="sky-card-body">
+    <div class="container">
+      There is currently no season or event active.<br/>
+      You can view items, seasons, events and more in the menu on the left.
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-2 mt">
+  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-season-card>
+  <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-event-card>
+  <app-spirit-card *ngIf="ts" [spirit]="ts.spirit" [ts]="ts" [tree]="ts.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
+    <div title>
+      <h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{ts.number}})</span></h2>
+    </div>
+  </app-spirit-card>
+</div>
+

@@ -1,0 +1,107 @@
+
+<div class="sky-card" *ngIf="spirit">
+  <div class="sky-card-header">
+    <div class="title-select">
+      <ng-content [select]="title"></ng-content>
+    </div>
+    <h2 class="h3 mb-0 title-default">
+      <app-spirit-type-icon [type]="spirit.type"></app-spirit-type-icon>
+      {{ spirit.name }}
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <!-- Preview image -->
+    <div *ngIf="sections['img'] && spirit.imageUrl" class="spirit-grid-img spirit-grid-item sky-card-item">
+      <div *ngIf="options?.homeBackground" class="spirit-img-bg"></div>
+      <div class="spirit-img"  *ngIf="spirit.imageUrl">
+        <img [src]="spirit.imageUrl" [alt]="spirit.name" />
+      </div>
+    </div>
+    <div class="spirit-grid mt">
+      <!-- TS -->
+      <a *ngIf="sections['ts'] && ts" [routerLink]="['/spirit', ts.spirit.guid]" [queryParams]="{ highlightTree: ts.tree!.guid }"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['ts']"
+      >
+        <app-spirit-type-icon class="menu-icon" [type]="spirit.type"></app-spirit-type-icon>
+        <span class="menu-label">{{ spirit.name }}</span>
+      </a>
+      <div *ngIf="sections['ts'] && ts"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['ts']"
+      >
+        <mat-icon>calendar_month</mat-icon>
+        <span class="menu-label">
+          {{ ts.date | dayjs }} to {{ ts.endDate | dayjs }}
+          <span class="c-accent">
+            (<app-days-left [start]="ts.date" [end]="ts.endDate"></app-days-left>)
+          </span>
+        </span>
+      </div>
+      <!-- Wiki -->
+      <a *ngIf="sections['wiki'] && spirit._wiki?.href" [href]="spirit._wiki!.href" target="_blank"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['wiki']"
+      >
+        <mat-icon>question_mark</mat-icon>
+        <span class="menu-label">Wiki</span>
+      </a>
+      <!-- Season -->
+      <a *ngIf="sections['season'] && (spirit.type === 'Season' || spirit.type === 'Guide')" [routerLink]="['/season', spirit.season?.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['season']"
+      >
+        <img *ngIf="spirit.season?.iconUrl; else seasonIcon" [src]="spirit.season!.iconUrl" class="icon">
+        <ng-template #seasonIcon><mat-icon>ac_unit</mat-icon></ng-template>
+        <span class="menu-label">
+          {{ spirit.season?.name }}
+        </span>
+      </a>
+      <!-- Event -->
+      <div *ngIf="sections['event'] && spirit.type === 'Event'"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['event']"
+      >
+        <mat-icon>event</mat-icon>
+        <a *ngIf="event" class="menu-label" [routerLink]="['/event', event.guid]">
+          {{ event.name }}
+        </a>
+      </div>
+      <!-- Regular -->
+      <a *ngIf="sections['regular'] && (spirit.type === 'Regular' || spirit.type === 'Elder' || spirit.type === 'Special')"
+        [routerLink]="['/spirit']" [queryParams]="{type: spirit.type}"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['regular']"
+      >
+        <mat-icon>person</mat-icon>
+        <span class="menu-label" *ngIf="spirit.type === 'Regular'">
+          Regular Spirit
+        </span>
+        <span class="menu-label" *ngIf="spirit.type === 'Elder' || spirit.type === 'Special'">
+          {{ spirit.type }}
+        </span>
+      </a>
+      <!-- Realm -->
+      <div *ngIf="sections['realm'] && spirit.area?.realm"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['realm']"
+      >
+        <mat-icon>map</mat-icon>
+        <a class="menu-label" [routerLink]="['/realm', spirit.area!.realm!.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
+          {{ spirit.area!.realm!.name }}
+        </a>
+      </div>
+      <!-- Area -->
+      <div *ngIf="sections['area'] && spirit.area"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['area']"
+      >
+        <mat-icon>location_on</mat-icon>
+        <span class="menu-label">
+          {{ spirit.area!.name }}
+        </span>
+      </div>
+      <!-- Cost -->
+      <div *ngIf="sections['cost'] && cost"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['cost']"
+      >
+        <mat-icon class="menu-icon">sell</mat-icon>
+        <span class="menu-label">
+          <app-cost [cost]="cost" [remaining]="remainingCost" [borderLeft]="true"></app-cost>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,8 +16,6 @@ export class SeasonsComponent implements OnInit {
 
   years: Array<number> = [];
   yearMap!: { [year: number]: Array<ISeason> };
-  spiritCount!: { [key: string]: number };
-
 
   constructor(
     private readonly _dataService: DataService
@@ -29,7 +27,6 @@ export class SeasonsComponent implements OnInit {
   ngOnInit(): void {
     let year = this.seasons.at(-1)!.year + 1;
     this.yearMap = {};
-    this.spiritCount = {};
     for (let i = this.seasons.length -1; i >= 0; i--) {
       const season = this.seasons[i];
 
@@ -44,7 +41,6 @@ export class SeasonsComponent implements OnInit {
       }
 
       this.yearMap[year].push(season);
-      this.spiritCount[season.guid] = season.spirits.filter(s => s.type === 'Season').length;
     }
   }
 }

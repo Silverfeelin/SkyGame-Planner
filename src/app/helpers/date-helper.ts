@@ -15,7 +15,7 @@ export class DateHelper {
   static isActive(start: dayjs.Dayjs, end: dayjs.Dayjs): boolean {
     const now = dayjs();
     const s = dayjs.tz(start);
-    const e = dayjs.tz(end).add(1, 'day');
+    const e = dayjs.tz(end);
 
     return now.isAfter(s) && now.isBefore(e);
   }

@@ -1,0 +1,25 @@
+.costs {
+  display: inline-block;
+
+}
+.cost {
+  position: relative;
+  display: inline-block;
+  padding: 0 8px 0 30px;
+}
+
+
+.cost:not(:first-child), .cost-border-left .cost {
+  border-left: 1px solid var(--color-cost-border);
+}
+
+mat-icon {
+  vertical-align: sub;
+  height: auto;
+}
+
+.cost mat-icon.cost-icon {
+  position: absolute;
+  top: -2px;
+  left: 4px;
+}

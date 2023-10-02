@@ -146,7 +146,7 @@ export class DataService {
     this.seasonConfig.items.forEach((season, i) => {
       season.number = i + 1;
       season.date = DateHelper.fromStringSky(season.date)!;
-      season.endDate = DateHelper.fromStringSky(season.endDate)!;
+      season.endDate = DateHelper.fromStringSky(season.endDate)!.endOf('day');
 
       // Map Spirits to Season.
       season.spirits?.forEach((spirit, si) => {

@@ -5,14 +5,14 @@
     </div>
     <div class="spirit-tree">
       <div class="column left">
-        <div class="item" *ngFor="let node of left">
+        <div class="st-item" *ngFor="let node of left">
           <app-node *ngIf="node" [node]="node" [position]="'left'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
           <!-- For now left nodes only go up. -->
           <div *ngIf="node?.n" class="arrow arrow-up"></div>
         </div>
       </div>
       <div class="column center">
-        <div class="item" *ngFor="let node of center">
+        <div class="st-item" *ngFor="let node of center">
           <app-node *ngIf="node" [node]="node" [position]="'center'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
           <!-- Center node arrows -->
           <div *ngIf="node?.nw" class="arrow arrow-left"></div>
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="column right">
-        <div class="item" *ngFor="let node of right">
+        <div class="st-item" *ngFor="let node of right">
           <app-node *ngIf="node" [node]="node" [position]="'right'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
           <!-- For now right nodes only go up. -->
           <div *ngIf="node?.n" class="arrow arrow-up"></div>
@@ -39,42 +39,7 @@
       </div>
     </div>
     <div *ngIf="name && hasCost" class="hr"></div>
-    <div *ngIf="hasCost" class="costs" [ngbTooltip]="costHover" container="body" placement="top">
-      <div class="cost" *ngIf="totalCost?.c">
-        {{ totalCost.c }}
-        <span class="remaining-cost">({{ remainingCost.c || 0 }})</span>
-        <mat-icon class="currency icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
-      </div>
-      <div class="cost" *ngIf="totalCost?.sc">
-        {{ totalCost.sc }}
-        <span class="remaining-cost">({{ remainingCost.sc || 0 }})</span>
-        <mat-icon class="seasonal icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
-      </div>
-      <div class="cost" *ngIf="totalCost?.h">
-        {{ totalCost.h }}
-        <span class="remaining-cost">({{ remainingCost.h || 0 }})</span>
-        <mat-icon class="currency icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
-      </div>
-      <div class="cost" *ngIf="totalCost?.sh">
-        {{ totalCost.sh }}
-        <span class="remaining-cost">({{ remainingCost.sh || 0 }})</span>
-        <mat-icon class="seasonal icon-middle" svgIcon="heart" [inline]="false"></mat-icon>
-      </div>
-      <div class="cost ascend" *ngIf="totalCost?.ac">
-        {{ totalCost.ac }}
-        <span class="remaining-cost">({{ remainingCost.ac || 0 }})</span>
-        <mat-icon class="icon-middle" svgIcon="ascended-candle" [inline]="false"></mat-icon>
-      </div>
-      <div class="cost" *ngIf="totalCost?.ec">
-        {{ totalCost.ec }}
-        <span class="remaining-cost">({{ remainingCost.ec || 0 }})</span>
-        <mat-icon class="icon-middle" svgIcon="ticket" [inline]="false"></mat-icon>
-      </div>
-    </div>
+    <div *ngIf="hasCost" class="costs">
+      <app-cost [cost]="totalCost" [remaining]="remainingCost"></app-cost>
   </div>
 </div>
-
-<ng-template #costHover>
-  <span>Total cost of all the items in this tree.</span><br/>
-  <span class="remaining-cost">Remaining cost of items not yet unlocked.</span>
-</ng-template>
