@@ -12114,6 +12114,69 @@
       "order": 5802
     },
     // #endregion
+    // #region Days of Style
+    // 2023
+    {
+      "guid": "E7RAu04_xI",
+      "name": "Style Wide-Leg Jeans",
+      "type": "Outfit",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Style-Wide-Leg-Jeans-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "MuQrbnmbdp",
+      "name": "Style Bunny Slippers",
+      "type": "Shoes",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Style-Bunny-Slippers-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "3HeVKqT39a",
+      "name": "Style Heart Sunglasses",
+      "type": "FaceAccessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Style-Heart-Sunglasses-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "BWUjIgnjnu",
+      "name": "Style Flame Sunglasses",
+      "type": "FaceAccessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Style-Flame-Sunglasses-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "qscApTevys",
+      "name": "Style Star Sunglasses",
+      "type": "FaceAccessory",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Style-Star-Sunglasses-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "d_p_flDgEV",
+      "name": "Style Silk Ballet Slippers",
+      "type": "Shoes",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Ballet-Flats-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "o4cIshT_hD",
+      "name": "Style Top Hat",
+      "type": "Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Style-Tophat-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "TbSEPp5DAI",
+      "name": "Style Runway Makeup Mask",
+      "type": "Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Runway-Makeup-Mask-icon-Credit-Morybel.png"
+    },
+    {
+      "guid": "TalOg0V1he",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "KHEaIkjXoV",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
     // #region Days of Mischief
     {
       "guid": "4D33RG4tNB",

@@ -411,6 +411,29 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days"
       }
     },
+    // Days of Style
+    {
+      "guid": "hLz-Av_F4W",
+      "name": "Days of Style",
+      "recurring": true,
+      "imageUrl": "assets/game/events/DaysOfStyle.webp",
+      "instances": [
+        {
+          "guid": "i8pfh_3MPi",
+          "date": { "day": 2, "month": 10, "year": 2023 },
+          "endDate": { "day": 15, "month": 10, "year": 2023 },
+          "shops": [
+            "31fpDpwmgr"
+          ],
+          "spirits": [
+            { "guid": "IG1s0t_vjK", "spirit": "F6BUqVCHvp", "tree": "IhEcryXJD_" }
+          ]
+        },
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style"
+      }
+    },
     // Days of Mischief
     {
       "guid": "sZKQF_CWdu",
