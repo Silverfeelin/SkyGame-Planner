@@ -218,6 +218,7 @@
       "name": "Days of Color",
       "recurring": true,
       "imageUrl": "assets/game/events/DaysOfColor.webp",
+      "imagePosition": "top",
       "instances": [
         {
           "guid": "7H5NE9-K72",
@@ -279,6 +280,7 @@
       "name": "Days of Music",
       "recurring": true,
       "imageUrl": "assets/game/events/DaysOfMusic.webp",
+      "imagePosition": "top",
       "instances": [
         {
           "guid": "7eNLae0wS1",
@@ -417,6 +419,7 @@
       "name": "Days of Style",
       "recurring": true,
       "imageUrl": "assets/game/events/DaysOfStyle.webp",
+      "imagePosition": "top",
       "instances": [
         {
           "guid": "i8pfh_3MPi",
