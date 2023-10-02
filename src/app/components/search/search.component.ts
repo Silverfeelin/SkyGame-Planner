@@ -86,11 +86,8 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     // Focus input on search hotkey.
     this.resetSubscription = this._eventService.searchReset.subscribe(() => {
       if (!this.input?.nativeElement) { return; }
-      this.input.nativeElement.value = '';
-      this.search();
-      this.updateCurrentRoute();
+      this.input.nativeElement.setSelectionRange(0, this.input.nativeElement.value.length);
       this.input.nativeElement.focus();
-      this._changeDetectorRef.markForCheck();
     });
 
     // Set the input value.
