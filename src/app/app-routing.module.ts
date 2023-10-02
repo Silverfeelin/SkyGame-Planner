@@ -14,7 +14,6 @@ import { TravelingSpiritsComponent } from './components/traveling-spirits/travel
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { SearchComponent } from './components/search/search.component';
 import { RealmComponent } from './components/realm/realm.component';
 import { TitleResolver } from './resolvers/title.resolver';
 import { EventInstanceTitleResolver } from './resolvers/event-instance-title.resolver';
@@ -22,11 +21,13 @@ import { ReturningSpiritsComponent } from './components/returning-spirits/return
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BlankComponent } from './components/blank/blank.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, title: 'Sky Planner' },
+  { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
   { path: 'credits', component: CreditsComponent, title: title('Credits') },
   { path: 'event', component: EventsComponent, title: title('Events') },
   { path: 'event/:guid', component: EventComponent, title: TitleResolver },
@@ -34,7 +35,6 @@ const routes: Routes = [
   { path: 'item', component: ItemsComponent, title: title('Items') },
   { path: 'realm', component: RealmsComponent, title: title('Realms') },
   { path: 'realm/:guid', component: RealmComponent, title: TitleResolver },
-  { path: 'search', component: SearchComponent, title: title('Search') },
   { path: 'season', component: SeasonsComponent, title: title('Seasons') },
   { path: 'season/:guid', component: SeasonComponent, title: TitleResolver },
   { path: 'settings', component: SettingsComponent, title: title('Settings') },
@@ -46,7 +46,7 @@ const routes: Routes = [
   { path: 'rs', component: ReturningSpiritsComponent, title: title('Returning Spirits') },
   { path: 'rs/:guid', component: ReturningSpiritComponent, title: TitleResolver },
   { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
-  { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
+  { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
 ];
 
 @NgModule({

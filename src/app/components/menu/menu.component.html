@@ -1,15 +1,12 @@
 <aside>
   <nav>
-    <a class="header" [routerLink]="'/'">
-      <span class="title">Sky Planner</span>
-    </a>
     <div class="items">
-      <hr/>
-      <!-- Search -->
-      <a class="item" [routerLink]="'search'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Search'" placement="right" container="body">
-        <mat-icon>search</mat-icon>
-        <span class="name">Search</span>
+      <!-- Home-->
+      <a class="item" href="/" (click)="gotoHome($event)" [ngbTooltip]="wide ? '' : 'Home'" placement="right" container="body">
+        <mat-icon>home</mat-icon>
+        <span class="name header">Sky Planner</span>
       </a>
+      <hr/>
       <!-- Items -->
       <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
         <mat-icon>checkroom</mat-icon>

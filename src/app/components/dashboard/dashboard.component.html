@@ -2,7 +2,14 @@
   <div class="sky-card-header">
     <h1 class="h2">Sky Planner</h1>
   </div>
-  <div class="sky-card-body" *ngIf="!season && !eventInstance && !ts">
+</div>
+
+<div class="mt">
+  <app-search></app-search>
+</div>
+
+<div class="sky-card mt" *ngIf="!season && !eventInstance && !ts">
+  <div class="sky-card-body">
     <div class="container">
       There is currently no season or event active.<br/>
       You can view items, seasons, events and more in the menu on the left.

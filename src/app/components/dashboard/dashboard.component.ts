@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataService } from 'src/app/services/data.service';

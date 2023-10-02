@@ -44,6 +44,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SeasonCardComponent } from './components/season-card/season-card.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
+import { BlankComponent } from './components/blank/blank.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { SpiritCardComponent } from './components/spirit-card/spirit-card.compon
     DashboardComponent,
     SeasonCardComponent,
     EventCardComponent,
-    SpiritCardComponent
+    SpiritCardComponent,
+    BlankComponent
   ],
   imports: [
     BrowserModule,

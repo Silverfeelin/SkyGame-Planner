@@ -10,3 +10,22 @@
 .img {
   height: var(--img-preview-height);
 }
+
+.search {
+  position: relative;
+  cursor: pointer;
+
+  input {
+    padding-left: 32px;
+    cursor: pointer;
+  }
+
+  mat-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: opacity var(--animation-short);
+  }
+}
