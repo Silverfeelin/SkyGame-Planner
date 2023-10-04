@@ -8,38 +8,38 @@
       </a>
       <hr/>
       <!-- Items -->
-      <a class="item" [routerLink]="'item'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
+      <a class="item" [routerLink]="'item'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
         <mat-icon>checkroom</mat-icon>
         <span class="name">Items</span>
       </a>
       <!-- Spirits -->
-      <a class="item" [routerLink]="'spirits'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Spirits'" placement="right" container="body">
+      <a class="item" [routerLink]="'spirits'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Spirits'" placement="right" container="body">
         <mat-icon>person</mat-icon>
         <span class="name">Spirits</span>
       </a>
       <!-- Wing Buffs-->
-      <a class="item" [routerLink]="'wing-buff'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Wing Buffs'" placement="right" container="body">
+      <a class="item" [routerLink]="'wing-buff'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Wing Buffs'" placement="right" container="body">
         <mat-icon svgIcon="flaps"></mat-icon>
         <span class="name">Wing Buffs</span>
       </a>
       <!-- Realms -->
-      <a class="item" [routerLink]="'realm'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
+      <a class="item" [routerLink]="'realm'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Realms'" placement="right" container="body">
         <mat-icon>map</mat-icon>
         <span class="name">Realms</span>
       </a>
       <!-- Seasons -->
-      <a class="item" [routerLink]="'season'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
+      <a class="item" [routerLink]="'season'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Seasons'" placement="right" container="body">
         <img *ngIf="seasonIconUrl; else seasonIcon" [src]="seasonIconUrl" class="icon">
         <ng-template #seasonIcon><mat-icon>ac_unit</mat-icon></ng-template>
         <span class="name">Seasons</span>
       </a>
       <!-- Events -->
-      <a class="item" [routerLink]="'event'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
+      <a class="item" [routerLink]="'event'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Events'" placement="right" container="body">
         <mat-icon>celebration</mat-icon>
         <span class="name">Events</span>
       </a>
       <!-- Shop -->
-      <a class="item" [routerLink]="'shop'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">
+      <a class="item" [routerLink]="'shop'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">
         <mat-icon>shopping_cart</mat-icon>
         <span class="name">Permanent IAP</span>
       </a>
@@ -52,7 +52,7 @@
       </a>
       <hr/>
       <!-- Settings -->
-      <a class="item" [routerLink]="'settings'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Settings'" placement="right" container="body">
+      <a class="item" [routerLink]="'settings'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Settings'" placement="right" container="body">
         <mat-icon>settings</mat-icon>
         <span class="name">Settings</span>
       </a>
@@ -62,7 +62,7 @@
         <span class="name">GitHub</span>
       </a>
       <!-- Credits -->
-      <a class="item" [routerLink]="'credits'" routerLinkActive="active" [ngbTooltip]="wide ? '' : 'Credits'" placement="right" container="body">
+      <a class="item" [routerLink]="'credits'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Credits'" placement="right" container="body">
         <mat-icon>info</mat-icon>
         <span class="name">Credits</span>
       </a>
