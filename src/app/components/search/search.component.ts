@@ -98,7 +98,10 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
         this.search();
       });
     }
-    this.input.nativeElement.focus();
+
+    if (this._route.snapshot.queryParamMap.get('focus')) {
+      this.input.nativeElement.focus();
+    }
 
     // Update URL for backwards navigation.
     this.searchSubscription = fromEvent(this.input.nativeElement, 'input').pipe(debounceTime(250)).subscribe(() => {

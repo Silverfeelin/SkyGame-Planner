@@ -26,7 +26,9 @@ export class EventService {
     if (evt.ctrlKey && evt.shiftKey && evt.key.toUpperCase() === 'F') {
       evt.preventDefault();
       this.searchReset.next();
-      void this._router.navigate(['/'], { skipLocationChange: false });
+      if (!location.pathname || location.pathname === '/') {
+        void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });
+      }
     }
   }
 }
