@@ -165,7 +165,9 @@ export class DataService {
   }
 
   private initializeSpirits(): void {
-    this.spiritConfig.items.forEach(spirit => {
+    this.spiritConfig.items.forEach((spirit, i) => {
+      spirit._index = i;
+
       // Map spirits to spirit tree.
       if (spirit.tree) {
         const tree = this.guidMap.get(spirit.tree as any) as ISpiritTree;

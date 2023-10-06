@@ -36,6 +36,15 @@
         </span>
       </span>
     </div>
+    <!-- Check-in -->
+    <div *ngIf="sections['checkin']" (click)="checkin()"
+      class="item checkin" [class.active]="checkedIn" [style.order]="sections['checkin']"
+    >
+      <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+      <span class="menu-label">
+        I have done my dailies.
+      </span>
+    </div>
     <!-- Cost -->
     <div *ngIf="sections['cost'] && cost"
       class="item" [style.order]="sections['cost']"

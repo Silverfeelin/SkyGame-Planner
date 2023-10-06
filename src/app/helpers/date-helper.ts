@@ -2,6 +2,7 @@ import dayjs from 'dayjs';
 import { IDate } from "../interfaces/date.interface";
 
 export class DateHelper {
+  static readonly skyTimeZone = 'America/Los_Angeles';
   static displayFormat: string;
   static displayFormats: Array<string> = [
     'DD-MM-YYYY',

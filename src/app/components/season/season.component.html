@@ -33,7 +33,7 @@
         <mat-icon class="menu-icon">schedule</mat-icon>
         <span class="menu-label">
           <app-duration [start]="season.date" [end]="season.endDate"></app-duration>
-          <span *ngIf="state === 'active' || state === 'future'" class="c-accent">
+          <span class="c-accent">
             (<app-days-left [start]="season.date" [end]="season.endDate"></app-days-left>)
           </span>
         </span>

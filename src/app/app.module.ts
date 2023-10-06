@@ -45,6 +45,7 @@ import { SeasonCardComponent } from './components/season-card/season-card.compon
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
 import { BlankComponent } from './components/blank/blank.component';
+import { ClockComponent } from './components/clock/clock.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { BlankComponent } from './components/blank/blank.component';
     SeasonCardComponent,
     EventCardComponent,
     SpiritCardComponent,
-    BlankComponent
+    BlankComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,

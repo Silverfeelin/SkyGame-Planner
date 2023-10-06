@@ -6,7 +6,7 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 
-type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'cost';
+type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'cost' | 'checkin';
 export interface EventCardOptions {
   show?: Array<Section>;
 }
@@ -26,6 +26,7 @@ export class EventCardComponent implements OnChanges {
   lastInstance?: IEventInstance;
   cost?: ICost;
   remainingCost?: ICost;
+  checkedIn = false;
 
   ngOnInit(): void {
     this.updateSections();
@@ -39,12 +40,32 @@ export class EventCardComponent implements OnChanges {
     if (changes['instance']) { this.updateInstance(); }
   }
 
+  checkin(): void {
+    this.checkedIn = !this.checkedIn;
+    if (this.checkedIn) {
+      localStorage.setItem(`event.checkin.${this.event?.guid}`, dayjs.tz().format('YYYY-MM-DD'));
+    } else {
+      localStorage.removeItem(`event.checkin.${this.event?.guid}`);
+    }
+  }
+
   private updateEvent(): void {
     // Find last instance based on event.date.
     if (this.event?.instances) {
       const now = dayjs();
       this.lastInstance = this.event.instances.findLast<IEventInstance>(i => DateHelper.isActive(i.date, i.endDate));
       this.lastInstance ??= this.event.instances.findLast(i => i.date.isBefore(now));
+    }
+
+    this.updateCheckin();
+  }
+
+  /** Update checked in status from storage. */
+  private updateCheckin(): void {
+    const checkinDate = localStorage.getItem(`event.checkin.${this.event?.guid}`);
+    if (checkinDate) {
+      const d = dayjs.tz(checkinDate, 'YYYY-MM-DD', DateHelper.skyTimeZone);
+      this.checkedIn = d.isSame(dayjs.tz(), 'day');
     }
   }
 

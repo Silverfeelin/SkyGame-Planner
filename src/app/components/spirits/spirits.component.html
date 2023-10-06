@@ -5,6 +5,14 @@
       <a (click)="changeMode()" class="h6 link">Change view</a>
     </h1>
   </div>
+  <div class="sky-card-body">
+    <div class="sky-flex flex-wrap">
+      <button type="button" (click)="sortDefault()">Default</button>
+      <button type="button" (click)="sortName()">Alphabetical</button>
+      <button type="button" (click)="sortAge(1)">Oldest first</button>
+      <button type="button" (click)="sortAge(-1)">Newest first</button>
+    </div>
+  </div>
 </div>
 
 <!-- #region List -->

@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import dayjs from 'dayjs';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
-import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
 type ViewMode = 'grid' | 'cards';
+type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
 
 @Component({
   selector: 'app-spirits',
   templateUrl: './spirits.component.html',
-  styleUrls: ['./spirits.component.less']
+  styleUrls: ['./spirits.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpiritsComponent {
   mode: ViewMode = 'cards';
@@ -29,7 +31,8 @@ export class SpiritsComponent {
 
   constructor(
     private readonly _dataService: DataService,
-    private readonly _route: ActivatedRoute
+    private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _route: ActivatedRoute,
   ) {
     this.mode = localStorage.getItem('spirits.mode') as ViewMode || 'grid';
     _route.queryParamMap.subscribe(q => { this.onQueryChanged(q); });
@@ -85,6 +88,11 @@ export class SpiritsComponent {
     // Add spirits to list.
     spirits.forEach(addSpirit);
 
+    switch (q.get('sort') as SortMode) {
+      case 'age-asc': this.sortAge(1); break;
+      case 'age-desc': this.sortAge(-1); break;
+      case 'name-asc': this.sortName(); break;
+    }
     this.initTable();
   }
 
@@ -147,7 +155,66 @@ export class SpiritsComponent {
     });
   }
 
-  onItemToggled(item: IItem): void {
-    /**/
+  sortDefault(): void {
+    this.sortByDefault();
+    this.updateSortUrl('default');
+    this.initTable();
+  }
+
+  sortName(): void {
+    this.sortByName();
+    this.updateSortUrl('name-asc');
+    this.initTable();
+  }
+
+  sortAge(direction: number): void {
+    this.sortByAge(direction);
+    this.updateSortUrl(direction > 0 ? 'age-asc' : 'age-desc');
+    this.initTable();
+  }
+
+  private sortByDefault(): void {
+    this.spirits.sort((a, b) => a._index - b._index);
+  }
+
+  private sortByName(): void {
+    this.spirits.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  private sortByAge(direction: number): void {
+    const dateA = dayjs('2019-1-1');
+    const dateB = dayjs('2999-1-1');
+    const dates = this.spirits.reduce((acc, s) => {
+      let date = s.season?.date || s.events?.at(-1)?.eventInstance?.date;
+      switch (s.type) {
+        case 'Regular':
+        case 'Elder':
+          date = dateA;
+          break;
+        case 'Guide':
+        case 'Season':
+          date = s.season?.date;
+          break;
+        case 'Event':
+          date = s.events?.at(0)?.eventInstance?.date;
+          break;
+      }
+
+      acc[s.guid] = date ?? dateB;
+      return acc;
+    }, {} as {[guid: string]: dayjs.Dayjs});
+
+    this.spirits.sort((a, b) => {
+      const dateA = dates[a.guid];
+      const dateB = dates[b.guid];
+      const diff = dateA.diff(dateB);
+      return !diff ? (a._index - b._index) * direction : diff * direction;
+    });
+  }
+
+  private updateSortUrl(type: SortMode): void {
+    const url = new URL(location.href);
+    url.searchParams.set('sort', type);
+    history.replaceState(history.state, '', url.pathname + url.search);
   }
 }

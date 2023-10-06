@@ -1,0 +1,144 @@
+.clock {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--padding-content);
+  overflow: hidden;
+}
+
+.clock-item {
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.clock-title {
+  font-size: 34px;
+  line-height: 34px;
+}
+
+.clock-time {
+  font-size: 52px;
+  line-height: 52px;
+}
+
+.clock-text {
+  vertical-align: top;
+  display: inline-block;
+  filter: var(--shadow-clock);
+}
+
+.sky-clock {
+  position: relative;
+  display: none;
+  top: 0;
+  width: 92px;
+  height: 92px;
+  border-radius: 100%;
+  border: solid var(--color);
+  border-width: 9px;
+  box-sizing: border-box;
+  filter: var(--shadow-clock);
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 3px);
+  transform-origin: 3px 0;
+  width: 6px;
+  border-radius: 0 0 50px 50px;
+  background-color: var(--color);
+  outline: var(--shadow-clock);
+}
+
+.hand-hour {
+  height: 21px;
+}
+
+.hand-minute {
+  height: 32px;
+}
+
+.hand-second {
+  height: 32px;
+  width: 2px;
+  left: calc(50% - 1px);
+  transform-origin: 1px 0;
+}
+
+.hand-inner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 6px;
+  width: 6px;
+  border-radius: 100%;
+  background: var(--color);
+}
+
+@media screen and (min-width: 992px) {
+  .clock-title {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .clock-time {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .sky-clock {
+    display: inline-block;
+  }
+
+  .clock-text {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .clock-title {
+    font-size: 44px;
+    line-height: 44px;
+  }
+
+  .clock-time {
+    font-size: 72px;
+    line-height: 90px;
+  }
+
+  .sky-clock {
+    width: 128px;
+    height: 128px;
+    border-width: 12px;
+  }
+
+  .hand {
+    left: calc(50% - 4px);
+    transform-origin: 4px 0;
+    width: 8px;
+  }
+
+  .hand-hour {
+    height: 28px;
+  }
+
+  .hand-minute {
+    height: 48px;
+  }
+
+  .hand-second {
+    height: 48px;
+    transform-origin: 1px 0;
+    width: 2px;
+    left: calc(50% - 1px);
+  }
+
+  .hand-inner {
+    height: 8px;
+    width: 8px;
+  }
+}

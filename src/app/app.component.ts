@@ -42,8 +42,7 @@ export class AppComponent {
     dayjs.extend(utc.default);
     dayjs.extend(isoWeek.default);
     dayjs.extend(timezone.default);
-
-    dayjs.tz.setDefault('America/Los_Angeles');
+    dayjs.tz.setDefault(DateHelper.skyTimeZone);
 
     (window as any).dayjs = dayjs;
   }

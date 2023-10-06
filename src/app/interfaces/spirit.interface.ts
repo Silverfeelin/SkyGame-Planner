@@ -47,9 +47,6 @@ export interface ISpirit extends IGuid {
   relived?: boolean;
 
   /// Metadata ///
-
-  /** Wiki data. */
   _wiki?: IWiki
+  _index: number;
 }
-
-

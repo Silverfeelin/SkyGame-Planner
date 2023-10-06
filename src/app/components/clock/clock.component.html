@@ -1,0 +1,31 @@
+<div class="clock">
+  <div class="clock-item">
+    <div class="container">
+      <div class="sky-clock">
+        <div class="hand-hour hand" [style.transform]="'rotate('+localDegHr+'deg)'"></div>
+        <div class="hand-minute hand" [style.transform]="'rotate('+localDegMin+'deg)'"></div>
+        <div class="hand-second hand" [style.transform]="'rotate('+localDegSec+'deg)'"></div>
+
+        <div class="hand-inner"></div>
+      </div>
+      <div class="clock-text">
+        <span class="clock-title">Local time</span><br/>
+        <span class="clock-time" *ngIf="nowLocal">{{ nowLocal | dayjs:'HH:mm:ss'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="clock-item">
+    <div class="container">
+      <div class="sky-clock">
+        <div class="hand-hour hand" [style.transform]="'rotate('+skyDegHr+'deg)'"></div>
+        <div class="hand-minute hand" [style.transform]="'rotate('+skyDegMin+'deg)'"></div>
+        <div class="hand-second hand" [style.transform]="'rotate('+skyDegSec+'deg)'"></div>
+        <div class="hand-inner"></div>
+      </div>
+      <div class="clock-text">
+        <span class="clock-title">Sky time</span><br/>
+        <span class="clock-time" *ngIf="nowSky">{{ nowSky | dayjs:'HH:mm:ss'}}</span>
+      </div>
+    </div>
+  </div>
+</div>

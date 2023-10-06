@@ -1,6 +1,6 @@
 <div class="sky-card">
-  <div class="sky-card-header">
-    <h1 class="h2">Sky Planner</h1>
+  <div class="sky-card-body">
+    <app-clock></app-clock>
   </div>
 </div>
 
@@ -18,8 +18,8 @@
 </div>
 
 <div class="grid grid-2 mt">
-  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-season-card>
-  <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-event-card>
+  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
+  <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
   <app-spirit-card *ngIf="ts" [spirit]="ts.spirit" [ts]="ts" [tree]="ts.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
     <div title>
       <h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{ts.number}})</span></h2>

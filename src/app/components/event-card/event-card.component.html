@@ -40,6 +40,15 @@
           List
         </span>
       </a>
+      <!-- Check-in -->
+      <div *ngIf="sections['checkin']" (click)="checkin()"
+        class="item checkin" [class.active]="checkedIn" [style.order]="sections['checkin']"
+      >
+        <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+        <span class="menu-label">
+          I have done my dailies.
+        </span>
+      </div>
       <!-- Jump to last -->
       <a *ngIf="sections['recent'] && lastInstance" [routerLink]="['/event-instance', lastInstance.guid]"
         class="item link" [style.order]="sections['recent']"
