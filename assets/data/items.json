@@ -4232,6 +4232,60 @@
       "name": "Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
     },
+    {
+      "guid": "tPSfwv25tD",
+      "type": "Quest",
+      "name": "Quest 2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "XQXq0JUaSV",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "BUkqSHBWBP",
+      "type": "Special",
+      "name": "High Five",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Icon_high_five.png"
+    },
+    {
+      "guid": "Bt81wczcyz",
+      "type": "Quest",
+      "name": "Quest 3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "BIe6DgYn08",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "QYqOsJH08k",
+      "type": "Quest",
+      "name": "Quest 4",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "iMrPI958ew",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "guid": "RGIkrdzAHQ",
+      "type": "Quest",
+      "name": "Quest 5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "guid": "T_Y0iSIKrS",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
     // Moments Ultimates
     {
       "guid": "lbckL2aX2B",
