@@ -113,9 +113,31 @@ body { scrollbar-width: thin; }
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-scroll-thumb);
+  border-radius: 50px;
 }
 ::-webkit-scrollbar-corner {
   background: var(--color-scroll--humb);
+}
+.scroll-hover {
+  &::-webkit-scrollbar {
+    opacity: 0.5;
+    // Make background 50% translucent
+    background: rgba(0, 0, 0, 0.5);
+    // width: 0px;
+    // height: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    opacity: 0.5;
+  }
+  &::-webkit-scrollbar-thumb {
+    opacity: 0.5;
+  }
+
+  &:hover::-webkit-scrollbar {
+    width: var(--size);
+    height: var(--size);
+  }
 }
 
 // Bootstrap

@@ -48,6 +48,30 @@
   font-weight: bold;
 }
 
+.header-previews {
+  cursor: pointer;
+  &:hover {
+    color: var(--color-link-hover);
+  }
+
+  mat-icon {
+    vertical-align: middle;
+  }
+}
+
+.item-icon {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  background: var(--color-background);
+  border-radius: var(--border-radius)
+}
+
+.item-icon-large {
+  width: var(--item-size-large);
+  height: var(--item-size-large);
+}
+
 .item-col-hr {
   display: none;
   flex-basis: 100%;
@@ -70,6 +94,21 @@
 
 app-item.a {
   cursor: pointer;
+}
+
+.item-preview {
+  position: relative;
+  display: inline-block;
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  border: var(--border-solid);
+  overflow: hidden;
+}
+
+.preview-img {
+  height: 192px;
+  max-height: 192px;
+  object-fit: scale-down;
 }
 
 .info-grid {

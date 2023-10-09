@@ -35,6 +35,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   shownItems: Array<IItem> = [];
   shownUnlocked: number = 0;
 
+  showFieldGuide = false;
   showNone = false;
   offsetNone = 0;
 
@@ -98,6 +99,10 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
 
   selectCategory(type: string) {
     this._router.navigate([], { queryParams: { type, item: this.selectedItem?.guid }, replaceUrl: true });
+  }
+
+  togglePreviews(): void {
+    this.showFieldGuide = !this.showFieldGuide;
   }
 
   private initializeItems(): void {

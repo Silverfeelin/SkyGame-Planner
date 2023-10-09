@@ -14,6 +14,8 @@ export interface IItem extends IGuid {
   name: string;
   /** Path to item icon. */
   icon?: string;
+  /** Path to preview image. */
+  previewUrl?: string;
   /** Item order (within category). */
   order?: number;
 
