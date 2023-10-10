@@ -2,6 +2,7 @@ import { IConfig, IGuid } from './base.interface';
 import { IIAP } from './iap.interface';
 import { INode } from './node.interface';
 import { ISeason } from './season.interface';
+import { IWiki } from './wiki.interface';
 
 export interface IItemConfig extends IConfig<IItem> {}
 
@@ -35,6 +36,8 @@ export interface IItem extends IGuid {
 
   /// Progress ///
   unlocked?: boolean;
+
+  _wiki?: IWiki;
 }
 
 export enum ItemType {

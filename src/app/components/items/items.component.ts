@@ -21,7 +21,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   // Item details.
   selectedItem?: IItem;
   selectedItemNav?: INavigationTarget;
-  previewHref?: string;
   _previewObserver?: IntersectionObserver;
   _scrollToPreview = true;
 
@@ -74,7 +73,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
       this.shownItems = Object.values(this.emotes);
     }
     this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
-    this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held;
+    this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held || this.type === ItemType.Shoes || this.type === ItemType.FaceAccessory;
     //this.showNone = false;
     this.offsetNone = this.showNone ? 1 : 0;
 
@@ -82,7 +81,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     if (itemGuid) {
       this.selectedItem = this._dataService.guidMap.get(itemGuid) as IItem;
       this.selectedItemNav = this.selectedItem ? NavigationHelper.getItemSource(this.selectedItem) : undefined;
-      this.previewHref = this.selectedItem ? NavigationHelper.getPreviewLink(this.selectedItem) : undefined;
     }
   }
 

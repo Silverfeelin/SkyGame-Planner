@@ -4,9 +4,10 @@
     {
       "guid": "EEQZwFIJRs",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mask05-Diamond.png",
       "name": "Base Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Icon_pants_default.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Legs01-Default.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Outfits#Base_Outfit" },
       "unlocked": true,
       "order": 1
     },
@@ -120,9 +121,10 @@
     {
       "guid": "um3PQEl09a",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Mask09.png",
       "name": "Pointing Candlemaker Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/PointingCandlemaker-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Legs07.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Outfit" },
       "order": 6
     },
     {
@@ -189,9 +191,10 @@
     {
       "guid": "Vz2Gpg4FSQ",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mask08.png",
       "name": "Ushering Stargazer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/UsheringStargazer-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Legs06.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Outfit" },
       "order": 7
     },
     {
@@ -328,9 +331,10 @@
     {
       "guid": "1qBmwSZFkz",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Mask11.png",
       "name": "Butterfly Charmer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/ButterflyCharmer-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Legs08.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Outfit" },
       "order": 5
     },
     {
@@ -783,9 +787,10 @@
     {
       "guid": "Y2XIZBa7Ir",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Mask12-Long_Panel.png",
       "name": "Shivering Trailblazer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/ShiveringTrailblazer-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Legs03.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Outfit" },
       "order": 2
     },
     {
@@ -951,9 +956,10 @@
     {
       "guid": "bwJ7i7NrlR",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Elder-Mask-Isle-original-Credit-Nastymold.png",
       "name": "Hide'n'Seek Pioneer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/HideNSeekPioneer-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Legs_hide_n_seek_pioneer_dress.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Outfit" },
       "order": 9
     },
     // Pouty Porter
@@ -1336,9 +1342,10 @@
     {
       "guid": "N9G6m1vBZh",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Elder-Mask-Prairie-original-Credit-Nastymold.png",
       "name": "Confident Sightseer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/ConfidentSightseer-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Legs05.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Outfit" },
       "order": 8
     },
     // Handstanding Thrillseeker
@@ -2258,9 +2265,10 @@
     {
       "guid": "wXOGyF57AN",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Elder-Mask-Forest-original-Credit-Nastymold.png",
       "name": "Memory Whisperer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/MemoryWhisperer-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Legs04.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Outfit" },
       "order": 4
     },
     {
@@ -2318,9 +2326,10 @@
     {
       "guid": "3T-ZS6ZooQ",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_sanctuary_mask_chill_v2.png",
       "name": "Polite Scholar Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/PoliteScholar-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Legs02.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Outfit" },
       "order": 3
     },
     {
@@ -3156,10 +3165,11 @@
     {
       "guid": "BD7KBFgGf0",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Feast-Yeti-Goggles.png",
       "group": "Ultimate",
       "name": "Little Prince Ultimate Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Icon_pants_prince_pjs.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Season_of_little_prince_pants3_iap_pj.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
       "order": 1003
     },
     {
@@ -3173,9 +3183,10 @@
     {
       "guid": "l_C7GM60an",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Days-of-Nature-Glasses.png",
       "name": "Sword Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Icon_pants_prince_sword.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Season_of_little_prince_pants2_iap_sword.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Additional_Cosmetics" },
       "order": 1002
     },
     {
@@ -3282,9 +3293,10 @@
     {
       "guid": "SxX0bNDJaR",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Style-Star-Sunglasses.png",
       "name": "Flight Ultimate Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_flight_pants_1_ult.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
       "order": 1101
     },
     {
@@ -3744,9 +3756,10 @@
     {
       "guid": "kr95Zsf1Cs",
       "type": "Outfit",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Style-Flame-Sunglasses.png",
       "name": "AURORA Ultimate Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/SoAurora-Ultimate-Outfit-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/SoAurora-Ultimate-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts" },
       "order": 1502
     },
     {
@@ -3898,6 +3911,8 @@
       "type": "Outfit",
       "name": "Cure for Me Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/SoAurora-Additional-Green-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoAurora-Cure-for-me-Outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Outfit" },
       "order": 1503
     },
     {
@@ -5288,6 +5303,8 @@
       "type": "Outfit",
       "name": "Boogie Kid Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Mimi-4117_04_boogie_kid_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Belonging_Legs_Isle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Outfit" },
       "order": 301
     },
     {
@@ -5701,6 +5718,8 @@
       "type": "Outfit",
       "name": "Troupe Greeter Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_05_troupe_greeter_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Outfit" },
       "order": 401
     },
     {
@@ -5789,6 +5808,8 @@
       "type": "Outfit",
       "name": "Festival Spin Dancer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Season_of_rhythm_pants_prairie_dance_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Outfit" },
       "order": 403
     },
     {
@@ -5877,6 +5898,8 @@
       "type": "Outfit",
       "name": "Admiring Actor Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Season_of_rhythm_pants_forest_kisses_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Outfit" },
       "order": 404
     },
     {
@@ -5971,6 +5994,8 @@
       "type": "Outfit",
       "name": "Troupe Juggler Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_rhythm_pants_valley_juggle_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Outfit" },
       "order": 402
     },
     {
@@ -6702,6 +6727,8 @@
       "type": "Outfit",
       "name": "Jelly Whisperer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_07_jelly_whisperer_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Season_of_sanctuary_pants_jelly_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Outfit" },
       "order": 601
     },
     {
@@ -6842,6 +6869,8 @@
       "type": "Outfit",
       "name": "Rallying Thrillseeker Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Rallying_trillseeker_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Season_of_sanctuary_pants_rally_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Outfit" },
       "order": 602
     },
     {
@@ -7489,6 +7518,8 @@
       "type": "Outfit",
       "name": "Prophet of Fire Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_fire_pants.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Fire_Leggings.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Outfit" },
       "order": 701
     },
     {
@@ -7584,6 +7615,8 @@
       "type": "Outfit",
       "name": "Bearhug Hermit Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Dreams_pants_bearhug_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit" },
       "order": 802
     },
     {
@@ -7728,6 +7761,8 @@
       "type": "Outfit",
       "name": "Peeking Postman Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Icon_pants_dreams_peeking.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Dreams_pants_peeking_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit" },
       "order": 801
     },
     {
@@ -8260,6 +8295,8 @@
       "type": "Outfit",
       "name": "Chuckling Scout Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Icon_pants_assembly_ult.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Assembly_pants_chuckling_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit" },
       "order": 901
     },
     {
@@ -8518,6 +8555,8 @@
       "type": "Outfit",
       "name": "Gloating Narcissist Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Icon_pants_prince_narcissist.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Season_of_little_prince_pants1.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Outfit" },
       "order": 1001
     },
     {
@@ -9038,6 +9077,8 @@
       "type": "Outfit",
       "name": "Light Whisperer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Season_of_flight_pants_4_light_whisperer.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit" },
       "order": 1104
     },
     {
@@ -9065,6 +9106,8 @@
       "type": "Outfit",
       "name": "Tinkering Chimesmith Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Season_of_flight_pants_3_tinkering_chimesmith_gs.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit" },
       "order": 1103
     },
     {
@@ -9186,6 +9229,8 @@
       "type": "Outfit",
       "name": "Talented Builder Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Season_of_flight_pants_2_talented_builder_gs.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit" },
       "order": 1102
     },
     {
@@ -9277,6 +9322,8 @@
       "type": "Outfit",
       "name": "Anxious Angler Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Anxious-Angler-outfit.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/SOAbyss-Anxious-Angler-Cape-outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Outfit" },
       "order": 1201
     },
     {
@@ -9621,6 +9668,8 @@
       "type": "Outfit",
       "name": "Frantic Stagehand Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoPerformance_-_Frantic_Stagehand-outfit-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/SoPerformance_-_Frantic_Stagehand-outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Outfit" },
       "order": 1302
     },
     {
@@ -9696,6 +9745,8 @@
       "type": "Outfit",
       "name": "Forgetful Storyteller Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/SOPerformance_-Forgetful_Storyteller_-_Outfit-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOPerformance_-Forgetful_Storyteller_-_Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Outfit" },
       "order": 1303
     },
     {
@@ -9857,6 +9908,8 @@
       "type": "Outfit",
       "name": "Modest Dancer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOPerformance-Modest-Dancer-_outfit-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SOPerformance-Modest-Dancer-_Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Outfit" },
       "order": 1301
     },
     {
@@ -9971,6 +10024,8 @@
       "type": "Outfit",
       "name": "Manta Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/SOShattering-Light-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/SOShattering-Light-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Outfit" },
       "order": 1401
     },
     {
@@ -10242,6 +10297,8 @@
       "type": "Outfit",
       "name": "Mindful Miner Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoAurora-Mindful-Miner-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoAurora-Mindful-Miner-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Outfit" },
       "order": 1501
     },
     {
@@ -10462,6 +10519,8 @@
       "type": "Outfit",
       "name": "AURORA Runaway Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Aurora-Runaway-outfit-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Purple-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Runaway_Outfit" },
       "order": 1504
     },
     {
@@ -10469,6 +10528,8 @@
       "type": "Outfit",
       "name": "To The Love Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/SoAurora-To-The-Love-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SoAurora-To-The-Love-Outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#To_The_Love_Outfit" },
       "order": 1505
     },
     {
@@ -10497,7 +10558,7 @@
       "type": "Shoes",
       "name": "AURORA Musical Voyage Sneakers",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Aurora-Record-Breaker-Sneakers-icon-Credit-Morybel.png",
-      "order": 401
+      "order": 601
     },
     {
       "guid": "T71hdAEX-_",
@@ -10652,6 +10713,8 @@
       "type": "Outfit",
       "name": "Pleading Child Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/SoRemembrance-Pleading-Child-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/SoRemembrance-Pleading-Child-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit" },
       "order": 1601
     },
     {
@@ -10727,6 +10790,8 @@
       "type": "Outfit",
       "name": "Tiptoeing Tea-Brewer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Outfit" },
       "order": 1603
     },
     {
@@ -10774,6 +10839,8 @@
       "type": "Outfit",
       "name": "Wounded Warrior Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SoRemembrance-Wounded-Warrior-Outfit-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/SoRemembrance-Wounded-Warrior-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Outfit" },
       "order": 1602
     },
     {
@@ -10864,6 +10931,8 @@
       "type": "Outfit",
       "name": "Oddball Outcast Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Oddball-Outcast-outfit-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Passage-Oddball-Outcast-outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Outfit" },
       "order": 1702
     },
     {
@@ -11014,6 +11083,8 @@
       "type": "Outfit",
       "name": "Melancholy Mope Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Passage-Melancholy-Mope-Outfit-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Passage-Melancholy-Mope-Outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Outfit" },
       "order": 1701
     },
     {
@@ -11315,6 +11386,8 @@
       "type": "Outfit",
       "name": "Ascetic Monk Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Ascetic-Monk-Outfit-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Ascetic-Monk-Outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Outfit" },
       "order": 1801
     },
     {
@@ -11368,6 +11441,8 @@
       "type": "Outfit",
       "name": "Nightbird Whisperer Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Nightbird-Whisperer-Outfit-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Nightbird-Whisperer-Outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Outfit" },
       "order": 1802
     },
     {
@@ -11481,7 +11556,9 @@
       "type": "Outfit",
       "name": "Days of Fortune Muralist's Smock",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png",
-      "order": 10400
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Muralist-Smock-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Muralist's_Smock" },
+      "order": 10100
     },
     {
       "guid": "uzos22Ysp3",
@@ -11755,7 +11832,9 @@
       "type": "Outfit",
       "name": "Bloom Gardening Tunic",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Days-of-Bloom-Gardener-outfit-icon-Morybel-0146.png",
-      "order": 10100
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Days-of-Bloom-Gardener-outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Gardening_Tunic" },
+      "order": 10200
     },
     {
       "guid": "_0PZEyTNxt",
@@ -11975,6 +12054,8 @@
       "type": "Outfit",
       "name": "Rainbow Trousers",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Days-of-Rainbow-2022-pant-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Days_of_Rainbow_2022-Trousers.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Trousers" },
       "order": 10300
     },
     {
@@ -12000,6 +12081,8 @@
       "type": "Outfit",
       "name": "Dark Rainbow Tunic",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Days-of-Color-Dark-Rainbow-Tunic-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Days-of-Colors-Dark-Rainbow-Outfit-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Tunic" },
       "order": 10301
     },
     {
@@ -12187,13 +12270,17 @@
       "guid": "E7RAu04_xI",
       "name": "Style Wide-Leg Jeans",
       "type": "Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Style-Wide-Leg-Jeans-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Style-Wide-Leg-Jeans-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Style-Wide-Leg-Jeans.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Wide-Leg_Jeans" },
+      "order": 10500
     },
     {
       "guid": "MuQrbnmbdp",
       "name": "Style Bunny Slippers",
       "type": "Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Style-Bunny-Slippers-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Style-Bunny-Slippers-icon-Credit-Morybel.png",
+      "order": 502
     },
     {
       "guid": "3HeVKqT39a",
@@ -12217,7 +12304,8 @@
       "guid": "d_p_flDgEV",
       "name": "Style Silk Ballet Slippers",
       "type": "Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Ballet-Flats-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Ballet-Flats-icon-Credit-Morybel.png",
+      "order": 501
     },
     {
       "guid": "o4cIshT_hD",
@@ -12331,7 +12419,9 @@
       "type": "Outfit",
       "name": "Mischief Witch Jumper",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Icon_2021_mischief_jumper.png",
-      "order": 10200
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Leggings_2021_mischief_jumper_iap.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper" },
+      "order": 10400
     },
     {
       "guid": "h-fwwT4T5y",
@@ -12695,7 +12785,8 @@
       "guid": "gsACsrp16_",
       "name": "Sunlight Chunky Sandals",
       "type": "Shoes",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Sunlight-Chunky-Sandals-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Sunlight-Chunky-Sandals-icon-Credit-Morybel.png",
+      "order": 401
     },
     {
       "guid": "NEmfcbHb-I",
