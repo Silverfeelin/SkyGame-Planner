@@ -2573,6 +2573,8 @@
       "group": "Ultimate",
       "name": "Gratitude Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/1_Gratitude.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Gratitude_pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts" },
       "order": 1
     },
     {
@@ -2593,6 +2595,8 @@
       "group": "Ultimate",
       "name": "Lightseekers Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/2_Lightseekers.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Lightseekers_pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts" },
       "order": 2
     },
     {
@@ -2611,6 +2615,8 @@
       "group": "Ultimate",
       "name": "Belonging Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/3_Belonging.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Season_of_belonging_pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide#Ultimate_Gifts" },
       "order": 3
     },
     {
@@ -2629,6 +2635,8 @@
       "group": "Ultimate",
       "name": "Rhythm Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/4_Rhythm.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Season_of_rhythm_pendant_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts" },
       "order": 4
     },
     {
@@ -2657,6 +2665,8 @@
       "group": "Ultimate",
       "name": "Enchantment Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/5_Enchantment.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Season_of_enchantment_pendant_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts" },
       "order": 5
     },
     {
@@ -2763,6 +2773,8 @@
       "group": "Ultimate",
       "name": "Sanctuary Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Season_of_sanctuary_sanctuary_pendant_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts" },
       "order": 6
     },
     {
@@ -2867,6 +2879,8 @@
       "group": "Ultimate",
       "name": "Prophecy Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/7_Prophecy.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Prophecy_pendant_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts" },
       "order": 7
     },
     {
@@ -2949,6 +2963,8 @@
       "name": "Dreams Pendant",
       "group": "Ultimate",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/8_Dreams.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Dreams_pendant_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts" },
       "order": 8
     },
     {
@@ -3043,6 +3059,8 @@
       "group": "Ultimate",
       "name": "Assembly Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/9_Assembly.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Assembly_pendant_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts" },
       "order": 9
     },
     {
@@ -3194,6 +3212,8 @@
       "group": "Ultimate",
       "name": "The Little Prince Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Little_prince_pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
       "order": 10
     },
     {
@@ -3323,6 +3343,8 @@
       "group": "Ultimate",
       "name": "Flight Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season_of_flight_pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
       "order": 11
     },
     {
@@ -3421,6 +3443,8 @@
       "group": "Ultimate",
       "name": "Abyss Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/12_Abyss.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/SOAbyss-Pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
       "order": 12
     },
     {
@@ -3531,6 +3555,8 @@
       "group": "Ultimate",
       "name": "Performance Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/13_SOPerformance_logo.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/SOPerformance-pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts" },
       "order": 13
     },
     {
@@ -3688,6 +3714,8 @@
       "group": "Ultimate",
       "name": "Shattering Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOShattering-pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts" },
       "order": 14
     },
     {
@@ -3796,6 +3824,8 @@
       "group": "Ultimate",
       "name": "AURORA Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/15-Aurora.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SoAurora-Seasonal-Pass-pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts" },
       "order": 15
     },
     {
@@ -3990,6 +4020,8 @@
       "group": "Ultimate",
       "name": "Remembrance Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoRemembrance-Seasonal-Pass-pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts" },
       "order": 16
     },
     {
@@ -3997,6 +4029,8 @@
       "type": "Necklace",
       "name": "Remembrance Ultimate Sash",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SoRemembrance-Ultimate-Gift-Sash-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoRemembrance-Ultimate-Gift-Sash.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts" },
       "order": 1602
     },
     {
@@ -4279,6 +4313,8 @@
       "group": "Ultimate",
       "name": "Passage Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/17_SOPassage_logo.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Passage-Seasonal-pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts" },
       "order": 17
     },
     {
@@ -4385,6 +4421,8 @@
       "name": "Moments Pendant",
       "group": "Ultimate",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Season-of-Moments-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Moments-Guide-Pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts" },
       "order": 18
     },
     {
@@ -7080,6 +7118,8 @@
       "type": "Necklace",
       "name": "Hiking Grouch Bowtie",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Icon_pendant_bowtie.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_sanctuary_sanctuary_grouch_bowtie_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory" },
       "order": 601
     },
     {
@@ -8988,6 +9028,8 @@
       "type": "Necklace",
       "name": "Star Collector Neckpiece",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Icon_pendant_little_prince_neckerchief.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Season_of_little_prince_necktie.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Neck_Accessory" },
       "order": 1001
     },
     {
@@ -9346,6 +9388,8 @@
       "type": "Necklace",
       "name": "Talented Builder Neckpiece",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Icon_season_of_flight_neckpiece_talented_builder.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season_of_flight_neckpiece_talented_builder.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory" },
       "order": 1101
     },
     {
@@ -10265,8 +10309,10 @@
     {
       "guid": "w2bnlVRUvy",
       "type": "Necklace",
-      "name": "Dragon Necklace",
+      "name": "Dragon Neck Accessory (Crab)",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOShattering-Dark-Crab-neck-accessory-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SOShattering-Dark-Crab-neck-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory" },
       "order": 1401
     },
     {
@@ -10853,8 +10899,10 @@
     {
       "guid": "-uVJsYJF-Z",
       "type": "Necklace",
-      "name": "Pleading Child Necklace",
+      "name": "Pleading Child Scarf",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/SoRemembrance-Pleading-Child-Necklace-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/SoRemembrance-Pleading-Child-Necklace.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory" },
       "order": 1601
     },
     {
@@ -11096,6 +11144,8 @@
       "type": "Necklace",
       "name": "Oddball Outcast Neckpiece",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Passage-Oddball-Outcast-neck-accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Passage-Oddball-Outcast-neck-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Neck_Accessory" },
       "order": 1701
     },
     {
@@ -11906,6 +11956,8 @@
       "type": "Necklace",
       "name": "Days of Love Classy Cravat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Days-of-Love-Neck-Bow-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Days-of-Love-Classy-Cravat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Classy_Cravat" },
       "order": 10101
     },
     {
@@ -12067,6 +12119,8 @@
       "type": "Necklace",
       "name": "Ocean Necklace",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Icon_pendant_shell_pendant.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Shell_necklace.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Necklace" },
       "order": 10301
     },
     {
@@ -12088,6 +12142,8 @@
       "type": "Necklace",
       "name": "Nature Turtle Buddy",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Nature-2022-turtle-accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Days-of-Nature-2022-turtle-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Accessory" },
       "order": 10501
     },
     {
@@ -12751,6 +12807,8 @@
       "type": "Necklace",
       "name": "Feast Necktie",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Icon_pendant_holly_pendant.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Holly_necklace_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Necktie" },
       "order": 10602
     },
     {
@@ -12802,6 +12860,8 @@
       "type": "Necklace",
       "name": "Winter Feast Scarf",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Days_of_Feast_Scarf_icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Feast_Scarf.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Scarf" },
       "order": 10601
     },
     {
@@ -12979,6 +13039,8 @@
       "type": "Necklace",
       "name": "Jelly Shoulder Buddy",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Days-of-Sunlight-Jellyfish-Neck-Accessory-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Days-of-Sunlight-Jellyfish-accessory-image.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Jelly_Shoulder_Buddy" },
       "order": 10401
     },
     {
