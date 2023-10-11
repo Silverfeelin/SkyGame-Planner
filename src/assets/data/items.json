@@ -265,6 +265,8 @@
       "type": "FaceAccessory",
       "name": "Rejecting Voyager Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/RejectingVoyager-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Mask02-Simple_horizontal.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Mask" },
       "order": 1
     },
     {
@@ -729,6 +731,8 @@
       "type": "FaceAccessory",
       "name": "Exhausted Dock Worker Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/ExhaustedDockWorker-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Mask04.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Mask" },
       "order": 2
     },
     // Ceremonial Worshiper
@@ -1196,6 +1200,8 @@
       "type": "FaceAccessory",
       "name": "Apologetic Lumberjack Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/ApologeticLumberjack-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mask05-Diamond.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Mask" },
       "order": 3
     },
     // Tearful Light Miner
@@ -1533,6 +1539,8 @@
       "type": "FaceAccessory",
       "name": "Backflipping Champion Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/BackflippingChampion-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mask08.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Mask" },
       "order": 5
     },
     // Cheerful Spectator
@@ -1669,6 +1677,8 @@
       "type": "FaceAccessory",
       "name": "Bowing Medalist Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/BowingMedalist-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Mask09.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Mask" },
       "order": 4
     },
     // Proud Victor
@@ -2124,6 +2134,8 @@
       "type": "FaceAccessory",
       "name": "Lookout Scout Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/LookoutScout-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Mask11.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Mask" },
       "order": 6
     },
     // #endregion
@@ -2194,6 +2206,8 @@
       "type": "FaceAccessory",
       "name": "Levitating Adept Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/LevitatingAdept-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Mask12-Long_Panel.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Mask" },
       "order": 7
     },
     // Meditating Monastic
@@ -2472,6 +2486,8 @@
       "group": "Elder",
       "name": "Isle Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Elder-Mask-Isle-original-Credit-Nastymold.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Mask" },
       "order": 51
     },
     // Prairie Elder
@@ -2489,6 +2505,8 @@
       "group": "Elder",
       "name": "Prairie Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Elder-Mask-Prairie-original-Credit-Nastymold.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Mask" },
       "order": 52
     },
     // Forest Elder
@@ -2506,6 +2524,8 @@
       "group": "Elder",
       "name": "Forest Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Elder-Mask-Forest-original-Credit-Nastymold.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Mask" },
       "order": 53
     },
     // Valley Elders
@@ -2645,6 +2665,8 @@
       "group": "Ultimate",
       "name": "Enchantment Ultimate Hair Tassels",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_enchantment_ultimate_tassles.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Season_of_enchantment_ultimate_tassels_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts" },
       "order": 1001
     },
     {
@@ -3406,6 +3428,8 @@
       "type": "FaceAccessory",
       "name": "Abyss Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/SOAbyss-Ultime-gift-hair-tassle-screenshot.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
       "order": 1201
     },
     {
@@ -4369,6 +4393,8 @@
       "name": "Moments Ultimate Glasses",
       "group": "Ultimate",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Moments-Guide-Head-accessory-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Moments-Guide-Head-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts" },
       "order": 901
     },
     {
@@ -5698,6 +5724,8 @@
       "type": "FaceAccessory",
       "name": "Hairtousle Teen Earmuffs",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Belonging_Headgear_Forest_Ear_Muffs.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Hair_Accessory" },
       "order": 1701
     },
     {
@@ -7180,6 +7208,8 @@
       "type": "FaceAccessory",
       "name": "Chill Sunbather Sunglasses",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Mimi-4117_07_chill_sunbather_mask.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_sanctuary_mask_chill_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask" },
       "order": 601
     },
     {
@@ -7671,6 +7701,8 @@
       "type": "FaceAccessory",
       "name": "Bearhug Hermit Horns",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Dreams_headpiece_bearhug_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair_Accessory" },
       "order": 1101
     },
     {
@@ -10649,6 +10681,8 @@
       "type": "FaceAccessory",
       "name": "Tiara We Can Touch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/SoAurora-Hair-Accessory-no-hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Hair_Accessory" },
       "order": 1301
     },
     {
@@ -11166,6 +11200,8 @@
       "type": "FaceAccessory",
       "name": "Tumbling Troublemaker Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Passage-Tumbling-Troublemaker-Hair-Accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Passage-Tumbling-Troublemaker-Hair-Accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Hair_Accessory" },
       "order": 1402
     },
     {
@@ -11195,6 +11231,8 @@
       "type": "FaceAccessory",
       "name": "Melancholy Mope Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Passage-Melancholy-Mope-Hair-accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Passage-Melancholy-Mope-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair_Accessory" },
       "order": 1401
     },
     {
@@ -11354,6 +11392,8 @@
       "type": "FaceAccessory",
       "name": "Reassuring Ranger Wheat Stalk",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Head-accessory-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Reassuring-Ranger-Head-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Face_Accessory" },
       "order": 1501
     },
     {
@@ -11424,6 +11464,8 @@
       "type": "FaceAccessory",
       "name": "Jolly Geologist Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Jolly-Geologist-Head-accessory-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Jolly-Geologist-Head-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Face_Accessory" },
       "order": 1502
     },
     {
@@ -12079,6 +12121,8 @@
       "type": "FaceAccessory",
       "name": "Nature Glasses",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Nature-Glasses-icon-Ray.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Days-of-Nature-Glasses.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Glasses" },
       "order": 801
     },
     {
@@ -12095,6 +12139,8 @@
       "type": "FaceAccessory",
       "name": "Rainbow Braid",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Rainbow_tassle_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Braid" },
       "order": 1601
     },
     {
@@ -12208,6 +12254,8 @@
       "type": "FaceAccessory",
       "name": "Rainbow Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Rainbow-2022-earring-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Earring" },
       "order": 1602
     },
     {
@@ -12215,6 +12263,8 @@
       "type": "FaceAccessory",
       "name": "Rainbow Headphones",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Rainbow_2022-_headphones.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Headphones" },
       "order": 1801
     },
     {
@@ -12258,6 +12308,8 @@
       "type": "FaceAccessory",
       "name": "Dark Rainbow Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Days-of-Colors-Dark-Rainbow-Earring.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Earrings" },
       "order": 1603
     },
     {
@@ -12456,19 +12508,28 @@
       "guid": "3HeVKqT39a",
       "name": "Style Heart Sunglasses",
       "type": "FaceAccessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Style-Heart-Sunglasses-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Style-Heart-Sunglasses-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Style-Heart-Sunglasses.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Heart_Sunglasses" },
+      "order": 853
     },
     {
       "guid": "BWUjIgnjnu",
       "name": "Style Flame Sunglasses",
       "type": "FaceAccessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Style-Flame-Sunglasses-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Style-Flame-Sunglasses-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Style-Flame-Sunglasses.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Flame_Sunglasses" },
+      "order": 852
     },
     {
       "guid": "qscApTevys",
       "name": "Style Star Sunglasses",
       "type": "FaceAccessory",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Style-Star-Sunglasses-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Style-Star-Sunglasses-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Style-Star-Sunglasses.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Star_Sunglasses" },
+      "order": 851
     },
     {
       "guid": "d_p_flDgEV",
@@ -12612,6 +12673,8 @@
       "type": "FaceAccessory",
       "name": "Mischief Withered Antlers",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Hair_2021_mischief_headpiece_iap.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Antlers" },
       "order": 2001
     },
     {
@@ -12658,6 +12721,8 @@
       "type": "FaceAccessory",
       "name": "Days of Feast Horns",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Icon_hair_feast_antlers.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Antlers_headpiece_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Horns" },
       "order": 1901
     },
     {
@@ -12789,6 +12854,8 @@
       "type": "FaceAccessory",
       "name": "Feast Goggles",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Days-of-Feast-Yeti-Goggles-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Feast-Yeti-Goggles.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Goggles" },
       "order": 701
     },
     {
