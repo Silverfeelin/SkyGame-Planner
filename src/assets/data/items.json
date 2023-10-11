@@ -36,6 +36,8 @@
       "type": "Cape",
       "name": "Base Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_cape_brown-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Cape_brown_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Capes#Base_Cape" },
       "unlocked": true,
       "order": 1
     },
@@ -312,6 +314,8 @@
       "type": "Cape",
       "name": "Butterfly Charmer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Cape_yellow_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape" },
       "order": 21
     },
     {
@@ -366,6 +370,8 @@
       "type": "Cape",
       "name": "Butterfly Charmer Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Cape_yellow_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape" },
       "order": 30
     },
     // Applauding Bellmaker
@@ -1064,6 +1070,8 @@
       "type": "Cape",
       "name": "Pouty Porter Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Cape_teal2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape" },
       "order": 24
     },
     {
@@ -1077,6 +1085,8 @@
       "type": "Cape",
       "name": "Pouty Porter Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Cape_teal_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape" },
       "order": 33
     },
     // Dismayed Hunter
@@ -1147,6 +1157,8 @@
       "type": "Cape",
       "name": "Dismayed Hunter Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cape_purple_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape" },
       "order": 26
     },
     {
@@ -1160,6 +1172,8 @@
       "type": "Cape",
       "name": "Dismayed Hunter Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape_purple_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape" },
       "order": 35
     },
     // Apologetic Lumberjack
@@ -1453,6 +1467,8 @@
       "type": "Cape",
       "name": "Handstanding Thrillseeker Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/HandstandingThrillseeker-2-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Cape_pink_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape" },
       "order": 27
     },
     {
@@ -1466,6 +1482,8 @@
       "type": "Cape",
       "name": "Handstanding Thrillseeker Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/HandstandingThrillseeker-tier-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Cape_pink_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape" },
       "order": 36
     },
     // Manta Whisperer
@@ -1734,6 +1752,8 @@
       "type": "Cape",
       "name": "Proud Victor Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/ProudVictor-2-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Cape_red_3.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape" },
       "order": 22
     },
     {
@@ -1780,6 +1800,8 @@
       "type": "Cape",
       "name": "Proud Victor Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/ProudVictor-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Cape_red_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape" },
       "order": 31
     },
     // #endregion
@@ -1972,6 +1994,8 @@
       "type": "Cape",
       "name": "Courageous Soldier Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CourageousSoldier-3-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Cape_green2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape" },
       "order": 23
     },
     {
@@ -1985,6 +2009,8 @@
       "type": "Cape",
       "name": "Courageous Soldier Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/CourageousSoldier-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Cape_green_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape" },
       "order": 32
     },
     // Stealthy Survivor
@@ -2033,6 +2059,8 @@
       "type": "Cape",
       "name": "Stealthy Survivor Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/StealthySurvivor-3-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Cape_black_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape" },
       "order": 28
     },
     {
@@ -2046,6 +2074,8 @@
       "type": "Cape",
       "name": "Stealthy Survivor Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_black_tier_2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Cape_black_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape" },
       "order": 37
     },
     // Saluting Captain
@@ -2378,6 +2408,8 @@
       "type": "Cape",
       "name": "Memory Whisperer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Cape_white_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape" },
       "order": 29
     },
     {
@@ -2391,6 +2423,8 @@
       "type": "Cape",
       "name": "Memory Whisperer Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Cape_white_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape" },
       "order": 38
     },
     // Polite Scholar
@@ -2511,6 +2545,8 @@
       "type": "Cape",
       "name": "Praying Acolyte Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_blue_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape" },
       "order": 25
     },
     {
@@ -2524,6 +2560,8 @@
       "type": "Cape",
       "name": "Praying Acolyte Cape 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_blue_tier_2_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape" },
       "order": 34
     },
     // #endregion
@@ -2867,6 +2905,8 @@
       "group": "Ultimate",
       "name": "Sanctuary Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_sanctuary_manta-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season_of_sanctuary_cape_ultimate_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts" },
       "order": 1602
     },
     {
@@ -3059,6 +3099,8 @@
       "group": "Ultimate",
       "name": "Dreams Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Dreams_cape_ultimate_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts" },
       "order": 1804
     },
     {
@@ -3173,6 +3215,8 @@
       "group": "Ultimate",
       "name": "Assembly Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Assembly_cape_ultimate_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts" },
       "order": 1901
     },
     {
@@ -3543,6 +3587,8 @@
       "type": "Cape",
       "name": "Abyss Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SOAbyss-Ultime-gift-Cape-vector-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SOAbyss-Ultime-gift-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
       "order": 2205
     },
     {
@@ -3655,6 +3701,8 @@
       "type": "Cape",
       "name": "Performance Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/SOPerformance-ultimate-cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts" },
       "order": 2301
     },
     {
@@ -3807,6 +3855,8 @@
       "type": "Cape",
       "name": "Shattering Ultimate Manta Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-ultimate-Cape-manta-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SOShattering-ultimate-Cape-manta-bac.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Cape" },
       "order": 2405
     },
     {
@@ -3814,6 +3864,8 @@
       "type": "Cape",
       "name": "Shattering Ultimate Krill Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/SOShattering-ultimate-Cape-krill-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SOShattering-ultimate-Cape-krill-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Cape" },
       "order": 2402
     },
     {
@@ -3935,6 +3987,8 @@
       "type": "Cape",
       "name": "AURORA Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAurora-Ultimate-Cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/SoAurora-Ultimate-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts" },
       "order": 2506
     },
     {
@@ -4417,6 +4471,8 @@
       "type": "Cape",
       "name": "Passage Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Passage-Ultimate-Guide-Cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Passage-Ultimate-Guide-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts" },
       "order": 2703
     },
     // #endregion
@@ -4649,6 +4705,8 @@
       "type": "Cape",
       "name": "Stretching Guru Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Icon_cape_gratitude_red-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape1-Season_of_Gratitude_2019.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape" },
       "order": 1102
     },
     {
@@ -4860,6 +4918,8 @@
       "type": "Cape",
       "name": "Saluting Protector Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Icon_cape_gratitude_white-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Gratitude_cape_white_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Cape" },
       "order": 1101
     },
     {
@@ -5011,6 +5071,8 @@
       "type": "Cape",
       "name": "Piggyback Lightseeker Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Lightseekers_cape_isle_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape" },
       "order": 1202
     },
     {
@@ -5306,6 +5368,8 @@
       "type": "Cape",
       "name": "Crab Whisperer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Lightseekers_cape_wasteland_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape" },
       "order": 1201
     },
     {
@@ -5383,6 +5447,8 @@
       "type": "Cape",
       "name": "Shushing Light Scholar Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightseekers_cape_vault_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape" },
       "order": 1203
     },
     {
@@ -5446,6 +5512,8 @@
       "type": "Cape",
       "name": "Confetti Cousin Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Icon_cape_belonging_red-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Belonging_cape_red_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Cape" },
       "order": 1301
     },
     {
@@ -5715,6 +5783,8 @@
       "type": "Cape",
       "name": "Wise Grandparent Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_cape_belonging_white-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Belonging_cape_white_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Cape" },
       "order": 1303
     },
     {
@@ -5799,6 +5869,8 @@
       "type": "Cape",
       "name": "Pleaful Parent Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_belonging_blue-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Belonging_cape_dark_blue_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Cape" },
       "order": 1302
     },
     {
@@ -6239,6 +6311,8 @@
       "type": "Cape",
       "name": "Troupe Juggler Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_rhythm_cape_valley_juggle_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Cape" },
       "order": 1001
     },
     {
@@ -6441,6 +6515,8 @@
       "type": "Cape",
       "name": "Thoughtful Director Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_rhythm_blue-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Season_of_rhythm_cape_vault_think_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Cape" },
       "order": 1002
     },
     {
@@ -6612,6 +6688,8 @@
       "type": "Cape",
       "name": "Indifferent Alchemist Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_cape_enchangment_purple_fold-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Season_of_enchantment_cape_indifferent_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape" },
       "order": 1503
     },
     {
@@ -6688,6 +6766,8 @@
       "type": "Cape",
       "name": "Crab Walker Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Icon_cape_enchantment_purple-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Season_of_enchantment_cape_crab_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape" },
       "order": 1501
     },
     {
@@ -6836,6 +6916,8 @@
       "type": "Cape",
       "name": "Snoozing Carpenter Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Icon_cape_enchantment_orange-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_enchantment_cape_sleepy_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape" },
       "order": 1502
     },
     {
@@ -6925,6 +7007,8 @@
       "type": "Cape",
       "name": "Playfighting Herbalist Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Icon_cape_enchantment_orange_fold-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Icon_cape_enchantment_orange_fold-Morybel-0146.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape" },
       "order": 1504
     },
     {
@@ -7083,6 +7167,8 @@
       "type": "Cape",
       "name": "Timid Bookworm Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Icon_cape_sanctuary_butterfly-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_sanctuary_cape_timid_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape" },
       "order": 1601
     },
     {
@@ -7324,6 +7410,8 @@
       "type": "Cape",
       "name": "Grateful Shell Collector Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_cape_sanctuary_shell-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Season_of_sanctuary_cape_grateful_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape" },
       "order": 1603
     },
     {
@@ -7422,6 +7510,8 @@
       "type": "Cape",
       "name": "Chill Sunbather Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Icon_cape_sanctuary_flower-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Season_of_sanctuary_cape_chill_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape" },
       "order": 1604
     },
     {
@@ -7513,6 +7603,8 @@
       "type": "Cape",
       "name": "Prophet of Water Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Icon_cape_prophecy_blue-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Prophecy_cape_water_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape" },
       "order": 1702
     },
     {
@@ -7618,6 +7710,8 @@
       "type": "Cape",
       "name": "Prophet of Earth Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Icon_cape_prophecy_maroon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Prophecy_cape_earth_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape" },
       "order": 1703
     },
     {
@@ -7725,6 +7819,8 @@
       "type": "Cape",
       "name": "Prophet of Air Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Icon_cape_prophecy_purple-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Prophecy_cape_air_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape" },
       "order": 1701
     },
     {
@@ -8018,6 +8114,8 @@
       "type": "Cape",
       "name": "Dancing Performer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Icon_cape_dreams_dancing-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Dreams_cape_dancing_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape" },
       "order": 1802
     },
     {
@@ -8096,6 +8194,8 @@
       "type": "Cape",
       "name": "Peeking Postman Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Icon_cape_dreams_peeking-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Dreams_cape_peeking_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape" },
       "order": 1801
     },
     {
@@ -8196,6 +8296,8 @@
       "type": "Cape",
       "name": "Spinning Mentor Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_cape_dreams_spinning-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Dreams_cape_spinning_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape" },
       "order": 1803
     },
     {
@@ -8380,6 +8482,8 @@
       "type": "Cape",
       "name": "Scolding Student Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_cape_assembly_green-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Assembly_cape_scolding_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Cape" },
       "order": 1902
     },
     {
@@ -8997,6 +9101,8 @@
       "type": "Cape",
       "name": "Stretching Lamplighter Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Icon_cape_littleprince_3-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Season_of_little_prince_cape_lamplighter_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Cape" },
       "order": 2003
     },
     {
@@ -9075,6 +9181,8 @@
       "type": "Cape",
       "name": "Slouching Soldier Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_cape_littleprince_tattered-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Season_of_little_prince_cape_slouching_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Cape" },
       "order": 2002
     },
     {
@@ -9158,6 +9266,8 @@
       "type": "Cape",
       "name": "Sneezing Geographer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Icon_cape_littleprince4-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Season_of_little_prince_cape_geographer_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Cape" },
       "order": 2004
     },
     {
@@ -9235,6 +9345,8 @@
       "type": "Cape",
       "name": "Star Collector Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_cape_littleprince_1-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Season_of_little_prince_cape_star_collector_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Cape" },
       "order": 2001
     },
     {
@@ -9275,6 +9387,8 @@
       "type": "Cape",
       "name": "Little Prince Scarf Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_cape_littleprince_scarf-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_little_prince_cape7_iap_scarf.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Scarf_Cape" },
       "order": 2005
     },
     {
@@ -9282,6 +9396,8 @@
       "type": "Cape",
       "name": "Little Prince Asteroid Jacket",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_cape_littleprince_asteroid-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Little_prince_asteroid_cape_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Asteroid_Jacket" },
       "order": 2006
     },
     {
@@ -9365,6 +9481,8 @@
       "type": "Cape",
       "name": "Lively Navigator Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Season_of_flight_cape_lively_navigator_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape" },
       "order": 2102
     },
     {
@@ -9442,6 +9560,8 @@
       "type": "Cape",
       "name": "Light Whisperer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_flight_cape_light_whisperer_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape" },
       "order": 2101
     },
     {
@@ -9699,6 +9819,8 @@
       "type": "Cape",
       "name": "Anxious Angler Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Anxious-Angler-cape-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SOAbyss-Anxious-Angler-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape" },
       "order": 2203
     },
     {
@@ -9787,6 +9909,8 @@
       "type": "Cape",
       "name": "Ceasing Commodore Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/SOAbyss-Ceasing-Commodore-cape-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/SOAbyss-Ceasing-Commodore-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape" },
       "order": 2201
     },
     {
@@ -9870,6 +9994,8 @@
       "type": "Cape",
       "name": "Bumbling Boatswain Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Bumbling-Boatswain-Cape-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/SOAbyss-Bumbling-Boatswain-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape" },
       "order": 2204
     },
     {
@@ -9956,6 +10082,8 @@
       "type": "Cape",
       "name": "Cackling Cannoneer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/SOAbyss-Cackling-Cannoneer-Cape-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/SOAbyss-Cackling-Cannoneer-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape" },
       "order": 2202
     },
     {
@@ -10158,6 +10286,8 @@
       "type": "Cape",
       "name": "Forgetful Storyteller Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SOPerformance_-Forgetful_Storyteller_-_Cape_-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SOPerformance_-Forgetful_Storyteller_-_Cape_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape" },
       "order": 2302
     },
     {
@@ -10214,6 +10344,8 @@
       "type": "Cape",
       "name": "Mellow Musician Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Morybel-0146-SoPerformance_-_Mellow_Musician-cape-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SoPerformance_-_Mellow_Musician-cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape" },
       "order": 2303
     },
     {
@@ -10375,6 +10507,8 @@
       "type": "Cape",
       "name": "Jellyfish Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SOShattering-Light-Cape-Jellyfish-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/SOShattering-Light-Cape-Jellyfish-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape" },
       "order": 2404
     },
     {
@@ -10423,6 +10557,8 @@
       "type": "Cape",
       "name": "Manta Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/SOShattering-Light-Cape-manta-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOShattering-Light-Cape-manta-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape" },
       "order": 2403
     },
     {
@@ -10507,6 +10643,8 @@
       "type": "Cape",
       "name": "Darkness Plant Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SOShattering-Dark-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/SOShattering-Dark-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Cape" },
       "order": 2401
     },
     {
@@ -10645,6 +10783,8 @@
       "type": "Cape",
       "name": "Running Wayfarer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/SoAurora-Running-Wayfarer-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoAurora-Running-Wayfarer-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Cape" },
       "order": 2502
     },
     {
@@ -10740,6 +10880,8 @@
       "type": "Cape",
       "name": "Mindful Miner Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoAurora-Mindful-Miner-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/SoAurora-Mindful-Miner-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Cape" },
       "order": 2504
     },
     {
@@ -10839,6 +10981,8 @@
       "type": "Cape",
       "name": "Warrior of Love Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SoAurora-Warrior-of-Love-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/SoAurora-Warrior-of-Love-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Cape" },
       "order": 2503
     },
     {
@@ -10932,6 +11076,8 @@
       "type": "Cape",
       "name": "Seed of Hope Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoAurora-Seed-of-Hope-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoAurora-Seed-of-Hope-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Cape" },
       "order": 2501
     },
     {
@@ -10990,6 +11136,8 @@
       "type": "Cape",
       "name": "Giving In Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Giving-In-Cape-IAP-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SoAurora-Giving-In-Cape-IAP-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#Giving_In_Cape" },
       "order": 2507
     },
     {
@@ -10997,6 +11145,8 @@
       "type": "Cape",
       "name": "Wings of AURORA",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAURORA-Wings-of-AURORA-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SoAURORA-Wings-of-AURORA-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#Wings_of_AURORA" },
       "order": 2505
     },
     {
@@ -11090,6 +11240,8 @@
       "type": "Cape",
       "name": "Bereft Veteran Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SoRemembrance-Bereft-Veteran-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SoRemembrance-Bereft-Veteran-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape" },
       "order": 2601
     },
     {
@@ -11259,6 +11411,8 @@
       "type": "Cape",
       "name": "Tiptoeing Tea-Brewer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape" },
       "order": 2603
     },
     {
@@ -11322,6 +11476,8 @@
       "type": "Cape",
       "name": "Wounded Warrior Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/SoRemembrance-Wounded-Warrior-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoRemembrance-Wounded-Warrior-Cape-Back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape" },
       "order": 2602
     },
     {
@@ -11469,6 +11625,8 @@
       "type": "Cape",
       "name": "Tumbling Troublemaker Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Passage-Tumbling-Troublemaker-Cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Tumbling-Troublemaker-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape" },
       "order": 2701
     },
     {
@@ -11621,6 +11779,8 @@
       "type": "Cape",
       "name": "Overactive Overachiever Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Passage-Overactive-Overachiever-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Overactive-Overachiever-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Cape" },
       "order": 2702
     },
     {
@@ -11708,6 +11868,8 @@
       "type": "Cape",
       "name": "Reassuring Ranger Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Reassuring-Ranger-Cape-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape" },
       "order": 2801
     },
     {
@@ -12011,6 +12173,8 @@
       "type": "Cape",
       "name": "Days of Fortune Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Icon_cape_fortune-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Chinese_new_year_cape_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Cape" },
       "order": 10001
     },
     {
@@ -12054,6 +12218,8 @@
       "type": "Cape",
       "name": "Days of Fortune Fish Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Days_of_Fortune_-_Fish_cape_icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Days-of-fortune-2021-outfit-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Cape" },
       "order": 10002
     },
     {
@@ -12275,6 +12441,8 @@
       "type": "Cape",
       "name": "Pink Bloom Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_cape_bloom-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Blossom_cape_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Cape" },
       "order": 10101
     },
     {
@@ -12310,6 +12478,8 @@
       "type": "Cape",
       "name": "Purple Bloom Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Purple_Bloom_Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Wisteria-cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Cape" },
       "order": 10103
     },
     {
@@ -12336,6 +12506,8 @@
       "type": "Cape",
       "name": "Red Bloom Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Days-of-Bloom-Tulip-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Days-of-Bloom-Tulip-Cape-back-1.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Red_Bloom_Cape" },
       "order": 10102
     },
     {
@@ -12374,6 +12546,8 @@
       "type": "Cape",
       "name": "Earth Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Icon_cape_earth.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Earth_cape_2020_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Earth_Cape" },
       "order": 10201
     },
     {
@@ -12390,6 +12564,8 @@
       "type": "Cape",
       "name": "Ocean Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Ocean_cape_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape" },
       "order": 10202
     },
     {
@@ -12397,6 +12573,8 @@
       "type": "Cape",
       "name": "Nature Turtle Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Nature-2022-turtle-cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Days-of-Nature-2022-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Cape" },
       "order": 10203
     },
     {
@@ -12434,6 +12612,8 @@
       "type": "Cape",
       "name": "Nature School Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Days-of-Nature-Fish-Vortex-cape-icon-Ray.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Days-of-Nature-Fish-Vortex-cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_School_Cape" },
       "order": 10204
     },
     {
@@ -12468,6 +12648,8 @@
       "type": "Cape",
       "name": "Rainbow Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Icon_cape_rainbow-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Rainbow_cape_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Cape" },
       "order": 10302
     },
     {
@@ -12643,6 +12825,8 @@
       "type": "Cape",
       "name": "Dark Rainbow Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Days-of-Color-Dark-Rainbow-Cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Days-of-Color-Dark-Rainbow-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Cape" },
       "order": 10301
     },
     // #endregion
@@ -12911,6 +13095,8 @@
       "type": "Cape",
       "name": "Spooky Bat Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Icon_cape_bat-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Bat_cape_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape" },
       "order": 10401
     },
     {
@@ -12936,6 +13122,8 @@
       "type": "Cape",
       "name": "Mischief Web Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_cape_spider-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Spider_cape_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape" },
       "order": 10402
     },
     {
@@ -12968,6 +13156,8 @@
       "type": "Cape",
       "name": "Mischief Withered Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_leaf_cape-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_2021_mischief_leaf_cape.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Cape" },
       "order": 10403
     },
     {
@@ -13045,6 +13235,8 @@
       "type": "Cape",
       "name": "Cat Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Cat-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Days-of-Mischief-2022-Cat-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape" },
       "order": 10404
     },
     {
@@ -13079,6 +13271,8 @@
       "type": "Cape",
       "name": "Snowflake Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Icon_cape_snowflake-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Snowflake_cape.back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Cape" },
       "order": 10503
     },
     {
@@ -13086,6 +13280,8 @@
       "type": "Cape",
       "name": "Days of Feast Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Icon_cape_santa-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Santa_cape_back_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Cape" },
       "order": 10501
     },
     {
@@ -13198,6 +13394,8 @@
       "type": "Cape",
       "name": "Winter Ancestor Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Days_of_Feast_Elder_Cape_icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Feast_Elder_Cape_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Ancestor_Cape" },
       "order": 10502
     },
     {
@@ -13234,6 +13432,8 @@
       "type": "Cape",
       "name": "Cozy Hermit Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Days-of-Feast-Yeti-Fur-Cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Days-of-Feast-Yeti-Fur-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape" },
       "order": 10504
     },
     // #endregion
@@ -13333,6 +13533,8 @@
       "type": "Cape",
       "name": "Kizuna AI Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Kizuna-AI-cape-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Kizuna-AI-cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Kizuna_AI_Cape" },
       "order": 10601
     },
     // #endregion
@@ -13372,19 +13574,28 @@
       "guid": "QjK8cvBTfX",
       "type": "Cape",
       "name": "Sunlight Pink Towel Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Sunlight-Pink-Towel-Cape-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Sunlight-Pink-Towel-Cape-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sunlight-Pink-Towel-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Pink_Beach_Towel_Cape" },
+      "order": 10352
     },
     {
       "guid": "FaGQYktG04",
       "type": "Cape",
       "name": "Sunlight Orange Towel Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Sunlight-Orange-Towel-Cape-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Sunlight-Orange-Towel-Cape-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Sunlight-Orange-Towel-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Yellow_Beach_Towel_Cape" },
+      "order": 10353
     },
     {
       "guid": "NBkEtlvG6-",
       "type": "Cape",
       "name": "Sunlight Blue Towel Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Sunlight-Blue-Towel-Cape-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Sunlight-Blue-Towel-Cape-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Sunlight-Blue-Towel-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Blue_Beach_Towel_Cape" },
+      "order": 10351
     },
     {
       "guid": "03n8xOK3J3",
@@ -13510,6 +13721,8 @@
       "type": "Cape",
       "name": "Orange Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Icon_cape_orange-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Cape_orange_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack" },
       "order": 4
     },
     {
@@ -13517,6 +13730,8 @@
       "type": "Cape",
       "name": "Founder's Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Icon_cape_tgc_b-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Founders_cape_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack" },
       "order": 3
     },
     {
@@ -13524,6 +13739,8 @@
       "type": "Cape",
       "name": "Beta Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Beta-cape-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Beta_cape_back_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape" },
       "order": 2
     },
     {
@@ -13563,6 +13780,8 @@
       "type": "Cape",
       "name": "Nintendo Blue Switch Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Icon_cape_nintendo_blue-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Cape_nintendo_blue_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack" },
       "order": 10702
     },
     {
@@ -13570,6 +13789,8 @@
       "type": "Cape",
       "name": "Nintendo Red Switch Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Icon_cape_nintendo_red-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_nintendo_red_back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack" },
       "order": 10701
     },
     {
@@ -13604,6 +13825,8 @@
       "type": "Cape",
       "name": "Journey Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/JourneyPack-Cape-back-Nastymold.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Journey_Pack" },
       "order": 10801
     },
     {
