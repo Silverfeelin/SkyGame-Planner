@@ -1,5 +1,6 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router, convertToParamMap } from '@angular/router';
+import { ReplaySubject, Subject, interval } from 'rxjs';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -7,7 +8,8 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-items',
   templateUrl: './items.component.html',
-  styleUrls: ['./items.component.less']
+  styleUrls: ['./items.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('itemDiv', { static: true })
@@ -70,24 +72,36 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
 
     this.type = type as ItemType || ItemType.Outfit;
     this.shownItems = this.typeItems[this.type] ?? [];
-    if (this.type === ItemType.Emote) {
-      this.shownItems = Object.values(this.emotes);
-    }
-
+    this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
     this.previewItems = this.shownItems.filter(item => item.previewUrl);
 
-    this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
+    if (this.type === ItemType.Emote) {
+      this.shownItems = Object.values(this.emotes);
+      this.shownUnlocked = this.shownItems.filter(item => item.unlocked && item.level === this.emoteLevels[item.name]).length;
+    }
+
+    /* Async test
+    let shown: Array<IItem> = [];
+    let toShow = [...this.shownItems];
+    const o = interval(1).subscribe(() => {
+      shown.push(...toShow.slice(shown.length, shown.length + 10));
+      if (shown.length == toShow.length) { o.unsubscribe(); }
+      this.shownItemsAsync.next(shown);
+    });
+    */
+
     this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held || this.type === ItemType.Shoes || this.type === ItemType.FaceAccessory;
-    //this.showNone = false;
     this.offsetNone = this.showNone ? 1 : 0;
 
+    // Select item from query.
     const itemGuid = query.get('item') || '';
     if (itemGuid) {
       this.selectedItem = this._dataService.guidMap.get(itemGuid) as IItem;
       this.selectedItemNav = this.selectedItem ? NavigationHelper.getItemSource(this.selectedItem) : undefined;
     }
 
-    this.showFieldGuide = (query.get('fg') ?? localStorage.getItem('items.fg') ?? '0') === '1';
+    // Toggle field guide from query.
+    this.showFieldGuide = query.get('fg') === '1';
   }
 
   setColumns(): void {
@@ -102,13 +116,17 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   }
 
   selectCategory(type: string) {
-    this._router.navigate([], { queryParams: { type, item: this.selectedItem?.guid }, replaceUrl: true });
+    const searchParams = new URL(location.href).searchParams;
+    searchParams.set('type', type);
+    this.selectedItem ? searchParams.set('item', this.selectedItem.guid) : searchParams.delete('item');
+    const queryParams: Params = {};
+    for (const [k,v] of searchParams.entries()) { queryParams[k] = v; }
+
+    this._router.navigate([], { queryParams, replaceUrl: true });
   }
 
   togglePreviews(): void {
     this.showFieldGuide = !this.showFieldGuide;
-
-    localStorage.setItem('items.fg', this.showFieldGuide ? '1' : '0');
 
     const url = new URL(location.href);
     url.searchParams.set('fg', this.showFieldGuide ? '1' : '0');
