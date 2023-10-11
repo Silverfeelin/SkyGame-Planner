@@ -32,6 +32,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   emoteLevels: { [key: string]: number } = {};
 
   shownItems: Array<IItem> = [];
+  previewItems: Array<IItem> = [];
   shownUnlocked: number = 0;
 
   showFieldGuide = false;
@@ -72,6 +73,9 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     if (this.type === ItemType.Emote) {
       this.shownItems = Object.values(this.emotes);
     }
+
+    this.previewItems = this.shownItems.filter(item => item.previewUrl);
+
     this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
     this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held || this.type === ItemType.Shoes || this.type === ItemType.FaceAccessory;
     //this.showNone = false;
@@ -82,6 +86,8 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
       this.selectedItem = this._dataService.guidMap.get(itemGuid) as IItem;
       this.selectedItemNav = this.selectedItem ? NavigationHelper.getItemSource(this.selectedItem) : undefined;
     }
+
+    this.showFieldGuide = (query.get('fg') ?? localStorage.getItem('items.fg') ?? '0') === '1';
   }
 
   setColumns(): void {
@@ -101,6 +107,12 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
 
   togglePreviews(): void {
     this.showFieldGuide = !this.showFieldGuide;
+
+    localStorage.setItem('items.fg', this.showFieldGuide ? '1' : '0');
+
+    const url = new URL(location.href);
+    url.searchParams.set('fg', this.showFieldGuide ? '1' : '0');
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   private initializeItems(): void {
@@ -142,14 +154,22 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   }
 
   selectItem(event: MouseEvent, item: IItem): void {
+    // Double click, open item.
     if (event.detail > 1) {
       this.openItem(item);
       return;
     }
 
-    window.history.replaceState(window.history.state, '', window.location.pathname + `?type=${this.type}&item=${item.guid}`);
+    // Update current URL to match selection.
+    const url = new URL(location.href);
+    url.searchParams.set('type', `${this.type}`);
+    url.searchParams.set('item', item.guid);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
+
+    // Select item
     this.onQueryParamsChanged(convertToParamMap({ type: this.type, item: item.guid }));
 
+    // Scroll to item if out of view.
     if (this._scrollToPreview) {
       setTimeout(() => {
         this.itemDiv.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });

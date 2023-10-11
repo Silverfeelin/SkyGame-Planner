@@ -157,7 +157,7 @@
 </div>
 
 <!-- Field guide -->
-<ng-container *ngIf="shownItems?.length">
+<ng-container *ngIf="previewItems?.length">
   <div class="sky-card mt">
     <div class="sky-card-header header-previews" (click)="togglePreviews()">
       <h2 class="h3 mb-0">
@@ -166,9 +166,10 @@
       </h2>
     </div>
     <div class="sky-card-body" *ngIf="showFieldGuide">
-      <div class="sky-flex flex-wrap" *ngIf="showFieldGuide">
-        <ng-container *ngFor="let item of shownItems">
-          <div *ngIf="item.previewUrl" (click)="selectItem($event, item)"
+      <div class="sky-flex flex-wrap" *ngIf="previewItems?.length">
+        <ng-container *ngFor="let item of previewItems">
+          <div *ngIf="item.previewUrl" (click)="openItem(item)"
+          [class.highlight]="item && item === selectedItem"
             class="item-preview link" [ngbTooltip]="item.name" container="body" placement="auto">
             <div class="pad">
               <img [src]="item.previewUrl" class="preview-img" loading="lazy">
