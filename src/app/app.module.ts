@@ -47,6 +47,8 @@ import { SpiritCardComponent } from './components/spirit-card/spirit-card.compon
 import { BlankComponent } from './components/blank/blank.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { ItemIconsComponent } from './components/item/item-icons/item-icons.component';
+import { FormsModule } from '@angular/forms';
+import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
 
 @NgModule({
   declarations: [
@@ -91,12 +93,14 @@ import { ItemIconsComponent } from './components/item/item-icons/item-icons.comp
     SpiritCardComponent,
     BlankComponent,
     ClockComponent,
-    ItemIconsComponent
+    ItemIconsComponent,
+    WikiLinkComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgbModule,
     LayoutModule,
     MatIconModule

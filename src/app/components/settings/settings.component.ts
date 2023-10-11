@@ -4,6 +4,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { ThemeService } from 'src/app/services/theme.service';
 import { DataService } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
+import { SettingService } from 'src/app/services/setting.service';
 
 @Component({
   selector: 'app-settings',
@@ -17,8 +18,11 @@ export class SettingsComponent {
   dateFormats: Array<string>;
   currentTheme: string;
 
+  wikiNewTab = false;
+
   constructor(
     private readonly _dataService: DataService,
+    private readonly _settingService: SettingService,
     private readonly _storageService: StorageService,
     private readonly _themeService: ThemeService
   ) {
@@ -26,6 +30,7 @@ export class SettingsComponent {
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
     this.currentTheme = this._themeService.theme || 'sky';
+    this.wikiNewTab = _settingService.wikiNewTab;
   }
 
   export(): void {
@@ -110,5 +115,10 @@ export class SettingsComponent {
     this.dateFormat = format;
     DateHelper.displayFormat = format;
     localStorage.setItem('date.format', format);
+  }
+
+  toggleWikiTab(): void {
+    this.wikiNewTab = !this.wikiNewTab;
+    this._settingService.wikiNewTab = this.wikiNewTab;
   }
 }

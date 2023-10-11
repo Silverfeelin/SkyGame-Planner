@@ -1,6 +1,5 @@
-import { AfterContentInit, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router, convertToParamMap } from '@angular/router';
-import { ReplaySubject, Subject, interval } from 'rxjs';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -116,11 +115,9 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   }
 
   selectCategory(type: string) {
-    const searchParams = new URL(location.href).searchParams;
-    searchParams.set('type', type);
-    this.selectedItem ? searchParams.set('item', this.selectedItem.guid) : searchParams.delete('item');
-    const queryParams: Params = {};
-    for (const [k,v] of searchParams.entries()) { queryParams[k] = v; }
+    const queryParams = NavigationHelper.getQueryParams(location.href);
+    queryParams['type'] = type;
+    this.selectedItem ? queryParams['item'] = this.selectedItem.guid : delete queryParams['item'];
 
     this._router.navigate([], { queryParams, replaceUrl: true });
   }
@@ -185,7 +182,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
 
     // Select item
-    this.onQueryParamsChanged(convertToParamMap({ type: this.type, item: item.guid }));
+    this.onQueryParamsChanged(convertToParamMap(NavigationHelper.getQueryParams(url)));
 
     // Scroll to item if out of view.
     if (this._scrollToPreview) {

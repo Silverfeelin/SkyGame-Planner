@@ -142,15 +142,11 @@
         <a class="item-icon item-icon-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
           <app-item [item]="selectedItem" [large]="true" [hoverHighlight]="false"></app-item>
         </a>
-        <a *ngIf="selectedItem?._wiki?.href" class="info-grid-find container" [href]="selectedItem._wiki?.href">
-          <mat-icon class="menu-icon">question_mark</mat-icon>
-          <span class="menu-label">Wiki</span>
-        </a>
+        <app-wiki-link [wiki]="selectedItem._wiki" [aClass]="'info-grid-find container'"></app-wiki-link>
         <a *ngIf="selectedItemNav" class="info-grid-find container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
           <mat-icon class="menu-icon">search</mat-icon>
           <span class="menu-label">Find item</span>
         </a>
-
       </div>
     </div>
   </div>
