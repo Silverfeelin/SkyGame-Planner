@@ -26,6 +26,8 @@
       "type": "Hair",
       "name": "Base Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_default.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Hair02-Default.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
       "unlocked": true,
       "order": 1
     },
@@ -86,6 +88,8 @@
       "type": "Hair",
       "name": "Pointing Candlemaker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/PointingCandlemaker-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Hair18-Short_Cowlick.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Hair" },
       "order": 2
     },
     {
@@ -156,6 +160,8 @@
       "type": "Hair",
       "name": "Ushering Stargazer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/UsheringStargazer-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Hair06-Single_Ponytail.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Hair" },
       "order": 3
     },
     {
@@ -232,6 +238,8 @@
       "type": "Hair",
       "name": "Rejecting Voyager Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/RejectingVoyager-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Hair34-One_Side_Short.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Hair" },
       "order": 4
     },
     {
@@ -387,6 +395,8 @@
       "type": "Hair",
       "name": "Applauding Bellmaker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/ApplaudingBellmaker-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Hair05-Pippi_Ponytails.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Hair" },
       "order": 7
     },
     {
@@ -448,6 +458,8 @@
       "type": "Hair",
       "name": "Waving Bellmaker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Hair10-Small_Tuft.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Hair" },
       "order": 5
     },
     {
@@ -524,6 +536,8 @@
       "type": "Hair",
       "name": "Slumbering Shipwright Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/SlumberingShipwright-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Hair37-Mid_Mohawk.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Hair" },
       "order": 6
     },
     {
@@ -618,6 +632,8 @@
       "type": "Hair",
       "name": "Laughing Light Catcher Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/LaughingLightCatcher-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Hair26-Puffy_Ponytails.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Hair" },
       "order": 22
     },
     {
@@ -670,6 +686,8 @@
       "type": "Hair",
       "name": "Bird Whisperer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BirdWhisperer-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Hair11-Vertical_Ponytail.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Hair" },
       "order": 23
     },
     // Exhausted Dock Worker
@@ -838,6 +856,8 @@
       "type": "Hair",
       "name": "Shivering Trailblazer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/ShiveringTrailblazer-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Hair08-Wispy.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Hair" },
       "order": 24
     },
     // Blushing Prospector
@@ -867,6 +887,8 @@
       "type": "Hair",
       "name": "Blushing Prospector Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/BlushingProspector-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Hair32-Pigtail_Braids.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Hair" },
       "order": 12
     },
     {
@@ -922,6 +944,8 @@
       "type": "Hair",
       "name": "Hide'n'Seek Pioneer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/HideNSeekPioneer-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Hair14-Bob.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Hair" },
       "order": 10
     },
     {
@@ -999,6 +1023,8 @@
       "type": "Hair",
       "name": "Pouty Porter Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/PoutyPorter-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Hair35-One_Side_Medium.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Hair" },
       "order": 11
     },
     {
@@ -1080,6 +1106,8 @@
       "type": "Hair",
       "name": "Dismayed Hunter Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/DismayedHunter-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Hair17-Thick_Ponytails.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Hair" },
       "order": 25
     },
     {
@@ -1161,6 +1189,8 @@
       "type": "Hair",
       "name": "Apologetic Lumberjack Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/ApologeticLumberjack-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Hair07-Short_Ponytails.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Hair" },
       "order": 9
     },
     {
@@ -1231,6 +1261,8 @@
       "type": "Hair",
       "name": "Tearful Light Miner Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/TearfulLightMiner-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Hair38-Short_Mullet.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Hair" },
       "order": 8
     },
     {
@@ -1325,6 +1357,8 @@
       "type": "Hair",
       "name": "Confident Sightseer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/ConfidentSightseer-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Hair03-Wedge_Cut.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Hair" },
       "order": 13
     },
     {
@@ -1500,6 +1534,8 @@
       "type": "Hair",
       "name": "Backflipping Champion Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/BackflippingChampion-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Hair12-Chris_Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Hair" },
       "order": 27
     },
     {
@@ -1570,6 +1606,8 @@
       "type": "Hair",
       "name": "Cheerful Spectator Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/CheerfulSpectator-Hair-Credit-Ed.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Hair28-Afro.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Hair" },
       "order": 28
     },
     {
@@ -1638,6 +1676,8 @@
       "type": "Hair",
       "name": "Bowing Medalist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/BowingMedalist-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Hair04-Lions_Mane_Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Hair" },
       "order": 26
     },
     {
@@ -1771,6 +1811,8 @@
       "type": "Hair",
       "name": "Frightened Refugee Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/FrightenedRefugee-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Hair27-Puffy_Ponytail.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Hair" },
       "order": 14
     },
     {
@@ -1839,6 +1881,8 @@
       "type": "Hair",
       "name": "Fainting Warrior Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/FaintingWarrior-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Hair36-One_Side_Long.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Hair" },
       "order": 16
     },
     {
@@ -1895,6 +1939,8 @@
       "type": "Hair",
       "name": "Courageous Soldier Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/CourageousSoldier-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Hair13-Short_Mohawk.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Hair" },
       "order": 15
     },
     {
@@ -1954,6 +2000,8 @@
       "type": "Hair",
       "name": "Stealthy Survivor Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/StealthySurvivor-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Hair33-Short_Dreads.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Hair" },
       "order": 17
     },
     {
@@ -2027,6 +2075,8 @@
       "type": "Hair",
       "name": "Saluting Captain Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SalutingCaptain-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Hair15-Short_Boy.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Hair" },
       "order": 18
     },
     {
@@ -2167,6 +2217,8 @@
       "type": "Hair",
       "name": "Levitating Adept Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/LevitatingAdept-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Hair39-Long_Mullet.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Hair" },
       "order": 19
     },
     {
@@ -2237,6 +2289,8 @@
       "type": "Hair",
       "name": "Meditating Monastic Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Meditating-Monastic-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Hair16-Short_Beard.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Hair" },
       "order": 20
     },
     {
@@ -2385,6 +2439,8 @@
       "type": "Hair",
       "name": "Polite Scholar Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/PoliteScholar-3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Hair01-Bald.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Hair" },
       "order": 99999
     },
     // Praying Acolyte
@@ -2414,6 +2470,8 @@
       "type": "Hair",
       "name": "Praying Acolyte Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/PrayingAcolyte-2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Hair09-Long_One_Braid.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Hair" },
       "order": 21
     },
     {
@@ -2478,6 +2536,8 @@
       "group": "Elder",
       "name": "Isle Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_hair_elder_isle.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Hair19-Isle_Elder.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Hair" },
       "order": 51
     },
     {
@@ -2497,6 +2557,8 @@
       "group": "Elder",
       "name": "Prairie Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Icon_hair_elder_prairie.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair20-Prairie_Elder.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Hair" },
       "order": 52
     },
     {
@@ -2516,6 +2578,8 @@
       "group": "Elder",
       "name": "Forest Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Icon_hair_elder_forest.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Hair21-Forest_Elder.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Hair" },
       "order": 53
     },
     {
@@ -2535,6 +2599,8 @@
       "group": "Elder",
       "name": "Valley Elder Hair 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Icon_hair_elder_valley_2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Hair23-Valley_Elder_2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair" },
       "order": 54
     },
     {
@@ -2543,6 +2609,8 @@
       "group": "Elder",
       "name": "Valley Elder Hair 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Icon_hair_elder_valley_1.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Hair22-Valley_Elder_1.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair" },
       "order": 55
     },
     // Wasteland Elder
@@ -2552,6 +2620,8 @@
       "group": "Elder",
       "name": "Wasteland Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Icon_hair_elder_wasteland.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Hair24-Wasteland_Elder.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wasteland_Elder#Hair" },
       "order": 56
     },
     // Vault Elder
@@ -2561,6 +2631,8 @@
       "group": "Elder",
       "name": "Vault Elder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_hair_elder_vault.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Hair25-Vault_Elder.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder#Hair" },
       "order": 57
     },
     // #endregion
@@ -2655,6 +2727,8 @@
       "group": "Ultimate",
       "name": "Rhythm Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Icon_hair_rhythm_ultimate.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Season_of_rhythm_hair_ultimate_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts" },
       "order": 1404
     },
     // #endregion
@@ -2685,6 +2759,8 @@
       "group": "Ultimate",
       "name": "Enchantment Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Icon_hair_enchantment_ultimate.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_enchantment_hair_ultimate_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts" },
       "order": 1507
     },
     {
@@ -3079,6 +3155,8 @@
       "group": "Ultimate",
       "name": "Assembly Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Icon_hair_assembly_ultimate.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Assembly_hair_ultimate_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts" },
       "order": 1901
     },
     {
@@ -3222,6 +3300,8 @@
       "group": "Ultimate",
       "name": "Little Prince Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Icon_hair_prince_ultimate.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Season_of_little_prince_hair6_ultimate.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
       "order": 2006
     },
     {
@@ -3580,6 +3660,8 @@
       "type": "Hair",
       "name": "Performance Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/SOPerformance-ultimate-hair-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOPerformance-ultimate-hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts" },
       "order": 2301
     },
     {
@@ -3833,6 +3915,8 @@
       "type": "Hair",
       "name": "AURORA Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/SoAurora-Ultimate-Hair-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SoAurora-Ultimate-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts" },
       "order": 2506
     },
     {
@@ -4468,6 +4552,8 @@
       "type": "Hair",
       "name": "Sassy Drifter Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Mimi-4117_02_sassy_drifter_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Hair40-SeasonOfGratitude_2019.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Hair" },
       "order": 1101
     },
     {
@@ -4524,6 +4610,8 @@
       "type": "Hair",
       "name": "Stretching Guru Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Mimi-4117_02_stretching_guru_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/SoG2-2019_Hat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Hair" },
       "order": 1103
     },
     {
@@ -4619,6 +4707,8 @@
       "type": "Hair",
       "name": "Provoking Performer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_02_provoking_performer_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Hair41-SeasonOfGratitude_2019.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Hair" },
       "order": 1102
     },
     {
@@ -4908,6 +4998,8 @@
       "type": "Hair",
       "name": "Piggyback Lightseeker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Mimi-4117_03_piggyback_lightseeker_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Lightseekers_hair_isle_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Hair" },
       "order": 1203
     },
     {
@@ -4948,6 +5040,8 @@
       "type": "Hair",
       "name": "Doublefive Light Catcher Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Mimi-4117_03_doublefive_light_catcher_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Lightseekers_hair_prairie_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Hair" },
       "order": 1205
     },
     {
@@ -5032,6 +5126,8 @@
       "type": "Hair",
       "name": "Laidback Pioneer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Mimi-4117_03_laidback_pioneer_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Lightseekers_hair_forest_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Hair" },
       "order": 1204
     },
     {
@@ -5115,6 +5211,8 @@
       "type": "Hair",
       "name": "Twirling Champion Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Mimi-4117_03_twirling_champion_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Lightseekers_hair_valley_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Hair" },
       "order": 1202
     },
     {
@@ -5195,6 +5293,8 @@
       "type": "Hair",
       "name": "Crab Whisperer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Mimi-4117_03_crab_whisperer_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Lightseekers_hair_wasteland_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Hair" },
       "order": 1201
     },
     {
@@ -5349,6 +5449,8 @@
       "type": "Hair",
       "name": "Confetti Cousin Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Mimi-4117_04_confetti_cousin_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Belonging_Hair_Prairie.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Hair" },
       "order": 1301
     },
     {
@@ -5509,6 +5611,8 @@
       "type": "Hair",
       "name": "Sparkler Parent Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Mimi-4117_04_sparkler_parent_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Belonging_Hair_Valley.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Hair" },
       "order": 1302
     },
     {
@@ -5939,6 +6043,8 @@
       "type": "Hair",
       "name": "Festival Spin Dancer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Mimi-4117_05_festive_spin_dancer_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Season_of_rhythm_hair_prairie_dance_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Hair" },
       "order": 1401
     },
     {
@@ -6094,6 +6200,8 @@
       "type": "Hair",
       "name": "Troupe Juggler Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_05_troupe_juggler_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Season_of_rhythm_hair_valley_juggle_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Hair" },
       "order": 1402
     },
     {
@@ -6190,6 +6298,8 @@
       "type": "Hair",
       "name": "Respectful Pianist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Mimi-4117_05_respectful_pianist_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Season_of_rhythm_hair_wasteland_respect_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Hair" },
       "order": 1403
     },
     {
@@ -6405,6 +6515,8 @@
       "type": "Hair",
       "name": "Nodding Muralist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Mimi-4117_06_nodding_muralist_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Season_of_enchantment_hair_nodding_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Hair" },
       "order": 1501
     },
     {
@@ -6475,6 +6587,8 @@
       "type": "Hair",
       "name": "Indifferent Alchemist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Mimi-4117_06_indifferent_alchemist_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Season_of_enchantment_hair_indifferent_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Hair" },
       "order": 1505
     },
     {
@@ -6535,6 +6649,8 @@
       "type": "Hair",
       "name": "Crab Walker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Mimi-4117_06_crab_walker_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Season_of_enchantment_hair_crabwalk_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Hair" },
       "order": 1504
     },
     {
@@ -6638,6 +6754,8 @@
       "type": "Hair",
       "name": "Scarecrow Farmer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Mimi-4117_06_scarecrow_farmer_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Season_of_enchantment_hair_scare_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Hair" },
       "order": 1502
     },
     {
@@ -6691,6 +6809,8 @@
       "type": "Hair",
       "name": "Snoozing Carpenter Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Mimi-4117_06_snoozing_carpenter_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Season_of_enchantment_hair_doze_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Hair" },
       "order": 1503
     },
     {
@@ -6792,6 +6912,8 @@
       "type": "Hair",
       "name": "Playfighting Herbalist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_06_playfighting_herbalist_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Season_of_enchantment_hair_playfight_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Hair" },
       "order": 1506
     },
     {
@@ -6860,6 +6982,8 @@
       "type": "Hair",
       "name": "Jelly Whisperer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair" },
       "order": 1601
     },
     {
@@ -6934,6 +7058,8 @@
       "type": "Hair",
       "name": "Timid Bookworm Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_07_timid_bookworm_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_sanctuary_hair_timid_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair" },
       "order": 1602
     },
     {
@@ -6994,6 +7120,8 @@
       "type": "Hair",
       "name": "Rallying Thrillseeker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Mimi-4117_07_rallying_thrillseeker_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Season_of_sanctuary_hair_rally_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair" },
       "order": 1603
     },
     {
@@ -7099,6 +7227,8 @@
       "type": "Hair",
       "name": "Hiking Grouch Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Mimi-4117_07_hiking_grouch_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season_of_sanctuary_hair_grouch_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair" },
       "order": 1604
     },
     {
@@ -7167,6 +7297,8 @@
       "type": "Hair",
       "name": "Grateful Shell Collector Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_07_grateful_shell_collector_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Season_of_sanctuary_hair_grateful_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair" },
       "order": 1605
     },
     {
@@ -7346,6 +7478,8 @@
       "type": "Hair",
       "name": "Prophet of Water Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Mimi-4117_08_prophet_of_water_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Prophecy-Prophet_of_Water_Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Hair" },
       "order": 1701
     },
     {
@@ -7436,6 +7570,8 @@
       "type": "Hair",
       "name": "Prophet of Earth Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Mimi-4117_08_prophet_of_earth_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Prophecy-Prophet_of_Earth_Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Hair" },
       "order": 1702
     },
     {
@@ -7539,6 +7675,8 @@
       "type": "Hair",
       "name": "Prophet of Air Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_air_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Air_Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Hair" },
       "order": 1703
     },
     {
@@ -7641,6 +7779,8 @@
       "type": "Hair",
       "name": "Prophet of Fire Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Mimi-4117_08_prophet_of_fire_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Prophecy-Prophet_of_Fire_Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Hair" },
       "order": 1704
     },
     {
@@ -7776,6 +7916,8 @@
       "type": "Hair",
       "name": "Bearhug Hermit Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Icon_hair_dreams_hermit.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Dreams_hair_bearhug_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair" },
       "order": 1801
     },
     {
@@ -7832,6 +7974,8 @@
       "type": "Hair",
       "name": "Dancing Performer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Icon_hair_dreams_dancing.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Dreams_hair_dancing_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Hair" },
       "order": 1802
     },
     {
@@ -7996,6 +8140,8 @@
       "type": "Hair",
       "name": "Spinning Mentor Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_dreams_3.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Dreams_hair_spinning_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Hair" },
       "order": 1803
     },
     {
@@ -8093,6 +8239,8 @@
       "type": "Hair",
       "name": "Baffled Botanist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_hair_assembly_baffled.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Assembly_hair_baffled_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Hair" },
       "order": 1904
     },
     {
@@ -8205,6 +8353,8 @@
       "type": "Hair",
       "name": "Scolding Student Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_assembly_scolding.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Assembly_hair_scolding_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Hair" },
       "order": 1905
     },
     {
@@ -8301,6 +8451,8 @@
       "type": "Hair",
       "name": "Scaredy Cadet Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_hair_assembly_scared.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Assembly_hair_scaredy_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Hair" },
       "order": 1906
     },
     {
@@ -8355,6 +8507,8 @@
       "type": "Hair",
       "name": "Marching Adventurer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Icon_hair_assembly_march.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Assembly_hair_marching_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Hair" },
       "order": 1903
     },
     {
@@ -8592,6 +8746,8 @@
       "type": "Hair",
       "name": "Daydream Forester Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Icon_hair_assembly_daydream.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Assembly_hair_daydream_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Hair" },
       "order": 1902
     },
     {
@@ -8641,6 +8797,8 @@
       "type": "Hair",
       "name": "Beckoning Ruler Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Icon_hair_prince_king.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Season_of_little_prince_hair4.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Hair" },
       "order": 2004
     },
     {
@@ -8754,6 +8912,8 @@
       "type": "Hair",
       "name": "Gloating Narcissist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Icon_hair_prince_narcissist.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Season_of_little_prince_hair2.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Hair" },
       "order": 2002
     },
     {
@@ -8808,6 +8968,8 @@
       "type": "Hair",
       "name": "Stretching Lamplighter Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_hair_prince_lightkeeper.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Season_of_little_prince_hair3.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Hair" },
       "order": 2003
     },
     {
@@ -8871,6 +9033,8 @@
       "type": "Hair",
       "name": "Slouching Soldier Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Icon_hair_prince_shame.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Season_of_little_prince_hair1.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Hair" },
       "order": 2001
     },
     {
@@ -8953,6 +9117,8 @@
       "type": "Hair",
       "name": "Sneezing Geographer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_hair_prince_sneezing.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Season_of_little_prince_hair5.PNG",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Hair" },
       "order": 2005
     },
     {
@@ -9149,6 +9315,8 @@
       "type": "Hair",
       "name": "Lively Navigator Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Icon_season_of_flight_hair_3_lively_navigator.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Season_of_flight_hair_3_lively_navigator_gs.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair" },
       "order": 2104
     },
     {
@@ -9243,6 +9411,8 @@
       "type": "Hair",
       "name": "Light Whisperer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Icon_season_of_flight_hair_4_light_whisperer.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Season_of_flight_hair_4_light_whisperer_gs.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair" },
       "order": 2103
     },
     {
@@ -9333,6 +9503,8 @@
       "type": "Hair",
       "name": "Tinkering Chimesmith Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_season_of_flight_hair_2_tinkering_chimesmith.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Season_of_flight_hair_2_tinkering_chimesmith.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair" },
       "order": 2102
     },
     {
@@ -9432,6 +9604,8 @@
       "type": "Hair",
       "name": "Talented Builder Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_season_of_flight_hair_1_talented_builder.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season_of_flight_hair_1_talented_builder_gs.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair" },
       "order": 2101
     },
     {
@@ -9478,6 +9652,8 @@
       "type": "Hair",
       "name": "Anxious Angler Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/SOAbyss-Anxious-Angler-hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOAbyss-Anxious-Angler-hat-screenshot.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Hair" },
       "order": 2203
     },
     {
@@ -9561,6 +9737,8 @@
       "type": "Hair",
       "name": "Ceasing Commodore Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOAbyss-Ceasing-Commodore-hairstyle.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOAbyss-Ceasing-Commodore-hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair" },
       "order": 2202
     },
     {
@@ -9783,6 +9961,8 @@
       "type": "Hair",
       "name": "Cackling Cannoneer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/SOAbyss-Cackling-Cannoneer-hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/SOAbyss-Cackling-Cannoneer-Cape-hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair" },
       "order": 2201
     },
     {
@@ -9830,6 +10010,8 @@
       "type": "Hair",
       "name": "Frantic Stagehand Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/SoPerformance_-_Frantic_Stagehand-hairstyle-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoPerformance_-_Frantic_Stagehand-hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Hair" },
       "order": 2303
     },
     {
@@ -9918,6 +10100,8 @@
       "type": "Hair",
       "name": "Forgetful Storyteller Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/SoPerformance_-_Forgetful_Storyteller-hairstyle-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/SoPerformance_-_Forgetful_Storyteller-hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Hair" },
       "order": 2304
     },
     {
@@ -10050,6 +10234,8 @@
       "type": "Hair",
       "name": "Mellow Musician Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Morybel-0146-SoPerformance_-_Mellow_Musician-hairstyle-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoPerformance_-_Mellow_Musician-hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Hair" },
       "order": 2305
     },
     {
@@ -10127,6 +10313,8 @@
       "type": "Hair",
       "name": "Modest Dancer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOPerformance-Modest-Dancer-hairstyle-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/SOPerformance-Modest-Dancer-_Hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Hair" },
       "order": 2302
     },
     {
@@ -10143,6 +10331,8 @@
       "type": "Hair",
       "name": "Jellyfish Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOShattering-Light-hairstyle-royal-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/SOShattering-Light-hairstyle-royal.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair" },
       "order": 2403
     },
     {
@@ -10208,6 +10398,8 @@
       "type": "Hair",
       "name": "Manta Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/SOShattering-Light-Hairstyle-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SOShattering-Light-Hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair" },
       "order": 2402
     },
     {
@@ -10339,6 +10531,8 @@
       "type": "Hair",
       "name": "Dragon Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOShattering-Dark-Dragon-hairstyle-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SOShattering-Dark-Dragon-hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair" },
       "order": 2401
     },
     {
@@ -10397,6 +10591,8 @@
       "type": "Hair",
       "name": "Running Wayfarer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Running-Wayfarer-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/SoAurora-Running-Wayfarer-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Hair" },
       "order": 2502
     },
     {
@@ -10496,6 +10692,8 @@
       "type": "Hair",
       "name": "Mindful Miner Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/SoAurora-Mindful-Miner-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SoAurora-Mindful-Miner-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Hair" },
       "order": 2504
     },
     {
@@ -10581,6 +10779,8 @@
       "type": "Hair",
       "name": "Warrior of Love Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/SoAurora-Warrior-of-Love-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/SoAurora-Warrior-of-Love-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Hair" },
       "order": 2503
     },
     {
@@ -10693,6 +10893,8 @@
       "type": "Hair",
       "name": "Seed of Hope Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SoAurora-Seed-of-Hope-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/SoAurora-Seed-of-Hope-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Hair" },
       "order": 2501
     },
     {
@@ -10736,6 +10938,8 @@
       "type": "Hair",
       "name": "AURORA Runaway Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Aurora-Runaway-Hair-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SoAurora-Short-bang-hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Hair" },
       "order": 2505
     },
     {
@@ -10845,6 +11049,8 @@
       "type": "Hair",
       "name": "Bereft Veteran Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoRemembrance-Bereft-Veteran-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/SoRemembrance-Bereft-Veteran-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Hair" },
       "order": 2602
     },
     {
@@ -10922,6 +11128,8 @@
       "type": "Hair",
       "name": "Pleading Child Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SoRemembrance-Pleading-Child-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SoRemembrance-Pleading-Child-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Hair" },
       "order": 2601
     },
     {
@@ -10995,6 +11203,8 @@
       "type": "Hair",
       "name": "Tiptoeing Tea-Brewer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SoRemembrance-Tiptoeing-Tea-Brewer-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SoRemembrance-Tiptoeing-Tea-Brewer-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Hair" },
       "order": 2603
     },
     {
@@ -11125,6 +11335,8 @@
       "type": "Hair",
       "name": "Oddball Outcast Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Passage-Oddball-Outcast-Hairstyle-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Passage-Oddball-Outcast-Hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Hair" },
       "order": 2704
     },
     {
@@ -11210,6 +11422,8 @@
       "type": "Hair",
       "name": "Tumbling Troublemaker Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Passage-Tumbling-Troublemaker-Hair-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Passage-Tumbling-Troublemaker-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Hair" },
       "order": 2701
     },
     {
@@ -11302,6 +11516,8 @@
       "type": "Hair",
       "name": "Melancholy Mope Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-Melancholy-Mope-Hair-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Passage-Melancholy-Mope-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair" },
       "order": 2702
     },
     {
@@ -11406,6 +11622,8 @@
       "type": "Hair",
       "name": "Overactive Overachiever Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Passage-Overactive-Overachiever-Hair-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Passage-Overactive-Overachiever-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Hair" },
       "order": 2703
     },
     {
@@ -11523,6 +11741,8 @@
       "type": "Hair",
       "name": "Jolly Geologist Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Jolly-Geologist-Hair-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Jolly-Geologist-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Hair" },
       "order": 2803
     },
     {
@@ -11607,6 +11827,8 @@
       "type": "Hair",
       "name": "Ascetic Monk Tattoo",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Ascetic-Monk-Hair-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Ascetic-Monk-Hair-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Hair" },
       "order": 2802
     },
     {
@@ -11663,6 +11885,8 @@
       "type": "Hair",
       "name": "Nightbird Whisperer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Nightbird-Whisperer-Hair-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Nightbird-Whisperer-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair" },
       "order": 2801
     },
     {
@@ -11738,6 +11962,8 @@
       "type": "Hair",
       "name": "Days of Fortune Lion Headdress",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_new_years_headpiece.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Chinese_new_year_hat_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Lion_Headdress" },
       "order": 352
     },
     {
@@ -11752,6 +11978,8 @@
       "type": "Hair",
       "name": "Days of Fortune Wool Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Icon_hair_event_wool_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Wool_hat_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Wool_Hat" },
       "order": 301
     },
     {
@@ -11775,6 +12003,8 @@
       "type": "Hair",
       "name": "Days of Fortune Bun Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Icon_hair_event_high_buns.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Days_of_fortune_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bun_Hair" },
       "order": 351
     },
     {
@@ -11805,6 +12035,8 @@
       "type": "Hair",
       "name": "Days of Fortune Fish Hood",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Fortune_-_Fish_head_iconl.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Days-of-fortune-hair-hat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Hood" },
       "order": 501
     },
     {
@@ -12022,6 +12254,8 @@
       "type": "Hair",
       "name": "Bloom Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Icon_hair_bloom.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Days_of_blossom_2021_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Hair" },
       "order": 601
     },
     {
@@ -12294,8 +12528,10 @@
     {
       "guid": "cMLcvRtjoh",
       "type": "Hair",
-      "name": "Rainbow Hat",
+      "name": "Rainbow Beanie Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_rainbow_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Rainbow_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat" },
       "order": 701
     },
     {
@@ -12637,6 +12873,8 @@
       "type": "Hair",
       "name": "Hungry Pumpkin Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Icon_hair_mischief_pumpkin.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Hair_halloween_pumpkin.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Hungry_Pumpkin_Hat" },
       "order": 101
     },
     {
@@ -12644,6 +12882,8 @@
       "type": "Hair",
       "name": "Mischief Witch Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Icon_hair_mischief_witch_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Crooked_witch_hat_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hat" },
       "order": 102
     },
     {
@@ -12690,6 +12930,8 @@
       "type": "Hair",
       "name": "Mischief Witch Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_2021_mischief_long_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Hair_2021_mischief_long_hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hair" },
       "order": 104
     },
     {
@@ -12704,6 +12946,8 @@
       "type": "Hair",
       "name": "Mischief Spider Quiff",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Icon_2021_mischief_iap_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Hair_2021_mischief_web_hair_iap.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spider_Quiff" },
       "order": 103
     },
     {
@@ -12738,6 +12982,8 @@
       "type": "Hair",
       "name": "Mischief Tufted Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Days-of-Mischief-Cat-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Mischief-2022-Cat-hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Tufted_Hair" },
       "order": 105
     },
     {
@@ -12770,6 +13016,8 @@
       "type": "Hair",
       "name": "Feast Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Icon_hair_feast_santa_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Santa_hat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Hat" },
       "order": 201
     },
     {
@@ -12853,6 +13101,8 @@
       "type": "Hair",
       "name": "Winter Feast Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Days_of_Feast_Whool_hat_icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Wool_hat_hair_2021.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Hat" },
       "order": 202
     },
     {
@@ -13010,6 +13260,8 @@
       "type": "Hair",
       "name": "Kizuna AI Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Kizuna-AI-Hairstyle-Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Kizuna-AI-Hairstyle.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Kizuna_AI_Hair" },
       "order": 401
     },
     {
@@ -13162,6 +13414,8 @@
       "type": "Hair",
       "name": "Marching Band Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Musical-Hall-Marching-Band-Hat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat" },
       "order": 326
     },
     {
@@ -13264,6 +13518,8 @@
       "type": "Hair",
       "name": "Nintendo Elf Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Icon_hair_Nintendo_elf.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Nintendo_elf_hair_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack" },
       "order": 801
     },
     {
@@ -13296,6 +13552,8 @@
       "type": "Hair",
       "name": "Journey Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/JourneyPack-Hair-Nastymold.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Journey_Pack" },
       "order": 901
     },
     // #endregion
