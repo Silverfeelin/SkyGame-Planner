@@ -23,7 +23,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   selectedItem?: IItem;
   selectedItemNav?: INavigationTarget;
   _previewObserver?: IntersectionObserver;
-  _scrollToPreview = true;
+  _scrollToPreview = 0;
 
   columns?: number;
 
@@ -56,9 +56,11 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit(): void {
     this._previewObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        this._scrollToPreview = !entry.isIntersecting || entry.intersectionRatio < 0.5;
+        this._scrollToPreview = entry.isIntersecting && entry.intersectionRatio >= 0.9
+        ? 0 : entry.boundingClientRect.top > 0 ? -1 : 1;
+        console.log(entry, this._scrollToPreview);
       });
-    }, { threshold: [0.5] });
+    }, { threshold: [0, 0.1, 0.9, 1] });
     this._previewObserver.observe(this.itemDiv.nativeElement);
   }
 
@@ -187,8 +189,8 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     // Scroll to item if out of view.
     if (this._scrollToPreview) {
       setTimeout(() => {
-        this.itemDiv.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+        this.itemDiv.nativeElement.scrollIntoView({ behavior: 'smooth', block: this._scrollToPreview > 0 ? 'start' : 'end' });
+      }, 50);
     }
   }
 
