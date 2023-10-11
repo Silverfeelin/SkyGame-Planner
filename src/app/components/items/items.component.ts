@@ -58,7 +58,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
       entries.forEach(entry => {
         this._scrollToPreview = entry.isIntersecting && entry.intersectionRatio >= 0.9
         ? 0 : entry.boundingClientRect.top > 0 ? -1 : 1;
-        console.log(entry, this._scrollToPreview);
       });
     }, { threshold: [0, 0.1, 0.9, 1] });
     this._previewObserver.observe(this.itemDiv.nativeElement);
