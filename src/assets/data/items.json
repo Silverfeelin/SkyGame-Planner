@@ -3432,6 +3432,8 @@
       "type": "Hat",
       "name": "Flight Ultimate Hair Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Season_of_flight_headpiece_4_ult.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
       "order": 2104
     },
     {
@@ -4533,6 +4535,8 @@
       "name": "Moments Ultimate Hat",
       "group": "Ultimate",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Moments-Guide-Ultimate-Hair-accessory-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Moments-Guide-Ultimate-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts" },
       "order": 2801
     },
     // #endregion
@@ -7403,6 +7407,8 @@
       "type": "Hat",
       "name": "Chill Sunbather Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_07_chill_sunbather_hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Season_of_sanctuary_hair_chill_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair" },
       "order": 1
     },
     {
@@ -9324,6 +9330,8 @@
       "type": "Hat",
       "name": "Lively Navigator Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Season_of_flight_headpiece_2_lively_navigator.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory" },
       "order": 2103
     },
     {
@@ -9404,6 +9412,8 @@
       "type": "Hat",
       "name": "Light Whisperer Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_flight_headpiece_1_light_whisperer.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory" },
       "order": 2101
     },
     {
@@ -9477,6 +9487,8 @@
       "type": "Hat",
       "name": "Tinkering Chimesmith Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_flight_headpiece_3_tinkering_chimesmith.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory" },
       "order": 2102
     },
     {
@@ -9865,6 +9877,8 @@
       "type": "Hat",
       "name": "Bumbling Boatswain Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SOAbyss-Bumbling-Boatswain-hat.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/SOAbyss-Bumbling-Boatswain-Cape-hat-screenshot.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory" },
       "order": 2201
     },
     {
@@ -10352,6 +10366,8 @@
       "type": "Hat",
       "name": "Jellyfish Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/SOShattering-Light-Hair-accessory-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SOShattering-Light-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory" },
       "order": 2402
     },
     {
@@ -10442,6 +10458,8 @@
       "type": "Hat",
       "name": "Darkness Plant Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/SOShattering-Dark-Hair-Icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/SOShattering-Dark-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory" },
       "order": 2401
     },
     {
@@ -11697,6 +11715,8 @@
       "type": "Hat",
       "name": "Reassuring Ranger Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Reassuring-Ranger-Hair-accessory-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Reassuring-Ranger-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory" },
       "order": 2803
     },
     {
@@ -11906,6 +11926,8 @@
       "type": "Hat",
       "name": "Nightbird Whisperer Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nightbird-Whisperer-Head-accessory-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Nightbird-Whisperer-Head-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory" },
       "order": 2802
     },
     {
@@ -11969,9 +11991,11 @@
     {
       "guid": "aRgiKoKavp",
       "type": "Hat",
-      "name": "Days of Fortune Orange",
+      "name": "Days of Fortune Orange Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Icon_hair_event_orange_headpiece.png",
-      "order": 11101
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/Orange_headpiece_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Orange" },
+      "order": 11201
     },
     {
       "guid": "udspGJd38_",
@@ -12021,6 +12045,8 @@
       "type": "Hat",
       "name": "Days of Fortune Fish Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days_of_Fortune_-_Fish_accessory_Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Days-of-fortune-fish-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Accessory" },
       "order": 11301
     },
     {
@@ -12160,6 +12186,8 @@
       "type": "Hat",
       "name": "Days of Love Flower Crown",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Days_of_Love_-_Flower_head_accessory-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Days_of_Love_-_Flower_head_accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Flower_Crown" },
       "order": 10201
     },
     {
@@ -12385,6 +12413,8 @@
       "type": "Hat",
       "name": "Nature Coral Crown",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Nature-2022-Coral-Hair-accessory-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Days-of-Nature-2022-Coral-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Coral_Crown_Accessory" },
       "order": 10401
     },
     {
@@ -12523,6 +12553,8 @@
       "type": "Hat",
       "name": "Rainbow Hair Flower",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Icon_hair_rainbow_flower.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Rainbow_flower_headpiece_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Hair_Flower" },
       "order": 10101
     },
     {
@@ -12539,6 +12571,8 @@
       "type": "Hat",
       "name": "Double Rainbow Flower",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Double_Rainbow_Flower" },
       "order": 10102
     },
     {
@@ -12618,6 +12652,8 @@
       "type": "Hat",
       "name": "1 Year Sky Anniversary Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/1st_anniv_hat_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#1_Year_Anniversary_Hat" },
       "order": 10701
     },
     {
@@ -12625,6 +12661,8 @@
       "type": "Hat",
       "name": "2 Year Sky Anniversary Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/2nd_anniversary_hat_front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#2nd_Birthday_Hat" },
       "order": 10702
     },
     {
@@ -12693,6 +12731,8 @@
       "type": "Hat",
       "name": "3 Year Sky Anniversary Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Days-of-Sky-2022-anniversary-crown.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#3rd_Birthday_Hat" },
       "order": 10703
     },
     {
@@ -12759,6 +12799,8 @@
       "name": "4 Year Sky Anniversary Hat",
       "type": "Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Sky-4th-Anniversary-Hat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#4th_Anniversary_Hat" },
       "order": 10704
     },
     {
@@ -12836,7 +12878,10 @@
       "guid": "o4cIshT_hD",
       "name": "Style Top Hat",
       "type": "Hat",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Style-Tophat-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Style-Tophat-icon-Credit-Morybel.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Style-Tophat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Top_Hat" },
+      "order": 11501
     },
     {
       "guid": "TbSEPp5DAI",
@@ -13144,6 +13189,8 @@
       "type": "Hat",
       "name": "Snowflake Hair Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Days_of_Feast_Snowflake_icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Snowflake_Pin.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Hair_Accessory" },
       "order": 11001
     },
     {
@@ -13197,6 +13244,8 @@
       "type": "Hat",
       "name": "Flower Hair Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Days_of_heeling_poppy_headpiece_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Healing#Healing_Flower_Hair_Accessory" },
       "order": 10001
     },
     // #endregion
@@ -13215,7 +13264,9 @@
       "type": "Hat",
       "name": "Summer Lights Bunny Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png",
-      "order": 11201
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Bunny_head_accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Bunny_Accessory" },
+      "order": 11101
     },
     // #endregion
     // #region Days of Summer (2021)
@@ -13237,6 +13288,8 @@
       "type": "Hat",
       "name": "Days of Summer Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_hair_summer_hat_headpiece.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days_of_summer_headpiece_hat.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Hat" },
       "order": 10501
     },
     {
@@ -13251,6 +13304,8 @@
       "type": "Hat",
       "name": "Days of Summer Shell Hairpin",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_hair_summer_shell_pin_headpiece.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Days_of_summer_Hair_accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Seashell_Hairpin" },
       "order": 10301
     },
     // #endregion
@@ -13269,6 +13324,8 @@
       "type": "Hat",
       "name": "Kizuna AI Bow",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Kizuna-AI-Hair-Accessory-Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Kizuna-AI-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Kizuna_AI_Bow" },
       "order": 11401
     },
     {
@@ -13400,6 +13457,8 @@
       "type": "Hat",
       "name": "Musical Hairpin",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/SOPerformance-hair-accessory-icon-Morybel-0146.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/SOPerformance-hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin" },
       "order": 10801
     },
     {
