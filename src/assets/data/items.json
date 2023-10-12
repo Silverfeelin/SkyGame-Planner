@@ -2599,7 +2599,7 @@
       "name": "Isle Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Elder-Mask-Isle-original-Credit-Nastymold.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Mask" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Face_Accessory" },
       "order": 51
     },
     // Prairie Elder
@@ -2620,7 +2620,7 @@
       "name": "Prairie Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Elder-Mask-Prairie-original-Credit-Nastymold.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Mask" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Face_Accessory" },
       "order": 52
     },
     // Forest Elder
@@ -2641,7 +2641,7 @@
       "name": "Forest Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Elder-Mask-Forest-original-Credit-Nastymold.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Mask" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Face_Accessory" },
       "order": 53
     },
     // Valley Elders
@@ -3702,7 +3702,7 @@
       "name": "Abyss Guide Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SOAbyss-additional-mask-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOAbyss-mask2.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Mask" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask" },
       "order": 1205
     },
     // #endregion
@@ -3894,7 +3894,7 @@
       "name": "Shattering Ultimate Manta Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-ultimate-Cape-manta-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SOShattering-ultimate-Cape-manta-bac.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Cape" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts" },
       "order": 2405
     },
     {
@@ -3903,7 +3903,7 @@
       "name": "Shattering Ultimate Krill Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/SOShattering-ultimate-Cape-krill-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SOShattering-ultimate-Cape-krill-back.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Cape" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts" },
       "order": 2402
     },
     {
@@ -4535,7 +4535,7 @@
       "name": "Camera",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Moments-Guide-Prop-Camera-icon-Credit-Morybel.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Moments-Guide-Prop-Camera.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Prop" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Camera_Prop" },
       "order": 4001
     },
     {
@@ -6017,7 +6017,7 @@
       "name": "Hairtousle Teen Earmuffs",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Belonging_Headgear_Forest_Ear_Muffs.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Hair_Accessory" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Face_Accessory" },
       "order": 1701
     },
     {
@@ -8086,7 +8086,7 @@
       "name": "Bearhug Hermit Horns",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Dreams_headpiece_bearhug_v2.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair_Accessory" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory" },
       "order": 1101
     },
     {
@@ -9520,7 +9520,7 @@
       "name": "Little Prince Fox",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_prop_little_prince_fox.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Season_of_little_prince_iap_fox_inst.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Prop" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Fox_Prop" },
       "order": 2301
     },
     // #endregion
@@ -11216,7 +11216,7 @@
       "name": "Tiara We Can Touch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/SoAurora-Hair-Accessory-no-hair.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Hair_Accessory" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Tiara_We_Can_Touch" },
       "order": 1301
     },
     {
@@ -11225,7 +11225,7 @@
       "name": "AURORA Runaway Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Aurora-Runaway-Hair-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SoAurora-Short-bang-hairstyle.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Hair" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Runaway_Hair" },
       "order": 2505
     },
     {
@@ -11279,7 +11279,7 @@
       "name": "AURORA Musical Voyage Sneakers",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Aurora-Record-Breaker-Sneakers-icon-Credit-Morybel.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Musical-Voyage-Sneakers.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA#AURORA's_Musical_Voyage_Sneakers" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts#Musical_Voyage_Sneakers" },
       "order": 601
     },
     {
@@ -11455,7 +11455,7 @@
       "name": "Pleading Child Shoes",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Pleading-Child-Shoes-icon-Credit-Morybel.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Pleading-Child-Shoes.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Shoes" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit" },
       "order": 101
     },
     {
@@ -11765,7 +11765,7 @@
       "name": "Tumbling Troublemaker Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Passage-Tumbling-Troublemaker-Hair-Accessory-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Passage-Tumbling-Troublemaker-Hair-Accessory.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Hair_Accessory" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Face_Accessory" },
       "order": 1402
     },
     {
@@ -11796,7 +11796,7 @@
       "name": "Melancholy Mope Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Passage-Melancholy-Mope-Hair-accessory-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Passage-Melancholy-Mope-Hair-accessory.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair_Accessory" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Face_Accessory" },
       "order": 1401
     },
     {
@@ -12967,7 +12967,7 @@
       "name": "Dark Rainbow Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Days-of-Colors-Dark-Rainbow-Earring.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Earrings" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color#Dark_Rainbow_Earring_Pack" },
       "order": 1603
     },
     {
@@ -13368,7 +13368,7 @@
       "name": "Mischief Witch Jumper Shoes",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Mischief-Witch-Jumper-Shoes-icon-Credit-Morybel.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Mischief-Witch-Jumper-Shoes.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper_Shoes" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper" },
       "order": 301
     },
     {
@@ -13625,7 +13625,7 @@
       "name": "Flower Hair Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Days_of_heeling_poppy_headpiece_v2.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Healing#Healing_Flower_Hair_Accessory" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Healing#Healing_Pack" },
       "order": 10001
     },
     // #endregion
@@ -13636,7 +13636,7 @@
       "name": "Summer Lights Lantern",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_prop_days_of_summer_lantern.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Lantern_in_use_v2.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Lantern" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Lantern_Pack" },
       "order": 2901
     },
     // #endregion
@@ -13702,7 +13702,7 @@
       "name": "Kizuna AI Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Kizuna-AI-Hairstyle-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Kizuna-AI-Hairstyle.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Kizuna_AI_Hair" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Hair" },
       "order": 401
     },
     {
@@ -13711,7 +13711,7 @@
       "name": "Kizuna AI Bow",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Kizuna-AI-Hair-Accessory-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Kizuna-AI-Hair-accessory.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Kizuna_AI_Bow" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Bow" },
       "order": 11401
     },
     {
@@ -13720,7 +13720,7 @@
       "name": "Kizuna AI Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Kizuna-AI-cape-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Kizuna-AI-cape-back.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Kizuna_AI_Cape" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Cape" },
       "order": 10601
     },
     // #endregion
@@ -14024,7 +14024,7 @@
       "name": "Journey Mask",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Journey-Pack-Mask-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/JourneyPack-Mask-Nastymold.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Journey_Pack" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
       "order": 20001
     },
     {
@@ -14033,7 +14033,7 @@
       "name": "Journey Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/JourneyPack-Cape-back-Nastymold.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Journey_Pack" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
       "order": 10801
     },
     {
@@ -14042,7 +14042,7 @@
       "name": "Journey Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/JourneyPack-Hair-Nastymold.png",
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Journey_Pack" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
       "order": 901
     },
     // #endregion
