@@ -45,6 +45,7 @@
       "guid": "cj9Kr-LnJs",
       "type": "Stance",
       "name": "Base Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Expressions#Stances" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Stance_basic_stand.png",
       "unlocked": true,
       "order": 1
@@ -53,6 +54,7 @@
       "guid": "_59vOU9i2_",
       "type": "Call",
       "name": "Base Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Expressions#Base_Call" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Voice_basic_call.png",
       "unlocked": true,
       "order": 1
@@ -688,6 +690,7 @@
       "guid": "FGr955bSRr",
       "type": "Call",
       "name": "Bird Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/BirdWhisperer-1.png",
       "order": 11
     },
@@ -1389,6 +1392,7 @@
       "guid": "70FpYsoCa7",
       "type": "Call",
       "name": "Whale Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Whale_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/WhaleWhisperer-1.png",
       "order": 21
     },
@@ -1430,6 +1434,7 @@
       "guid": "HdmcYW9N-f",
       "type": "Stance",
       "name": "Confident Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/ConfidentSightseer-1.png",
       "order": 21
     },
@@ -1562,6 +1567,7 @@
       "guid": "XyTNAnvs9N",
       "type": "Call",
       "name": "Manta Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Manta_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/MantaWhisperer-1.png",
       "order": 31
     },
@@ -1829,6 +1835,7 @@
       "guid": "6Gz1udO5fI",
       "type": "Stance",
       "name": "Proud Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/ProudVictor-1.png",
       "order": 41
     },
@@ -2048,6 +2055,7 @@
       "guid": "dCMS94p34P",
       "type": "Stance",
       "name": "Courageous Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/CourageousSoldier-1.png",
       "order": 11
     },
@@ -2113,6 +2121,7 @@
       "guid": "ztAW0vBZfY",
       "type": "Stance",
       "name": "Sneaky Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/StealthySurvivor-1.png",
       "order": 31
     },
@@ -2484,6 +2493,7 @@
       "guid": "I1fk2fnGDK",
       "type": "Call",
       "name": "Cosmic Manta Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/MemoryWhisperer-1.png",
       "order": 41
     },
@@ -2549,6 +2559,7 @@
       "guid": "8QnR-XHmJg",
       "type": "Stance",
       "name": "Polite Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/PoliteScholar-1.png",
       "order": 51
     },
@@ -4779,6 +4790,7 @@
       "guid": "SadZcfujh7",
       "type": "Stance",
       "name": "Sassy Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_02_sassy_drifter_emote.png",
       "order": 61
     },
@@ -5361,6 +5373,7 @@
       "guid": "_o__3iD1Rh",
       "type": "Stance",
       "name": "Laidback Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_03_laidback_pioneer_emote.png",
       "order": 71
     },
@@ -5524,6 +5537,7 @@
       "guid": "ySbxSrn-4l",
       "type": "Call",
       "name": "Crab Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Mimi-4117_03_crab_whisperer_emote.png",
       "order": 51
     },
@@ -5962,6 +5976,7 @@
       "guid": "N_FirAVIZf",
       "type": "Stance",
       "name": "Wise Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Belonging_stance_think.png",
       "order": 81
     },
@@ -7350,6 +7365,7 @@
       "guid": "U7lPqW1fa0",
       "type": "Call",
       "name": "Jellyfish Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/SoS_jelly_fish_call.png",
       "order": 61
     },
@@ -7428,6 +7444,7 @@
       "guid": "QnA3xwSNod",
       "type": "Stance",
       "name": "Timid Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/SoS_shy_stance.png",
       "order": 91
     },
@@ -9945,6 +9962,7 @@
       "guid": "YiLDQF0uDU",
       "type": "Call",
       "name": "Baby Manta Call",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Season_of_Flight_-_Light_Whisperer_icon.png",
       "order": 71
     },
@@ -10013,6 +10031,7 @@
       "guid": "Jgp0s63dVZ",
       "type": "Stance",
       "name": "Tinker Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Season_of_Flight_-_Tinkering_Chimesmith_icon.png",
       "order": 101
     },
@@ -11931,6 +11950,7 @@
       "guid": "6dT44er9LL",
       "type": "Stance",
       "name": "Injured Stance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Expression" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/SoRemembrance-Wounded-Warrior-Emote-Icon-Morybel-0146.png",
       "order": 111
     },
@@ -12589,7 +12609,9 @@
       "guid": "7j3bbradN0",
       "type": "Call",
       "name": "Nightbird Call",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Nightbird-Whisperer-Call-icon-Credit-Morybel.png"
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Expression" },
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Nightbird-Whisperer-Call-icon-Credit-Morybel.png",
+      "order": 81
     },
     {
       "guid": "ygFxGKMla2",
