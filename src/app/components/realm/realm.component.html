@@ -4,10 +4,7 @@
   </div>
   <div class="sky-card-body">
     <div class="grid grid-2">
-      <a class="container colspan-2" *ngIf="realm._wiki?.href" target="_blank" [href]="realm._wiki?.href">
-        <mat-icon class="menu-icon">question_mark</mat-icon>
-        <span class="menu-label">Wiki</span>
-      </a>
+      <app-wiki-link [wiki]="realm._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
       <a class="container" *ngIf="spirits.length" [class.colspan-2]="!seasonSpiritCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
         <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
         <span class="menu-label">

@@ -37,12 +37,7 @@
         </span>
       </div>
       <!-- Wiki -->
-      <a *ngIf="sections['wiki'] && spirit._wiki?.href" [href]="spirit._wiki!.href" target="_blank"
-        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['wiki']"
-      >
-        <mat-icon>question_mark</mat-icon>
-        <span class="menu-label">Wiki</span>
-      </a>
+      <app-wiki-link *ngIf="sections['wiki']" [wiki]="spirit._wiki" [aClass]="'spirit-grid-item sky-card-item sky-card-item-icon'" [order]="sections['wiki']"></app-wiki-link>
       <!-- Season -->
       <a *ngIf="sections['season'] && (spirit.type === 'Season' || spirit.type === 'Guide')" [routerLink]="['/season', spirit.season?.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }"
         class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['season']"

@@ -4,13 +4,4 @@
   (click)="iconClick($event)">
 </app-icon>
 <span class="emote-level" *ngIf="item.type === ItemType.Emote">Lv{{item.level}}</span>
-<ng-container *ngIf="showSubIcons">
-  <!-- Season icon (top right) -->
-  <app-icon *ngIf="item.season?.iconUrl" class="img-tr" [src]="item.season?.iconUrl || '#season-candle'"></app-icon>
-  <!-- Season pass item (top left) -->
-  <app-icon *ngIf="item.group === 'Ultimate'" class="img-tl seasonal" [src]="'#season-heart'"></app-icon>
-  <!-- Elder item (top left) -->
-  <app-icon *ngIf="item.group === 'Elder'" class="img-tl" [src]="'#ascended-candle'"></app-icon>
-  <!-- IAP item (top left) -->
-  <app-icon *ngIf="item.iaps?.length" class="img-tl currency" [src]="'#gift'"></app-icon>
-</ng-container>
+<app-item-icons *ngIf="showSubIcons" [item]="item"></app-item-icons>

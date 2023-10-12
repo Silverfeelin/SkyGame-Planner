@@ -5,12 +5,7 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <!-- Wiki -->
-      <a class="container" *ngIf="season._wiki?.href" [href]="season._wiki?.href" target="_blank">
-        <mat-icon class="menu-icon">question_mark</mat-icon>
-        <span class="menu-label">
-          Wiki
-        </span>
-      </a>
+      <app-wiki-link [wiki]="season._wiki" [aClass]="'container'"></app-wiki-link>
       <!-- Spirits -->
       <a class="container" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
         <mat-icon class="menu-icon">list</mat-icon>

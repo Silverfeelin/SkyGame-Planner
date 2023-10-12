@@ -46,6 +46,8 @@ import { EventCardComponent } from './components/event-card/event-card.component
 import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
 import { BlankComponent } from './components/blank/blank.component';
 import { ClockComponent } from './components/clock/clock.component';
+import { ItemIconsComponent } from './components/item/item-icons/item-icons.component';
+import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,9 @@ import { ClockComponent } from './components/clock/clock.component';
     EventCardComponent,
     SpiritCardComponent,
     BlankComponent,
-    ClockComponent
+    ClockComponent,
+    ItemIconsComponent,
+    WikiLinkComponent
   ],
   imports: [
     BrowserModule,

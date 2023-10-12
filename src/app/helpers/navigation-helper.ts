@@ -1,4 +1,4 @@
-import { NavigationExtras } from '@angular/router';
+import { NavigationExtras, Params } from '@angular/router';
 import { NodeHelper } from './node-helper';
 import { IItem } from '../interfaces/item.interface';
 import dayjs, { Dayjs } from 'dayjs';
@@ -113,5 +113,12 @@ export class NavigationHelper {
       : item.type === 'Prop' ? 'Placeable_Props_Display' : 'Display';
 
     return url.toString();
+  }
+
+  static getQueryParams(href: string | URL): Params {
+    const url = href instanceof URL ? href : new URL(href);
+    const params: Params = {};
+    for (const [k,v] of url.searchParams.entries()) { params[k] = v; }
+    return params;
   }
 }

@@ -20,10 +20,7 @@
         </div>
       </div>
       <!-- 1: Wiki -->
-      <a class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit._wiki?.href" [href]="spirit._wiki!.href" target="_blank">
-        <mat-icon>question_mark</mat-icon>
-        <span class="menu-label">Wiki</span>
-      </a>
+      <app-wiki-link [wiki]="spirit._wiki" [aClass]="'spirit-grid-item sky-card-item sky-card-item-icon'"></app-wiki-link>
       <!-- 2: Season -->
       <a class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.type === 'Season' || spirit.type === 'Guide'" [routerLink]="['/season', spirit.season?.guid]" [queryParams]="{ highlightTree: spirit.tree?.guid }">
         <img *ngIf="spirit.season?.iconUrl; else seasonIcon" [src]="spirit.season!.iconUrl" class="icon">
