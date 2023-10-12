@@ -61,6 +61,7 @@
       "guid": "pIYsXjTR_g",
       "type": "Emote",
       "name": "Sit",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Menus_and_Controls#Sit" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Emote-basic_sit.png",
       "unlocked": true,
@@ -74,6 +75,7 @@
       "guid": "kvjLVjWmZ9",
       "type": "Emote",
       "name": "Point",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png",
       "order": 101
@@ -82,6 +84,7 @@
       "guid": "FEF2-KzQfp",
       "type": "Emote",
       "name": "Point",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
     },
@@ -116,6 +119,7 @@
       "guid": "GAEC5m-uk9",
       "type": "Emote",
       "name": "Point",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
     },
@@ -123,6 +127,7 @@
       "guid": "c9GTqnZ2-q",
       "type": "Emote",
       "name": "Point",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
     },
@@ -146,6 +151,7 @@
       "guid": "qbTj75q8dk",
       "type": "Emote",
       "name": "Come",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png",
       "order": 111
@@ -154,6 +160,7 @@
       "guid": "9MxRR5To8o",
       "type": "Emote",
       "name": "Come",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
     },
@@ -188,6 +195,7 @@
       "guid": "C5uj1dP42Q",
       "type": "Emote",
       "name": "Come",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
     },
@@ -195,6 +203,7 @@
       "guid": "NFNgmugp6o",
       "type": "Emote",
       "name": "Come",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
     },
@@ -218,6 +227,7 @@
       "guid": "Dhhtyjsi1E",
       "type": "Emote",
       "name": "No Thanks",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png",
       "order": 121
@@ -226,6 +236,7 @@
       "guid": "I101mvqSaI",
       "type": "Emote",
       "name": "No Thanks",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
     },
@@ -260,6 +271,7 @@
       "guid": "eAWuSSOshD",
       "type": "Emote",
       "name": "No Thanks",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
     },
@@ -267,6 +279,7 @@
       "guid": "JXgUCqaMMt",
       "type": "Emote",
       "name": "No Thanks",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
     },
@@ -292,6 +305,7 @@
       "guid": "mCySIT_2dL",
       "type": "Emote",
       "name": "Butterfly",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png",
       "order": 161
@@ -300,6 +314,7 @@
       "guid": "UerEKNAbKh",
       "type": "Emote",
       "name": "Butterfly",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
     },
@@ -334,6 +349,7 @@
       "guid": "cVsVWobkgR",
       "type": "Emote",
       "name": "Butterfly",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
     },
@@ -341,6 +357,7 @@
       "guid": "pnigGjpTJH",
       "type": "Emote",
       "name": "Butterfly",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
     },
@@ -379,6 +396,7 @@
       "guid": "yU982A7Cgz",
       "type": "Emote",
       "name": "Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png",
       "order": 171
@@ -387,6 +405,7 @@
       "guid": "t0pk8Z0cui",
       "type": "Emote",
       "name": "Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
     },
@@ -421,6 +440,7 @@
       "guid": "LoLnYkCW63",
       "type": "Emote",
       "name": "Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
     },
@@ -428,6 +448,7 @@
       "guid": "fhE3mbrVkd",
       "type": "Emote",
       "name": "Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
     },
@@ -442,6 +463,7 @@
       "guid": "xbObJc9i-R",
       "type": "Emote",
       "name": "Wave",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png",
       "order": 181
@@ -450,6 +472,7 @@
       "guid": "VRZyKNt7QI",
       "type": "Emote",
       "name": "Wave",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
     },
@@ -484,6 +507,7 @@
       "guid": "Tqp9IA1cb_",
       "type": "Emote",
       "name": "Wave",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
     },
@@ -491,6 +515,7 @@
       "guid": "VyCFJt_BeY",
       "type": "Emote",
       "name": "Wave",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
     },
@@ -520,6 +545,7 @@
       "guid": "-tpjP_IITi",
       "type": "Emote",
       "name": "Yawn",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png",
       "order": 201
@@ -528,6 +554,7 @@
       "guid": "f3IKpWrXWd",
       "type": "Emote",
       "name": "Yawn",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
     },
@@ -562,6 +589,7 @@
       "guid": "1XGQKgE4NF",
       "type": "Emote",
       "name": "Yawn",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
     },
@@ -569,6 +597,7 @@
       "guid": "wyhPTBmWXl",
       "type": "Emote",
       "name": "Yawn",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
     },
@@ -583,6 +612,7 @@
       "guid": "hpAJ_E_MaE",
       "type": "Emote",
       "name": "Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png",
       "order": 191
@@ -591,6 +621,7 @@
       "guid": "Ozy3lpnc37",
       "type": "Emote",
       "name": "Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
     },
@@ -625,6 +656,7 @@
       "guid": "18rVAyXlim",
       "type": "Emote",
       "name": "Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
     },
@@ -632,6 +664,7 @@
       "guid": "QgWjpddbV_",
       "type": "Emote",
       "name": "Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
     },
@@ -703,6 +736,7 @@
       "guid": "gmpO51jsXq",
       "type": "Emote",
       "name": "Wipe Brow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png",
       "order": 211
@@ -711,6 +745,7 @@
       "guid": "Z2rsK4f5ny",
       "type": "Emote",
       "name": "Wipe Brow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
     },
@@ -736,6 +771,7 @@
       "guid": "1K-jbnXT59",
       "type": "Emote",
       "name": "Wipe Brow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
     },
@@ -743,6 +779,7 @@
       "guid": "Zlx6n-UKQ9",
       "type": "Emote",
       "name": "Wipe Brow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
     },
@@ -766,6 +803,7 @@
       "guid": "JSp5Simw5V",
       "type": "Emote",
       "name": "Teamwork",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceremonial_Worshiper#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CeremonialWorshiper-1.png",
       "order": 221
@@ -801,6 +839,7 @@
       "guid": "cg1HspRoFt",
       "type": "Emote",
       "name": "Shiver",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png",
       "order": 271
@@ -809,6 +848,7 @@
       "guid": "CjN1GNyRo5",
       "type": "Emote",
       "name": "Shiver",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
     },
@@ -843,6 +883,7 @@
       "guid": "zHkQGblG-B",
       "type": "Emote",
       "name": "Shiver",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
     },
@@ -850,6 +891,7 @@
       "guid": "WKFJkGzYdl",
       "type": "Emote",
       "name": "Shiver",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
     },
@@ -873,6 +915,7 @@
       "guid": "EMWqfLlCv8",
       "type": "Emote",
       "name": "Shy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png",
       "order": 301
@@ -881,6 +924,7 @@
       "guid": "MPG42915f5",
       "type": "Emote",
       "name": "Shy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
     },
@@ -915,6 +959,7 @@
       "guid": "msoi-2PV03",
       "type": "Emote",
       "name": "Shy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
     },
@@ -922,6 +967,7 @@
       "guid": "jHWFCcLqlj",
       "type": "Emote",
       "name": "Shy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
     },
@@ -945,6 +991,7 @@
       "guid": "iGgNmgUF3h",
       "type": "Emote",
       "name": "Hide and Seek",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide'n'Seek_Pioneer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/HideNSeekPioneer-1.png",
       "order": 281
@@ -1011,6 +1058,7 @@
       "guid": "tNluEK79s-",
       "type": "Emote",
       "name": "Angry",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png",
       "order": 291
@@ -1019,6 +1067,7 @@
       "guid": "YkzYpoa9me",
       "type": "Emote",
       "name": "Angry",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
     },
@@ -1053,6 +1102,7 @@
       "guid": "FnCfXeMPEq",
       "type": "Emote",
       "name": "Angry",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
     },
@@ -1060,6 +1110,7 @@
       "guid": "JEKMfn1NPZ",
       "type": "Emote",
       "name": "Angry",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
     },
@@ -1098,6 +1149,7 @@
       "guid": "3sNvbNBB2y",
       "type": "Emote",
       "name": "Shocked",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png",
       "order": 311
@@ -1106,6 +1158,7 @@
       "guid": "n8IVtB9J3F",
       "type": "Emote",
       "name": "Shocked",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
     },
@@ -1140,6 +1193,7 @@
       "guid": "yxgVQg3Amb",
       "type": "Emote",
       "name": "Shocked",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
     },
@@ -1147,6 +1201,7 @@
       "guid": "E1IE_GD9iG",
       "type": "Emote",
       "name": "Shocked",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
     },
@@ -1185,6 +1240,7 @@
       "guid": "ubqUcBPT43",
       "type": "Emote",
       "name": "Apologize",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png",
       "order": 321
@@ -1193,6 +1249,7 @@
       "guid": "2WUjYDii5w",
       "type": "Emote",
       "name": "Apologize",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
     },
@@ -1227,6 +1284,7 @@
       "guid": "Ns5iP8sS2u",
       "type": "Emote",
       "name": "Apologize",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
     },
@@ -1234,6 +1292,7 @@
       "guid": "SFlHbJLINX",
       "type": "Emote",
       "name": "Apologize",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
     },
@@ -1257,6 +1316,7 @@
       "guid": "r1Q1s66rrI",
       "type": "Emote",
       "name": "Crying",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png",
       "order": 331
@@ -1265,6 +1325,7 @@
       "guid": "SuEWxrvIA6",
       "type": "Emote",
       "name": "Crying",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
     },
@@ -1299,6 +1360,7 @@
       "guid": "dnUcxxj6St",
       "type": "Emote",
       "name": "Crying",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
     },
@@ -1306,6 +1368,7 @@
       "guid": "9AzVZZ7Too",
       "type": "Emote",
       "name": "Crying",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
     },
@@ -1417,6 +1480,7 @@
       "guid": "iGODc_qPpd",
       "type": "Emote",
       "name": "Handstand",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png",
       "order": 401
@@ -1425,6 +1489,7 @@
       "guid": "SK5gSmxvBt",
       "type": "Emote",
       "name": "Handstand",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
     },
@@ -1450,6 +1515,7 @@
       "guid": "B5tnHt0REg",
       "type": "Emote",
       "name": "Handstand",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
     },
@@ -1457,6 +1523,7 @@
       "guid": "4jvgh1uZDr",
       "type": "Emote",
       "name": "Handstand",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
     },
@@ -1534,6 +1601,7 @@
       "guid": "S3qCWOry5Q",
       "type": "Emote",
       "name": "Backflip",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png",
       "order": 411
@@ -1542,6 +1610,7 @@
       "guid": "XDvPc5hCdm",
       "type": "Emote",
       "name": "Backflip",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
     },
@@ -1576,6 +1645,7 @@
       "guid": "VaWHh_2B2X",
       "type": "Emote",
       "name": "Backflip",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
     },
@@ -1583,6 +1653,7 @@
       "guid": "NFnTgjfTst",
       "type": "Emote",
       "name": "Backflip",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
     },
@@ -1606,6 +1677,7 @@
       "guid": "tL1K-hP5z-",
       "type": "Emote",
       "name": "Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png",
       "order": 431
@@ -1614,6 +1686,7 @@
       "guid": "4xvMNOz0ZB",
       "type": "Emote",
       "name": "Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
     },
@@ -1648,6 +1721,7 @@
       "guid": "cAgxbrsMjj",
       "type": "Emote",
       "name": "Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
     },
@@ -1655,6 +1729,7 @@
       "guid": "ADRONECYYY",
       "type": "Emote",
       "name": "Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
     },
@@ -1678,6 +1753,7 @@
       "guid": "SPPN_qj2ia",
       "type": "Emote",
       "name": "Bow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png",
       "order": 421
@@ -1686,6 +1762,7 @@
       "guid": "7RooNO25P9",
       "type": "Emote",
       "name": "Bow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
     },
@@ -1720,6 +1797,7 @@
       "guid": "QPVqC_FiAv",
       "type": "Emote",
       "name": "Bow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
     },
@@ -1727,6 +1805,7 @@
       "guid": "ApqdPyaCIR",
       "type": "Emote",
       "name": "Bow",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
     },
@@ -1817,6 +1896,7 @@
       "guid": "K06bmAYI6z",
       "type": "Emote",
       "name": "Duck",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png",
       "order": 541
@@ -1825,6 +1905,7 @@
       "guid": "4LkrX4-CoT",
       "type": "Emote",
       "name": "Duck",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png"
     },
@@ -1859,6 +1940,7 @@
       "guid": "4AbpTT27m7",
       "type": "Emote",
       "name": "Duck",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png"
     },
@@ -1866,6 +1948,7 @@
       "guid": "RIlfA805ts",
       "type": "Emote",
       "name": "Duck",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png"
     },
@@ -1889,6 +1972,7 @@
       "guid": "-Dh2r4O_z1",
       "type": "Emote",
       "name": "Faint",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png",
       "order": 551
@@ -1897,6 +1981,7 @@
       "guid": "zKMOiu2THu",
       "type": "Emote",
       "name": "Faint",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png"
     },
@@ -1931,6 +2016,7 @@
       "guid": "8bW-ZgD3YH",
       "type": "Emote",
       "name": "Faint",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png"
     },
@@ -1938,6 +2024,7 @@
       "guid": "qCjtnFMijN",
       "type": "Emote",
       "name": "Faint",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png"
     },
@@ -2091,6 +2178,7 @@
       "guid": "g8qrVY5moU",
       "type": "Emote",
       "name": "Salute",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png",
       "order": 581
@@ -2099,6 +2187,7 @@
       "guid": "m9AevsoO_k",
       "type": "Emote",
       "name": "Salute",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png"
     },
@@ -2133,6 +2222,7 @@
       "guid": "JWB_UaI-Wf",
       "type": "Emote",
       "name": "Salute",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png"
     },
@@ -2140,6 +2230,7 @@
       "guid": "wtDnbvhyij",
       "type": "Emote",
       "name": "Salute",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png"
     },
@@ -2163,6 +2254,7 @@
       "guid": "VY2WGYV8Vx",
       "type": "Emote",
       "name": "Look Around",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png",
       "order": 571
@@ -2171,6 +2263,7 @@
       "guid": "dH24Ov55wg",
       "type": "Emote",
       "name": "Look Around",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png"
     },
@@ -2205,6 +2298,7 @@
       "guid": "GD9Ocr5cDG",
       "type": "Emote",
       "name": "Look Around",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png"
     },
@@ -2212,6 +2306,7 @@
       "guid": "RtxeObjJ-x",
       "type": "Emote",
       "name": "Look Around",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png"
     },
@@ -2237,6 +2332,7 @@
       "guid": "vVUB_cGhZd",
       "type": "Emote",
       "name": "Telekinesis",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png",
       "order": 661
@@ -2245,6 +2341,7 @@
       "guid": "l6TWStE9Xr",
       "type": "Emote",
       "name": "Telekinesis",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
     },
@@ -2279,6 +2376,7 @@
       "guid": "9_H47RAVw-",
       "type": "Emote",
       "name": "Telekinesis",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
     },
@@ -2286,6 +2384,7 @@
       "guid": "yfJsC8H6F4",
       "type": "Emote",
       "name": "Telekinesis",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
     },
@@ -2309,6 +2408,7 @@
       "guid": "c1A0Bf98bJ",
       "type": "Emote",
       "name": "Float",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png",
       "order": 671
@@ -2317,6 +2417,7 @@
       "guid": "hu9E5_AnJh",
       "type": "Emote",
       "name": "Float",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
     },
@@ -2351,6 +2452,7 @@
       "guid": "of7E6FbO6S",
       "type": "Emote",
       "name": "Float",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
     },
@@ -2358,6 +2460,7 @@
       "guid": "1icJGw6P2x",
       "type": "Emote",
       "name": "Float",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
     },
@@ -2496,6 +2599,7 @@
       "guid": "EN-zwdMKW0",
       "type": "Emote",
       "name": "Pray",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png",
       "order": 681
@@ -2504,6 +2608,7 @@
       "guid": "3kiNK4eee-",
       "type": "Emote",
       "name": "Pray",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
     },
@@ -2538,6 +2643,7 @@
       "guid": "47u5kXt3wr",
       "type": "Emote",
       "name": "Pray",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
     },
@@ -2545,6 +2651,7 @@
       "guid": "ZHkYvZFLjE",
       "type": "Emote",
       "name": "Pray",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
     },
@@ -4039,6 +4146,7 @@
       "guid": "7L0kmOL8-h",
       "type": "Emote",
       "name": "Silent Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png",
       "order": 961
@@ -4047,6 +4155,7 @@
       "guid": "iZ1lQxrYIi",
       "type": "Emote",
       "name": "Silent Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png"
     },
@@ -4054,6 +4163,7 @@
       "guid": "3cRBKxvpUY",
       "type": "Emote",
       "name": "Silent Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png"
     },
@@ -4067,6 +4177,7 @@
       "guid": "RNEBgyMjrV",
       "type": "Emote",
       "name": "Silent Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png"
     },
@@ -4074,6 +4185,7 @@
       "guid": "uEYrMRIKMS",
       "type": "Emote",
       "name": "Conduct",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoAurora-Ultimate-Expression-Dance-2-Icon-Morybel-0146.png",
       "order": 951
@@ -4082,6 +4194,7 @@
       "guid": "VdWQyivAwr",
       "type": "Emote",
       "name": "Conduct",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoAurora-Ultimate-Expression-Dance-2-Icon-Morybel-0146.png"
     },
@@ -4089,6 +4202,7 @@
       "guid": "WaJAeLkow7",
       "type": "Emote",
       "name": "Conduct",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoAurora-Ultimate-Expression-Dance-2-Icon-Morybel-0146.png"
     },
@@ -4108,6 +4222,7 @@
       "guid": "KhbsMGJgui",
       "type": "Emote",
       "name": "Conduct",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoAurora-Ultimate-Expression-Dance-2-Icon-Morybel-0146.png"
     },
@@ -4115,6 +4230,7 @@
       "guid": "uSlZPzJdDo",
       "type": "Emote",
       "name": "Skipping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Ultimate-Expression-Dance-3-Icon-Morybel-0146.png",
       "order": 971
@@ -4123,6 +4239,7 @@
       "guid": "IJUeE1lOwt",
       "type": "Emote",
       "name": "Skipping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Ultimate-Expression-Dance-3-Icon-Morybel-0146.png"
     },
@@ -4130,6 +4247,7 @@
       "guid": "AR3AyfDRZu",
       "type": "Emote",
       "name": "Skipping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Ultimate-Expression-Dance-3-Icon-Morybel-0146.png"
     },
@@ -4150,6 +4268,7 @@
       "guid": "qKwEFLirdj",
       "type": "Emote",
       "name": "Skipping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Ultimate-Expression-Dance-3-Icon-Morybel-0146.png"
     },
@@ -4710,6 +4829,7 @@
       "guid": "bXiNLPtQyh",
       "type": "Emote",
       "name": "Yoga",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png",
       "order": 691
@@ -4718,6 +4838,7 @@
       "guid": "hFbdz8Wvye",
       "type": "Emote",
       "name": "Yoga",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
     },
@@ -4740,6 +4861,7 @@
       "guid": "j6B0Gx5Bra",
       "type": "Emote",
       "name": "Yoga",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
     },
@@ -4747,6 +4869,7 @@
       "guid": "JuLs_5VIyb",
       "type": "Emote",
       "name": "Yoga",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
     },
@@ -4782,6 +4905,7 @@
       "guid": "YnKXRCy5y9",
       "type": "Emote",
       "name": "Kabuki",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png",
       "order": 341
@@ -4790,6 +4914,7 @@
       "guid": "LPnwWeKlf0",
       "type": "Emote",
       "name": "Kabuki",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
     },
@@ -4810,6 +4935,7 @@
       "guid": "oTQGUs9w8K",
       "type": "Emote",
       "name": "Kabuki",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
     },
@@ -4817,6 +4943,7 @@
       "guid": "znqKbunN1C",
       "type": "Emote",
       "name": "Kabuki",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
     },
@@ -4861,6 +4988,7 @@
       "guid": "2EjYbZlJwr",
       "type": "Emote",
       "name": "Leap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png",
       "order": 441
@@ -4869,6 +4997,7 @@
       "guid": "Q5LhJRWFiF",
       "type": "Emote",
       "name": "Leap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
     },
@@ -4891,6 +5020,7 @@
       "guid": "QVo-MuF4gw",
       "type": "Emote",
       "name": "Leap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
     },
@@ -4898,6 +5028,7 @@
       "guid": "Q4z_OukNlE",
       "type": "Emote",
       "name": "Leap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
     },
@@ -4933,6 +5064,7 @@
       "guid": "zRlUm_oL2p",
       "type": "Emote",
       "name": "Acknowledge",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png",
       "order": 591
@@ -4941,6 +5073,7 @@
       "guid": "tUzGovgVRK",
       "type": "Emote",
       "name": "Acknowledge",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
     },
@@ -4961,6 +5094,7 @@
       "guid": "dor3unMei7",
       "type": "Emote",
       "name": "Acknowledge",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
     },
@@ -4968,6 +5102,7 @@
       "guid": "K82EgKZAwe",
       "type": "Emote",
       "name": "Acknowledge",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
     },
@@ -5012,6 +5147,7 @@
       "guid": "NpbuKXMxKS",
       "type": "Emote",
       "name": "Kung Fu",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png",
       "order": 601
@@ -5020,6 +5156,7 @@
       "guid": "5QWjZVAA-9",
       "type": "Emote",
       "name": "Kung Fu",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
     },
@@ -5042,6 +5179,7 @@
       "guid": "j3BNKt3Qmi",
       "type": "Emote",
       "name": "Kung Fu",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
     },
@@ -5049,6 +5187,7 @@
       "guid": "7MpXlundFS",
       "type": "Emote",
       "name": "Kung Fu",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
     },
@@ -5086,6 +5225,7 @@
       "guid": "G9wVSFG6I_",
       "type": "Emote",
       "name": "Piggyback",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
     },
@@ -5114,6 +5254,7 @@
       "guid": "HtVnkK980q",
       "type": "Emote",
       "name": "Piggyback",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
     },
@@ -5152,6 +5293,7 @@
       "guid": "9sYCtuZch3",
       "type": "Emote",
       "name": "Double-Five",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
     },
@@ -5183,6 +5325,7 @@
       "guid": "nfeBnolyEY",
       "type": "Emote",
       "name": "Double-Five",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
     },
@@ -5296,6 +5439,7 @@
       "guid": "tmhe-C2cN3",
       "type": "Emote",
       "name": "Triple Axel",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
       "order": 451
@@ -5304,6 +5448,7 @@
       "guid": "zjAeiE3x_t",
       "type": "Emote",
       "name": "Triple Axel",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
     },
@@ -5326,6 +5471,7 @@
       "guid": "zhwG9yJ2mi",
       "type": "Emote",
       "name": "Triple Axel",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
     },
@@ -5333,6 +5479,7 @@
       "guid": "touhpuoYRG",
       "type": "Emote",
       "name": "Triple Axel",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
     },
@@ -5464,6 +5611,7 @@
       "guid": "Bnrptwn3vv",
       "type": "Emote",
       "name": "Shush",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
       "order": 701
@@ -5472,6 +5620,7 @@
       "guid": "TqyXKGohBg",
       "type": "Emote",
       "name": "Shush",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
     },
@@ -5494,6 +5643,7 @@
       "guid": "kYxJuHr1mX",
       "type": "Emote",
       "name": "Shush",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
     },
@@ -5501,6 +5651,7 @@
       "guid": "MtnosL0i54",
       "type": "Emote",
       "name": "Shush",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
     },
@@ -5538,6 +5689,7 @@
       "guid": "EdkgJhVl7F",
       "type": "Emote",
       "name": "Confetti",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png",
       "order": 461
@@ -5546,6 +5698,7 @@
       "guid": "_KkFXT0brp",
       "type": "Emote",
       "name": "Confetti",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
     },
@@ -5565,6 +5718,7 @@
       "guid": "0nUupQHHcx",
       "type": "Emote",
       "name": "Confetti",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
     },
@@ -5572,6 +5726,7 @@
       "guid": "u2qrLrrl7v",
       "type": "Emote",
       "name": "Confetti",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
     },
@@ -5622,6 +5777,7 @@
       "guid": "o46E_Adz2z",
       "type": "Emote",
       "name": "Boogie Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png",
       "order": 471
@@ -5630,6 +5786,7 @@
       "guid": "jn9V5Dc56I",
       "type": "Emote",
       "name": "Boogie Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
     },
@@ -5649,6 +5806,7 @@
       "guid": "AnOX8p-Z5f",
       "type": "Emote",
       "name": "Boogie Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
     },
@@ -5656,6 +5814,7 @@
       "guid": "ThC1rC0jC4",
       "type": "Emote",
       "name": "Boogie Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
     },
@@ -5706,6 +5865,7 @@
       "guid": "eEwMzjwfoS",
       "type": "Emote",
       "name": "Sparkler",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png",
       "order": 711
@@ -5714,6 +5874,7 @@
       "guid": "sSgceH7emy",
       "type": "Emote",
       "name": "Sparkler",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
     },
@@ -5736,6 +5897,7 @@
       "guid": "l663HjIDEd",
       "type": "Emote",
       "name": "Sparkler",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
     },
@@ -5743,6 +5905,7 @@
       "guid": "X81UhfMlB2",
       "type": "Emote",
       "name": "Sparkler",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
     },
@@ -5889,6 +6052,7 @@
       "guid": "CtEU0Osb2E",
       "type": "Emote",
       "name": "Don't Go!",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png",
       "order": 611
@@ -5897,6 +6061,7 @@
       "guid": "oqndH_vtJJ",
       "type": "Emote",
       "name": "Don't Go!",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
     },
@@ -5919,6 +6084,7 @@
       "guid": "sTSrAZzgqU",
       "type": "Emote",
       "name": "Don't Go!",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
     },
@@ -5926,6 +6092,7 @@
       "guid": "D5hLl-_xZd",
       "type": "Emote",
       "name": "Don't Go!",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
     },
@@ -5976,6 +6143,7 @@
       "guid": "YUAzM6p_2j",
       "type": "Emote",
       "name": "Hair Tousle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
     },
@@ -6002,6 +6170,7 @@
       "guid": "0f9auBppfc",
       "type": "Emote",
       "name": "Hair Tousle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
     },
@@ -6060,6 +6229,7 @@
       "guid": "T9ZZMbXM0p",
       "type": "Emote",
       "name": "Welcome",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png",
       "order": 131
@@ -6068,6 +6238,7 @@
       "guid": "Lpi2B9yp7E",
       "type": "Emote",
       "name": "Welcome",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
     },
@@ -6088,6 +6259,7 @@
       "guid": "8p1dB9WsP1",
       "type": "Emote",
       "name": "Welcome",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
     },
@@ -6095,6 +6267,7 @@
       "guid": "T835b5bBNS",
       "type": "Emote",
       "name": "Welcome",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
     },
@@ -6152,6 +6325,7 @@
       "guid": "72q94N8VCj",
       "type": "Emote",
       "name": "Spin Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png",
       "order": 481
@@ -6160,6 +6334,7 @@
       "guid": "Uszoh-ONkR",
       "type": "Emote",
       "name": "Spin Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
     },
@@ -6180,6 +6355,7 @@
       "guid": "ZaNb7p2iqw",
       "type": "Emote",
       "name": "Spin Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
     },
@@ -6187,6 +6363,7 @@
       "guid": "9v5mmfY2I4",
       "type": "Emote",
       "name": "Spin Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
     },
@@ -6253,6 +6430,7 @@
       "guid": "mYHK8KGcDb",
       "type": "Emote",
       "name": "Blow Kiss",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png",
       "order": 231
@@ -6261,6 +6439,7 @@
       "guid": "DQhS5AkEKu",
       "type": "Emote",
       "name": "Blow Kiss",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
     },
@@ -6281,6 +6460,7 @@
       "guid": "R62rXvPti6",
       "type": "Emote",
       "name": "Blow Kiss",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
     },
@@ -6288,6 +6468,7 @@
       "guid": "X1oM2uVzop",
       "type": "Emote",
       "name": "Blow Kiss",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
     },
@@ -6338,6 +6519,7 @@
       "guid": "bcJTF4AAEe",
       "type": "Emote",
       "name": "Juggle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png",
       "order": 491
@@ -6346,6 +6528,7 @@
       "guid": "rt7_sCQiHh",
       "type": "Emote",
       "name": "Juggle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
     },
@@ -6368,6 +6551,7 @@
       "guid": "S9zHdixzVO",
       "type": "Emote",
       "name": "Juggle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
     },
@@ -6375,6 +6559,7 @@
       "guid": "HlohlGb5MA",
       "type": "Emote",
       "name": "Juggle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
     },
@@ -6440,6 +6625,7 @@
       "guid": "g3peZ7bo5z",
       "type": "Emote",
       "name": "Respect",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png",
       "order": 561
@@ -6448,6 +6634,7 @@
       "guid": "4hiIWJy7qv",
       "type": "Emote",
       "name": "Respect",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
     },
@@ -6470,6 +6657,7 @@
       "guid": "DYLsc2p_1T",
       "type": "Emote",
       "name": "Respect",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
     },
@@ -6477,6 +6665,7 @@
       "guid": "khMbyOBwco",
       "type": "Emote",
       "name": "Respect",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
     },
@@ -6533,6 +6722,7 @@
       "guid": "qwrbhllE1N",
       "type": "Emote",
       "name": "Thinking",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png",
       "order": 721
@@ -6541,6 +6731,7 @@
       "guid": "zPUl7UL87P",
       "type": "Emote",
       "name": "Thinking",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
     },
@@ -6563,6 +6754,7 @@
       "guid": "cSzED5jEt_",
       "type": "Emote",
       "name": "Thinking",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
     },
@@ -6570,6 +6762,7 @@
       "guid": "SLjFXYFsjW",
       "type": "Emote",
       "name": "Thinking",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
     },
@@ -6628,6 +6821,7 @@
       "guid": "WhcCC138s8",
       "type": "Emote",
       "name": "Nod",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png",
       "order": 141
@@ -6636,6 +6830,7 @@
       "guid": "D72h3-WjJD",
       "type": "Emote",
       "name": "Nod",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
     },
@@ -6658,6 +6853,7 @@
       "guid": "rYq-RTnkiN",
       "type": "Emote",
       "name": "Nod",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
     },
@@ -6665,6 +6861,7 @@
       "guid": "sbkNjwrgIc",
       "type": "Emote",
       "name": "Nod",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
     },
@@ -6706,6 +6903,7 @@
       "guid": "gFaU0Zm95W",
       "type": "Emote",
       "name": "Shrug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png",
       "order": 351
@@ -6714,6 +6912,7 @@
       "guid": "5bwnWkR0DG",
       "type": "Emote",
       "name": "Shrug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
     },
@@ -6736,6 +6935,7 @@
       "guid": "8qHEcZWhOt",
       "type": "Emote",
       "name": "Shrug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
     },
@@ -6743,6 +6943,7 @@
       "guid": "HD8j6J2ysy",
       "type": "Emote",
       "name": "Shrug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
     },
@@ -6799,6 +7000,7 @@
       "guid": "4cZR63EJEP",
       "type": "Emote",
       "name": "Crab Walk",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png",
       "order": 501
@@ -6807,6 +7009,7 @@
       "guid": "PcsXYI_YLj",
       "type": "Emote",
       "name": "Crab Walk",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
     },
@@ -6829,6 +7032,7 @@
       "guid": "lw-A9eS1gx",
       "type": "Emote",
       "name": "Crab Walk",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
     },
@@ -6836,6 +7040,7 @@
       "guid": "48_BopWKQ5",
       "type": "Emote",
       "name": "Crab Walk",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
     },
@@ -6877,6 +7082,7 @@
       "guid": "3difltLJOc",
       "type": "Emote",
       "name": "Boo",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png",
       "order": 621
@@ -6885,6 +7091,7 @@
       "guid": "DGC8JcQK5y",
       "type": "Emote",
       "name": "Boo",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
     },
@@ -6907,6 +7114,7 @@
       "guid": "ixFFdCm9cG",
       "type": "Emote",
       "name": "Boo",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
     },
@@ -6914,6 +7122,7 @@
       "guid": "sNJx3GgOLF",
       "type": "Emote",
       "name": "Boo",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
     },
@@ -6955,6 +7164,7 @@
       "guid": "RzstnkbQ8d",
       "type": "Emote",
       "name": "Doze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png",
       "order": 731
@@ -6963,6 +7173,7 @@
       "guid": "o9Wt1MLcrz",
       "type": "Emote",
       "name": "Doze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
     },
@@ -6985,6 +7196,7 @@
       "guid": "xfv-AbRiCY",
       "type": "Emote",
       "name": "Doze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
     },
@@ -6992,6 +7204,7 @@
       "guid": "IL31Z--01u",
       "type": "Emote",
       "name": "Doze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
     },
@@ -7033,6 +7246,7 @@
       "guid": "aBFJssIm0e",
       "type": "Emote",
       "name": "Play Fight",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
     },
@@ -7067,6 +7281,7 @@
       "guid": "PkKzcwatL6",
       "type": "Emote",
       "name": "Play Fight",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
     },
@@ -7282,6 +7497,7 @@
       "guid": "fgYKKXiPMf",
       "type": "Emote",
       "name": "Rally Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png",
       "order": 511
@@ -7290,6 +7506,7 @@
       "guid": "Q3SUBd3Vbl",
       "type": "Emote",
       "name": "Rally Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
     },
@@ -7312,6 +7529,7 @@
       "guid": "buDIh3u4OX",
       "type": "Emote",
       "name": "Rally Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
     },
@@ -7319,6 +7537,7 @@
       "guid": "bPWMijGpDI",
       "type": "Emote",
       "name": "Rally Cheer",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
     },
@@ -7360,6 +7579,7 @@
       "guid": "_-Am5v5QWs",
       "type": "Emote",
       "name": "Grumpy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png",
       "order": 361
@@ -7368,6 +7588,7 @@
       "guid": "91x-6KiNlb",
       "type": "Emote",
       "name": "Grumpy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
     },
@@ -7390,6 +7611,7 @@
       "guid": "AjOxFBIEsi",
       "type": "Emote",
       "name": "Grumpy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
     },
@@ -7397,6 +7619,7 @@
       "guid": "F9ZODZ6Qs8",
       "type": "Emote",
       "name": "Grumpy",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
     },
@@ -7453,6 +7676,7 @@
       "guid": "dpF382RUvu",
       "type": "Emote",
       "name": "Grateful",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png",
       "order": 241
@@ -7461,6 +7685,7 @@
       "guid": "IDDSw982ER",
       "type": "Emote",
       "name": "Grateful",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
     },
@@ -7483,6 +7708,7 @@
       "guid": "xl7jZqLFwD",
       "type": "Emote",
       "name": "Grateful",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
     },
@@ -7490,6 +7716,7 @@
       "guid": "B66Wbe_vYk",
       "type": "Emote",
       "name": "Grateful",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
     },
@@ -7540,6 +7767,7 @@
       "guid": "QNd_KFZo7Y",
       "type": "Emote",
       "name": "Belly Scratch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png",
       "order": 251
@@ -7548,6 +7776,7 @@
       "guid": "LZqy5g4Xpa",
       "type": "Emote",
       "name": "Belly Scratch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
     },
@@ -7570,6 +7799,7 @@
       "guid": "phajnn85-p",
       "type": "Emote",
       "name": "Belly Scratch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
     },
@@ -7577,6 +7807,7 @@
       "guid": "2LKc2kVIga",
       "type": "Emote",
       "name": "Belly Scratch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
     },
@@ -7644,6 +7875,7 @@
       "guid": "GkHHcjKlV-",
       "type": "Emote",
       "name": "Deep Breath",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png",
       "order": 751
@@ -7652,6 +7884,7 @@
       "guid": "a1mWcW4Pll",
       "type": "Emote",
       "name": "Deep Breath",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
     },
@@ -7674,6 +7907,7 @@
       "guid": "3H28hhg2kF",
       "type": "Emote",
       "name": "Deep Breath",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
     },
@@ -7681,6 +7915,7 @@
       "guid": "DyDCYzuiZU",
       "type": "Emote",
       "name": "Deep Breath",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
     },
@@ -7746,6 +7981,7 @@
       "guid": "N3W56zu42m",
       "type": "Emote",
       "name": "Dust Off",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png",
       "order": 631
@@ -7754,6 +7990,7 @@
       "guid": "VWQdrhMcwH",
       "type": "Emote",
       "name": "Dust Off",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
     },
@@ -7776,6 +8013,7 @@
       "guid": "EIVC6EkYVC",
       "type": "Emote",
       "name": "Dust Off",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
     },
@@ -7783,6 +8021,7 @@
       "guid": "WNpYia1GaL",
       "type": "Emote",
       "name": "Dust Off",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
     },
@@ -7855,6 +8094,7 @@
       "guid": "p07giC7q6F",
       "type": "Emote",
       "name": "Balance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png",
       "order": 741
@@ -7863,6 +8103,7 @@
       "guid": "1COJ0_lu9H",
       "type": "Emote",
       "name": "Balance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
     },
@@ -7885,6 +8126,7 @@
       "guid": "vmZnZiDaRp",
       "type": "Emote",
       "name": "Balance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
     },
@@ -7892,6 +8134,7 @@
       "guid": "sS5uFB29XN",
       "type": "Emote",
       "name": "Balance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
     },
@@ -7957,6 +8200,7 @@
       "guid": "-9bN5PmMbs",
       "type": "Emote",
       "name": "Chest Pound",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png",
       "order": 641
@@ -7965,6 +8209,7 @@
       "guid": "lv8aUui_2g",
       "type": "Emote",
       "name": "Chest Pound",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
     },
@@ -7987,6 +8232,7 @@
       "guid": "oWEC_F0xLY",
       "type": "Emote",
       "name": "Chest Pound",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
     },
@@ -7994,6 +8240,7 @@
       "guid": "ofbkhI0JKU",
       "type": "Emote",
       "name": "Chest Pound",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
     },
@@ -8071,6 +8318,7 @@
       "guid": "sw2YxczeGz",
       "type": "Emote",
       "name": "Bearhug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
     },
@@ -8112,6 +8360,7 @@
       "guid": "YzY-N81J1l",
       "type": "Emote",
       "name": "Bearhug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
     },
@@ -8156,6 +8405,7 @@
       "guid": "mK02s3A4Sy",
       "type": "Emote",
       "name": "Show Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png",
       "order": 531
@@ -8164,6 +8414,7 @@
       "guid": "VR8uQXAzzZ",
       "type": "Emote",
       "name": "Show Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
     },
@@ -8186,6 +8437,7 @@
       "guid": "IWzRV-xeez",
       "type": "Emote",
       "name": "Show Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
     },
@@ -8193,6 +8445,7 @@
       "guid": "kabDjVwtC9",
       "type": "Emote",
       "name": "Show Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
     },
@@ -8240,6 +8493,7 @@
       "guid": "hV3bFwgh_u",
       "type": "Emote",
       "name": "Peek",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png",
       "order": 371
@@ -8248,6 +8502,7 @@
       "guid": "iNGMlJTDL0",
       "type": "Emote",
       "name": "Peek",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
     },
@@ -8268,6 +8523,7 @@
       "guid": "ehhr3uxVaH",
       "type": "Emote",
       "name": "Peek",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
     },
@@ -8275,6 +8531,7 @@
       "guid": "0S9JrVZK6v",
       "type": "Emote",
       "name": "Peek",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
     },
@@ -8334,6 +8591,7 @@
       "guid": "NOJ5yfbV_j",
       "type": "Emote",
       "name": "Spin Trick",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png",
       "order": 521
@@ -8342,6 +8600,7 @@
       "guid": "tp172HbBKC",
       "type": "Emote",
       "name": "Spin Trick",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
     },
@@ -8364,6 +8623,7 @@
       "guid": "CCeCnDEyRM",
       "type": "Emote",
       "name": "Spin Trick",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
     },
@@ -8371,6 +8631,7 @@
       "guid": "SUGO6FwRX8",
       "type": "Emote",
       "name": "Spin Trick",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
     },
@@ -8429,6 +8690,7 @@
       "guid": "PKx3NYE71T",
       "type": "Emote",
       "name": "Facepalm",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png",
       "order": 391
@@ -8437,6 +8699,7 @@
       "guid": "rsYXcsOjgR",
       "type": "Emote",
       "name": "Facepalm",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png"
     },
@@ -8459,6 +8722,7 @@
       "guid": "turlkU87QA",
       "type": "Emote",
       "name": "Facepalm",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png"
     },
@@ -8466,6 +8730,7 @@
       "guid": "yqN3H8SyIs",
       "type": "Emote",
       "name": "Facepalm",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png"
     },
@@ -8522,6 +8787,7 @@
       "guid": "GDEPmZva_3",
       "type": "Emote",
       "name": "Scold",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png",
       "order": 151
@@ -8530,6 +8796,7 @@
       "guid": "sEIwClFXji",
       "type": "Emote",
       "name": "Scold",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png"
     },
@@ -8552,6 +8819,7 @@
       "guid": "Y0xKlLOykh",
       "type": "Emote",
       "name": "Scold",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png"
     },
@@ -8559,6 +8827,7 @@
       "guid": "YDHt4GuNvK",
       "type": "Emote",
       "name": "Scold",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png"
     },
@@ -8615,6 +8884,7 @@
       "guid": "KyJwYhzGVj",
       "type": "Emote",
       "name": "Eww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png",
       "order": 381
@@ -8623,6 +8893,7 @@
       "guid": "owZSOBEp_z",
       "type": "Emote",
       "name": "Eww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png"
     },
@@ -8645,6 +8916,7 @@
       "guid": "UUOmL9cnbz",
       "type": "Emote",
       "name": "Eww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png"
     },
@@ -8652,6 +8924,7 @@
       "guid": "3HxtK5BEns",
       "type": "Emote",
       "name": "Eww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png"
     },
@@ -8709,6 +8982,7 @@
       "guid": "dNoANrAQV0",
       "type": "Emote",
       "name": "Marching",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png",
       "order": 651
@@ -8717,6 +8991,7 @@
       "guid": "0xqk-p9fsY",
       "type": "Emote",
       "name": "Marching",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png"
     },
@@ -8739,6 +9014,7 @@
       "guid": "owG_KD9opY",
       "type": "Emote",
       "name": "Marching",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png"
     },
@@ -8746,6 +9022,7 @@
       "guid": "dLKdIkOcZ0",
       "type": "Emote",
       "name": "Marching",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png"
     },
@@ -8802,6 +9079,7 @@
       "guid": "iSTnFoyozE",
       "type": "Emote",
       "name": "Chuckle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png",
       "order": 261
@@ -8810,6 +9088,7 @@
       "guid": "ymKZH8BJwt",
       "type": "Emote",
       "name": "Chuckle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png"
     },
@@ -8832,6 +9111,7 @@
       "guid": "HPP2RAku32",
       "type": "Emote",
       "name": "Chuckle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png"
     },
@@ -8839,6 +9119,7 @@
       "guid": "81N0_-C6mq",
       "type": "Emote",
       "name": "Chuckle",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png"
     },
@@ -8904,6 +9185,7 @@
       "guid": "AuugJTG-Nl",
       "type": "Emote",
       "name": "Bubbles",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png",
       "order": 761
@@ -8912,6 +9194,7 @@
       "guid": "nT-zyxTRzs",
       "type": "Emote",
       "name": "Bubbles",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png"
     },
@@ -8934,6 +9217,7 @@
       "guid": "LBmnlOT0UP",
       "type": "Emote",
       "name": "Bubbles",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png"
     },
@@ -8941,6 +9225,7 @@
       "guid": "Ujm1hPDpWr",
       "type": "Emote",
       "name": "Bubbles",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png"
     },
@@ -8997,6 +9282,7 @@
       "guid": "1YJ13EOwIQ",
       "type": "Emote",
       "name": "Beckon",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png",
       "order": 771
@@ -9005,6 +9291,7 @@
       "guid": "_ws5QlV4Tp",
       "type": "Emote",
       "name": "Beckon",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
     },
@@ -9027,6 +9314,7 @@
       "guid": "W4i9e6Vt6d",
       "type": "Emote",
       "name": "Beckon",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
     },
@@ -9034,6 +9322,7 @@
       "guid": "-4aZ5Mq9aw",
       "type": "Emote",
       "name": "Beckon",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
     },
@@ -9076,6 +9365,7 @@
       "guid": "qcsiXdqfGT",
       "type": "Emote",
       "name": "Gloat",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png",
       "order": 781
@@ -9084,6 +9374,7 @@
       "guid": "SNhn8BVb7a",
       "type": "Emote",
       "name": "Gloat",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
     },
@@ -9104,6 +9395,7 @@
       "guid": "XhRW44vwiq",
       "type": "Emote",
       "name": "Gloat",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
     },
@@ -9111,6 +9403,7 @@
       "guid": "g-tnZqaKbi",
       "type": "Emote",
       "name": "Gloat",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
     },
@@ -9168,6 +9461,7 @@
       "guid": "UhtkKIM3ol",
       "type": "Emote",
       "name": "Stretch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png",
       "order": 791
@@ -9176,6 +9470,7 @@
       "guid": "NwYn4D2Gag",
       "type": "Emote",
       "name": "Stretch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
     },
@@ -9198,6 +9493,7 @@
       "guid": "0f_f0iJMqN",
       "type": "Emote",
       "name": "Stretch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
     },
@@ -9205,6 +9501,7 @@
       "guid": "e-yLNwofBb",
       "type": "Emote",
       "name": "Stretch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
     },
@@ -9235,6 +9532,7 @@
       "guid": "5J5FDssiU9",
       "type": "Emote",
       "name": "Slouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png",
       "order": 801
@@ -9243,6 +9541,7 @@
       "guid": "Gx5YAc7jLr",
       "type": "Emote",
       "name": "Slouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
     },
@@ -9265,6 +9564,7 @@
       "guid": "ZZ21lI_L9o",
       "type": "Emote",
       "name": "Slouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
     },
@@ -9272,6 +9572,7 @@
       "guid": "OpLAmdRCNM",
       "type": "Emote",
       "name": "Slouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
     },
@@ -9327,6 +9628,7 @@
       "guid": "zgI2lfTGvf",
       "type": "Emote",
       "name": "Sneeze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png",
       "order": 811
@@ -9335,6 +9637,7 @@
       "guid": "muRzuaFzwA",
       "type": "Emote",
       "name": "Sneeze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
     },
@@ -9357,6 +9660,7 @@
       "guid": "cYQ6gsue9A",
       "type": "Emote",
       "name": "Sneeze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
     },
@@ -9364,6 +9668,7 @@
       "guid": "kGaI-255J9",
       "type": "Emote",
       "name": "Sneeze",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
     },
@@ -9406,6 +9711,7 @@
       "guid": "drH3NXwa4B",
       "type": "Emote",
       "name": "Hand-Rub",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png",
       "order": 821
@@ -9414,6 +9720,7 @@
       "guid": "kNbIj8-u0w",
       "type": "Emote",
       "name": "Hand-Rub",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
     },
@@ -9436,6 +9743,7 @@
       "guid": "kUOyMedcLK",
       "type": "Emote",
       "name": "Hand-Rub",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
     },
@@ -9443,6 +9751,7 @@
       "guid": "f2efm6-cUw",
       "type": "Emote",
       "name": "Hand-Rub",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
     },
@@ -9531,6 +9840,7 @@
       "guid": "mugeVvl6Vc",
       "type": "Emote",
       "name": "Navigate",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png",
       "order": 841
@@ -9539,6 +9849,7 @@
       "guid": "H6h0oeRVom",
       "type": "Emote",
       "name": "Navigate",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
     },
@@ -9576,6 +9887,7 @@
       "guid": "kkRo6gnuo9",
       "type": "Emote",
       "name": "Navigate",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
     },
@@ -9583,6 +9895,7 @@
       "guid": "VC9yqYv8O9",
       "type": "Emote",
       "name": "Navigate",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
     },
@@ -9781,6 +10094,7 @@
       "guid": "b_qHNPnLGc",
       "type": "Emote",
       "name": "Voilà",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png",
       "order": 831
@@ -9789,6 +10103,7 @@
       "guid": "zRFUMdaCAK",
       "type": "Emote",
       "name": "Voilà",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
     },
@@ -9824,6 +10139,7 @@
       "guid": "AlBQo1ngBi",
       "type": "Emote",
       "name": "Voilà",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
     },
@@ -9831,6 +10147,7 @@
       "guid": "0bY0v6h4ci",
       "type": "Emote",
       "name": "Voilà",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
     },
@@ -9871,6 +10188,7 @@
       "guid": "sk_cUbT6vx",
       "type": "Emote",
       "name": "Anxious",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png",
       "order": 881
@@ -9879,6 +10197,7 @@
       "guid": "3ixBHha-wW",
       "type": "Emote",
       "name": "Anxious",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
     },
@@ -9916,6 +10235,7 @@
       "guid": "kuS7q4u7Ua",
       "type": "Emote",
       "name": "Anxious",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
     },
@@ -9923,6 +10243,7 @@
       "guid": "rv2ivbgqBM",
       "type": "Emote",
       "name": "Anxious",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
     },
@@ -9967,6 +10288,7 @@
       "guid": "Ei9pBqI3yK",
       "type": "Emote",
       "name": "Calm Down",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png",
       "order": 851
@@ -9975,6 +10297,7 @@
       "guid": "FETTumn6J-",
       "type": "Emote",
       "name": "Calm Down",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
     },
@@ -10012,6 +10335,7 @@
       "guid": "aDDMg7WuIc",
       "type": "Emote",
       "name": "Calm Down",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
     },
@@ -10019,6 +10343,7 @@
       "guid": "TKVZD91Ur_",
       "type": "Emote",
       "name": "Calm Down",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
     },
@@ -10048,6 +10373,7 @@
       "guid": "VHBoJkhQ24",
       "type": "Emote",
       "name": "Ouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png",
       "order": 871
@@ -10056,6 +10382,7 @@
       "guid": "ACcdP5GR4g",
       "type": "Emote",
       "name": "Ouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
     },
@@ -10091,6 +10418,7 @@
       "guid": "qrYCS8SmH6",
       "type": "Emote",
       "name": "Ouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
     },
@@ -10098,6 +10426,7 @@
       "guid": "-ccudc7_7b",
       "type": "Emote",
       "name": "Ouch",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
     },
@@ -10142,6 +10471,7 @@
       "guid": "d_Qmk0N-T9",
       "type": "Emote",
       "name": "Evil Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png",
       "order": 861
@@ -10150,6 +10480,7 @@
       "guid": "0iyXmNvh_C",
       "type": "Emote",
       "name": "Evil Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
     },
@@ -10185,6 +10516,7 @@
       "guid": "heGFa0OjPp",
       "type": "Emote",
       "name": "Evil Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
     },
@@ -10192,6 +10524,7 @@
       "guid": "Vc0XWt8AUm",
       "type": "Emote",
       "name": "Evil Laugh",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
     },
@@ -10256,6 +10589,7 @@
       "guid": "FmTG9TSX2e",
       "type": "Emote",
       "name": "Handshake",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/SoPerformance_-_Frantic_Stagehand-emote-icon-Morybel-0146.png"
     },
@@ -10297,6 +10631,7 @@
       "guid": "LYyK5T92ij",
       "type": "Emote",
       "name": "Handshake",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/SoPerformance_-_Frantic_Stagehand-emote-icon-Morybel-0146.png"
     },
@@ -10329,6 +10664,7 @@
       "guid": "atMtr23g93",
       "type": "Emote",
       "name": "Awww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png",
       "order": 901
@@ -10337,6 +10673,7 @@
       "guid": "7tsa9wtqVi",
       "type": "Emote",
       "name": "Awww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png"
     },
@@ -10374,6 +10711,7 @@
       "guid": "yiWOuxxWgB",
       "type": "Emote",
       "name": "Awww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png"
     },
@@ -10381,6 +10719,7 @@
       "guid": "r6dNyY-aBP",
       "type": "Emote",
       "name": "Awww",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png"
     },
@@ -10425,6 +10764,7 @@
       "guid": "FWWMzSnh0A",
       "type": "Emote",
       "name": "Headbob",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png",
       "order": 891
@@ -10433,6 +10773,7 @@
       "guid": "EQQjcs9sT0",
       "type": "Emote",
       "name": "Headbob",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png"
     },
@@ -10470,6 +10811,7 @@
       "guid": "NXnXPRAcrO",
       "type": "Emote",
       "name": "Headbob",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png"
     },
@@ -10477,6 +10819,7 @@
       "guid": "3TnJKvu6Ga",
       "type": "Emote",
       "name": "Headbob",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png"
     },
@@ -10521,6 +10864,7 @@
       "guid": "kW5PsMdMVR",
       "type": "Emote",
       "name": "Duet Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Friend_Action" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Morybel-0146-SOPerformance-Modest-Dancer-emote-icon.png"
     },
@@ -10562,6 +10906,7 @@
       "guid": "LTHqUonVhP",
       "type": "Emote",
       "name": "Duet Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Friend_Action" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Morybel-0146-SOPerformance-Modest-Dancer-emote-icon.png"
     },
@@ -10832,6 +11177,7 @@
       "guid": "X_lxvfKdkA",
       "type": "Emote",
       "name": "Waving Light",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png",
       "order": 911
@@ -10840,6 +11186,7 @@
       "guid": "JzE9JvMkF_",
       "type": "Emote",
       "name": "Waving Light",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png"
     },
@@ -10877,6 +11224,7 @@
       "guid": "D0ERFYJm23",
       "type": "Emote",
       "name": "Waving Light",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png"
     },
@@ -10884,6 +11232,7 @@
       "guid": "fW2OOpU5J-",
       "type": "Emote",
       "name": "Waving Light",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png"
     },
@@ -10927,6 +11276,7 @@
       "guid": "CQGQ8vhjlp",
       "type": "Emote",
       "name": "Raise the Roof",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png",
       "order": 921
@@ -10935,6 +11285,7 @@
       "guid": "wgHUFR0hL_",
       "type": "Emote",
       "name": "Raise the Roof",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png"
     },
@@ -10957,6 +11308,7 @@
       "guid": "ZHoxzFOP4e",
       "type": "Emote",
       "name": "Raise the Roof",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png"
     },
@@ -10964,6 +11316,7 @@
       "guid": "MOA-pspnfr",
       "type": "Emote",
       "name": "Raise the Roof",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png"
     },
@@ -11024,6 +11377,7 @@
       "guid": "flYQ-k3_cR",
       "type": "Emote",
       "name": "Twirl",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png",
       "order": 931
@@ -11032,6 +11386,7 @@
       "guid": "84y87tOlc7",
       "type": "Emote",
       "name": "Twirl",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png"
     },
@@ -11069,6 +11424,7 @@
       "guid": "N_a1zpGl8Q",
       "type": "Emote",
       "name": "Twirl",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png"
     },
@@ -11076,6 +11432,7 @@
       "guid": "5QhZXNJtkv",
       "type": "Emote",
       "name": "Twirl",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png"
     },
@@ -11119,6 +11476,7 @@
       "guid": "LCZ4mS88Ml",
       "type": "Emote",
       "name": "Rhythmic Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png",
       "order": 941
@@ -11127,6 +11485,7 @@
       "guid": "Xp7ou1f01j",
       "type": "Emote",
       "name": "Rhythmic Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png"
     },
@@ -11162,6 +11521,7 @@
       "guid": "9cv6EvVG5z",
       "type": "Emote",
       "name": "Rhythmic Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png"
     },
@@ -11169,6 +11529,7 @@
       "guid": "5qPaiJyODI",
       "type": "Emote",
       "name": "Rhythmic Clap",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png"
     },
@@ -11284,15 +11645,17 @@
     },
     {
       "guid": "T71hdAEX-_",
-      "name": "Cure for Me",
       "type": "Emote",
+      "name": "Cure for Me",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts#Cure_for_Me_Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png"
     },
     {
       "guid": "nNSNKcR0jV",
-      "name": "Cure for Me",
       "type": "Emote",
+      "name": "Cure for Me",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts#Cure_for_Me_Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png"
     },
@@ -11304,6 +11667,7 @@
       "guid": "8PJqQ9WsHo",
       "type": "Emote",
       "name": "Grieving",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png",
       "order": 1001
@@ -11312,6 +11676,7 @@
       "guid": "ms8gAS7UHk",
       "type": "Emote",
       "name": "Grieving",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
     },
@@ -11349,6 +11714,7 @@
       "guid": "FIaYs2Unva",
       "type": "Emote",
       "name": "Grieving",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
     },
@@ -11356,6 +11722,7 @@
       "guid": "Wu1J2yazsw",
       "type": "Emote",
       "name": "Grieving",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
     },
@@ -11385,6 +11752,7 @@
       "guid": "6H4WC7Aipv",
       "type": "Emote",
       "name": "Pleading",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png",
       "order": 981
@@ -11393,6 +11761,7 @@
       "guid": "oxlHVEQ-KD",
       "type": "Emote",
       "name": "Pleading",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
     },
@@ -11430,6 +11799,7 @@
       "guid": "LWXpz1a8d_",
       "type": "Emote",
       "name": "Pleading",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
     },
@@ -11437,6 +11807,7 @@
       "guid": "xiAEktyuKT",
       "type": "Emote",
       "name": "Pleading",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
     },
@@ -11475,6 +11846,7 @@
       "guid": "8Pr0VtDhsh",
       "type": "Emote",
       "name": "Tiptoeing",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png",
       "order": 991
@@ -11483,6 +11855,7 @@
       "guid": "-XSUgHYCU-",
       "type": "Emote",
       "name": "Tiptoeing",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
     },
@@ -11505,6 +11878,7 @@
       "guid": "ilnoN5oAS7",
       "type": "Emote",
       "name": "Tiptoeing",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
     },
@@ -11512,6 +11886,7 @@
       "guid": "S3meQvWoGC",
       "type": "Emote",
       "name": "Tiptoeing",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
     },
@@ -11617,6 +11992,7 @@
       "guid": "q1lSh8QVkN",
       "type": "Emote",
       "name": "Hacky sack",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png",
       "order": 1011
@@ -11625,6 +12001,7 @@
       "guid": "WMCReW0LQD",
       "type": "Emote",
       "name": "Hacky sack",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
     },
@@ -11662,6 +12039,7 @@
       "guid": "kQ7Yvu-g4k",
       "type": "Emote",
       "name": "Hacky sack",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
     },
@@ -11669,6 +12047,7 @@
       "guid": "piGSeoIPd_",
       "type": "Emote",
       "name": "Hacky sack",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
     },
@@ -11698,6 +12077,7 @@
       "guid": "FEzWv1XXku",
       "type": "Emote",
       "name": "Somersault",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png",
       "order": 1021
@@ -11706,6 +12086,7 @@
       "guid": "DjPVeBb0wn",
       "type": "Emote",
       "name": "Somersault",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
     },
@@ -11728,6 +12109,7 @@
       "guid": "IxNpykF933",
       "type": "Emote",
       "name": "Somersault",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
     },
@@ -11735,6 +12117,7 @@
       "guid": "Gnl7Kf2xWO",
       "type": "Emote",
       "name": "Somersault",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
     },
@@ -11779,6 +12162,7 @@
       "guid": "Z9YH4KCszX",
       "type": "Emote",
       "name": "Moping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png",
       "order": 1031
@@ -11787,6 +12171,7 @@
       "guid": "ozw69gqvhQ",
       "type": "Emote",
       "name": "Moping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
     },
@@ -11824,6 +12209,7 @@
       "guid": "AZb8ZxAeDb",
       "type": "Emote",
       "name": "Moping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
     },
@@ -11831,6 +12217,7 @@
       "guid": "9v4_Si1oJn",
       "type": "Emote",
       "name": "Moping",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
     },
@@ -11860,6 +12247,7 @@
       "guid": "7aW4_cS3Ob",
       "type": "Emote",
       "name": "Pull-up",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png",
       "order": 1041
@@ -11868,6 +12256,7 @@
       "guid": "nRbYecsrpX",
       "type": "Emote",
       "name": "Pull-up",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
     },
@@ -11890,6 +12279,7 @@
       "guid": "BwA9_RCi47",
       "type": "Emote",
       "name": "Pull-up",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
     },
@@ -11897,6 +12287,7 @@
       "guid": "bs7ZBPqzge",
       "type": "Emote",
       "name": "Pull-up",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
     },
@@ -11943,6 +12334,7 @@
       "guid": "DLJd5rdOFB",
       "type": "Emote",
       "name": "Side Hug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
     },
@@ -11950,6 +12342,7 @@
       "guid": "qwdvtBnaPL",
       "type": "Emote",
       "name": "Side Hug",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
     },
@@ -12025,6 +12418,7 @@
       "guid": "X8TxVCwAoY",
       "type": "Emote",
       "name": "Jolly Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
     },
@@ -12032,6 +12426,7 @@
       "guid": "zPG9h4NM2q",
       "type": "Emote",
       "name": "Jolly Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
     },
@@ -12057,6 +12452,7 @@
       "guid": "5_eEcizGMw",
       "type": "Emote",
       "name": "Jolly Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
     },
@@ -12064,6 +12460,7 @@
       "guid": "xlEzjV6XFr",
       "type": "Emote",
       "name": "Jolly Dance",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
     },
@@ -12107,6 +12504,7 @@
       "guid": "VASzthgEAN",
       "type": "Emote",
       "name": "Blindfold Balance Pose",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
     },
@@ -12114,6 +12512,7 @@
       "guid": "PkVcGrnkjj",
       "type": "Emote",
       "name": "Blindfold Balance Pose",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression" },
       "level": 2,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
     },
@@ -12151,6 +12550,7 @@
       "guid": "jC14SXIUVC",
       "type": "Emote",
       "name": "Blindfold Balance Pose",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression" },
       "level": 3,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
     },
@@ -12158,6 +12558,7 @@
       "guid": "fy4bnUxzOX",
       "type": "Emote",
       "name": "Blindfold Balance Pose",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression" },
       "level": 4,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
     },
