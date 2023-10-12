@@ -140,7 +140,7 @@
     <div class="sky-card-body">
       <div class="info-grid">
         <a class="item-icon item-icon-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
-          <app-item [item]="selectedItem" [large]="true" [hoverHighlight]="false"></app-item>
+          <app-item [item]="selectedItem" [large]="true" [highlight]="true" [hoverHighlight]="false"></app-item>
         </a>
         <app-wiki-link [wiki]="selectedItem._wiki" [aClass]="'info-grid-find container'"></app-wiki-link>
         <a *ngIf="selectedItemNav" class="info-grid-find container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
