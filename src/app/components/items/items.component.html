@@ -164,7 +164,7 @@
     <div class="sky-card-body" *ngIf="showFieldGuide">
       <div class="sky-flex flex-wrap" *ngIf="previewItems?.length">
         <ng-container *ngFor="let item of previewItems">
-          <div *ngIf="item.previewUrl" (click)="selectItem($event, item)"
+          <div *ngIf="item.previewUrl" (click)="openItem(item)"
           [class.highlight]="item && item === selectedItem"
             class="item-preview link" [ngbTooltip]="item.name" container="body" placement="auto">
             <div class="pad">

@@ -16,7 +16,7 @@
     <div class="container ws-pl">
       Import or export your progression.
       The exported file serves as a backup of all your unlocked items in Sky Planner.
-      <div class="sky-flex mt">
+      <div class="sky-flex flex-wrap mt">
         <button type="button" class="item" (click)="import()">
           Import data
         </button>
@@ -42,7 +42,7 @@
   <div class="sky-card-body">
     <div class="container ws-pl">
       Change the theme of the website.
-      <div class="sky-flex mt">
+      <div class="sky-flex flex-wrap mt">
         <button type="button" class="item btn-sky" [class.highlight]="currentTheme ===  'sky'" data-theme="sky" (click)="setTheme('')">
           Sky
         </button>
