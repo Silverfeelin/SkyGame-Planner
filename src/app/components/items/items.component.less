@@ -103,8 +103,14 @@ app-item.a {
   border-radius: var(--border-radius);
   border: var(--border-solid);
   overflow: hidden;
-  min-width: 96px; // reserve some space while image is loading.
+  min-width: 128px; // add space for icons on slim previews
   text-align: center;
+}
+
+.item-preview-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .preview-img {

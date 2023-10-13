@@ -168,8 +168,13 @@
           [class.highlight]="item && item === selectedItem"
             class="item-preview link" [ngbTooltip]="item.name" container="body" placement="auto">
             <div class="pad">
-              <img [src]="item.previewUrl" class="preview-img" loading="lazy">
-              <app-item-icons [item]="item"></app-item-icons>
+              <div class="item-preview-icon">
+                <app-item [item]="item" [hoverHighlight]="false" [highlight]="true" [showSubIcons]="false"></app-item>
+              </div>
+              <div class="mt">
+                <img [src]="item.previewUrl" class="preview-img" loading="lazy">
+                <app-item-icons [item]="item"></app-item-icons>
+              </div>
             </div>
           </div>
         </ng-container>
