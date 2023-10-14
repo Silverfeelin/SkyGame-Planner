@@ -51,6 +51,13 @@ a, .link {
   cursor: pointer;
 }
 
+.action {
+  cursor: pointer;
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
 button {
   color: var(--color);
   padding: var(--padding-input);
@@ -141,6 +148,7 @@ body { scrollbar-width: thin; }
 .d-inline-block { display: inline-block !important; }
 .fw-bold { font-weight: bold !important; }
 .v-top { vertical-align: top !important; }
+.us-none { user-select: none !important; }
 
 .mt { margin-top: var(--padding-content) !important; }
 .mr { margin-right: var(--padding-content) !important; }
