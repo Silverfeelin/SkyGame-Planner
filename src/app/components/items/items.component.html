@@ -147,6 +147,10 @@
           <mat-icon class="menu-icon">search</mat-icon>
           <span class="menu-label">Find item</span>
         </a>
+        <div *ngIf="selectedItem.type === 'Call'" class="container action us-none" appCall [item]="selectedItem">
+          <mat-icon class="menu-icon">volume_up</mat-icon>
+          <span class="menu-label">Play sound</span>
+        </div>
       </div>
     </div>
   </div>

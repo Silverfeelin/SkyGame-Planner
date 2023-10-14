@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "guid": "oeV3MYzpS0",
+      "name": "Base Call",
+      "sounds": ["Honk_A.ogg", "Honk_B.ogg", "Honk_C.ogg", "Honk_D.ogg"]
+    },
+    {
+      "guid": "oxnv8F-9q3",
+      "name": "Bird Call",
+      "sounds": []
+    },
+    {
+      "guid": "qawjyZwFOp",
+      "name": "Whale Call",
+      "sounds": []
+    }
+  ]
+}

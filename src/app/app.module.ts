@@ -48,6 +48,7 @@ import { BlankComponent } from './components/blank/blank.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { ItemIconsComponent } from './components/item/item-icons/item-icons.component';
 import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
+import { CallDirective } from './directives/call.directive';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.compone
     BlankComponent,
     ClockComponent,
     ItemIconsComponent,
-    WikiLinkComponent
+    WikiLinkComponent,
+    CallDirective
   ],
   imports: [
     BrowserModule,

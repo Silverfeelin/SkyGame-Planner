@@ -22,12 +22,14 @@ import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
 import dayjs from 'dayjs';
 import { CostHelper } from '../helpers/cost-helper';
+import { ICallConfig } from '../interfaces/call.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   areaConfig!: IAreaConfig;
+  callConfig!: ICallConfig;
   eventConfig!: IEventConfig;
   itemConfig!: IItemConfig;
   nodeConfig!: INodeConfig;
@@ -57,6 +59,7 @@ export class DataService {
 
     return forkJoin({
       areaConfig: get('areas.json'),
+      callConfig: get('calls.json'),
       connectionConfig: get('connections.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
@@ -393,6 +396,7 @@ export class DataService {
   private exposeData(): void {
     (window as any).skyData = {
       areaConfig: this.areaConfig,
+      callConfig: this.callConfig,
       spiritTreeConfig: this.spiritTreeConfig,
       eventConfig: this.eventConfig,
       itemConfig: this.itemConfig,
