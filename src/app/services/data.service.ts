@@ -374,7 +374,7 @@ export class DataService {
       // Spirit items
       for (const spirit of season.spirits ?? []) {
         if (!spirit?.tree?.node) { continue; }
-        for (const item of NodeHelper.getItems(spirit.tree.node)) {
+        for (const item of NodeHelper.getItems(spirit.tree.node, true)) {
           item.season = season;
         }
       }
