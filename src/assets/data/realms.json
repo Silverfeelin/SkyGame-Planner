@@ -156,6 +156,18 @@
       }
     },
     {
+      "guid": "wk596SmtyB",
+      "name": "Aviary",
+      "shortName": "Aviary",
+      "imageUrl": "assets/game/realms/Aviary.webp",
+      "areas": [
+        "Mhbh0g9OdG"
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary"
+      }
+    },
+    {
       "guid": "GKnbJhLIRi",
       "name": "Eye of Eden",
       "shortName": "Eden",

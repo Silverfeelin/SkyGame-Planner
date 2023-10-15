@@ -14,7 +14,10 @@
     </div>
     <!-- Image -->
     <div class="sky-card-body">
-      <div *ngIf="realm.imageUrl" class="p-rel img sky-border-solid" [style.background-image]="'url('+realm.imageUrl+')'"></div>
+      <div *ngIf="realm.imageUrl" class="p-rel img sky-border-solid"
+        [style.background-image]="'url('+realm.imageUrl+')'"
+        [style.background-position]="realm.imagePosition || undefined">
+      </div>
       <!-- Overview --> <!-- For now only show overview if realm has spirits. -->
       <a class="item link mt" [routerLink]="['/realm', realm.guid]">
         <mat-icon class="menu-icon">article</mat-icon>
