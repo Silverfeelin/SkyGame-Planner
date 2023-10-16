@@ -3671,6 +3671,65 @@
     },
 
     // #endregion
+    // #region Revival Guide
+    {
+      "guid": "SqgpIRZYPo",
+      "item": "ueFGjjCL-f",
+      "nw": "eJ8DUOwjmI",
+      "n": "5P-YD46er8",
+      "ne": "TBbnCj-1EG"
+    },
+    {
+      "guid": "eJ8DUOwjmI",
+      "item": "iPKhdXjEDN"
+    },
+    {
+      "guid": "5P-YD46er8",
+      "item": "5pM1uL5euH",
+      "nw": "xw8QS2IQ3i",
+      "n": "yPDj9Nzra2"
+    },
+    {
+      "guid": "xw8QS2IQ3i",
+      "item": "BXWuIYsB6a"
+    },
+    {
+      "guid": "yPDj9Nzra2",
+      "item": "UtjY-O5GfN",
+      "nw": "02jLOEWgL4",
+      "n": "qppPvGxysH"
+    },
+    {
+      "guid": "02jLOEWgL4",
+      "item": "x9W_UOZ61W"
+    },
+    {
+      "guid": "qppPvGxysH",
+      "item": "RrWXNJ8_8U",
+      "nw": "7som6eEg9Q"
+    },
+    {
+      "guid": "7som6eEg9Q",
+      "item": "-O5kRr08TU"
+    },
+    // Ultimates
+    {
+      "guid": "TBbnCj-1EG",
+      "item": "9giKaCTtFV",
+      "n": "_JCjS6YPaL"
+    },
+    {
+      "guid": "_JCjS6YPaL",
+      "item": "MhNSP7HiqL",
+      "sh": 2,
+      "n": "lTjGn2SRZi"
+    },
+    {
+      "guid": "lTjGn2SRZi",
+      "item": "Du0Ciu8WX7",
+      "sh": 2
+    },
+    // #endregion
     // #endregion
 
     // #region Gratitude
@@ -15596,6 +15655,178 @@
     {
       "guid": "mJCTs19whf",
       "item": "4iahXDrqQd",
+      "sc": 3
+    },
+    // #endregion
+    // #endregion
+    // #region Revival
+    // #region Vestige of a Deserted Oasis
+    {
+      "guid": "V3VhHlvWgz",
+      "item": "SuYJ2QcMi9",
+      "sc": 16,
+      "nw": "TByo8fxfXr",
+      "n": "0qXPj3kfCG"
+    },
+    {
+      "guid": "TByo8fxfXr",
+      "item": "MaAIvE7uun"
+    },
+    {
+      "guid": "0qXPj3kfCG",
+      "item": "wSMvvBV1xW",
+      "sc": 28,
+      "nw": "2pYELr0AWn",
+      "n": "wCBUddKMM9"
+    },
+    {
+      "guid": "2pYELr0AWn",
+      "item": "oVI6Qp4U_2"
+    },
+    {
+      "guid": "wCBUddKMM9",
+      "item": "c8bmChuIm9",
+      "sc": 38,
+      "nw": "q0uBQI9qQX",
+      "n": "onPM8-ji27"
+    },
+    {
+      "guid": "q0uBQI9qQX",
+      "item": "bMuaPGLyP_"
+    },
+    {
+      "guid": "onPM8-ji27",
+      "item": "9lQmnGul6W",
+      "sc": 3
+    },
+    // #endregion
+    // #region Memory of a Lost Village
+    {
+      "guid": "LGC5H_zNi7",
+      "item": "IrDGlTPHpf",
+      "sc": 20,
+      "nw": "Yxz9KTA3zf",
+      "n": "zR1xtJmw0r"
+    },
+    {
+      "guid": "Yxz9KTA3zf",
+      "item": "0RcW7pTxDH"
+    },
+    {
+      "guid": "zR1xtJmw0r",
+      "item": "EI1hvJB4Pu",
+      "sc": 32,
+      "nw": "wZSUK49OGt",
+      "n": "pg_9dmjy7d"
+    },
+    {
+      "guid": "wZSUK49OGt",
+      "item": "DiJVArPj56"
+    },
+    {
+      "guid": "pg_9dmjy7d",
+      "item": "MZiSsh11MB",
+      "sc": 38,
+      "nw": "jNO59YJD-L",
+      "n": "PtDVj_R-En"
+    },
+    {
+      "guid": "jNO59YJD-L",
+      "item": "Ym_ptDkaZQ"
+    },
+    {
+      "guid": "PtDVj_R-En",
+      "item": "9Tlqc5zsck",
+      "sc": 3
+    },
+    // #endregion
+    // #region Echo of an Abandoned Refuge
+    {
+      "guid": "NZh5vSn1Lm",
+      "item": "Dv15Vv7JmA",
+      "nw": "JYwLxf0KsK",
+      "n": "30Xs8wvvqS"
+    },
+    {
+      "guid": "JYwLxf0KsK",
+      "item": "Yf9KTdBF0m"
+    },
+    {
+      "guid": "30Xs8wvvqS",
+      "item": "r7n2STEeMu",
+      "sc": 24,
+      "nw": "NkV2qh4jj7",
+      "n": "ot9mePBINt"
+    },
+    {
+      "guid": "NkV2qh4jj7",
+      "item": "fBi8GUvjF_"
+    },
+    {
+      "guid": "ot9mePBINt",
+      "item": "XAj3JHqHRW",
+      "sc": 32,
+      "nw": "DsbwDtz-KH",
+      "n": "h_H7LL1t7g"
+    },
+    {
+      "guid": "DsbwDtz-KH",
+      "item": "bXIUFu8eZ3"
+    },
+    {
+      "guid": "h_H7LL1t7g",
+      "item": "KPTK5xLHw5",
+      "sc": 42,
+      "nw": "yNsZkHatG7",
+      "n": "soZfY4zH_q"
+    },
+    {
+      "guid": "yNsZkHatG7",
+      "item": "JlPKwQYFDO"
+    },
+    {
+      "guid": "soZfY4zH_q",
+      "item": "FTbhzuNDhM",
+      "sc": 3
+    },
+    // #endregion
+    // #region Remnant of a Forgotten Haven
+    {
+      "guid": "MEg5pX2QnC",
+      "item": "xpTy8a61UM",
+      "sc": 24,
+      "nw": "zdYJ7a9cf3",
+      "n": "GF0yU5bnon"
+    },
+    {
+      "guid": "zdYJ7a9cf3",
+      "item": "94Mo00bQ8p"
+    },
+    {
+      "guid": "GF0yU5bnon",
+      "item": "BudEUoZ6ZC",
+      "sc": 32,
+      "nw": "Kg14X285Dw",
+      "n": "dKTsx-LugQ"
+    },
+    {
+      "guid": "Kg14X285Dw",
+      "item": "_x-7M3LVAu"
+    },
+    {
+      "guid": "dKTsx-LugQ",
+      "item": "YHiMwcvB9X",
+      "sc": 40,
+      "nw": "GRoOizVMFp",
+      "n": "zDX7JyMsmf"
+    },
+    {
+      "guid": "GRoOizVMFp",
+      "item": "O3iQEnpoV5"
+    },
+    {
+      "guid": "zDX7JyMsmf",
+      "item": "QQZkgJ8KnJ",
       "sc": 3
     },
     // #endregion
