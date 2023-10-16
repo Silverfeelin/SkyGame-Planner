@@ -21,6 +21,9 @@
           {{ season.date | dayjs }}
           to
           {{ season.endDate | dayjs }}
+          <span class="c-accent" *ngIf="state !== 'active'">
+            (<app-days-left [start]="season.date" [end]="season.endDate"></app-days-left>)
+          </span>
         </span>
       </div>
       <!-- Duration -->
@@ -28,7 +31,7 @@
         <mat-icon class="menu-icon">schedule</mat-icon>
         <span class="menu-label">
           <app-duration [start]="season.date" [end]="season.endDate"></app-duration>
-          <span class="c-accent">
+          <span class="c-accent" *ngIf="state === 'active'">
             (<app-days-left [start]="season.date" [end]="season.endDate"></app-days-left>)
           </span>
         </span>

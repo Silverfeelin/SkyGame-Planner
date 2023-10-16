@@ -17,7 +17,7 @@
           to
           {{ instance.endDate | dayjs }}
         </span>
-        <span *ngIf="state === 'future'" class="c-accent">
+        <span *ngIf="state !== 'active'" class="c-accent">
           (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)
         </span>
       </div>
