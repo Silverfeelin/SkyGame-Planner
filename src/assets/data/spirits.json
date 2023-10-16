@@ -1608,6 +1608,43 @@
       }
     },
     // #endregion
+    // #region Revival
+    {
+      "guid": "0Ab0zVwBa0",
+      "type": "Guide",
+      "name": "Hopeful Steward",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Hopeful-Steward-Revival-Guide.png",
+      "tree": "tzCvlmC_Oc"
+    },
+    {
+      "guid": "53sRWu-bTI",
+      "type": "Season",
+      "name": "Vestige of a Deserted Oasis",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Vestige-of-a-Deserted-Oasis-Shop.png",
+      "tree": "lz9mQjejU-"
+    },
+    {
+      "guid": "yRKMk_Xw4G",
+      "type": "Season",
+      "name": "Memory of a Lost Village",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Memory-of-a-Lost-Village-Shop.png",
+      "tree": "nzvmNK6cj5"
+    },
+    {
+      "guid": "118ghc8_me",
+      "type": "Season",
+      "name": "Echo of an Abandoned Refuge",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Echo-of-an-Abandoned-Refuge-Shop.png",
+      "tree": "I9msLLh3Lq"
+    },
+    {
+      "guid": "iz40tYocEn",
+      "type": "Season",
+      "name": "Remnant of a Forgotten Haven",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Remnant-of-a-Forgotten-Haven-Shop.png",
+      "tree": "NUWzW2Qua2"
+    },
+    // #endregion
 
     // #region Events
     {
