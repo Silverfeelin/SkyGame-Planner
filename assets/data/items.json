@@ -4839,6 +4839,7 @@
       "name": "Revival Pendant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Season-of-Revival-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Season-of-Revival-Pendant.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts" },
       "order": 19
     },
     {
@@ -4848,6 +4849,7 @@
       "name": "Revival Ultimate Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Revival-Ultimate-Hair-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Revival-Ultimate-Hair-front.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts" },
       "order": 2901
     },
     {
@@ -4857,6 +4859,7 @@
       "name": "Revival Ultimate Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Revival-Ultimate-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Revival-Ultimate-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts" },
       "order": 2901
     },
     // #endregion
@@ -12767,6 +12770,7 @@
       "name": "Vestige of a Deserted Oasis Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Vestige-of-a-Deserted-Oasis-Hair-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Vestige-of-a-Deserted-Oasis-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Hair" },
       "order": 2902
     },
     {
@@ -12787,6 +12791,7 @@
       "name": "Vestige of a Deserted Oasis Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Vestige-of-a-Deserted-Oasis-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Vestige-of-a-Deserted-Oasis-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Cape" },
       "order": 2902
     },
     {
@@ -12795,6 +12800,7 @@
       "name": "Vestige of a Deserted Oasis Shoes",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Vestige-of-a-Deserted-Oasis-Shoes-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Vestige-of-a-Deserted-Oasis-Shoes.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Shoes" },
       "order": 1901
     },
     {
@@ -12823,6 +12829,7 @@
       "name": "Memory of a Lost Village Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Memory-of-a-Lost-Village-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Memory-of-a-Lost-Village-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Cape" },
       "order": 2903
     },
     {
@@ -12831,6 +12838,7 @@
       "name": "Memory of a Lost Village Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Memory-of-a-Lost-Village-Outfit-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Memory-of-a-Lost-Village-Outfit.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Outfit" },
       "order": 1901
     },
     {
@@ -12851,6 +12859,7 @@
       "name": "Memory of a Lost Village Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Memory-of-a-Lost-Village-Hair-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Memory-of-a-Lost-Village-Hair.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Hair" },
       "order": 2903
     },
     {
@@ -12873,6 +12882,7 @@
       "name": "Echo of an Abandoned Refuge Shoes",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Echo-of-an-Abandoned-Refuge-Shoes-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Echo-of-an-Abandoned-Refuge-Shoes.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Shoes" },
       "order": 1902
     },
     {
@@ -12900,6 +12910,7 @@
       "name": "Echo of an Abandoned Refuge Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Echo-of-an-Abandoned-Refuge-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Echo-of-an-Abandoned-Refuge-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Cape" },
       "order": 2904
     },
     {
@@ -12908,6 +12919,7 @@
       "name": "Echo of an Abandoned Refuge Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Echo-of-an-Abandoned-Refuge-Head-accessory-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Echo-of-an-Abandoned-Refuge-Head-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Hair_Accessory" },
       "order": 2901
     },
     {
@@ -12936,6 +12948,7 @@
       "name": "Remnant of a Forgotten Haven Shoes",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Remnant-of-a-Forgotten-Haven-Shoes-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Remnant-of-a-Forgotten-Haven-Shoes.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Shoes" },
       "order": 1903
     },
     {
@@ -12944,6 +12957,7 @@
       "name": "Remnant of a Forgotten Haven Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Remnant-of-a-Forgotten-Haven-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Remnant-of-a-Forgotten-Haven-Cape-back.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Cape" },
       "order": 2905
     },
     {
@@ -12961,9 +12975,10 @@
     {
       "guid": "O3iQEnpoV5",
       "type": "Hat",
-      "name": "Remnant of a Forgotten Haven Hat",
+      "name": "Remnant of a Forgotten Haven Hair Ribbon",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Remnant-of-a-Forgotten-Haven-Hair-accessory-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Remnant-of-a-Forgotten-Haven-Hair-accessory.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Hair_Accessory" },
       "order": 2902
     },
     {
