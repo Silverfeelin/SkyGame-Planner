@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { Observable, first, switchMap } from 'rxjs';
 import { IEventInstance } from '../interfaces/event.interface';
@@ -7,7 +7,7 @@ import { IEventInstance } from '../interfaces/event.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class EventInstanceTitleResolver implements Resolve<string> {
+export class EventInstanceTitleResolver  {
   private _default = 'Sky Planner';
   constructor(
     private readonly _dataService: DataService
