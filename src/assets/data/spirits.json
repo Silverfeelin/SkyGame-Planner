@@ -1614,35 +1614,50 @@
       "type": "Guide",
       "name": "Hopeful Steward",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Hopeful-Steward-Revival-Guide.png",
-      "tree": "tzCvlmC_Oc"
+      "tree": "tzCvlmC_Oc",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward"
+      }
     },
     {
       "guid": "53sRWu-bTI",
       "type": "Season",
       "name": "Vestige of a Deserted Oasis",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Vestige-of-a-Deserted-Oasis-Shop.png",
-      "tree": "lz9mQjejU-"
+      "tree": "lz9mQjejU-",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis"
+      }
     },
     {
       "guid": "yRKMk_Xw4G",
       "type": "Season",
       "name": "Memory of a Lost Village",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Memory-of-a-Lost-Village-Shop.png",
-      "tree": "nzvmNK6cj5"
+      "tree": "nzvmNK6cj5",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village"
+      }
     },
     {
       "guid": "118ghc8_me",
       "type": "Season",
       "name": "Echo of an Abandoned Refuge",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Echo-of-an-Abandoned-Refuge-Shop.png",
-      "tree": "I9msLLh3Lq"
+      "tree": "I9msLLh3Lq",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge"
+      }
     },
     {
       "guid": "iz40tYocEn",
       "type": "Season",
       "name": "Remnant of a Forgotten Haven",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Remnant-of-a-Forgotten-Haven-Shop.png",
-      "tree": "NUWzW2Qua2"
+      "tree": "NUWzW2Qua2",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven"
+      }
     },
     // #endregion
 
