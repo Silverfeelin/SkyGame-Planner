@@ -56,9 +56,11 @@
   <div class="sky-card-header">
     <h2 class="h3 mb-0">Spirits</h2>
   </div>
-  <div class="sky-card-body sky-flex scroll-x">
-    <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
-      <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name" [highlightItem]="highlightItem"></app-spirit-tree>
+  <div class="sky-card-body pad-0">
+    <div class="sky-flex scroll-x pad">
+      <div *ngFor="let spirit of instance.spirits" class="tree-wrapper p-inline-block">
+        <app-spirit-tree [tree]="spirit.tree" [name]="spirit?.name || spirit.spirit.name" [highlightItem]="highlightItem"></app-spirit-tree>
+      </div>
     </div>
   </div>
 </div>
