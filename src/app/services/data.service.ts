@@ -101,6 +101,7 @@ export class DataService {
     this.initializeShops();
     this.initializeItems();
     this.initializeSeasonItems();
+    this.initializeWingedLight();
 
     // Save for any corrections made during init.
     this._storageService.save();
@@ -390,6 +391,12 @@ export class DataService {
     }
   }
 
+  private initializeWingedLight(): void {
+    this.wingedLightConfig.items.forEach(wl => {
+      wl.unlocked = this._storageService.unlockedCol.has(wl.guid);
+    });
+  }
+
   private exposeData(): void {
     (window as any).skyData = {
       areaConfig: this.areaConfig,
@@ -423,6 +430,10 @@ export class DataService {
     });
     this.nodeConfig.items.forEach(node => {
       node.unlocked = this._storageService.unlocked.has(node.guid);
+    });
+
+    this.wingedLightConfig.items.forEach(wl => {
+      wl.unlocked = this._storageService.unlockedCol.has(wl.guid);
     });
   }
 

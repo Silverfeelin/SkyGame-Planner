@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg version="1.1" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="-50%" style="stop-color: #ADAD48; stop-opacity: 1" />
+      <stop offset="150%" style="stop-color: #ADAD48; stop-opacity: 0" />
+    </radialGradient>
+  </defs>
+  <circle cx="150" cy="150" r="120" fill="url(#bg)" />
+  <path style="fill:#FFFF70;stroke-width:1.38577;fill-opacity:1" d="m 261.97606,147.81 c 0,0 -57.01103,15.07006 -76.4031,35.35373 -19.39209,20.28368 -31.88594,77.91412 -31.88594,77.91412 0,0 -15.07008,-57.01102 -35.35375,-76.4031 C 98.049599,165.28266 40.419162,152.7888 40.419162,152.7888 c 0,0 57.011024,-15.07007 76.403108,-35.35373 19.39208,-20.283674 31.88594,-77.914111 31.88594,-77.914111 0,0 15.07005,57.011024 35.35373,76.403101 20.28368,19.39208 77.91412,31.88594 77.91412,31.88594 z"/>
+</svg>

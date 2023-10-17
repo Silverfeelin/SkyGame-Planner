@@ -1,0 +1,147 @@
+.map {
+  height: calc(100vh - 64px);
+  max-height: 800px;
+  width: 100%;
+  position: relative;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.map-controls {
+  position: absolute;
+  z-index: 9999;
+  bottom: var(--padding-content);
+  left: var(--padding-content);
+  padding: var(--padding-content);
+  color: var(--color-map-tooltip);
+  background:  var(--color-map-tooltip-background);
+  border-radius: var(--border-radius);
+  width: 32px;
+  height: 32px;
+
+  mat-icon {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+  }
+}
+
+.btn-reset {
+  color: var(--color-danger);
+  background: var(--color-danger-background);
+  border-color: var(--color-danger-accent);
+  position: absolute;
+  right: var(--padding-content);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input.map-input {
+  width: auto;
+  display: inline-block;
+}
+
+.map-icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+
+  mat-icon {
+    position: absolute;
+    top: -17px;
+    left: 0;
+  }
+}
+
+.completed {
+  color: var(--color-unlock-check);
+  font-weight: bold;
+}
+
+.show-desktop { display: none; }
+@media screen and (min-width: 720px) {
+  .show-desktop { display: unset; }
+  .show-mobile { display: none; }
+}
+
+::ng-deep {
+  .leaflet-container {
+    border-radius: var(--border-radius);
+    background: #0F1520;
+    outline: 0;
+  }
+
+  .leaflet-popup-content {
+    margin: 6px !important;
+  }
+
+  .leaflet-popup-close-button {
+    color: var(--color-map-tooltip) !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    color: var(--color-map-tooltip) !important;
+    background-color: var(--color-map-tooltip-background) !important;
+    border-radius: var(--border-radius) !important;
+    border: 1px solid var(--color-map-tooltip-border) !important;
+  }
+
+  .leaflet-popup-tip {
+    background-color: var(--color-map-tooltip-border) !important;
+  }
+
+  .s-leaflet-grid {
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(2, 1fr);
+
+    *:nth-child(n + 3) {
+      grid-column: span 2;
+    }
+  }
+
+  .s-leaflet-tooltip {
+    .container {
+      display: inline-block;
+      border: none !important;
+    }
+
+    a {
+      color: var(--color-map-tooltip) !important;
+      text-decoration: none;
+    }
+
+    iframe {
+      vertical-align: top;
+      border-radius: var(--border-radius) !important;
+    }
+  }
+
+  .s-leaflet-mt {
+    margin-top: 6px !important;
+  }
+
+  .s-leaflet-hasicon {
+    position: relative;
+    min-width: 32px;
+
+    .s-leaflet-maticon {
+      position: absolute;
+      left: 4px;
+    }
+  }
+
+  .s-leaflet-check-label {
+    margin-left: 22px;
+  }
+
+  .s-leaflet-maticon {
+    font-family: 'Material Symbols Outlined';
+    font-variation-settings: 'FILL' 1;
+    font-size: 22px;
+    line-height: 17px;
+  }
+}

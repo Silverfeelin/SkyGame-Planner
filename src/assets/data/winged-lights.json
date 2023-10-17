@@ -3,43 +3,60 @@
     // #region Dawn
     // Sand Dunes
     {
-      "guid": "zhBAUiJptT",
-      "description": "On top of a small boat. The introductory winged light."
+      "guid": "-8ZzA17gRA",
+      "description": "On top of the mountain at the start of Isle of Dawn.",
+      "mapData": { "position": [-1314, 185], "videoUrl": "Isle/1.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
     },
     {
-      "guid": "-8ZzA17gRA",
-      "description": "On top of the mountain at the very start of Isle of Dawn."
+      "guid": "zhBAUiJptT",
+      "description": "On top of a small boat at the start of the Sand Dunes.",
+      "mapData": { "position": [-1285, 196], "videoUrl": "Isle/2.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
+    },
+    {
+      "guid": "OS7R6fkcT9",
+      "description": "Behind a light gate on the right side of the Sand Dunes.",
+      "mapData": { "position": [-1216,272], "videoUrl": "Isle/3.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
     },
     {
       "guid": "gfQnk_B1mN",
-      "description": "On the ramp leading up to the Isle Temple."
-    },
-    // Sand Dunes Candle Cave
-    {
-      "guid": "OS7R6fkcT9",
-      "description": "Behind a light gate on the right side of the realm."
+      "description": "On the ramp leading up to the Isle Temple.",
+      "mapData": { "position": [-1098, 113], "videoUrl": "Isle/4.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
     },
     // Butterfly Cave
     {
       "guid": "vGCXUjMLfB",
-      "description": "Inside the Butterfly Cave, near the end of the cave."
+      "description": "In the tunnel at the top of Butterfly Cave.",
+      "mapData": { "position": [-930,311], "videoUrl": "Isle/5.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Butterfly_Cave" }
     },
     // Trials
     {
       "guid": "LOr9OqWHQv",
-      "description": "At the end of the Trial of Water."
+      "description": "At the end of the Trial of Water.",
+      "mapData": { "position": [-855,404], "videoUrl": "Isle/6.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Cave_of_Prophecies" }
     },
     {
       "guid": "BPnMAjL286",
-      "description": "At the end of the Trial of Earth."
+      "description": "At the end of the Trial of Earth.",
+      "mapData": { "position": [-799,473], "videoUrl": "Isle/7.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Cave_of_Prophecies" }
     },
     {
       "guid": "7IpuFMAIXe",
-      "description": "At the end of the Trial of Air."
+      "description": "At the end of the Trial of Air.",
+      "mapData": { "position": [-796,563], "videoUrl": "Isle/8.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Cave_of_Prophecies" }
     },
     {
       "guid": "89a0rCfJL-",
-      "description": "At the end of the Trial of Fire."
+      "description": "At the end of the Trial of Fire.",
+      "mapData": { "position": [-870,605], "videoUrl": "Isle/9.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Cave_of_Prophecies" }
     },
     // #endregion
     // #region Prairie

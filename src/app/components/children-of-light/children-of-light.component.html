@@ -1,0 +1,41 @@
+<!-- Always run dark theme styling inside map. -->
+<div class="map" data-theme="dark">
+  <div id="map"></div>
+  <button type="button" class="map-controls" (click)="scrollToList()">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
+</div>
+
+<div class="">
+  <div #table class="sky-card mt">
+    <div class="sky-card-header">
+      <h2 class="h3 mb-0 d-inline-block">
+        <span>Children of Light</span><span class="c-accent show-desktop"> ({{ unlockedCol }} / {{ totalCol }})</span>
+        <div class="c-accent show-mobile">{{ unlockedCol }} / {{ totalCol }}</div>
+      </h2>
+      <button type="button" class="btn-reset" (click)="reset()">Reset</button>
+    </div>
+    <div class="sky-card-body scroll-x">
+      <app-table [rows]="rows">
+        <ng-template [appTableHeader] [fit]="true"></ng-template>
+        <ng-template [appTableHeader]>Realm</ng-template>
+        <ng-template [appTableHeader]>Area</ng-template>
+        <ng-template [appTableHeader]>Found</ng-template>
+        <ng-template [appTableColumn] let-row="row">
+          <span class="link map-icon">
+            <mat-icon (click)="showArea(row)">location_on</mat-icon>
+          </span>
+        </ng-template>
+        <ng-template [appTableColumn] let-row="row">
+          <span>{{ row.area.realm.name }}</span>
+        </ng-template>
+        <ng-template [appTableColumn] let-row="row">
+          <span>{{row.area.name}}</span>
+        </ng-template>
+        <ng-template [appTableColumn] let-row="row">
+          <span [class.completed]="row.unlocked === row.wl.length">{{ row.unlocked }} / {{ row.wl.length }}</span>
+        </ng-template>
+      </app-table>
+    </div>
+  </div>
+</div>
