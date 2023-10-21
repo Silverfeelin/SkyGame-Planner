@@ -148,9 +148,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     };
 
     (window as any).nextCol = (guid: string, direction: number) => {
-      this._zone.run(() => {
-        direction < 0 ? this.prevCol(guid) : this.nextCol(guid);
-      });
+      this._zone.run(() => { direction < 0 ? this.prevCol(guid) : this.nextCol(guid); });
     };
   }
 
@@ -201,7 +199,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     }
 
     return `
-<div class="s-leaflet-tooltip" data-wl="${wl.guid}">
+<div class="s-leaflet-tooltip" data-wl="${wl.guid}" onkeydown="keydownCol(event, this)">
   <div class="s-leaflet-grid">
     <div class="container"><div class="menu-icon s-leaflet-maticon">map</div><div class="menu-label">${wl.area?.realm?.name || ''}</div></div>
     <div class="container"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${wl.area?.name || ''}</div></div>
@@ -211,12 +209,12 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
   </div>
   <div class="s-leaflet-mt">${video}</div>
   <div class="s-leaflet-mt">
-    <button type="button" class="s-leaflet-hasicon s-leaflet-found" onclick="markCol(this, '${wl.guid}')">
+    <button type="button" class="s-leaflet-hasicon s-leaflet-found" data-action="mark" onclick="markCol(this, '${wl.guid}')">
       <span class="s-leaflet-maticon">check_box_outline_blank</span>
       <span class="s-leaflet-check-label">Found</span>
     </button>
-    <button class="s-leaflet-hasicon" type="button" onclick="nextCol('${wl.guid}', -1)"><span class="s-leaflet-maticon">arrow_back</span>&nbsp;</button>
-    <button class="s-leaflet-hasicon" type="button" onclick="nextCol('${wl.guid}', 1)"><span class="s-leaflet-maticon">arrow_forward</span>&nbsp;</button>
+    <button class="s-leaflet-hasicon" data-direction="left" type="button" onclick="nextCol('${wl.guid}', -1)"><span class="s-leaflet-maticon">arrow_back</span>&nbsp;</button>
+    <button class="s-leaflet-hasicon" data-direction="right" type="button" onclick="nextCol('${wl.guid}', 1)"><span class="s-leaflet-maticon">arrow_forward</span>&nbsp;</button>
     ${wiki}
   </div>
 </div>
