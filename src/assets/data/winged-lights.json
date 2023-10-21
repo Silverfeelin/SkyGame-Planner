@@ -194,105 +194,105 @@
     {
       "guid": "H7uvC7nb8U",
       "description": "In a hollow part of a tree on the right side of the path in front of the Treehouse.",
-      "mapData": { "position": [-556,-1570] }
+      "mapData": { "position": [-556,-1570], "videoUrl": "Forest/1.mp4" }
     },
     {
       "guid": "7_WXb7Uu8Z",
       "description": "Through a tunnel at the bottom of the Treehouse tree.",
-      "mapData": { "position": [-596,-1633] }
+      "mapData": { "position": [-596,-1633], "videoUrl": "Forest/2.mp4" }
     },
     // Forest Clearing
     {
       "guid": "0o9-mt5q1s",
       "description": "On a platform in a tree to the right before the first gate of the Forest Clearing.",
-      "mapData": { "position": [-723,-1201] }
+      "mapData": { "position": [-723,-1201], "videoUrl": "Forest/3.mp4" }
     },
     // Rainy Forest
     {
       "guid": "zJCYOFxRNR",
       "description": "Directly in front of a gate at the end of the Rainy Forest.",
-      "mapData": { "position": [-620,-1331] }
+      "mapData": { "position": [-620,-1331], "videoUrl": "Forest/4.mp4" }
     },
     // Forest Brook
     {
       "guid": "E_vpwUyVcM",
       "description": "In a tree house in the Forest Brook, above the entrance to the Elevated Clearing.",
-      "mapData": { "position": [-432,-1290] }
+      "mapData": { "position": [-432,-1290], "videoUrl": "Forest/5.mp4" }
     },
     {
       "guid": "irgdECMxtI",
       "description": "In a small cave on the left side of the Forest Brook, behind some dark plants.",
-      "mapData": { "position": [-473,-1405] }
+      "mapData": { "position": [-473,-1405], "videoUrl": "Forest/8.mp4" }
     },
     {
       "guid": "5F7jGqG9xU",
       "description": "In a tree house to the back side of the Forest Brook.",
-      "mapData": { "position": [-409,-1375] }
+      "mapData": { "position": [-409,-1375], "videoUrl": "Forest/6.mp4" }
     },
     {
       "guid": "Zv6jq5_IzP",
       "description": "At the end of the Forest Brook, directly in front of the entrance to the Forest Boneyard.",
-      "mapData": { "position": [-429,-1341] }
+      "mapData": { "position": [-429,-1341], "videoUrl": "Forest/7.mp4" }
     },
     // Elevated Clearing
     {
       "guid": "MpcHkLWwol",
       "description": "On the platforms up in the tree next to the large hollow tree of the Elevated Clearing.",
-      "mapData": { "position": [-440,-1030] }
+      "mapData": { "position": [-440,-1030], "videoUrl": "Forest/9.mp4" }
     },
     {
       "guid": "DIK2gBZ_FA",
       "description": "On a platform between the hollow tree and the bridge of the Elevated Clearing.",
-      "mapData": { "position": [-458,-1110] }
+      "mapData": { "position": [-458,-1110], "videoUrl": "Forest/10.mp4" }
     },
     // Underground Cavern
     {
       "guid": "iaLuQ06e4T",
       "description": "On the left side of the Underground Cavern, after following the flock of birds.",
-      "mapData": { "position": [-352,-1001] }
+      "mapData": { "position": [-352,-1001], "videoUrl": "Forest/11.mp4" }
     },
     {
       "guid": "pBAU_FHObL",
       "description": "In a small cave to the left of the Underground Cavern with butterflies trapped in jars. Fly up by calling the butterflies.",
-      "mapData": { "position": [-324,-982] }
+      "mapData": { "position": [-324,-982], "videoUrl": "Forest/13.mp4" }
     },
     {
       "guid": "3NFT1aCRpY",
       "description": "Behind a gate on the lower right side of the Underground Cavern.",
-      "mapData": { "position": [-364,-894] }
+      "mapData": { "position": [-364,-894], "videoUrl": "Forest/12.mp4" }
     },
     {
       "guid": "xF6rfLZpef",
       "description": "At the end of the Underground Cavern, next to the gate back to the Elevated Clearing.",
-      "mapData": { "position": [-312,-900] }
+      "mapData": { "position": [-312,-900], "videoUrl": "Forest/14.mp4" }
     },
     // Broken Bridge
     {
       "guid": "XlmWJaLSNr",
       "description": "Inside a hollow tree on the right side of the Tree Tunnels.",
-      "mapData": { "position": [-357,-1135] }
+      "mapData": { "position": [-357,-1135], "videoUrl": "Forest/16.mp4" }
     },
     {
       "guid": "J1boiLeD4w",
       "description": "Inside a tower to the left side of the Tree Tunnels.",
-      "mapData": { "position": [-327,-1306] }
+      "mapData": { "position": [-327,-1306], "videoUrl": "Forest/17.mp4" }
     },
     {
       "guid": "uFoLDIogSU",
       "description": "At the end of the Broken Bridge.",
-      "mapData": { "position": [-339,-1173] }
+      "mapData": { "position": [-339,-1173], "videoUrl": "Forest/15.mp4" }
     },
     // Forest Temple
     {
       "guid": "s_UlGNscIQ",
       "description": "On the left side at the Forest End.",
-      "mapData": { "position": [-56,-878] }
+      "mapData": { "position": [-56,-878], "videoUrl": "Forest/18.mp4" }
     },
     // Wind Paths
     {
       "guid": "CZ99GFJVyE",
       "description": "In one of the air tunnels of the main island, accessed from the underside of the island.",
-      "mapData": { "position": [-586,46] }
+      "mapData": { "position": [-586,46], "videoUrl": "Forest/19.mp4" }
     },
     // #endregion
     // #region Valley
