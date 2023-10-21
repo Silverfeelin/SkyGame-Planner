@@ -300,96 +300,96 @@
     {
       "guid": "5BM1uqQvM4",
       "description": "On the left side down the slope towards the Ice Rink.",
-      "mapData": { "position": [105,-580] }
+      "mapData": { "position": [105,-580], "videoUrl": "Valley/1.mp4" }
     },
     {
       "guid": "vKEMuduC0F",
       "description": "In the middle of the Ice Rink.",
-      "mapData": { "position": [90,-431] }
+      "mapData": { "position": [90,-431], "videoUrl": "Valley/2.mp4" }
     },
     {
       "guid": "_rmaySa6NL",
       "description": "Below the ice of the Ice Rink.",
-      "mapData": { "position": [110,-431] }
+      "mapData": { "position": [110,-431], "videoUrl": "Valley/3.mp4" }
     },
     // Citadel
     {
       "guid": "DjuNbgmKq5",
       "description": "At the top of the Citadel.",
-      "mapData": { "position": [273,-322] }
+      "mapData": { "position": [273,-322], "videoUrl": "Valley/4.mp4" }
     },
     {
       "guid": "D9Z9c3mRDf",
       "description": "In a window on the side of one of the tallest towers of the Citadel.",
-      "mapData": { "position": [250,-303] }
+      "mapData": { "position": [250,-303], "videoUrl": "Valley/5.mp4" }
     },
     // Flying Race
     {
       "guid": "sfDl46vj4O",
       "description": "In the right of two buildings with a skywalk connecting them during the Flying Race.",
-      "mapData": { "position": [265,-138] }
+      "mapData": { "position": [265,-138], "videoUrl": "Valley/6.mp4" }
     },
     {
       "guid": "N6KMjaxez6",
       "description": "Atop a spire between floating rocks during the Flying Race.",
-      "mapData": { "position": [265,-115] }
+      "mapData": { "position": [265,-115], "videoUrl": "Valley/7.mp4" }
     },
     // Sliding Race
     {
       "guid": "Tmg19lVERk",
-      "description": "Near the end of Sliding Race.",
-      "mapData": { "position": [119,-168] }
+      "description": "Near the end of the Sliding Race.",
+      "mapData": { "position": [119,-168], "videoUrl": "Valley/17.mp4" }
     },
     // Race End
     {
       "guid": "HqV6qmTkzQ",
       "description": "On the slope at the end of the race before reaching the Coliseum.",
-      "mapData": { "position": [87,176] }
+      "mapData": { "position": [87,176], "videoUrl": "Valley/8.mp4" }
     },
     // Coliseum
     {
       "guid": "McAh-VzlJH",
       "description": "On the shoulder of the statue left of the Valley Temple entrance.",
-      "mapData": { "position": [209,137] }
+      "mapData": { "position": [209,137], "videoUrl": "Valley/9.mp4" }
     },
     // Valley Temple
     {
       "guid": "E-f38yRTaj",
       "description": "In a room through the upper hole in the left wall inside the Valley Temple.",
-      "mapData": { "position": [249,174] }
+      "mapData": { "position": [249,174], "videoUrl": "Valley/10.mp4" }
     },
     // Village of Dreams
     {
       "guid": "U6oebtceIH",
       "description": "In a cave in front of the Village of Dreams hot springs.",
-      "mapData": { "position": [-132,82] }
+      "mapData": { "position": [-132,82], "videoUrl": "Valley/11.mp4" }
     },
     {
       "guid": "xF36ISKLHe",
       "description": "In a cave near the top of a smaller mountain on the side of the Village of Dreams.",
-      "mapData": { "position": [-102,-15] }
+      "mapData": { "position": [-102,-15], "videoUrl": "Valley/12.mp4" }
     },
     {
       "guid": "orOMQkGltm",
       "description": "On top of a small tower between the two elevators leading to Hermit Valley.",
-      "mapData": { "position": [-41,-70] }
+      "mapData": { "position": [-41,-70], "videoUrl": "Valley/13.mp4" }
     },
     // Hermit Valley
     {
       "guid": "KFqwmitUni",
       "description": "On the back side of Hermit's cave.",
-      "mapData": { "position": [-68,-208] }
+      "mapData": { "position": [-68,-208], "videoUrl": "Valley/14.mp4" }
     },
     {
       "guid": "8_EY7L74TI",
       "description": "Looking back at the elevator at Hermit's Cave, in a cave on the right side.",
-      "mapData": { "position": [-131,-202] }
+      "mapData": { "position": [-131,-202], "videoUrl": "Valley/15.mp4" }
     },
     // Village Theatre
     {
       "guid": "JRTI3BsjIZ",
       "description": "Hidden behind some boxes, backstage of the Village Theatre and to the left.",
-      "mapData": { "position": [-139,255] }
+      "mapData": { "position": [-139,255], "videoUrl": "Valley/16.mp4" }
     },
     // #endregion
     // #region Wasteland
