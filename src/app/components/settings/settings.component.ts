@@ -35,8 +35,9 @@ export class SettingsComponent {
 
   export(): void {
     const unlocked = this._storageService.serializeUnlocked();
+    const unlockedCol = this._storageService.serializeUnlockedCol();
     const data = {
-      unlocked
+      unlocked, unlockedCol
     };
     const jsonData = JSON.stringify(data);
 
@@ -85,6 +86,7 @@ export class SettingsComponent {
     if (!data) { throw new Error('No content.'); }
     if (typeof data.unlocked !== 'string') { throw new Error('No unlocked data.'); }
     const unlocked = data.unlocked.split(',');
+    const unlockedCol = data.unlockedCol?.split(',') || [];
 
     if (!confirm(`You're about to overwrite your current data with ${unlocked.length} entries. This cannot be undone. Are you sure?`))
       return;
@@ -92,7 +94,13 @@ export class SettingsComponent {
     this._storageService.unlocked.clear();
     this._storageService.add(...unlocked);
     this._storageService.save();
+
+    this._storageService.unlockedCol.clear();
+    this._storageService.addCol(...unlockedCol);
+    this._storageService.saveCol();
+
     this._dataService.reloadUnlocked();
+
     this.unlockedCount = this._storageService.unlocked.size;
   }
 
@@ -102,6 +110,8 @@ export class SettingsComponent {
 
     this._storageService.unlocked.clear();
     this._storageService.save();
+    this._storageService.unlockedCol.clear();
+    this._storageService.saveCol();
     this._dataService.reloadUnlocked();
     this.unlockedCount = 0;
   }

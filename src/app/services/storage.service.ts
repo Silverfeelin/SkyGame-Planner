@@ -5,17 +5,27 @@ import { Injectable } from '@angular/core';
 })
 export class StorageService {
   unlocked = new Set<string>();
+  unlockedCol = new Set<string>();
 
   constructor() {
+    this.initializeItems();
+    this.initializeCol();
+  }
+
+  // #region Nodes & items
+
+  private initializeItems(): void {
     const unlocked = localStorage.getItem('unlocked');
     const guids: Array<string> = unlocked?.length && unlocked.split(',') || [];
     guids.forEach(g => this.unlocked.add(g));
   }
 
+  /** Adds unlocked node or items by GUID. */
   add(...guids: Array<string>): void {
     guids?.forEach(g => this.unlocked.add(g));
   }
 
+  /** Removes nodes or items by GUID. */
   remove(...guids: Array<string>): void {
     guids?.forEach(g => this.unlocked.delete(g));
   }
@@ -28,4 +38,33 @@ export class StorageService {
     const unlocked = this.serializeUnlocked();
     localStorage.setItem('unlocked', unlocked);
   }
+
+  // #endregion
+
+  // #region Children of Light
+
+  private initializeCol(): void {
+    const unlockedCol = localStorage.getItem('col.unlocked');
+    const colGuids: Array<string> = unlockedCol?.length && unlockedCol.split(',') || [];
+    colGuids.forEach(g => this.unlockedCol.add(g));
+  }
+
+  addCol(...guids: Array<string>): void {
+    guids?.forEach(g => this.unlockedCol.add(g));
+  }
+
+  removeCol(...guids: Array<string>): void {
+    guids?.forEach(g => this.unlockedCol.delete(g));
+  }
+
+  serializeUnlockedCol(): string {
+    return [...this.unlockedCol].join(',');
+  }
+
+  saveCol(): void {
+    const unlocked = this.serializeUnlockedCol();
+    localStorage.setItem('col.unlocked', unlocked);
+  }
+
+  // #endregion
 }

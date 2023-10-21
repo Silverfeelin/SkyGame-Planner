@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { Observable, first, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TitleResolver implements Resolve<string> {
+export class TitleResolver  {
   private _default = 'Sky Planner';
   constructor(
     private readonly _dataService: DataService

@@ -48,6 +48,8 @@ import { BlankComponent } from './components/blank/blank.component';
 import { ClockComponent } from './components/clock/clock.component';
 import { ItemIconsComponent } from './components/item/item-icons/item-icons.component';
 import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
+import { WingedLightComponent } from './components/winged-light/winged-light.component';
+import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,9 @@ import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.compone
     BlankComponent,
     ClockComponent,
     ItemIconsComponent,
-    WikiLinkComponent
+    WikiLinkComponent,
+    WingedLightComponent,
+    ChildrenOfLightComponent
   ],
   imports: [
     BrowserModule,
