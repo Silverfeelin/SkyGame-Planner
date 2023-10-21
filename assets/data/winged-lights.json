@@ -397,98 +397,98 @@
     {
       "guid": "M_ouc0fx7z",
       "description": "On the beach in front of where you land at the Broken Temple.",
-      "mapData": { "position": [-493,796] }
+      "mapData": { "position": [-493,796], "videoUrl": "Wasteland/1.mp4" }
     },
     {
       "guid": "-jaWbsOO-B",
       "description": "On the pillars above where you land at the Broken Temple.",
-      "mapData": { "position": [-502,837] }
+      "mapData": { "position": [-502,837], "videoUrl": "Wasteland/2.mp4" }
     },
     // Graveyard
     {
       "guid": "cfkB_RA0cA",
       "description": "On a platform in the opening Krill section of the Graveyard.",
-      "mapData": { "position": [-410,829] }
+      "mapData": { "position": [-410,829], "videoUrl": "Wasteland/3.mp4" }
     },
     {
       "guid": "F-YgRDMZyG",
       "description": "Between two walls on the right after the first Krill section of the Graveyard.",
-      "mapData": { "position": [-395,837] }
+      "mapData": { "position": [-395,837], "videoUrl": "Wasteland/4.mp4" }
     },
     {
       "guid": "Y3PENqw0Mj",
       "description": "On a large flat rock to the right, close to the Graveyard campfire.",
-      "mapData": { "position": [-383,863] }
+      "mapData": { "position": [-383,863], "videoUrl": "Wasteland/5.mp4" }
     },
     {
       "guid": "lL0L9y28hd",
       "description": "On the ground under some debris around the leftmost Krill of the Graveyard.",
-      "mapData": { "position": [-368,799] }
+      "mapData": { "position": [-368,799], "videoUrl": "Wasteland/6.mp4" }
     },
     {
       "guid": "arkcy1Y5HK",
       "description": "On a small ledge on the side of the mountain with a ribcage in the Graveyard",
-      "mapData": { "position": [-355,846] }
+      "mapData": { "position": [-355,846], "videoUrl": "Wasteland/7.mp4" }
     },
     {
       "guid": "NmYlVIsugI",
       "description": "At the stairs leading from the Graveyard to the Battlefield.",
-      "mapData": { "position": [-309,902] }
+      "mapData": { "position": [-309,902], "videoUrl": "Wasteland/8.mp4" }
     },
     // Crab Fields
     {
       "guid": "pZ5N0156oQ",
       "description": "Facing the two vertical pipes at the start of the Crab Fields, on the wall directly to the left.",
-      "mapData": { "position": [-376,1090] }
+      "mapData": { "position": [-376,1090], "videoUrl": "Wasteland/9.mp4" }
     },
     {
       "guid": "U8Bo3YBBh2",
       "description": "Inside the lower back of the ship in the Crab Fields.",
-      "mapData": { "position": [-337,1157] }
+      "mapData": { "position": [-337,1157], "videoUrl": "Wasteland/10.mp4" }
     },
     {
       "guid": "rSQzx1yNcr",
       "description": "Next to a large pipe right of the climb from the Crab Fields to the Battlefield.",
-      "mapData": { "position": [-257,1126] }
+      "mapData": { "position": [-257,1126], "videoUrl": "Wasteland/11.mp4" }
     },
     // Battlefield
     {
       "guid": "3rn0JHgV53",
       "description": "Near the top of the main building in the Battlefield.",
-      "mapData": { "position": [-147,955] }
+      "mapData": { "position": [-147,955], "videoUrl": "Wasteland/12.mp4" }
     },
     {
       "guid": "MVmgO5kOUE",
       "description": "Behind the right pillar at the end of the Battlefield.",
-      "mapData": { "position": [-54,1031] }
+      "mapData": { "position": [-54,1031], "videoUrl": "Wasteland/13.mp4" }
     },
     // Wasteland Temple
     {
       "guid": "NtcClN4SsY",
       "description": "In front of the Wasteland Temple shrine.",
-      "mapData": { "position": [16,984] }
+      "mapData": { "position": [16,984], "videoUrl": "Wasteland/14.mp4" }
     },
     // Forgotten Ark
     {
       "guid": "1zsvpsvviY",
       "description": "On top of the Forgotten Ark.",
-      "mapData": { "position": [-333,1574] }
+      "mapData": { "position": [-333,1574], "videoUrl": "Wasteland/17.mp4" }
     },
     {
       "guid": "wtWGz0QLVx",
       "description": "Inside the cave at the back of the farm behind the Forgotten Ark.",
-      "mapData": { "position": [-354,1620] }
+      "mapData": { "position": [-354,1620], "videoUrl": "Wasteland/18.mp4" }
     },
     // Treasure Reef
     {
       "guid": "ij47DZ1EJi",
       "description": "At the top of the tallest tower in Treasure Reef.",
-      "mapData": { "position": [-759,1132] }
+      "mapData": { "position": [-759,1132], "videoUrl": "Wasteland/15.mp4" }
     },
     {
       "guid": "LoX2Z_gAeA",
       "description": "In the submerged Treasure Reef ruins with the hexagonal top visible above water. Behind a door at the bottom of the main stairs.",
-      "mapData": { "position": [-820,1173] }
+      "mapData": { "position": [-820,1173], "videoUrl": "Wasteland/16.mp4" }
     },
     // #endregion
     // #region Vault
