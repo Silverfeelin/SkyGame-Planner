@@ -113,15 +113,9 @@
         "5u3TXZON81"
       ],
       "wingedLights": [
+        "YmuL-2fCV7",
         "CuJ61KtkL2",
-        "fl1Z3bEx81"
-      ]
-    },
-    {
-      "guid": "1FQFTsc5sZ",
-      "name": "Butterfly Fields WL Cave",
-      "wingedLights": [
-        "YmuL-2fCV7"
+        "fl1Z3bEx81",
       ]
     },
     {
@@ -129,28 +123,14 @@
       "name": "Village Islands",
       "spirits": [
         "48jm5EQzfU",
-        "K3CIxcDSjq"
+        "K3CIxcDSjq",
+        "WFjSczlPTV",
+        "R4ILdPamhd"
       ],
       "wingedLights": [
         "_SJva8zUYc",
+        "D22kvZx25W",
         "4lNlq0Raah"
-      ]
-    },
-    {
-      "guid": "Op5eFqusvH",
-      "name": "Bellmaker Cave",
-      "spirits": [
-        "WFjSczlPTV"
-      ],
-      "wingedLights": [
-        "D22kvZx25W"
-      ]
-    },
-    {
-      "guid": "K4-cQbROWR",
-      "name": "Shipwright Workshop",
-      "spirits": [
-        "R4ILdPamhd"
       ]
     },
     {
@@ -214,13 +194,13 @@
       ],
       "wingedLights": [
         "NIEbxjzi9w",
-        "saQGYqh8gS",
-        "cBNCxRNiPa",
-        "qN0TPwjnam",
         "MzhGgNL7T0",
         "4Sh9Wwka_r",
+        "saQGYqh8gS",
+        "20LOTTTfr_",
+        "qN0TPwjnam",
         "nHuasNjUrd",
-        "20LOTTTfr_"
+        "cBNCxRNiPa"
       ]
     },
     {
@@ -232,6 +212,11 @@
         "6EywAKsW_z",
         "EMMZ8KSCjP",
         "vdv3KApSxB"
+      ],
+      "wingedLights": [
+        "JU8ya-Tjjm",
+        "FzLNyBQ5ZA",
+        "oRmSQSKfpm"
       ]
     },
     // #endregion

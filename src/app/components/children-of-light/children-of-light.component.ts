@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import L from 'leaflet';
+import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -39,20 +41,26 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
+    private readonly _activatedRoute: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _zone: NgZone,
   ) {
     this.unlockedCol = _storageService.unlockedCol.size;
     this.totalCol = this._dataService.wingedLightConfig.items.length;
 
-    this.rows = this._dataService.areaConfig.items.filter(area => area.wingedLights?.length).map(area => {
+    const areaSet = new Set<string>();
+    this.rows = [];
+    this._dataService.wingedLightConfig.items.forEach(wl => {
+      const area = wl.area;
+      if (!area || areaSet.has(area.guid)) { return; }
+      areaSet.add(area.guid);
       const row: IRow = {
         area,
         wl: area.wingedLights || [],
         unlocked: (area.wingedLights || []).filter(wl => wl.unlocked).length
       }
       row.wl.forEach(wl => { this.rowMap[wl.guid] = row; });
-      return row;
+      this.rows.push(row);
     });
   }
 
@@ -67,23 +75,54 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
       crs: L.CRS.Simple,
       minZoom: -2,
       maxZoom: 1,
-      maxBounds: [[-2500, -2500], [2500, 2500]],
+      maxBounds: [[-3000, -3000], [3000, 3000]],
 
-    }).setView([0,0], -1);
-    L.imageOverlay('assets/game/map.webp', [[-1750, -1750], [1750, 1750]], {
-      attribution: 'Map @ <a href="https://sky-children-of-the-light.fandom.com/wiki/File:Game-map.png" target="_blank">Sky: CotL Wiki</a>',
+    }).setView([-1000,0], -1);
+    L.imageOverlay('assets/game/map.webp', [[-2160, -2160], [2160, 2160]], {
+      attribution: 'Map &copy; <a href="https://www.thatskygame.com/" target="_blank">Sky: Children of the Light</a>',
     }).addTo(this.map);
+    L.imageOverlay('assets/game/void.webp', [[1025,-675], [1225,-475]]).addTo(this.map);
 
-    this.map.on('click', e => {
-      console.log(e);
-      navigator.clipboard.writeText(JSON.stringify([Math.floor(e.latlng.lat), Math.floor(e.latlng.lng)]));
-    });
 
-    this.map.on('tooltipopen', e => {
-      console.log('tooltipopen', e);
-    });
+    if (document.cookie.includes('mapcopy=')) {
+      this.map.on('click', e => {
+        console.log(e);
+        navigator.clipboard.writeText(JSON.stringify([Math.floor(e.latlng.lat), Math.floor(e.latlng.lng)]));
+      });
+    }
 
     this.map.on('popupopen', e => { this.onPopupOpen(e); });
+
+    // Load position from query params.
+    const query = this._activatedRoute.snapshot.queryParamMap;
+    const x = +(query.get('x') || 0);
+    const y = +(query.get('y') || 0);
+    const z = query.has('z') ? +(query.get('z') || 0) : undefined;
+    if (z !== undefined) {
+      this.map.setView([x, y], z);
+    }
+
+    // Set position in query params.
+    this.map.on('moveend', () => {
+      const url = new URL(location.href);
+      const c = this.map.getCenter();
+      url.searchParams.set('x', `${Math.floor(c.lat)}`);
+      url.searchParams.set('y', `${Math.floor(c.lng)}`);
+      url.searchParams.set('z', `${this.map.getZoom()}`);
+      window.history.replaceState(window.history.state, '', url.pathname + url.search);
+    });
+
+    // Create lines for all Areas
+    // this._dataService.areaConfig.items.filter(a => a.mapData?.position).forEach(area => {
+    //   const pos = [];
+    //   pos.push(area.mapData!.position);
+    //   area.mapData?.connectedAreas?.forEach(guid => {
+    //     const area = this._dataService.guidMap.get(guid as unknown as string) as IArea;
+    //     if (!area.mapData?.position) { return; }
+    //     pos.push(area.mapData.position);
+    //   });
+    //   L.polyline(pos, { color: '#ffff0080',  }).addTo(this.map);
+    // });
 
     // Create markers for all Children of Light
     this._dataService.wingedLightConfig.items.forEach(wl => {
@@ -141,8 +180,9 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
 
   showArea(row: IRow): void {
     this.shownArea = row.area;
-    const wls = this.shownArea.wingedLights || [];
-    const wl = wls.find(wl => !wl.unlocked) || wls[0];
+    const lights = this.light.filter(v => v.wl.area === this.shownArea);
+
+    const wl = lights.find(v => !v.wl.unlocked)?.wl ?? lights[0]?.wl;
     if (!wl) { return; }
     this.flyAndOpen(wl, true);
   }
@@ -222,7 +262,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
 
     this.map.closePopup();
     const pos = wl.mapData?.position || [0,0];
-    this.map.flyTo([pos[0] + 200, pos[1]]);
+    this.map.flyTo([pos[0] + 200, pos[1]], 0);
     light.marker?.openPopup();
   }
 
