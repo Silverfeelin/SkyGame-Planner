@@ -185,6 +185,17 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     this.flyAndOpen(wl, true);
   }
 
+  toggleRow(row: IRow, found?: boolean): void {
+    found ??= row.unlocked < row.wl.length;
+
+    this.map.closePopup();
+    row.area.wingedLights?.forEach(wl => {
+      this.toggleWingedLight(wl, found);
+      this.updateTable(wl);
+      this.updateMarker(wl);
+    });
+  }
+
   private createPopup(wl: IWingedLight): string {
     let video = '';
     let videoUrl = wl.mapData?.videoUrl;
@@ -264,17 +275,31 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     light.marker?.openPopup();
   }
 
+  private toggleWingedLight(wl: IWingedLight, found?: boolean): void {
+    wl.unlocked = typeof(found) === 'boolean' ? found : !wl.unlocked;
+    wl.unlocked ? this._storageService.addCol(wl.guid) : this._storageService.removeCol(wl.guid);
+    this._storageService.saveCol();
+  }
+
+  private allDone(): void {
+    this.map.closePopup();
+    this.map.setZoom(this.map.getMinZoom());
+  }
+
   // #region Leaflet tooltip events
 
   private markCol(div: HTMLElement, guid: string): void {
     const wl = this._dataService.guidMap.get(guid) as IWingedLight;
-    wl.unlocked = !wl.unlocked;
-    wl.unlocked ? this._storageService.addCol(guid) : this._storageService.removeCol(guid);
-    this._storageService.saveCol();
+    this.toggleWingedLight(wl);
 
     this.updatePopup(div, wl);
     this.updateMarker(wl);
     this.updateTable(wl);
+
+    // Go to next
+    if (wl.unlocked) {
+      this.nextCol(guid, true);
+    }
   }
 
   private prevCol(guid: string): void {
@@ -286,14 +311,25 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     this.flyAndOpen(prevWl);
   }
 
-  private nextCol(guid: string): void {
+  private nextCol(guid: string, skipFound = false): void {
     const wl = this._dataService.guidMap.get(guid) as IWingedLight;
     const i = this._dataService.wingedLightConfig.items.findIndex(w => w === wl);
-    const nextWl = this._dataService.wingedLightConfig.items[i + 1] || this._dataService.wingedLightConfig.items[0];
+    let j = (i + 1) % this._dataService.wingedLightConfig.items.length;
+    let nextWl: IWingedLight | undefined;
+    while (j !== i) {
+      nextWl = this._dataService.wingedLightConfig.items[j];
+      if (!nextWl.unlocked || !skipFound) { break; }
+      j += 1; j %= this._dataService.wingedLightConfig.items.length;
+    }
 
+    if (j === i) {
+      this.allDone();
+      return;
+    }
+
+    if (!nextWl) { return; }
     if (!this.lightMap[nextWl.guid]?.marker) { alert('Missing marker for next Child of Light!'); return; }
     this.flyAndOpen(nextWl);
   }
-
   // #endregion
 }

@@ -3,7 +3,7 @@
     <thead *ngIf="headers?.length">
       <tr>
         <ng-container *ngFor="let header of headers;">
-          <th [class.fit]="header.fit" [style.textAlign]="header.textAlign">
+          <th [class.fit]="header.fit" [style.textAlign]="header.textAlign" [style.width]="header.width">
             <ng-container [ngTemplateOutlet]="header.template"></ng-container>
           </th>
         </ng-container>
