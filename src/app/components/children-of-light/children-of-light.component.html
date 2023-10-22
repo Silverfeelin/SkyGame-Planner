@@ -23,7 +23,7 @@
         <ng-template [appTableHeader]>Realm</ng-template>
         <!-- <ng-template [appTableHeader]>Unlock</ng-template> -->
         <ng-template [appTableColumn] let-row="row">
-          <span class="link map-icon">
+          <span class="link map-icon" [class.completed]="row.unlocked === row.wl.length">
             <mat-icon (click)="showArea(row)">location_on</mat-icon>
           </span>
         </ng-template>
@@ -34,10 +34,10 @@
           </span>
         </ng-template>
         <ng-template [appTableColumn] let-row="row">
-          <span>{{row.area.name}}</span>
+          <span [class.completed]="row.unlocked === row.wl.length">{{row.area.name}}</span>
         </ng-template>
         <ng-template [appTableColumn] let-row="row">
-          <span>{{ row.area.realm.name }}</span>
+          <span [class.completed]="row.unlocked === row.wl.length">{{ row.area.realm.name }}</span>
         </ng-template>
       </app-table>
     </div>
