@@ -566,53 +566,53 @@
     {
       "guid": "DSTxmpHUbB",
       "description": "In the building at the end of the opening area in Eye of Eden.",
-      "mapData": { "position": [697,-31] }
+      "mapData": { "position": [697,-31], "videoUrl": "Eden/1.mp4" }
     },
     // Fourth area
     {
       "guid": "1kVW4x7nYj",
       "description": "In front of the tunnel at the end before the point of no return.",
-      "mapData": { "position": [1113,-111] }
+      "mapData": { "position": [1113,-111], "videoUrl": "Eden/2.mp4" }
     },
     {
       "guid": "kxJmOLwH6e",
       "description": "First in the tunnel before the point of no return.",
-      "mapData": { "position": [1113,-91] }
+      "mapData": { "position": [1113,-91], "videoUrl": "Eden/3.mp4" }
     },
     {
       "guid": "3zT-KHGHA_",
       "description": "Second in the tunnel before the point of no return.",
-      "mapData": { "position": [1113,-71] }
+      "mapData": { "position": [1113,-71], "videoUrl": "Eden/4.mp4" }
     },
     {
       "guid": "ahUFYVXgT8",
       "description": "Third in the tunnel before the point of no return.",
-      "mapData": { "position": [1133,-111] }
+      "mapData": { "position": [1133,-111], "videoUrl": "Eden/5.mp4" }
     },
     {
       "guid": "NYSbSHTslP",
       "description": "Fourth in the tunnel before the point of no return.",
-      "mapData": { "position": [1133,-91] }
+      "mapData": { "position": [1133,-91], "videoUrl": "Eden/6.mp4" }
     },
     {
       "guid": "uqOdibxRjD",
       "description": "Fifth in the tunnel before the point of no return.",
-      "mapData": { "position": [1133,-71] }
+      "mapData": { "position": [1133,-71], "videoUrl": "Eden/7.mp4" }
     },
     {
       "guid": "WulN9av6-P",
       "description": "Sixth in the tunnel before the point of no return.",
-      "mapData": { "position": [1153,-111] }
+      "mapData": { "position": [1153,-111], "videoUrl": "Eden/8.mp4" }
     },
     {
       "guid": "wyDIoyrZbw",
       "description": "Seventh in the tunnel before the point of no return.",
-      "mapData": { "position": [1153,-91] }
+      "mapData": { "position": [1153,-91], "videoUrl": "Eden/9.mp4" }
     },
     {
       "guid": "ng2YT7SXkx",
       "description": "Eight in the tunnel before the point of no return.",
-      "mapData": { "position": [1153,-71] }
+      "mapData": { "position": [1153,-71], "videoUrl": "Eden/10.mp4" }
     },
     // #endregion
     // #region Orbit
@@ -626,32 +626,32 @@
     {
       "guid": "ONPX94C2vq",
       "description": "Up above in the Jellyfish memory.",
-      "mapData": { "position": [1145, -600] }
+      "mapData": { "position": [1142, -590] }
     },
     {
       "guid": "VQXUW28_aU",
       "description": "Up above in the Crab memory.",
-      "mapData": { "position": [1160, -575] }
+      "mapData": { "position": [1165, -575] }
     },
     {
       "guid": "lI5ByPVjjf",
       "description": "Up above in the Manta memory.",
-      "mapData": { "position": [1145, -550] }
+      "mapData": { "position": [1142, -560] }
     },
     {
       "guid": "GXM5vGN1Px",
       "description": "On the ground in the Krill memory.",
-      "mapData": { "position": [1105, -600] }
+      "mapData": { "position": [1108, -590] }
     },
     {
       "guid": "L79hQ4XPwg",
       "description": "Near the eye of the closest whale in the Whale memory.",
-      "mapData": { "position": [1090, -575] }
+      "mapData": { "position": [1085, -575], "videoUrl": "Void/Whale.mp4" }
     },
     {
       "guid": "3_zUodfrew",
-      "description": "At the top of the shard in the Elder memory.",
-      "mapData": { "position": [1105, -550] }
+      "description": "At the top of the shard in the Elders memory.",
+      "mapData": { "position": [1108, -560], "videoUrl": "Void/Elders.mp4" }
     }
     // #endregion
   ]
