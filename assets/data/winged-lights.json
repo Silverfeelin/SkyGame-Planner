@@ -247,19 +247,19 @@
     },
     // Underground Cavern
     {
+      "guid": "3NFT1aCRpY",
+      "description": "Behind a gate on the lower right side of the Underground Cavern.",
+      "mapData": { "position": [-364,-894], "videoUrl": "Forest/12.mp4" }
+    },
+    {
       "guid": "iaLuQ06e4T",
-      "description": "On the left side of the Underground Cavern, after following the flock of birds.",
+      "description": "On the left side of the Underground Cavern, after following the flock of birds. Above the Wind Paths tunnel.",
       "mapData": { "position": [-352,-1001], "videoUrl": "Forest/11.mp4" }
     },
     {
       "guid": "pBAU_FHObL",
       "description": "In a small cave to the left of the Underground Cavern with butterflies trapped in jars. Fly up by calling the butterflies.",
       "mapData": { "position": [-324,-982], "videoUrl": "Forest/13.mp4" }
-    },
-    {
-      "guid": "3NFT1aCRpY",
-      "description": "Behind a gate on the lower right side of the Underground Cavern.",
-      "mapData": { "position": [-364,-894], "videoUrl": "Forest/12.mp4" }
     },
     {
       "guid": "xF6rfLZpef",
@@ -496,69 +496,69 @@
     {
       "guid": "r9CmlnAmRm",
       "description": "On a ladder to the left in the opening area of the Vault.",
-      "mapData": { "position": [290,776] }
+      "mapData": { "position": [290,776], "videoUrl": "Vault/1.mp4" }
     },
-    // Third Floor
+    // Starlight Desert
     {
-      "guid": "Hn7mU7ktxt",
-      "description": "On top of the gazebo on the Third Floor of the Vault.",
-      "mapData": { "position": [521,701] }
-    },
-    // Fourth Floor
-    {
-      "guid": "Zzvpdwh0wl",
-      "description": "In a small roofed building on the Fourth Floor of the Vault.",
-      "mapData": { "position": [593,612] }
+      "guid": "Qz-2auzQan",
+      "description": "On top of the jar to the right of the Starlight Desert.",
+      "mapData": { "position": [471,1169], "videoUrl": "Vault/3.mp4" }
     },
     {
-      "guid": "I-vGwH81iB",
-      "description": "At the highest point of the Fourth Floor of the Vault, surrounded by small pillars.",
-      "mapData": { "position": [609,638] }
+      "guid": "DFxZJcPENY",
+      "description": "On top of the lighthouse to the left of the Starlight Desert.",
+      "mapData": { "position": [531,1038], "videoUrl": "Vault/2.mp4" }
     },
-    // Fifth Floor
     {
-      "guid": "vP7uVXrDUu",
-      "description": "On top of one of the floating bones at the Fifth Floor of the Vault.",
-      "mapData": { "position": [625,440] }
-    },
-    // Summit
-    {
-      "guid": "uiNKKn25L-",
-      "description": "In front of the Vault Temple shrine at the Summit.",
-      "mapData": { "position": [714,465] }
+      "guid": "r_r5vLWj-6",
+      "description": "On the bottom floor of the king's island in the Starlight Desert.",
+      "mapData": { "position": [580,1128], "videoUrl": "Vault/4.mp4" }
     },
     // Archives
     {
       "guid": "W9fiK8mWQK",
       "description": "At the first junction of the Archives, to the left behind some jars.",
-      "mapData": { "position": [294,954] }
+      "mapData": { "position": [294,954], "videoUrl": "Vault/5.mp4" }
     },
     {
       "guid": "4uUGCJEgq3",
       "description": "Up a ladder near the end of the Archives.",
-      "mapData": { "position": [294,976] }
-    },
-    // Starlight Desert
-    {
-      "guid": "DFxZJcPENY",
-      "description": "On top of the lighthouse to the left of the Starlight Desert.",
-      "mapData": { "position": [531,1038] }
-    },
-    {
-      "guid": "Qz-2auzQan",
-      "description": "On top of the jar to the right of the Starlight Desert.",
-      "mapData": { "position": [471,1169] }
-    },
-    {
-      "guid": "r_r5vLWj-6",
-      "description": "On the bottom floor of the king's island in the Starlight Desert.",
-      "mapData": { "position": [580,1128] }
+      "mapData": { "position": [294,976], "videoUrl": "Vault/6.mp4" }
     },
     // Repository of Refuge
     {
       "guid": "_RSC0jqGCh",
       "description": "In a locked cell on the outside of the main building in the Repository of Refuge.",
-      "mapData": { "position": [238,534] }
+      "mapData": { "position": [238,534], "videoUrl": "Vault/7.mp4" }
+    },
+    // Third Floor
+    {
+      "guid": "Hn7mU7ktxt",
+      "description": "On top of the gazebo on the Third Floor of the Vault.",
+      "mapData": { "position": [521,701], "videoUrl": "Vault/8.mp4" }
+    },
+    // Fourth Floor
+    {
+      "guid": "Zzvpdwh0wl",
+      "description": "In a small roofed building on the Fourth Floor of the Vault.",
+      "mapData": { "position": [593,612], "videoUrl": "Vault/9.mp4" }
+    },
+    {
+      "guid": "I-vGwH81iB",
+      "description": "At the highest point of the Fourth Floor of the Vault, surrounded by small pillars.",
+      "mapData": { "position": [609,638], "videoUrl": "Vault/10.mp4" }
+    },
+    // Fifth Floor
+    {
+      "guid": "vP7uVXrDUu",
+      "description": "On top of one of the floating bones at the Fifth Floor of the Vault.",
+      "mapData": { "position": [625,440], "videoUrl": "Vault/11.mp4" }
+    },
+    // Summit
+    {
+      "guid": "uiNKKn25L-",
+      "description": "In front of the Vault Temple shrine at the Summit.",
+      "mapData": { "position": [714,465], "videoUrl": "Vault/12.mp4" }
     },
     // #endregion
     // #region Eden
