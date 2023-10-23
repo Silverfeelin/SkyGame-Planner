@@ -8,6 +8,10 @@
       "areas": [
         "zewkN917oz"
       ],
+      "mapData": {
+        "position": [-1668,1170],
+        "boundary": [[-1857,1088],[-1829,1032],[-1746,980],[-1676,962],[-1589,987],[-1503,1046],[-1457,1123],[-1437,1269],[-1448,1360],[-1482,1434],[-1534,1460],[-1588,1451],[-1705,1397],[-1785,1334],[-1844,1278]]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Home"
       }
@@ -19,7 +23,6 @@
       "imageUrl": "assets/game/realms/Isle.webp",
       "areas": [
         "oEnKoTrbCt",
-        "0K2A0kffHA",
         "LanOVr1JCo",
         "6MuptjUV8B",
         "hDN-ciwGc-",
@@ -30,6 +33,9 @@
         "nvd-hpUD1f",
         "lZkMYxUB8A"
       ],
+      "mapData": {
+        "position": [-1222,248]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_of_Dawn"
       }
@@ -51,6 +57,9 @@
         "W4xXNx8SSq",
         "aUAXUdnBge"
       ],
+      "mapData": {
+        "position": [-970,-704]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Daylight_Prairie"
       }
@@ -72,6 +81,9 @@
         "Ay0oFK8FSv",
         "_dSyX-Uwrh"
       ],
+      "mapData": {
+        "position": [-420,-1234]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Hidden_Forest"
       }
@@ -96,6 +108,9 @@
         "3YSSmw01DR",
         "C4ndigYE4Q"
       ],
+      "mapData": {
+        "position": [90,-258]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_of_Triumph"
       }
@@ -117,6 +132,9 @@
         "fng8QLVMr1",
         "QroH22BPGJ"
       ],
+      "mapData": {
+        "position": [-250,1068]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Golden_Wasteland"
       }
@@ -147,6 +165,9 @@
         "DERcWzmOL7",
         "XG3_0khlw9"
       ],
+      "mapData": {
+        "position": [486,844]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_of_Knowledge"
       }
@@ -159,6 +180,10 @@
       "areas": [
         "Mhbh0g9OdG"
       ],
+      "mapData": {
+        "position": [-1464,758],
+        "boundary": [[-1600,701],[-1558,631],[-1483,601],[-1406,638],[-1375,735],[-1388,863],[-1430,921],[-1508,922],[-1581,876],[-1605,788]]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary"
       }
@@ -178,6 +203,10 @@
         "3-YDmI4uL8",
         "Ub5s1RiDA1"
       ],
+      "mapData": {
+        "position": [802,-64],
+        "boundary": [[494,-45],[535,-149],[600,-221],[639,-352],[630,-501],[640,-639],[675,-695],[675,-695],[760,-686],[825,-606],[879,-509],[966,-431],[1096,-395],[1367,-352],[1635,-286],[1846,-261],[1943,-154],[1971,-12],[1958,139],[1909,199],[1808,216],[1540,259],[1318,318],[1102,319],[964,249],[769,189],[636,167],[575,166],[536,142],[497,41]]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Eye_of_Eden"
       }

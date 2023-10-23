@@ -21,6 +21,12 @@
   </div>
 </div>
 
+<div class="map-container mt" #mapContainer>
+  <button type="button" class="map-control" (click)="panToRealm()">
+    <mat-icon>center_focus_weak</mat-icon>
+  </button>
+</div>
+
 <!-- Spirits -->
 <div class="sky-card mt" *ngIf="spirits?.length">
   <div class="sky-card-header">

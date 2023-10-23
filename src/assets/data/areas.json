@@ -3,87 +3,55 @@
     // #region Home
     {
       "guid": "zewkN917oz",
-      "name": "Home Space"
+      "name": "Home Space",
+      "mapData": { "position": [-1668,1165] }
     },
     // #endregion
     // #region Isle
     {
       "guid": "oEnKoTrbCt",
       "name": "Sand Dunes",
-      "spirits": [
-        "qSs575DZ6P",
-        "Tw-J4oXgie",
-        "0yGgX4Yk3c",
-        "_ZYvHXY8HB",
-        "udBbDIhZtD",
-        "noQs_dBSQu",
-        "-BIU0YAs1Q",
-        "IKkPcAF07c"
-      ],
-      "wingedLights": [
-        "-8ZzA17gRA",
-        "zhBAUiJptT",
-        "OS7R6fkcT9",
-        "gfQnk_B1mN"
-      ]
-    },
-    {
-      "guid": "0K2A0kffHA",
-      "name": "Sand Dunes Hidden Cave",
-      "spirits": [
-        "U9RJMJseUK"
-      ]
+      "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
+      "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
+      "mapData": { "position": [-1426,219] }
     },
     {
       "guid": "LanOVr1JCo",
       "name": "Isle Temple Entrance",
-      "spirits": [
-        "bmYjIuJ6Qf",
-        "Q5pn7wxwUD"
-      ]
+      "spirits": [ "bmYjIuJ6Qf", "Q5pn7wxwUD" ],
+      "mapData": { "position": [-1158,245] }
     },
     {
       "guid": "6MuptjUV8B",
-      "name": "Isle Temple"
+      "name": "Isle Temple",
+      "mapData": { "position": [-1017,284] }
     },
     {
       "guid": "hDN-ciwGc-",
       "name": "Floating Island",
-      "spirits": [
-        "f3AD39Q2Il"
-      ]
+      "spirits": [ "f3AD39Q2Il" ],
+      "mapData": { "position": [-1115,423] }
     },
     {
       "guid": "ht8PxRB-MY",
       "name": "Butterfly Cave",
-      "wingedLights": [
-        "vGCXUjMLfB"
-      ]
+      "wingedLights": [ "vGCXUjMLfB" ],
+      "mapData": { "position": [-1071,410] }
     },
     {
       "guid": "Xr2ZiVSV7p",
       "name": "Cave of Prophecies",
-      "spirits": [
-        "DKFofCESGJ",
-        "9Rgsos9xqE",
-        "oIeqSdqyWu",
-        "5DD07qmTqQ",
-        "kH5B_M20Fl"
-      ]
+      "spirits": [ "DKFofCESGJ", "9Rgsos9xqE", "oIeqSdqyWu", "5DD07qmTqQ", "kH5B_M20Fl" ]
     },
     {
       "guid": "4fDcMVcdYD",
       "name": "Trial of Water",
-      "wingedLights": [
-        "LOr9OqWHQv"
-      ]
+      "wingedLights": [ "LOr9OqWHQv" ]
     },
     {
       "guid": "AC2AuDyHbM",
       "name": "Trial of Earth",
-      "wingedLights": [
-        "BPnMAjL286"
-      ]
+      "wingedLights": [ "BPnMAjL286" ]
     },
     {
       "guid": "nvd-hpUD1f",
@@ -95,9 +63,7 @@
     {
       "guid": "lZkMYxUB8A",
       "name": "Trial of Fire",
-      "wingedLights": [
-        "89a0rCfJL-"
-      ]
+      "wingedLights": [ "89a0rCfJL-" ]
     },
     // #endregion
     // #region Prairie
@@ -108,48 +74,25 @@
     {
       "guid": "z3uQqa5KVZ",
       "name": "Butterfly Fields",
-      "spirits": [
-        "ulvP8R6C6a",
-        "5u3TXZON81"
-      ],
-      "wingedLights": [
-        "YmuL-2fCV7",
-        "CuJ61KtkL2",
-        "fl1Z3bEx81",
-      ]
+      "spirits": [ "ulvP8R6C6a", "5u3TXZON81" ],
+      "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2", "fl1Z3bEx81" ]
     },
     {
       "guid": "V17jvM6lWL",
       "name": "Village Islands",
-      "spirits": [
-        "48jm5EQzfU",
-        "K3CIxcDSjq",
-        "WFjSczlPTV",
-        "R4ILdPamhd"
-      ],
-      "wingedLights": [
-        "_SJva8zUYc",
-        "D22kvZx25W",
-        "4lNlq0Raah"
-      ]
+      "spirits": [ "48jm5EQzfU", "K3CIxcDSjq", "WFjSczlPTV", "R4ILdPamhd" ],
+      "wingedLights": [ "_SJva8zUYc", "D22kvZx25W", "4lNlq0Raah" ]
     },
     {
       "guid": "bq6AFJ7avU",
       "name": "8-Player Puzzle Area",
-      "spirits": [
-        "gtbbZnpLbt"
-      ],
-      "wingedLights": [
-        "Sc2aim9ro1"
-      ]
+      "spirits": [ "gtbbZnpLbt" ],
+      "wingedLights": [ "Sc2aim9ro1" ]
     },
     {
       "guid": "JrcYJTvEhh",
       "name": "Koi Pond",
-      "wingedLights": [
-        "vz0IBqoGta",
-        "RPvwKSjUXE"
-      ]
+      "wingedLights": [ "vz0IBqoGta", "RPvwKSjUXE" ]
     },
     {
       "guid": "LdFAYVlCli",
@@ -158,66 +101,26 @@
     {
       "guid": "BwpwRMfq1X",
       "name": "Prairie Caves",
-      "spirits": [
-        "MyLI80npmW",
-        "Q-N8n-0b8O"
-      ],
-      "wingedLights": [
-        "tGV1WQd1yk",
-        "K-eoMvklId"
-      ]
+      "spirits": [ "MyLI80npmW", "Q-N8n-0b8O" ],
+      "wingedLights": [ "tGV1WQd1yk", "K-eoMvklId" ]
     },
     {
       "guid": "HHem4xrBb6",
       "name": "Bird's Nest",
-      "spirits": [
-        "KM1xzU9v5P",
-        "jncJKA4IaM",
-        "PYsLThJYPx"
-      ],
-      "wingedLights": [
-        "GNDWMxbvTD",
-        "PBt-1vrXFA"
-      ]
+      "spirits": [ "KM1xzU9v5P", "jncJKA4IaM", "PYsLThJYPx" ],
+      "wingedLights": [ "GNDWMxbvTD", "PBt-1vrXFA" ]
     },
     {
       "guid": "W4xXNx8SSq",
       "name": "Sanctuary Island",
-      "spirits": [
-        "0IoADuWn1P",
-        "8N9cC4SvzM",
-        "IDEim-HNOZ",
-        "uxtR1vVL8c",
-        "z4xqXUkx_6",
-        "jx7koL5guD",
-        "MEw6did3kI"
-      ],
-      "wingedLights": [
-        "NIEbxjzi9w",
-        "MzhGgNL7T0",
-        "4Sh9Wwka_r",
-        "saQGYqh8gS",
-        "20LOTTTfr_",
-        "qN0TPwjnam",
-        "nHuasNjUrd",
-        "cBNCxRNiPa"
-      ]
+      "spirits": [ "0IoADuWn1P", "8N9cC4SvzM", "IDEim-HNOZ", "uxtR1vVL8c", "z4xqXUkx_6", "jx7koL5guD", "MEw6did3kI" ],
+      "wingedLights": [ "NIEbxjzi9w", "MzhGgNL7T0", "4Sh9Wwka_r", "saQGYqh8gS", "20LOTTTfr_", "qN0TPwjnam", "nHuasNjUrd", "cBNCxRNiPa" ]
     },
     {
       "guid": "aUAXUdnBge",
       "name": "Prairie Peaks",
-      "spirits": [
-        "PN_V8C4WOq",
-        "jh-fGKllmH",
-        "6EywAKsW_z",
-        "EMMZ8KSCjP",
-        "vdv3KApSxB"
-      ],
-      "wingedLights": [
-        "JU8ya-Tjjm",
-        "FzLNyBQ5ZA",
-        "oRmSQSKfpm"
-      ]
+      "spirits": [ "PN_V8C4WOq", "jh-fGKllmH", "6EywAKsW_z", "EMMZ8KSCjP", "vdv3KApSxB" ],
+      "wingedLights": [ "JU8ya-Tjjm", "FzLNyBQ5ZA", "oRmSQSKfpm" ]
     },
     // #endregion
     // #region Hidden Forest
@@ -228,111 +131,53 @@
     {
       "guid": "tU23ZgPP_g",
       "name": "Forest Clearing",
-      "wingedLights": [
-        "0o9-mt5q1s"
-      ]
+      "wingedLights": [ "0o9-mt5q1s" ]
     },
     {
       "guid": "ZlV4HpsDGF",
       "name": "Rainy Forest",
-      "spirits": [
-        "LwcCtbnGuF",
-        "94UEgV7ic1",
-        "RG-Z1xwway"
-      ],
-      "wingedLights": [
-        "zJCYOFxRNR"
-      ]
+      "spirits": [ "LwcCtbnGuF", "94UEgV7ic1", "RG-Z1xwway" ],
+      "wingedLights": [ "zJCYOFxRNR" ]
     },
     {
       "guid": "qVu1RHulPp",
       "name": "Forest Brook",
-      "spirits": [
-        "xbGBFC0rnu",
-        "p-WdkJpGB5",
-        "waSFuoNQsR",
-        "lmydkMDQeP",
-        "8OYabqG_jZ",
-        "H30afxXKT1",
-        "lE8DJQLcg5"
-      ],
-      "wingedLights": [
-        "E_vpwUyVcM",
-        "5F7jGqG9xU",
-        "irgdECMxtI",
-        "Zv6jq5_IzP"
-      ]
+      "spirits": [ "xbGBFC0rnu", "p-WdkJpGB5", "waSFuoNQsR", "lmydkMDQeP", "8OYabqG_jZ", "H30afxXKT1", "lE8DJQLcg5" ],
+      "wingedLights": [ "E_vpwUyVcM", "5F7jGqG9xU", "irgdECMxtI", "Zv6jq5_IzP" ]
     },
     {
       "guid": "L3F8Z9vbYs",
       "name": "Elevated Clearing",
-      "wingedLights": [
-        "MpcHkLWwol",
-        "DIK2gBZ_FA"
-      ]
+      "wingedLights": [ "MpcHkLWwol", "DIK2gBZ_FA" ]
     },
     {
       "guid": "FlcxMwdsU7",
       "name": "Underground Cavern",
-      "spirits": [
-        "gcEV41jg3U"
-      ],
-      "wingedLights": [
-        "iaLuQ06e4T",
-        "pBAU_FHObL",
-        "3NFT1aCRpY",
-        "xF6rfLZpef"
-      ]
+      "spirits": [ "gcEV41jg3U" ],
+      "wingedLights": [ "iaLuQ06e4T", "pBAU_FHObL", "3NFT1aCRpY", "xF6rfLZpef" ]
     },
     {
       "guid": "iYC53UMrvL",
       "name": "Broken Bridge",
-      "spirits": [
-        "L_0YoE4O8Z",
-        "puj9z07ew0",
-        "gF3qSnQNxx",
-        "R_zBE7HaWV",
-        "RUGuLBBPcg",
-        "MZZ5RA0AMG",
-        "NGSlfCM_wu"
-      ],
-      "wingedLights": [
-        "XlmWJaLSNr",
-        "J1boiLeD4w",
-        "uFoLDIogSU"
-      ]
+      "spirits": [ "L_0YoE4O8Z", "puj9z07ew0", "gF3qSnQNxx", "R_zBE7HaWV", "RUGuLBBPcg", "MZZ5RA0AMG", "NGSlfCM_wu" ],
+      "wingedLights": [ "XlmWJaLSNr", "J1boiLeD4w", "uFoLDIogSU" ]
     },
     {
       "guid": "-y0hYE5huj",
       "name": "Forest Temple",
-      "wingedLights": [
-        "s_UlGNscIQ"
-      ]
+      "wingedLights": [ "s_UlGNscIQ" ]
     },
     {
       "guid": "Ay0oFK8FSv",
       "name": "Assembly Treehouse",
-      "spirits": [
-        "cpwvdVEzKN"
-      ],
-      "wingedLights": [
-        "H7uvC7nb8U",
-        "7_WXb7Uu8Z"
-      ]
+      "spirits": [ "cpwvdVEzKN" ],
+      "wingedLights": [ "H7uvC7nb8U", "7_WXb7Uu8Z" ]
     },
     {
       "guid": "_dSyX-Uwrh",
       "name": "Wind Paths",
-      "spirits": [
-        "FF8u1g9XI_",
-        "9Wl9kwxoFk",
-        "VQadeqBPEO",
-        "_7-rIO21Ea",
-        "hovmkrquOR"
-      ],
-      "wingedLights": [
-        "CZ99GFJVyE"
-      ]
+      "spirits": [ "FF8u1g9XI_", "9Wl9kwxoFk", "VQadeqBPEO", "_7-rIO21Ea", "hovmkrquOR" ],
+      "wingedLights": [ "CZ99GFJVyE" ]
     },
     // #endregion
     // #region Valley
@@ -343,117 +188,58 @@
     {
       "guid": "u3rc8C3sMb",
       "name": "Ice Rink",
-      "spirits": [
-        "4KCKJxR56G",
-        "JROKFatVLC",
-        "bHCSyFQ4u-",
-        "9y_5scrYa9"
-      ],
-      "wingedLights": [
-        "5BM1uqQvM4",
-        "vKEMuduC0F",
-        "_rmaySa6NL"
-      ]
+      "spirits": [ "4KCKJxR56G", "JROKFatVLC", "bHCSyFQ4u-", "9y_5scrYa9" ],
+      "wingedLights": [ "5BM1uqQvM4", "vKEMuduC0F", "_rmaySa6NL" ]
     },
     {
       "guid": "iRWfJCMxFB",
       "name": "Citadel",
-      "spirits": [
-        "yUp189PWVS",
-        "CfXORyMFx4",
-        "H5iKZChQIK"
-      ],
-      "wingedLights": [
-        "DjuNbgmKq5",
-        "D9Z9c3mRDf"
-      ]
+      "spirits": [ "yUp189PWVS", "CfXORyMFx4", "H5iKZChQIK" ],
+      "wingedLights": [ "DjuNbgmKq5", "D9Z9c3mRDf" ]
     },
     {
       "guid": "8Zn5GPbx1U",
       "name": "Sliding Race",
-      "wingedLights": [
-        "Tmg19lVERk"
-      ]
+      "wingedLights": [ "Tmg19lVERk" ]
     },
     {
       "guid": "uMoS_cHn0R",
       "name": "Flying Race",
-      "wingedLights": [
-        "sfDl46vj4O",
-        "N6KMjaxez6"
-      ]
+      "wingedLights": [ "sfDl46vj4O", "N6KMjaxez6" ]
     },
     {
       "guid": "YoYzKZ6GY3",
       "name": "Race End",
-      "wingedLights": [
-        "HqV6qmTkzQ"
-      ]
+      "wingedLights": [ "HqV6qmTkzQ" ]
     },
     {
       "guid": "GC4SmA2CUz",
       "name": "Coliseum",
-      "spirits": [
-        "OaAUJHNIjE",
-        "IIt-zYJC2N",
-        "fRtK3WFMm1",
-        "CQJO8mQ0do",
-        "20Xw7fuZWr",
-        "g_lZ76kjbS",
-        "XvcpNrqatq",
-        "95RfXrjMx1"
-      ],
-      "wingedLights": [
-        "McAh-VzlJH"
-      ]
+      "spirits": [ "OaAUJHNIjE", "IIt-zYJC2N", "fRtK3WFMm1", "CQJO8mQ0do", "20Xw7fuZWr", "g_lZ76kjbS", "XvcpNrqatq", "95RfXrjMx1" ],
+      "wingedLights": [ "McAh-VzlJH" ]
     },
     {
       "guid": "L1O2yEHfvX",
       "name": "Valley Temple",
-      "spirits": [
-        "CcOE42N9Mc"
-      ],
-      "wingedLights": [
-        "E-f38yRTaj"
-      ]
+      "spirits": [ "CcOE42N9Mc" ],
+      "wingedLights": [ "E-f38yRTaj" ]
     },
     {
       "guid": "WZFTGjgurD",
       "name": "Village of Dreams",
-      "spirits": [
-        "sj6YhQZQvM",
-        "KhFZE8z0-I",
-        "7tMB-HjDin",
-        "Jd8rEzWHVg",
-        "Ej3SZgZ2WL"
-      ],
-      "wingedLights": [
-        "U6oebtceIH",
-        "xF36ISKLHe",
-        "orOMQkGltm"
-      ]
+      "spirits": [ "sj6YhQZQvM", "KhFZE8z0-I", "7tMB-HjDin", "Jd8rEzWHVg", "Ej3SZgZ2WL" ],
+      "wingedLights": [ "U6oebtceIH", "xF36ISKLHe", "orOMQkGltm" ]
     },
     {
       "guid": "7z8NtDXKrS",
       "name": "Hermit Valley",
-      "wingedLights": [
-        "KFqwmitUni",
-        "8_EY7L74TI"
-      ]
+      "wingedLights": [ "KFqwmitUni", "8_EY7L74TI" ]
     },
     {
       "guid": "M8mzMntElQ",
       "name": "Village Theatre",
-      "spirits": [
-        "qSggZYj_x3",
-        "4iotcmsn0K",
-        "fEcI6neh6f",
-        "KYhwsjTkp-",
-        "S6KVcMgi-3"
-      ],
-      "wingedLights": [
-        "JRTI3BsjIZ"
-      ]
+      "spirits": [ "qSggZYj_x3", "4iotcmsn0K", "fEcI6neh6f", "KYhwsjTkp-", "S6KVcMgi-3" ],
+      "wingedLights": [ "JRTI3BsjIZ" ]
     },
     {
       "guid": "3YSSmw01DR",
@@ -476,96 +262,43 @@
     {
       "guid": "4Vw0MHl11q",
       "name": "Broken Temple",
-      "spirits": [
-        "TqswdiTmEC",
-        "k8nqBtLJ0R"
-      ],
-      "wingedLights": [
-        "M_ouc0fx7z",
-        "-jaWbsOO-B"
-      ]
+      "spirits": [ "TqswdiTmEC", "k8nqBtLJ0R" ],
+      "wingedLights": [ "M_ouc0fx7z", "-jaWbsOO-B" ]
     },
     {
       "guid": "CCmW2Ad_v_",
       "name": "Graveyard",
-      "spirits": [
-        "_4VyRWxD3V",
-        "trJkBr3myf",
-        "eToUA1mSjz",
-        "LO75aDy9Zc",
-        "OJECJaFI5p"
-      ],
-      "wingedLights": [
-        "cfkB_RA0cA",
-        "F-YgRDMZyG",
-        "Y3PENqw0Mj",
-        "lL0L9y28hd",
-        "arkcy1Y5HK",
-        "NmYlVIsugI"
-      ]
+      "spirits": [ "_4VyRWxD3V", "trJkBr3myf", "eToUA1mSjz", "LO75aDy9Zc", "OJECJaFI5p" ],
+      "wingedLights": [ "cfkB_RA0cA", "F-YgRDMZyG", "Y3PENqw0Mj", "lL0L9y28hd", "arkcy1Y5HK", "NmYlVIsugI" ]
     },
     {
       "guid": "jjiMqCABVw",
       "name": "Crab Fields",
-      "spirits": [
-        "6GO0ISasq7",
-        "tZG5hNcINX"
-      ],
-      "wingedLights": [
-        "pZ5N0156oQ",
-        "U8Bo3YBBh2",
-        "rSQzx1yNcr"
-      ]
+      "spirits": [ "6GO0ISasq7", "tZG5hNcINX" ],
+      "wingedLights": [ "pZ5N0156oQ", "U8Bo3YBBh2", "rSQzx1yNcr" ]
     },
     {
       "guid": "jP2N7n1mcw",
       "name": "Battlefield",
-      "spirits": [
-        "nwpDbbbWcw"
-      ],
-      "wingedLights": [
-        "3rn0JHgV53",
-        "MVmgO5kOUE"
-      ]
+      "spirits": [ "nwpDbbbWcw" ],
+      "wingedLights": [ "3rn0JHgV53", "MVmgO5kOUE" ]
     },
     {
       "guid": "9kF2UIDK2N",
       "name": "Wasteland Temple",
-      "wingedLights": [
-        "NtcClN4SsY"
-      ]
+      "wingedLights": [ "NtcClN4SsY" ]
     },
     {
       "guid": "xr7mTSgK1O",
       "name": "Forgotten Ark",
-      "spirits": [
-        "ZomY9nil8V",
-        "HphxLKhDBZ",
-        "kQiNS82DDY",
-        "OaysgoHcZI",
-        "UJVa4nb2nn",
-        "Be41CnHkEI",
-        "hgjklF3nQI"
-      ],
-      "wingedLights": [
-        "1zsvpsvviY",
-        "wtWGz0QLVx"
-      ]
+      "spirits": [ "ZomY9nil8V", "HphxLKhDBZ", "kQiNS82DDY", "OaysgoHcZI", "UJVa4nb2nn", "Be41CnHkEI", "hgjklF3nQI" ],
+      "wingedLights": [ "1zsvpsvviY", "wtWGz0QLVx" ]
     },
     {
       "guid": "fng8QLVMr1",
       "name": "Treasure Reef",
-      "spirits": [
-        "WFqMqmjVv9",
-        "4gwH1Tn9he",
-        "aVOtIknTMO",
-        "zVs_gAo_wy",
-        "gTIay-wjmN"
-      ],
-      "wingedLights": [
-        "ij47DZ1EJi",
-        "LoX2Z_gAeA"
-      ]
+      "spirits": [ "WFqMqmjVv9", "4gwH1Tn9he", "aVOtIknTMO", "zVs_gAo_wy", "gTIay-wjmN" ],
+      "wingedLights": [ "ij47DZ1EJi", "LoX2Z_gAeA" ]
     },
     {
       "guid": "QroH22BPGJ",
@@ -576,9 +309,7 @@
     {
       "guid": "QM7Kuv1Ekg",
       "name": "Vault Social Area",
-      "wingedLights": [
-        "r9CmlnAmRm"
-      ]
+      "wingedLights": ["r9CmlnAmRm" ]
     },
     {
       "guid": "wKZdWMMIWa",
@@ -587,55 +318,34 @@
     {
       "guid": "HQq24rBB3k",
       "name": "Vault Telekinesis Room",
-      "spirits": [
-        "_8CvQjUnQg",
-        "CH6e-TQz6n"
-      ]
+      "spirits": [ "_8CvQjUnQg", "CH6e-TQz6n" ]
     },
     {
       "guid": "KLweYQTEIp",
       "name": "Vault Second Floor",
-      "spirits": [
-        "Im7m8syitV"
-      ]
+      "spirits": [ "Im7m8syitV" ]
     },
     {
       "guid": "-xkmkbpRyN",
       "name": "Vault Third Floor",
-      "spirits": [
-        "1OGD_H3a7X"
-      ],
-      "wingedLights": [
-        "Hn7mU7ktxt"
-      ]
+      "spirits": [ "1OGD_H3a7X" ],
+      "wingedLights": [ "Hn7mU7ktxt" ]
     },
     {
       "guid": "BxTngnB1PV",
       "name": "Vault Fourth Floor",
-      "spirits": [
-        "HeJISF946a",
-        "Gi75RcvXd0",
-        "KZaVtTUdlR",
-        "mZZ-MkZJ1x"
-      ],
-      "wingedLights": [
-        "Zzvpdwh0wl",
-        "I-vGwH81iB"
-      ]
+      "spirits": [ "HeJISF946a", "Gi75RcvXd0", "KZaVtTUdlR", "mZZ-MkZJ1x" ],
+      "wingedLights": [ "Zzvpdwh0wl", "I-vGwH81iB" ]
     },
     {
       "guid": "Zx40zFvrqG",
       "name": "Vault Fifth Floor",
-      "wingedLights": [
-        "vP7uVXrDUu"
-      ]
+      "wingedLights": [ "vP7uVXrDUu" ]
     },
     {
       "guid": "ZiqYHd176H",
       "name": "Vault Summit",
-      "wingedLights": [
-        "uiNKKn25L-"
-      ]
+      "wingedLights": [ "uiNKKn25L-" ]
     },
     {
       "guid": "oP2Hg17s9u",
@@ -644,43 +354,24 @@
     {
       "guid": "HbKvg_BOyc",
       "name": "Vault Archives",
-      "spirits": [
-        "7EzWoLR1w4"
-      ],
-      "wingedLights": [
-        "W9fiK8mWQK",
-        "4uUGCJEgq3"
-      ]
+      "spirits": [ "7EzWoLR1w4" ],
+      "wingedLights": [ "W9fiK8mWQK", "4uUGCJEgq3" ]
     },
     {
       "guid": "IrChmrOevd",
       "name": "Starlight Desert",
-      "spirits": [
-        "HfafU7Pfui",
-        "JOCCkr0TlW",
-        "V7gj-cBqK1",
-        "z5dtSO-gis",
-        "l7zP8zUFHX"
-      ],
-      "wingedLights": [
-        "DFxZJcPENY",
-        "Qz-2auzQan",
-        "r_r5vLWj-6"
-      ]
+      "spirits": [ "HfafU7Pfui", "JOCCkr0TlW", "V7gj-cBqK1", "z5dtSO-gis", "l7zP8zUFHX" ],
+      "wingedLights": [ "DFxZJcPENY", "Qz-2auzQan", "r_r5vLWj-6" ]
     },
     {
       "guid": "TenYOMK1pK",
       "name": "Starlight Desert Jar",
-      "spirits": [
-        "iweb5Sk2Xk"
-      ]
+      "spirits": [ "iweb5Sk2Xk" ]
     },
     {
       "guid": "S3Zd-sgxHw",
       "name": "Jellyfish Beach",
-      "spirits": [
-        "dEQ1GVQOx7"
-      ]
+      "spirits": [ "dEQ1GVQOx7" ]
     },
     {
       "guid": "p3vJrJBcfy",
@@ -693,16 +384,7 @@
     {
       "guid": "schNrmq0ID",
       "name": "Office",
-      "spirits": [
-        "ExkE9a7QJ0",
-        "Ayoc2XvMTy",
-        "izKBXplld6",
-        "cpTFBZ-im4",
-        "bQCZEuAuZe",
-        "MKdRGA66hC",
-        "HmibyU0UEG",
-        "GUwL23XDTb"
-      ]
+      "spirits": [ "ExkE9a7QJ0", "Ayoc2XvMTy", "izKBXplld6", "cpTFBZ-im4", "bQCZEuAuZe", "MKdRGA66hC", "HmibyU0UEG", "GUwL23XDTb" ]
     },
     {
       "guid": "TyD_dnjqAF",
@@ -715,29 +397,15 @@
     {
       "guid": "XG3_0khlw9",
       "name": "Repository of Refuge",
-      "spirits": [
-        "ZGSnOxK9gb",
-        "O1olUBrkJ5",
-        "V43JRVL_QD",
-        "DAG_zfwis5",
-        "zq6qjCsQ_f"
-      ],
-      "wingedLights": [
-        "_RSC0jqGCh"
-      ]
+      "spirits": [ "ZGSnOxK9gb", "O1olUBrkJ5", "V43JRVL_QD", "DAG_zfwis5", "zq6qjCsQ_f" ],
+      "wingedLights": [ "_RSC0jqGCh" ]
     },
     // #endregion
     // #region Aviary
     {
       "guid": "Mhbh0g9OdG",
       "name": "Aviary Village",
-      "spirits": [
-        "0Ab0zVwBa0",
-        "53sRWu-bTI",
-        "yRKMk_Xw4G",
-        "118ghc8_me",
-        "iz40tYocEn"
-      ]
+      "spirits": [ "0Ab0zVwBa0", "53sRWu-bTI", "yRKMk_Xw4G", "118ghc8_me", "iz40tYocEn" ]
     },
     // #endregion
     // #region Eden
@@ -748,9 +416,7 @@
     {
       "guid": "aXSrTx3fzL",
       "name": "Eden First Area",
-      "wingedLights": [
-        "DSTxmpHUbB"
-      ]
+      "wingedLights": [ "DSTxmpHUbB" ]
     },
     {
       "guid": "xYRxil02Bm",
@@ -763,17 +429,7 @@
     {
       "guid": "c84Uxu50_p",
       "name": "Eden Fourth Area (rocks and krill)",
-      "wingedLights": [
-        "1kVW4x7nYj",
-        "kxJmOLwH6e",
-        "3zT-KHGHA_",
-        "ahUFYVXgT8",
-        "NYSbSHTslP",
-        "uqOdibxRjD",
-        "WulN9av6-P",
-        "wyDIoyrZbw",
-        "ng2YT7SXkx"
-      ]
+      "wingedLights": [ "1kVW4x7nYj", "kxJmOLwH6e", "3zT-KHGHA_", "ahUFYVXgT8", "NYSbSHTslP", "uqOdibxRjD", "WulN9av6-P", "wyDIoyrZbw", "ng2YT7SXkx" ]
     },
     {
       "guid": "1-S3ZsNdV0",
@@ -786,42 +442,20 @@
     {
       "guid": "Ub5s1RiDA1",
       "name": "Orbit",
-      "spirits": [
-        "l8tl0mHCWH",
-        "iu6tmCPpex",
-        "aj2x9H8ECy",
-        "NgLbFXaB4z",
-        "JQR4EGE6io",
-        "NLbS2a-y2u"
-      ],
-      "wingedLights": [
-        "DvYGWvjeOC"
-      ]
+      "spirits": [ "l8tl0mHCWH", "iu6tmCPpex", "aj2x9H8ECy", "NgLbFXaB4z", "JQR4EGE6io", "NLbS2a-y2u" ],
+      "wingedLights": [ "DvYGWvjeOC" ]
     },
     // #endregion
     // #region Void
     {
       "guid": "aRsxiCgYhD",
       "name": "Void of Shattering",
-      "spirits": [
-        "q8g57aJV8r",
-        "KqGJfPvqrM",
-        "di5Qar2yOI",
-        "3rebltHxWX",
-        "V7PbSxO67Q"
-      ]
+      "spirits": [ "q8g57aJV8r", "KqGJfPvqrM", "di5Qar2yOI", "3rebltHxWX", "V7PbSxO67Q" ]
     },
     {
       "guid": "SEVISEYelk",
       "name": "Void Memories",
-      "wingedLights": [
-        "ONPX94C2vq",
-        "VQXUW28_aU",
-        "lI5ByPVjjf",
-        "GXM5vGN1Px",
-        "L79hQ4XPwg",
-        "3_zUodfrew"
-      ]
+      "wingedLights": [ "ONPX94C2vq", "VQXUW28_aU", "lI5ByPVjjf", "GXM5vGN1Px", "L79hQ4XPwg", "3_zUodfrew" ]
     }
     // #endregion
   ]

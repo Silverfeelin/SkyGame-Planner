@@ -1,4 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
+import { IMapData } from './map-data.interface';
 import { IRealm } from "./realm.interface";
 import { IReturningSpirits } from './returning-spirits.interface';
 import { ISpirit } from "./spirit.interface";
@@ -9,6 +10,7 @@ export interface IAreaConfig extends IConfig<IArea> {}
 
 export interface IArea extends IGuid {
   name: string;
+  mapData?: IMapData;
 
   /// References ///
   realm?: IRealm;

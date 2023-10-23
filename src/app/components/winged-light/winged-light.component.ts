@@ -12,6 +12,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class WingedLightComponent {
   wb = 0; totalWb = 0;
   col = 0; totalCol = 0;
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,

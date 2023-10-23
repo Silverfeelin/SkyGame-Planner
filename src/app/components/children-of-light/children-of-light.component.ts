@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import L from 'leaflet';
@@ -8,6 +8,7 @@ import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
+import { MapService } from 'src/app/services/map.service';
 
 interface IRow {
   area: IArea;
@@ -26,7 +27,8 @@ interface IMapWingedLight {
   styleUrls: ['./children-of-light.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ChildrenOfLightComponent implements OnInit, OnDestroy {
+export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef;
   @ViewChild('table', { static: true }) table?: ElementRef;
 
   unlockedCol = 0; totalCol = 0;
@@ -45,6 +47,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
+    private readonly _mapService: MapService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _breakpointObserver: BreakpointObserver,
@@ -69,38 +72,19 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    this.map = this._mapService.initialize(this.mapContainer!.nativeElement);
+
     const wlIcon = L.icon({
       iconUrl: 'assets/icons/light.svg',
       iconSize: [32, 32],
       popupAnchor: [0, -12],
     });
 
-    this.map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -2,
-      maxZoom: 1,
-      maxBounds: [[-3000, -3000], [3000, 3000]],
-      zoomControl: false
-    }).setView([-1000,0], -1);
-
     // Add images to map.
-    L.imageOverlay('assets/game/map.webp', [[-2160, -2160], [2160, 2160]], {
-      attribution: 'Map &copy; <a href="https://www.thatskygame.com/" target="_blank">Sky: Children of the Light</a>',
-    }).addTo(this.map);
     L.imageOverlay('assets/game/void.webp', [[1025,-675], [1225,-475]]).addTo(this.map);
 
-    // Add zoom controls.
-    L.control.zoom({ position: 'bottomright' }).addTo(this.map);
-
-    if (document.cookie.includes('mapcopy=')) {
-      this.map.on('click', e => {
-        console.log(e);
-        navigator.clipboard.writeText(JSON.stringify([Math.floor(e.latlng.lat), Math.floor(e.latlng.lng)]));
-      });
-    }
-
-    this.map.on('popupopen', e => { this.onPopupOpen(e); });
+    this.map.on('popupopen', (e: L.PopupEvent) => { this.onPopupOpen(e); });
 
     // Load position from query params.
     const query = this._activatedRoute.snapshot.queryParamMap;
@@ -112,14 +96,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     }
 
     // Set position in query params.
-    this.map.on('moveend', () => {
-      const url = new URL(location.href);
-      const c = this.map.getCenter();
-      url.searchParams.set('x', `${Math.floor(c.lat)}`);
-      url.searchParams.set('y', `${Math.floor(c.lng)}`);
-      url.searchParams.set('z', `${this.map.getZoom()}`);
-      window.history.replaceState(window.history.state, '', url.pathname + url.search);
-    });
+    this.map.on('moveend', () => { this.onMoveEnd(); });
 
     // Create lines for all Areas
     // this._dataService.areaConfig.items.filter(a => a.mapData?.position).forEach(area => {
@@ -133,13 +110,26 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     //   L.polyline(pos, { color: '#ffff0080',  }).addTo(this.map);
     // });
 
+    this._dataService.realmConfig.items.filter(r => r.mapData).forEach(realm => {
+      if (realm.mapData!.boundary) {
+        L.polygon(realm.mapData!.boundary, { color: realm.mapData?.boundaryColor || '#ffff0080', fillOpacity: 0 }).addTo(this.map);
+      }
+    });
+
+    // this._dataService.areaConfig.items.filter(item => item.mapData).forEach(area => {
+    //   L.marker(area.mapData!.position!, {
+    //     icon: areaIcon,
+    //     opacity: 1,
+    //   }).addTo(this.map);
+    // });
+
     // Create markers for all Children of Light
     this._dataService.wingedLightConfig.items.forEach(wl => {
       if (!wl.mapData) { return; }
       const obj: IMapWingedLight = { wl };
 
       // Create marker
-      obj.marker = L.marker(wl.mapData.position, {
+      obj.marker = L.marker(wl.mapData.position!, {
         icon: wlIcon,
         opacity: wl.unlocked ? 0.4 : 1,
       }).addTo(this.map);
@@ -174,8 +164,8 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.map?.remove();
     this._subWidth?.unsubscribe();
+    this.map.remove();
   }
 
   scrollToList(): void {
@@ -261,6 +251,15 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     const wl = this._dataService.guidMap.get(wlGuid) as IWingedLight;
 
     this.updatePopup(div, wl);
+  }
+
+  private onMoveEnd(): void {
+    const url = new URL(location.href);
+    const c = this.map.getCenter();
+    url.searchParams.set('x', `${Math.floor(c.lat)}`);
+    url.searchParams.set('y', `${Math.floor(c.lng)}`);
+    url.searchParams.set('z', `${this.map.getZoom()}`);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   private updatePopup(div: HTMLElement, wl: IWingedLight): void {

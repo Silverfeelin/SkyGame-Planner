@@ -1,4 +1,8 @@
+import { LatLngTuple } from 'leaflet';
+
 export interface IMapData {
-  position: [number, number];
+  position?: LatLngTuple;
+  boundary?: Array<LatLngTuple>;
+  boundaryColor?: string;
   videoUrl?: string;
 }

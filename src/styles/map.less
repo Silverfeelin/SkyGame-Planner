@@ -1,0 +1,115 @@
+.map {
+  position: relative;
+  height: calc(100vh - 64px);
+  max-height: 800px;
+  width: 100%;
+}
+
+.leaflet-container {
+  border-radius: var(--border-radius);
+  background: #0F1520;
+  //background-image: url(/assets/game/map_bg.webp);
+  //background-repeat: repeat;
+  outline: 0;
+}
+
+.leaflet-popup-content {
+  margin: 6px !important;
+}
+
+.leaflet-popup-close-button {
+  color: var(--color-map-tooltip) !important;
+}
+
+.leaflet-popup-content-wrapper {
+  color: var(--color-map-tooltip) !important;
+  background-color: var(--color-map-tooltip-background) !important;
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--color-map-tooltip-border) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: var(--color-map-tooltip-border) !important;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  color: var(--color-map-tooltip) !important;
+  background-color: var(--color-map-tooltip-background) !important;
+  border-radius: var(--border-radius) !important;
+  border: 1px solid var(--color-map-tooltip-border) !important;
+  &.leaflet-disabled {
+    color: var(--color-map-tooltip-disabled) !important;
+  }
+}
+
+.leaflet-control-zoom-in {
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+}
+
+.leaflet-control-zoom-out {
+  border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+  border-top-width: 0;
+}
+
+.s-leaflet-grid {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, 1fr);
+  *:nth-child(n + 3) {
+    grid-column: span 2;
+  }
+}
+
+.s-leaflet-tooltip {
+  .container {
+    display: inline-block;
+    border: none !important;
+  }
+  a {
+    color: var(--color-map-tooltip) !important;
+    text-decoration: none;
+  }
+  iframe {
+    vertical-align: top;
+    border-radius: var(--border-radius) !important;
+  }
+}
+
+.s-leaflet-mt {
+  margin-top: 6px !important;
+}
+
+.s-leaflet-hasicon {
+  position: relative;
+  min-width: 32px;
+  .s-leaflet-maticon {
+    position: absolute;
+    left: 4px;
+  }
+}
+
+.s-leaflet-check-label {
+  margin-left: 22px;
+}
+
+.s-leaflet-maticon {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 1;
+  font-size: 22px;
+  line-height: 17px;
+}
+
+/* Responsive */
+
+.s-leaflet-vid { max-width: 100%; }
+.s-leaflet-item .s-leaflet-maticon { display: none; }
+
+@media screen and (max-width: 719px) {
+  .s-leaflet-grid .menu-label { padding-left: unset !important; }
+  .s-leaflet-vid { max-height: 135px; }
+}
+
+@media screen and (min-width: 720px) {
+  .s-leaflet-item .s-leaflet-maticon { display: block; }
+  .s-leaflet-vid { max-height: 270px; }
+}

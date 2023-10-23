@@ -1,7 +1,6 @@
 <!-- Always run dark theme styling inside map. -->
-<div class="map" data-theme="dark">
-  <div id="map"></div>
-  <button type="button" class="map-controls" (click)="scrollToList()">
+<div class="map-container" #mapContainer>
+  <button type="button" class="map-control" (click)="scrollToList()">
     <mat-icon>arrow_downward</mat-icon>
   </button>
 </div>

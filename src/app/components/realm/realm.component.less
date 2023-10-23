@@ -5,3 +5,26 @@ app-spirit-tree {
 .tree-wrapper {
   display: inline-block;
 }
+
+.map-container {
+  height: min(400px, 50vh);
+}
+
+.map-control {
+  position: absolute;
+  z-index: 9999;
+  bottom: var(--padding-content);
+  left: var(--padding-content);
+  padding: var(--padding-content);
+  color: var(--color-map-tooltip);
+  background:  var(--color-map-tooltip-background);
+  border-radius: var(--border-radius);
+  width: 32px;
+  height: 32px;
+
+  mat-icon {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+  }
+}
