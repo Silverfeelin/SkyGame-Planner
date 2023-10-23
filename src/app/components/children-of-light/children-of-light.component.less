@@ -108,6 +108,26 @@ input.map-input {
     background-color: var(--color-map-tooltip-border) !important;
   }
 
+  .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    color: var(--color-map-tooltip) !important;
+    background-color: var(--color-map-tooltip-background) !important;
+    border-radius: var(--border-radius) !important;
+    border: 1px solid var(--color-map-tooltip-border) !important;
+
+    &.leaflet-disabled {
+      color: var(--color-map-tooltip-disabled) !important;
+    }
+  }
+
+  .leaflet-control-zoom-in {
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  }
+
+  .leaflet-control-zoom-out {
+    border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+    border-top-width: 0;
+  }
+
   .s-leaflet-grid {
     display: grid;
     gap: 6px;

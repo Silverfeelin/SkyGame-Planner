@@ -76,13 +76,17 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
       minZoom: -2,
       maxZoom: 1,
       maxBounds: [[-3000, -3000], [3000, 3000]],
-
+      zoomControl: false
     }).setView([-1000,0], -1);
+
+    // Add images to map.
     L.imageOverlay('assets/game/map.webp', [[-2160, -2160], [2160, 2160]], {
       attribution: 'Map &copy; <a href="https://www.thatskygame.com/" target="_blank">Sky: Children of the Light</a>',
     }).addTo(this.map);
     L.imageOverlay('assets/game/void.webp', [[1025,-675], [1225,-475]]).addTo(this.map);
 
+    // Add zoom controls.
+    L.control.zoom({ position: 'bottomright' }).addTo(this.map);
 
     if (document.cookie.includes('mapcopy=')) {
       this.map.on('click', e => {

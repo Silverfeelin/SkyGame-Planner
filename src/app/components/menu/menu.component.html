@@ -1,6 +1,15 @@
-<aside>
+<aside class="menu-toggle" *ngIf="folded" (click)="foldMenu()" [ngbTooltip]="'Open menu'" container="body" placement="right">
+  <mat-icon>keyboard_double_arrow_right</mat-icon>
+</aside>
+<aside class="menu" [class.folded]="folded">
   <nav>
     <div class="items">
+      <!-- Fold menu-->
+      <a class="item menu-fold" (click)="foldMenu()" [ngbTooltip]="wide ? '' : 'Close menu'" placement="right" container="body">
+        <mat-icon>keyboard_double_arrow_left</mat-icon>
+        <span class="name">Close menu</span>
+      </a>
+      <hr/>
       <!-- Home-->
       <a class="item" href="/" (click)="gotoHome($event)" [ngbTooltip]="wide ? '' : 'Home'" placement="right" container="body">
         <mat-icon>home</mat-icon>

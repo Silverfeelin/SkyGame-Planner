@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class MenuComponent {
   wide = false;
   seasonIconUrl?: string;
+  folded = false;
 
   constructor(
     private readonly _dataService: DataService,
@@ -19,6 +20,7 @@ export class MenuComponent {
   ) {
     _breakpointObserver.observe(['(min-width: 992px)']).subscribe(s => this.onLg(s));
     this.seasonIconUrl = _dataService.seasonConfig.items.at(-1)?.iconUrl;
+    this.updateFolded(localStorage.getItem('menu.folded') === '1');
   }
 
   onLg(state: BreakpointState): void {
@@ -31,5 +33,15 @@ export class MenuComponent {
     void this._router.navigate(['/blank'], { skipLocationChange: true }).then(() => {
       void this._router.navigate(['/']);
     });
+  }
+
+  foldMenu(): void {
+    this.updateFolded(!this.folded);
+  }
+
+  private updateFolded(folded: boolean): void {
+    this.folded = folded;
+    document.body.classList.toggle('menu-folded', this.folded);
+    localStorage.setItem('menu.folded', this.folded ? '1' : '0');
   }
 }
