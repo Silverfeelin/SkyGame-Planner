@@ -1,11 +1,13 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import L from 'leaflet';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { SubscriptionLike } from 'rxjs';
 
 interface IRow {
   area: IArea;
@@ -38,11 +40,14 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
 
   map!: L.Map;
 
+  private _subWidth?: SubscriptionLike;
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _breakpointObserver: BreakpointObserver,
     private readonly _zone: NgZone,
   ) {
     this.unlockedCol = _storageService.unlockedCol.size;
@@ -139,7 +144,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
         opacity: wl.unlocked ? 0.4 : 1,
       }).addTo(this.map);
       obj.marker.bindPopup(this.createPopup(wl), {
-        maxWidth: 480
+        minWidth: 480, maxWidth: 480
       });
 
       this.light.push(obj);
@@ -154,10 +159,23 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     (window as any).nextCol = (guid: string, direction: number) => {
       this._zone.run(() => { direction < 0 ? this.prevCol(guid) : this.nextCol(guid); });
     };
+
+    this._subWidth = this._breakpointObserver.observe(['(min-width: 720px)']).subscribe(s => this.onResponsive(s));
+  }
+
+  onResponsive(s: BreakpointState): void {
+    // Set popup width to 240 or 480px based on screen width.
+    const w = s.matches ? 480 : 240;
+    this.light.forEach(light => {
+      if (!light.marker) { return; }
+      const options = light.marker.getPopup()?.options || {};
+      options.minWidth = options.maxWidth = w;
+    });
   }
 
   ngOnDestroy(): void {
     this.map?.remove();
+    this._subWidth?.unsubscribe();
   }
 
   scrollToList(): void {
@@ -205,7 +223,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     let videoUrl = wl.mapData?.videoUrl;
     if (videoUrl) {
       if (!videoUrl.includes('youtube')) { videoUrl = `https://silverfeelin.github.io/SkyGame-Planner-Videos/CoL/${videoUrl}`; }
-      video =`<iframe width="480" height="270" src="${videoUrl}" title="CoL" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>`
+      video =`<iframe class="s-leaflet-vid" width="480" height="270" src="${videoUrl}" title="CoL" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>`
     }
 
     let wiki = '';
@@ -216,9 +234,9 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     return `
 <div class="s-leaflet-tooltip" data-wl="${wl.guid}" onkeydown="keydownCol(event, this)">
   <div class="s-leaflet-grid">
-    <div class="container"><div class="menu-icon s-leaflet-maticon">map</div><div class="menu-label">${wl.area?.realm?.name || ''}</div></div>
-    <div class="container"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${wl.area?.name || ''}</div></div>
-    <div class="container s-leaflet-desc">
+    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon">map</div><div class="menu-label">${wl.area?.realm?.name || ''}</div></div>
+    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${wl.area?.name || ''}</div></div>
+    <div class="container s-leaflet-item s-leaflet-desc">
       <div class="menu-icon s-leaflet-maticon">description</div><div class="menu-label">${wl.description || ''}</div>
     </div>
   </div>

@@ -179,4 +179,19 @@ input.map-input {
     font-size: 22px;
     line-height: 17px;
   }
+
+  /* Responsive */
+
+  .s-leaflet-vid { max-width: 100%; }
+  .s-leaflet-item .s-leaflet-maticon { display: none; }
+
+  @media screen and (max-width: 719px) {
+    .s-leaflet-grid .menu-label { padding-left: unset !important; }
+    .s-leaflet-vid { max-height: 135px; }
+  }
+
+  @media screen and (min-width: 720px) {
+    .s-leaflet-item .s-leaflet-maticon { display: block; }
+    .s-leaflet-vid { max-height: 270px; }
+  }
 }
