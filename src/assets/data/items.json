@@ -14147,6 +14147,66 @@
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Feline_Familiar_Prop" },
       "order": 4901
     },
+    // #region Mischief 2024
+    {
+      "guid": "bcKjyS-_p3",
+      "type": "Cape",
+      "name": "Mischief Gossamer Cape",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
+      "order": 10404
+    },
+    {
+      "guid": "txwX8D1yKh",
+      "type": "Cape",
+      "name": "Mischief Crabula Cloak",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
+      "order": 10405
+    },
+    {
+      "guid": "-8P_vR8bBw",
+      "type": "Mask",
+      "name": "Mischief Crabula Mask",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Crabula-Mask-Icon.png",
+      "order": 10502
+    },
+    {
+      "guid": "p-lbmuULv5",
+      "type": "Outfit",
+      "name": "Mischief Goth Garment",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Mischief-Goth-Garment-Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Mischief-Goth-Garment.png",
+      "order": 10401
+    },
+    {
+      "guid": "Aq3FhT_OYr",
+      "type": "Shoes",
+      "name": "Mischief Goth Boots Shoes",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Mischief-Goth-Boots-Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Mischief-Goth-Boots.png",
+      "order": 10002
+    },
+    {
+      "guid": "I6OEa38GXJ",
+      "type": "Hat",
+      "name": "Mischief Crabkin Accessory Hat",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
+      "order": 11501
+    },
+    {
+      "guid": "P8RrWu-u_e",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "guid": "fmAnbN_QF5",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
     // #endregion
     // #region Days of Feast
     {

@@ -1104,6 +1104,51 @@
       ]
     },
     // #endregion
+    // #region Days of Mischief (2023)
+    {
+      "guid": "pyYGBWvbwB",
+      "name": "Mischief Gossamer Cape",
+      "price": 14.99,
+      "items": [
+        "bcKjyS-_p3"
+      ]
+    },
+    {
+      "guid": "HYV2lsfbuI",
+      "name": "Mischief Crabula Cloak",
+      "price": 14.99,
+      "items": [
+        "txwX8D1yKh"
+      ]
+    },
+    {
+      "guid": "BormRkmSSt",
+      "name": "Mischief Crabula Mask",
+      "price": 2.99,
+      "items": [
+        "-8P_vR8bBw"
+      ]
+    },
+    {
+      "guid": "WcjUg4tvi_",
+      "name": "Feline Familiar Prop",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "nz4W7amLch"
+      ]
+    },
+    {
+      "guid": "4JGWNM03tr",
+      "name": "Cat Costume Pack",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "QeNQhxg3mv",
+        "pG1_D61KMT"
+      ]
+    },
+    // #endregion
     // #region Days of Feast (2019)
     {
       "guid": "-vTNb2irO1",

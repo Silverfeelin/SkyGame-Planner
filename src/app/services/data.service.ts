@@ -22,6 +22,7 @@ import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
 import dayjs from 'dayjs';
 import { CostHelper } from '../helpers/cost-helper';
+import { ItemHelper } from '../helpers/item-helper';
 
 @Injectable({
   providedIn: 'root'
@@ -418,6 +419,7 @@ export class DataService {
     (window as any).NodeHelper = NodeHelper;
     (window as any).DateHelper = DateHelper;
     (window as any).CostHelper = CostHelper;
+    (window as any).ItemHelper = ItemHelper;
 
     const c = 'color:cyan;';
     console.log('To view loaded data, see %cwindow.skyData%c.', c, '');
