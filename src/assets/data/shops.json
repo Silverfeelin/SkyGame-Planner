@@ -538,7 +538,8 @@
     },
     {
       "guid": "joutFMbmnc",
-      "type": "Store",
+      "type": "Object",
+      "name": "Witch Hat",
       "iaps": [
         "WcjUg4tvi_",
         "4JGWNM03tr"
