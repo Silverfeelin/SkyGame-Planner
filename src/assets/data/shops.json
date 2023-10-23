@@ -526,6 +526,26 @@
       ]
     },
     // #endregion
+    // #region Days of Mischief (2023)
+    {
+      "guid": "9fm21Pk5Sf",
+      "type": "Store",
+      "iaps": [
+        "pyYGBWvbwB",
+        "HYV2lsfbuI",
+        "BormRkmSSt"
+      ]
+    },
+    {
+      "guid": "joutFMbmnc",
+      "type": "Object",
+      "name": "Witch Hat",
+      "iaps": [
+        "WcjUg4tvi_",
+        "4JGWNM03tr"
+      ]
+    },
+    // #en
     // #region Days of Feast (2019)
     {
       "guid": "eWS8HsX6SC",
