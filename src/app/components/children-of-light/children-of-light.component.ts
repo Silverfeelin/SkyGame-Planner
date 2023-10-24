@@ -41,8 +41,10 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   shownArea?: IArea;
 
   map!: L.Map;
+  layerGroup?: L.LayerGroup;
 
   private _subWidth?: SubscriptionLike;
+  private _mapFuncs: Array<[string, any]> = [];
 
   constructor(
     private readonly _dataService: DataService,
@@ -73,7 +75,8 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapService.initialize(this.mapContainer!.nativeElement);
+    this.map = this._mapService.getMap();
+    this._mapService.attach(this.mapContainer?.nativeElement);
 
     const wlIcon = L.icon({
       iconUrl: 'assets/icons/light.svg',
@@ -82,9 +85,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     });
 
     // Add images to map.
-    L.imageOverlay('assets/game/void.webp', [[1025,-675], [1225,-475]]).addTo(this.map);
-
-    this.map.on('popupopen', (e: L.PopupEvent) => { this.onPopupOpen(e); });
+    L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(this.map);
 
     // Load position from query params.
     const query = this._activatedRoute.snapshot.queryParamMap;
@@ -92,36 +93,11 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     const y = +(query.get('y') || 0);
     const z = query.has('z') ? +(query.get('z') || 0) : undefined;
     if (z !== undefined) {
-      this.map.setView([x, y], z);
+      this.map.setView([y, x], z);
     }
 
-    // Set position in query params.
-    this.map.on('moveend', () => { this.onMoveEnd(); });
-
-    // Create lines for all Areas
-    // this._dataService.areaConfig.items.filter(a => a.mapData?.position).forEach(area => {
-    //   const pos = [];
-    //   pos.push(area.mapData!.position);
-    //   area.mapData?.connectedAreas?.forEach(guid => {
-    //     const area = this._dataService.guidMap.get(guid as unknown as string) as IArea;
-    //     if (!area.mapData?.position) { return; }
-    //     pos.push(area.mapData.position);
-    //   });
-    //   L.polyline(pos, { color: '#ffff0080',  }).addTo(this.map);
-    // });
-
-    this._dataService.realmConfig.items.filter(r => r.mapData).forEach(realm => {
-      if (realm.mapData!.boundary) {
-        L.polygon(realm.mapData!.boundary, { color: realm.mapData?.boundaryColor || '#ffff0080', fillOpacity: 0 }).addTo(this.map);
-      }
-    });
-
-    // this._dataService.areaConfig.items.filter(item => item.mapData).forEach(area => {
-    //   L.marker(area.mapData!.position!, {
-    //     icon: areaIcon,
-    //     opacity: 1,
-    //   }).addTo(this.map);
-    // });
+    this.layerGroup?.remove();
+    this.layerGroup = L.layerGroup();
 
     // Create markers for all Children of Light
     this._dataService.wingedLightConfig.items.forEach(wl => {
@@ -132,14 +108,18 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       obj.marker = L.marker(wl.mapData.position!, {
         icon: wlIcon,
         opacity: wl.unlocked ? 0.4 : 1,
-      }).addTo(this.map);
+      });
       obj.marker.bindPopup(this.createPopup(wl), {
         minWidth: 480, maxWidth: 480
       });
 
+      this.layerGroup?.addLayer(obj.marker);
+
       this.light.push(obj);
       this.lightMap[wl.guid] = obj;
     });
+
+    this.layerGroup?.addTo(this.map);
 
     // Allow Leaflet events to enter Angular.
     (window as any).markCol = (elem: HTMLElement, guid: string) => {
@@ -149,6 +129,16 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     (window as any).nextCol = (guid: string, direction: number) => {
       this._zone.run(() => { direction < 0 ? this.prevCol(guid) : this.nextCol(guid); });
     };
+
+    // Events
+    const onPopupOpen = (e: L.PopupEvent) => { this.onPopupOpen(e); }
+    this.map.on('popupopen', onPopupOpen);
+    this._mapFuncs.push(['popupopen', onPopupOpen]);
+
+    // Set position in query params.
+    const onMoveEnd = () => { this.onMoveEnd(); }
+    this.map.on('moveend', onMoveEnd);
+    this._mapFuncs.push(['moveend', onMoveEnd]);
 
     this._subWidth = this._breakpointObserver.observe(['(min-width: 720px)']).subscribe(s => this.onResponsive(s));
   }
@@ -165,7 +155,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._subWidth?.unsubscribe();
-    this.map.remove();
+    this.layerGroup?.remove();
+    this._mapFuncs.forEach(f => this.map.off(f[0], f[1]));
+    this._mapService.detach();
   }
 
   scrollToList(): void {
@@ -256,8 +248,8 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   private onMoveEnd(): void {
     const url = new URL(location.href);
     const c = this.map.getCenter();
-    url.searchParams.set('x', `${Math.floor(c.lat)}`);
-    url.searchParams.set('y', `${Math.floor(c.lng)}`);
+    url.searchParams.set('x', `${Math.floor(c.lng)}`);
+    url.searchParams.set('y', `${Math.floor(c.lat)}`);
     url.searchParams.set('z', `${this.map.getZoom()}`);
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
@@ -292,7 +284,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
     this.map.closePopup();
     const pos = wl.mapData?.position || [0,0];
-    this.map.flyTo([pos[0] + 200, pos[1]], 0);
+    this.map.flyTo([pos[0] + 20, pos[1]], 3);
     light.marker?.openPopup();
   }
 
@@ -304,7 +296,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   private allDone(): void {
     this.map.closePopup();
-    this.map.setZoom(this.map.getMinZoom());
+    this.map.flyTo(this._mapService.getMapCenter(), 1, { animate: true, duration: 1 });
   }
 
   // #region Leaflet tooltip events

@@ -3,8 +3,7 @@
     // #region Home
     {
       "guid": "zewkN917oz",
-      "name": "Home Space",
-      "mapData": { "position": [-1668,1165] }
+      "name": "Home Space"
     },
     // #endregion
     // #region Isle
@@ -12,31 +11,26 @@
       "guid": "oEnKoTrbCt",
       "name": "Sand Dunes",
       "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
-      "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
-      "mapData": { "position": [-1426,219] }
+      "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ]
     },
     {
       "guid": "LanOVr1JCo",
       "name": "Isle Temple Entrance",
-      "spirits": [ "bmYjIuJ6Qf", "Q5pn7wxwUD" ],
-      "mapData": { "position": [-1158,245] }
+      "spirits": [ "bmYjIuJ6Qf", "Q5pn7wxwUD" ]
     },
     {
       "guid": "6MuptjUV8B",
-      "name": "Isle Temple",
-      "mapData": { "position": [-1017,284] }
+      "name": "Isle Temple"
     },
     {
       "guid": "hDN-ciwGc-",
       "name": "Floating Island",
-      "spirits": [ "f3AD39Q2Il" ],
-      "mapData": { "position": [-1115,423] }
+      "spirits": [ "f3AD39Q2Il" ]
     },
     {
       "guid": "ht8PxRB-MY",
       "name": "Butterfly Cave",
-      "wingedLights": [ "vGCXUjMLfB" ],
-      "mapData": { "position": [-1071,410] }
+      "wingedLights": [ "vGCXUjMLfB" ]
     },
     {
       "guid": "Xr2ZiVSV7p",

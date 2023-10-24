@@ -35,15 +35,16 @@ export class RealmComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapService.initialize(this.mapContainer.nativeElement);
-    if (this.map) {
-      this.drawMap();
-      this.panToRealm(true);
-    }
+    this.map = this._mapService.getMap();
+    this._mapService.attach(this.mapContainer.nativeElement);
+
+    this.drawMap();
+    this.panToRealm(true);
   }
 
   ngOnDestroy(): void {
-    this.map.remove();
+    this.mapLayers?.remove();
+    this._mapService.detach();
   }
 
   onQueryChanged(params: ParamMap): void {
@@ -58,7 +59,7 @@ export class RealmComponent implements AfterViewInit, OnDestroy {
   panToRealm(instant = false): void {
     if (!this.realm?.mapData?.position) { return; }
     const opts = instant ? { animate: false, duration: 0 } : undefined;
-    this.map.flyTo(this.realm.mapData.position, -1, opts);
+    this.map.flyTo(this.realm.mapData.position, 3, opts);
   }
 
   private initializeRealm(guid: string): void {
