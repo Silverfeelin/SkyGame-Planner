@@ -40,6 +40,7 @@ export class MapService {
     document.body.appendChild(this._div);
 
     const map = L.map(this._div, {
+      attributionControl: false,
       crs: L.CRS.Simple,
       minZoom: 0,
       maxZoom: 3,
@@ -51,12 +52,8 @@ export class MapService {
     // Add images to map.
     L.tileLayer('assets/game/map/{z}/{x}_{y}.webp', {
       tileSize: 540,
-      bounds: [[0, 0], [-540, 540]],
-      attribution: 'Map &copy; <a href="https://www.thatskygame.com/" target="_blank">Sky: Children of the Light</a>'
+      bounds: [[0, 0], [-540, 540]]
     }).addTo(map);
-    // L.imageOverlay('assets/game/map.webp', [[-2160, -2160], [2160, 2160]], {
-    //   attribution: 'Map &copy; <a href="https://www.thatskygame.com/" target="_blank">Sky: Children of the Light</a>',
-    // }).addTo(map);
 
     // Add zoom controls.
     L.control.zoom({ position: 'bottomright' }).addTo(map);
