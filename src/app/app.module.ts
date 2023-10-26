@@ -50,6 +50,7 @@ import { ItemIconsComponent } from './components/item/item-icons/item-icons.comp
 import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
 import { WingedLightComponent } from './components/winged-light/winged-light.component';
 import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
+import { CollageComponent } from './components/outfit-request/collage/collage.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { ChildrenOfLightComponent } from './components/children-of-light/childre
     ItemIconsComponent,
     WikiLinkComponent,
     WingedLightComponent,
-    ChildrenOfLightComponent
+    ChildrenOfLightComponent,
+    CollageComponent
   ],
   imports: [
     BrowserModule,

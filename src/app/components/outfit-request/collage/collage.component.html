@@ -1,0 +1,44 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h2 class="h3">Collage size</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid-size-blocks" data-theme="light">
+      <ng-container *ngFor="let y of blockSize[1]; let iy = index;">
+        <ng-container *ngFor="let x of blockSize[0]; let ix = index;">
+          <div  class="grid-size-block" [class.block-active]="x && y" (click)="setCollageSize(ix + 1, iy + 1)">
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3">Collage</h2>
+  </div>
+  <div class="sky-card-body scroll-x">
+    <div class="container">
+      <div class="menu-icon"><mat-icon>question_mark</mat-icon></div>
+      <div class="menu-label">Press <kbd>Ctrl+V</kbd> after clicking on the clipboard area!</div>
+    </div>
+    <div class="grid-collage mt">
+      <ng-container *ngFor="let y of blockSize[1]; let iy = index;">
+        <ng-container *ngFor="let x of blockSize[0]; let ix = index;">
+          <div class="grid-collage-block">
+            <div [hidden]="!x || !y" class="collage-image-container">
+              <button type="button" class="collage-btn-file" (click)="pickFile(ix, iy)">File</button>
+              <div class="collage-btn-clipboard">
+                <mat-icon>content_paste</mat-icon>
+                <input type="text"  tabindex="0" (paste)="paste($event)" (input)="clearTxt($event)">
+              </div>
+              <img [src]="files[iy][ix]" class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy">
+            </div>
+            <!-- <div *ngIf="!x || !y"></div> -->
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

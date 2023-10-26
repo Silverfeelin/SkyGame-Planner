@@ -1,0 +1,80 @@
+.grid-size-blocks {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 32px);
+}
+
+.grid-size-block {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: solid black;
+  border-width: 1px 1px 0 0;
+  background: #888;
+  cursor: pointer;
+
+  &:hover {
+    background: #aaa;
+  }
+
+  &:nth-of-type(5n-4) { border-left-width: 1px; }
+  &:nth-last-of-type(-n+5) { border-bottom-width: 1px; }
+}
+
+.block-active {
+  background-color: var(--color-active);
+}
+
+.grid-collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 192px);
+  gap: 20px;
+}
+
+.collage-image-container {
+  position: relative;
+  width: 192px;
+  height: 288px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-image: url(/assets/icons/transparent.webp);
+  background-repeat: repeat;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.collage-btn-file {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 2;
+}
+
+.collage-btn-clipboard {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+
+  input {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+  }
+
+  mat-icon {
+    pointer-events: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    z-index: 3;
+  }
+}
+
+.collage-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
