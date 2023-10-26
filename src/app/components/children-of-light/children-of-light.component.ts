@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
-import L from 'leaflet';
+import L, { LeafletKeyboardEvent } from 'leaflet';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
@@ -43,9 +43,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   shownArea?: IArea;
 
   map!: L.Map;
+  _lastPopup?: L.Popup;
 
   private _subWidth?: SubscriptionLike;
-  private _mapFuncs: Array<[string, any]> = [];
 
   constructor(
     private readonly _dataService: DataService,
@@ -77,6 +77,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.map = this._mapInstanceService.attach(this.mapContainer?.nativeElement);
+    this.map.setView([-400, 270], 2, { animate: false, duration: 0});
 
     // Load position from query params.
     const query = this._activatedRoute.snapshot.queryParamMap;
@@ -129,14 +130,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     };
 
     // Events
-    const onPopupOpen = (e: L.PopupEvent) => { this.onPopupOpen(e); }
-    this.map.on('popupopen', onPopupOpen);
-    this._mapFuncs.push(['popupopen', onPopupOpen]);
-
-    // Set position in query params.
-    const onMoveEnd = () => { this.onMoveEnd(); }
-    this.map.on('moveend', onMoveEnd);
-    this._mapFuncs.push(['moveend', onMoveEnd]);
+    this._mapInstanceService.on('popupopen', (e: L.PopupEvent) => { this.onPopupOpen(e); })
+    this._mapInstanceService.on('moveend', () => { this.onMoveEnd(); });
+    this._mapInstanceService.on('keydown', (e: LeafletKeyboardEvent) => { this.onKeydown(e); });
 
     this._subWidth = this._breakpointObserver.observe(['(min-width: 720px)']).subscribe(s => this.onResponsive(s));
   }
@@ -153,7 +149,6 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._subWidth?.unsubscribe();
-    this._mapFuncs.forEach(f => this.map.off(f[0], f[1]));
   }
 
   scrollToList(): void {
@@ -237,6 +232,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     if (!div) { return; }
     const wlGuid = div.dataset['wl'] as string;
     const wl = this._dataService.guidMap.get(wlGuid) as IWingedLight;
+    this._lastPopup = e.popup;
 
     this.updatePopup(div, wl);
   }
@@ -248,6 +244,26 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     url.searchParams.set('y', `${Math.floor(c.lat)}`);
     url.searchParams.set('z', `${this.map.getZoom()}`);
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
+  }
+
+  private onKeydown(e: LeafletKeyboardEvent): void {
+    if (!this._lastPopup?.isOpen()) { return; }
+    const key = e.originalEvent.key;
+    if (key !== 'ArrowLeft' && key !== 'ArrowRight' && key !== ' ') { return; }
+
+    const el = this._lastPopup.getElement()?.querySelector('.s-leaflet-tooltip') as HTMLElement;
+    const wlGuid = el.dataset['wl'] as string;
+    if (!wlGuid) { return; }
+
+    switch (key) {
+      case 'ArrowLeft': this.prevCol(wlGuid); break;
+      case 'ArrowRight': this.nextCol(wlGuid); break;
+      case ' ': this.markCol(el.querySelector('[data-action="mark"]') as HTMLElement, wlGuid); break;
+      default: return;
+    }
+
+    e.originalEvent.preventDefault();
+    e.originalEvent.stopPropagation();
   }
 
   private updatePopup(div: HTMLElement, wl: IWingedLight): void {
@@ -282,6 +298,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     const pos = wl.mapData?.position || [0,0];
     this.map.flyTo([pos[0] + 20, pos[1]], 3);
     light.marker?.openPopup();
+    light.marker?.getElement()?.focus();
   }
 
   private toggleWingedLight(wl: IWingedLight, found?: boolean): void {
