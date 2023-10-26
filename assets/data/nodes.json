@@ -8032,7 +8032,7 @@
       "c": 42
     },
     // #endregion
-    // Troupe Juggler
+    // #region Troupe Juggler
     {
       "guid": "O4pZrHbZdI",
       "item": "bcJTF4AAEe",
@@ -8162,6 +8162,78 @@
       "item": "MIKr5rkFuk",
       "c": 75
     },
+    // TS 99
+    {
+      "guid": "3PKNqvhxYH",
+      "item": "bcJTF4AAEe",
+      "nw": "ZOGF7NnscV",
+      "n": "zJYCKRIpOo",
+      "ne": "Z3Odb4_eJJ"
+    },
+    {
+      "guid": "ZOGF7NnscV",
+      "item": "rt7_sCQiHh",
+      "h": 4
+    },
+    {
+      "guid": "Z3Odb4_eJJ",
+      "item": "J4SWAguEQD",
+      "h": 14
+    },
+    {
+      "guid": "zJYCKRIpOo",
+      "item": "QC2E3iIpQB",
+      "c": 5,
+      "nw": "mQHHlgkGEu",
+      "n": "uGzR3nIs4Y",
+      "ne": "HlHN9uEQvI"
+    },
+    {
+      "guid": "mQHHlgkGEu",
+      "item": "hsTWje5YU_",
+      "c": 42
+    },
+    {
+      "guid": "HlHN9uEQvI",
+      "item": "AzgiEH8D4t",
+      "c": 3
+    },
+    {
+      "guid": "uGzR3nIs4Y",
+      "item": "F9m8tlM-EH",
+      "ac": 2,
+      "n": "jT6fbvRsWg"
+    },
+    {
+      "guid": "jT6fbvRsWg",
+      "item": "S9zHdixzVO",
+      "h": 3,
+      "nw": "bAvgFDYXM4",
+      "n": "M5UMpOG1fq"
+    },
+    {
+      "guid": "bAvgFDYXM4",
+      "item": "HlohlGb5MA",
+      "h": 6
+    },
+    {
+      "guid": "M5UMpOG1fq",
+      "item": "l4AT0gf-aR",
+      "c": 5,
+      "nw": "dJ6WDhecCY",
+      "n": "1iylf9JkZn"
+    },
+    {
+      "guid": "dJ6WDhecCY",
+      "item": "52NbrdHrAf",
+      "c": 75
+    },
+    {
+      "guid": "1iylf9JkZn",
+      "item": "MIKr5rkFuk",
+      "c": 75
+    },
+    // #endregion
     // #region Respectful Pianist
     {
       "guid": "qACxZ97wkA",
