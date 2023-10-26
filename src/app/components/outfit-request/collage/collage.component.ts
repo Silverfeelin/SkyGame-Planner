@@ -62,7 +62,7 @@ export class CollageComponent {
   }
 
   pickFile(x: number, y: number): void {
-    this.files[x][y] = '';
+    this.files[y][x] = '';
 
     const input = document.createElement('input');
     input.type = 'file';
