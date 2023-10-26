@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ViewContainerRef } from '@angular/core'
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
@@ -26,6 +26,7 @@ export class AppComponent {
     private readonly _themeService: ThemeService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
+    private readonly _viewContainerRef: ViewContainerRef,
     private readonly _router: Router
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });

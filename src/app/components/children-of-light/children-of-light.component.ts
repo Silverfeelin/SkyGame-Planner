@@ -1,13 +1,15 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
-import L from 'leaflet';
+import L, { LeafletKeyboardEvent } from 'leaflet';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
+import { MapService } from 'src/app/services/map.service';
+import { MapInstanceService } from 'src/app/services/map-instance.service';
 
 interface IRow {
   area: IArea;
@@ -24,9 +26,11 @@ interface IMapWingedLight {
   selector: 'app-children-of-light',
   templateUrl: './children-of-light.component.html',
   styleUrls: ['./children-of-light.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [MapInstanceService]
 })
-export class ChildrenOfLightComponent implements OnInit, OnDestroy {
+export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef;
   @ViewChild('table', { static: true }) table?: ElementRef;
 
   unlockedCol = 0; totalCol = 0;
@@ -39,12 +43,14 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
   shownArea?: IArea;
 
   map!: L.Map;
+  _lastPopup?: L.Popup;
 
   private _subWidth?: SubscriptionLike;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
+    private readonly _mapInstanceService: MapInstanceService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _breakpointObserver: BreakpointObserver,
@@ -69,38 +75,9 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void {
-    const wlIcon = L.icon({
-      iconUrl: 'assets/icons/light.svg',
-      iconSize: [32, 32],
-      popupAnchor: [0, -12],
-    });
-
-    this.map = L.map('map', {
-      crs: L.CRS.Simple,
-      minZoom: -2,
-      maxZoom: 1,
-      maxBounds: [[-3000, -3000], [3000, 3000]],
-      zoomControl: false
-    }).setView([-1000,0], -1);
-
-    // Add images to map.
-    L.imageOverlay('assets/game/map.webp', [[-2160, -2160], [2160, 2160]], {
-      attribution: 'Map &copy; <a href="https://www.thatskygame.com/" target="_blank">Sky: Children of the Light</a>',
-    }).addTo(this.map);
-    L.imageOverlay('assets/game/void.webp', [[1025,-675], [1225,-475]]).addTo(this.map);
-
-    // Add zoom controls.
-    L.control.zoom({ position: 'bottomright' }).addTo(this.map);
-
-    if (document.cookie.includes('mapcopy=')) {
-      this.map.on('click', e => {
-        console.log(e);
-        navigator.clipboard.writeText(JSON.stringify([Math.floor(e.latlng.lat), Math.floor(e.latlng.lng)]));
-      });
-    }
-
-    this.map.on('popupopen', e => { this.onPopupOpen(e); });
+  ngAfterViewInit(): void {
+    this.map = this._mapInstanceService.attach(this.mapContainer?.nativeElement);
+    this.map.setView([-400, 270], 2, { animate: false, duration: 0});
 
     // Load position from query params.
     const query = this._activatedRoute.snapshot.queryParamMap;
@@ -108,30 +85,18 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     const y = +(query.get('y') || 0);
     const z = query.has('z') ? +(query.get('z') || 0) : undefined;
     if (z !== undefined) {
-      this.map.setView([x, y], z);
+      this.map.setView([y, x], z);
     }
 
-    // Set position in query params.
-    this.map.on('moveend', () => {
-      const url = new URL(location.href);
-      const c = this.map.getCenter();
-      url.searchParams.set('x', `${Math.floor(c.lat)}`);
-      url.searchParams.set('y', `${Math.floor(c.lng)}`);
-      url.searchParams.set('z', `${this.map.getZoom()}`);
-      window.history.replaceState(window.history.state, '', url.pathname + url.search);
+    const layerGroup = this._mapInstanceService.createLayerGroup('col');
+    const wlIcon = L.icon({
+      iconUrl: 'assets/icons/light.svg',
+      iconSize: [32, 32],
+      popupAnchor: [0, -12],
     });
 
-    // Create lines for all Areas
-    // this._dataService.areaConfig.items.filter(a => a.mapData?.position).forEach(area => {
-    //   const pos = [];
-    //   pos.push(area.mapData!.position);
-    //   area.mapData?.connectedAreas?.forEach(guid => {
-    //     const area = this._dataService.guidMap.get(guid as unknown as string) as IArea;
-    //     if (!area.mapData?.position) { return; }
-    //     pos.push(area.mapData.position);
-    //   });
-    //   L.polyline(pos, { color: '#ffff0080',  }).addTo(this.map);
-    // });
+    // Add images to map.
+    L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(layerGroup);
 
     // Create markers for all Children of Light
     this._dataService.wingedLightConfig.items.forEach(wl => {
@@ -139,17 +104,21 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
       const obj: IMapWingedLight = { wl };
 
       // Create marker
-      obj.marker = L.marker(wl.mapData.position, {
+      obj.marker = L.marker(wl.mapData.position!, {
         icon: wlIcon,
         opacity: wl.unlocked ? 0.4 : 1,
-      }).addTo(this.map);
+      });
       obj.marker.bindPopup(this.createPopup(wl), {
         minWidth: 480, maxWidth: 480
       });
 
+      layerGroup.addLayer(obj.marker);
+
       this.light.push(obj);
       this.lightMap[wl.guid] = obj;
     });
+
+    layerGroup.addTo(this.map);
 
     // Allow Leaflet events to enter Angular.
     (window as any).markCol = (elem: HTMLElement, guid: string) => {
@@ -159,6 +128,11 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     (window as any).nextCol = (guid: string, direction: number) => {
       this._zone.run(() => { direction < 0 ? this.prevCol(guid) : this.nextCol(guid); });
     };
+
+    // Events
+    this._mapInstanceService.on('popupopen', (e: L.PopupEvent) => { this.onPopupOpen(e); })
+    this._mapInstanceService.on('moveend', () => { this.onMoveEnd(); });
+    this._mapInstanceService.on('keydown', (e: LeafletKeyboardEvent) => { this.onKeydown(e); });
 
     this._subWidth = this._breakpointObserver.observe(['(min-width: 720px)']).subscribe(s => this.onResponsive(s));
   }
@@ -174,7 +148,6 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.map?.remove();
     this._subWidth?.unsubscribe();
   }
 
@@ -259,8 +232,38 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
     if (!div) { return; }
     const wlGuid = div.dataset['wl'] as string;
     const wl = this._dataService.guidMap.get(wlGuid) as IWingedLight;
+    this._lastPopup = e.popup;
 
     this.updatePopup(div, wl);
+  }
+
+  private onMoveEnd(): void {
+    const url = new URL(location.href);
+    const c = this.map.getCenter();
+    url.searchParams.set('x', `${Math.floor(c.lng)}`);
+    url.searchParams.set('y', `${Math.floor(c.lat)}`);
+    url.searchParams.set('z', `${this.map.getZoom()}`);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
+  }
+
+  private onKeydown(e: LeafletKeyboardEvent): void {
+    if (!this._lastPopup?.isOpen()) { return; }
+    const key = e.originalEvent.key;
+    if (key !== 'ArrowLeft' && key !== 'ArrowRight' && key !== ' ') { return; }
+
+    const el = this._lastPopup.getElement()?.querySelector('.s-leaflet-tooltip') as HTMLElement;
+    const wlGuid = el.dataset['wl'] as string;
+    if (!wlGuid) { return; }
+
+    switch (key) {
+      case 'ArrowLeft': this.prevCol(wlGuid); break;
+      case 'ArrowRight': this.nextCol(wlGuid); break;
+      case ' ': this.markCol(el.querySelector('[data-action="mark"]') as HTMLElement, wlGuid); break;
+      default: return;
+    }
+
+    e.originalEvent.preventDefault();
+    e.originalEvent.stopPropagation();
   }
 
   private updatePopup(div: HTMLElement, wl: IWingedLight): void {
@@ -293,8 +296,9 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
 
     this.map.closePopup();
     const pos = wl.mapData?.position || [0,0];
-    this.map.flyTo([pos[0] + 200, pos[1]], 0);
+    this.map.flyTo([pos[0] + 20, pos[1]], 3);
     light.marker?.openPopup();
+    light.marker?.getElement()?.focus();
   }
 
   private toggleWingedLight(wl: IWingedLight, found?: boolean): void {
@@ -305,7 +309,7 @@ export class ChildrenOfLightComponent implements OnInit, OnDestroy {
 
   private allDone(): void {
     this.map.closePopup();
-    this.map.setZoom(this.map.getMinZoom());
+    this._mapInstanceService.centerMap();
   }
 
   // #region Leaflet tooltip events

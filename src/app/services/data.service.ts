@@ -58,7 +58,6 @@ export class DataService {
 
     return forkJoin({
       areaConfig: get('areas.json'),
-      connectionConfig: get('connections.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
       nodeConfig: get('nodes.json'),
