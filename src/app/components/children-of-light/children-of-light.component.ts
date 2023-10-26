@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
 import { MapService } from 'src/app/services/map.service';
+import { MapInstanceService } from 'src/app/services/map-instance.service';
 
 interface IRow {
   area: IArea;
@@ -25,7 +26,8 @@ interface IMapWingedLight {
   selector: 'app-children-of-light',
   templateUrl: './children-of-light.component.html',
   styleUrls: ['./children-of-light.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [MapInstanceService]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef;
@@ -41,7 +43,6 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   shownArea?: IArea;
 
   map!: L.Map;
-  layerGroup?: L.LayerGroup;
 
   private _subWidth?: SubscriptionLike;
   private _mapFuncs: Array<[string, any]> = [];
@@ -49,7 +50,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
-    private readonly _mapService: MapService,
+    private readonly _mapInstanceService: MapInstanceService,
     private readonly _activatedRoute: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _breakpointObserver: BreakpointObserver,
@@ -75,17 +76,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapService.getMap();
-    this._mapService.attach(this.mapContainer?.nativeElement);
-
-    const wlIcon = L.icon({
-      iconUrl: 'assets/icons/light.svg',
-      iconSize: [32, 32],
-      popupAnchor: [0, -12],
-    });
-
-    // Add images to map.
-    L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(this.map);
+    this.map = this._mapInstanceService.attach(this.mapContainer?.nativeElement);
 
     // Load position from query params.
     const query = this._activatedRoute.snapshot.queryParamMap;
@@ -96,8 +87,15 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       this.map.setView([y, x], z);
     }
 
-    this.layerGroup?.remove();
-    this.layerGroup = L.layerGroup();
+    const layerGroup = this._mapInstanceService.createLayerGroup('col');
+    const wlIcon = L.icon({
+      iconUrl: 'assets/icons/light.svg',
+      iconSize: [32, 32],
+      popupAnchor: [0, -12],
+    });
+
+    // Add images to map.
+    L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(layerGroup);
 
     // Create markers for all Children of Light
     this._dataService.wingedLightConfig.items.forEach(wl => {
@@ -113,13 +111,13 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
         minWidth: 480, maxWidth: 480
       });
 
-      this.layerGroup?.addLayer(obj.marker);
+      layerGroup.addLayer(obj.marker);
 
       this.light.push(obj);
       this.lightMap[wl.guid] = obj;
     });
 
-    this.layerGroup?.addTo(this.map);
+    layerGroup.addTo(this.map);
 
     // Allow Leaflet events to enter Angular.
     (window as any).markCol = (elem: HTMLElement, guid: string) => {
@@ -155,9 +153,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._subWidth?.unsubscribe();
-    this.layerGroup?.remove();
     this._mapFuncs.forEach(f => this.map.off(f[0], f[1]));
-    this._mapService.detach();
   }
 
   scrollToList(): void {
@@ -296,7 +292,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   private allDone(): void {
     this.map.closePopup();
-    this.map.flyTo(this._mapService.getMapCenter(), 1, { animate: true, duration: 1 });
+    this._mapInstanceService.centerMap();
   }
 
   // #region Leaflet tooltip events

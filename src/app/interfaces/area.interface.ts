@@ -17,6 +17,11 @@ export interface IArea extends IGuid {
   spirits?: Array<ISpirit>;
   wingedLights?: Array<IWingedLight>;
   rs?: Array<IReturningSpirits>;
+  connections?: Array<IAreaConnection>;
 
   _wiki?: IWiki;
+}
+
+export interface IAreaConnection {
+  area: IArea;
 }

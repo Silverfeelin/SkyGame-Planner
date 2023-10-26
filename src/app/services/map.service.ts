@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import L, { LatLngExpression } from 'leaflet';
 
+export class MapDisposable {
+
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class MapService {
   _div?: HTMLElement;
   _map?: L.Map;
-
-  getMapCenter(): LatLngExpression {
-    return [-270, 270];
-  }
+  _zoom?: L.Control.Zoom;
 
   getMap(): L.Map {
     if (!this._map) { this._map = this.initialize(); }
@@ -18,11 +19,12 @@ export class MapService {
   }
 
   /** Attaches the map by moving it into an element. */
-  attach(htmlElement: HTMLElement): void {
-    if (!this._div) { return; }
+  attach(htmlElement: HTMLElement): L.Map | undefined {
+    if (!this._div) { return this._map; }
     htmlElement.appendChild(this._div);
     this._map?.invalidateSize();
     this._map?.setView([-270,270], 1, { animate: false, duration: 0 });
+    return this._map;
   }
 
   /* Detaches the map from the current element. */
@@ -30,6 +32,28 @@ export class MapService {
     document.body.appendChild(this._div!);
     this._map?.closePopup();
     this._map?.invalidateSize();
+    this.enable();
+  }
+
+  enable(): void {
+    if (!this._map) { return; }
+    this._map.scrollWheelZoom.enable();
+    this._map.doubleClickZoom.enable();
+    this._map.boxZoom.enable();
+    this._map.keyboard.enable();
+    this._map.touchZoom.enable();
+    this._map.dragging.enable();
+  }
+
+  disable(): void {
+    if (!this._map) { return; }
+    this._zoom?.remove();
+    this._map.scrollWheelZoom.disable();
+    this._map.doubleClickZoom.disable();
+    this._map.boxZoom.disable();
+    this._map.keyboard.disable();
+    this._map.touchZoom.disable();
+    this._map.dragging.disable();
   }
 
   private initialize(): L.Map {
@@ -56,7 +80,8 @@ export class MapService {
     }).addTo(map);
 
     // Add zoom controls.
-    L.control.zoom({ position: 'bottomright' }).addTo(map);
+    this._zoom = L.control.zoom({ position: 'bottomright' });
+    this._zoom.addTo(map);
 
     const mapcopy = document.cookie.split(';').find(c => c.includes('mapcopy='))?.split('=')[1];
     if (mapcopy !== undefined) {
@@ -66,6 +91,9 @@ export class MapService {
       });
     }
 
+    const c = 'color:cyan;';
+    (window as any).map = map;
+    console.log('Map initialized as %cwindow.map%c.', c, '');
     return map;
   }
 }

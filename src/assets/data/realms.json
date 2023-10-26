@@ -9,7 +9,8 @@
         "zewkN917oz"
       ],
       "mapData": {
-        "position": [-478.5, 416.25]
+        "position": [-478.5, 416.25],
+        "zoom": 2
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Home"
@@ -33,7 +34,7 @@
         "lZkMYxUB8A"
       ],
       "mapData": {
-        "position": [-437.33,294.63]
+        "position": [-423,311]
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_of_Dawn"
@@ -57,7 +58,7 @@
         "aUAXUdnBge"
       ],
       "mapData": {
-        "position": [-391.25, 182]
+        "position": [-380, 183]
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Daylight_Prairie"
@@ -108,7 +109,7 @@
         "C4ndigYE4Q"
       ],
       "mapData": {
-        "position": [-258.75, 237.75]
+        "position": [-258, 245]
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_of_Triumph"
@@ -132,7 +133,7 @@
         "QroH22BPGJ"
       ],
       "mapData": {
-        "position": [-301.25, 403.5]
+        "position": [-296.5, 407.5]
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Golden_Wasteland"
@@ -180,7 +181,8 @@
         "Mhbh0g9OdG"
       ],
       "mapData": {
-        "position": [-453, 364.75]
+        "position": [-453, 364.75],
+        "zoom": 2
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary"
@@ -202,7 +204,7 @@
         "Ub5s1RiDA1"
       ],
       "mapData": {
-        "position": [-169.75, 262]
+        "position": [-144.5, 260]
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Eye_of_Eden"
