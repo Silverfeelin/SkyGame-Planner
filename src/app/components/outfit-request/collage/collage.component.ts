@@ -1,4 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import createPanZoom, { PanZoom } from 'panzoom';
 
 interface IImage {
@@ -25,6 +26,7 @@ const sizes = {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CollageComponent implements AfterViewInit {
+  @ViewChild('ttCopy', { static: true }) private readonly _ttCopy!: NgbTooltip;
   @ViewChildren('collagePaste') private readonly _collagePaste!: QueryList<ElementRef>;
   @ViewChildren('collageImage') private readonly _collageImage!: QueryList<ElementRef>;
 
@@ -200,6 +202,8 @@ export class CollageComponent implements AfterViewInit {
       const item = new ClipboardItem({ 'image/png': blob });
       navigator.clipboard.write([item]).then(() => {
         console.log('Image copied to clipboard');
+        this._ttCopy.open();
+        setTimeout(() => { this._ttCopy.close(); }, 1000);
       }).catch(error => {
         console.error('Could not copy image to clipboard: ', error);
         alert('Copy failed. Please make sure the document is focused.');
