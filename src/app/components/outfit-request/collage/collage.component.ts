@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import createPanZoom, { PanZoom } from 'panzoom';
 
@@ -13,7 +13,7 @@ interface ICoord {
 }
 
 const sizes = {
-  previewWidith: 192,
+  previewWidth: 192,
   previewHeight: 288,
   renderWidth: 192 * 1.5,
   renderHeight: 288 * 1.5,
@@ -30,6 +30,11 @@ export class CollageComponent implements AfterViewInit {
   @ViewChildren('collagePaste') private readonly _collagePaste!: QueryList<ElementRef>;
   @ViewChildren('collageImage') private readonly _collageImage!: QueryList<ElementRef>;
 
+  @HostListener('window:focus', ['$event'])
+  onWindowFocus(evt: Event): void {
+    if (this.iPaste !== undefined) { this.focusPaste(evt); }
+  }
+
   blockSize = {
     x: Array(6).fill(false),
     y: Array(3).fill(false)
@@ -41,7 +46,7 @@ export class CollageComponent implements AfterViewInit {
   iQuickPaste?: number;
 
   constructor(
-    private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.setCollageSize(4, 1);
     this.files = [];
@@ -150,8 +155,7 @@ export class CollageComponent implements AfterViewInit {
     if (!imgUrl) { return; }
 
     this.files[iy][ix] = imgUrl;
-    this.copyPrevPanZoom(ix, iy);
-
+    //setTimeout(() => { this.copyPrevPanZoom(ix, iy); }, 500);
     this.iPaste = undefined;
     this.iQuickPaste !== undefined && this.quickPasteNext();
   }
@@ -172,9 +176,6 @@ export class CollageComponent implements AfterViewInit {
       if (!file) { return; }
       const url  = URL.createObjectURL(file);
       this.files[iy][ix] = url;
-      this.copyPrevPanZoom(ix, iy);
-      // this.images[y][x].panZoom.moveTo(0, 0);
-      // this.images[y][x].panZoom.zoomAbs(0, 0, 1);
       this._changeDetectorRef.markForCheck();
     };
     input.click();
@@ -183,6 +184,11 @@ export class CollageComponent implements AfterViewInit {
   clearFile(ix: number, iy: number): void {
     if (!confirm('Are you sure you want to remove this image?')) { return; }
     this.files[iy][ix] = '';
+    this._changeDetectorRef.markForCheck();
+  }
+
+  imageLoaded(ix: number, iy: number): void {
+    this.copyPrevPanZoom(ix, iy);
     this._changeDetectorRef.markForCheck();
   }
 
@@ -243,14 +249,27 @@ export class CollageComponent implements AfterViewInit {
     return undefined;
   }
 
+  private copyPrevPanZoom(ix: number, iy: number): void {
+    const prev = this.getPrevPanZoom(ix, iy);
+    prev ? this.copyPanZoom(prev, this.images[iy][ix].panZoom) : this.centerPanZoom(this.images[iy][ix]);
+  }
+
   private copyPanZoom(from: PanZoom, to: PanZoom): void {
     to.moveTo(from.getTransform().x, from.getTransform().y);
     to.zoomAbs(from.getTransform().x, from.getTransform().y, from.getTransform().scale);
   }
 
-  private copyPrevPanZoom(ix: number, iy: number): void {
-    const prev = this.getPrevPanZoom(ix, iy);
-    prev && this.copyPanZoom(prev, this.images[iy][ix].panZoom);
+  private centerPanZoom(image: IImage): void {
+    if (!(image.element?.naturalWidth > 0)) { return; }
+    const img = image.element;
+    const panZoom = image.panZoom;
+
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+    const pw = sizes.previewWidth;
+    const ph = sizes.previewHeight;
+    const fx  = pw / w;
+    panZoom.zoomAbs(-2 * pw, 0, fx * 4);
   }
 
   private render(): HTMLCanvasElement {
