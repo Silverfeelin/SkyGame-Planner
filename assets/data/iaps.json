@@ -1148,6 +1148,81 @@
         "pG1_D61KMT"
       ]
     },
+    {
+      "guid": "BwTM5igSJ4",
+      "name": "Spooky Bat Cape",
+      "price": 17.99,
+      "c": 12,
+      "returning": true,
+      "items": [
+        "4D33RG4tNB"
+      ]
+    },
+    {
+      "guid": "ulgfafTh33",
+      "name": "Hungry Pumpkin Hat",
+      "price": 11.99,
+      "c": 8,
+      "returning": true,
+      "items": [
+        "Dlp71JdHg2"
+      ]
+    },
+    {
+      "guid": "sF4D_FVCvh",
+      "name": "Mischief Witch Hat",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "cMNnwUbQed"
+      ]
+    },
+    {
+      "guid": "dyt-Uxhurs",
+      "name": "Mischief Web Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "gEGMIX0DMp"
+      ]
+    },
+    {
+      "guid": "iFNRTpx2oV",
+      "name": "Mischief Withered Antlers",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "evuvua13dC"
+      ]
+    },
+    {
+      "guid": "EJKU-alWQ9",
+      "name": "Mischief Witch Jumper",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "CZ4aNN-JZV",
+        "h-fwwT4T5y"
+      ]
+    },
+    {
+      "guid": "brwUie9WNh",
+      "name": "Mischief Spider Quiff",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "ARZC1Eg2jx"
+      ]
+    },
+    {
+      "guid": "u0hxAVh1UC",
+      "name": "Mischief Pumpkin Prop",
+      "price": 1.99,
+      "returning": true,
+      "items": [
+        "nMt5KsLO6Y"
+      ]
+    },
     // #endregion
     // #region Days of Feast (2019)
     {
