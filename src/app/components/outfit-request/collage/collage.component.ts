@@ -28,11 +28,15 @@ export class CollageComponent implements AfterViewInit {
   @ViewChildren('collagePaste') private readonly _collagePaste!: QueryList<ElementRef>;
   @ViewChildren('collageImage') private readonly _collageImage!: QueryList<ElementRef>;
 
-  blockSize = [Array(5).fill(false), Array(3).fill(false)];
+  blockSize = {
+    x: Array(6).fill(false),
+    y: Array(3).fill(false)
+  };
   collageSize: ICoord = { x: 4, y: 1 };
   files: Array<Array<string>>;
   images: Array<Array<IImage>>;
   iPaste?: number;
+  iQuickPaste?: number;
 
   constructor(
     private readonly _changeDetectorRef: ChangeDetectorRef,
@@ -41,35 +45,21 @@ export class CollageComponent implements AfterViewInit {
     this.files = [];
     this.images = [];
 
-    // Rows
-    for (let iy = 0; iy < 3; iy++) {
-      this.files.push([]);
-      this.images.push([]);
-
-      // Columns
-      for (let ix = 0; ix < 5; ix++) {
+    // Create empty files array.
+    for (let iy = 0; iy < this.blockSize.y.length; iy++) {
+      this.files.push([]); this.images.push([]);
+      for (let ix = 0; ix < this.blockSize.x.length; ix++) {
         this.files[iy][ix] = '';
       }
     }
-
-
   }
 
   ngAfterViewInit(): void {
-    this._collageImage.changes.subscribe(() => {
-      console.log('images changed');
-    })
-
-    this._collagePaste.changes.subscribe(() => {
-      console.log('paste changed');
-    })
-    // Rows
-    console.log('viewd');
-    for (let iy = 0; iy < 3; iy++) {
-      for (let ix = 0; ix < 5; ix++) {
-        const n = iy * 5 + ix;
+    // Create panzoom for each image.
+    for (let iy = 0; iy < this.blockSize.y.length; iy++) {
+      for (let ix = 0; ix < this.blockSize.x.length; ix++) {
+        const n = iy * this.blockSize.x.length + ix;
         const el = this._collageImage.get(n)?.nativeElement as HTMLImageElement;
-        //const el = document.querySelector(`img[data-x="${ix}"][data-y="${iy}"]`) as HTMLImageElement;
         const p = this.createPanZoom(el);
         this.images[iy][ix] = { panZoom: p, element: el };
       }
@@ -78,48 +68,90 @@ export class CollageComponent implements AfterViewInit {
 
   setCollageSize(w: number, h: number): void {
     this.collageSize = { x: w, y: h };
+    this.stopPaste();
+
     this._changeDetectorRef.markForCheck();
   }
 
-  startPaste(evt: Event, x: number, y: number): void {
-    this.iPaste = x + y * 5;
+  startPaste(ix: number, iy: number, evt?: Event): void {
+    this.iPaste = ix + iy * this.blockSize.x.length;
+
+    // If quick paste is active, match it to the current paste.
+    if (this.iQuickPaste !== undefined && this.iPaste !== this.iQuickPaste) {
+      this.iQuickPaste = this.iPaste;
+    }
+
     const el = this._collagePaste.get(this.iPaste!)?.nativeElement as HTMLInputElement;
     if (!el) { return; }
 
     el.value = '';
-    evt.preventDefault();
-    evt.stopPropagation();
+    evt?.preventDefault();
+    evt?.stopPropagation();
     this._changeDetectorRef.markForCheck();
     setTimeout(() => { el.focus(); })
   }
 
-  focusPaste(evt: Event): void {
+
+  startQuickPaste(): void {
+    if (this.iQuickPaste !== undefined)  {
+      this.stopPaste();
+      return;
+    }
+
+    this.iQuickPaste = this.iPaste !== undefined ? this.iPaste -1 : -1;
+    this.quickPasteNext();
+  }
+
+  private quickPasteNext(): void {
+    if (this.iQuickPaste == undefined) { return; }
+    let ix = 0; let iy = 0;
+    while (iy < this.collageSize.y) {
+      this.iQuickPaste++;
+      ix = this.iQuickPaste % this.blockSize.x.length;
+      iy = Math.floor(this.iQuickPaste / this.blockSize.x.length);
+      if (ix < this.collageSize.x && iy < this.collageSize.y) { break; }
+    }
+
+    if (iy >= this.collageSize.y) {
+      this.stopPaste();
+      return;
+    }
+
+    this.startPaste(ix, iy);
+  }
+
+  onPanZoomEnd(): void {
+    this.focusPaste();
+  }
+
+  focusPaste(evt?: Event): void {
     if (this.iPaste === undefined) { return; }
     const el = this._collagePaste.get(this.iPaste!)?.nativeElement as HTMLInputElement;
     if (!el) { return; }
 
-    evt.preventDefault();
-    evt.stopPropagation();
+    evt?.preventDefault();
+    evt?.stopPropagation();
     el.focus();
   }
 
-  stopPaste(evt: Event): void {
-    evt.preventDefault();
-    evt.stopPropagation();
+  stopPaste(evt?: Event): void {
+    evt?.preventDefault();
+    evt?.stopPropagation();
     this.iPaste = undefined;
+    this.iQuickPaste = undefined;
     document.activeElement instanceof HTMLElement && document.activeElement.blur();
   }
 
-  paste(event: ClipboardEvent, ix: number, iy: number): void{
-    console.log(event);
+  paste(event: ClipboardEvent, ix: number, iy: number): void {
+    this._changeDetectorRef.markForCheck();
+    const imgUrl = this.getImgUrlFromClipboard(event);
+    if (!imgUrl) { return; }
+
+    this.files[iy][ix] = imgUrl;
+    this.copyPrevPanZoom(ix, iy);
+
     this.iPaste = undefined;
-    retrieveImageFromClipboardAsBase64(event, (objectUrl: any) => {
-      this.files[iy][ix] = objectUrl;
-      this.copyPrevPanZoom(ix, iy);
-      // this.images[y][x].panZoom.moveTo(0, 0);
-      // this.images[y][x].panZoom.zoomAbs(0, 0, 1);
-      this._changeDetectorRef.markForCheck();
-    }, undefined);
+    this.iQuickPaste !== undefined && this.quickPasteNext();
   }
 
   clearTxt(evt: Event): void{
@@ -153,7 +185,12 @@ export class CollageComponent implements AfterViewInit {
   }
 
   saveCollage(): void {
-    this.render();
+    const canvas = this.render();
+    const dataUrl = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = 'sky-outfit-collage.png';
+    link.click();
   }
 
   copyCollage(): void {
@@ -165,8 +202,22 @@ export class CollageComponent implements AfterViewInit {
         console.log('Image copied to clipboard');
       }).catch(error => {
         console.error('Could not copy image to clipboard: ', error);
+        alert('Copy failed. Please make sure the document is focused.');
       });
     });
+  }
+
+  reset(): void {
+    if (!confirm('Are you sure you want to reset all images?')) { return; }
+    for (let iy = 0; iy < this.blockSize.y.length; iy++) {
+      for (let ix = 0; ix < this.blockSize.x.length; ix++) {
+        this.files[iy][ix] = '';
+      }
+    }
+    this.iPaste = undefined;
+    this.iQuickPaste = undefined;
+    this._changeDetectorRef.markForCheck();
+
   }
 
   private createPanZoom(el: HTMLElement): PanZoom {
@@ -181,7 +232,9 @@ export class CollageComponent implements AfterViewInit {
       if (--ix < 0) { ix = 4; iy--; }
       if (iy < 0) { return undefined; }
       const img = this.images[iy][ix].element;
-      if (img.src && img.complete) { return this.images[iy][ix].panZoom; }
+      if (img?.naturalWidth > 0) {
+        return this.images[iy][ix].panZoom;
+      }
     }
     return undefined;
   }
@@ -206,7 +259,7 @@ export class CollageComponent implements AfterViewInit {
     for (let iy = 0; iy < this.collageSize.y; iy++) {
       for (let ix = 0; ix < this.collageSize.x; ix++) {
         const img = this.images[iy][ix].element;
-        if (!img.src || !img.complete) { continue; }
+        if (!(img?.naturalWidth > 0)) { continue; }
         this.drawImage(ctx, img, ix, iy);
       }
     }
@@ -230,28 +283,19 @@ export class CollageComponent implements AfterViewInit {
     // Draw the intersected part of the image on the canvas
     ctx.drawImage(img, sx, sy, w, h, ix * sizes.renderWidth, iy * sizes.renderHeight, sizes.renderWidth, sizes.renderHeight);
   }
-}
 
-function retrieveImageFromClipboardAsBase64(pasteEvent: any, callback: any, imageFormat: any) {
-  if(pasteEvent.clipboardData == false){
-      if(typeof(callback) == "function"){
-          callback(undefined);
-      }
-  };
+  private getImgUrlFromClipboard(event: ClipboardEvent): string | undefined {
+    // Loosely based on https://stackoverflow.com/a/60504384/8523745
+    if (!event.clipboardData) { return undefined; }
+    var items = event.clipboardData.items;
+    if (!items) { return undefined; }
 
-  // retrive elements from clipboard
-  var items = pasteEvent.clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+      if (!items[i].type.includes('image')) continue;
+      const file = items[i].getAsFile();
+      return file ? URL.createObjectURL(file) : undefined;
+    }
 
-  if(items == undefined){
-      if(typeof(callback) == "function"){
-          callback(undefined);
-      }
-  };
-
-  for (var i = 0; i < items.length; i++) {
-      if (items[i].type.indexOf("image") == -1) continue;
-      var blob = items[i].getAsFile();
-      const url = URL.createObjectURL(blob);
-      callback(url);
+    return undefined;
   }
 }

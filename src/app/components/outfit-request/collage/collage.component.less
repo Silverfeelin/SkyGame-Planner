@@ -1,7 +1,7 @@
 .grid-size-blocks {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 32px);
+  grid-template-columns: repeat(6, 32px);
 }
 
 .grid-size-block {
@@ -17,8 +17,8 @@
     background: #aaa;
   }
 
-  &:nth-of-type(5n-4) { border-left-width: 1px; }
-  &:nth-last-of-type(-n+5) { border-bottom-width: 1px; }
+  &:nth-of-type(6n-5) { border-left-width: 1px; }
+  &:nth-last-of-type(-n+6) { border-bottom-width: 1px; }
 }
 
 .block-active {
@@ -28,7 +28,7 @@
 .grid-collage {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(5, 192px);
+  grid-template-columns: repeat(6, 192px);
   gap: 2px;
 }
 
@@ -65,10 +65,17 @@
   border: 0;
 }
 
-.collage-pasting-label {
+.collage-pasting {
+  &:focus-within .collage-pasting-label { display: inline; }
+  &:not(:focus-within) .collage-pasting-focus { display: inline; }
+}
+
+.collage-pasting-label, .collage-pasting-focus {
+  display: none;
   position: absolute;
   top: 50%; left: 50%;
   white-space: nowrap;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 

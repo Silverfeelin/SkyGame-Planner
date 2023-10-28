@@ -4,8 +4,8 @@
   </div>
   <div class="sky-card-body">
     <div class="grid-size-blocks" data-theme="light">
-      <ng-container *ngFor="let _ of blockSize[1]; let iy = index;">
-        <ng-container *ngFor="let _ of blockSize[0]; let ix = index;">
+      <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
+        <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
           <div  class="grid-size-block" [class.block-active]="ix < collageSize.x && iy < collageSize.y" (click)="setCollageSize(ix + 1, iy + 1)">
           </div>
         </ng-container>
@@ -28,22 +28,31 @@
         <mat-icon class="menu-icon">content_copy</mat-icon>
         <span class="menu-label">Copy collage</span>
       </button>
+      <button type="button" class="button" (click)="startQuickPaste()" [class.highlight]="$any(iQuickPaste) >= 0">
+        <mat-icon class="menu-icon">content_paste</mat-icon>
+        <span class="menu-label">Quick paste</span>
+      </button>
+      <button type="button" class="button button-danger" (click)="reset()">
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        <span class="menu-label">Reset</span>
+      </button>
     </div>
     <div class="grid-collage mt">
-      <ng-container *ngFor="let _ of blockSize[1]; let iy = index;">
-        <ng-container *ngFor="let _ of blockSize[0]; let ix = index;">
-          <div class="grid-collage-block" [attr.data-x]="ix" [attr.data-y]="iy" [attr.data-z]="ix + iy * 5">
+      <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
+        <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
+          <div class="grid-collage-block" [attr.data-x]="ix" [attr.data-y]="iy" [attr.data-z]="ix + iy * blockSize.x.length">
             <!-- [hidden]="!xa || !ya" -->
-            <div class="collage-image-container" [style.opacity]="(ix < collageSize.x && iy < collageSize.y ? 1 : 0.5)">
+            <div class="collage-image-container" [style.opacity]="(ix < collageSize.x && iy < collageSize.y ? 1 : 0.3)">
               <!-- Paste container-->
-              <div class="collage-pasting" tabindex="-1" [hidden]="iPaste !== (ix + iy * 5)" (click)="focusPaste($event)">
+              <div class="collage-pasting" tabindex="-1" [hidden]="iPaste !== (ix + iy * blockSize.x.length)" (click)="focusPaste($event)">
                 <input type="text" class="collage-pasting-input" #collagePaste (paste)="paste($event, ix, iy)">
-                <span class="collage-pasting-label">Press <kbd>Ctrl+V</kbd> now.</span>
+                <span class="collage-pasting-label">Press <kbd>Ctrl+V</kbd> with<br/>an image in clipboard.</span>
+                <span class="collage-pasting-focus">Click to focus<br/>before pasting.</span>
                 <div class="button collage-pasting-close" (click)="stopPaste($event)">
                   <mat-icon>close</mat-icon>
                 </div>
               </div>
-              <div class="button collage-btn-clipboard" (click)="startPaste($event, ix, iy)">
+              <div class="button collage-btn-clipboard" (click)="startPaste(ix, iy, $event)">
                 <mat-icon>content_paste</mat-icon>
               </div>
               <!-- File input -->
