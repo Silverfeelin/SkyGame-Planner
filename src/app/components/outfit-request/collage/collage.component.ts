@@ -1,5 +1,22 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import createPanZoom, { PanZoom } from 'panzoom';
+
+interface IImage {
+  panZoom: PanZoom;
+  element: HTMLImageElement;
+}
+
+interface ICoord {
+  x: number;
+  y: number;
+}
+
+const sizes = {
+  previewWidith: 192,
+  previewHeight: 288,
+  renderWidth: 192 * 1.5,
+  renderHeight: 288 * 1.5,
+};
 
 @Component({
   selector: 'app-collage',
@@ -7,51 +24,100 @@ import createPanZoom, { PanZoom } from 'panzoom';
   styleUrls: ['./collage.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CollageComponent {
+export class CollageComponent implements AfterViewInit {
+  @ViewChildren('collagePaste') private readonly _collagePaste!: QueryList<ElementRef>;
+  @ViewChildren('collageImage') private readonly _collageImage!: QueryList<ElementRef>;
+
   blockSize = [Array(5).fill(false), Array(3).fill(false)];
-  collageSize = [4, 1];
+  collageSize: ICoord = { x: 4, y: 1 };
   files: Array<Array<string>>;
-  panZooms: Array<Array<PanZoom>>;
+  images: Array<Array<IImage>>;
+  iPaste?: number;
 
   constructor(
     private readonly _changeDetectorRef: ChangeDetectorRef,
   ) {
     this.setCollageSize(4, 1);
     this.files = [];
-    this.panZooms = [];
+    this.images = [];
 
     // Rows
-    for (let y = 0; y < 3; y++) {
+    for (let iy = 0; iy < 3; iy++) {
       this.files.push([]);
-      this.panZooms.push([]);
+      this.images.push([]);
 
       // Columns
-      for (let x = 0; x < 5; x++) {
-        this.files[y][x] = '';
+      for (let ix = 0; ix < 5; ix++) {
+        this.files[iy][ix] = '';
+      }
+    }
 
-        setTimeout(() => {
-          const el = document.querySelector(`img[data-x="${x}"][data-y="${y}"]`) as HTMLElement;
-          const p = this.createPanZoom(el);
-          this.panZooms[y][x] = p;
-        })
+
+  }
+
+  ngAfterViewInit(): void {
+    this._collageImage.changes.subscribe(() => {
+      console.log('images changed');
+    })
+
+    this._collagePaste.changes.subscribe(() => {
+      console.log('paste changed');
+    })
+    // Rows
+    console.log('viewd');
+    for (let iy = 0; iy < 3; iy++) {
+      for (let ix = 0; ix < 5; ix++) {
+        const n = iy * 5 + ix;
+        const el = this._collageImage.get(n)?.nativeElement as HTMLImageElement;
+        //const el = document.querySelector(`img[data-x="${ix}"][data-y="${iy}"]`) as HTMLImageElement;
+        const p = this.createPanZoom(el);
+        this.images[iy][ix] = { panZoom: p, element: el };
       }
     }
   }
 
-  setCollageSize(x: number, y: number): void {
-    this.collageSize = [x, y];
-    this.blockSize[0].forEach((_, i) => this.blockSize[0][i] = i < x);
-    this.blockSize[1].forEach((_, i) => this.blockSize[1][i] = i < y);
+  setCollageSize(w: number, h: number): void {
+    this.collageSize = { x: w, y: h };
     this._changeDetectorRef.markForCheck();
   }
 
-  paste(event: ClipboardEvent): void{
+  startPaste(evt: Event, x: number, y: number): void {
+    this.iPaste = x + y * 5;
+    const el = this._collagePaste.get(this.iPaste!)?.nativeElement as HTMLInputElement;
+    if (!el) { return; }
+
+    el.value = '';
+    evt.preventDefault();
+    evt.stopPropagation();
+    this._changeDetectorRef.markForCheck();
+    setTimeout(() => { el.focus(); })
+  }
+
+  focusPaste(evt: Event): void {
+    if (this.iPaste === undefined) { return; }
+    const el = this._collagePaste.get(this.iPaste!)?.nativeElement as HTMLInputElement;
+    if (!el) { return; }
+
+    evt.preventDefault();
+    evt.stopPropagation();
+    el.focus();
+  }
+
+  stopPaste(evt: Event): void {
+    evt.preventDefault();
+    evt.stopPropagation();
+    this.iPaste = undefined;
+    document.activeElement instanceof HTMLElement && document.activeElement.blur();
+  }
+
+  paste(event: ClipboardEvent, ix: number, iy: number): void{
     console.log(event);
+    this.iPaste = undefined;
     retrieveImageFromClipboardAsBase64(event, (objectUrl: any) => {
-      this.files[0][0] = objectUrl;
-      this.panZooms[0][0].moveTo(0, 0);
-      const el = document.querySelector(`img[data-x="${0}"][data-y="${0}"]`) as HTMLElement;
-      // this.createPanZoom(el);
+      this.files[iy][ix] = objectUrl;
+      this.copyPrevPanZoom(ix, iy);
+      // this.images[y][x].panZoom.moveTo(0, 0);
+      // this.images[y][x].panZoom.zoomAbs(0, 0, 1);
       this._changeDetectorRef.markForCheck();
     }, undefined);
   }
@@ -61,8 +127,8 @@ export class CollageComponent {
     inp.value = '';
   }
 
-  pickFile(x: number, y: number): void {
-    this.files[y][x] = '';
+  pickFile(ix: number, iy: number): void {
+    this.files[iy][ix] = '';
 
     const input = document.createElement('input');
     input.type = 'file';
@@ -71,14 +137,36 @@ export class CollageComponent {
       const file = input.files?.item(0);
       if (!file) { return; }
       const url  = URL.createObjectURL(file);
-      this.files[y][x] = url;
-      this.panZooms[y][x].moveTo(0, 0);
+      this.files[iy][ix] = url;
+      this.copyPrevPanZoom(ix, iy);
+      // this.images[y][x].panZoom.moveTo(0, 0);
+      // this.images[y][x].panZoom.zoomAbs(0, 0, 1);
       this._changeDetectorRef.markForCheck();
-
-      const el = document.querySelector(`img[data-x="${x}"][data-y="${y}"]`) as HTMLElement;
-      // this.createPanZoom(el);
     };
     input.click();
+  }
+
+  clearFile(ix: number, iy: number): void {
+    if (!confirm('Are you sure you want to remove this image?')) { return; }
+    this.files[iy][ix] = '';
+    this._changeDetectorRef.markForCheck();
+  }
+
+  saveCollage(): void {
+    this.render();
+  }
+
+  copyCollage(): void {
+    const canvas = this.render();
+    canvas.toBlob(blob => {
+      if (!blob) { return; }
+      const item = new ClipboardItem({ 'image/png': blob });
+      navigator.clipboard.write([item]).then(() => {
+        console.log('Image copied to clipboard');
+      }).catch(error => {
+        console.error('Could not copy image to clipboard: ', error);
+      });
+    });
   }
 
   private createPanZoom(el: HTMLElement): PanZoom {
@@ -86,6 +174,61 @@ export class CollageComponent {
       zoomSpeed: 0.05,
       smoothScroll: false
     });
+  }
+
+  private getPrevPanZoom(ix: number, iy: number): PanZoom | undefined {
+    while (ix >= 0 && iy >= 0) {
+      if (--ix < 0) { ix = 4; iy--; }
+      if (iy < 0) { return undefined; }
+      const img = this.images[iy][ix].element;
+      if (img.src && img.complete) { return this.images[iy][ix].panZoom; }
+    }
+    return undefined;
+  }
+
+  private copyPanZoom(from: PanZoom, to: PanZoom): void {
+    to.moveTo(from.getTransform().x, from.getTransform().y);
+    to.zoomAbs(from.getTransform().x, from.getTransform().y, from.getTransform().scale);
+  }
+
+  private copyPrevPanZoom(ix: number, iy: number): void {
+    const prev = this.getPrevPanZoom(ix, iy);
+    prev && this.copyPanZoom(prev, this.images[iy][ix].panZoom);
+  }
+
+  private render(): HTMLCanvasElement {
+    const canvas = document.createElement('canvas');
+    canvas.width = sizes.renderWidth * this.collageSize.x;
+    canvas.height = sizes.renderHeight * this.collageSize.y;
+    const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+
+    // Draw  images
+    for (let iy = 0; iy < this.collageSize.y; iy++) {
+      for (let ix = 0; ix < this.collageSize.x; ix++) {
+        const img = this.images[iy][ix].element;
+        if (!img.src || !img.complete) { continue; }
+        this.drawImage(ctx, img, ix, iy);
+      }
+    }
+
+    return canvas;
+  }
+
+  private drawImage(ctx: CanvasRenderingContext2D, img: HTMLImageElement, ix: number, iy: number): void {
+    const clipDiv =  img.closest('.collage-image-container') as HTMLElement;
+    const imgBounds = img.getBoundingClientRect();
+    const clipBounds = clipDiv.getBoundingClientRect();
+
+    // Calculate starting coordinates of clipped image.
+    const fx = (clipBounds.left - imgBounds.left) / imgBounds.width;
+    const fy = (clipBounds.top - imgBounds.top) / imgBounds.height;
+    const sx = fx * img.naturalWidth;
+    const sy = fy * img.naturalHeight;
+    const w = clipBounds.width / imgBounds.width * img.naturalWidth;
+    const h = clipBounds.height / imgBounds.height * img.naturalHeight;
+
+    // Draw the intersected part of the image on the canvas
+    ctx.drawImage(img, sx, sy, w, h, ix * sizes.renderWidth, iy * sizes.renderHeight, sizes.renderWidth, sizes.renderHeight);
   }
 }
 
@@ -104,45 +247,11 @@ function retrieveImageFromClipboardAsBase64(pasteEvent: any, callback: any, imag
           callback(undefined);
       }
   };
-  // loop the elements
-  for (var i = 0; i < items.length; i++) {
-      // Skip content if not image
-      if (items[i].type.indexOf("image") == -1) continue;
-      // Retrieve image on clipboard as blob
-      var blob = items[i].getAsFile();
 
+  for (var i = 0; i < items.length; i++) {
+      if (items[i].type.indexOf("image") == -1) continue;
+      var blob = items[i].getAsFile();
       const url = URL.createObjectURL(blob);
       callback(url);
-
-      // // Create an abstract canvas and get context
-      // var mycanvas = document.createElement("canvas");
-      // var ctx = mycanvas.getContext('2d');
-
-      // // Create an image
-      // var img = new Image();
-
-      // // Once the image loads, render the img on the canvas
-      // img.onload = function() {
-      //     // Update dimensions of the canvas with the dimensions of the image
-      //     mycanvas.width = img.width;
-      //     mycanvas.height = img.height;
-
-      //     // Draw the image
-      //     ctx!.drawImage(img, 0, 0);
-
-      //     // Execute callback with the base64 URI of the image
-      //     if(typeof(callback) == "function"){
-      //         callback(mycanvas.toDataURL(
-      //             (imageFormat || "image/png")
-      //         ));
-      //     }
-      // };
-
-      // // Crossbrowser support for URL
-      // var URLObj = window.URL || window.webkitURL;
-
-      // // Creates a DOMString containing a URL representing the object given in the parameter
-      // // namely the original Blob
-      // img.src = URLObj.createObjectURL(blob);
   }
 }

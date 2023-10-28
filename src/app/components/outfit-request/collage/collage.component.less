@@ -29,7 +29,7 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 192px);
-  gap: 20px;
+  gap: 2px;
 }
 
 .grid-collage-block {
@@ -48,32 +48,100 @@
   cursor: grab;
 }
 
-.collage-btn-file {
+.collage-pasting {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  padding: 10px;
+  background: #171721de;
 }
 
-.collage-btn-clipboard {
+.collage-pasting-input {
+  width: 0; height: 0;
+  padding: 0; margin: 0;
+  border: 0;
+}
+
+.collage-pasting-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+
+.collage-pasting-close {
   position: absolute;
   top: 4px;
   right: 4px;
   width: 32px;
   height: 32px;
+  z-index: 5;
+  cursor: pointer;
+
+  mat-icon {
+    position: absolute;
+    top: 3px; right: 3px;
+  }
+}
+
+.collage-btn-file {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
   z-index: 2;
 
-  input {
+  mat-icon {
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
+    top: 3px; left: 3px;
   }
+}
+
+.collage-btn-clipboard {
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  cursor: pointer;
+
+  // input {
+  //   position: absolute;
+  //   top: 0; right: 0; bottom: 0; left: 0;
+  // }
 
   mat-icon {
     pointer-events: none;
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 3px;
+    right: 3px;
     z-index: 3;
+  }
+}
+
+.collage-btn-clear {
+  position: absolute;
+  display: inline-block;
+  bottom: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  color: var(--color-danger);
+  background-color: var(--color-danger-background);
+  border-color: var(--color-danger-accent);
+  z-index: 3;
+
+  mat-icon {
+    pointer-events: none;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
   }
 }
 
