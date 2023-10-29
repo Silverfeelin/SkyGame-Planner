@@ -79,7 +79,7 @@
       </button>
     </div>
   </div>
-  <div class="sky-card-body closet-container" [attr.data-mode]="selectMode" [attr.data-modifying]="modifyingCloset || undefined">
+  <div class="sky-card-body closet-container scroll-x" [attr.data-mode]="selectMode" [attr.data-modifying]="modifyingCloset || undefined">
     <ng-container *ngFor="let type of itemTypes">
       <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="showMode === 'closet' ? 'repeat(' + columns + ', 72px)' : undefined">
         <ng-container [ngTemplateOutlet]="templateItems" [ngTemplateOutletContext]="{ $implicit: items[type], showNone: (columns && itemTypeUnequip[type])}">
