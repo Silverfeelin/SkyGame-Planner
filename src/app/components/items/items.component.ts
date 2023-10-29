@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router, convertToParamMap } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
@@ -37,16 +37,19 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   shownUnlocked: number = 0;
 
   showFieldGuide = false;
+  shouldShowNone = true;
   showNone = false;
   offsetNone = 0;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _route: ActivatedRoute,
-    private readonly _router: Router
+    private readonly _router: Router,
+    private readonly _changeDetectionRef: ChangeDetectorRef
   ) {
     this.initializeItems();
     this.columns = +(localStorage.getItem('item.columns') as string) || undefined;
+    this.shouldShowNone = localStorage.getItem('item.none') !== '0';
 
     _route.queryParamMap.subscribe(params => {
       this.onQueryParamsChanged(params);
@@ -90,8 +93,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     });
     */
 
-    this.showNone = this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held || this.type === ItemType.Shoes || this.type === ItemType.FaceAccessory;
-    this.offsetNone = this.showNone ? 1 : 0;
+    this.updateShowNone();
 
     // Select item from query.
     const itemGuid = query.get('item') || '';
@@ -108,14 +110,27 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     switch (this.columns) {
       case 3: this.columns = 4; break;
       case 4: this.columns = 5; break;
-      case 5: this.columns = undefined; break;
-      default:  this.columns = 3; break;
+      case 5: this.columns = 6; break;
+      case 6: this.columns = undefined; break;
+      default: this.columns = 3; break;
     }
 
     localStorage.setItem('item.columns', `${this.columns || ''}`);
   }
 
-  selectCategory(type: string) {
+  toggleNone(): void {
+    this.shouldShowNone = !this.shouldShowNone;
+    localStorage.setItem('item.none', this.shouldShowNone ? '1' : '0')
+    this.updateShowNone();
+  }
+
+  updateShowNone(): void {
+    this.showNone = this.shouldShowNone && (this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held || this.type === ItemType.Shoes || this.type === ItemType.FaceAccessory);
+    this.offsetNone = this.showNone ? 1 : 0;
+    this._changeDetectionRef.markForCheck();
+  }
+
+  onTypeChanged(type: ItemType): void {
     const queryParams = NavigationHelper.getQueryParams(location.href);
     queryParams['type'] = type;
     this.selectedItem ? queryParams['item'] = this.selectedItem.guid : delete queryParams['item'];

@@ -51,6 +51,8 @@ import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.compone
 import { WingedLightComponent } from './components/winged-light/winged-light.component';
 import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
 import { CollageComponent } from './components/outfit-request/collage/collage.component';
+import { ClosetComponent } from './components/outfit-request/closet/closet.component';
+import { ItemTypeSelectorComponent } from './components/items/item-type-selector/item-type-selector.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +101,9 @@ import { CollageComponent } from './components/outfit-request/collage/collage.co
     WikiLinkComponent,
     WingedLightComponent,
     ChildrenOfLightComponent,
-    CollageComponent
+    CollageComponent,
+    ClosetComponent,
+    ItemTypeSelectorComponent
   ],
   imports: [
     BrowserModule,

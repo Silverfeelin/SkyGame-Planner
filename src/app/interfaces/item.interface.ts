@@ -7,6 +7,8 @@ import { IWiki } from './wiki.interface';
 export interface IItemConfig extends IConfig<IItem> {}
 
 export interface IItem extends IGuid {
+  /** Unique item ID. */
+  id?: number;
   /** Item type. */
   type: ItemType;
   /** Item group. */

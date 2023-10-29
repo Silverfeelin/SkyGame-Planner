@@ -1,0 +1,106 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h2 class="h3">Sky closet</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="sky-flex flex-wrap">
+      <div class="button-group">
+        <button type="button" (click)="toggleHighlightOwned()">Hide missing cosmetics</button>
+      </div>
+      <div class="button-group">
+        <button type="button" (click)="toggleCloset()">
+          <mat-icon class="menu-icon">checkroom</mat-icon>
+          <span class="menu-label">Show your closet</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3">Items</h2>
+  </div>
+  <div class="sky-card-body">
+    <!-- <app-item-type-selector></app-item-type-selector> -->
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Outfit']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Shoes']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Mask']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['FaceAccessory']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Necklace']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Hair']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Hat']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Cape']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Held']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+    <hr/>
+    <div class="closet-items">
+      <div class="closet-item" *ngFor="let item of items['Prop']" (click)="toggleItem(item)"
+        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </div>
+  </div>
+</div>

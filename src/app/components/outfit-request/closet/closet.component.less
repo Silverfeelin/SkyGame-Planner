@@ -1,0 +1,24 @@
+.closet-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.closet-item {
+  display: inline-block;
+  padding: 1px;
+  border-radius: var(--border-radius);
+  background: var(--color-background);
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.selected {
+  border-color: red;
+}
+
+.not-owned {
+  app-item {
+    opacity: 0.2;
+  }
+}

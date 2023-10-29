@@ -25,6 +25,7 @@ import { BlankComponent } from './components/blank/blank.component';
 import { WingedLightComponent } from './components/winged-light/winged-light.component';
 import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
 import { CollageComponent } from './components/outfit-request/collage/collage.component';
+import { ClosetComponent } from './components/outfit-request/closet/closet.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -52,6 +53,7 @@ const routes: Routes = [
   { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
   { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
   { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
+  { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
 ];
 
