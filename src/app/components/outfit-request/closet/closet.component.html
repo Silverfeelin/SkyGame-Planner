@@ -5,102 +5,115 @@
   <div class="sky-card-body">
     <div class="sky-flex flex-wrap">
       <div class="button-group">
-        <button type="button" (click)="toggleHighlightOwned()">Hide missing cosmetics</button>
-      </div>
-      <div class="button-group">
         <button type="button" (click)="toggleCloset()">
           <mat-icon class="menu-icon">checkroom</mat-icon>
-          <span class="menu-label">Show your closet</span>
+          <span class="menu-label">{{ showMode === 'all' ? 'Show as closet' : 'Show all' }}</span>
+        </button>
+        <button type="button" (click)="modifyCloset()">
+          <mat-icon class="menu-icon">manufacturing</mat-icon>
+          <span class="menu-no-label"></span>
         </button>
       </div>
+      <!-- <div class="button-group">
+        <button type="button" (click)="toggleHideMissing()">
+          <mat-icon class="menu-icon">visibility</mat-icon>
+          <span class="menu-label">{{ hideMissing ? 'Show': 'Hide' }} missing</span>
+        </button>
+      </div> -->
+      <div class="button-group">
+        <button type="button" (click)="toggleHideUnselected()">
+          <mat-icon class="menu-icon">filter_alt</mat-icon>
+          <span class="menu-label">{{ hideUnselected ? 'Show all': 'Show highlighted' }}</span>
+        </button>
+      </div>
+    </div>
+    <!-- <hr/>
+    <div>
+      <app-item-type-selector (typeChanged)="scrollToType($event)"></app-item-type-selector>
+    </div> -->
+  </div>
+</div>
+
+<div class="sky-card mt" *ngIf="modifyingCloset">
+  <div class="sky-card-header">
+    <h2 class="h3">Modify closet</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      Show items in columns.
+      <div class="button-group">
+        <button type="button" class="" (click)="setColumns(3)">3</button>
+        <button type="button" class="" (click)="setColumns(4)">4</button>
+        <button type="button" class="" (click)="setColumns(5)">5</button>
+        <button type="button" class="" (click)="setColumns(6)">6</button>
+      </div>
+    </div>
+    <div class="container mt">
+      Press on any item below to hide it from the closet. This way you can have the closet appear as it does in-game.<br/>
+      Any highlighted items will be shown even if hidden from your closet.
     </div>
   </div>
 </div>
 
 <div class="sky-card mt">
-  <div class="sky-card-header">
-    <h2 class="h3">Items</h2>
+  <div class="sky-card-header header-items header-sticky">
+    <h2 class="h3 mb-0 label-items">Items</h2>
+    <!-- Copy link -->
+    <button type="button" class="btn-copy-link" (click)="copyLink()"
+      ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+      <mat-icon class="menu-icon">link</mat-icon>
+      <span class="menu-label">Copy</span>
+    </button>
+    <div class="btn-colors">
+      <button type="button" class="btn-color btn-r" (click)="setSelectMode('r')" [class.btn-color-active]="selectMode === 'r'"
+        ngbTooltip="Mark items red" container="body" placement="top">
+        &nbsp;
+      </button>
+      <button type="button" class="btn-color btn-g" (click)="setSelectMode('g')" [class.btn-color-active]="selectMode === 'g'"
+        ngbTooltip="Mark items green" container="body" placement="top">
+        &nbsp;
+      </button>
+      <button type="button" class="btn-color btn-b" (click)="setSelectMode('b')" [class.btn-color-active]="selectMode === 'b'"
+        ngbTooltip="Mark items blue" container="body" placement="top-right">
+        &nbsp;
+      </button>
+    </div>
   </div>
-  <div class="sky-card-body">
-    <!-- <app-item-type-selector></app-item-type-selector> -->
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Outfit']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+  <div class="sky-card-body closet-container" [attr.data-mode]="selectMode" [attr.data-modifying]="modifyingCloset || undefined">
+    <ng-container *ngFor="let type of itemTypes">
+      <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="showMode === 'closet' ? 'repeat(' + columns + ', 72px)' : undefined">
+        <ng-container [ngTemplateOutlet]="templateItems" [ngTemplateOutletContext]="{ $implicit: items[type], showNone: (columns && itemTypeUnequip[type])}">
+        </ng-container>
       </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Shoes']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Mask']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['FaceAccessory']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Necklace']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Hair']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Hat']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Cape']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Held']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
-    <hr/>
-    <div class="closet-items">
-      <div class="closet-item" *ngFor="let item of items['Prop']" (click)="toggleItem(item)"
-        [class.selected]="selected[item.guid]" [class.not-owned]="highlightOwned && !item.unlocked"
-      >
-        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-      </div>
-    </div>
+      <hr/>
+    </ng-container>
   </div>
 </div>
+
+<ng-template #templateItems let-items let-showNone="showNone">
+  <div class="closet-item" *ngIf="showNone && !hideUnselected">
+    <div class="item-none">
+      <mat-icon class="" svgIcon="none"></mat-icon>
+    </div>
+  </div>
+  <ng-container *ngFor="let item of items; let i = index;">
+    <ng-container>
+      <!-- [class.closet-hide]="(hideMissing && !item.unlocked)" -->
+      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && ((hideUnselected && !selected.a[item.guid]) || (!selected.a[item.guid] && showMode === 'closet' && hidden[item.guid]))"
+        [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
+        [class.closet-hide]="hidden[item.guid]"
+        [ngbTooltip]="templateItemHover" container="body"
+      >
+        <app-item [item]="item" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </ng-container>
+
+    <!-- Tooltip -->
+    <ng-template #templateItemHover>
+      <ng-container *ngIf="item">
+        <span class="ws-nw">{{item.name}}</span>
+      </ng-container>
+    </ng-template>
+  </ng-container>
+</ng-template>
+

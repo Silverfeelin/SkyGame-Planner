@@ -1,7 +1,54 @@
-.closet-items {
+@red: #f00;
+@reda: #f006;
+@green: #0f0;
+@greena: #0f06;
+@blue: #00f;
+@bluea: #00f6;
+
+.btn-colors {
+  position: absolute;
+  right: 8px;
+  top: 8px;
   display: flex;
-  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-copy-link {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+  background: var(--color-card-header-sticky-background);
+  z-index: 2;
+}
+
+.btn-color { width: 36px; border: 0; }
+.btn-r { background: @reda; }
+.btn-g { background: @greena; }
+.btn-b { background: @bluea; }
+.btn-r.btn-color-active {
+  background: @red;
+  box-shadow: 0px 0px 5px 2px @red;
+}
+.btn-g.btn-color-active {
+  background: @green;
+  box-shadow: 0px 0px 5px 2px @green
+}
+.btn-b.btn-color-active {
+  background: @blue;
+  box-shadow: 0px 0px 5px 2px @blue;
+}
+
+.closet-items {
+  scroll-margin-top: 71px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 72px);
   gap: 4px;
+  user-select: none;
 }
 
 .closet-item {
@@ -9,16 +56,50 @@
   padding: 1px;
   border-radius: var(--border-radius);
   background: var(--color-background);
-  cursor: pointer;
   border: 3px solid transparent;
 }
 
-.selected {
-  border-color: red;
+.item-none {
+  width: var(--item-size);
+  height: var(--item-size);
+
+  mat-icon {
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.not-owned {
+.closet-container[data-mode] .closet-item { cursor: pointer; }
+.closet-container[data-modifying] .closet-item { cursor: pointer; }
+
+.closet-container[data-mode="r"] .closet-item:hover { border-color: @reda; }
+.closet-container[data-mode="g"] .closet-item:hover { border-color: @greena; }
+.closet-container[data-mode="b"] .closet-item:hover { border-color: @bluea; }
+.selected-r { border-color: @red; }
+.selected-g { border-color: @green; }
+.selected-b { border-color: @blue; }
+
+.closet-hide {
   app-item {
     opacity: 0.2;
   }
+}
+
+.closet-container hr { display: none; }
+.closet-container .closet-items:not(:empty) + hr { display: block; }
+
+hr:last-child {
+  display: none;
+}
+
+/* Responsive */
+
+.header-items {
+  min-height: 54px;
+}
+
+.label-items { display: none; }
+@media screen and (min-width: 720px) {
+  .label-items { display: block; }
+  .btn-copy-link { left: 92px; }
 }
