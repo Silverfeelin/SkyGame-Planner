@@ -16016,7 +16016,7 @@
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Feline_Familiar_Prop" },
       "order": 4901
     },
-    // #region Mischief 2024
+    // #region Mischief 2023
     {
       "id": 1870,
       "guid": "bcKjyS-_p3",
@@ -16070,6 +16070,12 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
       "order": 11501
+    },
+    {
+      "guid": "HsHRfJQ9_A",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     // #endregion
     // #endregion
