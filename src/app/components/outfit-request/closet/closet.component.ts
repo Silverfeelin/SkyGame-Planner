@@ -149,28 +149,28 @@ export class ClosetComponent {
 
     // Draw item sections
     let sx = _wPad, sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Outfit], this.itemTypeUnequip[ItemType.Outfit]);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Outfit], false);
     sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Shoes], this.itemTypeUnequip[ItemType.Shoes]);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Shoes], false);
     sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Mask], this.itemTypeUnequip[ItemType.Mask]);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Mask], false);
     sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.FaceAccessory], this.itemTypeUnequip[ItemType.FaceAccessory]);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.FaceAccessory], false);
     sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Necklace], this.itemTypeUnequip[ItemType.Necklace]);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Necklace], false);
 
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hair], this.itemTypeUnequip[ItemType.Hair]);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hair], false);
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 2 + cHair * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hat], this.itemTypeUnequip[ItemType.Hat]);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hat], false);
 
     sx = _wPad * 3 + (cols[0] + cols[1]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[2], this.items[ItemType.Cape], this.itemTypeUnequip[ItemType.Cape]);
+    this.cvsDrawSection(ctx, sx, sy, cols[2], this.items[ItemType.Cape], false);
 
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Held], this.itemTypeUnequip[ItemType.Held]);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Held], false);
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Prop], this.itemTypeUnequip[ItemType.Prop]);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Prop], false);
 
     // Draw attribution
     ctx.fillStyle = '#fff';
