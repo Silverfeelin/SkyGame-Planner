@@ -247,6 +247,7 @@ export class ClosetComponent {
   resetSelection(): void {
     if (!confirm('This will remove the color highlights from all items. Are you sure?')) { return; }
     this.selected = { a: {}, r: {}, g: {}, b: {}};
+    this.selectionHasHidden = false;
     const url = new URL(location.href);
     url.searchParams.delete('r');
     url.searchParams.delete('g');
