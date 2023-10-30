@@ -1,8 +1,9 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
+import { ItemSize } from '../../item/item.component';
 
 interface ISelection { [key: string]: IItem; }
 type SelectMode = 'r' | 'g' | 'b';
@@ -25,17 +26,31 @@ export class ClosetComponent {
     ItemType.Cape,
     ItemType.Held, ItemType.Prop
   ];
+  itemIcons: { [key: string]: string } = {
+    'Outfit': 'outfit',
+    'Shoes': 'shoes',
+    'Mask': 'mask',
+    'FaceAccessory': 'face-acc',
+    'Necklace': 'necklace',
+    'Hair': 'hair',
+    'Hat': 'hat',
+    'Cape': 'cape',
+    'Held': 'held',
+    'Prop': 'prop'
+  };
+
   itemTypeUnequip: { [key: string]: boolean } = [
     ItemType.Necklace, ItemType.Hat, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
   ].reduce((map, type) => (map[`${type}`] = true, map), {} as { [key: string]: boolean });
 
   // Item data
-  items: { [key: string]: Array<IItem> } = {};
+  items: { [type: string]: Array<IItem> } = {};
 
   // Item selection
   selectMode?: SelectMode;
   selected: { a: ISelection, r: ISelection, g: ISelection, b: ISelection } = { a: {}, r: {}, g: {}, b: {}};
-  hidden: { [key: string]: boolean } = {};
+  hidden: { [guid: string]: boolean } = {};
+  selectionHasHidden = false;
 
   // Closet display
   modifyingCloset = false;
@@ -44,19 +59,24 @@ export class ClosetComponent {
   columns: number;
   showMode: ShowMode = 'all';
   columnsLabel = 'Show as closet';
-  maxColumns = 6;
+  maxColumns = 8;
+  itemSize: ItemSize = 'small';
+  itemSizePx = 32;
+  typeFolded: { [key: string]: boolean } = {};
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _changeDetectionRef: ChangeDetectorRef,
     private readonly _route: ActivatedRoute
   ) {
-    this.initializeItems();
-    // this.hideMissing = localStorage.getItem('closet.hide-missing') === '1';
     this.hideUnselected = localStorage.getItem('closet.hide-unselected') === '1';
     this.hidden = (JSON.parse(localStorage.getItem('closet.hidden') || '[]') as Array<string>).reduce((map, guid) => (map[guid] = true, map), {} as { [key: string]: boolean });
-    this.columns = +localStorage.getItem('closet.columns')! || 3;
+    this.columns = +localStorage.getItem('closet.columns')! || 6;
     this.showMode = localStorage.getItem('closet.show-mode') as ShowMode || 'all';
+    this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
+    this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+
+    this.initializeItems();
   }
 
   copyLink(): void {
@@ -76,6 +96,8 @@ export class ClosetComponent {
       const hide = !this.hidden[item.guid];
       hide ? (this.hidden[item.guid] = true) : (delete this.hidden[item.guid]);
       localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
+
+      this.updateSelectionHasHidden();
       return;
     }
 
@@ -93,6 +115,8 @@ export class ClosetComponent {
       this.selected.a[item.guid] = item;
     }
 
+    this.updateSelectionHasHidden();
+
     const r = this.serializeSelected(Object.values(this.selected.r));
     const g = this.serializeSelected(Object.values(this.selected.g));
     const b = this.serializeSelected(Object.values(this.selected.b));
@@ -106,6 +130,22 @@ export class ClosetComponent {
     this._changeDetectionRef.markForCheck();
   }
 
+  resetSelection(): void {
+    if (!confirm('This will remove the color highlights from all items. Are you sure?')) { return; }
+    this.selected = { a: {}, r: {}, g: {}, b: {}};
+    const url = new URL(location.href);
+    url.searchParams.delete('r');
+    url.searchParams.delete('g');
+    url.searchParams.delete('b');
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
+  }
+
+  toggleItemSize(): void {
+    this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
+    this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+    localStorage.setItem('closet.item-size', this.itemSize);
+  }
+
   // toggleHideMissing(): void {
   //   this.hideMissing = !this.hideMissing;
   //   localStorage.setItem('closet.hide-missing', this.hideMissing ? '1' : '0');
@@ -113,6 +153,7 @@ export class ClosetComponent {
 
   toggleHideUnselected(): void {
     this.hideUnselected = !this.hideUnselected;
+    this.typeFolded = {};
     localStorage.setItem('closet.hide-unselected', this.hideUnselected ? '1' : '0');
   }
 
@@ -130,6 +171,11 @@ export class ClosetComponent {
     this.selectMode = undefined;
   }
 
+  toggleClosetSection(type: ItemType): void {
+    const hide = !this.typeFolded[type];
+    hide ? (this.typeFolded[type] = true) : (delete this.typeFolded[type]);
+  }
+
   scrollToType(type: ItemType): void {
     const el = document.querySelector(`.closet-items[data-type="${type}"]`);
     if (!el) { return; }
@@ -139,6 +185,26 @@ export class ClosetComponent {
   setColumns(n: number): void {
     this.columns = n;
     localStorage.setItem('closet.columns', `${n}`);
+  }
+
+  updateHiddenFromProgress(): void {
+    const hidden: { [guid: string]: boolean } = {};
+    let i = 0;
+    for (const type of Object.keys(this.items)) {
+      for (const item of this.items[type as string]) {
+        if (!item.unlocked) { hidden[item.guid] = true; i++; }
+      }
+    }
+
+    if (!confirm(`This will hide ${i} item(s) from your closet. Are you sure?`)) { return; }
+    this.hidden = hidden;
+    localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
+  }
+
+  resetHidden(): void {
+    if (!confirm('This will show all items in your closet. Are you sure?')) { return; }
+    this.hidden = {};
+    localStorage.setItem('closet.hidden', JSON.stringify([]));
   }
 
   private initializeItems(): void {
@@ -174,6 +240,12 @@ export class ClosetComponent {
       const items = this.deserializeSelected(selB);
       for (const item of items) { this.selected.b[item.guid] = item; this.selected.a[item.guid] = item; }
     }
+
+    this.updateSelectionHasHidden();
+  }
+
+  private updateSelectionHasHidden(): void {
+    this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.a[guid]);
   }
 
   private serializeSelected(items: Array<IItem>): string {

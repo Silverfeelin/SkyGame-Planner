@@ -7,9 +7,19 @@
   height: var(--item-size);
 }
 
-:host.large {
+:host[data-size="large"] {
   width: var(--item-size-large);
   height: var(--item-size-large);
+}
+
+:host[data-size="medium"] {
+  width: var(--item-size-medium);
+  height: var(--item-size-medium);
+}
+
+:host[data-size="small"] {
+  width: var(--item-size-small);
+  height: var(--item-size-small);
 }
 
 .img {
