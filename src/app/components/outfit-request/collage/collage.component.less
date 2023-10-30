@@ -1,0 +1,170 @@
+.btn-closet {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.grid-size-blocks {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 32px);
+}
+
+.grid-size-block {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: solid black;
+  border-width: 1px 1px 0 0;
+  background: #888;
+  cursor: pointer;
+
+  &:hover {
+    background: #aaa;
+  }
+
+  &:nth-of-type(6n-5) { border-left-width: 1px; }
+  &:nth-last-of-type(-n+6) { border-bottom-width: 1px; }
+}
+
+.block-active {
+  background-color: var(--color-active);
+}
+
+.grid-collage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 192px);
+  gap: 20px;
+}
+
+@media screen and (min-width: 1400px) {
+  .grid-collage { gap: 2px;  }
+}
+
+.grid-collage-block {
+  user-select: none;
+}
+
+.collage-image-container {
+  position: relative;
+  width: 192px;
+  height: 288px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background-image: url(/assets/icons/transparent.webp);
+  background-repeat: repeat;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.collage-pasting {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  padding: 10px;
+  background: #171721de;
+}
+
+.collage-pasting-input {
+  width: 0; height: 0;
+  padding: 0; margin: 0;
+  border: 0;
+}
+
+.collage-pasting {
+  &:focus-within .collage-pasting-label { display: inline; }
+  &:not(:focus-within) .collage-pasting-focus { display: inline; }
+}
+
+.collage-pasting-label, .collage-pasting-focus {
+  display: none;
+  color: white;
+  position: absolute;
+  top: 50%; left: 50%;
+  white-space: nowrap;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.collage-pasting-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  z-index: 5;
+  cursor: pointer;
+
+  mat-icon {
+    position: absolute;
+    top: 3px; right: 3px;
+  }
+}
+
+.collage-btn-file {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+
+  mat-icon {
+    position: absolute;
+    top: 3px; left: 3px;
+  }
+}
+
+.collage-btn-clipboard {
+  position: absolute;
+  display: inline-block;
+  top: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  cursor: pointer;
+
+  // input {
+  //   position: absolute;
+  //   top: 0; right: 0; bottom: 0; left: 0;
+  // }
+
+  mat-icon {
+    pointer-events: none;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    z-index: 3;
+  }
+}
+
+.collage-btn-clear {
+  position: absolute;
+  display: inline-block;
+  bottom: 4px;
+  right: 4px;
+  width: 32px;
+  height: 32px;
+  color: var(--color-danger);
+  background-color: var(--color-danger-background);
+  border-color: var(--color-danger-accent);
+  z-index: 3;
+
+  mat-icon {
+    pointer-events: none;
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+  }
+}
+
+.collage-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

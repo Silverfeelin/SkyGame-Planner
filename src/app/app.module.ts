@@ -50,6 +50,10 @@ import { ItemIconsComponent } from './components/item/item-icons/item-icons.comp
 import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
 import { WingedLightComponent } from './components/winged-light/winged-light.component';
 import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
+import { CollageComponent } from './components/outfit-request/collage/collage.component';
+import { ClosetComponent } from './components/outfit-request/closet/closet.component';
+import { ItemTypeSelectorComponent } from './components/items/item-type-selector/item-type-selector.component';
+import { ToolsComponent } from './components/tools/tools.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +101,11 @@ import { ChildrenOfLightComponent } from './components/children-of-light/childre
     ItemIconsComponent,
     WikiLinkComponent,
     WingedLightComponent,
-    ChildrenOfLightComponent
+    ChildrenOfLightComponent,
+    CollageComponent,
+    ClosetComponent,
+    ItemTypeSelectorComponent,
+    ToolsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,202 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Sky closet</h2>
+    <a class="button btn-collage" [routerLink]="'/outfit-request/collage'">
+      <mat-icon class="menu-icon">photo</mat-icon>
+      <span class="menu-label">Make collage</span>
+    </a>
+  </div>
+  <div class="sky-card-body">
+    <div class="sky-flex flex-wrap">
+      <div class="button-group">
+        <button type="button" (click)="toggleCloset()">
+          <mat-icon class="menu-icon">checkroom</mat-icon>
+          <span class="menu-label">{{ showMode === 'all' ? 'Show closet' : 'Show all' }}</span>
+        </button>
+        <button type="button" (click)="modifyCloset()">
+          <mat-icon class="menu-icon">manufacturing</mat-icon>
+          <span class="menu-no-label"></span>
+        </button>
+      </div>
+      <!-- <div class="button-group">
+        <button type="button" (click)="toggleHideMissing()">
+          <mat-icon class="menu-icon">visibility</mat-icon>
+          <span class="menu-label">{{ hideMissing ? 'Show': 'Hide' }} missing</span>
+        </button>
+      </div> -->
+      <div class="button-group">
+        <button type="button" (click)="toggleHideUnselected()">
+          <mat-icon class="menu-icon">filter_alt</mat-icon>
+          <span class="menu-label">{{ hideUnselected ? 'Show all': 'Show highlighted' }}</span>
+        </button>
+      </div>
+      <div class="button-group">
+        <button type="button" (click)="toggleItemSize()">
+          <mat-icon class="menu-icon">zoom_in</mat-icon>
+          <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
+        </button>
+      </div>
+      <button type="button" class="button-danger" (click)="resetSelection()">
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        <span class="menu-label">Reset</span>
+      </button>
+    </div>
+    <!-- <hr/>
+    <div>
+      <app-item-type-selector (typeChanged)="scrollToType($event)"></app-item-type-selector>
+    </div> -->
+  </div>
+</div>
+
+<div class="sky-card mt" *ngIf="selectionHasHidden">
+  <div class="sky-card-body">
+    <div class="container border-warn">
+      <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
+      <span class="menu-label">This selection has items hidden in your closet. You might be missing some items.</span>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt" *ngIf="modifyingCloset">
+  <div class="sky-card-header">
+    <h2 class="h3">Modify closet</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      Show items in columns. It is recommended to set this number to match your in-game closet.
+      <div class="button-group">
+        <button type="button" [class.btn-column-active]="columns === 3" (click)="setColumns(3)">3</button>
+        <button type="button" [class.btn-column-active]="columns === 4" (click)="setColumns(4)">4</button>
+        <button type="button" [class.btn-column-active]="columns === 5" (click)="setColumns(5)">5</button>
+        <button type="button" [class.btn-column-active]="columns === 6" (click)="setColumns(6)">6</button>
+        <button type="button" [class.btn-column-active]="columns === 7" (click)="setColumns(7)">7</button>
+        <button type="button" [class.btn-column-active]="columns === 8" (click)="setColumns(8)">8</button>
+      </div>
+    </div>
+    <div class="container mt">
+      <p>
+        Click on any item to hide it from the closet. This way you can have the closet appear as it does in-game.<br/>
+        Note that any highlighted items from shared links will be shown even if they are hidden from your closet. A warning will indicate you are missing items as well.
+      </p>
+      <p class="mb-0">
+        Because Sky Planner is primarily an item tracker you can use your tracked data to hide items from the closet.<br/>
+      </p>
+      <div class="button-group">
+        <button type="button" (click)="updateHiddenFromProgress()">Update closet</button>
+        <button type="button" (click)="resetHidden()">Reset closet</button>
+      </div>
+      <button type="button" class="mt" (click)="modifyCloset()">
+        <mat-icon class="menu-icon">done</mat-icon>
+        <span class="menu-label">Done modifying</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header header-items header-sticky">
+    <h2 class="h3 mb-0 label-items">Items</h2>
+    <!-- Copy link -->
+    <button type="button" class="btn-copy-link" (click)="copyLink()"
+      ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+      <mat-icon class="menu-icon">link</mat-icon>
+      <span class="menu-label">Copy</span>
+    </button>
+    <div class="btn-colors">
+      <button type="button" class="btn-color btn-r" (click)="setSelectMode('r')" [class.btn-color-active]="selectMode === 'r'"
+        ngbTooltip="Mark items red" container="body" placement="top">
+        &nbsp;
+      </button>
+      <button type="button" class="btn-color btn-g" (click)="setSelectMode('g')" [class.btn-color-active]="selectMode === 'g'"
+        ngbTooltip="Mark items green" container="body" placement="top">
+        &nbsp;
+      </button>
+      <button type="button" class="btn-color btn-b" (click)="setSelectMode('b')" [class.btn-color-active]="selectMode === 'b'"
+        ngbTooltip="Mark items blue" container="body" placement="top-right">
+        &nbsp;
+      </button>
+    </div>
+    <!-- <div class="closet-items-buttons button-group">
+      <button type="button">
+        <mat-icon class="menu-icon">arrow_back</mat-icon>
+        <span class="menu-no-label"></span>
+      </button>
+      <button type="button">
+        <mat-icon class="menu-icon">arrow_forward</mat-icon>
+        <span class="menu-no-label"></span>
+      </button>
+    </div> -->
+  </div>
+  <div class="sky-card-body closet-container scroll-x" [attr.data-mode]="selectMode" [attr.data-modifying]="modifyingCloset || undefined" [attr.data-size]="itemSize">
+    <div class="closet-grid">
+      <div class="closet-grid-section">
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Outfit' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Shoes' }"></ng-container>
+      </div>
+      <div class="closet-grid-section">
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Mask' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'FaceAccessory' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Necklace' }"></ng-container>
+      </div>
+      <div class="closet-grid-section">
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Hair' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Hat' }"></ng-container>
+      </div>
+      <div class="closet-grid-section">
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Cape' }"></ng-container>
+      </div>
+      <div class="closet-grid-section">
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Held' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Prop' }"></ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #templateItemsType let-type="type">
+  <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'">
+    <!-- Closet icon, foldable -->
+    <div [style.gridColumn]="'1/' + (columns+1)" class="closet-type t-center" (click)="toggleClosetSection(type)">
+      <mat-icon [svgIcon]="itemIcons[type]"></mat-icon>
+      <div class="closet-type-fold">
+        <mat-icon>{{ typeFolded[type] ? 'add' : 'remove' }}</mat-icon>
+      </div>
+    </div>
+    <!-- Items -->
+    <ng-container [ngTemplateOutlet]="templateItems" [ngTemplateOutletContext]="{ $implicit: items[type], showNone: (columns && itemTypeUnequip[type]), type }">
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #templateItems let-items let-showNone="showNone" let-type="type">
+  <!-- Unequip icon. Show if type can be unequipped, items are not filtered by highlighted and type is not folded. -->
+  <div class="closet-item" *ngIf="showNone && !typeFolded[type] && !hideUnselected">
+    <div class="item-none">
+      <mat-icon class="" svgIcon="none"></mat-icon>
+    </div>
+  </div>
+
+  <!-- Items -->
+  <ng-container *ngFor="let item of items; let i = index;">
+    <ng-container>
+      <!-- When modifying closet, show all items regardless of other checks. -->
+      <!-- Hide all items regardless of other checks if the closet is folded. -->
+      <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items instead of closet.-->
+      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.a[item.guid]) || (!selected.a[item.guid] && showMode === 'closet' && hidden[item.guid]))"
+        [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
+        [class.closet-hide]="hidden[item.guid]"
+        [ngbTooltip]="templateItemHover" container="body"
+      >
+        <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      </div>
+    </ng-container>
+
+    <!-- Tooltip -->
+    <ng-template #templateItemHover>
+      <ng-container *ngIf="item">
+        <span class="ws-nw">{{item.name}}</span>
+      </ng-container>
+    </ng-template>
+  </ng-container>
+</ng-template>
+

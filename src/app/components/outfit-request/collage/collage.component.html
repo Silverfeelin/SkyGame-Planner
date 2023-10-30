@@ -1,0 +1,75 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Collage</h2>
+    <a class="button btn-closet" [routerLink]="'/outfit-request/closet'">
+      <mat-icon class="menu-icon">checkroom</mat-icon>
+      <span class="menu-label">Go to closet</span>
+    </a>
+  </div>
+  <div class="sky-card-body scroll-x">
+    <div class="container">
+      Choose the size of your collage.
+      <div class="grid-size-blocks" data-theme="light">
+        <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
+          <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
+            <div  class="grid-size-block" [class.block-active]="ix < collageSize.x && iy < collageSize.y" (click)="setCollageSize(ix + 1, iy + 1)">
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <div class="container mt sky-flex flex-wrap">
+      <button type="button" class="button" (click)="saveCollage()">
+        <mat-icon class="menu-icon">save</mat-icon>
+        <span class="menu-label">Save collage</span>
+      </button>
+      <button type="button" class="button" (click)="copyCollage()"
+        ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show"
+      >
+        <mat-icon class="menu-icon">content_copy</mat-icon>
+        <span class="menu-label">Copy collage</span>
+      </button>
+      <button type="button" class="button" (click)="startQuickPaste()" [class.highlight]="$any(iQuickPaste) >= 0">
+        <mat-icon class="menu-icon">content_paste</mat-icon>
+        <span class="menu-label">Quick paste</span>
+      </button>
+      <button type="button" class="button button-danger" (click)="reset()">
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        <span class="menu-label">Reset</span>
+      </button>
+    </div>
+    <div class="grid-collage mt">
+      <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
+        <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
+          <div class="grid-collage-block" [attr.data-x]="ix" [attr.data-y]="iy" [attr.data-z]="ix + iy * blockSize.x.length">
+            <!-- [hidden]="!xa || !ya" -->
+            <div class="collage-image-container" [style.opacity]="(ix < collageSize.x && iy < collageSize.y ? 1 : 0.3)">
+              <!-- Paste container-->
+              <div class="collage-pasting" tabindex="-1" [hidden]="iPaste !== (ix + iy * blockSize.x.length)" (click)="focusPaste($event)">
+                <input type="text" class="collage-pasting-input" #collagePaste (paste)="paste($event, ix, iy)">
+                <span class="collage-pasting-label">Press <kbd>Ctrl+V</kbd> with<br/>an image in clipboard.</span>
+                <span class="collage-pasting-focus">Click to focus<br/>before pasting.</span>
+                <div class="button collage-pasting-close" (click)="stopPaste($event)">
+                  <mat-icon>close</mat-icon>
+                </div>
+              </div>
+              <div class="button collage-btn-clipboard" (click)="startPaste(ix, iy, $event)">
+                <mat-icon>content_paste</mat-icon>
+              </div>
+              <!-- File input -->
+              <button type="button" class="collage-btn-file" (click)="pickFile(ix, iy)">
+                <mat-icon>upload_file</mat-icon>
+              </button>
+              <!-- Clear file -->
+              <button type="button" class="collage-btn-clear" (click)="clearFile(ix, iy)">
+                <mat-icon>clear</mat-icon>
+              </button>
+              <!-- Preview image -->
+              <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)">
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
