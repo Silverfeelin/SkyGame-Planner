@@ -1,25 +1,24 @@
 <div class="sky-card">
   <div class="sky-card-header">
-    <h2 class="h3">Collage size</h2>
-  </div>
-  <div class="sky-card-body">
-    <div class="grid-size-blocks" data-theme="light">
-      <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
-        <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
-          <div  class="grid-size-block" [class.block-active]="ix < collageSize.x && iy < collageSize.y" (click)="setCollageSize(ix + 1, iy + 1)">
-          </div>
-        </ng-container>
-      </ng-container>
-    </div>
-  </div>
-</div>
-
-<div class="sky-card mt">
-  <div class="sky-card-header">
-    <h2 class="h3">Collage</h2>
+    <h2 class="h3 mb-0">Collage</h2>
+    <a class="button btn-closet" [routerLink]="'/outfit-request/closet'">
+      <mat-icon class="menu-icon">checkroom</mat-icon>
+      <span class="menu-label">Go to closet</span>
+    </a>
   </div>
   <div class="sky-card-body scroll-x">
-    <div class="container sky-flex flex-wrap">
+    <div class="container">
+      Choose the size of your collage.
+      <div class="grid-size-blocks" data-theme="light">
+        <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
+          <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
+            <div  class="grid-size-block" [class.block-active]="ix < collageSize.x && iy < collageSize.y" (click)="setCollageSize(ix + 1, iy + 1)">
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+    <div class="container mt sky-flex flex-wrap">
       <button type="button" class="button" (click)="saveCollage()">
         <mat-icon class="menu-icon">save</mat-icon>
         <span class="menu-label">Save collage</span>
