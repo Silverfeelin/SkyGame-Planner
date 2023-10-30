@@ -76,7 +76,7 @@
     <div class="container mt">
       <p>
         Click on any item to hide it from the closet. This way you can have the closet appear as it does in-game.<br/>
-        Note that any highlighted items from shared links will be shown even if they are hidden from your closet. A warning will indicate you are missing items as well.
+        Note that any highlighted items from shared links will be shown even if they are hidden from your closet. A warning will also indicate you are missing items.
       </p>
       <p class="mb-0">
         Because Sky Planner is primarily an item tracker you can use your tracked data to hide items from the closet.<br/>
@@ -96,12 +96,21 @@
 <div class="sky-card mt">
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
-    <!-- Copy link -->
-    <button type="button" class="btn-copy-link" (click)="copyLink()"
-      ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-      <mat-icon class="menu-icon">link</mat-icon>
-      <span class="menu-label">Copy</span>
-    </button>
+    <div class="button-group btns-copy">
+      <!-- Copy link -->
+      <button type="button" class="btn-copy-link" (click)="copyLink()"
+        ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+        <mat-icon class="menu-icon">link</mat-icon>
+        <span class="menu-label">Copy</span>
+      </button>
+      <!-- Copy image-->
+      <button type="button" class="btn-copy-image" (click)="copyImage()" [disabled]="_rendering"
+        ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+        <mat-icon class="menu-icon" [class.spin]="_rendering">{{ _rendering ? 'cached' : 'image' }}</mat-icon>
+        <span class="menu-label">Copy</span>
+      </button>
+    </div>
+    <!-- Highlight items -->
     <div class="btn-colors">
       <button type="button" class="btn-color btn-r" (click)="setSelectMode('r')" [class.btn-color-active]="selectMode === 'r'"
         ngbTooltip="Mark items red" container="body" placement="top">
@@ -172,7 +181,7 @@
   <!-- Unequip icon. Show if type can be unequipped, items are not filtered by highlighted and type is not folded. -->
   <div class="closet-item" *ngIf="showNone && !typeFolded[type] && !hideUnselected">
     <div class="item-none">
-      <mat-icon class="" svgIcon="none"></mat-icon>
+      <img src="/assets/icons/none.webp">
     </div>
   </div>
 
@@ -184,7 +193,7 @@
       <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items instead of closet.-->
       <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.a[item.guid]) || (!selected.a[item.guid] && showMode === 'closet' && hidden[item.guid]))"
         [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
-        [class.closet-hide]="hidden[item.guid]"
+        [class.closet-hide]="hidden[item.guid]" [attr.data-guid]="item.guid"
         [ngbTooltip]="templateItemHover" container="body"
       >
         <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>

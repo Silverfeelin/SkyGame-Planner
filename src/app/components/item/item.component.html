@@ -1,5 +1,5 @@
 <app-icon *ngIf="item.icon"
-  class="img" [src]="item.icon"
+  class="img item-icon" [src]="item.icon"
   [opacity]="(item.unlocked || highlight) ? undefined : 0.5"
   [draggable]="false"
   (click)="iconClick($event)">

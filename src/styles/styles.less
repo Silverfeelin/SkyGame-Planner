@@ -68,6 +68,10 @@ button, .button {
   &:hover {
     background: var(--color-button-hover-background);
   }
+
+  &:disabled {
+    background: var(--color-button-hover-background);
+  }
 }
 
 .button-danger {
@@ -341,4 +345,14 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
   width: min-content;
   min-width: 100%;
   max-width: calc(var(--menu-width) - 2 * var(--padding-content));
+}
+
+/* Animations */
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.spin {
+  animation: spin 2s linear infinite;
 }
