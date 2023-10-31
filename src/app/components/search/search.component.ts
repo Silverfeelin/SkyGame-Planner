@@ -6,16 +6,7 @@ import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
-
-interface ISearchItem {
-  name: string;
-  type: string;
-  data: any;
-  search: string | Fuzzysort.Prepared;
-  highlightedName?: string;
-  route?: Array<any>;
-  queryParams?: Params;
-}
+import { ISearchItem, SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-search',
@@ -26,8 +17,6 @@ interface ISearchItem {
 export class SearchComponent implements AfterViewInit, OnDestroy {
   @ViewChild('input') input: ElementRef<HTMLInputElement> | undefined;
 
-  static items: Array<ISearchItem> = [];
-
   demoText = 'Gratitude';
   searchResults?: Array<ISearchItem>;
   searchSubscription?: SubscriptionLike;
@@ -36,48 +25,11 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
+    private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _route: ActivatedRoute,
     private readonly _router: Router
   ) {
-    // Initialize once
-    if (!SearchComponent.items.length) {
-      this.initializeItems();
-    }
-  }
-
-  initializeItems(): void {
-    // Add items.
-    SearchComponent.items.push(...this._dataService.itemConfig.items.filter(item => {
-      if (item.type === 'Spell' || item.type === 'Quest' || item.type === 'Special') { return; }
-      if (item.type === 'Emote' && item.level! > 1) { return; }
-      return true;
-    }).map(item => {
-      return { name: item.name, type: 'Item', data: item, search: item.name }
-    }));
-
-    // Add spirits.
-    SearchComponent.items.push(...this._dataService.spiritConfig.items.filter(spirit => {
-      return spirit.type !== 'Special' && spirit.type !== 'Event';
-    }).map(spirit => {
-      return { name: spirit.name, type: 'Spirit', data: spirit, search: spirit.name }
-    }));
-
-    // Add seasons
-    SearchComponent.items.push(...this._dataService.seasonConfig.items.map(season => {
-      return { name: season.name, type: 'Season', data: season, search: season.name }
-    }));
-
-    // Add events
-    SearchComponent.items.push(...this._dataService.eventConfig.items.map(event => {
-      return { name: event.name, type: 'Event', data: event, search: event.name }
-    }));
-
-    // Prepare search strings.
-    SearchComponent.items.forEach(item => {
-      if (typeof(item.search) !== 'string') { return; }
-      item.search = fuzzysort.prepare(item.search);
-    });
   }
 
   ngAfterViewInit(): void {
@@ -135,44 +87,17 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     }
 
     // Use fuzzysort to search top 25 results.
-    const results = fuzzysort.go(value, SearchComponent.items, { key: 'search', limit: 25 });
-    this.searchResults = results.map(result => {
-      result.obj.highlightedName = fuzzysort.highlight(result, '<b>', '</b>') ?? '';
-      this.setItemLink(result.obj);
-
-      return result.obj;
-    });
+    const results = this._searchService.search(value, {});
+    this.searchResults = results;
 
     // Show random season as example search.
-    if (!wasEmpty && !this.searchResults.length) {
+    if (!wasEmpty && !results.length) {
       const items = this._dataService.seasonConfig.items;
       const item = items[Math.floor(Math.random() * items.length)];
       this.demoText = item.shortName;
     }
 
     this._changeDetectorRef.markForCheck();
-  }
-
-  setItemLink(item: ISearchItem): void {
-    item.route = undefined;
-    item.queryParams = undefined;
-
-    switch (item.type) {
-      case 'Item':
-        const target = NavigationHelper.getItemLink(item.data as IItem);
-        item.route = target?.route;
-        item.queryParams = target?.extras?.queryParams || undefined;
-        break;
-      case 'Spirit':
-        item.route = ['/spirit', item.data.guid];
-        break;
-      case 'Season':
-        item.route = ['/season', item.data.guid];
-        break;
-      case 'Event':
-        item.route = ['/event', item.data.guid];
-        break;
-    }
   }
 
   focusInput(): void {

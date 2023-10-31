@@ -1,6 +1,8 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import createPanZoom, { PanZoom } from 'panzoom';
+import { IItem } from 'src/app/interfaces/item.interface';
+import { SearchService } from 'src/app/services/search.service';
 
 interface IImage {
   panZoom: PanZoom;
@@ -11,13 +13,6 @@ interface ICoord {
   x: number;
   y: number;
 }
-
-const sizes = {
-  previewWidth: 192,
-  previewHeight: 288,
-  renderWidth: 192 * 1.5,
-  renderHeight: 288 * 1.5,
-};
 
 @Component({
   selector: 'app-collage',
@@ -41,24 +36,38 @@ export class CollageComponent implements AfterViewInit {
   };
   collageSize: ICoord = { x: 4, y: 1 };
   files: Array<Array<string>>;
+  itemIcons: Array<Array<string>>;
   images: Array<Array<IImage>>;
   iPaste?: number;
   iQuickPaste?: number;
 
   _rendering = false;
 
+  readonly sizes = {
+    previewWidth: 192,
+    previewHeight: 288,
+    renderWidth: 192 * 1.5,
+    renderHeight: 288 * 1.5,
+    previewIconWidth: 64 * 2/3,
+    renderIconWidth: 64
+  };
+
   constructor(
+    private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.setCollageSize(4, 1);
     this.files = [];
     this.images = [];
+    this.itemIcons = [];
 
     // Create empty files array.
     for (let iy = 0; iy < this.blockSize.y.length; iy++) {
       this.files.push([]); this.images.push([]);
+      this.itemIcons.push([]);
       for (let ix = 0; ix < this.blockSize.x.length; ix++) {
         this.files[iy][ix] = '';
+        this.itemIcons[iy][ix] = '';
       }
     }
   }
@@ -109,6 +118,18 @@ export class CollageComponent implements AfterViewInit {
 
     this.iQuickPaste = this.iPaste !== undefined ? this.iPaste -1 : -1;
     this.quickPasteNext();
+  }
+
+  addItemIcon(ix: number, iy: number): void {
+    this.itemIcons[iy][ix] = '';
+
+    const search = prompt('Enter item name to add an icon.');
+    if (!search) { return; }
+    const result = this._searchService.search(search, { types: ['Item'], limit: 1 }).at(0);
+    const item = result?.data as IItem;
+    if (!item?.icon) { return; }
+
+    this.itemIcons[iy][ix] = item.icon;
   }
 
   private quickPasteNext(): void {
@@ -222,7 +243,7 @@ export class CollageComponent implements AfterViewInit {
           doneRendering();
         });
       });
-    } catch { }
+    } catch(e) { console.error(e); doneRendering(); }
   }
 
   reset(): void {
@@ -274,16 +295,16 @@ export class CollageComponent implements AfterViewInit {
 
     const w = img.naturalWidth;
     const h = img.naturalHeight;
-    const pw = sizes.previewWidth;
-    const ph = sizes.previewHeight;
+    const pw = this.sizes.previewWidth;
+    const ph = this.sizes.previewHeight;
     const fx  = pw / w;
     panZoom.zoomAbs(-2 * pw, 0, fx * 4);
   }
 
   private render(): HTMLCanvasElement {
     const canvas = document.createElement('canvas');
-    canvas.width = sizes.renderWidth * this.collageSize.x;
-    canvas.height = sizes.renderHeight * this.collageSize.y;
+    canvas.width = this.sizes.renderWidth * this.collageSize.x;
+    canvas.height = this.sizes.renderHeight * this.collageSize.y;
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     // Draw  images
@@ -312,7 +333,16 @@ export class CollageComponent implements AfterViewInit {
     const h = clipBounds.height / imgBounds.height * img.naturalHeight;
 
     // Draw the intersected part of the image on the canvas
-    ctx.drawImage(img, sx, sy, w, h, ix * sizes.renderWidth, iy * sizes.renderHeight, sizes.renderWidth, sizes.renderHeight);
+    ctx.drawImage(img, sx, sy, w, h, ix * this.sizes.renderWidth, iy * this.sizes.renderHeight, this.sizes.renderWidth, this.sizes.renderHeight);
+
+    // Draw the icon
+    if (this.itemIcons[iy][ix]) {
+      const img = document.querySelector(`.grid-collage-block[data-x="${ix}"][data-y="${iy}"] .collage-image-icon img`) as HTMLImageElement;
+      if (!(img?.naturalWidth > 0)) { return; }
+      ctx.fillStyle = '#0008';
+      ctx.beginPath(); ctx.roundRect(ix * this.sizes.renderWidth + 4, iy * this.sizes.renderHeight + this.sizes.renderHeight - this.sizes.renderIconWidth - 4, this.sizes.renderIconWidth, this.sizes.renderIconWidth, 8); ctx.fill();
+      ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, ix * this.sizes.renderWidth + 4, iy * this.sizes.renderHeight + this.sizes.renderHeight - this.sizes.renderIconWidth - 4, this.sizes.renderIconWidth, this.sizes.renderIconWidth);
+    }
   }
 
   private getImgUrlFromClipboard(event: ClipboardEvent): string | undefined {

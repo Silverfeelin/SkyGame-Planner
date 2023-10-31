@@ -53,19 +53,26 @@
                   <mat-icon>close</mat-icon>
                 </div>
               </div>
-              <div class="button collage-btn-clipboard" (click)="startPaste(ix, iy, $event)">
+              <div class="button collage-image-btn collage-image-btn-clipboard" (click)="startPaste(ix, iy, $event)">
                 <mat-icon>content_paste</mat-icon>
               </div>
               <!-- File input -->
-              <button type="button" class="collage-btn-file" (click)="pickFile(ix, iy)">
+              <button type="button" class="collage-image-btn collage-image-btn-file" (click)="pickFile(ix, iy)">
                 <mat-icon>upload_file</mat-icon>
               </button>
               <!-- Clear file -->
-              <button type="button" class="collage-btn-clear" (click)="clearFile(ix, iy)">
+              <button type="button" class="collage-image-btn collage-image-btn-clear" (click)="clearFile(ix, iy)">
                 <mat-icon>clear</mat-icon>
               </button>
+              <!-- Inset item icon -->
+              <button type="button" class="collage-image-btn collage-image-btn-item" *ngIf="!itemIcons[iy][ix]" (click)="addItemIcon(ix, iy)">
+                <mat-icon>checkroom</mat-icon>
+              </button>
               <!-- Preview image -->
-              <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)">
+              <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)" crossorigin="anonymous">
+              <div *ngIf="itemIcons[iy][ix]" class="collage-image-icon">
+                <img [src]="itemIcons[iy][ix]" (click)="addItemIcon(ix, iy)" [style.width.px]="sizes.previewIconWidth" crossorigin="anonymous">
+              </div>
             </div>
           </div>
         </ng-container>
