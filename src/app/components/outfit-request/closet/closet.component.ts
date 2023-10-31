@@ -437,6 +437,7 @@ export class ClosetComponent {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.stroke();
     }
 
+    const hasAnySelected = Object.keys(this.selected.a).length > 0;
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
       const img = this._itemImgs[item.guid];
@@ -447,7 +448,7 @@ export class ClosetComponent {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
       // Draw item, translucent if not selected
-      if (!this.selected.a[item.guid]) { ctx.globalAlpha = _ga; }
+      if (hasAnySelected && !this.selected.a[item.guid]) { ctx.globalAlpha = _ga; }
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
 
