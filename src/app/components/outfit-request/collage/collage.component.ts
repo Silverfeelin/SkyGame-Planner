@@ -251,6 +251,7 @@ export class CollageComponent implements AfterViewInit {
     for (let iy = 0; iy < this.blockSize.y.length; iy++) {
       for (let ix = 0; ix < this.blockSize.x.length; ix++) {
         this.files[iy][ix] = '';
+        this.itemIcons[iy][ix] = '';
       }
     }
     this.iPaste = undefined;
@@ -302,47 +303,52 @@ export class CollageComponent implements AfterViewInit {
   }
 
   private render(): HTMLCanvasElement {
+    const _wBorder = 2;
     const canvas = document.createElement('canvas');
-    canvas.width = this.sizes.renderWidth * this.collageSize.x;
-    canvas.height = this.sizes.renderHeight * this.collageSize.y;
+    canvas.width = this.sizes.renderWidth * this.collageSize.x + _wBorder * (this.collageSize.x + 1);
+    canvas.height = this.sizes.renderHeight * this.collageSize.y + _wBorder * (this.collageSize.y + 1);
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
+
+    // Background
+    ctx.fillStyle = '#ccc';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const drawImage = (img: HTMLImageElement, x: number, y: number) => {
+      const clipDiv =  img.closest('.collage-image-container') as HTMLElement;
+      const imgBounds = img.getBoundingClientRect();
+      const clipBounds = clipDiv.getBoundingClientRect();
+
+      // Calculate starting coordinates of clipped image.
+      const fx = (clipBounds.left - imgBounds.left) / imgBounds.width;
+      const fy = (clipBounds.top - imgBounds.top) / imgBounds.height;
+      const sx = fx * img.naturalWidth;
+      const sy = fy * img.naturalHeight;
+      const w = clipBounds.width / imgBounds.width * img.naturalWidth;
+      const h = clipBounds.height / imgBounds.height * img.naturalHeight;
+
+      // Draw the intersected part of the image on the canvas
+      ctx.drawImage(img, sx, sy, w, h, (x+1) * _wBorder + x * this.sizes.renderWidth, (y+1) * _wBorder + y * this.sizes.renderHeight, this.sizes.renderWidth, this.sizes.renderHeight);
+
+      // Draw the icon
+      if (this.itemIcons[y][x]) {
+        const img = document.querySelector(`.grid-collage-block[data-x="${x}"][data-y="${y}"] .collage-image-icon img`) as HTMLImageElement;
+        if (!(img?.naturalWidth > 0)) { return; }
+        ctx.fillStyle = '#0008';
+        ctx.beginPath(); ctx.roundRect((x+1) * _wBorder + x * this.sizes.renderWidth + 4, (y+1) * _wBorder + y * this.sizes.renderHeight + this.sizes.renderHeight - this.sizes.renderIconWidth - 4, this.sizes.renderIconWidth, this.sizes.renderIconWidth, 8); ctx.fill();
+        ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, (x+1) * _wBorder + x * this.sizes.renderWidth + 4, (y+1) * _wBorder + y * this.sizes.renderHeight + this.sizes.renderHeight - this.sizes.renderIconWidth - 4, this.sizes.renderIconWidth, this.sizes.renderIconWidth);
+      }
+    };
 
     // Draw  images
     for (let iy = 0; iy < this.collageSize.y; iy++) {
       for (let ix = 0; ix < this.collageSize.x; ix++) {
         const img = this.images[iy][ix].element;
         if (!(img?.naturalWidth > 0)) { continue; }
-        this.drawImage(ctx, img, ix, iy);
+        drawImage(img, ix, iy);
       }
     }
 
     return canvas;
-  }
-
-  private drawImage(ctx: CanvasRenderingContext2D, img: HTMLImageElement, ix: number, iy: number): void {
-    const clipDiv =  img.closest('.collage-image-container') as HTMLElement;
-    const imgBounds = img.getBoundingClientRect();
-    const clipBounds = clipDiv.getBoundingClientRect();
-
-    // Calculate starting coordinates of clipped image.
-    const fx = (clipBounds.left - imgBounds.left) / imgBounds.width;
-    const fy = (clipBounds.top - imgBounds.top) / imgBounds.height;
-    const sx = fx * img.naturalWidth;
-    const sy = fy * img.naturalHeight;
-    const w = clipBounds.width / imgBounds.width * img.naturalWidth;
-    const h = clipBounds.height / imgBounds.height * img.naturalHeight;
-
-    // Draw the intersected part of the image on the canvas
-    ctx.drawImage(img, sx, sy, w, h, ix * this.sizes.renderWidth, iy * this.sizes.renderHeight, this.sizes.renderWidth, this.sizes.renderHeight);
-
-    // Draw the icon
-    if (this.itemIcons[iy][ix]) {
-      const img = document.querySelector(`.grid-collage-block[data-x="${ix}"][data-y="${iy}"] .collage-image-icon img`) as HTMLImageElement;
-      if (!(img?.naturalWidth > 0)) { return; }
-      ctx.fillStyle = '#0008';
-      ctx.beginPath(); ctx.roundRect(ix * this.sizes.renderWidth + 4, iy * this.sizes.renderHeight + this.sizes.renderHeight - this.sizes.renderIconWidth - 4, this.sizes.renderIconWidth, this.sizes.renderIconWidth, 8); ctx.fill();
-      ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, ix * this.sizes.renderWidth + 4, iy * this.sizes.renderHeight + this.sizes.renderHeight - this.sizes.renderIconWidth - 4, this.sizes.renderIconWidth, this.sizes.renderIconWidth);
-    }
   }
 
   private getImgUrlFromClipboard(event: ClipboardEvent): string | undefined {
