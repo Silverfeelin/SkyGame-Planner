@@ -5,9 +5,9 @@
   <div class="sky-card-body event-body">
     <div class="grid grid-1">
       <!-- Image -->
-      <div *ngIf="sections['img'] && event.imageUrl" class="event-img sky-border-solid"
+      <div *ngIf="sections['img'] && imageUrlSafe" class="event-img sky-border-solid"
         [style.order]="1"
-        [style.background-image]="'url('+event.imageUrl+')'"
+        [style.background-image]="imageUrlSafe"
         [style.background-position]="event.imagePosition || undefined">
       </div>
       <!-- Date -->

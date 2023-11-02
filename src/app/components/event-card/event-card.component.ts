@@ -27,6 +27,7 @@ export class EventCardComponent implements OnChanges {
   cost?: ICost;
   remainingCost?: ICost;
   checkedIn = false;
+  imageUrlSafe?: string;
 
   ngOnInit(): void {
     this.updateSections();
@@ -56,6 +57,8 @@ export class EventCardComponent implements OnChanges {
       this.lastInstance = this.event.instances.findLast<IEventInstance>(i => DateHelper.isActive(i.date, i.endDate));
       this.lastInstance ??= this.event.instances.findLast(i => i.date.isBefore(now));
     }
+
+    this.imageUrlSafe = this.event?.imageUrl ? `url('${this.event.imageUrl}')` : undefined;
 
     this.updateCheckin();
   }

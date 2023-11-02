@@ -5,7 +5,7 @@
       "guid": "qmi9ZWGfja",
       "name": "Days of Fortune",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfFortune.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/35c6233556/fortune2023header.jpg",
       "instances": [
         {
           "guid": "ez8mFkEq4E",
@@ -57,7 +57,7 @@
       "guid": "f6OPOFuRDv",
       "name": "Days of Love",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfLove.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/cbec43ee06/dlove_blogheader.png",
       "instances": [
         {
           "guid": "chP-KuuCxn",
@@ -114,7 +114,7 @@
       "guid": "jZ3AhcgPl8",
       "name": "Days of Bloom",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfBloom.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a4b806d7d9/petalcoaster_1920x1080_header_blank.jpg",
       "instances": [
         {
           "guid": "zAEvyLfhYt",
@@ -164,7 +164,7 @@
       "guid": "f6J1-3yeJF",
       "name": "Days of Nature",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfNature.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1000x563/36be77aad7/days_of_nature_launch_blog_afab8614af.jpeg",
       "instances": [
         {
           "guid": "aSrD3lSoFW",
@@ -217,7 +217,7 @@
       "guid": "0Xk69mVo9E",
       "name": "Days of Color",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfColor.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/feb1f282dd/colorgeyser_header.jpg",
       "imagePosition": "top",
       "instances": [
         {
@@ -238,7 +238,7 @@
     {
       "guid": "yVDpWb7Goo",
       "name": "Days of Rainbow",
-      "imageUrl": "assets/game/events/DaysOfRainbow.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6952cf0d8f/dorainbow2022_flyingoverhome.png",
       "recurring": false,
       "instances": [
         {
@@ -279,7 +279,7 @@
       "guid": "Uks5FcTCmY",
       "name": "Days of Music",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfMusic.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/2472587441/domusic23_header.jpg",
       "imagePosition": "top",
       "instances": [
         {
@@ -311,7 +311,7 @@
       "guid": "qMS8yJXaln",
       "name": "Sky Anniversary",
       "recurring": true,
-      "imageUrl": "assets/game/events/SkyAnniversary.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6c79b92b1e/3rdannivheader.png",
       "instances": [
         {
           "guid": "H0unHE7F96",
@@ -359,7 +359,7 @@
       "guid": "HIw19Tr9eP",
       "name": "Days of Sunlight",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfSunlight.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/c1e8fb6645/dosunlight-header.png",
       "imagePosition": "top",
       "instances": [
         {
@@ -395,7 +395,7 @@
       "guid": "eVaYOCFqcC",
       "name": "Lazy Days",
       "recurring": true,
-      "imageUrl": "assets/game/events/LazyDays.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/3634x2045/0bc6cde486/dosunlight_tentcampfire.jpg",
       "instances": [
         {
           "guid": "Kj5S3mVVH9",
@@ -418,7 +418,7 @@
       "guid": "hLz-Av_F4W",
       "name": "Days of Style",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfStyle.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/dcc6f280d7/style2023_2kidsrunway_header.jpg",
       "imagePosition": "top",
       "instances": [
         {
@@ -442,7 +442,7 @@
       "guid": "sZKQF_CWdu",
       "name": "Days of Mischief",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfMischief.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6de90eb575/tree-exterior.png",
       "instances": [
         {
           "guid": "PIL2A60uh2",
@@ -510,7 +510,7 @@
       "guid": "3Q-XQzfVXR",
       "name": "Days of Giving",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfGiving.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/a6dfd9d33c/constellation_blogheader.png",
       "instances": [
         {
           "guid": "og6aDjf82v",
@@ -542,7 +542,7 @@
       "guid": "MtDAWRpBqJ",
       "name": "Days of Feast",
       "recurring": true,
-      "imageUrl": "assets/game/events/DaysOfFeast.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x1000/filters:format(webp)/f/108104/1920x1080/5a0ada8f31/dofeast2022fireplace.png",
       "instances": [
         {
           "guid": "-9T61aYKrW",
@@ -653,7 +653,7 @@
     {
       "guid": "uv2xDBpU7W",
       "name": "Days of Summer",
-      "imageUrl": "assets/game/events/DaysOfSummer.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/b08d410eb7/daysofsummer-summerlightsheader.png",
       "instances": [
         {
           "guid": "-tLqiqDLxU",
@@ -675,7 +675,7 @@
     {
       "guid": "tQQ7aeJbRJ",
       "name": "Days of Summer Lights",
-      "imageUrl": "assets/game/events/DaysOfSummerLights.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/e1408d62e1/summerfriends.png",
       "instances": [
         {
           "guid": "FOV5DDicTL",
@@ -702,7 +702,7 @@
     {
       "guid": "284-OJ0if4",
       "name": "AURORA Encore Concerts",
-      "imageUrl": "assets/game/events/AURORAEncore.webp",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/d6e4fc3902/3kids_flying_10kconcert.jpg",
       "instances": [
         {
           "guid": "yNyYTdO1xU",
