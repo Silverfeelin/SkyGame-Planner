@@ -97,7 +97,7 @@ export class ClosetComponent {
 
     this._bgImg = new Image();
     this._bgImg.crossOrigin = 'anonymous';
-    this._bgImg.src = 'https://silverfeelin.github.io/SkyGame-Planner/assets/game/background.webp';
+    this._bgImg.src = 'https://silverfeelin.github.io/SkyGame-Planner/assets/game/background/isle.webp';
 
     this.initializeItems();
   }
