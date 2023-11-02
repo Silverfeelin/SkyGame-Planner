@@ -8,9 +8,9 @@
   </div>
   <div class="sky-card-body grid grid-1">
     <!-- Image -->
-    <div *ngIf="sections['img'] && season.imageUrl"
+    <div *ngIf="sections['img'] && imageUrlSafe"
       class="season-img sky-border-solid" [style.order]="sections['img']"
-      [style.background-image]="'url('+season.imageUrl+')'"
+      [style.background-image]="imageUrlSafe"
       [style.background-position]="season.imagePosition || undefined">
     </div>
     <!-- Overview -->

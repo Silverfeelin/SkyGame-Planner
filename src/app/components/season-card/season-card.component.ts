@@ -25,6 +25,7 @@ export class SeasonCardComponent implements OnInit, OnChanges {
   cost?: ICost;
   remainingCost?: ICost;
   checkedIn = false;
+  imageUrlSafe?: string;
 
   ngOnInit(): void {
     this.updateSections();
@@ -44,6 +45,8 @@ export class SeasonCardComponent implements OnInit, OnChanges {
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);
     this.remainingCost = CostHelper.add(CostHelper.create(), ...locked);
+
+    this.imageUrlSafe = this.season.imageUrl ? `url('${this.season.imageUrl}')` : undefined;
 
     this.updateCheckin();
   }
