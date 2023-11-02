@@ -18,7 +18,8 @@ const _wGap = 8;
 /** Size of item with gap. */
 const _wBox = _wItem + _wGap;
 /** Alpha for missing items. */
-const _ga = 0.3;
+const _aNotSelected = 0.25;
+const _aNotOwned = 0.05;
 
 @Component({
   selector: 'app-closet',
@@ -417,7 +418,7 @@ export class ClosetComponent {
     const h = Math.ceil(items.length / c);
 
     // Draw rectangle around section
-    ctx.fillStyle = '#0005';
+    ctx.fillStyle = '#0008';
     ctx.beginPath(); ctx.roundRect(sx - _wGap, sy - _wGap, _wBox * c + _wGap, _wBox * h + _wGap, 8); ctx.fill();
     ctx.strokeStyle = '#0006'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.roundRect(sx - _wGap, sy - _wGap, _wBox * c + _wGap, _wBox * h + _wGap, 8); ctx.stroke();
@@ -438,6 +439,7 @@ export class ClosetComponent {
     }
 
     const hasAnySelected = Object.keys(this.selected.a).length > 0;
+    const hideByCloset = !hasAnySelected && this.showMode === 'closet';
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
       const img = this._itemImgs[item.guid];
@@ -448,7 +450,8 @@ export class ClosetComponent {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
       // Draw item, translucent if not selected
-      if (hasAnySelected && !this.selected.a[item.guid]) { ctx.globalAlpha = _ga; }
+      if (hasAnySelected && !this.selected.a[item.guid]) { ctx.globalAlpha = _aNotSelected; }
+      if (hideByCloset && this.hidden[item.guid]) { ctx.globalAlpha = _aNotOwned; }
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
 
