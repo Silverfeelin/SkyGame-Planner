@@ -1,0 +1,12 @@
+<div class="icon-picker" (keydown)="pickerKeydown($event)">
+  <div class="picker-grid">
+      <ng-container *ngFor="let result of searchResults; let i = index;">
+        <img class="picker-icon" [src]="result.data.icon" (click)="select(result.data)" crossorigin="anonymous" [tabIndex]="i + 1"
+        [ngbTooltip]="result.data.name" container="body">
+      </ng-container>
+  </div>
+  <div class="picker-close" (click)="close($event)">
+    <mat-icon>close</mat-icon>
+  </div>
+  <input tabindex="0" #input class="search-input" type="text" (input)="search()" placeholder="Search for icons">
+</div>

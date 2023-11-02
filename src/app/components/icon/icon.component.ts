@@ -24,6 +24,7 @@ export class IconComponent implements OnChanges {
   safeString?: string;
   safeUrl?: SafeUrl;
   isSvg = false;
+  isStoryBlok = false;
 
   _loadSource?: SubscriptionLike
 
@@ -45,9 +46,11 @@ export class IconComponent implements OnChanges {
       this._loadSource = undefined;
     }
 
+
     src ||= '';
     this.isSvg = src.startsWith('#');
     this.safeString = this.safeUrl = undefined;
+    this.isStoryBlok = src.includes('storyblok.com');
 
     if (this.isSvg) {
       this.safeString = src.startsWith('#') ? src.substring(1) : src;

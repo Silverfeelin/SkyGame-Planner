@@ -1,0 +1,49 @@
+:host {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-picker {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  background: var(--color-card-solid-background);
+  border-radius: var(--border-radius);
+  border: var(--border);
+}
+
+.picker-grid {
+  display: grid;
+  grid-template-columns: repeat(5, var(--item-size));
+  grid-template-rows: repeat(3, var(--item-size));
+  gap: 4px;
+  padding: var(--padding-content);
+  padding-bottom: calc(38px + var(--padding-content) * 2);
+  overflow-y: auto;
+}
+
+.picker-icon {
+  width: var(--item-size);
+  height: var(--item-size);
+  cursor: pointer;
+}
+
+.picker-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+}
+
+.search-input {
+  position: absolute;
+  left: var(--padding-content);
+  bottom: var(--padding-content);
+  right: var(--padding-content);
+  width: unset;
+  height: 38px;
+}

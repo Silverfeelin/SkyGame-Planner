@@ -54,6 +54,7 @@ import { CollageComponent } from './components/outfit-request/collage/collage.co
 import { ClosetComponent } from './components/outfit-request/closet/closet.component';
 import { ItemTypeSelectorComponent } from './components/items/item-type-selector/item-type-selector.component';
 import { ToolsComponent } from './components/tools/tools.component';
+import { IconPickerComponent } from './components/util/icon-picker/icon-picker.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { ToolsComponent } from './components/tools/tools.component';
     CollageComponent,
     ClosetComponent,
     ItemTypeSelectorComponent,
-    ToolsComponent
+    ToolsComponent,
+    IconPickerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import createPanZoom, { PanZoom } from 'panzoom';
 import { IItem } from 'src/app/interfaces/item.interface';
-import { SearchService } from 'src/app/services/search.service';
+import { IconPickerComponent } from '../../util/icon-picker/icon-picker.component';
 
 interface IImage {
   panZoom: PanZoom;
@@ -22,6 +22,7 @@ interface ICoord {
 })
 export class CollageComponent implements AfterViewInit {
   @ViewChild('ttCopy', { static: true }) private readonly _ttCopy!: NgbTooltip;
+  @ViewChild('iconPicker', { static: true, read: IconPickerComponent }) private readonly _iconPicker!: IconPickerComponent;
   @ViewChildren('collagePaste') private readonly _collagePaste!: QueryList<ElementRef>;
   @ViewChildren('collageImage') private readonly _collageImage!: QueryList<ElementRef>;
 
@@ -40,6 +41,7 @@ export class CollageComponent implements AfterViewInit {
   images: Array<Array<IImage>>;
   iPaste?: number;
   iQuickPaste?: number;
+  iIconPicker?: ICoord;
 
   _rendering = false;
 
@@ -53,8 +55,8 @@ export class CollageComponent implements AfterViewInit {
   };
 
   constructor(
-    private readonly _searchService: SearchService,
-    private readonly _changeDetectorRef: ChangeDetectorRef
+    private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _renderer2: Renderer2
   ) {
     this.setCollageSize(4, 1);
     this.files = [];
@@ -120,16 +122,25 @@ export class CollageComponent implements AfterViewInit {
     this.quickPasteNext();
   }
 
-  addItemIcon(ix: number, iy: number): void {
-    this.itemIcons[iy][ix] = '';
+  openIconPicker(x: number, y: number): void {
+    this.iIconPicker = { x, y };
+    this.itemIcons[y][x] = '';
+    this._changeDetectorRef.markForCheck();
+  }
 
-    const search = prompt('Enter item name to add an icon.');
-    if (!search) { return; }
-    const result = this._searchService.search(search, { types: ['Item'], limit: 1 }).at(0);
-    const item = result?.data as IItem;
-    if (!item?.icon) { return; }
+  iconPickerClosed(): void {
+    if (this.iIconPicker == undefined) { return; }
+    this.iIconPicker = undefined;
+    this._changeDetectorRef.markForCheck();
+    this._changeDetectorRef.detectChanges();
+  }
 
-    this.itemIcons[iy][ix] = item.icon;
+  iconPickerSelected(item: IItem): void {
+    if (!this.iIconPicker) { return; }
+    this.itemIcons[this.iIconPicker.y][this.iIconPicker.x] = item?.icon || '';
+    this.iIconPicker = undefined;
+    this._changeDetectorRef.markForCheck();
+    this._changeDetectorRef.detectChanges();
   }
 
   private quickPasteNext(): void {
@@ -304,13 +315,15 @@ export class CollageComponent implements AfterViewInit {
 
   private render(): HTMLCanvasElement {
     const _wBorder = 2;
+    const hasIcons = this.itemIcons.some(r => r.some(i => i.length));
+
     const canvas = document.createElement('canvas');
     canvas.width = this.sizes.renderWidth * this.collageSize.x + _wBorder * (this.collageSize.x + 1);
-    canvas.height = this.sizes.renderHeight * this.collageSize.y + _wBorder * (this.collageSize.y + 1);
+    canvas.height = this.sizes.renderHeight * this.collageSize.y + _wBorder * (this.collageSize.y + 1) + (hasIcons ? 12 : 0);
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     // Background
-    ctx.fillStyle = '#ccc';
+    ctx.fillStyle = '#fff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     const drawImage = (img: HTMLImageElement, x: number, y: number) => {
@@ -346,6 +359,16 @@ export class CollageComponent implements AfterViewInit {
         if (!(img?.naturalWidth > 0)) { continue; }
         drawImage(img, ix, iy);
       }
+    }
+
+    // Draw attribution
+    if (hasIcons) {
+      ctx.fillStyle = '#446';
+      ctx.font = '12px Roboto, sans-serif';
+      ctx.textAlign = 'right';
+      const msg = this.collageSize.x === 1 ? 'Icons from Sky: Children of the Light Wiki'
+        : 'Icons by contributors of the Sky: Children of the Light Wiki'
+      ctx.fillText(msg, canvas.width - 4, canvas.height - 3);
     }
 
     return canvas;

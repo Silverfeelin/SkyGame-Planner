@@ -1,9 +1,6 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import fuzzysort from 'fuzzysort';
 import { SubscriptionLike, debounceTime, fromEvent } from 'rxjs';
-import { NavigationHelper } from 'src/app/helpers/navigation-helper';
-import { IItem } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { ISearchItem, SearchService } from 'src/app/services/search.service';
@@ -18,7 +15,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
   @ViewChild('input') input: ElementRef<HTMLInputElement> | undefined;
 
   demoText = 'Gratitude';
-  searchResults?: Array<ISearchItem>;
+  searchResults?: Array<ISearchItem<unknown>>;
   searchSubscription?: SubscriptionLike;
   resetSubscription?: SubscriptionLike;
 

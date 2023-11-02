@@ -65,15 +65,16 @@
                 <mat-icon>clear</mat-icon>
               </button>
               <!-- Inset item icon -->
-              <button type="button" class="collage-image-btn collage-image-btn-item" *ngIf="!itemIcons[iy][ix]" (click)="addItemIcon(ix, iy)">
+              <button type="button" class="collage-image-btn collage-image-btn-item" *ngIf="!itemIcons[iy][ix]" (click)="openIconPicker(ix, iy)">
                 <mat-icon>checkroom</mat-icon>
               </button>
               <!-- Preview image -->
               <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)" crossorigin="anonymous">
               <div *ngIf="itemIcons[iy][ix]" class="collage-image-icon">
-                <img [src]="itemIcons[iy][ix]" (click)="addItemIcon(ix, iy)" [style.width.px]="sizes.previewIconWidth" crossorigin="anonymous">
+                <img [src]="itemIcons[iy][ix]" (click)="openIconPicker(ix, iy)" [style.width.px]="sizes.previewIconWidth" crossorigin="anonymous">
               </div>
             </div>
+            <app-icon-picker *ngIf="iIconPicker?.x === ix && iIconPicker?.y === iy" (closed)="iconPickerClosed()" (selected)="iconPickerSelected($event)"></app-icon-picker>
           </div>
         </ng-container>
       </ng-container>
