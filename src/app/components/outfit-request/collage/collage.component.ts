@@ -218,6 +218,7 @@ export class CollageComponent implements AfterViewInit {
   clearFile(ix: number, iy: number): void {
     if (!confirm('Are you sure you want to remove this image?')) { return; }
     this.files[iy][ix] = '';
+    this.itemIcons[iy][ix] = '';
     this._changeDetectorRef.markForCheck();
   }
 
