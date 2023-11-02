@@ -40,7 +40,7 @@ export class CollageComponent implements AfterViewInit {
   itemIcons: Array<Array<string>>;
   images: Array<Array<IImage>>;
   iPaste?: number;
-  iQuickPaste?: number;
+  bulkPaste = false;
   iIconPicker?: ICoord;
 
   _rendering = false;
@@ -93,13 +93,9 @@ export class CollageComponent implements AfterViewInit {
     this._changeDetectorRef.markForCheck();
   }
 
-  startPaste(ix: number, iy: number, evt?: Event): void {
+  startPaste(ix: number, iy: number, bulk: boolean, evt?: Event): void {
     this.iPaste = ix + iy * this.blockSize.x.length;
-
-    // If quick paste is active, match it to the current paste.
-    if (this.iQuickPaste !== undefined && this.iPaste !== this.iQuickPaste) {
-      this.iQuickPaste = this.iPaste;
-    }
+    this.bulkPaste = bulk;
 
     const el = this._collagePaste.get(this.iPaste!)?.nativeElement as HTMLInputElement;
     if (!el) { return; }
@@ -109,17 +105,6 @@ export class CollageComponent implements AfterViewInit {
     evt?.stopPropagation();
     this._changeDetectorRef.markForCheck();
     setTimeout(() => { el.focus(); })
-  }
-
-
-  startQuickPaste(): void {
-    if (this.iQuickPaste !== undefined)  {
-      this.stopPaste();
-      return;
-    }
-
-    this.iQuickPaste = this.iPaste !== undefined ? this.iPaste -1 : -1;
-    this.quickPasteNext();
   }
 
   openIconPicker(x: number, y: number): void {
@@ -143,22 +128,23 @@ export class CollageComponent implements AfterViewInit {
     this._changeDetectorRef.detectChanges();
   }
 
-  private quickPasteNext(): void {
-    if (this.iQuickPaste == undefined) { return; }
+  private bulkPasteNext(): void {
+    if (!this.bulkPaste || this.iPaste == undefined) { return; }
     let ix = 0; let iy = 0;
     while (iy < this.collageSize.y) {
-      this.iQuickPaste++;
-      ix = this.iQuickPaste % this.blockSize.x.length;
-      iy = Math.floor(this.iQuickPaste / this.blockSize.x.length);
+      this.iPaste++;
+      ix = this.iPaste % this.blockSize.x.length;
+      iy = Math.floor(this.iPaste / this.blockSize.x.length);
       if (ix < this.collageSize.x && iy < this.collageSize.y) { break; }
     }
 
+    // End of collage.
     if (iy >= this.collageSize.y) {
       this.stopPaste();
       return;
     }
 
-    this.startPaste(ix, iy);
+    this.startPaste(ix, iy, true);
   }
 
   onPanZoomEnd(): void {
@@ -179,7 +165,7 @@ export class CollageComponent implements AfterViewInit {
     evt?.preventDefault();
     evt?.stopPropagation();
     this.iPaste = undefined;
-    this.iQuickPaste = undefined;
+    this.bulkPaste = false;
     document.activeElement instanceof HTMLElement && document.activeElement.blur();
   }
 
@@ -190,8 +176,8 @@ export class CollageComponent implements AfterViewInit {
 
     this.files[iy][ix] = imgUrl;
     //setTimeout(() => { this.copyPrevPanZoom(ix, iy); }, 500);
-    this.iPaste = undefined;
-    this.iQuickPaste !== undefined && this.quickPasteNext();
+    if (this.bulkPaste) { this.bulkPasteNext(); }
+    else { this.stopPaste(); }
   }
 
   clearTxt(evt: Event): void{
@@ -267,9 +253,7 @@ export class CollageComponent implements AfterViewInit {
       }
     }
     this.iPaste = undefined;
-    this.iQuickPaste = undefined;
     this._changeDetectorRef.markForCheck();
-
   }
 
   private createPanZoom(el: HTMLElement): PanZoom {

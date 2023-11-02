@@ -29,10 +29,6 @@
         <mat-icon class="menu-icon" [class.spin]="_rendering">{{ _rendering ? 'cached' : 'image' }}</mat-icon>
         <span class="menu-label">Copy collage</span>
       </button>
-      <button type="button" class="button" (click)="startQuickPaste()" [class.highlight]="$any(iQuickPaste) >= 0">
-        <mat-icon class="menu-icon">content_paste</mat-icon>
-        <span class="menu-label">Quick paste</span>
-      </button>
       <button type="button" class="button button-danger" (click)="reset()">
         <mat-icon class="menu-icon">delete_forever</mat-icon>
         <span class="menu-label">Reset</span>
@@ -53,20 +49,26 @@
                   <mat-icon>close</mat-icon>
                 </div>
               </div>
-              <div class="button collage-image-btn collage-image-btn-clipboard" (click)="startPaste(ix, iy, $event)">
-                <mat-icon>content_paste</mat-icon>
-              </div>
               <!-- File input -->
-              <button type="button" class="collage-image-btn collage-image-btn-file" (click)="pickFile(ix, iy)">
+              <button type="button" class="collage-image-btn collage-image-btn-file" (click)="pickFile(ix, iy)" ngbTooltip="Select image file" container="body">
                 <mat-icon>upload_file</mat-icon>
               </button>
-              <!-- Clear file -->
-              <button type="button" class="collage-image-btn collage-image-btn-clear" (click)="clearFile(ix, iy)">
-                <mat-icon>clear</mat-icon>
-              </button>
-              <!-- Inset item icon -->
-              <button type="button" class="collage-image-btn collage-image-btn-item" *ngIf="!itemIcons[iy][ix]" (click)="openIconPicker(ix, iy)">
+              <!-- Paste image -->
+              <div class="button-group collage-image-btn collage-image-btn-clipboard">
+                <div class="button paste-single" (click)="startPaste(ix, iy, false, $event)" ngbTooltip="Paste image" container="body">
+                  <mat-icon>content_paste</mat-icon>
+                </div>
+                <div class="button paste-multi" (click)="startPaste(ix, iy, true, $event)" ngbTooltip="Paste images in bulk" container="body">
+                  <mat-icon>start</mat-icon>
+                </div>
+              </div>
+              <!-- Item icon -->
+              <button type="button" class="collage-image-btn collage-image-btn-item" *ngIf="!itemIcons[iy][ix]" (click)="openIconPicker(ix, iy)" ngbTooltip="Add icon to corner" container="body">
                 <mat-icon>checkroom</mat-icon>
+              </button>
+              <!-- Clear file -->
+              <button type="button" class="collage-image-btn collage-image-btn-clear" (click)="clearFile(ix, iy)" ngbTooltip="Reset image" container="body">
+                <mat-icon>clear</mat-icon>
               </button>
               <!-- Preview image -->
               <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)" crossorigin="anonymous">
