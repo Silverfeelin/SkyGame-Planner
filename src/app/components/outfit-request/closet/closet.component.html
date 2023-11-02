@@ -11,7 +11,7 @@
       <div class="button-group">
         <button type="button" (click)="toggleCloset()">
           <mat-icon class="menu-icon">checkroom</mat-icon>
-          <span class="menu-label">{{ showMode === 'all' ? 'Show closet' : 'Show all' }}</span>
+          <span class="menu-label">{{ showMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
         </button>
         <button type="button" (click)="modifyCloset()">
           <mat-icon class="menu-icon">manufacturing</mat-icon>
@@ -36,6 +36,10 @@
           <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
         </button>
       </div>
+      <button type="button" (click)="toggleIap()">
+        <mat-icon class="menu-icon">attach_money</mat-icon>
+        <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
+      </button>
       <button type="button" class="button-danger" (click)="resetSelection()">
         <mat-icon class="menu-icon">delete_forever</mat-icon>
         <span class="menu-label">Reset</span>
@@ -197,7 +201,7 @@
       <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items instead of closet.-->
       <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.a[item.guid]) || (!selected.a[item.guid] && showMode === 'closet' && hidden[item.guid]))"
         [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
-        [class.closet-hide]="hidden[item.guid]" [attr.data-guid]="item.guid"
+        [class.closet-hide]="hidden[item.guid] || (hideIap && item.iaps?.length)" [attr.data-guid]="item.guid"
         [ngbTooltip]="templateItemHover" container="body"
       >
         <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>

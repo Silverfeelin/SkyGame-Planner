@@ -71,6 +71,7 @@ export class ClosetComponent {
   modifyingCloset = false;
   // hideMissing = false;
   hideUnselected = false;
+  hideIap = false;
   columns: number;
   showMode: ShowMode = 'all';
   columnsLabel = 'Show as closet';
@@ -274,6 +275,11 @@ export class ClosetComponent {
     localStorage.setItem('closet.hide-unselected', this.hideUnselected ? '1' : '0');
   }
 
+  toggleIap(): void {
+    this.hideIap = !this.hideIap;
+    localStorage.setItem('closet.hide-iap', this.hideIap ? '1' : '0');
+  }
+
   toggleCloset(): void {
     this.showMode = this.showMode === 'all' ? 'closet' : 'all';
     if (this.showMode !== 'closet') {
@@ -440,7 +446,9 @@ export class ClosetComponent {
     }
 
     const hasAnySelected = Object.keys(this.selected.a).length > 0;
-    const hideByCloset = !hasAnySelected && this.showMode === 'closet';
+    const showCloset = !hasAnySelected && this.showMode === 'closet';
+    const alphaHide = hasAnySelected ? _aNotSelected : _aNotOwned;
+
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
       const img = this._itemImgs[item.guid];
@@ -450,9 +458,12 @@ export class ClosetComponent {
       ctx.fillStyle = '#0006';
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
-      // Draw item, translucent if not selected
-      if (hasAnySelected && !this.selected.a[item.guid]) { ctx.globalAlpha = _aNotSelected; }
-      if (hideByCloset && this.hidden[item.guid]) { ctx.globalAlpha = _aNotOwned; }
+      // When a selection is made, draw any other items translucent.
+      if (hasAnySelected && !this.selected.a[item.guid]) { ctx.globalAlpha = alphaHide; }
+      // Draw item translucent if hiding IAPs.
+      if (this.hideIap && item.iaps?.length) { ctx.globalAlpha = alphaHide; }
+      // Draw item translucent if not owned.
+      if (showCloset && this.hidden[item.guid]) { ctx.globalAlpha = alphaHide; }
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
 
