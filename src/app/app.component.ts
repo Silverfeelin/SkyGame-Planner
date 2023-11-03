@@ -46,7 +46,7 @@ export class AppComponent {
     dayjs.extend(timezone.default);
     dayjs.tz.setDefault(DateHelper.skyTimeZone);
 
-    if (location.pathname === '/outfit-request/request') {
+    if (location.pathname.endsWith('/outfit-request/request')) {
       this.hideMenu();
     }
 
