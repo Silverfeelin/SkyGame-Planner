@@ -115,7 +115,7 @@ export class ClosetComponent {
   copyLink(): void {
     const url = new URL(location.href);
     if (this.requesting) {
-      url.pathname  = '/outfit-request/closet';
+      url.pathname = url.pathname.replace('/outfit-request/request', '/outfit-request/closet');
     }
 
     navigator.clipboard.writeText(url.href).then(() => {
