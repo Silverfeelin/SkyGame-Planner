@@ -213,7 +213,7 @@
 
     <!-- Request display. -->
     <ng-container *ngIf="requesting">
-      <div class="closet-item" (click)="toggleItem(item)"
+      <div class="closet-item" (click)="toggleItem(item)" [hidden]="typeFolded[type]"
       [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
       [class.closet-hide]="(hideIap && item.iaps?.length)" [attr.data-guid]="item.guid"
       [class.highlight]="searchResults && searchResults[item.guid]"
