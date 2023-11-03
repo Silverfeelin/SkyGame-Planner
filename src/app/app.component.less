@@ -22,21 +22,18 @@
   animation-fill-mode: forwards;
 }
 
-::ng-deep body {
-  position: relative;
-  left: var(--menu-width);
-  width: calc(100% - var(--menu-width));
-  padding: var(--padding-content);
+::ng-deep {
+  body {
+    position: relative;
+    left: var(--menu-width);
+    width: calc(100% - var(--menu-width));
+    padding: var(--padding-content);
 
-  &.menu-folded {
-    left: 0;
-    width: 100%;
+    &.menu-folded, &.menu-hidden {
+      left: 0;
+      width: 100%;
+    }
   }
-}
-
-body.no-menu {
-  left: 0;
-  width: 100%;
 }
 
 .data-loss {

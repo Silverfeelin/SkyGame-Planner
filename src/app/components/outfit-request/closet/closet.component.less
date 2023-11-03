@@ -14,7 +14,8 @@
 .btn-colors {
   position: absolute;
   right: 8px;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   gap: 8px;
 }
@@ -54,14 +55,6 @@
 .color-warn { color: #f44; }
 .border-warn { border: 2px solid #f44; }
 
-// .closet-items-section {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-//   align-content: flex-start;
-//   flex-wrap: nowrap;
-//   gap: 4px;
-// }
 .closet-grid {
   display: flex;
   gap: 8px;
@@ -108,20 +101,13 @@
   top: 4px;
 }
 
-// .closet-items-buttons {
-//   position: absolute;
-//   bottom: -8px;
-//   right: 8px;
-//   z-index: 4;
-//   transform: translateY(100%);
-// }
-
 .closet-item {
   display: inline-block;
   padding: 1px;
   border-radius: var(--border-radius);
   background: var(--color-background);
   border: 3px solid transparent;
+  border-width: 3px !important;
 }
 
 .item-none {
@@ -161,14 +147,41 @@ hr:last-child {
   display: none;
 }
 
-/* Responsive */
+.search {
+  position: relative;
 
-.header-items {
-  min-height: 54px;
+  mat-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  input {
+    padding-left: 36px;
+  }
 }
 
+/* Responsive */
+
+.header-items { min-height: 54px; }
 .label-items { display: none; }
 @media screen and (min-width: 720px) {
   .label-items { display: block; }
   .btns-copy { left: 92px; }
+}
+
+
+@media screen and (max-width: 375px) {
+  .btn-copy {
+    position: relative;
+    width: 38px;
+    height: 38px;
+
+    .menu-label { display: none; }
+    .menu-icon {
+      left: 6px;
+      top: 6px;
+    }
+  }
 }

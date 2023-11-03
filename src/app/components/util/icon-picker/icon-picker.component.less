@@ -39,11 +39,22 @@
   }
 }
 
-.search-input {
+.search {
   position: absolute;
   left: var(--padding-content);
   bottom: var(--padding-content);
   right: var(--padding-content);
   width: unset;
   height: 38px;
+
+  mat-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  input {
+    padding-left: 36px;
+  }
 }

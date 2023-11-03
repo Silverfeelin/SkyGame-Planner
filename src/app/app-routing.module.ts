@@ -56,6 +56,7 @@ const routes: Routes = [
   { path: 'tools', component: ToolsComponent, title: title('Tools') },
   { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
   { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
+  { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
 ];
 

@@ -8,5 +8,8 @@
   <div class="picker-close" (click)="close($event)">
     <mat-icon>close</mat-icon>
   </div>
-  <input tabindex="0" #input class="search-input" type="text" (input)="search()" placeholder="Search for icons">
+  <div class="search">
+    <input tabindex="0" #input class="search-input" type="text" (input)="search()" placeholder="Search for icons">
+    <mat-icon (click)="selectSearch()">search</mat-icon>
+  </div>
 </div>

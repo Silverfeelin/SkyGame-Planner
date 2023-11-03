@@ -39,6 +39,10 @@ export class IconPickerComponent implements AfterViewInit {
     this._changeDetectorRef.markForCheck();
   }
 
+  selectSearch(): void {
+    this.input.nativeElement.select();
+  }
+
   reset(): void {
     this.input.nativeElement.value = '';
     this.searchText = undefined;

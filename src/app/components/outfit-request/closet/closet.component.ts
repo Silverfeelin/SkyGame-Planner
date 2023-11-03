@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { ItemSize } from '../../item/item.component';
+import { SearchService } from 'src/app/services/search.service';
 
 interface ISelection { [key: string]: IItem; }
 type SelectMode = 'r' | 'g' | 'b';
@@ -28,8 +29,9 @@ const _aNotOwned = 0.05;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ClosetComponent {
-  @ViewChild('ttCopyLnk', { static: true }) private readonly _ttCopyLnk!: NgbTooltip;
-  @ViewChild('ttCopyImg', { static: true }) private readonly _ttCopyImg!: NgbTooltip;
+  @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;
+  @ViewChild('ttCopyLnk', { static: false }) private readonly _ttCopyLnk?: NgbTooltip;
+  @ViewChild('ttCopyImg', { static: false }) private readonly _ttCopyImg?: NgbTooltip;
 
   _bgImg: HTMLImageElement;
 
@@ -54,11 +56,8 @@ export class ClosetComponent {
     'Prop': 'prop'
   };
 
-  itemTypeUnequip: { [key: string]: boolean } = [
-    ItemType.Necklace, ItemType.Hat, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
-  ].reduce((map, type) => (map[`${type}`] = true, map), {} as { [key: string]: boolean });
-
   // Item data
+  allItems: Array<IItem> = [];
   items: { [type: string]: Array<IItem> } = {};
 
   // Item selection
@@ -67,12 +66,17 @@ export class ClosetComponent {
   hidden: { [guid: string]: boolean } = {};
   selectionHasHidden = false;
 
+  // Search
+  searchText?: string;
+  _lastSearchText = '';
+  searchResults?: { [guid: string]: IItem };
+
   // Closet display
   modifyingCloset = false;
-  // hideMissing = false;
   hideUnselected = false;
   hideIap = false;
   columns: number;
+  requesting = false;
   showMode: ShowMode = 'all';
   columnsLabel = 'Show as closet';
   maxColumns = 8;
@@ -86,9 +90,11 @@ export class ClosetComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _route: ActivatedRoute
   ) {
+    // Load user preferences.
     this.hideUnselected = localStorage.getItem('closet.hide-unselected') === '1';
     this.hidden = (JSON.parse(localStorage.getItem('closet.hidden') || '[]') as Array<string>).reduce((map, guid) => (map[guid] = true, map), {} as { [key: string]: boolean });
     this.columns = +localStorage.getItem('closet.columns')! || 6;
@@ -96,18 +102,25 @@ export class ClosetComponent {
     this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
 
+    // Set background for rendering.
     this._bgImg = new Image();
     this._bgImg.crossOrigin = 'anonymous';
     const rndImg = ['isle', 'prairie', 'forest', 'village', 'wasteland', 'vault'][Math.floor(Math.random() * 6)];
     this._bgImg.src = `https://silverfeelin.github.io/SkyGame-Planner/assets/game/background/${rndImg}.webp`;
 
+    this.requesting = location.pathname.endsWith('request');
     this.initializeItems();
   }
 
   copyLink(): void {
-    navigator.clipboard.writeText(location.href).then(() => {
-      this._ttCopyLnk.open();
-      setTimeout(() => this._ttCopyLnk.close(), 1000);
+    const url = new URL(location.href);
+    if (this.requesting) {
+      url.pathname  = '/outfit-request/closet';
+    }
+
+    navigator.clipboard.writeText(url.href).then(() => {
+      this._ttCopyLnk?.open();
+      setTimeout(() => this._ttCopyLnk?.close(), 1000);
     });
   }
 
@@ -190,8 +203,8 @@ export class ClosetComponent {
         const item = new ClipboardItem({ [blob.type]: blob });
         navigator.clipboard.write([item]).then(() => {
           doneRendering();
-          this._ttCopyImg.open();
-          setTimeout(() => this._ttCopyImg.close(), 1000);
+          this._ttCopyImg?.open();
+          setTimeout(() => this._ttCopyImg?.close(), 1000);
         }).catch(error => {
           console.error('Could not copy image to clipboard: ', error);
           alert('Copying failed. Please make sure the document is focused.');
@@ -206,6 +219,11 @@ export class ClosetComponent {
   setSelectMode(mode: SelectMode): void {
     this.modifyingCloset = false;
     this.selectMode = this.selectMode === mode ? undefined : mode;
+  }
+
+  toggleNone(type: string): void {
+    if (!this.selectMode) { this.selectMode = 'r'; }
+    const a = this.selected[this.selectMode][type];
   }
 
   toggleItem(item: IItem): void {
@@ -234,9 +252,9 @@ export class ClosetComponent {
 
     this.updateSelectionHasHidden();
 
-    const r = this.serializeSelected(Object.values(this.selected.r));
-    const g = this.serializeSelected(Object.values(this.selected.g));
-    const b = this.serializeSelected(Object.values(this.selected.b));
+    const r = this.serializeQueryItems(Object.values(this.selected.r));
+    const g = this.serializeQueryItems(Object.values(this.selected.g));
+    const b = this.serializeQueryItems(Object.values(this.selected.b));
 
     const url = new URL(location.href);
     url.searchParams.set('r', r);
@@ -330,37 +348,77 @@ export class ClosetComponent {
     localStorage.setItem('closet.hidden', JSON.stringify([]));
   }
 
+
+
+
+  search(): void {
+    this.searchText = this.input.nativeElement.value;
+    if (this.searchText === this._lastSearchText) { return; }
+    this._lastSearchText = this.searchText;
+
+    if (!this.searchText || this.searchText.length < 3) {
+      this.searchResults = undefined;
+      this._changeDetectorRef.markForCheck();
+      return;
+    }
+
+    const items = this._searchService.searchItems(this.searchText, { limit: 50, hasIcon: true });
+    this.searchResults = items.reduce((map, item) => (map[item.data.guid] = item.data, map), {} as { [guid: string]: IItem });
+    this._changeDetectorRef.markForCheck();
+  }
+
+  selectSearch(): void {
+    this.input.nativeElement.select();
+  }
+
+
   private initializeItems(): void {
+    // Unequippable items.
+    const itemTypeUnequip: { [key: string]: number } = [
+      ItemType.Necklace, ItemType.Hat, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
+    ].reduce((map, type, i) => (map[`${type}`] = 46655 - i, map), {} as { [key: string]: number });
+
+    // Populate items by type
     this.items = {};
     for (const type of this.itemTypes) {
       this.items[type as string] = [];
+      const unequipId = itemTypeUnequip[type];
+      if (unequipId) {
+        const item: IItem = { id: unequipId, guid: type.substring(0, 10).padStart(10, '_'), name: 'None', icon: 'assets/icons/none.webp', type: type, unlocked: true, order: -1 };
+        this.items[type as string].push(item);
+        this.allItems.push(item);
+      }
     }
 
+    // Add items to closets.
     for (const item of this._dataService.itemConfig.items) {
       let type = item.type;
       if (type === 'Instrument') { type = ItemType.Held; }
       if (!this.items[type as string]) { continue; }
 
       this.items[type as string].push(item);
+      this.allItems.push(item);
     }
 
+    // Sort items by order.
     for (const type of this.itemTypes) {
       this.items[type as string].sort((a, b) => (a.order || 99999) - (b.order || 99999));
     }
 
+    // Mark items as selected.
     const selR = this._route.snapshot.queryParamMap.get('r');
     if (selR?.length) {
-      const items = this.deserializeSelected(selR);
+      const items = this.deserializeQueryItems(selR);
       for (const item of items) { this.selected.r[item.guid] = item; this.selected.a[item.guid] = item; }
     }
     const selG = this._route.snapshot.queryParamMap.get('g');
     if (selG?.length) {
-      const items = this.deserializeSelected(selG);
+      const items = this.deserializeQueryItems(selG);
       for (const item of items) { this.selected.g[item.guid] = item; this.selected.a[item.guid] = item; }
     }
     const selB = this._route.snapshot.queryParamMap.get('b');
     if (selB?.length) {
-      const items = this.deserializeSelected(selB);
+      const items = this.deserializeQueryItems(selB);
       for (const item of items) { this.selected.b[item.guid] = item; this.selected.a[item.guid] = item; }
     }
 
@@ -371,14 +429,14 @@ export class ClosetComponent {
     this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.a[guid]);
   }
 
-  private serializeSelected(items: Array<IItem>): string {
+  private serializeQueryItems(items: Array<IItem>): string {
     const ids = items.map(item => (item.id || 0).toString(36).padStart(3, '0'));
     return ids.join('');
   }
 
-  private deserializeSelected(serialized: string): Array<IItem> {
+  private deserializeQueryItems(serialized: string): Array<IItem> {
     const ids = serialized?.match(/.{3}/g) || [];
-    const items = this._dataService.itemConfig.items;
+    const items = this.allItems;
     const itemIdMap = items.reduce((map, item) => {
       item.id && (map[item.id] = item);
       return map;
@@ -447,7 +505,7 @@ export class ClosetComponent {
 
     const hasAnySelected = Object.keys(this.selected.a).length > 0;
     const showCloset = !hasAnySelected && this.showMode === 'closet';
-    const alphaHide = hasAnySelected ? _aNotSelected : _aNotOwned;
+    const alphaHide = (this.requesting || hasAnySelected) ? _aNotSelected : _aNotOwned;
 
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
@@ -459,11 +517,11 @@ export class ClosetComponent {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
       // When a selection is made, draw any other items translucent.
-      if (hasAnySelected && !this.selected.a[item.guid]) { ctx.globalAlpha = alphaHide; }
+      if ((this.requesting || hasAnySelected) && !this.selected.a[item.guid]) { ctx.globalAlpha = alphaHide; }
       // Draw item translucent if hiding IAPs.
       if (this.hideIap && item.iaps?.length) { ctx.globalAlpha = alphaHide; }
       // Draw item translucent if not owned.
-      if (showCloset && this.hidden[item.guid]) { ctx.globalAlpha = alphaHide; }
+      if (!this.requesting && showCloset && this.hidden[item.guid]) { ctx.globalAlpha = alphaHide; }
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
 

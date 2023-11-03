@@ -19,6 +19,7 @@ import { EventService } from './services/event.service';
 export class AppComponent {
   ready = false;
   dataLoss = false;
+  showMenu = true;
 
   constructor(
     private readonly _dataService: DataService,
@@ -45,6 +46,10 @@ export class AppComponent {
     dayjs.extend(timezone.default);
     dayjs.tz.setDefault(DateHelper.skyTimeZone);
 
+    if (location.pathname === '/outfit-request/request') {
+      this.hideMenu();
+    }
+
     (window as any).dayjs = dayjs;
   }
 
@@ -57,5 +62,10 @@ export class AppComponent {
 
   onData(): void {
     this.ready = true;
+  }
+
+  hideMenu(): void {
+    this.showMenu = false;
+    document.body.classList.add('menu-hidden');
   }
 }
