@@ -46,7 +46,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   // Store request
   const key = nanoid();
-  context.env.REQUESTS.put(key, JSON.stringify(json), { expirationTtl: 86400 });
+  await context.env.REQUESTS.put(key, JSON.stringify(json), { expirationTtl: 86400 });
   const response = { key };
 
   // Return key to site.
