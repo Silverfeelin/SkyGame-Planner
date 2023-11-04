@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build-prod": "ng build --configuration production",
+    "build-gh": "ng build --configuration production --base-href /SkyGame-Planner/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
