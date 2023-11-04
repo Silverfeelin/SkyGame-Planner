@@ -10,6 +10,7 @@ import * as isoWeek from 'dayjs/plugin/isoWeek';
 import * as timezone from 'dayjs/plugin/timezone';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
+import { StorageService } from './services/storage.service';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +21,12 @@ export class AppComponent {
   ready = false;
   dataLoss = false;
   showMenu = true;
+  hideMoved = false;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
+    private readonly _storageService: StorageService,
     private readonly _themeService: ThemeService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
@@ -53,6 +56,10 @@ export class AppComponent {
     (window as any).dayjs = dayjs;
   }
 
+  closeMoved(): void{
+    this.hideMoved = true;
+  }
+
   initDisplayDate(): void {
     DateHelper.displayFormat = localStorage.getItem('date.format') || '';
     if (!DateHelper.displayFormat || !DateHelper.displayFormats.includes(DateHelper.displayFormat)) {
@@ -67,5 +74,30 @@ export class AppComponent {
   hideMenu(): void {
     this.showMenu = false;
     document.body.classList.add('menu-hidden');
+  }
+
+  export(event: Event): boolean {
+
+    const unlocked = this._storageService.serializeUnlocked();
+    const unlockedCol = this._storageService.serializeUnlockedCol();
+    const data = {
+      unlocked, unlockedCol
+    };
+    const jsonData = JSON.stringify(data);
+
+    let url = '';
+    try {
+      const blob = new Blob([jsonData], { type: 'application/json' });
+      url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `SkyPlanner_${dayjs().format('YYYY-MM-DD')}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+    return false;
   }
 }

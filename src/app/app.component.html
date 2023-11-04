@@ -3,9 +3,20 @@
 </div>
 
 <ng-container *ngIf="ready">
+  <div class="moved" [hidden]="hideMoved">
+    <mat-icon class="moved-close" (click)="closeMoved()">close</mat-icon>
+    <div class="overlay-inner">
+      This project has moved to<br/><a href="https://sky-planner.pages.dev/">https://sky-planner.pages.dev/</a>
+      <br/><br/>
+      If you have tracked progress please <a class="link" (click)="export($event)">export the data</a>.<br/>
+      You can import the data on <a href="https://sky-planner.pages.dev/settings">the new Settings page</a>.
+
+    </div>
+  </div>
+
   <app-menu *ngIf="showMenu"></app-menu>
   <div *ngIf="dataLoss" class="data-loss">
-    <div class="data-loss-inner">Data was changed in another tab. Please refresh this tab to avoid losing changes!</div>
+    <div class="overlay-inner">Data was changed in another tab. Please refresh this tab to avoid losing changes!</div>
   </div>
   <div class="content">
     <router-outlet></router-outlet>
