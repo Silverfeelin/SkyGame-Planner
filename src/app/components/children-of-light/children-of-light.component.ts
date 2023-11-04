@@ -195,7 +195,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     let video = '';
     let videoUrl = wl.mapData?.videoUrl;
     if (videoUrl) {
-      if (!videoUrl.includes('youtube')) { videoUrl = `https://silverfeelin.github.io/SkyGame-Planner-Videos/CoL/${videoUrl}`; }
+      if (!videoUrl.includes('youtube')) { videoUrl = `/assets/game/col/${videoUrl}`; }
       video =`<iframe class="s-leaflet-vid" width="480" height="270" src="${videoUrl}" title="CoL" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>`
     }
 
