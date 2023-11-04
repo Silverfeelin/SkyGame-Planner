@@ -1,0 +1,197 @@
+{
+  // ng generate @schematics/angular:component Realms --style=less --path=/src/app/components --skip-tests
+  "Area": {
+    "scope": "json,jsonc",
+    "prefix": "@area",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"name\": \"${2:name}\"",
+      "},"
+    ]
+  },
+  "Spirit": {
+    "scope": "json,jsonc",
+    "prefix": "@spirit",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"type\": \"${2:Season}\",",
+      "\t\"name\": \"${3:name}\",",
+      "\t\"imageUrl\": \"$4\",",
+      "\t\"tree\": \"$5\"",
+      "},"
+    ]
+  },
+  "Shop": {
+    "scope": "json,jsonc",
+    "prefix": "@shop",
+    "body": [
+        "{",
+        "\t\"guid\": \"$1\",",
+        "\t\"type\": \"${2:Store}\",",
+        "\t\"iaps\": [",
+        "\t\t\"\"",
+        "\t]",
+        "},"
+    ]
+  },
+  "Iap": {
+    "scope": "json,jsonc",
+    "prefix": "@iap",
+    "body": [
+        "{",
+        "\t\"guid\": \"$1\",",
+        "\t\"name\": \"$2\",",
+        "\t\"price\": ${3:19}.99,",
+        "\t\"items\": [",
+        "\t\t",
+        "\t]",
+        "},"
+    ]
+  },
+  "Item": {
+    "scope": "json,jsonc",
+    "prefix": "@item",
+    "body": [
+        "{",
+        "\t\"guid\": \"$1\",",
+        "\t\"type\": \"${2:type}\",",
+        "\t\"name\": \"${3:No name}\",",
+        "\t\"icon\": \"$4\"",
+        "},"
+    ]
+  },
+  "Item-CandleBlessing1": {
+    "scope": "json,jsonc",
+    "prefix": "@item-b1",
+    "body": [
+        "{",
+        "\t\"guid\": \"$1\",",
+        "\t\"type\": \"Special\",",
+        "\t\"name\": \"Small Blessing\",",
+        "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png\"",
+        "},"
+    ]
+  },
+  "Item-CandleBlessing5": {
+    "scope": "json,jsonc",
+    "prefix": "@item-b5",
+    "body": [
+        "{",
+        "\t\"guid\": \"$1\",",
+        "\t\"type\": \"Special\",",
+        "\t\"name\": \"Blessing\",",
+        "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png\"",
+        "},"
+    ]
+  },
+  "Item-Emote": {
+    "scope": "json,jsonc",
+    "prefix": "@item-emote",
+    "body": [
+        "{",
+        "\t\"guid\": \"\",",
+        "\t\"type\": \"Emote\",",
+        "\t\"name\": \"${1:No name}\",",
+        "\t\"level\": ${2:1},",
+        "\t\"icon\": \"$3\"",
+        "},"
+    ]
+  },
+  "Item-Heart": {
+    "scope": "json,jsonc",
+    "prefix": "@item-heart",
+    "body": [
+        "{",
+        "\t\"guid\": \"$0\",",
+        "\t\"type\": \"Special\",",
+        "\t\"name\": \"Heart\",",
+        "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png\"",
+        "},"
+    ]
+  },
+  "Item-Music": {
+    "scope": "json,jsonc",
+    "prefix": "@item-music",
+    "body": [
+        "{",
+        "\t\"guid\": \"\",",
+        "\t\"type\": \"Music\",",
+        "\t\"name\": \"Music Sheet #$1\",",
+        "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png\"",
+        "},"
+    ]
+  },
+  "Item-WingBuff": {
+    "scope": "json,jsonc",
+    "prefix": "@item-wb",
+    "body": [
+        "{",
+        "\t\"guid\": \"\",",
+        "\t\"type\": \"Special\",",
+        "\t\"name\": \"Wing Buff\",",
+        "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png\"",
+        "},"
+    ]
+  },
+  "Node": {
+    "scope": "json,jsonc",
+    "prefix": "@node",
+    "body": [
+        "{",
+        "\t\"guid\": \"$1\",",
+        "\t\"item\": \"$2\",",
+        "\t$0",
+        "},"
+    ]
+  },
+  "EventInstance-Spirit": {
+    "scope": "json,jsonc",
+    "prefix": "@event-spirit",
+    "body": [
+        "{ \"guid\": \"$1\", \"spirit\": \"$2\", \"tree\": \"$3\" }"
+    ]
+  },
+  "MapData": {
+    "scope": "json,jsonc",
+    "prefix": "@map",
+    "body": [
+      "\"mapData\": { \"position\": $0 }",
+    ]
+  },
+  // #region HTML
+  "Card": {
+    "scope": "html",
+    "prefix": "@card",
+    "body": [
+      "<div class=\"sky-card${1: mt}\">",
+      "\t<div class=\"sky-card-header\">",
+      "\t\t<h2 class=\"h3\">${2:Title}</h2>",
+      "\t</div>",
+      "\t<div class=\"sky-card-body\">",
+      "\t\t$0",
+      "\t</div>",
+      "</div>"
+    ]
+  },
+  "Card-Header": {
+    "scope": "html",
+    "prefix": "@card-header",
+    "body": [
+      "<div class=\"sky-card-header\">",
+      "\t<h2 class=\"h3\">${1:Title}</h2>",
+      "</div>"
+    ]
+  },
+  "Card-Body": {
+    "scope": "html",
+    "prefix": "@card-body",
+    "body": [
+      "<div class=\"sky-card-body\">",
+      "\t$0",
+      "</div>"
+    ]
+  },
+  // #endregion
+}
