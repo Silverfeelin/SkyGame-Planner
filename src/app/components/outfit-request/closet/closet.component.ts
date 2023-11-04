@@ -116,7 +116,7 @@ export class ClosetComponent {
     this._bgImg = new Image();
     this._bgImg.crossOrigin = 'anonymous';
     const rndImg = ['isle', 'prairie', 'forest', 'village', 'wasteland', 'vault'][Math.floor(Math.random() * 6)];
-    this._bgImg.src = `https://silverfeelin.github.io/SkyGame-Planner/assets/game/background/${rndImg}.webp`;
+    this._bgImg.src = `/assets/game/background/${rndImg}.webp`;
 
     this.requesting = location.pathname.endsWith('request');
     this.initializeItems();
