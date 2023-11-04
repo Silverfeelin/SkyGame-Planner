@@ -24,7 +24,7 @@
         </button>
         <button type="button" (click)="modifyCloset()">
           <mat-icon class="menu-icon">manufacturing</mat-icon>
-          <span class="menu-no-label"></span>
+          <span class="menu-label">Modify</span>
         </button>
       </div>
       <!-- Hide items not marked. -->
@@ -42,7 +42,7 @@
         </button>
       </div>
       <!-- Hide items from IAPs. -->
-      <button type="button" (click)="toggleIap()">
+      <button type="button" (click)="toggleIap()" *ngIf="!requesting">
         <mat-icon class="menu-icon">attach_money</mat-icon>
         <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
       </button>
@@ -114,7 +114,7 @@
     <h2 class="h3 mb-0 label-items">Items</h2>
     <div class="button-group btns-copy">
       <!-- Copy link -->
-      <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()"
+      <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="_rendering"
         ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
         <mat-icon class="menu-icon">link</mat-icon>
         <span class="menu-label">Copy</span>
@@ -205,9 +205,9 @@
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
       <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items instead of closet.-->
-      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.a[item.guid]) || (!selected.a[item.guid] && showMode === 'closet' && hidden[item.guid]))"
+      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && showMode === 'closet' && hidden[item.guid]))"
         [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
-        [class.closet-hide]="hidden[item.guid] || (hideIap && item.iaps?.length)" [attr.data-guid]="item.guid"
+        [class.closet-hide]="hidden[item.guid] || (hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
         [class.highlight]="searchResults && searchResults[item.guid]"
         [ngbTooltip]="templateItemHover" container="body"
       >
@@ -219,7 +219,7 @@
     <ng-container *ngIf="requesting">
       <div class="closet-item" (click)="toggleItem(item)" [hidden]="typeFolded[type]"
       [class.selected-r]="selected.r[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
-      [class.closet-hide]="(hideIap && item.iaps?.length)" [attr.data-guid]="item.guid"
+      [class.closet-hide]="(hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
       [class.highlight]="searchResults && searchResults[item.guid]"
       [ngbTooltip]="templateItemHover" container="body"
     >

@@ -22,8 +22,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
 /** Request body for storing an outfit request under a short key. */
 interface OutfitRequest {
-  /** "Have": Items marked as available. */
-  h: string;
+  /** "Available": Items marked as available. */
+  a: string;
   /** "Red": Items marked with red. */
   r: string;
   /** "Green": Items marked with green. */
@@ -37,7 +37,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Get request body.
   const json = await context.request.json() as OutfitRequest;
   const jsonKeys = Object.keys(json);
-  const validKeys = new Set(['h', 'r', 'g', 'b']);
+  const validKeys = new Set(['a', 'r', 'g', 'b']);
 
   // Quick data sanitization.
   if (jsonKeys.some(k => !validKeys.has(k) || typeof(json[k]) !== 'string' || json[k]?.length > 10000)) {

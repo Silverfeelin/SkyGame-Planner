@@ -41,4 +41,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Wrangler
+/.wrangler
+
+# Other
 /scripts

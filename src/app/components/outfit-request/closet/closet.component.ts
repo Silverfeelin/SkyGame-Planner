@@ -5,8 +5,11 @@ import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { ItemSize } from '../../item/item.component';
 import { SearchService } from 'src/app/services/search.service';
+import { HttpClient } from '@angular/common/http';
 
-interface ISelection { [key: string]: IItem; }
+interface ISelection { [guid: string]: IItem; }
+interface IOutfitRequest { a?: string; r: string; g: string; b: string; };
+
 type SelectMode = 'r' | 'g' | 'b';
 type ShowMode = 'all' | 'closet';
 
@@ -58,12 +61,15 @@ export class ClosetComponent {
 
   // Item data
   allItems: Array<IItem> = [];
+  itemMap: { [guid: string]: IItem } = {};
   items: { [type: string]: Array<IItem> } = {};
 
   // Item selection
   selectMode?: SelectMode;
-  selected: { a: ISelection, r: ISelection, g: ISelection, b: ISelection } = { a: {}, r: {}, g: {}, b: {}};
+  selected: { all: ISelection, r: ISelection, g: ISelection, b: ISelection } = { all: {}, r: {}, g: {}, b: {}};
   hidden: { [guid: string]: boolean } = {};
+  available?: ISelection;
+
   selectionHasHidden = false;
 
   // Search
@@ -88,10 +94,14 @@ export class ClosetComponent {
   _itemImgs: { [guid: string]: HTMLImageElement } = {};
   _rendering = false;
 
+  // For sharing
+  _lastLink?: string;
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _http: HttpClient,
     private readonly _route: ActivatedRoute
   ) {
     // Load user preferences.
@@ -113,14 +123,55 @@ export class ClosetComponent {
   }
 
   copyLink(): void {
-    const url = new URL(location.href);
-    if (this.requesting) {
-      url.pathname = url.pathname.replace('/outfit-request/request', '/outfit-request/closet');
+    if (this._lastLink) {
+      this.copyHref(this._lastLink);
+      return;
     }
 
-    navigator.clipboard.writeText(url.href).then(() => {
+    this._rendering = true;
+    const request = this.serializeModel();
+
+    // Add available items from closet.
+    if (!this.requesting) {
+      const items = this.allItems.filter(item => !this.hidden[item.guid]);
+      request.a = this.serializeItems(items);
+    }
+
+    const link = new URL(location.href);
+    link.pathname = this.requesting ? '/outfit-request/closet' : '/outfit-request/request';
+    link.search = '';
+
+    const apiUrl = '/api/outfit-request';
+    let key: string;
+    this._http.post(apiUrl, request, { responseType: 'json' }).subscribe({
+      next: (data: any) => {
+        key = data.key;
+      },
+      error: err => { console.error(err); }
+    }).add(() => {
+      this._rendering = false;
+
+      // Create link
+      if (key) {
+        link.searchParams.set('k', key);
+      } else {
+        link.searchParams.set('r', request.r);
+        link.searchParams.set('g', request.g);
+        link.searchParams.set('b', request.b);
+      }
+
+      this._lastLink = link.href;
+      this.copyHref(link.href);
+    });
+  }
+
+  private copyHref(href: string): void {
+    navigator.clipboard.writeText(href).then(() => {
       this._ttCopyLnk?.open();
       setTimeout(() => this._ttCopyLnk?.close(), 1000);
+    }).catch(error  => {
+      console.error('Could not copy link to clipboard: ', error);
+      alert('Copying link failed. Please make sure the document is focused.');
     });
   }
 
@@ -227,6 +278,8 @@ export class ClosetComponent {
   }
 
   toggleItem(item: IItem): void {
+    this._lastLink = undefined;
+
     if (this.modifyingCloset) {
       const hide = !this.hidden[item.guid];
       hide ? (this.hidden[item.guid] = true) : (delete this.hidden[item.guid]);
@@ -240,23 +293,24 @@ export class ClosetComponent {
     const selected = this.selected[this.selectMode];
 
     const select = !selected[item.guid];
-    delete this.selected.a[item.guid];
+    delete this.selected.all[item.guid];
     delete this.selected.r[item.guid];
     delete this.selected.g[item.guid];
     delete this.selected.b[item.guid];
 
     if (select) {
       selected[item.guid] = item;
-      this.selected.a[item.guid] = item;
+      this.selected.all[item.guid] = item;
     }
 
     this.updateSelectionHasHidden();
 
-    const r = this.serializeQueryItems(Object.values(this.selected.r));
-    const g = this.serializeQueryItems(Object.values(this.selected.g));
-    const b = this.serializeQueryItems(Object.values(this.selected.b));
+    const r = this.serializeItems(Object.values(this.selected.r));
+    const g = this.serializeItems(Object.values(this.selected.g));
+    const b = this.serializeItems(Object.values(this.selected.b));
 
     const url = new URL(location.href);
+    url.searchParams.delete('k');
     url.searchParams.set('r', r);
     url.searchParams.set('g', g);
     url.searchParams.set('b', b);
@@ -267,12 +321,14 @@ export class ClosetComponent {
 
   resetSelection(): void {
     if (!confirm('This will remove the color highlights from all items. Are you sure?')) { return; }
-    this.selected = { a: {}, r: {}, g: {}, b: {}};
+    this.selected = { all: {}, r: {}, g: {}, b: {}};
     this.selectionHasHidden = false;
     const url = new URL(location.href);
+    url.searchParams.delete('k');
     url.searchParams.delete('r');
     url.searchParams.delete('g');
     url.searchParams.delete('b');
+    this._lastLink = undefined;
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
@@ -339,17 +395,16 @@ export class ClosetComponent {
 
     if (!confirm(`This will hide ${i} item(s) from your closet. Are you sure?`)) { return; }
     this.hidden = hidden;
+    this._lastLink = undefined;
     localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
   }
 
   resetHidden(): void {
     if (!confirm('This will show all items in your closet. Are you sure?')) { return; }
     this.hidden = {};
+    this._lastLink = undefined;
     localStorage.setItem('closet.hidden', JSON.stringify([]));
   }
-
-
-
 
   search(): void {
     this.searchText = this.input.nativeElement.value;
@@ -387,6 +442,7 @@ export class ClosetComponent {
         const item: IItem = { id: unequipId, guid: type.substring(0, 10).padStart(10, '_'), name: 'None', icon: 'assets/icons/none.webp', type: type, unlocked: true, order: -1 };
         this.items[type as string].push(item);
         this.allItems.push(item);
+        this.itemMap[item.guid] = item;
       }
     }
 
@@ -398,6 +454,7 @@ export class ClosetComponent {
 
       this.items[type as string].push(item);
       this.allItems.push(item);
+      this.itemMap[item.guid] = item;
     }
 
     // Sort items by order.
@@ -405,36 +462,74 @@ export class ClosetComponent {
       this.items[type as string].sort((a, b) => (a.order || 99999) - (b.order || 99999));
     }
 
-    // Mark items as selected.
-    const selR = this._route.snapshot.queryParamMap.get('r');
-    if (selR?.length) {
-      const items = this.deserializeQueryItems(selR);
-      for (const item of items) { this.selected.r[item.guid] = item; this.selected.a[item.guid] = item; }
+    const queryParams = this._route.snapshot.queryParamMap;
+    if (queryParams.has('k')) {
+      this.initializeFromKV(queryParams.get('k')!);
+    } else {
+      this.initializeFromObj({
+        r: queryParams.get('r') || '',
+        g: queryParams.get('g') || '',
+        b: queryParams.get('b') || ''
+      });
     }
-    const selG = this._route.snapshot.queryParamMap.get('g');
-    if (selG?.length) {
-      const items = this.deserializeQueryItems(selG);
-      for (const item of items) { this.selected.g[item.guid] = item; this.selected.a[item.guid] = item; }
+  }
+
+  /** Loads selection data from KV API. */
+  private initializeFromKV(key: string): void {
+    if (!key) { return; }
+    const sKey = encodeURIComponent(key);
+    this._http.get(`/api/outfit-request?key=${sKey}`, { responseType: 'json' }).subscribe({
+      next: (data: any) => {
+        if (!data) { return; }
+        const request = data as IOutfitRequest;
+        this.initializeFromObj(request);
+      },
+      error: () => {
+        alert('Failed to get outfit request data');
+      }
+    });
+  }
+
+  /** Loads selection data from model. */
+  private initializeFromObj(data: IOutfitRequest): void {
+    this.available = undefined;
+    const a = this.deserializeItems(data.a);
+    if (a?.length) {
+      this.available = a.reduce((map, item) => (map[item.guid] = item, map), {} as ISelection);
     }
-    const selB = this._route.snapshot.queryParamMap.get('b');
-    if (selB?.length) {
-      const items = this.deserializeQueryItems(selB);
-      for (const item of items) { this.selected.b[item.guid] = item; this.selected.a[item.guid] = item; }
-    }
+
+    this.selected = { all: {}, r: {}, g: {}, b: {}};
+    const r = this.deserializeItems(data.r);
+    for (const item of r) { this.selected.r[item.guid] = item; this.selected.all[item.guid] = item; }
+    const g = this.deserializeItems(data.g);
+    for (const item of g) { this.selected.g[item.guid] = item; this.selected.all[item.guid] = item; }
+    const b = this.deserializeItems(data.b);
+    for (const item of b) { this.selected.b[item.guid] = item; this.selected.all[item.guid] = item; }
 
     this.updateSelectionHasHidden();
   }
 
   private updateSelectionHasHidden(): void {
-    this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.a[guid]);
+    this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.all[guid]);
+    this._changeDetectorRef.markForCheck();
   }
 
-  private serializeQueryItems(items: Array<IItem>): string {
+  private serializeModel(): IOutfitRequest {
+    return {
+      r: this.serializeItems(Object.values(this.selected.r)),
+      g: this.serializeItems(Object.values(this.selected.g)),
+      b: this.serializeItems(Object.values(this.selected.b))
+    };
+  }
+
+  private serializeItems(items: Array<IItem>): string {
     const ids = items.map(item => (item.id || 0).toString(36).padStart(3, '0'));
     return ids.join('');
   }
 
-  private deserializeQueryItems(serialized: string): Array<IItem> {
+  private deserializeItems(serialized: string | undefined): Array<IItem> {
+    if (!serialized?.length) { return []; }
+
     const ids = serialized?.match(/.{3}/g) || [];
     const items = this.allItems;
     const itemIdMap = items.reduce((map, item) => {
@@ -503,7 +598,7 @@ export class ClosetComponent {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.stroke();
     }
 
-    const hasAnySelected = Object.keys(this.selected.a).length > 0;
+    const hasAnySelected = Object.keys(this.selected.all).length > 0;
     const showCloset = !hasAnySelected && this.showMode === 'closet';
     const alphaHide = (this.requesting || hasAnySelected) ? _aNotSelected : _aNotOwned;
 
@@ -517,7 +612,7 @@ export class ClosetComponent {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
       // When a selection is made, draw any other items translucent.
-      if ((this.requesting || hasAnySelected) && !this.selected.a[item.guid]) { ctx.globalAlpha = alphaHide; }
+      if ((this.requesting || hasAnySelected) && !this.selected.all[item.guid]) { ctx.globalAlpha = alphaHide; }
       // Draw item translucent if hiding IAPs.
       if (this.hideIap && item.iaps?.length) { ctx.globalAlpha = alphaHide; }
       // Draw item translucent if not owned.
