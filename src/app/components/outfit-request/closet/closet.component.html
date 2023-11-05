@@ -64,15 +64,6 @@
   </div>
 </div>
 
-<div class="sky-card mt" *ngIf="!requesting && selectionHasHidden">
-  <div class="sky-card-body">
-    <div class="container border-warn">
-      <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
-      <span class="menu-label">This selection has items hidden in your closet. You might be missing some items.</span>
-    </div>
-  </div>
-</div>
-
 <div class="sky-card mt" *ngIf="modifyingCloset">
   <div class="sky-card-header">
     <h2 class="h3">Modify closet</h2>
@@ -109,6 +100,15 @@
   </div>
 </div>
 
+<div class="sky-card mt" *ngIf="!requesting && selectionHasHidden">
+  <div class="sky-card-body">
+    <div class="container border-warn">
+      <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
+      <span class="menu-label">This selection has items hidden in your closet. You might be missing some items.</span>
+    </div>
+  </div>
+</div>
+
 <div class="sky-card mt">
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
@@ -116,13 +116,13 @@
       <!-- Copy link -->
       <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="_rendering"
         ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-        <mat-icon class="menu-icon">link</mat-icon>
+        <mat-icon class="menu-icon" [class.spin]="_rendering === 1">{{ _rendering === 1 ? 'cached' : 'link' }}</mat-icon>
         <span class="menu-label">Copy</span>
       </button>
       <!-- Copy image-->
       <button type="button" class="btn-copy btn-copy-image" (click)="copyImage()" [disabled]="_rendering"
         ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-        <mat-icon class="menu-icon" [class.spin]="_rendering">{{ _rendering ? 'cached' : 'image' }}</mat-icon>
+        <mat-icon class="menu-icon" [class.spin]="_rendering === 2">{{ _rendering === 2 ? 'cached' : 'image' }}</mat-icon>
         <span class="menu-label">Copy</span>
       </button>
     </div>

@@ -94,7 +94,7 @@ export class ClosetComponent {
 
   // For rendering
   _itemImgs: { [guid: string]: HTMLImageElement } = {};
-  _rendering = false;
+  _rendering: number = 0;
 
   // For sharing
   _lastLink?: string;
@@ -136,7 +136,7 @@ export class ClosetComponent {
       return;
     }
 
-    this._rendering = true;
+    this._rendering = 1;
     const request = this.serializeModel();
 
     // Add available items from closet.
@@ -170,7 +170,7 @@ export class ClosetComponent {
       return new Blob([link.href], { type: 'text/plain' });
     };
 
-    const doneCopying = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
+    const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
     try {
       const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
       navigator.clipboard.write([item]).then(() => {
@@ -189,7 +189,7 @@ export class ClosetComponent {
   }
 
   copyImage(): void {
-    this._rendering = true;
+    this._rendering = 2;
 
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
@@ -260,7 +260,7 @@ export class ClosetComponent {
     ctx.fillText('© Sky: Children of the Light', canvas.width - 8, canvas.height - 8 - 24);
 
     // Save canvas to PNG and write to clipboard
-    const doneRendering = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
+    const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
     const renderPromise = new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
         blob ? resolve(blob) : reject('Failed to render image');
@@ -270,16 +270,16 @@ export class ClosetComponent {
     try {
       const item = new ClipboardItem({ ['image/png']: renderPromise });
       navigator.clipboard.write([item]).then(() => {
-        doneRendering();
+        doneCopying();
         this._ttCopyImg?.open();
         setTimeout(() => this._ttCopyImg?.close(), 1000);
       }).catch(error => {
         console.error('Could not copy image to clipboard: ', error);
         alert('Copying failed. Please make sure the document is focused.');
-        doneRendering();
+        doneCopying();
       });
     } catch {
-      doneRendering();
+      doneCopying();
     }
   }
 
