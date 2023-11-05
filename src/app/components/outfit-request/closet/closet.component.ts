@@ -6,6 +6,8 @@ import { DataService } from 'src/app/services/data.service';
 import { ItemSize } from '../../item/item.component';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
+import { resolve } from 'path';
+import { lastValueFrom } from 'rxjs';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; g: string; b: string; };
@@ -92,7 +94,7 @@ export class ClosetComponent {
 
   // For rendering
   _itemImgs: { [guid: string]: HTMLImageElement } = {};
-  _rendering = false;
+  _rendering: number = 0;
 
   // For sharing
   _lastLink?: string;
@@ -124,11 +126,19 @@ export class ClosetComponent {
 
   copyLink(): void {
     if (this._lastLink) {
-      this.copyHref(this._lastLink);
+      navigator.clipboard.writeText(this._lastLink).then(() => {
+        this._ttCopyLnk?.open();
+        setTimeout(() => this._ttCopyLnk?.close(), 1000);
+      }).catch(error  => {
+        console.error(error);
+        alert('Copying link failed. Please make sure the document is focused.');
+      });
       return;
     }
 
-    this._rendering = true;
+    this._rendering = 1;
+    this._changeDetectorRef.markForCheck();
+
     const request = this.serializeModel();
 
     // Add available items from closet.
@@ -142,14 +152,12 @@ export class ClosetComponent {
     link.search = '';
 
     const apiUrl = '/api/outfit-request';
-    let key: string;
-    this._http.post(apiUrl, request, { responseType: 'json' }).subscribe({
-      next: (data: any) => {
-        key = data.key;
-      },
-      error: err => { console.error(err); }
-    }).add(() => {
-      this._rendering = false;
+    const fetchPromise = async () => {
+      let key;
+      try {
+        const keyResult = await lastValueFrom(this._http.post<{key: string}>(apiUrl, request, { responseType: 'json' }));
+        key = keyResult.key;
+      } catch (e) { console.error(e); }
 
       // Create link
       if (key) {
@@ -161,22 +169,27 @@ export class ClosetComponent {
       }
 
       this._lastLink = link.href;
-      this.copyHref(link.href);
-    });
-  }
+      return new Blob([link.href], { type: 'text/plain' });
+    };
 
-  private copyHref(href: string): void {
-    navigator.clipboard.writeText(href).then(() => {
-      this._ttCopyLnk?.open();
-      setTimeout(() => this._ttCopyLnk?.close(), 1000);
-    }).catch(error  => {
-      console.error('Could not copy link to clipboard: ', error);
-      alert('Copying link failed. Please make sure the document is focused.');
-    });
+    const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
+    try {
+      const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopyImg?.open();
+        setTimeout(() => this._ttCopyImg?.close(), 1000);
+      }).catch(error => {
+        console.error(error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch (e) { console.error(e); doneCopying(); }
   }
 
   copyImage(): void {
-    this._rendering = true;
+    this._rendering = 2;
+    this._changeDetectorRef.markForCheck();
 
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
@@ -247,24 +260,25 @@ export class ClosetComponent {
     ctx.fillText('© Sky: Children of the Light', canvas.width - 8, canvas.height - 8 - 24);
 
     // Save canvas to PNG and write to clipboard
-    const doneRendering = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
-    try {
+    const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
+    const renderPromise = new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
-        if (!blob) { return doneRendering(); }
-        const item = new ClipboardItem({ [blob.type]: blob });
-        navigator.clipboard.write([item]).then(() => {
-          doneRendering();
-          this._ttCopyImg?.open();
-          setTimeout(() => this._ttCopyImg?.close(), 1000);
-        }).catch(error => {
-          console.error('Could not copy image to clipboard: ', error);
-          alert('Copying failed. Please make sure the document is focused.');
-          doneRendering();
-        });
-      }, 'image/png');
-    } catch {
-      this._rendering = false;
-    }
+        blob ? resolve(blob) : reject('Failed to render image.');
+      });
+    });
+
+    try {
+      const item = new ClipboardItem({ 'image/png': renderPromise });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopyImg?.open();
+        setTimeout(() => this._ttCopyImg?.close(), 1000);
+      }).catch(error => {
+        console.error(error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch(e) { console.error(e); doneCopying(); }
   }
 
   setSelectMode(mode: SelectMode): void {
