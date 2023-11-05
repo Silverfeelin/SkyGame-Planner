@@ -192,3 +192,20 @@ app-icon-picker {
   left: 4px;
   z-index: 3;
 }
+
+@media screen and (max-width: 375px) {
+  .collage-image-btn-clipboard {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .grid-collage {
+    grid-template-columns: repeat(6, 128px);
+  }
+
+  .collage-image-container {
+    width: 128px;
+    height: 192px;
+  }
+}

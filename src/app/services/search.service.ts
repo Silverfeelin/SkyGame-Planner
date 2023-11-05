@@ -117,7 +117,7 @@ export class SearchService {
     const items: Array<ISearchItem<unknown>> = [];
     // Add items.
     items.push(...this._dataService.itemConfig.items.filter(item => {
-      if (item.type === 'Spell' || item.type === 'Quest' || item.type === 'Special') { return; }
+      if (item.type === 'Spell' || item.type === 'Quest' || item.type === 'Special' || item.type === 'WingBuff') { return; }
       if (item.type === 'Emote' && item.level! > 1) { return; }
       return true;
     }).map(item => {

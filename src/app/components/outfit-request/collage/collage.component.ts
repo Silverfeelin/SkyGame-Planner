@@ -299,24 +299,27 @@ export class CollageComponent implements AfterViewInit {
 
     const w = img.naturalWidth;
     const h = img.naturalHeight;
-    const pw = this.sizes.previewWidth;
-    const ph = this.sizes.previewHeight;
+    const bounds = this._collageImage?.first?.nativeElement.closest('.collage-image-container').getBoundingClientRect();
+    const pw = bounds?.width ?? this.sizes.previewWidth;
+    const ph = bounds?.height ?? this.sizes.previewHeight;
     const fx  = pw / w;
     panZoom.zoomAbs(-2 * pw, 0, fx * 4);
   }
 
   private render(): HTMLCanvasElement {
-    const _wBorder = 2;
+    const _wBorder = 0;
     const hasIcons = this.itemIcons.some(r => r.some(i => i.length));
 
     const canvas = document.createElement('canvas');
     canvas.width = this.sizes.renderWidth * this.collageSize.x + _wBorder * (this.collageSize.x + 1);
-    canvas.height = this.sizes.renderHeight * this.collageSize.y + _wBorder * (this.collageSize.y + 1) + (hasIcons ? 12 : 0);
+    canvas.height = this.sizes.renderHeight * this.collageSize.y + _wBorder * (this.collageSize.y + 1) + (hasIcons ? 13 : 0);
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     // Background
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    if (_wBorder > 0) {
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
 
     const drawImage = (img: HTMLImageElement, x: number, y: number) => {
       const clipDiv =  img.closest('.collage-image-container') as HTMLElement;
@@ -355,6 +358,10 @@ export class CollageComponent implements AfterViewInit {
 
     // Draw attribution
     if (hasIcons) {
+      // Background
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, canvas.height - 13, canvas.width, canvas.height);
+
       ctx.fillStyle = '#446';
       ctx.font = '12px Roboto, sans-serif';
       ctx.textAlign = 'right';
