@@ -71,7 +71,9 @@
                 <mat-icon>clear</mat-icon>
               </button>
               <!-- Preview image -->
-              <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)" crossorigin="anonymous">
+              <div class="img-wrapper">
+                <img [src]="files[iy][ix]" #collageImage class="collage-image" [attr.data-x]="ix" [attr.data-y]="iy" (load)="imageLoaded(ix, iy)" crossorigin="anonymous">
+              </div>
               <div *ngIf="itemIcons[iy][ix]" class="collage-image-icon">
                 <img [src]="itemIcons[iy][ix]" (click)="openIconPicker(ix, iy)" [style.width.px]="sizes.previewIconWidth" crossorigin="anonymous">
               </div>
