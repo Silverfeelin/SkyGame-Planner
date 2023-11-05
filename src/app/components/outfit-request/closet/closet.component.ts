@@ -7,6 +7,7 @@ import { ItemSize } from '../../item/item.component';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
 import { resolve } from 'path';
+import { lastValueFrom } from 'rxjs';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; g: string; b: string; };
@@ -125,7 +126,13 @@ export class ClosetComponent {
 
   copyLink(): void {
     if (this._lastLink) {
-      this.copyHref(this._lastLink);
+      navigator.clipboard.writeText(this._lastLink).then(() => {
+        this._ttCopyLnk?.open();
+        setTimeout(() => this._ttCopyLnk?.close(), 1000);
+      }).catch(error  => {
+        console.error('Could not copy link to clipboard: ', error);
+        alert('Copying link failed. Please make sure the document is focused.');
+      });
       return;
     }
 
@@ -143,14 +150,12 @@ export class ClosetComponent {
     link.search = '';
 
     const apiUrl = '/api/outfit-request';
-    let key: string;
-    this._http.post(apiUrl, request, { responseType: 'json' }).subscribe({
-      next: (data: any) => {
-        key = data.key;
-      },
-      error: err => { console.error(err); }
-    }).add(() => {
-      this._rendering = false;
+    const fetchPromise = async () => {
+      let key;
+      try {
+        const keyResult = await lastValueFrom(this._http.post<{key: string}>(apiUrl, request, { responseType: 'json' }));
+        key = keyResult.key;
+      } catch (e) { console.error(e); }
 
       // Create link
       if (key) {
@@ -162,18 +167,25 @@ export class ClosetComponent {
       }
 
       this._lastLink = link.href;
-      this.copyHref(link.href);
-    });
-  }
+      return new Blob([link.href], { type: 'text/plain' });
+    };
 
-  private copyHref(href: string): void {
-    navigator.clipboard.writeText(href).then(() => {
-      this._ttCopyLnk?.open();
-      setTimeout(() => this._ttCopyLnk?.close(), 1000);
-    }).catch(error  => {
-      console.error('Could not copy link to clipboard: ', error);
-      alert('Copying link failed. Please make sure the document is focused.');
-    });
+    const doneCopying = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
+    try {
+      const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopyImg?.open();
+        setTimeout(() => this._ttCopyImg?.close(), 1000);
+      }).catch(error => {
+        console.error('Could not copy image to clipboard: ', error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch (e) {
+      console.error(e);
+      doneCopying();
+    }
   }
 
   copyImage(): void {
@@ -249,9 +261,9 @@ export class ClosetComponent {
 
     // Save canvas to PNG and write to clipboard
     const doneRendering = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
-    const renderPromise = new Promise<Blob>(resolve => {
+    const renderPromise = new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
-        resolve(blob!);
+        blob ? resolve(blob) : reject('Failed to render image');
       });
     });
 
