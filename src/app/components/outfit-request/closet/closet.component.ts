@@ -36,6 +36,7 @@ export class ClosetComponent {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;
   @ViewChild('ttCopyLnk', { static: false }) private readonly _ttCopyLnk?: NgbTooltip;
   @ViewChild('ttCopyImg', { static: false }) private readonly _ttCopyImg?: NgbTooltip;
+  @ViewChild('warnHidden', { static: false }) private readonly _warnHidden?: ElementRef<HTMLElement>;
 
   _bgImg: HTMLImageElement;
 
@@ -72,6 +73,7 @@ export class ClosetComponent {
   available?: ISelection;
 
   selectionHasHidden = false;
+  selectionHasUnavailable = false;
 
   // Search
   searchText?: string;
@@ -397,6 +399,10 @@ export class ClosetComponent {
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  scrollToWarning(): void {
+    this._warnHidden?.nativeElement.scrollIntoView();
+  }
+
   setColumns(n: number): void {
     this.columns = n;
     localStorage.setItem('closet.columns', `${n}`);
@@ -485,6 +491,7 @@ export class ClosetComponent {
       this.initializeFromKV(queryParams.get('k')!);
     } else {
       this.initializeFromObj({
+        a: queryParams.get('a') || '',
         r: queryParams.get('r') || '',
         g: queryParams.get('g') || '',
         b: queryParams.get('b') || ''
@@ -542,6 +549,7 @@ export class ClosetComponent {
 
   private updateSelectionHasHidden(): void {
     this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.all[guid]);
+    this.selectionHasUnavailable = this.available ? Object.keys(this.selected.all).some(guid => !this.available![guid]) : false;
     this._changeDetectorRef.markForCheck();
   }
 

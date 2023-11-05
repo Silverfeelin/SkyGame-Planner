@@ -110,9 +110,13 @@
   </div>
 </div>
 
-<div class="sky-card mt" *ngIf="!requesting && selectionHasHidden">
+<div #warnHidden class="sky-card mt" *ngIf="selectionHasUnavailable || (!requesting && selectionHasHidden)">
   <div class="sky-card-body">
-    <div class="container border-warn">
+    <div class="container border-warn" *ngIf="selectionHasUnavailable">
+      <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
+      <span class="menu-label">This selection has items not available in the shared closet.</span>
+    </div>
+    <div class="container border-warn" *ngIf="!requesting && selectionHasHidden" [class.mt]="selectionHasUnavailable">
       <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
       <span class="menu-label">This selection has items hidden in your closet. You might be missing some items.</span>
     </div>
@@ -122,19 +126,25 @@
 <div class="sky-card mt">
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
-    <div class="button-group btns-copy">
-      <!-- Copy link -->
-      <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="_rendering"
-        ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-        <mat-icon class="menu-icon" [class.spin]="_rendering === 1">{{ _rendering === 1 ? 'cached' : 'link' }}</mat-icon>
-        <span class="menu-label">Copy</span>
-      </button>
-      <!-- Copy image-->
-      <button type="button" class="btn-copy btn-copy-image" (click)="copyImage()" [disabled]="_rendering"
-        ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-        <mat-icon class="menu-icon" [class.spin]="_rendering === 2">{{ _rendering === 2 ? 'cached' : 'image' }}</mat-icon>
-        <span class="menu-label">Copy</span>
-      </button>
+    <div class="btns-copy">
+      <div class="button-group d-inline-block">
+        <!-- Copy link -->
+        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="_rendering"
+          ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+          <mat-icon class="menu-icon" [class.spin]="_rendering === 1">{{ _rendering === 1 ? 'cached' : 'link' }}</mat-icon>
+          <span class="menu-label">Copy</span>
+        </button>
+        <!-- Copy image-->
+        <button type="button" class="btn-copy btn-copy-image" (click)="copyImage()" [disabled]="_rendering"
+          ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+          <mat-icon class="menu-icon" [class.spin]="_rendering === 2">{{ _rendering === 2 ? 'cached' : 'image' }}</mat-icon>
+          <span class="menu-label">Copy</span>
+        </button>
+      </div>
+      <!-- Unavailable items -->
+      <span class="warn-unavailable" *ngIf="selectionHasHidden || selectionHasUnavailable" (click)="scrollToWarning()">
+        <mat-icon>priority_high</mat-icon>
+      </span>
     </div>
     <!-- Highlight items -->
     <div class="btn-colors">
