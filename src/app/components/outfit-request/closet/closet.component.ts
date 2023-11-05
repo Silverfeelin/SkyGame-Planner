@@ -24,8 +24,7 @@ const _wGap = 8;
 /** Size of item with gap. */
 const _wBox = _wItem + _wGap;
 /** Alpha for missing items. */
-const _aNotSelected = 0.25;
-const _aNotOwned = 0.05;
+const _aHide = 0.1;
 
 @Component({
   selector: 'app-closet',
@@ -613,8 +612,7 @@ export class ClosetComponent {
     }
 
     const hasAnySelected = Object.keys(this.selected.all).length > 0;
-    const showCloset = !hasAnySelected && this.showMode === 'closet';
-    const alphaHide = (this.requesting || hasAnySelected) ? _aNotSelected : _aNotOwned;
+    const showCloset = this.showMode === 'closet';
 
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
@@ -625,12 +623,15 @@ export class ClosetComponent {
       ctx.fillStyle = '#0006';
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
-      // When a selection is made, draw any other items translucent.
-      if ((this.requesting || hasAnySelected) && !this.selected.all[item.guid]) { ctx.globalAlpha = alphaHide; }
-      // Draw item translucent if hiding IAPs.
-      if (this.hideIap && item.iaps?.length) { ctx.globalAlpha = alphaHide; }
-      // Draw item translucent if not owned.
-      if (!this.requesting && showCloset && this.hidden[item.guid]) { ctx.globalAlpha = alphaHide; }
+      // Hide unselected IAPs.
+      if (this.hideIap && item.iaps?.length && !this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
+      if (this.requesting) {
+        // While requesting hide all unselected items.
+        if (!this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
+      } else {
+        // In closet hide missing items.
+        if (showCloset && this.hidden[item.guid]) { ctx.globalAlpha = _aHide; }
+      }
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
 
