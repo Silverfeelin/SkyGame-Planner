@@ -224,24 +224,31 @@ export class CollageComponent implements AfterViewInit {
 
   copyCollage(): void {
     this._rendering = true;
+    this._changeDetectorRef.markForCheck();
 
-    const doneRendering = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
-    try {
-      const canvas = this.render();
+    // Render the image.
+    const canvas = this.render();
+
+    const doneCopying = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
+    const renderPromise = new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
-        if (!blob) { return doneRendering(); }
-        const item = new ClipboardItem({ 'image/png': blob });
-        navigator.clipboard.write([item]).then(() => {
-          doneRendering();
-          this._ttCopy.open();
-          setTimeout(() => { this._ttCopy.close(); }, 1000);
-        }).catch(error => {
-          console.error('Could not copy image to clipboard: ', error);
-          alert('Copying failed. Please make sure the document is focused.');
-          doneRendering();
-        });
+        if (!blob) { return reject('Could not render collage'); }
+        blob ? resolve(blob) : reject('Failed to render image.');
       });
-    } catch(e) { console.error(e); doneRendering(); }
+    });
+
+    try {
+      const item = new ClipboardItem({ 'image/png': renderPromise });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopy.open();
+        setTimeout(() => { this._ttCopy.close(); }, 1000);
+      }).catch(error => {
+        console.error(error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch(e) { console.error(e); doneCopying(); }
   }
 
   reset(): void {

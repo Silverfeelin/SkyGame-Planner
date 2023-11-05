@@ -130,13 +130,15 @@ export class ClosetComponent {
         this._ttCopyLnk?.open();
         setTimeout(() => this._ttCopyLnk?.close(), 1000);
       }).catch(error  => {
-        console.error('Could not copy link to clipboard: ', error);
+        console.error(error);
         alert('Copying link failed. Please make sure the document is focused.');
       });
       return;
     }
 
     this._rendering = 1;
+    this._changeDetectorRef.markForCheck();
+
     const request = this.serializeModel();
 
     // Add available items from closet.
@@ -178,18 +180,16 @@ export class ClosetComponent {
         this._ttCopyImg?.open();
         setTimeout(() => this._ttCopyImg?.close(), 1000);
       }).catch(error => {
-        console.error('Could not copy image to clipboard: ', error);
+        console.error(error);
         alert('Copying failed. Please make sure the document is focused.');
         doneCopying();
       });
-    } catch (e) {
-      console.error(e);
-      doneCopying();
-    }
+    } catch (e) { console.error(e); doneCopying(); }
   }
 
   copyImage(): void {
     this._rendering = 2;
+    this._changeDetectorRef.markForCheck();
 
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
@@ -263,24 +263,22 @@ export class ClosetComponent {
     const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
     const renderPromise = new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
-        blob ? resolve(blob) : reject('Failed to render image');
+        blob ? resolve(blob) : reject('Failed to render image.');
       });
     });
 
     try {
-      const item = new ClipboardItem({ ['image/png']: renderPromise });
+      const item = new ClipboardItem({ 'image/png': renderPromise });
       navigator.clipboard.write([item]).then(() => {
         doneCopying();
         this._ttCopyImg?.open();
         setTimeout(() => this._ttCopyImg?.close(), 1000);
       }).catch(error => {
-        console.error('Could not copy image to clipboard: ', error);
+        console.error(error);
         alert('Copying failed. Please make sure the document is focused.');
         doneCopying();
       });
-    } catch {
-      doneCopying();
-    }
+    } catch(e) { console.error(e); doneCopying(); }
   }
 
   setSelectMode(mode: SelectMode): void {
