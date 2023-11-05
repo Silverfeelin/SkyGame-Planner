@@ -178,8 +178,8 @@ export class ClosetComponent {
       const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
       navigator.clipboard.write([item]).then(() => {
         doneCopying();
-        this._ttCopyImg?.open();
-        setTimeout(() => this._ttCopyImg?.close(), 1000);
+        this._ttCopyLnk?.open();
+        setTimeout(() => this._ttCopyLnk?.close(), 1000);
       }).catch(error => {
         console.error(error);
         alert('Copying failed. Please make sure the document is focused.');
