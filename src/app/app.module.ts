@@ -55,6 +55,7 @@ import { ClosetComponent } from './components/outfit-request/closet/closet.compo
 import { ItemTypeSelectorComponent } from './components/items/item-type-selector/item-type-selector.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { IconPickerComponent } from './components/util/icon-picker/icon-picker.component';
+import { FirefoxClipboardItemComponent } from './components/util/firefox-clipboard-item/firefox-clipboard-item.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +108,8 @@ import { IconPickerComponent } from './components/util/icon-picker/icon-picker.c
     ClosetComponent,
     ItemTypeSelectorComponent,
     ToolsComponent,
-    IconPickerComponent
+    IconPickerComponent,
+    FirefoxClipboardItemComponent
   ],
   imports: [
     BrowserModule,

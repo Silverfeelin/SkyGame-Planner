@@ -1,0 +1,10 @@
+<div class="sky-card mb" *ngIf="!hasClipboardItem">
+  <div class="sky-card-body">
+    <div class="container">
+      Hey there Firefox user!<br/>
+      As of right now Firefox does not support copying to the clipboard using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ClipboardItem">ClipboardItem API</a>. You can fix this if you're on desktop!<br/><br/>
+
+      In a new tab, navigate to <code>about:config</code>.<br/>Search for and enable <code>dom.events.asyncClipboard.clipboardItem</code>, then refresh this page.
+    </div>
+  </div>
+</div>
