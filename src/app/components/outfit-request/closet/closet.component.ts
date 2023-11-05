@@ -6,7 +6,6 @@ import { DataService } from 'src/app/services/data.service';
 import { ItemSize } from '../../item/item.component';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
-import { resolve } from 'path';
 import { lastValueFrom } from 'rxjs';
 
 interface ISelection { [guid: string]: IItem; }
@@ -25,6 +24,7 @@ const _wGap = 8;
 const _wBox = _wItem + _wGap;
 /** Alpha for missing items. */
 const _aHide = 0.1;
+const _aHalfHide = 0.4;
 
 @Component({
   selector: 'app-closet',
@@ -630,7 +630,7 @@ export class ClosetComponent {
         if (!this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
       } else {
         // In closet hide missing items.
-        if (showCloset && this.hidden[item.guid]) { ctx.globalAlpha = _aHide; }
+        if (showCloset && this.hidden[item.guid]) { ctx.globalAlpha = this.selected.all[item.guid] ? _aHalfHide : _aHide; }
       }
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
