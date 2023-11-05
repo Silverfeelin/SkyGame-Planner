@@ -5,6 +5,8 @@ import { IItem } from 'src/app/interfaces/item.interface';
 import { IconPickerComponent } from '../../util/icon-picker/icon-picker.component';
 
 interface IImage {
+  x: number;
+  y: number;
   panZoom: PanZoom;
   element: HTMLImageElement;
 }
@@ -81,7 +83,7 @@ export class CollageComponent implements AfterViewInit {
         const n = iy * this.blockSize.x.length + ix;
         const el = this._collageImage.get(n)?.nativeElement as HTMLImageElement;
         const p = this.createPanZoom(el);
-        this.images[iy][ix] = { panZoom: p, element: el };
+        this.images[iy][ix] = { x: ix, y: iy, panZoom: p, element: el };
       }
     }
   }
@@ -128,25 +130,6 @@ export class CollageComponent implements AfterViewInit {
     this._changeDetectorRef.detectChanges();
   }
 
-  private bulkPasteNext(): void {
-    if (!this.bulkPaste || this.iPaste == undefined) { return; }
-    let ix = 0; let iy = 0;
-    while (iy < this.collageSize.y) {
-      this.iPaste++;
-      ix = this.iPaste % this.blockSize.x.length;
-      iy = Math.floor(this.iPaste / this.blockSize.x.length);
-      if (ix < this.collageSize.x && iy < this.collageSize.y) { break; }
-    }
-
-    // End of collage.
-    if (iy >= this.collageSize.y) {
-      this.stopPaste();
-      return;
-    }
-
-    this.startPaste(ix, iy, true);
-  }
-
   onPanZoomEnd(): void {
     this.focusPaste();
   }
@@ -175,9 +158,27 @@ export class CollageComponent implements AfterViewInit {
     if (!imgUrl) { return; }
 
     this.files[iy][ix] = imgUrl;
-    //setTimeout(() => { this.copyPrevPanZoom(ix, iy); }, 500);
     if (this.bulkPaste) { this.bulkPasteNext(); }
     else { this.stopPaste(); }
+  }
+
+  private bulkPasteNext(): void {
+    if (!this.bulkPaste || this.iPaste == undefined) { return; }
+    let ix = 0; let iy = 0;
+    while (iy < this.collageSize.y) {
+      this.iPaste++;
+      ix = this.iPaste % this.blockSize.x.length;
+      iy = Math.floor(this.iPaste / this.blockSize.x.length);
+      if (ix < this.collageSize.x && iy < this.collageSize.y) { break; }
+    }
+
+    // End of collage.
+    if (iy >= this.collageSize.y) {
+      this.stopPaste();
+      return;
+    }
+
+    this.startPaste(ix, iy, true);
   }
 
   clearTxt(evt: Event): void{
@@ -187,15 +188,37 @@ export class CollageComponent implements AfterViewInit {
 
   pickFile(ix: number, iy: number): void {
     this.files[iy][ix] = '';
+    let coord: ICoord | undefined = { x: ix, y: iy };
 
     const input = document.createElement('input');
+    // Disabled because of inconsistent file order.
+    //input.multiple = true;
     input.type = 'file';
     input.accept = 'image/*';
     input.onchange = () => {
-      const file = input.files?.item(0);
-      if (!file) { return; }
-      const url  = URL.createObjectURL(file);
-      this.files[iy][ix] = url;
+      const files = input.files?.length ? Array.from(input.files) : [];
+      let i = -1;
+      for (const file of files) {
+        i++;
+
+        // End of collage.
+        if (!coord) { break; }
+        let x = coord.x; let y = coord.y;
+
+        // Load image.
+        setTimeout(() => {
+          try {
+            const url  = URL.createObjectURL(file);
+            this.files[y][x] = url;
+          } catch (e) {
+            console.error(e);
+            this.files[y][x] = '';
+          }
+        }, i * 100);
+
+        coord = this.getNextXY(coord);
+      }
+
       this._changeDetectorRef.markForCheck();
     };
     input.click();
@@ -263,6 +286,20 @@ export class CollageComponent implements AfterViewInit {
     this._changeDetectorRef.markForCheck();
   }
 
+  private getPrevXY(x: number | ICoord, y?: number): ICoord | undefined {
+    const coord = typeof x === 'number' ? { x, y: y! } : x;
+    const newCoord: ICoord = { x: coord.x - 1, y: coord.y };
+    if (newCoord.x < 0) { newCoord.x = this.collageSize.x - 1; newCoord.y--; }
+    return newCoord.y < 0 ? undefined : newCoord;
+  }
+
+  private getNextXY(x: number | ICoord, y?: number): ICoord | undefined {
+    const coord = typeof x === 'number' ? { x, y: y! } : x;
+    const newCoord: ICoord = { x: coord.x + 1, y: coord.y };
+    if (newCoord.x >= this.collageSize.x) { newCoord.x = 0; newCoord.y++; }
+    return newCoord.y >= this.collageSize.y ? undefined : newCoord;
+  }
+
   private createPanZoom(el: HTMLElement): PanZoom {
     return createPanZoom(el, {
       zoomSpeed: 0.05,
@@ -270,28 +307,30 @@ export class CollageComponent implements AfterViewInit {
     });
   }
 
-  private getPrevPanZoom(ix: number, iy: number): PanZoom | undefined {
-    while (ix >= 0 && iy >= 0) {
-      if (--ix < 0) { ix = 4; iy--; }
-      if (iy < 0) { return undefined; }
-      const img = this.images[iy][ix].element;
-      if (img?.naturalWidth > 0) {
-        return this.images[iy][ix].panZoom;
-      }
+  private getPrevImage(ix: number, iy: number): IImage | undefined {
+    let prevCoord = this.getPrevXY(ix, iy);
+    while (prevCoord) {
+      const img = this.images[prevCoord.y][prevCoord.x];
+      if (img?.element?.naturalWidth > 0) { return img; }
+      prevCoord = this.getPrevXY(prevCoord);
     }
     return undefined;
   }
 
   private copyPrevPanZoom(ix: number, iy: number): void {
-    const prev = this.getPrevPanZoom(ix, iy);
-    prev ? this.copyPanZoom(prev, this.images[iy][ix].panZoom) : this.centerPanZoom(this.images[iy][ix]);
+    const prev = this.getPrevImage(ix, iy);
+    const current = this.images[iy][ix];
+    const reuse = prev?.element?.naturalWidth === current.element.naturalWidth && prev?.element?.naturalHeight === current.element.naturalHeight;
+    reuse ? this.copyPanZoom(prev.panZoom, current.panZoom) : this.centerPanZoom(current);
   }
 
+  /** Copies the panzoom transform of another panzoom. */
   private copyPanZoom(from: PanZoom, to: PanZoom): void {
     to.moveTo(from.getTransform().x, from.getTransform().y);
     to.zoomAbs(from.getTransform().x, from.getTransform().y, from.getTransform().scale);
   }
 
+  /** Centers the image with panzoom. */
   private centerPanZoom(image: IImage): void {
     if (!(image.element?.naturalWidth > 0)) { return; }
     const img = image.element;
@@ -303,7 +342,15 @@ export class CollageComponent implements AfterViewInit {
     const pw = bounds?.width ?? this.sizes.previewWidth;
     const ph = bounds?.height ?? this.sizes.previewHeight;
     const fx  = pw / w;
-    panZoom.zoomAbs(-2 * pw, 0, fx * 4);
+
+    // Zoom to fit 1/3rd of image in preview if image is at least 3x larger than preview.
+    const zoomFactor = fx < 0.25 ? 4 : fx < 0.33 ? 3 : 1;
+    const z = fx * zoomFactor;
+
+    const x = (w * z) / 2 - pw / 2;
+    const y = (h * z) / 2 - ph / 2;
+    panZoom.zoomAbs(0, 0, z);
+    panZoom.moveTo(-x, -y);
   }
 
   private render(): HTMLCanvasElement {
