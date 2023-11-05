@@ -48,10 +48,18 @@
         <mat-icon class="menu-icon">attach_money</mat-icon>
         <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
       </button>
-      <button type="button" class="button-danger" (click)="resetSelection()">
-        <mat-icon class="menu-icon">delete_forever</mat-icon>
-        <span class="menu-label">Reset</span>
-      </button>
+      <div class="button-group">
+        <!-- Reset -->
+        <button type="button" class="button-danger" (click)="resetSelection()">
+          <mat-icon class="menu-icon">delete_forever</mat-icon>
+          <span class="menu-label">Reset</span>
+        </button>
+        <!-- Random -->
+        <button type="button" class="button-danger" (click)="randomSelection()" *ngIf="!requesting">
+          <mat-icon class="menu-icon">shuffle</mat-icon>
+          <span class="menu-no-label"></span>
+        </button>
+      </div>
     </div>
     <div class="mt">
       <div class="search">

@@ -316,19 +316,8 @@ export class ClosetComponent {
       this.selected.all[item.guid] = item;
     }
 
+    this.updateUrlFromSelection();
     this.updateSelectionHasHidden();
-
-    const r = this.serializeItems(Object.values(this.selected.r));
-    const g = this.serializeItems(Object.values(this.selected.g));
-    const b = this.serializeItems(Object.values(this.selected.b));
-
-    const url = new URL(location.href);
-    url.searchParams.delete('k');
-    url.searchParams.set('r', r);
-    url.searchParams.set('g', g);
-    url.searchParams.set('b', b);
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
-
     this._changeDetectorRef.markForCheck();
   }
 
@@ -345,16 +334,32 @@ export class ClosetComponent {
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
+  randomSelection(): void {
+    if (!confirm('This will randomly select items from your closet. Are you sure?')) { return; }
+    this.selected = { all: {}, r: {}, g: {}, b: {}};
+    this.selectionHasHidden = false;
+
+    const heldProp = Math.random() < 0.4;
+    for (const type of Object.keys(this.items)) {
+      if (type === ItemType.Held && !heldProp) { continue; }
+      if (type === ItemType.Prop && heldProp) { continue; }
+      const items = this.items[type as string].filter(item => !this.hidden[item.guid]);
+      const item = items[Math.floor(Math.random() * items.length)];
+      if (!item) { continue; }
+      this.selected.r[item.guid] = item;
+      this.selected.all[item.guid] = item;
+    }
+
+    this.updateUrlFromSelection();
+    this.updateSelectionHasHidden();
+    this._changeDetectorRef.markForCheck();
+  }
+
   toggleItemSize(): void {
     this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
     localStorage.setItem('closet.item-size', this.itemSize);
   }
-
-  // toggleHideMissing(): void {
-  //   this.hideMissing = !this.hideMissing;
-  //   localStorage.setItem('closet.hide-missing', this.hideMissing ? '1' : '0');
-  // }
 
   toggleHideUnselected(): void {
     this.hideUnselected = !this.hideUnselected;
@@ -520,6 +525,19 @@ export class ClosetComponent {
     for (const item of b) { this.selected.b[item.guid] = item; this.selected.all[item.guid] = item; }
 
     this.updateSelectionHasHidden();
+  }
+
+  private updateUrlFromSelection(): void {
+    const r = this.serializeItems(Object.values(this.selected.r));
+    const g = this.serializeItems(Object.values(this.selected.g));
+    const b = this.serializeItems(Object.values(this.selected.b));
+
+    const url = new URL(location.href);
+    url.searchParams.delete('k');
+    url.searchParams.set('r', r);
+    url.searchParams.set('g', g);
+    url.searchParams.set('b', b);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   private updateSelectionHasHidden(): void {
