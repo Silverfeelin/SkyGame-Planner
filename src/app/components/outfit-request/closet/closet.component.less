@@ -1,9 +1,12 @@
 @red: #f00;
 @reda: #f006;
+@orange: #f60;
+@orangea: #f606;
+@yellow: #ff0;
 @green: #0f0;
 @greena: #0f06;
-@blue: #00f;
-@bluea: #00f6;
+@blue: #0aa0ff;
+@bluea: #0aa0ff66;
 
 .btn-collage {
   position: absolute;
@@ -11,11 +14,21 @@
   top: 8px;
 }
 
-.btn-colors {
+.color-picker {
   position: absolute;
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.btn-colors {
+  position: absolute;
+  padding: var(--padding-content);
+  background: var(--color-card-solid-background);
+  border-radius: var(--border-radius);
+  border: var(--border-solid);
+  top: 0;
+  right: 0;
   display: flex;
   gap: 8px;
 }
@@ -39,22 +52,27 @@
   z-index: 2;
 }
 
-.btn-color { width: 36px; border: 0; }
-.btn-r { background: @reda; }
-.btn-g { background: @greena; }
-.btn-b { background: @bluea; }
-.btn-r.btn-color-active {
-  background: @red;
-  box-shadow: 0px 0px 5px 2px @red;
+.btn-color {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 2px transparent;
+  mat-icon {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
 }
-.btn-g.btn-color-active {
-  background: @green;
-  box-shadow: 0px 0px 5px 2px @green
-}
-.btn-b.btn-color-active {
-  background: @blue;
-  box-shadow: 0px 0px 5px 2px @blue;
-}
+.btn-r { background: @red; }
+.btn-o { background: @orange; }
+.btn-y { background: @yellow; }
+.btn-g { background: @green; }
+.btn-b { background: @blue; }
+.btn-b-r { border: 2px solid @red; }
+.btn-b-o { border: 2px solid @orange; }
+.btn-b-y { border: 2px solid @yellow; }
+.btn-b-g { border: 2px solid @green; }
+.btn-b-b { border: 2px solid @blue; }
 
 .btn-column-active { text-decoration: underline; }
 
@@ -137,6 +155,8 @@
 .closet-container[data-mode="g"] .closet-item:hover { border-color: @greena; }
 .closet-container[data-mode="b"] .closet-item:hover { border-color: @bluea; }
 .selected-r { border-color: @red !important; }
+.selected-o { border-color: @orange !important; }
+.selected-y { border-color: @yellow !important; }
 .selected-g { border-color: @green !important; }
 .selected-b { border-color: @blue !important; }
 
