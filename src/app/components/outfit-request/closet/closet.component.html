@@ -2,7 +2,7 @@
 
 <div class="sky-card">
   <div class="sky-card-header">
-    <h2 class="h3 mb-0">Sky outfit request</h2>
+    <h2 class="h3 mb-0">{{ requesting ? 'Sky outfit request' : 'Sky closet' }}</h2>
     <a class="button btn-collage" [routerLink]="'/outfit-request/collage'" *ngIf="!requesting">
       <mat-icon class="menu-icon">photo</mat-icon>
       <span class="menu-label">Make collage</span>
@@ -13,58 +13,63 @@
     </a>
   </div>
   <div class="sky-card-body">
-    <!-- Requesting description -->
-    <div class="container" *ngIf="requesting">
-      Select items from the list to create your request. You can then copy a link or image to share your selection.
-    </div>
-    <div class="sky-flex flex-wrap" [class.mt]="requesting">
-      <!-- Display mode. -->
-      <div class="button-group" *ngIf="!requesting">
-        <button type="button" (click)="toggleCloset()">
-          <mat-icon class="menu-icon">checkroom</mat-icon>
-          <span class="menu-label">{{ showMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
+    <div class="container" >
+      <!-- Requesting description -->
+      <p class="mb" *ngIf="requesting">
+        Select items from the list to create your request. You can then copy a link or image to share your selection.
+      </p>
+      <p class="mb" *ngIf="!requesting">
+        If you're trying to create an outfit request, please use the <a href="/outfit-request/request">Outfit Request</a> page instead!
+      </p>
+      <div class="sky-flex flex-wrap">
+        <!-- Display mode. -->
+        <div class="button-group" *ngIf="!requesting">
+          <button type="button" (click)="toggleCloset()">
+            <mat-icon class="menu-icon">checkroom</mat-icon>
+            <span class="menu-label">{{ showMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
+          </button>
+          <button type="button" (click)="modifyCloset()">
+            <mat-icon class="menu-icon">manufacturing</mat-icon>
+            <span class="menu-label">Modify</span>
+          </button>
+        </div>
+        <!-- Hide items not marked. -->
+        <div class="button-group" *ngIf="!requesting">
+          <button type="button" (click)="toggleHideUnselected()">
+            <mat-icon class="menu-icon">filter_alt</mat-icon>
+            <span class="menu-label">{{ hideUnselected ? 'Show all': 'Show highlighted' }}</span>
+          </button>
+        </div>
+        <!-- Toggle item size -->
+        <div class="button-group">
+          <button type="button" (click)="toggleItemSize()">
+            <mat-icon class="menu-icon">zoom_in</mat-icon>
+            <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
+          </button>
+        </div>
+        <!-- Hide items from IAPs. -->
+        <button type="button" (click)="toggleIap()" *ngIf="!requesting">
+          <mat-icon class="menu-icon">attach_money</mat-icon>
+          <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
         </button>
-        <button type="button" (click)="modifyCloset()">
-          <mat-icon class="menu-icon">manufacturing</mat-icon>
-          <span class="menu-label">Modify</span>
-        </button>
+        <div class="button-group">
+          <!-- Reset -->
+          <button type="button" class="button-danger" (click)="resetSelection()">
+            <mat-icon class="menu-icon">delete_forever</mat-icon>
+            <span class="menu-label">Reset</span>
+          </button>
+          <!-- Random -->
+          <button type="button" class="button-danger" (click)="randomSelection()" *ngIf="!requesting">
+            <mat-icon class="menu-icon">shuffle</mat-icon>
+            <span class="menu-no-label"></span>
+          </button>
+        </div>
       </div>
-      <!-- Hide items not marked. -->
-      <div class="button-group" *ngIf="!requesting">
-        <button type="button" (click)="toggleHideUnselected()">
-          <mat-icon class="menu-icon">filter_alt</mat-icon>
-          <span class="menu-label">{{ hideUnselected ? 'Show all': 'Show highlighted' }}</span>
-        </button>
-      </div>
-      <!-- Toggle item size -->
-      <div class="button-group">
-        <button type="button" (click)="toggleItemSize()">
-          <mat-icon class="menu-icon">zoom_in</mat-icon>
-          <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
-        </button>
-      </div>
-      <!-- Hide items from IAPs. -->
-      <button type="button" (click)="toggleIap()" *ngIf="!requesting">
-        <mat-icon class="menu-icon">attach_money</mat-icon>
-        <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
-      </button>
-      <div class="button-group">
-        <!-- Reset -->
-        <button type="button" class="button-danger" (click)="resetSelection()">
-          <mat-icon class="menu-icon">delete_forever</mat-icon>
-          <span class="menu-label">Reset</span>
-        </button>
-        <!-- Random -->
-        <button type="button" class="button-danger" (click)="randomSelection()" *ngIf="!requesting">
-          <mat-icon class="menu-icon">shuffle</mat-icon>
-          <span class="menu-no-label"></span>
-        </button>
-      </div>
-    </div>
-    <div class="mt">
-      <div class="search">
-        <input tabindex="0" #input class="search-input" type="search" (input)="search()" placeholder="Search for items">
-        <mat-icon (click)="selectSearch()">search</mat-icon>
+      <div class="mt">
+        <div class="search">
+          <input tabindex="0" #input class="search-input" type="search" (input)="search()" placeholder="Search for items">
+          <mat-icon (click)="selectSearch()">search</mat-icon>
+        </div>
       </div>
     </div>
     <!-- <hr/>
@@ -142,7 +147,7 @@
         </button>
       </div>
       <!-- Unavailable items -->
-      <span class="warn-unavailable" *ngIf="selectionHasHidden || selectionHasUnavailable" (click)="scrollToWarning()">
+      <span class="warn-unavailable" *ngIf="selectionHasUnavailable || (!requesting && selectionHasHidden)" (click)="scrollToWarning()">
         <mat-icon>priority_high</mat-icon>
       </span>
     </div>
