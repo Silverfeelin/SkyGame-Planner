@@ -2,7 +2,6 @@ import { Component, ViewContainerRef } from '@angular/core'
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
-import { ThemeService } from './services/theme.service';
 import { Router } from '@angular/router';
 import dayjs from 'dayjs';
 import * as utc from 'dayjs/plugin/utc';
@@ -24,14 +23,12 @@ export class AppComponent {
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
-    private readonly _themeService: ThemeService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
     private readonly _viewContainerRef: ViewContainerRef,
     private readonly _router: Router
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });
-    this._themeService.init();
     this.initDisplayDate();
 
     _matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');

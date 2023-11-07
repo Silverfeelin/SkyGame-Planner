@@ -11,7 +11,7 @@
   <div class="sky-card-body scroll-x">
     <div class="container">
       Choose the size of your collage.
-      <div class="grid-size-blocks" data-theme="light">
+      <div class="grid-size-blocks">
         <ng-container *ngFor="let _ of blockSize.y; let iy = index;">
           <ng-container *ngFor="let _ of blockSize.x; let ix = index;">
             <div  class="grid-size-block" [class.block-active]="ix < collageSize.x && iy < collageSize.y" (click)="setCollageSize(ix + 1, iy + 1)">

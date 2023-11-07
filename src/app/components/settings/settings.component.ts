@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import dayjs from 'dayjs';
 import { StorageService } from 'src/app/services/storage.service';
-import { ThemeService } from 'src/app/services/theme.service';
 import { DataService } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
@@ -16,20 +15,16 @@ export class SettingsComponent {
   today = dayjs();
   dateFormat: string;
   dateFormats: Array<string>;
-  currentTheme: string;
-
   wikiNewTab = false;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _settingService: SettingService,
-    private readonly _storageService: StorageService,
-    private readonly _themeService: ThemeService
+    private readonly _storageService: StorageService
   ) {
     this.unlockedCount = this._storageService.unlocked.size;
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
-    this.currentTheme = this._themeService.theme || 'sky';
     this.wikiNewTab = _settingService.wikiNewTab;
   }
 
@@ -114,11 +109,6 @@ export class SettingsComponent {
     this._storageService.saveCol();
     this._dataService.reloadUnlocked();
     this.unlockedCount = 0;
-  }
-
-  setTheme(theme?: string): void {
-    this._themeService.set(theme);
-    this.currentTheme = this._themeService.theme || 'sky';
   }
 
   setDateFormat(format: string): void {
