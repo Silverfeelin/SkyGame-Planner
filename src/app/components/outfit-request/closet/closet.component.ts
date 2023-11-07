@@ -83,6 +83,7 @@ export class ClosetComponent {
 
   // Closet display
   modifyingCloset = false;
+  shouldSync = false;
   hideUnselected = false;
   hideIap = false;
   columns: number;
@@ -115,6 +116,7 @@ export class ClosetComponent {
     this.showMode = localStorage.getItem('closet.show-mode') as ShowMode || 'all';
     this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+    this.shouldSync = localStorage.getItem('closet.sync') === '1';
 
     // Set background for rendering.
     this._bgImg = new Image();
@@ -295,10 +297,17 @@ export class ClosetComponent {
     this._lastLink = undefined;
 
     if (this.modifyingCloset) {
+      // Disable sync when modifying closet.
+      if (this.shouldSync) {
+        if (!confirm('Modifying your closet will disable syncing with your tracked items. Are you sure?')) { return; }
+        this.shouldSync = false;
+        localStorage.setItem('closet.sync', '0');
+      }
+
+      // Toggle item.
       const hide = !this.hidden[item.guid];
       hide ? (this.hidden[item.guid] = true) : (delete this.hidden[item.guid]);
       localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
-
       this.updateSelectionHasHidden();
       return;
     }
@@ -408,24 +417,37 @@ export class ClosetComponent {
     localStorage.setItem('closet.columns', `${n}`);
   }
 
-  updateHiddenFromProgress(): void {
+  toggleSyncUnlocked(): void {
+    const shouldSync = !this.shouldSync;
+    if (shouldSync) {
+      if (Object.keys(this.hidden).length && !confirm('Syncing from your tracked items will overwrite any changes made on this page. Are you sure?')) { return; }
+      this.syncUnlocked();
+    }
+
+    this.shouldSync = shouldSync;
+    localStorage.setItem('closet.sync', shouldSync ? '1' : '0');
+  }
+
+  syncUnlocked(): void {
+    // Get hidden from tracked items.
     const hidden: { [guid: string]: boolean } = {};
-    let i = 0;
     for (const type of Object.keys(this.items)) {
       for (const item of this.items[type as string]) {
-        if (!item.unlocked) { hidden[item.guid] = true; i++; }
+        if (!item.unlocked) { hidden[item.guid] = true; }
       }
     }
 
-    if (!confirm(`This will hide ${i} item(s) from your closet. Are you sure?`)) { return; }
     this.hidden = hidden;
     this._lastLink = undefined;
+    this.updateSelectionHasHidden();
     localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
   }
 
-  resetHidden(): void {
+  resetSync(): void {
     if (!confirm('This will show all items in your closet. Are you sure?')) { return; }
     this.hidden = {};
+    this.shouldSync = false;
+    localStorage.setItem('closet.sync', '0');
     this._lastLink = undefined;
     localStorage.setItem('closet.hidden', JSON.stringify([]));
   }
@@ -488,6 +510,10 @@ export class ClosetComponent {
     // Sort items by order.
     for (const type of this.itemTypes) {
       this.items[type as string].sort((a, b) => (a.order || 99999) - (b.order || 99999));
+    }
+
+    if (this.shouldSync) {
+      this.syncUnlocked();
     }
 
     const queryParams = this._route.snapshot.queryParamMap;

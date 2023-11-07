@@ -86,31 +86,35 @@
   <div class="sky-card-body">
     <div class="container">
       Show items in columns. It is recommended to set this number to match your in-game closet.
-      <div class="button-group">
-        <button type="button" [class.btn-column-active]="columns === 3" (click)="setColumns(3)">3</button>
-        <button type="button" [class.btn-column-active]="columns === 4" (click)="setColumns(4)">4</button>
-        <button type="button" [class.btn-column-active]="columns === 5" (click)="setColumns(5)">5</button>
-        <button type="button" [class.btn-column-active]="columns === 6" (click)="setColumns(6)">6</button>
-        <button type="button" [class.btn-column-active]="columns === 7" (click)="setColumns(7)">7</button>
-        <button type="button" [class.btn-column-active]="columns === 8" (click)="setColumns(8)">8</button>
+      <div class="mt">
+        <div class="button-group">
+          <button type="button" [class.btn-column-active]="columns === 3" (click)="setColumns(3)">3</button>
+          <button type="button" [class.btn-column-active]="columns === 4" (click)="setColumns(4)">4</button>
+          <button type="button" [class.btn-column-active]="columns === 5" (click)="setColumns(5)">5</button>
+          <button type="button" [class.btn-column-active]="columns === 6" (click)="setColumns(6)">6</button>
+          <button type="button" [class.btn-column-active]="columns === 7" (click)="setColumns(7)">7</button>
+          <button type="button" [class.btn-column-active]="columns === 8" (click)="setColumns(8)">8</button>
+        </div>
       </div>
     </div>
     <div class="container mt">
-      <p>
-        Click on any item to hide it from the closet. This way you can have the closet appear as it does in-game.<br/>
-        Note that any highlighted items from shared links will be shown even if they are hidden from your closet. A warning will also indicate you are missing items.
-      </p>
       <p class="mb-0">
-        Because Sky Planner is primarily an item tracker you can use your tracked data to hide items from the closet.<br/>
+        Because Sky Planner is primarily an item tracker you can use your tracked items to keep the closet updated.<br/>
+        You can also manually choose what items to show and hide. Simply click on any item below to hide it from your closet.
       </p>
-      <div class="button-group">
-        <button type="button" (click)="updateHiddenFromProgress()">Update closet</button>
-        <button type="button" (click)="resetHidden()">Reset closet</button>
+      <div class="sky-flex flex-wrap mt">
+        <div class="button-group">
+          <button type="button" (click)="toggleSyncUnlocked()">
+            <mat-icon class="menu-icon">{{ shouldSync ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            <span class="menu-label">Sync closet</span>
+          </button>
+          <button type="button" class="button-danger" (click)="resetSync()">Reset</button>
+        </div>
+        <button type="button" class="" (click)="modifyCloset()">
+          <mat-icon class="menu-icon">done</mat-icon>
+          <span class="menu-label">Done modifying</span>
+        </button>
       </div>
-      <button type="button" class="mt" (click)="modifyCloset()">
-        <mat-icon class="menu-icon">done</mat-icon>
-        <span class="menu-label">Done modifying</span>
-      </button>
     </div>
   </div>
 </div>
@@ -132,7 +136,7 @@
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
     <div class="btns-copy">
-      <div class="button-group d-inline-block">
+      <div class="button-group">
         <!-- Copy link -->
         <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="_rendering"
           ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
@@ -244,10 +248,10 @@
     <ng-container *ngIf="!requesting">
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
-      <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items instead of closet.-->
+      <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items.-->
       <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && showMode === 'closet' && hidden[item.guid]))"
         [class.selected-r]="selected.r[item.guid]" [class.selected-o]="selected.o[item.guid]" [class.selected-y]="selected.y[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
-        [class.closet-hide]="hidden[item.guid] || (hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
+        [class.closet-hide]="hidden[item.guid] || (!modifyingCloset && ((hideIap && item.iaps?.length) || (available && !available[item.guid])))" [attr.data-guid]="item.guid"
         [class.highlight]="searchResults && searchResults[item.guid]"
         [ngbTooltip]="templateItemHover" container="body"
       >
