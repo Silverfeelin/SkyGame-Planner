@@ -45,7 +45,7 @@ export class CollageComponent implements AfterViewInit {
   bulkPaste = false;
   iIconPicker?: ICoord;
 
-  _rendering = false;
+  isRendering = false;
 
   readonly sizes = {
     previewWidth: 192,
@@ -246,13 +246,13 @@ export class CollageComponent implements AfterViewInit {
   }
 
   copyCollage(): void {
-    this._rendering = true;
+    this.isRendering = true;
     this._changeDetectorRef.markForCheck();
 
     // Render the image.
     const canvas = this.render();
 
-    const doneCopying = () => { this._rendering = false; this._changeDetectorRef.detectChanges(); };
+    const doneCopying = () => { this.isRendering = false; this._changeDetectorRef.detectChanges(); };
     const renderPromise = new Promise<Blob>((resolve, reject) => {
       canvas.toBlob(blob => {
         if (!blob) { return reject('Could not render collage'); }

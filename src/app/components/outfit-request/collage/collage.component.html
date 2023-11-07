@@ -25,10 +25,10 @@
         <mat-icon class="menu-icon">save</mat-icon>
         <span class="menu-label">Save collage</span>
       </button>
-      <button type="button" class="button" (click)="copyCollage()" [disabled]="_rendering"
+      <button type="button" class="button" (click)="copyCollage()" [disabled]="isRendering"
         ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show"
       >
-        <mat-icon class="menu-icon" [class.spin]="_rendering">{{ _rendering ? 'cached' : 'image' }}</mat-icon>
+        <mat-icon class="menu-icon" [class.spin]="isRendering">{{ isRendering ? 'cached' : 'image' }}</mat-icon>
         <span class="menu-label">Copy collage</span>
       </button>
       <button type="button" class="button button-danger" (click)="reset()">

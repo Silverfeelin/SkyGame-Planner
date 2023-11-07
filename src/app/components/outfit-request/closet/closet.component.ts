@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
@@ -6,13 +6,14 @@ import { DataService } from 'src/app/services/data.service';
 import { ItemSize } from '../../item/item.component';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
-import { lastValueFrom } from 'rxjs';
+import { SubscriptionLike, lastValueFrom } from 'rxjs';
+import { EventService } from 'src/app/services/event.service';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; o: string; y: string; g: string; b: string; };
 
-type SelectMode = 'r' | 'o' | 'y' | 'g' | 'b';
-type ShowMode = 'all' | 'closet';
+type RequestColor = 'r' | 'o' | 'y' | 'g' | 'b';
+type ClosetMode = 'all' | 'closet';
 
 /** Size of padding from edge. */
 const _wPad = 24;
@@ -32,13 +33,14 @@ const _aHalfHide = 0.4;
   styleUrls: ['./closet.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ClosetComponent {
+export class ClosetComponent implements OnDestroy {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;
   @ViewChild('ttCopyLnk', { static: false }) private readonly _ttCopyLnk?: NgbTooltip;
   @ViewChild('ttCopyImg', { static: false }) private readonly _ttCopyImg?: NgbTooltip;
   @ViewChild('warnHidden', { static: false }) private readonly _warnHidden?: ElementRef<HTMLElement>;
+  @ViewChild('divColorPicker', { static: false }) private readonly _divColorPicker?: ElementRef<HTMLElement>;
 
-  _bgImg: HTMLImageElement;
+  _bgImg!: HTMLImageElement;
 
   // Item type data
   itemTypes: Array<ItemType> = [
@@ -61,14 +63,21 @@ export class ClosetComponent {
     'Prop': 'prop'
   };
 
+  // Background data
+  backgrounds: Array<string> = [
+    'isle', 'trials', 'prairie', 'peaks', 'peaks2', 'forest', 'village', 'wasteland', 'wasteland2', 'reef', 'vault'
+  ];
+
   // Item data
   allItems: Array<IItem> = [];
   itemMap: { [guid: string]: IItem } = {};
   items: { [type: string]: Array<IItem> } = {};
 
-  // Item selection
   showingColorPicker = false;
-  selectMode: SelectMode = 'r';
+  showingBackgroundPicker = false;
+
+  // Item selection
+  color: RequestColor = 'r';
   selected: { all: ISelection, r: ISelection, o: ISelection, y: ISelection, g: ISelection, b: ISelection } = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
   hidden: { [guid: string]: boolean } = {};
   available?: ISelection;
@@ -82,237 +91,64 @@ export class ClosetComponent {
   searchResults?: { [guid: string]: IItem };
 
   // Closet display
+  requesting = false;
   modifyingCloset = false;
   shouldSync = false;
   hideUnselected = false;
   hideIap = false;
   columns: number;
-  requesting = false;
-  showMode: ShowMode = 'all';
-  columnsLabel = 'Show as closet';
+  closetMode: ClosetMode = 'all';
   maxColumns = 8;
   itemSize: ItemSize = 'small';
   itemSizePx = 32;
   typeFolded: { [key: string]: boolean } = {};
+  isRendering: number = 0; // 1 = link, 2 = image
+  lastLink?: string; // Reuse last copy link to prevent unnecessary KV writes.
 
-  // For rendering
-  _itemImgs: { [guid: string]: HTMLImageElement } = {};
-  _rendering: number = 0;
-
-  // For sharing
-  _lastLink?: string;
+  // Internal
+  _clickSub: SubscriptionLike;
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _eventService: EventService,
     private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _http: HttpClient,
     private readonly _route: ActivatedRoute
   ) {
+    this.requesting = location.pathname.endsWith('request');
+
     // Load user preferences.
     this.hideUnselected = localStorage.getItem('closet.hide-unselected') === '1';
     this.hidden = (JSON.parse(localStorage.getItem('closet.hidden') || '[]') as Array<string>).reduce((map, guid) => (map[guid] = true, map), {} as { [key: string]: boolean });
     this.columns = +localStorage.getItem('closet.columns')! || 6;
-    this.showMode = localStorage.getItem('closet.show-mode') as ShowMode || 'all';
+    this.closetMode = localStorage.getItem('closet.show-mode') as ClosetMode || 'all';
     this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
     this.shouldSync = localStorage.getItem('closet.sync') === '1';
 
-    // Set background for rendering.
-    this._bgImg = new Image();
-    this._bgImg.crossOrigin = 'anonymous';
-    const rndImg = ['isle', 'prairie', 'forest', 'village', 'wasteland', 'vault'][Math.floor(Math.random() * 6)];
-    this._bgImg.src = `/assets/game/background/${rndImg}.webp`;
-
-    this.requesting = location.pathname.endsWith('request');
+    this.initializeBackground();
     this.initializeItems();
-  }
 
-  copyLink(): void {
-    if (this._lastLink) {
-      navigator.clipboard.writeText(this._lastLink).then(() => {
-        this._ttCopyLnk?.open();
-        setTimeout(() => this._ttCopyLnk?.close(), 1000);
-      }).catch(error  => {
-        console.error(error);
-        alert('Copying link failed. Please make sure the document is focused.');
-      });
-      return;
-    }
-
-    this._rendering = 1;
-    this._changeDetectorRef.markForCheck();
-
-    const request = this.serializeModel();
-
-    // Add available items from closet.
-    if (!this.requesting) {
-      const items = this.allItems.filter(item => !this.hidden[item.guid]);
-      request.a = this.serializeItems(items);
-    }
-
-    const link = new URL(location.href);
-    link.pathname = this.requesting ? '/outfit-request/closet' : '/outfit-request/request';
-    link.search = '';
-
-    const apiUrl = '/api/outfit-request';
-    const fetchPromise = async () => {
-      let key;
-      try {
-        const keyResult = await lastValueFrom(this._http.post<{key: string}>(apiUrl, request, { responseType: 'json' }));
-        key = keyResult.key;
-      } catch (e) { console.error(e); }
-
-      // Create link
-      if (key) {
-        link.searchParams.set('k', key);
-      } else {
-        link.searchParams.set('r', request.r);
-        link.searchParams.set('o', request.o);
-        link.searchParams.set('y', request.y);
-        link.searchParams.set('g', request.g);
-        link.searchParams.set('b', request.b);
-      }
-
-      this._lastLink = link.href;
-      return new Blob([link.href], { type: 'text/plain' });
-    };
-
-    const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
-    try {
-      const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
-      navigator.clipboard.write([item]).then(() => {
-        doneCopying();
-        this._ttCopyLnk?.open();
-        setTimeout(() => this._ttCopyLnk?.close(), 1000);
-      }).catch(error => {
-        console.error(error);
-        alert('Copying failed. Please make sure the document is focused.');
-        doneCopying();
-      });
-    } catch (e) { console.error(e); doneCopying(); }
-  }
-
-  copyImage(): void {
-    this._rendering = 2;
-    this._changeDetectorRef.markForCheck();
-
-    /* Draw image in sections based roughly on the number of items per closet. */
-    /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
-    const cols = [10, 7, 5, 5];
-    const canvas = document.createElement('canvas');
-
-    const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
-    const cShoes = Math.ceil(this.items[ItemType.Shoes].length / cols[0]);
-    const cMask = Math.ceil(this.items[ItemType.Mask].length / cols[0]);
-    const cFaceAcc = Math.ceil(this.items[ItemType.FaceAccessory].length / cols[0]);
-    const cNecklace = Math.ceil(this.items[ItemType.Necklace].length / cols[0]);
-    const cHair = Math.ceil(this.items[ItemType.Hair].length / cols[1]);
-    const cHat = Math.ceil(this.items[ItemType.Hat].length / cols[1]);
-    const cCape = Math.ceil(this.items[ItemType.Cape].length / cols[2]);
-    const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
-    const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
-    const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
-    const h2 = (cHair + cHat) * _wBox + _wPad * 3 - _wGap;
-    const h3 = cCape * _wBox + _wPad * 2 - _wGap;
-    const h4 = (cHeld + cProp) * _wBox + _wPad * 3 - _wGap;
-    const h = Math.max(h1, h2, h3, h4);
-
-    canvas.width = 5 * _wPad + _wBox * cols.reduce((sum, c) => sum + c, 0) - _wGap;
-    canvas.height = h === h4 ? h + 48 : h === h3 ? h + 24 : h;
-    const ctx = canvas.getContext('2d')!;
-    this.cvsDrawBackground(ctx);
-
-    // Store item images for drawing.
-    const itemDivs = document.querySelectorAll('.closet-item');
-    this._itemImgs = Array.from(itemDivs).reduce((obj, div) => {
-      const img = div.querySelector('.item-icon img') as HTMLImageElement;
-      if (!img) { return obj; }
-      const guid = div.getAttribute('data-guid')!;
-      obj[guid] = img;
-      return obj;
-    }, {} as { [guid: string]: HTMLImageElement });
-
-    // Draw item sections
-    let sx = _wPad, sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Outfit], false);
-    sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Shoes], false);
-    sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Mask], false);
-    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.FaceAccessory], false);
-    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Necklace], false);
-
-    sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hair], false);
-    sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 2 + cHair * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hat], false);
-
-    sx = _wPad * 3 + (cols[0] + cols[1]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[2], this.items[ItemType.Cape], false);
-
-    sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Held], false);
-    sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Prop], false);
-
-    // Draw attribution
-    ctx.fillStyle = '#fff';
-    ctx.font = '24px sans-serif';
-    ctx.textAlign = 'right';
-    ctx.fillText('Icons by contributors of the Sky: Children of the Light Wiki', canvas.width - 8, canvas.height - 8);
-    ctx.fillText('© Sky: Children of the Light', canvas.width - 8, canvas.height - 8 - 24);
-
-    // Save canvas to PNG and write to clipboard
-    const doneCopying = () => { this._rendering = 0; this._changeDetectorRef.detectChanges(); };
-    const renderPromise = new Promise<Blob>((resolve, reject) => {
-      canvas.toBlob(blob => {
-        blob ? resolve(blob) : reject('Failed to render image.');
-      });
+    this._clickSub = _eventService.clicked.subscribe(evt => {
+      this.clickoutColorPicker(evt);
     });
-
-    try {
-      const item = new ClipboardItem({ 'image/png': renderPromise });
-      navigator.clipboard.write([item]).then(() => {
-        doneCopying();
-        this._ttCopyImg?.open();
-        setTimeout(() => this._ttCopyImg?.close(), 1000);
-      }).catch(error => {
-        console.error(error);
-        alert('Copying failed. Please make sure the document is focused.');
-        doneCopying();
-      });
-    } catch(e) { console.error(e); doneCopying(); }
   }
 
-  setSelectMode(mode: SelectMode): void {
-    this.showingColorPicker = false;
-    this.modifyingCloset = false;
-    this.selectMode = mode;
+  ngOnDestroy(): void {
+    this._clickSub.unsubscribe();
   }
 
+  /** Toggles item selection. */
   toggleItem(item: IItem): void {
-    this._lastLink = undefined;
+    this.lastLink = undefined;
 
     if (this.modifyingCloset) {
-      // Disable sync when modifying closet.
-      if (this.shouldSync) {
-        if (!confirm('Modifying your closet will disable syncing with your tracked items. Are you sure?')) { return; }
-        this.shouldSync = false;
-        localStorage.setItem('closet.sync', '0');
-      }
-
-      // Toggle item.
-      const hide = !this.hidden[item.guid];
-      hide ? (this.hidden[item.guid] = true) : (delete this.hidden[item.guid]);
-      localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
-      this.updateSelectionHasHidden();
-      return;
+      return this.toggleItemHidden(item);
     }
 
-    const selected = this.selected[this.selectMode];
+    // Remove item from all selections, then apply it to the current color.
+    const selected = this.selected[this.color];
     const select = !selected[item.guid];
     delete this.selected.all[item.guid];
     delete this.selected.r[item.guid];
@@ -327,11 +163,29 @@ export class ClosetComponent {
     }
 
     this.updateUrlFromSelection();
-    this.updateSelectionHasHidden();
+    this.updateSelectionWarnings();
     this._changeDetectorRef.markForCheck();
   }
 
-  resetSelection(): void {
+  /** Toggles the hidden status of an item when modifying closet. */
+  toggleItemHidden(item: IItem): void {
+    // Disable sync when modifying closet.
+    if (this.shouldSync) {
+      if (!confirm('Modifying your closet will disable syncing with your tracked items. Are you sure?')) { return; }
+      this.shouldSync = false;
+      localStorage.setItem('closet.sync', '0');
+    }
+
+    // Toggle item.
+    const hide = !this.hidden[item.guid];
+    hide ? (this.hidden[item.guid] = true) : (delete this.hidden[item.guid]);
+    localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
+    this.updateSelectionWarnings();
+    return;
+  }
+
+  /** Resets all selected items. */
+  resetSelected(): void {
     if (!confirm('This will remove the color highlights from all items. Are you sure?')) { return; }
     this.selected = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
     this.selectionHasHidden = false;
@@ -342,10 +196,11 @@ export class ClosetComponent {
     url.searchParams.delete('y');
     url.searchParams.delete('g');
     url.searchParams.delete('b');
-    this._lastLink = undefined;
+    this.lastLink = undefined;
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
+  /** Sets a random selection of items. */
   randomSelection(): void {
     if (!confirm('This will randomly select items from your closet. Are you sure?')) { return; }
     this.selected = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
@@ -363,38 +218,43 @@ export class ClosetComponent {
     }
 
     this.updateUrlFromSelection();
-    this.updateSelectionHasHidden();
+    this.updateSelectionWarnings();
     this._changeDetectorRef.markForCheck();
   }
 
+  /** Toggles item size between small and normal. */
   toggleItemSize(): void {
     this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
     localStorage.setItem('closet.item-size', this.itemSize);
   }
 
+  /** Toggles visibility of items that aren't selected. */
   toggleHideUnselected(): void {
     this.hideUnselected = !this.hideUnselected;
     this.typeFolded = {};
     localStorage.setItem('closet.hide-unselected', this.hideUnselected ? '1' : '0');
   }
 
+  /** Toggles visibility of IAP items. */
   toggleIap(): void {
     this.hideIap = !this.hideIap;
     localStorage.setItem('closet.hide-iap', this.hideIap ? '1' : '0');
   }
 
+  /** Toggles between showing own closet or all items. */
   toggleCloset(): void {
-    this.showMode = this.showMode === 'all' ? 'closet' : 'all';
-    if (this.showMode !== 'closet') {
+    this.closetMode = this.closetMode === 'all' ? 'closet' : 'all';
+    if (this.closetMode !== 'closet') {
       this.modifyingCloset = false;
     }
-    localStorage.setItem('closet.show-mode', this.showMode);
+    localStorage.setItem('closet.show-mode', this.closetMode);
   }
 
+  /** Toggles modifying closet mode. */
   modifyCloset(): void {
     this.modifyingCloset = !this.modifyingCloset;
-    this.modifyingCloset && (this.showMode = 'closet');
+    this.modifyingCloset && (this.closetMode = 'closet');
   }
 
   toggleClosetSection(type: ItemType): void {
@@ -417,7 +277,63 @@ export class ClosetComponent {
     localStorage.setItem('closet.columns', `${n}`);
   }
 
-  toggleSyncUnlocked(): void {
+  // #region Background
+
+  private initializeBackground(): void {
+    this._bgImg = new Image();
+    this._bgImg.crossOrigin = 'anonymous';
+    let background = localStorage.getItem('closet.background') || '';
+    this.setBackground(background);
+  }
+
+  showBackgroundPicker(evt: MouseEvent): void {
+    this.showingBackgroundPicker = !this.showingBackgroundPicker;
+    evt.preventDefault();
+    evt.stopPropagation();
+    this._changeDetectorRef.markForCheck();
+  }
+
+  setBackground(background?: string): void {
+    if (background && !this.backgrounds.includes(background)) { background = ''; }
+    localStorage.setItem('closet.background', background || '');
+    if (!background) { background = this.backgrounds[Math.floor(Math.random() * this.backgrounds.length)]; }
+
+    this._bgImg.src = `/assets/game/background/${background}.webp`;
+    this.showingBackgroundPicker = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  // #endregion
+
+  // #region Color
+
+  showColorPicker(evt: MouseEvent): void {
+    this.showingColorPicker = !this.showingColorPicker;
+    evt.preventDefault();
+    evt.stopPropagation();
+    this._changeDetectorRef.markForCheck();
+  }
+
+  clickoutColorPicker(evt: MouseEvent): void {
+    if (!this.showingColorPicker) { return; }
+    const target = evt.target as HTMLElement;
+    if (this._divColorPicker?.nativeElement.contains(target)) { return; }
+    this.showingColorPicker = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  /** Changes the color for selecting items. */
+  setColor(color: RequestColor): void {
+    this.showingColorPicker = false;
+    this.modifyingCloset = false;
+    this.color = color;
+  }
+
+  // #endregion
+
+  // #region Sync
+
+  toggleSync(): void {
     const shouldSync = !this.shouldSync;
     if (shouldSync) {
       if (Object.keys(this.hidden).length && !confirm('Syncing from your tracked items will overwrite any changes made on this page. Are you sure?')) { return; }
@@ -438,8 +354,8 @@ export class ClosetComponent {
     }
 
     this.hidden = hidden;
-    this._lastLink = undefined;
-    this.updateSelectionHasHidden();
+    this.lastLink = undefined;
+    this.updateSelectionWarnings();
     localStorage.setItem('closet.hidden', JSON.stringify(Object.keys(this.hidden)));
   }
 
@@ -448,9 +364,11 @@ export class ClosetComponent {
     this.hidden = {};
     this.shouldSync = false;
     localStorage.setItem('closet.sync', '0');
-    this._lastLink = undefined;
+    this.lastLink = undefined;
     localStorage.setItem('closet.hidden', JSON.stringify([]));
   }
+
+  // #endregion
 
   search(): void {
     this.searchText = this.input.nativeElement.value;
@@ -472,10 +390,32 @@ export class ClosetComponent {
     this.input.nativeElement.select();
   }
 
-  showColorPicker(): void {
-    this.showingColorPicker = !this.showingColorPicker;
+  /** Apply current selection to URL to keep data when refreshing. */
+  private updateUrlFromSelection(): void {
+    const r = this.serializeItems(Object.values(this.selected.r));
+    const o = this.serializeItems(Object.values(this.selected.o));
+    const y = this.serializeItems(Object.values(this.selected.y));
+    const g = this.serializeItems(Object.values(this.selected.g));
+    const b = this.serializeItems(Object.values(this.selected.b));
+
+    const url = new URL(location.href);
+    url.searchParams.delete('k');
+    url.searchParams.set('r', r);
+    url.searchParams.set('o', o);
+    url.searchParams.set('y', y);
+    url.searchParams.set('g', g);
+    url.searchParams.set('b', b);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
+  }
+
+  /** Updates warning indicators */
+  private updateSelectionWarnings(): void {
+    this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.all[guid]);
+    this.selectionHasUnavailable = this.available ? Object.keys(this.selected.all).some(guid => !this.available![guid]) : false;
     this._changeDetectorRef.markForCheck();
   }
+
+  // #region Initialize items
 
   private initializeItems(): void {
     // Unequippable items.
@@ -567,31 +507,12 @@ export class ClosetComponent {
     const b = this.deserializeItems(data.b);
     for (const item of b) { this.selected.b[item.guid] = item; this.selected.all[item.guid] = item; }
 
-    this.updateSelectionHasHidden();
+    this.updateSelectionWarnings();
   }
 
-  private updateUrlFromSelection(): void {
-    const r = this.serializeItems(Object.values(this.selected.r));
-    const o = this.serializeItems(Object.values(this.selected.o));
-    const y = this.serializeItems(Object.values(this.selected.y));
-    const g = this.serializeItems(Object.values(this.selected.g));
-    const b = this.serializeItems(Object.values(this.selected.b));
+  // #endregion
 
-    const url = new URL(location.href);
-    url.searchParams.delete('k');
-    url.searchParams.set('r', r);
-    url.searchParams.set('o', o);
-    url.searchParams.set('y', y);
-    url.searchParams.set('g', g);
-    url.searchParams.set('b', b);
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
-  }
-
-  private updateSelectionHasHidden(): void {
-    this.selectionHasHidden = Object.keys(this.hidden).some(guid => this.selected.all[guid]);
-    this.selectionHasUnavailable = this.available ? Object.keys(this.selected.all).some(guid => !this.available![guid]) : false;
-    this._changeDetectorRef.markForCheck();
-  }
+  // #region Serialization
 
   private serializeModel(): IOutfitRequest {
     return {
@@ -627,7 +548,168 @@ export class ClosetComponent {
     return selected;
   }
 
-  // #region Template canvas helpers
+  // #endregion
+
+  // #region Output
+
+  copyLink(): void {
+    if (this.lastLink) {
+      navigator.clipboard.writeText(this.lastLink).then(() => {
+        this._ttCopyLnk?.open();
+        setTimeout(() => this._ttCopyLnk?.close(), 1000);
+      }).catch(error  => {
+        console.error(error);
+        alert('Copying link failed. Please make sure the document is focused.');
+      });
+      return;
+    }
+
+    this.isRendering = 1;
+    this._changeDetectorRef.markForCheck();
+
+    const request = this.serializeModel();
+
+    // Add available items from closet.
+    if (!this.requesting) {
+      const items = this.allItems.filter(item => !this.hidden[item.guid]);
+      request.a = this.serializeItems(items);
+    }
+
+    const link = new URL(location.href);
+    link.pathname = this.requesting ? '/outfit-request/closet' : '/outfit-request/request';
+    link.search = '';
+
+    const apiUrl = '/api/outfit-request';
+    const fetchPromise = async () => {
+      let key;
+      try {
+        const keyResult = await lastValueFrom(this._http.post<{key: string}>(apiUrl, request, { responseType: 'json' }));
+        key = keyResult.key;
+      } catch (e) { console.error(e); }
+
+      // Create link
+      if (key) {
+        link.searchParams.set('k', key);
+      } else {
+        link.searchParams.set('r', request.r);
+        link.searchParams.set('o', request.o);
+        link.searchParams.set('y', request.y);
+        link.searchParams.set('g', request.g);
+        link.searchParams.set('b', request.b);
+      }
+
+      this.lastLink = link.href;
+      return new Blob([link.href], { type: 'text/plain' });
+    };
+
+    const doneCopying = () => { this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
+    try {
+      const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopyLnk?.open();
+        setTimeout(() => this._ttCopyLnk?.close(), 1000);
+      }).catch(error => {
+        console.error(error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch (e) { console.error(e); doneCopying(); }
+  }
+
+  copyImage(): void {
+    this.isRendering = 2;
+    this._changeDetectorRef.markForCheck();
+
+    /* Draw image in sections based roughly on the number of items per closet. */
+    /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
+    const cols = [10, 7, 5, 5];
+    const canvas = document.createElement('canvas');
+
+    const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
+    const cShoes = Math.ceil(this.items[ItemType.Shoes].length / cols[0]);
+    const cMask = Math.ceil(this.items[ItemType.Mask].length / cols[0]);
+    const cFaceAcc = Math.ceil(this.items[ItemType.FaceAccessory].length / cols[0]);
+    const cNecklace = Math.ceil(this.items[ItemType.Necklace].length / cols[0]);
+    const cHair = Math.ceil(this.items[ItemType.Hair].length / cols[1]);
+    const cHat = Math.ceil(this.items[ItemType.Hat].length / cols[1]);
+    const cCape = Math.ceil(this.items[ItemType.Cape].length / cols[2]);
+    const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
+    const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
+    const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
+    const h2 = (cHair + cHat) * _wBox + _wPad * 3 - _wGap;
+    const h3 = cCape * _wBox + _wPad * 2 - _wGap;
+    const h4 = (cHeld + cProp) * _wBox + _wPad * 3 - _wGap;
+    const h = Math.max(h1, h2, h3, h4);
+
+    canvas.width = 5 * _wPad + _wBox * cols.reduce((sum, c) => sum + c, 0) - _wGap;
+    canvas.height = h === h4 ? h + 48 : h === h3 ? h + 24 : h;
+    const ctx = canvas.getContext('2d')!;
+    this.cvsDrawBackground(ctx);
+
+    // Store item images for drawing.
+    const itemDivs = document.querySelectorAll('.closet-item');
+    const itemImgs = Array.from(itemDivs).reduce((obj, div) => {
+      const img = div.querySelector('.item-icon img') as HTMLImageElement;
+      if (!img) { return obj; }
+      const guid = div.getAttribute('data-guid')!;
+      obj[guid] = img;
+      return obj;
+    }, {} as { [guid: string]: HTMLImageElement });
+
+    // Draw item sections
+    let sx = _wPad, sy = _wPad;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Outfit], itemImgs, false);
+    sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Shoes], itemImgs, false);
+    sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Mask], itemImgs, false);
+    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.FaceAccessory], itemImgs, false);
+    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Necklace], itemImgs, false);
+
+    sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
+    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hair], itemImgs, false);
+    sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 2 + cHair * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hat], itemImgs, false);
+
+    sx = _wPad * 3 + (cols[0] + cols[1]) * _wBox; sy = _wPad;
+    this.cvsDrawSection(ctx, sx, sy, cols[2], this.items[ItemType.Cape], itemImgs, false);
+
+    sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
+    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Held], itemImgs, false);
+    sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Prop], itemImgs, false);
+
+    // Draw attribution
+    ctx.fillStyle = '#fff';
+    ctx.font = '24px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('Icons by contributors of the Sky: Children of the Light Wiki', canvas.width - 8, canvas.height - 8);
+    ctx.fillText('© Sky: Children of the Light', canvas.width - 8, canvas.height - 8 - 24);
+
+    // Save canvas to PNG and write to clipboard
+    const doneCopying = () => { this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
+    const renderPromise = new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob(blob => {
+        blob ? resolve(blob) : reject('Failed to render image.');
+      });
+    });
+
+    try {
+      const item = new ClipboardItem({ 'image/png': renderPromise });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopyImg?.open();
+        setTimeout(() => this._ttCopyImg?.close(), 1000);
+      }).catch(error => {
+        console.error(error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch(e) { console.error(e); doneCopying(); }
+  }
 
   private cvsDrawBackground(ctx: CanvasRenderingContext2D): void {
     const canvas = ctx.canvas;
@@ -653,7 +735,7 @@ export class ClosetComponent {
     ctx.filter = 'none';
   }
 
-  private cvsDrawSection(ctx: CanvasRenderingContext2D, sx: number, sy: number, c: number, items: Array<IItem>, unequip: boolean): void {
+  private cvsDrawSection(ctx: CanvasRenderingContext2D, sx: number, sy: number, c: number, items: Array<IItem>, itemImgs: { [guid: string]: HTMLImageElement }, unequip: boolean): void {
     let x = 0; let y = 0;
     const nextX = () => { if (++x >= c) { x = 0; y++; }};
     const h = Math.ceil(items.length / c);
@@ -680,11 +762,11 @@ export class ClosetComponent {
     }
 
     const hasAnySelected = Object.keys(this.selected.all).length > 0;
-    const showCloset = this.showMode === 'closet';
+    const showCloset = this.closetMode === 'closet';
 
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
-      const img = this._itemImgs[item.guid];
+      const img = itemImgs[item.guid];
       if (!img) { nextX(); continue; }
 
       // Draw item box

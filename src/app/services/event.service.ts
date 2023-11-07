@@ -9,13 +9,18 @@ import { Router } from '@angular/router';
 export class EventService {
   readonly itemToggled = new Subject<IItem>();
   readonly searchReset = new Subject<void>();
+  readonly clicked = new Subject<MouseEvent>();
 
   constructor(
     private readonly _router: Router
   ) {
-    document.addEventListener('keydown', (evt) => {
+    document.addEventListener('keydown', evt => {
       this.onKeyDown(evt);
     });
+
+    document.addEventListener('click', evt => {
+      this.onClick(evt);
+    })
   }
 
   toggleItem(item: IItem): void {
@@ -31,5 +36,9 @@ export class EventService {
         void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });
       }
     }
+  }
+
+  private onClick(evt: MouseEvent): void {
+    this.clicked.next(evt);
   }
 }

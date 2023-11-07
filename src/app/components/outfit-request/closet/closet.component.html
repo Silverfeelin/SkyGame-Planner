@@ -26,7 +26,7 @@
         <div class="button-group" *ngIf="!requesting">
           <button type="button" (click)="toggleCloset()">
             <mat-icon class="menu-icon">checkroom</mat-icon>
-            <span class="menu-label">{{ showMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
+            <span class="menu-label">{{ closetMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
           </button>
           <button type="button" (click)="modifyCloset()">
             <mat-icon class="menu-icon">manufacturing</mat-icon>
@@ -54,7 +54,7 @@
         </button>
         <div class="button-group">
           <!-- Reset -->
-          <button type="button" class="button-danger" (click)="resetSelection()">
+          <button type="button" class="button-danger" (click)="resetSelected()">
             <mat-icon class="menu-icon">delete_forever</mat-icon>
             <span class="menu-label">Reset</span>
           </button>
@@ -104,7 +104,7 @@
       </p>
       <div class="sky-flex flex-wrap mt">
         <div class="button-group">
-          <button type="button" (click)="toggleSyncUnlocked()">
+          <button type="button" (click)="toggleSync()">
             <mat-icon class="menu-icon">{{ shouldSync ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
             <span class="menu-label">Sync closet</span>
           </button>
@@ -133,21 +133,28 @@
 </div>
 
 <div class="sky-card mt">
+  <!-- closet header -->
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
+    <!-- Copy buttons -->
     <div class="btns-copy">
       <div class="button-group">
         <!-- Copy link -->
-        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="_rendering"
+        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering"
           ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-          <mat-icon class="menu-icon" [class.spin]="_rendering === 1">{{ _rendering === 1 ? 'cached' : 'link' }}</mat-icon>
+          <mat-icon class="menu-icon" [class.spin]="isRendering === 1">{{ isRendering === 1 ? 'cached' : 'link' }}</mat-icon>
           <span class="menu-label">Copy</span>
         </button>
         <!-- Copy image-->
-        <button type="button" class="btn-copy btn-copy-image" (click)="copyImage()" [disabled]="_rendering"
+        <button type="button" class="btn-copy btn-copy-image" (click)="copyImage()" [disabled]="isRendering"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-          <mat-icon class="menu-icon" [class.spin]="_rendering === 2">{{ _rendering === 2 ? 'cached' : 'image' }}</mat-icon>
+          <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'image' }}</mat-icon>
           <span class="menu-label">Copy</span>
+        </button>
+        <!-- Change background -->
+        <button type="button" class="" (click)="showBackgroundPicker($event)">
+          <mat-icon class="menu-icon">wallpaper</mat-icon>
+          <span class="menu-no-label"></span>
         </button>
       </div>
       <!-- Unavailable items -->
@@ -155,48 +162,39 @@
         <mat-icon>priority_high</mat-icon>
       </span>
     </div>
-    <!-- Highlight items -->
+    <!-- Highlight colors -->
     <div class="color-picker">
       <div class="btn-color-active">
-        <button type="button" class="btn-color btn-b-r" (click)="showColorPicker()" [class]="{ 'btn-b-r':selectMode==='r', 'btn-b-o':selectMode==='o', 'btn-b-y':selectMode==='y', 'btn-b-g':selectMode==='g', 'btn-b-b':selectMode==='b'}"
+        <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-o':color==='o', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
           ngbTooltip="Change highlight color" container="body" placement="top-right">
           &nbsp;<mat-icon>palette</mat-icon>
         </button>
       </div>
-      <div class="btn-colors" [hidden]="!showingColorPicker">
-        <button type="button" class="btn-color btn-r" (click)="setSelectMode('r')"
+      <div #divColorPicker class="btn-colors" [hidden]="!showingColorPicker">
+        <button type="button" class="btn-color btn-r" (click)="setColor('r')"
           ngbTooltip="Mark items red" container="body" placement="top-right">
         </button>
-        <button type="button" class="btn-color btn-o" (click)="setSelectMode('o')"
+        <button type="button" class="btn-color btn-o" (click)="setColor('o')"
           ngbTooltip="Mark items orange" container="body" placement="top-right">
           &nbsp;
         </button>
-        <button type="button" class="btn-color btn-y" (click)="setSelectMode('y')"
+        <button type="button" class="btn-color btn-y" (click)="setColor('y')"
           ngbTooltip="Mark items yellow" container="body" placement="top-right">
           &nbsp;
         </button>
-        <button type="button" class="btn-color btn-g" (click)="setSelectMode('g')"
+        <button type="button" class="btn-color btn-g" (click)="setColor('g')"
           ngbTooltip="Mark items green" container="body" placement="top-right">
           &nbsp;
         </button>
-        <button type="button" class="btn-color btn-b" (click)="setSelectMode('b')"
+        <button type="button" class="btn-color btn-b" (click)="setColor('b')"
           ngbTooltip="Mark items blue" container="body" placement="top-right">
           &nbsp;
         </button>
       </div>
     </div>
-    <!-- <div class="closet-items-buttons button-group">
-      <button type="button">
-        <mat-icon class="menu-icon">arrow_back</mat-icon>
-        <span class="menu-no-label"></span>
-      </button>
-      <button type="button">
-        <mat-icon class="menu-icon">arrow_forward</mat-icon>
-        <span class="menu-no-label"></span>
-      </button>
-    </div> -->
   </div>
-  <div class="sky-card-body closet-container scroll-x" [attr.data-mode]="selectMode" [attr.data-modifying]="modifyingCloset || undefined" [attr.data-size]="itemSize">
+  <!-- Closet item sections -->
+  <div class="sky-card-body closet-container scroll-x" [attr.data-mode]="color" [attr.data-modifying]="modifyingCloset || undefined" [attr.data-size]="itemSize">
     <div class="closet-grid">
       <div class="closet-grid-section">
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Outfit' }"></ng-container>
@@ -224,6 +222,16 @@
       </div>
     </div>
   </div>
+  <!-- Background picker -->
+  <div #divBackgroundPicker class="background-picker" *ngIf="showingBackgroundPicker">
+    <h3>Choose a background</h3>
+    <mat-icon class="background-picker-close" (click)="showBackgroundPicker($event)">close</mat-icon>
+    <div class="grid grid-3">
+      <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground('')"/>
+      <ng-container *ngFor="let bg of backgrounds">
+        <img [src]="'/assets/game/background/'+bg+'.webp'" class="background-picker-item" (click)="setBackground(bg)"/>
+      </ng-container>
+  </div>
 </div>
 
 <ng-template #templateItemsType let-type="type">
@@ -249,7 +257,7 @@
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
       <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items.-->
-      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && showMode === 'closet' && hidden[item.guid]))"
+      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid]))"
         [class.selected-r]="selected.r[item.guid]" [class.selected-o]="selected.o[item.guid]" [class.selected-y]="selected.y[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
         [class.closet-hide]="hidden[item.guid] || (!modifyingCloset && ((hideIap && item.iaps?.length) || (available && !available[item.guid])))" [attr.data-guid]="item.guid"
         [class.highlight]="searchResults && searchResults[item.guid]"
