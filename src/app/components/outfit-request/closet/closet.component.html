@@ -146,7 +146,7 @@
           <span class="menu-label">Copy</span>
         </button>
         <!-- Copy image-->
-        <button type="button" class="btn-copy btn-copy-image" (click)="copyImage()" [disabled]="isRendering"
+        <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'image' }}</mat-icon>
           <span class="menu-label">Copy</span>
@@ -161,6 +161,21 @@
       <span class="warn-unavailable" *ngIf="selectionHasUnavailable || (!requesting && selectionHasHidden)" (click)="scrollToWarning()">
         <mat-icon>priority_high</mat-icon>
       </span>
+      <!-- Copy image picker -->
+      <div #divCopyImagePicker class="copy-image-picker" *ngIf="showingImagePicker">
+        <button type="button" class="w-100 t-left" (click)="copyImage('closet')">
+          <mat-icon class="menu-icon">image</mat-icon>
+          <span class="menu-label">Copy your closet</span>
+        </button>
+        <button type="button" class="w-100 t-left mt" (click)="copyImage('request')">
+          <mat-icon class="menu-icon">image</mat-icon>
+          <span class="menu-label">Copy request</span>
+        </button>
+        <button type="button" class="w-100 t-left mt" (click)="copyImage('template')">
+          <mat-icon class="menu-icon">image</mat-icon>
+          <span class="menu-label">Copy template</span>
+        </button>
+      </div>
     </div>
     <!-- Highlight colors -->
     <div class="color-picker">

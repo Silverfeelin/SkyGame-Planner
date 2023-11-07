@@ -14,6 +14,7 @@ interface IOutfitRequest { a?: string; r: string; o: string; y: string; g: strin
 
 type RequestColor = 'r' | 'o' | 'y' | 'g' | 'b';
 type ClosetMode = 'all' | 'closet';
+type CopyImageMode = 'request' | 'closet' | 'template';
 
 /** Size of padding from edge. */
 const _wPad = 24;
@@ -39,6 +40,7 @@ export class ClosetComponent implements OnDestroy {
   @ViewChild('ttCopyImg', { static: false }) private readonly _ttCopyImg?: NgbTooltip;
   @ViewChild('warnHidden', { static: false }) private readonly _warnHidden?: ElementRef<HTMLElement>;
   @ViewChild('divColorPicker', { static: false }) private readonly _divColorPicker?: ElementRef<HTMLElement>;
+  @ViewChild('divCopyImagePicker', { static: false }) private readonly _divCopyImagePicker?: ElementRef<HTMLElement>;
 
   _bgImg!: HTMLImageElement;
 
@@ -75,6 +77,7 @@ export class ClosetComponent implements OnDestroy {
 
   showingColorPicker = false;
   showingBackgroundPicker = false;
+  showingImagePicker = false;
 
   // Item selection
   color: RequestColor = 'r';
@@ -132,6 +135,7 @@ export class ClosetComponent implements OnDestroy {
 
     this._clickSub = _eventService.clicked.subscribe(evt => {
       this.clickoutColorPicker(evt);
+      this.clickoutCopyImagePicker(evt);
     });
   }
 
@@ -617,10 +621,36 @@ export class ClosetComponent implements OnDestroy {
     } catch (e) { console.error(e); doneCopying(); }
   }
 
-  copyImage(): void {
+  showCopyImagePicker(evt: MouseEvent): void {
+    // When requesting always copy image as request.
+    if (this.requesting) { this.copyImage('request'); return; }
+
+    // When in closet, show copy options.
+    this.showingImagePicker = !this.showingImagePicker;
+    evt.preventDefault();
+    evt.stopPropagation();
+    this._changeDetectorRef.markForCheck();
+  }
+
+  clickoutCopyImagePicker(evt: MouseEvent): void {
+    if (!this.showingImagePicker) { return; }
+    const target = evt.target as HTMLElement;
+    if (this._divCopyImagePicker?.nativeElement.contains(target)) { return; }
+    this.showingImagePicker = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  copyImage(mode: CopyImageMode): void {
+    this.showingImagePicker = false;
     this.isRendering = 2;
     this._changeDetectorRef.markForCheck();
 
+    setTimeout(() => {
+      this.renderImage(mode);
+    });
+  }
+
+  private renderImage(mode: CopyImageMode): void {
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
     const cols = [10, 7, 5, 5];
@@ -659,28 +689,28 @@ export class ClosetComponent implements OnDestroy {
 
     // Draw item sections
     let sx = _wPad, sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Outfit], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Outfit], itemImgs, false);
     sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Shoes], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Shoes], itemImgs, false);
     sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Mask], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Mask], itemImgs, false);
     sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.FaceAccessory], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.FaceAccessory], itemImgs, false);
     sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], this.items[ItemType.Necklace], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Necklace], itemImgs, false);
 
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hair], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hair], itemImgs, false);
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 2 + cHair * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], this.items[ItemType.Hat], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hat], itemImgs, false);
 
     sx = _wPad * 3 + (cols[0] + cols[1]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[2], this.items[ItemType.Cape], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[2], mode, this.items[ItemType.Cape], itemImgs, false);
 
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Held], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Held], itemImgs, false);
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], this.items[ItemType.Prop], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Prop], itemImgs, false);
 
     // Draw attribution
     ctx.fillStyle = '#fff';
@@ -713,7 +743,7 @@ export class ClosetComponent implements OnDestroy {
 
   private cvsDrawBackground(ctx: CanvasRenderingContext2D): void {
     const canvas = ctx.canvas;
-    ctx.filter = 'blur(4px) brightness(0.8)';
+    ctx.filter = 'blur(4px) brightness(0.6)';
 
     const imgAspectRatio = this._bgImg.naturalWidth / this._bgImg.naturalHeight;
     const canvasAspectRatio = canvas.width / canvas.height;
@@ -735,7 +765,7 @@ export class ClosetComponent implements OnDestroy {
     ctx.filter = 'none';
   }
 
-  private cvsDrawSection(ctx: CanvasRenderingContext2D, sx: number, sy: number, c: number, items: Array<IItem>, itemImgs: { [guid: string]: HTMLImageElement }, unequip: boolean): void {
+  private cvsDrawSection(ctx: CanvasRenderingContext2D, sx: number, sy: number, c: number, mode: CopyImageMode, items: Array<IItem>, itemImgs: { [guid: string]: HTMLImageElement }, unequip: boolean): void {
     let x = 0; let y = 0;
     const nextX = () => { if (++x >= c) { x = 0; y++; }};
     const h = Math.ceil(items.length / c);
@@ -761,9 +791,7 @@ export class ClosetComponent implements OnDestroy {
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.stroke();
     }
 
-    const hasAnySelected = Object.keys(this.selected.all).length > 0;
-    const showCloset = this.closetMode === 'closet';
-
+    const showingOwnItems = this.closetMode === 'closet';
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
       const img = itemImgs[item.guid];
@@ -773,15 +801,16 @@ export class ClosetComponent implements OnDestroy {
       ctx.fillStyle = '#0006';
       ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
 
-      // Hide unselected IAPs.
-      if (this.hideIap && item.iaps?.length && !this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
-      if (this.requesting) {
+      // For template show everything.
+      if (mode !== 'template') {
+        // Hide IAPs.
+        if (this.hideIap && item.iaps?.length && !this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
         // While requesting hide all unselected items.
-        if (!this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
-      } else {
-        // In closet hide missing items.
-        if (showCloset && this.hidden[item.guid]) { ctx.globalAlpha = this.selected.all[item.guid] ? _aHalfHide : _aHide; }
+        if (mode === 'request' && !this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
+        // For closet hide items not owned.
+        if (mode === 'closet' && this.hidden[item.guid]) { ctx.globalAlpha = this.selected.all[item.guid] ? _aHalfHide : _aHide; }
       }
+
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
       ctx.globalAlpha = 1;
 
