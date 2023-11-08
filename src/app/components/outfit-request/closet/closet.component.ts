@@ -129,6 +129,7 @@ export class ClosetComponent implements OnDestroy {
     this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
     this.shouldSync = localStorage.getItem('closet.sync') === '1';
+    // Don't save hide IAP. Conflicts with other visibility code.
 
     this.initializeBackground();
     this.initializeItems();
@@ -214,7 +215,11 @@ export class ClosetComponent implements OnDestroy {
     for (const type of Object.keys(this.items)) {
       if (type === ItemType.Held && !heldProp) { continue; }
       if (type === ItemType.Prop && heldProp) { continue; }
-      const items = this.items[type as string].filter(item => !this.hidden[item.guid]);
+      let items = this.items[type as string];
+      if (!this.requesting) { items = items.filter(item => !this.hidden[item.guid]); }
+      if (this.available) { items = items.filter(item => this.available![item.guid]); }
+      if (this.hideIap) { items = items.filter(item => !item.iaps?.length); }
+
       const item = items[Math.floor(Math.random() * items.length)];
       if (!item) { continue; }
       this.selected.r[item.guid] = item;
