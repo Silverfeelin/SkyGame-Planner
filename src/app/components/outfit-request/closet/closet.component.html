@@ -3,14 +3,26 @@
 <div class="sky-card">
   <div class="sky-card-header">
     <h2 class="h3 mb-0">{{ requesting ? 'Sky outfit request' : 'Sky closet' }}</h2>
-    <a class="button btn-collage" [routerLink]="'/outfit-request/collage'" *ngIf="!requesting">
-      <mat-icon class="menu-icon">photo</mat-icon>
-      <span class="menu-label">Make collage</span>
-    </a>
-    <a class="button btn-collage" href="/" *ngIf="requesting">
-      <mat-icon class="menu-icon">home</mat-icon>
-      <span class="menu-label">Home</span>
-    </a>
+    <div class="btns-top" *ngIf="!requesting">
+      <a class="button" [routerLink]="'/outfit-request/collage'">
+        <mat-icon class="menu-icon">photo</mat-icon>
+        <span class="menu-label">Make collage</span>
+      </a>
+      <a class="button" href="/outfit-request/request">
+        <mat-icon class="menu-icon">add</mat-icon>
+        <span class="menu-label">Create request</span>
+      </a>
+    </div>
+    <div class="btns-top" *ngIf="requesting">
+      <a class="button" href="/outfit-request/closet">
+        <mat-icon class="menu-icon">checkroom</mat-icon>
+        <span class="menu-label">Go to closet</span>
+      </a>
+      <a class="button" href="/">
+        <mat-icon class="menu-icon">home</mat-icon>
+        <span class="menu-label">Home</span>
+      </a>
+    </div>
   </div>
   <div class="sky-card-body">
     <div class="container" >
