@@ -199,15 +199,6 @@
   top: 4px;
 }
 
-.closet-item {
-  display: inline-block;
-  padding: 1px;
-  border-radius: var(--border-radius);
-  background: var(--color-background);
-  border: 3px solid transparent;
-  border-width: 3px !important;
-}
-
 .item-none {
   width: var(--item-size);
   height: var(--item-size);
@@ -223,7 +214,16 @@
   .item-none { width: var(--item-size-small); height: var(--item-size-small); }
 }
 
-.closet-item { cursor: pointer; }
+.closet-item {
+  display: inline-block;
+  padding: 1px;
+  border-radius: var(--border-radius);
+  background: var(--color-background);
+  border: 3px solid transparent;
+  border-width: 3px !important;
+  cursor: pointer;
+  vertical-align: top;
+}
 
 .closet-container[data-mode="r"] .closet-item:hover { border-color: @reda; }
 .closet-container[data-mode="g"] .closet-item:hover { border-color: @greena; }

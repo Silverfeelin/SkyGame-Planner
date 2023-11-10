@@ -27,9 +27,29 @@
       "id": 3,
       "guid": "QmNo-bmeLi",
       "type": "Hair",
-      "name": "Base Hair",
+      "name": "Base Hair 1",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_default.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Hair02-Default.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "id": 1951,
+      "guid": "fgx077j-05",
+      "type": "Hair",
+      "name": "Base Hair 2",
+      "icon": "/assets/game/items/hair2.webp",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
+      "unlocked": true,
+      "order": 1
+    },
+    {
+      "id": 1952,
+      "guid": "3YCGoFkIsG",
+      "type": "Hair",
+      "name": "Base Hair 3",
+      "icon": "/assets/game/items/hair3.webp",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
       "unlocked": true,
       "order": 1
