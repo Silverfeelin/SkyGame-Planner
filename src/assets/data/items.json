@@ -40,6 +40,7 @@
       "type": "Hair",
       "name": "Base Hair 2",
       "icon": "/assets/game/items/hair2.webp",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Hair-Base_2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
       "unlocked": true,
       "order": 1
@@ -50,6 +51,7 @@
       "type": "Hair",
       "name": "Base Hair 3",
       "icon": "/assets/game/items/hair3.webp",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Hair-Base_3.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
       "unlocked": true,
       "order": 1
