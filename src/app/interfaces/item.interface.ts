@@ -24,6 +24,8 @@ export interface IItem extends IGuid {
 
   /** Emote level. */
   level?: number;
+  /** Music sheet */
+  sheet?: string;
 
   /// References ///
 

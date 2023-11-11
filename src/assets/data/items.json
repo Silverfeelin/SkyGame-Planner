@@ -810,8 +810,9 @@
       "guid": "EhvbJDQHCw",
       "type": "Music",
       "name": "Music Sheet 1",
-      "sheet": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 1
     },
     {
       "id": 91,
@@ -1634,8 +1635,9 @@
       "guid": "I5c5IPkoWK",
       "type": "Music",
       "name": "Music Sheet 2",
-      "sheet": 2,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 2
     },
     // #endregion
     // #region Valley
@@ -1833,8 +1835,9 @@
       "guid": "-ax0YjoCqc",
       "type": "Music",
       "name": "Music Sheet 3",
-      "sheet": 3,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 3
     },
     // Backflipping Champion
     {
@@ -4862,8 +4865,9 @@
       "guid": "uVFQgZBbyy",
       "type": "Music",
       "name": "Music Sheet 32",
-      "sheet": 32,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "32",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 32
     },
     {
       "id": 569,
@@ -4886,8 +4890,9 @@
       "guid": "xed4G-_mSE",
       "type": "Music",
       "name": "Music Sheet 34",
-      "sheet": 34,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "34",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 34
     },
     {
       "id": 572,
@@ -5706,8 +5711,9 @@
       "guid": "kWs-MLO3ZE",
       "type": "Music",
       "name": "Music Sheet 7",
-      "sheet": 7,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "7",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 7
     },
     {
       "id": 670,
@@ -5886,8 +5892,9 @@
       "guid": "_hk1ya3nj0",
       "type": "Music",
       "name": "Music Sheet 8",
-      "sheet": 8,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "8",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 8
     },
     {
       "id": 691,
@@ -6236,8 +6243,9 @@
       "guid": "4sdZPgk41b",
       "type": "Music",
       "name": "Music Sheet 9",
-      "sheet": 9,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "9",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 9
     },
     {
       "id": 732,
@@ -6422,8 +6430,9 @@
       "guid": "NqdFQpeUSh",
       "type": "Music",
       "name": "Music Sheet 10",
-      "sheet": 10,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "10",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 10
     },
     {
       "id": 754,
@@ -6903,8 +6912,9 @@
       "guid": "eXcIcaFA0k",
       "type": "Music",
       "name": "Music Sheet 11",
-      "sheet": 11,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "11",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 11
     },
     {
       "id": 811,
@@ -7117,8 +7127,9 @@
       "guid": "7Ul11Zqefz",
       "type": "Music",
       "name": "Music Sheet 12",
-      "sheet": 12,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "12",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 12
     },
     {
       "id": 837,
@@ -7271,8 +7282,9 @@
       "guid": "ixu-bQFMqR",
       "type": "Music",
       "name": "Music Sheet 4",
-      "sheet": 4,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "4",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 4
     },
     {
       "id": 855,
@@ -7380,8 +7392,9 @@
       "guid": "4XuHymnqlr",
       "type": "Music",
       "name": "Music Sheet 5",
-      "sheet": 5,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 5
     },
     {
       "id": 868,
@@ -7446,8 +7459,9 @@
       "guid": "GEC1VNDUG2",
       "type": "Music",
       "name": "Music Sheet 6",
-      "sheet": 6,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "6",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 6
     },
     {
       "id": 876,
@@ -8394,8 +8408,9 @@
       "guid": "G6L9jA7zsg",
       "type": "Music",
       "name": "Music Sheet 13",
-      "sheet": 13,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "13",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 13
     },
     {
       "id": 988,
@@ -8472,8 +8487,9 @@
       "guid": "jx_1R13Z_n",
       "type": "Music",
       "name": "Music Sheet 14",
-      "sheet": 14,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "14",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 14
     },
     {
       "id": 997,
@@ -8569,8 +8585,9 @@
       "guid": "tCq4FrOkVn",
       "type": "Music",
       "name": "Music Sheet 15",
-      "sheet": 15,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "15",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 15
     },
     {
       "id": 1009,
@@ -9235,8 +9252,9 @@
       "guid": "cCVggJ8g_b",
       "type": "Music",
       "name": "Music Sheet 16",
-      "sheet": 16,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "16",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 16
     },
     {
       "id": 1087,
@@ -9490,8 +9508,9 @@
       "guid": "lKskRU-rAW",
       "type": "Music",
       "name": "Music Sheet 17",
-      "sheet": 17,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "17",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 17
     },
     {
       "id": 1117,
@@ -9595,8 +9614,9 @@
       "guid": "s_79maNypQ",
       "type": "Music",
       "name": "Music Sheet 19",
-      "sheet": 19,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "19",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 19
     },
     {
       "id": 1129,
@@ -9779,8 +9799,9 @@
       "guid": "P0s-2sxeCo",
       "type": "Music",
       "name": "Music Sheet 18",
-      "sheet": 18,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "18",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 18
     },
     {
       "id": 1150,
@@ -10257,8 +10278,9 @@
       "guid": "gEKj_Dz9vX",
       "type": "Music",
       "name": "Music Sheet 21",
-      "sheet": 21,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "21",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 21
     },
     {
       "id": 1206,
@@ -10598,8 +10620,9 @@
       "guid": "2DIgMTKaK6",
       "type": "Music",
       "name": "Music Sheet 20",
-      "sheet": 20,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "20",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 20
     },
     {
       "id": 1246,
@@ -10774,8 +10797,9 @@
       "guid": "IlbDThInaP",
       "type": "Music",
       "name": "Music Sheet 22",
-      "sheet": 22,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "22",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 22
     },
     {
       "id": 1267,
@@ -10998,8 +11022,9 @@
       "guid": "JygPyVo177",
       "type": "Music",
       "name": "Music Sheet 23",
-      "sheet": 23,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "23",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 23
     },
     {
       "id": 1293,
@@ -11373,8 +11398,9 @@
       "guid": "ygAEEh8bZ5",
       "type": "Music",
       "name": "Music Sheet 24",
-      "sheet": 24,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "24",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 24
     },
     {
       "id": 1336,
@@ -11601,8 +11627,9 @@
       "guid": "sTi8F25qWL",
       "type": "Music",
       "name": "Music Sheet 25",
-      "sheet": 25,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "25",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 25
     },
     {
       "id": 1363,
@@ -11926,8 +11953,9 @@
       "guid": "_FVDOa59ap",
       "type": "Music",
       "name": "Music Sheet 27",
-      "sheet": 27,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "27",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 27
     },
     {
       "id": 1400,
@@ -12027,8 +12055,9 @@
       "guid": "a4LXqflNKy",
       "type": "Music",
       "name": "Music Sheet 26",
-      "sheet": 26,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "26",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 26
     },
     {
       "id": 1412,
@@ -12161,8 +12190,9 @@
       "guid": "LE-qwy-wie",
       "type": "Music",
       "name": "Music Sheet 29",
-      "sheet": 29,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "29",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 29
     },
     {
       "id": 1428,
@@ -12462,8 +12492,9 @@
       "guid": "Gv945yQObD",
       "type": "Music",
       "name": "Music Sheet 28",
-      "sheet": 28,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "28",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 28
     },
     {
       "id": 1463,
@@ -12592,8 +12623,9 @@
       "guid": "SL_uFHTqjm",
       "type": "Music",
       "name": "Music Sheet 31",
-      "sheet": 31,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "31",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 31
     },
     {
       "id": 1478,
@@ -12700,8 +12732,9 @@
       "guid": "ORKBuwdSG2",
       "type": "Music",
       "name": "Music Sheet 30",
-      "sheet": 30,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "30",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 30
     },
     {
       "id": 1491,
@@ -12879,8 +12912,9 @@
       "guid": "u3nAG8YXCu",
       "type": "Music",
       "name": "Music Sheet 36",
-      "sheet": 36,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "36",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 36
     },
     {
       "id": 1512,
@@ -13098,8 +13132,9 @@
       "guid": "l29ByRmu3Z",
       "type": "Music",
       "name": "Music Sheet 35",
-      "sheet": 35,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "35",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 35
     },
     {
       "id": 1537,
@@ -13175,8 +13210,9 @@
       "guid": "HG2o6PBbZx",
       "type": "Music",
       "name": "Music Sheet 33",
-      "sheet": 33,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "33",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 33
     },
     {
       "id": 1546,
@@ -14272,8 +14308,9 @@
       "guid": "1T0D06zFUX",
       "type": "Music",
       "name": "Music Sheet 37",
-      "sheet": 37,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "37",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 37
     },
     {
       "id": 1670,
@@ -14620,8 +14657,9 @@
       "guid": "r7n2STEeMu",
       "type": "Music",
       "name": "Music Sheet 38",
-      "sheet": 38,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "38",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 38
     },
     {
       "id": 1710,
@@ -15657,7 +15695,9 @@
       "guid": "9jMnZ23AYP",
       "type": "Music",
       "name": "Music Sheet #E2",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "E2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 202
     },
     {
       "id": 1830,
@@ -16233,7 +16273,9 @@
       "guid": "Gsl445SG4s",
       "type": "Music",
       "name": "Music Sheet #E1",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "E1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 201
     },
     {
       "id": 1891,
@@ -16571,28 +16613,36 @@
       "guid": "SrABR87rf4",
       "type": "Music",
       "name": "Music Sheet #HH1",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "HH1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 102
     },
     {
       "id": 1926,
       "guid": "Mh5ipZClSq",
       "type": "Music",
       "name": "Music Sheet #HH2",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "HH2",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 103
     },
     {
       "id": 1927,
       "guid": "WDyyhzD1Dk",
       "type": "Music",
       "name": "Music Sheet #HH3",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "HH3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 104
     },
     {
       "id": 1928,
       "guid": "MFDYVKkfuf",
       "type": "Music",
       "name": "Music Sheet #HH4",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "HH4",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 105
     },
     {
       "id": 1929,
@@ -16629,7 +16679,9 @@
       "guid": "pUCJ7_2QWR",
       "type": "Music",
       "name": "Music Sheet #HH5",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
+      "sheet": "HH5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "order": 101
     },
     {
       "id": 1933,

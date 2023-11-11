@@ -38,6 +38,26 @@ export class ItemUnlockComponent {
       if (type === ItemType.Instrument) { type = ItemType.Held; }
       this.typeItems[type].push(item);
     });
+
+    for (const type in ItemType) {
+      const items = this.typeItems[type];
+      if (type === ItemType.Emote) {
+        const levelMap = new Map<string, Array<IItem>>();
+        const levels = items.filter(v => v.level === 1).sort((a, b) => (a.order ?? 99999) - (b.order ?? 99999)).map(v => {
+          const arr = [v];
+          levelMap.set(v.name, arr);
+          return arr;
+        });
+        items.forEach(item => {
+          if (item.level === 1) { return; }
+          levelMap.get(item.name)?.push(item);
+        });
+
+        this.typeItems[type] = levels.flat();
+      } else {
+        items.sort((a, b) => (a.order ?? 99999) - (b.order ?? 99999));
+      }
+    }
   }
 
   // #region Unlocking
