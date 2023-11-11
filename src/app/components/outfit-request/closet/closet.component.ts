@@ -163,6 +163,7 @@ export class ClosetComponent implements OnDestroy {
       const select = !selected[item.guid];
       if (select) {
         selected[item.guid] = item;
+        this.selected.all[item.guid] = item;
       } else {
         delete selected[item.guid];
         if (!this.selected.r[item.guid] && !this.selected.y[item.guid] && !this.selected.g[item.guid] && !this.selected.b[item.guid]) {
