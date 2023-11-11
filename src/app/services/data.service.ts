@@ -365,6 +365,7 @@ export class DataService {
   private initializeItems(): void {
     this.itemConfig.items.forEach(item => {
       item.unlocked ||= this._storageService.unlocked.has(item.guid);
+      if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }
       item.order ??= 999999;
     });
   }
@@ -427,7 +428,7 @@ export class DataService {
 
   reloadUnlocked(): void {
     this.itemConfig.items.forEach(item => {
-      item.unlocked = this._storageService.unlocked.has(item.guid);
+      item.unlocked = this._storageService.unlocked.has(item.guid) || item.autoUnlocked;
     });
     this.nodeConfig.items.forEach(node => {
       node.unlocked = this._storageService.unlocked.has(node.guid);

@@ -1,0 +1,29 @@
+.items-grid {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: var(--padding-content-half);
+  gap: var(--padding-content-half);
+}
+
+.item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+}
+
+.item-inner {
+  position: relative;
+}
+
+.unlocked {
+  background: var(--color-unlock-check-background);
+}
+
+.unlock-check {
+  color: var(--color-unlock-check);
+  opacity: 1;
+}

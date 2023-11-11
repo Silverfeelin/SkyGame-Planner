@@ -27,6 +27,8 @@ import { ChildrenOfLightComponent } from './components/children-of-light/childre
 import { CollageComponent } from './components/outfit-request/collage/collage.component';
 import { ClosetComponent } from './components/outfit-request/closet/closet.component';
 import { ToolsComponent } from './components/tools/tools.component';
+import { ItemFieldGuideComponent } from './components/item-field-guide/item-field-guide.component';
+import { ItemUnlockComponent } from './components/item-unlock/item-unlock.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -38,6 +40,8 @@ const routes: Routes = [
   { path: 'event/:guid', component: EventComponent, title: TitleResolver },
   { path: 'event-instance/:guid', component: EventInstanceComponent, title: EventInstanceTitleResolver },
   { path: 'item', component: ItemsComponent, title: title('Items') },
+  { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
+  { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
   { path: 'realm', component: RealmsComponent, title: title('Realms') },
   { path: 'realm/:guid', component: RealmComponent, title: TitleResolver },
   { path: 'season', component: SeasonsComponent, title: title('Seasons') },

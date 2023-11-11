@@ -9,7 +9,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Icon_pants_default.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Legs01-Default.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Outfits#Base_Outfit" },
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -20,7 +20,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_default.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Mask01-no_mask.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Masks#Base_Mask" },
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -31,7 +31,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_hair_default.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Hair02-Default.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -42,7 +42,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Base-Hair-2-Ray.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Hair-Base_2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -53,7 +53,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Base-Hair-3-Ray.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Hair-Base_3.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -64,7 +64,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_cape_brown-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Cape_brown_2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Capes#Base_Cape" },
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -74,7 +74,7 @@
       "name": "Base Stance",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Expressions#Stances" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Stance_basic_stand.png",
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -84,7 +84,7 @@
       "name": "Base Call",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Expressions#Base_Call" },
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Voice_basic_call.png",
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     {
@@ -95,7 +95,7 @@
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Menus_and_Controls#Sit" },
       "level": 1,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Emote-basic_sit.png",
-      "unlocked": true,
+      "autoUnlocked": true,
       "order": 1
     },
     // #endregion

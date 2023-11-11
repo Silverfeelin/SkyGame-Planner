@@ -44,5 +44,9 @@ Thumbs.db
 # Wrangler
 /.wrangler
 
+# Diagrams
+/diagrams/*.bkp
+/diagrams/*.dtmp
+
 # Other
 /scripts

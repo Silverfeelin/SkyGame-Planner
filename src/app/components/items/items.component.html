@@ -2,6 +2,22 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Items</h1>
   </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <a class="container" [routerLink]="'/item/field-guide'">
+        <mat-icon class="menu-icon">photo_library</mat-icon>
+        <span class="menu-label">
+          Field guide
+        </span>
+      </a>
+      <a class="container" [routerLink]="'/item/unlock'">
+        <mat-icon class="menu-icon">lock_open</mat-icon>
+        <span class="menu-label">
+          Quick unlock
+        </span>
+      </a>
+    </div>
+  </div>
 </div>
 
 <!-- Categories -->
@@ -66,43 +82,16 @@
         <a class="item-icon item-icon-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
           <app-item [item]="selectedItem" [size]="'large'" [highlight]="true" [hoverHighlight]="false"></app-item>
         </a>
-        <app-wiki-link [wiki]="selectedItem._wiki" [aClass]="'info-grid-find container'"></app-wiki-link>
-        <a *ngIf="selectedItemNav" class="info-grid-find container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
+        <app-wiki-link [wiki]="selectedItem._wiki" [aClass]="'container'"></app-wiki-link>
+        <a *ngIf="selectedItemNav" class="container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
           <mat-icon class="menu-icon">search</mat-icon>
           <span class="menu-label">Find item</span>
+        </a>
+        <a *ngIf="selectedItem.previewUrl" class="container" [routerLink]="'/item/field-guide'" [queryParams]="{ type: selectedItem.type, item: selectedItem.guid }">
+          <mat-icon class="menu-icon">photo_library</mat-icon>
+          <span class="menu-label">Show in field guide</span>
         </a>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Field guide -->
-<ng-container *ngIf="previewItems?.length">
-  <div class="sky-card mt">
-    <div class="sky-card-header header-previews" (click)="togglePreviews()">
-      <h2 class="h3 mb-0">
-        Field guide
-        <mat-icon>{{showFieldGuide ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</mat-icon>
-      </h2>
-    </div>
-    <div class="sky-card-body" *ngIf="showFieldGuide">
-      <div class="sky-flex flex-wrap" *ngIf="previewItems?.length">
-        <ng-container *ngFor="let item of previewItems">
-          <div *ngIf="item.previewUrl" (click)="openItem(item)"
-          [class.highlight]="item && item === selectedItem"
-            class="item-preview link" [ngbTooltip]="item.name" container="body" placement="auto">
-            <div class="pad">
-              <div class="item-preview-icon">
-                <app-item [item]="item" [hoverHighlight]="false" [highlight]="true" [showSubIcons]="false"></app-item>
-              </div>
-              <div class="mt">
-                <img [src]="item.previewUrl" class="preview-img" loading="lazy">
-                <app-item-icons [item]="item"></app-item-icons>
-              </div>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-    </div>
-  </div>
-</ng-container>

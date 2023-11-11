@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute, ParamMap, Params, Router, convertToParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, convertToParamMap } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -33,10 +33,8 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
   emoteLevels: { [key: string]: number } = {};
 
   shownItems: Array<IItem> = [];
-  previewItems: Array<IItem> = [];
   shownUnlocked: number = 0;
 
-  showFieldGuide = false;
   shouldShowNone = true;
   showNone = false;
   offsetNone = 0;
@@ -76,7 +74,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     this.type = type as ItemType || ItemType.Outfit;
     this.shownItems = this.typeItems[this.type] ?? [];
     this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
-    this.previewItems = this.shownItems.filter(item => item.previewUrl);
 
     if (this.type === ItemType.Emote) {
       this.shownItems = Object.values(this.emotes);
@@ -101,9 +98,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
       this.selectedItem = this._dataService.guidMap.get(itemGuid) as IItem;
       this.selectedItemNav = this.selectedItem ? NavigationHelper.getItemSource(this.selectedItem) : undefined;
     }
-
-    // Toggle field guide from query.
-    this.showFieldGuide = query.get('fg') === '1';
   }
 
   setColumns(): void {
@@ -136,14 +130,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     this.selectedItem ? queryParams['item'] = this.selectedItem.guid : delete queryParams['item'];
 
     this._router.navigate([], { queryParams, replaceUrl: true });
-  }
-
-  togglePreviews(): void {
-    this.showFieldGuide = !this.showFieldGuide;
-
-    const url = new URL(location.href);
-    url.searchParams.set('fg', this.showFieldGuide ? '1' : '0');
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   private initializeItems(): void {
@@ -180,7 +166,7 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
 
     // Sort by order.
     for (const type in ItemType) {
-      this.typeItems[type].sort((a, b) => a.order! - b.order!);
+      this.typeItems[type].sort((a, b) => (a.order ?? 99999) - (b.order ?? 99999));
     }
   }
 

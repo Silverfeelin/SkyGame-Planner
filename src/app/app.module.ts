@@ -56,6 +56,8 @@ import { ItemTypeSelectorComponent } from './components/items/item-type-selector
 import { ToolsComponent } from './components/tools/tools.component';
 import { IconPickerComponent } from './components/util/icon-picker/icon-picker.component';
 import { FirefoxClipboardItemComponent } from './components/util/firefox-clipboard-item/firefox-clipboard-item.component';
+import { ItemFieldGuideComponent } from './components/item-field-guide/item-field-guide.component';
+import { ItemUnlockComponent } from './components/item-unlock/item-unlock.component';
 
 @NgModule({
   declarations: [
@@ -109,7 +111,9 @@ import { FirefoxClipboardItemComponent } from './components/util/firefox-clipboa
     ItemTypeSelectorComponent,
     ToolsComponent,
     IconPickerComponent,
-    FirefoxClipboardItemComponent
+    FirefoxClipboardItemComponent,
+    ItemFieldGuideComponent,
+    ItemUnlockComponent
   ],
   imports: [
     BrowserModule,

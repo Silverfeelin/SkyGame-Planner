@@ -1,0 +1,66 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Items</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        Unlock items you own by clicking on them.<br/>
+        For limited items the last appearance of the item will be unlocked. Because some items come in bundles this may unlock multiple items at once.
+      </p>
+    </div>
+    <hr/>
+    <div class="items-grids">
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Outfit'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Shoes'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Mask'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'FaceAccessory'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Necklace'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Hair'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Hat'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Cape'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Held'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Prop'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Emote'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Stance'}"></ng-container>
+      <hr/>
+      <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Call'}"></ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #items let-type="type">
+  <div class="">
+    <div class="button-group">
+      <button type="button" (click)="unlockAll(type)">
+        Unlock all
+      </button>
+      <button type="button" (click)="lockAll(type)">
+        Remove all
+      </button>
+    </div>
+  </div>
+  <div class="items-grid mt">
+    <ng-container *ngFor="let item of typeItems[type]">
+      <div class="item"
+        [ngbTooltip]="item.name" container="body" (click)="toggleItem(item)"
+      >
+        <div class="item-inner" [class.unlocked]="item.unlocked">
+          <app-item [item]="item" [highlight]="true" [hoverHighlight]="false" [showSubIcons]="true"></app-item>
+          <mat-icon class="unlock-check" [hidden]="!item.unlocked">done</mat-icon>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>

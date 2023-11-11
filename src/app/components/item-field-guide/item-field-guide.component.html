@@ -1,0 +1,33 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Field guide</h2>
+  </div>
+  <div class="sky-card-body">
+    <!-- Select item-->
+    <app-item-type-selector [type]="type" [showTypes]="types" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
+    <hr/>
+    <!-- Show items -->
+    <ng-container *ngFor="let t of types">
+      <div class="sky-flex flex-wrap field-guide-items" [hidden]="type !== t">
+        <ng-container *ngIf="loadedTypes[t]"> <!-- Lazy load tabs -->
+          <ng-container *ngFor="let typeItem of typeItems[t]">
+            <a *ngIf="typeItem.item.previewUrl" (click)="removeHighlight()" [routerLink]="!highlight || highlight === typeItem.item.guid ? typeItem.nav?.route : undefined" [queryParams]="typeItem.nav?.extras?.queryParams"
+              class="item-preview link" [class.unhighlight]="highlight && highlight !== typeItem.item.guid" [class.highlight]="highlight === typeItem.item.guid"
+              [ngbTooltip]="typeItem.item.name" container="body" placement="auto"
+            >
+              <div class="pad">
+                <div class="item-preview-icon">
+                  <app-item [item]="typeItem.item" [hoverHighlight]="false" [highlight]="true" [showSubIcons]="false"></app-item>
+                </div>
+                <div class="mt">
+                  <img [src]="typeItem.item.previewUrl" class="preview-img" loading="lazy">
+                  <app-item-icons [item]="typeItem.item"></app-item-icons>
+                </div>
+              </div>
+            </a>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>
