@@ -192,7 +192,7 @@
     <!-- Highlight colors -->
     <div class="color-picker">
       <div class="btn-color-active">
-        <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-o':color==='o', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
+        <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
           ngbTooltip="Change highlight color" container="body" placement="top-right">
           &nbsp;<mat-icon>palette</mat-icon>
         </button>
@@ -200,10 +200,6 @@
       <div #divColorPicker class="btn-colors" [hidden]="!showingColorPicker">
         <button type="button" class="btn-color btn-r" (click)="setColor('r')"
           ngbTooltip="Mark items red" container="body" placement="top-right">
-        </button>
-        <button type="button" class="btn-color btn-o" (click)="setColor('o')"
-          ngbTooltip="Mark items orange" container="body" placement="top-right">
-          &nbsp;
         </button>
         <button type="button" class="btn-color btn-y" (click)="setColor('y')"
           ngbTooltip="Mark items yellow" container="body" placement="top-right">
@@ -216,6 +212,10 @@
         <button type="button" class="btn-color btn-b" (click)="setColor('b')"
           ngbTooltip="Mark items blue" container="body" placement="top-right">
           &nbsp;
+        </button>
+        <button type="button" class="btn-color" (click)="setColor(undefined)"
+          ngbTooltip="Unmark items" container="body" placement="top-right">
+          <mat-icon>delete</mat-icon>
         </button>
       </div>
     </div>
@@ -285,20 +285,22 @@
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
       <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items.-->
-      <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid]))"
-        [class.selected-r]="selected.r[item.guid]" [class.selected-o]="selected.o[item.guid]" [class.selected-y]="selected.y[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
-        [class.closet-hide]="hidden[item.guid] || (!modifyingCloset && ((hideIap && item.iaps?.length) || (available && !available[item.guid])))" [attr.data-guid]="item.guid"
-        [class.highlight]="searchResults && searchResults[item.guid]"
-        [ngbTooltip]="templateItemHover" container="body"
-      >
-        <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+      <div class="closet-item-container">
+        <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid]))"
+          [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+          [class.closet-hide]="hidden[item.guid] || (!modifyingCloset && ((hideIap && item.iaps?.length) || (available && !available[item.guid])))" [attr.data-guid]="item.guid"
+          [class.highlight]="searchResults && searchResults[item.guid]"
+          [ngbTooltip]="templateItemHover" container="body"
+        >
+          <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+        </div>
       </div>
     </ng-container>
 
     <!-- Request display. -->
     <ng-container *ngIf="requesting">
       <div class="closet-item" (click)="toggleItem(item)" [hidden]="typeFolded[type]"
-      [class.selected-r]="selected.r[item.guid]" [class.selected-o]="selected.o[item.guid]" [class.selected-y]="selected.y[item.guid]" [class.selected-g]="selected.g[item.guid]" [class.selected-b]="selected.b[item.guid]"
+      [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
       [class.closet-hide]="(hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
       [class.highlight]="searchResults && searchResults[item.guid]"
       [ngbTooltip]="templateItemHover" container="body"

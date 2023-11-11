@@ -10,9 +10,9 @@ import { SubscriptionLike, lastValueFrom } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
 
 interface ISelection { [guid: string]: IItem; }
-interface IOutfitRequest { a?: string; r: string; o: string; y: string; g: string; b: string; };
+interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
 
-type RequestColor = 'r' | 'o' | 'y' | 'g' | 'b';
+type RequestColor = 'r' | 'y' | 'g' | 'b';
 type ClosetMode = 'all' | 'closet';
 type CopyImageMode = 'request' | 'closet' | 'template';
 
@@ -80,8 +80,8 @@ export class ClosetComponent implements OnDestroy {
   showingImagePicker = false;
 
   // Item selection
-  color: RequestColor = 'r';
-  selected: { all: ISelection, r: ISelection, o: ISelection, y: ISelection, g: ISelection, b: ISelection } = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
+  color?: RequestColor = 'r';
+  selected: { all: ISelection, r: ISelection, y: ISelection, g: ISelection, b: ISelection } = { all: {}, r: {}, y: {}, g: {}, b: {}};
   hidden: { [guid: string]: boolean } = {};
   available?: ISelection;
 
@@ -152,19 +152,23 @@ export class ClosetComponent implements OnDestroy {
       return this.toggleItemHidden(item);
     }
 
-    // Remove item from all selections, then apply it to the current color.
-    const selected = this.selected[this.color];
-    const select = !selected[item.guid];
-    delete this.selected.all[item.guid];
-    delete this.selected.r[item.guid];
-    delete this.selected.o[item.guid];
-    delete this.selected.y[item.guid];
-    delete this.selected.g[item.guid];
-    delete this.selected.b[item.guid];
-
-    if (select) {
-      selected[item.guid] = item;
-      this.selected.all[item.guid] = item;
+    if (!this.color) {
+      delete this.selected.all[item.guid];
+      delete this.selected.r[item.guid];
+      delete this.selected.y[item.guid];
+      delete this.selected.g[item.guid];
+      delete this.selected.b[item.guid];
+    } else {
+      const selected = this.selected[this.color];
+      const select = !selected[item.guid];
+      if (select) {
+        selected[item.guid] = item;
+      } else {
+        delete selected[item.guid];
+        if (!this.selected.r[item.guid] && !this.selected.y[item.guid] && !this.selected.g[item.guid] && !this.selected.b[item.guid]) {
+          delete this.selected.all[item.guid];
+        }
+      }
     }
 
     this.updateUrlFromSelection();
@@ -192,12 +196,11 @@ export class ClosetComponent implements OnDestroy {
   /** Resets all selected items. */
   resetSelected(): void {
     if (!confirm('This will remove the color highlights from all items. Are you sure?')) { return; }
-    this.selected = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
+    this.selected = { all: {}, r: {}, y: {}, g: {}, b: {}};
     this.selectionHasHidden = false;
     const url = new URL(location.href);
     url.searchParams.delete('k');
     url.searchParams.delete('r');
-    url.searchParams.delete('o');
     url.searchParams.delete('y');
     url.searchParams.delete('g');
     url.searchParams.delete('b');
@@ -208,7 +211,7 @@ export class ClosetComponent implements OnDestroy {
   /** Sets a random selection of items. */
   randomSelection(): void {
     if (!confirm('This will randomly select items from your closet. Are you sure?')) { return; }
-    this.selected = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
+    this.selected = { all: {}, r: {}, y: {}, g: {}, b: {}};
     this.selectionHasHidden = false;
 
     const heldProp = Math.random() < 0.4;
@@ -332,7 +335,7 @@ export class ClosetComponent implements OnDestroy {
   }
 
   /** Changes the color for selecting items. */
-  setColor(color: RequestColor): void {
+  setColor(color: RequestColor | undefined): void {
     this.showingColorPicker = false;
     this.modifyingCloset = false;
     this.color = color;
@@ -402,7 +405,6 @@ export class ClosetComponent implements OnDestroy {
   /** Apply current selection to URL to keep data when refreshing. */
   private updateUrlFromSelection(): void {
     const r = this.serializeItems(Object.values(this.selected.r));
-    const o = this.serializeItems(Object.values(this.selected.o));
     const y = this.serializeItems(Object.values(this.selected.y));
     const g = this.serializeItems(Object.values(this.selected.g));
     const b = this.serializeItems(Object.values(this.selected.b));
@@ -410,7 +412,6 @@ export class ClosetComponent implements OnDestroy {
     const url = new URL(location.href);
     url.searchParams.delete('k');
     url.searchParams.set('r', r);
-    url.searchParams.set('o', o);
     url.searchParams.set('y', y);
     url.searchParams.set('g', g);
     url.searchParams.set('b', b);
@@ -472,7 +473,6 @@ export class ClosetComponent implements OnDestroy {
       this.initializeFromObj({
         a: queryParams.get('a') || '',
         r: queryParams.get('r') || '',
-        o: queryParams.get('o') || '',
         y: queryParams.get('y') || '',
         g: queryParams.get('g') || '',
         b: queryParams.get('b') || ''
@@ -504,11 +504,9 @@ export class ClosetComponent implements OnDestroy {
       this.available = a.reduce((map, item) => (map[item.guid] = item, map), {} as ISelection);
     }
 
-    this.selected = { all: {}, r: {}, o: {}, y: {}, g: {}, b: {}};
+    this.selected = { all: {}, r: {}, y: {}, g: {}, b: {}};
     const r = this.deserializeItems(data.r);
     for (const item of r) { this.selected.r[item.guid] = item; this.selected.all[item.guid] = item; }
-    const o = this.deserializeItems(data.o);
-    for (const item of o) { this.selected.o[item.guid] = item; this.selected.all[item.guid] = item; }
     const y = this.deserializeItems(data.y);
     for (const item of y) { this.selected.y[item.guid] = item; this.selected.all[item.guid] = item; }
     const g = this.deserializeItems(data.g);
@@ -526,7 +524,6 @@ export class ClosetComponent implements OnDestroy {
   private serializeModel(): IOutfitRequest {
     return {
       r: this.serializeItems(Object.values(this.selected.r)),
-      o: this.serializeItems(Object.values(this.selected.o)),
       y: this.serializeItems(Object.values(this.selected.y)),
       g: this.serializeItems(Object.values(this.selected.g)),
       b: this.serializeItems(Object.values(this.selected.b))
@@ -601,7 +598,6 @@ export class ClosetComponent implements OnDestroy {
         link.searchParams.set('k', key);
       } else {
         link.searchParams.set('r', request.r);
-        link.searchParams.set('o', request.o);
         link.searchParams.set('y', request.y);
         link.searchParams.set('g', request.g);
         link.searchParams.set('b', request.b);
@@ -791,11 +787,6 @@ export class ClosetComponent implements OnDestroy {
       nextX();
     }
 
-    const drawSelection = (color: string): void => {
-      ctx.strokeStyle = color; ctx.lineWidth = 4;
-      ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.stroke();
-    }
-
     const showingOwnItems = this.closetMode === 'closet';
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
@@ -820,11 +811,30 @@ export class ClosetComponent implements OnDestroy {
       ctx.globalAlpha = 1;
 
       // Draw selection
-      if (this.selected.r[item.guid]) { drawSelection('#f00'); }
-      if (this.selected.o[item.guid]) { drawSelection('#f80'); }
-      if (this.selected.y[item.guid]) { drawSelection('#ff0'); }
-      if (this.selected.g[item.guid]) { drawSelection('#0f0'); }
-      if (this.selected.b[item.guid]) { drawSelection('#0aa0ff'); }
+      if (this.selected.all[item.guid]) {
+        ctx.lineWidth = 4;
+        const selections = [];
+        if (this.selected.r[item.guid]) { selections.push({ c: '#f00' }); }
+        if (this.selected.y[item.guid]) { selections.push({ c: '#ff0' }); }
+        if (this.selected.g[item.guid]) { selections.push({ c: '#0f0' }); }
+        if (this.selected.b[item.guid]) { selections.push({ c: '#0aa0ff' }); }
+        if (selections.length > 1) {
+          // Create multi-color border from selections.
+          const offsetAngle = selections.length === 2 ? -Math.PI : selections.length === 3 ? 7 * Math.PI / 6 : Math.PI;
+          const grad = ctx.createConicGradient(offsetAngle, sx + x * _wBox + _wItem / 2, sy + y * _wBox + _wItem / 2);
+          for (let i = 0; i < selections.length; i++) {
+            console.log(i, selections.length);
+            grad.addColorStop(i / selections.length, selections[i].c);
+            grad.addColorStop((i+1) / selections.length, selections[i].c);
+          }
+          ctx.strokeStyle =  grad;
+        } else {
+          // Draw solid border.
+          ctx.strokeStyle = selections[0] ? '#f00' : selections[1] ? '#ff0' : selections[2] ? '#0f0' : '#0aa0ff';
+        }
+
+        ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.stroke();
+      }
 
       nextX();
     }

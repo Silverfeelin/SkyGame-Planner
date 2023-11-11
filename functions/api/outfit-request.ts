@@ -26,8 +26,6 @@ interface OutfitRequest {
   a: string;
   /** "Red": Items marked with red. */
   r: string;
-  /** "Orange": Items marked with orange. */
-  o: string;
   /** "Yellow": Items marked with yellow. */
   y: string;
   /** "Green": Items marked with green. */
@@ -41,7 +39,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Get request body.
   const json = await context.request.json() as OutfitRequest;
   const jsonKeys = Object.keys(json);
-  const validKeys = new Set(['a', 'r', 'o', 'y', 'g', 'b']);
+  const validKeys = new Set(['a', 'r', 'y', 'g', 'b']);
 
   // Quick data sanitization.
   if (jsonKeys.some(k => !validKeys.has(k) || typeof(json[k]) !== 'string' || json[k]?.length > 10000)) {
