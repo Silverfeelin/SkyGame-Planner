@@ -285,8 +285,8 @@
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
       <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items.-->
-      <div class="closet-item-container">
-        <div class="closet-item" (click)="toggleItem(item)" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid]))"
+      <div class="closet-item-container" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid]))">
+        <div class="closet-item" (click)="toggleItem(item)"
           [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
           [class.closet-hide]="hidden[item.guid] || (!modifyingCloset && ((hideIap && item.iaps?.length) || (available && !available[item.guid])))" [attr.data-guid]="item.guid"
           [class.highlight]="searchResults && searchResults[item.guid]"
@@ -299,8 +299,8 @@
 
     <!-- Request display. -->
     <ng-container *ngIf="requesting">
-      <div class="closet-item-container">
-        <div class="closet-item" (click)="toggleItem(item)" [hidden]="typeFolded[type]"
+      <div class="closet-item-container" [hidden]="typeFolded[type]">
+        <div class="closet-item" (click)="toggleItem(item)"
           [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
           [class.closet-hide]="(hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
           [class.highlight]="searchResults && searchResults[item.guid]"
