@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
@@ -35,7 +36,6 @@ export class ItemUnlockComponent {
 
     this._dataService.itemConfig.items.forEach(item => {
       let type = item.type;
-      if (type === ItemType.Instrument) { type = ItemType.Held; }
       this.typeItems[type].push(item);
     });
 
@@ -43,7 +43,7 @@ export class ItemUnlockComponent {
       const items = this.typeItems[type];
       if (type === ItemType.Emote) {
         const levelMap = new Map<string, Array<IItem>>();
-        const levels = items.filter(v => v.level === 1).sort((a, b) => (a.order ?? 99999) - (b.order ?? 99999)).map(v => {
+        const levels = items.filter(v => v.level === 1).sort(ItemHelper.sorter).map(v => {
           const arr = [v];
           levelMap.set(v.name, arr);
           return arr;
@@ -55,7 +55,7 @@ export class ItemUnlockComponent {
 
         this.typeItems[type] = levels.flat();
       } else {
-        items.sort((a, b) => (a.order ?? 99999) - (b.order ?? 99999));
+        ItemHelper.sortItems(items);
       }
     }
   }

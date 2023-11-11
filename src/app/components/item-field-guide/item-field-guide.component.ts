@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
+import { ItemHelper } from 'src/app/helpers/item-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -40,7 +41,6 @@ export class ItemFieldGuideComponent {
   onQueryParamsChanged(query: ParamMap) {
     const type = query.get('type') as ItemType;
     this.type = type as ItemType || ItemType.Outfit;
-    if (type === ItemType.Instrument) { this.type = ItemType.Held; }
     this.loadedTypes[this.type] = true;
 
     this.highlight = query.get('item') || undefined;
@@ -71,7 +71,6 @@ export class ItemFieldGuideComponent {
       if (!item.previewUrl) { return; }
       const nav = NavigationHelper.getItemSource(item);
       this.typeItems[item.type].push({ item, nav });
-      if (item.type === ItemType.Instrument) { this.typeItems[ItemType.Held].push({ item, nav }); }
     });
 
     // Sort by order.

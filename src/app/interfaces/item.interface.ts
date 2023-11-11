@@ -62,9 +62,7 @@ export enum ItemType {
   Shoes = 'Shoes',
   /** All cosmetics in the cape category. */
   Cape = 'Cape',
-  /** All musical instruments in the held category. */
-  Instrument = 'Instrument',
-  /** All non-instrument items in the held category. */
+  /** All items in the held category. */
   Held = 'Held',
   /** All items in the chair category. */
   Prop = 'Prop',
@@ -84,6 +82,10 @@ export enum ItemType {
   WingBuff = 'WingBuff',
   /** Other special (non-)items such as candle blessings. */
   Special = 'Special'
-}
+};
+
+export enum ItemSubtype {
+  Instrument = 'Instrument'
+};
 
 export type ItemGroup = 'Elder' | 'Season' | 'SeasonPass' | 'Ultimate';

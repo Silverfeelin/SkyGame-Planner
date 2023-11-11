@@ -90,7 +90,6 @@ export class NavigationHelper {
       case 'Outfit': type = 'Outfits'; break;
       case 'Shoes': type = 'Shoes'; break;
       case 'Cape': type = 'Capes'; break;
-      case 'Instrument': type = 'Props'; break;
       case 'Held': type = 'Props'; break;
       case 'Prop': type = 'Props'; break;
       default: type = '';
@@ -109,7 +108,7 @@ export class NavigationHelper {
     }
 
     // Jump to preview section.
-    url.hash = item.type === 'Held' || item.type === 'Instrument' ? 'Held_Props_Display'
+    url.hash = item.type === 'Held' ? 'Held_Props_Display'
       : item.type === 'Prop' ? 'Placeable_Props_Display' : 'Display';
 
     return url.toString();

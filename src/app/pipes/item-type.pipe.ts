@@ -15,7 +15,6 @@ export class ItemTypePipe implements PipeTransform {
       case ItemType.Outfit: return 'Outfit';
       case ItemType.Shoes: return 'Shoes';
       case ItemType.Cape: return 'Cape';
-      case ItemType.Instrument: return 'Instrument';
       case ItemType.Held: return 'Held prop';
       case ItemType.Prop: return 'Placeable prop';
       case ItemType.Emote: return 'Emote';

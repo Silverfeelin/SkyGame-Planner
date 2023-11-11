@@ -5,6 +5,7 @@ import { EditorTravelingSpiritComponent } from './components/editor-traveling-sp
 import { EditorTreeComponent } from './components/editor-tree/editor-tree.component';
 import { EditorShopComponent } from './components/editor-shop/editor-shop.component';
 import { EditorItemComponent } from './components/editor-item/editor-item.component';
+import { EditorOrderComponent } from './components/editor-order/editor-order.component';
 
 const routes: Routes = [
   { path: '', component: EditorDashboardComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'tree', component: EditorTreeComponent },
   { path: 'shop', component: EditorShopComponent },
   { path: 'item', component: EditorItemComponent },
+  { path: 'order', component: EditorOrderComponent },
 ];
 
 @NgModule({

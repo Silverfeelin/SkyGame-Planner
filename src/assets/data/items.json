@@ -739,7 +739,8 @@
     {
       "id": 82,
       "guid": "biKOov4qJQ",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Harp",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/LaughingLightCatcher-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Laughing-Light-Catcher-harp.png",
@@ -1134,7 +1135,8 @@
     {
       "id": 129,
       "guid": "HGGTj_QBip",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Drum",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/BlushingProspector-3.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Blushing_Prospector-Drum.png",
@@ -2004,7 +2006,8 @@
     {
       "id": 232,
       "guid": "o8VUub-4vw",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Piano",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CheerfulSpectator-Piano-Credit-Ed.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Cheerful-Spectator-Piano.png",
@@ -2253,7 +2256,8 @@
     {
       "id": 261,
       "guid": "k1JghrvRyd",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Contrabass",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/FrightenedRefugee-3.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Frightened-Refugee-Contrabass-harp.png",
@@ -2612,7 +2616,8 @@
     {
       "id": 303,
       "guid": "Zu6MhpSM7W",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Horn",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/LookoutScout-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Lookout-Scout-Horn.png",
@@ -3448,7 +3453,8 @@
     {
       "id": 394,
       "guid": "Hvq52gCeih",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "group": "Ultimate",
       "name": "Sanctuary Ultimate Handpan",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Icon_instrument_sanctuary_hand_pan.png",
@@ -3574,7 +3580,8 @@
     {
       "id": 410,
       "guid": "wGQSuhVWXD",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "group": "Ultimate",
       "name": "Prophecy Ultimate Drum",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_instrument_prophecy_drum.png",
@@ -3806,7 +3813,8 @@
     {
       "id": 438,
       "guid": "B59f4_ru60",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "group": "Ultimate",
       "name": "Assembly Ultimate Bugle",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_instrument_assembly_bugle.png",
@@ -5804,7 +5812,8 @@
     {
       "id": 680,
       "guid": "eL5WjOsMrx",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Small Bell",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Gratitude-Leaping-Dancer-Small-Bell.png",
@@ -5992,7 +6001,8 @@
     {
       "id": 702,
       "guid": "aFozSzjdTL",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Large Bell",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mimi-4117_02_greeting_shaman_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Gratitude-Greeting-Shaman-Large_bell.png",
@@ -6183,7 +6193,8 @@
     {
       "id": 724,
       "guid": "qR79V6fLUy",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Flute",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_03_doublefive_light_catcher_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Lightseekers-Doublefive-Light-Catcher-Flute.png",
@@ -6363,7 +6374,8 @@
     {
       "id": 745,
       "guid": "PIRW3pt_BE",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Panflute",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Mimi-4117_03_twirling_champion_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Lightseekers-Twirling-Champion_-_Panpipes-Panflute.png",
@@ -7025,7 +7037,8 @@
     {
       "id": 824,
       "guid": "Zvi-5bPtxs",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Guitar",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mimi-4117_04_pleaful_parent_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Belonging-Pleaful-Parent-Guitar.png",
@@ -7160,7 +7173,8 @@
     {
       "id": 840,
       "guid": "Ph__M3uulY",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Ukulele",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_04_hairtousle_teen_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Belonging-Hairtousle-teen-Ukulele.png",
@@ -7714,7 +7728,8 @@
     {
       "id": 905,
       "guid": "M1MCfh7sVo",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Winter Piano",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Mimi-4117_05_respectful_pianist_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Rhythm-Respectul-Pianist-Piano.png",
@@ -7817,7 +7832,8 @@
     {
       "id": 917,
       "guid": "DVcrj6XSgH",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Xylophone",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mimi-4117_05_thoughtful_director_instrument.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Rhythm-Thoughtful-Director-xylophone.png",
@@ -9760,7 +9776,8 @@
     {
       "id": 1145,
       "guid": "xpq4O_F_Md",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Lute",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_instrument_dreams_lute.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Dreams-Dancing-Performer-Guitar.png",
@@ -11556,7 +11573,8 @@
     {
       "id": 1354,
       "guid": "t3hOiGsS79",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Kalimba",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Icon_season_of_flight_instrument_kalimba.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Flight-Tinkering-Chimesmith-Kalimba.png",
@@ -12439,7 +12457,8 @@
     {
       "id": 1456,
       "guid": "ARf5D2Bu4v",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Electric Guitar",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Morybel-0146-SoPerformance_-_Mellow_Musician-electrice-guitar-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Performance-Electric-guitar.png",
@@ -12795,7 +12814,8 @@
     {
       "id": 1498,
       "guid": "yonX7TEJZQ",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Dark Horn",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/SOShattering-Dark-Horn-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/SOShattering-Dark-Horn-Instrument.png",
@@ -13325,7 +13345,8 @@
     {
       "id": 1558,
       "guid": "K0NBv__mv8",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Voice of AURORA",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Aurora-Voice-of-Aurora-Icon-Morybel-0146-.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Aurora-Voice-of-Aurora-Instrument.png",
@@ -14069,7 +14090,8 @@
     {
       "id": 1642,
       "guid": "kk4P3a0tb_",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Manta Flute",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Passage-Overactive-Overachiever-Instrument-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Passage-Overactive-Overachiever-Instrument.png",
@@ -16131,7 +16153,7 @@
       "name": "Mischief Crabkin Accessory Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
-      "order": 11501
+      "order": 11502
     },
     {
       "id": 1950,
@@ -16657,7 +16679,8 @@
     {
       "id": 1930,
       "guid": "rMC7kQhgYk",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Triumph Saxophone",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Triumph-Saxophone-instrument-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Triumph-Saxophone-instrument.png",
@@ -16686,7 +16709,8 @@
     {
       "id": 1933,
       "guid": "5V_r38RVGd",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Triumph Violin",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Triumph-Violon-Instrument-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Triumph-Violon-Instrument.png",
@@ -16743,7 +16767,8 @@
     {
       "id": 1939,
       "guid": "1xIwQnxHV-",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Fledgling Harp",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/SOPerformance-Fledgling-harp-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Performance-Fledgling-harp.png",
@@ -16753,7 +16778,8 @@
     {
       "id": 1940,
       "guid": "bOQzUAzYfV",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Rhythm Guitar",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SOPerformance-Rhythm-Guitar-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Performance-Rhythm-Guitar-white-guitar.png",
@@ -16763,7 +16789,8 @@
     {
       "id": 1941,
       "guid": "McTvO9Z8EQ",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Triumph Handpan",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SOPerformance-Triumph-Handpan-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Performance-Triumph-Handpan.png",
@@ -16773,7 +16800,8 @@
     {
       "id": 1942,
       "guid": "hcuS6xsmHg",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Blue Electric Guitar",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Days-of-Sky-2022-instrument-blue-electric-guitar-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Days-of-Sky-2022-instrument-blue-electric-guitar.png",
@@ -16817,7 +16845,8 @@
     {
       "id": 1946,
       "guid": "BDfLuCSmaF",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Vessel Flute",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_instrument_vessel_flute.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Vessel-flute-Ocarina-Nintendo-IAP.png",

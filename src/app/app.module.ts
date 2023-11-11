@@ -123,6 +123,9 @@ import { ItemUnlockComponent } from './components/item-unlock/item-unlock.compon
     LayoutModule,
     MatIconModule
   ],
+  exports: [
+    ItemComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

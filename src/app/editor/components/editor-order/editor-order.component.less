@@ -1,0 +1,31 @@
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: fit-content;
+  //flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.item {
+  display: inline-block;
+  vertical-align: top;
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  border: 3px solid var(--color-border);
+  cursor: pointer;
+}
+
+.highlight {
+  border-width: 3px !important;
+}
+
+.item-icon {
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+.swapping .item:hover {
+  border-left-color: #0f0;
+}

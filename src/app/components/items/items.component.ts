@@ -1,5 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, convertToParamMap } from '@angular/router';
+import { ItemHelper } from 'src/app/helpers/item-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -159,14 +160,11 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
         return;
       }
       addItem(item.type, item);
-
-      // Subtypes.
-      if (item.type === ItemType.Instrument) { addItem(ItemType.Held, item); }
     });
 
     // Sort by order.
     for (const type in ItemType) {
-      this.typeItems[type].sort((a, b) => (a.order ?? 99999) - (b.order ?? 99999));
+      ItemHelper.sortItems(this.typeItems[type]);
     }
   }
 

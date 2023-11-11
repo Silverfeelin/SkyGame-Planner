@@ -2,21 +2,22 @@
 
 <div class="sky-card">
   <div class="sky-card-header">
-    <h2 class="h3 mb-0">{{ requesting ? 'Sky outfit request' : 'Sky closet' }}</h2>
-    <div class="btns-top" *ngIf="!requesting">
+    <h2 class="h3 mb-0 title">{{ requesting ? 'Sky outfit request' : 'Sky closet' }}</h2>
+    <h2 class="h3 mb-0 title-small">&nbsp;</h2>
+    <div class="btns-top btns-top-closet" *ngIf="!requesting">
       <a class="button" [routerLink]="'/outfit-request/collage'">
         <mat-icon class="menu-icon">photo</mat-icon>
-        <span class="menu-label">Make collage</span>
+        <span class="menu-label">Collage</span>
       </a>
       <a class="button" href="/outfit-request/request">
         <mat-icon class="menu-icon">add</mat-icon>
-        <span class="menu-label">Create request</span>
+        <span class="menu-label">Request</span>
       </a>
     </div>
-    <div class="btns-top" *ngIf="requesting">
+    <div class="btns-top btn-top-request" *ngIf="requesting">
       <a class="button" href="/outfit-request/closet">
         <mat-icon class="menu-icon">checkroom</mat-icon>
-        <span class="menu-label">Go to closet</span>
+        <span class="menu-label">Closet</span>
       </a>
       <a class="button" href="/">
         <mat-icon class="menu-icon">home</mat-icon>

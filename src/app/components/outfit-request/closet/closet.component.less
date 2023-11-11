@@ -11,7 +11,8 @@
   position: absolute;
   display: inline-block;
   right: 8px;
-  top: 8px;
+  top: 50%;
+  transform: translateY(-50%);
 
   .button {
     display: inline-block;
@@ -304,6 +305,13 @@ hr:last-child {
 @media screen and (min-width: 720px) {
   .label-items { display: block; }
   .btns-copy { left: 92px; }
+}
+
+
+.title-small { display: none; }
+@media screen and (max-width: 450px) {
+  .title { display: none; }
+  .title-small { display: block; }
 }
 
 @media screen and (max-width: 375px) {

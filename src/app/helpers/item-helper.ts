@@ -22,7 +22,16 @@ export class ItemHelper {
       });
     });
 
-    items.sort((a, b) => (a.order || 99999) - (b.order || 99999));
+    ItemHelper.sortItems(items);
     return items;
+  }
+
+  /** Sorts items by their order. The array is sorted in-place and returned. */
+  static sortItems(items: Array<IItem>): Array<IItem> {
+    return items.sort(ItemHelper.sorter);
+  }
+
+  static sorter(a: IItem, b: IItem): number {
+    return (a.order || 99999) - (b.order || 99999);
   }
 }

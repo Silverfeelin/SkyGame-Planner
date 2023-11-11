@@ -8,6 +8,7 @@ import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
 import { SubscriptionLike, lastValueFrom } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
+import { ItemHelper } from 'src/app/helpers/item-helper';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -450,7 +451,6 @@ export class ClosetComponent implements OnDestroy {
     // Add items to closets.
     for (const item of this._dataService.itemConfig.items) {
       let type = item.type;
-      if (type === 'Instrument') { type = ItemType.Held; }
       if (!this.items[type as string]) { continue; }
 
       this.items[type as string].push(item);
@@ -460,7 +460,7 @@ export class ClosetComponent implements OnDestroy {
 
     // Sort items by order.
     for (const type of this.itemTypes) {
-      this.items[type as string].sort((a, b) => (a.order || 99999) - (b.order || 99999));
+      ItemHelper.sortItems(this.items[type as string]);
     }
 
     if (this.shouldSync) {

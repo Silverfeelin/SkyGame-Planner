@@ -22,7 +22,6 @@ export class EditorItemComponent {
     'Outfit',
     'Shoes',
     'Cape',
-    'Instrument',
     'Held',
     'Prop',
     'Emote',
