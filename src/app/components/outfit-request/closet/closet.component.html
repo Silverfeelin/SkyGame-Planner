@@ -299,14 +299,16 @@
 
     <!-- Request display. -->
     <ng-container *ngIf="requesting">
-      <div class="closet-item" (click)="toggleItem(item)" [hidden]="typeFolded[type]"
-      [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
-      [class.closet-hide]="(hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
-      [class.highlight]="searchResults && searchResults[item.guid]"
-      [ngbTooltip]="templateItemHover" container="body"
-    >
-      <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
-    </div>
+      <div class="closet-item-container">
+        <div class="closet-item" (click)="toggleItem(item)" [hidden]="typeFolded[type]"
+          [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+          [class.closet-hide]="(hideIap && item.iaps?.length) || (available && !available[item.guid])" [attr.data-guid]="item.guid"
+          [class.highlight]="searchResults && searchResults[item.guid]"
+          [ngbTooltip]="templateItemHover" container="body"
+        >
+          <app-item [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item>
+        </div>
+      </div>
     </ng-container>
 
     <!-- Tooltip -->
