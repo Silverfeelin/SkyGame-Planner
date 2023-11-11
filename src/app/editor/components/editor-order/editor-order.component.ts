@@ -71,7 +71,7 @@ export class EditorOrderComponent {
       if (itemOrder < nextOrder && itemOrder > prevOrder) { return; }
 
       if (prevOrder >= itemOrder) {
-        item.order = prevOrder + 1;
+        item.order = prevOrder + (Math.abs(nextOrder - prevOrder) > 10 ? 10 : 1);
         swaps.push({ item, old: itemOrder, new: item.order });
       }
     });
