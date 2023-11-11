@@ -830,7 +830,7 @@ export class ClosetComponent implements OnDestroy {
           ctx.strokeStyle =  grad;
         } else {
           // Draw solid border.
-          ctx.strokeStyle = selections[0] ? '#f00' : selections[1] ? '#ff0' : selections[2] ? '#0f0' : '#0aa0ff';
+          ctx.strokeStyle = selections[0].c;
         }
 
         ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.stroke();
