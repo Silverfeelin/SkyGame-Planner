@@ -3,6 +3,8 @@ import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 
+interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
+
 @Component({
   selector: 'app-editor-order',
   templateUrl: './editor-order.component.html',
@@ -12,7 +14,7 @@ import { DataService } from 'src/app/services/data.service';
 export class EditorOrderComponent {
   types: Array<string> = Object.keys(ItemType);
   typeItems: { [key: string]: Array<IItem> } = {};
-  typeSwaps: { [key: string]: Array<{item: IItem, old: number, new: number}> } = {};
+  typeSwaps: { [key: string]: Array<ISwap> } = {};
 
   swapping?: IItem;
 
@@ -59,21 +61,26 @@ export class EditorOrderComponent {
   calculateSwaps(type: ItemType): void {
     const items = this.typeItems[type];
 
-    const swaps: Array<{item: IItem, old: number, new: number}> = [];
+    const swaps: Array<ISwap> = [];
     this.typeSwaps[type] = swaps;
 
     items.forEach((item, i) => {
       item.order = (item as any)._initialOrder;
       const itemOrder = item.order || 99999;
-      const prevOrder = items[i - 1]?.order ?? -1;
+      const prev = items[i - 1];
+      const prevOrder = prev?.order ?? -1;
       const nextOrder = items[i + 1]?.order ?? 99999;
 
       if (itemOrder < nextOrder && itemOrder > prevOrder) { return; }
 
       if (prevOrder >= itemOrder) {
         item.order = prevOrder + (Math.abs(nextOrder - prevOrder) > 10 ? 10 : 1);
-        swaps.push({ item, old: itemOrder, new: item.order });
+        swaps.push({ item, prev, old: itemOrder, new: item.order });
       }
     });
+  }
+
+  copyGuid(guid?: string): void {
+    navigator.clipboard.writeText(guid || '');
   }
 }

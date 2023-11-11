@@ -1,5 +1,5 @@
 <ng-container *ngFor="let type of types">
-  <div class="items" [class.swapping]="swapping">
+  <div class="items mt" [class.swapping]="swapping">
     <ng-container *ngFor="let item of typeItems[type]">
       <div class="item" [class.highlight]="swapping?.guid === item.guid" (click)="swap(type, item)">
         <div class="item-image">
@@ -8,9 +8,15 @@
       </div>
     </ng-container>
   </div>
-  <div>
+  <div class="container mt">
     <ng-container *ngFor="let swap of typeSwaps[type]">
-      <div>{{ swap.item.name }} | {{ swap.old }} | {{ swap.new }}</div>
+      <div class="swap-details">
+        {{ swap.item.name }} <kbd (click)="copyGuid(swap.item.guid)">{{swap.item.guid}}</kbd>
+        collides with
+        {{ swap.prev?.name }} <kbd (click)="copyGuid(swap.prev?.guid)">{{swap.prev?.guid}}</kbd><br/>
+        <kbd>{{ swap.old }}</kbd> -> <kbd>{{ swap.new }}</kbd>
+        <hr/>
+      </div>
     </ng-container>
   </div>
 </ng-container>
