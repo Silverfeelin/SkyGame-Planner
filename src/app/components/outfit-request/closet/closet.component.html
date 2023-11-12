@@ -258,7 +258,7 @@
       <div class="mt">
         <hr *ngIf="i > 0"/>
         <h4>{{ section.label }}</h4>
-        <div class="grid grid-3">
+        <div class="grid grid-4">
           <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground(section.guid)"/>
           <ng-container *ngFor="let bg of section.backgrounds">
             <img [src]="bg.url" class="background-picker-item" (click)="setBackground(bg.guid)"/>
