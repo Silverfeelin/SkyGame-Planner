@@ -21,7 +21,7 @@ export class DateComponent implements OnChanges, OnDestroy {
     private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
-    this._subs.push(_storageService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
+    this._subs.add(_storageService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
       this.updateDate();
     }));
   }
