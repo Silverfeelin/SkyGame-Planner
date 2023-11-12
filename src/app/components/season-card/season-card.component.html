@@ -30,7 +30,9 @@
       class="item" [style.order]="sections['date']">
       <mat-icon class="menu-icon">calendar_month</mat-icon>
       <span class="menu-label">
-        {{ season.date | dayjs }} to {{ season.endDate | dayjs }}
+        <app-date [date]="season.date"></app-date>
+        to
+        <app-date [date]="season.endDate"></app-date>
         <span class="c-accent">
           (<app-days-left [start]="season.date" [end]="season.endDate"></app-days-left>)
         </span>

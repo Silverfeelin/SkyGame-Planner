@@ -37,21 +37,18 @@
 }
 
 .data-loss {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #0008;
-  z-index: 999;
-}
+  z-index: 99999;
 
-.data-loss-inner {
-  position: relative;
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  .sky-card-body {
+    background: var(--color-danger-card-background);
+    .container {
+      color: var(--color-danger);
+      border-color: var(--color-danger-accent);
+      background-color: var(--color-danger-background);
+    }
+  }
 }
 
 .map-container {

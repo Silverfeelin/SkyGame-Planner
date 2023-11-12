@@ -30,7 +30,9 @@
       >
         <mat-icon>calendar_month</mat-icon>
         <span class="menu-label">
-          {{ ts.date | dayjs }} to {{ ts.endDate | dayjs }}
+          <app-date [date]="ts.date"></app-date>
+          to
+          <app-date [date]="ts.endDate"></app-date>
           <span class="c-accent">
             (<app-days-left [start]="ts.date" [end]="ts.endDate"></app-days-left>)
           </span>

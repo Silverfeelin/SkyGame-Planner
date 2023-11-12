@@ -10,9 +10,9 @@
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>
         <span class="menu-label">
-          {{ rs.date | dayjs }}
+          <app-date [date]="rs.date"></app-date>
           to
-          {{ rs.endDate | dayjs }}
+          <app-date [date]="rs.endDate"></app-date>
         </span>
         <span *ngIf="state === 'future'" class="c-accent">
           (<app-days-left [start]="rs.date" [end]="rs.endDate"></app-days-left>)

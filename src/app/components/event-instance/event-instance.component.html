@@ -2,7 +2,7 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">
       {{ instance.event.name }}
-      <span class="c-accent">{{ instance.date | dayjs:'YYYY' }}</span>
+      <span class="c-accent"><app-date [date]="instance.date" [format]="'YYYY'"></app-date></span>
     </h1>
   </div>
   <div class="sky-card-body">
@@ -13,9 +13,9 @@
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>
         <span class="menu-label">
-          {{ instance.date | dayjs }}
+          <app-date [date]="instance.date"></app-date>
           to
-          {{ instance.endDate | dayjs }}
+          <app-date [date]="instance.endDate"></app-date>
         </span>
         <span *ngIf="state !== 'active'" class="c-accent">
           (<app-days-left [start]="instance.date" [end]="instance.endDate"></app-days-left>)

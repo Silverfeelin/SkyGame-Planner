@@ -34,8 +34,8 @@
       <ng-content select="div[name]"></ng-content>
       <div class="name-default">
         {{ name }}
-        <span *ngIf="tsDate" class="c-accent ts-date">({{ tsDate | dayjs:dateFormat }})</span>
-        <span *ngIf="rsDate" class="c-accent ts-date">({{ rsDate | dayjs:dateFormat }})</span>
+        <span *ngIf="tsDate" class="c-accent ts-date">(<app-date [date]="tsDate"></app-date>)</span>
+        <span *ngIf="rsDate" class="c-accent ts-date">(<app-date [date]="rsDate"></app-date>)</span>
       </div>
     </div>
     <div *ngIf="name && hasCost" class="hr"></div>

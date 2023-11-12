@@ -1,10 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import dayjs from 'dayjs';
+import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
+import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { StorageService } from 'src/app/services/storage.service';
 
 type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'cost' | 'checkin';
 export interface EventCardOptions {
@@ -17,7 +20,7 @@ export interface EventCardOptions {
   styleUrls: ['./event-card.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EventCardComponent implements OnChanges {
+export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() event?: IEvent;
   @Input() instance?: IEventInstance;
   @Input() options: EventCardOptions = { show: ['img', 'list', 'recent']};
@@ -29,6 +32,17 @@ export class EventCardComponent implements OnChanges {
   checkedIn = false;
   imageUrlSafe?: string;
 
+  _subs = new SubscriptionBag();
+
+  constructor(
+    private readonly _storageService: StorageService,
+    private readonly _changeDetectorRef: ChangeDetectorRef
+  ) {
+    this._subs.add(this._storageService.storageChanged.pipe(filter(e => e.key?.startsWith('event.checkin.') == true)).subscribe(e => {
+      this.updateCheckin();
+    }));
+  }
+
   ngOnInit(): void {
     this.updateSections();
     this.updateEvent();
@@ -39,6 +53,10 @@ export class EventCardComponent implements OnChanges {
     if (changes['options']) { this.updateSections(); }
     if (changes['event']) { this.updateEvent(); }
     if (changes['instance']) { this.updateInstance(); }
+  }
+
+  ngOnDestroy(): void {
+    this._subs.unsubscribe();
   }
 
   checkin(): void {
@@ -69,7 +87,10 @@ export class EventCardComponent implements OnChanges {
     if (checkinDate) {
       const d = dayjs.tz(checkinDate, 'YYYY-MM-DD', DateHelper.skyTimeZone);
       this.checkedIn = d.isSame(dayjs.tz(), 'day');
+    } else {
+      this.checkedIn = false;
     }
+    this._changeDetectorRef.markForCheck();
   }
 
   private updateInstance(): void {
