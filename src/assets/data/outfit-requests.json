@@ -1,0 +1,36 @@
+{
+  "backgrounds": {
+    "laila": {
+      "guid": "fHWEK7Hh8g",
+      "label": "Laila's selection",
+      "info": "These background are created and generously provided by Laila (Discord: _laila__).",
+      "attribution": "Background by Laila (_laila__)",
+      "backgrounds": [
+        { "guid": "5MTlKYxyYG", "url": "/assets/external/laila/harmony.webp" },
+        { "guid": "oz08DPNhGv", "url": "/assets/external/laila/rainbow.webp" },
+        { "guid": "Bc9cwnsnpC", "url": "/assets/external/laila/coliseum.webp" },
+        { "guid": "hvyOUufS7B", "url": "/assets/external/laila/race.webp" },
+        { "guid": "8TCiWQvyPn", "url": "/assets/external/laila/clearing.webp" },
+        { "guid": "WJ8dQ9wb7z", "url": "/assets/external/laila/bloom.webp" },
+        { "guid": "l5IGDbAVOu", "url": "/assets/external/laila/feast.webp", "default": true },
+      ]
+    },
+    "classic": {
+      "guid": "RjuoDu1wof",
+      "label": "Classic",
+      "backgrounds": [
+        { "guid": "edw93b3t3B", "url": "/assets/game/background/isle.webp" },
+        { "guid": "dpFKj2V20u", "url": "/assets/game/background/trials.webp" },
+        { "guid": "7Y-carH5Gz", "url": "/assets/game/background/prairie.webp" },
+        { "guid": "vBJur-Pqs8", "url": "/assets/game/background/peaks.webp" },
+        { "guid": "emfCNR5bdZ", "url": "/assets/game/background/peaks2.webp" },
+        { "guid": "vZ_2wIL3ID", "url": "/assets/game/background/forest.webp" },
+        { "guid": "WuoWfG5mrs", "url": "/assets/game/background/village.webp" },
+        { "guid": "vpR0AwRpuB", "url": "/assets/game/background/wasteland.webp" },
+        { "guid": "RMUvTXXu86", "url": "/assets/game/background/wasteland2.webp" },
+        { "guid": "fF-omLGrQt", "url": "/assets/game/background/reef.webp" },
+        { "guid": "hfqMLetkgc", "url": "/assets/game/background/vault.webp" },
+      ]
+    }
+  }
+}

@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { SubscriptionLike, lastValueFrom } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
 import { ItemHelper } from 'src/app/helpers/item-helper';
+import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -43,7 +44,12 @@ export class ClosetComponent implements OnDestroy {
   @ViewChild('divColorPicker', { static: false }) private readonly _divColorPicker?: ElementRef<HTMLElement>;
   @ViewChild('divCopyImagePicker', { static: false }) private readonly _divCopyImagePicker?: ElementRef<HTMLElement>;
 
+  // Background
   _bgImg!: HTMLImageElement;
+  bgAttribution?: string;
+  backgroundSections: Array<IOutfitRequestBackgrounds> = [];
+  backgroundSectionMap: { [guid: string]: IOutfitRequestBackgrounds } = {};
+  backgroundMap: { [guid: string]: IOutfitRequestBackground } = {};
 
   // Item type data
   itemTypes: Array<ItemType> = [
@@ -65,11 +71,6 @@ export class ClosetComponent implements OnDestroy {
     'Held': 'held',
     'Prop': 'prop'
   };
-
-  // Background data
-  backgrounds: Array<string> = [
-    'isle', 'trials', 'prairie', 'peaks', 'peaks2', 'forest', 'village', 'wasteland', 'wasteland2', 'reef', 'vault'
-  ];
 
   // Item data
   allItems: Array<IItem> = [];
@@ -296,8 +297,25 @@ export class ClosetComponent implements OnDestroy {
   private initializeBackground(): void {
     this._bgImg = new Image();
     this._bgImg.crossOrigin = 'anonymous';
-    let background = localStorage.getItem('closet.background') || '';
-    this.setBackground(background);
+
+    // Load background config.
+    this.backgroundSections = Object.values(this._dataService.outfitRequestConfig.backgrounds);
+    let defaultBg: IOutfitRequestBackground | undefined = undefined;
+    for (const section of this.backgroundSections) {
+      this.backgroundSectionMap[section.guid] = section;
+      for (const bg of section.backgrounds) {
+        this.backgroundMap[bg.guid] = bg;
+        if (!defaultBg && bg.default) { defaultBg = bg; }
+      }
+    }
+
+    // Load initial background
+    let bgGuid = localStorage.getItem('closet.background') || '';
+    if (!this.backgroundMap[bgGuid]) {
+      bgGuid = defaultBg?.guid || Object.values(this.backgroundMap).at(0)!.guid;
+    }
+
+    this.setBackground(bgGuid);
   }
 
   showBackgroundPicker(evt: MouseEvent): void {
@@ -307,12 +325,19 @@ export class ClosetComponent implements OnDestroy {
     this._changeDetectorRef.markForCheck();
   }
 
-  setBackground(background?: string): void {
-    if (background && !this.backgrounds.includes(background)) { background = ''; }
-    localStorage.setItem('closet.background', background || '');
-    if (!background) { background = this.backgrounds[Math.floor(Math.random() * this.backgrounds.length)]; }
+  setBackground(guid: string): void {
+    let background = this.backgroundMap[guid];
 
-    this._bgImg.src = `/assets/game/background/${background}.webp`;
+    // Random background from section.
+    const section = this.backgroundSectionMap[guid];
+    if (section) {
+      background = section.backgrounds[Math.floor(Math.random() * section.backgrounds.length)];
+    }
+
+    localStorage.setItem('closet.background', guid || '');
+    this._bgImg.src = background.url;
+    this.bgAttribution = background.section?.attribution || '';
+
     this.showingBackgroundPicker = false;
     this._changeDetectorRef.markForCheck();
   }
@@ -718,8 +743,13 @@ export class ClosetComponent implements OnDestroy {
     ctx.fillStyle = '#fff';
     ctx.font = '24px sans-serif';
     ctx.textAlign = 'right';
-    ctx.fillText('Icons by contributors of the Sky: Children of the Light Wiki', canvas.width - 8, canvas.height - 8);
-    ctx.fillText('© Sky: Children of the Light', canvas.width - 8, canvas.height - 8 - 24);
+
+    let l1 = 'Icons by contributors of the Sky: Children of the Light Wiki';
+    if (this.bgAttribution) { l1 = `${this.bgAttribution} | ${l1}`; }
+    ctx.fillText(l1, canvas.width - 8, canvas.height - 8);
+
+    let l2 = '© Sky: Children of the Light';
+    ctx.fillText(l2, canvas.width - 8, canvas.height - 8 - 24);
 
     // Save canvas to PNG and write to clipboard
     const doneCopying = () => { this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
