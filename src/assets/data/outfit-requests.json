@@ -5,6 +5,7 @@
       "label": "Laila's selection",
       "info": "These background are created and generously provided by Laila (Discord: _laila__).",
       "attribution": "Background by Laila",
+      "default": true,
       "backgrounds": [
         { "guid": "5MTlKYxyYG", "url": "/assets/external/laila/harmony.webp", "filter": "brightness(0.6)" },
         { "guid": "oz08DPNhGv", "url": "/assets/external/laila/rainbow.webp", "filter": "brightness(0.6)" },
@@ -12,7 +13,7 @@
         { "guid": "hvyOUufS7B", "url": "/assets/external/laila/race.webp", "filter": "brightness(0.6)" },
         { "guid": "8TCiWQvyPn", "url": "/assets/external/laila/clearing.webp", "filter": "brightness(0.6)" },
         { "guid": "WJ8dQ9wb7z", "url": "/assets/external/laila/bloom.webp", "filter": "brightness(0.6)" },
-        { "guid": "l5IGDbAVOu", "url": "/assets/external/laila/feast.webp", "filter": "brightness(0.6)", "default": true },
+        { "guid": "l5IGDbAVOu", "url": "/assets/external/laila/feast.webp", "filter": "brightness(0.6)" },
       ]
     },
     "classic": {

@@ -301,19 +301,20 @@ export class ClosetComponent implements OnDestroy {
 
     // Load background config.
     this.backgroundSections = Object.values(this._dataService.outfitRequestConfig.backgrounds);
-    let defaultBg: IOutfitRequestBackground | undefined = undefined;
+    let defaultBg: string | undefined = undefined;
     for (const section of this.backgroundSections) {
       this.backgroundSectionMap[section.guid] = section;
+      if (!defaultBg && section.default) { defaultBg = section.guid; }
       for (const bg of section.backgrounds) {
         this.backgroundMap[bg.guid] = bg;
-        if (!defaultBg && bg.default) { defaultBg = bg; }
+        if (!defaultBg && bg.default) { defaultBg = bg.guid; }
       }
     }
 
     // Load initial background
     let bgGuid = localStorage.getItem('closet.background') || '';
     if (!this.backgroundMap[bgGuid]) {
-      bgGuid = defaultBg?.guid || Object.values(this.backgroundMap).at(0)!.guid;
+      bgGuid = defaultBg || Object.values(this.backgroundMap).at(0)!.guid;
     }
 
     this.setBackground(bgGuid);

@@ -13,6 +13,7 @@ export interface IOutfitRequestBackgrounds {
   label: string;
   info?: string;
   attribution?: string;
+  default?: boolean;
 
   // References
   backgrounds: Array<IOutfitRequestBackground>;
