@@ -19,6 +19,7 @@ import { filter } from 'rxjs';
 })
 export class AppComponent {
   ready = false;
+  dataLoss = false;
   showMenu = true;
 
   constructor(
@@ -38,6 +39,10 @@ export class AppComponent {
 
     _storageService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
       this.initDisplayDate();
+    });
+
+    _storageService.storageChanged.pipe(filter(e => e.key === 'unlocked' || e.key === 'col.unlocked')).subscribe(() => {
+      this.dataLoss = true;
     });
 
     dayjs.extend(utc.default);

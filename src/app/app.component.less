@@ -36,6 +36,21 @@
   }
 }
 
+.data-loss {
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+
+  .sky-card-body {
+    background: var(--color-danger-card-background);
+    .container {
+      color: var(--color-danger);
+      border-color: var(--color-danger-accent);
+      background-color: var(--color-danger-background);
+    }
+  }
+}
+
 .map-container {
   display: none;
 }
