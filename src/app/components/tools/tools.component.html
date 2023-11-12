@@ -2,20 +2,35 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Tools</h1>
   </div>
-  <div class="sky-card-body">
-    <div class="grid grid-2">
-      <a class="container" [routerLink]="['/outfit-request/closet']">
-        <mat-icon class="menu-icon">checkroom</mat-icon>
-        <span class="menu-label">
-          Outfit request closet
-        </span>
-      </a>
-      <a class="container" [routerLink]="['/outfit-request/collage']">
-        <mat-icon class="menu-icon">image</mat-icon>
-        <span class="menu-label">
-          Outfit request collage
-        </span>
-      </a>
+</div>
+
+<div class="grid grid-2 mt">
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Outfit request</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="grid grid-1">
+        <div class="preview-img"></div>
+        <a class="container d-block" [routerLink]="['/outfit-request/closet']">
+          <mat-icon class="menu-icon">checkroom</mat-icon>
+          <span class="menu-label">
+            Sky closet
+          </span>
+        </a>
+        <a class="container d-block" href="/outfit-request/request">
+          <mat-icon class="menu-icon">add</mat-icon>
+          <span class="menu-label">
+            Create request
+          </span>
+        </a>
+        <a class="container d-block" [routerLink]="['/outfit-request/collage']">
+          <mat-icon class="menu-icon">image</mat-icon>
+          <span class="menu-label">
+            Create collage
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
