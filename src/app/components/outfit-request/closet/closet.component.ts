@@ -47,6 +47,7 @@ export class ClosetComponent implements OnDestroy {
   // Background
   _bgImg!: HTMLImageElement;
   bgAttribution?: string;
+  bgFilter?: string;
   backgroundSections: Array<IOutfitRequestBackgrounds> = [];
   backgroundSectionMap: { [guid: string]: IOutfitRequestBackgrounds } = {};
   backgroundMap: { [guid: string]: IOutfitRequestBackground } = {};
@@ -337,6 +338,7 @@ export class ClosetComponent implements OnDestroy {
     localStorage.setItem('closet.background', guid || '');
     this._bgImg.src = background.url;
     this.bgAttribution = background.section?.attribution || '';
+    this.bgFilter = background.filter;
 
     this.showingBackgroundPicker = false;
     this._changeDetectorRef.markForCheck();
@@ -775,7 +777,7 @@ export class ClosetComponent implements OnDestroy {
 
   private cvsDrawBackground(ctx: CanvasRenderingContext2D): void {
     const canvas = ctx.canvas;
-    ctx.filter = 'blur(4px) brightness(0.6)';
+    ctx.filter = this.bgFilter ?? 'blur(4px) brightness(0.6)';
 
     const imgAspectRatio = this._bgImg.naturalWidth / this._bgImg.naturalHeight;
     const canvasAspectRatio = canvas.width / canvas.height;

@@ -1,6 +1,7 @@
 export interface IOutfitRequestBackground {
   guid: string;
   url: string;
+  filter?: string;
   default?: boolean;
 
   // References
