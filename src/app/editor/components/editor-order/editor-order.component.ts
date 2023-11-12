@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemHelper } from 'src/app/helpers/item-helper';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { IItem, ItemSubtype, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 
 interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
@@ -12,7 +12,14 @@ interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditorOrderComponent {
-  types: Array<string> = Object.keys(ItemType);
+  types: Array<string> = [
+    'Hat', 'Hair',
+    'Mask', 'FaceAccessory', 'Necklace',
+    'Outfit', 'Shoes', 'Cape',
+    'Held', 'Prop',
+    'Emote', 'Stance', 'Call',
+    'Music'
+  ]
   typeItems: { [key: string]: Array<IItem> } = {};
   typeSwaps: { [key: string]: Array<ISwap> } = {};
 
@@ -26,6 +33,8 @@ export class EditorOrderComponent {
 
     _dataService.itemConfig.items.forEach(item => {
       let type = item.type;
+      if (type === ItemType.Emote && (item.subtype === ItemSubtype.FriendEmote || item.level! > 1)) { return; }
+
       this.typeItems[type].push(item);
       (item as any)._initialOrder = item.order;
     });
@@ -74,13 +83,15 @@ export class EditorOrderComponent {
       if (itemOrder < nextOrder && itemOrder > prevOrder) { return; }
 
       if (prevOrder >= itemOrder) {
-        item.order = prevOrder + (Math.abs(nextOrder - prevOrder) > 10 ? 10 : 1);
+        item.order = prevOrder + (Math.abs(nextOrder - itemOrder) > 10 ? 10 : 1);
         swaps.push({ item, prev, old: itemOrder, new: item.order });
       }
     });
   }
 
-  copyGuid(guid?: string): void {
-    navigator.clipboard.writeText(guid || '');
+  copyText(evt: Event): void {
+    const target = evt.currentTarget as HTMLElement;
+    const text = target.innerText;
+    navigator.clipboard.writeText(text || '');
   }
 }

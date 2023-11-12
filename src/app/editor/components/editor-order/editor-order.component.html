@@ -11,10 +11,10 @@
   <div class="container mt">
     <ng-container *ngFor="let swap of typeSwaps[type]">
       <div class="swap-details">
-        {{ swap.item.name }} <kbd (click)="copyGuid(swap.item.guid)">{{swap.item.guid}}</kbd>
+        <kbd (click)="copyText($event)">{{ swap.item.name }}</kbd>&nbsp;<kbd (click)="copyText($event)">{{swap.item.guid}}</kbd>
         collides with
-        {{ swap.prev?.name }} <kbd (click)="copyGuid(swap.prev?.guid)">{{swap.prev?.guid}}</kbd><br/>
-        <kbd>{{ swap.old }}</kbd> -> <kbd>{{ swap.new }}</kbd>
+        <kbd (click)="copyText($event)">{{ swap.prev?.name }}</kbd>&nbsp;<kbd (click)="copyText($event)">{{swap.prev?.guid}}</kbd><br/>
+        <kbd (click)="copyText($event)">{{ swap.old }}</kbd> -> <kbd (click)="copyText($event)">{{ swap.new }}</kbd>
         <hr/>
       </div>
     </ng-container>

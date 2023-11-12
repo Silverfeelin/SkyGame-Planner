@@ -11,6 +11,8 @@ export interface IItem extends IGuid {
   id?: number;
   /** Item type. */
   type: ItemType;
+  /* Item subtype */
+  subtype?: ItemSubtype;
   /** Item group. */
   group?: ItemGroup;
   /** Item name. */
@@ -85,7 +87,8 @@ export enum ItemType {
 };
 
 export enum ItemSubtype {
-  Instrument = 'Instrument'
+  Instrument = 'Instrument',
+  FriendEmote = 'FriendEmote'
 };
 
 export type ItemGroup = 'Elder' | 'Season' | 'SeasonPass' | 'Ultimate';

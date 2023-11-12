@@ -43,7 +43,7 @@
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Hair-Base_2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
       "autoUnlocked": true,
-      "order": 1
+      "order": 11
     },
     {
       "id": 1952,
@@ -54,7 +54,7 @@
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Hair-Base_3.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle" },
       "autoUnlocked": true,
-      "order": 1
+      "order": 21
     },
     {
       "id": 4,
@@ -129,7 +129,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/PointingCandlemaker-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Hair18-Short_Cowlick.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Hair" },
-      "order": 2
+      "order": 83
     },
     {
       "id": 11,
@@ -215,7 +215,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/UsheringStargazer-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Hair06-Single_Ponytail.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Hair" },
-      "order": 3
+      "order": 22
     },
     {
       "id": 21,
@@ -308,7 +308,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/RejectingVoyager-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Hair34-One_Side_Short.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Hair" },
-      "order": 4
+      "order": 154
     },
     {
       "id": 32,
@@ -499,7 +499,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/ApplaudingBellmaker-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Hair05-Pippi_Ponytails.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Hair" },
-      "order": 7
+      "order": 33
     },
     {
       "id": 54,
@@ -575,7 +575,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Hair10-Small_Tuft.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Hair" },
-      "order": 5
+      "order": 63
     },
     {
       "id": 63,
@@ -668,7 +668,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/SlumberingShipwright-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Hair37-Mid_Mohawk.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Hair" },
-      "order": 6
+      "order": 93
     },
     {
       "id": 74,
@@ -787,7 +787,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/LaughingLightCatcher-3.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Hair26-Puffy_Ponytails.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Hair" },
-      "order": 29
+      "order": 264
     },
     {
       "id": 88,
@@ -812,7 +812,7 @@
       "type": "Music",
       "name": "Music Sheet 1",
       "sheet": "1",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 1
     },
     {
@@ -1054,7 +1054,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/ShiveringTrailblazer-3.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Hair08-Wispy.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Hair" },
-      "order": 14
+      "order": 143
     },
     // Blushing Prospector
     {
@@ -1091,7 +1091,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/BlushingProspector-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Hair32-Pigtail_Braids.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Hair" },
-      "order": 11
+      "order": 113
     },
     {
       "id": 124,
@@ -1162,7 +1162,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/HideNSeekPioneer-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Hair14-Bob.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Hair" },
-      "order": 13
+      "order": 133
     },
     {
       "id": 132,
@@ -1254,7 +1254,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/PoutyPorter-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Hair35-One_Side_Medium.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Hair" },
-      "order": 10
+      "order": 164
     },
     {
       "id": 143,
@@ -1357,7 +1357,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/DismayedHunter-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Hair17-Thick_Ponytails.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Hair" },
-      "order": 25
+      "order": 53
     },
     {
       "id": 155,
@@ -1460,7 +1460,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/ApologeticLumberjack-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Hair07-Short_Ponytails.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Hair" },
-      "order": 9
+      "order": 43
     },
     {
       "id": 167,
@@ -1546,7 +1546,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/TearfulLightMiner-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Hair38-Short_Mullet.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Hair" },
-      "order": 8
+      "order": 103
     },
     {
       "id": 177,
@@ -1638,7 +1638,7 @@
       "type": "Music",
       "name": "Music Sheet 2",
       "sheet": "2",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 2
     },
     // #endregion
@@ -1661,7 +1661,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/ConfidentSightseer-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Hair03-Wedge_Cut.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Hair" },
-      "order": 12
+      "order": 123
     },
     {
       "id": 191,
@@ -1838,7 +1838,7 @@
       "type": "Music",
       "name": "Music Sheet 3",
       "sheet": "3",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
       "order": 3
     },
     // Backflipping Champion
@@ -1876,7 +1876,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/BackflippingChampion-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Hair12-Chris_Hair.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Hair" },
-      "order": 27
+      "order": 234
     },
     {
       "id": 217,
@@ -1962,7 +1962,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/CheerfulSpectator-Hair-Credit-Ed.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Hair28-Afro.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Hair" },
-      "order": 28
+      "order": 244
     },
     {
       "id": 227,
@@ -2049,7 +2049,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/BowingMedalist-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Hair04-Lions_Mane_Hair.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Hair" },
-      "order": 26
+      "order": 224
     },
     {
       "id": 237,
@@ -2212,7 +2212,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/FrightenedRefugee-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Hair27-Puffy_Ponytail.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Hair" },
-      "order": 28
+      "order": 254
     },
     {
       "id": 256,
@@ -2299,7 +2299,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/FaintingWarrior-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Hair36-One_Side_Long.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Hair" },
-      "order": 16
+      "order": 174
     },
     {
       "id": 266,
@@ -2368,7 +2368,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/CourageousSoldier-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Hair13-Short_Mohawk.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Hair" },
-      "order": 15
+      "order": 153
     },
     {
       "id": 274,
@@ -2443,7 +2443,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/StealthySurvivor-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Hair33-Short_Dreads.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Hair" },
-      "order": 17
+      "order": 184
     },
     {
       "id": 283,
@@ -2535,7 +2535,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SalutingCaptain-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Hair15-Short_Boy.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Hair" },
-      "order": 18
+      "order": 73
     },
     {
       "id": 294,
@@ -2710,7 +2710,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/LevitatingAdept-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Hair39-Long_Mullet.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Hair" },
-      "order": 19
+      "order": 194
     },
     {
       "id": 314,
@@ -2796,7 +2796,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Meditating-Monastic-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Hair16-Short_Beard.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Hair" },
-      "order": 20
+      "order": 204
     },
     {
       "id": 324,
@@ -3015,7 +3015,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/PrayingAcolyte-2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Hair09-Long_One_Braid.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Hair" },
-      "order": 21
+      "order": 214
     },
     {
       "id": 350,
@@ -3096,7 +3096,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_hair_elder_isle.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Hair19-Isle_Elder.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Hair" },
-      "order": 51
+      "order": 274
     },
     {
       "id": 359,
@@ -3119,7 +3119,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Icon_hair_elder_prairie.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair20-Prairie_Elder.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Hair" },
-      "order": 52
+      "order": 284
     },
     {
       "id": 361,
@@ -3142,7 +3142,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Icon_hair_elder_forest.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Hair21-Forest_Elder.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Hair" },
-      "order": 53
+      "order": 294
     },
     {
       "id": 363,
@@ -3165,7 +3165,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Icon_hair_elder_valley_2.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Hair23-Valley_Elder_2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair" },
-      "order": 55
+      "order": 314
     },
     {
       "id": 365,
@@ -3176,7 +3176,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Icon_hair_elder_valley_1.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Hair22-Valley_Elder_1.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair" },
-      "order": 54
+      "order": 304
     },
     // Wasteland Elder
     {
@@ -3188,7 +3188,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Icon_hair_elder_wasteland.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Hair24-Wasteland_Elder.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wasteland_Elder#Hair" },
-      "order": 56
+      "order": 324
     },
     // Vault Elder
     {
@@ -3200,7 +3200,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_hair_elder_vault.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Hair25-Vault_Elder.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder#Hair" },
-      "order": 57
+      "order": 334
     },
     // #endregion
 
@@ -4745,8 +4745,7 @@
       "name": "Silent Clap",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 2,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png",
-      "order": 961
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png"
     },
     {
       "id": 554,
@@ -4755,7 +4754,8 @@
       "name": "Silent Clap",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Expression" },
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/SoAurora-Ultimate-Expression-Dance-1-Icon-Morybel-0146.png",
+      "order": 961
     },
     {
       "id": 555,
@@ -4874,7 +4874,7 @@
       "type": "Music",
       "name": "Music Sheet 32",
       "sheet": "32",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 32
     },
     {
@@ -4899,7 +4899,7 @@
       "type": "Music",
       "name": "Music Sheet 34",
       "sheet": "34",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
       "order": 34
     },
     {
@@ -4910,7 +4910,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/SoAurora-Additional-Green-Outfit-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoAurora-Cure-for-me-Outfit-front.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Outfit" },
-      "order": 1504
+      "order": 1514
     },
     {
       "id": 573,
@@ -5720,7 +5720,7 @@
       "type": "Music",
       "name": "Music Sheet 7",
       "sheet": "7",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 7
     },
     {
@@ -5902,7 +5902,7 @@
       "type": "Music",
       "name": "Music Sheet 8",
       "sheet": "8",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 8
     },
     {
@@ -6065,6 +6065,7 @@
       "id": 709,
       "guid": "G9wVSFG6I_",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Piggyback",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action" },
       "level": 1,
@@ -6098,6 +6099,7 @@
       "id": 713,
       "guid": "HtVnkK980q",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Piggyback",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action" },
       "level": 2,
@@ -6142,6 +6144,7 @@
       "id": 718,
       "guid": "9sYCtuZch3",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Double-Five",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action" },
       "level": 1,
@@ -6178,6 +6181,7 @@
       "id": 722,
       "guid": "nfeBnolyEY",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Double-Five",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action" },
       "level": 2,
@@ -6255,7 +6259,7 @@
       "type": "Music",
       "name": "Music Sheet 9",
       "sheet": "9",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 9
     },
     {
@@ -6443,7 +6447,7 @@
       "type": "Music",
       "name": "Music Sheet 10",
       "sheet": "10",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 10
     },
     {
@@ -6925,7 +6929,7 @@
       "type": "Music",
       "name": "Music Sheet 11",
       "sheet": "11",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 11
     },
     {
@@ -7116,6 +7120,7 @@
       "id": 833,
       "guid": "YUAzM6p_2j",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Hair Tousle",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Friend_Action" },
       "level": 1,
@@ -7141,13 +7146,14 @@
       "type": "Music",
       "name": "Music Sheet 12",
       "sheet": "12",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 12
     },
     {
       "id": 837,
       "guid": "0f9auBppfc",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Hair Tousle",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Friend_Action" },
       "level": 2,
@@ -7232,14 +7238,6 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
     },
     {
-      "id": 847,
-      "guid": "TMuwOqLcFB",
-      "type": "Music",
-      "name": "Music Sheet 1",
-      "sheet": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
-    },
-    {
       "id": 848,
       "guid": "GbIQpDNVKS",
       "type": "Special",
@@ -7297,7 +7295,7 @@
       "type": "Music",
       "name": "Music Sheet 4",
       "sheet": "4",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 4
     },
     {
@@ -7347,14 +7345,6 @@
       "type": "Special",
       "name": "Blessing",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
-    },
-    {
-      "id": 861,
-      "guid": "sASnDAINbr",
-      "type": "Music",
-      "name": "Music Sheet 2",
-      "sheet": 2,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
     },
     {
       "id": 862,
@@ -7407,7 +7397,7 @@
       "type": "Music",
       "name": "Music Sheet 5",
       "sheet": "5",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 5
     },
     {
@@ -7474,7 +7464,7 @@
       "type": "Music",
       "name": "Music Sheet 6",
       "sheet": "6",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
       "order": 6
     },
     {
@@ -8374,6 +8364,7 @@
       "id": 981,
       "guid": "aBFJssIm0e",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Play Fight",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action" },
       "level": 1,
@@ -8414,6 +8405,7 @@
       "id": 986,
       "guid": "PkKzcwatL6",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Play Fight",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action" },
       "level": 2,
@@ -8425,7 +8417,7 @@
       "type": "Music",
       "name": "Music Sheet 13",
       "sheet": "13",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 13
     },
     {
@@ -8504,7 +8496,7 @@
       "type": "Music",
       "name": "Music Sheet 14",
       "sheet": "14",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 14
     },
     {
@@ -8602,7 +8594,7 @@
       "type": "Music",
       "name": "Music Sheet 15",
       "sheet": "15",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 15
     },
     {
@@ -9269,7 +9261,7 @@
       "type": "Music",
       "name": "Music Sheet 16",
       "sheet": "16",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 16
     },
     {
@@ -9525,7 +9517,7 @@
       "type": "Music",
       "name": "Music Sheet 17",
       "sheet": "17",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 17
     },
     {
@@ -9596,6 +9588,7 @@
       "id": 1124,
       "guid": "sw2YxczeGz",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Bearhug",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action" },
       "level": 1,
@@ -9631,7 +9624,7 @@
       "type": "Music",
       "name": "Music Sheet 19",
       "sheet": "19",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 19
     },
     {
@@ -9645,6 +9638,7 @@
       "id": 1130,
       "guid": "YzY-N81J1l",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Bearhug",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action" },
       "level": 2,
@@ -9817,7 +9811,7 @@
       "type": "Music",
       "name": "Music Sheet 18",
       "sheet": "18",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 18
     },
     {
@@ -10296,7 +10290,7 @@
       "type": "Music",
       "name": "Music Sheet 21",
       "sheet": "21",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 21
     },
     {
@@ -10638,7 +10632,7 @@
       "type": "Music",
       "name": "Music Sheet 20",
       "sheet": "20",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 20
     },
     {
@@ -10815,7 +10809,7 @@
       "type": "Music",
       "name": "Music Sheet 22",
       "sheet": "22",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 22
     },
     {
@@ -11040,7 +11034,7 @@
       "type": "Music",
       "name": "Music Sheet 23",
       "sheet": "23",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 23
     },
     {
@@ -11416,7 +11410,7 @@
       "type": "Music",
       "name": "Music Sheet 24",
       "sheet": "24",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 24
     },
     {
@@ -11646,7 +11640,7 @@
       "type": "Music",
       "name": "Music Sheet 25",
       "sheet": "25",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 25
     },
     {
@@ -11972,7 +11966,7 @@
       "type": "Music",
       "name": "Music Sheet 27",
       "sheet": "27",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 27
     },
     {
@@ -12074,7 +12068,7 @@
       "type": "Music",
       "name": "Music Sheet 26",
       "sheet": "26",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 26
     },
     {
@@ -12181,6 +12175,7 @@
       "id": 1424,
       "guid": "FmTG9TSX2e",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Handshake",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Friend_Action" },
       "level": 1,
@@ -12209,7 +12204,7 @@
       "type": "Music",
       "name": "Music Sheet 29",
       "sheet": "29",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 29
     },
     {
@@ -12230,6 +12225,7 @@
       "id": 1430,
       "guid": "LYyK5T92ij",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Handshake",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Friend_Action" },
       "level": 2,
@@ -12494,6 +12490,7 @@
       "id": 1460,
       "guid": "kW5PsMdMVR",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Duet Dance",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Friend_Action" },
       "level": 1,
@@ -12512,7 +12509,7 @@
       "type": "Music",
       "name": "Music Sheet 28",
       "sheet": "28",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 28
     },
     {
@@ -12543,6 +12540,7 @@
       "id": 1466,
       "guid": "LTHqUonVhP",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Duet Dance",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Friend_Action" },
       "level": 2,
@@ -12643,7 +12641,7 @@
       "type": "Music",
       "name": "Music Sheet 31",
       "sheet": "31",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 31
     },
     {
@@ -12752,7 +12750,7 @@
       "type": "Music",
       "name": "Music Sheet 30",
       "sheet": "30",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 30
     },
     {
@@ -12933,7 +12931,7 @@
       "type": "Music",
       "name": "Music Sheet 36",
       "sheet": "36",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 36
     },
     {
@@ -13153,7 +13151,7 @@
       "type": "Music",
       "name": "Music Sheet 35",
       "sheet": "35",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 35
     },
     {
@@ -13231,7 +13229,7 @@
       "type": "Music",
       "name": "Music Sheet 33",
       "sheet": "33",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 33
     },
     {
@@ -13390,7 +13388,8 @@
       "name": "Cure for Me",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts#Cure_for_Me_Expression" },
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png",
+      "order": 1071
     },
     {
       "id": 1563,
@@ -14164,6 +14163,7 @@
       "id": 1650,
       "guid": "DLJd5rdOFB",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Side Hug",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Expression" },
       "level": 1,
@@ -14173,6 +14173,7 @@
       "id": 1651,
       "guid": "qwdvtBnaPL",
       "type": "Emote",
+      "subtype": "FriendEmote",
       "name": "Side Hug",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Expression" },
       "level": 2,
@@ -14262,7 +14263,8 @@
       "name": "Jolly Dance",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression" },
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png",
+      "order": 1051
     },
     {
       "id": 1662,
@@ -14331,7 +14333,7 @@
       "type": "Music",
       "name": "Music Sheet 37",
       "sheet": "37",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 37
     },
     {
@@ -14360,7 +14362,8 @@
       "name": "Blindfold Balance Pose",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression" },
       "level": 1,
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png",
+      "order": 1061
     },
     {
       "id": 1673,
@@ -14680,7 +14683,7 @@
       "type": "Music",
       "name": "Music Sheet 38",
       "sheet": "38",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
       "order": 38
     },
     {
@@ -15170,7 +15173,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Icon_hair_bloom.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Days_of_blossom_2021_hair_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Hair" },
-      "order": 10004
+      "order": 10014
     },
     {
       "id": 1766,
@@ -15514,7 +15517,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_rainbow_hat.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Rainbow_hair_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat" },
-      "order": 10005
+      "order": 10024
     },
     {
       "id": 1806,
@@ -15718,7 +15721,7 @@
       "type": "Music",
       "name": "Music Sheet #E2",
       "sheet": "E2",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 202
     },
     {
@@ -15937,7 +15940,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Icon_hair_mischief_pumpkin.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Hair_halloween_pumpkin.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Hungry_Pumpkin_Hat" },
-      "order": 10007
+      "order": 10044
     },
     {
       "id": 1853,
@@ -15947,7 +15950,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Icon_hair_mischief_witch_hat.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Crooked_witch_hat_hair_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hat" },
-      "order": 10008
+      "order": 10054
     },
     {
       "id": 1854,
@@ -16008,7 +16011,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_2021_mischief_long_hair.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Hair_2021_mischief_long_hair.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hair" },
-      "order": 10010
+      "order": 10074
     },
     {
       "id": 1861,
@@ -16028,7 +16031,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Icon_2021_mischief_iap_hair.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Hair_2021_mischief_web_hair_iap.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spider_Quiff" },
-      "order": 10011
+      "order": 10084
     },
     {
       "id": 1863,
@@ -16068,7 +16071,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Days-of-Mischief-Cat-Hair-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Mischief-2022-Cat-hairstyle.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Tufted_Hair" },
-      "order": 10009
+      "order": 10064
     },
     {
       "id": 1867,
@@ -16108,7 +16111,7 @@
       "name": "Mischief Gossamer Cape",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
-      "order": 10404
+      "order": 10405
     },
     {
       "id": 1871,
@@ -16117,7 +16120,7 @@
       "name": "Mischief Crabula Cloak",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
-      "order": 10405
+      "order": 10415
     },
     {
       "id": 1872,
@@ -16173,7 +16176,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Icon_hair_feast_santa_hat.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Santa_hat.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Hat" },
-      "order": 10011
+      "order": 10094
     },
     {
       "id": 1877,
@@ -16278,7 +16281,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Days_of_Feast_Whool_hat_icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Wool_hat_hair_2021.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Hat" },
-      "order": 10013
+      "order": 10095
     },
     {
       "id": 1889,
@@ -16296,7 +16299,7 @@
       "type": "Music",
       "name": "Music Sheet #E1",
       "sheet": "E1",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 201
     },
     {
@@ -16636,7 +16639,7 @@
       "type": "Music",
       "name": "Music Sheet #HH1",
       "sheet": "HH1",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/MusicSheet02-Ray.png",
       "order": 102
     },
     {
@@ -16645,7 +16648,7 @@
       "type": "Music",
       "name": "Music Sheet #HH2",
       "sheet": "HH2",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/MusicSheet03-Ray.png",
       "order": 103
     },
     {
@@ -16654,7 +16657,7 @@
       "type": "Music",
       "name": "Music Sheet #HH3",
       "sheet": "HH3",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/MusicSheet04-Ray.png",
       "order": 104
     },
     {
@@ -16663,7 +16666,7 @@
       "type": "Music",
       "name": "Music Sheet #HH4",
       "sheet": "HH4",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/MusicSheet05-Ray.png",
       "order": 105
     },
     {
@@ -16695,7 +16698,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Musical-Hall-Marching-Band-Hat.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat" },
-      "order": 10006
+      "order": 10034
     },
     {
       "id": 1932,
@@ -16703,7 +16706,7 @@
       "type": "Music",
       "name": "Music Sheet #HH5",
       "sheet": "HH5",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
       "order": 101
     },
     {
