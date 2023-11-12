@@ -1,10 +1,13 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import dayjs from 'dayjs';
+import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
+import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
+import { StorageService } from 'src/app/services/storage.service';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'checkin';
 export interface SeasonCardOptions {
@@ -17,7 +20,7 @@ export interface SeasonCardOptions {
   styleUrls: ['./season-card.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SeasonCardComponent implements OnInit, OnChanges {
+export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() season?: ISeason;
   @Input() options: SeasonCardOptions = { show: [ 'img', 'overview', 'spirits' ] };
 
@@ -27,6 +30,17 @@ export class SeasonCardComponent implements OnInit, OnChanges {
   checkedIn = false;
   imageUrlSafe?: string;
 
+  _subs = new SubscriptionBag();
+
+  constructor(
+    private readonly _storageService: StorageService,
+    private readonly _changeDetectorRef: ChangeDetectorRef
+  ) {
+    this._subs.add(this._storageService.storageChanged.pipe(filter(e => e.key?.startsWith('season.checkin.') == true)).subscribe(e => {
+      this.updateCheckin();
+    }));
+  }
+
   ngOnInit(): void {
     this.updateSections();
     this.updateSeason();
@@ -35,6 +49,10 @@ export class SeasonCardComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['options']) { this.updateSections();}
     if (changes['season']) { this.updateSeason(); }
+  }
+
+  ngOnDestroy(): void {
+    this._subs.unsubscribe();
   }
 
   private updateSeason(): void {
@@ -66,7 +84,10 @@ export class SeasonCardComponent implements OnInit, OnChanges {
     if (checkinDate) {
       const d = dayjs.tz(checkinDate, 'YYYY-MM-DD', DateHelper.skyTimeZone);
       this.checkedIn = d.isSame(dayjs.tz(), 'day');
+    } else {
+      this.checkedIn = false;
     }
+    this._changeDetectorRef.markForCheck();
   }
 
   private updateSections(): void {
