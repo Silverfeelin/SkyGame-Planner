@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import dayjs from 'dayjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { DataService } from 'src/app/services/data.service';

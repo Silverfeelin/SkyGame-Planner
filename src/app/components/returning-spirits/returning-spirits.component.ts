@@ -10,12 +10,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ReturningSpiritsComponent {
   rows: Array<any> = [];
-  dateFormat: string;
 
   constructor(
     private readonly _dataService: DataService
   ) {
-    this.dateFormat = DateHelper.displayFormat;
     this.rows = this._dataService.returningSpiritsConfig.items.map(rs => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;

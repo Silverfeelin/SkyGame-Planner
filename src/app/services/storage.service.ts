@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,12 @@ export class StorageService {
   unlocked = new Set<string>();
   unlockedCol = new Set<string>();
 
+  storageChanged = new Subject<StorageEvent>();
+
   constructor() {
     this.initializeItems();
     this.initializeCol();
+    this.subscribeStorage();
   }
 
   // #region Nodes & items
@@ -64,6 +68,20 @@ export class StorageService {
   saveCol(): void {
     const unlocked = this.serializeUnlockedCol();
     localStorage.setItem('col.unlocked', unlocked);
+  }
+
+  // #endregion
+
+  // #region Storage updates
+
+  private subscribeStorage(): void {
+    window.addEventListener('storage', evt => {
+      this.onStorageChanged(evt);
+    });
+  }
+
+  private onStorageChanged(event: StorageEvent): void {
+    this.storageChanged.next(event);
   }
 
   // #endregion

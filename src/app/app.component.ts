@@ -9,6 +9,8 @@ import * as isoWeek from 'dayjs/plugin/isoWeek';
 import * as timezone from 'dayjs/plugin/timezone';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
+import { StorageService } from './services/storage.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -17,12 +19,12 @@ import { EventService } from './services/event.service';
 })
 export class AppComponent {
   ready = false;
-  dataLoss = false;
   showMenu = true;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
+    private readonly _storageService: StorageService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
     private readonly _viewContainerRef: ViewContainerRef,
@@ -34,20 +36,19 @@ export class AppComponent {
     _matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
-    window.addEventListener('storage', () => {
-      this.dataLoss = true;
+    _storageService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
+      this.initDisplayDate();
     });
 
     dayjs.extend(utc.default);
     dayjs.extend(isoWeek.default);
     dayjs.extend(timezone.default);
     dayjs.tz.setDefault(DateHelper.skyTimeZone);
+    (window as any).dayjs = dayjs;
 
     if (location.pathname.endsWith('/outfit-request/request')) {
       this.hideMenu();
     }
-
-    (window as any).dayjs = dayjs;
   }
 
   initDisplayDate(): void {

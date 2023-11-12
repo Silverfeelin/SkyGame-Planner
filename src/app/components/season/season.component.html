@@ -18,9 +18,9 @@
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>
         <span class="menu-label">
-          {{ season.date | dayjs }}
+          <app-date [date]="season.date"></app-date>
           to
-          {{ season.endDate | dayjs }}
+          <app-date [date]="season.endDate"></app-date>
           <span class="c-accent" *ngIf="state !== 'active'">
             (<app-days-left [start]="season.date" [end]="season.endDate"></app-days-left>)
           </span>

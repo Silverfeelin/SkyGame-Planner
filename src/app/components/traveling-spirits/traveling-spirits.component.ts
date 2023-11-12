@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
 
@@ -10,12 +9,10 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class TravelingSpiritsComponent {
   rows: Array<any> = [];
-  dateFormat: string;
 
   constructor(
     private readonly _dataService: DataService
   ) {
-    this.dateFormat = DateHelper.displayFormat;
     this.rows = this._dataService.travelingSpiritConfig.items.map(ts => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;

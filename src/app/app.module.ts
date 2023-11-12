@@ -58,6 +58,7 @@ import { IconPickerComponent } from './components/util/icon-picker/icon-picker.c
 import { FirefoxClipboardItemComponent } from './components/util/firefox-clipboard-item/firefox-clipboard-item.component';
 import { ItemFieldGuideComponent } from './components/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/item-unlock/item-unlock.component';
+import { DateComponent } from './components/util/date/date.component';
 
 @NgModule({
   declarations: [
@@ -113,7 +114,8 @@ import { ItemUnlockComponent } from './components/item-unlock/item-unlock.compon
     IconPickerComponent,
     FirefoxClipboardItemComponent,
     ItemFieldGuideComponent,
-    ItemUnlockComponent
+    ItemUnlockComponent,
+    DateComponent
   ],
   imports: [
     BrowserModule,

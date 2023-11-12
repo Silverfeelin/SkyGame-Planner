@@ -8,7 +8,6 @@ import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import dayjs from 'dayjs';
-import { DateHelper } from 'src/app/helpers/date-helper';
 
 @Component({
   selector: 'app-spirit-tree',
@@ -37,8 +36,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   tsDate?: dayjs.Dayjs;
   rsDate?: dayjs.Dayjs;
 
-  dateFormat: string;
-
   _itemSub?: SubscriptionLike;
 
   constructor(
@@ -46,7 +43,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef
   ) {
-    this.dateFormat = DateHelper.displayFormat;
   }
 
   ngAfterViewInit(): void {

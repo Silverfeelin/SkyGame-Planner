@@ -39,10 +39,10 @@
         </a>
       </ng-template> -->
       <ng-template [appTableColumn] let-row="row">
-        <span class="ws-nw">{{ row.date | dayjs:dateFormat }}</span>
+        <span class="ws-nw"><app-date [date]="row.date"></app-date></span>
       </ng-template>
       <ng-template [appTableColumn] let-row="row">
-        <span class="ws-nw">{{ row.endDate | dayjs:dateFormat }}</span>
+        <span class="ws-nw"><app-date [date]="row.endDate"></app-date></span>
       </ng-template>
       <ng-template [appTableColumn] let-row="row">
         <span *ngIf="row.totalItems" [class.completed]="row.unlockedItems === row.totalItems">
