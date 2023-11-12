@@ -700,7 +700,7 @@ export class ClosetComponent implements OnDestroy {
     const h = Math.max(h1, h2, h3, h4);
 
     canvas.width = 5 * _wPad + _wBox * cols.reduce((sum, c) => sum + c, 0) - _wGap;
-    canvas.height = h === h4 ? h + 48 : h === h3 ? h + 24 : h;
+    canvas.height = h === h4 ? h + 48 : h === h1 ? h : h + 24;
     const ctx = canvas.getContext('2d')!;
     this.cvsDrawBackground(ctx);
 
