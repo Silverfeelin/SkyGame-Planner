@@ -4,12 +4,16 @@
   left: 0;
   width: 100%;
   height: 100%;
+  height: 100lvh;
   z-index: -999999;
   background: var(--background);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+}
 
+html {
+  background: #000;
 }
 
 .background::after {
@@ -17,6 +21,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  height: 100lvh;
   backdrop-filter: var(--background-filter);
 }
 
