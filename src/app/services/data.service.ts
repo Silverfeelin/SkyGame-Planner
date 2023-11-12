@@ -23,6 +23,7 @@ import { NodeHelper } from '../helpers/node-helper';
 import dayjs from 'dayjs';
 import { CostHelper } from '../helpers/cost-helper';
 import { ItemHelper } from '../helpers/item-helper';
+import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,7 @@ export class DataService {
   travelingSpiritConfig!: ITravelingSpiritConfig;
   returningSpiritsConfig!: IReturningSpiritsConfig;
   wingedLightConfig!: IWingedLightConfig;
+  outfitRequestConfig!: IOutfitRequestConfig;
 
   guidMap = new Map<string, IGuid>();
 
@@ -70,7 +72,8 @@ export class DataService {
       spiritTreeConfig: get('spirit-trees.json'),
       travelingSpiritConfig:  get('traveling-spirits.json'),
       returningSpiritsConfig:  get('returning-spirits.json'),
-      wingedLightConfig: get('winged-lights.json')
+      wingedLightConfig: get('winged-lights.json'),
+      outfitRequestConfig: get('outfit-requests.json'),
     }).subscribe({
       next: (data:  {[k: string]: string}) => { this.onConfigs(data); },
       error: e => console.error(e)
@@ -102,6 +105,7 @@ export class DataService {
     this.initializeItems();
     this.initializeSeasonItems();
     this.initializeWingedLight();
+    this.initializeOutfitRequests();
 
     // Save for any corrections made during init.
     this._storageService.save();
@@ -398,6 +402,14 @@ export class DataService {
     });
   }
 
+  private initializeOutfitRequests(): void {
+    for (const section of Object.values(this.outfitRequestConfig.backgrounds)) {
+      section.backgrounds.forEach(bg => {
+        bg.section = section;
+      });
+    }
+  }
+
   private exposeData(): void {
     (window as any).skyData = {
       areaConfig: this.areaConfig,
@@ -443,6 +455,7 @@ export class DataService {
 
   private initializeGuids(configs: Array<IConfig<IGuid>>): void {
     for (const config of configs) {
+      if (!config.items) { return; }
       config.items.forEach(v => this.registerGuid(v));
     }
   }

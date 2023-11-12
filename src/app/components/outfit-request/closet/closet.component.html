@@ -254,12 +254,18 @@
   <div #divBackgroundPicker class="background-picker" *ngIf="showingBackgroundPicker">
     <h3>Choose a background</h3>
     <mat-icon class="background-picker-close" (click)="showBackgroundPicker($event)">close</mat-icon>
-    <div class="grid grid-3">
-      <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground('')"/>
-      <ng-container *ngFor="let bg of backgrounds">
-        <img [src]="'/assets/game/background/'+bg+'.webp'" class="background-picker-item" (click)="setBackground(bg)"/>
-      </ng-container>
-    </div>
+    <ng-container *ngFor="let section of backgroundSections; let i = index;">
+      <div class="mt">
+        <hr *ngIf="i > 0"/>
+        <h4>{{ section.label }}</h4>
+        <div class="grid grid-4">
+          <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground(section.guid)"/>
+          <ng-container *ngFor="let bg of section.backgrounds">
+            <img [src]="bg.url" class="background-picker-item" (click)="setBackground(bg.guid)"/>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>
 
