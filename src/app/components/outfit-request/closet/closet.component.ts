@@ -313,7 +313,7 @@ export class ClosetComponent implements OnDestroy {
 
     // Load initial background
     let bgGuid = localStorage.getItem('closet.background') || '';
-    if (!this.backgroundMap[bgGuid]) {
+    if (!this.backgroundMap[bgGuid] && !this.backgroundSectionMap[bgGuid]) {
       bgGuid = defaultBg || Object.values(this.backgroundMap).at(0)!.guid;
     }
 
