@@ -56,13 +56,13 @@
         <!-- Toggle item size -->
         <div class="button-group">
           <button type="button" (click)="toggleItemSize()">
-            <mat-icon class="menu-icon">zoom_in</mat-icon>
+            <mat-icon class="menu-icon">{{ itemSize === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
             <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
           </button>
         </div>
         <!-- Hide items from IAPs. -->
         <button type="button" (click)="toggleIap()" *ngIf="!requesting">
-          <mat-icon class="menu-icon">attach_money</mat-icon>
+          <mat-icon class="menu-icon">{{ hideIap ? 'attach_money' : 'money_off' }}</mat-icon>
           <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
         </button>
         <div class="button-group">
