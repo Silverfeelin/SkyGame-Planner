@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+export const storageReloadKeys = new Set(['unlocked', 'favourites', 'col.unlocked']);
+
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService {
   unlocked = new Set<string>();
+  favourites = new Set<string>();
+
   unlockedCol = new Set<string>();
 
   storageChanged = new Subject<StorageEvent>();
@@ -22,6 +26,10 @@ export class StorageService {
     const unlocked = localStorage.getItem('unlocked');
     const guids: Array<string> = unlocked?.length && unlocked.split(',') || [];
     guids.forEach(g => this.unlocked.add(g));
+
+    const favourites = localStorage.getItem('favourites');
+    const favGuids: Array<string> = favourites?.length && favourites.split(',') || [];
+    favGuids.forEach(g => this.favourites.add(g));
   }
 
   /** Adds unlocked node or items by GUID. */
@@ -41,6 +49,27 @@ export class StorageService {
   save(): void {
     const unlocked = this.serializeUnlocked();
     localStorage.setItem('unlocked', unlocked);
+  }
+
+  // #endregion
+
+  // #region Favourites
+
+  addFavourite(...guids: Array<string>): void {
+    guids?.forEach(g => this.favourites.add(g));
+  }
+
+  removeFavourite(...guids: Array<string>): void {
+    guids?.forEach(g => this.favourites.delete(g));
+  }
+
+  serializeFavourites(): string {
+    return [...this.favourites].join(',');
+  }
+
+  saveFavourites(): void {
+    const favourites = this.serializeFavourites();
+    localStorage.setItem('favourites', favourites);
   }
 
   // #endregion

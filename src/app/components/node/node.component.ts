@@ -62,7 +62,7 @@ export class NodeComponent implements OnChanges {
     }
 
     // Notify listeners.
-    this._eventService.toggleItem(item);
+    this._eventService.itemToggled.next(item);
   }
 
   copyDebug(node: INode): void {

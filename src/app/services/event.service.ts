@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class EventService {
   readonly itemToggled = new Subject<IItem>();
+  readonly itemFavourited = new Subject<IItem>();
   readonly searchReset = new Subject<void>();
   readonly clicked = new Subject<MouseEvent>();
 
@@ -21,10 +22,6 @@ export class EventService {
     document.addEventListener('click', evt => {
       this.onClick(evt);
     })
-  }
-
-  toggleItem(item: IItem): void {
-    this.itemToggled.next(item);
   }
 
   private onKeyDown(evt: KeyboardEvent): void {

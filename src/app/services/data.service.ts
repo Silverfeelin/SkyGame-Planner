@@ -369,6 +369,7 @@ export class DataService {
   private initializeItems(): void {
     this.itemConfig.items.forEach(item => {
       item.unlocked ||= this._storageService.unlocked.has(item.guid);
+      item.favourited = this._storageService.favourites.has(item.guid);
       if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }
       item.order ??= 999999;
     });

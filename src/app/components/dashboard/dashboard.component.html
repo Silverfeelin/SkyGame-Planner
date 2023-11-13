@@ -17,6 +17,8 @@
   </div>
 </div>
 
+<app-dashboard-wishlist [season]="season" [eventInstance]="eventInstance" [ts]="ts" [rs]="undefined"></app-dashboard-wishlist>
+
 <div class="grid grid-2 mt">
   <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
   <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>

@@ -1,0 +1,21 @@
+<ng-container *ngIf="shouldShow">
+  <div class="sky-card mt wishlist-highlight">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Wishlist</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        Limited items you have favourited are available right now!
+      </div>
+      <div class="sky-flex flex-wrap mt">
+        <ng-container *ngFor="let item of items">
+          <ng-container *ngIf="ongoingItems[item.guid]">
+            <div class="wishlist-item" [ngbTooltip]="item.name" container="body">
+              <app-item [item]="item" [highlight]="true" [hoverHighlight]="false" [showSubIcons]="true"></app-item>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>

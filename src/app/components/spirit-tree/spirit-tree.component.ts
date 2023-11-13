@@ -137,7 +137,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         node.unlocked = true;
 
         this._storageService.add(node.item!.guid, node.guid);
-        this._eventService.toggleItem(node.item!);
+        this._eventService.itemToggled.next(node.item!);
       });
     } else {
       // Lock all unlocked items.
@@ -147,7 +147,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         refNodes.forEach(n => n.unlocked = false);
 
         this._storageService.remove(node.item!.guid, ...refNodes.map(n => n.guid));
-        this._eventService.toggleItem(node.item!);
+        this._eventService.itemToggled.next(node.item!);
       });
     }
 

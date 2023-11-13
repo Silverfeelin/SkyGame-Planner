@@ -43,6 +43,7 @@ export interface IItem extends IGuid {
   /// Progress ///
   unlocked?: boolean;
   autoUnlocked?: boolean;
+  favourited?: boolean;
 
   _wiki?: IWiki;
 }

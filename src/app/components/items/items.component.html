@@ -79,14 +79,23 @@
     </div>
     <div class="sky-card-body">
       <div class="info-grid">
+        <!-- Icon -->
         <a class="item-icon item-icon-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
           <app-item [item]="selectedItem" [size]="'large'" [highlight]="true" [hoverHighlight]="false"></app-item>
         </a>
+        <!-- Wiki -->
         <app-wiki-link [wiki]="selectedItem._wiki" [aClass]="'container'"></app-wiki-link>
+        <!-- Favourite -->
+        <div class="container point" (click)="toggleFavourite(selectedItem)">
+          <mat-icon class="menu-icon item-favourite" [class.favourited]="selectedItem.favourited">star</mat-icon>
+          <span class="menu-label">{{ selectedItem.favourited ? 'Unfavourite' : 'Favourite' }}</span>
+        </div>
+        <!-- Find -->
         <a *ngIf="selectedItemNav" class="container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
           <mat-icon class="menu-icon">search</mat-icon>
           <span class="menu-label">Find item</span>
         </a>
+        <!-- Field guide-->
         <a *ngIf="selectedItem.previewUrl" class="container" [routerLink]="'/item/field-guide'" [queryParams]="{ type: selectedItem.type, item: selectedItem.guid }">
           <mat-icon class="menu-icon">photo_library</mat-icon>
           <span class="menu-label">Show in field guide</span>

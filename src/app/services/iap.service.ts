@@ -20,7 +20,7 @@ export class IAPService {
 
     // Notify listeners.
     iap.items?.forEach((item) => {
-      this._eventService.toggleItem(item);
+      this._eventService.itemToggled.next(item);
     });
   }
 

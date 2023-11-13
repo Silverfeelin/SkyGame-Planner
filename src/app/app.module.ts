@@ -59,6 +59,7 @@ import { FirefoxClipboardItemComponent } from './components/util/firefox-clipboa
 import { ItemFieldGuideComponent } from './components/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/item-unlock/item-unlock.component';
 import { DateComponent } from './components/util/date/date.component';
+import { DashboardWishlistComponent } from './components/dashboard/dashboard-wishlist/dashboard-wishlist.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { DateComponent } from './components/util/date/date.component';
     FirefoxClipboardItemComponent,
     ItemFieldGuideComponent,
     ItemUnlockComponent,
-    DateComponent
+    DateComponent,
+    DashboardWishlistComponent
   ],
   imports: [
     BrowserModule,
