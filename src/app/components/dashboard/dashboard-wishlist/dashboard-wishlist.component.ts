@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
@@ -32,6 +33,8 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
 
   items: Array<IItem> = [];
   itemMap: Bag = {};
+  itemLinks: { [guid: string]: INavigationTarget | undefined } = {};
+
   ongoingSeasonItems: Bag = {};
   ongoingEventItems: Bag = {};
   ongoingTsItems: Bag = {};
@@ -91,12 +94,14 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
     // Add item
     if (shouldAdd && !this.itemMap[item.guid]) {
       this.itemMap[item.guid] = item;
+      this.itemLinks[item.guid] = NavigationHelper.getItemSource(item);
       this.items.push(item);
     }
 
     // Remove item
     if (!shouldAdd && this.itemMap[item.guid]) {
       delete this.itemMap[item.guid];
+      delete this.itemLinks[item.guid];
       const i = this.items.findIndex(i => i.guid === item.guid);
       if (i > -1) { this.items.splice(i, 1); }
     }

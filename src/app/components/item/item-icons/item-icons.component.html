@@ -7,6 +7,4 @@
     <app-icon *ngIf="item.group === 'Elder'" class="img-tl" [src]="'#ascended-candle'"></app-icon>
     <!-- IAP item (top left) -->
     <app-icon *ngIf="item.iaps?.length" class="img-tl currency" [src]="'#gift'"></app-icon>
-    <!-- Favourite (bottom left) -->
-    <mat-icon *ngIf="item.favourited" class="img-bl">star</mat-icon>
   </ng-container>

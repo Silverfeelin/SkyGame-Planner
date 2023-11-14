@@ -3,6 +3,7 @@
   --color: #fff;
   --color-accent: #999;
   --color-active: var(--color-new);
+  --color-attention: #49ffea;
   --color-background: hsla(240, 17%, 12%, 0.8);
   --color-border: hsla(240, 17%, 8%, 0.5);
   --color-border-solid: hsl(240, 17%, 15%);
@@ -19,6 +20,7 @@
   --color-danger-background: #5a1818;
   --color-danger-card-background: #5a181880;
   --color-expired: #b7b7b7;
+  --color-favourite: #ffcf00;
   --color-highlight: #d28efd;
   --color-image-inset: hsla(240, 17%, 12%, 0.8);
   --color-input-border: var(--color-border-highlight);
@@ -40,7 +42,7 @@
   --color-tree-line: #fff;
   --color-tree-unlock-background: hsla(240, 17%, 15%, 0.8);
   --color-unlock-check: var(--color-new);
-  --color-unlock-check-background: #14511460;
+  --color-unlock-check-background: #01340199;
   --color-unlock-check-ref: var(--color-old);
 
   --color-map-tooltip-background: hsl(230, 25%, 20%);
@@ -53,13 +55,14 @@
   --color-old: #ffa93e;
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
-  --color-favourite: #ffcf00;
 
   // Direct link because relative path didn't compile.
   --background: url(/assets/game/background/isle.webp);
   --background-filter: blur(4px) brightness(0.8);
 
+  --shadow-attention: 0px 0px 5px 2px var(--color-attention);
   --shadow-highlight: 0px 0px 5px 2px var(--color-highlight);
+  --shadow-favourite: 0px 0px 5px 2px var(--color-favourite);
   --shadow-clock: drop-shadow(1px 1px 1px #000);
 
   --img-preview-height: 160px;
@@ -81,7 +84,6 @@
   --border-solid: 1px solid var(--color-border-solid);
   --border-solid-highlight: 1px solid var(--color-border-highlight);
   --border-radius: 8px;
-  --border-highlight: 1px solid var(--color-highlight);
 
   --padding-content: 10px;
   --padding-content-half: 5px;

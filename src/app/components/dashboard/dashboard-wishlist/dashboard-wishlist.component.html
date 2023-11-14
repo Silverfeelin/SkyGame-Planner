@@ -1,7 +1,7 @@
 <ng-container *ngIf="shouldShow">
-  <div class="sky-card mt wishlist-highlight">
+  <div class="sky-card mt attention">
     <div class="sky-card-header">
-      <h1 class="h2 mb-0">Wishlist</h1>
+      <h2 class="h3 mb-0">Wishlist</h2>
     </div>
     <div class="sky-card-body">
       <div class="container">
@@ -10,9 +10,9 @@
       <div class="sky-flex flex-wrap mt">
         <ng-container *ngFor="let item of items">
           <ng-container *ngIf="ongoingItems[item.guid]">
-            <div class="wishlist-item" [ngbTooltip]="item.name" container="body">
+            <a class="wishlist-item" [ngbTooltip]="item.name" container="body" [routerLink]="itemLinks[item.guid]?.route" [queryParams]="itemLinks[item.guid]?.extras?.queryParams">
               <app-item [item]="item" [highlight]="true" [hoverHighlight]="false" [showSubIcons]="true"></app-item>
-            </div>
+            </a>
           </ng-container>
         </ng-container>
       </div>

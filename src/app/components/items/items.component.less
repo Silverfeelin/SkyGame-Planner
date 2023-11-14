@@ -68,6 +68,17 @@
   height: var(--item-size-large);
 }
 
+.img-bl {
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: var(--color-favourite);
+  text-shadow: #000 1px 1px 0;
+}
+
 .item-col-hr {
   display: none;
   flex-basis: 100%;
@@ -118,5 +129,8 @@ app-item.a {
 
 .item-favourite {
   font-variation-settings: 'FILL' 0;
-  &.favourited { font-variation-settings: 'FILL' 1; }
+  &.favourited {
+    font-variation-settings: 'FILL' 1;
+    color: var(--color-favourite);
+  }
 }
