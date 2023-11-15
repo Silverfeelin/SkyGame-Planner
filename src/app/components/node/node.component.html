@@ -1,6 +1,6 @@
 <div [attr.data-position]="position" [class.highlight]="highlight">
   <div *ngIf="node.item" class="item-container" [ngbTooltip]="nodeHover" [placement]="tooltipPlacement" container="body"
-    (click)="toggleNode($event)" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
+    (click)="nodeClick($event)" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
   >
     <app-item [item]="node.item" [highlight]="hover"></app-item>
   </div>

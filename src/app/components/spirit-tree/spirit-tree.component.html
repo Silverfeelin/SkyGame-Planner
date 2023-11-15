@@ -1,19 +1,22 @@
 <div class="content sky-border-solid" [class.highlight]="highlight">
   <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot">
-    <div class="unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
+    <div class="tree-action find-item" [ngbTooltip]="'Go to item'" container="body" (click)="toggleNavigate()" [class.attention]="navigating">
+      <mat-icon>search</mat-icon>
+    </div>
+    <div class="tree-action unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
       <mat-icon>lock_open</mat-icon>
     </div>
     <div class="spirit-tree">
       <div class="column left">
         <div class="st-item" *ngFor="let node of left">
-          <app-node *ngIf="node" [node]="node" [position]="'left'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
+          <app-node *ngIf="node" [node]="node"  [action]="nodeAction" [position]="'left'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
           <!-- For now left nodes only go up. -->
           <div *ngIf="node?.n" class="arrow arrow-up"></div>
         </div>
       </div>
       <div class="column center">
         <div class="st-item" *ngFor="let node of center">
-          <app-node *ngIf="node" [node]="node" [position]="'center'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
+          <app-node *ngIf="node" [node]="node" [action]="nodeAction" [position]="'center'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
           <!-- Center node arrows -->
           <div *ngIf="node?.nw" class="arrow arrow-left"></div>
           <div *ngIf="node?.n" class="arrow arrow-up"></div>
@@ -22,7 +25,7 @@
       </div>
       <div class="column right">
         <div class="st-item" *ngFor="let node of right">
-          <app-node *ngIf="node" [node]="node" [position]="'right'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
+          <app-node *ngIf="node" [node]="node" [action]="nodeAction" [position]="'right'" [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"></app-node>
           <!-- For now right nodes only go up. -->
           <div *ngIf="node?.n" class="arrow arrow-up"></div>
         </div>

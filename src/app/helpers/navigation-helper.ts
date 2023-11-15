@@ -12,6 +12,7 @@ export interface INavigationTarget {
 export class NavigationHelper {
   /** Gets a link to navigate to the items page with the item selected. */
   static getItemLink(item: IItem): INavigationTarget | undefined {
+    if (item.type === 'Special' || item.type ==='Spell') { return undefined; }
     return {
       route: ['/item'],
       extras: {

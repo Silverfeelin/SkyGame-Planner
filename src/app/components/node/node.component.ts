@@ -1,8 +1,12 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+
+export type NodeAction = 'unlock' | 'find';
 
 @Component({
   selector: 'app-node',
@@ -13,6 +17,7 @@ export class NodeComponent implements OnChanges {
   @Input() node!: INode;
   @Input() position = 'center';
   @Input() highlight?: boolean;
+  @Input() action: NodeAction = 'unlock';
 
   hover?: boolean;
   tooltipPlacement = 'bottom';
@@ -21,6 +26,7 @@ export class NodeComponent implements OnChanges {
     private readonly _debug: DebugService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
+    private readonly _router: Router
   ) {
   }
 
@@ -37,6 +43,14 @@ export class NodeComponent implements OnChanges {
 
   mouseLeave(event: MouseEvent): void {
     this.hover = false;
+  }
+
+  nodeClick(event: MouseEvent): void {
+    if (this.action === 'unlock') {
+      this.toggleNode(event);
+    } else if (this.action === 'find') {
+      this.findNode(event);
+    }
   }
 
   toggleNode(event: MouseEvent): void {
@@ -63,6 +77,20 @@ export class NodeComponent implements OnChanges {
 
     // Notify listeners.
     this._eventService.itemToggled.next(item);
+  }
+
+  findNode(event: MouseEvent): void {
+    if (!this.node.item) { return; }
+    const item = this.node.item;
+
+    // Find spirit from last appearance of item.
+    const target = NavigationHelper.getItemLink(item);
+    if (!target) {
+      alert('This item is not available on the items page.');
+      return;
+    }
+
+    void this._router.navigate(target.route, target.extras);
   }
 
   copyDebug(node: INode): void {

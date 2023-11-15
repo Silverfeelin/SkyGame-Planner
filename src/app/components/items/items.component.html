@@ -86,7 +86,7 @@
           <app-item [item]="selectedItem" [size]="'large'" [highlight]="true" [hoverHighlight]="false"></app-item>
         </a>
         <!-- Wiki -->
-        <app-wiki-link [wiki]="selectedItem._wiki" [aClass]="'container'"></app-wiki-link>
+        <app-wiki-link *ngIf="selectedItem._wiki?.href" [wiki]="selectedItem._wiki" [aClass]="'container'"></app-wiki-link>
         <!-- Favourite -->
         <div class="container point" (click)="toggleFavourite(selectedItem)">
           <mat-icon class="menu-icon item-favourite" [class.favourited]="selectedItem.favourited">star</mat-icon>
