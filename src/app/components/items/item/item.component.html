@@ -1,0 +1,46 @@
+<div *ngIf="item" class="item-info">
+  <div class="sky-card" *ngIf="item">
+    <div class="sky-card-header">
+      <h1 class="h2">{{ item.name }}</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="info-grid" [class.has-preview]="item.previewUrl">
+        <!-- Preview -->
+        <div class="info-grid-preview" *ngIf="item.previewUrl">
+          <img [src]="item.previewUrl" class="preview-img" loading="lazy">
+          <app-item-icon [item]="item" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+          <app-item-subicons [item]="item" [showTooltips]="true"></app-item-subicons>
+          <mat-icon class="unlock-check self" [class.unlocked]="item.unlocked" [ngbTooltip]="'You own this item.'" container="body">done</mat-icon>
+        </div>
+        <!-- Icon -->
+        <div class="info-grid-icon" *ngIf="!item.previewUrl">
+          <app-item-icon [item]="item" [size]="'large'" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+          <app-item-subicons [item]="item" [showTooltips]="true"></app-item-subicons>
+          <mat-icon class="unlock-check self" [class.unlocked]="item.unlocked" [ngbTooltip]="'You own this item.'" container="body">done</mat-icon>
+        </div>
+        <!-- Wiki -->
+        <app-wiki-link *ngIf="item._wiki?.href" [wiki]="item._wiki" [aClass]="'container'"></app-wiki-link>
+        <!-- Favourite -->
+        <div class="container point" (click)="toggleFavourite(item)">
+          <mat-icon class="menu-icon item-favourite" [class.favourited]="item.favourited">star</mat-icon>
+          <span class="menu-label">{{ item.favourited ? 'Unfavourite' : 'Favourite' }}</span>
+        </div>
+        <!-- Find -->
+        <a *ngIf="navSource" class="container" [routerLink]="navSource.route" [queryParams]="navSource.extras?.queryParams">
+          <mat-icon class="menu-icon">search</mat-icon>
+          <span class="menu-label">Find item</span>
+        </a>
+        <!-- List -->
+        <a *ngIf="navList" class="container" [routerLink]="navList.route" [queryParams]="navList.extras?.queryParams">
+          <mat-icon class="menu-icon">list</mat-icon>
+          <span class="menu-label">Show in item list</span>
+        </a>
+        <!-- Field guide-->
+        <!-- <a *ngIf="navFieldGuide" class="container" [routerLink]="navFieldGuide.route" [queryParams]="navFieldGuide.extras?.queryParams">
+          <mat-icon class="menu-icon">photo_library</mat-icon>
+          <span class="menu-label">Show in field guide</span>
+        </a> -->
+      </div>
+    </div>
+  </div>
+</div>

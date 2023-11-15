@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { DataService } from '../services/data.service';
-import { Observable, first, switchMap } from 'rxjs';
+import { Observable, first } from 'rxjs';
 import { IEventInstance } from '../interfaces/event.interface';
 
 @Injectable({

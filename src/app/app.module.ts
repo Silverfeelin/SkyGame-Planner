@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SpiritTreeComponent } from './components/spirit-tree/spirit-tree.component';
 import { NodeComponent } from './components/node/node.component';
-import { ItemComponent } from './components/item/item.component';
+import { ItemIconComponent } from './components/items/item-icon/item-icon.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
 import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
@@ -46,7 +46,7 @@ import { EventCardComponent } from './components/event-card/event-card.component
 import { SpiritCardComponent } from './components/spirit-card/spirit-card.component';
 import { BlankComponent } from './components/blank/blank.component';
 import { ClockComponent } from './components/clock/clock.component';
-import { ItemIconsComponent } from './components/item/item-icons/item-icons.component';
+import { ItemSubIconsComponent } from './components/items/item-icon/item-subicons/item-subicons.component';
 import { WikiLinkComponent } from './components/util/wiki-link/wiki-link.component';
 import { WingedLightComponent } from './components/winged-light/winged-light.component';
 import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
@@ -56,10 +56,11 @@ import { ItemTypeSelectorComponent } from './components/items/item-type-selector
 import { ToolsComponent } from './components/tools/tools.component';
 import { IconPickerComponent } from './components/util/icon-picker/icon-picker.component';
 import { FirefoxClipboardItemComponent } from './components/util/firefox-clipboard-item/firefox-clipboard-item.component';
-import { ItemFieldGuideComponent } from './components/item-field-guide/item-field-guide.component';
-import { ItemUnlockComponent } from './components/item-unlock/item-unlock.component';
+import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
+import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { DateComponent } from './components/util/date/date.component';
 import { DashboardWishlistComponent } from './components/dashboard/dashboard-wishlist/dashboard-wishlist.component';
+import { ItemComponent } from './components/items/item/item.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { DashboardWishlistComponent } from './components/dashboard/dashboard-wis
     ItemTypePipe,
     SpiritTreeComponent,
     NodeComponent,
-    ItemComponent,
+    ItemIconComponent,
     MenuComponent,
     SeasonsComponent,
     TravelingSpiritsComponent,
@@ -104,7 +105,7 @@ import { DashboardWishlistComponent } from './components/dashboard/dashboard-wis
     SpiritCardComponent,
     BlankComponent,
     ClockComponent,
-    ItemIconsComponent,
+    ItemSubIconsComponent,
     WikiLinkComponent,
     WingedLightComponent,
     ChildrenOfLightComponent,
@@ -117,7 +118,8 @@ import { DashboardWishlistComponent } from './components/dashboard/dashboard-wis
     ItemFieldGuideComponent,
     ItemUnlockComponent,
     DateComponent,
-    DashboardWishlistComponent
+    DashboardWishlistComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +130,7 @@ import { DashboardWishlistComponent } from './components/dashboard/dashboard-wis
     MatIconModule
   ],
   exports: [
-    ItemComponent
+    ItemIconComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

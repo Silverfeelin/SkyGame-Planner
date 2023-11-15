@@ -86,7 +86,7 @@ export class NodeComponent implements OnChanges {
     // Find spirit from last appearance of item.
     const target = NavigationHelper.getItemLink(item);
     if (!target) {
-      alert('This item is not available on the items page.');
+      alert('This item does not have a page.');
       return;
     }
 

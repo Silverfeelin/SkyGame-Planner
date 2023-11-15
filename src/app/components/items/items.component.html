@@ -57,52 +57,17 @@
       </div>
       <ng-container *ngFor="let item of shownItems; let i = index">
         <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % (columns)) ? undefined : 'block'"></div>
-        <div class="item-icon">
-          <app-item [item]="item" [showSubIcons]="true" class="a"
-            (click)="selectItem($event, item)"
+        <a class="item-icon" [routerLink]="['/item', item.guid]">
+          <app-item-icon [item]="item" [showSubIcons]="true"
             [class.highlight]="item && item === selectedItem"
             [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
             [ngbTooltip]="item.name" container="body" placement="auto" >
-          </app-item>
+          </app-item-icon>
           <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked">done</mat-icon>
           <!-- Favourite (bottom left) -->
           <mat-icon *ngIf="item.favourited" class="img-bl">star</mat-icon>
-        </div>
+        </a>
       </ng-container>
-    </div>
-  </div>
-</div>
-
-<!-- Selected item -->
-<div #itemDiv [hidden]="!selectedItem" class="grid grid-1 item-info mt">
-  <div class="sky-card" *ngIf="selectedItem">
-    <div class="sky-card-header">
-      <h2 class="h3">{{ selectedItem.name }}</h2>
-    </div>
-    <div class="sky-card-body">
-      <div class="info-grid">
-        <!-- Icon -->
-        <a class="item-icon item-icon-large info-grid-icon d-inline-block" [routerLink]="selectedItemNav?.route" [queryParams]="selectedItemNav?.extras?.queryParams">
-          <app-item [item]="selectedItem" [size]="'large'" [highlight]="true" [hoverHighlight]="false"></app-item>
-        </a>
-        <!-- Wiki -->
-        <app-wiki-link *ngIf="selectedItem._wiki?.href" [wiki]="selectedItem._wiki" [aClass]="'container'"></app-wiki-link>
-        <!-- Favourite -->
-        <div class="container point" (click)="toggleFavourite(selectedItem)">
-          <mat-icon class="menu-icon item-favourite" [class.favourited]="selectedItem.favourited">star</mat-icon>
-          <span class="menu-label">{{ selectedItem.favourited ? 'Unfavourite' : 'Favourite' }}</span>
-        </div>
-        <!-- Find -->
-        <a *ngIf="selectedItemNav" class="container" [routerLink]="selectedItemNav.route" [queryParams]="selectedItemNav.extras?.queryParams">
-          <mat-icon class="menu-icon">search</mat-icon>
-          <span class="menu-label">Find item</span>
-        </a>
-        <!-- Field guide-->
-        <a *ngIf="selectedItem.previewUrl" class="container" [routerLink]="'/item/field-guide'" [queryParams]="{ type: selectedItem.type, item: selectedItem.guid }">
-          <mat-icon class="menu-icon">photo_library</mat-icon>
-          <span class="menu-label">Show in field guide</span>
-        </a>
-      </div>
     </div>
   </div>
 </div>
