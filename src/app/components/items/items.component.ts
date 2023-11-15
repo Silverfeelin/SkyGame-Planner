@@ -21,8 +21,6 @@ export class ItemsComponent {
 
   // Item details.
   selectedItem?: IItem;
-  selectedItemNav?: INavigationTarget;
-  _scrollToPreview = 0;
 
   columns?: number;
 
@@ -83,7 +81,6 @@ export class ItemsComponent {
     const itemGuid = query.get('item') || '';
     if (itemGuid) {
       this.selectedItem = this._dataService.guidMap.get(itemGuid) as IItem;
-      this.selectedItemNav = this.selectedItem ? NavigationHelper.getItemSource(this.selectedItem) : undefined;
     }
   }
 
