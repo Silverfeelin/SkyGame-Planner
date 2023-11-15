@@ -13,7 +13,7 @@
   <div class="sky-card-header">
     <div>You have unlocked <b [class.completed]="unlocked === total">{{ unlocked }}</b> out of <b [class.completed]="unlocked === total">{{ total }}</b> wing buffs.</div>
   </div>
-  <div class="sky-card-body">
+  <div class="sky-card-body scroll-x">
     <app-table [rows]="rows">
       <ng-template [appTableHeader]>Spirit</ng-template>
       <ng-template [appTableHeader]>Type</ng-template>
