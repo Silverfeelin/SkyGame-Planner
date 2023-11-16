@@ -9,7 +9,7 @@ import * as isoWeek from 'dayjs/plugin/isoWeek';
 import * as timezone from 'dayjs/plugin/timezone';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
-import { StorageService } from './services/storage.service';
+import { StorageService, storageReloadKeys } from './services/storage.service';
 import { filter } from 'rxjs';
 
 @Component({
@@ -41,7 +41,7 @@ export class AppComponent {
       this.initDisplayDate();
     });
 
-    _storageService.storageChanged.pipe(filter(e => e.key === 'unlocked' || e.key === 'col.unlocked')).subscribe(() => {
+    _storageService.storageChanged.pipe(filter(e => e.key !== null && storageReloadKeys.has(e.key))).subscribe(() => {
       this.dataLoss = true;
     });
 

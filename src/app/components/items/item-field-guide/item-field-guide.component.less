@@ -5,9 +5,11 @@
   background: var(--color-background);
   border-radius: var(--border-radius);
   border: var(--border-solid);
-  overflow: hidden;
-  min-width: 128px; // add space for icons on slim previews
   text-align: center;
+  min-width: 128px; // add space for icons on slim previews
+  max-width: calc(100vw - var(--menu-width) - 4 * var(--padding-content));
+  overflow: hidden;
+  overflow-x: auto;
 }
 
 .item-preview-icon {

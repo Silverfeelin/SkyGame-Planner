@@ -1,9 +1,11 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, convertToParamMap } from '@angular/router';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
+import { EventService } from 'src/app/services/event.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-items',
@@ -11,10 +13,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./items.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemsComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('itemDiv', { static: true })
-  itemDiv!: ElementRef;
-
+export class ItemsComponent {
   type?: ItemType;
   typeEmote: ItemType = ItemType.Emote;
 
@@ -22,9 +21,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
 
   // Item details.
   selectedItem?: IItem;
-  selectedItemNav?: INavigationTarget;
-  _previewObserver?: IntersectionObserver;
-  _scrollToPreview = 0;
 
   columns?: number;
 
@@ -42,6 +38,8 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _eventService: EventService,
+    private readonly _storageService: StorageService,
     private readonly _route: ActivatedRoute,
     private readonly _router: Router,
     private readonly _changeDetectionRef: ChangeDetectorRef
@@ -53,20 +51,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     _route.queryParamMap.subscribe(params => {
       this.onQueryParamsChanged(params);
     });
-  }
-
-  ngAfterViewInit(): void {
-    this._previewObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        this._scrollToPreview = entry.isIntersecting && entry.intersectionRatio >= 0.9
-        ? 0 : entry.boundingClientRect.top > 0 ? -1 : 1;
-      });
-    }, { threshold: [0, 0.1, 0.9, 1] });
-    this._previewObserver.observe(this.itemDiv.nativeElement);
-  }
-
-  ngOnDestroy(): void {
-      this._previewObserver?.disconnect();
   }
 
   onQueryParamsChanged(query: ParamMap) {
@@ -97,7 +81,6 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     const itemGuid = query.get('item') || '';
     if (itemGuid) {
       this.selectedItem = this._dataService.guidMap.get(itemGuid) as IItem;
-      this.selectedItemNav = this.selectedItem ? NavigationHelper.getItemSource(this.selectedItem) : undefined;
     }
   }
 
@@ -166,39 +149,5 @@ export class ItemsComponent implements AfterViewInit, OnDestroy {
     for (const type in ItemType) {
       ItemHelper.sortItems(this.typeItems[type]);
     }
-  }
-
-  selectItem(event: MouseEvent, item: IItem): void {
-    // Double click, open item.
-    if (event.detail > 1) {
-      this.openItem(item);
-      return;
-    }
-
-    // Update current URL to match selection.
-    const url = new URL(location.href);
-    url.searchParams.set('type', `${this.type}`);
-    url.searchParams.set('item', item.guid);
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
-
-    // Select item
-    this.onQueryParamsChanged(convertToParamMap(NavigationHelper.getQueryParams(url)));
-
-    // Scroll to item if out of view.
-    if (this._scrollToPreview) {
-      setTimeout(() => {
-        this.itemDiv.nativeElement.scrollIntoView({ behavior: 'smooth', block: this._scrollToPreview > 0 ? 'start' : 'end' });
-      }, 50);
-    }
-  }
-
-  openItem(item: IItem): void {
-    const route = NavigationHelper.getItemSource(item);
-    if (!route) {
-      alert('Could not find item source.');
-      return;
-    }
-
-    this._router.navigate(route.route, route.extras);
   }
 }

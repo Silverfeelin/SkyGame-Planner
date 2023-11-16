@@ -1,0 +1,18 @@
+  <ng-container *ngIf="item">
+    <!-- Season icon (top right) -->
+    <app-icon *ngIf="item.season?.iconUrl" class="img-tr" [src]="item.season?.iconUrl || '#season-candle'"
+      [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
+    </app-icon>
+    <!-- Season pass item (top left) -->
+    <app-icon *ngIf="item.group === 'Ultimate'" class="img-tl seasonal" [src]="'#season-heart'"
+      [ngbTooltip]="showTooltips ? 'This item is a season ultimate.' : undefined" container="body">
+    </app-icon>
+    <!-- Elder item (top left) -->
+    <app-icon *ngIf="item.group === 'Elder'" class="img-tl" [src]="'#ascended-candle'"
+      [ngbTooltip]="showTooltips ? 'This item is from an Elder.' : undefined" container="body">
+    </app-icon>
+    <!-- IAP item (top left) -->
+    <app-icon *ngIf="item.iaps?.length" class="img-tl currency" [src]="'#gift'"
+      [ngbTooltip]="showTooltips ? 'This item is from an IAP.' : undefined" container="body">
+    </app-icon>
+  </ng-container>

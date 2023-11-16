@@ -8,6 +8,7 @@ import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import dayjs from 'dayjs';
+import { NodeAction } from '../node/node.component';
 
 @Component({
   selector: 'app-spirit-tree',
@@ -27,6 +28,9 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   hiddenItems: { [itemGuid: string]: INode } = {};
 
   hasCostAtRoot = false;
+
+  navigating = false;
+  nodeAction: NodeAction = 'unlock';
 
   itemMap = new Map<string, INode>();
   hasCost!: boolean;
@@ -122,6 +126,11 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     });
   }
 
+  toggleNavigate(): void {
+    this.navigating = !this.navigating;
+    this.nodeAction = this.navigating ? 'find' : 'unlock';
+  }
+
   unlockAll(): void {
     const itemNodes = this.nodes.filter(n => n.item);
     const items: Array<IItem> = itemNodes.map(n => n.item!);
@@ -137,7 +146,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         node.unlocked = true;
 
         this._storageService.add(node.item!.guid, node.guid);
-        this._eventService.toggleItem(node.item!);
+        this._eventService.itemToggled.next(node.item!);
       });
     } else {
       // Lock all unlocked items.
@@ -147,7 +156,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         refNodes.forEach(n => n.unlocked = false);
 
         this._storageService.remove(node.item!.guid, ...refNodes.map(n => n.guid));
-        this._eventService.toggleItem(node.item!);
+        this._eventService.itemToggled.next(node.item!);
       });
     }
 

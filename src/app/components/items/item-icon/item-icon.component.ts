@@ -1,17 +1,16 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 
-export type ItemSize = 'small' | 'medium' | 'default' | 'large';
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.less'],
+  selector: 'app-item-icon',
+  templateUrl: './item-icon.component.html',
+  styleUrls: ['./item-icon.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemComponent implements OnInit, OnChanges, OnDestroy {
+export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: IItem;
   @Input() size: ItemSize = 'default';
   @Input() highlight?: boolean;

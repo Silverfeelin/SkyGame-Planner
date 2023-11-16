@@ -12,7 +12,7 @@
   position: relative;
   // max-height: 600px;
   overflow-y: auto;
-  padding-top: 20px;
+  padding-top: 24px;
 }
 
 // Add space at bottom for node cost.
@@ -73,6 +73,40 @@
   height: 32px;
   right: -18px;
   top: 0;
+}
+
+/* Buttons */
+
+.tree-action {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-tree-unlock-background);
+  z-index: 1;
+
+  mat-icon {
+    position: absolute;
+    top: 1px;
+  }
+}
+
+.find-item {
+  left: 5px;
+
+  mat-icon {
+    left: 1px;
+  }
+}
+.unlock-all {
+  right: 5px;
+
+  mat-icon {
+    right: 1px;
+  }
 }
 
 /* Footer */

@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
-import { ItemSize } from '../../item/item.component';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
 import { SubscriptionLike, lastValueFrom } from 'rxjs';

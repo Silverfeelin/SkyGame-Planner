@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router } from '@angular/router';
-import { ItemHelper } from 'src/app/helpers/item-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -69,7 +68,7 @@ export class ItemFieldGuideComponent {
     // Load all items with preview.
     this._dataService.itemConfig.items.forEach(item => {
       if (!item.previewUrl) { return; }
-      const nav = NavigationHelper.getItemSource(item);
+      const nav = NavigationHelper.getItemLink(item);
       this.typeItems[item.type].push({ item, nav });
     });
 

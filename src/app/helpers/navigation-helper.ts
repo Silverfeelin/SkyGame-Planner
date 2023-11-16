@@ -10,8 +10,17 @@ export interface INavigationTarget {
 }
 
 export class NavigationHelper {
+  /** Get a link to navigate to the item detail page. */
+  static getItemLink(item: IItem): INavigationTarget {
+    return {
+      route: ['/item', item.guid],
+      extras: {}
+    };
+  }
+
   /** Gets a link to navigate to the items page with the item selected. */
-  static getItemLink(item: IItem): INavigationTarget | undefined {
+  static getItemListLink(item: IItem): INavigationTarget | undefined {
+    if (item.type === 'Special' || item.type ==='Spell') { return undefined; }
     return {
       route: ['/item'],
       extras: {
@@ -79,39 +88,17 @@ export class NavigationHelper {
     return undefined;
   }
 
-  static getPreviewLink(item: IItem): string {
-    let type: string;
-    switch (item.type) {
-      case 'Hat': type = 'Hair_Accessories'; break;
-      case 'Hair': type = 'Hair'; break;
-      case 'Mask': type = 'Masks'; break;
-      case 'FaceAccessory': type = 'Face_Accessories'; break;
-      case 'Necklace': type = 'Necklaces'; break;
-      case 'Outfit': type = 'Outfits'; break;
-      case 'Shoes': type = 'Shoes'; break;
-      case 'Cape': type = 'Capes'; break;
-      case 'Held': type = 'Props'; break;
-      case 'Prop': type = 'Props'; break;
-      default: type = '';
-    }
-
-    if (!type) return '';
-    const url = new URL(`https://sky-children-of-the-light.fandom.com/wiki/${type}`);
-    const spiritTree = NodeHelper.getRoot(item.nodes?.at(-1) ?? item.hiddenNodes?.at(-1))?.spiritTree
-    const spirit = spiritTree?.spirit ?? spiritTree?.ts?.spirit ?? spiritTree?.visit?.spirit;
-
-    // Select preview item automatically
-    if (spirit) {
-      url.searchParams.append('tabber-active', spirit.name);
-    } else {
-      url.searchParams.append('tabber-active', item.name);
-    }
-
-    // Jump to preview section.
-    url.hash = item.type === 'Held' ? 'Held_Props_Display'
-      : item.type === 'Prop' ? 'Placeable_Props_Display' : 'Display';
-
-    return url.toString();
+  static getPreviewLink(item: IItem): INavigationTarget | undefined {
+    if (!item.previewUrl) { return undefined; }
+    return {
+      route: ['/item/field-guide'],
+      extras: {
+        queryParams: {
+          type: item.type,
+          item: item.guid
+        }
+      }
+    };
   }
 
   static getQueryParams(href: string | URL): Params {

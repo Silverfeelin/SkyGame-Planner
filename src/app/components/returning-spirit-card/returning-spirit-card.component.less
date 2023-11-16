@@ -1,0 +1,56 @@
+
+.spirit-imgs {
+  position: relative;
+  height: var(--img-preview-height);
+  background: var(--color-background);
+  border: var(--border-solid);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 16px 2px var(--color-image-inset) inset;
+}
+
+.spirit-img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(/assets/game/realms/Aviary.webp);
+  background-size: cover;
+  background-position: bottom;
+  filter: brightness(0.6) blur(1px);
+}
+
+.spirit-imgs-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: var(--img-preview-height);
+  left: 0;
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.spirit-img {
+  width: auto;
+  height: var(--img-preview-height);
+  padding: var(--padding-content);
+
+  img {
+    min-width: 96px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .spirit-imgs-inner {
+    justify-content: flex-start;
+    align-items: start;
+  }
+}

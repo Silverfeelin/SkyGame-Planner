@@ -238,16 +238,13 @@ p:last-child {
 
 .unlock-check {
   position: absolute;
-  right: 0px;
+  right: 1px;
   bottom: 0;
   color: var(--color-unlock-check-ref);
   opacity: 0;
   transition: opacity var(--animation-short);
   pointer-events: none;
-
-  &::before {
-    filter: drop-shadow(0px 1px 0px var(--color-unlock-check-shadow));
-  }
+  text-shadow: #000 1px 1px 0;
 
   &.unlocked {
     opacity: 1;
@@ -295,25 +292,6 @@ p:last-child {
   }
 }
 
-.unlock-all {
-  position: absolute;
-  cursor: pointer;
-  top: 10px;
-  right: 10px;
-  width: 28px;
-  height: 28px;
-  border: 1px solid var(--color-input-border);
-  border-radius: var(--border-radius);
-  background-color: var(--color-tree-unlock-background);
-  z-index: 1;
-
-  mat-icon {
-    position: absolute;
-    left: 1px;
-    top: 1px;
-  }
-}
-
 .menu-icon {
   position: absolute;
 }
@@ -343,7 +321,19 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
 .seasonal { color: var(--color-seasonal); fill: var(--color-seasonal); }
 
 .highlight {
-  border: var(--border-highlight) !important;
+  border: 1px solid var(--color-highlight) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-highlight) !important;
+}
+
+.highlight-attention {
+  border: 1px solid var(--color-attention) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-attention) !important;
+}
+
+.highlight-favourite {
+  border: 1px solid var(--color-favourite) !important;
   border-radius: var(--border-radius) !important;
   box-shadow: var(--shadow-highlight) !important;
 }
