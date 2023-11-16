@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
+import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -14,6 +15,7 @@ export class DashboardComponent implements OnInit {
 
   season?: ISeason;
   ts?: ITravelingSpirit;
+  rs?: IReturningSpirits;
   eventInstance?: IEventInstance;
 
   constructor(
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.season = this._dataService.seasonConfig.items.findLast(s => DateHelper.isActive(s.date, s.endDate));
     this.ts = this._dataService.travelingSpiritConfig.items.findLast<ITravelingSpirit>(t => DateHelper.isActive(t.date, t.endDate));
+    this.rs = this._dataService.returningSpiritsConfig.items.findLast<IReturningSpirits>(r => DateHelper.isActive(r.date, r.endDate));
 
     for (const event of this._dataService.eventConfig.items) {
       const instance = event.instances?.findLast<IEventInstance>(i => DateHelper.isActive(i.date, i.endDate));

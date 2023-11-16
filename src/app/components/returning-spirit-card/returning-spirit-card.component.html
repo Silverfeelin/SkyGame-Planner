@@ -1,0 +1,54 @@
+
+<div class="sky-card" *ngIf="return">
+  <div class="sky-card-header">
+    <div class="title-select">
+      <ng-content [select]="title"></ng-content>
+    </div>
+    <h2 class="h3 mb-0 title-default">
+      {{ return.name }}
+    </h2>
+  </div>
+  <div class="sky-card-body grid grid-1">
+    <!-- Preview image -->
+    <div *ngIf="sections['img']" class="spirit-imgs">
+      <div class="spirit-img-bg"></div>
+      <div class="spirit-imgs-inner">
+        <div class="spirit-img"  *ngFor="let url of imgUrls">
+          <img [src]="url"/>
+        </div>
+      </div>
+    </div>
+    <!-- Overview -->
+    <a *ngIf="sections['overview']" [routerLink]="['/rs', return.guid]"
+      class="item" [style.order]="sections['overview']">
+      <mat-icon class="menu-icon">article</mat-icon>
+      <span class="menu-label">Overview</span>
+    </a>
+    <!-- Wiki -->
+    <app-wiki-link *ngIf="sections['wiki']" [wiki]="return._wiki" [aClass]="'spirit-grid-item sky-card-item sky-card-item-icon'" [order]="sections['wiki']"></app-wiki-link>
+    <!-- Date -->
+    <div *ngIf="sections['date']"
+      class="item" [style.order]="sections['date']">
+      <mat-icon class="menu-icon">calendar_month</mat-icon>
+      <span class="menu-label">
+        <app-date [date]="return.date"></app-date>
+        to
+        <app-date [date]="return.endDate"></app-date>
+        <span class="c-accent">
+          (<app-days-left [start]="return.date" [end]="return.endDate"></app-days-left>)
+        </span>
+      </span>
+    </div>
+    <!-- Cost -->
+    <div *ngIf="sections['cost'] && cost"
+      class="item" [style.order]="sections['cost']"
+    >
+      <mat-icon class="menu-icon">sell</mat-icon>
+      <span class="menu-label">
+        <div class="d-inline-block">
+          <app-cost [cost]="cost" [remaining]="remainingCost" [borderLeft]="true"></app-cost>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>

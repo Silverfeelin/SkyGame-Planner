@@ -61,6 +61,7 @@ import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.
 import { DateComponent } from './components/util/date/date.component';
 import { DashboardWishlistComponent } from './components/dashboard/dashboard-wishlist/dashboard-wishlist.component';
 import { ItemComponent } from './components/items/item/item.component';
+import { ReturningSpiritCardComponent } from './components/returning-spirit-card/returning-spirit-card.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +120,8 @@ import { ItemComponent } from './components/items/item/item.component';
     ItemUnlockComponent,
     DateComponent,
     DashboardWishlistComponent,
-    ItemComponent
+    ItemComponent,
+    ReturningSpiritCardComponent
   ],
   imports: [
     BrowserModule,
