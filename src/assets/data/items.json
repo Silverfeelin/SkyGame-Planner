@@ -8512,7 +8512,7 @@
       "type": "Hair",
       "name": "Jelly Whisperer Hair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Season_of_sanctuary_hair_jelly_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair" },
       "order": 1601
     },
@@ -11704,6 +11704,13 @@
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season_of_flight_hair_1_talented_builder_gs.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair" },
       "order": 2101
+    },
+    {
+      "id": 1953,
+      "guid": "_2q2mdk_1h",
+      "type": "Spell",
+      "name": "Color Trail",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
     },
     {
       "id": 1370,
