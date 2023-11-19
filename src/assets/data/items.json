@@ -5459,9 +5459,9 @@
     {
       "id": 639,
       "guid": "ueFGjjCL-f",
-      "type": "Special",
-      "name": "Revival Warp",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+      "type": "Quest",
+      "name": "Quest 1",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
       "id": 640,
@@ -5474,7 +5474,7 @@
       "id": 641,
       "guid": "5pM1uL5euH",
       "type": "Quest",
-      "name": "Quest 1",
+      "name": "Quest 2",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -5488,7 +5488,7 @@
       "id": 643,
       "guid": "UtjY-O5GfN",
       "type": "Quest",
-      "name": "Quest 2",
+      "name": "Quest 3",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
@@ -5502,7 +5502,7 @@
       "id": 645,
       "guid": "RrWXNJ8_8U",
       "type": "Quest",
-      "name": "Quest 3",
+      "name": "Quest 4",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
     },
     {
