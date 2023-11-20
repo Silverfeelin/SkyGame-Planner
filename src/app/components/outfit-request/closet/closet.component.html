@@ -112,6 +112,17 @@
     </div>
     <div class="container mt">
       <p class="mb-0">
+        During seasons and events you can preview items in-game before you own them. Include these in the closet when showing your own items?
+      </p>
+      <div class="sky-flex flex-wrap mt">
+        <button type="button" (click)="toggleOngoing()">
+          <mat-icon class="menu-icon">{{ showOngoing ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          <span class="menu-label">Include ongoing items</span>
+        </button>
+      </div>
+    </div>
+    <div class="container mt">
+      <p class="mb-0">
         Because Sky Planner is primarily an item tracker you can use your tracked items to keep the closet updated.<br/>
         You can also manually choose what items to show and hide. Simply click on any item below to hide it from your closet.
       </p>
@@ -291,8 +302,10 @@
     <ng-container *ngIf="!requesting">
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
-      <!-- When showing only highlighted items, hide all other items. Keep hidden items visible (darkened) when showing all items.-->
-      <div class="closet-item-container" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid]))">
+      <!-- When showing only highlighted items, hide all other items. -->
+      <!-- Keep hidden items visible (darkened) when showing all items. Hide them in closet mode. -->
+      <!-- If enabled, keep ongoing event items visible (darkened). -->
+      <div class="closet-item-container" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid] && (!showOngoing || !ongoingItems[item.guid])))">
         <div class="closet-item" (click)="toggleItem(item)"
           [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
           [class.closet-hide]="hidden[item.guid] || (!modifyingCloset && ((hideIap && item.iaps?.length) || (available && !available[item.guid])))" [attr.data-guid]="item.guid"

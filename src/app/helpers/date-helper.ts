@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { IDate } from "../interfaces/date.interface";
+import { IPeriod } from '../interfaces/base.interface';
 
 export class DateHelper {
   static readonly skyTimeZone = 'America/Los_Angeles';
@@ -56,5 +57,16 @@ export class DateHelper {
     if (start.isAfter(date)) { return 'future'; }
     if (date.isAfter(end)) { return 'ended'; }
     return 'active';
+  }
+
+  static getLastActive<T extends IPeriod>(items?: Array<T>): T | undefined {
+    if (!items) { return undefined; }
+    const now = dayjs();
+    for (let i = items.length - 1; i >= 0; i--) {
+      const item = items[i];
+      if (DateHelper.isActive(item.date, item.endDate)) { return item; }
+      if (item.endDate.isBefore(now)) { return undefined; }
+    }
+    return undefined;
   }
 }

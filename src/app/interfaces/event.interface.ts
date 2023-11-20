@@ -1,5 +1,4 @@
-import dayjs from 'dayjs';
-import { IConfig, IGuid } from "./base.interface";
+import { IConfig, IGuid, IPeriod } from "./base.interface";
 import { IShop } from "./shop.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { ISpirit } from "./spirit.interface";
@@ -23,10 +22,7 @@ export interface IEvent extends IGuid {
   _wiki?: IWiki;
 }
 
-export interface IEventInstance extends IGuid {
-  date: dayjs.Dayjs;
-  endDate: dayjs.Dayjs;
-
+export interface IEventInstance extends IGuid, IPeriod {
   /** Event instance number starting at 1. */
   number: number;
 

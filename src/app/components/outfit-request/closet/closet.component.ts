@@ -9,6 +9,8 @@ import { SubscriptionLike, lastValueFrom } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
+import { DateHelper } from 'src/app/helpers/date-helper';
+import { NodeHelper } from 'src/app/helpers/node-helper';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -76,6 +78,7 @@ export class ClosetComponent implements OnDestroy {
   allItems: Array<IItem> = [];
   itemMap: { [guid: string]: IItem } = {};
   items: { [type: string]: Array<IItem> } = {};
+  ongoingItems: { [guid: string]: IItem } = {};
 
   showingColorPicker = false;
   showingBackgroundPicker = false;
@@ -101,6 +104,7 @@ export class ClosetComponent implements OnDestroy {
   shouldSync = false;
   hideUnselected = false;
   hideIap = false;
+  showOngoing = false;
   columns: number;
   closetMode: ClosetMode = 'all';
   maxColumns = 8;
@@ -125,6 +129,7 @@ export class ClosetComponent implements OnDestroy {
 
     // Load user preferences.
     this.hideUnselected = localStorage.getItem('closet.hide-unselected') === '1';
+    this.showOngoing = localStorage.getItem('closet.show-ongoing') === '1'
     this.hidden = (JSON.parse(localStorage.getItem('closet.hidden') || '[]') as Array<string>).reduce((map, guid) => (map[guid] = true, map), {} as { [key: string]: boolean });
     this.columns = +localStorage.getItem('closet.columns')! || 6;
     this.closetMode = localStorage.getItem('closet.show-mode') as ClosetMode || 'all';
@@ -270,6 +275,11 @@ export class ClosetComponent implements OnDestroy {
   modifyCloset(): void {
     this.modifyingCloset = !this.modifyingCloset;
     this.modifyingCloset && (this.closetMode = 'closet');
+  }
+
+  toggleOngoing(): void {
+    this.showOngoing = !this.showOngoing;
+    localStorage.setItem('closet.show-ongoing', this.showOngoing ? '1' : '0');
   }
 
   toggleClosetSection(type: ItemType): void {
@@ -474,6 +484,20 @@ export class ClosetComponent implements OnDestroy {
         this.itemMap[item.guid] = item;
       }
     }
+
+    // Get ongoing items.
+    DateHelper.getLastActive(this._dataService.seasonConfig.items)?.spirits?.forEach(spirit => {
+      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    });
+    this._dataService.eventConfig.items.forEach(event => {
+      DateHelper.getLastActive(event.instances)?.spirits?.forEach(spirit => {
+        NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      });
+    });
+    NodeHelper.getItems(DateHelper.getLastActive(this._dataService.travelingSpiritConfig.items)?.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    DateHelper.getLastActive(this._dataService.returningSpiritsConfig.items)?.spirits?.forEach(spirit => {
+      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    });
 
     // Add items to closets.
     for (const item of this._dataService.itemConfig.items) {
@@ -837,7 +861,10 @@ export class ClosetComponent implements OnDestroy {
         // While requesting hide all unselected items.
         if (mode === 'request' && !this.selected.all[item.guid]) { ctx.globalAlpha = _aHide; }
         // For closet hide items not owned.
-        if (mode === 'closet' && this.hidden[item.guid]) { ctx.globalAlpha = this.selected.all[item.guid] ? _aHalfHide : _aHide; }
+        if (mode === 'closet' && this.hidden[item.guid]) {
+          // Make selected and ongoing items more opaque.
+          ctx.globalAlpha = this.selected.all[item.guid] || (this.showOngoing && this.ongoingItems[item.guid]) ? _aHalfHide : _aHide;
+        }
       }
 
       ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);

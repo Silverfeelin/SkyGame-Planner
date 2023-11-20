@@ -44,6 +44,7 @@ export class NodeHelper {
    * @returns Array of items.
    */
   static getItems(node?: INode, includeHidden?: boolean): Array<IItem> {
+    if (!node) { return []; }
     const itemSet = new Set<IItem>();
     this.all(node).filter(n => n.item).forEach(n => {
       itemSet.add(n.item!);
