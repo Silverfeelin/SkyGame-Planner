@@ -54,6 +54,7 @@
         <div class="item-none">
           <mat-icon class="" svgIcon="none"></mat-icon>
         </div>
+        <mat-icon class="unlock-check self unlocked">done</mat-icon>
       </div>
       <ng-container *ngFor="let item of shownItems; let i = index">
         <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % (columns)) ? undefined : 'block'"></div>

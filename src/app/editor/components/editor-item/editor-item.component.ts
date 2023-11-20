@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { nanoid } from 'nanoid';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-editor-item',
@@ -34,12 +35,23 @@ export class EditorItemComponent {
     'Special'
   ];
 
+  constructor(
+    private readonly _dataService: DataService
+  ) {
+
+  }
+
   generate(): void {
     let icon = this.icon;
     const iRevision = icon.indexOf('/revision');
     if (iRevision >= 0) { icon = icon.substring(0, iRevision); }
 
+    const lastId = this._dataService.itemConfig.items.reduce((prev, curr) => {
+      return prev.id! > curr.id! ? prev : curr;
+    }).id;
+
     const item: IItem = {
+      id: lastId! + 1,
       guid: nanoid(10),
       name: this.name,
       type: this.type as ItemType,

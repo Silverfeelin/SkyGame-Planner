@@ -22,7 +22,7 @@ export class SettingsComponent {
     private readonly _settingService: SettingService,
     private readonly _storageService: StorageService
   ) {
-    this.unlockedCount = this._storageService.unlocked.size;
+    this.unlockedCount = this._dataService.itemConfig.items.filter(x => x.unlocked && !x.autoUnlocked).length;
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
@@ -31,8 +31,13 @@ export class SettingsComponent {
   export(): void {
     const unlocked = this._storageService.serializeUnlocked();
     const unlockedCol = this._storageService.serializeUnlockedCol();
+    const favourite = this._storageService.serializeFavourites();
+    const closet = {
+      hidden: JSON.parse(localStorage.getItem('closet.hidden') || '[]'),
+    };
+
     const data = {
-      unlocked, unlockedCol
+      unlocked, unlockedCol, favourite, closet
     };
     const jsonData = JSON.stringify(data);
 
@@ -83,7 +88,9 @@ export class SettingsComponent {
     const unlocked = data.unlocked.split(',');
     const unlockedCol = data.unlockedCol?.split(',') || [];
 
-    if (!confirm(`You're about to overwrite your current data with ${unlocked.length} entries. This cannot be undone. Are you sure?`))
+    const unlockedSet = new Set(unlocked);
+    const itemCount = this._dataService.itemConfig.items.filter(item => !item.autoUnlocked && unlockedSet.has(item.guid)).length;
+    if (!confirm(`You're about to overwrite your current data with ${itemCount} items and some other settings. This cannot be undone. Are you sure?`))
       return;
 
     this._storageService.unlocked.clear();
@@ -94,19 +101,28 @@ export class SettingsComponent {
     this._storageService.addCol(...unlockedCol);
     this._storageService.saveCol();
 
+    if (data.closet) {
+      localStorage.setItem('closet.hidden', JSON.stringify(data.closet.hidden));
+      localStorage.setItem('closet.sync', '0')
+    }
+
     this._dataService.reloadUnlocked();
 
-    this.unlockedCount = this._storageService.unlocked.size;
+    this.unlockedCount = this._dataService.itemConfig.items.filter(x => x.unlocked && !x.autoUnlocked).length;
   }
 
   clear(): void {
-    if (!confirm(`You're about to clear all your data. This cannot be undone. Are you sure?`))
-      return;
+    if (!confirm(`You're about to clear all your data. This cannot be undone. Are you sure?`)) { return; }
 
     this._storageService.unlocked.clear();
     this._storageService.save();
     this._storageService.unlockedCol.clear();
     this._storageService.saveCol();
+    this._storageService.favourites.clear();
+    this._storageService.saveFavourites();
+
+    localStorage.setItem('closet.hidden', '[]');
+
     this._dataService.reloadUnlocked();
     this.unlockedCount = 0;
   }
