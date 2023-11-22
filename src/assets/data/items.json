@@ -16639,6 +16639,22 @@
       "order": 5901
     },
     // #endregion
+    // #region Aviary's Firework Festival
+    {
+      "id": 1956,
+      "guid": "YYi734W-IG",
+      "type": "Held",
+      "name": "Festival Scepter",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png"
+    },
+    {
+      "id": 1957,
+      "guid": "v6ZqvI6A_L",
+      "type": "FaceAccessory",
+      "name": "Festival Earrings",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Festival-Earrings-icon.png"
+    },
+    // #endregion
 
     // #region Harmony Hall
     {

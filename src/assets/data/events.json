@@ -698,7 +698,7 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Summer_Lights"
       }
     },
-    // AURORA Encore Concerts
+    // AURORA Encore Concerts (2023)
     {
       "guid": "284-OJ0if4",
       "name": "AURORA Encore Concerts",
@@ -722,6 +722,22 @@
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts"
       }
+    },
+    // Aviary's Firework Festival (2023)
+    {
+      "guid": "TPqpSiMIZz",
+      "name": "Aviary's Firework Festival",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/3e94d18cf6/aviaryfireworkfestival23-header.png",
+      "instances": [
+        {
+          "guid": "w_k3jZV4Jg",
+          "date": { "day": 27, "month": 11, "year": 2023 },
+          "endDate": { "day": 10, "month": 12, "year": 2023 },
+          "spirits": [
+            //{ "guid": "-R-Ener3oo", "spirit": "NO6tqAn4m3", "tree": "" }
+          ]
+        }
+      ]
     },
     // #endregion
   ]
