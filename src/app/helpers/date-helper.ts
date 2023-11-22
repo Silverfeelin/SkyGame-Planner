@@ -59,6 +59,20 @@ export class DateHelper {
     return 'active';
   }
 
+  /** Returns the first upcoming item. Assumes dates of items are sorted. */
+  static getFirstUpcoming<T extends IPeriod>(items?: Array<T>): T | undefined {
+    if (!items) { return undefined; }
+    const now = dayjs();
+    let first: T | undefined;
+    for (let i = items.length - 1; i >= 0; i--) {
+      const item = items[i];
+      if (item.date.isAfter(now)) { first = item; continue; }
+      if (item.date.isBefore(now)) { break; }
+    }
+    return first;
+  }
+
+  /** Returns the last active item. Assumes dates of items are sorted. */
   static getLastActive<T extends IPeriod>(items?: Array<T>): T | undefined {
     if (!items) { return undefined; }
     const now = dayjs();

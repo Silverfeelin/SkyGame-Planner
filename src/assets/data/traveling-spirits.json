@@ -595,10 +595,16 @@
       "tree": "AIEuoncebp"
     },
     {
-      "guid": "tH0nI9z1Z2",
+      "guid": "tH0nI9z1Z2", // 100 - Wise Grandparent
       "date": { "day": 9, "month": 11, "year": 2023 },
       "spirit": "7EzWoLR1w4",
       "tree": "BrQr2cRMRk"
+    },
+    {
+      "guid": "qqJKWc-uSO", // 101 - Talented Builder
+      "date": { "day": 23, "month": 11, "year": 2023 },
+      "spirit": "hovmkrquOR",
+      "tree": "VvzWtE5G3g"
     },
   ]
 }

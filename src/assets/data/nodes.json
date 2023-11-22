@@ -13936,7 +13936,7 @@
       "c": 75
     },
     // #endregion
-    // Talented Builder
+    // #region Talented Builder
     {
       "guid": "et9DvsI31i",
       "item": "b_qHNPnLGc",
@@ -14007,6 +14007,76 @@
       "item": "LZEuZ8aSr1",
       "sc": 3
     },
+    // TS 101
+    {
+      "guid": "GLJrehEjLo",
+      "item": "b_qHNPnLGc",
+      "nw": "LP-qjxPGUI",
+      "n": "Fe4zk4YdtA"
+    },
+    {
+      "guid": "LP-qjxPGUI",
+      "item": "zRFUMdaCAK",
+      "h": 4
+    },
+    {
+      "guid": "Fe4zk4YdtA",
+      "item": "x-oGRq6rNu",
+      "c": 5,
+      "nw": "6UNhWB4BfT",
+      "n": "9oAtlz_1oB",
+      "ne": "Gtk6AXj0YE"
+    },
+    {
+      "guid": "6UNhWB4BfT",
+      "item": "RcLkR7XRbn",
+      "c": 45
+    },
+    {
+      "guid": "Gtk6AXj0YE",
+      "item": "ywCvppfTaZ",
+      "c": 3
+    },
+    {
+      "guid": "9oAtlz_1oB",
+      "item": "enzmBJRXnG",
+      "ac": 2,
+      "n": "0SIoq0X8DO"
+    },
+    {
+      "guid": "0SIoq0X8DO",
+      "item": "AlBQo1ngBi",
+      "nw": "qpmHigIi4S",
+      "n": "GQjnWCRTCf",
+      "ne": "Ur6armvORX"
+    },
+    {
+      "guid": "qpmHigIi4S",
+      "item": "0bY0v6h4ci"
+    },
+    {
+      "guid": "Ur6armvORX",
+      "item": "sTi8F25qWL",
+      "c": 15
+    },
+    {
+      "guid": "GQjnWCRTCf",
+      "item": "YPTs9XT_4y",
+      "c": 5,
+      "nw": "lz6awNBtYX",
+      "n": "tggWYkfg81"
+    },
+    {
+      "guid": "lz6awNBtYX",
+      "item": "cZfBtj_CYb",
+      "c": 55
+    },
+    {
+      "guid": "tggWYkfg81",
+      "item": "g-vZeE8cmg",
+      "c": 70
+    },
+    // #endregion
     // #endregion
     // #region Abyss
     // Anxious Angler

@@ -24,9 +24,9 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.season = DateHelper.getLastActive(this._dataService.seasonConfig.items);
-    this.ts = DateHelper.getLastActive(this._dataService.travelingSpiritConfig.items);
-    this.rs = DateHelper.getLastActive(this._dataService.returningSpiritsConfig.items);
+    this.season = DateHelper.getLastActive(this._dataService.seasonConfig.items) ?? DateHelper.getFirstUpcoming(this._dataService.seasonConfig.items);
+    this.ts = DateHelper.getLastActive(this._dataService.travelingSpiritConfig.items) ?? DateHelper.getFirstUpcoming(this._dataService.travelingSpiritConfig.items);
+    this.rs = DateHelper.getLastActive(this._dataService.returningSpiritsConfig.items) ?? DateHelper.getFirstUpcoming(this._dataService.returningSpiritsConfig.items);
 
     for (const event of this._dataService.eventConfig.items) {
       if (!event.instances) { continue; }

@@ -367,7 +367,15 @@ export class DataService {
   }
 
   private initializeItems(): void {
+    const ids = new Set<number>();
     this.itemConfig.items.forEach(item => {
+      if (item.id) {
+        ids.has(item.id) && console.error('Duplicate item ID', item.id, item);
+        ids.add(item.id);
+      } else {
+        console.error('Item ID not defined', item);
+      }
+
       item.unlocked ||= this._storageService.unlocked.has(item.guid);
       item.favourited = this._storageService.favourites.has(item.guid);
       if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }

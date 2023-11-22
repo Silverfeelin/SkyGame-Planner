@@ -11607,7 +11607,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
     // #endregion
-    // Talented Builder
+    // #region Talented Builder
     {
       "id": 1359,
       "guid": "b_qHNPnLGc",
@@ -11719,6 +11719,21 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
     },
+    {
+      "id": 1954,
+      "guid": "ywCvppfTaZ",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 1955,
+      "guid": "enzmBJRXnG",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
     // #endregion
     // #region Abyss
     // Anxious Angler
