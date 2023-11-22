@@ -8,7 +8,7 @@
   <app-search></app-search>
 </div>
 
-<div class="sky-card mt" *ngIf="!season && !eventInstance && !ts">
+<div class="sky-card mt" *ngIf="!season && !eventInstances.length && !ts">
   <div class="sky-card-body">
     <div class="container">
       There is currently no season or event active.<br/>
@@ -17,17 +17,24 @@
   </div>
 </div>
 
-<app-dashboard-wishlist [season]="season" [eventInstance]="eventInstance" [ts]="ts" [rs]="undefined"></app-dashboard-wishlist>
+<app-dashboard-wishlist [season]="season" [eventInstances]="eventInstances" [ts]="ts" [rs]="rs"></app-dashboard-wishlist>
 
 <div class="grid grid-2 mt">
+  <!-- Ongoing -->
   <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
-  <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
+  <ng-container *ngFor="let eventInstance of eventInstances">
+    <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
+  </ng-container>
   <app-spirit-card *ngIf="ts" [spirit]="ts.spirit" [ts]="ts" [tree]="ts.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
-    <div title>
-      <h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{ts.number}})</span></h2>
-    </div>
+    <div title><h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{ts.number}})</span></h2></div>
   </app-spirit-card>
-  <app-returning-spirit-card *ngIf="rs" [return]="rs">
-  </app-returning-spirit-card>
+  <app-returning-spirit-card *ngIf="rs" [return]="rs"></app-returning-spirit-card>
+  <!-- Future -->
+  <app-season-card *ngIf="!season && futureSeason" [season]="futureSeason" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
+  <app-event-card *ngIf="!eventInstances.length && futureEventInstance" [event]="futureEventInstance.event" [instance]="futureEventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
+  <app-spirit-card *ngIf="futureTs" [spirit]="futureTs.spirit" [ts]="futureTs" [tree]="futureTs.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
+    <div title><h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{futureTs.number}})</span></h2></div>
+  </app-spirit-card>
+  <app-returning-spirit-card *ngIf="futureRs" [return]="futureRs"></app-returning-spirit-card>
 </div>
 

@@ -2,6 +2,8 @@ import dayjs from 'dayjs';
 import { IDate } from "../interfaces/date.interface";
 import { IPeriod } from '../interfaces/base.interface';
 
+export type PeriodState = 'ended' | 'active' | 'future';
+
 export class DateHelper {
   static readonly skyTimeZone = 'America/Los_Angeles';
   static displayFormat: string;
@@ -52,11 +54,21 @@ export class DateHelper {
     return Math.floor(hours / 24);
   }
 
-  static getStateFromPeriod(start: dayjs.Dayjs, end: dayjs.Dayjs, date?: dayjs.Dayjs): 'future' | 'active' | 'ended' {
+  static getStateFromPeriod(start: dayjs.Dayjs, end: dayjs.Dayjs, date?: dayjs.Dayjs): PeriodState {
     date ??= dayjs();
     if (start.isAfter(date)) { return 'future'; }
     if (date.isAfter(end)) { return 'ended'; }
     return 'active';
+  }
+
+  static groupByPeriod<T extends IPeriod>(items: Array<T>): { ended: Array<T>, active: Array<T>, future: Array<T> } {
+    const result = { ended: new Array<T>(), active: new Array<T>(), future: new Array<T>() };
+    const now = dayjs();
+    for (const item of items) {
+      const state = DateHelper.getStateFromPeriod(item.date, item.endDate, now);
+      result[state].push(item);
+    }
+    return result;
   }
 
   /** Returns the first upcoming item. Assumes dates of items are sorted. */
