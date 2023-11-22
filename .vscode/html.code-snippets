@@ -1,0 +1,29 @@
+{
+  "Card": {
+    "prefix": "@sky-card",
+    "body": [
+        "<div class=\"sky-card\">",
+        "\t$1",
+        "</div>"
+    ],
+    "description": "Sky card"
+  },
+  "Card-Header": {
+    "prefix": "@sky-card-header",
+    "body": [
+      "<div class=\"sky-card-header\">",
+      "\t<h1 class=\"h2 mb-0\">$1</h1>",
+      "</div>"
+    ],
+    "description": "Sky card header"
+  },
+  "Card-Body": {
+    "prefix": "@sky-card-body",
+    "body": [
+      "<div class=\"sky-card-body\">",
+      "\t$1",
+      "</div>"
+    ],
+    "description": "Sky card body"
+  },
+}
