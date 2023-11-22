@@ -17568,5 +17568,24 @@
       "c": 50
     },
     // #endregion
+    // #region Aviary's Firework Festival (2023)
+    {
+      "guid": "qzjesJUZYH",
+      "item": "Vo8H0zNFLE",
+      "c": 5,
+      "nw": "Y2GOr8xvnW",
+      "n": "nrm3iU2xrR"
+    },
+    {
+      "guid": "Y2GOr8xvnW",
+      "item": "v6ZqvI6A_L",
+      "ec": 15
+    },
+    {
+      "guid": "nrm3iU2xrR",
+      "item": "YYi734W-IG",
+      "ec": 36
+    },
+    // #endregion
   ]
 }
