@@ -10,23 +10,19 @@
 <!-- Recurring -->
 <div class="sky-card mt">
   <div class="sky-card-header">
-    <h2 class="h3">Recurring events</h2>
+    <h2 class="h2">Recurring events</h2>
   </div>
-  <div class="sky-card-body">
-    <div class="grid grid-4">
-      <app-event-card [event]="event" *ngFor="let event of recurring; let i = index;" [options]="{show: ['img', 'list', 'recent']}"></app-event-card>
-    </div>
-  </div>
+</div>
+<div class="grid grid-4 mt">
+  <app-event-card [event]="event" *ngFor="let event of recurring; let i = index;" [options]="{show: ['img', 'list', 'recent']}"></app-event-card>
 </div>
 
 <!-- Other -->
 <div class="sky-card mt">
   <div class="sky-card-header">
-    <h2 class="h3">Other events</h2>
+    <h2 class="h2">Other events</h2>
   </div>
-  <div class="sky-card-body">
-    <div class="grid grid-4">
-      <app-event-card [event]="event" *ngFor="let event of old; let i = index;" [options]="{show: ['img', 'list', 'recent']}"></app-event-card>
-    </div>
-  </div>
+</div>
+<div class="grid grid-4 mt">
+  <app-event-card [event]="event" *ngFor="let event of old; let i = index;" [options]="{show: ['img', 'list', 'upcoming', 'recent' ]}"></app-event-card>
 </div>

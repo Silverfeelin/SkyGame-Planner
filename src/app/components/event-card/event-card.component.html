@@ -49,7 +49,7 @@
           I have done my dailies.
         </span>
       </div>
-      <!-- Jump to last -->
+      <!-- Most recent -->
       <a *ngIf="sections['recent'] && lastInstance" [routerLink]="['/event-instance', lastInstance.guid]"
         class="item link" [style.order]="sections['recent']"
       >
@@ -58,6 +58,16 @@
           Most recent
           <span class="c-accent">(<app-date [date]="lastInstance.date" [format]="'YYYY'"></app-date>)</span>
         </span>
+      </a>
+      <!-- Upcoming -->
+      <a *ngIf="sections['upcoming'] && nextInstance" [routerLink]="['/event-instance', nextInstance.guid]"
+        class="item link" [style.order]="sections['upcoming']"
+      >
+      <mat-icon class="menu-icon">schedule</mat-icon>
+      <span class="menu-label">
+        Upcoming
+        <span class="c-accent">(<app-date [date]="nextInstance.date" [format]="'YYYY'"></app-date>)</span>
+      </span>
       </a>
       <!-- Cost -->
       <div *ngIf="sections['cost'] && cost"

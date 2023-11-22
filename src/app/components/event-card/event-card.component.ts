@@ -9,7 +9,7 @@ import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { StorageService } from 'src/app/services/storage.service';
 
-type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'cost' | 'checkin';
+type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'checkin';
 export interface EventCardOptions {
   show?: Array<Section>;
 }
@@ -27,6 +27,7 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
 
   sections: {[key: string]: number} = {};
   lastInstance?: IEventInstance;
+  nextInstance?: IEventInstance;
   cost?: ICost;
   remainingCost?: ICost;
   checkedIn = false;
@@ -72,8 +73,8 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
     // Find last instance based on event.date.
     if (this.event?.instances) {
       const now = dayjs();
-      this.lastInstance = this.event.instances.findLast<IEventInstance>(i => DateHelper.isActive(i.date, i.endDate));
-      this.lastInstance ??= this.event.instances.findLast(i => i.date.isBefore(now));
+      this.lastInstance = DateHelper.getActive(this.event.instances) ?? this.event.instances.findLast(i => i.date.isBefore(now));
+      this.nextInstance = DateHelper.getUpcoming(this.event.instances);
     }
 
     this.imageUrlSafe = this.event?.imageUrl ? `url('${this.event.imageUrl}')` : undefined;
