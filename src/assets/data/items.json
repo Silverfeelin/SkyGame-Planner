@@ -16908,7 +16908,7 @@
       "guid": "TkW2R7Szug",
       "type": "Cape",
       "name": "Sparrow Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
+      "icon": "/assets/game/items/1959.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
       "order": 99999
     },
@@ -16917,7 +16917,7 @@
       "guid": "TvT6x_UO5V",
       "type": "Mask",
       "name": "Sparrow Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
+      "icon": "/assets/game/items/1960.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
       "order": 99999
     },
@@ -16926,7 +16926,7 @@
       "guid": "jM8xKFwbTE",
       "type": "Hat",
       "name": "Moth Antennae",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
+      "icon": "/assets/game/items/1961.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
       "order": 99999
     },
@@ -16935,7 +16935,7 @@
       "guid": "bu7qgPtuB2",
       "type": "Cape",
       "name": "Moth Cape",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
+      "icon": "/assets/game/items/1962.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
       "order": 99999
     },
