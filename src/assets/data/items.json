@@ -16646,7 +16646,7 @@
       "type": "Held",
       "name": "Festival Scepter",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
-      "order": 99999
+      "order": 4012
     },
     {
       "id": 1957,
@@ -16654,7 +16654,7 @@
       "type": "FaceAccessory",
       "name": "Festival Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Festival-Earrings-icon.png",
-      "order": 99999
+      "order": 2013
     },
     {
       "id": 1958,
@@ -16910,7 +16910,7 @@
       "name": "Sparrow Cape",
       "icon": "/assets/game/items/1959.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
-      "order": 99999
+      "order": 10514
     },
     {
       "id": 1960,
@@ -16919,7 +16919,7 @@
       "name": "Sparrow Mask",
       "icon": "/assets/game/items/1960.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
-      "order": 99999
+      "order": 10611
     },
     {
       "id": 1961,
@@ -16928,7 +16928,7 @@
       "name": "Moth Antennae",
       "icon": "/assets/game/items/1961.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
-      "order": 99999
+      "order": 11512
     },
     {
       "id": 1962,
@@ -16937,7 +16937,7 @@
       "name": "Moth Cape",
       "icon": "/assets/game/items/1962.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
-      "order": 99999
+      "order": 10524
     },
     // #endregion
     // #region PS
