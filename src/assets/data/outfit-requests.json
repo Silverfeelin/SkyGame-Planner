@@ -31,6 +31,7 @@
         { "guid": "RMUvTXXu86", "url": "/assets/game/background/wasteland2.webp" },
         { "guid": "fF-omLGrQt", "url": "/assets/game/background/reef.webp" },
         { "guid": "hfqMLetkgc", "url": "/assets/game/background/vault.webp" },
+        { "guid": "7uerJG-AHt", "url": "/assets/game/background/firework.webp", "filter": "brightness(0.7) blur(2px)" },
       ]
     }
   }
