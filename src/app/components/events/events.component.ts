@@ -38,7 +38,7 @@ export class EventsComponent {
 
         // Find last instance based on event.date.
         const now = dayjs();
-        const lastInstance = instances.find(i => DateHelper.isActive(i.date, i.endDate)) ?? reverseInstances.find(i => i.date.isBefore(now));
+        const lastInstance = DateHelper.getActive(instances) ?? reverseInstances.find(i => i.date.isBefore(now)) ?? DateHelper.getUpcoming(instances);
         this.lastInstances[event.guid] = lastInstance;
       }
     });

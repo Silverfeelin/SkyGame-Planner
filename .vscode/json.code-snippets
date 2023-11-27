@@ -1,0 +1,30 @@
+{
+  "IAP": {
+    "prefix": "@iap",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"name\": \"$2\",",
+      "\t\"price\": ${3:9.99},",
+      "\t\"items\": [",
+      "\t\t$0",
+      "\t]",
+      "},"
+    ],
+    "description": "IAP"
+  },
+  "Shop": {
+    "prefix": "@shop",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"type\": \"$2\",",
+      "\t\"name\": \"$3\",",
+      "\t\"iaps\": [",
+      "\t\t$0",
+      "\t]",
+      "},"
+    ],
+    "description": "Shop"
+  },
+}

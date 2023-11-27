@@ -16639,6 +16639,31 @@
       "order": 5901
     },
     // #endregion
+    // #region Aviary's Firework Festival
+    {
+      "id": 1956,
+      "guid": "YYi734W-IG",
+      "type": "Held",
+      "name": "Festival Scepter",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
+      "order": 4012
+    },
+    {
+      "id": 1957,
+      "guid": "v6ZqvI6A_L",
+      "type": "FaceAccessory",
+      "name": "Festival Earrings",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Festival-Earrings-icon.png",
+      "order": 2013
+    },
+    {
+      "id": 1958,
+      "guid": "Vo8H0zNFLE",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
 
     // #region Harmony Hall
     {
@@ -16877,6 +16902,42 @@
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Vessel-flute-Ocarina-Nintendo-IAP.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute" },
       "order": 1801
+    },
+    {
+      "id": 1959,
+      "guid": "TkW2R7Szug",
+      "type": "Cape",
+      "name": "Sparrow Cape",
+      "icon": "/assets/game/items/1959.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
+      "order": 10514
+    },
+    {
+      "id": 1960,
+      "guid": "TvT6x_UO5V",
+      "type": "Mask",
+      "name": "Sparrow Mask",
+      "icon": "/assets/game/items/1960.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
+      "order": 10611
+    },
+    {
+      "id": 1961,
+      "guid": "jM8xKFwbTE",
+      "type": "Hat",
+      "name": "Moth Antennae",
+      "icon": "/assets/game/items/1961.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
+      "order": 11512
+    },
+    {
+      "id": 1962,
+      "guid": "bu7qgPtuB2",
+      "type": "Cape",
+      "name": "Moth Cape",
+      "icon": "/assets/game/items/1962.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
+      "order": 10524
     },
     // #endregion
     // #region PS

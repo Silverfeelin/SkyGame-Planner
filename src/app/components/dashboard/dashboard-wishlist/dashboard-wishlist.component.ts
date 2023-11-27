@@ -25,7 +25,7 @@ type Bag = { [guid: string]: IItem };
 export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   // Ongoing
   @Input() season?: ISeason;
-  @Input() eventInstance?: IEventInstance;
+  @Input() eventInstances?: Array<IEventInstance>;
   @Input() ts?: ITravelingSpirit;
   @Input() rs?: IReturningSpirits;
 
@@ -117,9 +117,11 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
 
   private loadEvent(): void {
     this.ongoingEventItems = {};
-    if (!this.eventInstance) { return; }
-    this.eventInstance.spirits.forEach(spirit => {
-      this.loadTree(spirit.tree, this.ongoingEventItems);
+    if (!this.eventInstances?.length) { return; }
+    this.eventInstances.forEach(instance => {
+      instance.spirits.forEach(spirit => {
+        this.loadTree(spirit.tree, this.ongoingEventItems);
+      });
     });
   }
 

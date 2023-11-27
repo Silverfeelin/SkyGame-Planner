@@ -14,9 +14,13 @@ import { DataService } from 'src/app/services/data.service';
 export class DashboardComponent implements OnInit {
 
   season?: ISeason;
+  futureSeason?: ISeason;
   ts?: ITravelingSpirit;
+  futureTs?: ITravelingSpirit;
   rs?: IReturningSpirits;
-  eventInstance?: IEventInstance;
+  futureRs?: IReturningSpirits;
+  eventInstances: Array<IEventInstance> = [];
+  futureEventInstance?: IEventInstance;
 
   constructor(
     private readonly _dataService: DataService
@@ -24,14 +28,34 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.season = DateHelper.getLastActive(this._dataService.seasonConfig.items) ?? DateHelper.getFirstUpcoming(this._dataService.seasonConfig.items);
-    this.ts = DateHelper.getLastActive(this._dataService.travelingSpiritConfig.items) ?? DateHelper.getFirstUpcoming(this._dataService.travelingSpiritConfig.items);
-    this.rs = DateHelper.getLastActive(this._dataService.returningSpiritsConfig.items) ?? DateHelper.getFirstUpcoming(this._dataService.returningSpiritsConfig.items);
+    // Season
+    const seasonDates = DateHelper.groupByPeriod(this._dataService.seasonConfig.items);
+    this.season = seasonDates.active?.at(-1);
+    this.futureSeason = seasonDates.future?.at(-1);
 
+    // TS
+    const tsDates = DateHelper.groupByPeriod(this._dataService.travelingSpiritConfig.items);
+    this.ts = tsDates.active?.at(-1);
+    this.futureTs = tsDates.future?.at(-1);
+
+    // RS
+    const rsDates = DateHelper.groupByPeriod(this._dataService.returningSpiritsConfig.items);
+    this.rs = rsDates.active?.at(-1);
+    this.futureRs = rsDates.future?.at(-1);
+
+    // Event
+    this.eventInstances = [];
+    const futureEvents = new Array<IEventInstance>();
     for (const event of this._dataService.eventConfig.items) {
       if (!event.instances) { continue; }
-      this.eventInstance = DateHelper.getLastActive(event.instances);
-      if (this.eventInstance) { break; }
+      const eventDates = DateHelper.groupByPeriod(event.instances);
+      if (eventDates.active.length) {
+        this.eventInstances.push(eventDates.active.at(-1)!);
+      } else if (eventDates.future.length) {
+        futureEvents.push(eventDates.future.at(0)!);
+      }
     }
+    futureEvents.sort((a, b) => a.date.diff(b.date));
+    this.futureEventInstance = futureEvents.at(0);
   }
 }

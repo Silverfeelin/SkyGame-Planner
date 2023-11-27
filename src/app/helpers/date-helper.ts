@@ -2,6 +2,8 @@ import dayjs from 'dayjs';
 import { IDate } from "../interfaces/date.interface";
 import { IPeriod } from '../interfaces/base.interface';
 
+export type PeriodState = 'ended' | 'active' | 'future';
+
 export class DateHelper {
   static readonly skyTimeZone = 'America/Los_Angeles';
   static displayFormat: string;
@@ -52,15 +54,25 @@ export class DateHelper {
     return Math.floor(hours / 24);
   }
 
-  static getStateFromPeriod(start: dayjs.Dayjs, end: dayjs.Dayjs, date?: dayjs.Dayjs): 'future' | 'active' | 'ended' {
+  static getStateFromPeriod(start: dayjs.Dayjs, end: dayjs.Dayjs, date?: dayjs.Dayjs): PeriodState {
     date ??= dayjs();
     if (start.isAfter(date)) { return 'future'; }
     if (date.isAfter(end)) { return 'ended'; }
     return 'active';
   }
 
+  static groupByPeriod<T extends IPeriod>(items: Array<T>): { ended: Array<T>, active: Array<T>, future: Array<T> } {
+    const result = { ended: new Array<T>(), active: new Array<T>(), future: new Array<T>() };
+    const now = dayjs();
+    for (const item of items) {
+      const state = DateHelper.getStateFromPeriod(item.date, item.endDate, now);
+      result[state].push(item);
+    }
+    return result;
+  }
+
   /** Returns the first upcoming item. Assumes dates of items are sorted. */
-  static getFirstUpcoming<T extends IPeriod>(items?: Array<T>): T | undefined {
+  static getUpcoming<T extends IPeriod>(items?: Array<T>): T | undefined {
     if (!items) { return undefined; }
     const now = dayjs();
     let first: T | undefined;
@@ -73,7 +85,7 @@ export class DateHelper {
   }
 
   /** Returns the last active item. Assumes dates of items are sorted. */
-  static getLastActive<T extends IPeriod>(items?: Array<T>): T | undefined {
+  static getActive<T extends IPeriod>(items?: Array<T>): T | undefined {
     if (!items) { return undefined; }
     const now = dayjs();
     for (let i = items.length - 1; i >= 0; i--) {

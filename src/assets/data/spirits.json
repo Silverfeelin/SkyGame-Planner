@@ -1727,7 +1727,7 @@
       "name": "Style Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Days_of_Style_Guide_2023.png"
     },
-    // Days of Mischief
+    // #region Days of Mischief
     {
       "guid": "ihZx_rVl70",
       "type": "Event",
@@ -1757,11 +1757,18 @@
       "type": "Event",
       "name": "Samantha clone 42"
     },
+    // #endregion
     // Days of Feast
     {
       "guid": "j1UqKci8Hb",
       "type": "Event",
       "name": "Days of Feast Staff"
+    },
+    // Firework Festival
+    {
+      "guid": "NO6tqAn4m3",
+      "type": "Event",
+      "name": "Enchanted Pyrotechnician"
     },
     // #endregion
   ]

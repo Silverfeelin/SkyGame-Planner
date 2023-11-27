@@ -486,16 +486,16 @@ export class ClosetComponent implements OnDestroy {
     }
 
     // Get ongoing items.
-    DateHelper.getLastActive(this._dataService.seasonConfig.items)?.spirits?.forEach(spirit => {
+    DateHelper.getActive(this._dataService.seasonConfig.items)?.spirits?.forEach(spirit => {
       NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
     });
     this._dataService.eventConfig.items.forEach(event => {
-      DateHelper.getLastActive(event.instances)?.spirits?.forEach(spirit => {
+      DateHelper.getActive(event.instances)?.spirits?.forEach(spirit => {
         NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
       });
     });
-    NodeHelper.getItems(DateHelper.getLastActive(this._dataService.travelingSpiritConfig.items)?.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
-    DateHelper.getLastActive(this._dataService.returningSpiritsConfig.items)?.spirits?.forEach(spirit => {
+    NodeHelper.getItems(DateHelper.getActive(this._dataService.travelingSpiritConfig.items)?.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    DateHelper.getActive(this._dataService.returningSpiritsConfig.items)?.spirits?.forEach(spirit => {
       NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
     });
 

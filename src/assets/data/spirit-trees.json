@@ -1513,16 +1513,22 @@
       "node": "WoT0pqpHnJ"
     },
     // #endregion
-    // #region Old Events
-    // Days of Summer
+    // #region Days of Summer
     {
       "guid": "mHHOSQWAM0",
       "node": "M55c-swNeS"
     },
-    // AURORA Encore Concerts
+    // #endregion
+    // #region AURORA Encore Concerts
     {
       "guid": "Nx8MFZDTe-",
       "node": "7x-cdEvdiH"
+    },
+    // #endregion
+    // #region Aviary's Firework Festival
+    {
+      "guid": "Pfnfzz3kGn",
+      "node": "qzjesJUZYH"
     },
     // #endregion
   ]
