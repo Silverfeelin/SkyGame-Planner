@@ -16646,6 +16646,7 @@
       "type": "Held",
       "name": "Festival Scepter",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Festival-Scepter-prop.png",
       "order": 4012
     },
     {
@@ -16654,6 +16655,7 @@
       "type": "FaceAccessory",
       "name": "Festival Earrings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Festival-Earrings-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Festival-Earrings.png",
       "order": 2013
     },
     {
