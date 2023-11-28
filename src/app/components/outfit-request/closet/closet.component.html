@@ -26,17 +26,17 @@
     </div>
   </div>
   <div class="sky-card-body">
-    <div class="container" >
-      <!-- Requesting description -->
-      <p class="mb" *ngIf="requesting">
-        Select items from the list to create your request. You can then copy a link or image to share your selection.
-      </p>
-      <p class="mb" *ngIf="!requesting">
-        If you're trying to create an outfit request, please use the <a href="/outfit-request/request">Outfit Request</a> page instead!
-      </p>
-      <div class="sky-flex flex-wrap">
+    <div class="container">
+      <div>
+        First time? Try the
+        <button type="button" (click)="startTour()" class="">
+          <mat-icon class="menu-icon">explore</mat-icon>
+          <span class="menu-label">Tour</span>
+        </button> to learn more about this page!
+      </div>
+      <div class="sky-flex flex-wrap mt">
         <!-- Display mode. -->
-        <div class="button-group" *ngIf="!requesting">
+        <div class="button-group" *ngIf="!requesting" data-step="5" data-intro="You can modify the closet to show all items or only the items you own. This is recommended if you want to help with requests or share your closet.">
           <button type="button" (click)="toggleCloset()">
             <mat-icon class="menu-icon">checkroom</mat-icon>
             <span class="menu-label">{{ closetMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
@@ -85,15 +85,12 @@
         </div>
       </div>
     </div>
-    <!-- <hr/>
-    <div>
-      <app-item-type-selector (typeChanged)="scrollToType($event)"></app-item-type-selector>
-    </div> -->
   </div>
 </div>
 
+<!-- Modify closet -->
 <div class="sky-card mt" *ngIf="modifyingCloset">
-  <div class="sky-card-header">
+  <div class="sky-card-header" data-intro="Test" data-step="3">
     <h2 class="h3">Modify closet</h2>
   </div>
   <div class="sky-card-body">
@@ -113,6 +110,8 @@
     <div class="container mt">
       <p class="mb-0">
         During seasons and events you can preview items in-game before you own them. Include these in the closet when showing your own items?
+        <br/>
+        Tip: use the Aviary Village indoor closets to preview multiple items you don't have!
       </p>
       <div class="sky-flex flex-wrap mt">
         <button type="button" (click)="toggleOngoing()">
@@ -143,6 +142,7 @@
   </div>
 </div>
 
+<!-- Problematic items -->
 <div #warnHidden class="sky-card mt" *ngIf="selectionHasUnavailable || (!requesting && selectionHasHidden)">
   <div class="sky-card-body">
     <div class="container border-warn" *ngIf="selectionHasUnavailable">
@@ -156,12 +156,12 @@
   </div>
 </div>
 
-<div class="sky-card mt">
-  <!-- closet header -->
+<!-- Item list -->
+<div class="sky-card mt" data-step="1" data-position="top" data-intro="Here you can see all cosmetics from Sky. You can create a request simply by clicking the icons to highlight them." >
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
     <!-- Copy buttons -->
-    <div class="btns-copy">
+    <div class="btns-copy" data-intro="When you are done selecting items you can copy your request. A shareable link or image will be copied to your clipboard. You can then paste it in Discord directly from your keyboard. The shareable link allows other players to easily see if they have the items for your request." data-step="4">
       <div class="button-group">
         <!-- Copy link -->
         <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering"
@@ -202,7 +202,7 @@
       </div>
     </div>
     <!-- Highlight colors -->
-    <div class="color-picker">
+    <div class="color-picker" data-step="3" data-position="bottom-right-aligned" data-intro="If you want to highlight items with a different color you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.">
       <div class="btn-color-active">
         <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
           ngbTooltip="Change highlight color" container="body" placement="top-right">
@@ -281,7 +281,8 @@
 </div>
 
 <ng-template #templateItemsType let-type="type">
-  <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'">
+  <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'"
+    [attr.data-intro]="type === 'Outfit' ? 'Each closet is organized as it appears in Sky.' : undefined" data-position="top" data-step="2">
     <!-- Closet icon, foldable -->
     <div [style.gridColumn]="'1/' + (columns+1)" class="closet-type t-center" (click)="toggleClosetSection(type)">
       <mat-icon [svgIcon]="itemIcons[type]"></mat-icon>

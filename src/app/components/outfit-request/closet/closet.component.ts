@@ -11,6 +11,7 @@ import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
+import introJs from 'intro.js';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -122,6 +123,7 @@ export class ClosetComponent implements OnDestroy {
     private readonly _eventService: EventService,
     private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _elementRef: ElementRef<HTMLElement>,
     private readonly _http: HttpClient,
     private readonly _route: ActivatedRoute
   ) {
@@ -244,9 +246,13 @@ export class ClosetComponent implements OnDestroy {
 
   /** Toggles item size between small and normal. */
   toggleItemSize(): void {
+    this._toggleItemSize();
+    localStorage.setItem('closet.item-size', this.itemSize);
+  }
+
+  _toggleItemSize(): void {
     this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
-    localStorage.setItem('closet.item-size', this.itemSize);
   }
 
   /** Toggles visibility of items that aren't selected. */
@@ -898,6 +904,30 @@ export class ClosetComponent implements OnDestroy {
 
       nextX();
     }
+  }
+
+  // #endregion
+
+  // #region Tour
+
+  startTour(): void {
+    if (this.itemSize === 'default') {
+      this._toggleItemSize();
+    }
+
+    setTimeout(() => {
+      const intro = introJs(this._elementRef.nativeElement).setOptions({
+        disableInteraction: false,
+        showBullets: false,
+        autoPosition: false
+      });
+
+      intro.onbeforechange(function() {
+        return true;
+      });
+
+      intro.start();
+    });
   }
 
   // #endregion
