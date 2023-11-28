@@ -56,7 +56,7 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['season']) { this.loadSeason(); }
-    if (changes['eventInstance']) { this.loadEvent(); }
+    if (changes['eventInstances']) { this.loadEvent(); }
     if (changes['ts']) { this.loadTs(); }
     if (changes['rs']) { this.loadRs(); }
     this.ongoingItems = { ...this.ongoingSeasonItems, ...this.ongoingEventItems, ...this.ongoingTsItems, ...this.ongoingRsItems };
