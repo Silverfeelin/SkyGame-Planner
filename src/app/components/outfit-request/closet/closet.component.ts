@@ -975,6 +975,7 @@ export class ClosetComponent implements OnDestroy {
 
     setTimeout(() => {
       const intro = introJs(this._elementRef.nativeElement).setOptions({
+        scrollTo: 'tooltip',
         steps, showBullets: false, autoPosition: false
       });
 
