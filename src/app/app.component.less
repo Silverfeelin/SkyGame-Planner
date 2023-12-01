@@ -25,13 +25,12 @@
 ::ng-deep {
   body {
     position: relative;
-    left: var(--menu-width);
-    width: calc(100% - var(--menu-width));
+    width: 100%;
     padding: var(--padding-content);
+    padding-left: calc(var(--menu-width) + var(--padding-content));
 
     &.menu-folded, &.menu-hidden {
-      left: 0;
-      width: 100%;
+      padding-left: var(--padding-content);
     }
   }
 }

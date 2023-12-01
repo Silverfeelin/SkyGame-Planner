@@ -5,99 +5,96 @@
     <h2 class="h3 mb-0 title">{{ requesting ? 'Sky outfit request' : 'Sky closet' }}</h2>
     <h2 class="h3 mb-0 title-small">&nbsp;</h2>
     <div class="btns-top btns-top-closet" *ngIf="!requesting">
-      <a class="button" [routerLink]="'/outfit-request/collage'">
+      <a class="button" [routerLink]="'/outfit-request/collage'" data-step="901" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">photo</mat-icon>
         <span class="menu-label">Collage</span>
       </a>
-      <a class="button" href="/outfit-request/request">
+      <a class="button" href="/outfit-request/request" data-step="902" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">add</mat-icon>
         <span class="menu-label">Request</span>
       </a>
     </div>
     <div class="btns-top btn-top-request" *ngIf="requesting">
-      <a class="button" href="/outfit-request/closet">
+      <a class="button" href="/outfit-request/closet" data-step="903" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">checkroom</mat-icon>
         <span class="menu-label">Closet</span>
       </a>
-      <a class="button" href="/">
+      <a class="button" href="/" data-step="904" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">home</mat-icon>
         <span class="menu-label">Home</span>
       </a>
     </div>
   </div>
   <div class="sky-card-body">
-    <div class="container" >
-      <!-- Requesting description -->
-      <p class="mb" *ngIf="requesting">
-        Select items from the list to create your request. You can then copy a link or image to share your selection.
-      </p>
-      <p class="mb" *ngIf="!requesting">
-        If you're trying to create an outfit request, please use the <a href="/outfit-request/request">Outfit Request</a> page instead!
-      </p>
-      <div class="sky-flex flex-wrap">
+    <div class="container" data-step="100" data-position="bottom-left-aligned">
+      <div>
+        First time? Try the
+        <button type="button" (click)="startTour()" class="">
+          <mat-icon class="menu-icon">explore</mat-icon>
+          <span class="menu-label">Tour</span>
+        </button> to learn more about this page!
+      </div>
+      <div class="sky-flex flex-wrap mt">
         <!-- Display mode. -->
-        <div class="button-group" *ngIf="!requesting">
+        <div class="button-group" *ngIf="!requesting" data-step="101" data-position="bottom-left-aligned">
           <button type="button" (click)="toggleCloset()">
             <mat-icon class="menu-icon">checkroom</mat-icon>
             <span class="menu-label">{{ closetMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
           </button>
-          <button type="button" (click)="modifyCloset()">
+          <button type="button" (click)="modifyCloset()" [class.highlight]="modifyingCloset">
             <mat-icon class="menu-icon">manufacturing</mat-icon>
             <span class="menu-label">Modify</span>
           </button>
         </div>
         <!-- Hide items not marked. -->
-        <div class="button-group" *ngIf="!requesting">
+        <div class="button-group" *ngIf="!requesting" data-step="121" data-position="bottom-left-aligned">
           <button type="button" (click)="toggleHideUnselected()">
             <mat-icon class="menu-icon">filter_alt</mat-icon>
-            <span class="menu-label">{{ hideUnselected ? 'Show all': 'Show highlighted' }}</span>
+            <span class="menu-label">{{ hideUnselected ? 'Show all': 'Show selected' }}</span>
           </button>
         </div>
         <!-- Toggle item size -->
-        <div class="button-group">
+        <div class="button-group" data-step="122" data-position="bottom-left-aligned">
           <button type="button" (click)="toggleItemSize()">
             <mat-icon class="menu-icon">{{ itemSize === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
             <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
           </button>
         </div>
         <!-- Hide items from IAPs. -->
-        <button type="button" (click)="toggleIap()" *ngIf="!requesting">
+        <button type="button" (click)="toggleIap()" *ngIf="!requesting" data-step="123" data-position="bottom-left-aligned">
           <mat-icon class="menu-icon">{{ hideIap ? 'attach_money' : 'money_off' }}</mat-icon>
           <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
         </button>
         <div class="button-group">
           <!-- Reset -->
-          <button type="button" class="button-danger" (click)="resetSelected()">
+          <button type="button" class="button-danger" (click)="resetSelected()" data-step="124" data-position="bottom-left-aligned">
             <mat-icon class="menu-icon">delete_forever</mat-icon>
             <span class="menu-label">Reset</span>
           </button>
           <!-- Random -->
-          <button type="button" class="button-danger" (click)="randomSelection()">
+          <button type="button" class="button-danger" (click)="randomSelection()" data-step="125" data-position="bottom-left-aligned">
             <mat-icon class="menu-icon">shuffle</mat-icon>
             <span class="menu-no-label"></span>
           </button>
         </div>
       </div>
       <div class="mt">
-        <div class="search">
+        <div class="search" data-step="126" data-position="bottom-left-aligned">
           <input tabindex="0" #input class="search-input" type="search" (input)="search()" placeholder="Search for items">
           <mat-icon (click)="selectSearch()">search</mat-icon>
         </div>
       </div>
     </div>
-    <!-- <hr/>
-    <div>
-      <app-item-type-selector (typeChanged)="scrollToType($event)"></app-item-type-selector>
-    </div> -->
   </div>
 </div>
 
+<!-- Modify closet -->
 <div class="sky-card mt" *ngIf="modifyingCloset">
   <div class="sky-card-header">
     <h2 class="h3">Modify closet</h2>
   </div>
   <div class="sky-card-body">
-    <div class="container">
+    <div class="container" data-step="102" data-position="bottom-left-aligned">
       Show items in columns. It is recommended to set this number to match your in-game closet.
       <div class="mt">
         <div class="button-group">
@@ -110,7 +107,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt">
+    <div class="container mt" data-step="103" data-position="bottom-left-aligned">
       <p class="mb-0">
         During seasons and events you can preview items in-game before you own them. Include these in the closet when showing your own items?
       </p>
@@ -121,7 +118,7 @@
         </button>
       </div>
     </div>
-    <div class="container mt">
+    <div class="container mt" data-step="104" data-position="bottom-left-aligned">
       <p class="mb-0">
         Because Sky Planner is primarily an item tracker you can use your tracked items to keep the closet updated.<br/>
         You can also manually choose what items to show and hide. Simply click on any item below to hide it from your closet.
@@ -143,6 +140,7 @@
   </div>
 </div>
 
+<!-- Problematic items -->
 <div #warnHidden class="sky-card mt" *ngIf="selectionHasUnavailable || (!requesting && selectionHasHidden)">
   <div class="sky-card-body">
     <div class="container border-warn" *ngIf="selectionHasUnavailable">
@@ -156,27 +154,27 @@
   </div>
 </div>
 
-<div class="sky-card mt">
-  <!-- closet header -->
+<!-- Item list -->
+<div class="sky-card mt" data-step="1" data-position="top-left-aligned">
   <div class="sky-card-header header-items header-sticky">
     <h2 class="h3 mb-0 label-items">Items</h2>
     <!-- Copy buttons -->
-    <div class="btns-copy">
+    <div class="btns-copy" data-step="4" data-position="bottom-left-aligned">
       <div class="button-group">
         <!-- Copy link -->
-        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering"
+        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering" data-step="5" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 1">{{ isRendering === 1 ? 'cached' : 'link' }}</mat-icon>
           <span class="menu-label">Copy</span>
         </button>
         <!-- Copy image-->
-        <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering"
+        <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering" data-step="6" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'image' }}</mat-icon>
           <span class="menu-label">Copy</span>
         </button>
         <!-- Change background -->
-        <button type="button" class="btn-copy" (click)="showBackgroundPicker($event)">
+        <button type="button" class="btn-copy" (click)="showBackgroundPicker($event)" data-step="10" data-position="bottom-left-aligned">
           <mat-icon class="menu-icon">wallpaper</mat-icon>
           <span class="menu-label">Background</span>
         </button>
@@ -187,25 +185,25 @@
       </span>
       <!-- Copy image picker -->
       <div #divCopyImagePicker class="copy-image-picker" *ngIf="showingImagePicker">
-        <button type="button" class="w-100 t-left" (click)="copyImage('closet')">
+        <button type="button" class="w-100 t-left" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
           <mat-icon class="menu-icon">image</mat-icon>
           <span class="menu-label">Copy your closet</span>
         </button>
-        <button type="button" class="w-100 t-left mt" (click)="copyImage('request')">
+        <button type="button" class="w-100 t-left mt" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
           <mat-icon class="menu-icon">image</mat-icon>
           <span class="menu-label">Copy request</span>
         </button>
-        <button type="button" class="w-100 t-left mt" (click)="copyImage('template')">
+        <button type="button" class="w-100 t-left mt" (click)="copyImage('template')" data-step="9" data-position="top-left-aligned">
           <mat-icon class="menu-icon">image</mat-icon>
           <span class="menu-label">Copy template</span>
         </button>
       </div>
     </div>
-    <!-- Highlight colors -->
-    <div class="color-picker">
+    <!-- Selection colors -->
+    <div class="color-picker" data-step="3" data-position="bottom-right-aligned">
       <div class="btn-color-active">
         <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
-          ngbTooltip="Change highlight color" container="body" placement="top-right">
+          ngbTooltip="Change selection color" container="body" placement="top-right">
           &nbsp;<mat-icon>palette</mat-icon>
         </button>
       </div>
@@ -233,7 +231,7 @@
     </div>
   </div>
   <!-- Closet item sections -->
-  <div class="sky-card-body closet-container scroll-x" [attr.data-mode]="color" [attr.data-modifying]="modifyingCloset || undefined" [attr.data-size]="itemSize">
+  <div #divClosetContainer class="sky-card-body closet-container scroll-x" [attr.data-mode]="color" [attr.data-modifying]="modifyingCloset || undefined" [attr.data-size]="itemSize">
     <div class="closet-grid">
       <div class="closet-grid-section">
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Outfit' }"></ng-container>
@@ -281,7 +279,8 @@
 </div>
 
 <ng-template #templateItemsType let-type="type">
-  <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'">
+  <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'"
+    [attr.data-step]="type === 'Outfit' ? 2 : undefined" data-position="top-left-aligned">
     <!-- Closet icon, foldable -->
     <div [style.gridColumn]="'1/' + (columns+1)" class="closet-type t-center" (click)="toggleClosetSection(type)">
       <mat-icon [svgIcon]="itemIcons[type]"></mat-icon>
@@ -302,7 +301,7 @@
     <ng-container *ngIf="!requesting">
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
-      <!-- When showing only highlighted items, hide all other items. -->
+      <!-- When showing only selected items, hide all other items. -->
       <!-- Keep hidden items visible (darkened) when showing all items. Hide them in closet mode. -->
       <!-- If enabled, keep ongoing event items visible (darkened). -->
       <div class="closet-item-container" [hidden]="!modifyingCloset && (typeFolded[type] || (hideUnselected && !selected.all[item.guid]) || (!selected.all[item.guid] && closetMode === 'closet' && hidden[item.guid] && (!showOngoing || !ongoingItems[item.guid])))">

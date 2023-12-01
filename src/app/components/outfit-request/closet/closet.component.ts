@@ -11,6 +11,8 @@ import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
+import introJs from 'intro.js';
+import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -44,6 +46,7 @@ export class ClosetComponent implements OnDestroy {
   @ViewChild('warnHidden', { static: false }) private readonly _warnHidden?: ElementRef<HTMLElement>;
   @ViewChild('divColorPicker', { static: false }) private readonly _divColorPicker?: ElementRef<HTMLElement>;
   @ViewChild('divCopyImagePicker', { static: false }) private readonly _divCopyImagePicker?: ElementRef<HTMLElement>;
+  @ViewChild('divClosetContainer', { static: false }) private readonly _divClosetContainer?: ElementRef<HTMLElement>;
 
   // Background
   _bgImg!: HTMLImageElement;
@@ -122,6 +125,7 @@ export class ClosetComponent implements OnDestroy {
     private readonly _eventService: EventService,
     private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _elementRef: ElementRef<HTMLElement>,
     private readonly _http: HttpClient,
     private readonly _route: ActivatedRoute
   ) {
@@ -244,9 +248,13 @@ export class ClosetComponent implements OnDestroy {
 
   /** Toggles item size between small and normal. */
   toggleItemSize(): void {
+    this._toggleItemSize();
+    localStorage.setItem('closet.item-size', this.itemSize);
+  }
+
+  _toggleItemSize(): void {
     this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
-    localStorage.setItem('closet.item-size', this.itemSize);
   }
 
   /** Toggles visibility of items that aren't selected. */
@@ -275,6 +283,7 @@ export class ClosetComponent implements OnDestroy {
   modifyCloset(): void {
     this.modifyingCloset = !this.modifyingCloset;
     this.modifyingCloset && (this.closetMode = 'closet');
+    this._changeDetectorRef.markForCheck();
   }
 
   toggleOngoing(): void {
@@ -674,14 +683,19 @@ export class ClosetComponent implements OnDestroy {
     } catch (e) { console.error(e); doneCopying(); }
   }
 
-  showCopyImagePicker(evt: MouseEvent): void {
+  showCopyImagePicker(evt?: MouseEvent): void {
     // When requesting always copy image as request.
     if (this.requesting) { this.copyImage('request'); return; }
 
     // When in closet, show copy options.
-    this.showingImagePicker = !this.showingImagePicker;
-    evt.preventDefault();
-    evt.stopPropagation();
+    this.showingImagePicker = true;
+    evt?.preventDefault();
+    evt?.stopPropagation();
+    this._changeDetectorRef.markForCheck();
+  }
+
+  hideCopyImagePicker(): void {
+    this.showingImagePicker = false;
     this._changeDetectorRef.markForCheck();
   }
 
@@ -689,8 +703,8 @@ export class ClosetComponent implements OnDestroy {
     if (!this.showingImagePicker) { return; }
     const target = evt.target as HTMLElement;
     if (this._divCopyImagePicker?.nativeElement.contains(target)) { return; }
-    this.showingImagePicker = false;
-    this._changeDetectorRef.markForCheck();
+    if (document.querySelector('.introjs-tooltip')) { return; }
+    this.hideCopyImagePicker();
   }
 
   copyImage(mode: CopyImageMode): void {
@@ -901,4 +915,120 @@ export class ClosetComponent implements OnDestroy {
   }
 
   // #endregion
+
+  // #region Tour
+
+  startTour(): void {
+    const self = this;
+
+    // Set small icons for tour.
+    if (this.itemSize === 'default') { this._toggleItemSize(); }
+
+    // Steps must be ordered, these numbers are only used to find the element in the HTML (data-step).
+    const s = {
+      ITEM: 1, ITEM_SECTION: 2, ITEM_COLOR: 3,
+      COPY: 4, COPY_LINK: 5, COPY_IMAGE: 6, COPY_IMAGE_CLOSET: 7, COPY_IMAGE_REQUEST: 8, COPY_IMAGE_TEMPLATE: 9, COPY_IMAGE_BACKGROUND: 10,
+      OPTIONS: 100, CLOSET: 101, CLOSET_COLUMNS: 102, CLOSET_ONGOING: 103, CLOSET_SYNC: 104,
+      OPTION_FILTER: 121, OPTION_SIZE: 122, OPTION_IAP: 123, OPTION_RESET: 124, OPTION_SHUFFLE: 125, OPTION_SEARCH: 126,
+      LINK_COLLAGE: 901, LINK_REQUEST: 902, LINK_CLOSET: 903, LINK_HOME: 904
+    };
+
+    const steps: Array<Partial<SkyIntroStep>> = [
+      { sStep: s.ITEM, title: 'Sky cosmetics', intro: 'Here you can see all cosmetics from Sky. You can create a request simply by clicking the icons to select them.' },
+      { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
+      { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
+      { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
+      { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 24 hours.' },
+      { sStep: s.COPY_IMAGE, title: 'Copy image', intro: this.requesting ? 'An image will be copied to your clipboard. You can paste this image in Discord. The image highlights selected items making it easier to see them.' : 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
+    ];
+
+    if (!this.requesting) {
+      steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Copy closet', intro: 'Copying your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
+      steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Copy request', intro: 'Copying a request will hide items you haven\'t selected. This can be useful when requesting an outfit.' });
+      steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Copy template', intro: 'Copying the template will show all items.' });
+    }
+
+    steps.push({ sStep: s.COPY_IMAGE_BACKGROUND, title: 'Background', intro: 'You can change the background for your images here.' });
+
+    steps.push({ sStep:s.OPTIONS, title: 'Options', intro: 'Various options to change what\'s displayed can be found here.' })
+    if (!this.requesting) {
+      steps.push({ sStep: s.CLOSET, title: 'Modify closet', intro: 'You can modify the closet to show all items or only the items you have. This is recommended if you want to help with requests or share your closet.' });
+      steps.push({ sStep: s.CLOSET_COLUMNS, title: 'Closet columns', intro: 'Depending on your device and orientation Sky will show a number of items in your closet per row. You can select that number here to make this page match Sky.' });
+      steps.push({ sStep: s.CLOSET_ONGOING, title: 'Ongoing items', intro: 'In Sky it is possible to preview items from the ongoing season and event. By enabling this option these items will still be visible (slightly darkened) when showing only your items.' });
+      steps.push({ sStep: s.CLOSET_SYNC, title: 'Sync closet', intro: 'If you look at the rest of this website you\'ll be able to find spirit trees and IAPs to keep track of your unlocked items. When you keep track of progress this way you can sync the closet to use that progress.' });
+      steps.push({ sStep: s.CLOSET_SYNC, title: 'Sync closet', intro: 'You can also toggle items by clicking on them in the grid below while this panel is open. Afterwards you can click on done modifying to close this panel.' });
+    }
+
+    !this.requesting && steps.push({ sStep: s.OPTION_FILTER, title: 'Filter items', intro: 'By enabling this option only the selected items will be shown. This makes it easier to see the items in a request.' })
+    steps.push({ sStep: s.OPTION_SIZE, title: 'Icon size', intro: 'Switch between showing small and large item icons.' })
+    !this.requesting && steps.push({ sStep: s.OPTION_IAP, title: 'In-app purchases', intro: 'Show or hide items that cost real money. The icons will appear darker when you hide them.' })
+    steps.push({ sStep: s.OPTION_RESET, title: 'Reset', intro: 'Remove all items you\'ve selected.' })
+    steps.push({ sStep: s.OPTION_SHUFFLE, title: 'Shuffle', intro: 'Remove all items you\'ve selected and select one random item from each closet.' })
+    steps.push({ sStep: s.OPTION_SEARCH, title: 'Search', intro: 'You can search for items here. Matching items will have a purple border. Item names often include the spirit name, for example \'Spinning Mentor Cape\'.' })
+
+    !this.requesting && steps.push({ sStep: s.LINK_COLLAGE, title: 'Collage tool', intro: 'This button will take you to a page where you can create a simple collage using screenshots from the game.' })
+    !this.requesting && steps.push({ sStep: s.LINK_REQUEST, title: 'Request page', intro: 'This button will take you to a page dedicated to creating requests. It is a simplified version of this page.' })
+    this.requesting && steps.push({ sStep: s.LINK_CLOSET, title: 'Closet page', intro: 'This button will take you to a page where you can modify your closet. It is an advanced version of this page.' })
+    this.requesting && steps.push({ sStep: s.LINK_HOME, title: 'Home', intro: 'This button will take you to the home page of the Sky Planner website.' })
+
+    steps.forEach((step, i) => { step.step = i + 1; }); // Assign step order from array.
+
+    setTimeout(() => {
+      const intro = introJs(this._elementRef.nativeElement).setOptions({
+        scrollTo: 'tooltip',
+        steps, showBullets: false, autoPosition: false
+      });
+
+      // Get element / position from current DOM state.
+      const retarget = (step: SkyIntroStep) => {
+        const el = self._elementRef.nativeElement.querySelector(`[data-step="${step.sStep}"]`) as HTMLElement;
+        if (!el) { return; }
+        step.element = el;
+        step.position = el.dataset['position'] as TooltipPosition || 'bottom-left-aligned';
+      };
+
+      let previousStep: SkyIntroStep;
+      intro.onafterchange(function() {
+        previousStep = this._introItems[this._currentStep] as SkyIntroStep;
+      });
+
+      intro.onbeforechange(function() {
+        const step = this._introItems[this._currentStep] as SkyIntroStep;
+        if (!step) { return true; }
+        console.log(intro, step.step, step.sStep, step.title);
+
+        if (step.sStep === s.ITEM_SECTION && self._divClosetContainer?.nativeElement) {
+          self._divClosetContainer.nativeElement.scrollLeft = 0;
+        }
+
+        // Show copy image picker during these steps.
+        if (!self.requesting && step.sStep >= s.COPY_IMAGE_CLOSET && step.sStep <= s.COPY_IMAGE_TEMPLATE) {
+          self.showCopyImagePicker();
+        } else {
+          self.hideCopyImagePicker();
+        }
+
+        // Show modifying closet during these steps.
+        if (step.sStep > s.CLOSET && step.sStep <= s.CLOSET_SYNC) {
+          !self.modifyingCloset && self.modifyCloset();
+        } else {
+          self.modifyingCloset && self.modifyCloset();
+        }
+
+        // Allow side effects to happen before step change.
+        return new Promise(res => setTimeout(() => {
+          retarget(step);
+          res(true);
+        }, 0));
+      });
+
+      intro.start();
+    });
+  }
+
+  // #endregion
+}
+
+interface SkyIntroStep extends Partial<IntroStep> {
+  sStep: number;
 }
