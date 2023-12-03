@@ -33,9 +33,35 @@
   </div>
 </div>
 
+<!-- Constellation -->
+<div class="realm-constellation-flex mt" *ngIf="realm.constellation">
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Constellation</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="grid grid-1">
+        <div class="container">
+          <mat-icon svgIcon="candle" class="menu-icon"></mat-icon>
+          <span class="menu-label">Test</span>
+        </div>
+        <div class="container">
+          <mat-icon svgIcon="heart" class="menu-icon"></mat-icon>
+          <span class="menu-label">Test</span>
+        </div>
+        <div class="container">
+          <mat-icon svgIcon="ascended-candle" class="menu-icon"></mat-icon>
+          <span class="menu-label">Test</span>
+        </div>
+        <div class="container">Progress</div>
+      </div>
+    </div>
+  </div>
+  <app-realm-constellation [realm]="realm" (spiritClicked)="constellationSpiritClicked($event)"></app-realm-constellation>
+</div>
 
 <!-- Spirits -->
-<div class="sky-card mt" *ngIf="spirits?.length">
+<div #divSpiritTrees class="sky-card mt" *ngIf="spirits?.length">
   <div class="sky-card-header">
     <h2 class="h3">Spirit trees</h2>
   </div>

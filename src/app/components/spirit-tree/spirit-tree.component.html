@@ -1,4 +1,4 @@
-<div class="content sky-border-solid" [class.highlight]="highlight">
+<div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree?.guid">
   <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot">
     <div class="tree-action find-item" [ngbTooltip]="'Go to item'" container="body" (click)="toggleNavigate()" [class.highlight-attention]="navigating">
       <mat-icon>step_into</mat-icon>

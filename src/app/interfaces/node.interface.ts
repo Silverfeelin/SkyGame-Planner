@@ -30,3 +30,8 @@ export interface INode extends IGuid, ICost {
   /// Progress ///
   unlocked?: boolean;
 }
+
+/** A node with spirit tree tier metadata. */
+export interface ITierNode extends INode {
+  tier?: number;
+}

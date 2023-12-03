@@ -1,0 +1,13 @@
+<div class="constellation">
+  <!-- Constellation -->
+  <img class="constellation-img" [src]="realm.constellation!.imageUrl">
+  <!-- Icons -->
+  <ng-container *ngFor="let icon of realm.constellation!.icons">
+    <!-- Spirit -->
+    <img *ngIf="icon.spirit" class="constellation-icon constellation-spirit" [src]="icon.imageUrl" (click)="gotoSpirit(icon.spirit)"
+      [ngbTooltip]="icon.spirit.name" container="body" placement="top"
+      [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
+    <!-- Completion -->
+    <img *ngIf="icon.flag" class="constellation-icon constellation-flag" [src]="'/assets/game/items/flag.webp'" [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
+  </ng-container>
+</div>

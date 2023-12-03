@@ -36,6 +36,30 @@
       "mapData": {
         "position": [-423,311]
       },
+      "constellation": {
+        "imageUrl": "assets/game/constellations/isle.webp",
+        "icons": [
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png",
+            "position": [24, 17],
+            "spirit": "qSs575DZ6P"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png",
+            "position": [50.9, 43.1],
+            "spirit": "bmYjIuJ6Qf"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png",
+            "position": [59.9, 65.4],
+            "spirit": "Tw-J4oXgie"
+          },
+          {
+            "position": [46.4, 30],
+            "flag": true
+          }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_of_Dawn"
       }

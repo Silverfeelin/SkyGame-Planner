@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import L from 'leaflet';
 import { IArea } from 'src/app/interfaces/area.interface';
@@ -12,10 +12,12 @@ import { MapInstanceService } from 'src/app/services/map-instance.service';
   selector: 'app-realm',
   templateUrl: './realm.component.html',
   styleUrls: ['./realm.component.less'],
-  providers: [MapInstanceService]
+  providers: [MapInstanceService],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RealmComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;
+  @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef;
 
   realm!: IRealm;
 
@@ -31,7 +33,8 @@ export class RealmComponent implements AfterViewInit {
   constructor(
     private readonly _dataService: DataService,
     private readonly _mapInstanceService: MapInstanceService,
-    private readonly _route: ActivatedRoute
+    private readonly _route: ActivatedRoute,
+    private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
@@ -65,6 +68,20 @@ export class RealmComponent implements AfterViewInit {
     this.showAreas ? layerGroup?.addTo(this.map) : layerGroup?.remove();
   }
 
+  constellationSpiritClicked(spirit: ISpirit): void {
+    this.highlightTree = spirit.tree?.guid;
+    if (this.highlightTree && this.divSpiritTrees?.nativeElement) {
+      // Scroll to trees
+      this.divSpiritTrees.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Scroll to tree
+      let tree = this.divSpiritTrees?.nativeElement.querySelector(`app-spirit-tree [data-tree="${spirit.tree?.guid}"]`) as HTMLElement;
+      tree && tree.closest('.tree-wrapper')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    this._changeDetectorRef.markForCheck();
+  }
+
   private initializeRealm(guid: string): void {
     this.realm = this._dataService.guidMap.get(guid!) as IRealm;
 
@@ -85,6 +102,8 @@ export class RealmComponent implements AfterViewInit {
       this.drawMap();
       this.panToRealm(true);
     }
+
+    this._changeDetectorRef.markForCheck();
   }
 
   private drawMap(): void {
@@ -106,7 +125,6 @@ export class RealmComponent implements AfterViewInit {
       popupAnchor: [0, -12],
     });
 
-    this.hasAreaData = this.realm?.areas?.filter(a => a.mapData?.position).length! > 0;
     this.realm?.areas?.forEach(area => {
       if (!area.mapData?.position) { return; }
       const marker = L.marker(area.mapData.position, { icon: areaIcon });
@@ -120,6 +138,11 @@ export class RealmComponent implements AfterViewInit {
       //   connectorLayer.addLayer(line);
       // });
     });
+
+    setTimeout(() => {
+      this.hasAreaData = this.realm?.areas?.filter(a => a.mapData?.position).length! > 0;
+      this._changeDetectorRef.markForCheck();
+    }, 0);
   }
 
   private createAreaPopup(area: IArea): string {
