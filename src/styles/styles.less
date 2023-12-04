@@ -45,6 +45,14 @@ a, .link {
   }
 }
 
+.text-link {
+  color: var(--color-link);
+  text-decoration: underline;
+  cursor: pointer;
+  &:visited { color: var(--color-link-visited); }
+  &:hover, &:active, &:focus { color: var(--color-link-hover); }
+}
+
 .icon {
   width: 24px;
   height: 24px;
