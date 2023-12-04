@@ -13,7 +13,7 @@
       class="constellation-icon constellation-flag button fade" [class.fade-show]="!interval && !swapping" [class.completed]="completed"
       [ngbTooltip]="icon.spirit.name" container="body"
       [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
-      <img [src]="'/assets/game/items/flag.webp'" class="w-100 h-100">
+      <img [src]="completed ? '/assets/game/items/flag.webp' : '/assets/game/items/flag_q.webp'" class="w-100 h-100">
     </a>
   </ng-container>
 
