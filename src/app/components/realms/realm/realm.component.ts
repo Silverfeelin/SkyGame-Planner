@@ -111,7 +111,13 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   constellationRealmChanged(realm: IRealm): void {
-    void this._router.navigate(['/realm', realm.guid]);
+    // Update realm on current page.
+    this.initializeRealm(realm.guid);
+    document.title = `${realm.name} - Sky Planner`;
+    window.history.replaceState(window.history.state, '', `/realm/${realm.guid}`)
+
+    // Navigation causes scroll top.
+    //void this._router.navigate(['/realm', realm.guid]);
   }
 
   private initializeRealm(guid: string): void {
