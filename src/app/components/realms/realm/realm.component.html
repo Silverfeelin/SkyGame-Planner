@@ -57,7 +57,7 @@
       </div>
     </div>
   </div>
-  <app-realm-constellation [realm]="realm" (spiritClicked)="constellationSpiritClicked($event)"></app-realm-constellation>
+  <app-realm-constellation [realm]="realm" (spiritClicked)="constellationSpiritClicked($event)" (realmChanged)="constellationRealmChanged($event)"></app-realm-constellation>
 </div>
 
 <!-- Spirits -->

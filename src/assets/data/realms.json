@@ -4,7 +4,7 @@
       "guid": "8E6CJZxsxj",
       "name": "Home",
       "shortName": "Home",
-      "imageUrl": "assets/game/realms/Home.webp",
+      "imageUrl": "/assets/game/realms/Home.webp",
       "areas": [
         "zewkN917oz"
       ],
@@ -20,7 +20,7 @@
       "guid": "E1RwpAdA8l",
       "name": "Isle of Dawn",
       "shortName": "Dawn",
-      "imageUrl": "assets/game/realms/Isle.webp",
+      "imageUrl": "/assets/game/realms/Isle.webp",
       "areas": [
         "oEnKoTrbCt",
         "LanOVr1JCo",
@@ -37,25 +37,25 @@
         "position": [-423,311]
       },
       "constellation": {
-        "imageUrl": "assets/game/constellations/isle.webp",
+        "imageUrl": "/assets/game/constellations/isle.webp",
         "icons": [
           {
             "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png",
-            "position": [24, 17],
+            "position": [21, 11],
             "spirit": "qSs575DZ6P"
           },
           {
             "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png",
-            "position": [50.9, 43.1],
+            "position": [47, 37],
             "spirit": "bmYjIuJ6Qf"
           },
           {
             "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png",
-            "position": [59.9, 65.4],
+            "position": [55, 59],
             "spirit": "Tw-J4oXgie"
           },
           {
-            "position": [46.4, 30],
+            "position": [43, 25],
             "flag": true
           }
         ]
@@ -68,7 +68,7 @@
       "guid": "tuaosLljJS",
       "name": "Daylight Prairie",
       "shortName": "Prairie",
-      "imageUrl": "assets/game/realms/Prairie.webp",
+      "imageUrl": "/assets/game/realms/Prairie.webp",
       "areas": [
         "Cmo9TPPpyH",
         "z3uQqa5KVZ",
@@ -84,6 +84,55 @@
       "mapData": {
         "position": [-380, 183]
       },
+      "constellation": {
+        "imageUrl": "/assets/game/constellations/prairie.webp",
+        "icons": [
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png",
+            "position": [65, 34],
+            "spirit": "ulvP8R6C6a"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png",
+            "position": [64, 22],
+            "spirit": "48jm5EQzfU"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png",
+            "position": [76, 39],
+            "spirit": "K3CIxcDSjq"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png",
+            "position": [32, 69],
+            "spirit": "WFjSczlPTV"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png",
+            "position": [48,  18],
+            "spirit": "R4ILdPamhd"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CeremonialWorshiper-1.png",
+            "position": [44, 30],
+            "spirit": "gtbbZnpLbt"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png",
+            "position": [32, 33],
+            "spirit": "MyLI80npmW"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/BirdWhisperer-1.png",
+            "position": [68, 74],
+            "spirit": "KM1xzU9v5P"
+          },
+          {
+            "position": [52, 50],
+            "flag": true
+          }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Daylight_Prairie"
       }
@@ -92,7 +141,7 @@
       "guid": "mz64Wq0_df",
       "name": "Hidden Forest",
       "shortName": "Forest",
-      "imageUrl": "assets/game/realms/Forest.webp",
+      "imageUrl": "/assets/game/realms/Forest.webp",
       "areas": [
         "A2--yR5CJk",
         "tU23ZgPP_g",
@@ -108,6 +157,55 @@
       "mapData": {
         "position": [-322.5, 115.75]
       },
+      "constellation": {
+        "imageUrl": "/assets/game/constellations/forest.webp",
+        "icons": [
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png",
+            "position": [29, 50],
+            "spirit": "LwcCtbnGuF"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png",
+            "position": [44, 15],
+            "spirit": "xbGBFC0rnu"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/HideNSeekPioneer-1.png",
+            "position": [75, 54],
+            "spirit": "p-WdkJpGB5"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png",
+            "position": [68, 81],
+            "spirit": "waSFuoNQsR"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png",
+            "position": [75, 18],
+            "spirit": "L_0YoE4O8Z"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png",
+            "position": [47, 61],
+            "spirit": "puj9z07ew0"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png",
+            "position": [59, 42],
+            "spirit": "gF3qSnQNxx"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/WhaleWhisperer-1.png",
+            "position": [36, 74],
+            "spirit": "R_zBE7HaWV"
+          },
+          {
+            "position": [72, 34],
+            "flag": true
+          }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Hidden_Forest"
       }
@@ -116,7 +214,7 @@
       "guid": "VtkTo1WWuD",
       "name": "Valley of Triumph",
       "shortName": "Valley",
-      "imageUrl": "assets/game/realms/Valley.webp",
+      "imageUrl": "/assets/game/realms/Valley.webp",
       "areas": [
         "LUkrOYNjEy",
         "u3rc8C3sMb",
@@ -135,6 +233,50 @@
       "mapData": {
         "position": [-258, 245]
       },
+      "constellation": {
+        "imageUrl": "/assets/game/constellations/valley.webp",
+        "icons": [
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/ConfidentSightseer-1.png",
+            "position": [20, 13],
+            "spirit": "4KCKJxR56G"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png",
+            "position": [29, 72],
+            "spirit": "yUp189PWVS"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/MantaWhisperer-1.png",
+            "position": [84, 13],
+            "spirit": "CfXORyMFx4"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png",
+            "position": [70, 68],
+            "spirit": "H5iKZChQIK"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png",
+            "position": [11, 81],
+            "spirit": "IIt-zYJC2N"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png",
+            "position": [33, 23],
+            "spirit": "fRtK3WFMm1"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/ProudVictor-1.png",
+            "position": [93, 76],
+            "spirit": "CQJO8mQ0do"
+          },
+          {
+            "position": [52, 45],
+            "flag": true
+          }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_of_Triumph"
       }
@@ -143,7 +285,7 @@
       "guid": "rAjzHXfPpb",
       "name": "Golden Wasteland",
       "shortName": "Wasteland",
-      "imageUrl": "assets/game/realms/Wasteland.webp",
+      "imageUrl": "/assets/game/realms/Wasteland.webp",
       "areas": [
         "R4I-lYbUUO",
         "LNcVZMfuWm",
@@ -159,6 +301,45 @@
       "mapData": {
         "position": [-296.5, 407.5]
       },
+      "constellation": {
+        "imageUrl": "/assets/game/constellations/valley.webp",
+        "icons": [
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png",
+            "position": [33, 35],
+            "spirit": "TqswdiTmEC"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/FaintingWarrior-1.png",
+            "position": [89, 8],
+            "spirit": "k8nqBtLJ0R"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/CourageousSoldier-1.png",
+            "position": [61, 30],
+            "spirit": "_4VyRWxD3V"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/StealthySurvivor-1.png",
+            "position": [66, 58],
+            "spirit": "trJkBr3myf"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SalutingCaptain-1.png",
+            "position": [38, 63],
+            "spirit": "6GO0ISasq7"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/LookoutScout-1.png",
+            "position": [23, 82],
+            "spirit": "nwpDbbbWcw"
+          },
+          {
+            "position": [52, 49],
+            "flag": true
+          }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Golden_Wasteland"
       }
@@ -167,7 +348,7 @@
       "guid": "y-6n1F5E77",
       "name": "Vault of Knowledge",
       "shortName": "Vault",
-      "imageUrl": "assets/game/realms/Vault.webp",
+      "imageUrl": "/assets/game/realms/Vault.webp",
       "areas": [
         "QM7Kuv1Ekg",
         "wKZdWMMIWa",
@@ -192,6 +373,40 @@
       "mapData": {
         "position": [-209.25, 375.5]
       },
+      "constellation": {
+        "imageUrl": "/assets/game/constellations/valley.webp",
+        "icons": [
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png",
+            "position": [62, 63],
+            "spirit": "_8CvQjUnQg"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png",
+            "position": [49, 27],
+            "spirit": "Im7m8syitV"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/PoliteScholar-1.png",
+            "position": [44, 56],
+            "spirit": "1OGD_H3a7X"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/MemoryWhisperer-1.png",
+            "position": [78, 41],
+            "spirit": "HeJISF946a"
+          },
+          {
+            "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png",
+            "position": [71, 16],
+            "spirit": "Gi75RcvXd0"
+          },
+          {
+            "position": [60, 47],
+            "flag": true
+          }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_of_Knowledge"
       }
@@ -200,7 +415,7 @@
       "guid": "wk596SmtyB",
       "name": "Aviary",
       "shortName": "Aviary",
-      "imageUrl": "assets/game/realms/Aviary.webp",
+      "imageUrl": "/assets/game/realms/Aviary.webp",
       "areas": [
         "Mhbh0g9OdG"
       ],
@@ -216,7 +431,7 @@
       "guid": "GKnbJhLIRi",
       "name": "Eye of Eden",
       "shortName": "Eden",
-      "imageUrl": "assets/game/realms/Eden.webp",
+      "imageUrl": "/assets/game/realms/Eden.webp",
       "areas": [
         "vWlW190-P1",
         "aXSrTx3fzL",

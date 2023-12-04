@@ -1,13 +1,22 @@
 <div class="constellation">
   <!-- Constellation -->
-  <img class="constellation-img" [src]="realm.constellation!.imageUrl">
+  <!-- <img class="constellation-img" [src]="realm.constellation!.imageUrl"> -->
+  <canvas #canvas class="constellation-img" width="295" height="295"></canvas>
   <!-- Icons -->
   <ng-container *ngFor="let icon of realm.constellation!.icons">
     <!-- Spirit -->
-    <img *ngIf="icon.spirit" class="constellation-icon constellation-spirit" [src]="icon.imageUrl" (click)="gotoSpirit(icon.spirit)"
-      [ngbTooltip]="icon.spirit.name" container="body" placement="top"
+    <img *ngIf="icon.spirit" class="constellation-icon constellation-spirit button fade" [src]="icon.imageUrl" (click)="gotoSpirit(icon.spirit)" [class.fade-show]="!interval && !swapping"
+      [ngbTooltip]="icon.spirit.name" container="body"
       [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
-    <!-- Completion -->
-    <img *ngIf="icon.flag" class="constellation-icon constellation-flag" [src]="'/assets/game/items/flag.webp'" [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
+      <!-- Completion -->
+    <img *ngIf="icon.flag" class="constellation-icon constellation-flag button fade" [src]="'/assets/game/items/flag.webp'" [class.fade-show]="!interval && !swapping"
+      [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
   </ng-container>
+
+  <button type="button" class="constellation-scroll scroll-left" [hidden]="!realmIndex" (click)="scrollTo(-1)">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <button type="button" class="constellation-scroll scroll-right" [hidden]="realmIndex >= maxRealmIndex" (click)="scrollTo(1)">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
 </div>

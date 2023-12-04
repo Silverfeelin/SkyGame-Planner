@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import L from 'leaflet';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IMapData } from 'src/app/interfaces/map-data.interface';
@@ -27,6 +27,7 @@ export class RealmComponent implements AfterViewInit {
   seasonSpiritCount = 0;
 
   map!: L.Map;
+  drawnMap = false;
   hasAreaData = false;
   showAreas = false;
 
@@ -34,6 +35,7 @@ export class RealmComponent implements AfterViewInit {
     private readonly _dataService: DataService,
     private readonly _mapInstanceService: MapInstanceService,
     private readonly _route: ActivatedRoute,
+    private readonly _router: Router,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
@@ -82,6 +84,10 @@ export class RealmComponent implements AfterViewInit {
     this._changeDetectorRef.markForCheck();
   }
 
+  constellationRealmChanged(realm: IRealm): void {
+    void this._router.navigate(['/realm', realm.guid]);
+  }
+
   private initializeRealm(guid: string): void {
     this.realm = this._dataService.guidMap.get(guid!) as IRealm;
 
@@ -100,13 +106,15 @@ export class RealmComponent implements AfterViewInit {
 
     if (this.map) {
       this.drawMap();
-      this.panToRealm(true);
+      this.panToRealm(false);
     }
 
     this._changeDetectorRef.markForCheck();
   }
 
   private drawMap(): void {
+    if (this.drawnMap) { return; }
+    this.drawnMap = true;
     const mapData: IMapData = this.realm.mapData || {};
 
     const boundaryLayers = this._mapInstanceService.createLayerGroup('boundary');
