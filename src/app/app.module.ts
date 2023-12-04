@@ -63,12 +63,16 @@ import { DashboardWishlistComponent } from './components/dashboard/dashboard-wis
 import { ItemComponent } from './components/items/item/item.component';
 import { ReturningSpiritCardComponent } from './components/returning-spirit-card/returning-spirit-card.component';
 import { RealmConstellationComponent } from './components/realms/realm-constellation/realm-constellation.component';
+import { PercentagePipe } from './pipes/percentage.pipe';
+import { ClampPipe } from './pipes/clamp.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DayjsPipe,
     ItemTypePipe,
+    PercentagePipe,
+    ClampPipe,
     SpiritTreeComponent,
     NodeComponent,
     ItemIconComponent,

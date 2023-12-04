@@ -5,18 +5,30 @@
   <!-- Icons -->
   <ng-container *ngFor="let icon of realm.constellation!.icons">
     <!-- Spirit -->
-    <img *ngIf="icon.spirit" class="constellation-icon constellation-spirit button fade" [src]="icon.imageUrl" (click)="gotoSpirit(icon.spirit)" [class.fade-show]="!interval && !swapping"
+    <img *ngIf="!icon.flag && icon.spirit" class="constellation-icon constellation-spirit button fade" [src]="icon.imageUrl" (click)="gotoSpirit(icon.spirit)" [class.fade-show]="!interval && !swapping"
       [ngbTooltip]="icon.spirit.name" container="body"
       [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
-      <!-- Completion -->
-    <img *ngIf="icon.flag" class="constellation-icon constellation-flag button fade" [src]="'/assets/game/items/flag.webp'" [class.fade-show]="!interval && !swapping"
+    <!-- Completion -->
+    <a *ngIf="icon.flag && icon.spirit" [routerLink]="['/spirit', icon.spirit!.guid]"
+      class="constellation-icon constellation-flag button fade" [class.fade-show]="!interval && !swapping" [class.completed]="completed"
+      [ngbTooltip]="icon.spirit.name" container="body"
       [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
+      <img [src]="'/assets/game/items/flag.webp'" class="w-100 h-100">
+    </a>
   </ng-container>
 
-  <button type="button" class="constellation-scroll scroll-left" [hidden]="!realmIndex" (click)="scrollTo(-1)">
+  <button type="button" class="constellation-scroll scroll-left" [hidden]="!realmIndex" (click)="scrollConstellation(-1)">
     <mat-icon>chevron_left</mat-icon>
   </button>
-  <button type="button" class="constellation-scroll scroll-right" [hidden]="realmIndex >= maxRealmIndex" (click)="scrollTo(1)">
+  <button type="button" class="constellation-scroll scroll-right" [hidden]="realmIndex >= maxRealmIndex" (click)="scrollConstellation(1)">
     <mat-icon>chevron_right</mat-icon>
   </button>
+
+  <div class="constellation-dots">
+    <ng-container *ngFor="let realm of realms; let i = index;">
+      <div class="constellation-dot" [class.dot-active]="realmIndex === i" (click)="jumpConstellation(i)"
+        [ngbTooltip]="realm.name" container="body">
+      </div>
+    </ng-container>
+  </div>
 </div>

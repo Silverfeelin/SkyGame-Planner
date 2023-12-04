@@ -633,6 +633,24 @@
       "name": "Wing Buff",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
+    {
+      "id": 1963,
+      "guid": "oTkurOebWq",
+      "type": "Emote",
+      "name": "Wave",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression" },
+      "level": 5,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+    },
+    {
+      "id": 1964,
+      "guid": "iISpJu1abW",
+      "type": "Emote",
+      "name": "Wave",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression" },
+      "level": 6,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+    },
     // Slumbering Shipwright
     {
       "id": 70,
@@ -1593,6 +1611,24 @@
       "type": "WingBuff",
       "name": "Wing Buff",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "id": 1965,
+      "guid": "HT_3LQCGNi",
+      "type": "Emote",
+      "name": "Crying",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+      "level": 5,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+    },
+    {
+      "id": 1966,
+      "guid": "tKnWsI12Hi",
+      "type": "Emote",
+      "name": "Crying",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+      "level": 6,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
     },
     // Whale Whisperer
     {

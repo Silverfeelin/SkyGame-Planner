@@ -12,6 +12,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class RealmConstellationComponent implements OnInit, OnChanges {
   @Input() realm!: IRealm;
+  @Input() completed = false;
 
   @ViewChild('canvas', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
 
@@ -154,7 +155,7 @@ export class RealmConstellationComponent implements OnInit, OnChanges {
       }
 
       this._changeDetectorRef.markForCheck();
-    }, 30);
+    }, 20);
   }
 
   private doneAnimating(): void {

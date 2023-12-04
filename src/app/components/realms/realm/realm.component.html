@@ -41,23 +41,89 @@
     </div>
     <div class="sky-card-body">
       <div class="grid grid-1">
+        <!-- Tier 1-->
         <div class="container">
-          <mat-icon svgIcon="candle" class="menu-icon"></mat-icon>
-          <span class="menu-label">Test</span>
+          <span class="d-block t-center mb-half">Tier 1</span>
+          <div class="constellation-progress-grid">
+            <mat-icon svgIcon="candle" class=""></mat-icon>
+            <span class="">
+              <div class="constellation-bar bar-c" [class.constellation-bar-full]="tier1Pct.c === 100">
+                <div class="bar-fill" [style.width.%]="tier1Pct.c"></div>
+                <div class="constellation-bar-label">
+                  {{ (tier1Remaining.c || 0) }} left / {{ (tier1Cost.c || 0) }}
+                  <span class="">({{ (tier1Spent.c || 0) | percentage:0:(tier1Cost.c || 0) }}%)</span>
+                </div>
+              </div>
+            </span>
+            <mat-icon svgIcon="heart" class=""></mat-icon>
+            <span class="">
+              <div class="constellation-bar bar-h" [class.constellation-bar-full]="tier1Pct.h === 100">
+                <div class="bar-fill" [style.width.%]="tier1Pct.h"></div>
+                <div class="constellation-bar-label">
+                  {{ tier1Remaining.h || 0 }} left / {{ tier1Cost.h || 0 }}
+                  <span class="">({{ (tier1Spent.h || 0)  | percentage:0:(tier1Cost.h || 0)  }}%)</span>
+                </div>
+              </div>
+            </span>
+            <mat-icon svgIcon="ascended-candle" class=""></mat-icon>
+            <span class="">
+              <div class="constellation-bar bar-ac" [class.constellation-bar-full]="tier1Pct.ac === 100">
+                <div class="bar-fill" [style.width.%]="tier1Pct.ac"></div>
+                <div class="constellation-bar-label">
+                  {{ tier1Remaining.ac || 0 }} left / {{ tier1Cost.ac || 0 }}
+                  <span class="">({{ (tier1Spent.ac || 0) | percentage:0:(tier1Cost.ac || 0) }}%)</span>
+                </div>
+              </div>
+            </span>
+          </div>
         </div>
-        <div class="container">
-          <mat-icon svgIcon="heart" class="menu-icon"></mat-icon>
-          <span class="menu-label">Test</span>
+        <!-- Tier 2-->
+        <div class="container" *ngIf="tier2Cost.ac">
+          <span class="d-block t-center mb-half">Tier 2</span>
+          <div class="constellation-progress-grid">
+            <ng-container *ngIf="tier2Cost.c">
+              <mat-icon svgIcon="candle" class=""></mat-icon>
+              <span class="">
+                <div class="constellation-bar bar-c" [class.constellation-bar-full]="tier2Pct.c === 100">
+                  <div class="bar-fill" [style.width.%]="tier2Pct.c"></div>
+                  <div class="constellation-bar-label">
+                    {{ (tier2Spent.c || 0) }} / {{ (tier2Cost.c || 0) }}
+                    <span class="">({{ (tier2Spent.c || 0) | percentage:0:(tier2Cost.c || 0) }}%)</span>
+                  </div>
+                </div>
+              </span>
+            </ng-container>
+            <ng-container *ngIf="tier2Cost.h">
+              <mat-icon svgIcon="heart" class=""></mat-icon>
+              <span class="">
+                <div class="constellation-bar bar-h" [class.constellation-bar-full]="tier2Pct.h === 100">
+                  <div class="bar-fill" [style.width.%]="tier2Pct.h"></div>
+                  <div class="constellation-bar-label">
+                    {{ tier2Spent.h || 0 }} / {{ tier2Cost.h || 0 }}
+                    <span class="">({{ (tier2Spent.h || 0)  | percentage:0:(tier2Cost.h || 0)  }}%)</span>
+                  </div>
+                </div>
+              </span>
+            </ng-container>
+            <ng-container *ngIf="tier2Cost.ac">
+              <mat-icon svgIcon="ascended-candle" class=""></mat-icon>
+              <span class="">
+                <div class="constellation-bar bar-ac" [class.constellation-bar-full]="tier2Pct.ac === 100">
+                  <div class="bar-fill" [style.width.%]="tier2Pct.ac"></div>
+                  <div class="constellation-bar-label">
+                    {{ tier2Spent.ac || 0 }} / {{ tier2Cost.ac || 0 }}
+                    <span class="">({{ (tier2Spent.ac || 0) | percentage:0:(tier2Cost.ac || 0) }}%)</span>
+                  </div>
+                </div>
+              </span>
+            </ng-container>
+          </div>
         </div>
-        <div class="container">
-          <mat-icon svgIcon="ascended-candle" class="menu-icon"></mat-icon>
-          <span class="menu-label">Test</span>
-        </div>
-        <div class="container">Progress</div>
+        <!-- <div class="container">Elder items</div> -->
       </div>
     </div>
   </div>
-  <app-realm-constellation [realm]="realm" (spiritClicked)="constellationSpiritClicked($event)" (realmChanged)="constellationRealmChanged($event)"></app-realm-constellation>
+  <app-realm-constellation [realm]="realm" [completed]="!tier1Remaining.c && !tier1Remaining.h && !tier1Remaining.ac" (spiritClicked)="constellationSpiritClicked($event)" (realmChanged)="constellationRealmChanged($event)"></app-realm-constellation>
 </div>
 
 <!-- Spirits -->

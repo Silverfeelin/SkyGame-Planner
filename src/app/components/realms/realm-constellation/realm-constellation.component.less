@@ -71,9 +71,41 @@
   }
 }
 
-.constellation-flag {
-  cursor: unset !important;
-  &:hover { background: var(--color-button-background) !important; }
+.constellation-dots {
+  position: absolute;
+  left: var(--padding-content);
+  right: var(--padding-content);
+  gap: var(--padding-content-half);
+  bottom: var(--padding-content);
+  // display: grid;
+  // grid-template-columns: repeat(6, 1fr);
+  justify-content: center;
+  display: flex;
+}
+
+.constellation-dot {
+  height: 100%;
+  border-radius: 100px;
+  background: var(--color-button-background);
+  border: 1px solid var(--color-input-border);
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+
+  &:hover:not(.dot-active) {
+    background: var(--color-button-hover-background);
+  }
+}
+
+.completed {
+  border-color: var(--color-favourite);
+  box-shadow: var(--shadow) var(--color-favourite);
+}
+
+.dot-active {
+  border-radius: 100px;
+  background-color: #ccc;
+  width: 40px;
 }
 
 @media screen and (max-width: 991px) {

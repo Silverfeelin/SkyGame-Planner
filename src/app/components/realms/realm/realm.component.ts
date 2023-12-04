@@ -1,11 +1,17 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import L from 'leaflet';
+import { CostHelper } from 'src/app/helpers/cost-helper';
+import { NodeHelper } from 'src/app/helpers/node-helper';
+import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { IArea } from 'src/app/interfaces/area.interface';
+import { ICost } from 'src/app/interfaces/cost.interface';
 import { IMapData } from 'src/app/interfaces/map-data.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
+import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
 
 @Component({
@@ -15,7 +21,7 @@ import { MapInstanceService } from 'src/app/services/map-instance.service';
   providers: [MapInstanceService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RealmComponent implements AfterViewInit {
+export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;
   @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef;
 
@@ -26,13 +32,25 @@ export class RealmComponent implements AfterViewInit {
   spirits: Array<ISpirit> = [];
   seasonSpiritCount = 0;
 
+  tier1Cost: ICost = {};
+  tier1Spent: ICost = {};
+  tier1Remaining: ICost = {};
+  tier1Pct: ICost = {};
+  tier2Cost: ICost = {};
+  tier2Spent: ICost = {};
+  tier2Remaining: ICost = {};
+  tier2Pct: ICost = {};
+
   map!: L.Map;
   drawnMap = false;
   hasAreaData = false;
   showAreas = false;
 
+  private readonly _subscriptions = new SubscriptionBag();
+
   constructor(
     private readonly _dataService: DataService,
+    private readonly _eventService: EventService,
     private readonly _mapInstanceService: MapInstanceService,
     private readonly _route: ActivatedRoute,
     private readonly _router: Router,
@@ -42,11 +60,19 @@ export class RealmComponent implements AfterViewInit {
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
   }
 
+  ngOnInit(): void {
+    this._eventService.itemToggled.subscribe(() => this.calculateTierCosts());
+  }
+
   ngAfterViewInit(): void {
     this.map = this._mapInstanceService.attach(this.mapContainer.nativeElement);
 
     this.drawMap();
     this.panToRealm(true);
+  }
+
+  ngOnDestroy(): void {
+    this._subscriptions.unsubscribe();
   }
 
   onQueryChanged(params: ParamMap): void {
@@ -104,12 +130,42 @@ export class RealmComponent implements AfterViewInit {
       });
     });
 
+    this.calculateTierCosts();
+
     if (this.map) {
       this.drawMap();
       this.panToRealm(false);
     }
 
     this._changeDetectorRef.markForCheck();
+  }
+
+  private calculateTierCosts(): void {
+    this.tier1Cost = {}; this.tier1Spent = {}; this.tier1Remaining = {};
+    this.tier2Cost = {}; this.tier2Spent = {}; this.tier2Remaining = {};
+
+    this.spirits.forEach(spirit => {
+      this.addTierCosts(spirit.tree!);
+    });
+
+    this.tier1Pct = CostHelper.percentage(this.tier1Spent, this.tier1Cost);
+    this.tier2Pct = CostHelper.percentage(this.tier2Spent, this.tier2Cost);
+
+    this._changeDetectorRef.markForCheck();
+  }
+
+  private addTierCosts(tree: ISpiritTree): void {
+    if (!tree) { return; }
+    for (const node of  NodeHelper.allTier(tree.node)) {
+      if (typeof node.tier !== 'number') { continue; }
+
+      const cost = node.tier < 2 ? this.tier1Cost : this.tier2Cost;
+      const remaining = node.tier < 2 ? this.tier1Remaining : this.tier2Remaining;
+      const spent = node.tier < 2 ? this.tier1Spent : this.tier2Spent;
+
+      CostHelper.add(cost!, node);
+      node.unlocked || node.item?.unlocked ? CostHelper.add(spent!, node) : CostHelper.add(remaining!, node);
+    }
   }
 
   private drawMap(): void {
@@ -157,3 +213,5 @@ export class RealmComponent implements AfterViewInit {
     return area.name;
   }
 }
+
+interface ITierCosts { [key: number]: ICost }

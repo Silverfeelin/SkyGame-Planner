@@ -65,6 +65,52 @@ app-spirit-tree {
   grid-template-columns: 1fr;
 }
 
+.constellation-progress-grid {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: var(--padding-content);
+}
+
+.constellation-bar {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 25px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  padding: 0 var(--padding-content);
+  border: 1px solid var(--color-input-border);
+  background-color: var(--color-progress-empty-background);
+  overflow: hidden;
+}
+
+.bar-c {background-color: var(--color-progress-background); }
+.bar-h { background-color: var(--color-progress-background); }
+.bar-ac { background-color: var(--color-progress-background); }
+.bar-c .bar-fill { background-color: var(--color-progress-fill); }
+.bar-h .bar-fill { background-color: var(--color-progress-fill); }
+.bar-ac .bar-fill { background-color: var(--color-progress-fill); }
+
+.bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.constellation-bar-full .bar-fill {
+  background-color: var(--color-progress-full);
+}
+
+.constellation-bar-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-wrap: nowrap;
+}
+
 @media screen and (min-width: 992px) {
   .realm-info-flex {
     grid-template-columns: 1fr 384px;
@@ -74,6 +120,6 @@ app-spirit-tree {
 
 @media screen and (min-width: 720px) {
   .realm-constellation-flex {
-    grid-template-columns: 1fr 295px;
+    grid-template-columns: 1fr 384px;
   }
 }
