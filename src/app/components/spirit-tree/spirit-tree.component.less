@@ -12,7 +12,7 @@
   position: relative;
   // max-height: 600px;
   overflow-y: auto;
-  padding-top: 24px;
+  padding-top: 32px;
 }
 
 // Add space at bottom for node cost.
@@ -105,7 +105,7 @@
   position: absolute;
   cursor: pointer;
   top: 5px;
-  height: 28px;
+  height: 30px;
   border: 1px solid var(--color-input-border);
   border-radius: var(--border-radius);
   background-color: var(--color-tree-unlock-background);
@@ -119,17 +119,17 @@
 
 .find-item {
   left: 5px;
-  padding: 0 5px 0 24px;
+  padding: 2px 5px 0 24px;
 
-  mat-icon { left: 1px; }
+  mat-icon { top: 2px; left: 1px; }
   span { vertical-align: middle; }
 }
 
 .unlock-all {
   right: 5px;
-  width: 28px;
-
-  mat-icon { right: 1px; }
+  padding: 2px 26px 0 5px;
+  mat-icon { top: 2px; right: 1px; }
+  span { vertical-align: middle; }
 }
 
 /* Footer */

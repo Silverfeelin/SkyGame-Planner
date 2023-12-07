@@ -5,7 +5,8 @@
       <span>Go to item</span>
     </div>
     <div class="tree-action unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
-      <mat-icon>lock_open</mat-icon>
+      <mat-icon>{{ toggleUnlock ? 'lock_open' : 'lock' }}</mat-icon>
+      <span>{{ toggleUnlock ? 'Unlock all' : 'Lock all' }}</span>
     </div>
     <div class="spirit-tree">
       <div class="column left">

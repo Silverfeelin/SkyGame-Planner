@@ -28,6 +28,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   hiddenItems: { [itemGuid: string]: INode } = {};
 
   hasCostAtRoot = false;
+  toggleUnlock = false;
 
   navigating = false;
   nodeAction: NodeAction = 'unlock';
@@ -121,6 +122,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
   calculateRemainingCosts(): void {
     this.remainingCost = CostHelper.create();
+    this.toggleUnlock = this.nodes.some(n => n.item && !n.item.unlocked);
     this.nodes.filter(n => !n.unlocked && !n.item?.unlocked).forEach(n => {
       CostHelper.add(this.remainingCost, n);
     });
