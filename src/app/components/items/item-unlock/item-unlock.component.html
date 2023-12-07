@@ -59,7 +59,7 @@
         [ngbTooltip]="item.name" container="body" (click)="toggleItem(item)"
       >
         <div class="item-inner" [class.unlocked]="item.unlocked">
-          <app-item-icon [item]="item" [highlight]="true" [hoverHighlight]="false" [showSubIcons]="true"></app-item-icon>
+          <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [showSubIcons]="true"></app-item-icon>
           <mat-icon class="unlock-check" [hidden]="!item.unlocked">done</mat-icon>
         </div>
       </div>

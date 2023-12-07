@@ -11,7 +11,7 @@
         <ng-container *ngFor="let item of items">
           <ng-container *ngIf="ongoingItems[item.guid]">
             <a class="wishlist-item" [ngbTooltip]="item.name" container="body" [routerLink]="itemLinks[item.guid]?.route" [queryParams]="itemLinks[item.guid]?.extras?.queryParams">
-              <app-item-icon [item]="item" [highlight]="true" [hoverHighlight]="false" [showSubIcons]="true"></app-item-icon>
+              <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [showSubIcons]="true"></app-item-icon>
             </a>
           </ng-container>
         </ng-container>

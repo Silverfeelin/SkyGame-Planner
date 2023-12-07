@@ -2,7 +2,7 @@
   <div *ngIf="node.item" class="item-container" [ngbTooltip]="nodeHover" [placement]="tooltipPlacement" container="body"
     (click)="nodeClick($event)" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
   >
-    <app-item-icon [item]="node.item" [highlight]="hover"></app-item-icon>
+    <app-item-icon [item]="node.item" [opaque]="hover" [glowType]="glowType"></app-item-icon>
   </div>
   <div class="cost" *ngIf="node?.c">
     {{ node.c }}<mat-icon class="icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
