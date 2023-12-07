@@ -21,6 +21,7 @@ export interface IRealm extends IGuid {
   /// References ///
   areas?: Array<IArea>;
   constellation?: IRealmConstellation;
+  elder?: ISpirit;
 
   /// Metadata ///
   mapData?: IMapData;

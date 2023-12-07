@@ -9,7 +9,7 @@
       [ngbTooltip]="icon.spirit.name" container="body"
       [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">
     <!-- Completion -->
-    <a *ngIf="icon.flag && icon.spirit" [routerLink]="['/spirit', icon.spirit!.guid]"
+    <a *ngIf="icon.flag && icon.spirit" (click)="gotoSpirit(icon.spirit)"
       class="constellation-icon constellation-flag button fade" [class.fade-show]="!interval && !swapping" [class.completed]="completed"
       [ngbTooltip]="icon.spirit.name" container="body"
       [style.left.%]="icon.position[0]" [style.top.%]="icon.position[1]">

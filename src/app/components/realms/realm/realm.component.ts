@@ -30,6 +30,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   highlightTree?: string;
 
   spirits: Array<ISpirit> = [];
+  spiritCount = 0;
   seasonSpiritCount = 0;
 
   tier1Cost: ICost = {};
@@ -130,11 +131,16 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
       area.spirits?.forEach(spirit => {
         if (spirit.type === 'Regular' || spirit.type === 'Elder') {
           this.spirits.push(spirit);
+          this.spiritCount++;
         } else if (spirit.type === 'Season') {
           this.seasonSpiritCount++;
         }
       });
     });
+
+    if (this.realm.elder) {
+      this.spirits.push(this.realm.elder);
+    }
 
     this.calculateTierCosts();
 

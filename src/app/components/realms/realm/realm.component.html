@@ -9,7 +9,7 @@
         <a class="container" *ngIf="spirits.length" [class.colspan-2]="!seasonSpiritCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
           <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
           <span class="menu-label">
-            Spirits&nbsp;<span class="c-accent">({{ spirits.length }})</span>
+            Spirits&nbsp;<span class="c-accent">({{ spiritCount }})</span>
           </span>
         </a>
         <a class="container" *ngIf="seasonSpiritCount" [class.colspan-2]="!spirits.length" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">

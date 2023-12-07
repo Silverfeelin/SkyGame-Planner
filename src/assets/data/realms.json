@@ -21,6 +21,7 @@
       "name": "Isle of Dawn",
       "shortName": "Dawn",
       "imageUrl": "/assets/game/realms/Isle.webp",
+      "elder": "l8tl0mHCWH",
       "areas": [
         "oEnKoTrbCt",
         "LanOVr1JCo",
@@ -70,6 +71,7 @@
       "name": "Daylight Prairie",
       "shortName": "Prairie",
       "imageUrl": "/assets/game/realms/Prairie.webp",
+      "elder": "iu6tmCPpex",
       "areas": [
         "Cmo9TPPpyH",
         "z3uQqa5KVZ",
@@ -144,6 +146,7 @@
       "name": "Hidden Forest",
       "shortName": "Forest",
       "imageUrl": "/assets/game/realms/Forest.webp",
+      "elder": "aj2x9H8ECy",
       "areas": [
         "A2--yR5CJk",
         "tU23ZgPP_g",
@@ -218,6 +221,7 @@
       "name": "Valley of Triumph",
       "shortName": "Valley",
       "imageUrl": "/assets/game/realms/Valley.webp",
+      "elder": "NgLbFXaB4z",
       "areas": [
         "LUkrOYNjEy",
         "u3rc8C3sMb",
@@ -290,6 +294,7 @@
       "name": "Golden Wasteland",
       "shortName": "Wasteland",
       "imageUrl": "/assets/game/realms/Wasteland.webp",
+      "elder": "JQR4EGE6io",
       "areas": [
         "R4I-lYbUUO",
         "LNcVZMfuWm",
@@ -354,6 +359,7 @@
       "name": "Vault of Knowledge",
       "shortName": "Vault",
       "imageUrl": "/assets/game/realms/Vault.webp",
+      "elder": "NLbS2a-y2u",
       "areas": [
         "QM7Kuv1Ekg",
         "wKZdWMMIWa",
