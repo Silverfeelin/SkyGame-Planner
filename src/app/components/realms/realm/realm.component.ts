@@ -157,6 +157,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     this.tier2Cost = {}; this.tier2Spent = {}; this.tier2Remaining = {};
 
     this.spirits.forEach(spirit => {
+      if (spirit.type === 'Elder') { return; }
       this.addTierCosts(spirit.tree!);
     });
 
