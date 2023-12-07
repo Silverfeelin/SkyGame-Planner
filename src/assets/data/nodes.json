@@ -13148,7 +13148,7 @@
       "c": 65
     },
     // #endregion
-    // Stretching Lamplighter
+    // #region Stretching Lamplighter
     {
       "guid": "5jVf4BFkJD",
       "item": "UhtkKIM3ol",
@@ -13197,6 +13197,66 @@
       "item": "fO5ekwmylU",
       "sc": 3
     },
+    // TS 102
+    {
+      "guid": "ZsY4l_KlfH",
+      "item": "UhtkKIM3ol",
+      "nw": "fAwipmWpOu",
+      "n": "UxmUJ5jxEK",
+      "ne": "RCSIUXBTQ2"
+    },
+    {
+      "guid": "fAwipmWpOu",
+      "item": "NwYn4D2Gag",
+      "h": 4
+    },
+    {
+      "guid": "RCSIUXBTQ2",
+      "item": "hT99QC2c5y",
+      "c": 3
+    },
+    {
+      "guid": "UxmUJ5jxEK",
+      "item": "-qrTFboAdP",
+      "c": 5,
+      "nw": "yilpy2OHC5",
+      "n": "r5gFAB35Rn"
+    },
+    {
+      "guid": "yilpy2OHC5",
+      "item": "SkVA_XphTc",
+      "c": 44
+    },
+    {
+      "guid": "r5gFAB35Rn",
+      "item": "lRVAad1pdf",
+      "ac": 2,
+      "n": "ppSbE0xRGe"
+    },
+    {
+      "guid": "ppSbE0xRGe",
+      "item": "0f_f0iJMqN",
+      "h": 3,
+      "nw": "NhjH90jr-q",
+      "n": "jFDiGK8s6Z"
+    },
+    {
+      "guid": "NhjH90jr-q",
+      "item": "e-yLNwofBb",
+      "h": 6
+    },
+    {
+      "guid": "jFDiGK8s6Z",
+      "item": "GwDxjRK6RF",
+      "c": 5,
+      "n": "P64Fd8qJoP"
+    },
+    {
+      "guid": "P64Fd8qJoP",
+      "item": "eCR2_3ev_B",
+      "c": 70
+    },
+    // #endregion
     // Slouching Soldier
     {
       "guid": "yyUs-AZ_f8",
