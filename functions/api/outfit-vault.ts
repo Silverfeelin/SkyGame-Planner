@@ -16,7 +16,7 @@ interface IOutfit {
   propId?: number;
 }
 
-const invalidRequest = () => new Response('Invalid request.', { status: 400 });
+const invalidRequest = (msg: string) => new Response(`Invalid request: ${msg}`, { status: 400 });
 
 /** Fetch a request and return the stored data. */
 export const onRequestGet: PagesFunction<Env> = async (context) => {
@@ -26,10 +26,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   const maskId = +url.searchParams.get('m') || undefined;
   const hairId = +url.searchParams.get('h') || undefined;
   const capeId = +url.searchParams.get('c') || undefined;
-  if (!outfitId && !maskId && !hairId && !capeId) { return invalidRequest(); }
-
-  const key = url.searchParams.get('key');
-  if (!key) { return invalidRequest(); }
+  if (!outfitId && !maskId && !hairId && !capeId) { return invalidRequest('Required parameters not present.'); }
 
   // Get request data.
   let where = '';
@@ -70,9 +67,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   delete json.id;
 
   // Only allow Skycord messages.
-  if (!json.link) { return invalidRequest(); }
+  if (!json.link) { return invalidRequest('Missing link.'); }
   const linkRegex = /^https:\/\/discord\.com\/channels\/575762611111592007\/\d{1,32}\/\d{1,32}$/;
-  if (!linkRegex.test(json.link)) { return invalidRequest(); }
+  if (!linkRegex.test(json.link)) { return invalidRequest('Invalid link.'); }
 
   // Validate possible keys as integers.
   const keys = new Set([
@@ -80,8 +77,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     'shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId'
   ]);
   for (const key of Object.keys(json)) {
-    if (!keys.has(key) && key !== 'link') { return invalidRequest(); }
-    if (json[key] && typeof json[key] !== 'number' || json[key] > 99999) { return invalidRequest(); }
+    if (!keys.has(key) && key !== 'link') { return invalidRequest('Invalid key.'); }
+    if (json[key] && (typeof json[key] !== 'number' || json[key] > 99999)) { return invalidRequest('Invalid key value.'); }
     json[key] ||= null;
   }
 
