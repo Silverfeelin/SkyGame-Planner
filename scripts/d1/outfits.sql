@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS outfits (
   faceAccessoryId int NULL,
   necklaceId int NULL,
   hatId int NULL,
-  propId int NULL
+  propId int NULL,
+  ip text NOT NULL
 );
 CREATE INDEX ix_outfit ON outfits(outfitId, maskId, hairId, capeId);

@@ -92,10 +92,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     dbValues.push(json[key]);
   }
 
+  const ipAddress = context.request.headers.get('CF-Connecting-IP');
   await context.env.DB.prepare(`
-    INSERT INTO outfits (${dbKeys.join(',')})
-    VALUES (${dbKeys.map(() => '?').join(',')})
-  `).bind(...dbValues).run();
+    INSERT INTO outfits (ip, ${dbKeys.join(',')})
+    VALUES (?, ${dbKeys.map(() => '?').join(',')})
+  `).bind(ipAddress,...dbValues).run();
 
   return new Response('OK');
 }
