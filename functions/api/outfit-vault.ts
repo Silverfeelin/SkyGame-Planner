@@ -77,7 +77,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     'shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId'
   ]);
   for (const key of Object.keys(json)) {
-    if (!keys.has(key) && key !== 'link') { return invalidRequest('Invalid key.'); }
+    if  (key === 'link') { continue; }
+    if (!keys.has(key)) { return invalidRequest('Invalid key.'); }
     if (json[key] && (typeof json[key] !== 'number' || json[key] > 99999)) { return invalidRequest('Invalid key value.'); }
     json[key] ||= null;
   }
