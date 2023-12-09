@@ -98,7 +98,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       VALUES (?, ${dbKeys.map(() => '?').join(',')})
     `).bind(ipAddress,...dbValues).run();
   } catch (e) {
-    console.error(e);
+    if (e.message.includes('UNIQUE constraint failed')) {
+      return invalidRequest('Outfit already saved.');
+    }
+
+    console.error(e.message);
+    return invalidRequest('Failed to save outfit.');
   }
 
   return new Response('OK');
