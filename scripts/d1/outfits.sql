@@ -13,4 +13,12 @@ CREATE TABLE IF NOT EXISTS outfits (
   propId int NULL,
   ip text NOT NULL
 );
-CREATE INDEX ix_outfit ON outfits(outfitId, maskId, hairId, capeId);
+
+-- Create indices by most common selections
+CREATE INDEX ix_outfit ON outfits(outfitId, capeId, hairId, maskId);
+CREATE INDEX ix_outfit_cape ON outfits(capeId, outfitId, hairId, maskId);
+CREATE INDEX ix_outfit_hair ON outfits(hairId, outfitId, capeId, maskId);
+CREATE INDEX ix_outfit_mask ON outfits(maskId, outfitId, capeId, hairId);
+
+-- Create unique constraint to prevent duplicate submissions.
+CREATE UNIQUE INDEX ix_outfit_link ON outfits(link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId);
