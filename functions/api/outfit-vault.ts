@@ -93,8 +93,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   await context.env.DB.prepare(`
-    INSERT INTO outfits (${dbKeys.join(',')}
-    VALUES (${dbKeys.map(() => '?').join(',')}
+    INSERT INTO outfits (${dbKeys.join(',')})
+    VALUES (${dbKeys.map(() => '?').join(',')})
   `).bind(...dbValues).run();
 
   return new Response('OK');
