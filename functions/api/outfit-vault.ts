@@ -72,22 +72,30 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!linkRegex.test(json.link)) { return invalidRequest('Invalid link.'); }
 
   // Validate possible keys as integers.
-  const keys = new Set([
-    'outfitId', 'maskId', 'hairId', 'capeId',
-    'shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId'
-  ]);
+  const requiredKeys = new Set(['outfitId', 'maskId', 'hairId', 'capeId']);
+  const optionalKeys = new Set(['shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId']);
+  for (const key of requiredKeys.values()) {
+    if (!json[key]) { return invalidRequest('Missing key.'); }
+  }
   for (const key of Object.keys(json)) {
-    if  (key === 'link') { continue; }
-    if (!keys.has(key)) { return invalidRequest('Invalid key.'); }
+    if (key === 'link') { continue; }
+    if (!requiredKeys.has(key) && !optionalKeys.has(key)) { return invalidRequest('Invalid key.'); }
     if (json[key] && (typeof json[key] !== 'number' || json[key] > 99999)) { return invalidRequest('Invalid key value.'); }
     json[key] ||= null;
   }
 
   // Save outfit.
+  let dbKeys = [];
+  let dbValues = [];
+  for (const key of Object.keys(json)) {
+    dbKeys.push(key);
+    dbValues.push(json[key]);
+  }
+
   await context.env.DB.prepare(`
-    INSERT INTO outfits (link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `).bind(json.link, json.outfitId, json.maskId, json.hairId, json.capeId, json.shoesId, json.faceAccessoryId, json.necklaceId, json.hatId, json.propId).run();
+    INSERT INTO outfits (${dbKeys.join(',')}
+    VALUES (${dbKeys.map(() => '?').join(',')}
+  `).bind(...dbValues).run();
 
   return new Response('OK');
 }
