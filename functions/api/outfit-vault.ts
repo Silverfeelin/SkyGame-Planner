@@ -1,5 +1,3 @@
-import { nanoid } from '../nanoid';
-
 interface Env {
   DB: D1Database;
 }
@@ -78,11 +76,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   // Validate possible keys as integers.
   const keys = new Set([
-    'link', 'outfitId', 'maskId', 'hairId', 'capeId',
+    'outfitId', 'maskId', 'hairId', 'capeId',
     'shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId'
   ]);
   for (const key of Object.keys(json)) {
-    if (!keys.has(key)) { return invalidRequest(); }
+    if (!keys.has(key) && key !== 'link') { return invalidRequest(); }
     if (json[key] && typeof json[key] !== 'number' || json[key] > 99999) { return invalidRequest(); }
     json[key] ||= null;
   }
