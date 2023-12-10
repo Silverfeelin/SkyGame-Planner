@@ -31,7 +31,7 @@ import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component
 import { SettingsComponent } from './components/settings/settings.component';
 import { SearchComponent } from './components/search/search.component';
 import { DayjsPipe } from './pipes/dayjs.pipe';
-import { RealmComponent } from './components/realm/realm.component';
+import { RealmComponent } from './components/realms/realm/realm.component';
 import { ItemTypePipe } from './pipes/item-type.pipe';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
@@ -62,12 +62,17 @@ import { DateComponent } from './components/util/date/date.component';
 import { DashboardWishlistComponent } from './components/dashboard/dashboard-wishlist/dashboard-wishlist.component';
 import { ItemComponent } from './components/items/item/item.component';
 import { ReturningSpiritCardComponent } from './components/returning-spirit-card/returning-spirit-card.component';
+import { RealmConstellationComponent } from './components/realms/realm-constellation/realm-constellation.component';
+import { PercentagePipe } from './pipes/percentage.pipe';
+import { ClampPipe } from './pipes/clamp.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DayjsPipe,
     ItemTypePipe,
+    PercentagePipe,
+    ClampPipe,
     SpiritTreeComponent,
     NodeComponent,
     ItemIconComponent,
@@ -121,7 +126,8 @@ import { ReturningSpiritCardComponent } from './components/returning-spirit-card
     DateComponent,
     DashboardWishlistComponent,
     ItemComponent,
-    ReturningSpiritCardComponent
+    ReturningSpiritCardComponent,
+    RealmConstellationComponent
   ],
   imports: [
     BrowserModule,

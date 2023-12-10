@@ -126,6 +126,17 @@ export class DataService {
         realm.areas![i] = area;
         area.realm = realm;
       });
+
+      // Map constellation spirits.
+      realm.constellation?.icons?.forEach((icon, i) => {
+        const spirit = this.guidMap.get(icon.spirit as any) as ISpirit;
+        realm.constellation!.icons![i].spirit = spirit;
+      });
+
+      // Map elders
+      if (realm.elder) {
+        realm.elder = this.guidMap.get(realm.elder as any) as ISpirit;
+      }
     });
   }
 

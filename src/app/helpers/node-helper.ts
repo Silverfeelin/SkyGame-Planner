@@ -1,5 +1,5 @@
-import { IItem } from "../interfaces/item.interface";
-import { INode } from "../interfaces/node.interface";
+import { IItem, ItemType } from "../interfaces/item.interface";
+import { INode, ITierNode } from "../interfaces/node.interface";
 
 export class NodeHelper {
   /** Finds the first node that satisfies the predicate.
@@ -32,9 +32,27 @@ export class NodeHelper {
     if (!node) { return nodes; }
 
     nodes.push(node);
-    if (node.nw) { this.all(node.nw , nodes); }
-    if (node.ne) { this.all(node.ne , nodes); }
-    if (node.n) { this.all(node.n , nodes); }
+    if (node.nw) { this.all(node.nw, nodes); }
+    if (node.ne) { this.all(node.ne, nodes); }
+    if (node.n) { this.all(node.n, nodes); }
+    return nodes;
+  }
+
+  /**
+   * Returns all nodes from the given node with their spirit tier.
+   * Tiers are determined by wing buff unlocks, starting at 0 and incrementing at each wing buff (inclusive).
+   */
+  static allTier(node?: INode, tier?: number, nodes?: Array<ITierNode>): Array<ITierNode> {
+    nodes ??= [];
+    if (!node) { return nodes; }
+
+    tier ??= 0;
+    if (node.item?.type === ItemType.WingBuff) { tier++; }
+
+    nodes.push({ ...node, tier });
+    if (node.nw) { this.allTier(node.nw, tier, nodes); }
+    if (node.ne) { this.allTier(node.ne, tier, nodes); }
+    if (node.n) { this.allTier(node.n, tier, nodes); }
     return nodes;
   }
 

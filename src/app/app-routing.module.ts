@@ -14,7 +14,7 @@ import { TravelingSpiritsComponent } from './components/traveling-spirits/travel
 import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { RealmComponent } from './components/realm/realm.component';
+import { RealmComponent } from './components/realms/realm/realm.component';
 import { TitleResolver } from './resolvers/title.resolver';
 import { EventInstanceTitleResolver } from './resolvers/event-instance-title.resolver';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';

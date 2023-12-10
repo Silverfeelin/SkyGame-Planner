@@ -54,4 +54,16 @@ export class CostHelper {
 
     return target;
   }
+
+  static percentage(value: ICost, compare: ICost): ICost {
+    const calc = (a?: number, b?: number) => b ? Math.max(0, Math.min(100, Math.round((a || 0) / b * 100))) : 100;
+    return {
+      c: calc(value.c, compare.c),
+      h: calc(value.h, compare.h),
+      sc: calc(value.sc, compare.sc),
+      sh: calc(value.sh, compare.sh),
+      ac: calc(value.ac, compare.ac),
+      ec: calc(value.ec, compare.ec)
+    };
+  }
 }

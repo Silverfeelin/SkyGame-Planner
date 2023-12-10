@@ -45,6 +45,14 @@ a, .link {
   }
 }
 
+.text-link {
+  color: var(--color-link);
+  text-decoration: underline;
+  cursor: pointer;
+  &:visited { color: var(--color-link-visited); }
+  &:hover, &:active, &:focus { color: var(--color-link-hover); }
+}
+
 .icon {
   width: 24px;
   height: 24px;
@@ -214,6 +222,7 @@ body { scrollbar-width: thin; }
 .gap-half { gap: var(--padding-content-half) !important; }
 .gap-0 { gap: 0 !important; }
 .w-100 { width: 100% !important; }
+.h-100 { height: 100% !important; }
 
 .float-left { float: left !important; }
 .float-right { float: right !important; }
@@ -323,19 +332,25 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
 .highlight {
   border: 1px solid var(--color-highlight) !important;
   border-radius: var(--border-radius) !important;
-  box-shadow: var(--shadow-highlight) !important;
+  box-shadow: var(--shadow) var(--color-highlight) !important;
+}
+
+.highlight-complete {
+  border: 1px solid var(--color-progress-full) !important;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow) var(--color-progress-full) !important;
 }
 
 .highlight-attention {
   border: 1px solid var(--color-attention) !important;
   border-radius: var(--border-radius) !important;
-  box-shadow: var(--shadow-attention) !important;
+  box-shadow: var(--shadow) var(--color-attention) !important;
 }
 
 .highlight-favourite {
   border: 1px solid var(--color-favourite) !important;
   border-radius: var(--border-radius) !important;
-  box-shadow: var(--shadow-highlight) !important;
+  box-shadow: var(--shadow) var(--color-favourite) !important;
 }
 
 .scroll-x {
