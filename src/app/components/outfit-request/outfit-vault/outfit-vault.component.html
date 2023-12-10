@@ -100,6 +100,10 @@
     </div>
     <div class="sky-card-body">
       <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: selection, wrap: true, warn: true}"></ng-container>
+      <div *ngIf="!hasSubmitRequiredItems" class="container danger mt">
+        You have not selected a full outfit. Some required items are missing.<br/>
+        If necessary, please submit multiple versions (i.e. multiple capes) individually instead of leaving the item blank.
+      </div>
       <hr/>
       <div class="container" *ngIf="!submitUnderstood">
         By submitting an outfit to the vault other players will be able to find it on this page.

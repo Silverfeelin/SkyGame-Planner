@@ -108,6 +108,7 @@ export class OutfitVaultComponent {
   // Submitting
   isSubmitting = false;
   submitUnderstood = false;
+  hasSubmitRequiredItems = false;
   sDiscordLink = '';
   pDiscordLink = '';
   sKey = localStorage.getItem('outfit-vault-key') ?? 'public';
@@ -275,6 +276,7 @@ export class OutfitVaultComponent {
 
   showSubmitOutfit(): void {
     this.showMode = 'submit';
+    this.hasSubmitRequiredItems = Object.keys(this.requiredParams).every(type => !!this.selection[type as ItemType]);
   }
 
   showList(): void {
