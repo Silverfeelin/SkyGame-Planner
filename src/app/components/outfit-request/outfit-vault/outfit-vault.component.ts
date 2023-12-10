@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef } from '@angular/core';
-import { nanoid } from 'nanoid';
+import dayjs from 'dayjs';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -12,6 +12,7 @@ interface IApiOutfits {
 interface IApiOutfit {
   id?: number;
   link: string;
+  date?: string;
   protocolLink?: string;
   outfitId: number;
   maskId: number;
@@ -27,6 +28,7 @@ interface IApiOutfit {
 
 interface IResult {
   data: IApiOutfit;
+  date?: dayjs.Dayjs;
   items: Selection<IItem>;
 }
 
@@ -186,12 +188,12 @@ export class OutfitVaultComponent {
     const url = new URL('/api/outfit-vault', window.location.origin);
     for (const requiredType of Object.keys(this.requiredParams)) {
       const item = this.selection[requiredType as ItemType];
-      if (!item) { continue; }
+      if (!item || this.nonItems[item.id!]) { continue; }
       url.searchParams.set(this.requiredParams[requiredType as ItemType]!, `${item.id}`);
     }
     for (const optionalType of Object.keys(this.optionalParams)) {
       const item = this.selection[optionalType as ItemType];
-      if (!item) { continue; }
+      if (!item || this.nonItems[item.id!]) { continue; }
       url.searchParams.set(this.optionalParams[optionalType as ItemType]!, `${item.id}`);
     }
 
@@ -229,6 +231,7 @@ export class OutfitVaultComponent {
 
       return {
         data: resItem,
+        date: resItem.date ? dayjs(resItem.date) : undefined,
         items
       };
     }) || [];
@@ -277,6 +280,14 @@ export class OutfitVaultComponent {
       propId: this.selection[ItemType.Prop]?.id,
       key: this.sKey || ''
     };
+
+    // Remove empty selections.
+    for (const key of Object.keys(model)) {
+      const val = model[key as keyof IApiOutfit]!;
+      if (typeof(val) === 'number' && this.nonItems[val]) {
+        delete model[key as keyof IApiOutfit];
+      }
+    }
 
     if (!model.outfitId || !model.maskId || !model.hairId || !model.capeId) {
       alert('This outfit is incomplete. An outfit requires at least an outfit, mask, hairstyle and cape.');

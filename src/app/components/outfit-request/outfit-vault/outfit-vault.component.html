@@ -195,16 +195,16 @@
   </div>
 </div>
 
-<ng-template #templateSelection let-wrap="wrap" let-items="items" let-warn="warn" let-border="border" let-isResult="isResult">
+<ng-template #templateSelection let-wrap="wrap" let-items="items" let-warn="warn" let-isResult="isResult">
   <div class="selection-icons scroll-x" [class.flex-wrap]="wrap">
     <ng-container *ngFor="let type of selectionTypes">
-      <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{ item: items[type], type, warn: warn && requiredParams[type], border, isResult }"></ng-container>
+      <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{ item: items[type], type, warn: warn && requiredParams[type], isResult }"></ng-container>
     </ng-container>
   </div>
 
-  <ng-template #templateSelection let-item="item" let-type="type" let-warn="warn" let-border="border" let-isResult="isResult">
-    <div class="selection-icon" (click)="gotoType(type)" *ngIf="item || !isResult"
-      [class.selected]="!isResult && item" [class.warn]="warn && !item"
+  <ng-template #templateSelection let-item="item" let-type="type" let-warn="warn" let-isResult="isResult">
+    <div class="selection-icon" (click)="!isResult && gotoType(type)" *ngIf="item || !isResult"
+      [class.selected]="!isResult && item" [class.warn]="warn && !item" [class.no-point]="isResult"
       [ngbTooltip]="templateSelectionHover" container="body"
     >
       <app-item-icon *ngIf="item" [item]="item" [size]="'auto'" class="selection-icon-img" [highlight]="true" [hoverHighlight]="false"></app-item-icon>

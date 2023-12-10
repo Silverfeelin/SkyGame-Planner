@@ -68,7 +68,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Get pageSize records matching the item selection.
   const sql = `
-    SELECT id, link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
+    SELECT id, date, link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
     FROM outfits
     WHERE 1=1 ${sqlWhere}
     ORDER BY id DESC
