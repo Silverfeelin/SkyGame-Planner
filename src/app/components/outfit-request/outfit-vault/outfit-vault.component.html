@@ -8,6 +8,17 @@
       <div class="container">
         On this page you can search for outfits submitted to the vault by other players.
         All outfits on this page will link to a message in the official <a href="https://discord.com/invite/thatskygame" target="_blank">Sky Discord server</a>.
+
+        <div class="mt">
+          <button type="button" (click)="toggleItemSize()">
+            <mat-icon class="menu-icon">{{ itemSize === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
+            <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
+          </button>
+        </div>
+        <div class="search mt" data-step="126" data-position="bottom-left-aligned">
+          <input tabindex="0" #searchInput class="search-input" type="search" (input)="search()" placeholder="Search for items">
+          <mat-icon (click)="selectSearch()">search</mat-icon>
+        </div>
       </div>
     </div>
   </div>
@@ -16,6 +27,11 @@
   <div class="sky-card mt" [hidden]="showMode !== 'list'">
     <div class="sky-card-header header-items">
       <h2 class="h3 mb-0 label-items">Items</h2>
+      <!-- Reset -->
+      <button type="button" class="selection-reset button-danger" (click)="reset()">
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        <span class="menu-label">Reset</span>
+      </button>
     </div>
     <!-- Item sections -->
     <div class="sky-card-body pad-0 closet-container">
@@ -40,7 +56,7 @@
   </div>
 
   <ng-template #templateItemsType let-type="type">
-    <div class="closet-items" [attr.data-type]="type"
+    <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'"
       [attr.data-step]="type === 'Outfit' ? 2 : undefined" data-position="top-left-aligned">
       <!-- Closet icon, foldable -->
       <div [style.gridColumn]="'1/' + (columns+1)" class="closet-type t-center" (click)="foldType(type)">
@@ -62,8 +78,9 @@
         <div class="closet-item" (click)="selectItem(item, type)" [attr.data-guid]="item.guid"
           [ngbTooltip]="templateItemHover" container="body"
           [class.selected]="selectionMap[item.guid]"
+          [class.search-match]="searchResults?.[item.guid]"
         >
-          <app-item-icon [item]="item" [size]="'small'" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+          <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
         </div>
       </div>
 
@@ -105,7 +122,12 @@
         <div class="grid grid-1">
           <!-- Link -->
           <div>
-            <label for="txtDiscordLink">Discord message link:</label>
+            <label for="txtDiscordLink">
+              Discord message link:
+              <span class="c-accent link" ngbTooltip="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures." container="body" triggers="click">
+                (help)
+              </span>
+            </label>
             <input id="txtDiscordLink" type="text" [(ngModel)]="sDiscordLink" (ngModelChange)="onDiscordLinkChange()">
             <div class="mt-half">
               Please verify the link works before submitting!<br/>
@@ -123,7 +145,12 @@
           </div>
           <!-- Key -->
           <div>
-            <label for="txtKey">Secret key <span class="c-accent">(optional)</span>:</label>
+            <label for="txtKey">
+              Secret key:
+              <span class="c-accent link" ngbTooltip="By entering a unique key here you will be able to manage your submissions later. Use &quot;public&quot; to allow anyone to manage it." container="body" triggers="click">
+                (optional)
+              </span>
+            </label>
             <input id="txtKey" type="text" [(ngModel)]="sKey" [maxlength]="100">
           </div>
           <!-- Submit -->

@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import dayjs from 'dayjs';
 import { ItemHelper } from 'src/app/helpers/item-helper';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
+import { SearchService } from 'src/app/services/search.service';
 
 interface IApiOutfits {
   items: Array<IApiOutfit>
@@ -43,7 +44,11 @@ type ShowMode = 'list' | 'result' | 'submit';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OutfitVaultComponent {
+  @ViewChild('searchInput', { static: true }) input!: ElementRef<HTMLInputElement>;
+
   columns = 6;
+  itemSize: ItemSize = 'small';
+  itemSizePx = 32;
 
   requiredParams: { [key in ItemType]?: string } = { [ItemType.Outfit]: 'o', [ItemType.Mask]: 'm', [ItemType.Hair]: 'h', [ItemType.Cape]: 'c' };
   optionalParams: { [key in ItemType]?: string } = { [ItemType.Shoes]: 's', [ItemType.FaceAccessory]: 'f', [ItemType.Necklace]: 'n', [ItemType.Hat]: 't', [ItemType.Prop]: 'p' };
@@ -92,6 +97,11 @@ export class OutfitVaultComponent {
 
   showMode: ShowMode = 'list';
 
+  // Search
+  searchText?: string;
+  _lastSearchText = '';
+  searchResults?: { [guid: string]: IItem };
+
   // Finding
   isFinding = false;
 
@@ -105,12 +115,36 @@ export class OutfitVaultComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _elementRef: ElementRef<HTMLElement>,
     private readonly _http: HttpClient
   ) {
+    this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
+    this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+
     this.initializeItems();
     this.initializeSelection();
+  }
+
+  search(): void {
+    this.searchText = this.input.nativeElement.value;
+    if (this.searchText === this._lastSearchText) { return; }
+    this._lastSearchText = this.searchText;
+
+    if (!this.searchText || this.searchText.length < 3) {
+      this.searchResults = undefined;
+      this._changeDetectorRef.markForCheck();
+      return;
+    }
+
+    const items = this._searchService.searchItems(this.searchText, { limit: 500, hasIcon: true });
+    this.searchResults = items.reduce((map, item) => (map[item.data.guid] = item.data, map), {} as { [guid: string]: IItem });
+    this._changeDetectorRef.markForCheck();
+  }
+
+  selectSearch(): void {
+    this.input.nativeElement.select();
   }
 
   gotoType(type: ItemType): void {
@@ -247,6 +281,24 @@ export class OutfitVaultComponent {
     this.showMode = 'list';
   }
 
+  reset(): void {
+    if (!confirm('Are you sure you want to reset your selection?')) { return; }
+    this.selection = {};
+    this.selectionMap = {};
+    this.updateUrl();
+  }
+
+  /** Toggles item size between small and normal. */
+  toggleItemSize(): void {
+    this._toggleItemSize();
+    localStorage.setItem('closet.item-size', this.itemSize);
+  }
+
+  _toggleItemSize(): void {
+    this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
+    this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+  }
+
   onSubmitUnderstood(): void {
     this.submitUnderstood = true;
   }
@@ -278,7 +330,7 @@ export class OutfitVaultComponent {
       necklaceId: this.selection[ItemType.Necklace]?.id,
       hatId: this.selection[ItemType.Hat]?.id,
       propId: this.selection[ItemType.Prop]?.id,
-      key: this.sKey || ''
+      key: this.sKey || 'public'
     };
 
     // Remove empty selections.

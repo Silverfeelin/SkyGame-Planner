@@ -28,6 +28,12 @@
   cursor: pointer;
 }
 
+.selection-reset {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
 .selection-icon-img { vertical-align: top; }
 mat-icon.selection-icon-img {
   opacity: 0.4;
@@ -65,7 +71,7 @@ mat-icon.selection-icon-img {
 .closet-items {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(6, 32px + 8px);
+  // grid-template-columns: repeat(6, 32px + 8px); // variable in HTML.
   gap: 4px;
   user-select: none;
   scroll-margin-inline: 104px;
@@ -110,6 +116,7 @@ mat-icon.selection-icon-img {
   margin-bottom: 48px;
 }
 
+.search-match {border-color: var(--color-highlight); }
 .selected {border-color: var(--color-attention); }
 .warn { border-color: var(--color-danger-accent); }
 
@@ -117,4 +124,19 @@ mat-icon.selection-icon-img {
   position: fixed;
   bottom: var(--padding-content);
   right: var(--padding-content);
+}
+
+.search {
+  position: relative;
+
+  mat-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  input {
+    padding-left: 36px;
+  }
 }
