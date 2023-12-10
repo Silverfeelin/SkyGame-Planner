@@ -9,5 +9,6 @@ export class SubscriptionBag {
 
   unsubscribe() {
     this.subscriptions.forEach(s => s.unsubscribe());
+    this.subscriptions.length = 0;
   }
 }

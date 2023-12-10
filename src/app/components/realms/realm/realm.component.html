@@ -1,0 +1,151 @@
+<div class="realm-info-flex">
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">{{ realm.name }}</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="grid grid-1">
+        <app-wiki-link [wiki]="realm._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
+        <a class="container" *ngIf="spirits.length" [class.colspan-2]="!seasonSpiritCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+          <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
+          <span class="menu-label">
+            Spirits&nbsp;<span class="c-accent">({{ spiritCount }})</span>
+          </span>
+        </a>
+        <a class="container" *ngIf="seasonSpiritCount" [class.colspan-2]="!spirits.length" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+          <app-spirit-type-icon class="menu-icon" [type]="'Season'"></app-spirit-type-icon>
+          <span class="menu-label">
+            Season Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="map-container" #mapContainer>
+    <button *ngIf="hasAreaData" type="button" class="map-control map-control-tl" [class.button-areas-off]="!showAreas" (click)="mapToggleAreas()"
+      [ngbTooltip]="'Show areas'" container="body" placement="right"
+    >
+      <mat-icon>location_on</mat-icon>
+    </button>
+    <button type="button" class="map-control map-control-bl" (click)="panToRealm()" [ngbTooltip]="'Center map'" container="body" placement="right">
+      <mat-icon>center_focus_weak</mat-icon>
+    </button>
+  </div>
+</div>
+
+<!-- Constellation -->
+<div class="realm-constellation-flex mt" *ngIf="realm.constellation">
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Constellation</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="grid grid-1">
+        <!-- Tier 1-->
+        <div class="container">
+          <span class="d-block t-center mb-half">Tier 1</span>
+          <div class="constellation-progress-grid">
+            <mat-icon svgIcon="candle" class=""></mat-icon>
+            <span class="">
+              <div class="constellation-bar bar-c" [class.constellation-bar-full]="tier1Pct.c === 100">
+                <div class="bar-fill" [style.width.%]="tier1Pct.c"></div>
+                <div class="constellation-bar-label">
+                  {{ (tier1Remaining.c || 0) }} left / {{ (tier1Cost.c || 0) }}
+                  <span class="">({{ (tier1Spent.c || 0) | percentage:0:(tier1Cost.c || 0) }}%)</span>
+                </div>
+              </div>
+            </span>
+            <mat-icon svgIcon="heart" class=""></mat-icon>
+            <span class="">
+              <div class="constellation-bar bar-h" [class.constellation-bar-full]="tier1Pct.h === 100">
+                <div class="bar-fill" [style.width.%]="tier1Pct.h"></div>
+                <div class="constellation-bar-label">
+                  {{ tier1Remaining.h || 0 }} left / {{ tier1Cost.h || 0 }}
+                  <span class="">({{ (tier1Spent.h || 0)  | percentage:0:(tier1Cost.h || 0)  }}%)</span>
+                </div>
+              </div>
+            </span>
+            <mat-icon svgIcon="ascended-candle" class=""></mat-icon>
+            <span class="">
+              <div class="constellation-bar bar-ac" [class.constellation-bar-full]="tier1Pct.ac === 100">
+                <div class="bar-fill" [style.width.%]="tier1Pct.ac"></div>
+                <div class="constellation-bar-label">
+                  {{ tier1Remaining.ac || 0 }} left / {{ tier1Cost.ac || 0 }}
+                  <span class="">({{ (tier1Spent.ac || 0) | percentage:0:(tier1Cost.ac || 0) }}%)</span>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <!-- Tier 2-->
+        <div class="container" *ngIf="tier2Cost.ac">
+          <span class="d-block t-center mb-half">Tier 2</span>
+          <div class="constellation-progress-grid">
+            <ng-container *ngIf="tier2Cost.c">
+              <mat-icon svgIcon="candle" class=""></mat-icon>
+              <span class="">
+                <div class="constellation-bar bar-c" [class.constellation-bar-full]="tier2Pct.c === 100">
+                  <div class="bar-fill" [style.width.%]="tier2Pct.c"></div>
+                  <div class="constellation-bar-label">
+                    {{ (tier2Spent.c || 0) }} / {{ (tier2Cost.c || 0) }}
+                    <span class="">({{ (tier2Spent.c || 0) | percentage:0:(tier2Cost.c || 0) }}%)</span>
+                  </div>
+                </div>
+              </span>
+            </ng-container>
+            <ng-container *ngIf="tier2Cost.h">
+              <mat-icon svgIcon="heart" class=""></mat-icon>
+              <span class="">
+                <div class="constellation-bar bar-h" [class.constellation-bar-full]="tier2Pct.h === 100">
+                  <div class="bar-fill" [style.width.%]="tier2Pct.h"></div>
+                  <div class="constellation-bar-label">
+                    {{ tier2Spent.h || 0 }} / {{ tier2Cost.h || 0 }}
+                    <span class="">({{ (tier2Spent.h || 0)  | percentage:0:(tier2Cost.h || 0)  }}%)</span>
+                  </div>
+                </div>
+              </span>
+            </ng-container>
+            <ng-container *ngIf="tier2Cost.ac">
+              <mat-icon svgIcon="ascended-candle" class=""></mat-icon>
+              <span class="">
+                <div class="constellation-bar bar-ac" [class.constellation-bar-full]="tier2Pct.ac === 100">
+                  <div class="bar-fill" [style.width.%]="tier2Pct.ac"></div>
+                  <div class="constellation-bar-label">
+                    {{ tier2Spent.ac || 0 }} / {{ tier2Cost.ac || 0 }}
+                    <span class="">({{ (tier2Spent.ac || 0) | percentage:0:(tier2Cost.ac || 0) }}%)</span>
+                  </div>
+                </div>
+              </span>
+            </ng-container>
+          </div>
+        </div>
+        <!-- <div class="container">Elder items</div> -->
+      </div>
+    </div>
+  </div>
+  <app-realm-constellation [realm]="realm" [completed]="!tier1Remaining.c && !tier1Remaining.h && !tier1Remaining.ac" (spiritClicked)="constellationSpiritClicked($event)" (realmChanged)="constellationRealmChanged($event)"></app-realm-constellation>
+</div>
+
+<!-- Spirits -->
+<div #divSpiritTrees class="sky-card mt" *ngIf="spirits?.length">
+  <div class="sky-card-header">
+    <h2 class="h3">Spirit trees</h2>
+  </div>
+  <div class="sky-card-body pad-0">
+    <div class="sky-flex scroll-x pad">
+      <!-- Spirit trees -->
+      <ng-container *ngFor="let spirit of spirits;">
+        <div class="tree-wrapper" *ngIf="spirit.tree">
+          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
+            <!-- Link to spirit -->
+            <div name>
+              <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
+                {{ spirit.name }}
+              </a>
+            </div>
+          </app-spirit-tree>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

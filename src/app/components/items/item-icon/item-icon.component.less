@@ -42,9 +42,12 @@
 }
 
 :host.hoverable:hover {
-  .img {
-    transition: var(--animation-short);
+  img { transition: var(--animation-short); }
+  .img[data-glow-type="default"] {
     filter: drop-shadow(0 0 4px #fffa73);
+  }
+  .img[data-glow-type="attention"] {
+    filter: drop-shadow(0 0 4px var(--color-attention));
   }
 }
 

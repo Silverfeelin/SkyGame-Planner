@@ -5,6 +5,7 @@ import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { HighlightType } from 'src/app/types/highlight';
 
 export type NodeAction = 'unlock' | 'find';
 
@@ -17,6 +18,7 @@ export class NodeComponent implements OnChanges {
   @Input() node!: INode;
   @Input() position = 'center';
   @Input() highlight?: boolean;
+  @Input() glowType?: HighlightType = 'default';
   @Input() action: NodeAction = 'unlock';
 
   hover?: boolean;

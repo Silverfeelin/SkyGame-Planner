@@ -8,13 +8,13 @@
         <!-- Preview -->
         <div class="info-grid-preview" *ngIf="item.previewUrl">
           <img [src]="item.previewUrl" class="preview-img" loading="lazy">
-          <app-item-icon [item]="item" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+          <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"></app-item-icon>
           <app-item-subicons [item]="item" [showTooltips]="true"></app-item-subicons>
           <mat-icon class="unlock-check self" [class.unlocked]="item.unlocked" [ngbTooltip]="'You own this item.'" container="body">done</mat-icon>
         </div>
         <!-- Icon -->
         <div class="info-grid-icon" *ngIf="!item.previewUrl">
-          <app-item-icon [item]="item" [size]="'large'" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+          <app-item-icon [item]="item" [size]="'large'" [opaque]="true" [hoverGlow]="false"></app-item-icon>
           <app-item-subicons [item]="item" [showTooltips]="true"></app-item-subicons>
           <mat-icon class="unlock-check self" [class.unlocked]="item.unlocked" [ngbTooltip]="'You own this item.'" container="body">done</mat-icon>
         </div>
