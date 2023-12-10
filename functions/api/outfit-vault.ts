@@ -14,9 +14,25 @@ interface IOutfit {
   necklaceId?: number;
   hatId?: number;
   propId?: number;
+  key?: string;
 }
 
 const invalidRequest = (msg: string) => new Response(`Invalid request: ${msg}`, { status: 400 });
+/* Hashing function from https://stackoverflow.com/a/52171480 by bryc */
+const cyrb53 = (str, seed = 0) => {
+  let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+  for(let i = 0, ch; i < str.length; i++) {
+      ch = str.charCodeAt(i);
+      h1 = Math.imul(h1 ^ ch, 2654435761);
+      h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1  = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+  h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2  = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+  h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+};
 
 /** Fetch a request and return the stored data. */
 export const onRequestGet: PagesFunction<Env> = async (context) => {
@@ -35,7 +51,8 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Check at least one required parameter is present.
   const requiredParams = { outfitId: 'o', maskId: 'm', hairId: 'h', capeId: 'c' };
-  if (!Object.keys(requiredParams).some(key => addWhere(requiredParams[key], key))) {
+  Object.keys(requiredParams).forEach(key => addWhere(requiredParams[key], key));
+  if (sqlValues.length === 0) {
     return invalidRequest('Missing a required parameter.');
   }
 
@@ -43,11 +60,21 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   const optionalParams = { shoesId: 's', faceAccessoryId: 'f', necklaceId: 'n', hatId: 't', propId: 'p' };
   Object.keys(optionalParams).forEach(key => addWhere(optionalParams[key], key));
 
-  // Get 100 records matching the item selection.
-  const resOutfits = await context.env.DB.prepare(`
-    SELECT TOP 100 * FROM outfits
+  // Check page.
+  const pageSize = 100;
+  const page = +url.searchParams.get('page') || 1;
+  if (page < 1) { return invalidRequest('Invalid page.'); }
+  const offset = (page - 1) * pageSize;
+
+  // Get pageSize records matching the item selection.
+  const sql = `
+    SELECT id, link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
+    FROM outfits
     WHERE 1=1 ${sqlWhere}
-  `).bind(...sqlValues).run<IOutfit>();
+    ORDER BY id DESC
+    LIMIT ${pageSize} OFFSET ${offset}
+  `;
+  const resOutfits = await context.env.DB.prepare(sql).bind(...sqlValues).run<IOutfit>();
 
   // Return request data.
   const response = {
@@ -67,6 +94,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const linkRegex = /^https:\/\/discord\.com\/channels\/575762611111592007\/\d{1,32}\/\d{1,32}$/;
   if (!linkRegex.test(json.link)) { return invalidRequest('Invalid link.'); }
 
+  // Validate secret key.
+  let key: string;
+  if (json.key) {
+    if (json.key.length > 100) { return invalidRequest('Invalid key.'); }
+    key = cyrb53(json.key).toString();
+    delete json.key;
+  }
+
   const requiredKeys = new Set(['outfitId', 'maskId', 'hairId', 'capeId']);
   const optionalKeys = new Set(['shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId']);
 
@@ -77,7 +112,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   // Validate key values.
   for (const key of Object.keys(json)) {
-    if (key === 'link') { continue; }
+    if (key === 'link' || key === 'key') { continue; }
     if (!requiredKeys.has(key) && !optionalKeys.has(key)) { return invalidRequest('Invalid key.'); }
     if (json[key] && (typeof json[key] !== 'number' || json[key] > 99999)) { return invalidRequest('Invalid key value.'); }
     json[key] ||= null;
@@ -91,12 +126,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     dbValues.push(json[key]);
   }
 
-  const ipAddress = context.request.headers.get('CF-Connecting-IP');
+  const ipAddress = context.request.headers.get('CF-Connecting-IP') ?? '127.0.0.1';
+  let id: number;
   try {
-    await context.env.DB.prepare(`
-      INSERT INTO outfits (ip, ${dbKeys.join(',')})
-      VALUES (?, ${dbKeys.map(() => '?').join(',')})
-    `).bind(ipAddress,...dbValues).run();
+    const result = await context.env.DB.prepare(`
+      INSERT INTO outfits (date, ip, key, ${dbKeys.join(',')})
+      VALUES (?, ?, ?, ${dbKeys.map(() => '?').join(',')})
+    `).bind(new Date().toISOString(), ipAddress, key, ...dbValues).run<number>();
+    id = result.meta.last_row_id;
   } catch (e) {
     if (e.message.includes('UNIQUE constraint failed')) {
       return invalidRequest('Outfit already saved.');
@@ -106,6 +143,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return invalidRequest('Failed to save outfit.');
   }
 
-  return new Response('OK');
+  const responseModel = { id };
+  return new Response(JSON.stringify(responseModel));
 }
 

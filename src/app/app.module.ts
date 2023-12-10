@@ -62,6 +62,8 @@ import { DateComponent } from './components/util/date/date.component';
 import { DashboardWishlistComponent } from './components/dashboard/dashboard-wishlist/dashboard-wishlist.component';
 import { ItemComponent } from './components/items/item/item.component';
 import { ReturningSpiritCardComponent } from './components/returning-spirit-card/returning-spirit-card.component';
+import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -121,10 +123,12 @@ import { ReturningSpiritCardComponent } from './components/returning-spirit-card
     DateComponent,
     DashboardWishlistComponent,
     ItemComponent,
-    ReturningSpiritCardComponent
+    ReturningSpiritCardComponent,
+    OutfitVaultComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,

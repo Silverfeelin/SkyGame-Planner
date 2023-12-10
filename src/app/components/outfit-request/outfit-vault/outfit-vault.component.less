@@ -1,0 +1,120 @@
+.selection-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.selection-inner {
+  background: var(--color-background-solid-light);
+}
+
+.selection-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  gap: var(--padding-content-half);
+}
+
+.selection-icon {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+  border-radius: var(--border-radius);
+  background: var(--color-background-solid);
+  border: 3px solid var(--color-border);
+  border-width: 3px !important;
+  cursor: pointer;
+}
+
+.selection-icon-img { vertical-align: top; }
+mat-icon.selection-icon-img {
+  opacity: 0.4;
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+@media screen and (max-width: 719px) {
+  mat-icon.selection-icon-img {
+    width: var(--item-size-small);
+    height: var(--item-size-small);
+  }
+}
+
+.closet-grid {
+  display: flex;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+.closet-grid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.closet-grid-section-divider {
+  height: auto;
+  border-left: 1px solid var(--color-border);
+}
+
+.closet-items {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 32px + 8px);
+  gap: 4px;
+  user-select: none;
+  scroll-margin-inline: 104px;
+}
+
+.section-folded .closet-items {
+  grid-template-columns: 64px;
+}
+
+.closet-type {
+  position: relative;
+  cursor: pointer;
+  background-color : var(--color-card-header-background);
+  border-radius: var(--border-radius);
+  padding: 4px;
+
+  mat-icon {
+    vertical-align: top;
+  }
+}
+
+.closet-type-fold {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.closet-item {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+  border-radius: var(--border-radius);
+  background: var(--color-background);
+  border: 3px solid transparent;
+  border-width: 3px !important;
+  cursor: pointer;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.mb-vault {
+  margin-bottom: 48px;
+}
+
+.selected {border-color: var(--color-attention); }
+.warn { border-color: var(--color-danger-accent); }
+
+.vault-actions {
+  position: fixed;
+  bottom: var(--padding-content);
+  right: var(--padding-content);
+}

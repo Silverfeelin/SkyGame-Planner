@@ -22,6 +22,18 @@
   height: var(--item-size-small);
 }
 
+:host[data-size="auto"] {
+  width: var(--item-size-small);
+  height: var(--item-size-small);
+}
+
+@media screen and (min-width: 720px) {
+  :host[data-size="auto"] {
+    width: var(--item-size);
+    height: var(--item-size);
+  }
+}
+
 .img {
   width: 100%;
   height: 100%;

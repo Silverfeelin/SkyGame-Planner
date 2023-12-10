@@ -45,6 +45,7 @@ export class DataService {
   outfitRequestConfig!: IOutfitRequestConfig;
 
   guidMap = new Map<string, IGuid>();
+  itemIdMap = new Map<number, IItem>();
 
   readonly onData = new ReplaySubject<void>();
 
@@ -370,10 +371,14 @@ export class DataService {
     const ids = new Set<number>();
     this.itemConfig.items.forEach(item => {
       if (item.id) {
-        ids.has(item.id) && console.error('Duplicate item ID', item.id, item);
-        ids.add(item.id);
+        if (ids.has(item.id)) {
+          console.error('Duplicate item ID.', item.id, item);
+        } else {
+          ids.add(item.id);
+          this.itemIdMap.set(item.id, item);
+        }
       } else {
-        console.error('Item ID not defined', item);
+        console.error('Item ID not defined.', item);
       }
 
       item.unlocked ||= this._storageService.unlocked.has(item.guid);

@@ -79,6 +79,23 @@ button, .button {
   }
 }
 
+.button-action {
+  position: relative;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+
+  mat-icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .button-danger {
   color: var(--color-danger);
   background: var(--color-danger-background);

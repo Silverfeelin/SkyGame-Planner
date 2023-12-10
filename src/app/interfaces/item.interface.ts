@@ -94,4 +94,4 @@ export enum ItemSubtype {
 
 export type ItemGroup = 'Elder' | 'Season' | 'SeasonPass' | 'Ultimate';
 
-export type ItemSize = 'small' | 'medium' | 'default' | 'large';
+export type ItemSize = 'small' | 'medium' | 'default' | 'large' | 'auto';

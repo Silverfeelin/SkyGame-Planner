@@ -30,6 +30,7 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
+import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -63,6 +64,7 @@ const routes: Routes = [
   { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
   { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
   { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },
+  { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
   { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
 ];
 
