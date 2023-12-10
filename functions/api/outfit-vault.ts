@@ -96,9 +96,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   // Validate secret key.
   let key: string;
-  if (json.key) {
+  if (typeof(json.key) === 'string') {
     if (json.key.length > 100) { return invalidRequest('Invalid key.'); }
-    key = cyrb53(json.key).toString();
+    key = json.key.length ? cyrb53(json.key).toString() : undefined;
     delete json.key;
   }
 

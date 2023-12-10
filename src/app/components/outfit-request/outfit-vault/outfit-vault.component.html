@@ -80,7 +80,7 @@
           [class.selected]="selectionMap[item.guid]"
           [class.search-match]="searchResults?.[item.guid]"
         >
-          <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+          <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false"></app-item-icon>
         </div>
       </div>
 
@@ -128,9 +128,7 @@
           <div>
             <label for="txtDiscordLink">
               Discord message link:
-              <span class="c-accent link" ngbTooltip="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures." container="body" triggers="click">
-                (help)
-              </span>
+              <span class="text-link" ngbTooltip="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures." container="body" triggers="click">(help)</span>
             </label>
             <input id="txtDiscordLink" type="text" [(ngModel)]="sDiscordLink" (ngModelChange)="onDiscordLinkChange()">
             <div class="mt-half">
@@ -151,9 +149,7 @@
           <div>
             <label for="txtKey">
               Secret key:
-              <span class="c-accent link" ngbTooltip="By entering a unique key here you will be able to manage your submissions later. Use &quot;public&quot; to allow anyone to manage it." container="body" triggers="click">
-                (optional)
-              </span>
+              <span class="text-link" (click)="generateKey()">(generate)</span>&nbsp;<span class="text-link" ngbTooltip="By entering a unique key here you will be able to manage your submissions later. Use &quot;public&quot; to allow anyone to manage it." container="body" triggers="click">(help)</span>
             </label>
             <input id="txtKey" type="text" [(ngModel)]="sKey" [maxlength]="100">
           </div>
@@ -238,7 +234,7 @@
       [class.selected]="!isResult && item" [class.warn]="warn && !item" [class.no-point]="isResult"
       [ngbTooltip]="templateSelectionHover" container="body"
     >
-      <app-item-icon *ngIf="item" [item]="item" [size]="'auto'" class="selection-icon-img" [highlight]="true" [hoverHighlight]="false"></app-item-icon>
+      <app-item-icon *ngIf="item" [item]="item" [size]="'auto'" class="selection-icon-img" [opaque]="true" [hoverGlow]="false"></app-item-icon>
       <mat-icon *ngIf="!item" [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
     </div>
     <!-- Tooltip -->

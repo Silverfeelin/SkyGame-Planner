@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import dayjs from 'dayjs';
+import { nanoid } from 'nanoid';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -111,7 +112,7 @@ export class OutfitVaultComponent {
   hasSubmitRequiredItems = false;
   sDiscordLink = '';
   pDiscordLink = '';
-  sKey = localStorage.getItem('outfit-vault-key') ?? 'public';
+  sKey = localStorage.getItem('outfit-vault-key') ?? '';
   discordLinkValid = false;
 
   constructor(
@@ -312,6 +313,10 @@ export class OutfitVaultComponent {
     this.pDiscordLink = match ? `discord://-/${match[1]}` : '';
   }
 
+  generateKey(): void {
+    this.sKey = nanoid(20);
+  }
+
   submitOutfit(): void {
     if (this.isSubmitting) { return; }
     this.onDiscordLinkChange();
@@ -332,7 +337,7 @@ export class OutfitVaultComponent {
       necklaceId: this.selection[ItemType.Necklace]?.id,
       hatId: this.selection[ItemType.Hat]?.id,
       propId: this.selection[ItemType.Prop]?.id,
-      key: this.sKey || 'public'
+      key: this.sKey || ''
     };
 
     // Remove empty selections.
