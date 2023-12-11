@@ -5548,6 +5548,70 @@
       "name": "Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
     },
+    {
+      "id": 1967,
+      "guid": "BkvIh_1cID",
+      "type": "Special",
+      "name": "Hug",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
+    },
+    {
+      "id": 1968,
+      "guid": "LPhMFiY1Gn",
+      "type": "Quest",
+      "name": "Quest 5",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "id": 1969,
+      "guid": "9ZSG_CwRwt",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 1970,
+      "guid": "2htYztTTLh",
+      "type": "Quest",
+      "name": "Quest 6",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "id": 1971,
+      "guid": "_5Z1Ee33iH",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 1972,
+      "guid": "7NBQOMY8Os",
+      "type": "Quest",
+      "name": "Quest 7",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "id": 1973,
+      "guid": "N2BbtfMv-4",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 1974,
+      "guid": "LKCSYIoEKs",
+      "type": "Quest",
+      "name": "Quest 8",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "id": 1975,
+      "guid": "xB3Auq2DFR",
+      "name": "Hopeful Steward Hair",
+      "type": "Hair",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Revival-Hair-icon.png",
+      "order": 2904
+    },
     // Ultimates
     {
       "id": 647,

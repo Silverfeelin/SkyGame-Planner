@@ -1,4 +1,17 @@
 {
+  "Item": {
+    "prefix": "@item",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"$3\",",
+      "\t\"name\": \"$4\",",
+      "\t\"icon\": \"$5\"",
+      "},"
+    ],
+    "description": "Item"
+  },
   "IAP": {
     "prefix": "@iap",
     "body": [
