@@ -926,21 +926,30 @@ export class ClosetComponent implements OnDestroy {
 
     // Steps must be ordered, these numbers are only used to find the element in the HTML (data-step).
     const s = {
+      REQUEST: 0,
       ITEM: 1, ITEM_SECTION: 2, ITEM_COLOR: 3,
       COPY: 4, COPY_LINK: 5, COPY_IMAGE: 6, COPY_IMAGE_CLOSET: 7, COPY_IMAGE_REQUEST: 8, COPY_IMAGE_TEMPLATE: 9, COPY_IMAGE_BACKGROUND: 10,
-      OPTIONS: 100, CLOSET: 101, CLOSET_COLUMNS: 102, CLOSET_ONGOING: 103, CLOSET_SYNC: 104,
+      OPTIONS: 100, CLOSET_ITEMS: 101, CLOSET_MODIFY: 102, CLOSET_COLUMNS: 103, CLOSET_ONGOING: 104, CLOSET_SYNC: 105, CLOSET_DONE: 106,
       OPTION_FILTER: 121, OPTION_SIZE: 122, OPTION_IAP: 123, OPTION_RESET: 124, OPTION_SHUFFLE: 125, OPTION_SEARCH: 126,
-      LINK_COLLAGE: 901, LINK_REQUEST: 902, LINK_CLOSET: 903, LINK_HOME: 904
+      LINK_COLLAGE: 901, LINK_HOME: 904
     };
 
-    const steps: Array<Partial<SkyIntroStep>> = [
+    const steps: Array<Partial<SkyIntroStep>> = [];
+
+    if (this.requesting) {
+      steps.push({ sStep: s.REQUEST, title: 'Closet', intro: 'If you are trying to share your closet instead of creating a request, please visit this page. The page you\'re on right now is meant only for creating requests.'});
+    } else {
+      steps.push({ sStep: s.REQUEST, title: 'Request', intro: 'If you are trying to create a request instead of sharing your closet, please visit this page. Although you can create requests on this page it\'s meant for viewing or sharing your closet.' });
+    }
+
+    steps.push(...[
       { sStep: s.ITEM, title: 'Sky cosmetics', intro: 'Here you can see all cosmetics from Sky. You can create a request simply by clicking the icons to select them.' },
       { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
       { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
       { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 24 hours.' },
       { sStep: s.COPY_IMAGE, title: 'Copy image', intro: this.requesting ? 'An image will be copied to your clipboard. You can paste this image in Discord. The image highlights selected items making it easier to see them.' : 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
-    ];
+    ]);
 
     if (!this.requesting) {
       steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Copy closet', intro: 'Copying your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
@@ -952,11 +961,13 @@ export class ClosetComponent implements OnDestroy {
 
     steps.push({ sStep:s.OPTIONS, title: 'Options', intro: 'Various options to change what\'s displayed can be found here.' })
     if (!this.requesting) {
-      steps.push({ sStep: s.CLOSET, title: 'Modify closet', intro: 'You can modify the closet to show all items or only the items you have. This is recommended if you want to help with requests or share your closet.' });
+      steps.push({ sStep: s.CLOSET_ITEMS, title: 'Show items', intro: 'You can switch between showing all items or only the items you own.' });
+      steps.push({ sStep: s.CLOSET_MODIFY, title: 'Modify closet', intro: 'To change the items shown in your closet you can modify your closet here. In the next steps we\'ll go over these options.' });
       steps.push({ sStep: s.CLOSET_COLUMNS, title: 'Closet columns', intro: 'Depending on your device and orientation Sky will show a number of items in your closet per row. You can select that number here to make this page match Sky.' });
       steps.push({ sStep: s.CLOSET_ONGOING, title: 'Ongoing items', intro: 'In Sky it is possible to preview items from the ongoing season and event. By enabling this option these items will still be visible (slightly darkened) when showing only your items.' });
-      steps.push({ sStep: s.CLOSET_SYNC, title: 'Sync closet', intro: 'If you look at the rest of this website you\'ll be able to find spirit trees and IAPs to keep track of your unlocked items. When you keep track of progress this way you can sync the closet to use that progress.' });
-      steps.push({ sStep: s.CLOSET_SYNC, title: 'Sync closet', intro: 'You can also toggle items by clicking on them in the grid below while this panel is open. Afterwards you can click on done modifying to close this panel.' });
+      steps.push({ sStep: s.CLOSET_SYNC, title: 'Sync closet', intro: 'If you look at the rest of this website you\'ll be able to find spirit trees and IAPs. These can be used to keep track of your unlocked items. If you keep track of your progress this way you can sync this closet page to use that progress.' });
+      steps.push({ sStep: s.CLOSET_SYNC, title: 'Pick your items', intro: 'You can also choose to toggle items by clicking on them in the grid below while this \'Modify closet\' panel is open.' });
+      steps.push({ sStep: s.CLOSET_DONE, title: 'Done', intro: 'When you\'re done modifying your closet you can close the panel here.', disableInteraction: true });
     }
 
     !this.requesting && steps.push({ sStep: s.OPTION_FILTER, title: 'Filter items', intro: 'By enabling this option only the selected items will be shown. This makes it easier to see the items in a request.' })
@@ -966,10 +977,8 @@ export class ClosetComponent implements OnDestroy {
     steps.push({ sStep: s.OPTION_SHUFFLE, title: 'Shuffle', intro: 'Remove all items you\'ve selected and select one random item from each closet.' })
     steps.push({ sStep: s.OPTION_SEARCH, title: 'Search', intro: 'You can search for items here. Matching items will have a purple border. Item names often include the spirit name, for example \'Spinning Mentor Cape\'.' })
 
-    !this.requesting && steps.push({ sStep: s.LINK_COLLAGE, title: 'Collage tool', intro: 'This button will take you to a page where you can create a simple collage using screenshots from the game.' })
-    !this.requesting && steps.push({ sStep: s.LINK_REQUEST, title: 'Request page', intro: 'This button will take you to a page dedicated to creating requests. It is a simplified version of this page.' })
-    this.requesting && steps.push({ sStep: s.LINK_CLOSET, title: 'Closet page', intro: 'This button will take you to a page where you can modify your closet. It is an advanced version of this page.' })
-    this.requesting && steps.push({ sStep: s.LINK_HOME, title: 'Home', intro: 'This button will take you to the home page of the Sky Planner website.' })
+    !this.requesting && steps.push({ sStep: s.LINK_COLLAGE, title: 'Collage tool', intro: 'This button will take you to a page where you can create a simple collage using screenshots from the game.' });
+    this.requesting && steps.push({ sStep: s.LINK_HOME, title: 'Home', intro: 'This button will take you to the home page of the Sky Planner website.' });
 
     steps.forEach((step, i) => { step.step = i + 1; }); // Assign step order from array.
 
@@ -1009,7 +1018,7 @@ export class ClosetComponent implements OnDestroy {
         }
 
         // Show modifying closet during these steps.
-        if (step.sStep > s.CLOSET && step.sStep <= s.CLOSET_SYNC) {
+        if (step.sStep > s.CLOSET_MODIFY && step.sStep <= s.CLOSET_DONE) {
           !self.modifyingCloset && self.modifyCloset();
         } else {
           self.modifyingCloset && self.modifyCloset();

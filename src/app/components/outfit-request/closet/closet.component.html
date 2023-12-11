@@ -9,16 +9,8 @@
         <mat-icon class="menu-icon">photo</mat-icon>
         <span class="menu-label">Collage</span>
       </a>
-      <a class="button" href="/outfit-request/request" data-step="902" data-position="bottom-right-aligned">
-        <mat-icon class="menu-icon">add</mat-icon>
-        <span class="menu-label">Request</span>
-      </a>
     </div>
     <div class="btns-top btn-top-request" *ngIf="requesting">
-      <a class="button" href="/outfit-request/closet" data-step="903" data-position="bottom-right-aligned">
-        <mat-icon class="menu-icon">checkroom</mat-icon>
-        <span class="menu-label">Closet</span>
-      </a>
       <a class="button" href="/" data-step="904" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">home</mat-icon>
         <span class="menu-label">Home</span>
@@ -26,24 +18,47 @@
     </div>
   </div>
   <div class="sky-card-body">
-    <div class="container" data-step="100" data-position="bottom-left-aligned">
+    <div class="container">
       <div>
         First time? Try the
         <button type="button" (click)="startTour()" class="">
           <mat-icon class="menu-icon">explore</mat-icon>
-          <span class="menu-label">Tour</span>
+          <span class="menu-label">Tutorial</span>
         </button> to learn more about this page!
       </div>
-      <div class="sky-flex flex-wrap mt">
+      <div class="mt" data-step="0" data-position="bottom-left-aligned">
+        <ng-container *ngIf="requesting">
+          Please visit the
+          <a class="button" href="/outfit-request/closet" *ngIf="requesting" data-step="0" data-position="bottom-right-aligned">
+            <mat-icon class="menu-icon">checkroom</mat-icon>
+            <span class="menu-label">Closet</span>
+          </a>
+          page if you want to customize and share your closet. The current page is only used to create outfit requests!
+        </ng-container>
+        <ng-container *ngIf="!requesting">
+          Please visit the
+          <a class="button" href="/outfit-request/request" *ngIf="!requesting" data-step="0" data-position="bottom-right-aligned">
+            <mat-icon class="menu-icon">add</mat-icon>
+            <span class="menu-label">Request</span>
+          </a>
+          page if you want to create an outfit request.
+        </ng-container>
+      </div>
+    </div>
+    <div class="container mt" data-step="100" data-position="bottom-left-aligned">
+      <div class="sky-flex flex-wrap">
         <!-- Display mode. -->
-        <div class="button-group" *ngIf="!requesting" data-step="101" data-position="bottom-left-aligned">
+        <div class="button-group" *ngIf="!requesting" data-step="101">
           <button type="button" (click)="toggleCloset()">
             <mat-icon class="menu-icon">checkroom</mat-icon>
             <span class="menu-label">{{ closetMode === 'all' ? 'Show my items' : 'Show all items' }}</span>
           </button>
+        </div>
+        <!-- Modify-->
+        <div class="button-group" *ngIf="!requesting" data-step="102" data-position="bottom-left-aligned">
           <button type="button" (click)="modifyCloset()" [class.highlight]="modifyingCloset">
             <mat-icon class="menu-icon">manufacturing</mat-icon>
-            <span class="menu-label">Modify</span>
+            <span class="menu-label">Modify closet</span>
           </button>
         </div>
         <!-- Hide items not marked. -->
@@ -94,7 +109,7 @@
     <h2 class="h3">Modify closet</h2>
   </div>
   <div class="sky-card-body">
-    <div class="container" data-step="102" data-position="bottom-left-aligned">
+    <div class="container" data-step="103" data-position="bottom-left-aligned">
       Show items in columns. It is recommended to set this number to match your in-game closet.
       <div class="mt">
         <div class="button-group">
@@ -107,7 +122,7 @@
         </div>
       </div>
     </div>
-    <div class="container mt" data-step="103" data-position="bottom-left-aligned">
+    <div class="container mt" data-step="104" data-position="bottom-left-aligned">
       <p class="mb-0">
         During seasons and events you can preview items in-game before you own them. Include these in the closet when showing your own items?
       </p>
@@ -118,7 +133,7 @@
         </button>
       </div>
     </div>
-    <div class="container mt" data-step="104" data-position="bottom-left-aligned">
+    <div class="container mt" data-step="105" data-position="bottom-left-aligned">
       <p class="mb-0">
         Because Sky Planner is primarily an item tracker you can use your tracked items to keep the closet updated.<br/>
         You can also manually choose what items to show and hide. Simply click on any item below to hide it from your closet.
@@ -131,7 +146,7 @@
           </button>
           <button type="button" class="button-danger" (click)="resetSync()">Reset</button>
         </div>
-        <button type="button" class="" (click)="modifyCloset()">
+        <button type="button" class="" (click)="modifyCloset()" data-step="106" data-position="bottom-right-aligned">
           <mat-icon class="menu-icon">done</mat-icon>
           <span class="menu-label">Done modifying</span>
         </button>
