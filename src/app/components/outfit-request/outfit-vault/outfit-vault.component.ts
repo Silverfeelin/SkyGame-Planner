@@ -267,9 +267,11 @@ export class OutfitVaultComponent {
       }, {} as Selection<IItem>);
 
       // Add unofficial protocol link for opening links directly. Tested on Windows only.
+      const match = linkRegex.exec(resItem.link);
       if (this.isWindows) {
-        const match = linkRegex.exec(resItem.link);
         resItem.protocolLink = match ? `discord://-/${match[1]}` : '';
+      } else {
+        resItem.protocolLink = match ? `discord://discord.com/${match[1]}` : '';
       }
 
       return {
