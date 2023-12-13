@@ -184,21 +184,20 @@
           <ng-container *ngFor="let result of results; let i = index;">
             <div class="container">
               <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: result.items, wrap: true, warn: true, isResult: true}"></ng-container>
-              <div class="sky-flex flex-wrap mt">
+              <div class="sky-flex flex-wrap gap-half mt">
                 <a *ngIf="result.data.protocolLink" [href]="result.data.protocolLink" target="_blank" class="button">
-                  <mat-icon class="menu-icon">open_in_browser</mat-icon>
-                  <span class="menu-label">Open in Discord</span>
+                  <mat-icon class="menu-icon">desktop_windows</mat-icon>
+                  <span class="menu-label">Open on PC</span>
                 </a>
-                <div class="button-group">
-                  <a [href]="result.data.link" target="_blank" class="button">
-                    <mat-icon class="menu-icon">link</mat-icon>
-                    <span class="menu-label">Open link</span>
-                  </a>
-                  <button type="button" target="_blank" class="button" (click)="copyLink(i)"
-                    ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-                    <span class="">Copy</span>
-                  </button>
-                </div>
+                <a [href]="result.data.link" [attr.target]="isWindows ? '_blank' : undefined" class="button">
+                  <mat-icon class="menu-icon">open_in_browser</mat-icon>
+                  <span class="menu-label">Go to message</span>
+                </a>
+                <button type="button" target="_blank" class="button" (click)="copyLink(i)"
+                ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+                <mat-icon class="menu-icon">link</mat-icon>
+                  <span class="menu-label">Copy message link</span>
+                </button>
               </div>
             </div>
           </ng-container>

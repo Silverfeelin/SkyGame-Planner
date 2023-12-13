@@ -4,6 +4,7 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
 import { ItemHelper } from 'src/app/helpers/item-helper';
+import { WindowHelper } from 'src/app/helpers/window-helper';
 import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
@@ -97,6 +98,7 @@ export class OutfitVaultComponent {
 
   resultData?: IApiOutfits;
   results?: Array<IResult>;
+  isWindows = WindowHelper.isWindows();
 
   showMode: ShowMode = 'list';
 
@@ -264,8 +266,11 @@ export class OutfitVaultComponent {
         return map;
       }, {} as Selection<IItem>);
 
-      const match = linkRegex.exec(resItem.link);
-      resItem.protocolLink = match ? `discord://-/${match[1]}` : '';
+      // Add unofficial protocol link for opening links directly. Tested on Windows only.
+      if (this.isWindows) {
+        const match = linkRegex.exec(resItem.link);
+        resItem.protocolLink = match ? `discord://-/${match[1]}` : '';
+      }
 
       return {
         data: resItem,
