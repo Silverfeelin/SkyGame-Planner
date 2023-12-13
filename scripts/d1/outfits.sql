@@ -1,3 +1,5 @@
+SYNTAX ERROR -- Prevent "oops!"
+
 DROP TABLE IF EXISTS outfits;
 CREATE TABLE IF NOT EXISTS outfits (
   id integer PRIMARY KEY AUTOINCREMENT,
