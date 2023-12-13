@@ -189,10 +189,16 @@
                   <mat-icon class="menu-icon">open_in_browser</mat-icon>
                   <span class="menu-label">Open in Discord</span>
                 </a>
-                <a [href]="result.data.link" target="_blank" class="button">
-                  <mat-icon class="menu-icon">link</mat-icon>
-                  <span class="menu-label">Open in browser</span>
-                </a>
+                <div class="button-group">
+                  <a [href]="result.data.link" target="_blank" class="button">
+                    <mat-icon class="menu-icon">link</mat-icon>
+                    <span class="menu-label">Open link</span>
+                  </a>
+                  <button type="button" target="_blank" class="button" (click)="copyLink(i)"
+                    ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+                    <span class="">Copy</span>
+                  </button>
+                </div>
               </div>
             </div>
           </ng-container>

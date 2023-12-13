@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS outfits (
   maskId int NOT NULL,
   hairId int NOT NULL,
   capeId int NOT NULL,
-  shoesId int NULL,
-  faceAccessoryId int NULL,
-  necklaceId int NULL,
-  hatId int NULL,
-  propId int NULL,
+  shoesId int NOT NULL DEFAULT 0,
+  faceAccessoryId int NOT NULL DEFAULT 0,
+  necklaceId int NOT NULL DEFAULT 0,
+  hatId int NOT NULL DEFAULT 0,
+  propId int NOT NULL DEFAULT 0,
   ip text NOT NULL
 );
 

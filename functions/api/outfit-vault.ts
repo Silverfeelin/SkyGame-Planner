@@ -115,7 +115,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     if (key === 'link' || key === 'key') { continue; }
     if (!requiredKeys.has(key) && !optionalKeys.has(key)) { return invalidRequest('Invalid key.'); }
     if (json[key] && (typeof json[key] !== 'number' || json[key] > 99999)) { return invalidRequest('Invalid key value.'); }
-    json[key] ||= null;
+    json[key] ||= 0;
   }
 
   // Save outfit.

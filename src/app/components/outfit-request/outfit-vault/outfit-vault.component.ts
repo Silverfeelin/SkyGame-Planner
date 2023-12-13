@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
 import { ItemHelper } from 'src/app/helpers/item-helper';
@@ -46,6 +47,7 @@ type ShowMode = 'list' | 'result' | 'submit';
 })
 export class OutfitVaultComponent {
   @ViewChild('searchInput', { static: true }) input!: ElementRef<HTMLInputElement>;
+  @ViewChildren('ttCopyLnk') private readonly _ttCopyLnks?: QueryList<NgbTooltip>;
 
   columns = 6;
   itemSize: ItemSize = 'small';
@@ -377,6 +379,19 @@ export class OutfitVaultComponent {
     }).add(() => {
       this.isSubmitting = false;
       this._changeDetectorRef.markForCheck();
+    });
+  }
+
+  copyLink(i: number): void {
+    const link = this.results?.at(i)?.data?.link;
+    if (!link) { return; }
+    const tooltip = this._ttCopyLnks?.length == this.results?.length ? this._ttCopyLnks?.find((tt, ix) => ix === i) : undefined;
+    navigator.clipboard.writeText(link).then(() => {
+      tooltip?.open();
+      setTimeout(() => { tooltip?.close(); }, 1000);
+    }).catch(e => {
+      console.error(e);
+      alert('Copying link failed.');
     });
   }
 
