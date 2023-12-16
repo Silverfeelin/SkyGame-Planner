@@ -16529,6 +16529,48 @@
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape" },
       "order": 10504
     },
+    // #region Days of Feast (2023)
+    {
+      "id": 1976,
+      "guid": "1ALFFNohD1",
+      "name": "Winter Pinecone Hair Clip",
+      "type": "Hat",
+      "icon": "/assets/game/items/1976.png",
+      "order": 11522
+    },
+    {
+      "id": 1977,
+      "guid": "9-5LbKZZQz",
+      "name": "Winter Feast Snowboard",
+      "type": "Held",
+      "icon": "/assets/game/items/1977.png",
+      "order": 4101
+    },
+    {
+      "id": 1978,
+      "guid": "dvoSMxPFL2",
+      "name": "Course Creation Prop",
+      "type": "Prop",
+      "icon": "/assets/game/items/1978.png",
+      "order": 6001
+    },
+    {
+      "id": 1979,
+      "guid": "pT4AVkYVZP",
+      "name": "Cozy Hermit Boots",
+      "type": "Shoes",
+      "icon": "/assets/game/items/1979.png",
+      "order": 10251
+    },
+    {
+      "id": 1980,
+      "guid": "quSFDuWUoV",
+      "name": "Winter Quilted Cape",
+      "type": "Cape",
+      "icon": "/assets/game/items/1980.png",
+      "order": 10505
+    },
+    // #endregion
     // #endregion
 
     // #region Days of Healing (2020)
