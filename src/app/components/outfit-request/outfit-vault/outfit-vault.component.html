@@ -130,7 +130,7 @@
               Discord message link:
               <span class="text-link" ngbTooltip="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures." container="body" triggers="click">(help)</span>
             </label>
-            <input id="txtDiscordLink" type="text" [(ngModel)]="sDiscordLink" (ngModelChange)="onDiscordLinkChange()">
+            <input id="txtDiscordLink" type="text" [(ngModel)]="sDiscordLink" (ngModelChange)="onDiscordLinkChange()" autocomplete="off">
             <div class="mt-half">
               Please verify the link works before submitting!<br/>
               <ng-container *ngIf="pDiscordLink">
@@ -144,6 +144,31 @@
                 </a>
               </ng-container>
             </div>
+          </div>
+          <!-- Size -->
+          <div>
+            <label for="selSize">Size:</label>
+            <select id="selSize" [(ngModel)]="sSize">
+              <option value="0"></option>
+              <option value="1">{{sizes[1]}}</option>
+              <option value="2">{{sizes[2]}}</option>
+              <option value="3">{{sizes[3]}}</option>
+              <option value="4">{{sizes[4]}}</option>
+              <option value="5">{{sizes[5]}}</option>
+              <option value="6">{{sizes[6]}}</option>
+              <option value="7">{{sizes[7]}}</option>
+            </select>
+          </div>
+          <!-- Lighting -->
+          <div>
+            <label for="sLight">Lighting:</label>
+            <select id="sLight" [(ngModel)]="sLight">
+              <option value="0"></option>
+              <option value="1">{{ lightings[1] }}</option>
+              <option value="2">{{ lightings[2] }}</option>
+              <option value="3">{{ lightings[3] }}</option>
+              <option value="4">{{ lightings[4] }}</option>
+            </select>
           </div>
           <!-- Key -->
           <div>
@@ -183,7 +208,23 @@
         <ng-container *ngIf="resultData">
           <ng-container *ngFor="let result of results; let i = index;">
             <div class="container">
-              <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: result.items, wrap: true, warn: true, isResult: true}"></ng-container>
+              <!-- -->
+              <div class="mt">
+                <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: result.items, wrap: true, warn: true, isResult: true}"></ng-container>
+              </div>
+              <!-- -->
+              <hr class="mt mb-0"/>
+              <div class="sky-flex flex-wrap mt">
+                <div class="" ngbTooltip="Player size" container="body">
+                  <mat-icon svgIcon="resize" class="menu-icon"></mat-icon>
+                  <div class="menu-label">{{ result.data.sizeId && sizes[result.data.sizeId] || sizes[0] }}</div>
+                </div>|
+                <div class="" ngbTooltip="Lighting" container="body">
+                  <mat-icon svgIcon="bonfire" class="menu-icon"></mat-icon>
+                  <div class="menu-label">{{ result.data.lightingId && lightings[result.data.lightingId] || lightings[0] }}</div>
+                </div>
+              </div>
+              <!-- -->
               <div class="sky-flex flex-wrap gap-half mt">
                 <a *ngIf="result.data.protocolLink" [href]="result.data.protocolLink" target="_blank" class="button">
                   <mat-icon class="menu-icon">desktop_windows</mat-icon>
@@ -198,6 +239,7 @@
                 <mat-icon class="menu-icon">link</mat-icon>
                   <span class="menu-label">Copy message link</span>
                 </button>
+                <button class="button button-danger" (click)="report(result)">Report</button>
               </div>
             </div>
           </ng-container>

@@ -5,6 +5,7 @@ interface Env {
 interface IOutfit {
   id: number;
   link: string;
+  // Outfit
   outfitId: number;
   maskId: number;
   hairId: number;
@@ -14,6 +15,9 @@ interface IOutfit {
   necklaceId?: number;
   hatId?: number;
   propId?: number;
+  // Metadata
+  sizeId?: number;
+  lightingId?: number;
   key?: string;
 }
 
@@ -41,24 +45,24 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Add a where clause to the SQL query if the query parameter is present.
   const url = new URL(context.request.url);
-  const addWhere = (q: string, c: string): boolean => {
-    const value = +url.searchParams.get(q) || undefined;
+  const addSqlWhere = (key: string): boolean => {
+    const value = +url.searchParams.get(key) || undefined;
     if (!value) { return false; }
-    sqlWhere += `AND ${c} = ?`;
+    sqlWhere += `AND ${key} = ?`;
     sqlValues.push(value);
     return true;
   };
 
-  // Check at least one required parameter is present.
-  const requiredParams = { outfitId: 'o', maskId: 'm', hairId: 'h', capeId: 'c' };
-  Object.keys(requiredParams).forEach(key => addWhere(requiredParams[key], key));
+  // Check at least one outfit parameter is present.
+  const itemParams = [ 'outfitId', 'maskId', 'hairId', 'capeId', 'shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId' ];
+  itemParams.forEach(key => addSqlWhere(key));
   if (sqlValues.length === 0) {
-    return invalidRequest('Missing a required parameter.');
+    return invalidRequest('Missing an item selection.');
   }
 
-  // Check optional parameters.
-  const optionalParams = { shoesId: 's', faceAccessoryId: 'f', necklaceId: 'n', hatId: 't', propId: 'p' };
-  Object.keys(optionalParams).forEach(key => addWhere(optionalParams[key], key));
+  // Add size and lighting.
+  addSqlWhere('sizeId');
+  addSqlWhere('lightingId');
 
   // Check page.
   const pageSize = 100;
@@ -68,7 +72,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Get pageSize records matching the item selection.
   const sql = `
-    SELECT id, date, link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
+    SELECT id, date, link, sizeId, lightingId, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
     FROM outfits
     WHERE 1=1 ${sqlWhere}
     ORDER BY id DESC
@@ -104,18 +108,27 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   const requiredKeys = new Set(['outfitId', 'maskId', 'hairId', 'capeId']);
   const optionalKeys = new Set(['shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId']);
+  const extraKeys = new Set(['link', 'sizeId', 'lightingId']);
 
-  // Check required keys.
+  // Check required keys. Outfits always have these item types.
   for (const key of requiredKeys.values()) {
-    if (!json[key]) { return invalidRequest('Missing key.'); }
+    if (!json[key]) { return invalidRequest('Missing item.'); }
   }
 
-  // Validate key values.
+  // Validate items.
   for (const key of Object.keys(json)) {
-    if (key === 'link' || key === 'key') { continue; }
+    if (extraKeys.has(key)) { continue; }
     if (!requiredKeys.has(key) && !optionalKeys.has(key)) { return invalidRequest('Invalid key.'); }
     if (json[key] && (typeof json[key] !== 'number' || json[key] > 99999)) { return invalidRequest('Invalid key value.'); }
     json[key] ||= 0;
+  }
+
+  // Validate metadata.
+  if (json.sizeId && (typeof json.sizeId !== 'number' || json.sizeId < 0 || json.sizeId > 99999)) {
+    return invalidRequest('Invalid size.');
+  }
+  if (json.lightingId && (typeof json.lightingId !== 'number' || json.lightingId < 0 || json.lightingId > 99999)) {
+    return invalidRequest('Invalid lighting.');
   }
 
   // Save outfit.

@@ -27,6 +27,8 @@ interface IApiOutfit {
   necklaceId?: number;
   hatId?: number;
   propId?: number;
+  sizeId?: number;
+  lightingId?: number;
   key?: string;
 };
 
@@ -54,9 +56,12 @@ export class OutfitVaultComponent {
   itemSize: ItemSize = 'small';
   itemSizePx = 32;
 
-  requiredParams: { [key in ItemType]?: string } = { [ItemType.Outfit]: 'o', [ItemType.Mask]: 'm', [ItemType.Hair]: 'h', [ItemType.Cape]: 'c' };
-  optionalParams: { [key in ItemType]?: string } = { [ItemType.Shoes]: 's', [ItemType.FaceAccessory]: 'f', [ItemType.Necklace]: 'n', [ItemType.Hat]: 't', [ItemType.Prop]: 'p' };
+  requiredParams: { [key in ItemType]?: string } = { [ItemType.Outfit]: 'outfitId', [ItemType.Mask]: 'maskId', [ItemType.Hair]: 'hairId', [ItemType.Cape]: 'capeId' };
+  optionalParams: { [key in ItemType]?: string } = { [ItemType.Shoes]: 'shoesId', [ItemType.FaceAccessory]: 'faceAccessoryId', [ItemType.Necklace]: 'necklaceId', [ItemType.Hat]: 'hatId', [ItemType.Prop]: 'propId' };
   paramTypes: { [key: string]: ItemType } = { outfitId: ItemType.Outfit, maskId: ItemType.Mask, hairId: ItemType.Hair, capeId: ItemType.Cape, shoesId: ItemType.Shoes, faceAccessoryId: ItemType.FaceAccessory, necklaceId: ItemType.Necklace, hatId: ItemType.Hat, propId: ItemType.Prop };
+
+  sizes = [ 'Unknown size', 'Chibi', 'Tiny spell', 'Below average', 'Average', 'Above average', 'Tall', 'Huge spell' ];
+  lightings = [ 'Unknown lighting', 'Day', 'Sunset', 'Night', 'Forest' ];
 
   itemTypes: Array<ItemType> = [
     ItemType.Outfit, ItemType.Shoes,
@@ -78,16 +83,10 @@ export class OutfitVaultComponent {
   sectionFolded: Array<boolean> = [];
 
   itemIcons: { [key: string]: string } = {
-    'Outfit': 'outfit',
-    'Shoes': 'shoes',
-    'Mask': 'mask',
-    'FaceAccessory': 'face-acc',
-    'Necklace': 'necklace',
-    'Hair': 'hair',
-    'Hat': 'hat',
-    'Cape': 'cape',
-    'Held': 'held',
-    'Prop': 'prop'
+    ['Outfit']: 'outfit', ['Shoes']: 'shoes',
+    ['Mask']: 'mask', ['FaceAccessory']: 'face-acc', ['Necklace']: 'necklace',
+    ['Hair']: 'hair', ['Hat']: 'hat',
+    ['Cape']: 'cape', ['Held']: 'held', ['Prop']: 'prop'
   };
   items: { [type: string]: Array<IItem> } = {};
   itemMap: { [guid: string]: IItem } = {};
@@ -117,6 +116,8 @@ export class OutfitVaultComponent {
   sDiscordLink = '';
   pDiscordLink = '';
   sKey = localStorage.getItem('outfit-vault-key') ?? '';
+  sSize = localStorage.getItem('outfit-vault-size') ?? '0'
+  sLight = localStorage.getItem('outfit-vault-light') ?? '0';
   discordLinkValid = false;
 
   constructor(
@@ -219,8 +220,8 @@ export class OutfitVaultComponent {
   }
 
   findOutfits(): void {
-    if (Object.keys(this.requiredParams).every(type => !this.selection[type as ItemType])) {
-      alert('Please select at least an outfit, mask, hairstyle or cape.');
+    if (!Object.values(this.selection).some(s => s && !this.nonItems[s.id!])) {
+      alert('Please select some items to search for outfits.');
       return;
     }
 
@@ -284,6 +285,7 @@ export class OutfitVaultComponent {
 
   showSubmitOutfit(): void {
     this.showMode = 'submit';
+    this.resetDiscordLink();
     this.hasSubmitRequiredItems = Object.keys(this.requiredParams).every(type => !!this.selection[type as ItemType]);
   }
 
@@ -313,11 +315,17 @@ export class OutfitVaultComponent {
     this.submitUnderstood = true;
   }
 
+  resetDiscordLink(): void {
+    this.sDiscordLink = '';
+    this.pDiscordLink = '';
+    this.discordLinkValid = false;
+  }
+
   onDiscordLinkChange(): void {
     const linkRegex = /^https:\/\/discord\.com\/(channels\/575762611111592007\/\d{1,32}\/\d{1,32})$/;
     const match = linkRegex.exec(this.sDiscordLink);
     this.discordLinkValid = !!match;
-    this.pDiscordLink = match ? `discord://-/${match[1]}` : '';
+    this.pDiscordLink = this.isWindows && match ? `discord://-/${match[1]}` : '';
   }
 
   generateKey(): void {
@@ -332,6 +340,8 @@ export class OutfitVaultComponent {
       return;
     }
 
+    if (!confirm('Is all information you entered correct?')) { return; }
+
     // Model
     const model: IApiOutfit = {
       link: this.sDiscordLink,
@@ -344,6 +354,8 @@ export class OutfitVaultComponent {
       necklaceId: this.selection[ItemType.Necklace]?.id,
       hatId: this.selection[ItemType.Hat]?.id,
       propId: this.selection[ItemType.Prop]?.id,
+      lightingId: +this.sLight || 0,
+      sizeId: +this.sSize || 0,
       key: this.sKey || ''
     };
 
@@ -362,14 +374,14 @@ export class OutfitVaultComponent {
 
     // Save key for next time.
     localStorage.setItem('outfit-vault-key', this.sKey);
+    localStorage.setItem('outfit-vault-size', this.sSize);
+    localStorage.setItem('outfit-vault-light', this.sLight);
 
     this.isSubmitting = true;
     this._http.post('/api/outfit-vault', model, { responseType: 'json' }).subscribe({
       next: (e) => {
         console.log(e);
-        this.sDiscordLink = '';
-        this.pDiscordLink = '';
-        this.discordLinkValid = false;
+        this.resetDiscordLink();
         this._changeDetectorRef.markForCheck();
         setTimeout(() => {
           alert('Successfully submitted outfit! Thank you for the contribution.');
@@ -398,6 +410,11 @@ export class OutfitVaultComponent {
       console.error(e);
       alert('Copying link failed.');
     });
+  }
+
+  report(result: IResult): void {
+    if (!result.data?.id) { return; }
+    prompt('Send this message to Silverfeelin on Discord to report this submission. Please add a brief description why the submission is incorrect!', `I'm reporting outfit vault submission: \`${result.data.id}\` with the link: <${result.data.link}>. Reason: `);
   }
 
   private initializeItems(): void {
