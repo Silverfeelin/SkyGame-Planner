@@ -1679,6 +1679,12 @@
       "type": "Event",
       "name": "Event Staff (IGC)"
     },
+    // Unconfirmed placeholder
+    {
+      "guid": "U9vUspUuRp",
+      "type": "Event",
+      "name": "Placeholder"
+    },
     // Days of Summer
     {
       "guid": "aMY1ZPzcEx",
