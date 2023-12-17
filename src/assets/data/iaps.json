@@ -1408,6 +1408,24 @@
       ]
     },
     // #endregion
+    // #region Days of Feast (2023)
+    {
+      "guid": "f2l8flrTXW",
+      "name": "Winter Quilted Cape",
+      "price": 14.99,
+      "items": [
+        "quSFDuWUoV"
+      ]
+    },
+    {
+      "guid": "UOg9ZA2scX",
+      "name": "Cozy Hermit Boots",
+      "price": 6.99,
+      "items": [
+        "pT4AVkYVZP"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mec9z8iJUX",

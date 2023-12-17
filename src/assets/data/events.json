@@ -602,8 +602,11 @@
           "date": { "day": 18, "month": 12, "year": 2023 },
           "endDate": { "day": 7, "month": 1, "year": 2024 },
           "shops": [
+            "lNLRe3Rj6g"
           ],
           "spirits": [
+            {	"guid": "QxEguod_7-", "spirit": "gDAPHT2NBG", "tree": "jJU_PYq-f6" },
+            {	"guid": "fApfYKwKAR", "spirit": "tKeCcn57So", "tree": "TMkvtnTJpH" },
           ]
         }
       ],

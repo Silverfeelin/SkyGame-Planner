@@ -16547,12 +16547,26 @@
       "order": 4101
     },
     {
+      "id": 1981,
+      "guid": "PedXtZNCdm",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
       "id": 1978,
       "guid": "dvoSMxPFL2",
       "name": "Course Creation Prop",
       "type": "Prop",
       "icon": "/assets/game/items/1978.png",
       "order": 6001
+    },
+    {
+      "id": 1982,
+      "guid": "9wdVZNLu1I",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     {
       "id": 1979,

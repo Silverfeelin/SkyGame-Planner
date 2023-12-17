@@ -17412,6 +17412,39 @@
       "c": 50
     },
     // #endregion
+    // #region Days of Feast (2023)
+    // Event Currency
+    {
+      "guid": "l0lL5ysOr0",
+      "item": "PedXtZNCdm",
+      "c": 5,
+      "nw": "wD0if3iloI",
+      "n": "_NCC6nNRUs"
+    },
+    {
+      "guid": "wD0if3iloI",
+      "item": "9-5LbKZZQz",
+      "c": null,
+      "ec": 44
+    },
+    {
+      "guid": "_NCC6nNRUs",
+      "item": "1ALFFNohD1",
+      "ec": 19
+    },
+    // Course Prop
+    {
+      "guid": "O2OgKg3p2H",
+      "item": "9wdVZNLu1I",
+      "c": 5,
+      "n": "C8jAP0qGBl"
+    },
+    {
+      "guid": "C8jAP0qGBl",
+      "item": "dvoSMxPFL2",
+      "c": 150
+    },
+    // #endregion
     // #region Days of Summer (2021)
     {
       "guid": "M55c-swNeS",
