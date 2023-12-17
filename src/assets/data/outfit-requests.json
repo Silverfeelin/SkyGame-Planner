@@ -5,8 +5,8 @@
       "label": "Laila's selection",
       "info": "These background are created and generously provided by Laila (Discord: _laila__).",
       "attribution": "Background by Laila",
-      "default": true,
       "backgrounds": [
+        { "guid": "owJlS7j735", "default": true, "url": "/assets/external/laila/fireworks.webp", "filter": "brightness(0.6)" },
         { "guid": "5MTlKYxyYG", "url": "/assets/external/laila/harmony.webp", "filter": "brightness(0.6)" },
         { "guid": "oz08DPNhGv", "url": "/assets/external/laila/rainbow.webp", "filter": "brightness(0.6)" },
         { "guid": "Bc9cwnsnpC", "url": "/assets/external/laila/coliseum.webp", "filter": "brightness(0.6)" },
