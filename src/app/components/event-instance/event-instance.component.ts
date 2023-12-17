@@ -24,6 +24,9 @@ export class EventInstanceComponent implements OnDestroy {
   highlightItem?: string;
   highlightIap?: string;
 
+  previousInstance?: IEventInstance;
+  nextInstance?: IEventInstance;
+
   c: number = 0;
   cLeft: number = 0;
   ec: number = 0;
@@ -67,6 +70,10 @@ export class EventInstanceComponent implements OnDestroy {
     this.instance = this._dataService.guidMap.get(guid!) as IEventInstance;
     this.state = DateHelper.getStateFromPeriod(this.instance.date, this.instance.endDate);
     this.shops = this.instance.shops ? [...this.instance.shops] : undefined;
+
+    const iInstance = this.instance.event?.instances?.indexOf(this.instance) ?? -1;
+    this.previousInstance = iInstance >= 0 ? this.instance.event!.instances![iInstance - 1] : undefined;
+    this.nextInstance = iInstance >= 0 ? this.instance.event!.instances![iInstance + 1] : undefined;
 
     // Sort shops to prioritize ones with new items.
     this.shops?.sort((a, b) => {
