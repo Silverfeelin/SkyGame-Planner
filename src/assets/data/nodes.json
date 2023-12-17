@@ -17412,6 +17412,138 @@
       "c": 50
     },
     // #endregion
+    // #region Days of Feast (2023)
+    // Event Currency
+    {
+      "guid": "l0lL5ysOr0",
+      "item": "PedXtZNCdm",
+      "c": 5,
+      "nw": "wD0if3iloI",
+      "n": "_NCC6nNRUs"
+    },
+    {
+      "guid": "wD0if3iloI",
+      "item": "9-5LbKZZQz",
+      "c": null,
+      "ec": 44
+    },
+    {
+      "guid": "_NCC6nNRUs",
+      "item": "1ALFFNohD1",
+      "ec": 19
+    },
+    // Course Prop
+    {
+      "guid": "O2OgKg3p2H",
+      "item": "9wdVZNLu1I",
+      "c": 5,
+      "n": "C8jAP0qGBl"
+    },
+    {
+      "guid": "C8jAP0qGBl",
+      "item": "dvoSMxPFL2",
+      "c": 150
+    },
+    // Past
+    {
+      "guid": "0WLDYtlqyt",
+      "item": "9N8OVpagTM",
+      "nw": "n8HEDZJAVZ",
+      "n": "itg4623Al1"
+    },
+    {
+      "guid": "n8HEDZJAVZ",
+      "item": "ZvfG2eU17I",
+      "c": 120
+    },
+    {
+      "guid": "itg4623Al1",
+      "item": "TLljjPrjAq",
+      "c": 60
+    },
+    {
+      "guid": "MkPG2w_vGs",
+      "item": "pI8jvyHkY1",
+      "c": 5,
+      "nw": "4DGwH6QUC3",
+      "n": "BHk67XVeOR",
+      "ne": "jY0lf2kqPj"
+    },
+    {
+      "guid": "4DGwH6QUC3",
+      "item": "Gsl445SG4s",
+      "c": 10
+    },
+    {
+      "guid": "jY0lf2kqPj",
+      "item": "UuP-Vujj8D",
+      "c": 10
+    },
+    {
+      "guid": "BHk67XVeOR",
+      "item": "l-4I9LgjeL",
+      "c": 5,
+      "nw": "r_QGpUYdf5",
+      "n": "Pijk4FceZA"
+    },
+    {
+      "guid": "r_QGpUYdf5",
+      "item": "c0_xJdJKvM",
+      "c": 50
+    },
+    {
+      "guid": "Pijk4FceZA",
+      "item": "hZr0q9nYbz",
+      "h": 20
+    },
+    {
+      "guid": "bXvejgWpLD",
+      "item": "FG23AJzDOD",
+      "c": 2,
+      "nw": "oxZ9ieWk9j",
+      "n": "xZBvT0dYl0"
+    },
+    {
+      "guid": "oxZ9ieWk9j",
+      "item": "jbcKW_vibd",
+      "c": 3
+    },
+    {
+      "guid": "xZBvT0dYl0",
+      "item": "7lrenJRCtn",
+      "c": 2,
+      "nw": "2imLxaBlnm",
+      "n": "ljFWJ5bfU2"
+    },
+    {
+      "guid": "2imLxaBlnm",
+      "item": "RFMVpbZOil",
+      "c": 15
+    },
+    {
+      "guid": "ljFWJ5bfU2",
+      "item": "Rljse8NQ2x",
+      "c": 2,
+      "nw": "xQzvljgZ0F",
+      "n": "qyODMdLut9"
+    },
+    {
+      "guid": "xQzvljgZ0F",
+      "item": "GoESQXsRjl",
+      "c": 65
+    },
+    {
+      "guid": "qyODMdLut9",
+      "item": "m28yndfnC9",
+      "c": 2,
+      "n": "26t2aKN98c"
+    },
+    {
+      "guid": "26t2aKN98c",
+      "item": "oHChsGl8AZ",
+      "c": 150
+    },
+    // #endregion
     // #region Days of Summer (2021)
     {
       "guid": "M55c-swNeS",

@@ -8,7 +8,20 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <!-- Wiki -->
-      <app-wiki-link [wiki]="instance.event._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
+      <app-wiki-link [wiki]="instance.event._wiki" [aClass]="'container ' + (!!previousInstance !== !!nextInstance ? '' : 'colspan-2')"></app-wiki-link>
+      <!-- Prev next -->
+      <a class="container" *ngIf="previousInstance" [routerLink]="['/event-instance', previousInstance.guid]">
+        <mat-icon class="menu-icon">arrow_back</mat-icon>
+        <span class="menu-label">
+          Previous year
+        </span>
+      </a>
+      <a class="container" *ngIf="nextInstance" [routerLink]="['/event-instance', nextInstance.guid]">
+        <mat-icon class="menu-icon">arrow_forward</mat-icon>
+        <span class="menu-label">
+          Next year
+        </span>
+      </a>
       <!-- Date -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>
