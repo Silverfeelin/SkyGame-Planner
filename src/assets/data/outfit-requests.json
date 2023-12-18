@@ -6,7 +6,7 @@
       "info": "These background are created and generously provided by Laila (Discord: _laila__).",
       "attribution": "Background by Laila",
       "backgrounds": [
-        { "guid": "owJlS7j735", "default": true, "url": "/assets/external/laila/fireworks.webp", "filter": "brightness(0.6)" },
+        { "guid": "owJlS7j735", "url": "/assets/external/laila/fireworks.webp", "filter": "brightness(0.6)" },
         { "guid": "5MTlKYxyYG", "url": "/assets/external/laila/harmony.webp", "filter": "brightness(0.6)" },
         { "guid": "oz08DPNhGv", "url": "/assets/external/laila/rainbow.webp", "filter": "brightness(0.6)" },
         { "guid": "Bc9cwnsnpC", "url": "/assets/external/laila/coliseum.webp", "filter": "brightness(0.6)" },
@@ -32,6 +32,7 @@
         { "guid": "fF-omLGrQt", "url": "/assets/game/background/reef.webp" },
         { "guid": "hfqMLetkgc", "url": "/assets/game/background/vault.webp" },
         { "guid": "7uerJG-AHt", "url": "/assets/game/background/firework.webp", "filter": "brightness(0.7) blur(2px)" },
+        { "guid": "IGu95wRo-L", "url": "/assets/game/background/feast2023.webp", "filter": "brightness(0.8) blur(2px)" }
       ]
     }
   }

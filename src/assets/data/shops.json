@@ -645,8 +645,7 @@
     // #region Days of Feast (2023)
     {
       "guid": "lNLRe3Rj6g",
-      "type": "Object",
-      "name": "Unknown",
+      "type": "Store",
       "iaps": [
         "f2l8flrTXW",
         "UOg9ZA2scX"
@@ -655,7 +654,7 @@
     {
       "guid": "9b6uLsot0i",
       "type": "Object",
-      "name": "Unknown",
+      "name": "Aviary Event Store",
       "iaps": [
         "Ljr8ZNNJh_",
         "195bMrG3JB"
@@ -664,7 +663,7 @@
     {
       "guid": "MXxF9y1GLy",
       "type": "Object",
-      "name": "Unknown",
+      "name": "Winter Home Igloo Shelf",
       "iaps": [
         "3xQHsmZv-e",
         "r1HlatiBxR",
@@ -673,8 +672,8 @@
     },
     {
       "guid": "dndaVdJd5K",
-      "type": "Object",
-      "name": "Unknown",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
       "iaps": [
         "M6omKyJJvP",
         "xl2vK3sERM",
