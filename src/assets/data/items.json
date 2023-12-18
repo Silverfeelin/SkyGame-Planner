@@ -16536,7 +16536,7 @@
       "name": "Winter Pinecone Hair Clip",
       "type": "Hat",
       "icon": "/assets/game/items/1976.png",
-      "order": 11522
+      "order": 11512
     },
     {
       "id": 1977,
@@ -16583,6 +16583,13 @@
       "type": "Cape",
       "icon": "/assets/game/items/1980.png",
       "order": 10505
+    },
+    {
+      "id": 1983,
+      "guid": "XhenTKce1d",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     // #endregion
     // #endregion
@@ -17100,7 +17107,7 @@
       "name": "Moth Antennae",
       "icon": "/assets/game/items/1961.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
-      "order": 11512
+      "order": 11522
     },
     {
       "id": 1962,
