@@ -7707,7 +7707,7 @@
       "c": 48
     },
     // #endregion
-    // Festival Spin Dancer
+    // #region Festival Spin Dancer
     {
       "guid": "QsIyX1p15K",
       "item": "72q94N8VCj",
@@ -7890,6 +7890,78 @@
       "item": "kmgKsVBs4o",
       "c": 65
     },
+    // TS 103
+    {
+      "guid": "00SVPQ4X2a",
+      "item": "72q94N8VCj",
+      "nw": "ReZxsJmdSn",
+      "n": "WVPNAqhqzJ"
+    },
+    {
+      "guid": "ReZxsJmdSn",
+      "item": "Uszoh-ONkR",
+      "h": 4
+    },
+    {
+      "guid": "WVPNAqhqzJ",
+      "item": "Uo7t1apko6",
+      "c": 5,
+      "nw": "bUU5tzuspW",
+      "n": "G7-OcjrMMU",
+      "ne": "7W8n47FVtM"
+    },
+    {
+      "guid": "bUU5tzuspW",
+      "item": "4XuHymnqlr",
+      "c": 15
+    },
+    {
+      "guid": "7W8n47FVtM",
+      "item": "UiAXJpkHYm",
+      "c": 3
+    },
+    {
+      "guid": "G7-OcjrMMU",
+      "item": "EAFp1hfc6-",
+      "ac": 2,
+      "n": "2thXOimb13"
+    },
+    {
+      "guid": "2thXOimb13",
+      "item": "ZaNb7p2iqw",
+      "h": 5,
+      "nw": "_vUfH57LSw",
+      "n": "ckz1WI6pOP"
+    },
+    {
+      "guid": "_vUfH57LSw",
+      "item": "9v5mmfY2I4",
+      "h": 10
+    },
+    {
+      "guid": "ckz1WI6pOP",
+      "item": "fD5KSC2ILf",
+      "c": 5,
+      "nw": "lLl9y2xVXV",
+      "n": "LvAjQS3dvy",
+      "ne": "M_xM0rW_7p"
+    },
+    {
+      "guid": "lLl9y2xVXV",
+      "item": "stQCebAgsm",
+      "c": 34
+    },
+    {
+      "guid": "M_xM0rW_7p",
+      "item": "6PvpUYPLPO",
+      "c": 30
+    },
+    {
+      "guid": "LvAjQS3dvy",
+      "item": "kmgKsVBs4o",
+      "c": 65
+    },
+    // #endregion
     // #region Admiring Actor
     {
       "guid": "mnR3OjpKYr",
