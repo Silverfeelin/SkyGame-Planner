@@ -5612,6 +5612,20 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Revival-Hair-icon.png",
       "order": 2904
     },
+    {
+      "id": 1984,
+      "guid": "C2QyP140Rm",
+      "type": "Quest",
+      "name": "Quest 9",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
+    {
+      "id": 1985,
+      "guid": "6J0eF-rleF",
+      "type": "Quest",
+      "name": "Quest 10",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    },
     // Ultimates
     {
       "id": 647,

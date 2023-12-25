@@ -39,6 +39,16 @@
     ],
     "description": "IAP"
   },
+  "Node": {
+    "prefix": "@node",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"item\": \"$2\",",
+      "\t$3",
+      "},"
+    ],
+  }
   "Shop": {
     "prefix": "@shop",
     "body": [
