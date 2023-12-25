@@ -16549,7 +16549,7 @@
       "guid": "1ALFFNohD1",
       "name": "Winter Pinecone Hair Clip",
       "type": "Hat",
-      "icon": "/assets/game/items/1976.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Winter-Pinecone-Headpiece-icon.png",
       "order": 11512
     },
     {
@@ -16557,7 +16557,7 @@
       "guid": "9-5LbKZZQz",
       "name": "Winter Feast Snowboard",
       "type": "Held",
-      "icon": "/assets/game/items/1977.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Winter-Feast-Snowboard-icon.png",
       "order": 4101
     },
     {
@@ -16572,7 +16572,7 @@
       "guid": "dvoSMxPFL2",
       "name": "Course Creation Prop",
       "type": "Prop",
-      "icon": "/assets/game/items/1978.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Course-Creation-Prop-icon.png",
       "order": 6001
     },
     {
@@ -16587,7 +16587,7 @@
       "guid": "pT4AVkYVZP",
       "name": "Cozy Hermit Boots",
       "type": "Shoes",
-      "icon": "/assets/game/items/1979.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Cozy-Hermit-Boots-icon.png",
       "order": 10251
     },
     {
@@ -16595,7 +16595,7 @@
       "guid": "quSFDuWUoV",
       "name": "Winter Quilted Cape",
       "type": "Cape",
-      "icon": "/assets/game/items/1980.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
       "order": 10505
     },
     {
@@ -17101,7 +17101,7 @@
       "guid": "TkW2R7Szug",
       "type": "Cape",
       "name": "Sparrow Cape",
-      "icon": "/assets/game/items/1959.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Sparrow-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
       "order": 10514
     },
@@ -17110,7 +17110,7 @@
       "guid": "TvT6x_UO5V",
       "type": "Mask",
       "name": "Sparrow Mask",
-      "icon": "/assets/game/items/1960.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Sparrow-Mask-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
       "order": 10611
     },
@@ -17119,7 +17119,7 @@
       "guid": "jM8xKFwbTE",
       "type": "Hat",
       "name": "Moth Antennae",
-      "icon": "/assets/game/items/1961.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moth-headpiece-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
       "order": 11522
     },
@@ -17128,7 +17128,7 @@
       "guid": "bu7qgPtuB2",
       "type": "Cape",
       "name": "Moth Cape",
-      "icon": "/assets/game/items/1962.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Moth-Cape-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
       "order": 10524
     },
