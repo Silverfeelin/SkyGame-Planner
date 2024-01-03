@@ -121,8 +121,8 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     layerGroup.addTo(this.map);
 
     // Allow Leaflet events to enter Angular.
-    (window as any).markCol = (elem: HTMLElement, guid: string) => {
-      this._zone.run(() => { this.markCol(elem, guid); });
+    (window as any).markCol = (elem: HTMLElement, guid: string, next: boolean) => {
+      this._zone.run(() => { this.markCol(elem, guid, next); });
     };
 
     (window as any).nextCol = (guid: string, direction: number) => {
@@ -215,12 +215,22 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   </div>
   <div class="s-leaflet-mt">${video}</div>
   <div class="s-leaflet-mt">
-    <button type="button" class="s-leaflet-hasicon s-leaflet-found" data-action="mark" onclick="markCol(this, '${wl.guid}')">
+    <button type="button" class="s-leaflet-hasicon s-leaflet-found" data-action="mark" onclick="markCol(this, '${wl.guid}', false)" title="Mark as found.">
       <span class="s-leaflet-maticon">check_box_outline_blank</span>
       <span class="s-leaflet-check-label">Found</span>
     </button>
-    <button class="s-leaflet-hasicon" data-direction="left" type="button" onclick="nextCol('${wl.guid}', -1)"><span class="s-leaflet-maticon">arrow_back</span>&nbsp;</button>
-    <button class="s-leaflet-hasicon" data-direction="right" type="button" onclick="nextCol('${wl.guid}', 1)"><span class="s-leaflet-maticon">arrow_forward</span>&nbsp;</button>
+    <button type="button" class="s-leaflet-hasicon" data-action="mark" onclick="markCol(this, '${wl.guid}', true)" title="Mark as found and go to next light.">
+      <span class="s-leaflet-maticon">done_all</span>
+      &nbsp;
+    </button>
+    <button class="s-leaflet-hasicon" data-direction="left" type="button" onclick="nextCol('${wl.guid}', -1)" title="Go to previous light.">
+      <span class="s-leaflet-maticon">arrow_back</span>
+      &nbsp;
+    </button>
+    <button class="s-leaflet-hasicon" data-direction="right" type="button" onclick="nextCol('${wl.guid}', 1)" title="Go to next light.">
+      <span class="s-leaflet-maticon">arrow_forward</span>
+      &nbsp;
+    </button>
     ${wiki}
   </div>
 </div>
@@ -258,7 +268,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     switch (key) {
       case 'ArrowLeft': this.prevCol(wlGuid); break;
       case 'ArrowRight': this.nextCol(wlGuid); break;
-      case ' ': this.markCol(el.querySelector('[data-action="mark"]') as HTMLElement, wlGuid); break;
+      case ' ': this.markCol(el.querySelector('[data-action="mark"]') as HTMLElement, wlGuid, false); break;
       default: return;
     }
 
@@ -314,16 +324,16 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   // #region Leaflet tooltip events
 
-  private markCol(div: HTMLElement, guid: string): void {
+  private markCol(div: HTMLElement, guid: string, next: boolean): void {
     const wl = this._dataService.guidMap.get(guid) as IWingedLight;
-    this.toggleWingedLight(wl);
+    this.toggleWingedLight(wl, next ? true : undefined);
 
-    this.updatePopup(div, wl);
+    this.updatePopup(div.parentElement as HTMLElement, wl);
     this.updateMarker(wl);
     this.updateTable(wl);
 
     // Go to next
-    if (wl.unlocked) {
+    if (next) {
       this.nextCol(guid, true);
     }
   }

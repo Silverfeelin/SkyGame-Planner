@@ -15,6 +15,7 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: IItem;
   @Input() size: ItemSize = 'default';
   @Input() showSubIcons?: boolean;
+  @Input() lazy = true;
 
   /** Forces icon to be opaque instead of checking if it's unlocked. */
   @Input() opaque?: boolean;

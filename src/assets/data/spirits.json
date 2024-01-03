@@ -1679,6 +1679,12 @@
       "type": "Event",
       "name": "Event Staff (IGC)"
     },
+    // Unconfirmed placeholder
+    {
+      "guid": "U9vUspUuRp",
+      "type": "Event",
+      "name": "Placeholder"
+    },
     // Days of Summer
     {
       "guid": "aMY1ZPzcEx",
@@ -1764,11 +1770,29 @@
       "type": "Event",
       "name": "Days of Feast Staff"
     },
+    {
+      "guid": "gDAPHT2NBG",
+      "type": "Event",
+      "name": "Winter Courier"
+    },
+    {
+      "guid": "TL-SY6cuF4",
+      "type": "Event",
+      "name": "Belonging Ancestor"
+    },
     // Firework Festival
     {
       "guid": "NO6tqAn4m3",
       "type": "Event",
       "name": "Enchanted Pyrotechnician"
+    },
+
+    // Look, I know it's not a spirit. That said, the objects TGC makes sure act like one sometimes.
+    // The mannequins from AURORA and Revival were watching...
+    {
+      "guid": "tKeCcn57So",
+      "type": "Event",
+      "name": "Aviary Event Store"
     },
     // #endregion
   ]

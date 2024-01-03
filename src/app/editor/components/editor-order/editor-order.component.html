@@ -4,6 +4,7 @@
       <div class="item" [class.highlight]="swapping?.guid === item.guid" (click)="swap(type, item)">
         <div class="item-image">
           <img class="item-icon" [src]="item.icon" [alt]="item.name">
+          <label class="item-order">{{item.order ?? 99999}}</label>
         </div>
       </div>
     </ng-container>

@@ -3751,12 +3751,22 @@
     {
       "guid": "kazCCn5l81",
       "item": "LKCSYIoEKs",
-      "n": "axm6cIGH9g"
+      "nw": "NuB6nNH_xB",
+      "n": "axm6cIGH9g",
+      "ne": "GvQYmrm3I4"
     },
     {
       "guid": "axm6cIGH9g",
       "item": "xB3Auq2DFR",
       "c": 46
+    },
+    {
+      "guid": "NuB6nNH_xB",
+      "item": "C2QyP140Rm"
+    },
+    {
+      "guid": "GvQYmrm3I4",
+      "item": "6J0eF-rleF"
     },
     // Ultimates
     {
@@ -7707,7 +7717,7 @@
       "c": 48
     },
     // #endregion
-    // Festival Spin Dancer
+    // #region Festival Spin Dancer
     {
       "guid": "QsIyX1p15K",
       "item": "72q94N8VCj",
@@ -7890,6 +7900,78 @@
       "item": "kmgKsVBs4o",
       "c": 65
     },
+    // TS 103
+    {
+      "guid": "00SVPQ4X2a",
+      "item": "72q94N8VCj",
+      "nw": "ReZxsJmdSn",
+      "n": "WVPNAqhqzJ"
+    },
+    {
+      "guid": "ReZxsJmdSn",
+      "item": "Uszoh-ONkR",
+      "h": 4
+    },
+    {
+      "guid": "WVPNAqhqzJ",
+      "item": "Uo7t1apko6",
+      "c": 5,
+      "nw": "bUU5tzuspW",
+      "n": "G7-OcjrMMU",
+      "ne": "7W8n47FVtM"
+    },
+    {
+      "guid": "bUU5tzuspW",
+      "item": "4XuHymnqlr",
+      "c": 15
+    },
+    {
+      "guid": "7W8n47FVtM",
+      "item": "UiAXJpkHYm",
+      "c": 3
+    },
+    {
+      "guid": "G7-OcjrMMU",
+      "item": "EAFp1hfc6-",
+      "ac": 2,
+      "n": "2thXOimb13"
+    },
+    {
+      "guid": "2thXOimb13",
+      "item": "ZaNb7p2iqw",
+      "h": 5,
+      "nw": "_vUfH57LSw",
+      "n": "ckz1WI6pOP"
+    },
+    {
+      "guid": "_vUfH57LSw",
+      "item": "9v5mmfY2I4",
+      "h": 10
+    },
+    {
+      "guid": "ckz1WI6pOP",
+      "item": "fD5KSC2ILf",
+      "c": 5,
+      "nw": "lLl9y2xVXV",
+      "n": "LvAjQS3dvy",
+      "ne": "M_xM0rW_7p"
+    },
+    {
+      "guid": "lLl9y2xVXV",
+      "item": "stQCebAgsm",
+      "c": 34
+    },
+    {
+      "guid": "M_xM0rW_7p",
+      "item": "6PvpUYPLPO",
+      "c": 30
+    },
+    {
+      "guid": "LvAjQS3dvy",
+      "item": "kmgKsVBs4o",
+      "c": 65
+    },
+    // #endregion
     // #region Admiring Actor
     {
       "guid": "mnR3OjpKYr",
@@ -10604,7 +10686,7 @@
       "c": 70
     },
     // #endregion
-    // Chill Sunbather
+    // #region Chill Sunbather
     {
       "guid": "-_0EoMUmXu",
       "item": "QNd_KFZo7Y",
@@ -10734,6 +10816,78 @@
       "item": "QdmHwCR2Wk",
       "c": 70
     },
+    // TS 104
+    {
+      "guid": "DQozlc3Eo4",
+      "item": "QNd_KFZo7Y",
+      "nw": "r1RY2iOgIK",
+      "n": "txlP8ac8bO",
+      "ne": "3LzdWrwEhm"
+    },
+    {
+      "guid": "r1RY2iOgIK",
+      "item": "LZqy5g4Xpa",
+      "h": 4
+    },
+    {
+      "guid": "3LzdWrwEhm",
+      "item": "Khjtno2EBW",
+      "c": 20
+    },
+    {
+      "guid": "txlP8ac8bO",
+      "item": "xalu7x_Hr5",
+      "c": 5,
+      "nw": "_WRNYSfLtR",
+      "n": "emY2P4zHHA",
+      "ne": "TT8fY1Ae55"
+    },
+    {
+      "guid": "_WRNYSfLtR",
+      "item": "yHf5YnLXUu",
+      "c": 50
+    },
+    {
+      "guid": "TT8fY1Ae55",
+      "item": "At5bBzh31u",
+      "c": 3
+    },
+    {
+      "guid": "emY2P4zHHA",
+      "item": "sQAARdQy_7",
+      "ac": 2,
+      "n": "sBhMliw2Ii"
+    },
+    {
+      "guid": "sBhMliw2Ii",
+      "item": "phajnn85-p",
+      "h": 3,
+      "nw": "effzjaYm7U",
+      "n": "wNmCSwC5hj",
+      "ne": "SM-xIQid6c"
+    },
+    {
+      "guid": "effzjaYm7U",
+      "item": "2LKc2kVIga",
+      "h": 6
+    },
+    {
+      "guid": "SM-xIQid6c",
+      "item": "V7FLu_Hn4y",
+      "c": 44
+    },
+    {
+      "guid": "wNmCSwC5hj",
+      "item": "xgjzgnv6Zt",
+      "c": 5,
+      "n": "3m2Rm1_-YT"
+    },
+    {
+      "guid": "3m2Rm1_-YT",
+      "item": "QdmHwCR2Wk",
+      "c": 70
+    },
+    // #endregion
     // #endregion
     // #region Prophecy
     // #region Prophet of Water
@@ -17251,7 +17405,7 @@
     {
       "guid": "MJU_gWpicx",
       "item": "RFMVpbZOil",
-      "c": 15
+      "h": 15
     },
     {
       "guid": "p0sjVjUrXo",
@@ -17335,7 +17489,7 @@
     {
       "guid": "eKaaVD4YJQ",
       "item": "RFMVpbZOil",
-      "c": 15
+      "h": 15
     },
     {
       "guid": "-aLkyxuduq",
@@ -17410,6 +17564,138 @@
       "guid": "hgSOG34j6H",
       "item": "TLljjPrjAq",
       "c": 50
+    },
+    // #endregion
+    // #region Days of Feast (2023)
+    // Event Currency
+    {
+      "guid": "l0lL5ysOr0",
+      "item": "PedXtZNCdm",
+      "c": 5,
+      "nw": "wD0if3iloI",
+      "n": "_NCC6nNRUs"
+    },
+    {
+      "guid": "wD0if3iloI",
+      "item": "9-5LbKZZQz",
+      "c": null,
+      "ec": 44
+    },
+    {
+      "guid": "_NCC6nNRUs",
+      "item": "1ALFFNohD1",
+      "ec": 19
+    },
+    // Course Prop
+    {
+      "guid": "O2OgKg3p2H",
+      "item": "9wdVZNLu1I",
+      "n": "C8jAP0qGBl"
+    },
+    {
+      "guid": "C8jAP0qGBl",
+      "item": "dvoSMxPFL2",
+      "c": 150
+    },
+    // Past
+    {
+      "guid": "0WLDYtlqyt",
+      "item": "XhenTKce1d",
+      "nw": "n8HEDZJAVZ",
+      "n": "itg4623Al1",
+      "c": 1
+    },
+    {
+      "guid": "n8HEDZJAVZ",
+      "item": "ZvfG2eU17I",
+      "c": 120
+    },
+    {
+      "guid": "itg4623Al1",
+      "item": "TLljjPrjAq",
+      "c": 60
+    },
+    {
+      "guid": "MkPG2w_vGs",
+      "item": "pI8jvyHkY1",
+      "c": 5,
+      "nw": "4DGwH6QUC3",
+      "n": "BHk67XVeOR",
+      "ne": "jY0lf2kqPj"
+    },
+    {
+      "guid": "4DGwH6QUC3",
+      "item": "Gsl445SG4s",
+      "c": 10
+    },
+    {
+      "guid": "jY0lf2kqPj",
+      "item": "UuP-Vujj8D",
+      "c": 10
+    },
+    {
+      "guid": "BHk67XVeOR",
+      "item": "l-4I9LgjeL",
+      "c": 5,
+      "nw": "r_QGpUYdf5",
+      "n": "Pijk4FceZA"
+    },
+    {
+      "guid": "r_QGpUYdf5",
+      "item": "c0_xJdJKvM",
+      "c": 50
+    },
+    {
+      "guid": "Pijk4FceZA",
+      "item": "hZr0q9nYbz",
+      "h": 20
+    },
+    {
+      "guid": "bXvejgWpLD",
+      "item": "FG23AJzDOD",
+      "c": 2,
+      "nw": "oxZ9ieWk9j",
+      "n": "xZBvT0dYl0"
+    },
+    {
+      "guid": "oxZ9ieWk9j",
+      "item": "jbcKW_vibd",
+      "c": 3
+    },
+    {
+      "guid": "xZBvT0dYl0",
+      "item": "7lrenJRCtn",
+      "c": 2,
+      "nw": "2imLxaBlnm",
+      "n": "ljFWJ5bfU2"
+    },
+    {
+      "guid": "2imLxaBlnm",
+      "item": "RFMVpbZOil",
+      "h": 15
+    },
+    {
+      "guid": "ljFWJ5bfU2",
+      "item": "Rljse8NQ2x",
+      "c": 2,
+      "nw": "xQzvljgZ0F",
+      "n": "qyODMdLut9"
+    },
+    {
+      "guid": "xQzvljgZ0F",
+      "item": "GoESQXsRjl",
+      "c": 65
+    },
+    {
+      "guid": "qyODMdLut9",
+      "item": "m28yndfnC9",
+      "c": 2,
+      "n": "26t2aKN98c"
+    },
+    {
+      "guid": "26t2aKN98c",
+      "item": "oHChsGl8AZ",
+      "c": 150
     },
     // #endregion
     // #region Days of Summer (2021)

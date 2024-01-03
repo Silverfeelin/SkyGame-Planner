@@ -642,6 +642,45 @@
       ]
     },
     // #endregion
+    // #region Days of Feast (2023)
+    {
+      "guid": "lNLRe3Rj6g",
+      "type": "Store",
+      "iaps": [
+        "f2l8flrTXW",
+        "UOg9ZA2scX"
+      ]
+    },
+    {
+      "guid": "9b6uLsot0i",
+      "type": "Object",
+      "name": "Aviary Event Store",
+      "iaps": [
+        "Ljr8ZNNJh_",
+        "195bMrG3JB"
+      ]
+    },
+    {
+      "guid": "MXxF9y1GLy",
+      "type": "Object",
+      "name": "Winter Home Igloo Shelf",
+      "iaps": [
+        "3xQHsmZv-e",
+        "r1HlatiBxR",
+        "H4HSEWVLK4"
+      ]
+    },
+    {
+      "guid": "dndaVdJd5K",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "M6omKyJJvP",
+        "xl2vK3sERM",
+        "bSFkFG8lYJ"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mw6o6Ezv3e",

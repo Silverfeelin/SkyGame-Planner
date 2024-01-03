@@ -1408,6 +1408,97 @@
       ]
     },
     // #endregion
+    // #region Days of Feast (2023)
+    {
+      "guid": "f2l8flrTXW",
+      "name": "Winter Quilted Cape",
+      "price": 14.99,
+      "items": [
+        "quSFDuWUoV"
+      ]
+    },
+    {
+      "guid": "UOg9ZA2scX",
+      "name": "Cozy Hermit Boots",
+      "price": 6.99,
+      "items": [
+        "pT4AVkYVZP"
+      ]
+    },
+    {
+      "guid": "Ljr8ZNNJh_",
+      "name": "Tournament Skyball Set",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "sZRjoCGw_u"
+      ]
+    },
+    {
+      "guid": "195bMrG3JB",
+      "name": "Cozy Hermit Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "Nep9ocMylo"
+      ]
+    },
+    {
+      "guid": "3xQHsmZv-e",
+      "name": "Snowflake Hair Accessory",
+      "price": 1.99,
+      "returning": true,
+      "items": [
+        "VZyiD3Wmtp"
+      ]
+    },
+    {
+      "guid": "r1HlatiBxR",
+      "name": "Winter Ancestor Cape",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "B3YJxxJKJX"
+      ]
+    },
+    {
+      "guid": "H4HSEWVLK4",
+      "name": "Feast Snow Globe",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "4i2CdmSgmX"
+      ]
+    },
+    {
+      "guid": "M6omKyJJvP",
+      "name": "Days of Feast Horns",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "rQQmknOn9a"
+      ]
+    },
+    {
+      "guid": "xl2vK3sERM",
+      "name": "Snowflake Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "gnC7YQCAug"
+      ]
+    },
+    {
+      "guid": "bSFkFG8lYJ",
+      "name": "Days of Feast Pack",
+      "price": 6.99,
+      "returning": true,
+      "c": 25,
+      "items": [
+        "z2M4HqpR9C"
+      ]
+    },
+    // #endregion
     // #region Days of Healing (2020)
     {
       "guid": "mec9z8iJUX",

@@ -12,13 +12,26 @@
     ],
     "description": "Item"
   },
+  "Item-B5": {
+    "prefix": "@item-b5",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Blessing\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png\"",
+      "},"
+    ],
+    "description": "Item-B5"
+  },
   "IAP": {
     "prefix": "@iap",
     "body": [
       "{",
       "\t\"guid\": \"$1\",",
       "\t\"name\": \"$2\",",
-      "\t\"price\": ${3:9.99},",
+      "\t\"price\": ${3:9}.99,",
       "\t\"items\": [",
       "\t\t$0",
       "\t]",
@@ -26,6 +39,16 @@
     ],
     "description": "IAP"
   },
+  "Node": {
+    "prefix": "@node",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"item\": \"$2\",",
+      "\t$3",
+      "},"
+    ],
+  }
   "Shop": {
     "prefix": "@shop",
     "body": [
@@ -40,4 +63,11 @@
     ],
     "description": "Shop"
   },
+  "Event-Spirit": {
+    // { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },
+    "prefix": "@event-spirit",
+    "body": [
+      "{\t\"guid\": \"$1\", \"spirit\": \"$2\", \"tree\": \"$3\" },"
+    ]
+  }
 }

@@ -547,7 +547,7 @@
       "guid": "MtDAWRpBqJ",
       "name": "Days of Feast",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x1000/filters:format(webp)/f/108104/1920x1080/5a0ada8f31/dofeast2022fireplace.png",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/c8639d6058/2023feast_3kids_snowboarding_racecourseprop.jpg",
       "instances": [
         {
           "guid": "-9T61aYKrW",
@@ -595,6 +595,24 @@
             { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },
             { "guid": "d2BGP3fI-Y", "spirit": "5rr1zr2_j5", "tree": "WiF93W3zoc" },
             { "guid": "eXRAJOweQm", "spirit": "j1UqKci8Hb", "tree": "6SsyXPH5Ow" }
+          ]
+        },
+        {
+          "guid": "crmlLYIhMM",
+          "date": { "day": 18, "month": 12, "year": 2023 },
+          "endDate": { "day": 7, "month": 1, "year": 2024 },
+          "shops": [
+            "lNLRe3Rj6g",
+            "9b6uLsot0i",
+            "MXxF9y1GLy",
+            "dndaVdJd5K"
+          ],
+          "spirits": [
+            {	"guid": "QxEguod_7-", "spirit": "gDAPHT2NBG", "tree": "jJU_PYq-f6" },
+            {	"guid": "fApfYKwKAR", "spirit": "tKeCcn57So", "tree": "TMkvtnTJpH" },
+            {	"guid": "6OaVQ81uXo", "spirit": "KhFZE8z0-I", "name": "Bearhug Hermit (Aviary)", "tree": "zjAxD7je6L" },
+            {	"guid": "bSCey0rAnl", "spirit": "TL-SY6cuF4", "tree": "ICyq_AXa3D" },
+            {	"guid": "bvZrHb4eTn", "spirit": "j1UqKci8Hb", "tree": "yvElaQPmYD" }
           ]
         }
       ],
