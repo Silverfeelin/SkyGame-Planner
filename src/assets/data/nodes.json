@@ -10686,7 +10686,7 @@
       "c": 70
     },
     // #endregion
-    // Chill Sunbather
+    // #region Chill Sunbather
     {
       "guid": "-_0EoMUmXu",
       "item": "QNd_KFZo7Y",
@@ -10816,6 +10816,78 @@
       "item": "QdmHwCR2Wk",
       "c": 70
     },
+    // TS 104
+    {
+      "guid": "DQozlc3Eo4",
+      "item": "QNd_KFZo7Y",
+      "nw": "r1RY2iOgIK",
+      "n": "txlP8ac8bO",
+      "ne": "3LzdWrwEhm"
+    },
+    {
+      "guid": "r1RY2iOgIK",
+      "item": "LZqy5g4Xpa",
+      "h": 4
+    },
+    {
+      "guid": "3LzdWrwEhm",
+      "item": "Khjtno2EBW",
+      "c": 20
+    },
+    {
+      "guid": "txlP8ac8bO",
+      "item": "xalu7x_Hr5",
+      "c": 5,
+      "nw": "_WRNYSfLtR",
+      "n": "emY2P4zHHA",
+      "ne": "TT8fY1Ae55"
+    },
+    {
+      "guid": "_WRNYSfLtR",
+      "item": "yHf5YnLXUu",
+      "c": 50
+    },
+    {
+      "guid": "TT8fY1Ae55",
+      "item": "At5bBzh31u",
+      "c": 3
+    },
+    {
+      "guid": "emY2P4zHHA",
+      "item": "sQAARdQy_7",
+      "ac": 2,
+      "n": "sBhMliw2Ii"
+    },
+    {
+      "guid": "sBhMliw2Ii",
+      "item": "phajnn85-p",
+      "h": 3,
+      "nw": "effzjaYm7U",
+      "n": "wNmCSwC5hj",
+      "ne": "SM-xIQid6c"
+    },
+    {
+      "guid": "effzjaYm7U",
+      "item": "2LKc2kVIga",
+      "h": 6
+    },
+    {
+      "guid": "SM-xIQid6c",
+      "item": "V7FLu_Hn4y",
+      "c": 44
+    },
+    {
+      "guid": "wNmCSwC5hj",
+      "item": "xgjzgnv6Zt",
+      "c": 5,
+      "n": "3m2Rm1_-YT"
+    },
+    {
+      "guid": "3m2Rm1_-YT",
+      "item": "QdmHwCR2Wk",
+      "c": 70
+    },
+    // #endregion
     // #endregion
     // #region Prophecy
     // #region Prophet of Water
