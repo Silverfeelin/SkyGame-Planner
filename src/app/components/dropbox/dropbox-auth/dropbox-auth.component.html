@@ -1,0 +1,43 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Connect to Dropbox</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        By connecting to Dropbox you can access your data from multiple devices.<br/>
+        Sky Planner will automatically save data to the <b>Apps/Sky Planner</b> folder in your Dropbox.
+      </p>
+      <p>
+        You are currently <b>{{ isAuthenticated ? 'connected' : 'not connected' }}</b> to Dropbox.
+      </p>
+      <p *ngIf="isAuthenticated">
+        You can make the website forget the credentials by clicking the reset button.<br/>
+        You should also revoke access from the Dropbox page that opens.<br/>
+        <button type="button" (click)="reset()" class="dbx-reset">Reset</button>
+      </p>
+    </div>
+    <div class="mt">
+      <button type="button" (click)="login()" class="dbx-login">
+        <img src="/assets/external/dropbox_56.svg">
+      </button>
+    </div>
+  </div>
+</div>
+
+<button type="button" (click)="download()">Download</button>
+
+<div class="sky-card" *ngIf="error">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Authorization failed</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>Dropbox reported the following. Please try again or report this issue.</p>
+      <p>
+        Error: <code>{{error}}</code><br/>
+        Description: <code>{{errorDescription}}</code>
+      </p>
+    </div>
+  </div>
+</div>

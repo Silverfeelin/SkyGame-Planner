@@ -30,6 +30,7 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
+import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
   { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
   { path: 'tools', component: ToolsComponent, title: title('Tools') },
+  { path: 'dropbox-auth', component: DropboxAuthComponent, title: title('Dropbox') },
   { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
   { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
   { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },

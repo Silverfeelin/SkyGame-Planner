@@ -65,6 +65,8 @@ import { ReturningSpiritCardComponent } from './components/returning-spirit-card
 import { RealmConstellationComponent } from './components/realms/realm-constellation/realm-constellation.component';
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { ClampPipe } from './pipes/clamp.pipe';
+import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
+import { DropboxIndicatorComponent } from './components/dropbox/dropbox-indicator/dropbox-indicator.component';
 
 @NgModule({
   declarations: [
@@ -127,7 +129,9 @@ import { ClampPipe } from './pipes/clamp.pipe';
     DashboardWishlistComponent,
     ItemComponent,
     ReturningSpiritCardComponent,
-    RealmConstellationComponent
+    RealmConstellationComponent,
+    DropboxAuthComponent,
+    DropboxIndicatorComponent
   ],
   imports: [
     BrowserModule,

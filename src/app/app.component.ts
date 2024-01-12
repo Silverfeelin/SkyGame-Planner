@@ -10,7 +10,8 @@ import * as timezone from 'dayjs/plugin/timezone';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
 import { StorageService, storageReloadKeys } from './services/storage.service';
-import { filter } from 'rxjs';
+import { filter, take } from 'rxjs';
+import { DropboxService } from './services/dropbox.service';
 
 @Component({
   selector: 'app-root',
@@ -21,9 +22,11 @@ export class AppComponent {
   ready = false;
   dataLoss = false;
   showMenu = true;
+  showDropbox = false;
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _dropboxService: DropboxService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
     private readonly _domSanitizer: DomSanitizer,
@@ -33,6 +36,7 @@ export class AppComponent {
   ) {
     this._dataService.onData.subscribe(() => { this.onData(); });
     this.initDisplayDate();
+    this.initDropbox();
 
     _matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
@@ -61,6 +65,16 @@ export class AppComponent {
     if (!DateHelper.displayFormat || !DateHelper.displayFormats.includes(DateHelper.displayFormat)) {
       DateHelper.displayFormat = DateHelper.displayFormats[0];
     }
+  }
+
+  initDropbox(): void {
+    this.showDropbox = this._dropboxService.hasTokens();
+    this._dropboxService.authChanged.subscribe(authenticated => {
+      this.showDropbox ||= authenticated;
+    });
+    this._dropboxService.authRemoved.subscribe(() => {
+      this.showDropbox = false;
+    });
   }
 
   onData(): void {
