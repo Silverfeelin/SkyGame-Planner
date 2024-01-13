@@ -409,6 +409,31 @@
       }
     },
   // #endregion
+  // #region 2024
+  {
+    "guid": "D0oxkv3Vd0",
+    "name": "Season of the Nine-Colored Deer",
+    "shortName": "Nine-Colored Deer",
+    "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-The-Nine-Colored-Deer-icon.png",
+    "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/1ca49728d5/s21_2kids-areadoor.jpg",
+    "year": 2024,
+    "date": "2024-01-15",
+    "endDate": "2024-03-31",
+    "spirits": [
+      "v-bxcGqGaa",
+      "gyEBXKOIwY",
+      "4h9FByzo7y",
+      "wyFKAWN45l",
+      "mf7NyGfeDI"
+    ],
+    "shops": [
+      "QdHULe44lZ"
+    ],
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer"
+    }
+  },
+  // #endregion
   ],
   "_wiki": {
     "href": "https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events"
