@@ -45,9 +45,10 @@ export class DateHelper {
     return DateTime.fromFormat(date, 'yyyy-MM-dd', { zone: this.skyTimeZone });
   }
 
+  /** Gets the amount of days between two dates, rounded up. */
   static daysBetween(a: DateTime, b: DateTime): number {
     const days = Math.abs(a.diff(b, 'days').as('days'));
-    return Math.round(days);
+    return Math.ceil(days);
   }
 
   static getStateFromPeriod(start: DateTime, end: DateTime, date?: DateTime): PeriodState {

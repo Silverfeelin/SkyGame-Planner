@@ -30,13 +30,13 @@ export class DaysLeftComponent implements OnChanges {
 
   private getLabelBeforeStart(date: DateTime): string {
     const days = DateHelper.daysBetween(date, this.start!);
-    if (!days) { return 'tomorrow'; }
-    return `in ${days + 1} days`;
+    if (days === 1) { return 'tomorrow'; }
+    return `in ${days} days`;
   }
 
   private getLabelBeforeEnd(date: DateTime): string {
     const days = DateHelper.daysBetween(date, this.end!);
-    if (!days) { return 'last day'; }
-    return `${days + 1} days left`;
+    if (days === 1) { return 'last day'; }
+    return `${days} days left`;
   }
 }
