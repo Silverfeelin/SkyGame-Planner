@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { IEvent } from 'src/app/interfaces/event.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
@@ -8,7 +8,7 @@ import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 import { DataService } from 'src/app/services/data.service';
 
 interface ITree {
-  date?: dayjs.Dayjs;
+  date?: DateTime;
   name: string;
   tree: ISpiritTree;
 }
@@ -67,7 +67,7 @@ export class SpiritComponent {
     });
 
     const sortedTrees = ts.concat(visits);
-    sortedTrees.sort((a, b) => b.date.diff(a.date));
+    sortedTrees.sort((a, b) => b.date.diff(a.date).as('milliseconds'));
 
     this.trees = sortedTrees;
     if (this.spirit.tree) {

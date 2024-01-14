@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import dayjs from 'dayjs';
 import { StorageService } from 'src/app/services/storage.service';
 import { DataService } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-settings',
@@ -12,7 +12,7 @@ import { SettingService } from 'src/app/services/setting.service';
 })
 export class SettingsComponent {
   unlockedCount: number;
-  today = dayjs();
+  today = DateTime.now();
   dateFormat: string;
   dateFormats: Array<string>;
   wikiNewTab = false;
@@ -47,7 +47,7 @@ export class SettingsComponent {
       url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.download = `SkyPlanner_${dayjs().format('YYYY-MM-DD')}.json`;
+      link.download = `SkyPlanner_${DateTime.now().toFormat('yyyy-MM-dd')}.json`;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);

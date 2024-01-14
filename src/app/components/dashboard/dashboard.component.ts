@@ -55,7 +55,7 @@ export class DashboardComponent implements OnInit {
         futureEvents.push(eventDates.future.at(0)!);
       }
     }
-    futureEvents.sort((a, b) => a.date.diff(b.date));
+    futureEvents.sort((a, b) => a.date.diff(b.date).as('milliseconds'));
     this.futureEventInstance = futureEvents.at(0);
   }
 }

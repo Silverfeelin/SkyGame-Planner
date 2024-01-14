@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { StorageService } from 'src/app/services/storage.service';
@@ -11,10 +11,10 @@ import { StorageService } from 'src/app/services/storage.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DateComponent implements OnChanges, OnDestroy {
-  @Input() date: dayjs.Dayjs | undefined;
+  @Input() date: DateTime | undefined;
   @Input() format?: string;
 
-  _date: dayjs.Dayjs | undefined;
+  _date: DateTime | undefined;
   _subs = new SubscriptionBag();
 
   constructor(
@@ -35,7 +35,7 @@ export class DateComponent implements OnChanges, OnDestroy {
   }
 
   private updateDate(): void {
-    this._date = this.date?.clone();
+    this._date = this.date;
     this._changeDetectorRef.markForCheck();
   }
 }

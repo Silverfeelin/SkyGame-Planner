@@ -7,8 +7,8 @@ import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
-import dayjs from 'dayjs';
 import { NodeAction } from '../node/node.component';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-spirit-tree',
@@ -38,8 +38,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   totalCost!: ICost;
   remainingCost!: ICost;
 
-  tsDate?: dayjs.Dayjs;
-  rsDate?: dayjs.Dayjs;
+  tsDate?: DateTime;
+  rsDate?: DateTime;
 
   _itemSub?: SubscriptionLike;
 
