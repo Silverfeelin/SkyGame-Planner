@@ -3781,6 +3781,87 @@
       "sh": 2
     },
     // #endregion
+    // #region Nine-Colored Deer Guide
+    {
+      "guid": "BLKy0jnYaU",
+      "item": "cVufRaQV8i",
+      "n": "ZDSSxR38hq"
+    },
+    {
+      "guid": "ZDSSxR38hq",
+      "item": "MNCU8eU8DD",
+      "nw": "ljL8xVlKd5",
+      "n": "bLnAtun9f2",
+      "ne": "F57WDV2jHE"
+    },
+    {
+      "guid": "ljL8xVlKd5",
+      "item": "otoaOaPh_P"
+    },
+    {
+      "guid": "F57WDV2jHE",
+      "item": "9uVcch8mbe",
+      "n": "QMGvJNWoaa"
+    },
+    {
+      "guid": "QMGvJNWoaa",
+      "item": "qoqOCLQ-on",
+      "sh": 1,
+      "n": "3Tm0igcl3q"
+    },
+    {
+      "guid": "3Tm0igcl3q",
+      "item": "F_U2ISvmGv",
+      "sh": 1,
+      "n": "VK13DJd426"
+    },
+    {
+      "guid": "VK13DJd426",
+      "item": "gLB3Tnn8mb",
+      "sh": 2
+    },
+    {
+      "guid": "bLnAtun9f2",
+      "item": "34QZ7XGmqQ",
+      "nw": "2TXRk9FRs-",
+      "n": "RNeY7IIMyd"
+    },
+    {
+      "guid": "2TXRk9FRs-",
+      "item": "r62F4kbMp4"
+    },
+    {
+      "guid": "RNeY7IIMyd",
+      "item": "fQy562ANnr",
+      "nw": "iCUj55f3b4",
+      "n": "PtWomo0hFW"
+    },
+    {
+      "guid": "iCUj55f3b4",
+      "item": "kD0sX_iI2I",
+      "c": 50
+    },
+    {
+      "guid": "PtWomo0hFW",
+      "item": "6XaS3dbRqt",
+      "nw": "yxPPGH-woJ",
+      "n": "92BhkHqATw"
+    },
+    {
+      "guid": "yxPPGH-woJ",
+      "item": "vkEGa6fKaY"
+    },
+    {
+      "guid": "92BhkHqATw",
+      "item": "dhfAgLzgAw",
+      "n": "yZyQeX6F_O"
+    },
+    {
+      "guid": "yZyQeX6F_O",
+      "item": "Gn1DSb6m5E",
+      "c": 120
+    },
+    // #endregion
     // #endregion
 
     // #region Gratitude
@@ -16281,6 +16362,263 @@
     {
       "guid": "zDX7JyMsmf",
       "item": "QQZkgJ8KnJ",
+      "sc": 3
+    },
+    // #endregion
+    // #endregion
+    // #region Nine-Colored Deer
+    // #region Herb Gatherer
+    {
+      "guid": "EEz74j7uA3",
+      "item": "JghaoDBzL-",
+      "nw": "GqoF1aIatY",
+      "n": "5c4eEiWyPA"
+    },
+    {
+      "guid": "GqoF1aIatY",
+      "item": "fRqeU-viVI"
+    },
+    {
+      "guid": "5c4eEiWyPA",
+      "item": "GOhva5yLDa",
+      "sc": 16,
+      "nw": "AbrrfEgFe1",
+      "n": "aQx3iDWNf0"
+    },
+    {
+      "guid": "AbrrfEgFe1",
+      "item": "iwngzO_Ye0"
+    },
+    {
+      "guid": "aQx3iDWNf0",
+      "item": "HbrxremuY-",
+      "sc": 26,
+      "nw": "cuJ-cN9cNI",
+      "n": "854R0K3fkh"
+    },
+    {
+      "guid": "cuJ-cN9cNI",
+      "item": "A1fMJZO5K_"
+    },
+    {
+      "guid": "854R0K3fkh",
+      "item": "brs2b0XtiY",
+      "sc": 30,
+      "nw": "yAlhMb7QEp",
+      "n": "Losgq6EGS7"
+    },
+    {
+      "guid": "yAlhMb7QEp",
+      "item": "fB-Akhop3K"
+    },
+    {
+      "guid": "Losgq6EGS7",
+      "item": "W1GZqtaPaM",
+      "sc": 36,
+      "nw": "euJyOBiQl-",
+      "n": "oHFhwfAbmW"
+    },
+    {
+      "guid": "euJyOBiQl-",
+      "item": "x7vrsngRCI"
+    },
+    {
+      "guid": "oHFhwfAbmW",
+      "item": "jG5Kuv-GTD",
+      "sc": 3
+    },
+    // #endregion
+    // #region Hunter
+    {
+      "guid": "kU0nAenGkj",
+      "item": "AR-MFu1bih",
+      "nw": "oBDRhIc-U0",
+      "n": "vy42LcfVgL"
+    },
+    {
+      "guid": "oBDRhIc-U0",
+      "item": "F_3lTFwBoE"
+    },
+    {
+      "guid": "vy42LcfVgL",
+      "item": "X_2wqYzEu5",
+      "sc": 8,
+      "nw": "O-9cB13pGo",
+      "n": "QTgfN7i74o"
+    },
+    {
+      "guid": "O-9cB13pGo",
+      "item": "IQY8K6P32K"
+    },
+    {
+      "guid": "QTgfN7i74o",
+      "item": "QJq0kW8j2S",
+      "sc": 20,
+      "nw": "cJVd-UG9Zp",
+      "n": "op_OClDINi"
+    },
+    {
+      "guid": "cJVd-UG9Zp",
+      "item": "zBw4EnSXM1"
+    },
+    {
+      "guid": "op_OClDINi",
+      "item": "C3n9ZNcSYr",
+      "sc": 28,
+      "nw": "Jtt8zjusE8",
+      "n": "caBIg543Il"
+    },
+    {
+      "guid": "Jtt8zjusE8",
+      "item": "5NmGXSaWaK"
+    },
+    {
+      "guid": "caBIg543Il",
+      "item": "orB3idfSwo",
+      "sc": 34,
+      "nw": "6YddprtswD",
+      "n": "hAjYAWNFv0"
+    },
+    {
+      "guid": "6YddprtswD",
+      "item": "kfHRAuUJcv"
+    },
+    {
+      "guid": "hAjYAWNFv0",
+      "item": "h2zRh4oz4_",
+      "sc": 3
+    },
+    // #endregion
+    // #region Feudal Lord
+    {
+      "guid": "c1ukj9PFVD",
+      "item": "4bioxBnhrA",
+      "nw": "OdBgcJbtEK",
+      "n": "3_B5F60qou"
+    },
+    {
+      "guid": "OdBgcJbtEK",
+      "item": "SxBmlA58uo"
+    },
+    {
+      "guid": "3_B5F60qou",
+      "item": "va-bCmN1T_",
+      "sc": 6,
+      "nw": "e1EHTQbh7O",
+      "n": "EpLzU7Tck4"
+    },
+    {
+      "guid": "e1EHTQbh7O",
+      "item": "VJu0fG2ndS"
+    },
+    {
+      "guid": "EpLzU7Tck4",
+      "item": "xm183xQb6B",
+      "sc": 18,
+      "nw": "47suLqrKU3",
+      "n": "fimJTaBUjW"
+    },
+    {
+      "guid": "47suLqrKU3",
+      "item": "MDwDKmNPig"
+    },
+    {
+      "guid": "fimJTaBUjW",
+      "item": "bPs2llkWyk",
+      "sc": 26,
+      "nw": "uXkkTBo9E7",
+      "n": "AYd2LYGwHd"
+    },
+    {
+      "guid": "uXkkTBo9E7",
+      "item": "WkyRmWK_lE"
+    },
+    {
+      "guid": "AYd2LYGwHd",
+      "item": "H3IbNNMgeI",
+      "sc": 32,
+      "nw": "fqJcKikf2K",
+      "n": "oSY366YRwW"
+    },
+    {
+      "guid": "fqJcKikf2K",
+      "item": "Ob9-4JZoGH"
+    },
+    {
+      "guid": "oSY366YRwW",
+      "item": "b8fsOpXbiN",
+      "sc": 3
+    },
+    // #endregion
+    // #region Princess
+    {
+      "guid": "QLHntqZQ6m",
+      "item": "UVSUO7K0pg",
+      "nw": "teffb5GxyX",
+      "n": "nq-taG3wQg"
+    },
+    {
+      "guid": "teffb5GxyX",
+      "item": "c2ogGO4e6t"
+    },
+    {
+      "guid": "nq-taG3wQg",
+      "item": "5WpDgbgdqb",
+      "sc": 8,
+      "nw": "AP1XKnfsxx",
+      "n": "P5uOwY_l-A"
+    },
+    {
+      "guid": "AP1XKnfsxx",
+      "item": "Ye-rhyzgWF"
+    },
+    {
+      "guid": "P5uOwY_l-A",
+      "item": "UzRclD65vO",
+      "sc": 18,
+      "nw": "JGZV3U9Jvu",
+      "n": "z0Lkyd1iNP"
+    },
+    {
+      "guid": "JGZV3U9Jvu",
+      "item": "XBA8t0KAgo"
+    },
+    {
+      "guid": "z0Lkyd1iNP",
+      "item": "UcG0zDem_M",
+      "sc": 22,
+      "nw": "09kVqTSZgq",
+      "n": "eU1kzP8PY-"
+    },
+    {
+      "guid": "09kVqTSZgq",
+      "item": "8hRD36UT6n"
+    },
+    {
+      "guid": "eU1kzP8PY-",
+      "item": "O0ktmTVR_z",
+      "sc": 26,
+      "nw": "w1VCzjbtmd",
+      "n": "vN5lBp0S9x"
+    },
+    {
+      "guid": "w1VCzjbtmd",
+      "item": "3KnSMisbLM"
+    },
+    {
+      "guid": "vN5lBp0S9x",
+      "item": "6FYRAG6jIS",
+      "sc": 32,
+      "nw": "8jxbLNGDUI",
+      "n": "VXLRTIyOvf"
+    },
+    {
+      "guid": "8jxbLNGDUI",
+      "item": "iSIZiicqA0"
+    },
+    {
+      "guid": "VXLRTIyOvf",
+      "item": "IWXeOczUJv",
       "sc": 3
     },
     // #endregion

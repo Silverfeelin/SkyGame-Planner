@@ -195,6 +195,25 @@
       ]
     },
     // #endregion
+    // #region Season of the Nine-Colored Deer
+    {
+      "guid": "j8hpj0Tr2X",
+      "name": "Gift of the Nine-Colored Deer",
+      "price": 14.99,
+      "items": [
+        "czsVJwqa_g",
+        "0F90DHi6Er"
+      ]
+    },
+    {
+      "guid": "lISB28039d",
+      "name": "Radiance of the Nine-Colored Deer",
+      "price": 19.99,
+      "items": [
+        "BTogmcHcr5"
+      ]
+    },
+    // #endregion
     // #region Days of Fortune (2021)
     {
       "guid": "P0xxZcQSx5",

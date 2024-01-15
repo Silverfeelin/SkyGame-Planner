@@ -16,7 +16,7 @@
         <div class="d-inline-block">{{node.itemRef?.name || ''}}&nbsp;</div>
         <div class="d-inline-block "><b *ngIf="node.item" (click)="copyNodeToClipboard(node)">{{node.item}}</b></div>
 
-        <input (input)="itemInputChanged($event, i)" (keydown)="itemInputEnter($event, i)">
+        <input (input)="itemInputChanged($event, i)" (keydown)="itemInputEnter($event, i)" (blur)="itemInputBlur($event, i)">
       </div>
 
       <div class="mt-1">
