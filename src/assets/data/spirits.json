@@ -1675,9 +1675,9 @@
       "name": "Spirit of Mural",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Nine-Colored-Deer-Guide-Spirit.png",
       "tree": "Lvuz1tp6P9",
-      // "_wiki": {
-      //   "href": ""
-      // }
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural"
+      }
     },
     {
       "guid": "gyEBXKOIwY",
@@ -1685,9 +1685,9 @@
       "name": "Herb Gatherer",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Nine-Colored-Deer-Herb-Gatherer.png",
       "tree": "nDiOVsRGWO",
-      // "_wiki": {
-      //   "href": ""
-      // }
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer"
+      }
     },
     {
       "guid": "4h9FByzo7y",
@@ -1695,9 +1695,9 @@
       "name": "Hunter",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nine-Colored-Deer-Hunter.png",
       "tree": "rsxn04As9U",
-      // "_wiki": {
-      //   "href": ""
-      // }
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter"
+      }
     },
     {
       "guid": "wyFKAWN45l",
@@ -1705,9 +1705,9 @@
       "name": "Feudal Lord",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Nine-Colored-Deer-Feudal-Lord.png",
       "tree": "0wgQ9rDShR",
-      // "_wiki": {
-      //   "href": ""
-      // }
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord"
+      }
     },
     {
       "guid": "mf7NyGfeDI",
@@ -1715,9 +1715,9 @@
       "name": "Princess",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Nine-Colored-Deer-Princess.png",
       "tree": "uLAuAvptPA",
-      // "_wiki": {
-      //   "href": ""
-      // }
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess"
+      }
     },
 
     // #endregion
