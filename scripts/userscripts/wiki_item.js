@@ -44,7 +44,7 @@ const nanoid10 = () => nanoid(10);
     else if (!item.name && item.type) { n = item.type; }
     else { n = `${item.name} ${normalizeType(item.type)}`; }
     n = removeDupeWord(n);
-    document.getElementById('s-name').innerText = n;
+    document.getElementById('s-name').value = n;
   }
 
   const getIcon = el => {
@@ -136,10 +136,10 @@ const nanoid10 = () => nanoid(10);
       id: +document.getElementById('s-id').value || 0,
       guid: nanoid10(),
       type: item.type,
-      name: document.getElementById('s-name').innerText,
+      name: document.getElementById('s-name').value,
       icon: item.icon,
       previewUrl: item.previewUrl,
-      order: 99999
+      order: 10000
     }
     navigator.clipboard.writeText('\n' + JSON.stringify(result, null, 2) + ',');
   };
@@ -181,7 +181,7 @@ const nanoid10 = () => nanoid(10);
     <div class="s-content">
       <input type="number" id="s-id" placeholder="ID" style="width: 100px;">
       <div>Type: <span id="s-type"></span></div>
-      <div>Name: <span id="s-name"></span></div>
+      <div>Name: <input type="text" id="s-name" style="width: 400px;"></div>
       <div>Icon: <span id="s-icon"></span></div>
       <div>Preview: <span id="s-preview"></span></div>
     </div>

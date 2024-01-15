@@ -44,6 +44,7 @@ export class DataService {
   outfitRequestConfig!: IOutfitRequestConfig;
 
   guidMap = new Map<string, IGuid>();
+  idMap = new Map<number, IItem>();
 
   readonly onData = new ReplaySubject<void>();
 
@@ -382,6 +383,7 @@ export class DataService {
       if (item.id) {
         ids.has(item.id) && console.error('Duplicate item ID', item.id, item);
         ids.add(item.id);
+        this.idMap.set(item.id, item);
       } else {
         console.error('Item ID not defined', item);
       }

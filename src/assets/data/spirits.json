@@ -1668,6 +1668,59 @@
       }
     },
     // #endregion
+    // #region Nine-Colored Deer
+    {
+      "guid": "v-bxcGqGaa",
+      "type": "Guide",
+      "name": "Spirit of Mural",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Nine-Colored-Deer-Guide-Spirit.png",
+      "tree": "Lvuz1tp6P9",
+      // "_wiki": {
+      //   "href": ""
+      // }
+    },
+    {
+      "guid": "gyEBXKOIwY",
+      "type": "Season",
+      "name": "Herb Gatherer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Nine-Colored-Deer-Herb-Gatherer.png",
+      "tree": "nDiOVsRGWO",
+      // "_wiki": {
+      //   "href": ""
+      // }
+    },
+    {
+      "guid": "4h9FByzo7y",
+      "type": "Season",
+      "name": "Hunter",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nine-Colored-Deer-Hunter.png",
+      "tree": "rsxn04As9U",
+      // "_wiki": {
+      //   "href": ""
+      // }
+    },
+    {
+      "guid": "wyFKAWN45l",
+      "type": "Season",
+      "name": "Feudal Lord",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Nine-Colored-Deer-Feudal-Lord.png",
+      "tree": "0wgQ9rDShR",
+      // "_wiki": {
+      //   "href": ""
+      // }
+    },
+    {
+      "guid": "mf7NyGfeDI",
+      "type": "Season",
+      "name": "Princess",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Nine-Colored-Deer-Princess.png",
+      "tree": "uLAuAvptPA",
+      // "_wiki": {
+      //   "href": ""
+      // }
+    },
+
+    // #endregion
 
     // #region Events
     {
