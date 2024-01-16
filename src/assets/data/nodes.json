@@ -14417,7 +14417,7 @@
     // #endregion
     // #endregion
     // #region Abyss
-    // Anxious Angler
+    // #region Anxious Angler
     {
       "guid": "WLTEZBaXZ6",
       "item": "sk_cUbT6vx",
@@ -14488,6 +14488,74 @@
       "item": "rjtnYeRVoU",
       "sc": 3
     },
+    // TS 105
+    {
+      "guid": "w7O7kFaQ4l",
+      "item": "sk_cUbT6vx",
+      "nw": "yRHdADcSoo",
+      "n": "nNkF85878y"
+    },
+    {
+      "guid": "yRHdADcSoo",
+      "item": "3ixBHha-wW",
+      "h": 4
+    },
+    {
+      "guid": "nNkF85878y",
+      "item": "BrdpWDCx5c",
+      "c": 5,
+      "nw": "DRATyPYQaH",
+      "n": "Ayb5JLr97J",
+      "ne": "24VilYxbIq"
+    },
+    {
+      "guid": "DRATyPYQaH",
+      "item": "xFJMNfae6Y"
+    },
+    {
+      "guid": "24VilYxbIq",
+      "item": "2vqdDGadG5",
+      "c": 3
+    },
+    {
+      "guid": "Ayb5JLr97J",
+      "item": "aXl9NeM1su",
+      "ac": 2,
+      "n": "22L9Ze074p"
+    },
+    {
+      "guid": "22L9Ze074p",
+      "item": "kuS7q4u7Ua",
+      "h": 3,
+      "nw": "DUGlsbK-0A",
+      "n": "01h6518Ti4"
+    },
+    {
+      "guid": "DUGlsbK-0A",
+      "item": "rv2ivbgqBM",
+      "h": 6
+    },
+    {
+      "guid": "01h6518Ti4",
+      "item": "WiZ0uVP0K-",
+      "c": 5,
+      "nw": "9in0prFSJ_",
+      "n": "GW8hjVynq4",
+      "ne": "liyKmy-aJs"
+    },
+    {
+      "guid": "9in0prFSJ_",
+      "item": "Qqsui-W6Gr"
+    },
+    {
+      "guid": "liyKmy-aJs",
+      "item": "Q0E7lpa192"
+    },
+    {
+      "guid": "GW8hjVynq4",
+      "item": "xCPJYG39hD"
+    },
+    // #endregion
     // Ceasing Commodore
     {
       "guid": "Wt_FOZCmQf",

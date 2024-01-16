@@ -12016,7 +12016,7 @@
     // #endregion
     // #endregion
     // #region Abyss
-    // Anxious Angler
+    // #region Anxious Angler
     {
       "id": 1371,
       "guid": "sk_cUbT6vx",
@@ -12129,6 +12129,28 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
     },
+    {
+      "id": 2050,
+      "guid": "2vqdDGadG5",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 2051,
+      "guid": "aXl9NeM1su",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "id": 2052,
+      "guid": "WiZ0uVP0K-",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    // #endregion
     // Ceasing Commodore
     {
       "id": 1384,
