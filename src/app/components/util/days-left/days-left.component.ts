@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 
 @Component({
@@ -9,9 +9,9 @@ import { DateHelper } from 'src/app/helpers/date-helper';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DaysLeftComponent implements OnChanges {
-  @Input() date?: dayjs.Dayjs;
-  @Input() start?: dayjs.Dayjs;
-  @Input() end?: dayjs.Dayjs;
+  @Input() date?: DateTime;
+  @Input() start?: DateTime;
+  @Input() end?: DateTime;
 
   label: string = '';
 
@@ -20,23 +20,23 @@ export class DaysLeftComponent implements OnChanges {
   }
 
   private getLabel(): string {
-    const date = this.date ?? dayjs();
-    if (this.start && date.isBefore(this.start)) { return this.getLabelBeforeStart(date); }
+    const date = this.date ?? DateTime.now();
+    if (this.start && date < this.start) { return this.getLabelBeforeStart(date); }
     if (this.start && !this.end) { return 'ongoing'; }
-    if (this.end && date.isBefore(this.end)) { return this.getLabelBeforeEnd(date); }
+    if (this.end && date < this.end) { return this.getLabelBeforeEnd(date); }
     if (this.end) return 'ended';
     return '';
   }
 
-  private getLabelBeforeStart(date: dayjs.Dayjs): string {
+  private getLabelBeforeStart(date: DateTime): string {
     const days = DateHelper.daysBetween(date, this.start!);
-    if (!days) { return 'tomorrow'; }
-    return `in ${days + 1} days`;
+    if (days === 1) { return 'tomorrow'; }
+    return `in ${days} days`;
   }
 
-  private getLabelBeforeEnd(date: dayjs.Dayjs): string {
+  private getLabelBeforeEnd(date: DateTime): string {
     const days = DateHelper.daysBetween(date, this.end!);
-    if (!days) { return 'last day'; }
-    return `${days + 1} days left`;
+    if (days === 1) { return 'last day'; }
+    return `${days} days left`;
   }
 }

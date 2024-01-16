@@ -3,14 +3,11 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DataService } from './services/data.service';
 import { Router } from '@angular/router';
-import dayjs from 'dayjs';
-import * as utc from 'dayjs/plugin/utc';
-import * as isoWeek from 'dayjs/plugin/isoWeek';
-import * as timezone from 'dayjs/plugin/timezone';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
 import { StorageService, storageReloadKeys } from './services/storage.service';
 import { filter } from 'rxjs';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-root',
@@ -45,11 +42,7 @@ export class AppComponent {
       this.dataLoss = true;
     });
 
-    dayjs.extend(utc.default);
-    dayjs.extend(isoWeek.default);
-    dayjs.extend(timezone.default);
-    dayjs.tz.setDefault(DateHelper.skyTimeZone);
-    (window as any).dayjs = dayjs;
+    (window as any).DateTime = DateTime;
 
     if (location.pathname.endsWith('/outfit-request/request')) {
       this.hideMenu();

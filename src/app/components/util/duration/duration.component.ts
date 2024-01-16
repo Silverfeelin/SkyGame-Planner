@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 
 @Component({
@@ -9,8 +9,8 @@ import { DateHelper } from 'src/app/helpers/date-helper';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DurationComponent implements OnChanges {
-  @Input() start?: dayjs.Dayjs;
-  @Input() end?: dayjs.Dayjs;
+  @Input() start?: DateTime;
+  @Input() end?: DateTime;
 
   label: string = '';
 
@@ -20,8 +20,8 @@ export class DurationComponent implements OnChanges {
 
   private getLabel(): string {
     if (!this.start || !this.end) { return ''; }
-    const days = DateHelper.daysBetween(this.start, this.end);
-    if (!days) { return '1 day'; }
-    return `${days + 1} days`;
+    let days = DateHelper.daysBetween(this.start, this.end);
+    if (days === 1) { return '1 day'; }
+    return `${days} days`;
   }
 }

@@ -20,7 +20,6 @@ import { StorageService } from './storage.service';
 import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
 import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
-import dayjs from 'dayjs';
 import { CostHelper } from '../helpers/cost-helper';
 import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
@@ -200,7 +199,7 @@ export class DataService {
       // Initialize dates
       ts.date = DateHelper.fromInterfaceSky(ts.date)!;
       ts.endDate = DateHelper.fromInterfaceSky(ts.endDate)?.endOf('day')
-        ?? dayjs(ts.date).add(3, 'day').endOf('day');
+        ?? ts.date.plus({ days: 3 }).endOf('day');
 
       // Map TS to Spirit.
       const spirit = this.guidMap.get(ts.spirit as any) as ISpirit;
