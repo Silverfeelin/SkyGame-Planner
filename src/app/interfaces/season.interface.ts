@@ -22,6 +22,9 @@ export interface ISeason extends IGuid, IPeriod {
   /** Season number, starting at 1 for Gratitude. */
   number: number;
 
+  /** If marked as draft, data may be inaccurate or incomplete. */
+  draft?: boolean;
+
   /// References ///
 
   /** Season spirits.

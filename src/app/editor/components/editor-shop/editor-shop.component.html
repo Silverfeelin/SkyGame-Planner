@@ -1,12 +1,22 @@
-<div>
-  Shop to copy: <input type="text" [(ngModel)]="copyShopGuid"  (ngModelChange)="shopGuidChanged()"/><br/>
-  Returning IAPs: <input type="checkbox" [(ngModel)]="returning"/>
+<div class="container">
+  Shop to copy: <input type="text" [(ngModel)]="copyShopGuid"  (ngModelChange)="shopGuidChanged()"/>
+  <div>
+    Returning IAPs: <input type="checkbox" [(ngModel)]="returning" style="width:unset;display:inline-block"/>
+  </div>
   <button type="button" (click)="submit()">Submit</button>
 </div>
 
-<div *ngIf="result">
-  <button type="button" (click)="copyToClipboard('shop')">
-    Copy Shop
+<div class="container mt">
+  Event to copy: <input type="text" [(ngModel)]="copyEventGuid"/>
+  <button type="button" (click)="submitEvent()">Submit</button>
+</div>
+
+<div class="container mt" *ngIf="result">
+  <button type="button" (click)="copyToClipboard('shopGuids')">
+    Copy Shop GUIDs
+  </button>
+  <button type="button" (click)="copyToClipboard('shops')">
+    Copy Shops
   </button>
   <button type="button" (click)="copyToClipboard('iaps')">
     Copy IAPs

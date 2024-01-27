@@ -181,6 +181,38 @@
       ]
     },
     // #endregion
+    // #region Days of Fortune (2024)
+    {
+      "guid": "N1ioU0ztzJ",
+      "type": "Store",
+      "iaps": [
+        "GQirzPYKk-",
+        "xc37pb6Wvb",
+        "XMyw8g-P8x"
+      ]
+    },
+    {
+      "guid": "B6AeQqeM0E",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "AZNU4TiFyl",
+        "4jMCH8Vl-x"
+      ]
+    },
+    {
+      "guid": "9HhEIMjSWV",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "28rCsz9wUP",
+        "NVsMGCUZek",
+        "cjTDXNkvN1",
+        "vrUAy0EAun",
+        "JPyUHMKT5R"
+      ]
+    },
+    // #endregion
     // #region Days of Love (2020)
     {
       "guid": "b6QkhZumfk",
@@ -573,7 +605,7 @@
         "4JGWNM03tr"
       ]
     },
-    // #en
+    // #endregion
     // #region Days of Feast (2019)
     {
       "guid": "eWS8HsX6SC",

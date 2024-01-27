@@ -26,6 +26,9 @@ export interface IEventInstance extends IGuid, IPeriod {
   /** Event instance number starting at 1. */
   number: number;
 
+  /** If marked as draft, data may be inaccurate or incomplete. */
+  draft?: boolean;
+
   /// References
   event: IEvent;
   shops: Array<IShop>;

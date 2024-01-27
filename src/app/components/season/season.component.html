@@ -52,6 +52,13 @@
           <span class="c-accent" *ngIf="shLeft">({{ shLeft }} needed)</span>
         </span>
       </div>
+      <!-- Draft -->
+      <div class="container colspan-2" *ngIf="season.draft">
+        <mat-icon class="menu-icon">warning</mat-icon>
+        <span class="menu-label">
+          This data has not yet been checked on the live version of Sky. Data may be incomplete or inaccurate.
+        </span>
+      </div>
     </div>
   </div>
 </div>

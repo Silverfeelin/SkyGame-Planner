@@ -46,7 +46,21 @@
           "spirits": [
             { "guid": "1QcP-L-MqO", "spirit": "9VkjVkgKhb", "tree": "Oi0WztDirX" },
           ]
-        }
+        },
+        {
+          "guid": "MKGyPFAEUA",
+          "draft": true,
+          "date": { "day": 29, "month": 1, "year": 2024 },
+          "endDate": { "day": 11, "month": 2, "year": 2024 },
+          "shops": [
+            "N1ioU0ztzJ",
+            "B6AeQqeM0E",
+            "9HhEIMjSWV"
+          ],
+          "spirits": [
+            {	"guid": "LgbNikVTN0", "spirit": "9VkjVkgKhb", "tree": "QbHVq43AMl" },
+          ]
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune"
