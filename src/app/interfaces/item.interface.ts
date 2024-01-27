@@ -29,6 +29,9 @@ export interface IItem extends IGuid {
   /** Music sheet */
   sheet?: string;
 
+  /** Hide from closet (Outfit request) */
+  closetHide?: boolean;
+
   /// References ///
 
   /** Spirit tree nodes that unlock this item. */

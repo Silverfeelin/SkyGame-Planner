@@ -510,6 +510,7 @@ export class ClosetComponent implements OnDestroy {
 
     // Add items to closets.
     for (const item of this._dataService.itemConfig.items) {
+      if (item.closetHide) { continue; }
       let type = item.type;
       if (!this.items[type as string]) { continue; }
 
