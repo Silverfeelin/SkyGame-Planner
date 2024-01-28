@@ -6,7 +6,7 @@ import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
 import { ISpiritTree, ISpiritTreeConfig } from '../interfaces/spirit-tree.interface';
 import { IEventConfig } from '../interfaces/event.interface';
-import { IItem, IItemConfig } from '../interfaces/item.interface';
+import { IItem, IItemConfig, ItemType } from '../interfaces/item.interface';
 import { INode, INodeConfig } from '../interfaces/node.interface';
 import { IQuestConfig } from '../interfaces/quest.interface';
 import { IRealmConfig } from '../interfaces/realm.interface';
@@ -379,13 +379,27 @@ export class DataService {
 
   private initializeItems(): void {
     const ids = new Set<number>();
+    const types = new Set<string>();
+    for (const type in ItemType) { types.add(type); }
+
+    let shouldWarn = false;
     this.itemConfig.items.forEach(item => {
       if (item.id) {
-        ids.has(item.id) && console.error('Duplicate item ID', item.id, item);
-        ids.add(item.id);
-        this.idMap.set(item.id, item);
+        if (ids.has(item.id)) {
+          console.error('Duplicate item ID', item.id, item);
+          shouldWarn = true;
+        } else {
+          ids.add(item.id);
+          this.idMap.set(item.id, item);
+        }
       } else {
         console.error('Item ID not defined', item);
+        shouldWarn = true;
+      }
+
+      if (!item.type || !types.has(item.type)) {
+        console.error('Item type not defined.', item);
+        shouldWarn = true;
       }
 
       item.unlocked ||= this._storageService.unlocked.has(item.guid);
@@ -393,6 +407,8 @@ export class DataService {
       if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }
       item.order ??= 999999;
     });
+
+    shouldWarn && alert('Misconfigured items. Please report this issue.');
   }
 
 

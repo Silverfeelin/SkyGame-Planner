@@ -15754,7 +15754,8 @@
     {
       "id": 2057,
       "guid": "8KXtBlvNRO",
-      "type": "Instrument",
+      "type": "Held",
+      "subtype": "Instrument",
       "name": "Days of Fortune Drum",
       "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
