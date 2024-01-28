@@ -93,6 +93,7 @@ export class EditorTreeComponent implements OnInit {
     this.formNodes[i].item = item.guid;
     this.formNodes[i].itemRef = item;
 
+    debugger;
     target.value = '';
     target.blur();
   }
@@ -109,7 +110,21 @@ export class EditorTreeComponent implements OnInit {
 
     this.formNodes[i].item = item.guid;
     this.formNodes[i].itemRef = item;
+    debugger;
+    target.value = '';
+  }
 
+  itemInputBlur(event: Event, i: number): void {
+    const target = (event.target as HTMLInputElement);
+    const value = +(target?.value as string);
+    if (!value) { return; }
+
+    const item = this._dataService.idMap.get(value) as IItem;
+    if (!item) { return; }
+
+    this.formNodes[i].item = item.guid;
+    this.formNodes[i].itemRef = item;
+    debugger;
     target.value = '';
   }
 
@@ -197,6 +212,7 @@ export class EditorTreeComponent implements OnInit {
   getNodeFromJson(json: string): IFormNode | undefined {
     try {
       const node = JSON.parse(json) as IFormNode;
+      if (typeof node !== 'object') { return undefined; }
       if (node.item) {
         node.itemRef = this._dataService.guidMap.get(node.item) as IItem;
       }

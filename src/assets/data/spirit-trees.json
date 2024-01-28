@@ -327,6 +327,11 @@
       "guid": "tzCvlmC_Oc",
       "node": "SqgpIRZYPo"
     },
+    // Nine-Colored Deer Guide
+    {
+      "guid": "Lvuz1tp6P9",
+      "node": "BLKy0jnYaU"
+    },
     // #endregion
 
     // #region Gratitude
@@ -1137,6 +1142,10 @@
       "guid": "M-25cEcvw-",
       "node": "WLTEZBaXZ6"
     },
+    {
+      "guid": "NdB6VF6E1G",
+      "node": "w7O7kFaQ4l"
+    },
     // Ceasing Commodore
     {
       "guid": "1c2RnFkkmb",
@@ -1316,6 +1325,32 @@
     },
     // #endregion
     // #endregion
+    // #region Nine-Colored Deer
+    // #region Herb Gatherer
+    {
+      "guid": "nDiOVsRGWO",
+      "node": "EEz74j7uA3"
+    },
+    // #endregion
+    // #region Hunter
+    {
+      "guid": "rsxn04As9U",
+      "node": "kU0nAenGkj"
+    },
+    // #endregion
+    // #region Feudal Lord
+    {
+      "guid": "0wgQ9rDShR",
+      "node": "c1ukj9PFVD"
+    },
+    // #endregion
+    // #region Princess
+    {
+      "guid": "uLAuAvptPA",
+      "node": "QLHntqZQ6m"
+    },
+    // #endregion
+    // #endregion
 
     // #region Days of Fortune
     // Days of Fortune (2021)
@@ -1336,6 +1371,11 @@
     {
       "guid": "Oi0WztDirX",
       "node": "zkh35ZE3J_"
+    },
+    // Days of Fortune (2024)
+    {
+      "guid": "QbHVq43AMl",
+      "node": "ZtC0aan5z-"
     },
     // #endregion
     // #region Days of Love

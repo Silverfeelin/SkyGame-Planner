@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { nanoid } from 'nanoid';
+import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -11,6 +13,7 @@ import { DataService } from 'src/app/services/data.service';
 export class EditorShopComponent {
   copyShopGuid?: string;
   copyShop?: IShop;
+  copyEventGuid?: string;
   returning = true;
 
   result?: any;
@@ -52,25 +55,67 @@ export class EditorShopComponent {
     };
 
     this.result = {
-      shop: newShop,
+      shops: [newShop],
       iaps
     };
   }
 
+  submitEvent(): void {
+    const event = this._dataService.guidMap.get(this.copyEventGuid || '') as any;
+    let instance: IEventInstance | undefined = event as IEventInstance;
+    if ((event as IEvent)?.instances?.length) {
+      instance = (event as IEvent).instances?.at(-1);
+    }
+    if (!instance) { alert('Event instance not found'); return; }
+
+    const shops: Array<IShop> = [];
+    const iaps: Array<IIAP> = [];
+    instance.shops?.forEach(oldShop => {
+      const newShop: IShop  = {
+        guid: nanoid(10),
+        type: oldShop.type
+      };
+      if (oldShop.spirit) { (newShop.spirit as unknown as string) = oldShop.spirit.guid; }
+      if (oldShop.name) { newShop.name = oldShop.name; }
+
+      newShop.iaps = [];
+      const addIap = (iap: IIAP) => {
+        const newIap: IIAP = { guid: nanoid(10), name: iap.name, price: iap.price, returning: true };
+        if (iap.c) { newIap.c = iap.c; }
+        if (iap.sc) { newIap.sc = iap.sc; }
+        if (iap.sp) { newIap.sp = iap.sp; }
+        (newIap.items as unknown as Array<string>) = iap.items?.map(i => i.guid) || [];
+        (newShop.iaps! as unknown as Array<string>).push(newIap.guid);
+        iaps.push(newIap);
+      };
+      oldShop.iaps?.filter(iap => !iap.returning).forEach(addIap);
+      oldShop.iaps?.filter(iap => iap.returning).forEach(addIap);
+
+      shops.push(newShop);
+    });
+
+    this.result = {
+      shops,
+      iaps
+    };
+  }
 
   copyToClipboard(type: string): void {
     let value = this.getForClipboard(type);
     if (!value) { return; }
     let json = JSON.stringify(value, undefined, 2);
-    const startI = json.indexOf('{');
-    const endI = json.lastIndexOf('}');
+    let startI = json.indexOf('{');
+    if (startI === -1) { startI = json.indexOf('"') }
+    let endI = json.lastIndexOf('}');
+    if (endI === -1) { endI = json.lastIndexOf('"') }
     json = json.substring(startI, endI + 1) + ',';
     navigator.clipboard.writeText(json);
   }
 
   getForClipboard(type: string): Array<any> {
     switch (type) {
-      case 'shop': return [this.result.shop];
+      case 'shopGuids': return this.result.shops.map((shop: IShop) => shop.guid);
+      case 'shops': return this.result.shops;
       case 'iaps': return this.result.iaps;
       default: return [];
     }

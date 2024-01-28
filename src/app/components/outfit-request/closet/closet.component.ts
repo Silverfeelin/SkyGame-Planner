@@ -510,6 +510,7 @@ export class ClosetComponent implements OnDestroy {
 
     // Add items to closets.
     for (const item of this._dataService.itemConfig.items) {
+      if (item.closetHide) { continue; }
       let type = item.type;
       if (!this.items[type as string]) { continue; }
 
@@ -947,7 +948,7 @@ export class ClosetComponent implements OnDestroy {
       { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
       { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
-      { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 24 hours.' },
+      { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 1 week.' },
       { sStep: s.COPY_IMAGE, title: 'Copy image', intro: this.requesting ? 'An image will be copied to your clipboard. You can paste this image in Discord. The image highlights selected items making it easier to see them.' : 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
     ]);
 

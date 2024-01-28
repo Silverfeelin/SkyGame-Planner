@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
@@ -50,7 +50,7 @@ export class EditorTravelingSpiritComponent {
         .sort((a, b) => a.name.localeCompare(b.name));
 
       const lastDate = dataService.travelingSpiritConfig.items.at(-1)!.date!;
-      this.date = lastDate.add(2, 'weeks').isoWeekday(4).format('YYYY-MM-DD');
+      this.date = lastDate.plus({ weeks: 2 }).set({ weekday: 4 }).toFormat('yyyy-MM-dd');
 
       this.formNodes = [];
       for (let i = 0; i < 24; i++) { this.formNodes.push({
@@ -114,11 +114,11 @@ export class EditorTravelingSpiritComponent {
     };
 
     // Create ts
-    const date = dayjs(new Date(this.date!));
+    const date = DateTime.fromJSDate(new Date(this.date!));
     const ts: ITravelingSpirit = {
       guid: nanoid(10),
       date: date,
-      endDate: date.add(4, 'days'),
+      endDate: date.plus({ days: 3 }),
       spirit,
       tree,
       number: this.tsCount + 1,

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
@@ -72,7 +72,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   checkin(): void {
     this.checkedIn = !this.checkedIn;
     if (this.checkedIn) {
-      localStorage.setItem(`season.checkin.${this.season?.guid}`, dayjs.tz().format('YYYY-MM-DD'));
+      localStorage.setItem(`season.checkin.${this.season?.guid}`, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
     } else {
       localStorage.removeItem(`season.checkin.${this.season?.guid}`);
     }
@@ -82,8 +82,8 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   private updateCheckin(): void {
     const checkinDate = localStorage.getItem(`season.checkin.${this.season?.guid}`);
     if (checkinDate) {
-      const d = dayjs.tz(checkinDate, 'YYYY-MM-DD', DateHelper.skyTimeZone);
-      this.checkedIn = d.isSame(dayjs.tz(), 'day');
+      const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
+      this.checkedIn = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
     } else {
       this.checkedIn = false;
     }

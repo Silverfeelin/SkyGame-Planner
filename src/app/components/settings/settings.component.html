@@ -41,7 +41,7 @@
   </div>
   <div class="sky-card-body">
     <div class="container ws-pl">
-      Change the date displayed in the application. Today's date is {{ today | dayjs: dateFormat }}.
+      Change the date displayed in the application. Today's date is {{ today | datetime: dateFormat }}.
       <div class="sky-flex flex-wrap mt">
         <button *ngFor="let format of dateFormats" [class.highlight]="dateFormat === format" type="button" class="item ws-nw" (click)="setDateFormat(format)">
           {{ format | lowercase }}

@@ -30,7 +30,7 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SearchComponent } from './components/search/search.component';
-import { DayjsPipe } from './pipes/dayjs.pipe';
+import { DateTimePipe } from './pipes/date-time.pipe';
 import { RealmComponent } from './components/realms/realm/realm.component';
 import { ItemTypePipe } from './pipes/item-type.pipe';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
@@ -71,7 +71,7 @@ import { ClampPipe } from './pipes/clamp.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    DayjsPipe,
+    DateTimePipe,
     ItemTypePipe,
     PercentagePipe,
     ClampPipe,

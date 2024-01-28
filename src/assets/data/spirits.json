@@ -129,7 +129,7 @@
       "guid": "xbGBFC0rnu",
       "type": "Regular",
       "name": "Blushing Prospector",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Forest-Spirit-Blushing-Prospector-Gold.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Forest-Spirit-Blushing-Prospector.png",
       "tree": "LMcXyV8-2j",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector"
@@ -169,7 +169,7 @@
       "guid": "puj9z07ew0",
       "type": "Regular",
       "name": "Apologetic Lumberjack",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Forest-Spirit-Apologetic-Lumberjack-Gold.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Forest-Spirit-Apologetic-Lumberjack.png",
       "tree": "8mHCSAJMJt",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack"
@@ -179,7 +179,7 @@
       "guid": "gF3qSnQNxx",
       "type": "Regular",
       "name": "Tearful Light Miner",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Forest-Spirit-Tearful-Light-Miner-Gold.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Forest-Spirit-Tearful-Light-Miner.png",
       "tree": "et4Q9BpF6x",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner"
@@ -189,7 +189,7 @@
       "guid": "R_zBE7HaWV",
       "type": "Regular",
       "name": "Whale Whisperer",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Forest-Spirit-Whale-Whisperer-Gold.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Forest-Spirit-Whale-Whisperer.png",
       "tree": "Mker9XnSXM",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Whale_Whisperer"
@@ -221,7 +221,7 @@
       "guid": "CfXORyMFx4",
       "type": "Regular",
       "name": "Manta Whisperer",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Valley-Spirit-Manta-Whisperer-Gold.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Valley-Spirit-Manta-Whisperer.png",
       "tree": "XRXDlNt2KM",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Manta_Whisperer"
@@ -273,7 +273,7 @@
       "guid": "TqswdiTmEC",
       "type": "Regular",
       "name": "Frightened Refugee",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Wasteland-Spirit-Frightened-Refugee-Gold.png",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Wasteland-Spirit-Frightened-Refugee.png",
       "tree": "2tMrFxgXJy",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee"
@@ -385,8 +385,9 @@
     // #region Office
     {
       "guid": "ExkE9a7QJ0",
-      "name": "Office NPC",
       "type": "Special",
+      "name": "Office NPC",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/NPC-secret-area.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -395,6 +396,7 @@
       "guid": "Ayoc2XvMTy",
       "type": "Special",
       "name": "Office Spirit #1",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Office-Spirit-Jenova-ISS.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -403,6 +405,7 @@
       "guid": "izKBXplld6",
       "type": "Special",
       "name": "Office Spirit #2",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Office-Spirit-Valley-Hair.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -411,6 +414,7 @@
       "guid": "cpTFBZ-im4",
       "type": "Special",
       "name": "Office Spirit #3",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Office-Spirit-Provoking-Mask.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -419,6 +423,7 @@
       "guid": "bQCZEuAuZe",
       "type": "Special",
       "name": "Office Spirit #4",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Office-Spirit-Pizza-Chris.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -427,6 +432,7 @@
       "guid": "MKdRGA66hC",
       "type": "Special",
       "name": "Office Spirit #5",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Office-Spirit-Atlas-Yoga.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -435,6 +441,7 @@
       "guid": "HmibyU0UEG",
       "type": "Special",
       "name": "Office Spirit #6",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Office-Spirit-Composer-Walk.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -443,6 +450,7 @@
       "guid": "GUwL23XDTb",
       "type": "Special",
       "name": "Office Spirit #7",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Office-Spirit-Don%27s-Memory.png",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
       }
@@ -1659,6 +1667,59 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven"
       }
     },
+    // #endregion
+    // #region Nine-Colored Deer
+    {
+      "guid": "v-bxcGqGaa",
+      "type": "Guide",
+      "name": "Spirit of Mural",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Nine-Colored-Deer-Guide-Spirit.png",
+      "tree": "Lvuz1tp6P9",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural"
+      }
+    },
+    {
+      "guid": "gyEBXKOIwY",
+      "type": "Season",
+      "name": "Herb Gatherer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Nine-Colored-Deer-Herb-Gatherer.png",
+      "tree": "nDiOVsRGWO",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer"
+      }
+    },
+    {
+      "guid": "4h9FByzo7y",
+      "type": "Season",
+      "name": "Hunter",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nine-Colored-Deer-Hunter.png",
+      "tree": "rsxn04As9U",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter"
+      }
+    },
+    {
+      "guid": "wyFKAWN45l",
+      "type": "Season",
+      "name": "Feudal Lord",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Nine-Colored-Deer-Feudal-Lord.png",
+      "tree": "0wgQ9rDShR",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord"
+      }
+    },
+    {
+      "guid": "mf7NyGfeDI",
+      "type": "Season",
+      "name": "Princess",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Nine-Colored-Deer-Princess.png",
+      "tree": "uLAuAvptPA",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess"
+      }
+    },
+
     // #endregion
 
     // #region Events
