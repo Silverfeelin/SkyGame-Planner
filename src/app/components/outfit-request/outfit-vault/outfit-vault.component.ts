@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { WindowHelper } from 'src/app/helpers/window-helper';
@@ -34,7 +34,7 @@ interface IApiOutfit {
 
 interface IResult {
   data: IApiOutfit;
-  date?: dayjs.Dayjs;
+  date?: DateTime;
   items: Selection<IItem>;
 }
 
@@ -275,7 +275,7 @@ export class OutfitVaultComponent {
 
       return {
         data: resItem,
-        date: resItem.date ? dayjs(resItem.date) : undefined,
+        date: resItem.date ? DateTime.fromISO(resItem.date) : undefined,
         items
       };
     }) || [];
