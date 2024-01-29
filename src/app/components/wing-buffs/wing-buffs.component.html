@@ -11,7 +11,14 @@
 <!-- -->
 <div class="sky-card mt">
   <div class="sky-card-header">
-    <div>You have unlocked <b [class.completed]="unlocked === total">{{ unlocked }}</b> out of <b [class.completed]="unlocked === total">{{ total }}</b> wing buffs.</div>
+    <div>
+      <span *ngIf="type" class="c-accent"> ({{ type | spiritType }})</span>
+      You have unlocked
+      <b [class.completed]="unlocked === total">{{ unlocked }}</b>
+      out of
+      <b [class.completed]="unlocked === total">{{ total }}</b>
+      wing buffs.
+    </div>
   </div>
   <div class="sky-card-body scroll-x">
     <app-table [rows]="rows">
