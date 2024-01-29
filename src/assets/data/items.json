@@ -15632,7 +15632,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Days-of-Fortune-Rabbit-Mask.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Rabbit_Mask" },
-      "order": 10203
+      "order": 10204
     },
     {
       "id": 1737,
@@ -15716,7 +15716,6 @@
       "guid": "wkCxoe9zSP",
       "type": "Outfit",
       "name": "Days of Fortune Dragon Vestment",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Fortune-Dragon-Robe-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Fortune-Dragon-Robe.png",
       "order": 10101
@@ -15726,7 +15725,6 @@
       "guid": "LGaX4cqdOe",
       "type": "Cape",
       "name": "Days of Fortune Dragon Stole",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Fortune-Dragon-Scarf-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Fortune-Dragon-Scarf-back.png",
       "order": 10003
@@ -15736,7 +15734,6 @@
       "guid": "xsTxIqIX8E",
       "type": "FaceAccessory",
       "name": "Days of Fortune Dragon Bangles",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Fortune-Dragon-Bangles-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
       "order": 1551
@@ -15746,10 +15743,9 @@
       "guid": "OFwVuPWmfK",
       "type": "Mask",
       "name": "Days of Fortune Dragon Mask",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Days-of-Fortune-Dragon-Mask-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Fortune-Dragon-Mask.png",
-      "order": 10102
+      "order": 10203
     },
     {
       "id": 2057,
@@ -15757,10 +15753,9 @@
       "type": "Held",
       "subtype": "Instrument",
       "name": "Days of Fortune Drum",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-      "order": 2002
+      "order": 4012
     },
     {
       "id": 2058,
@@ -15768,6 +15763,20 @@
       "type": "Special",
       "name": "Days of Fortune Warp",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "id": 2059,
+      "guid": "t6nJrp1wWD",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "id": 2060,
+      "guid": "QB-SWz3oTJ",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     // #endregion
     // #region Days of Love
@@ -17442,7 +17451,7 @@
       "name": "Festival Scepter",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Festival-Scepter-prop.png",
-      "order": 4012
+      "order": 4022
     },
     {
       "id": 1957,
