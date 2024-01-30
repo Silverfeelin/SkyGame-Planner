@@ -9,10 +9,11 @@ import { SubscriptionLike, lastValueFrom } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
-import { DateHelper } from 'src/app/helpers/date-helper';
+import { DateHelper, PeriodState } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
+import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -117,6 +118,11 @@ export class ClosetComponent implements OnDestroy {
   isRendering: number = 0; // 1 = link, 2 = image
   lastLink?: string; // Reuse last copy link to prevent unnecessary KV writes.
 
+  // Traveling Spirit
+  ts?: ITravelingSpirit;
+  tsState?: PeriodState;
+  tsItems?: Array<IItem>;
+
   // Internal
   _clickSub: SubscriptionLike;
 
@@ -144,6 +150,7 @@ export class ClosetComponent implements OnDestroy {
 
     this.initializeBackground();
     this.initializeItems();
+    this.initializeTs();
 
     this._clickSub = _eventService.clicked.subscribe(evt => {
       this.clickoutColorPicker(evt);
@@ -472,6 +479,25 @@ export class ClosetComponent implements OnDestroy {
     this.selectionHasUnavailable = this.available ? Object.keys(this.selected.all).some(guid => !this.available![guid]) : false;
     this._changeDetectorRef.markForCheck();
   }
+  // #region TS
+
+  private initializeTs(): void {
+    if (!this.requesting) { return; }
+
+    const ts = this._dataService.travelingSpiritConfig.items.at(-1);
+    if (!ts) { return; }
+    const state = DateHelper.getStateFromPeriod(ts.date, ts.endDate);
+    if (state === 'ended') { return; }
+    this.ts = ts;
+    this.tsState = state;
+
+    const types = new Set<ItemType>(this.itemTypes);
+    const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
+    items.sort((a, b) => this.itemTypes.indexOf(a.type) - this.itemTypes.indexOf(b.type));
+    this.tsItems = items;
+  }
+
+  // #endregion
 
   // #region Initialize items
 

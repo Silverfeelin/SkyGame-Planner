@@ -5648,7 +5648,7 @@
       "item": "Hi8NBjG271",
       "c": 75
     },
-    // Twirling Champion
+    // #region Twirling Champion
     {
       "guid": "-4dScFEOsV",
       "item": "tmhe-C2cN3",
@@ -5819,6 +5819,72 @@
       "item": "EjjybJGcTN",
       "c": 34
     },
+    // TS 106
+    {
+      "guid": "N6SJgPwgNS",
+      "item": "tmhe-C2cN3",
+      "nw": "NxX6lHkewM",
+      "n": "T9ewpiNgpr"
+    },
+    {
+      "guid": "NxX6lHkewM",
+      "item": "zjAeiE3x_t",
+      "h": 4
+    },
+    {
+      "guid": "T9ewpiNgpr",
+      "item": "10pNNxAeD8",
+      "c": 5,
+      "nw": "CBRRlIAh4x",
+      "n": "CP07lGrHDG",
+      "ne": "gMsF5FvTn2"
+    },
+    {
+      "guid": "CBRRlIAh4x",
+      "item": "0L89TCDEtN",
+      "c": 24
+    },
+    {
+      "guid": "gMsF5FvTn2",
+      "item": "-wPyZeJ1nD",
+      "c": 3
+    },
+    {
+      "guid": "CP07lGrHDG",
+      "item": "_2Q4y97jsM",
+      "ac": 2,
+      "n": "UKp6Kpm8Xb"
+    },
+    {
+      "guid": "UKp6Kpm8Xb",
+      "item": "zhwG9yJ2mi",
+      "h": 3,
+      "nw": "muWIbRO7UP",
+      "n": "ZBoCZpNLNV"
+    },
+    {
+      "guid": "muWIbRO7UP",
+      "item": "touhpuoYRG",
+      "h": 6
+    },
+    {
+      "guid": "ZBoCZpNLNV",
+      "item": "myvAPXLC4n",
+      "c": 5,
+      "nw": "emUVMdbzjg",
+      "n": "1UR38PzdOB"
+    },
+    {
+      "guid": "emUVMdbzjg",
+      "item": "PIRW3pt_BE",
+      "c": 60
+    },
+    {
+      "guid": "1UR38PzdOB",
+      "item": "EjjybJGcTN",
+      "c": 34
+    },
+    // #endregion
     // #region Crab Whisperer
     {
       "guid": "jgPKwx1mOG",
