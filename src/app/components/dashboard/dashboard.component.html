@@ -31,7 +31,7 @@
   <app-returning-spirit-card *ngIf="rs" [return]="rs"></app-returning-spirit-card>
   <!-- Future -->
   <app-season-card *ngIf="!season && futureSeason" [season]="futureSeason" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
-  <app-event-card *ngIf="!eventInstances.length && futureEventInstance" [event]="futureEventInstance.event" [instance]="futureEventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
+  <app-event-card *ngIf="futureEventInstance" [event]="futureEventInstance.event" [instance]="futureEventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
   <app-spirit-card *ngIf="futureTs" [spirit]="futureTs.spirit" [ts]="futureTs" [tree]="futureTs.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
     <div title><h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{futureTs.number}})</span></h2></div>
   </app-spirit-card>

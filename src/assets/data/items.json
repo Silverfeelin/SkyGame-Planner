@@ -7533,7 +7533,7 @@
       "guid": "SekRzXgjfv",
       "type": "Mask",
       "name": "Troupe Greeter Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Mimi-4117_05_troupe_greeter_mask.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Troupe-Greeter-Mask-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Season_of_rhythm_mask_isle_welcome_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Mask" },
       "order": 402
@@ -7543,7 +7543,7 @@
       "guid": "T4suf1MdTj",
       "type": "Outfit",
       "name": "Troupe Greeter Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_05_troupe_greeter_pants.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Troupe-Greeter-Icon-pants.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Outfit" },
       "order": 401
@@ -15916,6 +15916,38 @@
       "name": "Blessing",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
+    // #region Days of Love 2024
+    {
+      "id": 2061,
+      "guid": "svUBdDQ945",
+      "type": "Cape",
+      "name": "Days Of Love Meteor Mantle",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Love-Meteor-Mantle-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days-of-Love-Meteor-Mantle-back.png",
+      "order": 10051
+    },
+    {
+      "id": 2062,
+      "guid": "jHkHsvOnaU",
+      "type": "Prop",
+      "name": "Heart Plush",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Love-Heart-Plushie-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Plushie.png",
+      "order": 3405
+    },
+    {
+      "id": 2063,
+      "guid": "adF6BE3T7-",
+      "type": "Hat",
+      "name": "Heart Beret",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Beret-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Love-Heart-Beret.png",
+      "order": 1202
+    },
+    // #endregion
     // #endregion
     // #region Days of Bloom
     {

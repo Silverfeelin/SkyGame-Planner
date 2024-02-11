@@ -13,9 +13,10 @@ interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
 })
 export class EditorOrderComponent {
   types: Array<string> = [
-    'Hat', 'Hair',
+    'Outfit', 'Shoes',
     'Mask', 'FaceAccessory', 'Necklace',
-    'Outfit', 'Shoes', 'Cape',
+    'Hat', 'Hair',
+    'Cape',
     'Held', 'Prop',
     'Emote', 'Stance', 'Call',
     'Music'

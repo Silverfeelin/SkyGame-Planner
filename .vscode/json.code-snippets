@@ -102,7 +102,7 @@
       "\t$3",
       "},"
     ],
-  }
+  },
   "Shop": {
     "prefix": "@shop",
     "body": [
@@ -116,6 +116,19 @@
       "},"
     ],
     "description": "Shop"
+  },
+  "Event-Instance": {
+    "prefix": "@event-instance",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"date\": $0",
+      "\t\"endDate\": ",
+      "\t\"spirits\": [],",
+      "\t\"shops\": []",
+      "},"
+    ],
+    "description": "Event-Instance"
   },
   "Event-Spirit": {
     // { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },

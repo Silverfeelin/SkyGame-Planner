@@ -271,6 +271,34 @@
       ]
     },
     // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "Gpcii_q0ie",
+      "type": "Store",
+      "iaps": [
+        "UXec8cY3C8"
+      ]
+    },
+    {
+      "guid": "-gDmtZfZgy",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "zdU7dbNcG0",
+        "YtTUStyCGy",
+        "38RSjUYhZR"
+      ]
+    },
+    {
+      "guid": "zZa_567vOp",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "JLjsFmtey7",
+        "cVvWv3Nf7F"
+      ]
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "EF1SdxSqWT",
