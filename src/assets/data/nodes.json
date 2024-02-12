@@ -17091,6 +17091,60 @@
       "c": 100
     },
     // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "yUNUCsYx9f",
+      "item": "YJU5CxCP7q",
+      "nw": "z1wNcoYgOI",
+      "n": "1e7mjkScBk",
+      "ne": "CY8prXg6sX"
+    },
+    {
+      "guid": "z1wNcoYgOI",
+      "item": "jHkHsvOnaU",
+      "ec": 14
+    },
+    {
+      "guid": "CY8prXg6sX",
+      "item": "adF6BE3T7-",
+      "ec": 27
+    },
+    {
+      "guid": "1e7mjkScBk",
+      "item": "nEOsR79Jn5",
+      "c": 5,
+      "nw": "GOf-_dHRLE",
+      "n": "ryBRLMjZWA",
+      "ne": "1pQrVwklZ9"
+    },
+    {
+      "guid": "GOf-_dHRLE",
+      "item": "2bAlmLI951",
+      "ec": 7
+    },
+    {
+      "guid": "1pQrVwklZ9",
+      "item": "VBR5HI2-dU",
+      "h": 15
+    },
+    {
+      "guid": "ryBRLMjZWA",
+      "item": "owMovjRlTb",
+      "c": 5,
+      "nw": "4GHNtkHwJP",
+      "n": "pL4N75ZJ48"
+    },
+    {
+      "guid": "4GHNtkHwJP",
+      "item": "rFRaOxnvXF",
+      "h": 15
+    },
+    {
+      "guid": "pL4N75ZJ48",
+      "item": "P-7ozR83J8",
+      "c": 100
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "cQSMKHE-9K",

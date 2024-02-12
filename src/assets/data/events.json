@@ -121,11 +121,13 @@
           "guid": "dCkSpN_LCG",
           "date": { "day": 12, "month": 2, "year": 2024 },
           "endDate": { "day": 25, "month": 2, "year": 2024 },
-          "spirits": [],
+          "spirits": [
+            {	"guid": "WBgv46VQXB", "spirit": "mAn3DeaZPi", "tree": "3B4XeRLIrO" },
+          ],
           "shops": [
             "Gpcii_q0ie",
-            "-gDmtZfZgy",
-            "zZa_567vOp"
+            "zZa_567vOp",
+            "-gDmtZfZgy"
           ]
         },
       ],

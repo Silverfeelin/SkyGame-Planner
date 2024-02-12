@@ -15922,30 +15922,57 @@
       "guid": "svUBdDQ945",
       "type": "Cape",
       "name": "Days Of Love Meteor Mantle",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Love-Meteor-Mantle-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days-of-Love-Meteor-Mantle-back.png",
-      "order": 10051
+      "order": 10506
     },
     {
       "id": 2062,
       "guid": "jHkHsvOnaU",
       "type": "Prop",
       "name": "Heart Plush",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Love-Heart-Plushie-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Plushie.png",
-      "order": 3405
+      "order": 5804
     },
     {
       "id": 2063,
       "guid": "adF6BE3T7-",
       "type": "Hat",
       "name": "Heart Beret",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Beret-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Love-Heart-Beret.png",
-      "order": 1202
+      "order": 11513
+    },
+    {
+      "id": 2064,
+      "guid": "2bAlmLI951",
+      "type": "Music",
+      "name": "Music Sheet #E3",
+      "sheet": "E3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+      "order": 203
+    },
+    {
+      "id": 2065,
+      "guid": "nEOsR79Jn5",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "id": 2066,
+      "guid": "owMovjRlTb",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "id": 2067,
+      "guid": "YJU5CxCP7q",
+      "type": "Special",
+      "name": "Jellyfish Cove Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
     },
     // #endregion
     // #endregion
