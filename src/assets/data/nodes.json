@@ -11945,7 +11945,7 @@
     // #endregion
     // #endregion
     // #region Dreams
-    // Bearhug Hermit
+    // #region Bearhug Hermit
     {
       "guid": "ZCa7gd50nR",
       "item": "sw2YxczeGz",
@@ -12058,6 +12058,66 @@
       "item": "n4sSWlUIbO",
       "c": 70
     },
+    // TS 107
+    {
+      "guid": "IRu0px7jxG",
+      "item": "sw2YxczeGz",
+      "nw": "6W6kHzFlDn",
+      "n": "vjwZSMxkMo"
+    },
+    {
+      "guid": "6W6kHzFlDn",
+      "item": "s_79maNypQ",
+      "c": 15
+    },
+    {
+      "guid": "vjwZSMxkMo",
+      "item": "GiLR6EGa0G",
+      "c": 5,
+      "nw": "kKoMuYjqOR",
+      "n": "JOEYlX6MGJ",
+      "ne": "i6g6VTMkXK"
+    },
+    {
+      "guid": "kKoMuYjqOR",
+      "item": "xI0_ep59HH",
+      "c": 42
+    },
+    {
+      "guid": "i6g6VTMkXK",
+      "item": "exzDzoamyL",
+      "c": 3
+    },
+    {
+      "guid": "JOEYlX6MGJ",
+      "item": "knUa1Ri-X1",
+      "ac": 2,
+      "n": "eYapRy2u-b"
+    },
+    {
+      "guid": "eYapRy2u-b",
+      "item": "Ml3Snz_cos",
+      "c": 5,
+      "nw": "t8drYXJoZy",
+      "n": "tWKDjY83ng",
+      "ne": "vdX49Oa9XI"
+    },
+    {
+      "guid": "t8drYXJoZy",
+      "item": "YzY-N81J1l",
+      "h": 8
+    },
+    {
+      "guid": "vdX49Oa9XI",
+      "item": "C1z7gdAqFH",
+      "c": 50
+    },
+    {
+      "guid": "tWKDjY83ng",
+      "item": "n4sSWlUIbO",
+      "c": 70
+    },
+    // #endregion
     // Dancing Performer
     {
       "guid": "6i1ljkdw6g",
