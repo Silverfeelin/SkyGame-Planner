@@ -10,6 +10,7 @@ import { EditorItemComponent } from './components/editor-item/editor-item.compon
 import { MatIconModule } from '@angular/material/icon';
 import { EditorOrderComponent } from './components/editor-order/editor-order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditorEventInstanceComponent } from './components/editor-event-instance/editor-event-instance.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditorTreeComponent,
     EditorShopComponent,
     EditorItemComponent,
-    EditorOrderComponent
+    EditorOrderComponent,
+    EditorEventInstanceComponent
   ],
   imports: [
     CommonModule,

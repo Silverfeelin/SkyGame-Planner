@@ -312,8 +312,12 @@ export class DataService {
         eventInstance.number = iInstance + 1;
 
         // Initialize dates
-        eventInstance.date = DateHelper.fromInterfaceSky(eventInstance.date)!;
-        eventInstance.endDate = DateHelper.fromInterfaceSky(eventInstance.endDate)!.endOf('day');
+        eventInstance.date = typeof eventInstance.date === 'string'
+          ? DateHelper.fromStringSky(eventInstance.date)!
+          : DateHelper.fromInterfaceSky(eventInstance.date)!;
+        eventInstance.endDate = typeof eventInstance.endDate === 'string'
+          ? DateHelper.fromStringSky(eventInstance.endDate)!.endOf('day')
+          : DateHelper.fromInterfaceSky(eventInstance.endDate)!.endOf('day');
 
         // Map Instance to Event.
         eventInstance.event = event;

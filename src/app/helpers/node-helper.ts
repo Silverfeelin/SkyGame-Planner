@@ -1,3 +1,4 @@
+import { nanoid } from 'nanoid';
 import { IItem, ItemType } from "../interfaces/item.interface";
 import { INode, ITierNode } from "../interfaces/node.interface";
 
@@ -79,5 +80,36 @@ export class NodeHelper {
     const nodes: Array<INode> = [];
     while (node) { nodes.push(node); node = node.prev; }
     return nodes.reverse();
+  }
+
+  static clone(node: INode): INode {
+    const newNode: INode = {
+      guid: nanoid(10),
+      item: node.item,
+    };
+    if (node.hiddenItems) { newNode.hiddenItems = [...node.hiddenItems]; }
+    if (node.c) { newNode.c = node.c; }
+    if (node.h) { newNode.h = node.h; }
+    if (node.sc) { newNode.sc = node.sc; }
+    if (node.sh) { newNode.sh = node.sh; }
+    if (node.ac) { newNode.ac = node.ac; }
+    if (node.ec) { newNode.ec = node.ec; }
+
+    if (node.nw) {
+      newNode.nw = this.clone(node.nw);
+      newNode.nw.prev = newNode;
+    }
+
+    if (node.n) {
+      newNode.n = this.clone(node.n);
+      newNode.n.prev = newNode;
+    }
+
+    if (node.ne) {
+      newNode.ne = this.clone(node.ne);
+      newNode.ne.prev = newNode;
+    }
+
+    return newNode;
   }
 }
