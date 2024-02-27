@@ -11725,7 +11725,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
     // #endregion
-    // Light Whisperer
+    // #region Light Whisperer
     {
       "id": 1339,
       "guid": "YiLDQF0uDU",
@@ -11803,6 +11803,21 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
     },
+    {
+      "id": 2069,
+      "guid": "oF1ZpY_EyV",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 2070,
+      "guid": "kwgBrM-KbA",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
     // #region Tinkering Chimesmith
     {
       "id": 1348,
