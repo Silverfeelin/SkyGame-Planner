@@ -67,6 +67,7 @@ import { FormsModule } from '@angular/forms';
 import { RealmConstellationComponent } from './components/realms/realm-constellation/realm-constellation.component';
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { ClampPipe } from './pipes/clamp.pipe';
+import { SpiritTypePipe } from './pipes/spirit-type.pipe';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { ClampPipe } from './pipes/clamp.pipe';
     ItemTypePipe,
     PercentagePipe,
     ClampPipe,
+    SpiritTypePipe,
     SpiritTreeComponent,
     NodeComponent,
     ItemIconComponent,

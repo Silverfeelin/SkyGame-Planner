@@ -5648,7 +5648,7 @@
       "item": "Hi8NBjG271",
       "c": 75
     },
-    // Twirling Champion
+    // #region Twirling Champion
     {
       "guid": "-4dScFEOsV",
       "item": "tmhe-C2cN3",
@@ -5819,6 +5819,72 @@
       "item": "EjjybJGcTN",
       "c": 34
     },
+    // TS 106
+    {
+      "guid": "N6SJgPwgNS",
+      "item": "tmhe-C2cN3",
+      "nw": "NxX6lHkewM",
+      "n": "T9ewpiNgpr"
+    },
+    {
+      "guid": "NxX6lHkewM",
+      "item": "zjAeiE3x_t",
+      "h": 4
+    },
+    {
+      "guid": "T9ewpiNgpr",
+      "item": "10pNNxAeD8",
+      "c": 5,
+      "nw": "CBRRlIAh4x",
+      "n": "CP07lGrHDG",
+      "ne": "gMsF5FvTn2"
+    },
+    {
+      "guid": "CBRRlIAh4x",
+      "item": "0L89TCDEtN",
+      "c": 24
+    },
+    {
+      "guid": "gMsF5FvTn2",
+      "item": "-wPyZeJ1nD",
+      "c": 3
+    },
+    {
+      "guid": "CP07lGrHDG",
+      "item": "_2Q4y97jsM",
+      "ac": 2,
+      "n": "UKp6Kpm8Xb"
+    },
+    {
+      "guid": "UKp6Kpm8Xb",
+      "item": "zhwG9yJ2mi",
+      "h": 3,
+      "nw": "muWIbRO7UP",
+      "n": "ZBoCZpNLNV"
+    },
+    {
+      "guid": "muWIbRO7UP",
+      "item": "touhpuoYRG",
+      "h": 6
+    },
+    {
+      "guid": "ZBoCZpNLNV",
+      "item": "myvAPXLC4n",
+      "c": 5,
+      "nw": "emUVMdbzjg",
+      "n": "1UR38PzdOB"
+    },
+    {
+      "guid": "emUVMdbzjg",
+      "item": "PIRW3pt_BE",
+      "c": 60
+    },
+    {
+      "guid": "1UR38PzdOB",
+      "item": "EjjybJGcTN",
+      "c": 34
+    },
+    // #endregion
     // #region Crab Whisperer
     {
       "guid": "jgPKwx1mOG",
@@ -11879,7 +11945,7 @@
     // #endregion
     // #endregion
     // #region Dreams
-    // Bearhug Hermit
+    // #region Bearhug Hermit
     {
       "guid": "ZCa7gd50nR",
       "item": "sw2YxczeGz",
@@ -11992,6 +12058,66 @@
       "item": "n4sSWlUIbO",
       "c": 70
     },
+    // TS 107
+    {
+      "guid": "IRu0px7jxG",
+      "item": "sw2YxczeGz",
+      "nw": "6W6kHzFlDn",
+      "n": "vjwZSMxkMo"
+    },
+    {
+      "guid": "6W6kHzFlDn",
+      "item": "s_79maNypQ",
+      "c": 15
+    },
+    {
+      "guid": "vjwZSMxkMo",
+      "item": "GiLR6EGa0G",
+      "c": 5,
+      "nw": "kKoMuYjqOR",
+      "n": "JOEYlX6MGJ",
+      "ne": "i6g6VTMkXK"
+    },
+    {
+      "guid": "kKoMuYjqOR",
+      "item": "xI0_ep59HH",
+      "c": 42
+    },
+    {
+      "guid": "i6g6VTMkXK",
+      "item": "exzDzoamyL",
+      "c": 3
+    },
+    {
+      "guid": "JOEYlX6MGJ",
+      "item": "knUa1Ri-X1",
+      "ac": 2,
+      "n": "eYapRy2u-b"
+    },
+    {
+      "guid": "eYapRy2u-b",
+      "item": "Ml3Snz_cos",
+      "c": 5,
+      "nw": "t8drYXJoZy",
+      "n": "tWKDjY83ng",
+      "ne": "vdX49Oa9XI"
+    },
+    {
+      "guid": "t8drYXJoZy",
+      "item": "YzY-N81J1l",
+      "h": 8
+    },
+    {
+      "guid": "vdX49Oa9XI",
+      "item": "C1z7gdAqFH",
+      "c": 50
+    },
+    {
+      "guid": "tWKDjY83ng",
+      "item": "n4sSWlUIbO",
+      "c": 70
+    },
+    // #endregion
     // Dancing Performer
     {
       "guid": "6i1ljkdw6g",
@@ -12088,6 +12214,7 @@
     {
       "guid": "bLGiMurjnQ",
       "item": "xFj09irsLt",
+      "hiddenItems": ["3CcVwVPJm-"],
       "sc": 21,
       "nw": "cmASdV8XsO",
       "n": "9x8MNlf8eg"
@@ -12180,6 +12307,7 @@
     {
       "guid": "BmvolBJz_w",
       "item": "xFj09irsLt",
+      "hiddenItems": ["3CcVwVPJm-"],
       "c": 70
     },
     // #region Spinning Mentor
@@ -14109,7 +14237,7 @@
       "c": 70
     },
     // #endregion
-    // Light Whisperer
+    // #region Light Whisperer
     {
       "guid": "zI5GRFCBhX",
       "item": "YiLDQF0uDU",
@@ -14164,6 +14292,60 @@
       "item": "CJLgEjb1TE",
       "sc": 3
     },
+    // TS 108
+    {
+      "guid": "MGUE9PoBTC",
+      "item": "YiLDQF0uDU",
+      "n": "GQCr45sZzy"
+    },
+    {
+      "guid": "GQCr45sZzy",
+      "item": "Ld2u4cjPes",
+      "c": 5,
+      "nw": "NUWewYsDs1",
+      "n": "GcKeO1hduB",
+      "ne": "5sEBo9jJEX"
+    },
+    {
+      "guid": "NUWewYsDs1",
+      "item": "Dt5aDX9Osc",
+      "c": 45
+    },
+    {
+      "guid": "5sEBo9jJEX",
+      "item": "oF1ZpY_EyV",
+      "c": 3
+    },
+    {
+      "guid": "GcKeO1hduB",
+      "item": "kwgBrM-KbA",
+      "ac": 2,
+      "n": "k2HiOBiGUY"
+    },
+    {
+      "guid": "k2HiOBiGUY",
+      "item": "T_syKqfzht",
+      "c": 5,
+      "nw": "gClqCzuBYV",
+      "n": "lOlI6sGuX_",
+      "ne": "2o4wIK5UU6"
+    },
+    {
+      "guid": "gClqCzuBYV",
+      "item": "k_dtQhg8Ii",
+      "c": 50
+    },
+    {
+      "guid": "2o4wIK5UU6",
+      "item": "Y7j3ljNdYp",
+      "c": 65
+    },
+    {
+      "guid": "lOlI6sGuX_",
+      "item": "1IwU-ZZu1g",
+      "c": 70
+    },
+    // #endregion
     // #region Tinkering Chimesmith
     {
       "guid": "wcUvdoaglf",
@@ -14529,7 +14711,7 @@
       "item": "kuS7q4u7Ua",
       "h": 3,
       "nw": "DUGlsbK-0A",
-      "n": "01h6518Ti4",      
+      "n": "01h6518Ti4",
       "ne": "liyKmy-aJs"
     },
     {
@@ -16860,7 +17042,7 @@
     },
     {
       "guid": "Zv6nOks1ld",
-      "item": "pPtoh_z_ph",
+      "item": "t6nJrp1wWD",
       "c": 5,
       "nw": "8tA57rIw2a",
       "n": "qOdCVxVIRl",
@@ -16878,7 +17060,7 @@
     },
     {
       "guid": "qOdCVxVIRl",
-      "item": "s6wWch93R2",
+      "item": "QB-SWz3oTJ",
       "c": 5,
       "nw": "3z78gRgtQn",
       "n": "URNqNlo-Hn"
@@ -17021,6 +17203,60 @@
     },
     {
       "guid": "ERwJAwnmUc",
+      "item": "P-7ozR83J8",
+      "c": 100
+    },
+    // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "yUNUCsYx9f",
+      "item": "YJU5CxCP7q",
+      "nw": "z1wNcoYgOI",
+      "n": "1e7mjkScBk",
+      "ne": "CY8prXg6sX"
+    },
+    {
+      "guid": "z1wNcoYgOI",
+      "item": "jHkHsvOnaU",
+      "ec": 14
+    },
+    {
+      "guid": "CY8prXg6sX",
+      "item": "adF6BE3T7-",
+      "ec": 27
+    },
+    {
+      "guid": "1e7mjkScBk",
+      "item": "nEOsR79Jn5",
+      "c": 5,
+      "nw": "GOf-_dHRLE",
+      "n": "ryBRLMjZWA",
+      "ne": "1pQrVwklZ9"
+    },
+    {
+      "guid": "GOf-_dHRLE",
+      "item": "2bAlmLI951",
+      "ec": 7
+    },
+    {
+      "guid": "1pQrVwklZ9",
+      "item": "VBR5HI2-dU",
+      "h": 15
+    },
+    {
+      "guid": "ryBRLMjZWA",
+      "item": "owMovjRlTb",
+      "c": 5,
+      "nw": "4GHNtkHwJP",
+      "n": "pL4N75ZJ48"
+    },
+    {
+      "guid": "4GHNtkHwJP",
+      "item": "rFRaOxnvXF",
+      "h": 15
+    },
+    {
+      "guid": "pL4N75ZJ48",
       "item": "P-7ozR83J8",
       "c": 100
     },

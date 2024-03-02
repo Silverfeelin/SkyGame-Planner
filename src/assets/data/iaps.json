@@ -559,6 +559,64 @@
       ]
     },
     // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "UXec8cY3C8",
+      "name": "Days of Love Meteor Mantle",
+      "price": 17.99,
+      "items": [
+        "svUBdDQ945"
+      ]
+    },
+    {
+      "guid": "zdU7dbNcG0",
+      "name": "Days of Love Swing Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "w7byhvh3Xa"
+      ]
+    },
+    {
+      "guid": "YtTUStyCGy",
+      "name": "Days of Love Seesaw Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "yWCpBlHsWa"
+      ]
+    },
+    {
+      "guid": "38RSjUYhZR",
+      "name": "Days of Love Gondola Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "EZ_nfEHgOx"
+      ]
+    },
+    {
+      "guid": "JLjsFmtey7",
+      "name": "Days of Love Serendipitous Scepter",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "Tf45PqqIsn"
+      ]
+    },
+    {
+      "guid": "cVvWv3Nf7F",
+      "name": "Days of Love Classy Cravat",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "PuFWddickP"
+      ]
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "mdWojLD1RZ",

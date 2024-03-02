@@ -5,6 +5,7 @@
 
   <div class="sky-card-body">
     <div class="grid grid-2">
+      <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Winged_Light'}" [aClass]="'container colspan-2'"></app-wiki-link>
       <a class="container" [routerLink]="['/col']">
         <span class="">
           Children of Light <span class="c-accent">({{ col }} / {{ totalCol }})</span>
@@ -15,6 +16,73 @@
           Wing Buffs <span class="c-accent">({{ wb }} / {{ totalWb }})</span>
         </span>
       </a>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Breakdown</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container colspan-2">
+      <p>
+        You have <b>{{ wl }}</b> out of <b>{{ totalWl }}</b> winged light, giving you a total of <b>{{ wedgeCount }}</b> wing wedges.
+      </p>
+      <!-- Winged light bar -->
+      <div class="wl-bar" [class.wl-bar-full]="wl === totalWl">
+        <div class="bar-fill" [style.width.%]="wl / wedgeMax * 100"></div>
+        <ng-container *ngFor="let wedge of wedgesReverse">
+          <div class="wl-bar-segment" [class.segment-full]="wl >= wedge" [style.width.%]="wedge/wedgeMax*100">
+            <!-- <span class="c-accent" *ngIf="wedge > 5">{{ wedge }}&nbsp;</span> -->
+          </div>
+        </ng-container>
+        <div class="wl-text">
+          {{ wl }} / {{ totalWl }}
+          <span class="" *ngIf="wedgeNext">(next at {{ wedgeNext }})</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-2 mt">
+      <!-- CoL bar -->
+      <div class="container colspan-2">
+        <div class="">
+          <mat-icon [svgIcon]="'flaps'" class="v-top c-wb"></mat-icon>&nbsp;
+          <a [routerLink]="['/col']" class="text-link">Children of Light</a>
+        </div>
+        <div class="wl-bar" [class.wl-bar-full]="col === totalCol">
+          <div class="bar-fill" [style.width.%]="col / totalCol * 100"></div>
+          <div class="wl-text">
+            {{ col }} / {{ totalCol }}
+          </div>
+        </div>
+      </div>
+      <!-- Regular spirit bar -->
+      <div class="container colspan-2">
+        <div class="">
+          <app-spirit-type-icon class="v-top" [type]="'Regular'"></app-spirit-type-icon>&nbsp;
+          <a [routerLink]="['/wing-buff']" [queryParams]="{type: 'Regular'}" class="text-link">Wing buffs from regular spirits</a>
+        </div>
+        <div class="wl-bar" [class.wl-bar-full]="regularUnlocked === regularCount">
+          <div class="bar-fill" [style.width.%]="regularUnlocked / regularCount * 100"></div>
+          <div class="wl-text">
+            {{ regularUnlocked }} / {{ regularCount }}
+          </div>
+        </div>
+      </div>
+      <!-- Season spirit bar -->
+      <div class="container colspan-2">
+        <div class="">
+          <app-spirit-type-icon class="v-top" [type]="'Season'"></app-spirit-type-icon>&nbsp;
+          <a [routerLink]="['/wing-buff']" [queryParams]="{type: 'Season'}" class="text-link">Wing buffs from seasonal spirits</a>
+        </div>
+        <div class="wl-bar" [class.wl-bar-full]="seasonUnlocked === seasonCount">
+          <div class="bar-fill" [style.width.%]="seasonUnlocked / seasonCount * 100"></div>
+          <div class="wl-text">
+            {{ seasonUnlocked }} / {{ seasonCount }}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

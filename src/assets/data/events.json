@@ -49,16 +49,15 @@
         },
         {
           "guid": "MKGyPFAEUA",
-          "draft": true,
           "date": { "day": 29, "month": 1, "year": 2024 },
-          "endDate": { "day": 11, "month": 2, "year": 2024 },
+          "endDate": { "day": 14, "month": 2, "year": 2024 },
           "shops": [
             "N1ioU0ztzJ",
             "B6AeQqeM0E",
             "9HhEIMjSWV"
           ],
           "spirits": [
-            {	"guid": "LgbNikVTN0", "spirit": "9VkjVkgKhb", "tree": "QbHVq43AMl" },
+            {	"guid": "LgbNikVTN0", "spirit": "9VkjVkgKhb", "tree": "QbHVq43AMl" }
           ]
         },
       ],
@@ -117,7 +116,20 @@
             "dosWjd_0Ur",
             "4mcmO11hCE"
           ]
-        }
+        },
+        {
+          "guid": "dCkSpN_LCG",
+          "date": { "day": 12, "month": 2, "year": 2024 },
+          "endDate": { "day": 25, "month": 2, "year": 2024 },
+          "spirits": [
+            {	"guid": "WBgv46VQXB", "spirit": "mAn3DeaZPi", "tree": "3B4XeRLIrO" },
+          ],
+          "shops": [
+            "Gpcii_q0ie",
+            "zZa_567vOp",
+            "-gDmtZfZgy"
+          ]
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"

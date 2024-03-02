@@ -194,10 +194,11 @@
     {
       "guid": "B6AeQqeM0E",
       "type": "Spirit",
-      "spirit": "U9vUspUuRp",
+      "spirit": "dK38RIPIOG",
       "iaps": [
-        "AZNU4TiFyl",
-        "4jMCH8Vl-x"
+        "28rCsz9wUP",
+        "NVsMGCUZek",
+        "cjTDXNkvN1"
       ]
     },
     {
@@ -205,11 +206,11 @@
       "type": "Spirit",
       "spirit": "dK38RIPIOG",
       "iaps": [
-        "28rCsz9wUP",
-        "NVsMGCUZek",
-        "cjTDXNkvN1",
+
         "vrUAy0EAun",
-        "JPyUHMKT5R"
+        "JPyUHMKT5R",
+        "4jMCH8Vl-x",
+        "AZNU4TiFyl",
       ]
     },
     // #endregion
@@ -267,6 +268,34 @@
       "iaps": [
         "65mCMf_2ZQ",
         "GfzBBN17Gm"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "Gpcii_q0ie",
+      "type": "Store",
+      "iaps": [
+        "UXec8cY3C8"
+      ]
+    },
+    {
+      "guid": "-gDmtZfZgy",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "YtTUStyCGy",
+        "zdU7dbNcG0",
+        "38RSjUYhZR"
+      ]
+    },
+    {
+      "guid": "zZa_567vOp",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "JLjsFmtey7",
+        "cVvWv3Nf7F"
       ]
     },
     // #endregion

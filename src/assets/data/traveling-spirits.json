@@ -630,5 +630,23 @@
       "spirit": "4gwH1Tn9he",
       "tree": "NdB6VF6E1G"
     },
+    {
+      "guid": "WqZrP7mBa5", // 106 - Twirling Champion
+      "date": { "day": 1, "month": 2, "year": 2024 },
+      "spirit": "bHCSyFQ4u-",
+      "tree": "EkvU86NlTz"
+    },
+    {
+      "guid": "3ZfbDF-xPN", // 107 - Bearhug Hermit
+      "date": { "day": 15, "month": 2, "year": 2024 },
+      "spirit": "KhFZE8z0-I",
+      "tree": "hQi54Pqru3"
+    },
+    {
+      "guid": "FqC9Hu6g4x", // 108 - Light Whisperer
+      "date": { "day": 29, "month": 2, "year": 2024 },
+      "spirit": "VQadeqBPEO",
+      "tree": "shrYC9Vd3i"
+    },
   ]
 }

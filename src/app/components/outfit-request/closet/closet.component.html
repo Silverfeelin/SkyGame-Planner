@@ -169,6 +169,31 @@
   </div>
 </div>
 
+<!-- TS items -->
+<div class="sky-card mt" *ngIf="ts">
+  <div class="sky-card-header">
+    <h4 class="h5 mb-0 ts-title">
+      <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
+      <span *ngIf="tsState === 'future'">Upcoming Traveling Spirit</span>
+      <span *ngIf="tsState === 'active'">{{ ts.spirit.name }}</span>
+    </h4>
+  </div>
+  <div class="sky-card-body">
+    <div class="sky-flex flex-wrap gap-half">
+      <ng-container *ngFor="let item of tsItems">
+        <div class="closet-item-container d-inline-block">
+          <div class="closet-item" (click)="toggleItem(item)"
+          [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+          [class.highlight]="searchResults && searchResults[item.guid]"
+        >
+            <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
 <!-- Item list -->
 <div class="sky-card mt" data-step="1" data-position="top-left-aligned">
   <div class="sky-card-header header-items header-sticky">

@@ -3141,7 +3141,7 @@
       "group": "Elder",
       "name": "Isle Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Elder-Mask-Isle-original-Credit-Nastymold.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Elder-of-the-Isle-Face-Accessory.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Face_Accessory" },
       "order": 51
     },
@@ -3164,7 +3164,7 @@
       "group": "Elder",
       "name": "Prairie Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Elder-Mask-Prairie-original-Credit-Nastymold.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Elder-of-the-Prairie-Face-Accessory.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Face_Accessory" },
       "order": 52
     },
@@ -3187,7 +3187,7 @@
       "group": "Elder",
       "name": "Forest Elder Ultimate Face Accessory",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
-      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Elder-Mask-Forest-original-Credit-Nastymold.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Elder-of-the-Forest-Face-Accessory.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Face_Accessory" },
       "order": 53
     },
@@ -7533,7 +7533,7 @@
       "guid": "SekRzXgjfv",
       "type": "Mask",
       "name": "Troupe Greeter Mask",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Mimi-4117_05_troupe_greeter_mask.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Troupe-Greeter-Mask-Icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Season_of_rhythm_mask_isle_welcome_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Mask" },
       "order": 402
@@ -7543,7 +7543,7 @@
       "guid": "T4suf1MdTj",
       "type": "Outfit",
       "name": "Troupe Greeter Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_05_troupe_greeter_pants.png",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Troupe-Greeter-Icon-pants.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Outfit" },
       "order": 401
@@ -10110,8 +10110,18 @@
       "guid": "xFj09irsLt",
       "type": "Outfit",
       "name": "Peeking Postman Outfit",
-      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Icon_pants_dreams_peeking.png",
+      "icon": "/assets/game/items/1153.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Dreams_pants_peeking_v2.png",
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit" },
+      "order": 801
+    },
+    {
+      "id": 2068,
+      "guid": "3CcVwVPJm-",
+      "type": "Shoes",
+      "name": "Peeking Postman Shoes",
+      "icon": "/assets/game/items/2068.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Peeking-Postman-Shoes.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit" },
       "order": 801
     },
@@ -11715,7 +11725,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
     },
     // #endregion
-    // Light Whisperer
+    // #region Light Whisperer
     {
       "id": 1339,
       "guid": "YiLDQF0uDU",
@@ -11793,6 +11803,21 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
     },
+    {
+      "id": 2069,
+      "guid": "oF1ZpY_EyV",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 2070,
+      "guid": "kwgBrM-KbA",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    // #endregion
     // #region Tinkering Chimesmith
     {
       "id": 1348,
@@ -15632,7 +15657,7 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Days-of-Fortune-Rabbit-Mask.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Rabbit_Mask" },
-      "order": 10203
+      "order": 10204
     },
     {
       "id": 1737,
@@ -15716,7 +15741,6 @@
       "guid": "wkCxoe9zSP",
       "type": "Outfit",
       "name": "Days of Fortune Dragon Vestment",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Fortune-Dragon-Robe-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Fortune-Dragon-Robe.png",
       "order": 10101
@@ -15726,7 +15750,6 @@
       "guid": "LGaX4cqdOe",
       "type": "Cape",
       "name": "Days of Fortune Dragon Stole",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Fortune-Dragon-Scarf-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Fortune-Dragon-Scarf-back.png",
       "order": 10003
@@ -15736,7 +15759,6 @@
       "guid": "xsTxIqIX8E",
       "type": "FaceAccessory",
       "name": "Days of Fortune Dragon Bangles",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Fortune-Dragon-Bangles-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
       "order": 1551
@@ -15746,10 +15768,9 @@
       "guid": "OFwVuPWmfK",
       "type": "Mask",
       "name": "Days of Fortune Dragon Mask",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Days-of-Fortune-Dragon-Mask-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Fortune-Dragon-Mask.png",
-      "order": 10102
+      "order": 10203
     },
     {
       "id": 2057,
@@ -15757,10 +15778,9 @@
       "type": "Held",
       "subtype": "Instrument",
       "name": "Days of Fortune Drum",
-      "closetHide": true,
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-      "order": 2002
+      "order": 4012
     },
     {
       "id": 2058,
@@ -15768,6 +15788,20 @@
       "type": "Special",
       "name": "Days of Fortune Warp",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    {
+      "id": 2059,
+      "guid": "t6nJrp1wWD",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "id": 2060,
+      "guid": "QB-SWz3oTJ",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
     // #endregion
     // #region Days of Love
@@ -15907,6 +15941,65 @@
       "name": "Blessing",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
     },
+    // #region Days of Love 2024
+    {
+      "id": 2061,
+      "guid": "svUBdDQ945",
+      "type": "Cape",
+      "name": "Days Of Love Meteor Mantle",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Love-Meteor-Mantle-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days-of-Love-Meteor-Mantle-back.png",
+      "order": 10506
+    },
+    {
+      "id": 2062,
+      "guid": "jHkHsvOnaU",
+      "type": "Prop",
+      "name": "Heart Plush",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Love-Heart-Plushie-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Plushie.png",
+      "order": 5804
+    },
+    {
+      "id": 2063,
+      "guid": "adF6BE3T7-",
+      "type": "Hat",
+      "name": "Heart Beret",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Beret-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Love-Heart-Beret.png",
+      "order": 11513
+    },
+    {
+      "id": 2064,
+      "guid": "2bAlmLI951",
+      "type": "Music",
+      "name": "Music Sheet #E3",
+      "sheet": "E3",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+      "order": 203
+    },
+    {
+      "id": 2065,
+      "guid": "nEOsR79Jn5",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "id": 2066,
+      "guid": "owMovjRlTb",
+      "type": "Special",
+      "name": "Blessing",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    },
+    {
+      "id": 2067,
+      "guid": "YJU5CxCP7q",
+      "type": "Special",
+      "name": "Jellyfish Cove Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    // #endregion
     // #endregion
     // #region Days of Bloom
     {
@@ -17442,7 +17535,7 @@
       "name": "Festival Scepter",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Festival-Scepter-prop.png",
-      "order": 4012
+      "order": 4022
     },
     {
       "id": 1957,
