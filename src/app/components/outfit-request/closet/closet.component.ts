@@ -15,6 +15,7 @@ import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -124,7 +125,9 @@ export class ClosetComponent implements OnDestroy {
   ts?: ITravelingSpirit;
   tsState?: PeriodState;
   tsItems?: Array<IItem>;
-
+  // Returning Spirits
+  rs?: IReturningSpirits;
+  rsSpirits: Array<{ returning: IReturningSpirit, items: Array<IItem> }> = [];
   // Event
   events: Array<{instance: IEventInstance, items: Array<IItem>, iapItems: Array<IItem>}> = [];
 
@@ -156,6 +159,7 @@ export class ClosetComponent implements OnDestroy {
     this.initializeBackground();
     this.initializeItems();
     this.initializeTs();
+    this.initializeRs();
     this.initializeEvents();
 
     this._clickSub = _eventService.clicked.subscribe(evt => {
@@ -501,6 +505,22 @@ export class ClosetComponent implements OnDestroy {
     const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
     items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
     this.tsItems = items;
+  }
+
+  private initializeRs(): void {
+    if (!this.requesting) { return; }
+
+    this.rs = this._dataService.returningSpiritsConfig.items.at(-1);
+    if (!this.rs) { return; }
+    const state = DateHelper.getStateFromPeriod(this.rs.date, this.rs.endDate);
+    if (state !== 'active') { return; }
+
+    const types = new Set<ItemType>(this.itemTypes);
+    this.rs.spirits?.forEach(spirit => {
+      const items = NodeHelper.getItems(spirit.tree.node).filter(item => types.has(item.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.rsSpirits.push({ returning: spirit, items });
+    });
   }
 
   private initializeEvents(): void {
