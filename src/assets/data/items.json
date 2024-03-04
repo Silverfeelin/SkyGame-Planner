@@ -12265,6 +12265,20 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
     },
+    {
+      "id": 2071,
+      "guid": "1UjXVxWRSA",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    {
+      "id": 2072,
+      "guid": "hFsueN5kVb",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
     // Bumbling Boatswain
     {
       "id": 1395,
@@ -12512,7 +12526,7 @@
     },
     // #endregion
     // #region Performance
-    // Frantic Stagehand
+    // #region Frantic Stagehand
     {
       "id": 1424,
       "guid": "FmTG9TSX2e",
@@ -12600,6 +12614,21 @@
       "name": "Season Heart",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png"
     },
+    {
+      "id": 2073,
+      "guid": "2rVo805JY0",
+      "type": "WingBuff",
+      "name": "Wing Buff",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+    },
+    {
+      "id": 2074,
+      "guid": "zpYo-bAkEr",
+      "type": "Special",
+      "name": "Heart",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+    },
+    // #endregion
     // Forgetful Storyteller
     {
       "id": 1434,
