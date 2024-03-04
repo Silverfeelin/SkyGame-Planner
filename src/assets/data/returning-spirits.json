@@ -72,6 +72,22 @@
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#August_7,_2023"
       }
+    },
+    {
+      "guid": "wRX6f7hzp2",
+      "name": "Special Visit #5",
+      "area": "bq6AFJ7avU",
+      "date": { "day": 4, "month": 3, "year": 2024 },
+      "endDate": { "day": 17, "month": 3, "year": 2024 },
+      "spirits": [
+        { "guid": "iKlXEwKTqi", "spirit": "kQiNS82DDY", "tree": "nzUD7-NDgi" },
+        { "guid": "hQ1XSTYSM9", "spirit": "HphxLKhDBZ", "tree": "AhcLwz3Pxj" },
+        { "guid": "jlNyM5x2Rg", "spirit": "aVOtIknTMO", "tree": "63I7854lB-" },
+        { "guid": "Qkhq0BE7Ln", "spirit": "4iotcmsn0K", "tree": "IWACETtZdN" }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#August_7,_2023"
+      }
     }
   ]
 }
