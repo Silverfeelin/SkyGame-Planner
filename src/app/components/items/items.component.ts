@@ -15,21 +15,17 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class ItemsComponent {
   type?: ItemType;
-  typeEmote: ItemType = ItemType.Emote;
-
-  items!: Array<IItem>;
 
   // Item details.
   selectedItem?: IItem;
 
   typeItems: { [key: string]: Array<IItem> } = {};
   typeUnlocked: { [key: string]: number } = {};
-  emotes: { [key: string]: IItem } = {};
-  emoteLevels: { [key: string]: number } = {};
 
   shownItems: Array<IItem> = [];
   shownUnlocked: number = 0;
   shownCount: number = 0;
+  shownIncludesFav = false;
 
   filterByFav = false;
 
@@ -65,12 +61,7 @@ export class ItemsComponent {
     this.shownItems = this.typeItems[this.type!] ?? [];
     this.shownCount = this.shownItems.length;
     this.shownUnlocked = this.typeUnlocked[this.type!] ?? 0;
-
-    if (this.type === ItemType.Emote) {
-      this.shownItems = Object.values(this.emotes);
-      this.shownCount = this.shownItems.length;
-      this.shownUnlocked = this.shownItems.filter(item => item.unlocked && item.level === this.emoteLevels[item.name]).length;
-    }
+    this.shownIncludesFav = this.filterByFav && this.shownItems.some(item => item.favourited);
 
     this._changeDetectionRef.markForCheck();
   }
@@ -97,24 +88,11 @@ export class ItemsComponent {
       this.typeUnlocked[type] = 0;
     }
 
-    const addItem = (type: string, item: IItem): void => {
-      this.typeItems[type].push(item);
-      if (item.unlocked) { this.typeUnlocked[type]++; }
-    }
-
-    // Load all items. Group subtypes together based on which wardrobe they appear in.
-    this.items = this._dataService.itemConfig.items.slice();
-    this.items.forEach(item => {
-      if (item.type === 'Emote') {
-        // Save highest level emote.
-        if (!this.emoteLevels[item.name] || item.level! > this.emoteLevels[item.name]) { this.emoteLevels[item.name] = item.level!; }
-        // Save highest unlocked emote.
-        if (!this.emotes[item.name] || item.unlocked) {
-          this.emotes[item.name] = item;
-        }
-        return;
-      }
-      addItem(item.type, item);
+    // Load all items.
+    const items = this._dataService.itemConfig.items;
+    items.forEach(item => {
+      this.typeItems[item.type].push(item);
+      if (item.unlocked) { this.typeUnlocked[item.type]++; }
     });
 
     // Sort by order.

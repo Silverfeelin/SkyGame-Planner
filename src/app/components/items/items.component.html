@@ -54,19 +54,18 @@
   </div>
 
   <div class="sky-card-body">
-    <div class="container mb" *ngIf="type === 'Emote'">
-      Emotes have a green check mark once you've unlocked all emote levels.
-    </div>
     <div class="sky-flex flex-wrap">
-      <div *ngIf="filterByFav" class="show-only">You have no items favourited in this category</div>
+      <div class="container" *ngIf="filterByFav && !shownIncludesFav">
+        You have no items favourited in this category.
+      </div>
       <ng-container *ngFor="let item of shownItems; let i = index">
         <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="filterByFav && !item.favourited">
           <app-item-icon [item]="item" [showSubIcons]="true"
             [class.highlight]="item && item === selectedItem"
-            [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"
+            [class.item-unlocked]="item.unlocked"
             [ngbTooltip]="item.name" container="body" placement="auto" >
           </app-item-icon>
-          <mat-icon class="unlock-check" [class.self]="item.type !== typeEmote || item.level! >= emoteLevels[item.name]" [class.unlocked]="item.unlocked">done</mat-icon>
+          <mat-icon class="unlock-check self" [class.unlocked]="item.unlocked">done</mat-icon>
           <!-- Favourite (bottom left) -->
           <mat-icon *ngIf="item.favourited" class="img-bl">star</mat-icon>
         </a>
