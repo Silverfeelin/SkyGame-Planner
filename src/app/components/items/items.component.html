@@ -31,34 +31,36 @@
 </div>
 
 <!-- Items -->
-<div class="sky-card mt" *ngIf="shownItems?.length">
+<div class="sky-card mt" *ngIf="shownItems">
   <div class="sky-card-header">
     <div class="unlock-bar">
-      You have unlocked
-      <b [class.completed]="shownUnlocked == shownItems.length">{{ shownUnlocked }}</b>
-      out of
-      <b [class.completed]="shownUnlocked == shownItems.length">{{ shownItems.length }}</b>
-      items.
-      <div class="none-toggle" [style.opacity]="(shouldShowNone ? 1 : 0.5)" (click)="toggleNone()">
-        <mat-icon svgIcon="none" [ngbTooltip]="'Toggle unequip icon'" container="body" placement="left"></mat-icon>
-      </div>
-      <div class="column-toggle">
-        <mat-icon (click)="setColumns()" [ngbTooltip]="'Toggle column size'" container="body" placement="left">apps</mat-icon>
+      <span class="show-desktop">
+        You have unlocked
+        <b [class.completed]="shownUnlocked == shownCount">{{ shownUnlocked }}</b>
+        out of
+        <b [class.completed]="shownUnlocked == shownCount">{{ shownCount }}</b>
+        items.
+      </span>
+      <span class="show-mobile">
+        <b [class.completed]="shownUnlocked == shownCount">{{ shownUnlocked }}</b>
+        /
+        <b [class.completed]="shownUnlocked == shownCount">{{ shownCount }}</b>
+        unlocked
+      </span>
+      <div class="fav-toggle" [class.toggle-active]="filterByFav" (click)="toggleFav()">
+        <mat-icon [ngbTooltip]="filterByFav ? 'Show all' : 'Show only favourites'" container="body" placement="left">star</mat-icon>
       </div>
     </div>
   </div>
 
   <div class="sky-card-body">
-    <div class="flex item-grid" [class.gap-half-y]="columns">
-      <div class="item-icon" *ngIf="showNone">
-        <div class="item-none">
-          <mat-icon class="" svgIcon="none"></mat-icon>
-        </div>
-        <mat-icon class="unlock-check self unlocked">done</mat-icon>
-      </div>
+    <div class="container mb" *ngIf="type === 'Emote'">
+      Emotes have a green check mark once you've unlocked all emote levels.
+    </div>
+    <div class="sky-flex flex-wrap">
+      <div *ngIf="filterByFav" class="show-only">You have no items favourited in this category</div>
       <ng-container *ngFor="let item of shownItems; let i = index">
-        <div class="item-col-hr" [style.display]="!columns || !i || ((i+offsetNone) % (columns)) ? undefined : 'block'"></div>
-        <a class="item-icon" [routerLink]="['/item', item.guid]">
+        <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="filterByFav && !item.favourited">
           <app-item-icon [item]="item" [showSubIcons]="true"
             [class.highlight]="item && item === selectedItem"
             [class.item-unlocked]="item.unlocked && (item.type !== typeEmote || item.level! >= emoteLevels[item.name])"

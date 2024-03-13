@@ -398,3 +398,11 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
 ngb-tooltip-window {
   z-index: 99999999 !important; // On top of Intro.js highlight.
 }
+
+/* Responsive */
+
+.show-desktop { display: none; }
+@media screen and (min-width: 720px) {
+  .show-desktop { display: unset; }
+  .show-mobile { display: none; }
+}

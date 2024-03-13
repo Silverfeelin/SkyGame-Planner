@@ -22,8 +22,6 @@ export class ItemsComponent {
   // Item details.
   selectedItem?: IItem;
 
-  columns?: number;
-
   typeItems: { [key: string]: Array<IItem> } = {};
   typeUnlocked: { [key: string]: number } = {};
   emotes: { [key: string]: IItem } = {};
@@ -31,10 +29,9 @@ export class ItemsComponent {
 
   shownItems: Array<IItem> = [];
   shownUnlocked: number = 0;
+  shownCount: number = 0;
 
-  shouldShowNone = true;
-  showNone = false;
-  offsetNone = 0;
+  filterByFav = false;
 
   constructor(
     private readonly _dataService: DataService,
@@ -45,8 +42,6 @@ export class ItemsComponent {
     private readonly _changeDetectionRef: ChangeDetectorRef
   ) {
     this.initializeItems();
-    this.columns = +(localStorage.getItem('item.columns') as string) || undefined;
-    this.shouldShowNone = localStorage.getItem('item.none') !== '0';
 
     _route.queryParamMap.subscribe(params => {
       this.onQueryParamsChanged(params);
@@ -57,25 +52,7 @@ export class ItemsComponent {
     const type = query.get('type') as ItemType;
 
     this.type = type as ItemType || ItemType.Outfit;
-    this.shownItems = this.typeItems[this.type] ?? [];
-    this.shownUnlocked = this.typeUnlocked[this.type] ?? 0;
-
-    if (this.type === ItemType.Emote) {
-      this.shownItems = Object.values(this.emotes);
-      this.shownUnlocked = this.shownItems.filter(item => item.unlocked && item.level === this.emoteLevels[item.name]).length;
-    }
-
-    /* Async test
-    let shown: Array<IItem> = [];
-    let toShow = [...this.shownItems];
-    const o = interval(1).subscribe(() => {
-      shown.push(...toShow.slice(shown.length, shown.length + 10));
-      if (shown.length == toShow.length) { o.unsubscribe(); }
-      this.shownItemsAsync.next(shown);
-    });
-    */
-
-    this.updateShowNone();
+    this.updateShownItems();
 
     // Select item from query.
     const itemGuid = query.get('item') || '';
@@ -84,28 +61,23 @@ export class ItemsComponent {
     }
   }
 
-  setColumns(): void {
-    switch (this.columns) {
-      case 3: this.columns = 4; break;
-      case 4: this.columns = 5; break;
-      case 5: this.columns = 6; break;
-      case 6: this.columns = undefined; break;
-      default: this.columns = 3; break;
+  private updateShownItems(): void {
+    this.shownItems = this.typeItems[this.type!] ?? [];
+    this.shownCount = this.shownItems.length;
+    this.shownUnlocked = this.typeUnlocked[this.type!] ?? 0;
+
+    if (this.type === ItemType.Emote) {
+      this.shownItems = Object.values(this.emotes);
+      this.shownCount = this.shownItems.length;
+      this.shownUnlocked = this.shownItems.filter(item => item.unlocked && item.level === this.emoteLevels[item.name]).length;
     }
 
-    localStorage.setItem('item.columns', `${this.columns || ''}`);
-  }
-
-  toggleNone(): void {
-    this.shouldShowNone = !this.shouldShowNone;
-    localStorage.setItem('item.none', this.shouldShowNone ? '1' : '0')
-    this.updateShowNone();
-  }
-
-  updateShowNone(): void {
-    this.showNone = this.shouldShowNone && (this.type === ItemType.Necklace || this.type === ItemType.Hat || this.type === ItemType.Held || this.type === ItemType.Shoes || this.type === ItemType.FaceAccessory);
-    this.offsetNone = this.showNone ? 1 : 0;
     this._changeDetectionRef.markForCheck();
+  }
+
+  toggleFav(): void {
+    this.filterByFav = !this.filterByFav;
+    this.updateShownItems();
   }
 
   onTypeChanged(type: ItemType): void {
