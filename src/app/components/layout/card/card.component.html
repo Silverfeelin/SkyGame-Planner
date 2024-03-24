@@ -1,0 +1,14 @@
+<div class="sky-card" [class.foldable]="foldable">
+  <div class="sky-card-header" (click)="toggleFold()">
+    <div class="sky-card-fold" *ngIf="foldable">
+      <mat-icon>{{ folded ? 'expand_more' : 'expand_less'}}</mat-icon>
+    </div>
+    <h2 class="h3 mb-0" *ngIf="title">{{ title }}</h2>
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="sky-card-body" #body [class.point]="foldable && folded" (click)="unfold()">
+    <div class="card-body-pad" #bodyVisibility>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

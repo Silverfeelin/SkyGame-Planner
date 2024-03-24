@@ -66,6 +66,7 @@ import { RealmConstellationComponent } from './components/realms/realm-constella
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { ClampPipe } from './pipes/clamp.pipe';
 import { SpiritTypePipe } from './pipes/spirit-type.pipe';
+import { CardComponent } from './components/layout/card/card.component';
 
 @NgModule({
   declarations: [
@@ -129,7 +130,8 @@ import { SpiritTypePipe } from './pipes/spirit-type.pipe';
     DashboardWishlistComponent,
     ItemComponent,
     ReturningSpiritCardComponent,
-    RealmConstellationComponent
+    RealmConstellationComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

@@ -9002,7 +9002,7 @@
     // #endregion
     // #endregion
     // #region Enchantment
-    // Nodding Muralist
+    // #region Nodding Muralist
     {
       "guid": "j1crjoTmuk",
       "item": "WhcCC138s8",
@@ -9167,7 +9167,67 @@
       "item": "0HHq0_mt50",
       "c": 34
     },
-    // Indifferent Alchemist
+    // SV 5
+    {
+      "guid": "VkCve9uVAS",
+      "item": "WhcCC138s8",
+      "nw": "mo0oIJS1a_",
+      "n": "reGOXfU8aZ"
+    },
+    {
+      "guid": "mo0oIJS1a_",
+      "item": "D72h3-WjJD",
+      "h": 4
+    },
+    {
+      "guid": "reGOXfU8aZ",
+      "item": "H1vYsFTrFX",
+      "c": 5,
+      "nw": "xe8U6BjJZN",
+      "n": "j4_wre60hD",
+      "ne": "faeJLdk3KX"
+    },
+    {
+      "guid": "xe8U6BjJZN",
+      "item": "GyXhQOu4fZ",
+      "c": 30
+    },
+    {
+      "guid": "faeJLdk3KX",
+      "item": "V-zZ-UK9VJ",
+      "c": 3
+    },
+    {
+      "guid": "j4_wre60hD",
+      "item": "9Epic8uUqZ",
+      "ac": 2,
+      "n": "gD0H2BPu24"
+    },
+    {
+      "guid": "gD0H2BPu24",
+      "item": "rYq-RTnkiN",
+      "h": 3,
+      "nw": "0M_l6cQSrW",
+      "n": "SFYjN4kDyC"
+    },
+    {
+      "guid": "0M_l6cQSrW",
+      "item": "sbkNjwrgIc",
+      "h": 6
+    },
+    {
+      "guid": "SFYjN4kDyC",
+      "item": "hAnvfbKn_u",
+      "c": 5,
+      "n": "QUcB4hxfNe"
+    },
+    {
+      "guid": "QUcB4hxfNe",
+      "item": "0HHq0_mt50",
+      "c": 34
+    },
+    // #endregion
+    // #region Indifferent Alchemist
     {
       "guid": "3r1FbFbCtb",
       "item": "gFaU0Zm95W",
@@ -9355,6 +9415,72 @@
       "item": "ipSfkZ8Rql",
       "c": 70
     },
+    // SV 5
+    {
+      "guid": "r8R5tQ541i",
+      "item": "gFaU0Zm95W",
+      "nw": "pDhOss9S9C",
+      "n": "VvKaxiwGqU"
+    },
+    {
+      "guid": "pDhOss9S9C",
+      "item": "5bwnWkR0DG",
+      "h": 4
+    },
+    {
+      "guid": "VvKaxiwGqU",
+      "item": "eTV8WChk9X",
+      "c": 5,
+      "nw": "IAL8W8rNyI",
+      "n": "oooPIH1nd8",
+      "ne": "WwkVk3lL54"
+    },
+    {
+      "guid": "IAL8W8rNyI",
+      "item": "JR7mtV1Ukg",
+      "c": 42
+    },
+    {
+      "guid": "WwkVk3lL54",
+      "item": "bAcsvpqSwD",
+      "c": 3
+    },
+    {
+      "guid": "oooPIH1nd8",
+      "item": "YeiJvAzm58",
+      "ac": 2,
+      "n": "eoPgfATIGk"
+    },
+    {
+      "guid": "eoPgfATIGk",
+      "item": "8qHEcZWhOt",
+      "h": 3,
+      "nw": "Yqu5lrKau1",
+      "n": "3Sb5my-oqj"
+    },
+    {
+      "guid": "Yqu5lrKau1",
+      "item": "HD8j6J2ysy",
+      "h": 6
+    },
+    {
+      "guid": "3Sb5my-oqj",
+      "item": "vbQP5KFpu1",
+      "c": 5,
+      "nw": "YmDyOSHV1G",
+      "n": "oOrGmAupd3"
+    },
+    {
+      "guid": "YmDyOSHV1G",
+      "item": "ad7KAaSuU8",
+      "c": 42
+    },
+    {
+      "guid": "oOrGmAupd3",
+      "item": "ipSfkZ8Rql",
+      "c": 70
+    },
+    // #endregion
     // Crab Walker
     {
       "guid": "P3b21yQSwC",
@@ -13193,7 +13319,7 @@
       "item": "osxMEOwG_r",
       "c": 45
     },
-    // Daydream Forester
+    // #region Daydream Forester
     {
       "guid": "rPiu3Qdyxw",
       "item": "AuugJTG-Nl",
@@ -13317,6 +13443,72 @@
       "item": "Pn_wGqjtoX",
       "c": 60
     },
+    // TS 109
+    {
+      "guid": "G1PAMlEgRR",
+      "item": "AuugJTG-Nl",
+      "nw": "HYff-Ce1zI",
+      "n": "HnSpozcs1R"
+    },
+    {
+      "guid": "HYff-Ce1zI",
+      "item": "nT-zyxTRzs",
+      "h": 4
+    },
+    {
+      "guid": "HnSpozcs1R",
+      "item": "H65ejfWOVQ",
+      "c": 5,
+      "nw": "Rat_EpRdAr",
+      "n": "RBZF3gEJTU",
+      "ne": "u3nrw1VWd7"
+    },
+    {
+      "guid": "Rat_EpRdAr",
+      "item": "qoLywJXaJA",
+      "c": 24
+    },
+    {
+      "guid": "u3nrw1VWd7",
+      "item": "5MLDnJJq2U",
+      "c": 3
+    },
+    {
+      "guid": "RBZF3gEJTU",
+      "item": "T58FOcLa6Q",
+      "ac": 2,
+      "n": "-2ziWthiPR"
+    },
+    {
+      "guid": "-2ziWthiPR",
+      "item": "LBmnlOT0UP",
+      "h": 3,
+      "nw": "_SnoAh8tK5",
+      "n": "rpDys6_AKL",
+      "ne": "-TJjS42WJ3"
+    },
+    {
+      "guid": "_SnoAh8tK5",
+      "item": "Ujm1hPDpWr",
+      "h": 6
+    },
+    {
+      "guid": "-TJjS42WJ3",
+      "item": "2DIgMTKaK6",
+      "c": 15
+    },
+    {
+      "guid": "rpDys6_AKL",
+      "item": "N8AXviDTdQ",
+      "c": 5,
+      "n": "wcFOgdRAAi"
+    },
+    {
+      "guid": "wcFOgdRAAi",
+      "item": "Pn_wGqjtoX",
+      "c": 44
+    },
+    // #endregion
     // #endregion
     // #region The Little Prince
     // Beckoning Ruler
@@ -13496,7 +13688,7 @@
     },
     {
       "guid": "OSFMlptEWp",
-      "item": "qcsiXdqfGT",
+      "item": "SNhn8BVb7a",
       "h": 4
     },
     {
@@ -14237,7 +14429,7 @@
       "c": 70
     },
     // #endregion
-    // Light Whisperer
+    // #region Light Whisperer
     {
       "guid": "zI5GRFCBhX",
       "item": "YiLDQF0uDU",
@@ -14292,6 +14484,60 @@
       "item": "CJLgEjb1TE",
       "sc": 3
     },
+    // TS 108
+    {
+      "guid": "MGUE9PoBTC",
+      "item": "YiLDQF0uDU",
+      "n": "GQCr45sZzy"
+    },
+    {
+      "guid": "GQCr45sZzy",
+      "item": "Ld2u4cjPes",
+      "c": 5,
+      "nw": "NUWewYsDs1",
+      "n": "GcKeO1hduB",
+      "ne": "5sEBo9jJEX"
+    },
+    {
+      "guid": "NUWewYsDs1",
+      "item": "Dt5aDX9Osc",
+      "c": 45
+    },
+    {
+      "guid": "5sEBo9jJEX",
+      "item": "oF1ZpY_EyV",
+      "c": 3
+    },
+    {
+      "guid": "GcKeO1hduB",
+      "item": "kwgBrM-KbA",
+      "ac": 2,
+      "n": "k2HiOBiGUY"
+    },
+    {
+      "guid": "k2HiOBiGUY",
+      "item": "T_syKqfzht",
+      "c": 5,
+      "nw": "gClqCzuBYV",
+      "n": "lOlI6sGuX_",
+      "ne": "2o4wIK5UU6"
+    },
+    {
+      "guid": "gClqCzuBYV",
+      "item": "k_dtQhg8Ii",
+      "c": 50
+    },
+    {
+      "guid": "2o4wIK5UU6",
+      "item": "Y7j3ljNdYp",
+      "c": 65
+    },
+    {
+      "guid": "lOlI6sGuX_",
+      "item": "1IwU-ZZu1g",
+      "c": 70
+    },
+    // #endregion
     // #region Tinkering Chimesmith
     {
       "guid": "wcUvdoaglf",
@@ -14688,7 +14934,7 @@
       "c": 65
     },
     // #endregion
-    // Ceasing Commodore
+    // #region Ceasing Commodore
     {
       "guid": "Wt_FOZCmQf",
       "item": "Ei9pBqI3yK",
@@ -14748,6 +14994,72 @@
       "item": "qkQDz-wh6P",
       "sc": 3
     },
+    // SV 5
+    {
+      "guid": "BkKELtjaxF",
+      "item": "Ei9pBqI3yK",
+      "nw": "9g4hY1pqo8",
+      "n": "1XHkKL4Bkq"
+    },
+    {
+      "guid": "9g4hY1pqo8",
+      "item": "FETTumn6J-",
+      "h": 4
+    },
+    {
+      "guid": "1XHkKL4Bkq",
+      "item": "RVcOixT4ox",
+      "c": 5,
+      "nw": "_CqXlQmb6y",
+      "n": "w-Ta7kdatk",
+      "ne": "6bKHj9WLDk"
+    },
+    {
+      "guid": "_CqXlQmb6y",
+      "item": "WwuCeXn8wy",
+      "c": 45
+    },
+    {
+      "guid": "6bKHj9WLDk",
+      "item": "1UjXVxWRSA",
+      "c": 3
+    },
+    {
+      "guid": "w-Ta7kdatk",
+      "item": "hFsueN5kVb",
+      "ac": 2,
+      "n": "yhrNgJpdXA"
+    },
+    {
+      "guid": "yhrNgJpdXA",
+      "item": "aDDMg7WuIc",
+      "h": 3,
+      "nw": "TnPJ6BRogS",
+      "n": "lCOwXBBIQm"
+    },
+    {
+      "guid": "TnPJ6BRogS",
+      "item": "TKVZD91Ur_",
+      "h": 6
+    },
+    {
+      "guid": "lCOwXBBIQm",
+      "item": "3QYgeQvXXu",
+      "c": 5,
+      "nw": "kDmq7slWfV",
+      "n": "SU98m8IQE2"
+    },
+    {
+      "guid": "kDmq7slWfV",
+      "item": "aoo9OjQKpZ",
+      "c": 40
+    },
+    {
+      "guid": "SU98m8IQE2",
+      "item": "_qGl7VRl35",
+      "c": 70
+    },
+    // #endregion
     // Bumbling Boatswain
     {
       "guid": "8rargE3UTh",
@@ -14964,7 +15276,7 @@
     // #endregion
     // #endregion
     // #region Performance
-    // Frantic Stagehand
+    // #region Frantic Stagehand
     {
       "guid": "eUh0KO-9lY",
       "item": "FmTG9TSX2e",
@@ -15019,6 +15331,66 @@
       "item": "DDgj-h-IrD",
       "sc": 3
     },
+    // SV 5
+    {
+      "guid": "JZ0vOui6V-",
+      "item": "FmTG9TSX2e",
+      "nw": "Kl-TKk5Pkm",
+      "n": "rl-go7wSfb"
+    },
+    {
+      "guid": "Kl-TKk5Pkm",
+      "item": "LE-qwy-wie",
+      "c": 22
+    },
+    {
+      "guid": "rl-go7wSfb",
+      "item": "GikEz6_ZnD",
+      "c": 5,
+      "nw": "x5nqVvIlss",
+      "n": "C_tZzBPXwl",
+      "ne": "VNYcm5hgb0"
+    },
+    {
+      "guid": "x5nqVvIlss",
+      "item": "BtWvDojIDg",
+      "c": 48
+    },
+    {
+      "guid": "VNYcm5hgb0",
+      "item": "zpYo-bAkEr",
+      "c": 3
+    },
+    {
+      "guid": "C_tZzBPXwl",
+      "item": "2rVo805JY0",
+      "ac": 2,
+      "n": "W2mzkt6hoV"
+    },
+    {
+      "guid": "W2mzkt6hoV",
+      "item": "AdZbRcEjbN",
+      "c": 5,
+      "nw": "kHiygDF_eP",
+      "n": "qYc81qz84v",
+      "ne": "KekcO_WKFg"
+    },
+    {
+      "guid": "kHiygDF_eP",
+      "item": "LYyK5T92ij",
+      "h": 8
+    },
+    {
+      "guid": "KekcO_WKFg",
+      "item": "xoEQI_2ykm",
+      "c": 70
+    },
+    {
+      "guid": "qYc81qz84v",
+      "item": "kealNieHwv",
+      "c": 34
+    },
+    // #endregion
     // Forgetful Storyteller
     {
       "guid": "DAX89eU3v8",

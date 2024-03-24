@@ -387,6 +387,8 @@ export class DataService {
     for (const type in ItemType) { types.add(type); }
 
     let shouldWarn = false;
+    const emoteOrders: { [key: string]: number } = {};
+    const emotes: Array<IItem> = [];
     this.itemConfig.items.forEach(item => {
       if (item.id) {
         if (ids.has(item.id)) {
@@ -406,11 +408,18 @@ export class DataService {
         shouldWarn = true;
       }
 
+      if (item.type === 'Emote') {
+        if (item.level === 1) { emoteOrders[item.name] = item.order ?? 999999; }
+        else { emotes.push(item); }
+      }
+
       item.unlocked ||= this._storageService.unlocked.has(item.guid);
       item.favourited = this._storageService.favourites.has(item.guid);
       if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }
       item.order ??= 999999;
     });
+
+    emotes.forEach(emote => emote.order = emoteOrders[emote.name] ?? emote.order);
 
     shouldWarn && alert('Misconfigured items. Please report this issue.');
   }

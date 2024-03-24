@@ -14,6 +14,8 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
+import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -65,6 +67,7 @@ export class ClosetComponent implements OnDestroy {
     ItemType.Cape,
     ItemType.Held, ItemType.Prop
   ];
+  itemTypeOrder: { [key: string]: number } = this.itemTypes.reduce((map, type, i) => (map[type] = i, map), {} as { [key: string]: number });
   itemIcons: { [key: string]: string } = {
     'Outfit': 'outfit',
     'Shoes': 'shoes',
@@ -122,6 +125,11 @@ export class ClosetComponent implements OnDestroy {
   ts?: ITravelingSpirit;
   tsState?: PeriodState;
   tsItems?: Array<IItem>;
+  // Returning Spirits
+  rs?: IReturningSpirits;
+  rsSpirits: Array<{ returning: IReturningSpirit, items: Array<IItem> }> = [];
+  // Event
+  events: Array<{instance: IEventInstance, items: Array<IItem>, iapItems: Array<IItem>}> = [];
 
   // Internal
   _clickSub: SubscriptionLike;
@@ -151,6 +159,8 @@ export class ClosetComponent implements OnDestroy {
     this.initializeBackground();
     this.initializeItems();
     this.initializeTs();
+    this.initializeRs();
+    this.initializeEvents();
 
     this._clickSub = _eventService.clicked.subscribe(evt => {
       this.clickoutColorPicker(evt);
@@ -493,8 +503,42 @@ export class ClosetComponent implements OnDestroy {
 
     const types = new Set<ItemType>(this.itemTypes);
     const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
-    items.sort((a, b) => this.itemTypes.indexOf(a.type) - this.itemTypes.indexOf(b.type));
+    items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
     this.tsItems = items;
+  }
+
+  private initializeRs(): void {
+    if (!this.requesting) { return; }
+
+    this.rs = this._dataService.returningSpiritsConfig.items.at(-1);
+    if (!this.rs) { return; }
+    const state = DateHelper.getStateFromPeriod(this.rs.date, this.rs.endDate);
+    if (state !== 'active') { return; }
+
+    const types = new Set<ItemType>(this.itemTypes);
+    this.rs.spirits?.forEach(spirit => {
+      const items = NodeHelper.getItems(spirit.tree.node).filter(item => types.has(item.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.rsSpirits.push({ returning: spirit, items });
+    });
+  }
+
+  private initializeEvents(): void {
+    if (!this.requesting) { return; }
+
+    const types = new Set<ItemType>(this.itemTypes);
+    const instances = this._dataService.eventConfig.items.map(e => e.instances?.at(-1)).filter(i => i && DateHelper.isActive(i.date, i.endDate));
+    instances.forEach(instance => {
+      if (!instance) { return; }
+      const spirits = instance.spirits || [];
+      debugger
+      const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      const shops = instance.shops || [];
+      const iapItems = shops.map(s => (s.iaps || []).map(a => a.items || [])).flat().flat();
+      iapItems.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.events.push({ instance: instance, items, iapItems });
+    });
   }
 
   // #endregion

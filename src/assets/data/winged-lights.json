@@ -600,7 +600,13 @@
     {
       "guid": "ZDqubWevQx",
       "description": "On the other side of the Mural wall in the Crescent Oasis.",
-      "mapData": { "position": [-177.25,405.88], "videoUrl": "Vault/13.mp4" },
+      "mapData": { "position": [-181,405.88], "videoUrl": "Vault/13.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Crescent_Oasis" }
+    },
+    {
+      "guid": "HdrkYqqX3_",
+      "description": "Under the large tree in the Crescent Oasis.",
+      "mapData": { "position": [-176.63,404.63], "videoUrl": "Vault/15.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Crescent_Oasis" }
     },
     {
