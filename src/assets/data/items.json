@@ -16173,6 +16173,55 @@
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Picnic_Basket" },
       "order": 3751
     },
+    // #region Day of Bloom (2024)
+    {
+      "id": 2075,
+      "guid": "kLfBsnAsUL",
+      "type": "Prop",
+      "name": "Bloom Lilypad Umbrella",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Bloom-Lilypad-Umbrella-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Bloom-Lilypad-Umbrella-held.png",
+      "order": 10000
+    },
+    {
+      "id": 2076,
+      "guid": "MgQqIuTSuC",
+      "type": "Cape",
+      "name": "Bloom Arum Petal Cape",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Bloom-Arum-Petal-Cape-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Bloom-Arum-Petal-Cape-back.png",
+      "order": 10000
+    },
+    {
+      "id": 2077,
+      "guid": "vxfZZiaabO",
+      "type": "Hair",
+      "name": "Bloom Spiky Sprig Hair",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Bloom-Spiky-Sprig-Hair-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Bloom-Spiky-Sprig-Hair-front.png",
+      "order": 10000
+    },
+    {
+      "id": 2078,
+      "guid": "nkJXDrn2cV",
+      "type": "Hair",
+      "name": "Bloom Arum Petal Hair",
+      "closetHide": true,
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Bloom-Arum-Petal-Hair-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Bloom-Arum-Petal-Hair-front.png",
+      "order": 10000
+    },
+    {
+      "id": 2079,
+      "guid": "nDWdZT-kAA",
+      "type": "Special",
+      "name": "Prairie Peaks Warp",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+    },
+    // #endregion
     // #endregion
     // #region Days of Nature
     {

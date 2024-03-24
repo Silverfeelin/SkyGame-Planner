@@ -17681,6 +17681,68 @@
       "c": 105
     },
     // #endregion
+    // #region Days of Bloom (2024)
+    {
+      "guid": "JR_AQULrbv",
+      "item": "yJBxs4D0QI",
+      "nw": "przD3z1Lt3",
+      "n": "1SfhexDO8a",
+      "c": 5
+    },
+    {
+      "guid": "przD3z1Lt3",
+      "item": "YTBtAMps8R",
+      "c": 110
+    },
+    {
+      "guid": "1SfhexDO8a",
+      "item": "LRLEa6LYVP",
+      "c": 80
+    },
+    {
+      "guid": "PtX1hDCSiP",
+      "item": "Zw4kk5CO_l",
+      "nw": "vY3ImKsLkJ",
+      "n": "t-yjr9MPms"
+    },
+    {
+      "guid": "vY3ImKsLkJ",
+      "item": "uKLD12UrPr",
+      "h": 20
+    },
+    {
+      "guid": "t-yjr9MPms",
+      "item": "wFSLA6un_V",
+      "c": 70
+    },
+    {
+      "guid": "bpnC0JgYIi",
+      "item": "89R9XC2DIg",
+      "c": 105
+    },
+    {
+      "guid": "0Oe41ToBtQ",
+      "item": "nDWdZT-kAA",
+      "nw": "XLqG_tACGn",
+      "n": "3neod11Ol2",
+      "ne": "WFiliWR3NI"
+    },
+    {
+      "guid": "XLqG_tACGn",
+      "item": "nkJXDrn2cV",
+      "h": 25
+    },
+    {
+      "guid": "WFiliWR3NI",
+      "item": "vxfZZiaabO",
+      "ec": 24
+    },
+    {
+      "guid": "3neod11Ol2",
+      "item": "MgQqIuTSuC",
+      "ec": 48
+    },
+    // #endregion
     // #region Days of Nature (2022)
     {
       "guid": "cxhB2Ybq7_",

@@ -351,6 +351,40 @@
       ]
     },
     // #endregion
+    // #region Days of Bloom (2024)
+    {
+      "guid": "Qwm9ceRSki",
+      "type": "Store",
+      "iaps": [
+        "BcxdW-iTA6"
+      ]
+    },
+    {
+      "guid": "zvuqUyGcUl",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "15aenJbpNM"
+      ]
+    },
+    {
+      "guid": "xdJ82oA7L-",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "Ko_ViiBli0"
+      ]
+    },
+    {
+      "guid": "32hixz8dKS",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "1ryX2u1XO3",
+        "SBBe6Iy8P3"
+      ]
+    },
+    // #endregion
     // #region Days of Nature (2020)
     {
       "guid": "jYaYDMPEUR",
