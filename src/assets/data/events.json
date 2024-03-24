@@ -140,7 +140,7 @@
       "guid": "jZ3AhcgPl8",
       "name": "Days of Bloom",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a4b806d7d9/petalcoaster_1920x1080_header_blank.jpg",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a6a265ea76/bloom24eventcurrency.jpg",
       "instances": [
         {
           "guid": "zAEvyLfhYt",
@@ -179,6 +179,24 @@
             { "guid": "KOrEqiUw_f", "spirit": "IqShB-6_rY", "tree": "Cz7AcNalLH", "name": "Bloom Guide (Home)" }, // Located at Home
             { "guid": "erbbY6_Azk", "spirit": "IqShB-6_rY", "tree": "yvuc0d_gC7", "name": "Bloom Guide (Hidden Forest)" } // Located at HF
           ]
+        },
+        {
+          "guid": "L_cg-uO76v",
+          "date": "2024-03-25",
+          "endDate": "2024-04-14",
+          "spirits": [
+            {	"guid": "cfkjIVyu-B", "spirit": "IqShB-6_rY", "tree": "oDa9O5v-13" },
+            { "guid": "_0Lrk-cHWy", "spirit": "U9vUspUuRp", "tree": "VM9t7bzBjv" },
+            { "guid": "nAZPbLUJde", "spirit": "U9vUspUuRp", "tree": "Z0o8F2gUSY" },
+            { "guid": "_wnKBTr2d-", "spirit": "U9vUspUuRp", "tree": "ZSAyObQLjR" }
+          ],
+          "shops": [
+            "Qwm9ceRSki",
+            "zvuqUyGcUl",
+            "xdJ82oA7L-",
+            "32hixz8dKS"
+          ],
+          "draft": true
         }
       ],
       "_wiki": {
