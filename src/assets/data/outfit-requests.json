@@ -35,7 +35,8 @@
         { "guid": "IGu95wRo-L", "url": "/assets/game/background/feast2023.webp", "filter": "brightness(0.8) blur(2px)" },
         { "guid": "Fvthir4ma5", "url": "/assets/game/background/oasis.webp", "filter": "brightness(0.8) blur(2px)" },
         { "guid": "1axuKM5tcm", "url": "/assets/game/background/fortune2024.webp", "filter": "brightness(0.8) blur(1px)" },
-        { "guid": "HRU0Yvsgsg", "url": "/assets/game/background/love2024.webp", "default": true, "filter": "brightness(0.8) blur(1px)" }
+        { "guid": "HRU0Yvsgsg", "url": "/assets/game/background/love2024.webp", "filter": "brightness(0.8) blur(1px)" },
+        { "guid": "xWEq_C9XF7", "url": "/assets/game/background/bloom2024.webp", "default": true, "filter": "brightness(0.8) blur(1px)" }
       ]
     }
   }
