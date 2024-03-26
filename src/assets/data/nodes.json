@@ -7455,7 +7455,7 @@
       "item": "Zvi-5bPtxs",
       "c": 75
     },
-    // Hairtousle Teen
+    // #region Hairtousle Teen
     {
       "guid": "EkBbVkJtl8",
       "item": "YUAzM6p_2j",
@@ -7614,6 +7614,60 @@
       "item": "bBQbGQh1PU",
       "c": 50
     },
+    // TS 110
+    {
+      "guid": "knRWbcHjfg",
+      "item": "YUAzM6p_2j",
+      "n": "e-a8xvM3Sq"
+    },
+    {
+      "guid": "e-a8xvM3Sq",
+      "item": "GL1iz0Ybx0",
+      "c": 5,
+      "nw": "idAsnsnRLT",
+      "n": "vQI8oQaOIh",
+      "ne": "EvKRwXjX5r"
+    },
+    {
+      "guid": "idAsnsnRLT",
+      "item": "7Ul11Zqefz",
+      "c": 15
+    },
+    {
+      "guid": "EvKRwXjX5r",
+      "item": "XMk1ifj2qw",
+      "c": 3
+    },
+    {
+      "guid": "vQI8oQaOIh",
+      "item": "v1TQ9ZX3q5",
+      "ac": 2,
+      "n": "8BEv_DiwLu"
+    },
+    {
+      "guid": "8BEv_DiwLu",
+      "item": "n2TnJPoi1J",
+      "c": 5,
+      "nw": "eCUCzNyuJ2",
+      "n": "Yq5f9PTXiI",
+      "ne": "m1is55OEMH"
+    },
+    {
+      "guid": "eCUCzNyuJ2",
+      "item": "0f9auBppfc",
+      "h": 9
+    },
+    {
+      "guid": "m1is55OEMH",
+      "item": "Ph__M3uulY",
+      "c": 70
+    },
+    {
+      "guid": "Yq5f9PTXiI",
+      "item": "bBQbGQh1PU",
+      "c": 50
+    },
+    // #endregion
     // #endregion
     // #region Rhythm
     // #region Troupe Greeter
