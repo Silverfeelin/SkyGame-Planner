@@ -510,10 +510,11 @@ export class ClosetComponent implements OnDestroy {
   private initializeRs(): void {
     if (!this.requesting) { return; }
 
-    this.rs = this._dataService.returningSpiritsConfig.items.at(-1);
-    if (!this.rs) { return; }
-    const state = DateHelper.getStateFromPeriod(this.rs.date, this.rs.endDate);
+    const rs = this._dataService.returningSpiritsConfig.items.at(-1);
+    if (!rs) { return; }
+    const state = DateHelper.getStateFromPeriod(rs.date, rs.endDate);
     if (state !== 'active') { return; }
+    this.rs = rs;
 
     const types = new Set<ItemType>(this.itemTypes);
     this.rs.spirits?.forEach(spirit => {
