@@ -30,7 +30,7 @@
     {
       "guid": "3uTp2mfgQj",
       "name": "TGC Guitar Pack",
-      "price": 19.99,
+      "price": 29.99,
       "c": 115,
       "items": [
         "hcuS6xsmHg"
@@ -805,7 +805,7 @@
     {
       "guid": "6z9qTWUzk7",
       "name": "Nature Turtle Cape",
-      "price": 4.99,
+      "price": 14.99,
       "items": [
         "znjZlpHSt4"
       ]
@@ -813,7 +813,7 @@
     {
       "guid": "236RtTEBQ3",
       "name": "Nature Turtle Pack",
-      "price": 4.99,
+      "price": 19.99,
       "c": 75,
       "items": [
         "_Y-80G-t_2"
@@ -841,7 +841,7 @@
     {
       "guid": "DDArA8ChK7",
       "name": "Nature Turtle Cape",
-      "price": 4.99,
+      "price": 14.99,
       "returning": true,
       "items": [
         "znjZlpHSt4"
@@ -850,7 +850,7 @@
     {
       "guid": "4S27PaHoQ1",
       "name": "Nature Turtle Pack",
-      "price": 4.99,
+      "price": 19.99,
       "returning": true,
       "c": 75,
       "items": [
