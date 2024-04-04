@@ -33,6 +33,8 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/leaflet/dist/leaflet.css",
               "node_modules/intro.js/minified/introjs.min.css",
+              "node_modules/primeng/resources/themes/lara-dark-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
               "src/styles/vars.less",
               "src/styles/styles.less",
               "src/styles/map.less",
@@ -72,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SkyGame-Planner:build:production"
+              "buildTarget": "SkyGame-Planner:build:production"
             },
             "development": {
-              "browserTarget": "SkyGame-Planner:build:development"
+              "buildTarget": "SkyGame-Planner:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SkyGame-Planner:build"
+            "buildTarget": "SkyGame-Planner:build"
           }
         }
       }

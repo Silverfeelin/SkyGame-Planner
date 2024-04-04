@@ -104,7 +104,7 @@ export class NavigationHelper {
   static getQueryParams(href: string | URL): Params {
     const url = href instanceof URL ? href : new URL(href);
     const params: Params = {};
-    for (const [k,v] of url.searchParams.entries()) { params[k] = v; }
+    url.searchParams.forEach((v, k) => params[k] = v);
     return params;
   }
 }
