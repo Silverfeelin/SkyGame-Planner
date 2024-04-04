@@ -33,8 +33,6 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/leaflet/dist/leaflet.css",
               "node_modules/intro.js/minified/introjs.min.css",
-              "node_modules/primeng/resources/themes/lara-dark-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
               "src/styles/vars.less",
               "src/styles/styles.less",
               "src/styles/map.less",
