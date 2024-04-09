@@ -23,6 +23,7 @@ import { NodeHelper } from '../helpers/node-helper';
 import { CostHelper } from '../helpers/cost-helper';
 import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
+import { IItemList } from '../interfaces/item-list.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,7 @@ export class DataService {
   areaConfig!: IAreaConfig;
   eventConfig!: IEventConfig;
   itemConfig!: IItemConfig;
+  itemListConfig!: IConfig<IItemList>;
   nodeConfig!: INodeConfig;
   questConfig!: IQuestConfig;
   realmConfig!: IRealmConfig;
@@ -62,6 +64,7 @@ export class DataService {
       areaConfig: get('areas.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
+      itemListConfig: get('item-lists.json'),
       nodeConfig: get('nodes.json'),
       questConfig: get('quests.json'),
       realmConfig: get('realms.json'),
@@ -103,6 +106,7 @@ export class DataService {
     this.initializeEvents();
     this.initializeShops();
     this.initializeItems();
+    this.initializeItemLists();
     this.initializeSeasonItems();
     this.initializeWingedLight();
     this.initializeOutfitRequests();
@@ -378,6 +382,12 @@ export class DataService {
           }
         });
       });
+
+      if (shop.itemList) {
+        const itemList = this.guidMap.get(shop.itemList as any) as IItemList;
+        shop.itemList = itemList;
+        itemList.shop = shop;
+      }
     });
   }
 
@@ -424,6 +434,23 @@ export class DataService {
     shouldWarn && alert('Misconfigured items. Please report this issue.');
   }
 
+  private initializeItemLists(): void {
+    this.itemListConfig.items.forEach(itemList => {
+      itemList.items.forEach(itemNode => {
+        itemNode.itemList = itemList;
+
+        if (typeof itemNode.item === 'string') {
+          const item = this.guidMap.get(itemNode.item as any) as IItem;
+          itemNode.item = item;
+
+          item.listNodes ??= [];
+          item.listNodes.push(itemNode);
+
+          itemNode.unlocked = this._storageService.unlocked.has(itemNode.guid);
+        }
+      });
+    });
+  }
 
   private initializeSeasonItems(): void {
     for (const season of this.seasonConfig.items) {
@@ -466,6 +493,7 @@ export class DataService {
       spiritTreeConfig: this.spiritTreeConfig,
       eventConfig: this.eventConfig,
       itemConfig: this.itemConfig,
+      itemListConfig: this.itemListConfig,
       nodeConfig: this.nodeConfig,
       questConfig: this.questConfig,
       realmConfig: this.realmConfig,

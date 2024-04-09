@@ -1,6 +1,7 @@
 import { IConfig, IGuid } from "./base.interface";
 import { IEventInstance } from "./event.interface";
 import { IIAP } from "./iap.interface";
+import { IItemList } from './item-list.interface';
 import { ISeason } from "./season.interface";
 import { ISpirit } from "./spirit.interface";
 import { IWiki } from "./wiki.interface";
@@ -21,6 +22,7 @@ export interface IShop extends IGuid {
 
   /// References ///
   iaps?: Array<IIAP>;
+  itemList?: IItemList;
   event?: IEventInstance;
   spirit?: ISpirit;
   season?: ISeason;

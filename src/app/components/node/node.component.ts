@@ -154,6 +154,10 @@ export class NodeComponent implements OnChanges {
       // Remove unlock from all hidden nodes that contain this item.
       const hiddenNodes = item.hiddenNodes || [];
       hiddenNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
+
+      // Remove unlock from item list nodes that contain this item.
+      const listNodes = item.listNodes || [];
+      listNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
     }
 
     // Save data.
