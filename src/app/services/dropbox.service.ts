@@ -1,9 +1,9 @@
 import { Injectable, OnDestroy } from '@angular/core';
-import dayjs from 'dayjs';
 import { Dropbox, DropboxAuth, DropboxResponseError } from 'dropbox';
 import { Observable, ReplaySubject, Subject, debounce, debounceTime, filter } from 'rxjs';
 import { StorageService, storageReloadKeys } from './storage.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
+import { DateTime } from 'luxon';
 
 const REDIRECT_URI = location.origin + '/dropbox-auth';
 const CLIENT_ID = '5slqiqhhxcxjiqr';
@@ -180,7 +180,7 @@ export class DropboxService implements OnDestroy {
   createFile(): void {
     if (!this._dbx) { return; }
     const data = {
-      date: dayjs().toISOString()
+      date: DateTime.now().toISO()
     };
     const blob = new Blob([JSON.stringify(data, undefined, 0)], { type: 'application/json' });
     this._dbx.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } }).then(response => {

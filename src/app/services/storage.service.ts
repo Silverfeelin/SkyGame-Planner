@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { Subject } from 'rxjs';
 
 export const storageReloadKeys = new Set(['unlocked', 'favourites', 'col.unlocked']);
@@ -18,7 +18,7 @@ export class StorageService {
   unlocked = new Set<string>();
   favourites = new Set<string>();
   unlockedCol = new Set<string>();
-  lastDate?: dayjs.Dayjs;
+  lastDate?: DateTime;
 
   storageChanged = new Subject<StorageEvent>();
 
@@ -41,7 +41,7 @@ export class StorageService {
 
   getStorageData(): IStorageData {
     return {
-      date: this.lastDate?.toISOString() || '',
+      date: this.lastDate?.toISO() || '',
       unlocked: this.serializeUnlocked(),
       favourites: this.serializeFavourites(),
       col: this.serializeUnlockedCol()
@@ -51,12 +51,12 @@ export class StorageService {
   // #region Date
 
   private initializeDate(isoDate: string): void {
-    this.lastDate = isoDate ? dayjs(isoDate) : dayjs();
+    this.lastDate = isoDate ? DateTime.fromISO(isoDate) : DateTime.now();
   }
 
   private updateDate(): void {
-    this.lastDate = dayjs();
-    localStorage.setItem('date', this.lastDate.toISOString());
+    this.lastDate = DateTime.now();
+    localStorage.setItem('date', this.lastDate.toISO()!);
   }
 
   // #endregion
