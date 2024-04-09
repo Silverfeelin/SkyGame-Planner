@@ -27,6 +27,7 @@ export class SeasonComponent implements OnDestroy {
   guide?: ISpirit;
   spirits: Array<ISpirit> = [];
   shops: Array<IShop> = [];
+  iapShops: Array<IShop> = [];
 
   nodes: Set<INode> = new Set();
 
@@ -89,7 +90,9 @@ export class SeasonComponent implements OnDestroy {
       }
     });
 
-    this.shops = this.season.shops ?? [];
+    const shops = this.season.shops ?? [];
+    this.iapShops = shops.filter(s => s.iaps?.length);
+    this.shops = shops.filter(s => s.itemList);
     this.calculateSc();
   }
 

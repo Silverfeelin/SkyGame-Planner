@@ -3582,11 +3582,6 @@
       "item": "K_OhSP_gST",
       "nw": "nla9RZusTP",
       "n": "V0aNfjCk_Z",
-      "ne": "AsJwsdTjU4"
-    },
-    {
-      "guid": "AsJwsdTjU4",
-      "item": "RtX7BAaov2",
       "ne": "9tzFO12e02"
     },
     {
@@ -3784,6 +3779,87 @@
       "guid": "lTjGn2SRZi",
       "item": "Du0Ciu8WX7",
       "sh": 2
+    },
+    // #endregion
+    // #region Nine-Colored Deer Guide
+    {
+      "guid": "BLKy0jnYaU",
+      "item": "cVufRaQV8i",
+      "n": "ZDSSxR38hq"
+    },
+    {
+      "guid": "ZDSSxR38hq",
+      "item": "MNCU8eU8DD",
+      "nw": "ljL8xVlKd5",
+      "n": "bLnAtun9f2",
+      "ne": "F57WDV2jHE"
+    },
+    {
+      "guid": "ljL8xVlKd5",
+      "item": "otoaOaPh_P"
+    },
+    {
+      "guid": "F57WDV2jHE",
+      "item": "9uVcch8mbe",
+      "n": "QMGvJNWoaa"
+    },
+    {
+      "guid": "QMGvJNWoaa",
+      "item": "qoqOCLQ-on",
+      "sh": 1,
+      "n": "3Tm0igcl3q"
+    },
+    {
+      "guid": "3Tm0igcl3q",
+      "item": "F_U2ISvmGv",
+      "sh": 1,
+      "n": "VK13DJd426"
+    },
+    {
+      "guid": "VK13DJd426",
+      "item": "gLB3Tnn8mb",
+      "sh": 2
+    },
+    {
+      "guid": "bLnAtun9f2",
+      "item": "34QZ7XGmqQ",
+      "nw": "2TXRk9FRs-",
+      "n": "RNeY7IIMyd"
+    },
+    {
+      "guid": "2TXRk9FRs-",
+      "item": "r62F4kbMp4"
+    },
+    {
+      "guid": "RNeY7IIMyd",
+      "item": "fQy562ANnr",
+      "nw": "iCUj55f3b4",
+      "n": "PtWomo0hFW"
+    },
+    {
+      "guid": "iCUj55f3b4",
+      "item": "kD0sX_iI2I",
+      "c": 50
+    },
+    {
+      "guid": "PtWomo0hFW",
+      "item": "6XaS3dbRqt",
+      "nw": "yxPPGH-woJ",
+      "n": "92BhkHqATw"
+    },
+    {
+      "guid": "yxPPGH-woJ",
+      "item": "vkEGa6fKaY"
+    },
+    {
+      "guid": "92BhkHqATw",
+      "item": "dhfAgLzgAw",
+      "n": "yZyQeX6F_O"
+    },
+    {
+      "guid": "yZyQeX6F_O",
+      "item": "Gn1DSb6m5E",
+      "c": 120
     },
     // #endregion
     // #endregion
@@ -5572,7 +5648,7 @@
       "item": "Hi8NBjG271",
       "c": 75
     },
-    // Twirling Champion
+    // #region Twirling Champion
     {
       "guid": "-4dScFEOsV",
       "item": "tmhe-C2cN3",
@@ -5743,6 +5819,72 @@
       "item": "EjjybJGcTN",
       "c": 34
     },
+    // TS 106
+    {
+      "guid": "N6SJgPwgNS",
+      "item": "tmhe-C2cN3",
+      "nw": "NxX6lHkewM",
+      "n": "T9ewpiNgpr"
+    },
+    {
+      "guid": "NxX6lHkewM",
+      "item": "zjAeiE3x_t",
+      "h": 4
+    },
+    {
+      "guid": "T9ewpiNgpr",
+      "item": "10pNNxAeD8",
+      "c": 5,
+      "nw": "CBRRlIAh4x",
+      "n": "CP07lGrHDG",
+      "ne": "gMsF5FvTn2"
+    },
+    {
+      "guid": "CBRRlIAh4x",
+      "item": "0L89TCDEtN",
+      "c": 24
+    },
+    {
+      "guid": "gMsF5FvTn2",
+      "item": "-wPyZeJ1nD",
+      "c": 3
+    },
+    {
+      "guid": "CP07lGrHDG",
+      "item": "_2Q4y97jsM",
+      "ac": 2,
+      "n": "UKp6Kpm8Xb"
+    },
+    {
+      "guid": "UKp6Kpm8Xb",
+      "item": "zhwG9yJ2mi",
+      "h": 3,
+      "nw": "muWIbRO7UP",
+      "n": "ZBoCZpNLNV"
+    },
+    {
+      "guid": "muWIbRO7UP",
+      "item": "touhpuoYRG",
+      "h": 6
+    },
+    {
+      "guid": "ZBoCZpNLNV",
+      "item": "myvAPXLC4n",
+      "c": 5,
+      "nw": "emUVMdbzjg",
+      "n": "1UR38PzdOB"
+    },
+    {
+      "guid": "emUVMdbzjg",
+      "item": "PIRW3pt_BE",
+      "c": 60
+    },
+    {
+      "guid": "1UR38PzdOB",
+      "item": "EjjybJGcTN",
+      "c": 34
+    },
+    // #endregion
     // #region Crab Whisperer
     {
       "guid": "jgPKwx1mOG",
@@ -7313,7 +7455,7 @@
       "item": "Zvi-5bPtxs",
       "c": 75
     },
-    // Hairtousle Teen
+    // #region Hairtousle Teen
     {
       "guid": "EkBbVkJtl8",
       "item": "YUAzM6p_2j",
@@ -7472,6 +7614,60 @@
       "item": "bBQbGQh1PU",
       "c": 50
     },
+    // TS 110
+    {
+      "guid": "knRWbcHjfg",
+      "item": "YUAzM6p_2j",
+      "n": "e-a8xvM3Sq"
+    },
+    {
+      "guid": "e-a8xvM3Sq",
+      "item": "GL1iz0Ybx0",
+      "c": 5,
+      "nw": "idAsnsnRLT",
+      "n": "vQI8oQaOIh",
+      "ne": "EvKRwXjX5r"
+    },
+    {
+      "guid": "idAsnsnRLT",
+      "item": "7Ul11Zqefz",
+      "c": 15
+    },
+    {
+      "guid": "EvKRwXjX5r",
+      "item": "XMk1ifj2qw",
+      "c": 3
+    },
+    {
+      "guid": "vQI8oQaOIh",
+      "item": "v1TQ9ZX3q5",
+      "ac": 2,
+      "n": "8BEv_DiwLu"
+    },
+    {
+      "guid": "8BEv_DiwLu",
+      "item": "n2TnJPoi1J",
+      "c": 5,
+      "nw": "eCUCzNyuJ2",
+      "n": "Yq5f9PTXiI",
+      "ne": "m1is55OEMH"
+    },
+    {
+      "guid": "eCUCzNyuJ2",
+      "item": "0f9auBppfc",
+      "h": 9
+    },
+    {
+      "guid": "m1is55OEMH",
+      "item": "Ph__M3uulY",
+      "c": 70
+    },
+    {
+      "guid": "Yq5f9PTXiI",
+      "item": "bBQbGQh1PU",
+      "c": 50
+    },
+    // #endregion
     // #endregion
     // #region Rhythm
     // #region Troupe Greeter
@@ -8860,7 +9056,7 @@
     // #endregion
     // #endregion
     // #region Enchantment
-    // Nodding Muralist
+    // #region Nodding Muralist
     {
       "guid": "j1crjoTmuk",
       "item": "WhcCC138s8",
@@ -9025,7 +9221,67 @@
       "item": "0HHq0_mt50",
       "c": 34
     },
-    // Indifferent Alchemist
+    // SV 5
+    {
+      "guid": "VkCve9uVAS",
+      "item": "WhcCC138s8",
+      "nw": "mo0oIJS1a_",
+      "n": "reGOXfU8aZ"
+    },
+    {
+      "guid": "mo0oIJS1a_",
+      "item": "D72h3-WjJD",
+      "h": 4
+    },
+    {
+      "guid": "reGOXfU8aZ",
+      "item": "H1vYsFTrFX",
+      "c": 5,
+      "nw": "xe8U6BjJZN",
+      "n": "j4_wre60hD",
+      "ne": "faeJLdk3KX"
+    },
+    {
+      "guid": "xe8U6BjJZN",
+      "item": "GyXhQOu4fZ",
+      "c": 30
+    },
+    {
+      "guid": "faeJLdk3KX",
+      "item": "V-zZ-UK9VJ",
+      "c": 3
+    },
+    {
+      "guid": "j4_wre60hD",
+      "item": "9Epic8uUqZ",
+      "ac": 2,
+      "n": "gD0H2BPu24"
+    },
+    {
+      "guid": "gD0H2BPu24",
+      "item": "rYq-RTnkiN",
+      "h": 3,
+      "nw": "0M_l6cQSrW",
+      "n": "SFYjN4kDyC"
+    },
+    {
+      "guid": "0M_l6cQSrW",
+      "item": "sbkNjwrgIc",
+      "h": 6
+    },
+    {
+      "guid": "SFYjN4kDyC",
+      "item": "hAnvfbKn_u",
+      "c": 5,
+      "n": "QUcB4hxfNe"
+    },
+    {
+      "guid": "QUcB4hxfNe",
+      "item": "0HHq0_mt50",
+      "c": 34
+    },
+    // #endregion
+    // #region Indifferent Alchemist
     {
       "guid": "3r1FbFbCtb",
       "item": "gFaU0Zm95W",
@@ -9213,6 +9469,72 @@
       "item": "ipSfkZ8Rql",
       "c": 70
     },
+    // SV 5
+    {
+      "guid": "r8R5tQ541i",
+      "item": "gFaU0Zm95W",
+      "nw": "pDhOss9S9C",
+      "n": "VvKaxiwGqU"
+    },
+    {
+      "guid": "pDhOss9S9C",
+      "item": "5bwnWkR0DG",
+      "h": 4
+    },
+    {
+      "guid": "VvKaxiwGqU",
+      "item": "eTV8WChk9X",
+      "c": 5,
+      "nw": "IAL8W8rNyI",
+      "n": "oooPIH1nd8",
+      "ne": "WwkVk3lL54"
+    },
+    {
+      "guid": "IAL8W8rNyI",
+      "item": "JR7mtV1Ukg",
+      "c": 42
+    },
+    {
+      "guid": "WwkVk3lL54",
+      "item": "bAcsvpqSwD",
+      "c": 3
+    },
+    {
+      "guid": "oooPIH1nd8",
+      "item": "YeiJvAzm58",
+      "ac": 2,
+      "n": "eoPgfATIGk"
+    },
+    {
+      "guid": "eoPgfATIGk",
+      "item": "8qHEcZWhOt",
+      "h": 3,
+      "nw": "Yqu5lrKau1",
+      "n": "3Sb5my-oqj"
+    },
+    {
+      "guid": "Yqu5lrKau1",
+      "item": "HD8j6J2ysy",
+      "h": 6
+    },
+    {
+      "guid": "3Sb5my-oqj",
+      "item": "vbQP5KFpu1",
+      "c": 5,
+      "nw": "YmDyOSHV1G",
+      "n": "oOrGmAupd3"
+    },
+    {
+      "guid": "YmDyOSHV1G",
+      "item": "ad7KAaSuU8",
+      "c": 42
+    },
+    {
+      "guid": "oOrGmAupd3",
+      "item": "ipSfkZ8Rql",
+      "c": 70
+    },
+    // #endregion
     // Crab Walker
     {
       "guid": "P3b21yQSwC",
@@ -10845,7 +11167,7 @@
     {
       "guid": "_WRNYSfLtR",
       "item": "yHf5YnLXUu",
-      "c": 50
+      "c": 66
     },
     {
       "guid": "TT8fY1Ae55",
@@ -11803,7 +12125,7 @@
     // #endregion
     // #endregion
     // #region Dreams
-    // Bearhug Hermit
+    // #region Bearhug Hermit
     {
       "guid": "ZCa7gd50nR",
       "item": "sw2YxczeGz",
@@ -11916,6 +12238,66 @@
       "item": "n4sSWlUIbO",
       "c": 70
     },
+    // TS 107
+    {
+      "guid": "IRu0px7jxG",
+      "item": "sw2YxczeGz",
+      "nw": "6W6kHzFlDn",
+      "n": "vjwZSMxkMo"
+    },
+    {
+      "guid": "6W6kHzFlDn",
+      "item": "s_79maNypQ",
+      "c": 15
+    },
+    {
+      "guid": "vjwZSMxkMo",
+      "item": "GiLR6EGa0G",
+      "c": 5,
+      "nw": "kKoMuYjqOR",
+      "n": "JOEYlX6MGJ",
+      "ne": "i6g6VTMkXK"
+    },
+    {
+      "guid": "kKoMuYjqOR",
+      "item": "xI0_ep59HH",
+      "c": 42
+    },
+    {
+      "guid": "i6g6VTMkXK",
+      "item": "exzDzoamyL",
+      "c": 3
+    },
+    {
+      "guid": "JOEYlX6MGJ",
+      "item": "knUa1Ri-X1",
+      "ac": 2,
+      "n": "eYapRy2u-b"
+    },
+    {
+      "guid": "eYapRy2u-b",
+      "item": "Ml3Snz_cos",
+      "c": 5,
+      "nw": "t8drYXJoZy",
+      "n": "tWKDjY83ng",
+      "ne": "vdX49Oa9XI"
+    },
+    {
+      "guid": "t8drYXJoZy",
+      "item": "YzY-N81J1l",
+      "h": 8
+    },
+    {
+      "guid": "vdX49Oa9XI",
+      "item": "C1z7gdAqFH",
+      "c": 50
+    },
+    {
+      "guid": "tWKDjY83ng",
+      "item": "n4sSWlUIbO",
+      "c": 70
+    },
+    // #endregion
     // Dancing Performer
     {
       "guid": "6i1ljkdw6g",
@@ -12012,6 +12394,7 @@
     {
       "guid": "bLGiMurjnQ",
       "item": "xFj09irsLt",
+      "hiddenItems": ["3CcVwVPJm-"],
       "sc": 21,
       "nw": "cmASdV8XsO",
       "n": "9x8MNlf8eg"
@@ -12104,6 +12487,7 @@
     {
       "guid": "BmvolBJz_w",
       "item": "xFj09irsLt",
+      "hiddenItems": ["3CcVwVPJm-"],
       "c": 70
     },
     // #region Spinning Mentor
@@ -12989,7 +13373,7 @@
       "item": "osxMEOwG_r",
       "c": 45
     },
-    // Daydream Forester
+    // #region Daydream Forester
     {
       "guid": "rPiu3Qdyxw",
       "item": "AuugJTG-Nl",
@@ -13113,6 +13497,72 @@
       "item": "Pn_wGqjtoX",
       "c": 60
     },
+    // TS 109
+    {
+      "guid": "G1PAMlEgRR",
+      "item": "AuugJTG-Nl",
+      "nw": "HYff-Ce1zI",
+      "n": "HnSpozcs1R"
+    },
+    {
+      "guid": "HYff-Ce1zI",
+      "item": "nT-zyxTRzs",
+      "h": 4
+    },
+    {
+      "guid": "HnSpozcs1R",
+      "item": "H65ejfWOVQ",
+      "c": 5,
+      "nw": "Rat_EpRdAr",
+      "n": "RBZF3gEJTU",
+      "ne": "u3nrw1VWd7"
+    },
+    {
+      "guid": "Rat_EpRdAr",
+      "item": "qoLywJXaJA",
+      "c": 24
+    },
+    {
+      "guid": "u3nrw1VWd7",
+      "item": "5MLDnJJq2U",
+      "c": 3
+    },
+    {
+      "guid": "RBZF3gEJTU",
+      "item": "T58FOcLa6Q",
+      "ac": 2,
+      "n": "-2ziWthiPR"
+    },
+    {
+      "guid": "-2ziWthiPR",
+      "item": "LBmnlOT0UP",
+      "h": 3,
+      "nw": "_SnoAh8tK5",
+      "n": "rpDys6_AKL",
+      "ne": "-TJjS42WJ3"
+    },
+    {
+      "guid": "_SnoAh8tK5",
+      "item": "Ujm1hPDpWr",
+      "h": 6
+    },
+    {
+      "guid": "-TJjS42WJ3",
+      "item": "2DIgMTKaK6",
+      "c": 15
+    },
+    {
+      "guid": "rpDys6_AKL",
+      "item": "N8AXviDTdQ",
+      "c": 5,
+      "n": "wcFOgdRAAi"
+    },
+    {
+      "guid": "wcFOgdRAAi",
+      "item": "Pn_wGqjtoX",
+      "c": 44
+    },
+    // #endregion
     // #endregion
     // #region The Little Prince
     // Beckoning Ruler
@@ -13292,7 +13742,7 @@
     },
     {
       "guid": "OSFMlptEWp",
-      "item": "qcsiXdqfGT",
+      "item": "SNhn8BVb7a",
       "h": 4
     },
     {
@@ -14033,7 +14483,7 @@
       "c": 70
     },
     // #endregion
-    // Light Whisperer
+    // #region Light Whisperer
     {
       "guid": "zI5GRFCBhX",
       "item": "YiLDQF0uDU",
@@ -14088,6 +14538,60 @@
       "item": "CJLgEjb1TE",
       "sc": 3
     },
+    // TS 108
+    {
+      "guid": "MGUE9PoBTC",
+      "item": "YiLDQF0uDU",
+      "n": "GQCr45sZzy"
+    },
+    {
+      "guid": "GQCr45sZzy",
+      "item": "Ld2u4cjPes",
+      "c": 5,
+      "nw": "NUWewYsDs1",
+      "n": "GcKeO1hduB",
+      "ne": "5sEBo9jJEX"
+    },
+    {
+      "guid": "NUWewYsDs1",
+      "item": "Dt5aDX9Osc",
+      "c": 45
+    },
+    {
+      "guid": "5sEBo9jJEX",
+      "item": "oF1ZpY_EyV",
+      "c": 3
+    },
+    {
+      "guid": "GcKeO1hduB",
+      "item": "kwgBrM-KbA",
+      "ac": 2,
+      "n": "k2HiOBiGUY"
+    },
+    {
+      "guid": "k2HiOBiGUY",
+      "item": "T_syKqfzht",
+      "c": 5,
+      "nw": "gClqCzuBYV",
+      "n": "lOlI6sGuX_",
+      "ne": "2o4wIK5UU6"
+    },
+    {
+      "guid": "gClqCzuBYV",
+      "item": "k_dtQhg8Ii",
+      "c": 50
+    },
+    {
+      "guid": "2o4wIK5UU6",
+      "item": "Y7j3ljNdYp",
+      "c": 65
+    },
+    {
+      "guid": "lOlI6sGuX_",
+      "item": "1IwU-ZZu1g",
+      "c": 70
+    },
+    // #endregion
     // #region Tinkering Chimesmith
     {
       "guid": "wcUvdoaglf",
@@ -14341,7 +14845,7 @@
     // #endregion
     // #endregion
     // #region Abyss
-    // Anxious Angler
+    // #region Anxious Angler
     {
       "guid": "WLTEZBaXZ6",
       "item": "sk_cUbT6vx",
@@ -14412,7 +14916,79 @@
       "item": "rjtnYeRVoU",
       "sc": 3
     },
-    // Ceasing Commodore
+    // TS 105
+    {
+      "guid": "w7O7kFaQ4l",
+      "item": "sk_cUbT6vx",
+      "nw": "yRHdADcSoo",
+      "n": "nNkF85878y"
+    },
+    {
+      "guid": "yRHdADcSoo",
+      "item": "3ixBHha-wW",
+      "h": 4
+    },
+    {
+      "guid": "nNkF85878y",
+      "item": "BrdpWDCx5c",
+      "c": 5,
+      "nw": "DRATyPYQaH",
+      "n": "Ayb5JLr97J",
+      "ne": "24VilYxbIq"
+    },
+    {
+      "guid": "DRATyPYQaH",
+      "item": "Qqsui-W6Gr",
+      "c": 45
+    },
+    {
+      "guid": "24VilYxbIq",
+      "item": "2vqdDGadG5",
+      "c": 3
+    },
+    {
+      "guid": "Ayb5JLr97J",
+      "item": "aXl9NeM1su",
+      "ac": 2,
+      "n": "22L9Ze074p"
+    },
+    {
+      "guid": "22L9Ze074p",
+      "item": "kuS7q4u7Ua",
+      "h": 3,
+      "nw": "DUGlsbK-0A",
+      "n": "01h6518Ti4",
+      "ne": "liyKmy-aJs"
+    },
+    {
+      "guid": "DUGlsbK-0A",
+      "item": "rv2ivbgqBM",
+      "h": 6
+    },
+    {
+      "guid": "01h6518Ti4",
+      "item": "1HGapVTSXR",
+      "c": 5,
+      "nw": "9in0prFSJ_",
+      "n": "GW8hjVynq4"
+    },
+    {
+      "guid": "9in0prFSJ_",
+      "item": "Q0E7lpa192",
+      "c": 70
+    },
+    {
+      "guid": "liyKmy-aJs",
+      "item": "xFJMNfae6Y",
+      "c": 35
+    },
+    {
+      "guid": "GW8hjVynq4",
+      "item": "xCPJYG39hD",
+      "c": 65
+    },
+    // #endregion
+    // #region Ceasing Commodore
     {
       "guid": "Wt_FOZCmQf",
       "item": "Ei9pBqI3yK",
@@ -14472,6 +15048,72 @@
       "item": "qkQDz-wh6P",
       "sc": 3
     },
+    // SV 5
+    {
+      "guid": "BkKELtjaxF",
+      "item": "Ei9pBqI3yK",
+      "nw": "9g4hY1pqo8",
+      "n": "1XHkKL4Bkq"
+    },
+    {
+      "guid": "9g4hY1pqo8",
+      "item": "FETTumn6J-",
+      "h": 4
+    },
+    {
+      "guid": "1XHkKL4Bkq",
+      "item": "RVcOixT4ox",
+      "c": 5,
+      "nw": "_CqXlQmb6y",
+      "n": "w-Ta7kdatk",
+      "ne": "6bKHj9WLDk"
+    },
+    {
+      "guid": "_CqXlQmb6y",
+      "item": "WwuCeXn8wy",
+      "c": 45
+    },
+    {
+      "guid": "6bKHj9WLDk",
+      "item": "1UjXVxWRSA",
+      "c": 3
+    },
+    {
+      "guid": "w-Ta7kdatk",
+      "item": "hFsueN5kVb",
+      "ac": 2,
+      "n": "yhrNgJpdXA"
+    },
+    {
+      "guid": "yhrNgJpdXA",
+      "item": "aDDMg7WuIc",
+      "h": 3,
+      "nw": "TnPJ6BRogS",
+      "n": "lCOwXBBIQm"
+    },
+    {
+      "guid": "TnPJ6BRogS",
+      "item": "TKVZD91Ur_",
+      "h": 6
+    },
+    {
+      "guid": "lCOwXBBIQm",
+      "item": "3QYgeQvXXu",
+      "c": 5,
+      "nw": "kDmq7slWfV",
+      "n": "SU98m8IQE2"
+    },
+    {
+      "guid": "kDmq7slWfV",
+      "item": "aoo9OjQKpZ",
+      "c": 40
+    },
+    {
+      "guid": "SU98m8IQE2",
+      "item": "_qGl7VRl35",
+      "c": 70
+    },
+    // #endregion
     // Bumbling Boatswain
     {
       "guid": "8rargE3UTh",
@@ -14688,7 +15330,7 @@
     // #endregion
     // #endregion
     // #region Performance
-    // Frantic Stagehand
+    // #region Frantic Stagehand
     {
       "guid": "eUh0KO-9lY",
       "item": "FmTG9TSX2e",
@@ -14743,6 +15385,66 @@
       "item": "DDgj-h-IrD",
       "sc": 3
     },
+    // SV 5
+    {
+      "guid": "JZ0vOui6V-",
+      "item": "FmTG9TSX2e",
+      "nw": "Kl-TKk5Pkm",
+      "n": "rl-go7wSfb"
+    },
+    {
+      "guid": "Kl-TKk5Pkm",
+      "item": "LE-qwy-wie",
+      "c": 22
+    },
+    {
+      "guid": "rl-go7wSfb",
+      "item": "GikEz6_ZnD",
+      "c": 5,
+      "nw": "x5nqVvIlss",
+      "n": "C_tZzBPXwl",
+      "ne": "VNYcm5hgb0"
+    },
+    {
+      "guid": "x5nqVvIlss",
+      "item": "BtWvDojIDg",
+      "c": 48
+    },
+    {
+      "guid": "VNYcm5hgb0",
+      "item": "zpYo-bAkEr",
+      "c": 3
+    },
+    {
+      "guid": "C_tZzBPXwl",
+      "item": "2rVo805JY0",
+      "ac": 2,
+      "n": "W2mzkt6hoV"
+    },
+    {
+      "guid": "W2mzkt6hoV",
+      "item": "AdZbRcEjbN",
+      "c": 5,
+      "nw": "kHiygDF_eP",
+      "n": "qYc81qz84v",
+      "ne": "KekcO_WKFg"
+    },
+    {
+      "guid": "kHiygDF_eP",
+      "item": "LYyK5T92ij",
+      "h": 8
+    },
+    {
+      "guid": "KekcO_WKFg",
+      "item": "xoEQI_2ykm",
+      "c": 70
+    },
+    {
+      "guid": "qYc81qz84v",
+      "item": "kealNieHwv",
+      "c": 34
+    },
+    // #endregion
     // Forgetful Storyteller
     {
       "guid": "DAX89eU3v8",
@@ -16290,6 +16992,263 @@
     },
     // #endregion
     // #endregion
+    // #region Nine-Colored Deer
+    // #region Herb Gatherer
+    {
+      "guid": "EEz74j7uA3",
+      "item": "JghaoDBzL-",
+      "nw": "GqoF1aIatY",
+      "n": "5c4eEiWyPA"
+    },
+    {
+      "guid": "GqoF1aIatY",
+      "item": "fRqeU-viVI"
+    },
+    {
+      "guid": "5c4eEiWyPA",
+      "item": "GOhva5yLDa",
+      "sc": 16,
+      "nw": "AbrrfEgFe1",
+      "n": "aQx3iDWNf0"
+    },
+    {
+      "guid": "AbrrfEgFe1",
+      "item": "iwngzO_Ye0"
+    },
+    {
+      "guid": "aQx3iDWNf0",
+      "item": "HbrxremuY-",
+      "sc": 26,
+      "nw": "cuJ-cN9cNI",
+      "n": "854R0K3fkh"
+    },
+    {
+      "guid": "cuJ-cN9cNI",
+      "item": "A1fMJZO5K_"
+    },
+    {
+      "guid": "854R0K3fkh",
+      "item": "brs2b0XtiY",
+      "sc": 30,
+      "nw": "yAlhMb7QEp",
+      "n": "Losgq6EGS7"
+    },
+    {
+      "guid": "yAlhMb7QEp",
+      "item": "fB-Akhop3K"
+    },
+    {
+      "guid": "Losgq6EGS7",
+      "item": "W1GZqtaPaM",
+      "sc": 36,
+      "nw": "euJyOBiQl-",
+      "n": "oHFhwfAbmW"
+    },
+    {
+      "guid": "euJyOBiQl-",
+      "item": "x7vrsngRCI"
+    },
+    {
+      "guid": "oHFhwfAbmW",
+      "item": "jG5Kuv-GTD",
+      "sc": 3
+    },
+    // #endregion
+    // #region Hunter
+    {
+      "guid": "kU0nAenGkj",
+      "item": "AR-MFu1bih",
+      "nw": "oBDRhIc-U0",
+      "n": "vy42LcfVgL"
+    },
+    {
+      "guid": "oBDRhIc-U0",
+      "item": "F_3lTFwBoE"
+    },
+    {
+      "guid": "vy42LcfVgL",
+      "item": "X_2wqYzEu5",
+      "sc": 8,
+      "nw": "O-9cB13pGo",
+      "n": "QTgfN7i74o"
+    },
+    {
+      "guid": "O-9cB13pGo",
+      "item": "IQY8K6P32K"
+    },
+    {
+      "guid": "QTgfN7i74o",
+      "item": "QJq0kW8j2S",
+      "sc": 20,
+      "nw": "cJVd-UG9Zp",
+      "n": "op_OClDINi"
+    },
+    {
+      "guid": "cJVd-UG9Zp",
+      "item": "zBw4EnSXM1"
+    },
+    {
+      "guid": "op_OClDINi",
+      "item": "C3n9ZNcSYr",
+      "sc": 28,
+      "nw": "Jtt8zjusE8",
+      "n": "caBIg543Il"
+    },
+    {
+      "guid": "Jtt8zjusE8",
+      "item": "5NmGXSaWaK"
+    },
+    {
+      "guid": "caBIg543Il",
+      "item": "orB3idfSwo",
+      "sc": 34,
+      "nw": "6YddprtswD",
+      "n": "hAjYAWNFv0"
+    },
+    {
+      "guid": "6YddprtswD",
+      "item": "kfHRAuUJcv"
+    },
+    {
+      "guid": "hAjYAWNFv0",
+      "item": "h2zRh4oz4_",
+      "sc": 3
+    },
+    // #endregion
+    // #region Feudal Lord
+    {
+      "guid": "c1ukj9PFVD",
+      "item": "4bioxBnhrA",
+      "nw": "OdBgcJbtEK",
+      "n": "3_B5F60qou"
+    },
+    {
+      "guid": "OdBgcJbtEK",
+      "item": "SxBmlA58uo"
+    },
+    {
+      "guid": "3_B5F60qou",
+      "item": "va-bCmN1T_",
+      "sc": 6,
+      "nw": "e1EHTQbh7O",
+      "n": "EpLzU7Tck4"
+    },
+    {
+      "guid": "e1EHTQbh7O",
+      "item": "VJu0fG2ndS"
+    },
+    {
+      "guid": "EpLzU7Tck4",
+      "item": "xm183xQb6B",
+      "sc": 18,
+      "nw": "47suLqrKU3",
+      "n": "fimJTaBUjW"
+    },
+    {
+      "guid": "47suLqrKU3",
+      "item": "MDwDKmNPig"
+    },
+    {
+      "guid": "fimJTaBUjW",
+      "item": "bPs2llkWyk",
+      "sc": 26,
+      "nw": "uXkkTBo9E7",
+      "n": "AYd2LYGwHd"
+    },
+    {
+      "guid": "uXkkTBo9E7",
+      "item": "WkyRmWK_lE"
+    },
+    {
+      "guid": "AYd2LYGwHd",
+      "item": "H3IbNNMgeI",
+      "sc": 32,
+      "nw": "fqJcKikf2K",
+      "n": "oSY366YRwW"
+    },
+    {
+      "guid": "fqJcKikf2K",
+      "item": "Ob9-4JZoGH"
+    },
+    {
+      "guid": "oSY366YRwW",
+      "item": "b8fsOpXbiN",
+      "sc": 3
+    },
+    // #endregion
+    // #region Princess
+    {
+      "guid": "QLHntqZQ6m",
+      "item": "UVSUO7K0pg",
+      "nw": "teffb5GxyX",
+      "n": "nq-taG3wQg"
+    },
+    {
+      "guid": "teffb5GxyX",
+      "item": "c2ogGO4e6t"
+    },
+    {
+      "guid": "nq-taG3wQg",
+      "item": "5WpDgbgdqb",
+      "sc": 8,
+      "nw": "AP1XKnfsxx",
+      "n": "P5uOwY_l-A"
+    },
+    {
+      "guid": "AP1XKnfsxx",
+      "item": "Ye-rhyzgWF"
+    },
+    {
+      "guid": "P5uOwY_l-A",
+      "item": "UzRclD65vO",
+      "sc": 18,
+      "nw": "JGZV3U9Jvu",
+      "n": "z0Lkyd1iNP"
+    },
+    {
+      "guid": "JGZV3U9Jvu",
+      "item": "XBA8t0KAgo"
+    },
+    {
+      "guid": "z0Lkyd1iNP",
+      "item": "UcG0zDem_M",
+      "sc": 22,
+      "nw": "09kVqTSZgq",
+      "n": "eU1kzP8PY-"
+    },
+    {
+      "guid": "09kVqTSZgq",
+      "item": "8hRD36UT6n"
+    },
+    {
+      "guid": "eU1kzP8PY-",
+      "item": "O0ktmTVR_z",
+      "sc": 26,
+      "nw": "w1VCzjbtmd",
+      "n": "vN5lBp0S9x"
+    },
+    {
+      "guid": "w1VCzjbtmd",
+      "item": "3KnSMisbLM"
+    },
+    {
+      "guid": "vN5lBp0S9x",
+      "item": "6FYRAG6jIS",
+      "sc": 32,
+      "nw": "8jxbLNGDUI",
+      "n": "VXLRTIyOvf"
+    },
+    {
+      "guid": "8jxbLNGDUI",
+      "item": "iSIZiicqA0"
+    },
+    {
+      "guid": "VXLRTIyOvf",
+      "item": "IWXeOczUJv",
+      "sc": 3
+    },
+    // #endregion
+    // #endregion
 
     // #region Days of Fortune (2021)
     {
@@ -16435,6 +17394,60 @@
       "c": 58
     },
     // #endregion
+    // #region Days of Fortune (2024)
+    {
+      "guid": "ZtC0aan5z-",
+      "item": "KPxx7HeAPV",
+      "nw": "5ZEUYpflD-",
+      "n": "Zv6nOks1ld",
+      "ne": "Ir7Az9gquf"
+    },
+    {
+      "guid": "5ZEUYpflD-",
+      "item": "OFwVuPWmfK",
+      "ec": 14
+    },
+    {
+      "guid": "Ir7Az9gquf",
+      "item": "8KXtBlvNRO",
+      "ec": 34
+    },
+    {
+      "guid": "Zv6nOks1ld",
+      "item": "t6nJrp1wWD",
+      "c": 5,
+      "nw": "8tA57rIw2a",
+      "n": "qOdCVxVIRl",
+      "ne": "Vid6QjwLNY"
+    },
+    {
+      "guid": "8tA57rIw2a",
+      "item": "D_k9C9QybE",
+      "c": 62
+    },
+    {
+      "guid": "Vid6QjwLNY",
+      "item": "c1YroXxA9Z",
+      "c": 58
+    },
+    {
+      "guid": "qOdCVxVIRl",
+      "item": "QB-SWz3oTJ",
+      "c": 5,
+      "nw": "3z78gRgtQn",
+      "n": "URNqNlo-Hn"
+    },
+    {
+      "guid": "3z78gRgtQn",
+      "item": "hLJjrHH-Ag",
+      "c": 56
+    },
+    {
+      "guid": "URNqNlo-Hn",
+      "item": "LgDGqWw-NO",
+      "c": 66
+    },
+    // #endregion
     // #region Days of Love (2021)
     {
       "guid": "IZbM47BixN",
@@ -16566,6 +17579,60 @@
       "c": 100
     },
     // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "yUNUCsYx9f",
+      "item": "YJU5CxCP7q",
+      "nw": "z1wNcoYgOI",
+      "n": "1e7mjkScBk",
+      "ne": "CY8prXg6sX"
+    },
+    {
+      "guid": "z1wNcoYgOI",
+      "item": "jHkHsvOnaU",
+      "ec": 14
+    },
+    {
+      "guid": "CY8prXg6sX",
+      "item": "adF6BE3T7-",
+      "ec": 27
+    },
+    {
+      "guid": "1e7mjkScBk",
+      "item": "nEOsR79Jn5",
+      "c": 5,
+      "nw": "GOf-_dHRLE",
+      "n": "ryBRLMjZWA",
+      "ne": "1pQrVwklZ9"
+    },
+    {
+      "guid": "GOf-_dHRLE",
+      "item": "2bAlmLI951",
+      "ec": 7
+    },
+    {
+      "guid": "1pQrVwklZ9",
+      "item": "VBR5HI2-dU",
+      "h": 15
+    },
+    {
+      "guid": "ryBRLMjZWA",
+      "item": "owMovjRlTb",
+      "c": 5,
+      "nw": "4GHNtkHwJP",
+      "n": "pL4N75ZJ48"
+    },
+    {
+      "guid": "4GHNtkHwJP",
+      "item": "rFRaOxnvXF",
+      "h": 15
+    },
+    {
+      "guid": "pL4N75ZJ48",
+      "item": "P-7ozR83J8",
+      "c": 100
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "cQSMKHE-9K",
@@ -16666,6 +17733,77 @@
       "guid": "KXsWsk9Zou",
       "item": "89R9XC2DIg",
       "c": 105
+    },
+    // #endregion
+    // #region Days of Bloom (2024)
+    {
+      "guid": "7DsPuIDwHZ",
+      "item": "MzWv4Qp2S7",
+      "c": 5,
+      "nw": "BBVMyw1wmF",
+      "n": "UcmE4dFzaJ",
+      "ne": "fMsjxlfAqF"
+    },
+    {
+      "guid": "BBVMyw1wmF",
+      "item": "YTBtAMps8R",
+      "c": 110
+    },
+    {
+      "guid": "fMsjxlfAqF",
+      "item": "LRLEa6LYVP",
+      "c": 80
+    },
+    {
+      "guid": "UcmE4dFzaJ",
+      "item": "xinA3TgIh2",
+      "c": 5,
+      "nw": "qpZj40uAVK",
+      "n": "wi4ug1Bp4c"
+    },
+    {
+      "guid": "qpZj40uAVK",
+      "item": "89R9XC2DIg",
+      "c": 105
+    },
+    {
+      "guid": "wi4ug1Bp4c",
+      "item": "gNU9s-K-M1",
+      "c": 5,
+      "nw": "eIQZtH4E6U",
+      "n": "1sOjnphDxG"
+    },
+    {
+      "guid": "eIQZtH4E6U",
+      "item": "wFSLA6un_V",
+      "c": 70
+    },
+    {
+      "guid": "1sOjnphDxG",
+      "item": "uKLD12UrPr",
+      "h": 20
+    },
+    {
+      "guid": "0Oe41ToBtQ",
+      "item": "nDWdZT-kAA",
+      "nw": "XLqG_tACGn",
+      "n": "3neod11Ol2",
+      "ne": "WFiliWR3NI"
+    },
+    {
+      "guid": "XLqG_tACGn",
+      "item": "nkJXDrn2cV",
+      "h": 25
+    },
+    {
+      "guid": "WFiliWR3NI",
+      "item": "vxfZZiaabO",
+      "ec": 24
+    },
+    {
+      "guid": "3neod11Ol2",
+      "item": "MgQqIuTSuC",
+      "ec": 48
     },
     // #endregion
     // #region Days of Nature (2022)

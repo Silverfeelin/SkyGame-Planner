@@ -1,6 +1,22 @@
 {
   "items": [
     {
+      "guid": "wk596SmtyB",
+      "name": "Aviary Village",
+      "shortName": "Aviary",
+      "imageUrl": "/assets/game/realms/Aviary.webp",
+      "areas": [
+        "Mhbh0g9OdG"
+      ],
+      "mapData": {
+        "position": [-453, 364.75],
+        "zoom": 2
+      },
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary_Village"
+      }
+    },
+    {
       "guid": "8E6CJZxsxj",
       "name": "Home",
       "shortName": "Home",
@@ -379,7 +395,8 @@
         "schNrmq0ID",
         "TyD_dnjqAF",
         "DERcWzmOL7",
-        "XG3_0khlw9"
+        "XG3_0khlw9",
+        "aBL5eqTv4R"
       ],
       "mapData": {
         "position": [-209.25, 375.5]
@@ -421,22 +438,6 @@
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_of_Knowledge"
-      }
-    },
-    {
-      "guid": "wk596SmtyB",
-      "name": "Aviary",
-      "shortName": "Aviary",
-      "imageUrl": "/assets/game/realms/Aviary.webp",
-      "areas": [
-        "Mhbh0g9OdG"
-      ],
-      "mapData": {
-        "position": [-453, 364.75],
-        "zoom": 2
-      },
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary"
       }
     },
     {

@@ -1,4 +1,4 @@
-<div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree?.guid">
+<div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree.guid">
   <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot">
     <div class="tree-action find-item" (click)="toggleNavigate()" [class.highlight-attention]="navigating">
       <mat-icon>step_into</mat-icon>
@@ -58,5 +58,12 @@
     <div *ngIf="name && hasCost" class="hr"></div>
     <div *ngIf="hasCost" class="costs">
       <app-cost [cost]="totalCost" [remaining]="remainingCost"></app-cost>
+    </div>
+    <ng-container *ngIf="tree.draft">
+      <div class="hr"></div>
+      <div class="draft c-accent">
+        <small>This spirit tree is not confirmed yet!</small>
+      </div>
+    </ng-container>
   </div>
 </div>

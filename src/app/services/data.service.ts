@@ -6,7 +6,7 @@ import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
 import { ISpiritTree, ISpiritTreeConfig } from '../interfaces/spirit-tree.interface';
 import { IEventConfig } from '../interfaces/event.interface';
-import { IItem, IItemConfig } from '../interfaces/item.interface';
+import { IItem, IItemConfig, ItemType } from '../interfaces/item.interface';
 import { INode, INodeConfig } from '../interfaces/node.interface';
 import { IQuestConfig } from '../interfaces/quest.interface';
 import { IRealmConfig } from '../interfaces/realm.interface';
@@ -20,10 +20,10 @@ import { StorageService } from './storage.service';
 import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
 import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
-import dayjs from 'dayjs';
 import { CostHelper } from '../helpers/cost-helper';
 import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
+import { IItemList } from '../interfaces/item-list.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +32,7 @@ export class DataService {
   areaConfig!: IAreaConfig;
   eventConfig!: IEventConfig;
   itemConfig!: IItemConfig;
+  itemListConfig!: IConfig<IItemList>;
   nodeConfig!: INodeConfig;
   questConfig!: IQuestConfig;
   realmConfig!: IRealmConfig;
@@ -45,6 +46,7 @@ export class DataService {
   outfitRequestConfig!: IOutfitRequestConfig;
 
   guidMap = new Map<string, IGuid>();
+  idMap = new Map<number, IItem>();
 
   readonly onData = new ReplaySubject<void>();
 
@@ -62,6 +64,7 @@ export class DataService {
       areaConfig: get('areas.json'),
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
+      itemListConfig: get('item-lists.json'),
       nodeConfig: get('nodes.json'),
       questConfig: get('quests.json'),
       realmConfig: get('realms.json'),
@@ -103,6 +106,7 @@ export class DataService {
     this.initializeEvents();
     this.initializeShops();
     this.initializeItems();
+    this.initializeItemLists();
     this.initializeSeasonItems();
     this.initializeWingedLight();
     this.initializeOutfitRequests();
@@ -199,7 +203,7 @@ export class DataService {
       // Initialize dates
       ts.date = DateHelper.fromInterfaceSky(ts.date)!;
       ts.endDate = DateHelper.fromInterfaceSky(ts.endDate)?.endOf('day')
-        ?? dayjs(ts.date).add(3, 'day').endOf('day');
+        ?? ts.date.plus({ days: 3 }).endOf('day');
 
       // Map TS to Spirit.
       const spirit = this.guidMap.get(ts.spirit as any) as ISpirit;
@@ -312,8 +316,12 @@ export class DataService {
         eventInstance.number = iInstance + 1;
 
         // Initialize dates
-        eventInstance.date = DateHelper.fromInterfaceSky(eventInstance.date)!;
-        eventInstance.endDate = DateHelper.fromInterfaceSky(eventInstance.endDate)!.endOf('day');
+        eventInstance.date = typeof eventInstance.date === 'string'
+          ? DateHelper.fromStringSky(eventInstance.date)!
+          : DateHelper.fromInterfaceSky(eventInstance.date)!;
+        eventInstance.endDate = typeof eventInstance.endDate === 'string'
+          ? DateHelper.fromStringSky(eventInstance.endDate)!.endOf('day')
+          : DateHelper.fromInterfaceSky(eventInstance.endDate)!.endOf('day');
 
         // Map Instance to Event.
         eventInstance.event = event;
@@ -374,17 +382,45 @@ export class DataService {
           }
         });
       });
+
+      if (shop.itemList) {
+        const itemList = this.guidMap.get(shop.itemList as any) as IItemList;
+        shop.itemList = itemList;
+        itemList.shop = shop;
+      }
     });
   }
 
   private initializeItems(): void {
     const ids = new Set<number>();
+    const types = new Set<string>();
+    for (const type in ItemType) { types.add(type); }
+
+    let shouldWarn = false;
+    const emoteOrders: { [key: string]: number } = {};
+    const emotes: Array<IItem> = [];
     this.itemConfig.items.forEach(item => {
       if (item.id) {
-        ids.has(item.id) && console.error('Duplicate item ID', item.id, item);
-        ids.add(item.id);
+        if (ids.has(item.id)) {
+          console.error('Duplicate item ID', item.id, item);
+          shouldWarn = true;
+        } else {
+          ids.add(item.id);
+          this.idMap.set(item.id, item);
+        }
       } else {
         console.error('Item ID not defined', item);
+        shouldWarn = true;
+      }
+
+      if (!item.type || !types.has(item.type)) {
+        console.error('Item type not defined.', item);
+        shouldWarn = true;
+      }
+
+      if (item.type === 'Emote') {
+        if (item.level === 1) { emoteOrders[item.name] = item.order ?? 999999; }
+        else { emotes.push(item); }
       }
 
       item.unlocked ||= this._storageService.unlocked.has(item.guid);
@@ -392,8 +428,29 @@ export class DataService {
       if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }
       item.order ??= 999999;
     });
+
+    emotes.forEach(emote => emote.order = emoteOrders[emote.name] ?? emote.order);
+
+    shouldWarn && alert('Misconfigured items. Please report this issue.');
   }
 
+  private initializeItemLists(): void {
+    this.itemListConfig.items.forEach(itemList => {
+      itemList.items.forEach(itemNode => {
+        itemNode.itemList = itemList;
+
+        if (typeof itemNode.item === 'string') {
+          const item = this.guidMap.get(itemNode.item as any) as IItem;
+          itemNode.item = item;
+
+          item.listNodes ??= [];
+          item.listNodes.push(itemNode);
+
+          itemNode.unlocked = this._storageService.unlocked.has(itemNode.guid);
+        }
+      });
+    });
+  }
 
   private initializeSeasonItems(): void {
     for (const season of this.seasonConfig.items) {
@@ -436,6 +493,7 @@ export class DataService {
       spiritTreeConfig: this.spiritTreeConfig,
       eventConfig: this.eventConfig,
       itemConfig: this.itemConfig,
+      itemListConfig: this.itemListConfig,
       nodeConfig: this.nodeConfig,
       questConfig: this.questConfig,
       realmConfig: this.realmConfig,

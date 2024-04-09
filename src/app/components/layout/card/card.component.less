@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.foldable {
+  .sky-card-header {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .sky-card-header > ::ng-deep *:not(.sky-card-fold) {
+    padding-left: 28px;
+}
+}
+
+.sky-card-fold {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 1;
+
+}
+
+.sky-card-body {
+  transition: height 0.3s;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.card-body-pad {
+  padding: calc(var(--padding-content) - 5px) var(--padding-content);
+}

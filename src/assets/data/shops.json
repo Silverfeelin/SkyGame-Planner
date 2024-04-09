@@ -123,6 +123,16 @@
       ]
     },
     // #endregion
+    // #region Season of the Nine-Colored Deer
+    {
+      "guid": "QdHULe44lZ",
+      "type": "Store",
+      "iaps": [
+        "j8hpj0Tr2X",
+        "lISB28039d"
+      ]
+    },
+    // #endregion
     // #region Days of Fortune (2021)
     {
       "guid": "cgSX8-JQkw",
@@ -168,6 +178,39 @@
       "iaps": [
         "f2wGOnTOGl",
         "kYwAczfKLX"
+      ]
+    },
+    // #endregion
+    // #region Days of Fortune (2024)
+    {
+      "guid": "N1ioU0ztzJ",
+      "type": "Store",
+      "iaps": [
+        "GQirzPYKk-",
+        "xc37pb6Wvb",
+        "XMyw8g-P8x"
+      ]
+    },
+    {
+      "guid": "B6AeQqeM0E",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "28rCsz9wUP",
+        "NVsMGCUZek",
+        "cjTDXNkvN1"
+      ]
+    },
+    {
+      "guid": "9HhEIMjSWV",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+
+        "vrUAy0EAun",
+        "JPyUHMKT5R",
+        "4jMCH8Vl-x",
+        "AZNU4TiFyl",
       ]
     },
     // #endregion
@@ -228,6 +271,34 @@
       ]
     },
     // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "Gpcii_q0ie",
+      "type": "Store",
+      "iaps": [
+        "UXec8cY3C8"
+      ]
+    },
+    {
+      "guid": "-gDmtZfZgy",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "YtTUStyCGy",
+        "zdU7dbNcG0",
+        "38RSjUYhZR"
+      ]
+    },
+    {
+      "guid": "zZa_567vOp",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "JLjsFmtey7",
+        "cVvWv3Nf7F"
+      ]
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "EF1SdxSqWT",
@@ -277,6 +348,26 @@
       "iaps": [
         "zwPqSQZWLt",
         "mEvjH3h1gv"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2024)
+    {
+      "guid": "Qwm9ceRSki",
+      "type": "Store",
+      "iaps": [
+        "BcxdW-iTA6"
+      ]
+    },
+    {
+      "guid": "zvuqUyGcUl",
+      "type": "Object",
+      "name": "Days of Bloom Crate",
+      "iaps": [
+        "15aenJbpNM",
+        "Ko_ViiBli0",
+        "1ryX2u1XO3",
+        "SBBe6Iy8P3",
       ]
     },
     // #endregion
@@ -563,7 +654,7 @@
         "4JGWNM03tr"
       ]
     },
-    // #en
+    // #endregion
     // #region Days of Feast (2019)
     {
       "guid": "eWS8HsX6SC",

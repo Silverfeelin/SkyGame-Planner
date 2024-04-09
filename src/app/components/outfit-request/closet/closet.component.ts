@@ -9,10 +9,13 @@ import { SubscriptionLike, lastValueFrom } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
-import { DateHelper } from 'src/app/helpers/date-helper';
+import { DateHelper, PeriodState } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
+import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
+import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -64,6 +67,7 @@ export class ClosetComponent implements OnDestroy {
     ItemType.Cape,
     ItemType.Held, ItemType.Prop
   ];
+  itemTypeOrder: { [key: string]: number } = this.itemTypes.reduce((map, type, i) => (map[type] = i, map), {} as { [key: string]: number });
   itemIcons: { [key: string]: string } = {
     'Outfit': 'outfit',
     'Shoes': 'shoes',
@@ -117,6 +121,16 @@ export class ClosetComponent implements OnDestroy {
   isRendering: number = 0; // 1 = link, 2 = image
   lastLink?: string; // Reuse last copy link to prevent unnecessary KV writes.
 
+  // Traveling Spirit
+  ts?: ITravelingSpirit;
+  tsState?: PeriodState;
+  tsItems?: Array<IItem>;
+  // Returning Spirits
+  rs?: IReturningSpirits;
+  rsSpirits: Array<{ returning: IReturningSpirit, items: Array<IItem> }> = [];
+  // Event
+  events: Array<{instance: IEventInstance, items: Array<IItem>, iapItems: Array<IItem>}> = [];
+
   // Internal
   _clickSub: SubscriptionLike;
 
@@ -144,6 +158,9 @@ export class ClosetComponent implements OnDestroy {
 
     this.initializeBackground();
     this.initializeItems();
+    this.initializeTs();
+    this.initializeRs();
+    this.initializeEvents();
 
     this._clickSub = _eventService.clicked.subscribe(evt => {
       this.clickoutColorPicker(evt);
@@ -472,6 +489,60 @@ export class ClosetComponent implements OnDestroy {
     this.selectionHasUnavailable = this.available ? Object.keys(this.selected.all).some(guid => !this.available![guid]) : false;
     this._changeDetectorRef.markForCheck();
   }
+  // #region TS
+
+  private initializeTs(): void {
+    if (!this.requesting) { return; }
+
+    const ts = this._dataService.travelingSpiritConfig.items.at(-1);
+    if (!ts) { return; }
+    const state = DateHelper.getStateFromPeriod(ts.date, ts.endDate);
+    if (state === 'ended') { return; }
+    this.ts = ts;
+    this.tsState = state;
+
+    const types = new Set<ItemType>(this.itemTypes);
+    const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
+    items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+    this.tsItems = items;
+  }
+
+  private initializeRs(): void {
+    if (!this.requesting) { return; }
+
+    const rs = this._dataService.returningSpiritsConfig.items.at(-1);
+    if (!rs) { return; }
+    const state = DateHelper.getStateFromPeriod(rs.date, rs.endDate);
+    if (state !== 'active') { return; }
+    this.rs = rs;
+
+    const types = new Set<ItemType>(this.itemTypes);
+    this.rs.spirits?.forEach(spirit => {
+      const items = NodeHelper.getItems(spirit.tree.node).filter(item => types.has(item.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.rsSpirits.push({ returning: spirit, items });
+    });
+  }
+
+  private initializeEvents(): void {
+    if (!this.requesting) { return; }
+
+    const types = new Set<ItemType>(this.itemTypes);
+    const instances = this._dataService.eventConfig.items.map(e => e.instances?.at(-1)).filter(i => i && DateHelper.isActive(i.date, i.endDate));
+    instances.forEach(instance => {
+      if (!instance) { return; }
+      const spirits = instance.spirits || [];
+      debugger
+      const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      const shops = instance.shops || [];
+      const iapItems = shops.map(s => (s.iaps || []).map(a => a.items || [])).flat().flat();
+      iapItems.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.events.push({ instance: instance, items, iapItems });
+    });
+  }
+
+  // #endregion
 
   // #region Initialize items
 
@@ -510,6 +581,7 @@ export class ClosetComponent implements OnDestroy {
 
     // Add items to closets.
     for (const item of this._dataService.itemConfig.items) {
+      if (item.closetHide) { continue; }
       let type = item.type;
       if (!this.items[type as string]) { continue; }
 
@@ -947,7 +1019,7 @@ export class ClosetComponent implements OnDestroy {
       { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
       { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
-      { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 24 hours.' },
+      { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 1 week.' },
       { sStep: s.COPY_IMAGE, title: 'Copy image', intro: this.requesting ? 'An image will be copied to your clipboard. You can paste this image in Discord. The image highlights selected items making it easier to see them.' : 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
     ]);
 

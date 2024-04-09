@@ -327,6 +327,11 @@
       "guid": "tzCvlmC_Oc",
       "node": "SqgpIRZYPo"
     },
+    // Nine-Colored Deer Guide
+    {
+      "guid": "Lvuz1tp6P9",
+      "node": "BLKy0jnYaU"
+    },
     // #endregion
 
     // #region Gratitude
@@ -481,7 +486,7 @@
       "guid": "pYPMMB_Dq3",
       "node": "7ng19Cq_Jj"
     },
-    // Twirling Champion
+    // #region Twirling Champion
     {
       "guid": "9lQ4T3H65f",
       "node": "-4dScFEOsV"
@@ -494,6 +499,11 @@
       "guid": "wZ2F3G7vNl",
       "node": "j93frthyDg"
     },
+    {
+      "guid": "EkvU86NlTz",
+      "node": "N6SJgPwgNS"
+    },
+    // #endregion
     // Crab Whisperer
     {
       "guid": "cSFOWVeiTO",
@@ -628,6 +638,10 @@
       "guid": "S2bnFEoHfA",
       "node": "_AaLjqBGlE"
     },
+    {
+      "guid": "ZQB0qtYaJu",
+      "node": "knRWbcHjfg"
+    },
     // #endregion
     // #region Rhythm
     // Troupe Greeter
@@ -739,6 +753,10 @@
       "guid": "I0Gnoj9xMX",
       "node": "FZ-is-F5e_"
     },
+    {
+      "guid": "AhcLwz3Pxj",
+      "node": "VkCve9uVAS"
+    },
     // Indifferent Alchemist
     {
       "guid": "t5FoVLTpxP",
@@ -751,6 +769,10 @@
     {
       "guid": "3o1XOorJ6U",
       "node": "JCfGhRIufT"
+    },
+    {
+      "guid": "nzUD7-NDgi",
+      "node": "r8R5tQ541i"
     },
     // Crab Walker
     {
@@ -949,6 +971,10 @@
       "guid": "XDrtg4QXU9",
       "node": "o64LV_PfVs"
     },
+    {
+      "guid": "hQi54Pqru3",
+      "node": "IRu0px7jxG"
+    },
     // Dancing Performer
     {
       "guid": "zUy1Dlkzbl",
@@ -1036,6 +1062,10 @@
       "guid": "FnSlorCsvc",
       "node": "MV2_-tldoA"
     },
+    {
+      "guid": "a6FTQcRt6B",
+      "node": "G1PAMlEgRR"
+    },
     // #endregion
     // #region The Little Prince
     // Beckoning Ruler
@@ -1112,6 +1142,10 @@
       "guid": "DHbvqLtLCU",
       "node": "zI5GRFCBhX"
     },
+    {
+      "guid": "shrYC9Vd3i",
+      "node": "MGUE9PoBTC"
+    },
     // Tinkering Chimesmith
     {
       "guid": "66idlQe3mK",
@@ -1137,10 +1171,18 @@
       "guid": "M-25cEcvw-",
       "node": "WLTEZBaXZ6"
     },
+    {
+      "guid": "NdB6VF6E1G",
+      "node": "w7O7kFaQ4l"
+    },
     // Ceasing Commodore
     {
       "guid": "1c2RnFkkmb",
       "node": "Wt_FOZCmQf"
+    },
+    {
+      "guid": "63I7854lB-",
+      "node": "BkKELtjaxF"
     },
     // Bumbling Boatswain
     {
@@ -1162,6 +1204,10 @@
     {
       "guid": "i0lRmQ31MS",
       "node": "eUh0KO-9lY"
+    },
+    {
+      "guid": "IWACETtZdN",
+      "node": "JZ0vOui6V-"
     },
     // Forgetful Storyteller
     {
@@ -1316,6 +1362,32 @@
     },
     // #endregion
     // #endregion
+    // #region Nine-Colored Deer
+    // #region Herb Gatherer
+    {
+      "guid": "nDiOVsRGWO",
+      "node": "EEz74j7uA3"
+    },
+    // #endregion
+    // #region Hunter
+    {
+      "guid": "rsxn04As9U",
+      "node": "kU0nAenGkj"
+    },
+    // #endregion
+    // #region Feudal Lord
+    {
+      "guid": "0wgQ9rDShR",
+      "node": "c1ukj9PFVD"
+    },
+    // #endregion
+    // #region Princess
+    {
+      "guid": "uLAuAvptPA",
+      "node": "QLHntqZQ6m"
+    },
+    // #endregion
+    // #endregion
 
     // #region Days of Fortune
     // Days of Fortune (2021)
@@ -1336,6 +1408,11 @@
     {
       "guid": "Oi0WztDirX",
       "node": "zkh35ZE3J_"
+    },
+    // Days of Fortune (2024)
+    {
+      "guid": "QbHVq43AMl",
+      "node": "ZtC0aan5z-"
     },
     // #endregion
     // #region Days of Love
@@ -1362,6 +1439,11 @@
       "guid": "NuqYNp7i8O",
       "node": "uXmw3Tu3PQ"
     },
+    // Days of Love 2024
+    {
+      "guid": "3B4XeRLIrO",
+      "node": "yUNUCsYx9f"
+    },
     // #endregion
     // #region Days of Bloom
     // Days of Bloom 2021
@@ -1387,6 +1469,16 @@
       "guid": "yvuc0d_gC7",
       "node": "KXsWsk9Zou"
     },
+    // #region Days of Bloom (2024)
+    {
+      "guid": "95O0Urqxm0",
+      "node": "7DsPuIDwHZ"
+    },
+    {
+      "guid": "oDa9O5v-13",
+      "node": "0Oe41ToBtQ"
+    },
+    // #endregion
     // #endregion
     // #region Days of Nature
     // Days of Nature 2022

@@ -32,6 +32,9 @@ export class ItemHelper {
   }
 
   static sorter(a: IItem, b: IItem): number {
-    return (a.order || 99999) - (b.order || 99999);
+    const n = (a.order || 99999) - (b.order || 99999);
+    if (n !== 0) { return n; }
+    if (a.level && b.level) { return a.level - b.level; }
+    return a.name.localeCompare(b.name);
   }
 }

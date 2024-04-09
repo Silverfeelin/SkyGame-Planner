@@ -22,6 +22,9 @@ export interface ISeason extends IGuid, IPeriod {
   /** Season number, starting at 1 for Gratitude. */
   number: number;
 
+  /** If marked as draft, data may be inaccurate or incomplete. */
+  draft?: boolean;
+
   /// References ///
 
   /** Season spirits.
@@ -29,7 +32,7 @@ export interface ISeason extends IGuid, IPeriod {
   */
   spirits: Array<ISpirit>;
 
-  /** Season IAP shops. */
+  /** Season shops. */
   shops?: Array<IShop>;
 
   /// Metadata ///

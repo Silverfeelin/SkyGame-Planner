@@ -30,7 +30,7 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SearchComponent } from './components/search/search.component';
-import { DayjsPipe } from './pipes/dayjs.pipe';
+import { DateTimePipe } from './pipes/date-time.pipe';
 import { RealmComponent } from './components/realms/realm/realm.component';
 import { ItemTypePipe } from './pipes/item-type.pipe';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
@@ -65,16 +65,21 @@ import { ReturningSpiritCardComponent } from './components/returning-spirit-card
 import { RealmConstellationComponent } from './components/realms/realm-constellation/realm-constellation.component';
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { ClampPipe } from './pipes/clamp.pipe';
+import { SpiritTypePipe } from './pipes/spirit-type.pipe';
+import { CardComponent } from './components/layout/card/card.component';
+import { ItemListComponent } from './components/item-list/item-list/item-list.component';
+import { ItemListNodeComponent } from './components/item-list/item-list-node/item-list-node.component';
 import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
 import { DropboxIndicatorComponent } from './components/dropbox/dropbox-indicator/dropbox-indicator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DayjsPipe,
+    DateTimePipe,
     ItemTypePipe,
     PercentagePipe,
     ClampPipe,
+    SpiritTypePipe,
     SpiritTreeComponent,
     NodeComponent,
     ItemIconComponent,
@@ -130,6 +135,9 @@ import { DropboxIndicatorComponent } from './components/dropbox/dropbox-indicato
     ItemComponent,
     ReturningSpiritCardComponent,
     RealmConstellationComponent,
+    CardComponent,
+    ItemListComponent,
+    ItemListNodeComponent,
     DropboxAuthComponent,
     DropboxIndicatorComponent
   ],

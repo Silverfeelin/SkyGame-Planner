@@ -30,7 +30,7 @@
     {
       "guid": "3uTp2mfgQj",
       "name": "TGC Guitar Pack",
-      "price": 19.99,
+      "price": 29.99,
       "c": 115,
       "items": [
         "hcuS6xsmHg"
@@ -195,6 +195,25 @@
       ]
     },
     // #endregion
+    // #region Season of the Nine-Colored Deer
+    {
+      "guid": "j8hpj0Tr2X",
+      "name": "Gift of the Nine-Colored Deer",
+      "price": 14.99,
+      "items": [
+        "czsVJwqa_g",
+        "0F90DHi6Er"
+      ]
+    },
+    {
+      "guid": "lISB28039d",
+      "name": "Radiance of the Nine-Colored Deer",
+      "price": 19.99,
+      "items": [
+        "BTogmcHcr5"
+      ]
+    },
+    // #endregion
     // #region Days of Fortune (2021)
     {
       "guid": "P0xxZcQSx5",
@@ -337,6 +356,98 @@
       ]
     },
     // #endregion
+    // #region Days of Fortune (2024)
+    {
+      "guid": "GQirzPYKk-",
+      "name": "Days of Fortune Dragon Vestment",
+      "price": 9.99,
+      "items": [
+        "wkCxoe9zSP"
+      ]
+    },
+    {
+      "guid": "xc37pb6Wvb",
+      "name": "Days of Fortune Dragon Stole",
+      "price": 14.99,
+      "items": [
+        "LGaX4cqdOe"
+      ]
+    },
+    {
+      "guid": "XMyw8g-P8x",
+      "name": "Days of Fortune Dragon Bangles",
+      "price": 1.99,
+      "items": [
+        "xsTxIqIX8E"
+      ]
+    },
+    {
+      "guid": "28rCsz9wUP",
+      "name": "Days of Fortune Orange",
+      "price": 0.99,
+      "returning": true,
+      "items": [
+        "aRgiKoKavp"
+      ]
+    },
+    {
+      "guid": "NVsMGCUZek",
+      "name": "Days of Fortune Wool Hat",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "udspGJd38_"
+      ]
+    },
+    {
+      "guid": "cjTDXNkvN1",
+      "name": "Days of Fortune Pack",
+      "price": 24.99,
+      "returning": true,
+      "items": [
+        "o8CAzM0x1c",
+        "HnCWgj7aoA",
+        "rNDDbcjS4G"
+      ]
+    },
+    {
+      "guid": "vrUAy0EAun",
+      "name": "Days of Fortune Fish Accessory",
+      "price": 1.99,
+      "returning": true,
+      "items": [
+        "OjSfpOgFoR"
+      ]
+    },
+    {
+      "guid": "JPyUHMKT5R",
+      "name": "Days of Fortune Fish Pack",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "mzF6ZaHa1s",
+        "A26TJj3cSl"
+      ]
+    },
+    {
+      "guid": "AZNU4TiFyl",
+      "name": "Days of Fortune Muralist's Smock",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "ADJiva5H2Z"
+      ]
+    },
+    {
+      "guid": "4jMCH8Vl-x",
+      "name": "Days of Fortune Enchanted Umbrella",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "uzos22Ysp3"
+      ]
+    },
+    // #endregion
     // #region Days of Love (2020)
     {
       "guid": "FlOGVYjyiY",
@@ -448,6 +559,64 @@
       ]
     },
     // #endregion
+    // #region Days of Love (2024)
+    {
+      "guid": "UXec8cY3C8",
+      "name": "Days of Love Meteor Mantle",
+      "price": 17.99,
+      "items": [
+        "svUBdDQ945"
+      ]
+    },
+    {
+      "guid": "zdU7dbNcG0",
+      "name": "Days of Love Swing Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "w7byhvh3Xa"
+      ]
+    },
+    {
+      "guid": "YtTUStyCGy",
+      "name": "Days of Love Seesaw Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "yWCpBlHsWa"
+      ]
+    },
+    {
+      "guid": "38RSjUYhZR",
+      "name": "Days of Love Gondola Pack",
+      "price": 19.99,
+      "returning": true,
+      "sc": 35,
+      "items": [
+        "EZ_nfEHgOx"
+      ]
+    },
+    {
+      "guid": "JLjsFmtey7",
+      "name": "Days of Love Serendipitous Scepter",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "Tf45PqqIsn"
+      ]
+    },
+    {
+      "guid": "cVvWv3Nf7F",
+      "name": "Days of Love Classy Cravat",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "PuFWddickP"
+      ]
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "mdWojLD1RZ",
@@ -514,6 +683,55 @@
       "guid": "mEvjH3h1gv",
       "name": "Bloom Gardening Tunic",
       "price": 9.99,
+      "items": [
+        "wUPw1TRQSI"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2024)
+    {
+      "guid": "BcxdW-iTA6",
+      "name": "Bloom Lilypad Umbrella",
+      "price": 14.99,
+      "items": [
+        "kLfBsnAsUL"
+      ]
+    },
+    {
+      "guid": "15aenJbpNM",
+      "name": "Pink Bloom Teaset",
+      "price": 19.99,
+      "returning": true,
+      "c": 35,
+      "items": [
+        "sTIyha_lg1"
+      ]
+    },
+    {
+      "guid": "Ko_ViiBli0",
+      "name": "Purple Bloom Teaset",
+      "price": 19.99,
+      "returning": true,
+      "c": 35,
+      "items": [
+        "l6GE013zrh"
+      ]
+    },
+    {
+      "guid": "1ryX2u1XO3",
+      "name": "Bloom Picnic Basket",
+      "price": 19.99,
+      "returning": true,
+      "sp": 1,
+      "items": [
+        "_0PZEyTNxt"
+      ]
+    },
+    {
+      "guid": "SBBe6Iy8P3",
+      "name": "Bloom Gardening Tunic",
+      "price": 9.99,
+      "returning": true,
       "items": [
         "wUPw1TRQSI"
       ]
@@ -587,7 +805,7 @@
     {
       "guid": "6z9qTWUzk7",
       "name": "Nature Turtle Cape",
-      "price": 4.99,
+      "price": 14.99,
       "items": [
         "znjZlpHSt4"
       ]
@@ -595,7 +813,7 @@
     {
       "guid": "236RtTEBQ3",
       "name": "Nature Turtle Pack",
-      "price": 4.99,
+      "price": 19.99,
       "c": 75,
       "items": [
         "_Y-80G-t_2"
@@ -623,7 +841,7 @@
     {
       "guid": "DDArA8ChK7",
       "name": "Nature Turtle Cape",
-      "price": 4.99,
+      "price": 14.99,
       "returning": true,
       "items": [
         "znjZlpHSt4"
@@ -632,7 +850,7 @@
     {
       "guid": "4S27PaHoQ1",
       "name": "Nature Turtle Pack",
-      "price": 4.99,
+      "price": 19.99,
       "returning": true,
       "c": 75,
       "items": [

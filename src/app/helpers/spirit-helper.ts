@@ -1,10 +1,10 @@
-import dayjs from 'dayjs';
 import { ISpiritTree } from "../interfaces/spirit-tree.interface";
 import { ISpirit } from "../interfaces/spirit.interface";
+import { DateTime } from 'luxon';
 
 export class SpiritHelper {
   static getTrees(spirit: ISpirit): Array<ISpiritTree> {
-    const treeDates: Array<{ date: dayjs.Dayjs, tree: ISpiritTree}> = [];
+    const treeDates: Array<{ date: DateTime, tree: ISpiritTree}> = [];
 
     // Add all trees that need sorting.
     spirit.ts?.forEach(t => {
@@ -15,7 +15,11 @@ export class SpiritHelper {
     });
 
     // Sort TS and revisits by date.
-    treeDates.sort((a, b) => a.date.diff(b.date));
+    treeDates.sort((a, b) => {
+      if (a.date < b.date) { return -1; }
+      if (a.date > b.date) { return 1; }
+      return 0;
+    });
 
     // Combine spirit base tree with sorted trees.
     const trees: Array<ISpiritTree> = [];

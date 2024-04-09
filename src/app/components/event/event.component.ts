@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -11,8 +11,8 @@ interface IRow {
   name: string;
   year: number;
   guid: string;
-  date: dayjs.Dayjs;
-  endDate: dayjs.Dayjs;
+  date: DateTime;
+  endDate: DateTime;
   iaps: number;
   returningIaps: number;
   spirits: number;
@@ -75,7 +75,7 @@ export class EventComponent implements OnInit {
       return {
         number: i+1,
         name: this.event.name,
-        year: instance.date.year(),
+        year: instance.date.year,
         guid: instance.guid,
         date: instance.date,
         endDate: instance.endDate,

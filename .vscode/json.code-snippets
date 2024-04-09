@@ -25,6 +25,60 @@
     ],
     "description": "Item-B5"
   },
+  "Item-B10": {
+    "prefix": "@item-b10",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Blessing\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png\"",
+      "},"
+    ],
+    "description": "Item-B10"
+  },
+  "Item-Sheet": {
+    "prefix": "@item-sheet",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Music\",",
+      "\t\"name\": \"Music Sheet #$3\",",
+      "\t\"sheet\": \"$5\",",
+      "\t\"icon\": \"$6\",",
+      "\t\"order\": $7",
+      "},"
+    ],
+    "description": "Music Sheet"
+  },
+  "Item-Heart": {
+    "prefix": "@item-heart",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Heart\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png\"",
+      "},"
+    ],
+    "description": "Heart"
+  },
+  "Item-Quest": {
+    "prefix": "@item-quest",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Quest\",",
+      "\t\"name\": \"Quest $3\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png\"",
+      "},"
+    ],
+    "description": "Item-Quest"
+  },
   "IAP": {
     "prefix": "@iap",
     "body": [
@@ -48,7 +102,7 @@
       "\t$3",
       "},"
     ],
-  }
+  },
   "Shop": {
     "prefix": "@shop",
     "body": [
@@ -62,6 +116,19 @@
       "},"
     ],
     "description": "Shop"
+  },
+  "Event-Instance": {
+    "prefix": "@event-instance",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"date\": $0",
+      "\t\"endDate\": ",
+      "\t\"spirits\": [],",
+      "\t\"shops\": []",
+      "},"
+    ],
+    "description": "Event-Instance"
   },
   "Event-Spirit": {
     // { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },

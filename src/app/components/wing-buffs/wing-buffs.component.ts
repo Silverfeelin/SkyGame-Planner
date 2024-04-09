@@ -1,31 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { ItemType } from 'src/app/interfaces/item.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
+import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-wing-buffs',
   templateUrl: './wing-buffs.component.html',
-  styleUrls: ['./wing-buffs.component.less']
+  styleUrls: ['./wing-buffs.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WingBuffsComponent implements OnInit {
+  type?: SpiritType;
+  allRows!: Array<any>;
   rows!: Array<any>;
   unlocked = 0;
   total = 0;
 
   constructor(
-    private readonly _dataService: DataService
-  ) { }
+    private readonly _dataService: DataService,
+    private readonly _route: ActivatedRoute
+  ) {
+
+  }
+
+  onQueryChanged(params: ParamMap): void {
+    this.type = params.get('type') as SpiritType;
+    this.filterRows();
+  }
 
   ngOnInit(): void {
     // Get all wing buffs.
     const itemSet = new Set<IItem>();
     for (const item of this._dataService.itemConfig.items.filter(item => item.type === ItemType.WingBuff)) {
       itemSet.add(item);
-      if (item.unlocked) { this.unlocked++; }
-      this.total++;
     }
 
     // Go through items to find spirit.
@@ -69,12 +79,20 @@ export class WingBuffsComponent implements OnInit {
     // Combine regular and seasonal spirits.
     const spirits = Array.from(regularSpiritSet).concat(Array.from(seasonSpiritSet));
 
-    this.rows = spirits.map(spirit => {
+    this.allRows = spirits.map(spirit => {
       const count = spiritCount.get(spirit.guid)!;
       return {
         ...spirit,
         ...count
       };
     });
+
+    this._route.queryParamMap.subscribe(params => { this.onQueryChanged(params); });
+  }
+
+  private filterRows(): void {
+    this.rows = this.type ? this.allRows.filter(row => row.type === this.type) : this.allRows;
+    this.unlocked = this.rows.reduce((sum, row) => sum + row.unlocked, 0);
+    this.total = this.rows.reduce((sum, row) => sum + row.total, 0);
   }
 }

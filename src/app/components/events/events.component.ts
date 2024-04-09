@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -37,8 +37,8 @@ export class EventsComponent {
         const reverseInstances = [...instances].reverse();
 
         // Find last instance based on event.date.
-        const now = dayjs();
-        const lastInstance = DateHelper.getActive(instances) ?? reverseInstances.find(i => i.date.isBefore(now)) ?? DateHelper.getUpcoming(instances);
+        const now = DateTime.now();
+        const lastInstance = DateHelper.getActive(instances) ?? reverseInstances.find(i => i.date < now) ?? DateHelper.getUpcoming(instances);
         this.lastInstances[event.guid] = lastInstance;
       }
     });
@@ -47,7 +47,7 @@ export class EventsComponent {
     this.old.sort((a, b) => {
       if (!this.lastInstances[a.guid]) { return 1; }
       if (!this.lastInstances[b.guid]) { return -1; }
-      return this.lastInstances[b.guid]!.date.diff(this.lastInstances[a.guid]!.date);
+      return this.lastInstances[b.guid]!.date.diff(this.lastInstances[a.guid]!.date).as('milliseconds');
     });
   }
 }

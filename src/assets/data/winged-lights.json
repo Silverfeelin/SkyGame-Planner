@@ -596,6 +596,25 @@
       "mapData": { "position": [-189.88,435.25], "videoUrl": "Vault/4.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Starlight_Desert" }
     },
+    // Crescent Oasis
+    {
+      "guid": "ZDqubWevQx",
+      "description": "On the other side of the Mural wall in the Crescent Oasis.",
+      "mapData": { "position": [-181,405.88], "videoUrl": "Vault/13.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Crescent_Oasis" }
+    },
+    {
+      "guid": "HdrkYqqX3_",
+      "description": "Under the large tree in the Crescent Oasis.",
+      "mapData": { "position": [-176.63,404.63], "videoUrl": "Vault/15.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Crescent_Oasis" }
+    },
+    {
+      "guid": "fWLJNq1H3v",
+      "description": "Behind the peak of the main building in the Crescent Oasis.",
+      "mapData": { "position": [-172.63,411], "videoUrl": "Vault/14.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Crescent_Oasis" }
+    },
     // Archives
     {
       "guid": "W9fiK8mWQK",

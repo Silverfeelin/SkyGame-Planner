@@ -52,10 +52,13 @@ export class DashboardComponent implements OnInit {
       if (eventDates.active.length) {
         this.eventInstances.push(eventDates.active.at(-1)!);
       } else if (eventDates.future.length) {
-        futureEvents.push(eventDates.future.at(0)!);
+        const e = eventDates.future.at(0)!;
+        if (e.date.diffNow('days').days <= 7) {
+          futureEvents.push(e);
+        }
       }
     }
-    futureEvents.sort((a, b) => a.date.diff(b.date));
+    futureEvents.sort((a, b) => a.date.diff(b.date).as('milliseconds'));
     this.futureEventInstance = futureEvents.at(0);
   }
 }

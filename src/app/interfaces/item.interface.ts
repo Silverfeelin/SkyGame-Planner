@@ -1,5 +1,6 @@
 import { IConfig, IGuid } from './base.interface';
 import { IIAP } from './iap.interface';
+import { IItemListNode } from './item-list.interface';
 import { INode } from './node.interface';
 import { ISeason } from './season.interface';
 import { IWiki } from './wiki.interface';
@@ -29,12 +30,17 @@ export interface IItem extends IGuid {
   /** Music sheet */
   sheet?: string;
 
+  /** Hide from closet (Outfit request) */
+  closetHide?: boolean;
+
   /// References ///
 
   /** Spirit tree nodes that unlock this item. */
   nodes?: Array<INode>;
   /** Spirit tree nodes that unlock this item without showing the item. Generally ones added retroactively. */
   hiddenNodes?: Array<INode>;
+  /** Item list nodes that unlock this item. */
+  listNodes?: Array<IItemListNode>;
   /** IAPs that unlock this item. */
   iaps?: Array<IIAP>;
   /** Season the item was introduced in. */

@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 
 export interface IGuid {
   guid: string;
@@ -9,6 +9,6 @@ export interface IConfig<T> {
 }
 
 export interface IPeriod {
-  date: dayjs.Dayjs;
-  endDate: dayjs.Dayjs;
+  date: DateTime;
+  endDate: DateTime;
 }

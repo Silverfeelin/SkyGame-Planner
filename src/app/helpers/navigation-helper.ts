@@ -1,8 +1,8 @@
 import { NavigationExtras, Params } from '@angular/router';
 import { NodeHelper } from './node-helper';
 import { IItem } from '../interfaces/item.interface';
-import dayjs, { Dayjs } from 'dayjs';
 import { INode } from '../interfaces/node.interface';
+import { DateTime } from 'luxon';
 
 export interface INavigationTarget {
   route: Array<any>;
@@ -38,7 +38,7 @@ export class NavigationHelper {
     if (item.nodes?.length || item.hiddenNodes?.length) {
       const nodes = [ ...(item.nodes || []), ...(item.hiddenNodes || []) ];
       let lastNode: INode | undefined;
-      let lastDate = dayjs('2000-1-1');
+      let lastDate: DateTime = DateTime.fromFormat('2000-01-01', 'yyyy-MM-dd');
       for (const node of nodes) {
         // Prioritize unlocked node.
         if (node.unlocked) {
@@ -52,9 +52,9 @@ export class NavigationHelper {
         const date = tree?.eventInstanceSpirit?.eventInstance ? tree.eventInstanceSpirit.eventInstance.date
           : tree?.ts ? tree.ts.date
           : tree?.visit ? tree.visit.return.date
-          : dayjs('2000-1-2');
+          : DateTime.fromFormat('2000-01-02', 'yyyy-MM-dd');
 
-        if (date.diff(lastDate) < 0) { continue; }
+        if (date < lastDate) { continue; }
         lastDate = date;
         lastNode = node;
       }
@@ -104,7 +104,7 @@ export class NavigationHelper {
   static getQueryParams(href: string | URL): Params {
     const url = href instanceof URL ? href : new URL(href);
     const params: Params = {};
-    for (const [k,v] of url.searchParams.entries()) { params[k] = v; }
+    url.searchParams.forEach((v, k) => params[k] = v);
     return params;
   }
 }

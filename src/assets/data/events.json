@@ -46,7 +46,20 @@
           "spirits": [
             { "guid": "1QcP-L-MqO", "spirit": "9VkjVkgKhb", "tree": "Oi0WztDirX" },
           ]
-        }
+        },
+        {
+          "guid": "MKGyPFAEUA",
+          "date": { "day": 29, "month": 1, "year": 2024 },
+          "endDate": { "day": 14, "month": 2, "year": 2024 },
+          "shops": [
+            "N1ioU0ztzJ",
+            "B6AeQqeM0E",
+            "9HhEIMjSWV"
+          ],
+          "spirits": [
+            {	"guid": "LgbNikVTN0", "spirit": "9VkjVkgKhb", "tree": "QbHVq43AMl" }
+          ]
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune"
@@ -103,7 +116,20 @@
             "dosWjd_0Ur",
             "4mcmO11hCE"
           ]
-        }
+        },
+        {
+          "guid": "dCkSpN_LCG",
+          "date": { "day": 12, "month": 2, "year": 2024 },
+          "endDate": { "day": 25, "month": 2, "year": 2024 },
+          "spirits": [
+            {	"guid": "WBgv46VQXB", "spirit": "mAn3DeaZPi", "tree": "3B4XeRLIrO" },
+          ],
+          "shops": [
+            "Gpcii_q0ie",
+            "zZa_567vOp",
+            "-gDmtZfZgy"
+          ]
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
@@ -114,7 +140,7 @@
       "guid": "jZ3AhcgPl8",
       "name": "Days of Bloom",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a4b806d7d9/petalcoaster_1920x1080_header_blank.jpg",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a6a265ea76/bloom24eventcurrency.jpg",
       "instances": [
         {
           "guid": "zAEvyLfhYt",
@@ -152,6 +178,19 @@
             { "guid": "WoKuKe4AAh", "spirit": "IqShB-6_rY", "tree": "fLuM8drQ4H", "name": "Bloom Guide (Forgotten Ark)" }, // Located at Ark
             { "guid": "KOrEqiUw_f", "spirit": "IqShB-6_rY", "tree": "Cz7AcNalLH", "name": "Bloom Guide (Home)" }, // Located at Home
             { "guid": "erbbY6_Azk", "spirit": "IqShB-6_rY", "tree": "yvuc0d_gC7", "name": "Bloom Guide (Hidden Forest)" } // Located at HF
+          ]
+        },
+        {
+          "guid": "L_cg-uO76v",
+          "date": "2024-03-25",
+          "endDate": "2024-04-14",
+          "spirits": [
+            {	"guid": "cfkjIVyu-B", "spirit": "IqShB-6_rY", "tree": "oDa9O5v-13" },
+            { "guid": "_0Lrk-cHWy", "spirit": "tKeCcn57So", "tree": "95O0Urqxm0" }
+          ],
+          "shops": [
+            "Qwm9ceRSki",
+            "zvuqUyGcUl"
           ]
         }
       ],

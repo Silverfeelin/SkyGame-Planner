@@ -1,3 +1,59 @@
 .wl {
   color: var(--color-wing-buff);
 }
+
+
+.wl-bar {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  padding: 0 var(--padding-content);
+  border: 1px solid var(--color-input-border);
+  background-color: var(--color-progress-empty-background);
+  overflow: hidden;
+}
+
+.wl-bar-segment {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  text-align: right;
+  border-right: 1px solid rgba(255,255,255,0.35);
+}
+
+.segment-full {
+  background-color: var(--color-progress-full);
+}
+
+.wl-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 32px;
+  text-align: center;
+}
+
+.bar-fill {
+  background-color: var(--color-progress-fill);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.wl-bar-full .bar-fill {
+  background-color: var(--color-progress-full);
+}
+
+app-spirit-type-icon {
+  vertical-align: middle;
+}

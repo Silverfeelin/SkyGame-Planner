@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import dayjs from 'dayjs';
+import { DateTime } from 'luxon';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
@@ -182,8 +182,8 @@ export class SpiritsComponent {
   }
 
   private sortByAge(direction: number): void {
-    const dateA = dayjs('2019-1-1');
-    const dateB = dayjs('2999-1-1');
+    const dateA = DateTime.fromFormat('2019-01-01', 'yyyy-MM-dd');
+    const dateB = DateTime.fromFormat('2999-01-01', 'yyyy-MM-dd');
     const dates = this.spirits.reduce((acc, s) => {
       let date = s.season?.date || s.events?.at(-1)?.eventInstance?.date;
       switch (s.type) {
@@ -202,13 +202,13 @@ export class SpiritsComponent {
 
       acc[s.guid] = date ?? dateB;
       return acc;
-    }, {} as {[guid: string]: dayjs.Dayjs});
+    }, {} as {[guid: string]: DateTime});
 
     this.spirits.sort((a, b) => {
       const dateA = dates[a.guid];
       const dateB = dates[b.guid];
       const diff = dateA.diff(dateB);
-      return !diff ? (a._index - b._index) * direction : diff * direction;
+      return !diff.as('milliseconds') ? (a._index - b._index) * direction : diff.as('milliseconds') * direction;
     });
   }
 
