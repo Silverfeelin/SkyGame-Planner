@@ -65,7 +65,7 @@ export class ClosetComponent implements OnDestroy {
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.Hat,
     ItemType.Cape,
-    ItemType.Held, ItemType.Prop
+    ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
   itemTypeOrder: { [key: string]: number } = this.itemTypes.reduce((map, type, i) => (map[type] = i, map), {} as { [key: string]: number });
   itemIcons: { [key: string]: string } = {
@@ -78,7 +78,8 @@ export class ClosetComponent implements OnDestroy {
     'Hat': 'hat',
     'Cape': 'cape',
     'Held': 'held',
-    'Prop': 'prop'
+    'Furniture': 'shelf',
+    'Prop': 'cup'
   };
 
   // Item data
@@ -247,6 +248,7 @@ export class ClosetComponent implements OnDestroy {
     for (const type of Object.keys(this.items)) {
       if (type === ItemType.Held && !heldProp) { continue; }
       if (type === ItemType.Prop && heldProp) { continue; }
+      if (type === ItemType.Furniture) { continue; }
       let items = this.items[type as string];
       if (!this.requesting) { items = items.filter(item => !this.hidden[item.guid]); }
       if (this.available) { items = items.filter(item => this.available![item.guid]); }
@@ -804,11 +806,12 @@ export class ClosetComponent implements OnDestroy {
     const cHat = Math.ceil(this.items[ItemType.Hat].length / cols[1]);
     const cCape = Math.ceil(this.items[ItemType.Cape].length / cols[2]);
     const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
+    const cFurniture = Math.ceil(this.items[ItemType.Furniture].length / cols[3]);
     const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
     const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
     const h2 = (cHair + cHat) * _wBox + _wPad * 3 - _wGap;
     const h3 = cCape * _wBox + _wPad * 2 - _wGap;
-    const h4 = (cHeld + cProp) * _wBox + _wPad * 3 - _wGap;
+    const h4 = (cHeld + cFurniture + cProp) * _wBox + _wPad * 4 - _wGap;
     const h = Math.max(h1, h2, h3, h4);
 
     canvas.width = 5 * _wPad + _wBox * cols.reduce((sum, c) => sum + c, 0) - _wGap;
@@ -849,6 +852,8 @@ export class ClosetComponent implements OnDestroy {
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
     this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Held], itemImgs, false);
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Furniture], itemImgs, false);
+    sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 3 + (cHeld + cFurniture) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Prop], itemImgs, false);
 
     // Draw attribution

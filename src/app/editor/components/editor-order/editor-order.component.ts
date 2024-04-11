@@ -17,7 +17,7 @@ export class EditorOrderComponent {
     'Mask', 'FaceAccessory', 'Necklace',
     'Hat', 'Hair',
     'Cape',
-    'Held', 'Prop',
+    'Held', 'Furniture', 'Prop',
     'Emote', 'Stance', 'Call',
     'Music'
   ]

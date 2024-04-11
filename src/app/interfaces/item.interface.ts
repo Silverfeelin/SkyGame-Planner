@@ -73,7 +73,9 @@ export enum ItemType {
   Cape = 'Cape',
   /** All items in the held category. */
   Held = 'Held',
-  /** All items in the chair category. */
+  /** All items in the furniture category. */
+  Furniture = 'Furniture',
+  /** All items in the prop category. */
   Prop = 'Prop',
   /** All emotes. */
   Emote = 'Emote',

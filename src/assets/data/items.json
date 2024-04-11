@@ -2876,7 +2876,7 @@
     {
       "id": 329,
       "guid": "EdxE5UGZsa",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Meditating Monastic Table Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Meditating-Monastic-3.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Instrument-Chat_Table_Chair.png",
@@ -3304,7 +3304,7 @@
     {
       "id": 373,
       "guid": "LtrFT8BOI9",
-      "type": "Prop",
+      "type": "Furniture",
       "group": "Ultimate",
       "name": "Belonging Ultimate Fireplace",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Icon_prop_belonging_bonfire.png",
@@ -3955,7 +3955,7 @@
     {
       "id": 451,
       "guid": "PPtPoGemsA",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Assembly Brazier",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Icon_prop_assembly_brazier.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Prop_forest_treehouse_brazier.png",
@@ -3986,7 +3986,7 @@
     {
       "id": 455,
       "guid": "3R6A1mzG6f",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Assembly Bookcase",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Icon_prop_bookcase.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Assembly_prop_bookcase_2.png",
@@ -3996,7 +3996,7 @@
     {
       "id": 456,
       "guid": "laiUQayJhD",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Assembly Tent",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Icon_prop_assembly_tent.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Prop_forest_treehouse_tent.png",
@@ -4587,7 +4587,7 @@
     {
       "id": 529,
       "guid": "P8hCjt0Cpn",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Performance Flower Pot Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOPerformance-flower-pot-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SOPerformance-flower-pot.png",
@@ -5005,7 +5005,7 @@
     {
       "id": 577,
       "guid": "x-JyLNAyBY",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Remembrance Ultimate Manta Projector",
       "group": "Ultimate",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/SoRemembrance-Ultimate-Gift-Manta-Projector-Morybel-0146.png",
@@ -5082,7 +5082,7 @@
     {
       "id": 587,
       "guid": "Fj9LJn7tW7",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Remembrance Kettle",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/SoRemembrance-Prop-Kettle-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/SoRemembrance-Prop-Kettle.png",
@@ -5127,7 +5127,7 @@
     {
       "id": 593,
       "guid": "h81gLcnMDK",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Remembrance Potted Plant",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/SoRemembrance-Prop-Plants-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/SoRemembrance-Prop-Plants.png",
@@ -5829,6 +5829,8 @@
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Nine-Colored-Deer-Ultimate-Cape-back.png",
       "order": 3001
     },
+    // #endregion
+    // #region Nesting
     // #endregion
     // #endregion
 
@@ -6770,7 +6772,7 @@
     {
       "id": 758,
       "guid": "ApWt6AdQ8O",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Crab Whisperer Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Icon_prop_summer_tube.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Summer_prop_tube_down.png",
@@ -7707,7 +7709,7 @@
     {
       "id": 871,
       "guid": "6PvpUYPLPO",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Festival Spin Dancer Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Icon_prop_rhythm_flag.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Festival_spin_dancers_flag.png",
@@ -7915,7 +7917,7 @@
     {
       "id": 895,
       "guid": "J4SWAguEQD",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Troupe Juggler Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Icon_prop_torch_lantern.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Summer_prop_lantern_out.png",
@@ -8754,7 +8756,7 @@
     {
       "id": 994,
       "guid": "X7b5yfYXA_",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Playfighting Herbalist Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Shiny-orb.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Playfighting-herbalist-orb-prop.png",
@@ -8847,7 +8849,7 @@
     {
       "id": 1005,
       "guid": "Qx7W5fQows",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Jelly Whisperer Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Jelly_whisperer_TS_beach_umbrella_icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Jelly_whisperers_beach_umbrella.png",
@@ -9220,7 +9222,7 @@
     {
       "id": 1049,
       "guid": "HiXJr_6Tz-",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Grateful Shell Collector Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/Icon_prop_summer_chairs.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Summer_prop_chairs.png",
@@ -9340,7 +9342,7 @@
     {
       "id": 1063,
       "guid": "Khjtno2EBW",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Chill Sunbather Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Icon_prop_summer_lounger.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Prop_beach_lounger.png",
@@ -9847,7 +9849,7 @@
     {
       "id": 1122,
       "guid": "pxqSrkf9NH",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Prophet of Fire Cauldron",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Fire_of_Prophet_TS_cauldron.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Fire_prophet%3Fs_cauldron_.png",
@@ -10384,7 +10386,7 @@
     {
       "id": 1182,
       "guid": "KZMXQVnjyb",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Baffled Botanist Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_prop_assembly_lamp.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Baffled-botanist-spotlight-prop-closeup.png",
@@ -10599,7 +10601,7 @@
     {
       "id": 1207,
       "guid": "1tF2KjdUWO",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Scaredy Cadet Hammock",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_prop_assembly_hammock.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Assembly_prop_hammock_down.png",
@@ -10709,7 +10711,7 @@
     {
       "id": 1220,
       "guid": "deXq8qb84g",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Marching Adventurer Tiki Torch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Icon_prop_assembly_torch.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Assembly_prop_torch_lit_2.png",
@@ -10829,7 +10831,7 @@
     {
       "id": 1234,
       "guid": "osxMEOwG_r",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Chuckling Scout Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Icon_prop_assembly_hoop.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Assembly_prop_hoop_down.png",
@@ -11552,7 +11554,7 @@
     {
       "id": 1317,
       "guid": "ER8iz-GQjz",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Star Collector Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_prop_little_prince_star_prop.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Star-collector-star-lamp-prop-closeup.png",
@@ -15563,6 +15565,8 @@
     },
     // #endregion
     // #endregion
+    // #region Nesting
+    // #endregion
 
     // #region Days of Fortune
     {
@@ -15904,7 +15908,7 @@
     {
       "id": 1753,
       "guid": "P-7ozR83J8",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Days of Love Flowery Archway",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Days-of-Love-Arch-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Days-of-Love-Flowery-Archway.png",
@@ -16071,7 +16075,7 @@
     {
       "id": 1766,
       "guid": "sTIyha_lg1",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Pink Bloom Teaset",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_prop_days_of_bloom_tea_table.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Tea_table_v2.png",
@@ -16112,7 +16116,7 @@
     {
       "id": 1771,
       "guid": "l6GE013zrh",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Purple Bloom Teaset",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Purple_Bloom_Teaset_icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Wisteria-teaset-iap-image.png",
@@ -16166,7 +16170,7 @@
     {
       "id": 1777,
       "guid": "_0PZEyTNxt",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Bloom Picnic Basket",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Bloom-Picnic-Blanket-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Days-of-Bloom-Picnic-Blanket.png",
@@ -16689,7 +16693,7 @@
     {
       "id": 1833,
       "guid": "ADtwifMcnN",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Sky Anniversary Light Fence",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-decorative-prop-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Days-of-Sky-2022-decorative-prop.png",
@@ -16755,7 +16759,7 @@
       "id": 1840,
       "guid": "BQi3QIoOwq",
       "name": "Sky Anniversary Party Lights",
-      "type": "Prop",
+      "type": "Furniture",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sky-Anniversary-Disco-Light-Prop-icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Sky-Anniversary-Disco-Light-Prop.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Party_Lights" },
@@ -16924,7 +16928,7 @@
     {
       "id": 1858,
       "guid": "MyVdnRoxY0",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Mischief Spooky Dining Set",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Icon_2021_mischief_table.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Prop_2021_mischief_table_open.png",
@@ -17149,7 +17153,7 @@
     {
       "id": 1880,
       "guid": "oHChsGl8AZ",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Days of Feast Table",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_prop_feast_table.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/2020Feast_Table_v2.png",
@@ -17304,7 +17308,7 @@
     {
       "id": 1898,
       "guid": "ZvfG2eU17I",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Snowkid",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Days-of-Feast-Snowman-Prop-Icon-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Days-of-Feast-Snowman-prop.png",
@@ -17361,7 +17365,7 @@
       "name": "Course Creation Prop",
       "type": "Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Course-Creation-Prop-icon.png",
-      "order": 6001
+      "order": 6002
     },
     {
       "id": 1982,
@@ -17463,7 +17467,7 @@
     {
       "id": 1907,
       "guid": "bBQVuucGUm",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Double Deck Chairs",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Icon_prop_days_of_summer_beach_chairs.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Summer_beach_chairs.png",
@@ -17534,7 +17538,7 @@
     {
       "id": 1914,
       "guid": "JNgfLtgLfc",
-      "type": "Prop",
+      "type": "Furniture",
       "name": "Campfire Tent",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Sunlight-Tent-Prop-Morybel-0146.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Days-of-Sunlight-tent-prop.png",
@@ -17951,6 +17955,16 @@
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/JourneyPack-Hair-Nastymold.png",
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
       "order": 10103
+    },
+    // #endregion
+    // #region Steam
+    {
+      "id": 2080,
+      "guid": "NfhWog1-AK",
+      "type": "Prop",
+      "name": "Companion Cube",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Companion-Cube-icon.png",
+      "order": 6001
     },
     // #endregion
     // #endregion

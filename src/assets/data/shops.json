@@ -20,21 +20,21 @@
       ]
     },
     {
+      "guid": "asYb2Serjg",
+      "type": "Store",
+      "name": "Premium Candle Store",
+      "permanent": true,
+      "iaps": [
+        "c4cZcnuZPk"
+      ]
+    },
+    {
       "guid": "QtpcAqvc4g",
       "type": "Store",
       "name": "Premium Candle Store (Switch)",
       "permanent": true,
       "iaps": [
         "1HjO9K58mP"
-      ]
-    },
-    {
-      "guid": "asYb2Serjg",
-      "type": "Store",
-      "name": "Premium Candle Store (PS)",
-      "permanent": true,
-      "iaps": [
-        "c4cZcnuZPk"
       ]
     },
     {
@@ -67,6 +67,20 @@
         "Q0Cze2DKAF",
         "frvgJDX_Cu"
       ]
+    },
+    {
+      "guid": "HY4LWwN4QY",
+      "type": "Object",
+      "name": "Aviary Event Store",
+      "permanent": true,
+      "itemList": "PLIrclx0V4"
+    },
+    {
+      "guid": "Vrrbqd2iPV",
+      "type": "Object",
+      "name": "Aviary Event Store",
+      "permanent": true,
+      "itemList": "6AS-92sc6t"
     },
     // #endregion
     // #region Season of The Little Prince

@@ -1,16 +1,37 @@
 <div class="sky-card">
   <div class="sky-card-header">
-    <h1 class="h2 mb-0">Permanent In-App Purchases</h1>
+    <h1 class="h2 mb-0">Permanent Shops</h1>
   </div>
   <div class="sky-card-body">
     <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Premium_Candle_Shop'}"></app-wiki-link>
   </div>
 </div>
 
+<!-- IGC -->
+@if (shops.length) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">In-game currency</h1>
+    </div>
+  </div>
+
+  <div class="sky-flex flex-wrap mt">
+    @for (shop of shops; track shop.guid) {
+      <app-item-list [itemList]="shop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+    }
+  </div>
+}
+
 <!-- IAPs -->
-<div *ngIf="shops?.length" class="grid grid-4 mt">
-  <ng-container *ngFor="let shop of shops">
-    <ng-container *ngIf="shop.iaps?.length">
+@if (iapShops.length) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">In-app purchases</h1>
+    </div>
+  </div>
+
+  <div class="grid grid-4 mt">
+    @for (shop of iapShops; track shop.guid) {
       <div class="sky-card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
         <div class="sky-card-header">
           <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
@@ -69,6 +90,7 @@
           </div>
         </div>
       </div>
-    </ng-container>
-  </ng-container>
-</div>
+    }
+  </div>
+}
+

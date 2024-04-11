@@ -1,5 +1,5 @@
 <div class="node" [ngbTooltip]="itemHover" placement="bottom" container="body">
-  <div class="item" (click)="nodeClick($event)">
+  <div class="item" (click)="nodeClick($event)" [class.highlight]="highlight">
     <app-item-icon [item]="node.item"></app-item-icon>
     <mat-icon class="unlock-check" [class.unlocked]="node.item.unlocked" [class.self]="node.unlocked">done</mat-icon>
   </div>
