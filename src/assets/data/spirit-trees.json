@@ -332,6 +332,11 @@
       "guid": "Lvuz1tp6P9",
       "node": "BLKy0jnYaU"
     },
+    // Nesting Guide
+    {
+      "guid": "D5NXQFGNZE",
+      "node": "vUoRGulA02"
+    },
     // #endregion
 
     // #region Gratitude
@@ -1389,6 +1394,32 @@
     {
       "guid": "uLAuAvptPA",
       "node": "QLHntqZQ6m"
+    },
+    // #endregion
+    // #endregion
+    // #region Nesting
+    // #region Nesting Nook
+    {
+      "guid": "Hj9s2djkbp",
+      "node": "4MAeqqNXqF"
+    },
+    // #endregion
+    // #region Nesting Solarium
+    {
+      "guid": "wLTOEjYiho",
+      "node": "8U5lKBsEz0"
+    },
+    // #endregion
+    // #region Nesting Atrium
+    {
+      "guid": "_7Cm8XUK5N",
+      "node": "UQ4rS_3vBk"
+    },
+    // #endregion
+    // #region Nesting Loft
+    {
+      "guid": "hmjRFtvfCa",
+      "node": "79knrpLvHO"
     },
     // #endregion
     // #endregion

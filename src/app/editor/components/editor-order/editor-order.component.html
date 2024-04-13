@@ -5,6 +5,10 @@
         <div class="item-image" [ngbTooltip]="item.name" container="body">
           <img class="item-icon" [src]="item.icon" [alt]="item.name">
           <label class="item-order">{{item.order ?? 99999}}</label>
+          <label class="item-label">{{$any(item)._label}}</label>
+          @if ($any(item)._subIcon) {
+            <img class="item-sub-icon" [src]="$any(item)._subIcon">
+          }
         </div>
       </div>
     </ng-container>

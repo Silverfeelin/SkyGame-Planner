@@ -8,6 +8,7 @@
     "build-prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "wrangle": "npx wrangler pages dev ./dist/sky-game-planner --kv=REQUESTS",
+    "item-id": "node ./scripts/item-id.js",
     "test": "ng test"
   },
   "private": true,

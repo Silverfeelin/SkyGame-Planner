@@ -4,6 +4,7 @@
     {
       "guid": "qmi9ZWGfja",
       "name": "Days of Fortune",
+      "shortName": "Fortune",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/35c6233556/fortune2023header.jpg",
       "instances": [
@@ -69,6 +70,7 @@
     {
       "guid": "f6OPOFuRDv",
       "name": "Days of Love",
+      "shortName": "Love",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/cbec43ee06/dlove_blogheader.png",
       "instances": [
@@ -139,6 +141,7 @@
     {
       "guid": "jZ3AhcgPl8",
       "name": "Days of Bloom",
+      "shortName": "Bloom",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a6a265ea76/bloom24eventcurrency.jpg",
       "instances": [
@@ -202,6 +205,7 @@
     {
       "guid": "f6J1-3yeJF",
       "name": "Days of Nature",
+      "shortName": "Nature",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1000x563/36be77aad7/days_of_nature_launch_blog_afab8614af.jpeg",
       "instances": [
@@ -255,6 +259,7 @@
     {
       "guid": "0Xk69mVo9E",
       "name": "Days of Color",
+      "shortName": "Color",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/feb1f282dd/colorgeyser_header.jpg",
       "imagePosition": "top",
@@ -277,6 +282,7 @@
     {
       "guid": "yVDpWb7Goo",
       "name": "Days of Rainbow",
+      "shortName": "Rainbow",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6952cf0d8f/dorainbow2022_flyingoverhome.png",
       "recurring": false,
       "instances": [
@@ -317,6 +323,7 @@
     {
       "guid": "Uks5FcTCmY",
       "name": "Days of Music",
+      "shortName": "Music",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/2472587441/domusic23_header.jpg",
       "imagePosition": "top",
@@ -349,6 +356,7 @@
     {
       "guid": "qMS8yJXaln",
       "name": "Sky Anniversary",
+      "shortName": "Anniversary",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6c79b92b1e/3rdannivheader.png",
       "instances": [
@@ -397,6 +405,7 @@
     {
       "guid": "HIw19Tr9eP",
       "name": "Days of Sunlight",
+      "shortName": "Sunlight",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/c1e8fb6645/dosunlight-header.png",
       "imagePosition": "top",
@@ -433,6 +442,7 @@
     {
       "guid": "eVaYOCFqcC",
       "name": "Lazy Days",
+      "shortName": "Lazy",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/3634x2045/0bc6cde486/dosunlight_tentcampfire.jpg",
       "instances": [
@@ -456,6 +466,7 @@
     {
       "guid": "hLz-Av_F4W",
       "name": "Days of Style",
+      "shortName": "Style",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/dcc6f280d7/style2023_2kidsrunway_header.jpg",
       "imagePosition": "top",
@@ -480,6 +491,7 @@
     {
       "guid": "sZKQF_CWdu",
       "name": "Days of Mischief",
+      "shortName": "Mischief",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6de90eb575/tree-exterior.png",
       "instances": [
@@ -548,6 +560,7 @@
     {
       "guid": "3Q-XQzfVXR",
       "name": "Days of Giving",
+      "shortName": "Giving",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/a6dfd9d33c/constellation_blogheader.png",
       "instances": [
@@ -585,6 +598,7 @@
     {
       "guid": "MtDAWRpBqJ",
       "name": "Days of Feast",
+      "shortName": "Feast",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/c8639d6058/2023feast_3kids_snowboarding_racecourseprop.jpg",
       "instances": [
@@ -664,6 +678,7 @@
     {
       "guid": "Bqvtgwzj5I",
       "name": "Days of Healing",
+      "shortName": "Healing",
       "instances": [
         {
           "guid": "Btpq48TBPD",
@@ -682,6 +697,7 @@
     {
       "guid": "His_r9JBBt",
       "name": "Children's Day",
+      "shortName": "Children",
       "instances": [
         {
           "guid": "PShOLpIdTP",
@@ -697,6 +713,7 @@
     {
       "guid": "FBZvsjNRwi",
       "name": "Kizuna AI Collaboration",
+      "shortName": "Kizuna AI",
       "instances": [
         {
           "guid": "rGOuzt_d-o",
@@ -715,6 +732,7 @@
     {
       "guid": "uv2xDBpU7W",
       "name": "Days of Summer",
+      "shortName": "Summer",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/b08d410eb7/daysofsummer-summerlightsheader.png",
       "instances": [
         {
@@ -737,6 +755,7 @@
     {
       "guid": "tQQ7aeJbRJ",
       "name": "Days of Summer Lights",
+      "shortName": "Summer Lights",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/e1408d62e1/summerfriends.png",
       "instances": [
         {
@@ -764,6 +783,7 @@
     {
       "guid": "284-OJ0if4",
       "name": "AURORA Encore Concerts",
+      "shortName": "Encore",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/d6e4fc3902/3kids_flying_10kconcert.jpg",
       "instances": [
         {
@@ -789,6 +809,7 @@
     {
       "guid": "TPqpSiMIZz",
       "name": "Aviary's Firework Festival (Phase 1)",
+      "shortName": "Firework",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/3e94d18cf6/aviaryfireworkfestival23-header.png",
       "instances": [
         {

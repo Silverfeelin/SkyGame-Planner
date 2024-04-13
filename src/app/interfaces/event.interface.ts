@@ -9,6 +9,7 @@ export interface IEventConfig extends IConfig<IEvent> {}
 export interface IEvent extends IGuid {
   /** Name of the event. */
   name: string;
+  shortName?: string;
 
   /** Path to overview image. */
   imageUrl?: string;
