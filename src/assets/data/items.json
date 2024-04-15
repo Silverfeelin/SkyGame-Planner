@@ -5911,16 +5911,18 @@
       "group": "Ultimate",
       "name": "Nesting Ultimate Outfit",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Nesting-Ultimate-Outfit-icon.png",
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Nesting-Ultimate-Outfit-front.png",
       "order": 2101
     },
     {
       "id": 2092,
       "guid": "j419c2Vg0Y",
-      "type": "Furniture",
+      "type": "Prop",
       "group": "Ultimate",
       "name": "Nesting Ultimate Prop",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Nesting-Guide-Mannequin-Figurine-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Nesting-Guide-Mannequin-Figurine-Prop.png",
+      "order": 7006
     },
     // #endregion
     // #endregion
@@ -15664,7 +15666,8 @@
       "type": "Hat",
       "name": "Nesting Nook Hat",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Nesting-Nook-Headpiece-icon.png",
-      "order": 3101
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Nesting-Nook-Headpiece.png",
+      "order": -1
     },
     {
       "id": 2094,
@@ -15672,24 +15675,26 @@
       "type": "Furniture",
       "name": "Nesting Nook Couch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Nesting-Nook-Loveseat-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nesting-Nook-Loveseat-Prop.png",
+      "order": 6004
     },
     {
       "id": 2095,
       "guid": "0uKZsODFUj",
-      "type": "Furniture",
+      "type": "Prop",
       "name": "Nesting Nook Shelf",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Nesting-Nook-Short-Shelf-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Nesting-Nook-Short-Shelf-Prop.png",
+      "order": 7001
     },
     {
       "id": 2096,
       "guid": "c_KpT59QmO",
-      "type": "Furniture",
+      "type": "Prop",
       "name": "Nesting Nook Spice Rack",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Nesting-Nook-Wall-Spice-Rack-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Nesting-Nook-Wall-Spice-Rack-Prop.png",
-      "order": 10000
+      "order": 7004
     },
     {
       "id": 2097,
@@ -15734,7 +15739,8 @@
       "type": "Furniture",
       "name": "Nesting Solarium Table",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Nesting-Solarium-Dining-Table-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Nesting-Solarium-Dining-Table-Prop.png",
+      "order": 6003
     },
     {
       "id": 2102,
@@ -15742,7 +15748,8 @@
       "type": "Furniture",
       "name": "Nesting Solarium Bathtub",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Nesting-Solarium-Bathtub-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Nesting-Solarium-Bathtub-Prop.png",
+      "order": 6006
     },
     {
       "id": 2103,
@@ -15751,16 +15758,16 @@
       "name": "Nesting Solarium Hanging Planter",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Nesting-Solarium-Hanging-Planter-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Nesting-Solarium-Hanging-Planter-Prop.png",
-      "order": 10000
+      "order": 6008
     },
     {
       "id": 2104,
       "guid": "aQQ620Fs1D",
-      "type": "Furniture",
+      "type": "Prop",
       "name": "Nesting Solarium Painting",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nesting-Solarium-Wall-Painting-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Nesting-Solarium-Wall-Painting-Prop.png",
-      "order": 10000
+      "order": 7003
     },
     {
       "id": 2105,
@@ -15805,7 +15812,8 @@
       "type": "Furniture",
       "name": "Nesting Atrium Hanging Lamp",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Atrium-Hanging-Lamp-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Nesting-Atrium-Hanging-Lamp-Prop.png",
+      "order": 6005
     },
     {
       "id": 2110,
@@ -15814,16 +15822,16 @@
       "name": "Nesting Atrium Branch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Nesting-Atrium-Hanging-Branch-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Nesting-Atrium-Hanging-Branch-Prop.png",
-      "order": 10000
+      "order": 6007
     },
     {
       "id": 2111,
       "guid": "JiCbV61Jqi",
-      "type": "Furniture",
+      "type": "Prop",
       "name": "Nesting Atrium Floor Light",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Nesting-Atrium-Floor-Light-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Nesting-Atrium-Floor-Light-Prop.png",
-      "order": 10000
+      "order": 7005
     },
     {
       "id": 2112,
@@ -15886,7 +15894,8 @@
       "type": "Furniture",
       "name": "Nesting Loft Bed",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Nesting-Loft-Single-Bed-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nesting-Loft-Single-Bed-Prop.png",
+      "order": 6001
     },
     {
       "id": 2119,
@@ -15894,15 +15903,17 @@
       "type": "Furniture",
       "name": "Nesting Loft Chair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Nesting-Loft-Chair-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Nesting-Loft-Chair-Prop.png",
+      "order": 6002
     },
     {
       "id": 2120,
       "guid": "spiUj9Bv7C",
-      "type": "Furniture",
+      "type": "Prop",
       "name": "Nesting Loft Paintings",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Nesting-Loft-Wall-Painting-Set-Prop-icon.png",
-      "order": 10000
+      "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Nesting-Loft-Wall-Painting-Set-Prop.png",
+      "order": 7002
     },
     {
       "id": 2121,
