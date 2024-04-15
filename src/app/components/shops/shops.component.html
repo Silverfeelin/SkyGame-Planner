@@ -11,14 +11,22 @@
 @if (shops.length) {
   <div class="sky-card mt">
     <div class="sky-card-header">
-      <!-- Temp name until I have to worry about having multiple locations listed here. -->
-      <h1 class="h2 mb-0">Aviary Event Store</h1>
+      <h1 class="h2 mb-0">In-game currency shops</h1>
     </div>
   </div>
 
   <div class="sky-flex flex-wrap mt">
     @for (shop of shops; track shop.guid) {
-      <app-item-list [itemList]="shop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+      <div class="sky-card">
+        <div class="sky-card-header">
+          <h3 class="h4 mb-0">
+            <span>{{ shop.name }}</span>
+          </h3>
+        </div>
+        <div class="sky-card-body">
+          <app-item-list [itemList]="shop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+        </div>
+      </div>
     }
   </div>
 }

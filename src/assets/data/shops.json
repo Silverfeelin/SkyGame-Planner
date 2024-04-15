@@ -78,7 +78,7 @@
     {
       "guid": "Vrrbqd2iPV",
       "type": "Object",
-      "name": "Aviary Event Store",
+      "name": "Aviary Event Store (Steam)",
       "permanent": true,
       "itemList": "6AS-92sc6t"
     },
@@ -147,6 +147,18 @@
       ]
     },
     // #endregion
+
+    // #region Nesting Furniture
+    {
+      "guid": "he4MHA7_uC",
+      "type": "Object",
+      "name": "Nesting Workshop Counter",
+      "permanent": true,
+      "itemList": "AKNI67tVW-"
+    },
+    // #endregion
+
+
     // #region Days of Fortune (2021)
     {
       "guid": "cgSX8-JQkw",

@@ -15676,7 +15676,7 @@
       "name": "Nesting Nook Couch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Nesting-Nook-Loveseat-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nesting-Nook-Loveseat-Prop.png",
-      "order": 6004
+      "order": 7004
     },
     {
       "id": 2095,
@@ -15740,7 +15740,7 @@
       "name": "Nesting Solarium Table",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Nesting-Solarium-Dining-Table-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Nesting-Solarium-Dining-Table-Prop.png",
-      "order": 6003
+      "order": 7003
     },
     {
       "id": 2102,
@@ -15749,7 +15749,7 @@
       "name": "Nesting Solarium Bathtub",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Nesting-Solarium-Bathtub-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Nesting-Solarium-Bathtub-Prop.png",
-      "order": 6006
+      "order": 7006
     },
     {
       "id": 2103,
@@ -15758,7 +15758,7 @@
       "name": "Nesting Solarium Hanging Planter",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Nesting-Solarium-Hanging-Planter-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Nesting-Solarium-Hanging-Planter-Prop.png",
-      "order": 6008
+      "order": 7008
     },
     {
       "id": 2104,
@@ -15813,7 +15813,7 @@
       "name": "Nesting Atrium Hanging Lamp",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Atrium-Hanging-Lamp-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Nesting-Atrium-Hanging-Lamp-Prop.png",
-      "order": 6005
+      "order": 7005
     },
     {
       "id": 2110,
@@ -15822,7 +15822,7 @@
       "name": "Nesting Atrium Branch",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Nesting-Atrium-Hanging-Branch-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Nesting-Atrium-Hanging-Branch-Prop.png",
-      "order": 6007
+      "order": 7007
     },
     {
       "id": 2111,
@@ -15895,7 +15895,7 @@
       "name": "Nesting Loft Bed",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Nesting-Loft-Single-Bed-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nesting-Loft-Single-Bed-Prop.png",
-      "order": 6001
+      "order": 7001
     },
     {
       "id": 2119,
@@ -15904,7 +15904,7 @@
       "name": "Nesting Loft Chair",
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Nesting-Loft-Chair-Prop-icon.png",
       "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Nesting-Loft-Chair-Prop.png",
-      "order": 6002
+      "order": 7002
     },
     {
       "id": 2120,
@@ -15951,6 +15951,49 @@
       "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Season-of-Nesting-Seasonal-Heart-icon.png"
     },
     // #endregion
+    // #endregion
+
+    // #region Nesting Furniture
+    {
+      "id": 2129,
+      "guid": "RAqHfOMGuf",
+      "type": "Furniture",
+      "name": "Stone Stool",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Shared-Spaces-Stool-prop-icon-Morybel-0146.png",
+      "order": 6001
+    },
+    {
+      "id": 2130,
+      "guid": "pk88jDrFaq",
+      "type": "Furniture",
+      "name": "Stone Small Bench",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Stone-Single-Bench-Prop-icon.png",
+      "order": 6002
+    },
+    {
+      "id": 2131,
+      "guid": "m1jq0R3vip",
+      "type": "Furniture",
+      "name": "Stone Hearth Fireplace",
+      "icon": "/assets/game/items/2131.png",
+      "order": 6003
+    },
+    {
+      "id": 2132,
+      "guid": "pJ_qec46o4",
+      "type": "Furniture",
+      "name": "Stone Single Bed",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Stone-Single-Bed-Prop-icon.png",
+      "order": 6004
+    },
+    {
+      "id": 2133,
+      "guid": "g0FAk-lWFi",
+      "type": "Furniture",
+      "name": "Stone Tall Cube",
+      "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Stone-Tall-Cube-Prop-icon.png",
+      "order": 6005
+    },
     // #endregion
 
     // #region Days of Fortune

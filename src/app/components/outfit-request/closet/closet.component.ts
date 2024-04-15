@@ -794,7 +794,7 @@ export class ClosetComponent implements OnDestroy {
   private renderImage(mode: CopyImageMode): void {
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
-    const cols = [10, 7, 5, 5];
+    const cols = [10, 7, 5, 6];
     const canvas = document.createElement('canvas');
 
     const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
