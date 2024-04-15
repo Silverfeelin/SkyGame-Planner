@@ -4,8 +4,12 @@
     <mat-icon class="unlock-check" [class.unlocked]="node.item.unlocked" [class.self]="node.unlocked">done</mat-icon>
   </div>
   <div class="cost">
-    <span>{{ cost }}</span>
-    <mat-icon [svgIcon]="currencyIcon" [class]="currencyIconClass"></mat-icon>
+    @if (!cost) {
+      <span class="free">Free</span>
+    } @else {
+      <span>{{ cost }}</span>
+      <mat-icon [svgIcon]="currencyIcon" [class]="currencyIconClass"></mat-icon>
+    }
   </div>
 </div>
 
