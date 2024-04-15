@@ -3862,6 +3862,69 @@
       "c": 120
     },
     // #endregion
+    // #region Nesting Guide
+    {
+      "guid": "vUoRGulA02",
+      "item": "sTirXPanvw",
+      "nw": "wBzelEdUAQ",
+      "n": "OP5PNWoCRE",
+      "ne": "CCcYWY3zwp"
+    },
+    {
+      "guid": "wBzelEdUAQ",
+      "item": "HpuikQ-KJz"
+    },
+    {
+      "guid": "CCcYWY3zwp",
+      "item": "8Dny2xje80",
+      "n": "WMymtPk-KU"
+    },
+    {
+      "guid": "WMymtPk-KU",
+      "item": "yN19ZpyYJH",
+      "sh": 2,
+      "n": "FEqH_JDtX2"
+    },
+    {
+      "guid": "FEqH_JDtX2",
+      "item": "j419c2Vg0Y",
+      "sh": 2
+    },
+    {
+      "guid": "OP5PNWoCRE",
+      "item": "FvV7XUot2a",
+      "nw": "LCKeQCjXhH",
+      "n": "F4YdNgT0fg"
+    },
+    {
+      "guid": "LCKeQCjXhH",
+      "item": "Bqk5icCyoa"
+    },
+    {
+      "guid": "F4YdNgT0fg",
+      "item": "GEL35nYKir",
+      "nw": "HbQTtrY71v",
+      "n": "po4IOQmOgp"
+    },
+    {
+      "guid": "HbQTtrY71v",
+      "item": "T4YhxmDLDx"
+    },
+    {
+      "guid": "po4IOQmOgp",
+      "item": "sltsAOaTHb",
+      "nw": "Ver8cPlcgY",
+      "n": "G-xZcu3sj5"
+    },
+    {
+      "guid": "Ver8cPlcgY",
+      "item": "Fvw9PSl5Yc"
+    },
+    {
+      "guid": "G-xZcu3sj5",
+      "item": "7Alei6q5H_"
+    },
+    // #endregion
     // #endregion
 
     // #region Gratitude
@@ -17287,6 +17350,212 @@
     {
       "guid": "VXLRTIyOvf",
       "item": "IWXeOczUJv",
+      "sc": 3
+    },
+    // #endregion
+    // #endregion
+    // #region Nesting
+    // #region Nesting Nook
+    {
+      "guid": "4MAeqqNXqF",
+      "item": "0uKZsODFUj",
+      "sc": 16,
+      "nw": "vDLf8joLje",
+      "n": "hhUS-TaknV"
+    },
+    {
+      "guid": "vDLf8joLje",
+      "item": "mFWiBU11XE"
+    },
+    {
+      "guid": "hhUS-TaknV",
+      "item": "0Syt2k8lvV",
+      "sc": 20,
+      "nw": "82dNkqo9v1",
+      "n": "5-FTNr_Clr"
+    },
+    {
+      "guid": "82dNkqo9v1",
+      "item": "7J76uhGuwa"
+    },
+    {
+      "guid": "5-FTNr_Clr",
+      "item": "c_KpT59QmO",
+      "sc": 26,
+      "nw": "zkvh0hDgL7",
+      "n": "tBc6wjJrDn"
+    },
+    {
+      "guid": "zkvh0hDgL7",
+      "item": "wXfZcdQavO"
+    },
+    {
+      "guid": "tBc6wjJrDn",
+      "item": "qg48GX_m4E",
+      "sc": 30,
+      "nw": "qnWJQseLZO",
+      "n": "l3juvnMJBs"
+    },
+    {
+      "guid": "qnWJQseLZO",
+      "item": "7i6ro485Ra"
+    },
+    {
+      "guid": "l3juvnMJBs",
+      "item": "CweO-KiOA5",
+      "sc": 3
+    },
+    // #endregion
+    // #region Nesting Solarium
+    {
+      "guid": "8U5lKBsEz0",
+      "item": "Zg7JKohXxQ",
+      "sc": 14,
+      "nw": "EgOdguTA6j",
+      "n": "luL_Mdfge5"
+    },
+    {
+      "guid": "EgOdguTA6j",
+      "item": "aQQ620Fs1D"
+    },
+    {
+      "guid": "luL_Mdfge5",
+      "item": "H6gnLunz8t",
+      "sc": 22,
+      "nw": "0BFopcD8oP",
+      "n": "HOeCZLzjEh"
+    },
+    {
+      "guid": "0BFopcD8oP",
+      "item": "Wc7qrLTx-F"
+    },
+    {
+      "guid": "HOeCZLzjEh",
+      "item": "fXxrmPnrsC",
+      "sc": 30,
+      "nw": "d7EKbWMP45",
+      "n": "V6wI7CYDYw"
+    },
+    {
+      "guid": "d7EKbWMP45",
+      "item": "5P2jGjEbvq"
+    },
+    {
+      "guid": "V6wI7CYDYw",
+      "item": "t-ErYMeyCa",
+      "sc": 34,
+      "nw": "am9uLSykDd",
+      "n": "GCCqk0H9ml"
+    },
+    {
+      "guid": "am9uLSykDd",
+      "item": "Rh_Do_sfzx"
+    },
+    {
+      "guid": "GCCqk0H9ml",
+      "item": "J1Ct-CcFRt",
+      "sc": 3
+    },
+    // #endregion
+    // #region Nesting Atrium
+    {
+      "guid": "UQ4rS_3vBk",
+      "item": "JiCbV61Jqi",
+      "sc": 16,
+      "nw": "xA19FAWJ0W",
+      "n": "Lq5L5tMiHm"
+    },
+    {
+      "guid": "xA19FAWJ0W",
+      "item": "oGGuBaiWiw"
+    },
+    {
+      "guid": "Lq5L5tMiHm",
+      "item": "xe184s4TDj",
+      "sc": 20,
+      "nw": "emNbOSh6aF",
+      "n": "98FGZIDPkW"
+    },
+    {
+      "guid": "emNbOSh6aF",
+      "item": "x1nOiZe3QX"
+    },
+    {
+      "guid": "98FGZIDPkW",
+      "item": "l8H1fmaKQ4",
+      "sc": 24,
+      "nw": "sMVxibv23U",
+      "n": "FqiPaLcyFZ"
+    },
+    {
+      "guid": "sMVxibv23U",
+      "item": "kwrIuEDiez"
+    },
+    {
+      "guid": "FqiPaLcyFZ",
+      "item": "7zc4VPznSp",
+      "sc": 28,
+      "nw": "JJv3EMoM6G",
+      "n": "3ngE_xE9gd"
+    },
+    {
+      "guid": "JJv3EMoM6G",
+      "item": "mH_dMkE6uH"
+    },
+    {
+      "guid": "3ngE_xE9gd",
+      "item": "SlLF8YUeLK",
+      "sc": 3
+    },
+    // #endregion
+    // #region Nesting Loft
+    {
+      "guid": "79knrpLvHO",
+      "item": "dmmD9AdzXa",
+      "sc": 12,
+      "nw": "pydZapUW4c",
+      "n": "ZjKEQiTdTT"
+    },
+    {
+      "guid": "pydZapUW4c",
+      "item": "VZiXFdfGH9"
+    },
+    {
+      "guid": "ZjKEQiTdTT",
+      "item": "YZhthn7r7q",
+      "sc": 20,
+      "nw": "SkZ_OTsUJO",
+      "n": "9a5BpV4FCk"
+    },
+    {
+      "guid": "SkZ_OTsUJO",
+      "item": "6SZlYl7AJ6"
+    },
+    {
+      "guid": "9a5BpV4FCk",
+      "item": "ocfWj7Oqxl",
+      "sc": 28,
+      "nw": "YPL6zY3bL5",
+      "n": "eNvtLE5mF-"
+    },
+    {
+      "guid": "YPL6zY3bL5",
+      "item": "zhugp6XAdZ"
+    },
+    {
+      "guid": "eNvtLE5mF-",
+      "item": "spiUj9Bv7C",
+      "sc": 36,
+      "nw": "HH-Hi2vfX6",
+      "n": "j78wRmsyJl"
+    },
+    {
+      "guid": "HH-Hi2vfX6",
+      "item": "eA9wh3zsNi"
+    },
+    {
+      "guid": "j78wRmsyJl",
+      "item": "AF4hUvaLDh",
       "sc": 3
     },
     // #endregion
