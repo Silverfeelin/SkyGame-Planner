@@ -1,0 +1,97 @@
+[
+  // 2023
+  {
+    "id": 1841,
+    "guid": "E7RAu04_xI",
+    "name": "Style Wide-Leg Jeans",
+    "type": "Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Style-Wide-Leg-Jeans-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Style-Wide-Leg-Jeans.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Wide-Leg_Jeans" },
+    "order": 10500
+  },
+  {
+    "id": 1842,
+    "guid": "MuQrbnmbdp",
+    "name": "Style Bunny Slippers",
+    "type": "Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Style-Bunny-Slippers-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Style-Bunny-Slippers.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Bunny_Slippers" },
+    "order": 10202
+  },
+  {
+    "id": 1843,
+    "guid": "3HeVKqT39a",
+    "name": "Style Heart Sunglasses",
+    "type": "FaceAccessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Style-Heart-Sunglasses-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Style-Heart-Sunglasses.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Heart_Sunglasses" },
+    "order": 2003
+  },
+  {
+    "id": 1844,
+    "guid": "BWUjIgnjnu",
+    "name": "Style Flame Sunglasses",
+    "type": "FaceAccessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Style-Flame-Sunglasses-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Style-Flame-Sunglasses.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Flame_Sunglasses" },
+    "order": 2002
+  },
+  {
+    "id": 1845,
+    "guid": "qscApTevys",
+    "name": "Style Star Sunglasses",
+    "type": "FaceAccessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Style-Star-Sunglasses-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Style-Star-Sunglasses.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Star_Sunglasses" },
+    "order": 2001
+  },
+  {
+    "id": 1846,
+    "guid": "d_p_flDgEV",
+    "name": "Style Silk Ballet Slippers",
+    "type": "Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Ballet-Flats-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Ballet-Flats.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Silk_Ballet_Slippers" },
+    "order": 10201
+  },
+  {
+    "id": 1847,
+    "guid": "o4cIshT_hD",
+    "name": "Style Top Hat",
+    "type": "Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Style-Tophat-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Style-Tophat.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Top_Hat" },
+    "order": 11501
+  },
+  {
+    "id": 1848,
+    "guid": "TbSEPp5DAI",
+    "name": "Style Runway Makeup Mask",
+    "type": "Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Runway-Makeup-Mask-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Runway-Makeup-Mask.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask" },
+    "order": 10502
+  },
+  {
+    "id": 1849,
+    "guid": "TalOg0V1he",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1850,
+    "guid": "KHEaIkjXoV",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+]

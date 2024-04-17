@@ -1,0 +1,557 @@
+[
+  // #region Flight Guide
+  {
+    "id": 476,
+    "guid": "4Yk3OcGKKp",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "name": "Flight Pendant",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season_of_flight_pendant.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
+    "order": 11
+  },
+  {
+    "id": 477,
+    "guid": "cbWKMsAh7H",
+    "type": "Hat",
+    "group": "Ultimate",
+    "name": "Flight Ultimate Hair Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Season_of_flight_headpiece_4_ult.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
+    "order": 2104
+  },
+  {
+    "id": 478,
+    "guid": "SxX0bNDJaR",
+    "type": "Outfit",
+    "group": "Ultimate",
+    "name": "Flight Ultimate Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_flight_pants_1_ult.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
+    "order": 1101
+  },
+  {
+    "id": 479,
+    "guid": "TI-CpaXFhK",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 480,
+    "guid": "4cAnXifY1a",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 481,
+    "guid": "Bg_bDXCpyl",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 482,
+    "guid": "H2o2kLXB1t",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 483,
+    "guid": "k1p3Ab7Pe4",
+    "type": "Special",
+    "name": "High Five",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Icon_high_five.png"
+  },
+  {
+    "id": 484,
+    "guid": "WrBllT55vV",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 485,
+    "guid": "FeoKFHiu3V",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 486,
+    "guid": "W51TEfrNbi",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 487,
+    "guid": "gDGKJGZyxB",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 488,
+    "guid": "17es70sy2v",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 489,
+    "guid": "7ygaxVUmTQ",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 490,
+    "guid": "HUGmcCBr9V",
+    "type": "Special",
+    "name": "Hug",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
+  },
+  // #endregion
+  // #region Flight
+  // #region Lively Navigator
+  {
+    "id": 1325,
+    "guid": "mugeVvl6Vc",
+    "type": "Emote",
+    "name": "Navigate",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png",
+    "order": 841
+  },
+  {
+    "id": 1326,
+    "guid": "H6h0oeRVom",
+    "type": "Emote",
+    "name": "Navigate",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
+  },
+  {
+    "id": 1327,
+    "guid": "-UA09DYaKh",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1328,
+    "guid": "QiLz0mb3x4",
+    "type": "Hair",
+    "name": "Lively Navigator Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Icon_season_of_flight_hair_3_lively_navigator.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Season_of_flight_hair_3_lively_navigator_gs.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair" },
+    "order": 2104
+  },
+  {
+    "id": 1329,
+    "guid": "DeouBCkpib",
+    "type": "Hat",
+    "name": "Lively Navigator Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Season_of_flight_headpiece_2_lively_navigator.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory" },
+    "order": 2103
+  },
+  {
+    "id": 1330,
+    "guid": "cOMtRe-wEZ",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1331,
+    "guid": "kkRo6gnuo9",
+    "type": "Emote",
+    "name": "Navigate",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
+  },
+  {
+    "id": 1332,
+    "guid": "VC9yqYv8O9",
+    "type": "Emote",
+    "name": "Navigate",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
+  },
+  {
+    "id": 1333,
+    "guid": "zB6NpyvK6q",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 1334,
+    "guid": "UjA8CZwZ9i",
+    "type": "Cape",
+    "name": "Lively Navigator Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Season_of_flight_cape_lively_navigator_back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape" },
+    "order": 2102
+  },
+  {
+    "id": 1335,
+    "guid": "ygAEEh8bZ5",
+    "type": "Music",
+    "name": "Music Sheet 24",
+    "sheet": "24",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 24
+  },
+  {
+    "id": 1336,
+    "guid": "aiuFUiqZnB",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+  },
+  {
+    "id": 1337,
+    "guid": "Y2M5HKFn62",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1338,
+    "guid": "JmcNphV2vc",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  // #endregion
+  // #region Light Whisperer
+  {
+    "id": 1339,
+    "guid": "YiLDQF0uDU",
+    "type": "Call",
+    "name": "Baby Manta Call",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Expression" },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Season_of_Flight_-_Light_Whisperer_icon.png",
+    "order": 71
+  },
+  {
+    "id": 1340,
+    "guid": "Ld2u4cjPes",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1341,
+    "guid": "Dt5aDX9Osc",
+    "type": "Hat",
+    "name": "Light Whisperer Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_flight_headpiece_1_light_whisperer.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory" },
+    "order": 2101
+  },
+  {
+    "id": 1342,
+    "guid": "k_dtQhg8Ii",
+    "type": "Hair",
+    "name": "Light Whisperer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Icon_season_of_flight_hair_4_light_whisperer.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Season_of_flight_hair_4_light_whisperer_gs.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair" },
+    "order": 2103
+  },
+  {
+    "id": 1343,
+    "guid": "T_syKqfzht",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1344,
+    "guid": "5D_d1xwmfQ",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 1345,
+    "guid": "1IwU-ZZu1g",
+    "type": "Cape",
+    "name": "Light Whisperer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_flight_cape_light_whisperer_back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape" },
+    "order": 2101
+  },
+  {
+    "id": 1346,
+    "guid": "Y7j3ljNdYp",
+    "type": "Outfit",
+    "name": "Light Whisperer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Season_of_flight_pants_4_light_whisperer.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit" },
+    "order": 1104
+  },
+  {
+    "id": 1347,
+    "guid": "CJLgEjb1TE",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+  },
+  {
+    "id": 2069,
+    "guid": "oF1ZpY_EyV",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2070,
+    "guid": "kwgBrM-KbA",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  // #endregion
+  // #region Tinkering Chimesmith
+  {
+    "id": 1348,
+    "guid": "Jgp0s63dVZ",
+    "type": "Stance",
+    "name": "Tinker Stance",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Expression" },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Season_of_Flight_-_Tinkering_Chimesmith_icon.png",
+    "order": 101
+  },
+  {
+    "id": 1349,
+    "guid": "DquDtwH3Jy",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1350,
+    "guid": "5Z5JqDkAtl",
+    "type": "Outfit",
+    "name": "Tinkering Chimesmith Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Season_of_flight_pants_3_tinkering_chimesmith_gs.PNG",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit" },
+    "order": 1103
+  },
+  {
+    "id": 1351,
+    "guid": "dkLuIrNJyl",
+    "type": "Hat",
+    "name": "Tinkering Chimesmith Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_flight_headpiece_3_tinkering_chimesmith.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory" },
+    "order": 2102
+  },
+  {
+    "id": 1352,
+    "guid": "S4y9T9zWU1",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1353,
+    "guid": "EaKDVLQYcH",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 1354,
+    "guid": "t3hOiGsS79",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Kalimba",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Icon_season_of_flight_instrument_kalimba.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Flight-Tinkering-Chimesmith-Kalimba.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument" },
+    "order": 1301
+  },
+  {
+    "id": 1355,
+    "guid": "ARYCvmatxR",
+    "type": "Hair",
+    "name": "Tinkering Chimesmith Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_season_of_flight_hair_2_tinkering_chimesmith.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Season_of_flight_hair_2_tinkering_chimesmith.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair" },
+    "order": 2102
+  },
+  {
+    "id": 1356,
+    "guid": "NhS59J9jxl",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+  },
+  {
+    "id": 1357,
+    "guid": "aoeuPfrcxy",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1358,
+    "guid": "3yhb7QqakI",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  // #endregion
+  // #region Talented Builder
+  {
+    "id": 1359,
+    "guid": "b_qHNPnLGc",
+    "type": "Emote",
+    "name": "Voilà",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png",
+    "order": 831
+  },
+  {
+    "id": 1360,
+    "guid": "zRFUMdaCAK",
+    "type": "Emote",
+    "name": "Voilà",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
+  },
+  {
+    "id": 1361,
+    "guid": "x-oGRq6rNu",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1362,
+    "guid": "sTi8F25qWL",
+    "type": "Music",
+    "name": "Music Sheet 25",
+    "sheet": "25",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 25
+  },
+  {
+    "id": 1363,
+    "guid": "RcLkR7XRbn",
+    "type": "Necklace",
+    "name": "Talented Builder Neckpiece",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Icon_season_of_flight_neckpiece_talented_builder.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season_of_flight_neckpiece_talented_builder.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory" },
+    "order": 1101
+  },
+  {
+    "id": 1364,
+    "guid": "YPTs9XT_4y",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1365,
+    "guid": "AlBQo1ngBi",
+    "type": "Emote",
+    "name": "Voilà",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
+  },
+  {
+    "id": 1366,
+    "guid": "0bY0v6h4ci",
+    "type": "Emote",
+    "name": "Voilà",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
+  },
+  {
+    "id": 1367,
+    "guid": "W8zu7vGKUU",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 1368,
+    "guid": "g-vZeE8cmg",
+    "type": "Outfit",
+    "name": "Talented Builder Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Season_of_flight_pants_2_talented_builder_gs.PNG",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit" },
+    "order": 1102
+  },
+  {
+    "id": 1369,
+    "guid": "cZfBtj_CYb",
+    "type": "Hair",
+    "name": "Talented Builder Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_season_of_flight_hair_1_talented_builder.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season_of_flight_hair_1_talented_builder_gs.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair" },
+    "order": 2101
+  },
+  {
+    "id": 1953,
+    "guid": "_2q2mdk_1h",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 1370,
+    "guid": "LZEuZ8aSr1",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+  },
+  {
+    "id": 1954,
+    "guid": "ywCvppfTaZ",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1955,
+    "guid": "enzmBJRXnG",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  // #endregion
+  // #endregion
+]

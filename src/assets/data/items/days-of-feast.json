@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1876,
+    "guid": "z2M4HqpR9C",
+    "type": "Hair",
+    "name": "Feast Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Icon_hair_feast_santa_hat.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Santa_hat.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Hat" },
+    "order": 10094
+  },
+  {
+    "id": 1877,
+    "guid": "rQQmknOn9a",
+    "type": "FaceAccessory",
+    "name": "Days of Feast Horns",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Icon_hair_feast_antlers.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Antlers_headpiece_v2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Horns" },
+    "order": 1901
+  },
+  {
+    "id": 1878,
+    "guid": "gnC7YQCAug",
+    "type": "Cape",
+    "name": "Snowflake Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Icon_cape_snowflake-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Snowflake_cape.back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Cape" },
+    "order": 10502
+  },
+  {
+    "id": 1879,
+    "guid": "GoESQXsRjl",
+    "type": "Cape",
+    "name": "Days of Feast Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Icon_cape_santa-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Santa_cape_back_2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Cape" },
+    "order": 10501
+  },
+  {
+    "id": 1880,
+    "guid": "oHChsGl8AZ",
+    "type": "Furniture",
+    "name": "Days of Feast Table",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_prop_feast_table.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/2020Feast_Table_v2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Table" },
+    "order": 5001
+  },
+  {
+    "id": 1881,
+    "guid": "RFMVpbZOil",
+    "type": "Necklace",
+    "name": "Feast Necktie",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Icon_pendant_holly_pendant.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Holly_necklace_v2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Necktie" },
+    "order": 10601
+  },
+  {
+    "id": 1882,
+    "guid": "FG23AJzDOD",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1883,
+    "guid": "jbcKW_vibd",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1884,
+    "guid": "7lrenJRCtn",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1885,
+    "guid": "Rljse8NQ2x",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1886,
+    "guid": "m28yndfnC9",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1887,
+    "guid": "UuP-Vujj8D",
+    "type": "Prop",
+    "name": "Winter Feast Pillow",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Days_of_Feast_Cushion.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Feast_pillow.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Pillow" },
+    "order": 5101
+  },
+  {
+    "id": 1888,
+    "guid": "hZr0q9nYbz",
+    "type": "Hair",
+    "name": "Winter Feast Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Days_of_Feast_Whool_hat_icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Wool_hat_hair_2021.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Hat" },
+    "order": 10095
+  },
+  {
+    "id": 1889,
+    "guid": "c0_xJdJKvM",
+    "type": "Necklace",
+    "name": "Winter Feast Scarf",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Days_of_Feast_Scarf_icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Feast_Scarf.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Scarf" },
+    "order": 10602
+  },
+  {
+    "id": 1890,
+    "guid": "Gsl445SG4s",
+    "type": "Music",
+    "name": "Music Sheet #E1",
+    "sheet": "E1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 201
+  },
+  {
+    "id": 1891,
+    "guid": "pI8jvyHkY1",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1892,
+    "guid": "l-4I9LgjeL",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1893,
+    "guid": "4i2CdmSgmX",
+    "type": "Prop",
+    "name": "Winter Feast Snowglobe",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Days_of_Feast_Snow_Globe_icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Feast_Snow_globe.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Snowglobe" },
+    "order": 5201
+  },
+  {
+    "id": 1894,
+    "guid": "VZyiD3Wmtp",
+    "type": "Hat",
+    "name": "Snowflake Hair Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Days_of_Feast_Snowflake_icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Snowflake_Pin.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Hair_Accessory" },
+    "order": 11001
+  },
+  {
+    "id": 1895,
+    "guid": "B3YJxxJKJX",
+    "type": "Cape",
+    "name": "Winter Ancestor Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Days_of_Feast_Elder_Cape_icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Feast_Elder_Cape_back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Ancestor_Cape" },
+    "order": 10503
+  },
+  {
+    "id": 1896,
+    "guid": "9N8OVpagTM",
+    "type": "Special",
+    "name": "Hermit Valley Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 1897,
+    "guid": "TLljjPrjAq",
+    "type": "FaceAccessory",
+    "name": "Feast Goggles",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Days-of-Feast-Yeti-Goggles-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Feast-Yeti-Goggles.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Goggles" },
+    "order": 701
+  },
+  {
+    "id": 1898,
+    "guid": "ZvfG2eU17I",
+    "type": "Furniture",
+    "name": "Snowkid",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Days-of-Feast-Snowman-Prop-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Days-of-Feast-Snowman-prop.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowkid_Prop" },
+    "order": 5501
+  },
+  {
+    "id": 1899,
+    "guid": "sZRjoCGw_u",
+    "type": "Prop",
+    "name": "Tournament Skyball Set",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Days-of-Feast-Sky-Ball-Goal-Prop-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Feast-Sky-Ball-Goal-Prop-image.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Tournament_Skyball_Set" },
+    "order": 5401
+  },
+  {
+    "id": 1900,
+    "guid": "Nep9ocMylo",
+    "type": "Cape",
+    "name": "Cozy Hermit Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Days-of-Feast-Yeti-Fur-Cape-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Days-of-Feast-Yeti-Fur-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape" },
+    "order": 10504
+  },
+  // #region Days of Feast (2023)
+  {
+    "id": 1976,
+    "guid": "1ALFFNohD1",
+    "name": "Winter Pinecone Hair Clip",
+    "type": "Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Winter-Pinecone-Headpiece-icon.png",
+    "order": 11512
+  },
+  {
+    "id": 1977,
+    "guid": "9-5LbKZZQz",
+    "name": "Winter Feast Snowboard",
+    "type": "Held",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Winter-Feast-Snowboard-icon.png",
+    "order": 4101
+  },
+  {
+    "id": 1981,
+    "guid": "PedXtZNCdm",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1978,
+    "guid": "dvoSMxPFL2",
+    "name": "Course Creation Prop",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Course-Creation-Prop-icon.png",
+    "order": 6002
+  },
+  {
+    "id": 1982,
+    "guid": "9wdVZNLu1I",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1979,
+    "guid": "pT4AVkYVZP",
+    "name": "Cozy Hermit Boots",
+    "type": "Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Cozy-Hermit-Boots-icon.png",
+    "order": 10251
+  },
+  {
+    "id": 1980,
+    "guid": "quSFDuWUoV",
+    "name": "Winter Quilted Cape",
+    "type": "Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
+    "order": 10505
+  },
+  {
+    "id": 1983,
+    "guid": "XhenTKce1d",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  // #endregion
+]

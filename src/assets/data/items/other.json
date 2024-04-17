@@ -1,0 +1,12 @@
+[
+  // #region Steam
+  {
+    "id": 2080,
+    "guid": "NfhWog1-AK",
+    "type": "Prop",
+    "name": "Companion Cube",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Companion-Cube-icon.png",
+    "order": 6001
+  },
+  // #endregion
+]

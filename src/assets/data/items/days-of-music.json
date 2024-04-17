@@ -1,0 +1,119 @@
+[
+  // #region Harmony Hall
+  {
+    "id": 1923,
+    "guid": "jMLNrp_Yw8",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1924,
+    "guid": "pTJsrRigHt",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1925,
+    "guid": "SrABR87rf4",
+    "type": "Music",
+    "name": "Music Sheet #HH1",
+    "sheet": "HH1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/MusicSheet02-Ray.png",
+    "order": 102
+  },
+  {
+    "id": 1926,
+    "guid": "Mh5ipZClSq",
+    "type": "Music",
+    "name": "Music Sheet #HH2",
+    "sheet": "HH2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/MusicSheet03-Ray.png",
+    "order": 103
+  },
+  {
+    "id": 1927,
+    "guid": "WDyyhzD1Dk",
+    "type": "Music",
+    "name": "Music Sheet #HH3",
+    "sheet": "HH3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/MusicSheet04-Ray.png",
+    "order": 104
+  },
+  {
+    "id": 1928,
+    "guid": "MFDYVKkfuf",
+    "type": "Music",
+    "name": "Music Sheet #HH4",
+    "sheet": "HH4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/MusicSheet05-Ray.png",
+    "order": 105
+  },
+  {
+    "id": 1929,
+    "guid": "q6MtlTHWMK",
+    "type": "Hat",
+    "name": "Musical Hairpin",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/SOPerformance-hair-accessory-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/SOPerformance-hair-accessory.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin" },
+    "order": 10801
+  },
+  {
+    "id": 1930,
+    "guid": "rMC7kQhgYk",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Triumph Saxophone",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Triumph-Saxophone-instrument-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Triumph-Saxophone-instrument.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone" },
+    "order": 3402
+  },
+  {
+    "id": 1931,
+    "guid": "6uObjDNBAm",
+    "type": "Hair",
+    "name": "Marching Band Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Musical-Hall-Marching-Band-Hat.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat" },
+    "order": 10034
+  },
+  {
+    "id": 1932,
+    "guid": "pUCJ7_2QWR",
+    "type": "Music",
+    "name": "Music Sheet #HH5",
+    "sheet": "HH5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 101
+  },
+  {
+    "id": 1933,
+    "guid": "5V_r38RVGd",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Triumph Violin",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Triumph-Violon-Instrument-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Triumph-Violon-Instrument.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin" },
+    "order": 3401
+  },
+  {
+    "id": 1934,
+    "guid": "rJb-2yon2M",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1935,
+    "guid": "jaYkyH7kRV",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  // #endregion
+]

@@ -1,0 +1,224 @@
+[
+  {
+    "id": 1789,
+    "guid": "4XMYa4Wj-M",
+    "type": "FaceAccessory",
+    "name": "Rainbow Braid",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Rainbow_tassle_v2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Braid" },
+    "order": 1601
+  },
+  {
+    "id": 1790,
+    "guid": "BUTwFt6PGm",
+    "type": "Cape",
+    "name": "Rainbow Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Icon_cape_rainbow-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Rainbow_cape_back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Cape" },
+    "order": 10302
+  },
+  {
+    "id": 1791,
+    "guid": "EJok2mGotV",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1792,
+    "guid": "mcOKuxsaZN",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1793,
+    "guid": "AxTtrCwyk7",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1794,
+    "guid": "2LbATcLuxE",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1795,
+    "guid": "3yvqidoaoB",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1796,
+    "guid": "wpqgJDwbFe",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1797,
+    "guid": "KQRXGIBq17",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1798,
+    "guid": "wOwsBf1jXn",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1799,
+    "guid": "zXpvNVNGvR",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1800,
+    "guid": "E7IOFDe4AR",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1801,
+    "guid": "6wkd0VIgYR",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1802,
+    "guid": "hf004Ftxtx",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1803,
+    "guid": "trb50TnftT",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1804,
+    "guid": "KpS-2FdasB",
+    "type": "Hat",
+    "name": "Rainbow Hair Flower",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Icon_hair_rainbow_flower.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Rainbow_flower_headpiece_v2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Hair_Flower" },
+    "order": 10101
+  },
+  {
+    "id": 1805,
+    "guid": "cMLcvRtjoh",
+    "type": "Hair",
+    "name": "Rainbow Beanie Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Icon_hair_rainbow_hat.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Rainbow_hair_v2.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat" },
+    "order": 10024
+  },
+  {
+    "id": 1806,
+    "guid": "gNWmRUkpFo",
+    "type": "Hat",
+    "name": "Double Rainbow Flower",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Double_Rainbow_Flower" },
+    "order": 10102
+  },
+  {
+    "id": 1807,
+    "guid": "f-X2dDeB9w",
+    "type": "FaceAccessory",
+    "name": "Rainbow Earrings",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Rainbow-2022-earring-accessory.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Earring" },
+    "order": 1602
+  },
+  {
+    "id": 1808,
+    "guid": "j51xlBBIZX",
+    "type": "FaceAccessory",
+    "name": "Rainbow Headphones",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Rainbow_2022-_headphones.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Headphones" },
+    "order": 1801
+  },
+  {
+    "id": 1809,
+    "guid": "0rrPORrk7O",
+    "type": "Outfit",
+    "name": "Rainbow Trousers",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Days-of-Rainbow-2022-pant-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Days_of_Rainbow_2022-Trousers.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Trousers" },
+    "order": 10300
+  },
+  {
+    "id": 1810,
+    "guid": "N5_6M8ooTl",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1811,
+    "guid": "W5Y_p83sp1",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 1812,
+    "guid": "wcZ2_DxHMp",
+    "type": "Special",
+    "name": "Oreo Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 1813,
+    "guid": "9ETwx3n-UZ",
+    "type": "Outfit",
+    "name": "Dark Rainbow Tunic",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Days-of-Color-Dark-Rainbow-Tunic-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Days-of-Colors-Dark-Rainbow-Outfit-front.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Tunic" },
+    "order": 10301
+  },
+  {
+    "id": 1814,
+    "guid": "krzIL86J83",
+    "type": "FaceAccessory",
+    "name": "Dark Rainbow Earrings",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Days-of-Colors-Dark-Rainbow-Earring.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color#Dark_Rainbow_Earring_Pack" },
+    "order": 1802
+  },
+  {
+    "id": 1815,
+    "guid": "2OuY3ABFCZ",
+    "type": "Cape",
+    "name": "Dark Rainbow Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Days-of-Color-Dark-Rainbow-Cape-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Days-of-Color-Dark-Rainbow-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Cape" },
+    "order": 10301
+  },
+]

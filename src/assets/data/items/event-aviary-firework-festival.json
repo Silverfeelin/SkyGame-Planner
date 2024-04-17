@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1956,
+    "guid": "YYi734W-IG",
+    "type": "Held",
+    "name": "Festival Scepter",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Festival-Scepter-prop.png",
+    "order": 4022
+  },
+  {
+    "id": 1957,
+    "guid": "v6ZqvI6A_L",
+    "type": "FaceAccessory",
+    "name": "Festival Earrings",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Festival-Earrings-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Festival-Earrings.png",
+    "order": 2013
+  },
+  {
+    "id": 1958,
+    "guid": "Vo8H0zNFLE",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+]

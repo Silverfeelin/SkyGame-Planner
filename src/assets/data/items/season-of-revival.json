@@ -1,0 +1,430 @@
+[
+  // #region Revival Guide
+  {
+    "id": 639,
+    "guid": "ueFGjjCL-f",
+    "type": "Quest",
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 640,
+    "guid": "iPKhdXjEDN",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 641,
+    "guid": "5pM1uL5euH",
+    "type": "Quest",
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 642,
+    "guid": "BXWuIYsB6a",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 643,
+    "guid": "UtjY-O5GfN",
+    "type": "Quest",
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 644,
+    "guid": "x9W_UOZ61W",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 645,
+    "guid": "RrWXNJ8_8U",
+    "type": "Quest",
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 646,
+    "guid": "-O5kRr08TU",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1967,
+    "guid": "BkvIh_1cID",
+    "type": "Special",
+    "name": "Hug",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
+  },
+  {
+    "id": 1968,
+    "guid": "LPhMFiY1Gn",
+    "type": "Quest",
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 1969,
+    "guid": "9ZSG_CwRwt",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1970,
+    "guid": "2htYztTTLh",
+    "type": "Quest",
+    "name": "Quest 6",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 1971,
+    "guid": "_5Z1Ee33iH",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1972,
+    "guid": "7NBQOMY8Os",
+    "type": "Quest",
+    "name": "Quest 7",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 1973,
+    "guid": "N2BbtfMv-4",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1974,
+    "guid": "LKCSYIoEKs",
+    "type": "Quest",
+    "name": "Quest 8",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 1975,
+    "guid": "xB3Auq2DFR",
+    "name": "Hopeful Steward Hair",
+    "type": "Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Revival-Hair-icon.png",
+    "order": 2904
+  },
+  {
+    "id": 1984,
+    "guid": "C2QyP140Rm",
+    "type": "Quest",
+    "name": "Quest 9",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 1985,
+    "guid": "6J0eF-rleF",
+    "type": "Quest",
+    "name": "Quest 10",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  // Ultimates
+  {
+    "id": 647,
+    "guid": "9giKaCTtFV",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "name": "Revival Pendant",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Season-of-Revival-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Season-of-Revival-Pendant.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts" },
+    "order": 19
+  },
+  {
+    "id": 648,
+    "guid": "MhNSP7HiqL",
+    "type": "Hair",
+    "group": "Ultimate",
+    "name": "Revival Ultimate Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Revival-Ultimate-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Revival-Ultimate-Hair-front.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts" },
+    "order": 2903
+  },
+  {
+    "id": 649,
+    "guid": "Du0Ciu8WX7",
+    "type": "Cape",
+    "group": "Ultimate",
+    "name": "Revival Ultimate Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Revival-Ultimate-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Revival-Ultimate-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts" },
+    "order": 2905
+  },
+  // #endregion
+  // #region Revival
+  // #region Vestige of a Deserted Oasis
+  {
+    "id": 1693,
+    "guid": "SuYJ2QcMi9",
+    "type": "Hair",
+    "name": "Vestige of a Deserted Oasis Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Vestige-of-a-Deserted-Oasis-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Vestige-of-a-Deserted-Oasis-Hair.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Hair" },
+    "order": 2901
+  },
+  {
+    "id": 1694,
+    "guid": "MaAIvE7uun",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1695,
+    "guid": "wSMvvBV1xW",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1696,
+    "guid": "oVI6Qp4U_2",
+    "type": "Cape",
+    "name": "Vestige of a Deserted Oasis Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Vestige-of-a-Deserted-Oasis-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Vestige-of-a-Deserted-Oasis-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Cape" },
+    "order": 2901
+  },
+  {
+    "id": 1697,
+    "guid": "c8bmChuIm9",
+    "type": "Shoes",
+    "name": "Vestige of a Deserted Oasis Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Vestige-of-a-Deserted-Oasis-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Vestige-of-a-Deserted-Oasis-Shoes.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Shoes" },
+    "order": 1901
+  },
+  {
+    "id": 1698,
+    "guid": "bMuaPGLyP_",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1699,
+    "guid": "9lQmnGul6W",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Revival-seasonal-heart-icon.png"
+  },
+  // #endregion
+  // #region Memory of a Lost Village
+  {
+    "id": 1700,
+    "guid": "IrDGlTPHpf",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1701,
+    "guid": "0RcW7pTxDH",
+    "type": "Cape",
+    "name": "Memory of a Lost Village Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Memory-of-a-Lost-Village-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Memory-of-a-Lost-Village-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Cape" },
+    "order": 2904
+  },
+  {
+    "id": 1702,
+    "guid": "EI1hvJB4Pu",
+    "type": "Outfit",
+    "name": "Memory of a Lost Village Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Memory-of-a-Lost-Village-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Memory-of-a-Lost-Village-Outfit.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Outfit" },
+    "order": 1901
+  },
+  {
+    "id": 1703,
+    "guid": "DiJVArPj56",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1704,
+    "guid": "MZiSsh11MB",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1705,
+    "guid": "Ym_ptDkaZQ",
+    "type": "Hair",
+    "name": "Memory of a Lost Village Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Memory-of-a-Lost-Village-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Memory-of-a-Lost-Village-Hair.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Hair" },
+    "order": 2902
+  },
+  {
+    "id": 1706,
+    "guid": "9Tlqc5zsck",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Revival-seasonal-heart-icon.png"
+  },
+  // #endregion
+  // #region Echo of an Abandoned Refuge
+  {
+    "id": 1707,
+    "guid": "Dv15Vv7JmA",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1708,
+    "guid": "Yf9KTdBF0m",
+    "type": "Shoes",
+    "name": "Echo of an Abandoned Refuge Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Echo-of-an-Abandoned-Refuge-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Echo-of-an-Abandoned-Refuge-Shoes.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Shoes" },
+    "order": 1902
+  },
+  {
+    "id": 1709,
+    "guid": "r7n2STEeMu",
+    "type": "Music",
+    "name": "Music Sheet 38",
+    "sheet": "38",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 38
+  },
+  {
+    "id": 1710,
+    "guid": "fBi8GUvjF_",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1711,
+    "guid": "XAj3JHqHRW",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1712,
+    "guid": "bXIUFu8eZ3",
+    "type": "Cape",
+    "name": "Echo of an Abandoned Refuge Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Echo-of-an-Abandoned-Refuge-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Echo-of-an-Abandoned-Refuge-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Cape" },
+    "order": 2902
+  },
+  {
+    "id": 1713,
+    "guid": "KPTK5xLHw5",
+    "type": "Hat",
+    "name": "Echo of an Abandoned Refuge Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Echo-of-an-Abandoned-Refuge-Head-accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Echo-of-an-Abandoned-Refuge-Head-accessory.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Hair_Accessory" },
+    "order": 2901
+  },
+  {
+    "id": 1714,
+    "guid": "JlPKwQYFDO",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1715,
+    "guid": "FTbhzuNDhM",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Revival-seasonal-heart-icon.png"
+  },
+  // #endregion
+  // #region Remnant of a Forgotten Haven
+  {
+    "id": 1716,
+    "guid": "xpTy8a61UM",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1717,
+    "guid": "94Mo00bQ8p",
+    "type": "Shoes",
+    "name": "Remnant of a Forgotten Haven Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Remnant-of-a-Forgotten-Haven-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Remnant-of-a-Forgotten-Haven-Shoes.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Shoes" },
+    "order": 1903
+  },
+  {
+    "id": 1718,
+    "guid": "BudEUoZ6ZC",
+    "type": "Cape",
+    "name": "Remnant of a Forgotten Haven Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Remnant-of-a-Forgotten-Haven-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Remnant-of-a-Forgotten-Haven-Cape-back.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Cape" },
+    "order": 2903
+  },
+  {
+    "id": 1719,
+    "guid": "_x-7M3LVAu",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1720,
+    "guid": "YHiMwcvB9X",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1721,
+    "guid": "O3iQEnpoV5",
+    "type": "Hat",
+    "name": "Remnant of a Forgotten Haven Hair Ribbon",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Remnant-of-a-Forgotten-Haven-Hair-accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Remnant-of-a-Forgotten-Haven-Hair-accessory.png",
+    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Hair_Accessory" },
+    "order": 2902
+  },
+  {
+    "id": 1722,
+    "guid": "QQZkgJ8KnJ",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Revival-seasonal-heart-icon.png"
+  },
+  // #endregion
+  // #endregion
+]
