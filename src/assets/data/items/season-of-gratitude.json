@@ -1,5 +1,4 @@
 [
-  // Gratitude Guide
   {
     "id": 368,
     "guid": "-InWbdW4EP",
@@ -8,8 +7,10 @@
     "name": "Gratitude Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/1_Gratitude.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Gratitude_pendant.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts" },
-    "order": 1
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
+    },
+    "order": 73
   },
   {
     "id": 369,
@@ -19,16 +20,19 @@
     "name": "Gratitude Ultimate Deer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Icon_mask_gratitude_ult_deer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mask20-Seasonal_SoG_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts" },
-    "order": 105
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
+    },
+    "order": 112
   },
-  // Sassy Drifter
   {
     "id": 650,
     "guid": "SadZcfujh7",
     "type": "Stance",
     "name": "Sassy Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Mimi-4117_02_sassy_drifter_emote.png",
     "order": 61
   },
@@ -39,8 +43,10 @@
     "name": "Sassy Drifter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Mimi-4117_02_sassy_drifter_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Hair40-SeasonOfGratitude_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Hair" },
-    "order": 1101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Hair"
+    },
+    "order": 272
   },
   {
     "id": 652,
@@ -63,8 +69,10 @@
     "name": "Sassy Drifter Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Mimi-4117_02_sassy_drifter_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SoG2-2019_Cat_Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Mask" },
-    "order": 106
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Mask"
+    },
+    "order": 129
   },
   {
     "id": 655,
@@ -80,13 +88,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Stretching Guru
   {
     "id": 657,
     "guid": "bXiNLPtQyh",
     "type": "Emote",
     "name": "Yoga",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png",
     "order": 691
@@ -96,7 +105,9 @@
     "guid": "hFbdz8Wvye",
     "type": "Emote",
     "name": "Yoga",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
   },
@@ -107,8 +118,10 @@
     "name": "Stretching Guru Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Mimi-4117_02_stretching_guru_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/SoG2-2019_Hat.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Hair" },
-    "order": 1103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Hair"
+    },
+    "order": 274
   },
   {
     "id": 660,
@@ -122,7 +135,9 @@
     "guid": "j6B0Gx5Bra",
     "type": "Emote",
     "name": "Yoga",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
   },
@@ -131,7 +146,9 @@
     "guid": "JuLs_5VIyb",
     "type": "Emote",
     "name": "Yoga",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
   },
@@ -149,8 +166,10 @@
     "name": "Stretching Guru Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Icon_cape_gratitude_red-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape1-Season_of_Gratitude_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape" },
-    "order": 1002
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape"
+    },
+    "order": 564
   },
   {
     "id": 665,
@@ -166,13 +185,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Provoking Performer
   {
     "id": 667,
     "guid": "YnKXRCy5y9",
     "type": "Emote",
     "name": "Kabuki",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png",
     "order": 341
@@ -182,7 +202,9 @@
     "guid": "LPnwWeKlf0",
     "type": "Emote",
     "name": "Kabuki",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
   },
@@ -207,7 +229,9 @@
     "guid": "oTQGUs9w8K",
     "type": "Emote",
     "name": "Kabuki",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
   },
@@ -216,7 +240,9 @@
     "guid": "znqKbunN1C",
     "type": "Emote",
     "name": "Kabuki",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
   },
@@ -227,8 +253,10 @@
     "name": "Provoking Performer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_02_provoking_performer_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Hair41-SeasonOfGratitude_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Hair" },
-    "order": 1102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Hair"
+    },
+    "order": 273
   },
   {
     "id": 674,
@@ -237,8 +265,10 @@
     "name": "Provoking Performer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Mimi-4117_02_provoking_performer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Mask18-Seasonal_SoG_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Mask" },
-    "order": 101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Mask"
+    },
+    "order": 130
   },
   {
     "id": 675,
@@ -261,13 +291,14 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // Leaping Dancer
   {
     "id": 678,
     "guid": "2EjYbZlJwr",
     "type": "Emote",
     "name": "Leap",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png",
     "order": 441
@@ -277,7 +308,9 @@
     "guid": "Q5LhJRWFiF",
     "type": "Emote",
     "name": "Leap",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
   },
@@ -289,8 +322,10 @@
     "name": "Small Bell",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_instrument.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Gratitude-Leaping-Dancer-Small-Bell.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Instrument" },
-    "order": 2101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Instrument"
+    },
+    "order": 431
   },
   {
     "id": 681,
@@ -304,7 +339,9 @@
     "guid": "QVo-MuF4gw",
     "type": "Emote",
     "name": "Leap",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
   },
@@ -313,7 +350,9 @@
     "guid": "Q4z_OukNlE",
     "type": "Emote",
     "name": "Leap",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
   },
@@ -331,8 +370,10 @@
     "name": "Leaping Dancer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Mimi-4117_02_leaping_dancer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Mask19-Seasonal_SoG_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Mask" },
-    "order": 102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Mask"
+    },
+    "order": 131
   },
   {
     "id": 686,
@@ -348,13 +389,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Saluting Protector
   {
     "id": 688,
     "guid": "zRlUm_oL2p",
     "type": "Emote",
     "name": "Acknowledge",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png",
     "order": 591
@@ -364,7 +406,9 @@
     "guid": "tUzGovgVRK",
     "type": "Emote",
     "name": "Acknowledge",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
   },
@@ -389,7 +433,9 @@
     "guid": "dor3unMei7",
     "type": "Emote",
     "name": "Acknowledge",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
   },
@@ -398,7 +444,9 @@
     "guid": "K82EgKZAwe",
     "type": "Emote",
     "name": "Acknowledge",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
   },
@@ -409,8 +457,10 @@
     "name": "Saluting Protector Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Icon_cape_gratitude_white-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Gratitude_cape_white_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Cape" },
-    "order": 1001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Cape"
+    },
+    "order": 563
   },
   {
     "id": 695,
@@ -419,8 +469,10 @@
     "name": "Saluting Protector Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_02_saluting_protector_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Mask17-Seasonal_SoG_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Mask" },
-    "order": 103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Mask"
+    },
+    "order": 132
   },
   {
     "id": 696,
@@ -443,13 +495,14 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // Greeting Shaman
   {
     "id": 699,
     "guid": "NpbuKXMxKS",
     "type": "Emote",
     "name": "Kung Fu",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png",
     "order": 601
@@ -459,7 +512,9 @@
     "guid": "5QWjZVAA-9",
     "type": "Emote",
     "name": "Kung Fu",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
   },
@@ -478,15 +533,19 @@
     "name": "Large Bell",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mimi-4117_02_greeting_shaman_instrument.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Gratitude-Greeting-Shaman-Large_bell.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Instrument" },
-    "order": 2201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Instrument"
+    },
+    "order": 432
   },
   {
     "id": 703,
     "guid": "j3BNKt3Qmi",
     "type": "Emote",
     "name": "Kung Fu",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
   },
@@ -495,7 +554,9 @@
     "guid": "7MpXlundFS",
     "type": "Emote",
     "name": "Kung Fu",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
   },
@@ -513,8 +574,10 @@
     "name": "Greeting Shaman Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Mimi-4117_02_greeting_shaman_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Mask16-Seasonal_SoG_2019.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Mask" },
-    "order": 104
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Mask"
+    },
+    "order": 133
   },
   {
     "id": 707,

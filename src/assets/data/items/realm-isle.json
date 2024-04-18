@@ -1,11 +1,12 @@
 [
-  // Pointing Candlemaker
   {
     "id": 8,
     "guid": "kvjLVjWmZ9",
     "type": "Emote",
     "name": "Point",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png",
     "order": 101
@@ -15,7 +16,9 @@
     "guid": "FEF2-KzQfp",
     "type": "Emote",
     "name": "Point",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
   },
@@ -26,8 +29,10 @@
     "name": "Pointing Candlemaker Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/PointingCandlemaker-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Hair18-Short_Cowlick.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Hair" },
-    "order": 83
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Hair"
+    },
+    "order": 245
   },
   {
     "id": 11,
@@ -55,7 +60,9 @@
     "guid": "GAEC5m-uk9",
     "type": "Emote",
     "name": "Point",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
   },
@@ -64,7 +71,9 @@
     "guid": "c9GTqnZ2-q",
     "type": "Emote",
     "name": "Point",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/PointingCandlemaker-1.png"
   },
@@ -75,7 +84,9 @@
     "name": "Pointing Candlemaker Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/PointingCandlemaker-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Legs07.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pointing_Candlemaker#Outfit"
+    },
     "order": 5
   },
   {
@@ -85,13 +96,14 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // Ushering Stargazer
   {
     "id": 18,
     "guid": "qbTj75q8dk",
     "type": "Emote",
     "name": "Come",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png",
     "order": 111
@@ -101,7 +113,9 @@
     "guid": "9MxRR5To8o",
     "type": "Emote",
     "name": "Come",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
   },
@@ -112,8 +126,10 @@
     "name": "Ushering Stargazer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/UsheringStargazer-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Hair06-Single_Ponytail.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Hair" },
-    "order": 22
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Hair"
+    },
+    "order": 238
   },
   {
     "id": 21,
@@ -141,7 +157,9 @@
     "guid": "C5uj1dP42Q",
     "type": "Emote",
     "name": "Come",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
   },
@@ -150,7 +168,9 @@
     "guid": "NFNgmugp6o",
     "type": "Emote",
     "name": "Come",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/UsheringStargazer-1.png"
   },
@@ -161,7 +181,9 @@
     "name": "Ushering Stargazer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/UsheringStargazer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Legs06.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ushering_Stargazer#Outfit"
+    },
     "order": 8
   },
   {
@@ -171,13 +193,14 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // Rejecting Voyager
   {
     "id": 28,
     "guid": "Dhhtyjsi1E",
     "type": "Emote",
     "name": "No Thanks",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png",
     "order": 121
@@ -187,7 +210,9 @@
     "guid": "I101mvqSaI",
     "type": "Emote",
     "name": "No Thanks",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
   },
@@ -205,8 +230,10 @@
     "name": "Rejecting Voyager Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/RejectingVoyager-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Hair34-One_Side_Short.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Hair" },
-    "order": 154
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Hair"
+    },
+    "order": 253
   },
   {
     "id": 32,
@@ -227,7 +254,9 @@
     "guid": "eAWuSSOshD",
     "type": "Emote",
     "name": "No Thanks",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
   },
@@ -236,7 +265,9 @@
     "guid": "JXgUCqaMMt",
     "type": "Emote",
     "name": "No Thanks",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/RejectingVoyager-1.png"
   },
@@ -247,8 +278,10 @@
     "name": "Rejecting Voyager Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/RejectingVoyager-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Mask02-Simple_horizontal.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Mask" },
-    "order": 1
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rejecting_Voyager#Mask"
+    },
+    "order": 197
   },
   {
     "id": 37,

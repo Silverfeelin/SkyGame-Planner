@@ -1,5 +1,4 @@
 [
-  // #region Flight Guide
   {
     "id": 476,
     "guid": "4Yk3OcGKKp",
@@ -8,8 +7,10 @@
     "name": "Flight Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season_of_flight_pendant.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
-    "order": 11
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
+    },
+    "order": 83
   },
   {
     "id": 477,
@@ -19,8 +20,10 @@
     "name": "Flight Ultimate Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Season_of_flight_headpiece_4_ult.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
-    "order": 2104
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
+    },
+    "order": 379
   },
   {
     "id": 478,
@@ -30,8 +33,10 @@
     "name": "Flight Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_flight_pants_1_ult.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts" },
-    "order": 1101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
+    },
+    "order": 24
   },
   {
     "id": 479,
@@ -117,15 +122,14 @@
     "name": "Hug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
   },
-  // #endregion
-  // #region Flight
-  // #region Lively Navigator
   {
     "id": 1325,
     "guid": "mugeVvl6Vc",
     "type": "Emote",
     "name": "Navigate",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png",
     "order": 841
@@ -135,7 +139,9 @@
     "guid": "H6h0oeRVom",
     "type": "Emote",
     "name": "Navigate",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
   },
@@ -153,8 +159,10 @@
     "name": "Lively Navigator Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Icon_season_of_flight_hair_3_lively_navigator.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Season_of_flight_hair_3_lively_navigator_gs.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair" },
-    "order": 2104
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair"
+    },
+    "order": 320
   },
   {
     "id": 1329,
@@ -163,8 +171,10 @@
     "name": "Lively Navigator Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Season_of_flight_headpiece_2_lively_navigator.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory" },
-    "order": 2103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory"
+    },
+    "order": 378
   },
   {
     "id": 1330,
@@ -178,7 +188,9 @@
     "guid": "kkRo6gnuo9",
     "type": "Emote",
     "name": "Navigate",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
   },
@@ -187,7 +199,9 @@
     "guid": "VC9yqYv8O9",
     "type": "Emote",
     "name": "Navigate",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
   },
@@ -205,8 +219,10 @@
     "name": "Lively Navigator Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Season_of_flight_cape_lively_navigator_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape" },
-    "order": 2102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
+    },
+    "order": 597
   },
   {
     "id": 1335,
@@ -238,14 +254,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Light Whisperer
   {
     "id": 1339,
     "guid": "YiLDQF0uDU",
     "type": "Call",
     "name": "Baby Manta Call",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Season_of_Flight_-_Light_Whisperer_icon.png",
     "order": 71
   },
@@ -263,8 +279,10 @@
     "name": "Light Whisperer Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_flight_headpiece_1_light_whisperer.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory" },
-    "order": 2101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory"
+    },
+    "order": 376
   },
   {
     "id": 1342,
@@ -273,8 +291,10 @@
     "name": "Light Whisperer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Icon_season_of_flight_hair_4_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Season_of_flight_hair_4_light_whisperer_gs.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair" },
-    "order": 2103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair"
+    },
+    "order": 319
   },
   {
     "id": 1343,
@@ -297,8 +317,10 @@
     "name": "Light Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_flight_cape_light_whisperer_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape" },
-    "order": 2101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
+    },
+    "order": 596
   },
   {
     "id": 1346,
@@ -307,8 +329,10 @@
     "name": "Light Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Season_of_flight_pants_4_light_whisperer.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit" },
-    "order": 1104
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit"
+    },
+    "order": 27
   },
   {
     "id": 1347,
@@ -331,14 +355,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Tinkering Chimesmith
   {
     "id": 1348,
     "guid": "Jgp0s63dVZ",
     "type": "Stance",
     "name": "Tinker Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Season_of_Flight_-_Tinkering_Chimesmith_icon.png",
     "order": 101
   },
@@ -356,8 +380,10 @@
     "name": "Tinkering Chimesmith Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Season_of_flight_pants_3_tinkering_chimesmith_gs.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit" },
-    "order": 1103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit"
+    },
+    "order": 26
   },
   {
     "id": 1351,
@@ -366,8 +392,10 @@
     "name": "Tinkering Chimesmith Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_flight_headpiece_3_tinkering_chimesmith.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory" },
-    "order": 2102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory"
+    },
+    "order": 377
   },
   {
     "id": 1352,
@@ -391,8 +419,10 @@
     "name": "Kalimba",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Icon_season_of_flight_instrument_kalimba.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Flight-Tinkering-Chimesmith-Kalimba.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument" },
-    "order": 1301
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument"
+    },
+    "order": 424
   },
   {
     "id": 1355,
@@ -401,8 +431,10 @@
     "name": "Tinkering Chimesmith Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_season_of_flight_hair_2_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Season_of_flight_hair_2_tinkering_chimesmith.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair" },
-    "order": 2102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair"
+    },
+    "order": 318
   },
   {
     "id": 1356,
@@ -425,14 +457,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Talented Builder
   {
     "id": 1359,
     "guid": "b_qHNPnLGc",
     "type": "Emote",
     "name": "Voilà",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png",
     "order": 831
@@ -442,7 +474,9 @@
     "guid": "zRFUMdaCAK",
     "type": "Emote",
     "name": "Voilà",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
   },
@@ -469,8 +503,10 @@
     "name": "Talented Builder Neckpiece",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Icon_season_of_flight_neckpiece_talented_builder.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Season_of_flight_neckpiece_talented_builder.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory" },
-    "order": 1101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory"
+    },
+    "order": 96
   },
   {
     "id": 1364,
@@ -484,7 +520,9 @@
     "guid": "AlBQo1ngBi",
     "type": "Emote",
     "name": "Voilà",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
   },
@@ -493,7 +531,9 @@
     "guid": "0bY0v6h4ci",
     "type": "Emote",
     "name": "Voilà",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
   },
@@ -511,8 +551,10 @@
     "name": "Talented Builder Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Season_of_flight_pants_2_talented_builder_gs.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit" },
-    "order": 1102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit"
+    },
+    "order": 25
   },
   {
     "id": 1369,
@@ -521,8 +563,10 @@
     "name": "Talented Builder Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_season_of_flight_hair_1_talented_builder.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season_of_flight_hair_1_talented_builder_gs.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair" },
-    "order": 2101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair"
+    },
+    "order": 317
   },
   {
     "id": 1953,
@@ -551,7 +595,5 @@
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
-  },
-  // #endregion
-  // #endregion
+  }
 ]

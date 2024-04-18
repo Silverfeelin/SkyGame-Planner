@@ -1,5 +1,4 @@
 [
-  // #region Harmony Hall
   {
     "id": 1923,
     "guid": "jMLNrp_Yw8",
@@ -57,8 +56,10 @@
     "name": "Musical Hairpin",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/SOPerformance-hair-accessory-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/SOPerformance-hair-accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin" },
-    "order": 10801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin"
+    },
+    "order": 401
   },
   {
     "id": 1930,
@@ -68,8 +69,10 @@
     "name": "Triumph Saxophone",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Triumph-Saxophone-instrument-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Triumph-Saxophone-instrument.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone" },
-    "order": 3402
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone"
+    },
+    "order": 448
   },
   {
     "id": 1931,
@@ -78,8 +81,10 @@
     "name": "Marching Band Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Harmony-Hall-Marching-Band-Hat-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Musical-Hall-Marching-Band-Hat.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat" },
-    "order": 10034
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat"
+    },
+    "order": 363
   },
   {
     "id": 1932,
@@ -98,8 +103,10 @@
     "name": "Triumph Violin",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Triumph-Violon-Instrument-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Triumph-Violon-Instrument.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin" },
-    "order": 3401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin"
+    },
+    "order": 447
   },
   {
     "id": 1934,
@@ -114,6 +121,5 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
-  },
-  // #endregion
+  }
 ]

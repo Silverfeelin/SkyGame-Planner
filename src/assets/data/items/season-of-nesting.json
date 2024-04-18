@@ -1,5 +1,4 @@
 [
-  // #region Nesting Guide
   {
     "id": 2081,
     "guid": "sTirXPanvw",
@@ -71,7 +70,7 @@
     "name": "Nesting Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Season-of-Nesting-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Season-of-Nesting-Pendant.png",
-    "order": 21
+    "order": 93
   },
   {
     "id": 2091,
@@ -81,7 +80,7 @@
     "name": "Nesting Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Nesting-Ultimate-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Nesting-Ultimate-Outfit-front.png",
-    "order": 2101
+    "order": 50
   },
   {
     "id": 2092,
@@ -91,11 +90,8 @@
     "name": "Nesting Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Nesting-Guide-Mannequin-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Nesting-Guide-Mannequin-Figurine-Prop.png",
-    "order": 7006
+    "order": 540
   },
-  // #endregion
-
-  // #region Nesting Nook
   {
     "id": 2093,
     "guid": "7i6ro485Ra",
@@ -103,7 +99,7 @@
     "name": "Nesting Nook Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Nesting-Nook-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Nesting-Nook-Headpiece.png",
-    "order": -1
+    "order": 219
   },
   {
     "id": 2094,
@@ -112,7 +108,7 @@
     "name": "Nesting Nook Couch",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Nesting-Nook-Loveseat-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nesting-Nook-Loveseat-Prop.png",
-    "order": 7004
+    "order": 530
   },
   {
     "id": 2095,
@@ -121,7 +117,7 @@
     "name": "Nesting Nook Shelf",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Nesting-Nook-Short-Shelf-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Nesting-Nook-Short-Shelf-Prop.png",
-    "order": 7001
+    "order": 533
   },
   {
     "id": 2096,
@@ -130,7 +126,7 @@
     "name": "Nesting Nook Spice Rack",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Nesting-Nook-Wall-Spice-Rack-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Nesting-Nook-Wall-Spice-Rack-Prop.png",
-    "order": 7004
+    "order": 537
   },
   {
     "id": 2097,
@@ -167,8 +163,6 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Season-of-Nesting-Seasonal-Heart-icon.png"
   },
-  // #endregion
-  // #region Nesting Solarium
   {
     "id": 2101,
     "guid": "t-ErYMeyCa",
@@ -176,7 +170,7 @@
     "name": "Nesting Solarium Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Nesting-Solarium-Dining-Table-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Nesting-Solarium-Dining-Table-Prop.png",
-    "order": 7003
+    "order": 529
   },
   {
     "id": 2102,
@@ -185,7 +179,7 @@
     "name": "Nesting Solarium Bathtub",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Nesting-Solarium-Bathtub-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Nesting-Solarium-Bathtub-Prop.png",
-    "order": 7006
+    "order": 532
   },
   {
     "id": 2103,
@@ -194,7 +188,7 @@
     "name": "Nesting Solarium Hanging Planter",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Nesting-Solarium-Hanging-Planter-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Nesting-Solarium-Hanging-Planter-Prop.png",
-    "order": 7008
+    "order": 538
   },
   {
     "id": 2104,
@@ -203,7 +197,7 @@
     "name": "Nesting Solarium Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nesting-Solarium-Wall-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Nesting-Solarium-Wall-Painting-Prop.png",
-    "order": 7003
+    "order": 536
   },
   {
     "id": 2105,
@@ -240,8 +234,6 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Season-of-Nesting-Seasonal-Heart-icon.png"
   },
-  // #endregion
-  // #region Nesting Atrium
   {
     "id": 2109,
     "guid": "x1nOiZe3QX",
@@ -249,7 +241,7 @@
     "name": "Nesting Atrium Hanging Lamp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Atrium-Hanging-Lamp-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Nesting-Atrium-Hanging-Lamp-Prop.png",
-    "order": 7005
+    "order": 531
   },
   {
     "id": 2110,
@@ -258,7 +250,7 @@
     "name": "Nesting Atrium Branch",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Nesting-Atrium-Hanging-Branch-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Nesting-Atrium-Hanging-Branch-Prop.png",
-    "order": 7007
+    "order": 534
   },
   {
     "id": 2111,
@@ -267,7 +259,7 @@
     "name": "Nesting Atrium Floor Light",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Nesting-Atrium-Floor-Light-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Nesting-Atrium-Floor-Light-Prop.png",
-    "order": 7005
+    "order": 539
   },
   {
     "id": 2112,
@@ -276,7 +268,7 @@
     "name": "Nesting Atrium Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Nesting-Atrium-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Nesting-Atrium-Hair-front.png",
-    "order": 3101
+    "order": 356
   },
   {
     "id": 2113,
@@ -313,8 +305,6 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Season-of-Nesting-Seasonal-Heart-icon.png"
   },
-  // #endregion
-  // #region Nesting Loft
   {
     "id": 2117,
     "guid": "zhugp6XAdZ",
@@ -322,7 +312,7 @@
     "name": "Nesting Loft Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Loft-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Nesting-Loft-Cape-back.png",
-    "order": 3101
+    "order": 635
   },
   {
     "id": 2118,
@@ -331,7 +321,7 @@
     "name": "Nesting Loft Bed",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Nesting-Loft-Single-Bed-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nesting-Loft-Single-Bed-Prop.png",
-    "order": 7001
+    "order": 527
   },
   {
     "id": 2119,
@@ -340,7 +330,7 @@
     "name": "Nesting Loft Chair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Nesting-Loft-Chair-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Nesting-Loft-Chair-Prop.png",
-    "order": 7002
+    "order": 528
   },
   {
     "id": 2120,
@@ -349,7 +339,7 @@
     "name": "Nesting Loft Paintings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Nesting-Loft-Wall-Painting-Set-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Nesting-Loft-Wall-Painting-Set-Prop.png",
-    "order": 7002
+    "order": 535
   },
   {
     "id": 2121,
@@ -386,16 +376,13 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Season-of-Nesting-Seasonal-Heart-icon.png"
   },
-  // #endregion
-
-  // #region Nesting Furniture
   {
     "id": 2129,
     "guid": "RAqHfOMGuf",
     "type": "Furniture",
     "name": "Stone Stool",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Shared-Spaces-Stool-prop-icon-Morybel-0146.png",
-    "order": 6001
+    "order": 522
   },
   {
     "id": 2130,
@@ -403,7 +390,7 @@
     "type": "Furniture",
     "name": "Stone Small Bench",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Stone-Single-Bench-Prop-icon.png",
-    "order": 6002
+    "order": 523
   },
   {
     "id": 2131,
@@ -411,7 +398,7 @@
     "type": "Furniture",
     "name": "Stone Oven",
     "icon": "/assets/game/items/2131.png",
-    "order": 6003
+    "order": 524
   },
   {
     "id": 2132,
@@ -419,7 +406,7 @@
     "type": "Furniture",
     "name": "Stone Single Bed",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Stone-Single-Bed-Prop-icon.png",
-    "order": 6004
+    "order": 525
   },
   {
     "id": 2133,
@@ -427,7 +414,6 @@
     "type": "Furniture",
     "name": "Stone Tall Cube",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Stone-Tall-Cube-Prop-icon.png",
-    "order": 6005
-  },
-  // #endregion
+    "order": 526
+  }
 ]

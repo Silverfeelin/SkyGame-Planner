@@ -6,8 +6,10 @@
     "name": "Pink Bloom Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_cape_bloom-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Blossom_cape_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Cape" },
-    "order": 10101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Cape"
+    },
+    "order": 639
   },
   {
     "id": 1765,
@@ -16,8 +18,10 @@
     "name": "Bloom Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Icon_hair_bloom.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Days_of_blossom_2021_hair_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Hair" },
-    "order": 10014
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Hair"
+    },
+    "order": 361
   },
   {
     "id": 1766,
@@ -26,8 +30,10 @@
     "name": "Pink Bloom Teaset",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_prop_days_of_bloom_tea_table.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Tea_table_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Teaset" },
-    "order": 3501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Teaset"
+    },
+    "order": 490
   },
   {
     "id": 1767,
@@ -50,8 +56,10 @@
     "name": "Purple Bloom Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Purple_Bloom_Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Wisteria-cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Cape" },
-    "order": 10102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Cape"
+    },
+    "order": 640
   },
   {
     "id": 1770,
@@ -67,8 +75,10 @@
     "name": "Purple Bloom Teaset",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Purple_Bloom_Teaset_icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Wisteria-teaset-iap-image.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Teaset" },
-    "order": 3701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Teaset"
+    },
+    "order": 492
   },
   {
     "id": 1772,
@@ -84,8 +94,10 @@
     "name": "Red Bloom Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Days-of-Bloom-Tulip-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Days-of-Bloom-Tulip-Cape-back-1.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Red_Bloom_Cape" },
-    "order": 10103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Red_Bloom_Cape"
+    },
+    "order": 641
   },
   {
     "id": 1774,
@@ -94,8 +106,10 @@
     "name": "Bloom Butterfly Fountain",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Days-of-Bloom-Butterfly-Fountain-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Days-of-Bloom-Butterfly-Fountain.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Butterfly_Fountain" },
-    "order": 5601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Butterfly_Fountain"
+    },
+    "order": 512
   },
   {
     "id": 1775,
@@ -111,8 +125,10 @@
     "name": "Bloom Gardening Tunic",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Days-of-Bloom-Gardener-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Days-of-Bloom-Gardener-outfit-front.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Gardening_Tunic" },
-    "order": 10200
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Gardening_Tunic"
+    },
+    "order": 53
   },
   {
     "id": 1777,
@@ -121,10 +137,11 @@
     "name": "Bloom Picnic Basket",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Bloom-Picnic-Blanket-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Days-of-Bloom-Picnic-Blanket.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Picnic_Basket" },
-    "order": 3751
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Picnic_Basket"
+    },
+    "order": 493
   },
-  // #region Day of Bloom (2024)
   {
     "id": 2075,
     "guid": "kLfBsnAsUL",
@@ -132,7 +149,7 @@
     "name": "Bloom Lilypad Umbrella",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Bloom-Lilypad-Umbrella-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Bloom-Lilypad-Umbrella-held.png",
-    "order": 3351
+    "order": 446
   },
   {
     "id": 2076,
@@ -141,7 +158,7 @@
     "name": "Bloom Arum Petal Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Bloom-Arum-Petal-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Bloom-Arum-Petal-Cape-back.png",
-    "order": 10104
+    "order": 642
   },
   {
     "id": 2078,
@@ -150,7 +167,7 @@
     "name": "Bloom Arum Petal Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Bloom-Arum-Petal-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Bloom-Arum-Petal-Hair-front.png",
-    "order": 21
+    "order": 236
   },
   {
     "id": 2077,
@@ -159,7 +176,7 @@
     "name": "Bloom Spiky Sprig Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Bloom-Spiky-Sprig-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Bloom-Spiky-Sprig-Hair-front.png",
-    "order": 21
+    "order": 237
   },
   {
     "id": 2079,
@@ -167,6 +184,5 @@
     "type": "Special",
     "name": "Prairie Peaks Warp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
-  },
-  // #endregion
+  }
 ]

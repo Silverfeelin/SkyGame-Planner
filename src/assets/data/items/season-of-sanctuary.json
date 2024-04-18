@@ -1,5 +1,4 @@
 [
-  // #region Sanctuary Guide
   {
     "id": 393,
     "guid": "Lqnd-vg9Lk",
@@ -8,8 +7,10 @@
     "name": "Sanctuary Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Season_of_sanctuary_sanctuary_pendant_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts" },
-    "order": 6
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
+    },
+    "order": 78
   },
   {
     "id": 394,
@@ -20,8 +21,10 @@
     "name": "Sanctuary Ultimate Handpan",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Icon_instrument_sanctuary_hand_pan.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Sanctuary-Handpan-ultimate.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts" },
-    "order": 2301
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
+    },
+    "order": 433
   },
   {
     "id": 395,
@@ -31,8 +34,10 @@
     "name": "Sanctuary Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_sanctuary_manta-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season_of_sanctuary_cape_ultimate_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts" },
-    "order": 1602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
+    },
+    "order": 578
   },
   {
     "id": 396,
@@ -125,15 +130,14 @@
     "name": "Hug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
   },
-  // #endregion
-  // #region Sanctuary
-  // Jelly Whisperer
   {
     "id": 995,
     "guid": "U7lPqW1fa0",
     "type": "Call",
     "name": "Jellyfish Call",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/SoS_jelly_fish_call.png",
     "order": 61
   },
@@ -160,8 +164,10 @@
     "name": "Jelly Whisperer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Mimi-4117_07_jelly_whisperer_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Season_of_sanctuary_hair_jelly_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair" },
-    "order": 1601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair"
+    },
+    "order": 293
   },
   {
     "id": 999,
@@ -184,8 +190,10 @@
     "name": "Jelly Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_07_jelly_whisperer_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Season_of_sanctuary_pants_jelly_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Outfit" },
-    "order": 601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Outfit"
+    },
+    "order": 15
   },
   {
     "id": 1002,
@@ -215,16 +223,19 @@
     "name": "Jelly Whisperer Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Jelly_whisperer_TS_beach_umbrella_icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Jelly_whisperers_beach_umbrella.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Prop" },
-    "order": 4301
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Prop"
+    },
+    "order": 499
   },
-  // Timid Bookworm
   {
     "id": 1006,
     "guid": "QnA3xwSNod",
     "type": "Stance",
     "name": "Timid Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/SoS_shy_stance.png",
     "order": 91
   },
@@ -251,8 +262,10 @@
     "name": "Timid Bookworm Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_07_timid_bookworm_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_sanctuary_hair_timid_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair" },
-    "order": 1602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair"
+    },
+    "order": 294
   },
   {
     "id": 1010,
@@ -275,8 +288,10 @@
     "name": "Timid Bookworm Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Icon_cape_sanctuary_butterfly-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_sanctuary_cape_timid_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape" },
-    "order": 1601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
+    },
+    "order": 577
   },
   {
     "id": 1013,
@@ -299,13 +314,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Rallying Thrillseeker
   {
     "id": 1016,
     "guid": "fgYKKXiPMf",
     "type": "Emote",
     "name": "Rally Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png",
     "order": 511
@@ -315,7 +331,9 @@
     "guid": "Q3SUBd3Vbl",
     "type": "Emote",
     "name": "Rally Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
   },
@@ -326,8 +344,10 @@
     "name": "Rallying Thrillseeker Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Mimi-4117_07_rallying_thrillseeker_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Season_of_sanctuary_hair_rally_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair" },
-    "order": 1603
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair"
+    },
+    "order": 295
   },
   {
     "id": 1019,
@@ -341,7 +361,9 @@
     "guid": "buDIh3u4OX",
     "type": "Emote",
     "name": "Rally Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
   },
@@ -350,7 +372,9 @@
     "guid": "bPWMijGpDI",
     "type": "Emote",
     "name": "Rally Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
   },
@@ -361,8 +385,10 @@
     "name": "Rallying Thrillseeker Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Rallying_trillseeker_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Season_of_sanctuary_pants_rally_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Outfit" },
-    "order": 602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Outfit"
+    },
+    "order": 16
   },
   {
     "id": 1023,
@@ -392,13 +418,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Hiking Grouch
   {
     "id": 1027,
     "guid": "_-Am5v5QWs",
     "type": "Emote",
     "name": "Grumpy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png",
     "order": 361
@@ -408,7 +435,9 @@
     "guid": "91x-6KiNlb",
     "type": "Emote",
     "name": "Grumpy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
   },
@@ -426,15 +455,19 @@
     "name": "Hiking Grouch Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Mimi-4117_07_hiking_grouch_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_sanctuary_mask_grouch_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask" },
-    "order": 602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask"
+    },
+    "order": 152
   },
   {
     "id": 1031,
     "guid": "AjOxFBIEsi",
     "type": "Emote",
     "name": "Grumpy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
   },
@@ -443,7 +476,9 @@
     "guid": "F9ZODZ6Qs8",
     "type": "Emote",
     "name": "Grumpy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
   },
@@ -454,8 +489,10 @@
     "name": "Hiking Grouch Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Mimi-4117_07_hiking_grouch_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season_of_sanctuary_hair_grouch_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair" },
-    "order": 1604
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair"
+    },
+    "order": 296
   },
   {
     "id": 1034,
@@ -478,8 +515,10 @@
     "name": "Hiking Grouch Bowtie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Icon_pendant_bowtie.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_sanctuary_sanctuary_grouch_bowtie_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory" },
-    "order": 601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory"
+    },
+    "order": 94
   },
   {
     "id": 1037,
@@ -502,13 +541,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Grateful Shell Collector
   {
     "id": 1040,
     "guid": "dpF382RUvu",
     "type": "Emote",
     "name": "Grateful",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png",
     "order": 241
@@ -518,7 +558,9 @@
     "guid": "IDDSw982ER",
     "type": "Emote",
     "name": "Grateful",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
   },
@@ -536,15 +578,19 @@
     "name": "Grateful Shell Collector Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_07_grateful_shell_collector_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Season_of_sanctuary_hair_grateful_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair" },
-    "order": 1605
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair"
+    },
+    "order": 297
   },
   {
     "id": 1044,
     "guid": "xl7jZqLFwD",
     "type": "Emote",
     "name": "Grateful",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
   },
@@ -553,7 +599,9 @@
     "guid": "B66Wbe_vYk",
     "type": "Emote",
     "name": "Grateful",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
   },
@@ -564,8 +612,10 @@
     "name": "Grateful Shell Collector Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_cape_sanctuary_shell-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Season_of_sanctuary_cape_grateful_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape" },
-    "order": 1603
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape"
+    },
+    "order": 579
   },
   {
     "id": 1047,
@@ -588,8 +638,10 @@
     "name": "Grateful Shell Collector Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/Icon_prop_summer_chairs.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Summer_prop_chairs.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Prop" },
-    "order": 4501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Prop"
+    },
+    "order": 501
   },
   {
     "id": 1050,
@@ -605,13 +657,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Chill Sunbather
   {
     "id": 1052,
     "guid": "QNd_KFZo7Y",
     "type": "Emote",
     "name": "Belly Scratch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png",
     "order": 251
@@ -621,7 +674,9 @@
     "guid": "LZqy5g4Xpa",
     "type": "Emote",
     "name": "Belly Scratch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
   },
@@ -639,15 +694,19 @@
     "name": "Chill Sunbather Sunglasses",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Mimi-4117_07_chill_sunbather_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_sanctuary_mask_chill_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask" },
-    "order": 601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask"
+    },
+    "order": 209
   },
   {
     "id": 1056,
     "guid": "phajnn85-p",
     "type": "Emote",
     "name": "Belly Scratch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
   },
@@ -656,7 +715,9 @@
     "guid": "2LKc2kVIga",
     "type": "Emote",
     "name": "Belly Scratch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
   },
@@ -667,8 +728,10 @@
     "name": "Chill Sunbather Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_07_chill_sunbather_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Season_of_sanctuary_hair_chill_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair" },
-    "order": 1
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair"
+    },
+    "order": 375
   },
   {
     "id": 1059,
@@ -684,8 +747,10 @@
     "name": "Chill Sunbather Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Icon_cape_sanctuary_flower-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Season_of_sanctuary_cape_chill_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape" },
-    "order": 1604
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape"
+    },
+    "order": 580
   },
   {
     "id": 1061,
@@ -708,8 +773,10 @@
     "name": "Chill Sunbather Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Icon_prop_summer_lounger.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Prop_beach_lounger.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Prop" },
-    "order": 4401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Prop"
+    },
+    "order": 500
   },
   {
     "id": 1064,
@@ -724,6 +791,5 @@
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
-  },
-  // #endregion
+  }
 ]

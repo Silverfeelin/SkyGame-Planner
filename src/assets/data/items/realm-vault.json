@@ -1,11 +1,12 @@
 [
-  // Levitating Adept
   {
     "id": 310,
     "guid": "vVUB_cGhZd",
     "type": "Emote",
     "name": "Telekinesis",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png",
     "order": 661
@@ -15,7 +16,9 @@
     "guid": "l6TWStE9Xr",
     "type": "Emote",
     "name": "Telekinesis",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
   },
@@ -33,8 +36,10 @@
     "name": "Levitating Adept Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/LevitatingAdept-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Hair39-Long_Mullet.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Hair" },
-    "order": 194
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Hair"
+    },
+    "order": 257
   },
   {
     "id": 314,
@@ -55,7 +60,9 @@
     "guid": "9_H47RAVw-",
     "type": "Emote",
     "name": "Telekinesis",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
   },
@@ -64,7 +71,9 @@
     "guid": "yfJsC8H6F4",
     "type": "Emote",
     "name": "Telekinesis",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
   },
@@ -82,16 +91,19 @@
     "name": "Levitating Adept Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/LevitatingAdept-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Mask12-Long_Panel.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Mask" },
-    "order": 7
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Mask"
+    },
+    "order": 203
   },
-  // Meditating Monastic
   {
     "id": 320,
     "guid": "c1A0Bf98bJ",
     "type": "Emote",
     "name": "Float",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png",
     "order": 671
@@ -101,7 +113,9 @@
     "guid": "hu9E5_AnJh",
     "type": "Emote",
     "name": "Float",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
   },
@@ -119,8 +133,10 @@
     "name": "Meditating Monastic Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Meditating-Monastic-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Hair16-Short_Beard.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Hair" },
-    "order": 204
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Hair"
+    },
+    "order": 258
   },
   {
     "id": 324,
@@ -141,7 +157,9 @@
     "guid": "of7E6FbO6S",
     "type": "Emote",
     "name": "Float",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
   },
@@ -150,7 +168,9 @@
     "guid": "1icJGw6P2x",
     "type": "Emote",
     "name": "Float",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
   },
@@ -168,16 +188,19 @@
     "name": "Meditating Monastic Table Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Meditating-Monastic-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Instrument-Chat_Table_Chair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Prop" },
-    "order": 101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Prop"
+    },
+    "order": 452
   },
-  // Memory Whisperer
   {
     "id": 330,
     "guid": "I1fk2fnGDK",
     "type": "Call",
     "name": "Cosmic Manta Call",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/MemoryWhisperer-1.png",
     "order": 41
   },
@@ -188,7 +211,9 @@
     "name": "Memory Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/MemoryWhisperer-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Legs04.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Outfit"
+    },
     "order": 7
   },
   {
@@ -226,8 +251,10 @@
     "name": "Memory Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Cape_white_2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape" },
-    "order": 29
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
+    },
+    "order": 553
   },
   {
     "id": 337,
@@ -243,16 +270,19 @@
     "name": "Memory Whisperer Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Cape_white_tier_2_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape" },
-    "order": 38
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
+    },
+    "order": 562
   },
-  // Polite Scholar
   {
     "id": 339,
     "guid": "8QnR-XHmJg",
     "type": "Stance",
     "name": "Polite Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/PoliteScholar-1.png",
     "order": 51
   },
@@ -263,7 +293,9 @@
     "name": "Polite Scholar Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/PoliteScholar-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Legs02.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Outfit"
+    },
     "order": 4
   },
   {
@@ -301,16 +333,19 @@
     "name": "Polite Scholar Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/PoliteScholar-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Hair01-Bald.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Hair" },
-    "order": 99999
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Hair"
+    },
+    "order": 374
   },
-  // Praying Acolyte
   {
     "id": 346,
     "guid": "EN-zwdMKW0",
     "type": "Emote",
     "name": "Pray",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png",
     "order": 681
@@ -320,7 +355,9 @@
     "guid": "3kiNK4eee-",
     "type": "Emote",
     "name": "Pray",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
   },
@@ -338,8 +375,10 @@
     "name": "Praying Acolyte Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/PrayingAcolyte-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Hair09-Long_One_Braid.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Hair" },
-    "order": 214
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Hair"
+    },
+    "order": 259
   },
   {
     "id": 350,
@@ -360,7 +399,9 @@
     "guid": "47u5kXt3wr",
     "type": "Emote",
     "name": "Pray",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
   },
@@ -369,7 +410,9 @@
     "guid": "ZHkYvZFLjE",
     "type": "Emote",
     "name": "Pray",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
   },
@@ -387,8 +430,10 @@
     "name": "Praying Acolyte Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_blue_2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape" },
-    "order": 25
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
+    },
+    "order": 549
   },
   {
     "id": 356,
@@ -404,7 +449,9 @@
     "name": "Praying Acolyte Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_blue_tier_2_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape" },
-    "order": 34
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
+    },
+    "order": 558
   }
 ]

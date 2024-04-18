@@ -1,5 +1,4 @@
 [
-  // #region Prophecy Guide
   {
     "id": 409,
     "guid": "DxQ_9zIh5h",
@@ -8,8 +7,10 @@
     "name": "Prophecy Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/7_Prophecy.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Prophecy_pendant_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts" },
-    "order": 7
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
+    },
+    "order": 79
   },
   {
     "id": 410,
@@ -20,8 +21,10 @@
     "name": "Prophecy Ultimate Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_instrument_prophecy_drum.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Prophecy-ultimate-_drum.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts" },
-    "order": 2501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
+    },
+    "order": 435
   },
   {
     "id": 411,
@@ -31,8 +34,10 @@
     "name": "Prophecy Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Prophecy-Guide_Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts" },
-    "order": 705
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
+    },
+    "order": 114
   },
   {
     "id": 412,
@@ -97,15 +102,14 @@
     "name": "Hug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
   },
-  // #endregion
-  // #region Prophecy
-  // Prophet of Water
   {
     "id": 1066,
     "guid": "GkHHcjKlV-",
     "type": "Emote",
     "name": "Deep Breath",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png",
     "order": 751
@@ -115,7 +119,9 @@
     "guid": "a1mWcW4Pll",
     "type": "Emote",
     "name": "Deep Breath",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
   },
@@ -133,15 +139,19 @@
     "name": "Prophet of Water Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Mimi-4117_08_prophet_of_water_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Prophecy-Prophet_of_Water_Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Hair" },
-    "order": 1701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Hair"
+    },
+    "order": 298
   },
   {
     "id": 1070,
     "guid": "3H28hhg2kF",
     "type": "Emote",
     "name": "Deep Breath",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
   },
@@ -150,7 +160,9 @@
     "guid": "DyDCYzuiZU",
     "type": "Emote",
     "name": "Deep Breath",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/SoP_deep_breath.png"
   },
@@ -168,8 +180,10 @@
     "name": "Prophet of Water Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Icon_cape_prophecy_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Prophecy_cape_water_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape" },
-    "order": 1702
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape"
+    },
+    "order": 582
   },
   {
     "id": 1074,
@@ -178,8 +192,10 @@
     "name": "Prophet of Water Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mimi-4117_08_prophet_of_water_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Prophecy-Prophet_of_Water_Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Mask" },
-    "order": 701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Mask"
+    },
+    "order": 153
   },
   {
     "id": 1075,
@@ -202,8 +218,10 @@
     "name": "Prophet of Water Sticker",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoProphecy-Prophet-of-Water-Sticker-Prop-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/SoProphecy-Prophet-of-Water-Prop-image-Morybel-0146.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Prop" },
-    "order": 501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Prop"
+    },
+    "order": 456
   },
   {
     "id": 1078,
@@ -219,13 +237,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Prophet of Earth
   {
     "id": 1080,
     "guid": "N3W56zu42m",
     "type": "Emote",
     "name": "Dust Off",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png",
     "order": 631
@@ -235,7 +254,9 @@
     "guid": "VWQdrhMcwH",
     "type": "Emote",
     "name": "Dust Off",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
   },
@@ -246,8 +267,10 @@
     "name": "Prophet of Earth Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Mimi-4117_08_prophet_of_earth_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Prophecy-Prophet_of_Earth_Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Hair" },
-    "order": 1702
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Hair"
+    },
+    "order": 299
   },
   {
     "id": 1083,
@@ -261,7 +284,9 @@
     "guid": "EIVC6EkYVC",
     "type": "Emote",
     "name": "Dust Off",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
   },
@@ -270,7 +295,9 @@
     "guid": "WNpYia1GaL",
     "type": "Emote",
     "name": "Dust Off",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoP_dust_off.png"
   },
@@ -297,8 +324,10 @@
     "name": "Prophet of Earth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Icon_cape_prophecy_maroon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Prophecy_cape_earth_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape" },
-    "order": 1703
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape"
+    },
+    "order": 583
   },
   {
     "id": 1089,
@@ -307,8 +336,10 @@
     "name": "Prophet of Earth Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Mimi-4117_08_prophet_of_earth_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Prophecy-Prophet_of_Earth_Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Mask" },
-    "order": 702
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Mask"
+    },
+    "order": 154
   },
   {
     "id": 1090,
@@ -324,8 +355,10 @@
     "name": "Prophet of Earth Sticker",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_prop_prophet_of_earth_.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Prophet_of_earth_prop.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Prop" },
-    "order": 601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Prop"
+    },
+    "order": 457
   },
   {
     "id": 1092,
@@ -348,13 +381,14 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // Prophet of Air
   {
     "id": 1095,
     "guid": "p07giC7q6F",
     "type": "Emote",
     "name": "Balance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png",
     "order": 741
@@ -364,7 +398,9 @@
     "guid": "1COJ0_lu9H",
     "type": "Emote",
     "name": "Balance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
   },
@@ -375,8 +411,10 @@
     "name": "Prophet of Air Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_air_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Air_Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Hair" },
-    "order": 1703
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Hair"
+    },
+    "order": 300
   },
   {
     "id": 1098,
@@ -390,7 +428,9 @@
     "guid": "vmZnZiDaRp",
     "type": "Emote",
     "name": "Balance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
   },
@@ -399,7 +439,9 @@
     "guid": "sS5uFB29XN",
     "type": "Emote",
     "name": "Balance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoP_balance.png"
   },
@@ -417,8 +459,10 @@
     "name": "Prophet of Air Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Mimi-4117_08_prophet_of_air_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Prophecy-Prophet_of_Air_Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Mask" },
-    "order": 703
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Mask"
+    },
+    "order": 155
   },
   {
     "id": 1103,
@@ -427,8 +471,10 @@
     "name": "Prophet of Air Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Icon_cape_prophecy_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Prophecy_cape_air_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape" },
-    "order": 1701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape"
+    },
+    "order": 581
   },
   {
     "id": 1104,
@@ -451,8 +497,10 @@
     "name": "Prophet of Air Sticker",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Prophet-of-air-prop-Ray.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Prophet_of_air_sticker.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Prop" },
-    "order": 701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Prop"
+    },
+    "order": 458
   },
   {
     "id": 1107,
@@ -468,13 +516,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Prophet of Fire
   {
     "id": 1109,
     "guid": "-9bN5PmMbs",
     "type": "Emote",
     "name": "Chest Pound",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png",
     "order": 641
@@ -484,7 +533,9 @@
     "guid": "lv8aUui_2g",
     "type": "Emote",
     "name": "Chest Pound",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
   },
@@ -502,15 +553,19 @@
     "name": "Prophet of Fire Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Mimi-4117_08_prophet_of_fire_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Prophecy-Prophet_of_Fire_Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Hair" },
-    "order": 1704
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Hair"
+    },
+    "order": 301
   },
   {
     "id": 1113,
     "guid": "oWEC_F0xLY",
     "type": "Emote",
     "name": "Chest Pound",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
   },
@@ -519,7 +574,9 @@
     "guid": "ofbkhI0JKU",
     "type": "Emote",
     "name": "Chest Pound",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/SoP_chest_pound.png"
   },
@@ -546,8 +603,10 @@
     "name": "Prophet of Fire Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Mimi-4117_08_prophet_of_fire_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Prophecy-Prophet_of_Fire_Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Mask" },
-    "order": 704
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Mask"
+    },
+    "order": 156
   },
   {
     "id": 1118,
@@ -556,8 +615,10 @@
     "name": "Prophet of Fire Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_fire_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Fire_Leggings.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Outfit" },
-    "order": 701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Outfit"
+    },
+    "order": 17
   },
   {
     "id": 1119,
@@ -587,8 +648,10 @@
     "name": "Prophet of Fire Cauldron",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Fire_of_Prophet_TS_cauldron.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Fire_prophet%3Fs_cauldron_.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop" },
-    "order": 1101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
+    },
+    "order": 464
   },
   {
     "id": 1123,
@@ -597,8 +660,9 @@
     "name": "Prophet of Fire Sticker",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/SoProphecy-Prophet-of-Fire-Sticker-Prop-Icon-Ed.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/SoProphecy-Prophet-of-Fire-Prop-Sticker-image-Ed.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop" },
-    "order": 702
-  },
-  // #endregion
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
+    },
+    "order": 459
+  }
 ]

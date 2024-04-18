@@ -1,5 +1,4 @@
 [
-  // #region The Void of Shattering
   {
     "id": 530,
     "guid": "vfm49a5KVd",
@@ -15,8 +14,10 @@
     "name": "Shattering Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOShattering-pendant.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts" },
-    "order": 14
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
+    },
+    "order": 86
   },
   {
     "id": 532,
@@ -26,8 +27,10 @@
     "name": "Shattering Ultimate Manta Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-ultimate-Cape-manta-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/SOShattering-ultimate-Cape-manta-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts" },
-    "order": 2405
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
+    },
+    "order": 610
   },
   {
     "id": 533,
@@ -37,8 +40,10 @@
     "name": "Shattering Ultimate Krill Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/SOShattering-ultimate-Cape-krill-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SOShattering-ultimate-Cape-krill-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts" },
-    "order": 2402
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
+    },
+    "order": 607
   },
   {
     "id": 534,
@@ -131,9 +136,6 @@
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
-  // #endregion
-  // #region Shattering
-  // Ancient Light (Jellyfish)
   {
     "id": 1470,
     "guid": "JmM2DNyEcO",
@@ -141,8 +143,10 @@
     "name": "Jellyfish Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOShattering-Light-hairstyle-royal-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/SOShattering-Light-hairstyle-royal.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair" },
-    "order": 2403
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
+    },
+    "order": 331
   },
   {
     "id": 1471,
@@ -165,8 +169,10 @@
     "name": "Jellyfish Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/SOShattering-Light-Hair-accessory-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SOShattering-Light-Hair-accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory" },
-    "order": 2402
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory"
+    },
+    "order": 382
   },
   {
     "id": 1474,
@@ -175,8 +181,10 @@
     "name": "Jellyfish Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SOShattering-Light-Cape-Jellyfish-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/SOShattering-Light-Cape-Jellyfish-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape" },
-    "order": 2404
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
+    },
+    "order": 609
   },
   {
     "id": 1475,
@@ -192,7 +200,6 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png"
   },
-  // Ancient Light (Manta)
   {
     "id": 1477,
     "guid": "SL_uFHTqjm",
@@ -223,8 +230,10 @@
     "name": "Manta Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/SOShattering-Light-Hairstyle-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SOShattering-Light-Hairstyle.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair" },
-    "order": 2402
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
+    },
+    "order": 330
   },
   {
     "id": 1481,
@@ -233,8 +242,10 @@
     "name": "Manta Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/SOShattering-Light-Cape-manta-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOShattering-Light-Cape-manta-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape" },
-    "order": 2403
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
+    },
+    "order": 608
   },
   {
     "id": 1482,
@@ -257,8 +268,10 @@
     "name": "Manta Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/SOShattering-Light-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/SOShattering-Light-Outfit.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Outfit" },
-    "order": 1401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Outfit"
+    },
+    "order": 32
   },
   {
     "id": 1485,
@@ -267,7 +280,6 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png"
   },
-  // Ancient Darkness (Plant)
   {
     "id": 1486,
     "guid": "gn5YaEC0t8",
@@ -275,8 +287,10 @@
     "name": "Darkness Plant Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/SOShattering-Dark-Hair-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/SOShattering-Dark-Hair-accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory" },
-    "order": 2401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory"
+    },
+    "order": 381
   },
   {
     "id": 1487,
@@ -299,8 +313,10 @@
     "name": "Darkness Plant Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/SOShattering-Dark-Mask-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-Dark-Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Mask" },
-    "order": 1401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Mask"
+    },
+    "order": 175
   },
   {
     "id": 1490,
@@ -332,8 +348,10 @@
     "name": "Darkness Plant Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SOShattering-Dark-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/SOShattering-Dark-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Cape" },
-    "order": 2401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Cape"
+    },
+    "order": 606
   },
   {
     "id": 1494,
@@ -342,7 +360,6 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png"
   },
-  // Ancient Darkness (Dragon)
   {
     "id": 1495,
     "guid": "w2bnlVRUvy",
@@ -350,8 +367,10 @@
     "name": "Dragon Neck Accessory (Crab)",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOShattering-Dark-Crab-neck-accessory-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SOShattering-Dark-Crab-neck-accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory" },
-    "order": 1401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory"
+    },
+    "order": 97
   },
   {
     "id": 1496,
@@ -375,8 +394,10 @@
     "name": "Dark Horn",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/SOShattering-Dark-Horn-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/SOShattering-Dark-Horn-Instrument.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Prop" },
-    "order": 2751
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Prop"
+    },
+    "order": 438
   },
   {
     "id": 1499,
@@ -385,8 +406,10 @@
     "name": "Dragon Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOShattering-Dark-Dragon-hairstyle-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SOShattering-Dark-Dragon-hairstyle.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair" },
-    "order": 2401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair"
+    },
+    "order": 329
   },
   {
     "id": 1500,
@@ -401,6 +424,5 @@
     "type": "Special",
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png"
-  },
-  // #endregion
+  }
 ]

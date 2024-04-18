@@ -1,5 +1,4 @@
 [
-  // #region Dreams Guide
   {
     "id": 421,
     "guid": "-w8MPNCSjY",
@@ -8,8 +7,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/8_Dreams.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Dreams_pendant_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts" },
-    "order": 8
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
+    },
+    "order": 80
   },
   {
     "id": 422,
@@ -19,8 +20,10 @@
     "name": "Dreams Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Icon_mask_dreams_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Dreams_mask_ultimate_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts" },
-    "order": 804
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
+    },
+    "order": 115
   },
   {
     "id": 423,
@@ -30,8 +33,10 @@
     "name": "Dreams Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Dreams_cape_ultimate_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts" },
-    "order": 1804
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
+    },
+    "order": 587
   },
   {
     "id": 424,
@@ -110,16 +115,15 @@
     "name": "Hug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
   },
-  // #endregion
-  // #region Dreams
-  // Bearhug Hermit
   {
     "id": 1124,
     "guid": "sw2YxczeGz",
     "type": "Emote",
     "subtype": "FriendEmote",
     "name": "Bearhug",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
   },
@@ -137,8 +141,10 @@
     "name": "Bearhug Hermit Horns",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Dreams_headpiece_bearhug_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory" },
-    "order": 1101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory"
+    },
+    "order": 210
   },
   {
     "id": 1127,
@@ -169,7 +175,9 @@
     "type": "Emote",
     "subtype": "FriendEmote",
     "name": "Bearhug",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
   },
@@ -180,8 +188,10 @@
     "name": "Bearhug Hermit Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Icon_hair_dreams_hermit.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Dreams_hair_bearhug_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair" },
-    "order": 1801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair"
+    },
+    "order": 302
   },
   {
     "id": 1132,
@@ -190,8 +200,10 @@
     "name": "Bearhug Hermit Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Dreams_pants_bearhug_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit" },
-    "order": 802
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit"
+    },
+    "order": 19
   },
   {
     "id": 1133,
@@ -214,13 +226,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Dancing Performer
   {
     "id": 1136,
     "guid": "mK02s3A4Sy",
     "type": "Emote",
     "name": "Show Dance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png",
     "order": 531
@@ -230,7 +243,9 @@
     "guid": "VR8uQXAzzZ",
     "type": "Emote",
     "name": "Show Dance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
   },
@@ -248,15 +263,19 @@
     "name": "Dancing Performer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Icon_hair_dreams_dancing.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Dreams_hair_dancing_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Hair" },
-    "order": 1802
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Hair"
+    },
+    "order": 303
   },
   {
     "id": 1140,
     "guid": "IWzRV-xeez",
     "type": "Emote",
     "name": "Show Dance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
   },
@@ -265,7 +284,9 @@
     "guid": "kabDjVwtC9",
     "type": "Emote",
     "name": "Show Dance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
   },
@@ -283,8 +304,10 @@
     "name": "Dancing Performer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Icon_mask_dreams_dancing.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Dreams_mask_dancing_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask" },
-    "order": 802
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
+    },
+    "order": 157
   },
   {
     "id": 1144,
@@ -293,8 +316,10 @@
     "name": "Dancing Performer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Icon_cape_dreams_dancing-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Dreams_cape_dancing_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape" },
-    "order": 1802
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
+    },
+    "order": 585
   },
   {
     "id": 1145,
@@ -304,8 +329,10 @@
     "name": "Lute",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_instrument_dreams_lute.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Dreams-Dancing-Performer-Guitar.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument" },
-    "order": 701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument"
+    },
+    "order": 418
   },
   {
     "id": 1146,
@@ -314,13 +341,14 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png"
   },
-  // Peeking Postman
   {
     "id": 1147,
     "guid": "hV3bFwgh_u",
     "type": "Emote",
     "name": "Peek",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png",
     "order": 371
@@ -330,7 +358,9 @@
     "guid": "iNGMlJTDL0",
     "type": "Emote",
     "name": "Peek",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
   },
@@ -355,7 +385,9 @@
     "guid": "ehhr3uxVaH",
     "type": "Emote",
     "name": "Peek",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
   },
@@ -364,7 +396,9 @@
     "guid": "0S9JrVZK6v",
     "type": "Emote",
     "name": "Peek",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
   },
@@ -375,8 +409,10 @@
     "name": "Peeking Postman Outfit",
     "icon": "/assets/game/items/1153.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Dreams_pants_peeking_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit" },
-    "order": 801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
+    },
+    "order": 18
   },
   {
     "id": 2068,
@@ -385,8 +421,10 @@
     "name": "Peeking Postman Shoes",
     "icon": "/assets/game/items/2068.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Peeking-Postman-Shoes.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit" },
-    "order": 801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
+    },
+    "order": 59
   },
   {
     "id": 1154,
@@ -402,8 +440,10 @@
     "name": "Peeking Postman Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Icon_cape_dreams_peeking-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Dreams_cape_peeking_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape" },
-    "order": 1801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
+    },
+    "order": 584
   },
   {
     "id": 1156,
@@ -412,8 +452,10 @@
     "name": "Peeking Postman Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_mask_dreams_peeking.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Dreams_mask_peeking_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask" },
-    "order": 801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
+    },
+    "order": 158
   },
   {
     "id": 1157,
@@ -436,13 +478,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Spinning Mentor
   {
     "id": 1160,
     "guid": "NOJ5yfbV_j",
     "type": "Emote",
     "name": "Spin Trick",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png",
     "order": 521
@@ -452,7 +495,9 @@
     "guid": "tp172HbBKC",
     "type": "Emote",
     "name": "Spin Trick",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
   },
@@ -463,8 +508,10 @@
     "name": "Spinning Mentor Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_dreams_3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Dreams_hair_spinning_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Hair" },
-    "order": 1803
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Hair"
+    },
+    "order": 304
   },
   {
     "id": 1163,
@@ -478,7 +525,9 @@
     "guid": "CCeCnDEyRM",
     "type": "Emote",
     "name": "Spin Trick",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
   },
@@ -487,7 +536,9 @@
     "guid": "SUGO6FwRX8",
     "type": "Emote",
     "name": "Spin Trick",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
   },
@@ -498,8 +549,10 @@
     "name": "Spinning Mentor Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_mask_dreams_spinning.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Dreams_mask_spinning_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask" },
-    "order": 803
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
+    },
+    "order": 159
   },
   {
     "id": 1167,
@@ -522,8 +575,10 @@
     "name": "Spinning Mentor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_cape_dreams_spinning-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Dreams_cape_spinning_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape" },
-    "order": 1803
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
+    },
+    "order": 586
   },
   {
     "id": 1170,
@@ -545,6 +600,5 @@
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
-  },
-  // #endregion
+  }
 ]

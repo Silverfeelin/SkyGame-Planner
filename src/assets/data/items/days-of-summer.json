@@ -1,5 +1,4 @@
 [
-  // #region Days of Summer Lights (2020)
   {
     "id": 1902,
     "guid": "5xJ_mCzZQy",
@@ -7,11 +6,11 @@
     "name": "Summer Lights Lantern",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Icon_prop_days_of_summer_lantern.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Lantern_in_use_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Lantern_Pack" },
-    "order": 2901
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Lantern_Pack"
+    },
+    "order": 441
   },
-  // #endregion
-  // #region Days of Summer Lights (2021)
   {
     "id": 1903,
     "guid": "EEFIpR6x7Q",
@@ -19,11 +18,11 @@
     "name": "Summer Lights Bunny Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Bunny_head_accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Bunny_Accessory" },
-    "order": 11101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Bunny_Accessory"
+    },
+    "order": 403
   },
-  // #endregion
-  // #region Days of Summer (2021)
   {
     "id": 1904,
     "guid": "4CYafmMUql",
@@ -31,8 +30,10 @@
     "name": "Days of Summer Umbrella",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Icon_prop_summer_umbrella.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Days_of_summer_yellow_umbrella.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Parasol" },
-    "order": 3301
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Parasol"
+    },
+    "order": 445
   },
   {
     "id": 1905,
@@ -48,8 +49,10 @@
     "name": "Days of Summer Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_hair_summer_hat_headpiece.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days_of_summer_headpiece_hat.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Hat" },
-    "order": 10501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Hat"
+    },
+    "order": 396
   },
   {
     "id": 1907,
@@ -58,8 +61,10 @@
     "name": "Double Deck Chairs",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Icon_prop_days_of_summer_beach_chairs.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Summer_beach_chairs.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Prop" },
-    "order": 4601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Prop"
+    },
+    "order": 502
   },
   {
     "id": 1908,
@@ -68,8 +73,9 @@
     "name": "Days of Summer Shell Hairpin",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_hair_summer_shell_pin_headpiece.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Days_of_summer_Hair_accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Seashell_Hairpin" },
-    "order": 10301
-  },
-  // #endregion
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Seashell_Hairpin"
+    },
+    "order": 394
+  }
 ]

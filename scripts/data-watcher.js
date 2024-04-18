@@ -19,7 +19,7 @@ const readFile = filePath => {
   }
 };
 
-chokidar.watch(dataPath, { depth: 10 }).on('change', filePath => {
+const onFileChanged = filePath => {
   // Ignore top level (compiled) & non-JSON.
   if (!filePath.endsWith('.json')) return;
   if (path.dirname(filePath) === dataPath) return;
@@ -59,7 +59,20 @@ chokidar.watch(dataPath, { depth: 10 }).on('change', filePath => {
     }
   }
 
-  const outData = JSON.stringify(merged, null, 0);
+  const output = {
+    items: merged,
+  };
+  const outData = JSON.stringify(output, null, 0);
   console.log(chalk.cyan('Writing'), chalk.blue(merged.length), chalk.cyan('to:'), chalk.green(outPath));
   fs.writeFileSync(outPath, outData, 'utf8');
+};
+
+onFileChanged(path.resolve(dataPath, 'items/_fake.json'));
+let debounce;
+chokidar.watch(dataPath, { depth: 10 }).on('change', filePath => {
+  if (debounce) clearTimeout(debounce);
+  debounce = setTimeout(() => {
+    debounce = null;
+    onFileChanged(filePath);
+  }, 250);
 });

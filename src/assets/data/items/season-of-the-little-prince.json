@@ -1,5 +1,4 @@
 [
-  // #region The Rose
   {
     "id": 457,
     "guid": "TQUcvFL8k7",
@@ -8,8 +7,10 @@
     "name": "The Little Prince Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Little_prince_pendant.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
-    "order": 10
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
+    },
+    "order": 82
   },
   {
     "id": 458,
@@ -19,8 +20,10 @@
     "name": "Little Prince Ultimate Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Icon_hair_prince_ultimate.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Season_of_little_prince_hair6_ultimate.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
-    "order": 2006
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
+    },
+    "order": 316
   },
   {
     "id": 459,
@@ -30,8 +33,10 @@
     "name": "Little Prince Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Icon_pants_prince_pjs.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Season_of_little_prince_pants3_iap_pj.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
-    "order": 1003
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
+    },
+    "order": 23
   },
   {
     "id": 460,
@@ -41,8 +46,10 @@
     "name": "Little Prince Ultimate Rose",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Icon_prop_little_prince_rose.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Season_of_little_prince_inst2rose_ultimate.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts" },
-    "order": 2201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
+    },
+    "order": 474
   },
   {
     "id": 461,
@@ -51,8 +58,10 @@
     "name": "Sword Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Icon_pants_prince_sword.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Season_of_little_prince_pants2_iap_sword.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Additional_Cosmetics" },
-    "order": 1002
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Additional_Cosmetics"
+    },
+    "order": 22
   },
   {
     "id": 462,
@@ -152,15 +161,14 @@
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
-  // #endregion
-  // #region The Little Prince
-  // #region Beckoning Ruler
   {
     "id": 1252,
     "guid": "1YJ13EOwIQ",
     "type": "Emote",
     "name": "Beckon",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png",
     "order": 771
@@ -170,7 +178,9 @@
     "guid": "_ws5QlV4Tp",
     "type": "Emote",
     "name": "Beckon",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
   },
@@ -188,15 +198,19 @@
     "name": "Beckoning Ruler Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Icon_hair_prince_king.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Season_of_little_prince_hair4.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Hair" },
-    "order": 2004
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Hair"
+    },
+    "order": 314
   },
   {
     "id": 1256,
     "guid": "W4i9e6Vt6d",
     "type": "Emote",
     "name": "Beckon",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
   },
@@ -205,7 +219,9 @@
     "guid": "-4aZ5Mq9aw",
     "type": "Emote",
     "name": "Beckon",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
   },
@@ -216,8 +232,10 @@
     "name": "Beckoning Ruler Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_mask_prince_king.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Season_of_little_prince_mask1.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Mask" },
-    "order": 1001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Mask"
+    },
+    "order": 166
   },
   {
     "id": 1259,
@@ -247,14 +265,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Gloating Narcissist
   {
     "id": 1263,
     "guid": "qcsiXdqfGT",
     "type": "Emote",
     "name": "Gloat",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png",
     "order": 781
@@ -264,7 +282,9 @@
     "guid": "SNhn8BVb7a",
     "type": "Emote",
     "name": "Gloat",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
   },
@@ -289,7 +309,9 @@
     "guid": "XhRW44vwiq",
     "type": "Emote",
     "name": "Gloat",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
   },
@@ -298,7 +320,9 @@
     "guid": "g-tnZqaKbi",
     "type": "Emote",
     "name": "Gloat",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
   },
@@ -316,8 +340,10 @@
     "name": "Gloating Narcissist Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Icon_pants_prince_narcissist.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Season_of_little_prince_pants1.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Outfit" },
-    "order": 1001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Outfit"
+    },
+    "order": 21
   },
   {
     "id": 1271,
@@ -326,8 +352,10 @@
     "name": "Gloating Narcissist Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Icon_hair_prince_narcissist.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Season_of_little_prince_hair2.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Hair" },
-    "order": 2002
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Hair"
+    },
+    "order": 312
   },
   {
     "id": 1272,
@@ -357,14 +385,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Stretching Lamplighter
   {
     "id": 1276,
     "guid": "UhtkKIM3ol",
     "type": "Emote",
     "name": "Stretch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png",
     "order": 791
@@ -374,7 +402,9 @@
     "guid": "NwYn4D2Gag",
     "type": "Emote",
     "name": "Stretch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
   },
@@ -392,15 +422,19 @@
     "name": "Stretching Lamplighter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_hair_prince_lightkeeper.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Season_of_little_prince_hair3.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Hair" },
-    "order": 2003
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Hair"
+    },
+    "order": 313
   },
   {
     "id": 1280,
     "guid": "0f_f0iJMqN",
     "type": "Emote",
     "name": "Stretch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
   },
@@ -409,7 +443,9 @@
     "guid": "e-yLNwofBb",
     "type": "Emote",
     "name": "Stretch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
   },
@@ -420,8 +456,10 @@
     "name": "Stretching Lamplighter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Icon_cape_littleprince_3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Season_of_little_prince_cape_lamplighter_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Cape" },
-    "order": 2003
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Cape"
+    },
+    "order": 592
   },
   {
     "id": 1283,
@@ -451,14 +489,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Slouching Soldier
   {
     "id": 1285,
     "guid": "5J5FDssiU9",
     "type": "Emote",
     "name": "Slouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png",
     "order": 801
@@ -468,7 +506,9 @@
     "guid": "Gx5YAc7jLr",
     "type": "Emote",
     "name": "Slouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
   },
@@ -486,15 +526,19 @@
     "name": "Slouching Soldier Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Icon_hair_prince_shame.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Season_of_little_prince_hair1.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Hair" },
-    "order": 2001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Hair"
+    },
+    "order": 311
   },
   {
     "id": 1289,
     "guid": "ZZ21lI_L9o",
     "type": "Emote",
     "name": "Slouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
   },
@@ -503,7 +547,9 @@
     "guid": "OpLAmdRCNM",
     "type": "Emote",
     "name": "Slouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
   },
@@ -530,8 +576,10 @@
     "name": "Slouching Soldier Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_cape_littleprince_tattered-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Season_of_little_prince_cape_slouching_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Cape" },
-    "order": 2002
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Cape"
+    },
+    "order": 591
   },
   {
     "id": 1294,
@@ -561,14 +609,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Sneezing Geographer
   {
     "id": 1298,
     "guid": "zgI2lfTGvf",
     "type": "Emote",
     "name": "Sneeze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png",
     "order": 811
@@ -578,7 +626,9 @@
     "guid": "muRzuaFzwA",
     "type": "Emote",
     "name": "Sneeze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
   },
@@ -589,8 +639,10 @@
     "name": "Sneezing Geographer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_hair_prince_sneezing.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Season_of_little_prince_hair5.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Hair" },
-    "order": 2005
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Hair"
+    },
+    "order": 315
   },
   {
     "id": 1301,
@@ -604,7 +656,9 @@
     "guid": "cYQ6gsue9A",
     "type": "Emote",
     "name": "Sneeze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
   },
@@ -613,7 +667,9 @@
     "guid": "kGaI-255J9",
     "type": "Emote",
     "name": "Sneeze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
   },
@@ -631,8 +687,10 @@
     "name": "Sneezing Geographer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Icon_cape_littleprince4-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Season_of_little_prince_cape_geographer_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Cape" },
-    "order": 2004
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Cape"
+    },
+    "order": 593
   },
   {
     "id": 1306,
@@ -655,14 +713,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Star Collector
   {
     "id": 1309,
     "guid": "drH3NXwa4B",
     "type": "Emote",
     "name": "Hand-Rub",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png",
     "order": 821
@@ -672,7 +730,9 @@
     "guid": "kNbIj8-u0w",
     "type": "Emote",
     "name": "Hand-Rub",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
   },
@@ -683,8 +743,10 @@
     "name": "Star Collector Neckpiece",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Icon_pendant_little_prince_neckerchief.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Season_of_little_prince_necktie.PNG",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Neck_Accessory" },
-    "order": 1001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Neck_Accessory"
+    },
+    "order": 95
   },
   {
     "id": 1312,
@@ -698,7 +760,9 @@
     "guid": "kUOyMedcLK",
     "type": "Emote",
     "name": "Hand-Rub",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
   },
@@ -707,7 +771,9 @@
     "guid": "f2efm6-cUw",
     "type": "Emote",
     "name": "Hand-Rub",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
   },
@@ -725,8 +791,10 @@
     "name": "Star Collector Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_cape_littleprince_1-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Season_of_little_prince_cape_star_collector_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Cape" },
-    "order": 2001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Cape"
+    },
+    "order": 590
   },
   {
     "id": 1317,
@@ -735,8 +803,10 @@
     "name": "Star Collector Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_prop_little_prince_star_prop.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Star-collector-star-lamp-prop-closeup.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Prop" },
-    "order": 2101
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Prop"
+    },
+    "order": 473
   },
   {
     "id": 1318,
@@ -766,8 +836,6 @@
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
-  // #endregion
-  // #region Limited items
   {
     "id": 1322,
     "guid": "yjuL6T_ZOo",
@@ -775,8 +843,10 @@
     "name": "Little Prince Scarf Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_cape_littleprince_scarf-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_little_prince_cape7_iap_scarf.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Scarf_Cape" },
-    "order": 2005
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Scarf_Cape"
+    },
+    "order": 594
   },
   {
     "id": 1323,
@@ -785,8 +855,10 @@
     "name": "Little Prince Asteroid Jacket",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_cape_littleprince_asteroid-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Little_prince_asteroid_cape_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Asteroid_Jacket" },
-    "order": 2006
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Asteroid_Jacket"
+    },
+    "order": 595
   },
   {
     "id": 1324,
@@ -795,9 +867,9 @@
     "name": "Little Prince Fox",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_prop_little_prince_fox.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Season_of_little_prince_iap_fox_inst.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Fox_Prop" },
-    "order": 2301
-  },
-  // #endregion
-  // #endregion
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Fox_Prop"
+    },
+    "order": 475
+  }
 ]

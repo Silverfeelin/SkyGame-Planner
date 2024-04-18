@@ -1,5 +1,4 @@
 [
-  // #region Remembrance Guide
   {
     "id": 574,
     "guid": "c0KdEygWIK",
@@ -15,8 +14,10 @@
     "name": "Remembrance Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoRemembrance-Seasonal-Pass-pendant.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts" },
-    "order": 16
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
+    },
+    "order": 88
   },
   {
     "id": 576,
@@ -26,8 +27,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SoRemembrance-Ultimate-Gift-Sash-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoRemembrance-Ultimate-Gift-Sash.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts" },
-    "order": 1602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
+    },
+    "order": 99
   },
   {
     "id": 577,
@@ -37,8 +40,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/SoRemembrance-Ultimate-Gift-Manta-Projector-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/SoRemembrance-Ultimate-Gift-Manta-Projector.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts" },
-    "order": 2801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
+    },
+    "order": 480
   },
   {
     "id": 578,
@@ -68,8 +73,10 @@
     "name": "Remembrance Chimes Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/SoRemembrance-Prop-Chimes-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/SoRemembrance-Prop-Chimes.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Chimes" },
-    "order": 2501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Chimes"
+    },
+    "order": 477
   },
   {
     "id": 582,
@@ -113,8 +120,10 @@
     "name": "Remembrance Kettle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/SoRemembrance-Prop-Kettle-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/SoRemembrance-Prop-Kettle.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Kettle" },
-    "order": 2701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Kettle"
+    },
+    "order": 479
   },
   {
     "id": 588,
@@ -158,8 +167,10 @@
     "name": "Remembrance Potted Plant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/SoRemembrance-Prop-Plants-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/SoRemembrance-Prop-Plants.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Potted_Plant" },
-    "order": 2601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Potted_Plant"
+    },
+    "order": 478
   },
   {
     "id": 594,
@@ -189,8 +200,10 @@
     "name": "Remembrance Crab Plush",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SoRemembrance-Prop-Crab-Plush-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Remembrance-Prop-Crab-Plush.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Crab_Plush" },
-    "order": 2901
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Crab_Plush"
+    },
+    "order": 481
   },
   {
     "id": 598,
@@ -199,8 +212,10 @@
     "name": "Remembrance Manta Plush",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SoRemembrance-Prop-Manta-Plush-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Remembrance-Prop-Manta-Plush.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Manta_Plush" },
-    "order": 2902
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Manta_Plush"
+    },
+    "order": 482
   },
   {
     "id": 599,
@@ -237,15 +252,14 @@
     "name": "Quest 10",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
-  // #endregion
-  // #region Remembrance
-  // Bereft Veteran
   {
     "id": 1564,
     "guid": "8PJqQ9WsHo",
     "type": "Emote",
     "name": "Grieving",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png",
     "order": 1001
@@ -255,7 +269,9 @@
     "guid": "ms8gAS7UHk",
     "type": "Emote",
     "name": "Grieving",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
   },
@@ -266,8 +282,10 @@
     "name": "Bereft Veteran Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/SoRemembrance-Bereft-Veteran-Mask-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoRemembrance-Bereft-Veteran-Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask" },
-    "order": 1601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask"
+    },
+    "order": 180
   },
   {
     "id": 1567,
@@ -290,15 +308,19 @@
     "name": "Bereft Veteran Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoRemembrance-Bereft-Veteran-Hair-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/SoRemembrance-Bereft-Veteran-Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Hair" },
-    "order": 2602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Hair"
+    },
+    "order": 339
   },
   {
     "id": 1570,
     "guid": "FIaYs2Unva",
     "type": "Emote",
     "name": "Grieving",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
   },
@@ -307,7 +329,9 @@
     "guid": "Wu1J2yazsw",
     "type": "Emote",
     "name": "Grieving",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/SoRemembrance-Bereft-Veteran-Emote-Icon-Morybel-0146.png"
   },
@@ -318,8 +342,10 @@
     "name": "Bereft Veteran Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SoRemembrance-Bereft-Veteran-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SoRemembrance-Bereft-Veteran-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape" },
-    "order": 2601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
+    },
+    "order": 618
   },
   {
     "id": 1573,
@@ -335,13 +361,14 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png"
   },
-  // Pleading Child
   {
     "id": 1575,
     "guid": "6H4WC7Aipv",
     "type": "Emote",
     "name": "Pleading",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png",
     "order": 981
@@ -351,7 +378,9 @@
     "guid": "oxlHVEQ-KD",
     "type": "Emote",
     "name": "Pleading",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
   },
@@ -362,8 +391,10 @@
     "name": "Pleading Child Scarf",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/SoRemembrance-Pleading-Child-Necklace-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/SoRemembrance-Pleading-Child-Necklace.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory" },
-    "order": 1601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory"
+    },
+    "order": 98
   },
   {
     "id": 1578,
@@ -386,15 +417,19 @@
     "name": "Pleading Child Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SoRemembrance-Pleading-Child-Hair-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SoRemembrance-Pleading-Child-Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Hair" },
-    "order": 2601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Hair"
+    },
+    "order": 338
   },
   {
     "id": 1581,
     "guid": "LWXpz1a8d_",
     "type": "Emote",
     "name": "Pleading",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
   },
@@ -403,7 +438,9 @@
     "guid": "xiAEktyuKT",
     "type": "Emote",
     "name": "Pleading",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/SoRemembrance-Pleading-Child-Emote-Icon-Morybel-0146.png"
   },
@@ -414,8 +451,10 @@
     "name": "Pleading Child Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/SoRemembrance-Pleading-Child-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/SoRemembrance-Pleading-Child-Outfit.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit" },
-    "order": 1601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
+    },
+    "order": 38
   },
   {
     "id": 1584,
@@ -424,8 +463,10 @@
     "name": "Pleading Child Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Pleading-Child-Shoes-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Pleading-Child-Shoes.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit" },
-    "order": 1601
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
+    },
+    "order": 62
   },
   {
     "id": 1585,
@@ -441,13 +482,14 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png"
   },
-  // Tiptoeing Tea-Brewer
   {
     "id": 1587,
     "guid": "8Pr0VtDhsh",
     "type": "Emote",
     "name": "Tiptoeing",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png",
     "order": 991
@@ -457,7 +499,9 @@
     "guid": "-XSUgHYCU-",
     "type": "Emote",
     "name": "Tiptoeing",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
   },
@@ -475,15 +519,19 @@
     "name": "Tiptoeing Tea-Brewer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SoRemembrance-Tiptoeing-Tea-Brewer-Hair-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SoRemembrance-Tiptoeing-Tea-Brewer-Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Hair" },
-    "order": 2603
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Hair"
+    },
+    "order": 340
   },
   {
     "id": 1591,
     "guid": "ilnoN5oAS7",
     "type": "Emote",
     "name": "Tiptoeing",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
   },
@@ -492,7 +540,9 @@
     "guid": "S3meQvWoGC",
     "type": "Emote",
     "name": "Tiptoeing",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/SoRemembrance-Tiptoeing-Tea-Brewer-Emote-Icon-Morybel-0146.png"
   },
@@ -510,8 +560,10 @@
     "name": "Tiptoeing Tea-Brewer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Outfit" },
-    "order": 1603
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Outfit"
+    },
+    "order": 40
   },
   {
     "id": 1595,
@@ -520,8 +572,10 @@
     "name": "Tiptoeing Tea-Brewer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape" },
-    "order": 2603
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
+    },
+    "order": 620
   },
   {
     "id": 1596,
@@ -537,13 +591,14 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png"
   },
-  // Wounded Warrior
   {
     "id": 1598,
     "guid": "6dT44er9LL",
     "type": "Stance",
     "name": "Injured Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/SoRemembrance-Wounded-Warrior-Emote-Icon-Morybel-0146.png",
     "order": 111
   },
@@ -561,8 +616,10 @@
     "name": "Wounded Warrior Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/SoRemembrance-Wounded-Warrior-Mask-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/SoRemembrance-Wounded-Warrior-Mask.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Mask" },
-    "order": 1602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Mask"
+    },
+    "order": 181
   },
   {
     "id": 1601,
@@ -571,8 +628,10 @@
     "name": "Wounded Warrior Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SoRemembrance-Wounded-Warrior-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/SoRemembrance-Wounded-Warrior-Outfit.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Outfit" },
-    "order": 1602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Outfit"
+    },
+    "order": 39
   },
   {
     "id": 1602,
@@ -595,8 +654,10 @@
     "name": "Wounded Warrior Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/SoRemembrance-Wounded-Warrior-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoRemembrance-Wounded-Warrior-Cape-Back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape" },
-    "order": 2602
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
+    },
+    "order": 619
   },
   {
     "id": 1605,
@@ -604,6 +665,5 @@
     "type": "Special",
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png"
-  },
-  // #endregion
+  }
 ]

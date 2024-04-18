@@ -1,5 +1,4 @@
 [
-  // #region Permanent IAP
   {
     "id": 1936,
     "guid": "Z5JkGSWLbw",
@@ -7,8 +6,10 @@
     "name": "Orange Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Icon_cape_orange-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Cape_orange_2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack" },
-    "order": 4
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack"
+    },
+    "order": 544
   },
   {
     "id": 1937,
@@ -17,8 +18,10 @@
     "name": "Founder's Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Icon_cape_tgc_b-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Founders_cape_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack" },
-    "order": 3
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack"
+    },
+    "order": 543
   },
   {
     "id": 1938,
@@ -27,8 +30,10 @@
     "name": "Beta Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Beta-cape-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Beta_cape_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape" },
-    "order": 2
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape"
+    },
+    "order": 542
   },
   {
     "id": 1939,
@@ -38,8 +43,10 @@
     "name": "Fledgling Harp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/SOPerformance-Fledgling-harp-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Performance-Fledgling-harp.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Fledgling_Harp" },
-    "order": 201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Fledgling_Harp"
+    },
+    "order": 413
   },
   {
     "id": 1940,
@@ -49,8 +56,10 @@
     "name": "Rhythm Guitar",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SOPerformance-Rhythm-Guitar-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Performance-Rhythm-Guitar-white-guitar.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar" },
-    "order": 501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar"
+    },
+    "order": 416
   },
   {
     "id": 1941,
@@ -60,8 +69,10 @@
     "name": "Triumph Handpan",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SOPerformance-Triumph-Handpan-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Performance-Triumph-Handpan.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan" },
-    "order": 2401
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan"
+    },
+    "order": 434
   },
   {
     "id": 1942,
@@ -71,12 +82,11 @@
     "name": "Blue Electric Guitar",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Days-of-Sky-2022-instrument-blue-electric-guitar-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Days-of-Sky-2022-instrument-blue-electric-guitar.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar" },
-    "order": 901
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar"
+    },
+    "order": 420
   },
-  // #endregion
-
-  // #region Switch
   {
     "id": 1943,
     "guid": "KtlqKC7whS",
@@ -84,8 +94,10 @@
     "name": "Nintendo Blue Switch Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Icon_cape_nintendo_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Cape_nintendo_blue_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack" },
-    "order": 10702
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
+    },
+    "order": 668
   },
   {
     "id": 1944,
@@ -94,8 +106,10 @@
     "name": "Nintendo Red Switch Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Icon_cape_nintendo_red-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_nintendo_red_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack" },
-    "order": 10701
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
+    },
+    "order": 667
   },
   {
     "id": 1945,
@@ -104,8 +118,10 @@
     "name": "Nintendo Elf Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Icon_hair_Nintendo_elf.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Nintendo_elf_hair_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack" },
-    "order": 10102
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack"
+    },
+    "order": 372
   },
   {
     "id": 1946,
@@ -115,8 +131,10 @@
     "name": "Vessel Flute",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_instrument_vessel_flute.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Vessel-flute-Ocarina-Nintendo-IAP.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute" },
-    "order": 1801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute"
+    },
+    "order": 429
   },
   {
     "id": 1959,
@@ -125,7 +143,7 @@
     "name": "Sparrow Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Sparrow-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
-    "order": 10514
+    "order": 664
   },
   {
     "id": 1960,
@@ -134,7 +152,7 @@
     "name": "Sparrow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Sparrow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
-    "order": 10611
+    "order": 195
   },
   {
     "id": 1961,
@@ -143,7 +161,7 @@
     "name": "Moth Antennae",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moth-headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
-    "order": 11522
+    "order": 411
   },
   {
     "id": 1962,
@@ -152,11 +170,8 @@
     "name": "Moth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Moth-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
-    "order": 10524
+    "order": 665
   },
-  // #endregion
-
-  // #region Journey
   {
     "id": 1947,
     "guid": "sDNG_Nt7Ew",
@@ -164,8 +179,10 @@
     "name": "Journey Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Journey-Pack-Mask-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/JourneyPack-Mask-Nastymold.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
-    "order": 20001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
+    },
+    "order": 196
   },
   {
     "id": 1948,
@@ -174,8 +191,10 @@
     "name": "Journey Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/JourneyPack-Cape-back-Nastymold.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
-    "order": 10801
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
+    },
+    "order": 669
   },
   {
     "id": 1949,
@@ -184,8 +203,9 @@
     "name": "Journey Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/JourneyPack-Hair-Nastymold.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack" },
-    "order": 10103
-  },
-  // #endregion
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
+    },
+    "order": 373
+  }
 ]

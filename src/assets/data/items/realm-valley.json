@@ -1,11 +1,12 @@
 [
-  // Confident Sightseer
   {
     "id": 189,
     "guid": "HdmcYW9N-f",
     "type": "Stance",
     "name": "Confident Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/ConfidentSightseer-1.png",
     "order": 21
   },
@@ -16,8 +17,10 @@
     "name": "Confident Sightseer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/ConfidentSightseer-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Hair03-Wedge_Cut.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Hair" },
-    "order": 123
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Hair"
+    },
+    "order": 249
   },
   {
     "id": 191,
@@ -54,16 +57,19 @@
     "name": "Confident Sightseer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/ConfidentSightseer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Legs05.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Outfit"
+    },
     "order": 6
   },
-  // Handstanding Thrillseeker
   {
     "id": 196,
     "guid": "iGODc_qPpd",
     "type": "Emote",
     "name": "Handstand",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png",
     "order": 401
@@ -73,7 +79,9 @@
     "guid": "SK5gSmxvBt",
     "type": "Emote",
     "name": "Handstand",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
   },
@@ -103,7 +111,9 @@
     "guid": "B5tnHt0REg",
     "type": "Emote",
     "name": "Handstand",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
   },
@@ -112,7 +122,9 @@
     "guid": "4jvgh1uZDr",
     "type": "Emote",
     "name": "Handstand",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/HandstandingThrillseeker-1.png"
   },
@@ -130,8 +142,10 @@
     "name": "Handstanding Thrillseeker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/HandstandingThrillseeker-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Cape_pink_2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape" },
-    "order": 27
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
+    },
+    "order": 551
   },
   {
     "id": 205,
@@ -147,16 +161,19 @@
     "name": "Handstanding Thrillseeker Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/HandstandingThrillseeker-tier-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Cape_pink_tier_2_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape" },
-    "order": 36
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
+    },
+    "order": 560
   },
-  // Manta Whisperer
   {
     "id": 207,
     "guid": "XyTNAnvs9N",
     "type": "Call",
     "name": "Manta Call",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Manta_Whisperer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Manta_Whisperer#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/MantaWhisperer-1.png",
     "order": 31
   },
@@ -197,13 +214,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
     "order": 3
   },
-  // Backflipping Champion
   {
     "id": 213,
     "guid": "S3qCWOry5Q",
     "type": "Emote",
     "name": "Backflip",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png",
     "order": 411
@@ -213,7 +231,9 @@
     "guid": "XDvPc5hCdm",
     "type": "Emote",
     "name": "Backflip",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
   },
@@ -231,8 +251,10 @@
     "name": "Backflipping Champion Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/BackflippingChampion-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Hair12-Chris_Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Hair" },
-    "order": 234
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Hair"
+    },
+    "order": 261
   },
   {
     "id": 217,
@@ -253,7 +275,9 @@
     "guid": "VaWHh_2B2X",
     "type": "Emote",
     "name": "Backflip",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
   },
@@ -262,7 +286,9 @@
     "guid": "NFnTgjfTst",
     "type": "Emote",
     "name": "Backflip",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BackflippingChampion-1.png"
   },
@@ -280,16 +306,19 @@
     "name": "Backflipping Champion Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/BackflippingChampion-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mask08.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Mask" },
-    "order": 5
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Mask"
+    },
+    "order": 200
   },
-  // Cheerful Spectator
   {
     "id": 223,
     "guid": "tL1K-hP5z-",
     "type": "Emote",
     "name": "Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png",
     "order": 431
@@ -299,7 +328,9 @@
     "guid": "4xvMNOz0ZB",
     "type": "Emote",
     "name": "Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
   },
@@ -317,8 +348,10 @@
     "name": "Cheerful Spectator Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/CheerfulSpectator-Hair-Credit-Ed.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Hair28-Afro.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Hair" },
-    "order": 244
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Hair"
+    },
+    "order": 262
   },
   {
     "id": 227,
@@ -339,7 +372,9 @@
     "guid": "cAgxbrsMjj",
     "type": "Emote",
     "name": "Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
   },
@@ -348,7 +383,9 @@
     "guid": "ADRONECYYY",
     "type": "Emote",
     "name": "Cheer",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/CheerfulSpectator-1.png"
   },
@@ -367,16 +404,19 @@
     "name": "Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CheerfulSpectator-Piano-Credit-Ed.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Cheerful-Spectator-Piano.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Instrument" },
-    "order": 1001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Instrument"
+    },
+    "order": 421
   },
-  // Bowing Medalist
   {
     "id": 233,
     "guid": "SPPN_qj2ia",
     "type": "Emote",
     "name": "Bow",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png",
     "order": 421
@@ -386,7 +426,9 @@
     "guid": "7RooNO25P9",
     "type": "Emote",
     "name": "Bow",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
   },
@@ -404,8 +446,10 @@
     "name": "Bowing Medalist Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/BowingMedalist-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Hair04-Lions_Mane_Hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Hair" },
-    "order": 224
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Hair"
+    },
+    "order": 260
   },
   {
     "id": 237,
@@ -426,7 +470,9 @@
     "guid": "QPVqC_FiAv",
     "type": "Emote",
     "name": "Bow",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
   },
@@ -435,7 +481,9 @@
     "guid": "ApqdPyaCIR",
     "type": "Emote",
     "name": "Bow",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/BowingMedalist-1.png"
   },
@@ -453,16 +501,19 @@
     "name": "Bowing Medalist Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/BowingMedalist-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Mask09.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Mask" },
-    "order": 4
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Mask"
+    },
+    "order": 201
   },
-  // Proud Victor
   {
     "id": 243,
     "guid": "6Gz1udO5fI",
     "type": "Stance",
     "name": "Proud Stance",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/ProudVictor-1.png",
     "order": 41
   },
@@ -473,8 +524,10 @@
     "name": "Proud Victor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/ProudVictor-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Cape_red_3.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape" },
-    "order": 22
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
+    },
+    "order": 546
   },
   {
     "id": 245,
@@ -511,8 +564,10 @@
     "name": "Proud Victor Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/ProudVictor-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Mask07-No_Face.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Mask" },
-    "order": 99999
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Mask"
+    },
+    "order": 110
   },
   {
     "id": 250,
@@ -528,7 +583,9 @@
     "name": "Proud Victor Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/ProudVictor-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Cape_red_tier_2_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape" },
-    "order": 31
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
+    },
+    "order": 555
   }
 ]

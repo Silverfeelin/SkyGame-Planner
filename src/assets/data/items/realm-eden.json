@@ -1,5 +1,4 @@
 [
-  // Isle Elder
   {
     "id": 358,
     "guid": "7FqA0RC1D4",
@@ -8,8 +7,10 @@
     "name": "Isle Elder Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Icon_hair_elder_isle.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Hair19-Isle_Elder.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Hair" },
-    "order": 274
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Hair"
+    },
+    "order": 265
   },
   {
     "id": 359,
@@ -19,10 +20,11 @@
     "name": "Isle Elder Ultimate Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Elder-Mask-Icon-Isle-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Elder-of-the-Isle-Face-Accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Face_Accessory" },
-    "order": 51
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Isle_Elder#Face_Accessory"
+    },
+    "order": 204
   },
-  // Prairie Elder
   {
     "id": 360,
     "guid": "x_pH3kjLjO",
@@ -31,8 +33,10 @@
     "name": "Prairie Elder Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Icon_hair_elder_prairie.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair20-Prairie_Elder.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Hair" },
-    "order": 284
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Hair"
+    },
+    "order": 266
   },
   {
     "id": 361,
@@ -42,10 +46,11 @@
     "name": "Prairie Elder Ultimate Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Elder-Mask-Icon-Prairie-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Elder-of-the-Prairie-Face-Accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Face_Accessory" },
-    "order": 52
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prairie_Elder#Face_Accessory"
+    },
+    "order": 205
   },
-  // Forest Elder
   {
     "id": 362,
     "guid": "T0wsTbmzvv",
@@ -54,8 +59,10 @@
     "name": "Forest Elder Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Icon_hair_elder_forest.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Hair21-Forest_Elder.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Hair" },
-    "order": 294
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Hair"
+    },
+    "order": 267
   },
   {
     "id": 363,
@@ -65,10 +72,11 @@
     "name": "Forest Elder Ultimate Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Elder-Mask-Icon-Forest-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Elder-of-the-Forest-Face-Accessory.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Face_Accessory" },
-    "order": 53
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Forest_Elder#Face_Accessory"
+    },
+    "order": 206
   },
-  // Valley Elders
   {
     "id": 364,
     "guid": "YdtLj5dJE7",
@@ -77,8 +85,10 @@
     "name": "Valley Elder Hair 1",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Icon_hair_elder_valley_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Hair23-Valley_Elder_2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair" },
-    "order": 314
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair"
+    },
+    "order": 269
   },
   {
     "id": 365,
@@ -88,10 +98,11 @@
     "name": "Valley Elder Hair 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Icon_hair_elder_valley_1.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Hair22-Valley_Elder_1.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair" },
-    "order": 304
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Valley_Elders#Hair"
+    },
+    "order": 268
   },
-  // Wasteland Elder
   {
     "id": 366,
     "guid": "SSrCZW8Cf-",
@@ -100,10 +111,11 @@
     "name": "Wasteland Elder Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Icon_hair_elder_wasteland.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Hair24-Wasteland_Elder.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Wasteland_Elder#Hair" },
-    "order": 324
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Wasteland_Elder#Hair"
+    },
+    "order": 270
   },
-  // Vault Elder
   {
     "id": 367,
     "guid": "RIkdOtUAeN",
@@ -112,7 +124,9 @@
     "name": "Vault Elder Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_hair_elder_vault.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Hair25-Vault_Elder.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder#Hair" },
-    "order": 334
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder#Hair"
+    },
+    "order": 271
   }
 ]

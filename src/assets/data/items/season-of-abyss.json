@@ -1,5 +1,4 @@
 [
-  // #region Abyss Guide
   {
     "id": 491,
     "guid": "Ya2cCEllDX",
@@ -8,8 +7,10 @@
     "name": "Abyss Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/15/Season-of-Abyss-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/SOAbyss-Pendant.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
-    "order": 12
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
+    },
+    "order": 84
   },
   {
     "id": 492,
@@ -19,8 +20,10 @@
     "name": "Abyss Ultimate Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/SOAbyss-Ultime-gift-hair-tassle-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
-    "order": 1201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
+    },
+    "order": 211
   },
   {
     "id": 493,
@@ -30,8 +33,10 @@
     "name": "Abyss Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SOAbyss-Ultime-gift-Cape-vector-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SOAbyss-Ultime-gift-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
-    "order": 2205
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
+    },
+    "order": 602
   },
   {
     "id": 494,
@@ -41,8 +46,10 @@
     "name": "Abyss Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/SOAbyss-Ultime-gift-underwater-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Ultime-gift-underwater-mask-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts" },
-    "order": 1204
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
+    },
+    "order": 117
   },
   {
     "id": 495,
@@ -121,18 +128,19 @@
     "name": "Abyss Guide Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SOAbyss-additional-mask-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOAbyss-mask2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask" },
-    "order": 1205
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
+    },
+    "order": 118
   },
-  // #endregion
-
-  // #region Anxious Angler
   {
     "id": 1371,
     "guid": "sk_cUbT6vx",
     "type": "Emote",
     "name": "Anxious",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png",
     "order": 881
@@ -142,7 +150,9 @@
     "guid": "3ixBHha-wW",
     "type": "Emote",
     "name": "Anxious",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
   },
@@ -160,8 +170,10 @@
     "name": "Anxious Angler Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/SOAbyss-Anxious-Angler-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SOAbyss-Anxious-Angler-mask-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask" },
-    "order": 1206
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask"
+    },
+    "order": 167
   },
   {
     "id": 1375,
@@ -170,8 +182,10 @@
     "name": "Anxious Angler Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/SOAbyss-Anxious-Angler-hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOAbyss-Anxious-Angler-hat-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Hair" },
-    "order": 2203
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Hair"
+    },
+    "order": 323
   },
   {
     "id": 1376,
@@ -185,7 +199,9 @@
     "guid": "kuS7q4u7Ua",
     "type": "Emote",
     "name": "Anxious",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
   },
@@ -194,7 +210,9 @@
     "guid": "rv2ivbgqBM",
     "type": "Emote",
     "name": "Anxious",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
   },
@@ -212,8 +230,10 @@
     "name": "Anxious Angler Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Anxious-Angler-cape-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SOAbyss-Anxious-Angler-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape" },
-    "order": 2203
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape"
+    },
+    "order": 600
   },
   {
     "id": 1381,
@@ -222,8 +242,10 @@
     "name": "Anxious Angler Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Anxious-Angler-outfit.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/SOAbyss-Anxious-Angler-Cape-outfit.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Outfit" },
-    "order": 1201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Outfit"
+    },
+    "order": 28
   },
   {
     "id": 1382,
@@ -253,14 +275,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Ceasing Commodore
   {
     "id": 1384,
     "guid": "Ei9pBqI3yK",
     "type": "Emote",
     "name": "Calm Down",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png",
     "order": 851
@@ -270,7 +292,9 @@
     "guid": "FETTumn6J-",
     "type": "Emote",
     "name": "Calm Down",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
   },
@@ -288,8 +312,10 @@
     "name": "Ceasing Commodore Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOAbyss-Ceasing-Commodore-hairstyle.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOAbyss-Ceasing-Commodore-hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair" },
-    "order": 2202
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair"
+    },
+    "order": 322
   },
   {
     "id": 1388,
@@ -298,8 +324,10 @@
     "name": "Ceasing Commodore Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/SOAbyss-Ceasing-Commodore-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SOAbyss-Ceasing-Commodore-mask-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask" },
-    "order": 1202
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
+    },
+    "order": 168
   },
   {
     "id": 1389,
@@ -313,7 +341,9 @@
     "guid": "aDDMg7WuIc",
     "type": "Emote",
     "name": "Calm Down",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
   },
@@ -322,7 +352,9 @@
     "guid": "TKVZD91Ur_",
     "type": "Emote",
     "name": "Calm Down",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
   },
@@ -333,8 +365,10 @@
     "name": "Ceasing Commodore Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/SOAbyss-Ceasing-Commodore-cape-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/SOAbyss-Ceasing-Commodore-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape" },
-    "order": 2201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape"
+    },
+    "order": 598
   },
   {
     "id": 1393,
@@ -364,14 +398,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // #endregion
-  // #region Bumbling Boatswain
   {
     "id": 1395,
     "guid": "VHBoJkhQ24",
     "type": "Emote",
     "name": "Ouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png",
     "order": 871
@@ -381,7 +415,9 @@
     "guid": "ACcdP5GR4g",
     "type": "Emote",
     "name": "Ouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
   },
@@ -399,8 +435,10 @@
     "name": "Bumbling Boatswain Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/SOAbyss-Bumbling-Boatswain-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/SOAbyss-Bumbling-Boatswain-mask-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask" },
-    "order": 1201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask"
+    },
+    "order": 169
   },
   {
     "id": 1399,
@@ -423,7 +461,9 @@
     "guid": "qrYCS8SmH6",
     "type": "Emote",
     "name": "Ouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
   },
@@ -432,7 +472,9 @@
     "guid": "-ccudc7_7b",
     "type": "Emote",
     "name": "Ouch",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
   },
@@ -450,8 +492,10 @@
     "name": "Bumbling Boatswain Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Bumbling-Boatswain-Cape-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/SOAbyss-Bumbling-Boatswain-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape" },
-    "order": 2204
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape"
+    },
+    "order": 601
   },
   {
     "id": 1405,
@@ -460,8 +504,10 @@
     "name": "Bumbling Boatswain Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SOAbyss-Bumbling-Boatswain-hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/SOAbyss-Bumbling-Boatswain-Cape-hat-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory" },
-    "order": 2201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory"
+    },
+    "order": 380
   },
   {
     "id": 1406,
@@ -477,14 +523,14 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
   },
-  // #endregion
-  // #region Cackling Cannoneer
   {
     "id": 1408,
     "guid": "d_Qmk0N-T9",
     "type": "Emote",
     "name": "Evil Laugh",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png",
     "order": 861
@@ -494,7 +540,9 @@
     "guid": "0iyXmNvh_C",
     "type": "Emote",
     "name": "Evil Laugh",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
   },
@@ -521,8 +569,10 @@
     "name": "Cackling Cannoneer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SOAbyss-Cackling-Cannoneer-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/SOAbyss-Cackling-Cannoneer-mask-screenshot.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Mask" },
-    "order": 1203
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Mask"
+    },
+    "order": 170
   },
   {
     "id": 1413,
@@ -536,7 +586,9 @@
     "guid": "heGFa0OjPp",
     "type": "Emote",
     "name": "Evil Laugh",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
   },
@@ -545,7 +597,9 @@
     "guid": "Vc0XWt8AUm",
     "type": "Emote",
     "name": "Evil Laugh",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
   },
@@ -556,8 +610,10 @@
     "name": "Cackling Cannoneer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/SOAbyss-Cackling-Cannoneer-Cape-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/SOAbyss-Cackling-Cannoneer-Cape-back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape" },
-    "order": 2202
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape"
+    },
+    "order": 599
   },
   {
     "id": 1417,
@@ -580,8 +636,10 @@
     "name": "Cackling Cannoneer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/SOAbyss-Cackling-Cannoneer-hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/SOAbyss-Cackling-Cannoneer-Cape-hair.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair" },
-    "order": 2201
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair"
+    },
+    "order": 321
   },
   {
     "id": 1420,
@@ -610,6 +668,5 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
-  },
-  // #endregion
+  }
 ]

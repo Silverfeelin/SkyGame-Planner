@@ -1,5 +1,4 @@
 [
-  // #region Enchantment Guide
   {
     "id": 377,
     "guid": "l47AxvwiAp",
@@ -8,8 +7,10 @@
     "name": "Enchantment Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/5_Enchantment.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Season_of_enchantment_pendant_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts" },
-    "order": 5
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
+    },
+    "order": 77
   },
   {
     "id": 378,
@@ -19,8 +20,10 @@
     "name": "Enchantment Ultimate Hair Tassels",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Icon_hair_enchantment_ultimate_tassles.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Season_of_enchantment_ultimate_tassels_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts" },
-    "order": 1001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
+    },
+    "order": 208
   },
   {
     "id": 379,
@@ -30,8 +33,10 @@
     "name": "Enchantment Ultimate Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Icon_hair_enchantment_ultimate.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_enchantment_hair_ultimate_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts" },
-    "order": 1507
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
+    },
+    "order": 292
   },
   {
     "id": 380,
@@ -124,15 +129,14 @@
     "name": "Hug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
   },
-  // #endregion
-  // #region Enchantment
-  // Nodding Muralist
   {
     "id": 924,
     "guid": "WhcCC138s8",
     "type": "Emote",
     "name": "Nod",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png",
     "order": 141
@@ -142,7 +146,9 @@
     "guid": "D72h3-WjJD",
     "type": "Emote",
     "name": "Nod",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
   },
@@ -153,8 +159,10 @@
     "name": "Nodding Muralist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Mimi-4117_06_nodding_muralist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Season_of_enchantment_mask_nodding_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask" },
-    "order": 501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask"
+    },
+    "order": 148
   },
   {
     "id": 927,
@@ -168,7 +176,9 @@
     "guid": "rYq-RTnkiN",
     "type": "Emote",
     "name": "Nod",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
   },
@@ -177,7 +187,9 @@
     "guid": "sbkNjwrgIc",
     "type": "Emote",
     "name": "Nod",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
   },
@@ -195,8 +207,10 @@
     "name": "Nodding Muralist Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Mimi-4117_06_nodding_muralist_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Season_of_enchantment_hair_nodding_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Hair" },
-    "order": 1501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Hair"
+    },
+    "order": 286
   },
   {
     "id": 932,
@@ -219,13 +233,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Indifferent Alchemist
   {
     "id": 935,
     "guid": "gFaU0Zm95W",
     "type": "Emote",
     "name": "Shrug",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png",
     "order": 351
@@ -235,7 +250,9 @@
     "guid": "5bwnWkR0DG",
     "type": "Emote",
     "name": "Shrug",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
   },
@@ -253,15 +270,19 @@
     "name": "Indifferent Alchemist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Mimi-4117_06_indifferent_alchemist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Season_of_enchantment_mask_indifferent_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask" },
-    "order": 503
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask"
+    },
+    "order": 149
   },
   {
     "id": 939,
     "guid": "8qHEcZWhOt",
     "type": "Emote",
     "name": "Shrug",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
   },
@@ -270,7 +291,9 @@
     "guid": "HD8j6J2ysy",
     "type": "Emote",
     "name": "Shrug",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
   },
@@ -281,8 +304,10 @@
     "name": "Indifferent Alchemist Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Mimi-4117_06_indifferent_alchemist_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Season_of_enchantment_hair_indifferent_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Hair" },
-    "order": 1505
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Hair"
+    },
+    "order": 290
   },
   {
     "id": 942,
@@ -305,8 +330,10 @@
     "name": "Indifferent Alchemist Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_cape_enchangment_purple_fold-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Season_of_enchantment_cape_indifferent_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape" },
-    "order": 1503
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape"
+    },
+    "order": 575
   },
   {
     "id": 945,
@@ -329,13 +356,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Crab Walker
   {
     "id": 948,
     "guid": "4cZR63EJEP",
     "type": "Emote",
     "name": "Crab Walk",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png",
     "order": 501
@@ -345,7 +373,9 @@
     "guid": "PcsXYI_YLj",
     "type": "Emote",
     "name": "Crab Walk",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
   },
@@ -356,8 +386,10 @@
     "name": "Crab Walker Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Mimi-4117_06_crab_walker_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Season_of_enchantment_hair_crabwalk_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Hair" },
-    "order": 1504
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Hair"
+    },
+    "order": 289
   },
   {
     "id": 951,
@@ -371,7 +403,9 @@
     "guid": "lw-A9eS1gx",
     "type": "Emote",
     "name": "Crab Walk",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
   },
@@ -380,7 +414,9 @@
     "guid": "48_BopWKQ5",
     "type": "Emote",
     "name": "Crab Walk",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
   },
@@ -398,8 +434,10 @@
     "name": "Crab Walker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Icon_cape_enchantment_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Season_of_enchantment_cape_crab_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape" },
-    "order": 1501
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape"
+    },
+    "order": 573
   },
   {
     "id": 956,
@@ -422,13 +460,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Scarecrow Farmer
   {
     "id": 959,
     "guid": "3difltLJOc",
     "type": "Emote",
     "name": "Boo",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png",
     "order": 621
@@ -438,7 +477,9 @@
     "guid": "DGC8JcQK5y",
     "type": "Emote",
     "name": "Boo",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
   },
@@ -456,15 +497,19 @@
     "name": "Scarecrow Farmer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_06_scarecrow_farmer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Season_of_enchantment_mask_scare_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask" },
-    "order": 504
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
+    },
+    "order": 150
   },
   {
     "id": 963,
     "guid": "ixFFdCm9cG",
     "type": "Emote",
     "name": "Boo",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
   },
@@ -473,7 +518,9 @@
     "guid": "sNJx3GgOLF",
     "type": "Emote",
     "name": "Boo",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
   },
@@ -484,8 +531,10 @@
     "name": "Scarecrow Farmer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Mimi-4117_06_scarecrow_farmer_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Season_of_enchantment_hair_scare_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Hair" },
-    "order": 1502
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Hair"
+    },
+    "order": 287
   },
   {
     "id": 966,
@@ -515,13 +564,14 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Snoozing Carpenter
   {
     "id": 970,
     "guid": "RzstnkbQ8d",
     "type": "Emote",
     "name": "Doze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png",
     "order": 731
@@ -531,7 +581,9 @@
     "guid": "o9Wt1MLcrz",
     "type": "Emote",
     "name": "Doze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
   },
@@ -549,15 +601,19 @@
     "name": "Snoozing Carpenter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Mimi-4117_06_snoozing_carpenter_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Season_of_enchantment_hair_doze_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Hair" },
-    "order": 1503
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Hair"
+    },
+    "order": 288
   },
   {
     "id": 974,
     "guid": "xfv-AbRiCY",
     "type": "Emote",
     "name": "Doze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
   },
@@ -566,7 +622,9 @@
     "guid": "IL31Z--01u",
     "type": "Emote",
     "name": "Doze",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
   },
@@ -577,8 +635,10 @@
     "name": "Snoozing Carpenter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Icon_cape_enchantment_orange-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_enchantment_cape_sleepy_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape" },
-    "order": 1502
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape"
+    },
+    "order": 574
   },
   {
     "id": 977,
@@ -608,14 +668,15 @@
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
-  // Playfighting Herbalist
   {
     "id": 981,
     "guid": "aBFJssIm0e",
     "type": "Emote",
     "subtype": "FriendEmote",
     "name": "Play Fight",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
   },
@@ -633,8 +694,10 @@
     "name": "Playfighting Herbalist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Mimi-4117_06_playfighting_herbalist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Season_of_enchantment_mask_playfight_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask" },
-    "order": 502
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask"
+    },
+    "order": 151
   },
   {
     "id": 984,
@@ -656,7 +719,9 @@
     "type": "Emote",
     "subtype": "FriendEmote",
     "name": "Play Fight",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
   },
@@ -676,8 +741,10 @@
     "name": "Playfighting Herbalist Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_06_playfighting_herbalist_hair.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Season_of_enchantment_hair_playfight_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Hair" },
-    "order": 1506
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Hair"
+    },
+    "order": 291
   },
   {
     "id": 989,
@@ -686,8 +753,10 @@
     "name": "Playfighting Herbalist Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Icon_cape_enchantment_orange_fold-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_enchantment_cape_playflght_back_v2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape" },
-    "order": 1504
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape"
+    },
+    "order": 576
   },
   {
     "id": 990,
@@ -724,8 +793,9 @@
     "name": "Playfighting Herbalist Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Shiny-orb.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Playfighting-herbalist-orb-prop.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Prop" },
-    "order": 401
-  },
-  // #endregion
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Prop"
+    },
+    "order": 455
+  }
 ]

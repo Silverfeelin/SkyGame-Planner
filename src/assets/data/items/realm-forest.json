@@ -1,11 +1,12 @@
 [
-  // Shivering Trailblazer
   {
     "id": 110,
     "guid": "cg1HspRoFt",
     "type": "Emote",
     "name": "Shiver",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png",
     "order": 271
@@ -15,7 +16,9 @@
     "guid": "CjN1GNyRo5",
     "type": "Emote",
     "name": "Shiver",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
   },
@@ -33,7 +36,9 @@
     "name": "Shivering Trailblazer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/ShiveringTrailblazer-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Legs03.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Outfit"
+    },
     "order": 3
   },
   {
@@ -55,7 +60,9 @@
     "guid": "zHkQGblG-B",
     "type": "Emote",
     "name": "Shiver",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
   },
@@ -64,7 +71,9 @@
     "guid": "WKFJkGzYdl",
     "type": "Emote",
     "name": "Shiver",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
   },
@@ -82,16 +91,19 @@
     "name": "Shivering Trailblazer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/ShiveringTrailblazer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Hair08-Wispy.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Hair" },
-    "order": 143
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Hair"
+    },
+    "order": 251
   },
-  // Blushing Prospector
   {
     "id": 120,
     "guid": "EMWqfLlCv8",
     "type": "Emote",
     "name": "Shy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png",
     "order": 301
@@ -101,7 +113,9 @@
     "guid": "MPG42915f5",
     "type": "Emote",
     "name": "Shy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
   },
@@ -119,8 +133,10 @@
     "name": "Blushing Prospector Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/BlushingProspector-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Hair32-Pigtail_Braids.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Hair" },
-    "order": 113
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Hair"
+    },
+    "order": 248
   },
   {
     "id": 124,
@@ -141,7 +157,9 @@
     "guid": "msoi-2PV03",
     "type": "Emote",
     "name": "Shy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
   },
@@ -150,7 +168,9 @@
     "guid": "jHWFCcLqlj",
     "type": "Emote",
     "name": "Shy",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
   },
@@ -169,16 +189,19 @@
     "name": "Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/BlushingProspector-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Blushing_Prospector-Drum.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Instrument" },
-    "order": 2001
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Instrument"
+    },
+    "order": 430
   },
-  // Hide'n'Seek Pioneer
   {
     "id": 130,
     "guid": "iGgNmgUF3h",
     "type": "Emote",
     "name": "Hide and Seek",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide'n'Seek_Pioneer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide'n'Seek_Pioneer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/HideNSeekPioneer-1.png",
     "order": 281
@@ -190,8 +213,10 @@
     "name": "Hide'n'Seek Pioneer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/HideNSeekPioneer-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Hair14-Bob.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Hair" },
-    "order": 133
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Hair"
+    },
+    "order": 250
   },
   {
     "id": 132,
@@ -228,8 +253,10 @@
     "name": "Hide'n'Seek Pioneer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/HideNSeekPioneer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mask06-small-chibi.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Mask" },
-    "order": 2
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Mask"
+    },
+    "order": 109
   },
   {
     "id": 137,
@@ -245,16 +272,19 @@
     "name": "Hide'n'Seek Pioneer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/HideNSeekPioneer-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Legs_hide_n_seek_pioneer_dress.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Outfit" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Outfit"
+    },
     "order": 2
   },
-  // Pouty Porter
   {
     "id": 139,
     "guid": "tNluEK79s-",
     "type": "Emote",
     "name": "Angry",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png",
     "order": 291
@@ -264,7 +294,9 @@
     "guid": "YkzYpoa9me",
     "type": "Emote",
     "name": "Angry",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
   },
@@ -282,8 +314,10 @@
     "name": "Pouty Porter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/PoutyPorter-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Hair35-One_Side_Medium.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Hair" },
-    "order": 164
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Hair"
+    },
+    "order": 254
   },
   {
     "id": 143,
@@ -304,7 +338,9 @@
     "guid": "FnCfXeMPEq",
     "type": "Emote",
     "name": "Angry",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
   },
@@ -313,7 +349,9 @@
     "guid": "JEKMfn1NPZ",
     "type": "Emote",
     "name": "Angry",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
   },
@@ -331,8 +369,10 @@
     "name": "Pouty Porter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Cape_teal2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape" },
-    "order": 24
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
+    },
+    "order": 548
   },
   {
     "id": 149,
@@ -348,16 +388,19 @@
     "name": "Pouty Porter Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Cape_teal_tier_2_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape" },
-    "order": 33
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
+    },
+    "order": 557
   },
-  // Dismayed Hunter
   {
     "id": 151,
     "guid": "3sNvbNBB2y",
     "type": "Emote",
     "name": "Shocked",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png",
     "order": 311
@@ -367,7 +410,9 @@
     "guid": "n8IVtB9J3F",
     "type": "Emote",
     "name": "Shocked",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
   },
@@ -385,8 +430,10 @@
     "name": "Dismayed Hunter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/DismayedHunter-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Hair17-Thick_Ponytails.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Hair" },
-    "order": 53
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Hair"
+    },
+    "order": 242
   },
   {
     "id": 155,
@@ -407,7 +454,9 @@
     "guid": "yxgVQg3Amb",
     "type": "Emote",
     "name": "Shocked",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
   },
@@ -416,7 +465,9 @@
     "guid": "E1IE_GD9iG",
     "type": "Emote",
     "name": "Shocked",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
   },
@@ -434,8 +485,10 @@
     "name": "Dismayed Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cape_purple_2.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape" },
-    "order": 26
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
+    },
+    "order": 550
   },
   {
     "id": 161,
@@ -451,16 +504,19 @@
     "name": "Dismayed Hunter Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape_purple_tier_2_back.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape" },
-    "order": 35
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
+    },
+    "order": 559
   },
-  // Apologetic Lumberjack
   {
     "id": 163,
     "guid": "ubqUcBPT43",
     "type": "Emote",
     "name": "Apologize",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png",
     "order": 321
@@ -470,7 +526,9 @@
     "guid": "2WUjYDii5w",
     "type": "Emote",
     "name": "Apologize",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
   },
@@ -488,8 +546,10 @@
     "name": "Apologetic Lumberjack Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/ApologeticLumberjack-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Hair07-Short_Ponytails.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Hair" },
-    "order": 43
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Hair"
+    },
+    "order": 241
   },
   {
     "id": 167,
@@ -510,7 +570,9 @@
     "guid": "Ns5iP8sS2u",
     "type": "Emote",
     "name": "Apologize",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
   },
@@ -519,7 +581,9 @@
     "guid": "SFlHbJLINX",
     "type": "Emote",
     "name": "Apologize",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
   },
@@ -537,16 +601,19 @@
     "name": "Apologetic Lumberjack Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/ApologeticLumberjack-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mask05-Diamond.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Mask" },
-    "order": 3
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Mask"
+    },
+    "order": 199
   },
-  // Tearful Light Miner
   {
     "id": 173,
     "guid": "r1Q1s66rrI",
     "type": "Emote",
     "name": "Crying",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png",
     "order": 331
@@ -556,7 +623,9 @@
     "guid": "SuEWxrvIA6",
     "type": "Emote",
     "name": "Crying",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
   },
@@ -574,8 +643,10 @@
     "name": "Tearful Light Miner Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/TearfulLightMiner-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Hair38-Short_Mullet.png",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Hair" },
-    "order": 103
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Hair"
+    },
+    "order": 247
   },
   {
     "id": 177,
@@ -596,7 +667,9 @@
     "guid": "dnUcxxj6St",
     "type": "Emote",
     "name": "Crying",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
   },
@@ -605,7 +678,9 @@
     "guid": "9AzVZZ7Too",
     "type": "Emote",
     "name": "Crying",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
   },
@@ -628,7 +703,9 @@
     "guid": "HT_3LQCGNi",
     "type": "Emote",
     "name": "Crying",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
     "level": 5,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
   },
@@ -637,17 +714,20 @@
     "guid": "tKnWsI12Hi",
     "type": "Emote",
     "name": "Crying",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
     "level": 6,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
   },
-  // Whale Whisperer
   {
     "id": 183,
     "guid": "70FpYsoCa7",
     "type": "Call",
     "name": "Whale Call",
-    "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Whale_Whisperer#Expression" },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Whale_Whisperer#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/WhaleWhisperer-1.png",
     "order": 21
   },
