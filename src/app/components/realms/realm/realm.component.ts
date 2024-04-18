@@ -125,6 +125,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     this.realm = this._dataService.guidMap.get(guid!) as IRealm;
 
     this.spirits = [];
+    this.spiritCount = 0;
     this.seasonSpiritCount = 0;
 
     this.realm?.areas?.forEach(area => {
