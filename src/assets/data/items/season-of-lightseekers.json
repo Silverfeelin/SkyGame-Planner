@@ -54,7 +54,8 @@
     "guid": "2jrLzRaf6h",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 712,
@@ -73,7 +74,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 714,
@@ -97,7 +99,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape"
     },
-    "order": 566
+    "order": 566,
+    "group": "SeasonPass"
   },
   {
     "id": 716,
@@ -142,7 +145,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Hair"
     },
-    "order": 279
+    "order": 279,
+    "group": "SeasonPass"
   },
   {
     "id": 721,
@@ -166,7 +170,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 723,
@@ -186,7 +191,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Instrument"
     },
-    "order": 426
+    "order": 426,
+    "group": "SeasonPass"
   },
   {
     "id": 725,
@@ -230,7 +236,8 @@
     "guid": "_HKt5SUf0w",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 730,
@@ -246,7 +253,8 @@
     "name": "Music Sheet 9",
     "sheet": "9",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 9
+    "order": 9,
+    "group": "SeasonPass"
   },
   {
     "id": 732,
@@ -265,7 +273,8 @@
     "guid": "7CHTap5JN4",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 734,
@@ -284,7 +293,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Prop"
     },
-    "order": 442
+    "order": 442,
+    "group": "SeasonPass"
   },
   {
     "id": 736,
@@ -321,7 +331,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 740,
@@ -340,7 +351,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Mask"
     },
-    "order": 137
+    "order": 137,
+    "group": "SeasonPass"
   },
   {
     "id": 742,
@@ -362,7 +374,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 744,
@@ -387,7 +400,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Instrument"
     },
-    "order": 427
+    "order": 427,
+    "group": "SeasonPass"
   },
   {
     "id": 746,
@@ -438,7 +452,8 @@
     "guid": "Whp-r1yq-s",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 752,
@@ -454,7 +469,8 @@
     "name": "Music Sheet 10",
     "sheet": "10",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 10
+    "order": 10,
+    "group": "SeasonPass"
   },
   {
     "id": 754,
@@ -468,7 +484,8 @@
     "guid": "b_Dt_cckli",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 756,
@@ -492,7 +509,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape"
     },
-    "order": 565
+    "order": 565,
+    "group": "SeasonPass"
   },
   {
     "id": 758,
@@ -541,7 +559,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 763,
@@ -560,7 +579,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Mask"
     },
-    "order": 139
+    "order": 139,
+    "group": "SeasonPass"
   },
   {
     "id": 765,
@@ -582,7 +602,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 767,
@@ -601,7 +622,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape"
     },
-    "order": 567
+    "order": 567,
+    "group": "SeasonPass"
   },
   {
     "id": 769,

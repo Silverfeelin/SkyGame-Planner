@@ -53,7 +53,8 @@
     "guid": "ifJ-lyNM8J",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 653,
@@ -72,7 +73,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Mask"
     },
-    "order": 129
+    "order": 129,
+    "group": "SeasonPass"
   },
   {
     "id": 655,
@@ -109,7 +111,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 659,
@@ -128,7 +131,8 @@
     "guid": "FK3tNWjyTF",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 661,
@@ -150,7 +154,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Mimi-4117_02_stretching_guru_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 663,
@@ -169,7 +174,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape"
     },
-    "order": 564
+    "order": 564,
+    "group": "SeasonPass"
   },
   {
     "id": 665,
@@ -206,7 +212,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 669,
@@ -222,7 +229,8 @@
     "guid": "Yg9fTjQQAK",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 671,
@@ -244,7 +252,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Mimi-4117_02_provoking_performer_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 673,
@@ -268,7 +277,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Mask"
     },
-    "order": 130
+    "order": 130,
+    "group": "SeasonPass"
   },
   {
     "id": 675,
@@ -312,7 +322,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 680,
@@ -332,7 +343,8 @@
     "guid": "g5MvmNr1oa",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 682,
@@ -354,7 +366,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Mimi-4117_02_leaping_dancer_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 684,
@@ -373,7 +386,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Mask"
     },
-    "order": 131
+    "order": 131,
+    "group": "SeasonPass"
   },
   {
     "id": 686,
@@ -410,7 +424,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 690,
@@ -426,7 +441,8 @@
     "guid": "7Jr0a40jVD",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 692,
@@ -448,7 +464,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_02_saluting_protector_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 694,
@@ -472,7 +489,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Mask"
     },
-    "order": 132
+    "order": 132,
+    "group": "SeasonPass"
   },
   {
     "id": 696,
@@ -516,7 +534,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 701,
@@ -536,7 +555,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Instrument"
     },
-    "order": 432
+    "order": 432,
+    "group": "SeasonPass"
   },
   {
     "id": 703,
@@ -558,7 +578,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Mimi-4117_02_greeting_shaman_emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 705,
@@ -577,7 +598,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Mask"
     },
-    "order": 133
+    "order": 133,
+    "group": "SeasonPass"
   },
   {
     "id": 707,
