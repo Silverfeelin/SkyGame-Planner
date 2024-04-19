@@ -298,7 +298,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1504,
@@ -317,7 +318,8 @@
     "guid": "PgvQKPZzVg",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1506,
@@ -336,7 +338,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Hair"
     },
-    "order": 333
+    "order": 333,
+    "group": "SeasonPass"
   },
   {
     "id": 1508,
@@ -358,7 +361,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SoAurora-Running-Wayfarer-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1510,
@@ -374,7 +378,8 @@
     "name": "Music Sheet 36",
     "sheet": "36",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 36
+    "order": 36,
+    "group": "SeasonPass"
   },
   {
     "id": 1512,
@@ -393,14 +398,16 @@
     "guid": "tL1MtYN1eq",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1514,
     "guid": "wnusiMy_qT",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1515,
@@ -423,7 +430,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1517,
@@ -442,7 +450,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Mask"
     },
-    "order": 177
+    "order": 177,
+    "group": "SeasonPass"
   },
   {
     "id": 1519,
@@ -464,7 +473,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SoAurora-Mindful-Miner-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1521,
@@ -483,7 +493,8 @@
     "guid": "srhC02hNn2",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1523,
@@ -502,7 +513,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Outfit"
     },
-    "order": 33
+    "order": 33,
+    "group": "SeasonPass"
   },
   {
     "id": 1525,
@@ -521,14 +533,16 @@
     "guid": "9OuUG5PkCa",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1527,
     "guid": "kbhvnG0YQm",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1528,
@@ -551,7 +565,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1530,
@@ -570,7 +585,8 @@
     "guid": "iFrJQHkU4B",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1532,
@@ -589,7 +605,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Hair"
     },
-    "order": 334
+    "order": 334,
+    "group": "SeasonPass"
   },
   {
     "id": 1534,
@@ -611,7 +628,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/SoAurora-Warrior-of-Love-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1536,
@@ -627,7 +645,8 @@
     "guid": "PbRM5ScH3q",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1538,
@@ -646,14 +665,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Cape"
     },
-    "order": 613
+    "order": 613,
+    "group": "SeasonPass"
   },
   {
     "id": 1540,
     "guid": "rltwyawKJ-",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1541,
@@ -676,7 +697,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1543,
@@ -695,7 +717,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Mask"
     },
-    "order": 179
+    "order": 179,
+    "group": "SeasonPass"
   },
   {
     "id": 1545,
@@ -711,7 +734,8 @@
     "guid": "bvvQWvbRMe",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1547,
@@ -733,7 +757,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SoAurora-Seed-of-Hope-Emote-Icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1549,
@@ -752,7 +777,8 @@
     "guid": "fkcBt-ngs9",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1551,
@@ -771,14 +797,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Cape"
     },
-    "order": 611
+    "order": 611,
+    "group": "SeasonPass"
   },
   {
     "id": 1553,
     "guid": "YcidiKgDRm",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/SoAurora-Seasonal-Heart-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1554,

@@ -150,7 +150,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 926,
@@ -169,7 +170,8 @@
     "guid": "H1vYsFTrFX",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 928,
@@ -191,7 +193,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Head_nod_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 930,
@@ -210,14 +213,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Hair"
     },
-    "order": 286
+    "order": 286,
+    "group": "SeasonPass"
   },
   {
     "id": 932,
     "guid": "v62Pvt6COk",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 933,
@@ -254,7 +259,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 937,
@@ -273,7 +279,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask"
     },
-    "order": 149
+    "order": 149,
+    "group": "SeasonPass"
   },
   {
     "id": 939,
@@ -295,7 +302,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Shrug_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 941,
@@ -314,7 +322,8 @@
     "guid": "vbQP5KFpu1",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 943,
@@ -333,14 +342,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape"
     },
-    "order": 575
+    "order": 575,
+    "group": "SeasonPass"
   },
   {
     "id": 945,
     "guid": "lndQWUoKUV",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 946,
@@ -377,7 +388,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 950,
@@ -396,7 +408,8 @@
     "guid": "q1ZDkQme8T",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 952,
@@ -418,7 +431,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Crab_walk_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 954,
@@ -437,14 +451,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape"
     },
-    "order": 573
+    "order": 573,
+    "group": "SeasonPass"
   },
   {
     "id": 956,
     "guid": "u0wTYjUD5l",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 957,
@@ -481,7 +497,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 961,
@@ -500,7 +517,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
     },
-    "order": 150
+    "order": 150,
+    "group": "SeasonPass"
   },
   {
     "id": 963,
@@ -522,7 +540,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Boo_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 965,
@@ -541,14 +560,16 @@
     "guid": "wRsxoaUmkd",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 967,
     "guid": "9N_fvcEh5f",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 968,
@@ -585,7 +606,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 972,
@@ -604,7 +626,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Hair"
     },
-    "order": 288
+    "order": 288,
+    "group": "SeasonPass"
   },
   {
     "id": 974,
@@ -626,7 +649,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Fall_asleep_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 976,
@@ -645,14 +669,16 @@
     "guid": "l8RClua3lo",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 978,
     "guid": "IBEr4ORQcY",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 979,
@@ -685,7 +711,8 @@
     "guid": "L3L_RHjeJ2",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 983,
@@ -704,7 +731,8 @@
     "guid": "6rWMw26PJt",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 985,
@@ -723,7 +751,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png",
+    "group": "SeasonPass"
   },
   {
     "id": 987,
@@ -744,7 +773,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Hair"
     },
-    "order": 291
+    "order": 291,
+    "group": "SeasonPass"
   },
   {
     "id": 989,
@@ -763,14 +793,16 @@
     "guid": "ReCxjTw9UV",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 991,
     "guid": "q3kFha-G_e",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Enchantment-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 992,

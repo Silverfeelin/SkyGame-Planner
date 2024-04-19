@@ -154,7 +154,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1373,
@@ -173,7 +174,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask"
     },
-    "order": 167
+    "order": 167,
+    "group": "SeasonPass"
   },
   {
     "id": 1375,
@@ -192,7 +194,8 @@
     "guid": "dlrQtOHGom",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1377,
@@ -214,7 +217,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SOA-Anxious-Angler-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1379,
@@ -233,7 +237,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape"
     },
-    "order": 600
+    "order": 600,
+    "group": "SeasonPass"
   },
   {
     "id": 1381,
@@ -252,14 +257,16 @@
     "guid": "uuWINBT49F",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1383,
     "guid": "rjtnYeRVoU",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2050,
@@ -296,7 +303,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1386,
@@ -315,7 +323,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair"
     },
-    "order": 322
+    "order": 322,
+    "group": "SeasonPass"
   },
   {
     "id": 1388,
@@ -334,7 +343,8 @@
     "guid": "2f5GDzfDYI",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1390,
@@ -356,7 +366,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/SOA-Ceasing-Commodore-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1392,
@@ -375,14 +386,16 @@
     "guid": "3QYgeQvXXu",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1394,
     "guid": "qkQDz-wh6P",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2071,
@@ -419,7 +432,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1397,
@@ -438,7 +452,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask"
     },
-    "order": 169
+    "order": 169,
+    "group": "SeasonPass"
   },
   {
     "id": 1399,
@@ -454,7 +469,8 @@
     "guid": "G_gtZr8jEx",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1401,
@@ -476,7 +492,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SOA-Bumbling-Boatswain-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1403,
@@ -495,7 +512,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape"
     },
-    "order": 601
+    "order": 601,
+    "group": "SeasonPass"
   },
   {
     "id": 1405,
@@ -514,14 +532,16 @@
     "guid": "uIUpG8NhpS",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1407,
     "guid": "Ohs7fG8rmn",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1408,
@@ -544,7 +564,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1410,
@@ -560,7 +581,8 @@
     "name": "Music Sheet 26",
     "sheet": "26",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 26
+    "order": 26,
+    "group": "SeasonPass"
   },
   {
     "id": 1412,
@@ -579,7 +601,8 @@
     "guid": "taXu6vkY9d",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1414,
@@ -601,7 +624,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/SOA-Cackling-Cannoneer-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1416,
@@ -620,7 +644,8 @@
     "guid": "nvrfT_eHKC",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1418,
@@ -639,14 +664,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair"
     },
-    "order": 321
+    "order": 321,
+    "group": "SeasonPass"
   },
   {
     "id": 1420,
     "guid": "eaJhgWMfS8",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/SOAbyss-seasonal-heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1421,

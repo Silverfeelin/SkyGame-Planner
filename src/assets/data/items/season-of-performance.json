@@ -230,7 +230,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Hair"
     },
-    "order": 326
+    "order": 326,
+    "group": "SeasonPass"
   },
   {
     "id": 1427,
@@ -246,7 +247,8 @@
     "guid": "AdZbRcEjbN",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1429,
@@ -265,7 +267,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/SoPerformance_-_Frantic_Stagehand-emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/SoPerformance_-_Frantic_Stagehand-emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1431,
@@ -289,14 +292,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Outfit"
     },
-    "order": 30
+    "order": 30,
+    "group": "SeasonPass"
   },
   {
     "id": 1433,
     "guid": "DDgj-h-IrD",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2073,
@@ -333,7 +338,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1436,
@@ -352,7 +358,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Mask"
     },
-    "order": 172
+    "order": 172,
+    "group": "SeasonPass"
   },
   {
     "id": 1438,
@@ -371,7 +378,8 @@
     "guid": "P736zjG-Qh",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1440,
@@ -393,7 +401,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/SoPerformance_-_Forgetful_Storyteller-emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1442,
@@ -412,7 +421,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Outfit"
     },
-    "order": 31
+    "order": 31,
+    "group": "SeasonPass"
   },
   {
     "id": 1444,
@@ -431,14 +441,16 @@
     "guid": "PcFVY_0aGF",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1446,
     "guid": "Qs0ZC_7YTz",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1447,
@@ -461,7 +473,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1449,
@@ -480,7 +493,8 @@
     "guid": "VVchsNQluM",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1451,
@@ -499,7 +513,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },
-    "order": 605
+    "order": 605,
+    "group": "SeasonPass"
   },
   {
     "id": 1453,
@@ -521,7 +536,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Morybel-0146-SoPerformance_-_Mellow_Musician-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1455,
@@ -541,7 +557,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Instrument"
     },
-    "order": 419
+    "order": 419,
+    "group": "SeasonPass"
   },
   {
     "id": 1457,
@@ -560,14 +577,16 @@
     "guid": "9toLO3MI0O",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1459,
     "guid": "eXY7ivVucS",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1460,
@@ -595,7 +614,8 @@
     "name": "Music Sheet 28",
     "sheet": "28",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 28
+    "order": 28,
+    "group": "SeasonPass"
   },
   {
     "id": 1463,
@@ -614,7 +634,8 @@
     "guid": "DdEoFUb-N7",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1465,
@@ -633,7 +654,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Morybel-0146-SOPerformance-Modest-Dancer-emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Morybel-0146-SOPerformance-Modest-Dancer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1467,
@@ -657,13 +679,15 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Hair"
     },
-    "order": 325
+    "order": 325,
+    "group": "SeasonPass"
   },
   {
     "id": 1469,
     "guid": "vsbQqT8eYs",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   }
 ]

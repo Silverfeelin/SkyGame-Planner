@@ -230,7 +230,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1175,
@@ -249,7 +250,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Hair"
     },
-    "order": 308
+    "order": 308,
+    "group": "SeasonPass"
   },
   {
     "id": 1177,
@@ -271,7 +273,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly-Facepalm-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1179,
@@ -290,7 +293,8 @@
     "guid": "Z68GLvFuLv",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1181,
@@ -309,14 +313,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Prop"
     },
-    "order": 471
+    "order": 471,
+    "group": "SeasonPass"
   },
   {
     "id": 1183,
     "guid": "-myit_bz5n",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1184,
@@ -353,7 +359,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1188,
@@ -372,7 +379,8 @@
     "guid": "Iw7f-6mtyr",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1190,
@@ -394,7 +402,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Assembly-scolding-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1192,
@@ -413,7 +422,8 @@
     "guid": "LtEVJrA6l0",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1194,
@@ -432,14 +442,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Cape"
     },
-    "order": 589
+    "order": 589,
+    "group": "SeasonPass"
   },
   {
     "id": 1196,
     "guid": "Cx1DkhRWOu",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1197,
@@ -476,7 +488,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1201,
@@ -495,7 +508,8 @@
     "guid": "-LT5Xt5vpH",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1203,
@@ -517,7 +531,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Assembly-Scaredy-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1205,
@@ -538,7 +553,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Hair"
     },
-    "order": 310
+    "order": 310,
+    "group": "SeasonPass"
   },
   {
     "id": 1207,
@@ -557,14 +573,16 @@
     "guid": "kurDiTSM-m",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1209,
     "guid": "GJt1fejM0x",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1210,
@@ -601,7 +619,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1214,
@@ -620,7 +639,8 @@
     "guid": "uG2bC9p_bN",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1216,
@@ -642,7 +662,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Assembly-march-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1218,
@@ -661,7 +682,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
-    "order": 163
+    "order": 163,
+    "group": "SeasonPass"
   },
   {
     "id": 1220,
@@ -680,14 +702,16 @@
     "guid": "x0vEv0TyUF",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1222,
     "guid": "uc12eYrd4X",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1223,
@@ -724,7 +748,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1227,
@@ -743,7 +768,8 @@
     "guid": "5g7KTy0iPz",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1229,
@@ -765,7 +791,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Assembly-chuckling-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1231,
@@ -784,7 +811,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },
-    "order": 20
+    "order": 20,
+    "group": "SeasonPass"
   },
   {
     "id": 1233,
@@ -815,14 +843,16 @@
     "guid": "9iI9prZyet",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1236,
     "guid": "umGO8j2Qhr",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1237,
@@ -859,7 +889,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1241,
@@ -878,7 +909,8 @@
     "guid": "H65ejfWOVQ",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1243,
@@ -900,7 +932,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Assembly-Daydream-emote.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1245,
@@ -916,7 +949,8 @@
     "guid": "N8AXviDTdQ",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1247,
@@ -935,14 +969,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Hair"
     },
-    "order": 306
+    "order": 306,
+    "group": "SeasonPass"
   },
   {
     "id": 1249,
     "guid": "7g_8zuBGSl",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1250,

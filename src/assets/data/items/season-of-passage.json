@@ -189,7 +189,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1608,
@@ -208,7 +209,8 @@
     "guid": "vCidIP_ecS",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1610,
@@ -227,7 +229,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Neck_Accessory"
     },
-    "order": 100
+    "order": 100,
+    "group": "SeasonPass"
   },
   {
     "id": 1612,
@@ -249,7 +252,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Passage-Oddball-Outcast-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1614,
@@ -268,14 +272,16 @@
     "guid": "yeajwByRBg",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1616,
     "guid": "TPVlNAKn3p",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1617,
@@ -298,7 +304,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1619,
@@ -317,7 +324,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Hair"
     },
-    "order": 341
+    "order": 341,
+    "group": "SeasonPass"
   },
   {
     "id": 1621,
@@ -339,7 +347,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Passage-Tumbling-Troublemaker-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1623,
@@ -358,7 +367,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape"
     },
-    "order": 621
+    "order": 621,
+    "group": "SeasonPass"
   },
   {
     "id": 1625,
@@ -377,14 +387,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Face_Accessory"
     },
-    "order": 214
+    "order": 214,
+    "group": "SeasonPass"
   },
   {
     "id": 1627,
     "guid": "23CqDqp6fd",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1628,
@@ -407,7 +419,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1630,
@@ -426,7 +439,8 @@
     "guid": "leQJ72gAGH",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1632,
@@ -445,7 +459,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair"
     },
-    "order": 342
+    "order": 342,
+    "group": "SeasonPass"
   },
   {
     "id": 1634,
@@ -467,7 +482,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Melancholy-Mope-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1636,
@@ -486,14 +502,16 @@
     "guid": "_gwNMhGG0C",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1638,
     "guid": "3JT5fm0Cy2",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1639,
@@ -516,7 +534,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1641,
@@ -536,7 +555,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Instrument"
     },
-    "order": 440
+    "order": 440,
+    "group": "SeasonPass"
   },
   {
     "id": 1643,
@@ -558,7 +578,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Passage-Overactive-Overachiever-Emote-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1645,
@@ -577,7 +598,8 @@
     "guid": "wrDJpYzeKo",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1647,
@@ -596,13 +618,15 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Hair"
     },
-    "order": 343
+    "order": 343,
+    "group": "SeasonPass"
   },
   {
     "id": 1649,
     "guid": "-Xg9VMYldT",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png",
+    "group": "SeasonPass"
   }
 ]

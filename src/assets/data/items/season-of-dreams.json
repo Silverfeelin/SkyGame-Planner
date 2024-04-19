@@ -144,7 +144,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory"
     },
-    "order": 210
+    "order": 210,
+    "group": "SeasonPass"
   },
   {
     "id": 1127,
@@ -160,7 +161,8 @@
     "name": "Music Sheet 19",
     "sheet": "19",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 19
+    "order": 19,
+    "group": "SeasonPass"
   },
   {
     "id": 1129,
@@ -179,7 +181,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1131,
@@ -203,14 +206,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit"
     },
-    "order": 19
+    "order": 19,
+    "group": "SeasonPass"
   },
   {
     "id": 1133,
     "guid": "ot6npOIfpu",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1134,
@@ -247,7 +252,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1138,
@@ -266,7 +272,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Hair"
     },
-    "order": 303
+    "order": 303,
+    "group": "SeasonPass"
   },
   {
     "id": 1140,
@@ -288,7 +295,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Season_of_Dreams_-_Dancing_performer.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1142,
@@ -307,7 +315,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
-    "order": 157
+    "order": 157,
+    "group": "SeasonPass"
   },
   {
     "id": 1144,
@@ -332,14 +341,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument"
     },
-    "order": 418
+    "order": 418,
+    "group": "SeasonPass"
   },
   {
     "id": 1146,
     "guid": "hyoIaD__sx",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1147,
@@ -362,7 +373,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1149,
@@ -378,7 +390,8 @@
     "guid": "TApO1CbBoB",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1151,
@@ -400,7 +413,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Season_of_Dreams_-_Peeking_postman.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1153,
@@ -431,7 +445,8 @@
     "guid": "t-tF3kbiyu",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1155,
@@ -455,14 +470,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
-    "order": 158
+    "order": 158,
+    "group": "SeasonPass"
   },
   {
     "id": 1157,
     "guid": "rMvOpBb6uw",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1158,
@@ -499,7 +516,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1162,
@@ -518,7 +536,8 @@
     "guid": "PdvK8FPKcD",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1164,
@@ -540,7 +559,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season_of_Dreams_-_Spinning_mentor.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1166,
@@ -559,7 +579,8 @@
     "guid": "wisiiK9diZ",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1168,
@@ -578,14 +599,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },
-    "order": 586
+    "order": 586,
+    "group": "SeasonPass"
   },
   {
     "id": 1170,
     "guid": "88bStTJrBZ",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1171,

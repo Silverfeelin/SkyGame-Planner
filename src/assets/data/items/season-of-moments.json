@@ -169,7 +169,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1652,
@@ -188,7 +189,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Face_Accessory"
     },
-    "order": 215
+    "order": 215,
+    "group": "SeasonPass"
   },
   {
     "id": 1654,
@@ -207,7 +209,8 @@
     "guid": "g_PxUjAXIJ",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1656,
@@ -226,7 +229,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },
-    "order": 624
+    "order": 624,
+    "group": "SeasonPass"
   },
   {
     "id": 1658,
@@ -245,14 +249,16 @@
     "guid": "W42gdCa79_",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1660,
     "guid": "GzNoAzbA_0",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1661,
@@ -275,7 +281,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1663,
@@ -299,7 +306,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Hair"
     },
-    "order": 347
+    "order": 347,
+    "group": "SeasonPass"
   },
   {
     "id": 1665,
@@ -321,7 +329,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Jolly-Geologist-Emote-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1667,
@@ -335,7 +344,8 @@
     "guid": "BmakKYb2wG",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1669,
@@ -356,14 +366,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Prop"
     },
-    "order": 484
+    "order": 484,
+    "group": "SeasonPass"
   },
   {
     "id": 1671,
     "guid": "VsraqNSiML",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1672,
@@ -386,7 +398,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1674,
@@ -405,7 +418,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
-    "order": 183
+    "order": 183,
+    "group": "SeasonPass"
   },
   {
     "id": 1676,
@@ -424,7 +438,8 @@
     "guid": "bZBOWw8mZD",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1678,
@@ -446,7 +461,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Ascetic-Monk-Emote-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1680,
@@ -465,14 +481,16 @@
     "guid": "VNMvBdmw24",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1682,
     "guid": "AylwqeZPDJ",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1683,
@@ -502,7 +520,8 @@
     "guid": "yT9McjxgAb",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1686,
@@ -521,7 +540,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory"
     },
-    "order": 384
+    "order": 384,
+    "group": "SeasonPass"
   },
   {
     "id": 1688,
@@ -540,7 +560,8 @@
     "guid": "5J7MR1HC1a",
     "type": "Special",
     "name": "Special Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1690,
@@ -559,13 +580,15 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Shoes"
     },
-    "order": 63
+    "order": 63,
+    "group": "SeasonPass"
   },
   {
     "id": 1692,
     "guid": "4iahXDrqQd",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png",
+    "group": "SeasonPass"
   }
 ]

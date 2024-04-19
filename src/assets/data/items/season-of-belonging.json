@@ -46,7 +46,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png",
+    "group": "SeasonPass"
   },
   {
     "id": 773,
@@ -60,7 +61,8 @@
     "guid": "3Nz4lttfEb",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 775,
@@ -82,7 +84,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Belonging_confetti.png",
+    "group": "SeasonPass"
   },
   {
     "id": 777,
@@ -106,14 +109,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Hair"
     },
-    "order": 280
+    "order": 280,
+    "group": "SeasonPass"
   },
   {
     "id": 779,
     "guid": "prawwGcU-k",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 780,
@@ -157,7 +162,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png",
+    "group": "SeasonPass"
   },
   {
     "id": 785,
@@ -171,7 +177,8 @@
     "guid": "WDRmw94dkS",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 787,
@@ -193,7 +200,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Belonging_dancing.png",
+    "group": "SeasonPass"
   },
   {
     "id": 789,
@@ -217,14 +225,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Outfit"
     },
-    "order": 10
+    "order": 10,
+    "group": "SeasonPass"
   },
   {
     "id": 791,
     "guid": "C0sPzUPUwR",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 792,
@@ -268,7 +278,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png",
+    "group": "SeasonPass"
   },
   {
     "id": 797,
@@ -287,7 +298,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Mask"
     },
-    "order": 141
+    "order": 141,
+    "group": "SeasonPass"
   },
   {
     "id": 799,
@@ -309,7 +321,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Belonging_sparkler.png",
+    "group": "SeasonPass"
   },
   {
     "id": 801,
@@ -328,14 +341,16 @@
     "guid": "M97mhUyiZZ",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 803,
     "guid": "vbf2ST93iK",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 804,
@@ -395,7 +410,8 @@
     "name": "Music Sheet 11",
     "sheet": "11",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 11
+    "order": 11,
+    "group": "SeasonPass"
   },
   {
     "id": 811,
@@ -409,7 +425,8 @@
     "guid": "r1pKcM3jiU",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 813,
@@ -428,7 +445,8 @@
     "guid": "bBWdMDYc1G",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 815,
@@ -447,14 +465,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Cape"
     },
-    "order": 570
+    "order": 570,
+    "group": "SeasonPass"
   },
   {
     "id": 817,
     "guid": "F2_k73blau",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 818,
@@ -503,7 +523,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png",
+    "group": "SeasonPass"
   },
   {
     "id": 823,
@@ -523,7 +544,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Instrument"
     },
-    "order": 415
+    "order": 415,
+    "group": "SeasonPass"
   },
   {
     "id": 825,
@@ -545,7 +567,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Belonging_crawl.png",
+    "group": "SeasonPass"
   },
   {
     "id": 827,
@@ -569,14 +592,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Cape"
     },
-    "order": 569
+    "order": 569,
+    "group": "SeasonPass"
   },
   {
     "id": 829,
     "guid": "N6IzrxN7yL",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 830,
@@ -623,7 +648,8 @@
     "guid": "GL1iz0Ybx0",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 836,
@@ -644,7 +670,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Friend_Action"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png",
+    "group": "SeasonPass"
   },
   {
     "id": 838,
@@ -663,7 +690,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Face_Accessory"
     },
-    "order": 207
+    "order": 207,
+    "group": "SeasonPass"
   },
   {
     "id": 840,
@@ -683,14 +711,16 @@
     "guid": "HnQU571BtR",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 842,
     "guid": "r_JERY8CWa",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Belonging-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 843,

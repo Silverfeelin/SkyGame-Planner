@@ -143,7 +143,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1327,
@@ -162,7 +163,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair"
     },
-    "order": 320
+    "order": 320,
+    "group": "SeasonPass"
   },
   {
     "id": 1329,
@@ -181,7 +183,8 @@
     "guid": "cOMtRe-wEZ",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1331,
@@ -203,14 +206,16 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Season_of_Flight_-_Lively_Navigator_icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1333,
     "guid": "zB6NpyvK6q",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1334,
@@ -222,7 +227,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
     },
-    "order": 597
+    "order": 597,
+    "group": "SeasonPass"
   },
   {
     "id": 1335,
@@ -238,7 +244,8 @@
     "guid": "aiuFUiqZnB",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1337,
@@ -282,7 +289,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory"
     },
-    "order": 376
+    "order": 376,
+    "group": "SeasonPass"
   },
   {
     "id": 1342,
@@ -301,14 +309,16 @@
     "guid": "T_syKqfzht",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1344,
     "guid": "5D_d1xwmfQ",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1345,
@@ -320,7 +330,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
     },
-    "order": 596
+    "order": 596,
+    "group": "SeasonPass"
   },
   {
     "id": 1346,
@@ -339,7 +350,8 @@
     "guid": "CJLgEjb1TE",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2069,
@@ -383,7 +395,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit"
     },
-    "order": 26
+    "order": 26,
+    "group": "SeasonPass"
   },
   {
     "id": 1351,
@@ -402,14 +415,16 @@
     "guid": "S4y9T9zWU1",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1353,
     "guid": "EaKDVLQYcH",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1354,
@@ -422,7 +437,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument"
     },
-    "order": 424
+    "order": 424,
+    "group": "SeasonPass"
   },
   {
     "id": 1355,
@@ -441,7 +457,8 @@
     "guid": "NhS59J9jxl",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1357,
@@ -478,7 +495,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1361,
@@ -494,7 +512,8 @@
     "name": "Music Sheet 25",
     "sheet": "25",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 25
+    "order": 25,
+    "group": "SeasonPass"
   },
   {
     "id": 1363,
@@ -513,7 +532,8 @@
     "guid": "YPTs9XT_4y",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1365,
@@ -535,7 +555,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Season_of_Flight_-_voila_icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1367,
@@ -554,7 +575,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit"
     },
-    "order": 25
+    "order": 25,
+    "group": "SeasonPass"
   },
   {
     "id": 1369,
@@ -573,14 +595,16 @@
     "guid": "_2q2mdk_1h",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1370,
     "guid": "LZEuZ8aSr1",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Season_Of_Flight_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1954,

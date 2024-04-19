@@ -162,7 +162,8 @@
     "type": "Emote",
     "name": "Whistle",
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1988,
@@ -178,7 +179,8 @@
     "name": "Herb Gatherer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Herb-Gatherer-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Herb-Gatherer-Outfit.png",
-    "order": 47
+    "order": 47,
+    "group": "SeasonPass"
   },
   {
     "id": 1990,
@@ -194,7 +196,8 @@
     "guid": "A1fMJZO5K_",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1992,
@@ -210,7 +213,8 @@
     "type": "Emote",
     "name": "Whistle",
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1994,
@@ -226,14 +230,16 @@
     "guid": "x7vrsngRCI",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1996,
     "guid": "jG5Kuv-GTD",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1997,
@@ -250,7 +256,8 @@
     "type": "Emote",
     "name": "Flex",
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1999,
@@ -266,7 +273,8 @@
     "guid": "IQY8K6P32K",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2001,
@@ -282,7 +290,8 @@
     "type": "Emote",
     "name": "Flex",
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2003,
@@ -298,7 +307,8 @@
     "name": "Hunter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Hunter-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Hunter-Hair.png",
-    "order": 355
+    "order": 355,
+    "group": "SeasonPass"
   },
   {
     "id": 2005,
@@ -314,14 +324,16 @@
     "guid": "kfHRAuUJcv",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2006,
     "guid": "h2zRh4oz4_",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2007,
@@ -339,7 +351,8 @@
     "subtype": "FriendEmote",
     "name": "Cradle Carry",
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Feudal-Lord-Action-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Feudal-Lord-Action-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2009,
@@ -355,7 +368,8 @@
     "name": "Feudal Lord Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Feudal-Lord-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Feudal-Lord-Headpiece.png",
-    "order": 389
+    "order": 389,
+    "group": "SeasonPass"
   },
   {
     "id": 2011,
@@ -371,7 +385,8 @@
     "guid": "MDwDKmNPig",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2013,
@@ -387,7 +402,8 @@
     "name": "Feudal Lord Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Feudal-Lord-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Feudal-Lord-Cape-front.png",
-    "order": 633
+    "order": 633,
+    "group": "SeasonPass"
   },
   {
     "id": 2015,
@@ -403,14 +419,16 @@
     "guid": "Ob9-4JZoGH",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2017,
     "guid": "b8fsOpXbiN",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2018,
@@ -427,7 +445,8 @@
     "type": "Emote",
     "name": "Float Spin",
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2020,
@@ -443,7 +462,8 @@
     "guid": "Ye-rhyzgWF",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2022,
@@ -459,7 +479,8 @@
     "name": "Princess Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Princess-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Hair.png",
-    "order": 354
+    "order": 354,
+    "group": "SeasonPass"
   },
   {
     "id": 2024,
@@ -475,7 +496,8 @@
     "type": "Emote",
     "name": "Float Spin",
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2026,
@@ -491,7 +513,8 @@
     "guid": "3KnSMisbLM",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2028,
@@ -507,13 +530,15 @@
     "name": "Princess Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Princess-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Princess-Cape-back.png",
-    "order": 631
+    "order": 631,
+    "group": "SeasonPass"
   },
   {
     "id": 2030,
     "guid": "IWXeOczUJv",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nine-Colored-Deer-seasonal-heart-icon.png",
+    "group": "SeasonPass"
   }
 ]

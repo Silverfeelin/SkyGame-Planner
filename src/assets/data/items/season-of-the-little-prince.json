@@ -182,7 +182,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1254,
@@ -201,7 +202,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Hair"
     },
-    "order": 314
+    "order": 314,
+    "group": "SeasonPass"
   },
   {
     "id": 1256,
@@ -223,7 +225,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Beckoning-Ruler.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1258,
@@ -242,14 +245,16 @@
     "guid": "kVPk2WIqVT",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1260,
     "guid": "9Kqe_t4wZ2",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1261,
@@ -286,7 +291,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1265,
@@ -302,7 +308,8 @@
     "name": "Music Sheet 22",
     "sheet": "22",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 22
+    "order": 22,
+    "group": "SeasonPass"
   },
   {
     "id": 1267,
@@ -324,7 +331,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Gloating-Narcissist.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1269,
@@ -343,7 +351,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Outfit"
     },
-    "order": 21
+    "order": 21,
+    "group": "SeasonPass"
   },
   {
     "id": 1271,
@@ -362,14 +371,16 @@
     "guid": "dfbZt6pAtK",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1273,
     "guid": "FwEOtz5Dti",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1274,
@@ -406,7 +417,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1278,
@@ -425,7 +437,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Hair"
     },
-    "order": 313
+    "order": 313,
+    "group": "SeasonPass"
   },
   {
     "id": 1280,
@@ -447,7 +460,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOTLP-Stretching-Lamplighter.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1282,
@@ -466,14 +480,16 @@
     "guid": "GwDxjRK6RF",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1284,
     "guid": "fO5ekwmylU",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 847,
@@ -510,7 +526,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1287,
@@ -529,7 +546,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Hair"
     },
-    "order": 311
+    "order": 311,
+    "group": "SeasonPass"
   },
   {
     "id": 1289,
@@ -551,7 +569,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/SOTLP-Slouching-Soldier.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1291,
@@ -567,7 +586,8 @@
     "name": "Music Sheet 23",
     "sheet": "23",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 23
+    "order": 23,
+    "group": "SeasonPass"
   },
   {
     "id": 1293,
@@ -586,14 +606,16 @@
     "guid": "Z2HUOvQYHC",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1295,
     "guid": "yTAR0eZ5uf",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1296,
@@ -630,7 +652,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1300,
@@ -649,7 +672,8 @@
     "guid": "WWW05wPhax",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1302,
@@ -671,7 +695,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/SOTLP-Sneezing-Geographer.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1304,
@@ -690,14 +715,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Cape"
     },
-    "order": 593
+    "order": 593,
+    "group": "SeasonPass"
   },
   {
     "id": 1306,
     "guid": "cFHGX3dd0C",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1307,
@@ -734,7 +761,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1311,
@@ -753,7 +781,8 @@
     "guid": "zTfcCNFzZ4",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1313,
@@ -775,7 +804,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SOTLP-Star-Collector.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1315,
@@ -794,7 +824,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Cape"
     },
-    "order": 590
+    "order": 590,
+    "group": "SeasonPass"
   },
   {
     "id": 1317,
@@ -813,14 +844,16 @@
     "guid": "D_VzUxatY1",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1319,
     "guid": "5JtJF4xKf9",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Little_Prince_Heart.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1320,

@@ -155,7 +155,8 @@
     "guid": "D4-m11eQ83",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 998,
@@ -174,7 +175,8 @@
     "guid": "RO94m-cztD",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1000,
@@ -193,14 +195,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Outfit"
     },
-    "order": 15
+    "order": 15,
+    "group": "SeasonPass"
   },
   {
     "id": 1002,
     "guid": "Bje_pivCRi",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1003,
@@ -253,7 +257,8 @@
     "name": "Music Sheet 15",
     "sheet": "15",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 15
+    "order": 15,
+    "group": "SeasonPass"
   },
   {
     "id": 1009,
@@ -272,7 +277,8 @@
     "guid": "7CJwk5hiQ8",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1011,
@@ -291,14 +297,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
     },
-    "order": 577
+    "order": 577,
+    "group": "SeasonPass"
   },
   {
     "id": 1013,
     "guid": "SiVbCUdTSq",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1014,
@@ -335,7 +343,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1018,
@@ -354,7 +363,8 @@
     "guid": "NjfPHc_tyD",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1020,
@@ -376,7 +386,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOS_rally.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1022,
@@ -395,14 +406,16 @@
     "guid": "54b2G8bBMD",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1024,
     "guid": "XtmoI3itkH",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1025,
@@ -439,7 +452,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1029,
@@ -458,7 +472,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask"
     },
-    "order": 152
+    "order": 152,
+    "group": "SeasonPass"
   },
   {
     "id": 1031,
@@ -480,7 +495,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/SoS_grouch.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1033,
@@ -499,7 +515,8 @@
     "guid": "WbAIZr5KdV",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1035,
@@ -518,14 +535,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory"
     },
-    "order": 94
+    "order": 94,
+    "group": "SeasonPass"
   },
   {
     "id": 1037,
     "guid": "YrbSTdQtFE",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1038,
@@ -562,7 +581,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1042,
@@ -581,7 +601,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair"
     },
-    "order": 297
+    "order": 297,
+    "group": "SeasonPass"
   },
   {
     "id": 1044,
@@ -603,7 +624,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOS_grateful.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1046,
@@ -622,14 +644,16 @@
     "guid": "Hvo9QMJcsx",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1048,
     "guid": "zoNL9CUK9Y",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1049,
@@ -678,7 +702,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression"
     },
     "level": 2,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1054,
@@ -697,7 +722,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask"
     },
-    "order": 209
+    "order": 209,
+    "group": "SeasonPass"
   },
   {
     "id": 1056,
@@ -719,7 +745,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Expression"
     },
     "level": 4,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOS_Chill.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1058,
@@ -738,7 +765,8 @@
     "guid": "xgjzgnv6Zt",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1060,
@@ -757,14 +785,16 @@
     "guid": "3Jxn5gYmSk",
     "type": "Special",
     "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1062,
     "guid": "a2ESJzEojM",
     "type": "Special",
     "name": "Season Heart",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Sanctuary-heart-Ray.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1063,
