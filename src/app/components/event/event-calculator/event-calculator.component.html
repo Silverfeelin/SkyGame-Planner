@@ -193,7 +193,6 @@
 <ng-template #tNode let-node>
   <div class="node-show-hover"
     [class.node-have]="node.item?.unlocked" [class.node-want]="wantNodes[node.guid]"
-    [class.node-sp]="node.item?.group === 'SeasonPass'"
     (click)="toggleButtons(node)"
   >
     <div class="node-overlay" [class.o-1]="nodeShowButtons === node"
