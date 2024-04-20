@@ -24,6 +24,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() showButtons = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean;
+  @Input() padBottom = false;
 
   nodes: Array<INode> = [];
   left: Array<INode> = [];

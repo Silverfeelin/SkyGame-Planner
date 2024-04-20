@@ -1,14 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DateTime } from 'luxon';
-import { SubscriptionLike } from 'rxjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
-import { EventService } from 'src/app/services/event.service';
 import { NodeService } from 'src/app/services/node.service';
 
 @Component({
@@ -57,6 +54,7 @@ export class SeasonCalculatorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!this.season) { return; }
     this.loadSettings();
     this.calculate();
   }
@@ -84,7 +82,7 @@ export class SeasonCalculatorComponent implements OnInit {
     event.stopPropagation();
     this.nodeShowButtons = undefined;
 
-    if (node.unlocked) {
+    if (node.unlocked || node.item?.unlocked) {
       this._nodeService.lock(node);
       this.candleCount += node.sc || 0;
       this.candleCount = Math.min(999, this.candleCount);
@@ -99,13 +97,13 @@ export class SeasonCalculatorComponent implements OnInit {
     this.saveSettings();
   }
 
-  onCandleInput(): void {
+  onCurrencyInput(): void {
     this.candleInputChanged();
     this.calculate();
     this.saveSettings();
   }
 
-  onCandleInputBlur(evt: Event): void {
+  onCurrencyInputBlur(evt: Event): void {
     const target = evt.target as HTMLInputElement;
     const value = parseInt(target.value, 10) || 0;
     if (value <= 0) {
@@ -130,7 +128,7 @@ export class SeasonCalculatorComponent implements OnInit {
     this.inpSc.nativeElement.value = (this.candleCount).toString();
   }
 
-  addCandles(n: number): void {
+  addCurrency(n: number): void {
     this.candleCount += n;
     this.candleCount = Math.min(999, Math.max(0, this.candleCount));
     this.candleCountChanged();

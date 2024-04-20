@@ -1,5 +1,5 @@
 <div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree.guid">
-  <div class="spirit-tree-scroll" [class.has-buttons]="showButtons" [class.pad-bottom]="hasCostAtRoot">
+  <div class="spirit-tree-scroll" [class.has-buttons]="showButtons" [class.pad-bottom]="hasCostAtRoot || padBottom">
     @if (showButtons) {
       <div class="tree-action find-item" (click)="toggleNavigate()" [class.highlight-attention]="navigating">
         <mat-icon>step_into</mat-icon>

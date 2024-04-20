@@ -31,6 +31,7 @@ import { ItemFieldGuideComponent } from './components/items/item-field-guide/ite
 import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
 import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
+import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
   { path: 'credits', component: CreditsComponent, title: title('Credits') },
   { path: 'event', component: EventsComponent, title: title('Events') },
+  { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
   { path: 'event/:guid', component: EventComponent, title: TitleResolver },
   { path: 'event-instance/:guid', component: EventInstanceComponent, title: EventInstanceTitleResolver },
   { path: 'item', component: ItemsComponent, title: title('Items') },
