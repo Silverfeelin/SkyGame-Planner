@@ -68,6 +68,8 @@ const onFileChanged = filePath => {
 };
 
 onFileChanged(path.resolve(dataPath, 'items/_fake.json'));
+onFileChanged(path.resolve(dataPath, 'nodes/_fake.json'));
+onFileChanged(path.resolve(dataPath, 'iaps/_fake.json'));
 let debounce;
 chokidar.watch(dataPath, { depth: 10 }).on('change', filePath => {
   if (debounce) clearTimeout(debounce);
