@@ -25,6 +25,7 @@ export class SettingsComponent {
 
   themes: Array<ITheme> = [
     { name: 'Isle', value: '' },
+    { name: 'Comfy', value: 'comfy' },
     { name: 'Calm', value: 'peaks' },
     { name: 'Wet', value: 'reef' },
     { name: 'Cold', value: 'cold' },
