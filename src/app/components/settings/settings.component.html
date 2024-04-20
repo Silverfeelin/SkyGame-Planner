@@ -49,17 +49,38 @@
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Wiki -->
-  <div class="sky-card mt">
-    <div class="sky-card-header">
-      <h2 class="h3">Wiki</h2>
-    </div>
-    <div class="sky-card-body">
-      <div class="container wiki-toggle-tab" (click)="toggleWikiTab()">
-        <mat-icon class="menu-icon">{{wikiNewTab ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-        <span class="menu-label">Navigate to wiki in new tab</span>
+<!-- Theme -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      <mat-icon>color_lens</mat-icon>
+      Theme
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
+      Change the theme of the application.
+      <div class="sky-flex flex-wrap mt">
+        <button *ngFor="let theme of themes" [class.highlight]="currentTheme === theme.value" type="button" class="item ws-nw" (click)="setTheme(theme)">
+          {{ theme.name }}
+        </button>
+        <button (click)="setRandomTheme()">Surprise</button>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Wiki -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3">Wiki</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container wiki-toggle-tab" (click)="toggleWikiTab()">
+      <mat-icon class="menu-icon">{{wikiNewTab ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+      <span class="menu-label">Navigate to wiki in new tab</span>
     </div>
   </div>
 </div>

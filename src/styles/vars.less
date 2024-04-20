@@ -1,8 +1,14 @@
-// Variables
 :root {
   --hue: 240;
   --saturation: 17%;
+}
 
+:root[data-theme=""] {
+  --background: url(/assets/game/background/isle.webp);
+}
+
+// Variables
+:root {
   --color: #fff;
   --color-accent: #999;
   --color-active: var(--color-new);
@@ -69,7 +75,6 @@
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
 
-  --background: url(/assets/game/background/isle.webp);
   --background-filter: blur(0px) brightness(0.8);
   --backdrop-blur: blur(8px);
 
@@ -110,4 +115,36 @@
     --menu-width: 200px;
   }
 }
+// #endregion
+
+// #region Themes
+
+:root[data-theme="peaks"] {
+  --hue: 330;
+  --saturation: 17%;
+
+  --background: url(/assets/game/background/peaks.webp);
+}
+
+:root[data-theme="reef"] {
+  --hue: 230;
+  --saturation: 17%;
+
+  --background: url(/assets/game/background/reef.webp);
+}
+
+:root[data-theme="cold"] {
+  --hue: 190;
+  --saturation: 0%;
+
+  --background: url(/assets/game/background/village.webp);
+}
+
+:root[data-theme="sandy"] {
+  --hue: 25;
+  --saturation: 40%;
+
+  --background: url(/assets/game/background/oasis.webp);
+}
+
 // #endregion
