@@ -1,0 +1,234 @@
+[
+  {
+    "id": 1816,
+    "guid": "lDm3gx6ZkS",
+    "type": "Hat",
+    "name": "1 Year Sky Anniversary Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/1st_anniv_hat_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#1_Year_Anniversary_Hat"
+    },
+    "order": 397
+  },
+  {
+    "id": 1817,
+    "guid": "uH4Rjnkh74",
+    "type": "Hat",
+    "name": "2 Year Sky Anniversary Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/2nd_anniversary_hat_front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#2nd_Birthday_Hat"
+    },
+    "order": 398
+  },
+  {
+    "id": 1818,
+    "guid": "ktsAnnjGgb",
+    "type": "Prop",
+    "name": "Sky Anniversary Pennants",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_prop_days_of_sky_pennants.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Days_of_sky_2021_pennants.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Birthday_Flag"
+    },
+    "order": 495
+  },
+  {
+    "id": 1819,
+    "guid": "0hJ9DXTWh2",
+    "type": "Spell",
+    "name": "Small Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1820,
+    "guid": "iy8LsNTGIS",
+    "type": "Spell",
+    "name": "Small Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1821,
+    "guid": "S5U6SxnhOI",
+    "type": "Spell",
+    "name": "Small Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1822,
+    "guid": "WDlSvYds8f",
+    "type": "Spell",
+    "name": "Small Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1823,
+    "guid": "2yUc4WdquD",
+    "type": "Spell",
+    "name": "Small Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1824,
+    "guid": "zcVZSmzfxl",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1825,
+    "guid": "l_2PxLbjkf",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1826,
+    "guid": "KBAo9IAdqk",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1827,
+    "guid": "t7h71OQ6DP",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1828,
+    "guid": "svEXRvagb3",
+    "type": "Hat",
+    "name": "3 Year Sky Anniversary Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Days-of-Sky-2022-anniversary-crown.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#3rd_Birthday_Hat"
+    },
+    "order": 399
+  },
+  {
+    "id": 1829,
+    "guid": "9jMnZ23AYP",
+    "type": "Music",
+    "name": "Music Sheet #E2",
+    "sheet": "E2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 202
+  },
+  {
+    "id": 1830,
+    "guid": "FjtQU-Da97",
+    "type": "Spell",
+    "name": "Small Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Days_of_Sky_-_Small_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1831,
+    "guid": "MWjOfJMKoO",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1832,
+    "guid": "8A96KlMPQC",
+    "type": "Prop",
+    "name": "Sky Anniversary Balloons",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Days-of-Sky-2022-balloon-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Days-of-Sky-2022-balloon.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Balloons"
+    },
+    "order": 496
+  },
+  {
+    "id": 1833,
+    "guid": "ADtwifMcnN",
+    "type": "Furniture",
+    "name": "Sky Anniversary Light Fence",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-decorative-prop-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Days-of-Sky-2022-decorative-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Light_Fence"
+    },
+    "order": 497
+  },
+  {
+    "id": 1834,
+    "guid": "Xbb3BpzDZT",
+    "type": "Prop",
+    "name": "Sky Anniversary Confetti Launcher",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Days-of-Sky-2022-canon-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Days-of-Sky-2022-confetti-launcher.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Confetti_Launcher"
+    },
+    "order": 498
+  },
+  {
+    "id": 1835,
+    "guid": "gkRaYwffnu",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 1836,
+    "guid": "dEWiCE1-6D",
+    "name": "Oreo Plush",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Sky-Anniversary-Oreo-prop-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Sky-Anniversary-Oreo-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Plush"
+    },
+    "order": 516
+  },
+  {
+    "id": 1837,
+    "guid": "wHQI_tvpiL",
+    "type": "Special",
+    "name": "Office Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 1838,
+    "guid": "dLtGhTPX8z",
+    "name": "4 Year Sky Anniversary Hat",
+    "type": "Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Sky-4th-Anniversary-Hat.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#4th_Anniversary_Hat"
+    },
+    "order": 400
+  },
+  {
+    "id": 1839,
+    "guid": "9jISGFNSLT",
+    "name": "Sky Anniversary Sonorous Seashell",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Sky-Anniversary-Musical-shell-prop-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Sky-Anniversary-Musical-shell-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Sonorous_Seashell"
+    },
+    "order": 514
+  },
+  {
+    "id": 1840,
+    "guid": "BQi3QIoOwq",
+    "name": "Sky Anniversary Party Lights",
+    "type": "Furniture",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Sky-Anniversary-Disco-Light-Prop-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Sky-Anniversary-Disco-Light-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Party_Lights"
+    },
+    "order": 515
+  }
+]

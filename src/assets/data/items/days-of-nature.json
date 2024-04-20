@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1778,
+    "guid": "YUqENRc8rQ",
+    "type": "Cape",
+    "name": "Earth Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Icon_cape_earth.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Earth_cape_2020_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Earth_Cape"
+    },
+    "order": 643
+  },
+  {
+    "id": 1779,
+    "guid": "KZ6aQtgCqt",
+    "type": "Necklace",
+    "name": "Ocean Necklace",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Icon_pendant_shell_pendant.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Shell_necklace.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Necklace"
+    },
+    "order": 102
+  },
+  {
+    "id": 1780,
+    "guid": "MjA9EoD-pe",
+    "type": "Cape",
+    "name": "Ocean Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Ocean_cape_back_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape"
+    },
+    "order": 644
+  },
+  {
+    "id": 1781,
+    "guid": "znjZlpHSt4",
+    "type": "Cape",
+    "name": "Nature Turtle Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Nature-2022-turtle-cape-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Days-of-Nature-2022-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Cape"
+    },
+    "order": 645
+  },
+  {
+    "id": 1782,
+    "guid": "_Y-80G-t_2",
+    "type": "Necklace",
+    "name": "Nature Turtle Buddy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Nature-2022-turtle-accessory-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Days-of-Nature-2022-turtle-accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Accessory"
+    },
+    "order": 103
+  },
+  {
+    "id": 1783,
+    "guid": "OvPPfhXnwW",
+    "type": "Hat",
+    "name": "Nature Coral Crown",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Nature-2022-Coral-Hair-accessory-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Days-of-Nature-2022-Coral-Hair-accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Coral_Crown_Accessory"
+    },
+    "order": 395
+  },
+  {
+    "id": 1784,
+    "guid": "hbH9xhhETJ",
+    "type": "Special",
+    "name": "Sanctuary Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 1785,
+    "guid": "J3SQU_2koY",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1786,
+    "guid": "RLhtVkyDy3",
+    "type": "Cape",
+    "name": "Nature School Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Days-of-Nature-Fish-Vortex-cape-icon-Ray.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Days-of-Nature-Fish-Vortex-cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_School_Cape"
+    },
+    "order": 646
+  },
+  {
+    "id": 1787,
+    "guid": "IOBWcIpOY9",
+    "type": "FaceAccessory",
+    "name": "Nature Glasses",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Nature-Glasses-icon-Ray.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Days-of-Nature-Glasses.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Glasses"
+    },
+    "order": 227
+  },
+  {
+    "id": 1788,
+    "guid": "gHfkqCK-A8",
+    "type": "Prop",
+    "name": "Nature Sonorous Seashell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Days-of-Nature-Sonorous-Seashell-icon-Ray.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Nature-Sonorous-Seashell.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Sonorous_Seashell"
+    },
+    "order": 513
+  }
+]

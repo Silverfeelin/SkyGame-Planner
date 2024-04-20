@@ -21,6 +21,7 @@ interface ITree {
 export class SpiritComponent {
   spirit!: ISpirit;
   trees: Array<ITree> = [];
+  seasonTree?: ISpiritTree;
   typeName?: string;
   event?: IEvent;
 
@@ -72,6 +73,9 @@ export class SpiritComponent {
     this.trees = sortedTrees;
     if (this.spirit.tree) {
       this.trees.push({ name: 'Spirit tree', tree: this.spirit.tree });
+      if (this.spirit.type === 'Season' || this.spirit.type === 'Guide') {
+        this.seasonTree = this.spirit.tree;
+      }
     }
   }
 }

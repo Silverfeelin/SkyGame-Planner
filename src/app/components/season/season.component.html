@@ -52,6 +52,15 @@
           <span class="c-accent" *ngIf="shLeft">({{ shLeft }} needed)</span>
         </span>
       </div>
+      <!-- Calculator -->
+      @if (state === 'active' || state === 'future') {
+        <a class="container colspan-2" [routerLink]="'/season-calculator'">
+          <mat-icon class="menu-icon">calculate</mat-icon>
+          <span class="menu-label">
+            Season Calculator
+          </span>
+        </a>
+      }
       <!-- Draft -->
       <div class="container colspan-2" *ngIf="season.draft">
         <mat-icon class="menu-icon">warning</mat-icon>
@@ -72,13 +81,14 @@
     <div class="sky-flex scroll-x pad">
       <!-- Guide tree -->
       <div class="tree-wrapper">
-        <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name" [highlight]="highlightTree === guide!.tree!.guid"></app-spirit-tree>
+        <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name" [highlight]="highlightTree === guide!.tree!.guid" [seasonIcon]="season.iconUrl">
+        </app-spirit-tree>
       </div>
       <!-- Traveling Spirit trees -->
       <ng-container *ngIf="spirits">
         <ng-container *ngFor="let spirit of spirits;">
           <div class="tree-wrapper" *ngIf="spirit.tree">
-            <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
+            <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid" [seasonIcon]="season.iconUrl">
               <!-- Link to spirit -->
               <div name>
                 <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">

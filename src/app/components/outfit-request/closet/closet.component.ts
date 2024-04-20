@@ -534,7 +534,7 @@ export class ClosetComponent implements OnDestroy {
     instances.forEach(instance => {
       if (!instance) { return; }
       const spirits = instance.spirits || [];
-      debugger
+
       const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
       items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
       const shops = instance.shops || [];

@@ -6,6 +6,9 @@ import { AppModule } from './app/app.module';
 import './app/extensions/array';
 // #endregion
 
+// Load theme.
+const theme = localStorage.getItem('theme') || '';
+document.documentElement.setAttribute('data-theme', theme);
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

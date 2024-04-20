@@ -1,0 +1,771 @@
+[
+  {
+    "id": 110,
+    "guid": "cg1HspRoFt",
+    "type": "Emote",
+    "name": "Shiver",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png",
+    "order": 271
+  },
+  {
+    "id": 111,
+    "guid": "CjN1GNyRo5",
+    "type": "Emote",
+    "name": "Shiver",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
+  },
+  {
+    "id": 112,
+    "guid": "WpdRkPONF4",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 113,
+    "guid": "Y2XIZBa7Ir",
+    "type": "Outfit",
+    "name": "Shivering Trailblazer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/ShiveringTrailblazer-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Legs03.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Outfit"
+    },
+    "order": 3
+  },
+  {
+    "id": 114,
+    "guid": "KGyA9HZ8dq",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 115,
+    "guid": "hMiHemXD6P",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 116,
+    "guid": "zHkQGblG-B",
+    "type": "Emote",
+    "name": "Shiver",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
+  },
+  {
+    "id": 117,
+    "guid": "WKFJkGzYdl",
+    "type": "Emote",
+    "name": "Shiver",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/ShiveringTrailblazer-1.png"
+  },
+  {
+    "id": 118,
+    "guid": "uWSi7DgD7X",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 119,
+    "guid": "5oWTpEPXWn",
+    "type": "Hair",
+    "name": "Shivering Trailblazer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/ShiveringTrailblazer-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Hair08-Wispy.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Hair"
+    },
+    "order": 251
+  },
+  {
+    "id": 120,
+    "guid": "EMWqfLlCv8",
+    "type": "Emote",
+    "name": "Shy",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png",
+    "order": 301
+  },
+  {
+    "id": 121,
+    "guid": "MPG42915f5",
+    "type": "Emote",
+    "name": "Shy",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
+  },
+  {
+    "id": 122,
+    "guid": "Fq08gENJPx",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 123,
+    "guid": "aKz1gRuXma",
+    "type": "Hair",
+    "name": "Blushing Prospector Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/BlushingProspector-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Hair32-Pigtail_Braids.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Hair"
+    },
+    "order": 248
+  },
+  {
+    "id": 124,
+    "guid": "io5TEFueP2",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 125,
+    "guid": "KrfWibGe29",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 126,
+    "guid": "msoi-2PV03",
+    "type": "Emote",
+    "name": "Shy",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
+  },
+  {
+    "id": 127,
+    "guid": "jHWFCcLqlj",
+    "type": "Emote",
+    "name": "Shy",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/BlushingProspector-1.png"
+  },
+  {
+    "id": 128,
+    "guid": "pjFW21Z5XW",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 129,
+    "guid": "HGGTj_QBip",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Drum",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/BlushingProspector-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Blushing_Prospector-Drum.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Instrument"
+    },
+    "order": 430
+  },
+  {
+    "id": 130,
+    "guid": "iGgNmgUF3h",
+    "type": "Emote",
+    "name": "Hide and Seek",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide'n'Seek_Pioneer#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/HideNSeekPioneer-1.png",
+    "order": 281
+  },
+  {
+    "id": 131,
+    "guid": "LqipUD_Mmh",
+    "type": "Hair",
+    "name": "Hide'n'Seek Pioneer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/HideNSeekPioneer-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Hair14-Bob.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Hair"
+    },
+    "order": 250
+  },
+  {
+    "id": 132,
+    "guid": "ujMcX760lx",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 133,
+    "guid": "BPGFkqpaP7",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 134,
+    "guid": "Dfl2Wu-YzY",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 135,
+    "guid": "ErF247yM89",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 136,
+    "guid": "gLeirt4C--",
+    "type": "Mask",
+    "name": "Hide'n'Seek Pioneer Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/HideNSeekPioneer-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mask06-small-chibi.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Mask"
+    },
+    "order": 109
+  },
+  {
+    "id": 137,
+    "guid": "EzJWXIGt7T",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 138,
+    "guid": "bwJ7i7NrlR",
+    "type": "Outfit",
+    "name": "Hide'n'Seek Pioneer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/HideNSeekPioneer-4.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Legs_hide_n_seek_pioneer_dress.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Outfit"
+    },
+    "order": 2
+  },
+  {
+    "id": 139,
+    "guid": "tNluEK79s-",
+    "type": "Emote",
+    "name": "Angry",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png",
+    "order": 291
+  },
+  {
+    "id": 140,
+    "guid": "YkzYpoa9me",
+    "type": "Emote",
+    "name": "Angry",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
+  },
+  {
+    "id": 141,
+    "guid": "3-kP196rlM",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 142,
+    "guid": "UX_lsf-RuX",
+    "type": "Hair",
+    "name": "Pouty Porter Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/PoutyPorter-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Hair35-One_Side_Medium.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Hair"
+    },
+    "order": 254
+  },
+  {
+    "id": 143,
+    "guid": "dqLly-GV_Z",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 144,
+    "guid": "2a7fbwYNNH",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 145,
+    "guid": "FnCfXeMPEq",
+    "type": "Emote",
+    "name": "Angry",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
+  },
+  {
+    "id": 146,
+    "guid": "JEKMfn1NPZ",
+    "type": "Emote",
+    "name": "Angry",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/PoutyPorter-1.png"
+  },
+  {
+    "id": 147,
+    "guid": "ISO8L5AHUz",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 148,
+    "guid": "7Mh9pQzRHj",
+    "type": "Cape",
+    "name": "Pouty Porter Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Cape_teal2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
+    },
+    "order": 548
+  },
+  {
+    "id": 149,
+    "guid": "bD_9EMf-5h",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 150,
+    "guid": "gwRIgeL-d2",
+    "type": "Cape",
+    "name": "Pouty Porter Cape 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Cape_teal_tier_2_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
+    },
+    "order": 557
+  },
+  {
+    "id": 151,
+    "guid": "3sNvbNBB2y",
+    "type": "Emote",
+    "name": "Shocked",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png",
+    "order": 311
+  },
+  {
+    "id": 152,
+    "guid": "n8IVtB9J3F",
+    "type": "Emote",
+    "name": "Shocked",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
+  },
+  {
+    "id": 153,
+    "guid": "a6lcKDO9tF",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 154,
+    "guid": "KZh9gbVJU2",
+    "type": "Hair",
+    "name": "Dismayed Hunter Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/DismayedHunter-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Hair17-Thick_Ponytails.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Hair"
+    },
+    "order": 242
+  },
+  {
+    "id": 155,
+    "guid": "spruafydlq",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 156,
+    "guid": "drZSoeYUnQ",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 157,
+    "guid": "yxgVQg3Amb",
+    "type": "Emote",
+    "name": "Shocked",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
+  },
+  {
+    "id": 158,
+    "guid": "E1IE_GD9iG",
+    "type": "Emote",
+    "name": "Shocked",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/DismayedHunter-1.png"
+  },
+  {
+    "id": 159,
+    "guid": "GdWibuAPwK",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 160,
+    "guid": "PIu602lYaG",
+    "type": "Cape",
+    "name": "Dismayed Hunter Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cape_purple_2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
+    },
+    "order": 550
+  },
+  {
+    "id": 161,
+    "guid": "czac1httCU",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 162,
+    "guid": "mo8clKxyAN",
+    "type": "Cape",
+    "name": "Dismayed Hunter Cape 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape_purple_tier_2_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
+    },
+    "order": 559
+  },
+  {
+    "id": 163,
+    "guid": "ubqUcBPT43",
+    "type": "Emote",
+    "name": "Apologize",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png",
+    "order": 321
+  },
+  {
+    "id": 164,
+    "guid": "2WUjYDii5w",
+    "type": "Emote",
+    "name": "Apologize",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
+  },
+  {
+    "id": 165,
+    "guid": "wqF-XW5nbd",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 166,
+    "guid": "VizeW9_N4M",
+    "type": "Hair",
+    "name": "Apologetic Lumberjack Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/ApologeticLumberjack-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Hair07-Short_Ponytails.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Hair"
+    },
+    "order": 241
+  },
+  {
+    "id": 167,
+    "guid": "VqqKTWMSnf",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 168,
+    "guid": "uMXNa6YXQk",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 169,
+    "guid": "Ns5iP8sS2u",
+    "type": "Emote",
+    "name": "Apologize",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
+  },
+  {
+    "id": 170,
+    "guid": "SFlHbJLINX",
+    "type": "Emote",
+    "name": "Apologize",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/ApologeticLumberjack-1.png"
+  },
+  {
+    "id": 171,
+    "guid": "pVr7TjghGa",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 172,
+    "guid": "tOREuHRkdm",
+    "type": "FaceAccessory",
+    "name": "Apologetic Lumberjack Face Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/ApologeticLumberjack-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Mask05-Diamond.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Mask"
+    },
+    "order": 199
+  },
+  {
+    "id": 173,
+    "guid": "r1Q1s66rrI",
+    "type": "Emote",
+    "name": "Crying",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png",
+    "order": 331
+  },
+  {
+    "id": 174,
+    "guid": "SuEWxrvIA6",
+    "type": "Emote",
+    "name": "Crying",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+  },
+  {
+    "id": 175,
+    "guid": "Dm6zio2uNp",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 176,
+    "guid": "7ypZrcAvXa",
+    "type": "Hair",
+    "name": "Tearful Light Miner Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/TearfulLightMiner-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Hair38-Short_Mullet.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Hair"
+    },
+    "order": 247
+  },
+  {
+    "id": 177,
+    "guid": "DK3PP0plU_",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 178,
+    "guid": "yNjUr_3id0",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 179,
+    "guid": "dnUcxxj6St",
+    "type": "Emote",
+    "name": "Crying",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+  },
+  {
+    "id": 180,
+    "guid": "9AzVZZ7Too",
+    "type": "Emote",
+    "name": "Crying",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+  },
+  {
+    "id": 181,
+    "guid": "AnYIsLUUqe",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 182,
+    "guid": "T5Nr5oi-js",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 1965,
+    "guid": "HT_3LQCGNi",
+    "type": "Emote",
+    "name": "Crying",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
+    "level": 5,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+  },
+  {
+    "id": 1966,
+    "guid": "tKnWsI12Hi",
+    "type": "Emote",
+    "name": "Crying",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Expression"
+    },
+    "level": 6,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/TearfulLightMiner-1.png"
+  },
+  {
+    "id": 183,
+    "guid": "70FpYsoCa7",
+    "type": "Call",
+    "name": "Whale Call",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Whale_Whisperer#Expression"
+    },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/WhaleWhisperer-1.png",
+    "order": 21
+  },
+  {
+    "id": 184,
+    "guid": "w6Sae7jydQ",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 185,
+    "guid": "lEnCLpRBOe",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 186,
+    "guid": "3VB1YU3K41",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 187,
+    "guid": "7eYkFK4whN",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 188,
+    "guid": "I5c5IPkoWK",
+    "type": "Music",
+    "name": "Music Sheet 2",
+    "sheet": "2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 2
+  }
+]

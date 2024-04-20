@@ -69,6 +69,8 @@ import { SpiritTypePipe } from './pipes/spirit-type.pipe';
 import { CardComponent } from './components/layout/card/card.component';
 import { ItemListComponent } from './components/item-list/item-list/item-list.component';
 import { ItemListNodeComponent } from './components/item-list/item-list-node/item-list-node.component';
+import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
+import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +137,9 @@ import { ItemListNodeComponent } from './components/item-list/item-list-node/ite
     RealmConstellationComponent,
     CardComponent,
     ItemListComponent,
-    ItemListNodeComponent
+    ItemListNodeComponent,
+    SeasonCalculatorComponent,
+    EventCalculatorComponent
   ],
   imports: [
     BrowserModule,

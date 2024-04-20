@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
-import { EventService } from 'src/app/services/event.service';
+import { NodeService } from 'src/app/services/node.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { HighlightType } from 'src/app/types/highlight';
 
@@ -20,13 +20,14 @@ export class NodeComponent implements OnChanges {
   @Input() highlight?: boolean;
   @Input() glowType?: HighlightType = 'default';
   @Input() action: NodeAction = 'unlock';
+  @Input() opaque?: boolean;
 
   hover?: boolean;
   tooltipPlacement = 'bottom';
 
   constructor(
     private readonly _debug: DebugService,
-    private readonly _eventService: EventService,
+    private readonly _nodeService: NodeService,
     private readonly _storageService: StorageService,
     private readonly _router: Router
   ) {
@@ -48,10 +49,9 @@ export class NodeComponent implements OnChanges {
   }
 
   nodeClick(event: MouseEvent): void {
-    if (this.action === 'unlock') {
-      this.toggleNode(event);
-    } else if (this.action === 'find') {
-      this.findNode(event);
+    switch (this.action) {
+      case 'unlock': return this.toggleNode(event);
+      case 'find': return this.findNode(event);
     }
   }
 
@@ -72,13 +72,10 @@ export class NodeComponent implements OnChanges {
 
     // Save progress.
     if (unlock) {
-      this.unlockItem();
+      this._nodeService.unlock(this.node);
     } else {
-      this.lockItem();
+      this._nodeService.lock(this.node);
     }
-
-    // Notify listeners.
-    this._eventService.itemToggled.next(item);
   }
 
   findNode(event: MouseEvent): void {
@@ -109,59 +106,5 @@ export class NodeComponent implements OnChanges {
       ec: node.ec,
     };
     navigator.clipboard.writeText(JSON.stringify(data));
-  }
-
-  unlockItem(): void {
-    if (!this.node.item) { return; }
-    const guids: Array<string> = [];
-
-    // Unlock the item.
-    this.node.item.unlocked = true;
-    guids.push(this.node.item.guid);
-
-    // Unlock the node to track costs. Other nodes are not unlocked but will appear unlocked by the item status.
-    this.node.unlocked = true;
-    guids.push(this.node.guid);
-
-    // Unlock hidden items.
-    this.node.hiddenItems?.forEach(item => {
-      item.unlocked = true;
-      guids.push(item.guid);
-    });
-
-    // Save data.
-    this._storageService.add(...guids);
-    this._storageService.save();
-  }
-
-  lockItem(): void {
-    if (!this.node.item) { return; }
-    const guids: Array<string> = [];
-
-    // Get all associated items.
-    const hiddenItems = this.node.hiddenItems || [];
-    const items = [this.node.item, ...hiddenItems];
-
-    // Remove unlock from items.
-    for (const item of items) {
-      item.unlocked = false;
-      guids.push(item.guid);
-
-      // Remove unlock from all nodes that contain this item.
-      const nodes = item.nodes || [];
-      nodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
-
-      // Remove unlock from all hidden nodes that contain this item.
-      const hiddenNodes = item.hiddenNodes || [];
-      hiddenNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
-
-      // Remove unlock from item list nodes that contain this item.
-      const listNodes = item.listNodes || [];
-      listNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
-    }
-
-    // Save data.
-    this._storageService.remove(...guids);
-    this._storageService.save();
   }
 }

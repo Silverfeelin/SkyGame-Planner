@@ -47,6 +47,12 @@
         I have done my dailies.
       </span>
     </div>
+    <!-- Calculator -->
+    <a *ngIf="sections['calculator']" [routerLink]="['/season-calculator']"
+      class="item link" [style.order]="sections['calculator']">
+      <mat-icon class="menu-icon">calculate</mat-icon>
+      <span class="menu-label">Calculator</span>
+    </a>
     <!-- Cost -->
     <div *ngIf="sections['cost'] && cost"
       class="item" [style.order]="sections['cost']"

@@ -1,0 +1,642 @@
+[
+  {
+    "id": 370,
+    "guid": "jYGGefMrlS",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "name": "Lightseekers Pendant",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/2_Lightseekers.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Lightseekers_pendant.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts"
+    },
+    "order": 74
+  },
+  {
+    "id": 371,
+    "guid": "2o3CEU9QhM",
+    "type": "Held",
+    "group": "Ultimate",
+    "name": "Lightseekers Ultimate Umbrella",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Icon_prop_lightseekers_large_umbrella.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Lightseekers_ultimate_umbrella_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts"
+    },
+    "order": 444
+  },
+  {
+    "id": 709,
+    "guid": "G9wVSFG6I_",
+    "type": "Emote",
+    "subtype": "FriendEmote",
+    "name": "Piggyback",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
+  },
+  {
+    "id": 710,
+    "guid": "lw79vLwEkP",
+    "type": "Mask",
+    "name": "Piggyback Lightseeker Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Mimi-4117_03_piggyback_lightseeker_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Lightseekers_mask_isle_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Mask"
+    },
+    "order": 134
+  },
+  {
+    "id": 711,
+    "guid": "2jrLzRaf6h",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 712,
+    "guid": "oEMhNzGfdl",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 713,
+    "guid": "HtVnkK980q",
+    "type": "Emote",
+    "subtype": "FriendEmote",
+    "name": "Piggyback",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Friend_Action"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 714,
+    "guid": "BGoYhVYvBZ",
+    "type": "Hair",
+    "name": "Piggyback Lightseeker Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Mimi-4117_03_piggyback_lightseeker_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Lightseekers_hair_isle_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Hair"
+    },
+    "order": 277
+  },
+  {
+    "id": 715,
+    "guid": "ILUnt_OrWQ",
+    "type": "Cape",
+    "name": "Piggyback Lightseeker Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Lightseekers_cape_isle_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape"
+    },
+    "order": 566,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 716,
+    "guid": "bmCPTysPOr",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 717,
+    "guid": "ihS0cOlgFz",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 718,
+    "guid": "9sYCtuZch3",
+    "type": "Emote",
+    "subtype": "FriendEmote",
+    "name": "Double-Five",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+  },
+  {
+    "id": 719,
+    "guid": "GbSWbAV_W1",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 720,
+    "guid": "Ur7gRzB_VK",
+    "type": "Hair",
+    "name": "Doublefive Light Catcher Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Mimi-4117_03_doublefive_light_catcher_hat.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Lightseekers_hair_prairie_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Hair"
+    },
+    "order": 279,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 721,
+    "guid": "lz89xViG6m",
+    "type": "Mask",
+    "name": "Doublefive Light Catcher Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_03_doublefive_light_catcher_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Lightseekers_mask_prairie_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Mask"
+    },
+    "order": 135
+  },
+  {
+    "id": 722,
+    "guid": "nfeBnolyEY",
+    "type": "Emote",
+    "subtype": "FriendEmote",
+    "name": "Double-Five",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Friend_Action"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 723,
+    "guid": "YgxtYX7GjD",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 724,
+    "guid": "qR79V6fLUy",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Flute",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_03_doublefive_light_catcher_instrument.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Lightseekers-Doublefive-Light-Catcher-Flute.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Instrument"
+    },
+    "order": 426,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 725,
+    "guid": "17rzgAzvhl",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 726,
+    "guid": "NHkpPS7ryo",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 727,
+    "guid": "_o__3iD1Rh",
+    "type": "Stance",
+    "name": "Laidback Stance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Expression"
+    },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Mimi-4117_03_laidback_pioneer_emote.png",
+    "order": 71
+  },
+  {
+    "id": 728,
+    "guid": "rj8Dzz64e9",
+    "type": "Mask",
+    "name": "Laidback Pioneer Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Mimi-4117_03_laidback_pioneer_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Lightseekers_mask_forest_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Mask"
+    },
+    "order": 136
+  },
+  {
+    "id": 729,
+    "guid": "_HKt5SUf0w",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 730,
+    "guid": "fg5RXP9p-W",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 731,
+    "guid": "4sdZPgk41b",
+    "type": "Music",
+    "name": "Music Sheet 9",
+    "sheet": "9",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 9,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 732,
+    "guid": "qPAqxHGUVI",
+    "type": "Hair",
+    "name": "Laidback Pioneer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Mimi-4117_03_laidback_pioneer_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Lightseekers_hair_forest_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Hair"
+    },
+    "order": 278
+  },
+  {
+    "id": 733,
+    "guid": "7CHTap5JN4",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 734,
+    "guid": "Sf9uzy0A0A",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 735,
+    "guid": "Hi8NBjG271",
+    "type": "Held",
+    "name": "Laidback Pioneer Umbrella",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Mimi-4117_03_laidback_pioneer_item.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Instrument_lightseekers_small_umbrella.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Prop"
+    },
+    "order": 442,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 736,
+    "guid": "bb9Od8wEmp",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 737,
+    "guid": "DFHjlCXHoD",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 738,
+    "guid": "tmhe-C2cN3",
+    "type": "Emote",
+    "name": "Triple Axel",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
+    "order": 451
+  },
+  {
+    "id": 739,
+    "guid": "zjAeiE3x_t",
+    "type": "Emote",
+    "name": "Triple Axel",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 740,
+    "guid": "10pNNxAeD8",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 741,
+    "guid": "0L89TCDEtN",
+    "type": "Mask",
+    "name": "Twirling Champion Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_03_twirling_champion_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Lightseekers_mask_valley_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Mask"
+    },
+    "order": 137,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 742,
+    "guid": "zhwG9yJ2mi",
+    "type": "Emote",
+    "name": "Triple Axel",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png"
+  },
+  {
+    "id": 743,
+    "guid": "touhpuoYRG",
+    "type": "Emote",
+    "name": "Triple Axel",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Mimi-4117_03_twirling_champion_emote.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 744,
+    "guid": "EjjybJGcTN",
+    "type": "Hair",
+    "name": "Twirling Champion Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Mimi-4117_03_twirling_champion_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Lightseekers_hair_valley_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Hair"
+    },
+    "order": 276
+  },
+  {
+    "id": 745,
+    "guid": "PIRW3pt_BE",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Panflute",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Mimi-4117_03_twirling_champion_instrument.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Lightseekers-Twirling-Champion_-_Panpipes-Panflute.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Instrument"
+    },
+    "order": 427,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 746,
+    "guid": "-wPyZeJ1nD",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 747,
+    "guid": "_2Q4y97jsM",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 748,
+    "guid": "myvAPXLC4n",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 749,
+    "guid": "ySbxSrn-4l",
+    "type": "Call",
+    "name": "Crab Call",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Expression"
+    },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Mimi-4117_03_crab_whisperer_emote.png",
+    "order": 51
+  },
+  {
+    "id": 750,
+    "guid": "wTgGX3U9yp",
+    "type": "Mask",
+    "name": "Crab Whisperer Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Mimi-4117_03_crab_whisperer_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Lightseekers_mask_wasteland_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Mask"
+    },
+    "order": 138
+  },
+  {
+    "id": 751,
+    "guid": "Whp-r1yq-s",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 752,
+    "guid": "wcb5UMzT9u",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 753,
+    "guid": "NqdFQpeUSh",
+    "type": "Music",
+    "name": "Music Sheet 10",
+    "sheet": "10",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 10,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 754,
+    "guid": "HwpnDB-aPF",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 755,
+    "guid": "b_Dt_cckli",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 756,
+    "guid": "A3jFFEXAKu",
+    "type": "Hair",
+    "name": "Crab Whisperer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Mimi-4117_03_crab_whisperer_hat.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Lightseekers_hair_wasteland_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Hair"
+    },
+    "order": 275
+  },
+  {
+    "id": 757,
+    "guid": "dotE5ejKYP",
+    "type": "Cape",
+    "name": "Crab Whisperer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Lightseekers_cape_wasteland_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape"
+    },
+    "order": 565,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 758,
+    "guid": "ApWt6AdQ8O",
+    "type": "Furniture",
+    "name": "Crab Whisperer Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Icon_prop_summer_tube.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Summer_prop_tube_down.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Prop"
+    },
+    "order": 460
+  },
+  {
+    "id": 759,
+    "guid": "t70cADZFZh",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 760,
+    "guid": "FE2ZZ9OIVd",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 761,
+    "guid": "Bnrptwn3vv",
+    "type": "Emote",
+    "name": "Shush",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
+    "order": 701
+  },
+  {
+    "id": 762,
+    "guid": "TqyXKGohBg",
+    "type": "Emote",
+    "name": "Shush",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 763,
+    "guid": "zHdPCsbdpI",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 764,
+    "guid": "rGAnOKoXlu",
+    "type": "Mask",
+    "name": "Shushing Light Scholar Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Mimi-4117_03_shushing_light_scholar_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Lightseekers_mask_vault_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Mask"
+    },
+    "order": 139,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 765,
+    "guid": "kYxJuHr1mX",
+    "type": "Emote",
+    "name": "Shush",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png"
+  },
+  {
+    "id": 766,
+    "guid": "MtnosL0i54",
+    "type": "Emote",
+    "name": "Shush",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Mimi-4117_03_shushing_light_scholar_emote.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 767,
+    "guid": "03HWIT9WGG",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 768,
+    "guid": "bj5HUEsP0R",
+    "type": "Cape",
+    "name": "Shushing Light Scholar Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightseekers_cape_vault_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape"
+    },
+    "order": 567,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 769,
+    "guid": "G5MF6MpvH3",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 770,
+    "guid": "OLN8fLoqVT",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  }
+]
