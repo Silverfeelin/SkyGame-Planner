@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
@@ -20,6 +20,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() name?: string;
   @Input() highlight?: boolean;
   @Input() highlightItem?: string;
+  @Input() seasonIcon?: string;
+  @Input() showButtons = true;
+  @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
+  @Input() opaqueNodes?: boolean;
 
   nodes: Array<INode> = [];
   left: Array<INode> = [];

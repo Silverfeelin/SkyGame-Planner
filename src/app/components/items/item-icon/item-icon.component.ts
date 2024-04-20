@@ -44,6 +44,7 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
     this._sub = this._eventService.itemToggled.subscribe(item => {
       if (item.guid !== this.item?.guid) { return; }
       this._changeDetectorRef.markForCheck();
+      console.log('itemicon updated');
     });
   }
 

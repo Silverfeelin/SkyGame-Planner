@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IItem } from '../interfaces/item.interface';
 import { Router } from '@angular/router';
+import { INode } from '../interfaces/node.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 export class EventService {
   readonly itemToggled = new Subject<IItem>();
   readonly itemFavourited = new Subject<IItem>();
+  readonly nodeClicked = new Subject<INode>();
   readonly searchReset = new Subject<void>();
   readonly clicked = new Subject<MouseEvent>();
 

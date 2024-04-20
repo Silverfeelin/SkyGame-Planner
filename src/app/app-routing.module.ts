@@ -30,6 +30,7 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
+import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'realm/:guid', component: RealmComponent, title: TitleResolver },
   { path: 'season', component: SeasonsComponent, title: title('Seasons') },
   { path: 'season/:guid', component: SeasonComponent, title: TitleResolver },
+  { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
   { path: 'settings', component: SettingsComponent, title: title('Settings') },
   { path: 'shop', component: ShopsComponent, title: title('Shops') },
   { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },

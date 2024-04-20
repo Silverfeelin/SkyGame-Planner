@@ -1,47 +1,29 @@
 <div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree.guid">
-  <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot">
-    <div class="tree-action find-item" (click)="toggleNavigate()" [class.highlight-attention]="navigating">
-      <mat-icon>step_into</mat-icon>
-      <span>Go to item</span>
-    </div>
-    <div class="tree-action unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
-      <mat-icon>{{ toggleUnlock ? 'lock_open' : 'lock' }}</mat-icon>
-      <span>{{ toggleUnlock ? 'Unlock all' : 'Lock all' }}</span>
-    </div>
+  <div class="spirit-tree-scroll" [class.has-buttons]="showButtons" [class.pad-bottom]="hasCostAtRoot">
+    @if (showButtons) {
+      <div class="tree-action find-item" (click)="toggleNavigate()" [class.highlight-attention]="navigating">
+        <mat-icon>step_into</mat-icon>
+        <span>Go to item</span>
+      </div>
+      <div class="tree-action unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
+        <mat-icon>{{ toggleUnlock ? 'lock_open' : 'lock' }}</mat-icon>
+        <span>{{ toggleUnlock ? 'Unlock all' : 'Lock all' }}</span>
+      </div>
+    }
     <div class="spirit-tree">
       <div class="column left">
         <div class="st-item" *ngFor="let node of left">
-          <app-node *ngIf="node" [node]="node"  [action]="nodeAction" [position]="'left'"
-            [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
-            [glowType]="navigating ? 'attention' : 'default'">
-          </app-node>
-          <mat-icon class="st-item-icon st-item-search" *ngIf="navigating">step_into</mat-icon>
-          <!-- For now left nodes only go up. -->
-          <div *ngIf="node?.n" class="arrow arrow-up"></div>
+          <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'left' }"></ng-container>
         </div>
       </div>
       <div class="column center">
         <div class="st-item" *ngFor="let node of center">
-          <app-node *ngIf="node" [node]="node" [action]="nodeAction" [position]="'center'"
-            [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
-            [glowType]="navigating ? 'attention' : 'default'">
-          </app-node>
-          <mat-icon class="st-item-icon st-item-search" *ngIf="navigating">step_into</mat-icon>
-          <!-- Center node arrows -->
-          <div *ngIf="node?.nw" class="arrow arrow-left"></div>
-          <div *ngIf="node?.n" class="arrow arrow-up"></div>
-          <div *ngIf="node?.ne" class="arrow arrow-right"></div>
+          <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'center' }"></ng-container>
         </div>
       </div>
       <div class="column right">
         <div class="st-item" *ngFor="let node of right">
-          <app-node *ngIf="node" [node]="node" [action]="nodeAction" [position]="'right'"
-            [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
-            [glowType]="navigating ? 'attention' : 'default'">
-          </app-node>
-          <mat-icon class="st-item-icon st-item-search" *ngIf="navigating">step_into</mat-icon>
-          <!-- For now right nodes only go up. -->
-          <div *ngIf="node?.n" class="arrow arrow-up"></div>
+          <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'right' }"></ng-container>
         </div>
       </div>
     </div>
@@ -67,3 +49,24 @@
     </ng-container>
   </div>
 </div>
+
+<ng-template #tNode let-node let-position="position">
+  <app-node *ngIf="node" [node]="node" [action]="nodeAction" [position]="position"
+    [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
+    [opaque]="opaqueNodes"
+    [glowType]="navigating ? 'attention' : 'default'">
+  </app-node>
+  <ng-template [ngTemplateOutlet]="spIcon" [ngTemplateOutletContext]="{ $implicit: node }"></ng-template>
+  @if (navigating) { <mat-icon class="st-item-icon st-item-search">step_into</mat-icon> }
+  @if (nodeOverlayTemplate) { <ng-container [ngTemplateOutlet]="nodeOverlayTemplate" [ngTemplateOutletContext]="{ $implicit: node }"></ng-container> }
+  <!-- Node arrows -->
+  @if (node?.nw) { <div class="arrow arrow-left"></div> }
+  @if (node?.n) { <div class="arrow arrow-up"></div> }
+  @if (node?.ne) { <div class="arrow arrow-right"></div> }
+</ng-template>
+
+<ng-template #spIcon let-node>
+  @if (node && seasonIcon && (node.item?.group === 'SeasonPass' || node.item?.group === 'Ultimate')) {
+    <app-icon class="st-item-sp seasonal" [src]="seasonIcon"></app-icon>
+  }
+</ng-template>
