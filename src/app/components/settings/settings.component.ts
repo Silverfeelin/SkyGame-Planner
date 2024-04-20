@@ -29,6 +29,7 @@ export class SettingsComponent {
     { name: 'Wet', value: 'reef' },
     { name: 'Cold', value: 'cold' },
     { name: 'Sandy', value: 'sandy' },
+    { name: 'Dark', value: 'dark' },
   ]
 
   constructor(
