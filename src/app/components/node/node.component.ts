@@ -3,12 +3,11 @@ import { Router } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
-import { EventService } from 'src/app/services/event.service';
 import { NodeService } from 'src/app/services/node.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { HighlightType } from 'src/app/types/highlight';
 
-export type NodeAction = 'unlock' | 'find' | 'emit';
+export type NodeAction = 'unlock' | 'find';
 
 @Component({
   selector: 'app-node',
@@ -28,7 +27,6 @@ export class NodeComponent implements OnChanges {
 
   constructor(
     private readonly _debug: DebugService,
-    private readonly _eventService: EventService,
     private readonly _nodeService: NodeService,
     private readonly _storageService: StorageService,
     private readonly _router: Router
@@ -54,7 +52,6 @@ export class NodeComponent implements OnChanges {
     switch (this.action) {
       case 'unlock': return this.toggleNode(event);
       case 'find': return this.findNode(event);
-      case 'emit': return this._eventService.nodeClicked.next(this.node);
     }
   }
 
