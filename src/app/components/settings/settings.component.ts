@@ -24,13 +24,13 @@ export class SettingsComponent {
   wikiNewTab = false;
 
   themes: Array<ITheme> = [
-    { name: 'Isle', value: '' },
-    { name: 'Comfy', value: 'comfy' },
-    { name: 'Calm', value: 'peaks' },
-    { name: 'Wet', value: 'reef' },
-    { name: 'Cold', value: 'cold' },
-    { name: 'Sandy', value: 'sandy' },
-    { name: 'Dark', value: 'dark' },
+    { name: 'Isle of Dawn', value: '' },
+    { name: 'Aviary Village', value: 'cozy' },
+    { name: 'Prairie Peaks', value: 'peaks' },
+    { name: 'Treasure Reef', value: 'reef' },
+    { name: 'Village of Dreams', value: 'cold' },
+    { name: 'Crescent Oasis', value: 'sandy' },
+    { name: 'Void', value: 'dark' },
   ]
 
   constructor(
