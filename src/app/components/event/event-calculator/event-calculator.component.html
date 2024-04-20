@@ -75,6 +75,12 @@
 
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">
         <b>Result</b>
+        @if (!hasNodes) {
+          <blockquote class="mb-0">
+            <mat-icon class="result-warn">priority_high</mat-icon>
+            You have not selected any items!
+          </blockquote>
+        }
         @if (hasSkippedNode) {
           <blockquote class="mb-0">
             <mat-icon class="result-warn">priority_high</mat-icon>
@@ -126,15 +132,17 @@
             event currency if you don't miss any.
           </div>
         } @else {
-          <b class="c-new">
-            You will be able to collect enough event currency before the event concludes.
-          </b>
-          @if (currencyAvailable > currencyRequired) {
-            <div>
-              You can miss out on
-              <b class="c-new">{{ currencyAvailable - currencyRequired }}</b>
-              event currency and still have enough to get these items.
-            </div>
+          @if (hasNodes) {
+            <b class="c-new">
+              You will be able to collect enough event currency before the event concludes.
+            </b>
+            @if (currencyAvailable > currencyRequired) {
+              <div>
+                You can miss out on
+                <b class="c-new">{{ currencyAvailable - currencyRequired }}</b>
+                event currency and still have enough to get these items.
+              </div>
+            }
           }
         }
 

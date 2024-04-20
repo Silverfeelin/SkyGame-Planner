@@ -10,7 +10,6 @@ import { INode } from '../interfaces/node.interface';
 export class EventService {
   readonly itemToggled = new Subject<IItem>();
   readonly itemFavourited = new Subject<IItem>();
-  readonly nodeClicked = new Subject<INode>();
   readonly searchReset = new Subject<void>();
   readonly clicked = new Subject<MouseEvent>();
 

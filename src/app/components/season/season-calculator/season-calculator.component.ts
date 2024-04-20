@@ -26,6 +26,7 @@ export class SeasonCalculatorComponent implements OnInit {
   includesToday = true;
   ownSeasonPass = false;
   wantNodes: { [guid: string]: INode } = {};
+  hasNodes = false;
   hasSkippedNode = false;
   hasSeasonPassNode = false;
   daysLeft = 0;
@@ -248,6 +249,7 @@ export class SeasonCalculatorComponent implements OnInit {
     const candlesPerDay = this.ownSeasonPass ? 6 : 5;
     this.candlesAvailable = this.daysLeft * candlesPerDay;
 
+    this.hasNodes = nodes.length > 0;
     this.hasSeasonPassNode = false;
     this.hasSkippedNode = false;
 
