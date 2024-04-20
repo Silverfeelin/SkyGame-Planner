@@ -196,10 +196,11 @@ export class SeasonCalculatorComponent implements OnInit {
   // #region Settings
 
   private saveSettings(): void {
-    const key = `calc:${this.season.guid}`;
+    const key = `season.calc.${this.season.guid}`;
+    const today = DateHelper.todaySky();
     const data = {
       sp: this.ownSeasonPass ? 1 : 0,
-      it: this.includesToday ? 1 : 0,
+      it: this.includesToday ? today.toISO() : '',
       sc: this.candleCount,
       wn: Object.keys(this.wantNodes),
     };
@@ -208,18 +209,19 @@ export class SeasonCalculatorComponent implements OnInit {
   }
 
   private loadSettings(): void {
-    const key = `calc:${this.season.guid}`;
+    const key = `season.calc.${this.season.guid}`;
     const data = localStorage.getItem(key) || 'null';
 
+    const today = DateHelper.todaySky().toISO();
     const parsed = JSON.parse(data) || {
       sp: 0,
-      it: 1,
+      it: today,
       sc: 0,
       wn: [],
     };
 
     this.ownSeasonPass = !!parsed.sp;
-    this.includesToday = !!parsed.it;
+    this.includesToday = parsed.it === today;
     this.candleCount = parsed.sc || 0;
     if (this.inpSc?.nativeElement) {
       this.inpSc.nativeElement.value = this.candleCount.toString();

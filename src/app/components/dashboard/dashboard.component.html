@@ -21,7 +21,7 @@
 
 <div class="grid grid-2 mt">
   <!-- Ongoing -->
-  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
+  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'checkin', 'calculator', 'cost']}"></app-season-card>
   <ng-container *ngFor="let eventInstance of eventInstances">
     <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
   </ng-container>
