@@ -9,4 +9,5 @@ import { IItemList } from 'src/app/interfaces/item-list.interface';
 })
 export class ItemListComponent {
   @Input() itemList!: IItemList;
+  @Input() highlightNode?: string;
 }

@@ -1,0 +1,216 @@
+@if (!event || !currencyPerDay) {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Event Calculator</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        @if (!event) {
+          There is no ongoing event and the website hasn't been updated to include any upcoming events yet.<br/><br/>
+          Please check back later.
+        } @else {
+          There is no event currency data available for the event.<br/><br/>
+          Please check back later or report this the URL of this page on <a href="https://github.com/Silverfeelin/SkyGame-Planner">GitHub</a> if it's taking too long.
+        }
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">
+        {{event.name}} {{year}} <span class="c-accent h3">Calculator</span>
+      </h1>
+    </div>
+    <div class="sky-card-body">
+      <a class="button" [routerLink]="['/event-instance', eventInstance.guid]">
+        <mat-icon class="menu-icon">arrow_back</mat-icon>
+        <span class="menu-label">Go to Event</span>
+      </a>
+      @if (concluded) {
+        <div class="container mt">
+          <mat-icon class="result-warn">priority_high</mat-icon>
+          <b class="c-old">This event has concluded!</b>
+        </div>
+      }
+      <div class="container mt sky-flex flex-cols flex-align-start gap-half">
+        <b>Settings</b>
+        <!-- Currencies -->
+        <div>
+          Your event currency:
+          <mat-icon [svgIcon]="'ticket'" class="v-middle"></mat-icon>
+          <input #inpEc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="currencyCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
+          <button type="button" class="button-sc button-sc" (click)="addCurrency()">+{{currencyPerDay}}</button>
+        </div>
+        <div>
+          Today's currency:
+          <button type="button" (click)="toggleIncludesToday()">
+            <mat-icon class="calc-button-icon">{{ includesToday ? 'check' : 'close' }}</mat-icon>
+            <span class="calc-button-label">{{ includesToday ? 'obtained' : 'not obtained' }}</span>
+          </button>
+        </div>
+        <div>
+          Your candles:
+          <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>
+          <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        </div>
+        <div>
+          Your hearts:
+          <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>
+          <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="heartCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        </div>
+
+        <div>
+          You want:
+          <div class="d-inline-block">
+            <button type="button" (click)="selectEverything()">everything</button>&nbsp;
+            <button type="button button-danger" (click)="selectNothing()">nothing</button>
+          </div>
+        </div>
+        <div class="">
+          You can also choose what items you want by clicking on the items below and then clicking "Want".<br/>
+          If you already own the item, you should click "Have" to mark it as owned.
+        </div>
+      </div>
+
+      <div class="container mt sky-flex flex-cols flex-align-start gap-half">
+        <b>Result</b>
+        @if (hasSkippedNode) {
+          <blockquote class="mb-0">
+            <mat-icon class="result-warn">priority_high</mat-icon>
+            Required items leading up to the items you want are included in the calculations!
+          </blockquote>
+        }
+        <div>
+          You currently have
+          <mat-icon [svgIcon]="'ticket'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ currencyCount || 0 }}</b>
+          event currency,
+          <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ candleCount || 0 }}</b>
+          {{ candleCount === 1 ? 'candle' : 'candles' }}
+          and
+          <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ heartCount || 0 }}</b>
+          {{ heartCount === 1 ? 'heart' : 'hearts' }}.
+        </div>
+        <div>
+          You will be able to get
+          <b class="c-new">{{ currencyPerDay }}</b>
+          event currency every day.
+        </div>
+        <div>
+          If you do not miss any, you will be able to get
+          <b class="c-new">{{ currencyAvailable }}</b>
+          more before the event concludes.
+        </div>
+        <div>
+          You still need to collect
+          <b class="c-new">{{ currencyRequired }}</b>
+          event currency.
+          @if (daysRequired > 0) {
+            This will take
+            <b class="c-new">{{ daysRequired }}</b>
+            {{ daysRequired === 1 ? 'day' : 'days' }}.
+          }
+        </div>
+        <div>
+          There {{ daysLeft === 1 ? 'is' : 'are' }}
+          <b class="c-new">{{ daysLeft }}</b>
+          {{ daysLeft === 1 ? 'day' : 'days' }} left in the event to get event currency.
+        </div>
+        @if (daysRequired > daysLeft) {
+          <b class="c-old">
+            You will not be able to collect enough event currency before the event concludes.
+          </b>
+          <div>
+            You will be short
+            <b class="c-old">{{ currencyRequired - currencyAvailable }}</b>
+            event currency if you don't miss any.
+          </div>
+        } @else {
+          <b class="c-new">
+            You will be able to collect enough event currency before the event concludes.
+          </b>
+          @if (currencyAvailable > currencyRequired) {
+            <div>
+              You can miss out on
+              <b class="c-new">{{ currencyAvailable - currencyRequired }}</b>
+              event currency and still have enough to get these items.
+            </div>
+          }
+        }
+
+        @if (candlesRequired > 0) {
+          <div class="result-border-top">
+            You will also need to collect
+            <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>&nbsp;
+            <b class="c-new">{{ candlesRequired }}</b>
+            {{ candlesRequired === 1 ? 'candle' : 'candles' }}
+            to get the items you want.
+          </div>
+          <div>
+            In
+            <b class="c-new">{{ daysLeft }}</b>
+            {{ daysLeft === 1 ? 'day' : 'days' }} you should be able to get around
+            <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>&nbsp;
+            <b class="c-new">{{ candlesAvailable}}</b> candles,
+            which is
+            @if (candlesAvailable >= candlesRequired) {
+              <b class="c-new">enough</b>
+            } @else {
+              <b class="c-old">not enough</b>
+            }.
+          </div>
+        }
+        @if (heartsRequired > 0) {
+          <div [class.result-border-top]="candlesRequired <= 0">
+            You will also need to collect
+            <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>&nbsp;
+            <b class="c-new">{{ heartsRequired }}</b>
+            {{ heartsRequired === 1 ? 'heart' : 'hearts' }}
+            to get all the items you want.
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="sky-card mt">
+    <!-- <div class="sky-card-header">
+      <h1 class="h2 mb-0"></h1>
+    </div> -->
+    <div class="sky-card-body">
+
+      <div class="sky-flex scroll-x tree-scroll">
+        @for (spiritInstance of spirits; track spiritInstance.guid) {
+          <app-spirit-tree [tree]="spiritInstance.tree" [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
+            [showButtons]="false" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
+          </app-spirit-tree>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+<ng-template #tNode let-node>
+  <div class="node-show-hover"
+    [class.node-have]="node.item?.unlocked" [class.node-want]="wantNodes[node.guid]"
+    (click)="toggleButtons(node)"
+  >
+    <div class="node-overlay" [class.o-1]="nodeShowButtons === node"
+    >
+      <div class="node-buttons" [class.node-align-top]="firstNodes[node.guid]">
+        <button class="btn-want" type="button" (click)="wantNode(node, $event)">
+          <mat-icon class="calc-button-icon" [class.c-check]="wantNodes[node.guid]">
+            {{ wantNodes[node.guid] ? 'check' : 'close' }}
+          </mat-icon>
+          <span class="calc-button-label">Want</span>
+        </button><br/>
+        <button class="btn-have" type="button" (click)="haveNode(node, $event)" >
+          <mat-icon class="calc-button-icon" [class.c-check]="node.item?.unlocked">
+            {{ node.item?.unlocked ? 'check' : 'close' }}
+          </mat-icon>
+          <span class="calc-button-label">Have</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

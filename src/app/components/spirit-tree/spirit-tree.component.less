@@ -1,5 +1,6 @@
 :host {
   display: inline-block;
+  backdrop-filter: var(--backdrop-blur);
 }
 
 .content {
@@ -12,7 +13,10 @@
   position: relative;
   // max-height: 600px;
   overflow-y: auto;
-  padding-top: 32px;
+
+  &.has-buttons {
+    padding-top: 32px;
+  }
 }
 
 // Add space at bottom for node cost.
@@ -64,7 +68,16 @@
     1px -1px 2px #000,
     -1px 1px 2px #000,
     1px 1px 2px #000;
+}
 
+.st-item-sp {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  filter: drop-shadow(1px 0px 1px #000);
 }
 
 .st-item:hover .st-item-icon {

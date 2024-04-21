@@ -29,7 +29,7 @@ export class ItemTypeSelectorComponent implements OnInit, OnChanges {
   }
 
   private setTypes(types?: Array<string>): void {
-    types ??= ['Outfit', 'Shoes', 'Mask', 'FaceAccessory', 'Necklace', 'Hair', 'Hat', 'Cape', 'Held', 'Prop', 'Emote', 'Stance', 'Call'];
+    types ??= ['Outfit', 'Shoes', 'Mask', 'FaceAccessory', 'Necklace', 'Hair', 'Hat', 'Cape', 'Held', 'Furniture', 'Prop', 'Emote', 'Stance', 'Call'];
     this._showTypes = {};
     for (const type of types) { this._showTypes[type] = true; }
   }

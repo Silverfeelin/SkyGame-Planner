@@ -11,8 +11,8 @@ import { StorageService } from 'src/app/services/storage.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
-
   @Input() node!: IItemListNode;
+  @Input() highlight?: boolean;
 
   cost!: number;
   currencyIcon!: string;

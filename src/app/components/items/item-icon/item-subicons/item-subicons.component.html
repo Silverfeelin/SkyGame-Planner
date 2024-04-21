@@ -3,9 +3,13 @@
     <app-icon *ngIf="item.season?.iconUrl" class="img-tr" [src]="item.season?.iconUrl || '#season-candle'"
       [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
     </app-icon>
-    <!-- Season pass item (top left) -->
+    <!-- Season pass ultimate (top left) -->
     <app-icon *ngIf="item.group === 'Ultimate'" class="img-tl seasonal" [src]="'#season-heart'"
       [ngbTooltip]="showTooltips ? 'This item is a season ultimate.' : undefined" container="body">
+    </app-icon>
+    <!-- Season pass item (top left) -->
+    <app-icon *ngIf="item.group === 'SeasonPass'" class="img-tl seasonal" [src]="'#gift'"
+      [ngbTooltip]="showTooltips ? 'This item is or was in a season pass.' : undefined" container="body">
     </app-icon>
     <!-- Elder item (top left) -->
     <app-icon *ngIf="item.group === 'Elder'" class="img-tl" [src]="'#ascended-candle'"

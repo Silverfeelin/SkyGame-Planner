@@ -1,0 +1,446 @@
+[
+  {
+    "id": 530,
+    "guid": "vfm49a5KVd",
+    "type": "Special",
+    "name": "Void Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 531,
+    "guid": "bpUKMY2cpm",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "name": "Shattering Pendant",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/14_SOShattering.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOShattering-pendant.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
+    },
+    "order": 86
+  },
+  {
+    "id": 532,
+    "guid": "FjxHIvszIu",
+    "type": "Cape",
+    "group": "Ultimate",
+    "name": "Shattering Ultimate Manta Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-ultimate-Cape-manta-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/SOShattering-ultimate-Cape-manta-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
+    },
+    "order": 610
+  },
+  {
+    "id": 533,
+    "guid": "1IhlCcq61j",
+    "type": "Cape",
+    "group": "Ultimate",
+    "name": "Shattering Ultimate Krill Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/SOShattering-ultimate-Cape-krill-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SOShattering-ultimate-Cape-krill-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
+    },
+    "order": 607
+  },
+  {
+    "id": 534,
+    "guid": "AGUEuqLXVv",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 535,
+    "guid": "4h1Cqzgtsd",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 536,
+    "guid": "WaDZqenOgo",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 537,
+    "guid": "_jM3X_wWt9",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 538,
+    "guid": "B2K9a5WdCy",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 539,
+    "guid": "dCBKJ_449f",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 540,
+    "guid": "YVHc6de8iq",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 541,
+    "guid": "BMDADUXao1",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 542,
+    "guid": "TU0elaQAVo",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 543,
+    "guid": "Cj2mrFPX05",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 544,
+    "guid": "DWsvdTqFbu",
+    "type": "Quest",
+    "name": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 545,
+    "guid": "l7vA1mZOyY",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 546,
+    "guid": "PdjVIHk-se",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 1470,
+    "guid": "JmM2DNyEcO",
+    "type": "Hair",
+    "name": "Jellyfish Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOShattering-Light-hairstyle-royal-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/SOShattering-Light-hairstyle-royal.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
+    },
+    "order": 331
+  },
+  {
+    "id": 1471,
+    "guid": "M0Y-0b8NQT",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1472,
+    "guid": "iDK7eG_9q0",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1473,
+    "guid": "yz2xNFAX1w",
+    "type": "Hat",
+    "name": "Jellyfish Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/SOShattering-Light-Hair-accessory-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SOShattering-Light-Hair-accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory"
+    },
+    "order": 382,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1474,
+    "guid": "9i_q3w0Ar0",
+    "type": "Cape",
+    "name": "Jellyfish Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/SOShattering-Light-Cape-Jellyfish-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/SOShattering-Light-Cape-Jellyfish-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
+    },
+    "order": 609
+  },
+  {
+    "id": 1475,
+    "guid": "WFZROEmMhb",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1476,
+    "guid": "XUKjAL6neK",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1477,
+    "guid": "SL_uFHTqjm",
+    "type": "Music",
+    "name": "Music Sheet 31",
+    "sheet": "31",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 31
+  },
+  {
+    "id": 1478,
+    "guid": "J-bIxrJr0p",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1479,
+    "guid": "Gc--rP-8DN",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1480,
+    "guid": "nhgIi8TLn0",
+    "type": "Hair",
+    "name": "Manta Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/SOShattering-Light-Hairstyle-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SOShattering-Light-Hairstyle.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
+    },
+    "order": 330,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1481,
+    "guid": "SH89J0uzGJ",
+    "type": "Cape",
+    "name": "Manta Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/SOShattering-Light-Cape-manta-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/SOShattering-Light-Cape-manta-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
+    },
+    "order": 608
+  },
+  {
+    "id": 1482,
+    "guid": "ghtp-3LOnd",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1483,
+    "guid": "fI3hMgcig3",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1484,
+    "guid": "AIQsgTditY",
+    "type": "Outfit",
+    "name": "Manta Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/SOShattering-Light-Outfit-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/SOShattering-Light-Outfit.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Outfit"
+    },
+    "order": 32,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1485,
+    "guid": "vy75RHL_2w",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1486,
+    "guid": "gn5YaEC0t8",
+    "type": "Hat",
+    "name": "Darkness Plant Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/SOShattering-Dark-Hair-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/SOShattering-Dark-Hair-accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory"
+    },
+    "order": 381
+  },
+  {
+    "id": 1487,
+    "guid": "CDhsAxgt-H",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1488,
+    "guid": "jH3G2RBNLL",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1489,
+    "guid": "Vt42pGqgXc",
+    "type": "Mask",
+    "name": "Darkness Plant Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/SOShattering-Dark-Mask-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/SOShattering-Dark-Mask.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Mask"
+    },
+    "order": 175,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1490,
+    "guid": "ORKBuwdSG2",
+    "type": "Music",
+    "name": "Music Sheet 30",
+    "sheet": "30",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 30
+  },
+  {
+    "id": 1491,
+    "guid": "ZZIZoAueSW",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1492,
+    "guid": "k9_rkkpAx2",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1493,
+    "guid": "lNfpmsYUYk",
+    "type": "Cape",
+    "name": "Darkness Plant Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SOShattering-Dark-Cape-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/SOShattering-Dark-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Cape"
+    },
+    "order": 606,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1494,
+    "guid": "U2qFIy_QVc",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1495,
+    "guid": "w2bnlVRUvy",
+    "type": "Necklace",
+    "name": "Dragon Neck Accessory (Crab)",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/SOShattering-Dark-Crab-neck-accessory-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SOShattering-Dark-Crab-neck-accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory"
+    },
+    "order": 97
+  },
+  {
+    "id": 1496,
+    "guid": "Q0WsJq5xHA",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1497,
+    "guid": "_iaKoASnNG",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 1498,
+    "guid": "yonX7TEJZQ",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Dark Horn",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/SOShattering-Dark-Horn-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/SOShattering-Dark-Horn-Instrument.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Prop"
+    },
+    "order": 438,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1499,
+    "guid": "TsL-GHL_RI",
+    "type": "Hair",
+    "name": "Dragon Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/SOShattering-Dark-Dragon-hairstyle-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SOShattering-Dark-Dragon-hairstyle.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair"
+    },
+    "order": 329
+  },
+  {
+    "id": 1500,
+    "guid": "mecgn4HFLj",
+    "type": "Special",
+    "name": "Special Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 1501,
+    "guid": "QPNu48eKOZ",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png",
+    "group": "SeasonPass"
+  }
+]

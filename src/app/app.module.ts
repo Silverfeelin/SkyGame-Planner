@@ -69,6 +69,8 @@ import { SpiritTypePipe } from './pipes/spirit-type.pipe';
 import { CardComponent } from './components/layout/card/card.component';
 import { ItemListComponent } from './components/item-list/item-list/item-list.component';
 import { ItemListNodeComponent } from './components/item-list/item-list-node/item-list-node.component';
+import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
+import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
 import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
 import { DropboxIndicatorComponent } from './components/dropbox/dropbox-indicator/dropbox-indicator.component';
 
@@ -138,6 +140,8 @@ import { DropboxIndicatorComponent } from './components/dropbox/dropbox-indicato
     CardComponent,
     ItemListComponent,
     ItemListNodeComponent,
+    SeasonCalculatorComponent,
+    EventCalculatorComponent,
     DropboxAuthComponent,
     DropboxIndicatorComponent
   ],

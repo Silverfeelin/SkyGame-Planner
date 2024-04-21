@@ -1,0 +1,181 @@
+@if (!season) {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Season Calculator</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        There is no ongoing season and the website hasn't been updated to include the upcoming season yet.<br/><br/>
+        Please check back later.
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">
+        {{season.name}} <span class="c-accent h3">Calculator</span>
+      </h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="sky-flex flex-wrap">
+        <a class="button" [routerLink]="['/season', season.guid]">
+          <mat-icon class="menu-icon">arrow_back</mat-icon>
+          <span class="menu-label">Go to Season</span>
+        </a>
+      </div>
+      <div class="container mt sky-flex flex-cols flex-align-start gap-half">
+        <b>Settings</b>
+        <div>
+          Your season candles:
+          <input #inpSc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
+          <button type="button" class="button-sc button-sc-1" (click)="addCurrency(1)">+1</button>
+          <button type="button" class="button-sc button-sc-5" (click)="addCurrency(5)">+5</button>
+        </div>
+        <div>
+          Today's candles:
+          <button type="button" (click)="toggleIncludesToday()">
+            <mat-icon class="calc-button-icon">{{ includesToday ? 'check' : 'close' }}</mat-icon>
+            <span class="calc-button-label">{{ includesToday ? 'obtained' : 'not obtained' }}</span>
+          </button>
+        </div>
+        <div>
+          Season Pass:
+          <button type="button" (click)="toggleSeasonPass()">
+            <mat-icon class="calc-button-icon">{{ ownSeasonPass ? 'check' : 'close' }}</mat-icon>
+            <span class="calc-button-label">{{ ownSeasonPass ? 'owned' : 'not owned' }}</span>
+          </button>
+        </div>
+        <div>
+          You want:
+          <div class="d-inline-block">
+            <button type="button" (click)="selectEverything()">everything</button>&nbsp;
+            <button type="button" (click)="selectFreeAll()">free items</button>&nbsp;
+            <button type="button" (click)="selectFree()">free without spells</button>&nbsp;
+            <button type="button button-danger" (click)="selectNothing()">nothing</button>
+          </div>
+        </div>
+        <div class="">
+          You can also choose what items you want by clicking on the items below and then clicking "Want".<br/>
+          If you already own the item, you should click "Have" to mark it as owned.
+        </div>
+      </div>
+
+      <div class="container mt sky-flex flex-cols flex-align-start gap-half">
+        <b>Result</b>
+        @if (hasSkippedNode) {
+          <blockquote class="mb-0">
+            <mat-icon class="result-warn">priority_high</mat-icon>
+            Required items leading up to the items you want are included in the calculations!
+          </blockquote>
+        }
+        @if (!ownSeasonPass && hasSeasonPassNode) {
+          <blockquote class="mb-0">
+            <mat-icon class="result-warn">priority_high</mat-icon>
+            You have selected items that require the <b class="c-old">Season Pass</b>!
+          </blockquote>
+        }
+        <div>
+          You currently have
+          <b class="c-new">{{ candleCount || 0 }}</b>
+          season {{ candleCount === 1 ? 'candle' : 'candles' }}.
+        </div>
+        <div>
+          Because you
+          <b [class.c-new]="ownSeasonPass" [class.c-old]="!ownSeasonPass">
+            {{ ownSeasonPass ? 'own' : 'do not own' }}
+          </b>
+          the Season Pass,
+          you will be able to get
+          <b class="c-new">{{ ownSeasonPass ? '6' : '5' }}</b>
+          season candles every day, not including bonus events.
+        </div>
+        <div>
+          If you do not miss any candles, you will be able to get
+          <b class="c-new">{{ candlesAvailable }}</b>
+          more before the season concludes.
+        </div>
+        <div>
+          You still need to collect
+          <b class="c-new">{{ candlesRequired }}</b>
+          season candles.
+          @if (daysRequired > 0) {
+            This will take
+            <b class="c-new">{{ daysRequired }}</b>
+            {{ daysRequired === 1 ? 'day' : 'days' }}.
+          }
+        </div>
+        <div>
+          There {{ daysLeft === 1 ? 'is' : 'are' }}
+          <b class="c-new">{{ daysLeft }}</b>
+          {{ daysLeft === 1 ? 'day' : 'days' }} left in the season to get candles.
+        </div>
+        @if (daysRequired > daysLeft) {
+          <b class="c-old">
+            You will not be able to collect enough candles before the season concludes.
+          </b>
+          <div>
+            There would have to be
+            <b class="c-old">{{ candlesRequired - candlesAvailable }}</b>
+            bonus {{ (candlesRequired - candlesAvailable === 1 ? 'candle' : 'candles' ) }}
+            to still make it.
+          </div>
+        } @else {
+          <b class="c-new">
+            You will be able to collect enough candles before the season concludes.
+          </b>
+          @if (candlesAvailable > candlesRequired) {
+            <div>
+              You can get
+              <b class="c-new">{{ candlesAvailable - candlesRequired }}</b>
+              spare season {{ (candlesAvailable - candlesRequired === 1 ? 'candle' : 'candles' ) }} that will be converted to regular candles.
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="sky-card mt">
+    <!-- <div class="sky-card-header">
+      <h1 class="h2 mb-0"></h1>
+    </div> -->
+    <div class="sky-card-body">
+
+      <div class="sky-flex scroll-x tree-scroll">
+        @for (tree of trees; track tree.guid) {
+          <app-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
+            [seasonIcon]="season.iconUrl" [showButtons]="false"
+            [nodeOverlayTemplate]="tNode" [opaqueNodes]="true">
+          </app-spirit-tree>
+        }
+      </div>
+    </div>
+  </div>
+}
+
+<ng-template #tNode let-node>
+  <div class="node-show-hover"
+    [class.node-have]="node.item?.unlocked" [class.node-want]="wantNodes[node.guid]"
+    [class.node-sp]="node.item?.group === 'SeasonPass' && !ownSeasonPass"
+    (click)="toggleButtons(node)"
+  >
+    <div class="node-overlay" [class.o-1]="nodeShowButtons === node"
+    >
+      <div class="node-buttons" [class.node-align-top]="firstNodes[node.guid]">
+        <button class="btn-want" type="button" (click)="wantNode(node, $event)">
+          <mat-icon class="calc-button-icon" [class.c-check]="wantNodes[node.guid]">
+            {{ wantNodes[node.guid] ? 'check' : 'close' }}
+          </mat-icon>
+          <span class="calc-button-label">Want</span>
+        </button><br/>
+        <button class="btn-have" type="button" (click)="haveNode(node, $event)" >
+          <mat-icon class="calc-button-icon" [class.c-check]="node.item?.unlocked">
+            {{ node.item?.unlocked ? 'check' : 'close' }}
+          </mat-icon>
+          <span class="calc-button-label">Have</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -54,10 +54,16 @@
     <mat-icon svgIcon="held"></mat-icon>
   </div>
   <!-- Prop -->
+  <div class="item-icon category" *ngIf="_showTypes['Furniture']" [class.highlight]="type === 'Furniture'"
+  [ngbTooltip]="'Furniture'" container="body"
+    (click)="changeType('Furniture')">
+    <mat-icon svgIcon="shelf"></mat-icon>
+  </div>
+  <!-- Prop -->
   <div class="item-icon category" *ngIf="_showTypes['Prop']" [class.highlight]="type === 'Prop'"
   [ngbTooltip]="'Props'" container="body"
     (click)="changeType('Prop')">
-    <mat-icon svgIcon="prop"></mat-icon>
+    <mat-icon svgIcon="cup"></mat-icon>
   </div>
   <!-- Emote -->
   <div class="item-icon category" *ngIf="_showTypes['Emote']" [class.highlight]="type === 'Emote'"

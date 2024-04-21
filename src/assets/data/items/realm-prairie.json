@@ -1,0 +1,697 @@
+[
+  {
+    "id": 38,
+    "guid": "mCySIT_2dL",
+    "type": "Emote",
+    "name": "Butterfly",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png",
+    "order": 161
+  },
+  {
+    "id": 39,
+    "guid": "UerEKNAbKh",
+    "type": "Emote",
+    "name": "Butterfly",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
+  },
+  {
+    "id": 40,
+    "guid": "KRH68Chubv",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 41,
+    "guid": "eZMt8EziXY",
+    "type": "Cape",
+    "name": "Butterfly Charmer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Cape_yellow_2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
+    },
+    "order": 545
+  },
+  {
+    "id": 42,
+    "guid": "1jZ8Qe_xa_",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 43,
+    "guid": "FEH01aG-AU",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 44,
+    "guid": "cVsVWobkgR",
+    "type": "Emote",
+    "name": "Butterfly",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
+  },
+  {
+    "id": 45,
+    "guid": "pnigGjpTJH",
+    "type": "Emote",
+    "name": "Butterfly",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/ButterflyCharmer-1.png"
+  },
+  {
+    "id": 46,
+    "guid": "1qBmwSZFkz",
+    "type": "Outfit",
+    "name": "Butterfly Charmer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/ButterflyCharmer-4.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Legs08.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Outfit"
+    },
+    "order": 9
+  },
+  {
+    "id": 47,
+    "guid": "Ijg-IuoyS6",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 48,
+    "guid": "9Qof4yL166",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 49,
+    "guid": "9YJ5i3uu4Z",
+    "type": "Cape",
+    "name": "Butterfly Charmer Cape 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Cape_yellow_tier_2_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
+    },
+    "order": 554
+  },
+  {
+    "id": 50,
+    "guid": "yU982A7Cgz",
+    "type": "Emote",
+    "name": "Clap",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png",
+    "order": 171
+  },
+  {
+    "id": 51,
+    "guid": "t0pk8Z0cui",
+    "type": "Emote",
+    "name": "Clap",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
+  },
+  {
+    "id": 52,
+    "guid": "2NPXnIYbvm",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 53,
+    "guid": "PffQbv7Rw5",
+    "type": "Hair",
+    "name": "Applauding Bellmaker Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/ApplaudingBellmaker-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Hair05-Pippi_Ponytails.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Hair"
+    },
+    "order": 240
+  },
+  {
+    "id": 54,
+    "guid": "AuD34CrWXr",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 55,
+    "guid": "vBPsXlkzd-",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 56,
+    "guid": "LoLnYkCW63",
+    "type": "Emote",
+    "name": "Clap",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
+  },
+  {
+    "id": 57,
+    "guid": "fhE3mbrVkd",
+    "type": "Emote",
+    "name": "Clap",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/ApplaudingBellmaker-1.png"
+  },
+  {
+    "id": 58,
+    "guid": "_pDOkbPeGR",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 59,
+    "guid": "xbObJc9i-R",
+    "type": "Emote",
+    "name": "Wave",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png",
+    "order": 181
+  },
+  {
+    "id": 60,
+    "guid": "VRZyKNt7QI",
+    "type": "Emote",
+    "name": "Wave",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+  },
+  {
+    "id": 61,
+    "guid": "4Y_Zxqd4Qf",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 62,
+    "guid": "-N-LV3VirV",
+    "type": "Hair",
+    "name": "Waving Bellmaker Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Hair10-Small_Tuft.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Hair"
+    },
+    "order": 243
+  },
+  {
+    "id": 63,
+    "guid": "aLhHdfg2-U",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 64,
+    "guid": "VEDYfcgraX",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 65,
+    "guid": "Tqp9IA1cb_",
+    "type": "Emote",
+    "name": "Wave",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+  },
+  {
+    "id": 66,
+    "guid": "VyCFJt_BeY",
+    "type": "Emote",
+    "name": "Wave",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+  },
+  {
+    "id": 67,
+    "guid": "MSoLae0Z0M",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 68,
+    "guid": "UMv2RWtO9g",
+    "type": "Mask",
+    "name": "Waving Bellmaker Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Mask03.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Mask"
+    },
+    "order": 108
+  },
+  {
+    "id": 69,
+    "guid": "kU0OvflFtz",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 1963,
+    "guid": "oTkurOebWq",
+    "type": "Emote",
+    "name": "Wave",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression"
+    },
+    "level": 5,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+  },
+  {
+    "id": 1964,
+    "guid": "iISpJu1abW",
+    "type": "Emote",
+    "name": "Wave",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Expression"
+    },
+    "level": 6,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/WavingBellmaker-1.png"
+  },
+  {
+    "id": 70,
+    "guid": "-tpjP_IITi",
+    "type": "Emote",
+    "name": "Yawn",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png",
+    "order": 201
+  },
+  {
+    "id": 71,
+    "guid": "f3IKpWrXWd",
+    "type": "Emote",
+    "name": "Yawn",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
+  },
+  {
+    "id": 72,
+    "guid": "njuf0aikXa",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 73,
+    "guid": "ISKgSOaoko",
+    "type": "Hair",
+    "name": "Slumbering Shipwright Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/SlumberingShipwright-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Hair37-Mid_Mohawk.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Hair"
+    },
+    "order": 246
+  },
+  {
+    "id": 74,
+    "guid": "2Tq3S0Mp9W",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 75,
+    "guid": "093sl7ljOJ",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 76,
+    "guid": "1XGQKgE4NF",
+    "type": "Emote",
+    "name": "Yawn",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
+  },
+  {
+    "id": 77,
+    "guid": "wyhPTBmWXl",
+    "type": "Emote",
+    "name": "Yawn",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/SlumberingShipwright-1.png"
+  },
+  {
+    "id": 78,
+    "guid": "7fqEbZC--E",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 79,
+    "guid": "hpAJ_E_MaE",
+    "type": "Emote",
+    "name": "Laugh",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png",
+    "order": 191
+  },
+  {
+    "id": 80,
+    "guid": "Ozy3lpnc37",
+    "type": "Emote",
+    "name": "Laugh",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
+  },
+  {
+    "id": 81,
+    "guid": "E5ZVduWLBC",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 82,
+    "guid": "biKOov4qJQ",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Harp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/LaughingLightCatcher-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Laughing-Light-Catcher-harp.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Instrument"
+    },
+    "order": 412
+  },
+  {
+    "id": 83,
+    "guid": "ZelHA88rWA",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 84,
+    "guid": "jI_AP_ipB6",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 85,
+    "guid": "18rVAyXlim",
+    "type": "Emote",
+    "name": "Laugh",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
+  },
+  {
+    "id": 86,
+    "guid": "QgWjpddbV_",
+    "type": "Emote",
+    "name": "Laugh",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/LaughingLightCatcher-1.png"
+  },
+  {
+    "id": 87,
+    "guid": "XEoOJENom1",
+    "type": "Hair",
+    "name": "Laughing Light Catcher Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/LaughingLightCatcher-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Hair26-Puffy_Ponytails.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Hair"
+    },
+    "order": 264
+  },
+  {
+    "id": 88,
+    "guid": "xUzhvncppN",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 89,
+    "guid": "FGr955bSRr",
+    "type": "Call",
+    "name": "Bird Call",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Expression"
+    },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/BirdWhisperer-1.png",
+    "order": 11
+  },
+  {
+    "id": 90,
+    "guid": "EhvbJDQHCw",
+    "type": "Music",
+    "name": "Music Sheet 1",
+    "sheet": "1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 1
+  },
+  {
+    "id": 91,
+    "guid": "4zhoIWIhMI",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 92,
+    "guid": "cscDfdL_rJ",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 93,
+    "guid": "MiSak0huh-",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 94,
+    "guid": "2VosX6_BOp",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 95,
+    "guid": "0_BW6Cnzkn",
+    "type": "Hair",
+    "name": "Bird Whisperer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/BirdWhisperer-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Hair11-Vertical_Ponytail.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Hair"
+    },
+    "order": 239
+  },
+  {
+    "id": 96,
+    "guid": "gmpO51jsXq",
+    "type": "Emote",
+    "name": "Wipe Brow",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png",
+    "order": 211
+  },
+  {
+    "id": 97,
+    "guid": "Z2rsK4f5ny",
+    "type": "Emote",
+    "name": "Wipe Brow",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
+  },
+  {
+    "id": 98,
+    "guid": "8lHyqj6lEi",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 99,
+    "guid": "hDORoNTXyF",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 100,
+    "guid": "kdjjfJUVo0",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 101,
+    "guid": "1K-jbnXT59",
+    "type": "Emote",
+    "name": "Wipe Brow",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
+  },
+  {
+    "id": 102,
+    "guid": "Zlx6n-UKQ9",
+    "type": "Emote",
+    "name": "Wipe Brow",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/ExhaustedDockWorker-1.png"
+  },
+  {
+    "id": 103,
+    "guid": "oiByEKIl0h",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 104,
+    "guid": "1AvXszxZaV",
+    "type": "FaceAccessory",
+    "name": "Exhausted Dock Worker Face Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/ExhaustedDockWorker-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Mask04.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Mask"
+    },
+    "order": 198
+  },
+  {
+    "id": 105,
+    "guid": "JSp5Simw5V",
+    "type": "Emote",
+    "name": "Teamwork",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceremonial_Worshiper#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/CeremonialWorshiper-1.png",
+    "order": 221
+  },
+  {
+    "id": 106,
+    "guid": "nYnRDefjmx",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 107,
+    "guid": "w0kI8MA68k",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 108,
+    "guid": "cV_ktRlr7B",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 109,
+    "guid": "NzFqc9KTnM",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  }
+]

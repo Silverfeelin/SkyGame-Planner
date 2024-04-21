@@ -3,7 +3,13 @@
     <h1 class="h2">Seasons</h1>
   </div>
   <div class="sky-card-body">
-    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events'}"></app-wiki-link>
+    <div class="grid grid-2">
+      <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events'}"></app-wiki-link>
+      <a class="container" [routerLink]="'/season-calculator'">
+        <mat-icon class="menu-icon">calculate</mat-icon>
+        <span class="menu-label">Calculator</span>
+      </a>
+    </div>
     <div class="flex mt">
       <a class="item-icon" *ngFor="let season of reverseSeasons"
         [routerLink]="['/season', season.guid]"

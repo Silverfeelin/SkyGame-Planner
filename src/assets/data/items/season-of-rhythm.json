@@ -1,0 +1,808 @@
+[
+  {
+    "id": 374,
+    "guid": "Xbz7dLYzOi",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "name": "Rhythm Pendant",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/4_Rhythm.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Season_of_rhythm_pendant_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
+    },
+    "order": 76
+  },
+  {
+    "id": 375,
+    "guid": "l948FBq_MN",
+    "type": "Mask",
+    "group": "Ultimate",
+    "name": "Rhythm Ultimate Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_mask_rhythm_ult.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Season_of_rhythm_mask_ultimate_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
+    },
+    "order": 113
+  },
+  {
+    "id": 376,
+    "guid": "wXiFi4y6YU",
+    "type": "Hair",
+    "group": "Ultimate",
+    "name": "Rhythm Ultimate Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Icon_hair_rhythm_ultimate.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Season_of_rhythm_hair_ultimate_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
+    },
+    "order": 285
+  },
+  {
+    "id": 845,
+    "guid": "T9ZZMbXM0p",
+    "type": "Emote",
+    "name": "Welcome",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png",
+    "order": 131
+  },
+  {
+    "id": 846,
+    "guid": "Lpi2B9yp7E",
+    "type": "Emote",
+    "name": "Welcome",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 848,
+    "guid": "GbIQpDNVKS",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 849,
+    "guid": "8p1dB9WsP1",
+    "type": "Emote",
+    "name": "Welcome",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png"
+  },
+  {
+    "id": 850,
+    "guid": "T835b5bBNS",
+    "type": "Emote",
+    "name": "Welcome",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Emote-curtsy.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 851,
+    "guid": "SekRzXgjfv",
+    "type": "Mask",
+    "name": "Troupe Greeter Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Troupe-Greeter-Mask-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Season_of_rhythm_mask_isle_welcome_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Mask"
+    },
+    "order": 144
+  },
+  {
+    "id": 852,
+    "guid": "T4suf1MdTj",
+    "type": "Outfit",
+    "name": "Troupe Greeter Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Troupe-Greeter-Icon-pants.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Outfit"
+    },
+    "order": 11,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 853,
+    "guid": "QyPz9F--8K",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 854,
+    "guid": "ixu-bQFMqR",
+    "type": "Music",
+    "name": "Music Sheet 4",
+    "sheet": "4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
+    "order": 4
+  },
+  {
+    "id": 855,
+    "guid": "gOrgKYIV3P",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 856,
+    "guid": "Pe1Hflmudo",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 857,
+    "guid": "7gjw9rjbK9",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 858,
+    "guid": "72q94N8VCj",
+    "type": "Emote",
+    "name": "Spin Dance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png",
+    "order": 481
+  },
+  {
+    "id": 859,
+    "guid": "Uszoh-ONkR",
+    "type": "Emote",
+    "name": "Spin Dance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 860,
+    "guid": "Uo7t1apko6",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 862,
+    "guid": "ZaNb7p2iqw",
+    "type": "Emote",
+    "name": "Spin Dance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png"
+  },
+  {
+    "id": 863,
+    "guid": "9v5mmfY2I4",
+    "type": "Emote",
+    "name": "Spin Dance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Emote-dance.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 864,
+    "guid": "stQCebAgsm",
+    "type": "Hair",
+    "name": "Festival Spin Dancer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Mimi-4117_05_festive_spin_dancer_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Season_of_rhythm_hair_prairie_dance_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Hair"
+    },
+    "order": 282
+  },
+  {
+    "id": 865,
+    "guid": "kmgKsVBs4o",
+    "type": "Outfit",
+    "name": "Festival Spin Dancer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Season_of_rhythm_pants_prairie_dance_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Outfit"
+    },
+    "order": 13,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 866,
+    "guid": "sM8bW--Gst",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 867,
+    "guid": "4XuHymnqlr",
+    "type": "Music",
+    "name": "Music Sheet 5",
+    "sheet": "5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 5,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 868,
+    "guid": "UiAXJpkHYm",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 869,
+    "guid": "EAFp1hfc6-",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 870,
+    "guid": "fD5KSC2ILf",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 871,
+    "guid": "6PvpUYPLPO",
+    "type": "Furniture",
+    "name": "Festival Spin Dancer Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Icon_prop_rhythm_flag.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Festival_spin_dancers_flag.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Prop"
+    },
+    "order": 453
+  },
+  {
+    "id": 872,
+    "guid": "mYHK8KGcDb",
+    "type": "Emote",
+    "name": "Blow Kiss",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png",
+    "order": 231
+  },
+  {
+    "id": 873,
+    "guid": "DQhS5AkEKu",
+    "type": "Emote",
+    "name": "Blow Kiss",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 874,
+    "guid": "023wYIm0DT",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 875,
+    "guid": "GEC1VNDUG2",
+    "type": "Music",
+    "name": "Music Sheet 6",
+    "sheet": "6",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
+    "order": 6,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 876,
+    "guid": "R62rXvPti6",
+    "type": "Emote",
+    "name": "Blow Kiss",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png"
+  },
+  {
+    "id": 877,
+    "guid": "X1oM2uVzop",
+    "type": "Emote",
+    "name": "Blow Kiss",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Emote-blow_kisses.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 878,
+    "guid": "uMURxUHDKr",
+    "type": "Outfit",
+    "name": "Admiring Actor Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Season_of_rhythm_pants_forest_kisses_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Outfit"
+    },
+    "order": 14
+  },
+  {
+    "id": 879,
+    "guid": "xOj2WwukD8",
+    "type": "Mask",
+    "name": "Admiring Actor Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Mimi-4117_05_admiring_actor_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Season_of_rhythm_mask_forest_kisses_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Mask"
+    },
+    "order": 145,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 880,
+    "guid": "aiHkWPkE3L",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 881,
+    "guid": "0wbgRYUeyH",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 882,
+    "guid": "xn4mqXmkpr",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 883,
+    "guid": "3KEvIQ3_Z9",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 884,
+    "guid": "bcJTF4AAEe",
+    "type": "Emote",
+    "name": "Juggle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png",
+    "order": 491
+  },
+  {
+    "id": 885,
+    "guid": "rt7_sCQiHh",
+    "type": "Emote",
+    "name": "Juggle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 886,
+    "guid": "hsTWje5YU_",
+    "type": "Hair",
+    "name": "Troupe Juggler Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Mimi-4117_05_troupe_juggler_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Season_of_rhythm_hair_valley_juggle_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Hair"
+    },
+    "order": 283
+  },
+  {
+    "id": 887,
+    "guid": "QC2E3iIpQB",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 888,
+    "guid": "S9zHdixzVO",
+    "type": "Emote",
+    "name": "Juggle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png"
+  },
+  {
+    "id": 889,
+    "guid": "HlohlGb5MA",
+    "type": "Emote",
+    "name": "Juggle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Emote-juggle.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 890,
+    "guid": "l4AT0gf-aR",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 891,
+    "guid": "MIKr5rkFuk",
+    "type": "Cape",
+    "name": "Troupe Juggler Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_rhythm_cape_valley_juggle_back_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Cape"
+    },
+    "order": 571,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 892,
+    "guid": "52NbrdHrAf",
+    "type": "Outfit",
+    "name": "Troupe Juggler Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_rhythm_pants_valley_juggle_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Outfit"
+    },
+    "order": 12
+  },
+  {
+    "id": 893,
+    "guid": "Zus3hdmlgm",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 894,
+    "guid": "zEMCohlgcF",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 895,
+    "guid": "J4SWAguEQD",
+    "type": "Furniture",
+    "name": "Troupe Juggler Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Icon_prop_torch_lantern.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Summer_prop_lantern_out.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Prop"
+    },
+    "order": 462
+  },
+  {
+    "id": 896,
+    "guid": "AzgiEH8D4t",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 897,
+    "guid": "F9m8tlM-EH",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 898,
+    "guid": "g3peZ7bo5z",
+    "type": "Emote",
+    "name": "Respect",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png",
+    "order": 561
+  },
+  {
+    "id": 899,
+    "guid": "4hiIWJy7qv",
+    "type": "Emote",
+    "name": "Respect",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 900,
+    "guid": "mK47aJa3Uy",
+    "type": "Hair",
+    "name": "Respectful Pianist Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Mimi-4117_05_respectful_pianist_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Season_of_rhythm_hair_wasteland_respect_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Hair"
+    },
+    "order": 284
+  },
+  {
+    "id": 901,
+    "guid": "yzAU4AmksH",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 902,
+    "guid": "DYLsc2p_1T",
+    "type": "Emote",
+    "name": "Respect",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png"
+  },
+  {
+    "id": 903,
+    "guid": "khMbyOBwco",
+    "type": "Emote",
+    "name": "Respect",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Emote-respect.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 904,
+    "guid": "PlN5rXjRFt",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 905,
+    "guid": "M1MCfh7sVo",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Winter Piano",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Mimi-4117_05_respectful_pianist_instrument.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Rhythm-Respectul-Pianist-Piano.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Instrument"
+    },
+    "order": 422,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 906,
+    "guid": "Wr27LIf-FU",
+    "type": "Mask",
+    "name": "Respectful Pianist Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Mimi-4117_05_respectful_pianist_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Season_of_rhythm_mask_wasteland_respect_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Mask"
+    },
+    "order": 146
+  },
+  {
+    "id": 907,
+    "guid": "Z53BOww_Mb",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 908,
+    "guid": "J0eCOP0qGn",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 909,
+    "guid": "kKmbn6_yY5",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 910,
+    "guid": "TbSbFkTkre",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 911,
+    "guid": "qwrbhllE1N",
+    "type": "Emote",
+    "name": "Thinking",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png",
+    "order": 721
+  },
+  {
+    "id": 912,
+    "guid": "zPUl7UL87P",
+    "type": "Emote",
+    "name": "Thinking",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 913,
+    "guid": "_QvFsX4gGf",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 914,
+    "guid": "qlaJxxLwAM",
+    "type": "Mask",
+    "name": "Thoughtful Director Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Mimi-4117_05_thoughtful_director_mask.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Season_of_rhythm_mask_vault_think_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Mask"
+    },
+    "order": 147,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 915,
+    "guid": "cSzED5jEt_",
+    "type": "Emote",
+    "name": "Thinking",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png"
+  },
+  {
+    "id": 916,
+    "guid": "SLjFXYFsjW",
+    "type": "Emote",
+    "name": "Thinking",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Emote-thinking.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 917,
+    "guid": "DVcrj6XSgH",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Xylophone",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mimi-4117_05_thoughtful_director_instrument.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Rhythm-Thoughtful-Director-xylophone.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Instrument"
+    },
+    "order": 423
+  },
+  {
+    "id": 918,
+    "guid": "qyOm1SIyJp",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 919,
+    "guid": "M7UTERtYg8",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 920,
+    "guid": "Bm0aFDGHk2",
+    "type": "Cape",
+    "name": "Thoughtful Director Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_rhythm_blue-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Season_of_rhythm_cape_vault_think_back_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Cape"
+    },
+    "order": 572,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 921,
+    "guid": "LbyGyRZRft",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Rhythm-heart-Ray.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 922,
+    "guid": "jRziaKdlTE",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 923,
+    "guid": "TmI0zjdYQb",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  }
+]

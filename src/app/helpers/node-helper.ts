@@ -82,6 +82,22 @@ export class NodeHelper {
     return nodes.reverse();
   }
 
+  /** Gets all nodes leading up to these nodes.
+   * @remarks Nodes are distinct but order is not guaranteed.
+   */
+  static traceMany(nodes: Array<INode>): Array<INode> {
+    const nodeSet = new Set<INode>();
+    for (const node of nodes) {
+      let n: INode|undefined = node;
+      do {
+        if (nodeSet.has(n)) { break; }
+        nodeSet.add(n);
+        n = n.prev;
+      } while (n)
+    }
+    return [...nodeSet];
+  }
+
   static clone(node: INode): INode {
     const newNode: INode = {
       guid: nanoid(10),

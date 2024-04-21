@@ -9,6 +9,7 @@ export interface IEventConfig extends IConfig<IEvent> {}
 export interface IEvent extends IGuid {
   /** Name of the event. */
   name: string;
+  shortName?: string;
 
   /** Path to overview image. */
   imageUrl?: string;
@@ -25,6 +26,7 @@ export interface IEvent extends IGuid {
 export interface IEventInstance extends IGuid, IPeriod {
   /** Event instance number starting at 1. */
   number: number;
+  currencyPerDay?: number;
 
   /** If marked as draft, data may be inaccurate or incomplete. */
   draft?: boolean;

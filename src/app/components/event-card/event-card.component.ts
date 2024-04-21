@@ -9,7 +9,7 @@ import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { StorageService } from 'src/app/services/storage.service';
 
-type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'checkin';
+type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'checkin' | 'calculator';
 export interface EventCardOptions {
   show?: Array<Section>;
 }

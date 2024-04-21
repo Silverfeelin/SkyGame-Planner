@@ -49,6 +49,12 @@
           I have done my dailies.
         </span>
       </div>
+      <!-- Calculator -->
+      <a *ngIf="sections['calculator']" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"
+        class="item link" [style.order]="sections['calculator']">
+        <mat-icon class="menu-icon">calculate</mat-icon>
+        <span class="menu-label">Calculator</span>
+      </a>
       <!-- Most recent -->
       <a *ngIf="sections['recent'] && lastInstance" [routerLink]="['/event-instance', lastInstance.guid]"
         class="item link" [style.order]="sections['recent']"
