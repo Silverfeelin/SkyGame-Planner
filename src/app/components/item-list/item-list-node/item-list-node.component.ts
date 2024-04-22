@@ -102,8 +102,6 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
     listNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
 
     // Save data
-    guids.forEach(guid => {
-      this._storageService.removeUnlocked(guid);
-    });
+    this._storageService.removeUnlocked(...guids);
   }
 }

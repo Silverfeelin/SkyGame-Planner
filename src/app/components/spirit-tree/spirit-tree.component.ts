@@ -164,9 +164,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         refNodes.forEach(n => n.unlocked = false);
 
         this._storageService.removeUnlocked(node.item!.guid);
-        for (const refNode of refNodes) {
-          this._storageService.removeUnlocked(refNode.guid);
-        }
+        this._storageService.removeUnlocked(...refNodes.map(n => n.guid));
         this._eventService.itemToggled.next(node.item!);
       });
     }

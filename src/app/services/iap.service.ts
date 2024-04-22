@@ -55,8 +55,6 @@ export class IAPService {
     });
 
     // Save data.
-    for (const guid of guids) {
-      this._storageService.removeUnlocked(guid);
-    }
+    this._storageService.removeUnlocked(...guids);
   }
 }

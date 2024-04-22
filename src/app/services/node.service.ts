@@ -67,9 +67,7 @@ export class NodeService {
     }
 
     // Save data.
-    for (const guid of guids) {
-      this._storageService.removeUnlocked(guid);
-    }
+    this._storageService.removeUnlocked(...guids);
 
     // Notify listeners.
     this._eventService.itemToggled.next(node.item);
