@@ -12,6 +12,7 @@ interface ITheme {
 }
 
 interface IExport {
+  version: string;
   storageData: IStorageExport;
   closetData: {
     hidden: Array<string>;
@@ -86,6 +87,16 @@ export class SettingsComponent {
     if (!confirm(`You're about to overwrite your current data. This cannot be undone. Are you sure?`))
       return;
 
+    // Support old format.
+    if (typeof (data as any).unlocked === 'string') {
+      const d = data as any;
+      data = {
+        version: '0.1.1',
+        storageData: { date: '2024-04-01T00:00:00.000+00:00', unlocked: d.unlocked, wingedLights: d.wingedLights, favourites: d.favourites },
+        closetData: d.closet
+      };
+    }
+
     this._storageService.import(data.storageData || {});
 
     if (data.closetData) {
@@ -104,6 +115,7 @@ export class SettingsComponent {
 
   export(): void {
     const data: IExport = {
+      version: '1.0.0',
       storageData: this._storageService.export(),
       closetData: {
         hidden: JSON.parse(localStorage.getItem('closet.hidden') || '[]'),
