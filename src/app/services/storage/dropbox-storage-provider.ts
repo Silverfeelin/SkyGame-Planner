@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon';
-import { Observable, SubscriptionLike } from 'rxjs';
-import { DropboxService } from '../dropbox.service';
+import { Observable, concatMap, of } from 'rxjs';
 import { Dropbox, DropboxAuth, DropboxResponseError } from 'dropbox';
 import { Injectable, OnDestroy } from '@angular/core';
 import { BaseStorageProvider } from './base-storage-provider';
@@ -32,9 +31,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   private _dbx?: Dropbox;
   private _auth?: DropboxAuth;
 
-  constructor(
-    private readonly _dropboxService: DropboxService
-  ) {
+  constructor() {
     super();
     this._debounceTime = 3000;
     this._channel.onmessage = (event) => {
@@ -48,67 +45,75 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   }
 
   override load(): Observable<void> {
-    if (!this._dbx) {
-      this.initializeDbx();
-    }
+    return this.initializeDropbox().pipe(concatMap(() => {
+      return new Observable<void>(observer => {
+        if (!this._dbx) {
+          observer.error(new Error('Dropbox not initialized.'));
+          return;
+        }
 
-    return new Observable<void>(observer => {
-      if (!this._dbx) {
-        observer.error(new Error('Dropbox not initialized.'));
-        return;
-      }
+        this._dbx.filesDownload({ path: '/data.json' }).then(res => {
+          const reader = new FileReader();
+          const blob = (res.result as any).fileBlob;
 
-      this._dbx.filesDownload({ path: '/data.json' }).then(res => {
-        const reader = new FileReader();
-        const blob = (res.result as any).fileBlob;
+          reader.onload = () => {
+            this.onData(reader.result as string);
+            observer.next();
+            observer.complete();
+          };
+          reader.onerror = (e) => { observer.error(e); };
+          reader.readAsText(blob);
+        }).catch((e: DropboxResponseError<unknown>) => {
+          // Accept file not found since it's created on first save.
+          const err = e.error as any;
+          if (err?.error?.['.tag'] === 'path' && err.error['path']?.['.tag'] === 'not_found') {
+            this.onData('{}');
+            observer.next();
+            observer.complete();
+            return;
+          }
 
-        reader.onload = () => {
-          this.onData(reader.result as string);
-          observer.next();
-          observer.complete();
-        };
-        reader.onerror = (e) => { observer.error(e); };
-        reader.readAsText(blob);
-      }).catch((e: DropboxResponseError<unknown>) => {
-        observer.error(e);
-      });;
-    });
+          observer.error(e);
+        });
+      });
+    }));
   }
 
   override save(): Observable<void> {
-    if (!this._dbx) {
-      this.initializeDbx();
+    return this.initializeDropbox().pipe(concatMap(() => {
+      return new Observable<void>(observer => {
+        const data = this.serializeData();
+        const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+        this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } }).then(() => {
+          observer.next();
+          observer.complete();
+        }).catch((e: DropboxResponseError<unknown>) => {
+          observer.error(e);
+        });
+      });
+    }));
+  }
+
+  private initializeDropbox(): Observable<void> {
+    if (this._dbx) {
+      return of(void 0);
     }
 
     return new Observable<void>(observer => {
-      if (!this._dbx) {
-        observer.error(new Error('Dropbox not initialized.'));
-        return;
+      const accessToken = localStorage.getItem('dbx-accessToken') || '';
+      const refreshToken = localStorage.getItem('dbx-refreshToken') || '';
+
+      if (!accessToken || !refreshToken) {
+        observer.error(new Error('Dropbox authorization not found.'));
       }
 
-      const data = this.serializeData();
-      const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
-      this._dbx.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } }).then(() => {
-        observer.next();
-        observer.complete();
-      }).catch((e: DropboxResponseError<unknown>) => {
-        observer.error(e);
-      });
+      this._auth = new DropboxAuth({ clientId: CLIENT_ID });
+      this._auth!.setAccessToken(accessToken);
+      this._auth!.setRefreshToken(refreshToken);
+      this._dbx = new Dropbox({ auth: this._auth });
+      observer.next();
+      observer.complete();
     });
-  }
-
-  private initializeDbx(): void {
-    const accessToken = localStorage.getItem('dbx-accessToken') || '';
-    const refreshToken = localStorage.getItem('dbx-refreshToken') || '';
-
-    if (!accessToken || !refreshToken) {
-      throw new Error('Dropbox authorization not found.');
-    }
-
-    this._auth = new DropboxAuth({ clientId: CLIENT_ID });
-    this._auth!.setAccessToken(accessToken);
-    this._auth!.setRefreshToken(refreshToken);
-    this._dbx = new Dropbox({ auth: this._auth });
   }
 
   private onData(data: string): void {
@@ -117,7 +122,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   }
 
   private initializeData(data: IDropboxData): void {
-    this._syncDate = DateTime.fromISO(data.date) as DateTime;
+    this._syncDate = data.date ? DateTime.fromISO(data.date) as DateTime : DateTime.now();
     this._unlocked = new Set(data.unlocked?.split(',') ?? []);
     this._wingedLights = new Set(data.wingedLights?.split(',') ?? []);
     this._favourites = new Set(data.favourites?.split(',') ?? []);
