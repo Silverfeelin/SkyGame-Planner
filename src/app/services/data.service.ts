@@ -23,6 +23,7 @@ import { CostHelper } from '../helpers/cost-helper';
 import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { IItemList } from '../interfaces/item-list.interface';
+import { ArrayHelper } from '../helpers/array-helper';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -96,7 +97,7 @@ export class DataService {
       }
 
       for (const item of this.itemConfig.items) {
-        item.unlocked = unlocked.has(item.guid);
+        item.unlocked = unlocked.has(item.guid) || item.autoUnlocked === true;
       }
 
       for (const iap of this.iapConfig.items) {
@@ -524,6 +525,7 @@ export class DataService {
       realmConfig: this.realmConfig,
       seasonConfig: this.seasonConfig,
       shopConfig: this.shopConfig,
+      iapConfig: this.iapConfig,
       spiritConfig: this.spiritConfig,
       travelingSpiritConfig: this.travelingSpiritConfig,
       returningSpiritsConfig: this.returningSpiritsConfig,
@@ -535,6 +537,7 @@ export class DataService {
     (window as any).DateHelper = DateHelper;
     (window as any).CostHelper = CostHelper;
     (window as any).ItemHelper = ItemHelper;
+    (window as any).ArrayHelper = ArrayHelper;
 
     const c = 'color:cyan;';
     console.log('To view loaded data, see %cwindow.skyData%c.', c, '');
