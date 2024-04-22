@@ -7,7 +7,7 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
-import { StorageService } from 'src/app/services/storage.service';
+import { EventService } from 'src/app/services/event.service';
 
 type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'checkin' | 'calculator';
 export interface EventCardOptions {
@@ -36,10 +36,10 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   _subs = new SubscriptionBag();
 
   constructor(
-    private readonly _storageService: StorageService,
+    private readonly _eventService: EventService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
-    this._subs.add(this._storageService.storageChanged.pipe(filter(e => e.key?.startsWith('event.checkin.') == true)).subscribe(e => {
+    this._subs.add(this._eventService.storageChanged.pipe(filter(e => e.key?.startsWith('event.checkin.') == true)).subscribe(e => {
       this.updateCheckin();
     }));
   }

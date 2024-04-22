@@ -20,17 +20,17 @@ export interface IStorageProvider {
   isOutOfSync(): boolean;
 
   getUnlocked(): ReadonlySet<string>;
-  addUnlocked(guid: string): void;
-  removeUnlocked(guid: string): void;
+  addUnlocked(...guids: Array<string>): void;
+  removeUnlocked(...guids: Array<string>): void;
   isUnlocked(guid: string): boolean;
 
   getWingedLights(): ReadonlySet<string>;
-  addWingedLights(guid: string): void;
-  removeWingedLights(guid: string): void;
+  addWingedLights(...guids: Array<string>): void;
+  removeWingedLights(...guids: Array<string>): void;
   hasWingedLight(guid: string): boolean;
 
   getFavourites(): ReadonlySet<string>;
-  addFavourites(guid: string): void;
-  removeFavourites(guid: string): void;
+  addFavourites(...guids: Array<string>): void;
+  removeFavourites(...guids: Array<string>): void;
   isFavourite(guid: string): boolean;
 }

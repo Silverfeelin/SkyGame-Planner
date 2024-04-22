@@ -164,7 +164,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
     this._dataService.wingedLightConfig.items.forEach(wl => {
       wl.unlocked = false;
-      this._storageService.removeWingedLight(wl.guid);
+      this._storageService.removeWingedLights(wl.guid);
     });
 
     this.unlockedCol = 0;
@@ -318,9 +318,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   private toggleWingedLight(wl: IWingedLight, found?: boolean): void {
     wl.unlocked = typeof(found) === 'boolean' ? found : !wl.unlocked;
     if (wl.unlocked) {
-      this._storageService.addWingedLight(wl.guid);
+      this._storageService.addWingedLights(wl.guid);
     } else {
-      this._storageService.removeWingedLight(wl.guid);
+      this._storageService.removeWingedLights(wl.guid);
     }
   }
 

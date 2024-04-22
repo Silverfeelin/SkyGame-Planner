@@ -124,7 +124,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   private debounceSave(): void {
     this._lastDate = DateTime.now();
 
-    if (!this._debounceTime) {
+    if (this._debounceTime < 0) {
       this.save().subscribe();
       return;
     }

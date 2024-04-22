@@ -13,6 +13,7 @@ export class EventService {
   readonly nodeClicked = new Subject<INode>();
   readonly searchReset = new Subject<void>();
   readonly clicked = new Subject<MouseEvent>();
+  readonly storageChanged = new Subject<StorageEvent>();
 
   constructor(
     private readonly _router: Router
@@ -23,7 +24,11 @@ export class EventService {
 
     document.addEventListener('click', evt => {
       this.onClick(evt);
-    })
+    });
+
+    window.addEventListener('storage', evt => {
+      this.onStorage(evt);
+    });
   }
 
   private onKeyDown(evt: KeyboardEvent): void {
@@ -39,5 +44,9 @@ export class EventService {
 
   private onClick(evt: MouseEvent): void {
     this.clicked.next(evt);
+  }
+
+  private onStorage(evt: StorageEvent): void {
+    this.storageChanged.next(evt);
   }
 }

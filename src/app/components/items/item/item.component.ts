@@ -43,7 +43,7 @@ export class ItemComponent implements OnInit {
 
   toggleFavourite(item: IItem): void {
     item.favourited = !item.favourited;
-    item.favourited ? this._storageService.addFavourite(item.guid) : this._storageService.removeFavourite(item.guid);
+    item.favourited ? this._storageService.addFavourites(item.guid) : this._storageService.removeFavourites(item.guid);
     this._eventService.itemFavourited.next(item);
   }
 }

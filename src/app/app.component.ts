@@ -1,11 +1,11 @@
-import { Component, ViewContainerRef } from '@angular/core'
+import { Component } from '@angular/core'
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { DataService } from './services/data.service';
-import { Router } from '@angular/router';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
 import { DateTime } from 'luxon';
+import { filter } from 'rxjs';
+import { BroadcastService } from './services/broadcast.service';
 
 @Component({
   selector: 'app-root',
@@ -16,24 +16,23 @@ export class AppComponent {
   dataLoss = false;
 
   constructor(
-    private readonly _dataService: DataService,
+    private readonly _broadcastService: BroadcastService,
     private readonly _eventService: EventService,
     private readonly _domSanitizer: DomSanitizer,
-    private readonly _matIconRegistry: MatIconRegistry,
-    private readonly _viewContainerRef: ViewContainerRef,
-    private readonly _router: Router
+    private readonly _matIconRegistry: MatIconRegistry
   ) {
     this.initDisplayDate();
     _matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
-    // _storageService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
-    //   this.initDisplayDate();
-    // });
+    _eventService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
+      this.initDisplayDate();
+    });
 
-    // _storageService.storageChanged.pipe(filter(e => e.key !== null && storageReloadKeys.has(e.key))).subscribe(() => {
-    //   this.dataLoss = true;
-    // });
+
+    _broadcastService.subject.pipe(filter(m => m.type === 'storage.changed')).subscribe(message => {
+      this.dataLoss = true;
+    });
 
     (window as any).DateTime = DateTime;
   }

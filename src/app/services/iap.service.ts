@@ -40,9 +40,7 @@ export class IAPService {
     });
 
     // Save data.
-    for (const guid of guids) {
-      this._storageService.addUnlocked(guid);
-    }
+    this._storageService.addUnlocked(...guids);
   }
 
   lockIap(iap: IIAP): void {
