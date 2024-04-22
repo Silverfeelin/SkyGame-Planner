@@ -14,15 +14,19 @@ export class LocalStorageProvider extends BaseStorageProvider {
     favourites: 'favourites'
   };
 
-  constructor() {
-    super();
-    this._debounceTime = 0;
-  }
-
-  override _lastDate = DateTime.now();
-  override _syncDate = DateTime.now();
+  override _lastDate: DateTime;
+  override _syncDate: DateTime;
   override _unlocked = new Set<string>();
   override _favourites = new Set<string>();
+
+  constructor() {
+    super();
+
+    const date = DateTime.now();
+    this._lastDate = date;
+    this._syncDate = date;
+    this._debounceTime = 0;
+  }
 
   override load(): Observable<void> {
     const date = localStorage.getItem(this._storageKeys.date) || '';
@@ -36,7 +40,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
   override save(): Observable<void> {
     this.events.next({ type: 'save_start' });
     const data = this.exportData();
-    localStorage.setItem(this._storageKeys.date, this._lastDate.toISO());
+    localStorage.setItem(this._storageKeys.date, this._lastDate.toISO()!);
     localStorage.setItem(this._storageKeys.unlocked, data.unlocked);
     localStorage.setItem(this._storageKeys.wingedLights, data.wingedLights);
     localStorage.setItem(this._storageKeys.favourites, data.favourites);

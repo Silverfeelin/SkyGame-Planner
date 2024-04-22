@@ -22,14 +22,18 @@ const CLIENT_ID = '5slqiqhhxcxjiqr';
   providedIn: 'root'
 })
 export class DropboxStorageProvider extends BaseStorageProvider implements OnDestroy {
-  override _lastDate = DateTime.now();
-  override _syncDate = DateTime.now();
+  override _lastDate: DateTime;
+  override _syncDate: DateTime;
 
   private _dbx?: Dropbox;
   private _auth?: DropboxAuth;
 
   constructor() {
     super();
+
+    const date = DateTime.now();
+    this._lastDate = date;
+    this._syncDate = date;
     this._debounceTime = 3000;
   }
 
@@ -38,7 +42,6 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   }
 
   override load(): Observable<void> {
-
     return this.initializeDropbox().pipe(concatMap(() => {
       return new Observable<void>(observer => {
         if (!this._dbx) {
@@ -129,7 +132,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
 
   private serializeData(): IDropboxData {
     return {
-      date: this._syncDate.toISO(),
+      date: this._syncDate.toISO()!,
       unlocked: [...this._unlocked].join(','),
       wingedLights: [...this._wingedLights].join(','),
       favourites: [...this._favourites].join(',')
