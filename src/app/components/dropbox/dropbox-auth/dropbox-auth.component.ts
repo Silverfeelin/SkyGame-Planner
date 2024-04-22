@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { DropboxAuth, Dropbox } from 'dropbox';
+import { DropboxAuth } from 'dropbox';
 
 const REDIRECT_URI = location.origin + '/dropbox-auth';
 const CLIENT_ID = '5slqiqhhxcxjiqr';
@@ -22,9 +22,6 @@ interface DropboxAuthResponse {
 })
 export class DropboxAuthComponent implements OnInit {
   private _auth!: DropboxAuth;
-  private _dbx?: Dropbox;
-
-  private _hasTokens = false;
 
   error?: string;
   errorDescription?: string;
@@ -35,7 +32,7 @@ export class DropboxAuthComponent implements OnInit {
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.resetAuth();
-    this.loadTokens();
+    this.isAuthenticated = this.loadTokens();
   }
 
   ngOnInit(): void {
@@ -51,15 +48,6 @@ export class DropboxAuthComponent implements OnInit {
     }
 
     history.replaceState({}, '', location.pathname);
-  }
-
-
-  onAuthChanged(): void {
-    this._changeDetectorRef.markForCheck();
-
-    if (this.isAuthenticated) {
-      localStorage.setItem('storage.type', 'dropbox');
-    }
   }
 
   login(): void {
@@ -78,20 +66,17 @@ export class DropboxAuthComponent implements OnInit {
       return false;
     }
 
-    this._hasTokens = true;
     return true;
   }
 
   private setAuth(accessToken: string, refreshToken: string): void {
     this._auth.setAccessToken(accessToken);
     this._auth.setRefreshToken(refreshToken);
-    this._dbx = new Dropbox({ auth: this._auth });
   }
 
   private resetAuth(): void {
     // Reset auth.
     this.isAuthenticated = false;
-    this._dbx = undefined;
     this._auth = new DropboxAuth({
       clientId: CLIENT_ID
     });
@@ -125,6 +110,7 @@ export class DropboxAuthComponent implements OnInit {
 
       this.setAuth(result.access_token, result.refresh_token);
       this.isAuthenticated = true;
+      localStorage.setItem('storage.type', 'dropbox');
       this._changeDetectorRef.markForCheck();
     }).catch(e => {
       this.resetAuth();
@@ -139,6 +125,5 @@ export class DropboxAuthComponent implements OnInit {
     localStorage.removeItem('dbx-refreshToken');
 
     this.resetAuth();
-    this._hasTokens = false;
   }
 }
