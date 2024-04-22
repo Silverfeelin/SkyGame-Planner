@@ -48,6 +48,10 @@ export class DropboxAuthComponent implements OnInit, OnDestroy {
   onAuthChanged(): void {
     this.isAuthenticated = this._dropboxService.isAuthenticated();
     this._changeDetectorRef.markForCheck();
+
+    if (this.isAuthenticated) {
+      localStorage.setItem('storage.type', 'dropbox');
+    }
   }
 
   login(): void {
