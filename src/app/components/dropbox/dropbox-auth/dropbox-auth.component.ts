@@ -27,6 +27,7 @@ export class DropboxAuthComponent implements OnInit {
   errorDescription?: string;
 
   isAuthenticated = false;
+  isUsingDropbox = localStorage.getItem('storage.type') === 'dropbox';
 
   constructor(
     private readonly _changeDetectorRef: ChangeDetectorRef
@@ -111,6 +112,7 @@ export class DropboxAuthComponent implements OnInit {
       this.setAuth(result.access_token, result.refresh_token);
       this.isAuthenticated = true;
       localStorage.setItem('storage.type', 'dropbox');
+      this.isUsingDropbox = true;
       this._changeDetectorRef.markForCheck();
     }).catch(e => {
       this.resetAuth();

@@ -3,7 +3,11 @@
     <h1 class="h2 mb-0">Connect to Dropbox</h1>
   </div>
   <div class="sky-card-body">
-    <div class="container">
+    <a class="container d-block" [routerLink]="'/storage'">
+      <mat-icon class="menu-icon">arrow_back</mat-icon>
+      <span class="menu-label">Return to Storage</span>
+    </a>
+    <div class="container mt">
       <p>
         Please click on the Link to Dropbox button below to connect through the Dropbox website.
       </p>
@@ -35,6 +39,12 @@
         </a>
       </div>
     </div>
+    @if (isAuthenticated && isUsingDropbox) {
+      <a class="container mt d-inline-block" [routerLink]="'/'">
+        <mat-icon class="menu-icon">home</mat-icon>
+        <span class="menu-label">Go to dashboard</span>
+      </a>
+    }
   </div>
 </div>
 
@@ -50,14 +60,5 @@
         Description: <code>{{errorDescription}}</code>
       </p>
     </div>
-  </div>
-</div>
-
-<div class="sky-card mt">
-  <div class="sky-card-body">
-    <a class="container d-block" [routerLink]="'/storage'">
-      <mat-icon class="menu-icon">arrow_back</mat-icon>
-      <span class="menu-label">Return to Storage</span>
-    </a>
   </div>
 </div>
