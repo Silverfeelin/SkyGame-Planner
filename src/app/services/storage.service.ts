@@ -21,6 +21,10 @@ export class StorageService implements OnDestroy {
     this.setStorageProvider(storageProviderFactory.get());
   }
 
+  isOutOfSync(): boolean {
+    return this.provider.isOutOfSync();
+  }
+
   getUnlocked(): ReadonlySet<string> { return this.provider.getUnlocked(); }
   addUnlocked(...guids: Array<string>): void {
     this.provider.addUnlocked(...guids);
@@ -65,6 +69,7 @@ export class StorageService implements OnDestroy {
   }
 
   private notifyChange(): void {
+    this.events.next({ type: 'data_changed' });
     this.broadcastService.broadcast({ type: 'storage.changed', data: null });
   }
 }

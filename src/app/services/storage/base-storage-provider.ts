@@ -134,15 +134,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     }
 
     this._debouncer = setTimeout(() => {
-      this.events.next({ type: 'save_start' });
-      this.save().subscribe({
-        next: () => {
-          this.events.next({ type: 'save_success' });
-        },
-        error: e => {
-          this.events.next({ type: 'save_error', error: e });
-        }
-      })
+      this.save().subscribe();
     }, this._debounceTime);
   }
 }

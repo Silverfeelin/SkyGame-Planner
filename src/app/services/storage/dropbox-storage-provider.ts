@@ -22,9 +22,6 @@ const CLIENT_ID = '5slqiqhhxcxjiqr';
   providedIn: 'root'
 })
 export class DropboxStorageProvider extends BaseStorageProvider implements OnDestroy {
-
-  private _channel = new BroadcastChannel('dbx');
-
   override _lastDate = DateTime.now();
   override _syncDate = DateTime.now();
 
@@ -34,17 +31,14 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   constructor() {
     super();
     this._debounceTime = 3000;
-    this._channel.onmessage = (event) => {
-      this.onChannelMessage(event as IChannelMessage<unknown>);
-    };
   }
 
   ngOnDestroy(): void {
     this.dispose();
-    this._channel.close();
   }
 
   override load(): Observable<void> {
+
     return this.initializeDropbox().pipe(concatMap(() => {
       return new Observable<void>(observer => {
         if (!this._dbx) {
@@ -80,15 +74,20 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   }
 
   override save(): Observable<void> {
+    this.events.next({ type: 'save_start' });
     return this.initializeDropbox().pipe(concatMap(() => {
       return new Observable<void>(observer => {
         const data = this.serializeData();
         const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
+        const syncDate = this._lastDate;
         this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } }).then(() => {
+          if (syncDate === this._lastDate) { this._syncDate = this._lastDate; }
           observer.next();
           observer.complete();
+          this.events.next({ type: 'save_success' });
         }).catch((e: DropboxResponseError<unknown>) => {
           observer.error(e);
+          this.events.next({ type: 'save_error', error: e as unknown as Error });
         });
       });
     }));
@@ -126,24 +125,6 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     this._unlocked = new Set(data.unlocked?.split(',') ?? []);
     this._wingedLights = new Set(data.wingedLights?.split(',') ?? []);
     this._favourites = new Set(data.favourites?.split(',') ?? []);
-  }
-
-  private sendChannelData(): void {
-    this._channel.postMessage({
-      type: 'data',
-      data: this.serializeData()
-    });
-  }
-
-  onChannelMessage(message: IChannelMessage<unknown>) {
-    if (message.type === 'data') {
-      this.onChannelData(message.data as IDropboxData);
-    }
-    throw new Error('Method not implemented.');
-  }
-
-  onChannelData(data: IDropboxData) {
-    this.initializeData(data);
   }
 
   private serializeData(): IDropboxData {

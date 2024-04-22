@@ -34,11 +34,14 @@ export class LocalStorageProvider extends BaseStorageProvider {
   }
 
   override save(): Observable<void> {
+    this.events.next({ type: 'save_start' });
     const data = this.exportData();
     localStorage.setItem(this._storageKeys.date, this._lastDate.toISO());
     localStorage.setItem(this._storageKeys.unlocked, data.unlocked);
     localStorage.setItem(this._storageKeys.wingedLights, data.wingedLights);
     localStorage.setItem(this._storageKeys.favourites, data.favourites);
+    this._syncDate = this._lastDate;
+    this.events.next({ type: 'save_success' });
     return of(undefined);
   }
 }

@@ -1,5 +1,13 @@
 
 @if (ready) {
+  <div class="save-indicator" [class.show-save]="showSaveIndicator">
+    @switch (storageSaveState) {
+      @case ('save_start') { <mat-icon class="pulse">cloud_upload</mat-icon> }
+      @case ('save_success') { <mat-icon>cloud_done</mat-icon> }
+      @case ('save_error') { <mat-icon>cloud_off</mat-icon> }
+      @case ('data_changed') { <mat-icon class="pulse">cloud</mat-icon> }
+    }
+  </div>
   <router-outlet></router-outlet>
 }
 @else if (err) {

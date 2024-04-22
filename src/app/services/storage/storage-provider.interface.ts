@@ -1,8 +1,12 @@
 import { DateTime } from 'luxon';
 import { Observable, Subject } from 'rxjs';
 
+export type StorageEventType =
+  'save_start' | 'save_success' | 'save_error' |
+  'data_changed';
+
 export interface IStorageEvent {
-  type: 'save_start' | 'save_success' | 'save_error';
+  type: StorageEventType;
   error?: Error;
 }
 

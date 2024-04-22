@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy } from '@angular/core';
 import { GuardResult, MaybeAsync, Router, UrlTree } from '@angular/router';
 import { SubscriptionLike, delay, forkJoin, of } from 'rxjs';
 import { canActivateData } from 'src/app/guards/can-activate-data';
 import { canActivateStorage } from 'src/app/guards/can-activate-storage';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
-import { IStorageEvent } from 'src/app/services/storage/storage-provider.interface';
+import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storage-provider.interface';
 
 @Component({
   selector: 'app-main-layout',
@@ -14,10 +14,20 @@ import { IStorageEvent } from 'src/app/services/storage/storage-provider.interfa
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainLayoutComponent implements OnDestroy {
+
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnloadHandler(event: Event): void {
+    // If storage is out of sync, warn on page leave.
+    if (!this._storageService.isOutOfSync()) { return; }
+    event.preventDefault();
+  }
+
   loading = false;
   ready = false;
   err: any;
   storageSaveError?: Error;
+  storageSaveState?: StorageEventType;
+  showSaveIndicator = false;
 
   _storageSub?: SubscriptionLike;
 
@@ -69,12 +79,27 @@ export class MainLayoutComponent implements OnDestroy {
     });
   }
 
+  saveTimeout?: number;
   onStorageEvent(evt: IStorageEvent) {
-    if (evt.type === 'save_error') {
-      this.storageSaveError = evt.error;
-    } else if (evt.type === 'save_success') {
-      this.storageSaveError = undefined;
-    } else { return; }
+    // Show storage error message.
+    switch (evt.type) {
+      case 'save_start': case 'data_changed': break;
+      case 'save_error': this.storageSaveError = evt.error; break;
+      case 'save_success': this.storageSaveError = undefined; break;
+        default: return;
+    }
+
+    // Update indicator.
+    this.storageSaveState = evt.type;
+    this.showSaveIndicator = true;
+
+    if (this.saveTimeout) { clearTimeout(this.saveTimeout); }
+    if (evt.type === 'save_success') {
+      this.saveTimeout = setTimeout(() => {
+        this.showSaveIndicator = false;
+        this._changeDetectorRef.markForCheck();
+      }, 2500);
+    }
     this._changeDetectorRef.markForCheck();
   }
 
