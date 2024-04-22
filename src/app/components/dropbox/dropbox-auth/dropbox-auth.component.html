@@ -27,14 +27,23 @@
           <button type="button" (click)="reset()" class="dbx-reset">
             Unlink
           </button>
-          <a class="button" target="_blank" href="https://www.dropbox.com/account/connected_apps">View connected apps</a>
+          <a class="button" target="_blank" href="https://www.dropbox.com/account/connected_apps">
+            <mat-icon class="menu-icon">open_in_new</mat-icon>
+            <span class="menu-label">View connected apps on Dropbox</span>
+          </a>
+        </div>
+      } @else {
+        <div class="sky-flex flex-wrap">
+          <button type="button" (click)="login()" class="">
+            <mat-icon class="menu-icon">link</mat-icon>
+            <span class="menu-label">Link to Dropbox</span>
+          </button>
+          <a class="button" target="_blank" href="https://www.dropbox.com/account/connected_apps">
+            <mat-icon class="menu-icon">open_in_new</mat-icon>
+            <span class="menu-label">View connected apps on Dropbox</span>
+          </a>
         </div>
       }
-    </div>
-    <div class="mt">
-      <button type="button" (click)="login()" class="dbx-login">
-        <img src="/assets/external/dropbox_56.svg">
-      </button>
     </div>
   </div>
 </div>
