@@ -10,6 +10,13 @@ export interface IStorageEvent {
   error?: Error;
 }
 
+export interface IStorageExport {
+  date: string;
+  unlocked: string;
+  wingedLights: string;
+  favourites: string;
+}
+
 export interface IStorageProvider {
   _lastDate: DateTime;
   _syncDate: DateTime;
@@ -18,8 +25,12 @@ export interface IStorageProvider {
 
   events: Subject<IStorageEvent>;
 
+  getName(): string;
+
   load(): Observable<void>;
   save(): Observable<void>;
+  import(data: IStorageExport): void;
+  export(): IStorageExport;
   getSyncDate(): DateTime;
   isOutOfSync(): boolean;
 

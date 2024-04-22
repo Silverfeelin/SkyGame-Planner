@@ -22,6 +22,8 @@ const CLIENT_ID = '5slqiqhhxcxjiqr';
   providedIn: 'root'
 })
 export class DropboxStorageProvider extends BaseStorageProvider implements OnDestroy {
+  readonly _name = 'Dropbox';
+
   override _lastDate: DateTime;
   override _syncDate: DateTime;
 

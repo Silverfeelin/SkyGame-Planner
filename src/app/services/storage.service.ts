@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subject, SubscriptionLike } from 'rxjs';
-import { IStorageEvent, IStorageProvider } from './storage/storage-provider.interface';
+import { IStorageEvent, IStorageExport, IStorageProvider } from './storage/storage-provider.interface';
 import { StorageProviderFactory } from './storage/storage-provider-factory';
 import { BroadcastService } from './broadcast.service';
 
@@ -23,6 +23,19 @@ export class StorageService implements OnDestroy {
 
   isOutOfSync(): boolean {
     return this.provider.isOutOfSync();
+  }
+
+  getProviderName(): string {
+    return this.provider.getName();
+  }
+
+  import(data: IStorageExport): void {
+    this.provider.import(data);
+    this.provider.save().subscribe();
+  }
+
+  export(): IStorageExport {
+    return this.provider.export();
   }
 
   getUnlocked(): ReadonlySet<string> { return this.provider.getUnlocked(); }

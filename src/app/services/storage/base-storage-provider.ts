@@ -1,15 +1,9 @@
 import { DateTime } from 'luxon';
 import { Observable, Subject } from 'rxjs';
-import { IStorageEvent, IStorageProvider } from './storage-provider.interface';
-
-export interface IStorageExport {
-  date: string;
-  unlocked: string;
-  wingedLights: string;
-  favourites: string;
-}
+import { IStorageEvent, IStorageExport, IStorageProvider } from './storage-provider.interface';
 
 export abstract class BaseStorageProvider implements IStorageProvider {
+  abstract _name: string;
   abstract _lastDate: DateTime<boolean>;
   abstract _syncDate: DateTime<boolean>;
 
@@ -24,6 +18,27 @@ export abstract class BaseStorageProvider implements IStorageProvider {
 
   _debouncer?: number;
   protected _debounceTime = 500;
+
+  getName(): string {
+    return this._name;
+  }
+
+  import(data: IStorageExport): void {
+    this._lastDate = data.date ? DateTime.fromISO(data.date) : DateTime.now();
+    this._syncDate = this._lastDate;
+    this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
+    this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
+    this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
+  }
+
+  export(): IStorageExport {
+    return {
+      date: this._lastDate.toISO()!,
+      unlocked: [...this.getUnlocked()].join(','),
+      wingedLights: [...this.getWingedLights()].join(','),
+      favourites: [...this.getFavourites()].join(',')
+    };
+  }
 
   getSyncDate(): DateTime<boolean> {
     return this._syncDate;
