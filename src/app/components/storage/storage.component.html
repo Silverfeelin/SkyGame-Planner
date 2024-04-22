@@ -40,37 +40,43 @@
   <!-- Local Storage -->
   <div class="sky-card">
     <div class="sky-card-header">
-      <h4 class="h5 mb-0">Local Storage</h4>
+      <h4 class="h5 mb-0">
+        <mat-icon class="v-top">database</mat-icon>
+        Local storage
+      </h4>
     </div>
     <div class="sky-card-body">
-        <div class="container">
-          <details>
-            <summary>Storage information</summary>
-            <p>
-              By using local storage your data will be stored in your browser. This is the default option.<br/>
-              Your data will be available on this device only and will be lost if you clear your browsing data in your browser.
-            </p>
-            <p>
-              It is recommended to back up your data frequently.<br/>
-              You can export and import data with the buttons below.
-            </p>
-          </details>
-        </div>
-        <button class="mt" type="button" (click)="useLocalStorage()" [class.highlight]="!storageType">
-          <mat-icon class="menu-icon">database</mat-icon>
-          <span class="menu-label">{{ storageType ? 'Use Local Storage' : 'Using Local Storage' }}</span>
-        </button>
+      <div class="container">
+        <details>
+          <summary>Information</summary>
+          <p>
+            By using local storage your data will be stored in your browser. This is the default option.<br/>
+            Your data will be available on this device only and will be lost if you clear your browsing data in your browser.
+          </p>
+          <p>
+            It is recommended to back up your data frequently.<br/>
+            You can export and import data with the buttons below.
+          </p>
+        </details>
+      </div>
+      <button class="mt" type="button" (click)="useLocalStorage()" [class.highlight]="!storageType">
+        <mat-icon class="menu-icon">{{ storageType ? 'check_box_outline_blank' : 'done' }}</mat-icon>
+        <span class="menu-label">Use local storage</span>
+      </button>
     </div>
   </div>
   <!-- Dropbox -->
   <div class="sky-card">
     <div class="sky-card-header">
-      <h4 class="h5 mb-0">Dropbox</h4>
+      <h4 class="h5 mb-0">
+        <mat-icon class="v-top">cloud</mat-icon>
+        Dropbox
+      </h4>
     </div>
     <div class="sky-card-body">
       <div class="container">
         <details>
-          <summary>Dropbox information</summary>
+          <summary>Information</summary>
           <p>
             By using Dropbox your data will be stored in your Dropbox account. This allows you to access your data on any device.<br/>
             Your data will be available on every device connected to the same Dropbox account.
@@ -83,9 +89,9 @@
         </details>
       </div>
       <div class="mt sky-flex flex-wrap">
-        <button class="" type="button" (click)="useDropbox()" [class.highlight]="storageType">
-          <mat-icon class="menu-icon">cloud</mat-icon>
-          <span class="menu-label">{{ storageType ? 'Using Dropbox' : 'Use Dropbox' }}</span>
+        <button class="" type="button" (click)="useDropbox()" [class.highlight]="storageType === 'dropbox'">
+          <mat-icon class="menu-icon">{{ storageType === 'dropbox' ? 'done' : 'check_box_outline_blank' }}</mat-icon>
+          <span class="menu-label">Use Dropbox</span>
         </button>
         <button class="" type="button" (click)="linkDropbox()">
           <mat-icon class="menu-icon">link</mat-icon>
