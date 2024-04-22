@@ -15,8 +15,6 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { RealmComponent } from './components/realms/realm/realm.component';
-import { TitleResolver } from './resolvers/title.resolver';
-import { EventInstanceTitleResolver } from './resolvers/event-instance-title.resolver';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
@@ -58,32 +56,30 @@ const routes: Routes = [
         path: '',
         component: MenuLayoutComponent,
         children: [
-          // TODO: Title resolvers no longer function because the MainLayoutComponent doesn't start loading until the resolvers are done.
-          // This causes a deadlock with loadData not being called until after onData fires.
           { path: '', component: DashboardComponent, title: 'Sky Planner' },
           { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
           { path: 'credits', component: CreditsComponent, title: title('Credits') },
           { path: 'event', component: EventsComponent, title: title('Events') },
           { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
-          { path: 'event/:guid', component: EventComponent, title: title('Event') }, // TitleResolver
-          { path: 'event-instance/:guid', component: EventInstanceComponent, title: title('Event')  }, // EventInstanceTitleResolver
+          { path: 'event/:guid', component: EventComponent },
+          { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsComponent, title: title('Items') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
-          { path: 'item/:guid', component: ItemComponent, title: title('Item') }, // TitleResolver
+          { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
-          { path: 'realm/:guid', component: RealmComponent, title: title('Realm') }, // TitleResolver
+          { path: 'realm/:guid', component: RealmComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
-          { path: 'season/:guid', component: SeasonComponent, title: title('Season') }, // TitleResolver
+          { path: 'season/:guid', component: SeasonComponent },
           { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
           { path: 'settings', component: SettingsComponent, title: title('Settings') },
           { path: 'shop', component: ShopsComponent, title: title('Shops') },
           { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
-          { path: 'spirit/:guid', component: SpiritComponent, title: title('Spirit') }, // TitleResolver
+          { path: 'spirit/:guid', component: SpiritComponent },
           { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
           { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },
-          { path: 'rs/:guid', component: ReturningSpiritComponent, title: title('Special Visit') }, // TitleResolver
+          { path: 'rs/:guid', component: ReturningSpiritComponent },
           { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
           { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },

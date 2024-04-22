@@ -3,6 +3,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { DataService } from 'src/app/services/data.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-returning-spirit',
@@ -16,6 +17,7 @@ export class ReturningSpiritComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
@@ -32,6 +34,7 @@ export class ReturningSpiritComponent {
 
   private initializeRs(guid: string): void {
     this.rs = this._dataService.guidMap.get(guid!) as IReturningSpirits;
+    this._titleService.setTitle(this.rs.name || 'Special Visit');
     this.state = DateHelper.getStateFromPeriod(this.rs.date, this.rs.endDate);
   }
 }

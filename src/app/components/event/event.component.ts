@@ -5,6 +5,7 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { TitleService } from 'src/app/services/title.service';
 
 interface IRow {
   number: number;
@@ -34,6 +35,7 @@ export class EventComponent implements OnInit {
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {}
@@ -45,6 +47,8 @@ export class EventComponent implements OnInit {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.event = this._dataService.guidMap.get(guid!) as IEvent;
+
+    this._titleService.setTitle(this.event.name);
 
     this.instances = [];
     if (this.event.instances) {

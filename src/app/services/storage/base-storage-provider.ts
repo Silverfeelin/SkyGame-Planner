@@ -56,6 +56,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     for (const guid of guids) {
       this._unlocked.add(guid);
     }
+    this._lastDate = DateTime.now();
     this.debounceSave();
   }
 
@@ -63,6 +64,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     for (const guid of guids) {
       this._unlocked.delete(guid);
     }
+    this._lastDate = DateTime.now();
     this.debounceSave();
   }
 
@@ -78,6 +80,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     for (const guid of guids) {
       this._wingedLights.add(guid);
     }
+    this._lastDate = DateTime.now();
     this.debounceSave();
   }
 
@@ -85,6 +88,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     for (const guid of guids) {
       this._wingedLights.delete(guid);
     }
+    this._lastDate = DateTime.now();
     this.debounceSave();
   }
 
@@ -100,6 +104,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     for (const guid of guids) {
       this._favourites.add(guid);
     }
+    this._lastDate = DateTime.now();
     this.debounceSave();
   }
 
@@ -107,6 +112,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     for (const guid of guids) {
       this._favourites.delete(guid);
     }
+    this._lastDate = DateTime.now();
     this.debounceSave();
   }
 
@@ -137,8 +143,6 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   }
 
   private debounceSave(): void {
-    this._lastDate = DateTime.now();
-
     if (this._debounceTime < 0) {
       this.save().subscribe();
       return;
