@@ -1,158 +1,56 @@
-import { Injectable } from '@angular/core';
-import { DateTime } from 'luxon';
-import { Subject } from 'rxjs';
-
-export const storageReloadKeys = new Set(['unlocked', 'favourites', 'col.unlocked']);
-
-export interface IStorageData {
-  date: string;
-  unlocked: string;
-  favourites: string;
-  col: string;
-}
+import { Injectable, OnDestroy } from '@angular/core';
+import { Subject, SubscriptionLike } from 'rxjs';
+import { IStorageEvent, IStorageProvider } from './storage/storage-provider.interface';
+import { StorageProviderFactory } from './storage/storage-provider-factory';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService {
-  unlocked = new Set<string>();
-  favourites = new Set<string>();
-  unlockedCol = new Set<string>();
-  lastDate?: DateTime;
+export class StorageService implements OnDestroy {
+  provider!: IStorageProvider;
 
   storageChanged = new Subject<StorageEvent>();
+  events = new Subject<IStorageEvent>();
 
-  constructor() {
-    this.initializeFromStorage();
+  private _eventSub?: SubscriptionLike;
+
+  constructor(
+    storageProviderFactory: StorageProviderFactory
+  ) {
+    this.setStorageProvider(storageProviderFactory.get());
     this.subscribeStorage();
   }
 
-  private initializeFromStorage(): void {
-    const date = localStorage.getItem('date') || '';
-    const unlocked = localStorage.getItem('unlocked') || '';
-    const favourites = localStorage.getItem('favourites') || '';
-    const unlockedCol = localStorage.getItem('col.unlocked') || '';
+  getUnlocked(): ReadonlySet<string> { return this.provider.getUnlocked(); }
+  addUnlocked(guid: string): void { this.provider.addUnlocked(guid); }
+  removeUnlocked(guid: string): void { this.provider.removeUnlocked(guid); }
+  isUnlocked(guid: string): boolean { return this.provider.isUnlocked(guid); }
+  getWingedLights(): ReadonlySet<string> { return this.provider.getWingedLights(); }
+  addWingedLight(guid: string): void { this.provider.addWingedLights(guid); }
+  removeWingedLight(guid: string): void { this.provider.removeWingedLights(guid); }
+  hasWingedLight(guid: string): boolean { return this.provider.hasWingedLight(guid); }
+  getFavourites(): ReadonlySet<string> { return this.provider.getFavourites(); }
+  addFavourite(guid: string): void { this.provider.addFavourites(guid); }
+  removeFavourite(guid: string): void { this.provider.removeFavourites(guid); }
+  isFavourite(guid: string): boolean { return this.provider.isFavourite(guid); }
 
-    this.initializeDate(date);
-    this.initializeUnlocked(unlocked);
-    this.initializeFavourites(favourites);
-    this.initializeCol(unlockedCol);
+  /** Updates the storage provider. */
+  setStorageProvider(provider: IStorageProvider): void {
+    this._eventSub?.unsubscribe();
+
+    this._eventSub = provider.events.subscribe(evt => this.events.next(evt));
+    this.provider = provider;
   }
 
-  getStorageData(): IStorageData {
-    return {
-      date: this.lastDate?.toISO() || '',
-      unlocked: this.serializeUnlocked(),
-      favourites: this.serializeFavourites(),
-      col: this.serializeUnlockedCol()
-    };
+  ngOnDestroy(): void {
+    this.events.complete();
+    this.storageChanged.complete();
   }
-
-  // #region Date
-
-  private initializeDate(isoDate: string): void {
-    this.lastDate = isoDate ? DateTime.fromISO(isoDate) : DateTime.now();
-  }
-
-  private updateDate(): void {
-    this.lastDate = DateTime.now();
-    localStorage.setItem('date', this.lastDate.toISO()!);
-  }
-
-  // #endregion
-
-  // #region Nodes & items
-
-  private initializeUnlocked(unlocked: string): void {
-    this.unlocked.clear();
-    const guids: Array<string> = unlocked?.length && unlocked.split(',') || [];
-    guids.forEach(g => this.unlocked.add(g));
-  }
-
-  private initializeFavourites(favourites: string): void {
-    this.favourites.clear();
-    const favGuids: Array<string> = favourites?.length && favourites.split(',') || [];
-    favGuids.forEach(g => this.favourites.add(g));
-  }
-
-  /** Adds unlocked node or items by GUID. */
-  add(...guids: Array<string>): void {
-    guids?.forEach(g => this.unlocked.add(g));
-  }
-
-  /** Removes nodes or items by GUID. */
-  remove(...guids: Array<string>): void {
-    guids?.forEach(g => this.unlocked.delete(g));
-  }
-
-  serializeUnlocked(): string {
-    return [...this.unlocked].join(',');
-  }
-
-  save(): void {
-    const unlocked = this.serializeUnlocked();
-    localStorage.setItem('unlocked', unlocked);
-    this.updateDate();
-  }
-
-  // #endregion
-
-  // #region Favourites
-
-  addFavourite(...guids: Array<string>): void {
-    guids?.forEach(g => this.favourites.add(g));
-  }
-
-  removeFavourite(...guids: Array<string>): void {
-    guids?.forEach(g => this.favourites.delete(g));
-  }
-
-  serializeFavourites(): string {
-    return [...this.favourites].join(',');
-  }
-
-  saveFavourites(): void {
-    const favourites = this.serializeFavourites();
-    localStorage.setItem('favourites', favourites);
-    this.updateDate();
-  }
-
-  // #endregion
-
-  // #region Children of Light
-
-  private initializeCol(unlockedCol: string): void {
-    this.unlockedCol.clear();
-    const colGuids: Array<string> = unlockedCol?.length && unlockedCol.split(',') || [];
-    colGuids.forEach(g => this.unlockedCol.add(g));
-  }
-
-  addCol(...guids: Array<string>): void {
-    guids?.forEach(g => this.unlockedCol.add(g));
-  }
-
-  removeCol(...guids: Array<string>): void {
-    guids?.forEach(g => this.unlockedCol.delete(g));
-  }
-
-  serializeUnlockedCol(): string {
-    return [...this.unlockedCol].join(',');
-  }
-
-  saveCol(): void {
-    const unlocked = this.serializeUnlockedCol();
-    localStorage.setItem('col.unlocked', unlocked);
-    this.updateDate();
-  }
-
-  // #endregion
 
   // #region Storage updates
 
   private subscribeStorage(): void {
-    window.addEventListener('storage', evt => {
-      this.onStorageChanged(evt);
-    });
+    window.addEventListener('storage', evt => { this.onStorageChanged(evt); });
   }
 
   private onStorageChanged(event: StorageEvent): void {

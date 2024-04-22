@@ -56,7 +56,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     private readonly _breakpointObserver: BreakpointObserver,
     private readonly _zone: NgZone,
   ) {
-    this.unlockedCol = _storageService.unlockedCol.size;
+    this.unlockedCol = _storageService.getWingedLights().size;
     this.totalCol = this._dataService.wingedLightConfig.items.length;
 
     const areaSet = new Set<string>();
@@ -70,7 +70,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
         wl: area.wingedLights || [],
         unlocked: (area.wingedLights || []).filter(wl => wl.unlocked).length
       }
-      row.wl.forEach(wl => { this.rowMap[wl.guid] = row; });
+      row.wl.forEach(wl => {
+        this.rowMap[wl.guid] = row;
+      });
       this.rows.push(row);
     });
   }
@@ -159,9 +161,11 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   reset(): void {
     if (!confirm('Are you sure you want to reset your found Children of Light?')) { return; }
-    this._storageService.unlockedCol.clear();
-    this._storageService.saveCol();
-    this._dataService.reloadUnlocked();
+
+    this._dataService.wingedLightConfig.items.forEach(wl => {
+      wl.unlocked = false;
+      this._storageService.removeWingedLight(wl.guid);
+    });
 
     this.unlockedCol = 0;
     this.rows.forEach(r => r.unlocked = 0);
@@ -291,7 +295,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     const row = this.rowMap[wl.guid];
     if (!row) { return; }
     row.unlocked = (row.wl || []).filter(wl => wl.unlocked).length;
-    this.unlockedCol = this._storageService.unlockedCol.size;
+    this.unlockedCol = this._storageService.getWingedLights().size;
     this._changeDetectorRef.markForCheck();
   }
 
@@ -313,8 +317,11 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   private toggleWingedLight(wl: IWingedLight, found?: boolean): void {
     wl.unlocked = typeof(found) === 'boolean' ? found : !wl.unlocked;
-    wl.unlocked ? this._storageService.addCol(wl.guid) : this._storageService.removeCol(wl.guid);
-    this._storageService.saveCol();
+    if (wl.unlocked) {
+      this._storageService.addWingedLight(wl.guid);
+    } else {
+      this._storageService.removeWingedLight(wl.guid);
+    }
   }
 
   private allDone(): void {

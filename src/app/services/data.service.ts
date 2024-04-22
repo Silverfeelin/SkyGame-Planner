@@ -1,7 +1,7 @@
 import JSON5 from 'json5';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, isDevMode } from '@angular/core';
-import { forkJoin, ReplaySubject, Subscription } from 'rxjs';
+import { forkJoin, Observable, ReplaySubject, Subscription, tap } from 'rxjs';
 import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
 import { ISpiritTree, ISpiritTreeConfig } from '../interfaces/spirit-tree.interface';
@@ -16,7 +16,6 @@ import { ISpirit, ISpiritConfig } from '../interfaces/spirit.interface'
 import { ITravelingSpiritConfig } from '../interfaces/traveling-spirit.interface';
 import { IWingedLight, IWingedLightConfig } from '../interfaces/winged-light.interface';
 import { DateHelper } from '../helpers/date-helper';
-import { StorageService } from './storage.service';
 import { IReturningSpiritsConfig } from '../interfaces/returning-spirits.interface';
 import { IIAP } from '../interfaces/iap.interface';
 import { NodeHelper } from '../helpers/node-helper';
@@ -24,6 +23,12 @@ import { CostHelper } from '../helpers/cost-helper';
 import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { IItemList } from '../interfaces/item-list.interface';
+
+export interface ITrackables {
+  unlocked?: ReadonlySet<string>;
+  wingedLights?: ReadonlySet<string>;
+  favourites?: ReadonlySet<string>;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +43,7 @@ export class DataService {
   realmConfig!: IRealmConfig;
   seasonConfig!: ISeasonConfig;
   shopConfig!: IShopConfig;
+  iapConfig!: IConfig<IIAP>;
   spiritConfig!: ISpiritConfig;
   spiritTreeConfig!: ISpiritTreeConfig;
   travelingSpiritConfig!: ITravelingSpiritConfig;
@@ -51,14 +57,13 @@ export class DataService {
   readonly onData = new ReplaySubject<void>();
 
   constructor(
-    private readonly _httpClient: HttpClient,
-    private readonly _storageService: StorageService
-  ) {
-    this.loadData().add(() => { this.exposeData(); });
-  }
+    private readonly _httpClient: HttpClient
+  ) { }
 
-  private loadData(): Subscription {
-    const get = (asset: string) => this._httpClient.get(`assets/data/${asset}`, { responseType: 'text' });
+  loadData(): Observable<{[k: string]: string}> {
+    const get = (asset: string) => {
+      return this._httpClient.get(`assets/data/${asset}`, { responseType: 'text' });
+    }
 
     return forkJoin({
       areaConfig: get('areas.json'),
@@ -77,10 +82,45 @@ export class DataService {
       returningSpiritsConfig:  get('returning-spirits.json'),
       wingedLightConfig: get('winged-lights.json'),
       outfitRequestConfig: get('outfit-requests.json'),
-    }).subscribe({
-      next: (data:  {[k: string]: string}) => { this.onConfigs(data); },
-      error: e => console.error(e)
-    });
+    }).pipe(tap(data => {
+      this.onConfigs(data);
+      this.exposeData();
+    }));
+  }
+
+  refreshUnlocked(trackables: ITrackables): void {
+    const { unlocked, wingedLights, favourites } = trackables;
+    if (unlocked) {
+      for (const node of this.nodeConfig.items) {
+        node.unlocked = unlocked.has(node.guid);
+      }
+
+      for (const item of this.itemConfig.items) {
+        item.unlocked = unlocked.has(item.guid);
+      }
+
+      for (const iap of this.iapConfig.items) {
+        iap.bought = unlocked.has(iap.guid);
+      }
+
+      for (const itemList of this.itemListConfig.items) {
+        for (const node of itemList.items) {
+          node.unlocked = unlocked.has(node.guid);
+        }
+      }
+    }
+
+    if (favourites) {
+      for (const item of this.itemConfig.items) {
+        item.favourited = favourites.has(item.guid);
+      }
+    }
+
+    if (wingedLights) {
+      for (const wingedLight of this.wingedLightConfig.items) {
+        wingedLight.unlocked = wingedLights.has(wingedLight.guid);
+      }
+    }
   }
 
   private onConfigs(configs: {[k: string]: string}): void {
@@ -110,9 +150,6 @@ export class DataService {
     this.initializeSeasonItems();
     this.initializeWingedLight();
     this.initializeOutfitRequests();
-
-    // Save for any corrections made during init.
-    this._storageService.save();
 
     if (isDevMode()) {
       this.validate();
@@ -286,8 +323,6 @@ export class DataService {
       item.nodes.push(node);
     }
 
-    node.unlocked = this._storageService.unlocked.has(node.guid);
-
     if (node.hiddenItems?.length) {
       node.hiddenItems.forEach((itemGuid, i) => {
         if (typeof itemGuid !== 'string') return;
@@ -301,7 +336,6 @@ export class DataService {
         // Mark hidden item as unlocked.
         if (node.unlocked) {
           item.unlocked = true;
-          this._storageService.unlocked.add(item.guid);
         }
       });
     }
@@ -367,8 +401,6 @@ export class DataService {
         shop.iaps![iIap] = iap;
         iap.shop = shop;
 
-        iap.bought = this._storageService.unlocked.has(iap.guid);
-
         iap.items?.forEach((itemGuid, iItem) => {
           const item = this.guidMap.get(itemGuid as any) as IItem;
           if (!item) { console.error('Item not found', itemGuid); }
@@ -378,7 +410,6 @@ export class DataService {
 
           if (iap.bought) {
             item.unlocked = true;
-            this._storageService.unlocked.add(item.guid);
           }
         });
       });
@@ -423,8 +454,6 @@ export class DataService {
         else { emotes.push(item); }
       }
 
-      item.unlocked ||= this._storageService.unlocked.has(item.guid);
-      item.favourited = this._storageService.favourites.has(item.guid);
       if (!item.unlocked && item.autoUnlocked) { item.unlocked = true; }
       item.order ??= 999999;
     });
@@ -445,8 +474,6 @@ export class DataService {
 
           item.listNodes ??= [];
           item.listNodes.push(itemNode);
-
-          itemNode.unlocked = this._storageService.unlocked.has(itemNode.guid);
         }
       });
     });
@@ -474,9 +501,7 @@ export class DataService {
   }
 
   private initializeWingedLight(): void {
-    this.wingedLightConfig.items.forEach(wl => {
-      wl.unlocked = this._storageService.unlockedCol.has(wl.guid);
-    });
+
   }
 
   private initializeOutfitRequests(): void {
@@ -514,19 +539,6 @@ export class DataService {
     const c = 'color:cyan;';
     console.log('To view loaded data, see %cwindow.skyData%c.', c, '');
     console.log('You can also use the helpers %cNodeHelper%c, %cDateHelper%c and %cCostHelper%c.', c, '', c, '', c, '');
-  }
-
-  reloadUnlocked(): void {
-    this.itemConfig.items.forEach(item => {
-      item.unlocked = this._storageService.unlocked.has(item.guid) || item.autoUnlocked;
-    });
-    this.nodeConfig.items.forEach(node => {
-      node.unlocked = this._storageService.unlocked.has(node.guid);
-    });
-
-    this.wingedLightConfig.items.forEach(wl => {
-      wl.unlocked = this._storageService.unlockedCol.has(wl.guid);
-    });
   }
 
   // #region GUIDs

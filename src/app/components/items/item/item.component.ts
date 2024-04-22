@@ -45,7 +45,5 @@ export class ItemComponent implements OnInit {
     item.favourited = !item.favourited;
     item.favourited ? this._storageService.addFavourite(item.guid) : this._storageService.removeFavourite(item.guid);
     this._eventService.itemFavourited.next(item);
-    this._storageService.saveFavourites();
   }
-
 }

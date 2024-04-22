@@ -1,0 +1,103 @@
+@if (errorMessage) {
+  <div class="sky-card mb">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Storage problem</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container mb">
+        <p>
+          <mat-icon class="v-top c-warn-accent">priority_high</mat-icon>
+          You have been redirected to the storage page because loading data from your linked account failed.
+        </p>
+        <p>The error message is shown below and more details are logged in the console.</p>
+
+        <hr/>
+        <pre class="mt mb c-warn-accent">{{ errorMessage }}</pre>
+        <hr/>
+
+        You can try to link your account again or switch to local storage which is guaranteed to work.
+      </div>
+    </div>
+  </div>
+}
+
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Storage</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        On this page you can change how your tracked data is stored.<br/>
+        Information stored in linked accounts is limited to unlocks such as items, in-app purchases, favourited items and winged light.<br/>
+        Settings are always stored locally.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="grid grid-2 mt">
+  <!-- Local Storage -->
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h4 class="h5 mb-0">Local Storage</h4>
+    </div>
+    <div class="sky-card-body">
+        <div class="container">
+          <p>
+            By using local storage your data will be stored in your browser. This is the default option.<br/>
+            Your data will be available on this device only and will be lost if you clear your browsing data in your browser.
+          </p>
+          <p>
+            It is recommended to back up your data frequently.<br/>
+            You can export and import data with the buttons below.
+          </p>
+        </div>
+        <button class="mt" type="button" (click)="useLocalStorage()" [class.highlight]="!storageType">
+          <mat-icon class="menu-icon">database</mat-icon>
+          <span class="menu-label">{{ storageType ? 'Use Local Storage' : 'Using Local Storage' }}</span>
+        </button>
+    </div>
+  </div>
+  <!-- Dropbox -->
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h4 class="h5 mb-0">Dropbox</h4>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        <p>
+          By using Dropbox your data will be stored in your Dropbox account. This allows you to access your data on any device.<br/>
+          Your data will be available on every device connected to the same Dropbox account.
+        </p>
+        <p>
+          Sky Planner will only be able to access its own folder in your Dropbox account.<br/>
+          If the data can not be loaded, you be redirected back to this page with an error message.
+        </p>
+        <p>Visit <a href="https://www.dropbox.com/">Dropbox.com</a> if you do not have an account yet.</p>
+      </div>
+      <div class="mt sky-flex flex-wrap">
+        <button class="" type="button" (click)="useDropbox()" [class.highlight]="storageType">
+          <mat-icon class="menu-icon">cloud</mat-icon>
+          <span class="menu-label">{{ storageType ? 'Using Dropbox' : 'Use Dropbox' }}</span>
+        </button>
+        <button class="" type="button" (click)="linkDropbox()">
+          <mat-icon class="menu-icon">link</mat-icon>
+          <span class="menu-label">Link Dropbox</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h4 class="h5 mb-0">Continue to website</h4>
+  </div>
+  <div class="sky-card-body">
+    <a class="container d-inline-block" [routerLink]="'/'">
+      <mat-icon class="menu-icon">home</mat-icon>
+      <span class="menu-label">Go to dashboard</span>
+    </a>
+  </div>
+</div>

@@ -4,18 +4,32 @@
   </div>
   <div class="sky-card-body">
     <div class="container">
+      @if (!isAuthenticated) {
+        <p>
+          Please click on the Dropbox button below to connect through the Dropbox website.
+        </p>
+      }
       <p>
-        By connecting to Dropbox you can access your data from multiple devices.<br/>
-        Sky Planner will automatically save data to the <b>Apps/Sky Planner</b> folder in your Dropbox.
+        You are currently
+        @if (isAuthenticated) {
+          <b class="c-new">connected</b>
+        } @else {
+          <b class="c-old">not connected</b>
+        }
+        to Dropbox.
       </p>
-      <p>
-        You are currently <b>{{ isAuthenticated ? 'connected' : 'not connected' }}</b> to Dropbox.
-      </p>
-      <p *ngIf="isAuthenticated">
-        You can make the website forget the credentials by clicking the reset button.<br/>
-        You should also revoke access from the Dropbox page that opens.<br/>
-        <button type="button" (click)="reset()" class="dbx-reset">Reset</button>
-      </p>
+      @if (isAuthenticated) {
+        <p>
+          You can make the website forget the credentials by clicking the reset button.<br/>
+          You should also revoke access from the Dropbox page that opens.<br/>
+        </p>
+        <div class="sky-flex flex-wrap">
+          <button type="button" (click)="reset()" class="dbx-reset">
+            Unlink
+          </button>
+          <a class="button" target="_blank" href="https://www.dropbox.com/account/connected_apps">View connected apps</a>
+        </div>
+      }
     </div>
     <div class="mt">
       <button type="button" (click)="login()" class="dbx-login">
@@ -24,8 +38,8 @@
     </div>
   </div>
 </div>
-
-<button type="button" (click)="download()">Download</button>
+<!--
+<button type="button" (click)="download()">Download</button> -->
 
 <div class="sky-card" *ngIf="error">
   <div class="sky-card-header">
@@ -39,5 +53,14 @@
         Description: <code>{{errorDescription}}</code>
       </p>
     </div>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-body">
+    <a class="container d-block" [routerLink]="'/storage'">
+      <mat-icon class="menu-icon">arrow_back</mat-icon>
+      <span class="menu-label">Return to Storage</span>
+    </a>
   </div>
 </div>

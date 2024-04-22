@@ -14,7 +14,6 @@ export class DropboxAuthComponent implements OnInit, OnDestroy {
   errorDescription?: string;
 
   isAuthenticated = false;
-
   _subscriptions = new SubscriptionBag();
 
   constructor(

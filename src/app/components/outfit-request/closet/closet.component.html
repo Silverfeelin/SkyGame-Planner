@@ -11,7 +11,7 @@
       </a>
     </div>
     <div class="btns-top btn-top-request" *ngIf="requesting">
-      <a class="button" href="/" data-step="904" data-position="bottom-right-aligned">
+      <a class="button" [routerLink]="'/'" data-step="904" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">home</mat-icon>
         <span class="menu-label">Home</span>
       </a>
@@ -29,7 +29,7 @@
       <div class="mt" data-step="0" data-position="bottom-left-aligned">
         <ng-container *ngIf="requesting">
           Please visit the
-          <a class="button" href="/outfit-request/closet" *ngIf="requesting" data-step="0" data-position="bottom-right-aligned">
+          <a class="button" [routerLink]="'/outfit-request/closet'" *ngIf="requesting" data-step="0" data-position="bottom-right-aligned">
             <mat-icon class="menu-icon">checkroom</mat-icon>
             <span class="menu-label">Closet</span>
           </a>
@@ -37,7 +37,7 @@
         </ng-container>
         <ng-container *ngIf="!requesting">
           Please visit the
-          <a class="button" href="/outfit-request/request" *ngIf="!requesting" data-step="0" data-position="bottom-right-aligned">
+          <a class="button" [routerLink]="'/outfit-request/request'" *ngIf="!requesting" data-step="0" data-position="bottom-right-aligned">
             <mat-icon class="menu-icon">add</mat-icon>
             <span class="menu-label">Request</span>
           </a>

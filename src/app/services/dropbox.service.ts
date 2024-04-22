@@ -1,7 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Dropbox, DropboxAuth, DropboxResponseError } from 'dropbox';
 import { Observable, ReplaySubject, Subject, debounce, debounceTime, filter } from 'rxjs';
-import { StorageService, storageReloadKeys } from './storage.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
 import { DateTime } from 'luxon';
 
@@ -18,6 +17,8 @@ interface DropboxAuthResponse {
   uid: string;
 }
 
+export type DropboxSyncState = 'unknown' | 'behind' | 'syncing' | 'synced' | 'error';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,14 +29,16 @@ export class DropboxService implements OnDestroy {
   private _hasTokens = false;
   private _isAuthenticated = false;
 
+  private _state: DropboxSyncState = 'unknown';
+
   readonly authLoaded = new ReplaySubject<boolean>(1);
   readonly authChanged = new Subject<boolean>();
   readonly authRemoved = new Subject<void>();
+  readonly stateChanged = new ReplaySubject<DropboxSyncState>(1);
 
   private _subscriptions = new SubscriptionBag();
 
   constructor(
-    private readonly _storageService: StorageService
   ) {
     this.resetAuth();
     this.loadTokens();
@@ -53,23 +56,11 @@ export class DropboxService implements OnDestroy {
     return this._isAuthenticated;
   }
 
-  private subscribeStorage(): void {
-    // Subscribe to uninterrupted storage changes.
-    const obs$ = this._storageService.storageChanged.pipe(
-      filter(e => e.key !== null && storageReloadKeys.has(e.key)),
-      debounceTime(5000)
-    );
-
-    // Storage changed. Update Dropbox.
-    this._subscriptions.add(obs$.subscribe(() => {
-      if (!this.isAuthenticated()) { return; }
-      this.createFile();
-    }));
+  getState(): DropboxSyncState {
+    return this._state;
   }
 
   private resetAuth(): void {
-    localStorage.removeItem('dbx-codeVerifier');
-
     // Reset auth.
     this._isAuthenticated = false;
     this._dbx = undefined;
@@ -116,7 +107,6 @@ export class DropboxService implements OnDestroy {
     return new Observable<void>(observer => {
       this.checkAndRefreshAccessToken().then(() => {
         this._isAuthenticated = true;
-        this.subscribeStorage();
 
         observer.next();
         observer.complete();
@@ -156,7 +146,6 @@ export class DropboxService implements OnDestroy {
 
       this.setAuth(result.access_token, result.refresh_token);
       this._isAuthenticated = true;
-      this.subscribeStorage();
 
       this.authChanged.next(true);
     }).catch(e => {

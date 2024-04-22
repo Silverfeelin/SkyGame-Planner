@@ -26,6 +26,8 @@
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "crypto-browserify": "^3.12.0",
+    "dropbox": "^10.34.0",
     "fuzzysort": "^2.0.4",
     "intro.js": "^7.2.0",
     "json5": "^2.2.2",
@@ -34,12 +36,10 @@
     "nanoid": "^4.0.2",
     "panzoom": "^9.4.3",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.14.4",
     "stream-browserify": "^3.0.0",
-    "crypto-browserify": "^3.12.0",
-    "dropbox": "^10.34.0",
-    "util": "^0.12.5"
+    "tslib": "^2.3.0",
+    "util": "^0.12.5",
+    "zone.js": "~0.14.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.2",
@@ -51,7 +51,7 @@
     "@types/jasmine": "~4.3.0",
     "@types/leaflet": "^1.9.6",
     "@types/luxon": "^3.4.0",
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "chokidar": "^3.6.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

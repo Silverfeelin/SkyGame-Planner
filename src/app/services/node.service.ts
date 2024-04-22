@@ -32,8 +32,9 @@ export class NodeService {
     });
 
     // Save data.
-    this._storageService.add(...guids);
-    this._storageService.save();
+    for (const guid of guids) {
+      this._storageService.addUnlocked(guid);
+    }
 
     // Notify listeners.
     this._eventService.itemToggled.next(node.item);
@@ -68,9 +69,9 @@ export class NodeService {
     }
 
     // Save data.
-    this._storageService.remove(...guids);
-    this._storageService.save();
-
+    for (const guid of guids) {
+      this._storageService.removeUnlocked(guid);
+    }
 
     // Notify listeners.
     this._eventService.itemToggled.next(node.item);

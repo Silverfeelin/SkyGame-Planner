@@ -27,7 +27,6 @@ export class ItemUnlockComponent {
   toggleItem(item: IItem, unlock?: boolean): void {
     unlock ??= !item.unlocked;
     unlock ? this.unlockItem(item, true) : this.lockItem(item, true);
-    this._storageService.save();
   }
 
   private initializeItems(): void {
@@ -65,7 +64,6 @@ export class ItemUnlockComponent {
   unlockAll(type: ItemType): void {
     if (!confirm(`Are you sure you want to unlock all items in this group?`)) { return; }
     this.typeItems[type].forEach(item => { this.unlockItem(item, true); });
-    this._storageService.save();
   }
 
   private unlockItem(item: IItem, withRelated = false): void {
@@ -73,7 +71,7 @@ export class ItemUnlockComponent {
 
     // Unlock item.
     item.unlocked = true;
-    this._storageService.add(item.guid);
+    this._storageService.addUnlocked(item.guid);
 
     // Unlock related.
     if (withRelated) {
@@ -88,7 +86,7 @@ export class ItemUnlockComponent {
 
     // Unlock node.
     node.unlocked = true;
-    this._storageService.add(node.guid);
+    this._storageService.addUnlocked(node.guid);
 
     // Unlock related items.
     if (node.item) { this.unlockItem(node.item, false); }
@@ -100,7 +98,7 @@ export class ItemUnlockComponent {
 
     // Unlock IAP.
     iap.bought = true;
-    this._storageService.add(iap.guid);
+    this._storageService.addUnlocked(iap.guid);
 
     // Unlock related items.
     iap.items?.forEach(item => { this.unlockItem(item, false); });
@@ -113,7 +111,6 @@ export class ItemUnlockComponent {
   lockAll(type: ItemType): void {
     if (!confirm(`Are you sure you want to remove all items in this group?`)) { return; }
     this.typeItems[type].forEach(item => { this.lockItem(item, true); });
-    this._storageService.save();
   }
 
   private lockItem(item: IItem, withRelated = false): void {
@@ -122,7 +119,7 @@ export class ItemUnlockComponent {
 
     // Lock item.
     item.unlocked = false;
-    this._storageService.remove(item.guid);
+    this._storageService.removeUnlocked(item.guid);
 
     // Lock related.
     if (withRelated) {
@@ -142,7 +139,7 @@ export class ItemUnlockComponent {
 
     // Lock node.
     node.unlocked = false;
-    this._storageService.remove(node.guid);
+    this._storageService.removeUnlocked(node.guid);
 
     // Lock related items.
     node.hiddenItems?.forEach(v => this.lockItem(v, false));
@@ -153,7 +150,7 @@ export class ItemUnlockComponent {
 
     // Lock IAP.
     iap.bought = false;
-    this._storageService.remove(iap.guid);
+    this._storageService.removeUnlocked(iap.guid);
 
     // Lock related items.
     iap.items?.forEach(item => { this.lockItem(item, false); });
