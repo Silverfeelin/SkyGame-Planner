@@ -31,7 +31,7 @@ export class StorageService implements OnDestroy {
 
   import(data: IStorageExport): void {
     this.provider.import(data);
-    this.provider.save().subscribe();
+    this.provider.save(false).subscribe();
   }
 
   export(): IStorageExport {

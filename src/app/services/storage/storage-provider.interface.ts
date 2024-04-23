@@ -28,7 +28,7 @@ export interface IStorageProvider {
   getName(): string;
 
   load(): Observable<void>;
-  save(): Observable<void>;
+  save(force: boolean): Observable<void>;
   import(data: IStorageExport): void;
   export(): IStorageExport;
   getSyncDate(): DateTime;

@@ -104,7 +104,7 @@ export class MainLayoutComponent implements OnDestroy {
   }
 
   retrySaveStorage(): void {
-    this._storageService.provider.save().subscribe();
+    this._storageService.provider.save(true).subscribe();
   }
 
   copy(evt: Event): void {

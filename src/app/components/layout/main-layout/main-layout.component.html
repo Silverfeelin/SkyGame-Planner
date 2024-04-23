@@ -15,7 +15,7 @@
     <div class="overlay-body">
       <span>Something went wrong...</span>
       <span>Please report this error.</span>
-      <pre class="br pad" style="background: #000;" (click)="copy($event)">{{ err }}</pre>
+      <pre class="br pad ws-pl" style="background: #000;" (click)="copy($event)">{{ err }}</pre>
     </div>
   </div>
 } @else {
@@ -35,7 +35,7 @@
       <span>The error message is shown below.</span>
 
       <hr/>
-      <pre class="mt mb c-warn-accent">{{ storageSaveError }}</pre>
+      <pre class="mt mb c-warn-accent ws-pl">{{ storageSaveError }}</pre>
       <hr/>
 
       <span>You can try to <span class="link" (click)="retrySaveStorage()">save again</span> or return to the <a [routerLink]="'/storage'">Storage page</a>.</span>

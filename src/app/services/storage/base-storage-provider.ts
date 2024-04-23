@@ -14,7 +14,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   events = new Subject<IStorageEvent>();
 
   abstract load(): Observable<void>;
-  abstract save(): Observable<void>;
+  abstract save(force: boolean): Observable<void>;
 
   _debouncer?: number;
   protected _debounceTime = 500;
@@ -144,7 +144,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
 
   private debounceSave(): void {
     if (this._debounceTime < 0) {
-      this.save().subscribe();
+      this.save(false).subscribe();
       return;
     }
 
@@ -153,7 +153,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     }
 
     this._debouncer = setTimeout(() => {
-      this.save().subscribe();
+      this.save(false).subscribe();
     }, this._debounceTime);
   }
 }

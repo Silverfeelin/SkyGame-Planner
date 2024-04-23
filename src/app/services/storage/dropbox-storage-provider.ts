@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 import { Observable, concatMap, of } from 'rxjs';
-import { Dropbox, DropboxAuth, DropboxResponseError } from 'dropbox';
+import { Dropbox, DropboxAuth, DropboxResponseError, files } from 'dropbox';
 import { Injectable, OnDestroy } from '@angular/core';
 import { BaseStorageProvider } from './base-storage-provider';
 
@@ -9,11 +9,6 @@ interface IDropboxData {
   unlocked: string;
   wingedLights: string;
   favourites: string;
-}
-
-interface IChannelMessage<T> {
-  type: 'data';
-  data: T;
 }
 
 const CLIENT_ID = '5slqiqhhxcxjiqr';
@@ -29,11 +24,12 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
 
   private _dbx?: Dropbox;
   private _auth?: DropboxAuth;
+  private _rev?: string;
 
   constructor() {
     super();
 
-    const date = DateTime.now();
+    const date = DateTime.fromObject({ year: 2000, month: 1, day: 1 });
     this._lastDate = date;
     this._syncDate = date;
     this._debounceTime = 3000;
@@ -54,6 +50,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
         this._dbx.filesDownload({ path: '/data.json' }).then(res => {
           const reader = new FileReader();
           const blob = (res.result as any).fileBlob;
+          this._rev = res.result.rev;
 
           reader.onload = () => {
             this.onData(reader.result as string);
@@ -78,19 +75,23 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     }));
   }
 
-  override save(): Observable<void> {
+  override save(force: boolean): Observable<void> {
     this.events.next({ type: 'save_start' });
     return this.initializeDropbox().pipe(concatMap(() => {
       return new Observable<void>(observer => {
         const data = this.serializeData();
         const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
         const syncDate = this._lastDate;
-        this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } }).then(() => {
-          if (syncDate === this._lastDate) { this._syncDate = this._lastDate; }
+        const upload$ = this._rev && !force
+          ? this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'update', update: this._rev } })
+          : this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } });
+        upload$.then(() => {
+          if (syncDate <= this._lastDate) { this._syncDate = this._lastDate; }
           observer.next();
           observer.complete();
           this.events.next({ type: 'save_success' });
-        }).catch((e: DropboxResponseError<unknown>) => {
+        }).catch((e: any) => {
+          e = this.parseDropboxError(e) || e;
           observer.error(e);
           this.events.next({ type: 'save_error', error: e as unknown as Error });
         });
@@ -141,4 +142,14 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     };
   }
 
+  private parseDropboxError(e: DropboxResponseError<any>): Error | undefined {
+    if (!e) { return; }
+    if (!e.error?.error) { return; }
+
+    if (e.error.error['.tag'] === 'path' && e.error.error.reason?.['.tag'] === 'conflict') {
+      return new Error('Conflict detected. The file has been modified by another tab or device.');
+    }
+
+    return undefined;
+  }
 }

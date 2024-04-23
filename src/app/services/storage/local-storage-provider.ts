@@ -39,7 +39,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
     return of(undefined);
   }
 
-  override save(): Observable<void> {
+  override save(force: boolean): Observable<void> {
     this.events.next({ type: 'save_start' });
     const data = this.exportData();
     localStorage.setItem(storageKeys.date, this._lastDate.toISO()!);
