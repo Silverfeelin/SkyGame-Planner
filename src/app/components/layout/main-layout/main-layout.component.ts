@@ -107,6 +107,10 @@ export class MainLayoutComponent implements OnDestroy {
     this._storageService.provider.save(true).subscribe();
   }
 
+  refresh(): void {
+    window.location.reload();
+  }
+
   copy(evt: Event): void {
     evt.preventDefault();
     evt.stopPropagation();

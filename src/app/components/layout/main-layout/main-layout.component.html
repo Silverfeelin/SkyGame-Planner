@@ -31,14 +31,25 @@
 @if (storageSaveError) {
   <div class="overlay">
     <div class="overlay-body">
-      <span>Saving to storage failed.</span>
+      <h1 class="h2">Saving to storage failed!</h1>
       <span>The error message is shown below.</span>
 
-      <hr/>
       <pre class="mt mb c-warn-accent ws-pl">{{ storageSaveError }}</pre>
-      <hr/>
 
-      <span>You can try to <span class="link" (click)="retrySaveStorage()">save again</span> or return to the <a [routerLink]="'/storage'">Storage page</a>.</span>
+      <div class="sky-flex flex-wrap flex-justify-center">
+        <button type="button" (click)="retrySaveStorage()">
+          <mat-icon class="menu-icon">sync</mat-icon>
+          <span class="menu-label">Retry (force overwrite)</span>
+        </button>
+        <a class="button" [routerLink]="'/storage'">
+          <mat-icon class="menu-icon">database</mat-icon>
+          <span class="menu-label">Return to Storage</span>
+        </a>
+        <button type="button" (click)="refresh()">
+          <mat-icon class="menu-icon">refresh</mat-icon>
+          <span class="menu-label">Refresh page</span>
+        </button>
+      </div>
     </div>
   </div>
 }

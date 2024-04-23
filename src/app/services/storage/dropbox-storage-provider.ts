@@ -85,8 +85,9 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
         const upload$ = this._rev && !force
           ? this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'update', update: this._rev } })
           : this._dbx!.filesUpload({ path: '/data.json', contents: blob, mode: { '.tag': 'overwrite' } });
-        upload$.then(() => {
+        upload$.then(response => {
           if (syncDate <= this._lastDate) { this._syncDate = this._lastDate; }
+          this._rev = response.result.rev;
           observer.next();
           observer.complete();
           this.events.next({ type: 'save_success' });

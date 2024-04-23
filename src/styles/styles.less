@@ -306,6 +306,7 @@ body { scrollbar-width: thin; }
 .flex-cols { flex-direction: column !important; }
 .flex-wrap { flex-wrap: wrap !important; }
 .flex-nowrap { flex-wrap: nowrap !important; }
+.flex-justify-center { justify-content: center !important; }
 
 // Global layout
 @import "flex.less";
@@ -441,8 +442,10 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
   z-index: 9999;
   display: flex;
   background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
   justify-content: center;
   align-items: center;
+  text-wrap: balance;
   backdrop-filter: var(--backdrop-blur);
 }
 
