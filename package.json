@@ -10,6 +10,7 @@
     "watch-data": "node ./scripts/data-watcher.js",
     "wrangle": "npx wrangler pages dev ./dist/sky-game-planner --kv=REQUESTS",
     "item-id": "node ./scripts/item-id.js",
+    "lite": "lite-server --baseDir=\"dist/sky-game-planner\"",
     "test": "ng test"
   },
   "private": true,
@@ -60,6 +61,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "lite-server": "^2.6.1",
     "typescript": "~5.4.3",
     "wrangler": "^3.15.0"
   }

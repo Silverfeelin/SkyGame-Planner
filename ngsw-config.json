@@ -1,6 +1,32 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "dataGroups": [
+    {
+      "name": "data",
+      "urls": [
+        "/assets/data/**"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 100,
+        "maxAge": "1d",
+        "timeout": "10s"
+      }
+    },
+    {
+      "name": "wiki",
+      "urls": [
+        "https://static.wikia.nocookie.net/**"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 2500,
+        "maxAge": "8h",
+        "timeout": "10s"
+      }
+    }
+  ],
   "assetGroups": [
     {
       "name": "app",

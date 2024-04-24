@@ -41,11 +41,11 @@
               "src/styles/icons.less"
             ],
             "scripts": [],
-            "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
+              "serviceWorker": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -62,6 +62,7 @@
               "sourceMap": true
             },
             "development": {
+              "serviceWorker": false,
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -70,7 +71,7 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
