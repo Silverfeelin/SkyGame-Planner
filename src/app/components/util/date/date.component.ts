@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
+import { DateHelper } from 'src/app/helpers/date-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { EventService } from 'src/app/services/event.service';
 
@@ -35,7 +36,7 @@ export class DateComponent implements OnChanges, OnDestroy {
   }
 
   private updateDate(): void {
-    this._date = this.date ? DateTime.fromISO(this.date.toISO()!) : undefined;
+    this._date = this.date ? DateTime.fromISO(this.date.toISO()!).setZone(this.date!.zone) : undefined;
     this._changeDetectorRef.markForCheck();
   }
 }
