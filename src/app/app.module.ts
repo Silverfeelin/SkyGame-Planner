@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
@@ -76,6 +76,7 @@ import { MenuLayoutComponent } from './components/layout/menu-layout/menu-layout
 import { StorageComponent } from './components/storage/storage.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { NoDataComponent } from './components/layout/no-data/no-data.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -157,7 +158,11 @@ import { NoDataComponent } from './components/layout/no-data/no-data.component';
     HttpClientModule,
     NgbModule,
     LayoutModule,
-    MatIconModule
+    MatIconModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   exports: [
     ItemIconComponent
