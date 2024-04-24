@@ -353,6 +353,27 @@
     "group": "SeasonPass"
   },
   {
+    "id": 2134,
+    "guid": "ps-4z41o-j",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2135,
+    "guid": "qDn4kvcLYK",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2136,
+    "guid": "bRxr-9K_yg",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
     "id": 1147,
     "guid": "hV3bFwgh_u",
     "type": "Emote",
