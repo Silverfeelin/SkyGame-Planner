@@ -29,7 +29,7 @@ export class ClockComponent implements OnInit, OnDestroy {
     this.updateTime();
     this._interval = window.setInterval(() => {
       this.updateTime();
-    }, 1000);
+    }, 250);
   }
 
   ngOnDestroy(): void {
