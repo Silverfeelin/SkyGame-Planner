@@ -41,6 +41,13 @@
               "src/styles/icons.less"
             ],
             "scripts": [],
+            "allowedCommonJsDependencies": [
+              "dropbox",
+              "fuzzysort",
+              "json5",
+              "leaflet",
+              "panzoom"
+            ],
             "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
