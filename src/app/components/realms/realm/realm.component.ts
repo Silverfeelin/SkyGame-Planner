@@ -13,6 +13,7 @@ import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-realm',
@@ -53,6 +54,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
     private readonly _mapInstanceService: MapInstanceService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute,
     private readonly _router: Router,
     private readonly _changeDetectorRef: ChangeDetectorRef
@@ -123,6 +125,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private initializeRealm(guid: string): void {
     this.realm = this._dataService.guidMap.get(guid!) as IRealm;
+    this._titleService.setTitle(this.realm.name);
 
     this.spirits = [];
     this.spiritCount = 0;

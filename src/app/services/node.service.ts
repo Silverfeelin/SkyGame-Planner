@@ -32,8 +32,7 @@ export class NodeService {
     });
 
     // Save data.
-    this._storageService.add(...guids);
-    this._storageService.save();
+    this._storageService.addUnlocked(...guids);
 
     // Notify listeners.
     this._eventService.itemToggled.next(node.item);
@@ -68,9 +67,7 @@ export class NodeService {
     }
 
     // Save data.
-    this._storageService.remove(...guids);
-    this._storageService.save();
-
+    this._storageService.removeUnlocked(...guids);
 
     // Notify listeners.
     this._eventService.itemToggled.next(node.item);

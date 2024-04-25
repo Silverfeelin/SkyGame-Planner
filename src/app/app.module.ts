@@ -71,6 +71,11 @@ import { ItemListComponent } from './components/item-list/item-list/item-list.co
 import { ItemListNodeComponent } from './components/item-list/item-list-node/item-list-node.component';
 import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
 import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
+import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
+import { MenuLayoutComponent } from './components/layout/menu-layout/menu-layout.component';
+import { StorageComponent } from './components/storage/storage.component';
+import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
+import { NoDataComponent } from './components/layout/no-data/no-data.component';
 
 @NgModule({
   declarations: [
@@ -139,7 +144,12 @@ import { EventCalculatorComponent } from './components/event/event-calculator/ev
     ItemListComponent,
     ItemListNodeComponent,
     SeasonCalculatorComponent,
-    EventCalculatorComponent
+    EventCalculatorComponent,
+    DropboxAuthComponent,
+    MenuLayoutComponent,
+    StorageComponent,
+    MainLayoutComponent,
+    NoDataComponent
   ],
   imports: [
     BrowserModule,

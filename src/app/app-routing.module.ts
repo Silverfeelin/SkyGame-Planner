@@ -15,8 +15,6 @@ import { ShopsComponent } from './components/shops/shops.component';
 import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { RealmComponent } from './components/realms/realm/realm.component';
-import { TitleResolver } from './resolvers/title.resolver';
-import { EventInstanceTitleResolver } from './resolvers/event-instance-title.resolver';
 import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
 import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
 import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
@@ -32,42 +30,69 @@ import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.
 import { ItemComponent } from './components/items/item/item.component';
 import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
 import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
+import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
+import { MenuLayoutComponent } from './components/layout/menu-layout/menu-layout.component';
+import { StorageComponent } from './components/storage/storage.component';
+import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
+import { NoDataComponent } from './components/layout/no-data/no-data.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent, title: 'Sky Planner' },
-  { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
-  { path: 'credits', component: CreditsComponent, title: title('Credits') },
-  { path: 'event', component: EventsComponent, title: title('Events') },
-  { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
-  { path: 'event/:guid', component: EventComponent, title: TitleResolver },
-  { path: 'event-instance/:guid', component: EventInstanceComponent, title: EventInstanceTitleResolver },
-  { path: 'item', component: ItemsComponent, title: title('Items') },
-  { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
-  { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
-  { path: 'item/:guid', component: ItemComponent, title: TitleResolver },
-  { path: 'realm', component: RealmsComponent, title: title('Realms') },
-  { path: 'realm/:guid', component: RealmComponent, title: TitleResolver },
-  { path: 'season', component: SeasonsComponent, title: title('Seasons') },
-  { path: 'season/:guid', component: SeasonComponent, title: TitleResolver },
-  { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
-  { path: 'settings', component: SettingsComponent, title: title('Settings') },
-  { path: 'shop', component: ShopsComponent, title: title('Shops') },
-  { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
-  { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
-  { path: 'spirit/:guid', component: SpiritComponent, title: TitleResolver },
-  { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
-  { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },
-  { path: 'rs/:guid', component: ReturningSpiritComponent, title: TitleResolver },
-  { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
-  { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
-  { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
-  { path: 'tools', component: ToolsComponent, title: title('Tools') },
-  { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
-  { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
-  { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },
-  { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
+  { path: 'no-data', component: NoDataComponent },
+  { path: 'storage', component: StorageComponent },
+  { path: 'dropbox-auth', component: DropboxAuthComponent, title: title('Dropbox') },
+  /* Routes that require data. */
+  {
+    path: '',
+    component: MainLayoutComponent,
+    // These guards prevent MainLayout from being created even if they're placed in the route subtree.
+    // Workaround: placed these guards in the MainLayout code.
+    // canActivate: [canActivateData],
+    // canActivateChild: [canActivateStorageFn],
+    children: [
+      /* Routes with menu. */
+      {
+        path: '',
+        component: MenuLayoutComponent,
+        children: [
+          { path: '', component: DashboardComponent, title: 'Sky Planner' },
+          { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
+          { path: 'credits', component: CreditsComponent, title: title('Credits') },
+          { path: 'event', component: EventsComponent, title: title('Events') },
+          { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
+          { path: 'event/:guid', component: EventComponent },
+          { path: 'event-instance/:guid', component: EventInstanceComponent },
+          { path: 'item', component: ItemsComponent, title: title('Items') },
+          { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
+          { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
+          { path: 'item/:guid', component: ItemComponent },
+          { path: 'realm', component: RealmsComponent, title: title('Realms') },
+          { path: 'realm/:guid', component: RealmComponent },
+          { path: 'season', component: SeasonsComponent, title: title('Seasons') },
+          { path: 'season/:guid', component: SeasonComponent },
+          { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
+          { path: 'settings', component: SettingsComponent, title: title('Settings') },
+          { path: 'shop', component: ShopsComponent, title: title('Shops') },
+          { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
+          { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
+          { path: 'spirit/:guid', component: SpiritComponent },
+          { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
+          { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },
+          { path: 'rs/:guid', component: ReturningSpiritComponent },
+          { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
+          { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
+          { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
+          { path: 'tools', component: ToolsComponent, title: title('Tools') },
+          { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
+          { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
+          { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
+        ]
+      },
+      /* Routes without menu. */
+      { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') }
+    ]
+  }
 ];
 
 @NgModule({

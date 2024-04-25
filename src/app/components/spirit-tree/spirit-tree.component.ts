@@ -152,7 +152,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         node.item!.unlocked = true;
         node.unlocked = true;
 
-        this._storageService.add(node.item!.guid, node.guid);
+        this._storageService.addUnlocked(node.item!.guid);
+        this._storageService.addUnlocked(node.guid);
         this._eventService.itemToggled.next(node.item!);
       });
     } else {
@@ -162,11 +163,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         const refNodes = node.item!.nodes || [];
         refNodes.forEach(n => n.unlocked = false);
 
-        this._storageService.remove(node.item!.guid, ...refNodes.map(n => n.guid));
+        this._storageService.removeUnlocked(node.item!.guid);
+        this._storageService.removeUnlocked(...refNodes.map(n => n.guid));
         this._eventService.itemToggled.next(node.item!);
       });
     }
-
-    this._storageService.save();
   }
 }

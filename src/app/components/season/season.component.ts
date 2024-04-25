@@ -4,14 +4,14 @@ import { SubscriptionLike } from 'rxjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
-import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
+import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-season',
@@ -42,6 +42,7 @@ export class SeasonComponent implements OnDestroy {
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
     private readonly _iapService: IAPService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
@@ -76,6 +77,7 @@ export class SeasonComponent implements OnDestroy {
   private initializeSeason(guid: string): void {
     this.season = this._dataService.guidMap.get(guid!) as ISeason;
     this.state = DateHelper.getStateFromPeriod(this.season.date, this.season.endDate);
+    this._titleService.setTitle(this.season.name);
 
     this.guide = undefined;
     this.spirits = [];

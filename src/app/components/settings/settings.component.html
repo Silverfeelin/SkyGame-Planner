@@ -4,27 +4,38 @@
   </div>
 </div>
 
-<!-- Import -->
+<!-- Storage -->
 <div class="sky-card mt">
   <div class="sky-card-header">
     <h2 class="h3 mb-0">
       <mat-icon>swap_horiz</mat-icon>
-      Import / Export
+      Storage
     </h2>
   </div>
   <div class="sky-card-body">
     <div class="container ws-pl">
-      Import or export your progression.
-      The exported file serves as a backup of all your unlocked items in Sky Planner.
-      <div class="sky-flex flex-wrap mt">
+      <p>
+        Your data is currently being stored to:
+        <b class="c-new">{{ storageProviderName }}</b>.
+      </p>
+      To change the place your data is stored, please visit the Storage page.<br/>
+      If you want to transfer your data you can export it here, switch storage and then import it again.
+      <div class="mt sky-flex flex-wrap">
+        <a class="button" [routerLink]="'/storage'">
+          <mat-icon class="menu-icon">database</mat-icon>
+          <span class="menu-label">Go to Storage</span>
+        </a>
         <button type="button" class="item" (click)="import()">
-          Import data
+          <mat-icon class="menu-icon">download</mat-icon>
+          <span class="menu-label">Import data</span>
         </button>
         <button type="button" class="item" (click)="export()">
-          Export data <span class="c-accent">({{unlockedCount}} items)</span>
+          <mat-icon class="menu-icon">upload</mat-icon>
+          <span class="menu-label">Export data</span>
         </button>
         <button type="button" class="item clear-data" (click)="clear()">
-          Clear data
+          <mat-icon class="menu-icon">delete</mat-icon>
+          <span class="menu-label">Clear data</span>
         </button>
       </div>
     </div>

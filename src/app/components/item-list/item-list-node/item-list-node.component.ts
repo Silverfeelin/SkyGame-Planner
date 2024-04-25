@@ -77,8 +77,7 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
     guids.push(this.node.item.guid);
 
     // Save data.
-    this._storageService.add(...guids);
-    this._storageService.save();
+    this._storageService.addUnlocked(...guids);
   }
 
   private lockItem(): void {
@@ -103,8 +102,6 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
     listNodes.forEach(n => { n.unlocked = false; guids.push(n.guid); });
 
     // Save data
-    this._storageService.remove(...guids);
-    this._storageService.save();
-
+    this._storageService.removeUnlocked(...guids);
   }
 }

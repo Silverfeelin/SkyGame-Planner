@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
-import { StorageService } from 'src/app/services/storage.service';
-import { DataService } from 'src/app/services/data.service';
+import { DataService, ITrackables } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
 import { DateTime } from 'luxon';
+import { StorageService } from 'src/app/services/storage.service';
+import { IStorageExport } from 'src/app/services/storage/storage-provider.interface';
 
 interface ITheme {
   name: string;
   value: string;
+}
+
+interface IExport {
+  version: string;
+  storageData: IStorageExport;
+  closetData: {
+    hidden: Array<string>;
+  };
 }
 
 @Component({
@@ -16,7 +25,7 @@ interface ITheme {
   styleUrls: ['./settings.component.less']
 })
 export class SettingsComponent {
-  unlockedCount: number;
+  storageProviderName: string;
   today = DateTime.now();
   dateFormat: string;
   dateFormats: Array<string>;
@@ -35,42 +44,14 @@ export class SettingsComponent {
 
   constructor(
     private readonly _dataService: DataService,
-    private readonly _settingService: SettingService,
-    private readonly _storageService: StorageService
+    private readonly _storageService: StorageService,
+    private readonly _settingService: SettingService
   ) {
-    this.unlockedCount = this._dataService.itemConfig.items.filter(x => x.unlocked && !x.autoUnlocked).length;
+    this.storageProviderName = this._storageService.getProviderName();
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
     this.currentTheme = localStorage.getItem('theme') || '';
-  }
-
-  export(): void {
-    const unlocked = this._storageService.serializeUnlocked();
-    const unlockedCol = this._storageService.serializeUnlockedCol();
-    const favourite = this._storageService.serializeFavourites();
-    const closet = {
-      hidden: JSON.parse(localStorage.getItem('closet.hidden') || '[]'),
-    };
-
-    const data = {
-      unlocked, unlockedCol, favourite, closet
-    };
-    const jsonData = JSON.stringify(data);
-
-    let url = '';
-    try {
-      const blob = new Blob([jsonData], { type: 'application/json' });
-      url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `SkyPlanner_${DateTime.now().toFormat('yyyy-MM-dd')}.json`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } finally {
-      URL.revokeObjectURL(url);
-    }
   }
 
   import(): void {
@@ -99,49 +80,81 @@ export class SettingsComponent {
     input.click();
   }
 
-  handleImportJson(data: any): void {
-    if (!data) { throw new Error('No content.'); }
-    if (typeof data.unlocked !== 'string') { throw new Error('No unlocked data.'); }
-    const unlocked = data.unlocked.split(',');
-    const unlockedCol = data.unlockedCol?.split(',') || [];
 
-    const unlockedSet = new Set(unlocked);
-    const itemCount = this._dataService.itemConfig.items.filter(item => !item.autoUnlocked && unlockedSet.has(item.guid)).length;
-    if (!confirm(`You're about to overwrite your current data with ${itemCount} items and some other settings. This cannot be undone. Are you sure?`))
+  handleImportJson(data: IExport): void {
+    if (!data) { throw new Error('No content.'); }
+    if (typeof data !== 'object') { throw new Error('Invalid content.'); }
+    if (!confirm(`You're about to overwrite your current data. This cannot be undone. Are you sure?`))
       return;
 
-    this._storageService.unlocked.clear();
-    this._storageService.add(...unlocked);
-    this._storageService.save();
+    // Support old format.
+    if (typeof (data as any).unlocked === 'string') {
+      const d = data as any;
+      data = {
+        version: '0.1.1',
+        storageData: { date: '2024-04-01T00:00:00.000+00:00', unlocked: d.unlocked, wingedLights: d.wingedLights, favourites: d.favourites },
+        closetData: d.closet
+      };
+    }
 
-    this._storageService.unlockedCol.clear();
-    this._storageService.addCol(...unlockedCol);
-    this._storageService.saveCol();
+    this._storageService.import(data.storageData || {});
 
-    if (data.closet) {
-      localStorage.setItem('closet.hidden', JSON.stringify(data.closet.hidden));
+    if (data.closetData) {
+      localStorage.setItem('closet.hidden', JSON.stringify(data.closetData.hidden));
       localStorage.setItem('closet.sync', '0')
     }
 
-    this._dataService.reloadUnlocked();
+    const trackables: ITrackables = {
+      unlocked: this._storageService.getUnlocked(),
+      wingedLights: this._storageService.getWingedLights(),
+      favourites: this._storageService.getFavourites()
+    };
 
-    this.unlockedCount = this._dataService.itemConfig.items.filter(x => x.unlocked && !x.autoUnlocked).length;
+    this._dataService.refreshUnlocked(trackables);
+  }
+
+  export(): void {
+    const data: IExport = {
+      version: '1.0.0',
+      storageData: this._storageService.export(),
+      closetData: {
+        hidden: JSON.parse(localStorage.getItem('closet.hidden') || '[]'),
+      }
+    };
+
+    const jsonData = JSON.stringify(data);
+    let url = '';
+    try {
+      const blob = new Blob([jsonData], { type: 'application/json' });
+      url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `SkyPlanner_${DateTime.now().toFormat('yyyy-MM-dd')}.json`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } finally {
+      URL.revokeObjectURL(url);
+    }
   }
 
   clear(): void {
-    if (!confirm(`You're about to clear all your data. This cannot be undone. Are you sure?`)) { return; }
+    if (!confirm(`You're about to clear your tracked data. This cannot be undone. Are you sure?`)) { return; }
 
-    this._storageService.unlocked.clear();
-    this._storageService.save();
-    this._storageService.unlockedCol.clear();
-    this._storageService.saveCol();
-    this._storageService.favourites.clear();
-    this._storageService.saveFavourites();
+    this._storageService.import({
+      date: DateTime.now().toISO()!,
+      unlocked: '',
+      wingedLights: '',
+      favourites: ''
+    });
 
     localStorage.setItem('closet.hidden', '[]');
 
-    this._dataService.reloadUnlocked();
-    this.unlockedCount = 0;
+    this._dataService.refreshUnlocked({
+      unlocked: new Set(),
+      wingedLights: new Set(),
+      favourites: new Set()
+    });
   }
 
   setDateFormat(format: string): void {

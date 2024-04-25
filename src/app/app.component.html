@@ -1,18 +1,11 @@
-<div class="loading fade-in" *ngIf="!ready">
-  <mat-icon class="spin">cached</mat-icon>
-</div>
-
-<ng-container *ngIf="ready">
-  <app-menu *ngIf="showMenu"></app-menu>
-  <div class="content">
-    <div *ngIf="dataLoss" class="sky-card mb data-loss">
-      <div class="sky-card-body">
-        <div class="data-loss-inner container">
-          <mat-icon class="menu-icon">priority_high</mat-icon>
-          <span class="menu-label">Data was changed in another tab. Please refresh this tab to avoid losing changes!</span>
-        </div>
+<div class="content">
+  <div *ngIf="dataLoss" class="sky-card mb data-loss">
+    <div class="sky-card-body">
+      <div class="data-loss-inner container">
+        <mat-icon class="menu-icon">priority_high</mat-icon>
+        <span class="menu-label">Data was changed in another tab. Please refresh this tab to avoid losing changes!</span>
       </div>
     </div>
-    <router-outlet></router-outlet>
   </div>
-</ng-container>
+  <router-outlet></router-outlet>
+</div>

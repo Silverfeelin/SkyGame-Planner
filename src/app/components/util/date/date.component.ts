@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
+import { DateHelper } from 'src/app/helpers/date-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { StorageService } from 'src/app/services/storage.service';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-date',
@@ -18,10 +19,10 @@ export class DateComponent implements OnChanges, OnDestroy {
   _subs = new SubscriptionBag();
 
   constructor(
-    private readonly _storageService: StorageService,
+    private readonly _eventService: EventService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
-    this._subs.add(_storageService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
+    this._subs.add(_eventService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
       this.updateDate();
     }));
   }
@@ -35,7 +36,7 @@ export class DateComponent implements OnChanges, OnDestroy {
   }
 
   private updateDate(): void {
-    this._date = this.date;
+    this._date = this.date ? DateTime.fromISO(this.date.toISO()!).setZone(this.date!.zone) : undefined;
     this._changeDetectorRef.markForCheck();
   }
 }

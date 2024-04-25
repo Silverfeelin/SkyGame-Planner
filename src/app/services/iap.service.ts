@@ -40,8 +40,7 @@ export class IAPService {
     });
 
     // Save data.
-    this._storageService.add(...guids);
-    this._storageService.save();
+    this._storageService.addUnlocked(...guids);
   }
 
   lockIap(iap: IIAP): void {
@@ -56,7 +55,6 @@ export class IAPService {
     });
 
     // Save data.
-    this._storageService.remove(...guids);
-    this._storageService.save();
+    this._storageService.removeUnlocked(...guids);
   }
 }
