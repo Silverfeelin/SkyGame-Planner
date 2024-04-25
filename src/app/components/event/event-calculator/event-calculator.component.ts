@@ -35,6 +35,7 @@ export class EventCalculatorComponent {
   heartCount = 0;
   includesToday = true;
   wantNodes: { [guid: string]: INode } = {};
+  hasNodes = false;
   hasSkippedNode = false;
   daysLeft = 0;
   daysRequired = 0;
@@ -264,6 +265,7 @@ export class EventCalculatorComponent {
     this.currencyAvailable = this.daysLeft * this.currencyPerDay!;
     this.candlesAvailable = this.daysLeft * this.candlesPerDay;
 
+    this.hasNodes = nodes.length > 0;
     this.hasSkippedNode = false;
 
     this.currencyRequired = 0;
