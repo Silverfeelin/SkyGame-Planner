@@ -36,7 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 587
+    "order": 591
   },
   {
     "id": 424,
@@ -328,7 +328,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
     },
-    "order": 585
+    "order": 589
   },
   {
     "id": 1145,
@@ -351,6 +351,27 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Dreams-heart-Ray.png",
     "group": "SeasonPass"
+  },
+  {
+    "id": 2138,
+    "guid": "ps-4z41o-j",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2139,
+    "guid": "qDn4kvcLYK",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2140,
+    "guid": "bRxr-9K_yg",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
   {
     "id": 1147,
@@ -458,7 +479,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
     },
-    "order": 584
+    "order": 588
   },
   {
     "id": 1156,
@@ -599,7 +620,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },
-    "order": 586,
+    "order": 590,
     "group": "SeasonPass"
   },
   {

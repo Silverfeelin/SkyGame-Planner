@@ -63,6 +63,12 @@
 
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">
         <b>Result</b>
+        @if (!hasNodes) {
+          <blockquote class="mb-0">
+            <mat-icon class="result-warn">priority_high</mat-icon>
+            You have not selected any items! These results imply you're only collecting candles.
+          </blockquote>
+        }
         @if (hasSkippedNode) {
           <blockquote class="mb-0">
             <mat-icon class="result-warn">priority_high</mat-icon>
@@ -121,9 +127,12 @@
             to still make it.
           </div>
         } @else {
-          <b class="c-new">
-            You will be able to collect enough candles before the season concludes.
-          </b>
+          @if (hasNodes) {
+            <b class="c-new">
+              You will be able to collect enough candles before the season concludes.
+            </b>
+
+          }
           @if (candlesAvailable > candlesRequired) {
             <div>
               You can get
