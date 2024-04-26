@@ -1868,4 +1868,22 @@
     "ec": 36
   },
   // #endregion
+  // #region Cinnamoroll Pop-Up Cafe (2024)
+  {
+    "guid": "IHRa0WEzGS",
+    "item": "_vjcCQuI_N",
+    "nw": "zIql6xiPF_",
+    "ne": "Q76UazL9b_"
+  },
+  {
+    "guid": "zIql6xiPF_",
+    "item": "nZogPrqPGH",
+    "ec": 22
+  },
+  {
+    "guid": "Q76UazL9b_",
+    "item": "zRHFsHh3Z8",
+    "ec": 52
+  },
+  // #endregion
 ]

@@ -205,4 +205,7 @@ const nanoid10 = () => nanoid(10);
     </div>
   </div>
   `);
+
+  document.getElementById('s-id').value = /*S-ID*/2141;
+  sSetActive(document.querySelector('button[data-active="name"]'));
 })();

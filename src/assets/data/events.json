@@ -825,6 +825,31 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary%27s_Firework_Festival"
       }
     },
+    // Cinnamoroll Pop-up Cafe
+    {
+      "guid": "WmO7LKeyAd",
+      "name": "Cinnamoroll Pop-up Cafe",
+      "shortName": "Cinnamoroll",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/9ca0efb0d2/cosa_delivery.jpg",
+      "instances": [
+        {
+          "guid": "UxrJUiw6Ue",
+          "date": { "day": 27, "month": 4, "year": 2024 },
+          "endDate": { "day": 17, "month": 5, "year": 2024 },
+          "draft": true,
+          "currencyPerDay": 5,
+          "spirits": [
+            {	"guid": "KjsH2odwKL", "spirit": "U9vUspUuRp", "tree": "emy7T3lDyN" },
+          ],
+          "shops": [
+            "hfXFjKVeYU"
+          ]
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe"
+      }
+    },
     // #endregion
   ]
 }
