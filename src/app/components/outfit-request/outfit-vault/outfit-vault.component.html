@@ -78,7 +78,7 @@
         <div class="closet-item" (click)="selectItem(item, type)" [attr.data-guid]="item.guid"
           [ngbTooltip]="templateItemHover" container="body"
           [class.selected]="selectionMap[item.guid]"
-          [class.search-match]="searchResults?.[item.guid]"
+          [class.search-match]="searchText && searchResults?.[item.guid]" [class.no-search-match]="searchText && !searchResults?.[item.guid]"
         >
           <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false"></app-item-icon>
         </div>
@@ -104,17 +104,11 @@
         You have not selected a full outfit. Some required items are missing.<br/>
         If necessary, please submit multiple versions (i.e. multiple capes) individually instead of leaving the item blank.
       </div>
-      <hr/>
-      <div class="container" *ngIf="!submitUnderstood">
+      <div class="container mt" *ngIf="!submitUnderstood">
         By submitting an outfit to the vault other players will be able to find it on this page.
         <ul class="mb-half">
           <li>Please make sure you select <b>all</b> items used in the outfit.</li>
-          <li>
-            If a message or collage contains multiple outfits, please submit them separately.<br/>
-            For example, if a collage has multiple props submit an outfit for each prop instead of leaving it blank.<br/>
-            This will make it easier for other players to find the outfit if they are looking for that prop.
-          </li>
-          <li>To manage your submissions later, please provide a key and write it down. Note that anyone with this key will be able to delete your submission from the vault!</li>
+          <li>If a message or collage contains multiple outfits, please submit them separately.</li>
           <li>If you think you did something wrong you can contact Silverfeelin on Discord.</li>
         </ul>
         <button type="button" (click)="onSubmitUnderstood()">
@@ -122,7 +116,7 @@
           <span class="menu-label">I understand</span>
         </button>
       </div>
-      <div class="container" *ngIf="submitUnderstood">
+      <div class="container mt" *ngIf="submitUnderstood">
         <div class="grid grid-1">
           <!-- Link -->
           <div>
@@ -169,14 +163,6 @@
               <option value="3">{{ lightings[3] }}</option>
               <option value="4">{{ lightings[4] }}</option>
             </select>
-          </div>
-          <!-- Key -->
-          <div>
-            <label for="txtKey">
-              Secret key:
-              <span class="text-link" (click)="generateKey()">(generate)</span>&nbsp;<span class="text-link" ngbTooltip="By entering a unique key here you will be able to manage your submissions later. Use &quot;public&quot; to allow anyone to manage it." container="body" triggers="click">(help)</span>
-            </label>
-            <input id="txtKey" type="text" [(ngModel)]="sKey" [maxlength]="100">
           </div>
           <!-- Submit -->
           <div>
@@ -239,7 +225,17 @@
                 <mat-icon class="menu-icon">link</mat-icon>
                   <span class="menu-label">Copy message link</span>
                 </button>
-                <button class="button button-danger" (click)="report(result)">Report</button>
+                @if (result.canDelete) {
+                  <button class="button button-danger" (click)="deleteResult(result)">
+                    <mat-icon class="menu-icon">delete</mat-icon>
+                    <span class="menu-label">Delete</span>
+                  </button>
+                } @else {
+                  <button class="button button-danger" (click)="reportResult(result)">
+                    <mat-icon class="menu-icon">report</mat-icon>
+                    <span class="menu-label">Report</span>
+                  </button>
+                }
               </div>
             </div>
           </ng-container>

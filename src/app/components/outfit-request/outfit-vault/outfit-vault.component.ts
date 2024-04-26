@@ -8,6 +8,7 @@ import { WindowHelper } from 'src/app/helpers/window-helper';
 import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 interface IApiOutfits {
   items: Array<IApiOutfit>
@@ -36,6 +37,7 @@ interface IResult {
   data: IApiOutfit;
   date?: DateTime;
   items: Selection<IItem>;
+  canDelete?: boolean;
 }
 
 type Selection<T> = { [key in ItemType]?: T; }
@@ -123,12 +125,17 @@ export class OutfitVaultComponent {
   constructor(
     private readonly _dataService: DataService,
     private readonly _searchService: SearchService,
+    private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _elementRef: ElementRef<HTMLElement>,
     private readonly _http: HttpClient
   ) {
     this.itemSize = localStorage.getItem('closet.item-size') as ItemSize || 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+
+    // Load key from cloud.
+    const key = _storageService.getKey('outfit-vault-key');
+    if (key && typeof key === 'string') { this.sKey = key; }
 
     this.initializeItems();
     this.initializeSelection();
@@ -225,6 +232,8 @@ export class OutfitVaultComponent {
       return;
     }
 
+    if (!this.sKey) { this.generateKey(); }
+
     this.isFinding = true;
     const url = new URL('/api/outfit-vault', window.location.origin);
     for (const requiredType of Object.keys(this.requiredParams)) {
@@ -237,6 +246,9 @@ export class OutfitVaultComponent {
       if (!item || this.nonItems[item.id!]) { continue; }
       url.searchParams.set(this.optionalParams[optionalType as ItemType]!, `${item.id}`);
     }
+
+    // Pass key to add metadata to entries that can be deleted.
+    url.searchParams.set('key', this.sKey);
 
     // Search.
     this._http.get<IApiOutfits>(url.pathname + url.search, { responseType: 'json' }).subscribe({
@@ -273,11 +285,13 @@ export class OutfitVaultComponent {
         resItem.protocolLink = match ? `discord://-/${match[1]}` : '';
       }
 
-      return {
+      const result: IResult = {
         data: resItem,
         date: resItem.date ? DateTime.fromISO(resItem.date) : undefined,
-        items
+        items,
+        canDelete: (resItem as any).canDelete
       };
+      return result;
     }) || [];
     this.showMode = 'result';
     this._changeDetectorRef.markForCheck();
@@ -329,7 +343,9 @@ export class OutfitVaultComponent {
   }
 
   generateKey(): void {
-    this.sKey = nanoid(20);
+    this.sKey = nanoid(32);
+    localStorage.setItem('outfit-vault-key', this.sKey);
+    this._storageService.setKey('outfit-vault-key', this.sKey);
   }
 
   submitOutfit(): void {
@@ -341,6 +357,7 @@ export class OutfitVaultComponent {
     }
 
     if (!confirm('Is all information you entered correct?')) { return; }
+    if (!this.sKey) { this.generateKey(); }
 
     // Model
     const model: IApiOutfit = {
@@ -372,8 +389,6 @@ export class OutfitVaultComponent {
       return;
     }
 
-    // Save key for next time.
-    localStorage.setItem('outfit-vault-key', this.sKey);
     localStorage.setItem('outfit-vault-size', this.sSize);
     localStorage.setItem('outfit-vault-light', this.sLight);
 
@@ -383,6 +398,7 @@ export class OutfitVaultComponent {
         console.log(e);
         this.resetDiscordLink();
         this._changeDetectorRef.markForCheck();
+
         setTimeout(() => {
           alert('Successfully submitted outfit! Thank you for the contribution.');
           this.showMode = 'list';
@@ -412,7 +428,30 @@ export class OutfitVaultComponent {
     });
   }
 
-  report(result: IResult): void {
+  deleteResult(result: IResult) {
+    if (!result.data.id) { alert('Outfit has no ID. Please report this if it keeps happening after refreshing!'); }
+    if (!confirm('Are you sure you want to delete this outfit? This will remove it from the search results for everyone.')) { return; }
+
+    const url = new URL('/api/outfit-vault', window.location.origin);
+    url.searchParams.set('key', this.sKey);
+    url.searchParams.set('id', `${result.data.id}`);
+    this._http.delete(url.pathname + url.search, { responseType: 'json' }).subscribe({
+      next: _ => {
+        this.results = this.results?.filter(r => r !== result);
+        this._changeDetectorRef.markForCheck();
+        setTimeout(() => { alert('Outfit deleted!'); }, 50);
+      },
+      error: e => {
+        console.error(e);
+        alert('Failed to delete outfit.');
+      }
+    }).add(() => {
+      this.isFinding = false;
+      this._changeDetectorRef.markForCheck();
+    });
+  }
+
+  reportResult(result: IResult): void {
     if (!result.data?.id) { return; }
     prompt('Send this message to Silverfeelin on Discord to report this submission. Please add a brief description why the submission is incorrect!', `I'm reporting outfit vault submission: \`${result.data.id}\` with the link: <${result.data.link}>. Reason: `);
   }

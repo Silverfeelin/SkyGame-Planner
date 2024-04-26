@@ -34,7 +34,7 @@ CREATE INDEX ix_outfit_hat ON outfits(hatId);
 CREATE INDEX ix_outfit_prop ON outfits(propId);
 
 -- Indices for submission lookups.
-CREATE INDEX ix_outfit_ip ON outfits(ip);
+--CREATE INDEX ix_outfit_ip ON outfits(ip);
 CREATE INDEX ix_outfit_key ON outfits([key]);
 
 -- Unique constraint to prevent duplicate submissions.

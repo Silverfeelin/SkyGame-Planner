@@ -72,20 +72,28 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Get pageSize records matching the item selection.
   const sql = `
-    SELECT id, date, link, sizeId, lightingId, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
+    SELECT id, date, key, link, sizeId, lightingId, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
     FROM outfits
     WHERE 1=1 ${sqlWhere}
     ORDER BY id DESC
     LIMIT ${pageSize} OFFSET ${offset}
   `;
-  const resOutfits = await context.env.DB.prepare(sql).bind(...sqlValues).run<IOutfit>();
+  const resOutfits = await context.env.DB.prepare(sql).bind(...sqlValues).all<IOutfit>();
+
+  let key = url.searchParams.get('key') || 'default';
+  key = cyrb53(key).toString();
+
+  resOutfits.results.forEach(outfit => {
+    if (outfit.key !== key) { delete outfit.key; }
+    else { (outfit as any).canDelete = true; }
+  });
 
   // Return request data.
   const response = {
     items: resOutfits.results
   };
   return new Response(JSON.stringify(response));
-}
+};
 
 /** Save a request and return a random storage key.  */
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -105,6 +113,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     key = json.key.length ? cyrb53(json.key).toString() : undefined;
     delete json.key;
   }
+  key ||= cyrb53('default').toString();
 
   const requiredKeys = new Set(['outfitId', 'maskId', 'hairId', 'capeId']);
   const optionalKeys = new Set(['shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId']);
@@ -142,10 +151,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const ipAddress = context.request.headers.get('CF-Connecting-IP') ?? '127.0.0.1';
   let id: number;
   try {
-    const result = await context.env.DB.prepare(`
+    const sql = `
       INSERT INTO outfits (date, ip, key, ${dbKeys.join(',')})
       VALUES (?, ?, ?, ${dbKeys.map(() => '?').join(',')})
-    `).bind(new Date().toISOString(), ipAddress, key, ...dbValues).run<number>();
+    `;
+    console.log(sql);
+    const result = await context.env.DB.prepare(sql).bind(new Date().toISOString(), ipAddress, key, ...dbValues).run();
     id = result.meta.last_row_id;
   } catch (e) {
     if (e.message.includes('UNIQUE constraint failed')) {
@@ -158,5 +169,20 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
   const responseModel = { id };
   return new Response(JSON.stringify(responseModel));
-}
+};
 
+export const onRequestDelete: PagesFunction<Env> = async (context) => {
+  const url = new URL(context.request.url);
+  let key = url.searchParams.get('key');
+  const id = +url.searchParams.get('id');
+
+  if (!key) { return invalidRequest('Missing key.'); }
+  if (!id) { return invalidRequest('Missing id.'); }
+
+  key = cyrb53(key).toString();
+
+  const sql = 'DELETE FROM outfits WHERE key = ? AND id = ?';
+  const result = await context.env.DB.prepare(sql).bind(key, id).run();
+
+  return new Response(JSON.stringify({deleted: result.meta.changes}));
+};
