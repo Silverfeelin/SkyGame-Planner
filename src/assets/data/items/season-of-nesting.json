@@ -402,6 +402,7 @@
     "type": "Furniture",
     "name": "Stone Stool",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Shared-Spaces-Stool-prop-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Shared-Spaces-Stool-prop.png",
     "order": 522
   },
   {
@@ -410,6 +411,7 @@
     "type": "Furniture",
     "name": "Stone Small Bench",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Stone-Single-Bench-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Stone-Single-Bench-Prop.png",
     "order": 523
   },
   {
@@ -417,7 +419,8 @@
     "guid": "m1jq0R3vip",
     "type": "Furniture",
     "name": "Stone Oven",
-    "icon": "/assets/game/items/2131.png",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Stone-Wood-Fired-Oven-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Stone-Wood-Fired-Oven-Prop.png",
     "order": 526
   },
   {
@@ -426,6 +429,7 @@
     "type": "Furniture",
     "name": "Stone Single Bed",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Stone-Single-Bed-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Stone-Single-Bed-Prop.png",
     "order": 528
   },
   {
@@ -460,6 +464,7 @@
     "type": "Furniture",
     "name": "Stone Tall Shelf",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Stone-Tall-Shelf-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Stone-Tall-Shelf-Prop.png",
     "order": 527
   },
   {
