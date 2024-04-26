@@ -1,0 +1,38 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Create new event instance</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <div>
+        <label>Date:</label>
+        <input type="date" [(ngModel)]="date" class="input-date-click">
+      </div>
+      <div>
+        <label>End date:</label>
+        <input type="date" [(ngModel)]="endDate" class="input-date-click">
+      </div>
+      <div>
+        <label for="chkPlaceholder">Use placeholder spirit: </label>
+        <input id="chkPlaceholder" type="checkbox" [(ngModel)]="usePlaceholder">
+      </div>
+      <div>
+        <label for="chkDraft">Is draft: </label>
+        <input id="chkDraft" type="checkbox" [(ngModel)]="isDraft">
+      </div>
+      <div class="mt">
+        <select [(ngModel)]="eventGuid" (ngModelChange)="eventChanged()">
+          <option value="">Select event...</option>
+          <option *ngFor="let event of events" [value]="event.guid">{{ event.name }}</option>
+        </select>
+      </div>
+      <div class="mt sky-flex" *ngIf="instance" >
+        <button type="button" (click)="copyInstance()">Copy instance</button>
+        <button type="button" (click)="copyShops()">Copy shops</button>
+        <button type="button" (click)="copyIaps()">Copy iaps</button>
+        <button type="button" (click)="copyTrees()">Copy trees</button>
+        <button type="button" (click)="copyNodes()">Copy nodes</button>
+      </div>
+    </div>
+  </div>
+</div>

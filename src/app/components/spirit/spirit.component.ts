@@ -6,6 +6,7 @@ import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 import { DataService } from 'src/app/services/data.service';
+import { TitleService } from 'src/app/services/title.service';
 
 interface ITree {
   date?: DateTime;
@@ -21,6 +22,7 @@ interface ITree {
 export class SpiritComponent {
   spirit!: ISpirit;
   trees: Array<ITree> = [];
+  seasonTree?: ISpiritTree;
   typeName?: string;
   event?: IEvent;
 
@@ -29,6 +31,7 @@ export class SpiritComponent {
 
   constructor(
     private readonly _dataService: DataService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
@@ -43,6 +46,7 @@ export class SpiritComponent {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.spirit = this._dataService.guidMap.get(guid!) as ISpirit;
+    this._titleService.setTitle(this.spirit.name || 'Spirit');
     this.typeName = new SpiritTypePipe().transform(this.spirit.type);
 
     this.event = this.spirit?.events?.at(-1)?.eventInstance?.event;
@@ -72,6 +76,9 @@ export class SpiritComponent {
     this.trees = sortedTrees;
     if (this.spirit.tree) {
       this.trees.push({ name: 'Spirit tree', tree: this.spirit.tree });
+      if (this.spirit.type === 'Season' || this.spirit.type === 'Guide') {
+        this.seasonTree = this.spirit.tree;
+      }
     }
   }
 }

@@ -1,0 +1,457 @@
+[
+  {
+    "id": 310,
+    "guid": "vVUB_cGhZd",
+    "type": "Emote",
+    "name": "Telekinesis",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png",
+    "order": 661
+  },
+  {
+    "id": 311,
+    "guid": "l6TWStE9Xr",
+    "type": "Emote",
+    "name": "Telekinesis",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
+  },
+  {
+    "id": 312,
+    "guid": "KW8r7-br2I",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 313,
+    "guid": "feolA3Sbwy",
+    "type": "Hair",
+    "name": "Levitating Adept Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/LevitatingAdept-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Hair39-Long_Mullet.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Hair"
+    },
+    "order": 257
+  },
+  {
+    "id": 314,
+    "guid": "J3zEc7Reur",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 315,
+    "guid": "9Bu1oUi8FF",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 316,
+    "guid": "9_H47RAVw-",
+    "type": "Emote",
+    "name": "Telekinesis",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
+  },
+  {
+    "id": 317,
+    "guid": "yfJsC8H6F4",
+    "type": "Emote",
+    "name": "Telekinesis",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/LevitatingAdept-1.png"
+  },
+  {
+    "id": 318,
+    "guid": "svDjH2d-e5",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 319,
+    "guid": "CKVi0baUvl",
+    "type": "FaceAccessory",
+    "name": "Levitating Adept Face Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/LevitatingAdept-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Mask12-Long_Panel.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Mask"
+    },
+    "order": 203
+  },
+  {
+    "id": 320,
+    "guid": "c1A0Bf98bJ",
+    "type": "Emote",
+    "name": "Float",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png",
+    "order": 671
+  },
+  {
+    "id": 321,
+    "guid": "hu9E5_AnJh",
+    "type": "Emote",
+    "name": "Float",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
+  },
+  {
+    "id": 322,
+    "guid": "Vbl_un6xzP",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 323,
+    "guid": "tBRghYOFon",
+    "type": "Hair",
+    "name": "Meditating Monastic Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Meditating-Monastic-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Hair16-Short_Beard.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Hair"
+    },
+    "order": 258
+  },
+  {
+    "id": 324,
+    "guid": "gsduxoZUwm",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 325,
+    "guid": "L5uWPBlT0O",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 326,
+    "guid": "of7E6FbO6S",
+    "type": "Emote",
+    "name": "Float",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
+  },
+  {
+    "id": 327,
+    "guid": "1icJGw6P2x",
+    "type": "Emote",
+    "name": "Float",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Meditating-Monastic-1.png"
+  },
+  {
+    "id": 328,
+    "guid": "m_mcgzu_Wk",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 329,
+    "guid": "EdxE5UGZsa",
+    "type": "Furniture",
+    "name": "Meditating Monastic Table Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Meditating-Monastic-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Instrument-Chat_Table_Chair.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Prop"
+    },
+    "order": 452
+  },
+  {
+    "id": 330,
+    "guid": "I1fk2fnGDK",
+    "type": "Call",
+    "name": "Cosmic Manta Call",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Expression"
+    },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/MemoryWhisperer-1.png",
+    "order": 41
+  },
+  {
+    "id": 331,
+    "guid": "wXOGyF57AN",
+    "type": "Outfit",
+    "name": "Memory Whisperer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/MemoryWhisperer-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Legs04.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Outfit"
+    },
+    "order": 7
+  },
+  {
+    "id": 332,
+    "guid": "3AsQwFFxdG",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 333,
+    "guid": "VfU1MhzBJY",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 334,
+    "guid": "KPg6xkOZ6M",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 335,
+    "guid": "5T5eE9N4zZ",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 336,
+    "guid": "ec8jU3Gerw",
+    "type": "Cape",
+    "name": "Memory Whisperer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Cape_white_2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
+    },
+    "order": 557
+  },
+  {
+    "id": 337,
+    "guid": "0W2hMqYmmo",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 338,
+    "guid": "fRVPpavon7",
+    "type": "Cape",
+    "name": "Memory Whisperer Cape 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Cape_white_tier_2_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
+    },
+    "order": 566
+  },
+  {
+    "id": 339,
+    "guid": "8QnR-XHmJg",
+    "type": "Stance",
+    "name": "Polite Stance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Expression"
+    },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/PoliteScholar-1.png",
+    "order": 51
+  },
+  {
+    "id": 340,
+    "guid": "3T-ZS6ZooQ",
+    "type": "Outfit",
+    "name": "Polite Scholar Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/PoliteScholar-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Legs02.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Outfit"
+    },
+    "order": 4
+  },
+  {
+    "id": 341,
+    "guid": "HjG7tXdZsG",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 342,
+    "guid": "u3KgRMaHiR",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 343,
+    "guid": "A6BetnYLiG",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 344,
+    "guid": "MRn4GtOKCz",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 345,
+    "guid": "DTMwTb6_mu",
+    "type": "Hair",
+    "name": "Polite Scholar Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/PoliteScholar-3.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Hair01-Bald.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Hair"
+    },
+    "order": 374
+  },
+  {
+    "id": 346,
+    "guid": "EN-zwdMKW0",
+    "type": "Emote",
+    "name": "Pray",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png",
+    "order": 681
+  },
+  {
+    "id": 347,
+    "guid": "3kiNK4eee-",
+    "type": "Emote",
+    "name": "Pray",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
+  },
+  {
+    "id": 348,
+    "guid": "2aDtgu-fY8",
+    "type": "Special",
+    "name": "Small Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/1CandleSpell.png"
+  },
+  {
+    "id": 349,
+    "guid": "exlIascN2K",
+    "type": "Hair",
+    "name": "Praying Acolyte Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/PrayingAcolyte-2.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Hair09-Long_One_Braid.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Hair"
+    },
+    "order": 259
+  },
+  {
+    "id": 350,
+    "guid": "K91m7VZ7Tg",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 351,
+    "guid": "sVrq8c1PUm",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 352,
+    "guid": "47u5kXt3wr",
+    "type": "Emote",
+    "name": "Pray",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
+  },
+  {
+    "id": 353,
+    "guid": "ZHkYvZFLjE",
+    "type": "Emote",
+    "name": "Pray",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Expression"
+    },
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png"
+  },
+  {
+    "id": 354,
+    "guid": "Vv6kjY36w5",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 355,
+    "guid": "WwlWwMfCen",
+    "type": "Cape",
+    "name": "Praying Acolyte Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_blue_2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
+    },
+    "order": 553
+  },
+  {
+    "id": 356,
+    "guid": "DkdobTs2WM",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 357,
+    "guid": "DyXPylwH7w",
+    "type": "Cape",
+    "name": "Praying Acolyte Cape 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_blue_tier_2_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
+    },
+    "order": 562
+  }
+]

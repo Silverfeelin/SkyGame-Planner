@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemHelper } from 'src/app/helpers/item-helper';
+import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemSubtype, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -17,7 +18,7 @@ export class EditorOrderComponent {
     'Mask', 'FaceAccessory', 'Necklace',
     'Hat', 'Hair',
     'Cape',
-    'Held', 'Prop',
+    'Held', 'Furniture', 'Prop',
     'Emote', 'Stance', 'Call',
     'Music'
   ]
@@ -35,6 +36,21 @@ export class EditorOrderComponent {
     _dataService.itemConfig.items.forEach(item => {
       let type = item.type;
       if (type === ItemType.Emote && (item.subtype === ItemSubtype.FriendEmote || item.level! > 1)) { return; }
+
+      const node = item.nodes?.at(-1);
+      if (node) {
+        const spirit = NodeHelper.getRoot(node)?.spiritTree?.spirit;
+        (item as any)._subIcon ||= spirit?.season?.iconUrl;
+        (item as any)._label ||= spirit?.events?.at(-1)?.eventInstance?.event?.shortName || spirit?.events?.at(-1)?.eventInstance?.event?.name;
+      }
+
+      const shop = item.iaps?.at(-1)?.shop || item.listNodes?.at(-1)?.itemList?.shop;
+      if (shop) {
+        (item as any)._subIcon ||= shop.season?.iconUrl;
+        (item as any)._label ||= shop.event?.event?.shortName || shop.event?.event?.name;
+      }
+
+      (item as any)._label = (item as any)._label?.substring(0, 5);
 
       this.typeItems[type].push(item);
       (item as any)._initialOrder = item.order;

@@ -27,7 +27,9 @@
             "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -38,10 +40,19 @@
               "src/styles/map.less",
               "src/styles/icons.less"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "dropbox",
+              "fuzzysort",
+              "json5",
+              "leaflet",
+              "panzoom"
+            ],
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
+              "serviceWorker": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -58,6 +69,7 @@
               "sourceMap": true
             },
             "development": {
+              "serviceWorker": false,
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -66,16 +78,16 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SkyGame-Planner:build:production"
+              "buildTarget": "SkyGame-Planner:build:production"
             },
             "development": {
-              "browserTarget": "SkyGame-Planner:build:development"
+              "buildTarget": "SkyGame-Planner:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +95,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SkyGame-Planner:build"
+            "buildTarget": "SkyGame-Planner:build"
           }
         }
       }

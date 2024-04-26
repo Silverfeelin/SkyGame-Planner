@@ -52,6 +52,15 @@
           <span class="c-accent" *ngIf="shLeft">({{ shLeft }} needed)</span>
         </span>
       </div>
+      <!-- Calculator -->
+      @if (state === 'active' || state === 'future') {
+        <a class="container colspan-2" [routerLink]="'/season-calculator'">
+          <mat-icon class="menu-icon">calculate</mat-icon>
+          <span class="menu-label">
+            Season Calculator
+          </span>
+        </a>
+      }
       <!-- Draft -->
       <div class="container colspan-2" *ngIf="season.draft">
         <mat-icon class="menu-icon">warning</mat-icon>
@@ -72,13 +81,14 @@
     <div class="sky-flex scroll-x pad">
       <!-- Guide tree -->
       <div class="tree-wrapper">
-        <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name" [highlight]="highlightTree === guide!.tree!.guid"></app-spirit-tree>
+        <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name" [highlight]="highlightTree === guide!.tree!.guid" [seasonIcon]="season.iconUrl">
+        </app-spirit-tree>
       </div>
       <!-- Traveling Spirit trees -->
       <ng-container *ngIf="spirits">
         <ng-container *ngFor="let spirit of spirits;">
           <div class="tree-wrapper" *ngIf="spirit.tree">
-            <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
+            <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid" [seasonIcon]="season.iconUrl">
               <!-- Link to spirit -->
               <div name>
                 <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
@@ -93,8 +103,22 @@
   </div>
 </div>
 
+<!-- Shops -->
+@if (shops.length) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Shops</h1>
+    </div>
+    <div class="sky-card-body">
+      @for (shop of shops; track shop.guid) {
+        <app-item-list [itemList]="shop.itemList!"></app-item-list>
+      }
+    </div>
+  </div>
+}
+
 <!-- IAPs -->
-<ng-container *ngIf="shops.length">
+@if (iapShops.length) {
   <div class="sky-card mt">
     <div class="sky-card-header">
       <h2 class="h3">In-App Purchases</h2>
@@ -102,9 +126,9 @@
     <div class="sky-card-body">
       <div class="grid grid-4" >
         <!-- Render IAPs in order of sorted shops. -->
-        <ng-container *ngFor="let shop of shops">
-          <ng-container *ngIf="shop.iaps?.length">
-            <div class="sky-card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
+        @for (shop of iapShops; track shop.guid) {
+          @for (iap of shop.iaps; track iap.guid) {
+            <div class="sky-card p-rel" [class.highlight]="iap.guid === highlightIap">
               <div class="sky-card-header">
                 <h3 class="h4" [ngbTooltip]="iap.name" container="body">
                   {{ iap.name }}
@@ -136,26 +160,28 @@
                   </span>
                 </div>
                 <!-- Currencies -->
-                <div class="mt-half item" *ngIf="iap.c || iap.sc || iap.sp">
-                  <ng-container *ngIf="iap.c">
-                    <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
-                    <span class="menu-label">
-                      {{ iap.c }}
-                    </span>
-                  </ng-container>
-                  <ng-container *ngIf="iap.sc">
-                    <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
-                    <span class="menu-label">
-                      {{ iap.sc }}
-                    </span>
-                  </ng-container>
-                  <ng-container *ngIf="iap.sp">
-                    <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
-                    <span class="menu-label">
-                      {{ iap.sp }}
-                    </span>
-                  </ng-container>
-                </div>
+                @if (iap.c || iap.sc || iap.sp) {
+                  <div class="mt-half item">
+                    @if (iap.c) {
+                      <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
+                      <span class="menu-label">
+                        {{ iap.c }}
+                      </span>
+                    }
+                    @if (iap.sc) {
+                      <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
+                      <span class="menu-label">
+                        {{ iap.sc }}
+                      </span>
+                    }
+                    @if (iap.sp) {
+                      <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
+                      <span class="menu-label">
+                        {{ iap.sp }}
+                      </span>
+                    }
+                  </div>
+                }
                 <!-- Items -->
                 <div class="mt-half item iap-items">
                   <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
@@ -170,9 +196,9 @@
                 </div>
               </div>
             </div>
-          </ng-container>
-        </ng-container>
+          }
+        }
       </div>
     </div>
   </div>
-</ng-container>
+}

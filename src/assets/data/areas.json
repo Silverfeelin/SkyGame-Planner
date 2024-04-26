@@ -406,7 +406,7 @@
       "guid": "aBL5eqTv4R",
       "name": "Crescent Oasis",
       "spirits": [ "v-bxcGqGaa", "gyEBXKOIwY", "4h9FByzo7y", "wyFKAWN45l", "mf7NyGfeDI" ],
-      "wingedLights": [ "ZDqubWevQx", "fWLJNq1H3v" ]
+      "wingedLights": [ "ZDqubWevQx", "HdrkYqqX3_", "fWLJNq1H3v" ]
     },
     // #endregion
     // #region Aviary
@@ -414,6 +414,11 @@
       "guid": "Mhbh0g9OdG",
       "name": "Aviary Village",
       "spirits": [ "0Ab0zVwBa0", "53sRWu-bTI", "yRKMk_Xw4G", "118ghc8_me", "iz40tYocEn" ]
+    },
+    {
+      "guid": "tP8ZaD5Qwf",
+      "name": "Nesting Workshop",
+      "spirits": [ "ksZ0eZfHEZ", "L6Rqyh4Xi9", "r5FVxLgLrp", "Ha10I4vIO7", "8p_1kKYu7_" ]
     },
     // #endregion
     // #region Eden

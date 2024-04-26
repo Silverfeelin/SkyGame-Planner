@@ -332,6 +332,11 @@
       "guid": "Lvuz1tp6P9",
       "node": "BLKy0jnYaU"
     },
+    // Nesting Guide
+    {
+      "guid": "D5NXQFGNZE",
+      "node": "vUoRGulA02"
+    },
     // #endregion
 
     // #region Gratitude
@@ -355,6 +360,10 @@
     {
       "guid": "YaJ9ra8eTo",
       "node": "6QrSy1t5iF"
+    },
+    {
+      "guid": "8RKO8fkj0n",
+      "node": "HWzaJiejA-"
     },
     // Stretching Guru
     {
@@ -638,6 +647,10 @@
       "guid": "S2bnFEoHfA",
       "node": "_AaLjqBGlE"
     },
+    {
+      "guid": "ZQB0qtYaJu",
+      "node": "knRWbcHjfg"
+    },
     // #endregion
     // #region Rhythm
     // Troupe Greeter
@@ -749,6 +762,10 @@
       "guid": "I0Gnoj9xMX",
       "node": "FZ-is-F5e_"
     },
+    {
+      "guid": "AhcLwz3Pxj",
+      "node": "VkCve9uVAS"
+    },
     // Indifferent Alchemist
     {
       "guid": "t5FoVLTpxP",
@@ -761,6 +778,10 @@
     {
       "guid": "3o1XOorJ6U",
       "node": "JCfGhRIufT"
+    },
+    {
+      "guid": "nzUD7-NDgi",
+      "node": "r8R5tQ541i"
     },
     // Crab Walker
     {
@@ -968,6 +989,10 @@
       "guid": "zUy1Dlkzbl",
       "node": "6i1ljkdw6g"
     },
+    {
+      "guid": "QF6kJr3Yxk",
+      "node": "4ajXwV62Gv"
+    },
     // Peeking Postman
     {
       "guid": "sxbsSa-E47",
@@ -1049,6 +1074,10 @@
     {
       "guid": "FnSlorCsvc",
       "node": "MV2_-tldoA"
+    },
+    {
+      "guid": "a6FTQcRt6B",
+      "node": "G1PAMlEgRR"
     },
     // #endregion
     // #region The Little Prince
@@ -1164,6 +1193,10 @@
       "guid": "1c2RnFkkmb",
       "node": "Wt_FOZCmQf"
     },
+    {
+      "guid": "63I7854lB-",
+      "node": "BkKELtjaxF"
+    },
     // Bumbling Boatswain
     {
       "guid": "oNXi897gvR",
@@ -1184,6 +1217,10 @@
     {
       "guid": "i0lRmQ31MS",
       "node": "eUh0KO-9lY"
+    },
+    {
+      "guid": "IWACETtZdN",
+      "node": "JZ0vOui6V-"
     },
     // Forgetful Storyteller
     {
@@ -1364,6 +1401,32 @@
     },
     // #endregion
     // #endregion
+    // #region Nesting
+    // #region Nesting Nook
+    {
+      "guid": "Hj9s2djkbp",
+      "node": "4MAeqqNXqF"
+    },
+    // #endregion
+    // #region Nesting Solarium
+    {
+      "guid": "wLTOEjYiho",
+      "node": "8U5lKBsEz0"
+    },
+    // #endregion
+    // #region Nesting Atrium
+    {
+      "guid": "_7Cm8XUK5N",
+      "node": "UQ4rS_3vBk"
+    },
+    // #endregion
+    // #region Nesting Loft
+    {
+      "guid": "hmjRFtvfCa",
+      "node": "79knrpLvHO"
+    },
+    // #endregion
+    // #endregion
 
     // #region Days of Fortune
     // Days of Fortune (2021)
@@ -1445,6 +1508,16 @@
       "guid": "yvuc0d_gC7",
       "node": "KXsWsk9Zou"
     },
+    // #region Days of Bloom (2024)
+    {
+      "guid": "95O0Urqxm0",
+      "node": "7DsPuIDwHZ"
+    },
+    {
+      "guid": "oDa9O5v-13",
+      "node": "0Oe41ToBtQ"
+    },
+    // #endregion
     // #endregion
     // #region Days of Nature
     // Days of Nature 2022
@@ -1622,6 +1695,12 @@
     {
       "guid": "Pfnfzz3kGn",
       "node": "qzjesJUZYH"
+    },
+    // #endregion
+    // #region Cinnamoroll Pop-Up Cafe (2024)
+    {
+      "guid": "emy7T3lDyN",
+      "node": "IHRa0WEzGS"
     },
     // #endregion
   ]

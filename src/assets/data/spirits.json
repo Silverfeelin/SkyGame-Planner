@@ -1392,7 +1392,7 @@
       "type": "Season",
       "name": "Ancient Darkness (Dragon)",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Shattering-Ancient_Darkness.png",
-      "tree": "b6rp9fopvO",
+      "tree": "7RgA-evqca",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness"
       }
@@ -1402,7 +1402,7 @@
       "type": "Season",
       "name": "Ancient Darkness (Plants)",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Shattering-Ancient_Darkness.png",
-      "tree": "7RgA-evqca",
+      "tree": "b6rp9fopvO",
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness"
       }
@@ -1720,6 +1720,43 @@
       }
     },
 
+    // #endregion
+    // #region Nesting
+    {
+      "guid": "ksZ0eZfHEZ",
+      "type": "Guide",
+      "name": "Nesting Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/61/Nesting-Ultimate-Guide.png",
+      "tree": "D5NXQFGNZE"
+    },
+    {
+      "guid": "L6Rqyh4Xi9",
+      "type": "Season",
+      "name": "Nesting Nook",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Nesting-Nook-Shop.png",
+      "tree": "Hj9s2djkbp"
+    },
+    {
+      "guid": "r5FVxLgLrp",
+      "type": "Season",
+      "name": "Nesting Solarium",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Nesting-Solarium-Shop.png",
+      "tree": "wLTOEjYiho"
+    },
+    {
+      "guid": "Ha10I4vIO7",
+      "type": "Season",
+      "name": "Nesting Atrium",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Nesting-Atrium-Shop.png",
+      "tree": "_7Cm8XUK5N"
+    },
+    {
+      "guid": "8p_1kKYu7_",
+      "type": "Season",
+      "name": "Nesting Loft",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Nesting-Loft-Shop.png",
+      "tree": "hmjRFtvfCa"
+    },
     // #endregion
 
     // #region Events

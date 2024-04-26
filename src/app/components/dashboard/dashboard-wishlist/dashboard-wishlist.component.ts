@@ -78,7 +78,7 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   }
 
   private checkFavourites(): void {
-    this._storageService.favourites.forEach(guid => {
+    this._storageService.getFavourites().forEach(guid => {
       const item = this._dataService.guidMap.get(guid) as IItem;
       if (!item) { return; }
       this.checkItem(item);

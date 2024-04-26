@@ -14,6 +14,8 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
+import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -63,8 +65,9 @@ export class ClosetComponent implements OnDestroy {
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.Hat,
     ItemType.Cape,
-    ItemType.Held, ItemType.Prop
+    ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
+  itemTypeOrder: { [key: string]: number } = this.itemTypes.reduce((map, type, i) => (map[type] = i, map), {} as { [key: string]: number });
   itemIcons: { [key: string]: string } = {
     'Outfit': 'outfit',
     'Shoes': 'shoes',
@@ -75,7 +78,8 @@ export class ClosetComponent implements OnDestroy {
     'Hat': 'hat',
     'Cape': 'cape',
     'Held': 'held',
-    'Prop': 'prop'
+    'Furniture': 'shelf',
+    'Prop': 'cup'
   };
 
   // Item data
@@ -122,6 +126,11 @@ export class ClosetComponent implements OnDestroy {
   ts?: ITravelingSpirit;
   tsState?: PeriodState;
   tsItems?: Array<IItem>;
+  // Returning Spirits
+  rs?: IReturningSpirits;
+  rsSpirits: Array<{ returning: IReturningSpirit, items: Array<IItem> }> = [];
+  // Event
+  events: Array<{instance: IEventInstance, items: Array<IItem>, iapItems: Array<IItem>}> = [];
 
   // Internal
   _clickSub: SubscriptionLike;
@@ -151,6 +160,8 @@ export class ClosetComponent implements OnDestroy {
     this.initializeBackground();
     this.initializeItems();
     this.initializeTs();
+    this.initializeRs();
+    this.initializeEvents();
 
     this._clickSub = _eventService.clicked.subscribe(evt => {
       this.clickoutColorPicker(evt);
@@ -237,6 +248,7 @@ export class ClosetComponent implements OnDestroy {
     for (const type of Object.keys(this.items)) {
       if (type === ItemType.Held && !heldProp) { continue; }
       if (type === ItemType.Prop && heldProp) { continue; }
+      if (type === ItemType.Furniture) { continue; }
       let items = this.items[type as string];
       if (!this.requesting) { items = items.filter(item => !this.hidden[item.guid]); }
       if (this.available) { items = items.filter(item => this.available![item.guid]); }
@@ -493,8 +505,43 @@ export class ClosetComponent implements OnDestroy {
 
     const types = new Set<ItemType>(this.itemTypes);
     const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
-    items.sort((a, b) => this.itemTypes.indexOf(a.type) - this.itemTypes.indexOf(b.type));
+    items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
     this.tsItems = items;
+  }
+
+  private initializeRs(): void {
+    if (!this.requesting) { return; }
+
+    const rs = this._dataService.returningSpiritsConfig.items.at(-1);
+    if (!rs) { return; }
+    const state = DateHelper.getStateFromPeriod(rs.date, rs.endDate);
+    if (state !== 'active') { return; }
+    this.rs = rs;
+
+    const types = new Set<ItemType>(this.itemTypes);
+    this.rs.spirits?.forEach(spirit => {
+      const items = NodeHelper.getItems(spirit.tree.node).filter(item => types.has(item.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.rsSpirits.push({ returning: spirit, items });
+    });
+  }
+
+  private initializeEvents(): void {
+    if (!this.requesting) { return; }
+
+    const types = new Set<ItemType>(this.itemTypes);
+    const instances = this._dataService.eventConfig.items.map(e => e.instances?.at(-1)).filter(i => i && DateHelper.isActive(i.date, i.endDate));
+    instances.forEach(instance => {
+      if (!instance) { return; }
+      const spirits = instance.spirits || [];
+
+      const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      const shops = instance.shops || [];
+      const iapItems = shops.map(s => (s.iaps || []).map(a => a.items || [])).flat().flat();
+      iapItems.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
+      this.events.push({ instance: instance, items, iapItems });
+    });
   }
 
   // #endregion
@@ -747,7 +794,7 @@ export class ClosetComponent implements OnDestroy {
   private renderImage(mode: CopyImageMode): void {
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
-    const cols = [10, 7, 5, 5];
+    const cols = [10, 7, 5, 6];
     const canvas = document.createElement('canvas');
 
     const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
@@ -759,11 +806,12 @@ export class ClosetComponent implements OnDestroy {
     const cHat = Math.ceil(this.items[ItemType.Hat].length / cols[1]);
     const cCape = Math.ceil(this.items[ItemType.Cape].length / cols[2]);
     const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
+    const cFurniture = Math.ceil(this.items[ItemType.Furniture].length / cols[3]);
     const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
     const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
     const h2 = (cHair + cHat) * _wBox + _wPad * 3 - _wGap;
     const h3 = cCape * _wBox + _wPad * 2 - _wGap;
-    const h4 = (cHeld + cProp) * _wBox + _wPad * 3 - _wGap;
+    const h4 = (cHeld + cFurniture + cProp) * _wBox + _wPad * 4 - _wGap;
     const h = Math.max(h1, h2, h3, h4);
 
     canvas.width = 5 * _wPad + _wBox * cols.reduce((sum, c) => sum + c, 0) - _wGap;
@@ -804,6 +852,8 @@ export class ClosetComponent implements OnDestroy {
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
     this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Held], itemImgs, false);
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Furniture], itemImgs, false);
+    sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 3 + (cHeld + cFurniture) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Prop], itemImgs, false);
 
     // Draw attribution

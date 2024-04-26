@@ -1,0 +1,55 @@
+
+@if (ready) {
+  <div class="save-indicator" [class.show-save]="showSaveIndicator">
+    @switch (storageSaveState) {
+      @case ('save_start') { <mat-icon class="pulse">cloud_upload</mat-icon> }
+      @case ('save_success') { <mat-icon>cloud_done</mat-icon> }
+      @case ('save_error') { <mat-icon>cloud_off</mat-icon> }
+      @case ('data_changed') { <mat-icon class="pulse">cloud</mat-icon> }
+    }
+  </div>
+  <router-outlet></router-outlet>
+}
+@else if (err) {
+  <div class="overlay">
+    <div class="overlay-body">
+      <span>Something went wrong...</span>
+      <span>Please report this error.</span>
+      <pre class="br pad ws-pl" style="background: #000;" (click)="copy($event)">{{ err }}</pre>
+    </div>
+  </div>
+} @else {
+  <div class="overlay loader" [class.loader-loading]="loading">
+    <div class="overlay-body">
+      <span>Loading data...</span>
+      <mat-icon class="loader-icon">autorenew</mat-icon>
+      <a class="c-accent" [routerLink]="'/storage'">Taking too long?</a>
+    </div>
+  </div>
+}
+
+@if (storageSaveError) {
+  <div class="overlay">
+    <div class="overlay-body">
+      <h1 class="h2">Saving to storage failed!</h1>
+      <span>The error message is shown below.</span>
+
+      <pre class="mt mb c-warn-accent ws-pl">{{ storageSaveError }}</pre>
+
+      <div class="sky-flex flex-wrap flex-justify-center">
+        <button type="button" (click)="retrySaveStorage()">
+          <mat-icon class="menu-icon">sync</mat-icon>
+          <span class="menu-label">Retry (force overwrite)</span>
+        </button>
+        <a class="button" [routerLink]="'/storage'">
+          <mat-icon class="menu-icon">database</mat-icon>
+          <span class="menu-label">Return to Storage</span>
+        </a>
+        <button type="button" (click)="refresh()">
+          <mat-icon class="menu-icon">refresh</mat-icon>
+          <span class="menu-label">Refresh page</span>
+        </button>
+      </div>
+    </div>
+  </div>
+}

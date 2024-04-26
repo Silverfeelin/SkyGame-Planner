@@ -32,7 +32,7 @@ export interface ISeason extends IGuid, IPeriod {
   */
   spirits: Array<ISpirit>;
 
-  /** Season IAP shops. */
+  /** Season shops. */
   shops?: Array<IShop>;
 
   /// Metadata ///

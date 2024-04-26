@@ -1,0 +1,211 @@
+[
+  {
+    "id": 1936,
+    "guid": "Z5JkGSWLbw",
+    "type": "Cape",
+    "name": "Orange Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Icon_cape_orange-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Cape_orange_2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack"
+    },
+    "order": 548
+  },
+  {
+    "id": 1937,
+    "guid": "DI0RLfo9Sj",
+    "type": "Cape",
+    "name": "Founder's Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Icon_cape_tgc_b-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Founders_cape_back_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack"
+    },
+    "order": 547
+  },
+  {
+    "id": 1938,
+    "guid": "xaX_sfWwKV",
+    "type": "Cape",
+    "name": "Beta Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Beta-cape-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Beta_cape_back_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape"
+    },
+    "order": 546
+  },
+  {
+    "id": 1939,
+    "guid": "1xIwQnxHV-",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Fledgling Harp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/SOPerformance-Fledgling-harp-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Performance-Fledgling-harp.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Fledgling_Harp"
+    },
+    "order": 413
+  },
+  {
+    "id": 1940,
+    "guid": "bOQzUAzYfV",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Rhythm Guitar",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SOPerformance-Rhythm-Guitar-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Performance-Rhythm-Guitar-white-guitar.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar"
+    },
+    "order": 416
+  },
+  {
+    "id": 1941,
+    "guid": "McTvO9Z8EQ",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Triumph Handpan",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SOPerformance-Triumph-Handpan-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Performance-Triumph-Handpan.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan"
+    },
+    "order": 434
+  },
+  {
+    "id": 1942,
+    "guid": "hcuS6xsmHg",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Blue Electric Guitar",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Days-of-Sky-2022-instrument-blue-electric-guitar-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Days-of-Sky-2022-instrument-blue-electric-guitar.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar"
+    },
+    "order": 420
+  },
+  {
+    "id": 1943,
+    "guid": "KtlqKC7whS",
+    "type": "Cape",
+    "name": "Nintendo Blue Switch Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Icon_cape_nintendo_blue-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/Cape_nintendo_blue_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
+    },
+    "order": 672
+  },
+  {
+    "id": 1944,
+    "guid": "4c9HLTfREP",
+    "type": "Cape",
+    "name": "Nintendo Red Switch Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Icon_cape_nintendo_red-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_nintendo_red_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
+    },
+    "order": 671
+  },
+  {
+    "id": 1945,
+    "guid": "MHArTLwxyq",
+    "type": "Hair",
+    "name": "Nintendo Elf Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Icon_hair_Nintendo_elf.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Nintendo_elf_hair_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack"
+    },
+    "order": 372
+  },
+  {
+    "id": 1946,
+    "guid": "BDfLuCSmaF",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "Vessel Flute",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_instrument_vessel_flute.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Vessel-flute-Ocarina-Nintendo-IAP.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute"
+    },
+    "order": 429
+  },
+  {
+    "id": 1959,
+    "guid": "TkW2R7Szug",
+    "type": "Cape",
+    "name": "Sparrow Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Sparrow-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
+    "order": 668
+  },
+  {
+    "id": 1960,
+    "guid": "TvT6x_UO5V",
+    "type": "Mask",
+    "name": "Sparrow Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Sparrow-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
+    "order": 195
+  },
+  {
+    "id": 1961,
+    "guid": "jM8xKFwbTE",
+    "type": "Hat",
+    "name": "Moth Antennae",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moth-headpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
+    "order": 411
+  },
+  {
+    "id": 1962,
+    "guid": "bu7qgPtuB2",
+    "type": "Cape",
+    "name": "Moth Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Moth-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
+    "order": 669
+  },
+  {
+    "id": 1947,
+    "guid": "sDNG_Nt7Ew",
+    "type": "Mask",
+    "name": "Journey Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Journey-Pack-Mask-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/JourneyPack-Mask-Nastymold.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
+    },
+    "order": 196
+  },
+  {
+    "id": 1948,
+    "guid": "6Nac-p14-9",
+    "type": "Cape",
+    "name": "Journey Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Journey-Pack-Cape-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/JourneyPack-Cape-back-Nastymold.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
+    },
+    "order": 673
+  },
+  {
+    "id": 1949,
+    "guid": "8P8dL_Zp8q",
+    "type": "Hair",
+    "name": "Journey Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Journey-Pack-Hairstyle-icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/JourneyPack-Hair-Nastymold.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
+    },
+    "order": 373
+  }
+]

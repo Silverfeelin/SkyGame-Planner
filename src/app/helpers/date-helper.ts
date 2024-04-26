@@ -21,6 +21,19 @@ export class DateHelper {
     return now >= start && now <= end;
   }
 
+  static todayLocal(): DateTime {
+    return DateTime.now().startOf('day');
+  }
+
+  static todaySky(): DateTime {
+    return DateTime.now().setZone(this.skyTimeZone).startOf('day');
+  }
+
+  static fromIso(iso: string): DateTime | undefined {
+    if (!iso) { return; }
+    return DateTime.fromISO(iso);
+  }
+
   static fromInterfaceLocal(date: IDate | DateTime): DateTime | undefined {
     if (!date) { return; }
     if (date instanceof DateTime) { return date; }

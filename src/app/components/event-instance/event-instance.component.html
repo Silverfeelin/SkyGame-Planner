@@ -60,6 +60,15 @@
           <span class="c-accent" *ngIf="cLeft">({{ cLeft }} needed)</span>
         </span>
       </div>
+      <!-- Calculator -->
+      @if (state === 'active' || state === 'future') {
+        <a class="container colspan-2" [routerLink]="'/event-calculator'" [queryParams]="{ guid: instance.guid }">
+          <mat-icon class="menu-icon">calculate</mat-icon>
+          <span class="menu-label">
+            Event Calculator
+          </span>
+        </a>
+      }
       <!-- Draft -->
       <div class="container colspan-2" *ngIf="instance.draft">
         <mat-icon class="menu-icon">warning</mat-icon>

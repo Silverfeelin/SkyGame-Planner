@@ -1,0 +1,64 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Connect to Dropbox</h1>
+  </div>
+  <div class="sky-card-body">
+    <a class="container d-block" [routerLink]="'/storage'">
+      <mat-icon class="menu-icon">arrow_back</mat-icon>
+      <span class="menu-label">Return to Storage</span>
+    </a>
+    <div class="container mt">
+      <p>
+        Please click on the Link to Dropbox button below to connect through the Dropbox website.
+      </p>
+      <p>
+        You are currently
+        @if (isAuthenticated) {
+          <b class="c-new">connected</b>
+        } @else {
+          <b class="c-old">not connected</b>
+        }
+        to Dropbox.
+      </p>
+      <p>
+        You can make the website forget the credentials by clicking the reset button.<br/>
+        You should also revoke access from the Dropbox page that opens.<br/>
+      </p>
+      <div class="sky-flex flex-wrap">
+        <button type="button" (click)="login()" class="">
+          <mat-icon class="menu-icon">link</mat-icon>
+          <span class="menu-label">Link to Dropbox</span>
+        </button>
+        <button type="button" (click)="reset()" class="dbx-reset">
+          <mat-icon class="menu-icon">link_off</mat-icon>
+          <span class="menu-label">Unlink Dropbox</span>
+        </button>
+        <a class="button" target="_blank" href="https://www.dropbox.com/account/connected_apps">
+          <mat-icon class="menu-icon">open_in_new</mat-icon>
+          <span class="menu-label">View connected apps on Dropbox</span>
+        </a>
+      </div>
+    </div>
+    @if (isAuthenticated && isUsingDropbox) {
+      <a class="container mt d-inline-block" [routerLink]="'/'">
+        <mat-icon class="menu-icon">home</mat-icon>
+        <span class="menu-label">Go to dashboard</span>
+      </a>
+    }
+  </div>
+</div>
+
+<div class="sky-card" *ngIf="error">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Authorization failed</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>Dropbox reported the following. Please try again or report this issue.</p>
+      <p>
+        Error: <code>{{error}}</code><br/>
+        Description: <code>{{errorDescription}}</code>
+      </p>
+    </div>
+  </div>
+</div>

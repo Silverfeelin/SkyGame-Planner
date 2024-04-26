@@ -30,7 +30,7 @@ export class WingedLightComponent {
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
   ) {
-    this.col = _storageService.unlockedCol.size;
+    this.col = _storageService.getWingedLights().size;
     this.totalCol = this._dataService.wingedLightConfig.items.length;
 
     const wb = this._dataService.itemConfig.items.filter(item => item.type === ItemType.WingBuff);

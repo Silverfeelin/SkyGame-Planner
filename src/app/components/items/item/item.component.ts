@@ -5,6 +5,7 @@ import { IItem } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-item',
@@ -23,6 +24,7 @@ export class ItemComponent implements OnInit {
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute,
   ) {
     _route.paramMap.subscribe(params => {
@@ -36,6 +38,8 @@ export class ItemComponent implements OnInit {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.item = guid ? this._dataService.guidMap.get(guid) as IItem : undefined;
+    this._titleService.setTitle(this.item?.name || 'Item');
+
     this.navSource = this.item ? NavigationHelper.getItemSource(this.item) : undefined;
     this.navList = this.item ? NavigationHelper.getItemListLink(this.item) : undefined;
     this.navFieldGuide = this.item ? NavigationHelper.getPreviewLink(this.item) : undefined;
@@ -43,9 +47,7 @@ export class ItemComponent implements OnInit {
 
   toggleFavourite(item: IItem): void {
     item.favourited = !item.favourited;
-    item.favourited ? this._storageService.addFavourite(item.guid) : this._storageService.removeFavourite(item.guid);
+    item.favourited ? this._storageService.addFavourites(item.guid) : this._storageService.removeFavourites(item.guid);
     this._eventService.itemFavourited.next(item);
-    this._storageService.saveFavourites();
   }
-
 }

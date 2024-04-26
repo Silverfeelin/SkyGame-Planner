@@ -1,0 +1,5 @@
+<div class="sky-flex flex-wrap">
+  @for (node of itemList.items; track node.guid) {
+    <app-item-list-node [node]="node" [highlight]="node.guid === highlightNode"></app-item-list-node>
+  }
+</div>

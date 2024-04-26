@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
@@ -68,6 +68,17 @@ import { RealmConstellationComponent } from './components/realms/realm-constella
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { ClampPipe } from './pipes/clamp.pipe';
 import { SpiritTypePipe } from './pipes/spirit-type.pipe';
+import { CardComponent } from './components/layout/card/card.component';
+import { ItemListComponent } from './components/item-list/item-list/item-list.component';
+import { ItemListNodeComponent } from './components/item-list/item-list-node/item-list-node.component';
+import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
+import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
+import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
+import { MenuLayoutComponent } from './components/layout/menu-layout/menu-layout.component';
+import { StorageComponent } from './components/storage/storage.component';
+import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
+import { NoDataComponent } from './components/layout/no-data/no-data.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -131,8 +142,18 @@ import { SpiritTypePipe } from './pipes/spirit-type.pipe';
     DashboardWishlistComponent,
     ItemComponent,
     ReturningSpiritCardComponent,
-    OutfitVaultComponent,
-    RealmConstellationComponent
+    RealmConstellationComponent,
+    CardComponent,
+    ItemListComponent,
+    ItemListNodeComponent,
+    SeasonCalculatorComponent,
+    EventCalculatorComponent,
+    DropboxAuthComponent,
+    MenuLayoutComponent,
+    StorageComponent,
+    MainLayoutComponent,
+    NoDataComponent,
+    OutfitVaultComponent
   ],
   imports: [
     BrowserModule,
@@ -141,7 +162,11 @@ import { SpiritTypePipe } from './pipes/spirit-type.pipe';
     HttpClientModule,
     NgbModule,
     LayoutModule,
-    MatIconModule
+    MatIconModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   exports: [
     ItemIconComponent

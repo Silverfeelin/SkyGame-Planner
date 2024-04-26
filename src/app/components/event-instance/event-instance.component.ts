@@ -10,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-event-instance',
@@ -39,6 +40,7 @@ export class EventInstanceComponent implements OnDestroy {
     private readonly _debugService: DebugService,
     private readonly _eventService: EventService,
     private readonly _iapService: IAPService,
+    private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
@@ -68,6 +70,8 @@ export class EventInstanceComponent implements OnDestroy {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.instance = this._dataService.guidMap.get(guid!) as IEventInstance;
+    this._titleService.setTitle(this.instance.event?.name ?? 'Event Instance');
+
     this.state = DateHelper.getStateFromPeriod(this.instance.date, this.instance.endDate);
     this.shops = this.instance.shops ? [...this.instance.shops] : undefined;
 

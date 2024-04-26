@@ -1,53 +1,71 @@
+:root {
+  --hue: 240;
+  --saturation: 17%;
+}
+
+:root[data-theme=""] {
+  --background: url(/assets/game/background/isle.webp);
+}
+
 // Variables
 :root {
   --color: #fff;
   --color-accent: #999;
   --color-active: var(--color-new);
   --color-attention: #49ffea;
-  --color-background: hsla(240, 17%, 12%, 0.8);
-  --color-background-solid: hsl(240, 17%, 15%);
-  --color-background-solid-light: hsl(240, 17%, 25%);
-  --color-border: hsla(240, 17%, 8%, 0.5);
-  --color-border-solid: hsl(240, 17%, 15%);
-  --color-border-highlight: hsl(240, 17%, 35%);
-  --color-button-background: hsla(240, 17%, 12%, 0.8);
-  --color-button-hover-background: hsla(240, 17%, 25%, 0.8);
-  --color-card-background: hsla(240, 17%, 15%, 0.35);
-  --color-card-header-background: hsla(240, 17%, 12%, 0.75);
-  --color-card-solid-header-background: hsla(240, 17%, 20%);
-  --color-card-solid-background: hsl(240, 17%, 15%);
-  --color-cost-border: hsl(240, 17%, 40%);
+  --color-background: hsla(var(--hue), var(--saturation), 12%, 0.8);
+  --color-background-solid: hsl(var(--hue), var(--saturation), 15%);
+  --color-background-solid-light: hsl(var(--hue), var(--saturation), 25%);
+  --color-border: hsla(var(--hue), var(--saturation), 8%, 0.5);
+  --color-border-solid: hsl(var(--hue), var(--saturation), 15%);
+  --color-border-highlight: hsl(var(--hue), var(--saturation), 35%);
+  --color-button-background: hsla(var(--hue), var(--saturation), 12%, 0.8);
+  --color-button-hover-background: hsla(var(--hue), var(--saturation), 25%, 0.8);
+  --color-button-solid-background: hsla(var(--hue), var(--saturation), 12%, 1);
+  --color-button-solid-hover-background: hsla(var(--hue), var(--saturation), 25%, 1);
+  --color-card-background: hsla(var(--hue), var(--saturation), 15%, 0.35);
+  --color-card-header-background: hsla(var(--hue), var(--saturation), 12%, 0.75);
+  --color-card-solid-header-background: hsla(var(--hue), var(--saturation), 20%);
+  --color-card-solid-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-cost-border: hsl(var(--hue), var(--saturation), 40%);
+  --color-success: #fff;
+  --color-success-accent: #3b9d3b;
+  --color-success-background: #185a18;
+  --color-success-card-background: #185a1880;
   --color-danger: #fff;
   --color-danger-accent: #9d3b3b;
   --color-danger-background: #5a1818;
   --color-danger-card-background: #5a181880;
+  --color-warning-accent: #ff852b;
   --color-expired: #b7b7b7;
   --color-favourite: #ffcf00;
   --color-highlight: #d28efd;
-  --color-image-inset: hsla(240, 17%, 12%, 0.8);
+  --color-image-inset: hsla(var(--hue), var(--saturation), 12%, 0.8);
   --color-input-border: var(--color-border-highlight);
   --color-item: #828282;
   --color-item-active: #c5b167;
-  --color-link: hsl(240, 75%, 85%);
-  --color-link-hover: hsl(240, 75%, 75%);
+  --color-link: hsl(var(--hue), 75%, 85%);
+  --color-link-hover: hsl(var(--hue), 75%, 75%);
   --color-link-visited: hsl(280, 50%, 70%);
-  --color-menu-background: hsla(240, 17%, 15%, 0.6);
-  --color-menu-border: hsl(240, 17%, 80%);
-  --color-menu-item-active-background: hsl(240, 17%, 18%);
+  --color-menu-background: hsla(var(--hue), var(--saturation), 15%, 0.6);
+  --color-menu-border: hsl(var(--hue), var(--saturation), 80%);
+  --color-menu-item-active-background: hsl(var(--hue), var(--saturation), 18%);
   --color-menu-item-background: transparent;
-  --color-menu-unfold-background: hsl(240, 17%, 25%);
-  --color-menu-unfold-border: hsl(240, 17%, 45%);
+  --color-menu-unfold-background: hsl(var(--hue), var(--saturation), 25%);
+  --color-menu-unfold-border: hsl(var(--hue), var(--saturation), 45%);
   --color-progress-background: #0e2b2c;
   --color-progress-fill: #256c6f;
   --color-progress-full: #007300;
-  --color-scroll-thumb: #1f1f2c;
-  --color-scroll-track: #37374C;
-  --color-table-header-background: hsla(240, 17%, 3%, 0.75);
-  --color-tree-background: hsla(240, 17%, 15%, 0.5);
-  --color-tree-footer-background: hsla(240, 17%, 15%, 0.8);
-  --color-tree-footer-border: hsl(240, 17%, 40%);
+  --color-scroll-thumb: hsl(var(--hue), var(--saturation), 15%);
+  --color-scroll-thumb-border: hsl(var(--hue), var(--saturation), 30%);
+  --color-scroll-track: hsl(var(--hue), var(--saturation), 25%);
+  --color-scroll-track-border: hsl(var(--hue), var(--saturation), 45%);
+  --color-table-header-background: hsla(var(--hue), var(--saturation), 3%, 0.75);
+  --color-tree-background: hsla(var(--hue), var(--saturation), 15%, 0.5);
+  --color-tree-footer-background: hsla(var(--hue), var(--saturation), 15%, 0.8);
+  --color-tree-footer-border: hsl(var(--hue), var(--saturation), 40%);
   --color-tree-line: #fff;
-  --color-tree-unlock-background: hsla(240, 17%, 15%, 0.8);
+  --color-tree-unlock-background: hsla(var(--hue), var(--saturation), 15%, 0.8);
   --color-unlock-check: var(--color-new);
   --color-unlock-check-background: #01340199;
   --color-unlock-check-ref: var(--color-old);
@@ -63,8 +81,8 @@
   --color-wing-buff: #feff87;
   --color-seasonal: #fdab2b;
 
-  --background: url(/assets/game/background/isle.webp);
-  --background-filter: blur(4px) brightness(0.8);
+  --background-filter: blur(0px) brightness(0.8);
+  --backdrop-blur: blur(8px);
 
   --shadow: 0px 0px 5px 2px;
   --shadow-attention: 0px 0px 5px 2px var(--color-attention);
@@ -103,4 +121,49 @@
     --menu-width: 200px;
   }
 }
+// #endregion
+
+// #region Themes
+
+:root[data-theme="cozy"] {
+  --hue: 140;
+  --saturation: 20%;
+
+  --background: url(/assets/game/realms/Aviary.webp);
+}
+
+:root[data-theme="peaks"] {
+  --hue: 330;
+  --saturation: 17%;
+  --color-highlight: #f55dd4;
+
+  --background: url(/assets/game/background/peaks.webp);
+}
+
+:root[data-theme="reef"] {
+  --hue: 230;
+  --saturation: 17%;
+
+  --background: url(/assets/game/background/reef.webp);
+}
+
+:root[data-theme="cold"] {
+  --hue: 190;
+  --saturation: 0%;
+
+  --background: url(/assets/game/background/village.webp);
+}
+
+:root[data-theme="sandy"] {
+  --hue: 25;
+  --saturation: 40%;
+
+  --background: url(/assets/game/background/oasis.webp);
+}
+
+:root[data-theme="dark"] {
+  --hue: 240;
+  --saturation: 0%;
+}
+
 // #endregion

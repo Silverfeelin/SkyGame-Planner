@@ -20,21 +20,21 @@
       ]
     },
     {
+      "guid": "asYb2Serjg",
+      "type": "Store",
+      "name": "Premium Candle Store",
+      "permanent": true,
+      "iaps": [
+        "c4cZcnuZPk"
+      ]
+    },
+    {
       "guid": "QtpcAqvc4g",
       "type": "Store",
       "name": "Premium Candle Store (Switch)",
       "permanent": true,
       "iaps": [
         "1HjO9K58mP"
-      ]
-    },
-    {
-      "guid": "asYb2Serjg",
-      "type": "Store",
-      "name": "Premium Candle Store (PS)",
-      "permanent": true,
-      "iaps": [
-        "c4cZcnuZPk"
       ]
     },
     {
@@ -67,6 +67,20 @@
         "Q0Cze2DKAF",
         "frvgJDX_Cu"
       ]
+    },
+    {
+      "guid": "HY4LWwN4QY",
+      "type": "Object",
+      "name": "Aviary Event Store",
+      "permanent": true,
+      "itemList": "PLIrclx0V4"
+    },
+    {
+      "guid": "Vrrbqd2iPV",
+      "type": "Object",
+      "name": "Aviary Event Store (Steam)",
+      "permanent": true,
+      "itemList": "6AS-92sc6t"
     },
     // #endregion
     // #region Season of The Little Prince
@@ -133,6 +147,18 @@
       ]
     },
     // #endregion
+
+    // #region Nesting Furniture
+    {
+      "guid": "he4MHA7_uC",
+      "type": "Object",
+      "name": "Nesting Workshop Counter",
+      "permanent": true,
+      "itemList": "AKNI67tVW-"
+    },
+    // #endregion
+
+
     // #region Days of Fortune (2021)
     {
       "guid": "cgSX8-JQkw",
@@ -348,6 +374,26 @@
       "iaps": [
         "zwPqSQZWLt",
         "mEvjH3h1gv"
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2024)
+    {
+      "guid": "Qwm9ceRSki",
+      "type": "Store",
+      "iaps": [
+        "BcxdW-iTA6"
+      ]
+    },
+    {
+      "guid": "zvuqUyGcUl",
+      "type": "Object",
+      "name": "Days of Bloom Crate",
+      "iaps": [
+        "15aenJbpNM",
+        "Ko_ViiBli0",
+        "1ryX2u1XO3",
+        "SBBe6Iy8P3",
       ]
     },
     // #endregion
@@ -867,6 +913,18 @@
       "name": "Wings of AURORA Mannequin",
       "iaps": [
         "Nn_ORL__wP"
+      ]
+    },
+    // #endregion
+    // #region Cinnamoroll Pop-Up Cafe (2024)
+    {
+      "guid": "hfXFjKVeYU",
+      "type": "Store",
+      "iaps": [
+        "GB3wiXnerG",
+        "BbjYVEd3I9",
+        "GkNjB8_Kjq",
+        "hTvibgWUst"
       ]
     },
     // #endregion

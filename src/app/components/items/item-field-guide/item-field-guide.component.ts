@@ -17,7 +17,7 @@ export class ItemFieldGuideComponent {
     ItemType.Outfit, ItemType.Shoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.Hat,
-    ItemType.Cape, ItemType.Held, ItemType.Prop
+    ItemType.Cape, ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
 
   typeItems: { [key: string]: Array<{ item: IItem, nav?: INavigationTarget }> } = {};

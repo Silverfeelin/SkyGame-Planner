@@ -108,20 +108,22 @@ const nanoid10 = () => nanoid(10);
 
   const activeNext = () => {
     switch (active) {
+      case 'id': active = 'name'; break;
       case 'name': active = 'type'; break;
       case 'type': active = 'icon'; break;
       case 'icon': active = 'preview'; break;
-      case 'preview': active = 'name'; break;
+      case 'preview': active = 'id'; break;
     }
     showActive();
   };
 
   const activePrev = () => {
     switch (active) {
-      case 'name': active = 'preview'; break;
+      case 'name': active = 'id'; break;
       case 'type': active = 'name'; break;
       case 'icon': active = 'type'; break;
       case 'preview': active = 'icon'; break;
+      case 'id': active = 'preview'; break;
     }
     showActive();
   };
@@ -149,6 +151,13 @@ const nanoid10 = () => nanoid(10);
     if (e.key.startsWith('Arrow')) {
       e.preventDefault();
       e.stopImmediatePropagation();
+    }
+
+    // Pagedown
+    if (active === 'id') {
+      const inc = e.key === 'ArrowUp' ? 1 : e.key === 'ArrowDown' ? -1 : 0;
+      document.getElementById('s-id').value = (+document.getElementById('s-id').value + inc) || 0;
+      if (inc) return;
     }
 
     switch (e.key) {
@@ -186,6 +195,7 @@ const nanoid10 = () => nanoid(10);
       <div>Preview: <span id="s-preview"></span></div>
     </div>
     <div>
+      <button type="button" data-active="id" onclick="sSetActive(this)">ID</button>
       <button type="button" data-active="name" onclick="sSetActive(this)">Copy name</button>
       <button type="button" data-active="type" onclick="sSetActive(this)">Copy type</button>
       <button type="button" data-active="icon" onclick="sSetActive(this)">Copy icon</button>
@@ -195,4 +205,7 @@ const nanoid10 = () => nanoid(10);
     </div>
   </div>
   `);
+
+  document.getElementById('s-id').value = /*S-ID*/2141;
+  sSetActive(document.querySelector('button[data-active="name"]'));
 })();

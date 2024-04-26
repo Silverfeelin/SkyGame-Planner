@@ -11,7 +11,7 @@
       </a>
     </div>
     <div class="btns-top btn-top-request" *ngIf="requesting">
-      <a class="button" href="/" data-step="904" data-position="bottom-right-aligned">
+      <a class="button" [routerLink]="'/'" data-step="904" data-position="bottom-right-aligned">
         <mat-icon class="menu-icon">home</mat-icon>
         <span class="menu-label">Home</span>
       </a>
@@ -29,7 +29,7 @@
       <div class="mt" data-step="0" data-position="bottom-left-aligned">
         <ng-container *ngIf="requesting">
           Please visit the
-          <a class="button" href="/outfit-request/closet" *ngIf="requesting" data-step="0" data-position="bottom-right-aligned">
+          <a class="button" [routerLink]="'/outfit-request/closet'" *ngIf="requesting" data-step="0" data-position="bottom-right-aligned">
             <mat-icon class="menu-icon">checkroom</mat-icon>
             <span class="menu-label">Closet</span>
           </a>
@@ -37,7 +37,7 @@
         </ng-container>
         <ng-container *ngIf="!requesting">
           Please visit the
-          <a class="button" href="/outfit-request/request" *ngIf="!requesting" data-step="0" data-position="bottom-right-aligned">
+          <a class="button" [routerLink]="'/outfit-request/request'" *ngIf="!requesting" data-step="0" data-position="bottom-right-aligned">
             <mat-icon class="menu-icon">add</mat-icon>
             <span class="menu-label">Request</span>
           </a>
@@ -170,29 +170,99 @@
 </div>
 
 <!-- TS items -->
-<div class="sky-card mt" *ngIf="ts">
-  <div class="sky-card-header">
+<app-card class="mt" *ngIf="ts" [foldable]="true" [folded]="true">
+  <div header>
     <h4 class="h5 mb-0 ts-title">
       <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
       <span *ngIf="tsState === 'future'">Upcoming Traveling Spirit</span>
       <span *ngIf="tsState === 'active'">{{ ts.spirit.name }}</span>
     </h4>
   </div>
-  <div class="sky-card-body">
-    <div class="sky-flex flex-wrap gap-half">
+  <div class="sky-flex flex-wrap gap-half">
       <ng-container *ngFor="let item of tsItems">
         <div class="closet-item-container d-inline-block">
           <div class="closet-item" (click)="toggleItem(item)"
-          [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
-          [class.highlight]="searchResults && searchResults[item.guid]"
-        >
+            [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+            [class.highlight]="searchResults && searchResults[item.guid]"
+          >
             <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
           </div>
         </div>
       </ng-container>
     </div>
+</app-card>
+
+<!-- RS items -->
+<app-card class="mt" *ngIf="rs" [foldable]="true" [folded]="true">
+  <div header>
+    <h4 class="h5 mb-0 ts-title">
+      <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
+      <span>{{ rs.name }}</span>
+    </h4>
   </div>
-</div>
+  <div class="sky-flex flex-wrap gap-half">
+    <ng-container *ngFor="let s of rsSpirits; let si = index;">
+      <div class="sky-flex flex-cols flex-align-start gap-half">
+        <div class="container pad-0 pl pr ws-nw">{{ s.returning.spirit.name }}</div>
+        <div class="sky-flex flex-wrap gap-half">
+          <ng-container *ngFor="let item of s.items">
+            <div class="closet-item-container d-inline-block">
+              <div class="closet-item" (click)="toggleItem(item)"
+                [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+                [class.highlight]="searchResults && searchResults[item.guid]"
+              >
+                <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</app-card>
+<!-- Event items -->
+<app-card class="mt" *ngFor="let event of events" [foldable]="true" [folded]="true">
+  <div header>
+    <h4 class="h5 mb-0">
+      {{ event.instance.event.name }}
+    </h4>
+  </div>
+
+  <div class="sky-flex flex-wrap gap-half">
+    <div class="sky-flex flex-cols flex-align-start gap-half">
+      <div class="container pad-0 pl pr ws-nw">In-game currency</div>
+      <div class="sky-flex flex-wrap gap-half">
+        <ng-container *ngFor="let item of event.items">
+          <div class="closet-item-container d-inline-block">
+            <div class="closet-item" (click)="toggleItem(item)"
+              [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+              [class.highlight]="searchResults && searchResults[item.guid]"
+            >
+              <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="sky-flex flex-cols flex-align-start gap-half">
+      <div class="container pad-0 pl pr ws-nw">In-App Purchase</div>
+      <div class="sky-flex flex-wrap gap-half">
+        <ng-container *ngFor="let item of event.iapItems">
+          <div class="closet-item-container d-inline-block">
+            <div class="closet-item" (click)="toggleItem(item)"
+              [class.r]="selected.r[item.guid]"  [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
+              [class.highlight]="searchResults && searchResults[item.guid]"
+            >
+              <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+</app-card>
+
 
 <!-- Item list -->
 <div class="sky-card mt" data-step="1" data-position="top-left-aligned">
@@ -295,6 +365,7 @@
       <div class="closet-grid-section-divider"></div>
       <div class="closet-grid-section">
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Held' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Furniture' }"></ng-container>
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Prop' }"></ng-container>
       </div>
     </div>

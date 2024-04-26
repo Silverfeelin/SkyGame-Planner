@@ -1,0 +1,276 @@
+[
+  {
+    "id": 1851,
+    "guid": "4D33RG4tNB",
+    "type": "Cape",
+    "name": "Spooky Bat Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Icon_cape_bat-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Bat_cape_back_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape"
+    },
+    "order": 656
+  },
+  {
+    "id": 1852,
+    "guid": "Dlp71JdHg2",
+    "type": "Hair",
+    "name": "Hungry Pumpkin Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Icon_hair_mischief_pumpkin.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Hair_halloween_pumpkin.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Hungry_Pumpkin_Hat"
+    },
+    "order": 364
+  },
+  {
+    "id": 1853,
+    "guid": "cMNnwUbQed",
+    "type": "Hair",
+    "name": "Mischief Witch Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Icon_hair_mischief_witch_hat.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Crooked_witch_hat_hair_v2.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hat"
+    },
+    "order": 365
+  },
+  {
+    "id": 1854,
+    "guid": "gEGMIX0DMp",
+    "type": "Cape",
+    "name": "Mischief Web Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_cape_spider-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Spider_cape_back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape"
+    },
+    "order": 657
+  },
+  {
+    "id": 1855,
+    "guid": "VFeHTgImrJ",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1856,
+    "guid": "Wa9V43Etw5",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1857,
+    "guid": "9G7XqSuA41",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 1858,
+    "guid": "MyVdnRoxY0",
+    "type": "Furniture",
+    "name": "Mischief Spooky Dining Set",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Icon_2021_mischief_table.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Prop_2021_mischief_table_open.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spooky_Dining_Set"
+    },
+    "order": 503
+  },
+  {
+    "id": 1859,
+    "guid": "-HtIAPjYsa",
+    "type": "Cape",
+    "name": "Mischief Withered Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_leaf_cape-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_2021_mischief_leaf_cape.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Cape"
+    },
+    "order": 658
+  },
+  {
+    "id": 1860,
+    "guid": "si_8YhNtmr",
+    "type": "Hair",
+    "name": "Mischief Witch Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_2021_mischief_long_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Hair_2021_mischief_long_hair.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hair"
+    },
+    "order": 367
+  },
+  {
+    "id": 1861,
+    "guid": "nMt5KsLO6Y",
+    "type": "Prop",
+    "name": "Mischief Pumpkin Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Icon_2021_mischief_pumpkin_prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Days-of-mischief-2021-pumpkin-prop-closeup.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Pumpkin_Prop"
+    },
+    "order": 504
+  },
+  {
+    "id": 1862,
+    "guid": "ARZC1Eg2jx",
+    "type": "Hair",
+    "name": "Mischief Spider Quiff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Icon_2021_mischief_iap_hair.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Hair_2021_mischief_web_hair_iap.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spider_Quiff"
+    },
+    "order": 368
+  },
+  {
+    "id": 1863,
+    "guid": "CZ4aNN-JZV",
+    "type": "Outfit",
+    "name": "Mischief Witch Jumper",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Icon_2021_mischief_jumper.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Leggings_2021_mischief_jumper_iap.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
+    },
+    "order": 56
+  },
+  {
+    "id": 1864,
+    "guid": "h-fwwT4T5y",
+    "type": "Shoes",
+    "name": "Mischief Witch Jumper Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Mischief-Witch-Jumper-Shoes-icon-Credit-Morybel.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Mischief-Witch-Jumper-Shoes.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
+    },
+    "order": 69
+  },
+  {
+    "id": 1865,
+    "guid": "evuvua13dC",
+    "type": "FaceAccessory",
+    "name": "Mischief Withered Antlers",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Hair_2021_mischief_headpiece_iap.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Antlers"
+    },
+    "order": 226
+  },
+  {
+    "id": 1866,
+    "guid": "MnzYzRK9sY",
+    "type": "Hair",
+    "name": "Mischief Tufted Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Days-of-Mischief-Cat-Hair-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Days-of-Mischief-2022-Cat-hairstyle.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Tufted_Hair"
+    },
+    "order": 366
+  },
+  {
+    "id": 1867,
+    "guid": "QeNQhxg3mv",
+    "type": "Mask",
+    "name": "Cat Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Mischief-Cat-Mask-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Days-of-Mischief-Cat-Mask.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Mask"
+    },
+    "order": 193
+  },
+  {
+    "id": 1868,
+    "guid": "pG1_D61KMT",
+    "type": "Cape",
+    "name": "Cat Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Cat-Cape-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Days-of-Mischief-2022-Cat-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape"
+    },
+    "order": 659
+  },
+  {
+    "id": 1869,
+    "guid": "nz4W7amLch",
+    "type": "Prop",
+    "name": "Feline Familiar",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Days-of-Mischief-Cat-Prop-Icon-Morybel-0146.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Days-of-Mischief-Backpack-Cat-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Feline_Familiar_Prop"
+    },
+    "order": 505
+  },
+  {
+    "id": 1870,
+    "guid": "bcKjyS-_p3",
+    "type": "Cape",
+    "name": "Mischief Gossamer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
+    "order": 660
+  },
+  {
+    "id": 1871,
+    "guid": "txwX8D1yKh",
+    "type": "Cape",
+    "name": "Mischief Crabula Cloak",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
+    "order": 661
+  },
+  {
+    "id": 1872,
+    "guid": "-8P_vR8bBw",
+    "type": "Mask",
+    "name": "Mischief Crabula Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Crabula-Mask-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Mischief-Crabula-Mask.png",
+    "order": 194
+  },
+  {
+    "id": 1873,
+    "guid": "p-lbmuULv5",
+    "type": "Outfit",
+    "name": "Mischief Goth Garment",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Mischief-Goth-Garment-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Mischief-Goth-Garment.png",
+    "order": 57
+  },
+  {
+    "id": 1874,
+    "guid": "Aq3FhT_OYr",
+    "type": "Shoes",
+    "name": "Mischief Goth Boots Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Mischief-Goth-Boots-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Mischief-Goth-Boots.png",
+    "order": 70
+  },
+  {
+    "id": 1875,
+    "guid": "I6OEa38GXJ",
+    "type": "Hat",
+    "name": "Mischief Crabkin Accessory Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
+    "order": 408
+  },
+  {
+    "id": 1950,
+    "guid": "HsHRfJQ9_A",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  }
+]

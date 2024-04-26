@@ -26,4 +26,13 @@
     ],
     "description": "Sky card body"
   },
+  "Container": {
+    "prefix": "@container",
+    "body": [
+      "<div class=\"container\">",
+      "\t$1",
+      "</div>"
+    ],
+    "description": "Container"
+  },
 }

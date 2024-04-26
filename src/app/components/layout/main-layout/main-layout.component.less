@@ -1,0 +1,60 @@
+.loader {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.loader-loading {
+  opacity: 1;
+}
+
+.loader-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.save-indicator {
+  @size: 32px;
+  @pad: 4px;
+
+  position: fixed;
+  z-index: 99999;
+  background: var(--color-card-solid-background);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius);
+  padding: @pad;
+  top: var(--padding-content-half);
+  right: var(--padding-content-half);
+  box-sizing: content-box;
+  width: @size;
+  height: @size;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  width: @size;
+
+  mat-icon {
+    position: absolute;
+    top: @pad;
+    right: @pad;
+    font-size: @size;
+    width: @size;
+    height: @size;
+  }
+}
+
+.save-indicator.show-save {
+  opacity: 1;
+}
+
+.pulse {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(0.4); }
+  100% { filter: brightness(1); }
+}
