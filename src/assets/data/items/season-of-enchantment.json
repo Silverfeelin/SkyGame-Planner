@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 208
+    "order": 209
   },
   {
     "id": 379,
@@ -36,7 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 292
+    "order": 291
   },
   {
     "id": 380,
@@ -163,7 +163,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask"
     },
-    "order": 148
+    "order": 149
   },
   {
     "id": 927,
@@ -213,7 +213,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Hair"
     },
-    "order": 286,
+    "order": 285,
     "group": "SeasonPass"
   },
   {
@@ -279,7 +279,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask"
     },
-    "order": 149,
+    "order": 150,
     "group": "SeasonPass"
   },
   {
@@ -315,7 +315,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Hair"
     },
-    "order": 290
+    "order": 289
   },
   {
     "id": 942,
@@ -342,7 +342,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape"
     },
-    "order": 579,
+    "order": 586,
     "group": "SeasonPass"
   },
   {
@@ -401,7 +401,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Hair"
     },
-    "order": 289
+    "order": 288
   },
   {
     "id": 951,
@@ -451,7 +451,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape"
     },
-    "order": 577,
+    "order": 584,
     "group": "SeasonPass"
   },
   {
@@ -517,7 +517,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
     },
-    "order": 150,
+    "order": 151,
     "group": "SeasonPass"
   },
   {
@@ -553,7 +553,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Hair"
     },
-    "order": 287
+    "order": 286
   },
   {
     "id": 966,
@@ -626,7 +626,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Hair"
     },
-    "order": 288,
+    "order": 287,
     "group": "SeasonPass"
   },
   {
@@ -662,7 +662,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape"
     },
-    "order": 578
+    "order": 585
   },
   {
     "id": 977,
@@ -724,7 +724,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask"
     },
-    "order": 151
+    "order": 152
   },
   {
     "id": 984,
@@ -773,7 +773,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Hair"
     },
-    "order": 291,
+    "order": 290,
     "group": "SeasonPass"
   },
   {
@@ -786,7 +786,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape"
     },
-    "order": 580
+    "order": 587
   },
   {
     "id": 990,
@@ -828,6 +828,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Prop"
     },
-    "order": 455
+    "order": 460
   }
 ]

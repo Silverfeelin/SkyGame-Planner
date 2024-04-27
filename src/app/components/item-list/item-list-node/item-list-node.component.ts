@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, TemplateRef } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
 import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { EventService } from 'src/app/services/event.service';
@@ -13,6 +13,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() node!: IItemListNode;
   @Input() highlight?: boolean;
+  @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
 
   cost!: number;
   currencyIcon!: string;

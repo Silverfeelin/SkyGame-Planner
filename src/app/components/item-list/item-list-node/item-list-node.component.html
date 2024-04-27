@@ -11,6 +11,7 @@
       <mat-icon [svgIcon]="currencyIcon" [class]="currencyIconClass"></mat-icon>
     }
   </div>
+  @if (nodeOverlayTemplate) { <ng-container [ngTemplateOutlet]="nodeOverlayTemplate" [ngTemplateOutletContext]="{ $implicit: node }"></ng-container> }
 </div>
 
 <ng-template #itemHover>

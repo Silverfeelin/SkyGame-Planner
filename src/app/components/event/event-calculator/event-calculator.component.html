@@ -181,22 +181,60 @@
     </div>
   </div>
 
+  @if (shops.length) {
+    <div class="sky-card mt">
+      <div class="sky-card-body">
+        <div class="sky-flex scroll-x tree-scroll">
+          @for (shop of shops; track shop.guid) {
+            <app-item-list [itemList]="shop.itemList!" [nodeOverlayTemplate]="tShopNode"></app-item-list>
+          }
+        </div>
+      </div>
+    </div>
+  }
+
+  @if (spirits.length) {
   <div class="sky-card mt">
     <!-- <div class="sky-card-header">
       <h1 class="h2 mb-0"></h1>
     </div> -->
     <div class="sky-card-body">
-
-      <div class="sky-flex scroll-x tree-scroll">
-        @for (spiritInstance of spirits; track spiritInstance.guid) {
-          <app-spirit-tree [tree]="spiritInstance.tree" [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
-            [showButtons]="false" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
-          </app-spirit-tree>
-        }
+        <div class="sky-flex scroll-x tree-scroll">
+          @for (spiritInstance of spirits; track spiritInstance.guid) {
+            <app-spirit-tree [tree]="spiritInstance.tree" [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
+              [showButtons]="false" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
+            </app-spirit-tree>
+          }
+        </div>
       </div>
     </div>
-  </div>
+  }
 }
+
+<ng-template #tShopNode let-node>
+  <div class="list-node-show-hover"
+  [class.node-have]="node.item?.unlocked" [class.node-want]="wantListNodes[node.guid]"
+  (click)="toggleButtons(node)"
+>
+  <div class="node-overlay" [class.o-1]="nodeShowButtons === node"
+  >
+    <div class="list-node-buttons" [class.node-align-top]="firstNodes[node.guid]">
+      <button class="btn-want" type="button" (click)="wantListNode(node, $event)">
+        <mat-icon class="calc-button-icon" [class.c-check]="wantListNodes[node.guid]">
+          {{ wantListNodes[node.guid] ? 'check' : 'close' }}
+        </mat-icon>
+        <span class="calc-button-label">Want</span>
+      </button><br/>
+      <button class="btn-have" type="button" (click)="haveListNode(node, $event)" >
+        <mat-icon class="calc-button-icon" [class.c-check]="node.item?.unlocked">
+          {{ node.item?.unlocked ? 'check' : 'close' }}
+        </mat-icon>
+        <span class="calc-button-label">Have</span>
+      </button>
+    </div>
+  </div>
+</div>
+</ng-template>
 
 <ng-template #tNode let-node>
   <div class="node-show-hover"

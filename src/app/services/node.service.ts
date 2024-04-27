@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { INode } from '../interfaces/node.interface';
 import { StorageService } from './storage.service';
 import { EventService } from './event.service';
+import { IItemListNode } from '../interfaces/item-list.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class NodeService {
     private readonly _storageService: StorageService
   ) { }
 
-  unlock(node: INode): boolean {
+  unlock(node: INode | IItemListNode): boolean {
     if (!node?.item) { return false; }
     const guids: Array<string> = [];
 
@@ -26,7 +27,7 @@ export class NodeService {
     guids.push(node.guid);
 
     // Unlock hidden items.
-    node.hiddenItems?.forEach(item => {
+    (node as INode).hiddenItems?.forEach(item => {
       item.unlocked = true;
       guids.push(item.guid);
     });
@@ -40,12 +41,12 @@ export class NodeService {
     return true;
   }
 
-  lock(node: INode): boolean {
+  lock(node: INode | IItemListNode): boolean {
     if (!node?.item) { return false; }
     const guids: Array<string> = [];
 
     // Get all associated items.
-    const hiddenItems = node.hiddenItems || [];
+    const hiddenItems = (node as INode).hiddenItems || [];
     const items = [node.item, ...hiddenItems];
 
     // Remove unlock from items.
