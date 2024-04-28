@@ -85,12 +85,8 @@ export class SeasonCalculatorComponent implements OnInit {
 
     if (node.unlocked || node.item?.unlocked) {
       this._nodeService.lock(node);
-      this.candleCount += node.sc || 0;
-      this.candleCount = Math.min(999, this.candleCount);
     } else {
       this._nodeService.unlock(node);
-      this.candleCount -= node.sc || 0;
-      this.candleCount = Math.max(0, this.candleCount);
     }
 
     this.candleCountChanged();

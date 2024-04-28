@@ -129,12 +129,8 @@ export class EventCalculatorComponent {
 
     if (node.unlocked || node.item?.unlocked) {
       this._nodeService.lock(node);
-      this.currencyCount += node.ec || 0;
-      this.currencyCount = Math.min(999, this.currencyCount);
     } else {
       this._nodeService.unlock(node);
-      this.currencyCount -= node.ec || 0;
-      this.currencyCount = Math.max(0, this.currencyCount);
     }
 
     this.currencyCountChanged();
