@@ -132,9 +132,12 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   importData(data: IStorageExport): void {
     this._lastDate = data.date ? DateTime.fromISO(data.date) : DateTime.now();
     this._syncDate = this._lastDate;
-    this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
-    this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
-    this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
+    const unlocked = data.unlocked || undefined;
+    const wingedLights = data.wingedLights || undefined;
+    const favourites = data.favourites || undefined;
+    this._unlocked = new Set(unlocked?.split(',') ?? []);
+    this._wingedLights = new Set(wingedLights?.split(',') ?? []);
+    this._favourites = new Set(favourites?.split(',') ?? []);
     this.debounceSave();
   }
 
