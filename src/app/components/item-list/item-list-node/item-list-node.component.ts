@@ -13,6 +13,7 @@ import { StorageService } from 'src/app/services/storage.service';
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() node!: IItemListNode;
   @Input() highlight?: boolean;
+  @Input() opaque?: boolean;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
 
   cost!: number;

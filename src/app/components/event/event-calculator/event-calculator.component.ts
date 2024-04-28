@@ -311,7 +311,7 @@ export class EventCalculatorComponent {
   private calculate(): void {
     const wantValues = Object.values(this.wantNodes);
     const wantSet = new Set(wantValues);
-    const nodes = NodeHelper.traceMany(wantValues)
+    const nodes = NodeHelper.traceMany(wantValues);
 
     let date = DateTime.now();
     if (this.eventInstance.date > date) { date = this.eventInstance.date; }
@@ -340,13 +340,11 @@ export class EventCalculatorComponent {
       }
     }
 
-    for (const shop of this.shops) {
-      for (const item of shop.itemList!.items) {
-        if (!item.unlocked) {
-          this.currencyRequired += item.ec || 0;
-          this.candlesRequired += item.c || 0;
-          this.heartsRequired += item.h || 0;
-        }
+    for (const node of Object.values(this.wantListNodes)) {
+      if (!node.item.unlocked) {
+        this.currencyRequired += node.ec || 0;
+        this.candlesRequired += node.c || 0;
+        this.heartsRequired += node.h || 0;
       }
     }
 

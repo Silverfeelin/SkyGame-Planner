@@ -186,7 +186,7 @@
       <div class="sky-card-body">
         <div class="sky-flex scroll-x tree-scroll">
           @for (shop of shops; track shop.guid) {
-            <app-item-list [itemList]="shop.itemList!" [nodeOverlayTemplate]="tShopNode"></app-item-list>
+            <app-item-list [itemList]="shop.itemList!" [opaqueNodes]="true" [nodeOverlayTemplate]="tShopNode"></app-item-list>
           }
         </div>
       </div>
