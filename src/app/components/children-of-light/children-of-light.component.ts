@@ -1,14 +1,12 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import L, { LeafletKeyboardEvent } from 'leaflet';
-import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
-import { MapService } from 'src/app/services/map.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
 
 interface IRow {
@@ -162,15 +160,43 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   reset(): void {
     if (!confirm('Are you sure you want to reset your found Children of Light?')) { return; }
 
+    const wlGuids: Array<string> = [];
     this._dataService.wingedLightConfig.items.forEach(wl => {
       wl.unlocked = false;
-      this._storageService.removeWingedLights(wl.guid);
+      wlGuids.push(wl.guid);
     });
+    this._storageService.removeWingedLights(...wlGuids);
 
     this.unlockedCol = 0;
     this.rows.forEach(r => r.unlocked = 0);
     this.light.forEach(l => { l.marker?.setOpacity(1); });
     this.map.closePopup();
+
+    this._changeDetectorRef.markForCheck();
+  }
+
+  resetOrbit(): void {
+    if (!confirm('Did you leave Orbit? This will lock everything but the winged light from Orbit.')) { return; }
+
+    const wlGuids: Array<string> = [];
+    this._dataService.wingedLightConfig.items.forEach(wl => {
+      wl.unlocked = false;
+      wlGuids.push(wl.guid);
+    });
+    this._storageService.removeWingedLights(...wlGuids);
+
+    this.unlockedCol = 0;
+    this.rows.forEach(r => r.unlocked = 0);
+    this.light.forEach(l => { l.marker?.setOpacity(1); });
+    this.map.closePopup();
+
+    const orbitGuid = 'DvYGWvjeOC';
+    const orbitWl = this.lightMap[orbitGuid]?.wl;
+    if (orbitWl) {
+      this.toggleWingedLight(orbitWl, true);
+      this.updateMarker(orbitWl);
+      this.updateTable(orbitWl);
+    }
 
     this._changeDetectorRef.markForCheck();
   }
