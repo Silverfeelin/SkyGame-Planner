@@ -13,6 +13,7 @@ import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { TitleService } from 'src/app/services/title.service';
 
 @Component({
@@ -46,7 +47,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   map!: L.Map;
   drawnMap = false;
   hasAreaData = false;
-  showAreas = false;
+  showAreas = localStorage.getItem('map.area.markers') === '1';
 
   private readonly _subscriptions = new SubscriptionBag();
 
@@ -69,9 +70,6 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.map = this._mapInstanceService.attach(this.mapContainer.nativeElement);
-
-    this.drawMap();
-    this.panToRealm(true);
   }
 
   ngOnDestroy(): void {
@@ -97,6 +95,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     this.showAreas = !this.showAreas;
     const layerGroup = this._mapInstanceService.getLayerGroup('area');
     this.showAreas ? layerGroup?.addTo(this.map) : layerGroup?.remove();
+    localStorage.setItem('map.area.markers', this.showAreas ? '1' : '0');
   }
 
   constellationSpiritClicked(spirit: ISpirit): void {
@@ -148,10 +147,12 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.calculateTierCosts();
 
-    if (this.map) {
-      this.drawMap();
-      this.panToRealm(false);
-    }
+    setTimeout(() => {
+      if (this.map) {
+        this.drawMap();
+        this.panToRealm(false);
+      }
+    })
 
     this._changeDetectorRef.markForCheck();
   }
@@ -186,17 +187,21 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private drawMap(): void {
-    if (this.drawnMap) { return; }
+    // Clean up previous render
+    if (this.drawnMap) {
+      this._mapInstanceService.getLayerGroup('boundary')?.remove();
+      this._mapInstanceService.getLayerGroup('area')?.remove();
+      //this._mapInstanceService.getLayerGroup('connector')?.remove();
+    }
     this.drawnMap = true;
     const mapData: IMapData = this.realm.mapData || {};
 
-    const boundaryLayers = this._mapInstanceService.createLayerGroup('boundary');
-    const areaLayers = this._mapInstanceService.createLayerGroup('area');
-    areaLayers.remove();
+    const boundaryLayers = this._mapInstanceService.createLayerGroup('boundary', this.showAreas);
+    const areaLayers = this._mapInstanceService.createLayerGroup('area', this.showAreas);
     //const connectorLayer = this._mapInstanceService.createLayerGroup('connector');
 
     if (mapData.boundary) {
-      const poly = L.polygon(mapData.boundary, { color: mapData.boundaryColor || '#0ff', weight: 1, fillOpacity: 0.05 });
+      const poly = L.polygon(mapData.boundary, { color: mapData.boundaryColor || '#ff8a00', weight: 1, fillOpacity: 0 });
       boundaryLayers.addLayer(poly);
     }
 

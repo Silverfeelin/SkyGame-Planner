@@ -16,9 +16,15 @@
 .sky-card-fold {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: 0;
+  height: 100%;
   z-index: 1;
 
+  mat-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .sky-card-body {

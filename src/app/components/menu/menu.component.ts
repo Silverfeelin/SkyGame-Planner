@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
+import { EventService } from 'src/app/services/event.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,8 +14,10 @@ export class MenuComponent {
   seasonIconUrl?: string;
   folded = false;
 
+
   constructor(
     private readonly _dataService: DataService,
+    private readonly _eventService: EventService,
     private readonly _breakpointObserver: BreakpointObserver,
     private readonly _router: Router
   ) {
@@ -37,6 +40,7 @@ export class MenuComponent {
 
   foldMenu(): void {
     this.updateFolded(!this.folded);
+    this._eventService.menuFolded.next(this.folded);
   }
 
   private updateFolded(folded: boolean): void {

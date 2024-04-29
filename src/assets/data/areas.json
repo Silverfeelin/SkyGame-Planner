@@ -71,58 +71,68 @@
     // #region Prairie
     {
       "guid": "Cmo9TPPpyH",
-      "name": "Prairie Social Area"
+      "name": "Prairie Social Area",
+      "mapData": { "position": [-410.38,238] }
     },
     {
       "guid": "z3uQqa5KVZ",
       "name": "Butterfly Fields",
       "spirits": [ "ulvP8R6C6a", "5u3TXZON81" ],
-      "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2", "fl1Z3bEx81" ]
+      "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2", "fl1Z3bEx81" ],
+      "mapData": { "position": [-403.88,194] }
     },
     {
       "guid": "V17jvM6lWL",
       "name": "Village Islands",
       "spirits": [ "48jm5EQzfU", "K3CIxcDSjq", "WFjSczlPTV", "R4ILdPamhd" ],
-      "wingedLights": [ "_SJva8zUYc", "D22kvZx25W", "4lNlq0Raah" ]
+      "wingedLights": [ "_SJva8zUYc", "D22kvZx25W", "4lNlq0Raah" ],
+      "mapData": { "position": [-395.38,165.25] }
     },
     {
       "guid": "bq6AFJ7avU",
       "name": "8-Player Puzzle Area",
       "spirits": [ "gtbbZnpLbt" ],
-      "wingedLights": [ "Sc2aim9ro1" ]
+      "wingedLights": [ "Sc2aim9ro1" ],
+      "mapData": { "position": [-380,186.88] }
     },
     {
       "guid": "JrcYJTvEhh",
       "name": "Koi Pond",
-      "wingedLights": [ "vz0IBqoGta", "RPvwKSjUXE" ]
+      "wingedLights": [ "vz0IBqoGta", "RPvwKSjUXE" ],
+      "mapData": { "position": [-381.88,154.88] }
     },
     {
       "guid": "LdFAYVlCli",
-      "name": "Prairie Temple"
+      "name": "Prairie Temple",
+      "mapData": { "position": [-372.75,155.25] }
     },
     {
       "guid": "BwpwRMfq1X",
       "name": "Prairie Caves",
       "spirits": [ "MyLI80npmW", "Q-N8n-0b8O" ],
-      "wingedLights": [ "tGV1WQd1yk", "K-eoMvklId" ]
+      "wingedLights": [ "tGV1WQd1yk", "K-eoMvklId" ],
+      "mapData": { "position": [-406.88,165.75] }
     },
     {
       "guid": "HHem4xrBb6",
       "name": "Bird's Nest",
       "spirits": [ "KM1xzU9v5P", "jncJKA4IaM", "PYsLThJYPx" ],
-      "wingedLights": [ "GNDWMxbvTD", "PBt-1vrXFA" ]
+      "wingedLights": [ "GNDWMxbvTD", "PBt-1vrXFA" ],
+      "mapData": { "position": [-383.5,206.25] }
     },
     {
       "guid": "W4xXNx8SSq",
       "name": "Sanctuary Island",
       "spirits": [ "0IoADuWn1P", "8N9cC4SvzM", "IDEim-HNOZ", "uxtR1vVL8c", "z4xqXUkx_6", "jx7koL5guD", "MEw6did3kI" ],
-      "wingedLights": [ "NIEbxjzi9w", "MzhGgNL7T0", "4Sh9Wwka_r", "saQGYqh8gS", "20LOTTTfr_", "qN0TPwjnam", "nHuasNjUrd", "cBNCxRNiPa" ]
+      "wingedLights": [ "NIEbxjzi9w", "MzhGgNL7T0", "4Sh9Wwka_r", "saQGYqh8gS", "20LOTTTfr_", "qN0TPwjnam", "nHuasNjUrd", "cBNCxRNiPa" ],
+      "mapData": { "position": [-352.25,206.25] }
     },
     {
       "guid": "aUAXUdnBge",
       "name": "Prairie Peaks",
       "spirits": [ "PN_V8C4WOq", "jh-fGKllmH", "6EywAKsW_z", "EMMZ8KSCjP", "vdv3KApSxB" ],
-      "wingedLights": [ "JU8ya-Tjjm", "FzLNyBQ5ZA", "oRmSQSKfpm" ]
+      "wingedLights": [ "JU8ya-Tjjm", "FzLNyBQ5ZA", "oRmSQSKfpm" ],
+      "mapData": { "position": [-412.38,134.5] }
     },
     // #endregion
     // #region Hidden Forest

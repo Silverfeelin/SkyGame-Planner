@@ -7,6 +7,11 @@
   </div>
 </div>
 
+<!-- Map -->
+<app-card class="mt"[foldable]="true" [folded]="!showMap" [title]="'Map'" (beforeFold)="beforeFoldMap($event)">
+  <div class="map-container" #mapContainer></div>
+</app-card>
+
 <div class="grid grid-3 mt">
   <div class="sky-card p-rel" *ngFor="let realm of visibleRealms">
     <div class="sky-card-header">

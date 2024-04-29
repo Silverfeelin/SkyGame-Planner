@@ -1,5 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import L, { LatLngExpression } from 'leaflet';
+import { EventService } from './event.service';
+import { filter } from 'rxjs';
+import { SubscriptionBag } from '../helpers/subscription-bag';
 
 export class MapDisposable {
 
@@ -8,14 +11,30 @@ export class MapDisposable {
 @Injectable({
   providedIn: 'root'
 })
-export class MapService {
+export class MapService implements OnDestroy {
   _div?: HTMLElement;
   _map?: L.Map;
   _zoom?: L.Control.Zoom;
 
+  private _subs = new SubscriptionBag();
+
+  constructor(
+    private readonly _eventService: EventService
+  ) {
+    this._subs.add(_eventService.menuFolded.subscribe(() => { this.invalidate(); }));
+  }
+
+  ngOnDestroy(): void {
+    this._subs.unsubscribe();
+  }
+
   getMap(): L.Map {
     if (!this._map) { this._map = this.initialize(); }
     return this._map;
+  }
+
+  invalidate(): void {
+    this._map?.invalidateSize();
   }
 
   /** Attaches the map by moving it into an element. */
@@ -67,9 +86,9 @@ export class MapService {
       attributionControl: false,
       crs: L.CRS.Simple,
       minZoom: 0,
-      maxZoom: 3,
+      maxZoom: 4,
       center: [-270, 270],
-      maxBounds: [[100, -100], [-640, 640]],
+      maxBounds: [[270, -270], [-810, 810]],
       zoomControl: false
     }).setView([-270,270], 1);
 
