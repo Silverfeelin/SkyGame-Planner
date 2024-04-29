@@ -30,7 +30,13 @@ export class RealmsComponent implements AfterViewInit {
     this.realms = _dataService.realmConfig.items;
     this.visibleRealms = this.realms.filter(r => !r.hidden);
 
-    this.showMap = _route.snapshot.queryParamMap.get('map') === '1';
+    if (_route.snapshot.queryParamMap.has('map')) {
+      this.showMap = _route.snapshot.queryParamMap.get('map') === '1';
+    } else {
+      this.showMap = localStorage.getItem('realm.map.folded') !== '1';
+      this.updateMapUrl(!this.showMap);
+    }
+
     this._mapInstanceService.on('moveend', () => { this.onMoveEnd(); });
   }
 
@@ -82,8 +88,13 @@ export class RealmsComponent implements AfterViewInit {
   }
 
   beforeFoldMap(folded: boolean): void {
+    localStorage.setItem('realm.map.folded', folded ? '1' : '0');
+    this.updateMapUrl(folded);
+  }
+
+  private updateMapUrl(folded: boolean): void {
     const url = new URL(location.href);
-    folded ? url.searchParams.delete('map') : url.searchParams.set('map', '1');
+    url.searchParams.set('map', folded ? '0' : '1');
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 

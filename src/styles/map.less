@@ -7,6 +7,33 @@ body > .map { display: none !important; }
   width: 100%;
 }
 
+.map-control {
+  position: absolute;
+  z-index: 9999;
+  padding: var(--padding-content);
+  color: var(--color-map-tooltip);
+  background:  var(--color-map-tooltip-background);
+  border-radius: var(--border-radius);
+  width: 32px;
+  height: 32px;
+
+  mat-icon {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+  }
+}
+
+.map-control-tl {
+  top: var(--padding-content);
+  left: var(--padding-content);
+}
+
+.map-control-bl {
+  bottom: var(--padding-content);
+  left: var(--padding-content);
+}
+
 .leaflet-container {
   border-radius: var(--border-radius);
   background: #0F1520;
