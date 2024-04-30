@@ -10,6 +10,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   _unlocked = new Set<string>();
   _wingedLights = new Set<string>();
   _favourites = new Set<string>();
+  _keys: { [key: string]: unknown } = {};
 
   events = new Subject<IStorageEvent>();
 
@@ -29,6 +30,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
     this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
     this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
+    this._keys = data.keys;
   }
 
   export(): IStorageExport {
@@ -36,7 +38,8 @@ export abstract class BaseStorageProvider implements IStorageProvider {
       date: this._lastDate.toISO()!,
       unlocked: [...this.getUnlocked()].join(','),
       wingedLights: [...this.getWingedLights()].join(','),
-      favourites: [...this.getFavourites()].join(',')
+      favourites: [...this.getFavourites()].join(','),
+      keys: this._keys
     };
   }
 
@@ -120,25 +123,14 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     return this._favourites.has(guid);
   }
 
-  exportData(): IStorageExport {
-    return {
-      date: this._lastDate.toISO()!,
-      unlocked: [...this.getUnlocked()].join(','),
-      wingedLights: [...this.getWingedLights()].join(','),
-      favourites: [...this.getFavourites()].join(',')
-    };
+  setKey<T>(key: string, value: T): void {
+    this._keys[key] = value;
+    this._lastDate = DateTime.now();
+    this.debounceSave();
   }
 
-  importData(data: IStorageExport): void {
-    this._lastDate = data.date ? DateTime.fromISO(data.date) : DateTime.now();
-    this._syncDate = this._lastDate;
-    const unlocked = data.unlocked || undefined;
-    const wingedLights = data.wingedLights || undefined;
-    const favourites = data.favourites || undefined;
-    this._unlocked = new Set(unlocked?.split(',') ?? []);
-    this._wingedLights = new Set(wingedLights?.split(',') ?? []);
-    this._favourites = new Set(favourites?.split(',') ?? []);
-    this.debounceSave();
+  getKey<T>(key: string): T | undefined {
+    return this._keys[key] as T;
   }
 
   protected dispose(): void {

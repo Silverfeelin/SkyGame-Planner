@@ -9,6 +9,7 @@ interface IDropboxData {
   unlocked: string;
   wingedLights: string;
   favourites: string;
+  keys: { [key: string]: unknown };
 }
 
 const CLIENT_ID = '5slqiqhhxcxjiqr';
@@ -135,6 +136,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     this._unlocked = new Set(unlocked?.split(',') ?? []);
     this._wingedLights = new Set(wingedLights?.split(',') ?? []);
     this._favourites = new Set(favourites?.split(',') ?? []);
+    this._keys = data.keys;
   }
 
   private serializeData(): IDropboxData {
@@ -142,7 +144,8 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
       date: this._syncDate.toISO()!,
       unlocked: [...this._unlocked].join(','),
       wingedLights: [...this._wingedLights].join(','),
-      favourites: [...this._favourites].join(',')
+      favourites: [...this._favourites].join(','),
+      keys: this._keys
     };
   }
 

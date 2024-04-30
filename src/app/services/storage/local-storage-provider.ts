@@ -7,7 +7,8 @@ const storageKeys = {
   date: 'date',
   unlocked: 'unlocked',
   wingedLights: 'wingedLights',
-  favourites: 'favourites'
+  favourites: 'favourites',
+  keys: 'data'
 };
 
 @Injectable({
@@ -35,17 +36,19 @@ export class LocalStorageProvider extends BaseStorageProvider {
     const unlocked = localStorage.getItem(storageKeys.unlocked) || '';
     const wingedLights = localStorage.getItem(storageKeys.wingedLights) || '';
     const favourites = localStorage.getItem(storageKeys.favourites) || '';
-    this.importData({ date, unlocked, wingedLights, favourites });
+    const data = JSON.parse(localStorage.getItem(storageKeys.keys) || '{}');
+    this.import({ date, unlocked, wingedLights, favourites, keys: data });
     return of(undefined);
   }
 
   override save(force: boolean): Observable<void> {
     this.events.next({ type: 'save_start' });
-    const data = this.exportData();
+    const data = this.export();
     localStorage.setItem(storageKeys.date, this._lastDate.toISO()!);
     localStorage.setItem(storageKeys.unlocked, data.unlocked);
     localStorage.setItem(storageKeys.wingedLights, data.wingedLights);
     localStorage.setItem(storageKeys.favourites, data.favourites);
+    localStorage.setItem(storageKeys.keys, JSON.stringify(data.keys));
     this._syncDate = this._lastDate;
     this.events.next({ type: 'save_success' });
     return of(undefined);

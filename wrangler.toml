@@ -1,0 +1,5 @@
+# This file needs to be at CWD, not the Pages project location (dist)!
+[[d1_databases]]
+binding = "DB"
+database_name = "sky-planner"
+database_id = "fe8afe34-8224-4777-941f-067bea858cc1"

@@ -35,6 +35,7 @@ import { MenuLayoutComponent } from './components/layout/menu-layout/menu-layout
 import { StorageComponent } from './components/storage/storage.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { NoDataComponent } from './components/layout/no-data/no-data.component';
+import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -86,6 +87,7 @@ const routes: Routes = [
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
+          { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
           { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
         ]
       },
