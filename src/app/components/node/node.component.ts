@@ -73,6 +73,24 @@ export class NodeComponent implements OnChanges {
     // Save progress.
     if (unlock) {
       this._nodeService.unlock(this.node);
+
+      // Check if prerequisite nodes are unlocked.
+      const prerequisite = this.node.prev;
+      if (!prerequisite) { return; }
+      const unlocked = prerequisite.unlocked;
+      if (unlocked) { return; }
+      // Ask user to if they want unlock prerequisite node.
+      const confirm = window.confirm('Unlock prerequisite node?');
+      if (confirm) {
+        const prevStack = [prerequisite];
+        while (prevStack.length) {
+          const prevNode = prevStack.pop();
+          if (!prevNode) { continue; }
+          this._nodeService.unlock(prevNode);
+          if (!prevNode.prev || prevNode.prev.unlocked) { continue; }
+          prevStack.push(prevNode.prev);
+        }
+      }
     } else {
       this._nodeService.lock(this.node);
     }
