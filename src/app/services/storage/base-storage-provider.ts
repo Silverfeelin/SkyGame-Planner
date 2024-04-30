@@ -30,7 +30,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
     this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
     this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
-    this._keys = data.keys;
+    this._keys = data.keys || {};
   }
 
   export(): IStorageExport {
