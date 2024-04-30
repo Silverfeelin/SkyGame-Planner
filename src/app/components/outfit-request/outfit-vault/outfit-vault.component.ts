@@ -136,6 +136,7 @@ export class OutfitVaultComponent {
     // Load key from cloud.
     const key = _storageService.getKey('outfit-vault-key');
     if (key && typeof key === 'string') { this.sKey = key; }
+    else if (this.sKey) { _storageService.setKey('outfit-vault-key', this.sKey); }
 
     this.initializeItems();
     this.initializeSelection();
