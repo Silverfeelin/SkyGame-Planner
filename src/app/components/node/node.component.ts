@@ -87,12 +87,37 @@ export class NodeComponent implements OnChanges {
           const prevNode = prevStack.pop();
           if (!prevNode) { continue; }
           this._nodeService.unlock(prevNode);
-          if (!prevNode.prev || prevNode.prev.unlocked) { continue; }
-          prevStack.push(prevNode.prev);
+          if (prevNode.prev && !prevNode.prev.unlocked) {
+            prevStack.push(prevNode.prev);
+          }
         }
       }
     } else {
       this._nodeService.lock(this.node);
+
+      // Check if dependent nodes are unlocked. 
+      const dependents = [this.node.n!, this.node.nw!, this.node.ne!].filter(n => n);
+      if (!dependents.length) { return; }
+      const unlocked = dependents.some(n => n.unlocked);
+      if (!unlocked) { return; }
+      // Ask user if they want to lock dependent nodes.
+      const confirm = window.confirm('Lock dependent nodes?');
+      if (confirm) {
+        while (dependents.length) {
+          const depNode = dependents.pop();
+          if (!depNode) { continue; }
+          this._nodeService.lock(depNode);
+          if (depNode.n?.unlocked) {
+            dependents.push(depNode.n);
+          }
+          if (depNode.nw?.unlocked) {
+            dependents.push(depNode.nw);
+          }
+          if (depNode.ne?.unlocked) {
+            dependents.push(depNode.ne);
+          }
+        }
+      }
     }
   }
 
