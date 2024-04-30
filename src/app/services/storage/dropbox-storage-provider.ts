@@ -136,7 +136,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     this._unlocked = new Set(unlocked?.split(',') ?? []);
     this._wingedLights = new Set(wingedLights?.split(',') ?? []);
     this._favourites = new Set(favourites?.split(',') ?? []);
-    this._keys = data.keys;
+    this._keys = data.keys || {};
   }
 
   private serializeData(): IDropboxData {
