@@ -4,7 +4,9 @@ import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IEvent, IEventInstance, IEventInstanceSpirit } from 'src/app/interfaces/event.interface';
+import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { INode } from 'src/app/interfaces/node.interface';
+import { IShop } from 'src/app/interfaces/shop.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
@@ -29,6 +31,8 @@ export class EventCalculatorComponent {
   trees: Array<ISpiritTree> = [];
   firstNodes: { [guid: string]: INode } = {};
   allNodes: Array<INode> = [];
+  shops: Array<IShop> = [];
+  allListNodes: Array<IItemListNode> = [];
 
   currencyCount = 0;
   candleCount = 0;
@@ -39,6 +43,9 @@ export class EventCalculatorComponent {
   hasSkippedNode = false;
   daysLeft = 0;
   daysRequired = 0;
+
+  wantListNodes: { [guid: string]: IItemListNode } = {};
+
   currencyRequired = 0;
   currencyAvailable = 0;
   currencyPerDay?: number;
@@ -50,6 +57,7 @@ export class EventCalculatorComponent {
   heartsRequired = 0;
 
   nodeShowButtons?: INode;
+  listNodeShowButtons?: INode;
 
   constructor(
     private readonly _dataService: DataService,
@@ -81,6 +89,9 @@ export class EventCalculatorComponent {
       acc[t.node.guid] = t.node;
       return acc;
     }, {} as { [guid: string]: INode });
+
+    this.shops = (this.eventInstance.shops ?? []).filter(s => s.itemList?.items?.length);
+    this.allListNodes = this.shops.map(s => s.itemList!.items).flat();
   }
 
   ngOnInit(): void {
@@ -91,6 +102,10 @@ export class EventCalculatorComponent {
 
   toggleButtons(node: INode): void {
     this.nodeShowButtons = this.nodeShowButtons === node ? undefined : node;
+  }
+
+  toggleListButtons(node: IItemListNode): void {
+    this.listNodeShowButtons = this.listNodeShowButtons === node ? undefined : node;
   }
 
   wantNode(node: INode, event: MouseEvent): void {
@@ -114,6 +129,36 @@ export class EventCalculatorComponent {
 
     if (node.unlocked || node.item?.unlocked) {
       this._nodeService.lock(node);
+    } else {
+      this._nodeService.unlock(node);
+    }
+
+    this.currencyCountChanged();
+    this.calculate();
+    this.saveSettings();
+  }
+
+  wantListNode(node: IItemListNode, event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.listNodeShowButtons = undefined;
+    if (this.wantListNodes[node.guid]) {
+      delete this.wantListNodes[node.guid];
+    } else {
+      this.wantListNodes[node.guid] = node;
+    }
+
+    this.calculate();
+    this.saveSettings();
+  }
+
+  haveListNode(node: IItemListNode, event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.listNodeShowButtons = undefined;
+
+    if (node.unlocked) {
+      this._nodeService.lock(node);
       this.currencyCount += node.ec || 0;
       this.currencyCount = Math.min(999, this.currencyCount);
     } else {
@@ -121,10 +166,6 @@ export class EventCalculatorComponent {
       this.currencyCount -= node.ec || 0;
       this.currencyCount = Math.max(0, this.currencyCount);
     }
-
-    this.currencyCountChanged();
-    this.calculate();
-    this.saveSettings();
   }
 
   onCurrencyInput(): void {
@@ -184,6 +225,10 @@ export class EventCalculatorComponent {
     this.allNodes.forEach(n => {
       this.wantNodes[n.guid] = n;
     });
+    this.wantListNodes = {};
+    this.allListNodes.forEach(n => {
+      this.wantListNodes[n.guid] = n;
+    });
 
     this.calculate();
     this.saveSettings();
@@ -191,6 +236,7 @@ export class EventCalculatorComponent {
 
   selectNothing(): void {
     this.wantNodes = {};
+    this.wantListNodes = {};
     this.hasSkippedNode = false;
     this.calculate();
     this.saveSettings();
@@ -207,6 +253,7 @@ export class EventCalculatorComponent {
       c: this.candleCount,
       h: this.heartCount,
       wn: Object.keys(this.wantNodes),
+      ln: Object.keys(this.wantListNodes),
     };
 
     localStorage.setItem(key, JSON.stringify(data));
@@ -246,6 +293,13 @@ export class EventCalculatorComponent {
       if (nodeSet.has(guid)) { acc[guid] = nodeSet.get(guid)!; }
       return acc;
     }, {} as { [guid: string]: INode });
+
+    const listNodeSet = new Map();
+    this.shops.forEach(s => { s.itemList!.items.forEach(i => { listNodeSet.set(i.guid, i); }); });
+    this.wantListNodes = parsed.ln.reduce((acc: { [guid: string]: IItemListNode }, guid: string) => {
+      if (listNodeSet.has(guid)) { acc[guid] = listNodeSet.get(guid)!; }
+      return acc;
+    }, {} as { [guid: string]: IItemListNode });
   }
 
   // #endregion
@@ -253,7 +307,7 @@ export class EventCalculatorComponent {
   private calculate(): void {
     const wantValues = Object.values(this.wantNodes);
     const wantSet = new Set(wantValues);
-    const nodes = NodeHelper.traceMany(wantValues)
+    const nodes = NodeHelper.traceMany(wantValues);
 
     let date = DateTime.now();
     if (this.eventInstance.date > date) { date = this.eventInstance.date; }
@@ -265,7 +319,7 @@ export class EventCalculatorComponent {
     this.currencyAvailable = this.daysLeft * this.currencyPerDay!;
     this.candlesAvailable = this.daysLeft * this.candlesPerDay;
 
-    this.hasNodes = nodes.length > 0;
+    this.hasNodes = nodes.length > 0 || Object.keys(this.wantListNodes).length > 0;
     this.hasSkippedNode = false;
 
     this.currencyRequired = 0;
@@ -276,6 +330,14 @@ export class EventCalculatorComponent {
       this.hasSkippedNode = this.hasSkippedNode || (!wantSet.has(node) && !node.item?.unlocked);
 
       if (!node.item?.unlocked) {
+        this.currencyRequired += node.ec || 0;
+        this.candlesRequired += node.c || 0;
+        this.heartsRequired += node.h || 0;
+      }
+    }
+
+    for (const node of Object.values(this.wantListNodes)) {
+      if (!node.item.unlocked) {
         this.currencyRequired += node.ec || 0;
         this.candlesRequired += node.c || 0;
         this.heartsRequired += node.h || 0;

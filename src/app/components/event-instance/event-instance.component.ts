@@ -21,6 +21,7 @@ export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;
   state: 'future' | 'active' | 'ended' | undefined;
   shops?: Array<IShop>;
+  iapShops?: Array<IShop>;
   iapNames: { [iapGuid: string]: string | undefined } = {};
   highlightItem?: string;
   highlightIap?: string;
@@ -73,14 +74,17 @@ export class EventInstanceComponent implements OnDestroy {
     this._titleService.setTitle(this.instance.event?.name ?? 'Event Instance');
 
     this.state = DateHelper.getStateFromPeriod(this.instance.date, this.instance.endDate);
-    this.shops = this.instance.shops ? [...this.instance.shops] : undefined;
+
+    const shops = this.instance.shops ?? [];
+    this.iapShops = shops.filter(s => s.iaps?.length);
+    this.shops = shops.filter(s => s.itemList);
 
     const iInstance = this.instance.event?.instances?.indexOf(this.instance) ?? -1;
     this.previousInstance = iInstance >= 0 ? this.instance.event!.instances![iInstance - 1] : undefined;
     this.nextInstance = iInstance >= 0 ? this.instance.event!.instances![iInstance + 1] : undefined;
 
     // Sort shops to prioritize ones with new items.
-    this.shops?.sort((a, b) => {
+    this.iapShops?.sort((a, b) => {
       const aNew = a.iaps?.filter(iap => !iap.returning).length ?? 0;
       const bNew = b.iaps?.filter(iap => !iap.returning).length ?? 0;
       return bNew - aNew;
@@ -89,7 +93,7 @@ export class EventInstanceComponent implements OnDestroy {
     // Loop over all IAPs
     const eventName = this.instance.event?.name;
     if (eventName) {
-      this.shops?.forEach(shop => {
+      this.iapShops?.forEach(shop => {
         shop.iaps?.forEach(iap => {
           // Remove event name from IAP to save space.
           let name = iap.name?.replace(`${eventName} `, '');
@@ -127,6 +131,17 @@ export class EventInstanceComponent implements OnDestroy {
         if (!n.unlocked && !n.item?.unlocked) {
           this.cLeft += n.c || 0;
           this.ecLeft += n.ec || 0;
+        }
+      });
+    });
+
+    this.instance.shops?.filter(s => s.itemList?.items?.length).forEach(shop => {
+      shop.itemList?.items.forEach(i => {
+        this.c += i.c || 0;
+        this.ec += i.ec || 0;
+        if (!i.unlocked) {
+          this.cLeft += i.c || 0;
+          this.ecLeft += i.ec || 0;
         }
       });
     });

@@ -130,9 +130,12 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
 
   private initializeData(data: IDropboxData): void {
     this._syncDate = data.date ? DateTime.fromISO(data.date) as DateTime : DateTime.now();
-    this._unlocked = new Set(data.unlocked?.split(',') ?? []);
-    this._wingedLights = new Set(data.wingedLights?.split(',') ?? []);
-    this._favourites = new Set(data.favourites?.split(',') ?? []);
+    const unlocked = data.unlocked || undefined;
+    const wingedLights = data.wingedLights || undefined;
+    const favourites = data.favourites || undefined;
+    this._unlocked = new Set(unlocked?.split(',') ?? []);
+    this._wingedLights = new Set(wingedLights?.split(',') ?? []);
+    this._favourites = new Set(favourites?.split(',') ?? []);
     this._keys = data.keys;
   }
 

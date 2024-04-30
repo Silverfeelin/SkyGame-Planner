@@ -117,7 +117,7 @@
     "name": "Hopeful Steward Hair",
     "type": "Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Revival-Hair-icon.png",
-    "order": 351
+    "order": 350
   },
   {
     "id": 1984,
@@ -157,7 +157,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts"
     },
-    "order": 350
+    "order": 349
   },
   {
     "id": 649,
@@ -170,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hopeful_Steward#Ultimate_Gifts"
     },
-    "order": 633
+    "order": 644
   },
   {
     "id": 1693,
@@ -182,7 +182,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Hair"
     },
-    "order": 348
+    "order": 347
   },
   {
     "id": 1694,
@@ -209,7 +209,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Cape"
     },
-    "order": 629,
+    "order": 640,
     "group": "SeasonPass"
   },
   {
@@ -257,7 +257,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Cape"
     },
-    "order": 632,
+    "order": 643,
     "group": "SeasonPass"
   },
   {
@@ -297,7 +297,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Hair"
     },
-    "order": 349,
+    "order": 348,
     "group": "SeasonPass"
   },
   {
@@ -362,7 +362,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Cape"
     },
-    "order": 630,
+    "order": 641,
     "group": "SeasonPass"
   },
   {
@@ -375,7 +375,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Hair_Accessory"
     },
-    "order": 386
+    "order": 388
   },
   {
     "id": 1714,
@@ -423,7 +423,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Cape"
     },
-    "order": 631
+    "order": 642
   },
   {
     "id": 1719,
@@ -450,7 +450,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Hair_Accessory"
     },
-    "order": 387,
+    "order": 389,
     "group": "SeasonPass"
   },
   {

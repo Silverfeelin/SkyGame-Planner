@@ -536,9 +536,12 @@ export class ClosetComponent implements OnDestroy {
       const spirits = instance.spirits || [];
 
       const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
-      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
       const shops = instance.shops || [];
+      const listItems = shops.map(s => s.itemList?.items || []).flat();
       const iapItems = shops.map(s => (s.iaps || []).map(a => a.items || [])).flat().flat();
+      items.push(...listItems.filter(i => types.has(i.item.type)).map(i => i.item));
+
+      items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
       iapItems.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
       this.events.push({ instance: instance, items, iapItems });
     });
@@ -568,12 +571,22 @@ export class ClosetComponent implements OnDestroy {
     }
 
     // Get ongoing items.
-    DateHelper.getActive(this._dataService.seasonConfig.items)?.spirits?.forEach(spirit => {
+    const season = DateHelper.getActive(this._dataService.seasonConfig.items);
+    season?.spirits?.forEach(spirit => {
       NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
     });
+    season?.shops?.forEach(shop => {
+      shop.iaps?.forEach(iap => iap.items?.forEach(item => this.ongoingItems[item.guid] = item));
+      shop.itemList?.items?.forEach(node => this.ongoingItems[node.item.guid] = node.item);
+    });
     this._dataService.eventConfig.items.forEach(event => {
-      DateHelper.getActive(event.instances)?.spirits?.forEach(spirit => {
+      const instance = DateHelper.getActive(event.instances);
+      instance?.spirits?.forEach(spirit => {
         NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      });
+      instance?.shops?.forEach(shop => {
+        shop.iaps?.forEach(iap => iap.items?.forEach(item => this.ongoingItems[item.guid] = item));
+        shop.itemList?.items?.forEach(node => this.ongoingItems[node.item.guid] = node.item);
       });
     });
     NodeHelper.getItems(DateHelper.getActive(this._dataService.travelingSpiritConfig.items)?.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);

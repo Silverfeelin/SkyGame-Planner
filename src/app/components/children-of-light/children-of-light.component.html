@@ -8,10 +8,13 @@
   <div #table class="sky-card mt">
     <div class="sky-card-header">
       <h2 class="h3 mb-0 d-inline-block">
-        <span>Children of Light</span><span class="c-accent show-desktop"> ({{ unlockedCol }} / {{ totalCol }})</span>
-        <div class="c-accent show-mobile">{{ unlockedCol }} / {{ totalCol }}</div>
+        <span class="show-desktop">Children of Light</span><span class="c-accent show-desktop"> ({{ unlockedCol }} / {{ totalCol }})</span>
+        <div class="show-mobile">{{ unlockedCol }} / {{ totalCol }} obtained</div>
       </h2>
-      <button type="button" class="btn-reset" (click)="reset()">Reset</button>
+      <div class="btns-reset button-group">
+        <button type="button" class="btn-reset" (click)="reset()">Reset</button>
+        <button type="button" class="btn-reset" (click)="resetOrbit()">Orbit</button>
+      </div>
     </div>
     <div class="sky-card-body scroll-x">
       <app-table [rows]="rows">

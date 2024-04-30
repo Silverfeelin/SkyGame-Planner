@@ -2,78 +2,73 @@
   {
     "id": 2141,
     "guid": "eWqTtgnrmt",
-    "closetHide": true,
     "type": "Hat",
     "name": "Cinnamoroll Mini Companion",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Cinnamoroll-Mini-Hair-accessory-icon.png",
-    "order": 10000
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-front.png",
+    "order": 415
   },
   {
     "id": 2142,
     "guid": "VZsaoYRkCQ",
-    "closetHide": true,
     "type": "Necklace",
     "name": "Cinnamoroll Bowtie",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Cinnamoroll-Bow-Necklace-icon.png",
-    "order": 10000
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Cinnamoroll-Pop-Up-Cafe-Bowtie-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Cinnamoroll-Pop-Up-Cafe-Bowtie.png",
+    "order": 107
   },
   {
     "id": 2143,
     "guid": "yEzMwUGzSS",
-    "closetHide": true,
     "type": "Cape",
     "name": "Cinnamoroll Cloud Cape",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/Cinnamoroll-Cape-Pastry-Cloud-icon.png",
-    "order": 10000
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Cinnamoroll-Pop-Up-Cafe-Cloud-Cape-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Cinnamoroll-Pop-Up-Cafe-Cloud-Cape-back.png",
+    "order": 679
   },
   {
     "id": 2144,
     "guid": "8aoU-Pwe_p",
-    "closetHide": true,
     "type": "Hair",
     "name": "Cinnamoroll Swirled Hair",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Cinnamoroll-Short-Hair-icon.png",
-    "order": 10000
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Cinnamoroll-Pop-Up-Cafe-Combo-Swirled-Hair-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Cinnamoroll-Pop-Up-Cafe-Combo-Swirled-Hair-front.png",
+    "order": 372
   },
   {
     "id": 2145,
     "guid": "DDW1lEoGj0",
-    "closetHide": true,
     "type": "Hat",
     "name": "Cinnamoroll Ears",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Cinnamoroll-Pastry-Ears-icon.png",
-    "order": 10000
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Cinnamoroll-Pop-Up-Cafe-Combo-Ears-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Cinnamoroll-Pop-Up-Cafe-Combo-Ears.png",
+    "order": 413
   },
   {
     "id": 2146,
     "guid": "Pyk6fYvTVM",
-    "closetHide": true,
     "type": "Prop",
     "name": "Cinnamoroll Plushie",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Cinnamoroll-Plush-Prop-icon.png",
-    "order": 10000
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Cinnamoroll-Pop-Up-Cafe-Plushie-Prop-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Cinnamoroll-Pop-Up-Cafe-Plushie-Prop-front.png",
+    "order": 554
   },
   {
     "id": 2147,
     "guid": "nZogPrqPGH",
-    "closetHide": true,
     "type": "Hat",
     "name": "Cozy Teacup Headband",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Cinnamoroll-Mini-Tea-Hair-Accessory-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Cozy-Teacup-Headband-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Cozy-Teacup-Headband.png",
+    "order": 414
   },
   {
     "id": 2148,
     "guid": "zRHFsHh3Z8",
-    "closetHide": true,
     "type": "Prop",
     "name": "Cozy Cafe Table",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Cinnamoroll-Tea-Table-Prop-icon.png"
-  },
-  {
-    "id": 2149,
-    "guid": "_vjcCQuI_N",
-    "type": "Special",
-    "name": "Unknown",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Support-Ray.png"
-  },
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Cozy-Cafe-Table-Prop-icon.png",
+    "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Cozy-Cafe-Table-Prop.png",
+    "order": 555
+  }
 ]

@@ -918,13 +918,19 @@
     // #endregion
     // #region Cinnamoroll Pop-Up Cafe (2024)
     {
+      "guid": "6YoHc1liAI",
+      "type": "Object",
+      "name": "Pop-Up Cafe Box",
+      "itemList": "W8lNPjE0ig"
+    },
+    {
       "guid": "hfXFjKVeYU",
       "type": "Store",
       "iaps": [
+        "GkNjB8_Kjq",
+        "hTvibgWUst",
         "GB3wiXnerG",
         "BbjYVEd3I9",
-        "GkNjB8_Kjq",
-        "hTvibgWUst"
       ]
     },
     // #endregion

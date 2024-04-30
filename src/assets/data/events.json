@@ -836,12 +836,10 @@
           "guid": "UxrJUiw6Ue",
           "date": { "day": 27, "month": 4, "year": 2024 },
           "endDate": { "day": 17, "month": 5, "year": 2024 },
-          "draft": true,
           "currencyPerDay": 5,
-          "spirits": [
-            {	"guid": "KjsH2odwKL", "spirit": "U9vUspUuRp", "tree": "emy7T3lDyN" },
-          ],
+          "spirits": [],
           "shops": [
+            "6YoHc1liAI",
             "hfXFjKVeYU"
           ]
         }

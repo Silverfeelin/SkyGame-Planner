@@ -94,8 +94,22 @@
   </div>
 </div>
 
+<!-- Shops -->
+@if (shops?.length) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Shops</h1>
+    </div>
+    <div class="sky-card-body">
+      @for (shop of shops; track shop.guid) {
+        <app-item-list [itemList]="shop.itemList!"></app-item-list>
+      }
+    </div>
+  </div>
+}
+
 <!-- IAPs -->
-<ng-container *ngIf="shops?.length">
+<ng-container *ngIf="iapShops?.length">
   <div class="sky-card mt">
     <div class="sky-card-header">
       <h2 class="h3 mb-0">In-App Purchases</h2>
@@ -103,7 +117,7 @@
     <div class="pad sky-card-body">
       <div class="grid grid-4">
         <!-- Render IAPs in order of sorted shops. -->
-        <ng-container *ngFor="let shop of shops">
+        <ng-container *ngFor="let shop of iapShops">
           <ng-container *ngIf="shop.iaps?.length">
             <div class="sky-card sky-card-border p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
               <div class="sky-card-header">
