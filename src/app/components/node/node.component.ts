@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
+import { NodeHelper } from 'src/app/helpers/node-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { NodeService } from 'src/app/services/node.service';
@@ -69,53 +70,23 @@ export class NodeComponent implements OnChanges {
 
     // Unlock (or lock) based on the item status.
     const unlock = !item.unlocked;
+    const toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
 
     // Save progress.
     if (unlock) {
-      this._nodeService.unlock(this.node);
-
-      // Check if prerequisite nodes are unlocked.
-      const prerequisite = this.node.prev;
-      if (!prerequisite) { return; }
-      const unlocked = prerequisite.unlocked;
-      if (unlocked) { return; }
-      // Ask user to if they want unlock prerequisite node.
-      const confirm = window.confirm('Unlock prerequisite node?');
-      if (confirm) {
-        const prevStack = [prerequisite];
-        while (prevStack.length) {
-          const prevNode = prevStack.pop();
-          if (!prevNode) { continue; }
-          this._nodeService.unlock(prevNode);
-          if (prevNode.prev && !prevNode.prev.unlocked) {
-            prevStack.push(prevNode.prev);
-          }
+      const nodesToUnlock = toggleConnected ? NodeHelper.trace(this.node) : [this.node];
+      
+      for (const node of nodesToUnlock) {
+        if (node.item && !node.item.unlocked) { 
+          this._nodeService.unlock(node);
         }
-      }
+      }      
     } else {
-      this._nodeService.lock(this.node);
-
-      // Check if dependent nodes are unlocked. 
-      const dependents = [this.node.n!, this.node.nw!, this.node.ne!].filter(n => n);
-      if (!dependents.length) { return; }
-      const unlocked = dependents.some(n => n.unlocked);
-      if (!unlocked) { return; }
-      // Ask user if they want to lock dependent nodes.
-      const confirm = window.confirm('Lock dependent nodes?');
-      if (confirm) {
-        while (dependents.length) {
-          const depNode = dependents.pop();
-          if (!depNode) { continue; }
-          this._nodeService.lock(depNode);
-          if (depNode.n?.unlocked) {
-            dependents.push(depNode.n);
-          }
-          if (depNode.nw?.unlocked) {
-            dependents.push(depNode.nw);
-          }
-          if (depNode.ne?.unlocked) {
-            dependents.push(depNode.ne);
-          }
+      const nodesToLock = toggleConnected ? NodeHelper.all(this.node) : [this.node];
+      
+      for (const node of nodesToLock) {
+        if (node.item && node.item.unlocked) { 
+          this._nodeService.lock(node); 
         }
       }
     }
