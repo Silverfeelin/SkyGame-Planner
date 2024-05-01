@@ -53,9 +53,7 @@ export class SettingsComponent {
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
     this.currentTheme = localStorage.getItem('theme') || '';
-    // TODO: this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
-    // TODO: Also use this setting in the new NodeComponent code.
-    this.unlockConnectedNodes = localStorage.getItem('tree.unlock-connected') !== '0';
+    this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
   }
 
   import(): void {
@@ -162,9 +160,8 @@ export class SettingsComponent {
   }
 
   toggleConnectedNodes(): void {
-    // TODO: _storageService.setKey('tree.unlock-connected', !this.unlockConnectedNodes ? '1' : '0')
     this.unlockConnectedNodes = !this.unlockConnectedNodes;
-    localStorage.setItem('tree.unlock-connected', this.unlockConnectedNodes ? '1' : '0');
+    this._storageService.setKey('tree.unlock-connected', this.unlockConnectedNodes ? '1' : '0');
   }
 
   setDateFormat(format: string): void {
