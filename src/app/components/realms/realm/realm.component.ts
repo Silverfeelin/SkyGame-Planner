@@ -13,6 +13,7 @@ import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
+import { IMapInit } from 'src/app/services/map.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { TitleService } from 'src/app/services/title.service';
 
@@ -45,7 +46,8 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   tier2Pct: ICost = {};
 
   map!: L.Map;
-  drawnMap = false;
+  areaLayers: L.LayerGroup = L.layerGroup();
+  boundaryLayers: L.LayerGroup = L.layerGroup();
   hasAreaData = false;
   showAreas = localStorage.getItem('map.area.markers') === '1';
 
@@ -69,7 +71,16 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapInstanceService.attach(this.mapContainer.nativeElement);
+    const mapEl = this.mapContainer.nativeElement.querySelector('.map');
+    const options: IMapInit = {
+      view: this.realm?.mapData?.position ?? [-270, 270],
+      zoom: this.realm?.mapData?.zoom ?? 1,
+      zoomPanOptions: { animate: false, duration: 0 }
+    };
+    this.map = this._mapInstanceService.initialize(mapEl, options);
+    this.boundaryLayers.addTo(this.map);
+    this.areaLayers.addTo(this.map);
+    this.drawMap();
   }
 
   ngOnDestroy(): void {
@@ -93,8 +104,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
   mapToggleAreas(): void {
     this.showAreas = !this.showAreas;
-    const layerGroup = this._mapInstanceService.getLayerGroup('area');
-    this.showAreas ? layerGroup?.addTo(this.map) : layerGroup?.remove();
+    this.showAreas ? this.areaLayers.addTo(this.map) : this.areaLayers.remove();
     localStorage.setItem('map.area.markers', this.showAreas ? '1' : '0');
   }
 
@@ -147,12 +157,10 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.calculateTierCosts();
 
-    setTimeout(() => {
-      if (this.map) {
-        this.drawMap();
-        this.panToRealm(false);
-      }
-    })
+    if (this.map) {
+      this.drawMap();
+      this.panToRealm(false);
+    }
 
     this._changeDetectorRef.markForCheck();
   }
@@ -187,23 +195,13 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private drawMap(): void {
-    // Clean up previous render
-    if (this.drawnMap) {
-      this._mapInstanceService.getLayerGroup('boundary')?.remove();
-      this._mapInstanceService.getLayerGroup('area')?.remove();
-      //this._mapInstanceService.getLayerGroup('connector')?.remove();
-    }
-    this.drawnMap = true;
-    const mapData: IMapData = this.realm.mapData || {};
+    this.boundaryLayers.clearLayers();
+    this.areaLayers.clearLayers();
 
-    const boundaryLayers = this._mapInstanceService.createLayerGroup('boundary', this.showAreas);
-    const areaLayers = this._mapInstanceService.createLayerGroup('area', this.showAreas);
-    //const connectorLayer = this._mapInstanceService.createLayerGroup('connector');
-
-    if (mapData.boundary) {
-      const poly = L.polygon(mapData.boundary, { color: mapData.boundaryColor || '#ff8a00', weight: 1, fillOpacity: 0 });
-      boundaryLayers.addLayer(poly);
-    }
+    if (!this.realm) { return; }
+    this.boundaryLayers.addLayer(
+      this._mapInstanceService.showRealm(this.realm, { showBoundary: true })
+    );
 
     const areaIcon = L.icon({
       iconUrl: 'assets/icons/symbols/location_on.svg',
@@ -215,7 +213,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
       if (!area.mapData?.position) { return; }
       const marker = L.marker(area.mapData.position, { icon: areaIcon });
       marker.bindPopup(this.createAreaPopup(area), {});
-      areaLayers.addLayer(marker);
+      this.areaLayers.addLayer(marker);
 
       // Draw line to all other areas (testing display, need to configure connected areas in JSON).
       // this.realm?.areas?.forEach(otherArea => {
@@ -225,10 +223,8 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
       // });
     });
 
-    setTimeout(() => {
-      this.hasAreaData = this.realm?.areas?.filter(a => a.mapData?.position).length! > 0;
-      this._changeDetectorRef.markForCheck();
-    }, 0);
+
+    this.hasAreaData = this.realm?.areas?.filter(a => a.mapData?.position).length! > 0;
   }
 
   private createAreaPopup(area: IArea): string {

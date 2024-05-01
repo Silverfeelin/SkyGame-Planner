@@ -22,14 +22,17 @@
     </div>
   </div>
   <div class="map-container" #mapContainer>
-    <button *ngIf="hasAreaData" type="button" class="map-control map-control-tl" [class.button-areas-off]="!showAreas" (click)="mapToggleAreas()"
-      [ngbTooltip]="'Show areas'" container="body" placement="right"
-    >
-      <mat-icon>location_on</mat-icon>
-    </button>
-    <button type="button" class="map-control map-control-bl" (click)="panToRealm()" [ngbTooltip]="'Center map'" container="body" placement="right">
-      <mat-icon>center_focus_weak</mat-icon>
-    </button>
+    <div class="map-controls map-controls-tl">
+      <button *ngIf="hasAreaData" type="button" [class.map-control-off]="!showAreas" (click)="mapToggleAreas()" [ngbTooltip]="'Show areas'" container="body" placement="right">
+        <mat-icon>location_on</mat-icon>
+      </button>
+    </div>
+    <div class="map-controls map-controls-bl">
+      <button type="button" (click)="panToRealm()" [ngbTooltip]="'Center map'" container="body" placement="right">
+        <mat-icon>center_focus_weak</mat-icon>
+      </button>
+    </div>
+    <div class="map"></div>
   </div>
 </div>
 

@@ -7,15 +7,26 @@ body > .map { display: none !important; }
   width: 100%;
 }
 
-.map-control {
+.map-controls {
   position: absolute;
   z-index: 9999;
-  padding: var(--padding-content);
-  color: var(--color-map-tooltip);
-  background:  var(--color-map-tooltip-background);
-  border-radius: var(--border-radius);
-  width: 32px;
-  height: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--padding-content-half);
+
+  button {
+    position: relative;
+    padding: var(--padding-content);
+    color: var(--color-map-tooltip);
+    background:  var(--color-map-tooltip-background);
+    border-radius: var(--border-radius);
+    width: 32px;
+    height: 32px;
+
+    &.map-control-off mat-icon {
+      opacity: 0.5;
+    }
+  }
 
   mat-icon {
     position: absolute;
@@ -24,14 +35,44 @@ body > .map { display: none !important; }
   }
 }
 
-.map-control-tl {
+.map-controls-tl {
   top: var(--padding-content);
   left: var(--padding-content);
 }
 
-.map-control-bl {
+.map-controls-bl {
   bottom: var(--padding-content);
   left: var(--padding-content);
+}
+
+.map-label-realm {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  font-size: 14px;
+  text-shadow: #000 1px 1px 0;
+}
+
+.map-label-realm-above {
+  top: -18px !important;
+}
+
+.map-label-coord {
+  position: absolute;
+  top: -10px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  font-size: 10px;
+  text-shadow: #000 1px 1px 0;
 }
 
 .leaflet-container {

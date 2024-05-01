@@ -28,8 +28,8 @@ interface IMapWingedLight {
   providers: [MapInstanceService]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef;
-  @ViewChild('table', { static: true }) table?: ElementRef;
+  @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;
+  @ViewChild('table', { static: true }) table!: ElementRef;
 
   unlockedCol = 0; totalCol = 0;
 
@@ -76,19 +76,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapInstanceService.attach(this.mapContainer?.nativeElement);
-    this.map.setView([-400, 270], 2, { animate: false, duration: 0});
+    this.map = this._mapInstanceService.initialize(this.mapContainer.nativeElement.querySelector('.map'), { fromQuery: true });
 
-    // Load position from query params.
-    const query = this._activatedRoute.snapshot.queryParamMap;
-    const x = +(query.get('x') || 0);
-    const y = +(query.get('y') || 0);
-    const z = query.has('z') ? +(query.get('z') || 0) : undefined;
-    if (z !== undefined) {
-      this.map.setView([y, x], z);
-    }
-
-    const layerGroup = this._mapInstanceService.createLayerGroup('col');
+    const layerGroup = L.layerGroup().addTo(this.map);
     const wlIcon = L.icon({
       iconUrl: 'assets/icons/light.svg',
       iconSize: [32, 32],
@@ -117,8 +107,6 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       this.light.push(obj);
       this.lightMap[wl.guid] = obj;
     });
-
-    layerGroup.addTo(this.map);
 
     // Allow Leaflet events to enter Angular.
     (window as any).markCol = (elem: HTMLElement, guid: string, next: boolean) => {
@@ -152,7 +140,6 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   scrollToList(): void {
-    if (!this.table) { return; }
     const table = this.table.nativeElement as HTMLElement;
     table.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -331,14 +318,16 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     if (!light) { return; }
 
     if (scroll) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
     this.map.closePopup();
     const pos = wl.mapData?.position || [0,0];
-    this.map.flyTo([pos[0] + 20, pos[1]], 3);
     light.marker?.openPopup();
     light.marker?.getElement()?.focus();
+    setTimeout(() => {
+      this.map.flyTo([pos[0] + 20, pos[1]], 3, { animate: true, duration: 0.5 });
+    }, 1);
   }
 
   private toggleWingedLight(wl: IWingedLight, found?: boolean): void {
@@ -352,7 +341,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   private allDone(): void {
     this.map.closePopup();
-    this._mapInstanceService.centerMap();
+    this.map.flyTo([-270, 270], 0, { animate: false, duration: 0 });
   }
 
   // #region Leaflet tooltip events
