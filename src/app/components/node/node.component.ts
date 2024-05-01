@@ -70,23 +70,25 @@ export class NodeComponent implements OnChanges {
 
     // Unlock (or lock) based on the item status.
     const unlock = !item.unlocked;
-    const toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
+    let toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
+    // Don't lock connected nodes if this isn't the unlocked node for the item.
+    if (!unlock && !this.node.unlocked) { toggleConnected = false; }
 
     // Save progress.
     if (unlock) {
       const nodesToUnlock = toggleConnected ? NodeHelper.trace(this.node) : [this.node];
-      
+
       for (const node of nodesToUnlock) {
-        if (node.item && !node.item.unlocked) { 
+        if (node.item && !node.item.unlocked) {
           this._nodeService.unlock(node);
         }
-      }      
+      }
     } else {
       const nodesToLock = toggleConnected ? NodeHelper.all(this.node) : [this.node];
-      
+
       for (const node of nodesToLock) {
-        if (node.item && node.item.unlocked) { 
-          this._nodeService.lock(node); 
+        if (node === this.node || node.unlocked) {
+          this._nodeService.lock(node);
         }
       }
     }
