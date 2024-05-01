@@ -117,9 +117,11 @@
     <h2 class="h3">Wiki</h2>
   </div>
   <div class="sky-card-body">
-    <div class="container wiki-toggle-tab" (click)="toggleWikiTab()">
-      <mat-icon class="menu-icon">{{wikiNewTab ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-      <span class="menu-label">Navigate to wiki in new tab</span>
+    <div class="sky-flex flex-wrap wiki-toggle-tab">
+      <button (click)="toggleWikiTab()">
+        <mat-icon class="menu-icon">{{wikiNewTab ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+        <span class="menu-label">Navigate to wiki in new tab</span>
+      </button>
     </div>
   </div>
 </div>
