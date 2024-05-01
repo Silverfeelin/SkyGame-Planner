@@ -101,6 +101,23 @@ button, .button {
   }
 }
 
+.button-action {
+  position: relative;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+
+  mat-icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .danger {
   color: var(--color-danger);
   background: var(--color-danger-background);
@@ -338,9 +355,8 @@ p:last-child {
   }
 }
 
-.point {
-  cursor: pointer;
-}
+.point { cursor: pointer !important; }
+.no-point { cursor: default !important; }
 
 .wiki {
   position: relative;

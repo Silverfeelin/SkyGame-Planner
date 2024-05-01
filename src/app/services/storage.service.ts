@@ -69,6 +69,12 @@ export class StorageService implements OnDestroy {
   }
   isFavourite(guid: string): boolean { return this.provider.isFavourite(guid); }
 
+  setKey<T>(key: string, value: T): void {
+    this.provider.setKey(key, value);
+    this.notifyChange();
+  }
+  getKey<T>(key: string): T | undefined { return this.provider.getKey(key); }
+
   /** Updates the storage provider. */
   setStorageProvider(provider: IStorageProvider): void {
     this._eventSub?.unsubscribe();

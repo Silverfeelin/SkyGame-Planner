@@ -119,7 +119,7 @@ export class EditorTreeComponent implements OnInit {
     const value = +(target?.value as string);
     if (!value) { return; }
 
-    const item = this._dataService.idMap.get(value) as IItem;
+    const item = this._dataService.itemIdMap.get(value) as IItem;
     if (!item) { return; }
 
     this.formNodes[i].item = item.guid;
