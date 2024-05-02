@@ -70,7 +70,7 @@ export class OutfitVaultComponent {
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.Hat,
     ItemType.Cape,
-    ItemType.Held, ItemType.Prop
+    ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
   selectionTypes = this.itemTypes.filter(type => type !== ItemType.Held);
   typeFolded: { [key: string]: boolean } = {};
@@ -80,7 +80,7 @@ export class OutfitVaultComponent {
     [ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace],
     [ItemType.Hair, ItemType.Hat],
     [ItemType.Cape],
-    [ItemType.Held, ItemType.Prop]
+    [ItemType.Held, ItemType.Furniture, ItemType.Prop]
   ];
   sectionFolded: Array<boolean> = [];
 
@@ -88,7 +88,8 @@ export class OutfitVaultComponent {
     ['Outfit']: 'outfit', ['Shoes']: 'shoes',
     ['Mask']: 'mask', ['FaceAccessory']: 'face-acc', ['Necklace']: 'necklace',
     ['Hair']: 'hair', ['Hat']: 'hat',
-    ['Cape']: 'cape', ['Held']: 'held', ['Prop']: 'prop'
+    ['Cape']: 'cape', 
+    ['Held']: 'held', ['Furniture']: 'shelf',['Prop']: 'cup'
   };
   items: { [type: string]: Array<IItem> } = {};
   itemMap: { [guid: string]: IItem } = {};
