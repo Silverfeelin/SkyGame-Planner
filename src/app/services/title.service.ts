@@ -10,6 +10,6 @@ export class TitleService {
   ) { }
 
   setTitle(title: string): void {
-    this._title.setTitle(`${title} - Sky Planner`);
+    this._title.setTitle(title ? `${title} - Sky Planner` : 'Sky Planner');
   }
 }

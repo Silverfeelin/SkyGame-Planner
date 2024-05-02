@@ -196,7 +196,12 @@ export class DataService {
         wl = this.guidMap.get(wl as any) as IWingedLight;
         area.wingedLights![i] = wl;
         wl.area = area;
-      })
+      });
+
+      // Map connected areas.
+      area.connections?.forEach((c, i) => {
+        c.area = this.guidMap.get(c.area as any) as IArea;
+      });
     });
   }
 

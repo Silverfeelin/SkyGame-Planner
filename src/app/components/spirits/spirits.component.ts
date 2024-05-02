@@ -4,6 +4,7 @@ import { DateTime } from 'luxon';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
+import { IArea } from 'src/app/interfaces/area.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
@@ -67,6 +68,14 @@ export class SpiritsComponent {
       const spirits = new Set(realm.areas?.flatMap(a => a.spirits || []) || []);
       const ordered = this._dataService.spiritConfig.items.filter(s => spirits.has(s));
       searchArrays.push(ordered);
+    }
+
+    // Load from area
+    const areaGuid = q.get('area');
+    const area = areaGuid ? this._dataService.guidMap.get(areaGuid) as IArea : undefined;
+    if (area) {
+      const spirits = area.spirits || [];
+      searchArrays.push(spirits);
     }
 
     // Load from season.

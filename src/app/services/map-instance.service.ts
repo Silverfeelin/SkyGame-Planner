@@ -1,10 +1,11 @@
-import { Injectable, OnDestroy } from '@angular/core';
+import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import { IMapInit, MapService } from './map.service';
-import L from 'leaflet';
+import L, { icon } from 'leaflet';
 import { IRealm } from '../interfaces/realm.interface';
 import { EventService } from './event.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
 import { IArea } from '../interfaces/area.interface';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class MapInstanceService implements OnDestroy {
@@ -20,7 +21,9 @@ export class MapInstanceService implements OnDestroy {
 
   constructor(
     private readonly _eventService: EventService,
-    private readonly _mapService: MapService
+    private readonly _mapService: MapService,
+    private readonly _router: Router,
+    private readonly _zone: NgZone
   ) {
     this._subs.add(_eventService.menuFolded.subscribe(() => { this.invalidate(); }));
   }
@@ -127,31 +130,48 @@ export class MapInstanceService implements OnDestroy {
     return layer;
   }
 
-  showArea(area: IArea, options: {}): L.LayerGroup | undefined {
+  showArea(area: IArea, options: { icon?: string, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup | undefined {
     if (!area.mapData?.position) { return; }
 
     const map = this.map;
     const layer = L.layerGroup().addTo(map);
 
-    this._icons['area'] ??= L.icon({
-      iconUrl: 'assets/icons/symbols/location_on.svg',
+    const icon = options.icon || 'location_on_orange';
+    const iconPath =`assets/icons/symbols/${icon}.svg`;
+    this._icons[icon] ??= L.icon({
+      iconUrl: iconPath,
       iconSize: [24, 24],
       popupAnchor: [0, -12],
     });
-    let areaIcon = this._icons['area'];
+    let areaIcon = this._icons[icon];
 
     const marker = L.marker(area.mapData.position, { icon: areaIcon });
-    marker.bindPopup(this.createAreaPopup(area), {});
+    const content = `
+<div class="s-leaflet-tooltip" data-area="${area.guid}">
+  <div class="container link s-leaflet-item" onclick="mapGotoArea('${area.guid}')"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div></div>
+</div>
+`;
+
+    (window as any).mapGotoArea = (guid: string) => {
+      this._zone.run(() => { this.gotoArea(guid); }); };
+
+    const popup = new L.Popup({ content });
+    marker.bindPopup(popup);
     layer.addLayer(marker);
+
+    options.onClick && marker.addEventListener('click', evt => {
+      options.onClick!(evt);
+      popup.openOn(map);
+    });
 
     return layer;
   }
 
-  private createAreaPopup(area: IArea): string {
-    return area.name;
-  }
-
   // #endregion
+
+  private gotoArea(areaGuid: string): void {
+    this._router.navigate(['/area', areaGuid]);
+  }
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();

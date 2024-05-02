@@ -4,7 +4,11 @@
     {
       "guid": "zewkN917oz",
       "name": "Home Space",
-      "mapData": { "position": [-478,415.75] }
+      "mapData": { "position": [-478,415.75] },
+      "connections": [
+        { "area": "Mhbh0g9OdG" },
+        { "area": "oEnKoTrbCt" },
+      ]
     },
     // #endregion
     // #region Isle
@@ -13,60 +17,100 @@
       "name": "Sand Dunes",
       "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
       "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
-      "mapData": { "position": [-446.75,296] }
+      "mapData": { "position": [-446.75,296] },
+      "connections": [
+        { "area": "LanOVr1JCo" },
+        { "area": "Xr2ZiVSV7p" },
+      ]
     },
     {
       "guid": "LanOVr1JCo",
       "name": "Isle Temple Entrance",
       "spirits": [ "bmYjIuJ6Qf", "Q5pn7wxwUD" ],
-      "mapData": { "position": [-416.13,299.25] }
+      "mapData": { "position": [-416.13,299.25] },
+      "connections": [
+        { "area": "oEnKoTrbCt" },
+        { "area": "6MuptjUV8B" },
+        { "area": "hDN-ciwGc-" },
+      ]
     },
     {
       "guid": "6MuptjUV8B",
       "name": "Isle Temple",
-      "mapData": { "position": [-398.13,305.5] }
+      "mapData": { "position": [-398.13,305.5] },
+      "connections": [
+        { "area": "LanOVr1JCo" },
+        { "area": "Cmo9TPPpyH" },
+      ]
     },
     {
       "guid": "hDN-ciwGc-",
       "name": "Floating Island",
       "spirits": [ "f3AD39Q2Il" ],
-      "mapData": { "position": [-408.75,322.5] }
+      "mapData": { "position": [-408.75,322.5] },
+      "connections": [
+        { "area": "LanOVr1JCo" },
+        { "area": "ht8PxRB-MY" },
+        { "area": "oEnKoTrbCt" },
+      ]
     },
     {
       "guid": "ht8PxRB-MY",
       "name": "Butterfly Cave",
       "wingedLights": [ "vGCXUjMLfB" ],
-      "mapData": { "position": [-405.13,321.5] }
+      "mapData": { "position": [-405.13,321.5] },
+      "connections": [
+        { "area": "hDN-ciwGc-" },
+      ]
     },
     {
       "guid": "Xr2ZiVSV7p",
       "name": "Cave of Prophecies",
       "spirits": [ "DKFofCESGJ", "9Rgsos9xqE", "oIeqSdqyWu", "5DD07qmTqQ", "kH5B_M20Fl" ],
-      "mapData": { "position": [-404.25,349.38] }
+      "mapData": { "position": [-404.25,349.38] },
+      "connections": [
+        { "area": "oEnKoTrbCt" },
+        { "area": "4fDcMVcdYD" },
+        { "area": "AC2AuDyHbM" },
+        { "area": "nvd-hpUD1f" },
+        { "area": "lZkMYxUB8A" },
+      ]
     },
     {
       "guid": "4fDcMVcdYD",
       "name": "Trial of Water",
       "wingedLights": [ "LOr9OqWHQv" ],
-      "mapData": { "position": [-396.63,336.25] }
+      "mapData": { "position": [-396.63,336.25] },
+      "connections": [
+        { "area": "Xr2ZiVSV7p" },
+      ]
     },
     {
       "guid": "AC2AuDyHbM",
       "name": "Trial of Earth",
       "wingedLights": [ "BPnMAjL286" ],
-      "mapData": { "position": [-388,345.63] }
+      "mapData": { "position": [-388,345.63] },
+      "connections": [
+        { "area": "Xr2ZiVSV7p" },
+      ]
     },
     {
       "guid": "nvd-hpUD1f",
       "name": "Trial of Air",
       "wingedLights": [ "7IpuFMAIXe" ],
-      "mapData": { "position": [-387.88,358.75] }
+      "mapData": { "position": [-387.88,358.75] },
+      "connections": [
+        { "area": "Xr2ZiVSV7p" },
+      ]
     },
     {
       "guid": "lZkMYxUB8A",
       "name": "Trial of Fire",
       "wingedLights": [ "89a0rCfJL-" ],
-      "mapData": { "position": [-398.5,364.63] }
+      "mapData": { "position": [-398.5,364.63] },
+      "connections": [
+        { "area": "Xr2ZiVSV7p" },
+      ]
     },
     // #endregion
     // #region Prairie
@@ -470,7 +514,10 @@
       "guid": "Mhbh0g9OdG",
       "name": "Aviary Village",
       "spirits": [ "0Ab0zVwBa0", "53sRWu-bTI", "yRKMk_Xw4G", "118ghc8_me", "iz40tYocEn" ],
-      "mapData": { "position": [-460.38,365.5] }
+      "mapData": { "position": [-460.38,365.5] },
+      "connections": [
+        { "area": "zewkN917oz" }
+      ]
     },
     {
       "guid": "H2FgLkSRQw",
