@@ -130,11 +130,13 @@ export class MapInstanceService implements OnDestroy {
     return layer;
   }
 
-  showArea(area: IArea, options: { icon?: string, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup | undefined {
-    if (!area.mapData?.position) { return; }
+  showArea(area: IArea, options: { icon?: string, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup {
+    return this.createArea(area, options).addTo(this.map);
+  }
 
+  createArea(area: IArea, options: { icon?: string, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup {
     const map = this.map;
-    const layer = L.layerGroup().addTo(map);
+    const layer = L.layerGroup();
 
     const icon = options.icon || 'location_on_orange';
     const iconPath =`assets/icons/symbols/${icon}.svg`;
@@ -145,7 +147,7 @@ export class MapInstanceService implements OnDestroy {
     });
     let areaIcon = this._icons[icon];
 
-    const marker = L.marker(area.mapData.position, { icon: areaIcon });
+    const marker = L.marker(area.mapData!.position!, { icon: areaIcon });
     const content = `
 <div class="s-leaflet-tooltip" data-area="${area.guid}">
   <div class="container link s-leaflet-item" onclick="mapGotoArea('${area.guid}')"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div></div>

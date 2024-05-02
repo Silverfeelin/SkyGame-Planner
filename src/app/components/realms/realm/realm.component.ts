@@ -50,7 +50,6 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   boundaryLayers: L.LayerGroup = L.layerGroup();
   connectionLayers: L.LayerGroup = L.layerGroup();
   lastMapArea?: IArea;
-  showAreas = localStorage.getItem('map.area.markers') === '1';
 
   private readonly _subscriptions = new SubscriptionBag();
 
@@ -253,7 +252,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
       }
 
       // Draw line.
-      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 1  });
+      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
       line.addTo(this.connectionLayers!);
     });
   }

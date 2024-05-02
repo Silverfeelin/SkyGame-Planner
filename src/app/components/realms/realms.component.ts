@@ -15,15 +15,15 @@ import { MapInstanceService } from 'src/app/services/map-instance.service';
 export class RealmsComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef<HTMLElement>;
 
-  showMap = false;
   realms!: Array<IRealm>;
   visibleRealms!: Array<IRealm>;
-  map!: L.Map;
 
+  showMap = false;
   showAreas = false;
+  map!: L.Map;
   lastMapArea?: IArea;
-  areaLayers?: L.LayerGroup;
-  connectionLayers?: L.LayerGroup;
+  areaLayers = L.layerGroup();
+  connectionLayers = L.layerGroup();
 
   constructor(
     private readonly _dataService: DataService,
@@ -36,9 +36,12 @@ export class RealmsComponent implements AfterViewInit {
 
     // Check if the map should be folded or not.
     if (_route.snapshot.queryParamMap.has('map')) {
-      this.showMap = _route.snapshot.queryParamMap.get('map') === '1';
+      const nMap = +_route.snapshot.queryParamMap.get('map')!;
+      this.showMap = nMap >= 1;
+      this.showAreas = nMap >= 2;
     } else {
       this.showMap = localStorage.getItem('realms.map.folded') !== '1';
+      this.showAreas = localStorage.getItem('realms.map.areas') === '1';
       this.updateMapUrl(!this.showMap);
     }
   }
@@ -47,6 +50,11 @@ export class RealmsComponent implements AfterViewInit {
     // Initialize realm map.
     this.map = this._mapInstanceService.initialize(this.mapContainer!.nativeElement.querySelector('.map')!, { fromQuery: true });
     this._mapInstanceService.saveParamsToQueryOnMove();
+    this.drawAreas();
+    if (this.showAreas) {
+      this.areaLayers?.addTo(this.map);
+      this.connectionLayers?.addTo(this.map);
+    }
 
     for (const realm of this.realms) {
       this._mapInstanceService.showRealm(realm, { showBoundary: true, showLabel: true, onClick: () => {
@@ -64,33 +72,32 @@ export class RealmsComponent implements AfterViewInit {
 
   toggleShowAreas(): void {
     this.showAreas = !this.showAreas;
+    localStorage.setItem('realms.map.areas', this.showAreas ? '1' : '0');
 
-    if (!this.areaLayers) { this.drawAreas(); }
     if (this.showAreas) {
-      this.areaLayers?.addTo(this.map);
-      this.connectionLayers?.addTo(this.map);
+      this.areaLayers.addTo(this.map);
+      this.connectionLayers.addTo(this.map);
     } else {
       this.areaLayers?.remove();
       this.connectionLayers?.remove();
     }
+
+    this.updateMapUrl(!this.showMap);
   }
 
   private updateMapUrl(folded: boolean): void {
     const url = new URL(location.href);
-    url.searchParams.set('map', folded ? '0' : '1');
+    url.searchParams.set('map', folded ? '0' : this.showAreas ? '2' : '1');
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   private drawAreas(): void {
-    this.areaLayers = L.layerGroup();
-    this.connectionLayers = L.layerGroup();
-
     this._dataService.areaConfig.items.forEach(area => {
       if (!area.mapData?.position) { return; }
-      this._mapInstanceService.showArea(area, {
+      this._mapInstanceService.createArea(area, {
         icon: 'location_on_orange',
         onClick: () => { this.updateMapConnections(area); }
-      })?.addTo(this.areaLayers!);
+      }).addTo(this.areaLayers!);
     });
   }
 
@@ -101,7 +108,7 @@ export class RealmsComponent implements AfterViewInit {
 
 
     // Add yellow marker over the selected area.
-    this._mapInstanceService.showArea(area, {
+    this._mapInstanceService.createArea(area, {
       icon: 'location_on_yellow',
       onClick: () => { this.updateMapConnections(undefined); }
     })?.addTo(this.connectionLayers!);
@@ -110,7 +117,7 @@ export class RealmsComponent implements AfterViewInit {
     area.connections?.forEach(connection => {
       if (!connection.area.mapData?.position) { return; }
 
-      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 1  });
+      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
       line.addTo(this.connectionLayers!);
     });
   }
