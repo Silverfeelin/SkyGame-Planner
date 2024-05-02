@@ -1,0 +1,288 @@
+<div class="mb-vault">
+  <!-- Title -->
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Outfit vault</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        On this page you can search for outfits submitted to the vault by other players.
+        All outfits on this page will link to a message in the official <a href="https://discord.com/invite/thatskygame" target="_blank">Sky Discord server</a>.
+
+        <div class="mt">
+          <button type="button" (click)="toggleItemSize()">
+            <mat-icon class="menu-icon">{{ itemSize === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
+            <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
+          </button>
+        </div>
+        <div class="search mt" data-step="126" data-position="bottom-left-aligned">
+          <input tabindex="0" #searchInput class="search-input" type="search" (input)="search()" placeholder="Search for items">
+          <mat-icon (click)="selectSearch()">search</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Item list -->
+  <div class="sky-card mt" [hidden]="showMode !== 'list'">
+    <div class="sky-card-header header-items">
+      <h2 class="h3 mb-0 label-items">Items</h2>
+      <!-- Reset -->
+      <button type="button" class="selection-reset button-danger" (click)="reset()">
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        <span class="menu-label">Reset</span>
+      </button>
+    </div>
+    <!-- Item sections -->
+    <div class="sky-card-body pad-0 closet-container">
+      <!-- Item selection -->
+      <div class="selection-sticky">
+        <div class="selection-inner pad">
+          <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: selection, wrap: false, warn: false}"></ng-container>
+        </div>
+      </div>
+
+      <div class="closet-grid pad scroll-x">
+        <ng-container *ngFor="let section of sections; let iSection = index;">
+          <div class="closet-grid-section-divider" *ngIf="iSection > 0"></div>
+          <div class="closet-grid-section" [class.section-folded]="sectionFolded[iSection]">
+            <ng-container *ngFor="let type of section">
+              <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type }"></ng-container>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #templateItemsType let-type="type">
+    <div class="closet-items" [attr.data-type]="type" [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx+8) + 'px)'"
+      [attr.data-step]="type === 'Outfit' ? 2 : undefined" data-position="top-left-aligned">
+      <!-- Closet icon, foldable -->
+      <div [style.gridColumn]="'1/' + (columns+1)" class="closet-type t-center" (click)="foldType(type)">
+        <mat-icon [svgIcon]="itemIcons[type]"></mat-icon>
+        <div class="closet-type-fold">
+          <mat-icon>{{ typeFolded[type] ? 'add' : 'remove' }}</mat-icon>
+        </div>
+      </div>
+      <!-- Items -->
+      <ng-container [ngTemplateOutlet]="templateItems" [ngTemplateOutletContext]="{ $implicit: items[type], type }">
+      </ng-container>
+    </div>
+  </ng-template>
+
+  <!-- Items -->
+  <ng-template #templateItems let-items let-type="type">
+    <ng-container *ngFor="let item of items; let i = index;">
+      <div class="closet-item-container" [hidden]="typeFolded[type]">
+        <div class="closet-item" (click)="selectItem(item, type)" [attr.data-guid]="item.guid"
+          [ngbTooltip]="templateItemHover" container="body"
+          [class.selected]="selectionMap[item.guid]"
+          [class.search-match]="searchText && searchResults?.[item.guid]" [class.no-search-match]="searchText && !searchResults?.[item.guid]"
+        >
+          <app-item-icon [item]="item" [size]="itemSize" [showSubIcons]="false" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+        </div>
+      </div>
+
+      <!-- Tooltip -->
+      <ng-template #templateItemHover>
+        <ng-container *ngIf="item">
+          <span class="ws-nw">{{item.name}}</span>
+        </ng-container>
+      </ng-template>
+    </ng-container>
+  </ng-template>
+
+  <!-- Submit -->
+  <div class="sky-card mt" [hidden]="showMode !== 'submit'">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Add outfit</h1>
+    </div>
+    <div class="sky-card-body">
+      <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: selection, wrap: true, warn: true}"></ng-container>
+      <div *ngIf="!hasSubmitRequiredItems" class="container danger mt">
+        You have not selected a full outfit. Some required items are missing.<br/>
+        If necessary, please submit multiple versions (i.e. multiple capes) individually instead of leaving the item blank.
+      </div>
+      <div class="container mt" *ngIf="!submitUnderstood">
+        By submitting an outfit to the vault other players will be able to find it on this page.
+        <ul class="mb-half">
+          <li>Please make sure you select <b>all</b> items used in the outfit.</li>
+          <li>If a message or collage contains multiple outfits, please submit them separately.</li>
+          <li>If you think you did something wrong you can contact Silverfeelin on Discord.</li>
+        </ul>
+        <button type="button" (click)="onSubmitUnderstood()">
+          <mat-icon class="menu-icon">done</mat-icon>
+          <span class="menu-label">I understand</span>
+        </button>
+      </div>
+      <div class="container mt" *ngIf="submitUnderstood">
+        <div class="grid grid-1">
+          <!-- Link -->
+          <div>
+            <label for="txtDiscordLink">
+              Discord message link:
+              <span class="text-link" ngbTooltip="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures." container="body" triggers="click">(help)</span>
+            </label>
+            <input id="txtDiscordLink" type="text" [(ngModel)]="sDiscordLink" (ngModelChange)="onDiscordLinkChange()" autocomplete="off">
+            <div class="mt-half">
+              Please verify the link works before submitting!<br/>
+              <ng-container *ngIf="pDiscordLink">
+                <a [href]="pDiscordLink">
+                  <mat-icon class="menu-icon">open_in_browser</mat-icon>
+                  <span class="menu-label">Open in Discord</span>
+                </a><br/>
+                <a [href]="sDiscordLink" target="_blank">
+                  <mat-icon class="menu-icon">link</mat-icon>
+                  <span class="menu-label">Open in browser</span>
+                </a>
+              </ng-container>
+            </div>
+          </div>
+          <!-- Size -->
+          <div>
+            <label for="selSize">Size:</label>
+            <select id="selSize" [(ngModel)]="sSize">
+              <option value="0"></option>
+              <option value="1">{{sizes[1]}}</option>
+              <option value="2">{{sizes[2]}}</option>
+              <option value="3">{{sizes[3]}}</option>
+              <option value="4">{{sizes[4]}}</option>
+              <option value="5">{{sizes[5]}}</option>
+              <option value="6">{{sizes[6]}}</option>
+              <option value="7">{{sizes[7]}}</option>
+            </select>
+          </div>
+          <!-- Lighting -->
+          <div>
+            <label for="sLight">Lighting:</label>
+            <select id="sLight" [(ngModel)]="sLight">
+              <option value="0"></option>
+              <option value="1">{{ lightings[1] }}</option>
+              <option value="2">{{ lightings[2] }}</option>
+              <option value="3">{{ lightings[3] }}</option>
+              <option value="4">{{ lightings[4] }}</option>
+            </select>
+          </div>
+          <!-- Submit -->
+          <div>
+            <button type="button" (click)="submitOutfit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div [hidden]="showMode !== 'result'">
+    <div class="sky-card mt">
+      <div class="sky-card-header">
+        <h2 class="h3 mb-0">Selection</h2>
+      </div>
+      <div class="sky-card-body pad-0">
+        <div class="selection-inner pad">
+          <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: selection, wrap: true, warn: false}"></ng-container>
+        </div>
+      </div>
+    </div>
+
+    <div class="sky-card mt">
+      <div class="sky-card-header">
+        <h1 class="h2 mb-0">Results</h1>
+      </div>
+      <div class="sky-card-body grid grid-1">
+        <ng-container *ngIf="resultData">
+          <ng-container *ngFor="let result of results; let i = index;">
+            <div class="container">
+              <!-- -->
+              <div class="mt">
+                <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{items: result.items, wrap: true, warn: true, isResult: true}"></ng-container>
+              </div>
+              <!-- -->
+              <hr class="mt mb-0"/>
+              <div class="sky-flex flex-wrap mt">
+                <div class="" ngbTooltip="Player size" container="body">
+                  <mat-icon svgIcon="resize" class="menu-icon"></mat-icon>
+                  <div class="menu-label">{{ result.data.sizeId && sizes[result.data.sizeId] || sizes[0] }}</div>
+                </div>|
+                <div class="" ngbTooltip="Lighting" container="body">
+                  <mat-icon svgIcon="bonfire" class="menu-icon"></mat-icon>
+                  <div class="menu-label">{{ result.data.lightingId && lightings[result.data.lightingId] || lightings[0] }}</div>
+                </div>
+              </div>
+              <!-- -->
+              <div class="sky-flex flex-wrap gap-half mt">
+                <a *ngIf="result.data.protocolLink" [href]="result.data.protocolLink" target="_blank" class="button">
+                  <mat-icon class="menu-icon">desktop_windows</mat-icon>
+                  <span class="menu-label">Open on PC</span>
+                </a>
+                <a [href]="result.data.link" target="_blank" class="button">
+                  <mat-icon class="menu-icon">open_in_browser</mat-icon>
+                  <span class="menu-label">Go to message</span>
+                </a>
+                <button type="button" target="_blank" class="button" (click)="copyLink(i)"
+                ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+                <mat-icon class="menu-icon">link</mat-icon>
+                  <span class="menu-label">Copy message link</span>
+                </button>
+                @if (result.canDelete) {
+                  <button class="button button-danger" (click)="deleteResult(result)">
+                    <mat-icon class="menu-icon">delete</mat-icon>
+                    <span class="menu-label">Delete</span>
+                  </button>
+                } @else {
+                  <button class="button button-danger" (click)="reportResult(result)">
+                    <mat-icon class="menu-icon">report</mat-icon>
+                    <span class="menu-label">Report</span>
+                  </button>
+                }
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="!resultData.items?.length">
+            <div class="container">
+              No outfits found for this selection.
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Actions -->
+<div class="vault-actions">
+  <div class="sky-flex flex-nowrap mt">
+    <button type="button" class="button-action button-add" (click)="showSubmitOutfit()" [disabled]="isSubmitting">
+      <mat-icon class="">add</mat-icon>
+    </button>
+    <button *ngIf="showMode === 'list'" type="button" class="button-action button-search" (click)="findOutfits()" [disabled]="isFinding">
+      <mat-icon class="">search</mat-icon>
+    </button>
+    <button *ngIf="showMode !== 'list'" type="button" class="button-action button-search" (click)="showList()" [disabled]="isFinding">
+      <mat-icon class="">apps</mat-icon>
+    </button>
+  </div>
+</div>
+
+<ng-template #templateSelection let-wrap="wrap" let-items="items" let-warn="warn" let-isResult="isResult">
+  <div class="selection-icons scroll-x" [class.flex-wrap]="wrap">
+    <ng-container *ngFor="let type of selectionTypes">
+      <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{ item: items[type], type, warn: warn && requiredParams[type], isResult }"></ng-container>
+    </ng-container>
+  </div>
+
+  <ng-template #templateSelection let-item="item" let-type="type" let-warn="warn" let-isResult="isResult">
+    <div class="selection-icon" (click)="!isResult && gotoType(type)" *ngIf="item || !isResult"
+      [class.selected]="!isResult && item" [class.warn]="warn && !item" [class.no-point]="isResult"
+      [ngbTooltip]="templateSelectionHover" container="body"
+    >
+      <app-item-icon *ngIf="item" [item]="item" [size]="'auto'" class="selection-icon-img" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+      <mat-icon *ngIf="!item" [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
+    </div>
+    <!-- Tooltip -->
+    <ng-template #templateSelectionHover>
+      <span class="ws-nw">{{item?.name || (type | itemType)}}</span>
+    </ng-template>
+  </ng-template>
+</ng-template>

@@ -26,6 +26,7 @@ interface IExport {
 })
 export class SettingsComponent {
   storageProviderName: string;
+  unlockConnectedNodes: boolean;
   today = DateTime.now();
   dateFormat: string;
   dateFormats: Array<string>;
@@ -52,6 +53,7 @@ export class SettingsComponent {
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
     this.currentTheme = localStorage.getItem('theme') || '';
+    this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
   }
 
   import(): void {
@@ -80,7 +82,6 @@ export class SettingsComponent {
     input.click();
   }
 
-
   handleImportJson(data: IExport): void {
     if (!data) { throw new Error('No content.'); }
     if (typeof data !== 'object') { throw new Error('Invalid content.'); }
@@ -92,7 +93,7 @@ export class SettingsComponent {
       const d = data as any;
       data = {
         version: '0.1.1',
-        storageData: { date: '2024-04-01T00:00:00.000+00:00', unlocked: d.unlocked, wingedLights: d.wingedLights, favourites: d.favourites },
+        storageData: { date: '2024-04-01T00:00:00.000+00:00', unlocked: d.unlocked, wingedLights: d.wingedLights, favourites: d.favourites, keys: {}},
         closetData: d.closet
       };
     }
@@ -145,7 +146,8 @@ export class SettingsComponent {
       date: DateTime.now().toISO()!,
       unlocked: '',
       wingedLights: '',
-      favourites: ''
+      favourites: '',
+      keys: {}
     });
 
     localStorage.setItem('closet.hidden', '[]');
@@ -155,6 +157,11 @@ export class SettingsComponent {
       wingedLights: new Set(),
       favourites: new Set()
     });
+  }
+
+  toggleConnectedNodes(): void {
+    this.unlockConnectedNodes = !this.unlockConnectedNodes;
+    this._storageService.setKey('tree.unlock-connected', this.unlockConnectedNodes ? '1' : '0');
   }
 
   setDateFormat(format: string): void {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { SubscriptionLike } from 'rxjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
@@ -42,7 +42,8 @@ export class EventInstanceComponent implements OnDestroy {
     private readonly _eventService: EventService,
     private readonly _iapService: IAPService,
     private readonly _titleService: TitleService,
-    private readonly _route: ActivatedRoute
+    private readonly _route: ActivatedRoute,
+    private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
@@ -107,6 +108,7 @@ export class EventInstanceComponent implements OnDestroy {
     }
 
     this.calculateCandles();
+    this._changeDetectorRef.markForCheck();
   }
 
   togglePurchased(event: MouseEvent, iap: IIAP): void {

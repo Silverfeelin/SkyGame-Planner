@@ -15,6 +15,7 @@ export interface IStorageExport {
   unlocked: string;
   wingedLights: string;
   favourites: string;
+  keys: { [key: string]: unknown };
 }
 
 export interface IStorageProvider {
@@ -22,6 +23,7 @@ export interface IStorageProvider {
   _syncDate: DateTime;
   _unlocked: Set<string>;
   _favourites: Set<string>;
+  _keys: { [key: string]: unknown };
 
   events: Subject<IStorageEvent>;
 
@@ -48,4 +50,7 @@ export interface IStorageProvider {
   addFavourites(...guids: Array<string>): void;
   removeFavourites(...guids: Array<string>): void;
   isFavourite(guid: string): boolean;
+
+  setKey<T>(key: string, value: T): void;
+  getKey<T>(key: string): T | undefined;
 }

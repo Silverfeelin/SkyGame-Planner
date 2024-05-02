@@ -62,6 +62,8 @@ import { DateComponent } from './components/util/date/date.component';
 import { DashboardWishlistComponent } from './components/dashboard/dashboard-wishlist/dashboard-wishlist.component';
 import { ItemComponent } from './components/items/item/item.component';
 import { ReturningSpiritCardComponent } from './components/returning-spirit-card/returning-spirit-card.component';
+import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
+import { FormsModule } from '@angular/forms';
 import { RealmConstellationComponent } from './components/realms/realm-constellation/realm-constellation.component';
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { ClampPipe } from './pipes/clamp.pipe';
@@ -152,10 +154,12 @@ import { AreaComponent } from './components/areas/area/area.component';
     StorageComponent,
     MainLayoutComponent,
     NoDataComponent,
+    OutfitVaultComponent,
     AreaComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule,

@@ -42,6 +42,34 @@
   </div>
 </div>
 
+<!-- Spirit trees -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">
+      <mat-icon style="transform:scaleY(-1)">network_node</mat-icon>
+      Spirit trees
+    </h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        @if (unlockConnectedNodes) {
+          All the items leading up to the item you unlock in a spirit tree will also be unlocked.<br/>
+          Likewise, when you lock an item the items beyond it will be locked. You can disable this here.
+        } @else {
+          When you unlock an item in a spirit tree only that item will be unlocked.<br/>
+          You can choose to also unlock all preceding items below.
+        }
+      </p>
+      <div class="sky-flex flex-wrap mt">
+        <button (click)="toggleConnectedNodes()">
+          <mat-icon class="menu-icon">{{unlockConnectedNodes ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+          <span class="menu-label">Unlock connected items</span>
+        </button>
+    </div>
+  </div>
+</div>
+
 <!-- Date -->
 <div class="sky-card mt">
   <div class="sky-card-header">
@@ -89,9 +117,11 @@
     <h2 class="h3">Wiki</h2>
   </div>
   <div class="sky-card-body">
-    <div class="container wiki-toggle-tab" (click)="toggleWikiTab()">
-      <mat-icon class="menu-icon">{{wikiNewTab ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-      <span class="menu-label">Navigate to wiki in new tab</span>
+    <div class="sky-flex flex-wrap wiki-toggle-tab">
+      <button (click)="toggleWikiTab()">
+        <mat-icon class="menu-icon">{{wikiNewTab ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+        <span class="menu-label">Navigate to wiki in new tab</span>
+      </button>
     </div>
   </div>
 </div>
