@@ -50,11 +50,15 @@ export class MapService {
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(map);
 
-    const mapcopy = document.cookie.split(';').find(c => c.includes('mapcopy='))?.split('=')[1];
+    const mapcopy = document.cookie.split(';').find(c => c.includes('mapcopy='));
     if (mapcopy !== undefined) {
       map.on('click', e => {
         console.log(e);
-        navigator.clipboard.writeText(mapcopy + JSON.stringify([+e.latlng.lat.toFixed(2), +e.latlng.lng.toFixed(2)]));
+        const f = 2;
+        const format = `,
+"mapData": { "position": {0} }`;
+        const coords = JSON.stringify([+e.latlng.lat.toFixed(f), +e.latlng.lng.toFixed(f)]);
+        navigator.clipboard.writeText(`${format.replace('{0}', coords)}`);
       });
     }
 
