@@ -72,7 +72,7 @@ export class OutfitVaultComponent {
     ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
-  selectionTypes = this.itemTypes.filter(type => type !== ItemType.Held);
+  selectionTypes = this.itemTypes.filter(type => type !== ItemType.Held && type !== ItemType.Furniture);
   typeFolded: { [key: string]: boolean } = {};
 
   sections: Array<Array<ItemType>> = [
@@ -198,7 +198,7 @@ export class OutfitVaultComponent {
   }
 
   selectItem(item: IItem, type: ItemType): void {
-    if (type === ItemType.Held) { type = ItemType.Prop; }
+    if (type === ItemType.Held || type === ItemType.Furniture) { type = ItemType.Prop; }
 
     // Remove selection.
     if (this.selection[type] === item) {
