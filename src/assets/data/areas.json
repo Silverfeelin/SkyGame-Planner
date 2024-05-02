@@ -3,7 +3,8 @@
     // #region Home
     {
       "guid": "zewkN917oz",
-      "name": "Home Space"
+      "name": "Home Space",
+      "mapData": { "position": [-478,415.75] }
     },
     // #endregion
     // #region Isle
@@ -472,10 +473,35 @@
       "mapData": { "position": [-460.38,365.5] }
     },
     {
+      "guid": "H2FgLkSRQw",
+      "name": "Revival Season Shop",
+      "mapData": { "position": [-455.13,355.75] }
+    },
+    {
+      "guid": "JdoOxvcKlP",
+      "name": "Aviary Event Store",
+      "mapData": { "position": [-457.25,361.13] }
+    },
+    {
+      "guid": "TUyoacebPE",
+      "name": "Aviary Spell Shop",
+      "mapData": { "position": [-458.38,374] }
+    },
+    {
+      "guid": "rTIqNgvA4N",
+      "name": "Aviary Shopping Area",
+      "mapData": { "position": [-453.38,362.13] }
+    },
+    {
       "guid": "tP8ZaD5Qwf",
       "name": "Nesting Workshop",
       "spirits": [ "ksZ0eZfHEZ", "L6Rqyh4Xi9", "r5FVxLgLrp", "Ha10I4vIO7", "8p_1kKYu7_" ],
       "mapData": { "position": [-455.63,369] }
+    },
+    {
+      "guid": "pNNbszCpyA",
+      "name": "Nests",
+      "mapData": { "position": [-460.44,353.25] }
     },
     // #endregion
     // #region Eden

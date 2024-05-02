@@ -4,11 +4,14 @@ import L from 'leaflet';
 import { IRealm } from '../interfaces/realm.interface';
 import { EventService } from './event.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
+import { IArea } from '../interfaces/area.interface';
 
 @Injectable()
 export class MapInstanceService implements OnDestroy {
   _map?: L.Map;
   _subs = new SubscriptionBag();
+
+  private _icons: { [key: string]: L.Icon } = {};
 
   get map(): L.Map {
     if (!this._map) { throw new Error('Map not initialized.'); }
@@ -122,6 +125,30 @@ export class MapInstanceService implements OnDestroy {
     }
 
     return layer;
+  }
+
+  showArea(area: IArea, options: {}): L.LayerGroup | undefined {
+    if (!area.mapData?.position) { return; }
+
+    const map = this.map;
+    const layer = L.layerGroup().addTo(map);
+
+    this._icons['area'] ??= L.icon({
+      iconUrl: 'assets/icons/symbols/location_on.svg',
+      iconSize: [24, 24],
+      popupAnchor: [0, -12],
+    });
+    let areaIcon = this._icons['area'];
+
+    const marker = L.marker(area.mapData.position, { icon: areaIcon });
+    marker.bindPopup(this.createAreaPopup(area), {});
+    layer.addLayer(marker);
+
+    return layer;
+  }
+
+  private createAreaPopup(area: IArea): string {
+    return area.name;
   }
 
   // #endregion

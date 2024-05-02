@@ -203,33 +203,11 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
       this._mapInstanceService.showRealm(this.realm, { showBoundary: true })
     );
 
-    const areaIcon = L.icon({
-      iconUrl: 'assets/icons/symbols/location_on.svg',
-      iconSize: [24, 24],
-      popupAnchor: [0, -12],
-    });
-
     this.realm?.areas?.forEach(area => {
-      if (!area.mapData?.position) { return; }
-      const marker = L.marker(area.mapData.position, { icon: areaIcon });
-      marker.bindPopup(this.createAreaPopup(area), {});
-      this.areaLayers.addLayer(marker);
-
-      // Draw line to all other areas (testing display, need to configure connected areas in JSON).
-      // this.realm?.areas?.forEach(otherArea => {
-      //   if (area === otherArea || !otherArea.mapData?.position) { return; }
-      //   const line = L.polyline([area.mapData!.position!, otherArea.mapData.position], { color: '#ff08', weight: 1 });
-      //   connectorLayer.addLayer(line);
-      // });
+      this._mapInstanceService.showArea(area, {});
     });
-
 
     this.hasAreaData = this.realm?.areas?.filter(a => a.mapData?.position).length! > 0;
   }
-
-  private createAreaPopup(area: IArea): string {
-    return area.name;
-  }
 }
 
-interface ITierCosts { [key: number]: ICost }
