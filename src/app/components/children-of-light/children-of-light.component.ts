@@ -224,10 +224,10 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     return `
 <div class="s-leaflet-tooltip" data-wl="${wl.guid}" onkeydown="keydownCol(event, this)">
   <div class="s-leaflet-grid">
-    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon">map</div><div class="menu-label">${wl.area?.realm?.name || ''}</div></div>
-    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${wl.area?.name || ''}</div></div>
+    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">map</div><div class="menu-label">${wl.area?.realm?.name || ''}</div></div>
+    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">location_on</div><div class="menu-label">${wl.area?.name || ''}</div></div>
     <div class="container s-leaflet-item s-leaflet-desc">
-      <div class="menu-icon s-leaflet-maticon">description</div><div class="menu-label">${wl.description || ''}</div>
+      <div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="menu-label">${wl.description || ''}</div>
     </div>
   </div>
   <div class="s-leaflet-mt">${video}</div>

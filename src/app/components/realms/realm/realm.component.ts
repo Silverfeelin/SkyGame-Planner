@@ -79,10 +79,21 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    // Set focus on area.
+    const focusArea = this._route.snapshot.queryParamMap.get('area');
+    let view = this.realm?.mapData?.position ?? [-270, 270];
+    let zoom = this.realm?.mapData?.zoom ?? 2;
+    if (focusArea) {
+      const areaMapData = (this._dataService.guidMap.get(focusArea) as IArea)?.mapData;
+      if (areaMapData) {
+        view = areaMapData.position ?? view;
+        zoom = areaMapData.zoom ?? 3;
+      }
+    }
+
     const mapEl = this.mapContainer.nativeElement.querySelector('.map');
     const options: IMapInit = {
-      view: this.realm?.mapData?.position ?? [-270, 270],
-      zoom: this.realm?.mapData?.zoom ?? 2,
+      view, zoom,
       zoomPanOptions: { animate: false, duration: 0 }
     };
     this.map = this._mapInstanceService.initialize(mapEl, options);
@@ -90,6 +101,10 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     this.areaLayers.addTo(this.map);
     this.connectionLayers.addTo(this.map);
     this.drawMap();
+
+    if (focusArea) {
+      this.updateMapConnections(this._dataService.guidMap.get(focusArea) as IArea);
+    }
   }
 
   ngOnDestroy(): void {
@@ -233,6 +248,10 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!this.connectionLayers) { return; }
     this.connectionLayers.clearLayers();
     if (!area?.mapData?.position) { return; }
+
+    const url = new URL(location.href);
+    url.searchParams.set('area', area.guid);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
 
     // Add yellow marker over the selected area.
     this._mapInstanceService.showArea(area, {

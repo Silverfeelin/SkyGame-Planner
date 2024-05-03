@@ -162,6 +162,12 @@ export class MapInstanceService implements OnDestroy {
     layer.addLayer(marker);
 
     options.onClick && marker.addEventListener('click', evt => {
+
+      if (false) {
+        navigator.clipboard.writeText(`
+        { "area": "${area.guid}" },`);
+      }
+
       options.onClick!(evt);
       popup.openOn(map);
     });
