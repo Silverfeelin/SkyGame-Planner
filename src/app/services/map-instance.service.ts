@@ -148,14 +148,33 @@ export class MapInstanceService implements OnDestroy {
     let areaIcon = this._icons[icon];
 
     const marker = L.marker(area.mapData!.position!, { icon: areaIcon });
+    const spiritsHtml = `
+<div class="container link s-leaflet-item" onclick="mapGotoAreaSpirits('${area.guid}')">
+  <div class="ws-nw">${area.spirits?.length || 0} ${area.spirits?.length === 1 ? 'spirit' : 'spirits'}</div>
+</div>`;
+    const wlHtml = `
+<div class="container link s-leaflet-item" onclick="mapGotoAreaWingedLights('${area.guid}')">
+  <div class="ws-nw">${area.wingedLights?.length || 0} ${area.wingedLights?.length === 1 ? 'winged light' : 'winged lights'}</div>
+</div>`;
     const content = `
 <div class="s-leaflet-tooltip" data-area="${area.guid}">
   <div class="container link s-leaflet-item" onclick="mapGotoArea('${area.guid}')"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div></div>
+  <div class="s-leaflet-grid mt-half">
+  ${spiritsHtml}
+  ${wlHtml}
+  </div>
 </div>
 `;
 
     (window as any).mapGotoArea = (guid: string) => {
-      this._zone.run(() => { this.gotoArea(guid); }); };
+      this._zone.run(() => { this.gotoArea(guid); });
+    };
+    (window as any).mapGotoAreaSpirits = (guid: string) => {
+      this._zone.run(() => { this._router.navigate(['/spirit'], { queryParams: { area: guid }}); });
+    }
+    (window as any).mapGotoAreaWingedLights = (guid: string) => {
+      this._zone.run(() => { this._router.navigate(['/col'], { queryParams: { area: guid }}); });
+    };
 
     const popup = new L.Popup({ content });
     marker.bindPopup(popup);
