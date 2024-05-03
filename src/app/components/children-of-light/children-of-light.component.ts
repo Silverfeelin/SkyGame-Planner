@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
+import { IMapInit } from 'src/app/services/map.service';
 
 interface IRow {
   area: IArea;
@@ -49,7 +50,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
     private readonly _mapInstanceService: MapInstanceService,
-    private readonly _activatedRoute: ActivatedRoute,
+    private readonly _route: ActivatedRoute,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _breakpointObserver: BreakpointObserver,
     private readonly _zone: NgZone,
@@ -76,7 +77,17 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapInstanceService.initialize(this.mapContainer.nativeElement.querySelector('.map'), { fromQuery: true });
+    const areaGuid = this._route.snapshot.queryParamMap.get('area');
+    const area = areaGuid ? this._dataService.guidMap.get(areaGuid) as IArea : undefined;
+
+    let mapInit: IMapInit;
+    if (area?.mapData?.position) {
+      mapInit = { view: area.mapData.position, zoom: 3 };
+    } else {
+      mapInit = { fromQuery: true };
+    }
+    this.map = this._mapInstanceService.initialize(this.mapContainer.nativeElement.querySelector('.map'), mapInit);
+
 
     const layerGroup = L.layerGroup().addTo(this.map);
     const wlIcon = L.icon({

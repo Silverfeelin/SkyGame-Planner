@@ -31,6 +31,14 @@
           </span>
         </a>
       }
+      @if (area.wingedLights?.length) {
+        <a class="container colspan-2" [routerLink]="['/col']" [queryParams]="{ area: area.guid }">
+          <mat-icon svgIcon="flaps" class="menu-icon"></mat-icon>
+          <span class="menu-label">
+            Winged Lights&nbsp;<span class="c-accent">({{ area.wingedLights!.length }})</span>
+          </span>
+        </a>
+      }
 
     </div>
   </div>
