@@ -5,6 +5,7 @@ import { IArea } from 'src/app/interfaces/area.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { DataService } from 'src/app/services/data.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
+import { IMapInit } from 'src/app/services/map.service';
 
 @Component({
   selector: 'app-realms',
@@ -47,8 +48,20 @@ export class RealmsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // Set focus on area.
+    const focusArea = this._route.snapshot.queryParamMap.get('area');
+    let mapInit: IMapInit | undefined = undefined;
+    if (focusArea) {
+      const areaMapData = (this._dataService.guidMap.get(focusArea) as IArea)?.mapData;
+      if (areaMapData) {
+        mapInit = { view: areaMapData.position, zoom: areaMapData.zoom ?? 3 };
+      }
+    } else {
+      mapInit = { fromQuery: true };
+    }
+
     // Initialize realm map.
-    this.map = this._mapInstanceService.initialize(this.mapContainer!.nativeElement.querySelector('.map')!, { fromQuery: true });
+    this.map = this._mapInstanceService.initialize(this.mapContainer!.nativeElement.querySelector('.map')!, mapInit);
     this._mapInstanceService.saveParamsToQueryOnMove();
     this.drawAreas();
     if (this.showAreas) {
@@ -62,6 +75,10 @@ export class RealmsComponent implements AfterViewInit {
         if (this.showAreas) { return; }
         void this._router.navigateByUrl(`/realm/${realm.guid}`);
       }});
+    }
+
+    if (focusArea) {
+      this.updateMapConnections(this._dataService.guidMap.get(focusArea) as IArea);
     }
   }
 
@@ -106,6 +123,9 @@ export class RealmsComponent implements AfterViewInit {
     this.connectionLayers.clearLayers();
     if (!area?.mapData?.position) { return; }
 
+    const url = new URL(location.href);
+    url.searchParams.set('area', area.guid);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
 
     // Add yellow marker over the selected area.
     this._mapInstanceService.createArea(area, {

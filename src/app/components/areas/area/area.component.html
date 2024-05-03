@@ -10,7 +10,7 @@
         <span class="menu-label">{{ realm.name }}</span>
       </a>
       @if (area.mapData?.position) {
-        <a class="container" [routerLink]="['/realm', realm.guid]" [queryParams]="{map: 1, area: area.guid}">
+        <a class="container" [routerLink]="['/realm']" [queryParams]="{map: 2, area: area.guid}">
           <mat-icon class="menu-icon">location_on</mat-icon>
           <span class="menu-label">View on map</span>
         </a>
