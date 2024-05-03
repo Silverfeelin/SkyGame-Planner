@@ -433,15 +433,15 @@
     },
     // Hermit Valley
     {
-      "guid": "KFqwmitUni",
-      "description": "On the back side of Hermit's cave.",
-      "mapData": { "position": [-278.5,244], "videoUrl": "Valley/14.mp4" },
+      "guid": "8_EY7L74TI",
+      "description": "Looking back at the elevator at Hermit's Cave, in a cave on the right side.",
+      "mapData": { "position": [-286.38,244.75], "videoUrl": "Valley/14.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Hermit_Valley" }
     },
     {
-      "guid": "8_EY7L74TI",
-      "description": "Looking back at the elevator at Hermit's Cave, in a cave on the right side.",
-      "mapData": { "position": [-286.38,244.75], "videoUrl": "Valley/15.mp4" },
+      "guid": "KFqwmitUni",
+      "description": "On the back side of Hermit's cave.",
+      "mapData": { "position": [-278.5,244], "videoUrl": "Valley/15.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Hermit_Valley" }
     },
     // Village Theatre
