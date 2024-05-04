@@ -13,6 +13,7 @@ export class EventService {
   readonly searchReset = new Subject<void>();
   readonly clicked = new Subject<MouseEvent>();
   readonly storageChanged = new Subject<StorageEvent>();
+  readonly menuFolded = new Subject<boolean>();
 
   constructor(
     private readonly _router: Router

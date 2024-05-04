@@ -29,7 +29,9 @@
 </ng-template>
 
 <ng-template #costHover>
-  <span>Cost of items not yet unlocked.</span><br/>
-  <span *ngIf="remaining" class="c-accent">Total cost of all items.</span><br/>
-  <span class="c-completed">All items are unlocked.</span>
+  <div style="text-align: left;">
+    <span>■ Cost of items not yet unlocked.</span><br/>
+    <span *ngIf="remaining" class="c-accent">■ Total cost of all items.</span><br/>
+    <span class="c-completed">■ All items unlocked.</span>
+  </div>
 </ng-template>

@@ -10,52 +10,11 @@ app-spirit-tree {
   position: relative;
 }
 
-.map-container ::ng-deep .map {
-  height: 240px;
-}
-
-.map-control {
-  position: absolute;
-  z-index: 9999;
-  padding: var(--padding-content);
-  color: var(--color-map-tooltip);
-  background:  var(--color-map-tooltip-background);
-  border-radius: var(--border-radius);
-  width: 32px;
-  height: 32px;
-
-  mat-icon {
-    position: absolute;
-    bottom: 3px;
-    left: 3px;
-  }
-}
-
-.button-areas-off {
-  mat-icon {
-    opacity: 0.5;
-  }
-}
-
-.map-control-tl {
-  top: var(--padding-content);
-  left: var(--padding-content);
-}
-
-.map-control-bl {
-  bottom: var(--padding-content);
-  left: var(--padding-content);
-}
-
-.realm-info-flex {
-  display: grid;
-  gap: 8px;
-  // min-height: 184px;
-  // height: 100%;
-  grid-template-columns: 1fr;
-
-  .map-container {
-    min-height: 240px;
+.map-container {
+  ::ng-deep .map {
+    min-height: 200;
+    height: 600px;
+    max-height: calc(100vh - 20px);
   }
 }
 

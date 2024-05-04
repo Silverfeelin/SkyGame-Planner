@@ -6,13 +6,13 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { ICost } from 'src/app/interfaces/cost.interface';
-import { IMapData } from 'src/app/interfaces/map-data.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
+import { IMapInit } from 'src/app/services/map.service';
 import { TitleService } from 'src/app/services/title.service';
 
 @Component({
@@ -28,11 +28,13 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
   realm!: IRealm;
 
+  showMap = false;
   highlightTree?: string;
 
   spirits: Array<ISpirit> = [];
   spiritCount = 0;
   seasonSpiritCount = 0;
+  seasonGuideCount = 0;
 
   tier1Cost: ICost = {};
   tier1Spent: ICost = {};
@@ -44,9 +46,10 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   tier2Pct: ICost = {};
 
   map!: L.Map;
-  drawnMap = false;
-  hasAreaData = false;
-  showAreas = false;
+  areaLayers: L.LayerGroup = L.layerGroup();
+  boundaryLayers: L.LayerGroup = L.layerGroup();
+  connectionLayers: L.LayerGroup = L.layerGroup();
+  lastMapArea?: IArea;
 
   private readonly _subscriptions = new SubscriptionBag();
 
@@ -59,6 +62,14 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly _router: Router,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
+    // Check if the map should be folded or not.
+    if (_route.snapshot.queryParamMap.has('map')) {
+      this.showMap = _route.snapshot.queryParamMap.get('map') === '1';
+    } else {
+      this.showMap = localStorage.getItem('realm.map.folded') !== '1';
+      this.updateMapUrl(!this.showMap);
+    }
+
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
   }
@@ -68,10 +79,32 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    this.map = this._mapInstanceService.attach(this.mapContainer.nativeElement);
+    // Set focus on area.
+    const focusArea = this._route.snapshot.queryParamMap.get('area');
+    let view = this.realm?.mapData?.position ?? [-270, 270];
+    let zoom = this.realm?.mapData?.zoom ?? 2;
+    if (focusArea) {
+      const areaMapData = (this._dataService.guidMap.get(focusArea) as IArea)?.mapData;
+      if (areaMapData) {
+        view = areaMapData.position ?? view;
+        zoom = areaMapData.zoom ?? 3;
+      }
+    }
 
+    const mapEl = this.mapContainer.nativeElement.querySelector('.map');
+    const options: IMapInit = {
+      view, zoom,
+      zoomPanOptions: { animate: false, duration: 0 }
+    };
+    this.map = this._mapInstanceService.initialize(mapEl, options);
+    this.boundaryLayers.addTo(this.map);
+    this.areaLayers.addTo(this.map);
+    this.connectionLayers.addTo(this.map);
     this.drawMap();
-    this.panToRealm(true);
+
+    if (focusArea) {
+      this.updateMapConnections(this._dataService.guidMap.get(focusArea) as IArea);
+    }
   }
 
   ngOnDestroy(): void {
@@ -91,12 +124,6 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     if (!this.realm?.mapData?.position) { return; }
     const opts = instant ? { animate: false, duration: 0 } : undefined;
     this.map.flyTo(this.realm.mapData.position, this.realm.mapData.zoom ?? 1, opts);
-  }
-
-  mapToggleAreas(): void {
-    this.showAreas = !this.showAreas;
-    const layerGroup = this._mapInstanceService.getLayerGroup('area');
-    this.showAreas ? layerGroup?.addTo(this.map) : layerGroup?.remove();
   }
 
   constellationSpiritClicked(spirit: ISpirit): void {
@@ -130,6 +157,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     this.spirits = [];
     this.spiritCount = 0;
     this.seasonSpiritCount = 0;
+    this.seasonGuideCount = 0;
 
     this.realm?.areas?.forEach(area => {
       area.spirits?.forEach(spirit => {
@@ -138,6 +166,8 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
           this.spiritCount++;
         } else if (spirit.type === 'Season') {
           this.seasonSpiritCount++;
+        } else if (spirit.type === 'Guide') {
+          this.seasonGuideCount++;
         }
       });
     });
@@ -185,50 +215,65 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-  private drawMap(): void {
-    if (this.drawnMap) { return; }
-    this.drawnMap = true;
-    const mapData: IMapData = this.realm.mapData || {};
-
-    const boundaryLayers = this._mapInstanceService.createLayerGroup('boundary');
-    const areaLayers = this._mapInstanceService.createLayerGroup('area');
-    areaLayers.remove();
-    //const connectorLayer = this._mapInstanceService.createLayerGroup('connector');
-
-    if (mapData.boundary) {
-      const poly = L.polygon(mapData.boundary, { color: mapData.boundaryColor || '#0ff', weight: 1, fillOpacity: 0.05 });
-      boundaryLayers.addLayer(poly);
-    }
-
-    const areaIcon = L.icon({
-      iconUrl: 'assets/icons/symbols/location_on.svg',
-      iconSize: [24, 24],
-      popupAnchor: [0, -12],
-    });
-
-    this.realm?.areas?.forEach(area => {
-      if (!area.mapData?.position) { return; }
-      const marker = L.marker(area.mapData.position, { icon: areaIcon });
-      marker.bindPopup(this.createAreaPopup(area), {});
-      areaLayers.addLayer(marker);
-
-      // Draw line to all other areas (testing display, need to configure connected areas in JSON).
-      // this.realm?.areas?.forEach(otherArea => {
-      //   if (area === otherArea || !otherArea.mapData?.position) { return; }
-      //   const line = L.polyline([area.mapData!.position!, otherArea.mapData.position], { color: '#ff08', weight: 1 });
-      //   connectorLayer.addLayer(line);
-      // });
-    });
-
-    setTimeout(() => {
-      this.hasAreaData = this.realm?.areas?.filter(a => a.mapData?.position).length! > 0;
-      this._changeDetectorRef.markForCheck();
-    }, 0);
+  beforeFoldMap(folded: boolean): void {
+    localStorage.setItem('realm.map.folded', folded ? '1' : '0');
+    this.updateMapUrl(folded);
   }
 
-  private createAreaPopup(area: IArea): string {
-    return area.name;
+  private updateMapUrl(folded: boolean): void {
+    const url = new URL(location.href);
+    url.searchParams.set('map', folded ? '0' : '1');
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
+  }
+
+  private drawMap(): void {
+    this.boundaryLayers.clearLayers();
+    this.areaLayers.clearLayers();
+    this.connectionLayers.clearLayers();
+
+    if (!this.realm) { return; }
+    this.boundaryLayers.addLayer(
+      this._mapInstanceService.showRealm(this.realm, { showBoundary: true })
+    );
+
+    this.realm?.areas?.forEach(area => {
+      this._mapInstanceService.showArea(area, {
+        icon: 'location_on_orange',
+        onClick: () => { this.updateMapConnections(area); }
+      })!;
+    });
+  }
+
+  private updateMapConnections(area?: IArea): void {
+    if (!this.connectionLayers) { return; }
+    this.connectionLayers.clearLayers();
+    if (!area?.mapData?.position) { return; }
+
+    const url = new URL(location.href);
+    url.searchParams.set('area', area.guid);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
+
+    // Add yellow marker over the selected area.
+    this._mapInstanceService.showArea(area, {
+      icon: 'location_on_yellow',
+      onClick: () => { this.updateMapConnections(undefined); }
+    })?.addTo(this.connectionLayers!);
+
+    // Draw areas connected to the selected area.
+    area.connections?.forEach(connection => {
+      if (!connection.area.mapData?.position) { return; }
+
+      // Add white marker for connected area in another realm.
+      if (connection.area.realm !== this.realm) {
+        this._mapInstanceService.showArea(connection.area, {
+          icon: 'location_on_white',
+        })?.addTo(this.connectionLayers!);
+      }
+
+      // Draw line.
+      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
+      line.addTo(this.connectionLayers!);
+    });
   }
 }
 
-interface ITierCosts { [key: number]: ICost }

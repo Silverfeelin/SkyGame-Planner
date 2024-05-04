@@ -7,6 +7,18 @@
   </div>
 </div>
 
+<!-- Map -->
+<app-card class="mt"[foldable]="true" [folded]="!showMap" [title]="'Map'" (beforeFold)="beforeFoldMap($event)">
+  <div class="map-container" #mapContainer>
+    <div class="map-controls map-controls-tl">
+      <button type="button" [class.map-control-off]="!showAreas" [ngbTooltip]="'Show areas'" container="body" placement="bottom-start" (click)="toggleShowAreas()">
+        <mat-icon>location_on</mat-icon>
+      </button>
+    </div>
+    <div class="map"></div>
+  </div>
+</app-card>
+
 <div class="grid grid-3 mt">
   <div class="sky-card p-rel" *ngFor="let realm of visibleRealms">
     <div class="sky-card-header">

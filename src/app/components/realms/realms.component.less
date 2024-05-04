@@ -5,3 +5,13 @@
   background-size: cover;
   background-position: bottom;
 }
+
+.map-container {
+  position: relative;
+
+  ::ng-deep .map {
+    min-height: 200px;
+    height: 600px;
+    max-height: calc(100vh - 20px);
+  }
+}

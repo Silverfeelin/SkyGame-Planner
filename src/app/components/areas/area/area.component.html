@@ -1,0 +1,63 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">{{ area.name }}</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <app-wiki-link [wiki]="realm._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
+      <a class="container" [class.colspan-2]="!area.mapData?.position" [routerLink]="['/realm', realm.guid]">
+        <mat-icon class="menu-icon">map</mat-icon>
+        <span class="menu-label">{{ realm.name }}</span>
+      </a>
+      @if (area.mapData?.position) {
+        <a class="container" [routerLink]="['/realm']" [queryParams]="{map: 2, area: area.guid}">
+          <mat-icon class="menu-icon">location_on</mat-icon>
+          <span class="menu-label">View on map</span>
+        </a>
+      }
+      @if (spiritCount) {
+        <a class="container" [class.colspan-2]="!seasonSpiritCount && !seasonGuideCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', area: area.guid }">
+          <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
+          <span class="menu-label">
+            Spirits&nbsp;<span class="c-accent">({{ spiritCount }})</span>
+          </span>
+        </a>
+      }
+      @if (seasonSpiritCount || seasonGuideCount) {
+        <a class="container" [class.colspan-2]="!spiritCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', area: area.guid }">
+          <app-spirit-type-icon class="menu-icon" [type]="'Season'"></app-spirit-type-icon>
+          <span class="menu-label">
+            Season Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
+          </span>
+        </a>
+      }
+      @if (area.wingedLights?.length) {
+        <a class="container colspan-2" [routerLink]="['/col']" [queryParams]="{ area: area.guid }">
+          <mat-icon svgIcon="flaps" class="menu-icon"></mat-icon>
+          <span class="menu-label">
+            Winged Lights&nbsp;<span class="c-accent">({{ area.wingedLights!.length }})</span>
+          </span>
+        </a>
+      }
+
+    </div>
+  </div>
+</div>
+
+@if (area.connections?.length) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h2 class="h3 mb-0">Connected Areas</h2>
+    </div>
+    <div class="sky-card-body">
+      <div class="grid grid-1">
+        @for (connection of area.connections; track connection.area.guid) {
+          <a class="container" [routerLink]="['/area', connection.area.guid]">
+            <mat-icon class="menu-icon">location_on</mat-icon>
+            <span class="menu-label">{{ connection.area.name }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+}

@@ -1,37 +1,45 @@
-<div class="realm-info-flex">
-  <div class="sky-card">
-    <div class="sky-card-header">
-      <h1 class="h2 mb-0">{{ realm.name }}</h1>
-    </div>
-    <div class="sky-card-body">
-      <div class="grid grid-1">
-        <app-wiki-link [wiki]="realm._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
-        <a class="container" *ngIf="spirits.length" [class.colspan-2]="!seasonSpiritCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">{{ realm.name }}</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <app-wiki-link [wiki]="realm._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
+      @if (spiritCount) {
+        <a class="container" [class.colspan-2]="!seasonSpiritCount && !seasonGuideCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
           <app-spirit-type-icon class="menu-icon" [type]="'Regular'"></app-spirit-type-icon>
           <span class="menu-label">
             Spirits&nbsp;<span class="c-accent">({{ spiritCount }})</span>
           </span>
         </a>
-        <a class="container" *ngIf="seasonSpiritCount" [class.colspan-2]="!spirits.length" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+      }
+      @if (seasonSpiritCount || seasonGuideCount) {
+        <a class="container" [class.colspan-2]="!spiritCount" [routerLink]="['/spirit']" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
           <app-spirit-type-icon class="menu-icon" [type]="'Season'"></app-spirit-type-icon>
           <span class="menu-label">
             Season Spirits&nbsp;<span class="c-accent">({{ seasonSpiritCount }})</span>
           </span>
         </a>
-      </div>
+      }
+      <a class="container colspan-2" [routerLink]="['/realm']">
+        <mat-icon class="menu-icon">map</mat-icon>
+        <span class="menu-label">Other realms</span>
+      </a>
     </div>
   </div>
-  <div class="map-container" #mapContainer>
-    <button *ngIf="hasAreaData" type="button" class="map-control map-control-tl" [class.button-areas-off]="!showAreas" (click)="mapToggleAreas()"
-      [ngbTooltip]="'Show areas'" container="body" placement="right"
-    >
-      <mat-icon>location_on</mat-icon>
-    </button>
-    <button type="button" class="map-control map-control-bl" (click)="panToRealm()" [ngbTooltip]="'Center map'" container="body" placement="right">
-      <mat-icon>center_focus_weak</mat-icon>
-    </button>
-  </div>
 </div>
+
+<!-- Map -->
+<app-card class="mt" [foldable]="true" [folded]="!showMap" [title]="'Map'" (beforeFold)="beforeFoldMap($event)">
+  <div class="map-container" #mapContainer>
+    <div class="map-controls map-controls-bl">
+      <button type="button" (click)="panToRealm()" [ngbTooltip]="'Center map'" container="body" placement="right">
+        <mat-icon>center_focus_weak</mat-icon>
+      </button>
+    </div>
+    <div class="map"></div>
+  </div>
+</app-card>
 
 <!-- Constellation -->
 <div class="realm-constellation-flex mt" *ngIf="realm.constellation">

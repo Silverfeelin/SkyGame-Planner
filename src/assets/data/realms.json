@@ -7,10 +7,24 @@
       "imageUrl": "/assets/game/realms/Aviary.webp",
       "areas": [
         "Mhbh0g9OdG",
-        "tP8ZaD5Qwf"
+        "5kw7myrDPU",
+        "H2FgLkSRQw",
+        "JdoOxvcKlP",
+        "TUyoacebPE",
+        "rTIqNgvA4N",
+        "tP8ZaD5Qwf",
+        "pNNbszCpyA",
+        "ftFow3ue0Z"
       ],
       "mapData": {
         "position": [-453, 364.75],
+        "boundaryColor": "#add8e6",
+        "boundary": [
+          [-436,340],
+          [-436,389],
+          [-474,389],
+          [-474,340]
+        ],
         "zoom": 2
       },
       "_wiki": {
@@ -27,6 +41,13 @@
       ],
       "mapData": {
         "position": [-478.5, 416.25],
+        "boundaryColor": "#add8e6",
+        "boundary": [
+          [-450,389],
+          [-450,450],
+          [-501.75,450],
+          [-501.75,389]
+        ],
         "zoom": 2
       },
       "_wiki": {
@@ -52,7 +73,17 @@
         "lZkMYxUB8A"
       ],
       "mapData": {
-        "position": [-423,311]
+        "position": [-423,311],
+        "boundaryColor": "#5c62b4",
+        "boundary": [
+          [-375,270],
+          [-375,372],
+          [-392,389],
+          [-436,389],
+          [-436,340],
+          [-474,340],
+          [-474,270]
+        ]
       },
       "constellation": {
         "imageUrl": "/assets/game/constellations/isle.webp",
@@ -102,7 +133,17 @@
         "aUAXUdnBge"
       ],
       "mapData": {
-        "position": [-380, 183]
+        "position": [-380, 183],
+        "boundaryLabelAlign": "above",
+        "boundaryColor": "#007a16",
+        "boundary": [
+          [-427,115],
+          [-390,115],
+          [-325,180],
+          [-325,220],
+          [-375,270],
+          [-427,270],
+        ]
       },
       "constellation": {
         "imageUrl": "/assets/game/constellations/prairie.webp",
@@ -173,11 +214,25 @@
         "FlcxMwdsU7",
         "iYC53UMrvL",
         "-y0hYE5huj",
+        "jY6mM3Io4T",
         "Ay0oFK8FSv",
         "_dSyX-Uwrh"
       ],
       "mapData": {
-        "position": [-322.5, 115.75]
+        "position": [-322.5, 115.75],
+        "boundaryColor": "#005c66",
+        "boundary": [
+          [-250,51],
+          [-250,160],
+          [-305,215],
+          [-305,325],
+          [-375,325],
+          [-375,270],
+          [-325,220],
+          [-325,180],
+          [-390,115],
+          [-390,51],
+        ]
       },
       "constellation": {
         "imageUrl": "/assets/game/constellations/forest.webp",
@@ -255,7 +310,15 @@
         "C4ndigYE4Q"
       ],
       "mapData": {
-        "position": [-258, 245]
+        "position": [-258, 245],
+        "boundaryColor": "#9e6600",
+        "boundary": [
+          [-216,160],
+          [-216,325],
+          [-305,325],
+          [-305,215],
+          [-250,160],
+        ]
       },
       "constellation": {
         "imageUrl": "/assets/game/constellations/valley.webp",
@@ -325,10 +388,21 @@
         "QroH22BPGJ"
       ],
       "mapData": {
-        "position": [-296.5, 407.5]
+        "position": [-296.5, 407.5],
+        "boundaryColor": "#396b00",
+        "boundary": [
+          [-258,325],
+          [-258,367],
+          [-243,382],
+          [-243,506],
+          [-392,506],
+          [-392,389],
+          [-375,372],
+          [-375,325],
+        ]
       },
       "constellation": {
-        "imageUrl": "/assets/game/constellations/valley.webp",
+        "imageUrl": "/assets/game/constellations/wasteland.webp",
         "icons": [
           {
             "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/FrightenedRefugee-1.png",
@@ -380,14 +454,13 @@
       "areas": [
         "QM7Kuv1Ekg",
         "wKZdWMMIWa",
-        "HQq24rBB3k",
         "KLweYQTEIp",
         "-xkmkbpRyN",
         "BxTngnB1PV",
         "Zx40zFvrqG",
         "ZiqYHd176H",
-        "oP2Hg17s9u",
         "HbKvg_BOyc",
+        "wrHKGEg2Kc",
         "IrChmrOevd",
         "TenYOMK1pK",
         "S3Zd-sgxHw",
@@ -400,10 +473,21 @@
         "aBL5eqTv4R"
       ],
       "mapData": {
-        "position": [-209.25, 375.5]
+        "position": [-209.25, 375.5],
+        "boundaryColor": "#0058c8",
+        "boundary": [
+          [-113,302],
+          [-113,519],
+          [-243,519],
+          [-243,382],
+          [-258,367],
+          [-258,325],
+          [-216,325],
+          [-216,302],
+        ]
       },
       "constellation": {
-        "imageUrl": "/assets/game/constellations/valley.webp",
+        "imageUrl": "/assets/game/constellations/vault.webp",
         "icons": [
           {
             "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/PrayingAcolyte-1.png",
@@ -457,7 +541,16 @@
         "Ub5s1RiDA1"
       ],
       "mapData": {
-        "position": [-144.5, 260]
+        "position": [-144.5, 260],
+        "boundaryColor": "#833311",
+        "boundary": [
+          [-26,216],
+          [-26,302],
+          [-216,302],
+          [-216,160],
+          [-151,160],
+          [-151,216],
+        ]
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Eye_of_Eden"

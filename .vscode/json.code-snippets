@@ -136,5 +136,15 @@
     "body": [
       "{\t\"guid\": \"$1\", \"spirit\": \"$2\", \"tree\": \"$3\" },"
     ]
-  }
+  },
+  "Area": {
+    "prefix": "@area",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"name\": \"$2\"",
+      "},"
+    ],
+    "description": "Area"
+  },
 }

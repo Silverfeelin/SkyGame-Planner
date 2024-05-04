@@ -79,6 +79,7 @@ import { StorageComponent } from './components/storage/storage.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { NoDataComponent } from './components/layout/no-data/no-data.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AreaComponent } from './components/areas/area/area.component';
 
 @NgModule({
   declarations: [
@@ -153,7 +154,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     StorageComponent,
     MainLayoutComponent,
     NoDataComponent,
-    OutfitVaultComponent
+    OutfitVaultComponent,
+    AreaComponent
   ],
   imports: [
     BrowserModule,

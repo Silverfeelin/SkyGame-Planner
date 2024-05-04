@@ -7,6 +7,74 @@ body > .map { display: none !important; }
   width: 100%;
 }
 
+.map-controls {
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  gap: var(--padding-content-half);
+
+  button {
+    position: relative;
+    padding: var(--padding-content);
+    color: var(--color-map-tooltip);
+    background:  var(--color-map-tooltip-background);
+    border-radius: var(--border-radius);
+    width: 32px;
+    height: 32px;
+
+    &.map-control-off mat-icon {
+      opacity: 0.5;
+    }
+  }
+
+  mat-icon {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+  }
+}
+
+.map-controls-tl {
+  top: var(--padding-content);
+  left: var(--padding-content);
+}
+
+.map-controls-bl {
+  bottom: var(--padding-content);
+  left: var(--padding-content);
+}
+
+.map-label-realm {
+  position: absolute;
+  top: 0 !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  font-size: 14px;
+  text-shadow: #000 1px 1px 0;
+}
+
+.map-label-realm-above {
+  top: -18px !important;
+}
+
+.map-label-coord {
+  position: absolute;
+  top: -10px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  font-size: 10px;
+  text-shadow: #000 1px 1px 0;
+}
+
 .leaflet-container {
   border-radius: var(--border-radius);
   background: #0F1520;
@@ -16,7 +84,7 @@ body > .map { display: none !important; }
 }
 
 .leaflet-popup-content {
-  margin: 6px !important;
+  margin: 20px 6px 6px 6px !important;
 }
 
 .leaflet-popup-close-button {
@@ -104,7 +172,7 @@ body > .map { display: none !important; }
 /* Responsive */
 
 .s-leaflet-vid { max-width: 100%; }
-.s-leaflet-item .s-leaflet-maticon { display: none; }
+.s-leaflet-item .s-leaflet-maticon-desktop { display: none; }
 
 @media screen and (max-width: 719px) {
   .s-leaflet-grid .menu-label { padding-left: unset !important; }
@@ -112,6 +180,6 @@ body > .map { display: none !important; }
 }
 
 @media screen and (min-width: 720px) {
-  .s-leaflet-item .s-leaflet-maticon { display: block; }
+  .s-leaflet-item .s-leaflet-maticon-desktop { display: block; }
   .s-leaflet-vid { max-height: 270px; }
 }

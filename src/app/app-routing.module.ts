@@ -36,6 +36,7 @@ import { StorageComponent } from './components/storage/storage.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
 import { NoDataComponent } from './components/layout/no-data/no-data.component';
 import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
+import { AreaComponent } from './components/areas/area/area.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -70,6 +71,7 @@ const routes: Routes = [
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
           { path: 'realm/:guid', component: RealmComponent },
+          { path: 'area/:guid', component: AreaComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
           { path: 'season/:guid', component: SeasonComponent },
           { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
