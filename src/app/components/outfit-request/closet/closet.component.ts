@@ -636,7 +636,10 @@ export class ClosetComponent implements OnDestroy {
     const sKey = encodeURIComponent(key);
     this._http.get(`/api/outfit-request?key=${sKey}`, { responseType: 'json' }).subscribe({
       next: (data: any) => {
-        if (!data) { return; }
+        if (!data) {
+          alert('This link is invalid or has expired.');
+          return;
+        }
         const request = data as IOutfitRequest;
         this.initializeFromObj(request);
       },
