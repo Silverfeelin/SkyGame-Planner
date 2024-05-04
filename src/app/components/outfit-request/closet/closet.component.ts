@@ -872,14 +872,18 @@ export class ClosetComponent implements OnDestroy {
       ctx.fillStyle = '#0006';
       ctx.beginPath(); ctx.roundRect(x, y, _wItem, _wItem, 4); ctx.fill();
 
-      if (item) {
-        ctx.drawImage(itemImgs[item.guid], x, y, _wItem, _wItem);
-      } else {
+      const drawPlaceholder = () => {
         const placeholderImg = itemImgs[placeholders[i]];
-        ctx.globalAlpha = 0.7;
+        ctx.globalAlpha = 0.25;
         ctx.drawImage(placeholderImg, x, y, _wItem, _wItem);
         ctx.globalAlpha = 1;
-        ctx.drawImage(noItemImg, x, y, _wItem, _wItem);
+      };
+
+      if (item) {
+        if (itemImgs[item.guid].src === noItemImg.src) { drawPlaceholder(); }
+        ctx.drawImage(itemImgs[item.guid], x, y, _wItem, _wItem);
+      } else {
+        drawPlaceholder();
       }
     });
 
