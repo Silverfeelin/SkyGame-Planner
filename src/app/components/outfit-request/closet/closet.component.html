@@ -80,6 +80,11 @@
           <mat-icon class="menu-icon">{{ hideIap ? 'attach_money' : 'money_off' }}</mat-icon>
           <span class="menu-no-label">{{ hideIap ? 'Show IAP' : 'Hide IAP' }}</span>
         </button>
+        <!-- Change background -->
+        <button type="button" class="btn-copy" [class.highlight]="showingBackgroundPicker" (click)="showBackgroundPicker($event)">
+          <mat-icon class="menu-icon">wallpaper</mat-icon>
+          <span class="menu-label">Background</span>
+        </button>
         <div class="button-group">
           <!-- Reset -->
           <button type="button" class="button-danger" (click)="resetSelected()" data-step="124" data-position="bottom-left-aligned">
@@ -102,6 +107,31 @@
     </div>
   </div>
 </div>
+
+<!-- Background picker -->
+@if (showingBackgroundPicker) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Background</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="background-picker">
+        @for (section of backgroundSections; let i = $index; track i) {
+          <div class="container">
+            <h4 class="mb-0 mt-0">{{ section.label }}</h4>
+          </div>
+          <div class="grid grid-4 mt">
+            <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground(section.guid)"/>
+            <ng-container *ngFor="let bg of section.backgrounds">
+              <img [src]="bg.url" class="background-picker-item" (click)="setBackground(bg.guid)"/>
+            </ng-container>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}
+
 
 <!-- Modify closet -->
 <div class="sky-card mt" *ngIf="modifyingCloset">
@@ -271,22 +301,18 @@
     <!-- Copy buttons -->
     <div class="btns-copy" data-step="4" data-position="bottom-left-aligned">
       <div class="button-group">
+        <span class="button">Copy:</span>
         <!-- Copy link -->
         <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering" data-step="5" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 1">{{ isRendering === 1 ? 'cached' : 'link' }}</mat-icon>
-          <span class="menu-label">Copy</span>
+          <span class="menu-label">Link</span>
         </button>
         <!-- Copy image-->
         <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering" data-step="6" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'image' }}</mat-icon>
-          <span class="menu-label">Copy</span>
-        </button>
-        <!-- Change background -->
-        <button type="button" class="btn-copy" (click)="showBackgroundPicker($event)" data-step="10" data-position="bottom-left-aligned">
-          <mat-icon class="menu-icon">wallpaper</mat-icon>
-          <span class="menu-label">Background</span>
+          <span class="menu-label">Image</span>
         </button>
       </div>
       <!-- Unavailable items -->
@@ -294,20 +320,30 @@
         <mat-icon>priority_high</mat-icon>
       </span>
       <!-- Copy image picker -->
-      <div #divCopyImagePicker class="copy-image-picker" *ngIf="showingImagePicker">
-        <button type="button" class="w-100 t-left" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
-          <mat-icon class="menu-icon">image</mat-icon>
-          <span class="menu-label">Copy your closet</span>
-        </button>
-        <button type="button" class="w-100 t-left mt" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
-          <mat-icon class="menu-icon">image</mat-icon>
-          <span class="menu-label">Copy request</span>
-        </button>
-        <button type="button" class="w-100 t-left mt" (click)="copyImage('template')" data-step="9" data-position="top-left-aligned">
-          <mat-icon class="menu-icon">image</mat-icon>
-          <span class="menu-label">Copy template</span>
-        </button>
-      </div>
+      @if (showingImagePicker) {
+        <div #divCopyImagePicker class="copy-image-picker">
+          @if (!requesting) {
+            <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
+              <mat-icon class="menu-icon">image</mat-icon>
+              <span class="menu-label">Copy your closet</span>
+            </button>
+          }
+          <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
+            <mat-icon class="menu-icon">background_grid_small</mat-icon>
+            <span class="menu-label">Copy full request</span>
+          </button>
+          <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
+            <mat-icon class="menu-icon">grid_on</mat-icon>
+            <span class="menu-label">Copy one fit request</span>
+          </button>
+          @if (!requesting) {
+            <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
+              <mat-icon class="menu-icon">image</mat-icon>
+              <span class="menu-label">Copy template</span>
+            </button>
+          }
+        </div>
+      }
     </div>
     <!-- Selection colors -->
     <div class="color-picker" data-step="3" data-position="bottom-right-aligned">
@@ -369,23 +405,6 @@
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Prop' }"></ng-container>
       </div>
     </div>
-  </div>
-  <!-- Background picker -->
-  <div #divBackgroundPicker class="background-picker" *ngIf="showingBackgroundPicker">
-    <h3>Choose a background</h3>
-    <mat-icon class="background-picker-close" (click)="showBackgroundPicker($event)">close</mat-icon>
-    <ng-container *ngFor="let section of backgroundSections; let i = index;">
-      <div class="mt">
-        <hr *ngIf="i > 0"/>
-        <h4>{{ section.label }}</h4>
-        <div class="grid grid-4">
-          <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground(section.guid)"/>
-          <ng-container *ngFor="let bg of section.backgrounds">
-            <img [src]="bg.url" class="background-picker-item" (click)="setBackground(bg.guid)"/>
-          </ng-container>
-        </div>
-      </div>
-    </ng-container>
   </div>
 </div>
 
