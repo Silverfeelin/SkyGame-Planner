@@ -838,12 +838,12 @@ export class ClosetComponent implements OnDestroy {
     ctx.font = '12px sans-serif';
     ctx.textAlign = 'right';
 
-    let l1 = 'Icons provided by the Sky: CotL Wiki';
+    let l1 = '© Sky: Children of the Light';
     if (this.bgAttribution) { l1 = `${this.bgAttribution} | ${l1}`; }
-    ctx.fillText(l1, canvas.width - 8, canvas.height - 6);
+    ctx.fillText(l1, canvas.width - 8, 0 + 15);
 
-    let l2 = '© Sky: Children of the Light';
-    ctx.fillText(l2, canvas.width - 8, canvas.height - 6 - 12);
+    let l2 = 'Icons provided by the Sky: CotL Wiki';
+    ctx.fillText(l2, canvas.width - 8, canvas.height - 6);
 
 
     const placeholders = [
@@ -865,8 +865,7 @@ export class ClosetComponent implements OnDestroy {
 
     items.forEach((item, i) => {
       const x = _wGap + (i % 3) * (_wItem + _wGap);
-      const y = _wGap + Math.floor(i / 3) * (_wItem + _wGap);
-
+      const y = _wGap + Math.floor(i / 3) * (_wItem + _wGap) + 12;
 
       // Draw item box
       ctx.fillStyle = '#0006';
