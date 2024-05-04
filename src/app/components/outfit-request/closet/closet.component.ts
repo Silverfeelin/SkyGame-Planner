@@ -22,7 +22,7 @@ interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: strin
 
 type RequestColor = 'r' | 'y' | 'g' | 'b';
 type ClosetMode = 'all' | 'closet';
-type CopyImageMode = 'request' | 'closet' | 'template';
+type CopyImageMode = 'request' | 'square' | 'closet' | 'template';
 
 /** Size of padding from edge. */
 const _wPad = 24;
@@ -86,6 +86,7 @@ export class ClosetComponent implements OnDestroy {
   allItems: Array<IItem> = [];
   itemMap: { [guid: string]: IItem } = {};
   items: { [type: string]: Array<IItem> } = {};
+  unequipItems: Array<IItem> = [];
   ongoingItems: { [guid: string]: IItem } = {};
 
   showingColorPicker = false;
@@ -567,6 +568,7 @@ export class ClosetComponent implements OnDestroy {
         this.items[type as string].push(item);
         this.allItems.push(item);
         this.itemMap[item.guid] = item;
+        this.unequipItems.push(item);
       }
     }
 
@@ -771,9 +773,6 @@ export class ClosetComponent implements OnDestroy {
   }
 
   showCopyImagePicker(evt?: MouseEvent): void {
-    // When requesting always copy image as request.
-    if (this.requesting) { this.copyImage('request'); return; }
-
     // When in closet, show copy options.
     this.showingImagePicker = true;
     evt?.preventDefault();
@@ -800,8 +799,111 @@ export class ClosetComponent implements OnDestroy {
     this._changeDetectorRef.markForCheck();
 
     setTimeout(() => {
-      this.renderImage(mode);
+      mode === 'square' ? this.renderSquare() : this.renderImage(mode);
     });
+  }
+
+  private renderSquare(): void {
+    const getSelectedPerType = (selection: ISelection) => Object.values(selection).reduce((map, item) => {
+      let type = item.type;
+      if (type === ItemType.Furniture || type === ItemType.Held) { type = ItemType.Prop; }
+      if (!map[type]) { map[type] = item; }
+      return map;
+    }, {} as { [key: string]: IItem });
+
+    const selectedByType = [
+      getSelectedPerType(this.selected.r),
+      getSelectedPerType(this.selected.y),
+      getSelectedPerType(this.selected.g),
+      getSelectedPerType(this.selected.b)
+    ];
+    selectedByType.sort((a, b) => Object.keys(b).length - Object.keys(a).length);
+
+    const getItemByType = (type: ItemType) => selectedByType.find(map => map[type])?.[type];
+    const itemTypes = [
+      ItemType.Outfit, ItemType.Shoes, ItemType.Mask,
+      ItemType.FaceAccessory, ItemType.Necklace, ItemType.Hair,
+      ItemType.Hat, ItemType.Cape, ItemType.Prop
+    ];
+    const items = itemTypes.map(getItemByType);
+
+    const canvas = document.createElement('canvas');
+    canvas.width = _wItem * 3 + _wGap * 4;
+    canvas.height = _wItem * 3 + _wGap * 4 + 24;
+    const ctx = canvas.getContext('2d')!;
+
+    this.cvsDrawBackground(ctx);
+
+    ctx.fillStyle = '#fff';
+    ctx.font = '12px sans-serif';
+    ctx.textAlign = 'right';
+
+    let l1 = 'Icons provided by the Sky: CotL Wiki';
+    if (this.bgAttribution) { l1 = `${this.bgAttribution} | ${l1}`; }
+    ctx.fillText(l1, canvas.width - 8, canvas.height - 6);
+
+    let l2 = '© Sky: Children of the Light';
+    ctx.fillText(l2, canvas.width - 8, canvas.height - 6 - 12);
+
+
+    const placeholders = [
+      'EEQZwFIJRs', '_k3jPMWKOY', 'Em7ZxGZAN5',
+      'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi',
+      'E_yfCZYU5C', 'ec8jU3Gerw', 'biKOov4qJQ'
+    ];
+    // Store item images for drawing.
+    const noItem = this.unequipItems.at(0)!;
+    const noItemImg = document.querySelector(`.closet-item[data-guid="${noItem.guid}"] .item-icon img`) as HTMLImageElement;
+    const itemDivs = document.querySelectorAll('.closet-item');
+    const itemImgs = Array.from(itemDivs).reduce((obj, div) => {
+      const img = div.querySelector('.item-icon img') as HTMLImageElement;
+      if (!img) { return obj; }
+      const guid = div.getAttribute('data-guid')!;
+      obj[guid] = img;
+      return obj;
+    }, {} as { [guid: string]: HTMLImageElement });
+
+    items.forEach((item, i) => {
+      const x = _wGap + (i % 3) * (_wItem + _wGap);
+      const y = _wGap + Math.floor(i / 3) * (_wItem + _wGap);
+
+
+      // Draw item box
+      ctx.fillStyle = '#0006';
+      ctx.beginPath(); ctx.roundRect(x, y, _wItem, _wItem, 4); ctx.fill();
+
+      if (item) {
+        ctx.drawImage(itemImgs[item.guid], x, y, _wItem, _wItem);
+      } else {
+        const placeholderImg = itemImgs[placeholders[i]];
+        ctx.globalAlpha = 0.7;
+        ctx.drawImage(placeholderImg, x, y, _wItem, _wItem);
+        ctx.globalAlpha = 1;
+        ctx.drawImage(noItemImg, x, y, _wItem, _wItem);
+      }
+    });
+
+
+    // Save canvas to PNG and write to clipboard
+    const doneCopying = () => { this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
+    const renderPromise = new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob(blob => {
+        blob ? resolve(blob) : reject('Failed to render image.');
+      });
+    });
+
+    try {
+      const item = new ClipboardItem({ 'image/png': renderPromise });
+      navigator.clipboard.write([item]).then(() => {
+        doneCopying();
+        this._ttCopyImg?.open();
+        setTimeout(() => this._ttCopyImg?.close(), 1000);
+      }).catch(error => {
+        console.error(error);
+        alert('Copying failed. Please make sure the document is focused.');
+        doneCopying();
+      });
+    } catch(e) { console.error(e); doneCopying(); }
   }
 
   private renderImage(mode: CopyImageMode): void {
@@ -844,30 +946,30 @@ export class ClosetComponent implements OnDestroy {
 
     // Draw item sections
     let sx = _wPad, sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Outfit], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Outfit], itemImgs);
     sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Shoes], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Shoes], itemImgs);
     sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Mask], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Mask], itemImgs);
     sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.FaceAccessory], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.FaceAccessory], itemImgs);
     sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Necklace], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Necklace], itemImgs);
 
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hair], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hair], itemImgs);
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 2 + cHair * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hat], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hat], itemImgs);
 
     sx = _wPad * 3 + (cols[0] + cols[1]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[2], mode, this.items[ItemType.Cape], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[2], mode, this.items[ItemType.Cape], itemImgs);
 
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Held], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Held], itemImgs);
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 2 + cHeld * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Furniture], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Furniture], itemImgs);
     sx = _wPad * 4 + (cols[0] + cols[1] + cols[2]) * _wBox; sy = _wPad * 3 + (cHeld + cFurniture) * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Prop], itemImgs, false);
+    this.cvsDrawSection(ctx, sx, sy, cols[3], mode, this.items[ItemType.Prop], itemImgs);
 
     // Draw attribution
     ctx.fillStyle = '#fff';
@@ -927,7 +1029,7 @@ export class ClosetComponent implements OnDestroy {
     ctx.filter = 'none';
   }
 
-  private cvsDrawSection(ctx: CanvasRenderingContext2D, sx: number, sy: number, c: number, mode: CopyImageMode, items: Array<IItem>, itemImgs: { [guid: string]: HTMLImageElement }, unequip: boolean): void {
+  private cvsDrawSection(ctx: CanvasRenderingContext2D, sx: number, sy: number, c: number, mode: CopyImageMode, items: Array<IItem>, itemImgs: { [guid: string]: HTMLImageElement }): void {
     let x = 0; let y = 0;
     const nextX = () => { if (++x >= c) { x = 0; y++; }};
     const h = Math.ceil(items.length / c);
@@ -938,17 +1040,6 @@ export class ClosetComponent implements OnDestroy {
     ctx.strokeStyle = '#0006'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.roundRect(sx - _wGap, sy - _wGap, _wBox * c + _wGap, _wBox * h + _wGap, 8); ctx.stroke();
 
-    if (unequip) {
-      const imgNone = document.querySelector('.item-none img') as HTMLImageElement;
-      ctx.fillStyle = '#0008';
-      ctx.beginPath(); ctx.roundRect(sx + x * _wBox, sy + y * _wBox, _wItem, _wItem, 8); ctx.fill();
-      ctx.globalAlpha = 0.2;
-      ctx.drawImage(imgNone, 0, 0, imgNone.naturalWidth, imgNone.naturalHeight, sx + x * _wBox, sy + y * _wBox, 64, 64);
-      ctx.globalAlpha = 1;
-      nextX();
-    }
-
-    const showingOwnItems = this.closetMode === 'closet';
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
       const img = itemImgs[item.guid];
@@ -1018,7 +1109,7 @@ export class ClosetComponent implements OnDestroy {
     const s = {
       REQUEST: 0,
       ITEM: 1, ITEM_SECTION: 2, ITEM_COLOR: 3,
-      COPY: 4, COPY_LINK: 5, COPY_IMAGE: 6, COPY_IMAGE_CLOSET: 7, COPY_IMAGE_REQUEST: 8, COPY_IMAGE_TEMPLATE: 9, COPY_IMAGE_BACKGROUND: 10,
+      COPY: 4, COPY_LINK: 5, COPY_IMAGE: 6, COPY_IMAGE_CLOSET: 7, COPY_IMAGE_REQUEST: 8, COPY_IMAGE_SQUARE: 9, COPY_IMAGE_TEMPLATE: 10,
       OPTIONS: 100, CLOSET_ITEMS: 101, CLOSET_MODIFY: 102, CLOSET_COLUMNS: 103, CLOSET_ONGOING: 104, CLOSET_SYNC: 105, CLOSET_DONE: 106,
       OPTION_FILTER: 121, OPTION_SIZE: 122, OPTION_IAP: 123, OPTION_RESET: 124, OPTION_SHUFFLE: 125, OPTION_SEARCH: 126,
       LINK_COLLAGE: 901, LINK_HOME: 904
@@ -1038,16 +1129,13 @@ export class ClosetComponent implements OnDestroy {
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
       { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
       { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 1 week.' },
-      { sStep: s.COPY_IMAGE, title: 'Copy image', intro: this.requesting ? 'An image will be copied to your clipboard. You can paste this image in Discord. The image highlights selected items making it easier to see them.' : 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
+      { sStep: s.COPY_IMAGE, title: 'Copy image', intro: 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
     ]);
 
-    if (!this.requesting) {
-      steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Copy closet', intro: 'Copying your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
-      steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Copy request', intro: 'Copying a request will hide items you haven\'t selected. This can be useful when requesting an outfit.' });
-      steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Copy template', intro: 'Copying the template will show all items.' });
-    }
-
-    steps.push({ sStep: s.COPY_IMAGE_BACKGROUND, title: 'Background', intro: 'You can change the background for your images here.' });
+    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Copy closet', intro: 'Copying your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
+    steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Copy full request', intro: 'Copying a full request will hide items you haven\'t selected on the full template. This can be useful when requesting one or multiple outfits.' });
+    steps.push({ sStep: s.COPY_IMAGE_SQUARE, title: 'Copy fit request', intro: 'Copying a fit request will create a smaller square with just the icons of one outfit.' });
+    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Copy template', intro: 'Copying the template will show all items.' });
 
     steps.push({ sStep:s.OPTIONS, title: 'Options', intro: 'Various options to change what\'s displayed can be found here.' })
     if (!this.requesting) {
@@ -1101,7 +1189,7 @@ export class ClosetComponent implements OnDestroy {
         }
 
         // Show copy image picker during these steps.
-        if (!self.requesting && step.sStep >= s.COPY_IMAGE_CLOSET && step.sStep <= s.COPY_IMAGE_TEMPLATE) {
+        if (step.sStep >= s.COPY_IMAGE_CLOSET && step.sStep <= s.COPY_IMAGE_TEMPLATE) {
           self.showCopyImagePicker();
         } else {
           self.hideCopyImagePicker();
