@@ -7,8 +7,10 @@ import { IItem, ItemType } from '../interfaces/item.interface';
 import { ISpirit } from '../interfaces/spirit.interface';
 import { ISeason } from '../interfaces/season.interface';
 import { IEvent } from '../interfaces/event.interface';
+import { IRealm } from '../interfaces/realm.interface';
+import { IArea } from '../interfaces/area.interface';
 
-type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event';
+type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area';
 
 export interface ISearchOptions {
   /** Only search in these items. */
@@ -77,7 +79,7 @@ export class SearchService {
   }
 
   /** Search for items. */
-  searchItems(search:  string, options: ISearchItemOptions): Array<ISearchItem<IItem>> {
+  searchItems(search: string, options: ISearchItemOptions): Array<ISearchItem<IItem>> {
     options ||= {};
 
     // Filter search items.
@@ -109,6 +111,14 @@ export class SearchService {
         const  event = item.data as IEvent;
         item.route = ['/event', event.guid];
         break;
+      case 'Realm':
+        const realm = item.data as IRealm;
+        item.route = ['/realm', realm.guid];
+        break;
+      case 'Area':
+        const area = item.data as IRealm;
+        item.route = ['/area', area.guid];
+        break;
     }
   }
 
@@ -139,6 +149,16 @@ export class SearchService {
     // Add events
     items.push(...this._dataService.eventConfig.items.map(event => {
       return { name: event.name, type: 'Event', data: event, search: event.name } as ISearchItem<IEvent>;
+    }));
+
+    // Add realms
+    items.push(...this._dataService.realmConfig.items.map(realm => {
+      return { name: realm.name, type: 'Realm', data: realm, search: realm.name } as ISearchItem<IRealm>;
+    }));
+
+    // Add areas
+    items.push(...this._dataService.areaConfig.items.map(area => {
+      return { name: area.name, type: 'Area', data: area, search: area.name } as ISearchItem<IArea>;
     }));
 
     // Prepare search strings.
