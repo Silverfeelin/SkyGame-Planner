@@ -237,6 +237,7 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
     );
 
     this.realm?.areas?.forEach(area => {
+      if (!area.mapData?.position) { return; }
       this._mapInstanceService.showArea(area, {
         icon: 'location_on_orange',
         onClick: () => { this.updateMapConnections(area); }
