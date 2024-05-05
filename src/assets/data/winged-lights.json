@@ -30,7 +30,7 @@
     {
       "guid": "vGCXUjMLfB",
       "description": "In the tunnel at the top of Butterfly Cave.",
-      "mapData": { "position": [-407.63,322.38], "videoUrl": "Isle/5.mp4" },
+      "mapData": { "position": [-406.81,321.56], "videoUrl": "Isle/5.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Butterfly_Cave" }
     },
     // Trials
@@ -55,7 +55,7 @@
     {
       "guid": "89a0rCfJL-",
       "description": "At the end of the Trial of Fire.",
-      "mapData": { "position": [-398.63,364.88], "videoUrl": "Isle/9.mp4" },
+      "mapData": { "position": [-397.69,362.88], "videoUrl": "Isle/9.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Cave_of_Prophecies" }
     },
     // #endregion
@@ -134,7 +134,7 @@
     {
       "guid": "Sc2aim9ro1",
       "description": "Inside a cave after solving the 8-player puzzle.",
-      "mapData": { "position": [-379.88,186.5], "videoUrl": "Prairie/9.mp4" },
+      "mapData": { "position": [-381.56,185], "videoUrl": "Prairie/9.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Eight-Player_Puzzle_Area" }
     },
     // Koi Pond

@@ -12,5 +12,162 @@
       "imageUrl": "/assets/game/map-shrines/Isle-Main-Path-Map-Shrine.webp",
       "mapData": { "position": [-447.88,304.63] }
     },
+    {
+      "guid": "gZHTmFJ0_S",
+      "description": "In front of the Isle of Dawn temple.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-419.06,297.94] }
+    },
+    {
+      "guid": "s-TcDLSu2E",
+      "description": "On top of the Floating Island.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Temple-Cloud-Map-Shrine.webp",
+      "mapData": { "position": [-404.5,319.38] }
+    },
+    {
+      "guid": "GwJI638m4x",
+      "description": "In the main room of the Cave of Prophecies.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Prophecy-Cave-Map-Shrine.webp",
+      "mapData": { "position": [-406.63,347.63] }
+    },
+    {
+      "guid": "aGV5eAoQGR",
+      "description": "In the Water Trial.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Prophecy-Water-Trial-Map-Shrine.webp",
+      "mapData": { "position": [-397.75,338.25] }
+    },
+    {
+      "guid": "elvKIlUjPQ",
+      "description": "In the Earth Trial.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Prophecy-Earth-Trial-Map-Shrine.webp",
+      "mapData": { "position": [-389.13,343.75] }
+    },
+    {
+      "guid": "xPzPNehmaS",
+      "description": "In the Air Trial.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Prophecy-Trial-Air-Map-Shrine.webp",
+      "mapData": { "position": [-387.94,360.5] }
+    },
+    {
+      "guid": "5Xrgsi0oOP",
+      "description": "In the Fire Trial.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Prophecy-Trial-Fire-Map-Shrine.webp",
+      "mapData": { "position": [-396.06,364.5] }
+    },
+    {
+      "guid": "UZU8IWRFTQ",
+      "description": "At the Prairie Social Space.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Social-Space-Map-Shrine.webp",
+      "mapData": { "position": [-410.38,233] }
+    },
+    {
+      "guid": "jARCAHLdYn",
+      "description": "In front of the Prairie Cave.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Cave-Map-Shrine.webp",
+      "mapData": { "position": [-410.69,160.69] }
+    },
+    {
+      "guid": "4GI2OaP7Uw",
+      "description": "At the Butterfly Fields.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Butterfly-field-Map-Shrine.webp",
+      "mapData": { "position": [-407.19,199.81] }
+    },
+    {
+      "guid": "QDnkz_qE9i",
+      "description": "On the left island of the Village Islands.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Village-Map-Shrine.webp",
+      "mapData": { "position": [-397.75,161.19] }
+    },
+    {
+      "guid": "ZjUhH0OVu1",
+      "description": "At the side of the Koi Pond.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-382.25,151.88] }
+    },
+    {
+      "guid": "3_cCUrfyTX",
+      "description": "At the top of the 8-Player Puzzle.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-8-Players-Puzzle-Map-Shrine.webp",
+      "mapData": { "position": [-380.81,183.75] }
+    },
+    {
+      "guid": "vcq5hgkduA",
+      "description": "At the Bird's Nest.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Bird-nest-map-shrine.webp",
+      "mapData": { "position": [-384.13,208.69] }
+    },
+    {
+      "guid": "8ONaIKF9Ft",
+      "description": "Next to the Sanctuary Guide on Sanctuary Island.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Sanctuary-Island-Map-Shrine.webp",
+      "mapData": { "position": [-348.94,203.56] }
+    },
+    {
+      "guid": "__Hemxvej4",
+      "description": "Next to the Moments Guide in Prairie Peaks.",
+      "imageUrl": "/assets/game/map-shrines/Prairie-Prairie-Peaks-Map-Shrine.webp",
+      "mapData": { "position": [-416.69,137.19] }
+    },
+    // #region Hidden Forest
+    {
+      "guid": "AKRMG2oyjD",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Social-Space-Map-Shrine.webp",
+      "mapData": { "position": [-373.31,122] }
+    },
+    {
+      "guid": "QgjhOZjQ-n",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Clearing-Map-Shrine.webp",
+      "mapData": { "position": [-366.06,112.88] }
+    },
+    {
+      "guid": "8IFQ0Mi8Hk",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Main-Treehouse-Map-Shrine.webp",
+      "mapData": { "position": [-336.5,65.94] }
+    },
+    {
+      "guid": "l5pWa40d6g",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Brook-Map-Shrine.webp",
+      "mapData": { "position": [-324.81,104.56] }
+    },
+    {
+      "guid": "NMH_NIElGP",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Elevated-Clearing-Map-Shrine.webp",
+      "mapData": { "position": [-325,138.63] }
+    },
+    {
+      "guid": "ZzKKzgMfUM",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Underground-Cavern-Map-Shrine.webp",
+      "mapData": { "position": [-312.13,159.56] }
+    },
+    {
+      "guid": "-J5jHK37oF",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Boneyard-Map-Shrine.webp",
+      "mapData": { "position": [-312.25,128.19] }
+    },
+    {
+      "guid": "doMFpBkpt9",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-284,136.25] }
+    },
+    {
+      "guid": "nlqV1yGTCM",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Forest-End-clearing-Map-Shrine.webp",
+      "mapData": { "position": [-276.75,164] }
+    },
+    {
+      "guid": "m2ju90tQ5x",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Flight-Area-Angle-Map-Shrine.webp",
+      "mapData": { "position": [-346.25,265.38] }
+    },
   ]
 }
