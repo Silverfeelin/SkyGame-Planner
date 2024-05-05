@@ -17,6 +17,9 @@
       <button type="button" [class.map-control-off]="!showMapShrines" [ngbTooltip]="'Show map shrines'" container="body" placement="bottom-start" (click)="toggleShowMapShrines()">
         <mat-icon [svgIcon]="'map-shrine'"></mat-icon>
       </button>
+      <button type="button" [class.map-control-off]="!showWingedLight" [ngbTooltip]="'Show winged light'" container="body" placement="bottom-start" (click)="toggleShowWingedLight()">
+        <mat-icon [svgIcon]="'flaps'"></mat-icon>
+      </button>
     </div>
     <div class="map"></div>
   </div>

@@ -22,12 +22,14 @@ export class RealmsComponent implements AfterViewInit {
   showMap = false;
   showAreas = false;
   showMapShrines = false;
+  showWingedLight = false;
 
   map!: L.Map;
   lastMapArea?: IArea;
   areaLayers = L.layerGroup();
   connectionLayers = L.layerGroup();
   mapShrineLayers = L.layerGroup();
+  wingedLightLayers = L.layerGroup();
 
   constructor(
     private readonly _dataService: DataService,
@@ -44,10 +46,12 @@ export class RealmsComponent implements AfterViewInit {
       this.showMap = !!(nMap & 1);
       this.showAreas = !!(nMap & 2);
       this.showMapShrines = !!(nMap & 4);
+      this.showWingedLight = !!(nMap & 8);
     } else {
       this.showMap = localStorage.getItem('realms.map.folded') !== '1';
       this.showAreas = localStorage.getItem('realms.map.areas') === '1';
       this.showMapShrines = localStorage.getItem('realms.map.shrines') === '1';
+      this.showWingedLight = localStorage.getItem('realms.map.wl') === '1';
       this.updateMapUrl();
     }
   }
@@ -77,6 +81,11 @@ export class RealmsComponent implements AfterViewInit {
     this.drawMapShrines();
     if (this.showMapShrines) {
       this.mapShrineLayers.addTo(this.map);
+    }
+
+    this.drawWingedLights();
+    if (this.showWingedLight) {
+      this.wingedLightLayers.addTo(this.map);
     }
 
     for (const realm of this.realms) {
@@ -126,12 +135,26 @@ export class RealmsComponent implements AfterViewInit {
     this.updateMapUrl();
   }
 
+  toggleShowWingedLight(): void {
+    this.showWingedLight = !this.showWingedLight;
+    localStorage.setItem('realms.map.wl', this.showWingedLight ? '1' : '0');
+
+    if (this.showWingedLight) {
+      this.wingedLightLayers.addTo(this.map);
+    } else {
+      this.wingedLightLayers.remove();
+    }
+
+    this.updateMapUrl();
+  }
+
   private updateMapUrl(): void {
     const url = new URL(location.href);
     let bit = 0;
     bit |= this.showMap ? 1 : 0;
     bit |= this.showAreas ? 2 : 0;
     bit |= this.showMapShrines ? 4 : 0;
+    bit |= this.showWingedLight ? 8 : 0;
     url.searchParams.set('map', `${bit}`);
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
@@ -151,6 +174,15 @@ export class RealmsComponent implements AfterViewInit {
       if (!shrine.mapData?.position) { return; }
       this._mapInstanceService.createMapShrine(shrine, {
       }).addTo(this.mapShrineLayers!);
+    });
+  }
+
+  private drawWingedLights(): void {
+    this._dataService.wingedLightConfig.items.forEach(wingedLight => {
+      if (!wingedLight.mapData?.position) { return; }
+      if (wingedLight.area?.realm?.name === 'Void') { return; }
+      this._mapInstanceService.createWingedLight(wingedLight, {
+      }).addTo(this.wingedLightLayers!);
     });
   }
 

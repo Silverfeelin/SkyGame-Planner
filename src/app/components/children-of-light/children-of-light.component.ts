@@ -77,17 +77,20 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
+    const wlGuid = this._route.snapshot.queryParamMap.get('wl');
+    const wl = wlGuid ? this._dataService.guidMap.get(wlGuid) as IWingedLight : undefined;
     const areaGuid = this._route.snapshot.queryParamMap.get('area');
     const area = areaGuid ? this._dataService.guidMap.get(areaGuid) as IArea : undefined;
 
     let mapInit: IMapInit;
-    if (area?.mapData?.position) {
+    if (wl) {
+      mapInit = { view: wl.mapData?.position, zoom: 3 };
+    } else if (area?.mapData?.position) {
       mapInit = { view: area.mapData.position, zoom: 3 };
     } else {
       mapInit = { fromQuery: true };
     }
     this.map = this._mapInstanceService.initialize(this.mapContainer.nativeElement.querySelector('.map'), mapInit);
-
 
     const layerGroup = L.layerGroup().addTo(this.map);
     const wlIcon = L.icon({
@@ -109,15 +112,24 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
         icon: wlIcon,
         opacity: wl.unlocked ? 0.4 : 1,
       });
-      obj.marker.bindPopup(this.createPopup(wl), {
+
+      const popup = new L.Popup({
+        content: this.createPopup(wl),
         minWidth: 480, maxWidth: 480
       });
+      obj.marker.bindPopup(popup);
 
       layerGroup.addLayer(obj.marker);
 
       this.light.push(obj);
       this.lightMap[wl.guid] = obj;
     });
+
+    if (wl ){
+      setTimeout(() => {
+        this.flyAndOpen(wl);
+      });
+    }
 
     // Allow Leaflet events to enter Angular.
     (window as any).markCol = (elem: HTMLElement, guid: string, next: boolean) => {

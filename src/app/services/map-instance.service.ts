@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 import { IMapShrine } from '../interfaces/map-shrine.interface';
 import { nanoid } from 'nanoid';
 import { StorageService } from './storage.service';
+import { ISpirit } from '../interfaces/spirit.interface';
+import { IWingedLight } from '../interfaces/winged-light.interface';
 
 const opacityFound = 0.4;
 
@@ -104,7 +106,7 @@ export class MapInstanceService implements OnDestroy {
 
   // #endregion
 
-  // #region Realms
+  // #region Create layers
 
   showRealm(realm: IRealm, options: { showBoundary?: boolean, showLabel?: boolean, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup {
     const map = this.map;
@@ -153,36 +155,22 @@ export class MapInstanceService implements OnDestroy {
     });
     let areaIcon = this._icons[icon];
 
-    const marker = L.marker(area.mapData!.position!, { icon: areaIcon });
-    const spiritsHtml = `
-<div class="container link s-leaflet-item" onclick="mapGotoAreaSpirits('${area.guid}')">
-  <div class="ws-nw">${area.spirits?.length || 0} ${area.spirits?.length === 1 ? 'spirit' : 'spirits'}</div>
-</div>`;
-    const wlHtml = `
-<div class="container link s-leaflet-item" onclick="mapGotoAreaWingedLights('${area.guid}')">
-  <div class="ws-nw">${area.wingedLights?.length || 0} ${area.wingedLights?.length === 1 ? 'winged light' : 'winged lights'}</div>
-</div>`;
-    const content = `
-<div class="s-leaflet-tooltip" data-area="${area.guid}">
-  <div class="container link s-leaflet-item" onclick="mapGotoArea('${area.guid}')"><div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div></div>
-  <div class="s-leaflet-grid mt-half">
-  ${spiritsHtml}
-  ${wlHtml}
-  </div>
-</div>
-`;
+    const marker = L.marker(area.mapData!.position!, {
+      icon: areaIcon,
+      opacity: this._storageService.hasMapMarker(area.guid) ? opacityFound : 1
+    });
 
-    (window as any).mapGotoArea ??= (guid: string) => {
-      this._zone.run(() => { this.gotoArea(guid); });
-    };
-    (window as any).mapGotoAreaSpirits ??= (guid: string) => {
-      this._zone.run(() => { this._router.navigate(['/spirit'], { queryParams: { area: guid }}); });
-    }
-    (window as any).mapGotoAreaWingedLights ??= (guid: string) => {
-      this._zone.run(() => { this._router.navigate(['/col'], { queryParams: { area: guid }}); });
-    };
-
-    const popup = new L.Popup({ content });
+    const popup = new L.Popup({
+      content: _marker => {
+        const div = this.ttFlex();
+        div.appendChild(this.ttArea(area));
+        const divGrid = this.ttGrid();
+        divGrid.appendChild(this.ttSpirits(area.spirits || [], () => { this._router.navigate(['/spirit'], { queryParams: { area: area.guid }});}));
+        divGrid.appendChild(this.ttWingedLights(area.wingedLights || [], () => { this._router.navigate(['/col'], { queryParams: { area: area.guid }});}));
+        div.appendChild(divGrid);
+        return div;
+      }
+    });
     marker.bindPopup(popup);
     layer.addLayer(marker);
 
@@ -212,17 +200,40 @@ export class MapInstanceService implements OnDestroy {
       opacity: this._storageService.hasMapMarker(shrine.guid) ? opacityFound : 1
     });
 
-    const popup = new L.Popup({ content: _marker => {
-      const div = this.ttFlex();
-      div.appendChild(this.ttFind(shrine.guid, marker));
-      div.appendChild(this.ttArea(shrine.area));
-
-      if (shrine.imageUrl) {
-        div.appendChild(this.ttImg(shrine.imageUrl));
+    const popup = new L.Popup({
+      content: _marker => {
+        const div = this.ttFlex();
+        div.appendChild(this.ttFound(shrine.guid, marker));
+        div.appendChild(this.ttArea(shrine.area));
+        shrine.imageUrl && div.appendChild(this.ttImg(shrine.imageUrl));
+        return div;
       }
+    });
+    marker.bindPopup(popup);
 
-      return div;
-    }});
+    return marker;
+  }
+
+  createWingedLight(wl: IWingedLight, options: {}): L.Marker {
+    this._icons['wl'] ??= L.icon({
+      iconUrl: 'assets/icons/light.svg',
+      iconSize: [32, 32],
+      popupAnchor: [0, -12]
+    });
+
+    const marker = L.marker(wl.mapData!.position!, {
+      icon: this._icons['wl'],
+      opacity: wl.unlocked ? opacityFound : 1,
+    });
+
+    const popup = new L.Popup({
+      content: _marker => {
+        const div = this.ttFlex();
+        div.insertAdjacentHTML('beforeend', '<div class="container s-leaflet-item">Winged Light</div>');
+        div.appendChild(this.ttWingedLight(wl));
+        return div;
+      }
+    });
     marker.bindPopup(popup);
 
     return marker;
@@ -230,9 +241,7 @@ export class MapInstanceService implements OnDestroy {
 
   // #endregion
 
-  private gotoArea(areaGuid: string): void {
-    this._router.navigate(['/area', areaGuid]);
-  }
+  // #region Tooltip elements
 
   private ttFlex(): HTMLElement {
     const div = document.createElement('div');
@@ -240,7 +249,13 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
-  private ttFind(guid: string, marker: L.Marker): HTMLElement {
+  private ttGrid(): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('s-leaflet-grid');
+    return div;
+  }
+
+  private ttFound(guid: string, marker: L.Marker): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'point', 's-leaflet-item');
     const divIcon = document.createElement('div');
@@ -265,10 +280,44 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
+  private ttSpirits(spirits: Array<ISpirit>, click: () => void): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('container', 'link', 's-leaflet-item');
+    div.addEventListener('click', () => { click(); });
+
+    const divLabel = document.createElement('div');
+    divLabel.classList.add('ws-nw');
+    divLabel.innerText = `${spirits.length} ${spirits.length === 1 ? 'spirit' : 'spirits'}`;
+    div.appendChild(divLabel);
+
+    return div;
+  }
+
+  private ttWingedLights(wls: Array<IWingedLight>, click: () => void): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('container', 'link', 's-leaflet-item');
+    div.addEventListener('click', () => { click(); });
+
+    const divLabel = document.createElement('div');
+    divLabel.classList.add('ws-nw');
+    divLabel.innerText = `${wls.length} winged light`;
+    div.appendChild(divLabel);
+
+    return div;
+  }
+
+  private ttWingedLight(wl: IWingedLight): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('container', 'link', 's-leaflet-item');
+    div.addEventListener('click', () => { this._router.navigate(['/col'], { queryParams: { wl: wl.guid }}); });
+    div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">arrow_forward</div><div class="menu-label">Go to tracker</div>`);
+    return div;
+  }
+
   private ttArea(area: IArea): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
-    div.addEventListener('click', () => { this.gotoArea(area.guid); });
+    div.addEventListener('click', () => { this._router.navigate(['/area', area.guid]); });
     div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div>`);
     return div;
   }
@@ -281,13 +330,13 @@ export class MapInstanceService implements OnDestroy {
     img.addEventListener('dblclick', () => {
       try {
         const url = new URL(img.src);
-        url.searchParams.set('r', nanoid(10));
         window.open(url.href, '_blank');
       } catch { return; }
     });
     return img;
   }
 
+  // #endregion
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();

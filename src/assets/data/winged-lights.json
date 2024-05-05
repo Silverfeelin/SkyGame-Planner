@@ -11,7 +11,7 @@
     {
       "guid": "zhBAUiJptT",
       "description": "On top of a small boat at the start of the Sand Dunes.",
-      "mapData": { "position": [-458,309], "videoUrl": "Isle/2.mp4" },
+      "mapData": { "position": [-459.44,309.06], "videoUrl": "Isle/2.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
     },
     {
@@ -738,7 +738,7 @@
     {
       "guid": "DvYGWvjeOC",
       "description": "Automatically received after leaving Orbit.",
-      "mapData": { "position": [-182.88,197.38] },
+      "mapData": { "position": [-181.13,197.38] },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Orbit" }
     },
     // #endregion
