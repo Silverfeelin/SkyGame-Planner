@@ -21,10 +21,13 @@ export class RealmsComponent implements AfterViewInit {
 
   showMap = false;
   showAreas = false;
+  showMapShrines = false;
+
   map!: L.Map;
   lastMapArea?: IArea;
   areaLayers = L.layerGroup();
   connectionLayers = L.layerGroup();
+  mapShrineLayers = L.layerGroup();
 
   constructor(
     private readonly _dataService: DataService,
@@ -38,12 +41,14 @@ export class RealmsComponent implements AfterViewInit {
     // Check if the map should be folded or not.
     if (_route.snapshot.queryParamMap.has('map')) {
       const nMap = +_route.snapshot.queryParamMap.get('map')!;
-      this.showMap = nMap >= 1;
-      this.showAreas = nMap >= 2;
+      this.showMap = !!(nMap & 1);
+      this.showAreas = !!(nMap & 2);
+      this.showMapShrines = !!(nMap & 4);
     } else {
       this.showMap = localStorage.getItem('realms.map.folded') !== '1';
       this.showAreas = localStorage.getItem('realms.map.areas') === '1';
-      this.updateMapUrl(!this.showMap);
+      this.showMapShrines = localStorage.getItem('realms.map.shrines') === '1';
+      this.updateMapUrl();
     }
   }
 
@@ -69,6 +74,11 @@ export class RealmsComponent implements AfterViewInit {
       this.connectionLayers?.addTo(this.map);
     }
 
+    this.drawMapShrines();
+    if (this.showMapShrines) {
+      this.mapShrineLayers.addTo(this.map);
+    }
+
     for (const realm of this.realms) {
       this._mapInstanceService.showRealm(realm, { showBoundary: true, showLabel: true, onClick: () => {
         // Don't navigate when areas are shown to prevent accidental navigation.
@@ -83,8 +93,9 @@ export class RealmsComponent implements AfterViewInit {
   }
 
   beforeFoldMap(folded: boolean): void {
+    this.showMap = !folded;
     localStorage.setItem('realms.map.folded', folded ? '1' : '0');
-    this.updateMapUrl(folded);
+    this.updateMapUrl();
   }
 
   toggleShowAreas(): void {
@@ -99,12 +110,29 @@ export class RealmsComponent implements AfterViewInit {
       this.connectionLayers?.remove();
     }
 
-    this.updateMapUrl(!this.showMap);
+    this.updateMapUrl();
   }
 
-  private updateMapUrl(folded: boolean): void {
+  toggleShowMapShrines(): void {
+    this.showMapShrines = !this.showMapShrines;
+    localStorage.setItem('realms.map.shrines', this.showMapShrines ? '1' : '0');
+
+    if (this.showMapShrines) {
+      this.mapShrineLayers.addTo(this.map);
+    } else {
+      this.mapShrineLayers.remove();
+    }
+
+    this.updateMapUrl();
+  }
+
+  private updateMapUrl(): void {
     const url = new URL(location.href);
-    url.searchParams.set('map', folded ? '0' : this.showAreas ? '2' : '1');
+    let bit = 0;
+    bit |= this.showMap ? 1 : 0;
+    bit |= this.showAreas ? 2 : 0;
+    bit |= this.showMapShrines ? 4 : 0;
+    url.searchParams.set('map', `${bit}`);
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
@@ -115,6 +143,14 @@ export class RealmsComponent implements AfterViewInit {
         icon: 'location_on_orange',
         onClick: () => { this.updateMapConnections(area); }
       }).addTo(this.areaLayers!);
+    });
+  }
+
+  private drawMapShrines(): void {
+    this._dataService.mapShrineConfig.items.forEach(shrine => {
+      if (!shrine.mapData?.position) { return; }
+      this._mapInstanceService.createMapShrine(shrine, {
+      }).addTo(this.mapShrineLayers!);
     });
   }
 

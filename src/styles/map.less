@@ -24,7 +24,7 @@ body > .map { display: none !important; }
     height: 32px;
 
     &.map-control-off mat-icon {
-      opacity: 0.5;
+      opacity: 0.4;
     }
   }
 
@@ -119,6 +119,12 @@ body > .map { display: none !important; }
 .leaflet-control-zoom-out {
   border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
   border-top-width: 0 !important;
+}
+
+.s-leaflet-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .s-leaflet-grid {

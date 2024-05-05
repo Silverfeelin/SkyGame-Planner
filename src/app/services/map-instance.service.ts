@@ -6,6 +6,11 @@ import { EventService } from './event.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
 import { IArea } from '../interfaces/area.interface';
 import { Router } from '@angular/router';
+import { IMapShrine } from '../interfaces/map-shrine.interface';
+import { nanoid } from 'nanoid';
+import { StorageService } from './storage.service';
+
+const opacityFound = 0.4;
 
 @Injectable()
 export class MapInstanceService implements OnDestroy {
@@ -22,6 +27,7 @@ export class MapInstanceService implements OnDestroy {
   constructor(
     private readonly _eventService: EventService,
     private readonly _mapService: MapService,
+    private readonly _storageService: StorageService,
     private readonly _router: Router,
     private readonly _zone: NgZone
   ) {
@@ -166,13 +172,13 @@ export class MapInstanceService implements OnDestroy {
 </div>
 `;
 
-    (window as any).mapGotoArea = (guid: string) => {
+    (window as any).mapGotoArea ??= (guid: string) => {
       this._zone.run(() => { this.gotoArea(guid); });
     };
-    (window as any).mapGotoAreaSpirits = (guid: string) => {
+    (window as any).mapGotoAreaSpirits ??= (guid: string) => {
       this._zone.run(() => { this._router.navigate(['/spirit'], { queryParams: { area: guid }}); });
     }
-    (window as any).mapGotoAreaWingedLights = (guid: string) => {
+    (window as any).mapGotoAreaWingedLights ??= (guid: string) => {
       this._zone.run(() => { this._router.navigate(['/col'], { queryParams: { area: guid }}); });
     };
 
@@ -194,11 +200,94 @@ export class MapInstanceService implements OnDestroy {
     return layer;
   }
 
+  createMapShrine(shrine: IMapShrine, options: {}): L.Marker {
+    this._icons['map-shrine'] ??= L.icon({
+      iconUrl: 'assets/icons/map-shrine.svg',
+      iconSize: [24, 24],
+      popupAnchor: [0, -12],
+    });
+
+    const marker = L.marker(shrine.mapData!.position!, {
+      icon: this._icons['map-shrine'],
+      opacity: this._storageService.hasMapMarker(shrine.guid) ? opacityFound : 1
+    });
+
+    const popup = new L.Popup({ content: _marker => {
+      const div = this.ttFlex();
+      div.appendChild(this.ttFind(shrine.guid, marker));
+      div.appendChild(this.ttArea(shrine.area));
+
+      if (shrine.imageUrl) {
+        div.appendChild(this.ttImg(shrine.imageUrl));
+      }
+
+      return div;
+    }});
+    marker.bindPopup(popup);
+
+    return marker;
+  }
+
   // #endregion
 
   private gotoArea(areaGuid: string): void {
     this._router.navigate(['/area', areaGuid]);
   }
+
+  private ttFlex(): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('s-leaflet-tooltip', 's-leaflet-flex');
+    return div;
+  }
+
+  private ttFind(guid: string, marker: L.Marker): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('container', 'point', 's-leaflet-item');
+    const divIcon = document.createElement('div');
+    divIcon.classList.add('menu-icon', 's-leaflet-maticon');
+    divIcon.innerText = this._storageService.hasMapMarker(guid) ? 'check_box' : 'check_box_outline_blank';
+    div.appendChild(divIcon);
+    div.insertAdjacentHTML('beforeend', `<div class="menu-label">Found</div>`);
+
+    div.addEventListener('click', () => {
+      const found = !this._storageService.hasMapMarker(guid);
+      if (found) {
+        this._storageService.addMapMarkers(guid);
+        divIcon.innerText = 'check_box';
+        marker.setOpacity(opacityFound);
+      } else {
+        this._storageService.removeMapMarkers(guid);
+        divIcon.innerText = 'check_box_outline_blank';
+        marker.setOpacity(1);
+      }
+    });
+
+    return div;
+  }
+
+  private ttArea(area: IArea): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('container', 'link', 's-leaflet-item');
+    div.addEventListener('click', () => { this.gotoArea(area.guid); });
+    div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">location_on</div><div class="menu-label">${area.name || ''}</div>`);
+    return div;
+  }
+
+  private ttImg(imgUrl: string): HTMLElement {
+    const img = document.createElement('img');
+    img.src = imgUrl;
+    img.width = 270;
+    img.classList.add('s-leaflet-image', 'br');
+    img.addEventListener('dblclick', () => {
+      try {
+        const url = new URL(img.src);
+        url.searchParams.set('r', nanoid(10));
+        window.open(url.href, '_blank');
+      } catch { return; }
+    });
+    return img;
+  }
+
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();

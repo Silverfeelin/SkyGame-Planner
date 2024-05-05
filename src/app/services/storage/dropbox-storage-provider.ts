@@ -9,6 +9,7 @@ interface IDropboxData {
   unlocked: string;
   wingedLights: string;
   favourites: string;
+  mapMarkers: string;
   keys: { [key: string]: unknown };
 }
 
@@ -133,9 +134,11 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     const unlocked = data.unlocked || undefined;
     const wingedLights = data.wingedLights || undefined;
     const favourites = data.favourites || undefined;
+    const mapMarkers = data.mapMarkers || undefined;
     this._unlocked = new Set(unlocked?.split(',') ?? []);
     this._wingedLights = new Set(wingedLights?.split(',') ?? []);
     this._favourites = new Set(favourites?.split(',') ?? []);
+    this._mapMarkers = new Set(mapMarkers?.split(',') ?? []);
     this._keys = data.keys || {};
   }
 
@@ -145,6 +148,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
       unlocked: [...this._unlocked].join(','),
       wingedLights: [...this._wingedLights].join(','),
       favourites: [...this._favourites].join(','),
+      mapMarkers: [...this._mapMarkers].join(','),
       keys: this._keys
     };
   }

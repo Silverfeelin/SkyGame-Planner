@@ -10,6 +10,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   _unlocked = new Set<string>();
   _wingedLights = new Set<string>();
   _favourites = new Set<string>();
+  _mapMarkers = new Set<string>();
   _keys: { [key: string]: unknown } = {};
 
   events = new Subject<IStorageEvent>();
@@ -30,6 +31,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
     this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
     this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
+    this._mapMarkers = new Set(data.mapMarkers?.length ? data.mapMarkers.split(',') : []);
     this._keys = data.keys || {};
   }
 
@@ -39,6 +41,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
       unlocked: [...this.getUnlocked()].join(','),
       wingedLights: [...this.getWingedLights()].join(','),
       favourites: [...this.getFavourites()].join(','),
+      mapMarkers: [...this.getMapMarkers()].join(','),
       keys: this._keys
     };
   }
@@ -121,6 +124,30 @@ export abstract class BaseStorageProvider implements IStorageProvider {
 
   isFavourite(guid: string): boolean {
     return this._favourites.has(guid);
+  }
+
+  getMapMarkers(): ReadonlySet<string> {
+    return this._mapMarkers;
+  }
+
+  addMapMarkers(...guids: Array<string>): void {
+    for (const guid of guids) {
+      this._mapMarkers.add(guid);
+    }
+    this._lastDate = DateTime.now();
+    this.debounceSave();
+  }
+
+  removeMapMarkers(...guids: Array<string>): void {
+    for (const guid of guids) {
+      this._mapMarkers.delete(guid);
+    }
+    this._lastDate = DateTime.now();
+    this.debounceSave();
+  }
+
+  hasMapMarker(guid: string): boolean {
+    return this._mapMarkers.has(guid);
   }
 
   setKey<T>(key: string, value: T): void {

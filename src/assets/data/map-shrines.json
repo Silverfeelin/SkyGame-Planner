@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "guid": "XjPXrh4ygg",
+      "description": "At the start of the Sand Dunes, near the winged light.",
+      "imageUrl": "/assets/game/map-shrines/Isle-First-Map-Shrine.webp",
+      "mapData": { "position": [-457.88,309.19] }
+    },
+    {
+      "guid": "7qrYs-HaOu",
+      "description": "On top of a large rock in the Sand Dunes.",
+      "imageUrl": "/assets/game/map-shrines/Isle-Main-Path-Map-Shrine.webp",
+      "mapData": { "position": [-447.88,304.63] }
+    },
+  ]
+}

@@ -24,6 +24,7 @@ import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { IItemList } from '../interfaces/item-list.interface';
 import { ArrayHelper } from '../helpers/array-helper';
+import { IMapShrine } from '../interfaces/map-shrine.interface';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -39,6 +40,7 @@ export class DataService {
   eventConfig!: IEventConfig;
   itemConfig!: IItemConfig;
   itemListConfig!: IConfig<IItemList>;
+  mapShrineConfig!: IConfig<IMapShrine>;
   nodeConfig!: INodeConfig;
   questConfig!: IQuestConfig;
   realmConfig!: IRealmConfig;
@@ -71,6 +73,7 @@ export class DataService {
       eventConfig: get('events.json'),
       itemConfig: get('items.json'),
       itemListConfig: get('item-lists.json'),
+      mapShrineConfig: get('map-shrines.json'),
       nodeConfig: get('nodes.json'),
       questConfig: get('quests.json'),
       realmConfig: get('realms.json'),
@@ -201,6 +204,13 @@ export class DataService {
       // Map connected areas.
       area.connections?.forEach((c, i) => {
         c.area = this.guidMap.get(c.area as any) as IArea;
+      });
+
+      // Map.. Map Shrine to Area.
+      area.mapShrines?.forEach((ms, i) => {
+        const mapShrine = this.guidMap.get(ms as any) as IMapShrine;
+        area.mapShrines![i] = mapShrine;
+        mapShrine.area = area;
       });
     });
   }

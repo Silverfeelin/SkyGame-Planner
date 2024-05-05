@@ -69,6 +69,17 @@ export class StorageService implements OnDestroy {
   }
   isFavourite(guid: string): boolean { return this.provider.isFavourite(guid); }
 
+  getMapMarkers(): ReadonlySet<string> { return this.provider.getMapMarkers(); }
+  addMapMarkers(...guids: Array<string>): void {
+    this.provider.addMapMarkers(...guids);
+    this.notifyChange();
+  }
+  removeMapMarkers(...guids: Array<string>): void {
+    this.provider.removeMapMarkers(...guids);
+    this.notifyChange();
+  }
+  hasMapMarker(guid: string): boolean { return this.provider.hasMapMarker(guid); }
+
   setKey<T>(key: string, value: T): void {
     this.provider.setKey(key, value);
     this.notifyChange();

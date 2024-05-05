@@ -8,6 +8,7 @@ const storageKeys = {
   unlocked: 'unlocked',
   wingedLights: 'wingedLights',
   favourites: 'favourites',
+  mapMarkers: 'mapMarkers',
   keys: 'data'
 };
 
@@ -36,8 +37,9 @@ export class LocalStorageProvider extends BaseStorageProvider {
     const unlocked = localStorage.getItem(storageKeys.unlocked) || '';
     const wingedLights = localStorage.getItem(storageKeys.wingedLights) || '';
     const favourites = localStorage.getItem(storageKeys.favourites) || '';
+    const mapMarkers = localStorage.getItem(storageKeys.mapMarkers) || '';
     const data = JSON.parse(localStorage.getItem(storageKeys.keys) || '{}');
-    this.import({ date, unlocked, wingedLights, favourites, keys: data });
+    this.import({ date, unlocked, wingedLights, favourites, mapMarkers, keys: data });
     return of(undefined);
   }
 
@@ -48,6 +50,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
     localStorage.setItem(storageKeys.unlocked, data.unlocked);
     localStorage.setItem(storageKeys.wingedLights, data.wingedLights);
     localStorage.setItem(storageKeys.favourites, data.favourites);
+    localStorage.setItem(storageKeys.mapMarkers, data.mapMarkers);
     localStorage.setItem(storageKeys.keys, JSON.stringify(data.keys));
     this._syncDate = this._lastDate;
     this.events.next({ type: 'save_success' });

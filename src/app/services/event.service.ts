@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IItem } from '../interfaces/item.interface';
 import { Router } from '@angular/router';
-import { INode } from '../interfaces/node.interface';
 
 @Injectable({
   providedIn: 'root'

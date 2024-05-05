@@ -23,6 +23,7 @@
       "name": "Sand Dunes",
       "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
       "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
+      "mapShrines": [ "XjPXrh4ygg", "7qrYs-HaOu" ],
       "mapData": { "position": [-446.75,296] },
       "connections": [
         { "area": "LanOVr1JCo" },
