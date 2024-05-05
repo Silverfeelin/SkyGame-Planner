@@ -243,19 +243,19 @@ export class MapInstanceService implements OnDestroy {
 
   // #region Tooltip elements
 
-  private ttFlex(): HTMLElement {
+  ttFlex(): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('s-leaflet-tooltip', 's-leaflet-flex');
     return div;
   }
 
-  private ttGrid(): HTMLElement {
+  ttGrid(): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('s-leaflet-grid');
     return div;
   }
 
-  private ttFound(guid: string, marker: L.Marker): HTMLElement {
+  ttFound(guid: string, marker: L.Marker): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'point', 's-leaflet-item');
     const divIcon = document.createElement('div');
@@ -280,7 +280,7 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
-  private ttSpirits(spirits: Array<ISpirit>, click: () => void): HTMLElement {
+  ttSpirits(spirits: Array<ISpirit>, click: () => void): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { click(); });
@@ -293,7 +293,7 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
-  private ttWingedLights(wls: Array<IWingedLight>, click: () => void): HTMLElement {
+  ttWingedLights(wls: Array<IWingedLight>, click: () => void): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { click(); });
@@ -306,7 +306,7 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
-  private ttWingedLight(wl: IWingedLight): HTMLElement {
+  ttWingedLight(wl: IWingedLight): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { this._router.navigate(['/col'], { queryParams: { wl: wl.guid }}); });
@@ -314,7 +314,15 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
-  private ttArea(area: IArea): HTMLElement {
+  ttRealm(realm: IRealm): HTMLElement {
+    const div = document.createElement('div');
+    div.classList.add('container', 'link', 's-leaflet-item');
+    div.addEventListener('click', () => { this._router.navigate(['/realm', realm.guid]); });
+    div.insertAdjacentHTML('beforeend', `<div class="menu-icon s-leaflet-maticon">map</div><div class="menu-label">${realm.name || ''}</div>`);
+    return div;
+  }
+
+  ttArea(area: IArea): HTMLElement {
     const div = document.createElement('div');
     div.classList.add('container', 'link', 's-leaflet-item');
     div.addEventListener('click', () => { this._router.navigate(['/area', area.guid]); });
@@ -322,7 +330,7 @@ export class MapInstanceService implements OnDestroy {
     return div;
   }
 
-  private ttImg(imgUrl: string): HTMLElement {
+  ttImg(imgUrl: string): HTMLElement {
     const img = document.createElement('img');
     img.src = imgUrl;
     img.width = 270;

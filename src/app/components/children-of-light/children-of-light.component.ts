@@ -114,7 +114,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       });
 
       const popup = new L.Popup({
-        content: this.createPopup(wl),
+        content: () => this.createPopup(wl),
         minWidth: 480, maxWidth: 480
       });
       obj.marker.bindPopup(popup);
@@ -231,50 +231,58 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-  private createPopup(wl: IWingedLight): string {
-    let video = '';
+  private createPopup(wl: IWingedLight): HTMLElement {
+    const div = this._mapInstanceService.ttFlex();
+    div.classList.add('s-leaflet-tooltip');
+    div.setAttribute('data-wl', wl.guid);
+
+    const grid = this._mapInstanceService.ttGrid();
+    div.appendChild(grid);
+
+    grid.appendChild(this._mapInstanceService.ttArea(wl.area));
+    grid.appendChild(this._mapInstanceService.ttRealm(wl.area.realm));
+    grid.insertAdjacentHTML('beforeend', `
+<div class="container s-leaflet-item s-leaflet-desc">
+  <div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="menu-label">${wl.description || ''}</div>
+</div>`);
+
     let videoUrl = wl.mapData?.videoUrl;
     if (videoUrl) {
       if (!videoUrl.includes('youtube')) { videoUrl = `/assets/game/col/${videoUrl}`; }
-      video =`<iframe class="s-leaflet-vid" width="480" height="270" src="${videoUrl}" title="CoL" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>`
+      div.insertAdjacentHTML('beforeend', `
+<div>
+  <iframe class="s-leaflet-vid" width="480" height="270" src="${videoUrl}" title="CoL" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+</div>`);
     }
 
-    let wiki = '';
+    const divButtons = document.createElement('div');
+    div.appendChild(divButtons);
+    divButtons.insertAdjacentHTML('beforeend', `
+<button type="button" class="s-leaflet-hasicon s-leaflet-found" data-action="mark" onclick="markCol(this, '${wl.guid}', false)" title="Mark as found.">
+  <span class="s-leaflet-maticon">check_box_outline_blank</span>
+  <span class="s-leaflet-check-label">Found</span>
+</button>`);
+    divButtons.insertAdjacentHTML('beforeend', `
+<button type="button" class="s-leaflet-hasicon" data-action="mark" onclick="markCol(this, '${wl.guid}', true)" title="Mark as found and go to next light.">
+  <span class="s-leaflet-maticon">done_all</span>
+  &nbsp;
+</button>`);
+    divButtons.insertAdjacentHTML('beforeend', `
+<button class="s-leaflet-hasicon" data-direction="left" type="button" onclick="nextCol('${wl.guid}', -1)" title="Go to previous light.">
+  <span class="s-leaflet-maticon">arrow_back</span>
+  &nbsp;
+</button>`);
+    divButtons.insertAdjacentHTML('beforeend', `
+<button class="s-leaflet-hasicon" data-direction="right" type="button" onclick="nextCol('${wl.guid}', 1)" title="Go to next light.">
+  <span class="s-leaflet-maticon">arrow_forward</span>
+  &nbsp;
+</button>`);
+
     if (wl._wiki?.href) {
-      wiki = `<a href="${wl._wiki.href}" class="button link float-right" target="_blank">Wiki</a>`
+      divButtons.insertAdjacentHTML('beforeend', `<a href="${wl._wiki.href}" class="button link float-right" target="_blank">Wiki</a>`);
     }
 
-    return `
-<div class="s-leaflet-tooltip" data-wl="${wl.guid}" onkeydown="keydownCol(event, this)">
-  <div class="s-leaflet-grid">
-    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">map</div><div class="menu-label">${wl.area?.realm?.name || ''}</div></div>
-    <div class="container s-leaflet-item"><div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">location_on</div><div class="menu-label">${wl.area?.name || ''}</div></div>
-    <div class="container s-leaflet-item s-leaflet-desc">
-      <div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="menu-label">${wl.description || ''}</div>
-    </div>
-  </div>
-  <div class="s-leaflet-mt">${video}</div>
-  <div class="s-leaflet-mt">
-    <button type="button" class="s-leaflet-hasicon s-leaflet-found" data-action="mark" onclick="markCol(this, '${wl.guid}', false)" title="Mark as found.">
-      <span class="s-leaflet-maticon">check_box_outline_blank</span>
-      <span class="s-leaflet-check-label">Found</span>
-    </button>
-    <button type="button" class="s-leaflet-hasicon" data-action="mark" onclick="markCol(this, '${wl.guid}', true)" title="Mark as found and go to next light.">
-      <span class="s-leaflet-maticon">done_all</span>
-      &nbsp;
-    </button>
-    <button class="s-leaflet-hasicon" data-direction="left" type="button" onclick="nextCol('${wl.guid}', -1)" title="Go to previous light.">
-      <span class="s-leaflet-maticon">arrow_back</span>
-      &nbsp;
-    </button>
-    <button class="s-leaflet-hasicon" data-direction="right" type="button" onclick="nextCol('${wl.guid}', 1)" title="Go to next light.">
-      <span class="s-leaflet-maticon">arrow_forward</span>
-      &nbsp;
-    </button>
-    ${wiki}
-  </div>
-</div>
-`;
+    return div;
   }
 
   private onPopupOpen(e: L.PopupEvent): void {

@@ -14,7 +14,7 @@ export interface IArea extends IGuid {
   mapData?: IMapData;
 
   /// References ///
-  realm?: IRealm;
+  realm: IRealm;
   spirits?: Array<ISpirit>;
   wingedLights?: Array<IWingedLight>;
   rs?: Array<IReturningSpirits>;
