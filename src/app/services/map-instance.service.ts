@@ -1,23 +1,75 @@
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import { IMapInit, MapService } from './map.service';
-import L, { icon } from 'leaflet';
+import L from 'leaflet';
 import { IRealm } from '../interfaces/realm.interface';
 import { EventService } from './event.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
 import { IArea } from '../interfaces/area.interface';
 import { Router } from '@angular/router';
 import { IMapShrine } from '../interfaces/map-shrine.interface';
-import { nanoid } from 'nanoid';
 import { StorageService } from './storage.service';
 import { ISpirit } from '../interfaces/spirit.interface';
 import { IWingedLight } from '../interfaces/winged-light.interface';
+import { Maybe } from '../types/maybe';
 
 const opacityFound = 0.4;
+
+interface IMapRealmOptions {
+  showLabel?: boolean,
+  onClick?: (evt: L.LeafletMouseEvent) => void
+}
+
+interface IMapAreaOptions {
+  icon?: string,
+  onClick?: (evt: L.LeafletMouseEvent) => void
+}
+
+interface IMapConnectionOptions {}
+interface IMapWingedLightOptions {}
+interface IMapMapShrineOptions {}
 
 @Injectable()
 export class MapInstanceService implements OnDestroy {
   _map?: L.Map;
   _subs = new SubscriptionBag();
+
+  // #region Layer groups
+  areRealmsShown = false;
+  private _realmLayers?: L.LayerGroup;
+  get realmLayers() {
+    this._realmLayers ??= L.layerGroup().addTo(this.map);
+    return this._realmLayers;
+  }
+
+  areAreasShown = false;
+  private _areaLayers?: L.LayerGroup;
+  get areaLayers() {
+    this._areaLayers ??= L.layerGroup().addTo(this.map);
+    return this._areaLayers;
+  }
+
+  areConnectionsShown = false;
+  private _connectionLayers?: L.LayerGroup;
+  get connectionLayers() {
+    this._connectionLayers ??= L.layerGroup().addTo(this.map);
+    return this._connectionLayers;
+  }
+
+  areMapShrinesShown = false;
+  private _mapShrineLayers?: L.LayerGroup;
+  get mapShrineLayers() {
+    this._mapShrineLayers ??= L.layerGroup().addTo(this.map);
+    return this._mapShrineLayers;
+  }
+
+  areWingedLightsShown = false;
+  private _wingedLightLayers?: L.LayerGroup;
+  get wingedLightLayers() {
+    this._wingedLightLayers ??= L.layerGroup().addTo(this.map);
+    return this._wingedLightLayers;
+  }
+
+  // #endregion
 
   private _icons: { [key: string]: L.Icon } = {};
 
@@ -106,50 +158,70 @@ export class MapInstanceService implements OnDestroy {
 
   // #endregion
 
-  // #region Create layers
+  // #region Realms
 
-  showRealm(realm: IRealm, options: { showBoundary?: boolean, showLabel?: boolean, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup {
-    const map = this.map;
-    const layer = L.layerGroup().addTo(map);
+  /** Clears all realms. */
+  clearRealms(): void {
+    this.realmLayers.clearLayers();
+  }
 
+  /** Creates a realm layer. */
+  createRealm(realm: IRealm, options: IMapRealmOptions): L.Layer | undefined {
     const mapData = realm.mapData;
-    if (!mapData) { return layer; }
+    if (!mapData?.boundary) { return; }
+    const layers = L.layerGroup();
 
-    if (options.showBoundary && mapData.boundary) {
-      // Add boundary
-      const poly = L.polygon(mapData.boundary, { color: mapData.boundaryColor || '#ff8a00', weight: 1, fillOpacity: 0 });
-      poly.addTo(layer);
+    // Add boundary
+    const poly = L.polygon(mapData.boundary, { color: mapData.boundaryColor || '#ff8a00', weight: 1, fillOpacity: 0 });
+    poly.addTo(layers);
 
-      // Add click event.
-      options.onClick && poly.addEventListener('click', evt => { options.onClick!(evt); });
+    // Add click event.
+    options.onClick && poly.addEventListener('click', evt => { options.onClick!(evt); });
 
-      // Add label
-      if (options.showLabel) {
-        const className = `map-label-realm map-label-realm-${mapData.boundaryLabelAlign || 'center'}`;
-        L.marker(mapData.boundary[0], {
-          icon: L.divIcon({
-            className,
-            html: `<span>${realm.name}</span>`
-          })
-        }).addTo(layer);
-      }
+    // Add label
+    if (options.showLabel) {
+      const className = `map-label-realm map-label-realm-${mapData.boundaryLabelAlign || 'center'}`;
+      L.marker(mapData.boundary[0], {
+        icon: L.divIcon({
+          className,
+          html: `<span>${realm.name}</span>`
+        })
+      }).addTo(layers);
     }
 
-    return layer;
+    return layers;
   }
 
-  showArea(area: IArea, options: { icon?: string, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup {
-    return this.createArea(area, options).addTo(this.map);
+  /** Adds a realm to the map. */
+  addRealm(realm: IRealm, options: IMapRealmOptions): void {
+    const layers = this.createRealm(realm, options);
+    layers?.addTo(this.realmLayers);
   }
 
-  createArea(area: IArea, options: { icon?: string, onClick?: (evt: L.LeafletMouseEvent) => void }): L.LayerGroup {
-    const map = this.map;
-    const layer = L.layerGroup();
+  /** Toggles visibility of realms. */
+  toggleRealms(show?: boolean): void {
+    show ??= !this.areRealmsShown;
+    show ? this.realmLayers.addTo(this.map) : this.realmLayers.remove();
+    this.areRealmsShown = show;
+  }
 
-    const icon = options.icon || 'location_on_orange';
-    const iconPath =`assets/icons/symbols/${icon}.svg`;
+  // #endregion
+
+  // #region Areas
+
+  /** Clears all areas. */
+  clearAreas(): void {
+    this.areaLayers.clearLayers();
+  }
+
+  /** Creates an area layer. */
+  createArea(area: IArea, options: IMapAreaOptions): L.Layer | undefined
+  {
+    if (!area.mapData?.position) { return; }
+
+    const icon = options.icon || '/assets/icons/symbols/location_on_orange.svg';
     this._icons[icon] ??= L.icon({
-      iconUrl: iconPath,
+      iconUrl: icon,
       iconSize: [24, 24],
       popupAnchor: [0, -12],
     });
@@ -172,23 +244,75 @@ export class MapInstanceService implements OnDestroy {
       }
     });
     marker.bindPopup(popup);
-    layer.addLayer(marker);
 
     options.onClick && marker.addEventListener('click', evt => {
-
-      if (false) {
-        navigator.clipboard.writeText(`
-        { "area": "${area.guid}" },`);
-      }
-
       options.onClick!(evt);
-      popup.openOn(map);
+      popup.openOn(this.map);
     });
 
-    return layer;
+    const layers = L.layerGroup();
+    layers.addLayer(marker);
+    return layers;
   }
 
-  createMapShrine(shrine: IMapShrine, options: {}): L.Marker {
+  /** Adds an area to the map. */
+  addArea(area: IArea, options: IMapAreaOptions): void {
+    const layers = this.createArea(area, options);
+    layers?.addTo(this.areaLayers);
+  }
+
+  /** Toggles visibility of areas. */
+  toggleAreas(show?: boolean): void {
+    show ??= !this.areAreasShown;
+    show ? this.areaLayers.addTo(this.map) : this.areaLayers.remove();
+  }
+
+  // #endregion
+
+  // #region Area Connections
+
+  /** Clears all connections between areas. */
+  clearConnections(): void {
+    this.connectionLayers.clearLayers();
+  }
+
+  /** Adds connections between areas. */
+  addAreaConnections(area: Maybe<IArea>, options: IMapAreaOptions): void {
+    if (!area?.connections?.length) { return; }
+
+    const layers = L.layerGroup().addTo(this.connectionLayers);
+    area.connections?.forEach(connection => {
+      if (!connection.area.mapData?.position) { return; }
+      // Add yellow marker over the selected area.
+      this.createArea(area, {
+        icon: '/assets/icons/symbols/location_on_yellow.svg',
+        onClick: () => { this.clearConnections();  }
+      })?.addTo(layers);
+      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
+      line.addTo(layers);
+    });
+  }
+
+  /** Toggles visibility of area connections. */
+  toggleConnections(show?: boolean): void {
+    show ??= !this.areConnectionsShown;
+    show ? this.connectionLayers.addTo(this.map) : this.connectionLayers.remove();
+    this.areConnectionsShown = show;
+  }
+
+  // #endregion
+
+  // #region Map Shrines
+
+  /** Clears all map shrines. */
+  clearMapShrines(): void {
+    this.mapShrineLayers.clearLayers();
+  }
+
+  /** Creates a map shrine layer. */
+  createMapShrine(shrine: IMapShrine, options: {}): L.Layer | undefined {
+    if (!shrine.mapData?.position) { return; }
+
     this._icons['map-shrine'] ??= L.icon({
       iconUrl: 'assets/icons/map-shrine.svg',
       iconSize: [24, 24],
@@ -211,10 +335,36 @@ export class MapInstanceService implements OnDestroy {
     });
     marker.bindPopup(popup);
 
-    return marker;
+    const layers = L.layerGroup();
+    marker.addTo(layers);
+    return layers;
   }
 
-  createWingedLight(wl: IWingedLight, options: {}): L.Marker {
+  /** Adds a map shrine to the map. */
+  addMapShrine(shrine: IMapShrine, options: {}): void {
+    const layers = this.createMapShrine(shrine, options);
+    layers?.addTo(this.mapShrineLayers);
+  }
+
+  /** Toggles visibility of the map shrines. */
+  toggleMapShrines(show?: boolean): void {
+    show ??= !this.areMapShrinesShown;
+    show ? this.mapShrineLayers.addTo(this.map) : this.mapShrineLayers.remove();
+    this.areMapShrinesShown = show;
+  }
+
+  // #endregion
+
+  // #region Winged Light
+
+  /** Clears all winged lights. */
+  clearWingedLights(): void {
+    this.wingedLightLayers.clearLayers();
+  }
+
+  createWingedLight(wl: IWingedLight, options: IMapWingedLightOptions): L.Layer | undefined {
+    if (!wl.mapData?.position) { return; }
+
     this._icons['wl'] ??= L.icon({
       iconUrl: 'assets/icons/light.svg',
       iconSize: [32, 32],
@@ -236,7 +386,21 @@ export class MapInstanceService implements OnDestroy {
     });
     marker.bindPopup(popup);
 
-    return marker;
+    const layers = L.layerGroup();
+    marker.addTo(layers);
+    return layers;
+  }
+
+  /** Adds a winged light to the map. */
+  addWingedLight(wl: IWingedLight, options: IMapWingedLightOptions): void {
+    const layers = this.createWingedLight(wl, options);
+    layers?.addTo(this.wingedLightLayers);
+  }
+
+  toggleWingedLights(show?: boolean): void {
+    show ??= !this.areWingedLightsShown;
+    show ? this.wingedLightLayers.addTo(this.map) : this.wingedLightLayers.remove();
+    this.areWingedLightsShown = show;
   }
 
   // #endregion
