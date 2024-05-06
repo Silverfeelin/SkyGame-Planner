@@ -300,5 +300,67 @@
       "mapData": { "position": [-366.56,411.56] }
     },
     // #endregion
+    // #region Vault
+    {
+      "guid": "Mt6uDBigUP",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-first-floor-map-shrine.webp",
+      "mapData": { "position": [-230.75,372.56] }
+    },
+    {
+      "guid": "9TfCpBgmXW",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-third-floor-map-shrine.webp",
+      "mapData": { "position": [-207.19,361.94] }
+    },
+    {
+      "guid": "oxZXdByjCg",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-fourth-floor-map-shrine.webp",
+      "mapData": { "position": [-197.63,343.31] }
+    },
+    {
+      "guid": "4jtpTFZ39o",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Top-Floor-Map-Shrine.webp",
+      "mapData": { "position": [-180.63,331.31] }
+    },
+    {
+      "guid": "ioChKfj63j",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Archives-Angle-Map-Shrine.webp",
+      "mapData": { "position": [-232,393.81] }
+    },
+    {
+      "guid": "Jgcu1-kVCL",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Crescent-Oasis-Map-Shrine.webp",
+      "mapData": { "position": [-177.69,407.81] }
+    },
+    {
+      "guid": "AwpiTWfg3K",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Gargen-Map-Shrine.webp",
+      "mapData": { "position": [-197,442.38] }
+    },
+    {
+      "guid": "l0yhcYX1ll",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Refuge-Map-Shrine.webp",
+      "mapData": { "position": [-244.88,337.19] }
+    },
+    {
+      "guid": "JSPUuuqHRw",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Office-Map-Shrine.webp",
+      "mapData": { "position": [-243.63,362.88] }
+    },
+    {
+      "guid": "eroCc1CGcC",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Vault-Collab-Room-Map-Shrine.webp",
+      "mapData": { "position": [-215.63,398.5] }
+    },
+    // #endregion
   ]
 }

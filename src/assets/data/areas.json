@@ -671,6 +671,7 @@
     {
       "guid": "wKZdWMMIWa",
       "name": "Vault Elevator",
+      "mapShrines": [ "Mt6uDBigUP" ],
       "mapData": { "position": [-227.38,366.88] },
       "connections": [
         { "area": "XG3_0khlw9" },
@@ -691,6 +692,7 @@
       "name": "Vault Third Floor",
       "spirits": [ "1OGD_H3a7X" ],
       "wingedLights": [ "Hn7mU7ktxt" ],
+      "mapShrines": [ "9TfCpBgmXW" ],
       "mapData": { "position": [-210.5,358.75] },
       "connections": [
         { "area": "BxTngnB1PV" },
@@ -701,6 +703,7 @@
       "name": "Vault Fourth Floor",
       "spirits": [ "HeJISF946a", "Gi75RcvXd0", "KZaVtTUdlR", "mZZ-MkZJ1x" ],
       "wingedLights": [ "Zzvpdwh0wl", "I-vGwH81iB" ],
+      "mapShrines": [ "oxZXdByjCg" ],
       "mapData": { "position": [-194.88,346.88] },
       "connections": [
         { "area": "Zx40zFvrqG" },
@@ -719,6 +722,7 @@
       "guid": "ZiqYHd176H",
       "name": "Vault Summit",
       "wingedLights": [ "uiNKKn25L-" ],
+      "mapShrines": [ "4jtpTFZ39o" ],
       "mapData": { "position": [-179.25,327.88] },
       "connections": [
         { "area": "vWlW190-P1" },
@@ -729,6 +733,7 @@
       "name": "Vault Archives",
       "spirits": [ "7EzWoLR1w4" ],
       "wingedLights": [ "W9fiK8mWQK", "4uUGCJEgq3" ],
+      "mapShrines": [ "ioChKfj63j" ],
       "mapData": { "position": [-232.5,390.5] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -737,6 +742,7 @@
     {
       "guid": "wrHKGEg2Kc",
       "name": "Vault Collab Room",
+      "mapShrines": [ "eroCc1CGcC" ],
       "mapData": { "position": [-214,395.5] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -750,6 +756,7 @@
       "name": "Starlight Desert",
       "spirits": [ "HfafU7Pfui", "JOCCkr0TlW", "V7gj-cBqK1", "z5dtSO-gis", "l7zP8zUFHX" ],
       "wingedLights": [ "DFxZJcPENY", "Qz-2auzQan", "r_r5vLWj-6" ],
+      "mapShrines": [ "AwpiTWfg3K" ],
       "mapData": { "position": [-195.5,440] },
       "connections": [
         { "area": "wrHKGEg2Kc" },
@@ -792,6 +799,7 @@
       "guid": "schNrmq0ID",
       "name": "Office",
       "spirits": [ "ExkE9a7QJ0", "Ayoc2XvMTy", "izKBXplld6", "cpTFBZ-im4", "bQCZEuAuZe", "MKdRGA66hC", "HmibyU0UEG", "GUwL23XDTb" ],
+      "mapShrines": [ "JSPUuuqHRw" ],
       "mapData": { "position": [-242.25,365.06] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -810,6 +818,7 @@
       "name": "Repository of Refuge",
       "spirits": [ "ZGSnOxK9gb", "O1olUBrkJ5", "V43JRVL_QD", "DAG_zfwis5", "zq6qjCsQ_f" ],
       "wingedLights": [ "_RSC0jqGCh" ],
+      "mapShrines": [ "l0yhcYX1ll" ],
       "mapData": { "position": [-240.63,342.38] },
       "connections": [
         { "area": "wKZdWMMIWa" },
@@ -820,6 +829,7 @@
       "name": "Crescent Oasis",
       "spirits": [ "v-bxcGqGaa", "gyEBXKOIwY", "4h9FByzo7y", "wyFKAWN45l", "mf7NyGfeDI" ],
       "wingedLights": [ "ZDqubWevQx", "HdrkYqqX3_", "fWLJNq1H3v" ],
+      "mapShrines": [ "Jgcu1-kVCL" ],
       "mapData": { "position": [-176.5,413.38] }
     },
     // #endregion
