@@ -188,5 +188,67 @@
       "mapData": { "position": [-346.25,265.38] }
     },
     // #endregion
+    // #region Valley
+    {
+      "guid": "-R9H4i_Jz3",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Valley-Social-Space-Map-Shrine.webp",
+      "mapData": { "position": [-258.5,184.63] }
+    },
+    {
+      "guid": "GKHfiJzwUw",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Valley-Ice-Rink-Map-Shrine.webp",
+      "mapData": { "position": [-258.44,213.94] }
+    },
+    {
+      "guid": "fog6ZHU6Mx",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Citadel-Map-Shrine.webp",
+      "mapData": { "position": [-246.56,234.06] }
+    },
+    {
+      "guid": "r2NNvf4jdl",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Valley-Sliding-Race-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-260.25,248.75] }
+    },
+    {
+      "guid": "Aq4k2P-fVB",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Valley-Flying-Race-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-242.25,254.38] }
+    },
+    {
+      "guid": "LXnirIMnYf",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Coliseum-map-shrine.webp",
+      "mapData": { "position": [-250.06,295.69] }
+    },
+    {
+      "guid": "9_0DXKlub6",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Valley-Village-of-Dreams-Map-Shrine.webp",
+      "mapData": { "position": [-281,272.38] }
+    },
+    {
+      "guid": "Lg9btBXFWr",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Harmony-Hall-Map-shrine.webp",
+      "mapData": { "position": [-287.56,289.44] }
+    },
+    {
+      "guid": "dssBJwnc5Z",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Village-Theater-Map-Shrine.webp",
+      "mapData": { "position": [-291.69,301.13] }
+    },
+    {
+      "guid": "Nqlcq4Eqj5",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Valley-Hermit-Hideout-Map-Shrine.webp",
+      "mapData": { "position": [-277.13,241.88] }
+    },
+    // #endregion
   ]
 }

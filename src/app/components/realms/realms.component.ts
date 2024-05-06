@@ -91,7 +91,7 @@ export class RealmsComponent implements AfterViewInit {
     for (const realm of this.realms) {
       this._mapInstanceService.showRealm(realm, { showBoundary: true, showLabel: true, onClick: () => {
         // Don't navigate when areas are shown to prevent accidental navigation.
-        if (this.showAreas) { return; }
+        if (this.showAreas || this.showMapShrines || this.showWingedLight) { return; }
         void this._router.navigateByUrl(`/realm/${realm.guid}`);
       }});
     }

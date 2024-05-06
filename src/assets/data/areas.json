@@ -396,6 +396,7 @@
     {
       "guid": "LUkrOYNjEy",
       "name": "Valley Social Space",
+      "mapShrines": [ "-R9H4i_Jz3" ],
       "mapData": { "position": [-257.13,189.63] },
       "connections": [
         { "area": "u3rc8C3sMb" },
@@ -407,6 +408,7 @@
       "name": "Ice Rink",
       "spirits": [ "4KCKJxR56G", "JROKFatVLC", "bHCSyFQ4u-", "9y_5scrYa9" ],
       "wingedLights": [ "5BM1uqQvM4", "vKEMuduC0F", "_rmaySa6NL" ],
+      "mapShrines": [ "GKHfiJzwUw" ],
       "mapData": { "position": [-258.88,215.88] },
       "connections": [
         { "area": "LUkrOYNjEy" },
@@ -419,6 +421,7 @@
       "name": "Citadel",
       "spirits": [ "yUp189PWVS", "CfXORyMFx4", "H5iKZChQIK" ],
       "wingedLights": [ "DjuNbgmKq5", "D9Z9c3mRDf" ],
+      "mapShrines": [ "fog6ZHU6Mx" ],
       "mapData": { "position": [-241.75,229.5] },
       "connections": [
         { "area": "u3rc8C3sMb" },
@@ -429,6 +432,7 @@
       "guid": "8Zn5GPbx1U",
       "name": "Sliding Race",
       "wingedLights": [ "Tmg19lVERk" ],
+      "mapShrines": [ "r2NNvf4jdl" ],
       "mapData": { "position": [-257.56,248.88] },
       "connections": [
         { "area": "u3rc8C3sMb" },
@@ -439,6 +443,7 @@
       "guid": "uMoS_cHn0R",
       "name": "Flying Race",
       "wingedLights": [ "sfDl46vj4O", "N6KMjaxez6" ],
+      "mapShrines": [ "Aq4k2P-fVB" ],
       "mapData": { "position": [-238.5,254.19] },
       "connections": [
         { "area": "iRWfJCMxFB" },
@@ -459,6 +464,7 @@
       "name": "Coliseum",
       "spirits": [ "OaAUJHNIjE", "IIt-zYJC2N", "fRtK3WFMm1", "CQJO8mQ0do", "20Xw7fuZWr", "g_lZ76kjbS", "XvcpNrqatq", "95RfXrjMx1" ],
       "wingedLights": [ "McAh-VzlJH" ],
+      "mapShrines": [ "LXnirIMnYf" ],
       "mapData": { "position": [-249,291.88] },
       "connections": [
         { "area": "L1O2yEHfvX" },
@@ -481,6 +487,7 @@
       "name": "Village of Dreams",
       "spirits": [ "sj6YhQZQvM", "KhFZE8z0-I", "7tMB-HjDin", "Jd8rEzWHVg", "Ej3SZgZ2WL" ],
       "wingedLights": [ "U6oebtceIH", "xF36ISKLHe", "orOMQkGltm" ],
+      "mapShrines": [ "9_0DXKlub6", "Lg9btBXFWr" ],
       "mapData": { "position": [-278.75,277.75] },
       "connections": [
         { "area": "LUkrOYNjEy" },
@@ -494,6 +501,7 @@
       "guid": "7z8NtDXKrS",
       "name": "Hermit Valley",
       "wingedLights": [ "KFqwmitUni", "8_EY7L74TI" ],
+      "mapShrines": [ "Nqlcq4Eqj5" ],
       "mapData": { "position": [-281.5,239.13] },
       "connections": [
         { "area": "WZFTGjgurD" },
@@ -505,6 +513,7 @@
       "name": "Village Theatre",
       "spirits": [ "qSggZYj_x3", "4iotcmsn0K", "fEcI6neh6f", "KYhwsjTkp-", "S6KVcMgi-3" ],
       "wingedLights": [ "JRTI3BsjIZ" ],
+      "mapShrines": [ "dssBJwnc5Z" ],
       "mapData": { "position": [-286.25,307.5] },
       "connections": [
         { "area": "WZFTGjgurD" },
