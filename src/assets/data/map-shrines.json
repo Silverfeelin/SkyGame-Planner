@@ -250,5 +250,55 @@
       "mapData": { "position": [-277.13,241.88] }
     },
     // #endregion
+    // #region Wasteland
+    {
+      "guid": "EaNImb7KpI",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Social-space-Map-Shrine.webp",
+      "mapData": { "position": [-282,340.56] }
+    },
+    {
+      "guid": "M8hQkhleyp",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Broken-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-328.5,370.56] }
+    },
+    {
+      "guid": "WlpStWBJaD",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Graveyard-map-shrine.webp",
+      "mapData": { "position": [-314.19,383.69] }
+    },
+    {
+      "guid": "y5INBIKCXK",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Crabs-field--Map-Shrine.webp",
+      "mapData": { "position": [-314.69,411.25] }
+    },
+    {
+      "guid": "XCCgbwMp3Y",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Battlefield-map-shrine.webp",
+      "mapData": { "position": [-293.19,385.44] }
+    },
+    {
+      "guid": "78BXBDmd2d",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Broken-Temple-Map-Shrine.webp",
+      "mapData": { "position": [-265.5,393.06] }
+    },
+    {
+      "guid": "rULgp7ynZ-",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Wasteland-Ark-Maze-Map-Shrine.webp",
+      "mapData": { "position": [-313.38,460.13] }
+    },
+    {
+      "guid": "1RjdboXv9j",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Treasure-Reef-map-shrine.webp",
+      "mapData": { "position": [-366.56,411.56] }
+    },
+    // #endregion
   ]
 }

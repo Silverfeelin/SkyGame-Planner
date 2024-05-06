@@ -539,6 +539,7 @@
     {
       "guid": "R4I-lYbUUO",
       "name": "Wasteland Social Space",
+      "mapShrines": [ "EaNImb7KpI" ],
       "mapData": { "position": [-283,339.25] },
       "connections": [
         { "area": "L1O2yEHfvX" },
@@ -566,6 +567,7 @@
       "name": "Broken Temple",
       "spirits": [ "TqswdiTmEC", "k8nqBtLJ0R" ],
       "wingedLights": [ "M_ouc0fx7z", "-jaWbsOO-B" ],
+      "mapShrines": [ "M8hQkhleyp" ],
       "mapData": { "position": [-329.25,366.5] },
       "connections": [
         { "area": "CCmW2Ad_v_" },
@@ -577,6 +579,7 @@
       "name": "Graveyard",
       "spirits": [ "_4VyRWxD3V", "trJkBr3myf", "eToUA1mSjz", "LO75aDy9Zc", "OJECJaFI5p" ],
       "wingedLights": [ "cfkB_RA0cA", "F-YgRDMZyG", "Y3PENqw0Mj", "lL0L9y28hd", "arkcy1Y5HK", "NmYlVIsugI" ],
+      "mapShrines": [ "WlpStWBJaD" ],
       "mapData": { "position": [-314,380.25] },
       "connections": [
         { "area": "4Vw0MHl11q" },
@@ -589,6 +592,7 @@
       "name": "Crab Fields",
       "spirits": [ "6GO0ISasq7", "tZG5hNcINX" ],
       "wingedLights": [ "pZ5N0156oQ", "U8Bo3YBBh2", "rSQzx1yNcr" ],
+      "mapShrines": [ "y5INBIKCXK" ],
       "mapData": { "position": [-311,406.5] },
       "connections": [
         { "area": "CCmW2Ad_v_" },
@@ -600,6 +604,7 @@
       "name": "Battlefield",
       "spirits": [ "nwpDbbbWcw" ],
       "wingedLights": [ "3rn0JHgV53", "MVmgO5kOUE" ],
+      "mapShrines": [ "XCCgbwMp3Y" ],
       "mapData": { "position": [-294.25,388.75] },
       "connections": [
         { "area": "CCmW2Ad_v_" },
@@ -611,6 +616,7 @@
       "guid": "9kF2UIDK2N",
       "name": "Wasteland Temple",
       "wingedLights": [ "NtcClN4SsY" ],
+      "mapShrines": [ "78BXBDmd2d" ],
       "mapData": { "position": [-269,392.75] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -621,6 +627,7 @@
       "name": "Forgotten Ark",
       "spirits": [ "ZomY9nil8V", "HphxLKhDBZ", "kQiNS82DDY", "OaysgoHcZI", "UJVa4nb2nn", "Be41CnHkEI", "hgjklF3nQI" ],
       "wingedLights": [ "1zsvpsvviY", "wtWGz0QLVx" ],
+      "mapShrines": [ "rULgp7ynZ-" ],
       "mapData": { "position": [-314,463.25] },
       "connections": [
         { "area": "4Vw0MHl11q" },
@@ -632,6 +639,7 @@
       "name": "Treasure Reef",
       "spirits": [ "WFqMqmjVv9", "4gwH1Tn9he", "aVOtIknTMO", "zVs_gAo_wy", "gTIay-wjmN" ],
       "wingedLights": [ "ij47DZ1EJi", "LoX2Z_gAeA" ],
+      "mapShrines": [ "1RjdboXv9j" ],
       "mapData": { "position": [-373.25,414] },
       "connections": [
         { "area": "R4I-lYbUUO" },
