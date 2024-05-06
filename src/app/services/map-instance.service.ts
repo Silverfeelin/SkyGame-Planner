@@ -24,7 +24,7 @@ interface IMapAreaOptions {
   onClick?: (evt: L.LeafletMouseEvent) => void
 }
 
-interface IMapConnectionOptions {}
+interface IMapAreaConnectionOptions {}
 interface IMapWingedLightOptions {}
 interface IMapMapShrineOptions {}
 
@@ -276,11 +276,11 @@ export class MapInstanceService implements OnDestroy {
     this.connectionLayers.clearLayers();
   }
 
-  /** Adds connections between areas. */
-  addAreaConnections(area: Maybe<IArea>, options: IMapAreaOptions): void {
+  /** Creates connections between areas. */
+  createAreaConnections(area: Maybe<IArea>, options: IMapAreaConnectionOptions): L.Layer | undefined {
     if (!area?.connections?.length) { return; }
 
-    const layers = L.layerGroup().addTo(this.connectionLayers);
+    const layers = L.layerGroup();
     area.connections?.forEach(connection => {
       if (!connection.area.mapData?.position) { return; }
       // Add yellow marker over the selected area.
@@ -291,6 +291,14 @@ export class MapInstanceService implements OnDestroy {
       const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
       line.addTo(layers);
     });
+
+    return layers;
+  }
+
+  /** Adds connections between areas to the map. */
+  addAreaConnections(area: Maybe<IArea>, options: IMapAreaConnectionOptions): void {
+    const layers = this.createAreaConnections(area, options);
+    layers?.addTo(this.connectionLayers);
   }
 
   /** Toggles visibility of area connections. */
@@ -310,7 +318,7 @@ export class MapInstanceService implements OnDestroy {
   }
 
   /** Creates a map shrine layer. */
-  createMapShrine(shrine: IMapShrine, options: {}): L.Layer | undefined {
+  createMapShrine(shrine: IMapShrine, options: IMapMapShrineOptions): L.Layer | undefined {
     if (!shrine.mapData?.position) { return; }
 
     this._icons['map-shrine'] ??= L.icon({
@@ -335,13 +343,15 @@ export class MapInstanceService implements OnDestroy {
     });
     marker.bindPopup(popup);
 
+    this.markerAddDblClickFound(shrine.guid, marker);
+
     const layers = L.layerGroup();
     marker.addTo(layers);
     return layers;
   }
 
   /** Adds a map shrine to the map. */
-  addMapShrine(shrine: IMapShrine, options: {}): void {
+  addMapShrine(shrine: IMapShrine, options: IMapMapShrineOptions): void {
     const layers = this.createMapShrine(shrine, options);
     layers?.addTo(this.mapShrineLayers);
   }
@@ -405,7 +415,24 @@ export class MapInstanceService implements OnDestroy {
 
   // #endregion
 
-  // #region Tooltip elements
+  // #region Marker helpers
+
+  markerAddDblClickFound(guid: string, marker: L.Marker): void {
+    marker.addEventListener('dblclick', e => {
+      e.originalEvent.preventDefault();
+      e.originalEvent.stopImmediatePropagation();
+      const found = !this._storageService.hasMapMarker(guid);
+      if (found) {
+        this._storageService.addMapMarkers(guid);
+        marker.setOpacity(opacityFound);
+      } else {
+        this._storageService.removeMapMarkers(guid);
+        marker.setOpacity(1);
+      }
+    });
+  }
+
+  // #region Tooltip helpers
 
   ttFlex(): HTMLElement {
     const div = document.createElement('div');
@@ -512,6 +539,13 @@ export class MapInstanceService implements OnDestroy {
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();
+
+    this._realmLayers?.clearLayers();
+    this._areaLayers?.clearLayers();
+    this._connectionLayers?.clearLayers();
+    this._mapShrineLayers?.clearLayers();
+    this._wingedLightLayers?.clearLayers();
+
     this._map?.off();
     this._map?.remove();
     this._map = undefined;

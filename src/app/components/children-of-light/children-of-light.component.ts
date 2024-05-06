@@ -167,6 +167,17 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     table.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  unlockAll(): void {
+    if (!confirm('Are you sure you want to mark all Children of Light as found?')) { return; }
+
+    this._dataService.wingedLightConfig.items.forEach(wl => {
+      if (wl.unlocked) { return; }
+      this.toggleWingedLight(wl, true);
+      this.updateMarker(wl);
+      this.updateTable(wl);
+    });
+  }
+
   reset(): void {
     if (!confirm('Are you sure you want to reset your found Children of Light?')) { return; }
 
