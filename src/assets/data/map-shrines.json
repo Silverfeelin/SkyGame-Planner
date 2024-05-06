@@ -362,5 +362,31 @@
       "mapData": { "position": [-215.63,398.5] }
     },
     // #endregion
+    // #region Eden
+    {
+      "guid": "QBGEZURf1h",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Eden-Main-Doorway-Map-Shrine.webp",
+      "mapData": { "position": [-195.69,270.94] }
+    },
+    {
+      "guid": "NqwRQmN5QP",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Eden-Wind-Rock-Pathway-Map-Shrine.webp",
+      "mapData": { "position": [-153.82,247.56] }
+    },
+    {
+      "guid": "9SpZphlSnX",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Eden-Statues-Pathway-Map-Shrine.webp",
+      "mapData": { "position": [-66.63,265.63] }
+    },
+    {
+      "guid": "qaA1pBOjjn",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Eden-Orbit-Map-Shrine.webp",
+      "mapData": { "position": [-182.25,199.44] }
+    },
+    // #endregion
   ]
 }

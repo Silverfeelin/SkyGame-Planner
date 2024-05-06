@@ -934,6 +934,7 @@
     {
       "guid": "vWlW190-P1",
       "name": "Eden Entrance",
+      "mapShrines": [ "QBGEZURf1h" ],
       "mapData": { "position": [-193.25,275.75] },
       "connections": [
         { "area": "aXSrTx3fzL" },
@@ -961,6 +962,7 @@
     {
       "guid": "49_QOAzf20",
       "name": "Eden Third Area (pipes)",
+      "mapShrines": [ "NqwRQmN5QP" ],
       "mapData": { "position": [-150,253.38] },
       "connections": [
         { "area": "xYRxil02Bm" },
@@ -971,7 +973,7 @@
       "guid": "c84Uxu50_p",
       "name": "Eden Fourth Area (rocks and krill)",
       "wingedLights": [ "1kVW4x7nYj", "kxJmOLwH6e", "3zT-KHGHA_", "ahUFYVXgT8", "NYSbSHTslP", "uqOdibxRjD", "WulN9av6-P", "wyDIoyrZbw", "ng2YT7SXkx" ],
-      "mapData": { "position": [-132,258.13] },
+      "mapData": { "position": [-133.38,258.63] },
       "connections": [
         { "area": "49_QOAzf20" },
         { "area": "1-S3ZsNdV0" },
@@ -989,6 +991,7 @@
     {
       "guid": "3-YDmI4uL8",
       "name": "Ascent",
+      "mapShrines": [ "9SpZphlSnX" ],
       "mapData": { "position": [-66.5,263.75] },
       "connections": [
         { "area": "Ub5s1RiDA1" },
@@ -999,6 +1002,7 @@
       "name": "Orbit",
       "spirits": [ "l8tl0mHCWH", "iu6tmCPpex", "aj2x9H8ECy", "NgLbFXaB4z", "JQR4EGE6io", "NLbS2a-y2u" ],
       "wingedLights": [ "DvYGWvjeOC" ],
+      "mapShrines": [ "qaA1pBOjjn" ],
       "mapData": { "position": [-183.2,197.57] },
       "connections": [
         { "area": "zewkN917oz" },
