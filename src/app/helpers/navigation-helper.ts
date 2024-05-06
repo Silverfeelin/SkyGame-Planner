@@ -40,7 +40,7 @@ export class NavigationHelper {
     } else if (item.nodes?.length || item.hiddenNodes?.length) {
       return this.getItemSourceFromNodes(item);
     } else if (item.iaps?.length) {
-
+      return this.getItemSourceFromIap(item);
     }
 
     return undefined;
