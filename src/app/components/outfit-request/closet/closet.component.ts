@@ -86,7 +86,6 @@ export class ClosetComponent implements OnDestroy {
   allItems: Array<IItem> = [];
   itemMap: { [guid: string]: IItem } = {};
   items: { [type: string]: Array<IItem> } = {};
-  unequipItems: Array<IItem> = [];
   ongoingItems: { [guid: string]: IItem } = {};
 
   showingColorPicker = false;
@@ -136,6 +135,9 @@ export class ClosetComponent implements OnDestroy {
   // Internal
   _clickSub: SubscriptionLike;
 
+  _imgNone = new Image();
+  _imgUnknown = new Image();
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
@@ -146,6 +148,9 @@ export class ClosetComponent implements OnDestroy {
     private readonly _route: ActivatedRoute
   ) {
     this.requesting = location.pathname.endsWith('request');
+
+    this._imgNone.src = '/assets/icons/none.webp';
+    this._imgUnknown.src = '/assets/icons/question.webp';
 
     // Load user preferences.
     this.hideUnselected = localStorage.getItem('closet.hide-unselected') === '1';
@@ -568,7 +573,6 @@ export class ClosetComponent implements OnDestroy {
         this.items[type as string].push(item);
         this.allItems.push(item);
         this.itemMap[item.guid] = item;
-        this.unequipItems.push(item);
       }
     }
 
@@ -855,8 +859,6 @@ export class ClosetComponent implements OnDestroy {
       'E_yfCZYU5C', 'ec8jU3Gerw', 'biKOov4qJQ'
     ];
     // Store item images for drawing.
-    const noItem = this.unequipItems.at(0)!;
-    const noItemImg = document.querySelector(`.closet-item[data-guid="${noItem.guid}"] .item-icon img`) as HTMLImageElement;
     const itemDivs = document.querySelectorAll('.closet-item');
     const itemImgs = Array.from(itemDivs).reduce((obj, div) => {
       const img = div.querySelector('.item-icon img') as HTMLImageElement;
@@ -882,10 +884,11 @@ export class ClosetComponent implements OnDestroy {
       };
 
       if (item) {
-        if (itemImgs[item.guid].src === noItemImg.src) { drawPlaceholder(); }
+        if (itemImgs[item.guid].src === this._imgNone.src) { drawPlaceholder(); }
         ctx.drawImage(itemImgs[item.guid], x, y, _wItem, _wItem);
       } else {
         drawPlaceholder();
+        ctx.drawImage(this._imgUnknown, x, y, _wItem, _wItem);
       }
     });
 

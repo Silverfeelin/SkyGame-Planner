@@ -48,12 +48,12 @@
         </span>
       </a>
       <!-- Area -->
-      <div class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.area">
+      <a class="spirit-grid-item sky-card-item sky-card-item-icon" *ngIf="spirit.area" [routerLink]="['/area', spirit.area!.guid]">
         <mat-icon>location_on</mat-icon>
         <span class="menu-label">
           {{ spirit.area!.name }}
         </span>
-      </div>
+      </a>
     </div>
   </div>
 </div>

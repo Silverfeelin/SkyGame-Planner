@@ -671,6 +671,7 @@
     {
       "guid": "wKZdWMMIWa",
       "name": "Vault Elevator",
+      "spirits": [ "_8CvQjUnQg", "CH6e-TQz6n" ],
       "mapShrines": [ "Mt6uDBigUP" ],
       "mapData": { "position": [-227.38,366.88] },
       "connections": [

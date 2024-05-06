@@ -6,6 +6,7 @@ import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
+import { IShop } from 'src/app/interfaces/shop.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -108,8 +109,11 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   private loadSeason(): void {
     this.ongoingSeasonItems = {};
     if (!this.season) { return; }
-    this.season.spirits.forEach(spirit => {
+    this.season.spirits?.forEach(spirit => {
       this.loadTree(spirit.tree, this.ongoingSeasonItems);
+    });
+    this.season.shops?.forEach(shop => {
+      this.loadShop(shop, this.ongoingSeasonItems);
     });
   }
 
@@ -117,8 +121,11 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
     this.ongoingEventItems = {};
     if (!this.eventInstances?.length) { return; }
     this.eventInstances.forEach(instance => {
-      instance.spirits.forEach(spirit => {
+      instance.spirits?.forEach(spirit => {
         this.loadTree(spirit.tree, this.ongoingEventItems);
+      });
+      instance.shops?.forEach(shop => {
+        this.loadShop(shop, this.ongoingEventItems);
       });
     });
   }
@@ -137,9 +144,17 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
     });
   }
 
-  private loadTree(tree: ISpiritTree | undefined, bag: Bag ): void {
+  private loadTree(tree: ISpiritTree | undefined, bag: Bag): void {
     if (!tree) { return; }
     const items = NodeHelper.getItems(tree.node);
     items.forEach(item => bag[item.guid] = item);
+  }
+
+  private loadShop(shop: IShop, bag: Bag): void {
+    shop.iaps?.forEach(iap => {
+      iap.items?.forEach(item => bag[item.guid] = item);
+    });
+
+    shop.itemList?.items?.forEach(node => bag[node.item.guid] = node.item);
   }
 }

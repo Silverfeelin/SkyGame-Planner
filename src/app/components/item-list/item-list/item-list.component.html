@@ -1,3 +1,8 @@
+@if (itemList.description) {
+  <div class="container mb">
+    {{ itemList.description }}
+  </div>
+}
 <div class="sky-flex flex-wrap">
   @for (node of itemList.items; track node.guid) {
     <app-item-list-node [node]="node" [highlight]="node.guid === highlightNode" [opaque]="opaqueNodes" [nodeOverlayTemplate]="nodeOverlayTemplate"></app-item-list-node>

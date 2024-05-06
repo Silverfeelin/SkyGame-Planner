@@ -8,6 +8,7 @@ export interface IItemListConfig extends IConfig<IItemList> {}
 export interface IItemList extends IGuid {
   /** All items in the list. */
   items: Array<IItemListNode>;
+  description?: string;
 
   /// References ///
   shop?: IShop;

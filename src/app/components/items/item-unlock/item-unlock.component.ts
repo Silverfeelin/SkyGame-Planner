@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IIAP } from 'src/app/interfaces/iap.interface';
+import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -78,6 +79,7 @@ export class ItemUnlockComponent {
       if (item.nodes?.length) { this.unlockNode(item.nodes.at(-1)!); }
       else if (item.hiddenNodes?.length) { this.unlockNode(item.hiddenNodes.at(-1)!); }
       else if (item.iaps?.length) { this.unlockIAP(item.iaps.at(-1)!); }
+      else if (item.listNodes?.length) { this.unlockListNode(item.listNodes.at(-1)!); }
     }
   }
 
@@ -104,6 +106,17 @@ export class ItemUnlockComponent {
     iap.items?.forEach(item => { this.unlockItem(item, false); });
   }
 
+  private unlockListNode(node: IItemListNode): void {
+    if (node.unlocked) { return; }
+
+    // Unlock node.
+    node.unlocked = true;
+    this._storageService.addUnlocked(node.guid);
+
+    // Unlock item.
+    this.unlockItem(node.item, false);
+  }
+
   // #endregion
 
   // #region Locking
@@ -127,8 +140,9 @@ export class ItemUnlockComponent {
       item.nodes?.forEach(node => { this.lockNode(node); });
       item.hiddenNodes?.forEach(node => { this.lockNode(node); });
 
-      // Lock related IAPs.
+      // Lock related Shops.
       item.iaps?.forEach(iap => { this.lockIAP(iap); });
+      item.listNodes?.forEach(node => { this.lockListNode(node); });
     }
 
     this._eventService.itemToggled.next(item);
@@ -154,6 +168,17 @@ export class ItemUnlockComponent {
 
     // Lock related items.
     iap.items?.forEach(item => { this.lockItem(item, false); });
+  }
+
+  private lockListNode(node: IItemListNode): void {
+    if (!node.unlocked) { return; }
+
+    // Lock node.
+    node.unlocked = false;
+    this._storageService.removeUnlocked(node.guid);
+
+    // Lock item.
+    this.lockItem(node.item, false);
   }
 
   // #endregion
