@@ -1,5 +1,20 @@
 {
   "items": [
+    // #region Home
+    {
+      "guid": "HPtacUHQMo",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Aviary-Map-Shrine.webp",
+      "mapData": { "position": [-452,369.13] }
+    },
+    {
+      "guid": "NKLJ5lCZiL",
+      "description": "",
+      "imageUrl": "/assets/game/map-shrines/Home-Map-Shrine.webp",
+      "mapData": { "position": [-480.56,396.56] }
+    },
+    // #endregion
+    // #region Isle
     {
       "guid": "XjPXrh4ygg",
       "description": "At the start of the Sand Dunes, near the winged light.",
@@ -54,6 +69,8 @@
       "imageUrl": "/assets/game/map-shrines/Isle-Prophecy-Trial-Fire-Map-Shrine.webp",
       "mapData": { "position": [-396.06,364.5] }
     },
+    // #endregion
+    // #region Prairie
     {
       "guid": "UZU8IWRFTQ",
       "description": "At the Prairie Social Space.",
@@ -108,6 +125,7 @@
       "imageUrl": "/assets/game/map-shrines/Prairie-Prairie-Peaks-Map-Shrine.webp",
       "mapData": { "position": [-416.69,137.19] }
     },
+    // #endregion
     // #region Hidden Forest
     {
       "guid": "AKRMG2oyjD",
@@ -169,5 +187,6 @@
       "imageUrl": "/assets/game/map-shrines/Flight-Area-Angle-Map-Shrine.webp",
       "mapData": { "position": [-346.25,265.38] }
     },
+    // #endregion
   ]
 }

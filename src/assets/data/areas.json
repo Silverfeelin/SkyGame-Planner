@@ -5,6 +5,7 @@
       "guid": "zewkN917oz",
       "name": "Home Space",
       "mapData": { "position": [-478,415.75] },
+      "mapShrines": [ "NKLJ5lCZiL" ],
       "connections": [
         { "area": "Mhbh0g9OdG" },
         { "area": "oEnKoTrbCt" },
@@ -810,6 +811,7 @@
       "guid": "Mhbh0g9OdG",
       "name": "Aviary Village",
       "spirits": [ "0Ab0zVwBa0", "53sRWu-bTI", "yRKMk_Xw4G", "118ghc8_me", "iz40tYocEn" ],
+      "mapShrines": [ "HPtacUHQMo" ],
       "mapData": { "position": [-460.38,365.5] },
       "connections": [
         { "area": "zewkN917oz" },
