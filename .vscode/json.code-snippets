@@ -147,4 +147,15 @@
     ],
     "description": "Area"
   },
+  "MapShrine": {
+    "prefix": "@map-shrine",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"description\": \"$2\",",
+      "\t\"imageUrl\": \"$3\"",
+      "},"
+    ],
+    "description": "MapShrine"
+  },
 }

@@ -21,10 +21,11 @@ export class RealmsComponent implements AfterViewInit {
 
   showMap = false;
   showAreas = false;
+  showMapShrines = false;
+  showWingedLight = false;
+
   map!: L.Map;
   lastMapArea?: IArea;
-  areaLayers = L.layerGroup();
-  connectionLayers = L.layerGroup();
 
   constructor(
     private readonly _dataService: DataService,
@@ -38,12 +39,16 @@ export class RealmsComponent implements AfterViewInit {
     // Check if the map should be folded or not.
     if (_route.snapshot.queryParamMap.has('map')) {
       const nMap = +_route.snapshot.queryParamMap.get('map')!;
-      this.showMap = nMap >= 1;
-      this.showAreas = nMap >= 2;
+      this.showMap = !!(nMap & 1);
+      this.showAreas = !!(nMap & 2);
+      this.showMapShrines = !!(nMap & 4);
+      this.showWingedLight = !!(nMap & 8);
     } else {
       this.showMap = localStorage.getItem('realms.map.folded') !== '1';
       this.showAreas = localStorage.getItem('realms.map.areas') === '1';
-      this.updateMapUrl(!this.showMap);
+      this.showMapShrines = localStorage.getItem('realms.map.shrines') === '1';
+      this.showWingedLight = localStorage.getItem('realms.map.wl') === '1';
+      this.updateMapUrl();
     }
   }
 
@@ -63,19 +68,17 @@ export class RealmsComponent implements AfterViewInit {
     // Initialize realm map.
     this.map = this._mapInstanceService.initialize(this.mapContainer!.nativeElement.querySelector('.map')!, mapInit);
     this._mapInstanceService.saveParamsToQueryOnMove();
-    this.drawAreas();
-    if (this.showAreas) {
-      this.areaLayers?.addTo(this.map);
-      this.connectionLayers?.addTo(this.map);
-    }
 
-    for (const realm of this.realms) {
-      this._mapInstanceService.showRealm(realm, { showBoundary: true, showLabel: true, onClick: () => {
-        // Don't navigate when areas are shown to prevent accidental navigation.
-        if (this.showAreas) { return; }
-        void this._router.navigateByUrl(`/realm/${realm.guid}`);
-      }});
-    }
+    this.drawAreas();
+    this._mapInstanceService.toggleAreas(this.showAreas);
+    this._mapInstanceService.toggleConnections(this.showAreas);
+    this.drawMapShrines();
+    this._mapInstanceService.toggleMapShrines(this.showMapShrines);
+    this.drawWingedLights();
+    this._mapInstanceService.toggleWingedLights(this.showWingedLight);
+
+    this.drawRealms();
+    this._mapInstanceService.toggleRealms(true);
 
     if (focusArea) {
       this.updateMapConnections(this._dataService.guidMap.get(focusArea) as IArea);
@@ -83,62 +86,82 @@ export class RealmsComponent implements AfterViewInit {
   }
 
   beforeFoldMap(folded: boolean): void {
+    this.showMap = !folded;
     localStorage.setItem('realms.map.folded', folded ? '1' : '0');
-    this.updateMapUrl(folded);
+    this.updateMapUrl();
   }
 
   toggleShowAreas(): void {
     this.showAreas = !this.showAreas;
     localStorage.setItem('realms.map.areas', this.showAreas ? '1' : '0');
-
-    if (this.showAreas) {
-      this.areaLayers.addTo(this.map);
-      this.connectionLayers.addTo(this.map);
-    } else {
-      this.areaLayers?.remove();
-      this.connectionLayers?.remove();
-    }
-
-    this.updateMapUrl(!this.showMap);
+    this._mapInstanceService.toggleAreas(this.showAreas);
+    this._mapInstanceService.toggleConnections(this.showAreas);
+    this.updateMapUrl();
   }
 
-  private updateMapUrl(folded: boolean): void {
+  toggleShowMapShrines(): void {
+    this.showMapShrines = !this.showMapShrines;
+    localStorage.setItem('realms.map.shrines', this.showMapShrines ? '1' : '0');
+    this._mapInstanceService.toggleMapShrines(this.showMapShrines);
+    this.updateMapUrl();
+  }
+
+  toggleShowWingedLight(): void {
+    this.showWingedLight = !this.showWingedLight;
+    localStorage.setItem('realms.map.wl', this.showWingedLight ? '1' : '0');
+    this._mapInstanceService.toggleWingedLights(this.showWingedLight);
+    this.updateMapUrl();
+  }
+
+  private updateMapUrl(): void {
     const url = new URL(location.href);
-    url.searchParams.set('map', folded ? '0' : this.showAreas ? '2' : '1');
+    let bit = 0;
+    bit |= this.showMap ? 1 : 0;
+    bit |= this.showAreas ? 2 : 0;
+    bit |= this.showMapShrines ? 4 : 0;
+    bit |= this.showWingedLight ? 8 : 0;
+    url.searchParams.set('map', `${bit}`);
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
+  }
+
+  private drawRealms(): void {
+    this.realms.forEach(realm => {
+      this._mapInstanceService.addRealm(realm, { showLabel: true, onClick: () => {
+        // Don't navigate when areas are shown to prevent accidental navigation.
+        if (this.showAreas || this.showMapShrines || this.showWingedLight) { return; }
+        void this._router.navigateByUrl(`/realm/${realm.guid}`);
+      }});
+    });
   }
 
   private drawAreas(): void {
     this._dataService.areaConfig.items.forEach(area => {
-      if (!area.mapData?.position) { return; }
-      this._mapInstanceService.createArea(area, {
-        icon: 'location_on_orange',
+      this._mapInstanceService.addArea(area, {
+        icon: '/assets/icons/symbols/location_on_orange.svg',
         onClick: () => { this.updateMapConnections(area); }
-      }).addTo(this.areaLayers!);
+      });
+    });
+  }
+
+  private drawMapShrines(): void {
+    this._dataService.mapShrineConfig.items.forEach(shrine => {
+      this._mapInstanceService.addMapShrine(shrine, {});
+    });
+  }
+
+  private drawWingedLights(): void {
+    this._dataService.wingedLightConfig.items.forEach(wingedLight => {
+      if (wingedLight.area?.realm?.name === 'Void') { return; }
+      this._mapInstanceService.addWingedLight(wingedLight, {});
     });
   }
 
   private updateMapConnections(area?: IArea): void {
-    if (!this.connectionLayers) { return; }
-    this.connectionLayers.clearLayers();
-    if (!area?.mapData?.position) { return; }
+    this._mapInstanceService.clearConnections();
+    this._mapInstanceService.addAreaConnections(area, {});
 
     const url = new URL(location.href);
-    url.searchParams.set('area', area.guid);
+    area ? url.searchParams.set('area', area.guid) : url.searchParams.delete('area');
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
-
-    // Add yellow marker over the selected area.
-    this._mapInstanceService.createArea(area, {
-      icon: 'location_on_yellow',
-      onClick: () => { this.updateMapConnections(undefined); }
-    })?.addTo(this.connectionLayers!);
-
-    // Draw areas connected to the selected area.
-    area.connections?.forEach(connection => {
-      if (!connection.area.mapData?.position) { return; }
-
-      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
-      line.addTo(this.connectionLayers!);
-    });
   }
 }

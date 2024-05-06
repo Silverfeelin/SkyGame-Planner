@@ -1,5 +1,6 @@
 import { IConfig, IGuid } from "./base.interface";
 import { IMapData } from './map-data.interface';
+import { IMapShrine } from './map-shrine.interface';
 import { IRealm } from "./realm.interface";
 import { IReturningSpirits } from './returning-spirits.interface';
 import { ISpirit } from "./spirit.interface";
@@ -13,11 +14,12 @@ export interface IArea extends IGuid {
   mapData?: IMapData;
 
   /// References ///
-  realm?: IRealm;
+  realm: IRealm;
   spirits?: Array<ISpirit>;
   wingedLights?: Array<IWingedLight>;
   rs?: Array<IReturningSpirits>;
   connections?: Array<IAreaConnection>;
+  mapShrines?: Array<IMapShrine>;
 
   _wiki?: IWiki;
 }

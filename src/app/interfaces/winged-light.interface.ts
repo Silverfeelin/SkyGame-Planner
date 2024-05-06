@@ -11,7 +11,7 @@ export interface IWingedLight extends IGuid {
   mapData?: IMapData;
 
   /// References ///
-  area?: IArea;
+  area: IArea;
 
   /// Progress ///
   unlocked?: boolean;

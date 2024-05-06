@@ -5,6 +5,7 @@
       "guid": "zewkN917oz",
       "name": "Home Space",
       "mapData": { "position": [-478,415.75] },
+      "mapShrines": [ "NKLJ5lCZiL" ],
       "connections": [
         { "area": "Mhbh0g9OdG" },
         { "area": "oEnKoTrbCt" },
@@ -23,6 +24,7 @@
       "name": "Sand Dunes",
       "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
       "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
+      "mapShrines": [ "XjPXrh4ygg", "7qrYs-HaOu" ],
       "mapData": { "position": [-446.75,296] },
       "connections": [
         { "area": "LanOVr1JCo" },
@@ -43,6 +45,7 @@
     {
       "guid": "6MuptjUV8B",
       "name": "Isle Temple",
+      "mapShrines": [ "gZHTmFJ0_S" ],
       "mapData": { "position": [-398.13,305.5] },
       "connections": [
         { "area": "LanOVr1JCo" },
@@ -53,6 +56,7 @@
       "guid": "hDN-ciwGc-",
       "name": "Floating Island",
       "spirits": [ "f3AD39Q2Il" ],
+      "mapShrines": [ "s-TcDLSu2E" ],
       "mapData": { "position": [-408.75,322.5] },
       "connections": [
         { "area": "LanOVr1JCo" },
@@ -73,6 +77,7 @@
       "guid": "Xr2ZiVSV7p",
       "name": "Cave of Prophecies",
       "spirits": [ "DKFofCESGJ", "9Rgsos9xqE", "oIeqSdqyWu", "5DD07qmTqQ", "kH5B_M20Fl" ],
+      "mapShrines": [ "GwJI638m4x" ],
       "mapData": { "position": [-404.25,349.38] },
       "connections": [
         { "area": "oEnKoTrbCt" },
@@ -87,6 +92,7 @@
       "guid": "4fDcMVcdYD",
       "name": "Trial of Water",
       "wingedLights": [ "LOr9OqWHQv" ],
+      "mapShrines": [ "aGV5eAoQGR" ],
       "mapData": { "position": [-396.63,336.25] },
       "connections": [
         { "area": "Xr2ZiVSV7p" },
@@ -96,6 +102,7 @@
       "guid": "AC2AuDyHbM",
       "name": "Trial of Earth",
       "wingedLights": [ "BPnMAjL286" ],
+      "mapShrines": [ "elvKIlUjPQ" ],
       "mapData": { "position": [-388,345.63] },
       "connections": [
         { "area": "Xr2ZiVSV7p" },
@@ -105,6 +112,7 @@
       "guid": "nvd-hpUD1f",
       "name": "Trial of Air",
       "wingedLights": [ "7IpuFMAIXe" ],
+      "mapShrines": [ "xPzPNehmaS" ],
       "mapData": { "position": [-387.88,358.75] },
       "connections": [
         { "area": "Xr2ZiVSV7p" },
@@ -114,6 +122,7 @@
       "guid": "lZkMYxUB8A",
       "name": "Trial of Fire",
       "wingedLights": [ "89a0rCfJL-" ],
+      "mapShrines": [ "5Xrgsi0oOP" ],
       "mapData": { "position": [-398.5,364.63] },
       "connections": [
         { "area": "Xr2ZiVSV7p" },
@@ -123,7 +132,8 @@
     // #region Prairie
     {
       "guid": "Cmo9TPPpyH",
-      "name": "Prairie Social Area",
+      "name": "Prairie Social Space",
+      "mapShrines": [ "UZU8IWRFTQ" ],
       "mapData": { "position": [-410.38,238] },
       "connections": [
         { "area": "z3uQqa5KVZ" },
@@ -134,6 +144,7 @@
       "name": "Butterfly Fields",
       "spirits": [ "ulvP8R6C6a", "5u3TXZON81" ],
       "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2", "fl1Z3bEx81" ],
+      "mapShrines": [ "4GI2OaP7Uw" ],
       "mapData": { "position": [-403.88,194] },
       "connections": [
         { "area": "Cmo9TPPpyH" },
@@ -147,6 +158,7 @@
       "name": "Village Islands",
       "spirits": [ "48jm5EQzfU", "K3CIxcDSjq", "WFjSczlPTV", "R4ILdPamhd" ],
       "wingedLights": [ "_SJva8zUYc", "D22kvZx25W", "4lNlq0Raah" ],
+      "mapShrines": [ "QDnkz_qE9i" ],
       "mapData": { "position": [-395.38,165.25] },
       "connections": [
         { "area": "z3uQqa5KVZ" },
@@ -161,6 +173,7 @@
       "name": "8-Player Puzzle Area",
       "spirits": [ "gtbbZnpLbt" ],
       "wingedLights": [ "Sc2aim9ro1" ],
+      "mapShrines": [ "3_cCUrfyTX" ],
       "mapData": { "position": [-380,186.88] },
       "connections": [
         { "area": "V17jvM6lWL" },
@@ -171,6 +184,7 @@
       "guid": "JrcYJTvEhh",
       "name": "Koi Pond",
       "wingedLights": [ "vz0IBqoGta", "RPvwKSjUXE" ],
+      "mapShrines": [ "ZjUhH0OVu1" ],
       "mapData": { "position": [-381.88,154.88] },
       "connections": [
         { "area": "LdFAYVlCli" },
@@ -191,6 +205,7 @@
       "name": "Prairie Caves",
       "spirits": [ "MyLI80npmW", "Q-N8n-0b8O" ],
       "wingedLights": [ "tGV1WQd1yk", "K-eoMvklId" ],
+      "mapShrines": [ "jARCAHLdYn" ],
       "mapData": { "position": [-406.88,165.75] },
       "connections": [
         { "area": "z3uQqa5KVZ" },
@@ -203,6 +218,7 @@
       "name": "Bird's Nest",
       "spirits": [ "KM1xzU9v5P", "jncJKA4IaM", "PYsLThJYPx" ],
       "wingedLights": [ "GNDWMxbvTD", "PBt-1vrXFA" ],
+      "mapShrines": [ "vcq5hgkduA" ],
       "mapData": { "position": [-383.5,206.25] },
       "connections": [
         { "area": "z3uQqa5KVZ" },
@@ -215,6 +231,7 @@
       "name": "Sanctuary Island",
       "spirits": [ "0IoADuWn1P", "8N9cC4SvzM", "IDEim-HNOZ", "uxtR1vVL8c", "z4xqXUkx_6", "jx7koL5guD", "MEw6did3kI" ],
       "wingedLights": [ "NIEbxjzi9w", "MzhGgNL7T0", "4Sh9Wwka_r", "saQGYqh8gS", "20LOTTTfr_", "qN0TPwjnam", "nHuasNjUrd", "cBNCxRNiPa" ],
+      "mapShrines": [ "8ONaIKF9Ft" ],
       "mapData": { "position": [-352.25,206.25] },
       "connections": [
         { "area": "HHem4xrBb6" },
@@ -226,6 +243,7 @@
       "name": "Prairie Peaks",
       "spirits": [ "PN_V8C4WOq", "jh-fGKllmH", "6EywAKsW_z", "EMMZ8KSCjP", "vdv3KApSxB" ],
       "wingedLights": [ "JU8ya-Tjjm", "FzLNyBQ5ZA", "oRmSQSKfpm" ],
+      "mapShrines": [ "__Hemxvej4" ],
       "mapData": { "position": [-412.38,134.5] },
       "connections": [
         { "area": "BwpwRMfq1X" },
@@ -235,7 +253,8 @@
     // #region Hidden Forest
     {
       "guid": "A2--yR5CJk",
-      "name": "Forest Social Area",
+      "name": "Forest Social Space",
+      "mapShrines": [ "AKRMG2oyjD" ],
       "mapData": { "position": [-373.5,120.5] },
       "connections": [
         { "area": "LdFAYVlCli" },
@@ -247,6 +266,7 @@
       "guid": "tU23ZgPP_g",
       "name": "Forest Clearing",
       "wingedLights": [ "0o9-mt5q1s" ],
+      "mapShrines": [ "QgjhOZjQ-n" ],
       "mapData": { "position": [-366.19,117.44] },
       "connections": [
         { "area": "A2--yR5CJk" },
@@ -271,6 +291,7 @@
       "name": "Forest Brook",
       "spirits": [ "xbGBFC0rnu", "p-WdkJpGB5", "waSFuoNQsR", "lmydkMDQeP", "8OYabqG_jZ", "H30afxXKT1", "lE8DJQLcg5" ],
       "wingedLights": [ "E_vpwUyVcM", "5F7jGqG9xU", "irgdECMxtI", "Zv6jq5_IzP" ],
+      "mapShrines": [ "l5pWa40d6g" ],
       "mapData": { "position": [-326.94,100.31] },
       "connections": [
         { "area": "ZlV4HpsDGF" },
@@ -283,6 +304,7 @@
       "guid": "L3F8Z9vbYs",
       "name": "Elevated Clearing",
       "wingedLights": [ "MpcHkLWwol", "DIK2gBZ_FA" ],
+      "mapShrines": [ "NMH_NIElGP" ],
       "mapData": { "position": [-328.63,132.38] },
       "connections": [
         { "area": "qVu1RHulPp" },
@@ -295,6 +317,7 @@
       "name": "Underground Cavern",
       "spirits": [ "gcEV41jg3U" ],
       "wingedLights": [ "iaLuQ06e4T", "pBAU_FHObL", "3NFT1aCRpY", "xF6rfLZpef" ],
+      "mapShrines": [ "ZzKKzgMfUM" ],
       "mapData": { "position": [-312.75,152.5] },
       "connections": [
         { "area": "L3F8Z9vbYs" },
@@ -306,6 +329,7 @@
       "name": "Broken Bridge",
       "spirits": [ "L_0YoE4O8Z", "puj9z07ew0", "gF3qSnQNxx", "R_zBE7HaWV", "RUGuLBBPcg", "MZZ5RA0AMG", "NGSlfCM_wu" ],
       "wingedLights": [ "XlmWJaLSNr", "J1boiLeD4w", "uFoLDIogSU" ],
+      "mapShrines": [ "-J5jHK37oF" ],
       "mapData": { "position": [-311,117.19] },
       "connections": [
         { "area": "qVu1RHulPp" },
@@ -317,6 +341,7 @@
     {
       "guid": "-y0hYE5huj",
       "name": "Forest Temple",
+      "mapShrines": [ "doMFpBkpt9" ],
       "mapData": { "position": [-284,134.25] },
       "connections": [
         { "area": "iYC53UMrvL" },
@@ -327,6 +352,7 @@
       "guid": "jY6mM3Io4T",
       "name": "Forest End",
       "wingedLights": [ "s_UlGNscIQ" ],
+      "mapShrines": [ "nlqV1yGTCM" ],
       "mapData": { "position": [-275.13,166.25] },
       "connections": [
         { "area": "-y0hYE5huj" },
@@ -338,6 +364,7 @@
       "name": "Assembly Treehouse",
       "spirits": [ "cpwvdVEzKN" ],
       "wingedLights": [ "H7uvC7nb8U", "7_WXb7Uu8Z" ],
+      "mapShrines": [ "8IFQ0Mi8Hk" ],
       "mapData": { "position": [-339.5,66.13] },
       "connections": [
         { "area": "tU23ZgPP_g" },
@@ -351,6 +378,7 @@
       "name": "Wind Paths",
       "spirits": [ "FF8u1g9XI_", "9Wl9kwxoFk", "VQadeqBPEO", "_7-rIO21Ea", "hovmkrquOR" ],
       "wingedLights": [ "CZ99GFJVyE" ],
+      "mapShrines": [ "m2ju90tQ5x" ],
       "mapData": { "position": [-345,269.75] },
       "connections": [
         { "area": "A2--yR5CJk" },
@@ -367,7 +395,8 @@
     // #region Valley
     {
       "guid": "LUkrOYNjEy",
-      "name": "Valley Social Area",
+      "name": "Valley Social Space",
+      "mapShrines": [ "-R9H4i_Jz3" ],
       "mapData": { "position": [-257.13,189.63] },
       "connections": [
         { "area": "u3rc8C3sMb" },
@@ -379,6 +408,7 @@
       "name": "Ice Rink",
       "spirits": [ "4KCKJxR56G", "JROKFatVLC", "bHCSyFQ4u-", "9y_5scrYa9" ],
       "wingedLights": [ "5BM1uqQvM4", "vKEMuduC0F", "_rmaySa6NL" ],
+      "mapShrines": [ "GKHfiJzwUw" ],
       "mapData": { "position": [-258.88,215.88] },
       "connections": [
         { "area": "LUkrOYNjEy" },
@@ -391,6 +421,7 @@
       "name": "Citadel",
       "spirits": [ "yUp189PWVS", "CfXORyMFx4", "H5iKZChQIK" ],
       "wingedLights": [ "DjuNbgmKq5", "D9Z9c3mRDf" ],
+      "mapShrines": [ "fog6ZHU6Mx" ],
       "mapData": { "position": [-241.75,229.5] },
       "connections": [
         { "area": "u3rc8C3sMb" },
@@ -401,6 +432,7 @@
       "guid": "8Zn5GPbx1U",
       "name": "Sliding Race",
       "wingedLights": [ "Tmg19lVERk" ],
+      "mapShrines": [ "r2NNvf4jdl" ],
       "mapData": { "position": [-257.56,248.88] },
       "connections": [
         { "area": "u3rc8C3sMb" },
@@ -411,6 +443,7 @@
       "guid": "uMoS_cHn0R",
       "name": "Flying Race",
       "wingedLights": [ "sfDl46vj4O", "N6KMjaxez6" ],
+      "mapShrines": [ "Aq4k2P-fVB" ],
       "mapData": { "position": [-238.5,254.19] },
       "connections": [
         { "area": "iRWfJCMxFB" },
@@ -431,6 +464,7 @@
       "name": "Coliseum",
       "spirits": [ "OaAUJHNIjE", "IIt-zYJC2N", "fRtK3WFMm1", "CQJO8mQ0do", "20Xw7fuZWr", "g_lZ76kjbS", "XvcpNrqatq", "95RfXrjMx1" ],
       "wingedLights": [ "McAh-VzlJH" ],
+      "mapShrines": [ "LXnirIMnYf" ],
       "mapData": { "position": [-249,291.88] },
       "connections": [
         { "area": "L1O2yEHfvX" },
@@ -453,6 +487,7 @@
       "name": "Village of Dreams",
       "spirits": [ "sj6YhQZQvM", "KhFZE8z0-I", "7tMB-HjDin", "Jd8rEzWHVg", "Ej3SZgZ2WL" ],
       "wingedLights": [ "U6oebtceIH", "xF36ISKLHe", "orOMQkGltm" ],
+      "mapShrines": [ "9_0DXKlub6", "Lg9btBXFWr" ],
       "mapData": { "position": [-278.75,277.75] },
       "connections": [
         { "area": "LUkrOYNjEy" },
@@ -466,6 +501,7 @@
       "guid": "7z8NtDXKrS",
       "name": "Hermit Valley",
       "wingedLights": [ "KFqwmitUni", "8_EY7L74TI" ],
+      "mapShrines": [ "Nqlcq4Eqj5" ],
       "mapData": { "position": [-281.5,239.13] },
       "connections": [
         { "area": "WZFTGjgurD" },
@@ -477,6 +513,7 @@
       "name": "Village Theatre",
       "spirits": [ "qSggZYj_x3", "4iotcmsn0K", "fEcI6neh6f", "KYhwsjTkp-", "S6KVcMgi-3" ],
       "wingedLights": [ "JRTI3BsjIZ" ],
+      "mapShrines": [ "dssBJwnc5Z" ],
       "mapData": { "position": [-286.25,307.5] },
       "connections": [
         { "area": "WZFTGjgurD" },
@@ -501,7 +538,8 @@
     // #region Wasteland
     {
       "guid": "R4I-lYbUUO",
-      "name": "Wasteland Social Area",
+      "name": "Wasteland Social Space",
+      "mapShrines": [ "EaNImb7KpI" ],
       "mapData": { "position": [-283,339.25] },
       "connections": [
         { "area": "L1O2yEHfvX" },
@@ -529,6 +567,7 @@
       "name": "Broken Temple",
       "spirits": [ "TqswdiTmEC", "k8nqBtLJ0R" ],
       "wingedLights": [ "M_ouc0fx7z", "-jaWbsOO-B" ],
+      "mapShrines": [ "M8hQkhleyp" ],
       "mapData": { "position": [-329.25,366.5] },
       "connections": [
         { "area": "CCmW2Ad_v_" },
@@ -540,6 +579,7 @@
       "name": "Graveyard",
       "spirits": [ "_4VyRWxD3V", "trJkBr3myf", "eToUA1mSjz", "LO75aDy9Zc", "OJECJaFI5p" ],
       "wingedLights": [ "cfkB_RA0cA", "F-YgRDMZyG", "Y3PENqw0Mj", "lL0L9y28hd", "arkcy1Y5HK", "NmYlVIsugI" ],
+      "mapShrines": [ "WlpStWBJaD" ],
       "mapData": { "position": [-314,380.25] },
       "connections": [
         { "area": "4Vw0MHl11q" },
@@ -552,6 +592,7 @@
       "name": "Crab Fields",
       "spirits": [ "6GO0ISasq7", "tZG5hNcINX" ],
       "wingedLights": [ "pZ5N0156oQ", "U8Bo3YBBh2", "rSQzx1yNcr" ],
+      "mapShrines": [ "y5INBIKCXK" ],
       "mapData": { "position": [-311,406.5] },
       "connections": [
         { "area": "CCmW2Ad_v_" },
@@ -563,6 +604,7 @@
       "name": "Battlefield",
       "spirits": [ "nwpDbbbWcw" ],
       "wingedLights": [ "3rn0JHgV53", "MVmgO5kOUE" ],
+      "mapShrines": [ "XCCgbwMp3Y" ],
       "mapData": { "position": [-294.25,388.75] },
       "connections": [
         { "area": "CCmW2Ad_v_" },
@@ -574,6 +616,7 @@
       "guid": "9kF2UIDK2N",
       "name": "Wasteland Temple",
       "wingedLights": [ "NtcClN4SsY" ],
+      "mapShrines": [ "78BXBDmd2d" ],
       "mapData": { "position": [-269,392.75] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -584,6 +627,7 @@
       "name": "Forgotten Ark",
       "spirits": [ "ZomY9nil8V", "HphxLKhDBZ", "kQiNS82DDY", "OaysgoHcZI", "UJVa4nb2nn", "Be41CnHkEI", "hgjklF3nQI" ],
       "wingedLights": [ "1zsvpsvviY", "wtWGz0QLVx" ],
+      "mapShrines": [ "rULgp7ynZ-" ],
       "mapData": { "position": [-314,463.25] },
       "connections": [
         { "area": "4Vw0MHl11q" },
@@ -595,6 +639,7 @@
       "name": "Treasure Reef",
       "spirits": [ "WFqMqmjVv9", "4gwH1Tn9he", "aVOtIknTMO", "zVs_gAo_wy", "gTIay-wjmN" ],
       "wingedLights": [ "ij47DZ1EJi", "LoX2Z_gAeA" ],
+      "mapShrines": [ "1RjdboXv9j" ],
       "mapData": { "position": [-373.25,414] },
       "connections": [
         { "area": "R4I-lYbUUO" },
@@ -613,7 +658,7 @@
     // #region Vault
     {
       "guid": "QM7Kuv1Ekg",
-      "name": "Vault Social Area",
+      "name": "Vault Social Space",
       "wingedLights": ["r9CmlnAmRm" ],
       "mapData": { "position": [-236.13,367] },
       "connections": [
@@ -626,10 +671,8 @@
     {
       "guid": "wKZdWMMIWa",
       "name": "Vault Elevator",
-      "spirits": [
-        "_8CvQjUnQg",
-        "CH6e-TQz6n"
-      ],
+      "spirits": [ "_8CvQjUnQg", "CH6e-TQz6n" ],
+      "mapShrines": [ "Mt6uDBigUP" ],
       "mapData": { "position": [-227.38,366.88] },
       "connections": [
         { "area": "XG3_0khlw9" },
@@ -650,6 +693,7 @@
       "name": "Vault Third Floor",
       "spirits": [ "1OGD_H3a7X" ],
       "wingedLights": [ "Hn7mU7ktxt" ],
+      "mapShrines": [ "9TfCpBgmXW" ],
       "mapData": { "position": [-210.5,358.75] },
       "connections": [
         { "area": "BxTngnB1PV" },
@@ -660,6 +704,7 @@
       "name": "Vault Fourth Floor",
       "spirits": [ "HeJISF946a", "Gi75RcvXd0", "KZaVtTUdlR", "mZZ-MkZJ1x" ],
       "wingedLights": [ "Zzvpdwh0wl", "I-vGwH81iB" ],
+      "mapShrines": [ "oxZXdByjCg" ],
       "mapData": { "position": [-194.88,346.88] },
       "connections": [
         { "area": "Zx40zFvrqG" },
@@ -678,6 +723,7 @@
       "guid": "ZiqYHd176H",
       "name": "Vault Summit",
       "wingedLights": [ "uiNKKn25L-" ],
+      "mapShrines": [ "4jtpTFZ39o" ],
       "mapData": { "position": [-179.25,327.88] },
       "connections": [
         { "area": "vWlW190-P1" },
@@ -688,6 +734,7 @@
       "name": "Vault Archives",
       "spirits": [ "7EzWoLR1w4" ],
       "wingedLights": [ "W9fiK8mWQK", "4uUGCJEgq3" ],
+      "mapShrines": [ "ioChKfj63j" ],
       "mapData": { "position": [-232.5,390.5] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -696,6 +743,7 @@
     {
       "guid": "wrHKGEg2Kc",
       "name": "Vault Collab Room",
+      "mapShrines": [ "eroCc1CGcC" ],
       "mapData": { "position": [-214,395.5] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -709,6 +757,7 @@
       "name": "Starlight Desert",
       "spirits": [ "HfafU7Pfui", "JOCCkr0TlW", "V7gj-cBqK1", "z5dtSO-gis", "l7zP8zUFHX" ],
       "wingedLights": [ "DFxZJcPENY", "Qz-2auzQan", "r_r5vLWj-6" ],
+      "mapShrines": [ "AwpiTWfg3K" ],
       "mapData": { "position": [-195.5,440] },
       "connections": [
         { "area": "wrHKGEg2Kc" },
@@ -751,6 +800,7 @@
       "guid": "schNrmq0ID",
       "name": "Office",
       "spirits": [ "ExkE9a7QJ0", "Ayoc2XvMTy", "izKBXplld6", "cpTFBZ-im4", "bQCZEuAuZe", "MKdRGA66hC", "HmibyU0UEG", "GUwL23XDTb" ],
+      "mapShrines": [ "JSPUuuqHRw" ],
       "mapData": { "position": [-242.25,365.06] },
       "connections": [
         { "area": "QM7Kuv1Ekg" },
@@ -769,6 +819,7 @@
       "name": "Repository of Refuge",
       "spirits": [ "ZGSnOxK9gb", "O1olUBrkJ5", "V43JRVL_QD", "DAG_zfwis5", "zq6qjCsQ_f" ],
       "wingedLights": [ "_RSC0jqGCh" ],
+      "mapShrines": [ "l0yhcYX1ll" ],
       "mapData": { "position": [-240.63,342.38] },
       "connections": [
         { "area": "wKZdWMMIWa" },
@@ -779,6 +830,7 @@
       "name": "Crescent Oasis",
       "spirits": [ "v-bxcGqGaa", "gyEBXKOIwY", "4h9FByzo7y", "wyFKAWN45l", "mf7NyGfeDI" ],
       "wingedLights": [ "ZDqubWevQx", "HdrkYqqX3_", "fWLJNq1H3v" ],
+      "mapShrines": [ "Jgcu1-kVCL" ],
       "mapData": { "position": [-176.5,413.38] }
     },
     // #endregion
@@ -787,6 +839,7 @@
       "guid": "Mhbh0g9OdG",
       "name": "Aviary Village",
       "spirits": [ "0Ab0zVwBa0", "53sRWu-bTI", "yRKMk_Xw4G", "118ghc8_me", "iz40tYocEn" ],
+      "mapShrines": [ "HPtacUHQMo" ],
       "mapData": { "position": [-460.38,365.5] },
       "connections": [
         { "area": "zewkN917oz" },
@@ -882,6 +935,7 @@
     {
       "guid": "vWlW190-P1",
       "name": "Eden Entrance",
+      "mapShrines": [ "QBGEZURf1h" ],
       "mapData": { "position": [-193.25,275.75] },
       "connections": [
         { "area": "aXSrTx3fzL" },
@@ -909,6 +963,7 @@
     {
       "guid": "49_QOAzf20",
       "name": "Eden Third Area (pipes)",
+      "mapShrines": [ "NqwRQmN5QP" ],
       "mapData": { "position": [-150,253.38] },
       "connections": [
         { "area": "xYRxil02Bm" },
@@ -919,7 +974,7 @@
       "guid": "c84Uxu50_p",
       "name": "Eden Fourth Area (rocks and krill)",
       "wingedLights": [ "1kVW4x7nYj", "kxJmOLwH6e", "3zT-KHGHA_", "ahUFYVXgT8", "NYSbSHTslP", "uqOdibxRjD", "WulN9av6-P", "wyDIoyrZbw", "ng2YT7SXkx" ],
-      "mapData": { "position": [-132,258.13] },
+      "mapData": { "position": [-133.38,258.63] },
       "connections": [
         { "area": "49_QOAzf20" },
         { "area": "1-S3ZsNdV0" },
@@ -937,6 +992,7 @@
     {
       "guid": "3-YDmI4uL8",
       "name": "Ascent",
+      "mapShrines": [ "9SpZphlSnX" ],
       "mapData": { "position": [-66.5,263.75] },
       "connections": [
         { "area": "Ub5s1RiDA1" },
@@ -947,6 +1003,7 @@
       "name": "Orbit",
       "spirits": [ "l8tl0mHCWH", "iu6tmCPpex", "aj2x9H8ECy", "NgLbFXaB4z", "JQR4EGE6io", "NLbS2a-y2u" ],
       "wingedLights": [ "DvYGWvjeOC" ],
+      "mapShrines": [ "qaA1pBOjjn" ],
       "mapData": { "position": [-183.2,197.57] },
       "connections": [
         { "area": "zewkN917oz" },

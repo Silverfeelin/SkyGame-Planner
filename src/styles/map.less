@@ -23,8 +23,10 @@ body > .map { display: none !important; }
     width: 32px;
     height: 32px;
 
-    &.map-control-off mat-icon {
-      opacity: 0.5;
+    &.map-control-off {
+      mat-icon {
+        opacity: 0.2;
+      }
     }
   }
 
@@ -121,6 +123,12 @@ body > .map { display: none !important; }
   border-top-width: 0 !important;
 }
 
+.s-leaflet-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .s-leaflet-grid {
   display: grid;
   gap: 6px;
@@ -143,10 +151,6 @@ body > .map { display: none !important; }
     vertical-align: top;
     border-radius: var(--border-radius) !important;
   }
-}
-
-.s-leaflet-mt {
-  margin-top: 6px !important;
 }
 
 .s-leaflet-hasicon {

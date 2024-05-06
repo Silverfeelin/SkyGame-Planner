@@ -22,15 +22,12 @@ import { TitleService } from 'src/app/services/title.service';
   providers: [MapInstanceService],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
-  @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;
+export class RealmComponent implements OnInit, OnDestroy {
   @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef;
 
   realm!: IRealm;
 
-  showMap = false;
   highlightTree?: string;
-
   spirits: Array<ISpirit> = [];
   spiritCount = 0;
   seasonSpiritCount = 0;
@@ -45,66 +42,22 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   tier2Remaining: ICost = {};
   tier2Pct: ICost = {};
 
-  map!: L.Map;
-  areaLayers: L.LayerGroup = L.layerGroup();
-  boundaryLayers: L.LayerGroup = L.layerGroup();
-  connectionLayers: L.LayerGroup = L.layerGroup();
-  lastMapArea?: IArea;
-
   private readonly _subscriptions = new SubscriptionBag();
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
-    private readonly _mapInstanceService: MapInstanceService,
     private readonly _titleService: TitleService,
     private readonly _route: ActivatedRoute,
     private readonly _router: Router,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
-    // Check if the map should be folded or not.
-    if (_route.snapshot.queryParamMap.has('map')) {
-      this.showMap = _route.snapshot.queryParamMap.get('map') === '1';
-    } else {
-      this.showMap = localStorage.getItem('realm.map.folded') !== '1';
-      this.updateMapUrl(!this.showMap);
-    }
-
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
     _route.paramMap.subscribe(p => this.onParamsChanged(p));
   }
 
   ngOnInit(): void {
     this._eventService.itemToggled.subscribe(() => this.calculateTierCosts());
-  }
-
-  ngAfterViewInit(): void {
-    // Set focus on area.
-    const focusArea = this._route.snapshot.queryParamMap.get('area');
-    let view = this.realm?.mapData?.position ?? [-270, 270];
-    let zoom = this.realm?.mapData?.zoom ?? 2;
-    if (focusArea) {
-      const areaMapData = (this._dataService.guidMap.get(focusArea) as IArea)?.mapData;
-      if (areaMapData) {
-        view = areaMapData.position ?? view;
-        zoom = areaMapData.zoom ?? 3;
-      }
-    }
-
-    const mapEl = this.mapContainer.nativeElement.querySelector('.map');
-    const options: IMapInit = {
-      view, zoom,
-      zoomPanOptions: { animate: false, duration: 0 }
-    };
-    this.map = this._mapInstanceService.initialize(mapEl, options);
-    this.boundaryLayers.addTo(this.map);
-    this.areaLayers.addTo(this.map);
-    this.connectionLayers.addTo(this.map);
-    this.drawMap();
-
-    if (focusArea) {
-      this.updateMapConnections(this._dataService.guidMap.get(focusArea) as IArea);
-    }
   }
 
   ngOnDestroy(): void {
@@ -118,12 +71,6 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
   onParamsChanged(params: ParamMap): void {
     const guid = params.get('guid');
     this.initializeRealm(guid!);
-  }
-
-  panToRealm(instant = false): void {
-    if (!this.realm?.mapData?.position) { return; }
-    const opts = instant ? { animate: false, duration: 0 } : undefined;
-    this.map.flyTo(this.realm.mapData.position, this.realm.mapData.zoom ?? 1, opts);
   }
 
   constellationSpiritClicked(spirit: ISpirit): void {
@@ -178,11 +125,6 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.calculateTierCosts();
 
-    if (this.map) {
-      this.drawMap();
-      this.panToRealm(false);
-    }
-
     this._changeDetectorRef.markForCheck();
   }
 
@@ -213,68 +155,6 @@ export class RealmComponent implements OnInit, AfterViewInit, OnDestroy {
       CostHelper.add(cost!, node);
       node.unlocked || node.item?.unlocked ? CostHelper.add(spent!, node) : CostHelper.add(remaining!, node);
     }
-  }
-
-  beforeFoldMap(folded: boolean): void {
-    localStorage.setItem('realm.map.folded', folded ? '1' : '0');
-    this.updateMapUrl(folded);
-  }
-
-  private updateMapUrl(folded: boolean): void {
-    const url = new URL(location.href);
-    url.searchParams.set('map', folded ? '0' : '1');
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
-  }
-
-  private drawMap(): void {
-    this.boundaryLayers.clearLayers();
-    this.areaLayers.clearLayers();
-    this.connectionLayers.clearLayers();
-
-    if (!this.realm) { return; }
-    this.boundaryLayers.addLayer(
-      this._mapInstanceService.showRealm(this.realm, { showBoundary: true })
-    );
-
-    this.realm?.areas?.forEach(area => {
-      if (!area.mapData?.position) { return; }
-      this._mapInstanceService.showArea(area, {
-        icon: 'location_on_orange',
-        onClick: () => { this.updateMapConnections(area); }
-      })!;
-    });
-  }
-
-  private updateMapConnections(area?: IArea): void {
-    if (!this.connectionLayers) { return; }
-    this.connectionLayers.clearLayers();
-    if (!area?.mapData?.position) { return; }
-
-    const url = new URL(location.href);
-    url.searchParams.set('area', area.guid);
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
-
-    // Add yellow marker over the selected area.
-    this._mapInstanceService.showArea(area, {
-      icon: 'location_on_yellow',
-      onClick: () => { this.updateMapConnections(undefined); }
-    })?.addTo(this.connectionLayers!);
-
-    // Draw areas connected to the selected area.
-    area.connections?.forEach(connection => {
-      if (!connection.area.mapData?.position) { return; }
-
-      // Add white marker for connected area in another realm.
-      if (connection.area.realm !== this.realm) {
-        this._mapInstanceService.showArea(connection.area, {
-          icon: 'location_on_white',
-        })?.addTo(this.connectionLayers!);
-      }
-
-      // Draw line.
-      const line = L.polyline([area.mapData!.position!, connection.area.mapData.position], {color: '#fff', weight: 2  });
-      line.addTo(this.connectionLayers!);
-    });
   }
 }
 

@@ -11,7 +11,7 @@
     {
       "guid": "zhBAUiJptT",
       "description": "On top of a small boat at the start of the Sand Dunes.",
-      "mapData": { "position": [-458,309], "videoUrl": "Isle/2.mp4" },
+      "mapData": { "position": [-459.44,309.06], "videoUrl": "Isle/2.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
     },
     {
@@ -30,7 +30,7 @@
     {
       "guid": "vGCXUjMLfB",
       "description": "In the tunnel at the top of Butterfly Cave.",
-      "mapData": { "position": [-407.63,322.38], "videoUrl": "Isle/5.mp4" },
+      "mapData": { "position": [-406.81,321.56], "videoUrl": "Isle/5.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Butterfly_Cave" }
     },
     // Trials
@@ -55,7 +55,7 @@
     {
       "guid": "89a0rCfJL-",
       "description": "At the end of the Trial of Fire.",
-      "mapData": { "position": [-398.63,364.88], "videoUrl": "Isle/9.mp4" },
+      "mapData": { "position": [-397.69,362.88], "videoUrl": "Isle/9.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Cave_of_Prophecies" }
     },
     // #endregion
@@ -134,7 +134,7 @@
     {
       "guid": "Sc2aim9ro1",
       "description": "Inside a cave after solving the 8-player puzzle.",
-      "mapData": { "position": [-379.88,186.5], "videoUrl": "Prairie/9.mp4" },
+      "mapData": { "position": [-381.56,185], "videoUrl": "Prairie/9.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Eight-Player_Puzzle_Area" }
     },
     // Koi Pond
@@ -349,7 +349,7 @@
     {
       "guid": "vKEMuduC0F",
       "description": "In the middle of the Ice Rink.",
-      "mapData": { "position": [-258.75,216.13], "videoUrl": "Valley/2.mp4" },
+      "mapData": { "position": [-259.56,217.81], "videoUrl": "Valley/2.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Slope_and_Icerink" }
     },
     {
@@ -675,7 +675,7 @@
     {
       "guid": "DSTxmpHUbB",
       "description": "In the building at the end of the opening area in Eye of Eden.",
-      "mapData": { "position": [-182.88,266.13], "videoUrl": "Eden/1.mp4" },
+      "mapData": { "position": [-182.5,267.31], "videoUrl": "Eden/1.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Eye_of_Eden" }
     },
     // Fourth area
@@ -738,7 +738,7 @@
     {
       "guid": "DvYGWvjeOC",
       "description": "Automatically received after leaving Orbit.",
-      "mapData": { "position": [-182.88,197.38] },
+      "mapData": { "position": [-181.13,197.38] },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Orbit" }
     },
     // #endregion
