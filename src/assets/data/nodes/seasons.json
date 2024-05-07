@@ -8270,7 +8270,7 @@
     "c": 65
   },
   // #endregion
-  // Timid Bookworm
+  // #region Timid Bookworm
   {
     "guid": "B4rizR4xxx",
     "item": "QnA3xwSNod",
@@ -8406,6 +8406,54 @@
     "item": "NrFOa0B40l",
     "c": 70
   },
+  // TS 113
+  {
+    "guid": "nG_CWxU4mH",
+    "item": "QnA3xwSNod",
+    "nw": "-fRKP0Vh6e",
+    "n": "yPxomYINqm"
+  },
+  {
+    "guid": "-fRKP0Vh6e",
+    "item": "tCq4FrOkVn",
+    "c": 15
+  },
+  {
+    "guid": "yPxomYINqm",
+    "item": "YIR2Pbzuc0",
+    "c": 5,
+    "nw": "2agDKhYYbh",
+    "n": "atJ_y3vF0j",
+    "ne": "ib5vcYVd-g"
+  },
+  {
+    "guid": "2agDKhYYbh",
+    "item": "e6JjMLgK2V",
+    "c": 42
+  },
+  {
+    "guid": "ib5vcYVd-g",
+    "item": "0b8zAK9Oxq",
+    "c": 3
+  },
+  {
+    "guid": "atJ_y3vF0j",
+    "item": "a6L-y-8lK3",
+    "ac": 2,
+    "n": "89qp0fH4mZ"
+  },
+  {
+    "guid": "89qp0fH4mZ",
+    "item": "7CJwk5hiQ8",
+    "c": 5,
+    "n": "MOZ9r4MHCC"
+  },
+  {
+    "guid": "MOZ9r4MHCC",
+    "item": "NrFOa0B40l",
+    "c": 70
+  },
+  // #endregion
   // Rallying Thrillseeker
   {
     "guid": "VoHSiNLHP4",

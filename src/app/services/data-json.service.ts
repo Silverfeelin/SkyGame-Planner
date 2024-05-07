@@ -16,7 +16,7 @@ export class DataJsonService {
       const d = ts.date;
       return {
         guid: ts.guid,
-        date: { day: d.day, month: d.month, year: d.year },
+        date: d.toFormat('yyyy-MM-dd'),
         spirit: ts.spirit.guid,
         tree: ts.tree.guid
       };

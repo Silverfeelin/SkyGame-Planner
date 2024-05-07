@@ -254,8 +254,8 @@ export class DataService {
     const tsCounts: {[key: string]: number} = {};
     this.travelingSpiritConfig.items.forEach((ts, i) => {
       // Initialize dates
-      ts.date = DateHelper.fromInterfaceSky(ts.date)!;
-      ts.endDate = DateHelper.fromInterfaceSky(ts.endDate)?.endOf('day')
+      ts.date = DateHelper.fromStringSky(ts.date)!;
+      ts.endDate = DateHelper.fromStringSky(ts.endDate)?.endOf('day')
         ?? ts.date.plus({ days: 3 }).endOf('day');
 
       // Map TS to Spirit.

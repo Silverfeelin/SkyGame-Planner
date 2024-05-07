@@ -142,7 +142,10 @@ export class EditorTravelingSpiritComponent {
 getForClipboard(type: string): string | undefined {
     switch (type) {
       case 'ts':
-        return this.dataJsonService.travelingSpiritsToJson([this.result!]);
+        let json = this.dataJsonService.travelingSpiritsToJson([this.result!]);
+        const spiritName = this.spiritOptions.find(s => s.guid === this.spirit)?.name;
+        json = json.replace(/("guid": "[a-zA-Z0-9_-]+",)/, `$1 // ${this.tsCount + 1} - ${spiritName || ''}`);
+        return json;
       case 'tree':
         return this.dataJsonService.spiritTreesToJson([this.result!.tree]);
       case 'nodes':
