@@ -7,6 +7,7 @@ import { IIAP } from 'src/app/interfaces/iap.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
+import { IRevisedSpiritTree, ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
@@ -25,7 +26,9 @@ export class SeasonComponent implements OnDestroy {
   highlightTree?: string;
 
   guide?: ISpirit;
+  guideTree?: ISpiritTree;
   spirits: Array<ISpirit> = [];
+  spiritTrees: { [guid: string]: ISpiritTree } = {};
   shops: Array<IShop> = [];
   iapShops: Array<IShop> = [];
 
@@ -81,13 +84,16 @@ export class SeasonComponent implements OnDestroy {
 
     this.guide = undefined;
     this.spirits = [];
+    this.spiritTrees = {};
     this.season?.spirits?.forEach(spirit => {
       switch (spirit.type) {
         case 'Guide':
           this.guide = spirit;
+          this.guideTree = spirit.treeRevisions?.findLast<IRevisedSpiritTree>(t => t.revisionType === 'DuringSeason') ?? spirit.tree;
           break;
         case 'Season':
           this.spirits.push(spirit);
+          this.spiritTrees[spirit.guid] = spirit.treeRevisions?.findLast<IRevisedSpiritTree>(t => t.revisionType === 'DuringSeason') ?? spirit.tree!;
           break;
       }
     });

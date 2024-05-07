@@ -22,7 +22,7 @@ interface ITree {
 export class SpiritComponent {
   spirit!: ISpirit;
   trees: Array<ITree> = [];
-  seasonTree?: ISpiritTree;
+  seasonTrees: { [key: string]: ISpiritTree } = {};
   typeName?: string;
   event?: IEvent;
 
@@ -74,10 +74,28 @@ export class SpiritComponent {
     sortedTrees.sort((a, b) => b.date.diff(a.date).as('milliseconds'));
 
     this.trees = sortedTrees;
+
+    // Add revised spirit trees by newest first.
+    if (this.spirit.treeRevisions) {
+      for (let i = this.spirit.treeRevisions.length - 1; i >= 0; i--) {
+        let tree = this.spirit.treeRevisions[i];
+        this.trees.push({ name: tree.name || `Spirit tree (#${i + 2})`, tree });
+        if (this.spirit.type === 'Season' || this.spirit.type === 'Guide') {
+          this.seasonTrees[tree.guid] = tree;
+        }
+      }
+    }
+
+    // Add spirit tree
     if (this.spirit.tree) {
-      this.trees.push({ name: 'Spirit tree', tree: this.spirit.tree });
+      this.trees.push({
+        name: this.spirit.tree.name || (this.spirit.treeRevisions?.length ? 'Spirit tree (#1)' : 'Spirit tree'),
+        tree: this.spirit.tree
+      });
+
+      // Mark as season tree for season pass icon.
       if (this.spirit.type === 'Season' || this.spirit.type === 'Guide') {
-        this.seasonTree = this.spirit.tree;
+        this.seasonTrees[this.spirit.tree.guid] = this.spirit.tree;
       }
     }
   }

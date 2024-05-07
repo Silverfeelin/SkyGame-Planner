@@ -17,7 +17,7 @@ import { DateTime } from 'luxon';
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;
-  @Input() name?: string;
+  @Input() name?: string | undefined;
   @Input() highlight?: boolean;
   @Input() highlightItem?: string;
   @Input() seasonIcon?: string;

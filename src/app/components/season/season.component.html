@@ -80,25 +80,33 @@
   <div class="sky-card-body pad-0">
     <div class="sky-flex scroll-x pad">
       <!-- Guide tree -->
-      <div class="tree-wrapper">
-        <app-spirit-tree *ngIf="guide?.tree" [tree]="guide!.tree!" [name]="guide!.name" [highlight]="highlightTree === guide!.tree!.guid" [seasonIcon]="season.iconUrl">
-        </app-spirit-tree>
-      </div>
-      <!-- Traveling Spirit trees -->
-      <ng-container *ngIf="spirits">
-        <ng-container *ngFor="let spirit of spirits;">
-          <div class="tree-wrapper" *ngIf="spirit.tree">
-            <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid" [seasonIcon]="season.iconUrl">
+      @if (guide && guideTree) {
+        <div class="tree-wrapper">
+          <app-spirit-tree [tree]="guideTree" [name]="guide!.name" [highlight]="highlightTree === guideTree.guid" [seasonIcon]="season.iconUrl">
               <!-- Link to spirit -->
               <div name>
-                <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
+                <a [routerLink]="['/spirit', guide.guid]" [queryParams]="{ highlightTree: guideTree.guid }">
+                  {{ guide.name }}
+                </a>
+              </div>
+          </app-spirit-tree>
+        </div>
+      }
+      <!-- Traveling Spirit trees -->
+      @if (spirits) {
+        @for (spirit of spirits; track spirit.guid) {
+          <div class="tree-wrapper">
+            <app-spirit-tree [tree]="spiritTrees[spirit.guid]" [name]="spirit.name" [highlight]="highlightTree === spiritTrees[spirit.guid].guid" [seasonIcon]="season.iconUrl">
+              <!-- Link to spirit -->
+              <div name>
+                <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spiritTrees[spirit.guid].guid }">
                   {{ spirit.name }}
                 </a>
               </div>
             </app-spirit-tree>
           </div>
-        </ng-container>
-      </ng-container>
+        }
+      }
     </div>
   </div>
 </div>

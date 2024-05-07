@@ -4,7 +4,7 @@ import { IEventInstanceSpirit } from "./event.interface";
 import { IReturningSpirit } from "./returning-spirits.interface";
 import { ISeason } from "./season.interface";
 import { IShop } from "./shop.interface";
-import { ISpiritTree } from "./spirit-tree.interface";
+import { ISpiritTree, IRevisedSpiritTree as IRevisedSpiritTree } from "./spirit-tree.interface";
 import { ITravelingSpirit } from "./traveling-spirit.interface";
 import { IWiki } from "./wiki.interface";
 
@@ -23,11 +23,16 @@ export interface ISpirit extends IGuid {
 
   /// References ///
 
-  /** Main spirit tree.
-  * For regular spirits this is the constellation tree.
-  * For season spirits this is the seasonal tree.
-  */
+  /**
+   * Main spirit tree(s).
+   * For regular spirits this is the constellation tree.
+   * For season spirits this is the seasonal tree.
+   */
   tree?: ISpiritTree;
+
+  /** Revised versions of the main spirit tree. */
+  treeRevisions?: Array<IRevisedSpiritTree>;
+
   /** Area this spirit can be found in normally. */
   area?: IArea;
   /** Season this spirit is part of. */

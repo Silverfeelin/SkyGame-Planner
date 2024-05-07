@@ -4,7 +4,7 @@ import { Injectable, isDevMode } from '@angular/core';
 import { forkJoin, Observable, ReplaySubject, Subscription, tap } from 'rxjs';
 import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
-import { ISpiritTree, ISpiritTreeConfig } from '../interfaces/spirit-tree.interface';
+import { ISpiritTree, ISpiritTreeConfig, IRevisedSpiritTree } from '../interfaces/spirit-tree.interface';
 import { IEventConfig } from '../interfaces/event.interface';
 import { IItem, IItemConfig, ItemType } from '../interfaces/item.interface';
 import { INode, INodeConfig } from '../interfaces/node.interface';
@@ -246,6 +246,15 @@ export class DataService {
         const tree = this.guidMap.get(spirit.tree as any) as ISpiritTree;
         tree.spirit = spirit;
         spirit.tree = tree;
+      }
+
+      // Map past versions of spirit tree.
+      if (spirit.treeRevisions) {
+        spirit.treeRevisions.forEach((pt, i) => {
+          const tree = this.guidMap.get(pt as any) as IRevisedSpiritTree;
+          tree.spirit = spirit;
+          spirit.treeRevisions![i] = tree;
+        });
       }
     });
   }

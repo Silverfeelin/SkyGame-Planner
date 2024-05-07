@@ -29,14 +29,16 @@
     </div>
   </div>
   <div class="footer">
-    <div *ngIf="name" class="name">
-      <ng-content select="div[name]"></ng-content>
-      <div class="name-default">
-        {{ name }}
-        <span *ngIf="tsDate" class="c-accent ts-date">(<app-date [date]="tsDate"></app-date>)</span>
-        <span *ngIf="rsDate" class="c-accent ts-date">(<app-date [date]="rsDate"></app-date>)</span>
+    @if (name || tree.name) {
+      <div class="name">
+        <ng-content select="div[name]"></ng-content>
+        <div class="name-default">
+          {{ name ?? tree.name }}
+          <span *ngIf="tsDate" class="c-accent ts-date">(<app-date [date]="tsDate"></app-date>)</span>
+          <span *ngIf="rsDate" class="c-accent ts-date">(<app-date [date]="rsDate"></app-date>)</span>
+        </div>
       </div>
-    </div>
+    }
     <div *ngIf="name && hasCost" class="hr"></div>
     <div *ngIf="hasCost" class="costs">
       <app-cost [cost]="totalCost" [remaining]="remainingCost"></app-cost>

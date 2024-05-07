@@ -69,7 +69,7 @@
           [tree]="item.tree" [name]="item.name"
           [highlight]="highlightTree === item.tree.guid"
           [highlightItem]="highlightItem"
-          [seasonIcon]="item.tree === seasonTree ? spirit.season?.iconUrl || '' : ''"
+          [seasonIcon]="seasonTrees[item.tree.guid] ? spirit.season?.iconUrl || '' : ''"
         ></app-spirit-tree>
       </div>
     </div>

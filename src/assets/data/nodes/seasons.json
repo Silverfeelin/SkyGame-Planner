@@ -1505,6 +1505,7 @@
 
   // #endregion
   // #region Revival Guide
+  // V1
   {
     "guid": "SqgpIRZYPo",
     "item": "ueFGjjCL-f",
@@ -1617,6 +1618,109 @@
     "guid": "lTjGn2SRZi",
     "item": "Du0Ciu8WX7",
     "sh": 2
+  },
+  // V2
+  {
+    "guid": "JE-CKWg3VH",
+    "item": "ueFGjjCL-f",
+    "nw": "gVYeksoTtb",
+    "n": "mSpE46AOK2"
+  },
+  {
+    "guid": "gVYeksoTtb",
+    "item": "iPKhdXjEDN",
+    "c": 3
+  },
+  {
+    "guid": "mSpE46AOK2",
+    "item": "5pM1uL5euH",
+    "nw": "SLEk31jJjM",
+    "n": "i9gXnWhvn9"
+  },
+  {
+    "guid": "SLEk31jJjM",
+    "item": "BXWuIYsB6a",
+    "c": 3
+  },
+  {
+    "guid": "i9gXnWhvn9",
+    "item": "UtjY-O5GfN",
+    "nw": "jiefC4chJL",
+    "n": "JMbDAxHIgf"
+  },
+  {
+    "guid": "jiefC4chJL",
+    "item": "x9W_UOZ61W",
+    "c": 3
+  },
+  {
+    "guid": "JMbDAxHIgf",
+    "item": "RrWXNJ8_8U",
+    "nw": "qh9sfbgc-1",
+    "n": "4IZUf2WtIr",
+    "ne": "NXhTrr4kL_"
+  },
+  {
+    "guid": "qh9sfbgc-1",
+    "item": "-O5kRr08TU",
+    "c": 3
+  },
+  {
+    "guid": "NXhTrr4kL_",
+    "item": "BkvIh_1cID"
+  },
+  {
+    "guid": "4IZUf2WtIr",
+    "item": "LPhMFiY1Gn",
+    "nw": "4oHoDqNVK2",
+    "n": "k6HDpeTjcT"
+  },
+  {
+    "guid": "4oHoDqNVK2",
+    "item": "9ZSG_CwRwt",
+    "c": 3
+  },
+  {
+    "guid": "k6HDpeTjcT",
+    "item": "2htYztTTLh",
+    "nw": "ndazX0l2rN",
+    "n": "8X5gy_5xrP"
+  },
+  {
+    "guid": "ndazX0l2rN",
+    "item": "_5Z1Ee33iH",
+    "c": 3
+  },
+  {
+    "guid": "8X5gy_5xrP",
+    "item": "7NBQOMY8Os",
+    "nw": "PNOPiS87Mz",
+    "n": "H7vh3VGi5v"
+  },
+  {
+    "guid": "PNOPiS87Mz",
+    "item": "N2BbtfMv-4",
+    "c": 3
+  },
+  {
+    "guid": "H7vh3VGi5v",
+    "item": "LKCSYIoEKs",
+    "nw": "Oq3GLwX19p",
+    "n": "G-vVLisAxT",
+    "ne": "UvXgGm8dDC"
+  },
+  {
+    "guid": "Oq3GLwX19p",
+    "item": "C2QyP140Rm"
+  },
+  {
+    "guid": "UvXgGm8dDC",
+    "item": "6J0eF-rleF"
+  },
+  {
+    "guid": "G-vVLisAxT",
+    "item": "xB3Auq2DFR",
+    "c": 46
   },
   // #endregion
   // #region Nine-Colored Deer Guide
