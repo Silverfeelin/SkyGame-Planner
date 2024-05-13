@@ -24,7 +24,7 @@
     "name": "Cinnamoroll Cloud Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Cinnamoroll-Pop-Up-Cafe-Cloud-Cape-icon.png",
     "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Cinnamoroll-Pop-Up-Cafe-Cloud-Cape-back.png",
-    "order": 683
+    "order": 687
   },
   {
     "id": 2144,
@@ -51,7 +51,7 @@
     "name": "Cinnamoroll Plushie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Cinnamoroll-Pop-Up-Cafe-Plushie-Prop-icon.png",
     "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Cinnamoroll-Pop-Up-Cafe-Plushie-Prop-front.png",
-    "order": 558
+    "order": 562
   },
   {
     "id": 2147,
@@ -69,6 +69,6 @@
     "name": "Cozy Cafe Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Cozy-Cafe-Table-Prop-icon.png",
     "previewImage": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Cozy-Cafe-Table-Prop.png",
-    "order": 559
+    "order": 563
   }
 ]
