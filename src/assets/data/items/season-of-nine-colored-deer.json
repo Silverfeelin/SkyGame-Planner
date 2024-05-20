@@ -105,7 +105,7 @@
     "name": "Radiance of the Nine-Colored Deer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Radiance-of-the-Nine-Colored-Deer-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-of-the-Nine-Colored-Deer-back.png",
-    "order": 657
+    "order": 661
   },
   {
     "id": 2031,
@@ -145,7 +145,7 @@
     "name": "Nine-Colored Deer Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Nine-Colored-Deer-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Nine-Colored-Deer-Ultimate-Cape-back.png",
-    "order": 653
+    "order": 657
   },
   {
     "id": 1986,
@@ -317,7 +317,7 @@
     "name": "Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Hunter-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Hunter-Cape-back.png",
-    "order": 655
+    "order": 659
   },
   {
     "id": 2048,
@@ -402,7 +402,7 @@
     "name": "Feudal Lord Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Feudal-Lord-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Feudal-Lord-Cape-front.png",
-    "order": 656,
+    "order": 660,
     "group": "SeasonPass"
   },
   {
@@ -530,7 +530,7 @@
     "name": "Princess Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Princess-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Princess-Cape-back.png",
-    "order": 654,
+    "order": 658,
     "group": "SeasonPass"
   },
   {
