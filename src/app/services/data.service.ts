@@ -65,7 +65,7 @@ export class DataService {
 
   loadData(): Observable<{[k: string]: string}> {
     const get = (asset: string) => {
-      return this._httpClient.get(`assets/data/${asset}`, { responseType: 'text' });
+      return this._httpClient.get(`assets/data/${asset}`, { headers: { 'ngsw-bypass': '' }, responseType: 'text' });
     }
 
     return forkJoin({
