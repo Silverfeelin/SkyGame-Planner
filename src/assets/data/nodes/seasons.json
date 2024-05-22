@@ -3296,7 +3296,7 @@
     "item": "ILUnt_OrWQ",
     "c": 60
   },
-  // Doublefive Light Catcher
+  // #region Doublefive Light Catcher
   {
     "guid": "wwxSGrYetC",
     "item": "9sYCtuZch3",
@@ -3490,6 +3490,60 @@
     "item": "Ur7gRzB_VK",
     "c": 34
   },
+  // TS 114
+  {
+    "guid": "5DYU10mMcx",
+    "item": "9sYCtuZch3",
+    "n": "cufFtkSnzH"
+  },
+  {
+    "guid": "cufFtkSnzH",
+    "item": "GbSWbAV_W1",
+    "c": 5,
+    "nw": "pvN11S_HXi",
+    "n": "RB59ATVpTe",
+    "ne": "HcFk--nLeF"
+  },
+  {
+    "guid": "pvN11S_HXi",
+    "item": "lz89xViG6m",
+    "c": 24
+  },
+  {
+    "guid": "HcFk--nLeF",
+    "item": "17rzgAzvhl",
+    "c": 3
+  },
+  {
+    "guid": "RB59ATVpTe",
+    "item": "NHkpPS7ryo",
+    "ac": 2,
+    "n": "sHQHN2c1F0"
+  },
+  {
+    "guid": "sHQHN2c1F0",
+    "item": "YgxtYX7GjD",
+    "c": 5,
+    "nw": "4DR832zuEO",
+    "n": "Py9NACSo53",
+    "ne": "d-DHWK3W6R"
+  },
+  {
+    "guid": "4DR832zuEO",
+    "item": "nfeBnolyEY",
+    "h": 7
+  },
+  {
+    "guid": "d-DHWK3W6R",
+    "item": "qR79V6fLUy",
+    "c": 55
+  },
+  {
+    "guid": "Py9NACSo53",
+    "item": "Ur7gRzB_VK",
+    "c": 34
+  },
+  // #endregion
   // Laidback Pioneer
   {
     "guid": "u7doiPY1Nv",
