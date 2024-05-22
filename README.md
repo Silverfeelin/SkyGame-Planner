@@ -2,7 +2,7 @@
 
 Sky Planner is an online tool to track items and progress in [Sky: Children of the Light](https://www.thatskygame.com/).
 
-## [Click here to go to the website.](https://sky-planner.pages.dev/)
+## [Click here to go to the website.](https://sky-planner.com/)
 
 
 **Noteworthy features:**
@@ -48,6 +48,6 @@ Most of the source code is publicly available under the [MIT License](https://gi
 # Credits
 
 * [Contributors](https://github.com/Silverfeelin/SkyGame-Planner/graphs/contributors)
-* This project would not have been possible without the information provided by the community in various channels. For an overview of information used please refer to the [Credits](https://sky-planner.pages.dev/credits) page.
+* This project would not have been possible without the information provided by the community in various channels. For an overview of information used please refer to the [Credits](https://sky-planner.com/credits) page.
 
-## [Click here to go to the website.](https://sky-planner.pages.dev/)
+## [Click here to go to the website.](https://sky-planner.com/)

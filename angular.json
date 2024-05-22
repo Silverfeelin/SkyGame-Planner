@@ -34,7 +34,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/leaflet/dist/leaflet.css",
               "node_modules/intro.js/minified/introjs.min.css",
-              "src/styles/vars.less",
+              "src/styles/vars.scss",
               "src/styles/styles.less",
               "src/styles/map.less",
               "src/styles/icons.less"

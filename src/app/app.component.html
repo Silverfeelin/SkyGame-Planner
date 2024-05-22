@@ -1,4 +1,30 @@
 <div class="content">
+  @if (isPagesDev) {
+    <div class="sky-card mb">
+      <div class="sky-card-body">
+        <div class="container">
+          <h2>Sky Planner has moved to a new home!</h2>
+          <hr/>
+          <span class="h4">If you have saved any data without linking to a cloud storage account, please export your data on the settings page and import it in the new Sky Planner.</span>
+          <hr/>
+          <!-- Link to new site -->
+          @if (pagesRedirectUrl) {
+            <a class="h5" [href]="pagesRedirectUrl.href">
+              <mat-icon class="menu-icon">open_in_new</mat-icon>
+              <span class="menu-label">{{ pagesRedirectUrl.origin + pagesRedirectUrl.pathname }}</span>
+            </a>
+            <hr/>
+          }
+          <span>
+            For those wondering why the site moved:<br/>
+            It was recently brought to my (Silverfeelin's) attention by Laila that some users were not able to access the website.<br/>
+            The entire Cloudflare Pages domain is blocked in some countries, making the website unavailable to those users.<br/>
+            With the new domain name the website should be and stay available for everyone. Sorry for the inconvenience!
+          </span>
+        </div>
+      </div>
+    </div>
+  }
   <div *ngIf="dataLoss" class="sky-card mb data-loss">
     <div class="sky-card-body">
       <div class="data-loss-inner container">
