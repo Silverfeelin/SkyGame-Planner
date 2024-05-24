@@ -92,6 +92,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Nesting-Guide-Mannequin-Figurine-Prop.png",
     "order": 565
   },
+
+  {
+    "id": 2165,
+    "guid": "apFm1Bs1M9",
+    "type": "Special",
+    "name": "Nesting Workshop Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
   {
     "id": 2093,
     "guid": "7i6ro485Ra",
