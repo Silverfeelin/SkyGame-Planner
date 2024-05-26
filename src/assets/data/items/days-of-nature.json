@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Earth_Cape"
     },
-    "order": 670
+    "order": 673
   },
   {
     "id": 1779,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape"
     },
-    "order": 671
+    "order": 674
   },
   {
     "id": 1781,
@@ -45,7 +45,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Cape"
     },
-    "order": 672
+    "order": 675
   },
   {
     "id": 1782,
@@ -69,7 +69,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Coral_Crown_Accessory"
     },
-    "order": 397
+    "order": 400
   },
   {
     "id": 1784,
@@ -95,7 +95,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_School_Cape"
     },
-    "order": 673
+    "order": 676
   },
   {
     "id": 1787,
@@ -107,7 +107,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Glasses"
     },
-    "order": 222
+    "order": 223
   },
   {
     "id": 1788,
@@ -119,6 +119,38 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Sonorous_Seashell"
     },
-    "order": 518
+    "order": 521
+  },
+  {
+    "id": 2166,
+    "guid": "wMsUtkvt3s",
+    "type": "Cape",
+    "name": "Nature Wave Cape",
+    "icon": "/assets/game/items/2166.png",
+    "order": 677
+  },
+  {
+    "id": 2167,
+    "guid": "jWAPWGsEd-",
+    "type": "Hair",
+    "name": "Nature Wave-Touched Hair",
+    "icon": "/assets/game/items/2167.png",
+    "order": 364
+  },
+  {
+    "id": 2168,
+    "guid": "YzpV97Kbgp",
+    "type": "Mask",
+    "name": "Ocean Mask",
+    "icon": "/assets/game/items/2168.png",
+    "order": 193
+  },
+  {
+    "id": 2169,
+    "guid": "BkptA-MKN8",
+    "type": "Necklace",
+    "name": "Ocean Blue Scarf",
+    "icon": "/assets/game/items/2169.png",
+    "order": 107
   }
 ]

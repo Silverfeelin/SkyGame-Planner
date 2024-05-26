@@ -72,13 +72,21 @@
   </div>
 </div>
 
-<!-- Spirits -->
-<div class="sky-card mt">
-  <div class="sky-card-header">
-    <h2 class="h3">Spirits</h2>
+@if (state === 'ended') {
+  <div class="mt">
+    <app-card [title]="'Post-season spirit trees'" [foldable]="true" [folded]="true">
+      <div class="container">
+        This section is being worked on!
+      </div>
+      <!-- <div class="sky-flex scroll-x mt">
+      </div> -->
+    </app-card>
   </div>
-  <div class="sky-card-body pad-0">
-    <div class="sky-flex scroll-x pad">
+}
+<!-- Spirits -->
+<div class="mt">
+  <app-card [title]="state === 'ended' ? 'Season spirit trees' : 'Spirit trees'" [foldable]="true" [folded]="false">
+    <div class="sky-flex mt scroll-x">
       <!-- Guide tree -->
       @if (guide && guideTree) {
         <div class="tree-wrapper">
@@ -108,7 +116,7 @@
         }
       }
     </div>
-  </div>
+  </app-card>
 </div>
 
 <!-- Shops -->

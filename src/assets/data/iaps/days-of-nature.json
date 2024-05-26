@@ -147,4 +147,71 @@
     ]
   },
   // #endregion
+  // #region Days of Nature (2024)
+  {
+    "guid": "xq1aeb_CTB",
+    "name": "Nature Glasses Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "IOBWcIpOY9"
+    ]
+  },
+  {
+    "guid": "rvrKUucHgO",
+    "name": "Nature Sonorous Seashell",
+    "price": 4.99,
+    "returning": true,
+    "items": [
+      "gHfkqCK-A8"
+    ]
+  },
+  {
+    "guid": "INm3xdbIU9",
+    "name": "Nature Turtle Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "znjZlpHSt4"
+    ]
+  },
+  {
+    "guid": "-fstK-lvah",
+    "name": "Nature Turtle Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "_Y-80G-t_2"
+    ]
+  },
+  {
+    "guid": "_DCq4jxbNC",
+    "name": "Ocean Necklace",
+    "price": 1.99,
+    "returning": true,
+    "items": [
+      "KZ6aQtgCqt"
+    ]
+  },
+  {
+    "guid": "WemEddd2wK",
+    "name": "Ocean Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "MjA9EoD-pe"
+    ]
+  },
+  {
+    "guid": "j20angRqGk",
+    "name": "Earth Cape",
+    "price": 4.99,
+    "returning": true,
+    "items": [
+      "YUqENRc8rQ"
+    ]
+  },
+  // #endregion
 ]
