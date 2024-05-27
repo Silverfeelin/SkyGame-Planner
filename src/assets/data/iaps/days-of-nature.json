@@ -149,6 +149,23 @@
   // #endregion
   // #region Days of Nature (2024)
   {
+    "guid": "cP9b081nYM",
+    "name": "Nature Wave Pack",
+    "price": 19.99,
+    "c": 75,
+    "items": [
+      "wMsUtkvt3s"
+    ]
+  },
+  {
+    "guid": "sou0sDEkEW",
+    "name": "Nature Wave-Touched Hair",
+    "price": 6.99,
+    "items": [
+      "jWAPWGsEd-"
+    ]
+  },
+  {
     "guid": "xq1aeb_CTB",
     "name": "Nature Glasses Pack",
     "price": 19.99,

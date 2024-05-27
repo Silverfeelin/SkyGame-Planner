@@ -255,14 +255,14 @@
           "guid": "gNa15Daes3",
           "date": { "day": 27, "month": 5, "year": 2024 },
           "endDate": { "day": 16, "month": 6, "year": 2024 },
+          "currencyPerDay": 4,
           "spirits": [
-            { "guid": "W0-7uIUr1t", "spirit": "U9vUspUuRp", "tree": "DY7gN4O9VJ" }
+            { "guid": "W0-7uIUr1t", "spirit": "3M1KSVgf49", "tree": "SyEw6hUkqc" }
           ],
           "shops": [
-            "sYWYF2c2AJ",
-            "afK28i49ZL"
-          ],
-          "draft": true
+            "DLwlNPnR-r",
+            "sYWYF2c2AJ"
+          ]
         }
       ],
       "_wiki": {

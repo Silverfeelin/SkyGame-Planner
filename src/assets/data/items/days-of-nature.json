@@ -152,5 +152,12 @@
     "name": "Ocean Blue Scarf",
     "icon": "/assets/game/items/2169.png",
     "order": 107
-  }
+  },
+  {
+    "id": 2170,
+    "guid": "-Tb65IaCRm",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
 ]

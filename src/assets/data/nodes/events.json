@@ -599,26 +599,40 @@
   // #endregion
   // #region Days of Nature (2024)
   {
-    "guid": "mbJUMBNMlW",
-    "item": "hbH9xhhETJ",
-    "n": "tjEfb_zklu"
-  },
-  {
-    "guid": "tjEfb_zklu",
+    "guid": "dDjdcgzxXb",
     "item": "J3SQU_2koY",
-    "nw": "MB3nHVcT4X",
-    "n": "XQtMyU4DaC",
-    "c": 5
+    "c": 5,
+    "nw": "3kGDEV4pRZ",
+    "n": "CwKTLclDCx",
+    "ne": "RRiq8aBykQ"
   },
   {
-    "guid": "MB3nHVcT4X",
-    "item": "OvPPfhXnwW",
-    "h": 20
+    "guid": "3kGDEV4pRZ",
+    "item": "YzpV97Kbgp",
+    "ec": 16
   },
   {
-    "guid": "XQtMyU4DaC",
+    "guid": "RRiq8aBykQ",
+    "item": "BkptA-MKN8",
+    "c": null,
+    "ec": 40
+  },
+  {
+    "guid": "CwKTLclDCx",
+    "item": "-Tb65IaCRm",
+    "c": 5,
+    "nw": "3HG83coBif",
+    "n": "v6MyVzWjir"
+  },
+  {
+    "guid": "3HG83coBif",
     "item": "RLhtVkyDy3",
     "c": 180
+  },
+  {
+    "guid": "v6MyVzWjir",
+    "item": "OvPPfhXnwW",
+    "h": 20
   },
   // #endregion
   // #region Days of Rainbow (2021)

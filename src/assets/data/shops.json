@@ -468,19 +468,21 @@
     // #endregion
     // #region Days of Nature (2024)
     {
-      "guid": "sYWYF2c2AJ",
-      "type": "Spirit",
-      "spirit": "U9vUspUuRp",
+      "guid": "DLwlNPnR-r",
+      "type": "Store",
       "iaps": [
-        "xq1aeb_CTB",
-        "rvrKUucHgO"
+        "cP9b081nYM",
+        "sou0sDEkEW"
       ]
     },
     {
-      "guid": "afK28i49ZL",
+      "guid": "sYWYF2c2AJ",
       "type": "Spirit",
-      "spirit": "U9vUspUuRp",
+      "spirit": "8N9cC4SvzM",
+      "name": "Chill Sunbather (Event shop)",
       "iaps": [
+        "xq1aeb_CTB",
+        "rvrKUucHgO",
         "INm3xdbIU9",
         "-fstK-lvah",
         "_DCq4jxbNC",
