@@ -305,10 +305,14 @@ export class EventCalculatorComponent {
   // #endregion
 
   private calculate(): void {
-    const wantValues = Object.values(this.wantNodes);
-    const wantSet = new Set(wantValues);
-    const nodes = NodeHelper.traceMany(wantValues);
+    // Get all wanted nodes that are not obtained.
+    const allWantedValues = Object.values(this.wantNodes);
+    const newWantedValues = allWantedValues.filter(n => !n.item?.unlocked);
 
+    // Create a subtree with all the necessary nodes. Some of these may already be obtained.
+    const requiredNodes = NodeHelper.traceMany(newWantedValues);
+
+    // Get the days left to obtain currency.
     let date = DateTime.now();
     if (this.eventInstance.date > date) { date = this.eventInstance.date; }
 
@@ -316,32 +320,32 @@ export class EventCalculatorComponent {
     if (this.includesToday) { this.daysLeft--; }
     if (this.eventInstance.endDate < date) { this.daysLeft = 0; }
 
+    // Get the available currency in the event.
     this.currencyAvailable = this.daysLeft * this.currencyPerDay!;
     this.candlesAvailable = this.daysLeft * this.candlesPerDay;
 
-    this.hasNodes = nodes.length > 0 || Object.keys(this.wantListNodes).length > 0;
+    this.hasNodes = allWantedValues.length > 0 || Object.keys(this.wantListNodes).length > 0;
     this.hasSkippedNode = false;
 
+    // Calculate necessary currencies.
     this.currencyRequired = 0;
     this.candlesRequired = 0;
     this.heartsRequired = 0;
 
-    for (const node of nodes) {
-      this.hasSkippedNode = this.hasSkippedNode || (!wantSet.has(node) && !node.item?.unlocked);
-
-      if (!node.item?.unlocked) {
-        this.currencyRequired += node.ec || 0;
-        this.candlesRequired += node.c || 0;
-        this.heartsRequired += node.h || 0;
-      }
+    // Handle all nodes in the tree to determine cost.
+    for (const node of requiredNodes) {
+      if (node.item?.unlocked) { continue; }
+      this.currencyRequired += node.ec || 0;
+      this.candlesRequired += node.c || 0;
+      this.heartsRequired += node.h || 0;
     }
 
+    // Handle item shop nodes.
     for (const node of Object.values(this.wantListNodes)) {
-      if (!node.item.unlocked) {
-        this.currencyRequired += node.ec || 0;
-        this.candlesRequired += node.c || 0;
-        this.heartsRequired += node.h || 0;
-      }
+      if (node.item.unlocked) { continue; }
+      this.currencyRequired += node.ec || 0;
+      this.candlesRequired += node.c || 0;
+      this.heartsRequired += node.h || 0;
     }
 
     this.currencyRequired -= this.currencyCount;
@@ -350,7 +354,9 @@ export class EventCalculatorComponent {
     this.candlesRequired -= this.candleCount;
     this.heartsRequired -= this.heartCount;
 
-    this.hasSkippedNode = nodes.some(n => !wantSet.has(n) && !n.item?.unlocked);
+    // Check if any required node is not marked as wanted.
+    const newWantedSet = new Set(newWantedValues);
+    this.hasSkippedNode = requiredNodes.some(n => !newWantedSet.has(n) && !n.item?.unlocked);
   }
 }
 
