@@ -12,6 +12,12 @@
   }
 }
 
+.content {
+  padding: var(--padding-content);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -39,4 +45,13 @@
 
 .map-container {
   display: none;
+}
+
+footer {
+  width: 100%;
+  font-size: 14px;
+  background: var(--color-background);
+  color: white;
+  padding: var(--padding-content);
+  text-align: center;
 }

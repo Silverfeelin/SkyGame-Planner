@@ -33,11 +33,10 @@ body {
 
   position: relative;
   width: 100%;
-  padding: var(--padding-content);
-  padding-left: var(--padding-content);
+  padding: 0;
 
   &.menu-shown:not(.menu-folded) {
-    padding-left: calc(var(--menu-width) + var(--padding-content));
+    padding-left: var(--menu-width);
   }
 }
 
@@ -294,6 +293,10 @@ body { scrollbar-width: thin; }
 .mr-half { margin-right: var(--padding-content-half) !important; }
 .mb-half { margin-bottom: var(--padding-content-half) !important; }
 .ml-half { margin-left: var(--padding-content-half) !important; }
+.mt-auto { margin-top: auto !important; }
+.mr-auto { margin-right: auto !important; }
+.mb-auto { margin-bottom: auto !important; }
+.ml-auto { margin-left: auto !important; }
 .pad-half { padding: var(--padding-content-half) !important; }
 .pt-half { padding-top: var(--padding-content-half) !important; }
 .pr-half { padding-right: var(--padding-content-half) !important; }

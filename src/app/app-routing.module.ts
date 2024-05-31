@@ -37,6 +37,7 @@ import { MainLayoutComponent } from './components/layout/main-layout/main-layout
 import { NoDataComponent } from './components/layout/no-data/no-data.component';
 import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
 import { AreaComponent } from './components/areas/area/area.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -60,6 +61,7 @@ const routes: Routes = [
         children: [
           { path: '', component: DashboardComponent, title: 'Sky Planner' },
           { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
+          { path: 'privacy', component: PrivacyComponent },
           { path: 'credits', component: CreditsComponent, title: title('Credits') },
           { path: 'event', component: EventsComponent, title: title('Events') },
           { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
