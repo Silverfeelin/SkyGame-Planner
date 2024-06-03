@@ -90,7 +90,7 @@
     "name": "Nesting Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Nesting-Guide-Mannequin-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Nesting-Guide-Mannequin-Figurine-Prop.png",
-    "order": 568
+    "order": 576
   },
   {
     "id": 2165,
@@ -116,7 +116,7 @@
     "name": "Nesting Nook Couch",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Nesting-Nook-Loveseat-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nesting-Nook-Loveseat-Prop.png",
-    "order": 558,
+    "order": 566,
     "group": "SeasonPass"
   },
   {
@@ -126,7 +126,7 @@
     "name": "Nesting Nook Shelf",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Nesting-Nook-Short-Shelf-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Nesting-Nook-Short-Shelf-Prop.png",
-    "order": 561
+    "order": 569
   },
   {
     "id": 2096,
@@ -135,7 +135,7 @@
     "name": "Nesting Nook Spice Rack",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Nesting-Nook-Wall-Spice-Rack-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Nesting-Nook-Wall-Spice-Rack-Prop.png",
-    "order": 565
+    "order": 573
   },
   {
     "id": 2097,
@@ -182,7 +182,7 @@
     "name": "Nesting Solarium Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Nesting-Solarium-Dining-Table-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Nesting-Solarium-Dining-Table-Prop.png",
-    "order": 557
+    "order": 565
   },
   {
     "id": 2102,
@@ -191,7 +191,7 @@
     "name": "Nesting Solarium Bathtub",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Nesting-Solarium-Bathtub-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Nesting-Solarium-Bathtub-Prop.png",
-    "order": 560,
+    "order": 568,
     "group": "SeasonPass"
   },
   {
@@ -201,7 +201,7 @@
     "name": "Nesting Solarium Hanging Planter",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Nesting-Solarium-Hanging-Planter-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Nesting-Solarium-Hanging-Planter-Prop.png",
-    "order": 566
+    "order": 574
   },
   {
     "id": 2104,
@@ -210,7 +210,7 @@
     "name": "Nesting Solarium Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Nesting-Solarium-Wall-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Nesting-Solarium-Wall-Painting-Prop.png",
-    "order": 564,
+    "order": 572,
     "group": "SeasonPass"
   },
   {
@@ -258,7 +258,7 @@
     "name": "Nesting Atrium Hanging Lamp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Atrium-Hanging-Lamp-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Nesting-Atrium-Hanging-Lamp-Prop.png",
-    "order": 559,
+    "order": 567,
     "group": "SeasonPass"
   },
   {
@@ -268,7 +268,7 @@
     "name": "Nesting Atrium Branch",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Nesting-Atrium-Hanging-Branch-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Nesting-Atrium-Hanging-Branch-Prop.png",
-    "order": 562,
+    "order": 570,
     "group": "SeasonPass"
   },
   {
@@ -278,7 +278,7 @@
     "name": "Nesting Atrium Floor Light",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Nesting-Atrium-Floor-Light-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Nesting-Atrium-Floor-Light-Prop.png",
-    "order": 567
+    "order": 575
   },
   {
     "id": 2112,
@@ -334,7 +334,7 @@
     "name": "Nesting Loft Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Loft-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Nesting-Loft-Cape-back.png",
-    "order": 665,
+    "order": 673,
     "group": "SeasonPass"
   },
   {
@@ -344,7 +344,7 @@
     "name": "Nesting Loft Bed",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Nesting-Loft-Single-Bed-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Nesting-Loft-Single-Bed-Prop.png",
-    "order": 555,
+    "order": 563,
     "group": "SeasonPass"
   },
   {
@@ -354,7 +354,7 @@
     "name": "Nesting Loft Chair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Nesting-Loft-Chair-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Nesting-Loft-Chair-Prop.png",
-    "order": 556
+    "order": 564
   },
   {
     "id": 2120,
@@ -363,7 +363,7 @@
     "name": "Nesting Loft Paintings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Nesting-Loft-Wall-Painting-Set-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Nesting-Loft-Wall-Painting-Set-Prop.png",
-    "order": 563
+    "order": 571
   },
   {
     "id": 2121,
@@ -428,7 +428,7 @@
     "name": "Stone Oven",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Stone-Wood-Fired-Oven-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Stone-Wood-Fired-Oven-Prop.png",
-    "order": 544
+    "order": 548
   },
   {
     "id": 2132,
@@ -437,7 +437,7 @@
     "name": "Stone Single Bed",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Stone-Single-Bed-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Stone-Single-Bed-Prop.png",
-    "order": 542
+    "order": 545
   },
   {
     "id": 2133,
@@ -446,7 +446,7 @@
     "name": "Stone Tall Cube",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Stone-Tall-Cube-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Stone-Tall-Cube-Prop.png",
-    "order": 545
+    "order": 550
   },
   {
     "id": 2134,
@@ -464,7 +464,7 @@
     "name": "Stone Small Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Stone-Small-Table-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Stone-Small-Table-Prop.png",
-    "order": 537
+    "order": 538
   },
   {
     "id": 2136,
@@ -473,7 +473,7 @@
     "name": "Stone Tall Shelf",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Stone-Tall-Shelf-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Stone-Tall-Shelf-Prop.png",
-    "order": 543
+    "order": 546
   },
   {
     "id": 2137,
@@ -482,7 +482,7 @@
     "name": "Monotone Pillow",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Decor-Pillow-One-Color-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Decor-Pillow-One-Color-Prop.png",
-    "order": 546
+    "order": 551
   },
   {
     "id": 2149,
@@ -498,7 +498,7 @@
     "type": "Furniture",
     "name": "Stone Desk",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stone-Desk-Prop-icon.png",
-    "order": 540
+    "order": 542
   },
   {
     "id": 2151,
@@ -506,7 +506,7 @@
     "type": "Prop",
     "name": "Two Colors Pillow",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Decor-Pillow-Two-Colors-Prop-icon.png",
-    "order": 547
+    "order": 552
   },
   {
     "id": 2152,
@@ -515,7 +515,7 @@
     "name": "Small Solid Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Small-Solid-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Small-Solid-Rug-Prop.png",
-    "order": 551
+    "order": 557
   },
   {
     "id": 2153,
@@ -531,7 +531,7 @@
     "type": "Furniture",
     "name": "Stone Console Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Stone-Console-Table-Prop-icon.png",
-    "order": 541
+    "order": 543
   },
   {
     "id": 2155,
@@ -539,7 +539,7 @@
     "type": "Prop",
     "name": "Decor Folded Cloth",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Decor-Folded-Cloth-Prop-icon.png",
-    "order": 548
+    "order": 553
   },
   {
     "id": 2156,
@@ -548,7 +548,7 @@
     "name": "Small Striped Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Small-Stripes-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Small-Stripes-Rug-Prop.png",
-    "order": 552
+    "order": 558
   },
   {
     "id": 2157,
@@ -564,7 +564,7 @@
     "type": "Furniture",
     "name": "Stone Round Dining Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Stone-Round-Dining-Table-Prop-icon.png",
-    "order": 539
+    "order": 540
   },
   {
     "id": 2159,
@@ -572,7 +572,7 @@
     "type": "Furniture",
     "name": "Stone Plant Stand",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Stone-Plant-Stand-Prop-icon.png",
-    "order": 549
+    "order": 554
   },
   {
     "id": 2160,
@@ -581,7 +581,7 @@
     "name": "Small Classic Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Small-Classic-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Small-Classic-Rug-Prop.png",
-    "order": 553
+    "order": 559
   },
   {
     "id": 2161,
@@ -597,7 +597,7 @@
     "type": "Furniture",
     "name": "Stone Square Dining Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Stone-Square-Dining-Table-Prop-icon.png",
-    "order": 538
+    "order": 539
   },
   {
     "id": 2163,
@@ -605,7 +605,7 @@
     "type": "Prop",
     "name": "Stone Wall Sconce",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Stone-Wall-Sconce-Prop-icon.png",
-    "order": 550
+    "order": 556
   },
   {
     "id": 2164,
@@ -613,6 +613,75 @@
     "type": "Prop",
     "name": "Small Half Circle Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Small-Half-Circle-Rug-Prop-icon.png",
-    "order": 554
+    "order": 560
+  },
+  {
+    "id": 2171,
+    "guid": "PABCJmm2HT",
+    "type": "Furniture",
+    "name": "Stone Sofa Side",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Stone-Sofa-Side-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Stone-Sofa-Side-Prop.png",
+    "order": 537
+  },
+  {
+    "id": 2172,
+    "guid": "3tQqaibcJk",
+    "type": "Furniture",
+    "name": "Stone Long Dining Table",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Stone-Long-Dining-Table-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Stone-Long-Dining-Table-Prop.png",
+    "order": 541
+  },
+  {
+    "id": 2173,
+    "guid": "-YUvzkL_uS",
+    "type": "Furniture",
+    "name": "Stone Small Bathtub",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Stone-Small-Bathtub-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Stone-Small-Bathtub-Prop.png",
+    "order": 547
+  },
+  {
+    "id": 2174,
+    "guid": "RK22qlqiJ5",
+    "type": "Prop",
+    "name": "Medium Solid Rug",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Medium-Solid-Rug-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Medium-Solid-Rug-Prop.png",
+    "order": 561
+  },
+  {
+    "id": 2175,
+    "guid": "gbOCxa6g06",
+    "type": "Furniture",
+    "name": "Stone Kitchen Drawers",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stone-Kitchen-Drawers-Prop-icon.png",
+    "order": 549
+  },
+  {
+    "id": 2176,
+    "guid": "0o0Nvnd4gf",
+    "type": "Furniture",
+    "name": "Stone Coffee Table",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Stone-Coffee-Table-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Stone-Coffee-Table-Prop.png",
+    "order": 544
+  },
+  {
+    "id": 2177,
+    "guid": "8wRmxxKS7h",
+    "type": "Furniture",
+    "name": "Stone Candle Light",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Stone-Candle-Light-Prop-icon.png",
+    "order": 555
+  },
+  {
+    "id": 2178,
+    "guid": "_xcJueC0Rj",
+    "type": "Prop",
+    "name": "Medium Striped Rug",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Medium-Stripes-Rug-Prop-icon.png",
+    "order": 562
   }
 ]
