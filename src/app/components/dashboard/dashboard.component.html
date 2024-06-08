@@ -4,29 +4,37 @@
   </div>
 </div>
 
-<div class="sky-card mt">
-  <div class="sky-card-body">
-    <div class="container">
-      <div class="flex-banner">
-        <img class="banner-img" src="/assets/external/wiki-site-logo.webp" alt="Sky Wiki" style="float:left;">
-        <div class="banner-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          <div class="mt-half">
-            <button type="button" class="banner-cta">
-              <mat-icon class="menu-icon">edit_note</mat-icon>
-              <span class="menu-label">Go to survey</span>
-            </button>
+@if (wikiBannerAvailable && !wikiBannerDismissed) {
+  <div class="sky-card mt">
+    <div class="sky-card-body">
+      <div class="container">
+        <div class="flex-banner">
+          <img class="banner-img" src="/assets/external/wiki-site-logo.webp" alt="Sky Wiki" style="float:left;">
+          <div class="banner-text">
+            <h4>Let your honks be heard!</h4>
+            <p>
+              The Sky Wiki is celebrating its 5th anniversary of soaring in the Sky with players like you, and they are conducting a survey to gather your experience and usage of the Sky Wiki!
+              Sky Planner uses the Sky Wiki as an important source of information and images that you see here.
+            </p>
+            <p>Whether you're a seasoned shepherd, or a newcomer moth who has never used the Sky Wiki, your feedback will be greatly appreciated. It will take under 10 minutes to complete.
+              This survey will be open from June 9th, to July 9th 2024.</p>
+            <div class="mt-half">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScrb43s0tGTth6qNgPWVqXnWyAO5wX1SNoaXC0I6NnUDhhanw/viewform?usp=sf_link" class="button banner-cta">
+                <mat-icon class="menu-icon">edit_note</mat-icon>
+                <span class="menu-label">Go to survey</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="banner-close">
-        <button type="button">
-          <mat-icon>close</mat-icon>
-        </button>
+        <div class="banner-close">
+          <button type="button" (click)="dismissWikiBanner()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+}
 
 <div class="mt">
   <app-search></app-search>

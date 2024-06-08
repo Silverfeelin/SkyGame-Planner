@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
@@ -21,6 +22,10 @@ export class DashboardComponent implements OnInit {
   futureRs?: IReturningSpirits;
   eventInstances: Array<IEventInstance> = [];
   futureEventInstance?: IEventInstance;
+
+  // Sky Wiki 5 year survey. Can be removed after 2024-07-09
+  wikiBannerAvailable = DateTime.now().toUTC() >= DateTime.fromISO('2024-06-09T00:00:00Z') && DateTime.now().toUTC() < DateTime.fromISO('2024-07-09T00:00:00Z');
+  wikiBannerDismissed = localStorage.getItem('dashboard.wiki5yr') === 'dismissed';
 
   constructor(
     private readonly _dataService: DataService
@@ -60,5 +65,10 @@ export class DashboardComponent implements OnInit {
     }
     futureEvents.sort((a, b) => a.date.diff(b.date).as('milliseconds'));
     this.futureEventInstance = futureEvents.at(0);
+  }
+
+  dismissWikiBanner(): void {
+    this.wikiBannerDismissed = true;
+    localStorage.setItem('dashboard.wiki5yr', 'dismissed')
   }
 }
