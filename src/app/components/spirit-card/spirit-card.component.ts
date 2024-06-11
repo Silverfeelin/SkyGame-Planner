@@ -8,7 +8,7 @@ import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 
-type Section = 'img' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost';
+type Section = 'img' | 'overview' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost' | 'content';
 export interface SpiritCardOptions {
   show?: Array<Section>;
   homeBackground?: boolean;

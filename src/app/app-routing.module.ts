@@ -38,6 +38,9 @@ import { NoDataComponent } from './components/layout/no-data/no-data.component';
 import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
 import { AreaComponent } from './components/areas/area/area.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
+import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/elusive-spirits.component';
+import { SpiritTreeComponent } from './components/spirit-tree/spirit-tree.component';
+import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -81,7 +84,9 @@ const routes: Routes = [
           { path: 'shop', component: ShopsComponent, title: title('Shops') },
           { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
+          { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
           { path: 'spirit/:guid', component: SpiritComponent },
+          { path: 'spirit-tree/:guid', component: SpiritTreeViewComponent, title: title('Spirit Tree') },
           { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
           { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },
           { path: 'rs/:guid', component: ReturningSpiritComponent },

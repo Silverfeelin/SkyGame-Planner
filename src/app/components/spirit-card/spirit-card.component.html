@@ -18,6 +18,12 @@
       </div>
     </div>
     <div class="spirit-grid mt">
+      <!-- Overview -->
+      <a *ngIf="sections['overview']" [routerLink]="['/spirit', spirit.guid]"
+        class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['overview']">
+        <mat-icon class="menu-icon">article</mat-icon>
+        <span class="menu-label">Overview</span>
+      </a>
       <!-- TS -->
       <a *ngIf="sections['ts'] && ts" [routerLink]="['/spirit', ts.spirit.guid]" [queryParams]="{ highlightTree: ts.tree!.guid }"
         class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['ts']"
@@ -99,6 +105,11 @@
           <app-cost [cost]="cost" [remaining]="remainingCost" [borderLeft]="true"></app-cost>
         </span>
       </div>
+      @if (sections['content']) {
+        <div class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['content']">
+          <ng-content></ng-content>
+        </div>
+      }
     </div>
   </div>
 </div>

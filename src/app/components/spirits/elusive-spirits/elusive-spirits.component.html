@@ -1,0 +1,23 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Elusive Spirits</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>On this page you can find the most elusive season spirits. The spirits that have been missing for the longest time are shown at the top.</p>
+      <p>Please keep in mind that traveling spirit visits are mostly random, so use this data at your own discretion.</p>
+    </div>
+    <div class="grid grid-4 mt">
+      @for (visit of lastVisits; track $index) {
+        <app-spirit-card [spirit]="visit.spirit" [options]="{show: ['img', 'overview', 'content', 'season']}">
+          <mat-icon class="menu-icon">timer</mat-icon>
+          <span class="menu-label d-inline-block">
+            Last visit: {{ visit.type }}<br/>
+            Date: {{ visit.date | datetime }} <span class="c-accent">—</span> {{ visit.endDate | datetime }}<br/>
+            Departed <b class="c-old">{{ visit.days }}</b> days ago
+          </span>
+        </app-spirit-card>
+      }
+    </div>
+  </div>
+</div>

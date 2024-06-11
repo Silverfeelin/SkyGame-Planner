@@ -80,6 +80,8 @@ import { MainLayoutComponent } from './components/layout/main-layout/main-layout
 import { NoDataComponent } from './components/layout/no-data/no-data.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AreaComponent } from './components/areas/area/area.component';
+import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/elusive-spirits.component';
+import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
 
 @NgModule({
   declarations: [
@@ -155,7 +157,9 @@ import { AreaComponent } from './components/areas/area/area.component';
     MainLayoutComponent,
     NoDataComponent,
     OutfitVaultComponent,
-    AreaComponent
+    AreaComponent,
+    ElusiveSpiritsComponent,
+    SpiritTreeViewComponent
   ],
   imports: [
     BrowserModule,
