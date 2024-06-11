@@ -1760,6 +1760,30 @@
     },
     // #endregion
 
+    // #region Nesting Challenges
+    {
+      "guid": "os6ryCdFZ5",
+      "type": "Special",
+      "name": "Nesting Challenges: Workshop",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Nesting-Challenge-Board-Workshop.png",
+      "tree": "Yc5dSRrZE0"
+    },
+    {
+      "guid": "Gp-hW_NCv_",
+      "type": "Special",
+      "name": "Nesting Challenges: Nest",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Nesting-Challenge-Board-Nest.png",
+      "tree": "UA_U-mZwhe"
+    },
+    {
+      "guid": "IhAh5oTvF8",
+      "type": "Special",
+      "name": "Nesting Challenges: Friends",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Nesting-Challenge-Board-Friends.png",
+      "tree": "WcLojlCmmy"
+    },
+    // #endregion
+
     // #region Events
     {
       "guid": "9VkjVkgKhb",

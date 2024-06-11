@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Cape"
     },
-    "order": 702
+    "order": 705
   },
   {
     "id": 1879,
@@ -45,7 +45,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Cape"
     },
-    "order": 701
+    "order": 704
   },
   {
     "id": 1880,
@@ -199,7 +199,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Ancestor_Cape"
     },
-    "order": 703
+    "order": 706
   },
   {
     "id": 1896,
@@ -254,7 +254,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape"
     },
-    "order": 704
+    "order": 707
   },
   {
     "id": 1976,
@@ -270,7 +270,7 @@
     "name": "Winter Feast Snowboard",
     "type": "Held",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Winter-Feast-Snowboard-icon.png",
-    "order": 527
+    "order": 528
   },
   {
     "id": 1981,
@@ -286,7 +286,7 @@
     "type": "Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Course-Creation-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Course-Creation-Prop.png",
-    "order": 529
+    "order": 530
   },
   {
     "id": 1982,
@@ -309,7 +309,7 @@
     "name": "Winter Quilted Cape",
     "type": "Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
-    "order": 705
+    "order": 708
   },
   {
     "id": 1983,

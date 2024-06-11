@@ -7,15 +7,30 @@
   </div>
 </div>
 
+<div class="mt">
+  <app-card [foldable]="true" [folded]="false" [title]="'Nesting Challenges'">
+    <div class="sky-flex scroll-x">
+      @for (spirit of challengeSpirits; track spirit.guid) {
+        <app-spirit-tree [tree]="spirit.tree!" [name]="spirit.name"></app-spirit-tree>
+      }
+    </div>
+  </app-card>
+</div>
+
+@if (nestingWorkshop) {
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="false" [title]="'Nesting Workshop'">
+      <app-item-list [itemList]="nestingWorkshop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+    </app-card>
+  </div>
+}
+
 <!-- IGC -->
 @if (shops.length) {
   <div class="sky-card mt">
     <div class="sky-card-header">
-      <h1 class="h2 mb-0">In-game currency shops</h1>
+      <h1 class="h2 mb-0">Shops for in-game currency</h1>
     </div>
-  </div>
-  <div class="container mt">
-    <i>Items in these shops will not show up on the dashboard!</i>
   </div>
 
   <div class="sky-flex flex-wrap mt">
