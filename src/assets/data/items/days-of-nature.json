@@ -127,6 +127,7 @@
     "type": "Cape",
     "name": "Nature Wave Cape",
     "icon": "/assets/game/items/2166.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nature-Wave-Cape-back.png",
     "order": 692
   },
   {
@@ -135,6 +136,7 @@
     "type": "Hair",
     "name": "Nature Wave-Touched Hair",
     "icon": "/assets/game/items/2167.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Nature-Wave-Touched-Hair-front.png",
     "order": 364
   },
   {
@@ -143,6 +145,7 @@
     "type": "Mask",
     "name": "Ocean Mask",
     "icon": "/assets/game/items/2168.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Ocean-Mask.png",
     "order": 193
   },
   {
@@ -151,6 +154,7 @@
     "type": "Necklace",
     "name": "Ocean Blue Scarf",
     "icon": "/assets/game/items/2169.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Ocean-Blue-Scarf.png",
     "order": 107
   },
   {
