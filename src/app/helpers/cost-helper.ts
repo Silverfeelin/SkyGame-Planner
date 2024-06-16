@@ -18,6 +18,7 @@ export class CostHelper {
   /** Adds costs together in-place. Returns a reference to the first object. */
   static add(target: ICost, ...values: Array<ICost>): ICost {
     for (const value of values) {
+      if (!value) { continue; }
       if (value.c) { target.c = (target.c || 0) + value.c; }
       if (value.h) { target.h = (target.h || 0) + value.h; }
       if (value.sc) { target.sc = (target.sc || 0) + value.sc; }
@@ -32,6 +33,7 @@ export class CostHelper {
   /** Subtracts costs in-place. Returns a reference to the first object. */
   static subtract(target: ICost, ...values: Array<ICost>): ICost {
     for (const value of values) {
+      if (!value) { continue; }
       if (value.c) { target.c = (target.c || 0) - value.c; }
       if (value.h) { target.h = (target.h || 0) - value.h; }
       if (value.sc) { target.sc = (target.sc || 0) - value.sc; }

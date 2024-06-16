@@ -1,9 +1,14 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { CostHelper } from 'src/app/helpers/cost-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
+import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
+import { IIAP } from 'src/app/interfaces/iap.interface';
+import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
+import { INode } from 'src/app/interfaces/node.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
@@ -28,17 +33,23 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   @Input() ts?: ITravelingSpirit;
   @Input() rs?: IReturningSpirits;
 
-  shouldShow = false;
-
   items: Array<IItem> = [];
   itemMap: Bag = {};
   itemLinks: { [guid: string]: INavigationTarget | undefined } = {};
+  itemCost: ICost = { };
+  iapPrice: number = 0;
 
+  hasOngoingItems = false;
   ongoingSeasonItems: Bag = {};
   ongoingEventItems: Bag = {};
   ongoingTsItems: Bag = {};
   ongoingRsItems: Bag = {};
   ongoingItems: Bag = {};
+  ongoingItemSources: {
+    iaps: { [guid: string]: IIAP },
+    nodes: { [guid: string]: INode },
+    lists: { [guid: string]: IItemListNode }
+  } = { iaps: {}, nodes: {}, lists: {}};
 
   _subs = new SubscriptionBag();
 
@@ -48,62 +59,93 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
     private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
-    this.checkFavourites();
+    this.loadFavourites();
     this._subs.add(_eventService.itemToggled.subscribe(item => this.onItemToggled(item)));
     this._subs.add(_eventService.itemFavourited.subscribe(item => this.onItemFavourited(item)));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    this.itemCost = CostHelper.create();
     if (changes['season']) { this.loadSeason(); }
     if (changes['eventInstances']) { this.loadEvent(); }
     if (changes['ts']) { this.loadTs(); }
     if (changes['rs']) { this.loadRs(); }
     this.ongoingItems = { ...this.ongoingSeasonItems, ...this.ongoingEventItems, ...this.ongoingTsItems, ...this.ongoingRsItems };
-    this.shouldShow = this.items.some(item => this.ongoingItems[item.guid]);
+    this.checkHasOngoing();
+    this.calculateCosts();
   }
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();
   }
 
+  private checkHasOngoing(): void {
+    this.hasOngoingItems = this.items.some(item => this.ongoingItems[item.guid]);
+  }
+
   private onItemToggled(item: IItem): void {
     this.checkItem(item);
-    this.shouldShow = this.items.some(item => this.ongoingItems[item.guid]);
+    this.checkHasOngoing();
+    this.calculateCosts();
     this._changeDetectorRef.markForCheck();
   }
 
   private onItemFavourited(item: IItem): void {
     this.checkItem(item);
-    this.shouldShow = this.items.some(item => this.ongoingItems[item.guid]);
+    this.checkHasOngoing();
+    this.calculateCosts();
     this._changeDetectorRef.markForCheck();
   }
 
-  private checkFavourites(): void {
-    this._storageService.getFavourites().forEach(guid => {
-      const item = this._dataService.guidMap.get(guid) as IItem;
-      if (!item) { return; }
-      this.checkItem(item);
-    });
-    this.shouldShow = this.items.some(item => this.ongoingItems[item.guid]);
+  private loadFavourites(): void {
+    const favourites = this._storageService.getFavourites();
+    const items = [...favourites].map(g => {
+      const item = this._dataService.guidMap.get(g) as IItem;
+      return item;
+    }).filter(i => i?.favourited && !i.unlocked);
+    this.items = items;
+    this.itemLinks = {};
+    this.itemMap = items.reduce((acc, item) => {
+      this.itemLinks[item.guid] = NavigationHelper.getItemSource(item);
+      return (acc[item.guid] = item) && acc;
+    }, {} as Bag);
   }
 
   private checkItem(item: IItem): void {
-    const shouldAdd = item.favourited && !item.unlocked
-
-    // Add item
-    if (shouldAdd && !this.itemMap[item.guid]) {
+    if (item.favourited && !item.unlocked) {
+      // Add item
+      if (this.itemMap[item.guid]) { return; }
       this.itemMap[item.guid] = item;
       this.itemLinks[item.guid] = NavigationHelper.getItemSource(item);
       this.items.push(item);
-    }
-
-    // Remove item
-    if (!shouldAdd && this.itemMap[item.guid]) {
+    } else {
+      // Remove item
+      if (!this.itemMap[item.guid]) { return; }
       delete this.itemMap[item.guid];
       delete this.itemLinks[item.guid];
       const i = this.items.findIndex(i => i.guid === item.guid);
       if (i > -1) { this.items.splice(i, 1); }
     }
+  }
+
+  private calculateCosts(): void {
+    this.itemCost = CostHelper.create();
+    this.iapPrice = 0;
+    const nodes = new Set<INode>();
+    const costs = this.items.forEach(item => {
+      const cost = this.ongoingItemSources.lists[item.guid];
+      if (cost) { CostHelper.add(this.itemCost, cost); }
+
+      const iap = this.ongoingItemSources.iaps[item.guid];
+      if (iap) { this.iapPrice += iap.price || 0;  }
+
+      const node = this.ongoingItemSources.nodes[item.guid];
+      if (node) { nodes.add(node); }
+    });
+
+    const lockedNodes = NodeHelper.traceMany([...nodes]).filter(n => !n.unlocked);
+    CostHelper.add(this.itemCost, ...lockedNodes);
+    this._changeDetectorRef.markForCheck();
   }
 
   private loadSeason(): void {
@@ -146,15 +188,25 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
 
   private loadTree(tree: ISpiritTree | undefined, bag: Bag): void {
     if (!tree) { return; }
-    const items = NodeHelper.getItems(tree.node);
-    items.forEach(item => bag[item.guid] = item);
+    const nodes = NodeHelper.all(tree.node);
+    nodes.forEach(node => {
+      if (!node.item) { return; }
+      bag[node.item!.guid] = node.item!;
+      this.ongoingItemSources.nodes[node.item!.guid] = node;
+    });
   }
 
   private loadShop(shop: IShop, bag: Bag): void {
     shop.iaps?.forEach(iap => {
-      iap.items?.forEach(item => bag[item.guid] = item);
+      iap.items?.forEach(item => {
+        bag[item.guid] = item;
+        this.ongoingItemSources.iaps[item.guid] = iap;
+      });
     });
 
-    shop.itemList?.items?.forEach(node => bag[node.item.guid] = node.item);
+    shop.itemList?.items?.forEach(node => {
+      bag[node.item.guid] = node.item;
+      this.ongoingItemSources.lists[node.item.guid] = node;
+    });
   }
 }

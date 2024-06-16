@@ -23,7 +23,6 @@
       [ngbTooltip]="showTooltips ? 'This item is from an IAP.' : undefined" container="body">
     </app-icon>
   }
-
   <!-- Season pass icon (top left) -->
   @if (iconsShown['seasonPass'] && (item.group === 'SeasonPass' || item.group === 'Ultimate') && item.season?.iconUrl) {
     <app-icon class="img-tl subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'"

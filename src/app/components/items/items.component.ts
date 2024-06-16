@@ -46,8 +46,11 @@ export class ItemsComponent {
 
   onQueryParamsChanged(query: ParamMap) {
     const type = query.get('type') as ItemType;
-
     this.type = type as ItemType || ItemType.Outfit;
+
+    const fav = query.get('fav') === '1';
+    this.filterByFav = fav;
+
     this.updateShownItems();
 
     // Select item from query.
@@ -67,8 +70,10 @@ export class ItemsComponent {
   }
 
   toggleFav(): void {
-    this.filterByFav = !this.filterByFav;
-    this.updateShownItems();
+    const queryParams = NavigationHelper.getQueryParams(location.href);
+    queryParams['fav'] = this.filterByFav ? null : '1';
+
+    void this._router.navigate([], { queryParams, replaceUrl: true });
   }
 
   onTypeChanged(type: ItemType): void {
@@ -76,7 +81,7 @@ export class ItemsComponent {
     queryParams['type'] = type;
     this.selectedItem ? queryParams['item'] = this.selectedItem.guid : delete queryParams['item'];
 
-    this._router.navigate([], { queryParams, replaceUrl: true });
+    void this._router.navigate([], { queryParams, replaceUrl: true });
   }
 
   private initializeItems(): void {

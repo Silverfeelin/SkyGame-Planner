@@ -1,11 +1,8 @@
-<ng-container *ngIf="shouldShow">
-  <div class="sky-card mt highlight-attention">
-    <div class="sky-card-header">
-      <h2 class="h3 mb-0">Wishlist</h2>
-    </div>
-    <div class="sky-card-body">
+<div class="mt">
+  <app-card [foldable]="true" [folded]="!hasOngoingItems" [title]="'Wishlist'">
+    @if (hasOngoingItems) {
       <div class="container">
-        Limited items you have favourited are available right now!
+        Limited items you have favourited are available right now! This section keeps track of ongoing seasons, events, traveling spirits and special visits.
       </div>
       <div class="sky-flex flex-wrap mt">
         @for (item of items; track item.guid) {
@@ -16,6 +13,12 @@
           }
         }
       </div>
-    </div>
-  </div>
-</ng-container>
+      <div class="container wishlist-cost mt">
+        Total cost: <app-cost [cost]="itemCost" [showZeroes]="true" [price]="iapPrice"></app-cost>
+      </div>
+    } @else {
+      <div class="container">
+        Limited items you have favourited will appear here when they are available. This section keeps track of ongoing seasons, events, traveling spirits and special visits.
+      </div>}
+  </app-card>
+</div>
