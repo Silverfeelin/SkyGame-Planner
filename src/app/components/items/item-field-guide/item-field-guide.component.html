@@ -20,11 +20,11 @@
             >
               <div class="pad">
                 <div class="item-preview-icon">
-                  <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true" [showSubIcons]="false"></app-item-icon>
+                  <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
                 </div>
                 <div class="item-preview-img mt">
                   <img [src]="typeItem.item.previewUrl" class="preview-img" loading="lazy">
-                  <app-item-subicons [item]="typeItem.item"></app-item-subicons>
+                  <app-item-subicons [item]="typeItem.item" [icons]="['type', 'season', 'unlock', 'favourite']"></app-item-subicons>
                 </div>
               </div>
             </a>

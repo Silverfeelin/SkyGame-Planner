@@ -4,11 +4,12 @@ import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
+import { EventService } from 'src/app/services/event.service';
 import { NodeService } from 'src/app/services/node.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { HighlightType } from 'src/app/types/highlight';
 
-export type NodeAction = 'unlock' | 'find';
+export type NodeAction = 'unlock' | 'find' | 'favourite';
 
 @Component({
   selector: 'app-node',
@@ -28,6 +29,7 @@ export class NodeComponent implements OnChanges {
 
   constructor(
     private readonly _debug: DebugService,
+    private readonly _eventService: EventService,
     private readonly _nodeService: NodeService,
     private readonly _storageService: StorageService,
     private readonly _router: Router
@@ -53,20 +55,25 @@ export class NodeComponent implements OnChanges {
     switch (this.action) {
       case 'unlock': return this.toggleNode(event);
       case 'find': return this.findNode(event);
+      case 'favourite': return this.toggleFavourite(event);
     }
+  }
+
+  toggleFavourite(event: MouseEvent): void {
+    if (!this.node.item) { return; }
+    if (this.tryCopyDebug(event, this.node)) { return; }
+    const item = this.node.item;
+
+    // Toggle favourite status.
+    item.favourited = !item.favourited;
+    item.favourited ? this._storageService.addFavourites(item.guid) : this._storageService.removeFavourites(item.guid);
+    this._eventService.itemFavourited.next(item);
   }
 
   toggleNode(event: MouseEvent): void {
     if (!this.node.item) { return; }
+    if (this.tryCopyDebug(event, this.node)) { return; }
     const item = this.node.item;
-
-
-    if (this._debug.copyNode) {
-      event.stopImmediatePropagation();
-      event.preventDefault();
-      this.copyDebug(this.node);
-      return;
-    }
 
     // Unlock (or lock) based on the item status.
     const unlock = !item.unlocked;
@@ -108,7 +115,10 @@ export class NodeComponent implements OnChanges {
     void this._router.navigate(target.route, target.extras);
   }
 
-  copyDebug(node: INode): void {
+  tryCopyDebug(event: Event, node: INode): boolean {
+    if (!this._debug.copyNode) { return false; }
+    event.stopImmediatePropagation();
+    event.preventDefault();
     const data = {
       nw: !!node.nw,
       n: !!node.n,
@@ -122,5 +132,6 @@ export class NodeComponent implements OnChanges {
       ec: node.ec,
     };
     navigator.clipboard.writeText(JSON.stringify(data));
+    return true;
   }
 }

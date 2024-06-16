@@ -2,7 +2,7 @@
   <div *ngIf="node.item" class="item-container" [ngbTooltip]="nodeHover" [placement]="tooltipPlacement" container="body"
     (click)="nodeClick($event)" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"
   >
-    <app-item-icon [item]="node.item" [opaque]="hover || opaque" [glowType]="glowType"></app-item-icon>
+    <app-item-icon [item]="node.item" [node]="node" [opaque]="hover || opaque" [glowType]="glowType" [subIcons]="['favourite', 'unlock', 'seasonPass']"></app-item-icon>
   </div>
   <div class="cost" *ngIf="node?.c">
     {{ node.c }}<mat-icon class="icon-middle" svgIcon="candle" [inline]="false"></mat-icon>
@@ -22,7 +22,6 @@
   <div class="cost" *ngIf="node?.ec">
     {{ node.ec }}<mat-icon class="icon-middle" svgIcon="ticket" [inline]="false"></mat-icon>
   </div>
-  <mat-icon class="unlock-check" [class.unlocked]="node.unlocked || node.item?.unlocked" [class.self]="node.unlocked">done</mat-icon>
 </div>
 
 <ng-template #nodeHover>

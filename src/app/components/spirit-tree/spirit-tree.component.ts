@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, SimpleChanges, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, Input, OnChanges, OnDestroy, signal, SimpleChanges, TemplateRef } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
@@ -10,10 +10,13 @@ import { StorageService } from 'src/app/services/storage.service';
 import { NodeAction } from '../node/node.component';
 import { DateTime } from 'luxon';
 
+const signalAction = signal<NodeAction>('unlock');
+
 @Component({
   selector: 'app-spirit-tree',
   templateUrl: './spirit-tree.component.html',
-  styleUrls: ['./spirit-tree.component.less']
+  styleUrls: ['./spirit-tree.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;
@@ -21,7 +24,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() highlight?: boolean;
   @Input() highlightItem?: string;
   @Input() seasonIcon?: string;
-  @Input() showButtons = true;
+  @Input() enableControls = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean;
   @Input() padBottom = false;
@@ -35,7 +38,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   hasCostAtRoot = false;
   toggleUnlock = false;
 
-  navigating = false;
+  showingNodeActions = false;
   nodeAction: NodeAction = 'unlock';
 
   itemMap = new Map<string, INode>();
@@ -51,14 +54,21 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   constructor(
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
-    private readonly _elementRef: ElementRef
+    private readonly _elementRef: ElementRef,
+    private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
+    effect(() => {
+      this.nodeAction = signalAction();
+      _changeDetectorRef.markForCheck();
+    });
   }
 
   ngAfterViewInit(): void {
     const element = this._elementRef.nativeElement as HTMLElement;
     const scrollElem = element.querySelector('.spirit-tree-scroll');
     if (scrollElem) { scrollElem.scrollTop = 1000; }
+
+    document.addEventListener('click', this.hideNodeActions);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -70,10 +80,27 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.tsDate = this.tree.ts?.date;
       this.rsDate = this.tree.visit?.return?.date;
     }
+
   }
 
   ngOnDestroy(): void {
     this._itemSub?.unsubscribe();
+    document.removeEventListener('click', this.hideNodeActions);
+  }
+
+  hideNodeActions = (): void => {
+    this.showingNodeActions = false;
+    this._changeDetectorRef.markForCheck();
+  }
+
+  setNodeAction(evt: MouseEvent, action: NodeAction): void {
+    evt.stopPropagation();
+    if (this.showingNodeActions) {
+      signalAction.set(action);
+      this.showingNodeActions = false;
+    } else {
+      this.showingNodeActions = true;
+    }
   }
 
   /** Build grid from nodes. */
@@ -102,6 +129,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     const node = this.itemMap.get(item.guid);
     if (!node) { return; }
     this.calculateRemainingCosts();
+    this._changeDetectorRef.markForCheck();
   }
 
   initializeNode(node: INode, direction: number, level: number): void {
@@ -131,11 +159,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this.nodes.filter(n => !n.unlocked && !n.item?.unlocked).forEach(n => {
       CostHelper.add(this.remainingCost, n);
     });
-  }
-
-  toggleNavigate(): void {
-    this.navigating = !this.navigating;
-    this.nodeAction = this.navigating ? 'find' : 'unlock';
   }
 
   unlockAll(): void {

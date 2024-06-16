@@ -174,8 +174,7 @@
                 <!-- Items -->
                 <div class="mt-half item iap-items">
                   <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
-                    <app-item-icon [item]="item" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
-                    <mat-icon class="unlock-check" [class.unlocked]="item?.unlocked" [class.self]="iap.bought">done</mat-icon>
+                    <app-item-icon [item]="item" [iap]="iap" [ngbTooltip]="itemHover" placement="bottom" container="body" [subIcons]="['unlock']"></app-item-icon>
                     <ng-template #itemHover>
                       <ng-container *ngIf="item">
                         <span class="ws-nw">{{item.name}}</span>

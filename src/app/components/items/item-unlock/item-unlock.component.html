@@ -61,8 +61,7 @@
         [ngbTooltip]="item.name" container="body" (click)="toggleItem(item)"
       >
         <div class="item-inner" [class.unlocked]="item.unlocked">
-          <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [showSubIcons]="true"></app-item-icon>
-          <mat-icon class="unlock-check" [hidden]="!item.unlocked">done</mat-icon>
+          <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"  [subIcons]="['type', 'season', 'favourite', 'unlock']"></app-item-icon>
         </div>
       </div>
     </ng-container>

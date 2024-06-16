@@ -1,13 +1,42 @@
 <div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree.guid">
-  <div class="spirit-tree-scroll" [class.has-buttons]="showButtons" [class.pad-bottom]="hasCostAtRoot || padBottom">
-    @if (showButtons) {
-      <div class="tree-action find-item" (click)="toggleNavigate()" [class.highlight-attention]="navigating">
-        <mat-icon>step_into</mat-icon>
-        <span>Go to item</span>
+  <div class="spirit-tree-scroll" [class.has-buttons]="enableControls" [class.pad-bottom]="hasCostAtRoot || padBottom">
+    <!-- Action indication -->
+    <div class="tree-action-background">
+      @switch (nodeAction) {
+        @case ('find') { <mat-icon>search</mat-icon> }
+        @case ('favourite') { <mat-icon>star</mat-icon> }
+      }
+    </div>
+    <!-- Controls -->
+    @if (enableControls) {
+      <div class="tree-actions">
+        @if (showingNodeActions || nodeAction === 'unlock') {
+          <div class="tree-action point" (click)="setNodeAction($event, 'unlock')">
+            <div class="tree-action-icon find-item">
+              <mat-icon>lock_open</mat-icon>
+            </div>
+            <span [class.active]="showingNodeActions && nodeAction === 'unlock'">Unlock item</span>
+          </div>
+        }
+        @if (showingNodeActions || nodeAction === 'find') {
+          <div class="tree-action point" (click)="setNodeAction($event, 'find')">
+            <div class="tree-action-icon find-item">
+              <mat-icon>search</mat-icon>
+            </div>
+            <span [class.active]="showingNodeActions && nodeAction === 'find'">Find item</span>
+          </div>
+        }
+        @if (showingNodeActions || nodeAction === 'favourite') {
+          <div class="tree-action point" (click)="setNodeAction($event, 'favourite')">
+            <div class="tree-action-icon find-item">
+              <mat-icon>star</mat-icon>
+            </div>
+            <span [class.active]="showingNodeActions && nodeAction === 'favourite'">Favourite item</span>
+          </div>
+        }
       </div>
-      <div class="tree-action unlock-all" (click)="unlockAll()" [ngbTooltip]="'Toggle all'" container="body" placement="bottom-end">
-        <mat-icon>{{ toggleUnlock ? 'lock_open' : 'lock' }}</mat-icon>
-        <span>{{ toggleUnlock ? 'Unlock all' : 'Lock all' }}</span>
+      <div class="unlock-all point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="bottom-end">
+        <mat-icon>enhanced_encryption</mat-icon>
       </div>
     }
     <div class="spirit-tree">
@@ -34,41 +63,40 @@
         <ng-content select="div[name]"></ng-content>
         <div class="name-default">
           {{ name ?? tree.name }}
-          <span *ngIf="tsDate" class="c-accent ts-date">(<app-date [date]="tsDate"></app-date>)</span>
-          <span *ngIf="rsDate" class="c-accent ts-date">(<app-date [date]="rsDate"></app-date>)</span>
+          @if (tsDate || rsDate) {
+            <span class="c-accent ts-date">(<app-date [date]="tsDate || rsDate"></app-date>)</span>
+          }
         </div>
       </div>
     }
-    <div *ngIf="name && hasCost" class="hr"></div>
-    <div *ngIf="hasCost" class="costs">
-      <app-cost [cost]="totalCost" [remaining]="remainingCost"></app-cost>
-    </div>
-    <ng-container *ngIf="tree.draft">
+    @if ((name || tree.name) && hasCost) {
+      <div class="hr"></div>
+    }
+    @if (hasCost) {
+      <div class="costs">
+        <app-cost [cost]="totalCost" [remaining]="remainingCost"></app-cost>
+      </div>
+    }
+    @if (tree.draft) {
       <div class="hr"></div>
       <div class="draft c-accent">
         <small>This spirit tree is not confirmed yet!</small>
       </div>
-    </ng-container>
+    }
   </div>
 </div>
 
 <ng-template #tNode let-node let-position="position">
-  <app-node *ngIf="node" [node]="node" [action]="nodeAction" [position]="position"
-    [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
-    [opaque]="opaqueNodes"
-    [glowType]="navigating ? 'attention' : 'default'">
-  </app-node>
-  <ng-template [ngTemplateOutlet]="spIcon" [ngTemplateOutletContext]="{ $implicit: node }"></ng-template>
-  @if (navigating) { <mat-icon class="st-item-icon st-item-search">step_into</mat-icon> }
+  @if (node) {
+    <app-node [node]="node" [action]="nodeAction" [position]="position"
+      [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
+      [opaque]="opaqueNodes"
+      [glowType]="nodeAction !== 'unlock' ? 'attention' : 'default'">
+    </app-node>
+  }
   @if (nodeOverlayTemplate) { <ng-container [ngTemplateOutlet]="nodeOverlayTemplate" [ngTemplateOutletContext]="{ $implicit: node }"></ng-container> }
   <!-- Node arrows -->
   @if (node?.nw) { <div class="arrow arrow-left"></div> }
   @if (node?.n) { <div class="arrow arrow-up"></div> }
   @if (node?.ne) { <div class="arrow arrow-right"></div> }
-</ng-template>
-
-<ng-template #spIcon let-node>
-  @if (node && seasonIcon && (node.item?.group === 'SeasonPass' || node.item?.group === 'Ultimate')) {
-    <app-icon class="st-item-sp seasonal" [src]="seasonIcon"></app-icon>
-  }
 </ng-template>

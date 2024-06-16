@@ -1,22 +1,66 @@
-  <ng-container *ngIf="item">
-    <!-- Season icon (top right) -->
-    <app-icon *ngIf="item.season?.iconUrl" class="img-tr" [src]="item.season?.iconUrl || '#season-candle'"
-      [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
+@if (item) {
+  <!-- Season pass ultimate (top left) -->
+  @if (iconsShown['season'] && item.group === 'Ultimate') {
+    <app-icon class="img-tl seasonal" [src]="'#season-heart'"
+    [ngbTooltip]="showTooltips ? 'This item is a season ultimate.' : undefined" container="body">
     </app-icon>
-    <!-- Season pass ultimate (top left) -->
-    <app-icon *ngIf="item.group === 'Ultimate'" class="img-tl seasonal" [src]="'#season-heart'"
-      [ngbTooltip]="showTooltips ? 'This item is a season ultimate.' : undefined" container="body">
-    </app-icon>
-    <!-- Season pass item (top left) -->
-    <app-icon *ngIf="item.group === 'SeasonPass'" class="img-tl seasonal" [src]="'#gift'"
+  }
+  <!-- Season pass item (top left) -->
+  @if (iconsShown['season'] && item.group === 'SeasonPass') {
+    <app-icon class="img-tl seasonal" [src]="'#gift'"
       [ngbTooltip]="showTooltips ? 'This item is or was in a season pass.' : undefined" container="body">
     </app-icon>
-    <!-- Elder item (top left) -->
-    <app-icon *ngIf="item.group === 'Elder'" class="img-tl" [src]="'#ascended-candle'"
+  }
+  <!-- Elder item (top left) -->
+  @if (iconsShown['elder'] && item.group === 'Elder') {
+    <app-icon class="img-tl" [src]="'#ascended-candle'"
       [ngbTooltip]="showTooltips ? 'This item is from an Elder.' : undefined" container="body">
     </app-icon>
-    <!-- IAP item (top left) -->
-    <app-icon *ngIf="item.iaps?.length" class="img-tl currency" [src]="'#gift'"
+  }
+  <!-- IAP item (top left) -->
+  @if (iconsShown['iap'] && item.iaps?.length) {
+    <app-icon class="img-tl currency" [src]="'#gift'"
       [ngbTooltip]="showTooltips ? 'This item is from an IAP.' : undefined" container="body">
     </app-icon>
-  </ng-container>
+  }
+
+  <!-- Season pass icon (top left) -->
+  @if (iconsShown['seasonPass'] && (item.group === 'SeasonPass' || item.group === 'Ultimate') && item.season?.iconUrl) {
+    <app-icon class="img-tl subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'"
+      [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
+    </app-icon>
+  }
+
+  <!-- Season icon (top right) -->
+  @if (iconsShown['season'] && item.season?.iconUrl) {
+    <app-icon class="img-tr subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'"
+      [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
+    </app-icon>
+  }
+
+  <!-- Favourite (bottom left) -->
+  @if (iconsShown['favourite'] && item.favourited) {
+    <mat-icon class="img-bl" [class.img-bl-above]="item.type === 'Emote'"
+      [ngbTooltip]="showTooltips ? 'You have favourited this item.' : undefined" container="body">
+      star
+    </mat-icon>
+  }
+
+  <!-- Emote level (bottom left) -->
+  @if (item.type === 'Emote') {
+    <span class="emote-level">Lv{{item.level}}</span>
+  }
+
+  <!-- Unlocked (bottom right) -->
+  @if (iconsShown['unlock'] && item.unlocked) {
+    <mat-icon class="unlock-check"
+      [class.unlocked]="item.unlocked || node?.unlocked"
+      [class.self]="(!node && !iap) || node?.unlocked || iap?.bought"
+      [ngbTooltip]="showTooltips ? 'You own this item.' : undefined" container="body">
+      done
+    </mat-icon>
+  }
+
+
+
+}

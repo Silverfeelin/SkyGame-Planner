@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnDestroy } from '@angular/core';
-import { SubscriptionLike } from 'rxjs';
-import { IItem } from 'src/app/interfaces/item.interface';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
+import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
+import { IIAP } from 'src/app/interfaces/iap.interface';
+import { IItem, ItemSubicon } from 'src/app/interfaces/item.interface';
+import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 
 @Component({
@@ -9,25 +11,45 @@ import { EventService } from 'src/app/services/event.service';
   styleUrls: ['./item-subicons.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ItemSubIconsComponent implements OnDestroy {
+export class ItemSubIconsComponent implements OnChanges, OnDestroy {
   @Input() item?: IItem;
+  @Input() node?: INode;
+  @Input() iap?: IIAP;
+  @Input() icons?: Array<ItemSubicon>;
 
   @HostBinding('class.show-tooltips')
   @Input() showTooltips = false;
 
-  _sub: SubscriptionLike;
+  iconsShown: { [key: string]: boolean } = {};
+
+  private readonly _subs = new SubscriptionBag();
 
   constructor(
     _eventService: EventService,
     _changeDetectorRef: ChangeDetectorRef
   ) {
-    this._sub = _eventService.itemFavourited.subscribe(item => {
+    this._subs.add(_eventService.itemFavourited.subscribe(item => {
       if (item !== this.item) { return; }
       _changeDetectorRef.markForCheck();
-    });
+    }));
+
+    this._subs.add(_eventService.itemToggled.subscribe(item => {
+      if (item !== this.item) { return; }
+      _changeDetectorRef.markForCheck();
+    }));
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['icons']) { this.updateIconsShown(); }
   }
 
   ngOnDestroy(): void {
-    this._sub.unsubscribe();
+    this._subs.unsubscribe();
+  }
+
+  private updateIconsShown(): void {
+    this.iconsShown = this.icons?.reduce((acc: { [key: string]: boolean }, icon: ItemSubicon) => {
+      return (acc[icon] = true) && acc;
+    }, {}) || {};
   }
 }

@@ -103,3 +103,5 @@ export enum ItemSubtype {
 export type ItemGroup = 'Elder' | 'Season' | 'SeasonPass' | 'Ultimate';
 
 export type ItemSize = 'small' | 'medium' | 'default' | 'large' | 'auto';
+
+export type ItemSubicon = 'type' | 'season' | 'seasonPass' | 'favourite' | 'unlock';

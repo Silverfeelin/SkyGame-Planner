@@ -8,13 +8,13 @@
         Limited items you have favourited are available right now!
       </div>
       <div class="sky-flex flex-wrap mt">
-        <ng-container *ngFor="let item of items">
-          <ng-container *ngIf="ongoingItems[item.guid]">
+        @for (item of items; track item.guid) {
+          @if (ongoingItems[item.guid]) {
             <a class="wishlist-item" [ngbTooltip]="item.name" container="body" [routerLink]="itemLinks[item.guid]?.route" [queryParams]="itemLinks[item.guid]?.extras?.queryParams">
-              <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [showSubIcons]="true"></app-item-icon>
+              <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['type', 'season', 'favourite', 'unlock']"></app-item-icon>
             </a>
-          </ng-container>
-        </ng-container>
+          }
+        }
       </div>
     </div>
   </div>

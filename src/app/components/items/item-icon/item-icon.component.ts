@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
-import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
+import { IIAP } from 'src/app/interfaces/iap.interface';
+import { IItem, ItemSize, ItemSubicon, ItemType } from 'src/app/interfaces/item.interface';
+import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { HighlightType } from 'src/app/types/highlight';
@@ -13,8 +15,10 @@ import { HighlightType } from 'src/app/types/highlight';
 })
 export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: IItem;
+  @Input() node?: INode;
+  @Input() iap?: IIAP;
   @Input() size: ItemSize = 'default';
-  @Input() showSubIcons?: boolean;
+  @Input() subIcons: Array<ItemSubicon> = [];
   @Input() lazy = true;
 
   /** Forces icon to be opaque instead of checking if it's unlocked. */
@@ -27,8 +31,6 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
 
   @HostBinding('attr.data-size')
   _size: ItemSize = 'default';
-
-  ItemType = ItemType;
 
   _sub?: SubscriptionLike;
 
