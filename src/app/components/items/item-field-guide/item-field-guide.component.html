@@ -3,31 +3,38 @@
     <h2 class="h3 mb-0">Field guide</h2>
   </div>
   <div class="sky-card-body">
+    <div class="container">
+      Please keep in mind that all images you see here are created by contributors of the <a href="https://sky-children-of-the-light.fandom.com/">Sky: Children of the Light Wiki</a>.
+      To view the source of an image press <button type="button" [class.highlight]="viewingSource" (click)="viewingSource=!viewingSource">View source</button> and then click on an image.
+
+    </div>
+    <hr/>
     <!-- Select item-->
-    <div class="">
+    <div class="mt">
       <app-item-type-selector [type]="type" [showTypes]="types" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
     </div>
     <hr/>
-    <button *ngIf="highlight" type="button" class="mb" (click)="removeHighlight()">Show all items</button>
     <!-- Show items -->
     <ng-container *ngFor="let t of types">
       <div class="sky-flex flex-wrap field-guide-items" [hidden]="type !== t">
         <ng-container *ngIf="loadedTypes[t]"> <!-- Lazy load tabs -->
           <ng-container *ngFor="let typeItem of typeItems[t]">
-            <a *ngIf="typeItem.item.previewUrl" (click)="removeHighlight()" [routerLink]="!highlight || highlight === typeItem.item.guid ? typeItem.nav?.route : undefined" [queryParams]="typeItem.nav?.extras?.queryParams"
-              class="item-preview link" [hidden]="highlight && highlight !== typeItem.item.guid" [class.highlight]="highlight === typeItem.item.guid"
-              [ngbTooltip]="typeItem.item.name" container="body" placement="auto"
-            >
-              <div class="pad">
-                <div class="item-preview-icon">
-                  <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+            @if (typeItem.item.previewUrl) {
+              <a (click)="checkViewSource(typeItem.item.previewUrl)" [routerLink]="!viewingSource ? typeItem.nav?.route : undefined" [queryParams]="typeItem.nav?.extras?.queryParams"
+                class="item-preview link"
+                [ngbTooltip]="typeItem.item.name" container="body" placement="auto"
+              >
+                <div class="pad">
+                  <div class="item-preview-icon">
+                    <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+                  </div>
+                  <div class="item-preview-img mt">
+                    <img [src]="typeItem.item.previewUrl" class="preview-img" loading="lazy">
+                    <app-item-subicons [item]="typeItem.item" [icons]="['type', 'season', 'unlock', 'favourite']"></app-item-subicons>
+                  </div>
                 </div>
-                <div class="item-preview-img mt">
-                  <img [src]="typeItem.item.previewUrl" class="preview-img" loading="lazy">
-                  <app-item-subicons [item]="typeItem.item" [icons]="['type', 'season', 'unlock', 'favourite']"></app-item-subicons>
-                </div>
-              </div>
-            </a>
+              </a>
+            }
           </ng-container>
         </ng-container>
       </div>

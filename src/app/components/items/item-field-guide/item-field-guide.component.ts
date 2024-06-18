@@ -22,7 +22,7 @@ export class ItemFieldGuideComponent {
 
   typeItems: { [key: string]: Array<{ item: IItem, nav?: INavigationTarget }> } = {};
   loadedTypes: { [key: string]: boolean } = {};
-  highlight?: string;
+  viewingSource = false;
 
   constructor(
     private readonly _dataService: DataService,
@@ -41,8 +41,6 @@ export class ItemFieldGuideComponent {
     const type = query.get('type') as ItemType;
     this.type = type as ItemType || ItemType.Outfit;
     this.loadedTypes[this.type] = true;
-
-    this.highlight = query.get('item') || undefined;
   }
 
   onTypeChanged(type: ItemType): void {
@@ -52,14 +50,22 @@ export class ItemFieldGuideComponent {
     this._router.navigate([], { queryParams, replaceUrl: true });
   }
 
-  removeHighlight(): void {
-    setTimeout(() => {
-      this.highlight = undefined;
-    });
+  checkViewSource(url: string) {
+    if (!url?.startsWith('https://static.wikia.nocookie.net/sky-children-of-the-light')) {
+      alert(`Can't view the source since this image is not hosted on the official wiki.`);
+      return;
+    }
+
+    const file = url.match(/[^/]*$/)?.[0];
+    if (!file) {
+      alert(`Can't find the file name.`);
+      return;
+    }
+
+    window.open(`https://sky-children-of-the-light.fandom.com/wiki/File:${file}`, '_blank');
   }
 
   private initializeItems(): void {
-
     this.typeItems = {};
     for (const type in ItemType) {
       this.typeItems[type] = [];

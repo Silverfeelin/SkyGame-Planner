@@ -18,7 +18,6 @@ export class ItemComponent implements OnInit {
 
   navSource?: INavigationTarget;
   navList?: INavigationTarget;
-  navFieldGuide?: INavigationTarget;
 
   constructor(
     private readonly _dataService: DataService,
@@ -42,7 +41,6 @@ export class ItemComponent implements OnInit {
 
     this.navSource = this.item ? NavigationHelper.getItemSource(this.item) : undefined;
     this.navList = this.item ? NavigationHelper.getItemListLink(this.item) : undefined;
-    this.navFieldGuide = this.item ? NavigationHelper.getPreviewLink(this.item) : undefined;
   }
 
   toggleFavourite(item: IItem): void {

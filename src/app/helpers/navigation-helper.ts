@@ -116,19 +116,6 @@ export class NavigationHelper {
     return undefined;
   }
 
-  static getPreviewLink(item: IItem): INavigationTarget | undefined {
-    if (!item.previewUrl) { return undefined; }
-    return {
-      route: ['/item/field-guide'],
-      extras: {
-        queryParams: {
-          type: item.type,
-          item: item.guid
-        }
-      }
-    };
-  }
-
   static getQueryParams(href: string | URL): Params {
     const url = href instanceof URL ? href : new URL(href);
     const params: Params = {};
