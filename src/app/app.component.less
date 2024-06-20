@@ -14,8 +14,8 @@
 
 .content {
   padding: var(--padding-content);
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: calc(100vh - 93px); // Height of footer
+  min-height: calc(100dvh - 93px);
 }
 
 @keyframes fade-in {
@@ -54,4 +54,28 @@ footer {
   color: white;
   padding: var(--padding-content);
   text-align: center;
+}
+
+.footer-flex {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: var(--padding-content-half);
+}
+
+@media screen and (min-width: 720px) {
+  .content {
+    min-height: calc(100vh - 41px); // Height of footer
+    min-height: calc(100dvh - 41px);
+  }
+
+  .footer-flex {
+    flex-direction: row;
+    gap: var(--padding-content);
+  }
+  .footer-privacy {
+    margin-left: auto;
+  }
 }
