@@ -51,6 +51,10 @@ export class ItemFieldGuideComponent {
   }
 
   checkViewSource(url: string) {
+    if (!this.viewingSource) {
+      return;
+    }
+
     if (!url?.startsWith('https://static.wikia.nocookie.net/sky-children-of-the-light')) {
       alert(`Can't view the source since this image is not hosted on the official wiki.`);
       return;
