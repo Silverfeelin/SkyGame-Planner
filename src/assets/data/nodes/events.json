@@ -799,6 +799,66 @@
     "ec": 104
   },
   // #endregion
+  // #region Days of Color (2024)
+  {
+    "guid": "kOr0uJvzZF",
+    "item": "wcZ2_DxHMp",
+    "n": "9OdKeadQcE"
+  },
+  {
+    "guid": "9OdKeadQcE",
+    "item": "N5_6M8ooTl",
+    "c": 5,
+    "nw": "BfzJFVFlU5",
+    "n": "5tMX4Wvp8c",
+    "ne": "j0kOJ5g0sO"
+  },
+  {
+    "guid": "5tMX4Wvp8c",
+    "item": "W5Y_p83sp1",
+    "c": 5,
+    "nw": "4SdVpMJDdN",
+    "n": "f1AtqifUaD",
+    "ne": "Yyo0zNvU_d"
+  },
+  {
+    "guid": "4SdVpMJDdN",
+    "item": "2OuY3ABFCZ",
+    "c": 177
+  },
+  {
+    "guid": "Yyo0zNvU_d",
+    "item": "4XMYa4Wj-M",
+    "h": 20
+  },
+  {
+    "guid": "f1AtqifUaD",
+    "item": "maNus7lgsD",
+    "c": 5,
+    "nw": "5tzo9r6uKg",
+    "n": "aE_ZxB3jXl"
+  },
+  {
+    "guid": "5tzo9r6uKg",
+    "item": "0rrPORrk7O",
+    "c": 95
+  },
+  {
+    "guid": "aE_ZxB3jXl",
+    "item": "BUTwFt6PGm",
+    "c": 175
+  },
+  {
+    "guid": "BfzJFVFlU5",
+    "item": "NdTO2GQkMc",
+    "ec": 32
+  },
+  {
+    "guid": "j0kOJ5g0sO",
+    "item": "xN5Lftk7mA",
+    "ec": 18
+  },
+  // #endregion
   // #region Days of Music (2023)
   {
     "guid": "MRl3tWIDfb",

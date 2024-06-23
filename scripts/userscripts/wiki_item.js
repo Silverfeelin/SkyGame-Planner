@@ -139,7 +139,7 @@ const nanoid10 = () => nanoid(10);
       guid: nanoid10(),
       type: item.type,
       name: document.getElementById('s-name').value,
-      icon: item.icon,
+      icon: item.icon || '/assets/icons/question.webp',
       previewUrl: item.previewUrl,
       order: 10000
     }
@@ -206,6 +206,6 @@ const nanoid10 = () => nanoid(10);
   </div>
   `);
 
-  document.getElementById('s-id').value = /*S-ID*/2184;
+  document.getElementById('s-id').value = /*S-ID*/2211;
   sSetActive(document.querySelector('button[data-active="name"]'));
 })();

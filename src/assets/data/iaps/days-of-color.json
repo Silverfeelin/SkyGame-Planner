@@ -32,6 +32,7 @@
     "guid": "ynQuCl7q9Z",
     "name": "Double Rainbow Pack",
     "price": 9.99,
+    "c": 40,
     "items": [
       "gNWmRUkpFo"
     ]
@@ -87,6 +88,7 @@
     "name": "Double Rainbow Pack",
     "price": 9.99,
     "returning": true,
+    "c": 40,
     "items": [
       "gNWmRUkpFo"
     ]
@@ -118,5 +120,89 @@
     ]
   },
   // #endregion
-
+  // #region Days of Color (2024)
+  {
+    "guid": "XbLrnItDCF",
+    "name": "Dark Rainbow Loafers",
+    "price": 19.99,
+    "c": 75,
+    "items": [
+      "xFcmMsHvA0"
+    ]
+  },
+  {
+    "guid": "2cNySqt3Gt",
+    "name": "Color Bubble Machine",
+    "price": 14.99,
+    "items": [
+      "vLeyYAngWk"
+    ]
+  },
+  {
+    "guid": "7zvNQ-PQ1C",
+    "name": "Rainbow Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "KpS-2FdasB"
+    ]
+  },
+  {
+    "guid": "G8ESKgY1Mu",
+    "name": "Rainbow Hat",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "cMLcvRtjoh"
+    ]
+  },
+  {
+    "guid": "SGDO0ODVA7",
+    "name": "Rainbow Earring",
+    "price": 2.99,
+    "returning": true,
+    "items": [
+      "f-X2dDeB9w"
+    ]
+  },
+  {
+    "guid": "QTiUgCUGTd",
+    "name": "Double Rainbow Pack",
+    "price": 9.99,
+    "returning": true,
+    "c": 40,
+    "items": [
+      "gNWmRUkpFo"
+    ]
+  },
+  {
+    "guid": "Y5g-xnRjnT",
+    "name": "Rainbow Headphones",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "j51xlBBIZX"
+    ]
+  },
+  {
+    "guid": "nOMX1P8rHy",
+    "name": "Dark Rainbow Pack",
+    "price": 9.99,
+    "returning": true,
+    "c": 40,
+    "items": [
+      "krzIL86J83"
+    ]
+  },
+  {
+    "guid": "voKWceeZKu",
+    "name": "Dark Rainbow Tunic",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "9ETwx3n-UZ"
+    ]
+  },
+  // #endregion
 ]

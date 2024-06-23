@@ -542,6 +542,37 @@
       ]
     },
     // #endregion
+    // #region Days of Color (2024)
+    {
+      "guid": "B80yCK6Rp4",
+      "type": "Store",
+      "iaps": [
+        "XbLrnItDCF",
+        "2cNySqt3Gt"
+      ]
+    },
+    {
+      "guid": "571vNLmi6N",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "7zvNQ-PQ1C",
+        "G8ESKgY1Mu",
+        "SGDO0ODVA7",
+        "QTiUgCUGTd",
+        "Y5g-xnRjnT"
+      ]
+    },
+    {
+      "guid": "9VglTf7KeY",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "nOMX1P8rHy",
+        "voKWceeZKu"
+      ]
+    },
+    // #endregion
     // #region Days of Music (2023)
     {
       "guid": "Vu7frzDGdC",

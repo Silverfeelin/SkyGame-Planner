@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Braid"
     },
-    "order": 224
+    "order": 226
   },
   {
     "id": 1790,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Cape"
     },
-    "order": 693
+    "order": 697
   },
   {
     "id": 1791,
@@ -124,7 +124,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Hair_Flower"
     },
-    "order": 396
+    "order": 399
   },
   {
     "id": 1805,
@@ -136,7 +136,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat"
     },
-    "order": 365
+    "order": 367
   },
   {
     "id": 1806,
@@ -148,7 +148,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Double_Rainbow_Flower"
     },
-    "order": 397
+    "order": 400
   },
   {
     "id": 1807,
@@ -160,7 +160,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Earring"
     },
-    "order": 225
+    "order": 227
   },
   {
     "id": 1808,
@@ -172,7 +172,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Headphones"
     },
-    "order": 226
+    "order": 228
   },
   {
     "id": 1809,
@@ -229,7 +229,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color#Dark_Rainbow_Earring_Pack"
     },
-    "order": 227
+    "order": 229
   },
   {
     "id": 1815,
@@ -241,6 +241,45 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Cape"
     },
-    "order": 694
+    "order": 698
+  },
+  {
+    "id": 2210,
+    "guid": "maNus7lgsD",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "#trail"
+  },
+  {
+    "id": 2211,
+    "guid": "NdTO2GQkMc",
+    "type": "Mask",
+    "name": "Dark Rainbow Mask",
+    "icon": "/assets/icons/question.webp",
+    "order": 195
+  },
+  {
+    "id": 2212,
+    "guid": "xN5Lftk7mA",
+    "type": "Hair",
+    "name": "Color Glam Cut",
+    "icon": "/assets/icons/question.webp",
+    "order": 368
+  },
+  {
+    "id": 2213,
+    "guid": "vLeyYAngWk",
+    "type": "Prop",
+    "name": "Color Bubble Machine",
+    "icon": "/assets/icons/question.webp",
+    "order": 510
+  },
+  {
+    "id": 2214,
+    "guid": "xFcmMsHvA0",
+    "type": "Shoes",
+    "name": "Dark Rainbow Loafers",
+    "icon": "/assets/icons/question.webp",
+    "order": 66
   }
 ]
