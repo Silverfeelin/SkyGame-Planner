@@ -132,7 +132,7 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
     this.itemCost = CostHelper.create();
     this.iapPrice = 0;
     const nodes = new Set<INode>();
-    const costs = this.items.forEach(item => {
+    this.items.forEach(item => {
       const cost = this.ongoingItemSources.lists[item.guid];
       if (cost) { CostHelper.add(this.itemCost, cost); }
 
@@ -143,7 +143,7 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
       if (node) { nodes.add(node); }
     });
 
-    const lockedNodes = NodeHelper.traceMany([...nodes]).filter(n => !n.unlocked);
+    const lockedNodes = NodeHelper.traceMany([...nodes]).filter(n => !n.unlocked && !n.item?.unlocked);
     CostHelper.add(this.itemCost, ...lockedNodes);
     this._changeDetectorRef.markForCheck();
   }
