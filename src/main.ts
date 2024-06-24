@@ -1,14 +1,26 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
+import { AppComponent } from './app/app.component';
+import { withInterceptorsFromDi, provideHttpClient } from '@angular/common/http';
+import { bootstrapApplication } from '@angular/platform-browser';
 
 // #region Extensions
 import './app/extensions/array';
+import { provideRouter } from '@angular/router';
+import { routes } from './app/app-routes';
+import { provideServiceWorker } from '@angular/service-worker';
+import { isDevMode } from '@angular/core';
 // #endregion
 
 // Load theme.
 const theme = localStorage.getItem('theme') || '';
 document.documentElement.setAttribute('data-theme', theme);
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes),
+    provideHttpClient(withInterceptorsFromDi()),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
+]
+}).catch(err => console.error(err));
