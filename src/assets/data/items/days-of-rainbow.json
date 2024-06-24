@@ -255,7 +255,8 @@
     "guid": "NdTO2GQkMc",
     "type": "Mask",
     "name": "Dark Rainbow Mask",
-    "icon": "/assets/icons/question.webp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Dark-Rainbow-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Dark-Rainbow-Mask.png",
     "order": 195
   },
   {
@@ -263,7 +264,8 @@
     "guid": "xN5Lftk7mA",
     "type": "Hair",
     "name": "Color Glam Cut",
-    "icon": "/assets/icons/question.webp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Color-Glam-Cut-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Color-Glam-Cut-front.png",
     "order": 368
   },
   {
@@ -271,7 +273,8 @@
     "guid": "vLeyYAngWk",
     "type": "Prop",
     "name": "Color Bubble Machine",
-    "icon": "/assets/icons/question.webp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/15/Color-Bubble-Machine-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Color-Bubble-Machine.png",
     "order": 510
   },
   {
@@ -279,7 +282,8 @@
     "guid": "xFcmMsHvA0",
     "type": "Shoes",
     "name": "Dark Rainbow Loafers",
-    "icon": "/assets/icons/question.webp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Dark-Rainbow-Loafers-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Dark-Rainbow-Loafers.png",
     "order": 66
   }
 ]

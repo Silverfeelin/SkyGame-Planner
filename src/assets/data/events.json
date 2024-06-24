@@ -293,15 +293,14 @@
           "guid": "Nw1QP8vccL",
           "date": "2024-06-24",
           "endDate": "2024-07-07",
+          "currencyPerDay": 5,
           "spirits": [
-            { "guid": "Db5e396lo0", "spirit": "U9vUspUuRp", "tree": "3YJalWDFZ7" }
+            { "guid": "Db5e396lo0", "spirit": "zS4AGUTIgF", "tree": "3YJalWDFZ7" }
           ],
           "shops": [
             "B80yCK6Rp4",
-            "571vNLmi6N",
-            "9VglTf7KeY"
-          ],
-          "draft": true
+            "571vNLmi6N"
+          ]
         }
       ]
     },
