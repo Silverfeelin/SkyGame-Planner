@@ -154,7 +154,7 @@
     "name": "Whistle",
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png",
-    "order": 10000
+    "order": 1101
   },
   {
     "id": 1987,
@@ -248,7 +248,7 @@
     "name": "Flex",
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png",
-    "order": 10000
+    "order": 1111
   },
   {
     "id": 1998,
@@ -437,7 +437,7 @@
     "name": "Float Spin",
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png",
-    "order": 10000
+    "order": 1121
   },
   {
     "id": 2019,
