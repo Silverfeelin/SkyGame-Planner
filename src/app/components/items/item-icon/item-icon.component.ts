@@ -6,12 +6,17 @@ import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { HighlightType } from 'src/app/types/highlight';
+import { ItemSubIconsComponent } from './item-subicons/item-subicons.component';
+import { IconComponent } from '../../icon/icon.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-item-icon',
-  templateUrl: './item-icon.component.html',
-  styleUrls: ['./item-icon.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-icon',
+    templateUrl: './item-icon.component.html',
+    styleUrls: ['./item-icon.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, IconComponent, ItemSubIconsComponent]
 })
 export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: IItem;

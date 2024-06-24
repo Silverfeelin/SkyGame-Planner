@@ -3,12 +3,19 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import { ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
+import { MatIcon } from '@angular/material/icon';
+import { NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-winged-light',
-  templateUrl: './winged-light.component.html',
-  styleUrls: ['./winged-light.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-winged-light',
+    templateUrl: './winged-light.component.html',
+    styleUrls: ['./winged-light.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [WikiLinkComponent, RouterLink, NgFor, NgIf, MatIcon, SpiritTypeIconComponent]
 })
 export class WingedLightComponent {
   wb = 0; totalWb = 0;

@@ -8,6 +8,9 @@ import { INode } from 'src/app/interfaces/node.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataJsonService } from 'src/app/services/data-json.service';
 import { DataService } from 'src/app/services/data.service';
+import { FormsModule } from '@angular/forms';
+import { MatIcon } from '@angular/material/icon';
+import { NgFor, NgIf } from '@angular/common';
 
 interface IFormNode {
   nw?: boolean;
@@ -26,9 +29,11 @@ interface IFormNode {
 }
 
 @Component({
-  selector: 'app-editor-tree-spirit',
-  templateUrl: './editor-tree.component.html',
-  styleUrls: ['./editor-tree.component.less']
+    selector: 'app-editor-tree-spirit',
+    templateUrl: './editor-tree.component.html',
+    styleUrls: ['./editor-tree.component.less'],
+    standalone: true,
+    imports: [NgFor, NgIf, MatIcon, FormsModule]
 })
 export class EditorTreeComponent implements OnInit {
   itemOptions = new Array<IItem>();

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -10,12 +10,17 @@ import { IShop } from 'src/app/interfaces/shop.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
+import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
+import { ItemListComponent } from '../../item-list/item-list/item-list.component';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-event-calculator',
-  templateUrl: './event-calculator.component.html',
-  styleUrl: './event-calculator.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-event-calculator',
+    templateUrl: './event-calculator.component.html',
+    styleUrl: './event-calculator.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, MatIcon, ItemListComponent, SpiritTreeComponent]
 })
 export class EventCalculatorComponent {
   @ViewChild('inpEc', { static: false }) inpEc!: ElementRef<HTMLInputElement>;

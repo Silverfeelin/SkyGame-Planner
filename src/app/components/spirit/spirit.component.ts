@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { IEvent } from 'src/app/interfaces/event.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
@@ -7,6 +7,11 @@ import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 import { DataService } from 'src/app/services/data.service';
 import { TitleService } from 'src/app/services/title.service';
+import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
+import { MatIcon } from '@angular/material/icon';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { NgIf, NgFor } from '@angular/common';
+import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
 
 interface ITree {
   date?: DateTime;
@@ -15,9 +20,11 @@ interface ITree {
 }
 
 @Component({
-  selector: 'app-spirit',
-  templateUrl: './spirit.component.html',
-  styleUrls: ['./spirit.component.less']
+    selector: 'app-spirit',
+    templateUrl: './spirit.component.html',
+    styleUrls: ['./spirit.component.less'],
+    standalone: true,
+    imports: [SpiritTypeIconComponent, NgIf, WikiLinkComponent, RouterLink, MatIcon, NgFor, SpiritTreeComponent]
 })
 export class SpiritComponent {
   spirit!: ISpirit;

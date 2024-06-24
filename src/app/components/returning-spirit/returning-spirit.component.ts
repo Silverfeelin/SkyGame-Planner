@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { DataService } from 'src/app/services/data.service';
 import { TitleService } from 'src/app/services/title.service';
+import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
+import { DurationComponent } from '../util/duration/duration.component';
+import { DaysLeftComponent } from '../util/days-left/days-left.component';
+import { NgIf, NgFor } from '@angular/common';
+import { DateComponent } from '../util/date/date.component';
+import { MatIcon } from '@angular/material/icon';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-returning-spirit',
-  templateUrl: './returning-spirit.component.html',
-  styleUrls: ['./returning-spirit.component.less']
+    selector: 'app-returning-spirit',
+    templateUrl: './returning-spirit.component.html',
+    styleUrls: ['./returning-spirit.component.less'],
+    standalone: true,
+    imports: [WikiLinkComponent, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, RouterLink, NgFor, SpiritTreeComponent]
 })
 export class ReturningSpiritComponent {
   rs!: IReturningSpirits;

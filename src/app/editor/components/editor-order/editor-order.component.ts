@@ -3,14 +3,18 @@ import { ItemHelper } from 'src/app/helpers/item-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem, ItemSubtype, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor } from '@angular/common';
 
 interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
 
 @Component({
-  selector: 'app-editor-order',
-  templateUrl: './editor-order.component.html',
-  styleUrls: ['./editor-order.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-editor-order',
+    templateUrl: './editor-order.component.html',
+    styleUrls: ['./editor-order.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgFor, NgbTooltip]
 })
 export class EditorOrderComponent {
   types: Array<string> = [

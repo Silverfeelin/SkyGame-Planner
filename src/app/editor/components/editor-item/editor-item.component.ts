@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 import { nanoid } from 'nanoid';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
+import { NgFor } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-editor-item',
-  templateUrl: './editor-item.component.html',
-  styleUrls: ['./editor-item.component.less']
+    selector: 'app-editor-item',
+    templateUrl: './editor-item.component.html',
+    styleUrls: ['./editor-item.component.less'],
+    standalone: true,
+    imports: [FormsModule, NgFor]
 })
 export class EditorItemComponent {
   name: string = '';

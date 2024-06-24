@@ -7,12 +7,17 @@ import { INode } from 'src/app/interfaces/node.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { ItemIconComponent } from '../item-icon/item-icon.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgTemplateOutlet, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-item-unlock',
-  templateUrl: './item-unlock.component.html',
-  styleUrls: ['./item-unlock.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-unlock',
+    templateUrl: './item-unlock.component.html',
+    styleUrls: ['./item-unlock.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgTemplateOutlet, NgFor, NgbTooltip, ItemIconComponent]
 })
 export class ItemUnlockComponent {
   typeItems: { [key: string]: Array<IItem> } = {};

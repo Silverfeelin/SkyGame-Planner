@@ -1,7 +1,8 @@
 import { Directive, Input, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[appTableFooter]'
+    selector: '[appTableFooter]',
+    standalone: true
 })
 export class TableFooterDirective {
   @Input() colspan?: number;

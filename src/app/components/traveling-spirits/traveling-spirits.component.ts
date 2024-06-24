@@ -1,11 +1,21 @@
 import { Component } from '@angular/core';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
+import { DateComponent } from '../util/date/date.component';
+import { RouterLink } from '@angular/router';
+import { IconComponent } from '../icon/icon.component';
+import { NgIf } from '@angular/common';
+import { TableColumnDirective } from '../table/table-column/table-column.directive';
+import { TableHeaderDirective } from '../table/table-column/table-header.directive';
+import { TableComponent } from '../table/table.component';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-traveling-spirits',
-  templateUrl: './traveling-spirits.component.html',
-  styleUrls: ['./traveling-spirits.component.less']
+    selector: 'app-traveling-spirits',
+    templateUrl: './traveling-spirits.component.html',
+    styleUrls: ['./traveling-spirits.component.less'],
+    standalone: true,
+    imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, NgIf, IconComponent, RouterLink, DateComponent]
 })
 export class TravelingSpiritsComponent {
   rows: Array<any> = [];

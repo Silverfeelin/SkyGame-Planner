@@ -39,7 +39,6 @@ import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/o
 import { AreaComponent } from './components/areas/area/area.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/elusive-spirits.component';
-import { SpiritTreeComponent } from './components/spirit-tree/spirit-tree.component';
 import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
 
 const title = (title: string) => `${title} - Sky Planner`;

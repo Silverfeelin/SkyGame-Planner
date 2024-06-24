@@ -17,14 +17,21 @@ import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface'
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { CostComponent } from '../../util/cost/cost.component';
+import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
+import { RouterLink } from '@angular/router';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { CardComponent } from '../../layout/card/card.component';
 
 type Bag = { [guid: string]: IItem };
 
 @Component({
-  selector: 'app-dashboard-wishlist',
-  templateUrl: './dashboard-wishlist.component.html',
-  styleUrls: ['./dashboard-wishlist.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-dashboard-wishlist',
+    templateUrl: './dashboard-wishlist.component.html',
+    styleUrls: ['./dashboard-wishlist.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [CardComponent, NgbTooltip, RouterLink, ItemIconComponent, CostComponent]
 })
 export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   // Ongoing

@@ -1,12 +1,16 @@
 import { ChangeDetectionStrategy, Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
+import { DateComponent } from '../util/date/date.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-clock',
-  templateUrl: './clock.component.html',
-  styleUrls: ['./clock.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-clock',
+    templateUrl: './clock.component.html',
+    styleUrls: ['./clock.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, DateComponent]
 })
 export class ClockComponent implements OnInit, OnDestroy {
   private _interval?: number;

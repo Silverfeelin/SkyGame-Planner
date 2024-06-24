@@ -1,15 +1,24 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { SubscriptionLike, debounceTime, fromEvent } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { ISearchItem, SearchService } from 'src/app/services/search.service';
+import { ItemTypePipe } from '../../pipes/item-type.pipe';
+import { IconComponent } from '../icon/icon.component';
+import { TableColumnDirective } from '../table/table-column/table-column.directive';
+import { TableHeaderDirective } from '../table/table-column/table-header.directive';
+import { TableComponent } from '../table/table.component';
+import { NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-search',
+    templateUrl: './search.component.html',
+    styleUrls: ['./search.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatIcon, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, IconComponent, RouterLink, ItemTypePipe]
 })
 export class SearchComponent implements AfterViewInit, OnDestroy {
   @ViewChild('input') input: ElementRef<HTMLInputElement> | undefined;

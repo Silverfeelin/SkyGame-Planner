@@ -9,12 +9,16 @@ import { IShop } from 'src/app/interfaces/shop.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-editor-event-instance',
-  templateUrl: './editor-event-instance.component.html',
-  styleUrls: ['./editor-event-instance.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-editor-event-instance',
+    templateUrl: './editor-event-instance.component.html',
+    styleUrls: ['./editor-event-instance.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FormsModule, NgFor, NgIf]
 })
 export class EditorEventInstanceComponent {
   usePlaceholder = true;

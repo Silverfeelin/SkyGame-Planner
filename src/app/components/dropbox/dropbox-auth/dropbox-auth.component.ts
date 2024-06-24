@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DropboxAuth } from 'dropbox';
+import { NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 const REDIRECT_URI = location.origin + '/dropbox-auth';
 const CLIENT_ID = '5slqiqhhxcxjiqr';
@@ -15,10 +18,12 @@ interface DropboxAuthResponse {
 }
 
 @Component({
-  selector: 'app-dropbox-auth',
-  templateUrl: './dropbox-auth.component.html',
-  styleUrls: ['./dropbox-auth.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-dropbox-auth',
+    templateUrl: './dropbox-auth.component.html',
+    styleUrls: ['./dropbox-auth.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, MatIcon, NgIf]
 })
 export class DropboxAuthComponent implements OnInit {
   private _auth!: DropboxAuth;

@@ -3,12 +3,17 @@ import { ActivatedRoute } from '@angular/router';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { MatIcon } from '@angular/material/icon';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-realm-constellation',
-  templateUrl: './realm-constellation.component.html',
-  styleUrls: ['./realm-constellation.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-realm-constellation',
+    templateUrl: './realm-constellation.component.html',
+    styleUrls: ['./realm-constellation.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgFor, NgIf, NgbTooltip, MatIcon]
 })
 export class RealmConstellationComponent implements OnInit, OnChanges {
   @Input() realm!: IRealm;

@@ -8,6 +8,12 @@ import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { EventService } from 'src/app/services/event.service';
+import { CostComponent } from '../util/cost/cost.component';
+import { DaysLeftComponent } from '../util/days-left/days-left.component';
+import { DateComponent } from '../util/date/date.component';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {
@@ -15,10 +21,12 @@ export interface SeasonCardOptions {
 }
 
 @Component({
-  selector: 'app-season-card',
-  templateUrl: './season-card.component.html',
-  styleUrls: ['./season-card.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-season-card',
+    templateUrl: './season-card.component.html',
+    styleUrls: ['./season-card.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent]
 })
 export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() season?: ISeason;

@@ -9,6 +9,10 @@ import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
 import { IMapInit } from 'src/app/services/map.service';
+import { TableColumnDirective } from '../table/table-column/table-column.directive';
+import { TableHeaderDirective } from '../table/table-column/table-header.directive';
+import { TableComponent } from '../table/table.component';
+import { MatIcon } from '@angular/material/icon';
 
 interface IRow {
   area: IArea;
@@ -22,11 +26,13 @@ interface IMapWingedLight {
 }
 
 @Component({
-  selector: 'app-children-of-light',
-  templateUrl: './children-of-light.component.html',
-  styleUrls: ['./children-of-light.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [MapInstanceService]
+    selector: 'app-children-of-light',
+    templateUrl: './children-of-light.component.html',
+    styleUrls: ['./children-of-light.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    providers: [MapInstanceService],
+    standalone: true,
+    imports: [MatIcon, TableComponent, TableHeaderDirective, TableColumnDirective]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;

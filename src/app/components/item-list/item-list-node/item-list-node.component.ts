@@ -3,12 +3,18 @@ import { SubscriptionLike } from 'rxjs';
 import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { NgTemplateOutlet, NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-item-list-node',
-  templateUrl: './item-list-node.component.html',
-  styleUrl: './item-list-node.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-list-node',
+    templateUrl: './item-list-node.component.html',
+    styleUrl: './item-list-node.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgbTooltip, ItemIconComponent, MatIcon, NgTemplateOutlet, NgIf]
 })
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() node!: IItemListNode;

@@ -1,17 +1,20 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy } from '@angular/core';
-import { GuardResult, MaybeAsync, Router, UrlTree } from '@angular/router';
+import { GuardResult, MaybeAsync, Router, UrlTree, RouterOutlet, RouterLink } from '@angular/router';
 import { SubscriptionLike, delay, forkJoin, of } from 'rxjs';
 import { canActivateData } from 'src/app/guards/can-activate-data';
 import { canActivateStorage } from 'src/app/guards/can-activate-storage';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storage-provider.interface';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-main-layout',
+    templateUrl: './main-layout.component.html',
+    styleUrl: './main-layout.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatIcon, RouterOutlet, RouterLink]
 })
 export class MainLayoutComponent implements OnDestroy {
 

@@ -6,11 +6,21 @@ import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { IAPService } from 'src/app/services/iap.service';
+import { ItemIconComponent } from '../items/item-icon/item-icon.component';
+import { MatIcon } from '@angular/material/icon';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf } from '@angular/common';
+import { ItemListComponent } from '../item-list/item-list/item-list.component';
+import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
+import { CardComponent } from '../layout/card/card.component';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-shops',
-  templateUrl: './shops.component.html',
-  styleUrls: ['./shops.component.less']
+    selector: 'app-shops',
+    templateUrl: './shops.component.html',
+    styleUrls: ['./shops.component.less'],
+    standalone: true,
+    imports: [WikiLinkComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgFor, NgbTooltip, MatIcon, NgIf, ItemIconComponent]
 })
 export class ShopsComponent {
   iapShops: Array<IShop>;

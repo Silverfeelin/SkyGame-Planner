@@ -13,7 +13,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EditorEventInstanceComponent } from './components/editor-event-instance/editor-event-instance.component';
 
 @NgModule({
-  declarations: [
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatIconModule,
+    NgbModule,
+    EditorRoutingModule,
     EditorDashboardComponent,
     EditorTravelingSpiritComponent,
     EditorTreeComponent,
@@ -21,13 +26,6 @@ import { EditorEventInstanceComponent } from './components/editor-event-instance
     EditorItemComponent,
     EditorOrderComponent,
     EditorEventInstanceComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    MatIconModule,
-    NgbModule,
-    EditorRoutingModule
   ]
 })
 export class EditorModule { }

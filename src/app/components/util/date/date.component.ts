@@ -4,12 +4,16 @@ import { filter } from 'rxjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { EventService } from 'src/app/services/event.service';
+import { DateTimePipe } from '../../../pipes/date-time.pipe';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-date',
-  templateUrl: './date.component.html',
-  styleUrls: ['./date.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-date',
+    templateUrl: './date.component.html',
+    styleUrls: ['./date.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, DateTimePipe]
 })
 export class DateComponent implements OnChanges, OnDestroy {
   @Input() date: DateTime | undefined;

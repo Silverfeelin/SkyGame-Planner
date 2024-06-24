@@ -84,8 +84,19 @@ import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/el
 import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    LayoutModule,
+    MatIconModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     DateTimePipe,
     ItemTypePipe,
     PercentagePipe,
@@ -160,19 +171,6 @@ import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tr
     AreaComponent,
     ElusiveSpiritsComponent,
     SpiritTreeViewComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NgbModule,
-    LayoutModule,
-    MatIconModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      registrationStrategy: 'registerWhenStable:30000'
-    })
   ],
   exports: [
     ItemIconComponent
