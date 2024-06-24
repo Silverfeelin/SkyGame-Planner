@@ -270,6 +270,7 @@ export class EventCalculatorComponent {
       c: 0,
       h: 0,
       wn: [],
+      ln: [],
     };
 
     this.includesToday = parsed.it === today;

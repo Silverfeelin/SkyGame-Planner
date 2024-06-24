@@ -275,8 +275,7 @@
       "name": "Days of Color",
       "shortName": "Color",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/feb1f282dd/colorgeyser_header.jpg",
-      "imagePosition": "top",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/14eeb8b033/color24_header.jpg",
       "instances": [
         {
           "guid": "7H5NE9-K72",
@@ -288,6 +287,19 @@
           ],
           "spirits": [
             { "guid": "aPWzZTzbkC", "spirit": "uPzMm5H7ag", "tree": "RcVnZHdgZ6" }
+          ]
+        },
+        {
+          "guid": "Nw1QP8vccL",
+          "date": "2024-06-24",
+          "endDate": "2024-07-07",
+          "currencyPerDay": 5,
+          "spirits": [
+            { "guid": "Db5e396lo0", "spirit": "zS4AGUTIgF", "tree": "3YJalWDFZ7" }
+          ],
+          "shops": [
+            "B80yCK6Rp4",
+            "571vNLmi6N"
           ]
         }
       ]
