@@ -48,12 +48,11 @@
               "leaflet",
               "panzoom"
             ],
-            "browser": "src/main.ts",
-            "serviceWorker": "ngsw-config.json"
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
-              "serviceWorker": true,
+              "serviceWorker": "ngsw-config.json",
               "budgets": [
                 {
                   "type": "initial",
@@ -70,7 +69,6 @@
               "sourceMap": true
             },
             "development": {
-              "serviceWorker": false,
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
