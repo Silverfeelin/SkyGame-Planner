@@ -1909,6 +1909,14 @@
       "type": "Event",
       "name": "Belonging Ancestor"
     },
+    // #region
+    // Days of Color
+    {
+      "guid": "L8hK6RLQa_",
+      "type": "Event",
+      "name": "Days of Color Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Days-of-Color-Guide-2024.png"
+    },
     // Firework Festival
     {
       "guid": "NO6tqAn4m3",
