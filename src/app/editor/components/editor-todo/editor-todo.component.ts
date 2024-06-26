@@ -16,6 +16,7 @@ import { DataService } from '@app/services/data.service';
 export class EditorTodoComponent {
   itemsWithoutPreview: Array<IItem> = [];
   itemsWithoutWiki: Array<IItem> = [];
+  spiritsWithoutPreview: Array<ISpirit> = [];
   spiritsWithoutWiki: Array<ISpirit> = [];
 
   constructor(
@@ -41,6 +42,7 @@ export class EditorTodoComponent {
     ItemHelper.sortItems(this.itemsWithoutWiki);
 
     spirits.forEach(s => {
+      if (!s.imageUrl) { this.spiritsWithoutPreview.push(s); }
       if (!s._wiki?.href) { this.spiritsWithoutWiki.push(s); }
     });
   }

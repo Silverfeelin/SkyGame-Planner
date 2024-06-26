@@ -30,6 +30,16 @@
     </div>
   </app-card>
 
+  <app-card [title]="'Missing spirit image'">
+    <div class="grid grid-1">
+      @for (spirit of spiritsWithoutPreview; track spirit.guid) {
+        <div class="container">
+          <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
+        </div>
+      }
+    </div>
+  </app-card>
+
   <app-card [title]="'Missing spirit wiki link'">
     <div class="grid grid-1">
       @for (spirit of spiritsWithoutWiki; track spirit.guid) {
