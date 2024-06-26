@@ -40,6 +40,17 @@
           List
         </span>
       </a>
+      <!-- Dailies -->
+      @if (sections['dailies']) {
+        <div [style.order]="sections['dailies']">
+          <app-discord-link [link]="'https://discord.com/channels/736912435654688868/801778605486374943'"
+            [aStyle]="'text-decoration: none;'" [aClass]="'item link'"
+          >
+            <img class="menu-icon icon" src="assets/external/discord-mark-white.svg" loading="lazy">
+            <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
+          </app-discord-link>
+        </div>
+      }
       <!-- Check-in -->
       <div *ngIf="sections['checkin']" (click)="checkin()"
         class="item checkin" [class.active]="checkedIn" [style.order]="sections['checkin']"

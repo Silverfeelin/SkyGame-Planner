@@ -53,16 +53,16 @@
 
 <div class="grid grid-2 mt">
   <!-- Ongoing -->
-  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'checkin', 'calculator', 'cost']}"></app-season-card>
+  <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-season-card>
   <ng-container *ngFor="let eventInstance of eventInstances">
-    <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'calculator', 'cost']}"></app-event-card>
+    <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-event-card>
   </ng-container>
   <app-spirit-card *ngIf="ts" [spirit]="ts.spirit" [ts]="ts" [tree]="ts.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
     <div title><h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{ts.number}})</span></h2></div>
   </app-spirit-card>
   <app-returning-spirit-card *ngIf="rs" [return]="rs"></app-returning-spirit-card>
   <!-- Future -->
-  <app-season-card *ngIf="!season && futureSeason" [season]="futureSeason" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-season-card>
+  <app-season-card *ngIf="!season && futureSeason" [season]="futureSeason" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-season-card>
   <app-event-card *ngIf="futureEventInstance" [event]="futureEventInstance.event" [instance]="futureEventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
   <app-spirit-card *ngIf="futureTs" [spirit]="futureTs.spirit" [ts]="futureTs" [tree]="futureTs.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
     <div title><h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{futureTs.number}})</span></h2></div>
