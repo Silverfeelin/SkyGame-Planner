@@ -7,12 +7,17 @@ import { ISeason } from 'src/app/interfaces/season.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
+import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-season-calculator',
-  templateUrl: './season-calculator.component.html',
-  styleUrl: './season-calculator.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-season-calculator',
+    templateUrl: './season-calculator.component.html',
+    styleUrl: './season-calculator.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, MatIcon, SpiritTreeComponent]
 })
 export class SeasonCalculatorComponent implements OnInit {
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;

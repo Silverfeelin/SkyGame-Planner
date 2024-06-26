@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ItemType } from '../interfaces/item.interface';
 
 @Pipe({
-  name: 'itemType'
+    name: 'itemType',
+    standalone: true
 })
 export class ItemTypePipe implements PipeTransform {
   transform(type: ItemType): string {

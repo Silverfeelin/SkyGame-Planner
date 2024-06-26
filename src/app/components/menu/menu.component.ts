@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import { DataService } from 'src/app/services/data.service';
-import { Router } from '@angular/router';
+import { Router, RouterLinkActive, RouterLink } from '@angular/router';
 import { EventService } from 'src/app/services/event.service';
+import { MatIcon } from '@angular/material/icon';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.less']
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.less'],
+    standalone: true,
+    imports: [NgIf, NgbTooltip, MatIcon, RouterLinkActive, RouterLink]
 })
 export class MenuComponent {
   wide = false;

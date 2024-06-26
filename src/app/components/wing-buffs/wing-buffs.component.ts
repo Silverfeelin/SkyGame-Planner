@@ -1,16 +1,26 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { ItemType } from 'src/app/interfaces/item.interface';
 import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { SpiritTypePipe } from '../../pipes/spirit-type.pipe';
+import { TableFooterDirective } from '../table/table-column/table-footer.directive';
+import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
+import { TableColumnDirective } from '../table/table-column/table-column.directive';
+import { TableHeaderDirective } from '../table/table-column/table-header.directive';
+import { TableComponent } from '../table/table.component';
+import { NgIf } from '@angular/common';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-wing-buffs',
-  templateUrl: './wing-buffs.component.html',
-  styleUrls: ['./wing-buffs.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-wing-buffs',
+    templateUrl: './wing-buffs.component.html',
+    styleUrls: ['./wing-buffs.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [WikiLinkComponent, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, TableFooterDirective, SpiritTypePipe]
 })
 export class WingBuffsComponent implements OnInit {
   type?: SpiritType;

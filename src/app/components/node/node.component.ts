@@ -8,13 +8,19 @@ import { EventService } from 'src/app/services/event.service';
 import { NodeService } from 'src/app/services/node.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { HighlightType } from 'src/app/types/highlight';
+import { MatIcon } from '@angular/material/icon';
+import { ItemIconComponent } from '../items/item-icon/item-icon.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgIf } from '@angular/common';
 
 export type NodeAction = 'unlock' | 'find' | 'favourite';
 
 @Component({
-  selector: 'app-node',
-  templateUrl: './node.component.html',
-  styleUrls: ['./node.component.less']
+    selector: 'app-node',
+    templateUrl: './node.component.html',
+    styleUrls: ['./node.component.less'],
+    standalone: true,
+    imports: [NgIf, NgbTooltip, ItemIconComponent, MatIcon]
 })
 export class NodeComponent implements OnChanges {
   @Input() node!: INode;

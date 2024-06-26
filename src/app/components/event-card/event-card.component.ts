@@ -8,6 +8,12 @@ import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { EventService } from 'src/app/services/event.service';
+import { CostComponent } from '../util/cost/cost.component';
+import { RouterLink } from '@angular/router';
+import { DaysLeftComponent } from '../util/days-left/days-left.component';
+import { DateComponent } from '../util/date/date.component';
+import { MatIcon } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
 
 type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'checkin' | 'calculator';
 export interface EventCardOptions {
@@ -15,10 +21,12 @@ export interface EventCardOptions {
 }
 
 @Component({
-  selector: 'app-event-card',
-  templateUrl: './event-card.component.html',
-  styleUrls: ['./event-card.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-event-card',
+    templateUrl: './event-card.component.html',
+    styleUrls: ['./event-card.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent]
 })
 export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() event?: IEvent;

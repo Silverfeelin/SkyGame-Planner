@@ -3,6 +3,13 @@ import { CostHelper } from 'src/app/helpers/cost-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
+import { CostComponent } from '../util/cost/cost.component';
+import { DaysLeftComponent } from '../util/days-left/days-left.component';
+import { DateComponent } from '../util/date/date.component';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { NgIf, NgFor } from '@angular/common';
 
 type Section = 'img' | 'wiki' | 'date' | 'overview' | 'cost';
 export interface ReturningSpiritCardOptions {
@@ -10,10 +17,12 @@ export interface ReturningSpiritCardOptions {
 }
 
 @Component({
-  selector: 'app-returning-spirit-card',
-  templateUrl: './returning-spirit-card.component.html',
-  styleUrls: ['./returning-spirit-card.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-returning-spirit-card',
+    templateUrl: './returning-spirit-card.component.html',
+    styleUrls: ['./returning-spirit-card.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NgFor, RouterLink, MatIcon, WikiLinkComponent, DateComponent, DaysLeftComponent, CostComponent]
 })
 export class ReturningSpiritCardComponent implements OnInit, OnChanges {
   @Input() return?: IReturningSpirits;

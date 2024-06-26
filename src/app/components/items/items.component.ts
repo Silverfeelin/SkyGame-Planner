@@ -1,17 +1,24 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router, convertToParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, convertToParamMap, RouterLink } from '@angular/router';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { ItemIconComponent } from './item-icon/item-icon.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgIf, NgFor } from '@angular/common';
+import { ItemTypeSelectorComponent } from './item-type-selector/item-type-selector.component';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-items',
-  templateUrl: './items.component.html',
-  styleUrls: ['./items.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-items',
+    templateUrl: './items.component.html',
+    styleUrls: ['./items.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, ItemIconComponent]
 })
 export class ItemsComponent {
   type?: ItemType;

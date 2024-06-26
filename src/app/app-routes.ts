@@ -1,5 +1,4 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { CreditsComponent } from './components/credits/credits.component';
 import { EventInstanceComponent } from './components/event-instance/event-instance.component';
 import { EventComponent } from './components/event/event.component';
@@ -39,12 +38,11 @@ import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/o
 import { AreaComponent } from './components/areas/area/area.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/elusive-spirits.component';
-import { SpiritTreeComponent } from './components/spirit-tree/spirit-tree.component';
 import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'no-data', component: NoDataComponent },
   { path: 'storage', component: StorageComponent },
   { path: 'dropbox-auth', component: DropboxAuthComponent, title: title('Dropbox') },
@@ -97,7 +95,7 @@ const routes: Routes = [
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
-          { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) }
+          { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) }
         ]
       },
       /* Routes without menu. */
@@ -105,9 +103,3 @@ const routes: Routes = [
     ]
   }
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }

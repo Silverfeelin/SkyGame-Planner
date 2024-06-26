@@ -7,6 +7,14 @@ import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
+import { CostComponent } from '../util/cost/cost.component';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { DaysLeftComponent } from '../util/days-left/days-left.component';
+import { DateComponent } from '../util/date/date.component';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
+import { NgIf } from '@angular/common';
 
 type Section = 'img' | 'overview' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost' | 'content';
 export interface SpiritCardOptions {
@@ -15,10 +23,12 @@ export interface SpiritCardOptions {
 }
 
 @Component({
-  selector: 'app-spirit-card',
-  templateUrl: './spirit-card.component.html',
-  styleUrls: ['./spirit-card.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-spirit-card',
+    templateUrl: './spirit-card.component.html',
+    styleUrls: ['./spirit-card.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, SpiritTypeIconComponent, RouterLink, MatIcon, DateComponent, DaysLeftComponent, WikiLinkComponent, CostComponent]
 })
 export class SpiritCardComponent implements OnInit, OnChanges {
   @Input() spirit?: ISpirit;

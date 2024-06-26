@@ -3,6 +3,10 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import createPanZoom, { PanZoom } from 'panzoom';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { IconPickerComponent } from '../../util/icon-picker/icon-picker.component';
+import { NgFor, NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
 
 interface IImage {
   x: number;
@@ -17,10 +21,12 @@ interface ICoord {
 }
 
 @Component({
-  selector: 'app-collage',
-  templateUrl: './collage.component.html',
-  styleUrls: ['./collage.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-collage',
+    templateUrl: './collage.component.html',
+    styleUrls: ['./collage.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FirefoxClipboardItemComponent, RouterLink, MatIcon, NgFor, NgbTooltip, NgIf, IconPickerComponent]
 })
 export class CollageComponent implements AfterViewInit {
   @ViewChild('ttCopy', { static: true }) private readonly _ttCopy!: NgbTooltip;

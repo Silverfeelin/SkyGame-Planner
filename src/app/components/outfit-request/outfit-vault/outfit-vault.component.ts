@@ -9,6 +9,11 @@ import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { ItemTypePipe } from '../../../pipes/item-type.pipe';
+import { FormsModule } from '@angular/forms';
+import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
+import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
 
 interface IApiOutfits {
   items: Array<IApiOutfit>
@@ -45,10 +50,12 @@ type ShowMode = 'list' | 'result' | 'submit';
 
 
 @Component({
-  selector: 'app-outfit-vault',
-  templateUrl: './outfit-vault.component.html',
-  styleUrls: ['./outfit-vault.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-outfit-vault',
+    templateUrl: './outfit-vault.component.html',
+    styleUrls: ['./outfit-vault.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatIcon, NgTemplateOutlet, NgFor, NgIf, NgbTooltip, ItemIconComponent, FormsModule, ItemTypePipe]
 })
 export class OutfitVaultComponent {
   @ViewChild('searchInput', { static: true }) input!: ElementRef<HTMLInputElement>;

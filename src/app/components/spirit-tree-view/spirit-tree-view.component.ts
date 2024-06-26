@@ -2,12 +2,15 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute } from '@angular/router';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
+import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
 
 @Component({
-  selector: 'app-spirit-tree-view',
-  templateUrl: './spirit-tree-view.component.html',
-  styleUrl: './spirit-tree-view.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-spirit-tree-view',
+    templateUrl: './spirit-tree-view.component.html',
+    styleUrl: './spirit-tree-view.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [SpiritTreeComponent]
 })
 export class SpiritTreeViewComponent {
   tree?: ISpiritTree;

@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { DropboxAuth } from 'dropbox';
-
-const REDIRECT_URI = location.origin + '/dropbox-auth';
-const CLIENT_ID = '5slqiqhhxcxjiqr';
+import { NgIf } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { OAuth2Client, generateCodeVerifier } from '@badgateway/oauth2-client';
+import { DropboxService } from 'src/app/services/dropbox.service';
 
 interface DropboxAuthResponse {
   access_token: string;
@@ -15,14 +17,14 @@ interface DropboxAuthResponse {
 }
 
 @Component({
-  selector: 'app-dropbox-auth',
-  templateUrl: './dropbox-auth.component.html',
-  styleUrls: ['./dropbox-auth.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-dropbox-auth',
+    templateUrl: './dropbox-auth.component.html',
+    styleUrls: ['./dropbox-auth.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, MatIcon, NgIf]
 })
 export class DropboxAuthComponent implements OnInit {
-  private _auth!: DropboxAuth;
-
   error?: string;
   errorDescription?: string;
 
@@ -30,6 +32,8 @@ export class DropboxAuthComponent implements OnInit {
   isUsingDropbox = localStorage.getItem('storage.type') === 'dropbox';
 
   constructor(
+    private readonly _dropboxService: DropboxService,
+    private readonly _http: HttpClient,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.resetAuth();
@@ -70,55 +74,28 @@ export class DropboxAuthComponent implements OnInit {
     return true;
   }
 
-  private setAuth(accessToken: string, refreshToken: string): void {
-    this._auth.setAccessToken(accessToken);
-    this._auth.setRefreshToken(refreshToken);
-  }
-
   private resetAuth(): void {
     // Reset auth.
     this.isAuthenticated = false;
-    this._auth = new DropboxAuth({
-      clientId: CLIENT_ID
-    });
   }
 
-  private authorize(): void {
-    this.resetAuth();
-    this._auth.getAuthenticationUrl(REDIRECT_URI, undefined, 'code', 'offline', undefined, 'none', true).then(authUrl => {
-      localStorage.setItem('dbx-codeVerifier', this._auth.getCodeVerifier());
-      window.location.href = authUrl.toString();
-    }).catch(e => {
-      this.resetAuth();
-      console.error(e);
-      alert('Something went wrong while redirecting you to Dropbox. Please report this problem if it happens after trying again later.');
-    });
+  private async authorize(): Promise<void> {
+    return this._dropboxService.authorize();
   }
 
   private setAccessCode(code: string): void {
-    const codeVerifier = localStorage.getItem('dbx-codeVerifier');
-    if (!codeVerifier) {
-      alert('No code verifier found. Please report this problem if it happens after trying again later.');
-      return;
-    }
-
-    this._auth.setCodeVerifier(codeVerifier);
-    this._auth.getAccessTokenFromCode(REDIRECT_URI, code).then(response => {
-      const result = response.result as DropboxAuthResponse;
-
-      localStorage.setItem('dbx-accessToken', result.access_token);
-      localStorage.setItem('dbx-refreshToken', result.refresh_token);
-
-      this.setAuth(result.access_token, result.refresh_token);
-      this.isAuthenticated = true;
-      localStorage.setItem('storage.type', 'dropbox');
-      this.isUsingDropbox = true;
-      this._changeDetectorRef.markForCheck();
-    }).catch(e => {
+    try {
+      this._dropboxService.setAccessCode(code);
+    } catch (e) {
       this.resetAuth();
       console.error(e);
       alert('Something went wrong while authenticating with Dropbox. Please report this problem if it happens after trying again later.');
-    });
+    }
+
+    this.isAuthenticated = true;
+    localStorage.setItem('storage.type', 'dropbox');
+    this.isUsingDropbox = true;
+    this._changeDetectorRef.markForCheck();
   }
 
   private removeAuth(): void {

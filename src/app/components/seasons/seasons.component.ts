@@ -3,11 +3,19 @@ import { DateHelper } from 'src/app/helpers/date-helper';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { SeasonCardComponent } from '../season-card/season-card.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-seasons',
-  templateUrl: './seasons.component.html',
-  styleUrls: ['./seasons.component.less']
+    selector: 'app-seasons',
+    templateUrl: './seasons.component.html',
+    styleUrls: ['./seasons.component.less'],
+    standalone: true,
+    imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, NgbTooltip, SeasonCardComponent]
 })
 export class SeasonsComponent implements OnInit {
   seasons!: Array<ISeason>;

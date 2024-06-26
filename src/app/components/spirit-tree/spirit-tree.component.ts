@@ -7,16 +7,23 @@ import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
-import { NodeAction } from '../node/node.component';
+import { NodeAction, NodeComponent } from '../node/node.component';
 import { DateTime } from 'luxon';
+import { CostComponent } from '../util/cost/cost.component';
+import { DateComponent } from '../util/date/date.component';
+import { NgFor, NgTemplateOutlet } from '@angular/common';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { MatIcon } from '@angular/material/icon';
 
 const signalAction = signal<NodeAction>('unlock');
 
 @Component({
-  selector: 'app-spirit-tree',
-  templateUrl: './spirit-tree.component.html',
-  styleUrls: ['./spirit-tree.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-spirit-tree',
+    templateUrl: './spirit-tree.component.html',
+    styleUrls: ['./spirit-tree.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, DateComponent, CostComponent, NodeComponent]
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;

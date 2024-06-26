@@ -1,7 +1,8 @@
 import { Directive, Input, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[appTableHeader]'
+    selector: '[appTableHeader]',
+    standalone: true
 })
 export class TableHeaderDirective {
   @Input() fit: boolean = false;

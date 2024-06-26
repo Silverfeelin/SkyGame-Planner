@@ -4,12 +4,17 @@ import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IItem, ItemSubicon } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
+import { MatIcon } from '@angular/material/icon';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { IconComponent } from '../../../icon/icon.component';
 
 @Component({
-  selector: 'app-item-subicons',
-  templateUrl: './item-subicons.component.html',
-  styleUrls: ['./item-subicons.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-subicons',
+    templateUrl: './item-subicons.component.html',
+    styleUrls: ['./item-subicons.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [IconComponent, NgbTooltip, MatIcon]
 })
 export class ItemSubIconsComponent implements OnChanges, OnDestroy {
   @Input() item?: IItem;

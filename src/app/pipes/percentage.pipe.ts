@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'percentage'
+    name: 'percentage',
+    standalone: true
 })
 export class PercentagePipe implements PipeTransform {
   transform(n: number, min: number, max: number): number {

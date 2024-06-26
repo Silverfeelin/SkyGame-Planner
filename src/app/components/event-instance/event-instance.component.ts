@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { SubscriptionLike } from 'rxjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -11,11 +11,23 @@ import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
 import { TitleService } from 'src/app/services/title.service';
+import { ItemIconComponent } from '../items/item-icon/item-icon.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { ItemListComponent } from '../item-list/item-list/item-list.component';
+import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
+import { DurationComponent } from '../util/duration/duration.component';
+import { DaysLeftComponent } from '../util/days-left/days-left.component';
+import { MatIcon } from '@angular/material/icon';
+import { NgIf, NgFor } from '@angular/common';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { DateComponent } from '../util/date/date.component';
 
 @Component({
-  selector: 'app-event-instance',
-  templateUrl: './event-instance.component.html',
-  styleUrls: ['./event-instance.component.less']
+    selector: 'app-event-instance',
+    templateUrl: './event-instance.component.html',
+    styleUrls: ['./event-instance.component.less'],
+    standalone: true,
+    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent]
 })
 export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;

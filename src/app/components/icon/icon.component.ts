@@ -2,12 +2,16 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, OnChanges, Simp
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { SubscriptionLike } from 'rxjs';
 import { ImageService } from 'src/app/services/image.service';
+import { MatIcon } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-icon',
-  templateUrl: './icon.component.html',
-  styleUrls: ['./icon.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-icon',
+    templateUrl: './icon.component.html',
+    styleUrls: ['./icon.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, MatIcon]
 })
 export class IconComponent implements OnChanges {
   @Input() src?: string;

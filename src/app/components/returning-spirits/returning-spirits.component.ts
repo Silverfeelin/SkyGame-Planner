@@ -2,11 +2,22 @@ import { Component } from '@angular/core';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
+import { DateComponent } from '../util/date/date.component';
+import { IconComponent } from '../icon/icon.component';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { TableColumnDirective } from '../table/table-column/table-column.directive';
+import { TableHeaderDirective } from '../table/table-column/table-header.directive';
+import { TableComponent } from '../table/table.component';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-returning-spirits',
-  templateUrl: './returning-spirits.component.html',
-  styleUrls: ['./returning-spirits.component.less']
+    selector: 'app-returning-spirits',
+    templateUrl: './returning-spirits.component.html',
+    styleUrls: ['./returning-spirits.component.less'],
+    standalone: true,
+    imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, NgFor, NgbTooltip, NgIf, IconComponent, DateComponent]
 })
 export class ReturningSpiritsComponent {
   rows: Array<any> = [];

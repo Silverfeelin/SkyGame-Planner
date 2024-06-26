@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { SpiritType } from '../interfaces/spirit.interface';
 
 @Pipe({
-  name: 'spiritType'
+    name: 'spiritType',
+    standalone: true
 })
 export class SpiritTypePipe implements PipeTransform {
   transform(type: SpiritType): string {

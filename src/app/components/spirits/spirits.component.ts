@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -11,15 +11,25 @@ import { ISeason } from 'src/app/interfaces/season.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { MatIcon } from '@angular/material/icon';
+import { TableFooterDirective } from '../table/table-column/table-footer.directive';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
+import { TableColumnDirective } from '../table/table-column/table-column.directive';
+import { TableHeaderDirective } from '../table/table-column/table-header.directive';
+import { TableComponent } from '../table/table.component';
+import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 type ViewMode = 'grid' | 'cards';
 type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
 
 @Component({
-  selector: 'app-spirits',
-  templateUrl: './spirits.component.html',
-  styleUrls: ['./spirits.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-spirits',
+    templateUrl: './spirits.component.html',
+    styleUrls: ['./spirits.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, NgbTooltip, TableFooterDirective, NgFor, MatIcon, NgSwitch, NgSwitchCase, NgSwitchDefault]
 })
 export class SpiritsComponent {
   mode: ViewMode = 'cards';

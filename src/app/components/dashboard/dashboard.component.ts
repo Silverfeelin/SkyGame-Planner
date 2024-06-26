@@ -6,11 +6,22 @@ import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interfac
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { ReturningSpiritCardComponent } from '../returning-spirit-card/returning-spirit-card.component';
+import { SpiritCardComponent } from '../spirit-card/spirit-card.component';
+import { EventCardComponent } from '../event-card/event-card.component';
+import { SeasonCardComponent } from '../season-card/season-card.component';
+import { DashboardWishlistComponent } from './dashboard-wishlist/dashboard-wishlist.component';
+import { NgIf, NgFor } from '@angular/common';
+import { SearchComponent } from '../search/search.component';
+import { MatIcon } from '@angular/material/icon';
+import { ClockComponent } from '../clock/clock.component';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.less']
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.less'],
+    standalone: true,
+    imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent]
 })
 export class DashboardComponent implements OnInit {
 

@@ -1,17 +1,24 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { TitleService } from 'src/app/services/title.service';
+import { MatIcon } from '@angular/material/icon';
+import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
+import { ItemSubIconsComponent } from '../item-icon/item-subicons/item-subicons.component';
+import { ItemIconComponent } from '../item-icon/item-icon.component';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item',
+    templateUrl: './item.component.html',
+    styleUrls: ['./item.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, MatIcon, RouterLink]
 })
 export class ItemComponent implements OnInit {
   item?: IItem;

@@ -5,6 +5,10 @@ import { SettingService } from 'src/app/services/setting.service';
 import { DateTime } from 'luxon';
 import { StorageService } from 'src/app/services/storage.service';
 import { IStorageExport } from 'src/app/services/storage/storage-provider.interface';
+import { DateTimePipe } from '../../pipes/date-time.pipe';
+import { NgFor, LowerCasePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { MatIcon } from '@angular/material/icon';
 
 interface ITheme {
   name: string;
@@ -20,9 +24,11 @@ interface IExport {
 }
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.less']
+    selector: 'app-settings',
+    templateUrl: './settings.component.html',
+    styleUrls: ['./settings.component.less'],
+    standalone: true,
+    imports: [MatIcon, RouterLink, NgFor, LowerCasePipe, DateTimePipe]
 })
 export class SettingsComponent {
   storageProviderName: string;

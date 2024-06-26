@@ -1,15 +1,20 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { IArea } from 'src/app/interfaces/area.interface';
 import { IRealm } from 'src/app/interfaces/realm.interface';
 import { DataService } from 'src/app/services/data.service';
 import { TitleService } from 'src/app/services/title.service';
+import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
+import { MatIcon } from '@angular/material/icon';
+import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-area',
-  templateUrl: './area.component.html',
-  styleUrl: './area.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-area',
+    templateUrl: './area.component.html',
+    styleUrl: './area.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [WikiLinkComponent, RouterLink, MatIcon, SpiritTypeIconComponent]
 })
 export class AreaComponent {
   area!: IArea;

@@ -1,21 +1,24 @@
 import { Component } from '@angular/core'
-import { MatIconRegistry } from '@angular/material/icon';
+import { MatIconRegistry, MatIcon } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DateHelper } from './helpers/date-helper';
 import { EventService } from './services/event.service';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { BroadcastService } from './services/broadcast.service';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.less'],
+    standalone: true,
+    imports: [MatIcon, NgIf, RouterOutlet, RouterLink]
 })
 export class AppComponent {
   dataLoss = false;
-  isPagesDev = location.host.endsWith('.pages.dev');
+  isPagesDev = location.host === 'sky-planner.pages.dev'; // only target main deployment.
   pagesRedirectUrl?: URL;
 
   constructor(

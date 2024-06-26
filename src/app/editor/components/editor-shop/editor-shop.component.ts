@@ -4,11 +4,15 @@ import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { IIAP } from 'src/app/interfaces/iap.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-editor-shop',
-  templateUrl: './editor-shop.component.html',
-  styleUrls: ['./editor-shop.component.less']
+    selector: 'app-editor-shop',
+    templateUrl: './editor-shop.component.html',
+    styleUrls: ['./editor-shop.component.less'],
+    standalone: true,
+    imports: [FormsModule, NgIf]
 })
 export class EditorShopComponent {
   copyShopGuid?: string;

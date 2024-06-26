@@ -1,11 +1,16 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ItemType } from 'src/app/interfaces/item.interface';
+import { MatIcon } from '@angular/material/icon';
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-item-type-selector',
-  templateUrl: './item-type-selector.component.html',
-  styleUrls: ['./item-type-selector.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-type-selector',
+    templateUrl: './item-type-selector.component.html',
+    styleUrls: ['./item-type-selector.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, NgbTooltip, MatIcon]
 })
 export class ItemTypeSelectorComponent implements OnInit, OnChanges {
   @Input() type?: ItemType;

@@ -1,13 +1,16 @@
 import { ChangeDetectionStrategy, Component, Injector, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 import { StorageProviderFactory } from 'src/app/services/storage/storage-provider-factory';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-storage',
-  templateUrl: './storage.component.html',
-  styleUrl: './storage.component.less',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-storage',
+    templateUrl: './storage.component.html',
+    styleUrl: './storage.component.less',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [MatIcon, RouterLink]
 })
 export class StorageComponent {
   errorMessage?: string;

@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
 import L from 'leaflet';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -14,13 +14,22 @@ import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
 import { IMapInit } from 'src/app/services/map.service';
 import { TitleService } from 'src/app/services/title.service';
+import { PercentagePipe } from '../../../pipes/percentage.pipe';
+import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
+import { RealmConstellationComponent } from '../realm-constellation/realm-constellation.component';
+import { NgIf, NgFor } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
+import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-realm',
-  templateUrl: './realm.component.html',
-  styleUrls: ['./realm.component.less'],
-  providers: [MapInstanceService],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-realm',
+    templateUrl: './realm.component.html',
+    styleUrls: ['./realm.component.less'],
+    providers: [MapInstanceService],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [WikiLinkComponent, RouterLink, SpiritTypeIconComponent, MatIcon, NgIf, RealmConstellationComponent, NgFor, SpiritTreeComponent, PercentagePipe]
 })
 export class RealmComponent implements OnInit, OnDestroy {
   @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef;

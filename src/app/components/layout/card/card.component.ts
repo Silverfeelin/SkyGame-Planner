@@ -1,10 +1,14 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-card',
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgIf, MatIcon]
 })
 export class CardComponent implements AfterViewInit {
   @Input() title?: string;

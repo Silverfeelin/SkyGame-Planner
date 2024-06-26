@@ -3,6 +3,9 @@ import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
+import { DateTimePipe } from '../../../pipes/date-time.pipe';
+import { MatIcon } from '@angular/material/icon';
+import { SpiritCardComponent } from '../../spirit-card/spirit-card.component';
 
 interface ILastVisit {
   spirit: ISpirit;
@@ -13,10 +16,12 @@ interface ILastVisit {
 }
 
 @Component({
-  selector: 'app-elusive-spirits',
-  templateUrl: './elusive-spirits.component.html',
-  styleUrl: './elusive-spirits.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-elusive-spirits',
+    templateUrl: './elusive-spirits.component.html',
+    styleUrl: './elusive-spirits.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [SpiritCardComponent, MatIcon, DateTimePipe]
 })
 export class ElusiveSpiritsComponent {
   spirits!: Array<ISpirit>;

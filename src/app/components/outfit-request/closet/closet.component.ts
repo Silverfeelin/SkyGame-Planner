@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -16,6 +16,12 @@ import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
+import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
+import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
+import { CardComponent } from '../../layout/card/card.component';
+import { MatIcon } from '@angular/material/icon';
+import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
+import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -37,10 +43,12 @@ const _aHide = 0.1;
 const _aHalfHide = 0.4;
 
 @Component({
-  selector: 'app-closet',
-  templateUrl: './closet.component.html',
-  styleUrls: ['./closet.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-closet',
+    templateUrl: './closet.component.html',
+    styleUrls: ['./closet.component.less'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [FirefoxClipboardItemComponent, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet]
 })
 export class ClosetComponent implements OnDestroy {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;

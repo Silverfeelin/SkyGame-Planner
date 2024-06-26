@@ -9,6 +9,9 @@ import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataJsonService } from 'src/app/services/data-json.service';
 import { DataService } from 'src/app/services/data.service';
+import { MatIcon } from '@angular/material/icon';
+import { NgFor, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 interface IFormNode {
   nw?: boolean;
@@ -23,9 +26,11 @@ interface IFormNode {
 }
 
 @Component({
-  selector: 'app-editor-traveling-spirit',
-  templateUrl: './editor-traveling-spirit.component.html',
-  styleUrls: ['./editor-traveling-spirit.component.less']
+    selector: 'app-editor-traveling-spirit',
+    templateUrl: './editor-traveling-spirit.component.html',
+    styleUrls: ['./editor-traveling-spirit.component.less'],
+    standalone: true,
+    imports: [FormsModule, NgFor, NgIf, MatIcon]
 })
 export class EditorTravelingSpiritComponent {
   tsCount: number;

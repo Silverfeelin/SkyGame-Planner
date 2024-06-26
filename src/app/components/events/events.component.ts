@@ -3,11 +3,18 @@ import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
+import { EventCardComponent } from '../event-card/event-card.component';
+import { NgFor } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-events',
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.less']
+    selector: 'app-events',
+    templateUrl: './events.component.html',
+    styleUrls: ['./events.component.less'],
+    standalone: true,
+    imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, EventCardComponent]
 })
 export class EventsComponent {
   recurring!: Array<IEvent>;
