@@ -2,6 +2,14 @@ import { IEvent } from '../interfaces/event.interface';
 import { IItem, ItemType } from '../interfaces/item.interface';
 import { NodeHelper } from './node-helper';
 
+export const itemTypeOrder: Map<ItemType, number> = new Map([
+  [ItemType.Outfit, 1], [ItemType.Shoes, 2], [ItemType.Mask, 3], [ItemType.FaceAccessory, 4],
+  [ItemType.Necklace, 5], [ItemType.Hair, 6], [ItemType.Hat, 7], [ItemType.Cape, 8],
+  [ItemType.Held, 9], [ItemType.Furniture, 10], [ItemType.Prop, 11], [ItemType.Emote, 12],
+  [ItemType.Stance, 13], [ItemType.Call, 14], [ItemType.Music, 15], [ItemType.WingBuff, 16],
+  [ItemType.Quest, 17], [ItemType.Spell, 18], [ItemType.Special, 19]
+]);
+
 export class ItemHelper {
   static getItemsByEvent(eventName: string, type?: ItemType): Array<IItem> {
     const events = (window as any).skyData.eventConfig.items as Array<IEvent>;
@@ -32,6 +40,9 @@ export class ItemHelper {
   }
 
   static sorter(a: IItem, b: IItem): number {
+    if (a.type !== b.type) {
+      return (itemTypeOrder.get(a.type) || 99999) - (itemTypeOrder.get(b.type) || 99999);
+    }
     const n = (a.order || 99999) - (b.order || 99999);
     if (n !== 0) { return n; }
     if (a.level && b.level) { return a.level - b.level; }
