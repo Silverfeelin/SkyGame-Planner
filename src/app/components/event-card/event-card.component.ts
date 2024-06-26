@@ -14,8 +14,9 @@ import { DaysLeftComponent } from '../util/days-left/days-left.component';
 import { DateComponent } from '../util/date/date.component';
 import { MatIcon } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
+import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 
-type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'checkin' | 'calculator';
+type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface EventCardOptions {
   show?: Array<Section>;
 }
@@ -26,7 +27,7 @@ export interface EventCardOptions {
     styleUrls: ['./event-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent]
+    imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent, DiscordLinkComponent]
 })
 export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() event?: IEvent;

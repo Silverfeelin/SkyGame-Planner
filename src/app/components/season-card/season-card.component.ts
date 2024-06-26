@@ -14,8 +14,9 @@ import { DateComponent } from '../util/date/date.component';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 
-type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'checkin' | 'calculator';
+type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {
   show?: Array<Section>;
 }
@@ -26,7 +27,7 @@ export interface SeasonCardOptions {
     styleUrls: ['./season-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent]
+    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent, DiscordLinkComponent]
 })
 export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() season?: ISeason;

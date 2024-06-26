@@ -47,7 +47,6 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     return new Observable<void>(observer => {
       this._dropboxService.initialize();
       this._dropboxService.downloadFile('/data.json').then(data => {
-        debugger;
         this.onData(data);
         observer.next();
         observer.complete();
