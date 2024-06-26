@@ -1,5 +1,5 @@
-<a [href]="protocolLink ?? hrefLink" [class]="aClass" [style]="aStyle"
-  [attr.target]="protocolLink ? undefined : target"
+<a [href]="isWindows && protocolLink || hrefLink" [class]="aClass" [style]="aStyle"
+  [attr.target]="isWindows && protocolLink ? undefined : target"
 >
   <ng-content></ng-content>
 </a>
