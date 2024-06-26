@@ -15,13 +15,14 @@ import { NgIf, NgFor } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
 import { MatIcon } from '@angular/material/icon';
 import { ClockComponent } from '../clock/clock.component';
+import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 
 @Component({
-    selector: 'app-dashboard',
-    templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.less'],
-    standalone: true,
-    imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent]
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.less'],
+  standalone: true,
+  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent]
 })
 export class DashboardComponent implements OnInit {
 
@@ -34,6 +35,8 @@ export class DashboardComponent implements OnInit {
   eventInstances: Array<IEventInstance> = [];
   futureEventInstance?: IEventInstance;
 
+  dailyCheckedIn?: boolean;
+
   // Sky Wiki 5 year survey. Can be removed after 2024-07-09
   wikiBannerAvailable = DateTime.now().toUTC() >= DateTime.fromISO('2024-06-09T00:00:00Z') && DateTime.now().toUTC() < DateTime.fromISO('2024-07-09T00:00:00Z');
   wikiBannerDismissed = localStorage.getItem('dashboard.wiki5yr') === 'dismissed';
@@ -41,6 +44,7 @@ export class DashboardComponent implements OnInit {
   constructor(
     private readonly _dataService: DataService
   ) {
+    this.updateCheckin();
   }
 
   ngOnInit(): void {
@@ -78,8 +82,26 @@ export class DashboardComponent implements OnInit {
     this.futureEventInstance = futureEvents.at(0);
   }
 
+  dailyCheckIn(): void {
+    this.dailyCheckedIn = !this.dailyCheckedIn;
+    if (this.dailyCheckedIn) {
+      localStorage.setItem('daily.checkin', DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
+    } else {
+      localStorage.removeItem('daily.checkin');
+    }
+  }
+
+  private updateCheckin(): void {
+    const checkinDate = localStorage.getItem('daily.checkin');
+    this.dailyCheckedIn = false;
+    if (!checkinDate) { return; }
+    const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
+    this.dailyCheckedIn = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
+  }
+
   dismissWikiBanner(): void {
     this.wikiBannerDismissed = true;
     localStorage.setItem('dashboard.wiki5yr', 'dismissed')
   }
+
 }
