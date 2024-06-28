@@ -8,7 +8,7 @@
         @for (item of items; track item.guid) {
           @if (ongoingItems[item.guid]) {
             <a class="wishlist-item" [ngbTooltip]="item.name" container="body" [routerLink]="itemLinks[item.guid]?.route" [queryParams]="itemLinks[item.guid]?.extras?.queryParams">
-              <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['type', 'season', 'unlock']"></app-item-icon>
+              <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['type', 'season', 'iap', 'unlock']"></app-item-icon>
             </a>
           }
         }

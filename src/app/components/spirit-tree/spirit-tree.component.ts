@@ -14,6 +14,7 @@ import { DateComponent } from '../util/date/date.component';
 import { NgFor, NgTemplateOutlet } from '@angular/common';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { MatIcon } from '@angular/material/icon';
+import { DebugService } from '@app/services/debug.service';
 
 const signalAction = signal<NodeAction>('unlock');
 
@@ -59,6 +60,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   _itemSub?: SubscriptionLike;
 
   constructor(
+    private readonly _debugService: DebugService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef,
@@ -169,6 +171,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   }
 
   unlockAll(): void {
+    if (this._debugService.copyTree) {
+      navigator.clipboard.writeText(this.tree?.guid || '');
+      return;
+    }
     const itemNodes = this.nodes.filter(n => n.item);
     const items: Array<IItem> = itemNodes.map(n => n.item!);
     const shouldUnlock = items.filter(v => !v.unlocked).length;

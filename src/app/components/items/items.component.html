@@ -60,7 +60,7 @@
       </div>
       <ng-container *ngFor="let item of shownItems; let i = index">
         <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="filterByFav && !item.favourited">
-          <app-item-icon [item]="item" [subIcons]="['type', 'season', 'favourite', 'unlock']"
+          <app-item-icon [item]="item" [subIcons]="['type', 'season', 'iap', 'favourite', 'unlock']"
             [class.highlight]="item && item === selectedItem"
             [class.item-unlocked]="item.unlocked"
             [ngbTooltip]="item.name" container="body" placement="auto" >

@@ -7,6 +7,7 @@ export class DebugService {
   private _copyItem = false;
   private _copyNode = false;
   private _copyShop = false;
+  private _copyTree = false;
 
   constructor(
     private readonly _zone: NgZone
@@ -24,7 +25,6 @@ export class DebugService {
     return this._copyItem;
   }
 
-  // copyNode
   set copyNode(value: boolean) {
     this._zone.run(() => {
       this._copyNode = !!value;
@@ -43,5 +43,15 @@ export class DebugService {
 
   get copyShop(): boolean {
     return this._copyShop;
+  }
+
+  get copyTree(): boolean {
+    return this._copyTree;
+  }
+
+  set copyTree(value: boolean) {
+    this._zone.run(() => {
+      this._copyTree = !!value;
+    });
   }
 }

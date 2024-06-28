@@ -9,12 +9,12 @@
         <div class="info-grid-preview" *ngIf="item.previewUrl">
           <img [src]="item.previewUrl" class="preview-img" loading="lazy">
           <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"></app-item-icon>
-          <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'season', 'favourite', 'unlock']"></app-item-subicons>
+          <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'season', 'iap', 'favourite', 'unlock']"></app-item-subicons>
         </div>
         <!-- Icon -->
         <div class="info-grid-icon" *ngIf="!item.previewUrl">
           <app-item-icon [item]="item" [size]="'large'" [opaque]="true" [hoverGlow]="false"></app-item-icon>
-          <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'season', 'favourite', 'unlock']"></app-item-subicons>
+          <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'season', 'iap', 'favourite', 'unlock']"></app-item-subicons>
         </div>
         <!-- Wiki -->
         <app-wiki-link *ngIf="item._wiki?.href" [wiki]="item._wiki" [aClass]="'container'"></app-wiki-link>
