@@ -78,7 +78,8 @@ const nanoid10 = () => nanoid(10);
     }
   };
 
-  const getImage = el => {
+  const getImage = (el, format) => {
+    format ||= `{0}`;
     while (el) {
       if (el.tagName !== 'IMG') { el = el.parentElement; continue; }
 
@@ -86,7 +87,8 @@ const nanoid10 = () => nanoid(10);
       const i = src.indexOf('/revision/');
       if (i > 0) {
         src = src.substr(0, i);
-        navigator.clipboard.writeText(src);
+        const str = format.replace('{0}', src);
+        navigator.clipboard.writeText(str);
       }
       break;
     }
@@ -102,6 +104,8 @@ const nanoid10 = () => nanoid(10);
       case 'name': getName(el); break;
       case 'icon': getIcon(el); break;
       case 'preview': getPreview(el); break;
+      case 'image-p': getImage(el, `
+    "previewUrl": "{0}",`); break;
       case 'image': getImage(el); break;
     }
   };
@@ -201,6 +205,7 @@ const nanoid10 = () => nanoid(10);
       <button type="button" data-active="icon" onclick="sSetActive(this)">Copy icon</button>
       <button type="button" data-active="preview" onclick="sSetActive(this)">Copy preview</button>
       <button type="button" data-active="image" onclick="sSetActive(this)" style="margin-left: 10px;">Copy image</button>
+      <button type="button" data-active="image-p" onclick="sSetActive(this)" style="">P</button>
       <button type="button" onclick="sClear()" style="margin-left: 10px;">Clear</button>
     </div>
   </div>

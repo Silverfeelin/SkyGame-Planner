@@ -28,7 +28,7 @@ export class EditorTodoComponent {
     const previewItemTypes = new Set<ItemType>([
       ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
       ItemType.Necklace, ItemType.Hair, ItemType.Hat, ItemType.Cape,
-      ItemType.Held, ItemType.Furniture
+      ItemType.Held, ItemType.Furniture, ItemType.Prop
     ]);
 
     items.forEach(i => {

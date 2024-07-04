@@ -262,6 +262,7 @@
     "name": "Winter Pinecone Hair Clip",
     "type": "Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Winter-Pinecone-Headpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Winter-Pinecone-Headpiece.png",
     "order": 413
   },
   {
@@ -270,6 +271,7 @@
     "name": "Winter Feast Snowboard",
     "type": "Held",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Winter-Feast-Snowboard-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/Winter-Feast-Snowboard-prop.png",
     "order": 532
   },
   {
@@ -301,6 +303,7 @@
     "name": "Cozy Hermit Boots",
     "type": "Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Cozy-Hermit-Boots-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Cozy-Hermit-Boots.png",
     "order": 72
   },
   {
@@ -309,6 +312,7 @@
     "name": "Winter Quilted Cape",
     "type": "Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Winter-Quilted-Cape-back.png",
     "order": 718
   },
   {

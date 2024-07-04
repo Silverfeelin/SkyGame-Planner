@@ -497,6 +497,7 @@
     "type": "Furniture",
     "name": "Stone Bench",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Stone-Bench-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Stone-Bench-Prop.png",
     "order": 540
   },
   {
@@ -505,6 +506,7 @@
     "type": "Furniture",
     "name": "Stone Desk",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stone-Desk-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Stone-Desk-Prop.png",
     "order": 547
   },
   {
@@ -513,6 +515,7 @@
     "type": "Prop",
     "name": "Two Colors Pillow",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Decor-Pillow-Two-Colors-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Decor-Pillow-Two-Colors-Prop.png",
     "order": 564
   },
   {
@@ -530,6 +533,7 @@
     "type": "Furniture",
     "name": "Stone Armchair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Stone-Armchair-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Stone-Armchair-Prop.png",
     "order": 538
   },
   {
@@ -538,6 +542,7 @@
     "type": "Furniture",
     "name": "Stone Console Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Stone-Console-Table-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Stone-Console-Table-Prop.png",
     "order": 548
   },
   {
@@ -546,6 +551,7 @@
     "type": "Prop",
     "name": "Decor Folded Cloth",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Decor-Folded-Cloth-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Decor-Folded-Cloth-Prop.png",
     "order": 565
   },
   {
@@ -563,6 +569,7 @@
     "type": "Furniture",
     "name": "Stone Loveseat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Stone-Loveseat-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Stone-Loveseat-Prop.png",
     "order": 539
   },
   {
@@ -571,6 +578,7 @@
     "type": "Furniture",
     "name": "Stone Round Dining Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Stone-Round-Dining-Table-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stone-Round-Dining-Table-Prop.png",
     "order": 545
   },
   {
@@ -579,6 +587,7 @@
     "type": "Furniture",
     "name": "Stone Plant Stand",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Stone-Plant-Stand-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Stone-Plant-Stand-Prop.png",
     "order": 566
   },
   {
@@ -596,6 +605,7 @@
     "type": "Furniture",
     "name": "Stone Corner Sofa",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Stone-Sofa-Corner-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Stone-Sofa-Corner-Prop.png",
     "order": 541
   },
   {
@@ -604,6 +614,7 @@
     "type": "Furniture",
     "name": "Stone Square Dining Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Stone-Square-Dining-Table-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Stone-Square-Dining-Table-Prop.png",
     "order": 544
   },
   {
@@ -612,6 +623,7 @@
     "type": "Prop",
     "name": "Stone Wall Sconce",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Stone-Wall-Sconce-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Stone-Wall-Sconce-Prop.png",
     "order": 568
   },
   {
@@ -620,6 +632,7 @@
     "type": "Prop",
     "name": "Small Half Circle Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Small-Half-Circle-Rug-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Small-Half-Circle-Rug-Prop.png",
     "order": 572
   },
   {
@@ -664,6 +677,7 @@
     "type": "Furniture",
     "name": "Stone Kitchen Drawers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stone-Kitchen-Drawers-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Stone-Kitchen-Drawers-Prop.png",
     "order": 557
   },
   {
@@ -681,6 +695,7 @@
     "type": "Furniture",
     "name": "Stone Candle Light",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Stone-Candle-Light-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Stone-Candle-Light-Prop.png",
     "order": 567
   },
   {
@@ -689,6 +704,7 @@
     "type": "Prop",
     "name": "Medium Striped Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Medium-Stripes-Rug-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Medium-Stripes-Rug-Prop.png",
     "order": 574
   },
   {
@@ -948,6 +964,7 @@
     "type": "Prop",
     "name": "Stone Wall Mug Rack",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Stone-Wall-Mug-Rack-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Stone-Wall-Mug-Rack-Prop.png",
     "order": 559
   },
   {
@@ -956,6 +973,7 @@
     "type": "Prop",
     "name": "Stone Wall Towel Rack",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Stone-Wall-Towel-Rack-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Stone-Wall-Towel-Rack-Prop.png",
     "order": 555
   },
   {
