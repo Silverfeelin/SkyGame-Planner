@@ -13026,7 +13026,7 @@
   // #endregion
   // #endregion
   // #region The Little Prince
-  // Beckoning Ruler
+  // #region Beckoning Ruler
   {
     "guid": "WVTukTL1td",
     "item": "1YJ13EOwIQ",
@@ -13133,6 +13133,66 @@
     "item": "k0po-n3Zem",
     "c": 48
   },
+  // TS 117
+  {
+    "guid": "6Me1WwYg0z",
+    "item": "1YJ13EOwIQ",
+    "nw": "umxauoH_7v",
+    "n": "FvPHIKUgBV",
+    "ne": "KcRaZF94Vo"
+  },
+  {
+    "guid": "umxauoH_7v",
+    "item": "_ws5QlV4Tp",
+    "h": 4
+  },
+  {
+    "guid": "KcRaZF94Vo",
+    "item": "SmhmMgfVv_",
+    "c": 3
+  },
+  {
+    "guid": "FvPHIKUgBV",
+    "item": "FlYFVac0J9",
+    "c": 5,
+    "nw": "s4v2N3GROp",
+    "n": "4qdXtuWgaL"
+  },
+  {
+    "guid": "s4v2N3GROp",
+    "item": "_as4dWfvGY",
+    "c": 42
+  },
+  {
+    "guid": "4qdXtuWgaL",
+    "item": "we8k8-ow6p",
+    "ac": 2,
+    "n": "n8IBMd7YT5"
+  },
+  {
+    "guid": "n8IBMd7YT5",
+    "item": "W4i9e6Vt6d",
+    "h": 3,
+    "nw": "YUUlJ93jkp",
+    "n": "ygIcUixH6_"
+  },
+  {
+    "guid": "YUUlJ93jkp",
+    "item": "-4aZ5Mq9aw",
+    "h": 6
+  },
+  {
+    "guid": "ygIcUixH6_",
+    "item": "kVPk2WIqVT",
+    "c": 5,
+    "n": "KIqUq9BGxY"
+  },
+  {
+    "guid": "KIqUq9BGxY",
+    "item": "k0po-n3Zem",
+    "c": 48
+  },
+  // #endregion
   // #region Gloating Narcissist
   {
     "guid": "xT68D-1o-1",
