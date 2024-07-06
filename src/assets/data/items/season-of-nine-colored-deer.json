@@ -96,7 +96,7 @@
     "name": "Gift of the Nine-Colored Deer Antlers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Gift-of-the-Nine-Colored-Deer-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Gift-of-the-Nine-Colored-Deer-Facepiece.png",
-    "order": 223
+    "order": 224
   },
   {
     "id": 2047,
@@ -105,7 +105,7 @@
     "name": "Radiance of the Nine-Colored Deer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Radiance-of-the-Nine-Colored-Deer-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-of-the-Nine-Colored-Deer-back.png",
-    "order": 689
+    "order": 692
   },
   {
     "id": 2031,
@@ -145,7 +145,7 @@
     "name": "Nine-Colored Deer Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Nine-Colored-Deer-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Nine-Colored-Deer-Ultimate-Cape-back.png",
-    "order": 685
+    "order": 688
   },
   {
     "id": 1986,
@@ -317,7 +317,7 @@
     "name": "Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Hunter-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Hunter-Cape-back.png",
-    "order": 687
+    "order": 690
   },
   {
     "id": 2048,
@@ -402,7 +402,7 @@
     "name": "Feudal Lord Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Feudal-Lord-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Feudal-Lord-Cape-front.png",
-    "order": 688,
+    "order": 691,
     "group": "SeasonPass"
   },
   {
@@ -530,7 +530,7 @@
     "name": "Princess Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Princess-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Princess-Cape-back.png",
-    "order": 686,
+    "order": 689,
     "group": "SeasonPass"
   },
   {
