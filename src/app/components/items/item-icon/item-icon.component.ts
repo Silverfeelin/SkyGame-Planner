@@ -9,6 +9,7 @@ import { HighlightType } from 'src/app/types/highlight';
 import { ItemSubIconsComponent } from './item-subicons/item-subicons.component';
 import { IconComponent } from '../../icon/icon.component';
 import { NgIf } from '@angular/common';
+import { IItemListNode } from '@app/interfaces/item-list.interface';
 
 @Component({
     selector: 'app-item-icon',
@@ -22,6 +23,7 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: IItem;
   @Input() node?: INode;
   @Input() iap?: IIAP;
+  @Input() listNode?: IItemListNode;
   @Input() size: ItemSize = 'default';
   @Input() subIcons: Array<ItemSubicon> = [];
   @Input() lazy = true;

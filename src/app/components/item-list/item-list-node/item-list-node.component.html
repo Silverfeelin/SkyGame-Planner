@@ -1,6 +1,6 @@
 <div class="node" [ngbTooltip]="itemHover" placement="bottom" container="body">
   <div class="item" (click)="nodeClick($event)" [class.highlight]="highlight">
-    <app-item-icon [item]="node.item" [opaque]="opaque" [subIcons]="['unlock']"></app-item-icon>
+    <app-item-icon [item]="node.item" [opaque]="opaque" [listNode]="node" [subIcons]="['unlock']"></app-item-icon>
   </div>
   <div class="cost">
     @if (!cost) {

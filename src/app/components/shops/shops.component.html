@@ -20,6 +20,9 @@
 @if (nestingWorkshop) {
   <div class="mt">
     <app-card [foldable]="true" [folded]="false" [title]="'Nesting Workshop'">
+      <div class="mb">
+        <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Nesting_Workshop'}"></app-wiki-link>
+      </div>
       <app-item-list [itemList]="nestingWorkshop.itemList!" [highlightNode]="highlightNode"></app-item-list>
     </app-card>
   </div>

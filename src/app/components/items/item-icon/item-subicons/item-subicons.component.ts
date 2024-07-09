@@ -7,6 +7,7 @@ import { EventService } from 'src/app/services/event.service';
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IconComponent } from '../../../icon/icon.component';
+import { IItemListNode } from '@app/interfaces/item-list.interface';
 
 @Component({
     selector: 'app-item-subicons',
@@ -20,6 +21,7 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
   @Input() item?: IItem;
   @Input() node?: INode;
   @Input() iap?: IIAP;
+  @Input() listNode?: IItemListNode;
   @Input() icons?: Array<ItemSubicon>;
 
   @HostBinding('class.show-tooltips')

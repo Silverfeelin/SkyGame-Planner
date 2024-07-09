@@ -14,7 +14,7 @@
     },
     {
       "guid": "AKNI67tVW-",
-      "description": "The Nesting Workshop rotates between 4 props every week.",
+      "description": "The Nesting Workshop rotates between props every week. This overview is sorted by the first appearance of each prop. Please visit the wiki to see the shop rotations.",
       "items": [
         { "guid": "_qe1M1aTek", "item": "RAqHfOMGuf" },
         { "guid": "zvfy6tW379", "item": "pk88jDrFaq", "c": 32 },
@@ -27,11 +27,13 @@
         { "guid": "mFU9vXpZnw", "item": "EQwb6KLMv5", "ac": 30 },
         { "guid": "JAj51h9ADF", "item": "QLPTcl6MON", "c": 60 },
         { "guid": "JlKjD5hs3P", "item": "whT_cZQrv5", "c": 50 },
-        { "guid": "M-n46rmsiI", "item": "raTbmXIzTD", "h": 48 },
+        { "guid": "M-n46rmsiI", "item": "raTbmXIzTD", "h": 0 },
+        { "guid": "boOtVX8xOQ", "item": "raTbmXIzTD", "c": 48 },
         { "guid": "qI09t7cv9p", "item": "uOQmeCxRGG", "c": 25 },
         { "guid": "STlGNDNBl8", "item": "kjqZOiZkv8", "h": 20 },
         { "guid": "MxfERJwmT-", "item": "rMl2rj9Qgv", "c": 45 },
-        { "guid": "521NL_oVIS", "item": "9HXJ6pJTXa", "h": 40 },
+        { "guid": "521NL_oVIS", "item": "9HXJ6pJTXa", "h": 0 },
+        { "guid": "iyR8ZQF8zp", "item": "9HXJ6pJTXa", "c": 40 },
         { "guid": "hK9E5Xx7z_", "item": "y1UR_gd2PM", "c": 35 },
         { "guid": "ouIgy1vs8u", "item": "2If2D4W1DF", "h": 33 },
         { "guid": "5WT0E79zPb", "item": "wbzLOXS8C_", "h": 18 },
@@ -62,6 +64,10 @@
         { "guid": "TopAimB0gn", "item": "PRSX9s-tGz", "c": 40 },
         { "guid": "zWgFzsGlCH", "item": "rtZSEy-6Rz", "c": 30 },
         { "guid": "lTLzoY0irh", "item": "srZq8IciYN", "c": 80 },
+        { "guid": "rk4HG2_Eft", "item": "-_R3fzw7MF", "ac": 25 },
+        { "guid": "nU8iVOAgXc", "item": "t3D6CbSY-E", "c": 80 },
+        { "guid": "Pps8nLoGHH", "item": "FpXfl3Dpff", "h": 45 },
+        { "guid": "59mKq-t1EY", "item": "cqPAxA0gAc", "c": 90 },
       ]
     },
     {
