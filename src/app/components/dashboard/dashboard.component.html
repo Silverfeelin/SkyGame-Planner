@@ -4,38 +4,6 @@
   </div>
 </div>
 
-@if (wikiBannerAvailable && !wikiBannerDismissed) {
-  <div class="sky-card mt">
-    <div class="sky-card-body">
-      <div class="container">
-        <div class="flex-banner">
-          <img class="banner-img" src="/assets/external/wiki-site-logo.webp" alt="Sky Wiki" style="float:left;">
-          <div class="banner-text">
-            <h4>Let your honks be heard!</h4>
-            <p>
-              The Sky Wiki is celebrating its 5th anniversary of soaring in the Sky with players like you, and they are conducting a survey to gather your experience and usage of the Sky Wiki!
-              Sky Planner uses the Sky Wiki as an important source of information and images that you see here.
-            </p>
-            <p>Whether you're a seasoned shepherd, or a newcomer moth who has never used the Sky Wiki, your feedback will be greatly appreciated. It will take under 10 minutes to complete.
-              This survey will be open from June 9th, to July 9th 2024.</p>
-            <div class="mt-half">
-              <a href="https://bit.ly/SPSkyWikiSurvey" class="button banner-cta">
-                <mat-icon class="menu-icon">edit_note</mat-icon>
-                <span class="menu-label">Go to survey</span>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="banner-close">
-          <button type="button" (click)="dismissWikiBanner()">
-            <mat-icon>close</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-}
-
 <div class="mt">
   <app-search></app-search>
 </div>

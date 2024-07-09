@@ -37,10 +37,6 @@ export class DashboardComponent implements OnInit {
 
   dailyCheckedIn?: boolean;
 
-  // Sky Wiki 5 year survey. Can be removed after 2024-07-09
-  wikiBannerAvailable = DateTime.now().toUTC() >= DateTime.fromISO('2024-06-09T00:00:00Z') && DateTime.now().toUTC() < DateTime.fromISO('2024-07-09T00:00:00Z');
-  wikiBannerDismissed = localStorage.getItem('dashboard.wiki5yr') === 'dismissed';
-
   constructor(
     private readonly _dataService: DataService
   ) {
@@ -98,10 +94,4 @@ export class DashboardComponent implements OnInit {
     const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
     this.dailyCheckedIn = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
   }
-
-  dismissWikiBanner(): void {
-    this.wikiBannerDismissed = true;
-    localStorage.setItem('dashboard.wiki5yr', 'dismissed')
-  }
-
 }
