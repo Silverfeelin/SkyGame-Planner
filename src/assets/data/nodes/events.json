@@ -1122,6 +1122,96 @@
     "h": 20
   },
   // #endregion
+  // #region SkyFest (2024)
+  {
+    "guid": "5Z8NmDaupw",
+    "item": "FjtQU-Da97",
+    "nw": "ltTUXgCDdL",
+    "n": "oVYJjhN69E",
+    "ne": "EaMFvXmeZu"
+  },
+  {
+    "guid": "ltTUXgCDdL",
+    "item": "uvCLDVex2L",
+    "ec": 15
+  },
+  {
+    "guid": "EaMFvXmeZu",
+    "item": "z0Xi9-Wipm",
+    "ec": 10
+  },
+  {
+    "guid": "oVYJjhN69E",
+    "item": "jGsimtcb4t",
+    "ec": 3,
+    "nw": "S0hQcUUiep",
+    "n": "19kT0R_5wT",
+    "ne": "F1_u5FvXyX"
+  },
+  {
+    "guid": "S0hQcUUiep",
+    "item": "nFWJUG7K6q",
+    "ec": 7
+  },
+  {
+    "guid": "F1_u5FvXyX",
+    "item": "9jMnZ23AYP",
+    "h": 10
+  },
+  {
+    "guid": "19kT0R_5wT",
+    "item": "MWjOfJMKoO",
+    "c": 4,
+    "nw": "eQemgfk0YB",
+    "n": "k3F5J0k5Xj",
+    "ne": "G9BkoQlj-0"
+  },
+  {
+    "guid": "eQemgfk0YB",
+    "item": "ktsAnnjGgb",
+    "c": 20
+  },
+  {
+    "guid": "G9BkoQlj-0",
+    "item": "9jISGFNSLT",
+    "ac": 33
+  },
+  {
+    "guid": "k3F5J0k5Xj",
+    "item": "gkRaYwffnu",
+    "c": 4,
+    "nw": "tb9oqkuLdS",
+    "n": "LDfyNLvX4M",
+    "ne": "mvZnyK5BTk"
+  },
+  {
+    "guid": "tb9oqkuLdS",
+    "item": "ADtwifMcnN",
+    "c": 20
+  },
+  {
+    "guid": "mvZnyK5BTk",
+    "item": "BQi3QIoOwq",
+    "h": 33
+  },
+  {
+    "guid": "LDfyNLvX4M",
+    "item": "HevHMQmDYs",
+    "c": 4,
+    "nw": "PtgA7_ZhTw",
+    "n": "2tuuKaXzDF"
+  },
+  {
+    "guid": "PtgA7_ZhTw",
+    "item": "8A96KlMPQC",
+    "c": 30
+  },
+  {
+    "guid": "2tuuKaXzDF",
+    "item": "Xbb3BpzDZT",
+    "h": 20
+  },
+  // #endregion
   // #region Lazy Days (2022)
   {
     "guid": "umrXZ_3yaW",

@@ -24,6 +24,10 @@ export interface IEvent extends IGuid {
 }
 
 export interface IEventInstance extends IGuid, IPeriod {
+  /** Name for older event instances, used if an event changes name throughout time. */
+  name?: string;
+  shortName?: string;
+
   /** Event instance number starting at 1. */
   number: number;
   currencyPerDay?: number;

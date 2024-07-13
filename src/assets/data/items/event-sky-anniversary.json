@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#1_Year_Anniversary_Hat"
     },
-    "order": 415
+    "order": 416
   },
   {
     "id": 1817,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#2nd_Birthday_Hat"
     },
-    "order": 416
+    "order": 417
   },
   {
     "id": 1818,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Birthday_Flag"
     },
-    "order": 506
+    "order": 510
   },
   {
     "id": 1819,
@@ -108,7 +108,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#3rd_Birthday_Hat"
     },
-    "order": 417
+    "order": 418
   },
   {
     "id": 1829,
@@ -143,7 +143,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Balloons"
     },
-    "order": 507
+    "order": 511
   },
   {
     "id": 1833,
@@ -155,7 +155,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Light_Fence"
     },
-    "order": 508
+    "order": 512
   },
   {
     "id": 1834,
@@ -167,7 +167,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Confetti_Launcher"
     },
-    "order": 509
+    "order": 513
   },
   {
     "id": 1835,
@@ -186,7 +186,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Plush"
     },
-    "order": 529
+    "order": 533
   },
   {
     "id": 1837,
@@ -205,7 +205,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#4th_Anniversary_Hat"
     },
-    "order": 418
+    "order": 419
   },
   {
     "id": 1839,
@@ -217,7 +217,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Sonorous_Seashell"
     },
-    "order": 526
+    "order": 530
   },
   {
     "id": 1840,
@@ -229,6 +229,67 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Party_Lights"
     },
-    "order": 528
-  }
+    "order": 532
+  },
+  {
+    "id": 2229,
+    "guid": "meld4SQL8l",
+    "type": "Cape",
+    "name": "Skyfest Wireframe Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SkyFest-Wireframe-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/SkyFest-Wireframe-Cape-back.png",
+    "order": 717
+  },
+  {
+    "id": 2230,
+    "guid": "z648Yl_rsv",
+    "type": "Hat",
+    "name": "Skyfest Oreo Headband",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SkyFest-Oreo-Headband-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/SkyFest-Oreo-Headband.png",
+    "order": 421
+  },
+  {
+    "id": 2231,
+    "guid": "jGsimtcb4t",
+    "type": "Hat",
+    "name": "5th Anniversary Headband",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/5th-Anniversary-Hat-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/SkyFest-5th-Anniversary-Headband.png",
+    "order": 420
+  },
+  {
+    "id": 2232,
+    "guid": "uvCLDVex2L",
+    "type": "Held",
+    "name": "Skyfest Star Jar",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/SkyFest-Star-Jar-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SkyFest-Star-Jar.png",
+    "order": 607
+  },
+  {
+    "id": 2233,
+    "guid": "z0Xi9-Wipm",
+    "type": "Outfit",
+    "name": "Skyfest 5th Anniversary T-Shirt Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SkyFest-5th-Anniversary-T-shirt-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SkyFest-5th-Anniversary-T-shirt-front.png",
+    "order": 56
+  },
+  {
+    "id": 2234,
+    "guid": "nFWJUG7K6q",
+    "type": "Held",
+    "name": "Skyfest Jenova Fan",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/SkyFest-Jenova-Fan-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SkyFest-Jenova-Fan.png",
+    "order": 466
+  },
+  {
+    "id": 2235,
+    "guid": "HevHMQmDYs",
+    "type": "Spell",
+    "name": "Medium Birthday Cake",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
 ]

@@ -1,7 +1,7 @@
 <div class="sky-card">
   <div class="sky-card-header">
     <h1 class="h2 mb-0">
-      {{ instance.event.name }}
+      {{ instance.name ?? instance.event.name }}
       <span class="c-accent"><app-date [date]="instance.date" [format]="'yyyy'"></app-date></span>
     </h1>
   </div>

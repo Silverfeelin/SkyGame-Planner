@@ -579,9 +579,28 @@
     // #region Sky Anniversary (2023)
     {
       "guid": "RCDqXv4la1",
-      "type": "store",
+      "type": "Store",
       "iaps": [
         "HYun7FYMGn"
+      ]
+    },
+    // #endregion
+    // #region SkyFest (2024)
+    {
+      "guid": "p6bDGXvYBq",
+      "type": "Store",
+      "name": "",
+      "iaps": [
+        "YaZApTNucX",
+        "bKxtksJv4J"
+      ]
+    },
+    {
+      "guid": "wsD3OQB-Cp",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "-ffdnMJH4w"
       ]
     },
     // #endregion
