@@ -1,6 +1,6 @@
 <div class="sky-card p-rel" *ngIf="event">
   <div class="sky-card-header">
-    <h2 class="h3">{{ event.name }}</h2>
+    <h2 class="h3">{{ instance?.name ?? event.name }}</h2>
   </div>
   <div class="sky-card-body event-body">
     <div class="grid grid-1">

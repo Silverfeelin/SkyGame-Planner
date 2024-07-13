@@ -277,6 +277,41 @@
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/14eeb8b033/color24_header.jpg",
       "instances": [
+
+        {
+          "guid": "lm7oA1sthb",
+          "name": "Days of Rainbow",
+          "shortName": "Rainbow",
+          "date": { "day": 10, "month": 6, "year": 2020 },
+          "endDate": { "day": 14, "month": 6, "year": 2020 }
+        },
+        {
+          "guid": "ZoR4kXzQLS",
+          "name": "Days of Rainbow",
+          "shortName": "Rainbow",
+          "date": { "day": 14, "month": 6, "year": 2021 },
+          "endDate": { "day": 27, "month": 6, "year": 2021 },
+          "shops": [
+            "CwN0xJF-1M"
+          ],
+          "spirits": [
+            { "guid": "QB8tU5kao9", "spirit": "uPzMm5H7ag", "tree": "U2ZiRYwoR2" }
+          ]
+        },
+        {
+          "guid": "l1kxnP--Ws",
+          "name": "Days of Rainbow",
+          "shortName": "Rainbow",
+          "date": { "day": 30, "month": 6, "year": 2022 },
+          "endDate": { "day": 13, "month": 7, "year": 2022 },
+          "shops": [
+            "ntVyLMOody",
+            "jaDbvOGhtj"
+          ],
+          "spirits": [
+            { "guid": "Qep3FZt66w", "spirit": "uPzMm5H7ag", "tree": "cfK8l5Lor8" }
+          ]
+        },
         {
           "guid": "7H5NE9-K72",
           "date": { "day": 1, "month": 6, "year": 2023 },
@@ -303,47 +338,6 @@
           ]
         }
       ]
-    },
-    // Days of Rainbow
-    {
-      "guid": "yVDpWb7Goo",
-      "name": "Days of Rainbow",
-      "shortName": "Rainbow",
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6952cf0d8f/dorainbow2022_flyingoverhome.png",
-      "recurring": false,
-      "instances": [
-        {
-          "guid": "lm7oA1sthb",
-          "date": { "day": 10, "month": 6, "year": 2020 },
-          "endDate": { "day": 14, "month": 6, "year": 2020 }
-        },
-        {
-          "guid": "ZoR4kXzQLS",
-          "date": { "day": 14, "month": 6, "year": 2021 },
-          "endDate": { "day": 27, "month": 6, "year": 2021 },
-          "shops": [
-            "CwN0xJF-1M"
-          ],
-          "spirits": [
-            { "guid": "QB8tU5kao9", "spirit": "uPzMm5H7ag", "tree": "U2ZiRYwoR2" }
-          ]
-        },
-        {
-          "guid": "l1kxnP--Ws",
-          "date": { "day": 30, "month": 6, "year": 2022 },
-          "endDate": { "day": 13, "month": 7, "year": 2022 },
-          "shops": [
-            "ntVyLMOody",
-            "jaDbvOGhtj"
-          ],
-          "spirits": [
-            { "guid": "Qep3FZt66w", "spirit": "uPzMm5H7ag", "tree": "cfK8l5Lor8" }
-          ]
-        }
-      ],
-      "_wiki": {
-        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow"
-      }
     },
     // Days of Music
     {

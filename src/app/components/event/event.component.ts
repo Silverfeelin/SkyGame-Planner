@@ -87,7 +87,7 @@ export class EventComponent implements OnInit {
 
       return {
         number: i+1,
-        name: this.event.name,
+        name: instance.name ?? this.event.name,
         year: instance.date.year,
         guid: instance.guid,
         date: instance.date,
