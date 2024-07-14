@@ -2983,6 +2983,46 @@
     "item": "zZECdGu82K"
   },
   // #endregion
+  // #region Duets Guide
+  {
+    "guid": "RTwKtxkvqi",
+    "item": "DtfPuD-xSP",
+    "n": "2fswREyaxJ",
+    "ne": "iby7lIaFPB"
+  },
+  {
+    "guid": "iby7lIaFPB",
+    "item": "3iG8im9Sgu",
+    "n": "NEO0V_QhWq"
+  },
+  {
+    "guid": "NEO0V_QhWq",
+    "item": "i9it79Bnon",
+    "sh": 1,
+    "n": "w2j-Z-vruS"
+  },
+  {
+    "guid": "w2j-Z-vruS",
+    "item": "bOUW5LY8PU",
+    "sh": 2,
+    "n": "qUqOUDuxMR"
+  },
+  {
+    "guid": "qUqOUDuxMR",
+    "item": "O9jSph-v7e",
+    "sh": 2
+  },
+  {
+    "guid": "2fswREyaxJ",
+    "item": "g5if_hfGQ-",
+    "nw": "zLUfSW4pVU"
+  },
+  {
+    "guid": "zLUfSW4pVU",
+    "item": "diBkeTRe1G",
+    "c": 65
+  },
+  // #endregion
   // #endregion
 
   // #region Gratitude
@@ -16972,6 +17012,99 @@
   {
     "guid": "j78wRmsyJl",
     "item": "AF4hUvaLDh",
+    "sc": 3
+  },
+  // #endregion
+  // #endregion
+  // #region Duets
+  // #region Cellist's Beginnings
+  {
+    "guid": "klGk-HXhP6",
+    "item": "krE8-lSgNh",
+    "sc": 20,
+    "nw": "ni_Zpp_oim",
+    "n": "pc8GNxOJAo"
+  },
+  {
+    "guid": "ni_Zpp_oim",
+    "item": "aSFIx_KYoy"
+  },
+  {
+    "guid": "pc8GNxOJAo",
+    "item": "l7wweQZZee",
+    "sc": 26,
+    "nw": "SSIHPlhLCN",
+    "n": "wP5zZExgrT"
+  },
+  {
+    "guid": "SSIHPlhLCN",
+    "item": "GNR4Or83IO"
+  },
+  {
+    "guid": "wP5zZExgrT",
+    "item": "WTVL4L3IT-",
+    "sc": 32,
+    "nw": "XTZO3NaezV",
+    "n": "gE2SbLCs4s"
+  },
+  {
+    "guid": "XTZO3NaezV",
+    "item": "UWuovba0QU"
+  },
+  {
+    "guid": "gE2SbLCs4s",
+    "item": "GzKcUk-Tzw",
+    "sc": 3
+  },
+  // #endregion
+  // #region Pianist's Beginnings
+  {
+    "guid": "MhQW8_5oJe",
+    "item": "-F-7JGkkRf",
+    "sc": 14,
+    "nw": "YfQDDuTkmt",
+    "n": "lGaitqwff7"
+  },
+  {
+    "guid": "YfQDDuTkmt",
+    "item": "pLAgUoGFQ8"
+  },
+  {
+    "guid": "lGaitqwff7",
+    "item": "I1B2G8p1uQ",
+    "sc": 20,
+    "nw": "6TGMPUcKG8",
+    "n": "2AI3FARJ7P"
+  },
+  {
+    "guid": "6TGMPUcKG8",
+    "item": "2RVqVbz8OP"
+  },
+  {
+    "guid": "2AI3FARJ7P",
+    "item": "bswnrIV7vC",
+    "sc": 24,
+    "nw": "ZlfQi_6Y2e",
+    "n": "R8PbOBnUxy"
+  },
+  {
+    "guid": "ZlfQi_6Y2e",
+    "item": "tMT9whKoLk"
+  },
+  {
+    "guid": "R8PbOBnUxy",
+    "item": "S9kEMk3Zii",
+    "sc": 30,
+    "nw": "TKzZHv9B7d",
+    "n": "93HuF0OnrW"
+  },
+  {
+    "guid": "TKzZHv9B7d",
+    "item": "Q3WniYqjbN"
+  },
+  {
+    "guid": "93HuF0OnrW",
+    "item": "9LGf7mpwgd",
     "sc": 3
   },
   // #endregion

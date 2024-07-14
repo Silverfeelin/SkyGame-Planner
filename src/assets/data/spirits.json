@@ -1777,6 +1777,50 @@
       "tree": "hmjRFtvfCa"
     },
     // #endregion
+    // #region Duets
+    {
+      "guid": "iCVOo-FNbd",
+      "type": "Guide",
+      "name": "Duets Guide",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "voApj8nmhQ"
+    },
+    {
+      "guid": "o4ZuAa_Q8u",
+      "type": "Season",
+      "name": "The Cellist's Beginnings",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "UUTbaINneC"
+    },
+    {
+      "guid": "Jt8plqOdgg",
+      "type": "Season",
+      "name": "The Pianist's Beginnings",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "FKLImPk5vB"
+    },
+    // {
+    //   "guid": "6Vsnbtp_Y3",
+    //   "type": "Season",
+    //   "name": "The Musician's Legacy",
+    //   "imageUrl": "/assets/icons/question.webp",
+    //   "tree": ""
+    // },
+    // {
+    //   "guid": "md2oP_oAWb",
+    //   "type": "Season",
+    //   "name": "The Cellist's Flourishing",
+    //   "imageUrl": "/assets/icons/question.webp",
+    //   "tree": ""
+    // },
+    // {
+    //   "guid": "xINN19ZdXU",
+    //   "type": "Season",
+    //   "name": "The Pianist's Flourishing",
+    //   "imageUrl": "/assets/icons/question.webp",
+    //   "tree": ""
+    // },
+    // #endregion
 
     // #region Nesting Challenges
     {

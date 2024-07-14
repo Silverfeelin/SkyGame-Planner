@@ -234,6 +234,6 @@ const nanoid10 = () => nanoid(10);
     document.getElementById('s-preview').innerText = '';
   });
 
-  document.getElementById('s-id').value = /*S-ID*/2229;
+  document.getElementById('s-id').value = /*S-ID*/2236;
   sSetActive(document.querySelector('button[data-active="name"]'));
 })();

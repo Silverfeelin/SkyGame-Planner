@@ -452,7 +452,29 @@
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Nesting"
       }
-    }
+    },
+    {
+      "guid": "CkEcvGj374",
+      "name": "Season of Duets",
+      "shortName": "Duets",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season-of-Duets-icon.png",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/f9024e8f24/duets.jpg",
+      "year": 2024,
+      "date": "2024-07-15",
+      "endDate": "2024-09-29",
+      "draft": true,
+      "spirits": [
+        "iCVOo-FNbd",
+        "o4ZuAa_Q8u",
+        "Jt8plqOdgg",
+        // "6Vsnbtp_Y3",
+        // "md2oP_oAWb",
+        // "xINN19ZdXU",
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets"
+      }
+    },
     // #endregion
   ],
   "_wiki": {

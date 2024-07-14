@@ -1523,6 +1523,20 @@
     },
     // #endregion
     // #endregion
+    // #region Duets
+    {
+      "guid": "voApj8nmhQ",
+      "node": "RTwKtxkvqi"
+    },
+    {
+      "guid": "FKLImPk5vB",
+      "node": "MhQW8_5oJe"
+    },
+    {
+      "guid": "UUTbaINneC",
+      "node": "klGk-HXhP6"
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {
@@ -1824,8 +1838,6 @@
       "guid": "Pfnfzz3kGn",
       "node": "qzjesJUZYH"
     },
-    // #endregion
-    // #region Cinnamoroll Pop-Up Cafe (2024)
     // #endregion
   ]
 }
