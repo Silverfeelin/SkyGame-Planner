@@ -15,6 +15,18 @@ export class CostHelper {
       && !value.ec && !value.ac;
   }
 
+  /** Clears all cost values by deleting the keys. Returns a reference to the object. */
+  static clear(value: ICost): ICost {
+    delete value.c;
+    delete value.h;
+    delete value.sc;
+    delete value.sh;
+    delete value.ac;
+    delete value.ec;
+
+    return value;
+  }
+
   /** Adds costs together in-place. Returns a reference to the first object. */
   static add(target: ICost, ...values: Array<ICost>): ICost {
     for (const value of values) {

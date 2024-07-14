@@ -10,22 +10,27 @@ import { DataJsonService } from 'src/app/services/data-json.service';
 import { DataService } from 'src/app/services/data.service';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { ICost } from '@app/interfaces/cost.interface';
+import { CostHelper } from '@app/helpers/cost-helper';
 
-interface IFormNode {
-  nw?: boolean;
-  n?: boolean;
-  ne?: boolean
+interface IEditorSearchItem {
+  item: IItem;
+  name: string;
+}
 
-  item?: string;
-  itemRef?: IItem;
+interface IEditorNode extends ICost {
+  nw?: IEditorNode;
+  n?: IEditorNode;
+  ne?: IEditorNode;
+  prev?: IEditorNode;
 
-  c?: number;
-  h?: number;
-  sc?: number;
-  sh?: number;
-  ac?: number;
-  ec?: number;
+  x: number;
+  y: number;
+
+  item?: IItem;
+  itemGuid?: string;
 }
 
 @Component({
@@ -33,119 +38,41 @@ interface IFormNode {
     templateUrl: './editor-tree.component.html',
     styleUrls: ['./editor-tree.component.less'],
     standalone: true,
-    imports: [NgFor, NgIf, MatIcon, FormsModule]
+    imports: [NgFor, NgIf, NgTemplateOutlet, MatIcon, FormsModule, ItemIconComponent]
 })
 export class EditorTreeComponent implements OnInit {
-  itemOptions = new Array<IItem>();
+  itemOptions = new Array<IEditorSearchItem>();
 
-  formNodes: Array<IFormNode>;
+  editorNode: IEditorNode;
+  treeHeight = 1;
 
-  result?: ISpiritTree;
+  generatedTree?: ISpiritTree;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _dataJsonService: DataJsonService,
     private readonly _route: ActivatedRoute
   ) {
-      this.formNodes = [];
-      for (let i = 0; i < 30; i++) { this.formNodes.push({
-        n: !((i+2) % 3)
-      }); }
+
+    this.editorNode = { x: 1, y: 0 };
+
+    this.calculateTreeHeight();
+
+    // Fuzzy search items
+    this.itemOptions = [];
+    this.itemOptions.push(...this._dataService.itemConfig.items.map(item => ({
+      item,
+      name: item.level && item.level > 1 ? `${item.name} (${item.level})` : item.name
+    })));
   }
 
   ngOnInit(): void {
-    this.formNodes.forEach(n => n.item = undefined);
 
-    const copyTree = this._route.snapshot.queryParams['copy'];
-    if (copyTree) {
-      const tree = this._dataService.guidMap.get(copyTree) as ISpiritTree;
-      this.formNodes = this.nodeToFormNodes(tree.node);
-    }
-
-    this.itemOptions = [];
-
-    // Add items
-    this.itemOptions.push(...this._dataService.itemConfig.items);
-
-    // Create new items
-    this.itemOptions.push({ guid: 'DON\'T PICK', name: '-- NEW ITEMS --', type: ItemType.Special });
-    this.itemOptions.push(this.createWingBuff());
-    this.itemOptions.push(this.createHeart());
-    this.itemOptions.push(this.createBlessing());
-    this.itemOptions.push(this.createBlessing());
-    this.itemOptions.push(this.createBlessing());
-    this.itemOptions.push(this.createBlessing());
-  }
-
-  toggleConnection(node: any, direction: string) {
-    node[direction] = !node[direction];
-  }
-
-  itemInputChanged(event: Event, i: number): void {
-    const target = (event.target as HTMLInputElement);
-    const value = target?.value as string;
-    if (!value) { return; }
-
-    const jsonNode = this.getNodeFromJson(value);
-    if (jsonNode) {
-      this.formNodes[i] = jsonNode;
-      return;
-    }
-
-    const item = this._dataService.guidMap.get(value) as IItem;
-    if (!item) { return; }
-
-    this.formNodes[i].item = item.guid;
-    this.formNodes[i].itemRef = item;
-
-    debugger;
-    target.value = '';
-    target.blur();
-  }
-
-  itemInputEnter(event: KeyboardEvent, i: number): void {
-    if (event.key !== 'Enter') { return; }  // Only handle enter key
-
-    const target = (event.target as HTMLInputElement);
-    const value = target?.value as string;
-    if (!value) { return; }
-    const results = fuzzysort.go(value, this.itemOptions, { key: 'name', limit: 1 });
-    const item = results?.[0].obj as IItem;
-    if (!item) { return; }
-
-    this.formNodes[i].item = item.guid;
-    this.formNodes[i].itemRef = item;
-    debugger;
-    target.value = '';
-  }
-
-  itemInputBlur(event: Event, i: number): void {
-    const target = (event.target as HTMLInputElement);
-    const value = +(target?.value as string);
-    if (!value) { return; }
-
-    const item = this._dataService.itemIdMap.get(value) as IItem;
-    if (!item) { return; }
-
-    this.formNodes[i].item = item.guid;
-    this.formNodes[i].itemRef = item;
-    debugger;
-    target.value = '';
   }
 
   submit(): void {
-    const baseNode = this.formNodeToNodes();
-    const nodes = NodeHelper.all(baseNode);
-
-    // Create tree
-    const tree: ISpiritTree = {
-      guid: nanoid(10),
-      node: nodes[0]
-    };
-
-    console.log('tree generated', tree);
-
-    this.result = tree;
+    const tree = this.generateTree();
+    this.generatedTree = tree;
   }
 
   copyToClipboard(type: string): void {
@@ -160,149 +87,133 @@ export class EditorTreeComponent implements OnInit {
   getForClipboard(type: string): string | undefined {
     switch (type) {
       case 'tree':
-        return this._dataJsonService.spiritTreesToJson([this.result!]);
+        return this._dataJsonService.spiritTreesToJson([this.generatedTree!]);
       case 'nodes':
-        return this._dataJsonService.nodesToJson(NodeHelper.all(this.result!.node));
-      case 'items': {
-        const nodes = NodeHelper.all(this.result!.node);
-        const newItems = nodes
-          .filter(n => n.item?.guid && !this._dataService.guidMap.has(n.item.guid))
-          .map(n => n.item!);
-        return this._dataJsonService.itemsToJson(newItems);
-      }
+        return this._dataJsonService.nodesToJson(NodeHelper.all(this.generatedTree!.node));
     }
     return undefined;
   }
 
-  nodeToFormNodes(mainNode: INode): Array<IFormNode> {
-    const formNodes = new Array<IFormNode>();
-
-    for (let i = 0; i < 30; i++) {
-      formNodes.push({});
-    }
-
-    const defineNode = (i: number, node: INode) => {
-      formNodes[i] = {
-        item: node.item?.guid,
-        itemRef: node.item,
-        c: node.c,
-        h: node.h,
-        ac: node.ac,
-        ec: node.ec,
-        sc: node.sc,
-        sh: node.sh,
-        n: !!node.n,
-        nw: !!node.nw,
-        ne: !!node.ne
-      };
-
-      if (node.nw) { defineNode(i - 1, node.nw); }
-      if (node.n) { defineNode(i - 3, node.n); }
-      if (node.ne) { defineNode(i + 1, node.ne); }
+  generateTree(): ISpiritTree {
+    const tree: ISpiritTree = {
+      guid: nanoid(10),
+      node: this.generateNode(this.editorNode)
     };
 
-    let i = 28;
-    defineNode(i, mainNode);
-
-    return formNodes;
+    return tree;
   }
 
-  copyNodeToClipboard(node: IFormNode): void {
-    const n = {...node};
-    delete n.itemRef;
-
-    navigator.clipboard.writeText(JSON.stringify(n));
-  }
-
-  getNodeFromJson(json: string): IFormNode | undefined {
-    try {
-      const node = JSON.parse(json) as IFormNode;
-      if (typeof node !== 'object') { return undefined; }
-      if (node.item) {
-        node.itemRef = this._dataService.guidMap.get(node.item) as IItem;
-      }
-
-      return node;
-    } catch { return undefined; }
-  }
-
-  formNodeToNodes(node?: INode, i = 28): INode {
-    const formNode = this.formNodes[i];
-    node ??= this.formNodeToNode(formNode)!;
-    if (!formNode) { return node; }
-
-    // Left (north-west)
-    if (formNode.nw) {
-      const j = i - 1;
-      const relativeNode = this.formNodeToNode(this.formNodes[j]);
-      if (relativeNode) {
-        node.nw = relativeNode;
-      }
-      this.formNodeToNodes(relativeNode, j);
-    }
-
-    // Top (north)
-    if (formNode.n) {
-      const j = i - 3;
-      const relativeNode = this.formNodeToNode(this.formNodes[j]);
-      if (relativeNode) {
-        node.n = relativeNode;
-      }
-      this.formNodeToNodes(relativeNode, j);
-    }
-
-    // Right (north-east)
-    if (formNode.ne) {
-      const j = i + 1;
-      const relativeNode = this.formNodeToNode(this.formNodes[j]);
-      if (relativeNode) {
-        node.ne = relativeNode;
-      }
-      this.formNodeToNodes(relativeNode, j);
-    }
-
-    return node;
-  }
-
-  formNodeToNode(formNode: IFormNode): INode | undefined {
-    if (!formNode?.item) { return undefined; }
-
-    return {
+  generateNode(node: IEditorNode): INode {
+    const treeNode: INode = {
       guid: nanoid(10),
-      item: this.itemOptions.find(i => i.guid === formNode.item),
-      c: formNode.c,
-      h: formNode.h,
-      ac: formNode.ac,
-      ec: formNode.ec,
-      sc: formNode.sc,
-      sh: formNode.sh
+      item: node.item
     };
+
+    CostHelper.add(treeNode, node);
+
+    if (node.nw) { treeNode.nw = this.generateNode(node.nw); }
+    if (node.n) { treeNode.n = this.generateNode(node.n); }
+    if (node.ne) { treeNode.ne = this.generateNode(node.ne); }
+
+    return treeNode;
   }
 
-  createHeart(): IItem {
-    return {
-      guid: nanoid(10),
-      type: ItemType.Special,
-      name: 'Heart',
-      icon: 'https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png'
+  nodeAdd(node: IEditorNode, direction: 'nw' | 'n' | 'ne'): void {
+    if (node[direction]) { return; }
+    let [x, y] = [node.x, node.y];
+    switch( direction) {
+      case 'nw': x--; break;
+      case 'n': y++; break;
+      case 'ne': x++; break;
+    }
+
+    // Check if cell is already occupied
+    const check = (node?: IEditorNode): boolean => {
+      if (!node) { return false; }
+      if (node.x === x && node.y === y) { return true; }
+      return check(node.nw) || check(node.n) || check(node.ne);
+    }
+
+    if (check(this.editorNode)) {
+      alert('That cell is already occupied!');
+      return;
+    }
+
+    node[direction] = { x, y, prev: node };
+    this.calculateTreeHeight();
+  }
+
+  nodeRemove(node: IEditorNode): void {
+    if (!node.prev) { return; }
+    if (!confirm('Are you sure you want to remove this node? All connected nodes will also be removed!')) { return; }
+
+    if (node.prev.nw === node) { node.prev.nw = undefined; }
+    if (node.prev.n === node) { node.prev.n = undefined; }
+    if (node.prev.ne === node) { node.prev.ne = undefined; }
+
+    this.calculateTreeHeight();
+  }
+
+  nodeGuidChanged(evt: Event, node: IEditorNode): void {
+    const value = (evt.target as HTMLInputElement).value;
+    node.itemGuid = '';
+    node.item = undefined;
+    if (!value) { return; }
+
+    const id = +value;
+    if (id) {
+      node.item = this._dataService.itemIdMap.get(id) as IItem;
+      node.itemGuid = node.item?.guid ?? '';
+      return
+    }
+
+    let item = this._dataService.guidMap.get(value) as IItem;
+    if (!item) {
+      const results = fuzzysort.go(value, this.itemOptions, { key: 'name', limit: 1 });
+      item = (results?.[0]?.obj as IEditorSearchItem)?.item;
+    }
+
+    node.item = item;
+    node.itemGuid = item?.guid;
+  }
+
+  nodeCostChanged(evt: Event, cost: ICost): void {
+    const target = (evt.target as HTMLInputElement);
+    CostHelper.clear(cost);
+
+    let match = target.value.match(/(\d+)\s*([a-z]+)/g);
+    if (!match) {
+      const c = +target.value;
+      cost.c = c || 0;
+      return;
+    }
+
+    for (const m of match) {
+      const value = +m.match(/\d+/g)![0];
+      const type = m.match(/[a-z]+/g)![0];
+
+      switch (type) {
+        case 'c': cost.c = value; break;
+        case 'h': cost.h = value; break;
+        case 'sc': cost.sc = value; break;
+        case 'sh': cost.sh = value; break;
+        case 'ac': cost.ac = value; break;
+        case 'ec': cost.ec = value; break;
+      }
     }
   }
 
-  createBlessing(): IItem {
-    return {
-      guid: nanoid(10),
-      type: ItemType.Special,
-      name: 'Blessing',
-      icon: 'https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png'
-    }
-  }
+  calculateTreeHeight(): void {
+    this.treeHeight = 1;
 
-  createWingBuff(): IItem {
-    return {
-      guid: nanoid(10),
-      type: ItemType.WingBuff,
-      name: 'Wing Buff',
-      icon: 'https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png'
+    const check = (node: IEditorNode) => {
+      if (!node) { return; }
+      if (node.y >= this.treeHeight!) { this.treeHeight = node.y + 1; }
+      if (node.nw) { check(node.nw); }
+      if (node.n) { check(node.n); }
+      if (node.ne) { check(node.ne); }
     }
+
+    check(this.editorNode);
   }
 }
