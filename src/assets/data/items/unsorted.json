@@ -7,7 +7,7 @@
     "name": "Duets Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season-of-Duets-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Season-of-Duets-Pendant.png",
-    "order": 10000
+    "order": 98
   },
   {
     "id": 2237,
@@ -17,7 +17,7 @@
     "name": "Duets Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Duets-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
-    "order": 10000
+    "order": 714
   },
   {
     "id": 2238,
@@ -28,7 +28,7 @@
     "name": "Duets Ultimate Instrument",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
-    "order": 10000
+    "order": 613
   },
   {
     "id": 2239,
@@ -38,7 +38,7 @@
     "name": "Duets Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Duets-Ultimate-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Duets-Ultimate-Poster-Prop.png",
-    "order": 10000
+    "order": 610
   },
   {
     "id": 2240,
@@ -47,7 +47,7 @@
     "name": "Duets Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Duets-Guide-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Duets-Mask-front.png",
-    "order": 10000
+    "order": 192
   },
   {
     "id": 2241,
@@ -70,7 +70,7 @@
     "name": "The Pianist's Beginnings Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Pianists-Beginnings-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Pianists-Beginnings-Poster-Prop.png",
-    "order": 10000,
+    "order": 612,
     "group": "SeasonPass"
   },
   {
@@ -80,7 +80,7 @@
     "name": "The Pianist's Beginnings Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Pianists-Beginnings-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Pianists-Beginnings-Hair-front.png",
-    "order": 10000
+    "order": 364
   },
   {
     "id": 2245,
@@ -89,7 +89,7 @@
     "name": "The Pianist's Beginnings Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Pianists-Beginnings-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Pianists-Beginnings-Outfit-front.png",
-    "order": 10000,
+    "order": 51,
     "group": "SeasonPass"
   },
   {
@@ -99,7 +99,7 @@
     "name": "The Pianist's Beginnings Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Pianists-Beginnings-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Pianists-Beginnings-Rug-Prop.png",
-    "order": 10000
+    "order": 585
   },
   {
     "id": 2247,
@@ -146,7 +146,7 @@
     "name": "The Cellist's Beginnings Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Cellists-Beginnings-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Cellists-Beginnings-Hair-front.png",
-    "order": 10000
+    "order": 365
   },
   {
     "id": 2253,
@@ -155,7 +155,7 @@
     "name": "The Cellist's Beginnings Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Cellists-Beginnings-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Cellists-Beginnings-Prop.png",
-    "order": 10000,
+    "order": 611,
     "group": "SeasonPass"
   },
   {
@@ -165,7 +165,7 @@
     "name": "The Cellist's Beginnings Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Cellists-Beginnings-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Cellists-Beginnings-Outfit-front.png",
-    "order": 10000
+    "order": 52
   },
   {
     "id": 2255,

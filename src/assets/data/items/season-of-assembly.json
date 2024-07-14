@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 83
+    "order": 85
   },
   {
     "id": 436,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 150
+    "order": 153
   },
   {
     "id": 437,
@@ -36,7 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 308
+    "order": 312
   },
   {
     "id": 438,
@@ -50,7 +50,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 442
+    "order": 448
   },
   {
     "id": 439,
@@ -63,7 +63,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 655
+    "order": 666
   },
   {
     "id": 440,
@@ -103,7 +103,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Pillow"
     },
-    "order": 483
+    "order": 489
   },
   {
     "id": 445,
@@ -143,7 +143,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Jar"
     },
-    "order": 482
+    "order": 488
   },
   {
     "id": 450,
@@ -162,7 +162,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Brazier"
     },
-    "order": 479
+    "order": 485
   },
   {
     "id": 452,
@@ -195,7 +195,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Bookcase"
     },
-    "order": 480
+    "order": 486
   },
   {
     "id": 456,
@@ -207,7 +207,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Tent"
     },
-    "order": 485
+    "order": 491
   },
   {
     "id": 1173,
@@ -250,7 +250,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Hair"
     },
-    "order": 311,
+    "order": 315,
     "group": "SeasonPass"
   },
   {
@@ -286,7 +286,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Mask"
     },
-    "order": 155
+    "order": 158
   },
   {
     "id": 1180,
@@ -313,7 +313,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Prop"
     },
-    "order": 486,
+    "order": 492,
     "group": "SeasonPass"
   },
   {
@@ -372,7 +372,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Mask"
     },
-    "order": 154
+    "order": 157
   },
   {
     "id": 1189,
@@ -415,7 +415,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Hair"
     },
-    "order": 312
+    "order": 316
   },
   {
     "id": 1193,
@@ -442,7 +442,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Cape"
     },
-    "order": 656,
+    "order": 667,
     "group": "SeasonPass"
   },
   {
@@ -501,7 +501,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Mask"
     },
-    "order": 156
+    "order": 159
   },
   {
     "id": 1202,
@@ -553,7 +553,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Hair"
     },
-    "order": 313,
+    "order": 317,
     "group": "SeasonPass"
   },
   {
@@ -566,7 +566,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Prop"
     },
-    "order": 481
+    "order": 487
   },
   {
     "id": 1208,
@@ -632,7 +632,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Hair"
     },
-    "order": 310
+    "order": 314
   },
   {
     "id": 1215,
@@ -682,7 +682,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
-    "order": 151,
+    "order": 154,
     "group": "SeasonPass"
   },
   {
@@ -695,7 +695,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Prop"
     },
-    "order": 484
+    "order": 490
   },
   {
     "id": 1221,
@@ -761,7 +761,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Mask"
     },
-    "order": 152
+    "order": 155
   },
   {
     "id": 1228,
@@ -824,7 +824,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },
-    "order": 61
+    "order": 63
   },
   {
     "id": 1234,
@@ -836,7 +836,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Prop"
     },
-    "order": 487
+    "order": 493
   },
   {
     "id": 1235,
@@ -902,7 +902,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Mask"
     },
-    "order": 153
+    "order": 156
   },
   {
     "id": 1242,
@@ -969,7 +969,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Hair"
     },
-    "order": 309,
+    "order": 313,
     "group": "SeasonPass"
   },
   {
