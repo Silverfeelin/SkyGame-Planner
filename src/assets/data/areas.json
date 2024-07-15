@@ -853,6 +853,7 @@
         { "area": "pNNbszCpyA" },
         { "area": "5kw7myrDPU" },
         { "area": "_dSyX-Uwrh" },
+        { "area": "quSVk1cT4l" }
       ]
     },
     {
@@ -928,6 +929,22 @@
       "mapData": { "position": [-453.38,367.31] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
+      ]
+    },
+    {
+      "guid": "quSVk1cT4l",
+      "name": "Concert Hall",
+      "spirits": [
+        "iCVOo-FNbd",
+        "o4ZuAa_Q8u",
+        "Jt8plqOdgg",
+        "6Vsnbtp_Y3",
+        "md2oP_oAWb",
+        "xINN19ZdXU"
+      ],
+      "mapData": { "position": [-461.88,374.5] },
+      "connections": [
+        { "area": "Mhbh0g9OdG" }
       ]
     },
     // #endregion
