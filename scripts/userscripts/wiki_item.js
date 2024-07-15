@@ -10,6 +10,14 @@ const nanoid10 = () => nanoid(10);
 
   window.sSetActive = el => { if (active && active === el.dataset.active) { active = undefined; } else { active = el.dataset.active; } showActive(); };
   window.sClear = () => { active = undefined; item = {}; document.querySelectorAll('.s-content span').forEach(el => el.innerText = ''); };
+  window.sPost = () => {
+    const item = createItem();
+    fetch('http://localhost:4201/api/item', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(item)
+    }).then(res => res.json()).then(console.log);
+  }
 
   const getType = el => {
     let type = 'Hair';
@@ -137,8 +145,8 @@ const nanoid10 = () => nanoid(10);
     if (active) { document.querySelector(`button[data-active="${active}"]`).classList.add('active'); }
   };
 
-  const copyItem = () => {
-    const result = {
+  const createItem = () => {
+    return {
       id: +document.getElementById('s-id').value || 0,
       guid: nanoid10(),
       type: item.type,
@@ -146,8 +154,12 @@ const nanoid10 = () => nanoid(10);
       icon: item.icon || '/assets/icons/question.webp',
       previewUrl: item.previewUrl,
       order: 10000
-    }
-    navigator.clipboard.writeText('\n' + JSON.stringify(result, null, 2) + ',');
+    };
+  };
+
+  const copyItem = () => {
+    const item = createItem();
+    navigator.clipboard.writeText('\n' + JSON.stringify(item, null, 2) + ',');
   };
 
   document.addEventListener('keydown', e => {
@@ -207,10 +219,21 @@ const nanoid10 = () => nanoid(10);
       <button type="button" data-active="image" onclick="sSetActive(this)" style="margin-left: 10px;">Copy image</button>
       <button type="button" data-active="image-p" onclick="sSetActive(this)" style="">P</button>
       <button type="button" onclick="sClear()" style="margin-left: 10px;">Clear</button>
+      <button type="button" onclick="sPost()" style="margin-left: 10px;">Post</button>
     </div>
   </div>
   `);
 
-  document.getElementById('s-id').value = /*S-ID*/2229;
+  document.getElementById('s-icon').addEventListener('click', e => {
+    item.icon = undefined;
+    document.getElementById('s-icon').innerText = '';
+  });
+
+  document.getElementById('s-preview').addEventListener('click', e => {
+    item.previewUrl = undefined;
+    document.getElementById('s-preview').innerText = '';
+  });
+
+  document.getElementById('s-id').value = /*S-ID*/2236;
   sSetActive(document.querySelector('button[data-active="name"]'));
 })();

@@ -1777,6 +1777,48 @@
       "tree": "hmjRFtvfCa"
     },
     // #endregion
+    // #region Duets
+    {
+      "guid": "iCVOo-FNbd",
+      "type": "Guide",
+      "name": "Duets Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Duets-Ultimate-Guide.png",
+      "tree": "voApj8nmhQ"
+    },
+    {
+      "guid": "o4ZuAa_Q8u",
+      "type": "Season",
+      "name": "The Cellist's Beginnings",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/The-Cellists-Beginnings-Shop.png",
+      "tree": "UUTbaINneC"
+    },
+    {
+      "guid": "Jt8plqOdgg",
+      "type": "Season",
+      "name": "The Pianist's Beginnings",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/The-Pianists-Beginnings-Shop.png",
+      "tree": "FKLImPk5vB"
+    },
+    {
+      "guid": "6Vsnbtp_Y3",
+      "type": "Season",
+      "name": "The Musician's Legacy",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/The-Musicians-Legacy-Shop.png",
+      "tree": "1ZlSRiEeW5"
+    },
+    {
+      "guid": "md2oP_oAWb",
+      "type": "Season",
+      "name": "The Cellist's Flourishing",
+      "tree": "ntlyxbsjrU"
+    },
+    {
+      "guid": "xINN19ZdXU",
+      "type": "Season",
+      "name": "The Pianist's Flourishing",
+      "tree": "vMFAj297uU"
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {

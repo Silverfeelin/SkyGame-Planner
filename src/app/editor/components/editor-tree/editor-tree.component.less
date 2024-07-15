@@ -1,3 +1,75 @@
+.grid-tree {
+  display: grid;
+  grid-gap: 16px;
+  padding-top: 96px;
+}
+
+.grid-tree-cell {
+  position: relative;
+  background-color: var(--color-background);
+  padding: var(--padding-content);
+  text-align: center;
+  border-radius: var(--border-radius);
+  border: var(--border);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.grid-tree-cell-offset-y {
+  transform: translateY(-96px);
+}
+
+.grid-tree-item-missing {
+  display: inline-block;
+  vertical-align: top;
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+.arrow {
+  position: absolute;
+  background: #fff;
+  width: 5px;
+}
+
+.arrow-left {
+  transform: translateY(-50%) rotate(-45deg);
+  height: 22px;
+  left: -11px;
+  top: 50%;
+}
+
+.arrow-up {
+  height: 16px;
+  top: -17px;
+  left: 50%;
+  transform:translateX(-50%);
+}
+
+.arrow-right {
+  transform: translateY(-50%) rotate(45deg);
+  height: 22px;
+  right: -11px;
+  top: 50%;
+}
+
+button mat-icon:only-child {
+  vertical-align: top;
+}
+
+
+
+
+
+
+
+
+
+
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -38,12 +110,16 @@
   right: 0;
 }
 
-.cost {
-  width: 60px;
-}
-
 input {
   display: inline-block;
   line-height: 14px;
   font-size: 14px;
+}
+
+.input-cost {
+  width: 60px;
+}
+
+.input-guid {
+  width: 120px;
 }

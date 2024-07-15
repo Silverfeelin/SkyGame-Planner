@@ -1,52 +1,61 @@
-<div>
-  Nodes<br/>
 
-  <div class="grid-container">
-    <div class="grid-item" *ngFor="let node of formNodes; let i = index;">
-      <div *ngIf="i%3===1"
-        class="grid-item-connection grid-item-nw" [class.green]="node.nw"
-        (click)="toggleConnection(node, 'nw')">NW</div>
-      <div class="grid-item-connection grid-item-n" [class.green]="node.n"
-        (click)="toggleConnection(node, 'n')">N</div>
-      <div *ngIf="i%3===1"
-        class="grid-item-connection grid-item-ne" [class.green]="node.ne"
-        (click)="toggleConnection(node, 'ne')">NE</div>
-
-      <div>
-        <div class="d-inline-block">{{node.itemRef?.name || ''}}&nbsp;</div>
-        <div class="d-inline-block "><b *ngIf="node.item" (click)="copyNodeToClipboard(node)">{{node.item}}</b></div>
-
-        <input (input)="itemInputChanged($event, i)" (keydown)="itemInputEnter($event, i)" (blur)="itemInputBlur($event, i)">
-      </div>
-
-      <div class="mt-1">
-        <mat-icon svgIcon="candle"></mat-icon>
-        <input class="cost" type="number" [(ngModel)]="node.c">
-        <mat-icon svgIcon="heart"></mat-icon>
-        <input class="cost" type="number" [(ngModel)]="node.h">
-        <mat-icon svgIcon="candle" class="seasonal"></mat-icon>
-        <input class="cost" type="number" [(ngModel)]="node.sc">
-        <mat-icon svgIcon="heart" class="seasonal"></mat-icon>
-        <input class="cost" type="number" [(ngModel)]="node.sh">
-        <mat-icon svgIcon="ascended-candle"></mat-icon>
-        <input class="cost" type="number" [(ngModel)]="node.ac">
-        <mat-icon svgIcon="ticket" [inline]="false"></mat-icon>
-        <input class="cost" type="number" [(ngModel)]="node.ec">
-      </div>
-    </div>
-  </div>
+<div class="grid-tree" [style.grid-template-columns]="'1fr 1fr 1fr'" [style.grid-template-rows]="'repeat(' + treeHeight + ', 1fr)'">
+  <ng-container *ngTemplateOutlet="tNode; context: { $implicit: editorNode, x: 1, y: 0 }"></ng-container>
 </div>
 
-<button type="button" (click)="submit()">Generate</button>
+<ng-template #tNode let-node let-x="x" let-y="y">
+  <div class="grid-tree-cell"
+    [style.grid-column]="x + 1" [class.grid-tree-cell-offset-y]="x !== 1"
+    [style.grid-row]="treeHeight - y">
+    <!-- Add node -->
+    <div class="flex flex-justify-center">
+      @if (x === 1) { <button type="button" (click)="nodeAdd(node, 'nw')" [disabled]="!!node.nw"><mat-icon>north_west</mat-icon></button> }
+      <button type="button" (click)="nodeAdd(node, 'n')" [disabled]="!!node.n"><mat-icon>north</mat-icon></button>
+      @if (x === 1) { <button type="button" (click)="nodeAdd(node, 'ne')" [disabled]="!!node.ne"><mat-icon>north_east</mat-icon></button> }
+      @if (node.prev) { <button type="button" class="button-danger" (click)="nodeRemove(node)"><mat-icon>delete</mat-icon></button> }
+    </div>
+    <!-- Item -->
+    <div>Item: <input class="input-guid" (input)="nodeGuidChanged($event, node)" (blur)="nodeGuidChanged($event, node)"></div>
+    <div>
+      <label>{{node.item?.name}}</label><br/>
+      @if (node?.item) { <app-item-icon [item]="node?.item" [opaque]="true" [hoverGlow]="false"></app-item-icon> }
+      @else { <div class="grid-tree-item-missing"></div>}
+    </div>
+    <!-- Cost -->
+    <div>
+      Cost:
+      <input class="input-cost" type="text" (change)="nodeCostChanged($event, node)">
+      @if (node.h) { <mat-icon class="v-middle" svgIcon="heart"></mat-icon> }
+      @else if (node.sc) { <mat-icon class="v-middle seasonal" svgIcon="candle"></mat-icon> }
+      @else if (node.sh) { <mat-icon class="v-middle seasonal" svgIcon="heart"></mat-icon> }
+      @else if (node.ac) { <mat-icon class="v-middle" svgIcon="ascended-candle"></mat-icon> }
+      @else if (node.ec) { <mat-icon class="v-middle" svgIcon="ticket" [inline]="false"></mat-icon> }
+      @else { <mat-icon class="v-middle" svgIcon="candle"></mat-icon> }
+    </div>
 
-<div *ngIf="result">
-  <button type="button" (click)="copyToClipboard('tree')">
-    Copy Tree
-  </button>
-  <button type="button" (click)="copyToClipboard('nodes')">
-    Copy Nodes
-  </button>
-  <button type="button" (click)="copyToClipboard('items')">
-    Copy Items
-  </button>
+    <!-- Arrows -->
+    @if (node.nw) { <div class="arrow arrow-left"></div>   }
+    @if (node.n) { <div class="arrow arrow-up"></div> }
+    @if (node.ne) { <div class="arrow arrow-right"></div> }
+  </div>
+
+  <!-- Connected -->
+  @if (node.nw) { <ng-container *ngTemplateOutlet="tNode; context: { $implicit: node.nw, x: x-1, y }"></ng-container> }
+  @if (node.n) { <ng-container *ngTemplateOutlet="tNode; context: { $implicit: node.n, x, y: y+1 }"></ng-container> }
+  @if (node.ne) { <ng-container *ngTemplateOutlet="tNode; context: { $implicit: node.ne, x: x+1, y }"></ng-container> }
+
+</ng-template>
+
+<div class="container mt">
+  <div class="flex">
+    <button type="button" (click)="submit()">Generate</button>
+    @if (generatedTree) {
+      <button type="button" (click)="copyToClipboard('tree')">
+        Copy Tree
+      </button>
+      <button type="button" (click)="copyToClipboard('nodes')">
+        Copy Nodes
+      </button>
+    }
+  </div>
 </div>
