@@ -9081,7 +9081,7 @@
     "item": "FyM7E9zFoH",
     "c": 60
   },
-  // Scarecrow Farmer
+  // #region Scarecrow Farmer
   {
     "guid": "jztFaDx20s",
     "item": "3difltLJOc",
@@ -9188,6 +9188,66 @@
     "item": "PxvVMovhCo",
     "c": 34
   },
+  // TS 118
+  {
+    "guid": "zH-3S-kC0a",
+    "item": "3difltLJOc",
+    "nw": "Xyd07vXWIx",
+    "n": "frBeIAHxIp"
+  },
+  {
+    "guid": "Xyd07vXWIx",
+    "item": "DGC8JcQK5y",
+    "h": 4
+  },
+  {
+    "guid": "frBeIAHxIp",
+    "item": "ki7gyniwOJ",
+    "c": 5,
+    "nw": "-OMzCP1Zbr",
+    "n": "ppCXHvhXNB",
+    "ne": "F6skO44PBv"
+  },
+  {
+    "guid": "-OMzCP1Zbr",
+    "item": "r1UK3P6AGy",
+    "c": 42
+  },
+  {
+    "guid": "F6skO44PBv",
+    "item": "SKK2p7G5nf",
+    "c": 3
+  },
+  {
+    "guid": "ppCXHvhXNB",
+    "item": "384F_Scv3-",
+    "ac": 2,
+    "n": "j0P9NRDm9w"
+  },
+  {
+    "guid": "j0P9NRDm9w",
+    "item": "ixFFdCm9cG",
+    "h": 3,
+    "nw": "-yVt2bL1SF",
+    "n": "5qpRa0ETgC"
+  },
+  {
+    "guid": "-yVt2bL1SF",
+    "item": "sNJx3GgOLF",
+    "h": 6
+  },
+  {
+    "guid": "5qpRa0ETgC",
+    "item": "wRsxoaUmkd",
+    "c": 5,
+    "n": "QdgqH57WOP"
+  },
+  {
+    "guid": "QdgqH57WOP",
+    "item": "PxvVMovhCo",
+    "c": 34
+  },
+  // #endregion
   // Snoozing Carpenter
   {
     "guid": "YkM_tSjB34",

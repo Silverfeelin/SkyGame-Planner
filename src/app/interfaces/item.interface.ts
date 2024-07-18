@@ -100,7 +100,7 @@ export enum ItemSubtype {
   FriendEmote = 'FriendEmote'
 };
 
-export type ItemGroup = 'Elder' | 'Season' | 'SeasonPass' | 'Ultimate';
+export type ItemGroup = 'Elder' | 'SeasonPass' | 'Ultimate';
 
 export type ItemSize = 'small' | 'medium' | 'default' | 'large' | 'auto';
 

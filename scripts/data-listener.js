@@ -37,11 +37,14 @@ const endpoints = {
       req.on('data', chunk => { body += chunk.toString(); });
       req.on('end', () => {
         try {
-          const itemData = JSON.parse(body);
-          if (typeof itemData !== 'object') { throw new Error('Invalid JSON'); }
+          const jsonData = JSON.parse(body);
+          if (typeof jsonData !== 'object') { throw new Error('Invalid JSON'); }
 
-          itemData.guid = nanoid(10);
-          itemData.id = getItemId();
+          const itemData = {
+            id: getItemId(),
+            guid: nanoid(10),
+            ...jsonData,
+          };
 
           const itemsJson = fs.readFileSync(itemsFilePath, 'utf8');
           const items = JSON.parse(itemsJson);
