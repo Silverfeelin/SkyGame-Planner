@@ -1985,6 +1985,13 @@
       "type": "Event",
       "name": "Enchanted Pyrotechnician"
     },
+    // Tournament of Triumph
+    {
+      "guid": "dC8B9yzwFr",
+      "type": "Event",
+      "name": "Crab of Triumph",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Tournament-of-Triumph-Crab-of-Triumph.png"
+    },
 
     // Look, I know it's not a spirit. That said, the objects TGC makes sure act like one sometimes.
     // The mannequins from AURORA and Revival were watching...

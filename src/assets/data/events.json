@@ -888,6 +888,27 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe"
       }
     },
+    // Tournament of Triumph
+    {
+      "guid": "EeTJuoCLXI",
+      "name": "Tournament of Triumph",
+      "shortName": "Tournament",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/3940c6fa1e/sky_totr_blog-header.jpg",
+      "instances": [
+        {
+          "guid": "BCh_DEXHt3",
+          "date": "2024-07-29",
+          "endDate": "2024-08-18",
+          "spirits": [
+            {	"guid": "nxmweKYV12", "spirit": "dC8B9yzwFr", "tree": "FnovR0E6SH" },
+          ],
+          "shops": [
+            "6_PNbhldnO"
+          ],
+          "draft": true
+        }
+      ]
+    }
     // #endregion
   ]
 }

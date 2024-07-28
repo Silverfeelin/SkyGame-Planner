@@ -1002,5 +1002,15 @@
       ]
     },
     // #endregion
+    // #region Tournament of Triumph
+    {
+      "guid": "6_PNbhldnO",
+      "type": "Store",
+      "iaps": [
+        "iuoxDhmZA1",
+        "qF83KsIFIn"
+      ]
+    },
+    // #endregion
   ]
 }

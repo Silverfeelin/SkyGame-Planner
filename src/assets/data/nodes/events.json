@@ -2053,4 +2053,23 @@
   // #endregion
   // #region Cinnamoroll Pop-Up Cafe (2024)
   // #endregion
+  // #region Tournament of Triumph
+  {
+    "guid": "Qbd0xTuOq-",
+    "item": "ToJLow6n9C",
+    "c": 5,
+    "nw": "o-TRLpPEk-",
+    "n": "Txa1da2rdg"
+  },
+  {
+    "guid": "o-TRLpPEk-",
+    "item": "JXXQvwug8B",
+    "ec": 25
+  },
+  {
+    "guid": "Txa1da2rdg",
+    "item": "TdAUrYLequ",
+    "ec": 37
+  },
+  // #endregion
 ]
