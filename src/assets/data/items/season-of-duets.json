@@ -1,0 +1,395 @@
+[
+  {
+    "id": 2236,
+    "guid": "3iG8im9Sgu",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "name": "Duets Pendant",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season-of-Duets-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Season-of-Duets-Pendant.png",
+    "order": 101
+  },
+  {
+    "id": 2237,
+    "guid": "bOUW5LY8PU",
+    "type": "Cape",
+    "group": "Ultimate",
+    "name": "Duets Ultimate Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Duets-Ultimate-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
+    "order": 722
+  },
+  {
+    "id": 2238,
+    "guid": "O9jSph-v7e",
+    "type": "Prop",
+    "group": "Ultimate",
+    "name": "Duets Ultimate Instrument",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
+    "order": 621
+  },
+  {
+    "id": 2239,
+    "guid": "i9it79Bnon",
+    "type": "Prop",
+    "group": "Ultimate",
+    "name": "Duets Ultimate Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Duets-Ultimate-Poster-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Duets-Ultimate-Poster-Prop.png",
+    "order": 615
+  },
+  {
+    "id": 2240,
+    "guid": "diBkeTRe1G",
+    "type": "Mask",
+    "name": "Duets Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Duets-Guide-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Duets-Mask-front.png",
+    "order": 195
+  },
+  {
+    "id": 2241,
+    "guid": "DtfPuD-xSP",
+    "type": "Special",
+    "name": "Concert Hall Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 2242,
+    "guid": "g5if_hfGQ-",
+    "type": "Quest",
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2243,
+    "guid": "pLAgUoGFQ8",
+    "type": "Prop",
+    "name": "The Pianist's Beginnings Poster",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Pianists-Beginnings-Poster-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Pianists-Beginnings-Poster-Prop.png",
+    "order": 619,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2244,
+    "guid": "I1B2G8p1uQ",
+    "type": "Hair",
+    "name": "The Pianist's Beginnings Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Pianists-Beginnings-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Pianists-Beginnings-Hair-front.png",
+    "order": 367
+  },
+  {
+    "id": 2245,
+    "guid": "tMT9whKoLk",
+    "type": "Outfit",
+    "name": "The Pianist's Beginnings Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Pianists-Beginnings-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Pianists-Beginnings-Outfit-front.png",
+    "order": 51,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2246,
+    "guid": "S9kEMk3Zii",
+    "type": "Prop",
+    "name": "The Pianist's Beginnings Rug",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Pianists-Beginnings-Rug-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Pianists-Beginnings-Rug-Prop.png",
+    "order": 589
+  },
+  {
+    "id": 2247,
+    "guid": "-F-7JGkkRf",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2248,
+    "guid": "2RVqVbz8OP",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2249,
+    "guid": "bswnrIV7vC",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2250,
+    "guid": "Q3WniYqjbN",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2251,
+    "guid": "9LGf7mpwgd",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-Duets-Seasonal-Heart-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2252,
+    "guid": "krE8-lSgNh",
+    "type": "Hair",
+    "name": "The Cellist's Beginnings Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Cellists-Beginnings-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Cellists-Beginnings-Hair-front.png",
+    "order": 368
+  },
+  {
+    "id": 2253,
+    "guid": "GNR4Or83IO",
+    "type": "Prop",
+    "name": "The Cellist's Beginnings Poster",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Cellists-Beginnings-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Cellists-Beginnings-Prop.png",
+    "order": 618,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2254,
+    "guid": "WTVL4L3IT-",
+    "type": "Outfit",
+    "name": "The Cellist's Beginnings Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Cellists-Beginnings-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Cellists-Beginnings-Outfit-front.png",
+    "order": 53
+  },
+  {
+    "id": 2255,
+    "guid": "aSFIx_KYoy",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2256,
+    "guid": "l7wweQZZee",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2257,
+    "guid": "UWuovba0QU",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2258,
+    "guid": "GzKcUk-Tzw",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-Duets-Seasonal-Heart-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2259,
+    "guid": "WuZeLoUATs",
+    "type": "Prop",
+    "name": "The Musicians' Legacy Piano",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Musicians-Legacy-Grand-Piano-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Musicians-Legacy-Grand-Piano-Prop.png",
+    "order": 620,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2260,
+    "guid": "hnvn7nWtrl",
+    "type": "Held",
+    "subtype": "Instrument",
+    "name": "The Musicians' Legacy Cello",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Musicians-Legacy-Cello-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Musicians-Legacy-Cello-Prop.png",
+    "order": 470
+  },
+  {
+    "id": 2261,
+    "guid": "KG-rMox4G2",
+    "type": "Music",
+    "name": "Music Sheet #40",
+    "sheet": "40",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png",
+    "order": 10000
+  },
+  {
+    "id": 2262,
+    "guid": "g8yG9W1k84",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2263,
+    "guid": "0Aeu5lQMJO",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2264,
+    "guid": "1JHImKQbo_",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2265,
+    "guid": "0GzAe_7zrk",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-Duets-Seasonal-Heart-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2266,
+    "guid": "tPukMxWUyv",
+    "type": "Outfit",
+    "name": "The Cellist's Flourishing Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Cellists-Flourishing-Outfit-front.png",
+    "order": 54,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2267,
+    "guid": "NN66BKlRfk",
+    "type": "Cape",
+    "name": "The Cellist's Flourishing Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Cellists-Flourishing-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cellists-Flourishing-Cape-back.png",
+    "order": 723
+  },
+  {
+    "id": 2268,
+    "guid": "FSiRt_Wh_m",
+    "type": "Prop",
+    "name": "The Cellist's Flourishing Rug",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Cellists-Flourishing-Rug-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Rug-Prop.png",
+    "order": 590
+  },
+  {
+    "id": 2269,
+    "guid": "a_Fa3yhrQg",
+    "type": "Prop",
+    "name": "The Cellist's Flourishing Poster",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Cellists-Flourishing-Poster-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Cellists-Flourishing-Poster-Prop.png",
+    "order": 617,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2270,
+    "guid": "P1uShTqTqE",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2271,
+    "guid": "SK5VqRoQrW",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2272,
+    "guid": "vFTLFT1J7q",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2273,
+    "guid": "Xvbx2xCXIY",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2274,
+    "guid": "InE35_ELM1",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-Duets-Seasonal-Heart-icon.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2275,
+    "guid": "svs-TcEdo-",
+    "type": "Outfit",
+    "name": "The Pianist's Flourishing Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Pianists-Flourishing-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Pianists-Flourishing-Outfit-front.png",
+    "order": 52,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2276,
+    "guid": "x-R9MDgnUQ",
+    "type": "Shoes",
+    "name": "The Pianist's Flourishing Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Pianists-Flourishing-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Pianists-Flourishing-Shoes.png",
+    "order": 71
+  },
+  {
+    "id": 2277,
+    "guid": "RCByalU9Om",
+    "type": "Prop",
+    "name": "The Pianist's Flourishing Poster",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Pianists-Flourishing-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Pianists-Flourishing-Prop.png",
+    "order": 616,
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2278,
+    "guid": "5C_ntpgIZ8",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2279,
+    "guid": "UhrrppaxfR",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png",
+    "group": "SeasonPass"
+  },
+  {
+    "id": 2280,
+    "guid": "9RkQ1ZoElh",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2281,
+    "guid": "yftX04x1e4",
+    "type": "Special",
+    "name": "Season Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-Duets-Seasonal-Heart-icon.png",
+    "group": "SeasonPass"
+  }
+]
