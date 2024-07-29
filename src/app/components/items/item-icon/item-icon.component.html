@@ -1,5 +1,5 @@
-<app-icon *ngIf="item.icon"
-  class="img item-icon" [src]="item.icon" [attr.data-glow-type]="glowType"
+<app-icon
+  class="img item-icon" [src]="item.icon || '/assets/icons/question.webp'" [attr.data-glow-type]="glowType"
   [opacity]="(item.unlocked || opaque) ? undefined : 0.5"
   [draggable]="false" [lazy]="lazy"
   (click)="iconClick($event)">

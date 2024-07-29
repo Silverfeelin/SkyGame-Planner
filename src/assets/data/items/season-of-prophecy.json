@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 86
+    "order": 87
   },
   {
     "id": 410,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 458
+    "order": 461
   },
   {
     "id": 411,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 151
+    "order": 152
   },
   {
     "id": 412,
@@ -143,7 +143,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Hair"
     },
-    "order": 308,
+    "order": 309,
     "group": "SeasonPass"
   },
   {
@@ -186,7 +186,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape"
     },
-    "order": 668,
+    "order": 672,
     "group": "SeasonPass"
   },
   {
@@ -199,7 +199,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Mask"
     },
-    "order": 147
+    "order": 148
   },
   {
     "id": 1075,
@@ -227,7 +227,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Prop"
     },
-    "order": 481
+    "order": 485
   },
   {
     "id": 1078,
@@ -277,7 +277,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Hair"
     },
-    "order": 309
+    "order": 310
   },
   {
     "id": 1083,
@@ -337,7 +337,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape"
     },
-    "order": 669
+    "order": 673
   },
   {
     "id": 1089,
@@ -349,7 +349,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Mask"
     },
-    "order": 148,
+    "order": 149,
     "group": "SeasonPass"
   },
   {
@@ -370,7 +370,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Prop"
     },
-    "order": 482
+    "order": 486
   },
   {
     "id": 1092,
@@ -427,7 +427,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Hair"
     },
-    "order": 310
+    "order": 311
   },
   {
     "id": 1098,
@@ -477,7 +477,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Mask"
     },
-    "order": 149,
+    "order": 150,
     "group": "SeasonPass"
   },
   {
@@ -490,7 +490,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape"
     },
-    "order": 667
+    "order": 671
   },
   {
     "id": 1104,
@@ -518,7 +518,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Prop"
     },
-    "order": 483
+    "order": 487
   },
   {
     "id": 1107,
@@ -575,7 +575,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Hair"
     },
-    "order": 311,
+    "order": 312,
     "group": "SeasonPass"
   },
   {
@@ -628,7 +628,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Mask"
     },
-    "order": 150
+    "order": 151
   },
   {
     "id": 1118,
@@ -675,7 +675,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 488
+    "order": 492
   },
   {
     "id": 1123,
@@ -687,6 +687,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 484
+    "order": 488
   }
 ]
