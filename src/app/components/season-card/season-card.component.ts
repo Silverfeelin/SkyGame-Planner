@@ -80,7 +80,6 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
 
   checkin(): void {
     this.checkedIn = !this.checkedIn;
-    this.updateCalculator();
     if (this.checkedIn) {
       localStorage.setItem(`season.checkin.${this.season?.guid}`, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
     } else {
@@ -107,32 +106,5 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
     this.options.show?.forEach((section, i) => {
       this.sections[section] = i + 2;
     });
-  }
-
-  /** Update calculator candles. */
-  private updateCalculator(): void {
-    if (!this.season) { return; }
-
-    // Get data
-    const calcData = localStorage.getItem(`season.calc.${this.season.guid}`);
-    if (!calcData) { return; }
-    const data = JSON.parse(calcData);
-
-    const today = DateHelper.todaySky().toISO();
-    const c = data.sp ? 6 : 5; // Amount of daily candles.
-
-    if (this.checkedIn) {
-      // If checked only modify if calculator includes today's candles.
-      if (data.it === today) { return; }
-      data.it = today;
-      data.sc = Math.min(data.sc + c, 999);
-    } else {
-      // If unchecked only modify if calculator doesn't includes today's candles.
-      if (!data.it || data.it !== today) { return; }
-      data.it = '';
-      data.sc = Math.max(data.sc - c, 0);
-    }
-
-    localStorage.setItem(`season.calc.${this.season.guid}`, JSON.stringify(data));
   }
 }

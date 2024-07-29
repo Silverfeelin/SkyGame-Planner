@@ -42,6 +42,7 @@ export class EventCalculatorComponent {
   allNodes: Array<INode> = [];
   shops: Array<IShop> = [];
   allListNodes: Array<IItemListNode> = [];
+  now: DateTime = DateTime.now();
 
   timedCurrencies: Array<ICalculatorDataTimedCurrency> = [];
   timedCurrencyCount: {[guid: string]: number} = {};
@@ -335,6 +336,8 @@ export class EventCalculatorComponent {
   // #endregion
 
   private calculate(): void {
+    this.now = DateTime.now();
+
     // Get all wanted nodes that are not obtained.
     const allWantedValues = Object.values(this.wantNodes);
     const newWantedValues = allWantedValues.filter(n => !n.item?.unlocked);
@@ -384,10 +387,11 @@ export class EventCalculatorComponent {
     for (const timedCurrency of this.timedCurrencies) {
       const obtained = (this.timedCurrencyCount[timedCurrency.guid] || 0);
       let available = Math.max(0, timedCurrency.amount - obtained);
-      if (timedCurrency.endDate < date) { available = 0; }
-
-      this.currencyAvailable += available;
       this.timedCurrencyRemaining[timedCurrency.guid] = available;
+
+      if (timedCurrency.endDate >= date) {
+        this.currencyAvailable += available;
+      }
     }
 
     this.daysRequired = Math.ceil(this.currencyRequired / this.currencyPerDay!);

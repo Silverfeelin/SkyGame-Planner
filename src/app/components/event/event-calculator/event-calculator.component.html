@@ -30,7 +30,7 @@
       <div class="container mt">
         <mat-icon class="result-warn">priority_high</mat-icon>
         This calculator has been reworked because of the new event currency for the Tournament of Triumph event.<br/>
-        I haven't been able to thoroughly test it yet, so please let me know if you encounter any issues! You can ping me in the Sky Discord: &#64;Silverfeelin
+        Please let me know if you encounter any issues! You can ping me in the Sky Discord: &#64;Silverfeelin
       </div>
       @if (concluded) {
         <div class="container mt">
@@ -42,10 +42,10 @@
         <b>Settings</b>
         <!-- Currencies -->
         <div>
-          Your event currency:
+          Your current event currency:
           <mat-icon [svgIcon]="'ticket'" class="v-middle"></mat-icon>
           <input #inpEc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="currencyCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
-          <button type="button" class="button-sc button-sc" (click)="addCurrency()">+{{currencyPerDay}}</button>
+          <button type="button" class="button-sc button-sc" (click)="addCurrency()">+{{currencyPerDay}} (daily)</button>
         </div>
         <div>
           Today's daily currency:
@@ -55,23 +55,43 @@
           </button>
         </div>
         <div>
-          Your candles:
+          Your current candles:
           <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>
           <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
         </div>
         <div>
-          Your hearts:
+          Your current hearts:
           <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>
           <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="heartCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
         </div>
 
         @if (timedCurrencies.length) {
           <div>
+            <hr class="mt-half mb"/>
+            <div>
+              This event includes some activities that reward extra event currency.<br/>
+              Please enter how much you have collected from these activities below.<br/>
+              Your current event currency should always be entered at the top of the page, including the ones from these activities!
+            </div>
             @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
-              <hr/>
+              <hr class="mt mb"/>
               <div>
-                Between <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b> you can get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
-                Please enter how many you have collected during this period:
+                @if (timedCurrency.endDate < now) {
+                  Between <b class="c-old">{{ timedCurrency.date | datetime }}</b>
+                  and <b class="c-old">{{ timedCurrency.endDate | datetime }}</b>
+                  you were able to get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
+                  Please enter how much you collected during this period:
+                } @else if (timedCurrency.date > now) {
+                  Between <b>{{ timedCurrency.date | datetime }}</b>
+                  and <b>{{ timedCurrency.endDate | datetime }}</b>
+                  you will be able to get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
+                  Please keep this value at <b>0</b> until the currency becomes available:
+                } @else {
+                  Between <b class="c-new">{{ timedCurrency.date | datetime }}</b>
+                  and <b class="c-new">{{ timedCurrency.endDate | datetime }}</b>
+                  you can get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
+                  Please enter how much you have collected so far:
+                }
                 <input #inpTimed [attr.data-guid]="timedCurrency.guid" (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="timedCurrencyCount[timedCurrency.guid]" class="d-inline-block input-no-arrows" style="width: 64px;"/>
               </div>
             }
@@ -125,12 +145,28 @@
         </div>
         @if (timedCurrencies.length) {
           @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
-          <div>
-            You will be able to get
-              <b class="c-new">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
-              extra event currency between
-              <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
-            </div>
+            @if (!timedCurrencyRemaining[timedCurrency.guid]) {
+              <div>
+                You got all
+                <b class="c-new">{{ timedCurrency.amount }}</b>
+                extra event currency between
+                <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+              </div>
+            } @else if (timedCurrency.endDate < now) {
+              <div>
+                You missed
+                <b class="c-old">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+                extra event currency between
+                <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+              </div>
+            } @else {
+              <div>
+                You will be able to get
+                <b class="c-new">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+                extra event currency between
+                <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+              </div>
+            }
           }
         }
         <div>
@@ -145,7 +181,7 @@
         </div>
         @if (currencyRequired > currencyAvailable) {
           <b class="c-old">
-            You will not be able to collect enough event currency before the event concludes.<br/>You should prioritize the items you want most or check if you can get extra event currency by spending candles.
+            You will not be able to collect enough event currency before the event concludes.<br/>You should prioritize the items you want most or check if you can get extra event currency from shops.
           </b>
           <div>
             You will be short <b class="c-old">{{ currencyRequired - currencyAvailable }}</b> event currency.
