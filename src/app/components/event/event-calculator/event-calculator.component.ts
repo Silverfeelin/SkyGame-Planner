@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
@@ -13,6 +13,8 @@ import { NodeService } from 'src/app/services/node.service';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
 import { ItemListComponent } from '../../item-list/item-list/item-list.component';
 import { MatIcon } from '@angular/material/icon';
+import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
+import { DateTimePipe } from '@app/pipes/date-time.pipe';
 
 @Component({
     selector: 'app-event-calculator',
@@ -20,12 +22,14 @@ import { MatIcon } from '@angular/material/icon';
     styleUrl: './event-calculator.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [RouterLink, MatIcon, ItemListComponent, SpiritTreeComponent]
+    imports: [RouterLink, MatIcon, ItemListComponent, SpiritTreeComponent, DateTimePipe]
 })
 export class EventCalculatorComponent {
   @ViewChild('inpEc', { static: false }) inpEc!: ElementRef<HTMLInputElement>;
   @ViewChild('inpC', { static: false }) inpC!: ElementRef<HTMLInputElement>;
   @ViewChild('inpH', { static: false }) inpH!: ElementRef<HTMLInputElement>;
+
+  @ViewChildren('inpTimed', { read: ElementRef }) inpTimed!: QueryList<ElementRef<HTMLInputElement>>;
 
   guid?: string;
   event!: IEvent;
@@ -39,6 +43,10 @@ export class EventCalculatorComponent {
   shops: Array<IShop> = [];
   allListNodes: Array<IItemListNode> = [];
 
+  timedCurrencies: Array<ICalculatorDataTimedCurrency> = [];
+  timedCurrencyCount: {[guid: string]: number} = {};
+  timedCurrencyRemaining: {[guid: string]: number} = {};
+
   currencyCount = 0;
   candleCount = 0;
   heartCount = 0;
@@ -51,6 +59,7 @@ export class EventCalculatorComponent {
 
   wantListNodes: { [guid: string]: IItemListNode } = {};
 
+  calculatorData?: ICalculatorData;
   currencyRequired = 0;
   currencyAvailable = 0;
   currencyPerDay?: number;
@@ -83,8 +92,17 @@ export class EventCalculatorComponent {
 
     this.event = instance.event;
     this.eventInstance = instance;
-    this.currencyPerDay = instance.currencyPerDay || undefined;
+    this.calculatorData = instance.calculatorData;
+    this.currencyPerDay = instance.calculatorData?.dailyCurrencyAmount || undefined;
     this.concluded = this.eventInstance.endDate < DateTime.now();
+
+    // Load timed currencies.
+    this.timedCurrencies = instance.calculatorData?.timedCurrency || [];
+    for (const timedCurrency of this.timedCurrencies) {
+      timedCurrency.date = DateHelper.fromStringSky(timedCurrency.date)!;
+      timedCurrency.endDate = DateHelper.fromStringSky(timedCurrency.endDate)!.endOf('day');
+      this.timedCurrencyCount[timedCurrency.guid] = 0;
+    }
 
     this.spirits = this.eventInstance.spirits.filter(s => s.tree);
     this.trees = this.spirits.map(s => s.tree!);
@@ -202,6 +220,12 @@ export class EventCalculatorComponent {
     this.candleCount = Math.min(999, Math.max(parseInt(targetC.value, 10) || 0, 0));
     const targetH = this.inpH.nativeElement;
     this.heartCount = Math.min(999, Math.max(parseInt(targetH.value, 10) || 0, 0));
+
+    this.inpTimed?.forEach(inp => {
+      const value = parseInt(inp.nativeElement.value, 10) || 0;
+      const guid = inp.nativeElement.dataset['guid']!;
+      this.timedCurrencyCount[guid] = value;
+    });
   }
 
   currencyCountChanged(): void {
@@ -257,6 +281,11 @@ export class EventCalculatorComponent {
       ec: this.currencyCount,
       c: this.candleCount,
       h: this.heartCount,
+      tc: Object.keys(this.timedCurrencyCount).reduce((acc: { [guid: string]: number }, guid: string) => {
+        const value = this.timedCurrencyCount[guid];
+        if (value) { acc[guid] = value; }
+        return acc;
+      }, {} as { [guid: string]: number }),
       wn: Object.keys(this.wantNodes),
       ln: Object.keys(this.wantListNodes),
     };
@@ -274,25 +303,20 @@ export class EventCalculatorComponent {
       ec: 0,
       c: 0,
       h: 0,
+      tc: {},
       wn: [],
       ln: [],
     };
 
     this.includesToday = parsed.it === today;
     this.currencyCount = parsed.ec || 0;
-    if (this.inpEc?.nativeElement) {
-      this.inpEc.nativeElement.value = this.currencyCount.toString();
-    }
-
     this.candleCount = parsed.c || 0;
-    if (this.inpC?.nativeElement) {
-      this.inpC.nativeElement.value = this.candleCount.toString();
-    }
-
     this.heartCount = parsed.h || 0;
-    if (this.inpH?.nativeElement) {
-      this.inpH.nativeElement.value = this.heartCount.toString();
-    }
+
+    this.timedCurrencyCount = parsed.tc || {};
+    this.timedCurrencies.forEach(timedCurrency => {
+      this.timedCurrencyCount[timedCurrency.guid] ||= 0;
+    });
 
     const nodeSet = new Map(this.allNodes.map(n => [n.guid, n]));
     this.wantNodes = parsed.wn.reduce((acc: { [guid: string]: INode }, guid: string) => {
@@ -355,10 +379,23 @@ export class EventCalculatorComponent {
     }
 
     this.currencyRequired -= this.currencyCount;
+
+    // Check for available timed currencies.
+    for (const timedCurrency of this.timedCurrencies) {
+      const obtained = (this.timedCurrencyCount[timedCurrency.guid] || 0);
+      let available = Math.max(0, timedCurrency.amount - obtained);
+      if (timedCurrency.endDate < date) { available = 0; }
+
+      this.currencyAvailable += available;
+      this.timedCurrencyRemaining[timedCurrency.guid] = available;
+    }
+
     this.daysRequired = Math.ceil(this.currencyRequired / this.currencyPerDay!);
 
     this.candlesRequired -= this.candleCount;
     this.heartsRequired -= this.heartCount;
+
+
 
     // Check if any required node is not marked as wanted.
     const newWantedSet = new Set(newWantedValues);

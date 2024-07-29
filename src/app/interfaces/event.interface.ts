@@ -1,4 +1,5 @@
 import { IConfig, IGuid, IPeriod } from "./base.interface";
+import { ICalculatorData } from './calculator-data.interface';
 import { IShop } from "./shop.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { ISpirit } from "./spirit.interface";
@@ -30,7 +31,9 @@ export interface IEventInstance extends IGuid, IPeriod {
 
   /** Event instance number starting at 1. */
   number: number;
-  currencyPerDay?: number;
+
+  /** Event calculator data */
+  calculatorData?: ICalculatorData;
 
   /** If marked as draft, data may be inaccurate or incomplete. */
   draft?: boolean;

@@ -187,7 +187,9 @@
           "guid": "L_cg-uO76v",
           "date": "2024-03-25",
           "endDate": "2024-04-14",
-          "currencyPerDay": 4,
+          "calculatorData": {
+            "dailyCurrencyAmount": 4
+          },
           "spirits": [
             {	"guid": "cfkjIVyu-B", "spirit": "IqShB-6_rY", "tree": "oDa9O5v-13" },
             { "guid": "_0Lrk-cHWy", "spirit": "tKeCcn57So", "tree": "95O0Urqxm0" }
@@ -255,7 +257,9 @@
           "guid": "gNa15Daes3",
           "date": { "day": 27, "month": 5, "year": 2024 },
           "endDate": { "day": 16, "month": 6, "year": 2024 },
-          "currencyPerDay": 4,
+          "calculatorData": {
+            "dailyCurrencyAmount": 4
+          },
           "spirits": [
             { "guid": "W0-7uIUr1t", "spirit": "3M1KSVgf49", "tree": "SyEw6hUkqc" }
           ],
@@ -328,7 +332,9 @@
           "guid": "Nw1QP8vccL",
           "date": "2024-06-24",
           "endDate": "2024-07-07",
-          "currencyPerDay": 5,
+          "calculatorData": {
+            "dailyCurrencyAmount": 5
+          },
           "spirits": [
             { "guid": "Db5e396lo0", "spirit": "L8hK6RLQa_", "tree": "3YJalWDFZ7" }
           ],
@@ -427,7 +433,9 @@
           "guid": "JefBqVVavo",
           "date": "2024-07-12",
           "endDate": "2024-07-26",
-          "currencyPerDay": 4,
+          "calculatorData": {
+            "dailyCurrencyAmount": 4
+          },
           "spirits": [
             { "guid": "mIaa0C6ibJ", "spirit": "mYOzGrzNHU", "tree": "Tp3TGsdzEb" }
           ],
@@ -876,7 +884,9 @@
           "guid": "UxrJUiw6Ue",
           "date": { "day": 27, "month": 4, "year": 2024 },
           "endDate": { "day": 17, "month": 5, "year": 2024 },
-          "currencyPerDay": 5,
+          "calculatorData": {
+            "dailyCurrencyAmount": 5
+          },
           "spirits": [],
           "shops": [
             "6YoHc1liAI",
@@ -905,6 +915,14 @@
           "shops": [
             "6_PNbhldnO"
           ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 2,
+            "timedCurrency": [
+              { "guid": "prahOawBXo", "date": "2024-07-29", "endDate": "2024-08-07", "amount": 25 },
+              { "guid": "OLY9sO71rl", "date": "2024-08-08", "endDate": "2024-08-17", "amount": 25 },
+              { "guid": "vUL-YAwTUP", "date": "2024-08-18", "endDate": "2024-08-18", "amount": 3 }
+            ]
+          },
           "draft": true
         }
       ]
