@@ -2,7 +2,7 @@
 <div class="sky-card" *ngIf="return">
   <div class="sky-card-header">
     <div class="title-select">
-      <ng-content [select]="title"></ng-content>
+      <ng-content select="[title]"></ng-content>
     </div>
     <h2 class="h3 mb-0 title-default">
       {{ return.name }}

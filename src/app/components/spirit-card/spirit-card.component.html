@@ -2,7 +2,7 @@
 <div class="sky-card" *ngIf="spirit">
   <div class="sky-card-header">
     <div class="title-select">
-      <ng-content [select]="title"></ng-content>
+      <ng-content select="[title]"></ng-content>
     </div>
     <h2 class="h3 mb-0 title-default">
       <app-spirit-type-icon [type]="spirit.type"></app-spirit-type-icon>
