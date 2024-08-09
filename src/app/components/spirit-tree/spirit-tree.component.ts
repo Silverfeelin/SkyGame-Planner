@@ -31,7 +31,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() name?: string | undefined;
   @Input() highlight?: boolean;
   @Input() highlightItem?: string;
-  @Input() seasonIcon?: string;
   @Input() enableControls = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean;

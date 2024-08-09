@@ -9,11 +9,10 @@ interface IDropboxData {
   unlocked: string;
   wingedLights: string;
   favourites: string;
+  seasonPasses: string;
   mapMarkers: string;
   keys: { [key: string]: unknown };
 }
-
-const CLIENT_ID = '5slqiqhhxcxjiqr';
 
 @Injectable({
   providedIn: 'root'
@@ -92,10 +91,12 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     const unlocked = data.unlocked || undefined;
     const wingedLights = data.wingedLights || undefined;
     const favourites = data.favourites || undefined;
+    const seasonPasses = data.seasonPasses || undefined;
     const mapMarkers = data.mapMarkers || undefined;
     this._unlocked = new Set(unlocked?.split(',') ?? []);
     this._wingedLights = new Set(wingedLights?.split(',') ?? []);
     this._favourites = new Set(favourites?.split(',') ?? []);
+    this._seasonPasses = new Set(seasonPasses?.split(',') ?? []);
     this._mapMarkers = new Set(mapMarkers?.split(',') ?? []);
     this._keys = data.keys || {};
   }
@@ -106,6 +107,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
       unlocked: [...this._unlocked].join(','),
       wingedLights: [...this._wingedLights].join(','),
       favourites: [...this._favourites].join(','),
+      seasonPasses: [...this._seasonPasses].join(','),
       mapMarkers: [...this._mapMarkers].join(','),
       keys: this._keys
     };

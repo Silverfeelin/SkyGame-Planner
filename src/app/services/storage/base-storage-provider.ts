@@ -11,6 +11,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   _wingedLights = new Set<string>();
   _favourites = new Set<string>();
   _mapMarkers = new Set<string>();
+  _seasonPasses = new Set<string>();
   _keys: { [key: string]: unknown } = {};
 
   events = new Subject<IStorageEvent>();
@@ -31,6 +32,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
     this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
     this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
+    this._seasonPasses = new Set(data.seasonPasses?.length ? data.seasonPasses.split(',') : []);
     this._mapMarkers = new Set(data.mapMarkers?.length ? data.mapMarkers.split(',') : []);
     this._keys = data.keys || {};
   }
@@ -41,6 +43,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
       unlocked: [...this.getUnlocked()].join(','),
       wingedLights: [...this.getWingedLights()].join(','),
       favourites: [...this.getFavourites()].join(','),
+      seasonPasses: [...this.getSeasonPasses()].join(','),
       mapMarkers: [...this.getMapMarkers()].join(','),
       keys: this._keys
     };
@@ -124,6 +127,30 @@ export abstract class BaseStorageProvider implements IStorageProvider {
 
   isFavourite(guid: string): boolean {
     return this._favourites.has(guid);
+  }
+
+  getSeasonPasses(): ReadonlySet<string> {
+    return this._seasonPasses;
+  }
+
+  addSeasonPasses(...guids: Array<string>): void {
+    for (const guid of guids) {
+      this._seasonPasses.add(guid);
+    }
+    this._lastDate = DateTime.now();
+    this.debounceSave();
+  }
+
+  removeSeasonPasses(...guids: Array<string>): void {
+    for (const guid of guids) {
+      this._seasonPasses.delete(guid);
+    }
+    this._lastDate = DateTime.now();
+    this.debounceSave();
+  }
+
+  hasSeasonPass(guid: string): boolean {
+    return this._seasonPasses.has(guid);
   }
 
   getMapMarkers(): ReadonlySet<string> {

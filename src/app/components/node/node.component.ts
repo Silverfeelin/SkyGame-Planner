@@ -83,6 +83,20 @@ export class NodeComponent implements OnChanges {
 
     // Unlock (or lock) based on the item status.
     const unlock = !item.unlocked;
+
+    // If this is the season item node and season pass is not owned, warn user.
+    if (unlock && (item.group === 'SeasonPass' || item.group === 'Ultimate')) {
+      const isFirstNode = this.node === item.nodes?.at(0);
+      const season = item.season;
+      const shouldWarn = isFirstNode && season && !this._storageService.hasSeasonPass(season.guid);
+      if (shouldWarn) {
+        if (!confirm(`You've selected an item that requires the ${item.season?.name} season pass. Do you want to unlock this item and the season pass?`)) {
+          return;
+        }
+        this._storageService.addSeasonPasses(season.guid);
+      }
+    }
+
     let toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
     // Don't lock connected nodes if this isn't the unlocked node for the item.
     if (!unlock && !this.node.unlocked) { toggleConnected = false; }

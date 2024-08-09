@@ -99,7 +99,14 @@ export class SettingsComponent {
       const d = data as any;
       data = {
         version: '0.1.1',
-        storageData: { date: '2024-04-01T00:00:00.000+00:00', unlocked: d.unlocked, wingedLights: d.wingedLights, favourites: d.favourites, mapMarkers: '', keys: {}},
+        storageData: {
+          date: '2024-04-01T00:00:00.000+00:00',
+          unlocked: d.unlocked,
+          wingedLights: d.wingedLights,
+          favourites: d.favourites,
+          seasonPasses: '',
+          mapMarkers: '',
+          keys: {}},
         closetData: d.closet
       };
     }
@@ -153,6 +160,7 @@ export class SettingsComponent {
       unlocked: '',
       wingedLights: '',
       favourites: '',
+      seasonPasses: '',
       mapMarkers: '',
       keys: {}
     });

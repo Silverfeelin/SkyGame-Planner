@@ -42,8 +42,8 @@
         <div>
           Season Pass:
           <button type="button" (click)="toggleSeasonPass()">
-            <mat-icon class="calc-button-icon">{{ ownSeasonPass ? 'check' : 'close' }}</mat-icon>
-            <span class="calc-button-label">{{ ownSeasonPass ? 'owned' : 'not owned' }}</span>
+            <mat-icon class="calc-button-icon">{{ haveSeasonPass ? 'check' : 'close' }}</mat-icon>
+            <span class="calc-button-label">{{ haveSeasonPass ? 'owned' : 'not owned' }}</span>
           </button>
         </div>
         <div>
@@ -75,7 +75,7 @@
             Required items leading up to the items you want are included in the calculations!
           </blockquote>
         }
-        @if (!ownSeasonPass && hasSeasonPassNode) {
+        @if (!haveSeasonPass && hasSeasonPassNode) {
           <blockquote class="mb-0">
             <mat-icon class="result-warn">priority_high</mat-icon>
             You have selected items that require the <b class="c-old">Season Pass</b>!
@@ -88,12 +88,12 @@
         </div>
         <div>
           Because you
-          <b [class.c-new]="ownSeasonPass" [class.c-old]="!ownSeasonPass">
-            {{ ownSeasonPass ? 'own' : 'do not own' }}
+          <b [class.c-new]="haveSeasonPass" [class.c-old]="!haveSeasonPass">
+            {{ haveSeasonPass ? 'own' : 'do not own' }}
           </b>
           the Season Pass,
           you will be able to get
-          <b class="c-new">{{ ownSeasonPass ? '6' : '5' }}</b>
+          <b class="c-new">{{ haveSeasonPass ? '6' : '5' }}</b>
           season candles every day, not including bonus events.
         </div>
         <div>
@@ -154,7 +154,7 @@
       <div class="sky-flex scroll-x tree-scroll">
         @for (tree of trees; track tree.guid) {
           <app-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
-            [seasonIcon]="season.iconUrl" [enableControls]="false"
+            [enableControls]="false"
             [nodeOverlayTemplate]="tNode" [opaqueNodes]="true">
           </app-spirit-tree>
         }
@@ -166,7 +166,7 @@
 <ng-template #tNode let-node>
   <div class="node-show-hover"
     [class.node-have]="node.item?.unlocked" [class.node-want]="wantNodes[node.guid]"
-    [class.node-sp]="node.item?.group === 'SeasonPass' && !ownSeasonPass"
+    [class.node-sp]="node.item?.group === 'SeasonPass' && !haveSeasonPass"
     (click)="toggleButtons(node)"
   >
     <div class="node-overlay" [class.o-1]="nodeShowButtons === node"

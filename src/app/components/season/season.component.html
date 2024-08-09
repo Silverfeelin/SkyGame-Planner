@@ -52,6 +52,13 @@
           <span class="c-accent" *ngIf="shLeft">({{ shLeft }} needed)</span>
         </span>
       </div>
+      <!-- Season Pass -->
+      <div (click)="toggleSeasonPass()" class="container action colspan-2" [class.active]="hasSeasonPass">
+        <mat-icon class="menu-icon">{{hasSeasonPass ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+        <span class="menu-label">
+          I have the Season Pass
+        </span>
+      </div>
       <!-- Calculator -->
       @if (state === 'active' || state === 'future') {
         <a class="container colspan-2" [routerLink]="'/season-calculator'">
@@ -90,7 +97,7 @@
       <!-- Guide tree -->
       @if (guide && guideTree) {
         <div class="tree-wrapper">
-          <app-spirit-tree [tree]="guideTree" [name]="guide!.name" [highlight]="highlightTree === guideTree.guid" [seasonIcon]="season.iconUrl">
+          <app-spirit-tree [tree]="guideTree" [name]="guide!.name" [highlight]="highlightTree === guideTree.guid">
               <!-- Link to spirit -->
               <div name>
                 <a [routerLink]="['/spirit', guide.guid]" [queryParams]="{ highlightTree: guideTree.guid }">
@@ -104,7 +111,7 @@
       @if (spirits) {
         @for (spirit of spirits; track spirit.guid) {
           <div class="tree-wrapper">
-            <app-spirit-tree [tree]="spiritTrees[spirit.guid]" [name]="spirit.name" [highlight]="highlightTree === spiritTrees[spirit.guid].guid" [seasonIcon]="season.iconUrl">
+            <app-spirit-tree [tree]="spiritTrees[spirit.guid]" [name]="spirit.name" [highlight]="highlightTree === spiritTrees[spirit.guid].guid">
               <!-- Link to spirit -->
               <div name>
                 <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spiritTrees[spirit.guid].guid }">
