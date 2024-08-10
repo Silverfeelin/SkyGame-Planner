@@ -39,6 +39,10 @@ import { AreaComponent } from './components/areas/area/area.component';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/elusive-spirits.component';
 import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
+import { ShopNestingComponent } from './components/shops/shop-nesting/shop-nesting.component';
+import { ShopHarmonyHallComponent } from './components/shops/shop-harmony-hall/shop-harmony-hall.component';
+import { ShopEventStoreComponent } from './components/shops/shop-event-store/shop-event-store.component';
+import { ShopOfficeComponent } from './components/shops/shop-office/shop-office.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -80,6 +84,10 @@ export const routes: Routes = [
           { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
           { path: 'settings', component: SettingsComponent, title: title('Settings') },
           { path: 'shop', component: ShopsComponent, title: title('Shops') },
+          { path: 'shop/event', component: ShopEventStoreComponent, title: title('Aviary Event Store') },
+          { path: 'shop/harmony', component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
+          { path: 'shop/nesting', component: ShopNestingComponent, title: title('Nesting Workshop') },
+          { path: 'shop/office', component: ShopOfficeComponent, title: title('Office') },
           { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
           { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },

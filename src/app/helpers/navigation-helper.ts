@@ -57,7 +57,11 @@ export class NavigationHelper {
 
     const shop = node.itemList.shop!;
     const nav: NavigationExtras = { queryParams: { highlightNode: node.guid }};
-    if (shop.permanent) { return { route: ['/shop'], extras: nav }; }
+    if (shop.permanent) {
+      return typeof shop.permanent === 'string'
+        ? { route: ['/shop', shop.permanent], extras: nav }
+        : { route: ['/shop'], extras: nav };
+    }
     if (shop.event) { return { route: ['/event-instance', shop.event.guid], extras: nav }; }
     if (shop.season) { return { route: ['/season', shop.season.guid], extras: nav }; }
     return undefined;
@@ -110,7 +114,11 @@ export class NavigationHelper {
     if (!shop) { return undefined; }
 
     const nav: NavigationExtras = { queryParams: { highlightIap: iap?.guid }};
-    if (shop?.permanent) { return { route: ['/shop'], extras: nav }; }
+    if (shop?.permanent) {
+      return typeof shop.permanent === 'string'
+        ? { route: ['/shop', shop.permanent], extras: nav }
+        : { route: ['/shop'], extras: nav };
+    }
     if (shop?.event) { return { route: ['/event-instance', shop.event.guid], extras: nav }; }
     if (shop?.season) { return { route: ['/season', shop.season.guid], extras: nav }; }
     return undefined;

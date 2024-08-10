@@ -18,7 +18,7 @@ export interface IShop extends IGuid {
   date?: DateTime;
   endDate?: DateTime;
 
-  permanent?: boolean;
+  permanent?: boolean | string;
 
   /// References ///
   iaps?: Array<IIAP>;

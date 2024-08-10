@@ -1,0 +1,24 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Nesting Workshop</h1>
+  </div>
+  <div class="sky-card-body">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Nesting_Workshop'}"></app-wiki-link>
+  </div>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="false" [title]="'Nesting Challenges'">
+    <div class="sky-flex scroll-x">
+      @for (spirit of challengeSpirits; track spirit.guid) {
+        <app-spirit-tree [tree]="spirit.tree!" [name]="spirit.name"></app-spirit-tree>
+      }
+    </div>
+  </app-card>
+</div>
+
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
+      <app-item-list [itemList]="nestingWorkshop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+    </app-card>
+  </div>

@@ -13,7 +13,7 @@
       "guid": "wKkwWi5qdC",
       "type": "Spirit",
       "spirit": "ExkE9a7QJ0",
-      "permanent": true,
+      "permanent": "office",
       "iaps": [
         "37HKvA4bBc",
         "3uTp2mfgQj"
@@ -21,9 +21,9 @@
     },
     {
       "guid": "asYb2Serjg",
-      "type": "Store",
-      "name": "Premium Candle Store",
-      "permanent": true,
+      "type": "Object",
+      "name": "Aviary Event Store",
+      "permanent": "event",
       "iaps": [
         "c4cZcnuZPk"
       ]
@@ -41,7 +41,7 @@
       "guid": "RLDuUaL17F",
       "type": "Object",
       "name": "Beta reward (unavailable)",
-      "permanent": true,
+      "permanent": "office",
       "iaps": [
         "IquijQ-cfu"
       ]
@@ -50,7 +50,7 @@
       "guid": "F1xMux6TNy",
       "type": "Object",
       "name": "Aviary Event Store",
-      "permanent": true,
+      "permanent": "event",
       "iaps": [
         "7kg6h7Xf5l",
         "QwEXWrziHq"
@@ -60,7 +60,7 @@
       "guid": "SnbeExzeMM",
       "type": "Object",
       "name": "Harmony Hall Counter",
-      "permanent": true,
+      "permanent": "harmony",
       "iaps": [
         "dyqX00yWC0",
         "5VJfMMrFV1",
@@ -72,14 +72,14 @@
       "guid": "HY4LWwN4QY",
       "type": "Object",
       "name": "Aviary Event Store",
-      "permanent": true,
+      "permanent": "event",
       "itemList": "PLIrclx0V4"
     },
     {
       "guid": "Vrrbqd2iPV",
       "type": "Object",
       "name": "Aviary Event Store (Steam)",
-      "permanent": true,
+      "permanent": "event",
       "itemList": "6AS-92sc6t"
     },
     // #endregion
@@ -153,7 +153,7 @@
       "guid": "he4MHA7_uC",
       "type": "Object",
       "name": "Nesting Workshop Counter",
-      "permanent": true,
+      "permanent": "nesting",
       "itemList": "AKNI67tVW-"
     },
     // #endregion

@@ -8,118 +8,158 @@
 </div>
 
 <div class="mt">
-  <app-card [foldable]="true" [folded]="false" [title]="'Nesting Challenges'">
-    <div class="sky-flex scroll-x">
-      @for (spirit of challengeSpirits; track spirit.guid) {
-        <app-spirit-tree [tree]="spirit.tree!" [name]="spirit.name"></app-spirit-tree>
-      }
-    </div>
-  </app-card>
-</div>
-
-@if (nestingWorkshop) {
-  <div class="mt">
-    <app-card [foldable]="true" [folded]="false" [title]="'Nesting Workshop'">
-      <div class="mb">
-        <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Nesting_Workshop'}"></app-wiki-link>
+  <div class="grid grid-2">
+    <!-- Aviary Event Store -->
+    <div class="sky-card">
+      <div class="sky-card-header">
+        <h3 class="h4 mb-0">Aviary Event Store</h3>
       </div>
-      <app-item-list [itemList]="nestingWorkshop.itemList!" [highlightNode]="highlightNode"></app-item-list>
-    </app-card>
+      <div class="sky-card-body">
+        <div class="sky-flex flex-wrap">
+          <div class="container">
+            The Aviary Event Store was introduced in the Season of Revival.<br/>
+            The building can be accessed through Aviary Village.
+          </div>
+          <a class="container d-inline-block" [routerLink]="'/shop/event'">Go to page</a>
+        </div>
+      </div>
+    </div>
+    <!-- Harmony Hall -->
+    <div class="sky-card">
+      <div class="sky-card-header">
+        <h3 class="h4 mb-0">Harmony Hall</h3>
+      </div>
+      <div class="sky-card-body">
+        <div class="sky-flex flex-wrap">
+          <div class="container">
+            Harmony Hall was introduced in the Season of Performance.<br/>
+            The building can be accessed through Aviary Village, the Village of Dreams and the Village Theatre.
+          </div>
+          <a class="container d-inline-block" [routerLink]="'/shop/harmony'">Go to page</a>
+        </div>
+      </div>
+    </div>
+    <!-- Nesting Workshop -->
+    <div class="sky-card">
+      <div class="sky-card-header">
+        <h3 class="h4 mb-0">Nesting Workshop</h3>
+      </div>
+      <div class="sky-card-body">
+        <div class="sky-flex flex-wrap">
+          <div class="container">
+            The Nesting Workshop was introduced in the Season of Nesting.<br/>
+            The building can be accessed through Aviary Village.
+
+          </div>
+          <a class="container d-inline-block" [routerLink]="'/shop/nesting'">Go to page</a>
+        </div>
+      </div>
+    </div>
+    <!-- Office -->
+    <div class="sky-card">
+      <div class="sky-card-header">
+        <h3 class="h4 mb-0">Secret Area</h3>
+      </div>
+      <div class="sky-card-body">
+        <div class="sky-flex flex-wrap">
+          <div class="container">
+            The Secret Area is only available with a certain cape or during some events.<br/>
+            The location can be accessed through the Vault of Knowledge.
+          </div>
+          <a class="container d-inline-block" [routerLink]="'/shop/office'">Go to page</a>
+        </div>
+      </div>
   </div>
-}
+</div>
 
 <!-- IGC -->
 @if (shops.length) {
-  <div class="sky-card mt">
-    <div class="sky-card-header">
-      <h1 class="h2 mb-0">Shops for in-game currency</h1>
-    </div>
-  </div>
-
-  <div class="sky-flex flex-wrap mt">
-    @for (shop of shops; track shop.guid) {
-      <div class="sky-card">
-        <div class="sky-card-header">
-          <h3 class="h4 mb-0">
-            <span>{{ shop.name }}</span>
-          </h3>
-        </div>
-        <div class="sky-card-body">
-          <app-item-list [itemList]="shop.itemList!" [highlightNode]="highlightNode"></app-item-list>
-        </div>
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="false" [title]="'Other shops for in-game currency'">
+      <div class="sky-flex flex-wrap">
+        @for (shop of shops; track shop.guid) {
+          <div class="sky-card">
+            <div class="sky-card-header">
+              <h3 class="h4 mb-0">
+                <span>{{ shop.name }}</span>
+              </h3>
+            </div>
+            <div class="sky-card-body">
+              <app-item-list [itemList]="shop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+            </div>
+          </div>
+        }
       </div>
-    }
+    </app-card>
   </div>
 }
 
 <!-- IAPs -->
 @if (iapShops.length) {
-  <div class="sky-card mt">
-    <div class="sky-card-header">
-      <h1 class="h2 mb-0">In-app purchases</h1>
-    </div>
-  </div>
-
-  <div class="grid grid-4 mt">
-    @for (shop of iapShops; track shop.guid) {
-      <div class="sky-card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
-        <div class="sky-card-header">
-          <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
-            {{ iap.name }}
-          </h3>
-        </div>
-        <div class="sky-card-body">
-          <!-- Location -->
-          <div class="item">
-            <mat-icon class="menu-icon">location_on</mat-icon>
-            <span class="menu-label">
-              <span *ngIf="shop.name">{{ shop.name }}</span>
-              <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
-              <span *ngIf="!shop.name && shop.type !== 'Store'">{{ shop.name ?? shop.spirit?.name }}</span>
-            </span>
-          </div>
-          <!-- Price -->
-          <div class="item mt-half">
-            <mat-icon class="menu-icon">attach_money</mat-icon>
-            <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
-              {{ iap.price }}
-            </span>
-          </div>
-          <!-- Currencies -->
-          <div class="item mt-half" *ngIf="iap.c || iap.sc || iap.sp">
-            <ng-container *ngIf="iap.c">
-              <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
-              <span class="menu-label">
-                {{ iap.c }}
-              </span>
-            </ng-container>
-            <ng-container *ngIf="iap.sc">
-              <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
-              <span class="menu-label">
-                {{ iap.sc }}
-              </span>
-            </ng-container>
-            <ng-container *ngIf="iap.sp">
-              <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
-              <span class="menu-label">
-                {{ iap.sp }}
-              </span>
-            </ng-container>
-          </div>
-          <!-- Items -->
-          <div class="item iap-items mt-half">
-            <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
-              <app-item-icon [item]="item" [subIcons]="['unlock']" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
-              <ng-template #itemHover>
-                <ng-container *ngIf="item">
-                  <span class="ws-nw">{{item.name}}</span>
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="false" [title]="'Other in-app purchases'">
+      <div class="grid grid-4">
+        @for (shop of iapShops; track shop.guid) {
+          <div class="sky-card p-rel" *ngFor="let iap of shop.iaps" [class.highlight]="iap.guid === highlightIap">
+            <div class="sky-card-header">
+              <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
+                {{ iap.name }}
+              </h3>
+            </div>
+            <div class="sky-card-body">
+              <!-- Location -->
+              <div class="item">
+                <mat-icon class="menu-icon">location_on</mat-icon>
+                <span class="menu-label">
+                  <span *ngIf="shop.name">{{ shop.name }}</span>
+                  <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
+                  <span *ngIf="!shop.name && shop.type !== 'Store'">{{ shop.name ?? shop.spirit?.name }}</span>
+                </span>
+              </div>
+              <!-- Price -->
+              <div class="item mt-half">
+                <mat-icon class="menu-icon">attach_money</mat-icon>
+                <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
+                  {{ iap.price }}
+                </span>
+              </div>
+              <!-- Currencies -->
+              <div class="item mt-half" *ngIf="iap.c || iap.sc || iap.sp">
+                <ng-container *ngIf="iap.c">
+                  <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
+                  <span class="menu-label">
+                    {{ iap.c }}
+                  </span>
                 </ng-container>
-              </ng-template>
+                <ng-container *ngIf="iap.sc">
+                  <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
+                  <span class="menu-label">
+                    {{ iap.sc }}
+                  </span>
+                </ng-container>
+                <ng-container *ngIf="iap.sp">
+                  <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
+                  <span class="menu-label">
+                    {{ iap.sp }}
+                  </span>
+                </ng-container>
+              </div>
+              <!-- Items -->
+              <div class="item iap-items mt-half">
+                <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
+                  <app-item-icon [item]="item" [subIcons]="['unlock']" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
+                  <ng-template #itemHover>
+                    <ng-container *ngIf="item">
+                      <span class="ws-nw">{{item.name}}</span>
+                    </ng-container>
+                  </ng-template>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        }
       </div>
-    }
+    </app-card>
   </div>
 }
 
