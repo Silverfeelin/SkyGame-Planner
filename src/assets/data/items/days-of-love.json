@@ -2,14 +2,14 @@
   {
     "id": 1748,
     "guid": "w7byhvh3Xa",
-    "type": "Prop",
+    "type": "Furniture",
     "name": "Days of Love Swing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Icon_prop_days_of_love_swing.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/Swing_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Swing"
     },
-    "order": 515
+    "order": 516
   },
   {
     "id": 1749,
@@ -26,14 +26,14 @@
   {
     "id": 1750,
     "guid": "yWCpBlHsWa",
-    "type": "Prop",
+    "type": "Furniture",
     "name": "Days of Love Seesaw",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Icon_prop_days_of_love_seesaw.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Seesaw_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Seesaw"
     },
-    "order": 516
+    "order": 517
   },
   {
     "id": 1751,
@@ -57,7 +57,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Gondola"
     },
-    "order": 517
+    "order": 518
   },
   {
     "id": 1753,
@@ -69,7 +69,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Flowery_Archway"
     },
-    "order": 518
+    "order": 519
   },
   {
     "id": 1754,
@@ -158,7 +158,7 @@
     "name": "Days Of Love Meteor Mantle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Love-Meteor-Mantle-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days-of-Love-Meteor-Mantle-back.png",
-    "order": 757
+    "order": 758
   },
   {
     "id": 2062,
@@ -167,7 +167,7 @@
     "name": "Heart Plush",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Love-Heart-Plushie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Plushie.png",
-    "order": 548
+    "order": 549
   },
   {
     "id": 2063,
