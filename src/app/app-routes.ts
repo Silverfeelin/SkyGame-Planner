@@ -27,6 +27,7 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
+import { ItemInflationComponent } from './components/items/item-inflation/item-inflation.component';
 import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
 import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
 import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
@@ -74,6 +75,7 @@ export const routes: Routes = [
           { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsComponent, title: title('Items') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
+          { path: 'item/inflation', component: ItemInflationComponent, title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },

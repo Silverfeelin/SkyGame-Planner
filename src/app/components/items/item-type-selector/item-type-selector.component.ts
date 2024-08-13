@@ -15,6 +15,7 @@ import { NgIf } from '@angular/common';
 export class ItemTypeSelectorComponent implements OnInit, OnChanges {
   @Input() type?: ItemType;
   @Input() showTypes?: Array<ItemType>;
+  @Input() allowDeselect = false;
 
   @Output() readonly typeChanged = new EventEmitter<ItemType>();
 
@@ -29,7 +30,7 @@ export class ItemTypeSelectorComponent implements OnInit, OnChanges {
 
   changeType(type: string): void {
     const itemType = type as ItemType;
-    if (this.type === itemType) { return; }
+    if (!this.allowDeselect && this.type === itemType) { return; }
     this.typeChanged.emit(itemType);
   }
 

@@ -1,0 +1,7 @@
+#chart {
+  height: 400px !important;
+}
+
+:host ::ng-deep .apexcharts-tooltip {
+  color: #000;
+}

@@ -1,0 +1,46 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Item inflation</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        This graph displays the cost of items when they were first available for purchase using candles.
+        The blue line represents these costs by the date the item was introduced in the game, while the pink line represents the date the item first became available for regular candles.
+        If an item was introduced for regular candles, both lines will coincide on the same date.
+        When multiple items were introduced in the same month, the graph will display the average cost of that month.
+      </p>
+      <p>
+        This can help give a general idea of what prices to expect for new items once they return.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Type -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Filters</h2>
+  </div>
+  <div class="sky-card-body">
+    <app-item-type-selector [type]="itemType" (typeChanged)="onTypeChanged($event)" [showTypes]="showTypes" [allowDeselect]="true"></app-item-type-selector>
+    <div class="mt sky-flex flex-wrap">
+      <button type="button" class="" (click)="toggleIncludeSeasons()" [class.highlight]="includeSeasons">Show season items</button>
+      <button type="button" class="" (click)="toggleIncludeEvents()" [class.highlight]="includeEvents">Show event items</button>
+    </div>
+  </div>
+</div>
+
+@if (!chartItems?.length) {
+  <div class="sky-card mt">
+    <div class="sky-card-body">
+      <div class="container">
+        No items found in this category.
+      </div>
+    </div>
+  </div>
+}
+
+<div class="container mt" [hidden]="!chartItems?.length">
+  <canvas #chart id="chart"></canvas>
+</div>
