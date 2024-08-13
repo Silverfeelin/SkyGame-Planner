@@ -58,3 +58,29 @@
   overflow: auto;
   border: var(--border-solid);
 }
+
+.spoiler-ts {
+  position: relative;
+  cursor: pointer;
+  img {
+    // Based on https://stackoverflow.com/a/43960991 by MultiplyByZer0
+    filter: brightness(0)
+      saturate(100%) invert(21%) sepia(11%) saturate(7118%) hue-rotate(195deg) brightness(96%) contrast(93%)
+      drop-shadow(1px 0 0 #fff) drop-shadow(-1px 0 0 #fff) drop-shadow(0 1px 0 #fff) drop-shadow(0 -1px 0 #fff)
+    ;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &:after {
+    content: '?';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    color: #66b4ff;
+    z-index: 2;
+  }
+}

@@ -13,8 +13,8 @@
     <!-- Preview image -->
     <div *ngIf="sections['img'] && spirit.imageUrl" class="spirit-grid-img spirit-grid-item sky-card-item">
       <div *ngIf="options?.homeBackground" class="spirit-img-bg"></div>
-      <div class="spirit-img"  *ngIf="spirit.imageUrl">
-        <img [src]="spirit.imageUrl" [alt]="spirit.name" />
+      <div class="spirit-img" *ngIf="spirit.imageUrl" [class.spoiler-ts]="tsSpoiler" (click)="toggleTsSpoiler()">
+        <img [src]="spirit.imageUrl" [alt]="spirit.name"/>
       </div>
     </div>
     <div class="spirit-grid mt">
@@ -29,7 +29,7 @@
         class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['ts']"
       >
         <app-spirit-type-icon class="menu-icon" [type]="spirit.type"></app-spirit-type-icon>
-        <span class="menu-label">{{ spirit.name }}</span>
+        <span class="menu-label">{{ tsSpoiler ? 'Traveling Spirit' : spirit.name }}</span>
       </a>
       <div *ngIf="sections['ts'] && ts"
         class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['ts']"

@@ -33,6 +33,7 @@ export interface SpiritCardOptions {
 export class SpiritCardComponent implements OnInit, OnChanges {
   @Input() spirit?: ISpirit;
   @Input() ts?: ITravelingSpirit;
+  @Input() tsSpoiler?: boolean;
   @Input() tree?: ISpiritTree;
   @Input() options: SpiritCardOptions = { show: ['img', 'wiki', 'season', 'event', 'realm', 'area'] };
 
@@ -50,6 +51,10 @@ export class SpiritCardComponent implements OnInit, OnChanges {
     if (changes['spirit']) { this.updateSpirit(); }
     if (changes['options']) { this.updateSections(); }
     if (changes['tree']) { this.updateCosts(); }
+  }
+
+  toggleTsSpoiler(): void {
+    this.tsSpoiler = !this.tsSpoiler;
   }
 
   private updateSpirit(): void {
