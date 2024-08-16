@@ -39,6 +39,11 @@ var spent = CostHelper.add(CostHelper.create(), ...unlockedNodes);
 // Log the results.
 console.log('Spent currencies on items:', spent)
 // > Spent currencies on items: {ac: 1, c: 18, ec: 0, h: 8, sc: 0, sh: 0}
+
+// Select all bought IAPs
+const spentIap = skyData.iapConfig.items.filter(a => a.bought).reduce((a,v) => a+v.price, 0);
+console.log('Spent (USD) on IAP:', spentIap.toFixed(2));
+// > Spent (USD) on IAP: 29.99
 ```
 
 # License
