@@ -46,6 +46,7 @@ export class SettingsComponent {
     { name: 'Treasure Reef', value: 'reef' },
     { name: 'Village of Dreams', value: 'cold' },
     { name: 'Crescent Oasis', value: 'sandy' },
+    { name: 'Days of Love', value: 'love' },
     { name: 'Void', value: 'dark' },
   ]
 
