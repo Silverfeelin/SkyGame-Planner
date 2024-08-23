@@ -1,12 +1,16 @@
 import { DateTime } from 'luxon';
 import { Observable, Subject } from 'rxjs';
-import { IStorageEvent, IStorageExport, IStorageProvider } from './storage-provider.interface';
+import { IStorageCurrencies, IStorageEvent, IStorageExport, IStorageProvider } from './storage-provider.interface';
 
 export abstract class BaseStorageProvider implements IStorageProvider {
   abstract _name: string;
   abstract _lastDate: DateTime<boolean>;
   abstract _syncDate: DateTime<boolean>;
 
+  _currencies: IStorageCurrencies = {
+    candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0,
+    eventCurrencies: {}, seasonCurrencies: {}
+  };
   _unlocked = new Set<string>();
   _wingedLights = new Set<string>();
   _favourites = new Set<string>();
@@ -29,6 +33,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   import(data: IStorageExport): void {
     this._lastDate = data.date ? DateTime.fromISO(data.date) : DateTime.now();
     this._syncDate = this._lastDate;
+    this._currencies = data.currencies || { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} };
     this._unlocked = new Set(data.unlocked?.length ? data.unlocked.split(',') : []);
     this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
     this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
@@ -40,6 +45,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   export(): IStorageExport {
     return {
       date: this._lastDate.toISO()!,
+      currencies: this._currencies,
       unlocked: [...this.getUnlocked()].join(','),
       wingedLights: [...this.getWingedLights()].join(','),
       favourites: [...this.getFavourites()].join(','),
@@ -55,6 +61,16 @@ export abstract class BaseStorageProvider implements IStorageProvider {
 
   isOutOfSync(): boolean {
     return this._lastDate > this._syncDate;
+  }
+
+  getCurrencies(): IStorageCurrencies {
+    return this._currencies;
+  }
+
+  setCurrencies(currencies: IStorageCurrencies): void {
+    this._currencies = currencies || { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} };
+    this._lastDate = DateTime.now();
+    this.debounceSave();
   }
 
   getUnlocked(): ReadonlySet<string> {

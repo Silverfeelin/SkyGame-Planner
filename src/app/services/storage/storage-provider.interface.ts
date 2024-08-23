@@ -10,8 +10,18 @@ export interface IStorageEvent {
   error?: Error;
 }
 
+export interface IStorageCurrencies {
+  candles: number;
+  hearts: number;
+  ascendedCandles: number;
+  giftPasses: number;
+  eventCurrencies: { [key: string]: number };
+  seasonCurrencies: { [key: string]: { candles: number; hearts: number } };
+}
+
 export interface IStorageExport {
   date: string;
+  currencies: IStorageCurrencies;
   unlocked: string;
   wingedLights: string;
   favourites: string;
@@ -23,6 +33,7 @@ export interface IStorageExport {
 export interface IStorageProvider {
   _lastDate: DateTime;
   _syncDate: DateTime;
+  _currencies: IStorageCurrencies;
   _unlocked: Set<string>;
   _favourites: Set<string>;
   _seasonPasses: Set<string>;
@@ -39,6 +50,9 @@ export interface IStorageProvider {
   export(): IStorageExport;
   getSyncDate(): DateTime;
   isOutOfSync(): boolean;
+
+  getCurrencies(): IStorageCurrencies;
+  setCurrencies(currencies: IStorageCurrencies): void;
 
   getUnlocked(): ReadonlySet<string>;
   addUnlocked(...guids: Array<string>): void;

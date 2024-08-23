@@ -1,6 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subject, SubscriptionLike } from 'rxjs';
-import { IStorageEvent, IStorageExport, IStorageProvider } from './storage/storage-provider.interface';
+import { IStorageCurrencies, IStorageEvent, IStorageExport, IStorageProvider } from './storage/storage-provider.interface';
 import { StorageProviderFactory } from './storage/storage-provider-factory';
 import { BroadcastService } from './broadcast.service';
 
@@ -36,6 +36,14 @@ export class StorageService implements OnDestroy {
 
   export(): IStorageExport {
     return this.provider.export();
+  }
+
+  getCurrencies(): IStorageCurrencies {
+    return JSON.parse(JSON.stringify(this.provider.getCurrencies()));
+  }
+  setCurrencies(currency: IStorageCurrencies): void {
+    this.provider.setCurrencies(currency);
+    this.notifyChange();
   }
 
   getUnlocked(): ReadonlySet<string> { return this.provider.getUnlocked(); }

@@ -15,6 +15,8 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
+import { StorageService } from '@app/services/storage.service';
+import { CurrencyService } from '@app/services/currency.service';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {
@@ -42,7 +44,9 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   _subs = new SubscriptionBag();
 
   constructor(
+    private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
+    private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this._subs.add(this._eventService.storageChanged.pipe(filter(e => e.key?.startsWith('season.checkin.') == true)).subscribe(e => {
@@ -78,13 +82,18 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
     this.updateCheckin();
   }
 
-  checkin(): void {
+  checkin(evt: MouseEvent): void {
     this.checkedIn = !this.checkedIn;
     if (this.checkedIn) {
       localStorage.setItem(`season.checkin.${this.season?.guid}`, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
     } else {
       localStorage.removeItem(`season.checkin.${this.season?.guid}`);
     }
+
+    let dailyCurrency = this._storageService.hasSeasonPass(this.season!.guid) ? 6 : 5;
+    if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
+    this._currencyService.addSeasonCurrency(this.season!.guid, dailyCurrency, 0);
+    this._currencyService.animateCurrencyGained(evt, dailyCurrency);
   }
 
   /** Update checked in status from storage. */

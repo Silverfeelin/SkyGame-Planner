@@ -15,6 +15,7 @@ import { DateComponent } from '../util/date/date.component';
 import { MatIcon } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
+import { CurrencyService } from '@app/services/currency.service';
 
 type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface EventCardOptions {
@@ -45,6 +46,7 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   _subs = new SubscriptionBag();
 
   constructor(
+    private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
@@ -69,12 +71,19 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
     this._subs.unsubscribe();
   }
 
-  checkin(): void {
+  checkin(evt: MouseEvent): void {
     this.checkedIn = !this.checkedIn;
     if (this.checkedIn) {
-      localStorage.setItem(`event.checkin.${this.event?.guid}`, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
+      localStorage.setItem(`event.checkin.${this.event!.guid}`, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
     } else {
-      localStorage.removeItem(`event.checkin.${this.event?.guid}`);
+      localStorage.removeItem(`event.checkin.${this.event!.guid}`);
+    }
+
+    let dailyCurrency = this.instance?.calculatorData?.dailyCurrencyAmount || 0;
+    if (dailyCurrency) {
+      if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
+      this._currencyService.addEventCurrency(this.instance!.guid, dailyCurrency);
+      this._currencyService.animateCurrencyGained(evt, dailyCurrency);
     }
   }
 

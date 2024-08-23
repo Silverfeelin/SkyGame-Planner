@@ -52,7 +52,7 @@
         </div>
       }
       <!-- Check-in -->
-      <div *ngIf="sections['checkin']" (click)="checkin()"
+      <div *ngIf="sections['checkin']" (click)="checkin($event)"
         class="item checkin" [class.active]="checkedIn" [style.order]="sections['checkin']"
       >
         <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>

@@ -2,7 +2,14 @@
   <div class="img img-bg" *ngIf="isStoryBlok" [style.background-image]="'url(\''+src+'\')'">
 
   </div>
-  <img class="img" *ngIf="!isSvg && !isStoryBlok" [src]="safeString || safeUrl" crossorigin="anonymous"
-    [style.width]="width" [style.height]="height" [attr.loading]="lazy ? 'lazy' : undefined" [attr.draggable]="draggable">
-  <mat-icon *ngIf="isSvg && safeString" [svgIcon]="safeString"></mat-icon>
+  @if (!isSvg && !isStoryBlok) {
+    <img class="img" [src]="safeString || safeUrl" crossorigin="anonymous"
+      [style.width]="width" [style.height]="height" [style.verticalAlign]="verticalAlign"
+      [attr.loading]="lazy ? 'lazy' : undefined" [attr.draggable]="draggable">
+  }
+  @if (isSvg && safeString) {
+    <mat-icon [svgIcon]="safeString"
+      [style.width]="width" [style.height]="height" [style.verticalAlign]="verticalAlign">
+    </mat-icon>
+  }
 </ng-container>

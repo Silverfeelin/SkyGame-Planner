@@ -3,9 +3,11 @@ import { Observable, concatMap, of } from 'rxjs';
 import { Injectable, OnDestroy } from '@angular/core';
 import { BaseStorageProvider } from './base-storage-provider';
 import { DropboxService } from '../dropbox.service';
+import { IStorageCurrencies } from './storage-provider.interface';
 
 interface IDropboxData {
   date: string;
+  currencies: IStorageCurrencies;
   unlocked: string;
   wingedLights: string;
   favourites: string;
@@ -24,8 +26,6 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
   override _syncDate: DateTime;
 
   private _rev?: string;
-  private _accessToken?: string;
-  private _refreshToken?: string;
 
   constructor(
     private readonly _dropboxService: DropboxService
@@ -88,22 +88,19 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
 
   private initializeData(data: Partial<IDropboxData>): void {
     this._syncDate = data.date ? DateTime.fromISO(data.date) as DateTime : DateTime.now();
-    const unlocked = data.unlocked || undefined;
-    const wingedLights = data.wingedLights || undefined;
-    const favourites = data.favourites || undefined;
-    const seasonPasses = data.seasonPasses || undefined;
-    const mapMarkers = data.mapMarkers || undefined;
-    this._unlocked = new Set(unlocked?.split(',') ?? []);
-    this._wingedLights = new Set(wingedLights?.split(',') ?? []);
-    this._favourites = new Set(favourites?.split(',') ?? []);
-    this._seasonPasses = new Set(seasonPasses?.split(',') ?? []);
-    this._mapMarkers = new Set(mapMarkers?.split(',') ?? []);
+    this._currencies = data.currencies || { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} };;
+    this._unlocked = new Set((data.unlocked || undefined)?.split(',') ?? []);
+    this._wingedLights = new Set((data.wingedLights || undefined)?.split(',') ?? []);
+    this._favourites = new Set((data.favourites || undefined)?.split(',') ?? []);
+    this._seasonPasses = new Set((data.seasonPasses || undefined)?.split(',') ?? []);
+    this._mapMarkers = new Set((data.mapMarkers || undefined)?.split(',') ?? []);
     this._keys = data.keys || {};
   }
 
   private serializeData(): IDropboxData {
     return {
       date: this._syncDate.toISO()!,
+      currencies: this._currencies,
       unlocked: [...this._unlocked].join(','),
       wingedLights: [...this._wingedLights].join(','),
       favourites: [...this._favourites].join(','),

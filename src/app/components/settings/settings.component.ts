@@ -102,12 +102,14 @@ export class SettingsComponent {
         version: '0.1.1',
         storageData: {
           date: '2024-04-01T00:00:00.000+00:00',
+          currencies: { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} },
           unlocked: d.unlocked,
           wingedLights: d.wingedLights,
           favourites: d.favourites,
           seasonPasses: '',
           mapMarkers: '',
-          keys: {}},
+          keys: {}
+        },
         closetData: d.closet
       };
     }
@@ -158,6 +160,7 @@ export class SettingsComponent {
 
     this._storageService.import({
       date: DateTime.now().toISO()!,
+      currencies: { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} },
       unlocked: '',
       wingedLights: '',
       favourites: '',
