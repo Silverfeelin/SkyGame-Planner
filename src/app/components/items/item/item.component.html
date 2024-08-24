@@ -9,7 +9,7 @@
         <div class="info-grid-preview" *ngIf="item.previewUrl">
           <img [src]="item.previewUrl" class="preview-img" loading="lazy">
           <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"></app-item-icon>
-          <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'elder', 'season', 'iap', 'favourite', 'unlock', 'limited']"></app-item-subicons>
+          <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'elder', 'season', 'iap', 'favourite', 'unlock']"></app-item-subicons>
         </div>
         <!-- Icon -->
         <div class="info-grid-icon" *ngIf="!item.previewUrl">
