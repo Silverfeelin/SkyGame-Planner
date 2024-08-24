@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -12,6 +12,8 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
+import { DateTimePipe } from "../../../pipes/date-time.pipe";
 
 @Component({
     selector: 'app-season-calculator',
@@ -19,15 +21,23 @@ import { CurrencyService } from '@app/services/currency.service';
     styleUrl: './season-calculator.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [RouterLink, MatIcon, SpiritTreeComponent]
+    imports: [RouterLink, MatIcon, SpiritTreeComponent, DateTimePipe]
 })
 export class SeasonCalculatorComponent implements OnInit {
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;
+
+  @ViewChildren('inpTimed', { read: ElementRef }) inpTimed!: QueryList<ElementRef<HTMLInputElement>>;
 
   season!: ISeason;
   trees: Array<ISpiritTree> = [];
   firstNodes: { [guid: string]: INode } = {};
   allNodes: Array<INode> = [];
+  now: DateTime = DateTime.now();
+
+  calculatorData?: ICalculatorData;
+  timedCurrencies: Array<ICalculatorDataTimedCurrency> = [];
+  timedCurrencyCount: {[guid: string]: number} = {};
+  timedCurrencyRemaining: {[guid: string]: number} = {};
 
   candleCount = 0;
   includesToday = true;
@@ -55,6 +65,15 @@ export class SeasonCalculatorComponent implements OnInit {
 
     this.season = season!;
     this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
+    this.calculatorData = this.season.calculatorData;
+
+    // Load timed currencies
+    this.timedCurrencies = this.calculatorData?.timedCurrency || [];
+    for (const timedCurrency of this.timedCurrencies) {
+      timedCurrency.date = DateHelper.fromStringSky(timedCurrency.date)!;
+      timedCurrency.endDate = DateHelper.fromStringSky(timedCurrency.endDate)!.endOf('day');
+      this.timedCurrencyCount[timedCurrency.guid] = 0;
+    }
 
     this.trees = this.season.spirits.filter(s => s.type === 'Season').map(s => s.tree!);
     this.allNodes = [];
@@ -135,6 +154,13 @@ export class SeasonCalculatorComponent implements OnInit {
   candleInputChanged(): void {
     const target = this.inpSc.nativeElement;
     this.candleCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+
+    this.inpTimed?.forEach(inp => {
+      const value = parseInt(inp.nativeElement.value, 10) || 0;
+      const guid = inp.nativeElement.dataset['guid']!;
+      this.timedCurrencyCount[guid] = value;
+    });
+
     this.updateStoredCurrencies();
   }
 
@@ -223,6 +249,11 @@ export class SeasonCalculatorComponent implements OnInit {
     const today = DateHelper.todaySky();
     const data = {
       it: this.includesToday ? today.toISO() : '',
+      tc: Object.keys(this.timedCurrencyCount).reduce((acc: { [guid: string]: number }, guid: string) => {
+        const value = this.timedCurrencyCount[guid];
+        if (value) { acc[guid] = value; }
+        return acc;
+      }, {} as { [guid: string]: number }),
       sc: this.candleCount,
       wn: Object.keys(this.wantNodes),
     };
@@ -237,6 +268,7 @@ export class SeasonCalculatorComponent implements OnInit {
     const today = DateHelper.todaySky().toISO();
     const parsed = JSON.parse(data) || {
       it: today,
+      tc: {},
       wn: [],
     };
 
@@ -246,6 +278,11 @@ export class SeasonCalculatorComponent implements OnInit {
     if (this.inpSc?.nativeElement) {
       this.inpSc.nativeElement.value = this.candleCount.toString();
     }
+
+    this.timedCurrencyCount = parsed.tc || {};
+    this.timedCurrencies.forEach(timedCurrency => {
+      this.timedCurrencyCount[timedCurrency.guid] ||= 0;
+    });
 
     const nodeSet = new Map(this.allNodes.map(n => [n.guid, n]));
     this.wantNodes = parsed.wn.reduce((acc: { [guid: string]: INode }, guid: string) => {
@@ -286,6 +323,18 @@ export class SeasonCalculatorComponent implements OnInit {
     }
 
     this.candlesRequired -= this.candleCount;
+
+    // Check for available timed currencies.
+    for (const timedCurrency of this.timedCurrencies) {
+      const obtained = (this.timedCurrencyCount[timedCurrency.guid] || 0);
+      let available = Math.max(0, timedCurrency.amount - obtained);
+      this.timedCurrencyRemaining[timedCurrency.guid] = available;
+
+      if (timedCurrency.endDate >= date) {
+        this.candlesAvailable += available;
+      }
+    }
+
     this.daysRequired = Math.ceil(this.candlesRequired / candlesPerDay);
 
     this.hasSkippedNode = nodes.some(n => !wantSet.has(n) && !n.item?.unlocked);

@@ -1,4 +1,5 @@
 import { IConfig, IGuid, IPeriod } from "./base.interface";
+import { ICalculatorData } from './calculator-data.interface';
 import { IShop } from "./shop.interface";
 import { ISpirit } from "./spirit.interface";
 import { IWiki } from "./wiki.interface";
@@ -21,6 +22,9 @@ export interface ISeason extends IGuid, IPeriod {
 
   /** Season number, starting at 1 for Gratitude. */
   number: number;
+
+  /** Season calculator data */
+  calculatorData?: ICalculatorData;
 
   /** If marked as draft, data may be inaccurate or incomplete. */
   draft?: boolean;

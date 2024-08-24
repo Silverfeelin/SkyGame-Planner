@@ -46,6 +46,42 @@
             <span class="calc-button-label">{{ includesToday ? 'obtained' : 'not obtained' }}</span>
           </button>
         </div>
+
+        @if (timedCurrencies.length) {
+          <div>
+            <hr class="mt-half mb"/>
+            <div>
+              This season includes some activities that reward extra season candles.<br/>
+              Please enter how much you have collected from these activities below.<br/>
+              Your current season candles should always be entered at the top of the page, including the ones from these activities!
+            </div>
+            @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
+              <hr class="mt mb"/>
+              <div>
+                @if (timedCurrency.endDate < now) {
+                  Between <b class="c-old">{{ timedCurrency.date | datetime }}</b>
+                  and <b class="c-old">{{ timedCurrency.endDate | datetime }}</b>
+                  you were able to get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
+                  Please enter how much you collected during this period:
+                } @else if (timedCurrency.date > now) {
+                  Between <b>{{ timedCurrency.date | datetime }}</b>
+                  and <b>{{ timedCurrency.endDate | datetime }}</b>
+                  you will be able to get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
+                  Please keep this value at <b>0</b> until the currency becomes available:
+                } @else {
+                  Between <b class="c-new">{{ timedCurrency.date | datetime }}</b>
+                  and <b class="c-new">{{ timedCurrency.endDate | datetime }}</b>
+                  you can get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
+                  Please enter how much you have collected so far:
+                }
+                <input #inpTimed [attr.data-guid]="timedCurrency.guid" (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="timedCurrencyCount[timedCurrency.guid]" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+              </div>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="container mt sky-flex flex-cols flex-align-start gap-half">
         <div>
           You want:
           <div class="d-inline-block">
@@ -94,29 +130,55 @@
           the Season Pass,
           you will be able to get
           <b class="c-new">{{ hasSeasonPass ? '6' : '5' }}</b>
-          season candles every day, not including bonus events.
+          season candles every day for
+          <b class="c-new">{{ daysLeft }}</b>
+          more {{ daysLeft === 1 ? 'day' : 'days' }}
+          @if (timedCurrencies.length) {
+            (<b class="c-new">{{ daysLeft * (hasSeasonPass ? 6 : 5) }}</b>).
+          }
         </div>
+        @if (timedCurrencies.length) {
+          @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
+            @if (!timedCurrencyRemaining[timedCurrency.guid]) {
+              <div>
+                You got all
+                <b class="c-new">{{ timedCurrency.amount }}</b>
+                extra candles between
+                <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+              </div>
+            } @else if (timedCurrency.endDate < now) {
+              <div>
+                You missed
+                <b class="c-old">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+                extra candles between
+                <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+              </div>
+            } @else {
+              <div>
+                You will also be able to get
+                <b class="c-new">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+                extra candles between
+                <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+              </div>
+            }
+          }
+        }
         <div>
-          If you do not miss any candles, you will be able to get
+          If you do not miss any, you will be able to get
           <b class="c-new">{{ candlesAvailable }}</b>
-          more before the season concludes.
+          more candles before the season concludes.
         </div>
         <div>
           You still need to collect
           <b class="c-new">{{ candlesRequired }}</b>
           season candles.
           @if (daysRequired > 0) {
-            This will take
+            This will take approximately
             <b class="c-new">{{ daysRequired }}</b>
-            {{ daysRequired === 1 ? 'day' : 'days' }}.
+            {{ daysRequired === 1 ? 'day' : 'days' }} without any extra candles.
           }
         </div>
-        <div>
-          There {{ daysLeft === 1 ? 'is' : 'are' }}
-          <b class="c-new">{{ daysLeft }}</b>
-          {{ daysLeft === 1 ? 'day' : 'days' }} left in the season to get candles.
-        </div>
-        @if (daysRequired > daysLeft) {
+        @if (candlesRequired > candlesAvailable) {
           <b class="c-old">
             You will not be able to collect enough candles before the season concludes.
           </b>
