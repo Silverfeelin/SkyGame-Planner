@@ -92,7 +92,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
 
     let dailyCurrency = this._storageService.hasSeasonPass(this.season!.guid) ? 6 : 5;
     if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
-    this._currencyService.addSeasonCurrency(this.season!.guid, dailyCurrency, 0);
+    this._currencyService.addSeasonCurrency(this.season!.guid, dailyCurrency);
     this._currencyService.animateCurrencyGained(evt, dailyCurrency);
   }
 

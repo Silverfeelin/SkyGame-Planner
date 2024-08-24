@@ -325,8 +325,8 @@ export class EventCalculatorComponent {
 
     this.includesToday = parsed.it === today;
     const currencies = this._storageService.getCurrencies();
-    const eventCurrency = currencies.eventCurrencies?.[this.eventInstance.guid] || 0;
-    this.currencyCount = eventCurrency;
+    const eventCurrency = currencies.eventCurrencies?.[this.eventInstance.guid] || { tickets: 0 };
+    this.currencyCount = eventCurrency.tickets;
     this.candleCount = currencies.candles;
     this.heartCount = currencies.hearts;
 

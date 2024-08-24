@@ -45,17 +45,18 @@ export class CurrencyService {
     // Event currency
     if (cost.ec && eventInstance && DateHelper.isActive(eventInstance.date, eventInstance.endDate)) {
       const guid = eventInstance.guid;
-      value.eventCurrencies[guid] = this.clamp((value.eventCurrencies[guid] ?? 0) + cost.ec);
+      const cur = value.eventCurrencies[guid] ?? { tickets: 0 };
+      value.eventCurrencies[guid] = cur;
+      cur.tickets = this.clamp((value.eventCurrencies[guid].tickets ?? 0) + cost.ec);
       changed = true;
     }
 
     // Season currency.
-    if ((cost.sc || cost.sh) && season && DateHelper.isActive(season.date, season.endDate)) {
+    if (cost.sc && season && DateHelper.isActive(season.date, season.endDate)) {
       const guid = season.guid;
-      const cur = value.seasonCurrencies[guid] ?? { candles: 0, hearts: 0 };
+      const cur = value.seasonCurrencies[guid] ?? { candles: 0 };
       value.seasonCurrencies[guid] = cur;
       cur.candles = this.clamp(cur.candles + (cost.sc || 0));
-      cur.hearts = this.clamp(cur.hearts + (cost.sh || 0));
       changed = true;
     }
 
@@ -80,39 +81,39 @@ export class CurrencyService {
     this._storageService.setCurrencies(currencies);
   }
 
-  addSeasonCurrency(seasonGuid: string, candles: number, hearts: number): void {
-    if (!seasonGuid || (!candles && !hearts)) { return; }
+  addSeasonCurrency(seasonGuid: string | undefined, candles?: number): void {
+    if (!seasonGuid || !candles) { return; }
     const value = this._storageService.getCurrencies();
-    const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0, hearts: 0 };
+    const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0 };
     value.seasonCurrencies[seasonGuid] = seasonCurrency;
-    seasonCurrency.candles += candles;
-    seasonCurrency.candles = this.clamp(seasonCurrency.candles);
-    seasonCurrency.hearts += hearts;
-    seasonCurrency.hearts = this.clamp(seasonCurrency.hearts);
+    seasonCurrency.candles = this.clamp((seasonCurrency.candles ?? 0) + candles);
     this._storageService.setCurrencies(value);
   }
 
-  setSeasonCurrency(seasonGuid: string, candles?: number, hearts?: number): void {
-    if (!seasonGuid || (!candles && !hearts)) { return; }
+  setSeasonCurrency(seasonGuid: string | undefined, candles?: number): void {
+    if (!seasonGuid || !candles) { return; }
     const value = this._storageService.getCurrencies();
-    const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0, hearts: 0 };
+    const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0 };
     value.seasonCurrencies[seasonGuid] = seasonCurrency;
-    if (candles !== undefined) { seasonCurrency.candles = this.clamp(candles); }
-    if (hearts !== undefined) { seasonCurrency.hearts = this.clamp(hearts); }
+    seasonCurrency.candles = this.clamp(candles);
     this._storageService.setCurrencies(value);
   }
 
   addEventCurrency(eventGuid: string, value: number): void {
     if (!eventGuid || !value) { return; }
     const currencies = this._storageService.getCurrencies();
-    currencies.eventCurrencies[eventGuid] = this.clamp((currencies.eventCurrencies[eventGuid] ?? 0) + value);
+    const eventCurrencies = currencies.eventCurrencies[eventGuid] ?? { tickets: 0 };
+    currencies.eventCurrencies[eventGuid] = eventCurrencies;
+    eventCurrencies.tickets = this.clamp((eventCurrencies.tickets ?? 0) + value);
     this._storageService.setCurrencies(currencies);
   }
 
   setEventCurrency(eventGuid: string, value?: number): void {
     if (!eventGuid || !value) { return; }
     const currencies = this._storageService.getCurrencies();
-    currencies.eventCurrencies[eventGuid] = this.clamp(value);
+    const eventCurrencies = currencies.eventCurrencies[eventGuid] ?? { tickets: 0 };
+    currencies.eventCurrencies[eventGuid] = eventCurrencies;
+    eventCurrencies.tickets = this.clamp(value);
     this._storageService.setCurrencies(currencies);
   }
 

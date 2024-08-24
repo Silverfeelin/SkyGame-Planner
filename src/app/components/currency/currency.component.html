@@ -20,9 +20,8 @@
     <div class="sky-card-body">
       <div class="container">
         <p>
-          You had leftover season currency from the previous season. These have been converted into regular currencies.<br/>
-          Candles: +{{ converted.candles }}<br/>
-          Hearts: +{{ converted.hearts }}
+          You had leftover season candles from the previous season. These have been converted into regular currencies.<br/>
+          <b class="c-new">+ {{ converted.candles }}</b>
         </p>
         <button type="button" (click)="converted=undefined">Dismiss</button>
       </div>
@@ -31,7 +30,7 @@
 }
 
 <div class="mt">
-  <app-card [title]="'Regular currency'" [foldable]="true" [folded]="false">
+  <app-card [title]="'Regular currency'" [foldable]="false">
     <div class="container">
       <div>
         <mat-icon [svgIcon]="'candle'" class="v-middle" [ngbTooltip]="'Candles'" container="body"></mat-icon>&nbsp;x&nbsp;
@@ -55,7 +54,7 @@
 
 @if (ongoingSeason) {
   <div class="mt">
-    <app-card [title]="'Seasonal currency'" [foldable]="true" [folded]="false">
+    <app-card [title]="'Seasonal currency'" [foldable]="false">
       <div class="container">
         <div class="mb">
           @if (ongoingSeason.iconUrl) {
@@ -69,12 +68,6 @@
             [value]="currencies.seasonCurrencies[ongoingSeason.guid].candles"
             (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
         </div>
-        <div>
-          <mat-icon [svgIcon]="'heart'" class="v-middle seasonal" [ngbTooltip]="'Season hearts'"></mat-icon>&nbsp;x&nbsp;
-          <input #inpSh type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
-            [value]="currencies.seasonCurrencies[ongoingSeason.guid].hearts"
-            (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
-        </div>
       </div>
     </app-card>
   </div>
@@ -82,7 +75,7 @@
 
 @if (ongoingEventInstances.length) {
   <div class="mt">
-    <app-card [title]="'Event currency'" [foldable]="true" [folded]="false">
+    <app-card [title]="'Event currency'" [foldable]="false">
       <div class="sky-flex flex-wrap flex-column">
         @for (instance of ongoingEventInstances; track instance.guid) {
           <div class="container">
@@ -92,7 +85,7 @@
             <div>
               <mat-icon [svgIcon]="'ticket'" class="v-middle" [ngbTooltip]="'Event currency'"></mat-icon>&nbsp;x&nbsp;
               <input #inpEc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
-                [value]="currencies.eventCurrencies[instance.guid]"
+                [value]="currencies.eventCurrencies[instance.guid].tickets"
                 (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
             </div>
           </div>

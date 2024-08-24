@@ -15,8 +15,8 @@ export interface IStorageCurrencies {
   hearts: number;
   ascendedCandles: number;
   giftPasses: number;
-  eventCurrencies: { [key: string]: number };
-  seasonCurrencies: { [key: string]: { candles: number; hearts: number } };
+  eventCurrencies: { [key: string]: { tickets: number } };
+  seasonCurrencies: { [key: string]: { candles: number } };
 }
 
 export interface IStorageExport {

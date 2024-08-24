@@ -23,14 +23,13 @@ export class CurrencyComponent {
   @ViewChild('inpAc', { static: true }) inpAc!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSp', { static: false }) inpSp!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;
-  @ViewChild('inpSh', { static: false }) inpSh!: ElementRef<HTMLInputElement>;
   @ViewChildren('inpEc') inpEc!: QueryList<ElementRef<HTMLInputElement>>;
 
   currencies: IStorageCurrencies;
   ongoingSeason?: ISeason;
   ongoingEventInstances: Array<IEventInstance>;
 
-  converted?: { candles: number; hearts: number; };
+  converted?: { candles: number; };
 
   constructor(
     private readonly _dataService: DataService,
@@ -41,7 +40,7 @@ export class CurrencyComponent {
 
     this.ongoingSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
     if (this.ongoingSeason) {
-      this.currencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0, hearts: 0 };
+      this.currencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
     }
 
     const ongoingEventGuids = new Set<string>();
@@ -54,7 +53,7 @@ export class CurrencyComponent {
       this.ongoingEventInstances.push(instance);
       ongoingEventGuids.add(instance.guid);
 
-      this.currencies.eventCurrencies[instance.guid] ??= 0;
+      this.currencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
     }
 
     // Convert old season currency. This might be better suited to run on site load.
@@ -62,10 +61,9 @@ export class CurrencyComponent {
       if (key === this.ongoingSeason?.guid) { continue; }
       const value = this.currencies.seasonCurrencies[key];
       this.currencies.candles += value.candles;
-      this.currencies.hearts += value.hearts;
       delete this.currencies.seasonCurrencies[key];
 
-      this.converted = { candles: value.candles, hearts: value.hearts };
+      this.converted = { candles: value.candles };
       changed = true;
     }
 
@@ -114,24 +112,16 @@ export class CurrencyComponent {
     const targetSp = this.inpSp.nativeElement;
     this.currencies.giftPasses = Math.min(99999, Math.max(parseInt(targetSp.value, 10) || 0, 0));
 
-    if (this.ongoingSeason) {
-      // Season candles
-      if (this.inpSc) {
-        const targetSc = this.inpSc.nativeElement;
-        this.currencies.seasonCurrencies[this.ongoingSeason.guid].candles = Math.min(99999, Math.max(parseInt(targetSc.value, 10) || 0, 0));
-      }
-      // Season hearts
-      if (this.inpSh) {
-        const targetSh = this.inpSh.nativeElement;
-        this.currencies.seasonCurrencies[this.ongoingSeason.guid].hearts = Math.min(99999, Math.max(parseInt(targetSh.value, 10) || 0, 0));
-      }
+    if (this.ongoingSeason && this.inpSc) {
+      const targetSc = this.inpSc.nativeElement;
+      this.currencies.seasonCurrencies[this.ongoingSeason.guid].candles = Math.min(99999, Math.max(parseInt(targetSc.value, 10) || 0, 0));
     }
 
     const inpsEc = this.inpEc.toArray();
     if (inpsEc.length) {
       for (const [i, instance] of this.ongoingEventInstances.entries()) {
         const targetEc = inpsEc[i].nativeElement;
-        this.currencies.eventCurrencies[instance.guid] = Math.min(99999, Math.max(parseInt(targetEc.value, 10) || 0, 0));
+        this.currencies.eventCurrencies[instance.guid].tickets = Math.min(99999, Math.max(parseInt(targetEc.value, 10) || 0, 0));
       }
     }
 
