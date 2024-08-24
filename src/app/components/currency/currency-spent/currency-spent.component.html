@@ -1,0 +1,187 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Spent currencies</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        This page shows the total amount of currencies you have spent on items in Sky.
+      </p>
+      <p>
+        Items that specifically belong to a season, such as those from season spirits and guides, will be shown in the Seasons section.<br/>
+        Items that are not <b>directly</b> related to a season, such as items from the Nesting Workshop, will be shown in the Regular section.
+      </p>
+      <p>
+        In the breakdown the following abbreviations are used:
+        (c) for candles, (h) for hearts, (ac) for ascended candles, (ec) for event currency, (sc) for season candles, and (sh) for season hearts.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="mt">
+  <app-card [title]="'Total'" [foldable]="true" [folded]="false">
+    <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: total }"></ng-container>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [title]="'Regular'" [foldable]="true" [folded]="false">
+    <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: regular }"></ng-container>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [title]="'Seasons'" [foldable]="true" [folded]="true">
+    <div class="grid grid-1">
+      @for (season of seasons; track season.guid; let idx = $index) {
+        @if (idx) { <hr/> }
+        <div>
+          <div class="container mb-0 br-b-0">
+            @if (season.iconUrl) { <img [src]="season.iconUrl" class="icon"> }
+            <b>{{season.name}}</b>
+          </div>
+          <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: seasonUnlockedCost[season.guid], noTop: true }"></ng-container>
+        </div>
+      }
+    </div>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [title]="'Events'" [foldable]="true" [folded]="true">
+    <div class="grid grid-1">
+      @for (event of events; track event.guid; let idx = $index) {
+        @if (idx) { <hr/> }
+        <div>
+          <div class="spent-section-title">
+            <b>{{event.name}}</b>&nbsp;
+            @if (eventInstancesByEvent[event.guid].length > 1) { <span class="c-accent">(all combined)</span> }
+          </div>
+          <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: eventUnlockedCost[event.guid], noTop: true }"></ng-container>
+        </div>
+        @if (eventInstancesByEvent[event.guid].length > 1) {
+          @for (instance of eventInstancesByEvent[event.guid]; track instance.guid) {
+            <div>
+              <div class="spent-section-title">
+                <b>{{instance.name ?? event.name}} <span class="c-accent">(#{{instance.number}})</span></b>
+              </div>
+              <ng-container *ngTemplateOutlet="costTemplate; context: { $implicit: eventInstanceUnlockedCost[instance.guid], noTop: true }"></ng-container>
+            </div>
+          }
+        }
+      }
+    </div>
+  </app-card>
+</div>
+
+<ng-template #costTemplate let-data let-visible="visible" let-noTop="noTop">
+  <div class="container" [class.br-t-0]="noTop">
+    @if (data.cost.c) {
+      <div>
+        <mat-icon [svgIcon]="'candle'" class="v-middle" [ngbTooltip]="'Candles'"></mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.cost.c | number:'1.'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+    @if (data.cost.h) {
+      <div>
+        <mat-icon [svgIcon]="'heart'" class="v-middle" [ngbTooltip]="'Hearts'"></mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.cost.h | number:'1.'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+    @if (data.cost.ac) {
+      <div>
+        <mat-icon [svgIcon]="'ascended-candle'" class="v-middle" [ngbTooltip]="'Ascended candles'"></mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.cost.ac | number:'1.'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+    @if (data.cost.ec) {
+      <div>
+        <mat-icon [svgIcon]="'ticket'" class="v-middle" [ngbTooltip]="'Event currency'"></mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.cost.ec | number:'1.'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+    @if (data.cost.sc) {
+      <div>
+        <mat-icon [svgIcon]="'candle'" class="v-middle seasonal" [ngbTooltip]="'Season candles'"></mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.cost.sc | number:'1.'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+    @if (data.cost.sh) {
+      <div>
+        <mat-icon [svgIcon]="'heart'" class="v-middle seasonal" [ngbTooltip]="'Season hearts'"></mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.cost.sh | number:'1.'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+    @if (data.price) {
+      <div>
+        <mat-icon [ngbTooltip]="'Price (USD)'" class="v-middle">attach_money</mat-icon>&nbsp;x&nbsp;
+        <input readonly type="text" [value]="data.price | number:'1.00'" class="d-inline-block input-no-arrows" style="width: 96px;"/>
+      </div>
+    }
+  </div>
+  <div class="mt">
+    <button type="button" (click)="data.breakdownVisible = !data.breakdownVisible;">
+      <mat-icon class="menu-icon">{{ data.breakdownVisible ? 'unfold_less' : 'unfold_more'}}</mat-icon>
+      <span class="menu-label">Breakdown</span>
+    </button>
+  </div>
+  @if (data.breakdownVisible) {
+    @if (data.nodes.length) {
+      <div class="mt">
+        <app-card [title]="'Spirit trees'" [foldable]="true" [folded]="false">
+          <div class="grid grid-4">
+            @for (node of data.nodes; track node.guid) {
+              @if (node.item && (node.c || node.h || node.ac || node.ec || node.sc || node.sh)) {
+                <div>
+                  <span>{{node.item.name}}</span>
+                  @if (node.c) { ({{node.c}}c) }
+                  @if (node.h) { ({{node.h}}h) }
+                  @if (node.ac) { ({{node.ac}}ac) }
+                  @if (node.ec) { ({{node.ec}}ec) }
+                  @if (node.sc) { ({{node.sc}}sc) }
+                  @if (node.sh) { ({{node.sh}}sh) }
+                </div>
+              }
+            }
+          </div>
+        </app-card>
+      </div>
+    }
+    @if (data.listNodes.length) {
+      <div class="mt">
+        <app-card [title]="'Shops (in-game currency)'" [foldable]="true" [folded]="false">
+          <div class="grid grid-4">
+            @for (node of data.listNodes; track node.guid) {
+              @if (node.item && (node.c || node.h || node.ac || node.ec || node.sc || node.sh)) {
+                <div>
+                  <span>{{node.item.name}}</span>
+                  @if (node.c) { ({{node.c}}c) }
+                  @if (node.h) { ({{node.h}}h) }
+                  @if (node.ac) { ({{node.ac}}ac) }
+                  @if (node.ec) { ({{node.ec}}ec) }
+                  @if (node.sc) { ({{node.sc}}sc) }
+                  @if (node.sh) { ({{node.sh}}sh) }
+                </div>
+              }
+            }
+          </div>
+        </app-card>
+      </div>
+    }
+    @if (data.iaps.length) {
+      <div class="mt">
+        <app-card [title]="'In-app purchases'" [foldable]="true" [folded]="false">
+          <div class="grid grid-4">
+            @for (iaps of data.iaps; track iaps.guid) {
+              <div>
+                <span>{{iaps.name}}</span>
+                @if (iaps.price) { (${{iaps.price|number:'1.00'}}) }
+              </div>
+            }
+          </div>
+        </app-card>
+      </div>
+    }
+  }
+</ng-template>

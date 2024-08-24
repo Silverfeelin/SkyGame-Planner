@@ -1,0 +1,9 @@
+.spent-section-title {
+  background: var(--color-background);
+  padding: var(--padding-content);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  border: var(--border-solid);
+  border-bottom: 0;
+  width: min-content;
+  min-width: 100%;
+}

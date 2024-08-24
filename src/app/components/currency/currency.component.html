@@ -9,6 +9,14 @@
         These currencies will automatically change when unlocking items, checking in your dailies and while using the calculator.
       </p>
     </div>
+    <div class="grid grid-2 mt">
+      <app-wiki-link [wiki]="{ href: 'https://sky-children-of-the-light.fandom.com/wiki/Currency'}"></app-wiki-link>
+      <a class="container" [routerLink]="'/currency/spent'">
+        <mat-icon class="menu-icon">wallet</mat-icon>
+        <span class="menu-label">
+          Spent currencies
+        </span>
+      </a>
   </div>
 </div>
 

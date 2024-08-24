@@ -8,11 +8,13 @@ import { IEventInstance } from '@app/interfaces/event.interface';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { RouterLink } from '@angular/router';
+import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
   selector: 'app-currency',
   standalone: true,
-  imports: [CardComponent, MatIcon, NgbTooltip],
+  imports: [CardComponent, WikiLinkComponent, MatIcon, NgbTooltip, RouterLink],
   templateUrl: './currency.component.html',
   styleUrl: './currency.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

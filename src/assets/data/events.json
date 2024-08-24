@@ -381,15 +381,13 @@
     // Sky Anniversary
     {
       "guid": "qMS8yJXaln",
-      "name": "SkyFest",
-      "shortName": "SkyFest",
+      "name": "Sky Anniversary",
+      "shortName": "Anniversary",
       "recurring": true,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6c79b92b1e/3rdannivheader.png",
       "instances": [
         {
           "guid": "H0unHE7F96",
-          "name": "Sky Anniversary",
-          "shortName": "Anniversary",
           "date": { "day": 13, "month": 7, "year": 2020 },
           "endDate": { "day": 19, "month": 7, "year": 2020 },
           "spirits": [
@@ -398,8 +396,6 @@
         },
         {
           "guid": "ayRFBo_qZ6",
-          "name": "Sky Anniversary",
-          "shortName": "Anniversary",
           "date": { "day": 12, "month": 7, "year": 2021 },
           "endDate": { "day": 25, "month": 7, "year": 2021 },
           "spirits": [
@@ -408,8 +404,6 @@
         },
         {
           "guid": "ekBn-JK2zq",
-          "name": "Sky Anniversary",
-          "shortName": "Anniversary",
           "date": { "day": 18, "month": 7, "year": 2022 },
           "endDate": { "day": 3, "month": 8, "year": 2022 },
           "spirits": [
@@ -418,8 +412,6 @@
         },
         {
           "guid": "edzNCG6Irb",
-          "name": "Sky Anniversary",
-          "shortName": "Anniversary",
           "date": { "day": 17, "month": 7, "year": 2023 },
           "endDate": { "day": 30, "month": 7, "year": 2023 },
           "spirits": [
@@ -431,6 +423,8 @@
         },
         {
           "guid": "JefBqVVavo",
+          "name": "SkyFest",
+          "shortName": "SkyFest",
           "date": "2024-07-12",
           "endDate": "2024-07-26",
           "calculatorData": {

@@ -45,6 +45,7 @@ import { ShopHarmonyHallComponent } from './components/shops/shop-harmony-hall/s
 import { ShopEventStoreComponent } from './components/shops/shop-event-store/shop-event-store.component';
 import { ShopOfficeComponent } from './components/shops/shop-office/shop-office.component';
 import { CurrencyComponent } from './components/currency/currency.component';
+import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -71,6 +72,7 @@ export const routes: Routes = [
           { path: 'privacy', component: PrivacyComponent },
           { path: 'credits', component: CreditsComponent, title: title('Credits') },
           { path: 'currency', component: CurrencyComponent, title: title('In-game currency') },
+          { path: 'currency/spent', component: CurrencySpentComponent, title: title('Spent currency') },
           { path: 'event', component: EventsComponent, title: title('Events') },
           { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
           { path: 'event/:guid', component: EventComponent },
