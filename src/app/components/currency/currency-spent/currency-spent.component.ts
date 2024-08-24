@@ -73,10 +73,10 @@ export class CurrencySpentComponent {
       const eventInstance = tree?.eventInstanceSpirit?.eventInstance;
       const season = tree?.spirit?.season;
 
-      if (season) {
-        this.addSeasonCost(season, { node });
-      } else if (eventInstance) {
+      if (eventInstance) {
         this.addEventInstanceCost(eventInstance, { node });
+      } else if (season) {
+        this.addSeasonCost(season, { node });
       } else {
         this.addInstanceCost(this.regular, { node });
       }

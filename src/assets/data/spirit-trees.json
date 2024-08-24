@@ -352,11 +352,13 @@
     // AURORA Guide
     {
       "guid": "P1nzgnNVFT",
-      "node": "NlJnO3uHyG"
+      "node": "NlJnO3uHyG",
+      "name": "AURORA Guide"
     },
     {
       "guid": "gu5doPh4OB",
       "revisionType": "AfterSeason",
+      "name": "AURORA Guide - After season",
       "node": "tminhzzv09"
     },
     // Remembrance Guide
@@ -1858,7 +1860,9 @@
     // #region AURORA Encore Concerts
     {
       "guid": "Nx8MFZDTe-",
-      "node": "7x-cdEvdiH"
+      "node": "7x-cdEvdiH",
+      "name": "AURORA Guide - Encore",
+      "revisionType": "Limited"
     },
     // #endregion
     // #region Aviary's Firework Festival

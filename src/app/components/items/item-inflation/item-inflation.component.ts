@@ -144,6 +144,7 @@ export class ItemInflationComponent implements AfterViewInit {
       const itemList = item.listNodes?.at(0)?.itemList;
       season ??= itemList?.shop?.season;
       eventInstance ??= itemList?.shop?.event;
+      if (season && eventInstance) { season = undefined; }
       if (season && !this.includeSeasons) { continue; }
       if (eventInstance && !this.includeEvents) { continue; }
       if (!season && !eventInstance) { continue; }
@@ -155,6 +156,7 @@ export class ItemInflationComponent implements AfterViewInit {
       const returnTree = NodeHelper.getRoot(returnNode)?.spiritTree;
       let returnSeason = returnTree?.spirit?.season;
       let returnEvent = returnTree?.eventInstanceSpirit?.eventInstance;
+      if (returnEvent && returnSeason) { returnSeason = undefined; }
       let returnTs = returnTree?.ts;
       let returnVisit = returnTree?.visit;
 

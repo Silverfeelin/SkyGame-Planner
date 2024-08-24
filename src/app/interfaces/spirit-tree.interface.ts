@@ -21,5 +21,5 @@ export interface ISpiritTree extends IGuid {
 }
 
 export interface IRevisedSpiritTree extends ISpiritTree {
-  revisionType: 'DuringSeason' | 'AfterSeason';
+  revisionType: 'DuringSeason' | 'AfterSeason' | 'Limited';
 }
