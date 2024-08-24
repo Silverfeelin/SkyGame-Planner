@@ -1,0 +1,97 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">In-game currency</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        On this page you can keep track of your in-game currencies.<br/>
+        These currencies will automatically change when unlocking items, checking in your dailies and while using the calculator.
+      </p>
+    </div>
+  </div>
+</div>
+
+@if (converted) {
+  <div class="sky-card mt">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Converted currencies</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        <p>
+          You had leftover season candles from the previous season. These have been converted into regular currencies.<br/>
+          <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>
+          <b class="c-new">+ {{ converted.candles }}</b>
+        </p>
+        <button type="button" (click)="converted=undefined">Dismiss</button>
+      </div>
+    </div>
+  </div>
+}
+
+<div class="mt">
+  <app-card [title]="'Regular currency'" [foldable]="false">
+    <div class="container">
+      <div>
+        <mat-icon [svgIcon]="'candle'" class="v-middle" [ngbTooltip]="'Candles'" container="body"></mat-icon>&nbsp;x&nbsp;
+        <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.candles" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+      </div>
+      <div>
+        <mat-icon [svgIcon]="'heart'" class="v-middle" [ngbTooltip]="'Hearts'" container="body"></mat-icon>&nbsp;x&nbsp;
+        <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.hearts" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+      </div>
+      <div>
+        <mat-icon [svgIcon]="'ascended-candle'" class="v-middle" [ngbTooltip]="'Ascended candles'" container="body"></mat-icon>&nbsp;x&nbsp;
+        <input #inpAc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.ascendedCandles" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+      </div>
+      <div>
+        <mat-icon [svgIcon]="'gift'" class="v-middle seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>&nbsp;x&nbsp;
+        <input #inpSp (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.giftPasses" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+      </div>
+    </div>
+  </app-card>
+</div>
+
+@if (ongoingSeason) {
+  <div class="mt">
+    <app-card [title]="'Season currency'" [foldable]="false">
+      <div class="container">
+        <div class="mb">
+          @if (ongoingSeason.iconUrl) {
+            <img [src]="ongoingSeason.iconUrl" class="icon">
+          }
+          <b>{{ ongoingSeason.name}}</b>
+        </div>
+        <div>
+          <mat-icon [svgIcon]="'candle'" class="v-middle seasonal" [ngbTooltip]="'Season candles'"></mat-icon>&nbsp;x&nbsp;
+          <input #inpSc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
+            [value]="currencies.seasonCurrencies[ongoingSeason.guid].candles"
+            (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+        </div>
+      </div>
+    </app-card>
+  </div>
+}
+
+@if (ongoingEventInstances.length) {
+  <div class="mt">
+    <app-card [title]="'Event currency'" [foldable]="false">
+      <div class="sky-flex flex-wrap flex-column">
+        @for (instance of ongoingEventInstances; track instance.guid) {
+          <div class="container">
+            <div class="mb">
+              <b>{{ instance.name ?? instance.event.name }}</b>
+            </div>
+            <div>
+              <mat-icon [svgIcon]="'ticket'" class="v-middle" [ngbTooltip]="'Event currency'"></mat-icon>&nbsp;x&nbsp;
+              <input #inpEc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
+                [value]="currencies.eventCurrencies[instance.guid].tickets"
+                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+            </div>
+          </div>
+        }
+      </div>
+    </app-card>
+  </div>
+}

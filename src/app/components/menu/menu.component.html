@@ -16,6 +16,11 @@
         <span class="name header">Sky Planner</span>
       </a>
       <hr/>
+      <!-- Currency -->
+      <a class="item" [routerLink]="'currency'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Currency'" placement="right" container="body">
+        <app-icon [src]="'#candle'" [width]="'24px'" [height]="'24px'" [verticalAlign]="'top'"></app-icon>
+        <span class="name">Currency</span>
+      </a>
       <!-- Items -->
       <a class="item" [routerLink]="'item'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Items'" placement="right" container="body">
         <mat-icon>checkroom</mat-icon>

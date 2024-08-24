@@ -11,6 +11,7 @@ import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { StorageService } from '@app/services/storage.service';
+import { CurrencyService } from '@app/services/currency.service';
 
 @Component({
     selector: 'app-season-calculator',
@@ -30,7 +31,7 @@ export class SeasonCalculatorComponent implements OnInit {
 
   candleCount = 0;
   includesToday = true;
-  haveSeasonPass = false;
+  hasSeasonPass = false;
   wantNodes: { [guid: string]: INode } = {};
   hasNodes = false;
   hasSkippedNode = false;
@@ -43,6 +44,7 @@ export class SeasonCalculatorComponent implements OnInit {
   nodeShowButtons?: INode;
 
   constructor(
+    private readonly _currencyService: CurrencyService,
     private readonly _dataService: DataService,
     private readonly _nodeService: NodeService,
     private readonly _storageService: StorageService
@@ -52,7 +54,7 @@ export class SeasonCalculatorComponent implements OnInit {
     if (season.endDate < DateTime.now()) { return; }
 
     this.season = season!;
-    this.haveSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
+    this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
 
     this.trees = this.season.spirits.filter(s => s.type === 'Season').map(s => s.tree!);
     this.allNodes = [];
@@ -93,11 +95,16 @@ export class SeasonCalculatorComponent implements OnInit {
     this.nodeShowButtons = undefined;
 
     if (node.unlocked || node.item?.unlocked) {
+      if (node.unlocked) {
+        this.candleCount += node.sc || 0;
+      }
       this._nodeService.lock(node);
     } else {
+      this.candleCount -= node.sc || 0;
       this._nodeService.unlock(node);
     }
 
+    this.candleCount = this._currencyService.clamp(this.candleCount);
     this.candleCountChanged();
     this.calculate();
     this.saveSettings();
@@ -114,8 +121,8 @@ export class SeasonCalculatorComponent implements OnInit {
     const value = parseInt(target.value, 10) || 0;
     if (value <= 0) {
       target.value = '0';
-    } else if (value > 999) {
-      target.value = '999';
+    } else if (value > 99999) {
+      target.value = '99999';
     } else if (!value) {
       target.value = '';
     }
@@ -127,16 +134,18 @@ export class SeasonCalculatorComponent implements OnInit {
 
   candleInputChanged(): void {
     const target = this.inpSc.nativeElement;
-    this.candleCount = Math.min(999, Math.max(parseInt(target.value, 10) || 0, 0));
+    this.candleCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    this.updateStoredCurrencies();
   }
 
   candleCountChanged(): void {
     this.inpSc.nativeElement.value = (this.candleCount).toString();
+    this.updateStoredCurrencies();
   }
 
-  addCurrency(n: number): void {
-    this.candleCount += n;
-    this.candleCount = Math.min(999, Math.max(0, this.candleCount));
+  addCurrency(): void {
+    this.candleCount += this.hasSeasonPass ? 6 : 5;
+    this.candleCount = this._currencyService.clamp(this.candleCount);
     this.candleCountChanged();
     this.calculate();
     this.saveSettings();
@@ -149,9 +158,8 @@ export class SeasonCalculatorComponent implements OnInit {
   }
 
   toggleSeasonPass(): void {
-    this.haveSeasonPass = !this.haveSeasonPass;
-
-    if (this.haveSeasonPass) {
+    this.hasSeasonPass = !this.hasSeasonPass;
+    if (this.hasSeasonPass) {
       this._storageService.addSeasonPasses(this.season.guid);
     } else {
       this._storageService.removeSeasonPasses(this.season.guid);
@@ -206,6 +214,10 @@ export class SeasonCalculatorComponent implements OnInit {
 
   // #region Settings
 
+  private updateStoredCurrencies(): void {
+    this._currencyService.setSeasonCurrency(this.season.guid, this.candleCount);
+  }
+
   private saveSettings(): void {
     const key = `season.calc.${this.season.guid}`;
     const today = DateHelper.todaySky();
@@ -225,12 +237,12 @@ export class SeasonCalculatorComponent implements OnInit {
     const today = DateHelper.todaySky().toISO();
     const parsed = JSON.parse(data) || {
       it: today,
-      sc: 0,
       wn: [],
     };
 
     this.includesToday = parsed.it === today;
-    this.candleCount = parsed.sc || 0;
+    const seasonCurrencies = this._storageService.getCurrencies()?.seasonCurrencies;
+    this.candleCount = seasonCurrencies?.[this.season.guid]?.candles || 0;
     if (this.inpSc?.nativeElement) {
       this.inpSc.nativeElement.value = this.candleCount.toString();
     }
@@ -255,7 +267,7 @@ export class SeasonCalculatorComponent implements OnInit {
     this.daysLeft = DateHelper.daysBetween(date, this.season.endDate);
     if (this.includesToday) { this.daysLeft--; }
 
-    const candlesPerDay = this.haveSeasonPass ? 6 : 5;
+    const candlesPerDay = this.hasSeasonPass ? 6 : 5;
     this.candlesAvailable = this.daysLeft * candlesPerDay;
 
     this.hasNodes = nodes.length > 0;

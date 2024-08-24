@@ -6,13 +6,14 @@ import { EventService } from 'src/app/services/event.service';
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.less'],
     standalone: true,
-    imports: [NgIf, NgbTooltip, MatIcon, RouterLinkActive, RouterLink]
+    imports: [NgIf, NgbTooltip, MatIcon, RouterLinkActive, RouterLink, IconComponent]
 })
 export class MenuComponent {
   wide = false;

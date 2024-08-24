@@ -5,6 +5,7 @@ import { BaseStorageProvider } from './base-storage-provider';
 
 const storageKeys = {
   date: 'date',
+  currencies: 'currencies',
   unlocked: 'unlocked',
   wingedLights: 'wingedLights',
   favourites: 'favourites',
@@ -36,12 +37,25 @@ export class LocalStorageProvider extends BaseStorageProvider {
   override load(): Observable<void> {
     const date = localStorage.getItem(storageKeys.date) || '';
     const unlocked = localStorage.getItem(storageKeys.unlocked) || '';
+    let currencies = JSON.parse(localStorage.getItem(storageKeys.currencies) || '{}');
+    if (Object.keys(currencies).length === 0) {
+      currencies = { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} };
+    }
     const wingedLights = localStorage.getItem(storageKeys.wingedLights) || '';
     const favourites = localStorage.getItem(storageKeys.favourites) || '';
     const seasonPasses = localStorage.getItem(storageKeys.seasonPasses) || '';
     const mapMarkers = localStorage.getItem(storageKeys.mapMarkers) || '';
     const data = JSON.parse(localStorage.getItem(storageKeys.keys) || '{}');
-    this.import({ date, unlocked, wingedLights, favourites, seasonPasses, mapMarkers, keys: data });
+    this.import({
+      date,
+      currencies: currencies || { candles: 0, hearts: 0, ascendedCandles: 0, giftPasses: 0, eventCurrencies: {}, seasonCurrencies: {} },
+      unlocked,
+      wingedLights,
+      favourites,
+      seasonPasses,
+      mapMarkers,
+      keys: data
+    });
     return of(undefined);
   }
 
@@ -49,6 +63,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
     this.events.next({ type: 'save_start' });
     const data = this.export();
     localStorage.setItem(storageKeys.date, this._lastDate.toISO()!);
+    localStorage.setItem(storageKeys.currencies, JSON.stringify(data.currencies));
     localStorage.setItem(storageKeys.unlocked, data.unlocked);
     localStorage.setItem(storageKeys.wingedLights, data.wingedLights);
     localStorage.setItem(storageKeys.favourites, data.favourites);

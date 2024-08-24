@@ -168,4 +168,11 @@
   --background: url(/assets/game/background/void_jelly.webp);
 }
 
+:root[data-theme="love"] {
+  --hue: 205;
+  --saturation: 70%;
+
+  --background: url(/assets/game/background/love2024.webp);
+}
+
 // #endregion

@@ -21,6 +21,7 @@ export class IconComponent implements OnChanges {
 
   @Input() width?: string;
   @Input() height?: string;
+  @Input() verticalAlign?: string;
 
   @Input() lazy?: boolean;
   @Input() draggable?: boolean;
