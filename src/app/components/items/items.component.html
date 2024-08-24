@@ -53,19 +53,41 @@
         <b [class.completed]="shownUnlocked == shownCount">{{ shownCount }}</b>
         unlocked
       </span>
-      <div class="fav-toggle" [class.toggle-active]="filterByFav" (click)="toggleFav()">
-        <mat-icon [ngbTooltip]="filterByFav ? 'Show all' : 'Show only favourites'" container="body" placement="left">star</mat-icon>
+      <div class="fav-toggle" [class.toggle-active]="showFilters" (click)="toggleFilters()">
+        <mat-icon [ngbTooltip]="'Show filter'" container="body" placement="left">filter_alt</mat-icon>
       </div>
     </div>
   </div>
 
   <div class="sky-card-body">
-    <div class="sky-flex flex-wrap">
-      <div class="container" *ngIf="filterByFav && !shownIncludesFav">
-        You have no items favourited in this category.
+  @if (showFilters) {
+      <div class="container mb sky-flex flex-wrap">
+        <button [class.highlight]="!filters.hideOwned" (click)="toggleFilter('hideOwned')">
+          <mat-icon class="menu-icon">check_box</mat-icon>
+          <span class="menu-label">Show owned</span>
+        </button>
+        <button [class.highlight]="!filters.hideMissing" (click)="toggleFilter('hideMissing')">
+          <mat-icon class="menu-icon">check_box_outline_blank</mat-icon>
+          <span class="menu-label">Show missing</span>
+        </button>
+        <button [class.highlight]="filters.favouriteOnly" (click)="toggleFilter('favouriteOnly')">
+          <mat-icon class="menu-icon">star</mat-icon>
+          <span class="menu-label">Only favourites</span>
+        </button>
+        <button [class.highlight]="!filters.hideLimited" (click)="toggleFilter('hideLimited')">
+          <mat-icon class="menu-icon">update_disabled</mat-icon>
+          <span class="menu-label">Show limited</span>
+        </button>
       </div>
-      <ng-container *ngFor="let item of shownItems; let i = index">
-        <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="filterByFav && !item.favourited">
+    }
+    <div class="sky-flex flex-wrap">
+      @if (showFilters && !filteredItems.length) {
+        <div class="container">
+          No items match the selected filters.
+        </div>
+      }
+      <ng-container *ngFor="let item of filteredItems; let i = index">
+        <a class="item-icon" [routerLink]="['/item', item.guid]">
           <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
             [class.highlight]="item && item === selectedItem"
             [class.item-unlocked]="item.unlocked"

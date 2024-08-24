@@ -8,7 +8,7 @@ import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { ItemIconComponent } from './item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf, NgFor } from '@angular/common';
+import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
 import { ItemTypeSelectorComponent } from './item-type-selector/item-type-selector.component';
 import { MatIcon } from '@angular/material/icon';
 
@@ -18,7 +18,7 @@ import { MatIcon } from '@angular/material/icon';
     styleUrls: ['./items.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [RouterLink, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, ItemIconComponent]
+    imports: [RouterLink, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, NgTemplateOutlet, ItemIconComponent]
 })
 export class ItemsComponent {
   type?: ItemType;
@@ -30,11 +30,18 @@ export class ItemsComponent {
   typeUnlocked: { [key: string]: number } = {};
 
   shownItems: Array<IItem> = [];
+  filteredItems: Array<IItem> = [];
   shownUnlocked: number = 0;
   shownCount: number = 0;
   shownIncludesFav = false;
 
-  filterByFav = false;
+  showFilters = false;
+  filters = {
+    favouriteOnly: false,
+    hideLimited: false,
+    hideOwned: false,
+    hideMissing: false
+  };
 
   constructor(
     private readonly _dataService: DataService,
@@ -44,6 +51,7 @@ export class ItemsComponent {
     private readonly _router: Router,
     private readonly _changeDetectionRef: ChangeDetectorRef
   ) {
+    this.loadSettings();
     this.initializeItems();
 
     _route.queryParamMap.subscribe(params => {
@@ -55,9 +63,6 @@ export class ItemsComponent {
     const type = query.get('type') as ItemType;
     this.type = type as ItemType || ItemType.Outfit;
 
-    const fav = query.get('fav') === '1';
-    this.filterByFav = fav;
-
     this.updateShownItems();
 
     // Select item from query.
@@ -67,20 +72,35 @@ export class ItemsComponent {
     }
   }
 
+  toggleFilters(): void {
+    this.showFilters = !this.showFilters;
+    this.updateShownItems();
+  }
+
+  toggleFilter(filter: string) {
+    (this.filters as any)[filter] = !(this.filters as any)[filter];
+    this.saveSettings();
+    this.updateShownItems();
+  }
+
   private updateShownItems(): void {
     this.shownItems = this.typeItems[this.type!] ?? [];
     this.shownCount = this.shownItems.length;
     this.shownUnlocked = this.typeUnlocked[this.type!] ?? 0;
-    this.shownIncludesFav = this.filterByFav && this.shownItems.some(item => item.favourited);
+
+    if (this.showFilters) {
+      this.filteredItems = this.shownItems.filter(item => {
+        if (this.filters.favouriteOnly && !item.favourited) { return false; }
+        if (this.filters.hideLimited && (item.group === 'Limited' || item.group === 'Ultimate')) { return false; }
+        if (this.filters.hideOwned && item.unlocked) { return false; }
+        if (this.filters.hideMissing && !item.unlocked) { return false; }
+        return true;
+      });
+    } else {
+      this.filteredItems = this.shownItems;
+    }
 
     this._changeDetectionRef.markForCheck();
-  }
-
-  toggleFav(): void {
-    const queryParams = NavigationHelper.getQueryParams(location.href);
-    queryParams['fav'] = this.filterByFav ? null : '1';
-
-    void this._router.navigate([], { queryParams, replaceUrl: true });
   }
 
   onTypeChanged(type: ItemType): void {
@@ -111,5 +131,13 @@ export class ItemsComponent {
     for (const type in ItemType) {
       ItemHelper.sortItems(this.typeItems[type]);
     }
+  }
+
+  private saveSettings(): void {
+    localStorage.setItem('items.filters', JSON.stringify(this.filters));
+  }
+
+  private loadSettings(): void {
+    this.filters = JSON.parse(localStorage.getItem('items.filters') || '{}');
   }
 }
