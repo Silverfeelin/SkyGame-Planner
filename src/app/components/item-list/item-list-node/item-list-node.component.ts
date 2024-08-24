@@ -7,6 +7,8 @@ import { NgTemplateOutlet, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { CurrencyService } from '@app/services/currency.service';
+import { CostHelper } from '@app/helpers/cost-helper';
 
 @Component({
     selector: 'app-item-list-node',
@@ -29,6 +31,7 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   private _sub?: SubscriptionLike;
 
   constructor(
+    private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef
@@ -86,6 +89,15 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
 
     // Save data.
     this._storageService.addUnlocked(...guids);
+
+    // Modify currencies.
+    // TODO: this does not track the cost when locking other nodes.
+    const season = this.node?.itemList?.shop?.season;
+    const eventInstance = this.node?.itemList?.shop?.event;
+    const cost = CostHelper.create();
+    CostHelper.add(cost, this.node);
+    CostHelper.invert(cost);
+    this._currencyService.addCost(cost, season, eventInstance);
   }
 
   private lockItem(): void {
@@ -93,6 +105,7 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
     const item = this.node.item;
     const guids: Array<string> = [];
 
+    const lockSelf = this.node.unlocked;
     // Lock the item.
     item.unlocked = false;
     guids.push(item.guid);
@@ -111,5 +124,12 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
 
     // Save data
     this._storageService.removeUnlocked(...guids);
+
+    // Modify currencies.
+    if (lockSelf) {
+      const season = this.node?.itemList?.shop?.season;
+      const eventInstance = this.node?.itemList?.shop?.event;
+      this._currencyService.addCost(this.node, season, eventInstance);
+    }
   }
 }

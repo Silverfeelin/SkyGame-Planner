@@ -15,6 +15,7 @@ import { NgFor, NgTemplateOutlet } from '@angular/common';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { MatIcon } from '@angular/material/icon';
 import { DebugService } from '@app/services/debug.service';
+import { CurrencyService } from '@app/services/currency.service';
 
 const signalAction = signal<NodeAction>('unlock');
 
@@ -60,6 +61,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
   constructor(
     private readonly _debugService: DebugService,
+    private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef,
@@ -88,7 +90,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.tsDate = this.tree.ts?.date;
       this.rsDate = this.tree.visit?.return?.date;
     }
-
   }
 
   ngOnDestroy(): void {
@@ -181,9 +182,14 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     const msg = `Are you sure you want to ${shouldUnlock?'UNLOCK':'REMOVE'} all items from this tree?`;
     if (!confirm(msg)) { return; }
 
+    const unlockCost = CostHelper.create();
     if (shouldUnlock) {
       // Unlock all locked items.
       itemNodes.filter(n => !n.item!.unlocked).forEach(node => {
+        // Track currencies to remove.
+        CostHelper.add(unlockCost, node);
+
+        // Unlock item.
         node.item!.unlocked = true;
         node.unlocked = true;
 
@@ -194,6 +200,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     } else {
       // Lock all unlocked items.
       itemNodes.filter(n => n.item!.unlocked).forEach(node => {
+        // Track currencies to refund.
+        node.unlocked && CostHelper.add(unlockCost, node);
+
+        // Lock item and all nodes referencing it.
         node.item!.unlocked = false;
         const refNodes = node.item!.nodes || [];
         refNodes.forEach(n => n.unlocked = false);
@@ -203,5 +213,12 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         this._eventService.itemToggled.next(node.item!);
       });
     }
+
+    // When unlocking, invert cost.
+    if (shouldUnlock) { CostHelper.invert(unlockCost); }
+
+    // Modify currencies.
+    // TODO: this does not track the cost when locking nodes outside of this tree.
+    this._currencyService.addTreeCost(unlockCost, this.tree);
   }
 }

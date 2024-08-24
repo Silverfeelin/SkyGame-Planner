@@ -27,23 +27,23 @@
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">
         <b>Settings</b>
         <div>
+          Season Pass:
+          <button type="button" (click)="toggleSeasonPass()">
+            <mat-icon class="calc-button-icon">{{ hasSeasonPass ? 'check' : 'close' }}</mat-icon>
+            <span class="calc-button-label">{{ hasSeasonPass ? 'owned' : 'not owned' }}</span>
+          </button>
+        </div>
+        <div>
           Your season candles:
+          <mat-icon [svgIcon]="'candle'" class="seasonal v-middle"></mat-icon>
           <input #inpSc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
-          <button type="button" class="button-sc button-sc-1" (click)="addCurrency(1)">+1</button>
-          <button type="button" class="button-sc button-sc-5" (click)="addCurrency(5)">+5</button>
+          <button type="button" class="button-sc" (click)="addCurrency()">+{{hasSeasonPass ? '6' : '5'}}&nbsp;</button>
         </div>
         <div>
           Today's candles:
           <button type="button" (click)="toggleIncludesToday()">
             <mat-icon class="calc-button-icon">{{ includesToday ? 'check' : 'close' }}</mat-icon>
             <span class="calc-button-label">{{ includesToday ? 'obtained' : 'not obtained' }}</span>
-          </button>
-        </div>
-        <div>
-          Season Pass:
-          <button type="button" (click)="toggleSeasonPass()">
-            <mat-icon class="calc-button-icon">{{ haveSeasonPass ? 'check' : 'close' }}</mat-icon>
-            <span class="calc-button-label">{{ haveSeasonPass ? 'owned' : 'not owned' }}</span>
           </button>
         </div>
         <div>
@@ -75,7 +75,7 @@
             Required items leading up to the items you want are included in the calculations!
           </blockquote>
         }
-        @if (!haveSeasonPass && hasSeasonPassNode) {
+        @if (!hasSeasonPass && hasSeasonPassNode) {
           <blockquote class="mb-0">
             <mat-icon class="result-warn">priority_high</mat-icon>
             You have selected items that require the <b class="c-old">Season Pass</b>!
@@ -88,12 +88,12 @@
         </div>
         <div>
           Because you
-          <b [class.c-new]="haveSeasonPass" [class.c-old]="!haveSeasonPass">
-            {{ haveSeasonPass ? 'own' : 'do not own' }}
+          <b [class.c-new]="hasSeasonPass" [class.c-old]="!hasSeasonPass">
+            {{ hasSeasonPass ? 'own' : 'do not own' }}
           </b>
           the Season Pass,
           you will be able to get
-          <b class="c-new">{{ haveSeasonPass ? '6' : '5' }}</b>
+          <b class="c-new">{{ hasSeasonPass ? '6' : '5' }}</b>
           season candles every day, not including bonus events.
         </div>
         <div>
@@ -166,7 +166,7 @@
 <ng-template #tNode let-node>
   <div class="node-show-hover"
     [class.node-have]="node.item?.unlocked" [class.node-want]="wantNodes[node.guid]"
-    [class.node-sp]="node.item?.group === 'SeasonPass' && !haveSeasonPass"
+    [class.node-sp]="node.item?.group === 'SeasonPass' && !hasSeasonPass"
     (click)="toggleButtons(node)"
   >
     <div class="node-overlay" [class.o-1]="nodeShowButtons === node"

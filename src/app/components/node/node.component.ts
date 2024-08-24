@@ -12,6 +12,8 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
+import { CostHelper } from '@app/helpers/cost-helper';
+import { CurrencyService } from '@app/services/currency.service';
 
 export type NodeAction = 'unlock' | 'find' | 'favourite';
 
@@ -33,8 +35,10 @@ export class NodeComponent implements OnChanges {
   hover?: boolean;
   tooltipPlacement = 'bottom';
 
+
   constructor(
     private readonly _debug: DebugService,
+    private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
     private readonly _nodeService: NodeService,
     private readonly _storageService: StorageService,
@@ -102,12 +106,14 @@ export class NodeComponent implements OnChanges {
     if (!unlock && !this.node.unlocked) { toggleConnected = false; }
 
     // Save progress.
+    const unlockCost = CostHelper.create();
     if (unlock) {
       const nodesToUnlock = toggleConnected ? NodeHelper.trace(this.node) : [this.node];
 
       for (const node of nodesToUnlock) {
         if (node.item && !node.item.unlocked) {
           this._nodeService.unlock(node);
+          CostHelper.add(unlockCost, node);
         }
       }
     } else {
@@ -116,9 +122,18 @@ export class NodeComponent implements OnChanges {
       for (const node of nodesToLock) {
         if (node === this.node || node.unlocked) {
           this._nodeService.lock(node);
+          CostHelper.add(unlockCost, node);
         }
       }
     }
+
+    // When unlocking, invert cost.
+    if (unlock) { CostHelper.invert(unlockCost); }
+
+    // Modify currencies.
+    // TODO: this does not track the cost when locking nodes outside of this tree.
+    const tree = NodeHelper.getRoot(this.node)?.spiritTree;
+    tree && this._currencyService.addTreeCost(unlockCost, tree);
   }
 
   findNode(event: MouseEvent): void {

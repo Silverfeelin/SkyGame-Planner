@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
 import { ICost } from '@app/interfaces/cost.interface';
+import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { DateHelper } from '@app/helpers/date-helper';
+import { ISeason } from '@app/interfaces/season.interface';
+import { IEventInstance } from '@app/interfaces/event.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +15,18 @@ export class CurrencyService {
   ) {
   }
 
-  addCost(cost: ICost): void {
+  /**
+   * Adds an ICost using the context of a spirit tree.
+   * The season/event cost is added to the respective currency only if it's ongoing.
+   * @remarks The cost should be inverted to subtract it!
+   */
+  addTreeCost(cost: ICost, tree: ISpiritTree): void {
+    const eventInstance = tree?.eventInstanceSpirit?.eventInstance;
+    const season = tree?.spirit?.season;
+    this.addCost(cost, season, eventInstance);
+  }
+
+  addCost(cost: ICost, season?: ISeason, eventInstance?: IEventInstance): void {
     const value = this._storageService.getCurrencies();
     if (cost.c) {
       value.candles += cost.c;
@@ -25,24 +40,27 @@ export class CurrencyService {
       value.ascendedCandles += cost.ac;
       value.ascendedCandles = this.clamp(value.ascendedCandles);
     }
-    this._storageService.setCurrencies(value);
-  }
+    let changed = !!(cost.c || cost.h || cost.ac);
 
-  subtractCost(cost: ICost): void {
-    const value = this._storageService.getCurrencies();
-    if (cost.c) {
-      value.candles -= cost.c;
-      value.candles = this.clamp(value.candles);
+    // Event currency
+    if (cost.ec && eventInstance && DateHelper.isActive(eventInstance.date, eventInstance.endDate)) {
+      const guid = eventInstance.guid;
+      value.eventCurrencies[guid] = this.clamp((value.eventCurrencies[guid] ?? 0) + cost.ec);
+      changed = true;
     }
-    if (cost.h) {
-      value.hearts -= cost.h;
-      value.hearts = this.clamp(value.hearts);
+
+    // Season currency.
+    if ((cost.sc || cost.sh) && season && DateHelper.isActive(season.date, season.endDate)) {
+      const guid = season.guid;
+      const cur = value.seasonCurrencies[guid] ?? { candles: 0, hearts: 0 };
+      value.seasonCurrencies[guid] = cur;
+      cur.candles = this.clamp(cur.candles + (cost.sc || 0));
+      cur.hearts = this.clamp(cur.hearts + (cost.sh || 0));
+      changed = true;
     }
-    if (cost.ac) {
-      value.ascendedCandles -= cost.ac;
-      value.ascendedCandles = this.clamp(value.ascendedCandles);
-    }
-    this._storageService.setCurrencies(value);
+
+    // Update currencies if changed.
+    changed && this._storageService.setCurrencies(value);
   }
 
   addGiftPasses(value: number): void {
@@ -65,6 +83,16 @@ export class CurrencyService {
     this._storageService.setCurrencies(value);
   }
 
+  setSeasonCurrency(seasonGuid: string, candles?: number, hearts?: number): void {
+    if (!seasonGuid || (!candles && !hearts)) { return; }
+    const value = this._storageService.getCurrencies();
+    const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0, hearts: 0 };
+    value.seasonCurrencies[seasonGuid] = seasonCurrency;
+    if (candles !== undefined) { seasonCurrency.candles = this.clamp(candles); }
+    if (hearts !== undefined) { seasonCurrency.hearts = this.clamp(hearts); }
+    this._storageService.setCurrencies(value);
+  }
+
   addEventCurrency(eventGuid: string, value: number): void {
     if (!eventGuid || !value) { return; }
     const currencies = this._storageService.getCurrencies();
@@ -75,17 +103,10 @@ export class CurrencyService {
   animateCurrencyGained(evt: MouseEvent, value: number): void {
     if (!value) { return; }
     const span = document.createElement('span');
-    span.style.position = 'fixed';
     span.classList.add('currency-gained');
     span.textContent = value >= 0 ? `+${value}` : `${value}`;
     span.style.top = `${evt.clientY}px`;
     span.style.left = `${evt.clientX}px`;
-    span.style.transform = 'translate(-50%, -50%)';
-    span.style.lineHeight = '24px';
-    span.style.fontSize = '24px';
-    span.style.color = '#fff';
-    span.style.textShadow = '2px 2px 4px rgba(0, 0, 0, 1)';
-    span.style.pointerEvents = 'none';
     span.classList.add(value < 0 ? 'c-old' : 'c-new');
     document.body.appendChild(span);
     const interval = setInterval(() => {
