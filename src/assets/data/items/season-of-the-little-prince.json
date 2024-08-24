@@ -56,6 +56,7 @@
     "guid": "l_C7GM60an",
     "type": "Outfit",
     "name": "Sword Outfit",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Icon_pants_prince_sword.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Season_of_little_prince_pants2_iap_sword.PNG",
     "_wiki": {
@@ -874,6 +875,7 @@
     "guid": "yjuL6T_ZOo",
     "type": "Cape",
     "name": "Little Prince Scarf Cape",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_cape_littleprince_scarf-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_little_prince_cape7_iap_scarf.png",
     "_wiki": {
@@ -886,6 +888,7 @@
     "guid": "dncileSEYL",
     "type": "Cape",
     "name": "Little Prince Asteroid Jacket",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_cape_littleprince_asteroid-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Little_prince_asteroid_cape_back.png",
     "_wiki": {
@@ -898,6 +901,7 @@
     "guid": "nrNcYrcZXy",
     "type": "Prop",
     "name": "Little Prince Fox",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_prop_little_prince_fox.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Season_of_little_prince_iap_fox_inst.png",
     "_wiki": {

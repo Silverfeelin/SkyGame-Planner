@@ -258,6 +258,7 @@
     "guid": "pugHKsR-io",
     "type": "Outfit",
     "name": "Cure for Me Outfit",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/SoAurora-Additional-Green-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SoAurora-Cure-for-me-Outfit-front.png",
     "_wiki": {
@@ -270,6 +271,7 @@
     "guid": "-66QzAlj3l",
     "type": "Mask",
     "name": "Cure for Me Mask",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/SoAurora-Additional-Mask-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/SoAURORA-Cure-for-me-Mask.png",
     "_wiki": {
@@ -813,6 +815,7 @@
     "guid": "i0BYuPKZYe",
     "type": "FaceAccessory",
     "name": "Tiara We Can Touch",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Aurora-Hair-Accessory-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/SoAurora-Hair-Accessory-no-hair.png",
     "_wiki": {
@@ -825,6 +828,7 @@
     "guid": "wZGUtak1mb",
     "type": "Hair",
     "name": "AURORA Runaway Hair",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Aurora-Runaway-Hair-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SoAurora-Short-bang-hairstyle.png",
     "_wiki": {
@@ -837,6 +841,7 @@
     "guid": "9kbdAvVwR4",
     "type": "Outfit",
     "name": "AURORA Runaway Outfit",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Aurora-Runaway-outfit-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/SoAurora-Purple-Outfit.png",
     "_wiki": {
@@ -849,6 +854,7 @@
     "guid": "4kOgGOEAQT",
     "type": "Outfit",
     "name": "To The Love Outfit",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/SoAurora-To-The-Love-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/SoAurora-To-The-Love-Outfit-front.png",
     "_wiki": {
@@ -862,6 +868,7 @@
     "type": "Held",
     "subtype": "Instrument",
     "name": "Voice of AURORA",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Aurora-Voice-of-Aurora-Icon-Morybel-0146-.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Aurora-Voice-of-Aurora-Instrument.png",
     "_wiki": {
@@ -874,6 +881,7 @@
     "guid": "JFV-ZmGQiu",
     "type": "Cape",
     "name": "Giving In Cape",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SoAurora-Giving-In-Cape-IAP-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SoAurora-Giving-In-Cape-IAP-Cape-back.png",
     "_wiki": {
@@ -886,6 +894,7 @@
     "guid": "EQYKoHE95s",
     "type": "Cape",
     "name": "Wings of AURORA",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/SoAURORA-Wings-of-AURORA-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SoAURORA-Wings-of-AURORA-Cape-back.png",
     "_wiki": {
@@ -898,6 +907,7 @@
     "guid": "LrI5FQ8vdi",
     "type": "Shoes",
     "name": "AURORA Musical Voyage Sneakers",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Aurora-Record-Breaker-Sneakers-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Musical-Voyage-Sneakers.png",
     "_wiki": {
