@@ -4,6 +4,7 @@
     "guid": "lDm3gx6ZkS",
     "type": "Hat",
     "name": "1 Year Sky Anniversary Hat",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/1st_anniv_hat_v2.png",
     "_wiki": {
@@ -16,6 +17,7 @@
     "guid": "uH4Rjnkh74",
     "type": "Hat",
     "name": "2 Year Sky Anniversary Hat",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/2nd_anniversary_hat_front.png",
     "_wiki": {
@@ -103,6 +105,7 @@
     "guid": "svEXRvagb3",
     "type": "Hat",
     "name": "3 Year Sky Anniversary Hat",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Days-of-Sky-2022-anniversary-crown.png",
     "_wiki": {
@@ -200,6 +203,7 @@
     "guid": "dLtGhTPX8z",
     "name": "4 Year Sky Anniversary Hat",
     "type": "Hat",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Sky-4th-Anniversary-Hat.png",
     "_wiki": {
@@ -236,6 +240,7 @@
     "guid": "meld4SQL8l",
     "type": "Cape",
     "name": "Skyfest Wireframe Cape",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SkyFest-Wireframe-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/SkyFest-Wireframe-Cape-back.png",
     "order": 743
@@ -254,6 +259,7 @@
     "guid": "jGsimtcb4t",
     "type": "Hat",
     "name": "5th Anniversary Headband",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/5th-Anniversary-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/SkyFest-5th-Anniversary-Headband.png",
     "order": 431
@@ -272,6 +278,7 @@
     "guid": "z0Xi9-Wipm",
     "type": "Outfit",
     "name": "Skyfest 5th Anniversary T-Shirt Outfit",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SkyFest-5th-Anniversary-T-shirt-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SkyFest-5th-Anniversary-T-shirt-front.png",
     "order": 60

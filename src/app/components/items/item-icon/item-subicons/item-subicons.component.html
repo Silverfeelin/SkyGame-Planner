@@ -58,6 +58,10 @@
       [ngbTooltip]="showTooltips ? 'You own this item.' : undefined" container="body">
       done
     </mat-icon>
+  } @else if (iconsShown['limited'] && (item.group === 'Limited' || item.group === 'Ultimate')) {
+    <mat-icon class="img-br subicon-shadow subicon-limited" [ngbTooltip]="showTooltips ? 'This item is limited and will not return.' : undefined" container="body">
+      update_disabled
+    </mat-icon>
   }
 
 
