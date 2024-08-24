@@ -95,11 +95,16 @@ export class SeasonCalculatorComponent implements OnInit {
     this.nodeShowButtons = undefined;
 
     if (node.unlocked || node.item?.unlocked) {
+      if (node.unlocked) {
+        this.candleCount += node.sc || 0;
+      }
       this._nodeService.lock(node);
     } else {
+      this.candleCount -= node.sc || 0;
       this._nodeService.unlock(node);
     }
 
+    this.candleCount = this._currencyService.clamp(this.candleCount);
     this.candleCountChanged();
     this.calculate();
     this.saveSettings();
@@ -116,8 +121,8 @@ export class SeasonCalculatorComponent implements OnInit {
     const value = parseInt(target.value, 10) || 0;
     if (value <= 0) {
       target.value = '0';
-    } else if (value > 999) {
-      target.value = '999';
+    } else if (value > 99999) {
+      target.value = '99999';
     } else if (!value) {
       target.value = '';
     }
@@ -129,17 +134,18 @@ export class SeasonCalculatorComponent implements OnInit {
 
   candleInputChanged(): void {
     const target = this.inpSc.nativeElement;
-    this.candleCount = Math.min(999, Math.max(parseInt(target.value, 10) || 0, 0));
+    this.candleCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    this.updateStoredCurrencies();
   }
 
   candleCountChanged(): void {
     this.inpSc.nativeElement.value = (this.candleCount).toString();
-    this._currencyService.setSeasonCurrency(this.season.guid, this.candleCount);
+    this.updateStoredCurrencies();
   }
 
   addCurrency(): void {
     this.candleCount += this.hasSeasonPass ? 6 : 5;
-    this.candleCount = Math.min(999, Math.max(0, this.candleCount));
+    this.candleCount = this._currencyService.clamp(this.candleCount);
     this.candleCountChanged();
     this.calculate();
     this.saveSettings();
@@ -207,6 +213,10 @@ export class SeasonCalculatorComponent implements OnInit {
   }
 
   // #region Settings
+
+  private updateStoredCurrencies(): void {
+    this._currencyService.setSeasonCurrency(this.season.guid, this.candleCount);
+  }
 
   private saveSettings(): void {
     const key = `season.calc.${this.season.guid}`;

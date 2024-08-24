@@ -15,6 +15,8 @@ import { ItemListComponent } from '../../item-list/item-list/item-list.component
 import { MatIcon } from '@angular/material/icon';
 import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
+import { CurrencyService } from '@app/services/currency.service';
+import { StorageService } from '@app/services/storage.service';
 
 @Component({
     selector: 'app-event-calculator',
@@ -75,8 +77,10 @@ export class EventCalculatorComponent {
   listNodeShowButtons?: INode;
 
   constructor(
+    private readonly _currencyService: CurrencyService,
     private readonly _dataService: DataService,
     private readonly _nodeService: NodeService,
+    private readonly _storageService: StorageService,
     private readonly _route: ActivatedRoute
   ) {
     this.guid = _route.snapshot.queryParamMap.get('guid') || '';
@@ -152,8 +156,16 @@ export class EventCalculatorComponent {
     this.nodeShowButtons = undefined;
 
     if (node.unlocked || node.item?.unlocked) {
+      if (node.unlocked) {
+        this.currencyCount = this._currencyService.clamp(this.currencyCount + (node.ec || 0));
+        this.candleCount = this._currencyService.clamp(this.candleCount + (node.c || 0));
+        this.heartCount = this._currencyService.clamp(this.heartCount + (node.h || 0));
+      }
       this._nodeService.lock(node);
     } else {
+      this.currencyCount = this._currencyService.clamp(this.currencyCount - (node.ec || 0));
+      this.candleCount = this._currencyService.clamp(this.candleCount - (node.c || 0));
+      this.heartCount = this._currencyService.clamp(this.heartCount - (node.h || 0));
       this._nodeService.unlock(node);
     }
 
@@ -184,11 +196,11 @@ export class EventCalculatorComponent {
     if (node.unlocked) {
       this._nodeService.lock(node);
       this.currencyCount += node.ec || 0;
-      this.currencyCount = Math.min(999, this.currencyCount);
+      this.currencyCount = this._currencyService.clamp(this.currencyCount);
     } else {
       this._nodeService.unlock(node);
       this.currencyCount -= node.ec || 0;
-      this.currencyCount = Math.max(0, this.currencyCount);
+      this.currencyCount = this._currencyService.clamp(this.currencyCount);
     }
   }
 
@@ -203,8 +215,8 @@ export class EventCalculatorComponent {
     const value = parseInt(target.value, 10) || 0;
     if (value <= 0) {
       target.value = '0';
-    } else if (value > 999) {
-      target.value = '999';
+    } else if (value > 99999) {
+      target.value = '99999';
     } else if (!value) {
       target.value = '';
     }
@@ -216,28 +228,31 @@ export class EventCalculatorComponent {
 
   currencyInputChanged(): void {
     const targetEc = this.inpEc.nativeElement;
-    this.currencyCount = Math.min(999, Math.max(parseInt(targetEc.value, 10) || 0, 0));
+    this.currencyCount = this._currencyService.clamp(parseInt(targetEc.value, 10) || 0);
     const targetC = this.inpC.nativeElement;
-    this.candleCount = Math.min(999, Math.max(parseInt(targetC.value, 10) || 0, 0));
+    this.candleCount = this._currencyService.clamp(parseInt(targetC.value, 10) || 0);
     const targetH = this.inpH.nativeElement;
-    this.heartCount = Math.min(999, Math.max(parseInt(targetH.value, 10) || 0, 0));
+    this.heartCount = this._currencyService.clamp(parseInt(targetH.value, 10) || 0);
 
     this.inpTimed?.forEach(inp => {
       const value = parseInt(inp.nativeElement.value, 10) || 0;
       const guid = inp.nativeElement.dataset['guid']!;
       this.timedCurrencyCount[guid] = value;
     });
+
+    this.updateStoredCurrencies();
   }
 
   currencyCountChanged(): void {
     this.inpEc.nativeElement.value = (this.currencyCount).toString();
     this.inpC.nativeElement.value = (this.candleCount).toString();
     this.inpH.nativeElement.value = (this.heartCount).toString();
+    this.updateStoredCurrencies();
   }
 
   addCurrency(): void {
     this.currencyCount += this.currencyPerDay!;
-    this.currencyCount = Math.min(999, Math.max(0, this.currencyCount));
+    this.currencyCount = this._currencyService.clamp(this.currencyCount);
     this.currencyCountChanged();
     this.calculate();
     this.saveSettings();
@@ -274,14 +289,16 @@ export class EventCalculatorComponent {
 
   // #region Settings
 
+  private updateStoredCurrencies(): void {
+    this._currencyService.setRegularCost({ c: this.candleCount, h: this.heartCount, ec: this.currencyCount });
+    this._currencyService.setEventCurrency(this.eventInstance.guid, this.currencyCount);
+  }
+
   private saveSettings(): void {
     const key = `event.calc.${this.eventInstance.guid}`;
     const today = DateHelper.todaySky();
     const data = {
       it: this.includesToday ? today.toISO() : '',
-      ec: this.currencyCount,
-      c: this.candleCount,
-      h: this.heartCount,
       tc: Object.keys(this.timedCurrencyCount).reduce((acc: { [guid: string]: number }, guid: string) => {
         const value = this.timedCurrencyCount[guid];
         if (value) { acc[guid] = value; }
@@ -301,18 +318,17 @@ export class EventCalculatorComponent {
     const today = DateHelper.todaySky().toISO();
     const parsed = JSON.parse(data) || {
       it: today,
-      ec: 0,
-      c: 0,
-      h: 0,
       tc: {},
       wn: [],
       ln: [],
     };
 
     this.includesToday = parsed.it === today;
-    this.currencyCount = parsed.ec || 0;
-    this.candleCount = parsed.c || 0;
-    this.heartCount = parsed.h || 0;
+    const currencies = this._storageService.getCurrencies();
+    const eventCurrency = currencies.eventCurrencies?.[this.eventInstance.guid] || 0;
+    this.currencyCount = eventCurrency;
+    this.candleCount = currencies.candles;
+    this.heartCount = currencies.hearts;
 
     this.timedCurrencyCount = parsed.tc || {};
     this.timedCurrencies.forEach(timedCurrency => {

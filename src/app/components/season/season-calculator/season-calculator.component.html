@@ -36,8 +36,8 @@
         <div>
           Your season candles:
           <mat-icon [svgIcon]="'candle'" class="seasonal v-middle"></mat-icon>
-          <input #inpSc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
-          <button type="button" class="button-sc" (click)="addCurrency()">+{{hasSeasonPass ? '6' : '5'}}&nbsp;</button>
+          <input #inpSc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
+          <button type="button" class="button-sc" (click)="addCurrency()">+{{hasSeasonPass ? '6' : '5'}} (daily)</button>
         </div>
         <div>
           Today's candles:

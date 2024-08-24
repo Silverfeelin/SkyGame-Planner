@@ -63,6 +63,15 @@ export class CurrencyService {
     changed && this._storageService.setCurrencies(value);
   }
 
+  setRegularCost(cost: ICost): void {
+    const value = this._storageService.getCurrencies();
+    let changed = false;
+    if (cost.c !== undefined) { value.candles = this.clamp(cost.c); changed = true; }
+    if (cost.h !== undefined) { value.hearts = this.clamp(cost.h); changed = true; }
+    if (cost.ac !== undefined) { value.ascendedCandles = this.clamp(cost.ac); changed = true; }
+    changed && this._storageService.setCurrencies(value);
+  }
+
   addGiftPasses(value: number): void {
     if (!value) { return; }
     const currencies = this._storageService.getCurrencies();
@@ -100,6 +109,13 @@ export class CurrencyService {
     this._storageService.setCurrencies(currencies);
   }
 
+  setEventCurrency(eventGuid: string, value?: number): void {
+    if (!eventGuid || !value) { return; }
+    const currencies = this._storageService.getCurrencies();
+    currencies.eventCurrencies[eventGuid] = this.clamp(value);
+    this._storageService.setCurrencies(currencies);
+  }
+
   animateCurrencyGained(evt: MouseEvent, value: number): void {
     if (!value) { return; }
     const span = document.createElement('span');
@@ -121,7 +137,7 @@ export class CurrencyService {
     }, 1000);
   }
 
-  private clamp(value: number): number {
+  clamp(value: number): number {
     return Math.min(99999, Math.max(0, value));
   }
 }
