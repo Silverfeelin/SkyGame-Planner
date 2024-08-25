@@ -115,5 +115,49 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Surfboard"
     },
     "order": 550
+  },
+
+  {
+    "id": 2289,
+    "guid": "vNSMly5D9b",
+    "type": "Cape",
+    "name": "Sunlight Woven Wrap",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Sunlight-Woven-Wrap-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
+    "order": 10000
+  },
+  {
+    "id": 2290,
+    "guid": "lv_MnKorJN",
+    "type": "FaceAccessory",
+    "name": "Sunlight Helios Hoops",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
+    "order": 10000
+  },
+  {
+    "id": 2291,
+    "guid": "WHZ443yFkG",
+    "type": "Prop",
+    "name": "Sunlight Manta Float",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
+    "order": 10000
+  },
+  {
+    "id": 2292,
+    "guid": "_DzSz5REUk",
+    "type": "Outfit",
+    "name": "Sunlight Beach Shorts Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Sunlight-Beach-Shorts-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Sunlight-Beach-Shorts-front.png",
+    "order": 10000
+  },
+  {
+    "id": 2293,
+    "guid": "iA01zJOF-r",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   }
 ]

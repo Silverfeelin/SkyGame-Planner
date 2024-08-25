@@ -474,6 +474,20 @@
           "spirits": [
             { "guid": "yTYOjJ9Z9t", "spirit": "c9XXzlKzhd", "tree": "QKeMWsP0vc" }
           ]
+        },
+        {
+          "guid": "GL-IIVGTPZ",
+          "date": "2024-08-26",
+          "endDate": "2024-09-08",
+          "spirits": [
+            { "guid": "qdhPx1C8WH", "spirit": "c9XXzlKzhd", "tree": "OBkSXsVvcQ" }
+          ],
+          "shops": [
+            "TZe46D63il",
+            "6mg-Q5KF9l",
+            "UKOZu6OJBC"
+          ],
+          "draft": true
         }
       ],
       "_wiki": {
