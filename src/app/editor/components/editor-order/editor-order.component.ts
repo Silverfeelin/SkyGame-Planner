@@ -43,7 +43,7 @@ export class EditorOrderComponent {
 
       const node = item.nodes?.at(-1);
       if (node) {
-        const spirit = NodeHelper.getRoot(node)?.spiritTree?.spirit;
+        const spirit = node.root?.spiritTree?.spirit;
         (item as any)._subIcon ||= spirit?.season?.iconUrl;
         (item as any)._label ||= spirit?.events?.at(-1)?.eventInstance?.event?.shortName || spirit?.events?.at(-1)?.eventInstance?.event?.name;
       }

@@ -1,5 +1,5 @@
 import { IEvent } from '../interfaces/event.interface';
-import { IItem, ItemType } from '../interfaces/item.interface';
+import { IItem, IItemSource, ItemType } from '../interfaces/item.interface';
 import { NodeHelper } from './node-helper';
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([
@@ -32,6 +32,18 @@ export class ItemHelper {
 
     ItemHelper.sortItems(items);
     return items;
+  }
+
+  /**
+   * Returns the first (or last) source of an item.
+   * @remarks This could be incorrect if an item ever swaps type but so far so good...
+  */
+  static getItemSource(item: IItem, last?: boolean): IItemSource | undefined {
+    const i = last ? -1 : 0;
+    return item.nodes?.at(i) && { type: 'node', item, source: item.nodes[i] }
+      || item.listNodes?.at(i) && { type: 'list', item, source: item.listNodes[i] }
+      || item.iaps?.at(i) && { type: 'iap', item, source: item.iaps[i] }
+      || undefined;
   }
 
   /** Sorts items by their order. The array is sorted in-place and returned. */

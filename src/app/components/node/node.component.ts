@@ -133,7 +133,7 @@ export class NodeComponent implements OnChanges {
 
     // Modify currencies.
     // TODO: this does not track the cost when locking nodes outside of this tree.
-    const tree = NodeHelper.getRoot(this.node)?.spiritTree;
+    const tree = this.node.root?.spiritTree;
     tree && this._currencyService.addTreeCost(unlockCost, tree);
   }
 

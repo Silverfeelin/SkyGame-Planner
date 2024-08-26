@@ -1,0 +1,17 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Concert Hall</h1>
+  </div>
+  <div class="sky-card-body">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Concert Hall'}"></app-wiki-link>
+  </div>
+</div>
+
+<!-- Spirit trees -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="false" [title]="'Spirit trees'">
+    <div class="sky-flex scroll-x">
+      <app-spirit-tree [tree]="tree!" [name]="tree.name ?? tree.spirit?.name"></app-spirit-tree>
+    </div>
+  </app-card>
+</div>

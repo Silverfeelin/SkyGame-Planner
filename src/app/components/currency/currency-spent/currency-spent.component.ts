@@ -69,7 +69,7 @@ export class CurrencySpentComponent {
   private checkNodes(): void {
     for (const node of this._dataService.nodeConfig.items) {
       if (!node.unlocked) { continue; }
-      const tree = NodeHelper.getRoot(node)?.spiritTree;
+      const tree = node.root?.spiritTree;
       const eventInstance = tree?.eventInstanceSpirit?.eventInstance;
       const season = tree?.spirit?.season;
 

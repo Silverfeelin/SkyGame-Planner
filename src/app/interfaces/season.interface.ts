@@ -1,6 +1,7 @@
 import { IConfig, IGuid, IPeriod } from "./base.interface";
 import { ICalculatorData } from './calculator-data.interface';
 import { IShop } from "./shop.interface";
+import { ISpiritTree } from './spirit-tree.interface';
 import { ISpirit } from "./spirit.interface";
 import { IWiki } from "./wiki.interface";
 
@@ -38,6 +39,13 @@ export interface ISeason extends IGuid, IPeriod {
 
   /** Season shops. */
   shops?: Array<IShop>;
+
+  /**
+   * Spirit trees included in the season.
+   * These trees are typically introduced in but are not limited to the season (i.e. Compassionate Cellist).
+   * @remarks Do not include season spirit trees (guide, spirits), these are included via the spirits property.
+  */
+  includedTrees?: Array<ISpiritTree>;
 
   /// Metadata ///
 

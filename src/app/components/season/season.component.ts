@@ -47,6 +47,8 @@ export class SeasonComponent implements OnDestroy {
   shops: Array<IShop> = [];
   iapShops: Array<IShop> = [];
 
+  includedTrees?: Array<ISpiritTree>;
+
   nodes: Set<INode> = new Set();
 
   hasSeasonPass = false;
@@ -113,6 +115,8 @@ export class SeasonComponent implements OnDestroy {
           break;
       }
     });
+
+    this.includedTrees = this.season.includedTrees;
 
     const shops = this.season.shops ?? [];
     this.iapShops = shops.filter(s => s.iaps?.length);

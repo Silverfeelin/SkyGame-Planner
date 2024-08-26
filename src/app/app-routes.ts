@@ -46,6 +46,7 @@ import { ShopEventStoreComponent } from './components/shops/shop-event-store/sho
 import { ShopOfficeComponent } from './components/shops/shop-office/shop-office.component';
 import { CurrencyComponent } from './components/currency/currency.component';
 import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
+import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -91,6 +92,7 @@ export const routes: Routes = [
           { path: 'settings', component: SettingsComponent, title: title('Settings') },
           { path: 'shop', component: ShopsComponent, title: title('Shops') },
           { path: 'shop/event', component: ShopEventStoreComponent, title: title('Aviary Event Store') },
+          { path: 'shop/concert-hall', component: ShopConcertHallComponent, title: title('Concert Hall') },
           { path: 'shop/harmony', component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
           { path: 'shop/nesting', component: ShopNestingComponent, title: title('Nesting Workshop') },
           { path: 'shop/office', component: ShopOfficeComponent, title: title('Office') },

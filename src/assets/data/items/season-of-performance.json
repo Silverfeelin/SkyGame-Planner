@@ -43,7 +43,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 697
+    "order": 699
   },
   {
     "id": 510,
@@ -56,7 +56,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 337
+    "order": 338
   },
   {
     "id": 511,
@@ -69,7 +69,7 @@
     "id": 512,
     "guid": "CLpPsg-2LT",
     "type": "Spell",
-    "name": "Memory Candle",
+    "name": "Shared Memory Spell",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Shared-memory-spell-icon-Morybel-0146.png"
   },
   {
@@ -116,7 +116,7 @@
     "id": 518,
     "guid": "X0i3rZEDQ6",
     "type": "Spell",
-    "name": "Memory Candle",
+    "name": "Shared Memory Spell",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Shared-memory-spell-icon-Morybel-0146.png"
   },
   {
@@ -144,7 +144,7 @@
     "id": 522,
     "guid": "LpgZ0dXuiR",
     "type": "Spell",
-    "name": "Memory Candle",
+    "name": "Shared Memory Spell",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Shared-memory-spell-icon-Morybel-0146.png"
   },
   {
@@ -172,7 +172,7 @@
     "id": 526,
     "guid": "ALc8DIOm6x",
     "type": "Spell",
-    "name": "Memory Candle",
+    "name": "Shared Memory Spell",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Shared-memory-spell-icon-Morybel-0146.png"
   },
   {
@@ -199,7 +199,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Prop"
     },
-    "order": 509
+    "order": 511
   },
   {
     "id": 1424,
@@ -230,7 +230,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Hair"
     },
-    "order": 339,
+    "order": 340,
     "group": "SeasonPass"
   },
   {
@@ -371,7 +371,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Hair"
     },
-    "order": 340
+    "order": 341
   },
   {
     "id": 1439,
@@ -434,7 +434,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape"
     },
-    "order": 698
+    "order": 700
   },
   {
     "id": 1445,
@@ -513,7 +513,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },
-    "order": 699,
+    "order": 701,
     "group": "SeasonPass"
   },
   {
@@ -557,7 +557,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Instrument"
     },
-    "order": 447,
+    "order": 448,
     "group": "SeasonPass"
   },
   {
@@ -570,7 +570,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Hair"
     },
-    "order": 341
+    "order": 342
   },
   {
     "id": 2287,
@@ -693,7 +693,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Hair"
     },
-    "order": 338,
+    "order": 339,
     "group": "SeasonPass"
   },
   {

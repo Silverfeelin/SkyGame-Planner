@@ -16,13 +16,6 @@ export class NodeHelper {
       || undefined;
   }
 
-  /** Gets the root node from a given node. */
-  static getRoot(node?: INode): INode | undefined {
-    if (!node) { return node; }
-    while (node.prev) { node = node.prev; }
-    return node;
-  }
-
   /** Returns all nodes from the given node.
   * @param node Node to start from.
   * @param nodes Array to add items to.

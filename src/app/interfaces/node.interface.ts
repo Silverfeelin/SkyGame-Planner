@@ -25,6 +25,11 @@ export interface INode extends IGuid, ICost {
   n?: INode;
   /** Previous node. */
   prev?: INode;
+  /**
+   * Root node.
+   * @remarks Can be a self-reference if this is the root node.
+   */
+  root?: INode;
   // #endregion
 
   /// Progress ///

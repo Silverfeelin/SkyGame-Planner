@@ -135,9 +135,7 @@ export class SearchService {
     }));
 
     // Add spirits.
-    items.push(...this._dataService.spiritConfig.items.filter(spirit => {
-      return spirit.type !== 'Special' && spirit.type !== 'Event';
-    }).map(spirit => {
+    items.push(...this._dataService.spiritConfig.items.map(spirit => {
       return { name: spirit.name, type: 'Spirit', data: spirit, search: spirit.name } as ISearchItem<ISpirit>;
     }));
 

@@ -234,6 +234,12 @@ export class DataService {
         season.shops![si] = shop;
         shop.season = season;
       });
+
+      // Map included trees (one-way).
+      season.includedTrees?.forEach((tree, ti) => {
+        tree = this.guidMap.get(tree as any) as ISpiritTree;
+        season.includedTrees![ti] = tree;
+      });
     });
   }
 
@@ -329,12 +335,14 @@ export class DataService {
     })
   }
 
-  private initializeNode(node: INode, prev?: INode): INode {
+  private initializeNode(node: INode, prev?: INode, root?: INode): INode {
+    root ??= node;
     const getNode = (guid: string) => {
       const v = this.guidMap.get(guid) as INode;
-      return this.initializeNode(v, node);
+      return this.initializeNode(v, node, root ?? node);
     }
 
+    node.root = root;
     if (prev) { node.prev = prev; }
     if (typeof node.n === 'string') { node.n = getNode(node.n); }
     if (typeof node.nw === 'string') { node.nw = getNode(node.nw); }

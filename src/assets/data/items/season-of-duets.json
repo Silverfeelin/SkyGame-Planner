@@ -17,7 +17,7 @@
     "name": "Duets Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Duets-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
-    "order": 730
+    "order": 732
   },
   {
     "id": 2238,
@@ -27,7 +27,7 @@
     "name": "Duets Ultimate Instrument",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
-    "order": 629
+    "order": 631
   },
   {
     "id": 2239,
@@ -37,7 +37,7 @@
     "name": "Duets Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Duets-Ultimate-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Duets-Ultimate-Poster-Prop.png",
-    "order": 623
+    "order": 625
   },
   {
     "id": 2240,
@@ -69,7 +69,7 @@
     "name": "The Pianist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Pianists-Beginnings-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Pianists-Beginnings-Poster-Prop.png",
-    "order": 627,
+    "order": 629,
     "group": "SeasonPass"
   },
   {
@@ -79,7 +79,7 @@
     "name": "The Pianist's Beginnings Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Pianists-Beginnings-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Pianists-Beginnings-Hair-front.png",
-    "order": 370
+    "order": 371
   },
   {
     "id": 2245,
@@ -98,7 +98,7 @@
     "name": "The Pianist's Beginnings Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Pianists-Beginnings-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Pianists-Beginnings-Rug-Prop.png",
-    "order": 597
+    "order": 599
   },
   {
     "id": 2247,
@@ -145,7 +145,7 @@
     "name": "The Cellist's Beginnings Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Cellists-Beginnings-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Cellists-Beginnings-Hair-front.png",
-    "order": 371
+    "order": 372
   },
   {
     "id": 2253,
@@ -154,7 +154,7 @@
     "name": "The Cellist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Cellists-Beginnings-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Cellists-Beginnings-Prop.png",
-    "order": 626,
+    "order": 628,
     "group": "SeasonPass"
   },
   {
@@ -204,7 +204,7 @@
     "name": "The Musicians' Legacy Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Musicians-Legacy-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Musicians-Legacy-Grand-Piano-Prop.png",
-    "order": 628,
+    "order": 630,
     "group": "SeasonPass"
   },
   {
@@ -215,7 +215,7 @@
     "name": "The Musicians' Legacy Cello",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Musicians-Legacy-Cello-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Musicians-Legacy-Cello-Prop.png",
-    "order": 475
+    "order": 476
   },
   {
     "id": 2261,
@@ -274,7 +274,7 @@
     "name": "The Cellist's Flourishing Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Cellists-Flourishing-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cellists-Flourishing-Cape-back.png",
-    "order": 731
+    "order": 733
   },
   {
     "id": 2268,
@@ -283,7 +283,7 @@
     "name": "The Cellist's Flourishing Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Cellists-Flourishing-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Rug-Prop.png",
-    "order": 598
+    "order": 600
   },
   {
     "id": 2269,
@@ -292,7 +292,7 @@
     "name": "The Cellist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Cellists-Flourishing-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Cellists-Flourishing-Poster-Prop.png",
-    "order": 625,
+    "order": 627,
     "group": "SeasonPass"
   },
   {
@@ -359,7 +359,7 @@
     "name": "The Pianist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Pianists-Flourishing-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Pianists-Flourishing-Prop.png",
-    "order": 624,
+    "order": 626,
     "group": "SeasonPass"
   },
   {
@@ -391,5 +391,89 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-Duets-Seasonal-Heart-icon.png",
     "group": "SeasonPass"
+  },
+  {
+    "id": 2294,
+    "guid": "zojvgAwKBB",
+    "type": "Special",
+    "name": "Shared Memory Spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Shared-memory-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 2295,
+    "guid": "J_UEHvMcbs",
+    "type": "FaceAccessory",
+    "name": "Compassionate Cellist Face Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Compassionate-Cellist-Face-Accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Compassionate-Cellist-Face-Accessory.png",
+    "order": 222
+  },
+  {
+    "id": 2296,
+    "guid": "Q393hmCmPi",
+    "type": "Held",
+    "name": "Duets Cello",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Compassionate-Cellist-Duets-Cello-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Compassionate-Cellist-Duets-Cello.png",
+    "order": 477
+  },
+  {
+    "id": 2297,
+    "guid": "xFNf_ULNXD",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2298,
+    "guid": "25PSOB8TyZ",
+    "type": "Quest",
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2299,
+    "guid": "mEvAN9gteG",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2300,
+    "guid": "kSUpmc7BGK",
+    "type": "Quest",
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2301,
+    "guid": "xGUAqqh4hK",
+    "type": "Emote",
+    "subtype": "FriendEmote",
+    "name": "Duet Bow",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Duets-Guide-Action-icon.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Expression"
+    }
+  },
+  {
+    "id": 2302,
+    "guid": "a2jmBtI7SB",
+    "type": "Quest",
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2303,
+    "guid": "itrEoHB72a",
+    "type": "Emote",
+    "subtype": "FriendEmote",
+    "name": "Duet Bow",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Duets-Guide-Action-icon.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Expression"
+    }
   }
 ]

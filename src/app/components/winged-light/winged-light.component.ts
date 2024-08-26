@@ -59,7 +59,7 @@ export class WingedLightComponent {
     wb.forEach(item => {
       const node = item.nodes?.at(0);
       if (!node) { return; }
-      const tree = NodeHelper.getRoot(node)?.spiritTree;
+      const tree = node.root?.spiritTree;
       const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
       if (!spirit) { return; }
       if (spirit.type === 'Regular') {

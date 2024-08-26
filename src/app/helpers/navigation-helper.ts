@@ -80,7 +80,7 @@ export class NavigationHelper {
         break;
       }
 
-      const tree = NodeHelper.getRoot(node)?.spiritTree;
+      const tree = node.root?.spiritTree;
       if (!tree) { continue; }
 
       const date = tree?.eventInstanceSpirit?.eventInstance ? tree.eventInstanceSpirit.eventInstance.date
@@ -94,7 +94,7 @@ export class NavigationHelper {
     }
 
     if (!lastNode) { return undefined; }
-    const tree = NodeHelper.getRoot(lastNode)?.spiritTree;
+    const tree = lastNode.root?.spiritTree;
     const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
 
     const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;

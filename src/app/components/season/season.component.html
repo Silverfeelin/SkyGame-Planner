@@ -126,6 +126,30 @@
   </app-card>
 </div>
 
+<!-- Extra spirit trees included on the season page. -->
+@if (includedTrees?.length) {
+  <div class="mt">
+    <app-card [title]="'Related spirit trees'" [foldable]="true" [folded]="false">
+      <div class="sky-flex scroll-x">
+        @for (tree of includedTrees; track tree.guid) {
+          <div class="tree-wrapper">
+            <app-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'">
+              @if (tree.spirit) {
+                <!-- Link to spirit -->
+                <div name>
+                  <a [routerLink]="['/spirit', tree.spirit.guid]">
+                    {{ tree.spirit.name }}
+                  </a>
+                </div>
+              }
+            </app-spirit-tree>
+          </div>
+        }
+      </div>
+    </app-card>
+  </div>
+}
+
 <!-- Shops -->
 @if (shops.length) {
   <div class="sky-card mt">

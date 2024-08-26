@@ -105,3 +105,9 @@ export type ItemGroup = 'Elder' | 'SeasonPass' | 'Ultimate' | 'Limited';
 export type ItemSize = 'small' | 'medium' | 'default' | 'large' | 'auto';
 
 export type ItemSubicon = 'type' | 'season' | 'elder' | 'iap' | 'seasonPass' | 'favourite' | 'unlock' | 'limited';
+
+export interface IItemSourceBase<T> { item: IItem; source: T; }
+export interface IItemSourceIap extends IItemSourceBase<IIAP> { type: 'iap'; }
+export interface IItemSourceNode extends IItemSourceBase<INode> { type: 'node'; }
+export interface IItemSourceListNode extends IItemSourceBase<IItemListNode> { type: 'list'; }
+export type IItemSource = IItemSourceIap | IItemSourceNode | IItemSourceListNode;
