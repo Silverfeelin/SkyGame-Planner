@@ -484,10 +484,11 @@
           ],
           "shops": [
             "TZe46D63il",
-            "6mg-Q5KF9l",
-            "UKOZu6OJBC"
+            "6mg-Q5KF9l"
           ],
-          "draft": true
+          "calculatorData": {
+            "dailyCurrencyAmount": 6
+          }
         }
       ],
       "_wiki": {
