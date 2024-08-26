@@ -10,7 +10,7 @@ import { IEvent } from '../interfaces/event.interface';
 import { IRealm } from '../interfaces/realm.interface';
 import { IArea } from '../interfaces/area.interface';
 
-type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area';
+export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area';
 
 export interface ISearchOptions {
   /** Only search in these items. */

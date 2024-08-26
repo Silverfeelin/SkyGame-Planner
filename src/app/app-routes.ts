@@ -47,6 +47,7 @@ import { ShopOfficeComponent } from './components/shops/shop-office/shop-office.
 import { CurrencyComponent } from './components/currency/currency.component';
 import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
+import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -82,6 +83,7 @@ export const routes: Routes = [
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/inflation', component: ItemInflationComponent, title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
+          { path: 'item/unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Item unlock calculator') },
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
           { path: 'realm/:guid', component: RealmComponent },

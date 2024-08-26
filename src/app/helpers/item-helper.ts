@@ -40,9 +40,9 @@ export class ItemHelper {
   */
   static getItemSource(item: IItem, last?: boolean): IItemSource | undefined {
     const i = last ? -1 : 0;
-    return item.nodes?.at(i) && { type: 'node', item, source: item.nodes[i] }
-      || item.listNodes?.at(i) && { type: 'list', item, source: item.listNodes[i] }
-      || item.iaps?.at(i) && { type: 'iap', item, source: item.iaps[i] }
+    return item.nodes?.at(i) && { type: 'node', item, source: item.nodes.at(i)! }
+      || item.listNodes?.at(i) && { type: 'list', item, source: item.listNodes.at(i)! }
+      || item.iaps?.at(i) && { type: 'iap', item, source: item.iaps.at(i)! }
       || undefined;
   }
 

@@ -1,0 +1,107 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Item cost calculator</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        You can use this tool to calculate the cost of unlocking items.
+        For all your selected items, the most recent price will be used to calculate the currencies you need.
+      </p>
+      <p>
+        If you select multiple items that share the same predecessors in the spirit tree, the cost of those items will be counted only once.
+        Items you already own will never be counted.
+      </p>
+    </div>
+</div>
+
+<div class="mt">
+  <app-card [title]="'Items'">
+    <div class="grid grid-1">
+      @if (!items.length) {
+        <div class="container">
+          <p>No items selected. Search for items below.</p>
+        </div>
+      }
+      @for (result of results; track result.item.guid) {
+        <div class="container">
+          <app-item-icon
+            [item]="result.item" [opaque]="true" [hoverGlow]="false"
+            [ngbTooltip]="result.item.name" container="body" placement="top"
+            [subIcons]="['unlock']">
+          </app-item-icon>
+          <div>
+            @if (result.item.unlocked) {
+              <span class="">You own this item.</span>
+            } @else if (!result.found) {
+              <span class="">Couldn't find a way to calculate this item.</span>
+            } @else if (result.estimatedCost) {
+              <hr/>
+              <span class="">
+                This item hasn't returned before.<br/>
+                The average cost of "{{ result.item.type | itemType }}" is:
+                <app-cost [cost]="result.estimatedCost"></app-cost>
+              </span>
+            } @else if (result.cost) {
+              Item cost: <app-cost [cost]="result.cost"></app-cost>
+              @if (result.nodes?.length) {
+                <hr/>
+                Required item breakdown:<br/>
+                <div class="sky-flex flex-wrap calc-item-breakdown">
+                  @for (node of result.nodes; track node.guid; let i = $index;) {
+                    @if (i > 0) {
+                      <span class="v-top">&gt;</span>
+                    }
+                    @if (node.item) {
+                      <div>
+                        <app-item-icon
+                          [item]="node.item" [opaque]="true" [hoverGlow]="false"
+                          [ngbTooltip]="node.item.name" container="body" placement="top">
+                        </app-item-icon><br/>
+                        <app-cost [cost]="node"></app-cost>
+                      </div>
+                    }
+                  }
+                </div>
+              }
+            } @else if ($any(result).price >= 0) {
+              Price: $ {{ result.price | number: '1.2-2' }}
+            }
+          </div>
+          <div class="mt">
+            <button type="button" (click)="removeItem(result.item)">Remove</button>
+          </div>
+        </div>
+      }
+    </div>
+  </app-card>
+</div>
+
+@if (results.length) {
+  <div class="mt">
+    <app-card [title]="'Total'">
+      <div class="container">
+        Total cost: <app-cost [cost]="totalCost"></app-cost>
+        @if (totalCostIncludesEstimates) {
+          <br/>
+          <span class="c-old">
+            This cost is an estimate as some items have never returned!<br/>
+          </span>
+          <span class="c-accent">
+            The estimated costs are based on the average cost of items in the same category.<br/>
+            For a more realistic price, compare the item to similar items that have returned or ask the community on Discord!
+          </span>
+        }
+      </div>
+      @if (totalPrice) {
+        <div class="container mt">
+          Total price (USD): $ {{ totalPrice | number: '1.2-2' }}
+        </div>
+      }
+    </app-card>
+  </div>
+}
+
+<div class="mt">
+  <app-search [types]="['Item']" [emitClick]="true" [foldable]="true" [folded]="false" [showRefine]="false" (rowClicked)="onRowClicked($event)"></app-search>
+</div>

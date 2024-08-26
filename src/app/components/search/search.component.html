@@ -1,8 +1,5 @@
 <!-- Search -->
-<div class="sky-card">
-  <div class="sky-card-header">
-    <h2 class="h3 mb-0">Search</h2>
-  </div>
+<app-card [title]="'Search'" [foldable]="foldable" [folded]="folded">
   <div class="sky-card-body scroll-x">
     <div class="search">
       <input #input type="search" class="input" (input)="search()" placeholder="Tip: use Ctrl+Shift+F to start a new search at any time.">
@@ -34,9 +31,15 @@
         </ng-template>
         <!-- Name -->
         <ng-template [appTableColumn] let-row="row">
-          <a [class.link]="row.route" [routerLink]="row.route" [queryParams]="row.queryParams">
-            <span [innerHTML]="row.highlightedName || row.name"></span>
-          </a>
+          @if (emitClick) {
+            <a [class.link]="row.route" (click)="onRowClick($event, row)">
+              <span [innerHTML]="row.highlightedName || row.name"></span>
+            </a>
+          } @else {
+            <a [class.link]="row.route" [routerLink]="row.route" [queryParams]="row.queryParams">
+              <span [innerHTML]="row.highlightedName || row.name"></span>
+            </a>
+          }
         </ng-template>
       </app-table>
     </div>
@@ -44,9 +47,9 @@
       There are no results. Try searching for <a class="link" (click)="searchDemo($event)">{{demoText}}</a>!
     </div>
   </div>
-</div>
+</app-card>
 
-<div class="sky-card mt" *ngIf="searchResults?.length! >= 25">
+<div class="sky-card mt" *ngIf="showRefine && searchResults?.length! >= 25">
   <div class="sky-card-body">
     <span class="link" (click)="focusInput()">Refine your search for more results.</span>
   </div>
