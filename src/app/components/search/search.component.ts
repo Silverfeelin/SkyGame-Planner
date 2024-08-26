@@ -1,9 +1,9 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { SubscriptionLike, debounceTime, fromEvent } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
-import { ISearchItem, SearchService } from 'src/app/services/search.service';
+import { ISearchItem, SearchService, SearchType } from 'src/app/services/search.service';
 import { ItemTypePipe } from '../../pipes/item-type.pipe';
 import { IconComponent } from '../icon/icon.component';
 import { TableColumnDirective } from '../table/table-column/table-column.directive';
@@ -11,6 +11,7 @@ import { TableHeaderDirective } from '../table/table-column/table-header.directi
 import { TableComponent } from '../table/table.component';
 import { NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
+import { CardComponent } from '../layout/card/card.component';
 
 @Component({
     selector: 'app-search',
@@ -18,9 +19,17 @@ import { MatIcon } from '@angular/material/icon';
     styleUrls: ['./search.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [MatIcon, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, IconComponent, RouterLink, ItemTypePipe]
+    imports: [CardComponent, MatIcon, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, IconComponent, RouterLink, ItemTypePipe]
 })
 export class SearchComponent implements AfterViewInit, OnDestroy {
+  @Input() types?: Array<SearchType>;
+  @Input() emitClick = false;
+  @Input() foldable = false;
+  @Input() folded = false;
+  @Input() showRefine = true;
+
+  @Output() rowClicked = new EventEmitter<{ event: MouseEvent, row: ISearchItem<unknown> }>();
+
   @ViewChild('input') input: ElementRef<HTMLInputElement> | undefined;
 
   demoText = 'Gratitude';
@@ -67,6 +76,10 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  onRowClick(evt: MouseEvent, row: ISearchItem<unknown>): void {
+    this.rowClicked.emit({ event: evt, row });
+  }
+
   updateCurrentRoute(): void {
     const value = this.input?.nativeElement.value || '';
     let url = window.location.pathname;
@@ -93,7 +106,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     }
 
     // Use fuzzysort to search top 25 results.
-    const results = this._searchService.search(value, {});
+    const results = this._searchService.search(value, { types: this.types });
     this.searchResults = results;
 
     // Show random season as example search.
