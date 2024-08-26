@@ -947,6 +947,31 @@
       ]
     },
     // #endregion
+    // #region Days of Sunlight (2024)
+    {
+      "guid": "TZe46D63il",
+      "type": "Store",
+      "iaps": [
+        "kgfb3dfWbU",
+        "WdXRjnor-8"
+      ]
+    },
+    {
+      "guid": "6mg-Q5KF9l",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "EtiaxOIHZh",
+        "cWpsJSMMA0",
+        "IuJWH3gjsv",
+        "hjfA1G0jWG",
+        "9nSmd4Ctip",
+        "Erf5ohu3HY",
+        "UPj6zqESrX",
+        "cWw8Q9NJbV"
+      ]
+    },
+    // #endregion
     // #region AURORA Encore Concerts
     {
       "guid": "wX_deEZTy9",
