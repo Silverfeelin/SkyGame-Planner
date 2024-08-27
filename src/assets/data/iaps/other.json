@@ -4,6 +4,7 @@
     "guid": "iluPHW_7kb",
     "name": "Lantern Pack",
     "price": 19.99,
+    "c": 35,
     "returning": true,
     "items": [
       "5xJ_mCzZQy"
@@ -52,6 +53,7 @@
     "guid": "_NudGPNXnY",
     "name": "Days of Summer Lights Lantern",
     "price": 19.99,
+    "c": 35,
     "items": [
       "5xJ_mCzZQy"
     ]
@@ -62,6 +64,7 @@
     "guid": "Cb-na1jU70",
     "name": "Days of Summer Lights Lantern",
     "price": 19.99,
+    "c": 35,
     "returning": true,
     "items": [
       "5xJ_mCzZQy"
@@ -193,6 +196,7 @@
     "guid": "xGLl7eg2uG",
     "name": "Lantern Pack",
     "price": 19.99,
+    "c": 35,
     "returning": true,
     "items": [
       "5xJ_mCzZQy"
@@ -275,6 +279,7 @@
     "guid": "UPj6zqESrX",
     "name": "Lantern Pack",
     "price": 19.99,
+    "c": 35,
     "returning": true,
     "items": [
       "5xJ_mCzZQy"
