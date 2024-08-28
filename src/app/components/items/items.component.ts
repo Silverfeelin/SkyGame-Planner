@@ -98,7 +98,8 @@ export class ItemsComponent {
   ) {
     this.seasons = this._dataService.seasonConfig.items;
     this.events = this._dataService.eventConfig.items;
-    this.realms = this._dataService.realmConfig.items;
+    const realmGuids = new Set(['E1RwpAdA8l', 'tuaosLljJS', 'mz64Wq0_df', 'VtkTo1WWuD', 'rAjzHXfPpb', 'y-6n1F5E77', 'GKnbJhLIRi']);
+    this.realms = this._dataService.realmConfig.items.filter(r => realmGuids.has(r.guid));
     this.loadSettings();
     this.initializeItems();
 
