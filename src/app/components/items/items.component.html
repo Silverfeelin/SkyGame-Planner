@@ -60,47 +60,140 @@
         unlocked
       </span>
       <div class="fav-toggle" [class.toggle-active]="showFilters" (click)="toggleFilters()">
-        <mat-icon [ngbTooltip]="'Show filter'" container="body" placement="left">filter_alt</mat-icon>
+        <mat-icon [ngbTooltip]="'Filter items'" container="body" placement="left">filter_alt</mat-icon>
       </div>
     </div>
   </div>
 
   <div class="sky-card-body">
   @if (showFilters) {
-      <div class="container mb sky-flex flex-wrap">
-        <button [class.highlight]="!filters.hideOwned" (click)="toggleFilter('hideOwned')">
-          <mat-icon class="menu-icon">check_box</mat-icon>
-          <span class="menu-label">Show owned</span>
-        </button>
-        <button [class.highlight]="!filters.hideMissing" (click)="toggleFilter('hideMissing')">
-          <mat-icon class="menu-icon">check_box_outline_blank</mat-icon>
-          <span class="menu-label">Show missing</span>
-        </button>
-        <button [class.highlight]="filters.favouriteOnly" (click)="toggleFilter('favouriteOnly')">
-          <mat-icon class="menu-icon">star</mat-icon>
-          <span class="menu-label">Only favourites</span>
-        </button>
-        <button [class.highlight]="!filters.hideLimited" (click)="toggleFilter('hideLimited')">
-          <mat-icon class="menu-icon">update_disabled</mat-icon>
-          <span class="menu-label">Show limited</span>
-        </button>
+      <div class="container mb">
+        <!-- General filters -->
+        <div class="search">
+          <mat-icon>search</mat-icon>
+          <input type="text" placeholder="Item name" [value]="filterName" (input)="onFilterNameInput($event)">
+        </div>
+        <div class="mt-half">
+          <b class="point" (click)="showGeneralFilters=!showGeneralFilters" [class.c-old]="hasGeneralFilters">
+            {{ showGeneralFilters ? '-' : '+' }} General
+          </b>
+          <div class="sky-flex flex-wrap" [hidden]="!showGeneralFilters">
+            <button (click)="toggleFilter('owned')">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filters['owned']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">Owned</span>
+            </button>
+            <button (click)="toggleFilter('favourite')">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filters['favourite']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">Favourited</span>
+            </button>
+            <button (click)="toggleFilter('limited')">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filters['limited']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">Limited</span>
+            </button>
+            <button (click)="toggleFilter('iap')">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filters['iap']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">In-App Purchase</span>
+            </button>
+            <button (click)="toggleFilter('returned')">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filters['returned']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">Has returned</span>
+            </button>
+          </div>
+        </div>
+        <!-- Realm filters -->
+        <div class="mt-half">
+          <b class="point" (click)="showRealmFilters=!showRealmFilters" [class.c-old]="hasRealmFilters">
+            {{ showRealmFilters ? '-' : '+' }} Realms
+          </b>
+        </div>
+        <div class="sky-flex flex-wrap" [hidden]="!showRealmFilters">
+          <button (click)="toggleRealmFilters()">
+            <mat-icon class="menu-icon"><app-checkbox [state]="allRealmsFiltered" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+            <span class="menu-label">
+              All
+            </span>
+          </button>
+          @for (realm of realms; track realm.guid) {
+            <button (click)="toggleRealmFilter(realm)" [ngbTooltip]="realm.name" container="body" placement="top">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">
+                {{ realm.name }}
+              </span>
+            </button>
+          }
+        </div>
+        <!-- Season filters -->
+        <div class="mt-half">
+          <b class="point" (click)="showSeasonFilters=!showSeasonFilters" [class.c-old]="hasSeasonFilters">
+            {{ showSeasonFilters ? '-' : '+' }} Seasons
+          </b>
+        </div>
+        <div class="sky-flex flex-wrap" [hidden]="!showSeasonFilters">
+          <button (click)="toggleSeasonFilters()">
+            <mat-icon class="menu-icon"><app-checkbox [state]="allSeasonsFiltered" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+            <span class="menu-label">
+              All
+            </span>
+          </button>
+          @for (season of seasons; track season.guid) {
+            <button (click)="toggleSeasonFilter(season)" [ngbTooltip]="season.name" container="body" placement="top">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">
+                <app-icon [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
+                <!-- {{ season.shortName }} -->
+              </span>
+            </button>
+          }
+        </div>
+        <!-- Event filters -->
+        <div class="mt-half">
+          <b class="point" (click)="showEventFilters = !showEventFilters" [class.c-old]="hasEventFilters">
+            {{ showEventFilters ? '-' : '+' }} Events
+          </b>
+        </div>
+        <div class="sky-flex flex-wrap" [hidden]="!showEventFilters">
+          <button (click)="toggleEventFilters()">
+            <mat-icon class="menu-icon"><app-checkbox [state]="allEventsFiltered" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+            <span class="menu-label">
+              All
+            </span>
+          </button>
+          @for (event of events; track event.guid) {
+            <button (click)="toggleEventFilter(event)" [ngbTooltip]="event.name" container="body" placement="top">
+              <mat-icon class="menu-icon"><app-checkbox [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+              <span class="menu-label">
+                {{ event.name }}
+              </span>
+            </button>
+          }
+        </div>
+        <hr/>
+        <div class="mt">
+          @if (unfilteredItemCount === 1) {
+            There is <b>1</b> item
+          } @else {
+            There are <b>{{ unfilteredItemCount }}</b> items
+          }
+          <span class="c-accent">(out of {{ shownItems.length }})</span> matching the selected filters.
+          <button type="button" class="button-danger" (click)="clearFilters()">Clear filters</button>
+        </div>
       </div>
     }
     <div class="sky-flex flex-wrap">
-      @if (showFilters && !filteredItems.length) {
+      @if (showFilters && !unfilteredItemCount) {
         <div class="container">
           No items match the selected filters.
         </div>
       }
-      <ng-container *ngFor="let item of filteredItems; let i = index">
-        <a class="item-icon" [routerLink]="['/item', item.guid]">
+      @for (item of shownItems; track item.guid; let i = $index) {
+        <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="showFilters && !unfilteredItems[item.guid]">
           <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
             [class.highlight]="item && item === selectedItem"
             [class.item-unlocked]="item.unlocked"
             [ngbTooltip]="item.name" container="body" placement="auto" >
           </app-item-icon>
         </a>
-      </ng-container>
+      }
     </div>
   </div>
 </div>

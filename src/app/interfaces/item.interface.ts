@@ -1,4 +1,5 @@
 import { IConfig, IGuid } from './base.interface';
+import { IEventInstance } from './event.interface';
 import { IIAP } from './iap.interface';
 import { IItemListNode } from './item-list.interface';
 import { INode } from './node.interface';
@@ -43,7 +44,10 @@ export interface IItem extends IGuid {
   listNodes?: Array<IItemListNode>;
   /** IAPs that unlock this item. */
   iaps?: Array<IIAP>;
-  /** Season the item was introduced in. */
+  /**
+   * Season the item was introduced in.
+   * @remarks Only available for season spirit trees and IAPs.
+  */
   season?: ISeason;
 
   /// Progress ///
@@ -111,3 +115,8 @@ export interface IItemSourceIap extends IItemSourceBase<IIAP> { type: 'iap'; }
 export interface IItemSourceNode extends IItemSourceBase<INode> { type: 'node'; }
 export interface IItemSourceListNode extends IItemSourceBase<IItemListNode> { type: 'list'; }
 export type IItemSource = IItemSourceIap | IItemSourceNode | IItemSourceListNode;
+
+export interface IItemSourceOriginBase<T> { source: T; }
+export interface IItemSourceOriginEvent extends IItemSourceOriginBase<IEventInstance> { type: 'event'; }
+export interface IItemSourceOriginSeason extends IItemSourceOriginBase<ISeason> { type: 'season'; }
+export type IItemSourceOrigin = IItemSourceOriginEvent | IItemSourceOriginSeason;

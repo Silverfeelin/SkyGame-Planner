@@ -50,6 +50,10 @@ export class SearchService {
     this._items = this.initializeItems();
   }
 
+  get items(): ReadonlyArray<ISearchItem<unknown>> {
+    return this._items;
+  }
+
   /** Search for anything. Use options to limit results. */
   search(search: string, options: ISearchOptions): Array<ISearchItem<unknown>> {
     if (!search) { return []; }
@@ -121,7 +125,6 @@ export class SearchService {
         break;
     }
   }
-
 
   private initializeItems(): Array<ISearchItem<unknown>> {
     const items: Array<ISearchItem<unknown>> = [];

@@ -47,3 +47,20 @@
   display: none;
   &:only-child { display: block; }
 }
+
+.search {
+  position: relative;
+
+  input {
+    padding-left: 36px;
+  }
+
+  mat-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: opacity var(--animation-short);
+  }
+}

@@ -8,7 +8,9 @@
   </div>
   <div class="sky-card-body" #body [class.point]="foldable && folded" (click)="unfold()">
     <div class="card-body-pad" #bodyVisibility>
-      <ng-content></ng-content>
+      @if (!lazy || loaded) {
+        <ng-content></ng-content>
+      }
     </div>
   </div>
 </div>
