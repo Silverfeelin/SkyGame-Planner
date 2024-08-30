@@ -820,6 +820,8 @@ export class ClosetComponent implements OnDestroy {
   }
 
   shareImage(mode: CopyImageMode): void {
+    if (!navigator.share) { alert('Sharing is not supported by this browser.'); return; }
+
     this.showingImagePicker = false;
     this.isRendering = 2;
     this._changeDetectorRef.markForCheck();
