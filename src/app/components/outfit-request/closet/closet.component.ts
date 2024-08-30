@@ -1007,6 +1007,7 @@ export class ClosetComponent implements OnDestroy {
 
       if (!navigator.canShare(data)) { return doneSharing('Sharing is not supported on this device.'); }
       try { navigator.share(data); } catch { return doneSharing('Sharing failed.'); }
+      doneSharing();
     });
   }
 
