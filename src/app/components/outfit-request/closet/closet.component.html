@@ -323,24 +323,48 @@
       @if (showingImagePicker) {
         <div #divCopyImagePicker class="copy-image-picker">
           @if (!requesting) {
-            <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
-              <mat-icon class="menu-icon">image</mat-icon>
-              <span class="menu-label">Copy your closet</span>
-            </button>
+            <div class="button-group btn-group-img">
+              <button type="button" class="btn-copy" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
+                <mat-icon class="menu-icon">image</mat-icon>
+                <span class="menu-label">Copy closet</span>
+              </button>
+              <button type="button" class="" (click)="shareImage('closet')">
+                <mat-icon class="menu-icon">share</mat-icon>
+                <span class="menu-no-label"></span>
+              </button>
+            </div>
           }
-          <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
-            <mat-icon class="menu-icon">background_grid_small</mat-icon>
-            <span class="menu-label">Copy full request</span>
-          </button>
-          <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
-            <mat-icon class="menu-icon">grid_on</mat-icon>
-            <span class="menu-label">Copy one fit request</span>
-          </button>
-          @if (!requesting) {
-            <button type="button" class="w-100 ws-nw t-left" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
-              <mat-icon class="menu-icon">image</mat-icon>
-              <span class="menu-label">Copy template</span>
+          <div class="button-group btn-group-img">
+            <button type="button" class="btn-copy" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
+              <mat-icon class="menu-icon">background_grid_small</mat-icon>
+              <span class="menu-label">Copy request</span>
             </button>
+            <button type="button" class="" (click)="shareImage('request')">
+              <mat-icon class="menu-icon">share</mat-icon>
+              <span class="menu-no-label"></span>
+            </button>
+          </div>
+          <div class="button-group btn-group-img">
+            <button type="button" class="btn-copy" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
+              <mat-icon class="menu-icon">grid_on</mat-icon>
+              <span class="menu-label">Copy one fit</span>
+            </button>
+            <button type="button" class="" (click)="shareImage('square')">
+              <mat-icon class="menu-icon">share</mat-icon>
+              <span class="menu-no-label"></span>
+            </button>
+          </div>
+          @if (!requesting) {
+            <div class="button-group btn-group-img">
+              <button type="button" class="btn-copy" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
+                <mat-icon class="menu-icon">image</mat-icon>
+                <span class="menu-label">Copy template</span>
+              </button>
+              <button type="button" class="" (click)="shareImage('template')">
+                <mat-icon class="menu-icon">share</mat-icon>
+                <span class="menu-no-label"></span>
+              </button>
+            </div>
           }
         </div>
       }
