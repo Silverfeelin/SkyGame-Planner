@@ -814,11 +814,25 @@ export class ClosetComponent implements OnDestroy {
     this._changeDetectorRef.markForCheck();
 
     setTimeout(() => {
-      mode === 'square' ? this.renderSquare() : this.renderImage(mode);
+      const canvas = mode === 'square' ? this.renderSquare() : this.renderImage(mode);
+      this.saveCanvasToClipboard(canvas);
     });
   }
 
-  private renderSquare(): void {
+  shareImage(mode: CopyImageMode): void {
+    if (!navigator.share) { alert('Sharing is not supported by this browser.'); return; }
+
+    this.showingImagePicker = false;
+    this.isRendering = 2;
+    this._changeDetectorRef.markForCheck();
+
+    setTimeout(() => {
+      const canvas = mode === 'square' ? this.renderSquare() : this.renderImage(mode);
+      this.shareCanvas(canvas);
+    });
+  }
+
+  private renderSquare(): HTMLCanvasElement {
     const getSelectedPerType = (selection: ISelection) => Object.values(selection).reduce((map, item) => {
       let type = item.type;
       if (type === ItemType.Furniture || type === ItemType.Held) { type = ItemType.Prop; }
@@ -900,30 +914,10 @@ export class ClosetComponent implements OnDestroy {
       }
     });
 
-
-    // Save canvas to PNG and write to clipboard
-    const doneCopying = () => { this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
-    const renderPromise = new Promise<Blob>((resolve, reject) => {
-      canvas.toBlob(blob => {
-        blob ? resolve(blob) : reject('Failed to render image.');
-      });
-    });
-
-    try {
-      const item = new ClipboardItem({ 'image/png': renderPromise });
-      navigator.clipboard.write([item]).then(() => {
-        doneCopying();
-        this._ttCopyImg?.open();
-        setTimeout(() => this._ttCopyImg?.close(), 1000);
-      }).catch(error => {
-        console.error(error);
-        alert('Copying failed. Please make sure the document is focused.');
-        doneCopying();
-      });
-    } catch(e) { console.error(e); doneCopying(); }
+    return canvas;
   }
 
-  private renderImage(mode: CopyImageMode): void {
+  private renderImage(mode: CopyImageMode): HTMLCanvasElement {
     /* Draw image in sections based roughly on the number of items per closet. */
     /* Because this is a shared image instead of URL we care more about spacing than closet columns. */
     const cols = [10, 7, 5, 7];
@@ -1000,6 +994,26 @@ export class ClosetComponent implements OnDestroy {
     let l2 = '© Sky: Children of the Light';
     ctx.fillText(l2, canvas.width - 8, canvas.height - 8 - 24);
 
+    return canvas;
+  }
+
+  private shareCanvas(canvas: HTMLCanvasElement): void {
+    const doneSharing = (msg?: string) => { msg && alert(msg); this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
+    canvas.toBlob(blob => {
+      if (!blob) { return doneSharing('Sharing failed.'); }
+
+      const data: ShareData = {
+        files: [ new File([blob], 'sky-outfit-request.png', { type: 'image/png' }) ],
+        title: 'Sky: CotL Outfit Request',
+      };
+
+      if (!navigator.canShare(data)) { return doneSharing('Sharing is not supported on this device.'); }
+      try { navigator.share(data); } catch { return doneSharing('Sharing failed.'); }
+      doneSharing();
+    });
+  }
+
+  private saveCanvasToClipboard(canvas: HTMLCanvasElement): void {
     // Save canvas to PNG and write to clipboard
     const doneCopying = () => { this.isRendering = 0; this._changeDetectorRef.detectChanges(); };
     const renderPromise = new Promise<Blob>((resolve, reject) => {
@@ -1199,7 +1213,6 @@ export class ClosetComponent implements OnDestroy {
       intro.onbeforechange(function() {
         const step = this._introItems[this._currentStep] as SkyIntroStep;
         if (!step) { return true; }
-        console.log(intro, step.step, step.sStep, step.title);
 
         if (step.sStep === s.ITEM_SECTION && self._divClosetContainer?.nativeElement) {
           self._divClosetContainer.nativeElement.scrollLeft = 0;
