@@ -132,7 +132,6 @@
   </div>
 }
 
-
 <!-- Modify closet -->
 <div class="sky-card mt" *ngIf="modifyingCloset">
   <div class="sky-card-header">
@@ -297,22 +296,21 @@
 <!-- Item list -->
 <div class="sky-card mt" data-step="1" data-position="top-left-aligned">
   <div class="sky-card-header header-items header-sticky">
-    <h2 class="h3 mb-0 label-items">Items</h2>
+    <h2 class="h3 mb-0 label-items d-inline-block">Items</h2>&nbsp;
     <!-- Copy buttons -->
-    <div class="btns-copy" data-step="4" data-position="bottom-left-aligned">
+    <div class="btns-copy d-inline-block v-top" data-step="4" data-position="bottom-left-aligned">
       <div class="button-group">
-        <span class="button">Copy:</span>
-        <!-- Copy link -->
-        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering" data-step="5" data-position="bottom-left-aligned"
-          ngbTooltip="Copied!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-          <mat-icon class="menu-icon" [class.spin]="isRendering === 1">{{ isRendering === 1 ? 'cached' : 'link' }}</mat-icon>
-          <span class="menu-label">Link</span>
-        </button>
         <!-- Copy image-->
         <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering" data-step="6" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-          <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'image' }}</mat-icon>
-          <span class="menu-label">Image</span>
+          <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'file_copy' }}</mat-icon>
+          <span class="menu-label">Copy</span>
+        </button>
+        <!-- Copy link -->
+        <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering" data-step="5" data-position="bottom-left-aligned"
+          ngbTooltip="Copied link!" #ttCopyLnk="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+          <mat-icon class="menu-icon" [class.spin]="isRendering === 1">{{ isRendering === 1 ? 'cached' : 'link' }}</mat-icon>
+          <span class="menu-no-label"></span>
         </button>
       </div>
       <!-- Unavailable items -->
@@ -324,7 +322,7 @@
         <div #divCopyImagePicker class="copy-image-picker">
           @if (!requesting) {
             <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
+              <button type="button" class="btn-copy-img" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
                 <mat-icon class="menu-icon">image</mat-icon>
                 <span class="menu-label">Copy closet</span>
               </button>
@@ -335,7 +333,7 @@
             </div>
           }
           <div class="button-group btn-group-img">
-            <button type="button" class="btn-copy" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
+            <button type="button" class="btn-copy-img" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
               <mat-icon class="menu-icon">background_grid_small</mat-icon>
               <span class="menu-label">Copy request</span>
             </button>
@@ -345,7 +343,7 @@
             </button>
           </div>
           <div class="button-group btn-group-img">
-            <button type="button" class="btn-copy" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
+            <button type="button" class="btn-copy-img" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
               <mat-icon class="menu-icon">grid_on</mat-icon>
               <span class="menu-label">Copy one fit</span>
             </button>
@@ -356,7 +354,7 @@
           </div>
           @if (!requesting) {
             <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
+              <button type="button" class="btn-copy-img" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
                 <mat-icon class="menu-icon">image</mat-icon>
                 <span class="menu-label">Copy template</span>
               </button>
@@ -471,7 +469,7 @@
     </ng-container>
 
     <!-- Request display. -->
-    <ng-container *ngIf="requesting">
+    @if (requesting) {
       <div class="closet-item-container" [hidden]="typeFolded[type]">
         <div class="closet-item" (click)="toggleItem(item)"
           [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
@@ -482,7 +480,7 @@
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
         </div>
       </div>
-    </ng-container>
+    }
 
     <!-- Tooltip -->
     <ng-template #templateItemHover>

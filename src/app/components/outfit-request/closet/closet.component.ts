@@ -1211,7 +1211,6 @@ export class ClosetComponent implements OnDestroy {
       intro.onbeforechange(function() {
         const step = this._introItems[this._currentStep] as SkyIntroStep;
         if (!step) { return true; }
-        console.log(intro, step.step, step.sStep, step.title);
 
         if (step.sStep === s.ITEM_SECTION && self._divClosetContainer?.nativeElement) {
           self._divClosetContainer.nativeElement.scrollLeft = 0;
