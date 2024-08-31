@@ -16,13 +16,14 @@ import { SearchComponent } from '../search/search.component';
 import { MatIcon } from '@angular/material/icon';
 import { ClockComponent } from '../clock/clock.component';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
+import { CardComponent } from "../layout/card/card.component";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.less'],
   standalone: true,
-  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent]
+  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent, CardComponent]
 })
 export class DashboardComponent implements OnInit {
 

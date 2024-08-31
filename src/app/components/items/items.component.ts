@@ -20,9 +20,17 @@ import { INode } from '@app/interfaces/node.interface';
 import { IItemListNode } from '@app/interfaces/item-list.interface';
 import { IRealm } from '@app/interfaces/realm.interface';
 import { SearchService } from '@app/services/search.service';
+import { Maybe } from '@app/types/maybe';
+import { ItemTypePipe } from "../../pipes/item-type.pipe";
+import { CostHelper } from '@app/helpers/cost-helper';
+import { ICost } from '@app/interfaces/cost.interface';
 
 interface IItemSearchMetadata {
   item: IItem;
+
+  firstNode?: INode;
+  firstListNode?: IItemListNode;
+  firstIap?: IIAP;
 
   lastNode?: INode;
   lastListNode?: IItemListNode;
@@ -37,7 +45,8 @@ interface IItemSearchMetadata {
   realm?: IRealm;
 };
 
-type FilterMap = { [key: string]: boolean | undefined };
+type FilterMaybeMap = { [key: string]: Maybe<boolean> };
+type FilterMap = { [key: string]: boolean };
 
 let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
 
@@ -47,7 +56,7 @@ let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
     styleUrls: ['./items.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, NgTemplateOutlet, ItemIconComponent, CheckboxComponent]
+    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe]
 })
 export class ItemsComponent {
   type?: ItemType;
@@ -55,10 +64,19 @@ export class ItemsComponent {
   // Item details.
   selectedItem?: IItem;
 
+  types: Array<string> = [
+    ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
+    ItemType.Necklace, ItemType.Hair, ItemType.Hat, ItemType.Cape,
+    ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
+    ItemType.Stance, ItemType.Call
+  ];
+  typeSet = new Set(this.types);
+  allItems: Array<IItem> = [];
   typeItems: { [key: string]: Array<IItem> } = {};
   typeUnlocked: { [key: string]: number } = {};
+  typesLoaded: { [key: string]: boolean } = {};
 
-  shownItems: Array<IItem> = [];
+  shownItems: { [key: string]: boolean } = {};
   unfilteredItems: { [key: string]: boolean } = {};
   unfilteredItemCount: number = 0;
   shownUnlocked: number = 0;
@@ -66,23 +84,24 @@ export class ItemsComponent {
   shownIncludesFav = false;
 
   showFilters = false;
-  hasGeneralFilters = false;
   showGeneralFilters = true;
+  showCurrencyFilters = false;
   showSeasonFilters = false;
   showEventFilters = false;
   showRealmFilters = false;
 
+
   filterName = '';
-  filters: FilterMap = {};
+  filters: FilterMaybeMap = {};
+  filterCurrencies: { first: FilterMap, last: FilterMap } = { first: {}, last: {} };
   filterSeasons: FilterMap = {};
   filterEvents: FilterMap = {};
   filterRealms: FilterMap = {};
-  allSeasonsFiltered: boolean | undefined;
-  allEventsFiltered: boolean | undefined;
-  allRealmsFiltered: boolean | undefined;
-  hasSeasonFilters = false;
-  hasEventFilters = false;
-  hasRealmFilters = false;
+  allGeneralFiltered: Maybe<boolean>;
+  allCurrenciesFiltered: Maybe<boolean>;
+  allSeasonsFiltered: Maybe<boolean>;
+  allEventsFiltered: Maybe<boolean>;
+  allRealmsFiltered: Maybe<boolean>;
   seasons: Array<ISeason>;
   events: Array<IEvent>;
   realms: Array<IRealm>;
@@ -112,6 +131,7 @@ export class ItemsComponent {
     const type = query.get('type') as ItemType;
     this.type = type as ItemType || ItemType.Outfit;
 
+    this.showFilters = query.get('f') === '1';
     this.updateShownItems();
 
     // Select item from query.
@@ -121,8 +141,13 @@ export class ItemsComponent {
     }
   }
 
+  // #region Toggle filters
+
   toggleFilters(): void {
     this.showFilters = !this.showFilters;
+    const url = new URL(location.href);
+    url.searchParams.set('f', this.showFilters ? '1' : '0');
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
     this.updateShownItems();
   }
 
@@ -131,74 +156,89 @@ export class ItemsComponent {
     this.updateShownItems();
   }
 
-  toggleFilter(filter: string) {
-    const val = this.bumpBool(this.filters[filter]);
-    this.filters[filter] = val;
-    this.hasGeneralFilters = Object.values(this.filters).some(v => v !== undefined);
+  toggleFilter(filter: string): void {
+    this.filters[filter] = this.bumpBool(this.filters[filter]);
+    this.allGeneralFiltered = this.checkAllFiltered(this.filters);
     this.saveSettings();
     this.updateShownItems();
   }
 
-  toggleRealmFilters(): void {
-    const val = this.bumpBool(this.allRealmsFiltered);
-    for (const realm of this.realms) { this.filterRealms[realm.guid] = val; }
-    this.checkAllRealmsFiltered();
+  toggleCurrencyFilters(show: boolean, filters?: FilterMap): void {
+    if (filters) {
+      for (const c in filters) { filters[c] = show; }
+    } else {
+      for (const c in this.filterCurrencies.first) {
+        this.filterCurrencies.first[c] = show;
+        this.filterCurrencies.last[c] = show;
+      }
+    }
+    const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
+    const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
+    this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
+    this.saveSettings();
+    this.updateShownItems();
+  }
+
+  toggleCurrencyFilter(filters: FilterMap, filter: string): void {
+    filters[filter] = !filters[filter];
+    const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
+    const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
+    this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
+    this.saveSettings();
+    this.updateShownItems();
+  }
+
+  toggleRealmFilters(show: boolean): void {
+    this.allRealmsFiltered = show;
+    for (const r of this.realms) { this.filterRealms[r.guid] = show; }
     this.saveSettings();
     this.updateShownItems();
   }
 
   toggleRealmFilter(realm: IRealm) {
-    const val = this.bumpBool(this.filterRealms[realm.guid]);
-    this.filterRealms[realm.guid] = val;
-    this.checkAllRealmsFiltered();
+    this.filterRealms[realm.guid] = !this.filterRealms[realm.guid]
+    this.allRealmsFiltered = this.checkAllFiltered(this.filterRealms);
     this.saveSettings();
     this.updateShownItems();
   }
 
-  toggleSeasonFilters(): void {
-    const val = this.bumpBool(this.allSeasonsFiltered);
-    for (const season of this.seasons) { this.filterSeasons[season.guid] = val; }
-    this.checkAllSeasonsFiltered();
+  toggleSeasonFilters(show: boolean): void {
+    this.allSeasonsFiltered = show;
+    for (const s of this.seasons) { this.filterSeasons[s.guid] = show; }
     this.saveSettings();
     this.updateShownItems();
   }
 
   toggleSeasonFilter(season: ISeason) {
-    const val = this.bumpBool(this.filterSeasons[season.guid]);
-    this.filterSeasons[season.guid] = val;
-    this.checkAllSeasonsFiltered();
+    this.filterSeasons[season.guid] = !this.filterSeasons[season.guid]
+    this.allSeasonsFiltered = this.checkAllFiltered(this.filterSeasons);
     this.saveSettings();
     this.updateShownItems();
   }
 
-  toggleEventFilters(): void {
-    const val = this.bumpBool(this.allEventsFiltered);
-    for (const event of this.events) { this.filterEvents[event.guid] = val; }
-    this.checkAllEventsFiltered();
+  toggleEventFilters(show: boolean): void {
+    this.allEventsFiltered = show;
+    for (const e of this.events) { this.filterEvents[e.guid] = show; }
     this.saveSettings();
     this.updateShownItems();
   }
 
   toggleEventFilter(event: IEvent) {
-    const val = this.bumpBool(this.filterEvents[event.guid]);
-    this.filterEvents[event.guid] = val;
-    this.checkAllEventsFiltered();
+    this.filterEvents[event.guid] = !this.filterEvents[event.guid];
+    this.allEventsFiltered = this.checkAllFiltered(this.filterEvents);
     this.saveSettings();
     this.updateShownItems();
   }
 
-  clearFilters(): void {
-    this.filters = {};
-    this.filterSeasons = {};
-    this.filterEvents = {};
-    this.allSeasonsFiltered = undefined;
-    this.allEventsFiltered = undefined;
-    this.hasGeneralFilters = false;
+  // #endregion
+
+  resetFilters(): void {
+    this.resetFilterFields();
     this.saveSettings();
     this.updateShownItems();
   }
 
-  private bumpBool(val: boolean | undefined): boolean | undefined {
+  private bumpBool(val: Maybe<boolean>): Maybe<boolean> {
     switch (val) {
       case undefined: return true;
       case true: return false;
@@ -206,45 +246,39 @@ export class ItemsComponent {
     }
   }
 
-  private checkAllSeasonsFiltered(): void {
-    const val = this.checkAllFiltered(this.filterSeasons);
-    this.allSeasonsFiltered = val ?? undefined;
-    this.hasSeasonFilters = val !== undefined;
-  }
-
-  private checkAllEventsFiltered(): void {
-    const val = this.checkAllFiltered(this.filterEvents);
-    this.allEventsFiltered = val ?? undefined;
-    this.hasEventFilters = val !== undefined;
-  }
-
-  private checkAllRealmsFiltered(): void {
-    const val = this.checkAllFiltered(this.filterRealms);
-    this.allRealmsFiltered = val ?? undefined;
-    this.hasRealmFilters = val !== undefined
-  }
-
-  private checkAllFiltered(map: FilterMap): boolean | undefined | null {
+  private checkAllFiltered(map: FilterMap | FilterMaybeMap): Maybe<boolean> {
     const values = Object.values(map);
     const first = values[0];
     const same = values.every(v => v === first);
-    return same ? first : null;
+    return same ? first : undefined;
   }
 
   private updateShownItems(): void {
-    this.shownItems = this.typeItems[this.type!] ?? [];
-    this.shownCount = this.shownItems.length;
+    // Lazy load shown types
+    this.typesLoaded[this.type!] = true;
+
+    // Can't show all item types at once, becomes unresponsive.
+    // Maybe if icons weren't all loaded at once/separately.
+    // if (this.showFilters) { this.types.forEach(type => this.typesLoaded[type] = true); }
+    // else { this.typesLoaded[this.type!] = true; }
+    // const items = this.showFilters
+    //   ? this.allItems
+    //   : this.typeItems[this.type!] ?? [];
+
+    this.shownItems = {};
+    const items = this.typeItems[this.type!] ?? [];
+    for (const item of items) {
+      this.shownItems[item.guid] = true;
+      this.shownCount++;
+    }
+    this.shownCount = items.length;
     this.shownUnlocked = this.typeUnlocked[this.type!] ?? 0;
 
     this.unfilteredItemCount = 0;
     this.unfilteredItems = {};
     if (this.showFilters) {
       this.initializeItemSearchMetadata();
-      const hasSeasonChecked = Object.values(this.filterSeasons).some(v => v === true);
-      const hasEventChecked = Object.values(this.filterEvents).some(v => v === true);
-      const hasRealmChecked = Object.values(this.filterRealms).some(v => v === true);
-
-      const matches = this.shownItems.filter(item => {
+      const matches = items.filter(item => {
         // Check filters
         if (this.filters['favourite'] !== undefined) {
           if (this.filters['favourite'] !== !!item.favourited) { return false; }
@@ -256,29 +290,49 @@ export class ItemsComponent {
         if (this.filters['owned'] !== undefined) {
           if (this.filters['owned'] !== !!item.unlocked) { return false; }
         }
-        if (this.filters['iap'] !== undefined) {
-          if (this.filters['iap'] !== !!item.iaps?.length) { return false; }
-        }
 
         const metadata = itemSearchMetadata![item.guid];
         if (this.filters['returned'] !== undefined) {
-          const returned = metadata.origin && metadata.origin.source !== metadata.last?.source;
+          const returned = item.autoUnlocked || (metadata.origin && metadata.origin.source !== metadata.last?.source);
           if (this.filters['returned'] !== returned) { return false; }
         }
 
-        // Check season, event & realm
-        if (item.season !== undefined && this.filterSeasons[item.season.guid] === false) { return false; }
+        // Filter by IAP
+        if (this.filterCurrencies.first['iap'] === false && metadata.last?.type === 'iap') { return false; }
+        if (this.filterCurrencies.last['iap'] === false && metadata.last?.type === 'iap') { return false; }
+
+        // Filter by currencies
+        const costFirst = metadata.origin?.type === 'node' ? metadata.firstNode : metadata.origin?.type === 'list' ? metadata.firstListNode : undefined;
+        const costLast = metadata.last?.type === 'node' ? metadata.lastNode : metadata.last?.type === 'list' ? metadata.lastListNode : undefined;
+        const checkCost = (cost: ICost | undefined, filters: FilterMap): boolean => {
+          if (filters['candles'] === false && cost?.c) { return false; }
+          if (filters['hearts'] === false && cost?.h) { return false; }
+          if (filters['ascendedCandles'] === false && cost?.ac) { return false; }
+          if (filters['eventCurrency'] === false && cost?.ec) { return false; }
+          if (filters['seasonCandles'] === false && cost?.sc) { return false; }
+          if (filters['seasonPass'] === false) {
+            if (item.group === 'Ultimate') { return false; }
+            if (cost && item.group === 'SeasonPass' && CostHelper.isEmpty(cost)) { return false; }
+          }
+          if (filters['seasonHearts'] === false && cost?.sh) { return false; }
+          if (filters['free'] === false) {
+            if (item.autoUnlocked) { return false; }
+            const isFree = cost && CostHelper.isEmpty(cost);
+            const isSeasonNode = metadata.lastNode?.root?.spiritTree?.spirit?.type === 'Season';
+            if (isFree && !isSeasonNode) { return false; }
+          }
+
+          return true;
+        };
+        if (!checkCost(costFirst, this.filterCurrencies.first)) { return false; }
+        if (!checkCost(costLast, this.filterCurrencies.last)) { return false; }
+
+        // Filter out unchecked season/event/realm.
+        if (metadata.season !== undefined && this.filterSeasons[metadata.season.guid] === false) { return false; }
         if (metadata.event !== undefined && this.filterEvents[metadata.event.guid] === false) { return false; }
         if (metadata.realm !== undefined && this.filterRealms[metadata.realm.guid] === false) { return false; }
 
-        const shouldFilterBySeason = (!item.season || this.filterSeasons[item.season.guid] !== true);
-        const shouldFilterByEvent = (!metadata.event || this.filterEvents[metadata.event.guid] !== true);
-        const shouldFilterByRealm = (!metadata.realm || this.filterRealms[metadata.realm.guid] !== true);
-
-        if (hasSeasonChecked && !shouldFilterBySeason) { return true; }
-        if (hasEventChecked && !shouldFilterByEvent) { return true; }
-        if (hasRealmChecked && !shouldFilterByRealm) { return true; }
-        return !hasSeasonChecked && !hasEventChecked && !hasRealmChecked;
+        return true;
       });
 
       if (this.filterName) {
@@ -314,8 +368,11 @@ export class ItemsComponent {
 
     // Load all items.
     const items = this._dataService.itemConfig.items;
+    this.allItems = [];
     items.forEach(item => {
+      if (!this.typeSet.has(item.type)) { return; }
       this.typeItems[item.type].push(item);
+      this.allItems.push(item);
       if (item.unlocked) { this.typeUnlocked[item.type]++; }
     });
 
@@ -331,14 +388,22 @@ export class ItemsComponent {
     const items = this._dataService.itemConfig.items;
     for (const item of items) {
       const origin = ItemHelper.getItemSource(item);
-      const originSource = ItemHelper.geSourceOrigin(origin);
+      let originSource = ItemHelper.geSourceOrigin(origin);
       const last = ItemHelper.getItemSource(item, true);
       const lastSource = ItemHelper.geSourceOrigin(last);
+
+      // Account for new TS items. Consider them as season items.
+      if (!originSource && origin?.type === 'node' && origin.source.root?.spiritTree?.ts?.spirit?.season) {
+        originSource = { type: 'season', source: origin.source.root.spiritTree.ts.spirit.season };
+      }
 
       // Note: picking event by last instance, to account for the weird cases like all the different Summer events.
       itemSearchMetadata[item.guid] = {
         item, origin, last,
-        lastNode: item.nodes?.at(-1),
+        firstNode: item.hiddenNodes?.at(0) ?? item.nodes?.at(0),
+        firstListNode: item.listNodes?.at(0),
+        firstIap: item.iaps?.at(0),
+        lastNode: item.nodes?.at(-1) ?? item.hiddenNodes?.at(-1),
         lastListNode: item.listNodes?.at(-1),
         lastIap: item.iaps?.at(-1),
         event: lastSource?.type === 'event' ? lastSource.source.event : undefined,
@@ -352,29 +417,70 @@ export class ItemsComponent {
   private saveSettings(): void {
     localStorage.setItem('items.filters', JSON.stringify({
       filters: this.filters,
+      currencies: this.filterCurrencies,
+      realms: this.filterRealms,
       seasons: this.filterSeasons,
-      events: this.filterEvents,
-      realms: this.filterRealms
+      events: this.filterEvents
     }));
   }
 
   private loadSettings(): void {
-    const data = JSON.parse(localStorage.getItem('items.filters') || '{}');
-    this.filters = data.filters || {};
+    const data = localStorage.getItem('items.filters');
+    const parsed = JSON.parse(data || '{}');
 
-    this.filterSeasons = data.seasons || {};
-    this.seasons.forEach(season => this.filterSeasons[season.guid] ??= undefined);
-    this.checkAllSeasonsFiltered();
-    if (this.hasSeasonFilters) { this.showSeasonFilters = true;}
+    if (!data) {
+      this.resetFilterFields();
+      return;
+    }
 
-    this.filterEvents = data.events || {};
-    this.events.forEach(event => this.filterEvents[event.guid] ??= undefined);
-    this.checkAllEventsFiltered();
-    if (this.hasEventFilters) { this.showEventFilters = true;}
+    this.filters = parsed.filters || {};
+    this.filterCurrencies = { first: {}, last: {}, ...(parsed.currencies || {}) };
+    const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
+    const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
+    this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
+    this.showCurrencyFilters = this.allCurrenciesFiltered === undefined;
 
-    this.filterRealms = data.realms || {};
-    this.realms.forEach(realm => this.filterRealms[realm.guid] ??= undefined);
-    this.checkAllRealmsFiltered();
-    if (this.hasRealmFilters) { this.showRealmFilters = true;}
+    this.filterRealms = parsed.realms || {};
+    this.realms.forEach(realm => this.filterRealms[realm.guid] ??= true);
+    this.allRealmsFiltered = this.checkAllFiltered(this.filterRealms);
+    this.showRealmFilters = this.allRealmsFiltered === undefined;
+
+    this.filterSeasons = parsed.seasons || {};
+    this.seasons.forEach(season => this.filterSeasons[season.guid] ??= true);
+    this.allSeasonsFiltered = this.checkAllFiltered(this.filterSeasons);
+    this.showSeasonFilters = this.allSeasonsFiltered === undefined;
+
+    this.filterEvents = parsed.events || {};
+    this.events.forEach(event => this.filterEvents[event.guid] ??= true);
+    this.allEventsFiltered = this.checkAllFiltered(this.filterEvents);
+    this.showEventFilters = this.allEventsFiltered === undefined;
+  }
+
+  private resetFilterFields(): void {
+    this.filters = {
+      owned: undefined, favourite: undefined, limited: undefined, returned: undefined
+    };
+    this.filterCurrencies = {
+      first: {
+        free: true, candles: true, hearts: true, ascendedCandles: true,
+        eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true
+      },
+      last: {
+        free: true, candles: true, hearts: true, ascendedCandles: true,
+        eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true
+      }
+    };
+    this.filterRealms = {};
+    this.realms.forEach(realm => this.filterRealms[realm.guid] = true);
+    this.filterSeasons = {};
+    this.seasons.forEach(season => this.filterSeasons[season.guid] = true);
+    this.filterEvents = {};
+    this.events.forEach(event => this.filterEvents[event.guid] = true);
+
+    this.allGeneralFiltered = undefined;
+    this.allCurrenciesFiltered = true;
+    this.allRealmsFiltered = true;
+    this.allSeasonsFiltered = true;
+    this.allEventsFiltered = true;
   }
 }

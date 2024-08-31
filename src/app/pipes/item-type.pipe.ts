@@ -6,7 +6,7 @@ import { ItemType } from '../interfaces/item.interface';
     standalone: true
 })
 export class ItemTypePipe implements PipeTransform {
-  transform(type: ItemType): string {
+  transform(type: ItemType | string): string {
     switch (type) {
       case ItemType.Hat: return 'Hat';
       case ItemType.Hair: return 'Hair';

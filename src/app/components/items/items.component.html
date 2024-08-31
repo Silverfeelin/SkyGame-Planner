@@ -74,7 +74,7 @@
           <input type="text" placeholder="Item name" [value]="filterName" (input)="onFilterNameInput($event)">
         </div>
         <div class="mt-half">
-          <b class="point" (click)="showGeneralFilters=!showGeneralFilters" [class.c-old]="hasGeneralFilters">
+          <b class="point" (click)="showGeneralFilters=!showGeneralFilters" [class.c-new]="allGeneralFiltered" [class.c-old]="allGeneralFiltered === false">
             {{ showGeneralFilters ? '-' : '+' }} General
           </b>
           <div class="sky-flex flex-wrap" [hidden]="!showGeneralFilters">
@@ -90,29 +90,67 @@
               <mat-icon class="menu-icon"><app-checkbox [state]="filters['limited']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
               <span class="menu-label">Limited</span>
             </button>
-            <button (click)="toggleFilter('iap')">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filters['iap']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">In-App Purchase</span>
-            </button>
             <button (click)="toggleFilter('returned')">
               <mat-icon class="menu-icon"><app-checkbox [state]="filters['returned']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
               <span class="menu-label">Has returned</span>
             </button>
           </div>
         </div>
+        <!-- Currency filters -->
+        <div class="mt-half">
+          <span>
+            <b class="point" (click)="showCurrencyFilters=!showCurrencyFilters"
+              [class.c-new]="allCurrenciesFiltered" [class.c-old]="allCurrenciesFiltered === false">
+              {{ showCurrencyFilters ? '-' : '+' }} Currencies
+            </b>
+            <a class="link c-accent" (click)="toggleCurrencyFilters(true)">(All)</a>&nbsp;
+            <a class="link c-accent" (click)="toggleCurrencyFilters(false)">(None)</a>
+          </span>
+          <div [hidden]="!showCurrencyFilters">
+            <ng-template #tCurrencyFilter let-filter="filter" let-filters="filters" let-label="label">
+              <button (click)="toggleCurrencyFilter(filters, filter)">
+                <mat-icon class="menu-icon"><app-checkbox [state]="filters[filter]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                <span class="menu-label">{{ label }}</span>
+              </button>
+            </ng-template>
+            <ng-template #tCurrencyFilters let-filters="filters">
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'free', label: 'Free', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'candles', label: 'Candles', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'hearts', label: 'Hearts', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'ascendedCandles', label: 'Ascended candles', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'eventCurrency', label: 'Event currency', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonCandles', label: 'Season candles', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonPass', label: 'Season pass', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonHearts', label: 'Season hearts', filters }"></ng-container>
+              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'iap', label: 'In-app purchase', filters }"></ng-container>
+            </ng-template>
+            <span class="">
+              By first time available
+              <a class="link c-accent" (click)="toggleCurrencyFilters(true, filterCurrencies.first)">(All)</a>&nbsp;
+              <a class="link c-accent" (click)="toggleCurrencyFilters(false, filterCurrencies.first)">(None)</a>
+            </span>
+            <div class="sky-flex flex-wrap">
+              <ng-container *ngTemplateOutlet="tCurrencyFilters; context: { filters: filterCurrencies.first }"></ng-container>
+            </div>
+            <span class="">
+              By last time available
+              <a class="link c-accent" (click)="toggleCurrencyFilters(true,  filterCurrencies.last)">(All)</a>&nbsp;
+              <a class="link c-accent" (click)="toggleCurrencyFilters(false,  filterCurrencies.last)">(None)</a>
+            </span>
+            <div class="sky-flex flex-wrap">
+              <ng-container *ngTemplateOutlet="tCurrencyFilters; context: { filters: filterCurrencies.last }"></ng-container>
+            </div>
+          </div>
+        </div>
         <!-- Realm filters -->
         <div class="mt-half">
-          <b class="point" (click)="showRealmFilters=!showRealmFilters" [class.c-old]="hasRealmFilters">
+          <b class="point" (click)="showRealmFilters=!showRealmFilters" [class.c-new]="allRealmsFiltered" [class.c-old]="allRealmsFiltered === false">
             {{ showRealmFilters ? '-' : '+' }} Realms
           </b>
+          <a class="link c-accent" (click)="toggleRealmFilters(true)">(All)</a>&nbsp;
+          <a class="link c-accent" (click)="toggleRealmFilters(false)">(None)</a>
         </div>
         <div class="sky-flex flex-wrap" [hidden]="!showRealmFilters">
-          <button (click)="toggleRealmFilters()">
-            <mat-icon class="menu-icon"><app-checkbox [state]="allRealmsFiltered" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-            <span class="menu-label">
-              All
-            </span>
-          </button>
           @for (realm of realms; track realm.guid) {
             <button (click)="toggleRealmFilter(realm)" [ngbTooltip]="realm.name" container="body" placement="top">
               <mat-icon class="menu-icon"><app-checkbox [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
@@ -124,17 +162,13 @@
         </div>
         <!-- Season filters -->
         <div class="mt-half">
-          <b class="point" (click)="showSeasonFilters=!showSeasonFilters" [class.c-old]="hasSeasonFilters">
+          <b class="point" (click)="showSeasonFilters=!showSeasonFilters" [class.c-new]="allSeasonsFiltered" [class.c-old]="allSeasonsFiltered === false">
             {{ showSeasonFilters ? '-' : '+' }} Seasons
           </b>
+          <a class="link c-accent" (click)="toggleSeasonFilters(true)">(All)</a>&nbsp;
+          <a class="link c-accent" (click)="toggleSeasonFilters(false)">(None)</a>
         </div>
         <div class="sky-flex flex-wrap" [hidden]="!showSeasonFilters">
-          <button (click)="toggleSeasonFilters()">
-            <mat-icon class="menu-icon"><app-checkbox [state]="allSeasonsFiltered" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-            <span class="menu-label">
-              All
-            </span>
-          </button>
           @for (season of seasons; track season.guid) {
             <button (click)="toggleSeasonFilter(season)" [ngbTooltip]="season.name" container="body" placement="top">
               <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
@@ -147,17 +181,13 @@
         </div>
         <!-- Event filters -->
         <div class="mt-half">
-          <b class="point" (click)="showEventFilters = !showEventFilters" [class.c-old]="hasEventFilters">
+          <b class="point" (click)="showEventFilters = !showEventFilters" [class.c-new]="allEventsFiltered" [class.c-old]="allEventsFiltered === false">
             {{ showEventFilters ? '-' : '+' }} Events
           </b>
+          <a class="link c-accent" (click)="toggleEventFilters(true)">(All)</a>&nbsp;
+          <a class="link c-accent" (click)="toggleEventFilters(false)">(None)</a>
         </div>
         <div class="sky-flex flex-wrap" [hidden]="!showEventFilters">
-          <button (click)="toggleEventFilters()">
-            <mat-icon class="menu-icon"><app-checkbox [state]="allEventsFiltered" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-            <span class="menu-label">
-              All
-            </span>
-          </button>
           @for (event of events; track event.guid) {
             <button (click)="toggleEventFilter(event)" [ngbTooltip]="event.name" container="body" placement="top">
               <mat-icon class="menu-icon"><app-checkbox [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
@@ -174,8 +204,8 @@
           } @else {
             There are <b>{{ unfilteredItemCount }}</b> items
           }
-          <span class="c-accent">(out of {{ shownItems.length }})</span> matching the selected filters.
-          <button type="button" class="button-danger" (click)="clearFilters()">Clear filters</button>
+          <span class="c-accent">(out of {{ shownCount }})</span> matching the selected filters.
+          <button type="button" class="button-danger" (click)="resetFilters()">Reset filters</button>
         </div>
       </div>
     }
@@ -185,14 +215,21 @@
           No items match the selected filters.
         </div>
       }
-      @for (item of shownItems; track item.guid; let i = $index) {
-        <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="showFilters && !unfilteredItems[item.guid]">
-          <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
-            [class.highlight]="item && item === selectedItem"
-            [class.item-unlocked]="item.unlocked"
-            [ngbTooltip]="item.name" container="body" placement="auto" >
-          </app-item-icon>
-        </a>
+      @for (type of types; track $index) {
+        <!-- @if (showFilters) {
+          <div class="container">{{ type | itemType }}</div>
+        } -->
+        @if (typesLoaded[type]) {
+          @for (item of typeItems[type]; track item.guid; let i = $index) {
+            <a class="item-icon" [routerLink]="['/item', item.guid]" [hidden]="!shownItems[item.guid] || (showFilters && !unfilteredItems[item.guid])">
+              <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
+                [class.highlight]="item && item === selectedItem"
+                [class.item-unlocked]="item.unlocked"
+                [ngbTooltip]="item.name" container="body" placement="auto" >
+              </app-item-icon>
+            </a>
+          }
+        }
       }
     </div>
   </div>

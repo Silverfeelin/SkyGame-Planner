@@ -44,6 +44,7 @@ export class ItemHelper {
     return item.nodes?.at(i) && { type: 'node', item, source: item.nodes.at(i)! }
       || item.listNodes?.at(i) && { type: 'list', item, source: item.listNodes.at(i)! }
       || item.iaps?.at(i) && { type: 'iap', item, source: item.iaps.at(i)! }
+      || item.hiddenNodes?.at(i) && { type: 'node', item, source: item.hiddenNodes.at(i)! }
       || undefined;
   }
 
