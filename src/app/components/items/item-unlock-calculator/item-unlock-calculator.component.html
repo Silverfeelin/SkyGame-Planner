@@ -16,7 +16,7 @@
 </div>
 
 <div class="mt">
-  <app-card [title]="'Items'">
+  <app-card [title]="'Selection'" [foldable]="true" [folded]="false">
     <div class="grid grid-1">
       @if (!items.length) {
         <div class="container">
@@ -103,5 +103,12 @@
 }
 
 <div class="mt">
-  <app-search [types]="['Item']" [emitClick]="true" [foldable]="true" [folded]="false" [showRefine]="false" (rowClicked)="onRowClicked($event)"></app-search>
+  <app-card [title]="'Add items'" [foldable]="true" [folded]="true">
+    <div class="container">
+      <p>
+        You can select items to add them the calculator below.
+        The cost of the items you add will be calculated and added to the total cost.
+      </p>
+    </div>
+  </app-card>
 </div>
