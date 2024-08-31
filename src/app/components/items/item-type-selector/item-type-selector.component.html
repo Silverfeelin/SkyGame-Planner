@@ -83,4 +83,10 @@
     (click)="changeType('Call')">
     <mat-icon svgIcon="call"></mat-icon>
   </div>
+  <!-- Music -->
+  <div class="item-icon category" *ngIf="_showTypes['Music']" [class.highlight]="type === 'Music'"
+    [ngbTooltip]="'Music'" container="body"
+    (click)="changeType('Music')">
+    <mat-icon svgIcon="sheet"></mat-icon>
+  </div>
 </div>

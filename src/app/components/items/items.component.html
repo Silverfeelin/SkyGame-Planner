@@ -78,22 +78,18 @@
             {{ showGeneralFilters ? '-' : '+' }} General
           </b>
           <div class="sky-flex flex-wrap" [hidden]="!showGeneralFilters">
-            <button (click)="toggleFilter('owned')">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filters['owned']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">Owned</span>
-            </button>
-            <button (click)="toggleFilter('favourite')">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filters['favourite']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">Favourited</span>
-            </button>
-            <button (click)="toggleFilter('limited')">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filters['limited']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">Limited</span>
-            </button>
-            <button (click)="toggleFilter('returned')">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filters['returned']" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">Has returned</span>
-            </button>
+            <ng-template #tGeneralFilter let-filter="filter" let-label="label">
+              <button (click)="toggleFilter(filter)">
+                <mat-icon class="menu-icon"><app-checkbox [state]="filters[filter]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                <span class="menu-label">{{ label }}</span>
+              </button>
+            </ng-template>
+            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'owned', label: 'Owned' }"></ng-container>
+            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'favourite', label: 'Favourited' }"></ng-container>
+            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'starter', label: 'Starter' }"></ng-container>
+            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'limited', label: 'Limited' }"></ng-container>
+            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'returned', label: 'Has returned' }"></ng-container>
+            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'unsorted', label: 'Unsorted' }"></ng-container>
           </div>
         </div>
         <!-- Currency filters -->

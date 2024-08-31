@@ -49,6 +49,10 @@ type FilterMaybeMap = { [key: string]: Maybe<boolean> };
 type FilterMap = { [key: string]: boolean };
 
 let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
+const defaultFilters = {
+  filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, unsorted: undefined },
+  currencies: { free: true, candles: true, hearts: true, ascendedCandles: true, eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true }
+};
 
 @Component({
     selector: 'app-items',
@@ -68,7 +72,7 @@ export class ItemsComponent {
     ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
     ItemType.Necklace, ItemType.Hair, ItemType.Hat, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
-    ItemType.Stance, ItemType.Call
+    ItemType.Stance, ItemType.Call, ItemType.Music
   ];
   typeSet = new Set(this.types);
   allItems: Array<IItem> = [];
@@ -290,6 +294,9 @@ export class ItemsComponent {
         if (this.filters['owned'] !== undefined) {
           if (this.filters['owned'] !== !!item.unlocked) { return false; }
         }
+        if (this.filters['starter'] !== undefined) {
+          if (this.filters['starter'] !== !!item.autoUnlocked) { return false; }
+        }
 
         const metadata = itemSearchMetadata![item.guid];
         if (this.filters['returned'] !== undefined) {
@@ -331,6 +338,11 @@ export class ItemsComponent {
         if (metadata.season !== undefined && this.filterSeasons[metadata.season.guid] === false) { return false; }
         if (metadata.event !== undefined && this.filterEvents[metadata.event.guid] === false) { return false; }
         if (metadata.realm !== undefined && this.filterRealms[metadata.realm.guid] === false) { return false; }
+
+        if (this.filters['unsorted'] !== undefined) {
+          const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.event && !metadata.realm
+          if (isUnsorted !== this.filters['unsorted']) { return false; }
+        }
 
         return true;
       });
@@ -434,7 +446,12 @@ export class ItemsComponent {
     }
 
     this.filters = parsed.filters || {};
-    this.filterCurrencies = { first: {}, last: {}, ...(parsed.currencies || {}) };
+    for (const filter in defaultFilters.filters) { this.filters[filter] ??= undefined; }
+    this.filterCurrencies = { first: {}, last: {}, ...parsed.currencies };
+    for (const c in defaultFilters.currencies) {
+      this.filterCurrencies.first[c] ??= true;
+      this.filterCurrencies.last[c] ??= true;
+    }
     const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
     const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
     this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
@@ -457,9 +474,7 @@ export class ItemsComponent {
   }
 
   private resetFilterFields(): void {
-    this.filters = {
-      owned: undefined, favourite: undefined, limited: undefined, returned: undefined
-    };
+    this.filters = { ...defaultFilters.filters };
     this.filterCurrencies = {
       first: {
         free: true, candles: true, hearts: true, ascendedCandles: true,
