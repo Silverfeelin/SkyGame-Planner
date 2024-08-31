@@ -151,7 +151,7 @@
             <button (click)="toggleRealmFilter(realm)" [ngbTooltip]="realm.name" container="body" placement="top">
               <mat-icon class="menu-icon"><app-checkbox [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
               <span class="menu-label">
-                {{ realm.name }}
+                {{ realm.shortName }}
               </span>
             </button>
           }
@@ -170,7 +170,7 @@
               <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
               <span class="menu-label">
                 <app-icon [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
-                <!-- {{ season.shortName }} -->
+                {{ season.shortName }}
               </span>
             </button>
           }
@@ -188,7 +188,7 @@
             <button (click)="toggleEventFilter(event)" [ngbTooltip]="event.name" container="body" placement="top">
               <mat-icon class="menu-icon"><app-checkbox [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
               <span class="menu-label">
-                {{ event.name }}
+                {{ event.shortName ?? event.name }}
               </span>
             </button>
           }
