@@ -179,6 +179,12 @@ export class SeasonCalculatorComponent implements OnInit {
 
   toggleIncludesToday(): void {
     this.includesToday = !this.includesToday;
+    const checkinKey = `season.checkin.${this.season.guid}`;
+    if (this.includesToday) {
+      localStorage.setItem(checkinKey, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
+    } else {
+      localStorage.removeItem(checkinKey);
+    }
     this.calculate();
     this.saveSettings();
   }
@@ -246,9 +252,7 @@ export class SeasonCalculatorComponent implements OnInit {
 
   private saveSettings(): void {
     const key = `season.calc.${this.season.guid}`;
-    const today = DateHelper.todaySky();
     const data = {
-      it: this.includesToday ? today.toISO() : '',
       tc: Object.keys(this.timedCurrencyCount).reduce((acc: { [guid: string]: number }, guid: string) => {
         const value = this.timedCurrencyCount[guid];
         if (value) { acc[guid] = value; }
@@ -264,15 +268,18 @@ export class SeasonCalculatorComponent implements OnInit {
   private loadSettings(): void {
     const key = `season.calc.${this.season.guid}`;
     const data = localStorage.getItem(key) || 'null';
-
-    const today = DateHelper.todaySky().toISO();
     const parsed = JSON.parse(data) || {
-      it: today,
       tc: {},
       wn: [],
     };
 
-    this.includesToday = parsed.it === today;
+    const checkinKey = `season.checkin.${this.season.guid}`;
+    const checkinDate = localStorage.getItem(checkinKey);
+    if (checkinDate) {
+      const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
+      this.includesToday = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
+    } else { this.includesToday = false; }
+
     const seasonCurrencies = this._storageService.getCurrencies()?.seasonCurrencies;
     this.candleCount = seasonCurrencies?.[this.season.guid]?.candles || 0;
     if (this.inpSc?.nativeElement) {

@@ -260,6 +260,12 @@ export class EventCalculatorComponent {
 
   toggleIncludesToday(): void {
     this.includesToday = !this.includesToday;
+    const checkinKey = `event.checkin.${this.event!.guid}`;
+    if (this.includesToday) {
+      localStorage.setItem(checkinKey, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
+    } else {
+      localStorage.removeItem(checkinKey);
+    }
     this.calculate();
     this.saveSettings();
   }
@@ -296,9 +302,7 @@ export class EventCalculatorComponent {
 
   private saveSettings(): void {
     const key = `event.calc.${this.eventInstance.guid}`;
-    const today = DateHelper.todaySky();
     const data = {
-      it: this.includesToday ? today.toISO() : '',
       tc: Object.keys(this.timedCurrencyCount).reduce((acc: { [guid: string]: number }, guid: string) => {
         const value = this.timedCurrencyCount[guid];
         if (value) { acc[guid] = value; }
@@ -314,16 +318,19 @@ export class EventCalculatorComponent {
   private loadSettings(): void {
     const key = `event.calc.${this.eventInstance.guid}`;
     const data = localStorage.getItem(key) || 'null';
-
-    const today = DateHelper.todaySky().toISO();
     const parsed = JSON.parse(data) || {
-      it: today,
       tc: {},
       wn: [],
       ln: [],
     };
 
-    this.includesToday = parsed.it === today;
+    const checkinKey = `event.checkin.${this.event!.guid}`;
+    const checkinDate = localStorage.getItem(checkinKey);
+    if (checkinDate) {
+      const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
+      this.includesToday = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
+    } else { this.includesToday = false; }
+
     const currencies = this._storageService.getCurrencies();
     const eventCurrency = currencies.eventCurrencies?.[this.eventInstance.guid] || { tickets: 0 };
     this.currencyCount = eventCurrency.tickets;
