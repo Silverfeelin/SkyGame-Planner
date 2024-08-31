@@ -43,19 +43,19 @@
     <div class="container">
       <div>
         <mat-icon [svgIcon]="'candle'" class="v-middle" [ngbTooltip]="'Candles'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.candles" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.candles" class="d-inline-block input-no-arrows" style="width: 120px;"/>
       </div>
       <div>
         <mat-icon [svgIcon]="'heart'" class="v-middle" [ngbTooltip]="'Hearts'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.hearts" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.hearts" class="d-inline-block input-no-arrows" style="width: 120px;"/>
       </div>
       <div>
         <mat-icon [svgIcon]="'ascended-candle'" class="v-middle" [ngbTooltip]="'Ascended candles'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpAc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.ascendedCandles" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        <input #inpAc (blur)="onCurrencyInputBlur($event, true)" type="number" min="0" max="99999" step="0.25" (input)="onCurrencyInput()" [value]="inpCurrencies.ascendedCandles" class="d-inline-block" style="width: 120px;"/>
       </div>
       <div>
         <mat-icon [svgIcon]="'gift'" class="v-middle seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpSp (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencies.giftPasses" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        <input #inpSp (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.giftPasses" class="d-inline-block input-no-arrows" style="width: 120px;"/>
       </div>
     </div>
   </app-card>
@@ -74,7 +74,7 @@
         <div>
           <mat-icon [svgIcon]="'candle'" class="v-middle seasonal" [ngbTooltip]="'Season candles'"></mat-icon>&nbsp;x&nbsp;
           <input #inpSc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
-            [value]="currencies.seasonCurrencies[ongoingSeason.guid].candles"
+            [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
             (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
         </div>
       </div>
@@ -94,7 +94,7 @@
             <div>
               <mat-icon [svgIcon]="'ticket'" class="v-middle" [ngbTooltip]="'Event currency'"></mat-icon>&nbsp;x&nbsp;
               <input #inpEc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
-                [value]="currencies.eventCurrencies[instance.guid].tickets"
+                [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"
                 (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
             </div>
           </div>
