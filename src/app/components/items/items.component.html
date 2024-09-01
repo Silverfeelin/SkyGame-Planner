@@ -24,20 +24,22 @@
           <b class="point" (click)="showGeneralFilters=!showGeneralFilters" [class.c-new]="allGeneralFiltered" [class.c-old]="allGeneralFiltered === false">
             {{ showGeneralFilters ? '-' : '+' }} General
           </b>
-          <div class="sky-flex flex-wrap" [hidden]="!showGeneralFilters">
-            <ng-template #tGeneralFilter let-filter="filter" let-label="label">
-              <button (click)="toggleFilter(filter)">
-                <mat-icon class="menu-icon"><app-checkbox [state]="filters[filter]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-                <span class="menu-label">{{ label }}</span>
-              </button>
-            </ng-template>
-            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'owned', label: 'Owned' }"></ng-container>
-            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'favourite', label: 'Favourited' }"></ng-container>
-            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'starter', label: 'Starter' }"></ng-container>
-            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'limited', label: 'Limited' }"></ng-container>
-            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'returned', label: 'Has returned' }"></ng-container>
-            <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'unsorted', label: 'Unsorted' }"></ng-container>
-          </div>
+          @if (showGeneralFilters) {
+            <div class="sky-flex flex-wrap">
+              <ng-template #tGeneralFilter let-filter="filter" let-label="label">
+                <button (click)="toggleFilter(filter)">
+                  <mat-icon class="menu-icon"><app-checkbox [state]="filters[filter]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                  <span class="menu-label">{{ label }}</span>
+                </button>
+              </ng-template>
+              <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'owned', label: 'Owned' }"></ng-container>
+              <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'favourite', label: 'Favourited' }"></ng-container>
+              <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'starter', label: 'Starter' }"></ng-container>
+              <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'limited', label: 'Limited' }"></ng-container>
+              <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'returned', label: 'Has returned' }"></ng-container>
+              <ng-container *ngTemplateOutlet="tGeneralFilter; context: { filter: 'unsorted', label: 'Unsorted' }"></ng-container>
+            </div>
+          }
         </div>
         <!-- Currency filters -->
         <div class="mt-half">
@@ -49,41 +51,43 @@
             <a class="link c-accent" (click)="toggleCurrencyFilters(true)">(All)</a>&nbsp;
             <a class="link c-accent" (click)="toggleCurrencyFilters(false)">(None)</a>
           </span>
-          <div [hidden]="!showCurrencyFilters">
-            <ng-template #tCurrencyFilter let-filter="filter" let-filters="filters" let-label="label">
-              <button (click)="toggleCurrencyFilter(filters, filter)">
-                <mat-icon class="menu-icon"><app-checkbox [state]="filters[filter]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-                <span class="menu-label">{{ label }}</span>
-              </button>
-            </ng-template>
-            <ng-template #tCurrencyFilters let-filters="filters">
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'free', label: 'Free', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'candles', label: 'Candles', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'hearts', label: 'Hearts', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'ascendedCandles', label: 'Ascended candles', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'eventCurrency', label: 'Event currency', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonCandles', label: 'Season candles', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonPass', label: 'Season pass', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonHearts', label: 'Season hearts', filters }"></ng-container>
-              <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'iap', label: 'In-app purchase', filters }"></ng-container>
-            </ng-template>
-            <span class="">
-              By first time available
-              <a class="link c-accent" (click)="toggleCurrencyFilters(true, filterCurrencies.first)">(All)</a>&nbsp;
-              <a class="link c-accent" (click)="toggleCurrencyFilters(false, filterCurrencies.first)">(None)</a>
-            </span>
-            <div class="sky-flex flex-wrap">
-              <ng-container *ngTemplateOutlet="tCurrencyFilters; context: { filters: filterCurrencies.first }"></ng-container>
+          @if (showCurrencyFilters) {
+            <div>
+              <ng-template #tCurrencyFilter let-filter="filter" let-filters="filters" let-label="label">
+                <button (click)="toggleCurrencyFilter(filters, filter)">
+                  <mat-icon class="menu-icon"><app-checkbox [state]="filters[filter]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                  <span class="menu-label">{{ label }}</span>
+                </button>
+              </ng-template>
+              <ng-template #tCurrencyFilters let-filters="filters">
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'free', label: 'Free', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'candles', label: 'Candles', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'hearts', label: 'Hearts', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'ascendedCandles', label: 'Ascended candles', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'eventCurrency', label: 'Event currency', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonCandles', label: 'Season candles', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonPass', label: 'Season pass', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'seasonHearts', label: 'Season hearts', filters }"></ng-container>
+                <ng-container *ngTemplateOutlet="tCurrencyFilter; context: { filter: 'iap', label: 'In-app purchase', filters }"></ng-container>
+              </ng-template>
+              <span class="">
+                By first time available
+                <a class="link c-accent" (click)="toggleCurrencyFilters(true, filterCurrencies.first)">(All)</a>&nbsp;
+                <a class="link c-accent" (click)="toggleCurrencyFilters(false, filterCurrencies.first)">(None)</a>
+              </span>
+              <div class="sky-flex flex-wrap">
+                <ng-container *ngTemplateOutlet="tCurrencyFilters; context: { filters: filterCurrencies.first }"></ng-container>
+              </div>
+              <span class="">
+                By last time available
+                <a class="link c-accent" (click)="toggleCurrencyFilters(true,  filterCurrencies.last)">(All)</a>&nbsp;
+                <a class="link c-accent" (click)="toggleCurrencyFilters(false,  filterCurrencies.last)">(None)</a>
+              </span>
+              <div class="sky-flex flex-wrap">
+                <ng-container *ngTemplateOutlet="tCurrencyFilters; context: { filters: filterCurrencies.last }"></ng-container>
+              </div>
             </div>
-            <span class="">
-              By last time available
-              <a class="link c-accent" (click)="toggleCurrencyFilters(true,  filterCurrencies.last)">(All)</a>&nbsp;
-              <a class="link c-accent" (click)="toggleCurrencyFilters(false,  filterCurrencies.last)">(None)</a>
-            </span>
-            <div class="sky-flex flex-wrap">
-              <ng-container *ngTemplateOutlet="tCurrencyFilters; context: { filters: filterCurrencies.last }"></ng-container>
-            </div>
-          </div>
+          }
         </div>
         <!-- Realm filters -->
         <div class="mt-half">
@@ -93,16 +97,18 @@
           <a class="link c-accent" (click)="toggleRealmFilters(true)">(All)</a>&nbsp;
           <a class="link c-accent" (click)="toggleRealmFilters(false)">(None)</a>
         </div>
-        <div class="sky-flex flex-wrap" [hidden]="!showRealmFilters">
-          @for (realm of realms; track realm.guid) {
-            <button (click)="toggleRealmFilter(realm)" [ngbTooltip]="realm.name" container="body" placement="top">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">
-                {{ realm.shortName }}
-              </span>
-            </button>
-          }
-        </div>
+        @if (showRealmFilters) {
+          <div class="sky-flex flex-wrap">
+            @for (realm of realms; track realm.guid) {
+              <button (click)="toggleRealmFilter(realm)" [ngbTooltip]="realm.name" container="body" placement="top">
+                <mat-icon class="menu-icon"><app-checkbox [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                <span class="menu-label">
+                  {{ realm.shortName }}
+                </span>
+              </button>
+            }
+          </div>
+        }
         <!-- Season filters -->
         <div class="mt-half">
           <b class="point" (click)="showSeasonFilters=!showSeasonFilters" [class.c-new]="allSeasonsFiltered" [class.c-old]="allSeasonsFiltered === false">
@@ -111,17 +117,19 @@
           <a class="link c-accent" (click)="toggleSeasonFilters(true)">(All)</a>&nbsp;
           <a class="link c-accent" (click)="toggleSeasonFilters(false)">(None)</a>
         </div>
-        <div class="sky-flex flex-wrap" [hidden]="!showSeasonFilters">
-          @for (season of seasons; track season.guid) {
-            <button (click)="toggleSeasonFilter(season)" [ngbTooltip]="season.name" container="body" placement="top">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">
-                <app-icon [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
-                {{ season.shortName }}
-              </span>
-            </button>
-          }
-        </div>
+        @if (showSeasonFilters) {
+          <div class="sky-flex flex-wrap">
+            @for (season of seasons; track season.guid) {
+              <button (click)="toggleSeasonFilter(season)" [ngbTooltip]="season.name" container="body" placement="top">
+                <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                <span class="menu-label">
+                  <app-icon [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
+                  {{ season.shortName }}
+                </span>
+              </button>
+            }
+          </div>
+        }
         <!-- Event filters -->
         <div class="mt-half">
           <b class="point" (click)="showEventFilters = !showEventFilters" [class.c-new]="allEventsFiltered" [class.c-old]="allEventsFiltered === false">
@@ -130,16 +138,18 @@
           <a class="link c-accent" (click)="toggleEventFilters(true)">(All)</a>&nbsp;
           <a class="link c-accent" (click)="toggleEventFilters(false)">(None)</a>
         </div>
-        <div class="sky-flex flex-wrap" [hidden]="!showEventFilters">
-          @for (event of events; track event.guid) {
-            <button (click)="toggleEventFilter(event)" [ngbTooltip]="event.name" container="body" placement="top">
-              <mat-icon class="menu-icon"><app-checkbox [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
-              <span class="menu-label">
-                {{ event.shortName ?? event.name }}
-              </span>
-            </button>
-          }
-        </div>
+        @if (showEventFilters) {
+          <div class="sky-flex flex-wrap">
+            @for (event of events; track event.guid) {
+              <button (click)="toggleEventFilter(event)" [ngbTooltip]="event.name" container="body" placement="top">
+                <mat-icon class="menu-icon"><app-checkbox [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
+                <span class="menu-label">
+                  {{ event.shortName ?? event.name }}
+                </span>
+              </button>
+            }
+          </div>
+        }
         <hr/>
         <div class="mt">
           @if (unfilteredItemCount === 1) {

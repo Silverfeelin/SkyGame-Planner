@@ -1,0 +1,22 @@
+<app-card [title]="'Add spirit trees'" [foldable]="true" [folded]="true">
+  <div class="container">
+    Add a spirit tree to quickly add all important items from a spirit to the calculator.
+  </div>
+  <div class="container mt">
+    <div class="input-search">
+      <input #input type="search" class="input" (input)="search()" placeholder="Spirit name">
+      <mat-icon>search</mat-icon>
+    </div>
+  </div>
+  @if (results && !results.length) {
+    <div class="container mt">
+      No spirits found by that name.
+    </div>
+  } @else if (results) {
+    <div class="grid grid-4 mt">
+      @for (result of results; track result.data.guid) {
+        <app-spirit-card [spirit]="result.data" [options]="{show: [ 'img', 'select']}" (spiritSelected)="onSpiritSelected($event)"></app-spirit-card>
+      }
+    </div>
+  }
+</app-card>

@@ -20,9 +20,11 @@ import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { DecimalPipe } from '@angular/common';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
 import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { IRevisedSpiritTree, ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { nanoid } from 'nanoid';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../spirit-tree/spirit-tree.component";
+import { ItemUnlockCalculatorSpiritsComponent } from "./item-unlock-calculator-spirits/item-unlock-calculator-spirits.component";
+import { ISpirit } from '@app/interfaces/spirit.interface';
 
 interface IItemResult {
   item: IItem;
@@ -31,6 +33,7 @@ interface IItemResult {
 
   hasTree?: boolean;
   estimatedCost?: ICost;
+  hasUnknownCost?: boolean;
   cost?: ICost;
   listNode?: IItemListNode;
 
@@ -44,7 +47,7 @@ interface IItemResult {
 @Component({
   selector: 'app-item-unlock-calculator',
   standalone: true,
-  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent],
+  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent],
   templateUrl: './item-unlock-calculator.component.html',
   styleUrl: './item-unlock-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -59,6 +62,13 @@ export class ItemUnlockCalculatorComponent {
   }
 
   itemType: ItemType = ItemType.Outfit;
+  itemTypes: Array<string> = [
+    ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
+    ItemType.Necklace, ItemType.Hair, ItemType.Hat, ItemType.Cape,
+    ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
+    ItemType.Stance, ItemType.Call, ItemType.Music
+  ];
+  itemTypeSet = new Set(this.itemTypes);
 
   items: Array<IItem> = [];
   itemSet = new Set<IItem>();
@@ -72,7 +82,7 @@ export class ItemUnlockCalculatorComponent {
   checkedTrees: { [key: string]: ISpiritTree } = {};
   checkedNodes: { [key: string]: INode } = {};
   checkedIaps: { [key: string]: IIAP } = {};
-  itemTypeAverages: { [key: string]: number } = {};
+  itemTypeAverages: { [key: string]: ICost } = {};
 
   treeRoots: { [key: string]: ISpiritTree } = {};
   treeOpaqueNodes: { [key: string]: Array<string> } = {};
@@ -118,6 +128,34 @@ export class ItemUnlockCalculatorComponent {
     else { this.calculate(); }
   }
 
+  onSpiritSelected(spirit: ISpirit) {
+    const tree = spirit.treeRevisions?.findLast<IRevisedSpiritTree>(t => t.revisionType === 'AfterSeason' || t.revisionType === 'DuringSeason') ?? spirit.tree;
+    if (!tree) {
+      alert('This spirit does not have a spirit tree.');
+      return;
+    }
+
+    const items = NodeHelper.getItems(tree.node);
+    if (items.some(i => this.itemSet.has(i))) {
+      alert('This spirit tree contains items that are already in the calculator.');
+      return;
+    }
+
+    const messages: Array<string> = [];
+    let keyItems = items.filter(i => this.itemTypeSet.has(i.type));
+    if (!keyItems.length) { keyItems = items; }
+    keyItems.forEach(i => {
+      const msg = this.tryAddItem(i);
+      msg && messages.push(`${i.name}: ${msg}`);
+    });
+
+    if (messages.length) {
+      alert(messages.join('\n'));
+    }
+
+    this.calculate();
+  }
+
   tryAddItem(item: IItem): string | undefined {
     // Don't allow limited items.
     if (item.group === 'Ultimate' || item.group === 'Limited') {
@@ -160,7 +198,6 @@ export class ItemUnlockCalculatorComponent {
     this.checkedIaps = {};
     this.trees = [];
     this.treeRoots = {};
-
 
     for (const item of this.items) {
       if (item.unlocked) {
@@ -231,6 +268,8 @@ export class ItemUnlockCalculatorComponent {
       treeHighlightItems = [];
       const name = tree.eventInstanceSpirit?.eventInstance?.name
         ?? tree.eventInstanceSpirit?.eventInstance?.event?.name
+        ?? tree.ts?.spirit?.name
+        ?? tree.visit?.spirit?.name
         ?? tree?.spirit?.name;
       const newTree = {
         guid: nanoid(10), name, node: { guid: nanoid(10) }
@@ -259,7 +298,9 @@ export class ItemUnlockCalculatorComponent {
 
     // Event ticket or season tree. Only display average cost of this item type.
     if (node.ec || (tree.spirit?.type === 'Season' && tree === tree.spirit.tree)) {
-      return { item: src.item, found: true, estimatedCost: { c: this.findAverageByItemType(src.item.type) } };
+      const result: IItemResult = { item: src.item, found: true, estimatedCost: this.findAverageByItem(src.item) };
+      result.hasUnknownCost = !result.estimatedCost;
+      return result;
     }
 
     // Save tree to rebuild display after all items are parsed.
@@ -292,8 +333,8 @@ export class ItemUnlockCalculatorComponent {
 
   private handleListNode(src: IItemSourceListNode): IItemResult {
     const node = src.source;
-    const cost = node.ec ? { c: this.findAverageByItemType(src.item.type) } : node;
-    return { item: src.item, found: true, listNode: node, cost };
+    const cost = node.ec ? this.findAverageByItem(src.item) : node;
+    return { item: src.item, found: true, listNode: node, cost, hasUnknownCost: !!node.ec && !cost };
   }
 
   private handleIap(src: IItemSourceIap): IItemResult {
@@ -305,30 +346,51 @@ export class ItemUnlockCalculatorComponent {
     return { item: src.item, found: true, iap, price: iap.price ?? 0 };
   }
 
-  private findAverageByItemType(itemType: ItemType): number {
+  private findAverageByItem(item: IItem): ICost | undefined {
+    const itemType = item.type;
     if (this.itemTypeAverages[itemType]) {
       return this.itemTypeAverages[itemType];
     }
 
-    if (itemType === ItemType.Emote) { return 0; }
-    if (itemType === ItemType.Spell) { return 5; }
+    if (itemType === ItemType.Emote) {
+      switch (item.level) {
+        case 1: return { c: 0 };
+        case 2: return { h: 4 };
+        case 3: return { h: 3 };
+        case 4: return { h: 6 };
+      }
+    }
+    if (itemType === ItemType.Spell) { return { c: 5 }; }
 
     const items = this._dataService.itemConfig.items.filter(i => {
       return i.type === itemType && i.nodes?.at(0)?.root?.spiritTree?.spirit?.type !== 'Regular'
     });
-    let count = 0;
-    const total = items.reduce((acc, item) => {
+    let countCandles = 0;
+    const totalCandles = items.reduce((acc, item) => {
       const lastNode: ICost | undefined = item?.nodes?.at(-1) ?? item?.listNodes?.at(-1);
       if (!lastNode?.c) { return acc; }
-      count++;
+      countCandles++;
       return acc + lastNode.c;
     }, 0);
+    let countHearts = 0;
+    const totalHearts = items.reduce((acc, item) => {
+      const lastNode: ICost | undefined = item?.nodes?.at(-1) ?? item?.listNodes?.at(-1);
+      if (!lastNode?.h) { return acc; }
+      countCandles++;
+      return acc + lastNode.h;
+    }, 0);
 
-    if (count === 0) { return 0; }
-    const avg = total / count;
-    const roundedAvg = Math.ceil(avg / 5) * 5;
-    this.itemTypeAverages[itemType] = roundedAvg;
-    return roundedAvg;
+    if (countCandles) {
+      const avg = totalCandles / countCandles;
+      const roundedAvg = Math.ceil(avg / 5) * 5;
+      this.itemTypeAverages[itemType] = { c: roundedAvg };
+    } else if (countHearts) {
+      const avg = totalHearts / countHearts;
+      const roundedAvg = Math.ceil(avg / 5) * 5;
+      this.itemTypeAverages[itemType] = { h: roundedAvg };
+    }
+
+    return countCandles || countHearts ? this.itemTypeAverages[itemType] : undefined;
   }
 
   private readItemsFromUrl(): void {

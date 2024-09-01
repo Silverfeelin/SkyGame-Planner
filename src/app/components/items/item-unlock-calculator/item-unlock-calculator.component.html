@@ -12,6 +12,7 @@
     </div>
 </div>
 
+<!-- Selection -->
 <div class="mt">
   <app-card [title]="'Selection'" [foldable]="true" [folded]="false">
     <div class="grid grid-1">
@@ -37,8 +38,8 @@
   </app-card>
 </div>
 
+<!-- Results -->
 @if (items.length) {
-  <!-- Results -->
   <div class="mt">
     <app-card [title]="'Breakdown'" [foldable]="true" [folded]="true">
       <div class="grid grid-1">
@@ -62,6 +63,9 @@
         }
 
         @if (trees.length) {
+          <div class="container">
+            The spirit trees below only show the costs for items you need.
+          </div>
           <div class="sky-flex scroll-x">
             @for (tree of trees; track tree.guid) {
               <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" [enableControls]="false" [nodeOverlayTemplate]="undefined"
@@ -90,11 +94,16 @@
                     <hr/>
                     <span class="">
                       This item hasn't returned before.<br/>
-                      The average cost of '{{ result.item.type | itemType }}' is:
-                      <app-cost [cost]="result.estimatedCost"></app-cost>
+                      @if (result.hasUnknownCost) {
+                        The average cost of '{{ result.item.type | itemType }}' is unknown.
+                      } @else {
+                        The average cost of '{{ result.item.type | itemType }}' is:
+                        <app-cost [cost]="result.estimatedCost" [showZeroes]="true" [showTooltip]="false"></app-cost>
+                      }
                     </span>
                   } @else if (result.cost) {
-                    Item cost: <app-cost [cost]="result.cost"></app-cost>
+                    Item cost:
+                    <app-cost [cost]="result.cost" [showZeroes]="true" [showTooltip]="false"></app-cost>
                   } @else if ($any(result).price >= 0) {
                     Price: $ {{ result.price | number: '1.2-2' }}
                   }
@@ -111,7 +120,7 @@
   <div class="mt">
     <app-card [title]="'Total'">
       <div class="container">
-        Total cost: <app-cost [cost]="totalCost"></app-cost>
+        Total cost: <app-cost [cost]="totalCost" [showTooltip]="false"></app-cost>
         @if (totalCostIncludesEstimates) {
           <br/>
           <span class="c-old">
@@ -119,7 +128,8 @@
           </span>
           <span class="c-accent">
             The estimated costs are based on the average cost of items in the same category.<br/>
-            For a more realistic price, compare the item to similar items that have returned or ask the community on Discord!
+            Please keep in mind that additional costs such as blessings are not included in the estimated item prices!<br/>
+            For a more realistic price, compare the item to similar items that have returned, or ask the community on Discord!
           </span>
         }
       </div>
@@ -132,9 +142,18 @@
   </div>
 }
 
+<!-- Add spirits -->
+<div class="mt">
+  <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)"></app-item-unlock-calculator-spirits>
+</div>
+
+<!-- Add items -->
 <div class="mt">
   <app-card [title]="'Add item type'">
-    <div class="">
+    <div class="container">
+      Select an item type here to show these items below. From there you can add any items by clicking on them.
+    </div>
+    <div class="mt">
       <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
     </div>
   </app-card>
