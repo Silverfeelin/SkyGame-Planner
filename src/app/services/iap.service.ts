@@ -20,22 +20,17 @@ export class IAPService {
     private readonly _storageService: StorageService
   ) {}
 
-  togglePurchased(iap: IIAP): void {
+  togglePurchased(iap: IIAP): void { this.toggleIap(iap, false); }
+  toggleGifted(iap: IIAP): void { this.toggleIap(iap, true); }
+  toggleIap(iap: IIAP, asGift: boolean): void {
     if (!iap) { return; }
-
-    const unlock = !iap.bought;
-    unlock ? this.unlockIap(iap, false) : this.lockIap(iap);
+    const unlock = asGift ? !iap.gifted : !iap.bought;
+    unlock ? this.unlockIap(iap, asGift) : this.lockIap(iap);
 
     // Notify listeners.
     iap.items?.forEach((item) => {
       this._eventService.itemToggled.next(item);
     });
-  }
-
-  toggleGifted(iap: IIAP): void {
-    if (!iap) { return; }
-    const unlock = !iap.gifted;
-    unlock ? this.unlockIap(iap, true) : this.lockIap(iap);
   }
 
   unlockIap(iap: IIAP, asGift: boolean): void {
