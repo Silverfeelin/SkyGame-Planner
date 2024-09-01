@@ -6,26 +6,26 @@ import { ItemType } from '../interfaces/item.interface';
     standalone: true
 })
 export class ItemTypePipe implements PipeTransform {
-  transform(type: ItemType | string): string {
+  transform(type: ItemType | string, plural?: boolean): string {
     switch (type) {
-      case ItemType.Hat: return 'Hat';
+      case ItemType.Hat: return plural ? 'Hats' : 'Hat';
       case ItemType.Hair: return 'Hair';
-      case ItemType.Mask: return 'Mask';
-      case ItemType.FaceAccessory: return 'Face accessory';
-      case ItemType.Necklace: return 'Necklace';
-      case ItemType.Outfit: return 'Outfit';
+      case ItemType.Mask: return plural ? 'Masks' : 'Mask';
+      case ItemType.FaceAccessory: return plural ? 'Face accessories' : 'Face accessory';
+      case ItemType.Necklace: return plural ? 'Necklaces' : 'Necklace';
+      case ItemType.Outfit: return plural ? 'Outfits' : 'Outfit';
       case ItemType.Shoes: return 'Shoes';
-      case ItemType.Cape: return 'Cape';
-      case ItemType.Held: return 'Held prop';
+      case ItemType.Cape: return plural ? 'Capes' : 'Cape';
+      case ItemType.Held: return plural ? 'Held props' : 'Held prop';
       case ItemType.Furniture: return 'Furniture';
-      case ItemType.Prop: return 'Placeable prop';
-      case ItemType.Emote: return 'Emote';
-      case ItemType.Stance: return 'Stance';
-      case ItemType.Call: return 'Call';
-      case ItemType.Spell: return 'Spell';
-      case ItemType.Music: return 'Music sheet';
-      case ItemType.Quest: return 'Quest';
-      case ItemType.WingBuff: return 'Wing buff';
+      case ItemType.Prop: return plural ? 'Placeable props' : 'Placeable prop';
+      case ItemType.Emote: return plural ? 'Emotes' : 'Emote';
+      case ItemType.Stance: return plural ? 'Stances' : 'Stance';
+      case ItemType.Call: return plural ? 'Calls' : 'Call';
+      case ItemType.Spell: return plural ? 'Spells' : 'Spell';
+      case ItemType.Music: return plural ? 'Music sheets' : 'Music sheet';
+      case ItemType.Quest: return plural ? 'Quests' : 'Quest';
+      case ItemType.WingBuff: return plural ? 'Wing buffs' : 'Wing buff';
       case ItemType.Special: return 'Special';
       default: return 'Unknown';
     }

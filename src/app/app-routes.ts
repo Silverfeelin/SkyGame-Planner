@@ -48,6 +48,7 @@ import { CurrencyComponent } from './components/currency/currency.component';
 import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
+import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -79,7 +80,7 @@ export const routes: Routes = [
           { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
           { path: 'event/:guid', component: EventComponent },
           { path: 'event-instance/:guid', component: EventInstanceComponent },
-          { path: 'item', component: ItemsComponent, title: title('Items') },
+          { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/inflation', component: ItemInflationComponent, title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },

@@ -103,12 +103,12 @@
 }
 
 <div class="mt">
-  <app-card [title]="'Add items'" [foldable]="true" [folded]="true">
-    <div class="container">
-      <p>
-        You can select items to add them the calculator below.
-        The cost of the items you add will be calculated and added to the total cost.
-      </p>
+  <app-card [title]="'Item type'">
+    <div class="">
+      <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
     </div>
   </app-card>
+  <div class="mt">
+    <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)"></app-items>
+  </div>
 </div>

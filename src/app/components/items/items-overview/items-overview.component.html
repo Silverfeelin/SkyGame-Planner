@@ -1,0 +1,57 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Items</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      <a class="container" [routerLink]="'/item/field-guide'">
+        <mat-icon class="menu-icon">photo_library</mat-icon>
+        <span class="menu-label">
+          Field guide
+        </span>
+      </a>
+      <a class="container" [routerLink]="'/item/unlock-calculator'">
+        <mat-icon class="menu-icon">calculate</mat-icon>
+        <span class="menu-label">
+          Unlock cost calculator
+        </span>
+      </a>
+      <a class="container" [routerLink]="'/item/inflation'">
+        <mat-icon class="menu-icon">trending_up</mat-icon>
+        <span class="menu-label">
+          Item inflation
+        </span>
+      </a>
+      <a class="container" [routerLink]="'/item/unlock'">
+        <mat-icon class="menu-icon">lock_open</mat-icon>
+        <span class="menu-label">
+          Quick unlock
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Categories -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Type</h2>
+  </div>
+  <div class="sky-card-body">
+    <app-item-type-selector [type]="type" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
+    <div class="mt container">
+      <span>
+        You have unlocked
+        <b [class.completed]="unlockedCount == itemCount">{{ unlockedCount }}</b>
+        out of
+        <b [class.completed]="unlockedCount == itemCount">{{ itemCount }}</b>
+        @if (type) { {{ type | itemType | lowercase }} }
+        items.
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="mt">
+  <app-items [type]="type" [highlightItem]="highlightItem"></app-items>
+</div>

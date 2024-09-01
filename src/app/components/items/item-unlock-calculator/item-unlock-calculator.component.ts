@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { SearchComponent } from "../../search/search.component";
-import { ISearchItem } from '@app/services/search.service';
 import { IItem, IItemSource, IItemSourceIap, IItemSourceListNode, IItemSourceNode, ItemType } from '@app/interfaces/item.interface';
 import { CardComponent } from "../../layout/card/card.component";
 import { DataService } from '@app/services/data.service';
@@ -9,7 +8,7 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { INode } from '@app/interfaces/node.interface';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
+import { IEventInstance } from '@app/interfaces/event.interface';
 import { ITravelingSpirit } from '@app/interfaces/traveling-spirit.interface';
 import { ICost } from '@app/interfaces/cost.interface';
 import { IReturningSpirit } from '@app/interfaces/returning-spirits.interface';
@@ -19,6 +18,8 @@ import { IIAP } from '@app/interfaces/iap.interface';
 import { CostComponent } from "../../util/cost/cost.component";
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { DecimalPipe } from '@angular/common';
+import { ItemClickEvent, ItemsComponent } from "../items.component";
+import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 
 interface IItemResult {
   item: IItem;
@@ -40,7 +41,7 @@ interface IItemResult {
 @Component({
   selector: 'app-item-unlock-calculator',
   standalone: true,
-  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe],
+  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe, ItemsComponent, ItemTypeSelectorComponent],
   templateUrl: './item-unlock-calculator.component.html',
   styleUrl: './item-unlock-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -52,6 +53,8 @@ export class ItemUnlockCalculatorComponent {
     if (!this.results.length) { return; }
     event.preventDefault();
   }
+
+  itemType: ItemType = ItemType.Outfit;
 
   items: Array<IItem> = [];
   itemSet = new Set<IItem>();
@@ -67,12 +70,15 @@ export class ItemUnlockCalculatorComponent {
   constructor(
     private readonly _dataService: DataService
   ) {
-
+    this.onItemTypeChanged(this.itemType);
   }
 
-  onRowClicked(evt: { event: MouseEvent; row: ISearchItem<unknown>; }): void {
-    const row = evt.row as ISearchItem<IItem>;
-    const item = row.data;
+  onItemTypeChanged(type: ItemType) {
+    this.itemType = type;
+  }
+
+  onItemClicked(evt: ItemClickEvent) {
+    const item = evt.item;
 
     // Remove item if it is already selected
     if (this.itemSet.has(item)) {
