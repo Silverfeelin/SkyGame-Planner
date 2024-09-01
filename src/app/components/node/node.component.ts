@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -14,9 +14,8 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { CurrencyService } from '@app/services/currency.service';
-import { DateHelper } from '@app/helpers/date-helper';
 
-export type NodeAction = 'unlock' | 'find' | 'favourite';
+export type NodeAction = 'emit' | 'unlock' | 'find' | 'favourite';
 
 @Component({
     selector: 'app-node',
@@ -32,6 +31,8 @@ export class NodeComponent implements OnChanges {
   @Input() glowType?: HighlightType = 'default';
   @Input() action: NodeAction = 'unlock';
   @Input() opaque?: boolean;
+
+  @Output() readonly nodeClicked = new EventEmitter<MouseEvent>();
 
   hover?: boolean;
   tooltipPlacement = 'bottom';
@@ -67,6 +68,7 @@ export class NodeComponent implements OnChanges {
       case 'unlock': return this.toggleNode(event);
       case 'find': return this.findNode(event);
       case 'favourite': return this.toggleFavourite(event);
+      case 'emit': return this.nodeClicked.emit(event);
     }
   }
 

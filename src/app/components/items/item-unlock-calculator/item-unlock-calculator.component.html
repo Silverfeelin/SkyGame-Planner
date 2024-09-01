@@ -6,11 +6,8 @@
     <div class="container">
       <p>
         You can use this tool to calculate the cost of unlocking items.
-        For all your selected items, the most recent price will be used to calculate the currencies you need.
-      </p>
-      <p>
-        If you select multiple items that share the same predecessors in the spirit tree, the cost of those items will be counted only once.
-        Items you already own will never be counted.
+        For all your selected items, the most recent price will be used to calculate the currencies you need.<br/>
+        Items you already own will not be counted.
       </p>
     </div>
 </div>
@@ -22,62 +19,95 @@
         <div class="container">
           <p>No items selected. Search for items below.</p>
         </div>
-      }
-      @for (result of results; track result.item.guid) {
-        <div class="container">
-          <app-item-icon
-            [item]="result.item" [opaque]="true" [hoverGlow]="false"
-            [ngbTooltip]="result.item.name" container="body" placement="top"
-            [subIcons]="['unlock']">
-          </app-item-icon>
-          <div>
-            @if (result.item.unlocked) {
-              <span class="">You own this item.</span>
-            } @else if (!result.found) {
-              <span class="">Couldn't find a way to calculate this item.</span>
-            } @else if (result.estimatedCost) {
-              <hr/>
-              <span class="">
-                This item hasn't returned before.<br/>
-                The average cost of "{{ result.item.type | itemType }}" is:
-                <app-cost [cost]="result.estimatedCost"></app-cost>
-              </span>
-            } @else if (result.cost) {
-              Item cost: <app-cost [cost]="result.cost"></app-cost>
-              @if (result.nodes?.length) {
-                <hr/>
-                Required item breakdown:<br/>
-                <div class="sky-flex flex-wrap calc-item-breakdown">
-                  @for (node of result.nodes; track node.guid; let i = $index;) {
-                    @if (i > 0) {
-                      <span class="v-top">&gt;</span>
-                    }
-                    @if (node.item) {
-                      <div>
-                        <app-item-icon
-                          [item]="node.item" [opaque]="true" [hoverGlow]="false"
-                          [ngbTooltip]="node.item.name" container="body" placement="top">
-                        </app-item-icon><br/>
-                        <app-cost [cost]="node"></app-cost>
-                      </div>
-                    }
-                  }
-                </div>
-              }
-            } @else if ($any(result).price >= 0) {
-              Price: $ {{ result.price | number: '1.2-2' }}
-            }
-          </div>
-          <div class="mt">
-            <button type="button" (click)="removeItem(result.item)">Remove</button>
-          </div>
+      } @else {
+        <div class="sky-flex flex-wrap">
+          @for (item of items; track item.guid) {
+            <div class="calc-item" (click)="askRemoveItem(item)">
+              <app-item-icon
+                [item]="item" [opaque]="true" [hoverGlow]="false"
+                [ngbTooltip]="item.name" container="body" placement="top"
+                [subIcons]="['unlock']">
+              </app-item-icon>
+            </div>
+          }
         </div>
+        <div><button type="button" class="button-danger" (click)="askRemoveItems()">Clear</button></div>
       }
     </div>
   </app-card>
 </div>
 
-@if (results.length) {
+@if (items.length) {
+  <!-- Results -->
+  <div class="mt">
+    <app-card [title]="'Breakdown'" [foldable]="true" [folded]="true">
+      <div class="grid grid-1">
+        @if (ownedItems.length) {
+          <div class="container">
+            <p>
+              You already own some of the selected items. These items will not be counted in the total cost.
+            </p>
+            <div class="sky-flex flex-wrap">
+              @for (item of ownedItems; track item.guid) {
+                <div class="d-inline-block">
+                  <app-item-icon
+                    [item]="item" [opaque]="true" [hoverGlow]="false"
+                    [ngbTooltip]="item.name" container="body" placement="top"
+                    [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'limited']">
+                  </app-item-icon>
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        @if (trees.length) {
+          <div class="sky-flex scroll-x">
+            @for (tree of trees; track tree.guid) {
+              <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" [enableControls]="false" [nodeOverlayTemplate]="undefined"
+                [opaqueNodes]="treeOpaqueNodes[tree.guid]" [highlightItem]="treeHighlightItems[tree.guid]">
+              </app-spirit-tree>
+            }
+          </div>
+        }
+
+        @if (results.length) {
+          <div class="grid grid-4">
+            @for (result of results; track result.item.guid) {
+              <div class="container">
+                {{ result.item.name }}<br/>
+                <app-item-icon
+                  [item]="result.item" [opaque]="true" [hoverGlow]="false"
+                  [ngbTooltip]="result.item.name" container="body" placement="top"
+                  [subIcons]="['unlock']">
+                </app-item-icon>
+                <div>
+                  @if (result.item.unlocked) {
+                    <span class="">You own this item.</span>
+                  } @else if (!result.found) {
+                    <span class="">Couldn't find a way to calculate this item.</span>
+                  } @else if (result.estimatedCost) {
+                    <hr/>
+                    <span class="">
+                      This item hasn't returned before.<br/>
+                      The average cost of '{{ result.item.type | itemType }}' is:
+                      <app-cost [cost]="result.estimatedCost"></app-cost>
+                    </span>
+                  } @else if (result.cost) {
+                    Item cost: <app-cost [cost]="result.cost"></app-cost>
+                  } @else if ($any(result).price >= 0) {
+                    Price: $ {{ result.price | number: '1.2-2' }}
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </app-card>
+  </div>
+
+  <!-- Total -->
   <div class="mt">
     <app-card [title]="'Total'">
       <div class="container">
@@ -103,12 +133,19 @@
 }
 
 <div class="mt">
-  <app-card [title]="'Item type'">
+  <app-card [title]="'Add item type'">
     <div class="">
       <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
     </div>
   </app-card>
   <div class="mt">
-    <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)"></app-items>
+    <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" [foldable]="true" (onItemClicked)="onItemClicked($event)"></app-items>
   </div>
 </div>
+
+<ng-template #tNode let-node>
+  <div class="node-show-hover">
+    <div class="node-overlay">
+    </div>
+  </div>
+</ng-template>

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, Input, OnChanges, OnDestroy, signal, SimpleChanges, TemplateRef } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, signal, SimpleChanges, TemplateRef } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
@@ -17,6 +17,7 @@ import { MatIcon } from '@angular/material/icon';
 import { DebugService } from '@app/services/debug.service';
 import { CurrencyService } from '@app/services/currency.service';
 
+export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
 
 @Component({
@@ -31,17 +32,22 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() tree!: ISpiritTree;
   @Input() name?: string | undefined;
   @Input() highlight?: boolean;
-  @Input() highlightItem?: string;
+  @Input() highlightItem?: string | Array<string>;
   @Input() enableControls = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
-  @Input() opaqueNodes?: boolean;
+  @Input() opaqueNodes?: boolean | Array<string>;
   @Input() padBottom = false;
+  @Input() forceNodeAction?: NodeAction;
+
+  @Output() readonly nodeClicked = new EventEmitter<SpiritTreeNodeClickEvent>();
 
   nodes: Array<INode> = [];
   left: Array<INode> = [];
   center: Array<INode> = [];
   right: Array<INode> = [];
-  hiddenItems: { [itemGuid: string]: INode } = {};
+  opaqueNodesAll: boolean = false;
+  opaqueNodesMap: { [guid: string]: boolean } = {};
+  highlightItemMap: { [guid: string]: boolean } = {};
 
   hasCostAtRoot = false;
   toggleUnlock = false;
@@ -90,11 +96,35 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.tsDate = this.tree.ts?.date;
       this.rsDate = this.tree.visit?.return?.date;
     }
+
+    if (changes['opaqueNodes']) {
+      this.opaqueNodesAll = false;
+      this.opaqueNodesMap = {};
+      if (this.opaqueNodes) {
+        this.opaqueNodesAll = this.opaqueNodes === true;
+        typeof this.opaqueNodes === 'object' && this.opaqueNodes.forEach(guid => this.opaqueNodesMap[guid] = true);
+      }
+    }
+
+    if (changes['highlightItem']) {
+      this.highlightItemMap = {};
+      if (this.highlightItem) {
+        if (typeof this.highlightItem === 'string') {
+          this.highlightItemMap[this.highlightItem] = true;
+        } else {
+          this.highlightItem.forEach(guid => this.highlightItemMap[guid] = true);
+        }
+      }
+    }
   }
 
   ngOnDestroy(): void {
     this._itemSub?.unsubscribe();
     document.removeEventListener('click', this.hideNodeActions);
+  }
+
+  onNodeClicked(event: MouseEvent, node: INode): void {
+    this.nodeClicked.emit({ node, event: event });
   }
 
   hideNodeActions = (): void => {
@@ -155,11 +185,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (node.nw) { this.initializeNode(node.nw, direction -1, level); }
     if (node.ne) { this.initializeNode(node.ne, direction + 1, level); }
     if (node.n) { this.initializeNode(node.n, direction, level + 1); }
-
-    // Store hidden items for highlighting.
-    if (node.hiddenItems?.length) {
-      node.hiddenItems.forEach(item => this.hiddenItems[item.guid] = node);
-    }
   }
 
   calculateRemainingCosts(): void {
