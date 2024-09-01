@@ -107,6 +107,7 @@ export class SettingsComponent {
           wingedLights: d.wingedLights,
           favourites: d.favourites,
           seasonPasses: '',
+          gifted: '',
           mapMarkers: '',
           keys: {}
         },
@@ -124,7 +125,8 @@ export class SettingsComponent {
     const trackables: ITrackables = {
       unlocked: this._storageService.getUnlocked(),
       wingedLights: this._storageService.getWingedLights(),
-      favourites: this._storageService.getFavourites()
+      favourites: this._storageService.getFavourites(),
+      gifted: this._storageService.getGifted()
     };
 
     this._dataService.refreshUnlocked(trackables);
@@ -165,6 +167,7 @@ export class SettingsComponent {
       wingedLights: '',
       favourites: '',
       seasonPasses: '',
+      gifted: '',
       mapMarkers: '',
       keys: {}
     });
@@ -174,7 +177,8 @@ export class SettingsComponent {
     this._dataService.refreshUnlocked({
       unlocked: new Set(),
       wingedLights: new Set(),
-      favourites: new Set()
+      favourites: new Set(),
+      gifted: new Set()
     });
   }
 

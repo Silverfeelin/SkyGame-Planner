@@ -88,6 +88,17 @@ export class StorageService implements OnDestroy {
   }
   hasSeasonPass(guid: string): boolean { return this.provider.hasSeasonPass(guid); }
 
+  getGifted(): ReadonlySet<string> { return this.provider.getGifted(); }
+  addGifted(...guids: Array<string>): void {
+    this.provider.addGifted(...guids);
+    this.notifyChange();
+  }
+  removeGifted(...guids: Array<string>): void {
+    this.provider.removeGifted(...guids);
+    this.notifyChange();
+  }
+  hasGifted(guid: string): boolean { return this.provider.hasGifted(guid); }
+
   getMapMarkers(): ReadonlySet<string> { return this.provider.getMapMarkers(); }
   addMapMarkers(...guids: Array<string>): void {
     this.provider.addMapMarkers(...guids);

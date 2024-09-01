@@ -12,6 +12,7 @@ interface IDropboxData {
   wingedLights: string;
   favourites: string;
   seasonPasses: string;
+  gifted: string;
   mapMarkers: string;
   keys: { [key: string]: unknown };
 }
@@ -93,6 +94,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
     this._wingedLights = new Set((data.wingedLights || undefined)?.split(',') ?? []);
     this._favourites = new Set((data.favourites || undefined)?.split(',') ?? []);
     this._seasonPasses = new Set((data.seasonPasses || undefined)?.split(',') ?? []);
+    this._gifted = new Set((data.gifted || undefined)?.split(',') ?? []);
     this._mapMarkers = new Set((data.mapMarkers || undefined)?.split(',') ?? []);
     this._keys = data.keys || {};
   }
@@ -105,6 +107,7 @@ export class DropboxStorageProvider extends BaseStorageProvider implements OnDes
       wingedLights: [...this._wingedLights].join(','),
       favourites: [...this._favourites].join(','),
       seasonPasses: [...this._seasonPasses].join(','),
+      gifted: [...this._gifted].join(','),
       mapMarkers: [...this._mapMarkers].join(','),
       keys: this._keys
     };

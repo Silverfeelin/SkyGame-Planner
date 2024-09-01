@@ -30,6 +30,7 @@ export interface ITrackables {
   unlocked?: ReadonlySet<string>;
   wingedLights?: ReadonlySet<string>;
   favourites?: ReadonlySet<string>;
+  gifted?: ReadonlySet<string>;
 }
 
 @Injectable({
@@ -93,7 +94,7 @@ export class DataService {
   }
 
   refreshUnlocked(trackables: ITrackables): void {
-    const { unlocked, wingedLights, favourites } = trackables;
+    const { unlocked, wingedLights, favourites, gifted } = trackables;
     if (unlocked) {
       for (const node of this.nodeConfig.items) {
         node.unlocked = unlocked.has(node.guid);
@@ -104,7 +105,9 @@ export class DataService {
       }
 
       for (const iap of this.iapConfig.items) {
-        iap.bought = unlocked.has(iap.guid);
+        const hasIap = unlocked.has(iap.guid);
+        iap.gifted = hasIap && gifted?.has(iap.guid);
+        iap.bought = hasIap && !iap.gifted;
       }
 
       for (const itemList of this.itemListConfig.items) {

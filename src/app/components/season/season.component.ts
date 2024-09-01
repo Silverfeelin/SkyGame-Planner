@@ -26,13 +26,14 @@ import { MatIcon } from '@angular/material/icon';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { StorageService } from '@app/services/storage.service';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
+import { IapCardComponent } from "../iap/iap-card/iap-card.component";
 
 @Component({
     selector: 'app-season',
     templateUrl: './season.component.html',
     styleUrls: ['./season.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, RouterLink, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent]
+    imports: [WikiLinkComponent, RouterLink, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent, IapCardComponent]
 })
 export class SeasonComponent implements OnDestroy {
   season!: ISeason;
@@ -149,7 +150,4 @@ export class SeasonComponent implements OnDestroy {
     }
   }
 
-  togglePurchased(event: MouseEvent, iap: IIAP): void {
-    this._iapService.togglePurchased(iap);
-  }
 }
