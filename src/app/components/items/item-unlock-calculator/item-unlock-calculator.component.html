@@ -22,17 +22,18 @@
         </div>
       } @else {
         <div class="container">
-          You have selected the following items. Click on an item to remove it from the list.&nbsp;
-          <button type="button" class="button-danger" (click)="askRemoveItems()">Clear</button>
+          You have selected the following items. Click on an item to view it in a new window.&nbsp;
+          <button type="button" class="button-danger" (click)="askRemoveItems()">Clear selection</button>
         </div>
         <div class="sky-flex flex-wrap">
           @for (item of items; track item.guid) {
-            <div class="calc-item" (click)="askRemoveItem(item)">
-              <app-item-icon
+            <div class="calc-item">
+              <app-item-icon (click)="viewItem(item)"
                 [item]="item" [opaque]="true" [hoverGlow]="false"
                 [ngbTooltip]="item.name" container="body" placement="top"
                 [subIcons]="['unlock']">
               </app-item-icon>
+              <div class="d-block t-center link mt-half" (click)="removeItem(item)">Remove</div>
             </div>
           }
         </div>
@@ -86,7 +87,7 @@
                 <app-item-icon
                   [item]="result.item" [opaque]="true" [hoverGlow]="false"
                   [ngbTooltip]="result.item.name" container="body" placement="top"
-                  [subIcons]="['unlock']">
+                  [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']">
                 </app-item-icon>
                 <div>
                   @if (result.item.unlocked) {

@@ -170,16 +170,16 @@ export class ItemUnlockCalculatorComponent {
     return undefined;
   }
 
+  viewItem(item: IItem): void {
+    const url = `${location.origin}/item/${item.guid}`;
+    window.open(url, '_blank');
+  }
+
   askRemoveItems(): void {
     if (!confirm(`Remove all items from the calculator?`)) { return; }
     this.items = [];
     this.itemSet.clear();
     this.calculate();
-  }
-
-  askRemoveItem(item: IItem): void {
-    if (!confirm(`Remove '${item.name}' from the calculator?`)) { return; }
-    this.removeItem(item);
   }
 
   removeItem(item: IItem): void {

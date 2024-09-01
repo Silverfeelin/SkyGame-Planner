@@ -332,7 +332,8 @@ export class ItemsComponent {
             if (item.autoUnlocked) { return false; }
             const isFree = cost && CostHelper.isEmpty(cost);
             const isSeasonNode = metadata.lastNode?.root?.spiritTree?.spirit?.type === 'Season';
-            if (isFree && !isSeasonNode) { return false; }
+            const isSeasonRootNode = isSeasonNode && metadata.lastNode!.root === metadata.lastNode;
+            if (isFree && (!isSeasonNode || isSeasonRootNode)) { return false; }
           }
 
           return true;
