@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
@@ -17,7 +17,7 @@ import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { CurrencyService } from '@app/services/currency.service';
 
-type Section = 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'dailies' | 'checkin' | 'calculator';
+type Section = 'select' | 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface EventCardOptions {
   show?: Array<Section>;
 }
@@ -34,6 +34,8 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() event?: IEvent;
   @Input() instance?: IEventInstance;
   @Input() options: EventCardOptions = { show: ['img', 'list', 'recent']};
+
+  @Output() readonly eventSelected = new EventEmitter<IEvent>();
 
   sections: {[key: string]: number} = {};
   lastInstance?: IEventInstance;
@@ -69,6 +71,10 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();
+  }
+
+  selectEvent(): void {
+    this.eventSelected.emit(this.event!);
   }
 
   checkin(evt: MouseEvent): void {

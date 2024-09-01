@@ -1,0 +1,22 @@
+<app-card [title]="'Add event'">
+  <div class="container">
+    Add an event to quickly add all items from an event to the calculator.
+  </div>
+  <div class="container mt">
+    <div class="input-search">
+      <input #input type="search" class="input" (input)="search()" placeholder="Spirit name">
+      <mat-icon>search</mat-icon>
+    </div>
+  </div>
+  @if (results && !results.length) {
+    <div class="container mt">
+      No events found by that name.
+    </div>
+  } @else if (results) {
+    <div class="grid grid-4 mt">
+      @for (result of results; track result.data.guid) {
+        <app-event-card [event]="result.data" [options]="{show: ['img', 'select']}" (eventSelected)="onEventSelected($event)"></app-event-card>
+      }
+    </div>
+  }
+</app-card>

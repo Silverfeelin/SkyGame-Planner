@@ -8,7 +8,7 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { INode } from '@app/interfaces/node.interface';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { IEventInstance } from '@app/interfaces/event.interface';
+import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
 import { ITravelingSpirit } from '@app/interfaces/traveling-spirit.interface';
 import { ICost } from '@app/interfaces/cost.interface';
 import { IReturningSpirit } from '@app/interfaces/returning-spirits.interface';
@@ -25,6 +25,8 @@ import { nanoid } from 'nanoid';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../spirit-tree/spirit-tree.component";
 import { ItemUnlockCalculatorSpiritsComponent } from "./item-unlock-calculator-spirits/item-unlock-calculator-spirits.component";
 import { ISpirit } from '@app/interfaces/spirit.interface';
+import { ItemUnlockCalculatorEventsComponent } from "./item-unlock-calculator-events/item-unlock-calculator-events.component";
+import { DateHelper } from '@app/helpers/date-helper';
 
 interface IItemResult {
   item: IItem;
@@ -47,7 +49,7 @@ interface IItemResult {
 @Component({
   selector: 'app-item-unlock-calculator',
   standalone: true,
-  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent],
+  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent, ItemUnlockCalculatorEventsComponent],
   templateUrl: './item-unlock-calculator.component.html',
   styleUrl: './item-unlock-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -71,6 +73,7 @@ export class ItemUnlockCalculatorComponent {
   itemTypeSet = new Set(this.itemTypes);
 
   showAddSpirits = false;
+  showAddEvents = false;
   showAddItems = false;
 
   items: Array<IItem> = [];
@@ -81,6 +84,8 @@ export class ItemUnlockCalculatorComponent {
 
   totalCost: ICost = CostHelper.create();
   totalCostIncludesEstimates = false;
+  totalCostIncludesOngoingEvent = false;
+  totalCostIncludesOngoingSeason = false;
   totalPrice: number = 0;
   checkedTrees: { [key: string]: ISpiritTree } = {};
   checkedNodes: { [key: string]: INode } = {};
@@ -144,14 +149,8 @@ export class ItemUnlockCalculatorComponent {
       return;
     }
 
-    const messages: Array<string> = [];
-    let keyItems = items.filter(i => this.itemTypeSet.has(i.type));
-    if (!keyItems.length) { keyItems = items; }
-    keyItems.forEach(i => {
-      const msg = this.tryAddItem(i);
-      msg && messages.push(`${i.name}: ${msg}`);
-    });
-
+    const filteredItems = this.filterKeyItems(items);
+    const messages = this.tryAddItems(filteredItems);
     if (messages.length) {
       alert(messages.join('\n'));
     }
@@ -159,7 +158,54 @@ export class ItemUnlockCalculatorComponent {
     this.calculate();
   }
 
+  onEventSelected(event: IEvent) {
+    const instance = event.instances?.at(-1);
+    if (!instance) { return; }
+
+    const items: Array<IItem> = [];
+    for (const spirit of instance.spirits) {
+      items.push(...NodeHelper.getItems(spirit.tree.node));
+    }
+
+    for (const shop of instance.shops) {
+      if (shop.itemList) {
+        const v = shop.itemList.items.map(i => i.item);
+        items.push(...v);
+      } else if (shop.iaps) {
+        const v = shop.iaps.filter(a => a.items).flatMap(i => i.items!);
+        items.push(...v);
+      }
+    }
+
+    const filteredItems = this.filterKeyItems(items);
+    const messages = this.tryAddItems(filteredItems);
+    if (messages.length) {
+      alert(messages.join('\n'));
+    }
+
+    this.calculate();
+  }
+
+  private filterKeyItems(items: Array<IItem>): Array<IItem> {
+    const filtered = items.filter(i => this.itemTypeSet.has(i.type) && i.group !== 'Limited');
+    return filtered.length ? filtered : items;
+  }
+
+  tryAddItems(items: Array<IItem>): Array<string> {
+    const messages: Array<string> = [];
+    for (const item of items) {
+      const msg = this.tryAddItem(item);
+      msg && messages.push(`${item.name}: ${msg}`);
+    }
+    return messages;
+  }
+
   tryAddItem(item: IItem): string | undefined {
+    // Don't allow duplicate items.
+    if (this.itemSet.has(item)) {
+      return `This item is already in the calculator.`;
+    }
+
     // Don't allow limited items.
     if (item.group === 'Ultimate' || item.group === 'Limited') {
       return `This is a limited item. You can't select it in this calculator.`;
@@ -193,6 +239,8 @@ export class ItemUnlockCalculatorComponent {
 
     this.totalCost = CostHelper.create();
     this.totalCostIncludesEstimates = false;
+    this.totalCostIncludesOngoingEvent = false;
+    this.totalCostIncludesOngoingSeason = false;
     this.totalPrice = 0;
     this.ownedItems = [];
     this.results = [];
@@ -303,11 +351,25 @@ export class ItemUnlockCalculatorComponent {
     const tree = node.root?.spiritTree;
     if (!tree) { return { item: src.item, found: false }; }
 
-    // Event ticket or season tree. Only display average cost of this item type.
-    if (node.ec || (tree.spirit?.type === 'Season' && tree === tree.spirit.tree)) {
+    // Event tree.
+    const eventInstance = node.root?.spiritTree?.eventInstanceSpirit?.eventInstance;
+    const isOngoingEvent = eventInstance && DateHelper.isActivePeriod(eventInstance);
+    if (eventInstance && !isOngoingEvent && node.ec) {
+      const result: IItemResult = { item: src.item, found: true, estimatedCost: this.findAverageByItem(src.item) };
+      result.hasUnknownCost = !result.estimatedCost && !result.cost;
+      return result;
+    } else if (eventInstance && isOngoingEvent) {
+      this.totalCostIncludesOngoingEvent = true;
+    }
+
+    const season = tree.spirit?.type === 'Season' ? tree.spirit.season : undefined;
+    const isOngoingSeason = season && DateHelper.isActivePeriod(tree.spirit!.season);
+    if (season && !isOngoingSeason) {
       const result: IItemResult = { item: src.item, found: true, estimatedCost: this.findAverageByItem(src.item) };
       result.hasUnknownCost = !result.estimatedCost;
       return result;
+    } else if (season && isOngoingSeason) {
+      this.totalCostIncludesOngoingSeason = true;
     }
 
     // Save tree to rebuild display after all items are parsed.
@@ -326,7 +388,7 @@ export class ItemUnlockCalculatorComponent {
 
       if (!n.unlocked && !n.item?.unlocked) {
         newNodes.push(n);
-        CostHelper.add(totalCost, n.ec ? { c: 0 } : n);
+        CostHelper.add(totalCost, n);
       }
     }
 

@@ -124,23 +124,41 @@
   <div class="mt">
     <app-card [title]="'Total'">
       <div class="container">
-        Total cost: <app-cost [cost]="totalCost" [showZeroes]="true" [showTooltip]="false" [price]="totalPrice || 0"></app-cost>
+        <p>
+          Total cost: <app-cost [cost]="totalCost" [showZeroes]="true" [showTooltip]="false" [price]="totalPrice || 0"></app-cost>
+        </p>
+        @if (totalCostIncludesOngoingSeason) {
+          <p>
+            <span class="c-old">The total cost includes items from the ongoing season.</span><br/>
+            <span class="">To see if you can still get these items, please refer to the <a href="/season-calculator" target="_blank">season calculator</a>.</span>
+          </p>
+        }
+        @if (totalCostIncludesOngoingEvent) {
+          <p>
+            <span class="c-old">The total cost includes items from the ongoing event.</span><br/>
+            <span class="">To see if you can still get these items, please refer to the <a href="/event-calculator" target="_blank">event calculator</a>.</span>
+          </p>
+        }
         @if (totalCostIncludesEstimates) {
-          <br/>
-          <span class="c-old">
-            This cost is an estimate as some items have never returned!<br/>
-          </span>
-          <span class="c-accent">
-            The estimated costs are based on the average cost of items in the same category.<br/>
-            Please keep in mind that additional costs such as blessings are not included in the estimated item prices!<br/>
-            For a more realistic price, compare the item to similar items that have returned, or ask the community on Discord!
-          </span>
+          <p>
+            <span class="c-old">
+              This cost is an estimate as some items have never returned!<br/>
+            </span>
+            <span class="">
+              The estimated costs are based on the average cost of items in the same category.<br/>
+            </span>
+            <span class="c-accent">
+              Please keep in mind that additional costs such as blessings are not included in the estimated item prices!<br/>
+              For a more realistic price, compare the item to similar items that have returned, or ask the community on Discord!
+            </span>
+          </p>
         }
       </div>
     </app-card>
   </div>
 }
 
+<!-- Add spirits -->
 <div class="mt">
   <button type="button" (click)="showAddSpirits=!showAddSpirits" [class.highlight]="showAddSpirits">
     Add spirit tree items
@@ -148,21 +166,32 @@
 </div>
 
 @if (showAddSpirits) {
-  <!-- Add spirits -->
   <div class="mt">
     <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)"></app-item-unlock-calculator-spirits>
   </div>
 }
 
+<!-- Add events -->
+<div class="mt">
+  <button type="button" (click)="showAddEvents=!showAddEvents" [class.highlight]="showAddEvents">
+    Add event items
+  </button>
+</div>
+
+@if (showAddEvents) {
+  <div class="mt">
+    <app-item-unlock-calculator-events (eventSelected)="onEventSelected($event)"></app-item-unlock-calculator-events>
+  </div>
+}
+
+<!-- Add items -->
 <div class="mt">
   <button type="button" (click)="showAddItems=!showAddItems" [class.highlight]="showAddItems">
     Add items
   </button>
 </div>
 
-
 @if (showAddItems) {
-  <!-- Add items -->
   <div class="mt">
     <app-card [title]="'Add item type'">
       <div class="container">
