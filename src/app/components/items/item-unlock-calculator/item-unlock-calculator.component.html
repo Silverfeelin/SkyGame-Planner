@@ -21,6 +21,10 @@
           <p>No items selected. Search for items below.</p>
         </div>
       } @else {
+        <div class="container">
+          You have selected the following items. Click on an item to remove it from the list.&nbsp;
+          <button type="button" class="button-danger" (click)="askRemoveItems()">Clear</button>
+        </div>
         <div class="sky-flex flex-wrap">
           @for (item of items; track item.guid) {
             <div class="calc-item" (click)="askRemoveItem(item)">
@@ -32,7 +36,6 @@
             </div>
           }
         </div>
-        <div><button type="button" class="button-danger" (click)="askRemoveItems()">Clear</button></div>
       }
     </div>
   </app-card>
@@ -120,7 +123,7 @@
   <div class="mt">
     <app-card [title]="'Total'">
       <div class="container">
-        Total cost: <app-cost [cost]="totalCost" [showTooltip]="false"></app-cost>
+        Total cost: <app-cost [cost]="totalCost" [showZeroes]="true" [showTooltip]="false" [price]="totalPrice || 0"></app-cost>
         @if (totalCostIncludesEstimates) {
           <br/>
           <span class="c-old">
@@ -133,38 +136,43 @@
           </span>
         }
       </div>
-      @if (totalPrice) {
-        <div class="container mt">
-          Total price (USD): $ {{ totalPrice | number: '1.2-2' }}
-        </div>
-      }
     </app-card>
   </div>
 }
 
-<!-- Add spirits -->
 <div class="mt">
-  <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)"></app-item-unlock-calculator-spirits>
+  <button type="button" (click)="showAddSpirits=!showAddSpirits" [class.highlight]="showAddSpirits">
+    Add spirit tree items
+  </button>
 </div>
 
-<!-- Add items -->
-<div class="mt">
-  <app-card [title]="'Add item type'">
-    <div class="container">
-      Select an item type here to show these items below. From there you can add any items by clicking on them.
-    </div>
-    <div class="mt">
-      <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
-    </div>
-  </app-card>
+@if (showAddSpirits) {
+  <!-- Add spirits -->
   <div class="mt">
-    <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" [foldable]="true" (onItemClicked)="onItemClicked($event)"></app-items>
+    <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)"></app-item-unlock-calculator-spirits>
   </div>
+}
+
+<div class="mt">
+  <button type="button" (click)="showAddItems=!showAddItems" [class.highlight]="showAddItems">
+    Add items
+  </button>
 </div>
 
-<ng-template #tNode let-node>
-  <div class="node-show-hover">
-    <div class="node-overlay">
+
+@if (showAddItems) {
+  <!-- Add items -->
+  <div class="mt">
+    <app-card [title]="'Add item type'">
+      <div class="container">
+        Select an item type here to show these items below. From there you can add any items by clicking on them.
+      </div>
+      <div class="mt">
+        <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
+      </div>
+    </app-card>
+    <div class="mt">
+      <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)"></app-items>
     </div>
   </div>
-</ng-template>
+}

@@ -279,6 +279,21 @@ export class ClosetComponent implements OnDestroy {
     this._changeDetectorRef.markForCheck();
   }
 
+  calculateCost(): void {
+    const items = Object.values(this.selected.all);
+    if (!items.length) {
+      alert('There are no items selected.');
+      return;
+    }
+
+    let ids = this.serializeItems(items);
+    ids = ids.substring(0, 1800);
+
+    const url = new URL(`${location.origin}/item/unlock-calculator`);
+    url.searchParams.set('items', ids)
+    window.open(url.href, '_blank');
+  }
+
   /** Toggles item size between small and normal. */
   toggleItemSize(): void {
     this._toggleItemSize();

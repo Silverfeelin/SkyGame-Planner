@@ -70,6 +70,9 @@ export class ItemUnlockCalculatorComponent {
   ];
   itemTypeSet = new Set(this.itemTypes);
 
+  showAddSpirits = false;
+  showAddItems = false;
+
   items: Array<IItem> = [];
   itemSet = new Set<IItem>();
   ownedItems: Array<IItem> = [];
@@ -224,6 +227,10 @@ export class ItemUnlockCalculatorComponent {
       if (!result.hasTree) {
         this.results.push(result);
       }
+    }
+
+    if (CostHelper.isEmpty(this.totalCost)) {
+      this.totalCost.c = 0;
     }
 
     let treeOpaqueNodes: Array<string> = [];
@@ -398,21 +405,29 @@ export class ItemUnlockCalculatorComponent {
     const ids = url.searchParams.get('items');
     if (!ids) { return; }
 
-    const items: Array<IItem> = [];
+    const messages: Array<string> = [];
+    this.items = [];
+    this.itemSet.clear();
+
     for (let i = 0; i < ids.length; i += 3) {
       const segment = ids.substring(i, i + 3);
       const number = parseInt(segment, 36);
       const item = this._dataService.itemIdMap.get(number);
-      if (item) { items.push(item); }
+      if (item) {
+        const msg = this.tryAddItem(item);
+        msg && messages.push(`${item.name}: ${msg}`);
+      }
     }
 
-    this.items = items;
+    if (messages.length) {
+      setTimeout(() => { alert(messages.join('\n')); });
+    }
   }
 
   private updateUrl(): void {
     const url = new URL(location.href);
-    const ids = this.items.map(i => (i.id || 0).toString(36).padStart(3, '0')).join('');
-    if (ids.length > 1900) { return; } // safeguard against long URLs.
+    let ids = this.items.map(i => (i.id || 0).toString(36).padStart(3, '0')).join('');
+    ids = ids.substring(0, 1800);
 
     url.searchParams.set('items', ids);
     history.replaceState(window.history.state, '', url.toString());
