@@ -71,6 +71,7 @@ export class ItemsComponent {
   @Input() foldable = false;
 
   @Output() readonly onItemClicked = new EventEmitter<ItemClickEvent>();
+  @Output() readonly onItemsChanged = new EventEmitter<Array<IItem>>();
 
   types: Array<string> = [
     ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
@@ -363,6 +364,12 @@ export class ItemsComponent {
         matches.forEach(item => this.unfilteredItems[item.guid] = true);
       }
       this.unfilteredItemCount = matches.length;
+
+      // Notify listeners.
+      this.onItemsChanged.emit(matches);
+    } else {
+      // Notify listeners.
+      this.onItemsChanged.emit(items);
     }
 
     this._changeDetectionRef.markForCheck();

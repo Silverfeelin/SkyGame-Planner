@@ -17,7 +17,7 @@ import { IItemListNode } from '@app/interfaces/item-list.interface';
 import { IIAP } from '@app/interfaces/iap.interface';
 import { CostComponent } from "../../util/cost/cost.component";
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, LowerCasePipe } from '@angular/common';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
 import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 import { IRevisedSpiritTree, ISpiritTree } from '@app/interfaces/spirit-tree.interface';
@@ -27,6 +27,7 @@ import { ItemUnlockCalculatorSpiritsComponent } from "./item-unlock-calculator-s
 import { ISpirit } from '@app/interfaces/spirit.interface';
 import { ItemUnlockCalculatorEventsComponent } from "./item-unlock-calculator-events/item-unlock-calculator-events.component";
 import { DateHelper } from '@app/helpers/date-helper';
+import { MatIcon } from '@angular/material/icon';
 
 interface IItemResult {
   item: IItem;
@@ -49,7 +50,11 @@ interface IItemResult {
 @Component({
   selector: 'app-item-unlock-calculator',
   standalone: true,
-  imports: [SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent, ItemUnlockCalculatorEventsComponent],
+  imports: [
+    SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe,
+    LowerCasePipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent,
+    ItemUnlockCalculatorEventsComponent, MatIcon
+  ],
   templateUrl: './item-unlock-calculator.component.html',
   styleUrl: './item-unlock-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -75,6 +80,8 @@ export class ItemUnlockCalculatorComponent {
   showAddSpirits = false;
   showAddEvents = false;
   showAddItems = false;
+
+  itemListItems: Array<IItem> = [];
 
   items: Array<IItem> = [];
   itemSet = new Set<IItem>();
@@ -103,6 +110,20 @@ export class ItemUnlockCalculatorComponent {
     this.onItemTypeChanged(this.itemType);
     this.readItemsFromUrl();
     if (this.items.length) { this.calculate(); }
+  }
+
+  shareSelection(): void {
+    if (!navigator.share) { return alert('Sharing is not supported by this browser.'); }
+    if (!this.items.length) { return alert('No items selected.'); }
+    const text = `Sky Planner: Cost Calculator (${this.items.length} items)`;
+    const url = new URL(location.href);
+    let ids = url.searchParams.get('items');
+    ids = ids?.substring(0, 300) ?? '';
+    url.searchParams.set('items', ids);
+    const shareData: ShareData = { title: 'Sky Planner: Cost Calculator', text, url: url.toString() };
+    if (!navigator.canShare(shareData)) { return alert('Sharing is not supported by this browser.'); }
+
+    void navigator.share(shareData);
   }
 
   onNodeClicked(evt: SpiritTreeNodeClickEvent) {
@@ -134,6 +155,23 @@ export class ItemUnlockCalculatorComponent {
     const err = this.tryAddItem(item);
     if (err) { alert(err); }
     else { this.calculate(); }
+  }
+
+  onItemsChanged(items: Array<IItem>): void {
+    this.itemListItems = items;
+  }
+
+  addItemsFromList(): void {
+    if (this.itemListItems.length > 25) {
+      if (!confirm(`Are you sure you want to add ${this.itemListItems.length} items? Too many items may slow down the calculator.`)) { return; }
+    }
+
+    const messages = this.tryAddItems(this.itemListItems);
+    if (messages.length) {
+      alert(messages.join('\n'));
+    }
+
+    this.calculate();
   }
 
   onSpiritSelected(spirit: ISpirit) {

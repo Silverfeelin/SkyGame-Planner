@@ -22,8 +22,14 @@
         </div>
       } @else {
         <div class="container">
-          You have selected the following items. Click on an item to view it in a new window.&nbsp;
-          <button type="button" class="button-danger" (click)="askRemoveItems()">Clear selection</button>
+          You have selected the following items. Click on an item to view it in a new window.<br/>
+          You can share a link to this page with up to 100 items selected.
+          <div class="sky-flex flex-wrap mt">
+            <button type="button" (click)="shareSelection()" [disabled]="!items.length">
+              <mat-icon class="menu-icon">share</mat-icon>
+              <span class="menu-label">Share</span>
+            </button>
+            <button type="button" class="button-danger" (click)="askRemoveItems()">Clear</button></div>
         </div>
         <div class="sky-flex flex-wrap">
           @for (item of items; track item.guid) {
@@ -202,7 +208,17 @@
       </div>
     </app-card>
     <div class="mt">
-      <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)"></app-items>
+      <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)" (onItemsChanged)="onItemsChanged($event)"></app-items>
+    </div>
+
+    <div class="mt">
+      <button type="button" (click)="addItemsFromList()">
+        @if (itemListItems.length === 1) {
+          Add this {{ itemType | itemType:false | lowercase }}
+        } @else {
+          Add these {{ itemListItems.length }} {{ itemType | itemType:true | lowercase }}
+        }
+      </button>
     </div>
   </div>
 }

@@ -153,9 +153,9 @@
         <hr/>
         <div class="mt">
           @if (unfilteredItemCount === 1) {
-            There is <b>1</b> item
+            There is <b>1</b> {{ type | itemType | lowercase }}
           } @else {
-            There are <b>{{ unfilteredItemCount }}</b> items
+            There are <b>{{ unfilteredItemCount }}</b> {{ type | itemType:true | lowercase }}
           }
           <span class="c-accent">(out of {{ shownCount }})</span> matching the selected filters.
           <button type="button" class="button-danger" (click)="resetFilters()">Reset filters</button>
