@@ -40,7 +40,9 @@ interface IItemResult {
   estimatedCost?: ICost;
   hasUnknownCost?: boolean;
   cost?: ICost;
+  isEmptyCost?: boolean;
   listNode?: IItemListNode;
+  nodes?: Array<INode>;
 
   iap?: IIAP;
   price?: number;
@@ -92,6 +94,7 @@ export class ItemUnlockCalculatorComponent {
   ownedItems: Array<IItem> = [];
 
   results: Array<IItemResult> = [];
+  showAsTrees = false;
 
   totalCost: ICost = CostHelper.create();
   totalCostIncludesEstimates = false;
@@ -128,6 +131,22 @@ export class ItemUnlockCalculatorComponent {
     if (!navigator.canShare(shareData)) { return alert('Sharing is not supported by this browser.'); }
 
     void navigator.share(shareData);
+  }
+
+  showCostBreakdown(result: IItemResult): void {
+    if (!result.nodes?.length) { return; }
+    const nodes = result.nodes;
+    const nodeString = nodes.filter(n => n.item).map(node => {
+      const cost = CostHelper.add(CostHelper.create(), node);
+      if (CostHelper.isEmpty(cost)) { return `${node.item!.name}: free`; }
+      const costString = Object.entries(cost).filter(([,v]) => v > 0).map(([k,v]) => `${v}${k}`).join(', ');
+      return `${node.item!.name}: ${costString}`;
+    }).join('\n');
+    alert(nodeString);
+  }
+
+  showNoCostInfo(result: IItemResult): void {
+    alert(`This item is either free or the item is required by another item. Please view the spirit trees for more details.`);
   }
 
   onNodeClicked(evt: SpiritTreeNodeClickEvent) {
@@ -345,9 +364,7 @@ export class ItemUnlockCalculatorComponent {
         this.totalPrice += result.price;
       }
 
-      if (!result.hasTree) {
-        this.results.push(result);
-      }
+      this.results.push(result);
     }
 
     if (CostHelper.isEmpty(this.totalCost)) {
@@ -469,7 +486,9 @@ export class ItemUnlockCalculatorComponent {
       item: src.item,
       hasTree: true,
       found: true,
-      cost: totalCost
+      cost: totalCost,
+      isEmptyCost: CostHelper.isEmpty(totalCost),
+      nodes: newNodes
     };
   }
 

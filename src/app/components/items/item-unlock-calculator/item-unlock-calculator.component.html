@@ -74,20 +74,26 @@
 
         @if (trees.length) {
           <div class="container">
-            The spirit trees below only show the costs for items you need.
+            <button type="button" (click)="showAsTrees=!showAsTrees" [class.highlight]="showAsTrees">Show spirit trees</button>
+            <div class="mt">
+              The spirit trees only show the costs for items you need.
+            </div>
           </div>
-          <div class="sky-flex scroll-x">
-            @for (tree of trees; track tree.guid) {
-              <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" [enableControls]="false" [nodeOverlayTemplate]="undefined"
-                [opaqueNodes]="treeOpaqueNodes[tree.guid]" [highlightItem]="treeHighlightItems[tree.guid]">
-              </app-spirit-tree>
-            }
-          </div>
+          @if (showAsTrees) {
+            <div class="sky-flex scroll-x">
+              @for (tree of trees; track tree.guid) {
+                <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" [enableControls]="false" [nodeOverlayTemplate]="undefined"
+                  [opaqueNodes]="treeOpaqueNodes[tree.guid]" [highlightItem]="treeHighlightItems[tree.guid]">
+                </app-spirit-tree>
+              }
+            </div>
+          }
         }
 
         @if (results.length) {
           <div class="grid grid-4">
             @for (result of results; track result.item.guid) {
+              <!-- @if (!showAsTrees || !result.hasTree) { -->
               <div class="container">
                 {{ result.item.name }}<br/>
                 <app-item-icon
@@ -112,10 +118,19 @@
                       }
                     </span>
                   } @else if (result.cost) {
-                    Item cost:
+                    <hr/>
+                    Unlock cost
+                    @if ((result.nodes?.length || 0) > 1) {
+                      <span class="c-accent link" (click)="showCostBreakdown(result)">(breakdown)</span>
+                    } @else if (result.isEmptyCost) {
+                      <span class="c-accent link" (click)="showNoCostInfo(result)">(?)</span>
+                    }
+                    <br/>
                     <app-cost [cost]="result.cost" [showZeroes]="true" [showTooltip]="false"></app-cost>
                   } @else if ($any(result).price >= 0) {
-                    Price: $ {{ result.price | number: '1.2-2' }}
+                    <hr/>
+                    Price (USD)<br/>
+                    $ {{ result.price | number: '1.2-2' }}
                   }
                 </div>
               </div>
