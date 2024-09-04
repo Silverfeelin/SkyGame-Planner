@@ -360,10 +360,11 @@ export class ItemsComponent {
         const items = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
         const searchResults = this._searchService.search(this.filterName, { limit: 999, items });
         searchResults.forEach(result => this.unfilteredItems[(result.data as IItem).guid] = true);
+        this.unfilteredItemCount = searchResults.length;
       } else {
         matches.forEach(item => this.unfilteredItems[item.guid] = true);
+        this.unfilteredItemCount = matches.length;
       }
-      this.unfilteredItemCount = matches.length;
 
       // Notify listeners.
       this.onItemsChanged.emit(matches);
