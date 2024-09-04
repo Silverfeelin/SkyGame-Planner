@@ -165,20 +165,33 @@
 }
 
 <!-- Add spirits -->
-<div class="mt">
+<div class="mt" [hidden]="showAddSpirits">
   <button type="button" (click)="showAddSpirits=!showAddSpirits" [class.highlight]="showAddSpirits">
-    Add spirit tree items
+    Add spirit trees
   </button>
 </div>
 
 @if (showAddSpirits) {
   <div class="mt">
-    <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)"></app-item-unlock-calculator-spirits>
+    <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)" (closed)="showAddSpirits=false"></app-item-unlock-calculator-spirits>
+  </div>
+}
+
+<!-- Add seasons -->
+<div class="mt" [hidden]="showAddSeasons">
+  <button type="button" (click)="showAddSeasons=!showAddSeasons" [class.highlight]="showAddSeasons">
+    Add season items
+  </button>
+</div>
+
+@if (showAddSeasons) {
+  <div class="mt">
+    <app-item-unlock-calculator-seasons (seasonSelected)="onSeasonSelected($event)" (guideSelected)="onSeasonGuideSelected($event)" (closed)="showAddSeasons=false"></app-item-unlock-calculator-seasons>
   </div>
 }
 
 <!-- Add events -->
-<div class="mt">
+<div class="mt" [hidden]="showAddEvents">
   <button type="button" (click)="showAddEvents=!showAddEvents" [class.highlight]="showAddEvents">
     Add event items
   </button>
@@ -186,7 +199,7 @@
 
 @if (showAddEvents) {
   <div class="mt">
-    <app-item-unlock-calculator-events (eventSelected)="onEventSelected($event)"></app-item-unlock-calculator-events>
+    <app-item-unlock-calculator-events (eventSelected)="onEventSelected($event)" (closed)="showAddEvents=false"></app-item-unlock-calculator-events>
   </div>
 }
 

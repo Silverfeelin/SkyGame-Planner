@@ -1,22 +1,14 @@
-<app-card [title]="'Add event'">
+<app-card [title]="'Add event'" [foldable]="true" [folded]="false" (beforeFold)="onBeforeFold($event)">
   <div class="container">
-    Add an event to quickly add all items from an event to the calculator.
+    Select an event to quickly add all items from that event to the calculator.
   </div>
-  <div class="container mt">
-    <div class="input-search">
-      <input #input type="search" class="input" (input)="search()" placeholder="Event name">
-      <mat-icon>search</mat-icon>
-    </div>
+  <div class="mt sky-flex flex-wrap">
+    @for (event of events; track event.guid) {
+      <button (click)="onEventSelected(event)" container="body" placement="top">
+        <span class="">
+          {{ event.name }}
+        </span>
+      </button>
+    }
   </div>
-  @if (results && !results.length) {
-    <div class="container mt">
-      No events found by that name.
-    </div>
-  } @else if (results) {
-    <div class="grid grid-4 mt">
-      @for (result of results; track result.data.guid) {
-        <app-event-card [event]="result.data" [options]="{show: ['img', 'select']}" (eventSelected)="onEventSelected($event)"></app-event-card>
-      }
-    </div>
-  }
 </app-card>

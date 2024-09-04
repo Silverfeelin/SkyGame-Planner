@@ -28,6 +28,8 @@ import { ISpirit } from '@app/interfaces/spirit.interface';
 import { ItemUnlockCalculatorEventsComponent } from "./item-unlock-calculator-events/item-unlock-calculator-events.component";
 import { DateHelper } from '@app/helpers/date-helper';
 import { MatIcon } from '@angular/material/icon';
+import { ItemUnlockCalculatorSeasonsComponent } from "./item-unlock-calculator-seasons/item-unlock-calculator-seasons.component";
+import { ISeason } from '@app/interfaces/season.interface';
 
 interface IItemResult {
   item: IItem;
@@ -53,8 +55,9 @@ interface IItemResult {
   imports: [
     SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe,
     LowerCasePipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent,
-    ItemUnlockCalculatorEventsComponent, MatIcon
-  ],
+    ItemUnlockCalculatorEventsComponent, MatIcon,
+    ItemUnlockCalculatorSeasonsComponent
+],
   templateUrl: './item-unlock-calculator.component.html',
   styleUrl: './item-unlock-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -78,6 +81,7 @@ export class ItemUnlockCalculatorComponent {
   itemTypeSet = new Set(this.itemTypes);
 
   showAddSpirits = false;
+  showAddSeasons = false;
   showAddEvents = false;
   showAddItems = false;
 
@@ -182,18 +186,30 @@ export class ItemUnlockCalculatorComponent {
     }
 
     const items = NodeHelper.getItems(tree.node);
-    if (items.some(i => this.itemSet.has(i))) {
-      alert('This spirit tree contains items that are already in the calculator.');
+    this.addFilteredKeyItems(items);
+  }
+
+  onSeasonSelected(season: ISeason): void {
+    const spirits = season.spirits.filter(s => s.type === 'Season');
+    const trees = spirits.filter(s => s.tree).map(s => s.tree!);
+    if (!trees.length) {
+      alert('This season does not have any spirits with spirit trees.');
       return;
     }
 
-    const filteredItems = this.filterKeyItems(items);
-    const messages = this.tryAddItems(filteredItems);
-    if (messages.length) {
-      alert(messages.join('\n'));
+    const items = trees.flatMap(t => NodeHelper.getItems(t.node));
+    this.addFilteredKeyItems(items);
+  }
+
+  onSeasonGuideSelected(season: ISeason): void {
+    const spirit = season.spirits.find(s => s.type === 'Guide');
+    const items = spirit?.tree ? NodeHelper.getItems(spirit.tree.node) : [];
+    if (!items.length) {
+      alert('This season guide does not items that can be added.');
+      return;
     }
 
-    this.calculate();
+    this.addFilteredKeyItems(items);
   }
 
   onEventSelected(event: IEvent) {
@@ -201,11 +217,11 @@ export class ItemUnlockCalculatorComponent {
     if (!instance) { return; }
 
     const items: Array<IItem> = [];
-    for (const spirit of instance.spirits) {
+    for (const spirit of instance.spirits || []) {
       items.push(...NodeHelper.getItems(spirit.tree.node));
     }
 
-    for (const shop of instance.shops) {
+    for (const shop of instance.shops || []) {
       if (shop.itemList) {
         const v = shop.itemList.items.map(i => i.item);
         items.push(...v);
@@ -215,7 +231,15 @@ export class ItemUnlockCalculatorComponent {
       }
     }
 
+    this.addFilteredKeyItems(items);
+  }
+
+  private addFilteredKeyItems(items: Array<IItem>): void {
     const filteredItems = this.filterKeyItems(items);
+    if (!filteredItems.length) {
+      alert('There are no items to add.');
+      return;
+    }
     const messages = this.tryAddItems(filteredItems);
     if (messages.length) {
       alert(messages.join('\n'));
@@ -225,8 +249,8 @@ export class ItemUnlockCalculatorComponent {
   }
 
   private filterKeyItems(items: Array<IItem>): Array<IItem> {
-    const filtered = items.filter(i => this.itemTypeSet.has(i.type) && i.group !== 'Limited');
-    return filtered.length ? filtered : items;
+    const filtered = items.filter(i => this.itemTypeSet.has(i.type) && i.group !== 'Limited' && i.group !== 'Ultimate');
+    return filtered;
   }
 
   tryAddItems(items: Array<IItem>): Array<string> {
@@ -246,7 +270,18 @@ export class ItemUnlockCalculatorComponent {
 
     // Don't allow limited items.
     if (item.group === 'Ultimate' || item.group === 'Limited') {
-      return `This is a limited item. You can't select it in this calculator.`;
+      const src = ItemHelper.getItemSource(item, true);
+      let srcSeason: ISeason | undefined;
+      let srcEvent: IEventInstance | undefined;
+      switch (src?.type) {
+        case 'iap': srcSeason = src.source.shop?.season; srcEvent = src.source.shop?.event; break;
+        case 'list': srcSeason = src.source.itemList.shop?.season; srcEvent = src.source.itemList.shop?.event; break;
+        case 'node': srcSeason = src.source.root?.spiritTree?.spirit?.season; srcEvent = src.source.root?.spiritTree?.eventInstanceSpirit?.eventInstance; break;
+      }
+
+      if (!DateHelper.isActivePeriod(srcSeason) && !DateHelper.isActivePeriod(srcEvent)) {
+        return `This is a limited item. You can't select it in this calculator.`;
+      }
     }
 
     this.itemSet.add(item);

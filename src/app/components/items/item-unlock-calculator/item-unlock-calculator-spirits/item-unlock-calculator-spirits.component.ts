@@ -5,6 +5,7 @@ import { ISearchItem, SearchService } from '@app/services/search.service';
 import { MatIcon } from '@angular/material/icon';
 import { ISpirit } from '@app/interfaces/spirit.interface';
 import { SpiritCardComponent } from "../../../spirit-card/spirit-card.component";
+import { ISeason } from '@app/interfaces/season.interface';
 
 @Component({
   selector: 'app-item-unlock-calculator-spirits',
@@ -16,6 +17,7 @@ import { SpiritCardComponent } from "../../../spirit-card/spirit-card.component"
 })
 export class ItemUnlockCalculatorSpiritsComponent {
   @Output() readonly spiritSelected = new EventEmitter<ISpirit>();
+  @Output() readonly closed = new EventEmitter<void>();
 
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;
 
@@ -26,6 +28,11 @@ export class ItemUnlockCalculatorSpiritsComponent {
     private readonly _dataService: DataService,
     private readonly _searchService: SearchService
   ) {}
+
+  onBeforeFold(fold: boolean): void {
+    if (!fold) { return; }
+    this.closed.emit();
+  }
 
   search(): void {
     this.value = this.input.nativeElement.value || '';
