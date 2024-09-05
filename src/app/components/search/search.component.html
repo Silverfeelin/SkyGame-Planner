@@ -1,56 +1,54 @@
-<!-- Search -->
-<app-card [title]="'Search'" [foldable]="foldable" [folded]="folded">
-  <div class="sky-card-body scroll-x">
-    <div class="search">
-      <input #input type="search" class="input" (input)="search()" placeholder="Tip: use Ctrl+Shift+F to start a new search at any time.">
-      <mat-icon>search</mat-icon>
-    </div>
-    <div class="mt" *ngIf="searchResults?.length">
-      <app-table [rows]="searchResults">
-        <ng-template [appTableHeader] [fit]="true">Type</ng-template>
-        <ng-template [appTableHeader] [fit]="true" [textAlign]="'center'">Icon</ng-template>
-        <ng-template [appTableHeader]>Name</ng-template>
-        <!-- Type -->
-        <ng-template [appTableColumn] let-row="row">
-          <span *ngIf="row.type === 'Item'; else type">{{ row.data.type | itemType }}</span>
-          <ng-template #type><span>{{ row.type }}</span></ng-template>
-        </ng-template>
-        <!-- Icon -->
-        <ng-template [appTableColumn] let-row="row">
-          <div #iconUrl class="result-icon" *ngIf="row.data.iconUrl">
-            <app-icon [src]="row.data.iconUrl"></app-icon>
-            <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked">done</mat-icon>
-          </div>
-          <div #icon class="result-icon" *ngIf="row.data.icon">
-            <app-icon [src]="row.data.icon"></app-icon>
-            <mat-icon class="unlock-check" [class.self]="row.data.unlocked" [class.unlocked]="row.data.unlocked">done</mat-icon>
-          </div>
-          <div #imageUrl class="result-icon" *ngIf="!(row.data.iconUrl || row.data.icon) && row.data.imageUrl">
-            <app-icon [src]="row.data.imageUrl" [width]="'auto'"></app-icon>
-          </div>
-        </ng-template>
-        <!-- Name -->
-        <ng-template [appTableColumn] let-row="row">
-          @if (emitClick) {
-            <a [class.link]="row.route" (click)="onRowClick($event, row)">
-              <span [innerHTML]="row.highlightedName || row.name"></span>
-            </a>
-          } @else {
-            <a [class.link]="row.route" [routerLink]="row.route" [queryParams]="row.queryParams">
-              <span [innerHTML]="row.highlightedName || row.name"></span>
-            </a>
-          }
-        </ng-template>
-      </app-table>
-    </div>
-    <div *ngIf="searchResults && !searchResults.length" class="container mt">
-      There are no results. Try searching for <a class="link" (click)="searchDemo($event)">{{demoText}}</a>!
-    </div>
+<div class="sky-card-body scroll-x">
+  <div class="search">
+    <input #input type="search" class="input" (input)="search()" [attr.placeholder]="placeholder">
+    <mat-icon>search</mat-icon>
   </div>
-</app-card>
-
-<div class="sky-card mt" *ngIf="showRefine && searchResults?.length! >= 25">
-  <div class="sky-card-body">
-    <span class="link" (click)="focusInput()">Refine your search for more results.</span>
+  <div class="mt" *ngIf="searchResults?.length">
+    <app-table [rows]="searchResults">
+      <ng-template [appTableHeader] [fit]="true">Type</ng-template>
+      <ng-template [appTableHeader] [fit]="true" [textAlign]="'center'">Icon</ng-template>
+      <ng-template [appTableHeader]>Name</ng-template>
+      <!-- Type -->
+      <ng-template [appTableColumn] let-row="row">
+        <span *ngIf="row.type === 'Item'; else type">{{ row.data.type | itemType }}</span>
+        <ng-template #type><span>{{ row.type }}</span></ng-template>
+      </ng-template>
+      <!-- Icon -->
+      <ng-template [appTableColumn] let-row="row">
+        <div #iconUrl class="result-icon" *ngIf="row.data.iconUrl">
+          <app-icon [src]="row.data.iconUrl"></app-icon>
+          <mat-icon class="unlock-check" [class.self]="row.data.unlocked"
+            [class.unlocked]="row.data.unlocked">done</mat-icon>
+        </div>
+        <div #icon class="result-icon" *ngIf="row.data.icon">
+          <app-icon [src]="row.data.icon"></app-icon>
+          <mat-icon class="unlock-check" [class.self]="row.data.unlocked"
+            [class.unlocked]="row.data.unlocked">done</mat-icon>
+        </div>
+        <div #imageUrl class="result-icon" *ngIf="!(row.data.iconUrl || row.data.icon) && row.data.imageUrl">
+          <app-icon [src]="row.data.imageUrl" [width]="'auto'"></app-icon>
+        </div>
+      </ng-template>
+      <!-- Name -->
+      <ng-template [appTableColumn] let-row="row">
+        @if (emitClick) {
+        <a [class.link]="row.route" (click)="onRowClick($event, row)">
+          <span [innerHTML]="row.highlightedName || row.name"></span>
+        </a>
+        } @else {
+        <a [class.link]="row.route" [routerLink]="row.route" [queryParams]="row.queryParams">
+          <span [innerHTML]="row.highlightedName || row.name"></span>
+        </a>
+        }
+      </ng-template>
+    </app-table>
+  </div>
+  <div *ngIf="searchResults && !searchResults.length" class="container mt">
+    There are no results. Try searching for <a class="link" (click)="searchDemo($event)">{{demoText}}</a>!
+  </div>
+  <div class="sky-card mt" *ngIf="showRefine && searchResults?.length! >= 25">
+    <div class="sky-card-body">
+      <span class="link" (click)="focusInput()">Refine your search for more results.</span>
+    </div>
   </div>
 </div>

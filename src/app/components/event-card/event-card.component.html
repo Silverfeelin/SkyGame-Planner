@@ -10,6 +10,15 @@
         [style.background-image]="imageUrlSafe"
         [style.background-position]="event.imagePosition || undefined">
       </div>
+      <!-- Select -->
+      @if (sections['select']) {
+        <div (click)="selectEvent()" class="spirit-grid-item sky-card-item sky-card-item-icon link" [style.order]="sections['select']">
+          <mat-icon>radio_button_checked</mat-icon>
+          <span class="menu-label">
+            Select
+          </span>
+        </div>
+      }
       <!-- Date -->
       <div *ngIf="sections['date'] && instance"
         class="item" [style.order]="sections['date']"

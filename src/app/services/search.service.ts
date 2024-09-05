@@ -15,9 +15,11 @@ export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Are
 export interface ISearchOptions {
   /** Only search in these items. */
   items?: Array<ISearchItem<unknown>>;
-  /** Only search  */
+  /** Only search for the given data types. */
   types?: Array<SearchType>;
+  /** Object key to search in. Defaults to `search`. */
   key?: string;
+  /** Maximum results. Defaults to `25`. */
   limit?: number;
 }
 
@@ -48,6 +50,10 @@ export class SearchService {
 
   constructor(private readonly _dataService: DataService) {
     this._items = this.initializeItems();
+  }
+
+  get items(): ReadonlyArray<ISearchItem<unknown>> {
+    return this._items;
   }
 
   /** Search for anything. Use options to limit results. */
@@ -121,7 +127,6 @@ export class SearchService {
         break;
     }
   }
-
 
   private initializeItems(): Array<ISearchItem<unknown>> {
     const items: Array<ISearchItem<unknown>> = [];

@@ -18,6 +18,7 @@ export class CostComponent implements OnChanges {
   @Input() remaining?: ICost;
   @Input() price?: number;
   @Input() showZeroes = false;
+  @Input() showTooltip = true;
   @Input() borderLeft = false;
 
   completed = false;

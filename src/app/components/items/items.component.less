@@ -1,6 +1,8 @@
 .fav-toggle {
   position: absolute;
-  top: 0; right: 0;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   cursor: pointer;
   z-index: 2;
   overflow: hidden;
@@ -9,10 +11,6 @@
 .toggle-active {
   color: var(--color-favourite);
   filter: drop-shadow(0px 0px 2px #ffcc00);
-}
-
-.unlock-bar {
-  position: relative;
 }
 
 .item-unlocked {
@@ -46,4 +44,21 @@
 .show-only {
   display: none;
   &:only-child { display: block; }
+}
+
+.search {
+  position: relative;
+
+  input {
+    padding-left: 36px;
+  }
+
+  mat-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: opacity var(--animation-short);
+  }
 }

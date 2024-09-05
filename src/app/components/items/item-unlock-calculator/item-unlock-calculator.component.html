@@ -6,102 +6,247 @@
     <div class="container">
       <p>
         You can use this tool to calculate the cost of unlocking items.
-        For all your selected items, the most recent price will be used to calculate the currencies you need.
-      </p>
-      <p>
-        If you select multiple items that share the same predecessors in the spirit tree, the cost of those items will be counted only once.
-        Items you already own will never be counted.
+        For all your selected items, the most recent price will be used to calculate the currencies you need.<br/>
+        Items you already own will not be counted.
       </p>
     </div>
 </div>
 
+<!-- Selection -->
 <div class="mt">
-  <app-card [title]="'Items'">
+  <app-card [title]="'Selection'" [foldable]="true" [folded]="false">
     <div class="grid grid-1">
       @if (!items.length) {
         <div class="container">
           <p>No items selected. Search for items below.</p>
         </div>
-      }
-      @for (result of results; track result.item.guid) {
+      } @else {
         <div class="container">
-          <app-item-icon
-            [item]="result.item" [opaque]="true" [hoverGlow]="false"
-            [ngbTooltip]="result.item.name" container="body" placement="top"
-            [subIcons]="['unlock']">
-          </app-item-icon>
-          <div>
-            @if (result.item.unlocked) {
-              <span class="">You own this item.</span>
-            } @else if (!result.found) {
-              <span class="">Couldn't find a way to calculate this item.</span>
-            } @else if (result.estimatedCost) {
-              <hr/>
-              <span class="">
-                This item hasn't returned before.<br/>
-                The average cost of "{{ result.item.type | itemType }}" is:
-                <app-cost [cost]="result.estimatedCost"></app-cost>
-              </span>
-            } @else if (result.cost) {
-              Item cost: <app-cost [cost]="result.cost"></app-cost>
-              @if (result.nodes?.length) {
-                <hr/>
-                Required item breakdown:<br/>
-                <div class="sky-flex flex-wrap calc-item-breakdown">
-                  @for (node of result.nodes; track node.guid; let i = $index;) {
-                    @if (i > 0) {
-                      <span class="v-top">&gt;</span>
-                    }
-                    @if (node.item) {
-                      <div>
-                        <app-item-icon
-                          [item]="node.item" [opaque]="true" [hoverGlow]="false"
-                          [ngbTooltip]="node.item.name" container="body" placement="top">
-                        </app-item-icon><br/>
-                        <app-cost [cost]="node"></app-cost>
-                      </div>
-                    }
-                  }
-                </div>
-              }
-            } @else if ($any(result).price >= 0) {
-              Price: $ {{ result.price | number: '1.2-2' }}
-            }
-          </div>
-          <div class="mt">
-            <button type="button" (click)="removeItem(result.item)">Remove</button>
-          </div>
+          You have selected the following items. Click on an item to view it in a new window.<br/>
+          You can share a link to this page with up to 100 items selected.
+          <div class="sky-flex flex-wrap mt">
+            <button type="button" (click)="shareSelection()" [disabled]="!items.length">
+              <mat-icon class="menu-icon">share</mat-icon>
+              <span class="menu-label">Share</span>
+            </button>
+            <button type="button" class="button-danger" (click)="askRemoveItems()">Clear</button></div>
+        </div>
+        <div class="sky-flex flex-wrap">
+          @for (item of items; track item.guid) {
+            <div class="calc-item">
+              <app-item-icon (click)="viewItem(item)"
+                [item]="item" [opaque]="true" [hoverGlow]="false"
+                [ngbTooltip]="item.name" container="body" placement="top"
+                [subIcons]="['unlock']">
+              </app-item-icon>
+              <div class="d-block t-center link mt-half" (click)="removeItem(item)">Remove</div>
+            </div>
+          }
         </div>
       }
     </div>
   </app-card>
 </div>
 
-@if (results.length) {
+<!-- Results -->
+@if (items.length) {
+  <div class="mt">
+    <app-card [title]="'Breakdown'" [foldable]="true" [folded]="true">
+      <div class="grid grid-1">
+        @if (ownedItems.length) {
+          <div class="container">
+            <p>
+              You already own some of the selected items. These items will not be counted in the total cost.
+            </p>
+            <div class="sky-flex flex-wrap">
+              @for (item of ownedItems; track item.guid) {
+                <div class="d-inline-block">
+                  <app-item-icon
+                    [item]="item" [opaque]="true" [hoverGlow]="false"
+                    [ngbTooltip]="item.name" container="body" placement="top"
+                    [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'limited']">
+                  </app-item-icon>
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        @if (trees.length) {
+          <div class="container">
+            <button type="button" (click)="showAsTrees=!showAsTrees" [class.highlight]="showAsTrees">Show spirit trees</button>
+            <div class="mt">
+              The spirit trees show the cost of all the items you need to get your selection.
+            </div>
+          </div>
+          @if (showAsTrees) {
+            <div class="sky-flex scroll-x">
+              @for (tree of trees; track tree.guid) {
+                <app-spirit-tree [tree]="tree" [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" [enableControls]="false" [nodeOverlayTemplate]="undefined"
+                  [opaqueNodes]="treeOpaqueNodes[tree.guid]" [highlightItem]="treeHighlightItems[tree.guid]">
+                </app-spirit-tree>
+              }
+            </div>
+          }
+        }
+
+        @if (results.length) {
+          <div class="grid grid-4">
+            @for (result of results; track result.item.guid) {
+              <!-- @if (!showAsTrees || !result.hasTree) { -->
+              <div class="container">
+                {{ result.item.name }}<br/>
+                <app-item-icon
+                  [item]="result.item" [opaque]="true" [hoverGlow]="false"
+                  [ngbTooltip]="result.item.name" container="body" placement="top"
+                  [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']">
+                </app-item-icon>
+                <div>
+                  @if (result.item.unlocked) {
+                    <span class="">You own this item.</span>
+                  } @else if (!result.found) {
+                    <span class="">Couldn't find a way to calculate this item.</span>
+                  } @else if (result.estimatedCost) {
+                    <hr/>
+                    <span class="">
+                      This item hasn't returned before.<br/>
+                      @if (result.hasUnknownCost) {
+                        The average cost of '{{ result.item.type | itemType }}' is unknown.
+                      } @else {
+                        The average cost of '{{ result.item.type | itemType }}' is:
+                        <app-cost [cost]="result.estimatedCost" [showZeroes]="true" [showTooltip]="false"></app-cost>
+                      }
+                    </span>
+                  } @else if (result.cost) {
+                    <hr/>
+                    Unlock cost
+                    @if ((result.nodes?.length || 0) > 1) {
+                      <span class="c-accent link" (click)="showCostBreakdown(result)">(breakdown)</span>
+                    } @else if (result.isEmptyCost) {
+                      <span class="c-accent link" (click)="showNoCostInfo(result)">(?)</span>
+                    }
+                    <br/>
+                    <app-cost [cost]="result.cost" [showZeroes]="true" [showTooltip]="false"></app-cost>
+                  } @else if ($any(result).price >= 0) {
+                    <hr/>
+                    Price (USD)<br/>
+                    $ {{ result.price | number: '1.2-2' }}
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </app-card>
+  </div>
+
+  <!-- Total -->
   <div class="mt">
     <app-card [title]="'Total'">
       <div class="container">
-        Total cost: <app-cost [cost]="totalCost"></app-cost>
+        <p>
+          Total cost: <app-cost [cost]="totalCost" [showZeroes]="true" [showTooltip]="false" [price]="totalPrice || 0"></app-cost>
+        </p>
+        @if (totalCostIncludesOngoingSeason) {
+          <p>
+            <span class="c-old">The total cost includes items from the ongoing season.</span><br/>
+            <span class="">To see if you can still get these items, please refer to the <a href="/season-calculator" target="_blank">season calculator</a>.</span>
+          </p>
+        }
+        @if (totalCostIncludesOngoingEvent) {
+          <p>
+            <span class="c-old">The total cost includes items from the ongoing event.</span><br/>
+            <span class="">To see if you can still get these items, please refer to the <a href="/event-calculator" target="_blank">event calculator</a>.</span>
+          </p>
+        }
         @if (totalCostIncludesEstimates) {
-          <br/>
-          <span class="c-old">
-            This cost is an estimate as some items have never returned!<br/>
-          </span>
-          <span class="c-accent">
-            The estimated costs are based on the average cost of items in the same category.<br/>
-            For a more realistic price, compare the item to similar items that have returned or ask the community on Discord!
-          </span>
+          <p>
+            <span class="c-old">
+              This cost is an estimate as some items have never returned!<br/>
+            </span>
+            <span class="">
+              The estimated costs are based on the average cost of items in the same category.<br/>
+            </span>
+            <span class="c-accent">
+              Please keep in mind that additional costs such as blessings are not included in the estimated item prices!<br/>
+              For a more realistic price, compare the item to similar items that have returned, or ask the community on Discord!
+            </span>
+          </p>
         }
       </div>
-      @if (totalPrice) {
-        <div class="container mt">
-          Total price (USD): $ {{ totalPrice | number: '1.2-2' }}
-        </div>
-      }
     </app-card>
   </div>
 }
 
-<div class="mt">
-  <app-search [types]="['Item']" [emitClick]="true" [foldable]="true" [folded]="false" [showRefine]="false" (rowClicked)="onRowClicked($event)"></app-search>
+<!-- Add spirits -->
+<div class="mt" [hidden]="showAddSpirits">
+  <button type="button" (click)="showAddSpirits=!showAddSpirits" [class.highlight]="showAddSpirits">
+    Add spirit trees
+  </button>
 </div>
+
+@if (showAddSpirits) {
+  <div class="mt">
+    <app-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)" (closed)="showAddSpirits=false"></app-item-unlock-calculator-spirits>
+  </div>
+}
+
+<!-- Add seasons -->
+<div class="mt" [hidden]="showAddSeasons">
+  <button type="button" (click)="showAddSeasons=!showAddSeasons" [class.highlight]="showAddSeasons">
+    Add season items
+  </button>
+</div>
+
+@if (showAddSeasons) {
+  <div class="mt">
+    <app-item-unlock-calculator-seasons (seasonSelected)="onSeasonSelected($event)" (guideSelected)="onSeasonGuideSelected($event)" (closed)="showAddSeasons=false"></app-item-unlock-calculator-seasons>
+  </div>
+}
+
+<!-- Add events -->
+<div class="mt" [hidden]="showAddEvents">
+  <button type="button" (click)="showAddEvents=!showAddEvents" [class.highlight]="showAddEvents">
+    Add event items
+  </button>
+</div>
+
+@if (showAddEvents) {
+  <div class="mt">
+    <app-item-unlock-calculator-events (eventSelected)="onEventSelected($event)" (closed)="showAddEvents=false"></app-item-unlock-calculator-events>
+  </div>
+}
+
+<!-- Add items -->
+<div class="mt">
+  <button type="button" (click)="showAddItems=!showAddItems" [class.highlight]="showAddItems">
+    Add items
+  </button>
+</div>
+
+@if (showAddItems) {
+  <div class="mt">
+    <app-card [title]="'Add item type'">
+      <div class="container">
+        Select an item type here to show these items below. From there you can add any items by clicking on them.
+      </div>
+      <div class="mt">
+        <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
+      </div>
+    </app-card>
+    <div class="mt">
+      <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)" (onItemsChanged)="onItemsChanged($event)"></app-items>
+    </div>
+
+    <div class="mt">
+      <button type="button" (click)="addItemsFromList()">
+        @if (itemListItems.length === 1) {
+          Add this {{ itemType | itemType:false | lowercase }}
+        } @else {
+          Add these {{ itemListItems.length }} {{ itemType | itemType:true | lowercase }}
+        }
+      </button>
+    </div>
+  </div>
+}

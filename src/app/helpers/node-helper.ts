@@ -79,6 +79,12 @@ export class NodeHelper {
    * @remarks Nodes are distinct but order is not guaranteed.
    */
   static traceMany(nodes: Array<INode>): Array<INode> {
+    const set = this.traceManySet(nodes);
+    return [...set];
+  }
+
+  /** Gets all nodes leading up to these nodes. */
+  static traceManySet(nodes: Array<INode>): Set<INode> {
     const nodeSet = new Set<INode>();
     for (const node of nodes) {
       let n: INode|undefined = node;
@@ -88,7 +94,7 @@ export class NodeHelper {
         n = n.prev;
       } while (n)
     }
-    return [...nodeSet];
+    return nodeSet;
   }
 
   static clone(node: INode): INode {

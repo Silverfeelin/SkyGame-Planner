@@ -18,6 +18,15 @@
       </div>
     </div>
     <div class="spirit-grid mt">
+      <!-- Select -->
+      @if (sections['select']) {
+        <div (click)="selectSpirit()" class="spirit-grid-item sky-card-item sky-card-item-icon link" [style.order]="sections['select']">
+          <mat-icon>radio_button_checked</mat-icon>
+          <span class="menu-label">
+            Select
+          </span>
+        </div>
+      }
       <!-- Overview -->
       <a *ngIf="sections['overview']" [routerLink]="['/spirit', spirit.guid]"
         class="spirit-grid-item sky-card-item sky-card-item-icon" [style.order]="sections['overview']">

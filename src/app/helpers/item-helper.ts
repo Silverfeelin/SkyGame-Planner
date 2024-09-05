@@ -1,5 +1,6 @@
-import { IEvent } from '../interfaces/event.interface';
-import { IItem, IItemSource, ItemType } from '../interfaces/item.interface';
+import { ISeason } from '@app/interfaces/season.interface';
+import { IEvent, IEventInstance } from '../interfaces/event.interface';
+import { IItem, IItemSource, IItemSourceOrigin, ItemType } from '../interfaces/item.interface';
 import { NodeHelper } from './node-helper';
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([
@@ -43,7 +44,33 @@ export class ItemHelper {
     return item.nodes?.at(i) && { type: 'node', item, source: item.nodes.at(i)! }
       || item.listNodes?.at(i) && { type: 'list', item, source: item.listNodes.at(i)! }
       || item.iaps?.at(i) && { type: 'iap', item, source: item.iaps.at(i)! }
+      || item.hiddenNodes?.at(i) && { type: 'node', item, source: item.hiddenNodes.at(i)! }
       || undefined;
+  }
+
+  /** Returns the event or season the given item source was found in. */
+  static geSourceOrigin(itemSource: IItemSource | undefined): IItemSourceOrigin | undefined {
+    if (!itemSource) { return undefined; }
+    let eventInstance: IEventInstance | undefined;
+    let season: ISeason | undefined;
+    switch (itemSource.type) {
+      case 'node':
+        eventInstance = itemSource.source.root?.spiritTree?.eventInstanceSpirit?.eventInstance;
+        season = itemSource.source.root?.spiritTree?.spirit?.season;
+        break;
+      case 'list':
+        eventInstance = itemSource.source.itemList.shop?.event;
+        season = itemSource.source.itemList.shop?.season;
+        break;
+      case 'iap':
+        eventInstance = itemSource.source.shop?.event;
+        season = itemSource.source.shop?.season;
+        break;
+    }
+
+    if (eventInstance) { return { type: 'event', source: eventInstance }; }
+    if (season) { return { type: 'season', source: season }; }
+    return undefined;
   }
 
   /** Sorts items by their order. The array is sorted in-place and returned. */

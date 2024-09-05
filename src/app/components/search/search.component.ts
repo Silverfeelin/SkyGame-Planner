@@ -24,9 +24,8 @@ import { CardComponent } from '../layout/card/card.component';
 export class SearchComponent implements AfterViewInit, OnDestroy {
   @Input() types?: Array<SearchType>;
   @Input() emitClick = false;
-  @Input() foldable = false;
-  @Input() folded = false;
   @Input() showRefine = true;
+  @Input() placeholder = 'Tip: use Ctrl+Shift+F to start a new search at any time.';
 
   @Output() rowClicked = new EventEmitter<{ event: MouseEvent, row: ISearchItem<unknown> }>();
 

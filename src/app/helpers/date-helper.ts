@@ -21,6 +21,11 @@ export class DateHelper {
     return now >= start && now <= end;
   }
 
+  static isActivePeriod(period?: IPeriod): boolean {
+    if (!period) { return false; }
+    return this.isActive(period.date, period.endDate);
+  }
+
   static todayLocal(): DateTime {
     return DateTime.now().startOf('day');
   }

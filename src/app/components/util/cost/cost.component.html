@@ -1,4 +1,4 @@
-<div class="costs" [ngbTooltip]="costHover" container="body" placement="top" [class.cost-border-left]="borderLeft">
+<div class="costs" [ngbTooltip]="showTooltip ? costHover : undefined" container="body" placement="top" [class.cost-border-left]="borderLeft">
   @if (cost) {
     @if (cost.c || (showZeroes && cost.c === 0)) {
       <div class="cost">
@@ -31,7 +31,7 @@
       </div>
     }
   }
-  @if (price || showZeroes) {
+  @if (price || (showZeroes && price !== undefined)) {
     <div class="cost">
       <mat-icon class="cost-icon cost-icon-mat icon-middle c-new">attach_money</mat-icon><div><span>{{ price | number:'1.2-2' }}</span></div>
     </div>

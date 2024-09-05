@@ -1,0 +1,23 @@
+<app-card [title]="'Add season'" [foldable]="true" [folded]="false" (beforeFold)="onBeforeFold($event)">
+  <div class="container">
+    Select a season to quickly add all items from the season spirits to the calculator.<br/>
+    Please note that the guide needs to be added separately.
+  </div>
+  <div class="mt sky-flex flex-wrap">
+    @for (season of seasons; track season.guid) {
+      <div class="button-group">
+        <button (click)="onSeasonSelected(season)" container="body" placement="top">
+          @if (season.iconUrl) { <img [src]="season.iconUrl" class="menu-icon icon"> }
+          <span class="menu-label">
+            {{ season.shortName }}
+          </span>
+        </button>
+        <button (click)="onGuideSelected(season)" container="body" placement="top">
+          <span class="">
+            Guide
+          </span>
+        </button>
+      </div>
+    }
+  </div>
+</app-card>
