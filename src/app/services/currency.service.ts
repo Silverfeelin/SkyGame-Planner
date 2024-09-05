@@ -82,7 +82,8 @@ export class CurrencyService {
   }
 
   addSeasonCurrency(seasonGuid: string | undefined, candles?: number): void {
-    if (!seasonGuid || !candles) { return; }
+    if (!seasonGuid) { return; }
+    candles ??= 0;
     const value = this._storageService.getCurrencies();
     const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0 };
     value.seasonCurrencies[seasonGuid] = seasonCurrency;
@@ -91,7 +92,8 @@ export class CurrencyService {
   }
 
   setSeasonCurrency(seasonGuid: string | undefined, candles?: number): void {
-    if (!seasonGuid || !candles) { return; }
+    if (!seasonGuid) { return; }
+    candles ??= 0;
     const value = this._storageService.getCurrencies();
     const seasonCurrency = value.seasonCurrencies[seasonGuid] ?? { candles: 0 };
     value.seasonCurrencies[seasonGuid] = seasonCurrency;
@@ -100,7 +102,8 @@ export class CurrencyService {
   }
 
   addEventCurrency(eventGuid: string, value: number): void {
-    if (!eventGuid || !value) { return; }
+    if (!eventGuid) { return; }
+    value ??= 0;
     const currencies = this._storageService.getCurrencies();
     const eventCurrencies = currencies.eventCurrencies[eventGuid] ?? { tickets: 0 };
     currencies.eventCurrencies[eventGuid] = eventCurrencies;
@@ -109,7 +112,8 @@ export class CurrencyService {
   }
 
   setEventCurrency(eventGuid: string, value?: number): void {
-    if (!eventGuid || !value) { return; }
+    if (!eventGuid) { return; }
+    value ??= 0;
     const currencies = this._storageService.getCurrencies();
     const eventCurrencies = currencies.eventCurrencies[eventGuid] ?? { tickets: 0 };
     currencies.eventCurrencies[eventGuid] = eventCurrencies;

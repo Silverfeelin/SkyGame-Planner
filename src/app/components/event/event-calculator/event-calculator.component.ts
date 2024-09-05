@@ -296,7 +296,7 @@ export class EventCalculatorComponent {
   // #region Settings
 
   private updateStoredCurrencies(): void {
-    this._currencyService.setRegularCost({ c: this.candleCount, h: this.heartCount, ec: this.currencyCount });
+    this._currencyService.setRegularCost({ c: this.candleCount, h: this.heartCount });
     this._currencyService.setEventCurrency(this.eventInstance.guid, this.currencyCount);
   }
 
