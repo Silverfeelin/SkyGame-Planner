@@ -1,0 +1,17 @@
+
+<app-card [foldable]="true" [folded]="false" [title]="'Spirit return time'">
+  <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Spirit_Visits'}"></app-wiki-link>
+  <div class="container mt">
+    <p>
+      This graph shows the days it takes for season spirits to return. Spirits that have visited at least once are shown, in order of season.<br/>
+      The return time is the amount of days between the end of the season and the first visit as a Traveling Spirit or a Returning Spirit.
+    </p>
+    <p>
+      Interested in seeing which spirits have been procastinating their return? Have a look at the <a [routerLink]="'/spirit/elusive'">Elusive Spirits</a> page.
+    </p>
+
+  </div>
+  <div class="mt container chart-container">
+    <canvas #chart class="chart" width="1600" height="400"></canvas>
+  </div>
+</app-card>

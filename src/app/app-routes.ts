@@ -82,7 +82,7 @@ export const routes: Routes = [
           { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
-          { path: 'item/inflation', component: ItemInflationComponent, title: title('Item inflation') },
+          { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
           { path: 'item/unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Item unlock calculator') },
           { path: 'item/:guid', component: ItemComponent },
@@ -114,7 +114,8 @@ export const routes: Routes = [
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
-          { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) }
+          { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) },
+          { path: 'graphs', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) }
         ]
       },
       /* Routes without menu. */
