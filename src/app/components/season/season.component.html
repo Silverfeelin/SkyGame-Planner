@@ -6,14 +6,13 @@
     <div class="grid grid-2">
       <!-- Wiki -->
       <app-wiki-link [wiki]="season._wiki" [aClass]="'container'"></app-wiki-link>
-      <!-- Spirits -->
-      <a class="container" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
-        <mat-icon class="menu-icon">list</mat-icon>
-        <span class="menu-label">
-          Spirits
-          <span class="c-accent">({{ season.spirits.length - 1 }})</span>
-        </span>
-      </a>
+      <!-- Calendar -->
+      @if (season._calendar) {
+        <a [href]="season._calendar.href" target="_blank" class="container">
+          <img class="menu-icon icon" [src]="'/assets/external/sec_fmw_icon.png'"/>
+          <span class="menu-label">Sky Event Calendar | FM</span>
+        </a>
+      }
       <!-- Date -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>
@@ -52,6 +51,14 @@
           <span class="c-accent" *ngIf="shLeft">({{ shLeft }} needed)</span>
         </span>
       </div>
+      <!-- Spirits -->
+      <a class="container colspan-2" [routerLink]="'/spirit'" [queryParams]="{ season: season.guid, type: 'Season,Guide' }">
+        <mat-icon class="menu-icon">list</mat-icon>
+        <span class="menu-label">
+          Spirits
+          <span class="c-accent">({{ season.spirits.length - 1 }})</span>
+        </span>
+      </a>
       <!-- Season Pass -->
       <div (click)="toggleSeasonPass()" class="container action colspan-2" [class.active]="hasSeasonPass">
         <mat-icon class="menu-icon">{{hasSeasonPass ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
