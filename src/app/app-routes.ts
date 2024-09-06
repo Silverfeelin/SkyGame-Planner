@@ -115,7 +115,7 @@ export const routes: Routes = [
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
           { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) },
-          { path: 'graphs', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) }
+          { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) }
         ]
       },
       /* Routes without menu. */

@@ -6,6 +6,7 @@ import { DataService } from '@app/services/data.service';
 import { Chart } from 'chart.js';
 import { WikiLinkComponent } from "../../../../components/util/wiki-link/wiki-link.component";
 import { RouterLink } from '@angular/router';
+import { ISeason } from '@app/interfaces/season.interface';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
@@ -55,6 +56,16 @@ export class GraphSpiritsComponent implements AfterViewInit {
         scales: {
           x: {
             ticks: {
+              color: ctx => {
+                const isSeasonLabel = typeof ctx.tick.label === 'string' && ctx.tick.label.startsWith('Season');
+                return isSeasonLabel ? '#0ff' : '#fff';
+              },
+              font: {
+                weight: ctx => {
+                  const isSeasonLabel = typeof ctx.tick.label === 'string' && ctx.tick.label.startsWith('Season');
+                  return isSeasonLabel ? 'normal' : 'lighter';
+                }
+              },
               maxRotation: 90, minRotation: 90
             }
           },
@@ -81,7 +92,12 @@ export class GraphSpiritsComponent implements AfterViewInit {
     const labelDays: Array<string> = [];
     const dataDays: Array<number | null> = [];
     let maxDays = 0;
+    const seasons = new Set<ISeason>();
     for (const season of this._dataService.seasonConfig.items) {
+      if (!seasons.has(season)) {
+        labelDays.push(season.name);
+        dataDays.push(null);
+      }
       for (const spirit of season.spirits ?? []) {
         if (spirit.type !== 'Season') { continue; }
 
@@ -108,7 +124,17 @@ export class GraphSpiritsComponent implements AfterViewInit {
     this.chart.data.datasets.push({
       label: 'Return time (days)',
       data: dataDays,
-      spanGaps: true
+      spanGaps: true,
+      segment: {
+        borderColor: ctx => {
+          const value = ctx.p0.skip ? '#f55' : undefined;
+          return value;
+        },
+        borderDash: ctx => {
+          const value = ctx.p0.skip ? [5, 5] : undefined;
+          return value;
+        }
+      }
     });
     (this.chart.data.datasets[0] as any).trendlineLinear = {
       style: '#8e5ea2',
