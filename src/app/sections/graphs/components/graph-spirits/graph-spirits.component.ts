@@ -3,10 +3,12 @@ import { CardComponent } from '@app/components/layout/card/card.component';
 import { ChartHelper } from '@app/helpers/chart-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
-import { Chart } from 'chart.js';
-import { WikiLinkComponent } from "../../../../components/util/wiki-link/wiki-link.component";
+import { Chart, ChartConfiguration, ScriptableLineSegmentContext } from 'chart.js';
 import { RouterLink } from '@angular/router';
 import { ISeason } from '@app/interfaces/season.interface';
+import { NodeHelper } from '@app/helpers/node-helper';
+import { CostHelper } from '@app/helpers/cost-helper';
+import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
@@ -20,8 +22,14 @@ ChartHelper.registerTrendline();
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphSpiritsComponent implements AfterViewInit {
-  @ViewChild('chart', { static: true }) chartDiv!: ElementRef<HTMLCanvasElement>;
-  chart!: Chart;
+  @ViewChild('chartReturn', { static: true }) chartReturnDiv!: ElementRef<HTMLCanvasElement>;
+  chartReturn!: Chart;
+
+  @ViewChild('chartAbsence', { static: true }) chartAbsenceDiv!: ElementRef<HTMLCanvasElement>;
+  chartAbsence!: Chart;
+
+  @ViewChild('chartCost', { static: true }) chartCostDiv!: ElementRef<HTMLCanvasElement>;
+  chartCost!: Chart;
 
   constructor(
     private readonly _dataService: DataService,
@@ -36,7 +44,22 @@ export class GraphSpiritsComponent implements AfterViewInit {
   }
 
   private initChart(): void {
-    this.chart = new Chart(this.chartDiv.nativeElement, {
+    const returnConfig = this.createChartConfig();
+    this.chartReturn = new Chart(this.chartReturnDiv.nativeElement, returnConfig);
+
+    const absenceConfig = this.createChartConfig();
+    absenceConfig.type = 'bar';
+    this.chartAbsence = new Chart(this.chartAbsenceDiv.nativeElement, absenceConfig);
+
+    const costConfig = this.createChartConfig();
+    costConfig.type = 'bar';
+    (costConfig as any).options.scales.x.stacked = true;
+    (costConfig as any).options.scales.y.stacked = true;
+    this.chartCost = new Chart(this.chartCostDiv.nativeElement, costConfig);
+  }
+
+  private createChartConfig(): ChartConfiguration {
+    return {
       type: 'line',
       data: {
         datasets: [{
@@ -48,6 +71,12 @@ export class GraphSpiritsComponent implements AfterViewInit {
       options: {
         maintainAspectRatio: false,
         responsive: false,
+        plugins:{
+          legend: {
+            position: 'top',
+            align: 'start'
+          }
+        },
         elements: {
           line: {
             tension: 0.15
@@ -75,29 +104,36 @@ export class GraphSpiritsComponent implements AfterViewInit {
           }
         }
       }
-    });
-
-    const plugins = this.chart.options.plugins as any;
-    plugins.legend.position = 'top';
-    plugins.legend.align = 'start';
-    plugins.tooltip = {
-      callbacks: {
-        // label: (item: any) => `Average cost on return: ${item.formattedValue} candles`,
-        // afterLabel: (items: any) => this.onTooltipAfterLabel(items)
-      }
     }
   }
 
   private plot(): void {
-    const labelDays: Array<string> = [];
-    const dataDays: Array<number | null> = [];
-    let maxDays = 0;
-    const seasons = new Set<ISeason>();
+    const returnLabels: Array<string> = [];
+    const returnData: Array<number | null> = [];
+    let returnMaxDays = 0;
+
+    const absenceLabels: Array<string> = [];
+    const absenceData: Array<number | null> = [];
+    const absenceColors: Array<string | null> = [];
+    let absenceMaxDays = 0;
+
+    const costLabels: Array<string> = [];
+    const costDataC: Array<number | null> = [];
+    const costDataH: Array<number | null> = [];
+    let costMax = 0;
+
     for (const season of this._dataService.seasonConfig.items) {
-      if (!seasons.has(season)) {
-        labelDays.push(season.name);
-        dataDays.push(null);
-      }
+      // Add season label.
+      returnLabels.push(season.name);
+      returnData.push(null);
+      absenceLabels.push(season.name);
+      absenceData.push(null);
+      absenceColors.push(ChartHelper.colors.blue);
+      costLabels.push(season.name);
+      costDataC.push(null);
+      costDataH.push(null);
+
+      // Add season spirits
       for (const spirit of season.spirits ?? []) {
         if (spirit.type !== 'Season') { continue; }
 
@@ -105,47 +141,110 @@ export class GraphSpiritsComponent implements AfterViewInit {
         const firstTs = spirit.ts?.at(0);
         const firstReturn = spirit.returns?.at(0);
         let returnDate = firstTs?.date;
-        if (returnDate && firstReturn && firstReturn.return.date < returnDate) {
-          returnDate = firstReturn.return.date;
+        if (!returnDate || (returnDate && firstReturn && firstReturn.return.date < returnDate)) {
+          returnDate = firstReturn?.return.date;
         }
-        if (!returnDate) { continue; }
 
-        const days = DateHelper.daysBetween(seasonEndDate, returnDate) - 1;
-        if (days <= 0) { continue; }
-        maxDays = Math.max(maxDays, days);
+        // Add return date.
+        if (returnDate) {
+          const days = DateHelper.daysBetween(seasonEndDate, returnDate) - 1;
+          if (days > 0) {
+            returnMaxDays = Math.max(returnMaxDays, days);
 
-        labelDays.push(spirit.name);
-        dataDays.push(days);
+            returnLabels.push(spirit.name);
+            returnData.push(days);
+          }
+        }
+
+        // Add absence days.
+        const lastTs = spirit.ts?.at(spirit.ts.length - 1);
+        const lastReturn = spirit.returns?.at(spirit.returns.length - 1);
+        let lastDate = lastTs?.endDate;
+        if (!lastDate || (lastReturn && lastReturn.return.endDate > lastDate)) {
+          lastDate = lastReturn?.return.endDate;
+        }
+        lastDate ??= seasonEndDate;
+
+        const today = DateHelper.todaySky();
+        let absenceDays = lastDate < today ? Math.max(0, DateHelper.daysBetween(lastDate, today)) : 0;
+        absenceData.push(absenceDays);
+        absenceLabels.push(spirit.name);
+        absenceColors.push(lastDate === seasonEndDate ? ChartHelper.colors.orange : ChartHelper.colors.blue);
+        absenceMaxDays = Math.max(absenceMaxDays, absenceDays);
+
+        // Add cost.
+        if (lastReturn || lastTs) {
+          const tree = lastDate === lastTs?.endDate ? lastTs?.tree : lastReturn?.tree;
+          if (tree) {
+            const nodes = NodeHelper.all(tree.node);
+            const cost = CostHelper.add(CostHelper.create(), ...nodes);
+            costLabels.push(spirit.name);
+            costDataC.push(cost.c || 0);
+            costDataH.push(cost.h || 0);
+            costMax = Math.max(costMax, (cost.c || 0) + (cost.h || 0));
+          }
+        }
       }
     }
 
-
-    this.chart.data.datasets = [];
-    this.chart.data.datasets.push({
-      label: 'Return time (days)',
-      data: dataDays,
-      spanGaps: true,
-      segment: {
-        borderColor: ctx => {
-          const value = ctx.p0.skip ? '#f55' : undefined;
-          return value;
-        },
-        borderDash: ctx => {
-          const value = ctx.p0.skip ? [5, 5] : undefined;
-          return value;
-        }
+    const segmentRedSkip = {
+      borderColor: (ctx: ScriptableLineSegmentContext) => {
+        const value = ctx.p0.skip ? ChartHelper.colors.red : undefined;
+        return value;
+      },
+      borderDash: (ctx: ScriptableLineSegmentContext) => {
+        const value = ctx.p0.skip ? [5, 5] : undefined;
+        return value;
       }
+    }
+
+    // Return chart
+    this.chartReturn.data.datasets = [];
+    this.chartReturn.data.datasets.push({
+      label: 'Return time (days)',
+      data: returnData,
+      spanGaps: true,
+      segment: segmentRedSkip
     });
-    (this.chart.data.datasets[0] as any).trendlineLinear = {
-      style: '#8e5ea2',
+    (this.chartReturn.data.datasets[0] as any).trendlineLinear = {
       lineStyle: 'line',
       width: 1
     };
+    this.chartReturn.data.labels = returnLabels;
+    const returnScales = this.chartReturn.options.scales! as any;
+    returnScales.y.max = Math.ceil((returnMaxDays + 1) / 10) * 10;
+    this.chartReturn.update();
 
-    this.chart.data.labels = labelDays;
-    const scales = this.chart.options.scales! as any;
-    scales.y.max = Math.ceil((maxDays + 1) / 10) * 10;
-    this.chart.update();
+    // Absence chart
+    this.chartAbsence.data.datasets = [];
+    this.chartAbsence.data.datasets.push({
+      label: 'Absence time (days)',
+      data: absenceData
+    });
+
+    (this.chartAbsence.data.datasets[0] as any).backgroundColor = absenceColors;
+    this.chartAbsence.data.labels = absenceLabels;
+    const absenceScales = this.chartAbsence.options.scales! as any;
+    absenceScales.y.max = Math.ceil((absenceMaxDays + 1) / 10) * 10;
+    this.chartAbsence.update();
+
+    // Cost chart
+    this.chartCost.data.datasets = [];
+    this.chartCost.data.datasets.push({
+      label: 'Candles',
+      data: costDataC,
+      backgroundColor: ChartHelper.colors.blue
+    });
+    this.chartCost.data.datasets.push({
+      label: 'Hearts',
+      data: costDataH,
+      backgroundColor: ChartHelper.colors.red
+    });
+    this.chartCost.data.labels = costLabels;
+    const costScales = this.chartCost.options.scales! as any;
+    costScales.y.max = Math.ceil((costMax + 1) / 100) * 100;
+    this.chartCost.update();
+
     setTimeout(() => {
       this._changeDetectorRef.markForCheck();
     });

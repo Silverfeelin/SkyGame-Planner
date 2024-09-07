@@ -6,6 +6,9 @@
     <div class="container">
       <p>On this page you can find the most elusive season spirits. The spirits that have been missing for the longest time are shown at the top.</p>
       <p>Please keep in mind that traveling spirit visits are mostly random, so use this data at your own discretion.</p>
+      <p>
+        A graph version of this data is available on the <a [routerLink]="'/graph/spirit'">Graphs - Spirits</a> page.
+      </p>
     </div>
     <div class="grid grid-4 mt">
       @for (visit of lastVisits; track $index) {
