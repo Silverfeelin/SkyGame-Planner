@@ -1,0 +1,6 @@
+@if (cal) {
+  <a [class]="aClass" [href]="cal.href || '#'"  [attr.target]="openNewTab ? '_blank' : undefined" [style.order]="order">
+    <img class="menu-icon icon" [src]="'/assets/external/sec_fmw_icon.png'"/>
+    <span class="menu-label">Sky Event Calendar | FM</span>
+  </a>
+}

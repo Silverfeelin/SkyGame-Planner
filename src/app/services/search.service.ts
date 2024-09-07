@@ -17,8 +17,6 @@ export interface ISearchOptions {
   items?: Array<ISearchItem<unknown>>;
   /** Only search for the given data types. */
   types?: Array<SearchType>;
-  /** Object key to search in. Defaults to `search`. */
-  key?: string;
   /** Maximum results. Defaults to `25`. */
   limit?: number;
 }
@@ -33,7 +31,7 @@ export interface ISearchItem<T> {
   name: string;
   type: SearchType;
   data: T;
-  search: string | Fuzzysort.Prepared;
+  search: string | string[] | Fuzzysort.Prepared;
   route?: Array<any>;
   queryParams?: Params;
 
@@ -68,7 +66,7 @@ export class SearchService {
 
     // Search for string.
     const searchResults = fuzzysort.go(search, items, {
-      key: options?.key ?? 'search',
+      key: 'search',
       limit: options?.limit ?? 25
     });
 
@@ -150,9 +148,10 @@ export class SearchService {
     }));
 
     // Add events
-    items.push(...this._dataService.eventConfig.items.map(event => {
-      return { name: event.name, type: 'Event', data: event, search: event.name } as ISearchItem<IEvent>;
-    }));
+    this._dataService.eventConfig.items.forEach(event => {
+      const names = [...new Set([event.name, ...event.instances?.map(instance => instance.name) || []])];
+      items.push(...names.map(n => ({ name: n, type: 'Event', data: event, search: n } as ISearchItem<IEvent>)));
+    })
 
     // Add realms
     items.push(...this._dataService.realmConfig.items.map(realm => {

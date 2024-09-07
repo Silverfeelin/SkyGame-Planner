@@ -48,8 +48,6 @@ export interface ISeason extends IGuid, IPeriod {
   includedTrees?: Array<ISpiritTree>;
 
   /// Metadata ///
-
-  /** wiki data. */
   _wiki?: IWiki;
   _calendar?: ICalendarFm;
 }

@@ -8,7 +8,9 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <!-- Wiki -->
-      <app-wiki-link [wiki]="instance.event._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
+      <app-wiki-link [wiki]="instance.event._wiki" [aClass]="'container' + (!instance._calendar ? ' colspan-2' : '')"></app-wiki-link>
+      <!-- Calendar -->
+      <app-calendar-link [cal]="instance._calendar" [aClass]="'container'"></app-calendar-link>
       <!-- Prev next -->
       <a class="container" *ngIf="previousInstance" [routerLink]="['/event-instance', previousInstance.guid]" [class.colspan-2]="!nextInstance">
         <mat-icon class="menu-icon">arrow_back</mat-icon>

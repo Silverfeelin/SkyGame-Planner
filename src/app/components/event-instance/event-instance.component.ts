@@ -21,13 +21,14 @@ import { MatIcon } from '@angular/material/icon';
 import { NgIf, NgFor } from '@angular/common';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { DateComponent } from '../util/date/date.component';
+import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 
 @Component({
     selector: 'app-event-instance',
     templateUrl: './event-instance.component.html',
     styleUrls: ['./event-instance.component.less'],
     standalone: true,
-    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent]
+    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent, CalendarLinkComponent]
 })
 export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;

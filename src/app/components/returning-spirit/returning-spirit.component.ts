@@ -11,13 +11,14 @@ import { NgIf, NgFor } from '@angular/common';
 import { DateComponent } from '../util/date/date.component';
 import { MatIcon } from '@angular/material/icon';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 
 @Component({
     selector: 'app-returning-spirit',
     templateUrl: './returning-spirit.component.html',
     styleUrls: ['./returning-spirit.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, RouterLink, NgFor, SpiritTreeComponent]
+    imports: [WikiLinkComponent, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, RouterLink, NgFor, SpiritTreeComponent, CalendarLinkComponent]
 })
 export class ReturningSpiritComponent {
   rs!: IReturningSpirits;

@@ -7,12 +7,7 @@
       <!-- Wiki -->
       <app-wiki-link [wiki]="season._wiki" [aClass]="'container'"></app-wiki-link>
       <!-- Calendar -->
-      @if (season._calendar) {
-        <a [href]="season._calendar.href" target="_blank" class="container">
-          <img class="menu-icon icon" [src]="'/assets/external/sec_fmw_icon.png'"/>
-          <span class="menu-label">Sky Event Calendar | FM</span>
-        </a>
-      }
+      <app-calendar-link [cal]="season._calendar" [aClass]="'container'"></app-calendar-link>
       <!-- Date -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>

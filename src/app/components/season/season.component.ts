@@ -26,13 +26,14 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { StorageService } from '@app/services/storage.service';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { IconComponent } from '../icon/icon.component';
+import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 
 @Component({
     selector: 'app-season',
     templateUrl: './season.component.html',
     styleUrls: ['./season.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, RouterLink, MatIcon, IconComponent, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent]
+    imports: [WikiLinkComponent, RouterLink, MatIcon, IconComponent, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent, CalendarLinkComponent]
 })
 export class SeasonComponent implements OnDestroy {
   season!: ISeason;
