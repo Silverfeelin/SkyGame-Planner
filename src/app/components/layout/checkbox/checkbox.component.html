@@ -1,0 +1,10 @@
+<span [class.c-new]="useColors && state" [class.c-old]="useColors && state === false">
+  @switch (state) {
+    @case (true) { check_box }
+    @case (false) {
+      @if (falseAsIndeterminate) { indeterminate_check_box }
+      @else { check_box_outline_blank }
+    }
+    @default { check_box_outline_blank }
+  }
+</span>

@@ -14,6 +14,8 @@ export class CardComponent implements AfterViewInit {
   @Input() title?: string;
   @Input() foldable = false;
   @Input() folded = false;
+  @Input() lazy = false;
+  loaded = false;
 
   /** Event that fires whenever the user clicks a foldable card header. */
   @Output() beforeFold = new EventEmitter<boolean>();
@@ -38,6 +40,7 @@ export class CardComponent implements AfterViewInit {
   toggleFold(): void {
     if (!this.foldable) { return; }
     this.folded = !this.folded;
+    this.loaded = true;
 
     this.beforeFold.emit(this.folded);
 

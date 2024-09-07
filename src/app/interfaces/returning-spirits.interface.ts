@@ -2,7 +2,7 @@ import { IConfig, IGuid, IPeriod } from "./base.interface";
 import { ISpiritTree } from "./spirit-tree.interface";
 import { ISpirit } from "./spirit.interface";
 import { IArea } from './area.interface';
-import { IWiki } from './wiki.interface';
+import { ICalendarFm, IWiki } from './wiki.interface';
 
 export interface IReturningSpiritsConfig extends IConfig<IReturningSpirits> {}
 
@@ -15,7 +15,9 @@ export interface IReturningSpirits extends IGuid, IPeriod {
   /** Visiting spirits. */
   spirits: Array<IReturningSpirit>;
 
+  /// Metadata ///
   _wiki?: IWiki;
+  _calendar?: ICalendarFm;
 }
 
 export interface IReturningSpirit extends IGuid {

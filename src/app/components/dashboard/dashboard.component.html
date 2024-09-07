@@ -4,8 +4,11 @@
   </div>
 </div>
 
+<!-- Search -->
 <div class="mt">
-  <app-search></app-search>
+  <app-card [title]="'Search'">
+    <app-search></app-search>
+  </app-card>
 </div>
 
 <div class="sky-card mt" *ngIf="!season && !eventInstances.length && !ts">

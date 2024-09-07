@@ -48,6 +48,7 @@ import { CurrencyComponent } from './components/currency/currency.component';
 import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
+import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -79,9 +80,9 @@ export const routes: Routes = [
           { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
           { path: 'event/:guid', component: EventComponent },
           { path: 'event-instance/:guid', component: EventInstanceComponent },
-          { path: 'item', component: ItemsComponent, title: title('Items') },
+          { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
-          { path: 'item/inflation', component: ItemInflationComponent, title: title('Item inflation') },
+          { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
           { path: 'item/unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Item unlock calculator') },
           { path: 'item/:guid', component: ItemComponent },
@@ -113,7 +114,8 @@ export const routes: Routes = [
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
-          { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) }
+          { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) },
+          { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) }
         ]
       },
       /* Routes without menu. */

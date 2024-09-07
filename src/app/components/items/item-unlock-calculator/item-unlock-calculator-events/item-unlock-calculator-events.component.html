@@ -1,0 +1,14 @@
+<app-card [title]="'Add event'" [foldable]="true" [folded]="false" (beforeFold)="onBeforeFold($event)">
+  <div class="container">
+    Select an event to quickly add all items from that event to the calculator.
+  </div>
+  <div class="mt sky-flex flex-wrap">
+    @for (event of events; track event.guid) {
+      <button (click)="onEventSelected(event)" container="body" placement="top">
+        <span class="">
+          {{ event.name }}
+        </span>
+      </button>
+    }
+  </div>
+</app-card>

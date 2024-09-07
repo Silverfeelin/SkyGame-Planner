@@ -88,10 +88,10 @@
 
 <ng-template #tNode let-node let-position="position">
   @if (node) {
-    <app-node [node]="node" [action]="nodeAction" [position]="position"
-      [highlight]="highlightItem ? (node.item?.guid === highlightItem || node === hiddenItems[highlightItem]) : undefined"
-      [opaque]="opaqueNodes"
-      [glowType]="nodeAction !== 'unlock' ? 'attention' : 'default'">
+    <app-node [node]="node" [action]="forceNodeAction ?? nodeAction" [position]="position" (nodeClicked)="onNodeClicked($event, node)"
+      [highlight]="highlightItem ? highlightItemMap[node.item?.guid] : undefined"
+      [opaque]="opaqueNodesAll || opaqueNodesMap[node.guid]"
+      [glowType]="(forceNodeAction ?? nodeAction) !== 'unlock' ? 'attention' : 'default'">
     </app-node>
   }
   @if (nodeOverlayTemplate) { <ng-container [ngTemplateOutlet]="nodeOverlayTemplate" [ngTemplateOutletContext]="{ $implicit: node }"></ng-container> }

@@ -195,7 +195,7 @@
     {
       "guid": "CuK1lMQzge",
       "name": "Season of The Little Prince",
-      "shortName": "TLP",
+      "shortName": "The Little Prince",
       "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/10_Little_Prince.png",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/fe73c61a8e/lppjellyskyblogheader.png",
       "year": 2021,
@@ -431,7 +431,10 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer"
-      }
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=fa853354285b407ea23e4eca9fe8b16f"
+      },
     },
     {
       "guid": "1Q1J9Z9Z9Z",
@@ -451,6 +454,9 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Nesting"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=55f7e23cb749444b8fd2b12539c55a37"
       }
     },
     {
@@ -480,6 +486,9 @@
       },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2456bf5feadf489c866e9b1690929531"
       }
     },
     // #endregion

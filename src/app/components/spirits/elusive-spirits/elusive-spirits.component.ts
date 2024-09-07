@@ -6,6 +6,7 @@ import { DataService } from 'src/app/services/data.service';
 import { DateTimePipe } from '../../../pipes/date-time.pipe';
 import { MatIcon } from '@angular/material/icon';
 import { SpiritCardComponent } from '../../spirit-card/spirit-card.component';
+import { RouterLink } from '@angular/router';
 
 interface ILastVisit {
   spirit: ISpirit;
@@ -21,7 +22,7 @@ interface ILastVisit {
     styleUrl: './elusive-spirits.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [SpiritCardComponent, MatIcon, DateTimePipe]
+    imports: [SpiritCardComponent, MatIcon, DateTimePipe, RouterLink]
 })
 export class ElusiveSpiritsComponent {
   spirits!: Array<ISpirit>;

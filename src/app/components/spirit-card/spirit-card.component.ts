@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { ICost } from 'src/app/interfaces/cost.interface';
@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
 import { NgIf } from '@angular/common';
 
-type Section = 'img' | 'overview' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost' | 'content';
+type Section = 'select' | 'img' | 'overview' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost' | 'content';
 export interface SpiritCardOptions {
   show?: Array<Section>;
   homeBackground?: boolean;
@@ -37,6 +37,8 @@ export class SpiritCardComponent implements OnInit, OnChanges {
   @Input() tree?: ISpiritTree;
   @Input() options: SpiritCardOptions = { show: ['img', 'wiki', 'season', 'event', 'realm', 'area'] };
 
+  @Output() readonly spiritSelected = new EventEmitter<ISpirit>();
+
   sections: {[key: string]: number} = {};
   event?: IEvent;
   typeName?: string;
@@ -51,6 +53,10 @@ export class SpiritCardComponent implements OnInit, OnChanges {
     if (changes['spirit']) { this.updateSpirit(); }
     if (changes['options']) { this.updateSections(); }
     if (changes['tree']) { this.updateCosts(); }
+  }
+
+  selectSpirit(): void {
+    this.spiritSelected.emit(this.spirit!);
   }
 
   toggleTsSpoiler(): void {

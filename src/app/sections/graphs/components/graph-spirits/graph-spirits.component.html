@@ -1,0 +1,48 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Graphs - Spirits</h1>
+  </div>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [title]="'Season spirit return time'">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Spirit_Visits'}"></app-wiki-link>
+    <div class="container mt">
+      <p>
+        The below graph shows the days it takes for season spirits to return. Spirits that have visited at least once are shown, in order of season.<br/>
+        The return time is the amount of days between the end of the season and the first visit as a Traveling Spirit or a Returning Spirit.
+      </p>
+    </div>
+    <div class="mt container chart-container">
+      <canvas #chartReturn class="chart" width="2000" height="400"></canvas>
+    </div>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [title]="'Season spirit absence'">
+    <div class="container">
+      <p>
+        The below graph shows the days since each season spirit has last visited. Spirits are shown in order of season.
+        Spirits in orange have not visited since their season departure.
+      </p>
+    </div>
+    <div class="mt container chart-container">
+      <canvas #chartAbsence class="chart" width="2400" height="400"></canvas>
+    </div>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [title]="'Season spirit cost'">
+    <div class="container mt">
+      <p>
+        The below graph shows the cost of each season spirit based on their last visit. Spirits are shown in order of season.
+        The blue bar represents the cost in candles, the red bar represents the cost in hearts.
+      </p>
+    </div>
+    <div class="mt container chart-container">
+      <canvas #chartCost class="chart" width="2000" height="400"></canvas>
+    </div>
+  </app-card>
+</div>

@@ -15,9 +15,9 @@ export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Are
 export interface ISearchOptions {
   /** Only search in these items. */
   items?: Array<ISearchItem<unknown>>;
-  /** Only search  */
+  /** Only search for the given data types. */
   types?: Array<SearchType>;
-  key?: string;
+  /** Maximum results. Defaults to `25`. */
   limit?: number;
 }
 
@@ -31,7 +31,7 @@ export interface ISearchItem<T> {
   name: string;
   type: SearchType;
   data: T;
-  search: string | Fuzzysort.Prepared;
+  search: string | string[] | Fuzzysort.Prepared;
   route?: Array<any>;
   queryParams?: Params;
 
@@ -50,6 +50,10 @@ export class SearchService {
     this._items = this.initializeItems();
   }
 
+  get items(): ReadonlyArray<ISearchItem<unknown>> {
+    return this._items;
+  }
+
   /** Search for anything. Use options to limit results. */
   search(search: string, options: ISearchOptions): Array<ISearchItem<unknown>> {
     if (!search) { return []; }
@@ -62,7 +66,7 @@ export class SearchService {
 
     // Search for string.
     const searchResults = fuzzysort.go(search, items, {
-      key: options?.key ?? 'search',
+      key: 'search',
       limit: options?.limit ?? 25
     });
 
@@ -122,7 +126,6 @@ export class SearchService {
     }
   }
 
-
   private initializeItems(): Array<ISearchItem<unknown>> {
     const items: Array<ISearchItem<unknown>> = [];
     // Add items.
@@ -145,9 +148,10 @@ export class SearchService {
     }));
 
     // Add events
-    items.push(...this._dataService.eventConfig.items.map(event => {
-      return { name: event.name, type: 'Event', data: event, search: event.name } as ISearchItem<IEvent>;
-    }));
+    this._dataService.eventConfig.items.forEach(event => {
+      const names = [...new Set([event.name, ...event.instances?.map(instance => instance.name) || []])];
+      items.push(...names.map(n => ({ name: n, type: 'Event', data: event, search: n } as ISearchItem<IEvent>)));
+    })
 
     // Add realms
     items.push(...this._dataService.realmConfig.items.map(realm => {
