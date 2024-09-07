@@ -37,6 +37,7 @@
               "node_modules/intro.js/minified/introjs.min.css",
               "src/styles/vars.scss",
               "src/styles/styles.less",
+              "src/styles/charts.scss",
               "src/styles/map.less",
               "src/styles/icons.less"
             ],

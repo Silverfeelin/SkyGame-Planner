@@ -3,11 +3,11 @@ import { DataService } from '@app/services/data.service';
 import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DateTime } from 'luxon';
-import { NodeHelper } from '@app/helpers/node-helper';
 import { Chart } from 'chart.js/auto';
-import chartTrendline from 'chartjs-plugin-trendline';
+import { ChartHelper } from '@app/helpers/chart-helper';
 
-Chart.register(chartTrendline);
+ChartHelper.setDefaults();
+ChartHelper.registerTrendline();
 
 interface IChartItem {
   item: IItem,
@@ -56,9 +56,6 @@ export class ItemInflationComponent implements AfterViewInit {
   }
 
   private initChart(): void {
-    Chart.defaults.borderColor = '#666';
-    Chart.defaults.color = '#fff';
-
     this.chart = new Chart(this.chartDiv.nativeElement, {
       type: 'line',
       data: {
