@@ -3,7 +3,7 @@ import { ICalculatorData } from './calculator-data.interface';
 import { IShop } from "./shop.interface";
 import { ISpiritTree } from './spirit-tree.interface';
 import { ISpirit } from "./spirit.interface";
-import { IWiki } from "./wiki.interface";
+import { ICalendarFm, IWiki } from "./wiki.interface";
 
 export interface ISeasonConfig extends IConfig<ISeason> {}
 
@@ -48,7 +48,6 @@ export interface ISeason extends IGuid, IPeriod {
   includedTrees?: Array<ISpiritTree>;
 
   /// Metadata ///
-
-  /** wiki data. */
   _wiki?: IWiki;
+  _calendar?: ICalendarFm;
 }

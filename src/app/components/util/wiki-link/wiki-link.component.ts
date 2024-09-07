@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { IWiki } from 'src/app/interfaces/wiki.interface';
 import { SettingService } from 'src/app/services/setting.service';
 import { MatIcon } from '@angular/material/icon';
-import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-wiki-link',
@@ -10,7 +9,7 @@ import { NgIf } from '@angular/common';
     styleUrls: ['./wiki-link.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, MatIcon]
+    imports: [MatIcon]
 })
 export class WikiLinkComponent {
   @Input() aClass? = 'container d-inline-block';

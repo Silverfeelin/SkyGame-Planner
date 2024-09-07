@@ -59,7 +59,10 @@
           ],
           "spirits": [
             {	"guid": "LgbNikVTN0", "spirit": "9VkjVkgKhb", "tree": "QbHVq43AMl" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=a557e5290af64c10a484e40fdeefd478"
+          },
         },
       ],
       "_wiki": {
@@ -130,7 +133,10 @@
             "Gpcii_q0ie",
             "zZa_567vOp",
             "-gDmtZfZgy"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=cb7e5f5c3a574ed8b8bd0ea971e19eb6"
+          },
         },
       ],
       "_wiki": {
@@ -197,7 +203,10 @@
           "shops": [
             "Qwm9ceRSki",
             "zvuqUyGcUl"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1c69c84ef72f4b2daefc5e932ecddd74"
+          },
         }
       ],
       "_wiki": {
@@ -266,7 +275,10 @@
           "shops": [
             "DLwlNPnR-r",
             "sYWYF2c2AJ"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=304cdc92e5424539aafd55d4d6bb8266"
+          },
         }
       ],
       "_wiki": {
@@ -341,9 +353,15 @@
           "shops": [
             "B80yCK6Rp4",
             "571vNLmi6N"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=ec63b6155c2a447c89487ae0936592ad"
+          },
         }
-      ]
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color"
+      }
     },
     // Days of Music
     {
@@ -436,7 +454,10 @@
           "shops": [
             "p6bDGXvYBq",
             "wsD3OQB-Cp"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=9dbda8384558444db9efe183594a0393"
+          },
         }
       ],
       "_wiki": {
@@ -487,7 +508,10 @@
           ],
           "calculatorData": {
             "dailyCurrencyAmount": 6
-          }
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=691b2383af2840ada919486f8c794876"
+          },
         }
       ],
       "_wiki": {
@@ -899,7 +923,10 @@
           "shops": [
             "6YoHc1liAI",
             "hfXFjKVeYU"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=adc35282be5f41ec881eba6fd7b04161"
+          },
         }
       ],
       "_wiki": {
@@ -931,7 +958,9 @@
               { "guid": "vUL-YAwTUP", "date": "2024-08-18", "endDate": "2024-08-18", "amount": 3 }
             ]
           },
-          "draft": true
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=3b3e45786a8043db84ae25297b7e446d"
+          },
         }
       ],
       "_wiki": {
