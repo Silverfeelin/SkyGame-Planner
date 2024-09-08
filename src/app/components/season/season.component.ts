@@ -43,6 +43,7 @@ export class SeasonComponent implements OnDestroy {
 
   guide?: ISpirit;
   guideTree?: ISpiritTree;
+  guideTreePostSeason?: ISpiritTree;
   spirits: Array<ISpirit> = [];
   spiritTrees: { [guid: string]: ISpiritTree } = {};
   shops: Array<IShop> = [];
@@ -109,6 +110,7 @@ export class SeasonComponent implements OnDestroy {
         case 'Guide':
           this.guide = spirit;
           this.guideTree = spirit.treeRevisions?.findLast<IRevisedSpiritTree>(t => t.revisionType === 'DuringSeason') ?? spirit.tree;
+          this.guideTreePostSeason = spirit.treeRevisions?.findLast<IRevisedSpiritTree>(t => t.revisionType === 'AfterSeason');
           break;
         case 'Season':
           this.spirits.push(spirit);

@@ -1,7 +1,22 @@
+<div class="sky-card">
+  <div class="sky-card-body">
+    <div class="container">
+      Clone a spirit tree:
+      <input #inpCloneTree class="input-guid" placeholder="Tree GUID">
+      <button type="button" (click)="cloneTree()">Clone</button>
+    </div>
+  </div>
+</div>
 
 <div class="grid-tree" [style.grid-template-columns]="'1fr 1fr 1fr'" [style.grid-template-rows]="'repeat(' + treeHeight + ', 1fr)'">
   <ng-container *ngTemplateOutlet="tNode; context: { $implicit: editorNode, x: 1, y: 0 }"></ng-container>
 </div>
+
+@if (generatedTree) {
+  <app-spirit-tree [tree]="generatedTree" [enableControls]="false" [opaqueNodes]="true" [highlightItem]="highlightItem"
+    [forceNodeAction]="'emit'" (nodeClicked)="onTreeNodeClicked($event)">
+  </app-spirit-tree>
+}
 
 <ng-template #tNode let-node let-x="x" let-y="y">
   <div class="grid-tree-cell"
@@ -9,9 +24,9 @@
     [style.grid-row]="treeHeight - y">
     <!-- Add node -->
     <div class="flex flex-justify-center">
-      @if (x === 1) { <button type="button" (click)="nodeAdd(node, 'nw')" [disabled]="!!node.nw"><mat-icon>north_west</mat-icon></button> }
-      <button type="button" (click)="nodeAdd(node, 'n')" [disabled]="!!node.n"><mat-icon>north</mat-icon></button>
-      @if (x === 1) { <button type="button" (click)="nodeAdd(node, 'ne')" [disabled]="!!node.ne"><mat-icon>north_east</mat-icon></button> }
+      @if (x === 1) { <button type="button" (click)="nodeAdd(node, 'nw')"><mat-icon>north_west</mat-icon></button> }
+      <button type="button" (click)="nodeAdd(node, 'n')"><mat-icon>north</mat-icon></button>
+      @if (x === 1) { <button type="button" (click)="nodeAdd(node, 'ne')"><mat-icon>north_east</mat-icon></button> }
       @if (node.prev) { <button type="button" class="button-danger" (click)="nodeRemove(node)"><mat-icon>delete</mat-icon></button> }
     </div>
     <!-- Item -->
@@ -24,7 +39,7 @@
     <!-- Cost -->
     <div>
       Cost:
-      <input class="input-cost" type="text" (change)="nodeCostChanged($event, node)">
+      <input class="input-cost" type="text" [value]="clonedNodeInputValues[node.guid] || ''" (input)="nodeCostChanged($event, node)" (blur)="nodeCostChanged($event, node)">
       @if (node.h) { <mat-icon class="v-middle" svgIcon="heart"></mat-icon> }
       @else if (node.sc) { <mat-icon class="v-middle seasonal" svgIcon="candle"></mat-icon> }
       @else if (node.sh) { <mat-icon class="v-middle seasonal" svgIcon="heart"></mat-icon> }
@@ -48,7 +63,6 @@
 
 <div class="container mt">
   <div class="flex">
-    <button type="button" (click)="submit()">Generate</button>
     @if (generatedTree) {
       <button type="button" (click)="copyToClipboard('tree')">
         Copy Tree

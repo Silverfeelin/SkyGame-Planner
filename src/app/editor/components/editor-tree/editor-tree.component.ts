@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import fuzzysort from 'fuzzysort';
 import { nanoid } from 'nanoid';
@@ -14,6 +14,8 @@ import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { ICost } from '@app/interfaces/cost.interface';
 import { CostHelper } from '@app/helpers/cost-helper';
+import { SpiritComponent } from "../../../components/spirit/spirit.component";
+import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../components/spirit-tree/spirit-tree.component";
 
 interface IEditorSearchItem {
   item: IItem;
@@ -21,6 +23,7 @@ interface IEditorSearchItem {
 }
 
 interface IEditorNode extends ICost {
+  guid: string;
   nw?: IEditorNode;
   n?: IEditorNode;
   ne?: IEditorNode;
@@ -38,13 +41,17 @@ interface IEditorNode extends ICost {
     templateUrl: './editor-tree.component.html',
     styleUrls: ['./editor-tree.component.less'],
     standalone: true,
-    imports: [NgFor, NgIf, NgTemplateOutlet, MatIcon, FormsModule, ItemIconComponent]
+    imports: [NgFor, NgIf, NgTemplateOutlet, MatIcon, FormsModule, ItemIconComponent, SpiritComponent, SpiritTreeComponent]
 })
 export class EditorTreeComponent implements OnInit {
+  @ViewChild('inpCloneTree', { static: true }) inpCloneTree!: ElementRef<HTMLInputElement>;
+
   itemOptions = new Array<IEditorSearchItem>();
 
   editorNode: IEditorNode;
   treeHeight = 1;
+  highlightItem?: string;
+  clonedNodeInputValues: { [guid: string]: string } = {};
 
   generatedTree?: ISpiritTree;
 
@@ -54,7 +61,7 @@ export class EditorTreeComponent implements OnInit {
     private readonly _route: ActivatedRoute
   ) {
 
-    this.editorNode = { x: 1, y: 0 };
+    this.editorNode = { guid: nanoid(10), x: 1, y: 0 };
 
     this.calculateTreeHeight();
 
@@ -70,9 +77,68 @@ export class EditorTreeComponent implements OnInit {
 
   }
 
-  submit(): void {
-    const tree = this.generateTree();
-    this.generatedTree = tree;
+  cloneTree(): void {
+    const guid = this.inpCloneTree.nativeElement.value || '';
+    const tree = this._dataService.guidMap.get(guid) as ISpiritTree;
+    if (!tree || !tree.node) { return alert('Tree not found.'); }
+
+    this.clonedNodeInputValues = {};
+    this.editorNode = { guid: nanoid(10), x: 1, y: 0 };
+    const setEditorNode = (node: IEditorNode, treeNode: INode, prevNode: IEditorNode | undefined) => {
+      if (prevNode) { node.prev = prevNode; }
+      CostHelper.add(node, treeNode);
+      node.itemGuid = treeNode.item?.guid;
+      node.item = treeNode.item;
+      if (treeNode.nw) { node.nw = { guid: nanoid(10), x: node.x - 1, y: node.y + 1 }; setEditorNode(node.nw, treeNode.nw!, node); }
+      if (treeNode.n) { node.n = { guid: nanoid(10), x: node.x, y: node.y + 1 }; setEditorNode(node.n, treeNode.n!, node); }
+      if (treeNode.ne) { node.ne = { guid: nanoid(10), x: node.x + 1, y: node.y + 1 }; setEditorNode(node.ne, treeNode.ne!, node); }
+
+      this.clonedNodeInputValues[node.guid] = node.c ? `${node.c}c` : node.h ? `${node.h}h` : node.sc ? `${node.sc}sc`
+        : node.sh ? `${node.sh}sh` : node.ac ? `${node.ac}ac` : node.ec ? `${node.ec}ec` : '';
+    };
+    setEditorNode(this.editorNode, tree.node, undefined);
+    this.calculateTreeHeight();
+    this.generate();
+  }
+
+  onTreeNodeClicked(event: SpiritTreeNodeClickEvent) {
+    if (!event.node.item) { return; }
+    if (!this.highlightItem) {
+      this.highlightItem = event.node.item.guid;
+      return;
+    }
+
+    if (this.highlightItem !== event.node.item.guid) {
+      this.swapItems(event.node.item.guid, this.highlightItem);
+    }
+    this.highlightItem = undefined;
+  }
+
+  swapItems(itemA: string, itemB: string) {
+    const findItemNode = (itemGuid: string, node: IEditorNode): IEditorNode | undefined => {
+      if (node.itemGuid === itemGuid) { return node; }
+      if (node.nw) { const n = findItemNode(itemGuid, node.nw); if (n) { return n; } }
+      if (node.n) { const n = findItemNode(itemGuid, node.n); if (n) { return n; } }
+      if (node.ne) { const n = findItemNode(itemGuid, node.ne); if (n) { return n; } }
+      return undefined;
+    }
+    const nodeA = findItemNode(itemA, this.editorNode);
+    const nodeB = findItemNode(itemB, this.editorNode);
+    if (!nodeA || !nodeB) { return; }
+
+    const costA = CostHelper.add(CostHelper.create(), nodeA);
+    const costB = CostHelper.add(CostHelper.create(), nodeB);
+
+    CostHelper.clear(nodeA);
+    CostHelper.add(nodeA, costB);
+    CostHelper.clear(nodeB);
+    CostHelper.add(nodeB, costA);
+    nodeA.item = this._dataService.guidMap.get(itemB) as IItem;
+    nodeA.itemGuid = itemB;
+    nodeB.item = this._dataService.guidMap.get(itemA) as IItem
+    nodeB.itemGuid = itemA;
+
+    this.generate();
   }
 
   copyToClipboard(type: string): void {
@@ -92,6 +158,11 @@ export class EditorTreeComponent implements OnInit {
         return this._dataJsonService.nodesToJson(NodeHelper.all(this.generatedTree!.node));
     }
     return undefined;
+  }
+
+  generate(): void {
+    const tree = this.generateTree();
+    this.generatedTree = tree;
   }
 
   generateTree(): ISpiritTree {
@@ -119,7 +190,10 @@ export class EditorTreeComponent implements OnInit {
   }
 
   nodeAdd(node: IEditorNode, direction: 'nw' | 'n' | 'ne'): void {
-    if (node[direction]) { return; }
+    if (node[direction]) {
+      return this.nodeRemove(node[direction]!);
+    }
+
     let [x, y] = [node.x, node.y];
     switch( direction) {
       case 'nw': x--; break;
@@ -139,8 +213,9 @@ export class EditorTreeComponent implements OnInit {
       return;
     }
 
-    node[direction] = { x, y, prev: node };
+    node[direction] = { guid: nanoid(10), x, y, prev: node };
     this.calculateTreeHeight();
+    this.generate();
   }
 
   nodeRemove(node: IEditorNode): void {
@@ -152,6 +227,7 @@ export class EditorTreeComponent implements OnInit {
     if (node.prev.ne === node) { node.prev.ne = undefined; }
 
     this.calculateTreeHeight();
+    this.generate();
   }
 
   nodeGuidChanged(evt: Event, node: IEditorNode): void {
@@ -175,6 +251,7 @@ export class EditorTreeComponent implements OnInit {
 
     node.item = item;
     node.itemGuid = item?.guid;
+    this.generate();
   }
 
   nodeCostChanged(evt: Event, cost: ICost): void {
@@ -185,6 +262,7 @@ export class EditorTreeComponent implements OnInit {
     if (!match) {
       const c = +target.value;
       cost.c = c || 0;
+      this.generate();
       return;
     }
 
@@ -201,6 +279,8 @@ export class EditorTreeComponent implements OnInit {
         case 'ec': cost.ec = value; break;
       }
     }
+
+    this.generate();
   }
 
   calculateTreeHeight(): void {

@@ -81,14 +81,22 @@
   </div>
 </div>
 
-@if (state === 'ended') {
+@if (state === 'ended' && guide && guideTreePostSeason) {
   <div class="mt">
-    <app-card [title]="'Post-season spirit trees'" [foldable]="true" [folded]="true">
+    <app-card [title]="'Post-season guide tree'" [foldable]="true" [folded]="true">
       <div class="container">
-        This section is being worked on!
+        The current spirit tree of the season guide is displayed here. Revisions can be found on the spirit page.
       </div>
-      <!-- <div class="sky-flex scroll-x mt">
-      </div> -->
+      <div class="tree-wrapper mt">
+        <app-spirit-tree [tree]="guideTreePostSeason" [name]="guide!.name" [highlight]="highlightTree === guideTreePostSeason.guid">
+          <!-- Link to spirit -->
+          <div name>
+            <a [routerLink]="['/spirit', guide.guid]" [queryParams]="{ highlightTree: guideTreePostSeason.guid }">
+              {{ guide.name }}
+            </a>
+          </div>
+        </app-spirit-tree>
+      </div>
     </app-card>
   </div>
 }
