@@ -61,14 +61,14 @@
     <div class="mt-half ">
       <div class="item">
         <div class="sky-flex flex-wrap">
-          <div class="btn-unlock d-inline-block" (click)="togglePurchased($event, iap)">
-            <mat-icon class="menu-icon">{{ iap.bought ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          <div class="btn-unlock d-inline-block" [class.btn-unlock-disabled]="!!otherIap" (click)="togglePurchased($event, iap)">
+            <mat-icon class="menu-icon">{{ (otherIap ?? iap).bought ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
             <span class="menu-label">
               Bought
             </span>
           </div>
-          <div class="btn-unlock d-inline-block" (click)="toggleGifted($event, iap)">
-            <mat-icon class="menu-icon">{{ iap.gifted ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          <div class="btn-unlock d-inline-block" [class.btn-unlock-disabled]="!!otherIap" (click)="toggleGifted($event, iap)">
+            <mat-icon class="menu-icon">{{ (otherIap ?? iap).gifted ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
             <span class="menu-label">
               Gifted
             </span>
@@ -80,7 +80,7 @@
     <div class="mt-half item iap-items">
       @for (item of iap.items; track item.guid) {
         <a class="iap-item point d-inline-block p-rel" [routerLink]="['/item', item.guid]">
-          <app-item-icon [item]="item" [subIcons]="['unlock']" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
+          <app-item-icon [item]="item" [iap]="iap" [subIcons]="['unlock']" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
           <ng-template #itemHover>
             @if (item) { <span class="ws-nw">{{item.name}}</span> }
           </ng-template>

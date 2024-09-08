@@ -5,3 +5,9 @@
     color: var(--color-link-hover);
   }
 }
+
+.btn-unlock-disabled {
+  cursor: default;
+  color: var(--color-accent);
+  &:hover { color: var(--color-accent); }
+}
