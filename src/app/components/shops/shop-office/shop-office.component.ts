@@ -10,11 +10,12 @@ import { IShop } from '@app/interfaces/shop.interface';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { IIAP } from '@app/interfaces/iap.interface';
+import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
 
 @Component({
   selector: 'app-shop-office',
   standalone: true,
-  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent],
+  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent, IapCardComponent],
   templateUrl: './shop-office.component.html',
   styleUrl: './shop-office.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -53,7 +53,8 @@ export class SeasonComponent implements OnDestroy {
 
   nodes: Set<INode> = new Set();
 
-  hasSeasonPass = false;
+  hasBoughtSeasonPass = false;
+  hasGiftedSeasonPass = false;
   sc: number = 0;
   scLeft: number = 0;
   sh: number = 0;
@@ -74,7 +75,8 @@ export class SeasonComponent implements OnDestroy {
 
     this._subs.add(this._eventService.itemToggled.subscribe(v => this.onItemChanged()));
     this._subs.add(this._storageService.events.subscribe(() => {
-      this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
+      this.hasGiftedSeasonPass = _storageService.hasGifted(this.season.guid);
+      this.hasBoughtSeasonPass = !this.hasGiftedSeasonPass && this._storageService.hasSeasonPass(this.season.guid);
     }));
   }
 
@@ -104,7 +106,8 @@ export class SeasonComponent implements OnDestroy {
     this.guide = undefined;
     this.spirits = [];
     this.spiritTrees = {};
-    this.hasSeasonPass = this._storageService.hasSeasonPass(guid);
+    this.hasGiftedSeasonPass = this._storageService.hasGifted(guid);
+    this.hasBoughtSeasonPass = !this.hasGiftedSeasonPass && this._storageService.hasSeasonPass(guid);
     this.season?.spirits?.forEach(spirit => {
       switch (spirit.type) {
         case 'Guide':
@@ -142,13 +145,9 @@ export class SeasonComponent implements OnDestroy {
     });
   }
 
-  toggleSeasonPass(): void {
-    this.hasSeasonPass = !this.hasSeasonPass;
-    if (this.hasSeasonPass) {
-      this._storageService.addSeasonPasses(this.season.guid);
-    } else {
-      this._storageService.removeSeasonPasses(this.season.guid);
-    }
+  toggleSeasonPass(gifted: boolean): void {
+    const newValue = gifted ? !this.hasGiftedSeasonPass : !this.hasBoughtSeasonPass;
+    newValue && gifted ? this._storageService.addGifted(this.season.guid) : this._storageService.removeGifted(this.season.guid);
+    newValue ? this._storageService.addSeasonPasses(this.season.guid) : this._storageService.removeSeasonPasses(this.season.guid);
   }
-
 }

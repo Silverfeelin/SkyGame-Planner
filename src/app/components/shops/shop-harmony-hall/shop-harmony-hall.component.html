@@ -45,67 +45,7 @@
       <div class="grid grid-4">
         @for (shop of iapShops; track shop.guid) {
           @for (iap of shop.iaps; track iap.guid) {
-            <div class="sky-card p-rel" [class.highlight]="iap.guid === highlightIap">
-              <div class="sky-card-header">
-                <h3 class="h4 mb-0" [ngbTooltip]="iap.name" container="body">
-                  {{ iap.name }}
-                </h3>
-              </div>
-              <div class="sky-card-body">
-                <!-- Location -->
-                <div class="item">
-                  <mat-icon class="menu-icon">location_on</mat-icon>
-                  <span class="menu-label">
-                    @if (shop.name) { <span>{{ shop.name }}</span> }
-                    @if (!shop.name && shop.type === 'Store') { <span>Premium Candle Store</span> }
-                    @if (!shop.name && shop.type !== 'Store') { <span>{{ shop.name ?? shop.spirit?.name }}</span> }
-                  </span>
-                </div>
-                <!-- Price -->
-                <div class="item mt-half">
-                  <mat-icon class="menu-icon">attach_money</mat-icon>
-                  <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
-                    {{ iap.price }}
-                  </span>
-                </div>
-                <!-- Currencies -->
-                @if (iap.c || iap.sc || iap.sp) {
-                  <div class="item mt-half">
-                    @if (iap.c) {
-                      <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
-                      <span class="menu-label">
-                        {{ iap.c }}
-                      </span>
-                    }
-                    @if (iap.sc) {
-                      <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
-                      <span class="menu-label">
-                        {{ iap.sc }}
-                      </span>
-                    }
-                    @if (iap.sp) {
-                      <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
-                      <span class="menu-label">
-                        {{ iap.sp }}
-                      </span>
-                    }
-                  </div>
-                }
-                <!-- Items -->
-                <div class="item iap-items mt-half">
-                  @for (item of iap.items; track item.guid) {
-                    <div class="iap-item point d-inline-block p-rel" (click)="togglePurchased($event, iap)">
-                      <app-item-icon [item]="item" [subIcons]="['unlock']" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
-                      <ng-template #itemHover>
-                        @if (item) {
-                          <span class="ws-nw">{{item.name}}</span>
-                        }
-                      </ng-template>
-                    </div>
-                  }
-                </div>
-              </div>
-            </div>
+            <app-iap-card [iap]="iap" [highlightIap]="highlightIap"></app-iap-card>
           }
         }
       </div>

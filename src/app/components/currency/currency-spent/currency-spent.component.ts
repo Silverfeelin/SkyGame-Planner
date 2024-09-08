@@ -13,6 +13,8 @@ import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { DecimalPipe, NgTemplateOutlet } from '@angular/common';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { StorageService } from '@app/services/storage.service';
+import { nanoid } from 'nanoid';
 
 interface IInstanceCost {
   cost: ICost;
@@ -51,11 +53,13 @@ export class CurrencySpentComponent {
   eventInstanceUnlockedCost: { [key: string]: IInstanceCost } = {};
 
   constructor(
-    private readonly _dataService: DataService
+    private readonly _dataService: DataService,
+    private readonly _storageService: StorageService
   ) {
     this.checkNodes();
     this.checkItemLists();
     this.checkIaps();
+    this.checkSeasonPasses();
 
     this.seasons = this.seasons.filter(s => !CostHelper.isEmpty(this.seasonUnlockedCost[s.guid].cost) || this.seasonUnlockedCost[s.guid].price);
     this.seasons.sort((a, b) => a.number - b.number);
@@ -112,7 +116,6 @@ export class CurrencySpentComponent {
       if (!iap.bought) { continue; }
       const season = iap.shop?.season;
       const eventInstance = iap.shop?.event;
-      const event = eventInstance?.event;
 
       if (season) {
         this.addSeasonCost(season, { iap });
@@ -123,6 +126,16 @@ export class CurrencySpentComponent {
       }
 
       this.addInstanceCost(this.total, { iap });
+    }
+  }
+
+  private checkSeasonPasses(): void {
+    for (const season of this._dataService.seasonConfig.items) {
+      const isGifted = this._storageService.hasGifted(season.guid);
+      const boughtPass = !isGifted && this._storageService.hasSeasonPass(season.guid);
+      if (boughtPass) {
+        this.addSeasonCost(season, { iap: { guid: nanoid(10), name: 'Season Pass', price: 9.99 } });
+      }
     }
   }
 
