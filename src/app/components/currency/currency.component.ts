@@ -44,6 +44,7 @@ export class CurrencyComponent {
 
     this.ongoingSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
     if (this.ongoingSeason) {
+      this.inpCurrencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
       this.currencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
     }
 
