@@ -47,7 +47,7 @@ export class DataJsonService {
         n: node.n?.guid,
         ne: node.ne?.guid
       };
-    }));
+    })).replace(/([^,}],?)\n\s*/g, '$1 ');
   }
 
   itemsToJson(items: Array<IItem>): string {

@@ -11,6 +11,7 @@ import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DataJsonService } from '@app/services/data-json.service';
 
 @Component({
     selector: 'app-editor-event-instance',
@@ -38,7 +39,8 @@ export class EditorEventInstanceComponent {
   // nodes?: Array<INode>;
 
   constructor(
-    private readonly _dataService: DataService
+    private readonly _dataService: DataService,
+    private readonly _dataJsonService: DataJsonService
   ) {
     this.events = this._dataService.eventConfig.items.filter(e => e.instances?.length);
   }
@@ -253,7 +255,7 @@ export class EditorEventInstanceComponent {
       return jsonNode;
     });
 
-    let json = JSON.stringify(obj, null, 2);
+    let json = this._dataJsonService.nodesToJson(nodes);
     json = JsonHelper.inArray(json);
     json = `${this.region}\n${json}\n${this.endRegion}`;
 
