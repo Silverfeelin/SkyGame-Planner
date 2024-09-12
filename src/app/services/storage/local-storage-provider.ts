@@ -11,6 +11,7 @@ const storageKeys = {
   favourites: 'favourites',
   mapMarkers: 'mapMarkers',
   seasonPasses: 'seasonPasses',
+  gifted: 'gifted',
   keys: 'data'
 };
 
@@ -44,6 +45,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
     const wingedLights = localStorage.getItem(storageKeys.wingedLights) || '';
     const favourites = localStorage.getItem(storageKeys.favourites) || '';
     const seasonPasses = localStorage.getItem(storageKeys.seasonPasses) || '';
+    const gifted = localStorage.getItem(storageKeys.gifted) || '';
     const mapMarkers = localStorage.getItem(storageKeys.mapMarkers) || '';
     const data = JSON.parse(localStorage.getItem(storageKeys.keys) || '{}');
     this.import({
@@ -53,6 +55,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
       wingedLights,
       favourites,
       seasonPasses,
+      gifted,
       mapMarkers,
       keys: data
     });
@@ -68,6 +71,7 @@ export class LocalStorageProvider extends BaseStorageProvider {
     localStorage.setItem(storageKeys.wingedLights, data.wingedLights);
     localStorage.setItem(storageKeys.favourites, data.favourites);
     localStorage.setItem(storageKeys.seasonPasses, data.seasonPasses);
+    localStorage.setItem(storageKeys.gifted, data.gifted);
     localStorage.setItem(storageKeys.mapMarkers, data.mapMarkers);
     localStorage.setItem(storageKeys.keys, JSON.stringify(data.keys));
     this._syncDate = this._lastDate;

@@ -14,13 +14,14 @@ import { ItemListComponent } from '../item-list/item-list/item-list.component';
 import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
 import { CardComponent } from '../layout/card/card.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { IapCardComponent } from '../iap/iap-card/iap-card.component';
 
 @Component({
     selector: 'app-shops',
     templateUrl: './shops.component.html',
     styleUrls: ['./shops.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgFor, NgbTooltip, RouterLink, MatIcon, NgIf, ItemIconComponent]
+    imports: [WikiLinkComponent, CardComponent, IapCardComponent, SpiritTreeComponent, ItemListComponent, NgFor, NgbTooltip, RouterLink, MatIcon, NgIf, ItemIconComponent]
 })
 export class ShopsComponent {
   iapShops: Array<IShop>;

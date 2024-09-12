@@ -54,7 +54,7 @@
   @if (iconsShown['unlock'] && item.unlocked) {
     <mat-icon class="unlock-check"
       [class.unlocked]="item.unlocked || node?.unlocked"
-      [class.self]="(!node && !iap && !listNode) || node?.unlocked || iap?.bought || listNode?.unlocked"
+      [class.self]="(!node && !iap && !listNode) || node?.unlocked || iap?.bought || iap?.gifted || listNode?.unlocked"
       [ngbTooltip]="showTooltips ? 'You own this item.' : undefined" container="body">
       done
     </mat-icon>

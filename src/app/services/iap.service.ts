@@ -20,11 +20,12 @@ export class IAPService {
     private readonly _storageService: StorageService
   ) {}
 
-  togglePurchased(iap: IIAP): void {
+  togglePurchased(iap: IIAP): void { this.toggleIap(iap, false); }
+  toggleGifted(iap: IIAP): void { this.toggleIap(iap, true); }
+  toggleIap(iap: IIAP, asGift: boolean): void {
     if (!iap) { return; }
-
-    const unlock = !iap.bought;
-    unlock ? this.unlockIap(iap) : this.lockIap(iap);
+    const unlock = asGift ? !iap.gifted : !iap.bought;
+    unlock ? this.unlockIap(iap, asGift) : this.lockIap(iap);
 
     // Notify listeners.
     iap.items?.forEach((item) => {
@@ -32,16 +33,11 @@ export class IAPService {
     });
   }
 
-  unlockIap(iap: IIAP): void {
-    // Warn about unlocking an IAP that is already unlocked elsewhere.
-    if (iap.items?.find(item => item.unlocked)) {
-      const confirmed = confirm('This IAP contains an item that is already unlocked. Do you want to continue?');
-      if (!confirmed) { return; }
-    }
-
+  unlockIap(iap: IIAP, asGift: boolean): void {
     // Unlock the IAP and items.
     const guids = [iap.guid];
-    iap.bought = true;
+    iap.bought = !asGift;
+    iap.gifted = asGift;
     iap.items?.forEach(item => {
       item.unlocked = true;
       guids.push(item.guid);
@@ -52,16 +48,18 @@ export class IAPService {
 
     // Save data.
     this._storageService.addUnlocked(...guids);
+    asGift ? this._storageService.addGifted(iap.guid) : this._storageService.removeGifted(iap.guid);
   }
 
   lockIap(iap: IIAP): void {
     // Lock the IAP.
     const guids = [iap.guid];
     iap.bought = false;
+    iap.gifted = false;
 
     // Only remove item if it's not unlocked by another IAP.
     iap.items?.forEach(item => {
-      item.unlocked = !!item.iaps?.find(i => i.bought);
+      item.unlocked = !!item.iaps?.find(i => i.bought || i.gifted);
       if (!item.unlocked) { guids.push(item.guid); }
     });
 
@@ -70,6 +68,7 @@ export class IAPService {
 
     // Save data.
     this._storageService.removeUnlocked(...guids);
+    this._storageService.removeGifted(iap.guid);
   }
 
   modifyCurrencies(iap: IIAP, unlock: boolean): void {

@@ -10,11 +10,12 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IIAP } from '@app/interfaces/iap.interface';
 import { IAPService } from '@app/services/iap.service';
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
+import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
 
 @Component({
   selector: 'app-shop-event-store',
   standalone: true,
-  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent],
+  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent, IapCardComponent],
   templateUrl: './shop-event-store.component.html',
   styleUrl: './shop-event-store.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

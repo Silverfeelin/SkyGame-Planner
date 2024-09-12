@@ -129,7 +129,8 @@ export class MainLayoutComponent implements OnDestroy {
     const trackables: ITrackables = {
       unlocked: this._storageService.getUnlocked(),
       wingedLights: this._storageService.getWingedLights(),
-      favourites: this._storageService.getFavourites()
+      favourites: this._storageService.getFavourites(),
+      gifted: this._storageService.getGifted()
     };
 
     this._dataService.refreshUnlocked(trackables);

@@ -22,20 +22,20 @@ import { NgIf, NgFor } from '@angular/common';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { DateComponent } from '../util/date/date.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { IapCardComponent } from "../iap/iap-card/iap-card.component";
 
 @Component({
     selector: 'app-event-instance',
     templateUrl: './event-instance.component.html',
     styleUrls: ['./event-instance.component.less'],
     standalone: true,
-    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent, CalendarLinkComponent]
+    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent, CalendarLinkComponent, IapCardComponent]
 })
 export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;
   state: 'future' | 'active' | 'ended' | undefined;
   shops?: Array<IShop>;
   iapShops?: Array<IShop>;
-  iapNames: { [iapGuid: string]: string | undefined } = {};
   highlightItem?: string;
   highlightIap?: string;
 
@@ -103,22 +103,6 @@ export class EventInstanceComponent implements OnDestroy {
       const bNew = b.iaps?.filter(iap => !iap.returning).length ?? 0;
       return bNew - aNew;
     });
-
-    // Loop over all IAPs
-    const eventName = this.instance.event?.name;
-    if (eventName) {
-      this.iapShops?.forEach(shop => {
-        shop.iaps?.forEach(iap => {
-          // Remove event name from IAP to save space.
-          let name = iap.name?.replace(`${eventName} `, '');
-          // Keep event name if a single word is left.
-          if (name?.indexOf(' ') === -1) {
-            name = eventName.startsWith('Days of ') ? iap.name?.substring(8) : iap.name;
-          }
-          this.iapNames[iap.guid] = name;
-        });
-      });
-    }
 
     this.calculateCandles();
     this._changeDetectorRef.markForCheck();

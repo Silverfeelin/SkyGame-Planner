@@ -107,7 +107,7 @@ export class NavigationHelper {
     if (!item.iaps?.length) { return undefined; }
 
     // Find shop in priority of unlocked > permanent > last appearance.
-    const iap = item.iaps.find(iap => iap.bought)
+    const iap = item.iaps.find(iap => iap.bought || iap.gifted)
       || item.iaps.find(iap => iap?.shop?.permanent)
       || item.iaps.at(-1);
     const shop = iap?.shop;

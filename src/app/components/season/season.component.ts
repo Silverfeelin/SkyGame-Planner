@@ -27,13 +27,14 @@ import { StorageService } from '@app/services/storage.service';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { IconComponent } from '../icon/icon.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { IapCardComponent } from "../iap/iap-card/iap-card.component";
 
 @Component({
     selector: 'app-season',
     templateUrl: './season.component.html',
     styleUrls: ['./season.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, RouterLink, MatIcon, IconComponent, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent, CalendarLinkComponent]
+    imports: [WikiLinkComponent, RouterLink, MatIcon, IconComponent, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent, CalendarLinkComponent, IapCardComponent]
 })
 export class SeasonComponent implements OnDestroy {
   season!: ISeason;
@@ -53,7 +54,8 @@ export class SeasonComponent implements OnDestroy {
 
   nodes: Set<INode> = new Set();
 
-  hasSeasonPass = false;
+  hasBoughtSeasonPass = false;
+  hasGiftedSeasonPass = false;
   sc: number = 0;
   scLeft: number = 0;
   sh: number = 0;
@@ -74,7 +76,8 @@ export class SeasonComponent implements OnDestroy {
 
     this._subs.add(this._eventService.itemToggled.subscribe(v => this.onItemChanged()));
     this._subs.add(this._storageService.events.subscribe(() => {
-      this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
+      this.hasGiftedSeasonPass = _storageService.hasGifted(this.season.guid);
+      this.hasBoughtSeasonPass = !this.hasGiftedSeasonPass && this._storageService.hasSeasonPass(this.season.guid);
     }));
   }
 
@@ -104,7 +107,8 @@ export class SeasonComponent implements OnDestroy {
     this.guide = undefined;
     this.spirits = [];
     this.spiritTrees = {};
-    this.hasSeasonPass = this._storageService.hasSeasonPass(guid);
+    this.hasGiftedSeasonPass = this._storageService.hasGifted(guid);
+    this.hasBoughtSeasonPass = !this.hasGiftedSeasonPass && this._storageService.hasSeasonPass(guid);
     this.season?.spirits?.forEach(spirit => {
       switch (spirit.type) {
         case 'Guide':
@@ -143,16 +147,9 @@ export class SeasonComponent implements OnDestroy {
     });
   }
 
-  toggleSeasonPass(): void {
-    this.hasSeasonPass = !this.hasSeasonPass;
-    if (this.hasSeasonPass) {
-      this._storageService.addSeasonPasses(this.season.guid);
-    } else {
-      this._storageService.removeSeasonPasses(this.season.guid);
-    }
-  }
-
-  togglePurchased(event: MouseEvent, iap: IIAP): void {
-    this._iapService.togglePurchased(iap);
+  toggleSeasonPass(gifted: boolean): void {
+    const newValue = gifted ? !this.hasGiftedSeasonPass : !this.hasBoughtSeasonPass;
+    newValue && gifted ? this._storageService.addGifted(this.season.guid) : this._storageService.removeGifted(this.season.guid);
+    newValue ? this._storageService.addSeasonPasses(this.season.guid) : this._storageService.removeSeasonPasses(this.season.guid);
   }
 }

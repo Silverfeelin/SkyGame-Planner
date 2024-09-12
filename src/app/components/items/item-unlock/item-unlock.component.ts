@@ -101,7 +101,7 @@ export class ItemUnlockComponent {
   }
 
   private unlockIAP(iap: IIAP): void {
-    if (iap.bought) { return; }
+    if (iap.bought || iap.gifted) { return; }
 
     // Unlock IAP.
     iap.bought = true;

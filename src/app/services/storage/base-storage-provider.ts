@@ -16,6 +16,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
   _favourites = new Set<string>();
   _mapMarkers = new Set<string>();
   _seasonPasses = new Set<string>();
+  _gifted = new Set<string>();
   _keys: { [key: string]: unknown } = {};
 
   events = new Subject<IStorageEvent>();
@@ -38,6 +39,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
     this._wingedLights = new Set(data.wingedLights?.length ? data.wingedLights.split(',') : []);
     this._favourites = new Set(data.favourites?.length ? data.favourites.split(',') : []);
     this._seasonPasses = new Set(data.seasonPasses?.length ? data.seasonPasses.split(',') : []);
+    this._gifted = new Set(data.gifted?.length ? data.gifted.split(',') : []);
     this._mapMarkers = new Set(data.mapMarkers?.length ? data.mapMarkers.split(',') : []);
     this._keys = data.keys || {};
   }
@@ -50,6 +52,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
       wingedLights: [...this.getWingedLights()].join(','),
       favourites: [...this.getFavourites()].join(','),
       seasonPasses: [...this.getSeasonPasses()].join(','),
+      gifted: [...this.getGifted()].join(','),
       mapMarkers: [...this.getMapMarkers()].join(','),
       keys: this._keys
     };
@@ -171,6 +174,30 @@ export abstract class BaseStorageProvider implements IStorageProvider {
 
   getMapMarkers(): ReadonlySet<string> {
     return this._mapMarkers;
+  }
+
+  getGifted(): ReadonlySet<string> {
+    return this._gifted;
+  }
+
+  addGifted(...guids: Array<string>): void {
+    for (const guid of guids) {
+      this._gifted.add(guid);
+    }
+    this._lastDate = DateTime.now();
+    this.debounceSave();
+  }
+
+  removeGifted(...guids: Array<string>): void {
+    for (const guid of guids) {
+      this._gifted.delete(guid);
+    }
+    this._lastDate = DateTime.now();
+    this.debounceSave();
+  }
+
+  hasGifted(guid: string): boolean {
+    return this._gifted.has(guid);
   }
 
   addMapMarkers(...guids: Array<string>): void {

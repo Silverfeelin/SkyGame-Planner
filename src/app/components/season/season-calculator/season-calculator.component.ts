@@ -42,6 +42,7 @@ export class SeasonCalculatorComponent implements OnInit {
   candleCount = 0;
   includesToday = true;
   hasSeasonPass = false;
+  hasSeasonPassGifted = false;
   wantNodes: { [guid: string]: INode } = {};
   hasNodes = false;
   hasSkippedNode = false;
@@ -65,6 +66,7 @@ export class SeasonCalculatorComponent implements OnInit {
 
     this.season = season!;
     this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
+    this.hasSeasonPassGifted = this._storageService.hasGifted(this.season.guid);
     this.calculatorData = this.season.calculatorData;
 
     // Load timed currencies
@@ -193,8 +195,12 @@ export class SeasonCalculatorComponent implements OnInit {
     this.hasSeasonPass = !this.hasSeasonPass;
     if (this.hasSeasonPass) {
       this._storageService.addSeasonPasses(this.season.guid);
+      if (this.hasSeasonPassGifted) {
+        this._storageService.addGifted(this.season.guid);
+      }
     } else {
       this._storageService.removeSeasonPasses(this.season.guid);
+      this._storageService.removeGifted(this.season.guid);
     }
 
     this.calculate();

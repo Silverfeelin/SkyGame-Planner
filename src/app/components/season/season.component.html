@@ -5,7 +5,7 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <!-- Wiki -->
-      <app-wiki-link [wiki]="season._wiki" [aClass]="'container'"></app-wiki-link>
+      <app-wiki-link [wiki]="season._wiki" [aClass]="'container' + (!season._calendar ? ' colspan-2' : '')"></app-wiki-link>
       <!-- Calendar -->
       <app-calendar-link [cal]="season._calendar" [aClass]="'container'"></app-calendar-link>
       <!-- Date -->
@@ -55,11 +55,21 @@
         </span>
       </a>
       <!-- Season Pass -->
-      <div (click)="toggleSeasonPass()" class="container action colspan-2" [class.active]="hasSeasonPass">
-        <mat-icon class="menu-icon">{{hasSeasonPass ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-        <span class="menu-label">
-          I have the Season Pass
-        </span>
+      <div  class="container colspan-2">
+        <div class="sky-flex flex-wrap">
+          <div class="btn-unlock action d-inline-block" (click)="toggleSeasonPass(false)">
+            <mat-icon class="menu-icon">{{ hasBoughtSeasonPass ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            <span class="menu-label">
+              Have bought Season Pass
+            </span>
+          </div>
+          <div class="btn-unlock action d-inline-block" (click)="toggleSeasonPass(true)">
+            <mat-icon class="menu-icon">{{ hasGiftedSeasonPass ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            <span class="menu-label">
+              Have gifted Season Pass
+            </span>
+          </div>
+        </div>
       </div>
       <!-- Calculator -->
       @if (state === 'active' || state === 'future') {
@@ -185,73 +195,7 @@
         <!-- Render IAPs in order of sorted shops. -->
         @for (shop of iapShops; track shop.guid) {
           @for (iap of shop.iaps; track iap.guid) {
-            <div class="sky-card p-rel" [class.highlight]="iap.guid === highlightIap">
-              <div class="sky-card-header">
-                <h3 class="h4" [ngbTooltip]="iap.name" container="body">
-                  {{ iap.name }}
-                </h3>
-              </div>
-              <div class="sky-card-body">
-                <!-- Returning -->
-                <div class="item">
-                  <mat-icon class="menu-icon">{{ iap.returning ? 'undo' : 'grade' }}</mat-icon>
-                  <span class="menu-label">
-                    <span *ngIf="iap.returning" class="c-partial">Returning IAP</span>
-                    <span *ngIf="!iap.returning" class="c-full">New  IAP</span>
-                  </span>
-                </div>
-                <!-- Location -->
-                <div class="mt-half item">
-                  <mat-icon class="menu-icon">location_on</mat-icon>
-                  <span class="menu-label">
-                    <span *ngIf="shop.name">{{ shop.name }}</span>
-                    <span *ngIf="!shop.name && shop.type === 'Store'">Premium Candle Store</span>
-                    <span *ngIf="!shop.name && shop.type !== 'Store'">{{ shop.name ?? shop.spirit?.name }}</span>
-                  </span>
-                </div>
-                <!-- Price -->
-                <div class="mt-half item">
-                  <mat-icon class="menu-icon">attach_money</mat-icon>
-                  <span class="menu-label" [ngbTooltip]="'Price of the IAP in USD.'" container="body">
-                    {{ iap.price }}
-                  </span>
-                </div>
-                <!-- Currencies -->
-                @if (iap.c || iap.sc || iap.sp) {
-                  <div class="mt-half item">
-                    @if (iap.c) {
-                      <mat-icon class="menu-icon" svgIcon="candle" [ngbTooltip]="'Regular candles'" container="body" placement="right"></mat-icon>
-                      <span class="menu-label">
-                        {{ iap.c }}
-                      </span>
-                    }
-                    @if (iap.sc) {
-                      <mat-icon class="menu-icon" svgIcon="season-candle" [ngbTooltip]="'Season candles'" container="body" placement="right"></mat-icon>
-                      <span class="menu-label">
-                        {{ iap.sc }}
-                      </span>
-                    }
-                    @if (iap.sp) {
-                      <mat-icon class="menu-icon seasonal" svgIcon="gift" [ngbTooltip]="'Gift Season Pass'" container="body" placement="right"></mat-icon>
-                      <span class="menu-label">
-                        {{ iap.sp }}
-                      </span>
-                    }
-                  </div>
-                }
-                <!-- Items -->
-                <div class="mt-half item iap-items">
-                  <div class="iap-item point d-inline-block p-rel" *ngFor="let item of iap.items" (click)="togglePurchased($event, iap)">
-                    <app-item-icon [item]="item" [subIcons]="['unlock']" [ngbTooltip]="itemHover" placement="bottom" container="body"></app-item-icon>
-                    <ng-template #itemHover>
-                      <ng-container *ngIf="item">
-                        <span class="ws-nw">{{item.name}}</span>
-                      </ng-container>
-                    </ng-template>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <app-iap-card [iap]="iap" [highlightIap]="highlightIap"></app-iap-card>
           }
         }
       </div>

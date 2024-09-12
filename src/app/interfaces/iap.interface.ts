@@ -27,4 +27,5 @@ export interface IIAP extends IGuid {
   /// Progress ///
 
   bought?: boolean;
+  gifted?: boolean;
 }

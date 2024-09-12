@@ -12,11 +12,12 @@ import { IAPService } from '@app/services/iap.service';
 import { IIAP } from '@app/interfaces/iap.interface';
 import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { SpiritTreeComponent } from "../../spirit-tree/spirit-tree.component";
+import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
 
 @Component({
   selector: 'app-shop-harmony-hall',
   standalone: true,
-  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent, SpiritTreeComponent],
+  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent, SpiritTreeComponent, IapCardComponent],
   templateUrl: './shop-harmony-hall.component.html',
   styleUrl: './shop-harmony-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

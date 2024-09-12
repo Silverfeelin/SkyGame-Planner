@@ -26,6 +26,7 @@ export interface IStorageExport {
   wingedLights: string;
   favourites: string;
   seasonPasses: string;
+  gifted: string;
   mapMarkers: string;
   keys: { [key: string]: unknown };
 }
@@ -73,6 +74,11 @@ export interface IStorageProvider {
   addSeasonPasses(...guids: Array<string>): void;
   removeSeasonPasses(...guids: Array<string>): void;
   hasSeasonPass(guid: string): boolean;
+
+  getGifted(): ReadonlySet<string>;
+  addGifted(...guids: Array<string>): void;
+  removeGifted(...guids: Array<string>): void;
+  hasGifted(guid: string): boolean;
 
   getMapMarkers(): ReadonlySet<string>;
   addMapMarkers(...guids: Array<string>): void;
