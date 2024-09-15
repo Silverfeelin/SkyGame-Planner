@@ -1928,6 +1928,12 @@
       "type": "Event",
       "name": "Days of Sunlight Guide"
     },
+    // Days of Moonlight
+    {
+      "guid": "tXkUX6GU6W",
+      "type": "Event",
+      "name": "Days of Moonlight Guide"
+    },
     // Days of Style
     {
       "guid": "F6BUqVCHvp",
