@@ -58,6 +58,7 @@ export class CurrencyComponent {
       this.ongoingEventInstances.push(instance);
       ongoingEventGuids.add(instance.guid);
 
+      this.inpCurrencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
       this.currencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
     }
 
