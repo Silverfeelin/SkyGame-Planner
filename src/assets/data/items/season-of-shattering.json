@@ -442,5 +442,61 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png",
     "group": "SeasonPass"
-  }
+  },
+  {
+    "id": 2310,
+    "guid": "BmNuMVZJhN",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2311,
+    "guid": "sAcS7GB8UW",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2312,
+    "guid": "BrgEqiRuYr",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2313,
+    "guid": "g_wBZyqsfa",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2314,
+    "guid": "tkNZu5rF8c",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2315,
+    "guid": "y6h9HNiRKO",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2316,
+    "guid": "D4Bynoi3nA",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2317,
+    "guid": "ybtNFQOO7T",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
 ]

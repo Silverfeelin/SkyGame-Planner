@@ -3002,7 +3002,7 @@
   { "guid": "_tIuNHp9k9", "item": "vsbQqT8eYs", "sc": 3 },
   // #endregion
   // #region Shattering
-  // Ancient Light (Jellyfish)
+  // #region Ancient Light (Jellyfish)
   { "guid": "bfQU2rdu6e", "item": "JmM2DNyEcO", "sc": 35, "nw": "PyXdyfe3Ra", "n": "dLfCqheYu4" },
   { "guid": "PyXdyfe3Ra", "item": "M0Y-0b8NQT" },
   { "guid": "dLfCqheYu4", "item": "iDK7eG_9q0", "sc": 16, "nw": "ry_KD6_cuK", "n": "HjvZE4skwG" },
@@ -3010,7 +3010,17 @@
   { "guid": "HjvZE4skwG", "item": "9i_q3w0Ar0", "sc": 42, "nw": "iW1zjc_PAJ", "n": "fhtWlAePio" },
   { "guid": "iW1zjc_PAJ", "item": "WFZROEmMhb" },
   { "guid": "fhtWlAePio", "item": "XUKjAL6neK", "sc": 3 },
-  // Ancient Light (Manta)
+  // RS 6
+  { "guid": "fgj2zBqhX3", "item": "M0Y-0b8NQT", "c": 5, "nw": "OU3A1U_pK9", "n": "3z58ttgTDT", "ne": "cuS3mniuiT" },
+  { "guid": "OU3A1U_pK9", "item": "JmM2DNyEcO", "c": 45 },
+  { "guid": "cuS3mniuiT", "item": "D4Bynoi3nA", "c": 3 },
+  { "guid": "3z58ttgTDT", "item": "iDK7eG_9q0", "c": 5, "n": "pbNBzlyMzS" },
+  { "guid": "pbNBzlyMzS", "item": "ybtNFQOO7T", "ac": 2, "n": "o-vsRXFCXw" },
+  { "guid": "o-vsRXFCXw", "item": "WFZROEmMhb", "c": 5, "nw": "ygrTEPiRQo", "n": "TZfoKoRTkG" },
+  { "guid": "ygrTEPiRQo", "item": "yz2xNFAX1w", "c": 50 },
+  { "guid": "TZfoKoRTkG", "item": "9i_q3w0Ar0", "c": 80 },
+  // #endregion
+  // #region Ancient Light (Manta)
   { "guid": "ijzEaeq_aP", "item": "SL_uFHTqjm", "sc": 27, "nw": "UEoyGYVp3u", "n": "rljx7zmtqL" },
   { "guid": "UEoyGYVp3u", "item": "J-bIxrJr0p" },
   { "guid": "rljx7zmtqL", "item": "Gc--rP-8DN", "sc": 16, "nw": "Zrfg_U-uim", "n": "iDIPHnOKyt" },
@@ -3020,7 +3030,18 @@
   { "guid": "sATY30_uMm", "item": "fI3hMgcig3", "sc": 16, "nw": "G7S-UI7qkn", "n": "AUEThp1gN7" },
   { "guid": "G7S-UI7qkn", "item": "AIQsgTditY" },
   { "guid": "AUEThp1gN7", "item": "vy75RHL_2w", "sc": 3 },
-  // Ancient Darkness (Plant)
+  // RS 6
+  { "guid": "DEZVlZ550T", "item": "J-bIxrJr0p", "c": 5, "nw": "Vzn43X8E11", "n": "8fjZBEmCoK", "ne": "g1_L5w2-gp" },
+  { "guid": "Vzn43X8E11", "item": "SL_uFHTqjm", "c": 15 },
+  { "guid": "g1_L5w2-gp", "item": "tkNZu5rF8c", "c": 3 },
+  { "guid": "8fjZBEmCoK", "item": "Gc--rP-8DN", "c": 5, "nw": "G8G2RostCx", "n": "NmiZLLUzip" },
+  { "guid": "G8G2RostCx", "item": "nhgIi8TLn0", "c": 50 },
+  { "guid": "NmiZLLUzip", "item": "y6h9HNiRKO", "ac": 2, "n": "0FHMjktRfx" },
+  { "guid": "0FHMjktRfx", "item": "ghtp-3LOnd", "c": 5, "nw": "9m4-9EZzAw", "n": "aX6siP37qj" },
+  { "guid": "9m4-9EZzAw", "item": "AIQsgTditY", "c": 75 },
+  { "guid": "aX6siP37qj", "item": "SH89J0uzGJ", "c": 80 },
+  // #endregion
+  // #region Ancient Darkness (Plant)
   { "guid": "cJ_Vhjb_UA", "item": "gn5YaEC0t8", "sc": 27, "nw": "Rvhmo2JoPp", "n": "i-3OfBlkjd" },
   { "guid": "Rvhmo2JoPp", "item": "CDhsAxgt-H" },
   { "guid": "i-3OfBlkjd", "item": "jH3G2RBNLL", "sc": 16, "nw": "GTQ8U38DLU", "n": "GMhPqXujYF" },
@@ -3030,7 +3051,18 @@
   { "guid": "TUR2pfm2R6", "item": "k9_rkkpAx2", "sc": 16, "nw": "1AT8ctAc1i", "n": "v-D5rW5MjK" },
   { "guid": "1AT8ctAc1i", "item": "lNfpmsYUYk" },
   { "guid": "v-D5rW5MjK", "item": "U2qFIy_QVc", "sc": 3 },
-  // Ancient Darkness (Dragon)
+  // RS 6
+  { "guid": "NGIqIDi28X", "item": "CDhsAxgt-H", "c": 5, "nw": "22CelRcUbU", "n": "0WiLY1WiLE", "ne": "WsQ8EtGEsc" },
+  { "guid": "22CelRcUbU", "item": "ORKBuwdSG2", "c": 15 },
+  { "guid": "WsQ8EtGEsc", "item": "BrgEqiRuYr", "c": 3 },
+  { "guid": "0WiLY1WiLE", "item": "jH3G2RBNLL", "c": 5, "nw": "db2Hz8J0M4", "n": "wGQAMEFfoN" },
+  { "guid": "db2Hz8J0M4", "item": "gn5YaEC0t8", "c": 45 },
+  { "guid": "wGQAMEFfoN", "item": "g_wBZyqsfa", "ac": 2, "n": "btu9e02c4N" },
+  { "guid": "btu9e02c4N", "item": "ZZIZoAueSW", "c": 5, "nw": "bgNVUVL8RT", "n": "QKJ2UH_6V_" },
+  { "guid": "bgNVUVL8RT", "item": "Vt42pGqgXc", "c": 50 },
+  { "guid": "QKJ2UH_6V_", "item": "lNfpmsYUYk", "c": 80 },
+  // #endregion
+  // #region Ancient Darkness (Dragon)
   { "guid": "7fR7V84jZg", "item": "w2bnlVRUvy", "sc": 35, "nw": "Ilz7MjPP_T", "n": "NhAaEOhWoi" },
   { "guid": "Ilz7MjPP_T", "item": "Q0WsJq5xHA" },
   { "guid": "NhAaEOhWoi", "item": "_iaKoASnNG", "sc": 16, "nw": "d4wq6znyN1", "n": "t0VcOgDvGY" },
@@ -3038,6 +3070,15 @@
   { "guid": "t0VcOgDvGY", "item": "TsL-GHL_RI", "sc": 42, "nw": "qr9n0vdNBs", "n": "jq_UmSO1aq" },
   { "guid": "qr9n0vdNBs", "item": "mecgn4HFLj" },
   { "guid": "jq_UmSO1aq", "item": "QPNu48eKOZ", "sc": 3 },
+  // RS 6
+  { "guid": "HNqkfj3e4S", "item": "Q0WsJq5xHA", "c": 5, "nw": "UESz19bsxr", "n": "1AbVGzXfyz", "ne": "Xmh6biu5G_" },
+  { "guid": "UESz19bsxr", "item": "w2bnlVRUvy", "c": 70 },
+  { "guid": "Xmh6biu5G_", "item": "BmNuMVZJhN", "c": 3 },
+  { "guid": "1AbVGzXfyz", "item": "sAcS7GB8UW", "ac": 2, "n": "s7R9eCnP_K" },
+  { "guid": "s7R9eCnP_K", "item": "_iaKoASnNG", "c": 5, "nw": "FIGh_Zu_Wx", "n": "IZbz41wYSg" },
+  { "guid": "FIGh_Zu_Wx", "item": "TsL-GHL_RI", "c": 70 },
+  { "guid": "IZbz41wYSg", "item": "yonX7TEJZQ", "c": 50 },
+  // #endregion
   // #endregion
   // #region AURORA
   // Running Wayfarer
