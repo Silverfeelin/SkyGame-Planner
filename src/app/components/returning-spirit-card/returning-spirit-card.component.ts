@@ -46,7 +46,7 @@ export class ReturningSpiritCardComponent implements OnInit, OnChanges {
 
   private updateRs(): void {
     this.updateCosts();
-    this.imgUrls = this.return?.spirits.filter(s => s.spirit?.imageUrl).map(s => s.spirit!.imageUrl!) || [];
+    this.imgUrls = this.return?.imageUrl ? [this.return.imageUrl] : this.return?.spirits.filter(s => s.spirit?.imageUrl).map(s => s.spirit!.imageUrl!) || [];
   }
 
   private updateSections(): void {

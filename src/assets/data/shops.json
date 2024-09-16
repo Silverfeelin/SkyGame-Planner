@@ -972,6 +972,16 @@
       ]
     },
     // #endregion
+    // #region Days of Moonlight (2024)
+    {
+      "guid": "EFRo-sMbYE",
+      "type": "Store",
+      "iaps": [
+        "0PaBo6qDUQ",
+        "1ikPVHmcek"
+      ]
+    },
+    // #endregion
     // #region AURORA Encore Concerts
     {
       "guid": "wX_deEZTy9",

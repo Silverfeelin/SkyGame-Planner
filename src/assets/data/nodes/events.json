@@ -1908,6 +1908,11 @@
     "c": 110
   },
   // #endregion
+  // #region Days of Moonlight (2024)
+  { "guid": "y1mrONbyUB", "item": "r1m91XOLgd", "c": 5, "nw": "I_tLpZs8XA", "n": "zFJoiRuNsZ" },
+  { "guid": "I_tLpZs8XA", "item": "vx4vxVJ0L1", "ec": 32 },
+  { "guid": "zFJoiRuNsZ", "item": "A4CTK7T9ea", "ec": 17 },
+  // #endregion
   // #region Harmony Hall Grand Opening (2022)
   {
     "guid": "WoT0pqpHnJ",

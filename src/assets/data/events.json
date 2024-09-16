@@ -518,6 +518,37 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight"
       }
     },
+    // #region Days of Moonlight
+    {
+      "guid": "_wbLJNhV5H",
+      "name": "Days of Moonlight",
+      "shortName": "Moonlight",
+      "recurring": true,
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/7795126c4e/moonly24tree2kids.jpg",
+      "instances": [
+        {
+          "guid": "Fzgs71vx4q",
+          "date": "2024-09-16",
+          "endDate": "2024-09-29",
+          "spirits": [
+            {	"guid": "SXFhpDBJAd", "spirit": "tXkUX6GU6W", "tree": "i_k3DZGBKo" },
+          ],
+          "shops": [
+            "EFRo-sMbYE"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=9d3d869c42c748cca47139642c52d4c6"
+          }
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight"
+      }
+    },
+    // #endregion
     // Lazy Days
     {
       "guid": "eVaYOCFqcC",

@@ -882,7 +882,7 @@ export class ClosetComponent implements OnDestroy {
     ctx.font = '12px sans-serif';
     ctx.textAlign = 'right';
 
-    let l1 = '© Sky: Children of the Light';
+    let l1 = '© Sky Children of the Light';
     if (this.bgAttribution) { l1 = `${this.bgAttribution} | ${l1}`; }
     ctx.fillText(l1, canvas.width - 8, 0 + 15);
 

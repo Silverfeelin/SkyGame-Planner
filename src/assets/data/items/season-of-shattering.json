@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 95
+    "order": 96
   },
   {
     "id": 532,
@@ -30,7 +30,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 706
+    "order": 711
   },
   {
     "id": 533,
@@ -43,7 +43,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 703
+    "order": 708
   },
   {
     "id": 534,
@@ -146,7 +146,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
     },
-    "order": 345
+    "order": 347
   },
   {
     "id": 1471,
@@ -173,7 +173,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory"
     },
-    "order": 404,
+    "order": 407,
     "group": "SeasonPass"
   },
   {
@@ -186,7 +186,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
     },
-    "order": 704
+    "order": 709
   },
   {
     "id": 1475,
@@ -238,7 +238,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
     },
-    "order": 344,
+    "order": 346,
     "group": "SeasonPass"
   },
   {
@@ -251,7 +251,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
     },
-    "order": 705
+    "order": 710
   },
   {
     "id": 1482,
@@ -299,7 +299,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory"
     },
-    "order": 403
+    "order": 406
   },
   {
     "id": 1487,
@@ -326,7 +326,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Mask"
     },
-    "order": 178,
+    "order": 179,
     "group": "SeasonPass"
   },
   {
@@ -363,7 +363,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Cape"
     },
-    "order": 702,
+    "order": 707,
     "group": "SeasonPass"
   },
   {
@@ -384,7 +384,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory"
     },
-    "order": 107
+    "order": 108
   },
   {
     "id": 1496,
@@ -412,7 +412,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Prop"
     },
-    "order": 467,
+    "order": 471,
     "group": "SeasonPass"
   },
   {
@@ -425,7 +425,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair"
     },
-    "order": 343
+    "order": 345
   },
   {
     "id": 1500,
@@ -442,5 +442,61 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/SOShattering-Seasonal-heart-Morybel-0146.png",
     "group": "SeasonPass"
-  }
+  },
+  {
+    "id": 2310,
+    "guid": "BmNuMVZJhN",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2311,
+    "guid": "sAcS7GB8UW",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2312,
+    "guid": "BrgEqiRuYr",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2313,
+    "guid": "g_wBZyqsfa",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2314,
+    "guid": "tkNZu5rF8c",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2315,
+    "guid": "y6h9HNiRKO",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2316,
+    "guid": "D4Bynoi3nA",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2317,
+    "guid": "ybtNFQOO7T",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
 ]
