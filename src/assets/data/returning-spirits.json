@@ -90,7 +90,27 @@
       },
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=e2ee002d3c2d43c5974b4421c41592b4"
+      }
+    },
+    {
+      "guid": "rl5AKvlsER",
+      "name": "Special Visit #6",
+      "area": "JdoOxvcKlP",
+      "date": { "day": 16, "month": 9, "year": 2024 },
+      "endDate": { "day": 29, "month": 9, "year": 2024 },
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Shattering-Guide-The-Void-of-Shattering.png",
+      "spirits": [
+        { "guid": "w2BhPQE_d-", "spirit": "KqGJfPvqrM", "tree": "UJAYu7Uazn" },
+        { "guid": "rKWoWLN7vd", "spirit": "di5Qar2yOI", "tree": "UJAYu7Uazn" },
+        { "guid": "QzMXr7nd0Y", "spirit": "3rebltHxWX", "tree": "UJAYu7Uazn" },
+        { "guid": "Nye5KSAude", "spirit": "V7PbSxO67Q", "tree": "UJAYu7Uazn" }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#August_16,_2024"
       },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=998fff7ecafb443c8e358eac422f0a4d"
+      }
     }
   ]
 }
