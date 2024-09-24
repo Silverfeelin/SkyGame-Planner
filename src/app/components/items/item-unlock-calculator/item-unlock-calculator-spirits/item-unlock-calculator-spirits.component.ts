@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { CardComponent } from "../../../layout/card/card.component";
+import { CardComponent, CardFoldEvent } from "../../../layout/card/card.component";
 import { DataService } from '@app/services/data.service';
 import { ISearchItem, SearchService } from '@app/services/search.service';
 import { MatIcon } from '@angular/material/icon';
 import { ISpirit } from '@app/interfaces/spirit.interface';
 import { SpiritCardComponent } from "../../../spirit-card/spirit-card.component";
-import { ISeason } from '@app/interfaces/season.interface';
 
 @Component({
   selector: 'app-item-unlock-calculator-spirits',
@@ -29,8 +28,8 @@ export class ItemUnlockCalculatorSpiritsComponent {
     private readonly _searchService: SearchService
   ) {}
 
-  onBeforeFold(fold: boolean): void {
-    if (!fold) { return; }
+  onBeforeFold(evt: CardFoldEvent): void {
+    if (!evt.fold) { return; }
     this.closed.emit();
   }
 

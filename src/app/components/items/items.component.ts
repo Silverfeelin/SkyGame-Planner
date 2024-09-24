@@ -21,7 +21,7 @@ import { Maybe } from '@app/types/maybe';
 import { ItemTypePipe } from "../../pipes/item-type.pipe";
 import { CostHelper } from '@app/helpers/cost-helper';
 import { ICost } from '@app/interfaces/cost.interface';
-import { CardComponent } from "../layout/card/card.component";
+import { CardComponent, CardFoldEvent } from "../layout/card/card.component";
 
 export type ItemAction = 'navigate' | 'emit';
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -69,6 +69,7 @@ export class ItemsComponent {
   @Input() highlightItem?: IItem;
   @Input() action: ItemAction = 'navigate';
   @Input() foldable = false;
+  @Input() maxHeight: string | undefined;
 
   @Output() readonly onItemClicked = new EventEmitter<ItemClickEvent>();
   @Output() readonly onItemsChanged = new EventEmitter<Array<IItem>>();
@@ -145,8 +146,8 @@ export class ItemsComponent {
       this.onItemClicked.emit({ event, item });
   }
 
-  beforeFold(folded: boolean): void {
-    this.isFolded = folded;
+  beforeFold(evt: CardFoldEvent): void {
+    this.isFolded = evt.fold;
   }
 
   // #region Toggle filters

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { IconComponent } from '@app/components/icon/icon.component';
-import { CardComponent } from '@app/components/layout/card/card.component';
+import { CardComponent, CardFoldEvent } from '@app/components/layout/card/card.component';
 import { SeasonCardComponent } from '@app/components/season-card/season-card.component';
 import { ISeason } from '@app/interfaces/season.interface';
 import { DataService } from '@app/services/data.service';
@@ -27,8 +27,8 @@ export class ItemUnlockCalculatorSeasonsComponent {
     this.seasons = this._dataService.seasonConfig.items;
   }
 
-  onBeforeFold(fold: boolean): void {
-    if (!fold) { return; }
+  onBeforeFold(evt: CardFoldEvent): void {
+    if (!evt.fold) { return; }
     this.closed.emit();
   }
 

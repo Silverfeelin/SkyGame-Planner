@@ -162,7 +162,7 @@
         </div>
       </div>
     }
-    <div class="sky-flex flex-wrap">
+    <div class="sky-flex flex-wrap" [style.max-height]="maxHeight" [style.overflow-y]="maxHeight ? 'auto' : undefined">
       @if (showFilters && !unfilteredItemCount) {
         <div class="container">
           No items match the selected filters.

@@ -49,6 +49,7 @@ import { CurrencySpentComponent } from './components/currency/currency-spent/cur
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
 import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
+import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -81,6 +82,7 @@ export const routes: Routes = [
           { path: 'event/:guid', component: EventComponent },
           { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
+          { path: 'item/collection', component: ItemCollectionComponent, title: title('Item collections') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
