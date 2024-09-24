@@ -43,7 +43,15 @@
       <ng-container *ngTemplateOutlet="tSelection; context: { $implicit: addItems, removable: true }"></ng-container>
     </app-card>
     <!-- Item list -->
-    <app-items [title]="'Add items'" [foldable]="true" [action]="'emit'" [maxHeight]="'max(80vh, 400px)'" (onItemClicked)="onItemClickedAdd($event)"></app-items>
+    <app-card [title]="'Add item type'">
+      <div class="container">
+        Select an item type here to show these items below. From there you can add any items by clicking on them.
+      </div>
+      <div class="mt">
+        <app-item-type-selector [type]="addItemType" (typeChanged)="this.addItemType=$event"></app-item-type-selector>
+      </div>
+    </app-card>
+    <app-items [title]="'Add items'" [type]="addItemType" [foldable]="true" [action]="'emit'" [maxHeight]="'max(80vh, 400px)'" (onItemClicked)="onItemClickedAdd($event)"></app-items>
     <div class="sky-flex flex-wrap">
       <button type="button" (click)="addCollection()">
         <mat-icon class="menu-icon">save</mat-icon>
@@ -54,13 +62,6 @@
 </div>
 
 <div [hidden]="showAdd">
-  <!-- @if (collections.length) {
-    <div class="sky-card mt">
-      <div class="sky-card-header">
-        <h2 class="h3">Saved collections</h2>
-      </div>
-    </div>
-  } -->
   <!-- Collections -->
   @for (collection of collections; track collection.guid; let i = $index) {
     <div class="sky-card mt">
