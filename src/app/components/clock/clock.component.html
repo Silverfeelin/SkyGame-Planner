@@ -23,7 +23,17 @@
         <div class="hand-inner"></div>
       </div>
       <div class="clock-text">
-        <span class="clock-title">Sky time</span><br/>
+        <span class="clock-title">Sky time</span>
+        @if (shardHasLanded) {
+          &nbsp;(
+            <img
+              [src]="shardType === 'red' ? '/assets/external/wiki-shard-red.webp' : '/assets/external/wiki-shard-black.webp'"
+              class="clock-shard clock-shard-red point"  (click)="gotoShard()"
+              [ngbTooltip]="'Visit Sky Shards'" placement="bottom" container="body"
+            />
+          )
+        }
+        <br/>
         <span class="clock-time" *ngIf="nowSky"><app-date [date]="nowSky" [format]="'HH:mm:ss'"></app-date></span>
       </div>
     </div>
