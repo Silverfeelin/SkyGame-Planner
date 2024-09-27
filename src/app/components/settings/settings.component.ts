@@ -9,11 +9,7 @@ import { DateTimePipe } from '../../pipes/date-time.pipe';
 import { NgFor, LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-
-interface ITheme {
-  name: string;
-  value: string;
-}
+import { ITheme, setTheme, themes } from 'src/themes';
 
 interface IExport {
   version: string;
@@ -37,18 +33,8 @@ export class SettingsComponent {
   dateFormat: string;
   dateFormats: Array<string>;
   currentTheme: string;
+  themes = themes;
   wikiNewTab = false;
-
-  themes: Array<ITheme> = [
-    { name: 'Isle of Dawn', value: '' },
-    { name: 'Aviary Village', value: 'cozy' },
-    { name: 'Prairie Peaks', value: 'peaks' },
-    { name: 'Treasure Reef', value: 'reef' },
-    { name: 'Village of Dreams', value: 'cold' },
-    { name: 'Crescent Oasis', value: 'sandy' },
-    { name: 'Days of Love', value: 'love' },
-    { name: 'Void', value: 'dark' },
-  ]
 
   constructor(
     private readonly _dataService: DataService,
@@ -195,16 +181,7 @@ export class SettingsComponent {
 
   setTheme(theme: ITheme): void {
     this.currentTheme = theme.value;
-    localStorage.setItem('theme', theme.value);
-    document.documentElement.setAttribute('data-theme', theme.value);
-  }
-
-  setRandomTheme(): void {
-    let theme: ITheme;
-    do {
-      theme = this.themes[Math.floor(Math.random() * this.themes.length)];
-    } while (theme.value === this.currentTheme);
-    this.setTheme(theme);
+    setTheme(theme);
   }
 
   toggleWikiTab(): void {

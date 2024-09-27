@@ -105,7 +105,6 @@
         <button *ngFor="let theme of themes" [class.highlight]="currentTheme === theme.value" type="button" class="item ws-nw" (click)="setTheme(theme)">
           {{ theme.name }}
         </button>
-        <button (click)="setRandomTheme()">Surprise</button>
       </div>
     </div>
   </div>
