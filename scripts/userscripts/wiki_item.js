@@ -24,7 +24,7 @@ const nanoid10 = () => nanoid(10);
     while (el) {
       const text = el.innerText.toLowerCase();
       console.log(text);
-      if (text.includes('hair accessory')) { type = 'Hat'; break; }
+      if (text.includes('hair accessory')) { type = 'HairAccessory'; break; }
       if (text.includes('hair')) { type = 'Hair'; break; }
       if (text.includes('cape')) { type = 'Cape'; break; }
       if (text.includes('mask')) { type = 'Mask'; break; }

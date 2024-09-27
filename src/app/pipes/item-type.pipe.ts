@@ -8,7 +8,8 @@ import { ItemType } from '../interfaces/item.interface';
 export class ItemTypePipe implements PipeTransform {
   transform(type: ItemType | string, plural?: boolean): string {
     switch (type) {
-      case ItemType.Hat: return plural ? 'Hats' : 'Hat';
+      case ItemType.HeadAccessory: return plural ? 'Head accessories' : 'Head accessory';
+      case ItemType.HairAccessory: return plural ? 'Hair accessories' : 'Hair accessory';
       case ItemType.Hair: return 'Hair';
       case ItemType.Mask: return plural ? 'Masks' : 'Mask';
       case ItemType.FaceAccessory: return plural ? 'Face accessories' : 'Face accessory';

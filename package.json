@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "listen-data": "node ./scripts/data-listener.js",
     "watch-data": "node ./scripts/data-watcher.js",
-    "wrangle": "npx wrangler pages dev ./dist/sky-game-planner --kv=REQUESTS",
+    "wrangle": "npx wrangler pages dev ./dist/sky-game-planner/browser --kv=REQUESTS",
     "item-id": "node ./scripts/item-id.js",
     "lite": "lite-server --baseDir=\"dist/sky-game-planner\"",
     "test": "ng test"

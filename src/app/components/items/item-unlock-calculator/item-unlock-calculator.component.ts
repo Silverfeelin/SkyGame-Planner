@@ -76,7 +76,7 @@ export class ItemUnlockCalculatorComponent {
   itemType: ItemType = ItemType.Outfit;
   itemTypes: Array<string> = [
     ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
-    ItemType.Necklace, ItemType.Hair, ItemType.Hat, ItemType.Cape,
+    ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
     ItemType.Stance, ItemType.Call, ItemType.Music
   ];
