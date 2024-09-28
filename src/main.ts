@@ -8,11 +8,11 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app/app-routes';
 import { provideServiceWorker } from '@angular/service-worker';
 import { isDevMode } from '@angular/core';
+import { loadTheme } from './themes';
 // #endregion
 
 // Load theme.
-const theme = localStorage.getItem('theme') || '';
-document.documentElement.setAttribute('data-theme', theme);
+loadTheme();
 
 bootstrapApplication(AppComponent, {
   providers: [

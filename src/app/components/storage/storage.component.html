@@ -28,12 +28,14 @@
   <div class="sky-card-body">
     <div class="container">
       <p>
-        On this page you can change how your tracked data is stored. There are a few exceptions to what is stored here; some settings may still be stored locally.
+        On this page you can change where your tracked data is stored. There are a few exceptions to what is stored here; some settings may still be stored locally.<br/>
+        Every storage location is completely separate from each other. You can think of every storage location as a "save file" so to speak.<br/>
       </p>
       <p>
-        You can import and export your data on the <b>Settings</b> page of the main website.<br/>
-        This will allow you to transfer your data from or to whatever storage option you choose here.
+        Before switching storage locations, it is highly recommended to first go to the <b>Settings</b> page and <b>export</b> your data.<br/>
+        After switching storage locations, you can then return to the <b>Settings</b> page and <b>import</b> your data back.<br/>
       </p>
+      <p>If you forgot to export your data before switching, you can always switch back on this page and try again!</p>
     </div>
   </div>
 </div>
@@ -108,9 +110,15 @@
     <h4 class="h5 mb-0">Continue to website</h4>
   </div>
   <div class="sky-card-body">
-    <a class="container d-inline-block" [routerLink]="'/'">
-      <mat-icon class="menu-icon">home</mat-icon>
-      <span class="menu-label">Go to dashboard</span>
-    </a>
+    <div class="grid grid-1">
+      <a class="container" [routerLink]="'/'">
+        <mat-icon class="menu-icon">home</mat-icon>
+        <span class="menu-label">Go to Dashboard</span>
+      </a>
+      <a class="container" [routerLink]="'/settings'">
+        <mat-icon class="menu-icon">manufacturing</mat-icon>
+        <span class="menu-label">Go to Settings</span>
+      </a>
+    </div>
   </div>
 </div>
