@@ -5,6 +5,7 @@ ALTER TABLE outfits ADD COLUMN headAccessoryId INTEGER NOT NULL DEFAULT 0;
 
 UPDATE outfits SET hairAccessoryId = hatId WHERE hatId IN (1058);
 UPDATE outfits SET headAccessoryId = hatId WHERE hatId IN (-1);
+UPDATE outfits SET headAccessoryId = faceAccessoryId WHERE faceAccessoryId IN (-1);
 
 DROP TABLE IF EXISTS outfits_new;
 CREATE TABLE IF NOT EXISTS outfits_new (
