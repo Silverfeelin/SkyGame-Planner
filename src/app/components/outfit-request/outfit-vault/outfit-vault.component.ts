@@ -31,7 +31,8 @@ interface IApiOutfit {
   shoesId?: number;
   faceAccessoryId?: number;
   necklaceId?: number;
-  hatId?: number;
+  hairAccessoryId?: number;
+  headAccessoryId?: number;
   propId?: number;
   sizeId?: number;
   lightingId?: number;
@@ -65,9 +66,18 @@ export class OutfitVaultComponent {
   itemSize: ItemSize = 'small';
   itemSizePx = 32;
 
-  requiredParams: { [key in ItemType]?: string } = { [ItemType.Outfit]: 'outfitId', [ItemType.Mask]: 'maskId', [ItemType.Hair]: 'hairId', [ItemType.Cape]: 'capeId' };
-  optionalParams: { [key in ItemType]?: string } = { [ItemType.Shoes]: 'shoesId', [ItemType.FaceAccessory]: 'faceAccessoryId', [ItemType.Necklace]: 'necklaceId', [ItemType.Hat]: 'hatId', [ItemType.Prop]: 'propId' };
-  paramTypes: { [key: string]: ItemType } = { outfitId: ItemType.Outfit, maskId: ItemType.Mask, hairId: ItemType.Hair, capeId: ItemType.Cape, shoesId: ItemType.Shoes, faceAccessoryId: ItemType.FaceAccessory, necklaceId: ItemType.Necklace, hatId: ItemType.Hat, propId: ItemType.Prop };
+  requiredParams: { [key in ItemType]?: string } = {
+    [ItemType.Outfit]: 'outfitId', [ItemType.Mask]: 'maskId', [ItemType.Hair]: 'hairId', [ItemType.Cape]: 'capeId'
+  };
+  optionalParams: { [key in ItemType]?: string } = {
+    [ItemType.Shoes]: 'shoesId', [ItemType.FaceAccessory]: 'faceAccessoryId', [ItemType.Necklace]: 'necklaceId',
+    [ItemType.HairAccessory]: 'hairAccessoryId', [ItemType.HeadAccessory]: 'headAccessoryId', [ItemType.Prop]: 'propId'
+  };
+  paramTypes: { [key: string]: ItemType } = {
+    outfitId: ItemType.Outfit, maskId: ItemType.Mask, hairId: ItemType.Hair, capeId: ItemType.Cape,
+    shoesId: ItemType.Shoes, faceAccessoryId: ItemType.FaceAccessory, necklaceId: ItemType.Necklace,
+    hairAccessoryId: ItemType.HairAccessory, headAccessoryId: ItemType.HeadAccessory, propId: ItemType.Prop
+  };
 
   sizes = [ 'Unknown size', 'Chibi', 'Tiny spell', 'Below average', 'Average', 'Above average', 'Tall', 'Huge spell' ];
   lightings = [ 'Unknown lighting', 'Day', 'Sunset', 'Night', 'Forest' ];
@@ -75,7 +85,7 @@ export class OutfitVaultComponent {
   itemTypes: Array<ItemType> = [
     ItemType.Outfit, ItemType.Shoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
-    ItemType.Hair, ItemType.Hat,
+    ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
@@ -85,7 +95,7 @@ export class OutfitVaultComponent {
   sections: Array<Array<ItemType>> = [
     [ItemType.Outfit, ItemType.Shoes],
     [ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace],
-    [ItemType.Hair, ItemType.Hat],
+    [ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory],
     [ItemType.Cape],
     [ItemType.Held, ItemType.Furniture, ItemType.Prop]
   ];
@@ -94,9 +104,9 @@ export class OutfitVaultComponent {
   itemIcons: { [key: string]: string } = {
     ['Outfit']: 'outfit', ['Shoes']: 'shoes',
     ['Mask']: 'mask', ['FaceAccessory']: 'face-acc', ['Necklace']: 'necklace',
-    ['Hair']: 'hair', ['Hat']: 'hat',
-    ['Cape']: 'cape', 
-    ['Held']: 'held', ['Furniture']: 'shelf',['Prop']: 'cup'
+    ['Hair']: 'hair', ['HairAccessory']: 'hair-acc', ['HeadAccessory']: 'head-acc',
+    ['Cape']: 'cape',
+    ['Held']: 'held', ['Furniture']: 'shelf', ['Prop']: 'cup'
   };
   items: { [type: string]: Array<IItem> } = {};
   itemMap: { [guid: string]: IItem } = {};
@@ -378,7 +388,8 @@ export class OutfitVaultComponent {
       shoesId: this.selection[ItemType.Shoes]?.id,
       faceAccessoryId: this.selection[ItemType.FaceAccessory]?.id,
       necklaceId: this.selection[ItemType.Necklace]?.id,
-      hatId: this.selection[ItemType.Hat]?.id,
+      hairAccessoryId: this.selection[ItemType.HairAccessory]?.id,
+      headAccessoryId: this.selection[ItemType.HeadAccessory]?.id,
       propId: this.selection[ItemType.Prop]?.id,
       lightingId: +this.sLight || 0,
       sizeId: +this.sSize || 0,
@@ -468,7 +479,7 @@ export class OutfitVaultComponent {
   private initializeItems(): void {
     // Unequippable items.
     const itemTypeUnequip: { [key: string]: number } = [
-      ItemType.Necklace, ItemType.Hat, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
+      ItemType.Necklace, ItemType.HeadAccessory, ItemType.FaceAccessory, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
     ].reduce((map, type, i) => (map[`${type}`] = 46655 - i, map), {} as { [key: string]: number });
 
     // Populate items by type

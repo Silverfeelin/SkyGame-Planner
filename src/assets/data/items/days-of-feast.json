@@ -180,7 +180,7 @@
   {
     "id": 1894,
     "guid": "VZyiD3Wmtp",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Snowflake Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Days_of_Feast_Snowflake_icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Snowflake_Pin.png",
@@ -260,7 +260,7 @@
     "id": 1976,
     "guid": "1ALFFNohD1",
     "name": "Winter Pinecone Hair Clip",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Winter-Pinecone-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Winter-Pinecone-Headpiece.png",
     "order": 440

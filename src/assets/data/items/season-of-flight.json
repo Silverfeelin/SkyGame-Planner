@@ -15,7 +15,7 @@
   {
     "id": 477,
     "guid": "cbWKMsAh7H",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "group": "Ultimate",
     "name": "Flight Ultimate Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png",
@@ -169,7 +169,7 @@
   {
     "id": 1329,
     "guid": "DeouBCkpib",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Lively Navigator Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Season_of_flight_headpiece_2_lively_navigator.png",
@@ -282,7 +282,7 @@
   {
     "id": 1341,
     "guid": "Dt5aDX9Osc",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Light Whisperer Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_flight_headpiece_1_light_whisperer.png",
@@ -401,7 +401,7 @@
   {
     "id": 1351,
     "guid": "dkLuIrNJyl",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Tinkering Chimesmith Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_flight_headpiece_3_tinkering_chimesmith.png",

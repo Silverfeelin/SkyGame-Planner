@@ -13,7 +13,8 @@ interface IOutfit {
   shoesId?: number;
   faceAccessoryId?: number;
   necklaceId?: number;
-  hatId?: number;
+  hairAccessoryId?: number;
+  headAccessoryId?: number;
   propId?: number;
   // Metadata
   sizeId?: number;
@@ -54,7 +55,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   };
 
   // Check at least one outfit parameter is present.
-  const itemParams = [ 'outfitId', 'maskId', 'hairId', 'capeId', 'shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId' ];
+  const itemParams = [ 'outfitId', 'maskId', 'hairId', 'capeId', 'shoesId', 'faceAccessoryId', 'necklaceId', 'hairAccessoryId', 'headAccessoryId', 'propId' ];
   itemParams.forEach(key => addSqlWhere(key));
   if (sqlValues.length === 0) {
     return invalidRequest('Missing an item selection.');
@@ -72,7 +73,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   // Get pageSize records matching the item selection.
   const sql = `
-    SELECT id, date, key, link, sizeId, lightingId, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hatId, propId
+    SELECT id, date, key, link, sizeId, lightingId, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hairAccessoryId, headAccessoryId, propId
     FROM outfits
     WHERE 1=1 ${sqlWhere}
     ORDER BY id DESC
@@ -116,7 +117,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   key ||= cyrb53('default').toString();
 
   const requiredKeys = new Set(['outfitId', 'maskId', 'hairId', 'capeId']);
-  const optionalKeys = new Set(['shoesId', 'faceAccessoryId', 'necklaceId', 'hatId', 'propId']);
+  const optionalKeys = new Set(['shoesId', 'faceAccessoryId', 'necklaceId', 'hairAccessoryId', 'headAccessoryId', 'propId']);
   const extraKeys = new Set(['link', 'sizeId', 'lightingId']);
 
   // Check required keys. Outfits always have these item types.

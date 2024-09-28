@@ -59,11 +59,6 @@ export interface IItem extends IGuid {
 }
 
 export enum ItemType {
-  /**
-   * All cosmetics in the hat category.
-   * @deprecated Usage should be avoided. Use hair/head accessory.
-   */
-  Hat = 'Hat',
   /** All cosmetics in the hair accessory category. */
   HairAccessory = 'HairAccessory',
   /** All cosmetics in the head accessory category. */

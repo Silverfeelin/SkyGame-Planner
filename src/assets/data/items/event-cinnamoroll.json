@@ -2,7 +2,7 @@
   {
     "id": 2141,
     "guid": "eWqTtgnrmt",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Cinnamoroll Mini Companion",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-icon.png",
@@ -42,7 +42,7 @@
   {
     "id": 2145,
     "guid": "DDW1lEoGj0",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Cinnamoroll Ears",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Cinnamoroll-Pop-Up-Cafe-Combo-Ears-icon.png",
@@ -62,7 +62,7 @@
   {
     "id": 2147,
     "guid": "nZogPrqPGH",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Cozy Teacup Headband",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Cozy-Teacup-Headband-icon.png",

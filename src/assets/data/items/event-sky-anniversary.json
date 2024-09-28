@@ -2,7 +2,7 @@
   {
     "id": 1816,
     "guid": "lDm3gx6ZkS",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "1 Year Sky Anniversary Hat",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png",
@@ -15,7 +15,7 @@
   {
     "id": 1817,
     "guid": "uH4Rjnkh74",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "2 Year Sky Anniversary Hat",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png",
@@ -103,7 +103,7 @@
   {
     "id": 1828,
     "guid": "svEXRvagb3",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "3 Year Sky Anniversary Hat",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png",
@@ -202,7 +202,7 @@
     "id": 1838,
     "guid": "dLtGhTPX8z",
     "name": "4 Year Sky Anniversary Hat",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Sky-4th-Anniversary-Hat.png",
@@ -248,7 +248,7 @@
   {
     "id": 2230,
     "guid": "z648Yl_rsv",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "Skyfest Oreo Headband",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SkyFest-Oreo-Headband-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/SkyFest-Oreo-Headband.png",
@@ -257,7 +257,7 @@
   {
     "id": 2231,
     "guid": "jGsimtcb4t",
-    "type": "Hat",
+    "type": "HeadAccessory",
     "name": "5th Anniversary Headband",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/5th-Anniversary-Hat-icon.png",
