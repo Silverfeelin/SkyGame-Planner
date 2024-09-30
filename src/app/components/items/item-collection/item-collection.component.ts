@@ -87,6 +87,33 @@ export class ItemCollectionComponent {
     this.editGuid = undefined;
   }
 
+  importCollectionFile(): void {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/json';
+    input.onchange = async (event: Event) => {
+      const target = event.target as HTMLInputElement;
+      if (!target.files || !target.files.length) { return; }
+      const file = target.files[0];
+      const json = await file.text();
+      try {
+        let collections: Array<IItemCollection> = this.deserializeCollections(json);
+        if (!collections.length) { throw new Error('No collections found in file.'); }
+        if (!confirm(`You're trying to import ${collections.length} new collection${collections.length === 1 ? '' : 's'}. Continue?`)) { return; }
+        collections.forEach(c => {
+          c.guid = nanoid(10);
+          this.collections.push(c);
+        });
+
+        this.saveStorage();
+        this._changeDetectorRef.markForCheck();
+      } catch (error) {
+        alert('Failed to import collection. Please ensure the file is a valid collection.');
+      }
+    };
+    input.click();
+  }
+
   addItem(item: IItem): void {
     this.editItemSet.add(item);
     this.editItems = Array.from(this.editItemSet);
@@ -207,7 +234,20 @@ export class ItemCollectionComponent {
     this.updateImgAdd(collection.imageUrl || '');
   }
 
-  promptDelete(collection: IItemCollection, evt?: Event): void {
+  exportCollection(collection: IItemCollection, evt?: Event): void {
+    evt?.preventDefault();
+    evt?.stopImmediatePropagation();
+    const data = this.serializeCollections([collection]);
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'sky-planner-collection.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  promptDeleteCollection(collection: IItemCollection, evt?: Event): void {
     evt?.preventDefault();
     evt?.stopImmediatePropagation();
     if (!confirm(`Are you sure you want to delete the collection "${collection.name}"?`)) { return; }
@@ -232,5 +272,27 @@ export class ItemCollectionComponent {
         items: c.items.map(i => i.guid).join(',')
       }))
     });
+  }
+
+  private serializeCollections(collections: Array<IItemCollection>): string {
+    return JSON.stringify(collections.map(c => ({
+      guid: c.guid,
+      name: c.name,
+      description: c.description,
+      imageUrl: c.imageUrl,
+      items: c.items.map(i => i.guid)
+    })), null, 2);
+  }
+
+  private deserializeCollections(json: string): Array<IItemCollection> {
+    const collections = JSON.parse(json);
+    if (!Array.isArray(collections)) { throw new Error('Invalid collection data.'); }
+    return collections.map(c => ({
+      guid: c.guid,
+      name: c.name,
+      description: c.description,
+      imageUrl: c.imageUrl,
+      items: c.items.map((guid: string) => this._dataService.guidMap.get(guid) as IItem).filter((i: IItem) => i)
+    }));
   }
 }

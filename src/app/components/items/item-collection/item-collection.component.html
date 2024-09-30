@@ -11,6 +11,10 @@
         <mat-icon class="menu-icon">add</mat-icon>
         <span class="menu-label">Add</span>
       </button>
+      <button type="button" (click)="importCollectionFile()">
+        <mat-icon class="menu-icon">download</mat-icon>
+        <span class="menu-label">Import</span>
+      </button>
       @if (showEdit && !editGuid) {
         <ng-container *ngTemplateOutlet="tSave"></ng-container>
       }
@@ -77,7 +81,7 @@
             <span class="menu-label">
               {{ collection.name }}
             </span>
-            <div class="flex flex-wrap" style="float:right;">
+            <div class="flex flex-wrap gap-half" style="float:right;">
               <div>
                 <mat-icon class="v-top link" (click)="moveCollectionUp(i, $event)"
                   [ngbTooltip]="'Move up'" container="body" placement="top-end">
@@ -96,7 +100,11 @@
                 [ngbTooltip]="'Copy collection'" container="body" placement="top-end">
                 content_copy
               </mat-icon>
-              <mat-icon class="v-top link" (click)="promptDelete(collection, $event)"
+              <mat-icon class="v-top link" (click)="exportCollection(collection, $event)"
+                [ngbTooltip]="'Export collection'" container="body" placement="top-end">
+                upload
+              </mat-icon>
+              <mat-icon class="v-top link" (click)="promptDeleteCollection(collection, $event)"
                 [ngbTooltip]="'Remove collection'" container="body" placement="top-end">
                 delete
               </mat-icon>
