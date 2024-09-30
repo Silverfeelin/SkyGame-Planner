@@ -72,7 +72,7 @@
 
 <div [hidden]="showEdit">
   <!-- Collections -->
-  @for (collection of collections; track collection.guid; let i = $index) {
+  @for (collection of collections; track collection.guid; let i = $index; let first = $first; let last = $last) {
     <div class="sky-card mt-half">
       <div class="sky-card-body">
         <div class="grid grid-1">
@@ -83,31 +83,33 @@
             </span>
             <div class="flex flex-wrap gap-half" style="float:right;">
               <div>
-                <mat-icon class="v-top link" (click)="moveCollectionUp(i, $event)"
-                  [ngbTooltip]="'Move up'" container="body" placement="top-end">
+                <mat-icon class="v-top link" (click)="moveCollectionUp(i, $event)" [class.disabled]="first"
+                  [ngbTooltip]="first ? undefined : 'Move up'" container="body" placement="top-end">
                   arrow_upward
                 </mat-icon>
-                <mat-icon class="v-top link" (click)="moveCollectionDown(i, $event)"
-                  [ngbTooltip]="'Move down'" container="body" placement="top-end">
+                <mat-icon class="v-top link" (click)="moveCollectionDown(i, $event)" [class.disabled]="last"
+                  [ngbTooltip]="last ? undefined : 'Move down'" container="body" placement="top-end">
                   arrow_downward
                 </mat-icon>
               </div>
-              <mat-icon class="v-top link" (click)="showEditCollection(collection, $event)"
-                [ngbTooltip]="'Edit collection'" container="body" placement="top-end">
-                edit
-              </mat-icon>
-              <mat-icon class="v-top link" (click)="showCopyCollection(collection, $event)"
-                [ngbTooltip]="'Copy collection'" container="body" placement="top-end">
-                content_copy
-              </mat-icon>
-              <mat-icon class="v-top link" (click)="exportCollection(collection, $event)"
-                [ngbTooltip]="'Export collection'" container="body" placement="top-end">
-                upload
-              </mat-icon>
-              <mat-icon class="v-top link" (click)="promptDeleteCollection(collection, $event)"
-                [ngbTooltip]="'Remove collection'" container="body" placement="top-end">
-                delete
-              </mat-icon>
+              @if (visibleCollections[collection.guid]) {
+                <mat-icon class="v-top link" (click)="showEditCollection(collection, $event)"
+                  [ngbTooltip]="'Edit collection'" container="body" placement="top-end">
+                  edit
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="showCopyCollection(collection, $event)"
+                  [ngbTooltip]="'Copy collection'" container="body" placement="top-end">
+                  content_copy
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="exportCollection(collection, $event)"
+                  [ngbTooltip]="'Export collection'" container="body" placement="top-end">
+                  upload
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="promptDeleteCollection(collection, $event)"
+                  [ngbTooltip]="'Remove collection'" container="body" placement="top-end">
+                  delete
+                </mat-icon>
+              }
             </div>
           </div>
           <!-- Collection details -->

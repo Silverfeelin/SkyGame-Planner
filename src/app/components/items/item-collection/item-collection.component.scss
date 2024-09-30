@@ -6,6 +6,11 @@
   padding-top: 8px;
 }
 
+.mat-icon.disabled {
+  color: gray;
+  cursor: default;
+}
+
 .collection-flex {
   display: flex;
   justify-content: space-between;
