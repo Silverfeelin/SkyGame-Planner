@@ -67,6 +67,8 @@ export class ItemsComponent {
   @Input() title = 'Items';
   @Input() type: ItemType = ItemType.Outfit;
   @Input() highlightItem?: IItem;
+  @Input() backlightItems?: Array<IItem>;
+  @Input() opaqueItems = false;
   @Input() action: ItemAction = 'navigate';
   @Input() foldable = false;
   @Input() maxHeight: string | undefined;
@@ -116,6 +118,8 @@ export class ItemsComponent {
   events: Array<IEvent>;
   realms: Array<IRealm>;
 
+  backlightItemSet?: { [key: string]: boolean };
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _searchService: SearchService,
@@ -139,6 +143,7 @@ export class ItemsComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['type']) { this.updateShownItems(); }
+    if (changes['backlightItems']) { this.updateBacklightItems(); }
   }
 
   clickItem(item: IItem, event: MouseEvent) {
@@ -375,6 +380,11 @@ export class ItemsComponent {
     }
 
     this._changeDetectionRef.markForCheck();
+  }
+
+  private updateBacklightItems(): void {
+    this.backlightItemSet = this.backlightItems ? {} : undefined;
+    this.backlightItems?.forEach(item => this.backlightItemSet![item.guid] = true);
   }
 
   private initializeItems(): void {

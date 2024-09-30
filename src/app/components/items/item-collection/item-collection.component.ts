@@ -33,19 +33,21 @@ interface IStorageData {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemCollectionComponent {
-  showAdd = false;
-  addImgSrc?: string;
-  addImgError?: boolean;
-  addItemType: ItemType = ItemType.Outfit;
-  addItems: Array<IItem> = [];
-  addItemSet = new Set<IItem>();
+  showEdit = false;
+  editImgSrc?: string;
+  editImgError?: boolean;
+  editItemType: ItemType = ItemType.Outfit;
+  editItems: Array<IItem> = [];
+  editItemSet = new Set<IItem>();
+
+  editGuid?: string;
 
   collections: Array<IItemCollection> = [];
   visibleCollections: { [guid: string]: boolean } = {};
 
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event: Event): void {
-    if (this.addItems.length > 0) { event.preventDefault(); }
+    if (this.editItems.length > 0) { event.preventDefault(); }
   }
 
   @ViewChild('inpAddName', { static: true }) inpAddName?: ElementRef<HTMLInputElement>;
@@ -61,22 +63,38 @@ export class ItemCollectionComponent {
   }
 
   onBeforeFoldAdd(evt: CardFoldEvent): void {
-    this.showAdd = !evt.fold;
+    this.showEdit = !evt.fold;
     evt.prevent();
   }
 
   onItemClickedAdd(evt: ItemClickEvent): void {
-    this.addItemSet.has(evt.item) ? this.removeItem(evt.item) : this.addItem(evt.item);
+    this.editItemSet.has(evt.item) ? this.removeItem(evt.item) : this.addItem(evt.item);
+  }
+
+  toggleShowAdd(): void {
+    if (this.showEdit && this.editGuid) {
+      if (!confirm(`You're currently editing a collection. Are you sure you want to reset and add a new collection?`)) { return; }
+      this.clearEditForm();
+      this.editGuid = undefined;
+      return;
+    } else if (this.editItems.length) {
+      if (!confirm(`You have items selected. Are you sure you want to stop adding a new collection?`)) { return; }
+      this.clearEditForm();
+    }
+
+    this.clearEditForm();
+    this.showEdit = !this.showEdit;
+    this.editGuid = undefined;
   }
 
   addItem(item: IItem): void {
-    this.addItemSet.add(item);
-    this.addItems.push(item);
+    this.editItemSet.add(item);
+    this.editItems = Array.from(this.editItemSet);
   }
 
   removeItem(item: IItem): void {
-    this.addItemSet.delete(item);
-    this.addItems = Array.from(this.addItemSet);
+    this.editItemSet.delete(item);
+    this.editItems = Array.from(this.editItemSet);
   }
 
   viewItem(item: IItem): void {
@@ -92,48 +110,101 @@ export class ItemCollectionComponent {
 
   updateImgAdd(value: string): void {
     const regexHttp = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g; // https://stackoverflow.com/a/3809435
-    this.addImgSrc = regexHttp.test(value) ? value : '';
-    this.addImgError = !this.addImgSrc && value.length > 0;
+    this.editImgSrc = regexHttp.test(value) ? value : '';
+    this.editImgError = !this.editImgSrc && value.length > 0;
   }
 
   showImageLinkInfo(): void {
     alert('It is recommended to use a reputable image host. For example, you can copy the link of a Discord image or upload your image to a service like Imgur.');
   }
 
-  addCollection(): void {
-    // Create collection
+  moveCollectionUp(i: number, evt?: Event): void {
+    evt?.preventDefault();
+    evt?.stopImmediatePropagation();
+    if (i <= 0) { return; }
+    const collection = this.collections[i];
+    this.collections[i] = this.collections[i - 1];
+    this.collections[i - 1] = collection;
+    this.saveStorage();
+  }
+
+  moveCollectionDown(i: number, evt?: Event): void {
+    evt?.preventDefault();
+    evt?.stopImmediatePropagation();
+    if (i >= this.collections.length - 1) { return; }
+    const collection = this.collections[i];
+    this.collections[i] = this.collections[i + 1];
+    this.collections[i + 1] = collection;
+    this.saveStorage();
+  }
+
+  saveCollection(): void {
     const collection: IItemCollection = {
-      guid: nanoid(10),
+      guid: this.editGuid || nanoid(10),
       name: this.inpAddName?.nativeElement?.value || '',
       description: this.inpAddDescription?.nativeElement?.value || '',
-      imageUrl: this.addImgSrc || '',
-      items: this.addItems
+      imageUrl: this.editImgSrc || '',
+      items: this.editItems
     };
-    this.collections.push(collection);
+
+    // Update or create collection.
+    if (this.editGuid) {
+      const index = this.collections.findIndex(c => c.guid === this.editGuid);
+      if (index < 0) {
+        alert(`Collection was not found. Please refresh the page. Sorry.`);
+        return;
+      }
+      this.collections[index] = collection;
+    } else {
+      this.collections.push(collection);
+    }
+
     this.saveStorage();
 
     // Clear data.
-    this.addItems = [];
-    this.addItemSet.clear();
+    this.editGuid = undefined;
+    this.showEdit = false;
+    this.clearEditForm();
+  }
+
+  cancelEdit(): void {
+    if (!confirm('Are you sure you want to cancel editing this collection?')) { return; }
+    this.editGuid = undefined;
+    this.showEdit = false;
+    this.clearEditForm();
+  }
+
+  showEditCollection(collection: IItemCollection, evt?: Event): void {
+    this.updateEditForm(collection, evt);
+    this.editGuid = collection.guid;
+    this.showEdit = true;
+  }
+
+  showCopyCollection(collection: IItemCollection, evt?: Event): void {
+    this.updateEditForm(collection, evt);
+    this.editGuid = undefined;
+    this.showEdit = true;
+  }
+
+  clearEditForm(): void {
+    this.editItems = [];
+    this.editItemSet.clear();
     if (this.inpAddName?.nativeElement) { this.inpAddName.nativeElement.value = ''; }
     if (this.inpAddDescription?.nativeElement) { this.inpAddDescription.nativeElement.value = ''; }
     if (this.inpAddImage?.nativeElement) { this.inpAddImage.nativeElement.value = ''; }
     this.updateImgAdd('');
-
-    this.showAdd = false;
   }
 
-  copyCollection(collection: IItemCollection, evt?: Event): void {
+  updateEditForm(collection: IItemCollection, evt?: Event): void {
     evt?.preventDefault();
     evt?.stopImmediatePropagation();
-    if (this.addItems.length && !confirm('Copying this collection will overwrite your current selection to create a new collection. Continue?')) { return; }
-    this.addItems = [...collection.items];
-    this.addItemSet = new Set(this.addItems);
+    if (this.editItems.length && !confirm('Copying this collection will overwrite your current selection to create a new collection. Continue?')) { return; }
+    this.editItems = [...collection.items];
+    this.editItemSet = new Set(this.editItems);
     if (this.inpAddName?.nativeElement) { this.inpAddName.nativeElement.value = collection.name; }
     if (this.inpAddDescription?.nativeElement) { this.inpAddDescription.nativeElement.value = collection.description; }
     if (this.inpAddImage?.nativeElement) { this.inpAddImage.nativeElement.value = collection.imageUrl; }
     this.updateImgAdd(collection.imageUrl || '');
-    this.showAdd = true;
   }
 
   promptDelete(collection: IItemCollection, evt?: Event): void {
