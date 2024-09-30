@@ -21,7 +21,7 @@ import { Maybe } from '@app/types/maybe';
 import { ItemTypePipe } from "../../pipes/item-type.pipe";
 import { CostHelper } from '@app/helpers/cost-helper';
 import { ICost } from '@app/interfaces/cost.interface';
-import { CardComponent } from "../layout/card/card.component";
+import { CardComponent, CardFoldEvent } from "../layout/card/card.component";
 
 export type ItemAction = 'navigate' | 'emit';
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -67,8 +67,11 @@ export class ItemsComponent {
   @Input() title = 'Items';
   @Input() type: ItemType = ItemType.Outfit;
   @Input() highlightItem?: IItem;
+  @Input() backlightItems?: Array<IItem>;
+  @Input() opaqueItems = false;
   @Input() action: ItemAction = 'navigate';
   @Input() foldable = false;
+  @Input() maxHeight: string | undefined;
 
   @Output() readonly onItemClicked = new EventEmitter<ItemClickEvent>();
   @Output() readonly onItemsChanged = new EventEmitter<Array<IItem>>();
@@ -115,6 +118,8 @@ export class ItemsComponent {
   events: Array<IEvent>;
   realms: Array<IRealm>;
 
+  backlightItemSet?: { [key: string]: boolean };
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _searchService: SearchService,
@@ -138,6 +143,7 @@ export class ItemsComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['type']) { this.updateShownItems(); }
+    if (changes['backlightItems']) { this.updateBacklightItems(); }
   }
 
   clickItem(item: IItem, event: MouseEvent) {
@@ -145,8 +151,8 @@ export class ItemsComponent {
       this.onItemClicked.emit({ event, item });
   }
 
-  beforeFold(folded: boolean): void {
-    this.isFolded = folded;
+  beforeFold(evt: CardFoldEvent): void {
+    this.isFolded = evt.fold;
   }
 
   // #region Toggle filters
@@ -374,6 +380,11 @@ export class ItemsComponent {
     }
 
     this._changeDetectionRef.markForCheck();
+  }
+
+  private updateBacklightItems(): void {
+    this.backlightItemSet = this.backlightItems ? {} : undefined;
+    this.backlightItems?.forEach(item => this.backlightItemSet![item.guid] = true);
   }
 
   private initializeItems(): void {

@@ -162,7 +162,7 @@
         </div>
       </div>
     }
-    <div class="sky-flex flex-wrap">
+    <div class="sky-flex flex-wrap" [style.max-height]="maxHeight" [style.overflow-y]="maxHeight ? 'auto' : undefined">
       @if (showFilters && !unfilteredItemCount) {
         <div class="container">
           No items match the selected filters.
@@ -178,8 +178,8 @@
               [hidden]="!shownItems[item.guid] || (showFilters && !unfilteredItems[item.guid])"
             >
               <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
-                [class.highlight]="item && item === highlightItem"
-                [class.item-unlocked]="item.unlocked"
+                [class.highlight]="item && item === highlightItem" [opaque]="opaqueItems"
+                [class.item-backlight]="backlightItemSet ? backlightItemSet[item.guid] : item.unlocked"
                 [ngbTooltip]="item.name" container="body" placement="auto" >
               </app-item-icon>
             </a>

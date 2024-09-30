@@ -2,6 +2,11 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmi
 import { MatIcon } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
 
+export type CardFoldEvent = {
+  fold: boolean;
+  prevent: () => void;
+}
+
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
@@ -18,9 +23,9 @@ export class CardComponent implements AfterViewInit {
   loaded = false;
 
   /** Event that fires whenever the user clicks a foldable card header. */
-  @Output() beforeFold = new EventEmitter<boolean>();
+  @Output() beforeFold = new EventEmitter<CardFoldEvent>();
   /** Event that fires only after the fold animation completely finishes. */
-  @Output() afterFold = new EventEmitter<boolean>();
+  @Output() afterFold = new EventEmitter<CardFoldEvent>();
 
   @ViewChild('body', { static: true }) body!: ElementRef<HTMLDivElement>;
 
@@ -39,10 +44,12 @@ export class CardComponent implements AfterViewInit {
 
   toggleFold(): void {
     if (!this.foldable) { return; }
+    const wasFolded = this.folded;
     this.folded = !this.folded;
     this.loaded = true;
 
-    this.beforeFold.emit(this.folded);
+    const evt: CardFoldEvent = { fold: this.folded, prevent: () => this.folded = wasFolded };
+    this.beforeFold.emit(evt);
 
     // Set height to transition to 0.
     if (this.folded) {
@@ -57,7 +64,7 @@ export class CardComponent implements AfterViewInit {
     clearTimeout(this._interval);
     this._interval = window.setTimeout(() => {
       if (!this.folded) { this.body.nativeElement.style.height = ''; }
-      this.afterFold.emit(this.folded);
+      this.afterFold.emit(evt);
     }, 300);
   }
 }

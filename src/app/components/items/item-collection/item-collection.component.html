@@ -1,0 +1,170 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Item Collections</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>On this page you can save your own item collections. Use these to keep track of your favourite outfits, plan for upcoming items or anything else!</p>
+    </div>
+    <div class="mt sky-flex flex-wrap">
+      <button type="button" (click)="toggleShowAdd()" [class.highlight]="showEdit && !editGuid">
+        <mat-icon class="menu-icon">add</mat-icon>
+        <span class="menu-label">Add</span>
+      </button>
+      <button type="button" (click)="importCollectionFile()">
+        <mat-icon class="menu-icon">download</mat-icon>
+        <span class="menu-label">Import</span>
+      </button>
+      @if (showEdit && !editGuid) {
+        <ng-container *ngTemplateOutlet="tSave"></ng-container>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Add collection -->
+<div class="mt" [hidden]="!showEdit">
+  <div class="grid grid-1">
+    <!-- Collection details -->
+    <app-card [title]="editGuid ? 'Edit collection details' : 'New collection details'" [foldable]="true" [folded]="false">
+      <div class="collection-flex">
+        <div class="collection-flex-input">
+          <span class="input-label">Name:&nbsp;</span>
+          <input #inpAddName type="text" maxlength="100">
+          <br class="show-desktop"/>
+          <span class="input-label">Description:&nbsp;</span>
+          <textarea #inpAddDescription style="height: 100px;" maxlength="2000"></textarea>
+          <br class="show-desktop"/>
+          <span class="input-label"><span class="link" (click)="showImageLinkInfo()">Image link:</span>&nbsp;</span>
+          <input #inpAddImage type="text" (input)="onInputImgAdd($event)">
+        </div>
+        <div class="collection-flex-img">
+          @if (editImgSrc) {
+            <img [src]="editImgSrc">
+          }
+        </div>
+      </div>
+      @if (editGuid) {
+        <div class="mt sky-flex flex-wrap">
+          <ng-container *ngTemplateOutlet="tSave"></ng-container>
+        </div>
+      }
+    </app-card>
+    <!-- Selection -->
+    <app-card [title]="'Collection items'" [foldable]="true" [folded]="false">
+      <ng-container *ngTemplateOutlet="tSelection; context: { $implicit: editItems, removable: true }"></ng-container>
+    </app-card>
+    <!-- Item list -->
+    <app-card [title]="'Item list type'">
+      <div class="container">
+        Select an item type here to show these items in the list below. From there you can add any items by clicking on them.
+      </div>
+      <div class="mt">
+        <app-item-type-selector [type]="editItemType" (typeChanged)="this.editItemType=$event"></app-item-type-selector>
+      </div>
+    </app-card>
+    <app-items [title]="'Item list'" [type]="editItemType" [backlightItems]="editItems" [opaqueItems]="true" [foldable]="true" [action]="'emit'" [maxHeight]="'max(80vh, 400px)'" (onItemClicked)="onItemClickedAdd($event)"></app-items>
+    <div class="sky-flex flex-wrap">
+      <ng-container *ngTemplateOutlet="tSave"></ng-container>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="showEdit">
+  <!-- Collections -->
+  @for (collection of collections; track collection.guid; let i = $index; let first = $first; let last = $last) {
+    <div class="sky-card mt-half">
+      <div class="sky-card-body">
+        <div class="grid grid-1">
+          <div class="container point collection-title" (click)="visibleCollections[collection.guid]=!visibleCollections[collection.guid]">
+            <mat-icon class="menu-icon link">collections_bookmark</mat-icon>
+            <span class="menu-label">
+              {{ collection.name }}
+            </span>
+            <div class="flex flex-wrap gap-half" style="float:right;">
+              <div>
+                <mat-icon class="v-top link" (click)="moveCollectionUp(i, $event)" [class.disabled]="first"
+                  [ngbTooltip]="first ? undefined : 'Move up'" container="body" placement="top-end">
+                  arrow_upward
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="moveCollectionDown(i, $event)" [class.disabled]="last"
+                  [ngbTooltip]="last ? undefined : 'Move down'" container="body" placement="top-end">
+                  arrow_downward
+                </mat-icon>
+              </div>
+              @if (visibleCollections[collection.guid]) {
+                <mat-icon class="v-top link" (click)="showEditCollection(collection, $event)"
+                  [ngbTooltip]="'Edit collection'" container="body" placement="top-end">
+                  edit
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="showCopyCollection(collection, $event)"
+                  [ngbTooltip]="'Copy collection'" container="body" placement="top-end">
+                  content_copy
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="exportCollection(collection, $event)"
+                  [ngbTooltip]="'Export collection'" container="body" placement="top-end">
+                  upload
+                </mat-icon>
+                <mat-icon class="v-top link" (click)="promptDeleteCollection(collection, $event)"
+                  [ngbTooltip]="'Remove collection'" container="body" placement="top-end">
+                  delete
+                </mat-icon>
+              }
+            </div>
+          </div>
+          <!-- Collection details -->
+          @if (visibleCollections[collection.guid]) {
+            @if (collection.description) {
+              <div class="container collection-description">
+                <p class="ws-pl">
+                  {{ collection.description }}
+                </p>
+              </div>
+            }
+            @if (collection.imageUrl) {
+              <div class="collection-flex-img">
+                <img [src]="collection.imageUrl">
+              </div>
+            }
+            <!-- Selection -->
+            <ng-container *ngTemplateOutlet="tSelection; context: { $implicit: collection.items }"></ng-container>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+<ng-template #tSelection let-items let-removable="removable">
+  <div class="sky-flex flex-wrap">
+    @for (item of items; track item.guid) {
+      <div class="selection-item">
+        <app-item-icon (click)="viewItem(item)"
+          [item]="item" [opaque]="true" [hoverGlow]="false"
+          [ngbTooltip]="item.name" container="body" placement="top"
+          [subIcons]="['type', 'elder', 'season', 'iap', 'unlock', 'favourite', 'limited']">
+        </app-item-icon>
+        @if (removable) {
+          <div class="d-block t-center link mt-half" (click)="removeItem(item)">Remove</div>
+        }
+      </div>
+    } @empty {
+      <div class="container">
+        <p>No items selected.</p>
+      </div>
+    }
+  </div>
+</ng-template>
+
+<ng-template #tSave>
+  <button type="button" (click)="saveCollection()">
+    <mat-icon class="menu-icon">save</mat-icon>
+    <span class="menu-label">{{ editGuid ? 'Save changes' : 'Save collection' }}</span>
+  </button>
+  @if (editGuid) {
+    <button type="button" (click)="cancelEdit()">
+      <mat-icon class="menu-icon">close</mat-icon>
+      <span class="menu-label">Cancel</span>
+    </button>
+  }
+</ng-template>

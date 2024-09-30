@@ -9,7 +9,7 @@ import { IMapInit } from 'src/app/services/map.service';
 import { NgFor, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { CardComponent } from '../layout/card/card.component';
+import { CardComponent, CardFoldEvent } from '../layout/card/card.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
@@ -92,9 +92,9 @@ export class RealmsComponent implements AfterViewInit {
     }
   }
 
-  beforeFoldMap(folded: boolean): void {
-    this.showMap = !folded;
-    localStorage.setItem('realms.map.folded', folded ? '1' : '0');
+  beforeFoldMap(evt: CardFoldEvent): void {
+    this.showMap = !evt.fold;
+    localStorage.setItem('realms.map.folded', evt.fold ? '1' : '0');
     this.updateMapUrl();
   }
 
