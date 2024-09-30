@@ -607,7 +607,9 @@
           "calculatorData": {
             "dailyCurrencyAmount": 5
           },
-          "draft": true
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2a115478a3874720a740950549abdc58"
+          }
         }
       ],
       "_wiki": {
