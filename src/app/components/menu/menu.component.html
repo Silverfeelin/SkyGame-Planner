@@ -64,6 +64,11 @@
       </a>
 
       <hr class="bottom"/>
+      <!-- New -->
+      <a class="item" [routerLink]="'news'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'News'" placement="right" container="body">
+        <mat-icon>new_releases</mat-icon>
+        <span class="name">What's new</span>
+      </a>
       <!-- Settings -->
       <a class="item" [routerLink]="'settings'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Settings'" placement="right" container="body">
         <mat-icon>settings</mat-icon>
