@@ -593,6 +593,22 @@
             { "guid": "IG1s0t_vjK", "spirit": "F6BUqVCHvp", "tree": "IhEcryXJD_" }
           ]
         },
+        {
+          "guid": "f-uR53V_h9",
+          "date": "2024-09-30",
+          "endDate": "2024-10-13",
+          "spirits": [
+            { "guid": "1nNILvsf_a", "spirit": "F6BUqVCHvp", "tree": "FBCPxTV_1R" }
+          ],
+          "shops": [
+            "S8yOonCTNk",
+            "Y4ohW7ioCN"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5
+          },
+          "draft": true
+        }
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style"

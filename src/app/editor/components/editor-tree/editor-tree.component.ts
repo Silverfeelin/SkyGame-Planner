@@ -77,6 +77,21 @@ export class EditorTreeComponent implements OnInit {
 
   }
 
+  addRootNode(): void {
+    const adjustY = (node: IEditorNode) => {
+      if (node.nw) { adjustY(node.nw); }
+      if (node.n) { adjustY(node.n); }
+      if (node.ne) { adjustY(node.ne); }
+      node.y++;
+    }
+
+    const editorNode = this.editorNode;
+    this.editorNode = { guid: nanoid(10), x: 1, y: 0 };
+    this.editorNode.n = editorNode;
+    adjustY(editorNode);
+    this.calculateTreeHeight();
+  }
+
   cloneTree(): void {
     const guid = this.inpCloneTree.nativeElement.value || '';
     const tree = this._dataService.guidMap.get(guid) as ISpiritTree;
