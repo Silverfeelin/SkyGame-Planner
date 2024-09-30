@@ -59,6 +59,11 @@
           <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>
           <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="heartCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
         </div>
+        <div>
+          Your current ascended candles:
+          <mat-icon [svgIcon]="'ascended-candle'" class="v-middle"></mat-icon>
+          <input #inpAc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="acCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+        </div>
 
         @if (timedCurrencies.length) {
           <div>
@@ -127,10 +132,12 @@
           <mat-icon [svgIcon]="'ticket'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ currencyCount || 0 }}</b>
           event currency,
           <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ candleCount || 0 }}</b>
-          {{ candleCount === 1 ? 'candle' : 'candles' }}
-          and
+          {{ candleCount === 1 ? 'candle' : 'candles' }},
           <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ heartCount || 0 }}</b>
-          {{ heartCount === 1 ? 'heart' : 'hearts' }}.
+          {{ heartCount === 1 ? 'heart' : 'hearts' }}
+          and
+          <mat-icon [svgIcon]="'ascended-candle'" class="v-middle"></mat-icon>&nbsp;<b class="c-new">{{ acCount || 0 }}</b>
+          {{ acCount === 1 ? 'ascended candle' : 'ascended candles' }}.
         </div>
         <div>
           You will be able to get
@@ -223,7 +230,16 @@
             <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>&nbsp;
             <b class="c-new">{{ heartsRequired }}</b>
             {{ heartsRequired === 1 ? 'heart' : 'hearts' }}
-            to get all the items you want.
+            to get the items you want.
+          </div>
+        }
+        @if (acRequired > 0) {
+          <div [class.result-border-top]="candlesRequired <= 0 && heartsRequired <= 0">
+            You will also need to collect
+            <mat-icon [svgIcon]="'ascended-candle'" class="v-middle"></mat-icon>&nbsp;
+            <b class="c-new">{{ acRequired }}</b>
+            {{ acRequired === 1 ? 'ascended candle' : 'ascended candles' }}
+            to get the items you want.
           </div>
         }
       </div>

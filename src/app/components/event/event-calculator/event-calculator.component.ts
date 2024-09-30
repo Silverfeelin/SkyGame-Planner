@@ -30,6 +30,7 @@ export class EventCalculatorComponent {
   @ViewChild('inpEc', { static: false }) inpEc!: ElementRef<HTMLInputElement>;
   @ViewChild('inpC', { static: false }) inpC!: ElementRef<HTMLInputElement>;
   @ViewChild('inpH', { static: false }) inpH!: ElementRef<HTMLInputElement>;
+  @ViewChild('inpAc', { static: false }) inpAc!: ElementRef<HTMLInputElement>;
 
   @ViewChildren('inpTimed', { read: ElementRef }) inpTimed!: QueryList<ElementRef<HTMLInputElement>>;
 
@@ -53,6 +54,7 @@ export class EventCalculatorComponent {
   currencyCount = 0;
   candleCount = 0;
   heartCount = 0;
+  acCount = 0;
   includesToday = true;
   wantNodes: { [guid: string]: INode } = {};
   hasNodes = false;
@@ -72,6 +74,7 @@ export class EventCalculatorComponent {
   candlesPerDay = 20;
   candlesPerHeart = 3; // Hardcoded for now, doesn't account for gifts of light / heart events.
   heartsRequired = 0;
+  acRequired = 0;
 
   nodeShowButtons?: INode;
   listNodeShowButtons?: INode;
@@ -160,12 +163,14 @@ export class EventCalculatorComponent {
         this.currencyCount = this._currencyService.clamp(this.currencyCount + (node.ec || 0));
         this.candleCount = this._currencyService.clamp(this.candleCount + (node.c || 0));
         this.heartCount = this._currencyService.clamp(this.heartCount + (node.h || 0));
+        this.acCount = this._currencyService.clamp(this.acCount + (node.ac || 0));
       }
       this._nodeService.lock(node);
     } else {
       this.currencyCount = this._currencyService.clamp(this.currencyCount - (node.ec || 0));
       this.candleCount = this._currencyService.clamp(this.candleCount - (node.c || 0));
       this.heartCount = this._currencyService.clamp(this.heartCount - (node.h || 0));
+      this.acCount = this._currencyService.clamp(this.acCount - (node.ac || 0));
       this._nodeService.unlock(node);
     }
 
@@ -233,6 +238,8 @@ export class EventCalculatorComponent {
     this.candleCount = this._currencyService.clamp(parseInt(targetC.value, 10) || 0);
     const targetH = this.inpH.nativeElement;
     this.heartCount = this._currencyService.clamp(parseInt(targetH.value, 10) || 0);
+    const targetAc = this.inpAc.nativeElement;
+    this.acCount = this._currencyService.clamp(parseInt(targetAc.value, 10) || 0);
 
     this.inpTimed?.forEach(inp => {
       const value = parseInt(inp.nativeElement.value, 10) || 0;
@@ -247,6 +254,7 @@ export class EventCalculatorComponent {
     this.inpEc.nativeElement.value = (this.currencyCount).toString();
     this.inpC.nativeElement.value = (this.candleCount).toString();
     this.inpH.nativeElement.value = (this.heartCount).toString();
+    this.inpAc.nativeElement.value = (this.acCount).toString();
     this.updateStoredCurrencies();
   }
 
@@ -296,7 +304,7 @@ export class EventCalculatorComponent {
   // #region Settings
 
   private updateStoredCurrencies(): void {
-    this._currencyService.setRegularCost({ c: this.candleCount, h: this.heartCount });
+    this._currencyService.setRegularCost({ c: this.candleCount, h: this.heartCount, ac: this.acCount });
     this._currencyService.setEventCurrency(this.eventInstance.guid, this.currencyCount);
   }
 
@@ -336,6 +344,7 @@ export class EventCalculatorComponent {
     this.currencyCount = eventCurrency.tickets;
     this.candleCount = currencies.candles;
     this.heartCount = currencies.hearts;
+    this.acCount = currencies.ascendedCandles;
 
     this.timedCurrencyCount = parsed.tc || {};
     this.timedCurrencies.forEach(timedCurrency => {
@@ -387,6 +396,7 @@ export class EventCalculatorComponent {
     this.currencyRequired = 0;
     this.candlesRequired = 0;
     this.heartsRequired = 0;
+    this.acRequired = 0;
 
     // Handle all nodes in the tree to determine cost.
     for (const node of requiredNodes) {
@@ -394,6 +404,7 @@ export class EventCalculatorComponent {
       this.currencyRequired += node.ec || 0;
       this.candlesRequired += node.c || 0;
       this.heartsRequired += node.h || 0;
+      this.acRequired += node.ac || 0;
     }
 
     // Handle item shop nodes.
@@ -402,6 +413,7 @@ export class EventCalculatorComponent {
       this.currencyRequired += node.ec || 0;
       this.candlesRequired += node.c || 0;
       this.heartsRequired += node.h || 0;
+      this.acRequired += node.ac || 0;
     }
 
     this.currencyRequired -= this.currencyCount;
@@ -421,8 +433,7 @@ export class EventCalculatorComponent {
 
     this.candlesRequired -= this.candleCount;
     this.heartsRequired -= this.heartCount;
-
-
+    this.acRequired -= this.acCount;
 
     // Check if any required node is not marked as wanted.
     const newWantedSet = new Set(newWantedValues);
