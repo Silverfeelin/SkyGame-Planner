@@ -1,0 +1,24 @@
+@if (visible) {
+  <div class="container mb">
+    <b>We're collecting feedback for the Sky Planner!</b><br/>
+    If you have a few minutes, please check it out!
+    <div class="sky-flex flex-wrap gap-half mt-half">
+      <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSdvoqNzdBWXuUo2C4Qmu4P6FoP2jBMSo_uvdPrNGSBj2XM-kg/viewform?usp=sf_link" target="_blank">
+        <mat-icon class="menu-icon">description</mat-icon>
+        <span class="menu-label">Open survey</span>
+      </a>
+      <button (click)="remind()">
+        <mat-icon class="menu-icon">update</mat-icon>
+        <span class="menu-label">Hide for today</span>
+      </button>
+      <button (click)="close()">
+        <mat-icon class="menu-icon">check</mat-icon>
+        <span class="menu-label">Already submitted</span>
+      </button>
+      <button (click)="close()">
+        <mat-icon class="menu-icon">close</mat-icon>
+        <span class="menu-label">No, thanks</span>
+      </button>
+    </div>
+  </div>
+}

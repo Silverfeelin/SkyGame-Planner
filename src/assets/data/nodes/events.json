@@ -1256,6 +1256,17 @@
     "ec": 18
   },
   // #endregion
+  // #region Days of Style (2024)
+  { "guid": "I8SYjbvjyt", "item": "TalOg0V1he", "c": 5, "nw": "7n5dqqIV4R", "n": "1VEOtJZexx", "ne": "keai0nRPP7" },
+  { "guid": "7n5dqqIV4R", "item": "WEGS4Ul0qq", "ec": 34 },
+  { "guid": "keai0nRPP7", "item": "DJBQZOapq3", "ec": 15 },
+  { "guid": "1VEOtJZexx", "item": "KHEaIkjXoV", "c": 5, "nw": "kJY1zFdLWE", "n": "EhtoE3hnu1", "ne": "c2TLeNmEq9" },
+  { "guid": "kJY1zFdLWE", "item": "d_p_flDgEV", "h": 13 },
+  { "guid": "c2TLeNmEq9", "item": "TbSEPp5DAI", "c": 30 },
+  { "guid": "EhtoE3hnu1", "item": "0ckPw0PfdC", "c": 5, "nw": "IqOkYFodZA", "n": "XaFK9crO_I" },
+  { "guid": "IqOkYFodZA", "item": "qscApTevys", "c": 72 },
+  { "guid": "XaFK9crO_I", "item": "o4cIshT_hD", "ac": 12 },
+  // #endregion
   // #region Days of Mischief (2021)
   {
     "guid": "UYRvaTIPiX",

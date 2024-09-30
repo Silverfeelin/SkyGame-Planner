@@ -1132,7 +1132,7 @@
     },
     // #endregion
     // #region Assembly
-    // Baffled Botanist
+    // #region Baffled Botanist
     {
       "guid": "u-NLeQNopc",
       "node": "ANlyLKl8ho"
@@ -1145,6 +1145,11 @@
       "guid": "Wr_6cQV3n6",
       "node": "LeORFeGFaA"
     },
+    {
+      "guid": "bqZW7VaH5p",
+      "node": "AB05xjmuxN"
+    },
+    // #endregion
     // Scolding Student
     {
       "guid": "tJ92dz1ans",
@@ -1816,6 +1821,12 @@
       "guid": "IhEcryXJD_",
       "node": "n7lKdvhcO1"
     },
+    // #region Days of Style (2024)
+    {
+      "guid": "FBCPxTV_1R",
+      "node": "I8SYjbvjyt"
+    },
+    // #endregion
     // #endregion
     // #region Days of Mischief
     // Mischief 2021

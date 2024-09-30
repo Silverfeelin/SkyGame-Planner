@@ -49,6 +49,7 @@ import { CurrencySpentComponent } from './components/currency/currency-spent/cur
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
 import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
+import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
@@ -74,6 +75,7 @@ export const routes: Routes = [
           { path: '', component: DashboardComponent, title: 'Sky Planner' },
           { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
           { path: 'privacy', component: PrivacyComponent },
+          { path: 'news', component: NewsComponent, title: title(`What's new`) },
           { path: 'credits', component: CreditsComponent, title: title('Credits') },
           { path: 'currency', component: CurrencyComponent, title: title('In-game currency') },
           { path: 'currency/spent', component: CurrencySpentComponent, title: title('Spent currency') },

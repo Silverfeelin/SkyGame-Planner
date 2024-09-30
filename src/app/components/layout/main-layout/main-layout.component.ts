@@ -7,6 +7,7 @@ import { DataService, ITrackables } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storage-provider.interface';
 import { MatIcon } from '@angular/material/icon';
+import { SurveyComponent } from "../../survey/survey.component";
 
 @Component({
     selector: 'app-main-layout',
@@ -14,7 +15,7 @@ import { MatIcon } from '@angular/material/icon';
     styleUrl: './main-layout.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [MatIcon, RouterOutlet, RouterLink]
+    imports: [MatIcon, RouterOutlet, RouterLink, SurveyComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 
