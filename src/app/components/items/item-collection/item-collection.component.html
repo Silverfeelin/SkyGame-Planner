@@ -55,15 +55,7 @@
       <ng-container *ngTemplateOutlet="tSelection; context: { $implicit: editItems, removable: true }"></ng-container>
     </app-card>
     <!-- Item list -->
-    <app-card [title]="'Item list type'">
-      <div class="container">
-        Select an item type here to show these items in the list below. From there you can add any items by clicking on them.
-      </div>
-      <div class="mt">
-        <app-item-type-selector [type]="editItemType" (typeChanged)="this.editItemType=$event"></app-item-type-selector>
-      </div>
-    </app-card>
-    <app-items [title]="'Item list'" [type]="editItemType" [backlightItems]="editItems" [opaqueItems]="true" [foldable]="true" [action]="'emit'" [maxHeight]="'max(80vh, 400px)'" (onItemClicked)="onItemClickedAdd($event)"></app-items>
+    <app-items [title]="'Item list'" [type]="editItemType" (typeChanged)="editItemType=$event" [backlightItems]="editItems" [opaqueItems]="true" [foldable]="true" [action]="'emit'" [maxHeight]="'max(80vh, 400px)'" (onItemClicked)="onItemClickedAdd($event)"></app-items>
     <div class="sky-flex flex-wrap">
       <ng-container *ngTemplateOutlet="tSave"></ng-container>
     </div>

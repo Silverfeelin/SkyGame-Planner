@@ -5,15 +5,18 @@
   <div header>
     <div class="p-rel">
       <h2 class="h3 mb-0">{{ title }}</h2>
-      <div class="fav-toggle button" (click)="toggleFilters($event)" [hidden]="isFolded">
+      <div class="fav-toggle button" (click)="toggleFilters($event)" [hidden]="isFolded" [class.highlight]="showFilters" [class.filter-active]="shownCount !== unfilteredItemCount">
         <span>Filter</span>&nbsp;
-        <mat-icon [class.toggle-active]="showFilters" class="v-top" [ngbTooltip]="'Filter items'" container="body" placement="left">filter_alt</mat-icon>
+        <mat-icon class="v-top">filter_alt</mat-icon>
       </div>
     </div>
   </div>
 
-  <div class="sky-card-body">
-  @if (showFilters) {
+  <div class="">
+    <div class="container mb">
+      <app-item-type-selector [type]="type" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
+    </div>
+    @if (showFilters) {
       <div class="container mb">
         <!-- General filters -->
         <div class="search">
@@ -151,21 +154,25 @@
           </div>
         }
         <hr/>
-        <div class="mt">
+        <div class="sky-flex flex-wrap mt">
+          <button type="button" class="button-danger" (click)="resetFilters()">Reset filters</button>
+          <button type="button" class="" (click)="toggleFilters($event)">Hide filters</button>
+        </div>
+      </div>
+    }
+    <div class="sky-flex flex-wrap" [style.max-height]="maxHeight" [style.overflow-y]="maxHeight ? 'auto' : undefined">
+      @if (shownCount && !unfilteredItemCount) {
+        <div class="container">
+          No items match the selected <a class="link" (click)="toggleFilters($event)">filters</a>.
+        </div>
+      } @else if (shownCount && shownCount !== unfilteredItemCount) {
+        <div class="container">
           @if (unfilteredItemCount === 1) {
             There is <b>1</b> {{ type | itemType | lowercase }}
           } @else {
             There are <b>{{ unfilteredItemCount }}</b> {{ type | itemType:true | lowercase }}
           }
           <span class="c-accent">(out of {{ shownCount }})</span> matching the selected filters.
-          <button type="button" class="button-danger" (click)="resetFilters()">Reset filters</button>
-        </div>
-      </div>
-    }
-    <div class="sky-flex flex-wrap" [style.max-height]="maxHeight" [style.overflow-y]="maxHeight ? 'auto' : undefined">
-      @if (showFilters && !unfilteredItemCount) {
-        <div class="container">
-          No items match the selected filters.
         </div>
       }
       @for (type of types; track $index) {
@@ -175,7 +182,7 @@
         @if (typesLoaded[type]) {
           @for (item of typeItems[type]; track item.guid; let i = $index) {
             <a class="item-icon point" [routerLink]="action === 'navigate' ? ['/item', item.guid] : undefined" (click)="clickItem(item, $event)"
-              [hidden]="!shownItems[item.guid] || (showFilters && !unfilteredItems[item.guid])"
+              [hidden]="!shownItems[item.guid] || !unfilteredItems[item.guid]"
             >
               <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
                 [class.highlight]="item && item === highlightItem" [opaque]="opaqueItems"

@@ -227,16 +227,10 @@
 
 @if (showAddItems) {
   <div class="mt">
-    <app-card [title]="'Add item type'">
-      <div class="container">
-        Select an item type here to show these items below. From there you can add any items by clicking on them.
-      </div>
-      <div class="mt">
-        <app-item-type-selector [type]="itemType" (typeChanged)="onItemTypeChanged($event)"></app-item-type-selector>
-      </div>
-    </app-card>
-    <div class="mt">
-      <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'" (onItemClicked)="onItemClicked($event)" (onItemsChanged)="onItemsChanged($event)"></app-items>
+    <div>
+      <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'"
+        (typeChanged)="onItemTypeChanged($event)" (onItemClicked)="onItemClicked($event)" (onItemsChanged)="onItemsChanged($event)">
+      </app-items>
     </div>
 
     <div class="mt">
