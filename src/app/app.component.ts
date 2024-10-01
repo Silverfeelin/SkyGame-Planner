@@ -8,6 +8,7 @@ import { filter } from 'rxjs';
 import { BroadcastService } from './services/broadcast.service';
 import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { CanonicalService } from './services/canonical.service';
 
 @Component({
     selector: 'app-root',
@@ -23,6 +24,7 @@ export class AppComponent {
 
   constructor(
     private readonly _broadcastService: BroadcastService,
+    private readonly _canonicalService: CanonicalService,
     private readonly _eventService: EventService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
