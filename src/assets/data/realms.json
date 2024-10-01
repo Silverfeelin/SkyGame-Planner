@@ -205,6 +205,7 @@
       "name": "Hidden Forest",
       "shortName": "Forest",
       "imageUrl": "/assets/game/realms/Forest.webp",
+      "imagePosition": "bottom",
       "elder": "aj2x9H8ECy",
       "areas": [
         "A2--yR5CJk",

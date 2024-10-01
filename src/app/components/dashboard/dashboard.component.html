@@ -24,31 +24,7 @@
 
 <div class="grid grid-2 mt">
   <!-- No ongoing events, backup card for dailies -->
-  @if (!season && !eventInstances.length) {
-    <div class="sky-card">
-      <div class="sky-card-header">
-        <h1 class="h2 mb-0">Dailies</h1>
-      </div>
-      <div class="sky-card-body grid grid-1">
-        <div class="container">
-          <span class="">There are currently no seasons and events active.</span>
-        </div>
-        <app-discord-link [link]="'https://discord.com/channels/736912435654688868/801778605486374943'"
-          [aStyle]="'text-decoration: none;'" [aClass]="'item link'"
-        >
-          <img class="menu-icon icon" src="assets/external/discord-mark-white.svg" loading="lazy">
-          <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
-        </app-discord-link>
-        <!-- Check-in -->
-        <div (click)="dailyCheckIn()" class="item action" [class.active]="dailyCheckedIn">
-          <mat-icon class="menu-icon">{{dailyCheckedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-          <span class="menu-label">
-            I have done my dailies.
-          </span>
-        </div>
-      </div>
-    </div>
-  }
+  @if (!season) { <app-daily-card></app-daily-card> }
   <!-- Ongoing -->
   <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-season-card>
   <ng-container *ngFor="let eventInstance of eventInstances">
