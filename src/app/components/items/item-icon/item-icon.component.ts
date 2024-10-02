@@ -39,6 +39,9 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @HostBinding('attr.data-size')
   _size: ItemSize = 'default';
 
+  iconWidth = '64px';
+  iconHeight = '64px';
+
   _sub?: SubscriptionLike;
 
   constructor(
@@ -57,7 +60,15 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['size']) { this._size = changes['size'].currentValue; }
+    if (changes['size']) {
+      this._size = changes['size'].currentValue;
+      switch (this._size) {
+        case 'small': this.iconWidth = this.iconHeight = '32px'; break;
+        case 'medium': this.iconWidth = this.iconHeight = '48px'; break;
+        case 'large': this.iconWidth = this.iconHeight = '96px'; break;
+        default: this.iconWidth = this.iconHeight = '64px'; break;
+      }
+    }
   }
 
   ngOnDestroy(): void {

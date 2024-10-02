@@ -1,15 +1,21 @@
-<ng-container *ngIf="src">
-  <div class="img img-bg" *ngIf="isStoryBlok" [style.background-image]="'url(\''+src+'\')'">
 
-  </div>
-  @if (!isSvg && !isStoryBlok) {
-    <img class="img" [src]="safeString || safeUrl" crossorigin="anonymous"
-      [style.width]="width" [style.height]="height" [style.verticalAlign]="verticalAlign"
-      [attr.loading]="lazy ? 'lazy' : undefined" [attr.draggable]="draggable">
-  }
-  @if (isSvg && safeString) {
+@if (src) {
+  @if (isStoryBlok) {
+    <div class="img img-bg" [style.background-image]="'url(\''+src+'\')'"></div>
+  } @else if (!isSvg) {
+    @if (backgroundImage) {
+      <div class="img"
+        [style.backgroundImage]="backgroundImage" [style.width]="width" [style.height]="height"
+        [style.backgroundPosition]="backgroundPosition" [style.backgroundSize]="backgroundSize"
+      ></div>
+    } @else {
+      <img class="img" [src]="safeString" crossorigin="anonymous"
+        [style.width]="width" [style.height]="height" [style.verticalAlign]="verticalAlign"
+        [attr.loading]="lazy ? 'lazy' : undefined" [attr.draggable]="draggable">
+    }
+  } @else if (safeString) {
     <mat-icon [svgIcon]="safeString"
       [style.width]="width" [style.height]="height" [style.verticalAlign]="verticalAlign">
     </mat-icon>
   }
-</ng-container>
+}
