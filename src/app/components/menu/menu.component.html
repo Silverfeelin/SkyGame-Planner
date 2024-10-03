@@ -1,12 +1,23 @@
-<aside class="menu-toggle" *ngIf="folded" (click)="foldMenu()" [ngbTooltip]="'Open menu'" container="body" placement="right">
-  <mat-icon>keyboard_double_arrow_right</mat-icon>
+<aside class="menu-toggle" *ngIf="folded">
+  <mat-icon class="menu-toggle-back" (click)="goBack()" [ngbTooltip]="'Back'" container="body" placement="right">
+    arrow_back
+  </mat-icon>
+  <mat-icon class="menu-toggle-fold" (click)="foldMenu()" [ngbTooltip]="'Open menu'" container="body" placement="right">
+    menu
+  </mat-icon>
 </aside>
 <aside class="menu" [class.folded]="folded">
   <nav>
     <div class="items">
+      <!-- Go back -->
+      <a class="item item-small" (click)="goBack()" [ngbTooltip]="wide ? '' : 'Back'" placement="right" container="body">
+        <mat-icon>arrow_back</mat-icon>
+        <span class="name">Back</span>
+      </a>
+      <hr/>
       <!-- Fold menu-->
-      <a class="item menu-fold" (click)="foldMenu()" [ngbTooltip]="wide ? '' : 'Close menu'" placement="right" container="body">
-        <mat-icon>keyboard_double_arrow_left</mat-icon>
+      <a class="item item-small" (click)="foldMenu()" [ngbTooltip]="wide ? '' : 'Close menu'" placement="right" container="body">
+        <mat-icon>close</mat-icon>
         <span class="name">Close menu</span>
       </a>
       <hr/>
