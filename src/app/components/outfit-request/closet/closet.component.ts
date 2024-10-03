@@ -903,6 +903,7 @@ export class ClosetComponent implements OnDestroy {
       'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi',
       'E_yfCZYU5C', 'ec8jU3Gerw', 'biKOov4qJQ'
     ];
+    const placeholderItems = placeholders.map(guid => this.itemMap[guid]);
     // Store item images for drawing.
     const itemDivs = document.querySelectorAll('.closet-item');
     const itemImgs = Array.from(itemDivs).reduce((obj, div) => {
@@ -922,9 +923,15 @@ export class ClosetComponent implements OnDestroy {
       ctx.beginPath(); ctx.roundRect(x, y, _wItem, _wItem, 4); ctx.fill();
 
       const drawPlaceholder = () => {
+        const mappedIcon = placeholderItems[i].icon ? this._iconService.getIcon(placeholderItems[i].icon!) : undefined;
         const placeholderImg = itemImgs[placeholders[i]];
         ctx.globalAlpha = 0.25;
-        ctx.drawImage(placeholderImg, x, y, _wItem, _wItem);
+        if (mappedIcon) {
+          const sheet = this._imgSheets[mappedIcon.file];
+          ctx.drawImage(sheet, mappedIcon.x, mappedIcon.y, 128, 128, x, y, _wItem, _wItem);
+        } else {
+          ctx.drawImage(placeholderImg, x, y, _wItem, _wItem);
+        }
         ctx.globalAlpha = 1;
       };
 
