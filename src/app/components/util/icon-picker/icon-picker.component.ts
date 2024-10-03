@@ -4,6 +4,7 @@ import { ISearchItem, SearchService } from 'src/app/services/search.service';
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
+import { ItemIconComponent } from "../../items/item-icon/item-icon.component";
 
 @Component({
     selector: 'app-icon-picker',
@@ -11,7 +12,7 @@ import { NgFor } from '@angular/common';
     styleUrls: ['./icon-picker.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgFor, NgbTooltip, MatIcon]
+    imports: [NgFor, NgbTooltip, MatIcon, ItemIconComponent]
 })
 export class IconPickerComponent implements AfterViewInit {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;

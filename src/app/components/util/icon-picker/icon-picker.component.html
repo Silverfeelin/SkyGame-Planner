@@ -1,9 +1,8 @@
 <div class="icon-picker" (keydown)="pickerKeydown($event)">
   <div class="picker-grid">
-      <ng-container *ngFor="let result of searchResults; let i = index;">
-        <img class="picker-icon" [src]="result.data.icon" (click)="select(result.data)" crossorigin="anonymous" [tabIndex]="i + 1"
-        [ngbTooltip]="result.data.name" container="body">
-      </ng-container>
+    <ng-container *ngFor="let result of searchResults; let i = index;">
+      <app-item-icon class="point" [item]="result.data" [opaque]="true" [subIcons]="[]" [hoverGlow]="false" (click)="select(result.data)" ></app-item-icon>
+    </ng-container>
   </div>
   <div class="picker-close" (click)="close($event)">
     <mat-icon>close</mat-icon>

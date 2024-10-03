@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
@@ -18,13 +17,14 @@ import { ClockComponent } from '../clock/clock.component';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { CardComponent } from "../layout/card/card.component";
 import { DailyCardComponent } from "../daily-card/daily-card.component";
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.less'],
   standalone: true,
-  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent, CardComponent, DailyCardComponent]
+  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent, CardComponent, DailyCardComponent, IconComponent]
 })
 export class DashboardComponent implements OnInit {
 

@@ -25,14 +25,14 @@
   }
   <!-- Season pass icon (top left) -->
   @if (iconsShown['seasonPass'] && (item.group === 'SeasonPass' || item.group === 'Ultimate') && item.season?.iconUrl) {
-    <app-icon class="img-tl subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'"
+    <app-icon class="img-tl subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'" [width]="'24px'" [height]="'24px'"
       [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
     </app-icon>
   }
 
   <!-- Season icon (top right) -->
   @if (iconsShown['season'] && item.season?.iconUrl) {
-    <app-icon class="img-tr subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'"
+    <app-icon class="img-tr subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'" [width]="'24px'" [height]="'24px'"
       [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
     </app-icon>
   }
