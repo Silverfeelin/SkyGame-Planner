@@ -126,7 +126,7 @@
               <button (click)="toggleSeasonFilter(season)" [ngbTooltip]="season.name" container="body" placement="top">
                 <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
                 <span class="menu-label">
-                  <app-icon [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
+                  <app-icon class="d-inline-block v-top" [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
                   {{ season.shortName }}
                 </span>
               </button>
