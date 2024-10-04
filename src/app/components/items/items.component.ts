@@ -421,6 +421,11 @@ export class ItemsComponent {
         originSource = { type: 'season', source: origin.source.root.spiritTree.ts.spirit.season };
       }
 
+      
+      // Only apply realm filters to regular spirits & elders.
+      const lastNodeSpirit = last?.type === 'node' ? last.source.root?.spiritTree?.spirit : undefined;
+      const realm = lastNodeSpirit?.type === 'Regular' || lastNodeSpirit?.type === 'Elder' ? lastNodeSpirit.area?.realm : undefined;
+
       // Note: picking event by last instance, to account for the weird cases like all the different Summer events.
       itemSearchMetadata[item.guid] = {
         item, origin, last,
@@ -433,7 +438,7 @@ export class ItemsComponent {
         event: lastSource?.type === 'event' ? lastSource.source.event : undefined,
         eventInstance: lastSource?.type === 'event' ? lastSource.source : undefined,
         season: originSource?.type === 'season' ? originSource.source : undefined,
-        realm: last?.type === 'node' ? last.source.root?.spiritTree?.spirit?.area?.realm : undefined
+        realm
       };
     };
   }
