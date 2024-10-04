@@ -39,8 +39,9 @@
         <div>
           Your current event currency:
           <mat-icon [svgIcon]="'ticket'" class="v-middle"></mat-icon>
-          <input #inpEc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencyCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
-          <button type="button" class="button-sc button-sc" (click)="addCurrency()">+{{currencyPerDay}} (daily)</button>
+          <input #inpEc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencyCount" class="d-inline-block br-r-0 input-no-arrows" style="width: 64px;"/>
+          <button type="button" class="button-sc br-l-0 br-r-0" (click)="addCurrency(1)">+1</button>
+          <button type="button" class="button-sc br-l-0" (click)="addCurrency()">+{{currencyPerDay}} (daily)</button>
         </div>
         <div>
           Today's daily currency:

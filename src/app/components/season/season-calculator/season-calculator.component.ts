@@ -189,8 +189,8 @@ export class SeasonCalculatorComponent implements OnInit {
     this.updateStoredCurrencies();
   }
 
-  addCurrency(): void {
-    this.candleCount += this.hasSeasonPass ? 6 : 5;
+  addCurrency(n?: number): void {
+    this.candleCount += n ?? (this.hasSeasonPass ? 6 : 5);
     this.candleCount = this._currencyService.clamp(this.candleCount);
     this.candleCountChanged();
     this.calculate();

@@ -258,8 +258,8 @@ export class EventCalculatorComponent {
     this.updateStoredCurrencies();
   }
 
-  addCurrency(): void {
-    this.currencyCount += this.currencyPerDay!;
+  addCurrency(n?: number): void {
+    this.currencyCount += n ?? this.currencyPerDay!;
     this.currencyCount = this._currencyService.clamp(this.currencyCount);
     this.currencyCountChanged();
     this.calculate();
