@@ -14,7 +14,7 @@
       <a class="item-icon" *ngFor="let season of reverseSeasons"
         [routerLink]="['/season', season.guid]"
         [ngbTooltip]="season.name" placement="bottom" container="body">
-        <img class="season-icon" [src]="season.iconUrl" />
+        <app-icon [width]="'64px'" [height]="'64px'" [src]="season.iconUrl"></app-icon>
       </a>
     </div>
   </div>

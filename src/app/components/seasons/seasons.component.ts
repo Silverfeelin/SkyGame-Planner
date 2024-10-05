@@ -9,13 +9,14 @@ import { NgFor } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
     selector: 'app-seasons',
     templateUrl: './seasons.component.html',
     styleUrls: ['./seasons.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, NgbTooltip, SeasonCardComponent]
+    imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, NgbTooltip, SeasonCardComponent, IconComponent]
 })
 export class SeasonsComponent implements OnInit {
   seasons!: Array<ISeason>;

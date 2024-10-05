@@ -40,22 +40,45 @@
 
 <div class="mt">
   <app-card [title]="'Regular currency'" [foldable]="false">
-    <div class="container">
-      <div>
-        <mat-icon [svgIcon]="'candle'" class="v-middle" [ngbTooltip]="'Candles'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.candles" class="d-inline-block input-no-arrows" style="width: 120px;"/>
+    <div class="container grid grid-1">
+      <div class="sky-flex flex-wrap">
+        <div>
+          <mat-icon [svgIcon]="'candle'" class="v-middle" [ngbTooltip]="'Candles'" container="body"></mat-icon>&nbsp;x&nbsp;
+          <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.candles" class="d-inline-block" style="width: 120px;"/>
+        </div>
+        <div>
+          <button type="button" class="button-currency br-r-0" (click)="addCurrency('candles', 1)">+1</button>
+          <button type="button" class="button-currency br-l-0 br-r-0" (click)="addCurrency('candles', 5)">+5</button>
+          <button type="button" class="button-currency br-l-0" (click)="addCurrency('candles', 10)">+10</button>
+        </div>
       </div>
-      <div>
-        <mat-icon [svgIcon]="'heart'" class="v-middle" [ngbTooltip]="'Hearts'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.hearts" class="d-inline-block input-no-arrows" style="width: 120px;"/>
+      <div class="sky-flex flex-wrap">
+        <div>
+          <mat-icon [svgIcon]="'heart'" class="v-middle" [ngbTooltip]="'Hearts'" container="body"></mat-icon>&nbsp;x&nbsp;
+          <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.hearts" class="d-inline-block" style="width: 120px;"/>
+        </div>
+        <div>
+          <button type="button" class="button-currency br-r-0" (click)="addCurrency('hearts', 1)">+1</button>
+          <button type="button" class="button-currency br-l-0 br-r-0" (click)="addCurrency('hearts', 5)">+5</button>
+          <button type="button" class="button-currency br-l-0" (click)="addCurrency('hearts', 10)">+10</button>
+        </div>
       </div>
-      <div>
-        <mat-icon [svgIcon]="'ascended-candle'" class="v-middle" [ngbTooltip]="'Ascended candles'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpAc (blur)="onCurrencyInputBlur($event, true)" type="number" min="0" max="99999" step="0.25" (input)="onCurrencyInput()" [value]="inpCurrencies.ascendedCandles" class="d-inline-block" style="width: 120px;"/>
+      <div class="sky-flex flex-wrap">
+        <div>
+          <mat-icon [svgIcon]="'ascended-candle'" class="v-middle" [ngbTooltip]="'Ascended candles'" container="body"></mat-icon>&nbsp;x&nbsp;
+          <input #inpAc (blur)="onCurrencyInputBlur($event, true)" type="number" min="0" max="99999" step="0.25" (input)="onCurrencyInput()" [value]="inpCurrencies.ascendedCandles" class="d-inline-block" style="width: 120px;"/>
+        </div>
+        <div>
+          <button type="button" class="button-currency br-r-0" (click)="addCurrency('ascendedCandles', 0.25)">+0.25</button>
+          <button type="button" class="button-currency br-l-0 br-r-0" (click)="addCurrency('ascendedCandles', 1)">+1</button>
+          <button type="button" class="button-currency br-l-0" (click)="addCurrency('ascendedCandles', 15.75)">+15.75</button>
+        </div>
       </div>
-      <div>
-        <mat-icon [svgIcon]="'gift'" class="v-middle seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>&nbsp;x&nbsp;
-        <input #inpSp (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.giftPasses" class="d-inline-block input-no-arrows" style="width: 120px;"/>
+      <div class="sky-flex flex-wrap">
+        <div>
+          <mat-icon [svgIcon]="'gift'" class="v-middle seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>&nbsp;x&nbsp;
+          <input #inpSp (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.giftPasses" class="d-inline-block" style="width: 120px;"/>
+        </div>
       </div>
     </div>
   </app-card>
@@ -71,12 +94,22 @@
           }
           <b>{{ ongoingSeason.name}}</b>
         </div>
-        <div>
-          <mat-icon [svgIcon]="'candle'" class="v-middle seasonal" [ngbTooltip]="'Season candles'"></mat-icon>&nbsp;x&nbsp;
-          <input #inpSc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
-            [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
-            (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+        <div class="sky-flex flex-wrap">
+          <div>
+            <mat-icon [svgIcon]="'candle'" class="v-middle seasonal" [ngbTooltip]="'Season candles'"></mat-icon>&nbsp;x&nbsp;
+            <input #inpSc type="number" min="0" max="99999" class="d-inline-block" style="width: 64px;"
+              [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
+              (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+          </div>
+          <div>
+            <button type="button" class="button-currency br-r-0" (click)="addSeasonCurrency(1)">+1</button>
+            <button type="button" class="button-currency br-l-0" (click)="addSeasonCurrency(dailySeasonCandles)">+{{dailySeasonCandles}}</button>
+          </div>
         </div>
+        <a class="button mt" routerLink="/season-calculator">
+          <mat-icon class="menu-icon">calculate</mat-icon>
+          <span class="menu-label">Go to Calculator</span>
+        </a>
       </div>
     </app-card>
   </div>
@@ -91,12 +124,24 @@
             <div class="mb">
               <b>{{ instance.name ?? instance.event.name }}</b>
             </div>
-            <div>
-              <mat-icon [svgIcon]="'ticket'" class="v-middle" [ngbTooltip]="'Event currency'"></mat-icon>&nbsp;x&nbsp;
-              <input #inpEc type="number" min="0" max="99999" class="d-inline-block input-no-arrows" style="width: 64px;"
-                [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"
-                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+            <div class="sky-flex flex-wrap">
+              <div>
+                <mat-icon [svgIcon]="'ticket'" class="v-middle" [ngbTooltip]="'Event currency'"></mat-icon>&nbsp;x&nbsp;
+                <input #inpEc type="number" min="0" max="99999" class="d-inline-block" style="width: 64px;"
+                  [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"
+                  (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+              </div>
+              <div>
+                <button type="button" class="button-currency br-r-0" (click)="addEventCurrency(instance.guid, 1)">+1</button>
+                <button type="button" class="button-currency br-l-0" (click)="addEventCurrency(instance.guid, dailyEventCurrency[instance.guid] || 5)">
+                  +{{ dailyEventCurrency[instance.guid] || 5 }}
+                </button>
+              </div>
             </div>
+            <a class="button mt" routerLink="/event-calculator" [queryParams]="{ guid: instance.guid }">
+              <mat-icon class="menu-icon">calculate</mat-icon>
+              <span class="menu-label">Go to Calculator</span>
+            </a>
           </div>
         }
       </div>

@@ -23,10 +23,15 @@
       </h1>
     </div>
     <div class="sky-card-body">
-      <a class="button" [routerLink]="['/event-instance', eventInstance.guid]">
-        <mat-icon class="menu-icon">arrow_back</mat-icon>
-        <span class="menu-label">Go to Event</span>
-      </a>
+      <div class="sky-flex flex-wrap">
+        <a class="button" [routerLink]="['/event-instance', eventInstance.guid]">
+          <mat-icon class="menu-icon">arrow_back</mat-icon>
+          <span class="menu-label">Event</span>
+        </a>
+        <a class="button" routerLink="/currency">
+          Currencies
+        </a>
+      </div>
       @if (concluded) {
         <div class="container mt">
           <mat-icon class="result-warn">priority_high</mat-icon>
