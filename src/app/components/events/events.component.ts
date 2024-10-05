@@ -8,13 +8,14 @@ import { NgFor } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 
 @Component({
     selector: 'app-events',
     templateUrl: './events.component.html',
     styleUrls: ['./events.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, EventCardComponent]
+    imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, EventCardComponent, CalendarLinkComponent]
 })
 export class EventsComponent {
   recurring!: Array<IEvent>;

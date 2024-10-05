@@ -9,13 +9,14 @@ import { TableColumnDirective } from '../table/table-column/table-column.directi
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 
 @Component({
     selector: 'app-traveling-spirits',
     templateUrl: './traveling-spirits.component.html',
     styleUrls: ['./traveling-spirits.component.less'],
     standalone: true,
-    imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, NgIf, IconComponent, RouterLink, DateComponent]
+    imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, NgIf, IconComponent, RouterLink, DateComponent, CalendarLinkComponent]
 })
 export class TravelingSpiritsComponent {
   rows: Array<any> = [];

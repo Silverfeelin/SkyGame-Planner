@@ -5,7 +5,8 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events'}"></app-wiki-link>
-      <a class="container" [routerLink]="'/season-calculator'">
+      <app-calendar-link [cal]="{href: 'https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d'}"></app-calendar-link>
+      <a class="container colspan-2" [routerLink]="'/season-calculator'">
         <mat-icon class="menu-icon">calculate</mat-icon>
         <span class="menu-label">Calculator</span>
       </a>
