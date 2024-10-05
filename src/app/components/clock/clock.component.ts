@@ -5,6 +5,7 @@ import { DateComponent } from '../util/date/date.component';
 import { NgIf } from '@angular/common';
 import { getShardInfo, ShardInfo } from '@app/helpers/shard-helper';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
     selector: 'app-clock',
@@ -12,7 +13,7 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
     styleUrls: ['./clock.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, DateComponent, NgbTooltip]
+    imports: [NgIf, DateComponent, NgbTooltip, MatIcon]
 })
 export class ClockComponent implements OnInit, OnDestroy {
   private _interval?: number;
@@ -30,6 +31,7 @@ export class ClockComponent implements OnInit, OnDestroy {
 
   shardType?: 'red' | 'black';
   shardHasLanded = false;
+  shardWillLand = false;
 
   constructor(
     private readonly _changeDetectorRef: ChangeDetectorRef
@@ -79,6 +81,7 @@ export class ClockComponent implements OnInit, OnDestroy {
     const shardInfo = getShardInfo(now);
     const currentShard = shardInfo.occurrences?.find(occurrence => now >= occurrence.land && now < occurrence.end);
     this.shardHasLanded = shardInfo.hasShard && !!currentShard;
+    this.shardWillLand = !!shardInfo.occurrences?.find(occurrence => now < occurrence.land);
     this.shardType = shardInfo.isRed ? 'red' : 'black';
   }
 }
