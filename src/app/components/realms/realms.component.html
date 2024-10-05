@@ -30,21 +30,24 @@
     <div class="sky-card-header">
       <h2 class="h3 mb-0">{{realm.name}}</h2>
     </div>
-    <!-- Image -->
     <div class="sky-card-body">
+      <!-- Image -->
       <div *ngIf="realm.imageUrl" class="p-rel img sky-border-solid"
         [style.background-image]="'url('+realm.imageUrl+')'"
         [style.background-position]="realm.imagePosition || undefined">
       </div>
-      <!-- Overview --> <!-- For now only show overview if realm has spirits. -->
+      <!-- Overview -->
       <a class="item link mt" [routerLink]="['/realm', realm.guid]">
         <mat-icon class="menu-icon">article</mat-icon>
         <span class="menu-label">Overview</span>
       </a>
       <!-- Areas -->
-      <!-- <div class="mt item areas">
-        Areas
-      </div> -->
+      @if (realm.areas?.length) {
+        <a class="item link mt" [routerLink]="['/area']" [queryParams]="{ realm: realm.guid }">
+          <mat-icon class="menu-icon">location_on</mat-icon>
+          <span class="menu-label">Areas</span>
+        </a>
+      }
     </div>
   </div>
 </div>

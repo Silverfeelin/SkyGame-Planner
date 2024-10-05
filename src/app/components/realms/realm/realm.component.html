@@ -21,10 +21,16 @@
           </span>
         </a>
       }
-      <a class="container colspan-2" [routerLink]="['/realm']">
+      <a class="container" [class.colspan-2]="!realm.areas?.length" [routerLink]="['/realm']">
         <mat-icon class="menu-icon">map</mat-icon>
         <span class="menu-label">Other realms</span>
       </a>
+      @if (realm.areas?.length) {
+        <a class="container" [routerLink]="['/area']" [queryParams]="{ realm: realm.guid }">
+          <mat-icon class="menu-icon">location_on</mat-icon>
+          <span class="menu-label">Areas</span>
+        </a>
+      }
     </div>
   </div>
 </div>

@@ -49,6 +49,7 @@ import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-ca
 import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
 import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
+import { AreasComponent } from './components/areas/areas.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -90,6 +91,7 @@ export const routes: Routes = [
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
           { path: 'realm/:guid', component: RealmComponent },
+          { path: 'area', component: AreasComponent, title: title('Areas') },
           { path: 'area/:guid', component: AreaComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
           { path: 'season/:guid', component: SeasonComponent },

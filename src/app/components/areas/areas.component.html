@@ -1,0 +1,49 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    @if (realm) {
+      <h1 class="h2 mb-0">Areas - {{ realm.name }}</h1>
+    } @else {
+      <h1 class="h2 mb-0">Areas</h1>
+    }
+  </div>
+  <div class="sky-card-body">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Category:Locations'}"></app-wiki-link>
+  </div>
+</div>
+
+
+<div class="grid grid-3 mt">
+  @for (area of areas; track area.guid) {
+    <div class="sky-card">
+      <div class="sky-card-header">
+        <h1 class="h2 mb-0">{{ area.name }}</h1>
+      </div>
+      <div class="sky-card-body grid grid-1">
+        @if (area.imageUrl) {
+          <div class="area-img"
+            [style.background-image]="'url('+area.imageUrl+')'"
+            [style.background-position]="area.imagePosition || undefined">
+          </div>
+        }
+        <!-- Overview -->
+        <a class="item link" [routerLink]="['/area', area.guid]">
+          <mat-icon class="menu-icon">article</mat-icon>
+          <span class="menu-label">Overview</span>
+        </a>
+        @if (!realm) {
+          <!-- Realm -->
+          <a class="item link" [routerLink]="['/realm', area.realm.guid]">
+            <mat-icon class="menu-icon">map</mat-icon>
+            <span class="menu-label">{{ area.realm.name }}</span>
+          </a>
+        }
+        @if (area.mapData?.position) {
+          <a class="container" [routerLink]="['/realm']" [queryParams]="{map: 3, area: area.guid}">
+            <mat-icon class="menu-icon">location_on</mat-icon>
+            <span class="menu-label">View on map</span>
+          </a>
+        }
+      </div>
+    </div>
+  }
+</div>

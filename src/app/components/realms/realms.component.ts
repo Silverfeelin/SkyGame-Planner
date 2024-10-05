@@ -51,7 +51,7 @@ export class RealmsComponent implements AfterViewInit {
       this.showMapShrines = !!(nMap & 4);
       this.showWingedLight = !!(nMap & 8);
     } else {
-      this.showMap = localStorage.getItem('realms.map.folded') !== '1';
+      this.showMap = localStorage.getItem('realms.map.folded') === '0';
       this.showAreas = localStorage.getItem('realms.map.areas') === '1';
       this.showMapShrines = localStorage.getItem('realms.map.shrines') === '1';
       this.showWingedLight = localStorage.getItem('realms.map.wl') === '1';

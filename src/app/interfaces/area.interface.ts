@@ -13,6 +13,10 @@ export interface IArea extends IGuid {
   name: string;
   mapData?: IMapData;
 
+  /** Area image. */
+  imageUrl?: string;
+  imagePosition?: string;
+
   /// References ///
   realm: IRealm;
   spirits?: Array<ISpirit>;

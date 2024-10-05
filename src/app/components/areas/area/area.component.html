@@ -50,7 +50,7 @@
       <h2 class="h3 mb-0">Connected Areas</h2>
     </div>
     <div class="sky-card-body">
-      <div class="grid grid-1">
+      <div class="grid grid-2">
         @for (connection of area.connections; track connection.area.guid) {
           <a class="container" [routerLink]="['/area', connection.area.guid]">
             <mat-icon class="menu-icon">location_on</mat-icon>
