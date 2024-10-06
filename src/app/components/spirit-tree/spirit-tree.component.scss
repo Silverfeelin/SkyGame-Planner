@@ -109,10 +109,19 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 5px;
-  left: 5px;
   z-index: 1;
   gap: 4px;
+}
+
+.tree-actions-left {
+  top: 5px;
+  left: 5px;
+}
+
+.tree-actions-right {
+  flex-direction: row;
+  top: 5px;
+  right: 5px;
 }
 
 .tree-action {
@@ -122,6 +131,17 @@
   line-height: 30px;
   padding-left: 36px;
   padding-right: 5px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-tree-unlock-background);
+  box-shadow: 0 0 1px 1px var(--color-border);
+}
+
+.tree-sub-action {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
   border-radius: var(--border-radius);
   background-color: var(--color-tree-unlock-background);
   box-shadow: 0 0 1px 1px var(--color-border);
@@ -166,11 +186,9 @@
 }
 
 .unlock-all {
-  position: absolute;
+  position: relative;
   width: 30px;
   height: 30px;
-  top: 5px;
-  right: 5px;
   border: 1px solid var(--color-input-border);
   border-radius: var(--border-radius);
   background-color: var(--color-tree-unlock-background);

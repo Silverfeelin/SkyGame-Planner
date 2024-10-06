@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, signal, SimpleChanges, TemplateRef } from '@angular/core';
-import { filter, SubscriptionLike } from 'rxjs';
+import { filter, lastValueFrom, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { ICost } from 'src/app/interfaces/cost.interface';
@@ -16,6 +16,8 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { MatIcon } from '@angular/material/icon';
 import { DebugService } from '@app/services/debug.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { NodeHelper } from '@app/helpers/node-helper';
+import { IconService } from '@app/services/icon.service';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -69,6 +71,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     private readonly _debugService: DebugService,
     private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
+    private readonly _iconService: IconService,
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef,
     private readonly _changeDetectorRef: ChangeDetectorRef
@@ -245,5 +248,245 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     // Modify currencies.
     // TODO: this does not track the cost when locking nodes outside of this tree.
     this._currencyService.addTreeCost(unlockCost, this.tree);
+  }
+
+  async share(): Promise<void> {
+    if (!navigator.share) { alert('Sharing is not supported by this browser.'); return; }
+
+    const nodes = NodeHelper.all(this.tree.node);
+    const cost = CostHelper.add(CostHelper.create(), ...nodes);
+    const hasCost = !CostHelper.isEmpty(cost);
+    const wCost = 24;
+    const wGapX = 32;
+    const wGapY = 40 + 18; // 24 is cost height, can probably reduce it.
+    const wItem = 64;
+    const wLine = 24;
+    const wOffsetSide = 48;
+    const wPadding = 10;
+    let hFooterName = 32;
+    let hFooterCost = 0;
+    if (hasCost) { hFooterCost += 32 + 2; } // + border
+    const hFooter = hFooterName + hFooterCost;
+
+    const calculateHeight = (h: number, node?: INode): number => {
+      if (!node) { return 0; }
+      return Math.max(h, calculateHeight(h + wOffsetSide, node.nw), calculateHeight(h + wOffsetSide, node.ne), calculateHeight(h + wItem + wGapY, node.n));
+    }
+
+    const hasRootCost = !CostHelper.isEmpty(this.tree.node);
+    const width = wItem * 3 + wGapX * 2 + wPadding * 2;
+    const height = calculateHeight(64, this.tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0) + hFooter;
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) { alert('Failed to render image.'); return; }
+    ctx.fillStyle = '#fff';
+    ctx.strokeStyle = '#fff';
+    ctx.lineWidth = 2;
+
+    const loadImage = (url: string): Promise<{ url: string, img: HTMLImageElement}> => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => resolve({ url, img });
+        img.onerror = reject;
+        img.src = url;
+      });
+    };
+
+    const imageUrlBackground =
+      getComputedStyle(document.body).getPropertyValue('--background').match(/url\(([^)]+)\)/)?.[1] ||
+      '/assets/game/background/peaks.webp';
+    const imageUrlC = '/assets/game/icons/candle.png';
+    const imageUrlH = '/assets/game/icons/heart.png';
+    const imageUrlSc = '/assets/game/icons/season-candle.png';
+    const imageUrlSh = '/assets/game/icons/season-heart.png';
+    const imageUrlAc = '/assets/game/icons/ascended-candle.png';
+    const imageUrlEc = '/assets/game/icons/ticket.png';
+    const imageUrls: Array<string> = [
+      imageUrlBackground, imageUrlC, imageUrlH, imageUrlSc, imageUrlSh, imageUrlAc, imageUrlEc,
+      ...new Set(nodes.map(n => n.item?.icon).filter(v => v) as Array<string>)
+    ];
+    let images: Array<{ url: string, img: HTMLImageElement }>;
+    try {
+      images = await Promise.all(imageUrls.map(loadImage));
+    } catch (e) {
+      console.error('Failed to load images:', e);
+      alert('Failed to load images.');
+      return;
+    }
+
+    const imageMap = new Map<string, HTMLImageElement>(images.map(v => [v.url, v.img]));
+
+    /** Draws the background with a blur effect. */
+    {
+      ctx.filter = 'blur(4px) brightness(0.6)';
+      const img = imageMap.get(imageUrlBackground)!;
+      const imgAspectRatio = img.naturalWidth / img.naturalHeight;
+      const canvasAspectRatio = canvas.width / canvas.height;
+
+      let drawWidth, drawHeight;
+      if (imgAspectRatio > canvasAspectRatio) {
+        drawHeight = canvas.height;
+        drawWidth = img.naturalWidth * (drawHeight / img.naturalHeight);
+      } else {
+        drawWidth = canvas.width;
+        drawHeight = img.naturalHeight * (drawWidth / img.naturalWidth);
+      }
+
+      const xn = canvas.width / 2 - drawWidth / 2;
+      const yn = canvas.height / 2 - drawHeight / 2;
+
+      ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, xn - 10, yn - 10, drawWidth + 20, drawHeight + 20);
+      ctx.filter = 'none';
+    }
+
+    /** Draws a line between nodes, based on the current node coordinates and a direction */
+    const drawLine = (x: number, y: number, direction: 'nw'|'ne'|'n') => {
+      let x2: number, y2: number;
+      if (direction === 'nw') {
+        x -= 2; y += 24;
+        x2 = x - wLine; y2 = y - wLine;
+      } else if (direction === 'ne') {
+        x += 2 + wItem; y += 24;
+        x2 = x + wLine; y2 = y - wLine;
+      } else {
+        x += wItem / 2; y -= 3;
+        x2 = x; y2 = y - wLine;
+      }
+
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+    }
+
+    type CostRenderData = { text: string; image: string; textWidth: number };
+    const getCostData = (cost: ICost): CostRenderData | undefined => {
+      let text = '';
+      let image = '';
+      if (cost.c) {
+        text = cost.c.toString(); image = imageUrlC;
+      } else if (cost.h) {
+        text = cost.h.toString(); image = imageUrlH;
+      } else if (cost.sc) {
+        text = cost.sc.toString(); image = imageUrlSc;
+      } else if (cost.sh) {
+        text = cost.sh.toString(); image = imageUrlSh;
+      } else if (cost.ac) {
+        text = cost.ac.toString(); image = imageUrlAc;
+      } else if (cost.ec) {
+        text = cost.ec.toString(); image = imageUrlEc;
+      }
+
+      if (!text) { return undefined; }
+      ctx.save();
+      ctx.font = '18px sans-serif';
+      const textWidth = ctx.measureText(text).width;
+      ctx.restore();
+      return { text, image, textWidth };
+    }
+
+    const drawCost = (data: CostRenderData, x: number, y: number, bg: boolean) => {
+      if (!data.text) { return; }
+      x -= data.textWidth! / 2 + wCost / 2 + 2;
+
+      if (bg) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        ctx.beginPath();
+        ctx.roundRect(x - 2, y - 2, data.textWidth! + wCost + 8, wCost + 4, 8);
+        ctx.fill();
+      }
+
+      ctx.font = '18px sans-serif';
+      ctx.fillStyle = '#fff';
+      const img = imageMap.get(data.image!)!;
+      ctx.drawImage(img, x, y, wCost, wCost);
+      ctx.fillText(data.text, x + wCost, y + 19); // y text offset
+    }
+
+    const drawNode = (node: INode, x: number, y: number) => {
+      if (node.nw) {
+        drawNode(node.nw, x - wItem - wGapX, y - wOffsetSide);
+        drawLine(x, y, 'nw');
+      }
+      if (node.ne) {
+        drawNode(node.ne, x + wItem + wGapX, y - wOffsetSide);
+        drawLine(x, y, 'ne');
+      }
+      if (node.n) {
+        drawNode(node.n, x, y - wItem - wGapY);
+        drawLine(x, y, 'n');
+      }
+
+      const img = imageMap.get(node.item?.icon || '');
+      if (img) {
+        const costData = getCostData(node);
+        costData && drawCost(costData, x + wItem / 2, y + wItem + 2, true);
+        ctx.drawImage(img, x, y, wItem, wItem);
+      }
+    };
+
+    // Node coordinates (top left corner).
+    let x = wGapX + wItem + wPadding;
+    let y = height - wPadding - wItem - (hasRootCost ? wCost : 0) - hFooter;
+    drawNode(this.tree.node, x, y);
+
+    // Footer
+    x = 0; y = height - hFooter;
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+    ctx.fillRect(x, y, canvas.width, hFooter);
+    ctx.strokeStyle = '#fff8';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(8, y + hFooterName + 1);
+    ctx.lineTo(canvas.width - 8, y + hFooterName + 1);
+    ctx.stroke();
+
+    // Draw name
+    const name = this.name || this.tree.name || 'Spirit tree';
+    ctx.font = '18px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#fff';
+    ctx.fillText(name, canvas.width / 2, y + 23);
+    ctx.textAlign = 'left';
+
+    // Draw cost
+    y += 32 + 6;
+    const costDatas: Array<CostRenderData | undefined> = [];
+    if (cost.c) { costDatas.push(getCostData({ c: cost.c })); }
+    if (cost.h) { costDatas.push(getCostData({ h: cost.h })); }
+    if (cost.sc) { costDatas.push(getCostData({ sc: cost.sc })); }
+    if (cost.sh) { costDatas.push(getCostData({ sh: cost.sh })); }
+    if (cost.ac) { costDatas.push(getCostData({ ac: cost.ac })); }
+    if (cost.ec) { costDatas.push(getCostData({ ec: cost.ec })); }
+    const costDataWidth = costDatas.filter(c => c).reduce((acc, v) => acc + v!.textWidth + wCost + 8, 0);
+    x = (canvas.width - costDataWidth) / 2;
+
+    costDatas.forEach(costData => {
+      costData && drawCost(costData, x + costData.textWidth! / 2 + wCost / 2, y, false);
+      x += costData!.textWidth! + wCost + 8;
+    });
+
+    // Draw attribution text
+    ctx.font = '12px sans-serif';
+    ctx.textAlign = 'right';
+    ctx.fillStyle = '#fff';
+    ctx.fillText('Icons by contributors of the Sky: CotL Wiki', canvas.width - 3, 12);
+    ctx.textAlign = 'left';
+
+    // Share
+    canvas.toBlob(blob => {
+      if (!blob) { alert('Rendering canvas failed.'); return; }
+
+      const data: ShareData = {
+        files: [ new File([blob], 'sky-planner-spirit-tree.png', { type: 'image/png' }) ],
+        title: 'Sky: CotL Outfit Request',
+      };
+
+      if (!navigator.canShare(data)) { alert('Sharing is not supported on this device.'); return; }
+      try { navigator.share(data); } catch { alert('Sharing failed.'); return; }
+    });
   }
 }
