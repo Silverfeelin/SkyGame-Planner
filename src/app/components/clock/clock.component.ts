@@ -81,7 +81,7 @@ export class ClockComponent implements OnInit, OnDestroy {
     const shardInfo = getShardInfo(now);
     const currentShard = shardInfo.occurrences?.find(occurrence => now >= occurrence.land && now < occurrence.end);
     this.shardHasLanded = shardInfo.hasShard && !!currentShard;
-    this.shardWillLand = !!shardInfo.occurrences?.find(occurrence => now < occurrence.land);
+    this.shardWillLand = shardInfo.hasShard && !!shardInfo.occurrences?.find(occurrence => now < occurrence.land);
     this.shardType = shardInfo.isRed ? 'red' : 'black';
   }
 }
