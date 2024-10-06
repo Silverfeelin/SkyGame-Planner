@@ -18,6 +18,7 @@ import { DebugService } from '@app/services/debug.service';
 import { CurrencyService } from '@app/services/currency.service';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { IconService } from '@app/services/icon.service';
+import { DataService } from '@app/services/data.service';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -70,6 +71,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   constructor(
     private readonly _debugService: DebugService,
     private readonly _currencyService: CurrencyService,
+    private readonly _dataService: DataService,
     private readonly _eventService: EventService,
     private readonly _iconService: IconService,
     private readonly _storageService: StorageService,
@@ -263,7 +265,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     const wLine = 24;
     const wOffsetSide = 48;
     const wPadding = 10;
-    let hFooterName = 32;
+    const hCredit = 8;
+    const hFooterName = 32;
     let hFooterCost = 0;
     if (hasCost) { hFooterCost += 32 + 2; } // + border
     const hFooter = hFooterName + hFooterCost;
@@ -275,7 +278,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
     const hasRootCost = !CostHelper.isEmpty(this.tree.node);
     const width = wItem * 3 + wGapX * 2 + wPadding * 2;
-    const height = calculateHeight(64, this.tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0) + hFooter;
+    const height = calculateHeight(64, this.tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0) + hCredit + hFooter;
     const canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
@@ -304,10 +307,13 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     const imageUrlSh = '/assets/game/icons/season-heart.png';
     const imageUrlAc = '/assets/game/icons/ascended-candle.png';
     const imageUrlEc = '/assets/game/icons/ticket.png';
+    const imageSeason = nodes.some(n => (n.item?.group === 'SeasonPass' || n.item?.group === 'Ultimate') && CostHelper.isEmpty(n))
+      && this.tree.spirit?.season?.iconUrl || '';
     const imageUrls: Array<string> = [
       imageUrlBackground, imageUrlC, imageUrlH, imageUrlSc, imageUrlSh, imageUrlAc, imageUrlEc,
       ...new Set(nodes.map(n => n.item?.icon).filter(v => v) as Array<string>)
     ];
+    if (imageSeason) { imageUrls.push(imageSeason); }
     let images: Array<{ url: string, img: HTMLImageElement }>;
     try {
       images = await Promise.all(imageUrls.map(loadImage));
@@ -406,6 +412,13 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       ctx.fillText(data.text, x + wCost, y + 19); // y text offset
     }
 
+    const drawSeason = (x: number, y: number) => {
+      const img = imageMap.get(imageSeason);
+      if (img) {
+        ctx.drawImage(img, x - 4, y - 4, 32, 32);
+      }
+    }
+
     const drawNode = (node: INode, x: number, y: number) => {
       if (node.nw) {
         drawNode(node.nw, x - wItem - wGapX, y - wOffsetSide);
@@ -426,7 +439,12 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         costData && drawCost(costData, x + wItem / 2, y + wItem + 2, true);
         ctx.drawImage(img, x, y, wItem, wItem);
       }
+
+      if (node.item?.group === 'SeasonPass' || node.item?.group === 'Ultimate') {
+        drawSeason(x, y);
+      }
     };
+
 
     // Node coordinates (top left corner).
     let x = wGapX + wItem + wPadding;
