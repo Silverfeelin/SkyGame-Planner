@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnDestroy, Output, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { SubscriptionLike, debounceTime, fromEvent } from 'rxjs';
+import { debounceTime, fromEvent } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { ISearchItem, SearchService, SearchType } from 'src/app/services/search.service';
@@ -12,6 +12,8 @@ import { TableComponent } from '../table/table.component';
 import { NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { CardComponent } from '../layout/card/card.component';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { SubscriptionBag } from '@app/helpers/subscription-bag';
 
 @Component({
     selector: 'app-search',
@@ -33,8 +35,8 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
 
   demoText = 'Gratitude';
   searchResults?: Array<ISearchItem<unknown>>;
-  searchSubscription?: SubscriptionLike;
-  resetSubscription?: SubscriptionLike;
+
+  _subscriptions = new SubscriptionBag();
 
   constructor(
     private readonly _dataService: DataService,
@@ -44,25 +46,23 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     private readonly _route: ActivatedRoute,
     private readonly _router: Router
   ) {
+    // Focus input on search hotkey.
+    this._eventService.keydown.pipe(takeUntilDestroyed()).subscribe(evt => {
+      if (!evt.ctrlKey || !evt.shiftKey || evt.key.toUpperCase() !== 'F') { return; }
+      if (!this.input?.nativeElement) { return; }
+      this.input.nativeElement.setSelectionRange(0, this.input.nativeElement.value.length);
+      this.input.nativeElement.focus();
+    });
   }
 
   ngAfterViewInit(): void {
     if (!this.input) { return; }
 
-    // Focus input on search hotkey.
-    this.resetSubscription = this._eventService.searchReset.subscribe(() => {
-      if (!this.input?.nativeElement) { return; }
-      this.input.nativeElement.setSelectionRange(0, this.input.nativeElement.value.length);
-      this.input.nativeElement.focus();
-    });
-
     // Set the input value.
     const search = this._route.snapshot.queryParamMap.get('search');
     if (search) {
       this.input.nativeElement.value = search;
-      setTimeout(() => {
-        this.search();
-      });
+      setTimeout(() => { this.search(); });
     }
 
     if (this._route.snapshot.queryParamMap.get('focus')) {
@@ -70,9 +70,10 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     }
 
     // Update URL for backwards navigation.
-    this.searchSubscription = fromEvent(this.input.nativeElement, 'input').pipe(debounceTime(250)).subscribe(() => {
+    const subscription = fromEvent(this.input.nativeElement, 'input').pipe(debounceTime(250)).subscribe(() => {
       this.updateCurrentRoute();
     });
+    this._subscriptions.add(subscription);
   }
 
   onRowClick(evt: MouseEvent, row: ISearchItem<unknown>): void {
@@ -123,11 +124,7 @@ export class SearchComponent implements AfterViewInit, OnDestroy {
     scrollTo(0, 0);
   }
 
-  unsubscribe(): void {
-    this.searchSubscription?.unsubscribe();
-  }
-
   ngOnDestroy(): void {
-    this.unsubscribe();
+    this._subscriptions.unsubscribe();
   }
 }

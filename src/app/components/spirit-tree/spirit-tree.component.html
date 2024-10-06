@@ -9,7 +9,8 @@
     </div>
     <!-- Controls -->
     @if (enableControls) {
-      <div class="tree-actions">
+      <!-- Top left controls -->
+      <div class="tree-actions tree-actions-left">
         @if (showingNodeActions || nodeAction === 'unlock') {
           <div class="tree-action point" (click)="setNodeAction($event, 'unlock')">
             <div class="tree-action-icon find-item">
@@ -35,8 +36,18 @@
           </div>
         }
       </div>
-      <div class="unlock-all point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="bottom-end">
-        <mat-icon>enhanced_encryption</mat-icon>
+      <!-- Top right controls-->
+      <div class="tree-actions tree-actions-right">
+        <div class="tree-sub-action point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="bottom-end">
+          <div class="tree-action-icon">
+            <mat-icon>enhanced_encryption</mat-icon>
+          </div>
+        </div>
+        <div class="tree-sub-action point" (click)="share()" [ngbTooltip]="'Share tree'" container="body" placement="bottom-end">
+          <div class="tree-action-icon">
+            <mat-icon>share</mat-icon>
+          </div>
+        </div>
       </div>
     }
     <div class="spirit-tree">

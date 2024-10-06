@@ -1,0 +1,19 @@
+.keyboard-grid {
+  display: grid;
+  grid-template-columns: 1 1fr;
+  gap: var(--padding-content-half);
+
+  text-align: left;
+
+  > * {
+    padding: var(--padding-content-half) var(--padding-content);
+    border: 1px solid var(--color-input-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-card-solid-background);
+  }
+}
+
+.keyboard-section {
+  grid-column: span 2;
+  font-weight: bold;
+}
