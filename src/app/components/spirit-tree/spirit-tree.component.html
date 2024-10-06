@@ -69,18 +69,18 @@
     </div>
   </div>
   <div class="footer">
-    @if (name || tree.name) {
+    @if (visibleName) {
       <div class="name">
         <ng-content select="div[name]"></ng-content>
         <div class="name-default">
-          {{ name ?? tree.name }}
+          {{ visibleName }}
           @if (tsDate || rsDate) {
             <span class="c-accent ts-date">(<app-date [date]="tsDate || rsDate"></app-date>)</span>
           }
         </div>
       </div>
     }
-    @if ((name || tree.name) && hasCost) {
+    @if (visibleName && hasCost) {
       <div class="hr"></div>
     }
     @if (hasCost) {

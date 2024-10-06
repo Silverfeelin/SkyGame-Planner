@@ -57,6 +57,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
   showingNodeActions = false;
   nodeAction: NodeAction = 'unlock';
+  visibleName?: string;
 
   itemMap = new Map<string, INode>();
   hasCost!: boolean;
@@ -121,6 +122,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         }
       }
     }
+
+    this.updateName();
   }
 
   ngOnDestroy(): void {
@@ -265,9 +268,29 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     const wLine = 24;
     const wOffsetSide = 48;
     const wPadding = 10;
-    const hCredit = 8;
-    const hFooterName = 32;
+    const hCredit = 6;
+    let hFooterName = 32;
     let hFooterCost = 0;
+
+    let name = this.visibleName || 'Spirit tree';
+    const date = this.rsDate || this.tsDate;
+    if (date) {
+      name += ` (${date.toFormat('dd-MM-yyyy')})`;
+    }
+
+    const spiritName = this.tree?.spirit?.name ?? this.tree?.eventInstanceSpirit?.spirit?.name ?? this.tree?.ts?.spirit?.name ?? this.tree?.visit?.spirit?.name;
+    const addSpiritName = spiritName && name !== spiritName && name !== 'Spirit tree';
+    if (addSpiritName) { hFooterName += 32 + 2; } // + border
+
+    if (name === 'Spirit tree') {
+      name = spiritName || name;
+    }
+
+    if (spiritName === this.visibleName && date) {
+      name = this.tsDate ? `TS #${this.tree.ts!.number}` : this.rsDate ? `${this.tree.visit!.return.name}` : '';
+      name += ` (${date.toFormat('dd-MM-yyyy')})`;
+    }
+
     if (hasCost) { hFooterCost += 32 + 2; } // + border
     const hFooter = hFooterName + hFooterCost;
 
@@ -458,15 +481,22 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     ctx.strokeStyle = '#fff8';
     ctx.lineWidth = 1;
     ctx.beginPath();
-    ctx.moveTo(8, y + hFooterName + 1);
-    ctx.lineTo(canvas.width - 8, y + hFooterName + 1);
+    ctx.moveTo(16, y + hFooterName + 1);
+    ctx.lineTo(canvas.width - 16, y + hFooterName + 1);
     ctx.stroke();
 
     // Draw name
-    const name = this.name || this.tree.name || 'Spirit tree';
     ctx.font = '18px sans-serif';
     ctx.textAlign = 'center';
     ctx.fillStyle = '#fff';
+    if (addSpiritName) {
+      ctx.fillText(spiritName, canvas.width / 2, y + 23);
+      y += 32;
+      ctx.beginPath(); ctx.moveTo(16, y + 1); ctx.lineTo(canvas.width - 16, y + 1); ctx.stroke();
+      ctx.fillStyle = '#ccc';
+      ctx.font = '16px sans-serif';
+    }
+
     ctx.fillText(name, canvas.width / 2, y + 23);
     ctx.textAlign = 'left';
 
@@ -506,5 +536,12 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       if (!navigator.canShare(data)) { alert('Sharing is not supported on this device.'); return; }
       try { navigator.share(data); } catch { alert('Sharing failed.'); return; }
     });
+  }
+
+  private updateName(): void {
+    this.visibleName = this.name ?? this.tree.name
+      ?? this.tree.eventInstanceSpirit?.name ?? this.tree.eventInstanceSpirit?.spirit?.name
+      ?? this.tree.ts?.spirit?.name
+      ?? this.tree.visit?.spirit?.name;
   }
 }
