@@ -9,6 +9,7 @@ import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storag
 import { MatIcon } from '@angular/material/icon';
 import { SurveyComponent } from "../../survey/survey.component";
 import { canActivateIcons } from '@app/guards/can-activate-icons';
+import { OverlayComponent } from "../overlay/overlay.component";
 
 @Component({
     selector: 'app-main-layout',
@@ -16,7 +17,7 @@ import { canActivateIcons } from '@app/guards/can-activate-icons';
     styleUrl: './main-layout.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [MatIcon, RouterOutlet, RouterLink, SurveyComponent]
+    imports: [MatIcon, RouterOutlet, RouterLink, SurveyComponent, OverlayComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 
