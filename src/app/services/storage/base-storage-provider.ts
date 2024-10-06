@@ -244,7 +244,7 @@ export abstract class BaseStorageProvider implements IStorageProvider {
       clearTimeout(this._debouncer);
     }
 
-    this._debouncer = setTimeout(() => {
+    this._debouncer = window.setTimeout(() => {
       this.save(false).subscribe();
     }, this._debounceTime);
   }
