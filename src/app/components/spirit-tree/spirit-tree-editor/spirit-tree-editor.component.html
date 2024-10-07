@@ -48,6 +48,13 @@
               <button type="button" class="br-l-0" (click)="applyCost()">Apply</button>
             </div>
           </div>
+          <!-- Swap -->
+          <div class="">
+            <button type="button" [class.highlight]="isSwapping" (click)="isSwapping=!isSwapping">Swap nodes</button>
+            @if (isSwapping) {
+              &nbsp;<span>Now select a node to swap the items.</span>
+            }
+          </div>
         </div>
       </div>
     </div>

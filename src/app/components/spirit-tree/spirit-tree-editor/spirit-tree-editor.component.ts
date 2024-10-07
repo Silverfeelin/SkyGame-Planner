@@ -19,7 +19,7 @@ import { ISpirit, SpiritType } from '@app/interfaces/spirit.interface';
 type TreeNodeArray = Array<TreeNode>;
 type TreeNode = { node: INode; x: number; y: number; };
 type CostType = { id: string; label: string; }
-type SpecialItemNames = 'blessing' | 'wingBuff';
+type SpecialItemNames = 'blessing' | 'wingBuff' | 'heart';
 type SpecialItem = { item: IItem; cost: ICost; }
 
 @Component({
@@ -47,6 +47,7 @@ export class SpiritTreeEditorComponent {
   itemMap: { [guid: string]: IItem } = {};
   nodeTable: [TreeNodeArray, TreeNodeArray, TreeNodeArray] = [[], [], []];
   nodeMap: { [guid: string]: TreeNode } = {};
+  isSwapping = false;
 
   spirits: Array<ISpirit>;
   spiritTrees: Array<ISpiritTree> = [];
@@ -66,7 +67,8 @@ export class SpiritTreeEditorComponent {
   missingItem = { id: -1, guid: nanoid(10), type: ItemType.Special, name: 'Missing item', icon: '/assets/icons/question.webp' };
   specialItemMap: { [key in SpecialItemNames]: SpecialItem } = {
     blessing: { item: { id: -2, guid: nanoid(10), type: ItemType.Special, name: 'Blessing', icon: '/assets/icons/question.webp' }, cost: { c: 5 }},
-    wingBuff: { item: { id: -3, guid: nanoid(10), type: ItemType.WingBuff, name: 'Wing Buff', icon: '/assets/icons/question.webp' }, cost: { ac: 2 }}
+    wingBuff: { item: { id: -3, guid: nanoid(10), type: ItemType.WingBuff, name: 'Wing Buff', icon: '/assets/icons/question.webp' }, cost: { ac: 2 }},
+    heart: { item: { id: -4, guid: nanoid(10), type: ItemType.Special, name: 'Hearts', icon: '/assets/icons/question.webp' }, cost: { c: 3 }},
   }
   specialItems: Array<SpecialItem> = Object.values(this.specialItemMap);
 
@@ -77,6 +79,8 @@ export class SpiritTreeEditorComponent {
     blessingIcon && (this.specialItemMap.blessing.item.icon = blessingIcon);
     const wingBuffIcon = _dataService.itemConfig.items.findLast<IItem>(i => i.type === ItemType.WingBuff)?.icon;
     wingBuffIcon && (this.specialItemMap.wingBuff.item.icon = wingBuffIcon);
+    const heartIcon = _dataService.itemConfig.items.findLast<IItem>(i => i.type === ItemType.Special && i.name === 'Heart' && i.nodes?.at(-1)?.c === 3)?.icon;
+    heartIcon && (this.specialItemMap.heart.item.icon = heartIcon);
 
     this.tree = {
       guid: nanoid(10),
@@ -95,6 +99,11 @@ export class SpiritTreeEditorComponent {
       { guid: nanoid(10), name: 'Select a spirit', type: 'Regular', _index: -1 },
       ..._dataService.spiritConfig.items.filter(s => spiritTypes.has(s.type)).sort((a, b) => a.name.localeCompare(b.name))
     ];
+
+    const copyTreeGuid = new URL(location.href).searchParams.get('tree');
+    if (copyTreeGuid) {
+      this.copySpiritTree(_dataService.guidMap.get(copyTreeGuid) as ISpiritTree);
+    }
   }
 
   addNode(direction: 'nw'|'n'|'ne') {
@@ -151,8 +160,26 @@ export class SpiritTreeEditorComponent {
   }
 
   onNodeClicked(event: SpiritTreeNodeClickEvent) {
+    if (this.isSwapping) {
+      this.swapNodes(event.node);
+      return;
+    }
+
     const treeNode = this.nodeMap[event.node.guid];
     this.selectTreeNode(treeNode);
+  }
+
+  swapNodes(targetNode: INode): void {
+    const targetTreeNode = this.nodeMap[targetNode.guid];
+    if (!targetTreeNode) { alert('Invalid target node.'); return; }
+    const selectedNode = this.selectedTreeNode.node;
+
+    // Swap nodes
+    NodeHelper.swap(selectedNode, targetNode);
+    this.selectedTreeNode = targetTreeNode;
+    this.selectedItem = targetNode.item!;
+
+    this.reloadTree();
   }
 
   onItemClicked(event: ItemClickEvent) {
@@ -231,7 +258,6 @@ export class SpiritTreeEditorComponent {
     if (spirit.events) { spirit.events.map(e => e.tree).forEach(t => trees.add(t)); }
     this.spiritTrees = Array.from(trees).reverse();
   }
-
 
   onSpiritNodeClicked(event: SpiritTreeNodeClickEvent) {
     if (!event.node.item) { return; }
