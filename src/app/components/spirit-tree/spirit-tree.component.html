@@ -1,5 +1,5 @@
 <div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree.guid">
-  <div class="spirit-tree-scroll" [class.has-buttons]="enableControls" [class.pad-bottom]="hasCostAtRoot || padBottom">
+  <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot || padBottom">
     <!-- Action indication -->
     <div class="tree-action-background">
       @switch (nodeAction) {
@@ -36,6 +36,7 @@
           </div>
         }
       </div>
+
       <!-- Top right controls-->
       <div class="tree-actions tree-actions-right">
         <div class="tree-sub-action point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="bottom-end">
@@ -43,13 +44,15 @@
             <mat-icon>enhanced_encryption</mat-icon>
           </div>
         </div>
-        <div class="tree-sub-action point" (click)="share()" [ngbTooltip]="'Share tree'" container="body" placement="bottom-end">
+        <div class="tree-sub-action point" (click)="export('share')" [ngbTooltip]="'Share tree'" container="body" placement="bottom-end">
           <div class="tree-action-icon">
             <mat-icon>share</mat-icon>
           </div>
         </div>
       </div>
     }
+
+    <!-- Tree nodes -->
     <div class="spirit-tree">
       <div class="column left">
         <div class="st-item" *ngFor="let node of left">
@@ -101,6 +104,7 @@
   @if (node) {
     <app-node [node]="node" [action]="forceNodeAction ?? nodeAction" [position]="position" (nodeClicked)="onNodeClicked($event, node)"
       [highlight]="highlightItem ? highlightItemMap[node.item?.guid] : undefined"
+      [showTooltips]="showNodeTooltips"
       [opaque]="opaqueNodesAll || opaqueNodesMap[node.guid]"
       [glowType]="(forceNodeAction ?? nodeAction) !== 'unlock' ? 'attention' : 'default'">
     </app-node>

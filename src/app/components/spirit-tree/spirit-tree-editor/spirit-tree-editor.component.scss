@@ -1,0 +1,31 @@
+
+.item-icon {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  background: var(--color-background);
+  border-radius: var(--border-radius)
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--padding-content);
+  align-items: end;
+}
+
+
+@media screen and (max-width: 719px) {
+  .editor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  .editor-grid-selection {
+    position: sticky;
+    top: 0;
+    left: 0;
+    align-self: start;
+  }
+}

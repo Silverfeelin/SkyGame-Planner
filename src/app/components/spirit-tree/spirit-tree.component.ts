@@ -23,6 +23,8 @@ import { DataService } from '@app/services/data.service';
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
 
+type ShareMode = 'share' | 'clipboard';
+
 @Component({
     selector: 'app-spirit-tree',
     templateUrl: './spirit-tree.component.html',
@@ -37,6 +39,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() highlight?: boolean;
   @Input() highlightItem?: string | Array<string>;
   @Input() enableControls = true;
+  @Input() showNodeTooltips = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean | Array<string>;
   @Input() padBottom = false;
@@ -255,8 +258,9 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this._currencyService.addTreeCost(unlockCost, this.tree);
   }
 
-  async share(): Promise<void> {
-    if (!navigator.share) { alert('Sharing is not supported by this browser.'); return; }
+  async export(mode: ShareMode): Promise<void> {
+    if (mode === 'share' && !navigator.share) { alert('Sharing is not supported by this browser.'); return; }
+    if (mode === 'clipboard' &&  typeof(ClipboardItem) === 'undefined') { alert('Copying to clipboard is not supported by this browser.'); return; }
 
     const nodes = NodeHelper.all(this.tree.node);
     const cost = CostHelper.add(CostHelper.create(), ...nodes);
@@ -442,6 +446,15 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       }
     }
 
+    const drawLevel = (lvl: number, x: number, y: number) => {
+      ctx.save();
+      ctx.fillStyle = '#fff';
+      ctx.font = '14px sans-serif';
+      ctx.textAlign = 'left';
+      ctx.fillText(`Lv${lvl}`, x - 6, y + wItem - 2);
+      ctx.restore();
+    }
+
     const drawNode = (node: INode, x: number, y: number) => {
       if (node.nw) {
         drawNode(node.nw, x - wItem - wGapX, y - wOffsetSide);
@@ -461,6 +474,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         const costData = getCostData(node);
         costData && drawCost(costData, x + wItem / 2, y + wItem + 2, true);
         ctx.drawImage(img, x, y, wItem, wItem);
+      }
+
+      if (node.item?.level) {
+        drawLevel(node.item.level, x, y);
       }
 
       if (node.item?.group === 'SeasonPass' || node.item?.group === 'Ultimate') {
@@ -524,7 +541,14 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     ctx.fillText('Icons by contributors of the Sky: CotL Wiki', canvas.width - 3, 12);
     ctx.textAlign = 'left';
 
-    // Share
+    if (mode === 'share') {
+      this.shareCanvas(canvas);
+    } else if (mode === 'clipboard') {
+      this.copyCanvas(canvas);
+    }
+  }
+
+  private shareCanvas(canvas: HTMLCanvasElement): void {
     canvas.toBlob(blob => {
       if (!blob) { alert('Rendering canvas failed.'); return; }
 
@@ -535,6 +559,13 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
       if (!navigator.canShare(data)) { alert('Sharing is not supported on this device.'); return; }
       try { navigator.share(data); } catch { alert('Sharing failed.'); return; }
+    });
+  }
+
+  private copyCanvas(canvas: HTMLCanvasElement): void {
+    canvas.toBlob(blob => {
+      if (!blob) { alert('Rendering canvas failed.'); return; }
+      navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
     });
   }
 

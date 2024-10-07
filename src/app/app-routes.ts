@@ -50,6 +50,7 @@ import { ItemsOverviewComponent } from './components/items/items-overview/items-
 import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 import { AreasComponent } from './components/areas/areas.component';
+import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-editor/spirit-tree-editor.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -107,6 +108,7 @@ export const routes: Routes = [
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
           { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
           { path: 'spirit/:guid', component: SpiritComponent },
+          { path: 'spirit-tree/editor', component: SpiritTreeEditorComponent, title: title('Spirit Tree Editor') },
           { path: 'spirit-tree/:guid', component: SpiritTreeViewComponent, title: title('Spirit Tree') },
           { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
           { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },
