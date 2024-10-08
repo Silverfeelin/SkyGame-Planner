@@ -59,8 +59,8 @@ export class SpiritCardComponent implements OnInit, OnChanges {
     this.spiritSelected.emit(this.spirit!);
   }
 
-  toggleTsSpoiler(): void {
-    this.tsSpoiler = !this.tsSpoiler;
+  revealTsSpoiler(): void {
+    this.tsSpoiler = false;
   }
 
   private updateSpirit(): void {
