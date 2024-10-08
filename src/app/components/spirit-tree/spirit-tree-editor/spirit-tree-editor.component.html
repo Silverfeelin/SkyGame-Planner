@@ -14,6 +14,7 @@
         <!-- Item name -->
         <div class="container">
           {{ selectedItem.name }}
+          @if (selectedItem.level) { <span class="c-accent">(Level {{ selectedItem.level }})</span> }
         </div>
         <div class="container grid grid-1">
           <!-- Node connections -->
@@ -63,19 +64,31 @@
 
 <div class="mt">
   <app-card [title]="'Save'">
-    <div class="sky-flex flex-wrap">
-      <button type="button" (click)="copyImage()"
-        ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-        <mat-icon class="menu-icon">file_copy</mat-icon>
-        <span class="menu-label">Copy image</span>
-      </button>
+    <div class="container grid grid-1">
+      <div>
+        Title: <input #inpTitle type="text" class="d-inline-block" style="width: 200px;">
+      </div>
+      <div>
+        Subtitle: <input #inpSubtitle type="text" class="d-inline-block" style="width: 200px;">
+      </div>
+    </div>
+    <div class="sky-flex flex-wrap mt">
+      <div class="button-group" ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+        <button type="button" (click)="copyImage()">
+          <mat-icon class="menu-icon">file_copy</mat-icon>
+          <span class="menu-label">Copy image</span>
+        </button>
+        <button type="button" (click)="copyImage(false)">
+          (no background)
+        </button>
+      </div>
       <button type="button" (click)="shareImage()">
         <mat-icon class="menu-icon">share</mat-icon>
         <span class="menu-label">Share image</span>
       </button>
       <button type="button" (click)="exportJson()">
         <mat-icon class="menu-icon">upload</mat-icon>
-        <span class="menu-label">Export</span>
+        <span class="menu-label">Export data</span>
       </button>
     </div>
   </app-card>

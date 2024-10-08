@@ -90,7 +90,7 @@
   height: 24px;
   top: -30px;
   left: 50%;
-  transform:translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .arrow-right {
@@ -104,8 +104,8 @@
 
 .tree-actions {
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   z-index: 1;
   gap: 4px;
 }
@@ -116,7 +116,8 @@
 }
 
 .tree-actions-right {
-  flex-direction: row;
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
   top: 5px;
   right: 5px;
 }

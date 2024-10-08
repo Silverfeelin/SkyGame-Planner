@@ -39,16 +39,33 @@
 
       <!-- Top right controls-->
       <div class="tree-actions tree-actions-right">
-        <div class="tree-sub-action point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="bottom-end">
+        <div class="tree-sub-action point" (click)="showingMenuActions=!showingMenuActions" [ngbTooltip]="'Toggle menu'" container="body" placement="top-end">
+          <div class="tree-action-icon">
+            <mat-icon>menu</mat-icon>
+          </div>
+        </div>
+        <div class="tree-sub-action point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="top-end">
           <div class="tree-action-icon">
             <mat-icon>enhanced_encryption</mat-icon>
           </div>
         </div>
-        <div class="tree-sub-action point" (click)="export('share')" [ngbTooltip]="'Share tree'" container="body" placement="bottom-end">
-          <div class="tree-action-icon">
-            <mat-icon>share</mat-icon>
+        @if (showingMenuActions) {
+          <div class="tree-sub-action point" (click)="export('share')" [ngbTooltip]="'Share tree image'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>share</mat-icon>
+            </div>
           </div>
-        </div>
+          <div class="tree-sub-action point" (click)="export('clipboard')" [ngbTooltip]="'Copy tree image'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>file_copy</mat-icon>
+            </div>
+          </div>
+          <a class="tree-sub-action point" [routerLink]="['/spirit-tree/editor']" [queryParams]="{tree: tree.guid}" [ngbTooltip]="'Edit tree'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>edit</mat-icon>
+            </div>
+          </a>
+        }
       </div>
     }
 

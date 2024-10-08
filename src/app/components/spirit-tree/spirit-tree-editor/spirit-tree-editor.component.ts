@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, isDevMode, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, isDevMode, ViewChild } from '@angular/core';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../spirit-tree.component";
 import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
@@ -15,6 +15,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ICost } from '@app/interfaces/cost.interface';
 import { ISpirit, SpiritType } from '@app/interfaces/spirit.interface';
+import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
 
 type TreeNodeArray = Array<TreeNode>;
 type TreeNode = { node: INode; x: number; y: number; };
@@ -37,6 +38,8 @@ export class SpiritTreeEditorComponent {
     event.preventDefault();
   }
 
+  @ViewChild('inpTitle', { static: true }) inpTitle!: ElementRef<HTMLInputElement>;
+  @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLInputElement>;
   @ViewChild('inpCost', { static: true }) inpCost!: ElementRef<HTMLInputElement>;
   @ViewChild('selCostType', { static: true }) selCostType!: ElementRef<HTMLSelectElement>;
   @ViewChild('refTree', { static: true }) refTree!: SpiritTreeComponent;
@@ -73,7 +76,9 @@ export class SpiritTreeEditorComponent {
   specialItems: Array<SpecialItem> = Object.values(this.specialItemMap);
 
   constructor(
-    private readonly _dataService: DataService
+    private readonly _dataService: DataService,
+    private readonly _spiritTreeRenderService: SpiritTreeRenderService,
+    private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     const blessingIcon = _dataService.itemConfig.items.findLast<IItem>(i => i.type === ItemType.Special && i.name === 'Blessing' && i.nodes?.at(-1)?.c === 5)?.icon;
     blessingIcon && (this.specialItemMap.blessing.item.icon = blessingIcon);
@@ -100,10 +105,12 @@ export class SpiritTreeEditorComponent {
       ..._dataService.spiritConfig.items.filter(s => spiritTypes.has(s.type)).sort((a, b) => a.name.localeCompare(b.name))
     ];
 
+    // Copy tree after inputs are loaded.
     const copyTreeGuid = new URL(location.href).searchParams.get('tree');
-    if (copyTreeGuid) {
+    copyTreeGuid && setTimeout(() => {
       this.copySpiritTree(_dataService.guidMap.get(copyTreeGuid) as ISpiritTree);
-    }
+      this._changeDetectorRef.markForCheck();
+    });
   }
 
   addNode(direction: 'nw'|'n'|'ne') {
@@ -293,19 +300,45 @@ export class SpiritTreeEditorComponent {
     this.items = Object.values(this.itemMap);
     this.selectedTreeNode = this.nodeMap[this.tree.node.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
+
+    const tsDate = tree.ts?.date;
+    const rsDate = tree.visit?.return?.date;
+
+    let title = tree.eventInstanceSpirit?.name ?? tree.eventInstanceSpirit?.spirit?.name
+      ?? tree.visit?.spirit?.name ?? tree.ts?.spirit?.name ?? tree.spirit?.name ?? '';
+    let subtitle = tree.name;
+    if (tsDate || rsDate) {
+      subtitle = tsDate ? `TS #${tree.ts!.number}` : `${tree.visit!.return.name}`;
+      subtitle += ` (${(tsDate || rsDate)!.toFormat('dd-MM-yyyy')})`;
+    }
+
+    if (title === subtitle) { subtitle = undefined; }
+
+    this.inpTitle.nativeElement.value = title || '';
+    this.inpSubtitle.nativeElement.value = subtitle || '';
   }
 
   // #endregion
 
   // #region Output
 
-  async copyImage(): Promise<void> {
-    await this.refTree.export('clipboard');
+  async copyImage(bg?: boolean): Promise<void> {
+    const canvas = await this._spiritTreeRenderService.render(this.tree, {
+      title: this.inpTitle.nativeElement.value.trim(),
+      subtitle: this.inpSubtitle.nativeElement.value.trim(),
+      background: bg
+    });
+    this._spiritTreeRenderService.copyCanvas(canvas);
     this._ttCopy?.open();
   }
 
   async shareImage(): Promise<void> {
-    await this.refTree.export('share');
+    const canvas = await this._spiritTreeRenderService.render(this.tree, {
+      title: this.inpTitle.nativeElement.value.trim(),
+      subtitle: this.inpSubtitle.nativeElement.value.trim(),
+      background: true
+    });
+    this._spiritTreeRenderService.shareCanvas(canvas, 'spirit-tree.png');
   }
 
   exportJson(): void {
