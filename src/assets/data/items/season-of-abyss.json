@@ -695,5 +695,19 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2326,
+    "guid": "PaCqy_R04T",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2327,
+    "guid": "xK_nid1lFo",
+    "type": "Special",
+    "name": "Hearts",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   }
 ]
