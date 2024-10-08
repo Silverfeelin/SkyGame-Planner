@@ -1,0 +1,45 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2">
+      Events - History
+    </h1>
+  </div>
+  <div class="sky-card-body scroll-x">
+    <app-table [rows]="rows">
+      <ng-template [appTableHeader] [fit]="true">#</ng-template>
+      <ng-template [appTableHeader]>Name</ng-template>
+      <ng-template [appTableHeader]>Repeats</ng-template>
+      <ng-template [appTableHeader]>Start</ng-template>
+      <ng-template [appTableHeader]>End</ng-template>
+      <ng-template [appTableHeader]>Year</ng-template>
+      <ng-template [appTableHeader]>Duration</ng-template>
+      <!-- <ng-template [appTableHeader]>Unlock</ng-template> -->
+      <ng-template [appTableColumn] let-row="row">
+        {{ row.instance.number }}
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        <a [routerLink]="['/event-instance', row.instance.guid]">{{ row.instance.name ?? row.event.name }}</a>
+        @if (row.active) { &nbsp;<span class="c-accent">(ongoing)</span> }
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        @switch (row.event.recurring) {
+          @case (true) { <span class="c-new">Yes</span> }
+          @case (false) { <span class="c-old">No</span> }
+          @default { Unknown }
+        }
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        <span>{{ row.date | datetime }}</span>
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        <span>{{ row.endDate | datetime }}</span>
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        {{ row.date.year }}
+      </ng-template>
+      <ng-template [appTableColumn] let-row="row">
+        {{ row.duration }}
+      </ng-template>
+    </app-table>
+  </div>
+</div>

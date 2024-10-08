@@ -808,6 +808,7 @@
       "guid": "Bqvtgwzj5I",
       "name": "Days of Healing",
       "shortName": "Healing",
+      "recurring": false,
       "instances": [
         {
           "guid": "Btpq48TBPD",
@@ -827,6 +828,7 @@
       "guid": "His_r9JBBt",
       "name": "Children's Day",
       "shortName": "Children's Day",
+      "recurring": false,
       "instances": [
         {
           "guid": "PShOLpIdTP",
@@ -843,6 +845,7 @@
       "guid": "FBZvsjNRwi",
       "name": "Kizuna AI Collaboration",
       "shortName": "Kizuna AI",
+      "recurring": false,
       "instances": [
         {
           "guid": "rGOuzt_d-o",
@@ -863,6 +866,7 @@
       "name": "Days of Summer",
       "shortName": "Summer",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/b08d410eb7/daysofsummer-summerlightsheader.png",
+      "recurring": false,
       "instances": [
         {
           "guid": "-tLqiqDLxU",
@@ -886,6 +890,7 @@
       "name": "Days of Summer Lights",
       "shortName": "Summer Lights",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1152x648/e1408d62e1/summerfriends.png",
+      "recurring": false,
       "instances": [
         {
           "guid": "FOV5DDicTL",
@@ -914,6 +919,7 @@
       "name": "AURORA Encore Concerts",
       "shortName": "Encore",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/d6e4fc3902/3kids_flying_10kconcert.jpg",
+      "recurring": false,
       "instances": [
         {
           "guid": "yNyYTdO1xU",
@@ -940,6 +946,7 @@
       "name": "Aviary's Firework Festival (Phase 1)",
       "shortName": "Firework Festival",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/3e94d18cf6/aviaryfireworkfestival23-header.png",
+      "recurring": false,
       "instances": [
         {
           "guid": "w_k3jZV4Jg",
@@ -960,6 +967,7 @@
       "name": "Cinnamoroll Pop-up Cafe",
       "shortName": "Cinnamoroll",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/9ca0efb0d2/cosa_delivery.jpg",
+      "recurring": false,
       "instances": [
         {
           "guid": "UxrJUiw6Ue",

@@ -51,6 +51,7 @@ import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 import { AreasComponent } from './components/areas/areas.component';
 import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-editor/spirit-tree-editor.component';
+import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -80,8 +81,9 @@ export const routes: Routes = [
           { path: 'currency', component: CurrencyComponent, title: title('In-game currency') },
           { path: 'currency/spent', component: CurrencySpentComponent, title: title('Spent currency') },
           { path: 'event', component: EventsComponent, title: title('Events') },
-          { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
+          { path: 'event/history', component: EventHistoryComponent, title: title('Event History') },
           { path: 'event/:guid', component: EventComponent },
+          { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
           { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
           { path: 'item/collection', component: ItemCollectionComponent, title: title('Item collections') },
