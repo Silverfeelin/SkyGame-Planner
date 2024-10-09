@@ -929,7 +929,7 @@ export class ClosetComponent implements OnDestroy {
       const drawPlaceholder = () => {
         const mappedIcon = placeholderItems[i].icon ? this._iconService.getIcon(placeholderItems[i].icon!) : undefined;
         const placeholderImg = itemImgs[placeholders[i]];
-        if (!placeholderImg) { throw new Error('Item image for placeholder was not loaded!'); }
+        if (!placeholderImg && !mappedIcon) { throw new Error('Item image for placeholder was not loaded!'); }
         ctx.globalAlpha = 0.25;
         if (mappedIcon) {
           const sheet = this._imgSheets[mappedIcon.file];
