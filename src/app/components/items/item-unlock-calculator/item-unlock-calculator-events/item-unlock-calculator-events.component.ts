@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
 import { IEvent } from '@app/interfaces/event.interface';
 import { DataService } from '@app/services/data.service';
 import { SearchService } from '@app/services/search.service';
-import { CardComponent } from "../../../layout/card/card.component";
+import { CardComponent, CardFoldEvent } from "../../../layout/card/card.component";
 import { MatIcon } from '@angular/material/icon';
 import { IconComponent } from '@app/components/icon/icon.component';
 
@@ -27,8 +27,8 @@ export class ItemUnlockCalculatorEventsComponent {
     this.events = this._dataService.eventConfig.items;
   }
 
-  onBeforeFold(fold: boolean): void {
-    if (!fold) { return; }
+  onBeforeFold(evt: CardFoldEvent): void {
+    if (!evt.fold) { return; }
     this.closed.emit();
   }
 

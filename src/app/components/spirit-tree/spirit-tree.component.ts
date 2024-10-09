@@ -16,9 +16,15 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { MatIcon } from '@angular/material/icon';
 import { DebugService } from '@app/services/debug.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { IconService } from '@app/services/icon.service';
+import { DataService } from '@app/services/data.service';
+import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
+import { RouterLink } from '@angular/router';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
+
+type ShareMode = 'share' | 'clipboard';
 
 @Component({
     selector: 'app-spirit-tree',
@@ -26,7 +32,7 @@ const signalAction = signal<NodeAction>('unlock');
     styleUrls: ['./spirit-tree.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, DateComponent, CostComponent, NodeComponent]
+    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, RouterLink, DateComponent, CostComponent, NodeComponent]
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;
@@ -34,6 +40,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() highlight?: boolean;
   @Input() highlightItem?: string | Array<string>;
   @Input() enableControls = true;
+  @Input() showNodeTooltips = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean | Array<string>;
   @Input() padBottom = false;
@@ -52,8 +59,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   hasCostAtRoot = false;
   toggleUnlock = false;
 
+  showingMenuActions = false;
   showingNodeActions = false;
   nodeAction: NodeAction = 'unlock';
+  visibleName?: string;
 
   itemMap = new Map<string, INode>();
   hasCost!: boolean;
@@ -68,7 +77,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   constructor(
     private readonly _debugService: DebugService,
     private readonly _currencyService: CurrencyService,
+    private readonly _dataService: DataService,
     private readonly _eventService: EventService,
+    private readonly _iconService: IconService,
+    private readonly _spiritTreeRenderService: SpiritTreeRenderService,
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef,
     private readonly _changeDetectorRef: ChangeDetectorRef
@@ -116,6 +128,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         }
       }
     }
+
+    this.updateName();
   }
 
   ngOnDestroy(): void {
@@ -245,5 +259,41 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     // Modify currencies.
     // TODO: this does not track the cost when locking nodes outside of this tree.
     this._currencyService.addTreeCost(unlockCost, this.tree);
+  }
+
+  async export(mode: ShareMode): Promise<void> {
+    if (mode === 'share' && !navigator.share) { alert('Sharing is not supported by this browser.'); return; }
+    if (mode === 'clipboard' &&  typeof(ClipboardItem) === 'undefined') { alert('Copying to clipboard is not supported by this browser.'); return; }
+
+    try {
+      const spiritName = this.tree?.spirit?.name ?? this.tree?.eventInstanceSpirit?.spirit?.name ?? this.tree?.ts?.spirit?.name ?? this.tree?.visit?.spirit?.name;
+      const title = spiritName;
+      let subtitle = this.visibleName;
+      if (this.tsDate || this.rsDate) {
+        subtitle = this.tsDate ? `TS #${this.tree.ts!.number}` : this.rsDate ? `${this.tree.visit!.return.name}` : '';
+        subtitle += ` (${(this.tsDate || this.rsDate)!.toFormat('dd-MM-yyyy')})`;
+      } else if (subtitle === title || subtitle === 'Spirit tree') { subtitle = undefined; }
+
+      const canvas = await this._spiritTreeRenderService.render(this.tree, {
+        title, subtitle,
+        background: true
+      });
+
+      if (mode === 'share') {
+        this._spiritTreeRenderService.shareCanvas(canvas, 'spirit-tree.png');
+      } else {
+        this._spiritTreeRenderService.copyCanvas(canvas);
+      }
+    } catch (e: any) {
+      alert(`Failed to copy the spirit tree: ${e?.message ?? e}`);
+    }
+  }
+
+
+  private updateName(): void {
+    this.visibleName = this.name ?? this.tree.name
+      ?? this.tree.eventInstanceSpirit?.name ?? this.tree.eventInstanceSpirit?.spirit?.name
+      ?? this.tree.ts?.spirit?.name
+      ?? this.tree.visit?.spirit?.name;
   }
 }

@@ -7,7 +7,7 @@
       <div class="info-grid" [class.has-preview]="item.previewUrl">
         <!-- Preview -->
         <div class="info-grid-preview" *ngIf="item.previewUrl">
-          <img [src]="item.previewUrl" class="preview-img" loading="lazy">
+          <img [src]="item.previewUrl" class="preview-img" loading="eager">
           <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"></app-item-icon>
           <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'elder', 'season', 'iap', 'favourite', 'unlock']"></app-item-subicons>
         </div>

@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Bunny_Slippers"
     },
-    "order": 80
+    "order": 82
   },
   {
     "id": 1843,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Heart_Sunglasses"
     },
-    "order": 247
+    "order": 251
   },
   {
     "id": 1844,
@@ -45,7 +45,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Flame_Sunglasses"
     },
-    "order": 246
+    "order": 250
   },
   {
     "id": 1845,
@@ -57,7 +57,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Star_Sunglasses"
     },
-    "order": 245
+    "order": 249
   },
   {
     "id": 1846,
@@ -69,7 +69,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Silk_Ballet_Slippers"
     },
-    "order": 79
+    "order": 81
   },
   {
     "id": 1847,
@@ -81,7 +81,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Top_Hat"
     },
-    "order": 429
+    "order": 433
   },
   {
     "id": 1848,
@@ -93,7 +93,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask"
     },
-    "order": 207
+    "order": 210
   },
   {
     "id": 1849,
@@ -108,5 +108,57 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2320,
+    "guid": "WEGS4Ul0qq",
+    "type": "Outfit",
+    "name": "Style Dress",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dazzling-Dress-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Style-Dazzling-Dress-front.png",
+    "order": 65
+  },
+  {
+    "id": 2321,
+    "guid": "DJBQZOapq3",
+    "type": "Hat",
+    "name": "Style Fascinator",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Style-Darkness-Fascinator-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
+    "order": 443
+  },
+  {
+    "id": 2322,
+    "guid": "0ckPw0PfdC",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2323,
+    "guid": "4c-yCAGV5U",
+    "type": "Outfit",
+    "name": "Style Dapper Suit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Style-Dapper-Suit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dapper-Suit-front.png",
+    "order": 66
+  },
+  {
+    "id": 2324,
+    "guid": "gZoseEbqGz",
+    "type": "FaceAccessory",
+    "name": "Style Dapper Monocle",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Style-Dapper-Monocle-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Style-Dapper-Monocle.png",
+    "order": 227
+  },
+  {
+    "id": 2325,
+    "guid": "yuO7uDMle8",
+    "type": "Necklace",
+    "name": "Style Dapper Necktie",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Style-Dapper-Necktie-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Style-Dapper-Necktie.png",
+    "order": 119
   }
 ]

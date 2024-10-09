@@ -10,6 +10,12 @@
           Field guide
         </span>
       </a>
+      <a class="container" [routerLink]="'/item/collection'">
+        <mat-icon class="menu-icon">collections_bookmark</mat-icon>
+        <span class="menu-label">
+          Collections
+        </span>
+      </a>
       <a class="container" [routerLink]="'/item/unlock-calculator'">
         <mat-icon class="menu-icon">calculate</mat-icon>
         <span class="menu-label">
@@ -32,15 +38,15 @@
   </div>
 </div>
 
-<!-- Categories -->
+<div class="mt">
+  <app-items [type]="type" [highlightItem]="highlightItem" (typeChanged)="onTypeChanged($event)"></app-items>
+</div>
+
 <div class="sky-card mt">
-  <div class="sky-card-header">
-    <h2 class="h3 mb-0">Type</h2>
-  </div>
   <div class="sky-card-body">
-    <app-item-type-selector [type]="type" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
-    <div class="mt container">
-      <span>
+    <div class="container">
+      <mat-icon class="menu-icon">lock_open</mat-icon>
+      <span class="menu-label">
         You have unlocked
         <b [class.completed]="unlockedCount == itemCount">{{ unlockedCount }}</b>
         out of
@@ -50,8 +56,4 @@
       </span>
     </div>
   </div>
-</div>
-
-<div class="mt">
-  <app-items [type]="type" [highlightItem]="highlightItem"></app-items>
 </div>

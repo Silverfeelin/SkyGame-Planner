@@ -1,0 +1,32 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Daily quests</h1>
+  </div>
+  <div class="sky-card-body grid grid-1">
+    @if (realm?.imageUrl) {
+      <div class="p-rel realm-img sky-border-solid"
+        [style.background-image]="'url('+realm!.imageUrl+')'"
+        [style.background-position]="realm!.imagePosition || undefined">
+      </div>
+    }
+    @if (realm?.name) {
+      <a class="item" [routerLink]="['/realm', realm!.guid]">
+        <mat-icon class="menu-icon">map</mat-icon>
+        <span class="menu-label">{{realm!.name}}</span>
+      </a>
+    }
+    <app-discord-link [link]="'https://discord.com/channels/736912435654688868/801778605486374943'"
+      [aStyle]="'text-decoration: none;'" [aClass]="'item link'"
+    >
+      <img class="menu-icon icon" src="assets/external/discord-mark-white.svg" loading="lazy">
+      <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
+    </app-discord-link>
+    <!-- Check-in -->
+    <div (click)="checkin($event)" class="item action" [class.active]="checkedIn">
+      <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+      <span class="menu-label">
+        I have done my dailies.
+      </span>
+    </div>
+  </div>
+</div>

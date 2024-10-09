@@ -11,6 +11,9 @@
 <div class="grid-tree" [style.grid-template-columns]="'1fr 1fr 1fr'" [style.grid-template-rows]="'repeat(' + treeHeight + ', 1fr)'">
   <ng-container *ngTemplateOutlet="tNode; context: { $implicit: editorNode, x: 1, y: 0 }"></ng-container>
 </div>
+<div class="mt mb t-center">
+  <button type="button" (click)="addRootNode()">Add node below</button>
+</div>
 
 @if (generatedTree) {
   <app-spirit-tree [tree]="generatedTree" [enableControls]="false" [opaqueNodes]="true" [highlightItem]="highlightItem"
@@ -30,7 +33,7 @@
       @if (node.prev) { <button type="button" class="button-danger" (click)="nodeRemove(node)"><mat-icon>delete</mat-icon></button> }
     </div>
     <!-- Item -->
-    <div>Item: <input class="input-guid" (input)="nodeGuidChanged($event, node)" (blur)="nodeGuidChanged($event, node)"></div>
+    <div>Item: <input class="input-guid" [value]="node.item?.guid || ''" (input)="nodeGuidChanged($event, node)" (blur)="nodeGuidChanged($event, node)"></div>
     <div>
       <label>{{node.item?.name}}</label><br/>
       @if (node?.item) { <app-item-icon [item]="node?.item" [opaque]="true" [hoverGlow]="false"></app-item-icon> }

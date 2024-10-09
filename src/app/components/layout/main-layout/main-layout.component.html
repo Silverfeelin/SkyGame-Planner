@@ -8,24 +8,25 @@
       @case ('data_changed') { <mat-icon class="pulse">cloud</mat-icon> }
     }
   </div>
+  <app-survey></app-survey>
   <router-outlet></router-outlet>
 }
 @else if (err) {
-  <div class="overlay">
-    <div class="overlay-body">
-      <span>Something went wrong...</span>
-      <span>Please report this error.</span>
-      <pre class="br pad ws-pl" style="background: #000;" (click)="copy($event)">{{ err }}</pre>
-    </div>
-  </div>
+  <app-overlay [dismissable]="false">
+    <span>Something went wrong...</span>
+    <span>Please report this error.</span>
+    <pre class="br pad ws-pl mb-0" style="background: #000;" (click)="copy($event)">{{ err }}</pre>
+  </app-overlay>
 } @else {
-  <div class="overlay loader" [class.loader-loading]="loading">
-    <div class="overlay-body">
+  <app-overlay class="loader" [class.loader-loading]="loading" [dismissable]="false">
+    <div class="grid grid-1 t-center" style="width: 240px;">
       <span>Loading data...</span>
-      <mat-icon class="loader-icon">autorenew</mat-icon>
+      <div>
+        <mat-icon class="loader-icon">autorenew</mat-icon>
+      </div>
       <a class="c-accent" [routerLink]="'/storage'">Taking too long?</a>
     </div>
-  </div>
+  </app-overlay>
 }
 
 @if (storageSaveError) {

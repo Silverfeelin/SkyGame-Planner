@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy } from '@angular/core';
-import { GuardResult, MaybeAsync, Router, UrlTree, RouterOutlet, RouterLink } from '@angular/router';
+import { GuardResult, Router, UrlTree, RouterOutlet, RouterLink } from '@angular/router';
 import { Observable, SubscriptionLike, delay, forkJoin, of } from 'rxjs';
 import { canActivateData } from 'src/app/guards/can-activate-data';
 import { canActivateStorage } from 'src/app/guards/can-activate-storage';
@@ -7,6 +7,9 @@ import { DataService, ITrackables } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storage-provider.interface';
 import { MatIcon } from '@angular/material/icon';
+import { SurveyComponent } from "../../survey/survey.component";
+import { canActivateIcons } from '@app/guards/can-activate-icons';
+import { OverlayComponent } from "../overlay/overlay.component";
 
 @Component({
     selector: 'app-main-layout',
@@ -14,7 +17,7 @@ import { MatIcon } from '@angular/material/icon';
     styleUrl: './main-layout.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [MatIcon, RouterOutlet, RouterLink]
+    imports: [MatIcon, RouterOutlet, RouterLink, SurveyComponent, OverlayComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 
@@ -48,14 +51,17 @@ export class MainLayoutComponent implements OnDestroy {
 
     // Workaround for me not knowing how to handle this with canActivateChild guards while showing a loader in the parent.
     let data$ = canActivateData(null as any, null as any) as Observable<GuardResult>;
+    let icons$ = canActivateIcons(null as any, null as any) as Observable<GuardResult>;
     let storage$ = canActivateStorage(null as any, null as any) as Observable<GuardResult>;
 
     if (data$ instanceof Promise) { throw new Error('Promise not supported.'); }
+    if (icons$ instanceof Promise) { throw new Error('Promise not supported.'); }
     if (storage$ instanceof Promise) { throw new Error('Promise not supported.'); }
     if (data$ instanceof UrlTree || typeof data$ === 'boolean') { data$ = of(data$); }
+    if (icons$ instanceof UrlTree || typeof icons$ === 'boolean') { icons$ = of(icons$); }
     if (storage$ instanceof UrlTree || typeof storage$ === 'boolean') { storage$ = of(storage$); }
 
-    forkJoin({ data: data$, storage: storage$ }).subscribe({
+    forkJoin({ data: data$, icons: icons$, storage: storage$ }).subscribe({
       next: model => {
         if (model.storage instanceof UrlTree) {
           this._router.navigateByUrl(model.storage);
@@ -98,7 +104,7 @@ export class MainLayoutComponent implements OnDestroy {
 
     if (this.saveTimeout) { clearTimeout(this.saveTimeout); }
     if (evt.type === 'save_success') {
-      this.saveTimeout = setTimeout(() => {
+      this.saveTimeout = window.setTimeout(() => {
         this.showSaveIndicator = false;
         this._changeDetectorRef.markForCheck();
       }, 2500);

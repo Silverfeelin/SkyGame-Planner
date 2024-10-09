@@ -22,7 +22,7 @@ export type NodeAction = 'emit' | 'unlock' | 'find' | 'favourite';
     templateUrl: './node.component.html',
     styleUrls: ['./node.component.less'],
     standalone: true,
-    imports: [NgIf, NgbTooltip, ItemIconComponent, MatIcon]
+    imports: [NgbTooltip, ItemIconComponent, MatIcon]
 })
 export class NodeComponent implements OnChanges {
   @Input() node!: INode;
@@ -31,6 +31,7 @@ export class NodeComponent implements OnChanges {
   @Input() glowType?: HighlightType = 'default';
   @Input() action: NodeAction = 'unlock';
   @Input() opaque?: boolean;
+  @Input() showTooltips = true;
 
   @Output() readonly nodeClicked = new EventEmitter<MouseEvent>();
 

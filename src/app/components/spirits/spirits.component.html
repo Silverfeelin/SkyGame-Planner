@@ -39,8 +39,7 @@
       </ng-template>
       <!-- Location -->
       <ng-template [appTableColumn] let-row="row">
-        <!-- <a [routerLink]="row.areaGuid ? ['/area', row.areaGuid] : undefined"> -->
-        <a [routerLink]="undefined">
+        <a [routerLink]="row.areaGuid ? ['/area', row.areaGuid] : undefined">
           {{ row.area?.name }}
         </a>
       </ng-template>

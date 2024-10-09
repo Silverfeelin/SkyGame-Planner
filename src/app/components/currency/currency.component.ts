@@ -10,6 +10,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { CurrencyService } from '@app/services/currency.service';
 
 @Component({
   selector: 'app-currency',
@@ -32,9 +33,13 @@ export class CurrencyComponent {
   ongoingSeason?: ISeason;
   ongoingEventInstances: Array<IEventInstance>;
 
+  dailySeasonCandles = 5;
+  dailyEventCurrency: { [guid: string]: number; } = {};
+
   converted?: { candles: number; };
 
   constructor(
+    private readonly _currencyService: CurrencyService,
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService
   ) {
@@ -46,6 +51,7 @@ export class CurrencyComponent {
     if (this.ongoingSeason) {
       this.inpCurrencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
       this.currencies.seasonCurrencies[this.ongoingSeason.guid] ??= { candles: 0 };
+      this.dailySeasonCandles = this._storageService.hasSeasonPass(this.ongoingSeason.guid) ? 6 : 5;
     }
 
     const ongoingEventGuids = new Set<string>();
@@ -60,6 +66,8 @@ export class CurrencyComponent {
 
       this.inpCurrencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
       this.currencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
+
+      this.dailyEventCurrency[instance.guid] = instance.calculatorData?.dailyCurrencyAmount || 5;
     }
 
     // Convert old season currency. This might be better suited to run on site load.
@@ -84,6 +92,60 @@ export class CurrencyComponent {
     if (changed) {
       this._storageService.setCurrencies(this.currencies);
     }
+  }
+
+  addCurrency(type: 'candles' | 'hearts' | 'ascendedCandles' | 'giftPasses' | 'seasonCandles' | 'eventTickets', amount: number): void {
+    switch (type) {
+      case 'candles':
+        const candles = this._currencyService.clamp((this.currencies.candles || 0) + amount);
+        this.inpC.nativeElement.value = candles.toString();
+        this.currencies.candles = candles;
+        break;
+      case 'hearts':
+        const hearts = this._currencyService.clamp((this.currencies.hearts || 0) + amount);
+        this.inpH.nativeElement.value = hearts.toString();
+        this.currencies.hearts = hearts;
+        break;
+      case 'ascendedCandles':
+        const ascendedCandles = this._currencyService.clamp((this.currencies.ascendedCandles || 0) + amount);
+        this.inpAc.nativeElement.value = ascendedCandles.toString();
+        this.currencies.ascendedCandles = ascendedCandles;
+        break;
+      case 'giftPasses':
+        const giftPasses = this._currencyService.clamp((this.currencies.giftPasses || 0) + amount);
+        this.inpSp.nativeElement.value = giftPasses.toString();
+        this.currencies.giftPasses = giftPasses;
+        break;
+    }
+
+    this._storageService.setCurrencies(this.currencies);
+  }
+
+  addSeasonCurrency(amount: number): void {
+    if (!this.ongoingSeason) { return; }
+    const seasonCurrency = this.currencies.seasonCurrencies[this.ongoingSeason?.guid];
+    if (!seasonCurrency) { return; }
+
+    const candles = this._currencyService.clamp((seasonCurrency.candles || 0) + amount);
+    this.currencies.seasonCurrencies[this.ongoingSeason.guid].candles = candles;
+    this.inpSc.nativeElement.value = candles.toString();
+
+    this._storageService.setCurrencies(this.currencies);
+  }
+
+  addEventCurrency(guid: string, amount: number): void {
+    const eventCurrency = this.currencies.eventCurrencies[guid];
+    if (!eventCurrency) { return; }
+
+    const tickets = this._currencyService.clamp((eventCurrency.tickets || 0) + amount);
+    this.currencies.eventCurrencies[guid].tickets = tickets;
+
+    const index = this.ongoingEventInstances.findIndex(instance => instance.guid === guid);
+    if (index !== -1) {
+      this.inpEc.toArray()[index].nativeElement.value = tickets.toString();
+    }
+
+    this._storageService.setCurrencies(this.currencies);
   }
 
   onCurrencyInput(): void {

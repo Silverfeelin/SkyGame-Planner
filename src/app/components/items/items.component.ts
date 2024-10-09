@@ -21,7 +21,7 @@ import { Maybe } from '@app/types/maybe';
 import { ItemTypePipe } from "../../pipes/item-type.pipe";
 import { CostHelper } from '@app/helpers/cost-helper';
 import { ICost } from '@app/interfaces/cost.interface';
-import { CardComponent } from "../layout/card/card.component";
+import { CardComponent, CardFoldEvent } from "../layout/card/card.component";
 
 export type ItemAction = 'navigate' | 'emit';
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -67,9 +67,13 @@ export class ItemsComponent {
   @Input() title = 'Items';
   @Input() type: ItemType = ItemType.Outfit;
   @Input() highlightItem?: IItem;
+  @Input() backlightItems?: Array<IItem>;
+  @Input() opaqueItems = false;
   @Input() action: ItemAction = 'navigate';
   @Input() foldable = false;
+  @Input() maxHeight: string | undefined;
 
+  @Output() readonly typeChanged = new EventEmitter<ItemType>();
   @Output() readonly onItemClicked = new EventEmitter<ItemClickEvent>();
   @Output() readonly onItemsChanged = new EventEmitter<Array<IItem>>();
 
@@ -115,6 +119,8 @@ export class ItemsComponent {
   events: Array<IEvent>;
   realms: Array<IRealm>;
 
+  backlightItemSet?: { [key: string]: boolean };
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _searchService: SearchService,
@@ -138,6 +144,13 @@ export class ItemsComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['type']) { this.updateShownItems(); }
+    if (changes['backlightItems']) { this.updateBacklightItems(); }
+  }
+
+  onTypeChanged(type: ItemType) {
+    this.type = type;
+    this.typeChanged.emit(type);
+    this.updateShownItems();
   }
 
   clickItem(item: IItem, event: MouseEvent) {
@@ -145,8 +158,8 @@ export class ItemsComponent {
       this.onItemClicked.emit({ event, item });
   }
 
-  beforeFold(folded: boolean): void {
-    this.isFolded = folded;
+  beforeFold(evt: CardFoldEvent): void {
+    this.isFolded = evt.fold;
   }
 
   // #region Toggle filters
@@ -159,7 +172,6 @@ export class ItemsComponent {
     const url = new URL(location.href);
     url.searchParams.set('f', this.showFilters ? '1' : '0');
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
-    this.updateShownItems();
   }
 
   onFilterNameInput(evt: Event): void {
@@ -268,14 +280,6 @@ export class ItemsComponent {
     // Lazy load shown types
     this.typesLoaded[this.type!] = true;
 
-    // Can't show all item types at once, becomes unresponsive.
-    // Maybe if icons weren't all loaded at once/separately.
-    // if (this.showFilters) { this.types.forEach(type => this.typesLoaded[type] = true); }
-    // else { this.typesLoaded[this.type!] = true; }
-    // const items = this.showFilters
-    //   ? this.allItems
-    //   : this.typeItems[this.type!] ?? [];
-
     this.shownItems = {};
     const items = this.typeItems[this.type!] ?? [];
     for (const item of items) {
@@ -287,93 +291,94 @@ export class ItemsComponent {
 
     this.unfilteredItemCount = 0;
     this.unfilteredItems = {};
-    if (this.showFilters) {
-      this.initializeItemSearchMetadata();
-      const matches = items.filter(item => {
-        // Check filters
-        if (this.filters['favourite'] !== undefined) {
-          if (this.filters['favourite'] !== !!item.favourited) { return false; }
+
+    this.initializeItemSearchMetadata();
+    const matches = items.filter(item => {
+      // Check filters
+      if (this.filters['favourite'] !== undefined) {
+        if (this.filters['favourite'] !== !!item.favourited) { return false; }
+      }
+      if (this.filters['limited'] !== undefined) {
+        const limited = item.group === 'Limited' || item.group === 'Ultimate';
+        if (this.filters['limited'] !== limited) { return false; }
+      }
+      if (this.filters['owned'] !== undefined) {
+        if (this.filters['owned'] !== !!item.unlocked) { return false; }
+      }
+      if (this.filters['starter'] !== undefined) {
+        if (this.filters['starter'] !== !!item.autoUnlocked) { return false; }
+      }
+
+      const metadata = itemSearchMetadata![item.guid];
+      if (this.filters['returned'] !== undefined) {
+        const returned = item.autoUnlocked || (metadata.origin && metadata.origin.source !== metadata.last?.source);
+        if (this.filters['returned'] !== returned) { return false; }
+      }
+
+      // Filter by IAP
+      if (this.filterCurrencies.first['iap'] === false && metadata.last?.type === 'iap') { return false; }
+      if (this.filterCurrencies.last['iap'] === false && metadata.last?.type === 'iap') { return false; }
+
+      // Filter by currencies
+      const costFirst = metadata.origin?.type === 'node' ? metadata.firstNode : metadata.origin?.type === 'list' ? metadata.firstListNode : undefined;
+      const costLast = metadata.last?.type === 'node' ? metadata.lastNode : metadata.last?.type === 'list' ? metadata.lastListNode : undefined;
+      const checkCost = (cost: ICost | undefined, filters: FilterMap): boolean => {
+        if (filters['candles'] === false && cost?.c) { return false; }
+        if (filters['hearts'] === false && cost?.h) { return false; }
+        if (filters['ascendedCandles'] === false && cost?.ac) { return false; }
+        if (filters['eventCurrency'] === false && cost?.ec) { return false; }
+        if (filters['seasonCandles'] === false && cost?.sc) { return false; }
+        if (filters['seasonPass'] === false) {
+          if (item.group === 'Ultimate') { return false; }
+          if (cost && item.group === 'SeasonPass' && CostHelper.isEmpty(cost)) { return false; }
         }
-        if (this.filters['limited'] !== undefined) {
-          const limited = item.group === 'Limited' || item.group === 'Ultimate';
-          if (this.filters['limited'] !== limited) { return false; }
-        }
-        if (this.filters['owned'] !== undefined) {
-          if (this.filters['owned'] !== !!item.unlocked) { return false; }
-        }
-        if (this.filters['starter'] !== undefined) {
-          if (this.filters['starter'] !== !!item.autoUnlocked) { return false; }
-        }
-
-        const metadata = itemSearchMetadata![item.guid];
-        if (this.filters['returned'] !== undefined) {
-          const returned = item.autoUnlocked || (metadata.origin && metadata.origin.source !== metadata.last?.source);
-          if (this.filters['returned'] !== returned) { return false; }
-        }
-
-        // Filter by IAP
-        if (this.filterCurrencies.first['iap'] === false && metadata.last?.type === 'iap') { return false; }
-        if (this.filterCurrencies.last['iap'] === false && metadata.last?.type === 'iap') { return false; }
-
-        // Filter by currencies
-        const costFirst = metadata.origin?.type === 'node' ? metadata.firstNode : metadata.origin?.type === 'list' ? metadata.firstListNode : undefined;
-        const costLast = metadata.last?.type === 'node' ? metadata.lastNode : metadata.last?.type === 'list' ? metadata.lastListNode : undefined;
-        const checkCost = (cost: ICost | undefined, filters: FilterMap): boolean => {
-          if (filters['candles'] === false && cost?.c) { return false; }
-          if (filters['hearts'] === false && cost?.h) { return false; }
-          if (filters['ascendedCandles'] === false && cost?.ac) { return false; }
-          if (filters['eventCurrency'] === false && cost?.ec) { return false; }
-          if (filters['seasonCandles'] === false && cost?.sc) { return false; }
-          if (filters['seasonPass'] === false) {
-            if (item.group === 'Ultimate') { return false; }
-            if (cost && item.group === 'SeasonPass' && CostHelper.isEmpty(cost)) { return false; }
-          }
-          if (filters['seasonHearts'] === false && cost?.sh) { return false; }
-          if (filters['free'] === false) {
-            if (item.autoUnlocked) { return false; }
-            const isFree = cost && CostHelper.isEmpty(cost);
-            const isSeasonNode = metadata.lastNode?.root?.spiritTree?.spirit?.type === 'Season';
-            const isSeasonRootNode = isSeasonNode && metadata.lastNode!.root === metadata.lastNode;
-            if (isFree && (!isSeasonNode || isSeasonRootNode)) { return false; }
-          }
-
-          return true;
-        };
-        if (!checkCost(costFirst, this.filterCurrencies.first)) { return false; }
-        if (!checkCost(costLast, this.filterCurrencies.last)) { return false; }
-
-        // Filter out unchecked season/event/realm.
-        if (metadata.season !== undefined && this.filterSeasons[metadata.season.guid] === false) { return false; }
-        if (metadata.event !== undefined && this.filterEvents[metadata.event.guid] === false) { return false; }
-        if (metadata.realm !== undefined && this.filterRealms[metadata.realm.guid] === false) { return false; }
-
-        if (this.filters['unsorted'] !== undefined) {
-          const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.event && !metadata.realm
-          if (isUnsorted !== this.filters['unsorted']) { return false; }
+        if (filters['seasonHearts'] === false && cost?.sh) { return false; }
+        if (filters['free'] === false) {
+          if (item.autoUnlocked) { return false; }
+          const isFree = cost && CostHelper.isEmpty(cost);
+          const isSeasonNode = metadata.lastNode?.root?.spiritTree?.spirit?.type === 'Season';
+          const isSeasonRootNode = isSeasonNode && metadata.lastNode!.root === metadata.lastNode;
+          if (isFree && (!isSeasonNode || isSeasonRootNode)) { return false; }
         }
 
         return true;
-      });
+      };
+      if (!checkCost(costFirst, this.filterCurrencies.first)) { return false; }
+      if (!checkCost(costLast, this.filterCurrencies.last)) { return false; }
 
-      if (this.filterName) {
-        const itemGuids = new Set(matches.map(item => item.guid));
-        const items = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
-        const searchResults = this._searchService.search(this.filterName, { limit: 999, items });
-        searchResults.forEach(result => this.unfilteredItems[(result.data as IItem).guid] = true);
-        this.unfilteredItemCount = searchResults.length;
-      } else {
-        matches.forEach(item => this.unfilteredItems[item.guid] = true);
-        this.unfilteredItemCount = matches.length;
+      // Filter out unchecked season/event/realm.
+      if (metadata.season !== undefined && this.filterSeasons[metadata.season.guid] === false) { return false; }
+      if (metadata.event !== undefined && this.filterEvents[metadata.event.guid] === false) { return false; }
+      if (metadata.realm !== undefined && this.filterRealms[metadata.realm.guid] === false) { return false; }
+
+      if (this.filters['unsorted'] !== undefined) {
+        const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.event && !metadata.realm
+        if (isUnsorted !== this.filters['unsorted']) { return false; }
       }
 
-      // Notify listeners.
-      this.onItemsChanged.emit(matches);
+      return true;
+    });
+
+    if (this.filterName) {
+      const itemGuids = new Set(matches.map(item => item.guid));
+      const items = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
+      const searchResults = this._searchService.search(this.filterName, { limit: 999, items });
+      searchResults.forEach(result => this.unfilteredItems[(result.data as IItem).guid] = true);
+      this.unfilteredItemCount = searchResults.length;
     } else {
-      // Notify listeners.
-      this.onItemsChanged.emit(items);
+      matches.forEach(item => this.unfilteredItems[item.guid] = true);
+      this.unfilteredItemCount = matches.length;
     }
 
+    // Notify listeners.
+    this.onItemsChanged.emit(matches);
+
     this._changeDetectionRef.markForCheck();
+  }
+
+  private updateBacklightItems(): void {
+    this.backlightItemSet = this.backlightItems ? {} : undefined;
+    this.backlightItems?.forEach(item => this.backlightItemSet![item.guid] = true);
   }
 
   private initializeItems(): void {
@@ -416,6 +421,10 @@ export class ItemsComponent {
         originSource = { type: 'season', source: origin.source.root.spiritTree.ts.spirit.season };
       }
 
+      // Only apply realm filters to regular spirits & elders.
+      const lastNodeSpirit = last?.type === 'node' ? last.source.root?.spiritTree?.spirit : undefined;
+      const realm = lastNodeSpirit?.type === 'Regular' || lastNodeSpirit?.type === 'Elder' ? lastNodeSpirit.area?.realm : undefined;
+
       // Note: picking event by last instance, to account for the weird cases like all the different Summer events.
       itemSearchMetadata[item.guid] = {
         item, origin, last,
@@ -428,7 +437,7 @@ export class ItemsComponent {
         event: lastSource?.type === 'event' ? lastSource.source.event : undefined,
         eventInstance: lastSource?.type === 'event' ? lastSource.source : undefined,
         season: originSource?.type === 'season' ? originSource.source : undefined,
-        realm: last?.type === 'node' ? last.source.root?.spiritTree?.spirit?.area?.realm : undefined
+        realm
       };
     };
   }

@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import { IItem, ItemType } from "../interfaces/item.interface";
 import { INode, ITierNode } from "../interfaces/node.interface";
+import { CostHelper } from './cost-helper';
 
 export class NodeHelper {
   /** Finds the first node that satisfies the predicate.
@@ -95,6 +96,21 @@ export class NodeHelper {
       } while (n)
     }
     return nodeSet;
+  }
+
+  static swap(nodeA: INode, nodeB: INode): void {
+    const a: any = { item: nodeA.item, hiddenItems: nodeA.hiddenItems };
+    CostHelper.add(a, nodeA);
+
+    nodeA.item = nodeB.item;
+    nodeA.hiddenItems = nodeB.hiddenItems;
+    CostHelper.clear(nodeA);
+    CostHelper.add(nodeA, nodeB);
+
+    nodeB.item = a.item;
+    nodeB.hiddenItems = a.hiddenItems;
+    CostHelper.clear(nodeB);
+    CostHelper.add(nodeB, a);
   }
 
   static clone(node: INode): INode {

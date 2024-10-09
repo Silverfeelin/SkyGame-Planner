@@ -1,5 +1,5 @@
 <div class="content sky-border-solid" [class.highlight]="highlight" [attr.data-tree]="tree.guid">
-  <div class="spirit-tree-scroll" [class.has-buttons]="enableControls" [class.pad-bottom]="hasCostAtRoot || padBottom">
+  <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot || padBottom">
     <!-- Action indication -->
     <div class="tree-action-background">
       @switch (nodeAction) {
@@ -9,7 +9,8 @@
     </div>
     <!-- Controls -->
     @if (enableControls) {
-      <div class="tree-actions">
+      <!-- Top left controls -->
+      <div class="tree-actions tree-actions-left">
         @if (showingNodeActions || nodeAction === 'unlock') {
           <div class="tree-action point" (click)="setNodeAction($event, 'unlock')">
             <div class="tree-action-icon find-item">
@@ -35,10 +36,40 @@
           </div>
         }
       </div>
-      <div class="unlock-all point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="bottom-end">
-        <mat-icon>enhanced_encryption</mat-icon>
+
+      <!-- Top right controls-->
+      <div class="tree-actions tree-actions-right">
+        <div class="tree-sub-action point" (click)="showingMenuActions=!showingMenuActions" [ngbTooltip]="'Toggle menu'" container="body" placement="top-end">
+          <div class="tree-action-icon">
+            <mat-icon>menu</mat-icon>
+          </div>
+        </div>
+        <div class="tree-sub-action point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="top-end">
+          <div class="tree-action-icon">
+            <mat-icon>enhanced_encryption</mat-icon>
+          </div>
+        </div>
+        @if (showingMenuActions) {
+          <div class="tree-sub-action point" (click)="export('share')" [ngbTooltip]="'Share tree image'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>share</mat-icon>
+            </div>
+          </div>
+          <div class="tree-sub-action point" (click)="export('clipboard')" [ngbTooltip]="'Copy tree image'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>file_copy</mat-icon>
+            </div>
+          </div>
+          <a class="tree-sub-action point" [routerLink]="['/spirit-tree/editor']" [queryParams]="{tree: tree.guid}" [ngbTooltip]="'Edit tree'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>edit</mat-icon>
+            </div>
+          </a>
+        }
       </div>
     }
+
+    <!-- Tree nodes -->
     <div class="spirit-tree">
       <div class="column left">
         <div class="st-item" *ngFor="let node of left">
@@ -58,18 +89,18 @@
     </div>
   </div>
   <div class="footer">
-    @if (name || tree.name) {
+    @if (visibleName) {
       <div class="name">
         <ng-content select="div[name]"></ng-content>
         <div class="name-default">
-          {{ name ?? tree.name }}
+          {{ visibleName }}
           @if (tsDate || rsDate) {
             <span class="c-accent ts-date">(<app-date [date]="tsDate || rsDate"></app-date>)</span>
           }
         </div>
       </div>
     }
-    @if ((name || tree.name) && hasCost) {
+    @if (visibleName && hasCost) {
       <div class="hr"></div>
     }
     @if (hasCost) {
@@ -90,6 +121,7 @@
   @if (node) {
     <app-node [node]="node" [action]="forceNodeAction ?? nodeAction" [position]="position" (nodeClicked)="onNodeClicked($event, node)"
       [highlight]="highlightItem ? highlightItemMap[node.item?.guid] : undefined"
+      [showTooltips]="showNodeTooltips"
       [opaque]="opaqueNodesAll || opaqueNodesMap[node.guid]"
       [glowType]="(forceNodeAction ?? nodeAction) !== 'unlock' ? 'attention' : 'default'">
     </app-node>

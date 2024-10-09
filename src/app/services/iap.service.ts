@@ -5,7 +5,6 @@ import { EventService } from './event.service';
 import { CurrencyService } from './currency.service';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { ICost } from '@app/interfaces/cost.interface';
-import { ISeason } from '@app/interfaces/season.interface';
 import { DataService } from './data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 

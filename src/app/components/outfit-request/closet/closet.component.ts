@@ -22,6 +22,7 @@ import { CardComponent } from '../../layout/card/card.component';
 import { MatIcon } from '@angular/material/icon';
 import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
 import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
+import { IconService } from '@app/services/icon.service';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -146,10 +147,12 @@ export class ClosetComponent implements OnDestroy {
 
   _imgNone = new Image();
   _imgUnknown = new Image();
+  _imgSheets: { [key: string]: HTMLImageElement } = {};
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
+    private readonly _iconService: IconService,
     private readonly _searchService: SearchService,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _elementRef: ElementRef<HTMLElement>,
@@ -160,6 +163,11 @@ export class ClosetComponent implements OnDestroy {
 
     this._imgNone.src = '/assets/icons/none.webp';
     this._imgUnknown.src = '/assets/icons/question.webp';
+    _iconService.getSheets().forEach(sheet => {
+      const img = new Image();
+      img.src = `/assets/game/${sheet}`;
+      this._imgSheets[sheet] = img;
+    });
 
     // Load user preferences.
     this.hideUnselected = localStorage.getItem('closet.hide-unselected') === '1';
@@ -895,6 +903,7 @@ export class ClosetComponent implements OnDestroy {
       'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi', 'f-X2dDeB9w',
       'E_yfCZYU5C', 'ec8jU3Gerw', 'biKOov4qJQ'
     ];
+    const placeholderItems = placeholders.map(guid => this.itemMap[guid]);
     // Store item images for drawing.
     const itemDivs = document.querySelectorAll('.closet-item');
     const itemImgs = Array.from(itemDivs).reduce((obj, div) => {
@@ -918,16 +927,30 @@ export class ClosetComponent implements OnDestroy {
       ctx.beginPath(); ctx.roundRect(x, y, _wItem, _wItem, 4); ctx.fill();
 
       const drawPlaceholder = () => {
+        const mappedIcon = placeholderItems[i].icon ? this._iconService.getIcon(placeholderItems[i].icon!) : undefined;
         const placeholderImg = itemImgs[placeholders[i]];
         if (!placeholderImg) { throw new Error('Item image for placeholder was not loaded!'); }
         ctx.globalAlpha = 0.25;
-        ctx.drawImage(placeholderImg, x, y, _wItem, _wItem);
+        if (mappedIcon) {
+          const sheet = this._imgSheets[mappedIcon.file];
+          ctx.drawImage(sheet, mappedIcon.x, mappedIcon.y, 128, 128, x, y, _wItem, _wItem);
+        } else {
+          ctx.drawImage(placeholderImg, x, y, _wItem, _wItem);
+        }
         ctx.globalAlpha = 1;
       };
 
-      if (item) {
-        if (itemImgs[item.guid].src === this._imgNone.src) { drawPlaceholder(); }
-        ctx.drawImage(itemImgs[item.guid], x, y, _wItem, _wItem);
+      if (item && item.icon) {
+        if (itemImgs[item.guid]?.src === this._imgNone.src) { drawPlaceholder(); }
+        const mappedIcon = this._iconService.getIcon(item.icon);
+        const img = itemImgs[item.guid];
+
+        if (mappedIcon) {
+          const sheet = this._imgSheets[mappedIcon.file];
+          ctx.drawImage(sheet, mappedIcon.x, mappedIcon.y, 128, 128, x, y, _wItem, _wItem);
+        } else {
+          ctx.drawImage(img, x, y, _wItem, _wItem);
+        }
       } else {
         drawPlaceholder();
         ctx.drawImage(this._imgUnknown, x, y, _wItem, _wItem);
@@ -1096,8 +1119,9 @@ export class ClosetComponent implements OnDestroy {
 
     for (const item of items) {
       if (!item.icon) { nextX(); continue; }
+      const mappedIcon = this._iconService.getIcon(item.icon);
       const img = itemImgs[item.guid];
-      if (!img) { nextX(); continue; }
+      if (!mappedIcon && !img) { nextX(); continue; }
 
       // Draw item box
       ctx.fillStyle = '#0006';
@@ -1116,7 +1140,12 @@ export class ClosetComponent implements OnDestroy {
         }
       }
 
-      ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
+      if (mappedIcon) {
+        const sheet = this._imgSheets[mappedIcon.file];
+        ctx.drawImage(sheet, mappedIcon.x, mappedIcon.y, 128, 128, sx + x * _wBox, sy + y * _wBox, _wItem, _wItem);
+      } else {
+        ctx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight, sx + x * _wBox, sy + y * (_wBox), _wItem, _wItem);
+      }
       ctx.globalAlpha = 1;
 
       // Draw selection

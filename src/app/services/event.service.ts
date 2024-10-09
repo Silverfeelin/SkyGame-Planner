@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class EventService {
   readonly itemToggled = new Subject<IItem>();
   readonly itemFavourited = new Subject<IItem>();
-  readonly searchReset = new Subject<void>();
+  readonly keydown = new Subject<KeyboardEvent>();
   readonly clicked = new Subject<MouseEvent>();
   readonly storageChanged = new Subject<StorageEvent>();
   readonly menuFolded = new Subject<boolean>();
@@ -18,7 +18,7 @@ export class EventService {
     private readonly _router: Router
   ) {
     document.addEventListener('keydown', evt => {
-      this.onKeyDown(evt);
+      this.onKeydown(evt);
     });
 
     document.addEventListener('click', evt => {
@@ -30,15 +30,8 @@ export class EventService {
     });
   }
 
-  private onKeyDown(evt: KeyboardEvent): void {
-    if (evt.ctrlKey && evt.shiftKey && evt.key.toUpperCase() === 'F') {
-      evt.preventDefault();
-      this.searchReset.next();
-      const path = this._router.url.split('?')[0] || '/';
-      if (path !== '/') {
-        void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });
-      }
-    }
+  private onKeydown(evt: KeyboardEvent): void {
+    this.keydown.next(evt);
   }
 
   private onClick(evt: MouseEvent): void {

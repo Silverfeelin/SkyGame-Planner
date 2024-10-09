@@ -13,7 +13,7 @@
     <!-- Preview image -->
     <div *ngIf="sections['img'] && spirit.imageUrl" class="spirit-grid-img spirit-grid-item sky-card-item">
       <div *ngIf="options?.homeBackground" class="spirit-img-bg"></div>
-      <div class="spirit-img" *ngIf="spirit.imageUrl" [class.spoiler-ts]="tsSpoiler" (click)="toggleTsSpoiler()">
+      <div class="spirit-img" *ngIf="spirit.imageUrl" [class.spoiler-ts]="tsSpoiler" (click)="revealTsSpoiler()">
         <img [src]="spirit.imageUrl" [alt]="spirit.name"/>
       </div>
     </div>

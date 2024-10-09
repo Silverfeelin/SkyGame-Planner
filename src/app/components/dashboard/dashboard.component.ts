@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
@@ -17,13 +16,15 @@ import { MatIcon } from '@angular/material/icon';
 import { ClockComponent } from '../clock/clock.component';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { CardComponent } from "../layout/card/card.component";
+import { DailyCardComponent } from "../daily-card/daily-card.component";
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.less'],
   standalone: true,
-  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent, CardComponent]
+  imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, DiscordLinkComponent, CardComponent, DailyCardComponent, IconComponent]
 })
 export class DashboardComponent implements OnInit {
 
@@ -36,13 +37,9 @@ export class DashboardComponent implements OnInit {
   eventInstances: Array<IEventInstance> = [];
   futureEventInstance?: IEventInstance;
 
-  dailyCheckedIn?: boolean;
-
   constructor(
     private readonly _dataService: DataService
-  ) {
-    this.updateCheckin();
-  }
+  ) { }
 
   ngOnInit(): void {
     // Season
@@ -77,22 +74,5 @@ export class DashboardComponent implements OnInit {
     }
     futureEvents.sort((a, b) => a.date.diff(b.date).as('milliseconds'));
     this.futureEventInstance = futureEvents.at(0);
-  }
-
-  dailyCheckIn(): void {
-    this.dailyCheckedIn = !this.dailyCheckedIn;
-    if (this.dailyCheckedIn) {
-      localStorage.setItem('daily.checkin', DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
-    } else {
-      localStorage.removeItem('daily.checkin');
-    }
-  }
-
-  private updateCheckin(): void {
-    const checkinDate = localStorage.getItem('daily.checkin');
-    this.dailyCheckedIn = false;
-    if (!checkinDate) { return; }
-    const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
-    this.dailyCheckedIn = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
   }
 }

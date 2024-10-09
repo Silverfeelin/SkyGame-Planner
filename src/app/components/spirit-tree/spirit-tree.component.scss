@@ -13,10 +13,8 @@
   position: relative;
   // max-height: 600px;
   overflow-y: auto;
-
-  &.has-buttons {
-    padding-top: 32px;
-  }
+  text-align: center;
+  padding-top: 32px;
 }
 
 // Add space at bottom for node cost.
@@ -92,7 +90,7 @@
   height: 24px;
   top: -30px;
   left: 50%;
-  transform:translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .arrow-right {
@@ -106,12 +104,22 @@
 
 .tree-actions {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 5px;
-  left: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
   z-index: 1;
   gap: 4px;
+}
+
+.tree-actions-left {
+  top: 5px;
+  left: 5px;
+}
+
+.tree-actions-right {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+  top: 5px;
+  right: 5px;
 }
 
 .tree-action {
@@ -121,6 +129,17 @@
   line-height: 30px;
   padding-left: 36px;
   padding-right: 5px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-tree-unlock-background);
+  box-shadow: 0 0 1px 1px var(--color-border);
+}
+
+.tree-sub-action {
+  position: relative;
+  display: block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
   border-radius: var(--border-radius);
   background-color: var(--color-tree-unlock-background);
   box-shadow: 0 0 1px 1px var(--color-border);
@@ -165,11 +184,9 @@
 }
 
 .unlock-all {
-  position: absolute;
+  position: relative;
   width: 30px;
   height: 30px;
-  top: 5px;
-  right: 5px;
   border: 1px solid var(--color-input-border);
   border-radius: var(--border-radius);
   background-color: var(--color-tree-unlock-background);

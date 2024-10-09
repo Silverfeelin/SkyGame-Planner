@@ -5,6 +5,11 @@
   <div class="sky-card-body">
     <div class="grid grid-2">
       <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Special_Events'}"></app-wiki-link>
+      <app-calendar-link [cal]="{href: 'https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d'}"></app-calendar-link>
+      <a class="container" [routerLink]="'/event/history'">
+        <mat-icon class="menu-icon">history</mat-icon>
+        <span class="menu-label">History</span>
+      </a>
       <a class="container" [routerLink]="'/event-calculator'">
         <mat-icon class="menu-icon">calculate</mat-icon>
         <span class="menu-label">Event Calculator</span>

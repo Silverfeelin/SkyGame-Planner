@@ -1,0 +1,13 @@
+<div class="overlay" (click)="onClickOut($event)">
+  <div class="overlay-body p-rel">
+    @if (title) { <h2 class="h3 overlay-title">{{ title }}</h2> }
+    <div class="overlay-content">
+      <ng-content></ng-content>
+    </div>
+    @if (dismissable) {
+      <div class="overlay-close">
+        <span class="link" (click)="onClose($event)">Dismiss</span>
+      </div>
+    }
+  </div>
+</div>

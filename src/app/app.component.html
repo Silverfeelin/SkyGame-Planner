@@ -25,20 +25,31 @@
       </div>
     </div>
   }
-  <div *ngIf="dataLoss" class="sky-card mb data-loss">
-    <div class="sky-card-body">
-      <div class="data-loss-inner container">
-        <mat-icon class="menu-icon">priority_high</mat-icon>
-        <span class="menu-label">Data was changed in another tab. Please refresh this tab to avoid losing changes!</span>
+
+  @if (showDataLoss) {
+    <div class="sky-card mb data-loss">
+      <div class="sky-card-body">
+        <div class="data-loss-inner container">
+          <mat-icon class="menu-icon">priority_high</mat-icon>
+          <span class="menu-label">Data was changed in another tab. Please refresh this tab to avoid losing changes!</span>
+        </div>
       </div>
     </div>
-  </div>
+  }
   <router-outlet></router-outlet>
 </div>
 
+@if (showKeyboardShortcuts) {
+  <app-overlay (close)="showKeyboardShortcuts=false" [title]="'Keyboard shortcuts'">
+    <app-keyboard-shortcuts></app-keyboard-shortcuts>
+  </app-overlay>
+}
+
 <footer>
   <div class="footer-flex">
-    <a class="text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/">View on GitHub</a>
+    <a class="text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/" title="View on GitHub">
+      <img src="/assets/external/github-mark-white.svg" width="24" alt="View on GitHub">
+    </a>
     <span class="show-desktop">|</span>
     <span>Images from the <a class="ws-nw" href="https://sky-children-of-the-light.fandom.com/">Sky: Children of the Light Wiki</a></span>
     <a class="footer-privacy" [routerLink]="'/privacy'">Privacy Policy</a>

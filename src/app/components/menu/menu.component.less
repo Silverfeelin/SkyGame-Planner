@@ -39,17 +39,24 @@
   top: 5px;
   left: 0;
   width: 34px;
-  height: 34px;
+  height: 68px;
   z-index: 999999;
   background: var(--color-menu-unfold-background);
   padding: var(--padding-content);
   border-radius: 0 var(--border-radius) var(--border-radius) 0;
   border: 1px solid var(--color-menu-unfold-border);
 
-  mat-icon {
+  .menu-toggle-back {
     margin: 4px;
     position: absolute;
     top: 0;
+    left: 0;
+  }
+
+  .menu-toggle-fold {
+    margin: 4px;
+    position: absolute;
+    top: 32px;
     left: 0;
   }
 }
@@ -91,7 +98,7 @@
   background-color: var(--color-menu-item-background);
 }
 
-.menu-fold {
+.item-small {
   padding: 5px 10px;
 }
 
@@ -132,6 +139,6 @@ hr {
 @media screen and (min-width: 992px) {
   .header { display: block; }
   .name { display: inline-block; }
-  .item { padding: 15px 10px; }
-  .menu-fold { padding: 2px 10px; }
+  .item { padding: 12px 10px; }
+  .item-small { padding: 2px 10px; }
 }

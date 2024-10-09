@@ -3,7 +3,6 @@ import { CreditsComponent } from './components/credits/credits.component';
 import { EventInstanceComponent } from './components/event-instance/event-instance.component';
 import { EventComponent } from './components/event/event.component';
 import { EventsComponent } from './components/events/events.component';
-import { ItemsComponent } from './components/items/items.component';
 import { RealmsComponent } from './components/realms/realms.component';
 import { SeasonComponent } from './components/season/season.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
@@ -27,7 +26,6 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
 import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
-import { ItemInflationComponent } from './components/items/item-inflation/item-inflation.component';
 import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
 import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
 import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
@@ -49,6 +47,11 @@ import { CurrencySpentComponent } from './components/currency/currency-spent/cur
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
 import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
+import { NewsComponent } from './components/news/news.component';
+import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
+import { AreasComponent } from './components/areas/areas.component';
+import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-editor/spirit-tree-editor.component';
+import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -73,14 +76,17 @@ export const routes: Routes = [
           { path: '', component: DashboardComponent, title: 'Sky Planner' },
           { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
           { path: 'privacy', component: PrivacyComponent },
+          { path: 'news', component: NewsComponent, title: title(`What's new`) },
           { path: 'credits', component: CreditsComponent, title: title('Credits') },
           { path: 'currency', component: CurrencyComponent, title: title('In-game currency') },
           { path: 'currency/spent', component: CurrencySpentComponent, title: title('Spent currency') },
           { path: 'event', component: EventsComponent, title: title('Events') },
-          { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
+          { path: 'event/history', component: EventHistoryComponent, title: title('Event History') },
           { path: 'event/:guid', component: EventComponent },
+          { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
           { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
+          { path: 'item/collection', component: ItemCollectionComponent, title: title('Item collections') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
           { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
@@ -88,6 +94,7 @@ export const routes: Routes = [
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
           { path: 'realm/:guid', component: RealmComponent },
+          { path: 'area', component: AreasComponent, title: title('Areas') },
           { path: 'area/:guid', component: AreaComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
           { path: 'season/:guid', component: SeasonComponent },
@@ -103,6 +110,7 @@ export const routes: Routes = [
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
           { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
           { path: 'spirit/:guid', component: SpiritComponent },
+          { path: 'spirit-tree/editor', component: SpiritTreeEditorComponent, title: title('Spirit Tree Editor') },
           { path: 'spirit-tree/:guid', component: SpiritTreeViewComponent, title: title('Spirit Tree') },
           { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
           { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },

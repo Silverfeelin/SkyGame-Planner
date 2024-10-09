@@ -53,6 +53,7 @@ export class SeasonCalculatorComponent implements OnInit {
   candlesAvailable = 0;
 
   nodeShowButtons?: INode;
+  toggleConnected = false;
 
   constructor(
     private readonly _currencyService: CurrencyService,
@@ -63,6 +64,8 @@ export class SeasonCalculatorComponent implements OnInit {
     const seasons = _dataService.seasonConfig.items;
     const season = DateHelper.getActive(seasons) || seasons.at(-1)!;
     if (season.endDate < DateTime.now()) { return; }
+
+    this.toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
 
     this.season = season!;
     this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
@@ -115,14 +118,29 @@ export class SeasonCalculatorComponent implements OnInit {
     event.stopPropagation();
     this.nodeShowButtons = undefined;
 
-    if (node.unlocked || node.item?.unlocked) {
-      if (node.unlocked) {
-        this.candleCount += node.sc || 0;
+    const unlock = !node.unlocked && !node.item?.unlocked;
+    if (unlock) {
+      const nodesToUnlock = this.toggleConnected ? NodeHelper.trace(node) : [node];
+
+      // If SP is owned, also unlock the SP item.
+      if (this.hasSeasonPass) {
+        for (const n of [...nodesToUnlock]) {
+          if (n.nw?.item?.group !== 'SeasonPass') { continue; }
+          nodesToUnlock.push(n.nw);
+        }
       }
-      this._nodeService.lock(node);
+
+      // Unlock the nodes.
+      for (const n of nodesToUnlock) {
+        this.candleCount -= n.sc || 0;
+        this._nodeService.unlock(n);
+      }
     } else {
-      this.candleCount -= node.sc || 0;
-      this._nodeService.unlock(node);
+      const nodesToLock = this.toggleConnected ? NodeHelper.all(node) : [node];
+      for (const n of nodesToLock) {
+        this.candleCount += n.sc || 0;
+        this._nodeService.lock(n);
+      }
     }
 
     this.candleCount = this._currencyService.clamp(this.candleCount);
@@ -171,8 +189,8 @@ export class SeasonCalculatorComponent implements OnInit {
     this.updateStoredCurrencies();
   }
 
-  addCurrency(): void {
-    this.candleCount += this.hasSeasonPass ? 6 : 5;
+  addCurrency(n?: number): void {
+    this.candleCount += n ?? (this.hasSeasonPass ? 6 : 5);
     this.candleCount = this._currencyService.clamp(this.candleCount);
     this.candleCountChanged();
     this.calculate();

@@ -21,7 +21,10 @@
       <div class="sky-flex flex-wrap">
         <a class="button" [routerLink]="['/season', season.guid]">
           <mat-icon class="menu-icon">arrow_back</mat-icon>
-          <span class="menu-label">Go to Season</span>
+          <span class="menu-label">Season</span>
+        </a>
+        <a class="button" routerLink="/currency">
+          Currencies
         </a>
       </div>
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">
@@ -36,8 +39,9 @@
         <div>
           Your season candles:
           <mat-icon [svgIcon]="'candle'" class="seasonal v-middle"></mat-icon>
-          <input #inpSc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-sc input-no-arrows" style="width: 64px;"/>
-          <button type="button" class="button-sc" (click)="addCurrency()">+{{hasSeasonPass ? '6' : '5'}} (daily)</button>
+          <input #inpSc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block br-r-0 input-no-arrows" style="width: 64px;"/>
+          <button type="button" class="button-sc br-l-0 br-r-0" (click)="addCurrency(1)">+1</button>
+          <button type="button" class="button-sc br-l-0" (click)="addCurrency()">+{{hasSeasonPass ? '6' : '5'}} (daily)</button>
         </div>
         <div>
           Today's candles:

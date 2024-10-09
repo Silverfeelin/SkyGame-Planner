@@ -14,7 +14,7 @@ export class SettingService {
   }
 
   get wikiNewTab(): boolean {
-    return localStorage.getItem('wiki.newtab') === '1';
+    return localStorage.getItem('wiki.newtab') !== '0';
   }
 
   set wikiNewTab(value: boolean) {

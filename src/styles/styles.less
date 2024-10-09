@@ -156,7 +156,7 @@ button, .button {
   }
 }
 
-input, select {
+input, select, textarea {
   display: block;
   width: 100%;
   color: var(--color);
@@ -174,6 +174,10 @@ input, select {
 input[type="checkbox"] {
   width: auto;
   display: inline-block;
+}
+
+input[type="date"] {
+  color-scheme: dark;
 }
 
 input[type="date"].input-date-click {
@@ -217,6 +221,11 @@ input[type="date"].input-date-click {
     opacity: 1;
     transition: opacity var(--animation-short);
   }
+}
+
+select {
+  vertical-align: top;
+  height: 38px; // Match input height
 }
 
 .border {
@@ -325,6 +334,7 @@ body { scrollbar-width: thin; }
 .h-100 { height: 100% !important; }
 .o-0 { opacity: 0 !important; }
 .o-1 { opacity: 1 !important; }
+.td-u { text-decoration: underline !important; }
 
 .float-left { float: left !important; }
 .float-right { float: right !important; }
@@ -472,34 +482,6 @@ mat-icon.seasonal { fill: var(--color-seasonal); }
   width: min-content;
   min-width: 100%;
   max-width: calc(var(--menu-width) - 2 * var(--padding-content));
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  text-wrap: balance;
-  backdrop-filter: var(--backdrop-blur);
-}
-
-.overlay-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 32px;
-  border: 4px solid var(--color-input-border);
-  border-radius: var(--border-radius);
-  background-color: var(--color-card-solid-background);
 }
 
 /* Animations */

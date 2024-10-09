@@ -19,6 +19,30 @@
 
   <div class="mt">
     <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
-      <app-item-list [itemList]="nestingWorkshop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+      <div class="sky-flex flex-wrap">
+        <div class="shop-rotation d-inline-block">
+          <b class="d-block mb-half">
+            Introduction
+          </b>
+          <app-item-list [itemList]="freeItemList" [highlightNode]="highlightNode"></app-item-list>
+        </div>
+        @for (itemList of itemLists; let i = $index; track i) {
+          <div class="shop-rotation d-inline-block">
+            <b class="d-block mb-half" [class.highlight-attention]="i === iRotation">
+              Rotation {{ i + 1 }}
+            </b>
+            <app-item-list class="d-inline-block" [itemList]="itemList" [highlightNode]="highlightNode"></app-item-list>
+          </div>
+        }
+        <div class="shop-rotation d-inline-block">
+          <b class="d-block mb-half">
+            Corrections
+          </b>
+          <app-item-list [itemList]="correctionItemList" [highlightNode]="highlightNode"></app-item-list>
+        </div>
+      </div>
+      <div class="container mt">
+        <app-cost [cost]="cost" [remaining]="remainingCost"></app-cost>
+      </div>
     </app-card>
   </div>

@@ -24,13 +24,18 @@
       </div>
       <div class="clock-text">
         <span class="clock-title">Sky time</span>
-        @if (shardHasLanded) {
+        @if (shardHasLanded || shardWillLand) {
           &nbsp;(
-            <img
-              [src]="shardType === 'red' ? '/assets/external/wiki-shard-red.webp' : '/assets/external/wiki-shard-black.webp'"
-              class="clock-shard clock-shard-red point"  (click)="gotoShard()"
-              [ngbTooltip]="'Visit Sky Shards'" placement="bottom" container="body"
-            />
+            <div class="d-inline-block p-rel v-top">
+              <img
+                [src]="shardType === 'red' ? '/assets/external/wiki-shard-red.webp' : '/assets/external/wiki-shard-black.webp'"
+                class="clock-shard clock-shard-red point" [class.clock-shard-active]="shardHasLanded" (click)="gotoShard()"
+                [ngbTooltip]="'Visit Sky Shards'" placement="bottom" container="body"
+              />
+              @if (!shardHasLanded && shardWillLand) {
+                <mat-icon class="clock-shard-future">update</mat-icon>
+              }
+            </div>
           )
         }
         <br/>

@@ -7,22 +7,26 @@ import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { BroadcastService } from './services/broadcast.service';
 import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { CanonicalService } from './services/canonical.service';
+import { OverlayComponent } from "./components/layout/overlay/overlay.component";
+import { KeyboardShortcutsComponent } from "./components/settings/keyboard-shortcuts/keyboard-shortcuts.component";
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.less'],
     standalone: true,
-    imports: [MatIcon, NgIf, RouterOutlet, RouterLink]
+    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, KeyboardShortcutsComponent]
 })
 export class AppComponent {
-  dataLoss = false;
+  showDataLoss = false;
+  showKeyboardShortcuts = false;
   isPagesDev = location.host === 'sky-planner.pages.dev'; // only target main deployment.
   pagesRedirectUrl?: URL;
 
   constructor(
     private readonly _broadcastService: BroadcastService,
+    private readonly _canonicalService: CanonicalService,
     private readonly _eventService: EventService,
     private readonly _domSanitizer: DomSanitizer,
     private readonly _matIconRegistry: MatIconRegistry,
@@ -32,12 +36,14 @@ export class AppComponent {
     _matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
+    _eventService.keydown.subscribe(evt => { this.onKeydown(evt); });
+
     _eventService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
       this.initDisplayDate();
     });
 
     _broadcastService.subject.pipe(filter(m => m.type === 'storage.changed')).subscribe(message => {
-      this.dataLoss = true;
+      this.showDataLoss = true;
     });
 
     if (this.isPagesDev) {
@@ -51,6 +57,18 @@ export class AppComponent {
     DateHelper.displayFormat = localStorage.getItem('date.format') || '';
     if (!DateHelper.displayFormat || !DateHelper.displayFormats.includes(DateHelper.displayFormat)) {
       DateHelper.displayFormat = DateHelper.displayFormats[0];
+    }
+  }
+
+  private onKeydown(evt: KeyboardEvent): void {
+    if (evt.ctrlKey && evt.shiftKey && evt.key.toUpperCase() === 'F') {
+      if ((this._router.url.split('?')[0] || '/') === '/') { return; }
+      void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });
+      return;
+    }
+
+    if (evt.key === '?' && false) {
+      this.showKeyboardShortcuts = !this.showKeyboardShortcuts;
     }
   }
 

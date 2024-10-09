@@ -38,6 +38,8 @@ import { IapCardComponent } from "../iap/iap-card/iap-card.component";
 })
 export class SeasonComponent implements OnDestroy {
   season!: ISeason;
+  previousSeason?: ISeason;
+  nextSeason?: ISeason;
   state: 'future' | 'active' | 'ended' | undefined;
   highlightIap?: string;
   highlightTree?: string;
@@ -103,6 +105,12 @@ export class SeasonComponent implements OnDestroy {
     this.season = this._dataService.guidMap.get(guid!) as ISeason;
     this.state = DateHelper.getStateFromPeriod(this.season.date, this.season.endDate);
     this._titleService.setTitle(this.season.name);
+
+    this.previousSeason = this.nextSeason = undefined;
+    this._dataService.seasonConfig.items.forEach(s => {
+      if (s.number == this.season.number - 1) { this.previousSeason = s; }
+      else if (s.number == this.season.number + 1) { this.nextSeason = s; }
+    });
 
     this.guide = undefined;
     this.spirits = [];

@@ -47,15 +47,16 @@ export class DropboxService {
       throw new Error('No Dropbox access token found.');
     }
 
+    const expiresAt = localStorage.getItem('dbx-expiresAt') || '0';
     this._token = {
-      accessToken, refreshToken, expiresAt: 0
+      accessToken, refreshToken, expiresAt: +expiresAt || 0
     };
   }
 
   async tryRefreshToken(): Promise<void> {
     if (!this._token) { return; }
     // If the token is expired or will expire in 10 seconds, refresh it.
-    if (!this._token.expiresAt || this._token.expiresAt < Date.now() - 10000) {
+    if (!this._token.expiresAt || this._token.expiresAt < Date.now() + 30000) {
       await this.refreshAccessToken();
     }
   }
@@ -66,6 +67,7 @@ export class DropboxService {
     const token = await this._client.refreshToken(this._token!);
     this._token = token;
     localStorage.setItem('dbx-accessToken', token.accessToken);
+    localStorage.setItem('dbx-expiresAt', `${token.expiresAt || '0'}`);
   }
 
   async setAccessCode(code: string): Promise<void> {
@@ -81,20 +83,28 @@ export class DropboxService {
     });
 
     localStorage.setItem('dbx-accessToken', token.accessToken);
+    localStorage.setItem('dbx-expiresAt', `${token.expiresAt || '0'}`);
     localStorage.setItem('dbx-refreshToken', token.refreshToken || '');
   }
 
   async downloadFile(path: string): Promise<any> {
     if (!this._token) { throw new Error('No Dropbox access token found.'); }
+
+    console.log( 'Refreshing');
     await this.tryRefreshToken();
+
+    console.log('Refreshed');
 
     const response = await fetch('https://content.dropboxapi.com/2/files/download', {
       method: 'POST',
       headers: {
+        ['Content-Type']: 'application/octet-stream',
         Authorization: `Bearer ${this._token.accessToken}`,
         'Dropbox-API-Arg': JSON.stringify({ path })
       }
     });
+
+    console.log('Fetched');
 
     if (!response.ok) {
       const err = await response.json();
@@ -133,5 +143,6 @@ export class DropboxService {
     localStorage.removeItem('dbx-codeVerifier');
     localStorage.removeItem('dbx-accessToken');
     localStorage.removeItem('dbx-refreshToken');
+    localStorage.removeItem('dbx-expiresAt');
   }
 }

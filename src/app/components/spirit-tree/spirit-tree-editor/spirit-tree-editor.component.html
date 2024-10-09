@@ -1,0 +1,139 @@
+<div class="editor-grid">
+  <app-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
+    [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)"
+    [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
+    [highlightItem]="selectedItem.guid"
+  ></app-spirit-tree>
+  <div class="editor-grid-selection sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Selected item</h1>
+    </div>
+    <div class="sky-card-body">
+      @let tn = selectedTreeNode;
+      <div class="grid grid-1">
+        <!-- Item name -->
+        <div class="container">
+          {{ selectedItem.name }}
+          @if (selectedItem.level) { <span class="c-accent">(Level {{ selectedItem.level }})</span> }
+        </div>
+        <div class="container grid grid-1">
+          <!-- Node connections -->
+          <div class="">
+            Connections:
+            <div class="button-group">
+              <button type="button" [class.td-u]="tn.node.nw" [disabled]="tn.x !== 1" (click)="addNode('nw')">
+                Left
+              </button>
+              <button type="button" [class.td-u]="tn.node.n" [disabled]="" (click)="addNode('n')">
+                Top
+              </button>
+              <button type="button" [class.td-u]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
+                Right
+              </button>
+            </div>
+          </div>
+          <!-- Node cost -->
+          <div class="">
+            Cost:
+            <div class="d-inline-block">
+              <button type="button" class="br-r-0" (click)="calculateCost()">
+                <mat-icon class="menu-icon">calculate</mat-icon>
+                <span class="menu-no-label"></span>
+              </button>
+              <input #inpCost type="number" min="0" max="999" step="1" (blur)="onCostInputBlur($event)" value="0" class="d-inline-block br-l-0 br-r-0" style="width: 80px;"/>
+              <select #selCostType class="d-inline-block br-l-0 br-r-0" style="width: 176px;">
+                @for (type of costTypes; track $index) {
+                  <option [value]="type.id">{{ type.label }}</option>
+                }
+              </select>
+              <button type="button" class="br-l-0" (click)="applyCost()">Apply</button>
+            </div>
+          </div>
+          <!-- Swap -->
+          <div class="">
+            <button type="button" [class.highlight]="isSwapping" (click)="isSwapping=!isSwapping">Swap nodes</button>
+            @if (isSwapping) {
+              &nbsp;<span>Now select a node to swap the items.</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt">
+  <app-card [title]="'Save'">
+    <div class="container grid grid-1">
+      <div>
+        Title: <input #inpTitle type="text" class="d-inline-block" style="width: 200px;">
+      </div>
+      <div>
+        Subtitle: <input #inpSubtitle type="text" class="d-inline-block" style="width: 200px;">
+      </div>
+    </div>
+    <div class="sky-flex flex-wrap mt">
+      <div class="button-group" ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+        <button type="button" (click)="copyImage()">
+          <mat-icon class="menu-icon">file_copy</mat-icon>
+          <span class="menu-label">Copy image</span>
+        </button>
+        <button type="button" (click)="copyImage(false)">
+          (no background)
+        </button>
+      </div>
+      <button type="button" (click)="shareImage()">
+        <mat-icon class="menu-icon">share</mat-icon>
+        <span class="menu-label">Share image</span>
+      </button>
+      <button type="button" (click)="exportJson()">
+        <mat-icon class="menu-icon">upload</mat-icon>
+        <span class="menu-label">Export data</span>
+      </button>
+    </div>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [title]="'Spirit trees'">
+    <select #selSpirit (input)="onSpiritInput($event)">
+      @for (spirit of spirits; track $index) {
+        <option [value]="spirit.guid">{{ spirit.name }}</option>
+      }
+      </select>
+
+      @if (spiritTrees.length) {
+        <div class="sky-flex scroll-x mt">
+          @for (spiritTree of spiritTrees; track spiritTree.guid) {
+            <div class="grid grid-1 gap-half">
+              <button (click)="promptCopySpiritTree(spiritTree)">Copy tree</button>
+              <app-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
+                [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
+                [opaqueNodes]="true" [showNodeTooltips]="true">
+              </app-spirit-tree>
+              <button (click)="promptCopySpiritTree(spiritTree)">Copy tree</button>
+            </div>
+          }
+        </div>
+      }
+  </app-card>
+</div>
+
+
+<div class="mt">
+  <app-items [foldable]="true" [action]="'emit'" [opaqueItems]="true" [backlightItems]="items" (onItemClicked)="onItemClicked($event)"></app-items>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="false" [title]="'Special items'">
+    <div class="sky-flex flex-wrap">
+      @for (specialItem of specialItems; track $index) {
+        <div class="item-icon">
+          <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true" [hoverGlow]="true"
+            [ngbTooltip]="specialItem.item.name" container="body" placement="top">
+          </app-item-icon>
+        </div>
+      }
+    </div>
+  </app-card>
+</div>

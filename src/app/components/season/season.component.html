@@ -8,6 +8,19 @@
       <app-wiki-link [wiki]="season._wiki" [aClass]="'container' + (!season._calendar ? ' colspan-2' : '')"></app-wiki-link>
       <!-- Calendar -->
       <app-calendar-link [cal]="season._calendar" [aClass]="'container'"></app-calendar-link>
+      <!-- Prev next -->
+      <a class="container" *ngIf="previousSeason" [routerLink]="['/season', previousSeason.guid]" [class.colspan-2]="!nextSeason">
+        <mat-icon class="menu-icon">arrow_back</mat-icon>
+        <span class="menu-label">
+          Previous season
+        </span>
+      </a>
+      <a class="container" *ngIf="nextSeason" [routerLink]="['/season', nextSeason.guid]"  [class.colspan-2]="!previousSeason">
+        <mat-icon class="menu-icon">arrow_forward</mat-icon>
+        <span class="menu-label">
+          Next season
+        </span>
+      </a>
       <!-- Date -->
       <div class="container" [class.expired]="state === 'ended'">
         <mat-icon class="menu-icon">calendar_month</mat-icon>

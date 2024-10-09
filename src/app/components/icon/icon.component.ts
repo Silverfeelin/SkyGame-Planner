@@ -3,7 +3,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { SubscriptionLike } from 'rxjs';
 import { ImageService } from 'src/app/services/image.service';
 import { MatIcon } from '@angular/material/icon';
-import { NgIf } from '@angular/common';
+import { IconService } from '@app/services/icon.service';
 
 @Component({
     selector: 'app-icon',
@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
     styleUrls: ['./icon.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, MatIcon]
+    imports: [ MatIcon]
 })
 export class IconComponent implements OnChanges {
   @Input() src?: string;
@@ -27,49 +27,62 @@ export class IconComponent implements OnChanges {
   @Input() draggable?: boolean;
 
   safeString?: string;
-  safeUrl?: SafeUrl;
   isSvg = false;
   isStoryBlok = false;
+
+  backgroundImage?: string;
+  backgroundPosition?: string;
+  backgroundSize?: string;
 
   _loadSource?: SubscriptionLike
 
   constructor(
     private readonly _imageService: ImageService,
+    private readonly _iconService: IconService,
     private readonly _domSanitizer: DomSanitizer
   ) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['src']) {
-      this.updateImage(changes['src'].currentValue);
+    if (changes['src'] || changes['width'] || changes['height']) {
+      this.updateImage();
     }
   }
 
-  updateImage(src?: string): void {
+  updateImage(): void {
+    let src = this.src;
     // Ignore stale data
     if (this._loadSource) {
       this._loadSource.unsubscribe();
       this._loadSource = undefined;
     }
 
+    this.safeString = undefined;
+    this.backgroundImage = undefined;
+    this.backgroundPosition = undefined;
+    this.backgroundSize = undefined;
 
     src ||= '';
     this.isSvg = src.startsWith('#');
-    this.safeString = this.safeUrl = undefined;
     this.isStoryBlok = src.includes('storyblok.com');
 
     if (this.isSvg) {
       this.safeString = src.startsWith('#') ? src.substring(1) : src;
     } else {
-      const shouldBlob = false; // src.startsWith('https://static.wikia.nocookie.net/');
-      this.safeString = shouldBlob ? undefined : src;
-      shouldBlob && this.loadObjectUrl(src);
-    }
-  }
+      const mappedIcon = this._iconService.getIcon(src);
+      if (mappedIcon) {
+        this.backgroundImage = `url(${mappedIcon.url})`;
+        const baseSize = 128;
+        const width = parseInt(this.width || '64', 10);
+        const height = parseInt(this.height || '64', 10);
 
-  loadObjectUrl(src: string): void {
-    this._loadSource = this._imageService.get(src).subscribe({
-      next: url => this.safeUrl = this._domSanitizer.bypassSecurityTrustUrl(url),
-      error: e => console.error('Failed loading URL', src, e)
-    });
+        const scaleX = width / baseSize;
+        const scaleY = height / baseSize;
+
+        this.backgroundPosition = `-${mappedIcon.x * scaleX}px -${mappedIcon.y * scaleY}px`;
+        this.backgroundSize = `${2048 * scaleX}px ${2048 * scaleY}px`;
+      } else {
+        this.safeString = src;
+      }
+    }
   }
 }

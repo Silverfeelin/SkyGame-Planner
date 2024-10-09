@@ -82,7 +82,7 @@
   --color-seasonal: #fdab2b;
 
   --background-filter: blur(0px) brightness(0.8);
-  --backdrop-blur: blur(8px);
+  --backdrop-blur: blur(10px);
 
   --shadow: 0px 0px 5px 2px;
   --shadow-attention: 0px 0px 5px 2px var(--color-attention);
@@ -92,12 +92,12 @@
 
   --img-preview-height: 160px;
 
+  // These values are also defined in some places such as item-icons.component.ts!
   --item-size: 64px;
   --item-size-large: 96px;
   --item-size-medium: 48px;
   --item-size-small: 32px;
 
-  --icon-size-group: 24px;
   --icon-size-cost: 18px;
 
   --animation-short: 150ms;
