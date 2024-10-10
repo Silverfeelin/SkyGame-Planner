@@ -133,6 +133,7 @@
     {
       "guid": "Cmo9TPPpyH",
       "name": "Prairie Social Space",
+      "wingedLights": [ "fl1Z3bEx81" ],
       "mapShrines": [ "UZU8IWRFTQ" ],
       "mapData": { "position": [-410.38,238] },
       "connections": [
@@ -143,7 +144,7 @@
       "guid": "z3uQqa5KVZ",
       "name": "Butterfly Fields",
       "spirits": [ "ulvP8R6C6a", "5u3TXZON81" ],
-      "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2", "fl1Z3bEx81" ],
+      "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2" ],
       "mapShrines": [ "4GI2OaP7Uw" ],
       "mapData": { "position": [-403.88,194] },
       "connections": [

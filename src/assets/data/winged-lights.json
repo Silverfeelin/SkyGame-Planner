@@ -62,6 +62,12 @@
     // #region Prairie
     // Butterfly Fields
     {
+      "guid": "fl1Z3bEx81",
+      "description": "At the gate in the Prairie Social Space.",
+      "mapData": { "position": [-405.75,237.69], "videoUrl": "Prairie/3.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Butterfly_Fields" }
+    },
+    {
       "guid": "YmuL-2fCV7",
       "description": "Inside a small cave on the left side of the Butterfly Fields.",
       "mapData": { "position": [-405.5,192.5], "videoUrl": "Prairie/1.mp4" },
@@ -73,12 +79,7 @@
       "mapData": { "position": [-395.75,190.38], "videoUrl": "Prairie/2.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Butterfly_Fields" }
     },
-    {
-      "guid": "fl1Z3bEx81",
-      "description": "Near the gate at the back end of the Butterfly Fields.",
-      "mapData": { "position": [-402.13,196.25], "videoUrl": "Prairie/3.mp4" },
-      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Butterfly_Fields" }
-    },
+
     // Prairie Caves
     {
       "guid": "tGV1WQd1yk",
