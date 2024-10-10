@@ -5,7 +5,7 @@
     {
       "name": "data",
       "urls": [
-        "/assets/data/**"
+        "/assets/**"
       ],
       "cacheConfig": {
         "strategy": "freshness",
