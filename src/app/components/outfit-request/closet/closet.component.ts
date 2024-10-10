@@ -900,8 +900,8 @@ export class ClosetComponent implements OnDestroy {
 
     const placeholders = [
       'EEQZwFIJRs', '_k3jPMWKOY', 'Em7ZxGZAN5',
-      'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi', 'f-X2dDeB9w',
-      'E_yfCZYU5C', 'ec8jU3Gerw', 'biKOov4qJQ'
+      'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi', 'E_yfCZYU5C',
+      'f-X2dDeB9w', 'ec8jU3Gerw', 'biKOov4qJQ'
     ];
     const placeholderItems = placeholders.map(guid => this.itemMap[guid]);
     // Store item images for drawing.
