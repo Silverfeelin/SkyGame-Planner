@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { ItemHelper } from 'src/app/helpers/item-helper';
+import { ItemHelper, itemTypeOrder } from 'src/app/helpers/item-helper';
 import { IItem, IItemSource, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { ItemIconComponent } from './item-icon/item-icon.component';
@@ -79,7 +79,7 @@ export class ItemsComponent {
 
   types: Array<string> = [
     ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
-    ItemType.Necklace, ItemType.Hair, ItemType.Hat, ItemType.Cape,
+    ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
     ItemType.Stance, ItemType.Call, ItemType.Music
   ];

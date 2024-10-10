@@ -20,7 +20,7 @@ export class EditorOrderComponent {
   types: Array<string> = [
     'Outfit', 'Shoes',
     'Mask', 'FaceAccessory', 'Necklace',
-    'Hat', 'Hair',
+    'Hair', 'HairAccessory', 'HeadAccessory',
     'Cape',
     'Held', 'Furniture', 'Prop',
     'Emote', 'Stance', 'Call',

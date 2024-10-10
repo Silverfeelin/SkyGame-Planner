@@ -10,12 +10,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Hair"
     },
-    "order": 400
+    "order": 251
   },
   {
     "id": 1910,
     "guid": "daH57TClK7",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Kizuna AI Bow",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Kizuna-AI-Hair-Accessory-Icon.png",
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Kizuna_AI#Bow"
     },
-    "order": 432
+    "order": 299
   },
   {
     "id": 1911,

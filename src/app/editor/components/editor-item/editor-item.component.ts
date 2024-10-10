@@ -18,9 +18,10 @@ export class EditorItemComponent {
   icon: string = '';
 
   typeOptions = [
-    '',
-    'Hat',
+    '',,
     'Hair',
+    'HairAccessory',
+    'HeadAccessory',
     'Mask',
     'FaceAccessory',
     'Necklace',

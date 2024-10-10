@@ -10,12 +10,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 96
+    "order": 423
   },
   {
     "id": 492,
     "guid": "rfwNbdvXQz",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "group": "Ultimate",
     "name": "Abyss Ultimate Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/SOAbyss-Ultime-gift-hair-tassle.png",
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 233
+    "order": 304
   },
   {
     "id": 493,
@@ -49,7 +49,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 173
+    "order": 369
   },
   {
     "id": 495,
@@ -131,7 +131,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
     },
-    "order": 174
+    "order": 370
   },
   {
     "id": 1371,
@@ -174,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask"
     },
-    "order": 175,
+    "order": 371,
     "group": "SeasonPass"
   },
   {
@@ -187,7 +187,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Hair"
     },
-    "order": 343
+    "order": 194
   },
   {
     "id": 1376,
@@ -323,7 +323,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair"
     },
-    "order": 342,
+    "order": 193,
     "group": "SeasonPass"
   },
   {
@@ -336,7 +336,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
     },
-    "order": 171
+    "order": 367
   },
   {
     "id": 1389,
@@ -452,7 +452,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask"
     },
-    "order": 170,
+    "order": 366,
     "group": "SeasonPass"
   },
   {
@@ -518,14 +518,14 @@
   {
     "id": 1405,
     "guid": "rBTLwfPTsK",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Bumbling Boatswain Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SOAbyss-Bumbling-Boatswain-hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d4/SOAbyss-Bumbling-Boatswain-Cape-hat-screenshot.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory"
     },
-    "order": 409
+    "order": 260
   },
   {
     "id": 1406,
@@ -594,7 +594,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Mask"
     },
-    "order": 172
+    "order": 368
   },
   {
     "id": 1413,
@@ -664,7 +664,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair"
     },
-    "order": 341,
+    "order": 192,
     "group": "SeasonPass"
   },
   {

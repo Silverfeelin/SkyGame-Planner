@@ -60,7 +60,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar"
     },
-    "order": 454
+    "order": 460
   },
   {
     "id": 1941,
@@ -73,7 +73,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan"
     },
-    "order": 472
+    "order": 465
   },
   {
     "id": 1942,
@@ -86,7 +86,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar"
     },
-    "order": 458
+    "order": 471
   },
   {
     "id": 1943,
@@ -122,7 +122,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack"
     },
-    "order": 401
+    "order": 252
   },
   {
     "id": 1946,
@@ -135,7 +135,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute"
     },
-    "order": 467
+    "order": 477
   },
   {
     "id": 1959,
@@ -153,16 +153,16 @@
     "name": "Sparrow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Sparrow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
-    "order": 213
+    "order": 409
   },
   {
     "id": 1961,
     "guid": "jM8xKFwbTE",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Moth Antennae",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moth-headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
-    "order": 449
+    "order": 300
   },
   {
     "id": 1962,
@@ -183,7 +183,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 214
+    "order": 410
   },
   {
     "id": 1948,
@@ -207,6 +207,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 402
+    "order": 253
   }
 ]

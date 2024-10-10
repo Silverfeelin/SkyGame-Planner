@@ -6,7 +6,7 @@
     "name": "Tournament Curls",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Tournament-Curls-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Tournament-Curls-front.png",
-    "order": 390
+    "order": 241
   },
   {
     "id": 2283,
@@ -15,7 +15,7 @@
     "name": "Tournament Torch",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Tournament-Torch-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Tournament-Torch.png",
-    "order": 493
+    "order": 492
   },
   {
     "id": 2284,
@@ -27,11 +27,11 @@
   {
     "id": 2285,
     "guid": "HdoyB06O4V",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Tournament Golden Garland",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Tournament-Golden-Garland-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Tournament-Golden-Garland.png",
-    "order": 441
+    "order": 284
   },
   {
     "id": 2286,

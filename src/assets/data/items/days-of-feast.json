@@ -9,19 +9,19 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Hat"
     },
-    "order": 397
+    "order": 248
   },
   {
     "id": 1877,
     "guid": "rQQmknOn9a",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Days of Feast Horns",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Icon_hair_feast_antlers.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Antlers_headpiece_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Horns"
     },
-    "order": 253
+    "order": 317
   },
   {
     "id": 1878,
@@ -69,7 +69,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Necktie"
     },
-    "order": 120
+    "order": 447
   },
   {
     "id": 1882,
@@ -128,7 +128,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Hat"
     },
-    "order": 398
+    "order": 249
   },
   {
     "id": 1889,
@@ -140,7 +140,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Scarf"
     },
-    "order": 121
+    "order": 448
   },
   {
     "id": 1890,
@@ -180,14 +180,14 @@
   {
     "id": 1894,
     "guid": "VZyiD3Wmtp",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Snowflake Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Days_of_Feast_Snowflake_icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Snowflake_Pin.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Hair_Accessory"
     },
-    "order": 428
+    "order": 289
   },
   {
     "id": 1895,
@@ -218,7 +218,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Goggles"
     },
-    "order": 228
+    "order": 89
   },
   {
     "id": 1898,
@@ -260,10 +260,10 @@
     "id": 1976,
     "guid": "1ALFFNohD1",
     "name": "Winter Pinecone Hair Clip",
-    "type": "Hat",
+    "type": "HairAccessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Winter-Pinecone-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Winter-Pinecone-Headpiece.png",
-    "order": 445
+    "order": 290
   },
   {
     "id": 1977,
@@ -304,7 +304,7 @@
     "type": "Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Cozy-Hermit-Boots-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Cozy-Hermit-Boots.png",
-    "order": 83
+    "order": 104
   },
   {
     "id": 1980,

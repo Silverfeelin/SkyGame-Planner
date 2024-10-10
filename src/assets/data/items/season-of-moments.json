@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Camera_Prop"
     },
-    "order": 489
+    "order": 487
   },
   {
     "id": 623,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 102
+    "order": 429
   },
   {
     "id": 636,
@@ -119,7 +119,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 238
+    "order": 80
   },
   {
     "id": 637,
@@ -132,12 +132,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 488
+    "order": 486
   },
   {
     "id": 638,
     "guid": "nBg1iBLlGM",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Moments Ultimate Hat",
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Moments-Guide-Ultimate-Hair-accessory-icon-Credit-Morybel.png",
@@ -145,7 +145,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 414
+    "order": 265
   },
   {
     "id": 1650,
@@ -189,7 +189,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Face_Accessory"
     },
-    "order": 237,
+    "order": 81,
     "group": "SeasonPass"
   },
   {
@@ -202,7 +202,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
-    "order": 195
+    "order": 391
   },
   {
     "id": 1655,
@@ -235,14 +235,14 @@
   {
     "id": 1658,
     "guid": "ldRJqNu7QX",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Reassuring Ranger Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Reassuring-Ranger-Hair-accessory-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Reassuring-Ranger-Hair-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory"
     },
-    "order": 412
+    "order": 263
   },
   {
     "id": 1659,
@@ -294,7 +294,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Face_Accessory"
     },
-    "order": 239
+    "order": 82
   },
   {
     "id": 1664,
@@ -306,7 +306,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Hair"
     },
-    "order": 367,
+    "order": 218,
     "group": "SeasonPass"
   },
   {
@@ -418,7 +418,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
-    "order": 196,
+    "order": 392,
     "group": "SeasonPass"
   },
   {
@@ -431,7 +431,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Hair"
     },
-    "order": 366
+    "order": 217
   },
   {
     "id": 1677,
@@ -513,7 +513,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair"
     },
-    "order": 365
+    "order": 216
   },
   {
     "id": 1685,
@@ -533,14 +533,14 @@
   {
     "id": 1687,
     "guid": "uh-hCG0TaB",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Nightbird Whisperer Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Nightbird-Whisperer-Head-accessory-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Nightbird-Whisperer-Head-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory"
     },
-    "order": 413,
+    "order": 264,
     "group": "SeasonPass"
   },
   {
@@ -580,7 +580,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Shoes"
     },
-    "order": 72,
+    "order": 93,
     "group": "SeasonPass"
   },
   {

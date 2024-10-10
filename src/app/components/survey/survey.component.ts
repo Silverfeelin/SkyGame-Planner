@@ -15,17 +15,11 @@ export class SurveyComponent {
 
   constructor() {
     const date = +(localStorage.getItem('survey.hide') || '') || 0;
-    const now = DateTime.now().toSeconds();
-    this.visible = !date || now > date;
-  }
-
-  remind(): void {
-    this.visible = false;
-    localStorage.setItem('survey.hide', DateTime.now().plus({days: 1}).toSeconds().toFixed(0));
+    this.visible = !!date;
   }
 
   close(): void {
+    localStorage.removeItem('survey.hide');
     this.visible = false;
-    localStorage.setItem('survey.hide', DateTime.now().plus({months: 1}).toSeconds().toFixed(0));
   }
 }

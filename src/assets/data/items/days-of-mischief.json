@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Hungry_Pumpkin_Hat"
     },
-    "order": 392
+    "order": 243
   },
   {
     "id": 1853,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hat"
     },
-    "order": 393
+    "order": 244
   },
   {
     "id": 1854,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hair"
     },
-    "order": 395
+    "order": 246
   },
   {
     "id": 1861,
@@ -126,7 +126,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spider_Quiff"
     },
-    "order": 396
+    "order": 247
   },
   {
     "id": 1863,
@@ -150,19 +150,19 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
     },
-    "order": 79
+    "order": 100
   },
   {
     "id": 1865,
     "guid": "evuvua13dC",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Mischief Withered Antlers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_2021_mischief_headpiece.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Hair_2021_mischief_headpiece_iap.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Antlers"
     },
-    "order": 252
+    "order": 316
   },
   {
     "id": 1866,
@@ -174,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Tufted_Hair"
     },
-    "order": 394
+    "order": 245
   },
   {
     "id": 1867,
@@ -186,7 +186,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Mask"
     },
-    "order": 211
+    "order": 407
   },
   {
     "id": 1868,
@@ -237,7 +237,7 @@
     "name": "Mischief Crabula Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Crabula-Mask-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Mischief-Crabula-Mask.png",
-    "order": 212
+    "order": 408
   },
   {
     "id": 1873,
@@ -255,16 +255,16 @@
     "name": "Mischief Goth Boots Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Mischief-Goth-Boots-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Mischief-Goth-Boots.png",
-    "order": 80
+    "order": 101
   },
   {
     "id": 1875,
     "guid": "I6OEa38GXJ",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Mischief Crabkin Accessory Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
-    "order": 444
+    "order": 288
   },
   {
     "id": 1950,

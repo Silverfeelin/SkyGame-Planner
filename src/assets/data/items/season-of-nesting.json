@@ -77,7 +77,7 @@
     "name": "Nesting Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Season-of-Nesting-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Season-of-Nesting-Pendant.png",
-    "order": 105
+    "order": 432
   },
   {
     "id": 2091,
@@ -109,11 +109,11 @@
   {
     "id": 2093,
     "guid": "7i6ro485Ra",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Nesting Nook Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Nesting-Nook-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Nesting-Nook-Headpiece.png",
-    "order": 419,
+    "order": 270,
     "group": "SeasonPass"
   },
   {
@@ -294,7 +294,7 @@
     "name": "Nesting Atrium Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Nesting-Atrium-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Nesting-Atrium-Hair-front.png",
-    "order": 376
+    "order": 227
   },
   {
     "id": 2113,

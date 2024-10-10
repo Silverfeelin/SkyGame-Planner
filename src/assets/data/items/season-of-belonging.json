@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide#Ultimate_Gifts"
     },
-    "order": 87
+    "order": 414
   },
   {
     "id": 373,
@@ -109,7 +109,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Hair"
     },
-    "order": 300,
+    "order": 151,
     "group": "SeasonPass"
   },
   {
@@ -213,7 +213,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Mask"
     },
-    "order": 139
+    "order": 335
   },
   {
     "id": 790,
@@ -298,7 +298,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Mask"
     },
-    "order": 142,
+    "order": 338,
     "group": "SeasonPass"
   },
   {
@@ -334,7 +334,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Hair"
     },
-    "order": 301
+    "order": 152
   },
   {
     "id": 802,
@@ -438,7 +438,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Mask"
     },
-    "order": 140
+    "order": 336
   },
   {
     "id": 814,
@@ -544,7 +544,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Instrument"
     },
-    "order": 453,
+    "order": 459,
     "group": "SeasonPass"
   },
   {
@@ -580,7 +580,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Mask"
     },
-    "order": 141
+    "order": 337
   },
   {
     "id": 828,
@@ -683,14 +683,14 @@
   {
     "id": 839,
     "guid": "bBQbGQh1PU",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Hairtousle Teen Earmuffs",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Mimi-4117_04_hairtousle_teen_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Belonging_Headgear_Forest_Ear_Muffs.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Face_Accessory"
     },
-    "order": 229,
+    "order": 301,
     "group": "SeasonPass"
   },
   {
@@ -704,7 +704,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Instrument"
     },
-    "order": 455
+    "order": 461
   },
   {
     "id": 841,

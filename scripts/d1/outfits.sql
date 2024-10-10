@@ -1,4 +1,4 @@
-SYNTAX ERROR -- Prevent "oops!"
+--SYNTAX ERROR -- Prevent "oops!"
 
 DROP TABLE IF EXISTS outfits;
 CREATE TABLE IF NOT EXISTS outfits (

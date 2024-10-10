@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Necklace"
     },
-    "order": 115
+    "order": 442
   },
   {
     "id": 1780,
@@ -57,19 +57,19 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Accessory"
     },
-    "order": 116
+    "order": 443
   },
   {
     "id": 1783,
     "guid": "OvPPfhXnwW",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Nature Coral Crown",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Nature-2022-Coral-Hair-accessory-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Days-of-Nature-2022-Coral-Hair-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Coral_Crown_Accessory"
     },
-    "order": 425
+    "order": 275
   },
   {
     "id": 1784,
@@ -107,7 +107,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Glasses"
     },
-    "order": 242
+    "order": 84
   },
   {
     "id": 1788,
@@ -137,7 +137,7 @@
     "name": "Nature Wave-Touched Hair",
     "icon": "/assets/game/items/2167.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Nature-Wave-Touched-Hair-front.png",
-    "order": 386
+    "order": 237
   },
   {
     "id": 2168,
@@ -146,7 +146,7 @@
     "name": "Ocean Mask",
     "icon": "/assets/game/items/2168.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Ocean-Mask.png",
-    "order": 208
+    "order": 404
   },
   {
     "id": 2169,
@@ -155,7 +155,7 @@
     "name": "Ocean Blue Scarf",
     "icon": "/assets/game/items/2169.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Ocean-Blue-Scarf.png",
-    "order": 117
+    "order": 444
   },
   {
     "id": 2170,

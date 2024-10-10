@@ -59,8 +59,10 @@ export interface IItem extends IGuid {
 }
 
 export enum ItemType {
-  /** All cosmetics in the hat category. */
-  Hat = 'Hat',
+  /** All cosmetics in the hair accessory category. */
+  HairAccessory = 'HairAccessory',
+  /** All cosmetics in the head accessory category. */
+  HeadAccessory = 'HeadAccessory',
   /** All cosmetics in the hair category. */
   Hair = 'Hair',
   /** All cosmetics in the mask category. */

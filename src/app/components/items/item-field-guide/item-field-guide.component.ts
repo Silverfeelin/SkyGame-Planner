@@ -23,7 +23,7 @@ export class ItemFieldGuideComponent {
   types: Array<ItemType> = [
     ItemType.Outfit, ItemType.Shoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
-    ItemType.Hair, ItemType.Hat,
+    ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape, ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
 

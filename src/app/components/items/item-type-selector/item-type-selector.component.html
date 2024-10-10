@@ -35,11 +35,17 @@
     (click)="changeType('Hair')">
     <mat-icon svgIcon="hair"></mat-icon>
   </div>
-  <!-- Hats -->
-  <div class="item-icon category" *ngIf="_showTypes['Hat']" [class.highlight]="type === 'Hat'"
-  [ngbTooltip]="'Hats'" container="body"
-    (click)="changeType('Hat')">
-    <mat-icon svgIcon="hat"></mat-icon>
+  <!-- Hair accessory -->
+  <div class="item-icon category" *ngIf="_showTypes['HairAccessory']" [class.highlight]="type === 'HairAccessory'"
+  [ngbTooltip]="'Hair accessories'" container="body"
+    (click)="changeType('HairAccessory')">
+    <mat-icon svgIcon="hair-acc"></mat-icon>
+  </div>
+  <!-- Head accessory -->
+  <div class="item-icon category" *ngIf="_showTypes['HeadAccessory']" [class.highlight]="type === 'HeadAccessory'"
+  [ngbTooltip]="'Head accessories'" container="body"
+    (click)="changeType('HeadAccessory')">
+    <mat-icon svgIcon="head-acc"></mat-icon>
   </div>
   <!-- Capes -->
   <div class="item-icon category" *ngIf="_showTypes['Cape']" [class.highlight]="type === 'Cape'"

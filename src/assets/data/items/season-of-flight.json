@@ -10,12 +10,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 95
+    "order": 422
   },
   {
     "id": 477,
     "guid": "cbWKMsAh7H",
-    "type": "Hat",
+    "type": "HairAccessory",
     "group": "Ultimate",
     "name": "Flight Ultimate Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Icon_season_of_flight_headpiece_4_ult.png",
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 408
+    "order": 259
   },
   {
     "id": 478,
@@ -163,20 +163,20 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair"
     },
-    "order": 340,
+    "order": 191,
     "group": "SeasonPass"
   },
   {
     "id": 1329,
     "guid": "DeouBCkpib",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Lively Navigator Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Icon_season_of_flight_headpiece_2_lively_navigator.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Season_of_flight_headpiece_2_lively_navigator.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory"
     },
-    "order": 407
+    "order": 258
   },
   {
     "id": 1330,
@@ -282,14 +282,14 @@
   {
     "id": 1341,
     "guid": "Dt5aDX9Osc",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Light Whisperer Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_season_of_flight_headpiece_1_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_flight_headpiece_1_light_whisperer.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory"
     },
-    "order": 405,
+    "order": 256,
     "group": "SeasonPass"
   },
   {
@@ -302,7 +302,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair"
     },
-    "order": 339
+    "order": 190
   },
   {
     "id": 1343,
@@ -401,14 +401,14 @@
   {
     "id": 1351,
     "guid": "dkLuIrNJyl",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Tinkering Chimesmith Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Icon_season_of_flight_headpiece_3_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_flight_headpiece_3_tinkering_chimesmith.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory"
     },
-    "order": 406
+    "order": 257
   },
   {
     "id": 1352,
@@ -437,7 +437,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument"
     },
-    "order": 462,
+    "order": 469,
     "group": "SeasonPass"
   },
   {
@@ -450,7 +450,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair"
     },
-    "order": 338
+    "order": 189
   },
   {
     "id": 1356,
@@ -525,7 +525,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory"
     },
-    "order": 109
+    "order": 436
   },
   {
     "id": 1364,
@@ -588,7 +588,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair"
     },
-    "order": 337
+    "order": 188
   },
   {
     "id": 1953,

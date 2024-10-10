@@ -72,7 +72,7 @@ export class ClosetComponent implements OnDestroy {
   itemTypes: Array<ItemType> = [
     ItemType.Outfit, ItemType.Shoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
-    ItemType.Hair, ItemType.Hat,
+    ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
@@ -84,7 +84,8 @@ export class ClosetComponent implements OnDestroy {
     'FaceAccessory': 'face-acc',
     'Necklace': 'necklace',
     'Hair': 'hair',
-    'Hat': 'hat',
+    'HairAccessory': 'hair-acc',
+    'HeadAccessory': 'head-acc',
     'Cape': 'cape',
     'Held': 'held',
     'Furniture': 'shelf',
@@ -591,7 +592,7 @@ export class ClosetComponent implements OnDestroy {
   private initializeItems(): void {
     // Unequippable items.
     const itemTypeUnequip: { [key: string]: number } = [
-      ItemType.Necklace, ItemType.Hat, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
+      ItemType.Necklace, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Held, ItemType.Shoes, ItemType.FaceAccessory
     ].reduce((map, type, i) => (map[`${type}`] = 46655 - i, map), {} as { [key: string]: number });
 
     // Populate items by type
@@ -874,13 +875,13 @@ export class ClosetComponent implements OnDestroy {
     const getItemByType = (type: ItemType) => selectedByType.find(map => map[type])?.[type];
     const itemTypes = [
       ItemType.Outfit, ItemType.Shoes, ItemType.Mask,
-      ItemType.FaceAccessory, ItemType.Necklace, ItemType.Hair,
-      ItemType.Hat, ItemType.Cape, ItemType.Prop
+      ItemType.FaceAccessory, ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory,
+      ItemType.HeadAccessory, ItemType.Cape, ItemType.Prop
     ];
     const items = itemTypes.map(getItemByType);
 
     const canvas = document.createElement('canvas');
-    canvas.width = _wItem * 3 + _wGap * 4;
+    canvas.width = _wItem * 4 + _wGap * 5;
     canvas.height = _wItem * 3 + _wGap * 4 + 24;
     const ctx = canvas.getContext('2d')!;
 
@@ -897,10 +898,9 @@ export class ClosetComponent implements OnDestroy {
     let l2 = 'Icons provided by the Sky: CotL Wiki';
     ctx.fillText(l2, canvas.width - 8, canvas.height - 6);
 
-
     const placeholders = [
       'EEQZwFIJRs', '_k3jPMWKOY', 'Em7ZxGZAN5',
-      'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi',
+      'fR9CRzzD25', '_5IHtakDvf', 'QmNo-bmeLi', 'f-X2dDeB9w',
       'E_yfCZYU5C', 'ec8jU3Gerw', 'biKOov4qJQ'
     ];
     const placeholderItems = placeholders.map(guid => this.itemMap[guid]);
@@ -915,8 +915,12 @@ export class ClosetComponent implements OnDestroy {
     }, {} as { [guid: string]: HTMLImageElement });
 
     items.forEach((item, i) => {
-      const x = _wGap + (i % 3) * (_wItem + _wGap);
-      const y = _wGap + Math.floor(i / 3) * (_wItem + _wGap) + 12;
+      const x = i < 3
+        ? _wGap + i * (_wItem + _wGap) + (_wItem / 2) + (_wGap / 2) : i >= 7
+        ? _wGap + (i - 7) * (_wItem + _wGap) + (_wItem / 2) + (_wGap / 2)
+        : _wGap + (i - 3) * (_wItem + _wGap);
+      const row = i < 3 ? 0 : i < 7 ? 1 : 2;
+      const y = _wGap + row * (_wItem + _wGap) + 12;
 
       // Draw item box
       ctx.fillStyle = '#0006';
@@ -925,6 +929,7 @@ export class ClosetComponent implements OnDestroy {
       const drawPlaceholder = () => {
         const mappedIcon = placeholderItems[i].icon ? this._iconService.getIcon(placeholderItems[i].icon!) : undefined;
         const placeholderImg = itemImgs[placeholders[i]];
+        if (!placeholderImg && !mappedIcon) { throw new Error('Item image for placeholder was not loaded!'); }
         ctx.globalAlpha = 0.25;
         if (mappedIcon) {
           const sheet = this._imgSheets[mappedIcon.file];
@@ -967,13 +972,14 @@ export class ClosetComponent implements OnDestroy {
     const cFaceAcc = Math.ceil(this.items[ItemType.FaceAccessory].length / cols[0]);
     const cNecklace = Math.ceil(this.items[ItemType.Necklace].length / cols[0]);
     const cHair = Math.ceil(this.items[ItemType.Hair].length / cols[1]);
-    const cHat = Math.ceil(this.items[ItemType.Hat].length / cols[1]);
+    const cHairAcc = Math.ceil(this.items[ItemType.HairAccessory].length / cols[1]);
+    const cHeadAcc = Math.ceil(this.items[ItemType.HeadAccessory].length / cols[1]);
     const cCape = Math.ceil(this.items[ItemType.Cape].length / cols[2]);
     const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
     const cFurniture = Math.ceil(this.items[ItemType.Furniture].length / cols[3]);
     const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
     const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
-    const h2 = (cHair + cHat) * _wBox + _wPad * 3 - _wGap;
+    const h2 = (cHair + cHairAcc + cHeadAcc) * _wBox + _wPad * 4 - _wGap;
     const h3 = cCape * _wBox + _wPad * 2 - _wGap;
     const h4 = (cHeld + cFurniture + cProp) * _wBox + _wPad * 4 - _wGap;
     const h = Math.max(h1, h2, h3, h4);
@@ -1008,7 +1014,9 @@ export class ClosetComponent implements OnDestroy {
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
     this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hair], itemImgs);
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 2 + cHair * _wBox;
-    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.Hat], itemImgs);
+    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.HairAccessory], itemImgs);
+    sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad * 3 + (cHair + cHairAcc) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[1], mode, this.items[ItemType.HeadAccessory], itemImgs);
 
     sx = _wPad * 3 + (cols[0] + cols[1]) * _wBox; sy = _wPad;
     this.cvsDrawSection(ctx, sx, sy, cols[2], mode, this.items[ItemType.Cape], itemImgs);

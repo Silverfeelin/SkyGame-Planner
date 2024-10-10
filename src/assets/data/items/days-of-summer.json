@@ -9,19 +9,19 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Lantern_Pack"
     },
-    "order": 479
+    "order": 494
   },
   {
     "id": 1903,
     "guid": "EEFIpR6x7Q",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Summer Lights Bunny Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Icon_hair_event_bunny_head.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Bunny_head_accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Bunny_Accessory"
     },
-    "order": 429
+    "order": 293
   },
   {
     "id": 1904,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Parasol"
     },
-    "order": 483
+    "order": 495
   },
   {
     "id": 1905,
@@ -45,14 +45,14 @@
   {
     "id": 1906,
     "guid": "E_yfCZYU5C",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Days of Summer Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Icon_hair_summer_hat_headpiece.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days_of_summer_headpiece_hat.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Hat"
     },
-    "order": 426
+    "order": 292
   },
   {
     "id": 1907,
@@ -69,13 +69,13 @@
   {
     "id": 1908,
     "guid": "eruG9WiyJZ",
-    "type": "Hat",
+    "type": "HairAccessory",
     "name": "Days of Summer Shell Hairpin",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Icon_hair_summer_shell_pin_headpiece.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Days_of_summer_Hair_accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Seashell_Hairpin"
     },
-    "order": 424
+    "order": 291
   }
 ]

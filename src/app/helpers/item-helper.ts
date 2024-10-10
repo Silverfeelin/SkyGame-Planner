@@ -5,10 +5,10 @@ import { NodeHelper } from './node-helper';
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([
   [ItemType.Outfit, 1], [ItemType.Shoes, 2], [ItemType.Mask, 3], [ItemType.FaceAccessory, 4],
-  [ItemType.Necklace, 5], [ItemType.Hair, 6], [ItemType.Hat, 7], [ItemType.Cape, 8],
-  [ItemType.Held, 9], [ItemType.Furniture, 10], [ItemType.Prop, 11], [ItemType.Emote, 12],
-  [ItemType.Stance, 13], [ItemType.Call, 14], [ItemType.Music, 15], [ItemType.WingBuff, 16],
-  [ItemType.Quest, 17], [ItemType.Spell, 18], [ItemType.Special, 19]
+  [ItemType.Necklace, 5], [ItemType.Hair, 6], [ItemType.HairAccessory, 7], [ItemType.HeadAccessory, 8],
+  [ItemType.Cape, 9], [ItemType.Held, 10], [ItemType.Furniture, 11], [ItemType.Prop, 12],
+  [ItemType.Emote, 13], [ItemType.Stance, 14], [ItemType.Call, 15], [ItemType.Music, 16],
+  [ItemType.WingBuff, 17], [ItemType.Quest, 18], [ItemType.Spell, 19], [ItemType.Special, 20]
 ]);
 
 export class ItemHelper {
