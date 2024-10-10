@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 90
+    "order": 417
   },
   {
     "id": 394,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 471
+    "order": 464
   },
   {
     "id": 395,
@@ -168,7 +168,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair"
     },
-    "order": 313
+    "order": 164
   },
   {
     "id": 999,
@@ -270,7 +270,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair"
     },
-    "order": 314
+    "order": 165
   },
   {
     "id": 1010,
@@ -356,7 +356,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair"
     },
-    "order": 315
+    "order": 166
   },
   {
     "id": 1019,
@@ -472,7 +472,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask"
     },
-    "order": 152,
+    "order": 348,
     "group": "SeasonPass"
   },
   {
@@ -508,7 +508,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair"
     },
-    "order": 316
+    "order": 167
   },
   {
     "id": 1034,
@@ -535,7 +535,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory"
     },
-    "order": 107,
+    "order": 434,
     "group": "SeasonPass"
   },
   {
@@ -601,7 +601,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair"
     },
-    "order": 317,
+    "order": 168,
     "group": "SeasonPass"
   },
   {
@@ -722,7 +722,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask"
     },
-    "order": 231,
+    "order": 79,
     "group": "SeasonPass"
   },
   {
@@ -751,14 +751,14 @@
   {
     "id": 1058,
     "guid": "V7FLu_Hn4y",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Chill Sunbather Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Mimi-4117_07_chill_sunbather_hat.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/49/Season_of_sanctuary_hair_chill_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair"
     },
-    "order": 404
+    "order": 255
   },
   {
     "id": 1059,

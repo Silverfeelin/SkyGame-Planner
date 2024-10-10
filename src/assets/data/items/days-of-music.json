@@ -52,14 +52,14 @@
   {
     "id": 1929,
     "guid": "q6MtlTHWMK",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Musical Hairpin",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/SOPerformance-hair-accessory-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/SOPerformance-hair-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin"
     },
-    "order": 427
+    "order": 294
   },
   {
     "id": 1930,
@@ -72,7 +72,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone"
     },
-    "order": 487
+    "order": 480
   },
   {
     "id": 1931,
@@ -84,7 +84,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat"
     },
-    "order": 389
+    "order": 240
   },
   {
     "id": 1932,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin"
     },
-    "order": 484
+    "order": 479
   },
   {
     "id": 1934,

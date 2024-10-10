@@ -6,16 +6,16 @@
     "name": "Festival Scepter",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Festival-Scepter-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Festival-Scepter-prop.png",
-    "order": 495
+    "order": 484
   },
   {
     "id": 1957,
     "guid": "v6ZqvI6A_L",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Festival Earrings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Festival-Earrings-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Festival-Earrings.png",
-    "order": 254
+    "order": 318
   },
   {
     "id": 1958,

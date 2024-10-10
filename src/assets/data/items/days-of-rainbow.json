@@ -2,14 +2,14 @@
   {
     "id": 1789,
     "guid": "4XMYa4Wj-M",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Rainbow Braid",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_hair_rainbow_tassle.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Rainbow_tassle_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Braid"
     },
-    "order": 243
+    "order": 310
   },
   {
     "id": 1790,
@@ -117,14 +117,14 @@
   {
     "id": 1804,
     "guid": "KpS-2FdasB",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Rainbow Hair Flower",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Icon_hair_rainbow_flower.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Rainbow_flower_headpiece_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Hair_Flower"
     },
-    "order": 421
+    "order": 276
   },
   {
     "id": 1805,
@@ -136,43 +136,43 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat"
     },
-    "order": 387
+    "order": 238
   },
   {
     "id": 1806,
     "guid": "gNWmRUkpFo",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Double Rainbow Flower",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Days-of-Rainbow-2022-Double-Rainbow-flower-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Double_Rainbow_Flower"
     },
-    "order": 422
+    "order": 277
   },
   {
     "id": 1807,
     "guid": "f-X2dDeB9w",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Rainbow Earrings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Days-of-Rainbow-2022-earring-accessory-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Rainbow-2022-earring-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Earring"
     },
-    "order": 244
+    "order": 311
   },
   {
     "id": 1808,
     "guid": "j51xlBBIZX",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Rainbow Headphones",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Days_of_Rainbow_2022-_headphones-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Days_of_Rainbow_2022-_headphones.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Headphones"
     },
-    "order": 245
+    "order": 312
   },
   {
     "id": 1809,
@@ -222,14 +222,14 @@
   {
     "id": 1814,
     "guid": "krzIL86J83",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Dark Rainbow Earrings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Days-of-Colors-Dark-Rainbow-Earring-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Days-of-Colors-Dark-Rainbow-Earring.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color#Dark_Rainbow_Earring_Pack"
     },
-    "order": 246
+    "order": 313
   },
   {
     "id": 1815,
@@ -257,7 +257,7 @@
     "name": "Dark Rainbow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Dark-Rainbow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Dark-Rainbow-Mask.png",
-    "order": 209
+    "order": 405
   },
   {
     "id": 2212,
@@ -266,7 +266,7 @@
     "name": "Color Glam Cut",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Color-Glam-Cut-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Color-Glam-Cut-front.png",
-    "order": 388
+    "order": 239
   },
   {
     "id": 2213,
@@ -284,6 +284,6 @@
     "name": "Dark Rainbow Loafers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Dark-Rainbow-Loafers-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Dark-Rainbow-Loafers.png",
-    "order": 77
+    "order": 98
   }
 ]

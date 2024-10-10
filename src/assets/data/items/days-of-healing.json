@@ -2,7 +2,7 @@
   {
     "id": 1901,
     "guid": "cM5zZKzBkO",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Days of Healing Poppy",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Icon_hair_event_healing_poppy.png",
@@ -10,6 +10,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Healing#Healing_Pack"
     },
-    "order": 420
+    "order": 298
   }
 ]

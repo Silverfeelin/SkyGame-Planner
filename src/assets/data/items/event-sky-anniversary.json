@@ -2,7 +2,7 @@
   {
     "id": 1816,
     "guid": "lDm3gx6ZkS",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "1 Year Sky Anniversary Hat",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Icon_hair_sky_anniversary_1.png",
@@ -10,12 +10,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#1_Year_Anniversary_Hat"
     },
-    "order": 435
+    "order": 278
   },
   {
     "id": 1817,
     "guid": "uH4Rjnkh74",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "2 Year Sky Anniversary Hat",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Icon_hair_sky_anniversary_2.png",
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#2nd_Birthday_Hat"
     },
-    "order": 436
+    "order": 279
   },
   {
     "id": 1818,
@@ -103,7 +103,7 @@
   {
     "id": 1828,
     "guid": "svEXRvagb3",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "3 Year Sky Anniversary Hat",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Days-of-Sky-2022-anniversary-crown-icon-Morybel-0146.png",
@@ -111,7 +111,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#3rd_Birthday_Hat"
     },
-    "order": 437
+    "order": 280
   },
   {
     "id": 1829,
@@ -202,14 +202,14 @@
     "id": 1838,
     "guid": "dLtGhTPX8z",
     "name": "4 Year Sky Anniversary Hat",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/37/Sky-4th-Anniversary-Hat-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Sky-4th-Anniversary-Hat.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#4th_Anniversary_Hat"
     },
-    "order": 438
+    "order": 281
   },
   {
     "id": 1839,
@@ -248,21 +248,21 @@
   {
     "id": 2230,
     "guid": "z648Yl_rsv",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Skyfest Oreo Headband",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SkyFest-Oreo-Headband-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/SkyFest-Oreo-Headband.png",
-    "order": 440
+    "order": 283
   },
   {
     "id": 2231,
     "guid": "jGsimtcb4t",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "5th Anniversary Headband",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/5th-Anniversary-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/SkyFest-5th-Anniversary-Headband.png",
-    "order": 439
+    "order": 282
   },
   {
     "id": 2232,
@@ -290,7 +290,7 @@
     "name": "Skyfest Jenova Fan",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/SkyFest-Jenova-Fan-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SkyFest-Jenova-Fan.png",
-    "order": 492
+    "order": 491
   },
   {
     "id": 2235,

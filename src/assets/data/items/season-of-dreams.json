@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 92
+    "order": 419
   },
   {
     "id": 422,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 161
+    "order": 357
   },
   {
     "id": 423,
@@ -144,14 +144,14 @@
   {
     "id": 1126,
     "guid": "xI0_ep59HH",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Bearhug Hermit Horns",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Icon_hair_dreams_hermit_horns.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Dreams_headpiece_bearhug_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory"
     },
-    "order": 232,
+    "order": 303,
     "group": "SeasonPass"
   },
   {
@@ -201,7 +201,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair"
     },
-    "order": 322
+    "order": 173
   },
   {
     "id": 1132,
@@ -279,7 +279,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Hair"
     },
-    "order": 323,
+    "order": 174,
     "group": "SeasonPass"
   },
   {
@@ -322,7 +322,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
-    "order": 159,
+    "order": 355,
     "group": "SeasonPass"
   },
   {
@@ -348,7 +348,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument"
     },
-    "order": 456,
+    "order": 467,
     "group": "SeasonPass"
   },
   {
@@ -466,7 +466,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
     },
-    "order": 69
+    "order": 90
   },
   {
     "id": 1154,
@@ -498,7 +498,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
-    "order": 158,
+    "order": 354,
     "group": "SeasonPass"
   },
   {
@@ -557,7 +557,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Hair"
     },
-    "order": 324
+    "order": 175
   },
   {
     "id": 1163,
@@ -600,7 +600,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
     },
-    "order": 160
+    "order": 356
   },
   {
     "id": 1167,

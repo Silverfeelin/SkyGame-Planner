@@ -16,7 +16,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Jelly_Shoulder_Buddy"
     },
-    "order": 118
+    "order": 445
   },
   {
     "id": 1914,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Chunky_Sandals"
     },
-    "order": 78
+    "order": 99
   },
   {
     "id": 1922,
@@ -128,11 +128,11 @@
   {
     "id": 2290,
     "guid": "lv_MnKorJN",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Sunlight Helios Hoops",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
-    "order": 247
+    "order": 314
   },
   {
     "id": 2291,
@@ -141,7 +141,7 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 494
+    "order": 493
   },
   {
     "id": 2292,

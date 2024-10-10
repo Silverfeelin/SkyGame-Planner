@@ -2,12 +2,12 @@
   {
     "id": 2141,
     "guid": "eWqTtgnrmt",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Cinnamoroll Mini Companion",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-front.png",
-    "order": 448
+    "order": 297
   },
   {
     "id": 2142,
@@ -17,7 +17,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Cinnamoroll-Pop-Up-Cafe-Bowtie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Cinnamoroll-Pop-Up-Cafe-Bowtie.png",
-    "order": 122
+    "order": 449
   },
   {
     "id": 2143,
@@ -37,17 +37,17 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Cinnamoroll-Pop-Up-Cafe-Combo-Swirled-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Cinnamoroll-Pop-Up-Cafe-Combo-Swirled-Hair-front.png",
-    "order": 399
+    "order": 250
   },
   {
     "id": 2145,
     "guid": "DDW1lEoGj0",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Cinnamoroll Ears",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Cinnamoroll-Pop-Up-Cafe-Combo-Ears-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Cinnamoroll-Pop-Up-Cafe-Combo-Ears.png",
-    "order": 446
+    "order": 295
   },
   {
     "id": 2146,
@@ -62,12 +62,12 @@
   {
     "id": 2147,
     "guid": "nZogPrqPGH",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Cozy Teacup Headband",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Cozy-Teacup-Headband-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Cozy-Teacup-Headband.png",
-    "order": 447
+    "order": 296
   },
   {
     "id": 2148,

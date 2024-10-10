@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bull_Mask"
     },
-    "order": 203
+    "order": 399
   },
   {
     "id": 1724,
@@ -21,19 +21,19 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Lion_Headdress"
     },
-    "order": 381
+    "order": 232
   },
   {
     "id": 1725,
     "guid": "aRgiKoKavp",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Days of Fortune Orange Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Icon_hair_event_orange_headpiece.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/Orange_headpiece_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Orange"
     },
-    "order": 430
+    "order": 271
   },
   {
     "id": 1726,
@@ -45,7 +45,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Wool_Hat"
     },
-    "order": 380
+    "order": 231
   },
   {
     "id": 1727,
@@ -69,7 +69,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Blushing_Mask"
     },
-    "order": 202
+    "order": 398
   },
   {
     "id": 1729,
@@ -81,7 +81,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bun_Hair"
     },
-    "order": 379
+    "order": 230
   },
   {
     "id": 1730,
@@ -93,19 +93,19 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Tiger_Mask"
     },
-    "order": 204
+    "order": 400
   },
   {
     "id": 1731,
     "guid": "OjSfpOgFoR",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Days of Fortune Fish Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days_of_Fortune_-_Fish_accessory_Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Days-of-fortune-fish-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Accessory"
     },
-    "order": 431
+    "order": 272
   },
   {
     "id": 1732,
@@ -129,7 +129,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Hood"
     },
-    "order": 382
+    "order": 233
   },
   {
     "id": 1734,
@@ -153,7 +153,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Enchanted_Umbrella"
     },
-    "order": 481
+    "order": 488
   },
   {
     "id": 1736,
@@ -165,7 +165,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Rabbit_Mask"
     },
-    "order": 205
+    "order": 401
   },
   {
     "id": 1737,
@@ -265,11 +265,11 @@
   {
     "id": 2055,
     "guid": "xsTxIqIX8E",
-    "type": "FaceAccessory",
+    "type": "HeadAccessory",
     "name": "Days of Fortune Dragon Bangles",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Fortune-Dragon-Bangles-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
-    "order": 241
+    "order": 309
   },
   {
     "id": 2056,
@@ -278,7 +278,7 @@
     "name": "Days of Fortune Dragon Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Days-of-Fortune-Dragon-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Fortune-Dragon-Mask.png",
-    "order": 206
+    "order": 402
   },
   {
     "id": 2057,
@@ -288,7 +288,7 @@
     "name": "Days of Fortune Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-    "order": 491
+    "order": 481
   },
   {
     "id": 2058,

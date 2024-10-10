@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 98
+    "order": 425
   },
   {
     "id": 532,
@@ -146,7 +146,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
     },
-    "order": 351
+    "order": 202
   },
   {
     "id": 1471,
@@ -166,14 +166,14 @@
   {
     "id": 1473,
     "guid": "yz2xNFAX1w",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Jellyfish Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/SOShattering-Light-Hair-accessory-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/SOShattering-Light-Hair-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory"
     },
-    "order": 411,
+    "order": 262,
     "group": "SeasonPass"
   },
   {
@@ -238,7 +238,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
     },
-    "order": 350,
+    "order": 201,
     "group": "SeasonPass"
   },
   {
@@ -292,14 +292,14 @@
   {
     "id": 1486,
     "guid": "gn5YaEC0t8",
-    "type": "HeadAccessory",
+    "type": "HairAccessory",
     "name": "Darkness Plant Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/SOShattering-Dark-Hair-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/SOShattering-Dark-Hair-accessory.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory"
     },
-    "order": 410
+    "order": 261
   },
   {
     "id": 1487,
@@ -326,7 +326,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Mask"
     },
-    "order": 182,
+    "order": 378,
     "group": "SeasonPass"
   },
   {
@@ -384,7 +384,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory"
     },
-    "order": 110
+    "order": 437
   },
   {
     "id": 1496,
@@ -412,7 +412,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Prop"
     },
-    "order": 476,
+    "order": 472,
     "group": "SeasonPass"
   },
   {
@@ -425,7 +425,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair"
     },
-    "order": 349
+    "order": 200
   },
   {
     "id": 1500,
