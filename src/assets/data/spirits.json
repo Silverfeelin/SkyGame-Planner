@@ -1832,6 +1832,58 @@
       }
     },
     // #endregion
+    // #region Moomin
+    {
+      "guid": "vW9xp55w6t",
+      "type": "Guide",
+      "name": "The Moomin Storybook",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Moomin-Ultimate-guide.png",
+      "tree": "kZJKg9jxtn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook"
+      }
+    },
+    {
+      "guid": "9RTxyGCw9v",
+      "type": "Season",
+      "name": "Comfort of Kindness",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Comfort-of-Kindness-Shop.png",
+      "tree": "kZJKg9jxtn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness"
+      }
+    },
+    {
+      "guid": "jt2df_0kso",
+      "type": "Season",
+      "name": "Sense of Self",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Sense-of-Self-Shop.png",
+      "tree": "kZJKg9jxtn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self"
+      }
+    },
+    {
+      "guid": "_ps0VJ53As",
+      "type": "Season",
+      "name": "Spirit of Adventure",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Spirit-of-Adventure-Shop.png",
+      "tree": "kZJKg9jxtn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Adventure"
+      }
+    },
+    {
+      "guid": "RRsQtrxvRq",
+      "type": "Season",
+      "name": "Inspiration of Inclusion",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Inspiration-of-Inclusion-Shop.png",
+      "tree": "kZJKg9jxtn",
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Inspiration_of_Inclusion"
+      }
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {

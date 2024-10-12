@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": 2339,
+    "guid": "1uyZfKjJg5",
+    "type": "Necklace",
+    "name": "Moomin Ultimate Pendant Necklace",
+    "group": "Ultimate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Season-of-Moomin-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Season-of-Moomin-Pendant.png",
+    "order": 10000
+  },
+  {
+    "id": 2340,
+    "guid": "Rb06PBDZi5",
+    "type": "Outfit",
+    "name": "Moomin Ultimate Outfit",
+    "group": "Ultimate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Moomin-Ultimate-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Moomin-Ultimate-Outfit-front.png",
+    "order": 10000
+  },
+  {
+    "id": 2341,
+    "guid": "dkfdFCaemY",
+    "type": "Held",
+    "name": "Moomin Ultimate Umbrella",
+    "group": "Ultimate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Moomin-Ultimate-Umbrella-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Moomin-Ultimate-Umbrella-Prop-held.png",
+    "order": 10000
+  },
+  {
+    "id": 2342,
+    "guid": "8JjPl9WZDJ",
+    "type": "Prop",
+    "name": "Moomin Ultimate Plush",
+    "group": "Ultimate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Moomin-Ultimate-Plush-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Moomin-Ultimate-Plush-Prop.png",
+    "order": 10000
+  }
+]

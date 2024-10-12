@@ -1,4 +1,12 @@
 [
+  // Placeholder
+  {
+    "id": 0,
+    "guid": "iqCCaRTjDu",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": "/assets/icons/question.webp"
+  },
   {
     "id": 1,
     "guid": "EEQZwFIJRs",

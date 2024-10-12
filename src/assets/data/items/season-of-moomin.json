@@ -1,0 +1,105 @@
+[
+  {
+    "id": 2328,
+    "guid": "v4Pdy5KCJ4",
+    "type": "Cape",
+    "name": "Moominmamma'S Masterpiece Cape",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png",
+    "order": 10000
+  },
+  {
+    "id": 2329,
+    "guid": "Nf94RnTzOh",
+    "type": "Necklace",
+    "name": "Hattifattener Shoulder Buddy",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Hattifattener-Shoulder-Buddy-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Hattifattener-Shoulder-Buddy.png",
+    "order": 10000
+  },
+  {
+    "id": 2330,
+    "guid": "3gb3myYbBB",
+    "type": "HairAccessory",
+    "name": "Moomintroll Ears",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Moomintroll-Ears-Accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Moomintroll-Ears-Accessory.png",
+    "order": 10000
+  },
+  {
+    "id": 2331,
+    "guid": "JIMbTWase4",
+    "type": "Necklace",
+    "name": "Moomintroll Tail",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Moomintroll-Tail-Accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Moomintroll-Tail-Accessory.png",
+    "order": 10000
+  },
+  {
+    "id": 2332,
+    "guid": "Ft002XdCr7",
+    "type": "Outfit",
+    "name": "Roving Snufkin Robe",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Roving-Snufkin-Robe-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Roving-Snufkin-Robe-front.png",
+    "order": 10000
+  },
+  {
+    "id": 2333,
+    "guid": "VSxBtrwvtQ",
+    "type": "Necklace",
+    "name": "Roving Snufkin Scarf",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Roving-Snufkin-Scarf-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Roving-Snufkin-Scarf.png",
+    "order": 10000
+  },
+  {
+    "id": 2334,
+    "guid": "-EBoN4AWqQ",
+    "type": "HairAccessory",
+    "name": "Pointed Snufkin Hat",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Pointed-Snufkin-Hat-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Pointed-Snufkin-Hat.png",
+    "order": 10000
+  },
+  {
+    "id": 2335,
+    "guid": "zM4WRnZZPv",
+    "type": "Emote",
+    "name": "Read",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png",
+    "order": 10000
+  },
+  {
+    "id": 2336,
+    "guid": "zM4WRnZZPv",
+    "type": "Emote",
+    "name": "Read",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png"
+  },
+  {
+    "id": 2337,
+    "guid": "zM4WRnZZPv",
+    "type": "Emote",
+    "name": "Read",
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png"
+  },
+  {
+    "id": 2338,
+    "guid": "zM4WRnZZPv",
+    "type": "Emote",
+    "name": "Read",
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png"
+  }
+]
