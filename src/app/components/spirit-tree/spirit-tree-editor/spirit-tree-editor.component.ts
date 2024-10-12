@@ -113,6 +113,20 @@ export class SpiritTreeEditorComponent {
     });
   }
 
+  promptItemCode(): void {
+    const selectedGuid = this.selectedItem.guid || '';
+    const guid = prompt('Item code:', selectedGuid);
+    if (!guid || guid === selectedGuid) { return; }
+
+    const item = this._dataService.guidMap.get(guid) as IItem;
+    if (!item || !item.type) {
+      alert('Invalid item code.');
+      return;
+    }
+
+    this.onItemClicked({ item, event: new MouseEvent('click') });
+  }
+
   addNode(direction: 'nw'|'n'|'ne') {
     const current = this.selectedTreeNode;
     if (!current) { return; }

@@ -102,4 +102,32 @@
     ]
   },
   // #endregion
+  // #region Season of Moomin
+  {
+    "guid": "EESWhnOmze",
+    "name": "Hattifatterner Shoulder Buddy",
+    "price": 2.99,
+    "items": [
+      "Nf94RnTzOh"
+    ]
+  },
+  {
+    "guid": "wpU_hTHKtn",
+    "name": "Moomintroll Accessory Set",
+    "price": 11.99,
+    "items": [
+      "3gb3myYbBB",
+      "JIMbTWase4"
+    ]
+  },
+  {
+    "guid": "Y4OZx7uCsw",
+    "name": "Roving Snufkin Robe Set",
+    "price": 9.99,
+    "items": [
+      "Ft002XdCr7",
+      "VSxBtrwvtQ"
+    ]
+  },
+  // #endregion
 ]

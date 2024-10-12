@@ -74,8 +74,8 @@
       "\t\"guid\": \"$2\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Season Heart\",",
-      "\t\"icon\": \"$3\",",
-      "\t\"group\": \"SeasonPass\"",
+      "\t\"group\": \"SeasonPass\",",
+      "\t\"icon\": \"$3\"",
       "},"
     ],
     "description": "Season Heart"
