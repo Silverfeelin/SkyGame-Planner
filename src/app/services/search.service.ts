@@ -10,7 +10,7 @@ import { IEvent } from '../interfaces/event.interface';
 import { IRealm } from '../interfaces/realm.interface';
 import { IArea } from '../interfaces/area.interface';
 
-export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area';
+export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area' | 'Page';
 
 export interface ISearchOptions {
   /** Only search in these items. */
@@ -123,6 +123,9 @@ export class SearchService {
         const area = item.data as IRealm;
         item.route = ['/area', area.guid];
         break;
+      case 'Page':
+        item.route = [item.data as string];
+        break;
     }
   }
 
@@ -162,6 +165,45 @@ export class SearchService {
     items.push(...this._dataService.areaConfig.items.map(area => {
       return { name: area.name, type: 'Area', data: area, search: area.name } as ISearchItem<IArea>;
     }));
+
+    // Add pages
+    items.push(
+      { name: 'Currencies', type: 'Page', data: '/currency', search: 'Currencies' },
+      { name: 'Spent currency', type: 'Page', data: '/currency/spent', search: 'Spent currency' },
+      { name: 'Events', type: 'Page', data: '/event', search: 'Events' },
+      { name: 'Event history', type: 'Page', data: '/event/history', search: 'Event history' },
+      { name: 'Event calculator', type: 'Page', data: '/event-calculator', search: 'Event calculator' },
+      { name: 'Items', type: 'Page', data: '/item', search: 'Items' },
+      { name: 'Item collections', type: 'Page', data: '/item/collection', search: 'Item collections' },
+      { name: 'Item field guide', type: 'Page', data: '/item/field-guide', search: 'Item field guide' },
+      { name: 'Item inflation', type: 'Page', data: '/item/inflation', search: 'Item inflation' },
+      { name: 'Item unlock calculator', type: 'Page', data: '/item/unlock-calculator', search: 'Item unlock calculator' },
+      { name: 'Realms', type: 'Page', data: '/realm', search: 'Realms' },
+      { name: 'Areas', type: 'Page', data: '/area', search: 'Areas' },
+      { name: 'Seasons', type: 'Page', data: '/season', search: 'Seasons' },
+      { name: 'Season calculator', type: 'Page', data: '/season-calculator', search: 'Season calculator' },
+      { name: 'Permanent shops', type: 'Page', data: '/shop', search: 'Permanent shops' },
+      { name: 'Shops - Aviary Event Store', type: 'Page', data: '/shop/event', search: 'Aviary Event Store' },
+      { name: 'Shops - Concert Hall', type: 'Page', data: '/shop/concert-hall', search: 'Concert Hall' },
+      { name: 'Shops - Harmony Hall', type: 'Page', data: '/shop/harmony', search: 'Harmony Hall' },
+      { name: 'Shops - Nesting Workshop', type: 'Page', data: '/shop/nesting', search: 'Nesting Workshop' },
+      { name: 'Shops - Office', type: 'Page', data: '/shop/office', search: 'Office' },
+      { name: 'Spirits', type: 'Page', data: '/spirits', search: 'Spirits' },
+      { name: 'Elusive spirits', type: 'Page', data: '/spirit/elusive', search: 'Elusive spirits' },
+      { name: 'Traveling spirits', type: 'Page', data: '/ts', search: 'Traveling spirits' },
+      { name: 'Special visits', type: 'Page', data: '/rs', search: 'Special visits' },
+      { name: 'Winged light', type: 'Page', data: '/winged-light', search: 'Winged light' },
+      { name: 'Wing buffs', type: 'Page', data: '/wing-buff', search: 'Wing buffs' },
+      { name: 'Children of Light', type: 'Page', data: '/col', search: 'Children of Light' },
+      { name: 'Outfit request - Closet', type: 'Page', data: '/outfit-request/closet', search: 'Outfit request - Closet' },
+      { name: 'Outfit request - Request', type: 'Page', data: '/outfit-request/request', search: 'Outfit request - Request' },
+      { name: 'Outfit vault', type: 'Page', data: '/outfit-request/vault', search: 'Outfit vault' },
+      { name: `What's new`, type: 'Page', data: '/news', search: `What's news` },
+      { name: 'Settings', type: 'Page', data: '/settings', search: 'Settings' },
+      { name: 'Info', type: 'Page', data: '/credits', search: 'Info' },
+      { name: 'Credits', type: 'Page', data: '/credits', search: 'Credits' },
+      { name: 'Privacy Policy', type: 'Page', data: '/privacy', search: 'Privacy Policy' }
+    );
 
     // Prepare search strings.
     items.forEach(item => {
