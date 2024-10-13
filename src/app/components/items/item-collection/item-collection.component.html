@@ -1,6 +1,6 @@
 <div class="sky-card">
   <div class="sky-card-header">
-    <h1 class="h2 mb-0">Item Collections</h1>
+    <h1 class="h2 mb-0">Item collections</h1>
   </div>
   <div class="sky-card-body">
     <div class="container">
@@ -89,6 +89,12 @@
                   [ngbTooltip]="'Edit collection'" container="body" placement="top-end">
                   edit
                 </mat-icon>
+                @if (collection.items.length) {
+                  <mat-icon class="v-top link" (click)="gotoCalculator(collection, $event)"
+                    [ngbTooltip]="'Calculate costs'" container="body" placement="top-end">
+                    calculate
+                  </mat-icon>
+                }
                 <mat-icon class="v-top link" (click)="showCopyCollection(collection, $event)"
                   [ngbTooltip]="'Copy collection'" container="body" placement="top-end">
                   content_copy
@@ -131,7 +137,7 @@
   <div class="sky-flex flex-wrap">
     @for (item of items; track item.guid) {
       <div class="selection-item">
-        <app-item-icon (click)="viewItem(item)"
+        <app-item-icon (click)="viewItem(item)" class="v-top"
           [item]="item" [opaque]="true" [hoverGlow]="false"
           [ngbTooltip]="item.name" container="body" placement="top"
           [subIcons]="['type', 'elder', 'season', 'iap', 'unlock', 'favourite', 'limited']">
