@@ -30,6 +30,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { MatIcon } from '@angular/material/icon';
 import { ItemUnlockCalculatorSeasonsComponent } from "./item-unlock-calculator-seasons/item-unlock-calculator-seasons.component";
 import { ISeason } from '@app/interfaces/season.interface';
+import { Router } from '@angular/router';
 
 interface IItemResult {
   item: IItem;
@@ -112,7 +113,8 @@ export class ItemUnlockCalculatorComponent {
   trees: Array<ISpiritTree> = [];
 
   constructor(
-    private readonly _dataService: DataService
+    private readonly _dataService: DataService,
+    private readonly _router: Router
   ) {
     this.onItemTypeChanged(this.itemType);
     this.readItemsFromUrl();
@@ -131,6 +133,12 @@ export class ItemUnlockCalculatorComponent {
     if (!navigator.canShare(shareData)) { return alert('Sharing is not supported by this browser.'); }
 
     void navigator.share(shareData);
+  }
+
+  createCollection(): void {
+    if (!this.items.length) { return alert('No items selected.'); }
+    const queryParams = { items: ItemHelper.serializeQuery(this.items) };
+    this._router.navigate(['/item/collection'], { queryParams });
   }
 
   showCostBreakdown(result: IItemResult): void {
@@ -556,17 +564,16 @@ export class ItemUnlockCalculatorComponent {
 
   private readItemsFromUrl(): void {
     const url = new URL(location.href);
-    const ids = url.searchParams.get('items');
-    if (!ids) { return; }
+    const sIds = url.searchParams.get('items');
+    if (!sIds) { return; }
 
     const messages: Array<string> = [];
     this.items = [];
     this.itemSet.clear();
 
-    for (let i = 0; i < ids.length; i += 3) {
-      const segment = ids.substring(i, i + 3);
-      const number = parseInt(segment, 36);
-      const item = this._dataService.itemIdMap.get(number);
+    const ids = ItemHelper.deserializeQuery(sIds);
+    for (const id of ids) {
+      const item = this._dataService.itemIdMap.get(id);
       if (item) {
         const msg = this.tryAddItem(item);
         msg && messages.push(`${item.name}: ${msg}`);
@@ -580,9 +587,7 @@ export class ItemUnlockCalculatorComponent {
 
   private updateUrl(): void {
     const url = new URL(location.href);
-    let ids = this.items.map(i => (i.id || 0).toString(36).padStart(3, '0')).join('');
-    ids = ids.substring(0, 1800);
-
+    const ids = ItemHelper.serializeQuery(this.items);
     url.searchParams.set('items', ids);
     history.replaceState(window.history.state, '', url.toString());
   }

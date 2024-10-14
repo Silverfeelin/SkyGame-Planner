@@ -87,4 +87,20 @@ export class ItemHelper {
     if (a.level && b.level) { return a.level - b.level; }
     return a.name.localeCompare(b.name);
   }
+
+  static serializeQuery(items: Array<IItem>): string {
+    let ids = items.map(i => (i.id || 0).toString(36).padStart(3, '0')).join('');
+    ids = ids.substring(0, 1800);
+    return ids;
+  }
+
+  static deserializeQuery(ids: string): Array<number> {
+    const nrs = new Set<number>();
+    for (let i = 0; i < ids.length; i += 3) {
+      const segment = ids.substring(i, i + 3);
+      const number = parseInt(segment, 36);
+      nrs.add(number);
+    }
+    return Array.from(nrs);
+  }
 }

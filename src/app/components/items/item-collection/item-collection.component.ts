@@ -11,6 +11,8 @@ import { Maybe } from '@app/types/maybe';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
+import { Router } from '@angular/router';
+import { ItemHelper } from '@app/helpers/item-helper';
 
 interface IItemCollection {
   guid: string;
@@ -57,9 +59,29 @@ export class ItemCollectionComponent {
   constructor(
     private readonly _storageService: StorageService,
     private readonly _dataService: DataService,
-    private readonly _changeDetectorRef: ChangeDetectorRef
+    private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _router: Router
   ) {
     this.loadStorage();
+    this.readItemsFromUrl();
+  }
+
+  private readItemsFromUrl(): void {
+    const url = new URL(location.href);
+    const sIds = url.searchParams.get('items');
+    if (!sIds) { return; }
+
+    this.editItems = [];
+    this.editItemSet.clear();
+    this.editGuid = undefined;
+    this.showEdit = true;
+    const ids = ItemHelper.deserializeQuery(sIds);
+    for (const id of ids) {
+      const item = this._dataService.itemIdMap.get(id);
+      if (item) {
+        this.addItem(item);
+      }
+    }
   }
 
   onBeforeFoldAdd(evt: CardFoldEvent): void {
@@ -199,6 +221,14 @@ export class ItemCollectionComponent {
     this.editGuid = undefined;
     this.showEdit = false;
     this.clearEditForm();
+  }
+
+  gotoCalculator(collection: IItemCollection, evt?: Event): void {
+    evt?.preventDefault();
+    evt?.stopImmediatePropagation();
+    const ids = ItemHelper.serializeQuery(collection.items);
+    const queryParams =  { items: ids };
+    void this._router.navigate(['/item/unlock-calculator'], { queryParams });
   }
 
   showEditCollection(collection: IItemCollection, evt?: Event): void {

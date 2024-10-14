@@ -112,6 +112,7 @@ export const routes: Routes = [
           { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
           { path: 'spirit/:guid', component: SpiritComponent },
           { path: 'spirit-tree/editor', component: SpiritTreeEditorComponent, title: title('Spirit Tree Editor') },
+          { path: 'spirit-tree/viewer', loadComponent: () => import('./components/spirit-tree/spirit-tree-viewer/spirit-tree-viewer.component').then(m => m.SpiritTreeViewerComponent), title: title('Spirit Tree Viewer') },
           { path: 'spirit-tree/:guid', component: SpiritTreeViewComponent, title: title('Spirit Tree') },
           { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
           { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },

@@ -1,0 +1,5 @@
+<div class="sky-flex scroll-x">
+  @for (tree of trees; track tree.guid) {
+    <app-spirit-tree [tree]="tree" [enableControls]="false" [forceNodeAction]="'emit'" [opaqueNodes]="true"></app-spirit-tree>
+  }
+</div>

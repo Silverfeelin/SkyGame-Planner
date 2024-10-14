@@ -4,6 +4,7 @@
     {
       "guid": "zewkN917oz",
       "name": "Home Space",
+      "imageUrl": "/assets/game/areas/aviary/home-720.webp",
       "mapData": { "position": [-478,415.75] },
       "mapShrines": [ "NKLJ5lCZiL" ],
       "connections": [
@@ -22,6 +23,7 @@
     {
       "guid": "oEnKoTrbCt",
       "name": "Sand Dunes",
+      "imageUrl": "/assets/game/areas/isle/dunes-720.webp",
       "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
       "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
       "mapShrines": [ "XjPXrh4ygg", "7qrYs-HaOu" ],
@@ -34,6 +36,7 @@
     {
       "guid": "LanOVr1JCo",
       "name": "Isle Temple Entrance",
+      "imageUrl": "/assets/game/areas/isle/temple-entrance-720.webp",
       "spirits": [ "bmYjIuJ6Qf", "Q5pn7wxwUD" ],
       "mapData": { "position": [-416.13,299.25] },
       "connections": [
@@ -45,6 +48,7 @@
     {
       "guid": "6MuptjUV8B",
       "name": "Isle Temple",
+      "imageUrl": "/assets/game/areas/isle/temple-720.webp",
       "mapShrines": [ "gZHTmFJ0_S" ],
       "mapData": { "position": [-398.13,305.5] },
       "connections": [
@@ -55,6 +59,7 @@
     {
       "guid": "hDN-ciwGc-",
       "name": "Floating Island",
+      "imageUrl": "/assets/game/areas/isle/island-720.webp",
       "spirits": [ "f3AD39Q2Il" ],
       "mapShrines": [ "s-TcDLSu2E" ],
       "mapData": { "position": [-408.75,322.5] },
@@ -67,6 +72,7 @@
     {
       "guid": "ht8PxRB-MY",
       "name": "Butterfly Cave",
+      "imageUrl": "/assets/game/areas/isle/butterfly-720.webp",
       "wingedLights": [ "vGCXUjMLfB" ],
       "mapData": { "position": [-405.13,321.5] },
       "connections": [
@@ -76,6 +82,7 @@
     {
       "guid": "Xr2ZiVSV7p",
       "name": "Cave of Prophecies",
+      "imageUrl": "/assets/game/areas/isle/prophecies-720.webp",
       "spirits": [ "DKFofCESGJ", "9Rgsos9xqE", "oIeqSdqyWu", "5DD07qmTqQ", "kH5B_M20Fl" ],
       "mapShrines": [ "GwJI638m4x" ],
       "mapData": { "position": [-404.25,349.38] },
@@ -91,6 +98,7 @@
     {
       "guid": "4fDcMVcdYD",
       "name": "Trial of Water",
+      "imageUrl": "/assets/game/areas/isle/water-720.webp",
       "wingedLights": [ "LOr9OqWHQv" ],
       "mapShrines": [ "aGV5eAoQGR" ],
       "mapData": { "position": [-396.63,336.25] },
@@ -101,6 +109,7 @@
     {
       "guid": "AC2AuDyHbM",
       "name": "Trial of Earth",
+      "imageUrl": "/assets/game/areas/isle/earth-720.webp",
       "wingedLights": [ "BPnMAjL286" ],
       "mapShrines": [ "elvKIlUjPQ" ],
       "mapData": { "position": [-388,345.63] },
@@ -111,6 +120,7 @@
     {
       "guid": "nvd-hpUD1f",
       "name": "Trial of Air",
+      "imageUrl": "/assets/game/areas/isle/air-720.webp",
       "wingedLights": [ "7IpuFMAIXe" ],
       "mapShrines": [ "xPzPNehmaS" ],
       "mapData": { "position": [-387.88,358.75] },
@@ -121,6 +131,7 @@
     {
       "guid": "lZkMYxUB8A",
       "name": "Trial of Fire",
+      "imageUrl": "/assets/game/areas/isle/fire-720.webp",
       "wingedLights": [ "89a0rCfJL-" ],
       "mapShrines": [ "5Xrgsi0oOP" ],
       "mapData": { "position": [-398.5,364.63] },
@@ -133,6 +144,7 @@
     {
       "guid": "Cmo9TPPpyH",
       "name": "Prairie Social Space",
+      "imageUrl": "/assets/game/areas/prairie/social-720.webp",
       "wingedLights": [ "fl1Z3bEx81" ],
       "mapShrines": [ "UZU8IWRFTQ" ],
       "mapData": { "position": [-410.38,238] },
@@ -143,6 +155,7 @@
     {
       "guid": "z3uQqa5KVZ",
       "name": "Butterfly Fields",
+      "imageUrl": "/assets/game/areas/prairie/butterfly-720.webp",
       "spirits": [ "ulvP8R6C6a", "5u3TXZON81" ],
       "wingedLights": [ "YmuL-2fCV7", "CuJ61KtkL2" ],
       "mapShrines": [ "4GI2OaP7Uw" ],
@@ -157,6 +170,7 @@
     {
       "guid": "V17jvM6lWL",
       "name": "Village Islands",
+      "imageUrl": "/assets/game/areas/prairie/islands-720.webp",
       "spirits": [ "48jm5EQzfU", "K3CIxcDSjq", "WFjSczlPTV", "R4ILdPamhd" ],
       "wingedLights": [ "_SJva8zUYc", "D22kvZx25W", "4lNlq0Raah" ],
       "mapShrines": [ "QDnkz_qE9i" ],
@@ -172,6 +186,7 @@
     {
       "guid": "bq6AFJ7avU",
       "name": "8-Player Puzzle Area",
+      "imageUrl": "/assets/game/areas/prairie/8p-720.webp",
       "spirits": [ "gtbbZnpLbt" ],
       "wingedLights": [ "Sc2aim9ro1" ],
       "mapShrines": [ "3_cCUrfyTX" ],
@@ -184,6 +199,7 @@
     {
       "guid": "JrcYJTvEhh",
       "name": "Koi Pond",
+      "imageUrl": "/assets/game/areas/prairie/koi-720.webp",
       "wingedLights": [ "vz0IBqoGta", "RPvwKSjUXE" ],
       "mapShrines": [ "ZjUhH0OVu1" ],
       "mapData": { "position": [-381.88,154.88] },
@@ -195,6 +211,7 @@
     {
       "guid": "LdFAYVlCli",
       "name": "Prairie Temple",
+      "imageUrl": "/assets/game/areas/prairie/temple-720.webp",
       "mapData": { "position": [-372.75,155.25] },
       "connections": [
         { "area": "JrcYJTvEhh" },
@@ -204,6 +221,7 @@
     {
       "guid": "BwpwRMfq1X",
       "name": "Prairie Caves",
+      "imageUrl": "/assets/game/areas/prairie/cave-720.webp",
       "spirits": [ "MyLI80npmW", "Q-N8n-0b8O" ],
       "wingedLights": [ "tGV1WQd1yk", "K-eoMvklId" ],
       "mapShrines": [ "jARCAHLdYn" ],
@@ -217,6 +235,7 @@
     {
       "guid": "HHem4xrBb6",
       "name": "Bird's Nest",
+      "imageUrl": "/assets/game/areas/prairie/nest-720.webp",
       "spirits": [ "KM1xzU9v5P", "jncJKA4IaM", "PYsLThJYPx" ],
       "wingedLights": [ "GNDWMxbvTD", "PBt-1vrXFA" ],
       "mapShrines": [ "vcq5hgkduA" ],
@@ -230,6 +249,7 @@
     {
       "guid": "W4xXNx8SSq",
       "name": "Sanctuary Island",
+      "imageUrl": "/assets/game/areas/prairie/sanctuary-720.webp",
       "spirits": [ "0IoADuWn1P", "8N9cC4SvzM", "IDEim-HNOZ", "uxtR1vVL8c", "z4xqXUkx_6", "jx7koL5guD", "MEw6did3kI" ],
       "wingedLights": [ "NIEbxjzi9w", "MzhGgNL7T0", "4Sh9Wwka_r", "saQGYqh8gS", "20LOTTTfr_", "qN0TPwjnam", "nHuasNjUrd", "cBNCxRNiPa" ],
       "mapShrines": [ "8ONaIKF9Ft" ],
@@ -242,6 +262,7 @@
     {
       "guid": "aUAXUdnBge",
       "name": "Prairie Peaks",
+      "imageUrl": "/assets/game/areas/prairie/peaks-720.webp",
       "spirits": [ "PN_V8C4WOq", "jh-fGKllmH", "6EywAKsW_z", "EMMZ8KSCjP", "vdv3KApSxB" ],
       "wingedLights": [ "JU8ya-Tjjm", "FzLNyBQ5ZA", "oRmSQSKfpm" ],
       "mapShrines": [ "__Hemxvej4" ],
@@ -255,6 +276,7 @@
     {
       "guid": "A2--yR5CJk",
       "name": "Forest Social Space",
+      "imageUrl": "/assets/game/areas/forest/social-720.webp",
       "mapShrines": [ "AKRMG2oyjD" ],
       "mapData": { "position": [-373.5,120.5] },
       "connections": [
@@ -266,6 +288,7 @@
     {
       "guid": "tU23ZgPP_g",
       "name": "Forest Clearing",
+      "imageUrl": "/assets/game/areas/forest/clearing-720.webp",
       "wingedLights": [ "0o9-mt5q1s" ],
       "mapShrines": [ "QgjhOZjQ-n" ],
       "mapData": { "position": [-366.19,117.44] },
@@ -278,6 +301,7 @@
     {
       "guid": "ZlV4HpsDGF",
       "name": "Rainy Forest",
+      "imageUrl": "/assets/game/areas/forest/rainy-720.webp",
       "spirits": [ "LwcCtbnGuF", "94UEgV7ic1", "RG-Z1xwway" ],
       "wingedLights": [ "zJCYOFxRNR" ],
       "mapData": { "position": [-347.69,103.75] },
@@ -290,6 +314,7 @@
     {
       "guid": "qVu1RHulPp",
       "name": "Forest Brook",
+      "imageUrl": "/assets/game/areas/forest/brook-720.webp",
       "spirits": [ "xbGBFC0rnu", "p-WdkJpGB5", "waSFuoNQsR", "lmydkMDQeP", "8OYabqG_jZ", "H30afxXKT1", "lE8DJQLcg5" ],
       "wingedLights": [ "E_vpwUyVcM", "5F7jGqG9xU", "irgdECMxtI", "Zv6jq5_IzP" ],
       "mapShrines": [ "l5pWa40d6g" ],
@@ -304,6 +329,7 @@
     {
       "guid": "L3F8Z9vbYs",
       "name": "Elevated Clearing",
+      "imageUrl": "/assets/game/areas/forest/elevated-720.webp",
       "wingedLights": [ "MpcHkLWwol", "DIK2gBZ_FA" ],
       "mapShrines": [ "NMH_NIElGP" ],
       "mapData": { "position": [-328.63,132.38] },
@@ -316,6 +342,7 @@
     {
       "guid": "FlcxMwdsU7",
       "name": "Underground Cavern",
+      "imageUrl": "/assets/game/areas/forest/cavern-720.webp",
       "spirits": [ "gcEV41jg3U" ],
       "wingedLights": [ "iaLuQ06e4T", "pBAU_FHObL", "3NFT1aCRpY", "xF6rfLZpef" ],
       "mapShrines": [ "ZzKKzgMfUM" ],
@@ -328,6 +355,7 @@
     {
       "guid": "iYC53UMrvL",
       "name": "Broken Bridge",
+      "imageUrl": "/assets/game/areas/forest/bridge-720.webp",
       "spirits": [ "L_0YoE4O8Z", "puj9z07ew0", "gF3qSnQNxx", "R_zBE7HaWV", "RUGuLBBPcg", "MZZ5RA0AMG", "NGSlfCM_wu" ],
       "wingedLights": [ "XlmWJaLSNr", "J1boiLeD4w", "uFoLDIogSU" ],
       "mapShrines": [ "-J5jHK37oF" ],
@@ -342,6 +370,7 @@
     {
       "guid": "-y0hYE5huj",
       "name": "Forest Temple",
+      "imageUrl": "/assets/game/areas/forest/temple-720.webp",
       "mapShrines": [ "doMFpBkpt9" ],
       "mapData": { "position": [-284,134.25] },
       "connections": [
@@ -352,6 +381,7 @@
     {
       "guid": "jY6mM3Io4T",
       "name": "Forest End",
+      "imageUrl": "/assets/game/areas/forest/end-720.webp",
       "wingedLights": [ "s_UlGNscIQ" ],
       "mapShrines": [ "nlqV1yGTCM" ],
       "mapData": { "position": [-275.13,166.25] },
@@ -363,6 +393,7 @@
     {
       "guid": "Ay0oFK8FSv",
       "name": "Assembly Treehouse",
+      "imageUrl": "/assets/game/areas/forest/treehouse-720.webp",
       "spirits": [ "cpwvdVEzKN" ],
       "wingedLights": [ "H7uvC7nb8U", "7_WXb7Uu8Z" ],
       "mapShrines": [ "8IFQ0Mi8Hk" ],
@@ -377,6 +408,7 @@
     {
       "guid": "_dSyX-Uwrh",
       "name": "Wind Paths",
+      "imageUrl": "/assets/game/areas/forest/wind-720.webp",
       "spirits": [ "FF8u1g9XI_", "9Wl9kwxoFk", "VQadeqBPEO", "_7-rIO21Ea", "hovmkrquOR" ],
       "wingedLights": [ "CZ99GFJVyE" ],
       "mapShrines": [ "m2ju90tQ5x" ],
@@ -397,6 +429,7 @@
     {
       "guid": "LUkrOYNjEy",
       "name": "Valley Social Space",
+      "imageUrl": "/assets/game/areas/valley/social-720.webp",
       "mapShrines": [ "-R9H4i_Jz3" ],
       "mapData": { "position": [-257.13,189.63] },
       "connections": [
@@ -407,6 +440,7 @@
     {
       "guid": "u3rc8C3sMb",
       "name": "Ice Rink",
+      "imageUrl": "/assets/game/areas/valley/rink-720.webp",
       "spirits": [ "4KCKJxR56G", "JROKFatVLC", "bHCSyFQ4u-", "9y_5scrYa9" ],
       "wingedLights": [ "5BM1uqQvM4", "vKEMuduC0F", "_rmaySa6NL" ],
       "mapShrines": [ "GKHfiJzwUw" ],
@@ -420,6 +454,7 @@
     {
       "guid": "iRWfJCMxFB",
       "name": "Citadel",
+      "imageUrl": "/assets/game/areas/valley/citadel-720.webp",
       "spirits": [ "yUp189PWVS", "CfXORyMFx4", "H5iKZChQIK" ],
       "wingedLights": [ "DjuNbgmKq5", "D9Z9c3mRDf" ],
       "mapShrines": [ "fog6ZHU6Mx" ],
@@ -432,6 +467,7 @@
     {
       "guid": "8Zn5GPbx1U",
       "name": "Sliding Race",
+      "imageUrl": "/assets/game/areas/valley/slide-720.webp",
       "wingedLights": [ "Tmg19lVERk" ],
       "mapShrines": [ "r2NNvf4jdl" ],
       "mapData": { "position": [-257.56,248.88] },
@@ -443,6 +479,7 @@
     {
       "guid": "uMoS_cHn0R",
       "name": "Flying Race",
+      "imageUrl": "/assets/game/areas/valley/fly-720.webp",
       "wingedLights": [ "sfDl46vj4O", "N6KMjaxez6" ],
       "mapShrines": [ "Aq4k2P-fVB" ],
       "mapData": { "position": [-238.5,254.19] },
@@ -454,6 +491,7 @@
     {
       "guid": "YoYzKZ6GY3",
       "name": "Race End",
+      "imageUrl": "/assets/game/areas/valley/end.webp",
       "wingedLights": [ "HqV6qmTkzQ" ],
       "mapData": { "position": [-261.5,291.88] },
       "connections": [
@@ -463,6 +501,7 @@
     {
       "guid": "GC4SmA2CUz",
       "name": "Coliseum",
+      "imageUrl": "/assets/game/areas/valley/coliseum-720.webp",
       "spirits": [ "OaAUJHNIjE", "IIt-zYJC2N", "fRtK3WFMm1", "CQJO8mQ0do", "20Xw7fuZWr", "g_lZ76kjbS", "XvcpNrqatq", "95RfXrjMx1" ],
       "wingedLights": [ "McAh-VzlJH" ],
       "mapShrines": [ "LXnirIMnYf" ],
@@ -475,6 +514,7 @@
     {
       "guid": "L1O2yEHfvX",
       "name": "Valley Temple",
+      "imageUrl": "/assets/game/areas/valley/temple-720.webp",
       "spirits": [ "CcOE42N9Mc" ],
       "wingedLights": [ "E-f38yRTaj" ],
       "mapData": { "position": [-240.38,291.88] },
@@ -486,6 +526,7 @@
     {
       "guid": "WZFTGjgurD",
       "name": "Village of Dreams",
+      "imageUrl": "/assets/game/areas/valley/village-720.webp",
       "spirits": [ "sj6YhQZQvM", "KhFZE8z0-I", "7tMB-HjDin", "Jd8rEzWHVg", "Ej3SZgZ2WL" ],
       "wingedLights": [ "U6oebtceIH", "xF36ISKLHe", "orOMQkGltm" ],
       "mapShrines": [ "9_0DXKlub6", "Lg9btBXFWr" ],
@@ -501,6 +542,7 @@
     {
       "guid": "7z8NtDXKrS",
       "name": "Hermit Valley",
+      "imageUrl": "/assets/game/areas/valley/hermit-720.webp",
       "wingedLights": [ "KFqwmitUni", "8_EY7L74TI" ],
       "mapShrines": [ "Nqlcq4Eqj5" ],
       "mapData": { "position": [-281.5,239.13] },
@@ -512,6 +554,7 @@
     {
       "guid": "M8mzMntElQ",
       "name": "Village Theatre",
+      "imageUrl": "/assets/game/areas/valley/theatre-720.webp",
       "spirits": [ "qSggZYj_x3", "4iotcmsn0K", "fEcI6neh6f", "KYhwsjTkp-", "S6KVcMgi-3" ],
       "wingedLights": [ "JRTI3BsjIZ" ],
       "mapShrines": [ "dssBJwnc5Z" ],
@@ -524,6 +567,7 @@
     {
       "guid": "3YSSmw01DR",
       "name": "Harmony Hall",
+      "imageUrl": "/assets/game/areas/valley/harmony-720.webp",
       "mapData": { "position": [-285.13,291.75] },
       "connections": [
         { "area": "M8mzMntElQ" },
@@ -533,13 +577,15 @@
     },
     {
       "guid": "C4ndigYE4Q",
-      "name": "AURORA Concert Coliseum"
+      "name": "AURORA Concert Coliseum",
+      "imageUrl": "/assets/game/areas/valley/aurora-720.webp"
     },
     // #endregion
     // #region Wasteland
     {
       "guid": "R4I-lYbUUO",
       "name": "Wasteland Social Space",
+      "imageUrl": "/assets/game/areas/wasteland/social-720.webp",
       "mapShrines": [ "EaNImb7KpI" ],
       "mapData": { "position": [-283,339.25] },
       "connections": [
@@ -552,6 +598,7 @@
     {
       "guid": "LNcVZMfuWm",
       "name": "Switch Secret Area",
+      "imageUrl": "/assets/game/areas/wasteland/switch-720.webp",
       "mapData": { "position": [-279.63,339.06] },
       "connections": [
         { "area": "oEnKoTrbCt" },
@@ -566,6 +613,7 @@
     {
       "guid": "4Vw0MHl11q",
       "name": "Broken Temple",
+      "imageUrl": "/assets/game/areas/wasteland/broken-720.webp",
       "spirits": [ "TqswdiTmEC", "k8nqBtLJ0R" ],
       "wingedLights": [ "M_ouc0fx7z", "-jaWbsOO-B" ],
       "mapShrines": [ "M8hQkhleyp" ],
@@ -578,6 +626,7 @@
     {
       "guid": "CCmW2Ad_v_",
       "name": "Graveyard",
+      "imageUrl": "/assets/game/areas/wasteland/graveyard-720.webp",
       "spirits": [ "_4VyRWxD3V", "trJkBr3myf", "eToUA1mSjz", "LO75aDy9Zc", "OJECJaFI5p" ],
       "wingedLights": [ "cfkB_RA0cA", "F-YgRDMZyG", "Y3PENqw0Mj", "lL0L9y28hd", "arkcy1Y5HK", "NmYlVIsugI" ],
       "mapShrines": [ "WlpStWBJaD" ],
@@ -591,6 +640,7 @@
     {
       "guid": "jjiMqCABVw",
       "name": "Crab Fields",
+      "imageUrl": "/assets/game/areas/wasteland/crabs-720.webp",
       "spirits": [ "6GO0ISasq7", "tZG5hNcINX" ],
       "wingedLights": [ "pZ5N0156oQ", "U8Bo3YBBh2", "rSQzx1yNcr" ],
       "mapShrines": [ "y5INBIKCXK" ],
@@ -603,6 +653,7 @@
     {
       "guid": "jP2N7n1mcw",
       "name": "Battlefield",
+      "imageUrl": "/assets/game/areas/wasteland/battlefield-720.webp",
       "spirits": [ "nwpDbbbWcw" ],
       "wingedLights": [ "3rn0JHgV53", "MVmgO5kOUE" ],
       "mapShrines": [ "XCCgbwMp3Y" ],
@@ -616,6 +667,7 @@
     {
       "guid": "9kF2UIDK2N",
       "name": "Wasteland Temple",
+      "imageUrl": "/assets/game/areas/wasteland/temple-720.webp",
       "wingedLights": [ "NtcClN4SsY" ],
       "mapShrines": [ "78BXBDmd2d" ],
       "mapData": { "position": [-269,392.75] },
@@ -626,6 +678,7 @@
     {
       "guid": "xr7mTSgK1O",
       "name": "Forgotten Ark",
+      "imageUrl": "/assets/game/areas/wasteland/ark-720.webp",
       "spirits": [ "ZomY9nil8V", "HphxLKhDBZ", "kQiNS82DDY", "OaysgoHcZI", "UJVa4nb2nn", "Be41CnHkEI", "hgjklF3nQI" ],
       "wingedLights": [ "1zsvpsvviY", "wtWGz0QLVx" ],
       "mapShrines": [ "rULgp7ynZ-" ],
@@ -638,6 +691,7 @@
     {
       "guid": "fng8QLVMr1",
       "name": "Treasure Reef",
+      "imageUrl": "/assets/game/areas/wasteland/reef-720.webp",
       "spirits": [ "WFqMqmjVv9", "4gwH1Tn9he", "aVOtIknTMO", "zVs_gAo_wy", "gTIay-wjmN" ],
       "wingedLights": [ "ij47DZ1EJi", "LoX2Z_gAeA" ],
       "mapShrines": [ "1RjdboXv9j" ],
@@ -650,6 +704,7 @@
     {
       "guid": "QroH22BPGJ",
       "name": "Abyss Depths",
+      "imageUrl": "/assets/game/areas/wasteland/depths.webp",
       "mapData": { "position": [-373.25,419] },
       "connections": [
         { "area": "fng8QLVMr1" },
@@ -660,6 +715,7 @@
     {
       "guid": "QM7Kuv1Ekg",
       "name": "Vault Social Space",
+      "imageUrl": "/assets/game/areas/vault/social-720.webp",
       "wingedLights": ["r9CmlnAmRm" ],
       "mapData": { "position": [-236.13,367] },
       "connections": [
@@ -672,6 +728,7 @@
     {
       "guid": "wKZdWMMIWa",
       "name": "Vault Elevator",
+      "imageUrl": "/assets/game/areas/vault/elevator-720.webp",
       "spirits": [ "_8CvQjUnQg", "CH6e-TQz6n" ],
       "mapShrines": [ "Mt6uDBigUP" ],
       "mapData": { "position": [-227.38,366.88] },
@@ -683,6 +740,7 @@
     {
       "guid": "KLweYQTEIp",
       "name": "Vault Second Floor",
+      "imageUrl": "/assets/game/areas/vault/second-720.webp",
       "spirits": [ "Im7m8syitV" ],
       "mapData": { "position": [-221,366.88] },
       "connections": [
@@ -692,6 +750,7 @@
     {
       "guid": "-xkmkbpRyN",
       "name": "Vault Third Floor",
+      "imageUrl": "/assets/game/areas/vault/third-720.webp",
       "spirits": [ "1OGD_H3a7X" ],
       "wingedLights": [ "Hn7mU7ktxt" ],
       "mapShrines": [ "9TfCpBgmXW" ],
@@ -703,6 +762,7 @@
     {
       "guid": "BxTngnB1PV",
       "name": "Vault Fourth Floor",
+      "imageUrl": "/assets/game/areas/vault/fourth-720.webp",
       "spirits": [ "HeJISF946a", "Gi75RcvXd0", "KZaVtTUdlR", "mZZ-MkZJ1x" ],
       "wingedLights": [ "Zzvpdwh0wl", "I-vGwH81iB" ],
       "mapShrines": [ "oxZXdByjCg" ],
@@ -714,6 +774,7 @@
     {
       "guid": "Zx40zFvrqG",
       "name": "Vault Fifth Floor",
+      "imageUrl": "/assets/game/areas/vault/fifth-720.webp",
       "wingedLights": [ "vP7uVXrDUu" ],
       "mapData": { "position": [-185.5,346.88] },
       "connections": [
@@ -723,6 +784,7 @@
     {
       "guid": "ZiqYHd176H",
       "name": "Vault Summit",
+      "imageUrl": "/assets/game/areas/vault/summit-720.webp",
       "wingedLights": [ "uiNKKn25L-" ],
       "mapShrines": [ "4jtpTFZ39o" ],
       "mapData": { "position": [-179.25,327.88] },
@@ -733,6 +795,7 @@
     {
       "guid": "HbKvg_BOyc",
       "name": "Vault Archives",
+      "imageUrl": "/assets/game/areas/vault/archive-720.webp",
       "spirits": [ "7EzWoLR1w4" ],
       "wingedLights": [ "W9fiK8mWQK", "4uUGCJEgq3" ],
       "mapShrines": [ "ioChKfj63j" ],
@@ -744,6 +807,7 @@
     {
       "guid": "wrHKGEg2Kc",
       "name": "Vault Collab Room",
+      "imageUrl": "/assets/game/areas/vault/collab-720.webp",
       "mapShrines": [ "eroCc1CGcC" ],
       "mapData": { "position": [-214,395.5] },
       "connections": [
@@ -757,6 +821,7 @@
     {
       "guid": "IrChmrOevd",
       "name": "Starlight Desert",
+      "imageUrl": "/assets/game/areas/vault/starlight-720.webp",
       "spirits": [ "HfafU7Pfui", "JOCCkr0TlW", "V7gj-cBqK1", "z5dtSO-gis", "l7zP8zUFHX" ],
       "wingedLights": [ "DFxZJcPENY", "Qz-2auzQan", "r_r5vLWj-6" ],
       "mapShrines": [ "AwpiTWfg3K" ],
@@ -771,6 +836,7 @@
     {
       "guid": "TenYOMK1pK",
       "name": "Starlight Desert Jar",
+      "imageUrl": "/assets/game/areas/vault/jar-720.webp",
       "spirits": [ "iweb5Sk2Xk" ],
       "mapData": { "position": [-196.75,448.5] },
       "connections": [
@@ -780,6 +846,7 @@
     {
       "guid": "S3Zd-sgxHw",
       "name": "Jellyfish Beach",
+      "imageUrl": "/assets/game/areas/vault/jellyfish-720.webp",
       "spirits": [ "dEQ1GVQOx7" ],
       "mapData": { "position": [-193.25,428.75] },
       "connections": [
@@ -789,6 +856,7 @@
     {
       "guid": "p3vJrJBcfy",
       "name": "Starlight Dunes",
+      "imageUrl": "/assets/game/areas/vault/dunes-720.webp",
       "mapData": { "position": [-191,455.5] },
       "connections": [
         { "area": "IrChmrOevd" },
@@ -796,11 +864,13 @@
     },
     {
       "guid": "4FfXQeSNni",
-      "name": "Dreams of a Little Friend"
+      "name": "Dreams of a Little Friend",
+      "imageUrl": "/assets/game/areas/vault/dreams-720.webp"
     },
     {
       "guid": "schNrmq0ID",
       "name": "Office",
+      "imageUrl": "/assets/game/areas/vault/secret-720.webp",
       "spirits": [ "ExkE9a7QJ0", "Ayoc2XvMTy", "izKBXplld6", "cpTFBZ-im4", "bQCZEuAuZe", "MKdRGA66hC", "HmibyU0UEG", "GUwL23XDTb" ],
       "mapShrines": [ "JSPUuuqHRw" ],
       "mapData": { "position": [-242.25,365.06] },
@@ -819,6 +889,7 @@
     {
       "guid": "XG3_0khlw9",
       "name": "Repository of Refuge",
+      "imageUrl": "/assets/game/areas/vault/refuge-720.webp",
       "spirits": [ "ZGSnOxK9gb", "O1olUBrkJ5", "V43JRVL_QD", "DAG_zfwis5", "zq6qjCsQ_f" ],
       "wingedLights": [ "_RSC0jqGCh" ],
       "mapShrines": [ "l0yhcYX1ll" ],
@@ -830,10 +901,16 @@
     {
       "guid": "aBL5eqTv4R",
       "name": "Crescent Oasis",
+      "imageUrl": "/assets/game/areas/vault/crescent-720.webp",
       "spirits": [ "v-bxcGqGaa", "gyEBXKOIwY", "4h9FByzo7y", "wyFKAWN45l", "mf7NyGfeDI" ],
       "wingedLights": [ "ZDqubWevQx", "HdrkYqqX3_", "fWLJNq1H3v" ],
       "mapShrines": [ "Jgcu1-kVCL" ],
       "mapData": { "position": [-176.5,413.38] }
+    },
+    {
+      "guid": "QnPzVZ6PyJ",
+      "name": "Hidden Glade (Memory)",
+      "imageUrl": "/assets/game/areas/vault/glade-720.webp"
     },
     {
       "guid": "2YCd4ckP6e",
@@ -847,6 +924,7 @@
     {
       "guid": "Mhbh0g9OdG",
       "name": "Aviary Village",
+      "imageUrl": "/assets/game/areas/aviary/village-720.webp",
       "spirits": [ "0Ab0zVwBa0", "53sRWu-bTI", "yRKMk_Xw4G", "118ghc8_me", "iz40tYocEn" ],
       "mapShrines": [ "HPtacUHQMo" ],
       "mapData": { "position": [-460.38,365.5] },
@@ -868,6 +946,7 @@
     {
       "guid": "5kw7myrDPU",
       "name": "Aviary Portals",
+      "imageUrl": "/assets/game/areas/aviary/portals-720.webp",
       "mapData": { "position": [-449.56,366] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
@@ -901,6 +980,7 @@
     {
       "guid": "TUyoacebPE",
       "name": "Aviary Spell Shop",
+      "imageUrl": "/assets/game/areas/aviary/spell-720.webp",
       "mapData": { "position": [-458.38,374] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
@@ -909,6 +989,7 @@
     {
       "guid": "rTIqNgvA4N",
       "name": "Aviary Shopping Area",
+      "imageUrl": "/assets/game/areas/aviary/shops-720.webp",
       "mapData": { "position": [-453.38,362.13] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
@@ -918,6 +999,7 @@
     {
       "guid": "tP8ZaD5Qwf",
       "name": "Nesting Workshop",
+      "imageUrl": "/assets/game/areas/aviary/workshop-720.webp",
       "spirits": [ "ksZ0eZfHEZ", "L6Rqyh4Xi9", "r5FVxLgLrp", "Ha10I4vIO7", "8p_1kKYu7_" ],
       "mapData": { "position": [-455.63,369] },
       "connections": [
@@ -927,6 +1009,7 @@
     {
       "guid": "pNNbszCpyA",
       "name": "Nests",
+      "imageUrl": "/assets/game/areas/aviary/nest-720.webp",
       "mapData": { "position": [-460.44,353.25] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
@@ -935,6 +1018,7 @@
     {
       "guid": "ftFow3ue0Z",
       "name": "Village Cafe",
+      "imageUrl": "/assets/game/areas/aviary/cafe-720.webp",
       "mapData": { "position": [-453.38,367.31] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
@@ -943,6 +1027,7 @@
     {
       "guid": "quSVk1cT4l",
       "name": "Concert Hall",
+      "imageUrl": "/assets/game/areas/aviary/concert-720.webp",
       "spirits": [
         "iCVOo-FNbd",
         "o4ZuAa_Q8u",
@@ -961,6 +1046,7 @@
     {
       "guid": "vWlW190-P1",
       "name": "Eden Entrance",
+      "imageUrl": "/assets/game/areas/eden/entrance-720.webp",
       "mapShrines": [ "QBGEZURf1h" ],
       "mapData": { "position": [-193.25,275.75] },
       "connections": [
@@ -970,6 +1056,7 @@
     {
       "guid": "aXSrTx3fzL",
       "name": "Eden First Area",
+      "imageUrl": "/assets/game/areas/eden/first-720.webp",
       "wingedLights": [ "DSTxmpHUbB" ],
       "mapData": { "position": [-183.25,266] },
       "connections": [
@@ -980,6 +1067,7 @@
     {
       "guid": "xYRxil02Bm",
       "name": "Eden Second Area (rocks)",
+      "imageUrl": "/assets/game/areas/eden/rocks-720.webp",
       "mapData": { "position": [-169.75,245.5] },
       "connections": [
         { "area": "aXSrTx3fzL" },
@@ -989,6 +1077,7 @@
     {
       "guid": "49_QOAzf20",
       "name": "Eden Third Area (pipes)",
+      "imageUrl": "/assets/game/areas/eden/pipes-720.webp",
       "mapShrines": [ "NqwRQmN5QP" ],
       "mapData": { "position": [-150,253.38] },
       "connections": [
@@ -999,6 +1088,7 @@
     {
       "guid": "c84Uxu50_p",
       "name": "Eden Fourth Area (rocks and krill)",
+      "imageUrl": "/assets/game/areas/eden/krill-720.webp",
       "wingedLights": [ "1kVW4x7nYj", "kxJmOLwH6e", "3zT-KHGHA_", "ahUFYVXgT8", "NYSbSHTslP", "uqOdibxRjD", "WulN9av6-P", "wyDIoyrZbw", "ng2YT7SXkx" ],
       "mapData": { "position": [-133.38,258.63] },
       "connections": [
@@ -1009,6 +1099,7 @@
     {
       "guid": "1-S3ZsNdV0",
       "name": "Point of No Return",
+      "imageUrl": "/assets/game/areas/eden/return-720.webp",
       "mapData": { "position": [-109,265.25] },
       "connections": [
         { "area": "c84Uxu50_p" },
@@ -1018,6 +1109,7 @@
     {
       "guid": "3-YDmI4uL8",
       "name": "Ascent",
+      "imageUrl": "/assets/game/areas/eden/ascent-720.webp",
       "mapShrines": [ "9SpZphlSnX" ],
       "mapData": { "position": [-66.5,263.75] },
       "connections": [
@@ -1027,6 +1119,7 @@
     {
       "guid": "Ub5s1RiDA1",
       "name": "Orbit",
+      "imageUrl": "/assets/game/areas/eden/orbit-720.webp",
       "spirits": [ "l8tl0mHCWH", "iu6tmCPpex", "aj2x9H8ECy", "NgLbFXaB4z", "JQR4EGE6io", "NLbS2a-y2u" ],
       "wingedLights": [ "DvYGWvjeOC" ],
       "mapShrines": [ "qaA1pBOjjn" ],

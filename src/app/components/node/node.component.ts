@@ -156,21 +156,7 @@ export class NodeComponent implements OnChanges {
 
   tryCopyDebug(event: Event, node: INode): boolean {
     if (!this._debug.copyNode) { return false; }
-    event.stopImmediatePropagation();
-    event.preventDefault();
-    const data = {
-      nw: !!node.nw,
-      n: !!node.n,
-      ne: !!node.ne,
-      item: node.item?.guid,
-      c: node.c,
-      h: node.h,
-      sc: node.sc,
-      sh: node.sh,
-      ac: node.ac,
-      ec: node.ec,
-    };
-    navigator.clipboard.writeText(JSON.stringify(data));
+    navigator.clipboard.writeText(node.guid);
     return true;
   }
 }
