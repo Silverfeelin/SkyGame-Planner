@@ -139,12 +139,17 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
     this.itemCost = CostHelper.create();
     this.iapPrice = 0;
     const nodes = new Set<INode>();
+    const handledIaps = new Set<string>();
     this.items.forEach(item => {
       const cost = this.ongoingItemSources.lists[item.guid];
       if (cost) { CostHelper.add(this.itemCost, cost); }
 
       const iap = this.ongoingItemSources.iaps[item.guid];
-      if (iap) { this.iapPrice += iap.price || 0;  }
+      if (iap) {
+        if (handledIaps.has(iap.guid)) { return; }
+        this.iapPrice += iap.price || 0;
+        handledIaps.add(iap.guid);
+      }
 
       const node = this.ongoingItemSources.nodes[item.guid];
       if (node) { nodes.add(node); }
