@@ -1,15 +1,14 @@
 [
-  {
-    "id": 2328,
-    "guid": "v4Pdy5KCJ4",
-    "type": "Cape",
-    "name": "Moominmamma's Masterpiece Cape",
-    "closetHide": true,
-    "group": "Limited",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png",
-    "order": 770
-  },
+  // {
+  //   "id": 2328,
+  //   "guid": "v4Pdy5KCJ4",
+  //   "type": "Cape",
+  //   "name": "Moominmamma's Masterpiece Cape",
+  //   "group": "Limited",
+  //   "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
+  //   "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png",
+  //   "order": 770
+  // },
   {
     "id": 2329,
     "guid": "Nf94RnTzOh",
@@ -77,7 +76,7 @@
     "name": "Read",
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png",
-    "order": 10000
+    "order": 1201
   },
   {
     "id": 2336,
@@ -169,7 +168,7 @@
   {
     "id": 2346,
     "guid": "5_qdhtwFCV",
-    "type": "Furniture",
+    "type": "Prop",
     "name": "Moomin Storybook Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Moomin-Family-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Moomin-Family-Painting-Prop.png",
@@ -206,7 +205,7 @@
   {
     "id": 2351,
     "guid": "f3kWHEYu3f",
-    "type": "Furniture",
+    "type": "Prop",
     "name": "Comfort Of Kindness Painting",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Comfort-of-Kindness-Painting-Prop-icon.png",
@@ -464,7 +463,7 @@
   {
     "id": 2366,
     "guid": "6bG5dv3UqV",
-    "type": "Furniture",
+    "type": "Prop",
     "name": "Inspiration Of Inclusion Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Inspiration-of-Inclusion-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Inspiration-of-Inclusion-Painting-Prop.png",
