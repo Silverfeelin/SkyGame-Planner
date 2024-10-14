@@ -15,6 +15,7 @@
         <div class="container">
           {{ selectedItem.name }}
           @if (selectedItem.level) { <span class="c-accent">(Level {{ selectedItem.level }})</span> }
+          <button type="button" (click)="promptItemCode()">Item code</button>
         </div>
         <div class="container grid grid-1">
           <!-- Node connections -->

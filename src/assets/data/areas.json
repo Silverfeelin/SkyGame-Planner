@@ -815,6 +815,7 @@
         { "area": "GC4SmA2CUz" },
         { "area": "IrChmrOevd" },
         { "area": "aBL5eqTv4R" },
+        { "area": "2YCd4ckP6e" },
       ]
     },
     {
@@ -910,6 +911,13 @@
       "guid": "QnPzVZ6PyJ",
       "name": "Hidden Glade (Memory)",
       "imageUrl": "/assets/game/areas/vault/glade-720.webp"
+    },
+    {
+      "guid": "2YCd4ckP6e",
+      "name": "Moominvalley",
+      "spirits": [ "vW9xp55w6t", "9RTxyGCw9v", "jt2df_0kso", "_ps0VJ53As", "RRsQtrxvRq" ],
+      "wingedLights": [ "bqAgpNc9km" ],
+      "mapData": { "position": [-148.69,422.5] }
     },
     // #endregion
     // #region Aviary

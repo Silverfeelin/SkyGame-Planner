@@ -467,7 +467,7 @@ export class DataService {
     const emoteOrders: { [key: string]: number } = {};
     const emotes: Array<IItem> = [];
     this.itemConfig.items.forEach(item => {
-      if (item.id) {
+      if (typeof(item.id) === 'number') {
         if (ids.has(item.id)) {
           console.error('Duplicate item ID.', item.id, item);
           shouldWarn = true;

@@ -645,6 +645,16 @@
   { "guid": "XtmRITBo-6", "item": "pronMA7m25", "n": "mQ2jU8yZwP" },
   { "guid": "mQ2jU8yZwP", "item": "kvggIFZaT3" },
   // #endregion
+  // #region Moomin Guide
+  { "guid": "8_QAGF_cuK", "item": "AOzrztb94H", "n": "6fDptytQp4", "ne": "YlEndiNM7o" },
+  { "guid": "YlEndiNM7o", "item": "1uyZfKjJg5", "n": "K8tJUE8H_e" },
+  { "guid": "K8tJUE8H_e", "item": "dkfdFCaemY", "n": "3d_lsspaRe", "sh": 1 },
+  { "guid": "3d_lsspaRe", "item": "8JjPl9WZDJ", "n": "hkcc7q0eXn", "sh": 1 },
+  { "guid": "hkcc7q0eXn", "item": "Rb06PBDZi5", "sh": 2 },
+  { "guid": "6fDptytQp4", "item": "M4jG56FhYY", "nw": "WSBJ992gbF" },
+  { "guid": "WSBJ992gbF", "item": "zM4WRnZZPv", "n": "21cqactLSD" },
+  { "guid": "21cqactLSD", "item": "CKSp0pSfZu", "h": 3 },
+  // #endregion
   // #endregion
 
   // #region Gratitude
@@ -3514,6 +3524,56 @@
   { "guid": "5Zp6CYDD9F", "item": "J_UEHvMcbs", "c": 85 },
   { "guid": "3OG2FPAiik", "item": "xFNf_ULNXD" },
   { "guid": "9g-p0fPjOg", "item": "Q393hmCmPi", "c": 200 },
+  // #endregion
+  // #endregion
+  // #region Moomin
+  // #region Comfort of Kindness
+  { "guid": "sqfs-Smy_z", "item": "GXyIn3ZMw2", "sc": 6, "nw": "ntoAn7b8Aj", "n": "xhUp9bP9wD" },
+  { "guid": "ntoAn7b8Aj", "item": "f3kWHEYu3f" },
+  { "guid": "xhUp9bP9wD", "item": "n5NfIqlzgz", "sc": 16, "nw": "IUv03484by", "n": "WvbOZtqraV" },
+  { "guid": "IUv03484by", "item": "GXNGA_E0UO" },
+  { "guid": "WvbOZtqraV", "item": "S8fCTIosz2", "sc": 20, "nw": "fmO7BnK1kx", "n": "KCYfZa7u7W" },
+  { "guid": "fmO7BnK1kx", "item": "EVnMuKcac-" },
+  { "guid": "KCYfZa7u7W", "item": "2ESHL6O158", "sc": 24, "nw": "aPaMCwloyd", "n": "apM0OeAdxD" },
+  { "guid": "aPaMCwloyd", "item": "w-_ykThWoP" },
+  { "guid": "apM0OeAdxD", "item": "18nPSGCFpj", "sc": 32, "nw": "NRoZ-1wQoO", "n": "rrf2ABWPaO" },
+  { "guid": "NRoZ-1wQoO", "item": "peTX1vqsmy" },
+  { "guid": "rrf2ABWPaO", "item": "MFb2xuywCB", "sc": 3 },
+  // #endregion
+  // #region Sense of Self
+  { "guid": "lhh6l-Y3CP", "item": "CQfjHlF9f7", "sc": 12, "nw": "ZHiLYXuH3t", "n": "2KCKrJCNMl" },
+  { "guid": "ZHiLYXuH3t", "item": "aAWZQ1xhT8" },
+  { "guid": "2KCKrJCNMl", "item": "pdXfxyu6cD", "sc": 18, "nw": "YnSspRnqbR", "n": "at4VgiNrXI" },
+  { "guid": "YnSspRnqbR", "item": "8TOJMxpoxR" },
+  { "guid": "at4VgiNrXI", "item": "9deSvOkpV9", "sc": 24, "nw": "QhQ3yDuhhD", "n": "-7TA3PcRcK" },
+  { "guid": "QhQ3yDuhhD", "item": "uuHMCNHYbB" },
+  { "guid": "-7TA3PcRcK", "item": "vkaAeAeue1", "sc": 28, "nw": "tbSHE1g9u3", "n": "AmeLSvA2dK" },
+  { "guid": "tbSHE1g9u3", "item": "jGK2Apyfpu" },
+  { "guid": "AmeLSvA2dK", "item": "1bWaD687Vv", "sc": 3 },
+  // #endregion
+  // #region Spirit of Adventure
+  { "guid": "f8FG5D-DwV", "item": "WaDDSPDCOw", "sc": 12, "nw": "4L2tKQl8eT", "n": "xvTg24Iwar" },
+  { "guid": "4L2tKQl8eT", "item": "foQGge-GsM" },
+  { "guid": "xvTg24Iwar", "item": "iKNPyHiACK", "sc": 20, "nw": "lDAHhqfMW7", "n": "_vrQxjRIn0" },
+  { "guid": "lDAHhqfMW7", "item": "VfvFuZmoLz" },
+  { "guid": "_vrQxjRIn0", "item": "5LXXsA2gCP", "sc": 26, "nw": "s8j4qiAnez", "n": "YcYsJIri_I" },
+  { "guid": "s8j4qiAnez", "item": "Ykrq48VQQU" },
+  { "guid": "YcYsJIri_I", "item": "pAKXJ90_bk", "sc": 38, "nw": "o-8scQGkpu", "n": "pnStEriIBV" },
+  { "guid": "o-8scQGkpu", "item": "G2GJzOL2oh" },
+  { "guid": "pnStEriIBV", "item": "oa3Z-BSrJ8", "sc": 3 },
+  // #endregion
+  // #region Inspiration of Inclusion
+  { "guid": "ylgBy-RCz9", "item": "GfB9sARlNC", "sc": 12, "nw": "y5cBorC481", "n": "QQW0H-_PZN" },
+  { "guid": "y5cBorC481", "item": "DXeRDEGTEI" },
+  { "guid": "QQW0H-_PZN", "item": "p3i55rooED", "sc": 16, "nw": "6RaWYAPLiB", "n": "eozbJysh9N" },
+  { "guid": "6RaWYAPLiB", "item": "r6dIe6awpx" },
+  { "guid": "eozbJysh9N", "item": "6bG5dv3UqV", "sc": 20, "nw": "z7JOqOxaWq", "n": "DRuuMPRTX-" },
+  { "guid": "z7JOqOxaWq", "item": "gEf9ZPeUUE" },
+  { "guid": "DRuuMPRTX-", "item": "5URe2xiBwM", "sc": 26, "nw": "Ihz-WXy9rC", "n": "iLvfr6_kiA" },
+  { "guid": "Ihz-WXy9rC", "item": "-MNQs3xBoB" },
+  { "guid": "iLvfr6_kiA", "item": "UIIvyJ2_pe", "sc": 36, "nw": "q8pk29q4Oq", "n": "qdXH2GhOS8" },
+  { "guid": "q8pk29q4Oq", "item": "kXOalX_A7X" },
+  { "guid": "qdXH2GhOS8", "item": "U4pzvXQBH-", "sc": 3 },
   // #endregion
   // #endregion
 ]

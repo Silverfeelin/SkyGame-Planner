@@ -18,6 +18,7 @@
       </h1>
     </div>
     <div class="sky-card-body">
+      <!-- Navigation -->
       <div class="sky-flex flex-wrap">
         <a class="button" [routerLink]="['/season', season.guid]">
           <mat-icon class="menu-icon">arrow_back</mat-icon>
@@ -27,6 +28,16 @@
           Currencies
         </a>
       </div>
+      <!-- Draft -->
+      @if (season.draft) {
+        <div class="container mt">
+          <mat-icon class="menu-icon">warning</mat-icon>
+          <span class="menu-label">
+            This data has not yet been checked on the live version of Sky. Data may be incomplete or inaccurate.
+          </span>
+        </div>
+      }
+      <!-- Input -->
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">
         <b>Settings</b>
         <div>

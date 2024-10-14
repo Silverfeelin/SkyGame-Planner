@@ -616,6 +616,13 @@
       "mapData": { "position": [-172.63,411], "videoUrl": "Vault/14.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Crescent_Oasis" }
     },
+    // Moominvalley
+    {
+      "guid": "bqAgpNc9km",
+      "description": "In the distant gazebo in Moominvalley.",
+      "mapData": { "position": [-148.69,422.5] },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Moominvalley" }
+    },
     // Archives
     {
       "guid": "W9fiK8mWQK",
