@@ -116,8 +116,8 @@
     "name": "Moomintroll Accessory Set",
     "price": 11.99,
     "items": [
-      "3gb3myYbBB",
-      "JIMbTWase4"
+      "JIMbTWase4",
+      "3gb3myYbBB"
     ]
   },
   {
@@ -127,6 +127,14 @@
     "items": [
       "Ft002XdCr7",
       "VSxBtrwvtQ"
+    ]
+  },
+  {
+    "guid": "kt-T4IhZbC",
+    "name": "Pointed Snufkin Hat",
+    "price": 4.99,
+    "items": [
+      "-EBoN4AWqQ"
     ]
   },
   // #endregion
