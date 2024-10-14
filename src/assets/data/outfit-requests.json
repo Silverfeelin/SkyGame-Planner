@@ -40,7 +40,8 @@
         { "guid": "lqLep0eUwU", "url": "/assets/game/background/nesting.webp", "filter": "brightness(1) blur(1px)" },
         { "guid": "MzSDSLN1EA", "url": "/assets/game/background/color2024.webp", "filter": "brightness(1) blur(1px)" },
         { "guid": "bxhtv3KWfR", "url": "/assets/game/background/aurora.webp", "filter": "brightness(1) blur(1px)" },
-        { "guid": "pN78-rG8UE", "url": "/assets/game/background/concert_hall.webp", "default": true, "filter": "brightness(1) blur(1px)" }
+        { "guid": "pN78-rG8UE", "url": "/assets/game/background/concert_hall.webp", "filter": "brightness(1) blur(1px)" },
+        { "guid": "kYtsHeX26P", "url": "/assets/game/background/moomin.webp", "default": true, "filter": "brightness(1) blur(1px)" }
       ]
     }
   }

@@ -4,13 +4,15 @@ export interface ITheme {
 }
 
 export const themes: Array<ITheme> = [
-  { name: 'Isle of Dawn', value: '' },
+  { name: 'Default', value: '' },
+  { name: 'Isle of Dawn', value: 'isle' },
   { name: 'Aviary Village', value: 'cozy' },
   { name: 'Prairie Peaks', value: 'peaks' },
   { name: 'Treasure Reef', value: 'reef' },
   { name: 'Village of Dreams', value: 'cold' },
   { name: 'Crescent Oasis', value: 'sandy' },
   { name: 'Days of Love', value: 'love' },
+  { name: 'Moomin', value: 'moomin' },
   { name: 'Void', value: 'dark' },
   { name: 'Surprise', value: 'surprise' }
 ]

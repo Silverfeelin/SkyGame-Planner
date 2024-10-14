@@ -1,9 +1,6 @@
 :root {
   --hue: 240;
   --saturation: 17%;
-}
-
-:root[data-theme=""] {
   --background: url(/assets/game/background/isle.webp);
 }
 
@@ -125,10 +122,15 @@
 
 // #region Themes
 
+:root[data-theme="isle"] {
+  --hue: 240;
+  --saturation: 17%;
+  --background: url(/assets/game/background/isle.webp);
+}
+
 :root[data-theme="cozy"] {
   --hue: 140;
   --saturation: 20%;
-
   --background: url(/assets/game/realms/Aviary.webp);
 }
 
@@ -136,43 +138,45 @@
   --hue: 330;
   --saturation: 17%;
   --color-highlight: #f55dd4;
-
   --background: url(/assets/game/background/peaks.webp);
 }
 
 :root[data-theme="reef"] {
   --hue: 230;
   --saturation: 17%;
-
   --background: url(/assets/game/background/reef.webp);
 }
 
 :root[data-theme="cold"] {
   --hue: 190;
   --saturation: 0%;
-
   --background: url(/assets/game/background/village.webp);
 }
 
 :root[data-theme="sandy"] {
   --hue: 25;
   --saturation: 40%;
-
   --background: url(/assets/game/background/oasis.webp);
 }
 
 :root[data-theme="dark"] {
   --hue: 240;
   --saturation: 0%;
-
   --background: url(/assets/game/background/void_jelly.webp);
 }
 
 :root[data-theme="love"] {
   --hue: 205;
   --saturation: 70%;
-
   --background: url(/assets/game/background/love2024.webp);
+}
+
+:root[data-theme=""], // Default theme
+:root[data-theme="moomin"] {
+  --hue: 205;
+  --saturation: 10%;
+  --color-highlight: hsl(205, 30%, 50%);
+  --background: url(/assets/game/background/moomin.webp);
 }
 
 // #endregion
