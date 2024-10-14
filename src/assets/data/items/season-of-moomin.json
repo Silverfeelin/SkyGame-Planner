@@ -469,7 +469,6 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Inspiration-of-Inclusion-Painting-Prop.png",
     "order": 663
   },
-
   {
     "id": 2387,
     "guid": "DXeRDEGTEI",
@@ -515,5 +514,5 @@
     "name": "Season Heart",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Season-of-Moomin-Seasonal-Heart-icon.png"
-  },
+  }
 ]
