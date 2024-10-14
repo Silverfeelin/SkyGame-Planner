@@ -971,6 +971,7 @@
     {
       "guid": "JdoOxvcKlP",
       "name": "Aviary Event Store",
+      "imageUrl": "/assets/game/areas/aviary/event-720.webp",
       "mapData": { "position": [-457.25,361.13] },
       "connections": [
         { "area": "Mhbh0g9OdG" },
