@@ -20,7 +20,7 @@
 <div class="mt">
   <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
     <div class="container mb">
-      <b>Current Rotation: {{ iRotation + 1 }}</b>
+      If you purchased props before the 0.27.0 patch (<app-date [date]="'2024-10-10'"></app-date>), please first mark those as purchased in the Legacy section below this list first!
     </div>
     <div class="sky-flex flex-wrap flex-align-start">
       @for (rotation of rotations; let i = $index; track i) {
@@ -29,7 +29,8 @@
             Rotation {{ i + 1 }}
           </b>
           <hr class="mt mb"/>
-          @for (r of rotation; track r.item) {
+          @for (r of rotation; track r.item; let j = $index) {
+            @if (j) { <hr/> }
             <div class="shop-rotation-grid">
               <div class="shop-rotation-icon">
                 <app-item-icon [item]="r.item!" [hoverGlow]="false" [subIcons]="['unlock']"></app-item-icon>
@@ -64,7 +65,7 @@
 </div>
 
 <div class="mt">
-  <app-card [foldable]="true" [folded]="false" [lazy]="false" [title]="'Workshop Props (legacy)'">
+  <app-card [foldable]="true" [folded]="true" [lazy]="true" [title]="'Workshop Props (legacy)'">
     <div class="container mb">
       Before patch 0.27.0 (<app-date [date]="'2024-10-10'"></app-date>), the Nesting Workshop sold some items in a quantity.<br/>
       If you purchased items before this patch, please mark them as purchased here.
