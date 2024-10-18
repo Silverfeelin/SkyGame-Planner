@@ -53,8 +53,8 @@ const rotations: IRotations = [
   [
     { guid: 'kjqZOiZkv8', h: 10 },
     { guid: 'rMl2rj9Qgv', c: 45 },
-    { guid: 'y1UR_gd2PM', c: 10 },
-    { guid: '9HXJ6pJTXa', c: 17 },
+    { guid: 'y1UR_gd2PM', c: 17 },
+    { guid: '9HXJ6pJTXa', c: 10 },
   ],
   [
     { guid: '2If2D4W1DF', h: 33 },
