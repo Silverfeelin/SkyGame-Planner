@@ -159,16 +159,26 @@ export class ShopNestingComponent {
   }
 
   addQuantity(itemGuid: string, quantity: number): void {
+    const item = this._dataService.guidMap.get(itemGuid) as IItem;
+    if (!item) { alert('Item not found, please report this!'); return; }
+
     this.data.unlocked[itemGuid] ??= { q: 0 };
     const data = this.data.unlocked[itemGuid]!;
     data.q = Math.max(0, (data.q || 0) + quantity);
 
-    if (data.q === 0 && data.lq === 0) {
+
+    if (!data.q && !data.lq) {
       delete this.data.unlocked[itemGuid];
+      item.unlocked = false;
       this._storageService.removeUnlocked(itemGuid);
+      this._eventService.itemToggled.next(item);
     } else {
-      data.cost = CostHelper.multiply(CostHelper.clone(this.rotationItemCostMap[itemGuid]), data.q);
-      this._storageService.addUnlocked(itemGuid);
+      data.cost = CostHelper.multiply(CostHelper.clone(this.rotationItemCostMap[itemGuid]), data.q ?? 0);
+      if (!item.unlocked) {
+        item.unlocked = true;
+        this._storageService.addUnlocked(itemGuid);
+        this._eventService.itemToggled.next(item);
+      }
     }
     this.saveData();
   }
