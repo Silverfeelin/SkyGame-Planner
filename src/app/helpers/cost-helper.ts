@@ -3,9 +3,19 @@ import { ICost } from "../interfaces/cost.interface";
 export class CostHelper {
   /** Creates a simple Cost object with all currencies set to 0. */
   static create(): ICost {
-    return {
-      c: 0, h: 0, sc: 0, sh: 0, ac: 0, ec: 0
-    }
+    return { c: 0, h: 0, sc: 0, sh: 0, ac: 0, ec: 0 };
+  }
+
+  /** Creates a clone of the provided cost. Other properties are ignored. */
+  static clone(value: ICost): ICost {
+    const cost: ICost = {};
+    if (typeof value.c === 'number') { cost.c = value.c; }
+    if (typeof value.h === 'number') { cost.h = value.h; }
+    if (typeof value.sc === 'number') { cost.sc = value.sc; }
+    if (typeof value.sh === 'number') { cost.sh = value.sh; }
+    if (typeof value.ac === 'number') { cost.ac = value.ac; }
+    if (typeof value.ec === 'number') { cost.ec = value.ec; }
+    return cost;
   }
 
   /** Returns true if there are no currencies <> 0.  */
@@ -54,6 +64,21 @@ export class CostHelper {
       if (value.ec) { target.ec = (target.ec || 0) - value.ec; }
     }
 
+    return target;
+  }
+
+  /** Multiplies costs in-place. Returns a reference to the first object. */
+  static multiply(target: ICost, factor: number | ICost): ICost {
+    const costFactor: ICost = typeof factor === 'number' ? {
+      c: factor, h: factor, sc: factor, sh: factor, ac: factor, ec: factor
+    } : factor;
+
+    if (target.c) target.c *= costFactor.c ?? 1;
+    if (target.h) target.h *= costFactor.h ?? 1;
+    if (target.sc) target.sc *= costFactor.sc ?? 1;
+    if (target.sh) target.sh *= costFactor.sh ?? 1;
+    if (target.ac) target.ac *= costFactor.ac ?? 1;
+    if (target.ec) target.ec *= costFactor.ec ?? 1;
     return target;
   }
 

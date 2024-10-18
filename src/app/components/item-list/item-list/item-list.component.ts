@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, Input, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { IItemList } from 'src/app/interfaces/item-list.interface';
-import { ItemListNodeComponent } from '../item-list-node/item-list-node.component';
+import { ItemListNodeClickEvent, ItemListNodeComponent } from '../item-list-node/item-list-node.component';
 
 @Component({
     selector: 'app-item-list',
@@ -15,4 +15,10 @@ export class ItemListComponent {
   @Input() highlightNode?: string;
   @Input() opaqueNodes?: boolean;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
+
+  @Output() readonly beforeNodeToggle = new EventEmitter<ItemListNodeClickEvent>();
+
+  onBeforeNodeToggle(event: ItemListNodeClickEvent): void {
+    this.beforeNodeToggle.emit(event);
+  }
 }

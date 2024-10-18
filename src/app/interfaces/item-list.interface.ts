@@ -18,6 +18,7 @@ export interface IItemList extends IGuid {
 export interface IItemListNode extends IGuid, ICost {
   /** Item unlocked through this node. */
   item: IItem;
+  quantity?: number;
 
   /// References ///
   itemList: IItemList;

@@ -5,6 +5,6 @@
 }
 <div class="sky-flex flex-wrap">
   @for (node of itemList.items; track node.guid) {
-    <app-item-list-node [node]="node" [highlight]="node.guid === highlightNode" [opaque]="opaqueNodes" [nodeOverlayTemplate]="nodeOverlayTemplate"></app-item-list-node>
+    <app-item-list-node [node]="node" (beforeToggle)="onBeforeNodeToggle($event)" [highlight]="node.guid === highlightNode" [opaque]="opaqueNodes" [nodeOverlayTemplate]="nodeOverlayTemplate"></app-item-list-node>
   }
 </div>

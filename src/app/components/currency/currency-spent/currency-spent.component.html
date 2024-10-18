@@ -156,6 +156,7 @@
               @if (node.item && (node.c || node.h || node.ac || node.ec || node.sc || node.sh)) {
                 <div>
                   <span>{{node.item.name}}</span>
+                  @if (node.quantity) { (x{{node.quantity}}) }
                   @if (node.c) { ({{node.c}}c) }
                   @if (node.h) { ({{node.h}}h) }
                   @if (node.ac) { ({{node.ac}}ac) }
@@ -177,6 +178,27 @@
               <div>
                 <span>{{iaps.name}}</span>
                 @if (iaps.price) { (${{iaps.price|number:'1.00'}}) }
+              </div>
+            }
+          </div>
+        </app-card>
+      </div>
+    }
+    @if (data.others?.length) {
+      <div class="mt">
+        <app-card [title]="'Other'" [foldable]="true" [folded]="false">
+          <div class="grid grid-4">
+            @for (other of data.others; track $index) {
+              <div>
+                <span>{{other.name}}</span>
+                @if (other.cost) {
+                  @if (other.cost.c) { ({{other.cost.c}}c) }
+                  @if (other.cost.h) { ({{other.cost.h}}h) }
+                  @if (other.cost.ac) { ({{other.cost.ac}}ac) }
+                  @if (other.cost.ec) { ({{other.cost.ec}}ec) }
+                  @if (other.cost.sc) { ({{other.cost.sc}}sc) }
+                  @if (other.cost.sh) { ({{other.cost.sh}}sh) }
+                }
               </div>
             }
           </div>

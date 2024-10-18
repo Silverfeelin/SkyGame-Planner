@@ -17,32 +17,80 @@
   </app-card>
 </div>
 
-  <div class="mt">
-    <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
-      <div class="sky-flex flex-wrap">
-        <div class="shop-rotation d-inline-block">
-          <b class="d-block mb-half">
-            Introduction
+<div class="mt">
+  <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
+    <div class="container mb">
+      If you purchased props before the 0.27.0 patch (<app-date [date]="'2024-10-10'"></app-date>), please first mark those as purchased in the Legacy section below this list first!
+    </div>
+    <div class="sky-flex flex-wrap flex-align-start">
+      @for (rotation of rotations; let i = $index; track i) {
+        <div class="shop-rotation d-inline-block" [class.highlight-attention]="i === iRotation">
+          <b class="shop-rotation-header">
+            Rotation {{ i + 1 }}
           </b>
-          <app-item-list [itemList]="freeItemList" [highlightNode]="highlightNode"></app-item-list>
+          <hr class="mt mb"/>
+          @for (r of rotation; track r.item; let j = $index) {
+            @if (j) { <hr/> }
+            <div class="shop-rotation-grid">
+              <div class="shop-rotation-icon">
+                <app-item-icon [item]="r.item!" [hoverGlow]="false" [subIcons]="['unlock']"></app-item-icon>
+              </div>
+              <div class="shop-rotation-name">
+                <span>{{ r.item!.name}}</span>
+              </div>
+              <div class="shop-rotation-amount">
+                <div class="button-group">
+                  <button type="button" (click)="addQuantity(r.item!.guid, -1)">-1</button>
+                  <button type="button" (click)="addQuantity(r.item!.guid, 1)">+1</button>
+                </div>
+                @let unlock = data.unlocked[r.item!.guid];
+                x {{ unlock?.q || 0 }}
+                @if (unlock?.lq) {
+                  <span class="c-accent"> (+{{ unlock!.lq }})</span>
+                }
+                @if (unlock?.q) {
+                  =
+                  <app-cost [cost]="unlock!.cost"></app-cost>
+                }
+              </div>
+              <div class="shop-rotation-cost">
+                <app-cost [cost]="r"></app-cost>
+              </div>
+            </div>
+          }
         </div>
-        @for (itemList of itemLists; let i = $index; track i) {
-          <div class="shop-rotation d-inline-block">
-            <b class="d-block mb-half" [class.highlight-attention]="i === iRotation">
-              Rotation {{ i + 1 }}
-            </b>
-            <app-item-list class="d-inline-block" [itemList]="itemList" [highlightNode]="highlightNode"></app-item-list>
-          </div>
-        }
-        <div class="shop-rotation d-inline-block">
+      }
+    </div>
+  </app-card>
+</div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [lazy]="true" [title]="'Workshop Props (legacy)'">
+    <div class="container mb">
+      Before patch 0.27.0 (<app-date [date]="'2024-10-10'"></app-date>), the Nesting Workshop sold some items in a quantity.<br/>
+      If you purchased items before this patch, please mark them as purchased here.
+    </div>
+    <div class="sky-flex flex-wrap">
+      <div class="shop-rotation d-inline-block">
+        <b class="d-block mb-half">
+          Introduction
+        </b>
+        <app-item-list [itemList]="legacyFreeItemList" [highlightNode]="highlightNode" (beforeNodeToggle)="onBeforeLegacy($event)"></app-item-list>
+      </div>
+      @for (itemList of itemLists; let i = $index; track i) {
+        <div class="shop-rotation d-inline-block" [class.highlight-attention]="i === iRotation">
           <b class="d-block mb-half">
-            Corrections
+            Rotation {{ i + 1 }}
           </b>
-          <app-item-list [itemList]="correctionItemList" [highlightNode]="highlightNode"></app-item-list>
+          <app-item-list class="d-inline-block" [itemList]="itemList" [highlightNode]="highlightNode" (beforeNodeToggle)="onBeforeLegacy($event)"></app-item-list>
         </div>
+      }
+      <div class="shop-rotation d-inline-block">
+        <b class="d-block mb-half">
+          Corrections
+        </b>
+        <app-item-list [itemList]="legacyCorrectionItemList" [highlightNode]="highlightNode" (beforeNodeToggle)="onBeforeLegacy($event)"></app-item-list>
       </div>
-      <div class="container mt">
-        <app-cost [cost]="cost" [remaining]="remainingCost"></app-cost>
-      </div>
-    </app-card>
-  </div>
+    </div>
+  </app-card>
+</div>

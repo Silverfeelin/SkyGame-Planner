@@ -10,11 +10,17 @@ import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { ISeason } from '@app/interfaces/season.interface';
 import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
-import { NodeHelper } from '@app/helpers/node-helper';
 import { DecimalPipe, NgTemplateOutlet } from '@angular/common';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { StorageService } from '@app/services/storage.service';
 import { nanoid } from 'nanoid';
+import { INestingStorageData, nestingStorageKey } from '@app/components/shops/shop-nesting/shop-nesting.interface';
+import { IItem } from '@app/interfaces/item.interface';
+
+interface IOtherCost {
+  name: string;
+  cost: ICost;
+}
 
 interface IInstanceCost {
   cost: ICost;
@@ -22,13 +28,15 @@ interface IInstanceCost {
   nodes: Array<INode>;
   listNodes: Array<IItemListNode>;
   iaps: Array<IIAP>;
+  others?: Array<IOtherCost>;
   breakdownVisible?: boolean;
 }
 
 interface IInstanceCostData {
   node?: INode,
   listNode?: IItemListNode,
-  iap?: IIAP
+  iap?: IIAP,
+  other?: IOtherCost
 };
 
 @Component({
@@ -51,6 +59,7 @@ export class CurrencySpentComponent {
   eventInstanceSet = new Set<IEventInstance>();
   eventInstancesByEvent: { [key: string]: Array<IEventInstance> } = {};
   eventInstanceUnlockedCost: { [key: string]: IInstanceCost } = {};
+  nestingWorkshop?: INestingStorageData;
 
   constructor(
     private readonly _dataService: DataService,
@@ -60,6 +69,7 @@ export class CurrencySpentComponent {
     this.checkItemLists();
     this.checkIaps();
     this.checkSeasonPasses();
+    this.checkNesting();
 
     this.seasons = this.seasons.filter(s => !CostHelper.isEmpty(this.seasonUnlockedCost[s.guid].cost) || this.seasonUnlockedCost[s.guid].price);
     this.seasons.sort((a, b) => a.number - b.number);
@@ -192,6 +202,25 @@ export class CurrencySpentComponent {
     if (data.iap) {
       instance.price += data.iap.price || 0;
       instance.iaps.push(data.iap);
+    }
+    if (data.other) {
+      instance.others ??= [];
+      instance.others.push(data.other);
+      CostHelper.add(instance.cost, data.other.cost);
+    }
+  }
+
+  private checkNesting(): void {
+    this.nestingWorkshop = this._storageService.getKey(nestingStorageKey) as INestingStorageData;
+    if (!this.nestingWorkshop?.unlocked) { return; }
+    for (const key of Object.keys(this.nestingWorkshop.unlocked)) {
+      const item = this._dataService.guidMap.get(key) as IItem;
+      if (!item) { continue; }
+      const data = this.nestingWorkshop.unlocked[key];
+      if (data?.cost && data.q) {
+        this.addInstanceCost(this.regular, { other: { name: `Workshop - ${item.name} (x${data.q})`, cost: data.cost } });
+        this.addInstanceCost(this.total, { other: { name: `Workshop - ${item.name} (x${data.q})`, cost: data.cost } });
+      }
     }
   }
 }
