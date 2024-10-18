@@ -1,6 +1,39 @@
-.shop-rotation b {
+.shop-rotation {
   background: var(--color-background);
   padding: var(--padding-content);
   border-radius: var(--border-radius);
   border: var(--border-solid);
+}
+
+.shop-rotation-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 64px auto;
+  grid-template-areas:
+    'icon name'
+    'icon cost'
+    'amount amount';
+}
+
+
+.shop-rotation-icon {
+  grid-area: icon;
+
+  app-item-icon {
+    vertical-align: top;
+  }
+}
+
+.shop-rotation-name {
+  grid-area: name;
+  display: flex;
+  align-items: center;
+}
+
+.shop-rotation-cost {
+  grid-area: cost;
+}
+
+.shop-rotation-amount {
+  grid-area: amount;
 }

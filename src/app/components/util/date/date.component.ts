@@ -16,7 +16,7 @@ import { NgIf } from '@angular/common';
     imports: [NgIf, DateTimePipe]
 })
 export class DateComponent implements OnChanges, OnDestroy {
-  @Input() date: DateTime | undefined;
+  @Input() date: DateTime | string | undefined;
   @Input() format?: string;
 
   _date: DateTime | undefined;
@@ -40,7 +40,11 @@ export class DateComponent implements OnChanges, OnDestroy {
   }
 
   private updateDate(): void {
-    this._date = this.date ? DateTime.fromISO(this.date.toISO()!).setZone(this.date!.zone) : undefined;
+    switch (typeof this.date) {
+      case 'string': this._date = DateTime.fromISO(this.date as string); break;
+      case 'object': this._date = DateTime.fromISO(this.date.toISO()!).setZone(this.date.zone); break;
+      default: this._date = undefined;
+    }
     this._changeDetectorRef.markForCheck();
   }
 }

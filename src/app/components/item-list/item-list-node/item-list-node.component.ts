@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
 import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { EventService } from 'src/app/services/event.service';
@@ -9,6 +9,12 @@ import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CurrencyService } from '@app/services/currency.service';
 import { CostHelper } from '@app/helpers/cost-helper';
+
+
+export type ItemListNodeClickEvent = {
+  node: IItemListNode;
+  prevent: () => void;
+}
 
 @Component({
     selector: 'app-item-list-node',
@@ -23,6 +29,7 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() highlight?: boolean;
   @Input() opaque?: boolean;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
+  @Output() readonly beforeToggle = new EventEmitter<ItemListNodeClickEvent>();
 
   cost!: number;
   currencyIcon!: string;
@@ -55,6 +62,11 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   nodeClick(event: MouseEvent): void {
     if (!this.node.item) { return; }
     const item = this.node.item;
+
+    let prevented = false;
+    const evt: ItemListNodeClickEvent = { node: this.node, prevent: () => prevented = true };
+    this.beforeToggle.emit(evt);
+    if (prevented) { return; }
 
     const unlock = !item.unlocked;
     unlock ? this.unlockItem() : this.lockItem();
