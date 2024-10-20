@@ -678,8 +678,23 @@
           "spirits": [
             { "guid": "xy55AAqxLx", "spirit": "TgUgZjfoMI", "tree": "OvltVBKe--" }
           ]
+        },
+        {
+          "guid": "wP5g0S3v4c",
+          "date": "2024-10-21",
+          "endDate": "2024-11-10",
+          "spirits": [
+            { "guid": "pDb2vfSAh_", "spirit": "U9vUspUuRp", "tree": "fqxSeHyZf1" }
+          ],
+          "shops": [
+            "LN5hJvuPvC",
+            "NyBc3CvrTd"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5
+          },
+          "draft": true
         }
-
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief"
