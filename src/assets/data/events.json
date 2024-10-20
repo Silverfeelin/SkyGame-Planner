@@ -622,7 +622,8 @@
       "name": "Days of Mischief",
       "shortName": "Mischief",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/6de90eb575/tree-exterior.png",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/8715bbf50b/mischief24header.jpg",
+      "imagePosition": "top",
       "instances": [
         {
           "guid": "PIL2A60uh2",
