@@ -1415,17 +1415,95 @@
   },
   // #endregion
   // #region Days of Mischief (2024)
-  { "guid": "HIX0z7_cR3", "item": "VFeHTgImrJ", "c": 5, "nw": "TfH542I5Su", "n": "Y_ehrq3W_m", "ne": "K3uzvmX3H6" },
-  { "guid": "TfH542I5Su", "item": "MnzYzRK9sY", "c": 44 },
-  { "guid": "K3uzvmX3H6", "item": "I6OEa38GXJ", "c": 36 },
-  { "guid": "Y_ehrq3W_m", "item": "Wa9V43Etw5", "c": 5, "nw": "RA2JBZrZ5v", "n": "Ygyw0tfH73", "ne": "a9w1kuyAea" },
-  { "guid": "RA2JBZrZ5v", "item": "Aq3FhT_OYr", "c": 38 },
-  { "guid": "a9w1kuyAea", "item": "p-lbmuULv5", "c": 58 },
-  { "guid": "Ygyw0tfH73", "item": "9G7XqSuA41", "c": 5, "nw": "Epfe-zFe6A", "n": "LqYbGv5eWB", "ne": "Rw5DINPEE6" },
-  { "guid": "Epfe-zFe6A", "item": "si_8YhNtmr", "c": 66 },
-  { "guid": "Rw5DINPEE6", "item": "-HtIAPjYsa", "c": 99 },
-  { "guid": "LqYbGv5eWB", "item": "HsHRfJQ9_A", "c": 5, "n": "mFWX1HXuh7" },
-  { "guid": "mFWX1HXuh7", "item": "MyVdnRoxY0", "h": 33 },
+  {
+    "guid": "9qE6w9Oefi",
+    "item": "PbmKwGDAAD",
+    "nw": "v-19Cth2nr",
+    "n": "k8yO68_ne1",
+    "ne": "LZzPNStclC",
+    "c": 5
+  },
+  {
+    "guid": "v-19Cth2nr",
+    "item": "5wLqxZqnGM",
+    "ec": 16
+  },
+  {
+    "guid": "LZzPNStclC",
+    "item": "CCT1qLLxKN",
+    "ec": 22
+  },
+  {
+    "guid": "k8yO68_ne1",
+    "item": "VFeHTgImrJ",
+    "nw": "lv0MPoP9Sg",
+    "n": "HbLwsS2X_p",
+    "ne": "HEBPndLawY",
+    "c": 5
+  },
+  {
+    "guid": "lv0MPoP9Sg",
+    "item": "kSphDUSrju",
+    "ec": 36
+  },
+  {
+    "guid": "HEBPndLawY",
+    "item": "MnzYzRK9sY",
+    "c": 44
+  },
+  {
+    "guid": "HbLwsS2X_p",
+    "item": "Wa9V43Etw5",
+    "nw": "Zk2gJalpyb",
+    "n": "j0jb-yQhc_",
+    "ne": "7NtYX9Qd6k",
+    "c": 5
+  },
+  {
+    "guid": "Zk2gJalpyb",
+    "item": "I6OEa38GXJ",
+    "c": 36
+  },
+  {
+    "guid": "7NtYX9Qd6k",
+    "item": "Aq3FhT_OYr",
+    "c": 38
+  },
+  {
+    "guid": "j0jb-yQhc_",
+    "item": "9G7XqSuA41",
+    "n": "q9h2ZKEWY6",
+    "nw": "57wyUj0Vjf",
+    "ne": "HkA1m3N2Em",
+    "c": 5
+  },
+  {
+    "guid": "57wyUj0Vjf",
+    "item": "p-lbmuULv5",
+    "c": 58
+  },
+  {
+    "guid": "HkA1m3N2Em",
+    "item": "si_8YhNtmr",
+    "c": 66
+  },
+  {
+    "guid": "q9h2ZKEWY6",
+    "item": "HsHRfJQ9_A",
+    "n": "BEq1Ho5VEM",
+    "nw": "48dHWD4Ss3",
+    "c": 5
+  },
+  {
+    "guid": "48dHWD4Ss3",
+    "item": "-HtIAPjYsa",
+    "c": 99
+  },
+  {
+    "guid": "BEq1Ho5VEM",
+    "item": "MyVdnRoxY0",
+    "h": 33
+  },
   // #endregion
   // #region Days of Feast (2020)
   {
