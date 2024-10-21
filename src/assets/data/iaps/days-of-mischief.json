@@ -364,4 +364,143 @@
     ]
   },
   // #endregion
+  // #region Days of Mischief (2024)
+  {
+    "guid": "w-NTZTRfuL",
+    "name": "Mischief Raven-Feathered Cloak",
+    "price": 17.99,
+    "items": [
+      "uvx7_B9OyH"
+    ]
+  },
+  {
+    "guid": "ObY89zyeG-",
+    "name": "Mischief Withered Broom",
+    "price": 19.99,
+    "items": [
+      "8rYQfi8VP3"
+    ]
+  },
+  {
+    "guid": "nOmN3BI0O-",
+    "name": "Mischief Gossamer Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "bcKjyS-_p3"
+    ]
+  },
+  {
+    "guid": "uDjNUswKgy",
+    "name": "Mischief Crabula Cloak",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "txwX8D1yKh"
+    ]
+  },
+  {
+    "guid": "gNtcL_sWtZ",
+    "name": "Mischief Crabula Mask",
+    "price": 2.99,
+    "returning": true,
+    "items": [
+      "-8P_vR8bBw"
+    ]
+  },
+  {
+    "guid": "ZN7RHRGuDt",
+    "name": "Mischief Withered Antlers",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "evuvua13dC"
+    ]
+  },
+  {
+    "guid": "PFY7C4Y6ib",
+    "name": "Mischief Witch Jumper",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "CZ4aNN-JZV",
+      "h-fwwT4T5y"
+    ]
+  },
+  {
+    "guid": "OcmLTZj7VU",
+    "name": "Mischief Spider Quiff",
+    "price": 4.99,
+    "returning": true,
+    "items": [
+      "ARZC1Eg2jx"
+    ]
+  },
+  {
+    "guid": "l8Rtc7w4Wq",
+    "name": "Mischief Pumpkin Prop",
+    "price": 1.99,
+    "returning": true,
+    "items": [
+      "nMt5KsLO6Y"
+    ]
+  },
+  {
+    "guid": "8uelcHFNKw",
+    "name": "Mischief Witch Hat",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "cMNnwUbQed"
+    ]
+  },
+  {
+    "guid": "erMnzwZ08g",
+    "name": "Mischief Web Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "gEGMIX0DMp"
+    ]
+  },
+  {
+    "guid": "5c5W5j89fZ",
+    "name": "Spooky Bat Cape",
+    "price": 17.99,
+    "returning": true,
+    "c": 12,
+    "items": [
+      "4D33RG4tNB"
+    ]
+  },
+  {
+    "guid": "BkkepHnUnt",
+    "name": "Hungry Pumpkin Hat",
+    "price": 11.99,
+    "returning": true,
+    "c": 8,
+    "items": [
+      "Dlp71JdHg2"
+    ]
+  },
+  {
+    "guid": "uW19Qhu14Y",
+    "name": "Feline Familiar Prop",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "nz4W7amLch"
+    ]
+  },
+  {
+    "guid": "H2N8xkrVQQ",
+    "name": "Cat Costume Pack",
+    "price": 19.99,
+    "returning": true,
+    "items": [
+      "QeNQhxg3mv",
+      "pG1_D61KMT"
+    ]
+  },
+  // #endregion
 ]
