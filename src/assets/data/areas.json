@@ -815,7 +815,7 @@
         { "area": "GC4SmA2CUz" },
         { "area": "IrChmrOevd" },
         { "area": "aBL5eqTv4R" },
-        { "area": "2YCd4ckP6e" },
+        { "area": "wOM-k6pjot" },
       ]
     },
     {
@@ -884,7 +884,8 @@
     },
     {
       "guid": "DERcWzmOL7",
-      "name": "The Cackling Crab"
+      "name": "The Cackling Crab",
+      "imageUrl": "/assets/game/areas/vault/cackling-720.webp"
     },
     {
       "guid": "XG3_0khlw9",
@@ -913,11 +914,20 @@
       "imageUrl": "/assets/game/areas/vault/glade-720.webp"
     },
     {
-      "guid": "2YCd4ckP6e",
-      "name": "Moominvalley",
+      "guid": "wOM-k6pjot",
+      "name": "Moominvalley Glade",
+      "imageUrl": "/assets/game/areas/vault/moomin-glade-720.webp",
       "spirits": [ "vW9xp55w6t", "9RTxyGCw9v", "jt2df_0kso", "_ps0VJ53As", "RRsQtrxvRq" ],
       "wingedLights": [ "bqAgpNc9km" ],
-      "mapData": { "position": [-148.69,422.5] }
+      "mapData": { "position": [-148.69,422.5] },
+      "connections": [
+        { "area": "2YCd4ckP6e" }
+      ]
+    },
+    {
+      "guid": "2YCd4ckP6e",
+      "name": "Moominvalley",
+      "imageUrl": "/assets/game/areas/vault/moomin-720.webp"
     },
     // #endregion
     // #region Aviary

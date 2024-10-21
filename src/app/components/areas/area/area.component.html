@@ -4,7 +4,7 @@
   </div>
   <div class="sky-card-body">
     <div class="grid grid-2">
-      <app-wiki-link [wiki]="realm._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
+      <app-wiki-link [wiki]="area._wiki" [aClass]="'container colspan-2'"></app-wiki-link>
       <a class="container" [class.colspan-2]="!area.mapData?.position" [routerLink]="['/realm', realm.guid]">
         <mat-icon class="menu-icon">map</mat-icon>
         <span class="menu-label">{{ realm.name }}</span>
