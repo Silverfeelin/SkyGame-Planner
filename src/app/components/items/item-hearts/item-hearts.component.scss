@@ -1,0 +1,11 @@
+
+.completed {
+  color: var(--color-unlock-check);
+  font-weight: bold;
+}
+
+app-table {
+  app-item-icon {
+    vertical-align: top;
+  }
+}

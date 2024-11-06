@@ -63,6 +63,7 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
     if (changes['size']) {
       this._size = changes['size'].currentValue;
       switch (this._size) {
+        case 'mini': this.iconWidth = this.iconHeight = '24px'; break;
         case 'small': this.iconWidth = this.iconHeight = '32px'; break;
         case 'medium': this.iconWidth = this.iconHeight = '48px'; break;
         case 'large': this.iconWidth = this.iconHeight = '96px'; break;

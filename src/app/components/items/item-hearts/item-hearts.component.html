@@ -1,0 +1,174 @@
+
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Hearts</h1>
+  </div>
+  <div class="sky-card-body">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Currency#Hearts'}"></app-wiki-link>
+    <div class="container mt">
+      <p>
+        This page will help you find (most) regular hearts you can get from spirits in Sky.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Regular Spirits -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="folded['r']" [title]="'Regular spirits'" (afterFold)="onAfterFold($event, 'r')">
+    <div class="container mb">
+      <p>
+        Regular spirit memories can be relived at any time.
+        These spirits have a heart that can be obtained through the constellations after reliving their memory.
+      </p>
+    </div>
+    <ng-container *ngTemplateOutlet="tTable; context: { $implicit: tables.regular, count: tables.regularCount }"></ng-container>
+  </app-card>
+</div>
+
+<!-- Season Spirits -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="folded['s']" [title]="'Season spirits'" (afterFold)="onAfterFold($event, 's')">
+    <div class="container mb">
+      <p>
+        Season spirits offer a heart when they return as a <a routerLink="/ts">Traveling Spirit</a> or in a <a routerLink="/rs">Special Visit</a>.<br/>
+        All season spirits are listed below. Spirits that have never returned do not (yet) have a regular heart.
+      </p>
+      <p>
+        Keep in mind that the regular heart is not available if you've already unlocked the season heart during the season. This heart counts as one and the same!
+      </p>
+    </div>
+    <ng-container *ngTemplateOutlet="tTable; context: { $implicit: tables.season, count: tables.seasonCount }"></ng-container>
+  </app-card>
+</div>
+
+<!-- Season Guides -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="folded['g']" [title]="'Season guides'" (afterFold)="onAfterFold($event, 'g')">
+    <div class="container mb">
+      <p>Season guides usually offer a heart after completing certain quests. During (and for a while after) a season these are free. After that, the hearts cost 3 candles.</p>
+    </div>
+    <ng-container *ngTemplateOutlet="tTable; context: { $implicit: tables.guide, count: tables.guideCount }"></ng-container>
+  </app-card>
+
+<!-- Event Spirits -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="folded['er']" [title]="'Recurring events'" (afterFold)="onAfterFold($event, 'er')">
+    <div class="container mb">
+      <p>Some hearts are available only during events. Below the events are listed that are expected to return. Hearts are only shown for the last instance of the event.</p>
+    </div>
+    <ng-container *ngTemplateOutlet="tTableEvent; context: { $implicit: tables.recurringEvent, count: tables.recurringEventCount }"></ng-container>
+  </app-card>
+</div>
+
+@if (tables.otherEventCount[0] > 0) {
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="folded['eo']" [title]="'Other events events'" (afterFold)="onAfterFold($event, 'eo')">
+      <div class="container mb">
+        <p>Some hearts are only available during limited events. Below the events are listed that are not expected to return.</p>
+      </div>
+      <ng-container *ngTemplateOutlet="tTableEvent; context: { $implicit: tables.otherEvent, count: tables.otherEventCount }"></ng-container>
+    </app-card>
+  </div>
+}
+
+<!-- Other -->
+<div class="mt">
+  @let rows = tables.other;
+  @let count = tables.otherCount;
+  <app-card [foldable]="true" [folded]="folded['o']" [title]="'Other'" (afterFold)="onAfterFold($event, 'o')">
+    <div class="container mb">
+      <p>There are some hearts that haven't been categorized. These could be from limited events or old versions of spirit trees, and are probably not available anymore.</p>
+      <p>You can still find the source by clicking on the heart icons below.</p>
+    </div>
+    <app-table [rows]="rows">
+      <ng-template [appTableHeader]>Name</ng-template>
+      <ng-template [appTableHeader]>Unlocked</ng-template>
+
+      <ng-template [appTableColumn] let-row="row">
+        {{ row.name }}
+      </ng-template>
+
+      <ng-template [appTableColumn] let-row="row">
+        @for (heart of row.hearts; let ih = $index; track heart.guid) {
+          <a [routerLink]="row.heartLinks[ih]?.route" [queryParams]="row.heartLinks[ih]?.extras?.queryParams">
+            <mat-icon [class.c-new]="heart.unlocked" [class.c-accent]="!heart.unlocked">favorite</mat-icon>
+          </a>
+        }
+      </ng-template>
+
+      <ng-template [appTableFooter] [colspan]="1" [textAlign]="'right'">Total:</ng-template>
+      <ng-template [appTableFooter]>
+        <span [class.completed]="count[1] === count[0]">{{ count[1] }} / {{ count[0] }}</span>
+      </ng-template>
+    </app-table>
+  </app-card>
+</div>
+
+<!-- Total -->
+<div class="mt">
+  <app-card [foldable]="false" [title]="'Total'">
+    <div class="container mb">
+      @let total = tables.regularCount[0] + tables.seasonCount[0] + tables.guideCount[0] + tables.recurringEventCount[0] + tables.otherEventCount[0] + tables.otherCount[0];
+      @let unlocked = tables.regularCount[1] + tables.seasonCount[1] + tables.guideCount[1] + tables.recurringEventCount[1] + tables.otherEventCount[1] + tables.otherCount[1];
+      <p>
+        You have unlocked {{ unlocked }} of the {{ total }} hearts the Sky Planner tracks.
+      </p>
+    </div>
+  </app-card>
+
+<ng-template #tTable let-rows let-count="count">
+  <app-table [rows]="rows">
+    <ng-template [appTableHeader]>Spirit</ng-template>
+    <ng-template [appTableHeader]>Type</ng-template>
+    <ng-template [appTableHeader]>Area</ng-template>
+    <ng-template [appTableHeader]>Unlocked</ng-template>
+
+    <ng-template [appTableColumn] let-row="row">
+      <a [routerLink]="['/spirit', row.spirit.guid]">{{ row.spirit.name }}</a>
+    </ng-template>
+    <ng-template [appTableColumn] let-row="row">
+      <app-spirit-type-icon [type]="row.spirit.type"></app-spirit-type-icon>
+    </ng-template>
+    <ng-template [appTableColumn] let-row="row">
+      <a [routerLink]="row.area?.guid ? ['/area', row.area.guid] : undefined">{{ row.area?.name }}</a>
+    </ng-template>
+
+    <ng-template [appTableColumn] let-row="row">
+      @for (heart of row.hearts; let ih = $index; track heart.guid) {
+        <a [routerLink]="row.heartLinks[ih]?.route" [queryParams]="row.heartLinks[ih]?.extras?.queryParams">
+          <mat-icon [class.c-new]="heart.unlocked" [class.c-accent]="!heart.unlocked">favorite</mat-icon>
+        </a>
+      }
+    </ng-template>
+
+    <ng-template [appTableFooter] [colspan]="3" [textAlign]="'right'">Total:</ng-template>
+    <ng-template [appTableFooter]>
+      <span [class.completed]="count[1] === count[0]">{{ count[1] }} / {{ count[0] }}</span>
+    </ng-template>
+  </app-table>
+</ng-template>
+
+<ng-template #tTableEvent let-rows let-count="count">
+  <app-table [rows]="rows">
+    <ng-template [appTableHeader]>Event</ng-template>
+    <ng-template [appTableHeader]>Unlocked</ng-template>
+
+    <ng-template [appTableColumn] let-row="row">
+      <a [routerLink]="['/event-instance', row.instance.guid]">{{ row.instance.name ?? row.instance.event.name }}</a>
+    </ng-template>
+
+    <ng-template [appTableColumn] let-row="row">
+      @for (heart of row.hearts; let ih = $index; track heart.guid) {
+        <a [routerLink]="row.heartLinks[ih]?.route" [queryParams]="row.heartLinks[ih]?.extras?.queryParams">
+          <mat-icon [class.c-new]="heart.unlocked" [class.c-accent]="!heart.unlocked">favorite</mat-icon>
+        </a>
+      }
+    </ng-template>
+
+    <ng-template [appTableFooter] [colspan]="1" [textAlign]="'right'">Total:</ng-template>
+    <ng-template [appTableFooter]>
+      <span [class.completed]="count[1] === count[0]">{{ count[1] }} / {{ count[0] }}</span>
+    </ng-template>
+  </app-table>
+</ng-template>
