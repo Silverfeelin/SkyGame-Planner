@@ -41,7 +41,7 @@
 
 @if (showKeyboardShortcuts) {
   <app-overlay (close)="showKeyboardShortcuts=false" [title]="'Keyboard shortcuts'">
-    <app-keyboard-shortcuts></app-keyboard-shortcuts>
+    <app-keyboard-shortcuts (close)="showKeyboardShortcuts=false"></app-keyboard-shortcuts>
   </app-overlay>
 }
 

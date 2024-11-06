@@ -188,4 +188,9 @@ export class SettingsComponent {
     this.wikiNewTab = !this.wikiNewTab;
     this._settingService.wikiNewTab = this.wikiNewTab;
   }
+
+  viewKeyboardShortcuts(): void {
+    const event = new KeyboardEvent('keydown', { key: '?', ctrlKey: true, shiftKey: true });
+    document.dispatchEvent(event);
+  }
 }

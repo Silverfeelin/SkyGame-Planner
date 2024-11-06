@@ -20,6 +20,8 @@ import { IconService } from '@app/services/icon.service';
 import { DataService } from '@app/services/data.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
 import { RouterLink } from '@angular/router';
+import { cancellableEvent, noInputs } from '@app/rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -88,6 +90,23 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     effect(() => {
       this.nodeAction = signalAction();
       _changeDetectorRef.markForCheck();
+    });
+
+    _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
+      if (this.forceNodeAction || !this.enableControls) { return; }
+
+      let action: NodeAction | undefined;
+      switch (evt.key?.toLocaleLowerCase()) {
+        case 'f': action = 'favourite'; break;
+        case 'n': action = 'navigate'; break;
+        case 'u': action = 'unlock'; break;
+        default: return;
+      }
+
+      if (this.nodeAction === action) { action = 'unlock'; }
+      signalAction.set(action);
+
+      evt.preventDefault();
     });
   }
 

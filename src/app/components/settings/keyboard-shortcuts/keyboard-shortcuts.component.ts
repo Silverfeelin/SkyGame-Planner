@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Output } from '@angular/core';
+
+const ignoreKeys = new Set(['Control', 'Shift', 'Alt', 'Meta']);
 
 @Component({
   selector: 'app-keyboard-shortcuts',
@@ -9,5 +11,15 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KeyboardShortcutsComponent {
+  @Output() readonly close = new EventEmitter<void>();
 
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (ignoreKeys.has(event.key)) { return; }
+    this.close.emit();
+  }
+
+  constructor() {
+    document.activeElement instanceof HTMLElement && document.activeElement.blur();
+  }
 }

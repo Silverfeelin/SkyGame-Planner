@@ -3,7 +3,7 @@
     <!-- Action indication -->
     <div class="tree-action-background">
       @switch (nodeAction) {
-        @case ('find') { <mat-icon>search</mat-icon> }
+        @case ('navigate') { <mat-icon>search</mat-icon> }
         @case ('favourite') { <mat-icon>star</mat-icon> }
       }
     </div>
@@ -16,15 +16,15 @@
             <div class="tree-action-icon find-item">
               <mat-icon>lock_open</mat-icon>
             </div>
-            <span [class.active]="showingNodeActions && nodeAction === 'unlock'">Unlock item</span>
+            <span [class.active]="showingNodeActions && nodeAction === 'unlock'">Unlock</span>
           </div>
         }
-        @if (showingNodeActions || nodeAction === 'find') {
-          <div class="tree-action point" (click)="setNodeAction($event, 'find')">
+        @if (showingNodeActions || nodeAction === 'navigate') {
+          <div class="tree-action point" (click)="setNodeAction($event, 'navigate')">
             <div class="tree-action-icon find-item">
               <mat-icon>search</mat-icon>
             </div>
-            <span [class.active]="showingNodeActions && nodeAction === 'find'">Find item</span>
+            <span [class.active]="showingNodeActions && nodeAction === 'navigate'">Navigate</span>
           </div>
         }
         @if (showingNodeActions || nodeAction === 'favourite') {
@@ -32,7 +32,7 @@
             <div class="tree-action-icon find-item">
               <mat-icon>star</mat-icon>
             </div>
-            <span [class.active]="showingNodeActions && nodeAction === 'favourite'">Favourite item</span>
+            <span [class.active]="showingNodeActions && nodeAction === 'favourite'">Favourite</span>
           </div>
         }
       </div>

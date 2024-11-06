@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
-import { NavigationHelper } from 'src/app/helpers/navigation-helper';
+import { Router, RouterLink } from '@angular/router';
+import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
@@ -15,14 +15,14 @@ import { NgIf } from '@angular/common';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { CurrencyService } from '@app/services/currency.service';
 
-export type NodeAction = 'emit' | 'unlock' | 'find' | 'favourite';
+export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
 
 @Component({
     selector: 'app-node',
     templateUrl: './node.component.html',
     styleUrls: ['./node.component.less'],
     standalone: true,
-    imports: [NgbTooltip, ItemIconComponent, MatIcon]
+    imports: [NgbTooltip, RouterLink, ItemIconComponent, MatIcon]
 })
 export class NodeComponent implements OnChanges {
   @Input() node!: INode;
@@ -37,7 +37,7 @@ export class NodeComponent implements OnChanges {
 
   hover?: boolean;
   tooltipPlacement = 'bottom';
-
+  link?: INavigationTarget;
 
   constructor(
     private readonly _debug: DebugService,
@@ -54,6 +54,10 @@ export class NodeComponent implements OnChanges {
       const pos = changes['position'].currentValue;
       this.tooltipPlacement = pos === 'left' ? 'bottom-start' : pos === 'right' ? 'bottom-end' : 'bottom';
     }
+
+    if (changes['node']) {
+      this.link = this.node?.item ? NavigationHelper.getItemLink(this.node.item) : undefined;
+    }
   }
 
   mouseEnter(event: MouseEvent): void {
@@ -65,12 +69,18 @@ export class NodeComponent implements OnChanges {
   }
 
   nodeClick(event: MouseEvent): void {
+    if (event.ctrlKey || event.shiftKey) { return; }
+    if (event.button === 1) { return; }
+
     switch (this.action) {
-      case 'unlock': return this.toggleNode(event);
-      case 'find': return this.findNode(event);
-      case 'favourite': return this.toggleFavourite(event);
-      case 'emit': return this.nodeClicked.emit(event);
+      case 'unlock': this.toggleNode(event); break;
+      case 'navigate': this.findNode(event); break;
+      case 'favourite': this.toggleFavourite(event); break;
+      case 'emit': this.nodeClicked.emit(event); break;
     }
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
   }
 
   toggleFavourite(event: MouseEvent): void {

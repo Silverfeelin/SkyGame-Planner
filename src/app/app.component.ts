@@ -10,6 +10,8 @@ import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router
 import { CanonicalService } from './services/canonical.service';
 import { OverlayComponent } from "./components/layout/overlay/overlay.component";
 import { KeyboardShortcutsComponent } from "./components/settings/keyboard-shortcuts/keyboard-shortcuts.component";
+import { cancellableEvent, noInputs } from './rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-root',
@@ -37,6 +39,23 @@ export class AppComponent {
     _matIconRegistry.addSvgIconSet(_domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/icons.svg'));
 
     _eventService.keydown.subscribe(evt => { this.onKeydown(evt); });
+
+    _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
+      switch (evt.key) {
+        case 'c': _router.navigate(['/currency']); break;
+        case 'h': _router.navigate(['/']); break;
+        case 'e': _router.navigate(['/event']); break;
+        case 'i': _router.navigate(['/item']); break;
+        case 'r': _router.navigate(['/realm']); break;
+        case 'p': _router.navigate(['/spirit']); break;
+        case 's': _router.navigate(['/season']); break;
+        case 'w': _router.navigate(['/winged-light']); break;
+        default: return;
+      }
+
+      window.scrollTo(0, 0);
+      evt.preventDefault();
+    });
 
     _eventService.storageChanged.pipe(filter(e => e.key === 'date.format')).subscribe(() => {
       this.initDisplayDate();
@@ -67,7 +86,7 @@ export class AppComponent {
       return;
     }
 
-    if (evt.key === '?' && false) {
+    if (evt.key === '?') {
       this.showKeyboardShortcuts = !this.showKeyboardShortcuts;
     }
   }
