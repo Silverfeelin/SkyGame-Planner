@@ -41,6 +41,7 @@ export class AppComponent {
     _eventService.keydown.subscribe(evt => { this.onKeydown(evt); });
 
     _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
+      if (evt.ctrlKey || evt.shiftKey || evt.altKey || evt.metaKey) { return; }
       switch (evt.key) {
         case 'c': _router.navigate(['/currency']); break;
         case 'h': _router.navigate(['/']); break;
