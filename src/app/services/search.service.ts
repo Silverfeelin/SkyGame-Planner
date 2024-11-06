@@ -9,6 +9,7 @@ import { ISeason } from '../interfaces/season.interface';
 import { IEvent } from '../interfaces/event.interface';
 import { IRealm } from '../interfaces/realm.interface';
 import { IArea } from '../interfaces/area.interface';
+import { IGuid } from '@app/interfaces/base.interface';
 
 export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area' | 'Page';
 
@@ -58,6 +59,9 @@ export class SearchService {
   search(search: string, options: ISearchOptions): Array<ISearchItem<unknown>> {
     if (!search) { return []; }
 
+    const searchGuid = this.searchGuid(search);
+    if (searchGuid) { return [searchGuid]; }
+
     let items = options?.items || this._items;
 
     // Filter by type.
@@ -80,6 +84,19 @@ export class SearchService {
     });
 
     return results;
+  }
+
+  /** Search by GUID. */
+  searchGuid(guid: string): ISearchItem<unknown> | undefined {
+    const result = this._dataService.guidMap.get(guid);
+    if (!result) { return undefined; }
+    const item = this._items.find(i => (i.data as IGuid)?.guid === result.guid);
+    if (!item) { return undefined; }
+    item.highlighted = item.name;
+    item.target = item.name;
+    item.score = 0;
+    this.setItemLink(item);
+    return item;
   }
 
   /** Search for items. */
