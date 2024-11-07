@@ -939,5 +939,19 @@
     },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/AURORA-Cure-for-Me-expression-icon-Credit-Morybel.png"
-  }
+  },
+  {
+    "id": 2400,
+    "guid": "fY8DFreOrh",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2401,
+    "guid": "9hI5xbtfL4",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
 ]

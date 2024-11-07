@@ -3161,7 +3161,7 @@
   { "guid": "vQcKIgdwif", "item": "BCBI4KXEMD", "sc": 32, "nw": "hB9S3i3k4k", "n": "LuRp-sTNXw" },
   { "guid": "hB9S3i3k4k", "item": "9OuUG5PkCa" },
   { "guid": "LuRp-sTNXw", "item": "kbhvnG0YQm", "sc": 3 },
-  // Warrior of Love
+  // #region Warrior of Love
   { "guid": "Zrb2hCvgkb", "item": "flYQ-k3_cR", "nw": "p4OUKjMO3B", "n": "uJO0TJK3N4" },
   { "guid": "p4OUKjMO3B", "item": "84y87tOlc7" },
   { "guid": "uJO0TJK3N4", "item": "hXFmvmGkGK", "sc": 6, "nw": "Xu3zSrWN6O", "n": "cOwRM4w73w" },
@@ -3175,6 +3175,20 @@
   { "guid": "4VHfgs3X9L", "item": "-otvImGA0v", "sc": 30, "nw": "Z91jULyOdc", "n": "M9MoGQRq41" },
   { "guid": "Z91jULyOdc", "item": "rozdAD65kd" },
   { "guid": "M9MoGQRq41", "item": "rltwyawKJ-", "sc": 3 },
+  // TS 125
+  { "guid": "qSaF_V_XGE", "item": "flYQ-k3_cR", "nw": "CJop-2Im0U", "n": "vMythsPN-U" },
+  { "guid": "CJop-2Im0U", "item": "84y87tOlc7", "h": 4 },
+  { "guid": "vMythsPN-U", "item": "iFrJQHkU4B", "c": 5, "nw": "Q4tV5FLhtD", "n": "MHJkN_XArD", "ne": "K0nsk-nrW4" },
+  { "guid": "Q4tV5FLhtD", "item": "hXFmvmGkGK", "c": 35 },
+  { "guid": "K0nsk-nrW4", "item": "fY8DFreOrh", "c": 3 },
+  { "guid": "MHJkN_XArD", "item": "9hI5xbtfL4", "ac": 2, "n": "n8m27OqgkZ" },
+  { "guid": "n8m27OqgkZ", "item": "N_a1zpGl8Q", "h": 3, "nw": "cGOH_AtFMX", "n": "_yw2jaDIEe", "ne": "Kd_1WFx54-" },
+  { "guid": "cGOH_AtFMX", "item": "5QhZXNJtkv", "h": 6 },
+  { "guid": "Kd_1WFx54-", "item": "ndKNh6XHP4", "c": 40 },
+  { "guid": "_yw2jaDIEe", "item": "69BDyxdPLG", "c": 5, "nw": "B3AXBSecZ8", "n": "BSC1pFgRYc" },
+  { "guid": "B3AXBSecZ8", "item": "l29ByRmu3Z", "c": 15 },
+  { "guid": "BSC1pFgRYc", "item": "rozdAD65kd", "c": 75 },
+  // #endregion
   // Seed of Hope
   { "guid": "4ohNhhcV87", "item": "LCZ4mS88Ml", "nw": "FAE2oGNAit", "n": "YKQwkOf3kQ" },
   { "guid": "FAE2oGNAit", "item": "Xp7ou1f01j" },
