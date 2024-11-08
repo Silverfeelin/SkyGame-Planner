@@ -313,6 +313,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this.visibleName = this.name ?? this.tree.name
       ?? this.tree.eventInstanceSpirit?.name ?? this.tree.eventInstanceSpirit?.spirit?.name
       ?? this.tree.ts?.spirit?.name
-      ?? this.tree.visit?.spirit?.name;
+      ?? this.tree.visit?.spirit?.name
+      ?? this.tree.spirit?.name;
   }
 }
