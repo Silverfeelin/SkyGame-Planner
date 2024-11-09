@@ -1,11 +1,9 @@
-BEGIN TRANSACTION;
-
 ALTER TABLE outfits ADD COLUMN hairAccessoryId int NOT NULL DEFAULT 0;
 ALTER TABLE outfits ADD COLUMN headAccessoryId INTEGER NOT NULL DEFAULT 0;
 
-UPDATE outfits SET hairAccessoryId = hatId WHERE hatId IN (1058);
-UPDATE outfits SET headAccessoryId = hatId WHERE hatId IN (-1);
-UPDATE outfits SET headAccessoryId = faceAccessoryId WHERE faceAccessoryId IN (-1);
+UPDATE outfits SET headAccessoryId = faceAccessoryId, faceAccessoryId = 0 WHERE faceAccessoryId IN (
+  36, 319, 361, 378, 839, 1626, 1653, 1789, 1807, 1865, 1877, 1957, 2046
+);
 
 DROP TABLE IF EXISTS outfits_new;
 CREATE TABLE IF NOT EXISTS outfits_new (
@@ -50,5 +48,3 @@ CREATE INDEX ix_outfit_prop ON outfits(propId);
 CREATE INDEX ix_outfit_key ON outfits([key]);
 
 CREATE UNIQUE INDEX ix_outfit_link ON outfits(link, outfitId, maskId, hairId, capeId, shoesId, faceAccessoryId, necklaceId, hairAccessoryId, headAccessoryId, propId, sizeId, lightingId);
-
-COMMIT;

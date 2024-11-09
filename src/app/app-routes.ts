@@ -52,7 +52,6 @@ import { ItemCollectionComponent } from './components/items/item-collection/item
 import { AreasComponent } from './components/areas/areas.component';
 import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-editor/spirit-tree-editor.component';
 import { EventHistoryComponent } from './components/events/event-history/event-history.component';
-import { OutfitVaultMaintenanceComponent } from './components/outfit-request/outfit-vault/outfit-vault-maintenance/outfit-vault-maintenance.component';
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
@@ -125,7 +124,7 @@ export const routes: Routes = [
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
-          { path: 'outfit-request/vault', component: OutfitVaultMaintenanceComponent, title: title('Outfit vault') },
+          { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
           { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) },
           { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) }
         ]
