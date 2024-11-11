@@ -511,5 +511,19 @@
     "name": "Season Heart",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Season-of-Moomin-Seasonal-Heart-icon.png"
-  }
+  },
+  {
+    "id": 2402,
+    "guid": "qQ76Owlmiz",
+    "type": "Quest",
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2403,
+    "guid": "7dSq6EPvZO",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
 ]
