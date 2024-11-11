@@ -87,12 +87,12 @@ export const readFingerprint = (ctx: CanvasRenderingContext2D, position: [number
     for (let iy = 0; iy < 3; iy++) {
       const x = position[0] + ix * tileSize + borderSize;
       const y = position[1] - tileSize * 3 + iy * tileSize + borderSize;
-      const pixelData = ctx.getImageData(x, y, 1, 1);
-      const r = pixelData.data[0];
-      const g = pixelData.data[1];
-      const b = pixelData.data[2];
+      const pixelData = ctx.getImageData(x, y, 3, 3);
+      const avgR = (pixelData.data[0] + pixelData.data[4] + pixelData.data[8]) / 3;
+      const avgG = (pixelData.data[1] + pixelData.data[5] + pixelData.data[9]) / 3;
+      const avgB = (pixelData.data[2] + pixelData.data[6] + pixelData.data[10]) / 3;
 
-      const nearestColorIndex = findNearestColor(r, g, b);
+      const nearestColorIndex = findNearestColor(avgR, avgG, avgB);
       indices.push(nearestColorIndex === colorValues.length - 1  ? 0 : nearestColorIndex);
     }
 

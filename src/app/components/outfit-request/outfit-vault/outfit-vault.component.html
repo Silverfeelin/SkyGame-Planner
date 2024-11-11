@@ -16,7 +16,7 @@
               <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
             </button>
             <button (click)="requestPaste.focus(); pasting=true;" [class.highlight]="pasting">
-              @if (pasting) { Paste now... } @else { Request from clipboard  }
+              @if (pasting) { Paste now... } @else { Paste request }
             </button>
           </div>
           <input type="text" class="input-hidden" #requestPaste (paste)="paste($event)" (blur)="pasting=false;">
