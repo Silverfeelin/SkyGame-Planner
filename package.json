@@ -17,6 +17,7 @@
   },
   "private": true,
   "dependencies": {
+    "@ag-grid-community/theming": "^32.3.2",
     "@angular/animations": "^18.2.3",
     "@angular/common": "^18.2.3",
     "@angular/compiler": "^18.2.3",
@@ -30,6 +31,7 @@
     "@badgateway/oauth2-client": "^2.3.0",
     "@ng-bootstrap/ng-bootstrap": "^17.0.0",
     "@popperjs/core": "^2.11.6",
+    "ag-grid-angular": "^32.3.2",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.4.3",
     "chartjs-plugin-trendline": "^2.1.2",

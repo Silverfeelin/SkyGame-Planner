@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
-import { DateHelper } from 'src/app/helpers/date-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { EventService } from 'src/app/services/event.service';
 import { DateTimePipe } from '../../../pipes/date-time.pipe';
-import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-date',
@@ -13,7 +11,7 @@ import { NgIf } from '@angular/common';
     styleUrls: ['./date.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, DateTimePipe]
+    imports: [DateTimePipe]
 })
 export class DateComponent implements OnChanges, OnDestroy {
   @Input() date: DateTime | string | undefined;

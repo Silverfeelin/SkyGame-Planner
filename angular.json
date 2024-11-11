@@ -37,6 +37,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/leaflet/dist/leaflet.css",
               "node_modules/intro.js/minified/introjs.min.css",
+              "src/styles/styles-grid.less",
               "src/styles/vars.scss",
               "src/styles/styles.less",
               "src/styles/charts.scss",

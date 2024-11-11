@@ -17,9 +17,14 @@ export const themes: Array<ITheme> = [
   { name: 'Surprise', value: 'surprise' }
 ]
 
-export const loadTheme = (): void => {
+export const getCurrentTheme = (): ITheme => {
   const theme = localStorage.getItem('theme') || '';
-  applyTheme(themes.find(t => t.value === theme) || themes[0]);
+  return themes.find(t => t.value === theme) || themes[0];
+}
+
+export const loadTheme = (): void => {
+  const theme = getCurrentTheme();
+  applyTheme(theme);
 }
 
 export const setTheme = (theme: ITheme): void => {
