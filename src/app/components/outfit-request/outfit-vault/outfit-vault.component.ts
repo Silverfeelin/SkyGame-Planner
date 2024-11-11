@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
+import { readFingerprint } from '../closet-fingerprint';
 
 interface IApiOutfits {
   items: Array<IApiOutfit>
@@ -60,6 +61,7 @@ type ShowMode = 'list' | 'result' | 'submit';
 })
 export class OutfitVaultComponent {
   @ViewChild('searchInput', { static: true }) input!: ElementRef<HTMLInputElement>;
+  @ViewChild('requestPaste', { static: true }) private readonly _requestPaste!: ElementRef;
   @ViewChildren('ttCopyLnk') private readonly _ttCopyLnks?: QueryList<NgbTooltip>;
 
   columns = 6;
@@ -214,7 +216,9 @@ export class OutfitVaultComponent {
     }
   }
 
-  selectItem(item: IItem, type: ItemType): void {
+  selectItem(item?: IItem): void {
+    if (!item) { return; }
+    let type = item.type;
     if (type === ItemType.Held || type === ItemType.Furniture) { type = ItemType.Prop; }
 
     // Remove selection.
@@ -328,6 +332,10 @@ export class OutfitVaultComponent {
 
   reset(): void {
     if (!confirm('Are you sure you want to reset your selection?')) { return; }
+    this._reset();
+  }
+
+  _reset(): void {
     this.selection = {};
     this.selectionMap = {};
     this.updateUrl();
@@ -342,6 +350,48 @@ export class OutfitVaultComponent {
   _toggleItemSize(): void {
     this.itemSize = this.itemSize === 'small' ? 'default' : 'small';
     this.itemSizePx = this.itemSize === 'small' ? 32 : 64;
+  }
+
+  pasting = false;
+  paste(event: ClipboardEvent): void {
+    this._changeDetectorRef.markForCheck();
+    const imgUrl = this.getImgUrlFromClipboard(event);
+    if (!imgUrl) { return; }
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) { return; }
+
+    const img = new Image();
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      const itemIds = readFingerprint(ctx, [2, canvas.height - 2]);
+      this._reset();
+      itemIds.forEach(id => {
+        id && this.selectItem(this._dataService.itemIdMap.get(id));
+      });
+      this.showSubmitOutfit();
+      this._changeDetectorRef.markForCheck();
+    };
+
+    img.src = imgUrl;
+  }
+
+  private getImgUrlFromClipboard(event: ClipboardEvent): string | undefined {
+    // Loosely based on https://stackoverflow.com/a/60504384/8523745
+    if (!event.clipboardData) { return undefined; }
+    var items = event.clipboardData.items;
+    if (!items) { return undefined; }
+
+    for (let i = 0; i < items.length; i++) {
+      if (!items[i].type.includes('image')) continue;
+      const file = items[i].getAsFile();
+      return file ? URL.createObjectURL(file) : undefined;
+    }
+
+    return undefined;
   }
 
   onSubmitUnderstood(): void {

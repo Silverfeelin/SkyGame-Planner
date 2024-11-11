@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, isDevMode, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
@@ -14,7 +14,7 @@ import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
 import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
-import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
+import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
@@ -23,6 +23,7 @@ import { MatIcon } from '@angular/material/icon';
 import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
 import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
 import { IconService } from '@app/services/icon.service';
+import { drawFingerprint } from '../closet-fingerprint';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -883,7 +884,7 @@ export class ClosetComponent implements OnDestroy {
     const canvas = document.createElement('canvas');
     canvas.width = _wItem * 4 + _wGap * 5;
     canvas.height = _wItem * 3 + _wGap * 4 + 24;
-    const ctx = canvas.getContext('2d')!;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
 
     this.cvsDrawBackground(ctx);
 
@@ -957,6 +958,7 @@ export class ClosetComponent implements OnDestroy {
       }
     });
 
+    drawFingerprint(ctx, [2, canvas.height - 2], items.map(i => i?.id || 0));
     return canvas;
   }
 
