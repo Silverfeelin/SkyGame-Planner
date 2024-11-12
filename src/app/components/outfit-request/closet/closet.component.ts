@@ -1212,15 +1212,15 @@ export class ClosetComponent implements OnDestroy {
       { sStep: s.ITEM, title: 'Sky cosmetics', intro: 'Here you can see all cosmetics from Sky. You can create a request simply by clicking the icons to select them.' },
       { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
-      { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
+      { sStep: s.COPY, title: 'Share request', intro: 'When you are done selecting items you can share your request.' },
       { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 1 week.' },
-      { sStep: s.COPY_IMAGE, title: 'Copy image', intro: 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
+      { sStep: s.COPY_IMAGE, title: 'Share image', intro: 'There are multiple options available when sharing an image.' },
     ]);
 
-    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Copy closet', intro: 'Copying your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
-    steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Copy full request', intro: 'Copying a full request will hide items you haven\'t selected on the full template. This can be useful when requesting one or multiple outfits.' });
-    steps.push({ sStep: s.COPY_IMAGE_SQUARE, title: 'Copy fit request', intro: 'Copying a fit request will create a smaller square with just the icons of one outfit.' });
-    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Copy template', intro: 'Copying the template will show all items.' });
+    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Share closet', intro: 'Sharing your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
+    steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Share full request', intro: 'Sharing a full request will hide items you haven\'t selected on the full template. This can be useful when requesting one or multiple outfits.' });
+    steps.push({ sStep: s.COPY_IMAGE_SQUARE, title: 'Share fit request', intro: 'Sharing a fit request will create a smaller square with just the icons of one outfit.' });
+    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Share template', intro: 'Sharing the template will show all items.' });
 
     steps.push({ sStep:s.OPTIONS, title: 'Options', intro: 'Various options to change what\'s displayed can be found here.' })
     if (!this.requesting) {

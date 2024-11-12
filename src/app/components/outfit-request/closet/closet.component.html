@@ -308,7 +308,7 @@
         <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering" data-step="6" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'file_copy' }}</mat-icon>
-          <span class="menu-label">Copy</span>
+          <span class="menu-label">Share</span>
         </button>
         <!-- Copy link -->
         <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering" data-step="5" data-position="bottom-left-aligned"
@@ -326,44 +326,44 @@
         <div #divCopyImagePicker class="copy-image-picker">
           @if (!requesting) {
             <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy-img" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
+              <button type="button" class="btn-copy-img" (click)="shareImage('closet')" data-step="7" data-position="top-left-aligned">
                 <mat-icon class="menu-icon">image</mat-icon>
-                <span class="menu-label">Copy closet</span>
+                <span class="menu-label">Share closet</span>
               </button>
-              <button type="button" class="" (click)="shareImage('closet')">
-                <mat-icon class="menu-icon">share</mat-icon>
+              <button type="button" class="" (click)="copyImage('closet')">
+                <mat-icon class="menu-icon">file_copy</mat-icon>
                 <span class="menu-no-label"></span>
               </button>
             </div>
           }
           <div class="button-group btn-group-img">
-            <button type="button" class="btn-copy-img" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
+            <button type="button" class="btn-copy-img" (click)="shareImage('request')" data-step="8" data-position="top-left-aligned">
               <mat-icon class="menu-icon">background_grid_small</mat-icon>
-              <span class="menu-label">Copy request</span>
+              <span class="menu-label">Share request</span>
             </button>
-            <button type="button" class="" (click)="shareImage('request')">
-              <mat-icon class="menu-icon">share</mat-icon>
+            <button type="button" class="" (click)="copyImage('request')">
+              <mat-icon class="menu-icon">file_copy</mat-icon>
               <span class="menu-no-label"></span>
             </button>
           </div>
           <div class="button-group btn-group-img">
-            <button type="button" class="btn-copy-img" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
+            <button type="button" class="btn-copy-img" (click)="shareImage('square')" data-step="9" data-position="top-left-aligned">
               <mat-icon class="menu-icon">grid_on</mat-icon>
-              <span class="menu-label">Copy one fit</span>
+              <span class="menu-label">Share one fit</span>
             </button>
-            <button type="button" class="" (click)="shareImage('square')">
-              <mat-icon class="menu-icon">share</mat-icon>
+            <button type="button" class="" (click)="copyImage('square')">
+              <mat-icon class="menu-icon">file_copy</mat-icon>
               <span class="menu-no-label"></span>
             </button>
           </div>
           @if (!requesting) {
             <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy-img" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
+              <button type="button" class="btn-copy-img" (click)="shareImage('template')" data-step="10" data-position="top-left-aligned">
                 <mat-icon class="menu-icon">image</mat-icon>
-                <span class="menu-label">Copy template</span>
+                <span class="menu-label">Share template</span>
               </button>
-              <button type="button" class="" (click)="shareImage('template')">
-                <mat-icon class="menu-icon">share</mat-icon>
+              <button type="button" class="" (click)="copyImage('template')">
+                <mat-icon class="menu-icon">file_copy</mat-icon>
                 <span class="menu-no-label"></span>
               </button>
             </div>
