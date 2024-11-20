@@ -384,7 +384,10 @@ export class SpiritTreeEditorComponent {
       items: jsonItems
     };
 
-    const json = JSON.stringify(jsonData, undefined, 2);
+    const json = JSON.stringify(jsonData, undefined, 2)
+      .replace(/(?<![}\]])(,\s+)/gm, ', ') // remove linebreaks within objects
+      .replace(/(["\d])\s+(})/gm, '$1 $2') // remove linebreaks at end of objects
+      .replace(/{\s+"g/gm, '{ "g') // remove linebreaks at start of objects (assuming "g"uid first)
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
