@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
@@ -35,6 +35,9 @@ export class NodeComponent implements OnChanges {
 
   @Output() readonly nodeClicked = new EventEmitter<MouseEvent>();
 
+  @HostBinding('attr.guid')
+  guid?: string;
+
   hover?: boolean;
   tooltipPlacement = 'bottom';
   link?: INavigationTarget;
@@ -57,6 +60,7 @@ export class NodeComponent implements OnChanges {
 
     if (changes['node']) {
       this.link = this.node?.item ? NavigationHelper.getItemLink(this.node.item) : undefined;
+      this.guid = this.node?.guid;
     }
   }
 

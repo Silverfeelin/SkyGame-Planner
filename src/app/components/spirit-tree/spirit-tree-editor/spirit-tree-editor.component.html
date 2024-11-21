@@ -1,6 +1,7 @@
 <div class="editor-grid">
   <app-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
-    [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)"
+    (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
+    [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
     [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
     [highlightItem]="selectedItem.guid"
   ></app-spirit-tree>
@@ -51,11 +52,8 @@
             </div>
           </div>
           <!-- Swap -->
-          <div class="">
-            <button type="button" [class.highlight]="isSwapping" (click)="isSwapping=!isSwapping">Swap nodes</button>
-            @if (isSwapping) {
-              &nbsp;<span>Now select a node to swap the items.</span>
-            }
+          <div class="c-accent">
+            Hint: swap nodes by dragging them in the tree.
           </div>
         </div>
       </div>

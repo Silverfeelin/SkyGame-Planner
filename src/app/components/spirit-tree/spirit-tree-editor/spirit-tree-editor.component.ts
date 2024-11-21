@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, isDevMode, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, isDevMode, ViewChild } from '@angular/core';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../spirit-tree.component";
 import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
@@ -37,6 +37,8 @@ export class SpiritTreeEditorComponent {
     if (isDevMode()) { return; }
     event.preventDefault();
   }
+
+  @HostBinding('class.dragging') get isDragging() { return !!this.draggingNode; }
 
   @ViewChild('inpTitle', { static: true }) inpTitle!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLInputElement>;
@@ -395,6 +397,74 @@ export class SpiritTreeEditorComponent {
     a.download = `spirit-tree.json`;
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  // #endregion
+
+  // #region Dragging
+
+  draggingNode?: HTMLElement;
+  draggingPreview?: HTMLImageElement;
+  onTreePointerDown(event: PointerEvent): void {
+    const target = event.target as HTMLElement;
+    const nodeEl = target.closest('app-node') as HTMLElement;
+    if (!nodeEl) { return; }
+
+    this.draggingNode = nodeEl;
+    target.setPointerCapture(event.pointerId);
+
+    const item = this.nodeMap[nodeEl.getAttribute('guid') || '']?.node.item;
+    if (item?.icon?.startsWith('http')) {
+      this.draggingPreview = document.createElement('img');
+      this.draggingPreview.src = item.icon;
+      this.draggingPreview.width = 64;
+      this.draggingPreview.height = 64;
+      document.body.appendChild(this.draggingPreview);
+      this.draggingPreview.style.position = 'absolute';
+      this.draggingPreview.style.zIndex = '1000';
+      this.draggingPreview.style.top = `${event.clientY-32}px`;
+      this.draggingPreview.style.left = `${event.clientX-32}px`;
+    }
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }
+
+  onTreePointerMove(event: PointerEvent): void {
+    if (!this.draggingNode || !this.draggingPreview) { return; }
+    this.draggingPreview.style.top = `${event.clientY - 32 + window.scrollY}px`;
+    this.draggingPreview.style.left = `${event.clientX - 32 + window.scrollX}px`;
+  }
+
+  onTreePointerUp(event: PointerEvent): void {
+    if (this.draggingPreview) {
+      document.body.removeChild(this.draggingPreview);
+      this.draggingPreview = undefined;
+    }
+
+    if (!this.draggingNode) { return; }
+    const draggingNode = this.draggingNode;
+    this.draggingNode = undefined;
+    const target = document.elementsFromPoint(event.clientX, event.clientY).find(e => e.tagName === 'APP-NODE');
+    if (!target || target === draggingNode) { return; }
+
+    // Swap nodes.
+    const firstGuid = draggingNode.getAttribute('guid') || '';
+    const secondGuid = target.getAttribute('guid') || '';
+    const firstNode = this.nodeMap[firstGuid];
+    const secondNode = this.nodeMap[secondGuid];
+    if (!firstNode || !secondNode) { return; }
+
+    // Swap nodes
+    NodeHelper.swap(firstNode.node, secondNode.node);
+    this.selectedTreeNode = firstNode;
+    this.selectedItem = this.selectedTreeNode.node.item!;
+    this.reloadTree();
+  }
+
+  onTreeTouchStart(event: TouchEvent): void {
+    const target = event.target as HTMLElement;
+    if (target?.closest('app-node')) { event.preventDefault(); }
   }
 
   // #endregion
