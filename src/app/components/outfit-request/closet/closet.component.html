@@ -493,6 +493,11 @@
           [ngbTooltip]="templateItemHover" container="body"
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+          <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
+            @if (!item.dyeSlots) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dyeSlots > 0) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dyeSlots > 1) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+          </div>
         </div>
       </div>
 
@@ -505,8 +510,8 @@
 </ng-template>
 
 @if (showingDyePicker && dyeItem) {
-  <app-overlay [closeText]="'Close'" (close)="showingDyePicker=false">
-    <div #divDyePicker class="dye-picker t-center" [hidden]="!showingDyePicker">
+  <app-overlay [closeText]="'Close'" (close)="closeDyePicker()">
+    <div #divDyePicker class="dye-picker t-center">
       <div class="">
         <app-item-icon [item]="dyeItem" [hoverGlow]="false" [opaque]="true" [size]="'default'"></app-item-icon>
       </div>
@@ -521,6 +526,7 @@
 
       <ng-template #tDyeGrid let-i="i">
         @let dye = dyes[dyeItem.guid][i];
+        <div class="c-accent">Primary</div>
         <div class="dye-grid">
           <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.primary" (click)="selectDye(i, 'primary', undefined)"><mat-icon [svgIcon]="'none'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.primary==='red'" (click)="selectDye(i, 'primary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
@@ -531,6 +537,9 @@
           <div class="dye-grid-color" [class.highlight]="dye.primary==='yellow'" (click)="selectDye(i, 'primary', 'yellow')"><mat-icon class="dye-yellow" [svgIcon]="'dye-yellow'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.primary==='black'" (click)="selectDye(i, 'primary', 'black')"><mat-icon class="dye-black" [svgIcon]="'dye-black'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.primary==='white'" (click)="selectDye(i, 'primary', 'white')"><mat-icon class="dye-white" [svgIcon]="'dye-white'"></mat-icon></div>
+        </div>
+        <div class="c-accent">Secondary</div>
+        <div class="dye-grid">
           <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.secondary" (click)="selectDye(i, 'secondary', undefined)"><mat-icon class="" [svgIcon]="'none'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.secondary==='red'" (click)="selectDye(i, 'secondary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.secondary==='purple'" (click)="selectDye(i, 'secondary', 'purple')"><mat-icon class="dye-purple" [svgIcon]="'dye-purple'"></mat-icon></div>
