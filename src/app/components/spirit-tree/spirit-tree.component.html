@@ -2,7 +2,7 @@
   <div class="spirit-tree-scroll" [class.pad-bottom]="hasCostAtRoot || padBottom">
     <!-- Action indication -->
     <div class="tree-action-background">
-      @switch (nodeAction) {
+      @switch (forceNodeAction ?? nodeAction) {
         @case ('navigate') { <mat-icon>search</mat-icon> }
         @case ('favourite') { <mat-icon>star</mat-icon> }
       }

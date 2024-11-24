@@ -588,6 +588,24 @@
       ]
     },
     // #endregion
+    // #region Days of Music (2024)
+    {
+      "guid": "7VpHmkvmRL",
+      "type": "Store",
+      "iaps": [
+        "RDSuyv7lzl",
+        "Xqleg8kS9v"
+      ]
+    },
+    {
+      "guid": "5AVN0e5JLo",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "teABlJEF25"
+      ]
+    },
+    // #endregion
     // #region Sky Anniversary (2023)
     {
       "guid": "RCDqXv4la1",

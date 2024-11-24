@@ -927,6 +927,11 @@
     "c": 5
   },
   // #endregion
+  // #region Days of Music (2024)
+  { "guid": "SFgkhjXr_5", "item": "jMLNrp_Yw8", "c": 5, "nw": "7rruAG_sco", "ne": "iPnlMwt2pV" },
+  { "guid": "7rruAG_sco", "item": "XCTyx0K4zm", "ec": 50 },
+  { "guid": "iPnlMwt2pV", "item": "WMNr4yo_35", "c": 250 },
+  // #endregion
   // #region Sky Anniversary (2020)
   {
     "guid": "lNIMl5bvaC",

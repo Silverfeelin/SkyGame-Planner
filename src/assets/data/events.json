@@ -390,6 +390,25 @@
           "spirits": [
             { "guid": "Flt5-UZMV_", "spirit": "fEcI6neh6f", "tree": "l1qSIM0q3H" }
           ]
+        },
+        {
+          "guid": "BfJL68LKO8",
+          "date": "2024-11-25",
+          "endDate": "2024-12-08",
+          "spirits": [
+            { "guid": "IDMCkDUvXq", "spirit": "U9vUspUuRp", "tree": "jOEcQRyMJ-" }
+          ],
+          "shops": [
+            "7VpHmkvmRL",
+            "5AVN0e5JLo"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 4,
+            "timedCurrency": [
+              { "guid": "hCFiX5McQe", "date": "2024-11-24", "endDate": "2024-12-08", "amount": 15 }
+            ]
+          },
+          "draft": true
         }
       ],
       "_wiki": {
