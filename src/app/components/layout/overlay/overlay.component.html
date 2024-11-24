@@ -6,7 +6,7 @@
     </div>
     @if (dismissable) {
       <div class="overlay-close">
-        <span class="link" (click)="onClose($event)">Dismiss</span>
+        <span class="link" (click)="onClose($event)">{{ closeText }}</span>
       </div>
     }
   </div>

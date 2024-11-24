@@ -23,7 +23,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 370
+    "order": 370,
+    "dyeSlots": 1
   },
   {
     "id": 423,
@@ -36,7 +37,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 724
+    "order": 724,
+    "dyeSlots": 1
   },
   {
     "id": 424,
@@ -214,7 +216,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit"
     },
     "order": 19,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1133,
@@ -323,7 +326,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
     "order": 368,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1144,
@@ -335,7 +339,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
     },
-    "order": 722
+    "order": 722,
+    "dyeSlots": 1
   },
   {
     "id": 1145,
@@ -454,7 +459,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
     },
-    "order": 18
+    "order": 18,
+    "dyeSlots": 1
   },
   {
     "id": 2068,
@@ -486,7 +492,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
     },
-    "order": 721
+    "order": 721,
+    "dyeSlots": 1
   },
   {
     "id": 1156,
@@ -499,7 +506,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
     "order": 367,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1157,
@@ -600,7 +608,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
     },
-    "order": 369
+    "order": 369,
+    "dyeSlots": 1
   },
   {
     "id": 1167,
@@ -628,7 +637,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },
     "order": 723,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1170,

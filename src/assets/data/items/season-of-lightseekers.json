@@ -47,7 +47,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Mask"
     },
-    "order": 342
+    "order": 342,
+    "dyeSlots": 1
   },
   {
     "id": 711,
@@ -100,7 +101,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape"
     },
     "order": 703,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 716,
@@ -158,7 +160,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Mask"
     },
-    "order": 343
+    "order": 343,
+    "dyeSlots": 1
   },
   {
     "id": 722,
@@ -229,7 +232,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Mask"
     },
-    "order": 344
+    "order": 344,
+    "dyeSlots": 1
   },
   {
     "id": 729,
@@ -352,7 +356,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Mask"
     },
     "order": 345,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 742,
@@ -445,7 +450,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Mask"
     },
-    "order": 346
+    "order": 346,
+    "dyeSlots": 1
   },
   {
     "id": 751,
@@ -510,7 +516,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape"
     },
     "order": 702,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 758,
@@ -580,7 +587,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Mask"
     },
     "order": 347,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 765,
@@ -623,7 +631,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape"
     },
     "order": 704,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 769,

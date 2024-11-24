@@ -254,7 +254,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
     },
-    "order": 690
+    "order": 690,
+    "dyeSlots": 1
   },
   {
     "id": 337,
@@ -273,7 +274,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
     },
-    "order": 699
+    "order": 699,
+    "dyeSlots": 2
   },
   {
     "id": 339,
@@ -433,7 +435,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
     },
-    "order": 686
+    "order": 686,
+    "dyeSlots": 1
   },
   {
     "id": 356,
@@ -452,6 +455,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
     },
-    "order": 695
+    "order": 695,
+    "dyeSlots": 2
   }
 ]

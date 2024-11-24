@@ -255,7 +255,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
-    "order": 684
+    "order": 684,
+    "dyeSlots": 1
   },
   {
     "id": 279,
@@ -274,7 +275,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
-    "order": 693
+    "order": 693,
+    "dyeSlots": 2
   },
   {
     "id": 281,
@@ -337,7 +339,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
-    "order": 689
+    "order": 689,
+    "dyeSlots": 1
   },
   {
     "id": 288,
@@ -356,7 +359,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
-    "order": 698
+    "order": 698,
+    "dyeSlots": 2
   },
   {
     "id": 290,

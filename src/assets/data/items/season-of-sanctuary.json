@@ -298,7 +298,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
     },
     "order": 714,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1013,
@@ -637,7 +638,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape"
     },
-    "order": 716
+    "order": 716,
+    "dyeSlots": 2
   },
   {
     "id": 1047,
@@ -778,7 +780,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape"
     },
-    "order": 717
+    "order": 717,
+    "dyeSlots": 1
   },
   {
     "id": 1061,

@@ -30,7 +30,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Masks#Base_Mask"
     },
     "autoUnlocked": true,
-    "order": 332
+    "order": 332,
+    "dyeSlots": 1
   },
   {
     "id": 3,
@@ -82,7 +83,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Capes#Base_Cape"
     },
     "autoUnlocked": true,
-    "order": 678
+    "order": 678,
+    "dyeSlots": 1
   },
   {
     "id": 5,

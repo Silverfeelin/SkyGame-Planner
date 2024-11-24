@@ -9,7 +9,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape"
     },
-    "order": 797
+    "order": 797,
+    "dyeSlots": 1
   },
   {
     "id": 1852,
@@ -45,7 +46,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape"
     },
-    "order": 798
+    "order": 798,
+    "dyeSlots": 1
   },
   {
     "id": 1855,
@@ -138,7 +140,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
     },
-    "order": 71
+    "order": 71,
+    "dyeSlots": 1
   },
   {
     "id": 1864,
@@ -198,7 +201,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape"
     },
-    "order": 800
+    "order": 800,
+    "dyeSlots": 1
   },
   {
     "id": 1869,
@@ -228,7 +232,8 @@
     "name": "Mischief Crabula Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
-    "order": 802
+    "order": 802,
+    "dyeSlots": 1
   },
   {
     "id": 1872,
@@ -246,7 +251,8 @@
     "name": "Mischief Goth Garment",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Mischief-Goth-Garment-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Mischief-Goth-Garment.png",
-    "order": 72
+    "order": 72,
+    "dyeSlots": 2
   },
   {
     "id": 1874,
@@ -316,7 +322,7 @@
     "name": "Mischief Star Sticker",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Mischief-Star-Sticker-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Mischief-Star-Sticker.png",
-    "order": 93,
+    "order": 93
   },
   {
     "id": 2398,
@@ -324,5 +330,5 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
-  },
+  }
 ]

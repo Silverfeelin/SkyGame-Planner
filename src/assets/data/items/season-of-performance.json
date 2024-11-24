@@ -30,7 +30,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 385
+    "order": 385,
+    "dyeSlots": 2
   },
   {
     "id": 509,
@@ -43,7 +44,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 740
+    "order": 740,
+    "dyeSlots": 1
   },
   {
     "id": 510,
@@ -422,7 +424,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Outfit"
     },
     "order": 31,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1444,
@@ -434,7 +437,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape"
     },
-    "order": 741
+    "order": 741,
+    "dyeSlots": 2
   },
   {
     "id": 1445,
@@ -514,7 +518,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },
     "order": 742,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1453,
@@ -681,7 +686,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Outfit"
     },
-    "order": 29
+    "order": 29,
+    "dyeSlots": 2
   },
   {
     "id": 1468,

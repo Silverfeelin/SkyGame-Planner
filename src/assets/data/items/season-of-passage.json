@@ -37,7 +37,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Serow_Mask"
     },
-    "order": 400
+    "order": 400,
+    "dyeSlots": 1
   },
   {
     "id": 609,
@@ -63,7 +64,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Boar_Mask"
     },
-    "order": 401
+    "order": 401,
+    "dyeSlots": 1
   },
   {
     "id": 612,
@@ -96,7 +98,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Monkey_Mask"
     },
-    "order": 403
+    "order": 403,
+    "dyeSlots": 1
   },
   {
     "id": 616,
@@ -127,7 +130,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Raccoon_Mask"
     },
-    "order": 402
+    "order": 402,
+    "dyeSlots": 1
   },
   {
     "id": 619,
@@ -153,7 +157,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 399
+    "order": 399,
+    "dyeSlots": 2
   },
   {
     "id": 621,
@@ -265,7 +270,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Outfit"
     },
-    "order": 42
+    "order": 42,
+    "dyeSlots": 2
   },
   {
     "id": 1615,
@@ -368,7 +374,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape"
     },
     "order": 758,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1625,
@@ -495,7 +502,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Outfit"
     },
-    "order": 41
+    "order": 41,
+    "dyeSlots": 2
   },
   {
     "id": 1637,
@@ -591,7 +599,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Cape"
     },
-    "order": 759
+    "order": 759,
+    "dyeSlots": 2
   },
   {
     "id": 1646,

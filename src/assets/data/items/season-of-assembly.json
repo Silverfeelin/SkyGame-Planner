@@ -23,7 +23,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 371
+    "order": 371,
+    "dyeSlots": 1
   },
   {
     "id": 437,
@@ -63,7 +64,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 725
+    "order": 725,
+    "dyeSlots": 1
   },
   {
     "id": 440,
@@ -286,7 +288,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Mask"
     },
-    "order": 376
+    "order": 376,
+    "dyeSlots": 1
   },
   {
     "id": 1180,
@@ -372,7 +375,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Mask"
     },
-    "order": 375
+    "order": 375,
+    "dyeSlots": 1
   },
   {
     "id": 1189,
@@ -443,7 +447,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Cape"
     },
     "order": 726,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1196,
@@ -501,7 +506,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Mask"
     },
-    "order": 377
+    "order": 377,
+    "dyeSlots": 1
   },
   {
     "id": 1202,
@@ -683,7 +689,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
     "order": 372,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1220,
@@ -761,7 +768,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Mask"
     },
-    "order": 373
+    "order": 373,
+    "dyeSlots": 2
   },
   {
     "id": 1228,
@@ -812,7 +820,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },
     "order": 20,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1233,
@@ -902,7 +911,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Mask"
     },
-    "order": 374
+    "order": 374,
+    "dyeSlots": 1
   },
   {
     "id": 1242,

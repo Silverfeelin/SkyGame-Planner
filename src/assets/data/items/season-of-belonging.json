@@ -97,7 +97,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Cape"
     },
-    "order": 705
+    "order": 705,
+    "dyeSlots": 2
   },
   {
     "id": 778,
@@ -226,7 +227,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Outfit"
     },
     "order": 10,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 791,
@@ -466,7 +468,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Cape"
     },
     "order": 707,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 817,
@@ -593,7 +596,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Cape"
     },
     "order": 706,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 829,

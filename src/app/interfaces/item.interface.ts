@@ -25,6 +25,8 @@ export interface IItem extends IGuid {
   previewUrl?: string;
   /** Item order (within category). */
   order?: number;
+  /** Dye slots on item. */
+  dyeSlots?: number;
 
   /** Emote level. */
   level?: number;

@@ -202,7 +202,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
-    "order": 404
+    "order": 404,
+    "dyeSlots": 1
   },
   {
     "id": 1655,
@@ -230,7 +231,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },
     "order": 761,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1658,
@@ -242,7 +244,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory"
     },
-    "order": 272
+    "order": 272,
+    "dyeSlots": 1
   },
   {
     "id": 1659,
@@ -419,7 +422,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
     "order": 405,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1676,
@@ -474,7 +478,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Outfit"
     },
-    "order": 43
+    "order": 43,
+    "dyeSlots": 2
   },
   {
     "id": 1681,
@@ -553,7 +558,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Outfit"
     },
-    "order": 44
+    "order": 44,
+    "dyeSlots": 2
   },
   {
     "id": 1689,

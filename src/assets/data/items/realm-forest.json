@@ -256,7 +256,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Mask"
     },
-    "order": 333
+    "order": 333,
+    "dyeSlots": 1
   },
   {
     "id": 137,
@@ -372,7 +373,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
     },
-    "order": 685
+    "order": 685,
+    "dyeSlots": 1
   },
   {
     "id": 149,
@@ -391,7 +393,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
     },
-    "order": 694
+    "order": 694,
+    "dyeSlots": 2
   },
   {
     "id": 151,
@@ -488,7 +491,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
     },
-    "order": 687
+    "order": 687,
+    "dyeSlots": 1
   },
   {
     "id": 161,
@@ -507,7 +511,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
     },
-    "order": 696
+    "order": 696,
+    "dyeSlots": 2
   },
   {
     "id": 163,

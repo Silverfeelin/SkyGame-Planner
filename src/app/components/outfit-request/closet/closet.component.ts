@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, isDevMode, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
@@ -20,10 +20,11 @@ import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
 import { CardComponent } from '../../layout/card/card.component';
 import { MatIcon } from '@angular/material/icon';
-import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
+import { NgIf, NgFor, NgTemplateOutlet, NgClass } from '@angular/common';
 import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
 import { IconService } from '@app/services/icon.service';
 import { drawFingerprint } from '../closet-fingerprint';
+import { OverlayComponent } from "../../layout/overlay/overlay.component";
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
@@ -44,13 +45,20 @@ const _wBox = _wItem + _wGap;
 const _aHide = 0.1;
 const _aHalfHide = 0.4;
 
+interface IDye {
+  primary?: DyeColor;
+  secondary?: DyeColor;
+}
+
+type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
+
 @Component({
     selector: 'app-closet',
     templateUrl: './closet.component.html',
     styleUrls: ['./closet.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [FirefoxClipboardItemComponent, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet]
+    imports: [FirefoxClipboardItemComponent, NgClass, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet, OverlayComponent]
 })
 export class ClosetComponent implements OnDestroy {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;
@@ -60,6 +68,7 @@ export class ClosetComponent implements OnDestroy {
   @ViewChild('divColorPicker', { static: false }) private readonly _divColorPicker?: ElementRef<HTMLElement>;
   @ViewChild('divCopyImagePicker', { static: false }) private readonly _divCopyImagePicker?: ElementRef<HTMLElement>;
   @ViewChild('divClosetContainer', { static: false }) private readonly _divClosetContainer?: ElementRef<HTMLElement>;
+  @ViewChild('divDyePicker', { static: true }) private readonly _divDyePicker!: ElementRef<HTMLElement>;
 
   // Background
   _bgImg!: HTMLImageElement;
@@ -102,10 +111,14 @@ export class ClosetComponent implements OnDestroy {
   showingColorPicker = false;
   showingBackgroundPicker = false;
   showingImagePicker = false;
+  showingDyePicker = false;
+  dyeItem?: IItem;
 
   // Item selection
   color?: RequestColor = 'r';
   selected: { all: ISelection, r: ISelection, y: ISelection, g: ISelection, b: ISelection } = { all: {}, r: {}, y: {}, g: {}, b: {}};
+  dyes: { [guid: string]: Array<IDye> } = {};
+  dyeClasses: { [key: string]: Array<string> | undefined } = {};
   hidden: { [guid: string]: boolean } = {};
   available?: ISelection;
 
@@ -195,6 +208,27 @@ export class ClosetComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this._clickSub.unsubscribe();
+  }
+
+  showDyePicker(item: IItem, evt: MouseEvent): void {
+    if (!item.dyeSlots) { return; }
+    evt.preventDefault();
+    evt.stopImmediatePropagation();
+    this.showingDyePicker = true;
+    this.dyeItem = item;
+    this.dyes[item.guid] ??= Array.from({ length: item.dyeSlots }, () => ({}));
+  }
+
+  selectDye(index: number, type: 'primary' | 'secondary', color: DyeColor | undefined): void {
+    if (!this.dyeItem) { return; }
+    const dye = this.dyes[this.dyeItem.guid];
+    if (!dye[index]) { dye[index] = {}; }
+    dye[index][type] = color;
+
+    if (type === 'primary') {
+      if (!this.dyeClasses[this.dyeItem.guid]) { this.dyeClasses[this.dyeItem.guid] = []; }
+      this.dyeClasses[this.dyeItem.guid]![index] = color ? `dye-${color}` : '';
+    }
   }
 
   /** Toggles item selection. */

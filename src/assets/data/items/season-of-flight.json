@@ -36,7 +36,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 24
+    "order": 24,
+    "dyeSlots": 2
   },
   {
     "id": 479,
@@ -228,7 +229,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
     },
     "order": 734,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1335,
@@ -331,7 +333,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
     },
     "order": 733,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1346,
@@ -343,7 +346,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit"
     },
-    "order": 27
+    "order": 27,
+    "dyeSlots": 2
   },
   {
     "id": 1347,
@@ -396,7 +400,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit"
     },
     "order": 26,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1351,
@@ -576,7 +581,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit"
     },
     "order": 25,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1369,

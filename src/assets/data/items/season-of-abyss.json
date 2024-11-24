@@ -36,7 +36,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 739
+    "order": 739,
+    "dyeSlots": 2
   },
   {
     "id": 494,
@@ -49,7 +50,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 382
+    "order": 382,
+    "dyeSlots": 2
   },
   {
     "id": 495,
@@ -131,7 +133,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
     },
-    "order": 383
+    "order": 383,
+    "dyeSlots": 2
   },
   {
     "id": 1371,
@@ -238,7 +241,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape"
     },
     "order": 737,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1381,
@@ -250,7 +254,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Outfit"
     },
-    "order": 28
+    "order": 28,
+    "dyeSlots": 2
   },
   {
     "id": 1382,
@@ -336,7 +341,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
     },
-    "order": 380
+    "order": 380,
+    "dyeSlots": 2
   },
   {
     "id": 1389,
@@ -379,7 +385,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape"
     },
-    "order": 735
+    "order": 735,
+    "dyeSlots": 1
   },
   {
     "id": 1393,
@@ -513,7 +520,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape"
     },
     "order": 738,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1405,
@@ -637,7 +645,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape"
     },
-    "order": 736
+    "order": 736,
+    "dyeSlots": 2
   },
   {
     "id": 1417,

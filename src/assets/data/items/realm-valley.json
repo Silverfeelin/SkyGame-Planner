@@ -145,7 +145,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
-    "order": 688
+    "order": 688,
+    "dyeSlots": 1
   },
   {
     "id": 205,
@@ -164,7 +165,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
-    "order": 697
+    "order": 697,
+    "dyeSlots": 2
   },
   {
     "id": 207,
@@ -527,7 +529,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
-    "order": 683
+    "order": 683,
+    "dyeSlots": 1
   },
   {
     "id": 245,
@@ -586,6 +589,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
-    "order": 692
+    "order": 692,
+    "dyeSlots": 2
   }
 ]

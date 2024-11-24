@@ -286,7 +286,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask"
     },
-    "order": 397
+    "order": 397,
+    "dyeSlots": 1
   },
   {
     "id": 1567,
@@ -349,7 +350,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
     },
-    "order": 755
+    "order": 755,
+    "dyeSlots": 2
   },
   {
     "id": 1573,
@@ -464,7 +466,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
     },
-    "order": 38
+    "order": 38,
+    "dyeSlots": 2
   },
   {
     "id": 1584,
@@ -579,7 +582,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Outfit"
     },
     "order": 40,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 2
   },
   {
     "id": 1595,
@@ -591,7 +595,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
     },
-    "order": 757
+    "order": 757,
+    "dyeSlots": 2
   },
   {
     "id": 1596,
@@ -650,7 +655,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Outfit"
     },
-    "order": 39
+    "order": 39,
+    "dyeSlots": 2
   },
   {
     "id": 1602,
@@ -678,7 +684,8 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
     },
     "order": 756,
-    "group": "SeasonPass"
+    "group": "SeasonPass",
+    "dyeSlots": 1
   },
   {
     "id": 1605,

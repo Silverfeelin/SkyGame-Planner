@@ -9,7 +9,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bull_Mask"
     },
-    "order": 412
+    "order": 412,
+    "dyeSlots": 1
   },
   {
     "id": 1724,
@@ -69,7 +70,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Blushing_Mask"
     },
-    "order": 411
+    "order": 411,
+    "dyeSlots": 2
   },
   {
     "id": 1729,
@@ -93,7 +95,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Tiger_Mask"
     },
-    "order": 413
+    "order": 413,
+    "dyeSlots": 1
   },
   {
     "id": 1731,
@@ -141,7 +144,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Muralist's_Smock"
     },
-    "order": 59
+    "order": 59,
+    "dyeSlots": 1
   },
   {
     "id": 1735,
@@ -260,7 +264,8 @@
     "name": "Days of Fortune Dragon Stole",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Fortune-Dragon-Scarf-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Fortune-Dragon-Scarf-back.png",
-    "order": 780
+    "order": 780,
+    "dyeSlots": 1
   },
   {
     "id": 2055,

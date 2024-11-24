@@ -21,7 +21,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Horns"
     },
-    "order": 330
+    "order": 330,
+    "dyeSlots": 1
   },
   {
     "id": 1878,
@@ -33,7 +34,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Cape"
     },
-    "order": 805
+    "order": 805,
+    "dyeSlots": 1
   },
   {
     "id": 1879,
@@ -45,7 +47,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Cape"
     },
-    "order": 804
+    "order": 804,
+    "dyeSlots": 1
   },
   {
     "id": 1880,
@@ -199,7 +202,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Ancestor_Cape"
     },
-    "order": 806
+    "order": 806,
+    "dyeSlots": 2
   },
   {
     "id": 1896,
@@ -254,7 +258,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape"
     },
-    "order": 807
+    "order": 807,
+    "dyeSlots": 2
   },
   {
     "id": 1976,
@@ -313,7 +318,8 @@
     "type": "Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Winter-Quilted-Cape-back.png",
-    "order": 808
+    "order": 808,
+    "dyeSlots": 1
   },
   {
     "id": 1983,
