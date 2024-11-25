@@ -273,7 +273,7 @@
         <div class="sky-flex scroll-x tree-scroll">
           @for (spiritInstance of spirits; track spiritInstance.guid) {
             <app-spirit-tree [tree]="spiritInstance.tree" [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
-              [enableControls]="false" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
+              [enableControls]="false" [forceNodeAction]="'emit'" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
             </app-spirit-tree>
           }
         </div>

@@ -59,7 +59,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin"
     },
-    "order": 307
+    "order": 308
   },
   {
     "id": 1930,
@@ -72,7 +72,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone"
     },
-    "order": 501
+    "order": 502
   },
   {
     "id": 1931,
@@ -84,7 +84,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat"
     },
-    "order": 248
+    "order": 249
   },
   {
     "id": 1932,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin"
     },
-    "order": 500
+    "order": 501
   },
   {
     "id": 1934,
@@ -121,5 +121,41 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2404,
+    "guid": "XCTyx0K4zm",
+    "type": "Cape",
+    "name": "Marching Band Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Music-marching-band-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Music-marching-band-Cape-back.png",
+    "order": 814
+  },
+  {
+    "id": 2405,
+    "guid": "n6S9sKtNlW",
+    "type": "Outfit",
+    "name": "Music Marching Uniform",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Music-marching-band-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Music-marching-band-Outfit-front.png",
+    "order": 73
+  },
+  {
+    "id": 2406,
+    "guid": "10Ol7H9jKg",
+    "type": "Prop",
+    "name": "Fledgling Upright Piano",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
+    "order": 668
+  },
+  {
+    "id": 2407,
+    "guid": "WMNr4yo_35",
+    "type": "Prop",
+    "name": "Jam Station",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Jam-Station-instrument-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Jam-Station-instrument-instrument.png",
+    "order": 579
   }
 ]
