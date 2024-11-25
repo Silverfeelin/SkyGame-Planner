@@ -141,15 +141,6 @@
     "order": 73
   },
   {
-    "id": 2406,
-    "guid": "10Ol7H9jKg",
-    "type": "Prop",
-    "name": "Fledgling Upright Piano",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
-    "order": 681
-  },
-  {
     "id": 2407,
     "guid": "WMNr4yo_35",
     "type": "Furniture",
@@ -157,5 +148,12 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Jam-Station-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Jam-Station-instrument-instrument.png",
     "order": 579
-  }
+  },
+  {
+    "id": 2409,
+    "guid": "2M4rr47Jc7",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
 ]

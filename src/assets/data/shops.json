@@ -63,6 +63,7 @@
       "permanent": "harmony",
       "iaps": [
         "dyqX00yWC0",
+        "TAdqkadSjD",
         "5VJfMMrFV1",
         "Q0Cze2DKAF",
         "frvgJDX_Cu"
@@ -593,15 +594,15 @@
       "guid": "7VpHmkvmRL",
       "type": "Store",
       "iaps": [
-        "RDSuyv7lzl",
-        "Xqleg8kS9v"
+        "RDSuyv7lzl"
       ]
     },
     {
       "guid": "5AVN0e5JLo",
-      "type": "Spirit",
-      "spirit": "U9vUspUuRp",
+      "type": "Object",
+      "name": "Harmony Hall Counter",
       "iaps": [
+        "Xqleg8kS9v",
         "teABlJEF25"
       ]
     },
