@@ -17,7 +17,7 @@
     "name": "Duets Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Duets-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
-    "order": 776
+    "order": 777
   },
   {
     "id": 2238,
@@ -27,7 +27,7 @@
     "name": "Duets Ultimate Instrument",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
-    "order": 667
+    "order": 668
   },
   {
     "id": 2239,
@@ -37,7 +37,7 @@
     "name": "Duets Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Duets-Ultimate-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Duets-Ultimate-Poster-Prop.png",
-    "order": 661
+    "order": 662
   },
   {
     "id": 2240,
@@ -69,7 +69,7 @@
     "name": "The Pianist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Pianists-Beginnings-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Pianists-Beginnings-Poster-Prop.png",
-    "order": 665,
+    "order": 666,
     "group": "SeasonPass"
   },
   {
@@ -154,7 +154,7 @@
     "name": "The Cellist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Cellists-Beginnings-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Cellists-Beginnings-Prop.png",
-    "order": 664,
+    "order": 665,
     "group": "SeasonPass"
   },
   {
@@ -204,7 +204,7 @@
     "name": "The Musicians' Legacy Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Musicians-Legacy-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Musicians-Legacy-Grand-Piano-Prop.png",
-    "order": 666,
+    "order": 667,
     "group": "SeasonPass"
   },
   {
@@ -274,7 +274,7 @@
     "name": "The Cellist's Flourishing Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Cellists-Flourishing-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cellists-Flourishing-Cape-back.png",
-    "order": 777
+    "order": 778
   },
   {
     "id": 2268,
@@ -292,7 +292,7 @@
     "name": "The Cellist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Cellists-Flourishing-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Cellists-Flourishing-Poster-Prop.png",
-    "order": 663,
+    "order": 664,
     "group": "SeasonPass"
   },
   {
@@ -359,7 +359,7 @@
     "name": "The Pianist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Pianists-Flourishing-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Pianists-Flourishing-Prop.png",
-    "order": 662,
+    "order": 663,
     "group": "SeasonPass"
   },
   {

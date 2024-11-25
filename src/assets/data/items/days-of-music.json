@@ -129,7 +129,7 @@
     "name": "Marching Band Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Music-marching-band-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Music-marching-band-Cape-back.png",
-    "order": 814
+    "order": 815
   },
   {
     "id": 2405,
@@ -147,12 +147,12 @@
     "name": "Fledgling Upright Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
-    "order": 668
+    "order": 681
   },
   {
     "id": 2407,
     "guid": "WMNr4yo_35",
-    "type": "Prop",
+    "type": "Furniture",
     "name": "Jam Station",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Jam-Station-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Jam-Station-instrument-instrument.png",
