@@ -42,6 +42,29 @@
   </div>
 </div>
 
+<!-- App -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [title]="'App'">
+    <div class="container">
+      <p>
+        Sky Planner can be installed as a PWA (Progressive Web App) on supported browsers.<br/>
+        All that really means is that the website can live on your device like an app, making it easier to access than a bookmark.
+      </p>
+      <p>
+        If you don't see the install button below, please try refreshing the page.<br/>
+        The button on this page isn't always reliable and may be unavailable due to reasons unknown to me.<br/>
+        It is also possible to install the app from the icons at the end of the address bar (on desktop) or from the browser menu (on mobile).
+      </p>
+      @if (pwaInstallPrompt) {
+        <button (click)="promptPwa()">
+          <mat-icon class="menu-icon">install_mobile</mat-icon>
+          <span class="menu-label">Install</span>
+        </button>
+      }
+    </div>
+  </app-card>
+</div>
+
 <!-- Spirit trees -->
 <div class="sky-card mt">
   <div class="sky-card-header">
