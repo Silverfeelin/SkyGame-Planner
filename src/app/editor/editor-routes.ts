@@ -7,6 +7,7 @@ import { EditorItemComponent } from './components/editor-item/editor-item.compon
 import { EditorOrderComponent } from './components/editor-order/editor-order.component';
 import { EditorEventInstanceComponent } from './components/editor-event-instance/editor-event-instance.component';
 import { EditorTodoComponent } from './components/editor-todo/editor-todo.component';
+import { EditorOutfitShrineComponent } from './components/editor-outfit-shrine/editor-outfit-shrine.component';
 
 export const routes: Routes = [
   { path: '', component: EditorDashboardComponent },
@@ -17,4 +18,5 @@ export const routes: Routes = [
   { path: 'item', component: EditorItemComponent },
   { path: 'order', component: EditorOrderComponent },
   { path: 'event-instance', component: EditorEventInstanceComponent },
+  { path: 'outfit-shrine', component: EditorOutfitShrineComponent },
 ];
