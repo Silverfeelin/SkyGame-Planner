@@ -109,8 +109,9 @@ export class SpiritTreeEditorComponent {
 
     // Copy tree after inputs are loaded.
     const copyTreeGuid = new URL(location.href).searchParams.get('tree');
+    const preserveTreeGuid = new URL(location.href).searchParams.get('modify')==='true';
     copyTreeGuid && setTimeout(() => {
-      this.copySpiritTree(_dataService.guidMap.get(copyTreeGuid) as ISpiritTree);
+      this.copySpiritTree(_dataService.guidMap.get(copyTreeGuid) as ISpiritTree, preserveTreeGuid);
       this._changeDetectorRef.markForCheck();
     });
   }
@@ -289,13 +290,13 @@ export class SpiritTreeEditorComponent {
     this.applyCost();
   }
 
-  promptCopySpiritTree(tree: ISpiritTree): void {
+  promptCopySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
     if (!confirm('Are you sure you want to copy this spirit tree? Your current tree will be replaced.')) { return; }
-    this.copySpiritTree(tree);
+    this.copySpiritTree(tree, preserveGuid);
   }
 
-  copySpiritTree(tree: ISpiritTree): void {
-    this.tree = { guid: nanoid(10), node: NodeHelper.clone(tree.node) };
+  copySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
+    this.tree = { guid: nanoid(10), node: NodeHelper.clone(tree.node, preserveGuid) };
     this.nodeTable = [[], [], []];
     this.nodeMap = {};
     this.items = [];

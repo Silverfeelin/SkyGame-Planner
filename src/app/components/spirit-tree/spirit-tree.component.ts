@@ -19,7 +19,7 @@ import { CurrencyService } from '@app/services/currency.service';
 import { IconService } from '@app/services/icon.service';
 import { DataService } from '@app/services/data.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -85,7 +85,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     private readonly _spiritTreeRenderService: SpiritTreeRenderService,
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef,
-    private readonly _changeDetectorRef: ChangeDetectorRef
+    private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _router: Router
   ) {
     effect(() => {
       this.nodeAction = signalAction();
@@ -278,6 +279,11 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     // Modify currencies.
     // TODO: this does not track the cost when locking nodes outside of this tree.
     this._currencyService.addTreeCost(unlockCost, this.tree);
+  }
+
+  editTree(): void {
+    const result = confirm('Do you want to clone this tree as a new tree? [Yes] Clone [No] Modify');
+    void this._router.navigate(['/spirit-tree/editor'], { queryParams: { tree: this.tree.guid, modify: !result } });
   }
 
   async export(mode: ShareMode): Promise<void> {

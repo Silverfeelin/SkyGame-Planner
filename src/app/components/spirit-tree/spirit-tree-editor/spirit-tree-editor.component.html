@@ -105,12 +105,12 @@
         <div class="sky-flex scroll-x mt">
           @for (spiritTree of spiritTrees; track spiritTree.guid) {
             <div class="grid grid-1 gap-half">
-              <button (click)="promptCopySpiritTree(spiritTree)">Copy tree</button>
+              <button (click)="promptCopySpiritTree(spiritTree, false)">Copy (new)</button>
+              <button (click)="promptCopySpiritTree(spiritTree, true)">Copy (modify)</button>
               <app-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
                 [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
                 [opaqueNodes]="true" [showNodeTooltips]="true">
               </app-spirit-tree>
-              <button (click)="promptCopySpiritTree(spiritTree)">Copy tree</button>
             </div>
           }
         </div>
