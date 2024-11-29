@@ -524,5 +524,12 @@
     "type": "Special",
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
-  }
+  },
+  {
+    "id": 2410,
+    "guid": "0Bw9Rv8C-m",
+    "type": "Quest",
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
 ]
