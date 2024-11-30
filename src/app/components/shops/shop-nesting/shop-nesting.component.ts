@@ -20,23 +20,34 @@ import { ItemListNodeClickEvent } from '@app/components/item-list/item-list-node
 import { EventService } from '@app/services/event.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { INestingStorageData, nestingStorageKey } from './shop-nesting.interface';
+import { NgTemplateOutlet } from '@angular/common';
+import { DateHelper } from '@app/helpers/date-helper';
 
 interface IRotationItem extends ICost {
   /** Item guid */
   guid: string;
   item?: IItem;
+  expectedDate?: DateTime;
 }
 
 interface IRotation extends Array<IRotationItem> {}
 interface IRotations extends Array<IRotation> {}
 
+const permanentItems: IRotation = [
+  { guid: 'pk88jDrFaq', c: 8 },
+  { guid: 'kjqZOiZkv8', h: 10 },
+  { guid: 'rtZSEy-6Rz', c: 10 },
+  { guid: 't3D6CbSY-E', c: 10 },
+  { guid: 'pJ_qec46o4', h: 24 },
+  { guid: 'UhsOYAJONq', c: 23 },
+  { guid: 'yFLIo5YGNu', ac: 33 },
+];
+
 // Nesting workshop rotations.
 const rotations: IRotations = [
   [
-    { guid: 'pk88jDrFaq', c: 8 },
     { guid: 'm1jq0R3vip', ac: 35 },
     { guid: 'g0FAk-lWFi', c: 11 },
-    { guid: 'pJ_qec46o4', h: 24 },
   ],
   [
     { guid: '9ZDdv0TG9w', c: 16 },
@@ -51,22 +62,20 @@ const rotations: IRotations = [
     { guid: 'uOQmeCxRGG', c: 12 },
   ],
   [
-    { guid: 'kjqZOiZkv8', h: 10 },
     { guid: 'rMl2rj9Qgv', c: 45 },
-    { guid: 'y1UR_gd2PM', c: 17 },
     { guid: '9HXJ6pJTXa', c: 10 },
+    { guid: 'y1UR_gd2PM', c: 18 },
   ],
   [
     { guid: '2If2D4W1DF', h: 33 },
     { guid: 'wbzLOXS8C_', h: 18 },
     { guid: '2d5HB466-h', h: 12 },
-    { guid: 'v1NMHHJO7Q', h: 7 },
+    { guid: 'v1NMHHJO7Q', h: 8 },
   ],
   [
     { guid: 'R7mNhWclrv', c: 25 },
     { guid: 'AZv6JDJqdb', h: 23 },
     { guid: 'dJD-OBSWgc', ac: 8 },
-    { guid: 'UhsOYAJONq', c: 23 },
   ],
   [
     { guid: 'PABCJmm2HT', c: 20 },
@@ -99,12 +108,10 @@ const rotations: IRotations = [
   ],
   [
     { guid: 'PRSX9s-tGz', c: 20 },
-    { guid: 'rtZSEy-6Rz', c: 10 },
     { guid: 'srZq8IciYN', c: 80 },
   ],
   [
     { guid: '-_R3fzw7MF', ac: 25 },
-    { guid: 't3D6CbSY-E', c: 10 },
     { guid: 'FpXfl3Dpff', h: 45 },
     { guid: 'cqPAxA0gAc', c: 90 },
   ]
@@ -113,7 +120,7 @@ const rotations: IRotations = [
 @Component({
   selector: 'app-shop-nesting',
   standalone: true,
-  imports: [CardComponent, SpiritTreeComponent, WikiLinkComponent, ItemListComponent, CostComponent, DateComponent, ItemIconComponent],
+  imports: [CardComponent, SpiritTreeComponent, WikiLinkComponent, ItemListComponent, CostComponent, DateComponent, ItemIconComponent, NgTemplateOutlet],
   templateUrl: './shop-nesting.component.html',
   styleUrl: './shop-nesting.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -125,9 +132,10 @@ export class ShopNestingComponent {
   highlightNode?: string;
 
   data!: INestingStorageData;
+  permanentRotation = permanentItems;
   rotations = rotations;
   iRotation = 0;
-  rotation?: IRotation;
+  currentRotation?: IRotation;
   rotationItemCostMap: { [guid: string]: ICost } = {};
 
   itemLists: Array<IItemList> = [];
@@ -195,11 +203,31 @@ export class ShopNestingComponent {
   }
 
   private initializeRotations(): void {
-    for (const rotation of rotations) {
-      for (const r of rotation) {
+    const currentWeek = DateHelper.todaySky().startOf('week');
+    let date = DateTime.fromISO('2024-04-15T12:00:00').setZone(DateHelper.skyTimeZone).startOf('week');
+    let iDate = 0;
+
+    // Get current rotation
+    const weeksBetween = Math.ceil(currentWeek.diff(date, 'weeks').weeks);
+    iDate += weeksBetween;
+    iDate %= rotations.length;
+
+    // Map rotations
+    for (const [rotationIndex, rotation] of rotations.entries()) {
+      let iNext = rotationIndex;
+      if (iNext < iDate) { iNext += rotations.length; }
+      const nextDate = currentWeek.plus({ weeks: iNext - iDate });
+      rotation.forEach((r, i) => {
         r.item = this._dataService.guidMap.get(r.guid) as IItem;
         this.rotationItemCostMap[r.item.guid] = r;
-      }
+        r.expectedDate = nextDate;
+      });
+    }
+
+    // Map permanent items
+    for (const r of permanentItems) {
+      r.item = this._dataService.guidMap.get(r.guid) as IItem;
+      this.rotationItemCostMap[r.item.guid] = r;
     }
   }
 
@@ -216,7 +244,7 @@ export class ShopNestingComponent {
     const today = DateTime.now().startOf('week');
     const weeksBetween = Math.ceil(today.diff(start, 'weeks').weeks);
     this.iRotation = weeksBetween % rotations.length;
-    this.rotation = rotations[this.iRotation];
+    this.currentRotation = rotations[this.iRotation];
 
     this.itemLists = rotations.map<IItemList>((r, i) => ({
       guid: nanoid(10),
