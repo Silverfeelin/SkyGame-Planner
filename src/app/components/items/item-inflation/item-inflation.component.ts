@@ -221,22 +221,28 @@ export class ItemInflationComponent implements AfterViewInit {
       spanGaps: true,
       hidden: true
     });
-    (this.chart.data.datasets[0] as any).trendlineLinear = {
-      style: '#8e5ea2',
-      lineStyle: 'line',
-      width: 1
-    };
+
+    if (dataAdd.length > 1) {
+      (this.chart.data.datasets[0] as any).trendlineLinear = {
+        style: '#8e5ea2',
+        lineStyle: 'line',
+        width: 1
+      };
+    }
 
     this.chart.data.datasets.push({
       label: 'Items by first return date',
       data: dataReturn,
       spanGaps: true
     });
-    (this.chart.data.datasets[1] as any).trendlineLinear = {
-      style: '#3e95cd',
-      lineStyle: 'line',
-      width: 1
-    };
+
+    if (dataReturn.length > 1) {
+      (this.chart.data.datasets[1] as any).trendlineLinear = {
+        style: '#3e95cd',
+        lineStyle: 'line',
+        width: 1
+      };
+    }
 
     while (currentDate <= maxDate.endOf('month')) {
       const sDate = currentDate.toFormat('MMM yy').replace(' ', " '");
