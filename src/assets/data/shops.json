@@ -151,7 +151,8 @@
     // #region Season of Moomin
     {
       "guid": "A4CKdxCEwJ",
-      "type": "Store",
+      "type": "Object",
+      "name": "Mooninvalley Glade Campfire",
       "iaps": [
         "wpU_hTHKtn",
         "Y4OZx7uCsw",
