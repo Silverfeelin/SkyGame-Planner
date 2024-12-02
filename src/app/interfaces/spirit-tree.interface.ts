@@ -13,6 +13,7 @@ export interface ISpiritTree extends IGuid {
   draft?: boolean;
 
   /// References ///
+  permanent?: boolean | string;
   node: INode;
   ts?: ITravelingSpirit;
   visit?: IReturningSpirit;

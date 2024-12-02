@@ -1999,5 +1999,15 @@
       "node": "Qbd0xTuOq-"
     },
     // #endregion
+
+    // #region Other
+    {
+      "guid": "TbheKd0E45",
+      "node": "fpoTvUXTAi",
+      "name": "Equipment Rack",
+      "permanent": "event"
+    },
+    // #endregion
   ]
 }
+
