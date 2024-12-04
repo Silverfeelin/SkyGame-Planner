@@ -405,7 +405,7 @@
           "calculatorData": {
             "dailyCurrencyAmount": 4,
             "timedCurrency": [
-              { "guid": "hCFiX5McQe", "date": "2024-11-25", "endDate": "2024-12-08", "amount": 15 }
+              { "guid": "hCFiX5McQe", "date": "2024-11-25", "endDate": "2024-12-08", "amount": 15, "description": "Musical symbols around Aviary Village" }
             ]
           },
           "_calendar": {

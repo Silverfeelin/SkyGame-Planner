@@ -510,6 +510,12 @@
       "shops": [
         "A4CKdxCEwJ"
       ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "2J64_6xrAf", "date": "2024-12-04", "endDate": "2024-12-04", "amount": 5, "description": "Thank you gift for ongoing issues" },
+          { "guid": "oosAU2YBiM", "date": "2024-12-09", "endDate": "2024-12-22", "amount": 14, "description": "Bonus daily Seasonal Light" },
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin"
       },

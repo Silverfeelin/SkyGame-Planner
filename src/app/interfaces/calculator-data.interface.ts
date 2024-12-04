@@ -7,6 +7,7 @@ export interface ICalculatorData {
 };
 
 export interface ICalculatorDataTimedCurrency extends IGuid {
+  description?: string;
   date: DateTime;
   endDate: DateTime;
   amount: number;
