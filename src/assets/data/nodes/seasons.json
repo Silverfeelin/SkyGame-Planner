@@ -890,6 +890,18 @@
   { "guid": "RNwFankdgQ", "item": "QTfwfRnYwz", "c": 5, "nw": "i_9vS_ri6z", "n": "PPi0SxVF37" },
   { "guid": "i_9vS_ri6z", "item": "7WktQVTwtR", "c": 75 },
   { "guid": "PPi0SxVF37", "item": "XOhMscNvdq", "c": 42 },
+  // SV
+  { "guid": "3PnrLNCFyL", "item": "zRlUm_oL2p", "nw": "8DwtAb37xO", "n": "57DfqdDRwz" },
+  { "guid": "8DwtAb37xO", "item": "tUzGovgVRK", "h": 4 },
+  { "guid": "57DfqdDRwz", "item": "7Jr0a40jVD", "c": 5, "nw": "o6dm1idkZ_", "n": "5ff-iI3fLx", "ne": "JQE_RyU6E1" },
+  { "guid": "o6dm1idkZ_", "item": "_hk1ya3nj0", "c": 15 },
+  { "guid": "JQE_RyU6E1", "item": "ffOE0uszzI", "c": 3 },
+  { "guid": "5ff-iI3fLx", "item": "ou4hoCwWmt", "ac": 2, "n": "RICiCVL-3k" },
+  { "guid": "RICiCVL-3k", "item": "dor3unMei7", "h": 3, "nw": "v1kj3DLt2x", "n": "nNQ1XJmGVS" },
+  { "guid": "v1kj3DLt2x", "item": "K82EgKZAwe", "h": 6 },
+  { "guid": "nNQ1XJmGVS", "item": "QTfwfRnYwz", "c": 5, "nw": "giFFloPSVX", "n": "YweEy7UaxW" },
+  { "guid": "giFFloPSVX", "item": "7WktQVTwtR", "c": 75 },
+  { "guid": "YweEy7UaxW", "item": "XOhMscNvdq", "c": 42 },
   // #region Greeting Shaman
   { "guid": "8f2CTxUNd3", "item": "NpbuKXMxKS", "nw": "1Jw-zclYMy", "n": "n4PhxK9Dap" },
   { "guid": "1Jw-zclYMy", "item": "5QWjZVAA-9" },

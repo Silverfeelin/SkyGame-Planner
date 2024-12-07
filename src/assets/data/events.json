@@ -394,7 +394,7 @@
         {
           "guid": "BfJL68LKO8",
           "date": "2024-11-25",
-          "endDate": "2024-12-08",
+          "endDate": "2024-12-11",
           "spirits": [
             { "guid": "IDMCkDUvXq", "spirit": "fEcI6neh6f", "tree": "jOEcQRyMJ-" }
           ],
@@ -757,7 +757,15 @@
           "guid": "6bevujwY8W",
           "date": { "day": 20, "month": 11, "year": 2023 },
           "endDate": { "day": 26, "month": 11, "year": 2023 }
-        }
+        },
+        {
+          "guid": "t99qtRiuSh",
+          "date": { "day": 9, "month": 12, "year": 2024 },
+          "endDate": { "day": 23, "month": 12, "year": 2024 },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1458261c87dd801ea0c8ce6c4e2472f2"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Giving"

@@ -37,6 +37,7 @@ export class EventCalculatorComponent {
   guid?: string;
   event!: IEvent;
   eventInstance!: IEventInstance;
+  hasSpirits!: boolean;
   year!: string;
   concluded = false;
   spirits: Array<IEventInstanceSpirit> = [];
@@ -96,10 +97,14 @@ export class EventCalculatorComponent {
       instance = eventInstances.at(-1);
     }
     if (!instance) { return; }
-    this.year = instance.date.toFormat('yyyy');
 
+    this.year = instance.date.toFormat('yyyy');
     this.event = instance.event;
     this.eventInstance = instance;
+
+    this.hasSpirits = !!instance.spirits?.length;
+    if (!this.hasSpirits) { return; }
+
     this.calculatorData = instance.calculatorData;
     this.currencyPerDay = instance.calculatorData?.dailyCurrencyAmount || undefined;
     this.concluded = this.eventInstance.endDate < DateTime.now();

@@ -121,7 +121,7 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   private updateInstance(): void {
     this.cost = this.remainingCost = undefined;
 
-    if (!this.instance) { return; }
+    if (!this.instance?.spirits?.length) { return; }
     const nodes = this.instance.spirits.map(s => NodeHelper.all(s.tree?.node)).flat();
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 

@@ -111,6 +111,16 @@
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=998fff7ecafb443c8e358eac422f0a4d"
       }
-    }
+    },
+    {
+      "guid": "c-9fQnXL2Q",
+      "name": "Saluting Protector Revisit",
+      "area": "Mhbh0g9OdG",
+      "date": { "day": 9, "month": 12, "year": 2024 },
+      "endDate": { "day": 12, "month": 12, "year": 2024 },
+      "spirits": [
+        { "guid": "uDajS7IQbu", "spirit": "eToUA1mSjz", "tree": "m25FwXu6kO" }
+      ]
+    },
   ]
 }
