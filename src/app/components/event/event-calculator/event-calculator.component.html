@@ -9,7 +9,8 @@
           There is no ongoing event and the website hasn't been updated to include any upcoming events yet.<br/><br/>
           Please check back later.
         } @else if (!hasSpirits) {
-          This event has no cosmetics, so there is nothing to calculate!
+          @if (eventInstance && eventInstance.draft) { The Sky Planner has no data for this event yet! }
+          @else { This event has no cosmetics, so there is nothing to calculate! }
         } @else {
           There is no event currency data available for the event.<br/><br/>
           Please check back later or report this the URL of this page on <a href="https://github.com/Silverfeelin/SkyGame-Planner">GitHub</a> if it's taking too long.

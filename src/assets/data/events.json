@@ -844,7 +844,16 @@
             {	"guid": "bSCey0rAnl", "spirit": "TL-SY6cuF4", "tree": "ICyq_AXa3D" },
             {	"guid": "bvZrHb4eTn", "spirit": "j1UqKci8Hb", "tree": "yvElaQPmYD" }
           ]
-        }
+        },
+        {
+          "guid": "WSukhN_pd2",
+          "date": "2024-12-23",
+          "endDate": "2025-01-12",
+          "draft": true,
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1458261c87dd805a83d4c453cd61c190"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast"

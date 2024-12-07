@@ -67,7 +67,7 @@ export class DashboardComponent implements OnInit {
         this.eventInstances.push(eventDates.active.at(-1)!);
       } else if (eventDates.future.length) {
         const e = eventDates.future.at(0)!;
-        if (e.date.diffNow('days').days <= 7) {
+        if (e.date.diffNow('days').days <= 21) {
           futureEvents.push(e);
         }
       }
