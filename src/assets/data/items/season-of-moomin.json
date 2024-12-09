@@ -532,4 +532,35 @@
     "name": "Quest 4",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
+  {
+    "id": 2412,
+    "guid": "IuYvhTYq50",
+    "type": "Quest",
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+
+  {
+    "id": 2413,
+    "guid": "otoI-tynmI",
+    "type": "Quest",
+    "name": "Quest 6",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2414,
+    "guid": "AGYsMcJMkZ",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2415,
+    "guid": "TpC41cNvtg",
+    "type": "Cape",
+    "name": "Moominmamma's Masterpiece Cape",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png"
+  },
 ]
