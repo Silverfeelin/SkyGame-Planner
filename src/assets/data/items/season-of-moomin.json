@@ -539,7 +539,6 @@
     "name": "Quest 5",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
-
   {
     "id": 2413,
     "guid": "otoI-tynmI",
@@ -561,6 +560,7 @@
     "name": "Moominmamma's Masterpiece Cape",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png"
-  },
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png",
+    "order": 779
+  }
 ]
