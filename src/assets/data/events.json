@@ -575,7 +575,7 @@
       "guid": "eVaYOCFqcC",
       "name": "Lazy Days",
       "shortName": "Lazy",
-      "recurring": true,
+      "recurring": false,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/3634x2045/0bc6cde486/dosunlight_tentcampfire.jpg",
       "instances": [
         {
