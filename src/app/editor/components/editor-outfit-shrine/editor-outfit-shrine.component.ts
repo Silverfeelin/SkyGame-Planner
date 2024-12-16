@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DataService } from '@app/services/data.service';
+import { DateTime } from 'luxon';
 
 const imageMap: { [key: string]: HTMLImageElement } = {};
 const loadImage = (url: string): Promise<HTMLImageElement> => (new Promise((resolve, reject) => {
@@ -25,7 +26,7 @@ const loadImage = (url: string): Promise<HTMLImageElement> => (new Promise((reso
   styleUrl: './editor-outfit-shrine.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EditorOutfitShrineComponent {
+export class EditorOutfitShrineComponent implements AfterViewInit {
   @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLTextAreaElement>;
 
   itemsPerRow = 17;
@@ -60,6 +61,10 @@ export class EditorOutfitShrineComponent {
     private readonly _dataService: DataService,
   ) {
     document.head.insertAdjacentHTML('beforeend', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap">');
+
+  }
+
+  ngAfterViewInit(): void {
 
   }
 
@@ -151,16 +156,25 @@ export class EditorOutfitShrineComponent {
       y += Math.ceil(items.length / this.itemsPerRow) * 64 + 64;
     }
 
+    ctx.save();
     const footerText = [
-      'Vectors on this file are by Morybel and Ray808080 on Sky COTL Wiki. Open the icons on Sky COTL Wiki to find the owner.',
-      'Original is available on https://sky-children-of-the-light.fandom.com/wiki/Outfit_Shrine'
+      'Most vectors in this file are by Morybel and Ray808080 on the Sky: CotL Wiki',
+      'Find more contributors at https://sky-children-of-the-light.fandom.com/wiki/Special:Community',
+      'Generated using https://sky-planner.com',
+      'This image is not affiliated with thatgamecompany',
     ];
     ctx.font = '16px Roboto';
     ctx.fillStyle = '#393939';
     const footerTextWidth1 = ctx.measureText(footerText[0]).width;
     const footerTextWidth2 = ctx.measureText(footerText[1]).width;
-    ctx.fillText(footerText[0], (canvas.width - footerTextWidth1) / 2, canvas.height - 48);
-    ctx.fillText(footerText[1], (canvas.width - footerTextWidth2) / 2, canvas.height - 28);
+    const footerTextWidth3 = ctx.measureText(footerText[2]).width;
+    const footerTextWidth4 = ctx.measureText(footerText[3]).width;
+    ctx.fillText(footerText[0], 12, canvas.height - 36);
+    ctx.fillText(footerText[1], 12, canvas.height - 12);
+    ctx.textAlign = 'right';
+    ctx.fillText(footerText[2], canvas.width - 12, canvas.height - 36);
+    ctx.fillText(footerText[3], canvas.width - 12, canvas.height - 12);
+    ctx.restore();
 
     canvas.id = 'outfit-shrine';
     document.getElementById('outfit-shrine')?.remove();
