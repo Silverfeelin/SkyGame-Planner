@@ -1048,7 +1048,7 @@
     },
     // #endregion
     // #region Prophecy
-    // Prophet of Water
+    // #region Prophet of Water
     {
       "guid": "NZRfrbFo5E",
       "node": "6GpHoGx5-0"
@@ -1065,6 +1065,11 @@
       "guid": "6vAMrTPmU-",
       "node": "9GhluZ7XjZ"
     },
+    {
+      "guid": "t62qYu-TAj",
+      "node": "UFRKNWm8B0"
+    },
+    // #endregion
     // Prophet of Earth
     {
       "guid": "26RNODjYdR",
