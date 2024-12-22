@@ -1887,6 +1887,12 @@
     "c": 150
   },
   // #endregion
+  // #region Days of Feast (2024)
+  { "guid": "pEledYU8hw", "item": "PedXtZNCdm", "c": 5, "nw": "ep--ErS-ib", "n": "FdcrDHHbJO", "ne": "f8QPF9DdxU" },
+  { "guid": "ep--ErS-ib", "item": "oelvOczEPw", "ec": 30 },
+  { "guid": "f8QPF9DdxU", "item": "1KuqlnQtX3", "ec": 36 },
+  { "guid": "FdcrDHHbJO", "item": "1UilFmOfGk", "ec": 18 },
+  // #endregion
   // #region Days of Summer (2021)
   {
     "guid": "M55c-swNeS",

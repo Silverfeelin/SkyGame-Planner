@@ -328,5 +328,69 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  // 2024
+  {
+    "id": 2416,
+    "guid": "tSAl1nV-qo",
+    "type": "Outfit",
+    "name": "Wonderland Primrose Pinafore Dress",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Wonderland-Primrose-Pinafore-Dress-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Wonderland-Primrose-Pinafore-Dress.png",
+    "order": 10000
+  },
+  {
+    "id": 2417,
+    "guid": "fLbULqwumS",
+    "type": "HairAccessory",
+    "name": "Wonderland Primrose Pinafore Bow",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Wonderland-Primrose-Pinafore-bow-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Wonderland-Primrose-Pinafore-bow.png",
+    "order": 10000
+  },
+  {
+    "id": 2418,
+    "guid": "OJ38-415Wd",
+    "type": "Prop",
+    "name": "Wonderland Cafe Corridor",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Wonderland-Cafe-Corridor-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Wonderland-Cafe-Corridor.png",
+    "order": 10000
+  },
+  {
+    "id": 2419,
+    "guid": "1KuqlnQtX3",
+    "type": "Prop",
+    "name": "Wonderland Teacup Bath",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Wonderland-Teacup-Bath-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Wonderland-Teacup-Bath-Prop.png",
+    "order": 10000
+  },
+  {
+    "id": 2420,
+    "guid": "1UilFmOfGk",
+    "type": "HairAccessory",
+    "name": "Wonderland Stacked Hat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Wonderland-Stacked-Hat-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Wonderland-Stacked-Hat.png",
+    "order": 10000
+  },
+  {
+    "id": 2421,
+    "guid": "lgu5DNRE7k",
+    "type": "Hair",
+    "name": "Wonderland Hare Hairstyle Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Wonderland-Hare-Hairstyle-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Wonderland-Hare-Hairstyle.png",
+    "order": 10000
+  },
+  {
+    "id": 2422,
+    "guid": "oelvOczEPw",
+    "type": "Hair",
+    "name": "Wonderland Frantic Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Wonderland-Frantic-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Wonderland-Frantic-Hair.png",
+    "order": 10000
   }
 ]
