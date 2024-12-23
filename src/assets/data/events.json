@@ -853,7 +853,9 @@
           "spirits": [
             {	"guid": "gPuttZ9X4Y", "spirit": "gDAPHT2NBG", "tree": "qMoUmkx_mj" },
           ],
-          "shops": [],
+          "shops": [
+            "kI_EvR5rIm"
+          ],
           "calculatorData": {
             "dailyCurrencyAmount": 5,
             "timedCurrency": [

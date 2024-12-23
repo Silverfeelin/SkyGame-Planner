@@ -172,12 +172,18 @@
   --background: url(/assets/game/background/love2024.webp);
 }
 
-:root[data-theme=""], // Default theme
 :root[data-theme="moomin"] {
   --hue: 205;
   --saturation: 10%;
   --color-highlight: hsl(205, 30%, 50%);
   --background: url(/assets/game/background/moomin.webp);
+}
+
+:root[data-theme=""], // Default theme
+:root[data-theme="wonderland"] {
+  --hue: 0;
+  --saturation: 30%;
+  --background: url(/assets/game/background/feast2024.webp);
 }
 
 // #endregion
