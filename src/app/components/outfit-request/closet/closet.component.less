@@ -131,13 +131,19 @@
   }
 }
 
+.background-picker-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 256px);
+  gap: var(--padding-content-half);
+}
+
 .background-picker-item {
   cursor: pointer;
   border: var(--border-solid);
   border-radius: var(--border-radius);
   width: 100%;
   height: auto;
-  max-height: 256px;
+  max-height: 128px;
   object-fit: cover;
 }
 
