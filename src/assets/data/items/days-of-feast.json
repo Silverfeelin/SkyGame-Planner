@@ -391,5 +391,19 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Wonderland-Frantic-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Wonderland-Frantic-Hair.png",
     "order": 261
-  }
+  },
+  {
+    "id": 2423,
+    "guid": "PSsXG7edcE",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2424,
+    "guid": "NLHC0F_Oc3",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
 ]
