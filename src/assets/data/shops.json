@@ -964,6 +964,46 @@
       "name": "Wonderland Hare Wig Stand",
       "itemList": "hmiMI-JrOT"
     },
+    {
+      "guid": "5AdJq1m7jY",
+      "type": "Store",
+      "iaps": [
+        "EqbMdBedT6",
+        "sq7pfYkRjD",
+      ]
+    },
+    {
+      "guid": "FgBx7wuSJD",
+      "type": "Object",
+      "name": "Large Pinecone in Wonderland Cafe",
+      "iaps": [
+        "qHUMga9tbM",
+        "2B4VUC1IJg",
+        "lEBuf9inji",
+        "60p3YQPtv0"
+      ]
+    },
+    {
+      "guid": "1EwbarHMzH",
+      "type": "Object",
+      "name": "Small Pinecone in Wonderland Cafe",
+      "iaps": [
+        "I1WP8E6DTt",
+        "Efdkvx2rO_",
+        "mXz1Dg-Psj"
+      ]
+    },
+    {
+      "guid": "Frfzz94SIt",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "name": "Event Staff (Office)",
+      "iaps": [
+        "5rvSltYZNX",
+        "VHvLwW-unH",
+        "YidHByHVaP"
+      ]
+    },
     // #endregion
     // #region Days of Healing (2020)
     {

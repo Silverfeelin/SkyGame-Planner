@@ -849,12 +849,16 @@
           "guid": "WSukhN_pd2",
           "date": "2024-12-23",
           "endDate": "2025-01-12",
-          "draft": true,
           "spirits": [
             {	"guid": "gPuttZ9X4Y", "spirit": "gDAPHT2NBG", "tree": "qMoUmkx_mj" },
+            {	"guid": "r2t53nowZK", "spirit": "j1UqKci8Hb", "tree": "9ZM5bafAP6", "name": "Days of Feast Staff (Office)" },
           ],
           "shops": [
-            "kI_EvR5rIm"
+            "kI_EvR5rIm",
+            "5AdJq1m7jY",
+            "FgBx7wuSJD",
+            "1EwbarHMzH",
+            "Frfzz94SIt",
           ],
           "calculatorData": {
             "dailyCurrencyAmount": 5,

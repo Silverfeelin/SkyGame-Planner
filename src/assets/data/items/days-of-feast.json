@@ -406,4 +406,7 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
+  { "id": 2425, "guid": "IyKQz1CMsf", "type": "Special", "name": "Blessing", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png" },
+  { "id": 2426, "guid": "rWfWNqtRmc", "type": "Special", "name": "Blessing", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png" },
+  { "id": 2427, "guid": "UhHRJx7KjI", "type": "Special", "name": "Blessing", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png" },
 ]
