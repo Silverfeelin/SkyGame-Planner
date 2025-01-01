@@ -499,7 +499,7 @@ export class ClosetComponent implements OnDestroy {
       return;
     }
 
-    const items = this._searchService.searchItems(this.searchText, { limit: 50, hasIcon: true });
+    const items = this._searchService.searchItems(this.searchText, { limit: 100, hasIcon: true });
     this.searchResults = items.reduce((map, item) => (map[item.data.guid] = item.data, map), {} as { [guid: string]: IItem });
     this._changeDetectorRef.markForCheck();
   }
