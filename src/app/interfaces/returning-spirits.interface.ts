@@ -16,6 +16,7 @@ export interface IReturningSpirits extends IGuid, IPeriod {
   spirits: Array<IReturningSpirit>;
 
   imageUrl?: string;
+  draft?: boolean;
 
   /// Metadata ///
   _wiki?: IWiki;
