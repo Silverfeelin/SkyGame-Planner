@@ -24,6 +24,10 @@
   { "guid": "Y7zkzHTLC3", "item": "Mzi6O4xZ18" },
   { "guid": "pEQAUO4mL8", "item": "E5HeUxh-fB", "ac": 99 },
   // #endregion
+  // #region Event Store
+  { "guid": "fpoTvUXTAi", "item": "hYNcHoL7S7", "n": "DaBtOjTLze" },
+  { "guid": "DaBtOjTLze", "item": "dvoSMxPFL2", "c": 150 },
+  // #endregion
   // #region Friends
   { "guid": "wnVzmDgiBH", "item": "QxloMkZPyI", "nw": "CctI7FAS-w", "n": "FRQl2ExRbx" },
   { "guid": "CctI7FAS-w", "item": "jOATmxRMop" },

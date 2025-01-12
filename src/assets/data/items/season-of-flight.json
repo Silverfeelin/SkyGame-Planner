@@ -4,13 +4,13 @@
     "guid": "4Yk3OcGKKp",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Flight Pendant",
+    "name": "Flight Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/11_Flight.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season_of_flight_pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 435
+    "order": 441
   },
   {
     "id": 477,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 268
+    "order": 272
   },
   {
     "id": 478,
@@ -164,7 +164,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair"
     },
-    "order": 197,
+    "order": 199,
     "group": "SeasonPass"
   },
   {
@@ -177,7 +177,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory"
     },
-    "order": 267
+    "order": 271
   },
   {
     "id": 1330,
@@ -228,9 +228,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
     },
-    "order": 734,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "order": 745,
+    "group": "SeasonPass"
   },
   {
     "id": 1335,
@@ -291,7 +290,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory"
     },
-    "order": 265,
+    "order": 269,
     "group": "SeasonPass"
   },
   {
@@ -304,7 +303,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair"
     },
-    "order": 196
+    "order": 198
   },
   {
     "id": 1343,
@@ -332,9 +331,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
     },
-    "order": 733,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 744,
+    "group": "SeasonPass"
   },
   {
     "id": 1346,
@@ -413,7 +411,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory"
     },
-    "order": 266
+    "order": 270
   },
   {
     "id": 1352,
@@ -442,7 +440,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument"
     },
-    "order": 489,
+    "order": 495,
     "group": "SeasonPass"
   },
   {
@@ -455,7 +453,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair"
     },
-    "order": 195
+    "order": 197
   },
   {
     "id": 1356,
@@ -530,7 +528,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory"
     },
-    "order": 450
+    "order": 456
   },
   {
     "id": 1364,
@@ -594,7 +592,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair"
     },
-    "order": 194
+    "order": 196
   },
   {
     "id": 1953,

@@ -9,4 +9,31 @@
     ]
   },
   // #endregion
+  // #region Days of Music (2024)
+  {
+    "guid": "RDSuyv7lzl",
+    "name": "Music Marching Uniform",
+    "price": 9.99,
+    "items": [
+      "n6S9sKtNlW"
+    ]
+  },
+  {
+    "guid": "Xqleg8kS9v",
+    "name": "Fledgling Upright Piano",
+    "price": 4.99,
+    "items": [
+      "10Ol7H9jKg"
+    ]
+  },
+  {
+    "guid": "teABlJEF25",
+    "name": "Triumph Violin",
+    "price": 19.99,
+    "returning": true,
+    "items": [
+      "5V_r38RVGd"
+    ]
+  },
+  // #endregion
 ]

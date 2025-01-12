@@ -4,13 +4,13 @@
     "guid": "Lqnd-vg9Lk",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Sanctuary Pendant",
+    "name": "Sanctuary Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Season_of_sanctuary_sanctuary_pendant_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 430
+    "order": 436
   },
   {
     "id": 394,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 484
+    "order": 490
   },
   {
     "id": 395,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 715
+    "order": 726
   },
   {
     "id": 396,
@@ -168,7 +168,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair"
     },
-    "order": 170
+    "order": 172
   },
   {
     "id": 999,
@@ -230,7 +230,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Prop"
     },
-    "order": 569
+    "order": 575
   },
   {
     "id": 1006,
@@ -270,7 +270,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair"
     },
-    "order": 171
+    "order": 173
   },
   {
     "id": 1010,
@@ -297,9 +297,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
     },
-    "order": 714,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 725,
+    "group": "SeasonPass"
   },
   {
     "id": 1013,
@@ -357,7 +356,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair"
     },
-    "order": 172
+    "order": 174
   },
   {
     "id": 1019,
@@ -473,7 +472,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask"
     },
-    "order": 361,
+    "order": 367,
     "group": "SeasonPass"
   },
   {
@@ -509,7 +508,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair"
     },
-    "order": 173
+    "order": 175
   },
   {
     "id": 1034,
@@ -536,7 +535,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory"
     },
-    "order": 448,
+    "order": 454,
     "group": "SeasonPass"
   },
   {
@@ -602,7 +601,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair"
     },
-    "order": 174,
+    "order": 176,
     "group": "SeasonPass"
   },
   {
@@ -638,8 +637,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape"
     },
-    "order": 716,
-    "dyeSlots": 2
+    "order": 727
   },
   {
     "id": 1047,
@@ -667,7 +665,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Prop"
     },
-    "order": 571
+    "order": 577
   },
   {
     "id": 1050,
@@ -724,7 +722,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask"
     },
-    "order": 83,
+    "order": 85,
     "group": "SeasonPass"
   },
   {
@@ -760,7 +758,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair"
     },
-    "order": 264
+    "order": 268
   },
   {
     "id": 1059,
@@ -780,8 +778,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape"
     },
-    "order": 717,
-    "dyeSlots": 1
+    "order": 728
   },
   {
     "id": 1061,
@@ -809,7 +806,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Prop"
     },
-    "order": 570
+    "order": 576
   },
   {
     "id": 1064,

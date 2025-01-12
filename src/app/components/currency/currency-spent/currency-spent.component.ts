@@ -42,7 +42,7 @@ interface IInstanceCostData {
 @Component({
   selector: 'app-currency-spent',
   standalone: true,
-  imports: [CardComponent, ItemIconComponent, MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe],
+  imports: [CardComponent, MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe],
   templateUrl: './currency-spent.component.html',
   styleUrl: './currency-spent.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -144,7 +144,9 @@ export class CurrencySpentComponent {
       const isGifted = this._storageService.hasGifted(season.guid);
       const boughtPass = !isGifted && this._storageService.hasSeasonPass(season.guid);
       if (boughtPass) {
-        this.addSeasonCost(season, { iap: { guid: nanoid(10), name: 'Season Pass', price: 9.99 } });
+        const iap = { guid: nanoid(10), name: `Season Pass (${season.shortName})`, price: 9.99 };
+        this.addSeasonCost(season, { iap });
+        this.addInstanceCost(this.total, { iap });
       }
     }
   }

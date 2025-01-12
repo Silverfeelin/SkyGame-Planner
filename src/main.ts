@@ -14,6 +14,11 @@ import { loadTheme } from './themes';
 // Load theme.
 loadTheme();
 
+addEventListener('beforeinstallprompt', evt => {
+  evt.preventDefault();
+  (window as any).pwaInstallPrompt = evt;
+});
+
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes),

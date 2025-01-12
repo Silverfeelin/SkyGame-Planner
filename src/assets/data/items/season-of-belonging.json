@@ -4,13 +4,13 @@
     "guid": "CmonO-Vfc4",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Belonging Pendant",
+    "name": "Belonging Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/3_Belonging.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/60/Season_of_belonging_pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide#Ultimate_Gifts"
     },
-    "order": 427
+    "order": 433
   },
   {
     "id": 373,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide#Ultimate_Gifts"
     },
-    "order": 528
+    "order": 534
   },
   {
     "id": 771,
@@ -97,8 +97,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Cape"
     },
-    "order": 705,
-    "dyeSlots": 2
+    "order": 716
   },
   {
     "id": 778,
@@ -110,7 +109,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Hair"
     },
-    "order": 157,
+    "order": 159,
     "group": "SeasonPass"
   },
   {
@@ -214,7 +213,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Mask"
     },
-    "order": 348
+    "order": 354
   },
   {
     "id": 790,
@@ -300,7 +299,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Mask"
     },
-    "order": 351,
+    "order": 357,
     "group": "SeasonPass"
   },
   {
@@ -336,7 +335,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Hair"
     },
-    "order": 158
+    "order": 160
   },
   {
     "id": 802,
@@ -385,7 +384,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Prop"
     },
-    "order": 563
+    "order": 569
   },
   {
     "id": 808,
@@ -440,7 +439,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Mask"
     },
-    "order": 349
+    "order": 355
   },
   {
     "id": 814,
@@ -467,9 +466,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Cape"
     },
-    "order": 707,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "order": 718,
+    "group": "SeasonPass"
   },
   {
     "id": 817,
@@ -503,7 +501,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Prop"
     },
-    "order": 521
+    "order": 527
   },
   {
     "id": 821,
@@ -547,7 +545,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Instrument"
     },
-    "order": 479,
+    "order": 485,
     "group": "SeasonPass"
   },
   {
@@ -583,7 +581,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Mask"
     },
-    "order": 350
+    "order": 356
   },
   {
     "id": 828,
@@ -595,9 +593,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Cape"
     },
-    "order": 706,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "order": 717,
+    "group": "SeasonPass"
   },
   {
     "id": 829,
@@ -694,7 +691,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Face_Accessory"
     },
-    "order": 314,
+    "order": 320,
     "group": "SeasonPass"
   },
   {
@@ -708,7 +705,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Instrument"
     },
-    "order": 481
+    "order": 487
   },
   {
     "id": 841,

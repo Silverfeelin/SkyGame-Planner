@@ -54,6 +54,9 @@ export class EditorEventInstanceComponent {
 
     if (!this.event) { return; }
     this.lastInstance = this.event.instances!.at(-1)!;
+    if (this.lastInstance.date > DateTime.now().minus({ days: 14 })) {
+      this.lastInstance = this.event.instances!.at(-2)!;
+    }
 
     this.generate();
   }

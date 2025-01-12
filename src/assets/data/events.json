@@ -390,6 +390,27 @@
           "spirits": [
             { "guid": "Flt5-UZMV_", "spirit": "fEcI6neh6f", "tree": "l1qSIM0q3H" }
           ]
+        },
+        {
+          "guid": "BfJL68LKO8",
+          "date": "2024-11-25",
+          "endDate": "2024-12-11",
+          "spirits": [
+            { "guid": "IDMCkDUvXq", "spirit": "fEcI6neh6f", "tree": "jOEcQRyMJ-" }
+          ],
+          "shops": [
+            "7VpHmkvmRL",
+            "5AVN0e5JLo"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 4,
+            "timedCurrency": [
+              { "guid": "hCFiX5McQe", "date": "2024-11-25", "endDate": "2024-12-08", "amount": 15, "description": "Musical symbols around Aviary Village" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1438261c87dd80798bcdc9457554493c"
+          }
         }
       ],
       "_wiki": {
@@ -554,7 +575,7 @@
       "guid": "eVaYOCFqcC",
       "name": "Lazy Days",
       "shortName": "Lazy",
-      "recurring": true,
+      "recurring": false,
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/3634x2045/0bc6cde486/dosunlight_tentcampfire.jpg",
       "instances": [
         {
@@ -736,7 +757,15 @@
           "guid": "6bevujwY8W",
           "date": { "day": 20, "month": 11, "year": 2023 },
           "endDate": { "day": 26, "month": 11, "year": 2023 }
-        }
+        },
+        {
+          "guid": "t99qtRiuSh",
+          "date": { "day": 9, "month": 12, "year": 2024 },
+          "endDate": { "day": 22, "month": 12, "year": 2024 },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1458261c87dd801ea0c8ce6c4e2472f2"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Giving"
@@ -815,7 +844,32 @@
             {	"guid": "bSCey0rAnl", "spirit": "TL-SY6cuF4", "tree": "ICyq_AXa3D" },
             {	"guid": "bvZrHb4eTn", "spirit": "j1UqKci8Hb", "tree": "yvElaQPmYD" }
           ]
-        }
+        },
+        {
+          "guid": "WSukhN_pd2",
+          "date": "2024-12-23",
+          "endDate": "2025-01-12",
+          "spirits": [
+            {	"guid": "gPuttZ9X4Y", "spirit": "gDAPHT2NBG", "tree": "qMoUmkx_mj" },
+            {	"guid": "r2t53nowZK", "spirit": "j1UqKci8Hb", "tree": "9ZM5bafAP6", "name": "Days of Feast Staff (Office)" },
+          ],
+          "shops": [
+            "kI_EvR5rIm",
+            "5AdJq1m7jY",
+            "FgBx7wuSJD",
+            "1EwbarHMzH",
+            "Frfzz94SIt",
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "FLEbbxIDG6", "date": "2024-12-23", "endDate": "2025-01-12", "amount": 15, "description": "Snowflakes around the Wonderland Cafe" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1458261c87dd805a83d4c453cd61c190"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast"

@@ -927,6 +927,23 @@
     "c": 5
   },
   // #endregion
+  // #region Days of Music (2024)
+  { "guid": "jDAnKekiFv", "item": "jMLNrp_Yw8", "c": 5, "nw": "Q_aCtmTJsw", "n": "ToDgm7zmUm", "ne": "BBr3-qdlW2" },
+  { "guid": "Q_aCtmTJsw", "item": "pUCJ7_2QWR", "c": 5 },
+  { "guid": "BBr3-qdlW2", "item": "SrABR87rf4", "c": 10 },
+  { "guid": "ToDgm7zmUm", "item": "pTJsrRigHt", "c": 5, "nw": "0_vzPIvzy6", "n": "QnqhZGmgIP", "ne": "a8riRYrNyh" },
+  { "guid": "0_vzPIvzy6", "item": "Mh5ipZClSq", "c": 10 },
+  { "guid": "a8riRYrNyh", "item": "WDyyhzD1Dk", "c": 10 },
+  { "guid": "QnqhZGmgIP", "item": "rJb-2yon2M", "c": 5, "nw": "0EtJZhH_gN", "n": "R7qWyVaD_O", "ne": "mxqH37jLin" },
+  { "guid": "0EtJZhH_gN", "item": "MFDYVKkfuf", "c": 10 },
+  { "guid": "mxqH37jLin", "item": "q6MtlTHWMK", "c": 50 },
+  { "guid": "R7qWyVaD_O", "item": "jaYkyH7kRV", "c": 5, "nw": "xbTFae3vFw", "n": "wGFROrDFO1", "ne": "4zGsxF6e-C" },
+  { "guid": "xbTFae3vFw", "item": "WMNr4yo_35", "c": 250 },
+  { "guid": "4zGsxF6e-C", "item": "XCTyx0K4zm", "ec": 50 },
+  { "guid": "wGFROrDFO1", "item": "2M4rr47Jc7", "c": 5, "nw": "EiUQkKNKXG", "n": "2Lq7XHg_Mp" },
+  { "guid": "EiUQkKNKXG", "item": "rMC7kQhgYk", "c": 125 },
+  { "guid": "2Lq7XHg_Mp", "item": "6uObjDNBAm", "c": 55 },
+  // #endregion
   // #region Sky Anniversary (2020)
   {
     "guid": "lNIMl5bvaC",
@@ -1870,6 +1887,32 @@
     "c": 150
   },
   // #endregion
+  // #region Days of Feast (2024)
+  { "guid": "pEledYU8hw", "item": "PSsXG7edcE", "nw": "ep--ErS-ib", "n": "FdcrDHHbJO", "ne": "f8QPF9DdxU" },
+  { "guid": "ep--ErS-ib", "item": "1UilFmOfGk", "ec": 18 },
+  { "guid": "f8QPF9DdxU", "item": "oelvOczEPw", "ec": 30 },
+  { "guid": "FdcrDHHbJO", "item": "NLHC0F_Oc3", "c": 5, "nw": "Ggey-VFo8q", "n": "l1Hpa15UkB", "ne": "WdzRu0PLJS" },
+  { "guid": "Ggey-VFo8q", "item": "1KuqlnQtX3", "ec": 36 },
+  { "guid": "WdzRu0PLJS", "item": "9-5LbKZZQz", "c": 145 },
+  { "guid": "l1Hpa15UkB", "item": "IyKQz1CMsf", "n": "PabMN4sf-3", "ne": "9Z9L2sK3T9", "nw": "qikp0pleNO", "c": 5 },
+  { "guid": "qikp0pleNO", "item": "1ALFFNohD1", "c": 35 },
+  { "guid": "9Z9L2sK3T9", "item": "TLljjPrjAq", "c": 60 },
+  { "guid": "PabMN4sf-3", "item": "rWfWNqtRmc", "n": "d2lGOOiVyC", "ne": "kRZp4MgB6R", "nw": "kznpP4jemS", "c": 5 },
+  { "guid": "kznpP4jemS", "item": "Gsl445SG4s", "c": 10 },
+  { "guid": "kRZp4MgB6R", "item": "ZvfG2eU17I", "c": 120 },
+  { "guid": "d2lGOOiVyC", "item": "UhHRJx7KjI", "n": "dSO-DFIlSS", "ne": "B5UxI0jUq-", "nw": "3cWAb6kNln", "c": 5 },
+  { "guid": "3cWAb6kNln", "item": "UuP-Vujj8D", "c": 10 },
+  { "guid": "B5UxI0jUq-", "item": "c0_xJdJKvM", "c": 50 },
+  { "guid": "dSO-DFIlSS", "item": "PedXtZNCdm", "n": "j7nr10MiFG", "c": 5 },
+  { "guid": "j7nr10MiFG", "item": "hZr0q9nYbz", "h": 20 },
+  // Office
+  { "guid": "_utmP-13Q7", "item": "FG23AJzDOD", "c": 2, "nw": "1NjcmqtIZY", "n": "Y_aY6jR2rn", "ne": "LGxFpHfOoz" },
+  { "guid": "1NjcmqtIZY", "item": "jbcKW_vibd", "c": 3 },
+  { "guid": "LGxFpHfOoz", "item": "RFMVpbZOil", "h": 15 },
+  { "guid": "Y_aY6jR2rn", "item": "7lrenJRCtn", "c": 2, "nw": "gEpJ3mBr0k", "n": "VeAXoj8YYp" },
+  { "guid": "gEpJ3mBr0k", "item": "GoESQXsRjl", "c": 65 },
+  { "guid": "VeAXoj8YYp", "item": "oHChsGl8AZ", "c": 150 },
+  // #endregion
   // #region Days of Summer (2021)
   {
     "guid": "M55c-swNeS",
@@ -2098,19 +2141,21 @@
     "guid": "xIboIouOBO",
     "item": "rJb-2yon2M",
     "c": 5,
+    "nw": "FRyqp-j0Kd",
     "n": "0H-L6HbspH"
   },
   {
     "guid": "0H-L6HbspH",
     "item": "jaYkyH7kRV",
-    "c": 5,
-    "n": "FRyqp-j0Kd"
+    "nw": "K3B9ehxFv8",
+    "c": 5
   },
   {
     "guid": "FRyqp-j0Kd",
     "item": "pUCJ7_2QWR",
     "c": 5
   },
+  { "guid": "K3B9ehxFv8", "item": "WMNr4yo_35", "c": 250 },
   // #endregion
   // #region AURORA Encore Concerts (2023)
   {

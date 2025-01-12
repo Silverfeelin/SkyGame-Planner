@@ -74,16 +74,19 @@
               <hr class="mt mb"/>
               <div>
                 @if (timedCurrency.endDate < now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-old">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-old">{{ timedCurrency.endDate | datetime }}</b>
                   you were able to get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
                   Please enter how much you collected during this period:
                 } @else if (timedCurrency.date > now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b>{{ timedCurrency.date | datetime }}</b>
                   and <b>{{ timedCurrency.endDate | datetime }}</b>
                   you will be able to get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
                   Please keep this value at <b>0</b> until the currency becomes available:
                 } @else {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-new">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-new">{{ timedCurrency.endDate | datetime }}</b>
                   you can get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
@@ -231,7 +234,7 @@
       <div class="sky-flex scroll-x tree-scroll">
         @for (tree of trees; track tree.guid) {
           <app-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
-            [enableControls]="false"
+            [enableControls]="false" [forceNodeAction]="'emit'"
             [nodeOverlayTemplate]="tNode" [opaqueNodes]="true">
           </app-spirit-tree>
         }

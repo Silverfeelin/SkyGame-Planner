@@ -195,6 +195,7 @@ export class SearchService {
       { name: 'Item field guide', type: 'Page', data: '/item/field-guide', search: 'Item field guide' },
       { name: 'Item inflation', type: 'Page', data: '/item/inflation', search: 'Item inflation' },
       { name: 'Item unlock calculator', type: 'Page', data: '/item/unlock-calculator', search: 'Item unlock calculator' },
+      { name: 'Hearts', type: 'Page', data: '/item/heart', search: 'Hearts' },
       { name: 'Realms', type: 'Page', data: '/realm', search: 'Realms' },
       { name: 'Areas', type: 'Page', data: '/area', search: 'Areas' },
       { name: 'Seasons', type: 'Page', data: '/season', search: 'Seasons' },

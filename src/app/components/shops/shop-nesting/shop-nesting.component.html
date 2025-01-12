@@ -20,46 +20,60 @@
 <div class="mt">
   <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
     <div class="container mb">
-      If you purchased props before the 0.27.0 patch (<app-date [date]="'2024-10-10'"></app-date>), please first mark those as purchased in the Legacy section below this list first!
+      If you purchased props before the 0.27.0 patch (<app-date [date]="'2024-10-10'"></app-date>), please first mark those as purchased in the Legacy section below this list first!<br/>
+      The current rotation is highlighted below.
+      <span class="c-accent">Please report any inconsistencies to Silverfeelin on GitHub or Skycord! TGC has the tendency to change these rotations.</span>
     </div>
-    <div class="sky-flex flex-wrap flex-align-start">
+    <div class="sky-flex flex-wrap flex-align-start scroll-x">
+      <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: permanentRotation, title: 'Permanent Items' }"></ng-container>
       @for (rotation of rotations; let i = $index; track i) {
-        <div class="shop-rotation d-inline-block" [class.highlight-attention]="i === iRotation">
-          <b class="shop-rotation-header">
-            Rotation {{ i + 1 }}
-          </b>
-          <hr class="mt mb"/>
-          @for (r of rotation; track r.item; let j = $index) {
-            @if (j) { <hr/> }
-            <div class="shop-rotation-grid">
-              <div class="shop-rotation-icon">
-                <app-item-icon [item]="r.item!" [hoverGlow]="false" [subIcons]="['unlock']"></app-item-icon>
-              </div>
-              <div class="shop-rotation-name">
-                <span>{{ r.item!.name}}</span>
-              </div>
-              <div class="shop-rotation-amount">
-                <div class="button-group">
-                  <button type="button" (click)="addQuantity(r.item!.guid, -1)">-1</button>
-                  <button type="button" (click)="addQuantity(r.item!.guid, 1)">+1</button>
-                </div>
-                @let unlock = data.unlocked[r.item!.guid];
-                x {{ unlock?.q || 0 }}
-                @if (unlock?.lq) {
-                  <span class="c-accent"> (+{{ unlock!.lq }})</span>
-                }
-                @if (unlock?.q) {
-                  =
-                  <app-cost [cost]="unlock!.cost"></app-cost>
-                }
-              </div>
-              <div class="shop-rotation-cost">
-                <app-cost [cost]="r"></app-cost>
-              </div>
-            </div>
-          }
-        </div>
+        <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: rotation, i: i, title: 'Weekly Rotation #' + (i + 1) }"></ng-container>
       }
+
+      <ng-template #tRotation let-rotation let-title="title" let-i="i">
+        <div class="shop-rotation" [class.highlight-attention]="i === iRotation">
+          <div><b class="shop-rotation-header">{{ title }}</b></div>
+          @let expectedDate = rotation[0]?.expectedDate;
+          @if (expectedDate) {
+            @if (i === iRotation) {
+              <div>Current rotation</div>
+            } @else {
+              <div>Expected date: <app-date [date]="expectedDate"></app-date></div>
+            }
+          }
+          <hr class="mt mb"/>
+          <div class="shop-rotation-items">
+            @for (r of rotation; track r.item; let j = $index) {
+              <div class="shop-rotation-item">
+                <div class="shop-rotation-icon">
+                  <app-item-icon [item]="r.item!" [hoverGlow]="false" [subIcons]="['unlock']"></app-item-icon>
+                </div>
+                <div class="shop-rotation-name">
+                  <span>{{ r.item!.name}}</span>
+                </div>
+                <div class="shop-rotation-amount">
+                  <div class="button-group">
+                    <button type="button" (click)="addQuantity(r.item!.guid, -1)">-1</button>
+                    <button type="button" (click)="addQuantity(r.item!.guid, 1)">+1</button>
+                  </div>
+                  @let unlock = data.unlocked[r.item!.guid];
+                  x {{ unlock?.q || 0 }}
+                  @if (unlock?.lq) {
+                    <span class="c-accent"> (+{{ unlock!.lq }})</span>
+                  }
+                  @if (unlock?.q) {
+                    =
+                    <app-cost [cost]="unlock!.cost"></app-cost>
+                  }
+                </div>
+                <div class="shop-rotation-cost">
+                  <app-cost [cost]="r"></app-cost>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </ng-template>
     </div>
   </app-card>
 </div>

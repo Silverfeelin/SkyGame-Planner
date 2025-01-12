@@ -152,7 +152,7 @@
   { "guid": "rYnGpAsHAN", "item": "bOx0bcbPix", "sh": 1, "n": "A4Dkmob6-c" },
   { "guid": "A4Dkmob6-c", "item": "_qNmWZx0rp", "sh": 1, "n": "lekFrRUyKi" },
   { "guid": "lekFrRUyKi", "item": "B59f4_ru60", "sh": 2, "n": "Ji2B6vFsuJ" },
-  { "guid": "Ji2B6vFsuJ", "item": "ZdKPdWs2xL" },
+  { "guid": "Ji2B6vFsuJ", "item": "ZdKPdWs2xL", "sh": 2 },
   // After Season
   { "guid": "Udd-_n5nht", "item": "srvkkR75YW", "nw": "AeVtH3xFwK", "n": "K6gM4npLi9" },
   { "guid": "AeVtH3xFwK", "item": "sQkVBP30nf", "c": 3 },
@@ -659,22 +659,30 @@
   { "guid": "BdgMwWpdUv", "item": "kSUpmc7BGK", "nw": "uiFFvOV26K", "n": "R4Y_Q3RES_" },
   { "guid": "uiFFvOV26K", "item": "xGUAqqh4hK" },
   { "guid": "R4Y_Q3RES_", "item": "a2jmBtI7SB", "nw": "ooAEpXb7Bn", "n": "XtmRITBo-6" },
-  { "guid": "ooAEpXb7Bn", "item": "itrEoHB72a" },
+  { "guid": "ooAEpXb7Bn", "item": "itrEoHB72a", "h": 8 },
   { "guid": "XtmRITBo-6", "item": "pronMA7m25", "n": "mQ2jU8yZwP" },
   { "guid": "mQ2jU8yZwP", "item": "kvggIFZaT3" },
   // #endregion
   // #region Moomin Guide
-  { "guid": "8_QAGF_cuK", "item": "AOzrztb94H", "n": "6fDptytQp4", "ne": "YlEndiNM7o" },
-  { "guid": "YlEndiNM7o", "item": "1uyZfKjJg5", "n": "K8tJUE8H_e" },
-  { "guid": "K8tJUE8H_e", "item": "dkfdFCaemY", "n": "3d_lsspaRe", "sh": 1 },
-  { "guid": "3d_lsspaRe", "item": "8JjPl9WZDJ", "n": "hkcc7q0eXn", "sh": 1 },
-  { "guid": "hkcc7q0eXn", "item": "Rb06PBDZi5", "sh": 2 },
-  { "guid": "6fDptytQp4", "item": "M4jG56FhYY", "nw": "WSBJ992gbF", "n": "Wd9z98lxbo" },
+  { "guid": "8_QAGF_cuK", "item": "AOzrztb94H", "n": "6fDptytQp4" },
+  { "guid": "6fDptytQp4", "item": "M4jG56FhYY", "nw": "WSBJ992gbF", "n": "Wd9z98lxbo", "ne": "YlEndiNM7o" },
   { "guid": "WSBJ992gbF", "item": "zM4WRnZZPv", "n": "21cqactLSD" },
   { "guid": "21cqactLSD", "item": "CKSp0pSfZu", "h": 3 },
+  { "guid": "YlEndiNM7o", "item": "1uyZfKjJg5", "n": "K8tJUE8H_e" },
+  { "guid": "K8tJUE8H_e", "item": "dkfdFCaemY", "sh": 1, "n": "3d_lsspaRe" },
+  { "guid": "3d_lsspaRe", "item": "8JjPl9WZDJ", "sh": 1, "n": "hkcc7q0eXn" },
+  { "guid": "hkcc7q0eXn", "item": "Rb06PBDZi5", "sh": 2 },
   { "guid": "Wd9z98lxbo", "item": "AwSkTYwlI6", "n": "G8SMsDJr_u" },
-  { "guid": "G8SMsDJr_u", "item": "qQ76Owlmiz", "nw": "wionXk5YSK" },
+  { "guid": "G8SMsDJr_u", "item": "qQ76Owlmiz", "nw": "wionXk5YSK", "n": "ott3-sOpP6" },
   { "guid": "wionXk5YSK", "item": "7dSq6EPvZO" },
+  { "guid": "ott3-sOpP6", "item": "0Bw9Rv8C-m", "nw": "_4xsyvYEkP", "n": "LqrsiCmIEj" },
+  { "guid": "_4xsyvYEkP", "item": "kd1Kr8dyLE", "c": 5, "n": "3TsBNz8Trr" },
+  { "guid": "3TsBNz8Trr", "item": "Oh0sB7s1ej", "h": 5 },
+  { "guid": "LqrsiCmIEj", "item": "IuYvhTYq50", "n": "PB8v25zTYk" },
+  { "guid": "PB8v25zTYk", "item": "otoI-tynmI", "nw": "gc3s1bCfQs", "n": "luXj-OBMiq", "ne": "42iX16VW6p" },
+  { "guid": "gc3s1bCfQs", "item": "AGYsMcJMkZ" },
+  { "guid": "42iX16VW6p", "item": "5_qdhtwFCV", "c": 35 },
+  { "guid": "luXj-OBMiq", "item": "Q5N32W3OFJ", "c": 190 },
   // #endregion
   // #endregion
 
@@ -887,6 +895,18 @@
   { "guid": "RNwFankdgQ", "item": "QTfwfRnYwz", "c": 5, "nw": "i_9vS_ri6z", "n": "PPi0SxVF37" },
   { "guid": "i_9vS_ri6z", "item": "7WktQVTwtR", "c": 75 },
   { "guid": "PPi0SxVF37", "item": "XOhMscNvdq", "c": 42 },
+  // SV
+  { "guid": "3PnrLNCFyL", "item": "zRlUm_oL2p", "nw": "8DwtAb37xO", "n": "57DfqdDRwz" },
+  { "guid": "8DwtAb37xO", "item": "tUzGovgVRK", "h": 4 },
+  { "guid": "57DfqdDRwz", "item": "7Jr0a40jVD", "c": 5, "nw": "o6dm1idkZ_", "n": "5ff-iI3fLx", "ne": "JQE_RyU6E1" },
+  { "guid": "o6dm1idkZ_", "item": "_hk1ya3nj0", "c": 15 },
+  { "guid": "JQE_RyU6E1", "item": "ffOE0uszzI", "c": 3 },
+  { "guid": "5ff-iI3fLx", "item": "ou4hoCwWmt", "ac": 2, "n": "RICiCVL-3k" },
+  { "guid": "RICiCVL-3k", "item": "dor3unMei7", "h": 3, "nw": "v1kj3DLt2x", "n": "nNQ1XJmGVS" },
+  { "guid": "v1kj3DLt2x", "item": "K82EgKZAwe", "h": 6 },
+  { "guid": "nNQ1XJmGVS", "item": "QTfwfRnYwz", "c": 5, "nw": "giFFloPSVX", "n": "YweEy7UaxW" },
+  { "guid": "giFFloPSVX", "item": "7WktQVTwtR", "c": 75 },
+  { "guid": "YweEy7UaxW", "item": "XOhMscNvdq", "c": 42 },
   // #region Greeting Shaman
   { "guid": "8f2CTxUNd3", "item": "NpbuKXMxKS", "nw": "1Jw-zclYMy", "n": "n4PhxK9Dap" },
   { "guid": "1Jw-zclYMy", "item": "5QWjZVAA-9" },
@@ -1490,6 +1510,18 @@
   { "guid": "JzSPrUMpet", "item": "7gjw9rjbK9", "c": 5, "nw": "rzuSTdqEfX", "n": "jTQHWinNTp" },
   { "guid": "rzuSTdqEfX", "item": "T4suf1MdTj", "c": 70 },
   { "guid": "jTQHWinNTp", "item": "SekRzXgjfv", "c": 48 },
+  // TS 130
+  { "guid": "PU_A3V3LeT", "item": "T9ZZMbXM0p", "nw": "WLvEYauW1W", "n": "aZdY-DgguS" },
+  { "guid": "WLvEYauW1W", "item": "Lpi2B9yp7E", "h": 4 },
+  { "guid": "aZdY-DgguS", "item": "GbIQpDNVKS", "c": 5, "nw": "WZaAMUugZf", "n": "jY-FG6SoHC", "ne": "xN1WxwuhGr" },
+  { "guid": "WZaAMUugZf", "item": "ixu-bQFMqR", "c": 15 },
+  { "guid": "xN1WxwuhGr", "item": "gOrgKYIV3P", "c": 3 },
+  { "guid": "jY-FG6SoHC", "item": "Pe1Hflmudo", "ac": 2, "n": "06xZYUtHOB" },
+  { "guid": "06xZYUtHOB", "item": "8p1dB9WsP1", "h": 3, "nw": "uILAa0EYRD", "n": "vKTkhCxxFF" },
+  { "guid": "uILAa0EYRD", "item": "T835b5bBNS", "h": 6 },
+  { "guid": "vKTkhCxxFF", "item": "7gjw9rjbK9", "c": 5, "nw": "8eIts8nQ9k", "n": "jv-TDDZUQw" },
+  { "guid": "8eIts8nQ9k", "item": "T4suf1MdTj", "c": 70 },
+  { "guid": "jv-TDDZUQw", "item": "SekRzXgjfv", "c": 48 },
   // #endregion
   // #region Festival Spin Dancer
   { "guid": "QsIyX1p15K", "item": "72q94N8VCj", "nw": "vm-4ZZVAEE", "n": "8WTjr99H6h" },
@@ -1619,6 +1651,19 @@
   { "guid": "M5UMpOG1fq", "item": "l4AT0gf-aR", "c": 5, "nw": "dJ6WDhecCY", "n": "1iylf9JkZn" },
   { "guid": "dJ6WDhecCY", "item": "52NbrdHrAf", "c": 75 },
   { "guid": "1iylf9JkZn", "item": "MIKr5rkFuk", "c": 75 },
+  // RS 7
+  { "guid": "gXYiRrAJFc", "item": "bcJTF4AAEe", "nw": "RRA3njYT2c", "n": "XMd3U9mVv3", "ne": "HKCFeunpJa" },
+  { "guid": "RRA3njYT2c", "item": "rt7_sCQiHh", "h": 4 },
+  { "guid": "HKCFeunpJa", "item": "J4SWAguEQD", "h": 14 },
+  { "guid": "XMd3U9mVv3", "item": "QC2E3iIpQB", "c": 5, "nw": "jaxbzjR2Qx", "n": "XtJR96GLr0", "ne": "683pZXLGsm" },
+  { "guid": "jaxbzjR2Qx", "item": "hsTWje5YU_", "c": 42 },
+  { "guid": "683pZXLGsm", "item": "AzgiEH8D4t", "c": 3 },
+  { "guid": "XtJR96GLr0", "item": "F9m8tlM-EH", "ac": 2, "n": "xSXdDkcLBI" },
+  { "guid": "xSXdDkcLBI", "item": "S9zHdixzVO", "h": 3, "nw": "4J37m5zY1Z", "n": "V8hIRpTbIN" },
+  { "guid": "4J37m5zY1Z", "item": "HlohlGb5MA", "h": 6 },
+  { "guid": "V8hIRpTbIN", "item": "l4AT0gf-aR", "c": 5, "nw": "tsh0OsZRcm", "n": "3XylFWD7g2" },
+  { "guid": "tsh0OsZRcm", "item": "52NbrdHrAf", "c": 75 },
+  { "guid": "3XylFWD7g2", "item": "MIKr5rkFuk", "c": 75 },
   // #endregion
   // #region Respectful Pianist
   { "guid": "qACxZ97wkA", "item": "g3peZ7bo5z", "nw": "ARG7zSMz_D", "n": "9G_sQ253rB" },
@@ -2189,6 +2234,19 @@
   { "guid": "uEjvyPdwr_", "item": "Gu5Pw8cvcR", "c": 54 },
   { "guid": "aExWaifHkZ", "item": "sQcUGrjRP2", "c": 5, "n": "HLD9K_xEa0" },
   { "guid": "HLD9K_xEa0", "item": "OMRQQpGTCh", "c": 75 },
+  // TS 129
+  { "guid": "UFRKNWm8B0", "item": "GkHHcjKlV-", "nw": "9cXb8J0QHx", "n": "pLOJu4fdFq", "ne": "f6Nkd54DUO" },
+  { "guid": "9cXb8J0QHx", "item": "a1mWcW4Pll", "h": 4 },
+  { "guid": "f6Nkd54DUO", "item": "5HoXo6DF--", "c": 15 },
+  { "guid": "pLOJu4fdFq", "item": "mY3HmHBokS", "c": 5, "nw": "qnJvo3-K7n", "n": "zGv1ugz_iy", "ne": "JL9AjP4pCA" },
+  { "guid": "qnJvo3-K7n", "item": "JeLUbTDjy3", "c": 44 },
+  { "guid": "JL9AjP4pCA", "item": "03A3OtJzWu", "c": 3 },
+  { "guid": "zGv1ugz_iy", "item": "bdJ0TZ1V3e", "ac": 2, "n": "zsDT40T34c" },
+  { "guid": "zsDT40T34c", "item": "3H28hhg2kF", "h": 3, "nw": "rPOdagTaqj", "n": "ZsNjPm0YS8", "ne": "YbaBYGobSN" },
+  { "guid": "rPOdagTaqj", "item": "DyDCYzuiZU", "h": 6 },
+  { "guid": "YbaBYGobSN", "item": "Gu5Pw8cvcR", "c": 54 },
+  { "guid": "ZsNjPm0YS8", "item": "sQcUGrjRP2", "c": 5, "n": "X2mTcKddrc" },
+  { "guid": "X2mTcKddrc", "item": "OMRQQpGTCh", "c": 75 },
   // #endregion
   // #region Prophet of Earth
   { "guid": "HI3hEkeep2", "item": "N3W56zu42m", "nw": "GhmONbxOVV", "n": "qFmYiH4xDV" },
@@ -2503,7 +2561,7 @@
   { "guid": "s68HvP9FBc", "item": "Z68GLvFuLv", "c": 5, "n": "ZV2XYquNUM" },
   { "guid": "ZV2XYquNUM", "item": "KZMXQVnjyb", "c": 45 },
   // #endregion
-  // Scolding Student
+  // #region Scolding Student
   { "guid": "xEpQNLe0ur", "item": "GDEPmZva_3", "nw": "2RnqJUFCHn", "n": "tjJ8yFkEHz" },
   { "guid": "2RnqJUFCHn", "item": "sEIwClFXji" },
   { "guid": "tjJ8yFkEHz", "item": "WKIqwWYgD9", "sc": 10, "nw": "Qam6zzP9Q0", "n": "VxyDDrtukV" },
@@ -2526,6 +2584,19 @@
   { "guid": "ZFa6pfo_YM", "item": "LtEVJrA6l0", "c": 5, "nw": "oUziCS4jrO", "n": "0xHSyWxSGI" },
   { "guid": "oUziCS4jrO", "item": "6NGF44qiL6", "c": 50 },
   { "guid": "0xHSyWxSGI", "item": "mF5qoEBPBj", "c": 70 },
+  // TS 128
+  { "guid": "3dJMguXWJV", "item": "GDEPmZva_3", "nw": "zh8CCunOJy", "n": "JFIQNcrLnz" },
+  { "guid": "zh8CCunOJy", "item": "sEIwClFXji", "h": 4 },
+  { "guid": "JFIQNcrLnz", "item": "Iw7f-6mtyr", "c": 5, "nw": "zzwxp4h4T2", "n": "Aswr8ckS2G", "ne": "VSupPwzGx_" },
+  { "guid": "zzwxp4h4T2", "item": "WKIqwWYgD9", "c": 24 },
+  { "guid": "VSupPwzGx_", "item": "UAne9toSKx", "c": 3 },
+  { "guid": "Aswr8ckS2G", "item": "nVt5lNwIVK", "ac": 2, "n": "Tj3JHiryuo" },
+  { "guid": "Tj3JHiryuo", "item": "Y0xKlLOykh", "h": 3, "nw": "k6Wo21Vul1", "n": "KcYNpS8RdX" },
+  { "guid": "k6Wo21Vul1", "item": "YDHt4GuNvK", "h": 6 },
+  { "guid": "KcYNpS8RdX", "item": "LtEVJrA6l0", "c": 5, "nw": "IZF1ZcK1dV", "n": "746Si1pr5M" },
+  { "guid": "IZF1ZcK1dV", "item": "6NGF44qiL6", "c": 50 },
+  { "guid": "746Si1pr5M", "item": "mF5qoEBPBj", "c": 70 },
+  // #endregion
   // Scaredy Cadet
   { "guid": "15h4Sx9Xjj", "item": "KyJwYhzGVj", "nw": "MT7y2yFURq", "n": "XrXMMxnm68" },
   { "guid": "MT7y2yFURq", "item": "owZSOBEp_z" },
@@ -3072,7 +3143,7 @@
   { "guid": "bZij9Qh6TT", "item": "Z6kNG4kwEC", "c": 42 },
   { "guid": "3bJxteRVuO", "item": "ARf5D2Bu4v", "c": 80 },
   // #endregion
-  // Modest Dancer
+  // #region Modest Dancer
   { "guid": "p7a3ZfuSbK", "item": "kW5PsMdMVR", "n": "oCHzlJAqzK" },
   { "guid": "oCHzlJAqzK", "item": "xW6-dzxnSs", "sc": 8, "nw": "NYDYwVF1n5", "n": "dCpU54ycb_" },
   { "guid": "NYDYwVF1n5", "item": "Gv945yQObD" },
@@ -3083,6 +3154,9 @@
   { "guid": "edibqikRFg", "item": "DFn3TnXyGw", "sc": 30, "nw": "gjOgkRgoBF", "n": "_tIuNHp9k9" },
   { "guid": "gjOgkRgoBF", "item": "zBs2Y94DY2" },
   { "guid": "_tIuNHp9k9", "item": "vsbQqT8eYs", "sc": 3 },
+  // RS 7
+  { "guid": "XcU33tjR-q", "item": "kW5PsMdMVR" },
+  // #endregion
   // #endregion
   // #region Shattering
   // #region Ancient Light (Jellyfish)
@@ -3249,7 +3323,7 @@
   { "guid": "JliH0Y6KM2", "item": "aVXNBBz0Qs", "sc": 34, "nw": "yXExfyJtn3", "n": "9MbT9T5RFB" },
   { "guid": "yXExfyJtn3", "item": "UfkQ77aqyH" },
   { "guid": "9MbT9T5RFB", "item": "ALJDKgSPvx", "sc": 3 },
-  // Pleading Child
+  // #region Pleading Child
   { "guid": "GjeQ3Fdpac", "item": "6H4WC7Aipv", "nw": "3wFQnlovc8", "n": "_thEXwDGhm" },
   { "guid": "3wFQnlovc8", "item": "oxlHVEQ-KD" },
   { "guid": "_thEXwDGhm", "item": "-uVJsYJF-Z", "sc": 16, "nw": "jZKVtHiIMm", "n": "xW90S_gGrX" },
@@ -3261,6 +3335,9 @@
   { "guid": "S0kW5aLVv2", "item": "eP_tdKr4R7", "hiddenItems": ["2LXsbFTewq"], "sc": 36, "nw": "q96oSanWkm", "n": "bZER38vgLj" },
   { "guid": "q96oSanWkm", "item": "j4QIVxv1ux" },
   { "guid": "bZER38vgLj", "item": "rnJTYxBZei", "sc": 3 },
+  // RS 7
+  { "guid": "3PI4Zls_LB", "item": "6H4WC7Aipv" },
+  // #endregion
   // Tiptoeing Tea-Brewer
   { "guid": "FAsuN4N2hI", "item": "8Pr0VtDhsh", "nw": "jnC93VNXXg", "n": "SKoYdNr3Q8" },
   { "guid": "jnC93VNXXg", "item": "-XSUgHYCU-" },
@@ -3284,7 +3361,7 @@
   { "guid": "hI2s9jDb9T", "item": "wXaEysCEQ2", "sc": 3 },
   // #endregion
   // #region Passage
-  // Oddball Outcast
+  // #region Oddball Outcast
   { "guid": "dUbS4mxFs5", "item": "q1lSh8QVkN", "nw": "5KOMevSZjw", "n": "XqsBj201DT" },
   { "guid": "5KOMevSZjw", "item": "WMCReW0LQD" },
   { "guid": "XqsBj201DT", "item": "uE2-9qAMKP", "sc": 14, "nw": "zDu6q9PZ16", "n": "eyXoCbP5dp" },
@@ -3296,6 +3373,9 @@
   { "guid": "2zrqG6cBs3", "item": "Py6sIw6EvE", "sc": 32, "nw": "B704wt7Ums", "n": "FSfFboevg3" },
   { "guid": "B704wt7Ums", "item": "yeajwByRBg" },
   { "guid": "FSfFboevg3", "item": "TPVlNAKn3p", "sc": 3 },
+  // RS 7
+  { "guid": "5DxSihnRm3", "item": "q1lSh8QVkN" },
+  // #endregion
   // Tumbling Troublemaker
   { "guid": "R1hBDJIu16", "item": "FEzWv1XXku", "nw": "cIfMgIqH9x", "n": "u2psXUE0cn" },
   { "guid": "cIfMgIqH9x", "item": "DjPVeBb0wn" },

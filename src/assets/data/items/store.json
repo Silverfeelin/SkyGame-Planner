@@ -9,8 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack"
     },
-    "order": 681,
-    "dyeSlots": 1
+    "order": 692
   },
   {
     "id": 1937,
@@ -22,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack"
     },
-    "order": 680
+    "order": 691
   },
   {
     "id": 1938,
@@ -35,7 +34,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape"
     },
-    "order": 679
+    "order": 690
   },
   {
     "id": 1939,
@@ -48,7 +47,16 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Fledgling_Harp"
     },
-    "order": 471
+    "order": 477
+  },
+  {
+    "id": 2406,
+    "guid": "10Ol7H9jKg",
+    "type": "Prop",
+    "name": "Fledgling Upright Piano",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
+    "order": 688
   },
   {
     "id": 1940,
@@ -61,7 +69,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar"
     },
-    "order": 480
+    "order": 486
   },
   {
     "id": 1941,
@@ -74,7 +82,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan"
     },
-    "order": 485
+    "order": 491
   },
   {
     "id": 1942,
@@ -87,7 +95,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar"
     },
-    "order": 491
+    "order": 497
   },
   {
     "id": 1943,
@@ -99,7 +107,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 815
+    "order": 827
   },
   {
     "id": 1944,
@@ -111,7 +119,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 814
+    "order": 826
   },
   {
     "id": 1945,
@@ -123,7 +131,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack"
     },
-    "order": 261
+    "order": 265
   },
   {
     "id": 1946,
@@ -136,7 +144,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute"
     },
-    "order": 498
+    "order": 504
   },
   {
     "id": 1959,
@@ -145,7 +153,7 @@
     "name": "Sparrow Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Sparrow-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
-    "order": 811
+    "order": 823
   },
   {
     "id": 1960,
@@ -154,7 +162,7 @@
     "name": "Sparrow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Sparrow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
-    "order": 422
+    "order": 428
   },
   {
     "id": 1961,
@@ -163,7 +171,7 @@
     "name": "Moth Antennae",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moth-headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
-    "order": 313
+    "order": 319
   },
   {
     "id": 1962,
@@ -172,7 +180,7 @@
     "name": "Moth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Moth-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
-    "order": 812
+    "order": 824
   },
   {
     "id": 1947,
@@ -184,7 +192,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 423
+    "order": 429
   },
   {
     "id": 1948,
@@ -196,7 +204,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 816
+    "order": 828
   },
   {
     "id": 1949,
@@ -208,6 +216,14 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 262
+    "order": 266
+  },
+  {
+    "id": 2408,
+    "guid": "yFLIo5YGNu",
+    "type": "Prop",
+    "name": "Mask Hanger",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Hang-wall-mask.png",
+    "order": 653
   }
 ]

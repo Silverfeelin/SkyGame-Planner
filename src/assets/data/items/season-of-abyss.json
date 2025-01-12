@@ -4,13 +4,13 @@
     "guid": "Ya2cCEllDX",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Abyss Pendant",
+    "name": "Abyss Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/15/Season-of-Abyss-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/SOAbyss-Pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 436
+    "order": 442
   },
   {
     "id": 492,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 317
+    "order": 323
   },
   {
     "id": 493,
@@ -36,8 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 739,
-    "dyeSlots": 2
+    "order": 750
   },
   {
     "id": 494,
@@ -50,8 +49,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 382,
-    "dyeSlots": 2
+    "order": 388
   },
   {
     "id": 495,
@@ -133,8 +131,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
     },
-    "order": 383,
-    "dyeSlots": 2
+    "order": 389
   },
   {
     "id": 1371,
@@ -177,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask"
     },
-    "order": 384,
+    "order": 390,
     "group": "SeasonPass"
   },
   {
@@ -190,7 +187,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Hair"
     },
-    "order": 200
+    "order": 202
   },
   {
     "id": 1376,
@@ -240,9 +237,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape"
     },
-    "order": 737,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 748,
+    "group": "SeasonPass"
   },
   {
     "id": 1381,
@@ -328,7 +324,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair"
     },
-    "order": 199,
+    "order": 201,
     "group": "SeasonPass"
   },
   {
@@ -341,8 +337,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
     },
-    "order": 380,
-    "dyeSlots": 2
+    "order": 386
   },
   {
     "id": 1389,
@@ -385,8 +380,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape"
     },
-    "order": 735,
-    "dyeSlots": 1
+    "order": 746
   },
   {
     "id": 1393,
@@ -459,7 +453,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask"
     },
-    "order": 379,
+    "order": 385,
     "group": "SeasonPass"
   },
   {
@@ -519,9 +513,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape"
     },
-    "order": 738,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "order": 749,
+    "group": "SeasonPass"
   },
   {
     "id": 1405,
@@ -533,7 +526,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory"
     },
-    "order": 269
+    "order": 273
   },
   {
     "id": 1406,
@@ -602,7 +595,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Mask"
     },
-    "order": 381
+    "order": 387
   },
   {
     "id": 1413,
@@ -645,8 +638,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape"
     },
-    "order": 736,
-    "dyeSlots": 2
+    "order": 747
   },
   {
     "id": 1417,
@@ -673,7 +665,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair"
     },
-    "order": 198,
+    "order": 200,
     "group": "SeasonPass"
   },
   {
@@ -716,7 +708,7 @@
     "id": 2327,
     "guid": "xK_nid1lFo",
     "type": "Special",
-    "name": "Hearts",
+    "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   }
 ]

@@ -4,13 +4,13 @@
     "guid": "-InWbdW4EP",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Gratitude Pendant",
+    "name": "Gratitude Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/1_Gratitude.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Gratitude_pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
     },
-    "order": 425
+    "order": 431
   },
   {
     "id": 369,
@@ -23,8 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
     },
-    "order": 340,
-    "dyeSlots": 2
+    "order": 346
   },
   {
     "id": 650,
@@ -47,7 +46,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Hair"
     },
-    "order": 149
+    "order": 151
   },
   {
     "id": 652,
@@ -74,9 +73,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Mask"
     },
-    "order": 341,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 347,
+    "group": "SeasonPass"
   },
   {
     "id": 655,
@@ -126,7 +124,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Hair"
     },
-    "order": 151
+    "order": 153
   },
   {
     "id": 660,
@@ -176,9 +174,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape"
     },
-    "order": 701,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 712,
+    "group": "SeasonPass"
   },
   {
     "id": 665,
@@ -268,7 +265,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Hair"
     },
-    "order": 150
+    "order": 152
   },
   {
     "id": 674,
@@ -280,9 +277,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Mask"
     },
-    "order": 336,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 342,
+    "group": "SeasonPass"
   },
   {
     "id": 675,
@@ -340,7 +336,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Instrument"
     },
-    "order": 475
+    "order": 481
   },
   {
     "id": 681,
@@ -390,9 +386,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Mask"
     },
-    "order": 337,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 343,
+    "group": "SeasonPass"
   },
   {
     "id": 686,
@@ -482,8 +477,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Cape"
     },
-    "order": 700,
-    "dyeSlots": 2
+    "order": 711
   },
   {
     "id": 695,
@@ -495,9 +489,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Mask"
     },
-    "order": 338,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 344,
+    "group": "SeasonPass"
   },
   {
     "id": 696,
@@ -562,7 +555,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Instrument"
     },
-    "order": 476,
+    "order": 482,
     "group": "SeasonPass"
   },
   {
@@ -605,9 +598,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Mask"
     },
-    "order": 339,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 345,
+    "group": "SeasonPass"
   },
   {
     "id": 707,

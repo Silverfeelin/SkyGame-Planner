@@ -73,15 +73,23 @@ export class NavigationHelper {
 
     let lastNode: INode | undefined;
     let lastDate: DateTime = DateTime.fromFormat('2000-01-01', 'yyyy-MM-dd');
+    let permanentNode: INode | undefined;
+    let isUnlocked = false;
     for (const node of nodes) {
       // Prioritize unlocked node.
       if (node.unlocked) {
         lastNode = node;
+        isUnlocked = true;
         break;
       }
 
       const tree = node.root?.spiritTree;
       if (!tree) { continue; }
+
+      if (tree.permanent) {
+        permanentNode = node;
+        continue;
+      }
 
       const date = tree?.eventInstanceSpirit?.eventInstance ? tree.eventInstanceSpirit.eventInstance.date
         : tree?.ts ? tree.ts.date
@@ -93,9 +101,15 @@ export class NavigationHelper {
       lastNode = node;
     }
 
+    if (!isUnlocked) { lastNode = permanentNode || lastNode; }
     if (!lastNode) { return undefined; }
+
     const tree = lastNode.root?.spiritTree;
     const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
+
+    if (lastNode === permanentNode && tree?.permanent) {
+      return { route: this.getPermanentRoute(tree.permanent), extras };
+    }
 
     const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
     if (tree?.eventInstanceSpirit) { return { route: ['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid], extras }; }
@@ -115,9 +129,7 @@ export class NavigationHelper {
 
     const nav: NavigationExtras = { queryParams: { highlightIap: iap?.guid }};
     if (shop?.permanent) {
-      return typeof shop.permanent === 'string'
-        ? { route: ['/shop', shop.permanent], extras: nav }
-        : { route: ['/shop'], extras: nav };
+      return { route: this.getPermanentRoute(shop.permanent), extras: nav };
     }
     if (shop?.event) { return { route: ['/event-instance', shop.event.guid], extras: nav }; }
     if (shop?.season) { return { route: ['/season', shop.season.guid], extras: nav }; }
@@ -129,5 +141,9 @@ export class NavigationHelper {
     const params: Params = {};
     url.searchParams.forEach((v, k) => params[k] = v);
     return params;
+  }
+
+  private static getPermanentRoute(permanent: string | boolean) : string[] {
+    return typeof permanent === 'string' ? ['/shop', permanent] : ['/shop'];
   }
 }

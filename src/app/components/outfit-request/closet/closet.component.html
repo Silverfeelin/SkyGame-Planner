@@ -124,7 +124,7 @@
           <div class="container">
             <h4 class="mb-0 mt-0">{{ section.label }}</h4>
           </div>
-          <div class="grid grid-4 mt">
+          <div class="background-picker-items mt">
             <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground(section.guid)"/>
             <ng-container *ngFor="let bg of section.backgrounds">
               <img [src]="bg.url" class="background-picker-item" (click)="setBackground(bg.guid)"/>

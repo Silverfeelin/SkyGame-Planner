@@ -111,6 +111,35 @@
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=998fff7ecafb443c8e358eac422f0a4d"
       }
-    }
+    },
+    {
+      "guid": "c-9fQnXL2Q",
+      "name": "Saluting Protector Revisit",
+      "area": "Mhbh0g9OdG",
+      "date": { "day": 9, "month": 12, "year": 2024 },
+      "endDate": { "day": 11, "month": 12, "year": 2024 },
+      "spirits": [
+        { "guid": "uDajS7IQbu", "spirit": "eToUA1mSjz", "tree": "m25FwXu6kO" }
+      ]
+    },
+    {
+      "guid": "USgkh40Fik",
+      "name": "Special Visit #7",
+      "draft": true,
+      "date": { "day": 13, "month": 1, "year": 2025 },
+      "endDate": { "day": 26, "month": 1, "year": 2025 },
+      "spirits": [
+        { "guid": "wjbjjbIgZw", "spirit": "V43JRVL_QD", "tree": "2TNahX09bx" },
+        { "guid": "h0_7az33-8", "spirit": "S6KVcMgi-3", "tree": "YCIL81ldvN" },
+        { "guid": "nqueW1tvnk", "spirit": "9y_5scrYa9", "tree": "9MRZQVLIT2" },
+        { "guid": "KZZTsnWuzG", "spirit": "udBbDIhZtD", "tree": "VwW8uUBAdU" }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#January_13,_2025"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1458261c87dd80ee9e90dbc70200a33c"
+      }
+    },
   ]
 }

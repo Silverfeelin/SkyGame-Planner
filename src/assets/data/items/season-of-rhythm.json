@@ -4,13 +4,13 @@
     "guid": "Xbz7dLYzOi",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Rhythm Pendant",
+    "name": "Rhythm Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/4_Rhythm.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Season_of_rhythm_pendant_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 428
+    "order": 434
   },
   {
     "id": 375,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 352
+    "order": 358
   },
   {
     "id": 376,
@@ -36,7 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 162
+    "order": 164
   },
   {
     "id": 845,
@@ -103,7 +103,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Mask"
     },
-    "order": 353
+    "order": 359
   },
   {
     "id": 852,
@@ -221,7 +221,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Hair"
     },
-    "order": 159
+    "order": 161
   },
   {
     "id": 865,
@@ -286,7 +286,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Prop"
     },
-    "order": 520
+    "order": 526
   },
   {
     "id": 872,
@@ -375,7 +375,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Mask"
     },
-    "order": 354,
+    "order": 360,
     "group": "SeasonPass"
   },
   {
@@ -441,7 +441,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Hair"
     },
-    "order": 160
+    "order": 162
   },
   {
     "id": 887,
@@ -491,9 +491,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Cape"
     },
-    "order": 708,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 719,
+    "group": "SeasonPass"
   },
   {
     "id": 892,
@@ -534,7 +533,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Prop"
     },
-    "order": 529
+    "order": 535
   },
   {
     "id": 896,
@@ -584,7 +583,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Hair"
     },
-    "order": 161
+    "order": 163
   },
   {
     "id": 901,
@@ -635,7 +634,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Instrument"
     },
-    "order": 483,
+    "order": 489,
     "group": "SeasonPass"
   },
   {
@@ -648,7 +647,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Mask"
     },
-    "order": 356
+    "order": 362
   },
   {
     "id": 907,
@@ -721,7 +720,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Mask"
     },
-    "order": 355,
+    "order": 361,
     "group": "SeasonPass"
   },
   {
@@ -758,7 +757,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Instrument"
     },
-    "order": 482
+    "order": 488
   },
   {
     "id": 918,
@@ -785,7 +784,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Cape"
     },
-    "order": 709,
+    "order": 720,
     "group": "SeasonPass"
   },
   {

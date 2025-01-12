@@ -619,8 +619,8 @@
     // Moominvalley
     {
       "guid": "bqAgpNc9km",
-      "description": "In the distant gazebo in Moominvalley.",
-      "mapData": { "position": [-148.69,422.5] },
+      "description": "In the distant gazebo in Moominvalley. Requires completion of the quests.",
+      "mapData": { "position": [-148.69,422.5], "videoUrl": "Vault/16.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Moominvalley" }
     },
     // Archives

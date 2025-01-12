@@ -13,6 +13,7 @@ export const themes: Array<ITheme> = [
   { name: 'Crescent Oasis', value: 'sandy' },
   { name: 'Days of Love', value: 'love' },
   { name: 'Moomin', value: 'moomin' },
+  { name: 'Wonderland', value: 'wonderland' },
   { name: 'Void', value: 'dark' },
   { name: 'Surprise', value: 'surprise' }
 ]

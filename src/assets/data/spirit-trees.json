@@ -531,6 +531,10 @@
       "guid": "uB8kk-fZFt",
       "node": "uM65Z1zqWR"
     },
+    {
+      "guid": "m25FwXu6kO",
+      "node": "3PnrLNCFyL"
+    },
     // Greeting Shaman
     {
       "guid": "3xelLnykRC",
@@ -789,6 +793,7 @@
       "guid": "SWBKW2vcEc",
       "node": "qoew2jYQLu"
     },
+    { "guid": "WHqjF6F7V4", "node": "PU_A3V3LeT" },
     // Festival Spin Dancer
     {
       "guid": "61W5eVdFni",
@@ -835,6 +840,10 @@
     {
       "guid": "AIEuoncebp",
       "node": "3PKNqvhxYH"
+    },
+    {
+      "guid": "9MRZQVLIT2",
+      "node": "gXYiRrAJFc"
     },
     // Respectful Pianist
     {
@@ -1044,7 +1053,7 @@
     },
     // #endregion
     // #region Prophecy
-    // Prophet of Water
+    // #region Prophet of Water
     {
       "guid": "NZRfrbFo5E",
       "node": "6GpHoGx5-0"
@@ -1061,6 +1070,11 @@
       "guid": "6vAMrTPmU-",
       "node": "9GhluZ7XjZ"
     },
+    {
+      "guid": "t62qYu-TAj",
+      "node": "UFRKNWm8B0"
+    },
+    // #endregion
     // Prophet of Earth
     {
       "guid": "26RNODjYdR",
@@ -1174,7 +1188,7 @@
       "node": "AB05xjmuxN"
     },
     // #endregion
-    // Scolding Student
+    // #region Scolding Student
     {
       "guid": "tJ92dz1ans",
       "node": "xEpQNLe0ur"
@@ -1183,6 +1197,11 @@
       "guid": "JCRJfVL3CR",
       "node": "iDh_8vdUb5"
     },
+    {
+      "guid": "LWPha7NsBb",
+      "node": "3dJMguXWJV"
+    },
+    // #endregion
     // Scaredy Cadet
     {
       "guid": "BTXu36Anhy",
@@ -1393,6 +1412,10 @@
       "guid": "pYtg2G6fMP",
       "node": "p7a3ZfuSbK"
     },
+    {
+      "guid": "YCIL81ldvN",
+      "node": "XcU33tjR-q"
+    },
     // #endregion
     // #region Shattering
     // Ancient Light (Jellyfish)
@@ -1469,6 +1492,10 @@
       "guid": "wU4H1ZfZot",
       "node": "GjeQ3Fdpac"
     },
+    {
+      "guid": "2TNahX09bx",
+      "node": "3PI4Zls_LB"
+    },
     // Tiptoeing Tea-Brewer
     {
       "guid": "gOAqpgTH4R",
@@ -1485,6 +1512,10 @@
     {
       "guid": "77QNb1vN1h",
       "node": "dUbS4mxFs5"
+    },
+    {
+      "guid": "VwW8uUBAdU",
+      "node": "5DxSihnRm3"
     },
     // Tumbling Troublemaker
     {
@@ -1804,10 +1835,16 @@
       "node": "9OdKeadQcE"
     },
     // #endregion
-    // #region Days of Music
+    // #region Days of Music (2023)
     {
       "guid": "l1qSIM0q3H",
       "node": "MRl3tWIDfb"
+    },
+    // #endregion
+    // #region Days of Music (2024)
+    {
+      "guid": "jOEcQRyMJ-",
+      "node": "jDAnKekiFv"
     },
     // #endregion
     // #region Sky Anniversary
@@ -1956,6 +1993,10 @@
       "node": "bXvejgWpLD"
     },
     // #endregion
+    // #region Feast 2024
+    { "guid": "qMoUmkx_mj", "node": "pEledYU8hw" },
+    { "guid": "9ZM5bafAP6", "node": "_utmP-13Q7" },
+    // #endregion
     // #endregion
     // #region Harmony Hall Grand Opening
     {
@@ -1993,5 +2034,15 @@
       "node": "Qbd0xTuOq-"
     },
     // #endregion
+
+    // #region Other
+    {
+      "guid": "TbheKd0E45",
+      "node": "fpoTvUXTAi",
+      "name": "Equipment Rack",
+      "permanent": "event"
+    },
+    // #endregion
   ]
 }
+

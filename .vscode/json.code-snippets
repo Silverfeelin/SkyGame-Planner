@@ -148,6 +148,31 @@
       "{\t\"guid\": \"$1\", \"spirit\": \"$2\", \"tree\": \"$3\" },"
     ]
   },
+  "Returning-Spirits": {
+    "prefix": "@returning-spirits",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"name\": \"$2\",",
+      "\t\"area\": \"$3\",",
+      "\t\"date\": { \"day\": $4, \"month\": $5, \"year\": $6 },",
+      "\t\"endDate\": { \"day\": $7, \"month\": $8, \"year\": $9 },",
+      "\t\"spirits\": [",
+      "\t\t{ \"guid\": \"$11\", \"spirit\": \"$12\", \"tree\": \"$13\" },",
+      "\t\t{ \"guid\": \"$14\", \"spirit\": \"$15\", \"tree\": \"$16\" },",
+      "\t\t{ \"guid\": \"$17\", \"spirit\": \"$18\", \"tree\": \"$19\" },",
+      "\t\t{ \"guid\": \"$20\", \"spirit\": \"$21\", \"tree\": \"$22\" }",
+      "\t],",
+      "\t\"_wiki\": {",
+      "\t\t\"href\": \"$23\"",
+      "\t},",
+      "\t\"_calendar\": {",
+      "\t\t\"href\": \"$24\"",
+      "\t}",
+      "},"
+    ],
+    "description": "Returning-Spirits"
+  },
   "Area": {
     "prefix": "@area",
     "body": [

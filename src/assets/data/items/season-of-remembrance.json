@@ -11,13 +11,13 @@
     "guid": "YU30BrQAM1",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Remembrance Pendant",
+    "name": "Remembrance Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/16_SORemembrance_logo.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/SoRemembrance-Seasonal-Pass-pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 440
+    "order": 446
   },
   {
     "id": 576,
@@ -30,7 +30,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 453
+    "order": 459
   },
   {
     "id": 577,
@@ -43,7 +43,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 547
+    "order": 553
   },
   {
     "id": 578,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Chimes"
     },
-    "order": 544
+    "order": 550
   },
   {
     "id": 582,
@@ -123,7 +123,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Kettle"
     },
-    "order": 546
+    "order": 552
   },
   {
     "id": 588,
@@ -170,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Potted_Plant"
     },
-    "order": 545
+    "order": 551
   },
   {
     "id": 594,
@@ -203,7 +203,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Crab_Plush"
     },
-    "order": 548
+    "order": 554
   },
   {
     "id": 598,
@@ -215,7 +215,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Manta_Plush"
     },
-    "order": 549
+    "order": 555
   },
   {
     "id": 599,
@@ -286,8 +286,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask"
     },
-    "order": 397,
-    "dyeSlots": 1
+    "order": 403
   },
   {
     "id": 1567,
@@ -314,7 +313,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Hair"
     },
-    "order": 216,
+    "order": 218,
     "group": "SeasonPass"
   },
   {
@@ -350,8 +349,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
     },
-    "order": 755,
-    "dyeSlots": 2
+    "order": 766
   },
   {
     "id": 1573,
@@ -403,7 +401,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory"
     },
-    "order": 452
+    "order": 458
   },
   {
     "id": 1578,
@@ -430,7 +428,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Hair"
     },
-    "order": 215,
+    "order": 217,
     "group": "SeasonPass"
   },
   {
@@ -479,7 +477,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
     },
-    "order": 97
+    "order": 99
   },
   {
     "id": 1585,
@@ -538,7 +536,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Hair"
     },
-    "order": 217,
+    "order": 219,
     "group": "SeasonPass"
   },
   {
@@ -595,8 +593,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
     },
-    "order": 757,
-    "dyeSlots": 2
+    "order": 768
   },
   {
     "id": 1596,
@@ -642,7 +639,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Mask"
     },
-    "order": 398,
+    "order": 404,
     "group": "SeasonPass"
   },
   {
@@ -683,9 +680,8 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
     },
-    "order": 756,
-    "group": "SeasonPass",
-    "dyeSlots": 1
+    "order": 767,
+    "group": "SeasonPass"
   },
   {
     "id": 1605,

@@ -8,6 +8,9 @@
         @if (!event) {
           There is no ongoing event and the website hasn't been updated to include any upcoming events yet.<br/><br/>
           Please check back later.
+        } @else if (!hasSpirits) {
+          @if (eventInstance && eventInstance.draft) { The Sky Planner has no data for this event yet! }
+          @else { This event has no cosmetics, so there is nothing to calculate! }
         } @else {
           There is no event currency data available for the event.<br/><br/>
           Please check back later or report this the URL of this page on <a href="https://github.com/Silverfeelin/SkyGame-Planner">GitHub</a> if it's taking too long.
@@ -83,16 +86,19 @@
               <hr class="mt mb"/>
               <div>
                 @if (timedCurrency.endDate < now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-old">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-old">{{ timedCurrency.endDate | datetime }}</b>
                   you were able to get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
                   Please enter how much you collected during this period:
                 } @else if (timedCurrency.date > now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b>{{ timedCurrency.date | datetime }}</b>
                   and <b>{{ timedCurrency.endDate | datetime }}</b>
                   you will be able to get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
                   Please keep this value at <b>0</b> until the currency becomes available:
                 } @else {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-new">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-new">{{ timedCurrency.endDate | datetime }}</b>
                   you can get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
@@ -273,7 +279,7 @@
         <div class="sky-flex scroll-x tree-scroll">
           @for (spiritInstance of spirits; track spiritInstance.guid) {
             <app-spirit-tree [tree]="spiritInstance.tree" [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
-              [enableControls]="false" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
+              [enableControls]="false" [forceNodeAction]="'emit'" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
             </app-spirit-tree>
           }
         </div>

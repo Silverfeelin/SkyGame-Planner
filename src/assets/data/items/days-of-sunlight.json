@@ -16,7 +16,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Jelly_Shoulder_Buddy"
     },
-    "order": 464
+    "order": 470
   },
   {
     "id": 1914,
@@ -28,7 +28,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Tent"
     },
-    "order": 560
+    "order": 566
   },
   {
     "id": 1915,
@@ -40,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Snack_Kit"
     },
-    "order": 579
+    "order": 586
   },
   {
     "id": 1916,
@@ -52,7 +52,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Pink_Beach_Towel_Cape"
     },
-    "order": 794
+    "order": 805
   },
   {
     "id": 1917,
@@ -64,7 +64,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Yellow_Beach_Towel_Cape"
     },
-    "order": 795
+    "order": 806
   },
   {
     "id": 1918,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Blue_Beach_Towel_Cape"
     },
-    "order": 793
+    "order": 804
   },
   {
     "id": 1919,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Chunky_Sandals"
     },
-    "order": 105
+    "order": 107
   },
   {
     "id": 1922,
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Surfboard"
     },
-    "order": 589
+    "order": 596
   },
   {
     "id": 2289,
@@ -123,8 +123,7 @@
     "name": "Sunlight Woven Wrap",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Sunlight-Woven-Wrap-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
-    "order": 796,
-    "dyeSlots": 2
+    "order": 807
   },
   {
     "id": 2290,
@@ -133,7 +132,7 @@
     "name": "Sunlight Helios Hoops",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
-    "order": 327
+    "order": 333
   },
   {
     "id": 2291,
@@ -142,7 +141,7 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 515
+    "order": 521
   },
   {
     "id": 2292,
