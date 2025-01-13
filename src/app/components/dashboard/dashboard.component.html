@@ -11,15 +11,6 @@
   </app-card>
 </div>
 
-<div class="sky-card mt" *ngIf="!season && !eventInstances.length && !ts">
-  <div class="sky-card-body">
-    <div class="container">
-      There is currently no season or event active.<br/>
-      You can view items, seasons, events and more in the menu on the left.
-    </div>
-  </div>
-</div>
-
 <app-dashboard-wishlist [season]="season" [eventInstances]="eventInstances" [ts]="ts" [rs]="rs"></app-dashboard-wishlist>
 
 <div class="grid grid-2 mt">
