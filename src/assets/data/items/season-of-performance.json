@@ -703,5 +703,7 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
-  }
+  },
+  { "id": 2430, "guid": "ChLvJgIXiL", "type": "WingBuff", "name": "Wing Buff", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png" },
+  { "id": 2431, "guid": "fRdNgSzBOI", "type": "Special", "name": "Hearts", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png" }
 ]

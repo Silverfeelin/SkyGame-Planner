@@ -38,6 +38,17 @@ export class SpiritTreeEditorComponent {
     event.preventDefault();
   }
 
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent): void {
+    switch (event.key) {
+      case 'ArrowUp': this.switchTreeNode('up') && event.preventDefault(); break;
+      case 'ArrowRight': this.switchTreeNode('right') && event.preventDefault(); break
+      case 'ArrowDown': this.switchTreeNode('down') && event.preventDefault(); break;
+      case 'ArrowLeft': this.switchTreeNode('left') && event.preventDefault(); break;
+      default: break;
+    }
+  }
+
   @HostBinding('class.dragging') get isDragging() { return !!this.draggingNode; }
 
   @ViewChild('inpTitle', { static: true }) inpTitle!: ElementRef<HTMLInputElement>;
@@ -473,6 +484,16 @@ export class SpiritTreeEditorComponent {
   private selectTreeNode(treeNode: TreeNode): void {
     this.selectedTreeNode = treeNode;
     this.selectedItem = treeNode.node.item!;
+  }
+
+  private switchTreeNode(direction: 'up'|'down'|'left'|'right'): boolean | undefined {
+    if (!this.selectedTreeNode) { return; }
+    const { x, y } = this.selectedTreeNode;
+    const [dx, dy] = direction === 'up' ? [0, 1] : direction === 'down' ? [0, -1] : direction === 'left' ? [-1, 0] : [1, 0];
+    const target = this.nodeTable[x + dx]?.[y + dy];
+    if (!target) { return; }
+    this.selectTreeNode(target);
+    return true;
   }
 
   private reloadTree(): void { this.tree = { guid: this.tree.guid, node: this.tree.node }; }
