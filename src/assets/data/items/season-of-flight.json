@@ -36,8 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 24,
-    "dyeSlots": 2
+    "order": 24
   },
   {
     "id": 479,
@@ -344,8 +343,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit"
     },
-    "order": 27,
-    "dyeSlots": 2
+    "order": 27
   },
   {
     "id": 1347,
@@ -398,8 +396,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit"
     },
     "order": 26,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "group": "SeasonPass"
   },
   {
     "id": 1351,
@@ -579,8 +576,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit"
     },
     "order": 25,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "group": "SeasonPass"
   },
   {
     "id": 1369,

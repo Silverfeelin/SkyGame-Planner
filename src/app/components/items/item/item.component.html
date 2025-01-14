@@ -33,6 +33,22 @@
           <mat-icon class="menu-icon">list</mat-icon>
           <span class="menu-label">Show in item list</span>
         </a>
+        <!-- Dyes -->
+        @if (item.dye) {
+          <div class="container">
+            <mat-icon class="menu-icon">palette</mat-icon>
+            <span class="menu-label">
+              This item can be dyed.
+            </span>
+            @if (item.dye.imageUrl) {
+              <a class="link" (click)="showDyePreview=!showDyePreview">Preview</a>
+            }
+          </div>
+          <div class="container">
+              @if (item.dye.primary) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Primary dye cost: {{ item.dye.primary.cost }}  }
+              @if (item.dye.secondary) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Secondary dye cost: {{ item.dye.secondary.cost }}  }
+          </div>
+        }
         <!-- Limited-->
         @if (item.group === 'Limited') {
           <div class="container">
@@ -49,3 +65,9 @@
     </div>
   </div>
 </div>
+
+@if (item?.dye?.imageUrl && showDyePreview) {
+  <app-overlay (close)="showDyePreview=false">
+    <img class="img-dye-preview" [src]="item!.dye!.imageUrl"/>
+  </app-overlay>
+}

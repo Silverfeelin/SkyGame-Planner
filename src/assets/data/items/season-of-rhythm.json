@@ -116,8 +116,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Outfit"
     },
     "order": 11,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "group": "SeasonPass"
   },
   {
     "id": 853,
@@ -234,8 +233,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Outfit"
     },
     "order": 13,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "group": "SeasonPass"
   },
   {
     "id": 866,
@@ -362,8 +360,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Outfit"
     },
-    "order": 14,
-    "dyeSlots": 2
+    "order": 14
   },
   {
     "id": 879,
@@ -504,8 +501,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Outfit"
     },
-    "order": 12,
-    "dyeSlots": 2
+    "order": 12
   },
   {
     "id": 893,

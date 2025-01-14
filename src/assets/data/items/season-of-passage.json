@@ -265,8 +265,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Outfit"
     },
-    "order": 42,
-    "dyeSlots": 2
+    "order": 42
   },
   {
     "id": 1615,
@@ -496,8 +495,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Outfit"
     },
-    "order": 41,
-    "dyeSlots": 2
+    "order": 41
   },
   {
     "id": 1637,
@@ -631,6 +629,18 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
   },
-  { "id": 2432, "guid": "ebwmL5sVWc", "type": "Special", "name": "Hearts", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png" },
-  { "id": 2433, "guid": "jS3uQ-FDSQ", "type": "WingBuff", "name": "Wing Buff", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png" }
+  {
+    "id": 2432,
+    "guid": "ebwmL5sVWc",
+    "type": "Special",
+    "name": "Hearts",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2433,
+    "guid": "jS3uQ-FDSQ",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  }
 ]

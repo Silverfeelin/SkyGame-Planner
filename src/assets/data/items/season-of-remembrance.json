@@ -464,8 +464,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
     },
-    "order": 38,
-    "dyeSlots": 2
+    "order": 38
   },
   {
     "id": 1584,
@@ -580,8 +579,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Outfit"
     },
     "order": 40,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "group": "SeasonPass"
   },
   {
     "id": 1595,
@@ -652,8 +650,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Outfit"
     },
-    "order": 39,
-    "dyeSlots": 2
+    "order": 39
   },
   {
     "id": 1602,
@@ -691,6 +688,18 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/SORemembrance-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
   },
-  { "id": 2428, "guid": "FEq7qn8AsB", "type": "Special", "name": "Hearts", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png" },
-  { "id": 2429, "guid": "XuA72vTV73", "type": "WingBuff", "name": "Wing Buff", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png" }
+  {
+    "id": 2428,
+    "guid": "FEq7qn8AsB",
+    "type": "Special",
+    "name": "Hearts",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2429,
+    "guid": "XuA72vTV73",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  }
 ]

@@ -422,8 +422,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Outfit"
     },
     "order": 31,
-    "group": "SeasonPass",
-    "dyeSlots": 2
+    "group": "SeasonPass"
   },
   {
     "id": 1444,
@@ -682,8 +681,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Outfit"
     },
-    "order": 29,
-    "dyeSlots": 2
+    "order": 29
   },
   {
     "id": 1468,
@@ -706,6 +704,18 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
   },
-  { "id": 2430, "guid": "ChLvJgIXiL", "type": "WingBuff", "name": "Wing Buff", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png" },
-  { "id": 2431, "guid": "fRdNgSzBOI", "type": "Special", "name": "Hearts", "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png" }
+  {
+    "id": 2430,
+    "guid": "ChLvJgIXiL",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2431,
+    "guid": "fRdNgSzBOI",
+    "type": "Special",
+    "name": "Hearts",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  }
 ]

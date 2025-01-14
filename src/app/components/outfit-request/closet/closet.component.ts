@@ -221,12 +221,13 @@ export class ClosetComponent implements OnDestroy {
   }
 
   showDyePicker(item: IItem, evt: MouseEvent): void {
-    if (!item.dyeSlots) { return; }
+    if (!item.dye) { return; }
     evt.preventDefault();
     evt.stopImmediatePropagation();
     this.showingDyePicker = true;
     this.dyeItem = item;
-    this.dyes[item.guid] ??= Array.from({ length: item.dyeSlots }, () => ({}));
+    const dyeSlots = item.dye?.secondary ? 2 : 1;
+    this.dyes[item.guid] ??= Array.from({ length: dyeSlots }, () => ({}));
   }
 
   closeDyePicker(): void {
@@ -1094,7 +1095,7 @@ export class ClosetComponent implements OnDestroy {
 
 
         // Draw dyes
-        if (item.dyeSlots! > 0) {
+        if (item.dye?.primary) {
           const drawDye = (dye: DyeColor | undefined, dx: number, dy: number) => {
             ctx.save();
             const color = dye || 'none';
@@ -1131,7 +1132,7 @@ export class ClosetComponent implements OnDestroy {
           const dyes = this.dyes[item.guid];
           drawDye(dyes[0]?.primary, x + 4, y + _wItem);
           drawDye(dyes[0]?.secondary, x + (_wDye - 4) * 1, y + _wItem);
-          if (item.dyeSlots! > 1) {
+          if (item.dye?.secondary) {
             drawLine(y + _wDye);
             drawDye(dyes[1]?.primary, x + 4, y + _wItem + _wDye);
             drawDye(dyes[1]?.secondary, x + (_wDye - 4) * 1, y + _wItem + _wDye);

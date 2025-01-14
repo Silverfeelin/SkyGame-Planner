@@ -470,9 +470,9 @@
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
           <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
-            @if (!item.dyeSlots) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
-            @if (item.dyeSlots > 0) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
-            @if (item.dyeSlots > 1) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+            @if (!item.dye?.primary) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dye?.primary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dye?.secondary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
           </div>
         </div>
       </div>
@@ -494,9 +494,9 @@
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
           <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
-            @if (!item.dyeSlots) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
-            @if (item.dyeSlots > 0) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
-            @if (item.dyeSlots > 1) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+            @if (!item.dye?.primary) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dye?.primary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dye?.secondary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
           </div>
         </div>
       </div>
@@ -515,11 +515,11 @@
       <div class="">
         <app-item-icon [item]="dyeItem" [hoverGlow]="false" [opaque]="true" [size]="'default'"></app-item-icon>
       </div>
-      @if (dyeItem.dyeSlots! > 0) {
+      @if (dyeItem.dye?.primary) {
         <div><b>Dye 1</b></div>
         <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 0 }"></ng-container>
       }
-      @if (dyeItem.dyeSlots! > 1) {
+      @if (dyeItem.dye?.secondary) {
         <div class="mt"><b>Dye 2</b></div>
         <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 1 }"></ng-container>
       }
