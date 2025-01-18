@@ -115,12 +115,13 @@ export type ItemSize = 'mini' | 'small' | 'medium' | 'default' | 'large' | 'auto
 export type ItemSubicon = 'type' | 'season' | 'elder' | 'iap' | 'seasonPass' | 'favourite' | 'unlock' | 'limited';
 
 export interface IItemDye {
-  primary?: IItmeDyeSpec;
-  secondary?: IItmeDyeSpec;
-  imageUrl?: string;
+  primary?: IItemDyeSpec;
+  secondary?: IItemDyeSpec;
+  previewUrl?: string;
+  infoUrl?: string;
 }
 
-export interface IItmeDyeSpec {
+export interface IItemDyeSpec {
   cost?: number;
 }
 

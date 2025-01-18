@@ -40,7 +40,7 @@
             <span class="menu-label">
               This item can be dyed.
             </span>
-            @if (item.dye.imageUrl) {
+            @if (item.dye.previewUrl || item.dye.infoUrl) {
               <a class="link" (click)="showDyePreview=!showDyePreview">Preview</a>
             }
           </div>
@@ -66,8 +66,10 @@
   </div>
 </div>
 
-@if (item?.dye?.imageUrl && showDyePreview) {
+@if (showDyePreview) {
   <app-overlay (close)="showDyePreview=false">
-    <img class="img-dye-preview" [src]="item!.dye!.imageUrl"/>
+    @if (item!.dye!.previewUrl) {
+      <img class="img-dye-preview" [src]="item!.dye!.previewUrl"/>
+    }
   </app-overlay>
 }
