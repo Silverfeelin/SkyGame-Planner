@@ -51,7 +51,7 @@ type FilterMap = { [key: string]: boolean };
 
 let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
 const defaultFilters = {
-  filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, unsorted: undefined },
+  filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, dyeable: undefined, unsorted: undefined },
   currencies: { free: true, candles: true, hearts: true, ascendedCandles: true, eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true }
 };
 
@@ -313,6 +313,11 @@ export class ItemsComponent {
       if (this.filters['returned'] !== undefined) {
         const returned = item.autoUnlocked || (metadata.origin && metadata.origin.source !== metadata.last?.source);
         if (this.filters['returned'] !== returned) { return false; }
+      }
+
+      if (this.filters['dyeable'] !== undefined) {
+        const dyeable = !!(item.dye?.primary || item.dye?.secondary);
+        if (this.filters['dyeable'] !== dyeable) { return false; }
       }
 
       // Filter by IAP
