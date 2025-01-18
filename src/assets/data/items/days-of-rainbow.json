@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Braid"
     },
-    "order": 329
+    "order": 337
   },
   {
     "id": 1790,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Cape"
     },
-    "order": 801
+    "order": 817
   },
   {
     "id": 1791,
@@ -124,7 +124,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Hair_Flower"
     },
-    "order": 293
+    "order": 299
   },
   {
     "id": 1805,
@@ -136,7 +136,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat"
     },
-    "order": 248
+    "order": 254
   },
   {
     "id": 1806,
@@ -148,7 +148,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Double_Rainbow_Flower"
     },
-    "order": 294
+    "order": 300
   },
   {
     "id": 1807,
@@ -160,7 +160,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Earring"
     },
-    "order": 330
+    "order": 338
   },
   {
     "id": 1808,
@@ -172,7 +172,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Headphones"
     },
-    "order": 331
+    "order": 339
   },
   {
     "id": 1809,
@@ -184,7 +184,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Trousers"
     },
-    "order": 62
+    "order": 65
   },
   {
     "id": 1810,
@@ -217,7 +217,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Tunic"
     },
-    "order": 63
+    "order": 66
   },
   {
     "id": 1814,
@@ -229,7 +229,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color#Dark_Rainbow_Earring_Pack"
     },
-    "order": 332
+    "order": 340
   },
   {
     "id": 1815,
@@ -241,7 +241,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Cape"
     },
-    "order": 802
+    "order": 818
   },
   {
     "id": 2210,
@@ -257,7 +257,7 @@
     "name": "Dark Rainbow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Dark-Rainbow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Dark-Rainbow-Mask.png",
-    "order": 424
+    "order": 433
   },
   {
     "id": 2212,
@@ -266,7 +266,7 @@
     "name": "Color Glam Cut",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Color-Glam-Cut-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Color-Glam-Cut-front.png",
-    "order": 249
+    "order": 255
   },
   {
     "id": 2213,
@@ -275,7 +275,7 @@
     "name": "Color Bubble Machine",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/15/Color-Bubble-Machine-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Color-Bubble-Machine.png",
-    "order": 574
+    "order": 586
   },
   {
     "id": 2214,
@@ -284,6 +284,6 @@
     "name": "Dark Rainbow Loafers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Dark-Rainbow-Loafers-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Dark-Rainbow-Loafers.png",
-    "order": 106
+    "order": 111
   }
 ]
