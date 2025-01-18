@@ -45,8 +45,8 @@
             }
           </div>
           <div class="container">
-              @if (item.dye.primary) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Primary dye cost: {{ item.dye.primary.cost }}  }
-              @if (item.dye.secondary) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Secondary dye cost: {{ item.dye.secondary.cost }}  }
+              @if (item.dye.primary?.cost) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Primary dye cost: {{ item.dye.primary!.cost }} / {{ item.dye.primary!.cost! * 2 }}  }
+              @if (item.dye.secondary?.cost) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Secondary dye cost: {{ item.dye.secondary!.cost }} / {{ item.dye.secondary!.cost! * 2 }}  }
           </div>
         }
         <!-- Limited-->
