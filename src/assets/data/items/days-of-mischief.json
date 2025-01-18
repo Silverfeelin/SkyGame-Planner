@@ -6,6 +6,9 @@
     "name": "Spooky Bat Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Icon_cape_bat-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Bat_cape_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Mischief_BatCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape"
     },
@@ -42,6 +45,9 @@
     "name": "Mischief Web Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Icon_cape_spider-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Spider_cape_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Mischief_SpiderCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape"
     },
@@ -195,6 +201,9 @@
     "name": "Cat Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Cat-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Days-of-Mischief-2022-Cat-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Mischief_cat.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape"
     },

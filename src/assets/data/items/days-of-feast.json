@@ -30,6 +30,9 @@
     "name": "Snowflake Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Icon_cape_snowflake-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Snowflake_cape.back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Feast_SnowflakeCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Cape"
     },
@@ -42,6 +45,9 @@
     "name": "Days of Feast Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Icon_cape_santa-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Santa_cape_back_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Feast_santa.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Cape"
     },
@@ -196,6 +202,9 @@
     "name": "Winter Ancestor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Days_of_Feast_Elder_Cape_icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Feast_Elder_Cape_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Feast_WinterAncestorCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Ancestor_Cape"
     },
@@ -251,6 +260,9 @@
     "name": "Cozy Hermit Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Days-of-Feast-Yeti-Fur-Cape-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Days-of-Feast-Yeti-Fur-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Feast_YetiCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape"
     },
@@ -320,6 +332,9 @@
     "type": "Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Winter-Quilted-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Feast_peek.jpg"
+    },
     "order": 835
   },
   {

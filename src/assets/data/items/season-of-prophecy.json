@@ -183,6 +183,9 @@
     "name": "Prophet of Water Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Icon_cape_prophecy_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Prophecy_cape_water_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Prophecy_TurtleCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape"
     },
@@ -334,6 +337,9 @@
     "name": "Prophet of Earth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Icon_cape_prophecy_maroon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Prophecy_cape_earth_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Prophecy_SpiderCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape"
     },
@@ -487,6 +493,9 @@
     "name": "Prophet of Air Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Icon_cape_prophecy_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Prophecy_cape_air_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Prophecy_BatCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape"
     },

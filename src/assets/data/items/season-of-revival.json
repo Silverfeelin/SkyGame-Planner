@@ -207,6 +207,9 @@
     "name": "Vestige of a Deserted Oasis Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Vestige-of-a-Deserted-Oasis-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Vestige-of-a-Deserted-Oasis-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Revival_RhythmCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vestige_of_a_Deserted_Oasis#Cape"
     },
@@ -255,6 +258,9 @@
     "name": "Memory of a Lost Village Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Memory-of-a-Lost-Village-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Memory-of-a-Lost-Village-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Revival_AbyssCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_of_a_Lost_Village#Cape"
     },
@@ -360,6 +366,9 @@
     "name": "Echo of an Abandoned Refuge Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Echo-of-an-Abandoned-Refuge-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Echo-of-an-Abandoned-Refuge-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Revival_GratCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Echo_of_an_Abandoned_Refuge#Cape"
     },
@@ -421,6 +430,9 @@
     "name": "Remnant of a Forgotten Haven Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Remnant-of-a-Forgotten-Haven-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Remnant-of-a-Forgotten-Haven-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Revival_EnchantCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remnant_of_a_Forgotten_Haven#Cape"
     },

@@ -142,6 +142,9 @@
     "name": "Handstanding Thrillseeker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/HandstandingThrillseeker-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Cape_pink_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_pink.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
@@ -161,6 +164,9 @@
     "name": "Handstanding Thrillseeker Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/HandstandingThrillseeker-tier-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Cape_pink_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_pink2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
@@ -524,6 +530,9 @@
     "name": "Proud Victor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/ProudVictor-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Cape_red_3.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_red.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
@@ -583,6 +592,9 @@
     "name": "Proud Victor Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/ProudVictor-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Cape_red_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_red2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },

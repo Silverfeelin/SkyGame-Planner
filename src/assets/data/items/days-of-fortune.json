@@ -260,6 +260,9 @@
     "name": "Days of Fortune Dragon Stole",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Fortune-Dragon-Scarf-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Fortune-Dragon-Scarf-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Fortune_DragonCape.jpg"
+    },
     "order": 807
   },
   {

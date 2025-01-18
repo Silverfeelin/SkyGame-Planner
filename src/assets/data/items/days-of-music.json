@@ -129,6 +129,9 @@
     "name": "Marching Band Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Music-marching-band-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Music-marching-band-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Music_cape.jpg"
+    },
     "order": 838
   },
   {

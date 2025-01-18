@@ -17,6 +17,9 @@
     "name": "Duets Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Duets-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Duets_pianist.jpg"
+    },
     "order": 797
   },
   {
@@ -274,6 +277,9 @@
     "name": "The Cellist's Flourishing Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Cellists-Flourishing-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cellists-Flourishing-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Duets_cellist.jpg"
+    },
     "order": 798
   },
   {

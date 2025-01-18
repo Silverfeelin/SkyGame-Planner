@@ -123,6 +123,9 @@
     "name": "Sunlight Woven Wrap",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Sunlight-Woven-Wrap-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg"
+    },
     "order": 823
   },
   {

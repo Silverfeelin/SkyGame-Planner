@@ -94,6 +94,9 @@
     "name": "Confetti Cousin Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Icon_cape_belonging_red-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Belonging_cape_red_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Belonging_CousinCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Cape"
     },
@@ -462,6 +465,9 @@
     "name": "Wise Grandparent Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Icon_cape_belonging_white-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Belonging_cape_white_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Belonging_GrandpaCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Cape"
     },
@@ -589,6 +595,9 @@
     "name": "Pleaful Parent Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Icon_cape_belonging_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Belonging_cape_dark_blue_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Belonging_PleafulCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Cape"
     },

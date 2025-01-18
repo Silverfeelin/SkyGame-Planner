@@ -316,7 +316,7 @@ export class ItemsComponent {
       }
 
       if (this.filters['dyeable'] !== undefined) {
-        const dyeable = !!(item.dye?.primary || item.dye?.secondary);
+        const dyeable = !!item.dye;
         if (this.filters['dyeable'] !== dyeable) { return false; }
       }
 

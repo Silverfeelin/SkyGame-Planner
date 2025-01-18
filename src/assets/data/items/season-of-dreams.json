@@ -33,6 +33,9 @@
     "name": "Dreams Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Dreams_cape_ultimate_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Dreams_ult.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
@@ -332,6 +335,9 @@
     "name": "Dancing Performer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Icon_cape_dreams_dancing-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Dreams_cape_dancing_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Dreams_DP.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
     },
@@ -483,6 +489,9 @@
     "name": "Peeking Postman Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Icon_cape_dreams_peeking-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Dreams_cape_peeking_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Dreams_peek.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
     },
@@ -624,6 +633,9 @@
     "name": "Spinning Mentor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_cape_dreams_spinning-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Dreams_cape_spinning_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Dreams_spin.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },

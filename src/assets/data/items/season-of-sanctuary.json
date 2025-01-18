@@ -294,6 +294,9 @@
     "name": "Timid Bookworm Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Icon_cape_sanctuary_butterfly-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_sanctuary_cape_timid_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sanctuary_TimidCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
     },
@@ -634,6 +637,9 @@
     "name": "Grateful Shell Collector Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_cape_sanctuary_shell-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Season_of_sanctuary_cape_grateful_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sanctuary_shell.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape"
     },
@@ -775,6 +781,9 @@
     "name": "Chill Sunbather Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Icon_cape_sanctuary_flower-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Season_of_sanctuary_cape_chill_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sanctuary_chill.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape"
     },

@@ -36,6 +36,9 @@
     "name": "Butterfly Charmer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Cape_yellow_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_yellow.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
@@ -110,6 +113,9 @@
     "name": "Butterfly Charmer Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Cape_yellow_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_yellow2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },

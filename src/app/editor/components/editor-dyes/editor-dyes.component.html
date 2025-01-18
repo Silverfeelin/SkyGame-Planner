@@ -1,0 +1,10 @@
+<div class="grid grid-4">
+  @for (item of items; track item.guid) {
+    <div class="container">
+      <div>{{ item.name }}</div>
+      @if (item.dye!.previewUrl) {
+        <img style="max-width: 240px;" [src]="item.dye!.previewUrl" />
+      }
+    </div>
+  }
+</div>

@@ -252,6 +252,9 @@
     "name": "Courageous Soldier Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CourageousSoldier-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Cape_green2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_green.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
@@ -271,6 +274,9 @@
     "name": "Courageous Soldier Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/CourageousSoldier-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Cape_green_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_green2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
@@ -334,6 +340,9 @@
     "name": "Stealthy Survivor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/StealthySurvivor-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Cape_black_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_black.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
@@ -353,6 +362,9 @@
     "name": "Stealthy Survivor Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_black_tier_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Cape_black_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_black2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },

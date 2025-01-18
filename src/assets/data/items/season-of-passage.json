@@ -364,6 +364,9 @@
     "name": "Tumbling Troublemaker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Passage-Tumbling-Troublemaker-Cape-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Tumbling-Troublemaker-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Passage_RacoonCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape"
     },
@@ -588,6 +591,9 @@
     "name": "Overactive Overachiever Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Passage-Overactive-Overachiever-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Overactive-Overachiever-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Passage_CoatCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Cape"
     },

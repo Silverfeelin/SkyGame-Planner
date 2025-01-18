@@ -369,6 +369,9 @@
     "name": "Pouty Porter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Cape_teal2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_teal.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
     },
@@ -388,6 +391,9 @@
     "name": "Pouty Porter Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Cape_teal_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_teal2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
     },
@@ -485,6 +491,9 @@
     "name": "Dismayed Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cape_purple_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_purple.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
     },
@@ -504,6 +513,9 @@
     "name": "Dismayed Hunter Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape_purple_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_purple2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
     },

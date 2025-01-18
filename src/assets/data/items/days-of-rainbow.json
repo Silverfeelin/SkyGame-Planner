@@ -238,6 +238,9 @@
     "name": "Dark Rainbow Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/58/Days-of-Color-Dark-Rainbow-Cape-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Days-of-Color-Dark-Rainbow-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Color_DarkRainbowCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Cape"
     },

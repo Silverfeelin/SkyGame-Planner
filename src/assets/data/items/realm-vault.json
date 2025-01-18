@@ -251,6 +251,9 @@
     "name": "Memory Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Cape_white_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_white.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
     },
@@ -270,6 +273,9 @@
     "name": "Memory Whisperer Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Cape_white_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_white2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
     },
@@ -430,6 +436,9 @@
     "name": "Praying Acolyte Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_blue_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_blue.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
     },
@@ -449,6 +458,9 @@
     "name": "Praying Acolyte Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_blue_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_blue2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
     },

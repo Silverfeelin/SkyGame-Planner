@@ -24,7 +24,7 @@ import { OverlayComponent } from '@app/components/layout/overlay/overlay.compone
 export class ItemComponent implements OnInit {
   item?: IItem;
 
-  showDyePreview = false;
+  dyePreviewMode: 0 | 1 | 2 = 0;
 
   navSource?: INavigationTarget;
   navList?: INavigationTarget;
@@ -57,5 +57,10 @@ export class ItemComponent implements OnInit {
     item.favourited = !item.favourited;
     item.favourited ? this._storageService.addFavourites(item.guid) : this._storageService.removeFavourites(item.guid);
     this._eventService.itemFavourited.next(item);
+  }
+
+  preventDefault(event: Event): void {
+    event.preventDefault();
+    event.stopImmediatePropagation();
   }
 }

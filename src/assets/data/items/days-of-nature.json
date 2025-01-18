@@ -30,6 +30,9 @@
     "name": "Ocean Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Ocean_cape_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Nature_ocean.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape"
     },

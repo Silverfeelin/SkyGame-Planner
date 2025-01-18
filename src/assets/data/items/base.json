@@ -78,6 +78,9 @@
     "name": "Base Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_cape_brown-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Cape_brown_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_moth.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Capes#Base_Cape"
     },

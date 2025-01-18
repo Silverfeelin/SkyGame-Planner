@@ -341,6 +341,9 @@
     "name": "Nesting Loft Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Nesting-Loft-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Nesting-Loft-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Nesting_cape.jpg"
+    },
     "order": 796,
     "group": "SeasonPass"
   },

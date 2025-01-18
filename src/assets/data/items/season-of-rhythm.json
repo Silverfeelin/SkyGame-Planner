@@ -485,6 +485,9 @@
     "name": "Troupe Juggler Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_rhythm_cape_valley_juggle_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Rhythm_juggler.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Cape"
     },

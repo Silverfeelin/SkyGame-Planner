@@ -60,6 +60,9 @@
     "name": "Assembly Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Assembly_cape_ultimate_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Assembly_ult.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
@@ -441,6 +444,9 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Assembly_cape_scolding_back_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Cape"
+    },
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Assembly_student.jpg"
     },
     "order": 750,
     "group": "SeasonPass"

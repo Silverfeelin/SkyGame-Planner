@@ -226,6 +226,9 @@
     "name": "Reassuring Ranger Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Reassuring-Ranger-Cape-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Moments_RangerCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },

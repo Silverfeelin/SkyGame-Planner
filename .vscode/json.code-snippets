@@ -142,6 +142,17 @@
     ],
     "description": "Item-Dye-White"
   },
+  "Item-Dyeable": {
+    "prefix": "@item-dyeable",
+    "body": [
+      "\"dye\": {",
+      "\t\"primary\": {},",
+      "\t\"secondary\": {},",
+      "\t\"previewUrl\": \"$3\"",
+      "},"
+    ],
+    "description": "Item-Dyeable"
+  },
   "Item-Sheet": {
     "prefix": "@item-sheet",
     "body": [

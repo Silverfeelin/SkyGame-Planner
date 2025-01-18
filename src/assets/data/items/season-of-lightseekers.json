@@ -96,6 +96,9 @@
     "name": "Piggyback Lightseeker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Lightseekers_cape_isle_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Lightseeker_piggyback.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape"
     },
@@ -506,6 +509,9 @@
     "name": "Crab Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Lightseekers_cape_wasteland_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Lightseeker_CrabCallCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape"
     },
@@ -619,6 +625,9 @@
     "name": "Shushing Light Scholar Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightseekers_cape_vault_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Lightseeker_SLS.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape"
     },

@@ -70,6 +70,9 @@
     "name": "Radiance Leaping Dancer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Radiance-Leaping-Dancer-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Radiance-Leaping-Dancer-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Radiance_fork.jpg"
+    },
     "order": 803
   },
   {
@@ -198,6 +201,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Radiance-Provoking-Performer-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Radiance-Provoking-Performer-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Radiance_X.jpg"
+    },
     "order": 802
   },
   {
@@ -407,6 +413,9 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Radiance-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Radiance-Ultimate-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Radiance_ult.jpg"
+    },
     "order": 804
   },
   {
@@ -416,6 +425,9 @@
     "name": "Radiance Star Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Season-of-Radiance-additional-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Season-of-Radiance-additional-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Radiance_star.jpg"
+    },
     "order": 723
   },
   {

@@ -40,6 +40,9 @@
     "name": "Performance Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/SOPerformance-ultimate-cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Performance_ult.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
@@ -431,6 +434,9 @@
     "name": "Forgetful Storyteller Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SOPerformance_-Forgetful_Storyteller_-_Cape_-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SOPerformance_-Forgetful_Storyteller_-_Cape_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Performance_storyteller.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape"
     },
@@ -510,6 +516,9 @@
     "name": "Mellow Musician Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Morybel-0146-SoPerformance_-_Mellow_Musician-cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SoPerformance_-_Mellow_Musician-cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Performance_mellow.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },

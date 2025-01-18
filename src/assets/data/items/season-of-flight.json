@@ -224,6 +224,9 @@
     "name": "Lively Navigator Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Season_of_flight_cape_lively_navigator_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Flight_NaviCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
     },
@@ -327,6 +330,9 @@
     "name": "Light Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_flight_cape_light_whisperer_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Flight_LWCape.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
     },
