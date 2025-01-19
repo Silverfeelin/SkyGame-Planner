@@ -63,4 +63,10 @@ export class ItemComponent implements OnInit {
     event.preventDefault();
     event.stopImmediatePropagation();
   }
+
+  openSrc(event: Event): void {
+    this.preventDefault(event);
+    const src = (event.target as HTMLImageElement).src;
+    window.open(src, '_blank');
+  }
 }
