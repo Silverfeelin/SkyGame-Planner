@@ -213,6 +213,9 @@
     "name": "Bearhug Hermit Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Dreams_pants_bearhug_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Dreams_Yeti.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit"
     },
@@ -457,6 +460,9 @@
     "name": "Peeking Postman Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Icon_pants_dreams_peeking.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Dreams_pants_peeking_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Dreams_peek.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
     },

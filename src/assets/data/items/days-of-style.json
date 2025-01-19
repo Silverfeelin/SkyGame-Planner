@@ -6,6 +6,9 @@
     "type": "Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Style-Wide-Leg-Jeans-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Style-Wide-Leg-Jeans.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Style_jeans.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Wide-Leg_Jeans"
     },
@@ -116,6 +119,9 @@
     "name": "Style Dress",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dazzling-Dress-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Style-Dazzling-Dress-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Style_dress.jpg"
+    },
     "order": 72
   },
   {
@@ -141,6 +147,9 @@
     "name": "Style Dapper Suit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Style-Dapper-Suit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dapper-Suit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg"
+    },
     "order": 73
   },
   {

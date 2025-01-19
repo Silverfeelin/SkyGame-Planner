@@ -181,6 +181,9 @@
     "name": "Rainbow Trousers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Days-of-Rainbow-2022-pant-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Days_of_Rainbow_2022-Trousers.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Color_GaySuspenders.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Trousers"
     },
@@ -214,6 +217,9 @@
     "name": "Dark Rainbow Tunic",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Days-of-Color-Dark-Rainbow-Tunic-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Days-of-Colors-Dark-Rainbow-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Color_DarkRainbowTunic.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Tunic"
     },

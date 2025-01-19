@@ -814,6 +814,9 @@
     "name": "Chuckling Scout Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Icon_pants_assembly_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Assembly_pants_chuckling_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Assembly_chuckle.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },

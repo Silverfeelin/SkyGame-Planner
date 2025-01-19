@@ -40,6 +40,9 @@
     "name": "Tournament Tunic",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Tournament-Tunic-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Tournament-Tunic-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Tournament_tunic.jpg"
+    },
     "order": 68
   }
 ]

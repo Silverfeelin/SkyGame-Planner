@@ -153,6 +153,9 @@
     "name": "Sunlight Beach Shorts Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Sunlight-Beach-Shorts-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Sunlight-Beach-Shorts-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg"
+    },
     "order": 69
   },
   {

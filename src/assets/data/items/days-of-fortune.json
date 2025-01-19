@@ -138,6 +138,9 @@
     "name": "Days of Fortune Muralist's Smock",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Muralist-Smock-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Fortune_muralist.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Muralist's_Smock"
     },
@@ -251,6 +254,9 @@
     "name": "Days of Fortune Dragon Vestment",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Fortune-Dragon-Robe-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Fortune-Dragon-Robe.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Fortune_dragon.jpg"
+    },
     "order": 63
   },
   {

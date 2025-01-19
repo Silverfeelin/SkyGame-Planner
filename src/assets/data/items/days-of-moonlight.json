@@ -6,6 +6,9 @@
     "name": "Moonlight Frock",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Moonlight-Frock-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moonlight-Frock-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Moonlight_robe.jpg"
+    },
     "order": 70
   },
   {

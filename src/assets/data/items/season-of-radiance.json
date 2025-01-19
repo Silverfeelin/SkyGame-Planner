@@ -42,6 +42,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Radiance-Leaping-Dancer-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Radiance-Leaping-Dancer-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Radiance_Leap.jpg"
+    },
     "order": 60
   },
   {
@@ -52,6 +55,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Radiance-Leaping-Dancer-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Radiance-Leaping-Dancer-Shoes.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/shoes/Radiance_Leaping.jpg"
+    },
     "order": 110
   },
   {
@@ -172,6 +178,9 @@
     "name": "Radiance Provoking Performer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Radiance-Provoking-Performer-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Radiance-Provoking-Performer-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Radiance_Provoke.jpg"
+    },
     "order": 59
   },
   {
@@ -181,6 +190,9 @@
     "name": "Radiance Provoking Performer Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Radiance-Provoking-Performer-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Radiance-Provoking-Performer-Shoes.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/shoes/Radiance_Provoking.jpg"
+    },
     "order": 109
   },
   {
@@ -191,6 +203,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Provoking-Performer-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Radiance-Provoking-Performer-Headpiece-side.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg"
+    },
     "order": 335
   },
   {
@@ -304,6 +319,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Greeting-Shaman-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Radiance-Greeting-Shaman-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Radiance_Shaman.jpg"
+    },
     "order": 61
   },
   {
@@ -313,6 +331,9 @@
     "name": "Radiance Greeting Shaman Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Radiance-Greeting-Shaman-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Radiance-Greeting-Shaman-Hair.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/hair/Radiance_Greeting.jpg"
+    },
     "order": 245
   },
   {
@@ -322,6 +343,9 @@
     "name": "Radiance Greeting Shaman Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Radiance-Greeting-Shaman-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Radiance-Greeting-Shaman-Headpiece.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg"
+    },
     "order": 307
   },
   {

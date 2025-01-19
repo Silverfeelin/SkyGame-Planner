@@ -19,4 +19,9 @@ export class EditorDyesComponent {
     this.items = [...this._dataService.itemConfig.items.filter(i => i.dye)];
     ItemHelper.sortItems(this.items);
   }
+
+  openImg(evt: Event): void {
+    const src = (evt.target as HTMLImageElement).src;
+    window.open(src, '_blank');
+  }
 }

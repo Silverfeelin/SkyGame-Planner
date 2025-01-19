@@ -253,6 +253,9 @@
     "name": "Anxious Angler Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Anxious-Angler-outfit.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/SOAbyss-Anxious-Angler-Cape-outfit.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Abyss_angler.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Outfit"
     },

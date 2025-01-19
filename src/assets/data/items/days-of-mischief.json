@@ -141,6 +141,9 @@
     "name": "Mischief Witch Jumper",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Icon_2021_mischief_jumper.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Leggings_2021_mischief_jumper_iap.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Mischief_Witch.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
     },
@@ -255,6 +258,9 @@
     "name": "Mischief Goth Garment",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Mischief-Goth-Garment-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Mischief-Goth-Garment.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Mischief_Goth.jpg"
+    },
     "order": 75
   },
   {

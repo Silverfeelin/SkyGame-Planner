@@ -125,6 +125,9 @@
     "name": "Bloom Gardening Tunic",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Days-of-Bloom-Gardener-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Days-of-Bloom-Gardener-outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Bloom_gardener.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Gardening_Tunic"
     },

@@ -91,6 +91,9 @@
     "name": "The Pianist's Beginnings Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Pianists-Beginnings-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Pianists-Beginnings-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist1.jpg"
+    },
     "order": 51,
     "group": "SeasonPass"
   },
@@ -167,6 +170,9 @@
     "name": "The Cellist's Beginnings Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Cellists-Beginnings-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Cellists-Beginnings-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist1.jpg"
+    },
     "order": 53
   },
   {
@@ -267,6 +273,9 @@
     "name": "The Cellist's Flourishing Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Cellists-Flourishing-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist2.jpg"
+    },
     "order": 54,
     "group": "SeasonPass"
   },
@@ -346,6 +355,9 @@
     "name": "The Pianist's Flourishing Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Pianists-Flourishing-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Pianists-Flourishing-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist2.jpg"
+    },
     "order": 52,
     "group": "SeasonPass"
   },
