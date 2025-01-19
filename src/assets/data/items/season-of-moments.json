@@ -199,6 +199,9 @@
     "name": "Reassuring Ranger Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Reassuring-Ranger-Mask-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Reassuring-Ranger-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Moments_ranger.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
@@ -418,6 +421,9 @@
     "name": "Ascetic Monk Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Ascetic-Monk-Mask-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Ascetic-Monk-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Moments_blindfold.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },

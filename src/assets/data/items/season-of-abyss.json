@@ -49,6 +49,9 @@
     "name": "Abyss Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/SOAbyss-Ultime-gift-underwater-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Ultime-gift-underwater-mask-screenshot.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Abyss_ult.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
@@ -131,6 +134,9 @@
     "name": "Abyss Guide Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SOAbyss-additional-mask-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOAbyss-mask2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Abyss_f2p.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
     },
@@ -342,6 +348,9 @@
     "name": "Ceasing Commodore Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/SOAbyss-Ceasing-Commodore-mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SOAbyss-Ceasing-Commodore-mask-screenshot.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Abyss_Cease.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
     },

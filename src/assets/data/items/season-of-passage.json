@@ -34,6 +34,9 @@
     "name": "Passage Serow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Passage-additional-mask-Serow-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Passage-additional-mask-Serow.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_serow.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Serow_Mask"
     },
@@ -60,6 +63,9 @@
     "name": "Passage Boar Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-additional-mask-Boar-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Passage-additional-mask-Boar.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_boar.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Boar_Mask"
     },
@@ -93,6 +99,9 @@
     "name": "Passage Monkey Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Passage-additional-mask-Monkey-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Passage-additional-mask-Monkey.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_monke.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Monkey_Mask"
     },
@@ -124,6 +133,9 @@
     "name": "Passage Raccoon Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Passage-additional-mask-Racoon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Passage-additional-mask-Racoon.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_racooon.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Raccoon_Mask"
     },
@@ -150,6 +162,9 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Passage-Ultimate-Guide-Mask-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Passage-Ultimate-Guide-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_guidebear.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },

@@ -93,6 +93,9 @@
     "type": "Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Runway-Makeup-Mask-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Runway-Makeup-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Style_sparkle.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask"
     },

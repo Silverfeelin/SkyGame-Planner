@@ -49,6 +49,9 @@
     "name": "Duets Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Duets-Guide-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Duets-Mask-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Duets_seahorse.jpg"
+    },
     "order": 424
   },
   {

@@ -20,6 +20,9 @@
     "name": "Dreams Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Icon_mask_dreams_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Dreams_mask_ultimate_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Dreams_ult2.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
@@ -325,6 +328,9 @@
     "name": "Dancing Performer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Icon_mask_dreams_dancing.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Dreams_mask_dancing_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Dreams_DP.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
@@ -510,6 +516,9 @@
     "name": "Peeking Postman Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_mask_dreams_peeking.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Dreams_mask_peeking_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Dreams_peek.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
@@ -612,6 +621,9 @@
     "name": "Spinning Mentor Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_mask_dreams_spinning.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Dreams_mask_spinning_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Dreams_quail.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
     },

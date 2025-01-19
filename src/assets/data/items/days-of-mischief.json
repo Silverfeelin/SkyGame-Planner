@@ -192,6 +192,9 @@
     "name": "Cat Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Days-of-Mischief-Cat-Mask-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Days-of-Mischief-Cat-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Mischief_cat.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Mask"
     },

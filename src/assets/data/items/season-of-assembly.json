@@ -20,6 +20,9 @@
     "name": "Assembly Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_mask_assembly_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Assembly_mask_ultimate_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_ult.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
@@ -286,6 +289,9 @@
     "name": "Baffled Botanist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Icon_mask_assembly_baffled.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_mask_baffled_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_botanist.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Mask"
     },
@@ -372,6 +378,9 @@
     "name": "Scolding Student Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_assembly_scold.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Assembly_mask_scolding_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_student.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Mask"
     },
@@ -504,6 +513,9 @@
     "name": "Scaredy Cadet Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_mask_assembly_scared.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Assembly_mask_scaredy_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_cadet.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Mask"
     },
@@ -685,6 +697,9 @@
     "name": "Marching Adventurer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_mask_assembly_march.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Assembly_mask_marching_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_march.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
@@ -764,6 +779,9 @@
     "name": "Chuckling Scout Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_mask_assembly_chuckle.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Assembly_mask_chuckling_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_chuckle.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Mask"
     },
@@ -908,6 +926,9 @@
     "name": "Daydream Forester Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Icon_mask_assembly_daydream.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Assembly_mask_daydream_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_daydream.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Mask"
     },

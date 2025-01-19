@@ -266,6 +266,9 @@
     "name": "Dark Rainbow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Dark-Rainbow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Dark-Rainbow-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Colour_mask.jpg"
+    },
     "order": 433
   },
   {

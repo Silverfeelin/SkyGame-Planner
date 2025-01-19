@@ -160,6 +160,9 @@
     "name": "Nodding Muralist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Mimi-4117_06_nodding_muralist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Season_of_enchantment_mask_nodding_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Enchantment_muralist.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask"
     },
@@ -520,6 +523,9 @@
     "name": "Scarecrow Farmer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_06_scarecrow_farmer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Season_of_enchantment_mask_scare_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Enchantment_scarecrow.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
     },
@@ -730,6 +736,9 @@
     "name": "Playfighting Herbalist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Mimi-4117_06_playfighting_herbalist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Season_of_enchantment_mask_playfight_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Enchantment_playfight.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask"
     },

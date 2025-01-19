@@ -149,6 +149,9 @@
     "name": "Ocean Mask",
     "icon": "/assets/game/items/2168.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Ocean-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Nature_river.jpg"
+    },
     "order": 432
   },
   {

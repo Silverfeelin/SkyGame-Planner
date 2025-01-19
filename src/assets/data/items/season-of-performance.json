@@ -27,6 +27,9 @@
     "name": "Performance Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/SOPerformance-ultimate-mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/SOP-Ultimate-guide-mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Performance_ult.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },

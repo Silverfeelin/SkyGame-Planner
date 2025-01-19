@@ -44,6 +44,9 @@
     "name": "Piggyback Lightseeker Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Mimi-4117_03_piggyback_lightseeker_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Lightseekers_mask_isle_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_piggyback.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Mask"
     },
@@ -158,6 +161,9 @@
     "name": "Doublefive Light Catcher Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_03_doublefive_light_catcher_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Lightseekers_mask_prairie_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_doublefive.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Mask"
     },
@@ -229,6 +235,9 @@
     "name": "Laidback Pioneer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Mimi-4117_03_laidback_pioneer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Lightseekers_mask_forest_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_laidback.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Mask"
     },
@@ -351,6 +360,9 @@
     "name": "Twirling Champion Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_03_twirling_champion_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Lightseekers_mask_valley_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_Twirl.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Mask"
     },
@@ -445,6 +457,9 @@
     "name": "Crab Whisperer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Mimi-4117_03_crab_whisperer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Lightseekers_mask_wasteland_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_crab.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Mask"
     },
@@ -582,6 +597,9 @@
     "name": "Shushing Light Scholar Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Mimi-4117_03_shushing_light_scholar_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Lightseekers_mask_vault_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_SLS.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Mask"
     },

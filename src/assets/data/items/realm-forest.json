@@ -253,6 +253,9 @@
     "name": "Hide'n'Seek Pioneer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/HideNSeekPioneer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mask06-small-chibi.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Base_chibi.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Mask"
     },

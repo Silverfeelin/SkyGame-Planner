@@ -26,6 +26,9 @@
     "name": "Base Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_default.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Mask01-no_mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Base_default.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Masks#Base_Mask"
     },

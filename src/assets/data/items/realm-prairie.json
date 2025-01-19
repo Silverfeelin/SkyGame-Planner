@@ -298,6 +298,9 @@
     "name": "Waving Bellmaker Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Mask03.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Base_mask.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Mask"
     },

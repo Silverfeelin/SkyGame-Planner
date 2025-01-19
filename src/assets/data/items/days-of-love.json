@@ -18,6 +18,9 @@
     "name": "Days of Love Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Icon_mask_rose.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Days_of_love_rose_mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Love_rose.jpg"
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Mask"
     },
