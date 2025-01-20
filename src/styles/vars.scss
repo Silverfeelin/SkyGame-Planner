@@ -139,6 +139,7 @@
   --background: url(/assets/game/background/isle.webp);
 }
 
+:root[data-theme=""], // Default theme
 :root[data-theme="cozy"] {
   --hue: 140;
   --saturation: 20%;
@@ -189,7 +190,6 @@
   --background: url(/assets/game/background/moomin.webp);
 }
 
-:root[data-theme=""], // Default theme
 :root[data-theme="wonderland"] {
   --hue: 0;
   --saturation: 30%;
