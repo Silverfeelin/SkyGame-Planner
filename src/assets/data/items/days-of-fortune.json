@@ -7,12 +7,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Icon_mask_ox.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Ox_mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Fortune_bull.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Fortune_bull.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bull_Mask"
     },
-    "order": 427
+    "order": 428
   },
   {
     "id": 1724,
@@ -24,7 +25,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Lion_Headdress"
     },
-    "order": 248
+    "order": 249
   },
   {
     "id": 1725,
@@ -36,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Orange"
     },
-    "order": 294
+    "order": 295
   },
   {
     "id": 1726,
@@ -48,7 +49,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Wool_Hat"
     },
-    "order": 247
+    "order": 248
   },
   {
     "id": 1727,
@@ -60,7 +61,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Cape"
     },
-    "order": 805
+    "order": 806
   },
   {
     "id": 1728,
@@ -70,12 +71,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Icon_mask_blush.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Rosy_cheeks_mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Fortune_blush.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Fortune_blush.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Blushing_Mask"
     },
-    "order": 426
+    "order": 427
   },
   {
     "id": 1729,
@@ -87,7 +90,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bun_Hair"
     },
-    "order": 246
+    "order": 247
   },
   {
     "id": 1730,
@@ -97,12 +100,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Days_of_Fortune_-_Tiger_mask_head_icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Days-of-fortune-2021-tiger-mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Fortune_tiger.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Fortune_tiger.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Tiger_Mask"
     },
-    "order": 428
+    "order": 429
   },
   {
     "id": 1731,
@@ -114,7 +118,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Accessory"
     },
-    "order": 295
+    "order": 296
   },
   {
     "id": 1732,
@@ -126,7 +130,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Cape"
     },
-    "order": 806
+    "order": 807
   },
   {
     "id": 1733,
@@ -138,7 +142,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Hood"
     },
-    "order": 249
+    "order": 250
   },
   {
     "id": 1734,
@@ -148,7 +152,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Muralist-Smock-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Muralist-Smock-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Fortune_muralist.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Fortune_muralist.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Muralist's_Smock"
@@ -165,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Enchanted_Umbrella"
     },
-    "order": 527
+    "order": 528
   },
   {
     "id": 1736,
@@ -175,12 +180,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Days-of-Fortune-Rabbit-Mask-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Days-of-Fortune-Rabbit-Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Fortune_rabbit.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Fortune_rabbit.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Rabbit_Mask"
     },
-    "order": 429
+    "order": 430
   },
   {
     "id": 1737,
@@ -267,7 +273,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Fortune-Dragon-Robe-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Fortune-Dragon-Robe.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Fortune_dragon.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Fortune_dragon.jpg",
+      "primary": {}
     },
     "order": 63
   },
@@ -279,9 +286,10 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Fortune-Dragon-Scarf-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Fortune-Dragon-Scarf-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Fortune_DragonCape.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Fortune_DragonCape.jpg",
+      "primary": {}
     },
-    "order": 807
+    "order": 808
   },
   {
     "id": 2055,
@@ -290,7 +298,7 @@
     "name": "Days of Fortune Dragon Bangles",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Fortune-Dragon-Bangles-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
-    "order": 336
+    "order": 337
   },
   {
     "id": 2056,
@@ -300,9 +308,10 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Days-of-Fortune-Dragon-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Fortune-Dragon-Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Fortune_dragon.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Fortune_dragon.jpg",
+      "primary": {}
     },
-    "order": 430
+    "order": 431
   },
   {
     "id": 2057,
@@ -312,7 +321,7 @@
     "name": "Days of Fortune Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-    "order": 519
+    "order": 520
   },
   {
     "id": 2058,

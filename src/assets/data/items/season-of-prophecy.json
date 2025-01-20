@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 446
+    "order": 447
   },
   {
     "id": 410,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 502
+    "order": 503
   },
   {
     "id": 411,
@@ -35,12 +35,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Prophecy-Guide_Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Prophecy_ult.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_ult.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 380
+    "order": 381
   },
   {
     "id": 412,
@@ -187,12 +188,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Icon_cape_prophecy_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Prophecy_cape_water_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Prophecy_TurtleCape.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Prophecy_TurtleCape.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape"
     },
-    "order": 743,
+    "order": 744,
     "group": "SeasonPass"
   },
   {
@@ -203,12 +205,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Mimi-4117_08_prophet_of_water_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Prophecy-Prophet_of_Water_Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Prophecy_turtle.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_turtle.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Mask"
     },
-    "order": 376
+    "order": 377
   },
   {
     "id": 1075,
@@ -236,7 +239,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Prop"
     },
-    "order": 540
+    "order": 541
   },
   {
     "id": 1078,
@@ -344,12 +347,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Icon_cape_prophecy_maroon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Prophecy_cape_earth_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Prophecy_SpiderCape.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Prophecy_SpiderCape.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape"
     },
-    "order": 744
+    "order": 745
   },
   {
     "id": 1089,
@@ -359,12 +364,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Mimi-4117_08_prophet_of_earth_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Prophecy-Prophet_of_Earth_Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Prophecy_spider.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_spider.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Mask"
     },
-    "order": 377,
+    "order": 378,
     "group": "SeasonPass"
   },
   {
@@ -385,7 +391,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Prop"
     },
-    "order": 541
+    "order": 542
   },
   {
     "id": 1092,
@@ -490,12 +496,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Mimi-4117_08_prophet_of_air_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Prophecy-Prophet_of_Air_Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Prophecy_bat.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_bat.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Mask"
     },
-    "order": 378,
+    "order": 379,
     "group": "SeasonPass"
   },
   {
@@ -506,12 +513,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Icon_cape_prophecy_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Prophecy_cape_air_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Prophecy_BatCape.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Prophecy_BatCape.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape"
     },
-    "order": 742
+    "order": 743
   },
   {
     "id": 1104,
@@ -539,7 +548,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Prop"
     },
-    "order": 542
+    "order": 543
   },
   {
     "id": 1107,
@@ -647,12 +656,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Mimi-4117_08_prophet_of_fire_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Prophecy-Prophet_of_Fire_Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Prophecy_lion.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_lion.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Mask"
     },
-    "order": 379
+    "order": 380
   },
   {
     "id": 1118,
@@ -662,7 +672,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_fire_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Fire_Leggings.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Prophecy_fire.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Prophecy_fire.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Outfit"
@@ -702,7 +714,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 547
+    "order": 548
   },
   {
     "id": 1123,
@@ -714,6 +726,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 543
+    "order": 544
   }
 ]

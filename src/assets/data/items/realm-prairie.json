@@ -37,12 +37,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Cape_yellow_2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_yellow.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_yellow.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
-    "order": 705
+    "order": 706
   },
   {
     "id": 42,
@@ -114,12 +115,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Cape_yellow_tier_2_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_yellow2.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_yellow2.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
-    "order": 714
+    "order": 715
   },
   {
     "id": 50,
@@ -299,12 +301,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Mask03.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Base_mask.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Base_mask.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Mask"
     },
-    "order": 348
+    "order": 349
   },
   {
     "id": 69,
@@ -461,7 +465,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Instrument"
     },
-    "order": 486
+    "order": 487
   },
   {
     "id": 83,

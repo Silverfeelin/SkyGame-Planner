@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 455
+    "order": 456
   },
   {
     "id": 576,
@@ -30,7 +30,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 469
+    "order": 470
   },
   {
     "id": 577,
@@ -43,7 +43,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 564
+    "order": 565
   },
   {
     "id": 578,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Chimes"
     },
-    "order": 561
+    "order": 562
   },
   {
     "id": 582,
@@ -123,7 +123,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Kettle"
     },
-    "order": 563
+    "order": 564
   },
   {
     "id": 588,
@@ -170,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Potted_Plant"
     },
-    "order": 562
+    "order": 563
   },
   {
     "id": 594,
@@ -203,7 +203,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Crab_Plush"
     },
-    "order": 565
+    "order": 566
   },
   {
     "id": 598,
@@ -215,7 +215,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Manta_Plush"
     },
-    "order": 566
+    "order": 567
   },
   {
     "id": 599,
@@ -284,12 +284,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/SoRemembrance-Bereft-Veteran-Mask-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/SoRemembrance-Bereft-Veteran-Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Remembrance_Veteran.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Remembrance_Veteran.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask"
     },
-    "order": 411
+    "order": 412
   },
   {
     "id": 1567,
@@ -350,12 +351,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/SoRemembrance-Bereft-Veteran-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SoRemembrance-Bereft-Veteran-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Remembrance_vet.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Remembrance_vet.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
     },
-    "order": 779
+    "order": 780
   },
   {
     "id": 1573,
@@ -407,7 +410,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory"
     },
-    "order": 468
+    "order": 469
   },
   {
     "id": 1578,
@@ -468,7 +471,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/SoRemembrance-Pleading-Child-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/SoRemembrance-Pleading-Child-Outfit.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Remembrance_child.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Remembrance_child.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
@@ -585,7 +590,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Remembrance_tiptoe.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Remembrance_tiptoe.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Outfit"
@@ -601,12 +608,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Remembrance_tiptoe.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Remembrance_tiptoe.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
     },
-    "order": 781
+    "order": 782
   },
   {
     "id": 1596,
@@ -652,7 +661,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Mask"
     },
-    "order": 412,
+    "order": 413,
     "group": "SeasonPass"
   },
   {
@@ -663,7 +672,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SoRemembrance-Wounded-Warrior-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/SoRemembrance-Wounded-Warrior-Outfit.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Remembrance_warrior.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Remembrance_warrior.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Outfit"
@@ -693,12 +704,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/SoRemembrance-Wounded-Warrior-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/SoRemembrance-Wounded-Warrior-Cape-Back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Remembrance_WarriorCape.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Remembrance_WarriorCape.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
     },
-    "order": 780,
+    "order": 781,
     "group": "SeasonPass"
   },
   {

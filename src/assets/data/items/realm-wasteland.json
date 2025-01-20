@@ -95,7 +95,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Instrument"
     },
-    "order": 488
+    "order": 489
   },
   {
     "id": 262,
@@ -192,7 +192,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Mask"
     },
-    "order": 349
+    "order": 350
   },
   {
     "id": 272,
@@ -253,12 +253,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CourageousSoldier-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Cape_green2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_green.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_green.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
-    "order": 707
+    "order": 708
   },
   {
     "id": 279,
@@ -275,12 +276,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/CourageousSoldier-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Cape_green_tier_2_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_green2.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_green2.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
-    "order": 716
+    "order": 717
   },
   {
     "id": 281,
@@ -341,12 +343,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/StealthySurvivor-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Cape_black_2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_black.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_black.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
-    "order": 712
+    "order": 713
   },
   {
     "id": 288,
@@ -363,12 +366,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_black_tier_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Cape_black_tier_2_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_black2.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_black2.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
-    "order": 721
+    "order": 722
   },
   {
     "id": 290,
@@ -465,7 +469,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Prop"
     },
-    "order": 520
+    "order": 521
   },
   {
     "id": 300,
@@ -508,7 +512,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Instrument"
     },
-    "order": 490
+    "order": 491
   },
   {
     "id": 304,

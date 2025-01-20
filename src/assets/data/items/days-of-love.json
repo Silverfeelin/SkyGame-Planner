@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Swing"
     },
-    "order": 573
+    "order": 574
   },
   {
     "id": 1749,
@@ -19,12 +19,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Icon_mask_rose.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Days_of_love_rose_mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Love_rose.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Love_rose.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Mask"
     },
-    "order": 431
+    "order": 432
   },
   {
     "id": 1750,
@@ -36,7 +38,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Seesaw"
     },
-    "order": 574
+    "order": 575
   },
   {
     "id": 1751,
@@ -48,7 +50,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Flower_Crown"
     },
-    "order": 296
+    "order": 297
   },
   {
     "id": 1752,
@@ -60,7 +62,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Gondola"
     },
-    "order": 575
+    "order": 576
   },
   {
     "id": 1753,
@@ -72,7 +74,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Flowery_Archway"
     },
-    "order": 576
+    "order": 577
   },
   {
     "id": 1754,
@@ -84,7 +86,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Serendipitous_Scepter"
     },
-    "order": 528
+    "order": 529
   },
   {
     "id": 1755,
@@ -96,7 +98,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Classy_Cravat"
     },
-    "order": 476
+    "order": 477
   },
   {
     "id": 1756,
@@ -161,7 +163,7 @@
     "name": "Days Of Love Meteor Mantle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Love-Meteor-Mantle-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days-of-Love-Meteor-Mantle-back.png",
-    "order": 836
+    "order": 837
   },
   {
     "id": 2062,
@@ -170,7 +172,7 @@
     "name": "Heart Plush",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Love-Heart-Plushie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Plushie.png",
-    "order": 607
+    "order": 608
   },
   {
     "id": 2063,
@@ -179,7 +181,7 @@
     "name": "Heart Beret",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Beret-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Love-Heart-Beret.png",
-    "order": 297
+    "order": 298
   },
   {
     "id": 2064,

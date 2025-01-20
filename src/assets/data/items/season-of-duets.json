@@ -7,7 +7,7 @@
     "name": "Duets Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season-of-Duets-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Season-of-Duets-Pendant.png",
-    "order": 461
+    "order": 462
   },
   {
     "id": 2237,
@@ -18,9 +18,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Duets-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Duets_pianist.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Duets_pianist.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 797
+    "order": 798
   },
   {
     "id": 2238,
@@ -30,7 +32,7 @@
     "name": "Duets Ultimate Instrument",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
-    "order": 685
+    "order": 686
   },
   {
     "id": 2239,
@@ -40,7 +42,7 @@
     "name": "Duets Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Duets-Ultimate-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Duets-Ultimate-Poster-Prop.png",
-    "order": 679
+    "order": 680
   },
   {
     "id": 2240,
@@ -50,9 +52,10 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Duets-Guide-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Duets-Mask-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Duets_seahorse.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Duets_seahorse.jpg",
+      "primary": {}
     },
-    "order": 424
+    "order": 425
   },
   {
     "id": 2241,
@@ -75,7 +78,7 @@
     "name": "The Pianist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Pianists-Beginnings-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Pianists-Beginnings-Poster-Prop.png",
-    "order": 683,
+    "order": 684,
     "group": "SeasonPass"
   },
   {
@@ -95,7 +98,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Pianists-Beginnings-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Pianists-Beginnings-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist1.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist1.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 51,
     "group": "SeasonPass"
@@ -107,7 +112,7 @@
     "name": "The Pianist's Beginnings Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Pianists-Beginnings-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Pianists-Beginnings-Rug-Prop.png",
-    "order": 652
+    "order": 653
   },
   {
     "id": 2247,
@@ -163,7 +168,7 @@
     "name": "The Cellist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Cellists-Beginnings-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Cellists-Beginnings-Prop.png",
-    "order": 682,
+    "order": 683,
     "group": "SeasonPass"
   },
   {
@@ -174,7 +179,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Cellists-Beginnings-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Cellists-Beginnings-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist1.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist1.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 53
   },
@@ -216,7 +223,7 @@
     "name": "The Musicians' Legacy Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Musicians-Legacy-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Musicians-Legacy-Grand-Piano-Prop.png",
-    "order": 684,
+    "order": 685,
     "group": "SeasonPass"
   },
   {
@@ -227,7 +234,7 @@
     "name": "The Musicians' Legacy Cello",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Musicians-Legacy-Cello-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Musicians-Legacy-Cello-Prop.png",
-    "order": 511
+    "order": 512
   },
   {
     "id": 2261,
@@ -277,7 +284,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Cellists-Flourishing-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist2.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist2.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 54,
     "group": "SeasonPass"
@@ -290,9 +299,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Cellists-Flourishing-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cellists-Flourishing-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Duets_cellist.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Duets_cellist.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 798
+    "order": 799
   },
   {
     "id": 2268,
@@ -301,7 +312,7 @@
     "name": "The Cellist's Flourishing Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Cellists-Flourishing-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Rug-Prop.png",
-    "order": 653
+    "order": 654
   },
   {
     "id": 2269,
@@ -310,7 +321,7 @@
     "name": "The Cellist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Cellists-Flourishing-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Cellists-Flourishing-Poster-Prop.png",
-    "order": 681,
+    "order": 682,
     "group": "SeasonPass"
   },
   {
@@ -359,7 +370,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Pianists-Flourishing-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Pianists-Flourishing-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist2.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist2.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 52,
     "group": "SeasonPass"
@@ -380,7 +393,7 @@
     "name": "The Pianist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Pianists-Flourishing-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Pianists-Flourishing-Prop.png",
-    "order": 680,
+    "order": 681,
     "group": "SeasonPass"
   },
   {
@@ -436,7 +449,7 @@
     "name": "Duets Cello",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Compassionate-Cellist-Duets-Cello-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Compassionate-Cellist-Duets-Cello.png",
-    "order": 512
+    "order": 513
   },
   {
     "id": 2297,

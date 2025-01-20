@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 443
+    "order": 444
   },
   {
     "id": 375,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 366
+    "order": 367
   },
   {
     "id": 376,
@@ -103,7 +103,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Mask"
     },
-    "order": 367
+    "order": 368
   },
   {
     "id": 852,
@@ -113,7 +113,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Troupe-Greeter-Icon-pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Greeter.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Greeter.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Outfit"
@@ -233,7 +235,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Season_of_rhythm_pants_prairie_dance_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Spin.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Spin.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Outfit"
@@ -290,7 +294,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Prop"
     },
-    "order": 537
+    "order": 538
   },
   {
     "id": 872,
@@ -364,7 +368,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Season_of_rhythm_pants_forest_kisses_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Actor.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Actor.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Outfit"
@@ -381,7 +387,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Mask"
     },
-    "order": 368,
+    "order": 369,
     "group": "SeasonPass"
   },
   {
@@ -495,12 +501,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Icon_cape_rhythm_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Season_of_rhythm_cape_valley_juggle_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Rhythm_juggler.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Rhythm_juggler.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Cape"
     },
-    "order": 732,
+    "order": 733,
     "group": "SeasonPass"
   },
   {
@@ -511,7 +518,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_rhythm_pants_valley_juggle_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Juggler.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Rhythm_Juggler.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Outfit"
@@ -544,7 +553,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Prop"
     },
-    "order": 546
+    "order": 547
   },
   {
     "id": 896,
@@ -645,7 +654,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Instrument"
     },
-    "order": 499,
+    "order": 500,
     "group": "SeasonPass"
   },
   {
@@ -658,7 +667,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Mask"
     },
-    "order": 370
+    "order": 371
   },
   {
     "id": 907,
@@ -731,7 +740,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Mask"
     },
-    "order": 369,
+    "order": 370,
     "group": "SeasonPass"
   },
   {
@@ -768,7 +777,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Instrument"
     },
-    "order": 498
+    "order": 499
   },
   {
     "id": 918,
@@ -795,7 +804,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Cape"
     },
-    "order": 733,
+    "order": 734,
     "group": "SeasonPass"
   },
   {

@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 452
+    "order": 453
   },
   {
     "id": 508,
@@ -28,12 +28,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/SOPerformance-ultimate-mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/SOP-Ultimate-guide-mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Performance_ult.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Performance_ult.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 399
+    "order": 400
   },
   {
     "id": 509,
@@ -44,12 +46,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/SOPerformance-ultimate-cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Performance_ult.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Performance_ult.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 764
+    "order": 765
   },
   {
     "id": 510,
@@ -109,7 +112,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Mask"
     },
-    "order": 402
+    "order": 403
   },
   {
     "id": 517,
@@ -205,7 +208,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Prop"
     },
-    "order": 560
+    "order": 561
   },
   {
     "id": 1424,
@@ -286,7 +289,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Mask"
     },
-    "order": 401
+    "order": 402
   },
   {
     "id": 1432,
@@ -296,7 +299,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoPerformance_-_Frantic_Stagehand-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/SoPerformance_-_Frantic_Stagehand-outfit.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Performance_stagehand.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Performance_stagehand.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Outfit"
@@ -367,7 +371,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Mask"
     },
-    "order": 403,
+    "order": 404,
     "group": "SeasonPass"
   },
   {
@@ -428,7 +432,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/SOPerformance_-Forgetful_Storyteller_-_Outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOPerformance_-Forgetful_Storyteller_-_Outfit.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Performance_storyteller.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Performance_storyteller.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Outfit"
@@ -444,12 +450,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SOPerformance_-Forgetful_Storyteller_-_Cape_-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SOPerformance_-Forgetful_Storyteller_-_Cape_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Performance_storyteller.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Performance_storyteller.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape"
     },
-    "order": 765
+    "order": 766
   },
   {
     "id": 1445,
@@ -501,7 +509,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Mask"
     },
-    "order": 404
+    "order": 405
   },
   {
     "id": 1450,
@@ -526,12 +534,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Morybel-0146-SoPerformance_-_Mellow_Musician-cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SoPerformance_-_Mellow_Musician-cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Performance_mellow.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Performance_mellow.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },
-    "order": 766,
+    "order": 767,
     "group": "SeasonPass"
   },
   {
@@ -575,7 +584,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Instrument"
     },
-    "order": 506,
+    "order": 507,
     "group": "SeasonPass"
   },
   {
@@ -659,7 +668,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Mask"
     },
-    "order": 400
+    "order": 401
   },
   {
     "id": 1464,
@@ -697,7 +706,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOPerformance-Modest-Dancer-_outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SOPerformance-Modest-Dancer-_Outfit.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Performance_modest.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Performance_modest.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Outfit"

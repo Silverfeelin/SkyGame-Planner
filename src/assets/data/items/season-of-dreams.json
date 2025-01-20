@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 447
+    "order": 448
   },
   {
     "id": 422,
@@ -21,12 +21,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Icon_mask_dreams_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/09/Dreams_mask_ultimate_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Dreams_ult2.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Dreams_ult2.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 384
+    "order": 385
   },
   {
     "id": 423,
@@ -37,12 +38,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Icon_cape_dreams_ultimate-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Dreams_cape_ultimate_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Dreams_ult.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Dreams_ult.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 748
+    "order": 749
   },
   {
     "id": 424,
@@ -157,7 +159,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory"
     },
-    "order": 329,
+    "order": 330,
     "group": "SeasonPass"
   },
   {
@@ -217,7 +219,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Dreams_pants_bearhug_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Dreams_Yeti.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Dreams_Yeti.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Outfit"
@@ -329,12 +333,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Icon_mask_dreams_dancing.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Dreams_mask_dancing_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Dreams_DP.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Dreams_DP.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
-    "order": 382,
+    "order": 383,
     "group": "SeasonPass"
   },
   {
@@ -345,12 +350,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Icon_cape_dreams_dancing-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Dreams_cape_dancing_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Dreams_DP.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Dreams_DP.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
     },
-    "order": 746
+    "order": 747
   },
   {
     "id": 1145,
@@ -363,7 +369,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument"
     },
-    "order": 503,
+    "order": 504,
     "group": "SeasonPass"
   },
   {
@@ -467,7 +473,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Icon_pants_dreams_peeking.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Dreams_pants_peeking_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Dreams_peek.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Dreams_peek.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
@@ -502,12 +509,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Icon_cape_dreams_peeking-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Dreams_cape_peeking_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Dreams_peek.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Dreams_peek.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
     },
-    "order": 745
+    "order": 746
   },
   {
     "id": 1156,
@@ -517,12 +525,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Icon_mask_dreams_peeking.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Dreams_mask_peeking_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Dreams_peek.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Dreams_peek.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
-    "order": 381,
+    "order": 382,
     "group": "SeasonPass"
   },
   {
@@ -622,12 +631,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Icon_mask_dreams_spinning.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Dreams_mask_spinning_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Dreams_quail.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Dreams_quail.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
     },
-    "order": 383
+    "order": 384
   },
   {
     "id": 1167,
@@ -652,12 +662,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_cape_dreams_spinning-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Dreams_cape_spinning_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Dreams_spin.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Dreams_spin.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },
-    "order": 747,
+    "order": 748,
     "group": "SeasonPass"
   },
   {

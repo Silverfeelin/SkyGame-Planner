@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts"
     },
-    "order": 441
+    "order": 442
   },
   {
     "id": 371,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts"
     },
-    "order": 523
+    "order": 524
   },
   {
     "id": 709,
@@ -45,12 +45,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Mimi-4117_03_piggyback_lightseeker_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Lightseekers_mask_isle_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Lightseeker_piggyback.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_piggyback.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Mask"
     },
-    "order": 356
+    "order": 357
   },
   {
     "id": 711,
@@ -100,12 +101,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Icon_cape_lightseekers_blue_blue-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Lightseekers_cape_isle_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Lightseeker_piggyback.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Lightseeker_piggyback.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape"
     },
-    "order": 727,
+    "order": 728,
     "group": "SeasonPass"
   },
   {
@@ -162,12 +165,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_03_doublefive_light_catcher_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Lightseekers_mask_prairie_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Lightseeker_doublefive.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_doublefive.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Mask"
     },
-    "order": 357
+    "order": 358
   },
   {
     "id": 722,
@@ -200,7 +204,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Instrument"
     },
-    "order": 493,
+    "order": 494,
     "group": "SeasonPass"
   },
   {
@@ -236,12 +240,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Mimi-4117_03_laidback_pioneer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f6/Lightseekers_mask_forest_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Lightseeker_laidback.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_laidback.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Mask"
     },
-    "order": 358
+    "order": 359
   },
   {
     "id": 729,
@@ -305,7 +310,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Prop"
     },
-    "order": 521,
+    "order": 522,
     "group": "SeasonPass"
   },
   {
@@ -361,12 +366,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_03_twirling_champion_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Lightseekers_mask_valley_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Lightseeker_Twirl.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_Twirl.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Mask"
     },
-    "order": 359,
+    "order": 360,
     "group": "SeasonPass"
   },
   {
@@ -415,7 +421,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Instrument"
     },
-    "order": 494,
+    "order": 495,
     "group": "SeasonPass"
   },
   {
@@ -458,12 +464,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Mimi-4117_03_crab_whisperer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Lightseekers_mask_wasteland_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Lightseeker_crab.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_crab.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Mask"
     },
-    "order": 360
+    "order": 361
   },
   {
     "id": 751,
@@ -525,12 +532,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_cape_lightseekers_petal-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Lightseekers_cape_wasteland_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Lightseeker_CrabCallCape.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Lightseeker_CrabCallCape.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape"
     },
-    "order": 726,
+    "order": 727,
     "group": "SeasonPass"
   },
   {
@@ -543,7 +551,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Prop"
     },
-    "order": 544
+    "order": 545
   },
   {
     "id": 759,
@@ -598,12 +606,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Mimi-4117_03_shushing_light_scholar_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Lightseekers_mask_vault_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Lightseeker_SLS.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Lightseeker_SLS.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Mask"
     },
-    "order": 361,
+    "order": 362,
     "group": "SeasonPass"
   },
   {
@@ -644,12 +653,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Icon_cape_lightseekers_blue_gold-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightseekers_cape_vault_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Lightseeker_SLS.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Lightseeker_SLS.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape"
     },
-    "order": 728,
+    "order": 729,
     "group": "SeasonPass"
   },
   {

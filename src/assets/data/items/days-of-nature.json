@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Earth_Cape"
     },
-    "order": 812
+    "order": 813
   },
   {
     "id": 1779,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Necklace"
     },
-    "order": 477
+    "order": 478
   },
   {
     "id": 1780,
@@ -31,12 +31,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_cape_ocean-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Ocean_cape_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Nature_ocean.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Nature_ocean.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape"
     },
-    "order": 813
+    "order": 814
   },
   {
     "id": 1781,
@@ -48,7 +49,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Cape"
     },
-    "order": 814
+    "order": 815
   },
   {
     "id": 1782,
@@ -60,7 +61,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Accessory"
     },
-    "order": 478
+    "order": 479
   },
   {
     "id": 1783,
@@ -72,7 +73,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Coral_Crown_Accessory"
     },
-    "order": 298
+    "order": 299
   },
   {
     "id": 1784,
@@ -98,7 +99,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_School_Cape"
     },
-    "order": 815
+    "order": 816
   },
   {
     "id": 1787,
@@ -122,7 +123,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Sonorous_Seashell"
     },
-    "order": 602
+    "order": 603
   },
   {
     "id": 2166,
@@ -131,7 +132,7 @@
     "name": "Nature Wave Cape",
     "icon": "/assets/game/items/2166.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nature-Wave-Cape-back.png",
-    "order": 816
+    "order": 817
   },
   {
     "id": 2167,
@@ -140,7 +141,7 @@
     "name": "Nature Wave-Touched Hair",
     "icon": "/assets/game/items/2167.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Nature-Wave-Touched-Hair-front.png",
-    "order": 253
+    "order": 254
   },
   {
     "id": 2168,
@@ -150,9 +151,10 @@
     "icon": "/assets/game/items/2168.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Ocean-Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Nature_river.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Nature_river.jpg",
+      "primary": {}
     },
-    "order": 432
+    "order": 433
   },
   {
     "id": 2169,
@@ -161,7 +163,7 @@
     "name": "Ocean Blue Scarf",
     "icon": "/assets/game/items/2169.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Ocean-Blue-Scarf.png",
-    "order": 479
+    "order": 480
   },
   {
     "id": 2170,

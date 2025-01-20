@@ -7,7 +7,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Style-Wide-Leg-Jeans-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Style-Wide-Leg-Jeans.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Style_jeans.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Style_jeans.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Wide-Leg_Jeans"
@@ -84,7 +86,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Top_Hat"
     },
-    "order": 312
+    "order": 313
   },
   {
     "id": 1848,
@@ -94,12 +96,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Runway-Makeup-Mask-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Runway-Makeup-Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Style_sparkle.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Style_sparkle.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask"
     },
-    "order": 434
+    "order": 435
   },
   {
     "id": 1849,
@@ -123,7 +126,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dazzling-Dress-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Style-Dazzling-Dress-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Style_dress.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Style_dress.jpg",
+      "primary": {}
     },
     "order": 72
   },
@@ -134,7 +138,7 @@
     "name": "Style Fascinator",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Style-Darkness-Fascinator-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
-    "order": 313
+    "order": 314
   },
   {
     "id": 2322,
@@ -151,7 +155,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Style-Dapper-Suit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dapper-Suit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 73
   },
@@ -171,6 +177,6 @@
     "name": "Style Dapper Necktie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Style-Dapper-Necktie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Style-Dapper-Necktie.png",
-    "order": 481
+    "order": 482
   }
 ]

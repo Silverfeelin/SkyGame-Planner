@@ -143,12 +143,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/HandstandingThrillseeker-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Cape_pink_2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_pink.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_pink.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
-    "order": 711
+    "order": 712
   },
   {
     "id": 205,
@@ -165,12 +166,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/HandstandingThrillseeker-tier-2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Cape_pink_tier_2_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_pink2.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_pink2.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
-    "order": 720
+    "order": 721
   },
   {
     "id": 207,
@@ -413,7 +415,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Instrument"
     },
-    "order": 489
+    "order": 490
   },
   {
     "id": 233,
@@ -531,12 +533,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/ProudVictor-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Cape_red_3.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_red.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_red.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
-    "order": 706
+    "order": 707
   },
   {
     "id": 245,
@@ -576,7 +579,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Mask"
     },
-    "order": 439
+    "order": 440
   },
   {
     "id": 250,
@@ -593,11 +596,12 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/ProudVictor-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Cape_red_tier_2_back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Base_red2.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Base_red2.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
-    "order": 715
+    "order": 716
   }
 ]

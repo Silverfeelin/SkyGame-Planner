@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 444
+    "order": 445
   },
   {
     "id": 378,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 328
+    "order": 329
   },
   {
     "id": 379,
@@ -161,12 +161,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Mimi-4117_06_nodding_muralist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Season_of_enchantment_mask_nodding_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Enchantment_muralist.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Enchantment_muralist.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask"
     },
-    "order": 371
+    "order": 372
   },
   {
     "id": 927,
@@ -282,7 +283,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask"
     },
-    "order": 373,
+    "order": 374,
     "group": "SeasonPass"
   },
   {
@@ -343,12 +344,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Icon_cape_enchangment_purple_fold-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Season_of_enchantment_cape_indifferent_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Enchantment_alchemist.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Enchantment_alchemist.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape"
     },
-    "order": 736,
+    "order": 737,
     "group": "SeasonPass"
   },
   {
@@ -455,12 +458,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Icon_cape_enchantment_purple-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Season_of_enchantment_cape_crab_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Enchantment_crabwalk.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Enchantment_crabwalk.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape"
     },
-    "order": 734,
+    "order": 735,
     "group": "SeasonPass"
   },
   {
@@ -524,12 +528,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Mimi-4117_06_scarecrow_farmer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Season_of_enchantment_mask_scare_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Enchantment_scarecrow.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Enchantment_scarecrow.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
     },
-    "order": 374,
+    "order": 375,
     "group": "SeasonPass"
   },
   {
@@ -672,12 +677,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Icon_cape_enchantment_orange-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_enchantment_cape_sleepy_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Enchantment_snooze.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Enchantment_snooze.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape"
     },
-    "order": 735
+    "order": 736
   },
   {
     "id": 977,
@@ -737,12 +744,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Mimi-4117_06_playfighting_herbalist_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Season_of_enchantment_mask_playfight_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Enchantment_playfight.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Enchantment_playfight.jpg",
+      "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask"
     },
-    "order": 372
+    "order": 373
   },
   {
     "id": 984,
@@ -802,12 +810,14 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Icon_cape_enchantment_orange_fold-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_enchantment_cape_playflght_back_v2.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Enchantment_playfight.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Enchantment_playfight.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape"
     },
-    "order": 737
+    "order": 738
   },
   {
     "id": 990,
@@ -849,6 +859,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Prop"
     },
-    "order": 539
+    "order": 540
   }
 ]

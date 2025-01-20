@@ -43,7 +43,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Radiance-Leaping-Dancer-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Radiance-Leaping-Dancer-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Radiance_Leap.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Radiance_Leap.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 60
   },
@@ -56,7 +58,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Radiance-Leaping-Dancer-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Radiance-Leaping-Dancer-Shoes.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/shoes/Radiance_Leaping.jpg"
+      "previewUrl": "/assets/game/dyes/shoes/Radiance_Leaping.jpg",
+      "primary": {}
     },
     "order": 110
   },
@@ -67,7 +70,7 @@
     "name": "Radiance Leaping Dancer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Radiance-Leaping-Dancer-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Radiance-Leaping-Dancer-Hair.png",
-    "order": 10000
+    "order": 246
   },
   {
     "id": 2449,
@@ -77,9 +80,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Radiance-Leaping-Dancer-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Radiance-Leaping-Dancer-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Radiance_fork.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Radiance_fork.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 803
+    "order": 804
   },
   {
     "id": 2450,
@@ -89,7 +94,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Radiance-Leaping-Dancer-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Radiance-Leaping-Dancer-prop.png",
-    "order": 572
+    "order": 573
   },
   {
     "id": 2451,
@@ -179,7 +184,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Radiance-Provoking-Performer-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Radiance-Provoking-Performer-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Radiance_Provoke.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Radiance_Provoke.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 59
   },
@@ -191,7 +198,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Radiance-Provoking-Performer-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Radiance-Provoking-Performer-Shoes.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/shoes/Radiance_Provoking.jpg"
+      "previewUrl": "/assets/game/dyes/shoes/Radiance_Provoking.jpg",
+      "primary": {}
     },
     "order": 109
   },
@@ -204,9 +212,10 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Provoking-Performer-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Radiance-Provoking-Performer-Headpiece-side.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg"
+      "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg",
+      "primary": {}
     },
-    "order": 335
+    "order": 336
   },
   {
     "id": 2461,
@@ -217,9 +226,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Radiance-Provoking-Performer-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Radiance-Provoking-Performer-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Radiance_X.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Radiance_X.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 802
+    "order": 803
   },
   {
     "id": 2462,
@@ -229,7 +240,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-Greeting-Shaman-instrument-Cymbals-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Radiance-Greeting-Shaman-instrument-Cymbals.png",
-    "order": 514
+    "order": 515
   },
   {
     "id": 2463,
@@ -320,7 +331,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Greeting-Shaman-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Radiance-Greeting-Shaman-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Radiance_Shaman.jpg"
+      "previewUrl": "/assets/game/dyes/outfit/Radiance_Shaman.jpg",
+      "primary": {},
+      "secondary": {}
     },
     "order": 61
   },
@@ -332,7 +345,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Radiance-Greeting-Shaman-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Radiance-Greeting-Shaman-Hair.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/hair/Radiance_Greeting.jpg"
+      "previewUrl": "/assets/game/dyes/hair/Radiance_Greeting.jpg",
+      "primary": {}
     },
     "order": 245
   },
@@ -344,9 +358,10 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Radiance-Greeting-Shaman-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Radiance-Greeting-Shaman-Headpiece.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg"
+      "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg",
+      "primary": {}
     },
-    "order": 307
+    "order": 308
   },
   {
     "id": 2472,
@@ -417,7 +432,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Season-of-Radiance-Pendant.png",
-    "order": 463
+    "order": 464
   },
   {
     "id": 2481,
@@ -428,9 +443,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Radiance-Ultimate-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Radiance-Ultimate-Mask-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Radiance_ult.jpg"
+      "previewUrl": "/assets/game/dyes/mask/Radiance_ult.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 425
+    "order": 426
   },
   {
     "id": 2482,
@@ -441,9 +458,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Radiance-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Radiance-Ultimate-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Radiance_ult.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Radiance_ult.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 804
+    "order": 805
   },
   {
     "id": 2483,
@@ -453,9 +472,11 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Season-of-Radiance-additional-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Season-of-Radiance-additional-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Radiance_star.jpg"
+      "previewUrl": "/assets/game/dyes/cape/Radiance_star.jpg",
+      "primary": {},
+      "secondary": {}
     },
-    "order": 723
+    "order": 724
   },
   {
     "id": 2484,
