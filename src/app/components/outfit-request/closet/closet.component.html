@@ -296,6 +296,35 @@
 
 </app-card>
 
+<!-- Radiance -->
+<app-card class="mt" [foldable]="true" [folded]="true">
+  <div header>
+    <h4 class="h5 mb-0">
+      <mat-icon class="v-top">priority_high</mat-icon>
+      Radiance disclaimer
+      <mat-icon class="v-top">priority_high</mat-icon>
+    </h4>
+  </div>
+  <div class="container">
+    The Season of Radiance brought a lot of colors to the world of Sky! This page supports dyes for the "one fit" format only.<br/>
+    To request a fit with dyes, please click on the palette below an item and select your desired colors.<br/>
+    Keep in mind that not all cosmetics can be dyed and some can only be dyed with one color. This page will be updated to better reflect which items can be dyed soon.
+    <table>
+      <tr>
+        <td style="text-align:right;"><mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon></td>
+        <td>&nbsp;Can't be dyed.</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><mat-icon class="dye-icon dye-icon-active">palette</mat-icon></td>
+        <td>&nbsp;One area can be dyed.</td>
+      </tr>
+      <tr>
+        <td><mat-icon class="dye-icon dye-icon-active">palette</mat-icon><mat-icon class="dye-icon dye-icon-active">palette</mat-icon></td>
+        <td>&nbsp;Two areas can be dyed.</td>
+      </tr>
+    </table>
+  </div>
+</app-card>
 
 <!-- Item list -->
 <div class="sky-card mt" data-step="1" data-position="top-left-aligned">
@@ -515,18 +544,24 @@
       <div class="">
         <app-item-icon [item]="dyeItem" [hoverGlow]="false" [opaque]="true" [size]="'default'"></app-item-icon>
       </div>
+      <!-- Preview -->
+      @if (dyeItem.dye?.previewUrl) {
+        <img [src]="dyeItem.dye!.previewUrl" class="dye-preview" (click)="openDyePreview(dyeItem.dye!.previewUrl!)"/><br/>
+        <sub (click)="openDyePreview(dyeItem.dye!.previewUrl!)">(Click to enlarge preview)</sub>
+      }
+
       @if (dyeItem.dye?.primary) {
-        <div><b>Dye 1</b></div>
+        <div><b>Primary dye</b></div>
         <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 0 }"></ng-container>
       }
       @if (dyeItem.dye?.secondary) {
-        <div class="mt"><b>Dye 2</b></div>
+        <div class="mt"><b>Secondary dye</b></div>
         <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 1 }"></ng-container>
       }
 
       <ng-template #tDyeGrid let-i="i">
         @let dye = dyes[dyeItem.guid][i];
-        <div class="c-accent">Primary</div>
+        <div class="c-accent">Main color</div>
         <div class="dye-grid">
           <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.primary" (click)="selectDye(i, 'primary', undefined)"><mat-icon [svgIcon]="'none'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.primary==='red'" (click)="selectDye(i, 'primary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
@@ -538,7 +573,7 @@
           <div class="dye-grid-color" [class.highlight]="dye.primary==='black'" (click)="selectDye(i, 'primary', 'black')"><mat-icon class="dye-black" [svgIcon]="'dye-black'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.primary==='white'" (click)="selectDye(i, 'primary', 'white')"><mat-icon class="dye-white" [svgIcon]="'dye-white'"></mat-icon></div>
         </div>
-        <div class="c-accent">Secondary</div>
+        <div class="c-accent">Blend color</div>
         <div class="dye-grid">
           <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.secondary" (click)="selectDye(i, 'secondary', undefined)"><mat-icon class="" [svgIcon]="'none'"></mat-icon></div>
           <div class="dye-grid-color" [class.highlight]="dye.secondary==='red'" (click)="selectDye(i, 'secondary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>

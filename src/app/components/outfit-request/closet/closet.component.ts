@@ -231,9 +231,16 @@ export class ClosetComponent implements OnDestroy {
   }
 
   closeDyePicker(): void {
+    if (this.dyeItem && !this.selected.all[this.dyeItem.guid]) {
+      this.toggleItem(this.dyeItem);
+    }
     this.showingDyePicker = false;
     this.dyeItem = undefined;
     this.updateUrlFromSelection();
+  }
+
+  openDyePreview(url: string): void {
+    window.open(url, '_blank');
   }
 
   selectDye(index: number, type: 'primary' | 'secondary', color: DyeColor | undefined): void {
