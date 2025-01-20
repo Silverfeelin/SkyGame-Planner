@@ -1137,9 +1137,11 @@ export class ClosetComponent implements OnDestroy {
           };
 
           const dyes = this.dyes[item.guid];
-          drawDye(dyes[0]?.primary, x + 4, y + _wItem);
-          drawDye(dyes[0]?.secondary, x + (_wDye - 4) * 1, y + _wItem);
-          if (item.dye?.secondary) {
+          if (item.dye?.primary && dyes?.[0]) {            
+            drawDye(dyes[0]?.primary, x + 4, y + _wItem);
+            drawDye(dyes[0]?.secondary, x + (_wDye - 4) * 1, y + _wItem);
+          }
+          if (item.dye?.secondary && dyes?.[1]) {
             drawLine(y + _wDye);
             drawDye(dyes[1]?.primary, x + 4, y + _wItem + _wDye);
             drawDye(dyes[1]?.secondary, x + (_wDye - 4) * 1, y + _wItem + _wDye);
