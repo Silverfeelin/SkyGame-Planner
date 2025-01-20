@@ -32,6 +32,8 @@ interface OutfitRequest {
   g: string;
   /** "Blue": Items marked with blue. */
   b: string;
+  /** "Dyes": 4 characters per item, in order of items in r-y-g-b without duplicates. */
+  d?: string;
 }
 
 /** Save a request and return a random storage key.  */

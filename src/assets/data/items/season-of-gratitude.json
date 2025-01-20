@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
     },
-    "order": 431
+    "order": 441
   },
   {
     "id": 369,
@@ -23,7 +23,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
     },
-    "order": 346
+    "order": 355,
+    "dye": {
+      "primary": {},
+      "secondary": {}
+    }
   },
   {
     "id": 650,
@@ -46,7 +50,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Hair"
     },
-    "order": 151
+    "order": 156
   },
   {
     "id": 652,
@@ -70,10 +74,14 @@
     "name": "Sassy Drifter Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Mimi-4117_02_sassy_drifter_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SoG2-2019_Cat_Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Gratitude_Sassy.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Mask"
     },
-    "order": 347,
+    "order": 356,
     "group": "SeasonPass"
   },
   {
@@ -124,7 +132,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Hair"
     },
-    "order": 153
+    "order": 158
   },
   {
     "id": 660,
@@ -171,10 +179,14 @@
     "name": "Stretching Guru Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Icon_cape_gratitude_red-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape1-Season_of_Gratitude_2019.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Gratitude_yoga.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape"
     },
-    "order": 712,
+    "order": 726,
     "group": "SeasonPass"
   },
   {
@@ -265,7 +277,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Hair"
     },
-    "order": 152
+    "order": 157
   },
   {
     "id": 674,
@@ -274,10 +286,14 @@
     "name": "Provoking Performer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Mimi-4117_02_provoking_performer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Mask18-Seasonal_SoG_2019.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Gratitude_Provoke.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Mask"
     },
-    "order": 342,
+    "order": 351,
     "group": "SeasonPass"
   },
   {
@@ -336,7 +352,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Instrument"
     },
-    "order": 481
+    "order": 492
   },
   {
     "id": 681,
@@ -383,10 +399,14 @@
     "name": "Leaping Dancer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Mimi-4117_02_leaping_dancer_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Mask19-Seasonal_SoG_2019.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Gratitude_Leap.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Mask"
     },
-    "order": 343,
+    "order": 352,
     "group": "SeasonPass"
   },
   {
@@ -474,10 +494,15 @@
     "name": "Saluting Protector Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Icon_cape_gratitude_white-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Gratitude_cape_white_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Gratitude_dismiss.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Cape"
     },
-    "order": 711
+    "order": 725
   },
   {
     "id": 695,
@@ -486,10 +511,14 @@
     "name": "Saluting Protector Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Mimi-4117_02_saluting_protector_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Mask17-Seasonal_SoG_2019.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Gratitude_dismiss.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Mask"
     },
-    "order": 344,
+    "order": 353,
     "group": "SeasonPass"
   },
   {
@@ -555,7 +584,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Instrument"
     },
-    "order": 482,
+    "order": 493,
     "group": "SeasonPass"
   },
   {
@@ -595,10 +624,14 @@
     "name": "Greeting Shaman Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Mimi-4117_02_greeting_shaman_mask.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Mask16-Seasonal_SoG_2019.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Gratitude_Shaman.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Mask"
     },
-    "order": 345,
+    "order": 354,
     "group": "SeasonPass"
   },
   {

@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 441
+    "order": 451
   },
   {
     "id": 477,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 272
+    "order": 279
   },
   {
     "id": 478,
@@ -33,6 +33,11 @@
     "name": "Flight Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_flight_pants_1_ult.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Flight_ult.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
@@ -163,7 +168,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair"
     },
-    "order": 199,
+    "order": 204,
     "group": "SeasonPass"
   },
   {
@@ -176,7 +181,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory"
     },
-    "order": 271
+    "order": 278
   },
   {
     "id": 1330,
@@ -224,10 +229,15 @@
     "name": "Lively Navigator Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Season_of_flight_icon_cape_lively_navigator-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Season_of_flight_cape_lively_navigator_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Flight_NaviCape.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
     },
-    "order": 745,
+    "order": 759,
     "group": "SeasonPass"
   },
   {
@@ -289,7 +299,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory"
     },
-    "order": 269,
+    "order": 276,
     "group": "SeasonPass"
   },
   {
@@ -302,7 +312,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair"
     },
-    "order": 198
+    "order": 203
   },
   {
     "id": 1343,
@@ -327,10 +337,14 @@
     "name": "Light Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Season_of_flight_icon_cape_light_whisperer-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Season_of_flight_cape_light_whisperer_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Flight_LWCape.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
     },
-    "order": 744,
+    "order": 758,
     "group": "SeasonPass"
   },
   {
@@ -340,6 +354,11 @@
     "name": "Light Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Season_of_flight_pants_4_light_whisperer.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Flight_LW.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit"
     },
@@ -392,6 +411,11 @@
     "name": "Tinkering Chimesmith Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Season_of_flight_pants_3_tinkering_chimesmith_gs.PNG",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Flight_chime.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Outfit"
     },
@@ -408,7 +432,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory"
     },
-    "order": 270
+    "order": 277
   },
   {
     "id": 1352,
@@ -437,7 +461,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument"
     },
-    "order": 495,
+    "order": 506,
     "group": "SeasonPass"
   },
   {
@@ -450,7 +474,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair"
     },
-    "order": 197
+    "order": 202
   },
   {
     "id": 1356,
@@ -525,7 +549,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory"
     },
-    "order": 456
+    "order": 467
   },
   {
     "id": 1364,
@@ -572,6 +596,11 @@
     "name": "Talented Builder Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Season_of_flight_pants_2_talented_builder_gs.PNG",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Flight_Builder.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Outfit"
     },
@@ -588,7 +617,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Hair"
     },
-    "order": 196
+    "order": 201
   },
   {
     "id": 1953,

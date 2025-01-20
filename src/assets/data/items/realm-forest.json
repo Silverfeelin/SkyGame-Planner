@@ -94,7 +94,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shivering_Trailblazer#Hair"
     },
-    "order": 130
+    "order": 135
   },
   {
     "id": 120,
@@ -136,7 +136,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Hair"
     },
-    "order": 127
+    "order": 132
   },
   {
     "id": 124,
@@ -192,7 +192,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Blushing_Prospector#Instrument"
     },
-    "order": 505
+    "order": 517
   },
   {
     "id": 130,
@@ -216,7 +216,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Hair"
     },
-    "order": 129
+    "order": 134
   },
   {
     "id": 132,
@@ -253,10 +253,14 @@
     "name": "Hide'n'Seek Pioneer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/HideNSeekPioneer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Mask06-small-chibi.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Base_chibi.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hide%27n%27Seek_Pioneer#Mask"
     },
-    "order": 339
+    "order": 348
   },
   {
     "id": 137,
@@ -317,7 +321,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Hair"
     },
-    "order": 133
+    "order": 138
   },
   {
     "id": 143,
@@ -369,10 +373,14 @@
     "name": "Pouty Porter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/PoutyPorter-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Cape_teal2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_teal.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
     },
-    "order": 696
+    "order": 709
   },
   {
     "id": 149,
@@ -388,10 +396,14 @@
     "name": "Pouty Porter Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/PoutyPorter-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Cape_teal_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_teal2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pouty_Porter#Cape"
     },
-    "order": 705
+    "order": 718
   },
   {
     "id": 151,
@@ -433,7 +445,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Hair"
     },
-    "order": 121
+    "order": 126
   },
   {
     "id": 155,
@@ -485,10 +497,14 @@
     "name": "Dismayed Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/DismayedHunter-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cape_purple_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_purple.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
     },
-    "order": 698
+    "order": 711
   },
   {
     "id": 161,
@@ -504,10 +520,14 @@
     "name": "Dismayed Hunter Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/DismayedHunter-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Cape_purple_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_purple2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dismayed_Hunter#Cape"
     },
-    "order": 707
+    "order": 720
   },
   {
     "id": 163,
@@ -549,7 +569,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Hair"
     },
-    "order": 120
+    "order": 125
   },
   {
     "id": 167,
@@ -604,7 +624,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Apologetic_Lumberjack#Mask"
     },
-    "order": 77
+    "order": 80
   },
   {
     "id": 173,
@@ -646,7 +666,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tearful_Light_Miner#Hair"
     },
-    "order": 126
+    "order": 131
   },
   {
     "id": 177,

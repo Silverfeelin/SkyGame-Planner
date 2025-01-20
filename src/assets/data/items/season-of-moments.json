@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Camera_Prop"
     },
-    "order": 514
+    "order": 526
   },
   {
     "id": 623,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 448
+    "order": 458
   },
   {
     "id": 636,
@@ -119,7 +119,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 86
+    "order": 89
   },
   {
     "id": 637,
@@ -132,7 +132,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 513
+    "order": 525
   },
   {
     "id": 638,
@@ -145,7 +145,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 278
+    "order": 285
   },
   {
     "id": 1650,
@@ -189,7 +189,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Face_Accessory"
     },
-    "order": 87,
+    "order": 90,
     "group": "SeasonPass"
   },
   {
@@ -199,10 +199,14 @@
     "name": "Reassuring Ranger Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Reassuring-Ranger-Mask-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Reassuring-Ranger-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Moments_ranger.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
-    "order": 410
+    "order": 419
   },
   {
     "id": 1655,
@@ -226,10 +230,15 @@
     "name": "Reassuring Ranger Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Reassuring-Ranger-Cape-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/20/Reassuring-Ranger-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Moments_RangerCape.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },
-    "order": 772,
+    "order": 786,
     "group": "SeasonPass"
   },
   {
@@ -242,7 +251,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory"
     },
-    "order": 276
+    "order": 283
   },
   {
     "id": 1659,
@@ -294,7 +303,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Face_Accessory"
     },
-    "order": 88
+    "order": 91
   },
   {
     "id": 1664,
@@ -306,7 +315,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Hair"
     },
-    "order": 226,
+    "order": 231,
     "group": "SeasonPass"
   },
   {
@@ -366,7 +375,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Prop"
     },
-    "order": 557,
+    "order": 569,
     "group": "SeasonPass"
   },
   {
@@ -415,10 +424,14 @@
     "name": "Ascetic Monk Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Ascetic-Monk-Mask-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Ascetic-Monk-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Moments_blindfold.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
-    "order": 411,
+    "order": 420,
     "group": "SeasonPass"
   },
   {
@@ -431,7 +444,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Hair"
     },
-    "order": 225
+    "order": 230
   },
   {
     "id": 1677,
@@ -471,6 +484,11 @@
     "name": "Ascetic Monk Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Ascetic-Monk-Outfit-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Ascetic-Monk-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Moments_monk.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Outfit"
     },
@@ -513,7 +531,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair"
     },
-    "order": 224
+    "order": 229
   },
   {
     "id": 1685,
@@ -540,7 +558,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory"
     },
-    "order": 277,
+    "order": 284,
     "group": "SeasonPass"
   },
   {
@@ -550,6 +568,11 @@
     "name": "Nightbird Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Nightbird-Whisperer-Outfit-icon-Credit-Morybel.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Nightbird-Whisperer-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Moments_Nightbird.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Outfit"
     },
@@ -580,7 +603,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Shoes"
     },
-    "order": 100,
+    "order": 103,
     "group": "SeasonPass"
   },
   {

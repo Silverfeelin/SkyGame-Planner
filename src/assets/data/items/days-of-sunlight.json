@@ -16,7 +16,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Jelly_Shoulder_Buddy"
     },
-    "order": 470
+    "order": 481
   },
   {
     "id": 1914,
@@ -28,7 +28,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Tent"
     },
-    "order": 566
+    "order": 579
   },
   {
     "id": 1915,
@@ -40,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Snack_Kit"
     },
-    "order": 586
+    "order": 599
   },
   {
     "id": 1916,
@@ -52,7 +52,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Pink_Beach_Towel_Cape"
     },
-    "order": 805
+    "order": 822
   },
   {
     "id": 1917,
@@ -64,7 +64,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Yellow_Beach_Towel_Cape"
     },
-    "order": 806
+    "order": 823
   },
   {
     "id": 1918,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Blue_Beach_Towel_Cape"
     },
-    "order": 804
+    "order": 821
   },
   {
     "id": 1919,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Chunky_Sandals"
     },
-    "order": 107
+    "order": 112
   },
   {
     "id": 1922,
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Surfboard"
     },
-    "order": 596
+    "order": 609
   },
   {
     "id": 2289,
@@ -123,7 +123,12 @@
     "name": "Sunlight Woven Wrap",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Sunlight-Woven-Wrap-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
-    "order": 807
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
+      "primary": {},
+      "secondary": {}
+    },
+    "order": 824
   },
   {
     "id": 2290,
@@ -132,7 +137,7 @@
     "name": "Sunlight Helios Hoops",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
-    "order": 333
+    "order": 342
   },
   {
     "id": 2291,
@@ -141,7 +146,7 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 521
+    "order": 533
   },
   {
     "id": 2292,
@@ -150,7 +155,12 @@
     "name": "Sunlight Beach Shorts Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Sunlight-Beach-Shorts-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Sunlight-Beach-Shorts-front.png",
-    "order": 66
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg",
+      "primary": {},
+      "secondary": {}
+    },
+    "order": 69
   },
   {
     "id": 2293,

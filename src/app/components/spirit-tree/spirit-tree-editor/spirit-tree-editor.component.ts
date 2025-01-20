@@ -47,6 +47,15 @@ export class SpiritTreeEditorComponent {
       case 'ArrowLeft': this.switchTreeNode('left') && event.preventDefault(); break;
       default: break;
     }
+
+    if (event.ctrlKey && event.key === 'v') {
+      navigator.clipboard.readText().then(text => {
+        if (text?.length !== 10) { return; }
+        const item = this._dataService.guidMap.get(text) as IItem;
+        if (!item) { return; }
+        this.onItemClicked({ item, event: new MouseEvent('click') });
+      });
+    }
   }
 
   @HostBinding('class.dragging') get isDragging() { return !!this.draggingNode; }
@@ -63,7 +72,6 @@ export class SpiritTreeEditorComponent {
   itemMap: { [guid: string]: IItem } = {};
   nodeTable: [TreeNodeArray, TreeNodeArray, TreeNodeArray] = [[], [], []];
   nodeMap: { [guid: string]: TreeNode } = {};
-  isSwapping = false;
 
   spirits: Array<ISpirit>;
   spiritTrees: Array<ISpiritTree> = [];
@@ -195,11 +203,6 @@ export class SpiritTreeEditorComponent {
   }
 
   onNodeClicked(event: SpiritTreeNodeClickEvent) {
-    if (this.isSwapping) {
-      this.swapNodes(event.node);
-      return;
-    }
-
     const treeNode = this.nodeMap[event.node.guid];
     this.selectTreeNode(treeNode);
   }

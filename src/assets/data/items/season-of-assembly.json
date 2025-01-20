@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 439
+    "order": 449
   },
   {
     "id": 436,
@@ -20,10 +20,14 @@
     "name": "Assembly Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Icon_mask_assembly_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/Assembly_mask_ultimate_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_ult.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 377
+    "order": 386
   },
   {
     "id": 437,
@@ -36,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 184
+    "order": 189
   },
   {
     "id": 438,
@@ -50,7 +54,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 494
+    "order": 505
   },
   {
     "id": 439,
@@ -60,10 +64,14 @@
     "name": "Assembly Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Icon_cape_assembly_ultimate-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Assembly_cape_ultimate_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Assembly_ult.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 736
+    "order": 750
   },
   {
     "id": 440,
@@ -103,7 +111,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Pillow"
     },
-    "order": 541
+    "order": 553
   },
   {
     "id": 445,
@@ -143,7 +151,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Jar"
     },
-    "order": 540
+    "order": 552
   },
   {
     "id": 450,
@@ -162,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Brazier"
     },
-    "order": 537
+    "order": 549
   },
   {
     "id": 452,
@@ -195,7 +203,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Bookcase"
     },
-    "order": 538
+    "order": 550
   },
   {
     "id": 456,
@@ -207,7 +215,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Tent"
     },
-    "order": 543
+    "order": 555
   },
   {
     "id": 1173,
@@ -250,7 +258,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Hair"
     },
-    "order": 187,
+    "order": 192,
     "group": "SeasonPass"
   },
   {
@@ -283,10 +291,14 @@
     "name": "Baffled Botanist Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Icon_mask_assembly_baffled.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Assembly_mask_baffled_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_botanist.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Mask"
     },
-    "order": 382
+    "order": 391
   },
   {
     "id": 1180,
@@ -313,7 +325,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Prop"
     },
-    "order": 544,
+    "order": 556,
     "group": "SeasonPass"
   },
   {
@@ -369,10 +381,14 @@
     "name": "Scolding Student Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Icon_mask_assembly_scold.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Assembly_mask_scolding_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_student.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Mask"
     },
-    "order": 381
+    "order": 390
   },
   {
     "id": 1189,
@@ -415,7 +431,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Hair"
     },
-    "order": 188
+    "order": 193
   },
   {
     "id": 1193,
@@ -442,7 +458,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Cape"
     },
-    "order": 737,
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Assembly_student.jpg",
+      "primary": {}
+    },
+    "order": 751,
     "group": "SeasonPass"
   },
   {
@@ -498,10 +518,14 @@
     "name": "Scaredy Cadet Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Icon_mask_assembly_scared.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Assembly_mask_scaredy_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_cadet.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Mask"
     },
-    "order": 383
+    "order": 392
   },
   {
     "id": 1202,
@@ -553,7 +577,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Hair"
     },
-    "order": 189,
+    "order": 194,
     "group": "SeasonPass"
   },
   {
@@ -566,7 +590,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Prop"
     },
-    "order": 539
+    "order": 551
   },
   {
     "id": 1208,
@@ -632,7 +656,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Hair"
     },
-    "order": 186
+    "order": 191
   },
   {
     "id": 1215,
@@ -679,10 +703,14 @@
     "name": "Marching Adventurer Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Icon_mask_assembly_march.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Assembly_mask_marching_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_march.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
-    "order": 378,
+    "order": 387,
     "group": "SeasonPass"
   },
   {
@@ -695,7 +723,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Prop"
     },
-    "order": 542
+    "order": 554
   },
   {
     "id": 1221,
@@ -758,10 +786,14 @@
     "name": "Chuckling Scout Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Icon_mask_assembly_chuckle.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Assembly_mask_chuckling_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_chuckle.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Mask"
     },
-    "order": 379
+    "order": 388
   },
   {
     "id": 1228,
@@ -808,6 +840,11 @@
     "name": "Chuckling Scout Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Icon_pants_assembly_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Assembly_pants_chuckling_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Assembly_chuckle.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },
@@ -824,7 +861,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },
-    "order": 98
+    "order": 101
   },
   {
     "id": 1234,
@@ -836,7 +873,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Prop"
     },
-    "order": 545
+    "order": 557
   },
   {
     "id": 1235,
@@ -899,10 +936,14 @@
     "name": "Daydream Forester Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Icon_mask_assembly_daydream.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Assembly_mask_daydream_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Assembly_daydream.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Mask"
     },
-    "order": 380
+    "order": 389
   },
   {
     "id": 1242,
@@ -969,7 +1010,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Hair"
     },
-    "order": 185,
+    "order": 190,
     "group": "SeasonPass"
   },
   {

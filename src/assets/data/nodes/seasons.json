@@ -684,6 +684,30 @@
   { "guid": "42iX16VW6p", "item": "5_qdhtwFCV", "c": 35 },
   { "guid": "luXj-OBMiq", "item": "Q5N32W3OFJ", "c": 190 },
   // #endregion
+  // #region Radiance Guide
+  { "guid": "30o85y24PC", "item": "iqCCaRTjDu", "n": "gsLit7c3fv", "ne": "Ym2oSVsQWe" },
+  { "guid": "Ym2oSVsQWe", "item": "qZftgHp6gU", "n": "azZO3hv0Ic" },
+  { "guid": "azZO3hv0Ic", "item": "-7DilSTRJc", "n": "HndDpIMu7D", "sh": 1 },
+  { "guid": "HndDpIMu7D", "item": "uSSYbcdA1j", "sh": 2 },
+  { "guid": "gsLit7c3fv", "item": "KW23zNIOAB", "nw": "e4zOJAc5up", "n": "mp-IH0OP49" },
+  { "guid": "e4zOJAc5up", "item": "A69vvaZvXD" },
+  { "guid": "mp-IH0OP49", "item": "oDcA32WC8W", "nw": "C4TRm6jFjy", "n": "7uOCDuprLh" },
+  { "guid": "C4TRm6jFjy", "item": "CZlugW79hr" },
+  { "guid": "7uOCDuprLh", "item": "PSYGfoPTf4", "nw": "O__j9AyTix", "n": "IkYMhB8lc3" },
+  { "guid": "O__j9AyTix", "item": "WVmBnD7MoH" },
+  { "guid": "IkYMhB8lc3", "item": "qQp-VGymOg", "nw": "zyAHxzd9hY", "n": "II4X07t3rB" },
+  { "guid": "zyAHxzd9hY", "item": "VVYOh40dHB" },
+  { "guid": "II4X07t3rB", "item": "mkm_4wXBUW", "nw": "TvCYJrRv_Y", "n": "NQ1hfzK0oO" },
+  { "guid": "TvCYJrRv_Y", "item": "GYEdlq522n" },
+  { "guid": "NQ1hfzK0oO", "item": "cvOsMkY8GI", "nw": "5k5FEbZTRr", "n": "g87e0IWbiw" },
+  { "guid": "5k5FEbZTRr", "item": "X-ZEatDvCW" },
+  { "guid": "g87e0IWbiw", "item": "qrQ95DxuiF", "nw": "CZutiq9Tef", "n": "8lf-_-G52b", "ne": "qxII_XRsOw" },
+  { "guid": "CZutiq9Tef", "item": "BV0YXjyPMn" },
+  { "guid": "qxII_XRsOw", "item": "MckZBl8YKZ" },
+  { "guid": "8lf-_-G52b", "item": "BUrJCAml11", "nw": "Fd0D4EM66Q", "n": "C5gj7N9L8f" },
+  { "guid": "Fd0D4EM66Q", "item": "sIl_d9jexO" },
+  { "guid": "C5gj7N9L8f", "item": "EzIn2w-a7F" },
+  // #endregion
   // #endregion
 
   // #region Gratitude
@@ -3755,6 +3779,59 @@
   { "guid": "iLvfr6_kiA", "item": "UIIvyJ2_pe", "sc": 36, "nw": "q8pk29q4Oq", "n": "qdXH2GhOS8" },
   { "guid": "q8pk29q4Oq", "item": "kXOalX_A7X" },
   { "guid": "qdXH2GhOS8", "item": "U4pzvXQBH-", "sc": 3 },
+  // #endregion
+  // #endregion
+  // #region Radiance
+  // #region Radiance Leaping Dancer
+  { "guid": "fwak5ju2DS", "item": "dQbt6Hhbt2", "nw": "KQjOaBwZuZ", "n": "XAKy6Cw7EJ" },
+  { "guid": "KQjOaBwZuZ", "item": "eJY1SIlP58" },
+  { "guid": "XAKy6Cw7EJ", "item": "ShjewpJf_F", "sc": 12, "nw": "D6T-Bq3vyt", "n": "m6bOKWErAc" },
+  { "guid": "D6T-Bq3vyt", "item": "03bu0BAhWM" },
+  { "guid": "m6bOKWErAc", "item": "W8dMbUukJA", "sc": 16, "nw": "EiwNbCGhWf", "n": "aUyfCqg-wQ" },
+  { "guid": "EiwNbCGhWf", "item": "vtWiyuyUdz" },
+  { "guid": "aUyfCqg-wQ", "item": "5F58AaIVnq", "sc": 20, "nw": "rG_hsI7vYf", "n": "hm7gWreX8F" },
+  { "guid": "rG_hsI7vYf", "item": "NMEOlrz_BB" },
+  { "guid": "hm7gWreX8F", "item": "h7ohDTv_t9", "sc": 24, "nw": "_uOVPw8VbR", "n": "s6N1bFmrB3" },
+  { "guid": "_uOVPw8VbR", "item": "sGfjk16HcV" },
+  { "guid": "s6N1bFmrB3", "item": "Li5WaWrfs8", "sc": 28, "nw": "mWEzpn3Lav", "n": "TCLi86-7QK" },
+  { "guid": "mWEzpn3Lav", "item": "fhFekFrFCT" },
+  { "guid": "TCLi86-7QK", "item": "lh8XlTM4gO", "sc": 32, "nw": "ggLaoAleCX", "n": "9DyPG9w8tV" },
+  { "guid": "ggLaoAleCX", "item": "IhE0tBOPPO" },
+  { "guid": "9DyPG9w8tV", "item": "FH_-ZS7hRP", "sc": 3 },
+  // #endregion
+  // #region Radiance Provoking Performer
+  { "guid": "sYaDAtoEsB", "item": "RGlZJsszfy", "nw": "ZcoNWNZ0SD", "n": "WhOCWtcvun" },
+  { "guid": "ZcoNWNZ0SD", "item": "RJYipqAex1" },
+  { "guid": "WhOCWtcvun", "item": "x_jAhpDuM6", "sc": 10, "nw": "r4k_989hLR", "n": "tK2hI6yIiY" },
+  { "guid": "r4k_989hLR", "item": "InHKlMA2mI" },
+  { "guid": "tK2hI6yIiY", "item": "sDXFgUQdS_", "sc": 14, "nw": "VOu2EBzHut", "n": "dG09_cqJk5" },
+  { "guid": "VOu2EBzHut", "item": "sQ7RAL1GWd" },
+  { "guid": "dG09_cqJk5", "item": "qMmwAmx6t3", "sc": 18, "nw": "sJWnGpODqr", "n": "-IRJrAUsNa" },
+  { "guid": "sJWnGpODqr", "item": "NIlHg4K6Aj" },
+  { "guid": "-IRJrAUsNa", "item": "St7IlVNQvN", "sc": 24, "nw": "MhuJRG0V5i", "n": "AZFvldephr" },
+  { "guid": "MhuJRG0V5i", "item": "PZ8bGWrhcT" },
+  { "guid": "AZFvldephr", "item": "xtXnA0vykD", "sc": 32, "nw": "z9ta4K8e1M", "n": "liUf7scffv" },
+  { "guid": "z9ta4K8e1M", "item": "EpgewHD2PP" },
+  { "guid": "liUf7scffv", "item": "sQ83oxC51R", "sc": 38, "nw": "BAg6F-d1e7", "n": "y-OYj2OyT-" },
+  { "guid": "BAg6F-d1e7", "item": "LDZBzIvyvc" },
+  { "guid": "y-OYj2OyT-", "item": "8KgF9b3nP1", "sc": 3 },
+  // #endregion
+  // #region Radiance Greeting Shaman
+  { "guid": "IbnYlt3G_Q", "item": "qDB58HGvTy", "nw": "oiY0OM3py4", "n": "hpAaNeBYmt" },
+  { "guid": "oiY0OM3py4", "item": "ACux91j53E" },
+  { "guid": "hpAaNeBYmt", "item": "g845DuQ_3R", "sc": 14, "nw": "sF9QZyvuRy", "n": "aqfgXOBWVj" },
+  { "guid": "sF9QZyvuRy", "item": "T3gGkwzteP" },
+  { "guid": "aqfgXOBWVj", "item": "7OjV1mBJZ_", "sc": 16, "nw": "UkrtPPjkeU", "n": "2_wWUVxY2d" },
+  { "guid": "UkrtPPjkeU", "item": "f_zLnkPaIu" },
+  { "guid": "2_wWUVxY2d", "item": "bRMaUHVgLV", "sc": 18, "nw": "xygRem3rjq", "n": "ok2O4fMX7k" },
+  { "guid": "xygRem3rjq", "item": "EgXEoQi_oL" },
+  { "guid": "ok2O4fMX7k", "item": "tZbriGwH75", "sc": 20, "nw": "n9NeKGN6FT", "n": "9hsNYN-ss5" },
+  { "guid": "n9NeKGN6FT", "item": "PEXg4JbIkv" },
+  { "guid": "9hsNYN-ss5", "item": "5fUF9wGrq6", "sc": 24, "nw": "7-QRbqNbRk", "n": "nJ56QHW1Y7" },
+  { "guid": "7-QRbqNbRk", "item": "JEKAfkQIy5" },
+  { "guid": "nJ56QHW1Y7", "item": "E4PUIiNNoR", "sc": 28, "nw": "5ZiGXAun5E", "n": "XpxyxbO9n6" },
+  { "guid": "5ZiGXAun5E", "item": "vXeFHcV4TF" },
+  { "guid": "XpxyxbO9n6", "item": "eMCBop7FcK", "sc": 3 }
   // #endregion
   // #endregion
 ]

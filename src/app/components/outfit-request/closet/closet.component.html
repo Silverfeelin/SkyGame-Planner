@@ -296,6 +296,35 @@
 
 </app-card>
 
+<!-- Radiance -->
+<app-card class="mt" [foldable]="true" [folded]="true">
+  <div header>
+    <h4 class="h5 mb-0">
+      <mat-icon class="v-top">priority_high</mat-icon>
+      Radiance disclaimer
+      <mat-icon class="v-top">priority_high</mat-icon>
+    </h4>
+  </div>
+  <div class="container">
+    The Season of Radiance brought a lot of colors to the world of Sky! This page supports dyes for the "one fit" format only.<br/>
+    To request a fit with dyes, please click on the palette below an item and select your desired colors.<br/>
+    Keep in mind that not all cosmetics can be dyed and some can only be dyed with one color. If any information on this page is wrong, please contact Silverfeelin!
+    <table>
+      <tr>
+        <td style="text-align:right;"><mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon></td>
+        <td>&nbsp;Can't be dyed.</td>
+      </tr>
+      <tr>
+        <td style="text-align:right;"><mat-icon class="dye-icon dye-icon-active">palette</mat-icon></td>
+        <td>&nbsp;One area can be dyed.</td>
+      </tr>
+      <tr>
+        <td><mat-icon class="dye-icon dye-icon-active">palette</mat-icon><mat-icon class="dye-icon dye-icon-active">palette</mat-icon></td>
+        <td>&nbsp;Two areas can be dyed.</td>
+      </tr>
+    </table>
+  </div>
+</app-card>
 
 <!-- Item list -->
 <div class="sky-card mt" data-step="1" data-position="top-left-aligned">
@@ -376,7 +405,7 @@
       <div class="btn-color-active">
         <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
           ngbTooltip="Change selection color" container="body" placement="top-right">
-          &nbsp;<mat-icon>palette</mat-icon>
+          &nbsp;<mat-icon>border_color</mat-icon>
         </button>
       </div>
       <div #divColorPicker class="btn-colors" [hidden]="!showingColorPicker">
@@ -453,9 +482,9 @@
 
 <!-- Items -->
 <ng-template #templateItems let-items let-type="type">
-  <ng-container *ngFor="let item of items; let i = index;">
+  @if (!requesting) {
     <!-- Closet display. -->
-    <ng-container *ngIf="!requesting">
+    @for (item of items; let i = $index; track item.guid) {
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
       <!-- When showing only selected items, hide all other items. -->
@@ -469,12 +498,22 @@
           [ngbTooltip]="templateItemHover" container="body"
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+          <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
+            @if (!item.dye?.primary) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dye?.primary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dye?.secondary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+          </div>
         </div>
       </div>
-    </ng-container>
 
+      <!-- Tooltip -->
+      <ng-template #templateItemHover>
+        @if (item) { <span class="ws-nw">{{item.name}}</span> }
+      </ng-template>
+    }
+  } @else {
     <!-- Request display. -->
-    @if (requesting) {
+    @for (item of items; let i = $index; track item.guid) {
       <div class="closet-item-container" [hidden]="typeFolded[type]">
         <div class="closet-item" (click)="toggleItem(item)"
           [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
@@ -483,15 +522,71 @@
           [ngbTooltip]="templateItemHover" container="body"
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+          <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
+            @if (!item.dye?.primary) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dye?.primary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dye?.secondary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+          </div>
         </div>
       </div>
-    }
 
-    <!-- Tooltip -->
-    <ng-template #templateItemHover>
-      <ng-container *ngIf="item">
-        <span class="ws-nw">{{item.name}}</span>
-      </ng-container>
-    </ng-template>
-  </ng-container>
+      <!-- Tooltip -->
+      <ng-template #templateItemHover>
+        @if (item) { <span class="ws-nw">{{item.name}}</span> }
+      </ng-template>
+    }
+  }
 </ng-template>
+
+@if (showingDyePicker && dyeItem) {
+  <app-overlay [closeText]="'Close'" (close)="closeDyePicker()">
+    <div #divDyePicker class="dye-picker t-center">
+      <div class="">
+        <app-item-icon [item]="dyeItem" [hoverGlow]="false" [opaque]="true" [size]="'default'"></app-item-icon>
+      </div>
+      <!-- Preview -->
+      @if (dyeItem.dye?.previewUrl) {
+        <img [src]="dyeItem.dye!.previewUrl" class="dye-preview" (click)="openDyePreview(dyeItem.dye!.previewUrl!)"/><br/>
+        <sub (click)="openDyePreview(dyeItem.dye!.previewUrl!)">(Click to enlarge preview)</sub>
+      }
+
+      @if (dyeItem.dye?.primary) {
+        <div><b>Primary dye</b></div>
+        <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 0 }"></ng-container>
+      }
+      @if (dyeItem.dye?.secondary) {
+        <div class="mt"><b>Secondary dye</b></div>
+        <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 1 }"></ng-container>
+      }
+
+      <ng-template #tDyeGrid let-i="i">
+        @let dye = dyes[dyeItem.guid][i];
+        <div class="c-accent">Main color</div>
+        <div class="dye-grid">
+          <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.primary" (click)="selectDye(i, 'primary', undefined)"><mat-icon [svgIcon]="'none'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='red'" (click)="selectDye(i, 'primary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='purple'" (click)="selectDye(i, 'primary', 'purple')"><mat-icon class="dye-purple" [svgIcon]="'dye-purple'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='blue'" (click)="selectDye(i, 'primary', 'blue')"><mat-icon class="dye-blue" [svgIcon]="'dye-blue'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='cyan'" (click)="selectDye(i, 'primary', 'cyan')"><mat-icon class="dye-cyan" [svgIcon]="'dye-cyan'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='green'" (click)="selectDye(i, 'primary', 'green')"><mat-icon class="dye-green" [svgIcon]="'dye-green'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='yellow'" (click)="selectDye(i, 'primary', 'yellow')"><mat-icon class="dye-yellow" [svgIcon]="'dye-yellow'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='black'" (click)="selectDye(i, 'primary', 'black')"><mat-icon class="dye-black" [svgIcon]="'dye-black'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='white'" (click)="selectDye(i, 'primary', 'white')"><mat-icon class="dye-white" [svgIcon]="'dye-white'"></mat-icon></div>
+        </div>
+        <div class="c-accent">Blend color</div>
+        <div class="dye-grid">
+          <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.secondary" (click)="selectDye(i, 'secondary', undefined)"><mat-icon class="" [svgIcon]="'none'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='red'" (click)="selectDye(i, 'secondary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='purple'" (click)="selectDye(i, 'secondary', 'purple')"><mat-icon class="dye-purple" [svgIcon]="'dye-purple'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='blue'" (click)="selectDye(i, 'secondary', 'blue')"><mat-icon class="dye-blue" [svgIcon]="'dye-blue'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='cyan'" (click)="selectDye(i, 'secondary', 'cyan')"><mat-icon class="dye-cyan" [svgIcon]="'dye-cyan'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='green'" (click)="selectDye(i, 'secondary', 'green')"><mat-icon class="dye-green" [svgIcon]="'dye-green'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='yellow'" (click)="selectDye(i, 'secondary', 'yellow')"><mat-icon class="dye-yellow" [svgIcon]="'dye-yellow'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='black'" (click)="selectDye(i, 'secondary', 'black')"><mat-icon class="dye-black" [svgIcon]="'dye-black'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='white'" (click)="selectDye(i, 'secondary', 'white')"><mat-icon class="dye-white" [svgIcon]="'dye-white'"></mat-icon></div>
+        </div>
+      </ng-template>
+    </div>
+
+  </app-overlay>
+}

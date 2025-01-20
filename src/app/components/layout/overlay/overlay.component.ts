@@ -14,6 +14,7 @@ import { EventService } from '@app/services/event.service';
 export class OverlayComponent {
   @Input() title?: string;
   @Input() dismissable = true;
+  @Input() closeText = 'Dismiss';
   @Input() closeOnClickOut = true;
 
   @Output() readonly close = new EventEmitter<void>();

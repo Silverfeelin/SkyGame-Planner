@@ -1,0 +1,29 @@
+
+.item-preview {
+  position: relative;
+  display: inline-block;
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  border: var(--border-solid);
+  text-align: center;
+  min-width: 128px; // add space for icons on slim previews
+  max-width: calc(100vw - var(--menu-width) - 4 * var(--padding-content));
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.item-preview-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.preview-img {
+  height: 256px;
+  max-height: 256px;
+  object-fit: scale-down;
+}
+
+.unhighlight {
+  opacity: 0.5;
+}

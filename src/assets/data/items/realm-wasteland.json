@@ -39,7 +39,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Hair"
     },
-    "order": 142
+    "order": 147
   },
   {
     "id": 256,
@@ -95,7 +95,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frightened_Refugee#Instrument"
     },
-    "order": 478
+    "order": 489
   },
   {
     "id": 262,
@@ -137,7 +137,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Hair"
     },
-    "order": 134
+    "order": 139
   },
   {
     "id": 266,
@@ -192,7 +192,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Fainting_Warrior#Mask"
     },
-    "order": 341
+    "order": 350
   },
   {
     "id": 272,
@@ -215,7 +215,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Hair"
     },
-    "order": 131
+    "order": 136
   },
   {
     "id": 274,
@@ -252,10 +252,14 @@
     "name": "Courageous Soldier Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/CourageousSoldier-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Cape_green2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_green.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
-    "order": 695
+    "order": 708
   },
   {
     "id": 279,
@@ -271,10 +275,14 @@
     "name": "Courageous Soldier Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/CourageousSoldier-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Cape_green_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_green2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Courageous_Soldier#Cape"
     },
-    "order": 704
+    "order": 717
   },
   {
     "id": 281,
@@ -297,7 +305,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Hair"
     },
-    "order": 135
+    "order": 140
   },
   {
     "id": 283,
@@ -334,10 +342,14 @@
     "name": "Stealthy Survivor Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/StealthySurvivor-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9d/Cape_black_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_black.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
-    "order": 700
+    "order": 713
   },
   {
     "id": 288,
@@ -353,10 +365,14 @@
     "name": "Stealthy Survivor Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Icon_cape_black_tier_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Cape_black_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_black2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stealthy_Survivor#Cape"
     },
-    "order": 709
+    "order": 722
   },
   {
     "id": 290,
@@ -398,7 +414,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Hair"
     },
-    "order": 123
+    "order": 128
   },
   {
     "id": 294,
@@ -453,7 +469,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Captain#Prop"
     },
-    "order": 509
+    "order": 521
   },
   {
     "id": 300,
@@ -496,7 +512,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Instrument"
     },
-    "order": 480
+    "order": 491
   },
   {
     "id": 304,
@@ -551,6 +567,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lookout_Scout#Mask"
     },
-    "order": 80
+    "order": 83
   }
 ]
