@@ -251,7 +251,8 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
     "order": 830,
     "dye": {
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/Mischef_crabulacape.webp"
     }
   },
   {
