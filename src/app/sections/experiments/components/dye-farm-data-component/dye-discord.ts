@@ -1,11 +1,8 @@
-import { isDevMode } from '@angular/core';
 import { generateCodeVerifier, OAuth2Client } from '@badgateway/oauth2-client';
 
 // Discord App Config
 const CLIENT_ID = '1305489473550815232';
-const REDIRECT_URI = isDevMode()
-  ? 'http://localhost:8788/experiment/dye'
-  : 'https://sky-planner.com/experiment/dye';
+const REDIRECT_URI = `${location.origin}/experiment/dye`;
 const DISCORD_AUTH_URL = 'https://discord.com/api/oauth2/authorize';
 const DISCORD_TOKEN_URL = 'https://discord.com/api/oauth2/token';
 
