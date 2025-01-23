@@ -153,6 +153,7 @@ export class DyeFarmDataComponentComponent implements OnInit {
     };
     addMap('/assets/game/dye-data/5a.jpg', 0, 0);
     addMap('/assets/game/dye-data/5b.jpg', 0, 1);
+    addMap('/assets/game/dye-data/5c.jpg', 0, 2);
     addMap('/assets/game/dye-data/4a.jpg', 1, 0);
     addMap('/assets/game/dye-data/4b.jpg', 1, 1);
     addMap('/assets/game/dye-data/4c.jpg', 1, 2);
@@ -168,6 +169,8 @@ export class DyeFarmDataComponentComponent implements OnInit {
     addMap('/assets/game/dye-data/1d.jpg', 4, 3);
     addMap('/assets/game/dye-data/1e.jpg', 4, 4);
     addMap('/assets/game/dye-data/1f.jpg', 4, 5);
+    addMap('/assets/game/dye-data/1g.webp', 4, 6);
+    addMap('/assets/game/dye-data/1h.webp', 4, 7);
     // Add zoom controls.
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(this.map);
