@@ -162,8 +162,9 @@ async function getUserIdAsync(context: EventContext<Env, any, Record<string, unk
 }
 
 /** Checks if the user ID is trusted and allowed to alter records by other users. */
-function isTrustedUserId(context: EventContext<Env, any, unknown>, userId: string): boolean {
-  return context.env.DYE_TRUSTED_CSV.includes(userId);
+const trustedUserIds = [ '232201687086006274' ];
+function isTrustedUserId(userId: string): boolean {
+  return trustedUserIds.includes(userId);
 }
 
 /** Gets all markers from the database. */
@@ -213,7 +214,7 @@ async function dbAddPlantAsync(context: EventContext<Env, any, Record<string, un
 
 /** Soft-deletes a marker from the database. */
 async function dbDeleteMarkerAsync(context: EventContext<Env, any, Record<string, unknown>>, userId: string, markerId: number): Promise<boolean> {
-  if (isTrustedUserId(context, userId)) {
+  if (isTrustedUserId(userId)) {
     const query = `UPDATE dyePlantMarkers SET deleted = 1, deletedBy = ?, deletedOn = datetime('now') WHERE id = ?;`
     const res = await context.env.DB.prepare(query).bind(userId, markerId).run();
     return res.meta.rows_written > 0;
@@ -226,7 +227,7 @@ async function dbDeleteMarkerAsync(context: EventContext<Env, any, Record<string
 
 /** Soft-deletes a dye plant from the database. */
 async function dbDeletePlantAsync(context: EventContext<Env, any, Record<string, unknown>>, userId: string, plantId: number): Promise<boolean> {
-  if (isTrustedUserId(context, userId)) {
+  if (isTrustedUserId(userId)) {
     const query = `UPDATE dyePlants SET deleted = 1, deletedBy = ?, deletedOn = datetime('now') WHERE id = ?;`
     const res = await context.env.DB.prepare(query).bind(userId, plantId).run();
     return res.meta.rows_written > 0;
