@@ -289,24 +289,7 @@ export class DyeFarmDataComponentComponent implements OnInit {
         // Sort by date.
         data.items.sort((a, b) => b.epoch - a.epoch);
         data.items.forEach(plant => {
-          const date = DateTime.fromMillis(plant.epoch * 1000);
-          const skyDate = date.setZone(DateHelper.skyTimeZone);
-          divResults.insertAdjacentHTML('beforeend', `
-            <div class="dye-popup-cell">${date.toFormat('yyyy-MM-dd HH:00')}</div>
-            <div class="dye-popup-cell">${skyDate.toFormat('yyyy-MM-dd HH:00')}</div>
-            <div class="dye-popup-cell">${plant.username}</div>
-            <div class="dye-popup-cell">${plant.size ?? ''}</div>
-            <div class="dye-popup-cell">${plant.roots ?? ''}</div>
-            <div class="dye-popup-cell">${plant.red ?? ''}</div>
-            <div class="dye-popup-cell">${plant.yellow ?? ''}</div>
-            <div class="dye-popup-cell">${plant.green ?? ''}</div>
-            <div class="dye-popup-cell">${plant.cyan ?? ''}</div>
-            <div class="dye-popup-cell">${plant.blue ?? ''}</div>
-            <div class="dye-popup-cell">${plant.purple ?? ''}</div>
-            <div class="dye-popup-cell">${plant.black ?? ''}</div>
-            <div class="dye-popup-cell">${plant.white ?? ''}</div>
-          `);
-
+          // Delete button.
           const divDelete = document.createElement('div');
           divResults.insertAdjacentElement('beforeend', divDelete);
           divDelete.classList.add('dye-popup-cell', 'link');
@@ -324,6 +307,24 @@ export class DyeFarmDataComponentComponent implements OnInit {
             this.map?.closePopup(popup);
             this.map?.openPopup(popup);
           });
+
+          const date = DateTime.fromMillis(plant.epoch * 1000);
+          const skyDate = date.setZone(DateHelper.skyTimeZone);
+          divResults.insertAdjacentHTML('beforeend', `
+            <div class="dye-popup-cell">${date.toFormat('yyyy-MM-dd HH:00')}</div>
+            <div class="dye-popup-cell">${skyDate.toFormat('yyyy-MM-dd HH:00')}</div>
+            <div class="dye-popup-cell">${plant.username}</div>
+            <div class="dye-popup-cell">${plant.size ?? ''}</div>
+            <div class="dye-popup-cell">${plant.roots ?? ''}</div>
+            <div class="dye-popup-cell">${plant.red ?? ''}</div>
+            <div class="dye-popup-cell">${plant.yellow ?? ''}</div>
+            <div class="dye-popup-cell">${plant.green ?? ''}</div>
+            <div class="dye-popup-cell">${plant.cyan ?? ''}</div>
+            <div class="dye-popup-cell">${plant.blue ?? ''}</div>
+            <div class="dye-popup-cell">${plant.purple ?? ''}</div>
+            <div class="dye-popup-cell">${plant.black ?? ''}</div>
+            <div class="dye-popup-cell">${plant.white ?? ''}</div>
+          `);
         });
 
       } catch (e) {
@@ -390,7 +391,6 @@ export class DyeFarmDataComponentComponent implements OnInit {
     this.addData = {};
     this._changeDetectorRef.markForCheck();
 
-    alert('Plant data added successfully. Thank you!');
     if (this.popup && this.marker) {
       const m = this.marker;
       this.map?.closePopup(this.popup);
