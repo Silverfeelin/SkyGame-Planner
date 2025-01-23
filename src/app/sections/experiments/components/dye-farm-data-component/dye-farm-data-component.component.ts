@@ -227,10 +227,11 @@ export class DyeFarmDataComponentComponent implements OnInit {
     div.dataset['markerId'] = marker.id.toString();
 
     // Create popup.
+    const width = window.innerWidth > 900 ? 700 : 400;
     const popup = L.popup({
       content: () => div,
       offset: [0, -10],
-      minWidth: 400, maxWidth: 400
+      minWidth: width, maxWidth: width
     });
     m.bindPopup(popup);
 
