@@ -163,6 +163,7 @@ export class DyeFarmDataComponentComponent implements OnInit {
     addMap('/assets/game/dye-data/3c.jpg', 2, 2);
     addMap('/assets/game/dye-data/2a.jpg', 3, 0);
     addMap('/assets/game/dye-data/2b.jpg', 3, 1);
+    addMap('/assets/game/dye-data/2c.webp', 3, 2);
     addMap('/assets/game/dye-data/1a.jpg', 4, 0);
     addMap('/assets/game/dye-data/1b.jpg', 4, 1);
     addMap('/assets/game/dye-data/1c.jpg', 4, 2);
