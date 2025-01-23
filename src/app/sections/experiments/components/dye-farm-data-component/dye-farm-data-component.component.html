@@ -1,0 +1,18 @@
+@if (!accessToken) {
+  <div class="container mb">
+    To prevent abuse, this page uses Discord to save your user ID together with contributed data.<br/>
+    <button type="button" (click)="authenticate()">Authenticate with Discord</button>
+  </div>
+}
+
+@if (accessToken) {
+  <div #map class="dye-map-container">
+    <div class="map-controls map-controls-tl">
+      @let active = clickMode === 'addMarker';
+      <button type="button" class="map-control" [class.highlight]="active" (click)="toggleAddMarker($event)" title="Add marker">
+        <mat-icon>add_location</mat-icon>
+      </button>
+    </div>
+  </div>
+}
+

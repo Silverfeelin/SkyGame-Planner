@@ -1,0 +1,11 @@
+::ng-deep {
+  .dye-data-popup {
+    max-height: 200px;
+    min-width: 220px;
+    overflow: auto;
+  }
+
+  .dye-data-cell {
+    padding: 2px;
+  }
+}
