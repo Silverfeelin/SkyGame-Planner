@@ -40,22 +40,38 @@
       </div>
       <div>
         Butterflies:<br/>
-        <mat-icon [svgIcon]="'dye-red'" class="v-middle dye-red"></mat-icon>:
-        <input #inpButterfly data-color="red" class="plant-input" type="number" min="0" max="99" step="1"/>
-        <mat-icon [svgIcon]="'dye-yellow'" class="v-middle dye-yellow"></mat-icon>:
-        <input #inpButterfly data-color="yellow" class="plant-input" type="number" min="0" max="99" step="1"/>
-        <mat-icon [svgIcon]="'dye-green'" class="v-middle dye-green"></mat-icon>:
-        <input #inpButterfly data-color="green" class="plant-input" type="number" min="0" max="99" step="1"/>
-        <mat-icon [svgIcon]="'dye-cyan'" class="v-middle dye-cyan"></mat-icon>:
-        <input #inpButterfly data-color="cyan" class="plant-input" type="number" min="0" max="99" step="1"/><br/>
-        <mat-icon [svgIcon]="'dye-blue'" class="v-middle dye-blue"></mat-icon>:
-        <input #inpButterfly data-color="blue" class="plant-input" type="number" min="0" max="99" step="1"/>
-        <mat-icon [svgIcon]="'dye-purple'" class="v-middle dye-purple"></mat-icon>:
-        <input #inpButterfly data-color="purple" class="plant-input" type="number" min="0" max="99" step="1"/>
-        <mat-icon [svgIcon]="'dye-black'" class="v-middle dye-black"></mat-icon>:
-        <input #inpButterfly data-color="black" class="plant-input" type="number" min="0" max="99" step="1"/>
-        <mat-icon [svgIcon]="'dye-white'" class="v-middle dye-white"></mat-icon>:
-        <input #inpButterfly data-color="white" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-red'" class="v-middle dye-red"></mat-icon>:
+          <input #inpButterfly data-color="red" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-yellow'" class="v-middle dye-yellow"></mat-icon>:
+          <input #inpButterfly data-color="yellow" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-green'" class="v-middle dye-green"></mat-icon>:
+          <input #inpButterfly data-color="green" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-cyan'" class="v-middle dye-cyan"></mat-icon>:
+          <input #inpButterfly data-color="cyan" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-blue'" class="v-middle dye-blue"></mat-icon>:
+          <input #inpButterfly data-color="blue" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-purple'" class="v-middle dye-purple"></mat-icon>:
+          <input #inpButterfly data-color="purple" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-black'" class="v-middle dye-black"></mat-icon>:
+          <input #inpButterfly data-color="black" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
+        <div class="d-inline-block">
+          <mat-icon [svgIcon]="'dye-white'" class="v-middle dye-white"></mat-icon>:
+          <input #inpButterfly data-color="white" class="plant-input" type="number" min="0" max="99" step="1"/>
+        </div>
       </div>
       <div>
         <button type="button" (click)="submitAddData()">Submit</button>
