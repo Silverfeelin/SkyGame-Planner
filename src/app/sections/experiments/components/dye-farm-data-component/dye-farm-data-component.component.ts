@@ -229,6 +229,7 @@ export class DyeFarmDataComponentComponent implements OnInit {
     // Create popup.
     const popup = L.popup({
       content: () => div,
+      offset: [0, -10],
       minWidth: 400, maxWidth: 400
     });
     m.bindPopup(popup);
