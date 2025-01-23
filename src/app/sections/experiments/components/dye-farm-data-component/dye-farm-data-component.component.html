@@ -1,6 +1,7 @@
 @if (!accessToken) {
   <div class="container mb">
-    To prevent abuse, this page uses Discord to save your user ID together with contributed data.<br/>
+    This page uses your Discord user ID to manage your contributions.<br/>
+    The Sky Planner does not ask for or store any personal information.<br/>
     <button type="button" (click)="authenticate()">Authenticate with Discord</button>
   </div>
 }
@@ -16,3 +17,83 @@
   </div>
 }
 
+@if (isAddingData && addDataMarkerId) {
+  <app-overlay (close)="isAddingData=false;addDataMarkerId=undefined;" [closeText]="'Cancel'" [closeOnClickOut]="false">
+    <div class="dye-add">
+      <div>
+        Time (local):<br/>
+        <input #inpTime type="datetime-local"/>
+        <button type="button" (click)="setAddTime(0)">This hour</button>
+        <button type="button" (click)="setAddTime(-1)">Last hour</button>
+      </div>
+      <div>
+        Size:<br/>
+        <img class="plant-size" [class.plant-size-inactive]="addData.size !== 1" (click)="setAddSize(1)" src="https://i.imgur.com/Bt3QVUI.png" />
+        <img class="plant-size" [class.plant-size-inactive]="addData.size !== 2" (click)="setAddSize(2)" src="https://i.imgur.com/lTqhUJw.png" />
+        <img class="plant-size" [class.plant-size-inactive]="addData.size !== 3" (click)="setAddSize(3)" src="https://i.imgur.com/LyjmZuf.png" />
+        <img class="plant-size" [class.plant-size-inactive]="addData.size !== 4" (click)="setAddSize(4)" src="https://i.imgur.com/ItFZBnr.png" />
+        <img class="plant-size" [class.plant-size-inactive]="addData.size !== 5" (click)="setAddSize(5)" src="https://i.imgur.com/tYxMkFs.png" />
+      </div>
+      <div>
+        Roots:<br/>
+        <input #inpRoots class="plant-input" type="number" min="0" max="9" step="1"/>
+      </div>
+      <div>
+        Butterflies:<br/>
+        <mat-icon [svgIcon]="'dye-red'" class="v-middle dye-red"></mat-icon>:
+        <input #inpButterfly data-color="red" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <mat-icon [svgIcon]="'dye-yellow'" class="v-middle dye-yellow"></mat-icon>:
+        <input #inpButterfly data-color="yellow" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <mat-icon [svgIcon]="'dye-green'" class="v-middle dye-green"></mat-icon>:
+        <input #inpButterfly data-color="green" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <mat-icon [svgIcon]="'dye-cyan'" class="v-middle dye-cyan"></mat-icon>:
+        <input #inpButterfly data-color="cyan" class="plant-input" type="number" min="0" max="99" step="1"/><br/>
+        <mat-icon [svgIcon]="'dye-blue'" class="v-middle dye-blue"></mat-icon>:
+        <input #inpButterfly data-color="blue" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <mat-icon [svgIcon]="'dye-purple'" class="v-middle dye-purple"></mat-icon>:
+        <input #inpButterfly data-color="purple" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <mat-icon [svgIcon]="'dye-black'" class="v-middle dye-black"></mat-icon>:
+        <input #inpButterfly data-color="black" class="plant-input" type="number" min="0" max="99" step="1"/>
+        <mat-icon [svgIcon]="'dye-white'" class="v-middle dye-white"></mat-icon>:
+        <input #inpButterfly data-color="white" class="plant-input" type="number" min="0" max="99" step="1"/>
+      </div>
+      <div>
+        <button type="button" (click)="submitAddData()">Submit</button>
+      </div>
+    </div>
+  </app-overlay>
+}
+
+<template #tPopup>
+  <div class="dye-popup">
+    <div class="dye-popup-loading">
+      Loading...
+    </div>
+    <div class="dye-popup-content" style="display:none;">
+      Marker by: <span class="dye-popup-user"></span><br/>
+      <button class="dye-popup-add">
+        Add dye plant
+      </button>
+      <button class="dye-popup-marker-delete button-danger">
+        Delete marker
+      </button>
+      <div class="dye-popup-grid">
+        <div class="dye-popup-cell fw-bold">Local time</div>
+        <div class="dye-popup-cell fw-bold">Sky time</div>
+        <div class="dye-popup-cell fw-bold">By</div>
+        <div class="dye-popup-cell fw-bold">Size</div>
+        <div class="dye-popup-cell fw-bold">Roots</div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-red'" class="v-middle dye-red"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-yellow'" class="v-middle dye-yellow"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-green'" class="v-middle dye-green"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-cyan'" class="v-middle dye-cyan"></mat-icon><br/></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-blue'" class="v-middle dye-blue"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-purple'" class="v-middle dye-purple"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-black'" class="v-middle dye-black"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-white'" class="v-middle dye-white"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold">X</div>
+        <div class="dye-popup-results"></div>
+      </div>
+    </div>
+  </div>
+</template>
