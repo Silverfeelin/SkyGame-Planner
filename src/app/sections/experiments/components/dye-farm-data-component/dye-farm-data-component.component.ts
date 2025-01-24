@@ -186,6 +186,11 @@ export class DyeFarmDataComponentComponent implements OnInit {
     addMap('/assets/game/dye-data/4r.webp', -2, 4);
     addMap('/assets/game/dye-data/4s.webp', -2, 5);
 
+    const latlngs: L.LatLngTuple[] = [
+      [630, 0], [ 1220, 3960 ]
+    ];
+    L.polyline(latlngs, { color: 'red' }).addTo(this.map!);
+
     // Add zoom controls.
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(this.map);
