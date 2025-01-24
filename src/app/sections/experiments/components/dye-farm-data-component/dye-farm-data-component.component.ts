@@ -132,16 +132,13 @@ export class DyeFarmDataComponentComponent implements OnInit {
     this.mapDiv.nativeElement.classList.add('map');
     const areaSize: L.LatLngTuple = [ 590, 960 ];
     const padding = 40;
-    const gridSize = [ 5, 6 ];
-    const mapSize = [ areaSize[0] * gridSize[0], areaSize[1] * gridSize[1] ];
     this.map = L.map(this.mapDiv.nativeElement, {
       attributionControl: false,
       crs: L.CRS.Simple,
       minZoom: -3,
       maxZoom: 3,
       zoom: -2,
-      center: [ mapSize[0] / 2, mapSize[1] / 2 ],
-      maxBounds: [[ -3000, -3000], [ mapSize[0] + 3000, mapSize[1] + 3000 ]],
+      center: [ 2000, 2000 ],
       zoomControl: false
     });
 
@@ -172,6 +169,23 @@ export class DyeFarmDataComponentComponent implements OnInit {
     addMap('/assets/game/dye-data/1f.jpg', 4, 5);
     addMap('/assets/game/dye-data/1g.webp', 4, 6);
     addMap('/assets/game/dye-data/1h.webp', 4, 7);
+    // Pingubot's Sanctuary
+    addMap('/assets/game/dye-data/4e.webp', -1, 0);
+    addMap('/assets/game/dye-data/4f.webp', -1, 1);
+    addMap('/assets/game/dye-data/4j.webp', -1, 2);
+    addMap('/assets/game/dye-data/4g.webp', -1, 3);
+    addMap('/assets/game/dye-data/4h.webp', -1, 4);
+    addMap('/assets/game/dye-data/4i.webp', -1, 5);
+    addMap('/assets/game/dye-data/4k.webp', -1, 6);
+    addMap('/assets/game/dye-data/4l.webp', -1, 7);
+    addMap('/assets/game/dye-data/4m.webp', -1, 8);
+    addMap('/assets/game/dye-data/4n.webp', -2, 0);
+    addMap('/assets/game/dye-data/4o.webp', -2, 1);
+    addMap('/assets/game/dye-data/4p.webp', -2, 2);
+    addMap('/assets/game/dye-data/4q.webp', -2, 3);
+    addMap('/assets/game/dye-data/4r.webp', -2, 4);
+    addMap('/assets/game/dye-data/4s.webp', -2, 5);
+
     // Add zoom controls.
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(this.map);
