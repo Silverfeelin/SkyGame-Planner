@@ -87,6 +87,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!userId) { return invalidRequest(); }
 
   const body = await context.request.json() as IRequestBody;
+  if (body.link) {
+    const linkRegex = /^https:\/\/discord\.com\/channels\/736912435654688868\/\d{1,32}\/\d{1,32}$/;
+    if (!linkRegex.test(body.link)) { return invalidRequest(); }
+  }
+
   let id: number;
   switch (body.type) {
     case 'marker': id = await onRequestPostMarker(context, userId, username, body); break;
