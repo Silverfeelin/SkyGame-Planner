@@ -1,6 +1,5 @@
-
-DROP TABLE IF EXISTS dyePlantMarkers;
-CREATE TABLE IF NOT EXISTS dyePlantMarkers (
+--DROP TABLE IF EXISTS dyePlantMarkers;
+CREATE TABLE dyePlantMarkers (
   [id] integer PRIMARY KEY AUTOINCREMENT,
   [userId] char(20) NOT NULL,
   [username] varchar(32) NOT NULL,
@@ -12,8 +11,8 @@ CREATE TABLE IF NOT EXISTS dyePlantMarkers (
   [deletedBy] char(20)
 );
 
-DROP TABLE IF EXISTS dyePlants;
-CREATE TABLE IF NOT EXISTS dyePlants (
+--DROP TABLE IF EXISTS dyePlants;
+CREATE TABLE dyePlants (
   [id] integer PRIMARY KEY AUTOINCREMENT,
   [userId] char(20) NOT NULL,
   [username] varchar(32) NOT NULL,

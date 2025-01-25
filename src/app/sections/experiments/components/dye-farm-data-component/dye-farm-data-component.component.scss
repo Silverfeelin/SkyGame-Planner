@@ -8,7 +8,7 @@
   .dye-popup-grid {
     margin-top: 4px;
     display: grid;
-    grid-template-columns: 30px 1fr 1fr 1fr repeat(2, 40px) repeat(8, 30px);
+    grid-template-columns: 30px 1fr 1fr 1fr repeat(4, 40px) repeat(8, 30px);
     max-width: 100%;
     overflow: auto;
     gap: 1px;

@@ -5,6 +5,7 @@ import { authenticate, handleRedirect } from './dye-discord';
 import { DateTime } from 'luxon';
 import { DateHelper } from '@app/helpers/date-helper';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
+import { WindowHelper } from '@app/helpers/window-helper';
 
 type ClickMode = 'none' | 'addMarker';
 
@@ -14,8 +15,10 @@ interface IRequestBody {
   markerId?: number;
   lat?: number;
   lng?: number;
+  link?: string;
   size?: number;
   roots?: number;
+  wax?: number;
   red?: number;
   yellow?: number;
   green?: number;
@@ -44,8 +47,10 @@ interface IDbPlant {
   username: string;
   epoch: number;
   markerId: number;
+  link?: string;
   size?: number;
   roots?: number;
+  wax?: number;
   red?: number;
   yellow?: number;
   green?: number;
@@ -88,7 +93,9 @@ export class DyeFarmDataComponentComponent implements OnInit {
   @ViewChild('tPopup', { static: true }) tPopup!: ElementRef<HTMLTemplateElement>;
 
   @ViewChild('inpTime', { static: false }) inpTime!: ElementRef<HTMLInputElement>;
+  @ViewChild('inpLink', { static: false }) inpLink!: ElementRef<HTMLInputElement>;
   @ViewChild('inpRoots', { static: false }) inpRoots!: ElementRef<HTMLInputElement>;
+  @ViewChild('inpWax', { static: false }) inpWax!: ElementRef<HTMLInputElement>;
   @ViewChildren('inpButterfly') inpButterflies!: QueryList<ElementRef<HTMLInputElement>>;
 
   clickMode: ClickMode = 'none';
@@ -311,6 +318,7 @@ export class DyeFarmDataComponentComponent implements OnInit {
         divContent.style.display = '';
 
         // Sort by date.
+        const isWindows = WindowHelper.isWindows();
         data.items.sort((a, b) => b.epoch - a.epoch);
         data.items.forEach(plant => {
           // Delete button.
@@ -334,10 +342,17 @@ export class DyeFarmDataComponentComponent implements OnInit {
 
           const date = DateTime.fromMillis(plant.epoch * 1000);
           const skyDate = date.setZone(DateHelper.skyTimeZone);
+
+          const linkRegex = /^https:\/\/discord\.com\/(channels\/.*)$/;
+          const match = plant.link?.match(linkRegex);
+          let link = match ? (isWindows ? `discord://-/${match[1]}` : plant.link) : '';
+          if (link) { link = `<a href="${link}" target="_blank">🔗</a>`; }
+
           divResults.insertAdjacentHTML('beforeend', `
             <div class="dye-popup-cell">${date.toFormat('yyyy-MM-dd HH:00')}</div>
             <div class="dye-popup-cell">${skyDate.toFormat('yyyy-MM-dd HH:00')}</div>
             <div class="dye-popup-cell">${plant.username}</div>
+            <div class="dye-popup-cell">${link}</div>
             <div class="dye-popup-cell">${plant.size ?? ''}</div>
             <div class="dye-popup-cell">${plant.roots ?? ''}</div>
             <div class="dye-popup-cell">${plant.red ?? ''}</div>
@@ -348,6 +363,7 @@ export class DyeFarmDataComponentComponent implements OnInit {
             <div class="dye-popup-cell">${plant.purple ?? ''}</div>
             <div class="dye-popup-cell">${plant.black ?? ''}</div>
             <div class="dye-popup-cell">${plant.white ?? ''}</div>
+            <div class="dye-popup-cell">${plant.wax ?? ''}</div>
           `);
         });
 
@@ -391,8 +407,16 @@ export class DyeFarmDataComponentComponent implements OnInit {
     this.addData.epoch = DateTime.fromFormat(this.inpTime.nativeElement.value, "yyyy-MM-dd'T'HH:mm").toSeconds();
     if (!this.addData.epoch) { alert('Please enter a time.'); return; }
 
+    const linkRegex = /^https:\/\/discord\.com\/channels\/736912435654688868\/\d{1,32}\/\d{1,32}$/;
+    this.addData.link = linkRegex.test(this.inpLink.nativeElement.value || '') ? this.inpLink.nativeElement.value : undefined;
+    if (!this.addData.link && this.inpLink.nativeElement.value) { alert('Invalid Discord link.'); return; }
+
     this.addData.roots = this.inpRoots.nativeElement.value?.length
       ? +this.inpRoots.nativeElement.value || 0
+      : undefined;
+
+    this.addData.wax = this.inpWax.nativeElement.value?.length
+      ? +this.inpWax.nativeElement.value || 0
       : undefined;
 
     this.inpButterflies.forEach(inp => {
@@ -457,8 +481,10 @@ export class DyeFarmDataComponentComponent implements OnInit {
     const requestBody: IRequestBody = {
       type: 'plant', markerId,
       epoch: data.epoch!,
+      link: data.link,
       size: data.size,
       roots: data.roots,
+      wax: data.wax,
       red: data.red,
       yellow: data.yellow,
       green: data.green,

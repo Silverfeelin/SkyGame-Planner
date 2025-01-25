@@ -13,8 +13,10 @@ interface IRequestBody {
   // Plant
   epoch: number;
   markerId?: number;
+  link?: string;
   size?: number;
   roots?: number;
+  wax?: number;
   red?: number;
   yellow?: number;
   green?: number;
@@ -43,8 +45,10 @@ interface IDbPlant {
   username: string;
   epoch: number;
   markerId: number;
+  link?: string;
   size?: number;
   roots?: number;
+  wax?: number;
   red?: number;
   yellow?: number;
   green?: number;
@@ -110,8 +114,10 @@ async function onRequestPostPlant(context: EventContext<Env, any, Record<string,
     userId, username,
     markerId: body.markerId,
     epoch: body.epoch,
+    link: body.link,
     size: body.size,
     roots: body.roots,
+    wax: body.wax,
     red: body.red,
     yellow: body.yellow,
     green: body.green,
@@ -197,14 +203,14 @@ async function dbAddMarkerAsync(context: EventContext<Env, any, Record<string, u
 /** Adds a dye plant to the database. */
 async function dbAddPlantAsync(context: EventContext<Env, any, Record<string, unknown>>, data: Partial<IDbPlant>): Promise<number> {
   const query = `
-    INSERT INTO dyePlants (userId, username, epoch, markerId, size, roots, red, yellow, green, cyan, blue, purple, black, white, createdOn)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'));
+    INSERT INTO dyePlants (userId, username, epoch, markerId, link, size, roots, wax, red, yellow, green, cyan, blue, purple, black, white, createdOn)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'));
   `;
 
   console.log(data);
   const result = await context.env.DB.prepare(query)
-    .bind(data.userId, data.username, data.epoch, data.markerId,
-      data.size ?? null, data.roots ?? null,
+    .bind(data.userId, data.username, data.epoch, data.markerId, data.link ?? null,
+      data.size ?? null, data.roots ?? null, data.wax ?? null,
       data.red ?? null, data.yellow ?? null, data.green ?? null, data.cyan ?? null,
       data.blue ?? null, data.purple ?? null, data.black ?? null, data.white ?? null
     )

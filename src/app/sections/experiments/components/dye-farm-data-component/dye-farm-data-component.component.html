@@ -28,6 +28,10 @@
         <button type="button" (click)="promptAddTimestamp()">Enter timestamp</button>
       </div>
       <div>
+        Discord link:<br/>
+        <input #inpLink type="text"/>
+      </div>
+      <div>
         Size:<br/>
         <img class="plant-size" [class.plant-size-inactive]="addData.size !== 1" (click)="setAddSize(1)" src="https://i.imgur.com/Bt3QVUI.png" />
         <img class="plant-size" [class.plant-size-inactive]="addData.size !== 2" (click)="setAddSize(2)" src="https://i.imgur.com/lTqhUJw.png" />
@@ -38,6 +42,10 @@
       <div>
         Roots:<br/>
         <input #inpRoots class="plant-input" type="number" min="0" max="9" step="1"/>
+      </div>
+      <div>
+        Wax:<br/>
+        <input #inpWax class="plant-input" type="number" min="0" max="99" step="1"/>
       </div>
       <div>
         Butterflies:<br/>
@@ -99,6 +107,7 @@
         <div class="dye-popup-cell fw-bold">Local time</div>
         <div class="dye-popup-cell fw-bold">Sky time</div>
         <div class="dye-popup-cell fw-bold">By</div>
+        <div class="dye-popup-cell fw-bold">Link</div>
         <div class="dye-popup-cell fw-bold">Size</div>
         <div class="dye-popup-cell fw-bold">Roots</div>
         <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-red'" class="v-middle dye-red"></mat-icon></div>
@@ -109,6 +118,7 @@
         <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-purple'" class="v-middle dye-purple"></mat-icon></div>
         <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-black'" class="v-middle dye-black"></mat-icon></div>
         <div class="dye-popup-cell fw-bold"><mat-icon [svgIcon]="'dye-white'" class="v-middle dye-white"></mat-icon></div>
+        <div class="dye-popup-cell fw-bold">Wax</div>
         <div class="dye-popup-results"></div>
       </div>
     </div>
