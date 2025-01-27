@@ -197,6 +197,23 @@
     "c": 66
   },
   // #endregion
+  // #region Days of Fortune (2025)
+  { "guid": "B0N05K4Bre", "item": "fzbg1W9xPT", "nw": "NaysZtahCa", "n": "Wev2JjC_bj", "ne": "hRPcs_rZrG" },
+  { "guid": "NaysZtahCa", "item": "OVAIVV5-Q6", "ec": 14 },
+  { "guid": "hRPcs_rZrG", "item": "kWvg1ATKfE", "ec": 8 },
+  { "guid": "Wev2JjC_bj", "item": "t6nJrp1wWD", "c": 5, "nw": "iriFHY6NOA", "n": "B5JbnCsB3g", "ne": "mdMslgGD38" },
+  { "guid": "iriFHY6NOA", "item": "ZmPfYe6tPD", "ec": 36 },
+  { "guid": "mdMslgGD38", "item": "OFwVuPWmfK", "c": 57 },
+  { "guid": "B5JbnCsB3g", "item": "QB-SWz3oTJ", "c": 5, "nw": "LdNCyeTGzk", "n": "lvwZ_tEQ2g", "ne": "Wvj3V2xYmF" },
+  { "guid": "LdNCyeTGzk", "item": "8KXtBlvNRO", "h": 36 },
+  { "guid": "Wvj3V2xYmF", "item": "D_k9C9QybE", "c": 62 },
+  { "guid": "lvwZ_tEQ2g", "item": "VgpLAnES5t", "n": "hIVk1hnHwl", "nw": "S-tMVWXHUo", "ne": "TdsKCh1F7s", "c": 5 },
+  { "guid": "S-tMVWXHUo", "item": "c1YroXxA9Z", "c": 58 },
+  { "guid": "TdsKCh1F7s", "item": "hLJjrHH-Ag", "c": 56 },
+  { "guid": "hIVk1hnHwl", "item": "PjDfa0MBz3", "n": "IkCEjHlfRP", "nw": "U8TVWab51I", "c": 5 },
+  { "guid": "U8TVWab51I", "item": "LgDGqWw-NO", "c": 66 },
+  { "guid": "IkCEjHlfRP", "item": "bFJ_OQoA3b", "ec": 10 },
+  // #endregion
   // #region Days of Love (2021)
   {
     "guid": "IZbM47BixN",

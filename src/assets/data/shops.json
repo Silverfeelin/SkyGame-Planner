@@ -255,6 +255,33 @@
       ]
     },
     // #endregion
+    // #region Days of Fortune (2025)
+    {
+      "guid": "ayisX-J93w",
+      "type": "Store",
+      "iaps": [
+        "cBTKelBA5U",
+        "oyY4AabfTV",
+      ]
+    },
+    {
+      "guid": "1lS9GJ3liN",
+      "type": "Spirit",
+      "spirit": "9VkjVkgKhb",
+      "iaps": [
+        "HP8tzNGfxD",
+        "cHyMg_9nlp",
+        "1f6Qmtj6ky",
+        "Q_7Frf2GYq",
+        "MoDvjHmShG",
+        "VB-jRRkTT2",
+        "4u_4x-CMZZ",
+        "_n5CGfOGJ-",
+        "b420MucTja",
+        "EAeyExxT3H"
+      ]
+    },
+    // #endregion
     // #region Days of Love (2020)
     {
       "guid": "b6QkhZumfk",
