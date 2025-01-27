@@ -1,4 +1,4 @@
-import { Injectable, NgZone } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { generateCodeVerifier, OAuth2Client, OAuth2Token } from '@badgateway/oauth2-client';
 
 const REDIRECT_URI = location.origin + '/dropbox-auth';
