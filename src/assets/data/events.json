@@ -74,7 +74,16 @@
           "shops": [
             "ayisX-J93w",
             "1lS9GJ3liN"
-          ]
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "bs19GbmkZa", "date": "2025-01-27", "endDate": "2025-02-09", "amount": 15, "description": "Coins around the Ice Rink" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=17d8261c87dd8099bcf5e331f83f5e84&pm=c"
+          },
         },
       ],
       "_wiki": {
