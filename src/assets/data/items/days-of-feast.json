@@ -472,7 +472,8 @@
     "order": 848,
     "dye": {
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/cape/Fortune_SnekCape.jpg"
     }
   },
   {
@@ -549,7 +550,8 @@
     "order": 78,
     "dye": {
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Fortune_Snake.jpg"
     }
   },
   {
@@ -561,7 +563,8 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Days-of-Fortune-Snake-Mask.png",
     "order": 853,
     "dye": {
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/mask/Fortune_snake.jpg"
     }
   },
   {
