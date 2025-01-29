@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "guid": "bvhGcpWCFT",
+      "name": "Daylight Prairie",
+      "type": "Drawn",
+      "attribution": "@sky_solsuga",
+      "src": "/assets/game/map/solsuga/prairie.webp",
+      "markers": []
+    },
+    {
+      "guid": "fo2JZQLclK",
+      "name": "Prairie Peaks",
+      "type": "Drawn",
+      "attribution": "@sky_solsuga",
+      "src": "/assets/game/map/solsuga/peaks.webp",
+      "markers": []
+    },
+    {
+      "guid": "po4HuuBC2e",
+      "name": "Sanctuary Island",
+      "type": "Drawn",
+      "attribution": "u/eula1998",
+      "src": "/assets/game/map/eula1998/sanctuary.webp",
+      "markers": []
+    }
+  ]
+}
