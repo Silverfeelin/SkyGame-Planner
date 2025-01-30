@@ -3137,7 +3137,7 @@
   { "guid": "KekcO_WKFg", "item": "xoEQI_2ykm", "c": 70 },
   { "guid": "qYc81qz84v", "item": "kealNieHwv", "c": 34 },
   // #endregion
-  // Forgetful Storyteller
+  // #region Forgetful Storyteller
   { "guid": "DAX89eU3v8", "item": "atMtr23g93", "nw": "8HZFTN4bEz", "n": "sBiNEw-JCf" },
   { "guid": "8HZFTN4bEz", "item": "7tsa9wtqVi" },
   { "guid": "sBiNEw-JCf", "item": "cz2_Sc10Fk", "sc": 12, "nw": "A-Ob1-En5j", "n": "MT_fXO3ByJ" },
@@ -3151,6 +3151,20 @@
   { "guid": "Qp1cpJPns-", "item": "KoLgRv-HIL", "sc": 34, "nw": "6jFrUAu8wi", "n": "PCAADktFUl" },
   { "guid": "6jFrUAu8wi", "item": "PcFVY_0aGF" },
   { "guid": "PCAADktFUl", "item": "Qs0ZC_7YTz", "sc": 3 },
+  // TS 132
+  { "guid": "KDYc9oxiCw", "item": "atMtr23g93", "nw": "_oD480LWnn", "n": "Ewg_8_jF6p" },
+  { "guid": "_oD480LWnn", "item": "7tsa9wtqVi", "h": 4 },
+  { "guid": "Ewg_8_jF6p", "item": "cz2_Sc10Fk", "c": 5, "nw": "u5N7KgqiCC", "n": "YfGxwoPXMD", "ne": "ks2Y4f0twv" },
+  { "guid": "u5N7KgqiCC", "item": "wOewFkj_yn", "c": 34 },
+  { "guid": "ks2Y4f0twv", "item": "RoQZ183WN8", "c": 3 },
+  { "guid": "YfGxwoPXMD", "item": "6H5QcmGYLE", "ac": 2, "n": "uGI18_KfyM" },
+  { "guid": "uGI18_KfyM", "item": "yiWOuxxWgB", "h": 3, "nw": "xzdLmC4UV6", "n": "0G_ip5nYnA", "ne": "vKWIWHbqDy" },
+  { "guid": "xzdLmC4UV6", "item": "r6dNyY-aBP", "h": 6 },
+  { "guid": "vKWIWHbqDy", "item": "Z53G2IN-L3", "c": 44 },
+  { "guid": "0G_ip5nYnA", "item": "P736zjG-Qh", "c": 5, "nw": "oRZI-pQ7et", "n": "az_Cws-SAw" },
+  { "guid": "oRZI-pQ7et", "item": "no0xArAFGq", "c": 70 },
+  { "guid": "az_Cws-SAw", "item": "KoLgRv-HIL", "c": 70 },
+  // #endregion
   // #region Mellow Musician
   { "guid": "iNZGYBUTH6", "item": "FWWMzSnh0A", "nw": "fcU6sSRYs-", "n": "oV63s_z8Jd" },
   { "guid": "fcU6sSRYs-", "item": "EQQjcs9sT0" },
