@@ -543,6 +543,11 @@
         "xeu9NyCBVR",
         "JpMqGkF6E1"
       ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "es1EMsc26_", "date": "2025-01-31", "endDate": "2025-01-31", "amount": 12, "description": "Compensation in Inbox" }
+        ]
+      },
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance"
       },

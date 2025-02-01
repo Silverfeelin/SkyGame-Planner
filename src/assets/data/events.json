@@ -78,7 +78,8 @@
           "calculatorData": {
             "dailyCurrencyAmount": 5,
             "timedCurrency": [
-              { "guid": "bs19GbmkZa", "date": "2025-01-27", "endDate": "2025-02-09", "amount": 15, "description": "Coins around the Ice Rink" }
+              { "guid": "bs19GbmkZa", "date": "2025-01-27", "endDate": "2025-02-09", "amount": 15, "description": "Coins around the Ice Rink" },
+              { "guid": "egsIMFYcBG", "date": "2025-01-31", "endDate": "2025-02-09", "amount": 10, "description": "Compensation from the Fortune Spell Box" }
             ]
           },
           "_calendar": {
