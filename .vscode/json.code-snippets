@@ -326,7 +326,7 @@
     "body": [
       ",",
       "\"_calendar\": {",
-      "\t\"href\": \"https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=$0\"",
+      "\t\"href\": \"$0\"",
       "},"
     ],
     "description": "Calendar"

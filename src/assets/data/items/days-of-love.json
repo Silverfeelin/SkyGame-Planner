@@ -212,5 +212,56 @@
     "type": "Special",
     "name": "Jellyfish Cove Warp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
-  }
+  },
+  // 2025
+  {
+    "id": 2516,
+    "guid": "Yxt4jz3je6",
+    "type": "Hair",
+    "name": "Days Of Love Amethyst-Tipped Tails",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Days-of-Love-Amethyst-Tipped-Tails-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Days-of-Love-Amethyst-Tipped-Tails.png",
+    "order": 10000
+  },
+  {
+    "id": 2517,
+    "guid": "-ZIWymGtlX",
+    "type": "HairAccessory",
+    "name": "Days Of Love Amethyst Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Days-of-Love-Amethyst-Accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Days-of-Love-Amethyst-Accessory.png",
+    "order": 10000
+  },
+  {
+    "id": 2518,
+    "guid": "MV5iUIEMMH",
+    "type": "Prop",
+    "name": "Days Of Love Violet Crystal Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Days-of-Love-Love-Violet-Crystal-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Days-of-Love-Violet-Crystal-Prop.png",
+    "order": 10000
+  },
+  {
+    "id": 2519,
+    "guid": "V0Y7dn2l4H",
+    "type": "Hair",
+    "name": "Days Of Love Braids",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Days-of-Love-Braids-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Days-of-Love-Braids.png",
+    "order": 10000
+  },
+  {
+    "id": 2520,
+    "guid": "58yKu4ZySi",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2521,
+    "guid": "Hve2VdnBXZ",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
 ]
