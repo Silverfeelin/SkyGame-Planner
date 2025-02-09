@@ -154,6 +154,13 @@ export class DyeFarmDataComponentComponent implements OnInit {
       const y = py * areaSize[0] + padding * py;
       const x = px * areaSize[1] + padding * px;
       L.imageOverlay(url, [[ y, x ], [ y+ areaSize[0], x + areaSize[1]]]).addTo(this.map!);
+      const label = L.marker([ y - 4, x + 1], {
+        icon: L.divIcon({
+          className: 'map-label',
+          html: `<span style="white-space:nowrap;">[${y}, ${x}]</span>`
+        })
+      });
+      label.addTo(this.map!);
     };
     addMap('/assets/game/dye-data/5a.jpg', 0, 0);
     addMap('/assets/game/dye-data/5b.jpg', 0, 1);
