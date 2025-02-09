@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Earth_Cape"
     },
-    "order": 814
+    "order": 818
   },
   {
     "id": 1779,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Necklace"
     },
-    "order": 479
+    "order": 482
   },
   {
     "id": 1780,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape"
     },
-    "order": 815
+    "order": 819
   },
   {
     "id": 1781,
@@ -49,7 +49,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Cape"
     },
-    "order": 816
+    "order": 820
   },
   {
     "id": 1782,
@@ -61,7 +61,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Accessory"
     },
-    "order": 480
+    "order": 483
   },
   {
     "id": 1783,
@@ -73,7 +73,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Coral_Crown_Accessory"
     },
-    "order": 300
+    "order": 302
   },
   {
     "id": 1784,
@@ -99,7 +99,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_School_Cape"
     },
-    "order": 817
+    "order": 821
   },
   {
     "id": 1787,
@@ -123,7 +123,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Sonorous_Seashell"
     },
-    "order": 604
+    "order": 607
   },
   {
     "id": 2166,
@@ -132,7 +132,7 @@
     "name": "Nature Wave Cape",
     "icon": "/assets/game/items/2166.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nature-Wave-Cape-back.png",
-    "order": 818
+    "order": 822
   },
   {
     "id": 2167,
@@ -154,7 +154,7 @@
       "previewUrl": "/assets/game/dyes/mask/Nature_river.jpg",
       "primary": {}
     },
-    "order": 434
+    "order": 437
   },
   {
     "id": 2169,
@@ -163,7 +163,7 @@
     "name": "Ocean Blue Scarf",
     "icon": "/assets/game/items/2169.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Ocean-Blue-Scarf.png",
-    "order": 481
+    "order": 484
   },
   {
     "id": 2170,

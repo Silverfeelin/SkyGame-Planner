@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 446
+    "order": 449
   },
   {
     "id": 378,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 330
+    "order": 333
   },
   {
     "id": 379,
@@ -167,7 +167,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask"
     },
-    "order": 373
+    "order": 376
   },
   {
     "id": 927,
@@ -283,7 +283,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask"
     },
-    "order": 375,
+    "order": 378,
     "group": "SeasonPass"
   },
   {
@@ -351,7 +351,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape"
     },
-    "order": 738,
+    "order": 742,
     "group": "SeasonPass"
   },
   {
@@ -464,7 +464,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape"
     },
-    "order": 736,
+    "order": 740,
     "group": "SeasonPass"
   },
   {
@@ -534,7 +534,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
     },
-    "order": 376,
+    "order": 379,
     "group": "SeasonPass"
   },
   {
@@ -684,7 +684,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape"
     },
-    "order": 737
+    "order": 741
   },
   {
     "id": 977,
@@ -750,7 +750,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask"
     },
-    "order": 374
+    "order": 377
   },
   {
     "id": 984,
@@ -817,7 +817,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape"
     },
-    "order": 739
+    "order": 743
   },
   {
     "id": 990,
@@ -859,6 +859,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Prop"
     },
-    "order": 541
+    "order": 544
   }
 ]

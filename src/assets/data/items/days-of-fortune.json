@@ -13,7 +13,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bull_Mask"
     },
-    "order": 429
+    "order": 432
   },
   {
     "id": 1724,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Orange"
     },
-    "order": 296
+    "order": 298
   },
   {
     "id": 1726,
@@ -61,7 +61,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Cape"
     },
-    "order": 807
+    "order": 811
   },
   {
     "id": 1728,
@@ -78,7 +78,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Blushing_Mask"
     },
-    "order": 428
+    "order": 431
   },
   {
     "id": 1729,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Tiger_Mask"
     },
-    "order": 430
+    "order": 433
   },
   {
     "id": 1731,
@@ -118,7 +118,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Accessory"
     },
-    "order": 297
+    "order": 299
   },
   {
     "id": 1732,
@@ -130,7 +130,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Cape"
     },
-    "order": 808
+    "order": 812
   },
   {
     "id": 1733,
@@ -170,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Enchanted_Umbrella"
     },
-    "order": 529
+    "order": 532
   },
   {
     "id": 1736,
@@ -186,7 +186,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Rabbit_Mask"
     },
-    "order": 431
+    "order": 434
   },
   {
     "id": 1737,
@@ -289,7 +289,7 @@
       "previewUrl": "/assets/game/dyes/cape/Fortune_DragonCape.jpg",
       "primary": {}
     },
-    "order": 809
+    "order": 813
   },
   {
     "id": 2055,
@@ -298,7 +298,7 @@
     "name": "Days of Fortune Dragon Bangles",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Fortune-Dragon-Bangles-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
-    "order": 338
+    "order": 341
   },
   {
     "id": 2056,
@@ -311,7 +311,7 @@
       "previewUrl": "/assets/game/dyes/mask/Fortune_dragon.jpg",
       "primary": {}
     },
-    "order": 432
+    "order": 435
   },
   {
     "id": 2057,
@@ -321,7 +321,7 @@
     "name": "Days of Fortune Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-    "order": 521
+    "order": 524
   },
   {
     "id": 2058,
@@ -344,7 +344,6 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // 2025
   {
     "id": 2501,
     "guid": "u_CN5B-cYN",
@@ -352,7 +351,10 @@
     "name": "Days Of Fortune Snake Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Days-of-Fortune-Snake-Coif-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Fortune-Snake-Coif-front.png",
-    "order": 847
+    "order": 851,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 2502,
@@ -361,7 +363,7 @@
     "name": "Days Of Fortune Snake Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Days-of-Fortune-Snake-Cloak-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Days-of-Fortune-Snake-Cloak-back.png",
-    "order": 848,
+    "order": 852,
     "dye": {
       "primary": {},
       "secondary": {},
@@ -375,7 +377,7 @@
     "name": "Days Of Fortune Hand Fan",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Days-of-Fortune-Hand-Fan-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Days-of-Fortune-Hand-Fan-Prop.png",
-    "order": 849
+    "order": 853
   },
   {
     "id": 2504,
@@ -384,7 +386,7 @@
     "name": "Fortune Candle Flags",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Fortune-Candle-Flags-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Fortune-Candle-Flags-Prop.png",
-    "order": 852
+    "order": 856
   },
   {
     "id": 2505,
@@ -421,7 +423,7 @@
     "name": "Fortune Plant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Fortune-Plant-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Fortune-Plant-Prop.png",
-    "order": 850
+    "order": 854
   },
   {
     "id": 2510,
@@ -430,7 +432,7 @@
     "name": "Fortune Vertical Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Fortune-Vertical-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Fortune-Vertical-Poster-Prop.png",
-    "order": 851
+    "order": 855
   },
   {
     "id": 2511,
@@ -453,7 +455,7 @@
     "name": "Fortune Snake Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Days-of-Fortune-Snake-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Days-of-Fortune-Snake-Mask.png",
-    "order": 853,
+    "order": 857,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/mask/Fortune_snake.jpg"
@@ -467,5 +469,5 @@
     "sheet": "E4",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 401
-  },
+  }
 ]
