@@ -160,10 +160,32 @@
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=cb7e5f5c3a574ed8b8bd0ea971e19eb6"
           },
         },
+        {
+          "guid": "9cpDpqkJje",
+          "date": "2025-02-10",
+          "endDate": "2025-02-23",
+          "spirits": [
+            { "guid": "ODYu7LBJ-r", "spirit": "uIbDtVEvkH", "tree": "xnZrEGPst_" }
+          ],
+          "shops": [
+            "lGcnwxrDbk",
+            "61jGnEuTi1"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 4,
+            "timedCurrency": [
+              { "guid": "DMgCYLT-J4", "date": "2025-02-10", "endDate": "2025-02-23", "amount": 15, "description": "Tickets around Jellyfish Cove" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=17d8261c87dd80ba80e7f97a1bead1d9&pm=c"
+          },
+          "draft": true
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
-      }
+      },
     },
     // Days of Bloom
     {

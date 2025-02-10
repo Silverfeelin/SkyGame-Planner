@@ -84,7 +84,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 805
+    "order": 809
   },
   {
     "id": 2450,
@@ -94,7 +94,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Radiance-Leaping-Dancer-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Radiance-Leaping-Dancer-prop.png",
-    "order": 574
+    "order": 577
   },
   {
     "id": 2451,
@@ -215,7 +215,7 @@
       "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg",
       "primary": {}
     },
-    "order": 337
+    "order": 340
   },
   {
     "id": 2461,
@@ -230,7 +230,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 804
+    "order": 808
   },
   {
     "id": 2462,
@@ -240,7 +240,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-Greeting-Shaman-instrument-Cymbals-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Radiance-Greeting-Shaman-instrument-Cymbals.png",
-    "order": 516
+    "order": 519
   },
   {
     "id": 2463,
@@ -361,7 +361,7 @@
       "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg",
       "primary": {}
     },
-    "order": 309
+    "order": 311
   },
   {
     "id": 2472,
@@ -432,7 +432,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Season-of-Radiance-Pendant.png",
-    "order": 465
+    "order": 468
   },
   {
     "id": 2481,
@@ -447,7 +447,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 427
+    "order": 430
   },
   {
     "id": 2482,
@@ -462,7 +462,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 806
+    "order": 810
   },
   {
     "id": 2483,
@@ -476,7 +476,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 725
+    "order": 729
   },
   {
     "id": 2484,
