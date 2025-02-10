@@ -277,4 +277,12 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
+  {
+    "id": 2524,
+    "guid": "mq7485-flU",
+    "type": "Special",
+    "name": "Purple dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png"
+  },
+
 ]
