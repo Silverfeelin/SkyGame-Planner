@@ -1,0 +1,14 @@
+<button (click)="export()">Export</button>
+
+<app-items [action]="'emit'" (onItemClicked)="onItemClicked($event)"></app-items>
+
+<div style="display: flex; gap: 8px;flex-wrap:wrap;">
+  @for (file of previewFiles; track $index) {
+    <div class="preview" [class.highlight]="previewFile === file">
+      @if (previewFileMap[file]) {
+        <app-item-icon class="item" [item]="previewFileMap[file]" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+      }
+      <img (click)="onPreviewClicked(file)" [src]="file">
+    </div>
+  }
+</div>
