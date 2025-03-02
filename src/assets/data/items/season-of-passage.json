@@ -285,6 +285,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Passage-Oddball-Outcast-outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Passage_Oddball.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Passage_Oddball.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -528,6 +529,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Passage-Melancholy-Mope-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Passage_Mope.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Passage_Mope.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -629,6 +631,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Overactive-Overachiever-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Passage_CoatCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Passage_CoatCape.jpg",
       "primary": {},
       "secondary": {}
     },

@@ -8,6 +8,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Style-Wide-Leg-Jeans.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Style_jeans.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Style_jeans.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -162,6 +163,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dapper-Suit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Style_suit.jpg",
       "primary": {},
       "secondary": {}
     },

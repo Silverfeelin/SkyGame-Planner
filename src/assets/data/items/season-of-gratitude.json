@@ -27,7 +27,8 @@
     "dye": {
       "primary": {},
       "secondary": {},
-      "previewUrl": "/assets/game/dyes/mask/Gratitude_ult.webp"
+      "previewUrl": "/assets/game/dyes/mask/Gratitude_ult.webp",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Gratitude_ult.jpg",
     }
   },
   {
@@ -497,6 +498,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Gratitude_cape_white_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Gratitude_dismiss.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Gratitude_dismiss.jpg",
       "primary": {},
       "secondary": {}
     },

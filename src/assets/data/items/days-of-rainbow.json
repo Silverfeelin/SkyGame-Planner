@@ -183,6 +183,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Days_of_Rainbow_2022-Trousers.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Color_GaySuspenders.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Color_GaySuspenders.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -221,6 +222,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Days-of-Colors-Dark-Rainbow-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Color_DarkRainbowTunic.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Color_DarkRainbowTunic.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -250,6 +252,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Days-of-Color-Dark-Rainbow-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Color_DarkRainbowCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Color_DarkRainbowCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -274,6 +277,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Dark-Rainbow-Mask.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Colour_mask.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Colour_mask.jpg",
       "primary": {},
       "secondary": {}
     },

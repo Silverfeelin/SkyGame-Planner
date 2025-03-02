@@ -209,6 +209,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Vestige-of-a-Deserted-Oasis-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Revival_RhythmCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Revival_RhythmCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -371,6 +372,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Echo-of-an-Abandoned-Refuge-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Revival_GratCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Revival_GratCape.jpg",
       "primary": {},
       "secondary": {}
     },

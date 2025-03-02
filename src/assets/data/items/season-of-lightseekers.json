@@ -102,6 +102,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Lightseekers_cape_isle_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Lightseeker_piggyback.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Lightseeker_piggyback.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -654,6 +655,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Lightseekers_cape_vault_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Lightseeker_SLS.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Lightseeker_SLS.jpg",
       "primary": {},
       "secondary": {}
     },

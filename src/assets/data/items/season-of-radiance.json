@@ -44,6 +44,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Radiance-Leaping-Dancer-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Radiance_Leap.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Radiance_Leap.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -81,6 +82,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Radiance-Leaping-Dancer-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Radiance_fork.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Radiance_fork.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -185,6 +187,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Radiance-Provoking-Performer-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Radiance_Provoke.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Radiance_Provoke.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -227,6 +230,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Radiance-Provoking-Performer-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Radiance_X.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Radiance_X.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -332,6 +336,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Radiance-Greeting-Shaman-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Radiance_Shaman.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Radiance_Shaman.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -444,6 +449,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Radiance-Ultimate-Mask-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Radiance_ult.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Radiance_ult.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -459,6 +465,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Radiance-Ultimate-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Radiance_ult.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Radiance_ult.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -473,6 +480,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Season-of-Radiance-additional-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Radiance_star.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Radiance_star.jpg",
       "primary": {},
       "secondary": {}
     },

@@ -38,6 +38,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Season_of_flight_pants_1_ult.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Flight_ult.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Flight_ult.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -237,6 +238,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Season_of_flight_cape_lively_navigator_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Flight_NaviCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Flight_NaviCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -362,6 +364,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Season_of_flight_pants_4_light_whisperer.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Flight_LW.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Flight_LW.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -419,6 +422,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Season_of_flight_pants_3_tinkering_chimesmith_gs.PNG",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Flight_chime.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Flight_chime.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -607,6 +611,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Season_of_flight_pants_2_talented_builder_gs.PNG",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Flight_Builder.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Flight_Builder.jpg",
       "primary": {},
       "secondary": {}
     },

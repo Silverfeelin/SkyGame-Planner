@@ -212,6 +212,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Feast_Elder_Cape_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Feast_WinterAncestorCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Feast_WinterAncestorCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -276,6 +277,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Days-of-Feast-Yeti-Fur-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Feast_YetiCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Feast_YetiCape.jpg",
       "primary": {},
       "secondary": {}
     },
