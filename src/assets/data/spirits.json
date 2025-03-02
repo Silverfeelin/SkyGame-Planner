@@ -1975,6 +1975,22 @@
       "type": "Event",
       "name": "Unfettered Love"
     },
+    {
+      "guid": "uIbDtVEvkH",
+      "type": "Event",
+      "name": "Days of Love Guide"
+    },
+    {
+      "guid": "G2seKIqYu1",
+      "type": "Event",
+      "name": "Days of Love IAP Guide"
+    },
+    // Days of Treasure
+    {
+      "guid": "8WMnysBWNd",
+      "type": "Event",
+      "name": "Days of Treasure Guide"
+    },
     // Days of Bloom
     {
       "guid": "IqShB-6_rY",

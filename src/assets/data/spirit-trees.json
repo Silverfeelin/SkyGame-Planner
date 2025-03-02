@@ -571,6 +571,10 @@
       "guid": "nk8pRkgqr_",
       "node": "7tpH4Bmsyo"
     },
+    {
+      "guid": "6YXj1foDCG",
+      "node": "Sr8FjyT0GC"
+    },
     // Doublefive Light Catcher
     {
       "guid": "DCA--qiCxD",
@@ -1474,6 +1478,10 @@
       "guid": "bMfsxhWfRe",
       "node": "7ZiCvfqa6X"
     },
+    {
+      "guid": "ch9-I5m0Ba",
+      "node": "jjxxIJvyo3"
+    },
     // Warrior of Love
     {
       "guid": "mfj2dmg6Dd",
@@ -1789,6 +1797,15 @@
       "guid": "3B4XeRLIrO",
       "node": "yUNUCsYx9f"
     },
+    // #endregion
+    // #region Days of Love (2025)
+    {
+      "guid": "xnZrEGPst_",
+      "node": "OnOHDkxayL"
+    },
+    // #endregion
+    // #region Days of Treasure (2025)
+    { "guid": "JU8XT42DBX", "node": "lIGOW1C9eA" },
     // #endregion
     // #region Days of Bloom
     // Days of Bloom 2021

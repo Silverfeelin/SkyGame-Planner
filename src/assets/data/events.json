@@ -160,9 +160,63 @@
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=cb7e5f5c3a574ed8b8bd0ea971e19eb6"
           },
         },
+        {
+          "guid": "9cpDpqkJje",
+          "date": "2025-02-10",
+          "endDate": "2025-02-23",
+          "spirits": [
+            { "guid": "ODYu7LBJ-r", "spirit": "uIbDtVEvkH", "tree": "xnZrEGPst_" }
+          ],
+          "shops": [
+            "lGcnwxrDbk",
+            "61jGnEuTi1"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 4,
+            "timedCurrency": [
+              { "guid": "DMgCYLT-J4", "date": "2025-02-10", "endDate": "2025-02-23", "amount": 15, "description": "Tickets around Jellyfish Cove" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=17d8261c87dd80ba80e7f97a1bead1d9&pm=c"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love"
+      },
+    },
+    // Days of Treasure
+    {
+      "guid": "hRcjrfe73A",
+      "name": "Days of Treasure",
+      "shortName": "Treasure",
+      "recurring": true,
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/f68504e60a/dotr_3kids-digging-header_sls_na_na_2502.jpg",
+      "instances": [
+        {
+          "guid": "LHByI2HCpt",
+          "date": "2025-03-03",
+          "endDate": "2025-03-16",
+          "spirits": [
+            {	"guid": "UpYjlrT9f2", "spirit": "8WMnysBWNd", "tree": "JU8XT42DBX" },
+          ],
+          "shops": [
+            "8avc2MnBQV"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "BkG8TttzBL", "date": "2025-03-03", "endDate": "2025-03-16", "amount": 15, "description": "Coins around various Realms" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1a58261c87dd802eb7dbe7d892a50260&pm=c"
+          }
+        },
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Treasure"
       }
     },
     // Days of Bloom

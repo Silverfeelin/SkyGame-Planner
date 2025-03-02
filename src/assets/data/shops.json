@@ -367,6 +367,38 @@
       ]
     },
     // #endregion
+    // #region Days of Love (2025)
+    {
+      "guid": "lGcnwxrDbk",
+      "type": "Store",
+      "iaps": [
+        "V28-mtG9V2",
+        "kE_RqeOcHu"
+      ]
+    },
+    {
+      "guid": "61jGnEuTi1",
+      "type": "Spirit",
+      "spirit": "G2seKIqYu1",
+      "iaps": [
+        "vhY_nNnIgw",
+        "qlpuZv73qW",
+        "y_2ImmOBeU",
+        "G-TAkmqX-9",
+        "MOhYCFQgyc",
+        "TjwhHy9niu"
+      ]
+    },
+    // #endregion
+    // #region Days of Treasure (2025)
+    {
+      "guid": "8avc2MnBQV",
+      "type": "Store",
+      "iaps": [
+        "lSAbeEJM_i"
+      ]
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "EF1SdxSqWT",

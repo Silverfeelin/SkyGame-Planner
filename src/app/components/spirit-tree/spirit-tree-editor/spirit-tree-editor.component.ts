@@ -20,8 +20,8 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 type TreeNodeArray = Array<TreeNode>;
 type TreeNode = { node: INode; x: number; y: number; };
 type CostType = { id: string; label: string; }
-type SpecialItemNames = 'blessing' | 'wingBuff' | 'heart';
-type SpecialItem = { item: IItem; cost: ICost; }
+type SpecialItemNames = 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
+type SpecialItem = { item: IItem; cost?: ICost; }
 
 @Component({
   selector: 'app-spirit-tree-editor',
@@ -48,7 +48,7 @@ export class SpiritTreeEditorComponent {
       default: break;
     }
 
-    if (event.ctrlKey && event.key === 'v') {
+    if (event.ctrlKey && (event.key === 'v' || event.key === 'V')) {
       navigator.clipboard.readText().then(text => {
         if (text?.length !== 10) { return; }
         const item = this._dataService.guidMap.get(text) as IItem;
@@ -93,6 +93,14 @@ export class SpiritTreeEditorComponent {
     blessing: { item: { id: -2, guid: nanoid(10), type: ItemType.Special, name: 'Blessing', icon: '/assets/icons/question.webp' }, cost: { c: 5 }},
     wingBuff: { item: { id: -3, guid: nanoid(10), type: ItemType.WingBuff, name: 'Wing Buff', icon: '/assets/icons/question.webp' }, cost: { ac: 2 }},
     heart: { item: { id: -4, guid: nanoid(10), type: ItemType.Special, name: 'Hearts', icon: '/assets/icons/question.webp' }, cost: { c: 3 }},
+    dyeRed: { item: { id: -5, guid: nanoid(10), type: ItemType.Special, name: 'Red dye', icon: '/assets/icons/question.webp' }},
+    dyeYellow: { item: { id: -6, guid: nanoid(10), type: ItemType.Special, name: 'Yellow dye', icon: '/assets/icons/question.webp' }},
+    dyeGreen: { item: { id: -7, guid: nanoid(10), type: ItemType.Special, name: 'Green dye', icon: '/assets/icons/question.webp' }},
+    dyeCyan: { item: { id: -8, guid: nanoid(10), type: ItemType.Special, name: 'Cyan dye', icon: '/assets/icons/question.webp' }},
+    dyeBlue: { item: { id: -9, guid: nanoid(10), type: ItemType.Special, name: 'Blue dye', icon: '/assets/icons/question.webp' }},
+    dyePurple: { item: { id: -10, guid: nanoid(10), type: ItemType.Special, name: 'Purple dye', icon: '/assets/icons/question.webp' }},
+    dyeBlack: { item: { id: -11, guid: nanoid(10), type: ItemType.Special, name: 'Black dye', icon: '/assets/icons/question.webp' }},
+    dyeWhite: { item: { id: -12, guid: nanoid(10), type: ItemType.Special, name: 'White dye', icon: '/assets/icons/question.webp' }}
   }
   specialItems: Array<SpecialItem> = Object.values(this.specialItemMap);
 
@@ -101,13 +109,7 @@ export class SpiritTreeEditorComponent {
     private readonly _spiritTreeRenderService: SpiritTreeRenderService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
-    const blessingIcon = _dataService.itemConfig.items.findLast<IItem>(i => i.type === ItemType.Special && i.name === 'Blessing' && i.nodes?.at(-1)?.c === 5)?.icon;
-    blessingIcon && (this.specialItemMap.blessing.item.icon = blessingIcon);
-    const wingBuffIcon = _dataService.itemConfig.items.findLast<IItem>(i => i.type === ItemType.WingBuff)?.icon;
-    wingBuffIcon && (this.specialItemMap.wingBuff.item.icon = wingBuffIcon);
-    const heartIcon = _dataService.itemConfig.items.findLast<IItem>(i => i.type === ItemType.Special && i.name === 'Heart' && i.nodes?.at(-1)?.c === 3)?.icon;
-    heartIcon && (this.specialItemMap.heart.item.icon = heartIcon);
-
+    this.initializeItemIcons();
     this.tree = {
       guid: nanoid(10),
       node: { guid: nanoid(10), item: this.cloneItem(this.missingItem) }
@@ -239,7 +241,9 @@ export class SpiritTreeEditorComponent {
     const item = this.cloneItem(specialItem.item);
     this.onItemClicked({ item, event });
 
-    this.setCostInputs(specialItem.cost);
+    if (specialItem.cost) {
+      this.setCostInputs(specialItem.cost);
+    }
     this.applyCost();
   }
 
@@ -483,6 +487,34 @@ export class SpiritTreeEditorComponent {
   }
 
   // #endregion
+
+  private initializeItemIcons(): void {
+    for (const item of this._dataService.itemConfig.items) {
+      if (item.type === ItemType.Special && item.name === 'Blessing' && item.nodes?.at(-1)?.c === 5) {
+        this.specialItemMap.blessing.item.icon = item.icon;
+      } else if (item.type === ItemType.WingBuff) {
+        this.specialItemMap.wingBuff.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Heart' && item.nodes?.at(-1)?.c === 3) {
+        this.specialItemMap.heart.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Red dye') {
+        this.specialItemMap.dyeRed.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Yellow dye') {
+        this.specialItemMap.dyeYellow.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Green dye') {
+        this.specialItemMap.dyeGreen.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Cyan dye') {
+        this.specialItemMap.dyeCyan.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Blue dye') {
+        this.specialItemMap.dyeBlue.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Purple dye') {
+        this.specialItemMap.dyePurple.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'Black dye') {
+        this.specialItemMap.dyeBlack.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name === 'White dye') {
+        this.specialItemMap.dyeWhite.item.icon = item.icon;
+      }
+    }
+  }
 
   private selectTreeNode(treeNode: TreeNode): void {
     this.selectedTreeNode = treeNode;
