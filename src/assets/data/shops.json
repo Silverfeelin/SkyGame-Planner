@@ -390,6 +390,15 @@
       ]
     },
     // #endregion
+    // #region Days of Treasure (2025)
+    {
+      "guid": "8avc2MnBQV",
+      "type": "Store",
+      "iaps": [
+        "lSAbeEJM_i"
+      ]
+    },
+    // #endregion
     // #region Days of Bloom (2021)
     {
       "guid": "EF1SdxSqWT",

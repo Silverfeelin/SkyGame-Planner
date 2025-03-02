@@ -1,0 +1,54 @@
+[
+  // #region 2025
+  {
+    "id": 2527,
+    "guid": "vzTKSjFPYL",
+    "type": "Outfit",
+    "name": "Treasure Seeker's Bounty Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Days-of-Treasure-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Days-of-Treasure-Outfit-front.png",
+    "order": 10000
+  },
+  {
+    "id": 2528,
+    "guid": "iMG2NRQ96n",
+    "type": "Shoes",
+    "name": "Treasure Cavalier Boots",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Days-of-Treasure-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Days-of-Treasure-Shoes.png",
+    "order": 10000
+  },
+  {
+    "id": 2529,
+    "guid": "aU_ZGHomyy",
+    "type": "Held",
+    "name": "Treasure Shovel",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Days-of-Treasure-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Treasure-Prop.png",
+    "order": 10000
+  },
+  {
+    "id": 2530,
+    "guid": "9dKZTaVQaT",
+    "type": "Mask",
+    "name": "Treasure Seeker's Bounty Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Days-of-Treasure-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Days-of-Treasure-Mask.png",
+    "order": 10000
+  },
+  {
+    "id": 2531,
+    "guid": "_JA3vTiLd4",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2532,
+    "guid": "2TW_W4bbLe",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  // #endregion
+]

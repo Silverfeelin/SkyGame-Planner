@@ -48,7 +48,7 @@ export class SpiritTreeEditorComponent {
       default: break;
     }
 
-    if (event.ctrlKey && event.key === 'v') {
+    if (event.ctrlKey && (event.key === 'v' || event.key === 'V')) {
       navigator.clipboard.readText().then(text => {
         if (text?.length !== 10) { return; }
         const item = this._dataService.guidMap.get(text) as IItem;
