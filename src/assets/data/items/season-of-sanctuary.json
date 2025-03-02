@@ -4,13 +4,13 @@
     "guid": "Lqnd-vg9Lk",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Sanctuary Pendant",
+    "name": "Sanctuary Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/6_Sanctuary.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Season_of_sanctuary_sanctuary_pendant_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 436
+    "order": 453
   },
   {
     "id": 394,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 490
+    "order": 508
   },
   {
     "id": 395,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 726
+    "order": 749
   },
   {
     "id": 396,
@@ -168,7 +168,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair"
     },
-    "order": 172
+    "order": 180
   },
   {
     "id": 999,
@@ -192,6 +192,10 @@
     "name": "Jelly Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Mimi-4117_07_jelly_whisperer_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Season_of_sanctuary_pants_jelly_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Sanctuary_jelly.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Outfit"
     },
@@ -230,7 +234,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Prop"
     },
-    "order": 575
+    "order": 596
   },
   {
     "id": 1006,
@@ -270,7 +274,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair"
     },
-    "order": 173
+    "order": 181
   },
   {
     "id": 1010,
@@ -294,10 +298,14 @@
     "name": "Timid Bookworm Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Icon_cape_sanctuary_butterfly-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_sanctuary_cape_timid_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sanctuary_TimidCape.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
     },
-    "order": 725,
+    "order": 748,
     "group": "SeasonPass"
   },
   {
@@ -356,7 +364,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair"
     },
-    "order": 174
+    "order": 182
   },
   {
     "id": 1019,
@@ -472,7 +480,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask"
     },
-    "order": 367,
+    "order": 382,
     "group": "SeasonPass"
   },
   {
@@ -508,7 +516,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair"
     },
-    "order": 175
+    "order": 183
   },
   {
     "id": 1034,
@@ -535,7 +543,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory"
     },
-    "order": 454,
+    "order": 472,
     "group": "SeasonPass"
   },
   {
@@ -601,7 +609,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair"
     },
-    "order": 176,
+    "order": 184,
     "group": "SeasonPass"
   },
   {
@@ -634,10 +642,15 @@
     "name": "Grateful Shell Collector Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Icon_cape_sanctuary_shell-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Season_of_sanctuary_cape_grateful_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sanctuary_shell.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape"
     },
-    "order": 727
+    "order": 750
   },
   {
     "id": 1047,
@@ -665,7 +678,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Prop"
     },
-    "order": 577
+    "order": 598
   },
   {
     "id": 1050,
@@ -722,7 +735,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask"
     },
-    "order": 85,
+    "order": 90,
     "group": "SeasonPass"
   },
   {
@@ -758,7 +771,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair"
     },
-    "order": 268
+    "order": 280,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 1059,
@@ -775,10 +791,14 @@
     "name": "Chill Sunbather Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Icon_cape_sanctuary_flower-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Season_of_sanctuary_cape_chill_back_v2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Sanctuary_chill.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape"
     },
-    "order": 728
+    "order": 751
   },
   {
     "id": 1061,
@@ -806,7 +826,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Prop"
     },
-    "order": 576
+    "order": 597
   },
   {
     "id": 1064,

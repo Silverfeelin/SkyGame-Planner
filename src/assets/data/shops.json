@@ -255,6 +255,33 @@
       ]
     },
     // #endregion
+    // #region Days of Fortune (2025)
+    {
+      "guid": "ayisX-J93w",
+      "type": "Store",
+      "iaps": [
+        "cBTKelBA5U",
+        "oyY4AabfTV",
+      ]
+    },
+    {
+      "guid": "1lS9GJ3liN",
+      "type": "Spirit",
+      "spirit": "9VkjVkgKhb",
+      "iaps": [
+        "HP8tzNGfxD",
+        "cHyMg_9nlp",
+        "1f6Qmtj6ky",
+        "Q_7Frf2GYq",
+        "MoDvjHmShG",
+        "VB-jRRkTT2",
+        "4u_4x-CMZZ",
+        "_n5CGfOGJ-",
+        "b420MucTja",
+        "EAeyExxT3H"
+      ]
+    },
+    // #endregion
     // #region Days of Love (2020)
     {
       "guid": "b6QkhZumfk",
@@ -337,6 +364,38 @@
       "iaps": [
         "JLjsFmtey7",
         "cVvWv3Nf7F"
+      ]
+    },
+    // #endregion
+    // #region Days of Love (2025)
+    {
+      "guid": "lGcnwxrDbk",
+      "type": "Store",
+      "iaps": [
+        "V28-mtG9V2",
+        "kE_RqeOcHu"
+      ]
+    },
+    {
+      "guid": "61jGnEuTi1",
+      "type": "Spirit",
+      "spirit": "G2seKIqYu1",
+      "iaps": [
+        "vhY_nNnIgw",
+        "qlpuZv73qW",
+        "y_2ImmOBeU",
+        "G-TAkmqX-9",
+        "MOhYCFQgyc",
+        "TjwhHy9niu"
+      ]
+    },
+    // #endregion
+    // #region Days of Treasure (2025)
+    {
+      "guid": "8avc2MnBQV",
+      "type": "Store",
+      "iaps": [
+        "lSAbeEJM_i"
       ]
     },
     // #endregion
@@ -963,6 +1022,46 @@
       "type": "Object",
       "name": "Wonderland Hare Wig Stand",
       "itemList": "hmiMI-JrOT"
+    },
+    {
+      "guid": "5AdJq1m7jY",
+      "type": "Store",
+      "iaps": [
+        "EqbMdBedT6",
+        "sq7pfYkRjD",
+      ]
+    },
+    {
+      "guid": "FgBx7wuSJD",
+      "type": "Object",
+      "name": "Large Pinecone in Wonderland Cafe",
+      "iaps": [
+        "qHUMga9tbM",
+        "2B4VUC1IJg",
+        "lEBuf9inji",
+        "60p3YQPtv0"
+      ]
+    },
+    {
+      "guid": "1EwbarHMzH",
+      "type": "Object",
+      "name": "Small Pinecone in Wonderland Cafe",
+      "iaps": [
+        "I1WP8E6DTt",
+        "Efdkvx2rO_",
+        "mXz1Dg-Psj"
+      ]
+    },
+    {
+      "guid": "Frfzz94SIt",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "name": "Event Staff (Office)",
+      "iaps": [
+        "5rvSltYZNX",
+        "VHvLwW-unH",
+        "YidHByHVaP"
+      ]
     },
     // #endregion
     // #region Days of Healing (2020)

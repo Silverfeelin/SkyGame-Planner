@@ -1,0 +1,42 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Dye previews</h2>
+  </div>
+  <div class="sky-card-body">
+    <!-- Select item-->
+    <div class="mt">
+      <app-item-type-selector [type]="type" [showTypes]="types" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
+    </div>
+    <hr/>
+    <!-- Show items -->
+    @for (t of types; track $index) {
+      <div class="sky-flex flex-wrap field-guide-items" [hidden]="type !== t">
+        @if (loadedTypes[t]) {
+          @for (typeItem of typeItems[t]; track typeItem.item.guid) {
+            @if (typeItem.item.dye?.previewUrl) {
+              <a [routerLink]="typeItem.nav?.route" [queryParams]="typeItem.nav?.extras?.queryParams"
+                class="item-preview link"
+                [ngbTooltip]="typeItem.item.name" container="body" placement="auto"
+              >
+                <div class="">
+                  <div class="item-preview-icon">
+                    <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+                  </div>
+                  <div class="item-preview-img">
+                    <img [src]="typeItem.item.dye!.previewUrl" class="preview-img" loading="lazy">
+                    <app-item-subicons [item]="typeItem.item" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'limited']"></app-item-subicons>
+                  </div>
+                </div>
+              </a>
+            }
+          }
+        }
+        @if (type === t && loadedTypes[t] && typeItems[t].length === 0) {
+          <div class="container">
+            No dyeable {{ type | itemType:true }} found.
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

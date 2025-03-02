@@ -1884,6 +1884,36 @@
       }
     },
     // #endregion
+    // #region Radiance
+    {
+      "guid": "JWj113We5R",
+      "type": "Guide",
+      "name": "Radiance Guide",
+      "tree": "QveGTQI48L",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Radiance-Ultimate-Guide.png"
+    },
+    {
+      "guid": "SS7FZgJDLx",
+      "type": "Season",
+      "name": "Radiance Leaping Dancer",
+      "tree": "s8oDPElH2z",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5c/Radiance-Leaping-Dancer-spirit-cutout-undyed.png"
+    },
+    {
+      "guid": "xeu9NyCBVR",
+      "type": "Season",
+      "name": "Radiance Provoking Performer",
+      "tree": "wFupf-tJk-",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Radiance-Provoking-Performer-spirit-cutout-undyed.png"
+    },
+    {
+      "guid": "JpMqGkF6E1",
+      "type": "Season",
+      "name": "Radiance Greeting Shaman",
+      "tree": "AUH6M6CbGC",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Radiance-Greeting-Shaman-spirit-cutout-original.png"
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {
@@ -1944,6 +1974,22 @@
       "guid": "mAn3DeaZPi",
       "type": "Event",
       "name": "Unfettered Love"
+    },
+    {
+      "guid": "uIbDtVEvkH",
+      "type": "Event",
+      "name": "Days of Love Guide"
+    },
+    {
+      "guid": "G2seKIqYu1",
+      "type": "Event",
+      "name": "Days of Love IAP Guide"
+    },
+    // Days of Treasure
+    {
+      "guid": "8WMnysBWNd",
+      "type": "Event",
+      "name": "Days of Treasure Guide"
     },
     // Days of Bloom
     {

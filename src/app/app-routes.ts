@@ -53,6 +53,7 @@ import { AreasComponent } from './components/areas/areas.component';
 import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-editor/spirit-tree-editor.component';
 import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
+import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -88,6 +89,7 @@ export const routes: Routes = [
           { path: 'event-instance/:guid', component: EventInstanceComponent },
           { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
           { path: 'item/collection', component: ItemCollectionComponent, title: title('Item collections') },
+          { path: 'item/dye', component: ItemDyesComponent, title: title('Dyes') },
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/heart', component: ItemHeartsComponent, title: title('Hearts') },
           { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
@@ -126,7 +128,8 @@ export const routes: Routes = [
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
           { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) },
-          { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) }
+          { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) },
+          { path: 'experiment', loadChildren: () => import('./sections/experiments/experiments-routes').then(m => m.routes) }
         ]
       },
       /* Routes without menu. */

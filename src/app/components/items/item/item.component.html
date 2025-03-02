@@ -33,6 +33,24 @@
           <mat-icon class="menu-icon">list</mat-icon>
           <span class="menu-label">Show in item list</span>
         </a>
+        <!-- Dyes -->
+        @if (item.dye) {
+          <div class="container">
+            <mat-icon class="menu-icon">palette</mat-icon>
+            <span class="menu-label">
+              This item can be dyed.
+            </span>
+            @if (item.dye.previewUrl || item.dye.infoUrl) {
+              <a class="link" (click)="dyePreviewMode=1">Preview</a>
+            }
+          </div>
+          @if (item.dye.primary?.cost || item.dye.secondary?.cost) {
+            <div class="container">
+                @if (item.dye.primary?.cost) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Primary dye cost: {{ item.dye.primary!.cost }} / {{ item.dye.primary!.cost! * 2 }}  }
+                @if (item.dye.secondary?.cost) { <mat-icon [svgIcon]="'dye'" class="v-middle"></mat-icon> Secondary dye cost: {{ item.dye.secondary!.cost }} / {{ item.dye.secondary!.cost! * 2 }}  }
+            </div>
+          }
+        }
         <!-- Limited-->
         @if (item.group === 'Limited') {
           <div class="container">
@@ -49,3 +67,15 @@
     </div>
   </div>
 </div>
+
+@if (dyePreviewMode > 0) {
+  <app-overlay (close)="dyePreviewMode=0">
+    @let src = dyePreviewMode === 2 && item!.dye!.infoUrl ? item!.dye!.infoUrl : item!.dye!.previewUrl;
+    <img class="img-dye-preview" [src]="src" (dblclick)="openSrc($event)"/>
+    @if (dyePreviewMode === 1 && item!.dye!.infoUrl) {
+      <span style="float:left;" close class="link" (click)="preventDefault($event); dyePreviewMode=2">Show dyeable areas</span>
+    } @else if (dyePreviewMode === 2) {
+      <span style="float:left;" close class="link" (click)="preventDefault($event); dyePreviewMode=1">Show preview</span>
+    }
+  </app-overlay>
+}

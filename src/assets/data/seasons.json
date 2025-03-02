@@ -356,7 +356,7 @@
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/434f7a9b49/passage_sq2.jpg",
       "year": 2023,
       "date": "2023-04-17",
-      "endDate": "2023-06-25",
+      "endDate": "2023-07-02",
       "spirits": [
         "_ZYvHXY8HB",
         "udBbDIhZtD",
@@ -408,7 +408,7 @@
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Revival"
       }
     },
-  // #endregion
+    // #endregion
     // #region 2024
     {
       "guid": "D0oxkv3Vd0",
@@ -523,7 +523,37 @@
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1158261c87dd8045a70fe7c0507ace3a"
       }
-    }
+    },
+    // #endregion
+    // #region 2025
+    {
+      "guid": "7CRNdYQLHN",
+      "name": "Season of Radiance",
+      "shortName": "Radiance",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/252dfeaf16/radiance_header.jpg",
+      "imagePosition": "top",
+      "year": 2025,
+      "date": "2025-01-20",
+      "endDate": "2025-04-06",
+      "spirits": [
+        "JWj113We5R",
+        "SS7FZgJDLx",
+        "xeu9NyCBVR",
+        "JpMqGkF6E1"
+      ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "es1EMsc26_", "date": "2025-01-31", "endDate": "2025-01-31", "amount": 12, "description": "Compensation in Inbox" }
+        ]
+      },
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=17b8261c87dd80788089e54261141421&pm=c"
+      }
+    },
     // #endregion
   ],
   "_wiki": {

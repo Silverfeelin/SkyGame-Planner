@@ -25,6 +25,8 @@ export interface IItem extends IGuid {
   previewUrl?: string;
   /** Item order (within category). */
   order?: number;
+  /** Dye slots on item. */
+  dye?: IItemDye;
 
   /** Emote level. */
   level?: number;
@@ -111,6 +113,17 @@ export type ItemGroup = 'Elder' | 'SeasonPass' | 'Ultimate' | 'Limited';
 export type ItemSize = 'mini' | 'small' | 'medium' | 'default' | 'large' | 'auto';
 
 export type ItemSubicon = 'type' | 'season' | 'elder' | 'iap' | 'seasonPass' | 'favourite' | 'unlock' | 'limited';
+
+export interface IItemDye {
+  primary?: IItemDyeSpec;
+  secondary?: IItemDyeSpec;
+  previewUrl?: string;
+  infoUrl?: string;
+}
+
+export interface IItemDyeSpec {
+  cost?: number;
+}
 
 export interface IItemSourceBase<T> { item: IItem; source: T; }
 export interface IItemSourceIap extends IItemSourceBase<IIAP> { type: 'iap'; }

@@ -36,10 +36,14 @@
     "name": "Butterfly Charmer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/ButterflyCharmer-2-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Cape_yellow_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_yellow.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
-    "order": 693
+    "order": 715
   },
   {
     "id": 42,
@@ -110,10 +114,14 @@
     "name": "Butterfly Charmer Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/ButterflyCharmer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Cape_yellow_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_yellow2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
-    "order": 702
+    "order": 724
   },
   {
     "id": 50,
@@ -155,7 +163,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Hair"
     },
-    "order": 119
+    "order": 127
   },
   {
     "id": 54,
@@ -240,7 +248,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Hair"
     },
-    "order": 122
+    "order": 130
   },
   {
     "id": 63,
@@ -292,10 +300,15 @@
     "name": "Waving Bellmaker Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/WavingBellmaker-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Mask03.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Base_mask.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Mask"
     },
-    "order": 340
+    "order": 355
   },
   {
     "id": 69,
@@ -366,7 +379,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Hair"
     },
-    "order": 125
+    "order": 133
   },
   {
     "id": 74,
@@ -452,7 +465,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Instrument"
     },
-    "order": 476
+    "order": 494
   },
   {
     "id": 83,
@@ -500,7 +513,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Hair"
     },
-    "order": 143
+    "order": 151
   },
   {
     "id": 88,
@@ -567,7 +580,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Hair"
     },
-    "order": 118
+    "order": 126
   },
   {
     "id": 96,
@@ -652,7 +665,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Mask"
     },
-    "order": 76
+    "order": 81
   },
   {
     "id": 105,

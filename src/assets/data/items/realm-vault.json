@@ -39,7 +39,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Hair"
     },
-    "order": 136
+    "order": 144
   },
   {
     "id": 314,
@@ -94,7 +94,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Levitating_Adept#Mask"
     },
-    "order": 81
+    "order": 86
   },
   {
     "id": 320,
@@ -136,7 +136,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Hair"
     },
-    "order": 137
+    "order": 145
   },
   {
     "id": 324,
@@ -191,7 +191,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Meditating_Monastic#Prop"
     },
-    "order": 525
+    "order": 545
   },
   {
     "id": 330,
@@ -251,10 +251,14 @@
     "name": "Memory Whisperer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/MemoryWhisperer-3.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Cape_white_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_white.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
     },
-    "order": 701
+    "order": 723
   },
   {
     "id": 337,
@@ -270,10 +274,14 @@
     "name": "Memory Whisperer Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_cape_white_tier_2.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Cape_white_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_white2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Memory_Whisperer#Cape"
     },
-    "order": 710
+    "order": 732
   },
   {
     "id": 339,
@@ -336,7 +344,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Polite_Scholar#Hair"
     },
-    "order": 267
+    "order": 279
   },
   {
     "id": 346,
@@ -378,7 +386,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Hair"
     },
-    "order": 138
+    "order": 146
   },
   {
     "id": 350,
@@ -430,10 +438,14 @@
     "name": "Praying Acolyte Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/PrayingAcolyte-3-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Cape_blue_2.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_blue.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
     },
-    "order": 697
+    "order": 719
   },
   {
     "id": 356,
@@ -449,9 +461,13 @@
     "name": "Praying Acolyte Cape 2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/PrayingAcolyte-4.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Cape_blue_tier_2_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Base_blue2.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Praying_Acolyte#Cape"
     },
-    "order": 706
+    "order": 728
   }
 ]

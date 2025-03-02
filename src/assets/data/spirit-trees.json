@@ -571,6 +571,10 @@
       "guid": "nk8pRkgqr_",
       "node": "7tpH4Bmsyo"
     },
+    {
+      "guid": "6YXj1foDCG",
+      "node": "Sr8FjyT0GC"
+    },
     // Doublefive Light Catcher
     {
       "guid": "DCA--qiCxD",
@@ -793,6 +797,7 @@
       "guid": "SWBKW2vcEc",
       "node": "qoew2jYQLu"
     },
+    { "guid": "WHqjF6F7V4", "node": "PU_A3V3LeT" },
     // Festival Spin Dancer
     {
       "guid": "61W5eVdFni",
@@ -839,6 +844,10 @@
     {
       "guid": "AIEuoncebp",
       "node": "3PKNqvhxYH"
+    },
+    {
+      "guid": "9MRZQVLIT2",
+      "node": "gXYiRrAJFc"
     },
     // Respectful Pianist
     {
@@ -922,6 +931,10 @@
     {
       "guid": "QLWLr4rc8I",
       "node": "eSIjEKp26k"
+    },
+    {
+      "guid": "n6HMdzXHDF",
+      "node": "G9LqeXD3gf"
     },
     // Scarecrow Farmer
     {
@@ -1393,6 +1406,10 @@
       "guid": "UEf6UQn_yl",
       "node": "DAX89eU3v8"
     },
+    {
+      "guid": "9uqDB_wSlb",
+      "node": "KDYc9oxiCw"
+    },
     // Mellow Musician
     {
       "guid": "18DZaVJ0JB",
@@ -1406,6 +1423,10 @@
     {
       "guid": "pYtg2G6fMP",
       "node": "p7a3ZfuSbK"
+    },
+    {
+      "guid": "YCIL81ldvN",
+      "node": "XcU33tjR-q"
     },
     // #endregion
     // #region Shattering
@@ -1457,6 +1478,10 @@
       "guid": "bMfsxhWfRe",
       "node": "7ZiCvfqa6X"
     },
+    {
+      "guid": "ch9-I5m0Ba",
+      "node": "jjxxIJvyo3"
+    },
     // Warrior of Love
     {
       "guid": "mfj2dmg6Dd",
@@ -1483,6 +1508,10 @@
       "guid": "wU4H1ZfZot",
       "node": "GjeQ3Fdpac"
     },
+    {
+      "guid": "2TNahX09bx",
+      "node": "3PI4Zls_LB"
+    },
     // Tiptoeing Tea-Brewer
     {
       "guid": "gOAqpgTH4R",
@@ -1499,6 +1528,10 @@
     {
       "guid": "77QNb1vN1h",
       "node": "dUbS4mxFs5"
+    },
+    {
+      "guid": "VwW8uUBAdU",
+      "node": "5DxSihnRm3"
     },
     // Tumbling Troublemaker
     {
@@ -1669,6 +1702,24 @@
       "node": "ylgBy-RCz9"
     },
     // #endregion
+    // #region Radiance
+    {
+      "guid": "QveGTQI48L",
+      "node": "30o85y24PC"
+    },
+    {
+      "guid": "s8oDPElH2z",
+      "node": "fwak5ju2DS"
+    },
+    {
+      "guid": "wFupf-tJk-",
+      "node": "sYaDAtoEsB"
+    },
+    {
+      "guid": "AUH6M6CbGC",
+      "node": "IbnYlt3G_Q"
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {
@@ -1711,6 +1762,12 @@
       "node": "ZtC0aan5z-"
     },
     // #endregion
+    // #region Days of Fortune (2025)
+    {
+      "guid": "8rT8bSDhqL",
+      "node": "B0N05K4Bre"
+    },
+    // #endregion
     // #region Days of Love
     // Days of Love 2021
     {
@@ -1740,6 +1797,15 @@
       "guid": "3B4XeRLIrO",
       "node": "yUNUCsYx9f"
     },
+    // #endregion
+    // #region Days of Love (2025)
+    {
+      "guid": "xnZrEGPst_",
+      "node": "OnOHDkxayL"
+    },
+    // #endregion
+    // #region Days of Treasure (2025)
+    { "guid": "JU8XT42DBX", "node": "lIGOW1C9eA" },
     // #endregion
     // #region Days of Bloom
     // Days of Bloom 2021
@@ -1978,6 +2044,7 @@
     // #endregion
     // #region Feast 2024
     { "guid": "qMoUmkx_mj", "node": "pEledYU8hw" },
+    { "guid": "9ZM5bafAP6", "node": "_utmP-13Q7" },
     // #endregion
     // #endregion
     // #region Harmony Hall Grand Opening

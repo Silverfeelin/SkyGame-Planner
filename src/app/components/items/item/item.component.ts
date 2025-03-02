@@ -11,6 +11,7 @@ import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
 import { ItemSubIconsComponent } from '../item-icon/item-subicons/item-subicons.component';
 import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { NgIf } from '@angular/common';
+import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 
 @Component({
     selector: 'app-item',
@@ -18,10 +19,12 @@ import { NgIf } from '@angular/common';
     styleUrls: ['./item.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
-    imports: [NgIf, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, MatIcon, RouterLink]
+    imports: [NgIf, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, MatIcon, RouterLink, OverlayComponent]
 })
 export class ItemComponent implements OnInit {
   item?: IItem;
+
+  dyePreviewMode: 0 | 1 | 2 = 0;
 
   navSource?: INavigationTarget;
   navList?: INavigationTarget;
@@ -54,5 +57,16 @@ export class ItemComponent implements OnInit {
     item.favourited = !item.favourited;
     item.favourited ? this._storageService.addFavourites(item.guid) : this._storageService.removeFavourites(item.guid);
     this._eventService.itemFavourited.next(item);
+  }
+
+  preventDefault(event: Event): void {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }
+
+  openSrc(event: Event): void {
+    this.preventDefault(event);
+    const src = (event.target as HTMLImageElement).src;
+    window.open(src, '_blank');
   }
 }

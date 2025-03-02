@@ -73,17 +73,23 @@
     <div class="spirit-tree">
       <div class="column left">
         <div class="st-item" *ngFor="let node of left">
-          <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'left' }"></ng-container>
+          @if (node) {
+            <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'left' }"></ng-container>
+          }
         </div>
       </div>
       <div class="column center">
         <div class="st-item" *ngFor="let node of center">
-          <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'center' }"></ng-container>
+          @if (node) {
+            <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'center' }"></ng-container>
+          }
         </div>
       </div>
       <div class="column right">
         <div class="st-item" *ngFor="let node of right">
-          <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'right' }"></ng-container>
+          @if (node) {
+            <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'right' }"></ng-container>
+          }
         </div>
       </div>
     </div>

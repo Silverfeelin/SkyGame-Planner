@@ -38,6 +38,134 @@
     ],
     "description": "Item-B10"
   },
+  "Item-Cutscene": {
+    "prefix": "@item-cutscene",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Cutscene\",",
+      "\t\"icon\": \"/assets/icons/question.webp\"",
+      "},"
+    ],
+    "description": "Item-B10"
+  },
+  "Item-Dye-Red": {
+    "prefix": "@item-dye-red",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Red dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Red-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Yellow"
+  },
+  "Item-Dye-Yellow": {
+    "prefix": "@item-dye-yellow",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Yellow dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Yellow"
+  },
+  "Item-Dye-Green": {
+    "prefix": "@item-dye-green",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Green dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Green-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Green"
+  },
+  "Item-Dye-Blue": {
+    "prefix": "@item-dye-blue",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Blue dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Blue"
+  },
+  "Item-Dye-Cyan": {
+    "prefix": "@item-dye-cyan",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Cyan dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Cyan"
+  },
+  "Item-Dye-Purple": {
+    "prefix": "@item-dye-purple",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Purple dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Purple"
+  },
+  "Item-Dye-Black": {
+    "prefix": "@item-dye-black",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Black dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-Black"
+  },
+  "Item-Dye-White": {
+    "prefix": "@item-dye-white",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"White dye\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png\"",
+      "},\n"
+    ],
+    "description": "Item-Dye-White"
+  },
+  "Item-Dyeable": {
+    "prefix": "@item-dyeable",
+    "body": [
+      "\"dye\": {",
+      "\t\"primary\": {},",
+      "\t\"secondary\": {},",
+      "\t\"previewUrl\": \"$3\"",
+      "},"
+    ],
+    "description": "Item-Dyeable"
+  },
   "Item-Sheet": {
     "prefix": "@item-sheet",
     "body": [
@@ -80,7 +208,6 @@
     ],
     "description": "Season Heart"
   },
-
   "Item-Quest": {
     "prefix": "@item-quest",
     "body": [
@@ -93,6 +220,19 @@
       "},"
     ],
     "description": "Item-Quest"
+  },
+  "Spirit": {
+    "prefix": "@spirit",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"type\": \"$2\",",
+      "\t\"name\": \"$3\",",
+      "\t\"imageUrl\": \"$4\",",
+      "\t\"tree\": \"$5\",",
+      "},"
+    ],
+    "description": "Spirit"
   },
   "IAP": {
     "prefix": "@iap",
@@ -148,6 +288,31 @@
       "{\t\"guid\": \"$1\", \"spirit\": \"$2\", \"tree\": \"$3\" },"
     ]
   },
+  "Returning-Spirits": {
+    "prefix": "@returning-spirits",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"name\": \"$2\",",
+      "\t\"area\": \"$3\",",
+      "\t\"date\": { \"day\": $4, \"month\": $5, \"year\": $6 },",
+      "\t\"endDate\": { \"day\": $7, \"month\": $8, \"year\": $9 },",
+      "\t\"spirits\": [",
+      "\t\t{ \"guid\": \"$11\", \"spirit\": \"$12\", \"tree\": \"$13\" },",
+      "\t\t{ \"guid\": \"$14\", \"spirit\": \"$15\", \"tree\": \"$16\" },",
+      "\t\t{ \"guid\": \"$17\", \"spirit\": \"$18\", \"tree\": \"$19\" },",
+      "\t\t{ \"guid\": \"$20\", \"spirit\": \"$21\", \"tree\": \"$22\" }",
+      "\t],",
+      "\t\"_wiki\": {",
+      "\t\t\"href\": \"$23\"",
+      "\t},",
+      "\t\"_calendar\": {",
+      "\t\t\"href\": \"$24\"",
+      "\t}",
+      "},"
+    ],
+    "description": "Returning-Spirits"
+  },
   "Area": {
     "prefix": "@area",
     "body": [
@@ -174,7 +339,7 @@
     "body": [
       ",",
       "\"_calendar\": {",
-      "\t\"href\": \"https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=$0\"",
+      "\t\"href\": \"$0\"",
       "},"
     ],
     "description": "Calendar"

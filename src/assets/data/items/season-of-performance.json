@@ -11,13 +11,13 @@
     "guid": "RjZyODIr_2",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Performance Pendant",
+    "name": "Performance Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/13_SOPerformance_logo.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/SOPerformance-pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 443
+    "order": 460
   },
   {
     "id": 508,
@@ -27,10 +27,15 @@
     "name": "Performance Ultimate Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/SOPerformance-ultimate-mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/SOP-Ultimate-guide-mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Performance_ult.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 391
+    "order": 406
   },
   {
     "id": 509,
@@ -40,10 +45,14 @@
     "name": "Performance Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/SOPerformance-ultimate-cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/85/SOPerformance-ultimate-cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Performance_ult.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 751
+    "order": 774
   },
   {
     "id": 510,
@@ -56,7 +65,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 203
+    "order": 211
   },
   {
     "id": 511,
@@ -103,7 +112,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Mask"
     },
-    "order": 394
+    "order": 409
   },
   {
     "id": 517,
@@ -199,7 +208,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Prop"
     },
-    "order": 549
+    "order": 569
   },
   {
     "id": 1424,
@@ -230,7 +239,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Hair"
     },
-    "order": 205,
+    "order": 213,
     "group": "SeasonPass"
   },
   {
@@ -280,7 +289,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Mask"
     },
-    "order": 393
+    "order": 408
   },
   {
     "id": 1432,
@@ -289,6 +298,10 @@
     "name": "Frantic Stagehand Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoPerformance_-_Frantic_Stagehand-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/SoPerformance_-_Frantic_Stagehand-outfit.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Performance_stagehand.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Outfit"
     },
@@ -358,7 +371,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Mask"
     },
-    "order": 395,
+    "order": 410,
     "group": "SeasonPass"
   },
   {
@@ -371,7 +384,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Hair"
     },
-    "order": 206
+    "order": 214
   },
   {
     "id": 1439,
@@ -418,6 +431,11 @@
     "name": "Forgetful Storyteller Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/SOPerformance_-Forgetful_Storyteller_-_Outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOPerformance_-Forgetful_Storyteller_-_Outfit.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Performance_storyteller.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Outfit"
     },
@@ -431,10 +449,15 @@
     "name": "Forgetful Storyteller Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/SOPerformance_-Forgetful_Storyteller_-_Cape_-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SOPerformance_-Forgetful_Storyteller_-_Cape_back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Performance_storyteller.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape"
     },
-    "order": 752
+    "order": 775
   },
   {
     "id": 1445,
@@ -451,6 +474,20 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
+  },
+  {
+    "id": 2514,
+    "guid": "RoQZ183WN8",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2515,
+    "guid": "6H5QcmGYLE",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   },
   {
     "id": 1447,
@@ -486,7 +523,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Mask"
     },
-    "order": 396
+    "order": 411
   },
   {
     "id": 1450,
@@ -510,10 +547,14 @@
     "name": "Mellow Musician Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Morybel-0146-SoPerformance_-_Mellow_Musician-cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/SoPerformance_-_Mellow_Musician-cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Performance_mellow.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },
-    "order": 753,
+    "order": 776,
     "group": "SeasonPass"
   },
   {
@@ -557,7 +598,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Instrument"
     },
-    "order": 496,
+    "order": 514,
     "group": "SeasonPass"
   },
   {
@@ -570,7 +611,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Hair"
     },
-    "order": 207
+    "order": 215
   },
   {
     "id": 2287,
@@ -641,7 +682,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Mask"
     },
-    "order": 392
+    "order": 407
   },
   {
     "id": 1464,
@@ -678,6 +719,11 @@
     "name": "Modest Dancer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOPerformance-Modest-Dancer-_outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SOPerformance-Modest-Dancer-_Outfit.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Performance_modest.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Outfit"
     },
@@ -693,7 +739,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Hair"
     },
-    "order": 204,
+    "order": 212,
     "group": "SeasonPass"
   },
   {
@@ -703,5 +749,19 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/SOPerformance-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
+  },
+  {
+    "id": 2430,
+    "guid": "ChLvJgIXiL",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2431,
+    "guid": "fRdNgSzBOI",
+    "type": "Special",
+    "name": "Hearts",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   }
 ]

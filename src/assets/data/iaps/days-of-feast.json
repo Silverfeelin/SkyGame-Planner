@@ -256,4 +256,114 @@
     ]
   },
   // #endregion
+  // #region Days of Feast (2024)
+  {
+    "guid": "EqbMdBedT6",
+    "name": "Wonderland Primose Pinafore Set",
+    "price": 11.99,
+    "items": [
+      "tSAl1nV-qo",
+      "fLbULqwumS"
+    ]
+  },
+  {
+    "guid": "sq7pfYkRjD",
+    "name": "Wonderland Cafe Corridor",
+    "price": 19.99,
+    "items": [
+      "OJ38-415Wd"
+    ]
+  },
+  {
+    "guid": "qHUMga9tbM",
+    "name": "Winter Quilted Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "quSFDuWUoV"
+    ]
+  },
+  {
+    "guid": "2B4VUC1IJg",
+    "name": "Cozy Hermit Boots",
+    "price": 6.99,
+    "returning": true,
+    "items": [
+      "pT4AVkYVZP"
+    ]
+  },
+  {
+    "guid": "lEBuf9inji",
+    "name": "Tournament Skyball Set",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "sZRjoCGw_u"
+    ]
+  },
+  {
+    "guid": "60p3YQPtv0",
+    "name": "Cozy Hermit Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "Nep9ocMylo"
+    ]
+  },
+  {
+    "guid": "I1WP8E6DTt",
+    "name": "Snowflake Hair Accessory",
+    "price": 1.99,
+    "returning": true,
+    "items": [
+      "VZyiD3Wmtp"
+    ]
+  },
+  {
+    "guid": "Efdkvx2rO_",
+    "name": "Winter Ancestor Cape",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "B3YJxxJKJX"
+    ]
+  },
+  {
+    "guid": "mXz1Dg-Psj",
+    "name": "Feast Snow Globe",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "4i2CdmSgmX"
+    ]
+  },
+  {
+    "guid": "5rvSltYZNX",
+    "name": "Days of Feast Horns",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "rQQmknOn9a"
+    ]
+  },
+  {
+    "guid": "VHvLwW-unH",
+    "name": "Snowflake Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "gnC7YQCAug"
+    ]
+  },
+  {
+    "guid": "YidHByHVaP",
+    "name": "Days of Feast Pack",
+    "price": 6.99,
+    "returning": true,
+    "c": 25,
+    "items": [
+      "z2M4HqpR9C"
+    ]
+  },
+  // #endregion
 ]

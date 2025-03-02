@@ -34,10 +34,14 @@
     "name": "Passage Serow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Passage-additional-mask-Serow-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Passage-additional-mask-Serow.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_serow.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Serow_Mask"
     },
-    "order": 406
+    "order": 421
   },
   {
     "id": 609,
@@ -60,10 +64,14 @@
     "name": "Passage Boar Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Passage-additional-mask-Boar-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Passage-additional-mask-Boar.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_boar.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Boar_Mask"
     },
-    "order": 407
+    "order": 422
   },
   {
     "id": 612,
@@ -93,10 +101,14 @@
     "name": "Passage Monkey Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Passage-additional-mask-Monkey-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Passage-additional-mask-Monkey.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_monke.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Monkey_Mask"
     },
-    "order": 409
+    "order": 424
   },
   {
     "id": 616,
@@ -115,7 +127,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Hacky_Sack"
     },
-    "order": 556
+    "order": 576
   },
   {
     "id": 618,
@@ -124,23 +136,27 @@
     "name": "Passage Raccoon Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Passage-additional-mask-Racoon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Passage-additional-mask-Racoon.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_racooon.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Raccoon_Mask"
     },
-    "order": 408
+    "order": 423
   },
   {
     "id": 619,
     "guid": "SSNqKMOI2E",
     "type": "Necklace",
     "group": "Ultimate",
-    "name": "Passage Pendant",
+    "name": "Passage Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/17_SOPassage_logo.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Passage-Seasonal-pendant.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 447
+    "order": 464
   },
   {
     "id": 620,
@@ -150,10 +166,15 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Passage-Ultimate-Guide-Mask-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Passage-Ultimate-Guide-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Passage_guidebear.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 405
+    "order": 420
   },
   {
     "id": 621,
@@ -166,7 +187,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 771
+    "order": 794
   },
   {
     "id": 1606,
@@ -202,7 +223,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Hair"
     },
-    "order": 223
+    "order": 231
   },
   {
     "id": 1609,
@@ -229,7 +250,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Neck_Accessory"
     },
-    "order": 460,
+    "order": 478,
     "group": "SeasonPass"
   },
   {
@@ -262,6 +283,11 @@
     "name": "Oddball Outcast Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Oddball-Outcast-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Passage-Oddball-Outcast-outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Passage_Oddball.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Outfit"
     },
@@ -324,7 +350,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Hair"
     },
-    "order": 220,
+    "order": 228,
     "group": "SeasonPass"
   },
   {
@@ -364,10 +390,14 @@
     "name": "Tumbling Troublemaker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Passage-Tumbling-Troublemaker-Cape-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Passage-Tumbling-Troublemaker-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Passage_RacoonCape.jpg",
+      "primary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape"
     },
-    "order": 769,
+    "order": 792,
     "group": "SeasonPass"
   },
   {
@@ -387,8 +417,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Face_Accessory"
     },
-    "order": 326,
-    "group": "SeasonPass"
+    "order": 340,
+    "group": "SeasonPass",
+    "dye": {
+      "primary": {},
+      "secondary": {}
+    }
   },
   {
     "id": 1627,
@@ -432,7 +466,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Face_Accessory"
     },
-    "order": 325
+    "order": 339
   },
   {
     "id": 1631,
@@ -459,7 +493,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair"
     },
-    "order": 221,
+    "order": 229,
     "group": "SeasonPass"
   },
   {
@@ -492,6 +526,11 @@
     "name": "Melancholy Mope Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Passage-Melancholy-Mope-Outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Passage-Melancholy-Mope-Outfit-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/outfit/Passage_Mope.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Outfit"
     },
@@ -555,7 +594,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Instrument"
     },
-    "order": 500,
+    "order": 518,
     "group": "SeasonPass"
   },
   {
@@ -588,10 +627,15 @@
     "name": "Overactive Overachiever Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Passage-Overactive-Overachiever-Cape-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Overactive-Overachiever-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Passage_CoatCape.jpg",
+      "primary": {},
+      "secondary": {}
+    },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Cape"
     },
-    "order": 770
+    "order": 793
   },
   {
     "id": 1646,
@@ -618,7 +662,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Hair"
     },
-    "order": 222,
+    "order": 230,
     "group": "SeasonPass"
   },
   {
@@ -628,5 +672,19 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/SOPassage-seasonal-heart-icon-Morybel-0146.png",
     "group": "SeasonPass"
+  },
+  {
+    "id": 2432,
+    "guid": "ebwmL5sVWc",
+    "type": "Special",
+    "name": "Hearts",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2433,
+    "guid": "jS3uQ-FDSQ",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   }
 ]
