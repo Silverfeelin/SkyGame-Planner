@@ -23,6 +23,7 @@
     },
     "order": 351,
     "dye": {
+      "previewUrl": "/assets/game/dyes/head-accessory/Feast_antlers.jpg",
       "primary": {}
     }
   },
@@ -153,6 +154,7 @@
     },
     "order": 491,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Feast_scarf.jpg",
       "primary": {}
     }
   },
@@ -240,6 +242,8 @@
     },
     "order": 101,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Feast_yetigoggles.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Feast_yetigoggles.jpg",
       "primary": {},
       "secondary": {}
     }

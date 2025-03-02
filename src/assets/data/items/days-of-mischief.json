@@ -348,6 +348,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Mischief-Star-Sticker.png",
     "order": 100,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Mischief_sticker.jpg",
       "primary": {}
     }
   },

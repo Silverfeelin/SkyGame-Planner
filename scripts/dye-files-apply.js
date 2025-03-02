@@ -6,7 +6,6 @@ const mappedFiles = [
   { guid: 'TLljjPrjAq', url: '/assets/game/dyes/Feast_yetigoggles.jpg' },
   { guid: 'IKrJLeNVIL', url: '/assets/game/dyes/Remembrance_ultsash.jpg' },
   { guid: 'UMv2RWtO9g', url: '/assets/game/dyes/mask/2slots_Base_mask.jpg' },
-  { guid: 'Htee_duioI', url: '/assets/game/dyes/mask/Dreams_peek2.jpg' },
   { guid: 'HgkvwqNp19', url: '/assets/game/dyes/mask/Dreams_ult.jpg' },
   { guid: 'Em7ZxGZAN5', url: '/assets/game/dyes/mask/Base_default.jpg'},
   { guid: 'AImwzhXmNV', url: '/assets/game/dyes/cape/Base_moth.jpg'},

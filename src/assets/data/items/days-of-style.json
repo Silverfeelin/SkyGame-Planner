@@ -89,6 +89,7 @@
     },
     "order": 318,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Style_tophat.jpg",
       "primary": {}
     }
   },
@@ -144,6 +145,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
     "order": 319,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Style_veil.jpg",
       "primary": {}
     }
   },

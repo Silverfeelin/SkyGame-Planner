@@ -121,6 +121,7 @@
     },
     "order": 91,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Moments_ultglasses.jpg",
       "primary": {}
     }
   },
@@ -150,6 +151,7 @@
     },
     "order": 290,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Moments_ulthat.jpg",
       "primary": {}
     }
   },
@@ -260,6 +262,8 @@
     },
     "order": 288,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Moments_rangerhat.jpg",
+      "infoUrl": "/assets/game/dyes/hair-accessory/2slots_Moments_rangerhat.jpg",
       "primary": {},
       "secondary": {}
     }

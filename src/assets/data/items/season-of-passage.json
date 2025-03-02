@@ -421,6 +421,8 @@
     "order": 340,
     "group": "SeasonPass",
     "dye": {
+      "previewUrl": "/assets/game/dyes/head-accessory/Passage_tassels.jpg",
+      "infoUrl": "/assets/game/dyes/head-accessory/2slots_Passage_tassels.jpg",
       "primary": {},
       "secondary": {}
     }

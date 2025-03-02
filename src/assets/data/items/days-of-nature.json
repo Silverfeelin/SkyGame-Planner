@@ -23,6 +23,7 @@
     },
     "order": 485,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Nature_shellnecklace.jpg",
       "primary": {}
     }
   },
@@ -168,6 +169,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Ocean-Blue-Scarf.png",
     "order": 487,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Nature_Riverscarf.jpg",
       "primary": {}
     }
   },

@@ -121,6 +121,7 @@
     },
     "order": 302,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Fortune_fish.jpg",
       "primary": {}
     }
   },
@@ -304,6 +305,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
     "order": 343,
     "dye": {
+      "previewUrl": "/assets/game/dyes/head-accessory/Fortune_dragonearrings.jpg",
       "primary": {}
     }
   },
@@ -369,6 +371,8 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Days-of-Fortune-Snake-Cloak-back.png",
     "order": 856,
     "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Fortune_SnekCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Fortune_SnekCape.jpg",
       "primary": {},
       "secondary": {}
     }

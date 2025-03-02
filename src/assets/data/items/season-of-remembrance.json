@@ -32,6 +32,8 @@
     },
     "order": 477,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Remembrance_ultsash.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Remembrance_ultsash.jpg",
       "primary": {},
       "secondary": {}
     }
@@ -417,6 +419,7 @@
     },
     "order": 476,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Remembrance_childscarf.jpg",
       "primary": {}
     }
   },
