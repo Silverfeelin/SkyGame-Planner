@@ -342,6 +342,8 @@ const itemsFiles = fs.readdirSync(itemsPath, { recursive: true })
 
 itemsFiles.forEach(file => {
   let json = fs.readFileSync(file, 'utf8');
+  json = json.replace(/\r\n/g, '\n');
+
   let modified = false;
 
   for (const mapped of mappedFiles) {
@@ -362,8 +364,7 @@ itemsFiles.forEach(file => {
       // Add new dye section.
       const iDye = json.indexOf('"dye"', iGuid);
       if (iDye >= iStart &&  iDye <= iEnd) { continue; }
-      let iLastBreak = json.lastIndexOf('\r\n', iEnd);
-      if (iLastBreak === -1) { iLastBreak = json.lastIndexOf('\n', iEnd); }
+      let iLastBreak = json.lastIndexOf('\n', iEnd);
 
       const newDyeEntry = `,
     "dye": {
@@ -388,8 +389,7 @@ itemsFiles.forEach(file => {
         console.warn('Missing secondary slot for:', mapped.guid);
       }
 
-      let iBreak = json.indexOf('\r\n', iPreview);
-      if (iBreak < iPreview || iBreak > iEnd) { iBreak = json.indexOf('\n', iPreview); }
+      let iBreak = json.indexOf('\n', iPreview);
 
       const newInfoEntry = `,
       "infoUrl": "${mapped.url}",`;
@@ -400,7 +400,7 @@ itemsFiles.forEach(file => {
 
   if (modified) {
     ncp.writeSync(json);
-    json = json.replace(/,,/g, ',');
+    json = json.replace(/,,/g, ',').replace(/\n/g, '\r\n');
     fs.writeFileSync(file, json);
   }
 })
