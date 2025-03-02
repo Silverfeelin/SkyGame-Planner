@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 460
+    "order": 463
   },
   {
     "id": 576,
@@ -30,7 +30,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 474
+    "order": 477,
+    "dye": {
+      "primary": {},
+      "secondary": {}
+    }
   },
   {
     "id": 577,
@@ -43,7 +47,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 569
+    "order": 573
   },
   {
     "id": 578,
@@ -76,7 +80,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Chimes"
     },
-    "order": 566
+    "order": 570
   },
   {
     "id": 582,
@@ -123,7 +127,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Kettle"
     },
-    "order": 568
+    "order": 572
   },
   {
     "id": 588,
@@ -170,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Potted_Plant"
     },
-    "order": 567
+    "order": 571
   },
   {
     "id": 594,
@@ -203,7 +207,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Crab_Plush"
     },
-    "order": 570
+    "order": 574
   },
   {
     "id": 598,
@@ -215,7 +219,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Manta_Plush"
     },
-    "order": 571
+    "order": 575
   },
   {
     "id": 599,
@@ -290,7 +294,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask"
     },
-    "order": 416
+    "order": 418
   },
   {
     "id": 1567,
@@ -317,7 +321,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Hair"
     },
-    "order": 224,
+    "order": 226,
     "group": "SeasonPass"
   },
   {
@@ -358,7 +362,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
     },
-    "order": 785
+    "order": 789
   },
   {
     "id": 1573,
@@ -410,7 +414,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory"
     },
-    "order": 473
+    "order": 476,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 1578,
@@ -437,7 +444,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Hair"
     },
-    "order": 223,
+    "order": 225,
     "group": "SeasonPass"
   },
   {
@@ -490,7 +497,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
     },
-    "order": 103
+    "order": 104
   },
   {
     "id": 1585,
@@ -549,7 +556,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Hair"
     },
-    "order": 225,
+    "order": 227,
     "group": "SeasonPass"
   },
   {
@@ -615,7 +622,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
     },
-    "order": 787
+    "order": 791
   },
   {
     "id": 1596,
@@ -661,7 +668,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Mask"
     },
-    "order": 417,
+    "order": 419,
     "group": "SeasonPass"
   },
   {
@@ -710,7 +717,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
     },
-    "order": 786,
+    "order": 790,
     "group": "SeasonPass"
   },
   {

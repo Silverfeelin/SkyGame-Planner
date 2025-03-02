@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Swing"
     },
-    "order": 578
+    "order": 582
   },
   {
     "id": 1749,
@@ -26,7 +26,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Mask"
     },
-    "order": 436
+    "order": 438
   },
   {
     "id": 1750,
@@ -38,7 +38,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Seesaw"
     },
-    "order": 579
+    "order": 583
   },
   {
     "id": 1751,
@@ -50,7 +50,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Flower_Crown"
     },
-    "order": 300
+    "order": 303,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 1752,
@@ -62,7 +65,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Gondola"
     },
-    "order": 580
+    "order": 584
   },
   {
     "id": 1753,
@@ -74,7 +77,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Flowery_Archway"
     },
-    "order": 581
+    "order": 585
   },
   {
     "id": 1754,
@@ -86,7 +89,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Serendipitous_Scepter"
     },
-    "order": 533
+    "order": 537
   },
   {
     "id": 1755,
@@ -98,7 +101,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Love#Days_of_Love_Classy_Cravat"
     },
-    "order": 481
+    "order": 484
   },
   {
     "id": 1756,
@@ -163,7 +166,7 @@
     "name": "Days Of Love Meteor Mantle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Days-of-Love-Meteor-Mantle-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c5/Days-of-Love-Meteor-Mantle-back.png",
-    "order": 842
+    "order": 846
   },
   {
     "id": 2062,
@@ -172,7 +175,7 @@
     "name": "Heart Plush",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Love-Heart-Plushie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Plushie.png",
-    "order": 612
+    "order": 616
   },
   {
     "id": 2063,
@@ -181,7 +184,7 @@
     "name": "Heart Beret",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Love-Heart-Beret-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Love-Heart-Beret.png",
-    "order": 301
+    "order": 304
   },
   {
     "id": 2064,
@@ -220,7 +223,7 @@
     "name": "Days Of Love Amethyst-Tipped Tails",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Days-of-Love-Amethyst-Tipped-Tails-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Days-of-Love-Amethyst-Tipped-Tails.png",
-    "order": 270
+    "order": 272
   },
   {
     "id": 2517,
@@ -229,7 +232,7 @@
     "name": "Days Of Love Amethyst Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Days-of-Love-Amethyst-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Days-of-Love-Amethyst-Accessory.png",
-    "order": 328
+    "order": 330
   },
   {
     "id": 2518,
@@ -238,7 +241,7 @@
     "name": "Days Of Love Violet Crystal Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Days-of-Love-Love-Violet-Crystal-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Days-of-Love-Violet-Crystal-Prop.png",
-    "order": 706
+    "order": 710
   },
   {
     "id": 2519,
@@ -247,7 +250,7 @@
     "name": "Days Of Love Braids",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Days-of-Love-Braids-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Days-of-Love-Braids.png",
-    "order": 271
+    "order": 273
   },
   {
     "id": 2520,
@@ -283,6 +286,5 @@
     "type": "Special",
     "name": "Purple dye",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png"
-  },
-
+  }
 ]

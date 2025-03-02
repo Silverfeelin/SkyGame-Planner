@@ -1,5 +1,4 @@
 [
-  // #region 2025
   {
     "id": 2527,
     "guid": "vzTKSjFPYL",
@@ -7,7 +6,10 @@
     "name": "Treasure Seeker's Bounty Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Days-of-Treasure-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Days-of-Treasure-Outfit-front.png",
-    "order": 10000
+    "order": 69,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 2528,
@@ -16,7 +18,10 @@
     "name": "Treasure Cavalier Boots",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Days-of-Treasure-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Days-of-Treasure-Shoes.png",
-    "order": 10000
+    "order": 121,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 2529,
@@ -25,7 +30,7 @@
     "name": "Treasure Shovel",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Days-of-Treasure-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Treasure-Prop.png",
-    "order": 10000
+    "order": 529
   },
   {
     "id": 2530,
@@ -34,7 +39,11 @@
     "name": "Treasure Seeker's Bounty Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Days-of-Treasure-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Days-of-Treasure-Mask.png",
-    "order": 10000
+    "order": 447,
+    "dye": {
+      "primary": {},
+      "secondary": {}
+    }
   },
   {
     "id": 2531,
@@ -49,6 +58,5 @@
     "type": "Special",
     "name": "Cutscene",
     "icon": "/assets/icons/question.webp"
-  },
-  // #endregion
+  }
 ]

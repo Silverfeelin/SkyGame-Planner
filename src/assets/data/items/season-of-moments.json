@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Camera_Prop"
     },
-    "order": 530
+    "order": 534
   },
   {
     "id": 623,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 462
+    "order": 465
   },
   {
     "id": 636,
@@ -119,7 +119,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 90
+    "order": 91,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 637,
@@ -132,7 +135,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 529
+    "order": 533
   },
   {
     "id": 638,
@@ -145,7 +148,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 288
+    "order": 290,
+    "dye": {
+      "primary": {}
+    }
   },
   {
     "id": 1650,
@@ -189,7 +195,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Face_Accessory"
     },
-    "order": 91,
+    "order": 92,
     "group": "SeasonPass"
   },
   {
@@ -206,7 +212,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
-    "order": 423
+    "order": 425
   },
   {
     "id": 1655,
@@ -238,7 +244,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },
-    "order": 791,
+    "order": 795,
     "group": "SeasonPass"
   },
   {
@@ -251,7 +257,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory"
     },
-    "order": 286
+    "order": 288,
+    "dye": {
+      "primary": {},
+      "secondary": {}
+    }
   },
   {
     "id": 1659,
@@ -303,7 +313,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Face_Accessory"
     },
-    "order": 92
+    "order": 93
   },
   {
     "id": 1664,
@@ -315,7 +325,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Hair"
     },
-    "order": 232,
+    "order": 234,
     "group": "SeasonPass"
   },
   {
@@ -375,7 +385,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Prop"
     },
-    "order": 573,
+    "order": 577,
     "group": "SeasonPass"
   },
   {
@@ -431,7 +441,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
-    "order": 424,
+    "order": 426,
     "group": "SeasonPass"
   },
   {
@@ -444,7 +454,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Hair"
     },
-    "order": 231
+    "order": 233
   },
   {
     "id": 1677,
@@ -531,7 +541,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair"
     },
-    "order": 230
+    "order": 232
   },
   {
     "id": 1685,
@@ -558,7 +568,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory"
     },
-    "order": 287,
+    "order": 289,
     "group": "SeasonPass"
   },
   {
@@ -603,7 +613,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Shoes"
     },
-    "order": 104,
+    "order": 105,
     "group": "SeasonPass"
   },
   {
