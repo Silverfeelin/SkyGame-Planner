@@ -19,6 +19,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Duets-Ultimate-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Duets_pianist.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Duets_pianist.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -99,6 +100,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/47/Pianists-Beginnings-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist1.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Duets_Pianist1.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -180,6 +182,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/00/Cellists-Beginnings-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist1.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Duets_Cellist1.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -285,6 +288,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Cellists-Flourishing-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Duets_Cellist2.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Duets_Cellist2.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -300,6 +304,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cellists-Flourishing-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Duets_cellist.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Duets_cellist.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -371,6 +376,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Pianists-Flourishing-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Duets_Pianist2.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Duets_Pianist2.jpg",
       "primary": {},
       "secondary": {}
     },

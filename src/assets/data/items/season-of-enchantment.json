@@ -25,6 +25,7 @@
     },
     "order": 335,
     "dye": {
+      "previewUrl": "/assets/game/dyes/head-accessory/Enchantment_ulttassels.jpg",
       "primary": {}
     }
   },
@@ -348,6 +349,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Season_of_enchantment_cape_indifferent_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Enchantment_alchemist.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Enchantment_alchemist.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -681,6 +683,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_enchantment_cape_sleepy_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Enchantment_snooze.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Enchantment_snooze.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -814,6 +817,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_enchantment_cape_playflght_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Enchantment_playfight.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Enchantment_playfight.jpg",
       "primary": {},
       "secondary": {}
     },

@@ -125,6 +125,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -157,6 +158,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Sunlight-Beach-Shorts-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Sunlight_dadpants.jpg",
       "primary": {},
       "secondary": {}
     },

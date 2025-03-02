@@ -35,7 +35,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Prophecy-Guide_Mask.png",
     "dye": {
-      "previewUrl": " /assets/game/dyes/mask/Prophecy_ultmask.webp",
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_ultmask.webp",
       "primary": {}
     },
     "_wiki": {
@@ -348,6 +348,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Prophecy_cape_earth_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Prophecy_SpiderCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Prophecy_SpiderCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -514,6 +515,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Prophecy_cape_air_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Prophecy_BatCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Prophecy_BatCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -673,6 +675,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Fire_Leggings.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Prophecy_fire.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Prophecy_fire.jpg",
       "primary": {},
       "secondary": {}
     },

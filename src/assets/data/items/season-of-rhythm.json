@@ -114,6 +114,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Rhythm_Greeter.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Rhythm_Greeter.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -236,6 +237,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Season_of_rhythm_pants_prairie_dance_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Rhythm_Spin.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Rhythm_Spin.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -369,6 +371,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Season_of_rhythm_pants_forest_kisses_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Rhythm_Actor.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Rhythm_Actor.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -519,6 +522,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_rhythm_pants_valley_juggle_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Rhythm_Juggler.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Rhythm_Juggler.jpg",
       "primary": {},
       "secondary": {}
     },

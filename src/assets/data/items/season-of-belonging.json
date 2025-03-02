@@ -96,6 +96,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Belonging_cape_red_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Belonging_CousinCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Belonging_CousinCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -229,6 +230,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Belonging_Legs_Isle.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Belonging_kid.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Belonging_kid.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -474,6 +476,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Belonging_cape_white_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Belonging_GrandpaCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Belonging_GrandpaCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -606,6 +609,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Belonging_cape_dark_blue_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Belonging_PleafulCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Belonging_PleafulCape.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -713,6 +717,7 @@
     "order": 334,
     "group": "SeasonPass",
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Belonging_earmuffs.jpg",
       "primary": {}
     }
   },

@@ -73,7 +73,7 @@
     @let src = dyePreviewMode === 2 && item!.dye!.infoUrl ? item!.dye!.infoUrl : item!.dye!.previewUrl;
     <img class="img-dye-preview" [src]="src" (dblclick)="openSrc($event)"/>
     @if (dyePreviewMode === 1 && item!.dye!.infoUrl) {
-      <span style="float:left;" close class="link" (click)="preventDefault($event); dyePreviewMode=2">Show dyeable areas</span>
+      <span style="float:left;" close class="link" (click)="preventDefault($event); dyePreviewMode=2">Show dyeable parts</span>
     } @else if (dyePreviewMode === 2) {
       <span style="float:left;" close class="link" (click)="preventDefault($event); dyePreviewMode=1">Show preview</span>
     }

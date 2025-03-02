@@ -29,6 +29,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/SOP-Ultimate-guide-mask.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Performance_ult.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Performance_ult.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -433,6 +434,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOPerformance_-Forgetful_Storyteller_-_Outfit.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Performance_storyteller.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Performance_storyteller.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -451,6 +453,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/SOPerformance_-Forgetful_Storyteller_-_Cape_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Performance_storyteller.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Performance_storyteller.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -721,6 +724,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SOPerformance-Modest-Dancer-_Outfit.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Performance_modest.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Performance_modest.jpg",
       "primary": {},
       "secondary": {}
     },

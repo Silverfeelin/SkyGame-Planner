@@ -89,6 +89,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/Nesting-Ultimate-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Nesting_ult.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Nesting_ult.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -121,6 +122,7 @@
     "order": 295,
     "group": "SeasonPass",
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Nesting_pencil.jpg",
       "primary": {}
     }
   },
@@ -351,6 +353,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Nesting-Loft-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Nesting_cape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Nesting_cape.jpg",
       "primary": {},
       "secondary": {}
     },

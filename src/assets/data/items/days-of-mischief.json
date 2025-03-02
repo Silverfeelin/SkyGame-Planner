@@ -197,6 +197,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Days-of-Mischief-Cat-Mask.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Mischief_cat.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Mischief_cat.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -347,6 +348,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Mischief-Star-Sticker.png",
     "order": 100,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Mischief_sticker.jpg",
       "primary": {}
     }
   },

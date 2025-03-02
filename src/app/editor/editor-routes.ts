@@ -8,9 +8,11 @@ import { EditorOrderComponent } from './components/editor-order/editor-order.com
 import { EditorEventInstanceComponent } from './components/editor-event-instance/editor-event-instance.component';
 import { EditorTodoComponent } from './components/editor-todo/editor-todo.component';
 import { EditorOutfitShrineComponent } from './components/editor-outfit-shrine/editor-outfit-shrine.component';
+import { EditorDyesComponent } from './components/editor-dyes/editor-dyes.component';
 
 export const routes: Routes = [
   { path: '', component: EditorDashboardComponent },
+  { path: 'dye', component: EditorDyesComponent },
   { path: 'todo', component: EditorTodoComponent },
   { path: 'ts', component: EditorTravelingSpiritComponent },
   { path: 'tree', component: EditorTreeComponent },

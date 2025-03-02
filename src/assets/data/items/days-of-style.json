@@ -8,6 +8,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Style-Wide-Leg-Jeans.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Style_jeans.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Style_jeans.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -88,6 +89,7 @@
     },
     "order": 318,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Style_tophat.jpg",
       "primary": {}
     }
   },
@@ -143,6 +145,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
     "order": 319,
     "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Style_veil.jpg",
       "primary": {}
     }
   },
@@ -162,6 +165,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dapper-Suit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Style_suit.jpg",
       "primary": {},
       "secondary": {}
     },

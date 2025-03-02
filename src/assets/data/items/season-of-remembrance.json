@@ -32,6 +32,8 @@
     },
     "order": 477,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Remembrance_ultsash.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Remembrance_ultsash.jpg",
       "primary": {},
       "secondary": {}
     }
@@ -356,6 +358,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/SoRemembrance-Bereft-Veteran-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Remembrance_vet.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Remembrance_vet.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -416,6 +419,7 @@
     },
     "order": 476,
     "dye": {
+      "previewUrl": "/assets/game/dyes/Remembrance_childscarf.jpg",
       "primary": {}
     }
   },
@@ -479,6 +483,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/SoRemembrance-Pleading-Child-Outfit.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Remembrance_child.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Remembrance_child.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -598,6 +603,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Remembrance_tiptoe.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Remembrance_tiptoe.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -616,6 +622,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/SoRemembrance-Tiptoeing-Tea-Brewer-Cape-Back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Remembrance_tiptoe.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Remembrance_tiptoe.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -680,6 +687,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/SoRemembrance-Wounded-Warrior-Outfit.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Remembrance_warrior.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Remembrance_warrior.jpg",
       "primary": {},
       "secondary": {}
     },
