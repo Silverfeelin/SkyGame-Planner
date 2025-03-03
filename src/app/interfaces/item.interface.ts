@@ -33,6 +33,9 @@ export interface IItem extends IGuid {
   /** Music sheet */
   sheet?: string;
 
+  /** Quantity (not properly supported yet) */
+  quantity?: number;
+
   /** Hide from closet (Outfit request) */
   closetHide?: boolean;
 
