@@ -62,5 +62,21 @@
     "type": "Special",
     "name": "Cutscene",
     "icon": "/assets/icons/question.webp"
-  }
+  },
+  {
+    "id": 2533,
+    "guid": "gKAVZMtzO3",
+    "type": "Special",
+    "name": "Black dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png",
+    "quantity": 1
+  },
+  {
+    "id": 2534,
+    "guid": "x3sXLzLPdH",
+    "type": "Special",
+    "name": "White dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png",
+    "quantity": 1
+  },
 ]
