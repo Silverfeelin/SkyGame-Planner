@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 450
+    "order": 453
   },
   {
     "id": 394,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 505
+    "order": 508
   },
   {
     "id": 395,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sanctuary_Guide#Ultimate_Gifts"
     },
-    "order": 745
+    "order": 749
   },
   {
     "id": 396,
@@ -168,7 +168,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Hair"
     },
-    "order": 178
+    "order": 180
   },
   {
     "id": 999,
@@ -234,7 +234,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jelly_Whisperer#Prop"
     },
-    "order": 592
+    "order": 596
   },
   {
     "id": 1006,
@@ -274,7 +274,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Hair"
     },
-    "order": 179
+    "order": 181
   },
   {
     "id": 1010,
@@ -305,7 +305,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Timid_Bookworm#Cape"
     },
-    "order": 744,
+    "order": 748,
     "group": "SeasonPass"
   },
   {
@@ -364,7 +364,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Hair"
     },
-    "order": 180
+    "order": 182
   },
   {
     "id": 1019,
@@ -480,7 +480,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Mask"
     },
-    "order": 380,
+    "order": 382,
     "group": "SeasonPass"
   },
   {
@@ -516,7 +516,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Hair"
     },
-    "order": 181
+    "order": 183
   },
   {
     "id": 1034,
@@ -543,7 +543,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Neck_Accessory"
     },
-    "order": 469,
+    "order": 472,
     "group": "SeasonPass"
   },
   {
@@ -609,7 +609,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Hair"
     },
-    "order": 182,
+    "order": 184,
     "group": "SeasonPass"
   },
   {
@@ -644,13 +644,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Season_of_sanctuary_cape_grateful_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Sanctuary_shell.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Sanctuary_shell.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Cape"
     },
-    "order": 746
+    "order": 750
   },
   {
     "id": 1047,
@@ -678,7 +679,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Grateful_Shell_Collector#Prop"
     },
-    "order": 594
+    "order": 598
   },
   {
     "id": 1050,
@@ -735,7 +736,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Mask"
     },
-    "order": 89,
+    "order": 90,
     "group": "SeasonPass"
   },
   {
@@ -771,7 +772,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Hair"
     },
-    "order": 278
+    "order": 280,
+    "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Sanctuary_chillhat.jpg",
+      "primary": {}
+    }
   },
   {
     "id": 1059,
@@ -795,7 +800,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Cape"
     },
-    "order": 747
+    "order": 751
   },
   {
     "id": 1061,
@@ -823,7 +828,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chill_Sunbather#Prop"
     },
-    "order": 593
+    "order": 597
   },
   {
     "id": 1064,

@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide#Ultimate_Gifts"
     },
-    "order": 447
+    "order": 450
   },
   {
     "id": 373,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Belonging_Guide#Ultimate_Gifts"
     },
-    "order": 550
+    "order": 554
   },
   {
     "id": 771,
@@ -96,13 +96,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Belonging_cape_red_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Belonging_CousinCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Belonging_CousinCape.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Cape"
     },
-    "order": 735
+    "order": 739
   },
   {
     "id": 778,
@@ -114,7 +115,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Hair"
     },
-    "order": 165,
+    "order": 167,
     "group": "SeasonPass"
   },
   {
@@ -218,7 +219,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Boogie_Kid#Mask"
     },
-    "order": 367
+    "order": 369
   },
   {
     "id": 790,
@@ -229,6 +230,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Belonging_Legs_Isle.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Belonging_kid.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Belonging_kid.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -308,7 +310,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Mask"
     },
-    "order": 370,
+    "order": 372,
     "group": "SeasonPass"
   },
   {
@@ -344,7 +346,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Hair"
     },
-    "order": 166
+    "order": 168
   },
   {
     "id": 802,
@@ -393,7 +395,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Prop"
     },
-    "order": 586
+    "order": 590
   },
   {
     "id": 808,
@@ -448,7 +450,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Mask"
     },
-    "order": 368
+    "order": 370
   },
   {
     "id": 814,
@@ -474,13 +476,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Belonging_cape_white_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Belonging_GrandpaCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Belonging_GrandpaCape.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Cape"
     },
-    "order": 737,
+    "order": 741,
     "group": "SeasonPass"
   },
   {
@@ -515,7 +518,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wise_Grandparent#Prop"
     },
-    "order": 543
+    "order": 547
   },
   {
     "id": 821,
@@ -559,7 +562,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Instrument"
     },
-    "order": 500,
+    "order": 503,
     "group": "SeasonPass"
   },
   {
@@ -595,7 +598,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Mask"
     },
-    "order": 369
+    "order": 371
   },
   {
     "id": 828,
@@ -606,13 +609,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Belonging_cape_dark_blue_back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Belonging_PleafulCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Belonging_PleafulCape.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleaful_Parent#Cape"
     },
-    "order": 736,
+    "order": 740,
     "group": "SeasonPass"
   },
   {
@@ -710,8 +714,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Face_Accessory"
     },
-    "order": 332,
-    "group": "SeasonPass"
+    "order": 334,
+    "group": "SeasonPass",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/hair-accessory/Belonging_earmuffs.jpg",
+      "primary": {}
+    }
   },
   {
     "id": 840,
@@ -724,7 +732,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hairtousle_Teen#Instrument"
     },
-    "order": 502
+    "order": 505
   },
   {
     "id": 841,

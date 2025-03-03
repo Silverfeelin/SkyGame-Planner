@@ -59,7 +59,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin"
     },
-    "order": 324
+    "order": 326
   },
   {
     "id": 1930,
@@ -72,7 +72,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone"
     },
-    "order": 523
+    "order": 526
   },
   {
     "id": 1931,
@@ -84,7 +84,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat"
     },
-    "order": 258
+    "order": 260
   },
   {
     "id": 1932,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin"
     },
-    "order": 522
+    "order": 525
   },
   {
     "id": 1934,
@@ -133,7 +133,7 @@
       "previewUrl": "/assets/game/dyes/cape/Music_cape.jpg",
       "primary": {}
     },
-    "order": 844
+    "order": 848
   },
   {
     "id": 2405,
@@ -144,10 +144,11 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Music-marching-band-Outfit-front.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Music_pants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Music_pants.jpg",
       "primary": {},
       "secondary": {}
     },
-    "order": 77
+    "order": 78
   },
   {
     "id": 2407,
@@ -156,7 +157,7 @@
     "name": "Jam Station",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Jam-Station-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Jam-Station-instrument-instrument.png",
-    "order": 601
+    "order": 605
   },
   {
     "id": 2409,

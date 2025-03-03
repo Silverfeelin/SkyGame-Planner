@@ -38,6 +38,19 @@
     ],
     "description": "Item-B10"
   },
+  "Item-Cutscene": {
+    "prefix": "@item-cutscene",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"$2\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Cutscene\",",
+      "\t\"icon\": \"/assets/icons/question.webp\"",
+      "},"
+    ],
+    "description": "Item-B10"
+  },
   "Item-Dye-Red": {
     "prefix": "@item-dye-red",
     "body": [

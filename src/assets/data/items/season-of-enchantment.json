@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 449
+    "order": 452
   },
   {
     "id": 378,
@@ -23,7 +23,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 333
+    "order": 335,
+    "dye": {
+      "previewUrl": "/assets/game/dyes/head-accessory/Enchantment_ulttassels.jpg",
+      "primary": {}
+    }
   },
   {
     "id": 379,
@@ -36,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Enchantment_Guide#Ultimate_Gifts"
     },
-    "order": 177
+    "order": 179
   },
   {
     "id": 380,
@@ -167,7 +171,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Mask"
     },
-    "order": 376
+    "order": 378
   },
   {
     "id": 927,
@@ -217,7 +221,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nodding_Muralist#Hair"
     },
-    "order": 171,
+    "order": 173,
     "group": "SeasonPass"
   },
   {
@@ -283,7 +287,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Mask"
     },
-    "order": 378,
+    "order": 380,
     "group": "SeasonPass"
   },
   {
@@ -319,7 +323,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Hair"
     },
-    "order": 175
+    "order": 177
   },
   {
     "id": 942,
@@ -345,13 +349,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Season_of_enchantment_cape_indifferent_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Enchantment_alchemist.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Enchantment_alchemist.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Indifferent_Alchemist#Cape"
     },
-    "order": 742,
+    "order": 746,
     "group": "SeasonPass"
   },
   {
@@ -410,7 +415,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Hair"
     },
-    "order": 174
+    "order": 176
   },
   {
     "id": 951,
@@ -464,7 +469,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Walker#Cape"
     },
-    "order": 740,
+    "order": 744,
     "group": "SeasonPass"
   },
   {
@@ -534,7 +539,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Mask"
     },
-    "order": 379,
+    "order": 381,
     "group": "SeasonPass"
   },
   {
@@ -570,7 +575,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarecrow_Farmer#Hair"
     },
-    "order": 172
+    "order": 174
   },
   {
     "id": 966,
@@ -643,7 +648,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Hair"
     },
-    "order": 173,
+    "order": 175,
     "group": "SeasonPass"
   },
   {
@@ -678,13 +683,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Season_of_enchantment_cape_sleepy_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Enchantment_snooze.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Enchantment_snooze.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Snoozing_Carpenter#Cape"
     },
-    "order": 741
+    "order": 745
   },
   {
     "id": 977,
@@ -750,7 +756,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Mask"
     },
-    "order": 377
+    "order": 379
   },
   {
     "id": 984,
@@ -799,7 +805,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Hair"
     },
-    "order": 176,
+    "order": 178,
     "group": "SeasonPass"
   },
   {
@@ -811,13 +817,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_enchantment_cape_playflght_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Enchantment_playfight.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Enchantment_playfight.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Cape"
     },
-    "order": 743
+    "order": 747
   },
   {
     "id": 990,
@@ -859,6 +866,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Playfighting_Herbalist#Prop"
     },
-    "order": 544
+    "order": 548
   }
 ]

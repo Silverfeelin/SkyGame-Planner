@@ -414,6 +414,12 @@
     { "guid": "5JzIuqqCBg", "item": "P-7ozR83J8", "c": 100 },
     { "guid": "sub_6PFRhr", "item": "mq7485-flU", "ec": 10 },
   // #endregion
+  // #region Days of Treasure (2025)
+  { "guid": "lIGOW1C9eA", "item": "2TW_W4bbLe", "n": "djTXyybCwb" },
+  { "guid": "djTXyybCwb", "item": "_JA3vTiLd4", "n": "ZFeMVjgUzY", "nw": "bBCQWAtLEi", "c": 5 },
+  { "guid": "bBCQWAtLEi", "item": "aU_ZGHomyy", "ec": 30 },
+  { "guid": "ZFeMVjgUzY", "item": "iMG2NRQ96n", "ec": 30 },
+  // #endregion
   // #region Days of Bloom (2021)
   {
     "guid": "cQSMKHE-9K",

@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 456
+    "order": 459
   },
   {
     "id": 492,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 335
+    "order": 337
   },
   {
     "id": 493,
@@ -35,13 +35,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/SOAbyss-Ultime-gift-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Abyss_ult.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Abyss_ult.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 769
+    "order": 773
   },
   {
     "id": 494,
@@ -53,13 +54,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/SOAbyss-Ultime-gift-underwater-mask-screenshot.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Abyss_ult.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Abyss_ult.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 401
+    "order": 403
   },
   {
     "id": 495,
@@ -140,13 +142,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/SOAbyss-mask2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Abyss_f2p.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Abyss_f2p.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
     },
-    "order": 402
+    "order": 404
   },
   {
     "id": 1371,
@@ -189,7 +192,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask"
     },
-    "order": 403,
+    "order": 405,
     "group": "SeasonPass"
   },
   {
@@ -202,7 +205,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Hair"
     },
-    "order": 208
+    "order": 210
   },
   {
     "id": 1376,
@@ -256,7 +259,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape"
     },
-    "order": 767,
+    "order": 771,
     "group": "SeasonPass"
   },
   {
@@ -268,6 +271,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/SOAbyss-Anxious-Angler-Cape-outfit.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Abyss_angler.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Abyss_angler.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -347,7 +351,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair"
     },
-    "order": 207,
+    "order": 209,
     "group": "SeasonPass"
   },
   {
@@ -359,13 +363,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/SOAbyss-Ceasing-Commodore-mask-screenshot.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Abyss_Cease.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Abyss_Cease.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
     },
-    "order": 399
+    "order": 401
   },
   {
     "id": 1389,
@@ -412,7 +417,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape"
     },
-    "order": 765
+    "order": 769
   },
   {
     "id": 1393,
@@ -485,7 +490,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask"
     },
-    "order": 398,
+    "order": 400,
     "group": "SeasonPass"
   },
   {
@@ -544,13 +549,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/SOAbyss-Bumbling-Boatswain-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Abyss_boat.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Abyss_boat.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape"
     },
-    "order": 768,
+    "order": 772,
     "group": "SeasonPass"
   },
   {
@@ -563,7 +569,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory"
     },
-    "order": 283
+    "order": 285
   },
   {
     "id": 1406,
@@ -632,7 +638,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Mask"
     },
-    "order": 400
+    "order": 402
   },
   {
     "id": 1413,
@@ -674,13 +680,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/SOAbyss-Cackling-Cannoneer-Cape-back.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Abyss_CannoneerCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Abyss_CannoneerCape.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape"
     },
-    "order": 766
+    "order": 770
   },
   {
     "id": 1417,
@@ -707,7 +714,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair"
     },
-    "order": 206,
+    "order": 208,
     "group": "SeasonPass"
   },
   {

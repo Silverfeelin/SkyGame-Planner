@@ -69,6 +69,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "less": "^4.2.0",
     "lite-server": "^2.6.1",
+    "node-clipboardy": "^1.0.3",
     "sharp": "^0.33.5",
     "spritesmith": "^3.4.1",
     "tsx": "^4.19.1",

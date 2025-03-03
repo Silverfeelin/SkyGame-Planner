@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 451
+    "order": 454
   },
   {
     "id": 410,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 507
+    "order": 510
   },
   {
     "id": 411,
@@ -35,13 +35,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/83/Icon_mask_prophecy_ult.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c1/Prophecy-Guide_Mask.png",
     "dye": {
-      "previewUrl": " /assets/game/dyes/mask/Prophecy_ultmask.webp",
+      "previewUrl": "/assets/game/dyes/mask/Prophecy_ultmask.webp",
       "primary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 385
+    "order": 387
   },
   {
     "id": 412,
@@ -147,7 +147,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Hair"
     },
-    "order": 183,
+    "order": 185,
     "group": "SeasonPass"
   },
   {
@@ -194,7 +194,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape"
     },
-    "order": 749,
+    "order": 753,
     "group": "SeasonPass"
   },
   {
@@ -211,7 +211,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Mask"
     },
-    "order": 381
+    "order": 383
   },
   {
     "id": 1075,
@@ -239,7 +239,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Prop"
     },
-    "order": 545
+    "order": 549
   },
   {
     "id": 1078,
@@ -289,7 +289,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Hair"
     },
-    "order": 184
+    "order": 186
   },
   {
     "id": 1083,
@@ -348,13 +348,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Prophecy_cape_earth_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Prophecy_SpiderCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Prophecy_SpiderCape.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape"
     },
-    "order": 750
+    "order": 754
   },
   {
     "id": 1089,
@@ -370,7 +371,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Mask"
     },
-    "order": 382,
+    "order": 384,
     "group": "SeasonPass"
   },
   {
@@ -391,7 +392,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Prop"
     },
-    "order": 546
+    "order": 550
   },
   {
     "id": 1092,
@@ -448,7 +449,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Hair"
     },
-    "order": 185
+    "order": 187
   },
   {
     "id": 1098,
@@ -502,7 +503,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Mask"
     },
-    "order": 383,
+    "order": 385,
     "group": "SeasonPass"
   },
   {
@@ -514,13 +515,14 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Prophecy_cape_air_back_v2.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Prophecy_BatCape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Prophecy_BatCape.jpg",
       "primary": {},
       "secondary": {}
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape"
     },
-    "order": 748
+    "order": 752
   },
   {
     "id": 1104,
@@ -548,7 +550,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Prop"
     },
-    "order": 547
+    "order": 551
   },
   {
     "id": 1107,
@@ -605,7 +607,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Hair"
     },
-    "order": 186,
+    "order": 188,
     "group": "SeasonPass"
   },
   {
@@ -662,7 +664,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Mask"
     },
-    "order": 384
+    "order": 386
   },
   {
     "id": 1118,
@@ -673,6 +675,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Fire_Leggings.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Prophecy_fire.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Prophecy_fire.jpg",
       "primary": {},
       "secondary": {}
     },
@@ -714,7 +717,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 552
+    "order": 556
   },
   {
     "id": 1123,
@@ -726,6 +729,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 548
+    "order": 552
   }
 ]
