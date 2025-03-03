@@ -544,7 +544,8 @@
       ],
       "calculatorData": {
         "timedCurrency": [
-          { "guid": "es1EMsc26_", "date": "2025-01-31", "endDate": "2025-01-31", "amount": 12, "description": "Compensation in Inbox" }
+          { "guid": "es1EMsc26_", "date": "2025-01-31", "endDate": "2025-01-31", "amount": 12, "description": "Compensation in Inbox" },
+          { "guid": "VmDYCMrsan", "date": "2025-03-17", "endDate": "2025-03-23", "amount": 7, "description": "Bonus daily Seasonal Light" },
         ]
       },
       "_wiki": {
