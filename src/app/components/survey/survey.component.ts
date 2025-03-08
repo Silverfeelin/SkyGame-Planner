@@ -3,12 +3,11 @@ import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 
 @Component({
-  selector: 'app-survey',
-  standalone: true,
-  imports: [MatIcon],
-  templateUrl: './survey.component.html',
-  styleUrl: './survey.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-survey',
+    imports: [MatIcon],
+    templateUrl: './survey.component.html',
+    styleUrl: './survey.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SurveyComponent {
   visible = true;

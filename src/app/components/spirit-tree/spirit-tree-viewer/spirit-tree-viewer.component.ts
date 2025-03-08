@@ -5,12 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { DataService } from '@app/services/data.service';
 
 @Component({
-  selector: 'app-spirit-tree-viewer',
-  standalone: true,
-  imports: [SpiritTreeComponent],
-  templateUrl: './spirit-tree-viewer.component.html',
-  styleUrl: './spirit-tree-viewer.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-spirit-tree-viewer',
+    imports: [SpiritTreeComponent],
+    templateUrl: './spirit-tree-viewer.component.html',
+    styleUrl: './spirit-tree-viewer.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpiritTreeViewerComponent {
   trees: Array<ISpiritTree> = [];

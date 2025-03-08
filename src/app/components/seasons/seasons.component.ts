@@ -16,7 +16,6 @@ import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.compo
     selector: 'app-seasons',
     templateUrl: './seasons.component.html',
     styleUrls: ['./seasons.component.less'],
-    standalone: true,
     imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, NgbTooltip, SeasonCardComponent, IconComponent, CalendarLinkComponent]
 })
 export class SeasonsComponent implements OnInit {

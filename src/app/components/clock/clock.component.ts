@@ -12,7 +12,6 @@ import { MatIcon } from '@angular/material/icon';
     templateUrl: './clock.component.html',
     styleUrls: ['./clock.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, DateComponent, NgbTooltip, MatIcon]
 })
 export class ClockComponent implements OnInit, OnDestroy {

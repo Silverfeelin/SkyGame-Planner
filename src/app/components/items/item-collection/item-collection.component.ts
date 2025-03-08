@@ -10,7 +10,6 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Maybe } from '@app/types/maybe';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 import { Router } from '@angular/router';
 import { ItemHelper } from '@app/helpers/item-helper';
 
@@ -27,12 +26,11 @@ interface IStorageData {
 }
 
 @Component({
-  selector: 'app-item-collection',
-  standalone: true,
-  imports: [MatIcon, NgbTooltip, NgTemplateOutlet, CardComponent, ItemsComponent, ItemIconComponent, ItemTypeSelectorComponent],
-  templateUrl: './item-collection.component.html',
-  styleUrl: './item-collection.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-collection',
+    imports: [MatIcon, NgbTooltip, NgTemplateOutlet, CardComponent, ItemsComponent, ItemIconComponent],
+    templateUrl: './item-collection.component.html',
+    styleUrl: './item-collection.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemCollectionComponent {
   showEdit = false;

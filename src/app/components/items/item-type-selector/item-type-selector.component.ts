@@ -9,7 +9,6 @@ import { NgIf } from '@angular/common';
     templateUrl: './item-type-selector.component.html',
     styleUrls: ['./item-type-selector.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, NgbTooltip, MatIcon]
 })
 export class ItemTypeSelectorComponent implements OnInit, OnChanges {

@@ -18,7 +18,6 @@ import { DataJsonService } from '@app/services/data-json.service';
     templateUrl: './editor-event-instance.component.html',
     styleUrls: ['./editor-event-instance.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [FormsModule, NgFor, NgIf]
 })
 export class EditorEventInstanceComponent {

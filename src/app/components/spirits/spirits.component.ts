@@ -28,7 +28,6 @@ type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
     templateUrl: './spirits.component.html',
     styleUrls: ['./spirits.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, NgbTooltip, TableFooterDirective, NgFor, MatIcon, NgSwitch, NgSwitchCase, NgSwitchDefault]
 })
 export class SpiritsComponent {

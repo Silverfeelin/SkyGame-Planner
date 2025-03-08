@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-editor-shop',
     templateUrl: './editor-shop.component.html',
     styleUrls: ['./editor-shop.component.less'],
-    standalone: true,
     imports: [FormsModule, NgIf]
 })
 export class EditorShopComponent {

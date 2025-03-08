@@ -17,7 +17,6 @@ import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.compo
     selector: 'app-returning-spirit',
     templateUrl: './returning-spirit.component.html',
     styleUrls: ['./returning-spirit.component.less'],
-    standalone: true,
     imports: [WikiLinkComponent, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, RouterLink, NgFor, SpiritTreeComponent, CalendarLinkComponent]
 })
 export class ReturningSpiritComponent {

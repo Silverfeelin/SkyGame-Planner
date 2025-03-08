@@ -24,12 +24,11 @@ type SpecialItemNames = 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYello
 type SpecialItem = { item: IItem; cost?: ICost; }
 
 @Component({
-  selector: 'app-spirit-tree-editor',
-  standalone: true,
-  imports: [NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent, CardComponent, ItemIconComponent],
-  templateUrl: './spirit-tree-editor.component.html',
-  styleUrl: './spirit-tree-editor.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-spirit-tree-editor',
+    imports: [NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent, CardComponent, ItemIconComponent],
+    templateUrl: './spirit-tree-editor.component.html',
+    styleUrl: './spirit-tree-editor.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpiritTreeEditorComponent {
   @HostListener('window:beforeunload', ['$event'])

@@ -14,7 +14,6 @@ import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.compo
     selector: 'app-events',
     templateUrl: './events.component.html',
     styleUrls: ['./events.component.less'],
-    standalone: true,
     imports: [WikiLinkComponent, RouterLink, MatIcon, NgFor, EventCardComponent, CalendarLinkComponent]
 })
 export class EventsComponent {

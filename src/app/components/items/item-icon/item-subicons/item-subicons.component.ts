@@ -14,7 +14,6 @@ import { IItemListNode } from '@app/interfaces/item-list.interface';
     templateUrl: './item-subicons.component.html',
     styleUrls: ['./item-subicons.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [IconComponent, NgbTooltip, MatIcon]
 })
 export class ItemSubIconsComponent implements OnChanges, OnDestroy {

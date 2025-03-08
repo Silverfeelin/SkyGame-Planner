@@ -9,12 +9,11 @@ import { RouterLink } from '@angular/router';
 import { CurrencyService } from '@app/services/currency.service';
 
 @Component({
-  selector: 'app-daily-card',
-  standalone: true,
-  imports: [DiscordLinkComponent, RouterLink, MatIcon],
-  templateUrl: './daily-card.component.html',
-  styleUrl: './daily-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-daily-card',
+    imports: [DiscordLinkComponent, RouterLink, MatIcon],
+    templateUrl: './daily-card.component.html',
+    styleUrl: './daily-card.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyCardComponent {
   checkedIn?: boolean;

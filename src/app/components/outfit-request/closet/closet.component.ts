@@ -60,7 +60,6 @@ const dyeColors = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 
     templateUrl: './closet.component.html',
     styleUrls: ['./closet.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [FirefoxClipboardItemComponent, NgClass, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet, OverlayComponent]
 })
 export class ClosetComponent implements OnDestroy {

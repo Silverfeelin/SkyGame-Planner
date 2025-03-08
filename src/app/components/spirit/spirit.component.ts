@@ -23,7 +23,6 @@ interface ITree {
     selector: 'app-spirit',
     templateUrl: './spirit.component.html',
     styleUrls: ['./spirit.component.less'],
-    standalone: true,
     imports: [SpiritTypeIconComponent, NgIf, WikiLinkComponent, RouterLink, MatIcon, NgFor, SpiritTreeComponent]
 })
 export class SpiritComponent {

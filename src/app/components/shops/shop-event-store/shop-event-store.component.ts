@@ -12,12 +12,11 @@ import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { SpiritTreeComponent } from "../../spirit-tree/spirit-tree.component";
 
 @Component({
-  selector: 'app-shop-event-store',
-  standalone: true,
-  imports: [CardComponent, ItemListComponent, WikiLinkComponent, IapCardComponent, SpiritTreeComponent],
-  templateUrl: './shop-event-store.component.html',
-  styleUrl: './shop-event-store.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shop-event-store',
+    imports: [CardComponent, ItemListComponent, WikiLinkComponent, IapCardComponent, SpiritTreeComponent],
+    templateUrl: './shop-event-store.component.html',
+    styleUrl: './shop-event-store.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopEventStoreComponent {
   igcShops: Array<IShop> = [];

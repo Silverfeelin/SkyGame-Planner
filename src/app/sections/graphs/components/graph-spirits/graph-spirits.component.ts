@@ -4,8 +4,6 @@ import { ChartHelper } from '@app/helpers/chart-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
 import { Chart, ChartConfiguration, ScriptableLineSegmentContext } from 'chart.js';
-import { RouterLink } from '@angular/router';
-import { ISeason } from '@app/interfaces/season.interface';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
@@ -14,12 +12,11 @@ ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
 
 @Component({
-  selector: 'app-graph-spirits',
-  standalone: true,
-  imports: [CardComponent, WikiLinkComponent, RouterLink],
-  templateUrl: './graph-spirits.component.html',
-  styleUrl: './graph-spirits.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-graph-spirits',
+    imports: [CardComponent, WikiLinkComponent],
+    templateUrl: './graph-spirits.component.html',
+    styleUrl: './graph-spirits.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphSpiritsComponent implements AfterViewInit {
   @ViewChild('chartReturn', { static: true }) chartReturnDiv!: ElementRef<HTMLCanvasElement>;

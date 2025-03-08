@@ -9,7 +9,6 @@ import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
     templateUrl: './spirit-tree-view.component.html',
     styleUrl: './spirit-tree-view.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [SpiritTreeComponent]
 })
 export class SpiritTreeViewComponent {

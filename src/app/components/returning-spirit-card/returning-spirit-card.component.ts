@@ -21,7 +21,6 @@ export interface ReturningSpiritCardOptions {
     templateUrl: './returning-spirit-card.component.html',
     styleUrls: ['./returning-spirit-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, NgFor, RouterLink, MatIcon, WikiLinkComponent, DateComponent, DaysLeftComponent, CostComponent]
 })
 export class ReturningSpiritCardComponent implements OnInit, OnChanges {

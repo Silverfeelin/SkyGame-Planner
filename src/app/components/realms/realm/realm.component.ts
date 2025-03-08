@@ -28,7 +28,6 @@ import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
     styleUrls: ['./realm.component.less'],
     providers: [MapInstanceService],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [WikiLinkComponent, RouterLink, SpiritTypeIconComponent, MatIcon, NgIf, RealmConstellationComponent, NgFor, SpiritTreeComponent, PercentagePipe]
 })
 export class RealmComponent implements OnInit, OnDestroy {

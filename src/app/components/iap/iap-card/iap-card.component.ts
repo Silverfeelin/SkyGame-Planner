@@ -9,12 +9,11 @@ import { IAPService } from '@app/services/iap.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-iap-card',
-  standalone: true,
-  imports: [ItemIconComponent, RouterLink, MatIcon, NgbTooltip],
-  templateUrl: './iap-card.component.html',
-  styleUrl: './iap-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-iap-card',
+    imports: [ItemIconComponent, RouterLink, MatIcon, NgbTooltip],
+    templateUrl: './iap-card.component.html',
+    styleUrl: './iap-card.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class IapCardComponent implements OnChanges {
   @Input() iap!: IIAP;

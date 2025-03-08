@@ -32,7 +32,6 @@ interface IRow {
     selector: 'app-event',
     templateUrl: './event.component.html',
     styleUrls: ['./event.component.less'],
-    standalone: true,
     imports: [TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, DateComponent, NgIf, NgbTooltip, MatIcon]
 })
 export class EventComponent implements OnInit {

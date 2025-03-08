@@ -27,7 +27,6 @@ export interface SpiritCardOptions {
     templateUrl: './spirit-card.component.html',
     styleUrls: ['./spirit-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, SpiritTypeIconComponent, RouterLink, MatIcon, DateComponent, DaysLeftComponent, WikiLinkComponent, CostComponent]
 })
 export class SpiritCardComponent implements OnInit, OnChanges {

@@ -56,7 +56,6 @@ type ShowMode = 'list' | 'result' | 'submit';
     templateUrl: './outfit-vault.component.html',
     styleUrls: ['./outfit-vault.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [MatIcon, NgTemplateOutlet, NgFor, NgIf, NgbTooltip, ItemIconComponent, FormsModule, ItemTypePipe]
 })
 export class OutfitVaultComponent {
