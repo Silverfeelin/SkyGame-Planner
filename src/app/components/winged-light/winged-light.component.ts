@@ -14,7 +14,6 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
     templateUrl: './winged-light.component.html',
     styleUrls: ['./winged-light.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [WikiLinkComponent, RouterLink, NgFor, NgIf, MatIcon, SpiritTypeIconComponent]
 })
 export class WingedLightComponent {

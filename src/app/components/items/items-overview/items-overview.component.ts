@@ -3,7 +3,6 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { ItemsComponent } from "../items.component";
 import { IItem, ItemType } from '@app/interfaces/item.interface';
-import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 import { NavigationHelper } from '@app/helpers/navigation-helper';
 import { ItemService } from '@app/services/item.service';
 import { DataService } from '@app/services/data.service';
@@ -11,12 +10,11 @@ import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { LowerCasePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-items-overview',
-  standalone: true,
-  imports: [RouterLink, MatIcon, ItemsComponent, ItemTypeSelectorComponent, ItemTypePipe, LowerCasePipe],
-  templateUrl: './items-overview.component.html',
-  styleUrl: './items-overview.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-items-overview',
+    imports: [RouterLink, MatIcon, ItemsComponent, ItemTypePipe, LowerCasePipe],
+    templateUrl: './items-overview.component.html',
+    styleUrl: './items-overview.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemsOverviewComponent {
   type = ItemType.Outfit;

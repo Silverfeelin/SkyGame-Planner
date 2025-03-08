@@ -8,7 +8,6 @@ import { MatIcon } from '@angular/material/icon';
     templateUrl: './wiki-link.component.html',
     styleUrls: ['./wiki-link.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [MatIcon]
 })
 export class WikiLinkComponent {

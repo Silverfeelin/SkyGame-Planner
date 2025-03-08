@@ -15,7 +15,6 @@ import { ItemTypeSelectorComponent } from '../item-type-selector/item-type-selec
     templateUrl: './item-field-guide.component.html',
     styleUrls: ['./item-field-guide.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [ItemTypeSelectorComponent, NgFor, NgIf, RouterLink, NgbTooltip, ItemIconComponent, ItemSubIconsComponent]
 })
 export class ItemFieldGuideComponent {

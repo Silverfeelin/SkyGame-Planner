@@ -118,12 +118,11 @@ const rotations: IRotations = [
 ];
 
 @Component({
-  selector: 'app-shop-nesting',
-  standalone: true,
-  imports: [CardComponent, SpiritTreeComponent, WikiLinkComponent, ItemListComponent, CostComponent, DateComponent, ItemIconComponent, NgTemplateOutlet],
-  templateUrl: './shop-nesting.component.html',
-  styleUrl: './shop-nesting.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shop-nesting',
+    imports: [CardComponent, SpiritTreeComponent, WikiLinkComponent, ItemListComponent, CostComponent, DateComponent, ItemIconComponent, NgTemplateOutlet],
+    templateUrl: './shop-nesting.component.html',
+    styleUrl: './shop-nesting.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopNestingComponent {
   challengeSpirits: Array<ISpirit>;

@@ -3,11 +3,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { IShop } from '@app/interfaces/shop.interface';
 import { DataService } from '@app/services/data.service';
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
-import { MatIcon } from '@angular/material/icon';
 import { ItemListComponent } from '@app/components/item-list/item-list/item-list.component';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { CardComponent } from '@app/components/layout/card/card.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IAPService } from '@app/services/iap.service';
 import { IIAP } from '@app/interfaces/iap.interface';
 import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
@@ -15,12 +12,11 @@ import { SpiritTreeComponent } from "../../spirit-tree/spirit-tree.component";
 import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
 
 @Component({
-  selector: 'app-shop-harmony-hall',
-  standalone: true,
-  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent, SpiritTreeComponent, IapCardComponent],
-  templateUrl: './shop-harmony-hall.component.html',
-  styleUrl: './shop-harmony-hall.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shop-harmony-hall',
+    imports: [CardComponent, ItemListComponent, WikiLinkComponent, SpiritTreeComponent, IapCardComponent],
+    templateUrl: './shop-harmony-hall.component.html',
+    styleUrl: './shop-harmony-hall.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopHarmonyHallComponent {
   igcShops: Array<IShop> = [];

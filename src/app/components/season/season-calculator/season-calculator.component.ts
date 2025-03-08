@@ -20,7 +20,6 @@ import { DateTimePipe } from "../../../pipes/date-time.pipe";
     templateUrl: './season-calculator.component.html',
     styleUrl: './season-calculator.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [RouterLink, MatIcon, SpiritTreeComponent, DateTimePipe]
 })
 export class SeasonCalculatorComponent implements OnInit {

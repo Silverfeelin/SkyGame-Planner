@@ -18,7 +18,6 @@ import { OverlayComponent } from '@app/components/layout/overlay/overlay.compone
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, MatIcon, RouterLink, OverlayComponent]
 })
 export class ItemComponent implements OnInit {

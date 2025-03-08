@@ -12,7 +12,6 @@ export type CardFoldEvent = {
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, MatIcon]
 })
 export class CardComponent implements AfterViewInit {

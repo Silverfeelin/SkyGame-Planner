@@ -17,12 +17,11 @@ interface IChartItem {
 };
 
 @Component({
-  selector: 'app-item-inflation',
-  standalone: true,
-  imports: [ItemTypeSelectorComponent],
-  templateUrl: './item-inflation.component.html',
-  styleUrl: './item-inflation.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-inflation',
+    imports: [ItemTypeSelectorComponent],
+    templateUrl: './item-inflation.component.html',
+    styleUrl: './item-inflation.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemInflationComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartDiv!: ElementRef<HTMLCanvasElement>;

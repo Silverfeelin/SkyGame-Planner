@@ -31,7 +31,6 @@ interface IMapWingedLight {
     styleUrls: ['./children-of-light.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [MapInstanceService],
-    standalone: true,
     imports: [MatIcon, TableComponent, TableHeaderDirective, TableColumnDirective]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {

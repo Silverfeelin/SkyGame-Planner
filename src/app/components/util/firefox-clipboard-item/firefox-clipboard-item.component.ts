@@ -6,7 +6,6 @@ import { NgIf } from '@angular/common';
     templateUrl: './firefox-clipboard-item.component.html',
     styleUrls: ['./firefox-clipboard-item.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf]
 })
 export class FirefoxClipboardItemComponent {

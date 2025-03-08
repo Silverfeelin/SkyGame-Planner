@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, HostListener, isDevMode } from '@angular/core';
-import { SearchComponent } from "../../search/search.component";
 import { IItem, IItemSource, IItemSourceIap, IItemSourceListNode, IItemSourceNode, ItemType } from '@app/interfaces/item.interface';
 import { CardComponent } from "../../layout/card/card.component";
 import { DataService } from '@app/services/data.service';
@@ -19,7 +18,6 @@ import { CostComponent } from "../../util/cost/cost.component";
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { DecimalPipe, LowerCasePipe } from '@angular/common';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
-import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 import { IRevisedSpiritTree, ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { nanoid } from 'nanoid';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../spirit-tree/spirit-tree.component";
@@ -53,17 +51,16 @@ interface IItemResult {
 }
 
 @Component({
-  selector: 'app-item-unlock-calculator',
-  standalone: true,
-  imports: [
-    SearchComponent, CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe,
-    LowerCasePipe, ItemsComponent, ItemTypeSelectorComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent,
-    ItemUnlockCalculatorEventsComponent, MatIcon,
-    ItemUnlockCalculatorSeasonsComponent
-],
-  templateUrl: './item-unlock-calculator.component.html',
-  styleUrl: './item-unlock-calculator.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-unlock-calculator',
+    imports: [
+        CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe,
+        LowerCasePipe, ItemsComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent,
+        ItemUnlockCalculatorEventsComponent, MatIcon,
+        ItemUnlockCalculatorSeasonsComponent
+    ],
+    templateUrl: './item-unlock-calculator.component.html',
+    styleUrl: './item-unlock-calculator.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemUnlockCalculatorComponent {
   @HostListener('window:beforeunload', ['$event'])

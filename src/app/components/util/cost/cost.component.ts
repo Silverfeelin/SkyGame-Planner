@@ -10,7 +10,6 @@ import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
     templateUrl: './cost.component.html',
     styleUrls: ['./cost.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgbTooltip, NgTemplateOutlet, MatIcon, DecimalPipe]
 })
 export class CostComponent implements OnChanges {

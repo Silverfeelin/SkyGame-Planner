@@ -27,7 +27,6 @@ export interface EventCardOptions {
     templateUrl: './event-card.component.html',
     styleUrls: ['./event-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent, DiscordLinkComponent]
 })
 export class EventCardComponent implements OnInit, OnChanges, OnDestroy {

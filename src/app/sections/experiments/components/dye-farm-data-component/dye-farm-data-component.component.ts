@@ -81,12 +81,11 @@ const markerIcon = L.icon({
 
 
 @Component({
-  selector: 'app-dye-farm-data-component',
-  standalone: true,
-  imports: [ MatIcon, OverlayComponent ],
-  templateUrl: './dye-farm-data-component.component.html',
-  styleUrl: './dye-farm-data-component.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-dye-farm-data-component',
+    imports: [MatIcon, OverlayComponent],
+    templateUrl: './dye-farm-data-component.component.html',
+    styleUrl: './dye-farm-data-component.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DyeFarmDataComponentComponent implements OnInit {
   @ViewChild('map', { static: false }) mapDiv!: ElementRef<HTMLDivElement>;

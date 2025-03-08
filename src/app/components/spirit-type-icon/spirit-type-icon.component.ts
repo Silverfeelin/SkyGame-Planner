@@ -9,7 +9,6 @@ import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
     templateUrl: './spirit-type-icon.component.html',
     styleUrls: ['./spirit-type-icon.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgSwitch, NgSwitchCase, MatIcon, NgbTooltip, NgSwitchDefault]
 })
 export class SpiritTypeIconComponent {

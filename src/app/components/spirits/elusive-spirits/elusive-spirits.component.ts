@@ -21,7 +21,6 @@ interface ILastVisit {
     templateUrl: './elusive-spirits.component.html',
     styleUrl: './elusive-spirits.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [SpiritCardComponent, MatIcon, DateTimePipe, RouterLink]
 })
 export class ElusiveSpiritsComponent {

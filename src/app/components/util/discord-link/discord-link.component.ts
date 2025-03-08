@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } f
 import { WindowHelper } from 'src/app/helpers/window-helper';
 
 @Component({
-  selector: 'app-discord-link',
-  standalone: true,
-  imports: [],
-  templateUrl: './discord-link.component.html',
-  styleUrl: './discord-link.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-discord-link',
+    imports: [],
+    templateUrl: './discord-link.component.html',
+    styleUrl: './discord-link.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DiscordLinkComponent implements OnChanges {
   @Input() link?: string;

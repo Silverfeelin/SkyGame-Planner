@@ -17,7 +17,6 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
     templateUrl: './realms.component.html',
     styleUrls: ['./realms.component.less'],
     providers: [MapInstanceService],
-    standalone: true,
     imports: [WikiLinkComponent, CardComponent, NgbTooltip, MatIcon, NgFor, NgIf, RouterLink]
 })
 export class RealmsComponent implements AfterViewInit {

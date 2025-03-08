@@ -7,7 +7,6 @@ import { ItemListNodeClickEvent, ItemListNodeComponent } from '../item-list-node
     templateUrl: './item-list.component.html',
     styleUrl: './item-list.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [ItemListNodeComponent]
 })
 export class ItemListComponent {

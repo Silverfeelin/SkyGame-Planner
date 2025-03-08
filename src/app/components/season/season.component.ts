@@ -2,7 +2,6 @@ import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IIAP } from 'src/app/interfaces/iap.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { ISeason } from 'src/app/interfaces/season.interface';
 import { IShop } from 'src/app/interfaces/shop.interface';
@@ -12,20 +11,17 @@ import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
 import { TitleService } from 'src/app/services/title.service';
-import { ItemIconComponent } from '../items/item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { ItemListComponent } from '../item-list/item-list/item-list.component';
 import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
 import { CardComponent } from '../layout/card/card.component';
 import { DurationComponent } from '../util/duration/duration.component';
 import { DaysLeftComponent } from '../util/days-left/days-left.component';
-import { NgIf, NgFor } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { DateComponent } from '../util/date/date.component';
 import { MatIcon } from '@angular/material/icon';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { StorageService } from '@app/services/storage.service';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
-import { IconComponent } from '../icon/icon.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 import { IapCardComponent } from "../iap/iap-card/iap-card.component";
 
@@ -33,8 +29,7 @@ import { IapCardComponent } from "../iap/iap-card/iap-card.component";
     selector: 'app-season',
     templateUrl: './season.component.html',
     styleUrls: ['./season.component.less'],
-    standalone: true,
-    imports: [WikiLinkComponent, RouterLink, MatIcon, IconComponent, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, NgbTooltip, NgFor, ItemIconComponent, CalendarLinkComponent, IapCardComponent]
+    imports: [WikiLinkComponent, RouterLink, MatIcon, DateComponent, NgIf, DaysLeftComponent, DurationComponent, CardComponent, SpiritTreeComponent, ItemListComponent, CalendarLinkComponent, IapCardComponent]
 })
 export class SeasonComponent implements OnDestroy {
   season!: ISeason;

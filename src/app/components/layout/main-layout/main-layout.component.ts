@@ -16,7 +16,6 @@ import { OverlayComponent } from "../overlay/overlay.component";
     templateUrl: './main-layout.component.html',
     styleUrl: './main-layout.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [MatIcon, RouterOutlet, RouterLink, SurveyComponent, OverlayComponent]
 })
 export class MainLayoutComponent implements OnDestroy {

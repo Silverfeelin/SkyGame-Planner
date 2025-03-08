@@ -1,10 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
 import { CardComponent } from '@app/components/layout/card/card.component';
-import { MatIcon } from '@angular/material/icon';
-import { ItemListComponent } from '@app/components/item-list/item-list/item-list.component';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { IShop } from '@app/interfaces/shop.interface';
 import { DataService } from '@app/services/data.service';
@@ -13,12 +9,11 @@ import { IIAP } from '@app/interfaces/iap.interface';
 import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
 
 @Component({
-  selector: 'app-shop-office',
-  standalone: true,
-  imports: [CardComponent, ItemListComponent, ItemIconComponent, MatIcon, NgbTooltip, WikiLinkComponent, IapCardComponent],
-  templateUrl: './shop-office.component.html',
-  styleUrl: './shop-office.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shop-office',
+    imports: [CardComponent, WikiLinkComponent, IapCardComponent],
+    templateUrl: './shop-office.component.html',
+    styleUrl: './shop-office.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopOfficeComponent {
   iapShops: Array<IShop> = [];

@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-editor-item',
     templateUrl: './editor-item.component.html',
     styleUrls: ['./editor-item.component.less'],
-    standalone: true,
     imports: [FormsModule, NgFor]
 })
 export class EditorItemComponent {

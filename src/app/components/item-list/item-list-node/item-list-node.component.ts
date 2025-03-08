@@ -21,7 +21,6 @@ export type ItemListNodeClickEvent = {
     templateUrl: './item-list-node.component.html',
     styleUrl: './item-list-node.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgbTooltip, ItemIconComponent, MatIcon, NgTemplateOutlet, NgIf]
 })
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {

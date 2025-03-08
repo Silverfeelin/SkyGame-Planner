@@ -9,7 +9,6 @@ import { RouterLink } from '@angular/router';
     selector: 'app-spirits-overview',
     templateUrl: './spirits-overview.component.html',
     styleUrls: ['./spirits-overview.component.less'],
-    standalone: true,
     imports: [RouterLink, SpiritTypeIconComponent, MatIcon]
 })
 export class SpiritsOverviewComponent {

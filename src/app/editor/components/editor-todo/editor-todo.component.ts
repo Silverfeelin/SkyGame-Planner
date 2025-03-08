@@ -8,7 +8,6 @@ import { DataService } from '@app/services/data.service';
 
 @Component({
     selector: 'app-editor-todo',
-    standalone: true,
     templateUrl: './editor-todo.component.html',
     styleUrl: './editor-todo.component.scss',
     imports: [ItemIconComponent, CardComponent]

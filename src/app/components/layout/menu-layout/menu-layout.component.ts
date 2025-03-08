@@ -7,7 +7,6 @@ import { MenuComponent } from '../../menu/menu.component';
     templateUrl: './menu-layout.component.html',
     styleUrl: './menu-layout.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [MenuComponent, RouterOutlet]
 })
 export class MenuLayoutComponent implements OnInit, OnDestroy {

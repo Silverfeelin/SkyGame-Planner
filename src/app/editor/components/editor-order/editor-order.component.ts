@@ -13,7 +13,6 @@ interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
     templateUrl: './editor-order.component.html',
     styleUrls: ['./editor-order.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgFor, NgbTooltip]
 })
 export class EditorOrderComponent {

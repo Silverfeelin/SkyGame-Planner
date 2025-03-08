@@ -9,12 +9,11 @@ import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 
 @Component({
-  selector: 'app-shop-concert-hall',
-  standalone: true,
-  imports: [CardComponent,  WikiLinkComponent, SpiritTreeComponent],
-  templateUrl: './shop-concert-hall.component.html',
-  styleUrl: './shop-concert-hall.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shop-concert-hall',
+    imports: [CardComponent, WikiLinkComponent, SpiritTreeComponent],
+    templateUrl: './shop-concert-hall.component.html',
+    styleUrl: './shop-concert-hall.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopConcertHallComponent {
   tree: ISpiritTree;

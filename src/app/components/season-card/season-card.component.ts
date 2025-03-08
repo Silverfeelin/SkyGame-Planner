@@ -28,7 +28,6 @@ export interface SeasonCardOptions {
     templateUrl: './season-card.component.html',
     styleUrls: ['./season-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent, DiscordLinkComponent]
 })
 export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {

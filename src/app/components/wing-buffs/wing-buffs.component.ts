@@ -19,7 +19,6 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
     templateUrl: './wing-buffs.component.html',
     styleUrls: ['./wing-buffs.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [WikiLinkComponent, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, TableFooterDirective, SpiritTypePipe]
 })
 export class WingBuffsComponent implements OnInit {

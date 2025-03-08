@@ -341,7 +341,6 @@ const fileNames = [
     selector: 'app-editor-dyes',
     templateUrl: './editor-dyes.component.html',
     styleUrls: ['./editor-dyes.component.scss'],
-    standalone: true,
     imports: [ItemsComponent, ItemIconComponent]
 })
 export class EditorDyesComponent {

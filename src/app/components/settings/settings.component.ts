@@ -26,7 +26,6 @@ const signalPwa = signal<any>(undefined);
     selector: 'app-settings',
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.less'],
-    standalone: true,
     imports: [MatIcon, RouterLink, NgFor, LowerCasePipe, DateTimePipe, CardComponent]
 })
 export class SettingsComponent implements OnDestroy {

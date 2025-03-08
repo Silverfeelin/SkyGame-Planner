@@ -25,7 +25,6 @@ interface ICoord {
     templateUrl: './collage.component.html',
     styleUrls: ['./collage.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [FirefoxClipboardItemComponent, RouterLink, MatIcon, NgFor, NgbTooltip, NgIf, IconPickerComponent]
 })
 export class CollageComponent implements AfterViewInit {

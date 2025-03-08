@@ -23,7 +23,6 @@ import { StorageService } from '@app/services/storage.service';
     templateUrl: './event-calculator.component.html',
     styleUrl: './event-calculator.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [RouterLink, MatIcon, ItemListComponent, SpiritTreeComponent, DateTimePipe]
 })
 export class EventCalculatorComponent {

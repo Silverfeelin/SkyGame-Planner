@@ -21,7 +21,6 @@ export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
     selector: 'app-node',
     templateUrl: './node.component.html',
     styleUrls: ['./node.component.less'],
-    standalone: true,
     imports: [NgbTooltip, RouterLink, ItemIconComponent, MatIcon]
 })
 export class NodeComponent implements OnChanges {

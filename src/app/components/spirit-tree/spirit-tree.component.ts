@@ -19,7 +19,7 @@ import { CurrencyService } from '@app/services/currency.service';
 import { IconService } from '@app/services/icon.service';
 import { DataService } from '@app/services/data.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -33,8 +33,7 @@ type ShareMode = 'share' | 'clipboard';
     templateUrl: './spirit-tree.component.html',
     styleUrls: ['./spirit-tree.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, RouterLink, DateComponent, CostComponent, NodeComponent]
+    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, DateComponent, CostComponent, NodeComponent]
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;

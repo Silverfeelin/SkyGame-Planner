@@ -12,7 +12,6 @@ import { NgFor, NgIf } from '@angular/common';
     templateUrl: './realm-constellation.component.html',
     styleUrls: ['./realm-constellation.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgFor, NgIf, NgbTooltip, MatIcon]
 })
 export class RealmConstellationComponent implements OnInit, OnChanges {
