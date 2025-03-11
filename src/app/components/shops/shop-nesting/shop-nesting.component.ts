@@ -134,7 +134,6 @@ export class ShopNestingComponent {
   permanentRotation = permanentItems;
   rotations = rotations;
   iRotation = 0;
-  currentRotation?: IRotation;
   rotationItemCostMap: { [guid: string]: ICost } = {};
 
   itemLists: Array<IItemList> = [];
@@ -219,7 +218,8 @@ export class ShopNestingComponent {
       rotation.forEach((r, i) => {
         r.item = this._dataService.guidMap.get(r.guid) as IItem;
         this.rotationItemCostMap[r.item.guid] = r;
-        r.expectedDate = nextDate;
+        // ! [2025-03-11] nextDate is wrong, see #265.
+        // r.expectedDate = nextDate;
       });
     }
 
@@ -239,11 +239,11 @@ export class ShopNestingComponent {
     }
 
     // Calculate rotation based on the week number since rotation 1.
+    // ! [2025-03-11] iRotation is wrong, see #265.
     const start = DateTime.fromISO('2024-04-15');
     const today = DateTime.now().startOf('week');
     const weeksBetween = Math.ceil(today.diff(start, 'weeks').weeks);
     this.iRotation = weeksBetween % rotations.length;
-    this.currentRotation = rotations[this.iRotation];
 
     this.itemLists = rotations.map<IItemList>((r, i) => ({
       guid: nanoid(10),
