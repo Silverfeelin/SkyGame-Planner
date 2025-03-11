@@ -604,5 +604,12 @@
     "type": "Special",
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
-  }
+  },
+  {
+    "id": 2535,
+    "guid": "QIps5uVewq",
+    "type": "Special",
+    "name": "Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
 ]
