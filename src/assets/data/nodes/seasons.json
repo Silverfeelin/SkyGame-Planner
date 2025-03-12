@@ -2703,7 +2703,7 @@
   { "guid": "17Q7KrRoHg", "item": "InfpXXK1sw", "c": 45 },
   { "guid": "J2rF0DF4M8", "item": "NvsMJBJx9a", "c": 5, "n": "UVFgaaX_lL" },
   { "guid": "UVFgaaX_lL", "item": "deXq8qb84g", "c": 55 },
-  // Chuckling Scout
+  // #region Chuckling Scout
   { "guid": "7UtgKGCYKK", "item": "iSTnFoyozE", "nw": "eZDuZwE24u", "n": "v7TnisXBeO" },
   { "guid": "eZDuZwE24u", "item": "ymKZH8BJwt" },
   { "guid": "v7TnisXBeO", "item": "6QmWZYs5KC", "sc": 12, "nw": "a_24ahIBsY", "n": "0TWRdP805h" },
@@ -2726,6 +2726,19 @@
   { "guid": "-T6nNl3m7T", "item": "VToGfUfrj1", "hiddenItems": ["_k3jPMWKOY"], "c": 65 },
   { "guid": "7egZSFtWwa", "item": "nT4XKf2gDI", "c": 5, "n": "fDPXqDe-jB" },
   { "guid": "fDPXqDe-jB", "item": "osxMEOwG_r", "c": 45 },
+  // TS 135
+  { "guid": "L1fKhBMl4t", "item": "iSTnFoyozE", "nw": "JA_xVaerG7", "n": "GFZ2vLoJFQ" },
+  { "guid": "JA_xVaerG7", "item": "ymKZH8BJwt", "h": 4 },
+  { "guid": "GFZ2vLoJFQ", "item": "5g7KTy0iPz", "c": 5, "nw": "AmkPWQsq_b", "n": "yvRSKLIxzV", "ne": "h8VJifn7iB" },
+  { "guid": "AmkPWQsq_b", "item": "6QmWZYs5KC", "c": 36 },
+  { "guid": "h8VJifn7iB", "item": "TvvR0_zlpM", "c": 3 },
+  { "guid": "yvRSKLIxzV", "item": "qv1U79CflM", "ac": 2, "n": "Iii-hOQsPp" },
+  { "guid": "Iii-hOQsPp", "item": "HPP2RAku32", "h": 3, "nw": "PM8J_8cMc2", "n": "BQVfnepMpX", "ne": "4dOSuuxLV4" },
+  { "guid": "PM8J_8cMc2", "item": "81N0_-C6mq", "h": 6 },
+  { "guid": "4dOSuuxLV4", "item": "VToGfUfrj1", "hiddenItems": ["_k3jPMWKOY"], "c": 65 },
+  { "guid": "BQVfnepMpX", "item": "nT4XKf2gDI", "c": 5, "n": "N5SJpCQ8mb" },
+  { "guid": "N5SJpCQ8mb", "item": "osxMEOwG_r", "c": 45 },
+  // #endregion
   // #region Daydream Forester
   { "guid": "rPiu3Qdyxw", "item": "AuugJTG-Nl", "nw": "YLeo9DxBoK", "n": "u0Iprv4n5O" },
   { "guid": "YLeo9DxBoK", "item": "nT-zyxTRzs" },

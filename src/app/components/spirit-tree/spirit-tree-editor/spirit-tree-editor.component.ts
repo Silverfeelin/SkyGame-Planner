@@ -389,6 +389,7 @@ export class SpiritTreeEditorComponent {
       node.n && (node.n = node.n.guid);
       node.ne && (node.ne = node.ne.guid);
       node.item && (node.item = node.item.guid);
+      node.hiddenItems && (node.hiddenItems = node.hiddenItems.map((i: IItem) => i.guid))
       return node;
     });
 

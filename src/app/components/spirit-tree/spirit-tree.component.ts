@@ -94,6 +94,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
     _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
       if (this.forceNodeAction || !this.enableControls) { return; }
+      if (evt.shiftKey || evt.ctrlKey || evt.altKey || evt.metaKey) { return; }
 
       let action: NodeAction | undefined;
       switch (evt.key?.toLocaleLowerCase()) {
