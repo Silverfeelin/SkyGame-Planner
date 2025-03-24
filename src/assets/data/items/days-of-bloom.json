@@ -258,12 +258,6 @@
     "name": "Bloom Rose Braided Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Bloom-Rose-Braid-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Bloom-Rose-Braid-Hair-front.png",
-    "dye": {
-      "previewUrl": "/assets/game/dyes/hair/Bloom_rosebraid.jpg",
-      "infoUrl": "/assets/game/dyes/hair/2slots_Bloom_rosebraid.jpg",
-      "primary": {},
-      "secondary": {},
-    },
     "order": 257
   }
 ]
