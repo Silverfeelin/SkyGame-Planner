@@ -48,7 +48,7 @@
     "name": "Spirit of Mural Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Nine-Colored-Deer-Hair-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Nine-Colored-Deer-Hair-Accessory.png",
-    "order": 293
+    "order": 294
   },
   {
     "id": 2041,
@@ -79,7 +79,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Nine-Colored-Deer-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Nine-Colored-Deer-Mask.png",
-    "order": 429
+    "order": 430
   },
   {
     "id": 2045,
@@ -89,7 +89,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Gift-of-the-Nine-Colored-Deer-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Gift-of-the-Nine-Colored-Deer-Mask.png",
-    "order": 430
+    "order": 431
   },
   {
     "id": 2046,
@@ -99,7 +99,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Gift-of-the-Nine-Colored-Deer-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Gift-of-the-Nine-Colored-Deer-Facepiece.png",
-    "order": 341
+    "order": 342
   },
   {
     "id": 2047,
@@ -109,7 +109,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Radiance-of-the-Nine-Colored-Deer-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-of-the-Nine-Colored-Deer-back.png",
-    "order": 805
+    "order": 808
   },
   {
     "id": 2031,
@@ -119,7 +119,7 @@
     "name": "Nine-Colored Deer Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-The-Nine-Colored-Deer-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Season-of-The-Nine-Colored-Deer-Pendant.png",
-    "order": 467
+    "order": 469
   },
   {
     "id": 2032,
@@ -149,7 +149,7 @@
     "name": "Nine-Colored Deer Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Nine-Colored-Deer-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Nine-Colored-Deer-Ultimate-Cape-back.png",
-    "order": 801
+    "order": 804
   },
   {
     "id": 1986,
@@ -227,7 +227,7 @@
     "name": "Herb Gatherer Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Herb-Gatherer-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Herb-Gatherer-Prop.png",
-    "order": 578
+    "order": 580
   },
   {
     "id": 1995,
@@ -321,7 +321,7 @@
     "name": "Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Hunter-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Hunter-Cape-back.png",
-    "order": 803
+    "order": 806
   },
   {
     "id": 2048,
@@ -372,7 +372,7 @@
     "name": "Feudal Lord Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Feudal-Lord-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Feudal-Lord-Headpiece.png",
-    "order": 294,
+    "order": 295,
     "group": "SeasonPass"
   },
   {
@@ -382,7 +382,7 @@
     "name": "Feudal Lord Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Feudal-Lord-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Feudal-Lord-Mask.png",
-    "order": 428
+    "order": 429
   },
   {
     "id": 2012,
@@ -406,7 +406,7 @@
     "name": "Feudal Lord Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Feudal-Lord-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Feudal-Lord-Cape-front.png",
-    "order": 804,
+    "order": 807,
     "group": "SeasonPass"
   },
   {
@@ -459,7 +459,7 @@
     "name": "Princess Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Princess-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Princess-Mask.png",
-    "order": 427
+    "order": 428
   },
   {
     "id": 2021,
@@ -534,7 +534,7 @@
     "name": "Princess Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Princess-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Princess-Cape-back.png",
-    "order": 802,
+    "order": 805,
     "group": "SeasonPass"
   },
   {

@@ -86,7 +86,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 813
+    "order": 816
   },
   {
     "id": 2450,
@@ -96,7 +96,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Radiance-Leaping-Dancer-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Radiance-Leaping-Dancer-prop.png",
-    "order": 581
+    "order": 583
   },
   {
     "id": 2451,
@@ -218,7 +218,7 @@
       "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg",
       "primary": {}
     },
-    "order": 342
+    "order": 343
   },
   {
     "id": 2461,
@@ -234,7 +234,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 812
+    "order": 815
   },
   {
     "id": 2462,
@@ -244,7 +244,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-Greeting-Shaman-instrument-Cymbals-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Radiance-Greeting-Shaman-instrument-Cymbals.png",
-    "order": 522
+    "order": 524
   },
   {
     "id": 2463,
@@ -366,7 +366,7 @@
       "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg",
       "primary": {}
     },
-    "order": 300
+    "order": 301
   },
   {
     "id": 2472,
@@ -437,7 +437,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Season-of-Radiance-Pendant.png",
-    "order": 471
+    "order": 473
   },
   {
     "id": 2481,
@@ -453,7 +453,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 432
+    "order": 433
   },
   {
     "id": 2482,
@@ -469,7 +469,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 814
+    "order": 817
   },
   {
     "id": 2483,
@@ -484,7 +484,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 733
+    "order": 736
   },
   {
     "id": 2484,
@@ -611,5 +611,5 @@
     "type": "Special",
     "name": "Warp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
-  },
+  }
 ]

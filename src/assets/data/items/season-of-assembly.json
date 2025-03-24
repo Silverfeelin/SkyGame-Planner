@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 456
+    "order": 458
   },
   {
     "id": 436,
@@ -27,7 +27,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 392
+    "order": 393
   },
   {
     "id": 437,
@@ -54,7 +54,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 512
+    "order": 514
   },
   {
     "id": 439,
@@ -71,7 +71,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 759
+    "order": 762
   },
   {
     "id": 440,
@@ -111,7 +111,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Pillow"
     },
-    "order": 561
+    "order": 563
   },
   {
     "id": 445,
@@ -151,7 +151,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Jar"
     },
-    "order": 560
+    "order": 562
   },
   {
     "id": 450,
@@ -170,7 +170,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Brazier"
     },
-    "order": 557
+    "order": 559
   },
   {
     "id": 452,
@@ -203,7 +203,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Bookcase"
     },
-    "order": 558
+    "order": 560
   },
   {
     "id": 456,
@@ -215,7 +215,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Tent"
     },
-    "order": 563
+    "order": 565
   },
   {
     "id": 1173,
@@ -298,7 +298,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Mask"
     },
-    "order": 397
+    "order": 398
   },
   {
     "id": 1180,
@@ -325,7 +325,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Prop"
     },
-    "order": 564,
+    "order": 566,
     "group": "SeasonPass"
   },
   {
@@ -388,7 +388,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Mask"
     },
-    "order": 396
+    "order": 397
   },
   {
     "id": 1189,
@@ -462,7 +462,7 @@
       "previewUrl": "/assets/game/dyes/cape/Assembly_student.jpg",
       "primary": {}
     },
-    "order": 760,
+    "order": 763,
     "group": "SeasonPass"
   },
   {
@@ -525,7 +525,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Mask"
     },
-    "order": 398
+    "order": 399
   },
   {
     "id": 1202,
@@ -590,7 +590,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Prop"
     },
-    "order": 559
+    "order": 561
   },
   {
     "id": 1208,
@@ -710,7 +710,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
-    "order": 393,
+    "order": 394,
     "group": "SeasonPass"
   },
   {
@@ -723,7 +723,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Prop"
     },
-    "order": 562
+    "order": 564
   },
   {
     "id": 1221,
@@ -793,7 +793,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Mask"
     },
-    "order": 394
+    "order": 395
   },
   {
     "id": 1228,
@@ -874,7 +874,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Prop"
     },
-    "order": 565
+    "order": 567
   },
   {
     "id": 1235,
@@ -944,7 +944,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Mask"
     },
-    "order": 395
+    "order": 396
   },
   {
     "id": 1242,
