@@ -219,6 +219,12 @@
     "name": "Bloom Rose-Embroidered Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Bloom-Rose-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Bloom-Rose-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Bloom_rosecape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Bloom_rosecape.jpg",
+      "primary": {},
+      "secondary": {},
+    },
     "order": 825
   },
   {
@@ -228,6 +234,12 @@
     "name": "Bloom Rose Petal Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Bloom-Rose-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Bloom-Rose-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Bloom_rosemask.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Bloom_rosemask.jpg",
+      "primary": {},
+      "secondary": {},
+    },
     "order": 445
   },
   {
@@ -246,6 +258,12 @@
     "name": "Bloom Rose Braided Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Bloom-Rose-Braid-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Bloom-Rose-Braid-Hair-front.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/hair/Bloom_rosebraid.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Bloom_rosebraid.jpg",
+      "primary": {},
+      "secondary": {},
+    },
     "order": 257
   }
 ]
