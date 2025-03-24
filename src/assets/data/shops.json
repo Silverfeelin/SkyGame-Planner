@@ -477,6 +477,37 @@
       ]
     },
     // #endregion
+    // #region Days of Bloom (2025)
+    {
+      "guid": "FrkLX4jUTK",
+      "type": "Store",
+      "iaps": [
+        "Y6-EEIOhTM"
+      ]
+    },
+    {
+      "guid": "BKpgOtPHLY",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "xG8KKVj3Sy",
+        "w_nGjqBYXi",
+        "Qaa8L4rCQd",
+        "MPTqCz-4gM",
+        "LEUKf4WJAO",
+      ]
+    },
+    {
+      "guid": "VrwWmzEMYR",
+      "type": "Object",
+      "name": "Little Prince Mannequin",
+      "iaps": [
+        "XAH6R5Ub1W",
+        "ffn9SevEDg",
+        "ILNCp5exZ-",
+      ]
+    },
+    // #endregion
     // #region Days of Nature (2020)
     {
       "guid": "jYaYDMPEUR",

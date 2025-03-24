@@ -190,5 +190,64 @@
     "type": "Special",
     "name": "Prairie Peaks Warp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
-  }
+  },
+  // 2025
+
+  {
+    "id": 2536,
+    "guid": "Gs8SlhZwyP",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2537,
+    "guid": "WMaNVcyuGD",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2538,
+    "guid": "86YUJaG1uM",
+    "type": "Special",
+    "name": "Purple dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png"
+  },
+  {
+    "id": 2539,
+    "guid": "5F_G_puJb7",
+    "type": "Cape",
+    "name": "Bloom Rose-Embroidered Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Bloom-Rose-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Bloom-Rose-Cape-back.png",
+    "order": 10000
+  },
+  {
+    "id": 2540,
+    "guid": "rFyanmj7uL",
+    "type": "Mask",
+    "name": "Bloom Rose Petal Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Bloom-Rose-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Bloom-Rose-Mask.png",
+    "order": 10000
+  },
+  {
+    "id": 2541,
+    "guid": "gSmFBHmzx7",
+    "type": "Prop",
+    "name": "Bloom Rose Jar Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Bloom-Rose-Jar-prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Bloom-Rose-Jar-prop.png",
+    "order": 10000
+  },
+  {
+    "id": 2542,
+    "guid": "Rrhk8jKU4u",
+    "type": "Hair",
+    "name": "Bloom Rose Braided Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Bloom-Rose-Braid-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Bloom-Rose-Braid-Hair-front.png",
+    "order": 10000
+  },
 ]

@@ -226,7 +226,7 @@
       "name": "Days of Bloom",
       "shortName": "Bloom",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/a6a265ea76/bloom24eventcurrency.jpg",
+      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/4824x2714/6cfa39c4c7/bloomxlp_header.jpg",
       "instances": [
         {
           "guid": "zAEvyLfhYt",
@@ -284,6 +284,28 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1c69c84ef72f4b2daefc5e932ecddd74"
           },
+        },
+        {
+          "guid": "zm-rn5A2rv",
+          "date": "2025-03-24",
+          "endDate": "2025-04-13",
+          "spirits": [
+            { "guid": "DCTIUOmM-9", "spirit": "IqShB-6_rY", "tree": "YPSUX96fFc" }
+          ],
+          "shops": [
+            "FrkLX4jUTK",
+            "BKpgOtPHLY",
+            "VrwWmzEMYR"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "NJlRXkA53N", "date": "2025-03-24", "endDate": "2025-04-13", "amount": 15, "description": "Roses around the Starlight Desert" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1ba8261c87dd806b93e9fe0851b3d13f&pm=c"
+          }
         }
       ],
       "_wiki": {
