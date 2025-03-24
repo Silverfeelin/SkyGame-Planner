@@ -479,6 +479,12 @@
     // #endregion
     // #region Days of Bloom (2025)
     {
+      "guid": "IGg3Nyhixt",
+      "type": "Object",
+      "name": "Sword Outfit Mannequin",
+      "itemList": "VAL3W30ClZ"
+    },
+    {
       "guid": "FrkLX4jUTK",
       "type": "Store",
       "iaps": [

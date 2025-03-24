@@ -86,6 +86,13 @@
         { "guid": "bvAgs6Svb7", "item": "3jwWxUAxnd", "c": 5 },
         { "guid": "NwYZc3MHqF", "item": "zMOv8Vq6qI", "c": 10 },
       ]
-    }
+    },
+    // Bloom 2025
+    {
+      "guid": "VAL3W30ClZ",
+      "items": [
+        { "guid": "QSxhXLPZkQ", "item": "l_C7GM60an", "c": 200 }
+      ]
+    },
   ]
 }
