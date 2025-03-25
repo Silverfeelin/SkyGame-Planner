@@ -229,5 +229,26 @@
     "name": "Mask Hanger",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Hang-wall-mask.png",
     "order": 676
+  },
+  {
+    "id": 2543,
+    "guid": "OfOc3xQdCQ",
+    "type": "Cape",
+    "name": "Transcendent Journey Cape",
+    "icon": "/assets/game/items/2543.png"
+  },
+  {
+    "id": 2544,
+    "guid": "TfItBIVTeP",
+    "type": "Hair",
+    "name": "Transcendent Journey Hair",
+    "icon": "/assets/game/items/2544.png"
+  },
+  {
+    "id": 2545,
+    "guid": "RpAC3rlPrR",
+    "type": "Mask",
+    "name": "Transcendent Journey Mask",
+    "icon": "/assets/game/items/2545.png"
   }
 ]
