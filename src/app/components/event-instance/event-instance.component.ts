@@ -135,7 +135,7 @@ export class EventInstanceComponent implements OnDestroy {
       shop.itemList?.items.forEach(i => {
         this.c += i.c || 0;
         this.ec += i.ec || 0;
-        if (!i.unlocked) {
+        if (i.item && !i.item.unlocked) {
           this.cLeft += i.c || 0;
           this.ecLeft += i.ec || 0;
         }
