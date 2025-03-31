@@ -129,7 +129,7 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
 
     this.instance.shops?.filter(s => s.itemList?.items?.length).forEach(s => {
       CostHelper.add(this.cost!, ...s.itemList!.items);
-      const locked = s.itemList!.items.filter(i => !i.unlocked);
+      const locked = s.itemList!.items.filter(i => i.item && !i.item.unlocked);
       CostHelper.add(this.remainingCost!, ...locked);
     });
   }
