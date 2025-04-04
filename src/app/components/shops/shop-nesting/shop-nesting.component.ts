@@ -107,7 +107,7 @@ const rotations: IRotations = [
     { guid: '_igBIcu6Pg', c: 70 },
   ],
   [
-    { guid: 'PRSX9s-tGz', c: 20 },
+    { guid: 'PRSX9s-tGz', c: 40 },
     { guid: 'srZq8IciYN', c: 80 },
   ],
   [
