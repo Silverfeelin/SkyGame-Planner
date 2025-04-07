@@ -2823,6 +2823,17 @@
   { "guid": "YUUlJ93jkp", "item": "-4aZ5Mq9aw", "h": 6 },
   { "guid": "ygIcUixH6_", "item": "kVPk2WIqVT", "c": 5, "n": "KIqUq9BGxY" },
   { "guid": "KIqUq9BGxY", "item": "k0po-n3Zem", "c": 48 },
+  // SV 8
+  { "guid": "uLp-gR9OFE", "item": "1YJ13EOwIQ", "nw": "QNq7_fuqJ-", "n": "45x2_Is3-A", "ne": "T7MsXooygn" },
+  { "guid": "QNq7_fuqJ-", "item": "_ws5QlV4Tp", "h": 4 },
+  { "guid": "T7MsXooygn", "item": "SmhmMgfVv_", "c": 3 },
+  { "guid": "45x2_Is3-A", "item": "FlYFVac0J9", "c": 5, "nw": "bzyt1YiJGH", "n": "04tapbXmZN" },
+  { "guid": "bzyt1YiJGH", "item": "_as4dWfvGY", "c": 42 },
+  { "guid": "04tapbXmZN", "item": "we8k8-ow6p", "ac": 2, "n": "qcjtvTMQGB" },
+  { "guid": "qcjtvTMQGB", "item": "W4i9e6Vt6d", "h": 3, "nw": "4tHzKtNaN8", "n": "MdAIW6woGp" },
+  { "guid": "4tHzKtNaN8", "item": "-4aZ5Mq9aw", "h": 6 },
+  { "guid": "MdAIW6woGp", "item": "kVPk2WIqVT", "c": 5, "n": "ANpDhW1XJi" },
+  { "guid": "ANpDhW1XJi", "item": "k0po-n3Zem", "c": 48 },
   // #endregion
   // #region Gloating Narcissist
   { "guid": "xT68D-1o-1", "item": "qcsiXdqfGT", "nw": "N_yQEwmolb", "n": "R50qzkZjea" },
@@ -2848,6 +2859,18 @@
   { "guid": "7XH5j8EQ6R", "item": "g-tnZqaKbi", "h": 6 },
   { "guid": "GBnFs8elWY", "item": "VLGb7wljbi", "c": 5, "n": "S3gaY9qAdC" },
   { "guid": "S3gaY9qAdC", "item": "O6DreyTJS7", "c": 65 },
+  // SV 8
+  { "guid": "YPcZayndoS", "item": "qcsiXdqfGT", "nw": "5V_66z805e", "n": "3i6n9NJXD8", "ne": "SkEBYSIES0" },
+  { "guid": "5V_66z805e", "item": "SNhn8BVb7a", "h": 4 },
+  { "guid": "SkEBYSIES0", "item": "7Gw70uLjM6", "c": 3 },
+  { "guid": "3i6n9NJXD8", "item": "NWaw3Mjl-W", "c": 5, "nw": "LazV5TWqlW", "n": "hUzczUYWy0", "ne": "C1S6BYculW" },
+  { "guid": "LazV5TWqlW", "item": "IlbDThInaP", "c": 15 },
+  { "guid": "C1S6BYculW", "item": "8PpkvJHDLx", "c": 46 },
+  { "guid": "hUzczUYWy0", "item": "4VUhcjR1wd", "ac": 2, "n": "7cxyCB-57o" },
+  { "guid": "7cxyCB-57o", "item": "XhRW44vwiq", "h": 3, "nw": "I6sDKHMbwH", "n": "Rjoo4AOdEr" },
+  { "guid": "I6sDKHMbwH", "item": "g-tnZqaKbi", "h": 6 },
+  { "guid": "Rjoo4AOdEr", "item": "VLGb7wljbi", "c": 5, "n": "esi_f2ChA7" },
+  { "guid": "esi_f2ChA7", "item": "O6DreyTJS7", "c": 65 },
   // #endregion
   // #region Stretching Lamplighter
   { "guid": "5jVf4BFkJD", "item": "UhtkKIM3ol", "nw": "rFgkUWkPfJ", "n": "IYbov3OnvT" },
@@ -2870,6 +2893,17 @@
   { "guid": "NhjH90jr-q", "item": "e-yLNwofBb", "h": 6 },
   { "guid": "jFDiGK8s6Z", "item": "GwDxjRK6RF", "c": 5, "n": "P64Fd8qJoP" },
   { "guid": "P64Fd8qJoP", "item": "eCR2_3ev_B", "c": 70 },
+  // SV 8
+  { "guid": "iFdxIcnTB1", "item": "UhtkKIM3ol", "nw": "W6ocOqXQ3a", "n": "I-lU_52BbS", "ne": "cZBzpveyXv" },
+  { "guid": "W6ocOqXQ3a", "item": "NwYn4D2Gag", "h": 4 },
+  { "guid": "cZBzpveyXv", "item": "hT99QC2c5y", "c": 3 },
+  { "guid": "I-lU_52BbS", "item": "-qrTFboAdP", "c": 5, "nw": "3ejYrqz78t", "n": "BNAMO1DOkb" },
+  { "guid": "3ejYrqz78t", "item": "SkVA_XphTc", "c": 44 },
+  { "guid": "BNAMO1DOkb", "item": "lRVAad1pdf", "ac": 2, "n": "1NLGCPuuci" },
+  { "guid": "1NLGCPuuci", "item": "0f_f0iJMqN", "h": 3, "nw": "zWbPtg2DV1", "n": "3o48oH9215" },
+  { "guid": "zWbPtg2DV1", "item": "e-yLNwofBb", "h": 6 },
+  { "guid": "3o48oH9215", "item": "GwDxjRK6RF", "c": 5, "n": "lo5fIMsGZV" },
+  { "guid": "lo5fIMsGZV", "item": "eCR2_3ev_B", "c": 70 },
   // #endregion
   // Slouching Soldier
   { "guid": "yyUs-AZ_f8", "item": "5J5FDssiU9", "nw": "-D8wXHf77a", "n": "TDEVA4frhh" },
@@ -2894,6 +2928,18 @@
   { "guid": "zP-uQ7n-Os", "item": "OpLAmdRCNM", "h": 6 },
   { "guid": "0UmGHw9U3z", "item": "JaMg67fVTx", "c": 5, "n": "SLEOpCNCPt" },
   { "guid": "SLEOpCNCPt", "item": "CeSrlEJgtF", "c": 70 },
+  // SV 8
+  { "guid": "IoZSL8GJdT", "item": "5J5FDssiU9", "nw": "Ttq3vbTVwn", "n": "qIWkntZPla", "ne": "UDZIogB4pU" },
+  { "guid": "Ttq3vbTVwn", "item": "Gx5YAc7jLr", "h": 4 },
+  { "guid": "UDZIogB4pU", "item": "_fp_Ppz4Ks", "c": 3 },
+  { "guid": "qIWkntZPla", "item": "sDDyK9Mvz7", "c": 5, "nw": "aoObD42UFX", "n": "Pjxd80XiuY", "ne": "_akD0ZtgEq" },
+  { "guid": "aoObD42UFX", "item": "JygPyVo177", "c": 15 },
+  { "guid": "_akD0ZtgEq", "item": "2BhjMSGnvW", "c": 42 },
+  { "guid": "Pjxd80XiuY", "item": "gsoIYnO0ON", "ac": 2, "n": "z0ILmiHFrd" },
+  { "guid": "z0ILmiHFrd", "item": "ZZ21lI_L9o", "h": 3, "nw": "S42IpWOCwC", "n": "33-8QjJtBq" },
+  { "guid": "S42IpWOCwC", "item": "OpLAmdRCNM", "h": 6 },
+  { "guid": "33-8QjJtBq", "item": "JaMg67fVTx", "c": 5, "n": "PIqaF8Qmgb" },
+  { "guid": "PIqaF8Qmgb", "item": "CeSrlEJgtF", "c": 70 },
   // Sneezing Geographer
   { "guid": "u3evPD761Y", "item": "zgI2lfTGvf", "nw": "5VmO3VRpeu", "n": "lN3lNd0EIW" },
   { "guid": "5VmO3VRpeu", "item": "muRzuaFzwA" },
@@ -2914,6 +2960,17 @@
   { "guid": "8ySHqa0sTy", "item": "kGaI-255J9", "h": 6 },
   { "guid": "E5XyxRwnZ0", "item": "bWbr8CFnQy", "c": 5, "n": "VRmZrKhNSy" },
   { "guid": "VRmZrKhNSy", "item": "asWC0_56LS", "c": 70 },
+  // SV 8
+  { "guid": "WRgu2DAh5w", "item": "zgI2lfTGvf", "nw": "HYq4Xo_QzI", "n": "mUIpWHqCXu" },
+  { "guid": "HYq4Xo_QzI", "item": "muRzuaFzwA", "h": 4 },
+  { "guid": "mUIpWHqCXu", "item": "WWW05wPhax", "c": 5, "nw": "YXQmNwf1Fa", "n": "vz5bk-hHEt", "ne": "plvJ4YbpRw" },
+  { "guid": "YXQmNwf1Fa", "item": "A_Mhqh3fL1", "c": 40 },
+  { "guid": "plvJ4YbpRw", "item": "0SEXPk-k62", "c": 3 },
+  { "guid": "vz5bk-hHEt", "item": "96EMnX8wn_", "ac": 2, "n": "2Q9v-RvrNM" },
+  { "guid": "2Q9v-RvrNM", "item": "cYQ6gsue9A", "h": 3, "nw": "fjnUfDxI6q", "n": "e3GxJsBmfh" },
+  { "guid": "fjnUfDxI6q", "item": "kGaI-255J9", "h": 6 },
+  { "guid": "e3GxJsBmfh", "item": "bWbr8CFnQy", "c": 5, "n": "pdU0KefLrE" },
+  { "guid": "pdU0KefLrE", "item": "asWC0_56LS", "c": 70 },
   // #region Star Collector
   { "guid": "9ADrzfFPhx", "item": "drH3NXwa4B", "nw": "BhHv7WABnG", "n": "i1DAlOiMjk" },
   { "guid": "BhHv7WABnG", "item": "kNbIj8-u0w" },
@@ -2938,6 +2995,18 @@
   { "guid": "ic3jZlQMa4", "item": "BUc00xon-T", "c": 5, "h": null, "nw": "tI_cI9reE_", "n": "DhmwGrx3oo" },
   { "guid": "tI_cI9reE_", "item": "Yv8nA1qNwO", "c": 75, "h": null },
   { "guid": "DhmwGrx3oo", "item": "ER8iz-GQjz", "c": 70 },
+  // SV 8
+  { "guid": "QcAl6Ibw1T", "item": "drH3NXwa4B", "nw": "KS1zaz5AS1", "n": "2zc3y5jjfs", "ne": "VSVKC8YeQi" },
+  { "guid": "KS1zaz5AS1", "item": "kNbIj8-u0w", "h": 4 },
+  { "guid": "VSVKC8YeQi", "item": "nn7KvR3hzq", "c": 3 },
+  { "guid": "2zc3y5jjfs", "item": "zTfcCNFzZ4", "c": 5, "nw": "5XoSH679Oo", "n": "L67CJZi6bM" },
+  { "guid": "5XoSH679Oo", "item": "67-Dpp1kUH", "c": 40 },
+  { "guid": "L67CJZi6bM", "item": "Yyd-f73kdt", "ac": 2, "n": "HHB4CDKZTM" },
+  { "guid": "HHB4CDKZTM", "item": "kUOyMedcLK", "h": 3, "nw": "atCIKrXc9r", "n": "k1PQDVocw9" },
+  { "guid": "atCIKrXc9r", "item": "f2efm6-cUw", "h": 6 },
+  { "guid": "k1PQDVocw9", "item": "BUc00xon-T", "c": 5, "nw": "bK9U2yOXJq", "n": "iPE6KWlGDv" },
+  { "guid": "bK9U2yOXJq", "item": "Yv8nA1qNwO", "c": 75 },
+  { "guid": "iPE6KWlGDv", "item": "ER8iz-GQjz", "c": 70 },
   // #endregion
   // #endregion
   // #region Flight
