@@ -44,7 +44,7 @@
         { "guid": "pN78-rG8UE", "url": "/assets/game/background/concert_hall.webp", "filter": "brightness(1) blur(1px)" },
         { "guid": "kYtsHeX26P", "url": "/assets/game/background/moomin.webp", "filter": "brightness(1) blur(1px)" },
         { "guid": "thMcfkK8Zf", "url": "/assets/game/areas/vault/cackling.webp", "filter": "brightness(1) blur(1px)" },
-        { "guid": "thMcfkK8Zf", "url": "/assets/game/background/feast2024.webp", "default": true, "filter": "brightness(1) blur(1px)" }
+        { "guid": "thMcfkK8Z1", "url": "/assets/game/background/feast2024.webp", "default": true, "filter": "brightness(1) blur(1px)" }
       ]
     }
   }
