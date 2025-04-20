@@ -1915,6 +1915,15 @@
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Radiance-Greeting-Shaman-spirit-cutout-original.png"
     },
     // #endregion
+    // #region Blue Bird
+    {
+      "guid": "hbXkkZbBsk",
+      "type": "Guide",
+      "name": "Blue Bird Guide",
+      "imageUrl": "",
+      "tree": "kZJKg9jxtn",
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {
