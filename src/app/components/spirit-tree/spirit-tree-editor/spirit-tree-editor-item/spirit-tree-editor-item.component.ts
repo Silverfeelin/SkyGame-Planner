@@ -1,0 +1,95 @@
+import { Component, ChangeDetectionStrategy, output, input, effect } from '@angular/core';
+import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ItemType, ItemSubtype, IItem, ItemGroup } from '@app/interfaces/item.interface';
+import { ItemTypePipe } from '@app/pipes/item-type.pipe';
+import { nanoid } from 'nanoid';
+
+@Component({
+  selector: 'app-spirit-tree-editor-item',
+  templateUrl: './spirit-tree-editor-item.component.html',
+  styleUrl: './spirit-tree-editor-item.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [ReactiveFormsModule, ItemTypePipe],
+})
+export class SpiritTreeEditorItemComponent {
+  item = input<IItem>();
+
+  saved = output<IItem>();
+  cancelled = output<void>();
+
+  typeEmote = ItemType.Emote;
+  typeOptions = ['', ...Object.values(ItemType)];
+  subtypeOptions = ['', ...Object.values(ItemSubtype)];
+  groupOptions = ['', 'Elder', 'SeasonPass', 'Ultimate', 'Limited'];
+
+  form = new FormGroup({
+    name: new FormControl('', { validators: [ Validators.required]}),
+    type: new FormControl<ItemType|''>('', { validators: [ Validators.required]}),
+    subtype: new FormControl<ItemSubtype|''>(''),
+    group: new FormControl(''),
+    icon: new FormControl(''),
+    previewUrl: new FormControl(''),
+    dyes: new FormControl('0'),
+    level: new FormControl('1'),
+  });
+
+  constructor() {
+    effect(() => {
+      const item = this.item();
+      this.form.patchValue({
+        name: item?.name || '',
+        type: item?.type || '',
+        subtype: item?.subtype || '',
+        group: item?.group || '',
+        icon: item?.icon || '',
+        previewUrl: item?.previewUrl || '',
+        dyes: item?.dye?.secondary ? '2' : item?.dye?.primary ? '1' : '0',
+        level: item?.level ? `${item.level}` : undefined,
+      });
+    });
+  }
+
+  save(): void {
+    if (this.form.invalid) {
+      alert('Please check all fields before saving.');
+      return;
+    }
+
+    const value = this.form.value;
+
+    let icon = value.icon || '';
+    if (icon.includes('/revision/')) { icon = icon.split('/revision/')[0]; }
+
+    let previewUrl = value.previewUrl || '';
+    if (previewUrl.includes('/revision/')) { previewUrl = previewUrl.split('/revision/')[0]; }
+
+    const item: IItem = {
+      id: -1,
+      guid: this.item()?.guid || nanoid(10),
+      name: value.name || '',
+      type: value.type as ItemType,
+      subtype: value.subtype as ItemSubtype || undefined,
+      group: value.group as ItemGroup || undefined,
+      icon,
+      previewUrl: previewUrl || undefined,
+      dye: {}
+    };
+
+    switch (value.dyes) {
+      case '1': item.dye = { primary: {} }; break;
+      case '2': item.dye = { primary: {}, secondary: {} }; break;
+      default: delete item.dye; break;
+    }
+
+    if (item.type === ItemType.Emote && value.level) {
+      item.level = parseInt(value.level, 10);
+    }
+
+    this.saved.emit(item);
+  }
+
+  cancel(): void {
+    if (!confirm('Are you sure you want to cancel these changes?')) { return; }
+    this.cancelled.emit();
+  }
+}
