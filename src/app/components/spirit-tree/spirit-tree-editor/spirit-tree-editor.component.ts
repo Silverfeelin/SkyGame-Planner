@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, isDevMode, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../spirit-tree.component";
 import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
@@ -16,6 +16,9 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { ICost } from '@app/interfaces/cost.interface';
 import { ISpirit, SpiritType } from '@app/interfaces/spirit.interface';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
+import { OverlayComponent } from "../../layout/overlay/overlay.component";
+import { SpiritTreeEditorItemComponent } from './spirit-tree-editor-item/spirit-tree-editor-item.component';
+import { StorageService } from '@app/services/storage.service';
 
 type TreeNodeArray = Array<TreeNode>;
 type TreeNode = { node: INode; x: number; y: number; };
@@ -25,7 +28,11 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 
 @Component({
     selector: 'app-spirit-tree-editor',
-    imports: [NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent, CardComponent, ItemIconComponent],
+    imports: [
+      NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent,
+      CardComponent, ItemIconComponent, OverlayComponent,
+      SpiritTreeEditorItemComponent
+    ],
     templateUrl: './spirit-tree-editor.component.html',
     styleUrl: './spirit-tree-editor.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -103,6 +110,8 @@ export class SpiritTreeEditorComponent {
   }
   specialItems: Array<SpecialItem> = Object.values(this.specialItemMap);
 
+  private readonly _storageService = inject(StorageService);
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _spiritTreeRenderService: SpiritTreeRenderService,
@@ -134,6 +143,13 @@ export class SpiritTreeEditorComponent {
       this.copySpiritTree(_dataService.guidMap.get(copyTreeGuid) as ISpiritTree, preserveTreeGuid);
       this._changeDetectorRef.markForCheck();
     });
+
+    // Load custom item data
+    const customData = this._storageService.getKey('editor.items') as { items: Array<IItem> };
+    if (customData?.items) {
+      this.customItems = customData.items;
+      this.customItems.forEach(i => this.itemMap[i.guid] = i);
+    }
   }
 
   promptItemCode(): void {
@@ -488,6 +504,64 @@ export class SpiritTreeEditorComponent {
 
   // #endregion
 
+  // #region Custom items
+
+  isCustomEditorVisible = false;
+  selectedCustomItem?: IItem;
+  customItems: Array<IItem> = [];
+
+  addCustomItem(): void {
+    this.selectedCustomItem = undefined;
+    this.isCustomEditorVisible = true;
+  }
+
+  editCustomItem(item: IItem): void {
+    this.selectedCustomItem = item;
+    this.isCustomEditorVisible = true;
+  }
+
+  duplicateCustomItem(item: IItem): void {
+    const i = this.customItems.findIndex(i => i.guid === item.guid);
+    if (i >= 0) {
+      const newItem = this.cloneItem(item);
+      this.customItems.push(newItem);
+      this._storageService.setKey('editor.items', { items: this.customItems });
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+
+  deleteCustomItem(item: IItem): void {
+    if (!confirm('Are you sure you want to delete this item?')) { return; }
+    const i = this.customItems.findIndex(i => i.guid === item.guid);
+    if (i >= 0) {
+      this.customItems.splice(i, 1);
+      this._storageService.setKey('editor.items', { items: this.customItems });
+      this._changeDetectorRef.markForCheck();
+    }
+  }
+
+  onCustomItem(item: IItem): void {
+    const i = this.customItems.findIndex(i => i.guid === item.guid);
+    if (i >= 0) {
+      this.customItems[i] = item;
+    } else {
+      this.customItems.push(item);
+    }
+
+    this._storageService.setKey('editor.items', { items: this.customItems });
+    this._changeDetectorRef.markForCheck();
+    this.selectedCustomItem = item;
+    this.isCustomEditorVisible = false;
+  }
+
+  onCustomItemClicked(event: ItemClickEvent): void {
+    this.selectedCustomItem = event.item;
+    // event.item = this.cloneItem(event.item);
+    // this.onItemClicked(event);
+  }
+
+  // #endregion
+
   private initializeItemIcons(): void {
     for (const item of this._dataService.itemConfig.items) {
       if (item.type === ItemType.Special && item.name === 'Blessing' && item.nodes?.at(-1)?.c === 5) {
@@ -533,5 +607,9 @@ export class SpiritTreeEditorComponent {
 
   private reloadTree(): void { this.tree = { guid: this.tree.guid, node: this.tree.node }; }
   private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }
-  private cloneItem(item: IItem): IItem { return { ...item, guid: nanoid(10) }; }
+  private cloneItem(item: IItem): IItem {
+    const newItem = { ...item };
+    newItem.guid = nanoid(10);
+    return newItem;
+  }
 }

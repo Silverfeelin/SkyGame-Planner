@@ -1,10 +1,71 @@
-Name
-<input type="text" class="form-control" placeholder="Name" [(ngModel)]="name">
-Type
-<select class="form-control" [(ngModel)]="type">
-  <option *ngFor="let option of typeOptions">{{option}}</option>
-</select>
-Icon
-<input type="text" class="form-control" placeholder="Icon" [(ngModel)]="icon">
+This page is a work in progress.
+<app-card [title]="'Item Editor'">
+  <form [formGroup]="form">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" class="" placeholder="Name">
+    </div>
+    <div>
+      <label for="type">Type</label>
+      <select id="type" formControlName="type" class="">
+        @for (type of typeOptions; track $index) {
+          <option [value]="type">{{ type | itemType }}</option>
+        }
+      </select>
+    </div>
+    @if (form.get('type')?.value === typeEmote) {
+      <div>
+        <label for="levels">Total emote levels</label>
+        <div>
+          <label><input type="radio" formControlName="levels" value="1" />1</label>
+          <label><input type="radio" formControlName="levels" value="2" />2</label>
+          <label><input type="radio" formControlName="levels" value="3" />3</label>
+          <label><input type="radio" formControlName="levels" value="4" />4</label>
+        </div>
+      </div>
+    }
+    <div>
+      <label for="subtype">Subtype</label>
+      <select id="subtype" formControlName="subtype" class="">
+        @for (subtype of subtypeOptions; track $index) {
+          <option [value]="subtype">{{ subtype }}</option>
+        }
+      </select>
+    </div>
+    <div>
+      <label for="group">Group</label>
+      <select id="group" formControlName="group" class="">
+        @for (group of groupOptions; track $index) {
+          <option [value]="group">{{ group }}</option>
+        }
+      </select>
+    </div>
+    <div>
+      <label for="icon">Icon</label>
+      <input id="icon" formControlName="icon" class=""/>
+    </div>
+    <div>
+      <label for="previewUrl">Preview image link</label>
+      <input id="previewUrl" formControlName="previewUrl" class=""/>
+    </div>
+    <div>
+      <label for="description">Dye slots</label>
+      <div>
+        <label><input type="radio" formControlName="dyes" value="0" />0</label>
+        <label><input type="radio" formControlName="dyes" value="1" />1</label>
+        <label><input type="radio" formControlName="dyes" value="2" />2</label>
+      </div>
+    </div>
+    <div class="mt">
+      <button type="submit" class="btn btn-primary" (click)="generate()">Generate</button>
+    </div>
+  </form>
 
-<button type="button" class="btn btn-primary" (click)="generate()">Generate</button>
+  {{ form.value | json }}
+</app-card>
+
+@if (false) {
+  <app-overlay>
+
+  </app-overlay>
+}

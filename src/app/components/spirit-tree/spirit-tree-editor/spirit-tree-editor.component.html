@@ -62,7 +62,7 @@
 </div>
 
 <div class="mt">
-  <app-card [title]="'Save'">
+  <app-card [title]="'Save'" [foldable]="true" [folded]="false">
     <div class="container grid grid-1">
       <div>
         Title: <input #inpTitle type="text" class="d-inline-block" style="width: 200px;">
@@ -118,7 +118,6 @@
   </app-card>
 </div>
 
-
 <div class="mt">
   <app-items [foldable]="true" [action]="'emit'" [opaqueItems]="true" [backlightItems]="items" (onItemClicked)="onItemClicked($event)"></app-items>
 </div>
@@ -136,3 +135,35 @@
     </div>
   </app-card>
 </div>
+
+<div class="mt">
+  <app-card [foldable]="true" [folded]="false" [title]="'Custom items'">
+    <div class="container mb sky-flex flex-wrap">
+      <button type="button" (click)="addCustomItem()">Add</button>
+      @if (selectedCustomItem) {
+        <button type="button" (click)="editCustomItem(selectedCustomItem)">Edit</button>
+        <button type="button" (click)="duplicateCustomItem(selectedCustomItem)">Duplicate</button>
+        <button type="button" class="button-danger" (click)="deleteCustomItem(selectedCustomItem)">Delete</button>
+      }
+    </div>
+    <div class="sky-flex flex-wrap">
+      @for (customItem of customItems; track $index) {
+        <div class="item-icon">
+          <app-item-icon class="point" [item]="customItem" [opaque]="true" [hoverGlow]="true"
+            [class.highlight]="selectedCustomItem?.guid === customItem.guid"
+            (click)="onCustomItemClicked({ event: $event, item: customItem })"
+            [ngbTooltip]="customItem.name" container="body" placement="top">
+          </app-item-icon>
+        </div>
+      }
+    </div>
+  </app-card>
+</div>
+
+@if (isCustomEditorVisible) {
+  <app-overlay [dismissable]="false">
+    <app-spirit-tree-editor-item [item]="selectedCustomItem"
+      (saved)="onCustomItem($event)" (cancelled)="isCustomEditorVisible=false">
+    </app-spirit-tree-editor-item>
+  </app-overlay>
+}

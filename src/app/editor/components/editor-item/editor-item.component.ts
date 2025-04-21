@@ -1,50 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { nanoid } from 'nanoid';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { IItem, ItemSubtype, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
-import { NgFor } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CardComponent } from "../../../components/layout/card/card.component";
+import { ItemTypePipe } from "../../../pipes/item-type.pipe";
+import { JsonPipe } from '@angular/common';
+import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 
 @Component({
-    selector: 'app-editor-item',
-    templateUrl: './editor-item.component.html',
-    styleUrls: ['./editor-item.component.less'],
-    imports: [FormsModule, NgFor]
+  selector: 'app-editor-item',
+  templateUrl: './editor-item.component.html',
+  styleUrls: ['./editor-item.component.less'],
+  imports: [ReactiveFormsModule, CardComponent, ItemTypePipe, JsonPipe, OverlayComponent]
 })
 export class EditorItemComponent {
+
   name: string = '';
   type: string = '';
   icon: string = '';
 
-  typeOptions = [
-    '',,
-    'Hair',
-    'HairAccessory',
-    'HeadAccessory',
-    'Mask',
-    'FaceAccessory',
-    'Necklace',
-    'Outfit',
-    'Shoes',
-    'Cape',
-    'Held',
-    'Furniture',
-    'Prop',
-    'Emote',
-    'Stance',
-    'Call',
-    'Spell',
-    'Music',
-    'Quest',
-    'WingBuff',
-    'Special'
-  ];
+  typeEmote = ItemType.Emote;
+  typeOptions = ['', ...Object.values(ItemType)];
+  subtypeOptions = ['', ...Object.values(ItemSubtype)];
+  groupOptions = ['', 'Elder', 'SeasonPass', 'Ultimate', 'Limited'];
 
-  constructor(
-    private readonly _dataService: DataService
-  ) {
+  form = new FormGroup({
+    name: new FormControl(''),
+    type: new FormControl<ItemType|''>(''),
+    subtype: new FormControl<ItemSubtype|''>(''),
+    group: new FormControl(''),
+    icon: new FormControl(''),
+    previewUrl: new FormControl(''),
+    dyes: new FormControl('0'),
+    levels: new FormControl('1'),
+  });
 
+  @HostListener('window:beforeunload', ['$event'])
+  beforeUnloadHandler(event: Event): void {
+    event.preventDefault();
   }
+
+  private readonly _dataService = inject(DataService);
 
   generate(): void {
     let icon = this.icon;
