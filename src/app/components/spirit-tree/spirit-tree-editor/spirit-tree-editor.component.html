@@ -1,3 +1,9 @@
+<!-- Info -->
+<div class="container mb">
+  Not quite sure what to do here? Please have a look at the wiki page
+  <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing:-Spirit-trees" target="_blank" class="text-link">Contributing: Spirit trees</a>.
+</div>
+
 <div class="editor-grid">
   <app-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
     (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
@@ -94,70 +100,72 @@
 </div>
 
 <div class="mt">
-  <app-card [foldable]="true" [folded]="true" [title]="'Spirit trees'">
-    <select #selSpirit (input)="onSpiritInput($event)">
-      @for (spirit of spirits; track $index) {
-        <option [value]="spirit.guid">{{ spirit.name }}</option>
-      }
-      </select>
+  <app-tabs>
+    <!-- Items -->
+    <ng-template [appTab]="'Items'">
+      <app-items [action]="'emit'" [opaqueItems]="true" [backlightItems]="items" (onItemClicked)="onItemClicked($event)"></app-items>
+    </ng-template>
 
-      @if (spiritTrees.length) {
-        <div class="sky-flex scroll-x mt">
-          @for (spiritTree of spiritTrees; track spiritTree.guid) {
-            <div class="grid grid-1 gap-half">
-              <button (click)="promptCopySpiritTree(spiritTree, false)">Copy (new)</button>
-              <button (click)="promptCopySpiritTree(spiritTree, true)">Copy (modify)</button>
-              <app-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
-                [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
-                [opaqueNodes]="true" [showNodeTooltips]="true">
-              </app-spirit-tree>
-            </div>
-          }
-        </div>
-      }
-  </app-card>
-</div>
+    <!-- Special items -->
+    <ng-template [appTab]="'Special items'">
+      <div class="sky-flex flex-wrap">
+        @for (specialItem of specialItems; track $index) {
+          <div class="item-icon">
+            <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true" [hoverGlow]="true"
+              [ngbTooltip]="specialItem.item.name" container="body" placement="top">
+            </app-item-icon>
+          </div>
+        }
+      </div>
+    </ng-template>
 
-<div class="mt">
-  <app-items [foldable]="true" [action]="'emit'" [opaqueItems]="true" [backlightItems]="items" (onItemClicked)="onItemClicked($event)"></app-items>
-</div>
+    <ng-template [appTab]="'Custom items'">
+      <div class="container mb sky-flex flex-wrap">
+        <button type="button" (click)="addCustomItem()">Add</button>
+        @if (selectedCustomItem) {
+          <button type="button" (click)="applyCustomItem($event, selectedCustomItem)">Select</button>
+          <button type="button" (click)="editCustomItem(selectedCustomItem)">Edit</button>
+          <button type="button" (click)="duplicateCustomItem(selectedCustomItem)">Duplicate</button>
+          <button type="button" class="button-danger" (click)="deleteCustomItem(selectedCustomItem)">Delete</button>
+        }
+      </div>
+      <div class="sky-flex flex-wrap">
+        @for (customItem of customItems; track $index) {
+          <div class="item-icon">
+            <app-item-icon class="point" [item]="customItem" [opaque]="true" [hoverGlow]="true"
+              [class.highlight]="selectedCustomItem?.guid === customItem.guid"
+              (click)="onCustomItemClicked({ event: $event, item: customItem })"
+              [ngbTooltip]="customItem.name" container="body" placement="top">
+            </app-item-icon>
+          </div>
+        }
+      </div>
+    </ng-template>
 
-<div class="mt">
-  <app-card [foldable]="true" [folded]="false" [title]="'Special items'">
-    <div class="sky-flex flex-wrap">
-      @for (specialItem of specialItems; track $index) {
-        <div class="item-icon">
-          <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true" [hoverGlow]="true"
-            [ngbTooltip]="specialItem.item.name" container="body" placement="top">
-          </app-item-icon>
-        </div>
-      }
-    </div>
-  </app-card>
-</div>
+    <!-- Spirit trees -->
+    <ng-template [appTab]="'Spirit trees'">
+      <select #selSpirit (input)="onSpiritInput($event)">
+        @for (spirit of spirits; track $index) {
+          <option [value]="spirit.guid">{{ spirit.name }}</option>
+        }
+        </select>
 
-<div class="mt">
-  <app-card [foldable]="true" [folded]="false" [title]="'Custom items'">
-    <div class="container mb sky-flex flex-wrap">
-      <button type="button" (click)="addCustomItem()">Add</button>
-      @if (selectedCustomItem) {
-        <button type="button" (click)="editCustomItem(selectedCustomItem)">Edit</button>
-        <button type="button" (click)="duplicateCustomItem(selectedCustomItem)">Duplicate</button>
-        <button type="button" class="button-danger" (click)="deleteCustomItem(selectedCustomItem)">Delete</button>
-      }
-    </div>
-    <div class="sky-flex flex-wrap">
-      @for (customItem of customItems; track $index) {
-        <div class="item-icon">
-          <app-item-icon class="point" [item]="customItem" [opaque]="true" [hoverGlow]="true"
-            [class.highlight]="selectedCustomItem?.guid === customItem.guid"
-            (click)="onCustomItemClicked({ event: $event, item: customItem })"
-            [ngbTooltip]="customItem.name" container="body" placement="top">
-          </app-item-icon>
-        </div>
-      }
-    </div>
-  </app-card>
+        @if (spiritTrees.length) {
+          <div class="sky-flex scroll-x mt">
+            @for (spiritTree of spiritTrees; track spiritTree.guid) {
+              <div class="grid grid-1 gap-half">
+                <button (click)="promptCopySpiritTree(spiritTree, false)">Copy as new tree</button>
+                <button (click)="promptCopySpiritTree(spiritTree, true)">Modify this tree</button>
+                <app-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
+                  [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
+                  [opaqueNodes]="true" [showNodeTooltips]="true">
+                </app-spirit-tree>
+              </div>
+            }
+          </div>
+        }
+    </ng-template>
+  </app-tabs>
 </div>
 
 @if (isCustomEditorVisible) {

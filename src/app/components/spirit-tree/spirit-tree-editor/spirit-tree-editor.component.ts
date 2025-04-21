@@ -19,6 +19,8 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { OverlayComponent } from "../../layout/overlay/overlay.component";
 import { SpiritTreeEditorItemComponent } from './spirit-tree-editor-item/spirit-tree-editor-item.component';
 import { StorageService } from '@app/services/storage.service';
+import { TabsComponent } from "../../layout/tabs/tabs.component";
+import { TabDirective } from '@app/components/layout/tabs/tab.directive';
 
 type TreeNodeArray = Array<TreeNode>;
 type TreeNode = { node: INode; x: number; y: number; };
@@ -29,10 +31,10 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-spirit-tree-editor',
     imports: [
-      NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent,
-      CardComponent, ItemIconComponent, OverlayComponent,
-      SpiritTreeEditorItemComponent
-    ],
+    NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent,
+    CardComponent, ItemIconComponent, OverlayComponent,
+    SpiritTreeEditorItemComponent, TabsComponent, TabDirective
+],
     templateUrl: './spirit-tree-editor.component.html',
     styleUrl: './spirit-tree-editor.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -148,7 +150,6 @@ export class SpiritTreeEditorComponent {
     const customData = this._storageService.getKey('editor.items') as { items: Array<IItem> };
     if (customData?.items) {
       this.customItems = customData.items;
-      this.customItems.forEach(i => this.itemMap[i.guid] = i);
     }
   }
 
@@ -518,6 +519,10 @@ export class SpiritTreeEditorComponent {
   editCustomItem(item: IItem): void {
     this.selectedCustomItem = item;
     this.isCustomEditorVisible = true;
+  }
+
+  applyCustomItem(event: MouseEvent, item: IItem): void {
+    this.onItemClicked({ item, event });
   }
 
   duplicateCustomItem(item: IItem): void {
