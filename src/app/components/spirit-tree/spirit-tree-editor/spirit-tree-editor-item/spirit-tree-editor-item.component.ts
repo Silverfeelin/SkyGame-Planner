@@ -56,6 +56,13 @@ export class SpiritTreeEditorItemComponent {
     }
 
     const value = this.form.value;
+
+    let icon = value.icon || '';
+    if (icon.includes('/revision/')) { icon = icon.split('/revision/')[0]; }
+
+    let previewUrl = value.previewUrl || '';
+    if (previewUrl.includes('/revision/')) { previewUrl = previewUrl.split('/revision/')[0]; }
+
     const item: IItem = {
       id: -1,
       guid: this.item()?.guid || nanoid(10),
@@ -63,8 +70,8 @@ export class SpiritTreeEditorItemComponent {
       type: value.type as ItemType,
       subtype: value.subtype as ItemSubtype || undefined,
       group: value.group as ItemGroup || undefined,
-      icon: value.icon || '',
-      previewUrl: value.previewUrl || undefined,
+      icon,
+      previewUrl: previewUrl || undefined,
       dye: {}
     };
 
