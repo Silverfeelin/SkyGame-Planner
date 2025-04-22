@@ -305,6 +305,13 @@
       "mapData": { "position": [-309,157.5], "videoUrl": "Forest/14.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Underground_Cavern" }
     },
+    // Blue Bird
+    {
+      "guid": "iwWXLcHG4t",
+      "description": "In the Blue Bird theater, between the return shrine and map shrine.",
+      "mapData": { "position": [-341.69,151.63], "videoUrl": "Forest/20.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light" }
+    },
     // Broken Bridge
     {
       "guid": "XlmWJaLSNr",
