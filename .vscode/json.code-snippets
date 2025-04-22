@@ -4,7 +4,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"$3\",",
       "\t\"name\": \"$4\",",
       "\t\"icon\": \"$5\"",
@@ -17,7 +17,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Blessing\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png\"",
@@ -30,7 +30,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Blessing\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png\"",
@@ -43,7 +43,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Cutscene\",",
       "\t\"icon\": \"/assets/icons/question.webp\"",
@@ -51,12 +51,25 @@
     ],
     "description": "Item-B10"
   },
+  "Item-Dye-Spell": {
+    "prefix": "@item-dye-spell",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Dye spell\",",
+      "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png\"",
+      "},"
+    ],
+    "description": "Item-Dye-Spell"
+  },
   "Item-Dye-Red": {
     "prefix": "@item-dye-red",
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Red dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Red-dye-container-icon.png\"",
@@ -69,7 +82,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Yellow dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png\"",
@@ -82,7 +95,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Green dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Green-dye-container-icon.png\"",
@@ -95,7 +108,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Blue dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png\"",
@@ -108,7 +121,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Cyan dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png\"",
@@ -121,7 +134,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Purple dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png\"",
@@ -134,7 +147,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Black dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png\"",
@@ -147,7 +160,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"White dye\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png\"",
@@ -171,7 +184,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Music\",",
       "\t\"name\": \"Music Sheet #$3\",",
       "\t\"sheet\": \"$5\",",
@@ -186,7 +199,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Heart\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png\"",
@@ -199,7 +212,7 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Special\",",
       "\t\"name\": \"Season Heart\",",
       "\t\"group\": \"SeasonPass\",",
@@ -213,10 +226,24 @@
     "body": [
       "{",
       "\t\"id\": $1,",
-      "\t\"guid\": \"$2\",",
+      "\t\"guid\": \"\",",
       "\t\"type\": \"Quest\",",
       "\t\"name\": \"Quest $3\",",
       "\t\"icon\": \"https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png\"",
+      "},"
+    ],
+    "description": "Item-Quest"
+  },
+
+  "Item-Placeholder": {
+    "prefix": "@item-placeholder",
+    "body": [
+      "{",
+      "\t\"id\": $1,",
+      "\t\"guid\": \"\",",
+      "\t\"type\": \"Special\",",
+      "\t\"name\": \"Placeholder\",",
+      "\t\"icon\": \"\"",
       "},"
     ],
     "description": "Item-Quest"
@@ -233,6 +260,13 @@
       "},"
     ],
     "description": "Spirit"
+  },
+  "TreePlaceholder": {
+    "prefix": "@tree-placeholder",
+    "body": [
+      "kZJKg9jxtn"
+    ],
+    "description": "Tree Placeholder"
   },
   "IAP": {
     "prefix": "@iap",

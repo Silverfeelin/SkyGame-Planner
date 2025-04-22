@@ -559,7 +559,7 @@
       "guid": "uMS2K1iLzK",
       "name": "Season of the Blue Bird",
       "shortName": "Blue Bird",
-      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8c/SoBlue-Bird-Teaser-image.png",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Season-of-Blue-Bird-icon.png",
       "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/91bd453eb4/s26_3kids-perch_sls_na_na_2504.jpg",
       "imagePosition": "top",
       "year": 2025,
@@ -571,7 +571,17 @@
       },
       "spirits": [
         "hbXkkZbBsk",
+        "2iDZqeJXTf",
+        "faWKshu5Vh",
+        "RMOKUIDWOs",
+        "hcQtoG_IlW",
+        "jWCKf1cR1l",
       ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "2J64_6xrAf", "date": "2025-04-21", "endDate": "2025-07-06", "amount": 4, "description": "Quest 1 reward" },
+        ]
+      },
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1cf8261c87dd80bc9944fb4ac9b1d5ab&pm=c"
       }
