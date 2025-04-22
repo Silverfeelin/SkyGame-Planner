@@ -1,5 +1,4 @@
 [
-  // Guide
   {
     "id": 2546,
     "guid": "Azfq9QXE-j",
@@ -21,7 +20,8 @@
     "type": "Necklace",
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Season-of-Blue-Bird-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season-of-the-Blue-Bird-Pendant.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season-of-the-Blue-Bird-Pendant.png",
+    "order": 487
   },
   {
     "id": 2549,
@@ -30,7 +30,8 @@
     "type": "FaceAccessory",
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Blue-Bird-Guide-Ultimate-Facepiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Blue-Bird-Guide-Ultimate-Facepiece.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Blue-Bird-Guide-Ultimate-Facepiece.png",
+    "order": 99
   },
   {
     "id": 2550,
@@ -39,7 +40,8 @@
     "type": "Cape",
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Blue-Bird-Guide-Ultimate-Cape-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Blue-Bird-Guide-Ultimate-Cape-back.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Blue-Bird-Guide-Ultimate-Cape-back.png",
+    "order": 836
   },
   {
     "id": 2551,
@@ -47,7 +49,8 @@
     "type": "Emote",
     "name": "Cough",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Blue-Bird-Guide-ultimate-expression.png",
-    "level": 1
+    "level": 1,
+    "order": 1401
   },
   {
     "id": 2552,
@@ -179,7 +182,6 @@
     "name": "Placeholder",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Blue-Bird-Guide-Additional-Prop-icon.png"
   },
-  // Divining Wise Grandparent
   {
     "id": 2569,
     "guid": "qxwmznFHHM",
@@ -187,7 +189,7 @@
     "name": "Divining Wise Grandparent Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Divining-Wise-Grandparent-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Divining-Wise-Grandparent-Facepiece.png",
-    "order": 10000
+    "order": 100
   },
   {
     "id": 2570,
@@ -197,7 +199,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Divining-Wise-Grandparent-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Divining-Wise-Grandparent-Cape.png",
-    "order": 10000
+    "order": 835
   },
   {
     "id": 2571,
@@ -252,7 +254,6 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
   },
-  // Customed Confetti Cousin
   {
     "id": 2578,
     "guid": "N24k9N2Gmf",
@@ -260,7 +261,7 @@
     "name": "Costumed Confetti Cousin Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Costumed-Confetti-Cousin-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Costumed-Confetti-Cousin-Hairpiece.png",
-    "order": 10000
+    "order": 310
   },
   {
     "id": 2579,
@@ -270,7 +271,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Costumed-Confetti-Cousin-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Costumed-Confetti-Cousin-mask.png",
-    "order": 10000
+    "order": 445
   },
   {
     "id": 2580,
@@ -280,7 +281,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Costumed-Confetti-Cousin-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Costumed-Confetti-Cousin-Outfit.png",
-    "order": 10000
+    "order": 54
   },
   {
     "id": 2581,
@@ -289,7 +290,7 @@
     "name": "Costumed Confetti Cousin Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Costumed-Confetti-Cousin-hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Costumed-Confetti-Cousin-Hair.png",
-    "order": 10000
+    "order": 256
   },
   {
     "id": 2582,
@@ -344,8 +345,6 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
   },
-  // Royal Hairtousle Teen
-
   {
     "id": 2589,
     "guid": "Qk-darPsou",
@@ -353,7 +352,7 @@
     "name": "Surprised",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Royal-Hairtousle-Teen-emote-icon.png",
     "level": 1,
-    "order": 10000
+    "order": 1402
   },
   {
     "id": 2590,
@@ -389,7 +388,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Royal-Hairtousle-Teen-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Royal-Hairtousle-Teen-Headpiece.png",
-    "order": 10000
+    "order": 354
   },
   {
     "id": 2594,
@@ -398,7 +397,7 @@
     "name": "Royal Hairtousle Teen Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Royal-Hairtousle-Teen-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Royal-Hairtousle-Teen-Outfit.png",
-    "order": 10000
+    "order": 63
   },
   {
     "id": 2595,
@@ -408,7 +407,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Royal-Hairtousle-Teen-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Royal-Hairtousle-Teen-Cape.png",
-    "order": 10000
+    "order": 833
   },
   {
     "id": 2596,
@@ -440,8 +439,6 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
   },
-  // Nostalgic Sparkler Parent
-
   {
     "id": 2600,
     "guid": "hdAJF5iB97",
@@ -450,7 +447,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Nostalgic-Sparkler-Parent-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Nostalgic-Sparkler-Parent-Hairpiece.png",
-    "order": 10000
+    "order": 311
   },
   {
     "id": 2601,
@@ -459,7 +456,7 @@
     "name": "Nostalgic Sparkler Parent Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Nostalgic-Sparkler-Parent-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Nostalgic-Sparkler-Parent-Cape.png",
-    "order": 10000
+    "order": 834
   },
   {
     "id": 2602,
@@ -514,8 +511,6 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
   },
-  // Woodcutting Pleaful Parent
-
   {
     "id": 2609,
     "guid": "Eg3nsg1MSx",
@@ -523,7 +518,7 @@
     "name": "Music Sheet #43",
     "sheet": "43",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 10000
+    "order": 303
   },
   {
     "id": 2610,
@@ -533,7 +528,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Woodcutting-Pleaful-Parent-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Woodcutting-Pleaful-Parent-Shoes.png",
-    "order": 10000
+    "order": 65
   },
   {
     "id": 2611,
@@ -542,7 +537,7 @@
     "name": "Woodcutting Pleaful Parent Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Woodcutting-Pleaful-Parent-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Woodcutting-Pleaful-Parent-Outfit.png",
-    "order": 10000
+    "order": 64
   },
   {
     "id": 2612,
