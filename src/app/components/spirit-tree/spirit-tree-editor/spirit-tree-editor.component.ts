@@ -148,8 +148,8 @@ export class SpiritTreeEditorComponent {
 
     // Load custom item data
     const customData = this._storageService.getKey('editor.items') as { items: Array<IItem> };
-    if (customData?.items) {
-      this.customItems = customData.items;
+    if (customData?.items?.length) {
+      this.customItems = customData.items.filter(i => i.guid && !this._dataService.guidMap.has(i.guid));
     }
   }
 
@@ -619,7 +619,10 @@ export class SpiritTreeEditorComponent {
 
   addCustomItems(items: Array<IItem>): void {
     const existingGuids = new Set(this.customItems.map(i => i.guid));
+    const specialItemNames = new Set(Object.values(this.specialItemMap).map(i => i.item.name));
+
     for (const item of items) {
+      if (specialItemNames.has(item.name)) { continue; }
       if (this._dataService.guidMap.has(item.guid)) { continue; }
       if (existingGuids.has(item.guid)) { continue; }
       this.customItems.push(item);
