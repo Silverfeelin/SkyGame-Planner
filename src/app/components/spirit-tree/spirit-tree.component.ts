@@ -40,6 +40,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() name?: string | undefined;
   @Input() highlight?: boolean;
   @Input() highlightItem?: string | Array<string>;
+  @Input() highlightNode?: string | Array<string>;
   @Input() enableControls = true;
   @Input() showNodeTooltips = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
@@ -56,6 +57,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   opaqueNodesAll: boolean = false;
   opaqueNodesMap: { [guid: string]: boolean } = {};
   highlightItemMap: { [guid: string]: boolean } = {};
+  highlightNodeMap: { [guid: string]: boolean } = {};
 
   hasCostAtRoot = false;
   toggleUnlock = false;
@@ -148,6 +150,18 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         }
       }
     }
+
+    if (changes['highlightNode']) {
+      this.highlightNodeMap = {};
+      if (this.highlightNode) {
+        if (typeof this.highlightNode === 'string') {
+          this.highlightNodeMap[this.highlightNode] = true;
+        } else {
+          this.highlightNode.forEach(guid => this.highlightNodeMap[guid] = true);
+        }
+      }
+    }
+
 
     this.updateName();
   }

@@ -9,7 +9,7 @@
     (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
     [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
     [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
-    [highlightItem]="selectedItem.guid"
+    [highlightNode]="selectedTreeNode.node.guid"
   ></app-spirit-tree>
   <div class="editor-grid-selection sky-card">
     <div class="sky-card-header">
@@ -91,10 +91,16 @@
         <mat-icon class="menu-icon">share</mat-icon>
         <span class="menu-label">Share image</span>
       </button>
-      <button type="button" (click)="exportJson()">
-        <mat-icon class="menu-icon">upload</mat-icon>
-        <span class="menu-label">Export data</span>
-      </button>
+      <div class="button-group">
+        <button type="button" (click)="importJson()">
+          <mat-icon class="menu-icon">download</mat-icon>
+          <span class="menu-label">Import data</span>
+        </button>
+        <button type="button" (click)="exportJson()">
+          <mat-icon class="menu-icon">upload</mat-icon>
+          <span class="menu-label">Export data</span>
+        </button>
+      </div>
     </div>
   </app-card>
 </div>

@@ -25,7 +25,7 @@ import { TabDirective } from '@app/components/layout/tabs/tab.directive';
 type TreeNodeArray = Array<TreeNode>;
 type TreeNode = { node: INode; x: number; y: number; };
 type CostType = { id: string; label: string; }
-type SpecialItemNames = 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
+type SpecialItemNames = 'placeholder' | 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
 type SpecialItem = { item: IItem; cost?: ICost; }
 
 @Component({
@@ -96,8 +96,8 @@ export class SpiritTreeEditorComponent {
     { id: 'ec', label: 'Event currency' }
   ];
 
-  missingItem = { id: -1, guid: nanoid(10), type: ItemType.Special, name: 'Missing item', icon: '/assets/icons/question.webp' };
   specialItemMap: { [key in SpecialItemNames]: SpecialItem } = {
+    placeholder: { item: { id: -1, guid: nanoid(10), type: ItemType.Special, name: 'Placeholder', icon: '/assets/icons/question.webp' }},
     blessing: { item: { id: -2, guid: nanoid(10), type: ItemType.Special, name: 'Blessing', icon: '/assets/icons/question.webp' }, cost: { c: 5 }},
     wingBuff: { item: { id: -3, guid: nanoid(10), type: ItemType.WingBuff, name: 'Wing Buff', icon: '/assets/icons/question.webp' }, cost: { ac: 2 }},
     heart: { item: { id: -4, guid: nanoid(10), type: ItemType.Special, name: 'Hearts', icon: '/assets/icons/question.webp' }, cost: { c: 3 }},
@@ -109,7 +109,7 @@ export class SpiritTreeEditorComponent {
     dyePurple: { item: { id: -10, guid: nanoid(10), type: ItemType.Special, name: 'Purple dye', icon: '/assets/icons/question.webp' }},
     dyeBlack: { item: { id: -11, guid: nanoid(10), type: ItemType.Special, name: 'Black dye', icon: '/assets/icons/question.webp' }},
     dyeWhite: { item: { id: -12, guid: nanoid(10), type: ItemType.Special, name: 'White dye', icon: '/assets/icons/question.webp' }}
-  }
+  };
   specialItems: Array<SpecialItem> = Object.values(this.specialItemMap);
 
   private readonly _storageService = inject(StorageService);
@@ -122,7 +122,7 @@ export class SpiritTreeEditorComponent {
     this.initializeItemIcons();
     this.tree = {
       guid: nanoid(10),
-      node: { guid: nanoid(10), item: this.cloneItem(this.missingItem) }
+      node: { guid: nanoid(10), item: this.cloneItem(this.specialItemMap.placeholder.item) }
     };
 
     const treeNode = { x: 1, y: 0, node: this.tree.node };
@@ -207,7 +207,7 @@ export class SpiritTreeEditorComponent {
     // Create node
     const node: INode = {
       guid: nanoid(10),
-      item: this.cloneItem(this.missingItem),
+      item: this.cloneItem(this.specialItemMap.placeholder.item),
       prev: current.node
     };
 
@@ -239,12 +239,6 @@ export class SpiritTreeEditorComponent {
   }
 
   onItemClicked(event: ItemClickEvent) {
-    const existingItem = this.itemMap[event.item.guid];
-    if (existingItem) {
-      existingItem !== this.selectedItem && alert('This item is already in use by another node.');
-      return;
-    }
-
     delete this.itemMap[this.selectedItem.guid];
     this.selectedTreeNode.node.item = event.item;
     this.selectedItem = event.item;
@@ -330,7 +324,10 @@ export class SpiritTreeEditorComponent {
   }
 
   copySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
-    this.tree = { guid: nanoid(10), node: NodeHelper.clone(tree.node, preserveGuid) };
+    this.tree = {
+      guid: preserveGuid ? tree.guid : nanoid(10),
+      node: NodeHelper.clone(tree.node, preserveGuid)
+    };
     this.nodeTable = [[], [], []];
     this.nodeMap = {};
     this.items = [];
@@ -392,6 +389,64 @@ export class SpiritTreeEditorComponent {
     this._spiritTreeRenderService.shareCanvas(canvas, 'spirit-tree.png');
   }
 
+  importJson(): void {
+    if (!confirm('Are you sure you want to import a spirit tree? Your current tree will be replaced.')) { return; }
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = async (event) => {
+      const file = (event.target as HTMLInputElement).files?.[0];
+      if (!file) { return; }
+      const text = await file.text();
+      try {
+        const jsonData = JSON.parse(text);
+        if (!jsonData.tree?.guid || !jsonData.nodes?.length) {
+          throw new Error('No tree or nodes found in JSON file.');
+        }
+
+        this.importJsonData(jsonData);
+      } catch (e) {
+        console.error(e);
+        alert('Invalid JSON file. Please check the file and try again.');
+      }
+    };
+    input.click();
+  }
+
+  importJsonData(data: any): void {
+    // Load custom items.
+    this.addCustomItems(data.items || []);
+
+    const nodeMap = data.nodes.reduce((map: { [guid: string]: INode }, node: any) => {
+      map[node.guid] = node;
+      return map;
+    }, {});
+
+    const customItemMap = this.customItems.reduce((map: { [guid: string]: IItem }, item: IItem) => {
+      map[item.guid] = item;
+      return map;
+    }, {});
+
+    for (const node of data.nodes) {
+      if (node.nw) { node.nw = nodeMap[node.nw]; }
+      if (node.n) { node.n = nodeMap[node.n]; }
+      if (node.ne) { node.ne = nodeMap[node.ne]; }
+      if (node.item) {
+        node.item = this._dataService.guidMap.get(node.item) as IItem
+          ?? customItemMap[node.item]
+          ?? this.cloneItem(this.specialItemMap.placeholder.item);
+      }
+    }
+
+    const tree: ISpiritTree = {
+      guid: data.tree.guid,
+      node: nodeMap[data.tree.node]
+    };
+
+    this.copySpiritTree(tree, true);
+    this._changeDetectorRef.markForCheck();
+  }
+
   exportJson(): void {
     const jsonTree = {
       guid: this.tree.guid,
@@ -399,6 +454,15 @@ export class SpiritTreeEditorComponent {
     };
 
     const nodes = NodeHelper.all(this.tree.node);
+
+    const jsonItems = nodes.filter(n => {
+      return n.item?.guid && !this._dataService.guidMap.has(n.item.guid)
+    }).map(n => {
+      const item: any = { ...n.item };
+      delete item.id;
+      return item;
+    });
+
     const jsonNodes = nodes.map(n => {
       const node: any = { ...n };
       delete node.prev;
@@ -408,12 +472,6 @@ export class SpiritTreeEditorComponent {
       node.item && (node.item = node.item.guid);
       node.hiddenItems && (node.hiddenItems = node.hiddenItems.map((i: IItem) => i.guid))
       return node;
-    });
-
-    const jsonItems = this.items.filter(i => i.id && i.id < 0).map(i => {
-      const item: any = { ...i };
-      delete item.id;
-      return item;
     });
 
     const jsonData = {
@@ -557,6 +615,17 @@ export class SpiritTreeEditorComponent {
     this._changeDetectorRef.markForCheck();
     this.selectedCustomItem = item;
     this.isCustomEditorVisible = false;
+  }
+
+  addCustomItems(items: Array<IItem>): void {
+    const existingGuids = new Set(this.customItems.map(i => i.guid));
+    for (const item of items) {
+      if (this._dataService.guidMap.has(item.guid)) { continue; }
+      if (existingGuids.has(item.guid)) { continue; }
+      this.customItems.push(item);
+    }
+    this._storageService.setKey('editor.items', { items: this.customItems });
+    this._changeDetectorRef.markForCheck();
   }
 
   onCustomItemClicked(event: ItemClickEvent): void {
