@@ -3,18 +3,17 @@ import { ActivatedRoute } from '@angular/router';
 import fuzzysort from 'fuzzysort';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
+import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
 import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataJsonService } from 'src/app/services/data-json.service';
 import { DataService } from 'src/app/services/data.service';
 import { FormsModule } from '@angular/forms';
 import { MatIcon } from '@angular/material/icon';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { ICost } from '@app/interfaces/cost.interface';
 import { CostHelper } from '@app/helpers/cost-helper';
-import { SpiritComponent } from "../../../components/spirit/spirit.component";
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../components/spirit-tree/spirit-tree.component";
 
 interface IEditorSearchItem {
@@ -40,8 +39,7 @@ interface IEditorNode extends ICost {
     selector: 'app-editor-tree-spirit',
     templateUrl: './editor-tree.component.html',
     styleUrls: ['./editor-tree.component.less'],
-    standalone: true,
-    imports: [NgFor, NgIf, NgTemplateOutlet, MatIcon, FormsModule, ItemIconComponent, SpiritComponent, SpiritTreeComponent]
+    imports: [NgTemplateOutlet, MatIcon, FormsModule, ItemIconComponent, SpiritTreeComponent]
 })
 export class EditorTreeComponent implements OnInit {
   @ViewChild('inpCloneTree', { static: true }) inpCloneTree!: ElementRef<HTMLInputElement>;

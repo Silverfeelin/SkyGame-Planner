@@ -19,12 +19,11 @@ const loadImage = (url: string): Promise<HTMLImageElement> => (new Promise((reso
 }));
 
 @Component({
-  selector: 'app-editor-outfit-shrine',
-  standalone: true,
-  imports: [],
-  templateUrl: './editor-outfit-shrine.component.html',
-  styleUrl: './editor-outfit-shrine.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-editor-outfit-shrine',
+    imports: [],
+    templateUrl: './editor-outfit-shrine.component.html',
+    styleUrl: './editor-outfit-shrine.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditorOutfitShrineComponent implements AfterViewInit {
   @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLTextAreaElement>;

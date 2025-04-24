@@ -29,7 +29,6 @@ interface IFormNode {
     selector: 'app-editor-traveling-spirit',
     templateUrl: './editor-traveling-spirit.component.html',
     styleUrls: ['./editor-traveling-spirit.component.less'],
-    standalone: true,
     imports: [FormsModule, NgFor, NgIf, MatIcon]
 })
 export class EditorTravelingSpiritComponent {

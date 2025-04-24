@@ -11,7 +11,6 @@ import { TableHeaderDirective } from '../table/table-column/table-header.directi
 import { TableComponent } from '../table/table.component';
 import { NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { CardComponent } from '../layout/card/card.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
 
@@ -20,8 +19,7 @@ import { SubscriptionBag } from '@app/helpers/subscription-bag';
     templateUrl: './search.component.html',
     styleUrls: ['./search.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [CardComponent, MatIcon, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, IconComponent, RouterLink, ItemTypePipe]
+    imports: [MatIcon, NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, IconComponent, RouterLink, ItemTypePipe]
 })
 export class SearchComponent implements AfterViewInit, OnDestroy {
   @Input() types?: Array<SearchType>;

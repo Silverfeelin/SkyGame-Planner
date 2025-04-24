@@ -141,5 +141,26 @@
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1458261c87dd80ee9e90dbc70200a33c"
       }
     },
+    {
+      "guid": "Jlh9r5wBYZ",
+      "name": "Special Visit #8",
+      "area": "IrChmrOevd",
+      "date": { "day": 7, "month": 4, "year": 2025 },
+      "endDate": { "day": 20, "month": 4, "year": 2025 },
+      "spirits": [
+        { "guid": "f66-FzTuIn", "spirit": "JOCCkr0TlW", "tree": "EPZCRK3sdj" },
+        { "guid": "biQ4CuCP4E", "spirit": "V7gj-cBqK1", "tree": "XsCuRcSlFc" },
+        { "guid": "I1zAiEO4ZH", "spirit": "z5dtSO-gis", "tree": "f-Ue1uKwCl" },
+        { "guid": "9PiY377aZJ", "spirit": "iweb5Sk2Xk", "tree": "DfR5p-yKK7" },
+        { "guid": "PSwz11-gFO", "spirit": "l7zP8zUFHX", "tree": "MzvfLK3_Cz" },
+        { "guid": "vBRId0uBA3", "spirit": "dEQ1GVQOx7", "tree": "49jQ4S13XR" }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Returning_Spirits#April_7,_2025"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1a68261c87dd803eadffc502bcfa38c3&pm=c"
+      }
+    }
   ]
 }

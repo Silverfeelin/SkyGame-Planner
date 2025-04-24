@@ -119,4 +119,90 @@
     ]
   },
   // #endregion
+  // #region Days of Bloom (2025)
+  {
+    "guid": "Y6-EEIOhTM",
+    "name": "Bloom Rose-Embroidered Cape",
+    "price": 14.99,
+    "items": [
+      "5F_G_puJb7"
+    ]
+  },
+  {
+    "guid": "xG8KKVj3Sy",
+    "name": "Bloom Lilypad Umbrella",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "kLfBsnAsUL"
+    ]
+  },
+  {
+    "guid": "w_nGjqBYXi",
+    "name": "Pink Bloom Teaset",
+    "price": 19.99,
+    "returning": true,
+    "c": 35,
+    "items": [
+      "sTIyha_lg1"
+    ]
+  },
+  {
+    "guid": "Qaa8L4rCQd",
+    "name": "Purple Bloom Teaset",
+    "price": 19.99,
+    "returning": true,
+    "c": 35,
+    "items": [
+      "l6GE013zrh"
+    ]
+  },
+  {
+    "guid": "MPTqCz-4gM",
+    "name": "Bloom Picnic Basket",
+    "price": 19.99,
+    "returning": true,
+    "sp": 1,
+    "items": [
+      "_0PZEyTNxt"
+    ]
+  },
+  {
+    "guid": "LEUKf4WJAO",
+    "name": "Bloom Gardening Tunic",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "wUPw1TRQSI"
+    ]
+  },
+  // TLP revisit
+  {
+    "guid": "ffn9SevEDg",
+    "name": "Little Prince Scarf Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "yjuL6T_ZOo"
+    ]
+  },
+  {
+    "guid": "ILNCp5exZ-",
+    "name": "Little Prince Fox",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "nrNcYrcZXy"
+    ]
+  },
+  {
+    "guid": "XAH6R5Ub1W",
+    "name": "Little Prince Asteroid Jacket",
+    "price": 24.99,
+    "returning": true,
+    "items": [
+      "dncileSEYL"
+    ]
+  },
+  // #endregion
 ]

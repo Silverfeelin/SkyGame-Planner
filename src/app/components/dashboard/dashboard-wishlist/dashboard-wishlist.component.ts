@@ -30,7 +30,6 @@ type Bag = { [guid: string]: IItem };
     templateUrl: './dashboard-wishlist.component.html',
     styleUrls: ['./dashboard-wishlist.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [CardComponent, NgbTooltip, RouterLink, ItemIconComponent, CostComponent]
 })
 export class DashboardWishlistComponent implements OnChanges, OnDestroy {

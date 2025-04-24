@@ -16,7 +16,6 @@ import { NgTemplateOutlet, NgFor } from '@angular/common';
     templateUrl: './item-unlock.component.html',
     styleUrls: ['./item-unlock.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgTemplateOutlet, NgFor, NgbTooltip, ItemIconComponent]
 })
 export class ItemUnlockComponent {

@@ -25,7 +25,8 @@
       "name": "Aviary Event Store",
       "permanent": "event",
       "iaps": [
-        "c4cZcnuZPk"
+        "c4cZcnuZPk",
+        "5IuZMyMZnO"
       ]
     },
     {
@@ -281,6 +282,12 @@
         "EAeyExxT3H"
       ]
     },
+    {
+      "guid": "saHnBjtusY",
+      "type": "Object",
+      "name": "Spell Box",
+      "itemList": "vod3TNMT3W"
+    },
     // #endregion
     // #region Days of Love (2020)
     {
@@ -468,6 +475,43 @@
         "Ko_ViiBli0",
         "1ryX2u1XO3",
         "SBBe6Iy8P3",
+      ]
+    },
+    // #endregion
+    // #region Days of Bloom (2025)
+    {
+      "guid": "IGg3Nyhixt",
+      "type": "Object",
+      "name": "Sword Outfit Mannequin",
+      "itemList": "VAL3W30ClZ"
+    },
+    {
+      "guid": "FrkLX4jUTK",
+      "type": "Store",
+      "iaps": [
+        "Y6-EEIOhTM"
+      ]
+    },
+    {
+      "guid": "BKpgOtPHLY",
+      "type": "Spirit",
+      "spirit": "U9vUspUuRp",
+      "iaps": [
+        "xG8KKVj3Sy",
+        "w_nGjqBYXi",
+        "Qaa8L4rCQd",
+        "MPTqCz-4gM",
+        "LEUKf4WJAO",
+      ]
+    },
+    {
+      "guid": "VrwWmzEMYR",
+      "type": "Object",
+      "name": "Little Prince Mannequin",
+      "iaps": [
+        "XAH6R5Ub1W",
+        "ffn9SevEDg",
+        "ILNCp5exZ-",
       ]
     },
     // #endregion

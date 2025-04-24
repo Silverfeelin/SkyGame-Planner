@@ -15,7 +15,6 @@ import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.compo
     selector: 'app-traveling-spirits',
     templateUrl: './traveling-spirits.component.html',
     styleUrls: ['./traveling-spirits.component.less'],
-    standalone: true,
     imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, NgIf, IconComponent, RouterLink, DateComponent, CalendarLinkComponent]
 })
 export class TravelingSpiritsComponent {

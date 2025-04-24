@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { ItemHelper, itemTypeOrder } from 'src/app/helpers/item-helper';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IItem, IItemSource, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { ItemIconComponent } from './item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf, NgFor, NgTemplateOutlet, LowerCasePipe } from '@angular/common';
+import { NgTemplateOutlet, LowerCasePipe } from '@angular/common';
 import { ItemTypeSelectorComponent } from './item-type-selector/item-type-selector.component';
 import { MatIcon } from '@angular/material/icon';
 import { CheckboxComponent } from "../layout/checkbox/checkbox.component";
@@ -60,8 +60,7 @@ const defaultFilters = {
     templateUrl: './items.component.html',
     styleUrls: ['./items.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
+    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgbTooltip, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
 })
 export class ItemsComponent {
   @Input() title = 'Items';

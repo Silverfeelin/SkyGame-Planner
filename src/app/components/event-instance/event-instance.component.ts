@@ -11,8 +11,6 @@ import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
 import { TitleService } from 'src/app/services/title.service';
-import { ItemIconComponent } from '../items/item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { ItemListComponent } from '../item-list/item-list/item-list.component';
 import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
 import { DurationComponent } from '../util/duration/duration.component';
@@ -28,8 +26,7 @@ import { IapCardComponent } from "../iap/iap-card/iap-card.component";
     selector: 'app-event-instance',
     templateUrl: './event-instance.component.html',
     styleUrls: ['./event-instance.component.less'],
-    standalone: true,
-    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent, CalendarLinkComponent, IapCardComponent]
+    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, CalendarLinkComponent, IapCardComponent]
 })
 export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;
@@ -138,7 +135,7 @@ export class EventInstanceComponent implements OnDestroy {
       shop.itemList?.items.forEach(i => {
         this.c += i.c || 0;
         this.ec += i.ec || 0;
-        if (!i.unlocked) {
+        if (i.item && !i.item.unlocked) {
           this.cLeft += i.c || 0;
           this.ecLeft += i.ec || 0;
         }

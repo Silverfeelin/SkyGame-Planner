@@ -13,7 +13,6 @@ import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
     templateUrl: './area.component.html',
     styleUrl: './area.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [WikiLinkComponent, RouterLink, MatIcon, SpiritTypeIconComponent]
 })
 export class AreaComponent {

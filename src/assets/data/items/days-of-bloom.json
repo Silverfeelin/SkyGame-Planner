@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Cape"
     },
-    "order": 818
+    "order": 840
   },
   {
     "id": 1765,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Hair"
     },
-    "order": 254
+    "order": 261
   },
   {
     "id": 1766,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Teaset"
     },
-    "order": 586
+    "order": 603
   },
   {
     "id": 1767,
@@ -59,7 +59,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Cape"
     },
-    "order": 819
+    "order": 841
   },
   {
     "id": 1770,
@@ -78,7 +78,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Teaset"
     },
-    "order": 588
+    "order": 605
   },
   {
     "id": 1772,
@@ -97,7 +97,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Red_Bloom_Cape"
     },
-    "order": 820
+    "order": 842
   },
   {
     "id": 1774,
@@ -109,7 +109,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Butterfly_Fountain"
     },
-    "order": 610
+    "order": 627
   },
   {
     "id": 1775,
@@ -134,7 +134,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Gardening_Tunic"
     },
-    "order": 64
+    "order": 68
   },
   {
     "id": 1777,
@@ -146,7 +146,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Picnic_Basket"
     },
-    "order": 589
+    "order": 606
   },
   {
     "id": 2075,
@@ -155,7 +155,7 @@
     "name": "Bloom Lilypad Umbrella",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Bloom-Lilypad-Umbrella-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Bloom-Lilypad-Umbrella-held.png",
-    "order": 538
+    "order": 553
   },
   {
     "id": 2076,
@@ -164,7 +164,7 @@
     "name": "Bloom Arum Petal Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Bloom-Arum-Petal-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Bloom-Arum-Petal-Cape-back.png",
-    "order": 821
+    "order": 843
   },
   {
     "id": 2078,
@@ -173,7 +173,7 @@
     "name": "Bloom Arum Petal Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2f/Bloom-Arum-Petal-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Bloom-Arum-Petal-Hair-front.png",
-    "order": 255
+    "order": 262
   },
   {
     "id": 2077,
@@ -182,7 +182,7 @@
     "name": "Bloom Spiky Sprig Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Bloom-Spiky-Sprig-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Bloom-Spiky-Sprig-Hair-front.png",
-    "order": 256
+    "order": 263
   },
   {
     "id": 2079,
@@ -190,5 +190,74 @@
     "type": "Special",
     "name": "Prairie Peaks Warp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 2536,
+    "guid": "Gs8SlhZwyP",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2537,
+    "guid": "WMaNVcyuGD",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2538,
+    "guid": "86YUJaG1uM",
+    "type": "Special",
+    "name": "Purple dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png"
+  },
+  {
+    "id": 2539,
+    "guid": "5F_G_puJb7",
+    "type": "Cape",
+    "name": "Bloom Rose-Embroidered Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Bloom-Rose-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Bloom-Rose-Cape-back.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/cape/Bloom_rosecape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Bloom_rosecape.jpg",
+      "primary": {},
+      "secondary": {}
+    },
+    "order": 844
+  },
+  {
+    "id": 2540,
+    "guid": "rFyanmj7uL",
+    "type": "Mask",
+    "name": "Bloom Rose Petal Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Bloom-Rose-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Bloom-Rose-Mask.png",
+    "dye": {
+      "previewUrl": "/assets/game/dyes/mask/Bloom_rosemask.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Bloom_rosemask.jpg",
+      "primary": {},
+      "secondary": {}
+    },
+    "order": 457
+  },
+  {
+    "id": 2541,
+    "guid": "gSmFBHmzx7",
+    "type": "Prop",
+    "name": "Bloom Rose Jar Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Bloom-Rose-Jar-prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Bloom-Rose-Jar-prop.png",
+    "order": 728
+  },
+  {
+    "id": 2542,
+    "guid": "Rrhk8jKU4u",
+    "type": "Hair",
+    "name": "Bloom Rose Braided Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Bloom-Rose-Braid-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Bloom-Rose-Braid-Hair-front.png",
+    "order": 264
   }
 ]

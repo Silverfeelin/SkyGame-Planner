@@ -63,6 +63,7 @@
         { "guid": "nU8iVOAgXc", "item": "t3D6CbSY-E", "c": 80, "quantity": 8 },
         { "guid": "Pps8nLoGHH", "item": "FpXfl3Dpff", "h": 45, "quantity": 1 },
         { "guid": "59mKq-t1EY", "item": "cqPAxA0gAc", "c": 90, "quantity": 1 },
+        { "guid": "4ZsL_sWYFe", "item": "yFLIo5YGNu", "ac": 33, "quantity": 1 },
       ]
     },
     {
@@ -77,6 +78,21 @@
       "items": [
         { "guid": "5Q9itYeJrQ", "item": "lgu5DNRE7k", "c": 150 },
       ]
-    }
+    },
+    {
+      "guid": "vod3TNMT3W",
+      "items": [
+        { "guid": "NZH-ldUJIz", "item": "6r0dO2Q0Mg", "c": 20 },
+        { "guid": "bvAgs6Svb7", "item": "3jwWxUAxnd", "c": 5 },
+        { "guid": "NwYZc3MHqF", "item": "zMOv8Vq6qI", "c": 10 },
+      ]
+    },
+    // Bloom 2025
+    {
+      "guid": "VAL3W30ClZ",
+      "items": [
+        { "guid": "QSxhXLPZkQ", "item": "l_C7GM60an", "c": 200 }
+      ]
+    },
   ]
 }

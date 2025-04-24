@@ -593,6 +593,26 @@
     "ec": 48
   },
   // #endregion
+  // #region Days of Bloom (2025)
+  { "guid": "wtmkTbdQzf", "item": "Gs8SlhZwyP", "nw": "yGyZyUino8", "n": "u4wXe1fb6g", "ne": "2HhvevMPsR" },
+  { "guid": "yGyZyUino8", "item": "Rrhk8jKU4u", "ec": 28 },
+  { "guid": "2HhvevMPsR", "item": "gSmFBHmzx7", "ec": 16 },
+  { "guid": "u4wXe1fb6g", "item": "WMaNVcyuGD", "nw": "MktGfoFpHy", "n": "fAHzC-wZ4V", "ne": "eEk6Kl46Wz", "c": 5 },
+  { "guid": "MktGfoFpHy", "item": "nkJXDrn2cV", "h": 25 },
+  { "guid": "eEk6Kl46Wz", "item": "rFyanmj7uL", "ec": 36 },
+  { "guid": "fAHzC-wZ4V", "item": "MzWv4Qp2S7", "nw": "gKX-YxqDZ8", "n": "xr7_k3wqMd", "ne": "YZHLm7f-Mj", "c": 5 },
+  { "guid": "gKX-YxqDZ8", "item": "MgQqIuTSuC", "c": 118 },
+  { "guid": "YZHLm7f-Mj", "item": "vxfZZiaabO", "c": 24 },
+  { "guid": "xr7_k3wqMd", "item": "xinA3TgIh2", "n": "zulkIPrQqg", "nw": "CVWosQEzne", "ne": "1G3jEb052n", "c": 5 },
+  { "guid": "CVWosQEzne", "item": "YTBtAMps8R", "c": 110 },
+  { "guid": "1G3jEb052n", "item": "LRLEa6LYVP", "c": 80 },
+  { "guid": "zulkIPrQqg", "item": "gNU9s-K-M1", "nw": "5ccYOcfs27", "ne": "2V_1ei3fVJ", "n": "6pHrpuiOsK", "c": 5 },
+  { "guid": "5ccYOcfs27", "item": "89R9XC2DIg", "c": 105 },
+  { "guid": "2V_1ei3fVJ", "item": "uKLD12UrPr", "h": 20 },
+  { "guid": "6pHrpuiOsK", "item": "yJBxs4D0QI", "nw": "AoM-5IyQYD", "n": "7lXnH1zlhg", "c": 5 },
+  { "guid": "AoM-5IyQYD", "item": "86YUJaG1uM", "ec": 10 },
+  { "guid": "7lXnH1zlhg", "item": "wFSLA6un_V", "c": 70 },
+  // #endregion
   // #region Days of Nature (2022)
   {
     "guid": "cxhB2Ybq7_",

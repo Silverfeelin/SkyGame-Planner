@@ -19,7 +19,7 @@ import { CurrencyService } from '@app/services/currency.service';
 import { IconService } from '@app/services/icon.service';
 import { DataService } from '@app/services/data.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
@@ -33,14 +33,14 @@ type ShareMode = 'share' | 'clipboard';
     templateUrl: './spirit-tree.component.html',
     styleUrls: ['./spirit-tree.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, RouterLink, DateComponent, CostComponent, NodeComponent]
+    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, DateComponent, CostComponent, NodeComponent]
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;
   @Input() name?: string | undefined;
   @Input() highlight?: boolean;
   @Input() highlightItem?: string | Array<string>;
+  @Input() highlightNode?: string | Array<string>;
   @Input() enableControls = true;
   @Input() showNodeTooltips = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
@@ -57,6 +57,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   opaqueNodesAll: boolean = false;
   opaqueNodesMap: { [guid: string]: boolean } = {};
   highlightItemMap: { [guid: string]: boolean } = {};
+  highlightNodeMap: { [guid: string]: boolean } = {};
 
   hasCostAtRoot = false;
   toggleUnlock = false;
@@ -95,6 +96,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
     _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
       if (this.forceNodeAction || !this.enableControls) { return; }
+      if (evt.shiftKey || evt.ctrlKey || evt.altKey || evt.metaKey) { return; }
 
       let action: NodeAction | undefined;
       switch (evt.key?.toLocaleLowerCase()) {
@@ -148,6 +150,18 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         }
       }
     }
+
+    if (changes['highlightNode']) {
+      this.highlightNodeMap = {};
+      if (this.highlightNode) {
+        if (typeof this.highlightNode === 'string') {
+          this.highlightNodeMap[this.highlightNode] = true;
+        } else {
+          this.highlightNode.forEach(guid => this.highlightNodeMap[guid] = true);
+        }
+      }
+    }
+
 
     this.updateName();
   }

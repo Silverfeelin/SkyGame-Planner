@@ -13,12 +13,11 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { CurrencyService } from '@app/services/currency.service';
 
 @Component({
-  selector: 'app-currency',
-  standalone: true,
-  imports: [CardComponent, WikiLinkComponent, MatIcon, NgbTooltip, RouterLink],
-  templateUrl: './currency.component.html',
-  styleUrl: './currency.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-currency',
+    imports: [CardComponent, WikiLinkComponent, MatIcon, NgbTooltip, RouterLink],
+    templateUrl: './currency.component.html',
+    styleUrl: './currency.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CurrencyComponent {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;

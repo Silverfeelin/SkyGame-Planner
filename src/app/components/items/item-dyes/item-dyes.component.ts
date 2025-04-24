@@ -11,11 +11,10 @@ import { ItemTypeSelectorComponent } from '../item-type-selector/item-type-selec
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 
 @Component({
-  selector: 'app-item-dyes',
-  standalone: true,
-  imports: [RouterLink, NgbTooltip, ItemIconComponent, ItemSubIconsComponent, ItemTypeSelectorComponent, ItemTypePipe],
-  templateUrl: './item-dyes.component.html',
-  styleUrl: './item-dyes.component.scss'
+    selector: 'app-item-dyes',
+    imports: [RouterLink, NgbTooltip, ItemIconComponent, ItemSubIconsComponent, ItemTypeSelectorComponent, ItemTypePipe],
+    templateUrl: './item-dyes.component.html',
+    styleUrl: './item-dyes.component.scss'
 })
 export class ItemDyesComponent {
   type: ItemType = ItemType.Outfit;

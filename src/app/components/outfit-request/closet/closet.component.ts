@@ -60,7 +60,6 @@ const dyeColors = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 
     templateUrl: './closet.component.html',
     styleUrls: ['./closet.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [FirefoxClipboardItemComponent, NgClass, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet, OverlayComponent]
 })
 export class ClosetComponent implements OnDestroy {
@@ -674,6 +673,10 @@ export class ClosetComponent implements OnDestroy {
     }
 
     // Get ongoing items.
+    const regularSpirits = this._dataService.spiritConfig.items.filter(s => s.type === 'Regular' || s.type === 'Elder');
+    regularSpirits.forEach(spirit => {
+      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    });
     const season = DateHelper.getActive(this._dataService.seasonConfig.items);
     season?.spirits?.forEach(spirit => {
       NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
@@ -1137,7 +1140,7 @@ export class ClosetComponent implements OnDestroy {
           };
 
           const dyes = this.dyes[item.guid];
-          if (item.dye?.primary && dyes?.[0]) {            
+          if (item.dye?.primary && dyes?.[0]) {
             drawDye(dyes[0]?.primary, x + 4, y + _wItem);
             drawDye(dyes[0]?.secondary, x + (_wDye - 4) * 1, y + _wItem);
           }

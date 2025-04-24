@@ -93,6 +93,26 @@
       "TvT6x_UO5V"
     ]
   },
+  {
+    "guid": "c4cZcnuZPk",
+    "name": "Journey Pack",
+    "price": 24.99,
+    "items": [
+      "6Nac-p14-9",
+      "8P8dL_Zp8q",
+      "sDNG_Nt7Ew",
+    ]
+  },
+  {
+    "guid": "5IuZMyMZnO",
+    "name": "Transcendent Journey Pack",
+    "price": 24.99,
+    "items": [
+      "OfOc3xQdCQ",
+      "TfItBIVTeP",
+      "RpAC3rlPrR",
+    ]
+  },
   // #endregion
   // #region Platform exclusives
   {
@@ -105,16 +125,6 @@
       "4c9HLTfREP",
       "MHArTLwxyq",
       "BDfLuCSmaF"
-    ]
-  },
-  {
-    "guid": "c4cZcnuZPk",
-    "name": "Journey Pack",
-    "price": 24.99,
-    "items": [
-      "sDNG_Nt7Ew",
-      "6Nac-p14-9",
-      "8P8dL_Zp8q"
     ]
   },
   // #endregion

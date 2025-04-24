@@ -18,12 +18,11 @@ import { TableFooterDirective } from '@app/components/table/table-column/table-f
 import { NodeHelper } from '@app/helpers/node-helper';
 
 @Component({
-  selector: 'app-item-hearts',
-  standalone: true,
-  imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, NgTemplateOutlet, CardComponent, MatIcon, TableFooterDirective],
-  templateUrl: './item-hearts.component.html',
-  styleUrl: './item-hearts.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-hearts',
+    imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, NgTemplateOutlet, CardComponent, MatIcon, TableFooterDirective],
+    templateUrl: './item-hearts.component.html',
+    styleUrl: './item-hearts.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemHeartsComponent {
   folded: { [key: string]: boolean } = {};

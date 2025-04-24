@@ -8,7 +8,6 @@ import { EventService } from 'src/app/services/event.service';
 import { HighlightType } from 'src/app/types/highlight';
 import { ItemSubIconsComponent } from './item-subicons/item-subicons.component';
 import { IconComponent } from '../../icon/icon.component';
-import { NgIf } from '@angular/common';
 import { IItemListNode } from '@app/interfaces/item-list.interface';
 
 @Component({
@@ -16,8 +15,7 @@ import { IItemListNode } from '@app/interfaces/item-list.interface';
     templateUrl: './item-icon.component.html',
     styleUrls: ['./item-icon.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, IconComponent, ItemSubIconsComponent]
+    imports: [IconComponent, ItemSubIconsComponent]
 })
 export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() item!: IItem;

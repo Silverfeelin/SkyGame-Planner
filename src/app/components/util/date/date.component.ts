@@ -12,7 +12,6 @@ import { NgIf } from '@angular/common';
     templateUrl: './date.component.html',
     styleUrls: ['./date.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, DateTimePipe]
 })
 export class DateComponent implements OnChanges, OnDestroy {

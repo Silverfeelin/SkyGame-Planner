@@ -20,18 +20,18 @@
 <div class="mt">
   <app-card [foldable]="true" [folded]="false" [title]="'Workshop Props'">
     <div class="container mb">
-      If you purchased props before the 0.27.0 patch (<app-date [date]="'2024-10-10'"></app-date>), please first mark those as purchased in the Legacy section below this list first!<br/>
-      The current rotation is highlighted below.
+      The Nesting Workshop rotates between available props every week.
+      Please note that props from multiple rotations may be available at the same time! See <a href="https://github.com/Silverfeelin/SkyGame-Planner/issues/265" target="_blank">issue 265</a> for more details.<br/>
       <span class="c-accent">Please report any inconsistencies to Silverfeelin on GitHub or Skycord! TGC has the tendency to change these rotations.</span>
     </div>
     <div class="sky-flex flex-wrap flex-align-start scroll-x">
       <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: permanentRotation, title: 'Permanent Items' }"></ng-container>
       @for (rotation of rotations; let i = $index; track i) {
-        <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: rotation, i: i, title: 'Weekly Rotation #' + (i + 1) }"></ng-container>
+        <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: rotation, i: i, title: 'Rotation #' + (i + 1) }"></ng-container>
       }
 
       <ng-template #tRotation let-rotation let-title="title" let-i="i">
-        <div class="shop-rotation" [class.highlight-attention]="i === iRotation">
+        <div class="shop-rotation">
           <div><b class="shop-rotation-header">{{ title }}</b></div>
           @let expectedDate = rotation[0]?.expectedDate;
           @if (expectedDate) {
@@ -92,7 +92,7 @@
         <app-item-list [itemList]="legacyFreeItemList" [highlightNode]="highlightNode" (beforeNodeToggle)="onBeforeLegacy($event)"></app-item-list>
       </div>
       @for (itemList of itemLists; let i = $index; track i) {
-        <div class="shop-rotation d-inline-block" [class.highlight-attention]="i === iRotation">
+        <div class="shop-rotation d-inline-block">
           <b class="d-block mb-half">
             Rotation {{ i + 1 }}
           </b>

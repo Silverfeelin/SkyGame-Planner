@@ -337,6 +337,7 @@
         { "area": "qVu1RHulPp" },
         { "area": "FlcxMwdsU7" },
         { "area": "iYC53UMrvL" },
+        { "area": "y5ebkdgzZv" },
       ]
     },
     {
@@ -350,6 +351,18 @@
       "connections": [
         { "area": "L3F8Z9vbYs" },
         { "area": "_dSyX-Uwrh" },
+      ]
+    },
+    {
+      "guid": "y5ebkdgzZv",
+      "name": "Blue Bird theater",
+      "imageUrl": "/assets/game/areas/forest/blue-bird-720.webp",
+      "spirits": [ "hbXkkZbBsk", "2iDZqeJXTf", "faWKshu5Vh", "RMOKUIDWOs", "hcQtoG_IlW", "jWCKf1cR1l" ],
+      "wingedLights": [ "iwWXLcHG4t" ],
+      "mapShrines": [ "0r1aX2gq4d" ],
+      "mapData": { "position": [-334.88,154.88] },
+      "connections": [
+        { "area": "L3F8Z9vbYs" }
       ]
     },
     {

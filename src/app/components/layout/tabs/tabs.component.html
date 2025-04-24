@@ -1,0 +1,18 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <div class="sky-flex flex-wrap">
+      @for (tab of tabs(); track $index) {
+        <button type="button" class="sky-card-header-button" (click)="activeTab=tab" [class.active]="activeTab === tab">
+          <span>{{ tab.title }}</span>
+        </button>
+      }
+    </div>
+  </div>
+  <div class="sky-card-body">
+    @for (tab of tabs(); track $index) {
+      <div [hidden]="activeTab !== tab">
+        <ng-container *ngTemplateOutlet="tab.template"></ng-container>
+      </div>
+    }
+  </div>
+</div>

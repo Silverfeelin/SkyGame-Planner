@@ -40,12 +40,11 @@ interface IInstanceCostData {
 };
 
 @Component({
-  selector: 'app-currency-spent',
-  standalone: true,
-  imports: [CardComponent, MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe],
-  templateUrl: './currency-spent.component.html',
-  styleUrl: './currency-spent.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-currency-spent',
+    imports: [CardComponent, MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe],
+    templateUrl: './currency-spent.component.html',
+    styleUrl: './currency-spent.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CurrencySpentComponent {
   total: IInstanceCost = { cost: CostHelper.create(), price: 0, nodes: [], listNodes: [], iaps: [] };

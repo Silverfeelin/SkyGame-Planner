@@ -7,12 +7,11 @@ import { DataService } from '@app/services/data.service';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 
 @Component({
-  selector: 'app-areas',
-  standalone: true,
-  imports: [WikiLinkComponent, RouterLink, MatIcon],
-  templateUrl: './areas.component.html',
-  styleUrl: './areas.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-areas',
+    imports: [WikiLinkComponent, RouterLink, MatIcon],
+    templateUrl: './areas.component.html',
+    styleUrl: './areas.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreasComponent {
   realm?: IRealm;

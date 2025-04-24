@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { MatIcon } from '@angular/material/icon';
 import { EventService } from '@app/services/event.service';
 
 @Component({
-  selector: 'app-overlay',
-  standalone: true,
-  imports: [MatIcon],
-  templateUrl: './overlay.component.html',
-  styleUrl: './overlay.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-overlay',
+    imports: [],
+    templateUrl: './overlay.component.html',
+    styleUrl: './overlay.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverlayComponent {
   @Input() title?: string;

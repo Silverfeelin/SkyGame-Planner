@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { MatIcon } from '@angular/material/icon';
 import { TableColumnDirective } from '@app/components/table/table-column/table-column.directive';
 import { TableHeaderDirective } from '@app/components/table/table-column/table-header.directive';
 import { TableComponent } from '@app/components/table/table.component';
@@ -19,12 +18,11 @@ interface IRow {
 }
 
 @Component({
-  selector: 'app-event-history',
-  standalone: true,
-  imports: [MatIcon, RouterLink, TableComponent, TableHeaderDirective, TableColumnDirective, DateTimePipe],
-  templateUrl: './event-history.component.html',
-  styleUrl: './event-history.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-event-history',
+    imports: [RouterLink, TableComponent, TableHeaderDirective, TableColumnDirective, DateTimePipe],
+    templateUrl: './event-history.component.html',
+    styleUrl: './event-history.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EventHistoryComponent {
   rows: Array<IRow>;

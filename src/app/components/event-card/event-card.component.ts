@@ -27,7 +27,6 @@ export interface EventCardOptions {
     templateUrl: './event-card.component.html',
     styleUrls: ['./event-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent, DiscordLinkComponent]
 })
 export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
@@ -130,7 +129,7 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
 
     this.instance.shops?.filter(s => s.itemList?.items?.length).forEach(s => {
       CostHelper.add(this.cost!, ...s.itemList!.items);
-      const locked = s.itemList!.items.filter(i => !i.unlocked);
+      const locked = s.itemList!.items.filter(i => i.item && !i.item.unlocked);
       CostHelper.add(this.remainingCost!, ...locked);
     });
   }
