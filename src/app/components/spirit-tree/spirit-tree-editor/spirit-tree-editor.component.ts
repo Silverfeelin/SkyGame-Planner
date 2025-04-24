@@ -427,6 +427,11 @@ export class SpiritTreeEditorComponent {
       return map;
     }, {});
 
+    const itemMap = data.items.reduce((map: { [guid: string]: IItem }, item: any) => {
+      map[item.guid] = item;
+      return map;
+    }, {});
+
     for (const node of data.nodes) {
       if (node.nw) { node.nw = nodeMap[node.nw]; }
       if (node.n) { node.n = nodeMap[node.n]; }
@@ -434,6 +439,7 @@ export class SpiritTreeEditorComponent {
       if (node.item) {
         node.item = this._dataService.guidMap.get(node.item) as IItem
           ?? customItemMap[node.item]
+          ?? itemMap[node.item]
           ?? this.cloneItem(this.specialItemMap.placeholder.item);
       }
     }
