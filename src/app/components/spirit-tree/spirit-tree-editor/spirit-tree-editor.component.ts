@@ -100,7 +100,7 @@ export class SpiritTreeEditorComponent {
     placeholder: { item: { id: -1, guid: nanoid(10), type: ItemType.Special, name: 'Placeholder', icon: '/assets/icons/question.webp' }},
     blessing: { item: { id: -2, guid: nanoid(10), type: ItemType.Special, name: 'Blessing', icon: '/assets/icons/question.webp' }, cost: { c: 5 }},
     wingBuff: { item: { id: -3, guid: nanoid(10), type: ItemType.WingBuff, name: 'Wing Buff', icon: '/assets/icons/question.webp' }, cost: { ac: 2 }},
-    heart: { item: { id: -4, guid: nanoid(10), type: ItemType.Special, name: 'Hearts', icon: '/assets/icons/question.webp' }, cost: { c: 3 }},
+    heart: { item: { id: -4, guid: nanoid(10), type: ItemType.Special, name: 'Heart', icon: '/assets/icons/question.webp' }, cost: { c: 3 }},
     dyeRed: { item: { id: -5, guid: nanoid(10), type: ItemType.Special, name: 'Red dye', icon: '/assets/icons/question.webp' }},
     dyeYellow: { item: { id: -6, guid: nanoid(10), type: ItemType.Special, name: 'Yellow dye', icon: '/assets/icons/question.webp' }},
     dyeGreen: { item: { id: -7, guid: nanoid(10), type: ItemType.Special, name: 'Green dye', icon: '/assets/icons/question.webp' }},
