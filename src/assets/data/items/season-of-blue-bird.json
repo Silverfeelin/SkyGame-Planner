@@ -41,6 +41,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Blue-Bird-Guide-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Blue-Bird-Guide-Ultimate-Cape-back.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_whitecape.jpg"
+    },
     "order": 836
   },
   {
@@ -191,6 +195,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Divining-Wise-Grandparent-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Divining-Wise-Grandparent-Cape.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_grandpacape.jpg"
+    },
     "order": 835
   },
   {
@@ -263,6 +271,12 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Costumed-Confetti-Cousin-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Costumed-Confetti-Cousin-mask.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_mask.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Bluebird_mask.jpg"
+    },
     "order": 445
   },
   {
@@ -273,6 +287,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Costumed-Confetti-Cousin-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Costumed-Confetti-Cousin-Outfit.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_confettidress.jpg"
+    },
     "order": 54
   },
   {
@@ -282,6 +300,10 @@
     "name": "Costumed Confetti Cousin Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Costumed-Confetti-Cousin-hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Costumed-Confetti-Cousin-Hair.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_confettihat.jpg"
+    },
     "order": 256
   },
   {
@@ -380,6 +402,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Royal-Hairtousle-Teen-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Royal-Hairtousle-Teen-Headpiece.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_tousleheadphones.jpg"
+    },
     "order": 354
   },
   {
@@ -389,6 +415,12 @@
     "name": "Royal Hairtousle Teen Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/27/Royal-Hairtousle-Teen-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/Royal-Hairtousle-Teen-Outfit.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_touslepants.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslepants.jpg"
+    },
     "order": 63
   },
   {
@@ -399,6 +431,12 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Royal-Hairtousle-Teen-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Royal-Hairtousle-Teen-Cape.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_touslecape.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslecape.jpg"
+    },
     "order": 833
   },
   {
@@ -448,6 +486,10 @@
     "name": "Nostalgic Sparkler Parent Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Nostalgic-Sparkler-Parent-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Nostalgic-Sparkler-Parent-Cape.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_beetlecape.jpg"
+    },
     "order": 834
   },
   {
@@ -520,6 +562,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Woodcutting-Pleaful-Parent-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Woodcutting-Pleaful-Parent-Shoes.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_pleafulboots.jpg"
+    },
     "order": 65
   },
   {
@@ -529,6 +575,10 @@
     "name": "Woodcutting Pleaful Parent Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Woodcutting-Pleaful-Parent-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Woodcutting-Pleaful-Parent-Outfit.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Bluebird_pleafulpants.jpg"
+    },
     "order": 64
   },
   {

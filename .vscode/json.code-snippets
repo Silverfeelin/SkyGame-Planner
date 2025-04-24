@@ -168,16 +168,27 @@
     ],
     "description": "Item-Dye-White"
   },
-  "Item-Dyeable": {
-    "prefix": "@item-dyeable",
+  "Item-Dyeable-1": {
+    "prefix": "@item-dyeable-1",
+    "body": [
+      "\"dye\": {",
+      "\t\"primary\": {},",
+      "\t\"previewUrl\": \"$0\"",
+      "},"
+    ],
+    "description": "Item-Dyeable-1"
+  },
+  "Item-Dyeable-2": {
+    "prefix": "@item-dyeable-2",
     "body": [
       "\"dye\": {",
       "\t\"primary\": {},",
       "\t\"secondary\": {},",
-      "\t\"previewUrl\": \"$3\"",
+      "\t\"previewUrl\": \"$0\",",
+      "\t\"infoUrl\": \"\"",
       "},"
     ],
-    "description": "Item-Dyeable"
+    "description": "Item-Dyeable-2"
   },
   "Item-Sheet": {
     "prefix": "@item-sheet",
