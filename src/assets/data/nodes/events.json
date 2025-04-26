@@ -2159,61 +2159,18 @@
     "c": 50
   },
   // After event
-  {
-    "guid": "yTI_4xeq0k",
-    "item": "jMLNrp_Yw8",
-    "c": 5,
-    "nw": "m5bf81kPiE",
-    "n": "HEuXRwMYoL",
-    "ne": "BCFySTiPol"
-  },
-  {
-    "guid": "m5bf81kPiE",
-    "item": "SrABR87rf4",
-    "c": 10
-  },
-  {
-    "guid": "BCFySTiPol",
-    "item": "Mh5ipZClSq",
-    "c": 10
-  },
-  {
-    "guid": "HEuXRwMYoL",
-    "item": "pTJsrRigHt",
-    "c": 5,
-    "nw": "1uSiCw6zRG",
-    "n": "xIboIouOBO",
-    "ne": "kjnVvUFRWa"
-  },
-  {
-    "guid": "1uSiCw6zRG",
-    "item": "WDyyhzD1Dk",
-    "c": 10
-  },
-  {
-    "guid": "kjnVvUFRWa",
-    "item": "MFDYVKkfuf",
-    "c": 10
-  },
-  {
-    "guid": "xIboIouOBO",
-    "item": "rJb-2yon2M",
-    "c": 5,
-    "nw": "FRyqp-j0Kd",
-    "n": "0H-L6HbspH"
-  },
-  {
-    "guid": "0H-L6HbspH",
-    "item": "jaYkyH7kRV",
-    "nw": "K3B9ehxFv8",
-    "c": 5
-  },
-  {
-    "guid": "FRyqp-j0Kd",
-    "item": "pUCJ7_2QWR",
-    "c": 5
-  },
+  { "guid": "yTI_4xeq0k", "item": "jMLNrp_Yw8", "c": 5, "nw": "m5bf81kPiE", "n": "HEuXRwMYoL", "ne": "BCFySTiPol" },
+  { "guid": "m5bf81kPiE", "item": "SrABR87rf4", "c": 10 },
+  { "guid": "BCFySTiPol", "item": "Mh5ipZClSq", "c": 10 },
+  { "guid": "HEuXRwMYoL", "item": "pTJsrRigHt", "c": 5, "nw": "1uSiCw6zRG", "n": "xIboIouOBO", "ne": "kjnVvUFRWa" },
+  { "guid": "1uSiCw6zRG", "item": "WDyyhzD1Dk", "c": 10 },
+  { "guid": "kjnVvUFRWa", "item": "MFDYVKkfuf", "c": 10 },
+  { "guid": "xIboIouOBO", "item": "rJb-2yon2M", "c": 5, "nw": "FRyqp-j0Kd", "n": "0H-L6HbspH" },
+  { "guid": "FRyqp-j0Kd", "item": "pUCJ7_2QWR", "c": 5 },
+  { "guid": "0H-L6HbspH", "item": "jaYkyH7kRV", "c": 5, "nw": "K3B9ehxFv8", "n": "5YIA6eWfwz" },
   { "guid": "K3B9ehxFv8", "item": "WMNr4yo_35", "c": 250 },
+  { "guid": "5YIA6eWfwz", "item": "XfVJX-5Eww", "nw": "r-Z4acnWbH", "c": 5 },
+  { "guid": "r-Z4acnWbH", "item": "rMC7kQhgYk", "c": 125 },
   // #endregion
   // #region AURORA Encore Concerts (2023)
   {
