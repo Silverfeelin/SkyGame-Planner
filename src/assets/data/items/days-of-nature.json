@@ -179,5 +179,71 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  // 2025
+  {
+    "id": 2621,
+    "guid": "sGfbOLONB6",
+    "name": "Cutscene",
+    "type": "Special",
+    "icon": ""
+  },
+  {
+    "id": 2622,
+    "guid": "O-9eA-N9si",
+    "name": "Ocean Waves Outfit",
+    "type": "Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ec/Ocean-Wave-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Ocean-Wave-Outfit-front.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Nature_swirlpants.jpg"
+    }
+  },
+  {
+    "id": 2623,
+    "guid": "B57ZJ9lCAE",
+    "name": "Ocean Manta Hair",
+    "type": "Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Ocean-Manta-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ee/Ocean-Manta-Hair.png"
+  },
+  {
+    "id": 2624,
+    "guid": "eCE_k13rE-",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2625,
+    "guid": "6Kn8VMa4go",
+    "type": "Cape",
+    "name": "Ocean Sea Foam Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Ocean-Sea-Foam-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Ocean-Sea-Foam-Cape-back.png",
+    "order": 10000
+  },
+  {
+    "id": 2626,
+    "guid": "EMG3a7883l",
+    "type": "Shoes",
+    "name": "Ocean Sea Foam Boots",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Ocean-Sea-Foam-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Ocean-Sea-Foam-Shoes.png",
+    "order": 10000
+  },
+  {
+    "id": 2627,
+    "guid": "EocwmiV_Vf",
+    "type": "Mask",
+    "name": "Ocean Wave Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Ocean-Wave-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Ocean-Wave-Mask.png",
+    "order": 10000,
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Nature_swirlmask.jpg"
+    },
   }
 ]

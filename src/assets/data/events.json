@@ -379,6 +379,24 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=304cdc92e5424539aafd55d4d6bb8266"
           },
+        },
+        {
+          "guid": "MY0FQKGDwt",
+          "date": "2025-04-28",
+          "endDate": "2025-05-18",
+          "spirits": [
+            { "guid": "j31zhvmXm5", "spirit": "3M1KSVgf49", "tree": "Ashb6wg0jD" }
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "nP3NCQTTZp", "date": "2025-04-28", "endDate": "2025-05-18", "amount": 15, "description": "Shells around Sanctuary Island" }
+            ]
+          },
+          "shops": [
+            "-oqsBuJpBi",
+            "WkB5Rd3Ncl"
+          ]
         }
       ],
       "_wiki": {

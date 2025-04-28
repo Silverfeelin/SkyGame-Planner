@@ -693,6 +693,18 @@
     "h": 20
   },
   // #endregion
+  // #region Days of Nature (2025)
+  { "guid": "lS85mkzLID", "item": "sGfbOLONB6", "n": "Kypz88ocPA" },
+  { "guid": "Kypz88ocPA", "item": "J3SQU_2koY", "c": 5, "nw": "W_ls4Ww_kZ", "n": "C3Z9aGqZS0", "ne": "e7rXAdATLV" },
+  { "guid": "W_ls4Ww_kZ", "item": "O-9eA-N9si", "ec": 49 },
+  { "guid": "e7rXAdATLV", "item": "B57ZJ9lCAE", "ec": 37 },
+  { "guid": "C3Z9aGqZS0", "item": "-Tb65IaCRm", "c": 5, "nw": "ALPi_q276C", "n": "gCq3u3-BS0", "ne": "pup2fRj2Wp" },
+  { "guid": "ALPi_q276C", "item": "YzpV97Kbgp", "c": 36 },
+  { "guid": "pup2fRj2Wp", "item": "BkptA-MKN8", "h": 14 },
+  { "guid": "gCq3u3-BS0", "item": "eCE_k13rE-", "c": 5, "nw": "7OhgpMWaFS", "n": "hxwSn0t7c1" },
+  { "guid": "7OhgpMWaFS", "item": "RLhtVkyDy3", "c": 180 },
+  { "guid": "hxwSn0t7c1", "item": "OvPPfhXnwW", "h": 20 },
+  // #endregion
   // #region Days of Rainbow (2021)
   {
     "guid": "hUF5hywM3c",
