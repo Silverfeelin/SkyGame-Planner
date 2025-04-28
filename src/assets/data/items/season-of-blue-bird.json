@@ -21,7 +21,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Season-of-Blue-Bird-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season-of-the-Blue-Bird-Pendant.png",
-    "order": 487
+    "order": 491
   },
   {
     "id": 2549,
@@ -31,7 +31,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Blue-Bird-Guide-Ultimate-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Blue-Bird-Guide-Ultimate-Facepiece.png",
-    "order": 99
+    "order": 100
   },
   {
     "id": 2550,
@@ -45,7 +45,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_whitecape.jpg"
     },
-    "order": 836
+    "order": 840
   },
   {
     "id": 2551,
@@ -185,7 +185,7 @@
     "name": "Divining Wise Grandparent Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Divining-Wise-Grandparent-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Divining-Wise-Grandparent-Facepiece.png",
-    "order": 100
+    "order": 101
   },
   {
     "id": 2570,
@@ -199,7 +199,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_grandpacape.jpg"
     },
-    "order": 835
+    "order": 839
   },
   {
     "id": 2571,
@@ -261,7 +261,7 @@
     "name": "Costumed Confetti Cousin Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Costumed-Confetti-Cousin-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Costumed-Confetti-Cousin-Hairpiece.png",
-    "order": 310
+    "order": 313
   },
   {
     "id": 2579,
@@ -277,7 +277,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_mask.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_mask.jpg"
     },
-    "order": 445
+    "order": 448
   },
   {
     "id": 2580,
@@ -304,7 +304,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_confettihat.jpg"
     },
-    "order": 256
+    "order": 258
   },
   {
     "id": 2582,
@@ -406,7 +406,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_tousleheadphones.jpg"
     },
-    "order": 354
+    "order": 357
   },
   {
     "id": 2594,
@@ -437,7 +437,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_touslecape.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslecape.jpg"
     },
-    "order": 833
+    "order": 837
   },
   {
     "id": 2596,
@@ -477,7 +477,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Nostalgic-Sparkler-Parent-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Nostalgic-Sparkler-Parent-Hairpiece.png",
-    "order": 311
+    "order": 314
   },
   {
     "id": 2601,
@@ -490,7 +490,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_beetlecape.jpg"
     },
-    "order": 834
+    "order": 838
   },
   {
     "id": 2602,
