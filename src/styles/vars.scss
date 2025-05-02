@@ -196,4 +196,50 @@
   --background: url(/assets/game/background/feast2024.webp);
 }
 
+:root[data-theme="compact"] {
+  --hue: 240;
+  --saturation: 20%;
+  --background: url(/assets/game/areas/vault/starlight.webp);
+
+  --padding-content: 4px;
+  --padding-content-half: 2px;
+  --padding-input: 3px 4px;
+
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.2rem; }
+  h3 { font-size: 1.1rem; }
+
+  --border-radius: 2px;
+  --color-background: hsl(var(--hue), var(--saturation), 22%);
+  --color-background-solid: hsl(var(--hue), var(--saturation), 15%);
+  --color-background-solid-light: hsl(var(--hue), var(--saturation), 15%);
+  --color-border: hsl(var(--hue), var(--saturation), 30%);
+  --color-border-solid: hsl(var(--hue), var(--saturation), 30%);
+  --color-border-highlight: hsl(var(--hue), var(--saturation), 40%);
+  --color-button-background: hsl(var(--hue), var(--saturation), 22%);
+  --color-button-hover-background: hsl(var(--hue), var(--saturation), 30%);
+  --color-button-solid-background: hsl(var(--hue), var(--saturation), 22%);
+  --color-button-solid-hover-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-card-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-card-header-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-card-solid-header-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-card-solid-background: hsl(var(--hue), var(--saturation), 15%);
+
+  --color-menu-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-menu-border: hsl(var(--hue), var(--saturation), 30%);
+  --color-menu-item-active-background: #33334d;
+  --color-menu-item-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-menu-unfold-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-menu-unfold-border: hsl(var(--hue), var(--saturation), 40%);
+
+  --color-scroll-thumb: hsl(var(--hue), var(--saturation), 15%);
+  --color-scroll-thumb-border: hsl(var(--hue), var(--saturation), 15%);
+  --color-scroll-track: hsl(var(--hue), var(--saturation), 15%);
+  --color-scroll-track-border: hsl(var(--hue), var(--saturation), 15%);
+  --color-table-header-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-tree-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-tree-footer-background: hsl(var(--hue), var(--saturation), 15%);
+  --color-tree-footer-border: hsl(var(--hue), var(--saturation), 15%);
+}
+
 // #endregion
