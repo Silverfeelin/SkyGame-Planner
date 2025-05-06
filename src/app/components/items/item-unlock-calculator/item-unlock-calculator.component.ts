@@ -121,6 +121,7 @@ export class ItemUnlockCalculatorComponent {
   shareSelection(): void {
     if (!navigator.share) { return alert('Sharing is not supported by this browser.'); }
     if (!this.items.length) { return alert('No items selected.'); }
+
     const text = `Sky Planner: Cost Calculator (${this.items.length} items)`;
     const url = new URL(location.href);
     let ids = url.searchParams.get('items');
