@@ -90,30 +90,16 @@
   {
     "id": 2556,
     "guid": "XXqa96GPb-",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Quest",
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2557,
     "guid": "05wSj1dyAK",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
-  },
-  {
-    "id": 2558,
-    "guid": "15XX3vpi35",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
-  },
-  {
-    "id": 2559,
-    "guid": "wbg5hL8wGl",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
   {
     "id": 2560,
