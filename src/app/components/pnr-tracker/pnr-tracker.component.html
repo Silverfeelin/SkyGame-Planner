@@ -6,6 +6,9 @@
     <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start" (click)="promptReset()">
       <mat-icon>restart_alt</mat-icon>
     </button>
+    <span class="pnr-count" [class.active]="countFound === countTotal">
+      {{ countFound }} / {{ countTotal }}
+    </span>
   </div>
   <div #map id="pnr-map" class="map"></div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, effect, ElementRef, inject, NgZone, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, effect, ElementRef, inject, NgZone, ViewChild, viewChild } from '@angular/core';
 import L from 'leaflet';
 import { pnrMarkers } from './pnr-tracker-markers';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
@@ -30,26 +30,20 @@ interface IStatueMarker {
   templateUrl: './pnr-tracker.component.html',
   styleUrl: './pnr-tracker.component.scss'
 })
-export class PnrTrackerComponent {
-  mapDiv = viewChild<ElementRef<HTMLDivElement>>('map');
+export class PnrTrackerComponent implements AfterViewInit{
+  @ViewChild('map', { static: true }) private mapDiv!: ElementRef<HTMLDivElement>;
   map: L.Map | undefined;
   markers: Array<IStatueMarker> = [];
 
   isNavigationEnabled = true;
   _navCurrentZoom = 0;
+  countFound = 0;
+  countTotal = pnrMarkers.length;
 
-  constructor() {
-    effect(() => {
-      const div = this.mapDiv()?.nativeElement;
-      this.map?.remove();
-      this.map = undefined;
-      if (!div) { return; }
+  private readonly _changeDetectorRef = inject(ChangeDetectorRef);
 
-      this.initMap(div);
-    });
-  }
-
-  initMap(div: HTMLDivElement): void {
+  ngAfterViewInit() {
+    const div = this.mapDiv?.nativeElement;
     this.map = L.map(div, {
       crs: L.CRS.Simple,
       minZoom: -3,
@@ -90,6 +84,8 @@ export class PnrTrackerComponent {
 
       marker.addEventListener('click', () => {
         this.updateMarker(statueMarker, !statueMarker.found);
+        this.countFound = this.markers.filter((m) => m.found).length;
+        this._changeDetectorRef.markForCheck();
         if (statueMarker.found && this.isNavigationEnabled) {
           this.navigateNext();
         }
@@ -105,14 +101,12 @@ export class PnrTrackerComponent {
     this.markers.forEach((marker) => {
       this.updateMarker(marker, false);
     });
+    this.countFound = 0;
     this.map?.setView(pnrMarkers[0], 0);
   }
 
-  updateMarker(value: IStatueMarker, found?: boolean): void {
-    if (found !== undefined) {
-      value.found = found;
-    }
-
+  updateMarker(value: IStatueMarker, found: boolean): void {
+    value.found = found;
     value.marker.setOpacity(value.found ? 0.6 : 1);
     value.marker.setIcon(value.found ? markerFoundIcon : markerIcon);
   }
