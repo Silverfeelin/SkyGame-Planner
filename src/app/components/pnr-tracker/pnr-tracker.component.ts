@@ -96,6 +96,13 @@ export class PnrTrackerComponent implements AfterViewInit{
     L.polyline(pnrMarkers, { color: '#0ff', weight: 3 }).addTo(this.map);
   }
 
+  toggleNavigation(): void {
+    this.isNavigationEnabled = !this.isNavigationEnabled;
+    if (this.isNavigationEnabled) {
+      this.navigateNext(1);
+    }
+  }
+
   promptReset() {
     if (!confirm('Are you sure you want to reset your progress?')) { return; }
     this.markers.forEach((marker) => {
@@ -111,10 +118,10 @@ export class PnrTrackerComponent implements AfterViewInit{
     value.marker.setIcon(value.found ? markerFoundIcon : markerIcon);
   }
 
-  navigateNext(): void {
+  navigateNext(zoom?: number): void {
     const m = this.markers.find((marker) => !marker.found);
     if (!m) { return; }
 
-    this.map?.flyTo(m.marker.getLatLng(), this._navCurrentZoom, { duration: 0.3 });
+    this.map?.flyTo(m.marker.getLatLng(), zoom ?? this._navCurrentZoom, { duration: 0.3 });
   }
 }
