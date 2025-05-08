@@ -55,6 +55,7 @@ import { EventHistoryComponent } from './components/events/event-history/event-h
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
+import { FriendsComponent } from './components/friends/friends.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -126,6 +127,7 @@ export const routes: Routes = [
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
           { path: 'pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
+          { path: 'friends', component: FriendsComponent, title: title('Friends') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
