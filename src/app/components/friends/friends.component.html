@@ -1,0 +1,27 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Friends</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-1">
+      <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Friendship_Menu'}"></app-wiki-link>
+    </div>
+  </div>
+</div>
+
+<div class="sky-card mt spirit-trees">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Friendship tree</h2>
+  </div>
+  <div class="sky-card-body pad-0">
+    <div class="sky-flex scroll-x pad">
+      <div *ngFor="let item of trees" class="tree-wrapper p-inline-block">
+        <app-spirit-tree
+          [tree]="item.tree" [name]="item.name"
+          [highlight]="highlightTree === item.tree.guid"
+          [highlightItem]="highlightItem"
+        ></app-spirit-tree>
+      </div>
+    </div>
+  </div>
+</div>
