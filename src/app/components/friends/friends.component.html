@@ -15,7 +15,7 @@
   </div>
   <div class="sky-card-body pad-0">
     <div class="sky-flex scroll-x pad">
-      <div *ngFor="let item of trees" class="tree-wrapper p-inline-block">
+      <div *ngFor="let item of friends" class="tree-wrapper p-inline-block">
         <app-spirit-tree
           [tree]="item.tree" [name]="item.name"
           [highlight]="highlightTree === item.tree.guid"
