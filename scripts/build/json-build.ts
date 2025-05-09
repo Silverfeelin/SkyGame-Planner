@@ -1,16 +1,20 @@
-const path = require('path');
 import { mergeItemFiles, checkFileItemIds } from './json-lib';
 
-const itemsDirPath = path.join(__dirname, '../../src/assets/data/items');
-const itemsOutPath = path.join(__dirname, '../../src/assets/data/items.json');
-console.log('Merging items...', itemsDirPath, '->', itemsOutPath);
-mergeItemFiles(itemsDirPath, itemsOutPath);
-checkFileItemIds(itemsOutPath);
+const path = require('path');
+const fs = require('fs');
 
-const iapsDirPath = path.join(__dirname, '../../src/assets/data/iaps');
-const iapsOutPath = path.join(__dirname, '../../src/assets/data/iaps.json');
-mergeItemFiles(iapsDirPath, iapsOutPath);
+const dataDirPath = path.join(__dirname, '../../src/assets/data');
+const folderPaths = fs.readdirSync(dataDirPath).filter((name: string) => {
+  const fullPath = path.join(dataDirPath, name);
+  return fs.statSync(fullPath).isDirectory();
+});
 
-const nodesDirPath = path.join(__dirname, '../../src/assets/data/nodes');
-const nodesOutPath = path.join(__dirname, '../../src/assets/data/nodes.json');
-mergeItemFiles(nodesDirPath, nodesOutPath);
+folderPaths.forEach((folderName: string) => {
+  const dirPath = path.join(dataDirPath, folderName);
+  const outPath = path.join(dataDirPath, `${folderName}.json`);
+  console.log(`Merging ${folderName}:`, dirPath, '->', outPath);
+  mergeItemFiles(dirPath, outPath);
+  if (folderName === 'items') {
+    checkFileItemIds(outPath);
+  }
+});
