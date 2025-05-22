@@ -3543,7 +3543,7 @@
   { "guid": "8yaOVcYTwJ", "item": "YcidiKgDRm", "sc": 3 },
   // #endregion
   // #region Remembrance
-  // Bereft Veteran
+  // #region Bereft Veteran
   { "guid": "9bB4SRcAvm", "item": "8PJqQ9WsHo", "nw": "5KZRvL0rW8", "n": "D9E3jEaX2r" },
   { "guid": "5KZRvL0rW8", "item": "ms8gAS7UHk" },
   { "guid": "D9E3jEaX2r", "item": "woyw0Ddh2s", "sc": 6, "nw": "3LYsu9qlvV", "n": "MpyjR7J9Ve" },
@@ -3555,6 +3555,19 @@
   { "guid": "JliH0Y6KM2", "item": "aVXNBBz0Qs", "sc": 34, "nw": "yXExfyJtn3", "n": "9MbT9T5RFB" },
   { "guid": "yXExfyJtn3", "item": "UfkQ77aqyH" },
   { "guid": "9MbT9T5RFB", "item": "ALJDKgSPvx", "sc": 3 },
+  // TS 140
+  { "guid": "arsiJ_KjPq", "item": "8PJqQ9WsHo", "nw": "gCfC0rgAG5", "n": "9HQmeqGPQ3" },
+  { "guid": "gCfC0rgAG5", "item": "ms8gAS7UHk", "h": 4 },
+  { "guid": "9HQmeqGPQ3", "item": "P4dn6-tr_h", "c": 5, "nw": "ixtWFlScrJ", "n": "YeTmddqW2I", "ne": "OCu_hxV0lA" },
+  { "guid": "ixtWFlScrJ", "item": "woyw0Ddh2s", "c": 35 },
+  { "guid": "OCu_hxV0lA", "item": "ZEj-6lPnjo", "c": 3 },
+  { "guid": "YeTmddqW2I", "item": "vW-FqchJ6Z", "ac": 2, "n": "z7SPb1oVLw" },
+  { "guid": "z7SPb1oVLw", "item": "FIaYs2Unva", "h": 3, "nw": "sSJmxNeNfk", "n": "Uzx8hE62vo" },
+  { "guid": "sSJmxNeNfk", "item": "Wu1J2yazsw", "h": 6 },
+  { "guid": "Uzx8hE62vo", "item": "ElEP5sqzhv", "c": 5, "n": "9EI9dsktUq", "nw": "lZAOZt2Xpy" },
+  { "guid": "lZAOZt2Xpy", "item": "3Ja8-MaUke", "c": 60 },
+  { "guid": "9EI9dsktUq", "item": "aVXNBBz0Qs", "c": 80 },
+  // #endregion
   // #region Pleading Child
   { "guid": "GjeQ3Fdpac", "item": "6H4WC7Aipv", "nw": "3wFQnlovc8", "n": "_thEXwDGhm" },
   { "guid": "3wFQnlovc8", "item": "oxlHVEQ-KD" },
