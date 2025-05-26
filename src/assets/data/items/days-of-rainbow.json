@@ -316,6 +316,12 @@
     "name": "Rainbow Smock",
     "type": "Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Color-Rainbow-Smock-icon.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_radipants.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_radipants.jpg"
+    },
     "order": 72
   },
   {
@@ -325,6 +331,12 @@
     "type": "Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Days-of-Color-Rainbow-Head-Wrap-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Days-of-Color-Rainbow-Head-Wrap-front.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_beaniebraid.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_beaniebraid.jpg"
+    },
     "order": 272
   },
   {
@@ -348,6 +360,12 @@
     "name": "Rainbow Ribbon Shawl",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Days-of-Color-Rainbow-Ribbon-Shawl-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Days-of-Color-Rainbow-Ribbon-Shawl-back.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_saturncape.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_saturncape.jpg"
+    },
     "order": 860
   },
   {
@@ -357,6 +375,12 @@
     "name": "Rainbow Face Paint Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Days-of-Color-Rainbow-Face-Paint-mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Days-of-Color-Rainbow-Face-Paint-mask.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_facepaint.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_facepaint.jpg"
+    },
     "order": 460
   },
   {
