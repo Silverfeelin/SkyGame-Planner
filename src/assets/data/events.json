@@ -475,6 +475,27 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=ec63b6155c2a447c89487ae0936592ad"
           },
+        },
+        {
+          "guid": "OK-kbLTjFP",
+          "date": "2025-05-26",
+          "endDate": "2025-06-08",
+          "spirits": [
+            { "guid": "fq25mINKii", "spirit": "U9vUspUuRp", "tree": "kZJKg9jxtn" }
+          ],
+          "shops": [
+            "BcBq4Khxik"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "Mgn5eSqxuN", "date": "2025-05-26", "endDate": "2025-06-08", "amount": 15, "description": "Bonus event currency" }
+            ]
+          },
+          "draft": true,
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1d78261c87dd8081bf56e7b8ff9a91d5&pm=c"
+          },
         }
       ],
       "_wiki": {
