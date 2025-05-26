@@ -15,7 +15,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Wide-Leg_Jeans"
     },
-    "order": 77
+    "order": 78
   },
   {
     "id": 1842,
@@ -27,7 +27,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Bunny_Slippers"
     },
-    "order": 125
+    "order": 126
   },
   {
     "id": 1843,
@@ -39,7 +39,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Heart_Sunglasses"
     },
-    "order": 105
+    "order": 106
   },
   {
     "id": 1844,
@@ -51,7 +51,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Flame_Sunglasses"
     },
-    "order": 104
+    "order": 105
   },
   {
     "id": 1845,
@@ -63,7 +63,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Star_Sunglasses"
     },
-    "order": 103
+    "order": 104
   },
   {
     "id": 1846,
@@ -75,7 +75,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Silk_Ballet_Slippers"
     },
-    "order": 124
+    "order": 125
   },
   {
     "id": 1847,
@@ -87,7 +87,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Top_Hat"
     },
-    "order": 332,
+    "order": 334,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Style_tophat.jpg",
       "primary": {}
@@ -107,7 +107,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask"
     },
-    "order": 458
+    "order": 461
   },
   {
     "id": 1849,
@@ -134,7 +134,7 @@
       "previewUrl": "/assets/game/dyes/outfit/Style_dress.jpg",
       "primary": {}
     },
-    "order": 78
+    "order": 79
   },
   {
     "id": 2321,
@@ -143,7 +143,7 @@
     "name": "Style Fascinator",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Style-Darkness-Fascinator-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
-    "order": 333,
+    "order": 335,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Style_veil.jpg",
       "primary": {}
@@ -169,7 +169,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 79
+    "order": 80
   },
   {
     "id": 2324,
@@ -178,7 +178,7 @@
     "name": "Style Dapper Monocle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Style-Dapper-Monocle-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Style-Dapper-Monocle.png",
-    "order": 106
+    "order": 107
   },
   {
     "id": 2325,
@@ -187,6 +187,6 @@
     "name": "Style Dapper Necktie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Style-Dapper-Necktie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Style-Dapper-Necktie.png",
-    "order": 509
+    "order": 512
   }
 ]
