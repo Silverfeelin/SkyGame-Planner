@@ -12,7 +12,6 @@ import { SeasonCardComponent } from '../season-card/season-card.component';
 import { DashboardWishlistComponent } from './dashboard-wishlist/dashboard-wishlist.component';
 import { NgIf, NgFor } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
-import { MatIcon } from '@angular/material/icon';
 import { ClockComponent } from '../clock/clock.component';
 import { CardComponent } from "../layout/card/card.component";
 import { DailyCardComponent } from "../daily-card/daily-card.component";
@@ -21,7 +20,7 @@ import { DailyCardComponent } from "../daily-card/daily-card.component";
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.less'],
-    imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, CardComponent, DailyCardComponent]
+    imports: [ClockComponent, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, CardComponent, DailyCardComponent]
 })
 export class DashboardComponent implements OnInit {
 

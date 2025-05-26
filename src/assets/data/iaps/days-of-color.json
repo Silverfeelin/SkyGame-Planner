@@ -207,6 +207,24 @@
   // #endregion
   // #region Days of Color (2025)
   {
+    "guid": "3myg1K_NVD",
+    "name": "Rainbow Face Paint Mask",
+    "price": 19.99,
+    "c": 75,
+    "items": [
+      "Z9HZ5p9DX7",
+      "UzLX3RxGme"
+    ]
+  },
+  {
+    "guid": "v__sPzDxDa",
+    "name": "Rainbow Ribbon Shawl",
+    "price": 14.99,
+    "items": [
+      "zG11dMlH61"
+    ]
+  },
+  {
     "guid": "niXRqrDBPE",
     "name": "Dark Rainbow Loafers",
     "price": 19.99,

@@ -712,9 +712,17 @@
     // #endregion
     // #region Days of Color (2025)
     {
+      "guid": "9hxOhxxmEr",
+      "type": "Store",
+      "iaps": [
+        "3myg1K_NVD",
+        "v__sPzDxDa"
+      ]
+    },
+    {
       "guid": "BcBq4Khxik",
       "type": "Spirit",
-      "spirit": "U9vUspUuRp",
+      "spirit": "8govamcy_2",
       "iaps": [
         "niXRqrDBPE",
         "S4wXyHtoOe",

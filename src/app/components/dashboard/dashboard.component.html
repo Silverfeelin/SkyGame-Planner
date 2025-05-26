@@ -14,14 +14,6 @@
 <app-dashboard-wishlist [season]="season" [eventInstances]="eventInstances" [ts]="ts" [rs]="rs"></app-dashboard-wishlist>
 
 <div class="grid grid-2 mt">
-  <div class="colspan-2">
-    <app-card [title]="'Dye Plant Tracker'">
-      <a class="container d-block" href="https://dyes.sky-planner.com">
-        <mat-icon class="menu-icon">map</mat-icon>
-        <span class="menu-label">Open interactive map</span>
-      </a>
-    </app-card>
-  </div>
   <!-- No ongoing events, backup card for dailies -->
   @if (!season) { <app-daily-card></app-daily-card> }
   <!-- Ongoing -->

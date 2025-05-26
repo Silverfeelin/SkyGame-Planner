@@ -309,5 +309,60 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Dark-Rainbow-Loafers-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Dark-Rainbow-Loafers.png",
     "order": 120
-  }
+  },
+  // 2025
+  {
+    "id": 2630,
+    "guid": "iJ92oZ6f5q",
+    "name": "Rainbow Smock",
+    "type": "Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Color-Rainbow-Smock-icon.png"
+  },
+  {
+    "id": 2631,
+    "guid": "SgIsK6N6pA",
+    "name": "Rainbow Head Wrap",
+    "type": "Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Days-of-Color-Rainbow-Head-Wrap-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Days-of-Color-Rainbow-Head-Wrap-front.png"
+  },
+  {
+    "id": 2632,
+    "guid": "xGvGLBx7Bs",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2633,
+    "guid": "5OiGVWG5MY",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 2634,
+    "guid": "zG11dMlH61",
+    "type": "Cape",
+    "name": "Rainbow Ribbon Shawl",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Days-of-Color-Rainbow-Ribbon-Shawl-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Days-of-Color-Rainbow-Ribbon-Shawl-back.png",
+    "order": 10000
+  },
+  {
+    "id": 2635,
+    "guid": "Z9HZ5p9DX7",
+    "type": "Mask",
+    "name": "Rainbow Face Paint Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Days-of-Color-Rainbow-Face-Paint-mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Days-of-Color-Rainbow-Face-Paint-mask.png",
+    "order": 10000
+  },
+  {
+    "id": 2636,
+    "guid": "UzLX3RxGme",
+    "type": "Special",
+    "name": "White dye (3)",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"
+  },
 ]
