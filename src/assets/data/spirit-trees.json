@@ -2137,6 +2137,11 @@
       "name": "Equipment Rack",
       "permanent": "event"
     },
+    // Friends
+    {
+      "guid": "Ne9qn6B0kB",
+      "node": "ty1FHfNUPA"
+    },
     // #endregion
   ]
 }
