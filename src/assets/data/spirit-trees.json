@@ -435,6 +435,7 @@
       "guid": "WGIrheVuUd",
       "node": "8_QAGF_cuK"
     },
+    { "guid": "bFOp9D6fxP", "node": "wZTTBoBVfy", "revisionType": "AfterSeason" },
     // #endregion
 
     // #region Gratitude
@@ -1349,6 +1350,10 @@
       "guid": "shrYC9Vd3i",
       "node": "MGUE9PoBTC"
     },
+    {
+      "guid": "H4P1PDRMQa",
+      "node": "FRhBcTNbYT"
+    },
     // Tinkering Chimesmith
     {
       "guid": "66idlQe3mK",
@@ -1517,6 +1522,10 @@
     {
       "guid": "zWD_AxgIGC",
       "node": "9bB4SRcAvm"
+    },
+    {
+      "guid": "sftWo0Dy66",
+      "node": "arsiJ_KjPq"
     },
     // Pleading Child
     {
@@ -1887,6 +1896,12 @@
       "node": "dDjdcgzxXb"
     },
     // #endregion
+    // #region Days of Nature (2025)
+    {
+      "guid": "Ashb6wg0jD",
+      "node": "lS85mkzLID"
+    },
+    // #endregion
     // #endregion
     // #region Days of Rainbow
     // Days of Rainbow 2021
@@ -1911,6 +1926,9 @@
       "guid": "3YJalWDFZ7",
       "node": "9OdKeadQcE"
     },
+    // #endregion
+    // #region Days of Color (2025)
+    { "guid": "J8x_QrviU0", "node": "VY3t0JMl3q" },
     // #endregion
     // #region Days of Music (2023)
     {

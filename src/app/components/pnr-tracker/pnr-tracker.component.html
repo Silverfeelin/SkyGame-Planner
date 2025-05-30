@@ -1,0 +1,14 @@
+<div class="map-container">
+  <div class="map-controls map-controls-tl">
+    <button type="button" [class.map-control-off]="!isNavigationEnabled" [ngbTooltip]="'Navigate'" container="body" placement="bottom-start" (click)="toggleNavigation()">
+      <mat-icon>navigation</mat-icon>
+    </button>
+    <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start" (click)="promptReset()">
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+    <span class="pnr-count" [class.active]="countFound === countTotal">
+      {{ countFound }} / {{ countTotal }}
+    </span>
+  </div>
+  <div #map id="pnr-map" class="map"></div>
+</div>

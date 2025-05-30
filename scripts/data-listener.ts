@@ -1,3 +1,8 @@
+/**
+ * This script listens for incoming HTTP requests and saves the data to the unsorted.json file.
+ * By itself this script is pretty useless. The other part of this tool is private.
+ */
+
 const http = require('http');
 const fs = require('fs');
 const url = require('url');

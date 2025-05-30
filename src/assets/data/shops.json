@@ -609,6 +609,32 @@
       ]
     },
     // #endregion
+    // #region Days of Nature (2025)
+    {
+      "guid": "-oqsBuJpBi",
+      "type": "Store",
+      "iaps": [
+        "5sO_q1MnG6",
+        "6fgefdyfOb",
+      ]
+    },
+    {
+      "guid": "WkB5Rd3Ncl",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "sGx1lPUWND",
+        "rS87ODFt3z",
+        "9GjwC5kUBG",
+        "EUYkE4-h6L",
+        "Z5byWXzJM8",
+        "Voqj10hmUW",
+        "bmH3Qkpou2",
+        "oLtbdA_bjP",
+        "dUfEqImdWR"
+      ]
+    },
+    // #endregion
     // #region Days of Rainbow (2021)
     {
       "guid": "CwN0xJF-1M",
@@ -681,6 +707,32 @@
         "Y5g-xnRjnT",
         "nOMX1P8rHy",
         "voKWceeZKu"
+      ]
+    },
+    // #endregion
+    // #region Days of Color (2025)
+    {
+      "guid": "9hxOhxxmEr",
+      "type": "Store",
+      "iaps": [
+        "3myg1K_NVD",
+        "v__sPzDxDa"
+      ]
+    },
+    {
+      "guid": "BcBq4Khxik",
+      "type": "Spirit",
+      "spirit": "8govamcy_2",
+      "iaps": [
+        "niXRqrDBPE",
+        "S4wXyHtoOe",
+        "i26sHsdWSP",
+        "l9QzabG_At",
+        "t4TQD7wkX4",
+        "BRXIbPRO5K",
+        "6sytee2Pft",
+        "v2IWAJCRM0",
+        "6d47mXYSYb",
       ]
     },
     // #endregion

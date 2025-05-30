@@ -1,3 +1,7 @@
+:host {
+  --gap: 8px;
+}
+
 .tree-wrapper app-spirit-tree {
   vertical-align: bottom;
 }
@@ -20,7 +24,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  gap: 8px;
+  gap: var(--gap);
 }
 
 .spirit-grid-img {
@@ -39,7 +43,7 @@
 
 .spirit-img {
   width: auto;
-  height: 208px;
+  height: calc(var(--padding-content) * 8 + var(--gap) * 3 + 4 * 26px);
 }
 
 .spirit-grid-item {
@@ -52,7 +56,7 @@
   // Put preview next to first 4 items.
   .spirit-grid {
     grid-template-columns: 160px 1fr;
-    grid-template-rows: 46px;
+    grid-template-rows: calc(var(--padding-content) * 2 + 26px);
   }
 
   .spirit-grid-img {

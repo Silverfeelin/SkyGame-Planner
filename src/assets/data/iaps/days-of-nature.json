@@ -231,4 +231,109 @@
     ]
   },
   // #endregion
+  // #region Days of Nature (2025)
+  {
+    "guid": "5sO_q1MnG6",
+    "name": "Ocean Wave Mask",
+    "price": 19.99,
+    "c": 75,
+    "items": [
+      "EocwmiV_Vf"
+    ]
+  },
+  {
+    "guid": "6fgefdyfOb",
+    "name": "Ocean Sea Foam Set",
+    "price": 24.99,
+    "c": 30,
+    "items": [
+      "6Kn8VMa4go",
+      "EMG3a7883l",
+    ]
+  },
+  {
+    "guid": "sGx1lPUWND",
+    "name": "Nature Wave Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "wMsUtkvt3s"
+    ]
+  },
+  {
+    "guid": "rS87ODFt3z",
+    "name": "Nature Wave-Touched Hair",
+    "price": 6.99,
+    "returning": true,
+    "items": [
+      "jWAPWGsEd-"
+    ]
+  },
+  {
+    "guid": "9GjwC5kUBG",
+    "name": "Nature Glasses Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "IOBWcIpOY9"
+    ]
+  },
+  {
+    "guid": "EUYkE4-h6L",
+    "name": "Nature Sonorous Seashell",
+    "price": 4.99,
+    "returning": true,
+    "items": [
+      "gHfkqCK-A8"
+    ]
+  },
+  {
+    "guid": "Z5byWXzJM8",
+    "name": "Nature Turtle Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "znjZlpHSt4"
+    ]
+  },
+  {
+    "guid": "Voqj10hmUW",
+    "name": "Nature Turtle Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "_Y-80G-t_2"
+    ]
+  },
+  {
+    "guid": "bmH3Qkpou2",
+    "name": "Ocean Necklace",
+    "price": 1.99,
+    "returning": true,
+    "items": [
+      "KZ6aQtgCqt"
+    ]
+  },
+  {
+    "guid": "oLtbdA_bjP",
+    "name": "Ocean Cape",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "MjA9EoD-pe"
+    ]
+  },
+  {
+    "guid": "dUfEqImdWR",
+    "name": "Earth Cape",
+    "price": 4.99,
+    "returning": true,
+    "items": [
+      "YUqENRc8rQ"
+    ]
+  },
+  // #endregion
 ]

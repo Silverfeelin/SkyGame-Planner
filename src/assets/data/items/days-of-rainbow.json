@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Braid"
     },
-    "order": 356
+    "order": 361
   },
   {
     "id": 1790,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Cape"
     },
-    "order": 850
+    "order": 858
   },
   {
     "id": 1791,
@@ -124,7 +124,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Hair_Flower"
     },
-    "order": 317
+    "order": 322
   },
   {
     "id": 1805,
@@ -136,7 +136,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Beanie_Hat"
     },
-    "order": 266
+    "order": 270
   },
   {
     "id": 1806,
@@ -148,7 +148,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Double_Rainbow_Flower"
     },
-    "order": 318
+    "order": 323
   },
   {
     "id": 1807,
@@ -160,7 +160,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Earring"
     },
-    "order": 357
+    "order": 362
   },
   {
     "id": 1808,
@@ -172,7 +172,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Headphones"
     },
-    "order": 358
+    "order": 363
   },
   {
     "id": 1809,
@@ -190,7 +190,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Rainbow_Trousers"
     },
-    "order": 69
+    "order": 70
   },
   {
     "id": 1810,
@@ -229,7 +229,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Tunic"
     },
-    "order": 70
+    "order": 71
   },
   {
     "id": 1814,
@@ -241,7 +241,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Color#Dark_Rainbow_Earring_Pack"
     },
-    "order": 359
+    "order": 364
   },
   {
     "id": 1815,
@@ -259,7 +259,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Rainbow#Dark_Rainbow_Cape"
     },
-    "order": 851
+    "order": 859
   },
   {
     "id": 2210,
@@ -281,7 +281,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 453
+    "order": 459
   },
   {
     "id": 2212,
@@ -290,7 +290,7 @@
     "name": "Color Glam Cut",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Color-Glam-Cut-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Color-Glam-Cut-front.png",
-    "order": 267
+    "order": 271
   },
   {
     "id": 2213,
@@ -299,7 +299,7 @@
     "name": "Color Bubble Machine",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/15/Color-Bubble-Machine-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Color-Bubble-Machine.png",
-    "order": 612
+    "order": 619
   },
   {
     "id": 2214,
@@ -308,6 +308,87 @@
     "name": "Dark Rainbow Loafers",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Dark-Rainbow-Loafers-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Dark-Rainbow-Loafers.png",
-    "order": 119
+    "order": 121
+  },
+  {
+    "id": 2630,
+    "guid": "iJ92oZ6f5q",
+    "name": "Rainbow Smock",
+    "type": "Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Days-of-Color-Rainbow-Smock-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Days-of-Color-Rainbow-Smock-front.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_radipants.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_radipants.jpg"
+    },
+    "order": 72
+  },
+  {
+    "id": 2631,
+    "guid": "SgIsK6N6pA",
+    "name": "Rainbow Head Wrap",
+    "type": "Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Days-of-Color-Rainbow-Head-Wrap-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/99/Days-of-Color-Rainbow-Head-Wrap-front.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_beaniebraid.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_beaniebraid.jpg"
+    },
+    "order": 272
+  },
+  {
+    "id": 2632,
+    "guid": "xGvGLBx7Bs",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2633,
+    "guid": "5OiGVWG5MY",
+    "type": "Special",
+    "name": "Random Trail Spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
+  },
+  {
+    "id": 2634,
+    "guid": "zG11dMlH61",
+    "type": "Cape",
+    "name": "Rainbow Ribbon Shawl",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Days-of-Color-Rainbow-Ribbon-Shawl-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Days-of-Color-Rainbow-Ribbon-Shawl-back.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_saturncape.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_saturncape.jpg"
+    },
+    "order": 860
+  },
+  {
+    "id": 2635,
+    "guid": "Z9HZ5p9DX7",
+    "type": "Mask",
+    "name": "Rainbow Face Paint Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Days-of-Color-Rainbow-Face-Paint-mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/48/Days-of-Color-Rainbow-Face-Paint-mask.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/Colour_facepaint.jpg",
+      "infoUrl": "/assets/game/dyes/2slots_Colour_facepaint.jpg"
+    },
+    "order": 460
+  },
+  {
+    "id": 2636,
+    "guid": "UzLX3RxGme",
+    "type": "Special",
+    "name": "White dye (3)",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"
   }
 ]

@@ -2,17 +2,17 @@ const fs = require('fs');
 const path = require('path');
 const json5 = require('json5');
 
-const sitemapPath = path.resolve(__dirname, '../src/sitemap.xml');
-const sitemapBasePath = path.resolve(__dirname, '../src/sitemap-base.xml');
+const sitemapPath = path.resolve(__dirname, '../../src/sitemap.xml');
+const sitemapBasePath = path.resolve(__dirname, '../../src/sitemap-base.xml');
 
 const paths = {
-  events: path.resolve(__dirname, '../src/assets/data/events.json'),
-  items: path.resolve(__dirname, '../src/assets/data/items.json'),
-  realms: path.resolve(__dirname, '../src/assets/data/realms.json'),
-  areas: path.resolve(__dirname, '../src/assets/data/areas.json'),
-  seasons: path.resolve(__dirname, '../src/assets/data/seasons.json'),
-  spirits: path.resolve(__dirname, '../src/assets/data/spirits.json'),
-  rs: path.resolve(__dirname, '../src/assets/data/returning-spirits.json')
+  events: path.resolve(__dirname, '../../src/assets/data/events.json'),
+  items: path.resolve(__dirname, '../../src/assets/data/items.json'),
+  realms: path.resolve(__dirname, '../../src/assets/data/realms.json'),
+  areas: path.resolve(__dirname, '../../src/assets/data/areas.json'),
+  seasons: path.resolve(__dirname, '../../src/assets/data/seasons.json'),
+  spirits: path.resolve(__dirname, '../../src/assets/data/spirits.json'),
+  rs: path.resolve(__dirname, '../../src/assets/data/returning-spirits.json')
 };
 
 const data = {};

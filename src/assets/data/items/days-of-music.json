@@ -59,7 +59,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin"
     },
-    "order": 337
+    "order": 342
   },
   {
     "id": 1930,
@@ -72,7 +72,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone"
     },
-    "order": 542
+    "order": 549
   },
   {
     "id": 1931,
@@ -84,7 +84,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat"
     },
-    "order": 268
+    "order": 273
   },
   {
     "id": 1932,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin"
     },
-    "order": 541
+    "order": 548
   },
   {
     "id": 1934,
@@ -133,7 +133,7 @@
       "previewUrl": "/assets/game/dyes/cape/Music_cape.jpg",
       "primary": {}
     },
-    "order": 871
+    "order": 880
   },
   {
     "id": 2405,
@@ -148,7 +148,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 82
+    "order": 84
   },
   {
     "id": 2407,
@@ -157,11 +157,18 @@
     "name": "Jam Station",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Jam-Station-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Jam-Station-instrument-instrument.png",
-    "order": 622
+    "order": 629
   },
   {
     "id": 2409,
     "guid": "2M4rr47Jc7",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2620,
+    "guid": "XfVJX-5Eww",
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"

@@ -381,6 +381,8 @@ export class SpiritTreeEditorComponent {
   }
 
   async shareImage(): Promise<void> {
+    if (!navigator.share) { return alert('Sharing is not supported by this browser.'); }
+
     const canvas = await this._spiritTreeRenderService.render(this.tree, {
       title: this.inpTitle.nativeElement.value.trim(),
       subtitle: this.inpSubtitle.nativeElement.value.trim(),

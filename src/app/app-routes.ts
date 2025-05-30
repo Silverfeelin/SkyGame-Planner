@@ -54,6 +54,7 @@ import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-
 import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
+import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -123,6 +124,7 @@ export const routes: Routes = [
           { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
           { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
+          { path: 'pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
