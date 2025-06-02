@@ -118,16 +118,20 @@
   {
     "id": 2562,
     "guid": "N6tMLLZzXC",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Quest",
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2563,
     "guid": "UNzV5t0pyZ",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Stance",
+    "name": "Sad Stance",
+    "_wiki": {
+      "href": "https://breezewiki.thebunny.zone/sky-children-of-the-light/wiki/Blue_Bird_Guide"
+    },
+    "icon": "https://file.garden/ZU5nsgpTCAXpLat9/slump.png",
+    "order": 121
   },
   {
     "id": 2564,
