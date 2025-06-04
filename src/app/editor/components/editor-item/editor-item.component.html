@@ -87,8 +87,16 @@
       </div>
     }
   </div>
+  <div>
+    <label for="wiki">Wiki link</label>
+    <input id="wiki" formControlName="wiki" class="" placeholder="Wiki link"/>
+    @let wiki = form.get('wiki')?.value;
+    @if (wiki) {
+      <a [href]="wiki" target="_blank" rel="noopener">Open Wiki</a>
+    }
+  </div>
   <div class="mt">
-    <button type="button" class="button-danger" (click)="cancel()">Cancel</button>
-    <button type="submit" class="float-right">Save</button>
+    <button type="submit" class="">Save</button>
+    <button type="button" class="button-danger float-right" (click)="cancel()">Cancel</button>
   </div>
 </form>

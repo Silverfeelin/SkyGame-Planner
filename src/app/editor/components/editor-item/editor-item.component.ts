@@ -33,6 +33,7 @@ export class EditorItemComponent {
     dyePreview: new FormControl(''),
     dyeInfo: new FormControl(''),
     level: new FormControl('1'),
+    wiki: new FormControl(''),
   });
 
   constructor() {
@@ -49,6 +50,7 @@ export class EditorItemComponent {
         dyePreview: item?.dye?.previewUrl || '',
         dyeInfo: item?.dye?.infoUrl || '',
         level: item?.level ? `${item.level}` : undefined,
+        wiki: item?._wiki?.href || '',
       });
     });
   }
@@ -92,6 +94,11 @@ export class EditorItemComponent {
 
     if (item.type === ItemType.Emote && value.level) {
       item.level = parseInt(value.level, 10);
+    }
+
+    if (value.wiki)  {
+      item._wiki ??= {};
+      item._wiki.href = value.wiki;
     }
 
     this.saved.emit(item);
