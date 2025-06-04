@@ -1,5 +1,8 @@
 <div class="map-container">
   <div class="map-controls map-controls-tl">
+    <button type="button" [ngbTooltip]="'Help'" container="body" placement="bottom-start" (click)="showHelp()">
+      <mat-icon>question_mark</mat-icon>
+    </button>
     <button type="button" [class.map-control-off]="!isNavigationEnabled" [ngbTooltip]="'Navigate'" container="body" placement="bottom-start" (click)="toggleNavigation()">
       <mat-icon>navigation</mat-icon>
     </button>

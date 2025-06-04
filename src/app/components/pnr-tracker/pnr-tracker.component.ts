@@ -96,6 +96,11 @@ export class PnrTrackerComponent implements AfterViewInit{
     L.polyline(pnrMarkers, { color: '#0ff', weight: 3 }).addTo(this.map);
   }
 
+  showHelp(): void {
+    alert('Click on a statue marker to mark it as found. If you enable navigation, the map moves to the next statue automatically.\n\n' +
+          'You can reset your progress by clicking the reset button.');
+  }
+
   toggleNavigation(): void {
     this.isNavigationEnabled = !this.isNavigationEnabled;
     if (this.isNavigationEnabled) {
