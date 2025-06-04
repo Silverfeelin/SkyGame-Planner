@@ -1,0 +1,9 @@
+<div class="container mb">
+  Not quite sure what to do here? Please have a look at the wiki page
+  <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing:-Items" target="_blank" class="text-link">Contributing: Items</a>.
+</div>
+@if (item) {
+  <app-card [title]="'Edit item'">
+    <app-editor-item [item]="item" (saved)="save($event)" (cancelled)="navigateBack()"></app-editor-item>
+  </app-card>
+}

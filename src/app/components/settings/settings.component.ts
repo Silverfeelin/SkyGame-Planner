@@ -37,6 +37,7 @@ export class SettingsComponent implements OnDestroy {
   currentTheme: string;
   themes = themes;
   wikiNewTab = false;
+  debugVisible = false;
 
   pwaInstallPrompt?: any = (window as any).pwaInstallPrompt;
 
@@ -50,6 +51,7 @@ export class SettingsComponent implements OnDestroy {
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
+    this.debugVisible = _settingService.debugVisible;
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
@@ -220,5 +222,10 @@ export class SettingsComponent implements OnDestroy {
   viewKeyboardShortcuts(): void {
     const event = new KeyboardEvent('keydown', { key: '?', ctrlKey: true, shiftKey: true });
     document.dispatchEvent(event);
+  }
+
+  toggleDebugInfo(): void {
+    this.debugVisible = !this.debugVisible;
+    this._settingService.debugVisible = this.debugVisible;
   }
 }

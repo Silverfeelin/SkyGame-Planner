@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { IItem } from 'src/app/interfaces/item.interface';
@@ -12,6 +12,8 @@ import { ItemSubIconsComponent } from '../item-icon/item-subicons/item-subicons.
 import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { NgIf } from '@angular/common';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
+import { SettingService } from '@app/services/setting.service';
+import { EditorItemComponent } from '@app/editor/components/editor-item/editor-item.component';
 
 @Component({
     selector: 'app-item',
@@ -27,6 +29,9 @@ export class ItemComponent implements OnInit {
 
   navSource?: INavigationTarget;
   navList?: INavigationTarget;
+
+  settingService = inject(SettingService);
+  debugVisible = this.settingService.debugVisible;
 
   constructor(
     private readonly _dataService: DataService,
@@ -67,5 +72,10 @@ export class ItemComponent implements OnInit {
     this.preventDefault(event);
     const src = (event.target as HTMLImageElement).src;
     window.open(src, '_blank');
+  }
+
+  copy(text: string | number | undefined): void {
+    if (!text) { return; }
+    navigator.clipboard.writeText(`${text}`);
   }
 }
