@@ -9,6 +9,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Hat"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Feast_santa.jpg"
+    },
     "order": 282
   },
   {
@@ -139,6 +143,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d1/Wool_hat_hair_2021.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Hat"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Feast_pombeanie.jpg"
     },
     "order": 283
   },

@@ -240,6 +240,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Hair"
     },
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Performance_stagehand.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Performance_storyteller.jpg"
+    },
     "order": 222,
     "group": "SeasonPass"
   },
@@ -384,6 +390,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/SoPerformance_-_Forgetful_Storyteller-hairstyle.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Performance_storyteller.jpg"
     },
     "order": 223
   },
@@ -614,6 +624,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Performance_mellow.jpg"
+    },
     "order": 224
   },
   {
@@ -742,6 +756,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/SOPerformance-Modest-Dancer-_Hairstyle.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Performance_modest.jpg"
     },
     "order": 221,
     "group": "SeasonPass"

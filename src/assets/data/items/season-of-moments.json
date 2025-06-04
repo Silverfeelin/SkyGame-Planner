@@ -330,6 +330,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Hair"
     },
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Moments_geologist.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Moments_geologist.jpg"
+    },
     "order": 243,
     "group": "SeasonPass"
   },
@@ -458,6 +464,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Ascetic-Monk-Hair-back.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Moments_monk.jpg"
     },
     "order": 242
   },

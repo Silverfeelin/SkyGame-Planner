@@ -351,6 +351,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Passage_tumble.jpg"
+    },
     "order": 237,
     "group": "SeasonPass"
   },
@@ -680,6 +684,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Passage-Overactive-Overachiever-Hair.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Passage_overachiever.jpg"
     },
     "order": 239,
     "group": "SeasonPass"

@@ -46,6 +46,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Base_moth.jpg"
+    },
     "autoUnlocked": true,
     "order": 131
   },

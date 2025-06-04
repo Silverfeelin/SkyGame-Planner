@@ -40,6 +40,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Assembly_ultpot.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Assembly_ultpot.jpg"
+    },
     "order": 201
   },
   {
@@ -431,6 +437,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Assembly_scold.jpg"
+    },
     "order": 205
   },
   {
@@ -577,6 +587,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Assembly_cadet.jpg"
+    },
     "order": 206,
     "group": "SeasonPass"
   },
@@ -655,6 +669,12 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Assembly_hair_marching_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Assembly_march.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Assembly_march.jpg"
     },
     "order": 203
   },
@@ -1010,6 +1030,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/25/Daydream-Forester-Hair-Front.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Assembly_daydream.jpg"
     },
     "order": 202,
     "group": "SeasonPass"

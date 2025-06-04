@@ -448,6 +448,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Remembrance_child.jpg"
+    },
     "order": 234,
     "group": "SeasonPass"
   },
@@ -560,6 +564,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/SoRemembrance-Tiptoeing-Tea-Brewer-Hair.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Remembrance_tiptoe.jpg"
     },
     "order": 236,
     "group": "SeasonPass"

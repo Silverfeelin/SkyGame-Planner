@@ -213,6 +213,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Hair"
     },
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Dreams_yeti.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Dreams_yeti.jpg"
+    },
     "order": 198
   },
   {
@@ -296,6 +302,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Dreams_hair_dancing_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Dreams_DP.jpg"
     },
     "order": 199,
     "group": "SeasonPass"
@@ -594,6 +604,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Dreams_hair_spinning_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Dreams_mentor.jpg"
     },
     "order": 200
   },

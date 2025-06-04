@@ -91,6 +91,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Lightseeker_piggyback.jpg"
+    },
     "order": 173
   },
   {
@@ -154,6 +158,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Lightseekers_hair_prairie_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Lightseeker_doublefive.jpg"
     },
     "order": 175,
     "group": "SeasonPass"
@@ -522,6 +530,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Lightseekers_hair_wasteland_v2.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Lightseeker_crab.jpg"
     },
     "order": 171
   },

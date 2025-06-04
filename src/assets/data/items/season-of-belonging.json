@@ -115,6 +115,10 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confetti_Cousin#Hair"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Belonging_confetti.jpg"
+    },
     "order": 176,
     "group": "SeasonPass"
   },
@@ -345,6 +349,10 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Belonging_Hair_Valley.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sparkler_Parent#Hair"
+    },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Belonging_sparkler.jpg"
     },
     "order": 177
   },
