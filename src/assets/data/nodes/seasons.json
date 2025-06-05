@@ -1144,6 +1144,16 @@
   { "guid": "IHMr-eFa8E", "item": "4sdZPgk41b", "c": 15 },
   { "guid": "q4hUvjPm6M", "item": "qPAqxHGUVI", "c": 18 },
   { "guid": "jmRb3oSNPy", "item": "Hi8NBjG271", "c": 75 },
+  // TS 141
+  { "guid": "joPE_k2pDQ", "item": "_o__3iD1Rh", "n": "B7IDADFsI4" },
+  { "guid": "B7IDADFsI4", "item": "_HKt5SUf0w", "c": 5, "nw": "KSZ-PU8HYe", "n": "ARHK3pLMkD", "ne": "yLfp0TiQnZ" },
+  { "guid": "KSZ-PU8HYe", "item": "rj8Dzz64e9", "c": 30 },
+  { "guid": "yLfp0TiQnZ", "item": "bb9Od8wEmp", "c": 3 },
+  { "guid": "ARHK3pLMkD", "item": "DFHjlCXHoD", "ac": 2, "n": "delwLsut_g" },
+  { "guid": "delwLsut_g", "item": "fg5RXP9p-W", "c": 5, "nw": "ZtnLElnyin", "n": "NDZhwaXc8h", "ne": "_s7ZAAYX87" },
+  { "guid": "ZtnLElnyin", "item": "4sdZPgk41b", "c": 15 },
+  { "guid": "_s7ZAAYX87", "item": "qPAqxHGUVI", "c": 18 },
+  { "guid": "NDZhwaXc8h", "item": "Hi8NBjG271", "c": 75 },
   // #region Twirling Champion
   { "guid": "-4dScFEOsV", "item": "tmhe-C2cN3", "nw": "9s0p-kQWkH", "n": "ncgdVwfIBO" },
   { "guid": "9s0p-kQWkH", "item": "zjAeiE3x_t" },
