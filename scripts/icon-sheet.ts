@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as util from 'util';
-import * as json5 from 'json5';
+import * as jsonc from 'jsonc-parser';
 import * as Spritesmith from 'spritesmith';
 const sharp = require('sharp');
 const CWebp = require('cwebp').CWebp;
@@ -14,7 +14,7 @@ const sheetWidth = iconSize * 16;
 
 interface IItem { guid: string, id: number, icon?: string };
 const itemsPath = path.resolve(__dirname, '../src/assets/data/items.json');
-const itemData: { items: Array<IItem> } = json5.parse(fs.readFileSync(itemsPath, 'utf8'));
+const itemData: { items: Array<IItem> } = jsonc.parse(fs.readFileSync(itemsPath, 'utf8'));
 itemData.items.sort((a: IItem, b: IItem) => a.id - b.id);
 
 const tempPath = path.resolve(__dirname, 'temp');
