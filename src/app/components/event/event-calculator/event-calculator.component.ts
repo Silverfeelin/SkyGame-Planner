@@ -213,15 +213,21 @@ export class EventCalculatorComponent {
     }
   }
 
-  onCurrencyInput(): void {
-    this.currencyInputChanged();
+  onCurrencyInput(evt: Event): void {
+    this.currencyInputChanged(evt);
     this.calculate();
     this.saveSettings();
   }
 
-  onCurrencyInputBlur(evt: Event): void {
+  onCurrencyInputBlur(evt: Event, isAsc = false): void {
     const target = evt.target as HTMLInputElement;
-    const value = parseInt(target.value, 10) || 0;
+    let value = isAsc ? this.parseDecimal(target.value) : this.parseInt(target.value);
+
+    if (isAsc && value % 0.25 !== 0) {
+      value = Math.round(value * 4) / 4;
+      target.value = value.toString();
+    }
+
     if (value <= 0) {
       target.value = '0';
     } else if (value > 99999) {
@@ -230,20 +236,26 @@ export class EventCalculatorComponent {
       target.value = '';
     }
 
-    this.currencyInputChanged();
+    this.currencyInputChanged(evt);
     this.calculate();
     this.saveSettings();
   }
 
-  currencyInputChanged(): void {
-    const targetEc = this.inpEc.nativeElement;
-    this.currencyCount = this._currencyService.clamp(parseInt(targetEc.value, 10) || 0);
-    const targetC = this.inpC.nativeElement;
-    this.candleCount = this._currencyService.clamp(parseInt(targetC.value, 10) || 0);
-    const targetH = this.inpH.nativeElement;
-    this.heartCount = this._currencyService.clamp(parseInt(targetH.value, 10) || 0);
-    const targetAc = this.inpAc.nativeElement;
-    this.acCount = this._currencyService.clamp(parseInt(targetAc.value, 10) || 0);
+  currencyInputChanged(evt: Event): void {
+    const target = evt.target as HTMLInputElement;
+    if (target === this.inpEc.nativeElement) {
+      this.currencyCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    }
+    if (target === this.inpC.nativeElement) {
+      this.candleCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    }
+    if (target === this.inpH.nativeElement) {
+      this.heartCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    }
+    if (target === this.inpAc.nativeElement && target.value !== '') {
+      this.acCount = this._currencyService.clamp(this.parseDecimal(target.value) || 0);
+      this.acCount = Math.round(this.acCount * 100) / 100;
+    }
 
     this.inpTimed?.forEach(inp => {
       const value = parseInt(inp.nativeElement.value, 10) || 0;
@@ -443,5 +455,8 @@ export class EventCalculatorComponent {
     const newWantedSet = new Set(newWantedValues);
     this.hasSkippedNode = requiredNodes.some(n => !newWantedSet.has(n) && !n.item?.unlocked);
   }
+
+  private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }
+  private parseDecimal(value?: string): number { return +(value?.replace(',', '') || 0) || 0; }
 }
 
