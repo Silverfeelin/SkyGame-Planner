@@ -1313,24 +1313,39 @@
       ]
     },
     // #endregion
-    // #region AURORA Encore Concerts (2025)
+    // #region AURORA Homecoming Concert (2025)
     {
       "guid": "RHk-FddHZx",
       "type": "Store",
-      "iaps": []
+      "iaps": [
+        "9CY9ZuRnX9",
+        "QVs45L8tMt",
+        "fLApkJ8Zyn"
+      ]
     },
     {
       "guid": "uANAClB_6I",
-      "type": "Spirit",
-      "spirit": "dK38RIPIOG",
+      "type": "Object",
+      "name": "Runaway Mannequin",
       "iaps": [
-        "QVs45L8tMt",
-        "fLApkJ8Zyn",
-        "9CY9ZuRnX9",
         "WoqNqPjm7p",
-        "pMv3KyVxHx",
+        "pMv3KyVxHx"
+      ]
+    },
+    {
+      "guid": "mKzOX4rWG-",
+      "type": "Object",
+      "name": "To The Love Mannequin",
+      "iaps": [
         "kuzbQO4-Fd",
         "aby5PKss6g",
+      ]
+    },
+    {
+      "guid": "p0-DJsTxcv",
+      "type": "Object",
+      "name": "Wings of AURORA Mannequin",
+      "iaps": [
         "cKKbbELBsO"
       ]
     },

@@ -2341,6 +2341,34 @@
     "c": 50
   },
   // #endregion
+  // #region AURORA Homecoming Concert (2025)
+  // Guide
+  { "guid": "-jPkPmG6b4", "item": "YXvxchiY37", "n": "PPQiln3EjV", "ne": "APjl2_zuZ8", "nw": "qBTcZU319K" },
+  { "guid": "qBTcZU319K", "item": "T71hdAEX-_", "h": 4 },
+  { "guid": "APjl2_zuZ8", "item": "nNSNKcR0jV", "h": 6 },
+  { "guid": "PPQiln3EjV", "item": "0vCi-aJZlj", "nw": "TqarnisrG2", "n": "wtEZIhdOUb" },
+  { "guid": "TqarnisrG2", "item": "7L0kmOL8-h", "h": 3 },
+  { "guid": "wtEZIhdOUb", "item": "iZ1lQxrYIi", "nw": "nOxb482NIx", "n": "nv8ZFilpJ9" },
+  { "guid": "nOxb482NIx", "item": "3cRBKxvpUY", "c": 5, "n": "76n5LZk-xI" },
+  { "guid": "76n5LZk-xI", "item": "RNEBgyMjrV", "h": 5 },
+  { "guid": "nv8ZFilpJ9", "item": "hwdDrpL-K5", "n": "_CQLbTHKX-" },
+  { "guid": "_CQLbTHKX-", "item": "uEYrMRIKMS", "nw": "lgQoTkuEKv", "n": "kmIstRGhCM", "ne": "o-tlpqie7K" },
+  { "guid": "lgQoTkuEKv", "item": "VdWQyivAwr", "h": 3 },
+  { "guid": "o-tlpqie7K", "item": "WaJAeLkow7", "c": 5, "n": "cjAHUiw0E1" },
+  { "guid": "cjAHUiw0E1", "item": "KhbsMGJgui", "h": 5 },
+  { "guid": "kmIstRGhCM", "item": "GL-0kVxHfU", "nw": "gAte3p5gva", "n": "1_EzUWUViQ" },
+  { "guid": "gAte3p5gva", "item": "QmFZUU1klg" },
+  { "guid": "1_EzUWUViQ", "item": "uSlZPzJdDo", "nw": "kr-iOcpc23", "n": "QZxY4YD-fu", "ne": "BtpdEgvNZj" },
+  { "guid": "kr-iOcpc23", "item": "IJUeE1lOwt", "h": 3 },
+  { "guid": "BtpdEgvNZj", "item": "AR3AyfDRZu", "c": 5, "n": "XzPffx_UKO" },
+  { "guid": "XzPffx_UKO", "item": "qKwEFLirdj", "h": 5 },
+  { "guid": "QZxY4YD-fu", "item": "KJ846bsf8j", "nw": "NFcJMMTGmn", "n": "7q2Cqu-HBV" },
+  { "guid": "NFcJMMTGmn", "item": "uVFQgZBbyy", "c": 20 },
+  { "guid": "7q2Cqu-HBV", "item": "a1zSVQ8GlN", "nw": "tjPzDeY5o5", "n": "Ki4yVNB35h", "ne": "tHyJWwa9ep" },
+  { "guid": "tjPzDeY5o5", "item": "xed4G-_mSE", "c": 20 },
+  { "guid": "tHyJWwa9ep", "item": "pugHKsR-io", "c": 200 },
+  { "guid": "Ki4yVNB35h", "item": "-66QzAlj3l", "c": 50 },
+  // #endregion
   // #region Aviary's Firework Festival (2023)
   {
     "guid": "qzjesJUZYH",

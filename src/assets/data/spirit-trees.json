@@ -1494,6 +1494,7 @@
       "guid": "U8EBIguISN",
       "node": "hnLmvU_fg8"
     },
+    { "guid": "qLJqS-BAYp", "node": "15X_X0AHKc" },
     // Mindful Miner
     {
       "guid": "bMfsxhWfRe",
@@ -1503,6 +1504,7 @@
       "guid": "ch9-I5m0Ba",
       "node": "jjxxIJvyo3"
     },
+    { "guid": "s_XB6-sfnp", "node": "kUOCWi4zBD" },
     // Warrior of Love
     {
       "guid": "mfj2dmg6Dd",
@@ -1512,11 +1514,13 @@
       "guid": "2kqCmbrCug",
       "node": "qSaF_V_XGE"
     },
+    { "guid": "qHdFiOJvXx", "node": "zdYZogArmw" },
     // Seed of Hope
     {
       "guid": "W7fm2UpXGb",
       "node": "4ohNhhcV87"
     },
+    { "guid": "h6-c8COSHy", "node": "nU0Anlo5ka" },
     // #endregion
     // #region Remembrance
     // Bereft Veteran
@@ -2117,6 +2121,9 @@
       "name": "AURORA Guide - Encore",
       "revisionType": "Limited"
     },
+    // #endregion
+    // #region AURORA Homecoming Concert
+    { "guid": "v2HU8RJ0L5", "node": "-jPkPmG6b4", "name": "AURORA Guide - Homecoming", "revisionType": "Limited" },
     // #endregion
     // #region Aviary's Firework Festival
     {
