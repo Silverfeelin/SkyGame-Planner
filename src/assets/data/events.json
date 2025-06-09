@@ -1135,6 +1135,7 @@
       "instances": [
         {
           "guid": "yNyYTdO1xU",
+          "name": "AURORA Encore Concerts",
           "date": { "day": 23, "month": 8, "year": 2023 },
           "endDate": { "day": 3, "month": 9, "year": 2023 },
           "shops": [
@@ -1145,6 +1146,24 @@
           ],
           "spirits": [
             { "guid": "7lXseoma3X", "spirit": "OaAUJHNIjE", "tree": "Nx8MFZDTe-" }
+          ]
+        },
+        {
+          "guid": "ZxXbhLuVyl",
+          "name": "AURORA Homecoming Concert",
+          "date": "2025-06-09",
+          "endDate": "2025-06-22",
+          "draft": true,
+          "spirits": [
+            {
+              "guid": "--glPju5F7",
+              "spirit": "U9vUspUuRp",
+              "tree": "kZJKg9jxtn"
+            }
+          ],
+          "shops": [
+            "RHk-FddHZx",
+            "uANAClB_6I"
           ]
         }
       ],

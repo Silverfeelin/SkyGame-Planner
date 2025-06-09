@@ -1313,6 +1313,29 @@
       ]
     },
     // #endregion
+    // #region AURORA Encore Concerts (2025)
+    {
+      "guid": "RHk-FddHZx",
+      "type": "Store",
+      "iaps": []
+    },
+    {
+      "guid": "uANAClB_6I",
+      "type": "Spirit",
+      "spirit": "dK38RIPIOG",
+      "iaps": [
+        "QVs45L8tMt",
+        "fLApkJ8Zyn",
+        "9CY9ZuRnX9",
+        "WoqNqPjm7p",
+        "pMv3KyVxHx",
+        "kuzbQO4-Fd",
+        "aby5PKss6g",
+        "cKKbbELBsO"
+      ]
+    },
+    // #endregion
+
     // #region Cinnamoroll Pop-Up Cafe (2024)
     {
       "guid": "6YoHc1liAI",
