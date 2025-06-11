@@ -236,6 +236,10 @@
     "type": "Cape",
     "name": "Transcendent Journey Cape",
     "icon": "/assets/game/items/2543.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Transcendent-Journey-Pack-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
+    },
     "order": 887
   },
   {
@@ -244,6 +248,10 @@
     "type": "Hair",
     "name": "Transcendent Journey Hair",
     "icon": "/assets/game/items/2544.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Transcendent-Journey-Pack-Hair-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
+    },
     "order": 292
   },
   {
@@ -252,6 +260,10 @@
     "type": "Mask",
     "name": "Transcendent Journey Mask",
     "icon": "/assets/game/items/2545.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Transcendent-Journey-Pack-Mask.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
+    },
     "order": 468
   }
 ]
