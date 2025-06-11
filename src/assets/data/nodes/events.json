@@ -2343,7 +2343,7 @@
   // #endregion
   // #region AURORA Homecoming Concert (2025)
   // Guide
-  { "guid": "-jPkPmG6b4", "item": "YXvxchiY37", "n": "PPQiln3EjV", "ne": "APjl2_zuZ8", "nw": "qBTcZU319K" },
+  { "guid": "-jPkPmG6b4", "item": "YXvxchiY37", "nw": "qBTcZU319K", "n": "PPQiln3EjV", "ne": "APjl2_zuZ8" },
   { "guid": "qBTcZU319K", "item": "T71hdAEX-_", "h": 4 },
   { "guid": "APjl2_zuZ8", "item": "nNSNKcR0jV", "h": 6 },
   { "guid": "PPQiln3EjV", "item": "0vCi-aJZlj", "nw": "TqarnisrG2", "n": "wtEZIhdOUb" },
@@ -2357,7 +2357,7 @@
   { "guid": "o-tlpqie7K", "item": "WaJAeLkow7", "c": 5, "n": "cjAHUiw0E1" },
   { "guid": "cjAHUiw0E1", "item": "KhbsMGJgui", "h": 5 },
   { "guid": "kmIstRGhCM", "item": "GL-0kVxHfU", "nw": "gAte3p5gva", "n": "1_EzUWUViQ" },
-  { "guid": "gAte3p5gva", "item": "QmFZUU1klg" },
+  { "guid": "gAte3p5gva", "item": "QmFZUU1klg", "c": 3 },
   { "guid": "1_EzUWUViQ", "item": "uSlZPzJdDo", "nw": "kr-iOcpc23", "n": "QZxY4YD-fu", "ne": "BtpdEgvNZj" },
   { "guid": "kr-iOcpc23", "item": "IJUeE1lOwt", "h": 3 },
   { "guid": "BtpdEgvNZj", "item": "AR3AyfDRZu", "c": 5, "n": "XzPffx_UKO" },
