@@ -136,16 +136,16 @@
   {
     "id": 2564,
     "guid": "gNld1YAW4D",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Quest",
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2565,
     "guid": "00xVeEcFGx",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
   {
     "id": 2566,
