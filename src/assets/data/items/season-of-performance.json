@@ -242,9 +242,7 @@
     },
     "dye": {
       "primary": {},
-      "secondary": {},
       "previewUrl": "/assets/game/dyes/hair/Performance_stagehand.jpg",
-      "infoUrl": "/assets/game/dyes/hair/2slots_Performance_storyteller.jpg"
     },
     "order": 222,
     "group": "SeasonPass"
@@ -393,7 +391,9 @@
     },
     "dye": {
       "primary": {},
-      "previewUrl": "/assets/game/dyes/hair/Performance_storyteller.jpg"
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Performance_storyteller.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Performance_storyteller.jpg"
     },
     "order": 223
   },
