@@ -45,7 +45,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Snowflake_Cape"
     },
-    "order": 874
+    "order": 881
   },
   {
     "id": 1879,
@@ -61,7 +61,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Days_of_Feast_Cape"
     },
-    "order": 873
+    "order": 880
   },
   {
     "id": 1880,
@@ -229,7 +229,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Ancestor_Cape"
     },
-    "order": 875
+    "order": 882
   },
   {
     "id": 1896,
@@ -248,7 +248,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Feast_Goggles"
     },
-    "order": 109,
+    "order": 108,
     "dye": {
       "previewUrl": "/assets/game/dyes/Feast_yetigoggles.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Feast_yetigoggles.jpg",
@@ -296,7 +296,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Cape"
     },
-    "order": 876
+    "order": 883
   },
   {
     "id": 1976,
@@ -366,7 +366,7 @@
       "previewUrl": "/assets/game/dyes/cape/Feast_peek.jpg",
       "primary": {}
     },
-    "order": 877
+    "order": 884
   },
   {
     "id": 1983,
@@ -383,7 +383,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Wonderland-Primrose-Pinafore-Dress-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Wonderland-Primrose-Pinafore-Dress.png",
-    "order": 83
+    "order": 82
   },
   {
     "id": 2417,
@@ -403,7 +403,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Wonderland-Cafe-Corridor-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Wonderland-Cafe-Corridor.png",
-    "order": 732
+    "order": 739
   },
   {
     "id": 2419,
@@ -413,7 +413,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Wonderland-Teacup-Bath-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Wonderland-Teacup-Bath-Prop.png",
-    "order": 731
+    "order": 738
   },
   {
     "id": 2420,

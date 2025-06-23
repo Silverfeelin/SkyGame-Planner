@@ -1251,6 +1251,27 @@
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Tournament_of_Triumph"
       }
+    },
+    {
+      "guid": "FH0tm4guOI",
+      "name": "Workshop Show & Tell",
+      "shortName": "Show & Tell",
+      "imageUrl": "https://i.imgur.com/0xUpfEj.png",
+      "imagePosition": "top",
+      "instances": [
+        {
+          "guid": "xP28yRGNlG",
+          "date": "2025-06-23",
+          "endDate": "2025-07-06",
+          "shops": [
+            "d9f149Afi3",
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2028261c87dd8056bdf6fb6a4466af21&pm=c"
+          }
+        }
+      ]
+
     }
     // #endregion
   ]

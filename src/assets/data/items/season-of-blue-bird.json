@@ -31,7 +31,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Blue-Bird-Guide-Ultimate-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Blue-Bird-Guide-Ultimate-Facepiece.png",
-    "order": 101
+    "order": 100
   },
   {
     "id": 2550,
@@ -45,7 +45,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_whitecape.jpg"
     },
-    "order": 843
+    "order": 850
   },
   {
     "id": 2551,
@@ -175,7 +175,7 @@
     "name": "Divining Wise Grandparent Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Divining-Wise-Grandparent-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Divining-Wise-Grandparent-Facepiece.png",
-    "order": 102
+    "order": 101
   },
   {
     "id": 2570,
@@ -189,7 +189,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_grandpacape.jpg"
     },
-    "order": 842
+    "order": 849
   },
   {
     "id": 2571,
@@ -427,7 +427,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_touslecape.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslecape.jpg"
     },
-    "order": 840
+    "order": 847
   },
   {
     "id": 2596,
@@ -480,7 +480,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_beetlecape.jpg"
     },
-    "order": 841
+    "order": 848
   },
   {
     "id": 2602,
@@ -556,7 +556,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_pleafulboots.jpg"
     },
-    "order": 65
+    "order": 120
   },
   {
     "id": 2611,

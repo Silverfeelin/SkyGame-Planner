@@ -103,7 +103,7 @@
     "name": "Nesting Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Nesting-Guide-Mannequin-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Nesting-Guide-Mannequin-Figurine-Prop.png",
-    "order": 724
+    "order": 731
   },
   {
     "id": 2165,
@@ -357,7 +357,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 831,
+    "order": 838,
     "group": "SeasonPass"
   },
   {
@@ -945,7 +945,7 @@
     "name": "Instrument Stand",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Lantern-Stand-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/Instrument-Stand-Prop.png",
-    "order": 725
+    "order": 732
   },
   {
     "id": 2215,

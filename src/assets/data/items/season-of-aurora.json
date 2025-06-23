@@ -56,7 +56,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts"
     },
-    "order": 812
+    "order": 819
   },
   {
     "id": 552,
@@ -393,7 +393,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Cape"
     },
-    "order": 808
+    "order": 815
   },
   {
     "id": 1513,
@@ -528,7 +528,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Cape"
     },
-    "order": 810
+    "order": 817
   },
   {
     "id": 1526,
@@ -667,7 +667,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Cape"
     },
-    "order": 809,
+    "order": 816,
     "group": "SeasonPass"
   },
   {
@@ -799,7 +799,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Cape"
     },
-    "order": 807,
+    "order": 814,
     "group": "SeasonPass"
   },
   {
@@ -887,7 +887,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#Giving_In_Cape"
     },
-    "order": 813
+    "order": 820
   },
   {
     "id": 1560,
@@ -900,7 +900,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#Wings_of_AURORA"
     },
-    "order": 811
+    "order": 818
   },
   {
     "id": 1561,
@@ -995,5 +995,5 @@
     "type": "Special",
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
-  },
+  }
 ]

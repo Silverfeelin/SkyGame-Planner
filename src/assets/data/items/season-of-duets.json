@@ -23,7 +23,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 832
+    "order": 839
   },
   {
     "id": 2238,
@@ -33,7 +33,7 @@
     "name": "Duets Ultimate Instrument",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
-    "order": 716
+    "order": 723
   },
   {
     "id": 2239,
@@ -114,7 +114,7 @@
     "name": "The Pianist's Beginnings Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Pianists-Beginnings-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Pianists-Beginnings-Rug-Prop.png",
-    "order": 717
+    "order": 724
   },
   {
     "id": 2247,
@@ -226,7 +226,7 @@
     "name": "The Musicians' Legacy Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Musicians-Legacy-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Musicians-Legacy-Grand-Piano-Prop.png",
-    "order": 715,
+    "order": 722,
     "group": "SeasonPass"
   },
   {
@@ -308,7 +308,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 833
+    "order": 840
   },
   {
     "id": 2268,
@@ -317,7 +317,7 @@
     "name": "The Cellist's Flourishing Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Cellists-Flourishing-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Rug-Prop.png",
-    "order": 718
+    "order": 725
   },
   {
     "id": 2269,
@@ -390,7 +390,7 @@
     "name": "The Pianist's Flourishing Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Pianists-Flourishing-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Pianists-Flourishing-Shoes.png",
-    "order": 117
+    "order": 116
   },
   {
     "id": 2277,
@@ -446,7 +446,7 @@
     "name": "Compassionate Cellist Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Compassionate-Cellist-Face-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Compassionate-Cellist-Face-Accessory.png",
-    "order": 100
+    "order": 99
   },
   {
     "id": 2296,

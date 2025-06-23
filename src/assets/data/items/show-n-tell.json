@@ -1,0 +1,87 @@
+[
+
+  {
+    "id": 2641,
+    "guid": "c07ypZRsQ_",
+    "name": "Dressing Table Prop",
+    "type": "Furniture",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Dressing-Table-Prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Dressing-Table-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Dressing-Table-Prop.png"
+    },
+    "order": 715
+  },
+  {
+    "id": 2642,
+    "guid": "h3YmCH50KT",
+    "name": "Blue Stool",
+    "type": "Furniture",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Blue-Stool-Prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Blue-Stool-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Blue-Stool-Prop.png"
+    },
+    "order": 721
+  },
+  {
+    "id": 2643,
+    "guid": "lJK0vZgpOB",
+    "name": "Floor Curtain",
+    "type": "Furniture",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Floor-Curtain-prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Floor-Curtain-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Floor-Curtain-prop.png"
+    },
+    "order": 716
+  },
+  {
+    "id": 2644,
+    "guid": "_Ih5rxUbGr",
+    "name": "Flower Vase",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Small-Flower-Vase-Prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Floor-Curtain-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Floor-Curtain-prop.png"
+    },
+    "order": 719
+  },
+  {
+    "id": 2645,
+    "guid": "o2j4czmAqt",
+    "name": "Left Curtain",
+    "type": "Furniture",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Left-Curtain-prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Left-Curtain-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Left-Curtain-prop.png"
+    },
+    "order": 717
+  },
+  {
+    "id": 2646,
+    "guid": "VV-svxaQrp",
+    "name": "Small C Rug",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Small-C-Shape-Rug-Prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Small-C-Shape-Rug-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Small-C-Shape-Rug-Prop.png"
+    },
+    "order": 718
+  },
+  {
+    "id": 2647,
+    "guid": "P4PpAo47Ad",
+    "name": "Decorative Stick Jar",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Stick-Holder-Cup-Prop.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Stick-Holder-Cup-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/File:Stick-Holder-Cup-Prop.png"
+    },
+    "order": 720
+  }
+]
