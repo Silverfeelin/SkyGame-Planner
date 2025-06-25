@@ -77,7 +77,7 @@
         </span>
       </div>
       <!-- Calculator -->
-      @if (state === 'active' || state === 'future') {
+      @if (instance.calculatorData && (state === 'active' || state === 'future')) {
         <a class="container colspan-2" [routerLink]="'/event-calculator'" [queryParams]="{ guid: instance.guid }">
           <mat-icon class="menu-icon">calculate</mat-icon>
           <span class="menu-label">
