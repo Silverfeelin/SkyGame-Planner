@@ -70,7 +70,7 @@
         </span>
       </div>
       <!-- Calculator -->
-      <a *ngIf="sections['calculator']" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"
+      <a *ngIf="sections['calculator'] && instance?.calculatorData" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"
         class="item link" [style.order]="sections['calculator']">
         <mat-icon class="menu-icon">calculate</mat-icon>
         <span class="menu-label">Calculator</span>
