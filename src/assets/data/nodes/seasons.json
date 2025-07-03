@@ -2765,6 +2765,18 @@
   { "guid": "17Q7KrRoHg", "item": "InfpXXK1sw", "c": 45 },
   { "guid": "J2rF0DF4M8", "item": "NvsMJBJx9a", "c": 5, "n": "UVFgaaX_lL" },
   { "guid": "UVFgaaX_lL", "item": "deXq8qb84g", "c": 55 },
+  // TS 143  
+  { "guid": "JvVtiSaIRp", "item": "dNoANrAQV0", "nw": "iFJgenkDS9", "n": "LyRnIs-4u1" },
+  { "guid": "iFJgenkDS9", "item": "0xqk-p9fsY", "h": 4 },
+  { "guid": "LyRnIs-4u1", "item": "uG2bC9p_bN", "c": 5, "nw": "9OjB4PVI0v", "n": "Ot3FgifnwS", "ne": "rp3ClUJH4F" },
+  { "guid": "9OjB4PVI0v", "item": "NJXnW8a4Rq", "c": 30 },
+  { "guid": "rp3ClUJH4F", "item": "RIEAODPW5E", "c": 3 },
+  { "guid": "Ot3FgifnwS", "item": "3ay5Vg6AUH", "ac": 2, "n": "AZlLWXIC83" },
+  { "guid": "AZlLWXIC83", "item": "owG_KD9opY", "h": 3, "nw": "WYZNPAQBlm", "n": "Pd9ncg65iw", "ne": "qR4KMa80cW" },
+  { "guid": "WYZNPAQBlm", "item": "dLKdIkOcZ0", "h": 6 },
+  { "guid": "qR4KMa80cW", "item": "InfpXXK1sw", "c": 45 },
+  { "guid": "Pd9ncg65iw", "item": "NvsMJBJx9a", "c": 5, "n": "G9CdY5TzJo" },
+  { "guid": "G9CdY5TzJo", "item": "deXq8qb84g", "c": 55 },
   // #region Chuckling Scout
   { "guid": "7UtgKGCYKK", "item": "iSTnFoyozE", "nw": "eZDuZwE24u", "n": "v7TnisXBeO" },
   { "guid": "eZDuZwE24u", "item": "ymKZH8BJwt" },
