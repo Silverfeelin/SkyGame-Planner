@@ -22,7 +22,7 @@ export class WingedLightComponent {
   wl = 0; totalWl = 0;
 
   wedgeCount = 0;
-  wedges = [1, 2, 5, 10, 20, 35, 55, 75, 100, 120, 150, 200, 250];
+  wedges = [1, 2, 5, 10, 20, 35, 55, 75, 100, 120, 150, 200, 250, 300];
   wedgesReverse = this.wedges.slice().reverse();
   wedgeMax = this.wedges.at(-1)!;
   wedgeNext?: number;

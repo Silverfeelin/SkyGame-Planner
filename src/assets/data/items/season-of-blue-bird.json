@@ -150,23 +150,25 @@
   {
     "id": 2566,
     "guid": "yrnH1iDS2g",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Quest 6",
+    "type": "Quest",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2567,
     "guid": "Mra78XxrKT",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Call",
+    "name": "Blue Bird Call",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Blue-Bird-Call.png",
+    "order": 91
   },
   {
     "id": 2568,
     "guid": "nEc3TKQJST",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Blue-Bird-Guide-Additional-Prop-icon.png"
+    "type": "Furniture",
+    "name": "Perch Tree",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Blue-Bird-Guide-Additional-Prop-icon.png",
+    "order": 605
   },
   {
     "id": 2569,
