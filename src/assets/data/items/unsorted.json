@@ -66,5 +66,23 @@
     "type": "Spell",
     "name": "Medium Birthday Cake",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e7/Days_of_Sky_-_Medium_cake-spell-icon-Morybel-0146.png"
+  },
+  {
+    "id": 2656,
+    "guid": "vPenDMkJkY",
+    "type": "Prop",
+    "name": "Anniversary Popcorn Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SkyFest-popcorn-prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/SkyFest-popcorn-prop.png",
+    "order": 10000
+  },
+  {
+    "id": 2657,
+    "guid": "IZNxLq33GB",
+    "type": "FaceAccessory",
+    "name": "Anniversary Cinema 3D Glasses",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/SkyFest-3D-Glasses-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/SkyFest-3D-Glasses.png",
+    "order": 10000
   }
 ]

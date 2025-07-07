@@ -793,6 +793,30 @@
     },
     // #endregion
     // #region Sky Anniversary (2025)
+    {
+      "guid": "JQ7fDlgkkP",
+      "type": "Store",
+      "iaps": [
+        "uuZ-VMISUm"
+      ]
+    },
+    {
+      "guid": "MWG4-11wq3",
+      "type": "Spirit",
+      "spirit": "ExkE9a7QJ0",
+      "iaps": [
+        "t1S_HJ7l3A"
+      ]
+    },
+    {
+      "guid": "_nN6T9eeX3",
+      "type": "Spirit",
+      "spirit": "tam_Fpnh1g",
+      "iaps": [
+        "-dyNdYI7we",
+        "np5SZyLLvS",
+      ]
+    },
     // #endregion
     // #region Lazy Days (2022)
     {

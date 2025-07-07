@@ -36,4 +36,41 @@
     ]
   },
   // #endregion
+  // #region Sky Anniversary (2025)
+  {
+    "guid": "uuZ-VMISUm",
+    "name": "Anniversary Cinema Set",
+    "price": 4.99,
+    "items": [
+      "IZNxLq33GB",
+      "vPenDMkJkY",
+    ]
+  },
+  {
+    "guid": "t1S_HJ7l3A",
+    "name": "SkyFest Wireframe Cape",
+    "price": 19.99,
+    "returning": true,
+    "items": [
+      "meld4SQL8l"
+    ]
+  },
+  {
+    "guid": "-dyNdYI7we",
+    "name": "SkyFest Oreo Headband",
+    "price": 4.99,
+    "returning": true,
+    "items": [
+      "z648Yl_rsv"
+    ]
+  },
+  {
+    "guid": "np5SZyLLvS",
+    "name": "Oreo Plush",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "dEWiCE1-6D"
+    ]
+  },
 ]
