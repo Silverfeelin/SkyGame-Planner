@@ -618,7 +618,21 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=9dbda8384558444db9efe183594a0393"
           },
-        }
+        },
+        {
+          "guid": "i7dT3CcVzj",
+          "date": "2025-07-07",
+          "endDate": "2025-08-17",
+          "spirits": [ 
+            { "guid": "ckHoMpY-hP", "spirit": "U9vUspUuRp", "tree": "kZJKg9jxtn" } 
+          ],
+          "shops": [
+          ],
+          "draft": true,
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2028261c87dd80939bf7d0b78ba2f4bd&pm=c"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary"
