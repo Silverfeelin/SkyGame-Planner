@@ -105,7 +105,7 @@ export class EventCalculatorComponent {
     if (!this.hasSpirits) { return; }
 
     this.calculatorData = instance.calculatorData;
-    this.currencyPerDay = instance.calculatorData?.dailyCurrencyAmount || undefined;
+    this.currencyPerDay = instance.calculatorData?.dailyCurrencyAmount ?? 0;
     this.concluded = this.eventInstance.endDate < DateTime.now();
 
     // Load timed currencies.
