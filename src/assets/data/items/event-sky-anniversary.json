@@ -387,5 +387,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/SkyFest-3D-Glasses-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/SkyFest-3D-Glasses.png",
     "order": 109
-  }
+  },
+  {
+    "id": 2658,
+    "guid": "8l3QuiKC_8",
+    "type": "Cape",
+    "name": "TGC Wireframe Cape",
+    "icon": "",
+    "order": 873
+  },
 ]
