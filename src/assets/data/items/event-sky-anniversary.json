@@ -377,6 +377,9 @@
     "name": "Anniversary Popcorn",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SkyFest-popcorn-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/32/SkyFest-popcorn-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Cinema_Set"
+    },
     "order": 609
   },
   {
@@ -386,6 +389,9 @@
     "name": "Anniversary Cinema 3D Glasses",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/SkyFest-3D-Glasses-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/SkyFest-3D-Glasses.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Cinema_Set"
+    },
     "order": 109
   },
   {
@@ -393,7 +399,11 @@
     "guid": "8l3QuiKC_8",
     "type": "Cape",
     "name": "TGC Wireframe Cape",
-    "icon": "https://i.imgur.com/QcoMwHr.png",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/TGC-Wireframe-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/TGC-Wireframe-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#TGC_Wireframe_Cape"
+    },
     "order": 874
   }
 ]
