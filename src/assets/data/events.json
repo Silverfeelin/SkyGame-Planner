@@ -636,7 +636,8 @@
             "timedCurrency": [
               { "guid": "NAZ-cZ_scf", "date": "2025-07-07", "endDate": "2025-08-17", "amount": 10, "description": "Currency around Aviary Village x5" },
               { "guid": "sVl_oIBWtm", "date": "2025-07-07", "endDate": "2025-07-13", "amount": 30, "description": "Week 1 rewards at Sky Cinema" },
-              { "guid": "AdIhz8Eoxy", "date": "2025-07-14", "endDate": "2025-07-20", "amount": 0, "description": "REWARDS ARE NOT KNOWN YET, PLEASE CHECK NEXT WEEK!" },
+              { "guid": "qKkE5n5QjX", "date": "2025-07-14", "endDate": "2025-07-20", "amount": 30, "description": "Week 2 rewards at Sky Cinema" },
+              { "guid": "AdIhz8Eoxy", "date": "2025-07-21", "endDate": "2025-07-27", "amount": 0, "description": "REWARDS ARE NOT KNOWN YET, PLEASE CHECK NEXT WEEK!" },
             ]
           },
           "_calendar": {
