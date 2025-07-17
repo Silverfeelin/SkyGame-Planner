@@ -3802,6 +3802,19 @@
   { "guid": "NbOstIgvmK", "item": "1T0D06zFUX", "sc": 34, "nw": "K36g_5MoE9", "n": "Bb-9MVW6Zt" },
   { "guid": "K36g_5MoE9", "item": "hE65fn-mBH" },
   { "guid": "Bb-9MVW6Zt", "item": "VsraqNSiML", "sc": 3 },
+  // TS 144  
+  { "guid": "Q-mUmZEFFP", "item": "X8TxVCwAoY", "nw": "r1At8Ym0To", "n": "UoFvfuEmxi" },
+  { "guid": "r1At8Ym0To", "item": "zPG9h4NM2q", "h": 4 },
+  { "guid": "UoFvfuEmxi", "item": "t8vsyexQQz", "nw": "Di5scXRqrc", "n": "cKyNwKPwkb", "c": 5, "ne": "6j-scjq3V7" },
+  { "guid": "Di5scXRqrc", "item": "eesH4ixwlq", "c": 55 },
+  { "guid": "6j-scjq3V7", "item": "iEu_CHxWUt", "c": 3 },
+  { "guid": "cKyNwKPwkb", "item": "rouWH32mmG", "n": "_G6s1grGeS", "ac": 2 },
+  { "guid": "_G6s1grGeS", "item": "5_eEcizGMw", "nw": "4XLYJ1WBgX", "n": "GgJFag7DMI", "ne": "wJadxpJh75", "h": 3 },
+  { "guid": "4XLYJ1WBgX", "item": "xlEzjV6XFr", "h": 6 },
+  { "guid": "wJadxpJh75", "item": "1T0D06zFUX", "c": 15 },
+  { "guid": "GgJFag7DMI", "item": "BmakKYb2wG", "nw": "teZGnt6e67", "n": "oFhHxrZo6b", "c": 5 },
+  { "guid": "teZGnt6e67", "item": "cXuwp1MnHZ", "c": 45 },
+  { "guid": "oFhHxrZo6b", "item": "hE65fn-mBH", "c": 50 },
   // #endregion
   // #region Ascetic Monk
   { "guid": "BiYQCvfbCi", "item": "VASzthgEAN", "nw": "XFdTm_SNX9", "n": "yLL5TgdWma" },
