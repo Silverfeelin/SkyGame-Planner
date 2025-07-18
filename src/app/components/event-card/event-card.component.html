@@ -59,6 +59,12 @@
             <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
           </app-discord-link>
         </div>
+        <div [style.order]="sections['dailies']">
+          <a href="https://thatskyapplication.com/daily-guides" target="_blank" class="item d-block" style="text-decoration: none;">
+            <mat-icon class="menu-icon">language</mat-icon>
+            <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens thatskyapplication)</span>
+          </a>
+        </div>
       }
       <!-- Check-in -->
       <div *ngIf="sections['checkin']" (click)="checkin($event)"
