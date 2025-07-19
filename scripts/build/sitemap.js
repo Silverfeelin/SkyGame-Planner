@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const json5 = require('json5');
+const jsonc = require('jsonc-parser');
 
 const sitemapPath = path.resolve(__dirname, '../../src/sitemap.xml');
 const sitemapBasePath = path.resolve(__dirname, '../../src/sitemap-base.xml');
@@ -17,7 +17,7 @@ const paths = {
 
 const data = {};
 for (const key in paths) {
-  data[key] = json5.parse(fs.readFileSync(paths[key], 'utf8'));
+  data[key] = jsonc.parse(fs.readFileSync(paths[key], 'utf8'));
 }
 
 const sitemap = fs.readFileSync(sitemapBasePath, 'utf8');

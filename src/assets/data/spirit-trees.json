@@ -618,6 +618,7 @@
       "guid": "pYPMMB_Dq3",
       "node": "7ng19Cq_Jj"
     },
+    { "guid": "AnFlriIA1l", "node": "joPE_k2pDQ" },
     // #region Twirling Champion
     {
       "guid": "9lQ4T3H65f",
@@ -706,6 +707,7 @@
       "guid": "2opAUtbkkR",
       "node": "jfUwNEL-ns"
     },
+    { "guid": "SKqwmahcxz", "node": "4vQMQtPIuP" },
     // Sparkler Parent
     {
       "guid": "sM-gGfmBb9",
@@ -1237,6 +1239,7 @@
       "guid": "fHPe43oCch",
       "node": "ZQOPWn4zx8"
     },
+    { "guid": "9EwfRwkT1c", "node": "JvVtiSaIRp" },
     // Chuckling Scout
     {
       "guid": "n43yrGprN_",
@@ -1493,6 +1496,7 @@
       "guid": "U8EBIguISN",
       "node": "hnLmvU_fg8"
     },
+    { "guid": "qLJqS-BAYp", "node": "15X_X0AHKc" },
     // Mindful Miner
     {
       "guid": "bMfsxhWfRe",
@@ -1502,6 +1506,7 @@
       "guid": "ch9-I5m0Ba",
       "node": "jjxxIJvyo3"
     },
+    { "guid": "s_XB6-sfnp", "node": "kUOCWi4zBD" },
     // Warrior of Love
     {
       "guid": "mfj2dmg6Dd",
@@ -1511,11 +1516,13 @@
       "guid": "2kqCmbrCug",
       "node": "qSaF_V_XGE"
     },
+    { "guid": "qHdFiOJvXx", "node": "zdYZogArmw" },
     // Seed of Hope
     {
       "guid": "W7fm2UpXGb",
       "node": "4ohNhhcV87"
     },
+    { "guid": "h6-c8COSHy", "node": "nU0Anlo5ka" },
     // #endregion
     // #region Remembrance
     // Bereft Veteran
@@ -1585,6 +1592,7 @@
       "guid": "C6mpLeVi_m",
       "node": "o4BiBgXh33"
     },
+    { "guid": "q5KTr1IKfB", "node": "Q-mUmZEFFP" },
     // Ascetic Monk
     {
       "guid": "QxacM-TYol",
@@ -1969,6 +1977,8 @@
       "node": "5Z8NmDaupw"
     },
     // #endregion
+    // Sky Anniversary 2025
+    { "guid": "DuDLYuznJK", "node": "GNFh2wSha5" },
     // #endregion
     // #region Days of Sunlight
     // Days of Sunlight (2022)
@@ -2116,6 +2126,9 @@
       "name": "AURORA Guide - Encore",
       "revisionType": "Limited"
     },
+    // #endregion
+    // #region AURORA Homecoming Concert
+    { "guid": "v2HU8RJ0L5", "node": "-jPkPmG6b4", "name": "AURORA Guide - Homecoming", "revisionType": "Limited" },
     // #endregion
     // #region Aviary's Firework Festival
     {

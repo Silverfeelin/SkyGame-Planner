@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
-const json5 = require('json5');
+const jsonc = require('jsonc-parser');
 
-/** Reads a JSON5 file and returns the parsed data. */
-export const readJson5File = (filePath: string): any => {
+/** Reads a JSONC file and returns the parsed data. */
+export const readJsoncFile = (filePath: string): any => {
   const fileData = fs.readFileSync(filePath, 'utf8');
-  const data = json5.parse(fileData);
+  const data = jsonc.parse(fileData);
   return data;
 };
 
@@ -16,14 +16,14 @@ export const getFilePaths = (dirPath: string): string[] => {
 }
 
 /** Merges all JSON arrays from a directory into a new file at `outPath`.
- * The input files should be a JSON5-compatible array of objects.
+ * The input files should be a JSONC-compatible array of objects.
  * The output file will be formatted { "items": [ ... ] }.
  */
 export const mergeItemFiles = (dirPath: string, outPath: string): void => {
   const items = [];
   const filePaths = getFilePaths(dirPath);
   for (const filePath of filePaths) {
-    const data = readJson5File(filePath);
+    const data = readJsoncFile(filePath);
     items.push(...data);
   }
 
@@ -34,7 +34,7 @@ export const mergeItemFiles = (dirPath: string, outPath: string): void => {
 
 /** Checks the given file for item ID presence and uniqueness. */
 export const checkFileItemIds = (filePath: string): void => {
-  const data = readJson5File(filePath);
+  const data = readJsoncFile(filePath);
   const items = Array.isArray(data) ? data : data.items;
   if (!items?.length) {
     throw new Error(`No items found in ${filePath}`);

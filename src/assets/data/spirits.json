@@ -1425,7 +1425,7 @@
       "name": "AURORA Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/SoAurora-Seasonal-guide.png",
       "tree": "P1nzgnNVFT",
-      "treeRevisions": ["gu5doPh4OB", "Nx8MFZDTe-"],
+      "treeRevisions": ["gu5doPh4OB", "Nx8MFZDTe-", "v2HU8RJ0L5"],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide"
       }
@@ -1934,7 +1934,7 @@
     {
       "guid": "faWKshu5Vh",
       "type": "Season",
-      "name": "Customed Confetti Cousin",
+      "name": "Costumed Confetti Cousin",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Costumed-Confetti-Cousin-cutout.png",
       "tree": "GEOf9iPZiz"
     },
@@ -2065,6 +2065,11 @@
       "guid": "mYOzGrzNHU",
       "type": "Event",
       "name": "Anniversary Guide"
+    },
+    {
+      "guid": "tam_Fpnh1g",
+      "type": "Event",
+      "name": "Anniversary Chibi IAP Guide"
     },
     // Days of Sunlight
     {

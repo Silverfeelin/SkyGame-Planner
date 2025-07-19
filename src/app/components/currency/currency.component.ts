@@ -66,7 +66,7 @@ export class CurrencyComponent {
       this.inpCurrencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
       this.currencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
 
-      this.dailyEventCurrency[instance.guid] = instance.calculatorData?.dailyCurrencyAmount || 5;
+      this.dailyEventCurrency[instance.guid] = instance.calculatorData?.dailyCurrencyAmount ?? 5;
     }
 
     // Convert old season currency. This might be better suited to run on site load.

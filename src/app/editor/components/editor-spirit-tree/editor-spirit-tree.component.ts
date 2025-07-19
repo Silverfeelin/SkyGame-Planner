@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
-import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../spirit-tree.component";
+import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../components/spirit-tree/spirit-tree.component";
 import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { ItemClickEvent, ItemsComponent } from "../../items/items.component";
+import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
 import { IItem, ItemType } from '@app/interfaces/item.interface';
-import { CardComponent } from "../../layout/card/card.component";
-import { ItemIconComponent } from "../../items/item-icon/item-icon.component";
+import { CardComponent } from "../../../components/layout/card/card.component";
+import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
 import { INode } from '@app/interfaces/node.interface';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
@@ -16,10 +16,10 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { ICost } from '@app/interfaces/cost.interface';
 import { ISpirit, SpiritType } from '@app/interfaces/spirit.interface';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
-import { OverlayComponent } from "../../layout/overlay/overlay.component";
-import { SpiritTreeEditorItemComponent } from './spirit-tree-editor-item/spirit-tree-editor-item.component';
+import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
+import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
-import { TabsComponent } from "../../layout/tabs/tabs.component";
+import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
 import { TabDirective } from '@app/components/layout/tabs/tab.directive';
 
 type TreeNodeArray = Array<TreeNode>;
@@ -29,14 +29,14 @@ type SpecialItemNames = 'placeholder' | 'blessing' | 'wingBuff' | 'heart' | 'dye
 type SpecialItem = { item: IItem; cost?: ICost; }
 
 @Component({
-    selector: 'app-spirit-tree-editor',
+    selector: 'app-editor-spirit-tree',
     imports: [
     NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent,
     CardComponent, ItemIconComponent, OverlayComponent,
-    SpiritTreeEditorItemComponent, TabsComponent, TabDirective
+    EditorItemComponent, TabsComponent, TabDirective
 ],
-    templateUrl: './spirit-tree-editor.component.html',
-    styleUrl: './spirit-tree-editor.component.scss',
+    templateUrl: './editor-spirit-tree.component.html',
+    styleUrl: './editor-spirit-tree.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpiritTreeEditorComponent {

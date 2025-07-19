@@ -1,4 +1,4 @@
-import JSON5 from 'json5';
+import { parse as jsoncParse} from 'jsonc-parser';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, isDevMode } from '@angular/core';
 import { forkJoin, Observable, ReplaySubject, Subscription, tap } from 'rxjs';
@@ -133,7 +133,7 @@ export class DataService {
   private onConfigs(configs: {[k: string]: string}): void {
     // Deserialize configs.
     const configArray = Object.keys(configs).map(k => {
-      const parsed = JSON5.parse(configs[k]);
+      const parsed = jsoncParse(configs[k]);
       (this as any)[k] = parsed; // Map all configs to their property.
       return parsed;
     });

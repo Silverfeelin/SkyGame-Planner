@@ -964,7 +964,8 @@
         { "area": "pNNbszCpyA" },
         { "area": "5kw7myrDPU" },
         { "area": "_dSyX-Uwrh" },
-        { "area": "quSVk1cT4l" }
+        { "area": "quSVk1cT4l" },
+        { "area": "mT6bVNovBW" }
       ]
     },
     {
@@ -1062,6 +1063,13 @@
         "xINN19ZdXU"
       ],
       "mapData": { "position": [-461.88,374.5] },
+      "connections": [
+        { "area": "Mhbh0g9OdG" }
+      ]
+    },
+    {
+      "guid": "mT6bVNovBW",
+      "name": "Sky Cinema",
       "connections": [
         { "area": "Mhbh0g9OdG" }
       ]

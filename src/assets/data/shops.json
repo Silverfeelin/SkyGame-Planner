@@ -15,6 +15,7 @@
       "spirit": "ExkE9a7QJ0",
       "permanent": "office",
       "iaps": [
+        "afs8y8FfTS",
         "37HKvA4bBc",
         "3uTp2mfgQj"
       ]
@@ -792,6 +793,32 @@
       ]
     },
     // #endregion
+    // #region Sky Anniversary (2025)
+    {
+      "guid": "JQ7fDlgkkP",
+      "type": "Store",
+      "iaps": [
+        "uuZ-VMISUm"
+      ]
+    },
+    {
+      "guid": "MWG4-11wq3",
+      "type": "Spirit",
+      "spirit": "ExkE9a7QJ0",
+      "iaps": [
+        "t1S_HJ7l3A"
+      ]
+    },
+    {
+      "guid": "_nN6T9eeX3",
+      "type": "Spirit",
+      "spirit": "tam_Fpnh1g",
+      "iaps": [
+        "-dyNdYI7we",
+        "np5SZyLLvS",
+      ]
+    },
+    // #endregion
     // #region Lazy Days (2022)
     {
       "guid": "txCjbkOUCb",
@@ -1313,6 +1340,44 @@
       ]
     },
     // #endregion
+    // #region AURORA Homecoming Concert (2025)
+    {
+      "guid": "RHk-FddHZx",
+      "type": "Store",
+      "iaps": [
+        "9CY9ZuRnX9",
+        "QVs45L8tMt",
+        "fLApkJ8Zyn"
+      ]
+    },
+    {
+      "guid": "uANAClB_6I",
+      "type": "Object",
+      "name": "Runaway Mannequin",
+      "iaps": [
+        "WoqNqPjm7p",
+        "pMv3KyVxHx"
+      ]
+    },
+    {
+      "guid": "mKzOX4rWG-",
+      "type": "Object",
+      "name": "To The Love Mannequin",
+      "iaps": [
+        "kuzbQO4-Fd",
+        "aby5PKss6g",
+      ]
+    },
+    {
+      "guid": "p0-DJsTxcv",
+      "type": "Object",
+      "name": "Wings of AURORA Mannequin",
+      "iaps": [
+        "cKKbbELBsO"
+      ]
+    },
+    // #endregion
+
     // #region Cinnamoroll Pop-Up Cafe (2024)
     {
       "guid": "6YoHc1liAI",
@@ -1339,6 +1404,14 @@
         "iuoxDhmZA1",
         "qF83KsIFIn"
       ]
+    },
+    // #endregion
+    // #region Workshop Show & Tell
+    {
+      "guid": "d9f149Afi3",
+      "type": "Spirit",
+      "spirit": "ksZ0eZfHEZ",
+      "itemList": "G-fKorNtmy"
     },
     // #endregion
   ]

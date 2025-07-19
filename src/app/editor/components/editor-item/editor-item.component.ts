@@ -5,13 +5,13 @@ import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { nanoid } from 'nanoid';
 
 @Component({
-  selector: 'app-spirit-tree-editor-item',
-  templateUrl: './spirit-tree-editor-item.component.html',
-  styleUrl: './spirit-tree-editor-item.component.scss',
+  selector: 'app-editor-item',
+  templateUrl: './editor-item.component.html',
+  styleUrl: './editor-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [ReactiveFormsModule, ItemTypePipe],
 })
-export class SpiritTreeEditorItemComponent {
+export class EditorItemComponent {
   item = input<IItem>();
 
   saved = output<IItem>();
@@ -30,7 +30,10 @@ export class SpiritTreeEditorItemComponent {
     icon: new FormControl(''),
     previewUrl: new FormControl(''),
     dyes: new FormControl('0'),
+    dyePreview: new FormControl(''),
+    dyeInfo: new FormControl(''),
     level: new FormControl('1'),
+    wiki: new FormControl(''),
   });
 
   constructor() {
@@ -44,7 +47,10 @@ export class SpiritTreeEditorItemComponent {
         icon: item?.icon || '',
         previewUrl: item?.previewUrl || '',
         dyes: item?.dye?.secondary ? '2' : item?.dye?.primary ? '1' : '0',
+        dyePreview: item?.dye?.previewUrl || '',
+        dyeInfo: item?.dye?.infoUrl || '',
         level: item?.level ? `${item.level}` : undefined,
+        wiki: item?._wiki?.href || '',
       });
     });
   }
@@ -81,8 +87,18 @@ export class SpiritTreeEditorItemComponent {
       default: delete item.dye; break;
     }
 
+    if (value.dyes) {
+      if (value.dyePreview) item.dye!.previewUrl = value.dyePreview;
+      if (value.dyeInfo) item.dye!.infoUrl = value.dyeInfo;
+    }
+
     if (item.type === ItemType.Emote && value.level) {
       item.level = parseInt(value.level, 10);
+    }
+
+    if (value.wiki)  {
+      item._wiki ??= {};
+      item._wiki.href = value.wiki;
     }
 
     this.saved.emit(item);

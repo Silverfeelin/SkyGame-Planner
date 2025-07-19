@@ -176,8 +176,14 @@
 
 @if (isCustomEditorVisible) {
   <app-overlay [dismissable]="false">
-    <app-spirit-tree-editor-item [item]="selectedCustomItem"
+    <h2 class="h3 mb-0">Edit custom item</h2>
+
+    <div class="mb">
+      <a target="_blank" class="text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing:-Spirit-trees">Help</a>
+    </div>
+
+    <app-editor-item [item]="selectedCustomItem"
       (saved)="onCustomItem($event)" (cancelled)="isCustomEditorVisible=false">
-    </app-spirit-tree-editor-item>
+    </app-editor-item>
   </app-overlay>
 }

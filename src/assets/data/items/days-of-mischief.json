@@ -13,7 +13,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape"
     },
-    "order": 866
+    "order": 879
   },
   {
     "id": 1852,
@@ -25,7 +25,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Hungry_Pumpkin_Hat"
     },
-    "order": 276
+    "order": 277
   },
   {
     "id": 1853,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hat"
     },
-    "order": 277
+    "order": 278
   },
   {
     "id": 1854,
@@ -53,7 +53,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape"
     },
-    "order": 867
+    "order": 880
   },
   {
     "id": 1855,
@@ -86,7 +86,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spooky_Dining_Set"
     },
-    "order": 624
+    "order": 629
   },
   {
     "id": 1859,
@@ -98,7 +98,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Cape"
     },
-    "order": 868
+    "order": 881
   },
   {
     "id": 1860,
@@ -110,7 +110,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Hair"
     },
-    "order": 279
+    "order": 280
   },
   {
     "id": 1861,
@@ -122,7 +122,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Pumpkin_Prop"
     },
-    "order": 625
+    "order": 630
   },
   {
     "id": 1862,
@@ -134,7 +134,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spider_Quiff"
     },
-    "order": 280
+    "order": 281
   },
   {
     "id": 1863,
@@ -150,7 +150,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
     },
-    "order": 81
+    "order": 80
   },
   {
     "id": 1864,
@@ -162,7 +162,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Witch_Jumper"
     },
-    "order": 123
+    "order": 124
   },
   {
     "id": 1865,
@@ -174,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Antlers"
     },
-    "order": 367
+    "order": 369
   },
   {
     "id": 1866,
@@ -186,7 +186,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Tufted_Hair"
     },
-    "order": 278
+    "order": 279
   },
   {
     "id": 1867,
@@ -204,7 +204,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Mask"
     },
-    "order": 462
+    "order": 464
   },
   {
     "id": 1868,
@@ -220,7 +220,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape"
     },
-    "order": 869
+    "order": 882
   },
   {
     "id": 1869,
@@ -232,7 +232,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Feline_Familiar_Prop"
     },
-    "order": 626
+    "order": 631
   },
   {
     "id": 1870,
@@ -241,7 +241,7 @@
     "name": "Mischief Gossamer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
-    "order": 870
+    "order": 883
   },
   {
     "id": 1871,
@@ -250,7 +250,7 @@
     "name": "Mischief Crabula Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
-    "order": 871,
+    "order": 884,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Mischef_crabulacape.webp"
@@ -263,7 +263,7 @@
     "name": "Mischief Crabula Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Crabula-Mask-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Mischief-Crabula-Mask.png",
-    "order": 463
+    "order": 465
   },
   {
     "id": 1873,
@@ -276,7 +276,7 @@
       "previewUrl": "/assets/game/dyes/outfit/Mischief_Goth.jpg",
       "primary": {}
     },
-    "order": 82
+    "order": 81
   },
   {
     "id": 1874,
@@ -285,7 +285,7 @@
     "name": "Mischief Goth Boots Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Mischief-Goth-Boots-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Mischief-Goth-Boots.png",
-    "order": 124
+    "order": 125
   },
   {
     "id": 1875,
@@ -294,7 +294,7 @@
     "name": "Mischief Crabkin Accessory Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
-    "order": 336
+    "order": 338
   },
   {
     "id": 1950,
@@ -310,7 +310,7 @@
     "name": "Mischief Raven-Feathered Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Mischief-Raven-Feathered-Cloak-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Mischief-Raven-Feathered-Cloak-back.png",
-    "order": 872
+    "order": 885
   },
   {
     "id": 2394,
@@ -319,7 +319,7 @@
     "name": "Mischief Withered Broom",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Mischief-Withered-Broom-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Mischief-Withered-Broom.png",
-    "order": 566
+    "order": 569
   },
   {
     "id": 2395,
@@ -328,7 +328,7 @@
     "name": "Mischief Spider Bun Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Mischief-Spider-Bun-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Mischief-Spider-Bun-front.png",
-    "order": 281
+    "order": 282
   },
   {
     "id": 2396,
@@ -337,7 +337,7 @@
     "name": "Mischief Cauldron",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Cauldron-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Mischief-Cauldron.png",
-    "order": 730
+    "order": 742
   },
   {
     "id": 2397,
@@ -346,7 +346,7 @@
     "name": "Mischief Star Sticker",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ea/Mischief-Star-Sticker-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Mischief-Star-Sticker.png",
-    "order": 108,
+    "order": 107,
     "dye": {
       "previewUrl": "/assets/game/dyes/Mischief_sticker.jpg",
       "primary": {}

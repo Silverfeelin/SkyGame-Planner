@@ -94,5 +94,18 @@
         { "guid": "QSxhXLPZkQ", "item": "l_C7GM60an", "c": 200 }
       ]
     },
+    // Workshop Show & Tell
+    {
+      "guid": "G-fKorNtmy",
+      "items": [
+        { "guid": "IL2KgI3iiJ", "item": "c07ypZRsQ_", "h": 9 },
+        { "guid": "awbc7yFqJE", "item": "h3YmCH50KT", "ac": 10 },
+        { "guid": "NKvJfEih-r", "item": "lJK0vZgpOB", "c": 20 },
+        { "guid": "jH72LPaPRJ", "item": "_Ih5rxUbGr", "c": 10 },
+        { "guid": "eaKcDYCYZ9", "item": "o2j4czmAqt", "h": 3 },
+        { "guid": "XkW27KVni1", "item": "VV-svxaQrp", "c": 15 },
+        { "guid": "J-w1UfxOZo", "item": "P4PpAo47Ad", "h": 1 },
+      ]
+    }
   ]
 }
