@@ -75,5 +75,15 @@
     "name": "Placeholder",
     "type": "Special",
     "icon": ""
-  }
+  },
+  {
+    "id": 2672,
+    "guid": "vh_pk3wU0A",
+    "name": "The Two Embers - Part 1 Ultimate Pendant",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
+    "previewUrl": "",
+    "order": 497
+  },
 ]

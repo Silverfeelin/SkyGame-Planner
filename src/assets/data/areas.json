@@ -820,7 +820,7 @@
     {
       "guid": "wrHKGEg2Kc",
       "name": "Vault Collab Room",
-      "imageUrl": "/assets/game/areas/vault/collab-720.webp",
+      "imageUrl": "/assets/game/areas/vault/new-collab-temp.webp",
       "mapShrines": [ "eroCc1CGcC" ],
       "mapData": { "position": [-214,395.5] },
       "connections": [
@@ -829,6 +829,8 @@
         { "area": "IrChmrOevd" },
         { "area": "aBL5eqTv4R" },
         { "area": "wOM-k6pjot" },
+        { "area": "Mhbh0g9OdG" }
+        { "area": "mT6bVNovBW" },
       ]
     },
     {
@@ -965,7 +967,7 @@
         { "area": "5kw7myrDPU" },
         { "area": "_dSyX-Uwrh" },
         { "area": "quSVk1cT4l" },
-        { "area": "mT6bVNovBW" }
+        { "area": "wrHKGEg2Kc" }
       ]
     },
     {
@@ -1070,8 +1072,12 @@
     {
       "guid": "mT6bVNovBW",
       "name": "Sky Cinema",
+      "imageUrl": "/assets/game/areas/aviary/cinema-temp.webp",
+      "spirits": [
+        "gy_EzmMKxF"
+      ],
       "connections": [
-        { "area": "Mhbh0g9OdG" }
+        { "area": "wrHKGEg2Kc" }
       ]
     },
     // #endregion
