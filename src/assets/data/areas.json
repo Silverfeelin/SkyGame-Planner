@@ -842,7 +842,7 @@
         { "area": "IrChmrOevd" },
         { "area": "aBL5eqTv4R" },
         { "area": "wOM-k6pjot" },
-        { "area": "Mhbh0g9OdG" }
+        { "area": "Mhbh0g9OdG" },
         { "area": "mT6bVNovBW" },
       ]
     },
@@ -957,6 +957,18 @@
       "guid": "2YCd4ckP6e",
       "name": "Moominvalley",
       "imageUrl": "/assets/game/areas/vault/moomin-720.webp"
+    },
+    {
+      "guid": "mT6bVNovBW",
+      "name": "Sky Cinema",
+      "imageUrl": "/assets/game/areas/aviary/cinema-temp.webp",
+      "spirits": [
+        "gy_EzmMKxF"
+      ],
+      "connections": [
+        { "area": "wrHKGEg2Kc" },
+        { "area": "pZbxK8tM_J" }
+      ]
     },
     // #endregion
     // #region Aviary
@@ -1080,18 +1092,6 @@
       "mapData": { "position": [-461.88,374.5] },
       "connections": [
         { "area": "Mhbh0g9OdG" }
-      ]
-    },
-    {
-      "guid": "mT6bVNovBW",
-      "name": "Sky Cinema",
-      "imageUrl": "/assets/game/areas/aviary/cinema-temp.webp",
-      "spirits": [
-        "gy_EzmMKxF"
-      ],
-      "connections": [
-        { "area": "wrHKGEg2Kc" },
-        { "area": "pZbxK8tM_J" }
       ]
     },
     // #endregion
