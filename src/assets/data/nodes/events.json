@@ -1315,28 +1315,28 @@
   },
   // #endregion
   // #region Sky Anniversary (2025)
-  { "guid": "GNFh2wSha5", "item": "FjtQU-Da97", "c": 2, "nw": "Od5yxX7aVf", "n": "26ySax5RVl", "ne": "hfDVWhcHnQ" },
+  { "guid": "GNFh2wSha5", "item": "FjtQU-Da97", "nw": "Od5yxX7aVf", "n": "26ySax5RVl", "ne": "hfDVWhcHnQ", "c": 2 },
   { "guid": "Od5yxX7aVf", "item": "y54CllfiMA", "ec": 32 },
   { "guid": "hfDVWhcHnQ", "item": "P09UDA73qQ", "ec": 36 },
   { "guid": "26ySax5RVl", "item": "0hJ9DXTWh2", "nw": "8nzbNLH8T4", "n": "5v03SJHSJq", "ne": "GS2zGjN25p", "ec": 2 },
   { "guid": "8nzbNLH8T4", "item": "hYV1zHavPH", "ec": 16 },
   { "guid": "GS2zGjN25p", "item": "HLi0DXNlFu", "ec": 26 },
-  { "guid": "5v03SJHSJq", "item": "FlObyU1ojU", "c": 2, "n": "Pw9OnCorQ2", "ne": "_hb3n5_cQU", "nw": "vkRaqgXCdW" },
+  { "guid": "5v03SJHSJq", "item": "FlObyU1ojU", "n": "Pw9OnCorQ2", "ne": "_hb3n5_cQU", "nw": "vkRaqgXCdW", "c": 2 },
   { "guid": "vkRaqgXCdW", "item": "gOGjcPJJok", "ec": 66 },
   { "guid": "_hb3n5_cQU", "item": "IKHiSSA9oN", "ec": 16 },
-  { "guid": "Pw9OnCorQ2", "item": "RcLEVI3BIH", "c": 2, "nw": "Xs5kTVp4X7", "n": "zT0mWmmsCG", "ne": "AcYP3KgMj3" },
+  { "guid": "Pw9OnCorQ2", "item": "RcLEVI3BIH", "nw": "Xs5kTVp4X7", "n": "zT0mWmmsCG", "ne": "AcYP3KgMj3", "c": 2 },
   { "guid": "Xs5kTVp4X7", "item": "nFWJUG7K6q", "c": 21 },
   { "guid": "AcYP3KgMj3", "item": "uvCLDVex2L", "c": 35 },
-  { "guid": "zT0mWmmsCG", "item": "mXj0pVv9FA", "c": 4, "nw": "gJA8bXIzdG", "n": "15LJzpYFk0", "ne": "jVRUcQLs4p" },
+  { "guid": "zT0mWmmsCG", "item": "mXj0pVv9FA", "nw": "gJA8bXIzdG", "n": "15LJzpYFk0", "ne": "jVRUcQLs4p", "c": 4 },
   { "guid": "gJA8bXIzdG", "item": "9jMnZ23AYP", "h": 10 },
   { "guid": "jVRUcQLs4p", "item": "ktsAnnjGgb", "c": 20 },
-  { "guid": "15LJzpYFk0", "item": "GZAz1Z3nxB", "c": 4, "nw": "N3SHrR5Z0i", "n": "e4J2CI4wKu", "ne": "o4iFzx6GXe" },
+  { "guid": "15LJzpYFk0", "item": "GZAz1Z3nxB", "nw": "N3SHrR5Z0i", "n": "e4J2CI4wKu", "ne": "o4iFzx6GXe", "c": 4 },
   { "guid": "N3SHrR5Z0i", "item": "9jISGFNSLT", "ac": 33 },
   { "guid": "o4iFzx6GXe", "item": "ADtwifMcnN", "c": 20 },
-  { "guid": "e4J2CI4wKu", "item": "pOhVennRp0", "c": 4, "nw": "0cvGP4_JIh", "n": "yn_yEdHGAI", "ne": "3FmxDsSFYp" },
+  { "guid": "e4J2CI4wKu", "item": "pOhVennRp0", "nw": "0cvGP4_JIh", "n": "yn_yEdHGAI", "ne": "3FmxDsSFYp", "c": 4 },
   { "guid": "0cvGP4_JIh", "item": "8A96KlMPQC", "c": 30 },
   { "guid": "3FmxDsSFYp", "item": "Xbb3BpzDZT", "h": 20 },
-  { "guid": "yn_yEdHGAI", "item": "BQi3QIoOwq", "h": 33 }
+  { "guid": "yn_yEdHGAI", "item": "BQi3QIoOwq", "h": 33 },
   // #endregion
   // #region Lazy Days (2022)
   {

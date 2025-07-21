@@ -1975,6 +1975,12 @@
       "tree": "SI9Q8J2Fm-"
     },
     {
+      "guid": "2FQrdh4aCQ",
+      "type": "Season",
+      "name": "Stern Sheperd",
+      "tree": "RDergQu3Vd"
+    },
+    {
       "guid": "Jq1bIftHV5",
       "type": "Season",
       "name": "Resourceful Recluse",
@@ -1985,12 +1991,6 @@
       "type": "Season",
       "name": "Scarred Sentry",
       "tree": "r-emIwzMih"
-    },
-    {
-      "guid": "2FQrdh4aCQ",
-      "type": "Season",
-      "name": "Stern Sheperd",
-      "tree": "RDergQu3Vd"
     },
     // #endregion
 

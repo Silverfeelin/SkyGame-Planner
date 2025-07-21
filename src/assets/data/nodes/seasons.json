@@ -4247,12 +4247,14 @@
   { "guid": "JVpoCSJcOL", "item": "HbWmev9tfe" },
   { "guid": "2jAYnaQ61M", "item": "Wi5TCHaGEG", "nw": "Mcsz5wBhc6", "n": "LufwETnS2o", "sc": 22 },
   { "guid": "Mcsz5wBhc6", "item": "JTsBgF0HCR" },
-  { "guid": "LufwETnS2o", "item": "vizYM6Cgw5", "nw": "hLjozLH7KR", "n": "J5AsLDs1K0" },
+  { "guid": "LufwETnS2o", "item": "vizYM6Cgw5", "nw": "hLjozLH7KR", "n": "J5AsLDs1K0", "sc": 28 },
   { "guid": "hLjozLH7KR", "item": "BXJj5nC9Qt" },
   { "guid": "J5AsLDs1K0", "item": "OBcnWjY8qU", "sc": 3 }
-  // Placeholders
-  { "guid": "gSpR4Ktq8n", "item": "GOaW9aUsUb" }
-  { "guid": "ojYsXvuaZV", "item": "afxsZPgxN7" }
+  // Stern Sheperd
   { "guid": "jz_WmmSf3r", "item": "sLyKSpc0hb" }
+  // Resourceful Recluse
+  { "guid": "gSpR4Ktq8n", "item": "GOaW9aUsUb" }
+  // Scarred Sentry
+  { "guid": "ojYsXvuaZV", "item": "afxsZPgxN7" }
   // #endregion
 ]
