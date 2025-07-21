@@ -6,7 +6,7 @@
     "name": "Treasure Seeker's Bounty Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/50/Days-of-Treasure-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Days-of-Treasure-Outfit-front.png",
-    "order": 74,
+    "order": 78,
     "dye": {
       "previewUrl": "/assets/game/dyes/outfit/Treasure_pants.jpg",
       "primary": {}
@@ -19,7 +19,7 @@
     "name": "Treasure Cavalier Boots",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/72/Days-of-Treasure-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Days-of-Treasure-Shoes.png",
-    "order": 130,
+    "order": 135,
     "dye": {
       "previewUrl": "/assets/game/dyes/shoes/Treasure_boots.jpg",
       "primary": {}
@@ -32,7 +32,7 @@
     "name": "Treasure Shovel",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Days-of-Treasure-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Treasure-Prop.png",
-    "order": 570
+    "order": 588
   },
   {
     "id": 2530,
@@ -41,7 +41,7 @@
     "name": "Treasure Seeker's Bounty Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Days-of-Treasure-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Days-of-Treasure-Mask.png",
-    "order": 467,
+    "order": 481,
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Treasure_mask.jpg",
       "infoUrl": "/assets/game/dyes/mask/2slots_Treasure_mask.jpg",

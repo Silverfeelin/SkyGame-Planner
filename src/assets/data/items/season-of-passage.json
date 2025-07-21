@@ -41,7 +41,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Serow_Mask"
     },
-    "order": 440
+    "order": 452
   },
   {
     "id": 609,
@@ -71,7 +71,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Boar_Mask"
     },
-    "order": 441
+    "order": 453
   },
   {
     "id": 612,
@@ -108,7 +108,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Monkey_Mask"
     },
-    "order": 443
+    "order": 455
   },
   {
     "id": 616,
@@ -127,7 +127,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Hacky_Sack"
     },
-    "order": 602
+    "order": 620
   },
   {
     "id": 618,
@@ -143,7 +143,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Raccoon_Mask"
     },
-    "order": 442
+    "order": 454
   },
   {
     "id": 619,
@@ -156,7 +156,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 488
+    "order": 502
   },
   {
     "id": 620,
@@ -174,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 439
+    "order": 451
   },
   {
     "id": 621,
@@ -187,7 +187,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 831
+    "order": 852
   },
   {
     "id": 1606,
@@ -223,7 +223,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Hair"
     },
-    "order": 241
+    "order": 246
   },
   {
     "id": 1609,
@@ -250,7 +250,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Neck_Accessory"
     },
-    "order": 503,
+    "order": 517,
     "group": "SeasonPass"
   },
   {
@@ -355,7 +355,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Passage_tumble.jpg"
     },
-    "order": 238,
+    "order": 243,
     "group": "SeasonPass"
   },
   {
@@ -402,7 +402,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape"
     },
-    "order": 829,
+    "order": 850,
     "group": "SeasonPass"
   },
   {
@@ -422,7 +422,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Face_Accessory"
     },
-    "order": 358,
+    "order": 370,
     "group": "SeasonPass",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Passage_tassels.jpg",
@@ -487,7 +487,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Face_Accessory"
     },
-    "order": 357
+    "order": 369
   },
   {
     "id": 1631,
@@ -514,7 +514,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair"
     },
-    "order": 239,
+    "order": 244,
     "group": "SeasonPass"
   },
   {
@@ -616,7 +616,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Instrument"
     },
-    "order": 543,
+    "order": 557,
     "group": "SeasonPass"
   },
   {
@@ -658,7 +658,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Cape"
     },
-    "order": 830
+    "order": 851
   },
   {
     "id": 1646,
@@ -689,7 +689,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Passage_overachiever.jpg"
     },
-    "order": 240,
+    "order": 245,
     "group": "SeasonPass"
   },
   {

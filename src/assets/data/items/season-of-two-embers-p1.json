@@ -16,16 +16,16 @@
   {
     "id": 2663,
     "guid": "3wr_nQ1GpD",
-    "name": "Placeholder",
+    "name": "Heart",
     "type": "Special",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
   {
     "id": 2664,
     "guid": "HAmMhK2wEA",
-    "name": "Placeholder",
+    "name": "Quest 2",
     "type": "Special",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2665,
@@ -75,5 +75,400 @@
     "name": "Placeholder",
     "type": "Special",
     "icon": ""
+  },
+  {
+    "id": 2672,
+    "guid": "vh_pk3wU0A",
+    "name": "The Two Embers - Part 1 Ultimate Pendant",
+    "type": "Necklace",
+    "group": "Ultimate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Season-of-Ember-P1-Pendant.png",
+    "order": 497
+  },
+  {
+    "id": 2676,
+    "guid": "8z8SeKQRk8",
+    "type": "HairAccessory",
+    "name": "Two Embers - Part 1 Ultimate Hair Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Vault-Elder-Lantern-Ultimate-Constellation-Hairpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Vault-Elder-Lantern-Ultimate-Constellation-Hairpiece.png",
+    "group": "Ultimate",
+    "order": 328
+  },
+  {
+    "id": 2677,
+    "guid": "5om2HL6eRw",
+    "type": "Cape",
+    "name": "Two Embers - Part 1 Ultimate Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Vault-Elder-Lantern-Ultimate-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Vault-Elder-Lantern-Ultimate-Cape-back.png",
+    "group": "Ultimate",
+    "order": 879
+  },
+  {
+    "id": 2678,
+    "guid": "rOUvYv7h5G",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 2679,
+    "guid": "NqiCFWskMV",
+    "type": "Prop",
+    "name": "Crab Figurine",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Tender-Toymaker-Crab-Figurine-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Tender-Toymaker-Crab-Figurine-Prop.png",
+    "order": 627
+  },
+  {
+    "id": 2680,
+    "guid": "KYolrTZPtJ",
+    "type": "Held",
+    "name": "Manatee Toy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Tender-Toymaker-Manatee-Figurine-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Tender-Toymaker-Manatee-Figurine-Prop.png",
+    "order": 575
+  },
+  {
+    "id": 2681,
+    "guid": "HbWmev9tfe",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2682,
+    "guid": "Wi5TCHaGEG",
+    "type": "Special",
+    "name": "Green Dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Green-dye-container-icon.png"
+  },
+  {
+    "id": 2683,
+    "guid": "JTsBgF0HCR",
+    "type": "Outfit",
+    "name": "Tender Toymaker Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Tender-Toymaker-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Tender-Toymaker-Outfit.png",
+    "group": "SeasonPass",
+    "order": 68
+  },
+  {
+    "id": 2684,
+    "guid": "vizYM6Cgw5",
+    "type": "Hair",
+    "name": "Tender Toymaker Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Tender-Toymaker-Hood-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Tender-Toymaker-Hood-Hair.png",
+    "order": 268
+  },
+  {
+    "id": 2685,
+    "guid": "BXJj5nC9Qt",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2686,
+    "guid": "OBcnWjY8qU",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
+    "id": 2689,
+    "guid": "sLyKSpc0hb",
+    "type": "Music",
+    "name": "Music Sheet #44",
+    "sheet": "44",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 304
+  },
+  {
+    "id": 2690,
+    "guid": "uv_rlb5LLl",
+    "type": "Hair",
+    "name": "Stern Shepherd Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Stern-Shepherd-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Stern-Shepherd-Fluffy-Manatee-Hair.png",
+    "group": "SeasonPass",
+    "order": 269
+  },
+  {
+    "id": 2691,
+    "guid": "ttkFqSp8B4",
+    "type": "Outfit",
+    "name": "Stern Shepherd Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Stern-Shepherd-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Stern-Shepherd-Outfit.png",
+    "order": 59
+  },
+  {
+    "id": 2692,
+    "guid": "O7BixXoV0B",
+    "type": "Special",
+    "name": "Yellow dye",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png"
+  },
+  {
+    "id": 2693,
+    "guid": "tC5pDKTQcm",
+    "type": "Special",
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2694,
+    "guid": "Ll1veXMDa9",
+    "type": "Held",
+    "name": "Stern Shepherd Cane",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stern-Shepherd-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Stern-Shepherd-Staff-Prop.png",
+    "group": "SeasonPass",
+    "order": 574
+  },
+  {
+    "id": 2695,
+    "guid": "gbPWc1mCq1",
+    "type": "Mask",
+    "name": "Stern Shepherd Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Stern-Shepherd-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Stern-Shepherd-Mask.png",
+    "order": 466
+  },
+  {
+    "id": 2696,
+    "guid": "3l7UF_vGJU",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2697,
+    "guid": "tyvEKGbfhk",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
+    "id": 2687,
+    "guid": "GOaW9aUsUb",
+    "type": "Mask",
+    "name": "Resourceful Recluse Mask",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Resourceful-Recluse-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Resourceful-Recluse-mask.png",
+    "order": 465
+  },
+  {
+    "id": 2698,
+    "guid": "qFymCo4dGC",
+    "type": "Special",
+    "name": "Blessing",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 2699,
+    "guid": "kduC6Paqjx",
+    "type": "Special",
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2700,
+    "guid": "LD7JbSG0JZ",
+    "type": "Outfit",
+    "name": "Resourceful Recluse Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Resourceful-Recluse-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Resourceful-Recluse-Outfit.png",
+    "group": "SeasonPass",
+    "order": 66
+  },
+  {
+    "id": 2701,
+    "guid": "F44lamMQJN",
+    "type": "Furniture",
+    "name": "Resourceful Recluse Tea Table",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Resourceful-Recluse-Tea-Stall-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Resourceful-Recluse-Tea-Stall-Prop.png",
+    "order": 629
+  },
+  {
+    "id": 2702,
+    "guid": "MP475bE92Q",
+    "type": "Special",
+    "name": "Black dye",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png"
+  },
+  {
+    "id": 2703,
+    "guid": "B5wktCej7j",
+    "type": "Special",
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2704,
+    "guid": "87cF1DR1mN",
+    "type": "Furniture",
+    "name": "Resourceful Recluse Tree Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Resourceful-Recluse-Vine-plant-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Resourceful-Recluse-Vine-plant-Prop.png",
+    "group": "SeasonPass",
+    "order": 628
+  },
+  {
+    "id": 2705,
+    "guid": "JmclivNj1y",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
+    "id": 2688,
+    "guid": "afxsZPgxN7",
+    "type": "Hair",
+    "name": "Scarred Sentry Cracked Helmet",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Scarred-Sentry-Cracked-Helmet-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Scarred-Sentry-Cracked-Helmet-Hair.png",
+    "order": 267
+  },
+  {
+    "id": 2706,
+    "guid": "UvRqz7iRMq",
+    "type": "Hair",
+    "name": "Scarred Sentry Helmet",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Scarred-Sentry-Plumed-Helmet-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Scarred-Sentry-Plumed-Helmet-Hair.png",
+    "group": "SeasonPass",
+    "order": 266
+  },
+  {
+    "id": 2707,
+    "guid": "Q5feZU_9Hq",
+    "type": "Special",
+    "name": "Purple dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png"
+  },
+  {
+    "id": 2708,
+    "guid": "eAQGcnjlP_",
+    "type": "Cape",
+    "name": "Scarred Sentry Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Scarred-Sentry-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Scarred-Sentry-Cape-back.png",
+    "group": "SeasonPass",
+    "order": 877
+  },
+  {
+    "id": 2709,
+    "guid": "Ll_e9Bsdl_",
+    "type": "Outfit",
+    "name": "Scarred Sentry Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Scarred-Sentry-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Scarred-Sentry-Outfit.png",
+    "order": 67
+  },
+  {
+    "id": 2710,
+    "guid": "IeUYoF48N_",
+    "type": "Shoes",
+    "name": "Scarred Sentry Shoes",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Scarred-Sentry-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Scarred-Sentry-Shoes.png",
+    "group": "SeasonPass",
+    "order": 126
+  },
+  {
+    "id": 2711,
+    "guid": "3kxBYG-yVK",
+    "type": "Held",
+    "name": "Scarred Sentry Shield",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Scarred-Sentry-Shield-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Scarred-Sentry-Shield-Prop.png",
+    "order": 577
+  },
+  {
+    "id": 2712,
+    "guid": "5vyOk8z6c9",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2713,
+    "guid": "cd6D-FQdL1",
+    "type": "Special",
+    "name": "White dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"
+  },
+  {
+    "id": 2714,
+    "guid": "NQsPOB-fqz",
+    "type": "Held",
+    "name": "Scarred Sentry Spear",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Scarred-Sentry-Spear-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Scarred-Sentry-Spear-Prop.png",
+    "group": "SeasonPass",
+    "order": 576
+  },
+  {
+    "id": 2715,
+    "guid": "UhOnUa1IoR",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
+    "id": 2716,
+    "guid": "jc8Pyt7eLR",
+    "type": "HairAccessory",
+    "name": "Butterfly Blossom Memento",
+    "icon": "https://i.imgur.com/1nOEjn2.png",
+    "order": 327
+  },
+  {
+    "id": 2717,
+    "guid": "EK5ApidEe_",
+    "type": "Cape",
+    "name": "Cloak of Darkness",
+    "icon": "https://i.imgur.com/KHDfNqM.png",
+    "order": 878
+  },
+  {
+    "id": 2718,
+    "guid": "7oYZyU491f",
+    "type": "HairAccessory",
+    "name": "Mini Manatee Accessory",
+    "icon": "https://i.imgur.com/PXLm9OQ.png",
+    "order": 329
+  },
+  {
+    "id": 2719,
+    "guid": "2KB9ImL1SW",
+    "type": "Stance",
+    "name": "Scarred Stance",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Scarred-Sentry-Stance-icon.png"
+  },
+  {
+    "id": 2720,
+    "guid": "0fIErjYx4B",
+    "type": "Call",
+    "name": "Manatee Call",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Stern-Shepherd-Manatee-Call-icon.png"
   }
 ]
