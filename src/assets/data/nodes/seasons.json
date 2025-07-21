@@ -3802,7 +3802,7 @@
   { "guid": "NbOstIgvmK", "item": "1T0D06zFUX", "sc": 34, "nw": "K36g_5MoE9", "n": "Bb-9MVW6Zt" },
   { "guid": "K36g_5MoE9", "item": "hE65fn-mBH" },
   { "guid": "Bb-9MVW6Zt", "item": "VsraqNSiML", "sc": 3 },
-  // TS 144  
+  // TS 144
   { "guid": "Q-mUmZEFFP", "item": "X8TxVCwAoY", "nw": "r1At8Ym0To", "n": "UoFvfuEmxi" },
   { "guid": "r1At8Ym0To", "item": "zPG9h4NM2q", "h": 4 },
   { "guid": "UoFvfuEmxi", "item": "t8vsyexQQz", "c": 5, "nw": "Di5scXRqrc", "n": "cKyNwKPwkb", "ne": "6j-scjq3V7" },
@@ -4222,5 +4222,20 @@
   { "guid": "_7vTBFWWbG", "item": "_VSI11ASYa", "n": "9mUFnhds0X", "nw": "L4zIeSoUn4", "sc": 23 },
   { "guid": "L4zIeSoUn4", "item": "p6DqiViZ_f" },
   { "guid": "9mUFnhds0X", "item": "FyVcqmGqTI", "sc": 3 },
+  // #endregion
+  // #region Two Embers - Part 1
+
+  //Guide
+  { "guid": "7NYZEkjI3A", "item": "WYN8NCNM3x", "n": "L5e_qiRgOD" },
+  { "guid": "L5e_qiRgOD", "item": "KRB8s8fxSC", "n": "F76niRD4U2", "nw": "wpRxW2OZO2" },
+  { "guid": "wpRxW2OZO2", "item": "3wr_nQ1GpD" },
+  { "guid": "F76niRD4U2", "item": "HAmMhK2wEA", "n": "0fLRunRaat", "nw": "aN6Uh91VMM" },
+  { "guid": "aN6Uh91VMM", "item": "d1rx4S5IP3" },
+  { "guid": "0fLRunRaat", "item": "1xt66A1og9", "n": "d_AW59_th_", "nw": "-7mzd9H_W6" },
+  { "guid": "-7mzd9H_W6", "item": "ZqbtSzrvGp" },
+  { "guid": "d_AW59_th_", "item": "rCjkMHHCz3", "n": "Ms-iz0Fl5d", "nw": "By1cVF2PA6" },
+  { "guid": "By1cVF2PA6", "item": "YH8MCFzTcf" },
+  { "guid": "Ms-iz0Fl5d", "item": "mzR2yfcMzf", "n": "p_2hRho4Up" },
+  { "guid": "p_2hRho4Up", "item": "I9x_ShG77A" },
   // #endregion
 ]
