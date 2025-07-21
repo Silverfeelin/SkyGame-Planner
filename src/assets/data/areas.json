@@ -723,6 +723,19 @@
         { "area": "fng8QLVMr1" },
       ]
     },
+    {
+      "guid": "pZbxK8tM_J",
+      "name": "The Land in the Distant Past",
+      "spirits": [
+        "aO0n7dAWvc",
+        "Jq1bIftHV5",
+        "zdstJkDMg5",
+        "2FQrdh4aCQ",
+      ],
+      "connections": [
+        { "area": "mT6bVNovBW" }
+      ]
+    },
     // #endregion
     // #region Vault
     {
@@ -1077,7 +1090,8 @@
         "gy_EzmMKxF"
       ],
       "connections": [
-        { "area": "wrHKGEg2Kc" }
+        { "area": "wrHKGEg2Kc" },
+        { "area": "pZbxK8tM_J" }
       ]
     },
     // #endregion

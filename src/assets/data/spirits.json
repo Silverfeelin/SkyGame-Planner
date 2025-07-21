@@ -1968,6 +1968,30 @@
       "imageUrl": "https://images.steamusercontent.com/ugc/12088191078658824841/95B15487BC91A92EF035B7823DDC56B27F4BA957/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false"
       "tree": "lHlnmVDICn",
     },
+    {
+      "guid": "aO0n7dAWvc",
+      "type": "Season",
+      "name": "Tender Toymaker",
+      "tree": "SI9Q8J2Fm-"
+    },
+    {
+      "guid": "Jq1bIftHV5",
+      "type": "Season",
+      "name": "Resourceful Recluse",
+      "tree": "fdQpzNAjCw"
+    },
+    {
+      "guid": "zdstJkDMg5",
+      "type": "Season",
+      "name": "Scarred Sentry",
+      "tree": "r-emIwzMih"
+    },
+    {
+      "guid": "2FQrdh4aCQ",
+      "type": "Season",
+      "name": "Stern Sheperd",
+      "tree": "RDergQu3Vd"
+    },
     // #endregion
 
     // #region Nesting Challenges

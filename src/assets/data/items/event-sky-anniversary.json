@@ -405,5 +405,27 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#TGC_Wireframe_Cape"
     },
     "order": 874
-  }
+  },
+    {
+    "id": 2673,
+    "guid": "HLi0DXNlFu",
+    "type": "Prop",
+    "name": "6th Anniversary Rug",
+    "order": 619
+  },
+  {
+    "id": 2674,
+    "guid": "gOGjcPJJok",
+    "type": "Outfit",
+    "name": "6th Anniversary Outfit",
+    "order": 71,
+  },
+  {
+    "id": 2675,
+    "guid": "IKHiSSA9oN",
+    "type": "Furniture",
+    "name": "6th Anniversary Balloons",
+    "order": 611,
+  },
+
 ]

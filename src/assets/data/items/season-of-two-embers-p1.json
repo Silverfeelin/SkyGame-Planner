@@ -16,16 +16,16 @@
   {
     "id": 2663,
     "guid": "3wr_nQ1GpD",
-    "name": "Placeholder",
+    "name": "Heart",
     "type": "Special",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"""
   },
   {
     "id": 2664,
     "guid": "HAmMhK2wEA",
-    "name": "Placeholder",
+    "name": "Quest 2",
     "type": "Special",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2665,
@@ -85,5 +85,108 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
     "previewUrl": "",
     "order": 497
+  },
+  {
+    "id": 2676,
+    "guid": "8z8SeKQRk8",
+    "type": "HairAccessory",
+    "name": "Two Embers - Part 1 Ultimate Hair Accessory",
+    "order": 319
+  },
+  {
+    "id": 2677,
+    "guid": "5om2HL6eRw",
+    "type": "Cape",
+    "name": "Two Embers - Part 1 Ultimate Cape",
+    "order": 858
+  },
+  {
+    "id": 2678,
+    "guid": "rOUvYv7h5G",
+    "type": "Special",
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 2679,
+    "guid": "NqiCFWskMV",
+    "type": "Prop",
+    "name": "Crab Toy",
+    "group": "SeasonPass",
+    "order": 608
+  },
+  {
+    "id": 2680,
+    "guid": "KYolrTZPtJ",
+    "type": "Held"
+    "name": "Manta Plush",
+    "order": 571
+  },
+  {
+    "id": 2681,
+    "guid": "HbWmev9tfe",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2682,
+    "guid": "Wi5TCHaGEG",
+    "type": "Special",
+    "name": "Green Dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Green-dye-container-icon.png"
+  },
+  {
+    "id": 2683,
+    "guid": "JTsBgF0HCR",
+    "type": "Outfit",
+    "name": "Tender Toymaker Outfit",
+    "group": "SeasonPass",
+    "order": 67
+  },
+  {
+    "id": 2684,
+    "guid": "vizYM6Cgw5",
+    "type": "Hair",
+    "name": "Tender Toymaker Hair",
+    "order": 261
+  },
+  {
+    "id": 2685,
+    "guid": "BXJj5nC9Qt",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2686,
+    "guid": "OBcnWjY8qU",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
+    "id": 2687,
+    "guid": "GOaW9aUsUb",
+    "name": "Placeholder",
+    "type": "Special",
+    "icon": ""
+  },
+  {
+    "id": 2688,
+    "guid": "afxsZPgxN7",
+    "name": "Placeholder",
+    "type": "Special",
+    "icon": ""
+  },
+  {
+    "id": 2689,
+    "guid": "sLyKSpc0hb",
+    "name": "Placeholder",
+    "type": "Special",
+    "icon": ""
   },
 ]
