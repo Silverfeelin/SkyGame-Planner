@@ -83,7 +83,7 @@
     "type": "Necklace",
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
-    "previewUrl": "",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Season-of-Ember-P1-Pendant.png",
     "order": 497
   },
   {
@@ -91,6 +91,9 @@
     "guid": "8z8SeKQRk8",
     "type": "HairAccessory",
     "name": "Two Embers - Part 1 Ultimate Hair Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Vault-Elder-Lantern-Ultimate-Constellation-Hairpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Vault-Elder-Lantern-Ultimate-Constellation-Hairpiece.png",
+    "group": "Ultimate",
     "order": 319
   },
   {
@@ -98,6 +101,9 @@
     "guid": "5om2HL6eRw",
     "type": "Cape",
     "name": "Two Embers - Part 1 Ultimate Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Vault-Elder-Lantern-Ultimate-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Vault-Elder-Lantern-Ultimate-Cape-back.png",
+    "group": "Ultimate",
     "order": 858
   },
   {
@@ -111,15 +117,19 @@
     "id": 2679,
     "guid": "NqiCFWskMV",
     "type": "Prop",
-    "name": "Crab Toy",
+    "name": "Crab Figurine",
     "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Tender-Toymaker-Crab-Figurine-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Tender-Toymaker-Crab-Figurine-Prop.png",
     "order": 608
   },
   {
     "id": 2680,
     "guid": "KYolrTZPtJ",
     "type": "Held",
-    "name": "Manatee Plush",
+    "name": "Manatee Toy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Tender-Toymaker-Manatee-Figurine-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Tender-Toymaker-Manatee-Figurine-Prop.png",
     "order": 561
   },
   {
@@ -142,6 +152,8 @@
     "guid": "JTsBgF0HCR",
     "type": "Outfit",
     "name": "Tender Toymaker Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Tender-Toymaker-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Tender-Toymaker-Outfit.png",
     "group": "SeasonPass",
     "order": 67
   },
@@ -150,6 +162,8 @@
     "guid": "vizYM6Cgw5",
     "type": "Hair",
     "name": "Tender Toymaker Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Tender-Toymaker-Hood-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Tender-Toymaker-Hood-Hair.png",
     "order": 263
   },
   {
