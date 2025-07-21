@@ -18,7 +18,7 @@
     "guid": "3wr_nQ1GpD",
     "name": "Heart",
     "type": "Special",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
   {
     "id": 2664,
@@ -118,7 +118,7 @@
   {
     "id": 2680,
     "guid": "KYolrTZPtJ",
-    "type": "Held"
+    "type": "Held",
     "name": "Manatee Plush",
     "order": 561
   },
