@@ -256,7 +256,8 @@
     "guid": "GOaW9aUsUb",
     "type": "Mask",
     "name": "Resourceful Recluse Mask",
-    "icon": "",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Resourceful-Recluse-Mask-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Resourceful-Recluse-mask.png",
     "order": 453
   },
   {
@@ -279,6 +280,8 @@
     "guid": "LD7JbSG0JZ",
     "type": "Outfit",
     "name": "Resourceful Recluse Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Resourceful-Recluse-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Resourceful-Recluse-Outfit.png",
     "group": "SeasonPass",
     "order": 65
   },
@@ -286,7 +289,9 @@
     "id": 2701,
     "guid": "F44lamMQJN",
     "type": "Furniture",
-    "name": "Resourceful Recluse Stall",
+    "name": "Resourceful Recluse Tea Table",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Resourceful-Recluse-Tea-Stall-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Resourceful-Recluse-Tea-Stall-Prop.png",
     "order": 608
   },
   {
@@ -308,7 +313,9 @@
     "id": 2704,
     "guid": "87cF1DR1mN",
     "type": "Furniture",
-    "name": "Resourceful Recluse Tree",
+    "name": "Resourceful Recluse Tree Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Resourceful-Recluse-Vine-plant-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Resourceful-Recluse-Vine-plant-Prop.png",
     "group": "SeasonPass",
     "order": 607
   },
