@@ -120,7 +120,7 @@
     "guid": "KYolrTZPtJ",
     "type": "Held"
     "name": "Manatee Plush",
-    "order": 571
+    "order": 561
   },
   {
     "id": 2681,
@@ -169,28 +169,229 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
   },
   {
+    "id": 2689,
+    "guid": "sLyKSpc0hb",
+    "type": "Music",
+    "name": "Music Sheet #44",
+    "sheet": "44",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "order": 304
+  },
+  {
+    "id": 2690,
+    "guid": "uv_rlb5LLl",
+    "type": "Hair",
+    "name": "Stern Sheperd Hair",
+    "group": "SeasonPass",
+    "order": 264
+  },
+  {
+    "id": 2691,
+    "guid": "ttkFqSp8B4",
+    "type": "Special",
+    "name": "Placeholder"
+  },
+  {
+    "id": 2692,
+    "guid": "O7BixXoV0B",
+    "type": "Special",
+    "name": "Yellow dye",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png"
+  },
+  {
+    "id": 2693,
+    "guid": "tC5pDKTQcm",
+    "type": "Special",
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2694,
+    "guid": "Ll1veXMDa9",
+    "type": "Held",
+    "name": "Stern Sheperd Cane",
+    "group": "SeasonPass",
+    "order": 560
+  },
+  {
+    "id": 2695,
+    "guid": "gbPWc1mCq1",
+    "type": "Mask",
+    "name": "Stern Sheperd Mask",
+    "order": 454
+  },
+  {
+    "id": 2696,
+    "guid": "3l7UF_vGJU",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2697,
+    "guid": "tyvEKGbfhk",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
     "id": 2687,
     "guid": "GOaW9aUsUb",
-    "name": "Placeholder",
+    "type": "Mask",
+    "name": "Resourceful Recluse Mask",
+    "icon": "",
+    "order": 453
+  },
+  {
+    "id": 2698,
+    "guid": "qFymCo4dGC",
     "type": "Special",
-    "icon": ""
+    "name": "Blessing",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
+  },
+  {
+    "id": 2699,
+    "guid": "kduC6Paqjx",
+    "type": "Special",
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2700,
+    "guid": "LD7JbSG0JZ",
+    "type": "Outfit",
+    "name": "Resourceful Recluse Outfit",
+    "group": "SeasonPass",
+    "order": 65
+  },
+  {
+    "id": 2701,
+    "guid": "F44lamMQJN",
+    "type": "Furniture",
+    "name": "Resourceful Recluse Stall",
+    "order": 608
+  },
+  {
+    "id": 2702,
+    "guid": "MP475bE92Q",
+    "type": "Special",
+    "name": "Black dye",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Black-dye-container-icon.png"
+  },
+  {
+    "id": 2703,
+    "guid": "B5wktCej7j",
+    "type": "Special",
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2704,
+    "guid": "87cF1DR1mN",
+    "type": "Furniture",
+    "name": "Resourceful Recluse Tree",
+    "group": "SeasonPass",
+    "order": 607
+  },
+  {
+    "id": 2705,
+    "guid": "JmclivNj1y",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
   },
   {
     "id": 2688,
     "guid": "afxsZPgxN7",
-    "name": "Placeholder",
-    "type": "Special",
-    "icon": ""
+    "type": "Hair",
+    "name": "Scarred Sentry Worn Helmet",
+    "icon": "",
+    "order": 262
   },
   {
-    "id": 2689,
-    "guid": "sLyKSpc0hb",
-    "name": "Placeholder",
-    "type": "Special",
-    "icon": ""
+    "id": 2706,
+    "guid": "UvRqz7iRMq",
+    "type": "Hair",
+    "name": "Scarred Sentry Helmet",
+    "group": "SeasonPass",
+    "order": 261
   },
   {
-    "id": 2716,
+    "id": 2707,
+    "guid": "Q5feZU_9Hq",
+    "type": "Special",
+    "name": "Purple dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Purple-dye-container-icon.png"
+  },
+  {
+    "id": 2708,
+    "guid": "eAQGcnjlP_",
+    "type": "Cape",
+    "name": "Scarred Sentry Cape",
+    "group": "SeasonPass",
+    "order": 856
+  },
+  {
+    "id": 2709,
+    "guid": "Ll_e9Bsdl_",
+    "type": "Outfit",
+    "name": "Scarred Sentry Outfit",
+    "order": 66
+  },
+  {
+    "id": 2710,
+    "guid": "IeUYoF48N_",
+    "type": "Shoes",
+    "name": "Scarred Sentry Shoes",
+    "group": "SeasonPass",
+    "order": 122
+  },
+  {
+    "id": 2711,
+    "guid": "3kxBYG-yVK",
+    "type": "Held",
+    "name": "Scarred Sentry Shield",
+    "order": 563
+  },
+  {
+    "id": 2712,
+    "guid": "5vyOk8z6c9",
+    "type": "Special",
+    "name": "Dye spell",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png"
+  },
+  {
+    "id": 2713,
+    "guid": "cd6D-FQdL1",
+    "type": "Special",
+    "name": "White dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"
+  },
+  {
+    "id": 2714,
+    "guid": "NQsPOB-fqz",
+    "type": "Held",
+    "name": "Scarred Sentry Spear",
+    "group": "SeasonPass",
+    "order": 562
+  },
+  {
+    "id": 2715,
+    "guid": "UhOnUa1IoR",
+    "type": "Special",
+    "name": "Season Heart",
+    "group": "SeasonPass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Blue-Bird-seasonal-heart-icon.png"
+  },
+  {
+        "id": 2716,
     "guid": "jc8Pyt7eLR",
     "type": "HairAccessory",
     "name": "Butterfly Blossom Memento",

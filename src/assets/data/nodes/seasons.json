@@ -4249,12 +4249,38 @@
   { "guid": "Mcsz5wBhc6", "item": "JTsBgF0HCR" },
   { "guid": "LufwETnS2o", "item": "vizYM6Cgw5", "nw": "hLjozLH7KR", "n": "J5AsLDs1K0", "sc": 28 },
   { "guid": "hLjozLH7KR", "item": "BXJj5nC9Qt" },
-  { "guid": "J5AsLDs1K0", "item": "OBcnWjY8qU", "sc": 3 }
+  { "guid": "J5AsLDs1K0", "item": "OBcnWjY8qU", "sc": 3 },
   // Stern Sheperd
-  { "guid": "jz_WmmSf3r", "item": "sLyKSpc0hb" }
+  { "guid": "jz_WmmSf3r", "item": "sLyKSpc0hb", "n": "Kv01p-HRaU", "nw": "_60p0r0FEj", "sc": 12 },
+  { "guid": "_60p0r0FEj", "item": "uv_rlb5LLl" },
+  { "guid": "Kv01p-HRaU", "item": "ttkFqSp8B4", "n": "MHGgZXUsF4", "nw": "jCew8MjPtR", "sc": 18 },
+  { "guid": "jCew8MjPtR", "item": "O7BixXoV0B" },
+  { "guid": "MHGgZXUsF4", "item": "tC5pDKTQcm", "n": "RvrS6wJeAz", "nw": "Ks9bQWpf3V", "sc": 24 },
+  { "guid": "Ks9bQWpf3V", "item": "Ll1veXMDa9" },
+  { "guid": "RvrS6wJeAz", "item": "gbPWc1mCq1", "n": "6HblThtJcY", "nw": "YZ3cdXyCLq", "sc": 30 },
+  { "guid": "YZ3cdXyCLq", "item": "3l7UF_vGJU" },
+  { "guid": "6HblThtJcY", "item": "tyvEKGbfhk", "sc": 3 },
   // Resourceful Recluse
-  { "guid": "gSpR4Ktq8n", "item": "GOaW9aUsUb" }
+  { "guid": "gSpR4Ktq8n", "item": "GOaW9aUsUb", "n": "iV88LSFOHl", "nw": "iKrKWo5oIj", "sc": 12 },
+  { "guid": "iKrKWo5oIj", "item": "qFymCo4dGC" },
+  { "guid": "iV88LSFOHl", "item": "kduC6Paqjx", "n": "1GAKLjAsRs", "nw": "l0atw4r4pd", "sc": 18 },
+  { "guid": "l0atw4r4pd", "item": "LD7JbSG0JZ" },
+  { "guid": "1GAKLjAsRs", "item": "F44lamMQJN", "n": "HGQQh3bpz1", "nw": "vsCBxAmReg", "sc": 24 },
+  { "guid": "vsCBxAmReg", "item": "MP475bE92Q" },
+  { "guid": "HGQQh3bpz1", "item": "B5wktCej7j", "n": "nCG0qdx7z-", "nw": "djdq3ircU2", "sc": 30 },
+  { "guid": "djdq3ircU2", "item": "87cF1DR1mN" },
+  { "guid": "nCG0qdx7z-", "item": "JmclivNj1y", "sc": 3 },
   // Scarred Sentry
-  { "guid": "ojYsXvuaZV", "item": "afxsZPgxN7" }
+  { "guid": "ojYsXvuaZV", "item": "afxsZPgxN7", "n": "gMTFXM1neA", "nw": "ZjrF-HEgom", "sc": 10 },
+  { "guid": "ZjrF-HEgom", "item": "UvRqz7iRMq" },
+  { "guid": "gMTFXM1neA", "item": "Q5feZU_9Hq", "n": "4Mbfr1xgUY", "nw": "SbK-m2Zvo8", "sc": 16 },
+  { "guid": "SbK-m2Zvo8", "item": "eAQGcnjlP_" },
+  { "guid": "4Mbfr1xgUY", "item": "Ll_e9Bsdl_", "n": "8v9tn-OWUB", "nw": "TjA-N9ZX74", "sc": 22 },
+  { "guid": "TjA-N9ZX74", "item": "IeUYoF48N_" },
+  { "guid": "8v9tn-OWUB", "item": "3kxBYG-yVK", "n": "_Dvi4zvM6x", "nw": "3iBGJh3CwS", "sc": 28 },
+  { "guid": "3iBGJh3CwS", "item": "5vyOk8z6c9" },
+  { "guid": "_Dvi4zvM6x", "item": "cd6D-FQdL1", "n": "R-uQhaZIyK", "nw": "vRH_johmJX", "sc": 34 },
+  { "guid": "vRH_johmJX", "item": "NQsPOB-fqz" },
+  { "guid": "R-uQhaZIyK", "item": "UhOnUa1IoR", "sc": 3 },
   // #endregion
 ]
