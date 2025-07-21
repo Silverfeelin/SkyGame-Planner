@@ -94,7 +94,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fa/Vault-Elder-Lantern-Ultimate-Constellation-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Vault-Elder-Lantern-Ultimate-Constellation-Hairpiece.png",
     "group": "Ultimate",
-    "order": 319
+    "order": 328
   },
   {
     "id": 2677,
@@ -104,7 +104,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Vault-Elder-Lantern-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Vault-Elder-Lantern-Ultimate-Cape-back.png",
     "group": "Ultimate",
-    "order": 858
+    "order": 879
   },
   {
     "id": 2678,
@@ -121,7 +121,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Tender-Toymaker-Crab-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Tender-Toymaker-Crab-Figurine-Prop.png",
-    "order": 608
+    "order": 627
   },
   {
     "id": 2680,
@@ -130,7 +130,7 @@
     "name": "Manatee Toy",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Tender-Toymaker-Manatee-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Tender-Toymaker-Manatee-Figurine-Prop.png",
-    "order": 561
+    "order": 575
   },
   {
     "id": 2681,
@@ -155,7 +155,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Tender-Toymaker-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Tender-Toymaker-Outfit.png",
     "group": "SeasonPass",
-    "order": 67
+    "order": 68
   },
   {
     "id": 2684,
@@ -164,7 +164,7 @@
     "name": "Tender Toymaker Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Tender-Toymaker-Hood-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Tender-Toymaker-Hood-Hair.png",
-    "order": 263
+    "order": 268
   },
   {
     "id": 2685,
@@ -199,7 +199,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Stern-Shepherd-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Stern-Shepherd-Fluffy-Manatee-Hair.png",
     "group": "SeasonPass",
-    "order": 264
+    "order": 269
   },
   {
     "id": 2691,
@@ -207,7 +207,8 @@
     "type": "Outfit",
     "name": "Stern Shepherd Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Stern-Shepherd-Outfit-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Stern-Shepherd-Outfit.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Stern-Shepherd-Outfit.png",
+    "order": 59
   },
   {
     "id": 2692,
@@ -232,7 +233,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stern-Shepherd-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Stern-Shepherd-Staff-Prop.png",
     "group": "SeasonPass",
-    "order": 560
+    "order": 574
   },
   {
     "id": 2695,
@@ -241,7 +242,7 @@
     "name": "Stern Shepherd Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Stern-Shepherd-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Stern-Shepherd-Mask.png",
-    "order": 454
+    "order": 466
   },
   {
     "id": 2696,
@@ -266,7 +267,7 @@
     "name": "Resourceful Recluse Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Resourceful-Recluse-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Resourceful-Recluse-mask.png",
-    "order": 453
+    "order": 465
   },
   {
     "id": 2698,
@@ -291,7 +292,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Resourceful-Recluse-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Resourceful-Recluse-Outfit.png",
     "group": "SeasonPass",
-    "order": 65
+    "order": 66
   },
   {
     "id": 2701,
@@ -300,7 +301,7 @@
     "name": "Resourceful Recluse Tea Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Resourceful-Recluse-Tea-Stall-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Resourceful-Recluse-Tea-Stall-Prop.png",
-    "order": 608
+    "order": 629
   },
   {
     "id": 2702,
@@ -325,7 +326,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Resourceful-Recluse-Vine-plant-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Resourceful-Recluse-Vine-plant-Prop.png",
     "group": "SeasonPass",
-    "order": 607
+    "order": 628
   },
   {
     "id": 2705,
@@ -342,7 +343,7 @@
     "name": "Scarred Sentry Cracked Helmet",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Scarred-Sentry-Cracked-Helmet-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Scarred-Sentry-Cracked-Helmet-Hair.png",
-    "order": 262
+    "order": 267
   },
   {
     "id": 2706,
@@ -352,7 +353,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Scarred-Sentry-Plumed-Helmet-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Scarred-Sentry-Plumed-Helmet-Hair.png",
     "group": "SeasonPass",
-    "order": 261
+    "order": 266
   },
   {
     "id": 2707,
@@ -369,7 +370,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Scarred-Sentry-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Scarred-Sentry-Cape-back.png",
     "group": "SeasonPass",
-    "order": 856
+    "order": 877
   },
   {
     "id": 2709,
@@ -378,7 +379,7 @@
     "name": "Scarred Sentry Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Scarred-Sentry-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Scarred-Sentry-Outfit.png",
-    "order": 66
+    "order": 67
   },
   {
     "id": 2710,
@@ -388,7 +389,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Scarred-Sentry-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Scarred-Sentry-Shoes.png",
     "group": "SeasonPass",
-    "order": 122
+    "order": 126
   },
   {
     "id": 2711,
@@ -397,7 +398,7 @@
     "name": "Scarred Sentry Shield",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Scarred-Sentry-Shield-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Scarred-Sentry-Shield-Prop.png",
-    "order": 563
+    "order": 577
   },
   {
     "id": 2712,
@@ -422,7 +423,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Scarred-Sentry-Spear-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Scarred-Sentry-Spear-Prop.png",
     "group": "SeasonPass",
-    "order": 562
+    "order": 576
   },
   {
     "id": 2715,
@@ -438,7 +439,7 @@
     "type": "HairAccessory",
     "name": "Butterfly Blossom Memento",
     "icon": "https://i.imgur.com/1nOEjn2.png",
-    "order": 318
+    "order": 327
   },
   {
     "id": 2717,
@@ -446,7 +447,7 @@
     "type": "Cape",
     "name": "Cloak of Darkness",
     "icon": "https://i.imgur.com/KHDfNqM.png",
-    "order": 857
+    "order": 878
   },
   {
     "id": 2718,
@@ -454,7 +455,7 @@
     "type": "HairAccessory",
     "name": "Mini Manatee Accessory",
     "icon": "https://i.imgur.com/PXLm9OQ.png",
-    "order": 320
+    "order": 329
   },
   {
     "id": 2719,
@@ -469,5 +470,5 @@
     "type": "Call",
     "name": "Manatee Call",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Stern-Shepherd-Manatee-Call-icon.png"
-  },
+  }
 ]
