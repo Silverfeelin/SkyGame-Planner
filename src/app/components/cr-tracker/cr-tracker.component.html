@@ -1,0 +1,14 @@
+<div class="map-container">
+  <div class="map-controls map-controls-tl">
+    <button type="button" [ngbTooltip]="'Help'" container="body" placement="bottom-start">
+      <mat-icon>question_mark</mat-icon>
+    </button>
+    <button type="button" [class.map-control-off]="true" [ngbTooltip]="'Navigate'" container="body" placement="bottom-start">
+      <mat-icon>navigation</mat-icon>
+    </button>
+    <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start">
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+  </div>
+  <div #map id="cr-map" class="map"></div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "area": "Mhbh0g9OdG",
+      "imageUrl": "/assets/external/solsuga/aviary.webp",
+      "candles": [
+        { "p": [1522.00, 1476.00], "c": 3 }
+      ],
+      "connections": [
+        { "area": "zewkN917oz", "p": [1306.00, 1218.00] }
+      ]
+    }
+  ]
+}

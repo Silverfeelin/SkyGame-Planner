@@ -1,0 +1,9 @@
+
+.map-container {
+  position: relative;
+}
+
+.map-container .map {
+  height: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
+}

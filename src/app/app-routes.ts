@@ -50,11 +50,11 @@ import { ItemsOverviewComponent } from './components/items/items-overview/items-
 import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 import { AreasComponent } from './components/areas/areas.component';
-import { SpiritTreeEditorComponent } from './editor/components/editor-spirit-tree/editor-spirit-tree.component';
 import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
+import { CrTrackerComponent } from './components/cr-tracker/cr-tracker.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -124,6 +124,7 @@ export const routes: Routes = [
           { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
           { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
+          { path: 'cr-tracker', component: CrTrackerComponent, title: title('Candle Run Tracker') },
           { path: 'pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
