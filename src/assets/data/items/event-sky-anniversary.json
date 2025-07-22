@@ -432,5 +432,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Sky-Balloon-Prop-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Sky-Balloon-Prop.png",
     "order": 634
-  }
+  },
+  {
+    "id": 2719,
+    "guid": "h8I7obBDzf",
+    "type": "Prop",
+    "name": "Balloon Arch",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Anniversary-Balloon-Arch-Prop-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Anniversary-Balloon-Arch-Prop.png"
+  },
 ]
