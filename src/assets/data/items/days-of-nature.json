@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Earth_Cape"
     },
-    "order": 891
+    "order": 893
   },
   {
     "id": 1779,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Necklace"
     },
-    "order": 525,
+    "order": 526,
     "dye": {
       "previewUrl": "/assets/game/dyes/Nature_shellnecklace.jpg",
       "primary": {}
@@ -41,7 +41,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Ocean_Cape"
     },
-    "order": 892
+    "order": 894
   },
   {
     "id": 1781,
@@ -53,7 +53,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Cape"
     },
-    "order": 893
+    "order": 895
   },
   {
     "id": 1782,
@@ -65,7 +65,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Turtle_Accessory"
     },
-    "order": 526
+    "order": 527
   },
   {
     "id": 1783,
@@ -103,7 +103,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_School_Cape"
     },
-    "order": 895
+    "order": 897
   },
   {
     "id": 1787,
@@ -127,7 +127,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Nature#Nature_Sonorous_Seashell"
     },
-    "order": 664
+    "order": 666
   },
   {
     "id": 2166,
@@ -136,7 +136,7 @@
     "name": "Nature Wave Cape",
     "icon": "/assets/game/items/2166.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Nature-Wave-Cape-back.png",
-    "order": 896
+    "order": 898
   },
   {
     "id": 2167,
@@ -167,7 +167,7 @@
     "name": "Ocean Blue Scarf",
     "icon": "/assets/game/items/2169.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Ocean-Blue-Scarf.png",
-    "order": 527,
+    "order": 528,
     "dye": {
       "previewUrl": "/assets/game/dyes/Nature_Riverscarf.jpg",
       "primary": {}
@@ -223,7 +223,7 @@
     "name": "Ocean Sea Foam Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Ocean-Sea-Foam-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Ocean-Sea-Foam-Cape-back.png",
-    "order": 894
+    "order": 896
   },
   {
     "id": 2626,
