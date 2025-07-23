@@ -438,6 +438,7 @@
     "guid": "jc8Pyt7eLR",
     "type": "HairAccessory",
     "name": "Butterfly Blossom Memento",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Butterfly-Blossom-Memento-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Butterfly-Blossom-Memento-Hairpiece-side.png",
     "_wiki": {
@@ -450,10 +451,11 @@
     "guid": "EK5ApidEe_",
     "type": "Cape",
     "name": "Cloak of Darkness",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Tender-Toymaker-Hood-Hair-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Tender-Toymaker-Hood-Hair.png",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Cloak-of-Darkness-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Cloak-of-Darkness-Cape-back.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Tender_Toymaker#Hair"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Cloak_of_Darkness"
     },
     "order": 883
   },
@@ -462,6 +464,7 @@
     "guid": "7oYZyU491f",
     "type": "HairAccessory",
     "name": "Mini Manatee Accessory",
+    "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1e/Mini-Manatee-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Mini-Manatee-Hairpiece.png",
     "_wiki": {
