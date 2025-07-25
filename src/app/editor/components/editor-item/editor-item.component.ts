@@ -53,6 +53,16 @@ export class EditorItemComponent {
         wiki: item?._wiki?.href || '',
       });
     });
+
+    this.form.get('dyePreview')?.valueChanges.subscribe((value) => {
+      if (value?.startsWith('src/assets/')) value = value.substring(3);
+      this.form.patchValue({ dyePreview: value }, { emitEvent: false });
+    });
+
+    this.form.get('dyeInfo')?.valueChanges.subscribe((value) => {
+      if (value?.startsWith('src/assets/')) value = value.substring(3);
+      this.form.patchValue({ dyeInfo: value }, { emitEvent: false });
+    });
   }
 
   save(): void {

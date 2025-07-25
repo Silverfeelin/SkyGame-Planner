@@ -422,6 +422,12 @@
     "name": "Anniversary Suit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Anniversary-Suit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Anniversary-Suit.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Anniversary_waistcoatpants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slot_Anniversary_waistcoatpants.jpg"
+    },
     "order": 89
   },
   {

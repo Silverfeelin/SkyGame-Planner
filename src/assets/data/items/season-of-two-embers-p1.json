@@ -103,6 +103,12 @@
     "name": "Two Embers - Part 1 Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Vault-Elder-Lantern-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Vault-Elder-Lantern-Ultimate-Cape-back.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/cape/2E-P1_ultcape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slot_2E-P1_ultcape.jpg"
+    },
     "group": "Ultimate",
     "order": 884
   },
@@ -154,6 +160,12 @@
     "name": "Tender Toymaker Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Tender-Toymaker-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Tender-Toymaker-Outfit.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/2E-P1_Toymakerpants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slot_2E-P1_Toymakerpants.jpg"
+    },
     "group": "SeasonPass",
     "order": 68
   },
@@ -164,6 +176,12 @@
     "name": "Tender Toymaker Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Tender-Toymaker-Hood-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Tender-Toymaker-Hood-Hair.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/2E-P1_Toymakerhijab.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slot_2E-P1_Toymakerhijab.jpg"
+    },
     "order": 269
   },
   {
@@ -208,6 +226,12 @@
     "name": "Stern Shepherd Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Stern-Shepherd-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Stern-Shepherd-Outfit.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/2E-P1_Shepherdpants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slot_2E-P1_Shepherdpants.jpg"
+    },
     "order": 59
   },
   {
@@ -291,6 +315,12 @@
     "name": "Resourceful Recluse Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Resourceful-Recluse-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Resourceful-Recluse-Outfit.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/2E-P1_Reclusepants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slot_2E-P1_Reclusepants.jpg"
+    },
     "group": "SeasonPass",
     "order": 66
   },
@@ -369,6 +399,10 @@
     "name": "Scarred Sentry Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Scarred-Sentry-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Scarred-Sentry-Cape-back.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/2E-P1_Sentrycape.jpg"
+    },
     "group": "SeasonPass",
     "order": 882
   },
@@ -379,6 +413,12 @@
     "name": "Scarred Sentry Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Scarred-Sentry-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Scarred-Sentry-Outfit.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/2E-P1_Sentrypants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slot_2E-P1_Sentrypants.jpg"
+    },
     "order": 67
   },
   {
