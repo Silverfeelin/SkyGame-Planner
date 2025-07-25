@@ -131,13 +131,17 @@ export class SeasonCalculatorComponent implements OnInit {
 
       // Unlock the nodes.
       for (const n of nodesToUnlock) {
-        this.candleCount -= n.sc || 0;
+        if (!n.unlocked && (!n.item || !n.item.unlocked)) {
+          this.candleCount -= n.sc || 0;
+        }
         this._nodeService.unlock(n);
       }
     } else {
       const nodesToLock = this.toggleConnected ? NodeHelper.all(node) : [node];
       for (const n of nodesToLock) {
-        this.candleCount += n.sc || 0;
+        if (n.unlocked || n.item?.unlocked) {
+          this.candleCount += n.sc || 0;
+        }
         this._nodeService.lock(n);
       }
     }
