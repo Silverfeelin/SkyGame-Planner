@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { IArea } from '@app/interfaces/area.interface';
 import { DataService } from '@app/services/data.service';
 import { SettingService } from '@app/services/setting.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
@@ -12,20 +11,27 @@ interface ICandlesData {
 }
 
 interface ICandleArea {
-  area: IArea;
+  guid: string;
+  name: string;
   imageUrl: string;
-  candles: Array<ICandle>;
+  groups: Array<ICandleGroup>;
   connections: Array<ICandleAreaConnection>;
 }
 
 interface ICandleAreaConnection {
-  area: IArea;
+  guid: string;
   p: L.LatLngTuple;
+}
+
+interface ICandleGroup {
+  name: string;
+  candles: Array<ICandle>;
 }
 
 interface ICandle {
   p: L.LatLngTuple;
   c: number;
+  description?: string;
 }
 
 const markerIcon = L.icon({
@@ -33,6 +39,7 @@ const markerIcon = L.icon({
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -12],
+  tooltipAnchor: [0, -28]
 });
 
 const markerFoundIcon = L.icon({
@@ -40,6 +47,7 @@ const markerFoundIcon = L.icon({
   iconSize: [32, 32],
   iconAnchor: [16, 32],
   popupAnchor: [0, -12],
+  tooltipAnchor: [0, -28]
 });
 
 const markerSwapIcon = L.icon({
@@ -61,6 +69,7 @@ const markerSwapIcon = L.icon({
 export class CrTrackerComponent implements AfterViewInit {
   @ViewChild('map', { static: true }) private mapDiv!: ElementRef<HTMLDivElement>;
   map: L.Map | undefined;
+  layer = L.layerGroup();
 
   _navCurrentZoom = 0;
 
@@ -71,24 +80,20 @@ export class CrTrackerComponent implements AfterViewInit {
   loading = 0;
   data!: ICandlesData;
   area!: ICandleArea;
+  defaultArea!: ICandleArea;
+  areaMap: { [guid: string]: ICandleArea } = {};
   found = new Set<any>();
+  waxInArea = signal(0);
 
   constructor() {
     this.http.get<ICandlesData>('/assets/data/candles.json').subscribe((data: ICandlesData) => {
       data.items.forEach((item) => {
-        const area = this.dataService.guidMap.get(item.area as unknown as string) as IArea;
-        if (!area) { return; }
-        item.area = area;
-
-        item.connections.forEach((connection) => {
-          const target = this.dataService.guidMap.get(connection.area as unknown as string) as IArea;
-          if (!target) { return; }
-          connection.area = target;
-        });
+        this.areaMap[item.guid] = item;
       });
 
       this.data = data;
-      this.area = data.items.at(0)!;
+      this.area = data.items.at(2)!;
+      this.defaultArea = data.items.at(0)!;
       this.loading++;
       this.initialize();
     });
@@ -126,23 +131,42 @@ export class CrTrackerComponent implements AfterViewInit {
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(this.map);
 
+    this.map.addLayer(this.layer);
+    this.loadAreaMap(this.area);
+  }
+
+  loadAreaMap(area: ICandleArea): void {
+    this.waxInArea.set(0);
+    this.area = area;
+    this.layer.clearLayers();
+
     // Add image
     const bounds: L.LatLngBoundsExpression = [[0, 0], [3508, 2480]];
     L.imageOverlay(this.area?.imageUrl, bounds, {
       attribution: 'Map by @sky_solsuga'
-    }).addTo(this.map);
-    this.map.setView([1750, 620], 0);
+    }).addTo(this.layer);
+    // Set view to center of image
+    const center: L.LatLngTuple = [3508 / 2, 2480 / 2];
+    this.map?.setView(center, -1);
 
     // Add markers
-    this.area.candles.forEach((candle) => {
-      const marker = L.marker(candle.p, {
-        icon: this.found.has(candle) ? markerFoundIcon : markerIcon
-      });
-      marker.addTo(this.map!);
+    this.area.groups.forEach(group => {
+      group.candles.forEach((candle) => {
+        this.waxInArea.update(c => c + candle.c);
+        const marker = L.marker(candle.p, {
+          icon: this.found.has(candle) ? markerFoundIcon : markerIcon
+        });
+        marker.addTo(this.layer);
 
-      marker.addEventListener('click', () => {
-        this.found.has(candle) ? marker.setIcon(markerFoundIcon) : marker.setIcon(markerIcon);
-        this.found.has(candle) ? this.found.delete(candle) : this.found.add(candle);
+        const tooltip = candle.description
+          ? `${candle.c} wax<br/>${candle.description}`
+          : `${candle.c} wax`;
+        marker.bindTooltip(tooltip, { permanent: true, direction: 'top' });
+
+        marker.addEventListener('click', () => {
+          this.found.has(candle) ? marker.setIcon(markerFoundIcon) : marker.setIcon(markerIcon);
+          this.found.has(candle) ? this.found.delete(candle) : this.found.add(candle);
+        });
       });
     });
 
@@ -151,12 +175,13 @@ export class CrTrackerComponent implements AfterViewInit {
       const marker = L.marker(connection.p, {
         icon: markerSwapIcon
       });
-      marker.addTo(this.map!);
-      marker.bindTooltip(connection.area.name, { permanent: false, direction: 'top' });
+      marker.addTo(this.layer);
+      const target = this.areaMap[connection.guid];
+      marker.bindTooltip(target?.name, { permanent: true, direction: 'top' });
+      marker.addEventListener('click', () => {
+        this.loadAreaMap(target);
+      });
     });
-  }
-
-  loadAreaMap(area: ICandleArea): void {
   }
 
 }

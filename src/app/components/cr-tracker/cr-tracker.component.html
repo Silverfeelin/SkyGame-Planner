@@ -1,11 +1,9 @@
 <div class="map-container">
   <div class="map-controls map-controls-tl">
-    <button type="button" [ngbTooltip]="'Help'" container="body" placement="bottom-start">
-      <mat-icon>question_mark</mat-icon>
+    <button type="button" [ngbTooltip]="'Home'" container="body" placement="bottom-start" (click)="loadAreaMap(defaultArea)">
+      <mat-icon>house</mat-icon>
     </button>
-    <button type="button" [class.map-control-off]="true" [ngbTooltip]="'Navigate'" container="body" placement="bottom-start">
-      <mat-icon>navigation</mat-icon>
-    </button>
+    {{ waxInArea() }}
     <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start">
       <mat-icon>restart_alt</mat-icon>
     </button>
