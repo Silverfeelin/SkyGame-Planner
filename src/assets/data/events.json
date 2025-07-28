@@ -639,7 +639,8 @@
               { "guid": "sVl_oIBWtm", "date": "2025-07-07", "endDate": "2025-07-13", "amount": 30, "description": "Week 1 rewards at Sky Cinema" },
               { "guid": "qKkE5n5QjX", "date": "2025-07-14", "endDate": "2025-07-20", "amount": 30, "description": "Week 2 rewards at Sky Cinema" },
               { "guid": "AdIhz8Eoxy", "date": "2025-07-21", "endDate": "2025-07-27", "amount": 30, "description": "Week 3 rewards at Sky Cinema" },
-              { "guid": "", "date": "2025-07-28", "endDate": "2025-08-03", "amount": 0, "description": "REWARDS ARE NOT KNOWN YET, PLEASE CHECK NEXT WEEK!" }
+              { "guid": "_jNorqN11l", "date": "2025-07-28", "endDate": "2025-08-03", "amount": 30, "description": "Week 4 rewards at Sky Cinema" },
+              { "guid": "", "date": "2025-08-04", "endDate": "2025-08-10", "amount": 0, "description": "REWARDS ARE NOT KNOWN YET, PLEASE CHECK NEXT WEEK!" }
             ]
           },
           "_calendar": {
