@@ -325,10 +325,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Days-of-Fortune-Dragon-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Fortune-Dragon-Mask.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/mask/Fortune_dragon.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/mask/Fortune_dragon.jpg"
     },
-    "order": 472
+    "order": 472,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Dragon_Mask"
+    }
   },
   {
     "id": 2057,
@@ -338,7 +341,10 @@
     "name": "Days of Fortune Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-    "order": 568
+    "order": 568,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Drum"
+    }
   },
   {
     "id": 2058,
@@ -466,6 +472,9 @@
       "secondary": {},
       "previewUrl": "/assets/game/dyes/outfit/Fortune_Snake.jpg",
       "infoUrl": "/assets/game/dyes/outfit/2slots_Fortune_Snake.jpg"
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Snake_Outfit"
     }
   },
   {
@@ -479,6 +488,9 @@
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/mask/Fortune_snake.jpg"
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Snake_Mask"
     }
   },
   {
@@ -488,6 +500,9 @@
     "name": "Music Sheet #E4",
     "sheet": "E4",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 401
+    "order": 401,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Dragon_Dance_Music_Sheet"
+    }
   }
 ]

@@ -173,7 +173,10 @@
     "name": "Music Sheet #E1",
     "sheet": "E1",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 201
+    "order": 201,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Ode_to_Joy_Music_Sheet"
+    }
   },
   {
     "id": 1891,
@@ -305,7 +308,10 @@
     "type": "HairAccessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Winter-Pinecone-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Winter-Pinecone-Headpiece.png",
-    "order": 353
+    "order": 353,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Pinecone_Hair_Clip"
+    }
   },
   {
     "id": 1977,
@@ -314,7 +320,10 @@
     "type": "Held",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Winter-Feast-Snowboard-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/66/Winter-Feast-Snowboard-prop.png",
-    "order": 673
+    "order": 673,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Feast_Snowboard"
+    }
   },
   {
     "id": 1981,
@@ -413,7 +422,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b7/Wonderland-Teacup-Bath-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Wonderland-Teacup-Bath-Prop.png",
-    "order": 769
+    "order": 769,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Teacup_Bath"
+    }
   },
   {
     "id": 2420,
@@ -423,7 +435,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Wonderland-Stacked-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Wonderland-Stacked-Hat.png",
-    "order": 345
+    "order": 345,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Stacked_Hat"
+    }
   },
   {
     "id": 2421,
@@ -432,7 +447,10 @@
     "name": "Wonderland Hare Hairstyle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Wonderland-Hare-Hairstyle-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Wonderland-Hare-Hairstyle.png",
-    "order": 298
+    "order": 298,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Hare_Hairstyle"
+    }
   },
   {
     "id": 2422,
@@ -442,7 +460,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Wonderland-Frantic-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Wonderland-Frantic-Hair.png",
-    "order": 295
+    "order": 295,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Frantic_Hair"
+    }
   },
   {
     "id": 2423,

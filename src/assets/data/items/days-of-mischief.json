@@ -241,7 +241,10 @@
     "name": "Mischief Gossamer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
-    "order": 912
+    "order": 912,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Gossamer_Cape"
+    }
   },
   {
     "id": 1871,
@@ -254,6 +257,9 @@
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Mischef_crabulacape.webp"
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Crabula_Cloak"
     }
   },
   {
@@ -263,7 +269,10 @@
     "name": "Mischief Crabula Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Crabula-Mask-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Mischief-Crabula-Mask.png",
-    "order": 480
+    "order": 480,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Crabula_Mask"
+    }
   },
   {
     "id": 1873,
@@ -294,7 +303,10 @@
     "name": "Mischief Crabkin Accessory Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Mischief-Crabkin-Accessory-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Mischief-Crabkin-Accessory.png",
-    "order": 351
+    "order": 351,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Crabkin_Accessory"
+    }
   },
   {
     "id": 1950,
@@ -310,7 +322,10 @@
     "name": "Mischief Raven-Feathered Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Mischief-Raven-Feathered-Cloak-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Mischief-Raven-Feathered-Cloak-back.png",
-    "order": 914
+    "order": 914,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Raven-Feathered_Cloak"
+    }
   },
   {
     "id": 2394,
@@ -319,7 +334,10 @@
     "name": "Mischief Withered Broom",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Mischief-Withered-Broom-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Mischief-Withered-Broom.png",
-    "order": 589
+    "order": 589,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Broom"
+    }
   },
   {
     "id": 2395,
@@ -328,7 +346,10 @@
     "name": "Mischief Spider Bun Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Mischief-Spider-Bun-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Mischief-Spider-Bun-front.png",
-    "order": 292
+    "order": 292,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spider_Bun"
+    }
   },
   {
     "id": 2396,
@@ -337,7 +358,10 @@
     "name": "Mischief Cauldron",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Cauldron-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Mischief-Cauldron.png",
-    "order": 768
+    "order": 768,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Cauldron"
+    }
   },
   {
     "id": 2397,
@@ -348,8 +372,11 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Mischief-Star-Sticker.png",
     "order": 112,
     "dye": {
-      "previewUrl": "/assets/game/dyes/Mischief_sticker.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Mischief_sticker.jpg"
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Star_Sticker"
     }
   },
   {
