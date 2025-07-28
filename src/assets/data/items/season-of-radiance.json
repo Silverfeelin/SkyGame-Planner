@@ -213,10 +213,13 @@
     "name": "Radiance Provoking Performer Head Accessory",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Provoking-Performer-Headpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Radiance-Provoking-Performer-Headpiece-side.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Radiance-Provoking-Performer-Headpiece.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg",
       "primary": {}
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Head_Accessory"
     },
     "order": 373
   },
