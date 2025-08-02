@@ -282,19 +282,25 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/13/Mischief-Goth-Garment-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Mischief-Goth-Garment.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Mischief_Goth.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Mischief_Goth.jpg"
     },
-    "order": 85
+    "order": 85,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Goth_Garment"
+    }
   },
   {
     "id": 1874,
     "guid": "Aq3FhT_OYr",
     "type": "Shoes",
-    "name": "Mischief Goth Boots Shoes",
+    "name": "Mischief Goth Boots",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Mischief-Goth-Boots-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6b/Mischief-Goth-Boots.png",
-    "order": 131
+    "order": 131,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Goth_Boots"
+    }
   },
   {
     "id": 1875,

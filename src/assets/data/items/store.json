@@ -60,7 +60,10 @@
     "name": "Fledgling Upright Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
-    "order": 771
+    "order": 771,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Fledgling_Upright_Piano"
+    }
   },
   {
     "id": 1940,
