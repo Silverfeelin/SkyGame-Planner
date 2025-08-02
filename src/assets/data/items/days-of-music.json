@@ -150,12 +150,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Music-marching-band-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Music-marching-band-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Music_pants.jpg",
-      "infoUrl": "/assets/game/dyes/outfit/2slots_Music_pants.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Music_pants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Music_pants.jpg"
     },
-    "order": 87
+    "order": 87,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Marching_Band_Outfit"
+    }
   },
   {
     "id": 2407,

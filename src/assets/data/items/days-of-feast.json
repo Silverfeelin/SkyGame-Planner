@@ -362,7 +362,10 @@
     "type": "Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Cozy-Hermit-Boots-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Cozy-Hermit-Boots.png",
-    "order": 134
+    "order": 134,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Cozy_Hermit_Boots"
+    }
   },
   {
     "id": 1980,
@@ -372,10 +375,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Winter-Quilted-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Winter-Quilted-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Feast_peek.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/Feast_peek.jpg"
     },
-    "order": 919
+    "order": 919,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Winter_Quilted_Cape"
+    }
   },
   {
     "id": 1983,
@@ -392,7 +398,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Wonderland-Primrose-Pinafore-Dress-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Wonderland-Primrose-Pinafore-Dress.png",
-    "order": 86
+    "order": 86,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Primrose_Pinafore_Set"
+    }
   },
   {
     "id": 2417,
@@ -402,7 +411,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/Wonderland-Primrose-Pinafore-bow-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Wonderland-Primrose-Pinafore-bow.png",
-    "order": 344
+    "order": 344,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Primrose_Pinafore_Set"
+    }
   },
   {
     "id": 2418,
@@ -412,7 +424,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Wonderland-Cafe-Corridor-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Wonderland-Cafe-Corridor.png",
-    "order": 770
+    "order": 770,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast#Wonderland_Cafe_Corridor"
+    }
   },
   {
     "id": 2419,

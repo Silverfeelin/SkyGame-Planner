@@ -124,12 +124,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Sunlight-Woven-Wrap-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
-      "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg"
     },
-    "order": 907
+    "order": 907,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Woven_Wrap"
+    }
   },
   {
     "id": 2290,
@@ -138,7 +141,10 @@
     "name": "Sunlight Helios Hoops",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
-    "order": 380
+    "order": 380,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Helios_Hoops"
+    }
   },
   {
     "id": 2291,
@@ -147,7 +153,10 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 586
+    "order": 586,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Manta_Float"
+    }
   },
   {
     "id": 2292,
@@ -157,12 +166,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Sunlight-Beach-Shorts-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Sunlight-Beach-Shorts-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg",
-      "infoUrl": "/assets/game/dyes/outfit/2slots_Sunlight_dadpants.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Sunlight_dadpants.jpg"
     },
-    "order": 79
+    "order": 79,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Beach_Shorts"
+    }
   },
   {
     "id": 2293,

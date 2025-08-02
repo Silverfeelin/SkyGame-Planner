@@ -120,7 +120,10 @@
     "name": "Music Sheet #E2",
     "sheet": "E2",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
-    "order": 202
+    "order": 202,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Music_Sheets#Music_Sheet_E2"
+    }
   },
   {
     "id": 1830,
@@ -252,7 +255,10 @@
     "name": "Skyfest Oreo Headband",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/SkyFest-Oreo-Headband-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/SkyFest-Oreo-Headband.png",
-    "order": 346
+    "order": 346,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#2024_New_Cosmetics_and_Props"
+    }
   },
   {
     "id": 2231,
@@ -271,7 +277,10 @@
     "name": "Skyfest Star Jar",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/SkyFest-Star-Jar-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SkyFest-Star-Jar.png",
-    "order": 764
+    "order": 764,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary/2024#SkyFest_Star_Jar"
+    }
   },
   {
     "id": 2233,
@@ -281,7 +290,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/SkyFest-5th-Anniversary-T-shirt-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/SkyFest-5th-Anniversary-T-shirt-front.png",
-    "order": 76
+    "order": 76,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#2024_New_Cosmetics_and_Props"
+    }
   },
   {
     "id": 2234,
@@ -290,7 +302,10 @@
     "name": "Skyfest Jenova Fan",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/SkyFest-Jenova-Fan-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/SkyFest-Jenova-Fan.png",
-    "order": 583
+    "order": 583,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary/2024#SkyFest_Jenova_Fan"
+    }
   },
   {
     "id": 2235,
@@ -410,10 +425,13 @@
     "id": 2673,
     "guid": "HLi0DXNlFu",
     "type": "Prop",
-    "name": "Blue Carpet",
+    "name": "Anniversary Blue Carpet",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Cinema-Blue-Carpet-Prop-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Cinema-Blue-Carpet-Prop.png",
-    "order": 634
+    "order": 634,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Blue_Carpet"
+    }
   },
   {
     "id": 2674,
@@ -440,7 +458,10 @@
     "name": "Sky Balloon Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Sky-Balloon-Prop-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Sky-Balloon-Prop.png",
-    "order": 635
+    "order": 635,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Sky_Balloon_Prop"
+    }
   },
   {
     "id": 2721,
