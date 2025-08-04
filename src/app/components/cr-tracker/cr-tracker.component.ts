@@ -4,6 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { DataService } from '@app/services/data.service';
 import { SettingService } from '@app/services/setting.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { parse as jsoncParse} from 'jsonc-parser';
 import L from 'leaflet';
 
 interface ICandlesData {
@@ -25,6 +26,7 @@ interface ICandleAreaConnection {
 
 interface ICandleGroup {
   name: string;
+  poly?: L.LatLngTuple[];
   candles: Array<ICandle>;
 }
 
@@ -86,14 +88,15 @@ export class CrTrackerComponent implements AfterViewInit {
   waxInArea = signal(0);
 
   constructor() {
-    this.http.get<ICandlesData>('/assets/data/candles.json').subscribe((data: ICandlesData) => {
-      data.items.forEach((item) => {
+    this.http.get('/assets/data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
+      const parsed = jsoncParse(data);
+      parsed.items.forEach((item: ICandleArea) => {
         this.areaMap[item.guid] = item;
       });
 
-      this.data = data;
-      this.area = data.items.at(2)!;
-      this.defaultArea = data.items.at(0)!;
+      this.data = parsed;
+      this.area = parsed.items.at(2)!;
+      this.defaultArea = parsed.items.at(0)!;
       this.loading++;
       this.initialize();
     });
@@ -151,6 +154,19 @@ export class CrTrackerComponent implements AfterViewInit {
 
     // Add markers
     this.area.groups.forEach(group => {
+      if (group.poly) {
+        const polygon = L.polygon(group.poly, {
+          color: 'orange',
+          fillColor: 'orange',
+          fillOpacity: 0.1,
+          weight: 1
+        });
+        polygon.addTo(this.layer);
+        // Calculate total wax in this group
+        const groupWaxTotal = group.candles.reduce((sum, candle) => sum + candle.c, 0);
+        polygon.bindTooltip(`${group.name}<br/>${groupWaxTotal} wax`, { permanent: true, direction: 'center' });
+      }
+
       group.candles.forEach((candle) => {
         this.waxInArea.update(c => c + candle.c);
         const marker = L.marker(candle.p, {
