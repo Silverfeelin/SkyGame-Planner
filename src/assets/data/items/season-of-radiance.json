@@ -86,7 +86,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 876
+    "order": 881
   },
   {
     "id": 2450,
@@ -96,7 +96,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Radiance-Leaping-Dancer-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Radiance-Leaping-Dancer-prop.png",
-    "order": 627
+    "order": 631
   },
   {
     "id": 2451,
@@ -213,10 +213,13 @@
     "name": "Radiance Provoking Performer Head Accessory",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Provoking-Performer-Headpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Radiance-Provoking-Performer-Headpiece-side.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Radiance-Provoking-Performer-Headpiece.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg",
       "primary": {}
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Head_Accessory"
     },
     "order": 373
   },
@@ -234,7 +237,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 875
+    "order": 880
   },
   {
     "id": 2462,
@@ -244,7 +247,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-Greeting-Shaman-instrument-Cymbals-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Radiance-Greeting-Shaman-instrument-Cymbals.png",
-    "order": 563
+    "order": 567
   },
   {
     "id": 2463,
@@ -437,7 +440,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Season-of-Radiance-Pendant.png",
-    "order": 510
+    "order": 512
   },
   {
     "id": 2481,
@@ -453,7 +456,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 464
+    "order": 466
   },
   {
     "id": 2482,
@@ -469,7 +472,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 877
+    "order": 882
   },
   {
     "id": 2483,
@@ -484,7 +487,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 796
+    "order": 801
   },
   {
     "id": 2484,

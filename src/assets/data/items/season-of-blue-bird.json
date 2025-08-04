@@ -21,7 +21,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Season-of-Blue-Bird-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season-of-the-Blue-Bird-Pendant.png",
-    "order": 511
+    "order": 513,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Seasonal_Pendant"
+    }
   },
   {
     "id": 2549,
@@ -31,7 +34,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Blue-Bird-Guide-Ultimate-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Blue-Bird-Guide-Ultimate-Facepiece.png",
-    "order": 105
+    "order": 105,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Ultimate_Gifts"
+    }
   },
   {
     "id": 2550,
@@ -45,7 +51,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_whitecape.jpg"
     },
-    "order": 881
+    "order": 886,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Ultimate_Gifts"
+    }
   },
   {
     "id": 2551,
@@ -168,7 +177,7 @@
     "type": "Furniture",
     "name": "Perch Tree",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Blue-Bird-Guide-Additional-Prop-icon.png",
-    "order": 628
+    "order": 632
   },
   {
     "id": 2569,
@@ -177,7 +186,10 @@
     "name": "Divining Wise Grandparent Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Divining-Wise-Grandparent-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Divining-Wise-Grandparent-Facepiece.png",
-    "order": 106
+    "order": 106,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Divining_Wise_Grandparent#Face_Accessory"
+    }
   },
   {
     "id": 2570,
@@ -191,7 +203,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_grandpacape.jpg"
     },
-    "order": 880
+    "order": 885,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Divining_Wise_Grandparent#Cape"
+    }
   },
   {
     "id": 2571,
@@ -253,7 +268,10 @@
     "name": "Costumed Confetti Cousin Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Costumed-Confetti-Cousin-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Costumed-Confetti-Cousin-Hairpiece.png",
-    "order": 326
+    "order": 326,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Hair_Accessory"
+    }
   },
   {
     "id": 2579,
@@ -269,7 +287,10 @@
       "previewUrl": "/assets/game/dyes/Bluebird_mask.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_mask.jpg"
     },
-    "order": 465
+    "order": 467,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Mask"
+    }
   },
   {
     "id": 2580,
@@ -283,7 +304,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_confettidress.jpg"
     },
-    "order": 54
+    "order": 54,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Outfit"
+    }
   },
   {
     "id": 2581,
@@ -296,7 +320,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_confettihat.jpg"
     },
-    "order": 266
+    "order": 266,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Hair"
+    }
   },
   {
     "id": 2582,
@@ -358,7 +385,10 @@
     "name": "Surprised",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Royal-Hairtousle-Teen-emote-icon.png",
     "level": 1,
-    "order": 1402
+    "order": 1402,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Expression"
+    }
   },
   {
     "id": 2590,
@@ -367,7 +397,10 @@
     "name": "Surprised",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Royal-Hairtousle-Teen-emote-icon.png",
-    "level": 2
+    "level": 2,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Expression"
+    }
   },
   {
     "id": 2591,
@@ -375,7 +408,10 @@
     "type": "Emote",
     "name": "Surprised",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Royal-Hairtousle-Teen-emote-icon.png",
-    "level": 3
+    "level": 3,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Expression"
+    }
   },
   {
     "id": 2592,
@@ -384,7 +420,10 @@
     "name": "Surprised",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Royal-Hairtousle-Teen-emote-icon.png",
-    "level": 4
+    "level": 4,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Expression"
+    }
   },
   {
     "id": 2593,
@@ -398,7 +437,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_tousleheadphones.jpg"
     },
-    "order": 374
+    "order": 374,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Head_Accessory"
+    }
   },
   {
     "id": 2594,
@@ -413,7 +455,10 @@
       "previewUrl": "/assets/game/dyes/Bluebird_touslepants.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslepants.jpg"
     },
-    "order": 64
+    "order": 64,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Outfit"
+    }
   },
   {
     "id": 2595,
@@ -429,7 +474,10 @@
       "previewUrl": "/assets/game/dyes/Bluebird_touslecape.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslecape.jpg"
     },
-    "order": 878
+    "order": 883,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Cape"
+    }
   },
   {
     "id": 2596,
@@ -469,7 +517,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Nostalgic-Sparkler-Parent-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Nostalgic-Sparkler-Parent-Hairpiece.png",
-    "order": 327
+    "order": 327,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nostalgic_Sparkler_Parent#Hair_Accessory"
+    }
   },
   {
     "id": 2601,
@@ -482,7 +533,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_beetlecape.jpg"
     },
-    "order": 879
+    "order": 884,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Nostalgic_Sparkler_Parent#Cape"
+    }
   },
   {
     "id": 2602,
@@ -544,7 +598,10 @@
     "name": "Music Sheet #43",
     "sheet": "43",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
-    "order": 303
+    "order": 303,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Woodcutting_Pleaful_Parent#Music_Sheet"
+    }
   },
   {
     "id": 2610,
@@ -558,7 +615,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_pleafulboots.jpg"
     },
-    "order": 126
+    "order": 126,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Woodcutting_Pleaful_Parent#Shoes"
+    }
   },
   {
     "id": 2611,
@@ -571,7 +631,10 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_pleafulpants.jpg"
     },
-    "order": 65
+    "order": 65,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Woodcutting_Pleaful_Parent#Outfit"
+    }
   },
   {
     "id": 2612,

@@ -107,7 +107,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask"
     },
-    "order": 478
+    "order": 480
   },
   {
     "id": 1849,
@@ -131,10 +131,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dazzling-Dress-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Style-Dazzling-Dress-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Style_dress.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Style_dress.jpg"
     },
-    "order": 82
+    "order": 82,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Dazzling_Dress"
+    }
   },
   {
     "id": 2321,
@@ -145,8 +148,11 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
     "order": 350,
     "dye": {
-      "previewUrl": "/assets/game/dyes/hair-accessory/Style_veil.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair-accessory/Style_veil.jpg"
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Darkness_Fascinator"
     }
   },
   {
@@ -164,12 +170,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Style-Dapper-Suit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Style-Dapper-Suit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg",
-      "infoUrl": "/assets/game/dyes/outfit/2slots_Style_suit.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Style_suit.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Style_suit.jpg"
     },
-    "order": 83
+    "order": 83,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Dapper_Suit"
+    }
   },
   {
     "id": 2324,
@@ -178,7 +187,10 @@
     "name": "Style Dapper Monocle",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Style-Dapper-Monocle-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7b/Style-Dapper-Monocle.png",
-    "order": 111
+    "order": 111,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Dapper_Monocle"
+    }
   },
   {
     "id": 2325,
@@ -187,6 +199,9 @@
     "name": "Style Dapper Necktie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Style-Dapper-Necktie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Style-Dapper-Necktie.png",
-    "order": 530
+    "order": 532,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Dapper_Necktie"
+    }
   }
 ]

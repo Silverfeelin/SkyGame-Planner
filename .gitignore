@@ -59,3 +59,4 @@ Thumbs.db
 # Other
 #/scripts
 /scripts/temp/**
+/scripts/data/temp/**
