@@ -44,16 +44,16 @@
   {
     "id": 2667,
     "guid": "ZqbtSzrvGp",
-    "name": "Placeholder",
+    "name": "Heart",
     "type": "Special",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   },
   {
     "id": 2668,
     "guid": "rCjkMHHCz3",
-    "name": "Placeholder",
+    "name": "Quest 4",
     "type": "Special",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2669,
@@ -525,5 +525,26 @@
     "type": "Call",
     "name": "Manatee Call",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Stern-Shepherd-Manatee-Call-icon.png"
+  },
+  {
+    "id": 2722,
+    "guid": "pXcklhaYG9",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2723,
+    "guid": "LPN93GIgd9",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2724,
+    "guid": "5XxQVkXFxk",
+    "type": "Prop",
+    "name": "Butterfly Figurine",
+    "icon": ""
   }
 ]
