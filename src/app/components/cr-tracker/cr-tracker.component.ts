@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '@app/services/data.service';
 import { SettingService } from '@app/services/setting.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
@@ -87,6 +88,9 @@ export class CrTrackerComponent implements AfterViewInit {
   found = new Set<any>();
   waxInArea = signal(0);
 
+  router = inject(Router);
+  route = inject(ActivatedRoute);
+
   constructor() {
     this.http.get('/assets/data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
@@ -99,6 +103,22 @@ export class CrTrackerComponent implements AfterViewInit {
       this.defaultArea = parsed.items.at(0)!;
       this.loading++;
       this.initialize();
+
+      // Change area based on query param.
+      this.route.queryParamMap.subscribe(params => {
+        const areaGuid = params.get('area');
+        const area = areaGuid ? this.areaMap[areaGuid] : this.defaultArea;
+        this.loadAreaMap(area);
+      });
+    });
+
+  }
+
+  navigateToArea(area: ICandleArea): void {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { area: area.guid },
+      queryParamsHandling: 'merge'
     });
   }
 
@@ -135,7 +155,6 @@ export class CrTrackerComponent implements AfterViewInit {
     zoom.addTo(this.map);
 
     this.map.addLayer(this.layer);
-    this.loadAreaMap(this.area);
   }
 
   loadAreaMap(area: ICandleArea): void {
@@ -195,7 +214,12 @@ export class CrTrackerComponent implements AfterViewInit {
       const target = this.areaMap[connection.guid];
       marker.bindTooltip(target?.name, { permanent: true, direction: 'top' });
       marker.addEventListener('click', () => {
-        this.loadAreaMap(target);
+        this.router.navigate([], {
+          relativeTo: this.route,
+          queryParams: { area: target?.guid },
+          queryParamsHandling: 'merge'
+        });
+        // this.loadAreaMap(target);
       });
     });
   }
