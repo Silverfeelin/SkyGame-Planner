@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Cape"
     },
-    "order": 889
+    "order": 893
   },
   {
     "id": 1765,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Teaset"
     },
-    "order": 642
+    "order": 646
   },
   {
     "id": 1767,
@@ -59,7 +59,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Cape"
     },
-    "order": 890
+    "order": 894
   },
   {
     "id": 1770,
@@ -78,7 +78,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Purple_Bloom_Teaset"
     },
-    "order": 644
+    "order": 648
   },
   {
     "id": 1772,
@@ -97,7 +97,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Red_Bloom_Cape"
     },
-    "order": 891
+    "order": 895
   },
   {
     "id": 1774,
@@ -109,7 +109,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Butterfly_Fountain"
     },
-    "order": 666
+    "order": 670
   },
   {
     "id": 1775,
@@ -146,7 +146,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Bloom_Picnic_Basket"
     },
-    "order": 645
+    "order": 649
   },
   {
     "id": 2075,
@@ -155,7 +155,7 @@
     "name": "Bloom Lilypad Umbrella",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Bloom-Lilypad-Umbrella-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Bloom-Lilypad-Umbrella-held.png",
-    "order": 582
+    "order": 586
   },
   {
     "id": 2076,
@@ -164,7 +164,7 @@
     "name": "Bloom Arum Petal Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Bloom-Arum-Petal-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Bloom-Arum-Petal-Cape-back.png",
-    "order": 892
+    "order": 896
   },
   {
     "id": 2078,
@@ -225,7 +225,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 893
+    "order": 897
   },
   {
     "id": 2540,
@@ -240,7 +240,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 481
+    "order": 483
   },
   {
     "id": 2541,
@@ -249,7 +249,7 @@
     "name": "Bloom Rose Jar Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Bloom-Rose-Jar-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Bloom-Rose-Jar-prop.png",
-    "order": 774
+    "order": 778
   },
   {
     "id": 2542,

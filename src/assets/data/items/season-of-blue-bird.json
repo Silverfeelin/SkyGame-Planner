@@ -21,7 +21,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Season-of-Blue-Bird-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season-of-the-Blue-Bird-Pendant.png",
-    "order": 511
+    "order": 513
   },
   {
     "id": 2549,
@@ -45,7 +45,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_whitecape.jpg"
     },
-    "order": 882
+    "order": 886
   },
   {
     "id": 2551,
@@ -168,7 +168,7 @@
     "type": "Furniture",
     "name": "Perch Tree",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Blue-Bird-Guide-Additional-Prop-icon.png",
-    "order": 628
+    "order": 632
   },
   {
     "id": 2569,
@@ -191,7 +191,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_grandpacape.jpg"
     },
-    "order": 881
+    "order": 885
   },
   {
     "id": 2571,
@@ -269,7 +269,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_mask.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_mask.jpg"
     },
-    "order": 465
+    "order": 467
   },
   {
     "id": 2580,
@@ -429,7 +429,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_touslecape.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslecape.jpg"
     },
-    "order": 879
+    "order": 883
   },
   {
     "id": 2596,
@@ -482,7 +482,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_beetlecape.jpg"
     },
-    "order": 880
+    "order": 884
   },
   {
     "id": 2602,

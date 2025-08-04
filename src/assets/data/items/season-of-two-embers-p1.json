@@ -84,7 +84,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/22/Season-of-Ember-P1-Pendant.png",
-    "order": 512
+    "order": 514
   },
   {
     "id": 2676,
@@ -110,7 +110,7 @@
       "infoUrl": "/assets/game/dyes/cape/2slot_2E-P1_ultcape.jpg"
     },
     "group": "Ultimate",
-    "order": 885
+    "order": 889
   },
   {
     "id": 2678,
@@ -127,7 +127,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Tender-Toymaker-Crab-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Tender-Toymaker-Crab-Figurine-Prop.png",
-    "order": 630
+    "order": 634
   },
   {
     "id": 2680,
@@ -136,7 +136,7 @@
     "name": "Manatee Toy",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Tender-Toymaker-Manatee-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Tender-Toymaker-Manatee-Figurine-Prop.png",
-    "order": 577
+    "order": 581
   },
   {
     "id": 2681,
@@ -257,7 +257,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Stern-Shepherd-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Stern-Shepherd-Staff-Prop.png",
     "group": "SeasonPass",
-    "order": 576
+    "order": 580
   },
   {
     "id": 2695,
@@ -266,7 +266,7 @@
     "name": "Stern Shepherd Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Stern-Shepherd-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Stern-Shepherd-Mask.png",
-    "order": 467
+    "order": 469
   },
   {
     "id": 2696,
@@ -291,7 +291,7 @@
     "name": "Resourceful Recluse Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cc/Resourceful-Recluse-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Resourceful-Recluse-mask.png",
-    "order": 466
+    "order": 468
   },
   {
     "id": 2698,
@@ -331,7 +331,7 @@
     "name": "Resourceful Recluse Tea Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Resourceful-Recluse-Tea-Stall-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Resourceful-Recluse-Tea-Stall-Prop.png",
-    "order": 632
+    "order": 636
   },
   {
     "id": 2702,
@@ -356,7 +356,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Resourceful-Recluse-Vine-plant-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Resourceful-Recluse-Vine-plant-Prop.png",
     "group": "SeasonPass",
-    "order": 631
+    "order": 635
   },
   {
     "id": 2705,
@@ -404,7 +404,7 @@
       "previewUrl": "/assets/game/dyes/cape/2E-P1_Sentrycape.jpg"
     },
     "group": "SeasonPass",
-    "order": 883
+    "order": 887
   },
   {
     "id": 2709,
@@ -438,7 +438,7 @@
     "name": "Scarred Sentry Shield",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Scarred-Sentry-Shield-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/35/Scarred-Sentry-Shield-Prop.png",
-    "order": 579
+    "order": 583
   },
   {
     "id": 2712,
@@ -463,7 +463,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Scarred-Sentry-Spear-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Scarred-Sentry-Spear-Prop.png",
     "group": "SeasonPass",
-    "order": 578
+    "order": 582
   },
   {
     "id": 2715,
@@ -497,7 +497,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Cloak_of_Darkness"
     },
-    "order": 884
+    "order": 888
   },
   {
     "id": 2718,
@@ -546,7 +546,7 @@
     "type": "Prop",
     "name": "Butterfly Toy",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Caring-Companion-Butterfly-Toy-Prop-icon.png",
-    "order": 629
+    "order": 633
   },
   {
     "id": 2725,
@@ -554,7 +554,8 @@
     "type": "HeadAccessory",
     "name": "Spirited Manatee Ears",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Spirited-Manatee-Head-accessory-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Spirited-Manatee-Headpiece.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Spirited-Manatee-Headpiece.png",
+    "order": 376
   },
   {
     "id": 2726,
@@ -562,7 +563,8 @@
     "type": "Necklace",
     "name": "Spirited Manatee Tail",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Spirited-Manatee-Tail-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Spirited-Manatee-Tail.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Spirited-Manatee-Tail.png",
+    "order": 538
   },
   {
     "id": 2727,
@@ -570,7 +572,8 @@
     "type": "HeadAccessory",
     "name": "Vestige of Dark Dragon Horns",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Vestige-of-Dark-Dragon-headpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Vestige-of-Dark-Dragon-headpiece.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Vestige-of-Dark-Dragon-headpiece.png",
+    "order": 375
   },
   {
     "id": 2728,
@@ -578,6 +581,7 @@
     "type": "Necklace",
     "name": "Vestige of Dark Dragon Tail",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Vestige-of-Dark-Dragon-Tail-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Vestige-of-Dark-Dragon-Tail.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Vestige-of-Dark-Dragon-Tail.png",
+    "order": 537
   }
 ]
