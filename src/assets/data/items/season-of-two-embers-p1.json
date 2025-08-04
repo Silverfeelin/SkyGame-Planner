@@ -547,5 +547,37 @@
     "name": "Butterfly Toy",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Caring-Companion-Butterfly-Toy-Prop-icon.png",
     "order": 629
+  },
+  {
+    "id": 2725,
+    "guid": "y69WKTTyw7",
+    "type": "HeadAccessory",
+    "name": "Spirited Manatee Ears",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Spirited-Manatee-Head-accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/Spirited-Manatee-Headpiece.png"
+  },
+  {
+    "id": 2726,
+    "guid": "cXaPt2zi0Q",
+    "type": "Necklace",
+    "name": "Spirited Manatee Tail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Spirited-Manatee-Tail-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Spirited-Manatee-Tail.png"
+  },
+  {
+    "id": 2727,
+    "guid": "nBIm3PkDea",
+    "type": "HeadAccessory",
+    "name": "Vestige of Dark Dragon Horns",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fd/Vestige-of-Dark-Dragon-headpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Vestige-of-Dark-Dragon-headpiece.png"
+  },
+  {
+    "id": 2728,
+    "guid": "Io4R50c-s1",
+    "type": "Necklace",
+    "name": "Vestige of Dark Dragon Tail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Vestige-of-Dark-Dragon-Tail-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Vestige-of-Dark-Dragon-Tail.png"
   }
 ]
