@@ -110,7 +110,7 @@
       "infoUrl": "/assets/game/dyes/cape/2slot_2E-P1_ultcape.jpg"
     },
     "group": "Ultimate",
-    "order": 884
+    "order": 885
   },
   {
     "id": 2678,
@@ -127,7 +127,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Tender-Toymaker-Crab-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Tender-Toymaker-Crab-Figurine-Prop.png",
-    "order": 629
+    "order": 630
   },
   {
     "id": 2680,
@@ -331,7 +331,7 @@
     "name": "Resourceful Recluse Tea Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Resourceful-Recluse-Tea-Stall-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Resourceful-Recluse-Tea-Stall-Prop.png",
-    "order": 631
+    "order": 632
   },
   {
     "id": 2702,
@@ -356,7 +356,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Resourceful-Recluse-Vine-plant-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Resourceful-Recluse-Vine-plant-Prop.png",
     "group": "SeasonPass",
-    "order": 630
+    "order": 631
   },
   {
     "id": 2705,
@@ -404,7 +404,7 @@
       "previewUrl": "/assets/game/dyes/cape/2E-P1_Sentrycape.jpg"
     },
     "group": "SeasonPass",
-    "order": 882
+    "order": 883
   },
   {
     "id": 2709,
@@ -497,7 +497,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Cloak_of_Darkness"
     },
-    "order": 883
+    "order": 884
   },
   {
     "id": 2718,
@@ -544,7 +544,8 @@
     "id": 2724,
     "guid": "5XxQVkXFxk",
     "type": "Prop",
-    "name": "Butterfly Toy",  
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Caring-Companion-Butterfly-Toy-Prop-icon.png"
+    "name": "Butterfly Toy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Caring-Companion-Butterfly-Toy-Prop-icon.png",
+    "order": 629
   }
 ]

@@ -169,7 +169,7 @@
     "name": "Moomin Storybook Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Moomin-Family-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Moomin-Family-Painting-Prop.png",
-    "order": 757
+    "order": 758
   },
   {
     "id": 2348,
@@ -197,7 +197,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Comfort-of-Kindness-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Comfort-of-Kindness-Cape-front.png",
-    "order": 874
+    "order": 875
   },
   {
     "id": 2351,
@@ -207,7 +207,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Comfort-of-Kindness-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Comfort-of-Kindness-Painting-Prop.png",
-    "order": 759
+    "order": 760
   },
   {
     "id": 2352,
@@ -217,7 +217,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Comfort-of-Kindness-Chandelier-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Comfort-of-Kindness-Chandelier-Prop.png",
-    "order": 760
+    "order": 761
   },
   {
     "id": 2367,
@@ -357,7 +357,7 @@
     "name": "Spirit Of Adventure Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Spirit-of-Adventure-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Spirit-of-Adventure-Cape-back.png",
-    "order": 873
+    "order": 874
   },
   {
     "id": 2359,
@@ -454,7 +454,7 @@
     "name": "Inspiration Of Inclusion Clock",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Inspiration-of-Inclusion-Clock-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Inspiration-of-Inclusion-Clock-Prop.png",
-    "order": 761
+    "order": 762
   },
   {
     "id": 2366,
@@ -463,7 +463,7 @@
     "name": "Inspiration Of Inclusion Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Inspiration-of-Inclusion-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Inspiration-of-Inclusion-Painting-Prop.png",
-    "order": 758
+    "order": 759
   },
   {
     "id": 2387,
@@ -561,6 +561,6 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png",
-    "order": 872
+    "order": 873
   }
 ]
