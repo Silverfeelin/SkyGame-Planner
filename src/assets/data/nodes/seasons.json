@@ -4298,5 +4298,9 @@
   { "guid": "_Dvi4zvM6x", "item": "cd6D-FQdL1", "n": "R-uQhaZIyK", "nw": "vRH_johmJX", "sc": 34 },
   { "guid": "vRH_johmJX", "item": "NQsPOB-fqz" },
   { "guid": "R-uQhaZIyK", "item": "UhOnUa1IoR", "sc": 3 },
+  // Caring Companion
+  { "guid": "ataTovLcTn", "item": "pXcklhaYG9", "n": "fdnBPHQAJq", "nw": "CI48zASaY2" },
+  { "guid": "CI48zASaY2", "item": "LPN93GIgd9" },
+  { "guid": "fdnBPHQAJq", "item": "5XxQVkXFxk" },
   // #endregion
 ]
