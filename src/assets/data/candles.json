@@ -5,6 +5,7 @@
       "name": "Aviary Village",
       "imageUrl": "/assets/external/solsuga/aviary.webp",
       "imageSize": [3508, 2480],
+      "imageAttribution": "Map by @sky_solsuga",
       "groups": [
         {
           "name": "Home Portals",
@@ -15,7 +16,7 @@
             [1203.00, 1317.00]
           ],
           "candles": [
-            { "p": [1303.00, 1217.00], "c": 23 }
+            { "p": [1303.00, 1217.00], "c": 23, "description": "Home Portals" }
           ]
         },
         {
@@ -48,6 +49,7 @@
       "name": "Isle of Dawn",
       "imageUrl": "/assets/external/solsuga/dawn.webp",
       "imageSize": [3508, 2480],
+      "imageAttribution": "Map by @sky_solsuga",
       "groups": [
         {
           "name": "Cave of Prophecies",
@@ -181,6 +183,7 @@
       "name": "Daylight Prairie",
       "imageUrl": "/assets/external/solsuga/prairie.webp",
       "imageSize": [3508, 2480],
+      "imageAttribution": "Map by @sky_solsuga",
       "groups": [
         {
           "name": "Social Space",

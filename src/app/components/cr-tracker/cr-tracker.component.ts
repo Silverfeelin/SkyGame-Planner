@@ -1,13 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, inject, isDevMode, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, computed, ElementRef, inject, isDevMode, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import { DataService } from '@app/services/data.service';
 import { SettingService } from '@app/services/setting.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { parse as jsoncParse} from 'jsonc-parser';
 import L from 'leaflet';
 import { HostListener } from '@angular/core';
+import { OverlayComponent } from "../layout/overlay/overlay.component";
+import { EventService } from '@app/services/event.service';
 
 interface ICandlesData {
   items: Array<ICandleArea>;
@@ -18,6 +20,7 @@ interface ICandleArea {
   name: string;
   imageUrl: string;
   imageSize: L.LatLngTuple;
+  imageAttribution?: string;
   groups: Array<ICandleGroup>;
   connections: Array<ICandleAreaConnection>;
 }
@@ -66,8 +69,9 @@ const markerSwapIcon = L.icon({
 @Component({
   selector: 'app-cr-tracker',
   imports: [
-    NgbTooltip, MatIcon
-  ],
+    NgbTooltip, MatIcon,
+    OverlayComponent
+],
   templateUrl: './cr-tracker.component.html',
   styleUrl: './cr-tracker.component.scss'
 })
@@ -85,10 +89,20 @@ export class CrTrackerComponent implements AfterViewInit {
 
   _navCurrentZoom = 0;
 
-
   http = inject(HttpClient);
   dataService = inject(DataService);
   settingService = inject(SettingService);
+
+  isAreaOverlayVisible = signal(false);
+  areaOverlayData = computed(() => {
+    if (!this.isAreaOverlayVisible()) return [];
+    const areas = this.data.items.map(area => ({
+      area,
+      found: area.groups.reduce((sum, group) => sum + group.candles.filter(candle => this.found.has(candle)).reduce((sum, candle) => sum + candle.c, 0), 0),
+      total: area.groups.reduce((sum, group) => sum + group.candles.reduce((sum, candle) => sum + candle.c, 0), 0),
+    }));
+    return areas;
+  });
 
   loading = 0;
   data!: ICandlesData;
@@ -105,6 +119,7 @@ export class CrTrackerComponent implements AfterViewInit {
   route = inject(ActivatedRoute);
 
   constructor() {
+    inject(EventService).disableKeyboardShortcutsUntilDestroyed();
     this.http.get('/assets/data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
       parsed.items.forEach((item: ICandleArea) => {
@@ -124,7 +139,14 @@ export class CrTrackerComponent implements AfterViewInit {
         this.loadAreaMap(area);
       });
     });
+  }
 
+  gotoHome(): void {
+    if (this.found.size && !confirm('Are you sure you want to go to back to the Sky Planner? The website does not save your collected wax.')) {
+      return;
+    }
+
+    void this.router.navigate(['/']);
   }
 
   navigateToArea(area: ICandleArea): void {
@@ -202,11 +224,11 @@ export class CrTrackerComponent implements AfterViewInit {
     // Add image
     const bounds: L.LatLngBoundsExpression = [[0, 0], this.area.imageSize];
     L.imageOverlay(this.area.imageUrl, bounds, {
-      attribution: 'Map by @sky_solsuga'
+      attribution: this.area.imageAttribution || ''
     }).addTo(this.layer);
     // Set view to center of image
     const center: L.LatLngTuple = [this.area.imageSize[0] / 2, this.area.imageSize[1] / 2];
-    this.map?.setView(center, -1);
+    this.map?.setView(center, -2);
 
     // Add markers
     this.area.groups.forEach(group => {
@@ -223,7 +245,7 @@ export class CrTrackerComponent implements AfterViewInit {
         const tooltip = candle.description
           ? `${candle.c} wax<br/>${candle.description}`
           : `${candle.c} wax`;
-        marker.bindTooltip(tooltip, { permanent: true, direction: 'top' });
+        marker.bindTooltip(tooltip, { permanent: false, direction: 'top' });
 
         marker.addEventListener('click', () => {
           this.toggleCandle(candle);
@@ -239,9 +261,10 @@ export class CrTrackerComponent implements AfterViewInit {
           weight: 1
         });
         polygon.addTo(this.layer);
+
         // Calculate total wax in this group
-        const groupWaxTotal = group.candles.reduce((sum, candle) => sum + candle.c, 0);
-        polygon.bindTooltip(`${group.name}<br/>${groupWaxTotal} wax`, { permanent: true, direction: 'center' });
+        // const groupWaxTotal = group.candles.reduce((sum, candle) => sum + candle.c, 0);
+        // polygon.bindTooltip(`${group.name}<br/>${groupWaxTotal} wax`, { permanent: true, direction: 'center' });
 
         const togglePos = group.poly[0];
         console.log(togglePos);

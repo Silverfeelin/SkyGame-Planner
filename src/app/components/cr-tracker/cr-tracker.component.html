@@ -1,9 +1,9 @@
 <div class="map-container">
   <div class="map-controls map-controls-tl">
-    <button type="button" [ngbTooltip]="'Home'" container="body" placement="bottom-start" (click)="navigateToArea(defaultArea)">
+    <button type="button" [ngbTooltip]="'Home'" container="body" placement="bottom-start" (click)="gotoHome()">
       <mat-icon>house</mat-icon>
     </button>
-    <button type="button" [ngbTooltip]="'Choose area'" container="body" placement="bottom-start">
+    <button type="button" [ngbTooltip]="'Choose map'" container="body" placement="bottom-start" (click)="isAreaOverlayVisible.set(true)">
       <mat-icon>globe</mat-icon>
     </button>
     <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start" (click)="promptRestart()">
@@ -18,3 +18,24 @@
   </div>
   <div #map id="cr-map" class="map"></div>
 </div>
+
+@if (isAreaOverlayVisible()) {
+  <app-overlay (close)="isAreaOverlayVisible.set(false)">
+    <div class="grid grid-2 gap-half">
+      <div><b>Map</b></div>
+      <div><b>Wax</b></div>
+    @for (item of areaOverlayData(); track item) {
+          <div class="link" (click)="loadAreaMap(item.area);isAreaOverlayVisible.set(false);">
+            {{ item.area.name }}
+          </div>
+          @let completed = item.found === item.total;
+          <div [class.c-completed]="completed" [class.fw-bold]="completed">{{ item.found }} / {{ item.total }}</div>
+          <!-- @for (group of area.groups; track group) {
+            <div class="group">
+              GROUP: {{ group.name }}
+            </div>
+            } -->
+        }
+    </div>
+  </app-overlay>
+}

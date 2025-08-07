@@ -40,6 +40,7 @@ export class AppComponent {
     _eventService.keydown.subscribe(evt => { this.onKeydown(evt); });
 
     _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
+      if (_eventService.keyboardShortcutDisabledCount > 0) { return; }
       if (evt.ctrlKey || evt.shiftKey || evt.altKey || evt.metaKey) { return; }
       switch (evt.key) {
         case 'c': _router.navigate(['/currency']); break;
@@ -80,6 +81,7 @@ export class AppComponent {
   }
 
   private onKeydown(evt: KeyboardEvent): void {
+    if (this._eventService.keyboardShortcutDisabledCount > 0) { return; }
     if (evt.ctrlKey && evt.shiftKey && evt.key.toUpperCase() === 'F') {
       if ((this._router.url.split('?')[0] || '/') === '/') { return; }
       void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });

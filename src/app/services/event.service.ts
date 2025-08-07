@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { DestroyRef, inject, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IItem } from '../interfaces/item.interface';
 import { Router } from '@angular/router';
@@ -28,6 +28,16 @@ export class EventService {
     window.addEventListener('storage', evt => {
       this.onStorage(evt);
     });
+  }
+
+  private _keyboardShortcutDisabledCount = 0;
+  get keyboardShortcutDisabledCount(): number {
+    return this._keyboardShortcutDisabledCount;
+  }
+
+  disableKeyboardShortcutsUntilDestroyed(): void {
+    this._keyboardShortcutDisabledCount++;
+    inject(DestroyRef).onDestroy(() => { this._keyboardShortcutDisabledCount--; });
   }
 
   private onKeydown(evt: KeyboardEvent): void {

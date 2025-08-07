@@ -124,7 +124,6 @@ export const routes: Routes = [
           { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
           { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
-          { path: 'cr-tracker', component: CrTrackerComponent, title: title('Candle Run Tracker') },
           { path: 'pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
@@ -136,6 +135,7 @@ export const routes: Routes = [
         ]
       },
       /* Routes without menu. */
+      { path: 'cr-tracker', component: CrTrackerComponent, title: title('Candle Run Tracker') },
       { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') }
     ]
   }
