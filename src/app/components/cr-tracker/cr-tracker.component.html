@@ -3,10 +3,18 @@
     <button type="button" [ngbTooltip]="'Home'" container="body" placement="bottom-start" (click)="navigateToArea(defaultArea)">
       <mat-icon>house</mat-icon>
     </button>
-    {{ waxInArea() }}
-    <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start">
+    <button type="button" [ngbTooltip]="'Choose area'" container="body" placement="bottom-start">
+      <mat-icon>globe</mat-icon>
+    </button>
+    <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start" (click)="promptRestart()">
       <mat-icon>restart_alt</mat-icon>
     </button>
+  </div>
+  <div class="map-controls map-controls-tr">
+    <div class="box">This tracker is incomplete. Thank you for your patience.</div>
+  </div>
+  <div class="map-controls map-controls-bl">
+    <div class="box d-inline-block">{{ waxInAreaFound() }} / {{ waxInArea() }} wax</div>
   </div>
   <div #map id="cr-map" class="map"></div>
 </div>

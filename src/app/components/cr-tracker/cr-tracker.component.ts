@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, isDevMode, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '@app/services/data.service';
@@ -7,6 +7,7 @@ import { SettingService } from '@app/services/setting.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { parse as jsoncParse} from 'jsonc-parser';
 import L from 'leaflet';
+import { HostListener } from '@angular/core';
 
 interface ICandlesData {
   items: Array<ICandleArea>;
@@ -70,11 +71,19 @@ const markerSwapIcon = L.icon({
   styleUrl: './cr-tracker.component.scss'
 })
 export class CrTrackerComponent implements AfterViewInit {
+  @HostListener('window:beforeunload', ['$event'])
+  handleBeforeUnload(event: BeforeUnloadEvent) {
+    if (!this.found.size || isDevMode()) { return; }
+    event.preventDefault();
+    event.returnValue = '';
+  }
+
   @ViewChild('map', { static: true }) private mapDiv!: ElementRef<HTMLDivElement>;
   map: L.Map | undefined;
   layer = L.layerGroup();
 
   _navCurrentZoom = 0;
+
 
   http = inject(HttpClient);
   dataService = inject(DataService);
@@ -85,8 +94,11 @@ export class CrTrackerComponent implements AfterViewInit {
   area!: ICandleArea;
   defaultArea!: ICandleArea;
   areaMap: { [guid: string]: ICandleArea } = {};
-  found = new Set<any>();
+  candleMarkerMap = new Map<ICandle, L.Marker>();
+  found = new Set<ICandle>();
+
   waxInArea = signal(0);
+  waxInAreaFound = signal(0);
 
   router = inject(Router);
   route = inject(ActivatedRoute);
@@ -120,6 +132,14 @@ export class CrTrackerComponent implements AfterViewInit {
       queryParams: { area: area.guid },
       queryParamsHandling: 'merge'
     });
+  }
+
+  promptRestart(): void {
+    if (this.found.size > 0 && !confirm('Are you sure you want to restart? All progress will be lost.')) { return; }
+    this.found.clear();
+    this.waxInArea.set(0);
+    this.waxInAreaFound.set(0);
+    this.navigateToArea(this.defaultArea);
   }
 
   ngAfterViewInit(): void {
@@ -157,8 +177,24 @@ export class CrTrackerComponent implements AfterViewInit {
     this.map.addLayer(this.layer);
   }
 
+  toggleCandle(candle: ICandle, found?: boolean): void {
+    const marker = this.candleMarkerMap.get(candle);
+    const hasCandle = this.found.has(candle);
+    found ??= !this.found.has(candle);
+    if (found) {
+      this.found.add(candle);
+      !hasCandle && this.waxInAreaFound.set(this.waxInAreaFound() + candle.c);
+      marker?.setIcon(markerFoundIcon);
+    } else {
+      this.found.delete(candle);
+      hasCandle && this.waxInAreaFound.set(this.waxInAreaFound() - candle.c);
+      marker?.setIcon(markerIcon);
+
+    }
+  }
+
   loadAreaMap(area: ICandleArea): void {
-    this.waxInArea.set(0);
+    let waxInArea = { found: 0, total: 0 };
     this.area = area;
     this.layer.clearLayers();
 
@@ -173,6 +209,27 @@ export class CrTrackerComponent implements AfterViewInit {
 
     // Add markers
     this.area.groups.forEach(group => {
+      group.candles.forEach((candle) => {
+        waxInArea.total += candle.c;
+        if (this.found.has(candle)) { waxInArea.found += candle.c; }
+
+        const marker = L.marker(candle.p, {
+          icon: this.found.has(candle) ? markerFoundIcon : markerIcon
+        });
+        marker.addTo(this.layer);
+        this.candleMarkerMap.set(candle, marker);
+
+        const tooltip = candle.description
+          ? `${candle.c} wax<br/>${candle.description}`
+          : `${candle.c} wax`;
+        marker.bindTooltip(tooltip, { permanent: true, direction: 'top' });
+
+        marker.addEventListener('click', () => {
+          this.toggleCandle(candle);
+        });
+      });
+
+
       if (group.poly) {
         const polygon = L.polygon(group.poly, {
           color: 'orange',
@@ -184,26 +241,30 @@ export class CrTrackerComponent implements AfterViewInit {
         // Calculate total wax in this group
         const groupWaxTotal = group.candles.reduce((sum, candle) => sum + candle.c, 0);
         polygon.bindTooltip(`${group.name}<br/>${groupWaxTotal} wax`, { permanent: true, direction: 'center' });
+
+        const togglePos = group.poly[0];
+        console.log(togglePos);
+        const toggleAllMarker = L.marker(togglePos, {
+          icon: L.divIcon({
+            className: 'toggle-group-marker',
+            html: `<button style="background:orange;border:none;border-radius:50%;font-size:12px;width:32px;height:32px;cursor:pointer;" title="Toggle all">✅</button>`,
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+          }),
+          interactive: true
+        });
+        toggleAllMarker.addTo(this.layer);
+        toggleAllMarker.on('click', () => {
+          const found = group.candles.some(c => !this.found.has(c));
+          group.candles.forEach(candle => {
+            this.toggleCandle(candle, found);
+          });
+        });
       }
-
-      group.candles.forEach((candle) => {
-        this.waxInArea.update(c => c + candle.c);
-        const marker = L.marker(candle.p, {
-          icon: this.found.has(candle) ? markerFoundIcon : markerIcon
-        });
-        marker.addTo(this.layer);
-
-        const tooltip = candle.description
-          ? `${candle.c} wax<br/>${candle.description}`
-          : `${candle.c} wax`;
-        marker.bindTooltip(tooltip, { permanent: true, direction: 'top' });
-
-        marker.addEventListener('click', () => {
-          this.found.has(candle) ? marker.setIcon(markerFoundIcon) : marker.setIcon(markerIcon);
-          this.found.has(candle) ? this.found.delete(candle) : this.found.add(candle);
-        });
-      });
     });
+
+    this.waxInArea.set(waxInArea.total);
+    this.waxInAreaFound.set(waxInArea.found);
 
     // Add connections
     this.area.connections.forEach((connection) => {
