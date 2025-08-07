@@ -116,7 +116,7 @@
       "infoUrl": "/assets/game/dyes/cape/2slot_2E-P1_ultcape.jpg"
     },
     "group": "Ultimate",
-    "order": 889,
+    "order": 890,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder%27s_Lantern#Ultimate_Cape"
     }
@@ -136,7 +136,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Tender-Toymaker-Crab-Figurine-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Tender-Toymaker-Crab-Figurine-Prop.png",
-    "order": 634,
+    "order": 635,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tender_Toymaker#Prop"
     }
@@ -373,7 +373,7 @@
     "name": "Resourceful Recluse Tea Table",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Resourceful-Recluse-Tea-Stall-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Resourceful-Recluse-Tea-Stall-Prop.png",
-    "order": 636,
+    "order": 637,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Resourceful_Recluse#Prop"
     }
@@ -401,7 +401,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Resourceful-Recluse-Vine-plant-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Resourceful-Recluse-Vine-plant-Prop.png",
     "group": "SeasonPass",
-    "order": 635,
+    "order": 636,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Resourceful_Recluse#Vine_Plant"
     }
@@ -458,7 +458,7 @@
       "previewUrl": "/assets/game/dyes/cape/2E-P1_Sentrycape.jpg"
     },
     "group": "SeasonPass",
-    "order": 887,
+    "order": 888,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarred_Sentry#Cape"
     }
@@ -566,7 +566,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Cloak_of_Darkness"
     },
-    "order": 888
+    "order": 889
   },
   {
     "id": 2718,
@@ -662,5 +662,18 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Vestige-of-Dark-Dragon-Tail-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3e/Vestige-of-Dark-Dragon-Tail.png",
     "order": 537
+  },
+  {
+    "id": 2729,
+    "guid": "bXyztrTj5R",
+    "name": "Manatee Plush",
+    "type": "Prop",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Manatee-Plush-Prop-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Manatee-Plush-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Manatee_Plush"
+    },
+    "order": 634
   }
 ]
