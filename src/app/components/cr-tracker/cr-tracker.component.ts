@@ -17,6 +17,7 @@ interface ICandleArea {
   guid: string;
   name: string;
   imageUrl: string;
+  imageSize: L.LatLngTuple;
   groups: Array<ICandleGroup>;
   connections: Array<ICandleAreaConnection>;
 }
@@ -199,12 +200,12 @@ export class CrTrackerComponent implements AfterViewInit {
     this.layer.clearLayers();
 
     // Add image
-    const bounds: L.LatLngBoundsExpression = [[0, 0], [3508, 2480]];
-    L.imageOverlay(this.area?.imageUrl, bounds, {
+    const bounds: L.LatLngBoundsExpression = [[0, 0], this.area.imageSize];
+    L.imageOverlay(this.area.imageUrl, bounds, {
       attribution: 'Map by @sky_solsuga'
     }).addTo(this.layer);
     // Set view to center of image
-    const center: L.LatLngTuple = [3508 / 2, 2480 / 2];
+    const center: L.LatLngTuple = [this.area.imageSize[0] / 2, this.area.imageSize[1] / 2];
     this.map?.setView(center, -1);
 
     // Add markers
