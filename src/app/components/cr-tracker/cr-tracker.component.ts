@@ -274,12 +274,14 @@ export class CrTrackerComponent implements AfterViewInit {
         const toggleAllMarker = L.marker(togglePos, {
           icon: L.divIcon({
             className: 'toggle-group-marker',
-            html: `<button style="background:orange;border:none;border-radius:50%;font-size:12px;width:32px;height:32px;cursor:pointer;" title="Toggle all">✅</button>`,
+            html: `<button style="background:orange;border:none;border-radius:50%;font-size:12px;width:32px;height:32px;cursor:pointer;">✅</button>`,
             iconSize: [32, 32],
-            iconAnchor: [16, 16]
+            iconAnchor: [16, 16],
+            tooltipAnchor: [0, -16]
           }),
           interactive: true
         });
+        toggleAllMarker.bindTooltip('Toggle all wax', { permanent: false, direction: 'top' });
         toggleAllMarker.addTo(this.layer);
         toggleAllMarker.on('click', () => {
           const found = group.candles.some(c => !this.found.has(c));
