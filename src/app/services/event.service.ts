@@ -3,6 +3,12 @@ import { Subject } from 'rxjs';
 import { IItem } from '../interfaces/item.interface';
 import { Router } from '@angular/router';
 
+export function disableKeyboardShortcutsUntilDestroyed(): void {
+  const service = inject(EventService);
+  service._keyboardShortcutDisabledCount++;
+  inject(DestroyRef).onDestroy(() => { service._keyboardShortcutDisabledCount--; });
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,14 +36,9 @@ export class EventService {
     });
   }
 
-  private _keyboardShortcutDisabledCount = 0;
+  _keyboardShortcutDisabledCount = 0;
   get keyboardShortcutDisabledCount(): number {
     return this._keyboardShortcutDisabledCount;
-  }
-
-  disableKeyboardShortcutsUntilDestroyed(): void {
-    this._keyboardShortcutDisabledCount++;
-    inject(DestroyRef).onDestroy(() => { this._keyboardShortcutDisabledCount--; });
   }
 
   private onKeydown(evt: KeyboardEvent): void {

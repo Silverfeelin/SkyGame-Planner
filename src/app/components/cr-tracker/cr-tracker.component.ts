@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, computed, ElementRef, inject, isDevMode, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
+import { ActivatedRoute, CanDeactivateFn, Router, RouterLink } from '@angular/router';
 import { DataService } from '@app/services/data.service';
 import { SettingService } from '@app/services/setting.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
@@ -9,7 +9,7 @@ import { parse as jsoncParse} from 'jsonc-parser';
 import L from 'leaflet';
 import { HostListener } from '@angular/core';
 import { OverlayComponent } from "../layout/overlay/overlay.component";
-import { EventService } from '@app/services/event.service';
+import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.service';
 
 interface ICandlesData {
   items: Array<ICandleArea>;
@@ -66,10 +66,15 @@ const markerSwapIcon = L.icon({
   tooltipAnchor: [0, -14]
 });
 
+export const canDeactivateCrTracker: CanDeactivateFn<CrTrackerComponent> = component => {
+  if (!component.found.size) { return true; }
+  return confirm('Are you sure you want to go to back to the Sky Planner? The website does not save your collected wax.');
+};
+
 @Component({
   selector: 'app-cr-tracker',
   imports: [
-    NgbTooltip, MatIcon,
+    NgbTooltip, MatIcon, RouterLink,
     OverlayComponent
 ],
   templateUrl: './cr-tracker.component.html',
@@ -119,7 +124,7 @@ export class CrTrackerComponent implements AfterViewInit {
   route = inject(ActivatedRoute);
 
   constructor() {
-    inject(EventService).disableKeyboardShortcutsUntilDestroyed();
+    disableKeyboardShortcutsUntilDestroyed();
     this.http.get('/assets/data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
       parsed.items.forEach((item: ICandleArea) => {
@@ -138,22 +143,20 @@ export class CrTrackerComponent implements AfterViewInit {
         const area = areaGuid ? this.areaMap[areaGuid] : this.defaultArea;
         this.loadAreaMap(area);
       });
+
+      if (!this.route.snapshot.queryParamMap.has('area')) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('area', this.defaultArea.guid);
+        history.replaceState(history.state, '', url.toString());
+      }
     });
-  }
-
-  gotoHome(): void {
-    if (this.found.size && !confirm('Are you sure you want to go to back to the Sky Planner? The website does not save your collected wax.')) {
-      return;
-    }
-
-    void this.router.navigate(['/']);
   }
 
   navigateToArea(area: ICandleArea): void {
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { area: area.guid },
-      queryParamsHandling: 'merge'
+      queryParamsHandling: 'merge',
     });
   }
 
@@ -297,7 +300,7 @@ export class CrTrackerComponent implements AfterViewInit {
       });
       marker.addTo(this.layer);
       const target = this.areaMap[connection.guid];
-      marker.bindTooltip(target?.name, { permanent: true, direction: 'top' });
+      marker.bindTooltip(target?.name, { permanent: false, direction: 'top' });
       marker.addEventListener('click', () => {
         this.router.navigate([], {
           relativeTo: this.route,

@@ -54,7 +54,7 @@ import { EventHistoryComponent } from './components/events/event-history/event-h
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
-import { CrTrackerComponent } from './components/cr-tracker/cr-tracker.component';
+import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -135,7 +135,7 @@ export const routes: Routes = [
         ]
       },
       /* Routes without menu. */
-      { path: 'cr-tracker', component: CrTrackerComponent, title: title('Candle Run Tracker') },
+      { path: 'cr-tracker', component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
       { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') }
     ]
   }
