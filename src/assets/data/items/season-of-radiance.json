@@ -62,7 +62,7 @@
       "previewUrl": "/assets/game/dyes/shoes/Radiance_Leaping.jpg",
       "primary": {}
     },
-    "order": 125
+    "order": 126
   },
   {
     "id": 2448,
@@ -71,7 +71,7 @@
     "name": "Radiance Leaping Dancer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Radiance-Leaping-Dancer-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Radiance-Leaping-Dancer-Hair.png",
-    "order": 265
+    "order": 267
   },
   {
     "id": 2449,
@@ -86,7 +86,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 882
+    "order": 884
   },
   {
     "id": 2450,
@@ -96,7 +96,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Radiance-Leaping-Dancer-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Radiance-Leaping-Dancer-prop.png",
-    "order": 631
+    "order": 633
   },
   {
     "id": 2451,
@@ -204,7 +204,7 @@
       "previewUrl": "/assets/game/dyes/shoes/Radiance_Provoking.jpg",
       "primary": {}
     },
-    "order": 124
+    "order": 125
   },
   {
     "id": 2460,
@@ -221,7 +221,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Head_Accessory"
     },
-    "order": 373
+    "order": 375
   },
   {
     "id": 2461,
@@ -237,7 +237,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 881
+    "order": 883
   },
   {
     "id": 2462,
@@ -247,7 +247,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-Greeting-Shaman-instrument-Cymbals-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Radiance-Greeting-Shaman-instrument-Cymbals.png",
-    "order": 567
+    "order": 569
   },
   {
     "id": 2463,
@@ -356,7 +356,7 @@
       "previewUrl": "/assets/game/dyes/hair/Radiance_Greeting.jpg",
       "primary": {}
     },
-    "order": 264
+    "order": 266
   },
   {
     "id": 2471,
@@ -369,7 +369,7 @@
       "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg",
       "primary": {}
     },
-    "order": 325
+    "order": 327
   },
   {
     "id": 2472,
@@ -440,7 +440,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Season-of-Radiance-Pendant.png",
-    "order": 512
+    "order": 514
   },
   {
     "id": 2481,
@@ -456,7 +456,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 466
+    "order": 468
   },
   {
     "id": 2482,
@@ -472,7 +472,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 883
+    "order": 885
   },
   {
     "id": 2483,
@@ -487,7 +487,7 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 802
+    "order": 804
   },
   {
     "id": 2484,
