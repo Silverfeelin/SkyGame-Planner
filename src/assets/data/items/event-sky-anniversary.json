@@ -471,5 +471,48 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Anniversary-Balloon-Arch-Prop-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Anniversary-Balloon-Arch-Prop.png",
     "order": 642
+  },
+  {
+    "id": 2730,
+    "guid": "n_DeSbUOJ4",
+    "name": "Anniversary Slippers",
+    "type": "Shoes",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Anniversary-Gown-Slippers-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Anniversary-Gown-Slippers.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Gown_Ensemble"
+    }
+  },
+  {
+    "id": 2731,
+    "guid": "x-eBv-6iNk",
+    "name": "Anniversary Gown",
+    "type": "Outfit",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Anniversary-Gown-Dress-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Anniversary-Gown-Dress.png",
+    "dye": {
+      "primary": {}
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Gown_Ensemble"
+    }
+  },
+  {
+    "id": 2732,
+    "guid": "uJd-mEy1g4",
+    "name": "Anniversary Tuxedo Cape",
+    "type": "Cape",
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/54/Anniversary-Tuxedo-Cape-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Anniversary-Tuxedo-Cape-back.png",
+    "dye": {
+      "primary": {},
+      "secondary": {}
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Tuxedo_Cape"
+    }
   }
 ]
