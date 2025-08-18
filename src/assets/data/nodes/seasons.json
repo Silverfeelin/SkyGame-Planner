@@ -3743,6 +3743,18 @@
   { "guid": "9241NX55SN", "item": "XimZaRVH06", "sc": 38, "nw": "Q7MZvIct__", "n": "7JFX8z0HZ3" },
   { "guid": "Q7MZvIct__", "item": "vetrUtBCCZ" },
   { "guid": "7JFX8z0HZ3", "item": "vwVnx_7Dzt", "sc": 3 },
+  // SV 10  
+  { "guid": "-ZhSv-b7rD", "item": "8Pr0VtDhsh", "nw": "8I-xHlZ4z_", "n": "RYMPhdf4SM" },
+  { "guid": "8I-xHlZ4z_", "item": "-XSUgHYCU-", "h": 4 },
+  { "guid": "RYMPhdf4SM", "item": "CU0LE7Z846", "n": "6H_V9i-YrC", "nw": "uq7sopygBv", "c": 5, "ne": "cR2ECzhE62" },
+  { "guid": "uq7sopygBv", "item": "XOnAJpU3ZZ", "c": 40 },
+  { "guid": "cR2ECzhE62", "item": "oCHrIFKBfA", "c": 3 },
+  { "guid": "6H_V9i-YrC", "item": "xJTcpGbUys", "n": "G49Uq_6zwv", "ac": 2 },
+  { "guid": "G49Uq_6zwv", "item": "ilnoN5oAS7", "h": 3, "nw": "Lel-amlaW2", "n": "p_dz8HU1ha" },
+  { "guid": "Lel-amlaW2", "item": "S3meQvWoGC", "h": 6 },
+  { "guid": "p_dz8HU1ha", "item": "CXAYBQeni9", "n": "DURwAPcTTv", "nw": "hH4rrFTQX5", "c": 5 },
+  { "guid": "hH4rrFTQX5", "item": "4tYFGTPkMo", "c": 55 },
+  { "guid": "DURwAPcTTv", "item": "XimZaRVH06", "c": 65 },
   // Wounded Warrior
   { "guid": "6nhyx0XwCf", "item": "6dT44er9LL", "n": "dXlpFhMciZ" },
   { "guid": "dXlpFhMciZ", "item": "y16WNw3qVP", "sc": 14, "nw": "eumNDN6B4I", "n": "1Z1X2WwDBw" },
@@ -3752,6 +3764,15 @@
   { "guid": "IMbLAy-cNu", "item": "gaGWI1G9zi", "sc": 36, "nw": "DXar0Dq5Qb", "n": "hI2s9jDb9T" },
   { "guid": "DXar0Dq5Qb", "item": "IA0nV9vsgZ" },
   { "guid": "hI2s9jDb9T", "item": "wXaEysCEQ2", "sc": 3 },
+  // SV 10
+  { "guid": "zMb4Br_Xjk", "item": "6dT44er9LL", "n": "B83m2saxxD" },
+  { "guid": "B83m2saxxD", "item": "y16WNw3qVP", "c": 5, "nw": "t8cq5NAmf_", "ne": "MK4y3A1eRY", "n": "vpwDiUEAsN" },
+  { "guid": "t8cq5NAmf_", "item": "3k0FrWDlWs", "c": 45 },
+  { "guid": "MK4y3A1eRY", "item": "aw5NtaaXCU", "c": 3 },
+  { "guid": "vpwDiUEAsN", "item": "WLoAdVsvIW", "ac": 2, "n": "d-iZKr2f0A" },
+  { "guid": "d-iZKr2f0A", "item": "Q5VIpSkhzr", "c": 5, "n": "mAgyNCTyuE", "nw": "Dk4pdrsZ8A" },
+  { "guid": "Dk4pdrsZ8A", "item": "XPEhyUKiiy", "c": 60 },
+  { "guid": "mAgyNCTyuE", "item": "IA0nV9vsgZ", "c": 80 },
   // #endregion
   // #region Passage
   // #region Oddball Outcast
