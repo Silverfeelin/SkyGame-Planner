@@ -609,6 +609,11 @@
       "shops": [
         "qa1g8CbXqg",
       ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "MCSGj8K4g9", "date": "2025-08-19", "endDate": "2025-09-01", "amount": 14, "description": "Bonus daily Seasonal Light" }
+        ]
+      },
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=22d8261c87dd80418568fb01053bd2b1&pm=c"
       }
