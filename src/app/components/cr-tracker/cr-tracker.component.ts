@@ -160,6 +160,11 @@ export class CrTrackerComponent implements AfterViewInit {
   }
 
   navigateToArea(area: ICandleArea): void {
+    if (this.area === area) {
+      this.loadAreaMap(area);
+      return;
+    }
+
     this.router.navigate([], {
       relativeTo: this.route,
       queryParams: { area: area.guid },
@@ -277,7 +282,6 @@ export class CrTrackerComponent implements AfterViewInit {
         // polygon.bindTooltip(`${group.name}<br/>${groupWaxTotal} wax`, { permanent: true, direction: 'center' });
 
         const togglePos = group.poly[0];
-        console.log(togglePos);
         const toggleAllMarker = L.marker(togglePos, {
           icon: L.divIcon({
             className: 'toggle-group-marker',
