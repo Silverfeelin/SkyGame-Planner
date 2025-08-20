@@ -26,18 +26,16 @@
     <div class="grid grid-2 gap-half">
       <div><b>Map</b></div>
       <div><b>Wax</b></div>
-    @for (item of areaOverlayData(); track item) {
-          <div class="link" (click)="navigateToArea(item.area);isAreaOverlayVisible.set(false);">
-            {{ item.area.name }}
-          </div>
-          @let completed = item.found === item.total;
-          <div [class.c-completed]="completed" [class.fw-bold]="completed">{{ item.found }} / {{ item.total }}</div>
-          <!-- @for (group of area.groups; track group) {
-            <div class="group">
-              GROUP: {{ group.name }}
-            </div>
-            } -->
-        }
+      @for (item of areaOverlayData().areas; track item) {
+        <div class="link" (click)="navigateToArea(item.area);isAreaOverlayVisible.set(false);">
+          {{ item.area.name }}
+        </div>
+        @let completed = item.found === item.total;
+        <div [class.c-completed]="completed" [class.fw-bold]="completed">{{ item.found }} / {{ item.total }}</div>
+      }
+      <div class="colspan-row"><hr class="mt-half mb-half"/></div>
+      <b>Total</b>
+      <div [class.c-completed]="areaOverlayData().total.found === areaOverlayData().total.total" [class.fw-bold]="areaOverlayData().total.found === areaOverlayData().total.total">{{ areaOverlayData().total.found }} / {{ areaOverlayData().total.total }}</div>
     </div>
   </app-overlay>
 }

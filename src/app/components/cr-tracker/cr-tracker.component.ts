@@ -100,13 +100,20 @@ export class CrTrackerComponent implements AfterViewInit {
 
   isAreaOverlayVisible = signal(false);
   areaOverlayData = computed(() => {
-    if (!this.isAreaOverlayVisible()) return [];
-    const areas = this.data.items.map(area => ({
-      area,
-      found: area.groups.reduce((sum, group) => sum + group.candles.filter(candle => this.found.has(candle)).reduce((sum, candle) => sum + candle.c, 0), 0),
-      total: area.groups.reduce((sum, group) => sum + group.candles.reduce((sum, candle) => sum + candle.c, 0), 0),
-    }));
-    return areas;
+    const total = { found: 0, total: 0 };
+    if (!this.isAreaOverlayVisible()) return { areas: [], total };
+
+    const areas = this.data.items.map(area => {
+      const data = {
+        area,
+        found: area.groups.reduce((sum, group) => sum + group.candles.filter(candle => this.found.has(candle)).reduce((sum, candle) => sum + candle.c, 0), 0),
+        total: area.groups.reduce((sum, group) => sum + group.candles.reduce((sum, candle) => sum + candle.c, 0), 0),
+      };
+      total.found += data.found;
+      total.total += data.total;
+      return data;
+    });
+    return { areas, total };
   });
 
   loading = 0;
