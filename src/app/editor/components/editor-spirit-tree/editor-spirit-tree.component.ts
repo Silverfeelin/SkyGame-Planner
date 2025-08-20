@@ -22,7 +22,7 @@ import { StorageService } from '@app/services/storage.service';
 import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
 import { TabDirective } from '@app/components/layout/tabs/tab.directive';
 
-type TreeNodeArray = Array<TreeNode>;
+type TreeNodeArray = Array<TreeNode | undefined>;
 type TreeNode = { node: INode; x: number; y: number; };
 type CostType = { id: string; label: string; }
 type SpecialItemNames = 'placeholder' | 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
@@ -165,6 +165,33 @@ export class SpiritTreeEditorComponent {
     }
 
     this.onItemClicked({ item, event: new MouseEvent('click') });
+  }
+
+  addRootNode(): void {
+    // Create new placeholder node.
+    const node: INode = {
+      guid: nanoid(10),
+      item: this.cloneItem(this.specialItemMap.placeholder.item)
+    };
+
+    // Shift every existing node up one.
+    const treeNode: TreeNode = { x: 1, y: 0, node };
+    this.nodeMap[node.guid] = treeNode;
+    this.nodeTable.forEach(row => {
+      row.forEach(node => {
+        if (!node) { return; }
+        node.y++;
+      });
+    });
+    this.nodeTable[0].unshift(undefined);
+    this.nodeTable[1].unshift(treeNode);
+    this.nodeTable[2].unshift(undefined);
+
+    // Replace root node.
+    this.tree.node.prev = node;
+    node.n = this.tree.node;
+    this.tree.node = node;
+    this.reloadTree();
   }
 
   addNode(direction: 'nw'|'n'|'ne') {

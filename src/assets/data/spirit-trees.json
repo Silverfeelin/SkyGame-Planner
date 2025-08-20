@@ -364,7 +364,7 @@
       "guid": "gu5doPh4OB",
       "revisionType": "AfterSeason",
       "name": "AURORA Guide - After season",
-      "node": "tminhzzv09"
+      "node": "xG-pgBHsGb"
     },
     // Remembrance Guide
     {
@@ -1367,6 +1367,11 @@
       "guid": "rPT8vTD06j",
       "node": "lvTfufFX7Q"
     },
+    // TS 146
+    {
+      "guid": "CEzPLl5Qq2",
+      "node": "hdn9q9Iv4g"
+    },
     // Talented Builder
     {
       "guid": "4Zj4C2RUj1",
@@ -1387,6 +1392,7 @@
       "guid": "NdB6VF6E1G",
       "node": "w7O7kFaQ4l"
     },
+    { "guid": "R2WmeZDMqd", "node": "WsJjGE_da0" },
     // Ceasing Commodore
     {
       "guid": "1c2RnFkkmb",
@@ -1405,6 +1411,7 @@
       "guid": "MW9CCZ_Kb4",
       "node": "Q5-a10kPfB"
     },
+    { "guid": "eodAzj6E3z",  "node": "pVBm48V0So" },
     // Cackling Cannoneer
     {
       "guid": "ag2kvsRKRN",
@@ -1549,11 +1556,13 @@
       "guid": "gOAqpgTH4R",
       "node": "FAsuN4N2hI"
     },
+    { "guid": "IC3TtVJ-YG", "node": "-ZhSv-b7rD" },
     // Wounded Warrior
     {
       "guid": "Cze45b5NuK",
       "node": "6nhyx0XwCf"
     },
+    { "guid": "t8rUtsegue", "node": "zMb4Br_Xjk" },
     // #endregion
     // #region Passage
     // Oddball Outcast
