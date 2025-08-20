@@ -50,11 +50,11 @@ import { ItemsOverviewComponent } from './components/items/items-overview/items-
 import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 import { AreasComponent } from './components/areas/areas.component';
-import { SpiritTreeEditorComponent } from './editor/components/editor-spirit-tree/editor-spirit-tree.component';
 import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
+import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -135,6 +135,7 @@ export const routes: Routes = [
         ]
       },
       /* Routes without menu. */
+      { path: 'cr-tracker', component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
       { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') }
     ]
   }

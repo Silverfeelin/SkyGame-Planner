@@ -1,0 +1,41 @@
+<div class="map-container">
+  <div class="map-controls map-controls-tr">
+    <div class="box show-desktop">This tracker is in beta. Please provide feedback <a href="https://github.com/Silverfeelin/SkyGame-Planner/issues/new" target="_blank">through GitHub</a> or Discord (silverfeelin).</div>
+  </div>
+
+  <div class="map-controls map-controls-tl">
+    <a class="button d-inline-block" [ngbTooltip]="'Return to Sky Planner'" container="body" placement="bottom-start" [routerLink]="['/']">
+      <mat-icon>house</mat-icon>
+    </a>
+    <button type="button" [ngbTooltip]="'Choose map'" container="body" placement="bottom-start" (click)="isAreaOverlayVisible.set(true)">
+      <mat-icon>globe</mat-icon>
+    </button>
+    <button type="button" [ngbTooltip]="'Restart'" container="body" placement="bottom-start" (click)="promptRestart()">
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+  </div>
+
+  <div class="map-controls map-controls-bl">
+    <div class="box d-inline-block">{{ waxInAreaFound() }} / {{ waxInArea() }} wax</div>
+  </div>
+  <div #map id="cr-map" class="map"></div>
+</div>
+
+@if (isAreaOverlayVisible()) {
+  <app-overlay (close)="isAreaOverlayVisible.set(false)">
+    <div class="grid grid-2 gap-half">
+      <div><b>Map</b></div>
+      <div><b>Wax</b></div>
+      @for (item of areaOverlayData().areas; track item) {
+        <div class="link" (click)="navigateToArea(item.area);isAreaOverlayVisible.set(false);">
+          {{ item.area.name }}
+        </div>
+        @let completed = item.found === item.total;
+        <div [class.c-completed]="completed" [class.fw-bold]="completed">{{ item.found }} / {{ item.total }}</div>
+      }
+      <div class="colspan-row"><hr class="mt-half mb-half"/></div>
+      <b>Total</b>
+      <div [class.c-completed]="areaOverlayData().total.found === areaOverlayData().total.total" [class.fw-bold]="areaOverlayData().total.found === areaOverlayData().total.total">{{ areaOverlayData().total.found }} / {{ areaOverlayData().total.total }}</div>
+    </div>
+  </app-overlay>
+}
