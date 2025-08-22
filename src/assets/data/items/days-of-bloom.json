@@ -278,7 +278,13 @@
     "type": "Hair",
     "name": "Bloom Rose Braided Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Bloom-Rose-Braid-Hair-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f3/Bloom-Rose-Braid-Hair-front.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Bloom-Rose-Braid-Hair-side.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/hair/Bloom_rosebraid.jpg",
+      "infoUrl": "/assets/game/dyes/hair/2slots_Bloom_rosebraid.jpg"
+    },
     "order": 280,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Bloom#Days_of_Bloom_Rose_Braid"
