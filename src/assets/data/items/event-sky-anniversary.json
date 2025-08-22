@@ -494,7 +494,8 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Anniversary-Gown-Dress-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Anniversary-Gown-Dress.png",
     "dye": {
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Anniversary_jellydress.jpg"
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Gown_Ensemble"
@@ -511,7 +512,9 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Anniversary-Tuxedo-Cape-back.png",
     "dye": {
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/cape/Anniversary_tuxedocape.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slot_Anniversary_tuxedocape.jpg"
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Tuxedo_Cape"
