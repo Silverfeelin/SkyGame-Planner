@@ -10,6 +10,7 @@ import L from 'leaflet';
 import { HostListener } from '@angular/core';
 import { OverlayComponent } from "../layout/overlay/overlay.component";
 import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.service';
+import { DateHelper } from '@app/helpers/date-helper';
 
 interface ICandlesData {
   items: Array<ICandleArea>;
@@ -40,6 +41,8 @@ interface ICandle {
   p: L.LatLngTuple;
   c: number;
   description?: string;
+  /** Bitfield of weekdays, Monday = 1. */
+  weekday?: number;
 }
 
 const markerIcon = L.icon({
@@ -123,6 +126,7 @@ export class CrTrackerComponent implements AfterViewInit {
   areaMap: { [guid: string]: ICandleArea } = {};
   candleMarkerMap = new Map<ICandle, L.Marker>();
   found = new Set<ICandle>();
+  weekday = 1 << (DateHelper.todaySky().weekday - 1);
 
   waxInArea = signal(0);
   waxInAreaFound = signal(0);
@@ -134,13 +138,22 @@ export class CrTrackerComponent implements AfterViewInit {
     disableKeyboardShortcutsUntilDestroyed();
     this.http.get('/assets/data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
-      parsed.items.forEach((item: ICandleArea) => {
-        this.areaMap[item.guid] = item;
+      this.data = parsed;
+
+      this.data.items.forEach((area: ICandleArea) => {
+        // Map areas.
+        this.areaMap[area.guid] = area;
+
+        // Filter candles.
+        area.groups.forEach((group: ICandleGroup) => {
+          group.candles = group.candles.filter((candle: ICandle) => {
+            return !(candle.weekday && (candle.weekday & this.weekday) === 0);
+          });
+        });
       });
 
-      this.data = parsed;
-      this.area = parsed.items.at(2)!;
-      this.defaultArea = parsed.items.at(0)!;
+      this.defaultArea = this.data.items.at(0)!;
+      this.area = this.defaultArea;
       this.loading++;
       this.initialize();
 
@@ -201,10 +214,8 @@ export class CrTrackerComponent implements AfterViewInit {
       this._navCurrentZoom = this.map?.getZoom() ?? 0;
     });
 
-    if (this.settingService.debugVisible) {
-      this.map.on('click', (e) => {
-        navigator.clipboard.writeText(`[${e.latlng.lat.toFixed(2)}, ${e.latlng.lng.toFixed(2)}]`);
-      });
+    if (isDevMode()) {
+      this._debugClickCoord();
     }
 
     // Add zoom controls.
@@ -227,7 +238,6 @@ export class CrTrackerComponent implements AfterViewInit {
       this.found.delete(candle);
       hasCandle && this.waxInAreaFound.set(this.waxInAreaFound() - candle.c);
       marker?.setIcon(markerIcon);
-
     }
   }
 
@@ -325,4 +335,24 @@ export class CrTrackerComponent implements AfterViewInit {
     });
   }
 
+  _debugClickCoord(): void {
+    this.map!.on('click', async (e) => {
+      try {
+        const coord = [parseFloat(e.latlng.lat.toFixed(2)), parseFloat(e.latlng.lng.toFixed(2))];
+        let text = await navigator.clipboard.readText();
+        let arr: any[] = [];
+        if (!e.originalEvent.shiftKey) {
+          try {
+            const parsed = JSON.parse(text);
+            arr = Array.isArray(parsed) ? parsed : [];
+          } catch {}
+        }
+        arr.push(coord);
+        await navigator.clipboard.writeText(JSON.stringify(arr));
+      } catch (err) {
+        // fallback: just write the coordinate
+        navigator.clipboard.writeText(JSON.stringify([[parseFloat(e.latlng.lat.toFixed(2)), parseFloat(e.latlng.lng.toFixed(2))]]));
+      }
+    });
+  }
 }
