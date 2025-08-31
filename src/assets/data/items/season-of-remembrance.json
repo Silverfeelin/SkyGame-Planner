@@ -365,7 +365,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
     },
-    "order": 860
+    "order": 861
   },
   {
     "id": 1573,
@@ -637,7 +637,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
     },
-    "order": 862
+    "order": 863
   },
   {
     "id": 1596,
@@ -733,7 +733,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
     },
-    "order": 861,
+    "order": 862,
     "group": "SeasonPass"
   },
   {
@@ -771,7 +771,7 @@
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
-  },  
+  },
   {
     "id": 2733,
     "guid": "oCHrIFKBfA",
