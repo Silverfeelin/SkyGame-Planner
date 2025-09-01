@@ -16,7 +16,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Jelly_Shoulder_Buddy"
     },
-    "order": 533
+    "order": 535
   },
   {
     "id": 1914,
@@ -28,7 +28,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Tent"
     },
-    "order": 651
+    "order": 661
   },
   {
     "id": 1915,
@@ -40,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Snack_Kit"
     },
-    "order": 671
+    "order": 681
   },
   {
     "id": 1916,
@@ -52,7 +52,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Pink_Beach_Towel_Cape"
     },
-    "order": 914
+    "order": 924
   },
   {
     "id": 1917,
@@ -64,7 +64,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Yellow_Beach_Towel_Cape"
     },
-    "order": 915
+    "order": 925
   },
   {
     "id": 1918,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Blue_Beach_Towel_Cape"
     },
-    "order": 913
+    "order": 923
   },
   {
     "id": 1919,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Chunky_Sandals"
     },
-    "order": 130
+    "order": 131
   },
   {
     "id": 1922,
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Surfboard"
     },
-    "order": 681
+    "order": 691
   },
   {
     "id": 2289,
@@ -129,7 +129,7 @@
       "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
       "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg"
     },
-    "order": 916,
+    "order": 927,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Woven_Wrap"
     }
@@ -141,7 +141,7 @@
     "name": "Sunlight Helios Hoops",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
-    "order": 384,
+    "order": 386,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Helios_Hoops"
     }
@@ -153,7 +153,7 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 592,
+    "order": 594,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Manta_Float"
     }
@@ -183,83 +183,92 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // 2025
-
   {
     "id": 2739,
     "guid": "NiwM8bgdxk",
     "type": "HairAccessory",
     "name": "Sunlight Bonnet",
-    "icon": "https://i.imgur.com/FeDviAv.png"
+    "icon": "https://i.imgur.com/FeDviAv.png",
+    "order": 368
   },
   {
     "id": 2740,
     "guid": "ysIdvX8oC7",
     "type": "Outfit",
     "name": "Sunlight Sun Dress",
-    "icon": "https://i.imgur.com/T6HayyJ.png"
+    "icon": "https://i.imgur.com/T6HayyJ.png",
+    "order": 80
   },
   {
     "id": 2741,
     "guid": "T5PJETWmC-",
     "type": "Prop",
     "name": "Sunlight Wave Projector",
-    "icon": "https://i.imgur.com/DvEqmBg.png"
+    "icon": "https://i.imgur.com/DvEqmBg.png",
+    "order": 643
   },
   {
     "id": 2742,
     "guid": "iPnHAbmuQr",
     "type": "Cape",
     "name": "Sunlight Shawl Cape",
-    "icon": "https://i.imgur.com/nQYtd0J.png"
+    "icon": "https://i.imgur.com/nQYtd0J.png",
+    "order": 926
   },
   {
     "id": 2743,
     "guid": "6w_qh-oE2k",
     "type": "Prop",
     "name": "Sandcastle Small Tower",
-    "icon": "https://i.imgur.com/BtRKGFj.png"
+    "icon": "https://i.imgur.com/BtRKGFj.png",
+    "order": 644
   },
   {
     "id": 2744,
     "guid": "G5sW47Twex",
     "type": "Prop",
     "name": "Sandcastle Large Tower",
-    "icon": "https://i.imgur.com/pmLtwWX.png"
+    "icon": "https://i.imgur.com/pmLtwWX.png",
+    "order": 645
   },
   {
     "id": 2745,
     "guid": "wlTd7h9_Rc",
     "type": "Prop",
     "name": "Sandcastle Small Gate",
-    "icon": "https://i.imgur.com/0WwpV06.png"
+    "icon": "https://i.imgur.com/0WwpV06.png",
+    "order": 646
   },
   {
     "id": 2746,
     "guid": "Wii_7x7ezQ",
     "type": "Prop",
     "name": "Sandcastle Wall",
-    "icon": "https://i.imgur.com/4SfyQwz.png"
+    "icon": "https://i.imgur.com/4SfyQwz.png",
+    "order": 647
   },
   {
     "id": 2747,
     "guid": "fkiyxCyMN7",
     "type": "Prop",
     "name": "Sandcastle Large Gate",
-    "icon": "https://i.imgur.com/1JaRsu9.png"
+    "icon": "https://i.imgur.com/1JaRsu9.png",
+    "order": 648
   },
   {
     "id": 2748,
     "guid": "JVyQRl-B8m",
     "type": "Prop",
     "name": "Sandcastle Sand Lot",
-    "icon": "https://i.imgur.com/9BAt7Qj.png"
+    "icon": "https://i.imgur.com/9BAt7Qj.png",
+    "order": 649
   },
   {
     "id": 2749,
     "guid": "4VFezhFHqw",
     "type": "Prop",
     "name": "Sandcastle Flag",
-    "icon": "https://i.imgur.com/XUjH5ef.png"
+    "icon": "https://i.imgur.com/XUjH5ef.png",
+    "order": 650
   }
 ]
