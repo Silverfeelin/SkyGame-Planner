@@ -182,5 +182,84 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  // 2025
+
+  {
+    "id": 2739,
+    "guid": "NiwM8bgdxk",
+    "type": "HairAccessory",
+    "name": "Sunlight Bonnet",
+    "icon": "https://i.imgur.com/FeDviAv.png"
+  },
+  {
+    "id": 2740,
+    "guid": "ysIdvX8oC7",
+    "type": "Outfit",
+    "name": "Sunlight Sun Dress",
+    "icon": "https://i.imgur.com/T6HayyJ.png"
+  },
+  {
+    "id": 2741,
+    "guid": "T5PJETWmC-",
+    "type": "Prop",
+    "name": "Sunlight Wave Projector",
+    "icon": "https://i.imgur.com/DvEqmBg.png"
+  },
+  {
+    "id": 2742,
+    "guid": "iPnHAbmuQr",
+    "type": "Cape",
+    "name": "Sunlight Shawl Cape",
+    "icon": "https://i.imgur.com/nQYtd0J.png"
+  },
+  {
+    "id": 2743,
+    "guid": "6w_qh-oE2k",
+    "type": "Prop",
+    "name": "Sandcastle Small Tower",
+    "icon": "https://i.imgur.com/BtRKGFj.png"
+  },
+  {
+    "id": 2744,
+    "guid": "G5sW47Twex",
+    "type": "Prop",
+    "name": "Sandcastle Large Tower",
+    "icon": "https://i.imgur.com/pmLtwWX.png"
+  },
+  {
+    "id": 2745,
+    "guid": "wlTd7h9_Rc",
+    "type": "Prop",
+    "name": "Sandcastle Small Gate",
+    "icon": "https://i.imgur.com/0WwpV06.png"
+  },
+  {
+    "id": 2746,
+    "guid": "Wii_7x7ezQ",
+    "type": "Prop",
+    "name": "Sandcastle Wall",
+    "icon": "https://i.imgur.com/4SfyQwz.png"
+  },
+  {
+    "id": 2747,
+    "guid": "fkiyxCyMN7",
+    "type": "Prop",
+    "name": "Sandcastle Large Gate",
+    "icon": "https://i.imgur.com/1JaRsu9.png"
+  },
+  {
+    "id": 2748,
+    "guid": "JVyQRl-B8m",
+    "type": "Prop",
+    "name": "Sandcastle Sand Lot",
+    "icon": "https://i.imgur.com/9BAt7Qj.png"
+  },
+  {
+    "id": 2749,
+    "guid": "4VFezhFHqw",
+    "type": "Prop",
+    "name": "Sandcastle Flag",
+    "icon": "https://i.imgur.com/XUjH5ef.png"
   }
 ]
