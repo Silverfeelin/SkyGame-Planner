@@ -709,7 +709,10 @@
           "spirits": [
             { "guid": "iveahMLu78", "spirit": "c9XXzlKzhd", "tree": "WvS399OTqy" }
           ],
-          "shops": [],
+          "shops": [
+            "n-Vr__RB-d",
+            "tXhadV0G7I"
+          ],
           "draft": true,
           "calculatorData": {
             "dailyCurrencyAmount": 3,

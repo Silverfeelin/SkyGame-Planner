@@ -1315,6 +1315,32 @@
       ]
     },
     // #endregion
+    // #region Days of Sunlight (2025)
+    {
+      "guid": "n-Vr__RB-d",
+      "type": "Store",
+      "iaps": [
+        "h3cw_n8g-Z"
+      ]
+    },
+    {
+        "guid": "tXhadV0G7I",
+        "type": "Object",
+        "name": "Sunlight Prop Box",
+        "iaps": [
+          "3GcMI-M31g",
+          "af8EXlZ_4K",
+          "LfIfvQNi06",
+          "0yLbT5Ob1R",
+          "TrmG80sjvZ",
+          "Tcf83N28HD",
+          "ah-45-2DIG",
+          "vCXzmylE9Y",
+          "j2lWym3xxW",
+          "bEjUQmxgOa"
+        ]
+      },
+    // #endregion
     // #region Days of Moonlight (2024)
     {
       "guid": "EFRo-sMbYE",
