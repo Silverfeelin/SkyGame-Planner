@@ -694,5 +694,19 @@
     "name": "Two Embers - Part 1 Movie Poster",
     "icon": "https://i.imgur.com/oQBfz43.png",
     "order": 642
+  },
+  {
+    "id": 2751,
+    "guid": "kJewPz6EAk",
+    "name": "Cutscene",
+    "type": "Special",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2752,
+    "guid": "IALdTjpJLH",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   }
 ]
