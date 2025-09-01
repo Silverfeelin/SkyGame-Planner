@@ -701,6 +701,25 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=691b2383af2840ada919486f8c794876"
           },
+        },
+        {
+          "guid": "Oh5CU3y2ny",
+          "date": "2025-09-01",
+          "endDate": "2025-09-21",
+          "spirits": [
+            { "guid": "iveahMLu78", "spirit": "c9XXzlKzhd", "tree": "WvS399OTqy" }
+          ],
+          "shops": [],
+          "draft": true,
+          "calculatorData": {
+            "dailyCurrencyAmount": 3,
+            "timedCurrency": [
+              { "guid": "ckIGxBAsMm", "date": "2025-09-01", "endDate": "2025-09-21", "amount": 15, "description": "Taking pictures of requested props" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=20250901sept"
+          }
         }
       ],
       "_wiki": {

@@ -270,5 +270,12 @@
     "name": "Sandcastle Flag",
     "icon": "https://i.imgur.com/XUjH5ef.png",
     "order": 650
+  },
+  {
+    "id": 2750,
+    "guid": "jEpC3PXdht",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
   }
 ]
