@@ -715,7 +715,7 @@
           ],
           "draft": true,
           "calculatorData": {
-            "dailyCurrencyAmount": 3,
+            "dailyCurrencyAmount": 5,
             "timedCurrency": [
               { "guid": "ckIGxBAsMm", "date": "2025-09-01", "endDate": "2025-09-21", "amount": 15, "description": "Taking pictures of requested props" }
             ]
