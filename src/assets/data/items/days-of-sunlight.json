@@ -189,6 +189,10 @@
     "type": "HairAccessory",
     "name": "Sunlight Bonnet",
     "icon": "https://i.imgur.com/FeDviAv.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_toga.jpg"
+    },
     "order": 368
   },
   {
@@ -213,6 +217,10 @@
     "type": "Cape",
     "name": "Sunlight Shawl Cape",
     "icon": "https://i.imgur.com/nQYtd0J.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/Sunlight_teenycape.jpg"
+    },
     "order": 926
   },
   {
