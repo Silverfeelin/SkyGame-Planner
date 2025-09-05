@@ -1425,7 +1425,7 @@
       "name": "AURORA Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/SoAurora-Seasonal-guide.png",
       "tree": "P1nzgnNVFT",
-      "treeRevisions": ["gu5doPh4OB", "Nx8MFZDTe-"],
+      "treeRevisions": ["gu5doPh4OB", "Nx8MFZDTe-", "v2HU8RJ0L5"],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide"
       }
@@ -1922,7 +1922,7 @@
       "type": "Guide",
       "name": "Blue Bird Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Blue-Bird-Ultimate-Guide.png",
-      "tree": "9ZMGsZeH1U",
+      "tree": "9ZMGsZeH1U"
     },
     {
       "guid": "2iDZqeJXTf",
@@ -1934,7 +1934,7 @@
     {
       "guid": "faWKshu5Vh",
       "type": "Season",
-      "name": "Customed Confetti Cousin",
+      "name": "Costumed Confetti Cousin",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Costumed-Confetti-Cousin-cutout.png",
       "tree": "GEOf9iPZiz"
     },
@@ -1958,6 +1958,46 @@
       "name": "Woodcutting Pleaful Parent",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Woodcutting-Pleaful-Parent-cutout.png",
       "tree": "qLiBf_BpI4"
+    },
+    // #endregion
+    // #region Two Embers - Part 1
+    {
+      "guid": "gy_EzmMKxF",
+      "type": "Guide",
+      "name": "Vault Elder's Lantern",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Vault-Elder-Lantern-Ultimate-Guide-cutout.png",
+      "tree": "lHlnmVDICn"
+    },
+    {
+      "guid": "aO0n7dAWvc",
+      "type": "Season",
+      "name": "Tender Toymaker",
+      "tree": "SI9Q8J2Fm-"
+    },
+    {
+      "guid": "2FQrdh4aCQ",
+      "type": "Season",
+      "name": "Stern Shepherd",
+      "tree": "RDergQu3Vd"
+    },
+    {
+      "guid": "Jq1bIftHV5",
+      "type": "Season",
+      "name": "Resourceful Recluse",
+      "tree": "fdQpzNAjCw"
+    },
+    {
+      "guid": "zdstJkDMg5",
+      "type": "Season",
+      "name": "Scarred Sentry",
+      "tree": "r-emIwzMih"
+    },
+    {
+      "guid": "TDQC4wg3G9",
+      "type": "Season",
+      "name": "Caring Companion",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Caring-Companion-cutout.png"
+      "tree": "PzoY-Wkk8O"
     },
     // #endregion
 
@@ -2066,6 +2106,11 @@
       "type": "Event",
       "name": "Anniversary Guide"
     },
+    {
+      "guid": "tam_Fpnh1g",
+      "type": "Event",
+      "name": "Anniversary Chibi IAP Guide"
+    },
     // Days of Sunlight
     {
       "guid": "c9XXzlKzhd",
@@ -2144,6 +2189,11 @@
       "type": "Event",
       "name": "Days of Color Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Days-of-Color-Guide-2024.png"
+    },
+    {
+      "guid": "8govamcy_2",
+      "type": "Event",
+      "name": "Days of Color IAP Guide"
     },
     // Firework Festival
     {

@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack"
     },
-    "order": 736,
+    "order": 796,
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Base_starter.jpg",
       "primary": {}
@@ -25,7 +25,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack"
     },
-    "order": 735
+    "order": 795
   },
   {
     "id": 1938,
@@ -38,7 +38,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape"
     },
-    "order": 734
+    "order": 794
   },
   {
     "id": 1939,
@@ -51,7 +51,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Fledgling_Harp"
     },
-    "order": 515
+    "order": 544
   },
   {
     "id": 2406,
@@ -60,7 +60,10 @@
     "name": "Fledgling Upright Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
-    "order": 730
+    "order": 790,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Fledgling_Upright_Piano"
+    }
   },
   {
     "id": 1940,
@@ -73,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar"
     },
-    "order": 524
+    "order": 553
   },
   {
     "id": 1941,
@@ -86,7 +89,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan"
     },
-    "order": 529
+    "order": 558
   },
   {
     "id": 1942,
@@ -99,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar"
     },
-    "order": 535
+    "order": 564
   },
   {
     "id": 1943,
@@ -111,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 881
+    "order": 948
   },
   {
     "id": 1944,
@@ -123,7 +126,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 880
+    "order": 947
   },
   {
     "id": 1945,
@@ -135,7 +138,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack"
     },
-    "order": 288
+    "order": 304
   },
   {
     "id": 1946,
@@ -148,7 +151,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute"
     },
-    "order": 543
+    "order": 572
   },
   {
     "id": 1959,
@@ -157,7 +160,7 @@
     "name": "Sparrow Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Sparrow-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
-    "order": 877
+    "order": 944
   },
   {
     "id": 1960,
@@ -166,7 +169,7 @@
     "name": "Sparrow Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/ff/Sparrow-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Sparrow-Mask-real.png",
-    "order": 463
+    "order": 489
   },
   {
     "id": 1961,
@@ -175,7 +178,7 @@
     "name": "Moth Antennae",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moth-headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Moth-headpiece-real.png",
-    "order": 347
+    "order": 367
   },
   {
     "id": 1962,
@@ -184,7 +187,7 @@
     "name": "Moth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Moth-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
-    "order": 878
+    "order": 945
   },
   {
     "id": 1947,
@@ -196,7 +199,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 464
+    "order": 490
   },
   {
     "id": 1948,
@@ -208,7 +211,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 882
+    "order": 949
   },
   {
     "id": 1949,
@@ -220,7 +223,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 289
+    "order": 305
   },
   {
     "id": 2408,
@@ -228,7 +231,7 @@
     "type": "Prop",
     "name": "Mask Hanger",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Hang-wall-mask.png",
-    "order": 693
+    "order": 746
   },
   {
     "id": 2543,
@@ -236,7 +239,11 @@
     "type": "Cape",
     "name": "Transcendent Journey Cape",
     "icon": "/assets/game/items/2543.png",
-    "order": 883
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Transcendent-Journey-Pack-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
+    },
+    "order": 950
   },
   {
     "id": 2544,
@@ -244,7 +251,11 @@
     "type": "Hair",
     "name": "Transcendent Journey Hair",
     "icon": "/assets/game/items/2544.png",
-    "order": 290
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Transcendent-Journey-Pack-Hair-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
+    },
+    "order": 306
   },
   {
     "id": 2545,
@@ -252,6 +263,10 @@
     "type": "Mask",
     "name": "Transcendent Journey Mask",
     "icon": "/assets/game/items/2545.png",
-    "order": 465
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Transcendent-Journey-Pack-Mask.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
+    },
+    "order": 491
   }
 ]

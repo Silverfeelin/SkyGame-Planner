@@ -205,4 +205,109 @@
     ]
   },
   // #endregion
+  // #region Days of Color (2025)
+  {
+    "guid": "3myg1K_NVD",
+    "name": "Rainbow Face Paint Mask",
+    "price": 19.99,
+    "c": 75,
+    "items": [
+      "Z9HZ5p9DX7",
+      "UzLX3RxGme"
+    ]
+  },
+  {
+    "guid": "v__sPzDxDa",
+    "name": "Rainbow Ribbon Shawl",
+    "price": 14.99,
+    "items": [
+      "zG11dMlH61"
+    ]
+  },
+  {
+    "guid": "niXRqrDBPE",
+    "name": "Dark Rainbow Loafers",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "xFcmMsHvA0"
+    ]
+  },
+  {
+    "guid": "S4wXyHtoOe",
+    "name": "Color Bubble Machine",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "vLeyYAngWk"
+    ]
+  },
+  {
+    "guid": "i26sHsdWSP",
+    "name": "Rainbow Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 75,
+    "items": [
+      "KpS-2FdasB"
+    ]
+  },
+  {
+    "guid": "l9QzabG_At",
+    "name": "Rainbow Hat",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "cMLcvRtjoh"
+    ]
+  },
+  {
+    "guid": "t4TQD7wkX4",
+    "name": "Rainbow Earring",
+    "price": 2.99,
+    "returning": true,
+    "items": [
+      "f-X2dDeB9w"
+    ]
+  },
+  {
+    "guid": "BRXIbPRO5K",
+    "name": "Double Rainbow Pack",
+    "price": 9.99,
+    "returning": true,
+    "c": 40,
+    "items": [
+      "gNWmRUkpFo"
+    ]
+  },
+  {
+    "guid": "6sytee2Pft",
+    "name": "Rainbow Headphones",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "j51xlBBIZX"
+    ]
+  },
+  {
+    "guid": "v2IWAJCRM0",
+    "name": "Dark Rainbow Pack",
+    "price": 9.99,
+    "returning": true,
+    "c": 40,
+    "items": [
+      "krzIL86J83"
+    ]
+  },
+  {
+    "guid": "6d47mXYSYb",
+    "name": "Dark Rainbow Tunic",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "9ETwx3n-UZ"
+    ]
+  },
+  // #endregion
 ]

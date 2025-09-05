@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const json5 = require('json5');
+const jsonc = require('jsonc-parser');
 
 // nanoid - https://github.com/ai/nanoid
 // MIT License - https://github.com/ai/nanoid/blob/main/LICENSE
@@ -21,23 +21,26 @@ const nanoid = (size = 21) =>
   }, '')
 
 const getItemId = () => {
-  const rawdata = fs.readFileSync(path.join(__dirname, '../src/assets/data/items.json'));
-  const itemConfig = json5.parse(rawdata);
-  const maxId = Math.max(...itemConfig.items.map(i => i.id));
+  const rawdata = fs.readFileSync(path.join(__dirname, '../src/assets/data/items.json'), 'utf8');
+  const itemConfig = jsonc.parse(rawdata);
+  const maxId = Math.max(...itemConfig.items.map(i => i.id || 0));
   return maxId + 1;
 };
 
+// Check and apply IDs to unsorted.json.
 let id = getItemId();
 const itemsFilePath = path.resolve(__dirname, '../src/assets/data/items/unsorted.json');
-const items = json5.parse(fs.readFileSync(itemsFilePath, 'utf8'));
+const items = jsonc.parse(fs.readFileSync(itemsFilePath, 'utf8'));
 let changed = false;
 items.forEach((item, i) => {
+  console.log(item);
   if (!item.id || item.id < 0) {
+    delete item.id;
     items[i] = { id: id++, ...item };
     changed = true;
   }
   if (!item.guid) {
-    item.guid = nanoid(10);
+    items[i].guid = nanoid(10);
     changed = true;
   }
 });

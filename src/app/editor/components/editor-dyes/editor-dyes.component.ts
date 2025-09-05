@@ -10,31 +10,13 @@ import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.com
 import { DataService } from '@app/services/data.service';
 
 const fileNames = [
-  "/assets/game/dyes/2slots_Bluebird_mask.jpg",
-  "/assets/game/dyes/2slots_Bluebird_touslecape.jpg",
-  "/assets/game/dyes/2slots_Bluebird_touslepants.jpg",
-  "/assets/game/dyes/2slots_Colour_beaniebraid.jpg",
-  "/assets/game/dyes/2slots_Colour_facepaint.jpg",
-  "/assets/game/dyes/2slots_Colour_radipants.jpg",
-  "/assets/game/dyes/2slots_Colour_saturncape.jpg",
-  "/assets/game/dyes/Bluebird_beetlecape.jpg",
-  "/assets/game/dyes/Bluebird_confettidress.jpg",
-  "/assets/game/dyes/Bluebird_confettihat.jpg",
-  "/assets/game/dyes/Bluebird_grandpacape.jpg",
-  "/assets/game/dyes/Bluebird_mask.jpg",
-  "/assets/game/dyes/Bluebird_pleafulboots.jpg",
-  "/assets/game/dyes/Bluebird_pleafulpants.jpg",
-  "/assets/game/dyes/Bluebird_touslecape.jpg",
-  "/assets/game/dyes/Bluebird_tousleheadphones.jpg",
-  "/assets/game/dyes/Bluebird_touslepants.jpg",
-  "/assets/game/dyes/Bluebird_whitecape.jpg",
-  "/assets/game/dyes/Colour_beaniebraid.jpg",
-  "/assets/game/dyes/Colour_facepaint.jpg",
-  "/assets/game/dyes/Colour_radipants.jpg",
-  "/assets/game/dyes/Colour_saturncape.jpg",
-  "/assets/game/dyes/Nature_swirlmask.jpg",
-  "/assets/game/dyes/Nature_swirlpants.jpg",
-];
+  '/assets/game/dyes/outfit/Anniversary_jellydress.jpg',
+  '/assets/game/dyes/mask/Base_sleepy.jpg',
+  '/assets/game/dyes/hair/2slots_Bloom_rosebraid.jpg',
+  '/assets/game/dyes/hair/Bloom_rosebraid.jpg',
+  '/assets/game/dyes/cape/2slot_Anniversary_tuxedocape.jpg',
+  '/assets/game/dyes/cape/Anniversary_tuxedocape.jpg'
+]
 
 @Component({
     selector: 'app-editor-dyes',
@@ -79,6 +61,7 @@ export class EditorDyesComponent {
 
   onPreviewClicked(file: string): void {
     this.previewFile = file;
+    navigator.clipboard.writeText(file);
   }
 
   export(): void {

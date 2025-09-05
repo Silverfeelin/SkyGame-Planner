@@ -34,7 +34,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Masks#Base_Mask"
     },
     "autoUnlocked": true,
-    "order": 368
+    "order": 391
   },
   {
     "id": 3,
@@ -46,8 +46,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle"
     },
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Base_moth.jpg"
+    },
     "autoUnlocked": true,
-    "order": 130
+    "order": 141
   },
   {
     "id": 1951,
@@ -60,7 +64,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle"
     },
     "autoUnlocked": true,
-    "order": 131
+    "order": 142
   },
   {
     "id": 1952,
@@ -73,7 +77,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hair#Base_Hairstyle"
     },
     "autoUnlocked": true,
-    "order": 132
+    "order": 143
   },
   {
     "id": 4,
@@ -90,7 +94,7 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Capes#Base_Cape"
     },
     "autoUnlocked": true,
-    "order": 733
+    "order": 793
   },
   {
     "id": 5,

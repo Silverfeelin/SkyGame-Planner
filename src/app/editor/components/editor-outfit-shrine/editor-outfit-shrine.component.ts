@@ -1,4 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { ItemHelper } from '@app/helpers/item-helper';
 import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DataService } from '@app/services/data.service';
 import { DateTime } from 'luxon';
@@ -79,6 +80,10 @@ export class EditorOutfitShrineComponent implements AfterViewInit {
     this._dataService.itemConfig.items.forEach(item => {
       itemsByType[item.type].push(item);
     });
+
+    for (const type in itemsByType) {
+      itemsByType[type as ItemType].sort(ItemHelper.sorter);
+    }
 
     let rows = sheet.types.reduce((acc, { type }) => {
       const items = itemsByType[type];

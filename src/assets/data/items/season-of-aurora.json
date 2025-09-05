@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts"
     },
-    "order": 481
+    "order": 507
   },
   {
     "id": 549,
@@ -30,7 +30,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts"
     },
-    "order": 232
+    "order": 243
   },
   {
     "id": 550,
@@ -56,7 +56,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Ultimate_Gifts"
     },
-    "order": 809
+    "order": 869
   },
   {
     "id": 552,
@@ -277,7 +277,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Guide#Mask"
     },
-    "order": 432
+    "order": 455
   },
   {
     "id": 1502,
@@ -313,7 +313,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Mask"
     },
-    "order": 429
+    "order": 452
   },
   {
     "id": 1505,
@@ -340,7 +340,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Hair"
     },
-    "order": 228,
+    "order": 239,
     "group": "SeasonPass"
   },
   {
@@ -393,7 +393,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Running_Wayfarer#Cape"
     },
-    "order": 805
+    "order": 865
   },
   {
     "id": 1513,
@@ -452,7 +452,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Mask"
     },
-    "order": 431,
+    "order": 454,
     "group": "SeasonPass"
   },
   {
@@ -488,7 +488,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Hair"
     },
-    "order": 230
+    "order": 241
   },
   {
     "id": 1522,
@@ -528,7 +528,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mindful_Miner#Cape"
     },
-    "order": 807
+    "order": 867
   },
   {
     "id": 1526,
@@ -580,7 +580,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Mask"
     },
-    "order": 430
+    "order": 453
   },
   {
     "id": 1531,
@@ -607,7 +607,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Hair"
     },
-    "order": 229,
+    "order": 240,
     "group": "SeasonPass"
   },
   {
@@ -667,7 +667,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Warrior_of_Love#Cape"
     },
-    "order": 806,
+    "order": 866,
     "group": "SeasonPass"
   },
   {
@@ -719,7 +719,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Mask"
     },
-    "order": 428,
+    "order": 451,
     "group": "SeasonPass"
   },
   {
@@ -772,7 +772,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Hair"
     },
-    "order": 227
+    "order": 238
   },
   {
     "id": 1550,
@@ -799,7 +799,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Seed_of_Hope#Cape"
     },
-    "order": 804,
+    "order": 864,
     "group": "SeasonPass"
   },
   {
@@ -821,7 +821,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Tiara_We_Can_Touch"
     },
-    "order": 352
+    "order": 373
   },
   {
     "id": 1555,
@@ -834,7 +834,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Runaway_Hair"
     },
-    "order": 231
+    "order": 242
   },
   {
     "id": 1556,
@@ -874,7 +874,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Voice_of_AURORA"
     },
-    "order": 537
+    "order": 566
   },
   {
     "id": 1559,
@@ -887,7 +887,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#Giving_In_Cape"
     },
-    "order": 810
+    "order": 870
   },
   {
     "id": 1560,
@@ -900,7 +900,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Concert#Wings_of_AURORA"
     },
-    "order": 808
+    "order": 868
   },
   {
     "id": 1561,
@@ -913,7 +913,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/AURORA_Encore_Concerts#Musical_Voyage_Sneakers"
     },
-    "order": 127
+    "order": 137
   },
   {
     "id": 1562,
@@ -967,5 +967,33 @@
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2637,
+    "guid": "oXIqufDIiz",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2638,
+    "guid": "bc5x356qyN",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2639,
+    "guid": "FflyUb6DoI",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2640,
+    "guid": "dx_HwGc9ct",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   }
 ]

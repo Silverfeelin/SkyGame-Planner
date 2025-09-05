@@ -579,10 +579,43 @@
       "calculatorData": {
         "timedCurrency": [
           { "guid": "2J64_6xrAf", "date": "2025-04-21", "endDate": "2025-07-06", "amount": 4, "description": "Quest 1 reward" },
+          { "guid": "_BsbjmGxqz", "date": "2025-06-09", "endDate": "2025-06-22", "amount": 14, "description": "Bonus daily Seasonal Light" },
         ]
       },
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1cf8261c87dd80bc9944fb4ac9b1d5ab&pm=c"
+      }
+    },
+    {
+      "guid": "WARyR3Qtb1",
+      "name": "Season of The Two Embers - Part 1",
+      "shortName": "Two Embers - Part 1",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
+      "imageUrl": "https://a.storyblok.com/f/108104/1920x1080/222b5bb80f/s27_walkwithtoymaker-cosmetics_sls_na_na_2507.jpg",
+      "year": 2025,
+      "date": "2025-07-21",
+      "endDate": "2025-10-05",
+      "_wiki": {
+        "href": "https://antifandom.com/sky-children-of-the-light/wiki/Season_of_The_Two_Embers_-_Part_1"
+      },
+      "spirits": [
+        "gy_EzmMKxF",
+        "aO0n7dAWvc",
+        "Jq1bIftHV5",
+        "zdstJkDMg5",
+        "2FQrdh4aCQ",
+        "TDQC4wg3G9",
+      ],
+      "shops": [
+        "qa1g8CbXqg",
+      ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "MCSGj8K4g9", "date": "2025-08-19", "endDate": "2025-09-01", "amount": 14, "description": "Bonus daily Seasonal Light" }
+        ]
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=22d8261c87dd80418568fb01053bd2b1&pm=c"
       }
     },
     // #endregion

@@ -7,7 +7,6 @@ import { DataService, ITrackables } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storage-provider.interface';
 import { MatIcon } from '@angular/material/icon';
-import { SurveyComponent } from "../../survey/survey.component";
 import { canActivateIcons } from '@app/guards/can-activate-icons';
 import { OverlayComponent } from "../overlay/overlay.component";
 
@@ -16,7 +15,7 @@ import { OverlayComponent } from "../overlay/overlay.component";
     templateUrl: './main-layout.component.html',
     styleUrl: './main-layout.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [MatIcon, RouterOutlet, RouterLink, SurveyComponent, OverlayComponent]
+    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 

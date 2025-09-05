@@ -59,7 +59,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Harmony_Hall#Musical_Hairpin"
     },
-    "order": 340
+    "order": 360
   },
   {
     "id": 1930,
@@ -72,7 +72,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Saxophone"
     },
-    "order": 546
+    "order": 575
   },
   {
     "id": 1931,
@@ -84,7 +84,11 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Harmony_Hall_Marching_Band_Hat"
     },
-    "order": 271
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Music_bandhat.jpg"
+    },
+    "order": 287
   },
   {
     "id": 1932,
@@ -106,7 +110,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Triumph_Violin"
     },
-    "order": 545
+    "order": 574
   },
   {
     "id": 1934,
@@ -130,10 +134,13 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Music-marching-band-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cb/Music-marching-band-Cape-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Music_cape.jpg",
-      "primary": {}
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/Music_cape.jpg"
     },
-    "order": 876
+    "order": 942,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Marching_Band_Cape"
+    }
   },
   {
     "id": 2405,
@@ -143,12 +150,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Music-marching-band-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Music-marching-band-Outfit-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Music_pants.jpg",
-      "infoUrl": "/assets/game/dyes/outfit/2slots_Music_pants.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Music_pants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Music_pants.jpg"
     },
-    "order": 83
+    "order": 88,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Marching_Band_Outfit"
+    }
   },
   {
     "id": 2407,
@@ -157,7 +167,10 @@
     "name": "Jam Station",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/33/Jam-Station-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Jam-Station-instrument-instrument.png",
-    "order": 626
+    "order": 679,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Jam_Station"
+    }
   },
   {
     "id": 2409,

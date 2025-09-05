@@ -475,6 +475,27 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=ec63b6155c2a447c89487ae0936592ad"
           },
+        },
+        {
+          "guid": "OK-kbLTjFP",
+          "date": "2025-05-26",
+          "endDate": "2025-06-08",
+          "spirits": [
+            { "guid": "fq25mINKii", "spirit": "L8hK6RLQa_", "tree": "J8x_QrviU0" }
+          ],
+          "shops": [
+            "9hxOhxxmEr",
+            "BcBq4Khxik"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "Mgn5eSqxuN", "date": "2025-05-26", "endDate": "2025-06-08", "amount": 15, "description": "Bonus event currency" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1d78261c87dd8081bf56e7b8ff9a91d5&pm=c"
+          },
         }
       ],
       "_wiki": {
@@ -597,7 +618,36 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=9dbda8384558444db9efe183594a0393"
           },
-        }
+        },
+        {
+          "guid": "i7dT3CcVzj",
+          "date": "2025-07-07",
+          "endDate": "2025-08-17",
+          "spirits": [
+            { "guid": "ckHoMpY-hP", "spirit": "mYOzGrzNHU", "tree": "DuDLYuznJK" }
+          ],
+          "shops": [
+            "fW8k6x5E9q",
+            "JQ7fDlgkkP",
+            "MWG4-11wq3",
+            "_nN6T9eeX3"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 0,
+            "timedCurrency": [
+              { "guid": "NAZ-cZ_scf", "date": "2025-07-07", "endDate": "2025-08-17", "amount": 20, "description": "Currency around Aviary Village x10" },
+              { "guid": "sVl_oIBWtm", "date": "2025-07-07", "endDate": "2025-07-13", "amount": 30, "description": "Week 1 rewards at Sky Cinema" },
+              { "guid": "qKkE5n5QjX", "date": "2025-07-14", "endDate": "2025-07-20", "amount": 30, "description": "Week 2 rewards at Sky Cinema" },
+              { "guid": "AdIhz8Eoxy", "date": "2025-07-21", "endDate": "2025-07-27", "amount": 30, "description": "Week 3 rewards at Sky Cinema" },
+              { "guid": "_jNorqN11l", "date": "2025-07-28", "endDate": "2025-08-03", "amount": 30, "description": "Week 4 rewards at Sky Cinema" },
+              { "guid": "uAudZY_SEt", "date": "2025-08-04", "endDate": "2025-08-10", "amount": 30, "description": "Week 5 rewards at Sky Cinema" },
+              { "guid": "ky4xOh9Htt", "date": "2025-08-11", "endDate": "2025-08-17", "amount": 30, "description": "Week 6 rewards at Sky Cinema" },
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2028261c87dd80939bf7d0b78ba2f4bd&pm=c"
+          }
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary"
@@ -651,6 +701,28 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=691b2383af2840ada919486f8c794876"
           },
+        },
+        {
+          "guid": "Oh5CU3y2ny",
+          "date": "2025-09-01",
+          "endDate": "2025-09-21",
+          "spirits": [
+            { "guid": "iveahMLu78", "spirit": "c9XXzlKzhd", "tree": "WvS399OTqy" }
+          ],
+          "shops": [
+            "n-Vr__RB-d",
+            "tXhadV0G7I"
+          ],
+          "draft": true,
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "ckIGxBAsMm", "date": "2025-09-01", "endDate": "2025-09-21", "amount": 15, "description": "Taking pictures of requested props" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=20250901sept"
+          }
         }
       ],
       "_wiki": {
@@ -1114,6 +1186,7 @@
       "instances": [
         {
           "guid": "yNyYTdO1xU",
+          "name": "AURORA Encore Concerts",
           "date": { "day": 23, "month": 8, "year": 2023 },
           "endDate": { "day": 3, "month": 9, "year": 2023 },
           "shops": [
@@ -1124,6 +1197,21 @@
           ],
           "spirits": [
             { "guid": "7lXseoma3X", "spirit": "OaAUJHNIjE", "tree": "Nx8MFZDTe-" }
+          ]
+        },
+        {
+          "guid": "ZxXbhLuVyl",
+          "name": "AURORA Homecoming Concert",
+          "date": "2025-06-09",
+          "endDate": "2025-06-22",
+          "spirits": [
+            { "guid": "--glPju5F7", "spirit": "U9vUspUuRp", "tree": "v2HU8RJ0L5" }
+          ],
+          "shops": [
+            "RHk-FddHZx",
+            "uANAClB_6I",
+            "mKzOX4rWG-",
+            "p0-DJsTxcv"
           ]
         }
       ],
@@ -1214,6 +1302,30 @@
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Tournament_of_Triumph"
       }
+    },
+    {
+      "guid": "FH0tm4guOI",
+      "name": "Workshop Show & Tell",
+      "shortName": "Show & Tell",
+      "imageUrl": "https://i.imgur.com/0xUpfEj.png",
+      "imagePosition": "top",
+      "instances": [
+        {
+          "guid": "xP28yRGNlG",
+          "date": "2025-06-23",
+          "endDate": "2025-07-06",
+          "shops": [
+            "d9f149Afi3",
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2028261c87dd8056bdf6fb6a4466af21&pm=c"
+          }
+        }
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Workshop_Show_%26_Tell"
+      }
+
     }
     // #endregion
   ]

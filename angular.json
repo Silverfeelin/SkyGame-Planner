@@ -47,7 +47,6 @@
             "allowedCommonJsDependencies": [
               "dropbox",
               "fuzzysort",
-              "json5",
               "leaflet",
               "panzoom"
             ],

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { IEventInstance } from 'src/app/interfaces/event.interface';
 import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
@@ -12,16 +12,16 @@ import { SeasonCardComponent } from '../season-card/season-card.component';
 import { DashboardWishlistComponent } from './dashboard-wishlist/dashboard-wishlist.component';
 import { NgIf, NgFor } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
-import { MatIcon } from '@angular/material/icon';
 import { ClockComponent } from '../clock/clock.component';
 import { CardComponent } from "../layout/card/card.component";
 import { DailyCardComponent } from "../daily-card/daily-card.component";
+import { DashboardAnnouncementComponent } from './dashboard-announcement/dashboard-announcement.component';
 
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.less'],
-    imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, CardComponent, DailyCardComponent]
+    imports: [DashboardAnnouncementComponent, ClockComponent, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, CardComponent, DailyCardComponent]
 })
 export class DashboardComponent implements OnInit {
 

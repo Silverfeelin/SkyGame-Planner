@@ -21,7 +21,6 @@ import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon
 import { CardComponent } from '../../layout/card/card.component';
 import { MatIcon, MatIconRegistry } from '@angular/material/icon';
 import { NgIf, NgFor, NgTemplateOutlet, NgClass } from '@angular/common';
-import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
 import { IconService } from '@app/services/icon.service';
 import { drawFingerprint } from '../closet-fingerprint';
 import { OverlayComponent } from "../../layout/overlay/overlay.component";
@@ -60,7 +59,7 @@ const dyeColors = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 
     templateUrl: './closet.component.html',
     styleUrls: ['./closet.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [FirefoxClipboardItemComponent, NgClass, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet, OverlayComponent]
+    imports: [NgClass, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet, OverlayComponent]
 })
 export class ClosetComponent implements OnDestroy {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;

@@ -50,11 +50,11 @@ import { ItemsOverviewComponent } from './components/items/items-overview/items-
 import { NewsComponent } from './components/news/news.component';
 import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
 import { AreasComponent } from './components/areas/areas.component';
-import { SpiritTreeEditorComponent } from './components/spirit-tree/spirit-tree-editor/spirit-tree-editor.component';
 import { EventHistoryComponent } from './components/events/event-history/event-history.component';
 import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
+import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
 import { FriendsComponent } from './components/friends/friends.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
@@ -116,7 +116,7 @@ export const routes: Routes = [
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
           { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
           { path: 'spirit/:guid', component: SpiritComponent },
-          { path: 'spirit-tree/editor', component: SpiritTreeEditorComponent, title: title('Spirit Tree Editor') },
+          { path: 'spirit-tree/editor', redirectTo: 'editor/spirit-tree' }, // old route
           { path: 'spirit-tree/viewer', loadComponent: () => import('./components/spirit-tree/spirit-tree-viewer/spirit-tree-viewer.component').then(m => m.SpiritTreeViewerComponent), title: title('Spirit Tree Viewer') },
           { path: 'spirit-tree/:guid', component: SpiritTreeViewComponent, title: title('Spirit Tree') },
           { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
@@ -137,6 +137,7 @@ export const routes: Routes = [
         ]
       },
       /* Routes without menu. */
+      { path: 'cr-tracker', component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
       { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') }
     ]
   }

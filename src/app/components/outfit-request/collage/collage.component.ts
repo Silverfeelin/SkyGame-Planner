@@ -6,7 +6,6 @@ import { IconPickerComponent } from '../../util/icon-picker/icon-picker.componen
 import { NgFor, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
 
 interface IImage {
   x: number;
@@ -25,7 +24,7 @@ interface ICoord {
     templateUrl: './collage.component.html',
     styleUrls: ['./collage.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [FirefoxClipboardItemComponent, RouterLink, MatIcon, NgFor, NgbTooltip, NgIf, IconPickerComponent]
+    imports: [RouterLink, MatIcon, NgFor, NgbTooltip, NgIf, IconPickerComponent]
 })
 export class CollageComponent implements AfterViewInit {
   @ViewChild('ttCopy', { static: true }) private readonly _ttCopy!: NgbTooltip;

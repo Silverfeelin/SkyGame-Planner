@@ -364,7 +364,7 @@
       "guid": "gu5doPh4OB",
       "revisionType": "AfterSeason",
       "name": "AURORA Guide - After season",
-      "node": "tminhzzv09"
+      "node": "xG-pgBHsGb"
     },
     // Remembrance Guide
     {
@@ -618,6 +618,7 @@
       "guid": "pYPMMB_Dq3",
       "node": "7ng19Cq_Jj"
     },
+    { "guid": "AnFlriIA1l", "node": "joPE_k2pDQ" },
     // #region Twirling Champion
     {
       "guid": "9lQ4T3H65f",
@@ -706,6 +707,7 @@
       "guid": "2opAUtbkkR",
       "node": "jfUwNEL-ns"
     },
+    { "guid": "SKqwmahcxz", "node": "4vQMQtPIuP" },
     // Sparkler Parent
     {
       "guid": "sM-gGfmBb9",
@@ -1109,6 +1111,7 @@
       "guid": "zRK07kSmcG",
       "node": "BBGCStYaGJ"
     },
+    { "guid": "-lshQtF-0t", "node": "y3eJJ6CsFn" },
     // Prophet of Air
     {
       "guid": "llk8KwqtQo",
@@ -1228,6 +1231,11 @@
       "guid": "Yy0m8oXKyK",
       "node": "I-40Dn5_LO"
     },
+    //TS 147
+    {
+      "guid": "Tdv2NuULDT",
+      "node": "favqmKiY2h"
+    },
     // Marching Adventurer
     {
       "guid": "MaqbAvyQQ8",
@@ -1237,6 +1245,7 @@
       "guid": "fHPe43oCch",
       "node": "ZQOPWn4zx8"
     },
+    { "guid": "9EwfRwkT1c", "node": "JvVtiSaIRp" },
     // Chuckling Scout
     {
       "guid": "n43yrGprN_",
@@ -1350,6 +1359,10 @@
       "guid": "shrYC9Vd3i",
       "node": "MGUE9PoBTC"
     },
+    {
+      "guid": "H4P1PDRMQa",
+      "node": "FRhBcTNbYT"
+    },
     // Tinkering Chimesmith
     {
       "guid": "66idlQe3mK",
@@ -1358,6 +1371,11 @@
     {
       "guid": "rPT8vTD06j",
       "node": "lvTfufFX7Q"
+    },
+    // TS 146
+    {
+      "guid": "CEzPLl5Qq2",
+      "node": "hdn9q9Iv4g"
     },
     // Talented Builder
     {
@@ -1379,6 +1397,7 @@
       "guid": "NdB6VF6E1G",
       "node": "w7O7kFaQ4l"
     },
+    { "guid": "R2WmeZDMqd", "node": "WsJjGE_da0" },
     // Ceasing Commodore
     {
       "guid": "1c2RnFkkmb",
@@ -1397,6 +1416,7 @@
       "guid": "MW9CCZ_Kb4",
       "node": "Q5-a10kPfB"
     },
+    { "guid": "eodAzj6E3z",  "node": "pVBm48V0So" },
     // Cackling Cannoneer
     {
       "guid": "ag2kvsRKRN",
@@ -1489,6 +1509,7 @@
       "guid": "U8EBIguISN",
       "node": "hnLmvU_fg8"
     },
+    { "guid": "qLJqS-BAYp", "node": "15X_X0AHKc" },
     // Mindful Miner
     {
       "guid": "bMfsxhWfRe",
@@ -1498,6 +1519,7 @@
       "guid": "ch9-I5m0Ba",
       "node": "jjxxIJvyo3"
     },
+    { "guid": "s_XB6-sfnp", "node": "kUOCWi4zBD" },
     // Warrior of Love
     {
       "guid": "mfj2dmg6Dd",
@@ -1507,17 +1529,23 @@
       "guid": "2kqCmbrCug",
       "node": "qSaF_V_XGE"
     },
+    { "guid": "qHdFiOJvXx", "node": "zdYZogArmw" },
     // Seed of Hope
     {
       "guid": "W7fm2UpXGb",
       "node": "4ohNhhcV87"
     },
+    { "guid": "h6-c8COSHy", "node": "nU0Anlo5ka" },
     // #endregion
     // #region Remembrance
     // Bereft Veteran
     {
       "guid": "zWD_AxgIGC",
       "node": "9bB4SRcAvm"
+    },
+    {
+      "guid": "sftWo0Dy66",
+      "node": "arsiJ_KjPq"
     },
     // Pleading Child
     {
@@ -1533,11 +1561,13 @@
       "guid": "gOAqpgTH4R",
       "node": "FAsuN4N2hI"
     },
+    { "guid": "IC3TtVJ-YG", "node": "-ZhSv-b7rD" },
     // Wounded Warrior
     {
       "guid": "Cze45b5NuK",
       "node": "6nhyx0XwCf"
     },
+    { "guid": "t8rUtsegue", "node": "zMb4Br_Xjk" },
     // #endregion
     // #region Passage
     // Oddball Outcast
@@ -1577,6 +1607,7 @@
       "guid": "C6mpLeVi_m",
       "node": "o4BiBgXh33"
     },
+    { "guid": "q5KTr1IKfB", "node": "Q-mUmZEFFP" },
     // Ascetic Monk
     {
       "guid": "QxacM-TYol",
@@ -1745,6 +1776,14 @@
     { "guid": "DU7kdfkbq7", "node": "qdSLwtMlKg" },
     { "guid": "O7hDEtXXLQ", "node": "r_3ANSlteU" },
     { "guid": "qLiBf_BpI4", "node": "nc8Qjghjoy" },
+    // #endregion
+    // #region Two Embers - Part 1
+    { "guid": "lHlnmVDICn", "node": "7NYZEkjI3A" },
+    { "guid": "SI9Q8J2Fm-", "node": "opxcbxYIfJ" },
+    { "guid": "RDergQu3Vd", "node": "BxVl336GE7" },
+    { "guid": "fdQpzNAjCw", "node": "gSpR4Ktq8n" },
+    { "guid": "r-emIwzMih", "node": "oZL55_0hI5" },
+    { "guid": "PzoY-Wkk8O", "node": "ataTovLcTn" },
     // #endregion
 
     // #region Nesting Challenges
@@ -1919,6 +1958,9 @@
       "node": "9OdKeadQcE"
     },
     // #endregion
+    // #region Days of Color (2025)
+    { "guid": "J8x_QrviU0", "node": "VY3t0JMl3q" },
+    // #endregion
     // #region Days of Music (2023)
     {
       "guid": "l1qSIM0q3H",
@@ -1958,6 +2000,8 @@
       "node": "5Z8NmDaupw"
     },
     // #endregion
+    // Sky Anniversary 2025
+    { "guid": "DuDLYuznJK", "node": "GNFh2wSha5" },
     // #endregion
     // #region Days of Sunlight
     // Days of Sunlight (2022)
@@ -1976,6 +2020,9 @@
       "guid": "OBkSXsVvcQ",
       "node": "1mezfgzjRi"
     },
+    // #endregion
+    // #region Days of Sunlight (2025)
+    { "guid": "WvS399OTqy", "node": "BfFrc98Kea" },
     // #endregion
     // #region Days of Moonlight (2024)
     {
@@ -2105,6 +2152,9 @@
       "name": "AURORA Guide - Encore",
       "revisionType": "Limited"
     },
+    // #endregion
+    // #region AURORA Homecoming Concert
+    { "guid": "v2HU8RJ0L5", "node": "-jPkPmG6b4", "name": "AURORA Guide - Homecoming", "revisionType": "Limited" },
     // #endregion
     // #region Aviary's Firework Festival
     {

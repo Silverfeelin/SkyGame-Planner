@@ -723,6 +723,19 @@
         { "area": "fng8QLVMr1" },
       ]
     },
+    {
+      "guid": "pZbxK8tM_J",
+      "name": "The Land in the Distant Past",
+      "spirits": [
+        "aO0n7dAWvc",
+        "Jq1bIftHV5",
+        "zdstJkDMg5",
+        "2FQrdh4aCQ",
+      ],
+      "connections": [
+        { "area": "mT6bVNovBW" }
+      ]
+    },
     // #endregion
     // #region Vault
     {
@@ -736,6 +749,7 @@
         { "area": "schNrmq0ID" },
         { "area": "HbKvg_BOyc" },
         { "area": "wKZdWMMIWa" },
+        { "area": "pZbxK8tM_J" }
       ]
     },
     {
@@ -820,7 +834,7 @@
     {
       "guid": "wrHKGEg2Kc",
       "name": "Vault Collab Room",
-      "imageUrl": "/assets/game/areas/vault/collab-720.webp",
+      "imageUrl": "/assets/game/areas/vault/new-collab-temp.webp",
       "mapShrines": [ "eroCc1CGcC" ],
       "mapData": { "position": [-214,395.5] },
       "connections": [
@@ -829,6 +843,8 @@
         { "area": "IrChmrOevd" },
         { "area": "aBL5eqTv4R" },
         { "area": "wOM-k6pjot" },
+        { "area": "Mhbh0g9OdG" },
+        { "area": "mT6bVNovBW" },
       ]
     },
     {
@@ -943,6 +959,18 @@
       "name": "Moominvalley",
       "imageUrl": "/assets/game/areas/vault/moomin-720.webp"
     },
+    {
+      "guid": "mT6bVNovBW",
+      "name": "Sky Cinema",
+      "imageUrl": "/assets/game/areas/aviary/cinema-temp.webp",
+      "spirits": [
+        "gy_EzmMKxF"
+      ],
+      "connections": [
+        { "area": "wrHKGEg2Kc" },
+        { "area": "pZbxK8tM_J" }
+      ]
+    },
     // #endregion
     // #region Aviary
     {
@@ -964,7 +992,8 @@
         { "area": "pNNbszCpyA" },
         { "area": "5kw7myrDPU" },
         { "area": "_dSyX-Uwrh" },
-        { "area": "quSVk1cT4l" }
+        { "area": "quSVk1cT4l" },
+        { "area": "wrHKGEg2Kc" }
       ]
     },
     {

@@ -19,6 +19,6 @@ export class CalendarLinkComponent {
   constructor(
     private readonly _settingService: SettingService
   ) {
-    this.openNewTab = _settingService._wikiNewTab;
+    this.openNewTab = _settingService.wikiNewTab;
   }
 }

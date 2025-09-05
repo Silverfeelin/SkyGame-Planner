@@ -1,10 +1,15 @@
+/**
+ * This script listens for incoming HTTP requests and saves the data to the unsorted.json file.
+ * By itself this script is pretty useless. The other part of this tool is private.
+ */
+
 const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const path = require('path');
 const { program } = require('commander');
 const chalk = require('chalk');
-const json5 = require('json5');
+const jsonc = require('jsonc-parser');
 
 // https://github.com/ai/nanoid/blob/main/LICENSE
 const nanoid = (t = 21) => crypto.getRandomValues(new Uint8Array(t)).reduce((t, e) =>(t += (e &= 63) < 36 ? e.toString(36) : e < 62 ? (e - 26).toString(36).toUpperCase() : e > 62 ? "-" : "_"), "");
@@ -16,8 +21,8 @@ const port = program.port || 4201;
 
 const itemsFilePath = path.resolve(__dirname, '../src/assets/data/items/unsorted.json');
 const getItemId = () => {
-  const rawdata = fs.readFileSync(path.join(__dirname, '../src/assets/data/items.json'));
-  const itemConfig = json5.parse(rawdata);
+  const rawdata = fs.readFileSync(path.join(__dirname, '../src/assets/data/items.json'), 'utf8');
+  const itemConfig = jsonc.parse(rawdata);
   const maxId = Math.max(...itemConfig.items.map(i => i.id));
   return maxId + 1;
 };
