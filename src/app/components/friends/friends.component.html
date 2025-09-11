@@ -4,24 +4,41 @@
   </div>
   <div class="sky-card-body">
     <div class="grid grid-1">
-      <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Friendship_Menu'}"></app-wiki-link>
+      <app-wiki-link
+        [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Friendship_Menu'}"></app-wiki-link>
     </div>
   </div>
 </div>
 
+
+
 <div class="sky-card mt spirit-trees">
   <div class="sky-card-header">
-    <h2 class="h3 mb-0">Friendship tree</h2>
+    <h2 class="h3 mb-0">Friendship trees</h2>
   </div>
   <div class="sky-card-body pad-0">
-    <div class="sky-flex scroll-x pad">
-      <div *ngFor="let item of friends" class="tree-wrapper p-inline-block">
-        <app-spirit-tree
-          [tree]="item.tree" [name]="item.name"
-          [highlight]="highlightTree === item.tree.guid"
-          [highlightItem]="highlightItem"
-        ></app-spirit-tree>
+    <div class="pad">
+      <div class="search">
+        <input #input type="search" class="input" (input)="search()" [attr.placeholder]="'Search'">
+        <mat-icon>search</mat-icon>
       </div>
     </div>
   </div>
+</div>
+
+<div class="mt sky-flex flex-wrap">
+  @for (friend of friends; track friend) {
+  <div class="sky-card d-inline-block" [hidden]="!friend.visible || undefined">
+    <div class="sky-card-header">
+      <h1 class="h4 mb-0">{{ friend.name }}</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="mb sky-flex">
+        <button type="button" class="button">Rename</button>
+        <button type="button" class="button button-danger">Delete</button>
+      </div>
+      <app-spirit-tree [tree]="friend.tree" [forceNodeAction]="'emit'" [enableControls]="false" (nodeClicked)="nodeClicked($event)"></app-spirit-tree>
+    </div>
+  </div>
+  }
 </div>

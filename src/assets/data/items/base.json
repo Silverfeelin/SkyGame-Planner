@@ -132,5 +132,327 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Emote-basic_sit.png",
     "autoUnlocked": true,
     "order": 1
+  },
+  // #region Friendship tree
+  {
+    "id": 2753,
+    "guid": "_qmG1h-pcF",
+    "type": "Special",
+    "name": "Rename Friend",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Edit_friend_name.png"
+  },
+  {
+    "id": 2754,
+    "guid": "Zj4lQoLRD4",
+    "type": "Special",
+    "name": "Favourite",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Favorite_friend.png"
+  },
+  {
+    "id": 2755,
+    "guid": "NF37TvfEpL",
+    "type": "Special",
+    "name": "Block Player",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Block_player.png"
+  },
+  {
+    "id": 2756,
+    "guid": "Fn6erX_AG-",
+    "type": "Special",
+    "name": "Report Player",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Report_player.png"
+  },
+  {
+    "id": 2757,
+    "guid": "qVDJtzT2DW",
+    "type": "Special",
+    "name": "Holding Hands",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Icon_handhold.png"
+  },
+  {
+    "id": 2758,
+    "guid": "NBuEQb1po8",
+    "type": "Special",
+    "name": "Gift Season Pass",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b6/Adventure-pass-icon-generic.png"
+  },
+  {
+    "id": 2759,
+    "guid": "LPlzfbROGO",
+    "type": "Special",
+    "name": "High Five",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Icon_high_five.png"
+  },
+  {
+    "id": 2760,
+    "guid": "YrYWxom0Zo",
+    "type": "Special",
+    "name": "High Five",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Icon_high_five.png"
+  },
+  {
+    "id": 2761,
+    "guid": "4gsvipjipR",
+    "type": "Special",
+    "name": "Heart Gift",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Icon_gift.png"
+  },
+  {
+    "id": 2762,
+    "guid": "-f9A5JtN10",
+    "type": "Special",
+    "name": "Hug",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
+  },
+  {
+    "id": 2763,
+    "guid": "85oGrjG3nO",
+    "type": "Special",
+    "name": "Hug",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Icon_hug.png"
+  },
+  {
+    "id": 2764,
+    "guid": "Di9-yWxPA8",
+    "type": "Special",
+    "name": "Chat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6d/Icon_chat.png"
+  },
+  {
+    "id": 2765,
+    "guid": "5-DG_PNRo-",
+    "type": "Special",
+    "name": "Mute Chat",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Icon_mute_chat.png"
+  },
+  {
+    "id": 2766,
+    "guid": "Gx1EL6Tx5n",
+    "type": "Special",
+    "name": "Unlock",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2767,
+    "guid": "e_QqZG2-mu",
+    "type": "Special",
+    "name": "Fist Bump",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_fist_bump.png"
+  },
+  {
+    "id": 2768,
+    "guid": "UN54u8IOr-",
+    "type": "Special",
+    "name": "Fist Bump",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Icon_fist_bump.png"
+  },
+  {
+    "id": 2769,
+    "guid": "o-A4eK8_t9",
+    "type": "Special",
+    "name": "Gift IAPs",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Gift-iap.png"
+  },
+  {
+    "id": 2770,
+    "guid": "CVOtjlB8S8",
+    "type": "Special",
+    "name": "Double-five",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+  },
+  {
+    "id": 2771,
+    "guid": "rlCSDDftFX",
+    "type": "Special",
+    "name": "Double-five",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8d/Mimi-4117_03_doublefive_light_catcher_emote.png"
+  },
+  {
+    "id": 2772,
+    "guid": "v7Nj8k2ALr",
+    "type": "Special",
+    "name": "Hair Tousle",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
+  },
+  {
+    "id": 2773,
+    "guid": "MCF71ATBj6",
+    "type": "Special",
+    "name": "Hair Tousle",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Hair_tousle.png"
+  },
+  {
+    "id": 2774,
+    "guid": "NXwMpDBy1c",
+    "type": "Special",
+    "name": "Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 2775,
+    "guid": "IVrrg0SoO6",
+    "type": "Special",
+    "name": "Block Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Icon_mute_chat.png"
+  },
+  {
+    "id": 2776,
+    "guid": "DR7WKZh9nX",
+    "type": "Special",
+    "name": "Unlock",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2777,
+    "guid": "Zo8M9nQL3g",
+    "type": "Special",
+    "name": "Piggyback",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
+  },
+  {
+    "id": 2778,
+    "guid": "-WcdyDZN7V",
+    "type": "Special",
+    "name": "Piggyback",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Mimi-4117_03_piggyback_lightseeker_emote.png"
+  },
+  {
+    "id": 2779,
+    "guid": "I4KVm9EZ26",
+    "type": "Special",
+    "name": "Fortune Gift Envelope",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Gift-5-hearts.png"
+  },
+  {
+    "id": 2780,
+    "guid": "RQbWD1ZvYI",
+    "type": "Special",
+    "name": "Play Fight",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
+  },
+  {
+    "id": 2781,
+    "guid": "SG_GBqZ91S",
+    "type": "Special",
+    "name": "Play Fight",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Play_fight_lvl_2_white_on_black.png"
+  },
+  {
+    "id": 2782,
+    "guid": "PWojjGW2bk",
+    "type": "Special",
+    "name": "Bearhug",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
+  },
+  {
+    "id": 2783,
+    "guid": "iDcZRZjKhJ",
+    "type": "Special",
+    "name": "Bearhug",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Season_of_Dreams_-_Bearhug_hermit.png"
+  },
+  {
+    "id": 2784,
+    "guid": "drm9pIfkEJ",
+    "type": "Special",
+    "name": "Unlock",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2785,
+    "guid": "EdPwAlj-h7",
+    "type": "Special",
+    "name": "Handshake",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/SoPerformance_-_Frantic_Stagehand-emote-icon-Morybel-0146.png"
+  },
+  {
+    "id": 2786,
+    "guid": "9kjMkbwXAn",
+    "type": "Special",
+    "name": "Handshake",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/SoPerformance_-_Frantic_Stagehand-emote-icon-Morybel-0146.png"
+  },
+  {
+    "id": 2787,
+    "guid": "fvcBgXz3dk",
+    "type": "Special",
+    "name": "Duet Dance",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Morybel-0146-SOPerformance-Modest-Dancer-emote-icon.png"
+  },
+  {
+    "id": 2788,
+    "guid": "KaTawc10yv",
+    "type": "Special",
+    "name": "Duet Dance",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Morybel-0146-SOPerformance-Modest-Dancer-emote-icon.png"
+  },
+  {
+    "id": 2789,
+    "guid": "GEjkYaedrv",
+    "type": "Special",
+    "name": "Side Hug",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
+  },
+  {
+    "id": 2790,
+    "guid": "EtyvYTOray",
+    "type": "Special",
+    "name": "Side Hug",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Reassuring-Ranger-Action-icon-Credit-Morybel.png"
+  },
+  {
+    "id": 2791,
+    "guid": "F8ce_dBrPY",
+    "type": "Special",
+    "name": "Cradle Carry",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Feudal-Lord-Action-icon.png"
+  },
+  {
+    "id": 2792,
+    "guid": "twA4De_ffX",
+    "type": "Special",
+    "name": "Cradle Carry",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Feudal-Lord-Action-icon.png"
+  },
+  {
+    "id": 2793,
+    "guid": "zx76h0R_t1",
+    "type": "Special",
+    "name": "Duet Bow",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Duets-Guide-Action-icon.png"
+  },
+  {
+    "id": 2794,
+    "guid": "u0SCSGIIiY",
+    "type": "Special",
+    "name": "Duet Bow",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Duets-Guide-Action-icon.png"
   }
+  // #endregion
 ]
