@@ -190,10 +190,6 @@
     "name": "Sunlight Bonnet",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Sunlight-Bonnet-Hat-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Sunlight-Bonnet-Hat-front.png",
-    "dye": {
-      "primary": {},
-      "previewUrl": "/assets/game/dyes/outfit/Sunlight_toga.jpg"
-    },
     "order": 368,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Bonnet"
@@ -206,6 +202,10 @@
     "name": "Sunlight Sun Dress",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Sunlight-Sun-Dress-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Sunlight-Sun-Dress-front.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_toga.jpg"
+    },
     "order": 80,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Sun_Dress"
