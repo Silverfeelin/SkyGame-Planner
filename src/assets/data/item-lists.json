@@ -113,6 +113,17 @@
       "items": [
         { "guid": "USRpPDaWLC", "item": "h8I7obBDzf", "c": 20 },
       ]
+    },
+    // Sunlight 2025
+    {
+      "guid": "mp6_RorWOs",
+      "items": [
+        { "guid": "pzLV8IxT5W", "item": "6w_qh-oE2k", "c": 5 },
+        { "guid": "UsDm0QGLrB", "item": "G5sW47Twex", "c": 5 },
+        { "guid": "Nyr50KNNLH", "item": "wlTd7h9_Rc", "c": 6 },
+        { "guid": "pSGnaPNXBQ", "item": "Wii_7x7ezQ", "c": 7 },
+        { "guid": "DD9dgLOkms", "item": "fkiyxCyMN7", "c": 5 }
+      ]
     }
   ]
 }

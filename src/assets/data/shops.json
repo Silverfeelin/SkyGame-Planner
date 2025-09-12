@@ -1324,22 +1324,28 @@
       ]
     },
     {
-        "guid": "tXhadV0G7I",
-        "type": "Object",
-        "name": "Sunlight Prop Box",
-        "iaps": [
-          "3GcMI-M31g",
-          "af8EXlZ_4K",
-          "LfIfvQNi06",
-          "0yLbT5Ob1R",
-          "TrmG80sjvZ",
-          "Tcf83N28HD",
-          "ah-45-2DIG",
-          // "vCXzmylE9Y", // Moved to Moonlight
-          // "j2lWym3xxW", // Moved to Moonlight
-          "bEjUQmxgOa"
-        ]
-      },
+      "guid": "tXhadV0G7I",
+      "type": "Object",
+      "name": "Sunlight Prop Box",
+      "iaps": [
+        "3GcMI-M31g",
+        "af8EXlZ_4K",
+        "LfIfvQNi06",
+        "0yLbT5Ob1R",
+        "TrmG80sjvZ",
+        "Tcf83N28HD",
+        "ah-45-2DIG",
+        // "vCXzmylE9Y", // Moved to Moonlight
+        // "j2lWym3xxW", // Moved to Moonlight
+        "bEjUQmxgOa"
+      ]
+    },
+    {
+      "guid": "D1EiYRlAiF",
+      "type": "Object",
+      "name": "Event Prop Box",
+      "itemList": "mp6_RorWOs"
+    },
     // #endregion
     // #region Days of Moonlight (2024)
     {
