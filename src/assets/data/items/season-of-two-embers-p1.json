@@ -713,5 +713,16 @@
     "type": "Special",
     "name": "Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2753,
+    "guid": "JmFT0Q3IZ2",
+    "name": "Projector of Memories",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Projector-of-Memories-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Projector-of-Memories-prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Projector_of_Memories"
+    }
   }
 ]
