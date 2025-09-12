@@ -692,8 +692,13 @@
     "guid": "8F6QxN0IsD",
     "type": "Prop",
     "name": "Two Embers - Part 1 Movie Poster",
-    "icon": "https://i.imgur.com/oQBfz43.png",
-    "order": 642
+    "group": "Limited",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Season-of-Ember-P1-movie-poster-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Season-of-Ember-P1-movie-poster.png",
+    "order": 642,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Additional_Cosmetics"
+    }
   },
   {
     "id": 2751,
