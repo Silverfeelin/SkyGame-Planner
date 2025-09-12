@@ -192,7 +192,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Plush"
     },
-    "order": 689
+    "order": 690
   },
   {
     "id": 1837,
@@ -224,7 +224,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Sonorous_Seashell"
     },
-    "order": 686
+    "order": 687
   },
   {
     "id": 1840,
@@ -236,7 +236,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Party_Lights"
     },
-    "order": 688
+    "order": 689
   },
   {
     "id": 2229,
@@ -246,7 +246,7 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/SkyFest-Wireframe-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/SkyFest-Wireframe-Cape-back.png",
-    "order": 921
+    "order": 922
   },
   {
     "id": 2230,
@@ -277,7 +277,7 @@
     "name": "Skyfest Star Jar",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/SkyFest-Star-Jar-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/SkyFest-Star-Jar.png",
-    "order": 783,
+    "order": 784,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary/2024#SkyFest_Star_Jar"
     }
@@ -420,7 +420,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#TGC_Wireframe_Cape"
     },
-    "order": 922
+    "order": 923
   },
   {
     "id": 2673,
@@ -517,6 +517,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Anniversary_Tuxedo_Cape"
     },
-    "order": 943
+    "order": 944
   }
 ]

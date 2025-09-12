@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack"
     },
-    "order": 796,
+    "order": 797,
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Base_starter.jpg",
       "primary": {}
@@ -25,7 +25,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack"
     },
-    "order": 795
+    "order": 796
   },
   {
     "id": 1938,
@@ -38,7 +38,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape"
     },
-    "order": 794
+    "order": 795
   },
   {
     "id": 1939,
@@ -60,7 +60,7 @@
     "name": "Fledgling Upright Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
-    "order": 790,
+    "order": 791,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Fledgling_Upright_Piano"
     }
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 948
+    "order": 949
   },
   {
     "id": 1944,
@@ -126,7 +126,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 947
+    "order": 948
   },
   {
     "id": 1945,
@@ -160,7 +160,7 @@
     "name": "Sparrow Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Sparrow-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Sparrow-Cape-front.png",
-    "order": 944
+    "order": 945
   },
   {
     "id": 1960,
@@ -187,7 +187,7 @@
     "name": "Moth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Moth-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9e/Moth-Cape-front.png",
-    "order": 945
+    "order": 946
   },
   {
     "id": 1947,
@@ -211,7 +211,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 949
+    "order": 950
   },
   {
     "id": 1949,
@@ -231,7 +231,7 @@
     "type": "Prop",
     "name": "Mask Hanger",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Hang-wall-mask.png",
-    "order": 746
+    "order": 747
   },
   {
     "id": 2543,
@@ -243,7 +243,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
     },
-    "order": 950
+    "order": 951
   },
   {
     "id": 2544,

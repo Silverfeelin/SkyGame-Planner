@@ -13,7 +13,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape"
     },
-    "order": 928
+    "order": 929
   },
   {
     "id": 1852,
@@ -53,7 +53,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape"
     },
-    "order": 929
+    "order": 930
   },
   {
     "id": 1855,
@@ -86,7 +86,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spooky_Dining_Set"
     },
-    "order": 674
+    "order": 675
   },
   {
     "id": 1859,
@@ -98,7 +98,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Cape"
     },
-    "order": 930
+    "order": 931
   },
   {
     "id": 1860,
@@ -122,7 +122,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Pumpkin_Prop"
     },
-    "order": 675
+    "order": 676
   },
   {
     "id": 1862,
@@ -220,7 +220,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape"
     },
-    "order": 931
+    "order": 932
   },
   {
     "id": 1869,
@@ -232,7 +232,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Feline_Familiar_Prop"
     },
-    "order": 676
+    "order": 677
   },
   {
     "id": 1870,
@@ -241,7 +241,7 @@
     "name": "Mischief Gossamer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
-    "order": 932,
+    "order": 933,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Gossamer_Cape"
     }
@@ -253,7 +253,7 @@
     "name": "Mischief Crabula Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
-    "order": 933,
+    "order": 934,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Mischef_crabulacape.webp"
@@ -328,7 +328,7 @@
     "name": "Mischief Raven-Feathered Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Mischief-Raven-Feathered-Cloak-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Mischief-Raven-Feathered-Cloak-back.png",
-    "order": 934,
+    "order": 935,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Raven-Feathered_Cloak"
     }
@@ -364,7 +364,7 @@
     "name": "Mischief Cauldron",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Cauldron-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Mischief-Cauldron.png",
-    "order": 787,
+    "order": 788,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Cauldron"
     }

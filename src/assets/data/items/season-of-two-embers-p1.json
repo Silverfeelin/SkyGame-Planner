@@ -116,7 +116,7 @@
       "infoUrl": "/assets/game/dyes/cape/2slot_2E-P1_ultcape.jpg"
     },
     "group": "Ultimate",
-    "order": 903,
+    "order": 904,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vault_Elder%27s_Lantern#Ultimate_Cape"
     }
@@ -458,7 +458,7 @@
       "previewUrl": "/assets/game/dyes/cape/2E-P1_Sentrycape.jpg"
     },
     "group": "SeasonPass",
-    "order": 901,
+    "order": 902,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scarred_Sentry#Cape"
     }
@@ -566,7 +566,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Cloak_of_Darkness"
     },
-    "order": 902
+    "order": 903
   },
   {
     "id": 2718,
@@ -723,6 +723,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Projector-of-Memories-prop.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Projector_of_Memories"
-    }
+    },
+    "order": 670
   }
 ]
