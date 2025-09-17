@@ -46,7 +46,10 @@
           ],
           "spirits": [
             { "guid": "1QcP-L-MqO", "spirit": "9VkjVkgKhb", "tree": "Oi0WztDirX" },
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Fortune-2408261c87dd805e967ad423cf0f5186?pvs=25"
+          }
         },
         {
           "guid": "MKGyPFAEUA",
@@ -140,6 +143,9 @@
             { "guid": "tfefmhWEme", "spirit": "9VkjVkgKhb", "tree": "O8EcMfr4-R" },
             { "guid": "tfefmhWEm1", "spirit": "zS4AGUTIgF", "tree": "NuqYNp7i8O" }
           ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Love-2408261c87dd80b69ed4fab67386b604?pvs=25"
+          },
           "shops": [
             "dosWjd_0Ur",
             "4mcmO11hCE"
@@ -264,7 +270,10 @@
             { "guid": "WoKuKe4AAh", "spirit": "IqShB-6_rY", "tree": "fLuM8drQ4H", "name": "Bloom Guide (Forgotten Ark)" }, // Located at Ark
             { "guid": "KOrEqiUw_f", "spirit": "IqShB-6_rY", "tree": "Cz7AcNalLH", "name": "Bloom Guide (Home)" }, // Located at Home
             { "guid": "erbbY6_Azk", "spirit": "IqShB-6_rY", "tree": "yvuc0d_gC7", "name": "Bloom Guide (Hidden Forest)" } // Located at HF
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Bloom-2408261c87dd8099a9f2f52f12903ee5?pvs=25"
+          }
         },
         {
           "guid": "L_cg-uO76v",
@@ -360,7 +369,10 @@
           ],
           "spirits": [
             { "guid": "yQqAEm21ED", "spirit": "3M1KSVgf49", "tree": "EbPTRRdRBC" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Nature-2408261c87dd80ee86d9c2456c5c5c55?pvs=25"
+          }
         },
         {
           "guid": "gNa15Daes3",
@@ -456,7 +468,10 @@
           ],
           "spirits": [
             { "guid": "aPWzZTzbkC", "spirit": "uPzMm5H7ag", "tree": "RcVnZHdgZ6" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Color-2418261c87dd80559a48ceedfb0c0cd5?pvs=25"
+          }
         },
         {
           "guid": "Nw1QP8vccL",
@@ -528,7 +543,10 @@
           ],
           "spirits": [
             { "guid": "Flt5-UZMV_", "spirit": "fEcI6neh6f", "tree": "l1qSIM0q3H" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Music-2408261c87dd804bb7beece7cc411f30?pvs=25"
+          }
         },
         {
           "guid": "BfJL68LKO8",
@@ -597,7 +615,10 @@
           ],
           "shops": [
             "RCDqXv4la1"
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Anniversary-2023-2408261c87dd806983ffd145c6d28289?pvs=25"
+          }
         },
         {
           "guid": "JefBqVVavo",
@@ -682,7 +703,10 @@
           ],
           "spirits": [
             { "guid": "yTYOjJ9Z9t", "spirit": "c9XXzlKzhd", "tree": "QKeMWsP0vc" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Sunlight-2408261c87dd803fbcb0d97cd5c37853?pvs=25"
+          }
         },
         {
           "guid": "GL-IIVGTPZ",
@@ -802,7 +826,10 @@
           ],
           "spirits": [
             { "guid": "IG1s0t_vjK", "spirit": "F6BUqVCHvp", "tree": "IhEcryXJD_" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Style-2408261c87dd806d8a14e5bf110529f3?pvs=25"
+          }
         },
         {
           "guid": "f-uR53V_h9",
@@ -889,7 +916,10 @@
           ],
           "spirits": [
             { "guid": "xy55AAqxLx", "spirit": "TgUgZjfoMI", "tree": "OvltVBKe--" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Mischief-2408261c87dd80c79482e220d9eb40b3?pvs=25"
+          }
         },
         {
           "guid": "wP5g0S3v4c",
@@ -946,7 +976,10 @@
         {
           "guid": "6bevujwY8W",
           "date": { "day": 20, "month": 11, "year": 2023 },
-          "endDate": { "day": 26, "month": 11, "year": 2023 }
+          "endDate": { "day": 26, "month": 11, "year": 2023 },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Giving-2408261c87dd8076a514fbd82eff7ecb?pvs=25"
+          }
         },
         {
           "guid": "t99qtRiuSh",
@@ -1033,7 +1066,10 @@
             {	"guid": "6OaVQ81uXo", "spirit": "KhFZE8z0-I", "name": "Bearhug Hermit (Aviary)", "tree": "zjAxD7je6L" },
             {	"guid": "bSCey0rAnl", "spirit": "TL-SY6cuF4", "tree": "ICyq_AXa3D" },
             {	"guid": "bvZrHb4eTn", "spirit": "j1UqKci8Hb", "tree": "yvElaQPmYD" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Feast-2408261c87dd80d7bed3f8ef95bf46f2?pvs=25"
+          }
         },
         {
           "guid": "WSukhN_pd2",
@@ -1197,7 +1233,10 @@
           ],
           "spirits": [
             { "guid": "7lXseoma3X", "spirit": "OaAUJHNIjE", "tree": "Nx8MFZDTe-" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/AURORA-Encore-Concerts-2408261c87dd80f1b73bc063dd21ca8d?pvs=25"
+          }
         },
         {
           "guid": "ZxXbhLuVyl",
@@ -1233,7 +1272,10 @@
           "endDate": { "day": 11, "month": 12, "year": 2023 },
           "spirits": [
             { "guid": "-R-Ener3oo", "spirit": "NO6tqAn4m3", "tree": "Pfnfzz3kGn" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Aviary-s-Firework-Festival-2408261c87dd8075a53cf9a72a8fb5f6?pvs=25"
+          }
         }
       ],
       "_wiki": {
