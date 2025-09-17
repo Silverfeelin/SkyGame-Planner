@@ -1048,10 +1048,7 @@
             { "guid": "_Kw0vriXyP", "spirit": "KhFZE8z0-I", "tree": "wZKU-sX365" },
             { "guid": "d2BGP3fI-Y", "spirit": "5rr1zr2_j5", "tree": "WiF93W3zoc" },
             { "guid": "eXRAJOweQm", "spirit": "j1UqKci8Hb", "tree": "6SsyXPH5Ow" }
-          ],
-          "_calendar": {
-            "href": "https://skydreamers.notion.site/Days-of-Feast-2408261c87dd80d7bed3f8ef95bf46f2?pvs=25"
-          }
+          ]
         },
         {
           "guid": "crmlLYIhMM",
@@ -1069,7 +1066,10 @@
             {	"guid": "6OaVQ81uXo", "spirit": "KhFZE8z0-I", "name": "Bearhug Hermit (Aviary)", "tree": "zjAxD7je6L" },
             {	"guid": "bSCey0rAnl", "spirit": "TL-SY6cuF4", "tree": "ICyq_AXa3D" },
             {	"guid": "bvZrHb4eTn", "spirit": "j1UqKci8Hb", "tree": "yvElaQPmYD" }
-          ]
+          ],
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Days-of-Feast-2408261c87dd80d7bed3f8ef95bf46f2?pvs=25"
+          }
         },
         {
           "guid": "WSukhN_pd2",
