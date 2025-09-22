@@ -61,6 +61,9 @@
     "guid": "oYKrCXABfE",
     "type": "Emote",
     "name": "Cough",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Blue-Bird-Guide-ultimate-expression.png",
     "level": 1,
     "order": 1401
@@ -70,6 +73,9 @@
     "guid": "WNhK6M9xLz",
     "type": "Emote",
     "name": "Cough",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Blue-Bird-Guide-ultimate-expression.png",
     "level": 2
   },
@@ -78,6 +84,9 @@
     "guid": "DNkorof1de",
     "type": "Emote",
     "name": "Cough",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Blue-Bird-Guide-ultimate-expression.png",
     "level": 3
   },
@@ -86,6 +95,9 @@
     "guid": "aJaAlY6zrA",
     "type": "Emote",
     "name": "Cough",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Expression"
+    },
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2e/Blue-Bird-Guide-ultimate-expression.png",
     "level": 4
   },
@@ -169,6 +181,9 @@
     "type": "Call",
     "name": "Blue Bird Call",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/12/Blue-Bird-Call.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Call"
+    },
     "order": 91
   },
   {
@@ -177,6 +192,9 @@
     "type": "Furniture",
     "name": "Perch Tree",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Blue-Bird-Guide-Additional-Prop-icon.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Prop"
+    },
     "order": 636
   },
   {
