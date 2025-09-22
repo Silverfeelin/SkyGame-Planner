@@ -232,8 +232,7 @@
     "guid": "zB6NpyvK6q",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
-    "group": "SeasonPass"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
   },
   {
     "id": 1334,
@@ -262,6 +261,14 @@
     "sheet": "24",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 24
+  },
+  {
+    "id": 2754,
+    "guid": "qDekV1a6yP",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1336,
