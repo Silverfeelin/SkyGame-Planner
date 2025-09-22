@@ -352,8 +352,7 @@
     "guid": "5D_d1xwmfQ",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
-    "group": "SeasonPass"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
   },
   {
     "id": 1345,
@@ -389,6 +388,14 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit"
     },
     "order": 27
+  },
+  {
+    "id": 2755,
+    "guid": "LPkTfhyyNP",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1347,
@@ -478,8 +485,7 @@
     "guid": "EaKDVLQYcH",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
-    "group": "SeasonPass"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
   },
   {
     "id": 1354,
@@ -510,6 +516,14 @@
       "previewUrl": "/assets/game/dyes/hair/Flight_chimesmith.jpg"
     },
     "order": 224
+  },
+  {
+    "id": 2756,
+    "guid": "mL4hbLcaT_",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1356,
