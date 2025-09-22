@@ -137,6 +137,9 @@
     "guid": "ixu-bQFMqR",
     "type": "Music",
     "name": "Music Sheet #4",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Music_Sheet"
+    },
     "sheet": "4",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 4
@@ -260,6 +263,9 @@
     "guid": "4XuHymnqlr",
     "type": "Music",
     "name": "Music Sheet #5",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Music_Sheet"
+    },
     "sheet": "5",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 5,
@@ -334,6 +340,9 @@
     "guid": "GEC1VNDUG2",
     "type": "Music",
     "name": "Music Sheet #6",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Music_Sheet"
+    },
     "sheet": "6",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
     "order": 6,
