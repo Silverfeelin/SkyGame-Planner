@@ -7,6 +7,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c3/Hattifattener-Shoulder-Buddy-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Hattifattener-Shoulder-Buddy.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Hattifattener_Shoulder_Buddy"
+    },
     "order": 527
   },
   {
@@ -17,6 +20,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Moomintroll-Ears-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Moomintroll-Ears-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+    },
     "order": 324
   },
   {
@@ -27,6 +33,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Moomintroll-Tail-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Moomintroll-Tail-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+    },
     "order": 540
   },
   {
@@ -37,6 +46,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Roving-Snufkin-Robe-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Roving-Snufkin-Robe-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+    },
     "order": 57
   },
   {
@@ -47,6 +59,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Roving-Snufkin-Scarf-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Roving-Snufkin-Scarf.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+    },
     "order": 529
   },
   {
@@ -57,6 +72,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Pointed-Snufkin-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Pointed-Snufkin-Hat.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+    },
     "order": 325
   },
   {
@@ -64,6 +82,9 @@
     "guid": "zM4WRnZZPv",
     "type": "Emote",
     "name": "Read",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png",
     "order": 1201
@@ -73,6 +94,9 @@
     "guid": "CKSp0pSfZu",
     "type": "Emote",
     "name": "Read",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png"
   },
@@ -81,6 +105,9 @@
     "guid": "kd1Kr8dyLE",
     "type": "Emote",
     "name": "Read",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png"
   },
@@ -89,6 +116,9 @@
     "guid": "Oh0sB7s1ej",
     "type": "Emote",
     "name": "Read",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/The-Moomin-Storybook-Emote-icon.png"
   },
@@ -100,6 +130,9 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Season-of-Moomin-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Season-of-Moomin-Pendant.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Seasonal_Pendant"
+    },
     "order": 515
   },
   {
@@ -110,6 +143,9 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Moomin-Ultimate-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3a/Moomin-Ultimate-Outfit-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Moomin_Ultimate_Outfit"
+    },
     "order": 60
   },
   {
@@ -120,6 +156,9 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Moomin-Ultimate-Umbrella-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/43/Moomin-Ultimate-Umbrella-Prop-held.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Moomin_Ultimate_Umbrella"
+    },
     "order": 583
   },
   {
@@ -130,6 +169,9 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/Moomin-Ultimate-Plush-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Moomin-Ultimate-Plush-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Moomin_Ultimate_Plush"
+    },
     "order": 634
   },
   {
@@ -160,6 +202,9 @@
     "name": "Moomin Storybook Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Moomin-Invisible-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/90/Moomin-Invisible-Outfit-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Outfit"
+    },
     "order": 58
   },
   {
@@ -169,6 +214,9 @@
     "name": "Moomin Storybook Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Moomin-Family-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Moomin-Family-Painting-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Outfit"
+    },
     "order": 777
   },
   {
@@ -178,6 +226,9 @@
     "name": "Comfort of Kindness Tie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Comfort-of-Kindness-Neck-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Comfort-of-Kindness-Neck-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Neck_Accessory"
+    },
     "order": 528
   },
   {
@@ -187,6 +238,9 @@
     "name": "Comfort of Kindness Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Comfort-of-Kindness-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Comfort-of-Kindness-Hair-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+    },
     "order": 265
   },
   {
@@ -197,6 +251,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Comfort-of-Kindness-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Comfort-of-Kindness-Cape-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+    },
     "order": 894
   },
   {
@@ -207,6 +264,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Comfort-of-Kindness-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Comfort-of-Kindness-Painting-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+    },
     "order": 779
   },
   {
@@ -217,6 +277,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Comfort-of-Kindness-Chandelier-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Comfort-of-Kindness-Chandelier-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+    },
     "order": 780
   },
   {
@@ -272,6 +335,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7f/Sense-of-Self-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sense-of-Self-Shoes.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self#Shoes"
+    },
     "order": 125
   },
   {
@@ -281,6 +347,9 @@
     "name": "Sense Of Self Necklace",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Sense-of-Self-Neck-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Sense-of-Self-Neck-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self#Neck_Accessory"
+    },
     "order": 526
   },
   {
@@ -291,6 +360,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Sense-of-Self-Hair-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Sense-of-Self-Hair-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self#Hair_Accessory"
+    },
     "order": 326
   },
   {
@@ -300,6 +372,9 @@
     "name": "Music Sheet #41",
     "sheet": "41",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 301
   },
   {
@@ -348,6 +423,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Spirit-of-Adventure-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Spirit-of-Adventure-Hair-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 266
   },
   {
@@ -357,6 +435,9 @@
     "name": "Spirit Of Adventure Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cd/Spirit-of-Adventure-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Spirit-of-Adventure-Cape-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 893
   },
   {
@@ -366,6 +447,9 @@
     "name": "Spirit Of Adventure Harmonica",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Spirit-of-Adventure-Harmonica-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Spirit-of-Adventure-Harmonica.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 570
   },
   {
@@ -376,6 +460,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Spirit-of-Adventure-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Spirit-of-Adventure-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 633
   },
   {
@@ -385,6 +472,9 @@
     "name": "Music Sheet #42",
     "sheet": "42",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self#Music_Sheet"
+    },
     "order": 302
   },
   {
@@ -425,6 +515,9 @@
     "name": "Inspiration Of Inclusion Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Inspiration-of-Inclusion-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Inspiration-of-Inclusion-Outfit-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 56
   },
   {
@@ -435,6 +528,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Inspiration-of-Inclusion-Neck-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Inspiration-of-Inclusion-Neck-Accessory-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 530
   },
   {
@@ -445,6 +541,9 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Inspiration-of-Inclusion-Hair-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b1/Inspiration-of-Inclusion-Hair-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 327
   },
   {
@@ -454,6 +553,9 @@
     "name": "Inspiration Of Inclusion Clock",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Inspiration-of-Inclusion-Clock-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Inspiration-of-Inclusion-Clock-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 781
   },
   {
@@ -463,6 +565,9 @@
     "name": "Inspiration Of Inclusion Painting",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Inspiration-of-Inclusion-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/65/Inspiration-of-Inclusion-Painting-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Rallying_Thrillseeker#Expression"
+    },
     "order": 778
   },
   {
@@ -561,6 +666,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Moominmammas-Masterpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Moominmammas-Masterpiece-back.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moominmamma's_Masterpiece"
+    },
     "order": 892
   }
 ]
