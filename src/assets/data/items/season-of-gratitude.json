@@ -242,6 +242,9 @@
     "guid": "kWs-MLO3ZE",
     "type": "Music",
     "name": "Music Sheet #7",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Music_Sheet"
+    },
     "sheet": "7",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 7
@@ -466,6 +469,9 @@
     "guid": "_hk1ya3nj0",
     "type": "Music",
     "name": "Music Sheet #8",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Music_Sheet"
+    },
     "sheet": "8",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 8
