@@ -46,6 +46,14 @@ console.log('Spent (USD) on IAP:', spentIap.toFixed(2));
 // > Spent (USD) on IAP: 29.99
 ```
 
+# Discord
+
+If you are or want to be actively involved with this project, feel free to join our Discord:  
+http://discord.gg/qjumJY7MKD
+
+The main purpose of this communication channel is for contributors to discuss the project.  
+If you are running into problems with the website or want to provide feedback, please [open a new issue](https://github.com/Silverfeelin/SkyGame-Planner/issues/new) instead.
+
 # License
 
 Most of the source code is publicly available under the [MIT License](https://github.com/Silverfeelin/SkyGame-Planner/blob/master/LICENSE). Please refer to the license for specific details.
