@@ -611,7 +611,8 @@
       ],
       "calculatorData": {
         "timedCurrency": [
-          { "guid": "MCSGj8K4g9", "date": "2025-08-19", "endDate": "2025-09-01", "amount": 14, "description": "Bonus daily Seasonal Light" }
+          { "guid": "MCSGj8K4g9", "date": "2025-08-19", "endDate": "2025-09-01", "amount": 14, "description": "Bonus daily Seasonal Light" },
+          { "guid": "xAC8Uc_5nt", "date": "2025-09-22", "endDate": "2025-09-28", "amount": 7, "description": "Bonus daily Seasonal Light" }
         ]
       },
       "_calendar": {
