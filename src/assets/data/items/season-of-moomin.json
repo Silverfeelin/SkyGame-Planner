@@ -47,7 +47,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Roving-Snufkin-Robe-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Roving-Snufkin-Robe-front.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Roving_Snufkin_Robe_Set"
     },
     "order": 57
   },
@@ -60,7 +60,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Roving-Snufkin-Scarf-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Roving-Snufkin-Scarf.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Roving_Snufkin_Robe_Set"
     },
     "order": 529
   },
@@ -73,7 +73,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Pointed-Snufkin-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Pointed-Snufkin-Hat.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Moomintroll_Accessory_Set"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moomin#Pointed_Snufkin_Hat"
     },
     "order": 325
   },
@@ -215,7 +215,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Moomin-Family-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Moomin-Family-Painting-Prop.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Outfit"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Moomin_Storybook#Prop"
     },
     "order": 777
   },
@@ -252,7 +252,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c8/Comfort-of-Kindness-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/96/Comfort-of-Kindness-Cape-front.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Cape"
     },
     "order": 894
   },
@@ -265,7 +265,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Comfort-of-Kindness-Painting-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Comfort-of-Kindness-Painting-Prop.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Bridge_Painting"
     },
     "order": 779
   },
@@ -278,7 +278,7 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Comfort-of-Kindness-Chandelier-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Comfort-of-Kindness-Chandelier-Prop.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Hair"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Comfort_of_Kindness#Chandelier"
     },
     "order": 780
   },
@@ -370,10 +370,10 @@
     "guid": "CQfjHlF9f7",
     "type": "Music",
     "name": "Music Sheet #42",
-    "sheet": "41",
+    "sheet": "42",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Adventure#Music_Sheet"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self#Music_Sheet"
     },
     "order": 301
   },
@@ -470,10 +470,10 @@
     "guid": "WaDDSPDCOw",
     "type": "Music",
     "name": "Music Sheet #41",
-    "sheet": "42",
+    "sheet": "41",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "_wiki": {
-      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sense_of_Self#Music_Sheet"
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Adventure#Music_Sheet"
     },
     "order": 302
   },
