@@ -7,6 +7,9 @@
     "name": "Duets Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Season-of-Duets-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Season-of-Duets-Pendant.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Seasonal_Pendant"
+    },
     "order": 514
   },
   {
@@ -23,6 +26,9 @@
       "primary": {},
       "secondary": {}
     },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Duets_Ultimate_Cape"
+    },
     "order": 890
   },
   {
@@ -33,6 +39,9 @@
     "name": "Duets Ultimate Instrument",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Duets-Ultimate-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Duets-Ultimate-Grand-Piano-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Duets_Ultimate_Instrument"
+    },
     "order": 774
   },
   {
@@ -43,6 +52,9 @@
     "name": "Duets Ultimate Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bf/Duets-Ultimate-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1f/Duets-Ultimate-Poster-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Duets_Ultimate_Prop"
+    },
     "order": 761
   },
   {
@@ -55,6 +67,9 @@
     "dye": {
       "previewUrl": "/assets/game/dyes/mask/Duets_seahorse.jpg",
       "primary": {}
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Duets_Guide#Mask"
     },
     "order": 469
   },
@@ -80,6 +95,9 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Pianists-Beginnings-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fe/Pianists-Beginnings-Poster-Prop.png",
     "order": 765,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Beginnings#Piano_Keys_Wall_Poster"
+    },
     "group": "SeasonPass"
   },
   {
@@ -89,6 +107,9 @@
     "name": "The Pianist's Beginnings Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Pianists-Beginnings-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Pianists-Beginnings-Hair-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Beginnings#Hair"
+    },
     "order": 263
   },
   {
@@ -104,6 +125,9 @@
       "primary": {},
       "secondary": {}
     },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Beginnings#Outfit"
+    },
     "order": 51,
     "group": "SeasonPass"
   },
@@ -114,6 +138,9 @@
     "name": "The Pianist's Beginnings Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Pianists-Beginnings-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0c/Pianists-Beginnings-Rug-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Beginnings#Small_Blue_Rug"
+    },
     "order": 775
   },
   {
@@ -161,6 +188,9 @@
     "name": "The Cellist's Beginnings Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Cellists-Beginnings-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Cellists-Beginnings-Hair-front.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Beginnings#Hair"
+    },
     "order": 264
   },
   {
@@ -170,6 +200,9 @@
     "name": "The Cellist's Beginnings Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d6/Cellists-Beginnings-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Cellists-Beginnings-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Beginnings#Prop"
+    },
     "order": 764,
     "group": "SeasonPass"
   },
@@ -185,6 +218,9 @@
       "infoUrl": "/assets/game/dyes/outfit/2slots_Duets_Cellist1.jpg",
       "primary": {},
       "secondary": {}
+    },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Beginnings#Outfit"
     },
     "order": 53
   },
@@ -226,6 +262,9 @@
     "name": "The Musicians' Legacy Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Musicians-Legacy-Grand-Piano-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a5/Musicians-Legacy-Grand-Piano-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Musicians'_Legacy#Grand_Piano"
+    },
     "order": 773,
     "group": "SeasonPass"
   },
@@ -237,6 +276,9 @@
     "name": "The Musicians' Legacy Cello",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Musicians-Legacy-Cello-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Musicians-Legacy-Cello-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Musicians'_Legacy#Cello"
+    },
     "order": 568
   },
   {
@@ -246,6 +288,9 @@
     "name": "Music Sheet #40",
     "sheet": "40",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Musicians'_Legacy#Music_Sheet"
+    },
     "order": 40
   },
   {
@@ -292,6 +337,9 @@
       "primary": {},
       "secondary": {}
     },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Flourishing#Outfit"
+    },
     "order": 55,
     "group": "SeasonPass"
   },
@@ -308,6 +356,9 @@
       "primary": {},
       "secondary": {}
     },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Flourishing#Cape"
+    },
     "order": 891
   },
   {
@@ -317,6 +368,9 @@
     "name": "The Cellist's Flourishing Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/Cellists-Flourishing-Rug-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/db/Cellists-Flourishing-Rug-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Flourishing#Small_Pink_Rug"
+    },
     "order": 776
   },
   {
@@ -326,6 +380,9 @@
     "name": "The Cellist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5f/Cellists-Flourishing-Poster-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Cellists-Flourishing-Poster-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Cellist%27s_Flourishing#Cello_Wall_Poster"
+    },
     "order": 763,
     "group": "SeasonPass"
   },
@@ -380,6 +437,9 @@
       "primary": {},
       "secondary": {}
     },
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Flourishing#Outfit"
+    },
     "order": 52,
     "group": "SeasonPass"
   },
@@ -390,6 +450,9 @@
     "name": "The Pianist's Flourishing Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Pianists-Flourishing-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Pianists-Flourishing-Shoes.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Flourishing#Shoes"
+    },
     "order": 124
   },
   {
@@ -399,6 +462,9 @@
     "name": "The Pianist's Flourishing Poster",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1c/Pianists-Flourishing-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/80/Pianists-Flourishing-Prop.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Pianist%27s_Flourishing#Prop"
+    },
     "order": 762,
     "group": "SeasonPass"
   },
@@ -446,6 +512,9 @@
     "name": "Compassionate Cellist Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Compassionate-Cellist-Face-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Compassionate-Cellist-Face-Accessory.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Compassionate_Cellist#Face_Accessory"
+    },
     "order": 106
   },
   {
@@ -455,6 +524,9 @@
     "name": "Duets Cello",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Compassionate-Cellist-Duets-Cello-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Compassionate-Cellist-Duets-Cello.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Compassionate_Cellist#Instrument"
+    },
     "order": 569
   },
   {

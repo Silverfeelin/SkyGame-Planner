@@ -209,6 +209,9 @@
     "guid": "SL_uFHTqjm",
     "type": "Music",
     "name": "Music Sheet #31",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Music_Sheet"
+    },
     "sheet": "31",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 31
@@ -334,6 +337,9 @@
     "guid": "ORKBuwdSG2",
     "type": "Music",
     "name": "Music Sheet #30",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Music_Sheet"
+    },
     "sheet": "30",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 30
