@@ -1358,6 +1358,24 @@
       ]
     },
     // #endregion
+    // #region Days of Moonlight (2025)
+    {
+      "guid": "YBHZlLBbgl",
+      "type": "Store",
+      "iaps": [
+        "5k-f_eevZd",
+        "5xJ_mCzZQy",
+        "EEFIpR6x7Q",
+        "MuQrbnmbdp"
+      ]
+    },
+    {
+      "guid": "JzRcGZHtCQ",
+      "type": "Object",
+      "name": "Event Prop Box",
+      "itemList": "JzRcGZHtCQ"
+    },
+    // #endregion
     // #region AURORA Encore Concerts
     {
       "guid": "wX_deEZTy9",
