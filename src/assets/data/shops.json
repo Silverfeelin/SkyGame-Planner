@@ -1363,14 +1363,23 @@
       "guid": "YBHZlLBbgl",
       "type": "Store",
       "iaps": [
-        "5k-f_eevZd",
-        "5xJ_mCzZQy",
-        "EEFIpR6x7Q",
-        "MuQrbnmbdp"
+        "B1yD8hePme"
       ]
     },
     {
-      "guid": "JzRcGZHtCQ",
+      "guid": "Q9PXGV2pXd",
+      "type": "Object",
+      "name": "Moonlight IAP Box",
+      "iaps": [
+        "uU9bdHidb3",
+        "AHHAd00mv3",
+        "lWUpgP0ALe",
+        "ZXKOusH_JS",
+        "jgz-O04yoP",
+      ]
+    },
+    {
+      "guid": "88_wbWmsEK",
       "type": "Object",
       "name": "Event Prop Box",
       "itemList": "JzRcGZHtCQ"
