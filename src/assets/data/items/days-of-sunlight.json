@@ -28,7 +28,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Tent"
     },
-    "order": 661
+    "order": 664
   },
   {
     "id": 1915,
@@ -40,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Snack_Kit"
     },
-    "order": 682
+    "order": 685
   },
   {
     "id": 1916,
@@ -52,7 +52,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Pink_Beach_Towel_Cape"
     },
-    "order": 925
+    "order": 928
   },
   {
     "id": 1917,
@@ -64,7 +64,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Yellow_Beach_Towel_Cape"
     },
-    "order": 926
+    "order": 929
   },
   {
     "id": 1918,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Blue_Beach_Towel_Cape"
     },
-    "order": 924
+    "order": 927
   },
   {
     "id": 1919,
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Surfboard"
     },
-    "order": 692
+    "order": 695
   },
   {
     "id": 2289,
@@ -129,7 +129,7 @@
       "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
       "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg"
     },
-    "order": 928,
+    "order": 931,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Woven_Wrap"
     }
@@ -153,7 +153,7 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 594,
+    "order": 595,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Manta_Float"
     }
@@ -218,7 +218,7 @@
     "name": "Sunlight Wave Projector",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Sunlight-Wave-Projector-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Sunlight-Wave-Projector.png",
-    "order": 643,
+    "order": 644,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Wave_Projector"
     }
@@ -234,7 +234,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Sunlight_teenycape.jpg"
     },
-    "order": 927,
+    "order": 930,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Shawl_Cape"
     }
@@ -246,7 +246,7 @@
     "name": "Sandcastle Small Tower",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Sancastle-Small-Tower-Piece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Sancastle-Small-Tower-Piece.png",
-    "order": 644,
+    "order": 645,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Small_Tower_Piece"
     }
@@ -258,7 +258,7 @@
     "name": "Sandcastle Large Tower",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Sancastle-Large-Tower-Piece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Sancastle-Large-Tower-Piece.png",
-    "order": 645,
+    "order": 646,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Large_Tower_Piece"
     }
@@ -270,7 +270,7 @@
     "name": "Sandcastle Small Gate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Sancastle-Small-Gate-Piece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Sancastle-Small-Gate-Piece.png",
-    "order": 646,
+    "order": 647,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Small_Gate_Piece"
     }
@@ -282,7 +282,7 @@
     "name": "Sandcastle Wall",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Sancastle-Wall-Piece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Sancastle-Wall-Piece.png",
-    "order": 647,
+    "order": 648,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Wall_Piece"
     }
@@ -294,7 +294,7 @@
     "name": "Sandcastle Large Gate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Sancastle-Large-Gate-Piece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Sancastle-Large-Gate-Piece.png",
-    "order": 648,
+    "order": 649,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Large_Gate_Piece"
     }
@@ -306,7 +306,7 @@
     "name": "Sandcastle Sand Lot",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Sancastle-Sand-Lot-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Sancastle-Sand-Lot.png",
-    "order": 649,
+    "order": 650,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Sand_Lot"
     }
@@ -318,7 +318,7 @@
     "name": "Sandcastle Flag",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Sandcastle-Flag-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Sandcastle-Flag.png",
-    "order": 650,
+    "order": 651,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Flag"
     }

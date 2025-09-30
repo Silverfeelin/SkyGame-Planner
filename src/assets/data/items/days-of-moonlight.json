@@ -14,7 +14,8 @@
     },
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Frock_and_Updo"
-    }
+    },
+    "order": 81
   },
   {
     "id": 2305,
@@ -47,7 +48,7 @@
     "name": "Moonlight Lantern",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Moonlight-Lantern-Decoration-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Moonlight-Lantern-Decoration.png",
-    "order": 785,
+    "order": 788,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Lantern_Decoration"
     }
@@ -87,10 +88,11 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Moonlight-Bunny-Tail-side.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Tufted_Tail_Accessory"
-    }
+    },
+    "order": 543
   },
   {
-    "id":2759,
+    "id": 2759,
     "guid": "_cE3iO4UG4",
     "name": "Moonlight Banner",
     "type": "Prop",
@@ -98,7 +100,8 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Moonlight-Banner.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Banner"
-    }
+    },
+    "order": 653
   },
   {
     "id": 2760,
@@ -109,7 +112,8 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Moonlight-Garland-Cape-exterior.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Garland_Cape"
-    }
+    },
+    "order": 932
   },
   {
     "id": 2761,
@@ -120,6 +124,7 @@
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Moonlight-Basin.png",
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Basin"
-    }
+    },
+    "order": 652
   }
 ]
