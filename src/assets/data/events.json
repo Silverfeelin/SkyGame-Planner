@@ -759,7 +759,7 @@
       "name": "Days of Moonlight",
       "shortName": "Moonlight",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/7795126c4e/moonly24tree2kids.jpg",
+      "imageUrl": "https://image.thatskygame.com/cdn-cgi/image/w=1280,h=1000,f=webp/https://a.storyblok.com/f/108104/1920x1080/0516e35f7b/domo_header-moonlighttea_sls_na_na_2509.jpg",
       "instances": [
         {
           "guid": "Fzgs71vx4q",
@@ -776,6 +776,29 @@
           },
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=9d3d869c42c748cca47139642c52d4c6"
+          }
+        },
+        {
+          "guid": "a1A9-xCNTW",
+          "date": "2025-09-29",
+          "endDate": "2025-10-12",
+          "spirits": [
+            {	"guid": "HqyvmbuhoY", "spirit": "tXkUX6GU6W", "tree": "CX1CIWT9Vw" },
+          ],
+          "shops": [
+            "YBHZlLBbgl",
+            "Q9PXGV2pXd",
+            "88_wbWmsEK",
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "7AhwOUig9z", "date": "2025-09-29", "endDate": "2025-10-12", "amount": 12, "description": "Tickets around the Hidden Glade" },
+              { "guid": "nMXJW3sj-u", "date": "2025-09-29", "endDate": "2025-10-12", "amount": 3, "description": "Tickets in the Moonlight Void" }
+            ]
+          },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=25d8261c87dd809ab40cf2cee31a0781&pm=c"
           }
         }
       ],

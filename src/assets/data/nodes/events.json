@@ -2182,6 +2182,14 @@
   { "guid": "I_tLpZs8XA", "item": "vx4vxVJ0L1", "ec": 32 },
   { "guid": "zFJoiRuNsZ", "item": "A4CTK7T9ea", "ec": 17 },
   // #endregion
+  // #region Days of Moonlight (2025)
+  { "guid": "XLtugqdh-y", "item": "xObCoMqwCd", "nw": "qQxtzzKv4u", "n": "8cbI0pN5Cc", "ne": "cTCI7WWSU8" },
+  { "guid": "qQxtzzKv4u", "item": "inAM509HYO", "ec": 42 },
+  { "guid": "cTCI7WWSU8", "item": "_cE3iO4UG4", "ec": 18 },
+  { "guid": "8cbI0pN5Cc", "item": "r1m91XOLgd", "c": 5, "nw": "8p7-L_9W8u", "n": "zIuBpp1Bhs" },
+  { "guid": "8p7-L_9W8u", "item": "vx4vxVJ0L1", "c": 70 },
+  { "guid": "zIuBpp1Bhs", "item": "A4CTK7T9ea", "c": 35 },
+  // #endregion
   // #region Harmony Hall Grand Opening (2022)
   {
     "guid": "WoT0pqpHnJ",
