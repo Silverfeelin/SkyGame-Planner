@@ -1765,9 +1765,15 @@
     },
     // #endregion
     // #region Radiance
+    // Radiaance Guide
     {
       "guid": "QveGTQI48L",
       "node": "30o85y24PC"
+    },
+    {
+      "guid": "Vvd8vzwFLd",
+      "node": "hxvdB3Qxe4",
+      "revisionType": "AfterSeason"
     },
     {
       "guid": "s8oDPElH2z",
@@ -1784,6 +1790,7 @@
     // #endregion
     // #region Blue Bird
     { "guid": "9ZMGsZeH1U", "node": "RzXXb9widZ" },
+    { "guid": "Z-lDboKqdB", "node": "kRv4PPU3CT", "revisionType": "AfterSeason" },
     { "guid": "me0kc6RN7J", "node": "yjs2ofd4bI" },
     { "guid": "GEOf9iPZiz", "node": "Mab8ePYPvs" },
     { "guid": "DU7kdfkbq7", "node": "qdSLwtMlKg" },
@@ -2191,7 +2198,7 @@
       "node": "fpoTvUXTAi",
       "name": "Equipment Rack",
       "permanent": "event"
-    },
+    }
     // #endregion
   ]
 }
