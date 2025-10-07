@@ -1785,7 +1785,7 @@
       "name": "Duets Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Duets-Ultimate-Guide.png",
       "tree": "voApj8nmhQ",
-      "treeRevisions": ["RSUBTRhzHf"],
+      "treeRevisions": ["RSUBTRhzHf"]
     },
     {
       "guid": "o4ZuAa_Q8u",
@@ -1892,6 +1892,7 @@
       "type": "Guide",
       "name": "Radiance Guide",
       "tree": "QveGTQI48L",
+      "treeRevisions": [ "Vvd8vzwFLd" ],
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Radiance-Ultimate-Guide.png"
     },
     {
@@ -1922,7 +1923,8 @@
       "type": "Guide",
       "name": "Blue Bird Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Blue-Bird-Ultimate-Guide.png",
-      "tree": "9ZMGsZeH1U"
+      "tree": "9ZMGsZeH1U",
+      "treeRevisions": [ "Z-lDboKqdB" ]
     },
     {
       "guid": "2iDZqeJXTf",
@@ -1996,7 +1998,7 @@
       "guid": "TDQC4wg3G9",
       "type": "Season",
       "name": "Caring Companion",
-      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Caring-Companion-cutout.png"
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Caring-Companion-cutout.png",
       "tree": "PzoY-Wkk8O"
     },
     // #endregion
@@ -2216,7 +2218,7 @@
       "guid": "tKeCcn57So",
       "type": "Event",
       "name": "Aviary Event Store"
-    },
+    }
     // #endregion
   ]
 }

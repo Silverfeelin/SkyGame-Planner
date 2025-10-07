@@ -304,6 +304,7 @@
     },
     {
       "guid": "WKeFg1cVbG",
+      "revisionType": "AfterSeason",
       "node": "Udd-_n5nht"
     },
     // The Rose
@@ -313,6 +314,7 @@
     },
     {
       "guid": "hdM4etUDWo",
+      "revisionType": "AfterSeason",
       "node": "XxQuKwlte6"
     },
     // Flight Guide
@@ -322,6 +324,7 @@
     },
     {
       "guid": "HvBGzwY6Wp",
+      "revisionType": "AfterSeason",
       "node": "Xqts61Civ9"
     },
     // Abyss Guide
@@ -383,6 +386,7 @@
     },
     {
       "guid": "4jNOVPFy1Q",
+      "revisionType": "AfterSeason",
       "node": "am4QK-t3g_"
     },
     // Moments Guide
@@ -1711,7 +1715,11 @@
       "guid": "voApj8nmhQ",
       "node": "RTwKtxkvqi"
     },
-    { "guid": "RSUBTRhzHf", "node": "Qf34nNDqQ_" },
+    { 
+      "guid": "RSUBTRhzHf",
+      "revisionType": "AfterSeason",
+      "node": "Qf34nNDqQ_" 
+    },
     {
       "guid": "FKLImPk5vB",
       "node": "MhQW8_5oJe"
@@ -1760,9 +1768,15 @@
     },
     // #endregion
     // #region Radiance
+    // Radiaance Guide
     {
       "guid": "QveGTQI48L",
       "node": "30o85y24PC"
+    },
+    {
+      "guid": "Vvd8vzwFLd",
+      "node": "hxvdB3Qxe4",
+      "revisionType": "AfterSeason"
     },
     {
       "guid": "s8oDPElH2z",
@@ -1779,6 +1793,7 @@
     // #endregion
     // #region Blue Bird
     { "guid": "9ZMGsZeH1U", "node": "RzXXb9widZ" },
+    { "guid": "Z-lDboKqdB", "node": "kRv4PPU3CT", "revisionType": "AfterSeason" },
     { "guid": "me0kc6RN7J", "node": "yjs2ofd4bI" },
     { "guid": "GEOf9iPZiz", "node": "Mab8ePYPvs" },
     { "guid": "DU7kdfkbq7", "node": "qdSLwtMlKg" },
@@ -2186,7 +2201,7 @@
       "node": "fpoTvUXTAi",
       "name": "Equipment Rack",
       "permanent": "event"
-    },
+    }
     // #endregion
   ]
 }
