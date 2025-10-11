@@ -121,7 +121,7 @@ export class EventCalculatorComponent {
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {
       this.allNodes.push(...NodeHelper.all(t.node));
-      acc[t.node.guid] = t.node;
+      acc[t.node!.guid] = t.node!;
       return acc;
     }, {} as { [guid: string]: INode });
 

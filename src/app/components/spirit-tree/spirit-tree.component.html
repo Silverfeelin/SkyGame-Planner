@@ -69,30 +69,41 @@
       </div>
     }
 
-    <!-- Tree nodes -->
-    <div class="spirit-tree">
-      <div class="column left">
-        <div class="st-item" *ngFor="let node of left">
-          @if (node) {
-            <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'left' }"></ng-container>
-          }
+    @if (hasTiers) {
+      <div class="spirit-tree-tiers pad">
+        @for (tier of tree.tiers; track tier.guid) {
+          <div class="spirit-tree-tier">
+            <ng-container [ngTemplateOutlet]="tTier" [ngTemplateOutletContext]="{ $implicit: tier }"></ng-container>
+          </div>
+        }
+      </div>
+    } @else if (hasNodes) {
+      <!-- Tree nodes -->
+      <div class="spirit-tree">
+        <div class="column left">
+          <div class="st-item" *ngFor="let node of left">
+            @if (node) {
+              <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'left' }"></ng-container>
+            }
+          </div>
+        </div>
+        <div class="column center">
+          <div class="st-item" *ngFor="let node of center">
+            @if (node) {
+              <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'center' }"></ng-container>
+            }
+          </div>
+        </div>
+        <div class="column right">
+          <div class="st-item" *ngFor="let node of right">
+            @if (node) {
+              <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'right' }"></ng-container>
+            }
+          </div>
         </div>
       </div>
-      <div class="column center">
-        <div class="st-item" *ngFor="let node of center">
-          @if (node) {
-            <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'center' }"></ng-container>
-          }
-        </div>
-      </div>
-      <div class="column right">
-        <div class="st-item" *ngFor="let node of right">
-          @if (node) {
-            <ng-container [ngTemplateOutlet]="tNode" [ngTemplateOutletContext]="{ $implicit: node, position: 'right' }"></ng-container>
-          }
-        </div>
-      </div>
-    </div>
+    }
+
   </div>
   <div class="footer">
     @if (visibleName) {
@@ -138,4 +149,25 @@
   @if (node?.nw) { <div class="arrow arrow-left"></div> }
   @if (node?.n) { <div class="arrow arrow-up"></div> }
   @if (node?.ne) { <div class="arrow arrow-right"></div> }
+</ng-template>
+
+<ng-template #tTier let-tier>
+  @for (row of tier.nodes; track $index) {
+    <div class="spirit-tree-tier-row">
+      @for (node of row; track node?.guid ?? $index) {
+        <div class="tier-node">
+          @if (node) {
+            <app-node [node]="node" [action]="forceNodeAction ?? nodeAction" [position]="'center'" (nodeClicked)="onNodeClicked($event, node)"
+              [highlight]="(highlightItem && highlightItemMap[node.item?.guid]) || (highlightNode && highlightNodeMap[node.guid]) || false"
+              [showTooltips]="showNodeTooltips"
+              [opaque]="opaqueNodesAll || opaqueNodesMap[node.guid]"
+              [glowType]="(forceNodeAction ?? nodeAction) !== 'unlock' ? 'attention' : 'default'">
+            </app-node>
+          } @else {
+            <div class="tier-node-missing"></div>
+          }
+        </div>
+      }
+    </div>
+  }
 </ng-template>

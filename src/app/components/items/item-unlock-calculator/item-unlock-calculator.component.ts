@@ -426,7 +426,7 @@ export class ItemUnlockCalculatorComponent {
         guid: nanoid(10), name, node: { guid: nanoid(10) }
       } as ISpiritTree;
       const node = tree.node;
-      addNode(newTree.node, node);
+      node && addNode(newTree.node!, node);
 
       this.treeOpaqueNodes[newTree.guid] = treeOpaqueNodes;
       this.treeHighlightItems[newTree.guid] = treeHighlightItems;

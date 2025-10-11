@@ -54,6 +54,8 @@ export class SeasonCalculatorComponent implements OnInit {
   nodeShowButtons?: INode;
   toggleConnected = false;
 
+  hasTiers = false;
+
   constructor(
     private readonly _currencyService: CurrencyService,
     private readonly _dataService: DataService,
@@ -63,6 +65,11 @@ export class SeasonCalculatorComponent implements OnInit {
     const seasons = _dataService.seasonConfig.items;
     const season = DateHelper.getActive(seasons) || seasons.at(-1)!;
     if (season.endDate < DateTime.now()) { return; }
+
+    if (season.spirits.some(s => s.tree?.tiers?.length)) {
+      this.hasTiers = true;
+      return;
+    }
 
     this.toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
 
@@ -82,8 +89,8 @@ export class SeasonCalculatorComponent implements OnInit {
     this.trees = this.season.spirits.filter(s => s.type === 'Season').map(s => s.tree!);
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {
-      this.allNodes.push(...NodeHelper.all(t.node));
-      acc[t.node.guid] = t.node;
+      this.allNodes.push(...NodeHelper.all(t.node!));
+      acc[t.node!.guid] = t.node!;
       return acc;
     }, {} as { [guid: string]: INode });
   }

@@ -125,11 +125,11 @@ export class SpiritTreeEditorComponent {
       node: { guid: nanoid(10), item: this.cloneItem(this.specialItemMap.placeholder.item) }
     };
 
-    const treeNode = { x: 1, y: 0, node: this.tree.node };
+    const treeNode = { x: 1, y: 0, node: this.tree.node! };
     this.nodeTable[1][0] = treeNode;
-    this.nodeMap[this.tree.node.guid] = treeNode;
+    this.nodeMap[this.tree.node!.guid] = treeNode;
     this.selectedTreeNode = treeNode;
-    this.selectedItem = this.tree.node.item!;
+    this.selectedItem = this.tree.node!.item!;
 
     // Load spirits
     const spiritTypes = new Set<SpiritType>(['Elder', 'Guide', 'Season', 'Event', 'Regular']);
@@ -188,7 +188,7 @@ export class SpiritTreeEditorComponent {
     this.nodeTable[2].unshift(undefined);
 
     // Replace root node.
-    this.tree.node.prev = node;
+    this.tree.node!.prev = node;
     node.n = this.tree.node;
     this.tree.node = node;
     this.reloadTree();
@@ -353,7 +353,7 @@ export class SpiritTreeEditorComponent {
   copySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
     this.tree = {
       guid: preserveGuid ? tree.guid : nanoid(10),
-      node: NodeHelper.clone(tree.node, preserveGuid)
+      node: NodeHelper.clone(tree.node!, preserveGuid)
     };
     this.nodeTable = [[], [], []];
     this.nodeMap = {};
@@ -371,9 +371,9 @@ export class SpiritTreeEditorComponent {
       if (n.ne) { addNode(n.ne, x + 1, y); }
     };
 
-    addNode(this.tree.node, 1, 0);
+    addNode(this.tree.node!, 1, 0);
     this.items = Object.values(this.itemMap);
-    this.selectedTreeNode = this.nodeMap[this.tree.node.guid];
+    this.selectedTreeNode = this.nodeMap[this.tree.node!.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
 
     const tsDate = tree.ts?.date;
@@ -485,7 +485,7 @@ export class SpiritTreeEditorComponent {
   exportJson(): void {
     const jsonTree = {
       guid: this.tree.guid,
-      node: this.tree.node.guid
+      node: this.tree.node!.guid
     };
 
     const nodes = NodeHelper.all(this.tree.node);

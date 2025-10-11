@@ -2002,6 +2002,22 @@
       "tree": "PzoY-Wkk8O"
     },
     // #endregion
+    // #region Migration
+    {
+      "guid": "rpBWF2PFJc",
+      "type": "Guide",
+      "name": "Migration Guide",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "fdQpzNAjCw"
+    },
+    {
+      "guid": "1mYa5Pnpdy",
+      "type": "Season",
+      "name": "Season of Migration",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "ohWs7lq848"
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {
