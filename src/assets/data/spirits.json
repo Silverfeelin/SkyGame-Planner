@@ -2008,14 +2008,42 @@
       "type": "Guide",
       "name": "Migration Guide",
       "imageUrl": "/assets/icons/question.webp",
-      "tree": "fdQpzNAjCw"
+      "tree": "IVb8WCKt8D"
     },
     {
       "guid": "1mYa5Pnpdy",
       "type": "Season",
-      "name": "Season of Migration",
+      "name": "Migrating Jelly Whisperer",
       "imageUrl": "/assets/icons/question.webp",
-      "tree": "ohWs7lq848"
+      "tree": "zK7AFf0rvZ"
+    },
+    {
+      "guid": "Mxs_zZGt7y",
+      "type": "Season",
+      "name": "Migrating Butterfly Charmer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "nCGzsegB0l"
+    },
+    {
+      "guid": "k9ZI3GoyPE",
+      "type": "Season",
+      "name": "Migrating Manta Whisperer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "iFANrbgSY4"
+    },
+    {
+      "guid": "yfmzfJGyRp",
+      "type": "Season",
+      "name": "Migrating Bird Whisperer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "nrvSEyff0h"
+    },
+    {
+      "guid": "gHhy04B7r9",
+      "type": "Season",
+      "name": "Lighthorn Whisperer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "ko9lr8M4J5"
     },
     // #endregion
 

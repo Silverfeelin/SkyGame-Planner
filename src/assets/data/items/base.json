@@ -132,12 +132,5 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Emote-basic_sit.png",
     "autoUnlocked": true,
     "order": 1
-  },
-  {
-    "id": 5000,
-    "guid": "Guh7jlVThg",
-    "type": "Hair",
-    "name": "TEST HAIR",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
-  },
+  }
 ]
