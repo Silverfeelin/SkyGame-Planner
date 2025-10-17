@@ -1,6 +1,5 @@
 import { Component, signal } from "@angular/core";
 import { MatIcon } from "@angular/material/icon";
-import { RouterLink } from "@angular/router";
 import { DateTime } from "luxon";
 
 const announcement = {
@@ -12,7 +11,7 @@ const announcement = {
     selector: 'app-dashboard-announcement',
     templateUrl: './dashboard-announcement.component.html',
     styleUrls: [],
-    imports: [ MatIcon, RouterLink ]
+    imports: [ MatIcon ]
 })
 export class DashboardAnnouncementComponent {
   isAnnouncementVisible = signal(false);
