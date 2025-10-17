@@ -73,7 +73,7 @@
 
     @if (hasTiers) {
       <div class="spirit-tree-tiers pad">
-        @for (tier of tree.tiers; track tier.guid) {
+        @for (tier of tiers; track tier.guid) {
           <div class="spirit-tree-tier">
             <ng-container [ngTemplateOutlet]="tTier" [ngTemplateOutletContext]="{ $implicit: tier }"></ng-container>
           </div>

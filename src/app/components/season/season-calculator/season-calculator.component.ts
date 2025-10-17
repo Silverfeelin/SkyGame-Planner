@@ -64,7 +64,7 @@ export class SeasonCalculatorComponent implements OnInit {
   ) {
     const seasons = _dataService.seasonConfig.items;
     const season = DateHelper.getActive(seasons) || seasons.at(-1)!;
-    if (season.spirits.some(s => s.tree?.tiers?.length)) {
+    if (season.spirits.some(s => s.tree?.tier)) {
       this.season = season;
       this.hasTiers = true;
       return;

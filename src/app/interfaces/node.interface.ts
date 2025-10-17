@@ -1,5 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
-import { ISpiritTree } from "./spirit-tree.interface";
+import { ISpiritTree, ISpiritTreeTier } from "./spirit-tree.interface";
 import { ICost } from "./cost.interface";
 import { IItem } from "./item.interface";
 

@@ -18,7 +18,7 @@ import { CostComponent } from "../../util/cost/cost.component";
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { DecimalPipe, LowerCasePipe } from '@angular/common';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
-import { IRevisedSpiritTree, ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { IRevisedSpiritTree, ISpiritTree, ISpiritTreeTier } from '@app/interfaces/spirit-tree.interface';
 import { nanoid } from 'nanoid';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../spirit-tree/spirit-tree.component";
 import { ItemUnlockCalculatorSpiritsComponent } from "./item-unlock-calculator-spirits/item-unlock-calculator-spirits.component";
@@ -446,17 +446,19 @@ export class ItemUnlockCalculatorComponent {
         this.treeOpaqueNodes[newTree.guid] = treeOpaqueNodes;
         this.treeHighlightItems[newTree.guid] = treeHighlightItems;
         this.trees.push(newTree);
-      } else if (tree.tiers?.length) {
+      } else if (tree.tier) {
         treeOpaqueNodes = [];
         treeHighlightItems = [];
         const newTree = {
-          guid: nanoid(10), name: tree.name, tiers: []
+          guid: nanoid(10), name: tree.name
         } as ISpiritTree;
-        for (const tier of tree.tiers) {
-          const newRows: Array<[INode | undefined, INode | undefined, INode | undefined]> = [];
+        const tiers = TreeHelper.getTiers(tree);
+        let prevTier: ISpiritTreeTier | undefined = undefined;
+        for (const tier of tiers) {
+          const newTier = { guid: nanoid(10), nodes: [] } as ISpiritTreeTier;
           for (const row of tier.nodes) {
             const newRow = [] as Array<INode | undefined>;
-            newRows.push(newRow as [INode | undefined, INode | undefined, INode | undefined]);
+            newTier.nodes.push(newRow as [INode | undefined, INode | undefined, INode | undefined]);
             for (const node of row) {
               if (node == undefined) {
                 newRow.push(undefined);
@@ -475,8 +477,16 @@ export class ItemUnlockCalculatorComponent {
               }
             }
           }
-          newTree.tiers!.push({ guid: nanoid(10), nodes: newRows });
+          if (prevTier) {
+            prevTier.next = newTier;
+            newTier.prev = prevTier;
+            newTier.root = prevTier.root;
+          } else {
+            newTier.root = newTier;
+          }
+          prevTier = newTier;
         }
+        newTree.tier = prevTier?.root;
         this.treeHighlightItems[newTree.guid] = treeHighlightItems;
         this.treeOpaqueNodes[newTree.guid] = treeOpaqueNodes;
         this.trees.push(newTree);

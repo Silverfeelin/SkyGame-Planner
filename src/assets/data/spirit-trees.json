@@ -1814,7 +1814,7 @@
     { "guid": "PzoY-Wkk8O", "node": "ataTovLcTn" },
     // #endregion
     // #region Migration
-    { "guid": "ohWs7lq848", "tiers": ["9nkruKKfE7", "5xc-2tXUAT"] },
+    { "guid": "ohWs7lq848", "tier": "9nkruKKfE7" },
     // #endregion
 
     // #region Nesting Challenges

@@ -346,6 +346,7 @@ export class SpiritTreeEditorComponent {
   }
 
   promptCopySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
+    if (tree.tier) { alert('Spirit trees with friendship tiers are not supported.'); return; }
     if (!confirm('Are you sure you want to copy this spirit tree? Your current tree will be replaced.')) { return; }
     this.copySpiritTree(tree, preserveGuid);
   }

@@ -1,4 +1,4 @@
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { ISpiritTree, ISpiritTreeTier } from '@app/interfaces/spirit-tree.interface';
 import { NodeHelper } from './node-helper';
 import { INode } from '@app/interfaces/node.interface';
 import { IItem } from '@app/interfaces/item.interface';
@@ -11,10 +11,21 @@ export class TreeHelper {
     if (tree.node) {
       return NodeHelper.all(tree.node);
     }
-    if (tree.tiers?.length) {
-      return tree.tiers.flatMap(t => t.nodes.flat()).filter(n => n) as Array<INode>;
+    if (tree.tier) {
+      const tiers = this.getTiers(tree);
+      return tiers.flatMap(t => t.nodes.flat()).filter(n => n) as Array<INode>;
     }
     return [];
+  }
+
+  static getTiers(tree?: ISpiritTree): Array<ISpiritTreeTier> {
+    const tiers: Array<ISpiritTreeTier> = [];
+    let tier: ISpiritTreeTier | undefined = tree?.tier;
+    while (tier) {
+      tiers.push(tier);
+      tier = tier.next;
+    }
+    return tiers;
   }
 
   static getItems(tree?: ISpiritTree, includeHidden?: boolean): Array<IItem> {

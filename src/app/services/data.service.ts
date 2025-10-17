@@ -152,6 +152,7 @@ export class DataService {
     this.initializeSpirits();
     this.initializeTravelingSpirits();
     this.initializeReturningSpirits();
+    this.initializeSpiritTreeTiers();
     this.initializeSpiritTrees();
     this.initializeEvents();
     this.initializeShops();
@@ -330,6 +331,35 @@ export class DataService {
     });
   }
 
+  private initializeSpiritTreeTiers(): void {
+    this.spiritTierConfig.items.forEach(tier => {
+        // Map tier nodes.
+        tier.nodes?.forEach(row => {
+          row.forEach((node, ni) => {
+            if (!node) { return; }
+            const n = this.guidMap.get(node as any) as INode;
+            if (!n) { console.error('Node not found', node); }
+            row[ni] = n;
+            n.root = n;
+            this.initializeNode(n);
+          });
+        });
+
+        if (!tier.prev) {
+          tier.root = tier;
+        }
+
+        // Map next tier.
+        if (typeof tier.next === 'string') {
+          const nextTier = this.guidMap.get(tier.next as any) as ISpiritTreeTier;
+          if (!nextTier) { console.error('Next spirit tree tier not found', tier.next); }
+          tier.next = nextTier;
+          nextTier.prev = tier;
+          nextTier.root = tier.root;
+        }
+      });
+  }
+
   private initializeSpiritTrees(): void {
     this.spiritTreeConfig.items.forEach(spiritTree => {
         // Map Spirit Tree to Node.
@@ -341,32 +371,13 @@ export class DataService {
           this.initializeNode(node);
         }
 
-        // Map Spirit tree tier and nodes.
-        if (spiritTree.tiers?.length) {
-          spiritTree.tiers.forEach((tGuid, i) => {
-            const tier = this.guidMap.get(tGuid as any) as ISpiritTreeTier;
-            if (!tier) { console.error('Spirit tree tier not found', tGuid); }
-            spiritTree.tiers![i] = tier;
-
-            tier.nodes?.forEach(row => {
-              row.forEach((node, ni) => {
-                if (!node) { return; }
-                const n = this.guidMap.get(node as any) as INode;
-                if (!n) { console.error('Node not found', node); }
-                row[ni] = n;
-                n.spiritTree = spiritTree;
-                n.root = n;
-                this.initializeNode(n);
-              });
-            });
-          });
-
-          spiritTree.tiers.forEach((tier, i) => {
-            tier.prev = spiritTree.tiers!.at(i-1) ?? undefined;
-            tier.next = spiritTree.tiers!.at(i+1) ?? undefined;
-          });
-
-          spiritTree.tiers.at(0)!.spiritTree = spiritTree;
+        // Map Spirit tree tier.
+        if (typeof spiritTree.tier === 'string') {
+          const tier = this.guidMap.get(spiritTree.tier) as ISpiritTreeTier;
+          if (!tier) { console.error('Spirit tree tier not found', spiritTree.tier); }
+          spiritTree.tier = tier;
+          tier.spiritTree = spiritTree;
+          TreeHelper.getNodes(spiritTree).forEach(n => n.spiritTree = spiritTree);
         }
     });
 
@@ -606,6 +617,7 @@ export class DataService {
 
     (window as any).skyGuids = this.guidMap;
     (window as any).NodeHelper = NodeHelper;
+    (window as any).TreeHelper = TreeHelper;
     (window as any).DateHelper = DateHelper;
     (window as any).CostHelper = CostHelper;
     (window as any).ItemHelper = ItemHelper;

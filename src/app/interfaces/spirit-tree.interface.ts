@@ -15,7 +15,7 @@ export interface ISpiritTree extends IGuid {
   /// References ///
   permanent?: boolean | string;
   node?: INode;
-  tiers?: Array<ISpiritTreeTier>;
+  tier?: ISpiritTreeTier;
   ts?: ITravelingSpirit;
   visit?: IReturningSpirit;
   spirit?: ISpirit;
@@ -31,5 +31,6 @@ export interface ISpiritTreeTier extends IGuid {
   spiritTree?: ISpiritTree;
   prev?: ISpiritTreeTier;
   next?: ISpiritTreeTier;
+  root?: ISpiritTreeTier;
   nodes: Array<[INode?, INode?, INode?]>;
 }

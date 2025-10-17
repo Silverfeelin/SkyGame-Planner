@@ -22,6 +22,7 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { Router } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -56,6 +57,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   left: Array<INode> = [];
   center: Array<INode> = [];
   right: Array<INode> = [];
+  tiers?: Array<ISpiritTreeTier>;
   opaqueNodesAll: boolean = false;
   opaqueNodesMap: { [guid: string]: boolean } = {};
   highlightItemMap: { [guid: string]: boolean } = {};
@@ -199,17 +201,18 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this.totalCost = CostHelper.create();
     this.remainingCost = CostHelper.create();
     this.nodes = []; this.left = []; this.center = []; this.right = [];
+    this.tiers = undefined;
     this.hasCost = false;
 
     this.hasNodes = !!(this.tree && this.tree.node);
-    this.hasTiers = !!(this.tree && this.tree.tiers?.length);
+    this.hasTiers = !!(this.tree && this.tree.tier);
 
     if (this.hasNodes) {
       this.initializeNode(this.tree.node!, 0, 0);
       this.hasCost = !CostHelper.isEmpty(this.totalCost);
       this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node!);
     } else if (this.hasTiers) {
-      this.initializeTiers(this.tree.tiers!);
+      this.initializeTiers(this.tree);
       this.hasCost = !CostHelper.isEmpty(this.totalCost);
       this.hasCostAtRoot = false;
     }
@@ -245,8 +248,10 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (node.n) { this.initializeNode(node.n, direction, level + 1); }
   }
 
-  initializeTiers(tiers: Array<ISpiritTreeTier>): void {
+  initializeTiers(tree: ISpiritTree): void {
     let level = -1;
+    const tiers = TreeHelper.getTiers(this.tree);
+    this.tiers = tiers;
     for (const tier of tiers) {
       for (const row of tier.nodes) {
         level++;
