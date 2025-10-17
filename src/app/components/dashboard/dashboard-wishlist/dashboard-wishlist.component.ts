@@ -22,6 +22,7 @@ import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent } from '../../layout/card/card.component';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 type Bag = { [guid: string]: IItem };
 
@@ -198,8 +199,7 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   }
 
   private loadTree(tree: ISpiritTree | undefined, bag: Bag): void {
-    if (!tree) { return; }
-    const nodes = NodeHelper.all(tree.node);
+    const nodes = TreeHelper.getNodes(tree);
     nodes.forEach(node => {
       if (!node.item) { return; }
       bag[node.item!.guid] = node.item!;

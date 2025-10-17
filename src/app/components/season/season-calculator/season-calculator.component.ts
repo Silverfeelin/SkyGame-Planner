@@ -64,16 +64,17 @@ export class SeasonCalculatorComponent implements OnInit {
   ) {
     const seasons = _dataService.seasonConfig.items;
     const season = DateHelper.getActive(seasons) || seasons.at(-1)!;
-    if (season.endDate < DateTime.now()) { return; }
-
     if (season.spirits.some(s => s.tree?.tiers?.length)) {
+      this.season = season;
       this.hasTiers = true;
       return;
     }
+    if (season.endDate < DateTime.now()) { return; }
+
 
     this.toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
 
-    this.season = season!;
+    this.season = season;
     this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
     this.hasSeasonPassGifted = this._storageService.hasGifted(this.season.guid);
     this.calculatorData = this.season.calculatorData;

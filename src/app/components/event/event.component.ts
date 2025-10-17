@@ -13,6 +13,7 @@ import { DateComponent } from '../util/date/date.component';
 import { TableColumnDirective } from '../table/table-column/table-column.directive';
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 interface IRow {
   number: number;
@@ -78,7 +79,8 @@ export class EventComponent implements OnInit {
       // Count items.
       let unlockedItems = 0; let totalItems = 0;
       instance.spirits?.forEach(spirit => {
-        NodeHelper.getItems(spirit.tree.node).forEach(item => {
+        const items = TreeHelper.getItems(spirit.tree);
+        items.forEach(item => {
           if (item.unlocked) { unlockedItems++; }
           totalItems++;
         });

@@ -10,6 +10,7 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 type Section = 'img' | 'wiki' | 'date' | 'overview' | 'cost';
 export interface ReturningSpiritCardOptions {
@@ -62,7 +63,7 @@ export class ReturningSpiritCardComponent implements OnInit, OnChanges {
     this.cost = CostHelper.create();
     this.remainingCost = CostHelper.create();
     this.return.spirits.forEach(spirit => {
-      const nodes = NodeHelper.all(spirit.tree.node);
+      const nodes = TreeHelper.getNodes(spirit.tree);
       this.cost = CostHelper.add(this.cost!, ...nodes);
       const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);
       this.remainingCost = CostHelper.add(this.remainingCost!, ...locked);

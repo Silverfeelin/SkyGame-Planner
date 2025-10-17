@@ -25,6 +25,7 @@ import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { IItemList } from '../interfaces/item-list.interface';
 import { ArrayHelper } from '../helpers/array-helper';
 import { IMapShrine } from '../interfaces/map-shrine.interface';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -353,6 +354,8 @@ export class DataService {
                 const n = this.guidMap.get(node as any) as INode;
                 if (!n) { console.error('Node not found', node); }
                 row[ni] = n;
+                n.spiritTree = spiritTree;
+                n.root = n;
                 this.initializeNode(n);
               });
             });
@@ -388,6 +391,9 @@ export class DataService {
       node.item = item;
       item.nodes ??= [];
       item.nodes.push(node);
+    } else if (node.item) {
+      node.item.nodes ??= [];
+      node.item.nodes.push(node);
     }
 
     if (node.hiddenItems?.length) {
@@ -550,8 +556,8 @@ export class DataService {
     for (const season of this.seasonConfig.items) {
       // Spirit items
       for (const spirit of season.spirits ?? []) {
-        if (!spirit?.tree?.node) { continue; }
-        for (const item of NodeHelper.getItems(spirit.tree.node, true)) {
+        const items = TreeHelper.getItems(spirit.tree, true);
+        for (const item of items) {
           item.season = season;
         }
       }

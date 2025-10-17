@@ -1,7 +1,7 @@
 import { ISeason } from '@app/interfaces/season.interface';
 import { IEvent, IEventInstance } from '../interfaces/event.interface';
 import { IItem, IItemSource, IItemSourceOrigin, ItemType } from '../interfaces/item.interface';
-import { NodeHelper } from './node-helper';
+import { TreeHelper } from './tree-helper';
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([
   [ItemType.Outfit, 1], [ItemType.Shoes, 2], [ItemType.Mask, 3], [ItemType.FaceAccessory, 4],
@@ -19,7 +19,8 @@ export class ItemHelper {
     const itemSet = new Set<IItem>();
     event?.instances?.forEach(instance => {
       instance.spirits?.forEach(spirit => {
-        const treeItems = NodeHelper.getItems(spirit.tree.node).filter(i => !itemSet.has(i) && itemSet.add(i));
+        const items = TreeHelper.getItems(spirit.tree);
+        const treeItems = items.filter(i => !itemSet.has(i) && itemSet.add(i));
         type ? items.push(...treeItems.filter(i => i.type === type)) : items.push(...treeItems);
       });
 

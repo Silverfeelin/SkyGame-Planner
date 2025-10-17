@@ -4,8 +4,8 @@ import { RouterLink } from "@angular/router";
 import { DateTime } from "luxon";
 
 const announcement = {
-  guid: 'Vu0zvCZKxJ',
-  endDate: DateTime.local(2025, 8, 27)  
+  guid: 'UancMoW12R',
+  endDate: DateTime.local(2025, 10, 27)
 }
 
 @Component({
@@ -16,7 +16,7 @@ const announcement = {
 })
 export class DashboardAnnouncementComponent {
   isAnnouncementVisible = signal(false);
-  
+
   constructor() {
     this.isAnnouncementVisible.set(localStorage.getItem('announcement.dismissed') !== announcement.guid
       && DateTime.now() < announcement.endDate);

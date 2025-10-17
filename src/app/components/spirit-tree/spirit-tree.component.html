@@ -39,17 +39,19 @@
 
       <!-- Top right controls-->
       <div class="tree-actions tree-actions-right">
-        <div class="tree-sub-action point" (click)="showingMenuActions=!showingMenuActions" [ngbTooltip]="'Toggle menu'" container="body" placement="top-end">
-          <div class="tree-action-icon">
-            <mat-icon>menu</mat-icon>
+        @if (tree.node) {
+          <div class="tree-sub-action point" (click)="showingMenuActions=!showingMenuActions" [ngbTooltip]="'Toggle menu'" container="body" placement="top-end">
+            <div class="tree-action-icon">
+              <mat-icon>menu</mat-icon>
+            </div>
           </div>
-        </div>
+        }
         <div class="tree-sub-action point" (click)="unlockAll()" [ngbTooltip]="toggleUnlock ? 'Unlock all': 'Lock all'" container="body" placement="top-end">
           <div class="tree-action-icon">
             <mat-icon>enhanced_encryption</mat-icon>
           </div>
         </div>
-        @if (showingMenuActions) {
+        @if (tree.node && showingMenuActions) {
           <div class="tree-sub-action point" (click)="export('share')" [ngbTooltip]="'Share tree image'" container="body" placement="top-end">
             <div class="tree-action-icon">
               <mat-icon>share</mat-icon>

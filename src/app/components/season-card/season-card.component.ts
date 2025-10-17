@@ -17,6 +17,7 @@ import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {
@@ -70,7 +71,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   private updateSeason(): void {
     this.cost = this.remainingCost = undefined;
     if (!this.season) { return; }
-    const nodes = this.season.spirits.map(s => NodeHelper.all(s.tree?.node)).flat();
+    const nodes = this.season.spirits.map(s => TreeHelper.getNodes(s.tree)).flat();
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);

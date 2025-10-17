@@ -210,6 +210,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node!);
     } else if (this.hasTiers) {
       this.initializeTiers(this.tree.tiers!);
+      this.hasCost = !CostHelper.isEmpty(this.totalCost);
+      this.hasCostAtRoot = false;
     }
   }
 
@@ -244,7 +246,16 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   }
 
   initializeTiers(tiers: Array<ISpiritTreeTier>): void {
-
+    let level = -1;
+    for (const tier of tiers) {
+      for (const row of tier.nodes) {
+        level++;
+        row.forEach((node, i) => {
+          if (!node) { return; }
+          this.initializeNode(node, i - 1, level);
+        });
+      }
+    }
   }
 
   calculateRemainingCosts(): void {
