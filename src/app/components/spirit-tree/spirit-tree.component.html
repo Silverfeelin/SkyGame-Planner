@@ -154,7 +154,7 @@
 </ng-template>
 
 <ng-template #tTier let-tier>
-  @for (row of tier.nodes; track $index) {
+  @for (row of tier.rows; track $index) {
     <div class="spirit-tree-tier-row">
       @for (node of row; track node?.guid ?? $index) {
         <div class="tier-node">

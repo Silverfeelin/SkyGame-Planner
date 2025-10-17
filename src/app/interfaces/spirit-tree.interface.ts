@@ -32,5 +32,8 @@ export interface ISpiritTreeTier extends IGuid {
   prev?: ISpiritTreeTier;
   next?: ISpiritTreeTier;
   root?: ISpiritTreeTier;
-  nodes: Array<[INode?, INode?, INode?]>;
+  rows: Array<SpiritTreeTierRow>;
 }
+
+
+export type SpiritTreeTierRow = [INode?, INode?, INode?];

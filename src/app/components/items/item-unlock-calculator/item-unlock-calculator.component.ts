@@ -455,10 +455,10 @@ export class ItemUnlockCalculatorComponent {
         const tiers = TreeHelper.getTiers(tree);
         let prevTier: ISpiritTreeTier | undefined = undefined;
         for (const tier of tiers) {
-          const newTier = { guid: nanoid(10), nodes: [] } as ISpiritTreeTier;
-          for (const row of tier.nodes) {
+          const newTier = { guid: nanoid(10), rows: [] } as ISpiritTreeTier;
+          for (const row of tier.rows) {
             const newRow = [] as Array<INode | undefined>;
-            newTier.nodes.push(newRow as [INode | undefined, INode | undefined, INode | undefined]);
+            newTier.rows.push(newRow as [INode | undefined, INode | undefined, INode | undefined]);
             for (const node of row) {
               if (node == undefined) {
                 newRow.push(undefined);

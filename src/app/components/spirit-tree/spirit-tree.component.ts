@@ -253,7 +253,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     const tiers = TreeHelper.getTiers(this.tree);
     this.tiers = tiers;
     for (const tier of tiers) {
-      for (const row of tier.nodes) {
+      for (const row of tier.rows) {
         level++;
         row.forEach((node, i) => {
           if (!node) { return; }

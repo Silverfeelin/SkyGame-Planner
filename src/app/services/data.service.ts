@@ -334,7 +334,7 @@ export class DataService {
   private initializeSpiritTreeTiers(): void {
     this.spiritTierConfig.items.forEach(tier => {
         // Map tier nodes.
-        tier.nodes?.forEach(row => {
+        tier.rows?.forEach(row => {
           row.forEach((node, ni) => {
             if (!node) { return; }
             const n = this.guidMap.get(node as any) as INode;

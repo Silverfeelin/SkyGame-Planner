@@ -13,7 +13,7 @@ export class TreeHelper {
     }
     if (tree.tier) {
       const tiers = this.getTiers(tree);
-      return tiers.flatMap(t => t.nodes.flat()).filter(n => n) as Array<INode>;
+      return tiers.flatMap(t => t.rows.flat()).filter(n => n) as Array<INode>;
     }
     return [];
   }
