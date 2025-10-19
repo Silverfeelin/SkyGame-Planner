@@ -852,7 +852,7 @@
     },
     // TS 150
     {
-      "guid": "LE5r3qPBkG", 
+      "guid": "LE5r3qPBkG",
       "node": "9cObx0iibd"
     },
     // Troupe Juggler
@@ -1720,10 +1720,10 @@
       "guid": "voApj8nmhQ",
       "node": "RTwKtxkvqi"
     },
-    { 
+    {
       "guid": "RSUBTRhzHf",
       "revisionType": "AfterSeason",
-      "node": "Qf34nNDqQ_" 
+      "node": "Qf34nNDqQ_"
     },
     {
       "guid": "FKLImPk5vB",
@@ -1812,6 +1812,14 @@
     { "guid": "fdQpzNAjCw", "node": "gSpR4Ktq8n" },
     { "guid": "r-emIwzMih", "node": "oZL55_0hI5" },
     { "guid": "PzoY-Wkk8O", "node": "ataTovLcTn" },
+    // #endregion
+    // #region Migration
+    { "guid": "IVb8WCKt8D", "tier": "9nkruKKfE7" },
+    { "guid": "zK7AFf0rvZ", "tier": "5xc-2tXUAT" },
+    { "guid": "nCGzsegB0l", "tier": "tCeG5a_2u0" },
+    { "guid": "iFANrbgSY4", "tier": "aXYjAZqvIr" },
+    { "guid": "nrvSEyff0h", "tier": "neQv9N0Pk5" },
+    { "guid": "ko9lr8M4J5", "tier": "kXNj5sSsss" },
     // #endregion
 
     // #region Nesting Challenges

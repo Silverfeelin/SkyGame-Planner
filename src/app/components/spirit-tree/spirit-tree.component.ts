@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, signal, SimpleChanges, TemplateRef } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
+import { ISpiritTree, ISpiritTreeTier } from 'src/app/interfaces/spirit-tree.interface';
 import { ICost } from 'src/app/interfaces/cost.interface';
 import { IItem } from 'src/app/interfaces/item.interface';
 import { INode } from 'src/app/interfaces/node.interface';
@@ -22,6 +22,7 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { Router } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -50,10 +51,13 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
   @Output() readonly nodeClicked = new EventEmitter<SpiritTreeNodeClickEvent>();
 
+  hasNodes = false;
+  hasTiers = false;
   nodes: Array<INode> = [];
   left: Array<INode> = [];
   center: Array<INode> = [];
   right: Array<INode> = [];
+  tiers?: Array<ISpiritTreeTier>;
   opaqueNodesAll: boolean = false;
   opaqueNodesMap: { [guid: string]: boolean } = {};
   highlightItemMap: { [guid: string]: boolean } = {};
@@ -197,12 +201,21 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this.totalCost = CostHelper.create();
     this.remainingCost = CostHelper.create();
     this.nodes = []; this.left = []; this.center = []; this.right = [];
+    this.tiers = undefined;
     this.hasCost = false;
 
-    if (!this.tree) { return; }
-    this.initializeNode(this.tree.node, 0, 0);
-    this.hasCost = !CostHelper.isEmpty(this.totalCost);
-    this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node);
+    this.hasNodes = !!(this.tree && this.tree.node);
+    this.hasTiers = !!(this.tree && this.tree.tier);
+
+    if (this.hasNodes) {
+      this.initializeNode(this.tree.node!, 0, 0);
+      this.hasCost = !CostHelper.isEmpty(this.totalCost);
+      this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node!);
+    } else if (this.hasTiers) {
+      this.initializeTiers(this.tree);
+      this.hasCost = !CostHelper.isEmpty(this.totalCost);
+      this.hasCostAtRoot = false;
+    }
   }
 
   subscribeItemChanged(): void {
@@ -233,6 +246,21 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (node.nw) { this.initializeNode(node.nw, direction -1, level); }
     if (node.ne) { this.initializeNode(node.ne, direction + 1, level); }
     if (node.n) { this.initializeNode(node.n, direction, level + 1); }
+  }
+
+  initializeTiers(tree: ISpiritTree): void {
+    let level = -1;
+    const tiers = TreeHelper.getTiers(this.tree);
+    this.tiers = tiers;
+    for (const tier of tiers) {
+      for (const row of tier.rows) {
+        level++;
+        row.forEach((node, i) => {
+          if (!node) { return; }
+          this.initializeNode(node, i - 1, level);
+        });
+      }
+    }
   }
 
   calculateRemainingCosts(): void {

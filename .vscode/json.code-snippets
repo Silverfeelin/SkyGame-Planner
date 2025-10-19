@@ -279,6 +279,18 @@
     ],
     "description": "Tree Placeholder"
   },
+  "TreeTier": {
+    "prefix": "@tree-tier",
+    "body": [
+      "{",
+      "\t\"guid\": \"$1\",",
+      "\t\"rows\": [",
+      "\t\t[$0]",
+      "\t]",
+      "},"
+    ],
+    "description": "Tree Tier"
+  },
   "IAP": {
     "prefix": "@iap",
     "body": [

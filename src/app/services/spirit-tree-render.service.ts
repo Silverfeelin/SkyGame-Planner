@@ -41,7 +41,7 @@ export class SpiritTreeRenderService {
       return Math.max(h, calculateHeight(h + wOffsetSide, node.nw), calculateHeight(h + wOffsetSide, node.ne), calculateHeight(h + wItem + wGapY, node.n));
     }
 
-    const hasRootCost = !CostHelper.isEmpty(tree.node);
+    const hasRootCost = tree.node && !CostHelper.isEmpty(tree.node);
     const width = wItem * 3 + wGapX * 2 + wPadding * 2;
     const height = calculateHeight(64, tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0) + hCredit + hFooter;
     const canvas = document.createElement('canvas');
@@ -224,7 +224,7 @@ export class SpiritTreeRenderService {
     // Node coordinates (top left corner).
     let x = wGapX + wItem + wPadding;
     let y = height - wPadding - wItem - (hasRootCost ? wCost : 0) - hFooter;
-    drawNode(tree.node, x, y);
+    tree.node && drawNode(tree.node, x, y);
 
     // Footer
     x = 0; y = height - hFooter;

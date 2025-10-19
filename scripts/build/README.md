@@ -17,3 +17,7 @@ The subfolders are used to organize the data, the compiled versions are used by 
 **sitemap.js**
 
 Pipeline script that generates a sitemap from the compiled JSON files.
+
+**license-move.mjs**
+
+Pipeline script that moves the Angular generated 3rd party licenses file to the output asset folder.

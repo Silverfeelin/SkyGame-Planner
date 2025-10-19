@@ -152,7 +152,7 @@ export class RealmComponent implements OnInit, OnDestroy {
   }
 
   private addTierCosts(tree: ISpiritTree): void {
-    if (!tree) { return; }
+    if (!tree?.node) { return; }
     for (const node of  NodeHelper.allTier(tree.node)) {
       if (typeof node.tier !== 'number') { continue; }
 

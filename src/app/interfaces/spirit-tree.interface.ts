@@ -14,7 +14,8 @@ export interface ISpiritTree extends IGuid {
 
   /// References ///
   permanent?: boolean | string;
-  node: INode;
+  node?: INode;
+  tier?: ISpiritTreeTier;
   ts?: ITravelingSpirit;
   visit?: IReturningSpirit;
   spirit?: ISpirit;
@@ -24,3 +25,15 @@ export interface ISpiritTree extends IGuid {
 export interface IRevisedSpiritTree extends ISpiritTree {
   revisionType: 'DuringSeason' | 'AfterSeason' | 'Limited';
 }
+
+export interface ISpiritTreeTier extends IGuid {
+  /// References ///
+  spiritTree?: ISpiritTree;
+  prev?: ISpiritTreeTier;
+  next?: ISpiritTreeTier;
+  root?: ISpiritTreeTier;
+  rows: Array<SpiritTreeTierRow>;
+}
+
+
+export type SpiritTreeTierRow = [INode?, INode?, INode?];

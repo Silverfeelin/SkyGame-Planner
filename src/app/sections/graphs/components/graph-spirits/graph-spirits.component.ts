@@ -4,9 +4,9 @@ import { ChartHelper } from '@app/helpers/chart-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
 import { Chart, ChartConfiguration, ScriptableLineSegmentContext } from 'chart.js';
-import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
@@ -173,7 +173,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
         if (lastReturn || lastTs) {
           const tree = lastDate === lastTs?.endDate ? lastTs?.tree : lastReturn?.tree;
           if (tree) {
-            const nodes = NodeHelper.all(tree.node);
+            const nodes = TreeHelper.getNodes(tree);
             const cost = CostHelper.add(CostHelper.create(), ...nodes);
             costLabels.push(spirit.name);
             costDataC.push(cost.c || 0);

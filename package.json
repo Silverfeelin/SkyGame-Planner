@@ -15,6 +15,7 @@
     "sitemap-build": "node ./scripts/build/sitemap.js",
     "icon-sheet": "tsx ./scripts/icon-sheet.ts",
     "item-id": "node ./scripts/item-id.js",
+    "apply-guid": "node ./scripts/data/apply-guid.mjs",
     "test": "ng test"
   },
   "private": true,

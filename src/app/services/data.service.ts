@@ -4,7 +4,7 @@ import { Injectable, isDevMode } from '@angular/core';
 import { forkJoin, Observable, ReplaySubject, Subscription, tap } from 'rxjs';
 import { IConfig, IGuid } from '../interfaces/base.interface';
 import { IArea, IAreaConfig } from '../interfaces/area.interface';
-import { ISpiritTree, ISpiritTreeConfig, IRevisedSpiritTree } from '../interfaces/spirit-tree.interface';
+import { ISpiritTree, ISpiritTreeConfig, IRevisedSpiritTree, ISpiritTreeTier } from '../interfaces/spirit-tree.interface';
 import { IEventConfig } from '../interfaces/event.interface';
 import { IItem, IItemConfig, ItemType } from '../interfaces/item.interface';
 import { INode, INodeConfig } from '../interfaces/node.interface';
@@ -25,6 +25,7 @@ import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { IItemList } from '../interfaces/item-list.interface';
 import { ArrayHelper } from '../helpers/array-helper';
 import { IMapShrine } from '../interfaces/map-shrine.interface';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -50,6 +51,7 @@ export class DataService {
   iapConfig!: IConfig<IIAP>;
   spiritConfig!: ISpiritConfig;
   spiritTreeConfig!: ISpiritTreeConfig;
+  spiritTierConfig!: IConfig<ISpiritTreeTier>;
   travelingSpiritConfig!: ITravelingSpiritConfig;
   returningSpiritsConfig!: IReturningSpiritsConfig;
   wingedLightConfig!: IWingedLightConfig;
@@ -83,6 +85,7 @@ export class DataService {
       iapConfig: get('iaps.json'),
       spiritConfig: get('spirits.json'),
       spiritTreeConfig: get('spirit-trees.json'),
+      spiritTierConfig: get('spirit-tree-tiers.json'),
       travelingSpiritConfig:  get('traveling-spirits.json'),
       returningSpiritsConfig:  get('returning-spirits.json'),
       wingedLightConfig: get('winged-lights.json'),
@@ -149,6 +152,7 @@ export class DataService {
     this.initializeSpirits();
     this.initializeTravelingSpirits();
     this.initializeReturningSpirits();
+    this.initializeSpiritTreeTiers();
     this.initializeSpiritTrees();
     this.initializeEvents();
     this.initializeShops();
@@ -327,15 +331,56 @@ export class DataService {
     });
   }
 
+  private initializeSpiritTreeTiers(): void {
+    this.spiritTierConfig.items.forEach(tier => {
+        // Map tier nodes.
+        tier.rows?.forEach(row => {
+          row.forEach((node, ni) => {
+            if (!node) { return; }
+            const n = this.guidMap.get(node as any) as INode;
+            if (!n) { console.error('Node not found', node); }
+            row[ni] = n;
+            n.root = n;
+            this.initializeNode(n);
+          });
+        });
+
+        if (!tier.prev) {
+          tier.root = tier;
+        }
+
+        // Map next tier.
+        if (typeof tier.next === 'string') {
+          const nextTier = this.guidMap.get(tier.next as any) as ISpiritTreeTier;
+          if (!nextTier) { console.error('Next spirit tree tier not found', tier.next); }
+          tier.next = nextTier;
+          nextTier.prev = tier;
+          nextTier.root = tier.root;
+        }
+      });
+  }
+
   private initializeSpiritTrees(): void {
     this.spiritTreeConfig.items.forEach(spiritTree => {
         // Map Spirit Tree to Node.
-        const node = this.guidMap.get(spiritTree.node as any) as INode;
-        if (!node) { console.error('Node not found', spiritTree.node); }
-        spiritTree.node = node;
-        node.spiritTree = spiritTree;
-        this.initializeNode(node);
-    })
+        if (spiritTree.node) {
+          const node = this.guidMap.get(spiritTree.node as any) as INode;
+          if (!node) { console.error('Node not found', spiritTree.node); }
+          spiritTree.node = node;
+          node.spiritTree = spiritTree;
+          this.initializeNode(node);
+        }
+
+        // Map Spirit tree tier.
+        if (typeof spiritTree.tier === 'string') {
+          const tier = this.guidMap.get(spiritTree.tier) as ISpiritTreeTier;
+          if (!tier) { console.error('Spirit tree tier not found', spiritTree.tier); }
+          spiritTree.tier = tier;
+          tier.spiritTree = spiritTree;
+          TreeHelper.getNodes(spiritTree).forEach(n => n.spiritTree = spiritTree);
+        }
+    });
+
   }
 
   private initializeNode(node: INode, prev?: INode, root?: INode): INode {
@@ -357,6 +402,9 @@ export class DataService {
       node.item = item;
       item.nodes ??= [];
       item.nodes.push(node);
+    } else if (node.item) {
+      node.item.nodes ??= [];
+      node.item.nodes.push(node);
     }
 
     if (node.hiddenItems?.length) {
@@ -519,8 +567,8 @@ export class DataService {
     for (const season of this.seasonConfig.items) {
       // Spirit items
       for (const spirit of season.spirits ?? []) {
-        if (!spirit?.tree?.node) { continue; }
-        for (const item of NodeHelper.getItems(spirit.tree.node, true)) {
+        const items = TreeHelper.getItems(spirit.tree, true);
+        for (const item of items) {
           item.season = season;
         }
       }
@@ -569,6 +617,7 @@ export class DataService {
 
     (window as any).skyGuids = this.guidMap;
     (window as any).NodeHelper = NodeHelper;
+    (window as any).TreeHelper = TreeHelper;
     (window as any).DateHelper = DateHelper;
     (window as any).CostHelper = CostHelper;
     (window as any).ItemHelper = ItemHelper;
