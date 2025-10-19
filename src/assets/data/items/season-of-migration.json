@@ -1,0 +1,467 @@
+[
+  // Migration Guide
+  {
+    "id": 2762,
+    "guid": "TkfP81iPy9",
+    "type": "Necklace",
+    "name": "Migration Ultimate Pendant",
+    "icon": "/assets/game/items/2762.png",
+    "group": "Ultimate"
+  },
+  {
+    "id": 2763,
+    "guid": "Aiozp3MLPb",
+    "type": "Shoes",
+    "name": "Migration Ultimate Shoes",
+    "icon": "/assets/game/items/2763.png",
+    "group": "Ultimate"
+  },
+  {
+    "id": 2764,
+    "guid": "0hpLNK4u9L",
+    "type": "Outfit",
+    "name": "Migration Ultimate Outfit",
+    "icon": "/assets/game/items/2764.png",
+    "group": "Ultimate"
+  },
+  {
+    "id": 2765,
+    "guid": "byDLLv3Ryz",
+    "type": "HeadAccessory",
+    "name": "Migration Ultimate Head Accessory",
+    "icon": "/assets/game/items/2765.png",
+    "group": "Ultimate"
+  },
+  // Migrating Jelly Whisperer
+  {
+    "id": 2766,
+    "guid": "RoTa6R2sVl",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2767,
+    "guid": "ePRlu9HXLu",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2768,
+    "guid": "9B2QPPWn48",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2769,
+    "guid": "jbkFi27GCr",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2770,
+    "guid": "NfVB9t8E46",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2771,
+    "guid": "a76PofXOt-",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2772,
+    "guid": "SXmAuOoegt",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2773,
+    "guid": "PiNwpw_7HR",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2774,
+    "guid": "60IqACljyB",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2775,
+    "guid": "Pmp5NUxjVg",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2776,
+    "guid": "c_A5qXHVeq",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2777,
+    "guid": "ThmQjMdhvD",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  // Migrating Butterfly Charmer
+  {
+    "id": 2778,
+    "guid": "uRExXzt5C4",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2779,
+    "guid": "wUA5uVkJ__",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2780,
+    "guid": "x3xPMrKzBu",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2781,
+    "guid": "KVEiZTYLnG",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2782,
+    "guid": "z-RNbMBDuu",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2783,
+    "guid": "JIEw1b8ZZ1",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2784,
+    "guid": "glsm_bea_c",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2785,
+    "guid": "9VbLqLBC_X",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2786,
+    "guid": "_3sgRnI0i7",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2787,
+    "guid": "ZqQODRo_er",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2788,
+    "guid": "kM_fSN03wq",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2789,
+    "guid": "bW4uGzB7Uu",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  // Migrating Manta Whisperer
+  {
+    "id": 2790,
+    "guid": "lHZxCs2X3p",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2791,
+    "guid": "yaUI82cpmr",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2792,
+    "guid": "bw4m8U2dTe",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2793,
+    "guid": "fzEiiF2gx4",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2794,
+    "guid": "1WuIRnVwi5",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2795,
+    "guid": "BPBv6QNmnK",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2796,
+    "guid": "WowA1m9_VQ",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2797,
+    "guid": "RkJHY2_PTs",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2798,
+    "guid": "qK5oNm8O4B",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2799,
+    "guid": "BkCQmHjg0e",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2800,
+    "guid": "Ho1oHraRP5",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2801,
+    "guid": "3saw4zMTWa",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2802,
+    "guid": "7X0_ILnnXB",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  // Migrating Bird Whisperer
+  {
+    "id": 2803,
+    "guid": "vUvY3oklr7",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2804,
+    "guid": "1dFl_GXOvt",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2805,
+    "guid": "FhKKhjC8HC",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2806,
+    "guid": "Oi3cA1kDeD",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2807,
+    "guid": "zJrgWMrIw1",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2808,
+    "guid": "81VyR8LuBT",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2809,
+    "guid": "AGF8Zfp24F",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2810,
+    "guid": "DZh78bh-h9",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2811,
+    "guid": "on83KQWftP",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2812,
+    "guid": "A1oFXgDvGm",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2813,
+    "guid": "rSTz8HCcAg",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2814,
+    "guid": "LjnBnAj39K",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  // Migrating Bellmaker
+  {
+    "id": 2815,
+    "guid": "Vn86dp1yII",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2816,
+    "guid": "T-3x4Ot1p0",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2817,
+    "guid": "BmiVDm4IWr",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2818,
+    "guid": "E2L4G603B5",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2819,
+    "guid": "RrEof5cXS_",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2820,
+    "guid": "AUskfqyWwa",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2821,
+    "guid": "EDpruD_p0p",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2822,
+    "guid": "eFbcD5p_-H",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2823,
+    "guid": "jopuqsQZnd",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2824,
+    "guid": "oB6F-vf0uz",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2825,
+    "guid": "BninG33IyE",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2826,
+    "guid": "MMmJxThIvC",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  }
+]
