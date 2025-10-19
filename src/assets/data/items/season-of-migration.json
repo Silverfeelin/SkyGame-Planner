@@ -66,6 +66,7 @@
     "guid": "NfVB9t8E46",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -87,6 +88,7 @@
     "guid": "PiNwpw_7HR",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -101,6 +103,7 @@
     "guid": "Pmp5NUxjVg",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -108,6 +111,7 @@
     "guid": "c_A5qXHVeq",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -115,6 +119,7 @@
     "guid": "ThmQjMdhvD",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   // Migrating Butterfly Charmer
@@ -151,6 +156,7 @@
     "guid": "z-RNbMBDuu",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -172,6 +178,7 @@
     "guid": "9VbLqLBC_X",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -186,6 +193,7 @@
     "guid": "ZqQODRo_er",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -193,6 +201,7 @@
     "guid": "kM_fSN03wq",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -200,6 +209,7 @@
     "guid": "bW4uGzB7Uu",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   // Migrating Manta Whisperer
@@ -243,6 +253,7 @@
     "guid": "BPBv6QNmnK",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -264,6 +275,7 @@
     "guid": "qK5oNm8O4B",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -278,6 +290,7 @@
     "guid": "Ho1oHraRP5",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -285,6 +298,7 @@
     "guid": "3saw4zMTWa",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -292,6 +306,7 @@
     "guid": "7X0_ILnnXB",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   // Migrating Bird Whisperer
@@ -328,6 +343,7 @@
     "guid": "zJrgWMrIw1",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -349,6 +365,7 @@
     "guid": "DZh78bh-h9",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -363,6 +380,7 @@
     "guid": "A1oFXgDvGm",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -370,6 +388,7 @@
     "guid": "rSTz8HCcAg",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -377,6 +396,7 @@
     "guid": "LjnBnAj39K",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   // Migrating Bellmaker
@@ -420,6 +440,7 @@
     "guid": "AUskfqyWwa",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -441,6 +462,7 @@
     "guid": "jopuqsQZnd",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -455,6 +477,7 @@
     "guid": "BninG33IyE",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   },
   {
@@ -462,6 +485,7 @@
     "guid": "MMmJxThIvC",
     "type": "Special",
     "name": "Placeholder",
+    "group": "SeasonPass",
     "icon": ""
   }
 ]
