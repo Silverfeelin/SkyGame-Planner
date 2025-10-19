@@ -5,7 +5,7 @@
     "guid": "TkfP81iPy9",
     "type": "Necklace",
     "name": "Migration Ultimate Pendant",
-    "icon": "/assets/game/items/2762.png",
+    "icon": "",
     "group": "Ultimate"
   },
   {
@@ -13,7 +13,7 @@
     "guid": "Aiozp3MLPb",
     "type": "Shoes",
     "name": "Migration Ultimate Shoes",
-    "icon": "/assets/game/items/2763.png",
+    "icon": "",
     "group": "Ultimate"
   },
   {
@@ -21,7 +21,7 @@
     "guid": "0hpLNK4u9L",
     "type": "Outfit",
     "name": "Migration Ultimate Outfit",
-    "icon": "/assets/game/items/2764.png",
+    "icon": "",
     "group": "Ultimate"
   },
   {
@@ -29,7 +29,7 @@
     "guid": "byDLLv3Ryz",
     "type": "HeadAccessory",
     "name": "Migration Ultimate Head Accessory",
-    "icon": "/assets/game/items/2765.png",
+    "icon": "",
     "group": "Ultimate"
   },
   // Migrating Jelly Whisperer
