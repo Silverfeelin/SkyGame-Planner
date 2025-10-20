@@ -21,6 +21,12 @@
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
     },
     {
+      "guid": "9fPSNUhxmp",
+      "description": "Behind the Migration campsite.",
+      "mapData": { "position": [-452,280], "videoUrl": "Isle/10.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#Sand_Dunes" }
+    },
+    {
       "guid": "gfQnk_B1mN",
       "description": "On the ramp leading up to the Isle Temple.",
       "mapData": { "position": [-430.38,294], "videoUrl": "Isle/4.mp4" },
@@ -343,6 +349,12 @@
       "guid": "CZ99GFJVyE",
       "description": "In one of the air tunnels of the main island, accessed from the underside of the island.",
       "mapData": { "position": [-343.25,275.75], "videoUrl": "Forest/19.mp4" },
+      "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#The_Wind_Paths" }
+    },
+    {
+      "guid": "JKD88MzDkk",
+      "description": "Near the peak of the main Wind Paths island.",
+      "mapData": { "position": [-333,279], "videoUrl": "Forest/21.mp4" },
       "_wiki": { "href": "https://sky-children-of-the-light.fandom.com/wiki/Children_of_Light#The_Wind_Paths" }
     },
     // #endregion

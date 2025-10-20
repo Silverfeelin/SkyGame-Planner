@@ -25,7 +25,7 @@
       "name": "Sand Dunes",
       "imageUrl": "/assets/game/areas/isle/dunes-720.webp",
       "spirits": [ "qSs575DZ6P", "Tw-J4oXgie", "0yGgX4Yk3c", "U9RJMJseUK", "_ZYvHXY8HB", "udBbDIhZtD", "noQs_dBSQu", "-BIU0YAs1Q", "IKkPcAF07c" ],
-      "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "gfQnk_B1mN" ],
+      "wingedLights": [ "-8ZzA17gRA", "zhBAUiJptT", "OS7R6fkcT9", "9fPSNUhxmp", "gfQnk_B1mN" ],
       "mapShrines": [ "XjPXrh4ygg", "7qrYs-HaOu" ],
       "mapData": { "position": [-446.75,296] },
       "connections": [
@@ -423,7 +423,7 @@
       "name": "Wind Paths",
       "imageUrl": "/assets/game/areas/forest/wind-720.webp",
       "spirits": [ "FF8u1g9XI_", "9Wl9kwxoFk", "VQadeqBPEO", "_7-rIO21Ea", "hovmkrquOR" ],
-      "wingedLights": [ "CZ99GFJVyE" ],
+      "wingedLights": [ "CZ99GFJVyE" , "JKD88MzDkk"],
       "mapShrines": [ "m2ju90tQ5x" ],
       "mapData": { "position": [-345,269.75] },
       "connections": [
