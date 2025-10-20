@@ -5,7 +5,8 @@
     "guid": "TkfP81iPy9",
     "type": "Necklace",
     "name": "Migration Ultimate Pendant",
-    "icon": "",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Season-of-Migration-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Migrating-Guide-Ultimate-Necklace.png",
     "group": "Ultimate"
   },
   {
@@ -13,7 +14,8 @@
     "guid": "Aiozp3MLPb",
     "type": "Shoes",
     "name": "Migration Ultimate Shoes",
-    "icon": "",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Migrating-Guide-Ultimate-Shoes-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Migrating-Guide-Ultimate-Shoes.png",
     "group": "Ultimate"
   },
   {
@@ -21,471 +23,522 @@
     "guid": "0hpLNK4u9L",
     "type": "Outfit",
     "name": "Migration Ultimate Outfit",
-    "icon": "",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Migrating-Guide-Ultimate-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Migrating-Guide-Ultimate-Outfit-front.png",
     "group": "Ultimate"
   },
   {
     "id": 2765,
     "guid": "byDLLv3Ryz",
-    "type": "HeadAccessory",
-    "name": "Migration Ultimate Head Accessory",
-    "icon": "",
+    "type": "HairAccessory",
+    "name": "Migration Ultimate Hair Accessory",
+    "icon": "/assets/game/items/2765.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Guide-Ultimate-Face-Accessory.png",
     "group": "Ultimate"
+  },
+  {
+    "id": 2827,
+    "guid": "Q5L4uyGTZh",
+    "type": "Quest",
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+  },
+  {
+    "id": 2828,
+    "guid": "yArVcGtuj9",
+    "type": "Special",
+    "name": "Migration Warp",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/67/Icon_warp.png"
+  },
+  {
+    "id": 2829,
+    "guid": "7TtaA7y6DH",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
   },
   // Migrating Jelly Whisperer
   {
     "id": 2766,
     "guid": "RoTa6R2sVl",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "name": "Jellyfish Dance",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"
   },
   {
     "id": 2767,
     "guid": "ePRlu9HXLu",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2768,
     "guid": "9B2QPPWn48",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Accompany Migrating Jelly Whisperer",
+    "icon": "/assets/game/items/accompany.png"
   },
   {
     "id": 2769,
     "guid": "jbkFi27GCr",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2770,
     "guid": "NfVB9t8E46",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "name": "Jellyfish Dance",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2771,
     "guid": "a76PofXOt-",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "name": "Jellyfish Dance",
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"
   },
   {
     "id": 2772,
     "guid": "SXmAuOoegt",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Cyan dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Cyan-dye-container-icon.png"
   },
   {
     "id": 2773,
     "guid": "PiNwpw_7HR",
     "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2774,
     "guid": "60IqACljyB",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "HairAccessory",
+    "name": "Migrating Jelly Whisperer Hair Accessory",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Migrating-Jelly-Whisperer-Hairpiece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Migrating-Jelly-Whisperer-Hairpiece.png"
   },
   {
     "id": 2775,
     "guid": "Pmp5NUxjVg",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "name": "Jellyfish Dance",
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2776,
     "guid": "c_A5qXHVeq",
     "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2777,
     "guid": "ThmQjMdhvD",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Season Heart",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "/assets/game/items/2826.png"
   },
   // Migrating Butterfly Charmer
   {
     "id": 2778,
     "guid": "uRExXzt5C4",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "level": 1,
+    "name": "Dizzy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"
   },
   {
     "id": 2779,
     "guid": "wUA5uVkJ__",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2780,
     "guid": "x3xPMrKzBu",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Accompany Migrating Butterfly Charmer",
+    "icon": "/assets/game/items/accompany.png"
   },
   {
     "id": 2781,
     "guid": "KVEiZTYLnG",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Yellow dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Yellow-dye-container-icon.png"
   },
   {
     "id": 2782,
     "guid": "z-RNbMBDuu",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "level": 2,
+    "name": "Dizzy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2783,
     "guid": "JIEw1b8ZZ1",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "level": 3,
+    "name": "Dizzy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"
   },
   {
     "id": 2784,
     "guid": "glsm_bea_c",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Cape",
+    "name": "Migrating Butterfly Charmer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Migrating-Butterfly-Charmer-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Migrating-Butterfly-Charmer-Cape-back.png"
   },
   {
     "id": 2785,
     "guid": "9VbLqLBC_X",
     "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2786,
     "guid": "_3sgRnI0i7",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2787,
     "guid": "ZqQODRo_er",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "level": 4,
+    "name": "Dizzy",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2788,
     "guid": "kM_fSN03wq",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Migrating Butterfly Charmer Hair Accessory",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Migrating-Butterfly-Charmer-Face-Accessory-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Migrating-Butterfly-Charmer-Face-Accessory.png"
   },
   {
     "id": 2789,
     "guid": "bW4uGzB7Uu",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Season Heart",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "/assets/game/items/2826.png"
   },
   // Migrating Manta Whisperer
   {
     "id": 2790,
     "guid": "lHZxCs2X3p",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flag Signal",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"
   },
   {
     "id": 2791,
     "guid": "yaUI82cpmr",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2792,
     "guid": "bw4m8U2dTe",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Accompany Migrating Manta Whisperer",
+    "icon": "/assets/game/items/accompany.png"
   },
   {
     "id": 2793,
     "guid": "fzEiiF2gx4",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Hair",
+    "name": "Migrating Manta Whisperer Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Manta-Whisperer-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Migrating-Manta-Whisperer-Hair-front.png"
   },
   {
     "id": 2794,
     "guid": "1WuIRnVwi5",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2795,
     "guid": "BPBv6QNmnK",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flag Signal",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2796,
     "guid": "WowA1m9_VQ",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flag Signal",
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"
   },
   {
     "id": 2797,
     "guid": "RkJHY2_PTs",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2798,
     "guid": "qK5oNm8O4B",
-    "type": "Special",
-    "name": "Placeholder",
+    "type": "Cape",
+    "name": "Migrating Manta Whisperer Cape",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Migrating-Manta-Whisperer-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Migrating-Manta-Whisperer-Cape-back.png"
   },
   {
     "id": 2799,
     "guid": "BkCQmHjg0e",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "White dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/White-dye-container-icon.png"
   },
   {
     "id": 2800,
     "guid": "Ho1oHraRP5",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flag Signal",
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2801,
     "guid": "3saw4zMTWa",
-    "type": "Special",
-    "name": "Placeholder",
+    "type": "Outfit",
+    "name": "Migrating Manta Whisperer Outfit",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Migrating-Manta-Whisperer-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Migrating-Manta-Whisperer-Outfit-front.png"
   },
   {
     "id": 2802,
     "guid": "7X0_ILnnXB",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Season Heart",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "/assets/game/items/2826.png"
   },
   // Migrating Bird Whisperer
   {
     "id": 2803,
     "guid": "vUvY3oklr7",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flight Run",
+    "level": 1,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"
   },
   {
     "id": 2804,
     "guid": "1dFl_GXOvt",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2805,
     "guid": "FhKKhjC8HC",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Accompany Migrating Bird Whisperer",
+    "icon": "/assets/game/items/accompany.png"
   },
   {
     "id": 2806,
     "guid": "Oi3cA1kDeD",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2807,
     "guid": "zJrgWMrIw1",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flight Run",
+    "level": 2,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2808,
     "guid": "81VyR8LuBT",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flight Run",
+    "level": 3,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"
   },
   {
     "id": 2809,
     "guid": "AGF8Zfp24F",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Outfit",
+    "name": "Migrating Bird Whisperer Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Migrating-Bird-Whisperer-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Migrating-Bird-Whisperer-Outfit-front.png"
   },
   {
     "id": 2810,
     "guid": "DZh78bh-h9",
     "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2811,
     "guid": "on83KQWftP",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blue dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"
   },
   {
     "id": 2812,
     "guid": "A1oFXgDvGm",
-    "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "type": "Emote",
+    "name": "Flight Run",
+    "level": 4,
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2813,
     "guid": "rSTz8HCcAg",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Migrating Bird Whisperer Cape",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Migrating-Bird-Whisperer-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Migrating-Bird-Whisperer-Cape-back.png"
   },
   {
     "id": 2814,
     "guid": "LjnBnAj39K",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Season Heart",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "/assets/game/items/2826.png"
   },
   // Migrating Bellmaker
   {
     "id": 2815,
     "guid": "Vn86dp1yII",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Call",
+    "name": "Lighthorn Call",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3b/Migrating-Bellmaker-Call-icon.png"
   },
   {
     "id": 2816,
     "guid": "T-3x4Ot1p0",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Music",
+    "name": "Migrating Bellmaker Music Sheet",
+    "sheet": "TEMP1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/MusicSheet.png"
   },
   {
     "id": 2817,
     "guid": "BmiVDm4IWr",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Accompany Migrating Bellmaker",
+    "icon": "/assets/game/items/accompany.png"
   },
   {
     "id": 2818,
     "guid": "E2L4G603B5",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Hair",
+    "name": "Migrating Bellmaker Hair",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Hair-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Migrating-Bellmaker-Hair-front.png"
   },
   {
     "id": 2819,
     "guid": "RrEof5cXS_",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2820,
     "guid": "AUskfqyWwa",
     "type": "Special",
-    "name": "Placeholder",
-    "group": "SeasonPass",
-    "icon": ""
+    "name": "Dye spell",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9c/Random-dye-icon.png",
+    "group": "SeasonPass"
   },
   {
     "id": 2821,
     "guid": "EDpruD_p0p",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blue dye",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Blue-dye-container-icon.png"
   },
   {
     "id": 2822,
     "guid": "eFbcD5p_-H",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Blessing",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2823,
     "guid": "jopuqsQZnd",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Migrating Bellmaker Head Accessory",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "/assets/game/items/2823.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/af/Migrating-Bellmaker-Face-Accessory.png"
   },
   {
     "id": 2824,
     "guid": "oB6F-vf0uz",
     "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "name": "Migrating Bellmaker Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Migrating-Bellmaker-Cape-back.png"
   },
   {
     "id": 2825,
     "guid": "BninG33IyE",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Blessing",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png"
   },
   {
     "id": 2826,
     "guid": "MMmJxThIvC",
     "type": "Special",
-    "name": "Placeholder",
+    "name": "Season Heart",
     "group": "SeasonPass",
-    "icon": ""
+    "icon": "/assets/game/items/2826.png"
   }
 ]
