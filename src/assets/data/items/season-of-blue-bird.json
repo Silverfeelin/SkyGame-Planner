@@ -21,7 +21,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/63/Season-of-Blue-Bird-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/46/Season-of-the-Blue-Bird-Pendant.png",
-    "order": 517,
+    "order": 527,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Seasonal_Pendant"
     }
@@ -34,7 +34,7 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Blue-Bird-Guide-Ultimate-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Blue-Bird-Guide-Ultimate-Facepiece.png",
-    "order": 107,
+    "order": 110,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Ultimate_Gifts"
     }
@@ -51,7 +51,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_whitecape.jpg"
     },
-    "order": 904,
+    "order": 915,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Ultimate_Gifts"
     }
@@ -195,7 +195,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Blue_Bird_Guide#Prop"
     },
-    "order": 637
+    "order": 648
   },
   {
     "id": 2569,
@@ -204,7 +204,7 @@
     "name": "Divining Wise Grandparent Face Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Divining-Wise-Grandparent-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Divining-Wise-Grandparent-Facepiece.png",
-    "order": 108,
+    "order": 111,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Divining_Wise_Grandparent#Face_Accessory"
     }
@@ -221,7 +221,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_grandpacape.jpg"
     },
-    "order": 903,
+    "order": 914,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Divining_Wise_Grandparent#Cape"
     }
@@ -286,7 +286,7 @@
     "name": "Costumed Confetti Cousin Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Costumed-Confetti-Cousin-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f1/Costumed-Confetti-Cousin-Hairpiece.png",
-    "order": 329,
+    "order": 337,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Hair_Accessory"
     }
@@ -305,7 +305,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_mask.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_mask.jpg"
     },
-    "order": 471,
+    "order": 481,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Mask"
     }
@@ -338,7 +338,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_confettihat.jpg"
     },
-    "order": 269,
+    "order": 275,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Costumed_Confetti_Cousin#Hair"
     }
@@ -455,7 +455,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_tousleheadphones.jpg"
     },
-    "order": 378,
+    "order": 388,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Head_Accessory"
     }
@@ -492,7 +492,7 @@
       "previewUrl": "/assets/game/dyes/Bluebird_touslecape.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Bluebird_touslecape.jpg"
     },
-    "order": 901,
+    "order": 912,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Royal_Hairtousle_Teen#Cape"
     }
@@ -535,7 +535,7 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Nostalgic-Sparkler-Parent-Hairpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Nostalgic-Sparkler-Parent-Hairpiece.png",
-    "order": 330,
+    "order": 338,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nostalgic_Sparkler_Parent#Hair_Accessory"
     }
@@ -551,7 +551,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_beetlecape.jpg"
     },
-    "order": 902,
+    "order": 913,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nostalgic_Sparkler_Parent#Cape"
     }
@@ -633,7 +633,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Bluebird_pleafulboots.jpg"
     },
-    "order": 128,
+    "order": 133,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Woodcutting_Pleaful_Parent#Shoes"
     }

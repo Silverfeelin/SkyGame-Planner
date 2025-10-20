@@ -1,5 +1,4 @@
 [
-  // Migration Guide
   {
     "id": 2762,
     "guid": "TkfP81iPy9",
@@ -7,7 +6,8 @@
     "name": "Migration Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Season-of-Migration-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Migrating-Guide-Ultimate-Necklace.png",
-    "group": "Ultimate"
+    "group": "Ultimate",
+    "order": 529
   },
   {
     "id": 2763,
@@ -16,7 +16,8 @@
     "name": "Migration Ultimate Shoes",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Migrating-Guide-Ultimate-Shoes-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Migrating-Guide-Ultimate-Shoes.png",
-    "group": "Ultimate"
+    "group": "Ultimate",
+    "order": 135
   },
   {
     "id": 2764,
@@ -25,7 +26,8 @@
     "name": "Migration Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Migrating-Guide-Ultimate-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Migrating-Guide-Ultimate-Outfit-front.png",
-    "group": "Ultimate"
+    "group": "Ultimate",
+    "order": 71
   },
   {
     "id": 2765,
@@ -34,7 +36,8 @@
     "name": "Migration Ultimate Hair Accessory",
     "icon": "/assets/game/items/2765.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Guide-Ultimate-Face-Accessory.png",
-    "group": "Ultimate"
+    "group": "Ultimate",
+    "order": 112
   },
   {
     "id": 2827,
@@ -57,14 +60,14 @@
     "name": "Placeholder",
     "icon": ""
   },
-  // Migrating Jelly Whisperer
   {
     "id": 2766,
     "guid": "RoTa6R2sVl",
     "type": "Emote",
     "name": "Jellyfish Dance",
     "level": 1,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Migrating-Jelly-Whisperer-emote-icon.png",
+    "order": 1603
   },
   {
     "id": 2767,
@@ -114,9 +117,10 @@
   {
     "id": 2773,
     "guid": "PiNwpw_7HR",
-    "type": "Special",
-    "name": "Blessing",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Special-event-spell-icon.png",
+    "type": "Outfit",
+    "name": "Migrating Jelly Whisperer Outfit",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Migrating-Jelly-Whisperer-Outfit-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a2/Migrating-Jelly-Whisperer-Outfit-front.png",
     "group": "SeasonPass"
   },
   {
@@ -125,7 +129,8 @@
     "type": "HairAccessory",
     "name": "Migrating Jelly Whisperer Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Migrating-Jelly-Whisperer-Hairpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Migrating-Jelly-Whisperer-Hairpiece.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Migrating-Jelly-Whisperer-Hairpiece.png",
+    "order": 343
   },
   {
     "id": 2775,
@@ -152,14 +157,14 @@
     "group": "SeasonPass",
     "icon": "/assets/game/items/2826.png"
   },
-  // Migrating Butterfly Charmer
   {
     "id": 2778,
     "guid": "uRExXzt5C4",
     "type": "Emote",
     "level": 1,
     "name": "Dizzy",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Migrating-Butterfly-Charmer-emote-icon.png",
+    "order": 1604
   },
   {
     "id": 2779,
@@ -205,7 +210,8 @@
     "type": "Cape",
     "name": "Migrating Butterfly Charmer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4d/Migrating-Butterfly-Charmer-Cape-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Migrating-Butterfly-Charmer-Cape-back.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Migrating-Butterfly-Charmer-Cape-back.png",
+    "order": 919
   },
   {
     "id": 2785,
@@ -234,7 +240,7 @@
   {
     "id": 2788,
     "guid": "kM_fSN03wq",
-    "type": "Special",
+    "type": "HairAccessory",
     "name": "Migrating Butterfly Charmer Hair Accessory",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/14/Migrating-Butterfly-Charmer-Face-Accessory-icon.png",
@@ -248,14 +254,14 @@
     "group": "SeasonPass",
     "icon": "/assets/game/items/2826.png"
   },
-  // Migrating Manta Whisperer
   {
     "id": 2790,
     "guid": "lHZxCs2X3p",
     "type": "Emote",
     "name": "Flag Signal",
     "level": 1,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/62/Migrating-Manta-Whisperer-emote-icon.png",
+    "order": 1601
   },
   {
     "id": 2791,
@@ -277,7 +283,8 @@
     "type": "Hair",
     "name": "Migrating Manta Whisperer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Migrating-Manta-Whisperer-Hair-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Migrating-Manta-Whisperer-Hair-front.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/88/Migrating-Manta-Whisperer-Hair-front.png",
+    "order": 280
   },
   {
     "id": 2794,
@@ -317,7 +324,8 @@
     "name": "Migrating Manta Whisperer Cape",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/Migrating-Manta-Whisperer-Cape-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Migrating-Manta-Whisperer-Cape-back.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Migrating-Manta-Whisperer-Cape-back.png",
+    "order": 922
   },
   {
     "id": 2799,
@@ -342,7 +350,8 @@
     "name": "Migrating Manta Whisperer Outfit",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/97/Migrating-Manta-Whisperer-Outfit-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Migrating-Manta-Whisperer-Outfit-front.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/94/Migrating-Manta-Whisperer-Outfit-front.png",
+    "order": 69
   },
   {
     "id": 2802,
@@ -352,14 +361,14 @@
     "group": "SeasonPass",
     "icon": "/assets/game/items/2826.png"
   },
-  // Migrating Bird Whisperer
   {
     "id": 2803,
     "guid": "vUvY3oklr7",
     "type": "Emote",
     "name": "Flight Run",
     "level": 1,
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fb/Migrating-Bird-Whisperer-emote-icon.png",
+    "order": 1602
   },
   {
     "id": 2804,
@@ -405,7 +414,8 @@
     "type": "Outfit",
     "name": "Migrating Bird Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/78/Migrating-Bird-Whisperer-Outfit-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Migrating-Bird-Whisperer-Outfit-front.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/82/Migrating-Bird-Whisperer-Outfit-front.png",
+    "order": 70
   },
   {
     "id": 2810,
@@ -434,7 +444,7 @@
   {
     "id": 2813,
     "guid": "rSTz8HCcAg",
-    "type": "Special",
+    "type": "Cape",
     "name": "Migrating Bird Whisperer Cape",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Migrating-Bird-Whisperer-Cape-icon.png",
@@ -448,7 +458,6 @@
     "group": "SeasonPass",
     "icon": "/assets/game/items/2826.png"
   },
-  // Migrating Bellmaker
   {
     "id": 2815,
     "guid": "Vn86dp1yII",
@@ -477,7 +486,8 @@
     "type": "Hair",
     "name": "Migrating Bellmaker Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Hair-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Migrating-Bellmaker-Hair-front.png"
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Migrating-Bellmaker-Hair-front.png",
+    "order": 281
   },
   {
     "id": 2819,
@@ -520,7 +530,7 @@
   {
     "id": 2824,
     "guid": "oB6F-vf0uz",
-    "type": "Special",
+    "type": "Cape",
     "name": "Migrating Bellmaker Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/95/Migrating-Bellmaker-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Migrating-Bellmaker-Cape-back.png"

@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Lantern_Pack"
     },
-    "order": 596
+    "order": 607
   },
   {
     "id": 1903,
@@ -21,7 +21,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Bunny_Accessory"
     },
-    "order": 359
+    "order": 369
   },
   {
     "id": 1904,
@@ -33,7 +33,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Parasol"
     },
-    "order": 597
+    "order": 608
   },
   {
     "id": 1905,
@@ -52,7 +52,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Summer_Hat"
     },
-    "order": 358,
+    "order": 368,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Sunlight_hat.jpg",
       "primary": {}
@@ -68,7 +68,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Hiking_Grouch#Prop"
     },
-    "order": 677
+    "order": 688
   },
   {
     "id": 1908,
@@ -80,6 +80,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lazy_Days#Seashell_Hairpin"
     },
-    "order": 357
+    "order": 367
   }
 ]
