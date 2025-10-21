@@ -1,0 +1,113 @@
+<div class="sky-card mb">
+  <div class="sky-card-body">
+    <div class="container">
+      <p>This tool helps you plan ahead for the Season of Migration. It was inspired by StrangeStiffy's <a href="https://reddit.com/r/SkyGame/comments/1oc7s0a/psa_spirit_friendship_minmaxing/" target="_blank">post on Reddit</a>.</p>
+
+      <hr/>
+      <p>
+        The green number above each item shows the friendship points you get per seasonal candle spent on the item.<br/>
+        The grey number next to it shows the total friendship points you get from buying the item.<br/>
+        For example, if a blessing costs 4 <mat-icon style="vertical-align: middle;" [svgIcon]="'season-candle'"></mat-icon> and gives <span class="node-value">(30)</span> friendship points, the efficiency is <span class="node-efficiency">7.5</span> friendship points per season candle.<br/>
+        The higher the green number, the better.
+      </p>
+      <p>
+        A daily spirit adventure gives you 10 friendship points in their spirit tree.<br/>
+        When you are not able to unlock all items you want through daily spirit adventures, try to buy the most efficient items first.<br/>
+        This will help you save seasonal candles that will convert to regular candles after the season.
+      </p>
+      <p>
+        A simple example:<br/>
+        Buying a 4 <mat-icon style="vertical-align: middle;" [svgIcon]="'season-candle'"></mat-icon>
+        blessing from the Jelly Whisperer is twice as efficient as buying the same blessing from the Manta Whisperer, since it gives more friendship points for the same cost.<br/>
+        Buying the Jelly Whisperer blessing practically saves you 6 days of spirit adventures whereas buying the Manta Whisperer blessing only saves you 3 days.
+      </p>
+      <p>
+        Do note:<br/>
+        If you're short 40 friendship points then it might not be a good idea to buy the "most efficient" item if it's worth 30 points.<br/>
+        You would still be short 10 points and need to buy another item, which can cost more overall.
+      </p>
+      <hr/>
+      <p>
+        Always prioritize buying the items you want first!
+      </p>
+      <hr/>
+      <p>
+        You can click on the items that you want to highlight them.<br/>
+        Below each spirit tree you will then see the remaining friendship points that you need to gain through daily adventures or by buying items you are not interested in.
+      </p>
+      <div class="sky-flex">
+        <button type="button" class="" (click)="highlightCosmetics()">Highlight cosmetics</button>
+        <button type="button" class="" (click)="highlightSeasonHearts()">Highlight season hearts</button>
+        <button type="button" class="button-danger" (click)="promptResetHighlight()">Reset highlighted items</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sky-flex">
+  @for (tree of trees; track tree.guid) {
+    <div>
+      <app-spirit-tree
+        [tree]="tree"
+        [enableControls]="false"
+        [nodeOverlayTemplate]="tNode"
+        [highlightNode]="wantNodeGuids()"
+        [forceNodeAction]="'emit'"
+        (nodeClicked)="onNodeClicked($event)"
+      ></app-spirit-tree>
+      <div class="sky-card">
+        <div class="container">
+          <div>Current friendship points: <mat-icon (click)="showingFriendshipHelp=true" class="action">question_mark</mat-icon></div>
+          <input type="number" min="0" max="280" step="10" [formControl]="friendshipControls[$index]">
+          <div>Missing friendship points:</div>
+          <div>{{ missingFriendship[$index] }}</div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Results</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      There are <b class="c-new">{{ daysLeft }}</b> days left in this season (including today), giving you a total of <b class="c-new">{{ daysFriendshipLeft }}</b> friendship points through daily spirit adventures.<br/>
+      You still need <b class="c-old">{{ missingFriendshipTotal }}</b> friendship points to reach all of the items you've highlighted.<br/>
+      @if (missingFriendshipTotal > daysFriendshipLeft) {
+        <b class="c-old">You can't get all of the items you've highlighted through daily spirit adventures alone.</b><br/>
+        To get the items you want, <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft }}</b> friendship points will need to be obtained by buying items you've not highlighted.<br/>
+        Look for the largest green numbers to prioritize which items to buy!
+      } @else {
+        <b class="c-new">You can get all of the items you've highlighted through daily spirit adventures alone!</b>
+      }
+    </div>
+  </div>
+</div>
+
+
+<ng-template #tNode let-node>
+  <div class="node-overlay">
+    @if (node && !node.unlocked && !want()[node.guid] && nodeValues[node.guid]) {
+      <span class="node-efficiency">{{ nodeEfficiency[node.guid] }}</span>
+      <span class="node-value">({{ nodeValues[node.guid] }})</span>
+    }
+  </div>
+</ng-template>
+
+@if (showingFriendshipHelp) {
+  <app-overlay (close)="showingFriendshipHelp=false">
+    <p>
+      The 'current friendship points' initial value is based on the items you've unlocked on the Sky Planner.<br/>
+      You can manually adjust this number to match your actual in-game friendship points.<br/>
+      The calculation will update accordingly.
+    </p>
+    <p>
+      Here's how to read your friendship points in-game.
+      Each star represents a total number of points.<br/>
+      In the below example I have 30 points because my line is filled three quarters towards the first star.<br/>
+      <img style="margin-left: 10px;" src="/assets/game/seasons/migration/friendship-guide.webp" />
+    </p>
+  </app-overlay>
+}

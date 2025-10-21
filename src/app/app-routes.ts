@@ -55,6 +55,7 @@ import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
 import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
+import { MigrationOptimizerComponent } from './components/season/migration-optimizer/migration-optimizer.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -102,6 +103,7 @@ export const routes: Routes = [
           { path: 'area', component: AreasComponent, title: title('Areas') },
           { path: 'area/:guid', component: AreaComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
+          { path: 'season/migration-optimizer', component: MigrationOptimizerComponent, title: title('Migration Friendship Optimizer') },
           { path: 'season/:guid', component: SeasonComponent },
           { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
           { path: 'settings', component: SettingsComponent, title: title('Settings') },
