@@ -632,6 +632,33 @@
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=22d8261c87dd80418568fb01053bd2b1&pm=c"
       }
     },
+    {
+      "guid": "wslfxJ5HZJ",
+      "name": "Season of Migration",
+      "shortName": "Migration",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Season-of-Migration-icon.png",
+      "imageUrl": "https://image.thatskygame.com/cdn-cgi/image/w=1280,h=1200,f=webp/https://a.storyblok.com/f/108104/1920x1080/f161b1b21f/tmis_s28-lightcreatures-wide_sls_na_na_2510.jpg",
+      "year": 2025,
+      "date": "2025-10-20",
+      "endDate": "2026-01-04",
+      "spirits": [
+        "rpBWF2PFJc",
+        "gHhy04B7r9",
+        "1mYa5Pnpdy",
+        "Mxs_zZGt7y",
+        "k9ZI3GoyPE",
+        "yfmzfJGyRp",
+      ],
+      "draft": true,
+      "shops": [
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Migration"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2828261c87dd80819d77d8d2309a9228&pm=c"
+      }
+    }
     // #endregion
   ],
   "_wiki": {

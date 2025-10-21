@@ -19,6 +19,7 @@ import { TableColumnDirective } from '../table/table-column/table-column.directi
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
 import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 type ViewMode = 'grid' | 'cards';
 type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
@@ -124,7 +125,7 @@ export class SpiritsComponent {
       const itemSet = new Set<IItem>();
       trees.forEach(tree => {
         // Get all nodes
-        NodeHelper.getItems(tree!.node).forEach(item => {
+        TreeHelper.getItems(tree).forEach(item => {
           if (itemSet.has(item)) { return; }
           itemSet.add(item);
           if (item.unlocked) { unlockedItems++; }
@@ -139,7 +140,7 @@ export class SpiritsComponent {
       const lastTree = trees.at(-1);
       if (lastTree) {
         // Count items from last tree.
-        NodeHelper.getItems(lastTree!.node).forEach(item => {
+        TreeHelper.getItems(lastTree).forEach(item => {
           if (item.unlocked) { unlockedLast++; }
           totalLast++;
 

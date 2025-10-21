@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 500
+    "order": 511
   },
   {
     "id": 422,
@@ -27,7 +27,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 429
+    "order": 440
   },
   {
     "id": 423,
@@ -44,7 +44,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 844
+    "order": 856
   },
   {
     "id": 424,
@@ -159,7 +159,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory"
     },
-    "order": 371,
+    "order": 382,
     "group": "SeasonPass",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Dreams_yetihorns.jpg",
@@ -222,7 +222,7 @@
       "previewUrl": "/assets/game/dyes/hair/Dreams_yeti.jpg",
       "infoUrl": "/assets/game/dyes/hair/2slots_Dreams_yeti.jpg"
     },
-    "order": 208
+    "order": 215
   },
   {
     "id": 1132,
@@ -310,7 +310,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Dreams_DP.jpg"
     },
-    "order": 209,
+    "order": 216,
     "group": "SeasonPass"
   },
   {
@@ -357,7 +357,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
-    "order": 427,
+    "order": 438,
     "group": "SeasonPass"
   },
   {
@@ -374,7 +374,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
     },
-    "order": 842
+    "order": 854
   },
   {
     "id": 1145,
@@ -387,7 +387,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument"
     },
-    "order": 561,
+    "order": 573,
     "group": "SeasonPass"
   },
   {
@@ -512,7 +512,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
     },
-    "order": 117
+    "order": 123
   },
   {
     "id": 1154,
@@ -536,7 +536,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
     },
-    "order": 841
+    "order": 853
   },
   {
     "id": 1156,
@@ -552,7 +552,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
-    "order": 426,
+    "order": 437,
     "group": "SeasonPass"
   },
   {
@@ -615,7 +615,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Dreams_mentor.jpg"
     },
-    "order": 210
+    "order": 217
   },
   {
     "id": 1163,
@@ -662,7 +662,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
     },
-    "order": 428
+    "order": 439
   },
   {
     "id": 1167,
@@ -693,7 +693,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },
-    "order": 843,
+    "order": 855,
     "group": "SeasonPass"
   },
   {

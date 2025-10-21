@@ -17,6 +17,7 @@ import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/c
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import { CurrencyService } from '@app/services/currency.service';
 import { StorageService } from '@app/services/storage.service';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-event-calculator',
@@ -120,8 +121,8 @@ export class EventCalculatorComponent {
     this.trees = this.spirits.map(s => s.tree!);
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {
-      this.allNodes.push(...NodeHelper.all(t.node));
-      acc[t.node.guid] = t.node;
+      this.allNodes.push(...TreeHelper.getNodes(t));
+      acc[t.node!.guid] = t.node!;
       return acc;
     }, {} as { [guid: string]: INode });
 

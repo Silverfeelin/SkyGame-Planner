@@ -10,13 +10,33 @@ import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.com
 import { DataService } from '@app/services/data.service';
 
 const fileNames = [
-  '/assets/game/dyes/outfit/Anniversary_jellydress.jpg',
+  '/assets/game/dyes/2slots_Migration_ulthorns.jpg',
+  '/assets/game/dyes/Migration_lighthornglasses.jpg',
+  '/assets/game/dyes/Migration_ulthorns.jpg',
+  '/assets/game/dyes/shoes/Migration_ultboots.jpg',
+  '/assets/game/dyes/outfit/2slots_Migration_jellypants.jpg',
+  '/assets/game/dyes/outfit/2slots_Migration_mantapants.jpg',
+  '/assets/game/dyes/outfit/2slots_Migration_ultpants.jpg',
+  '/assets/game/dyes/outfit/Migration_bird.jpg',
+  '/assets/game/dyes/outfit/Migration_jellypants.jpg',
+  '/assets/game/dyes/outfit/Migration_mantapants.jpg',
+  '/assets/game/dyes/outfit/Migration_ultpants.jpg',
+  '/assets/game/dyes/mask/2slots_Mischief_crowmask.jpg',
   '/assets/game/dyes/mask/Base_sleepy.jpg',
-  '/assets/game/dyes/hair/2slots_Bloom_rosebraid.jpg',
-  '/assets/game/dyes/hair/Bloom_rosebraid.jpg',
-  '/assets/game/dyes/cape/2slot_Anniversary_tuxedocape.jpg',
-  '/assets/game/dyes/cape/Anniversary_tuxedocape.jpg'
-]
+  '/assets/game/dyes/mask/Mischief_crowmask.jpg',
+  '/assets/game/dyes/head-accessory/2slots_Migration_jellytassels.jpg',
+  '/assets/game/dyes/head-accessory/Migration_jellytassels.jpg',
+  '/assets/game/dyes/hair/2slots_Migration_mantahawk.jpg',
+  '/assets/game/dyes/hair/Migration_lighthornhair.jpg',
+  '/assets/game/dyes/hair/Migration_mantahawk.jpg',
+  '/assets/game/dyes/cape/2slots_Migration_butterfly.jpg',
+  '/assets/game/dyes/cape/2slots_Migration_wingcape.jpg',
+  '/assets/game/dyes/cape/Migration_butterfly.jpg',
+  '/assets/game/dyes/cape/Migration_lighthorncape.jpg',
+  '/assets/game/dyes/cape/Migration_manta.jpg',
+  '/assets/game/dyes/cape/Migration_wingcape.jpg',
+  '/assets/game/dyes/cape/Mischief_curtaincape.jpg'
+];
 
 @Component({
     selector: 'app-editor-dyes',

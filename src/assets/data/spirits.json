@@ -2002,6 +2002,50 @@
       "tree": "PzoY-Wkk8O"
     },
     // #endregion
+    // #region Migration
+    {
+      "guid": "rpBWF2PFJc",
+      "type": "Guide",
+      "name": "Migration Guide",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "IVb8WCKt8D"
+    },
+    {
+      "guid": "1mYa5Pnpdy",
+      "type": "Season",
+      "name": "Migrating Jelly Whisperer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "zK7AFf0rvZ"
+    },
+    {
+      "guid": "Mxs_zZGt7y",
+      "type": "Season",
+      "name": "Migrating Butterfly Charmer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "nCGzsegB0l"
+    },
+    {
+      "guid": "k9ZI3GoyPE",
+      "type": "Season",
+      "name": "Migrating Manta Whisperer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "iFANrbgSY4"
+    },
+    {
+      "guid": "yfmzfJGyRp",
+      "type": "Season",
+      "name": "Migrating Bird Whisperer",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "nrvSEyff0h"
+    },
+    {
+      "guid": "gHhy04B7r9",
+      "type": "Season",
+      "name": "Migrating Bellmaker",
+      "imageUrl": "/assets/icons/question.webp",
+      "tree": "ko9lr8M4J5"
+    },
+    // #endregion
 
     // #region Nesting Challenges
     {

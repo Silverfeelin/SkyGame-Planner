@@ -79,7 +79,7 @@ export class EditorEventInstanceComponent {
     // Copy spirit trees.
     const spirits: Array<IEventInstanceSpirit> = [];
     this.lastInstance?.spirits?.forEach(s => {
-      const treeNode = NodeHelper.clone(s.tree.node);
+      const treeNode = NodeHelper.clone(s.tree.node!);
 
       const tree: ISpiritTree = {
         guid: nanoid(10),
@@ -219,7 +219,7 @@ export class EditorEventInstanceComponent {
     const obj = this.instance.spirits.map(s => {
       return {
         guid: s.tree.guid,
-        node: s.tree.node.guid
+        node: s.tree.node!.guid
       };
     });
 

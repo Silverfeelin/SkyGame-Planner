@@ -15,7 +15,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Frock_and_Updo"
     },
-    "order": 81
+    "order": 85
   },
   {
     "id": 2305,
@@ -24,7 +24,7 @@
     "name": "Moonlight Updo",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Moonlight-Updo-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Moonlight-Updo-front.png",
-    "order": 289,
+    "order": 298,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Frock_and_Updo"
     }
@@ -36,7 +36,7 @@
     "name": "Moonlight Earrings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Moonlight-Earrings-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Moonlight-Earrings.png",
-    "order": 387,
+    "order": 398,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Earrings"
     }
@@ -48,7 +48,7 @@
     "name": "Moonlight Lantern",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Moonlight-Lantern-Decoration-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Moonlight-Lantern-Decoration.png",
-    "order": 788,
+    "order": 800,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Lantern_Decoration"
     }
@@ -60,7 +60,7 @@
     "name": "Moonlight Blossom Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Moonlight-Blossom-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Moonlight-Blossom-Accessory.png",
-    "order": 351,
+    "order": 362,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Blossom_Accessory"
     }
@@ -89,7 +89,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Tufted_Tail_Accessory"
     },
-    "order": 543
+    "order": 555
   },
   {
     "id": 2759,
@@ -101,7 +101,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Banner"
     },
-    "order": 653
+    "order": 665
   },
   {
     "id": 2760,
@@ -113,7 +113,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Garland_Cape"
     },
-    "order": 932
+    "order": 948
   },
   {
     "id": 2761,
@@ -125,6 +125,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Basin"
     },
-    "order": 652
+    "order": 664
   }
 ]

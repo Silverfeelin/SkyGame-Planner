@@ -1,5 +1,5 @@
 import { IConfig, IGuid } from "./base.interface";
-import { ISpiritTree } from "./spirit-tree.interface";
+import { ISpiritTree, ISpiritTreeTier } from "./spirit-tree.interface";
 import { ICost } from "./cost.interface";
 import { IItem } from "./item.interface";
 
@@ -14,8 +14,10 @@ export interface INode extends IGuid, ICost {
 
   /**
    * Spirit tree containing this node.
-   * @remarks Only the first node has this reference, other nodes have a reference to their `prev` node.
-   * */
+   * @remarks For normal spirit trees only the first node has this reference.
+   * Other nodes have a reference to their `prev` node.
+   * For spirit trees with friendship tiers, every node has this reference.
+   */
   spiritTree?: ISpiritTree;
   /** Node north west of this node. */
   nw?: INode;
@@ -28,6 +30,7 @@ export interface INode extends IGuid, ICost {
   /**
    * Root node.
    * @remarks Can be a self-reference if this is the root node.
+   * For spirit trees with friendship tiers, every node is its own root.
    */
   root?: INode;
   // #endregion

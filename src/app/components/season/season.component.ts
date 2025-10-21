@@ -24,6 +24,7 @@ import { StorageService } from '@app/services/storage.service';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 import { IapCardComponent } from "../iap/iap-card/iap-card.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-season',
@@ -139,7 +140,7 @@ export class SeasonComponent implements OnDestroy {
 
     [this.guide, ...this.spirits].map(s => s?.tree).forEach(tree => {
       if (!tree) { return; }
-      NodeHelper.all(tree.node).forEach(n => {
+      TreeHelper.getNodes(tree).forEach(n => {
         this.sc += n.sc || 0;
         this.sh += n.sh || 0;
         if (!n.unlocked && !n.item?.unlocked) {
