@@ -84,7 +84,7 @@
       You still need <b class="c-old">{{ missingFriendshipTotal }}</b> friendship points to reach all of the items you've highlighted.<br/>
       @if (missingFriendshipTotal > daysFriendshipLeft) {
         <b class="c-old">You can't get all of the items you've highlighted through daily spirit adventures alone.</b><br/>
-        <!-- To get the items you want, <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft }}</b> friendship points will need to be obtained by buying items you've not highlighted.<br/> -->
+        You've selected items that require <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft }}</b> more friendship points than you can get through daily adventures.<br/>
         Look for the largest green numbers to prioritize which items to buy!
       } @else {
         <b class="c-new">You can get all of the items you've highlighted through daily spirit adventures alone!</b>
