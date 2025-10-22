@@ -45,7 +45,8 @@ export class MigrationOptimizerComponent {
     return toSignal(c.valueChanges, { initialValue: c.value });
   });
 
-  missingFriendship = [ 0, 0, 0, 0, 0 ];
+  missingFriendship = [ [0], [0], [0], [0], [0] ];
+  missingFriendshipTotals = [ 0, 0, 0, 0, 0];
   missingFriendshipTotal = 0;
   showingFriendshipHelp = false;
 
@@ -79,7 +80,7 @@ export class MigrationOptimizerComponent {
       });
 
       if (currentFriendship > 0) {
-        this.friendshipControls[iTree].setValue(currentFriendship);
+        this.friendshipControls[iTree].setValue(currentFriendship, { emitEvent: true });
       }
     });
 
@@ -149,6 +150,9 @@ export class MigrationOptimizerComponent {
 
   calculate(): void {
     const wantNodeGuids = this.wantNodeGuids();
+    this.missingFriendshipTotals = [ 0, 0, 0, 0, 0 ];
+    this.missingFriendship = [ [], [], [], [], [] ];
+
     this.trees.forEach((tree, iTree) => {
       const tiers = TreeHelper.getTiers(tree);
 
@@ -168,6 +172,7 @@ export class MigrationOptimizerComponent {
         const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
         const tierAvailableNodes = tierFriendshipNodes.filter(node => !node.unlocked);
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierAvailableNodes.length;
+        const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
 
         // Add guaranteed nodes.
         tierAvailableNodes.forEach(node => {
@@ -176,11 +181,20 @@ export class MigrationOptimizerComponent {
           }
         });
 
-        const missingPoints = requiredFriendship - currentFriendship;
-        this.missingFriendship[iTree] = Math.max(0, missingPoints);
-      });
-    });
+        if (currentFriendship >= requiredFriendship) {
+          this.missingFriendship[iTree].push(0);
+        } else {
+          this.missingFriendship[iTree].push(Math.max(0, friendshipNeeded - currentFriendship));
+          if (friendshipNeeded > currentFriendship) {
+            currentFriendship = friendshipNeeded;
+          }
+        }
 
-    this.missingFriendshipTotal = this.missingFriendship.reduce((a, b) => a + b, 0);
+        // const missingPoints = requiredFriendship - currentFriendship;
+      });
+
+      this.missingFriendshipTotals[iTree] = this.missingFriendship[iTree].reduce((a, b) => a + b, 0);
+    });
+    this.missingFriendshipTotal = this.missingFriendshipTotals.reduce((a, b) => a + b, 0);
   }
 }

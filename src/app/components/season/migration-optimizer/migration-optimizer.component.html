@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<div class="sky-flex">
+<div class="sky-flex scroll-x">
   @for (tree of trees; track tree.guid) {
     <div>
       <app-spirit-tree
@@ -57,10 +57,17 @@
       ></app-spirit-tree>
       <div class="sky-card">
         <div class="container">
-          <div>Current friendship points: <mat-icon (click)="showingFriendshipHelp=true" class="action">question_mark</mat-icon></div>
+          <div><b>Current friendship points:</b> <mat-icon (click)="showingFriendshipHelp=true" class="action">question_mark</mat-icon></div>
           <input type="number" min="0" max="280" step="10" [formControl]="friendshipControls[$index]">
-          <div>Missing friendship points:</div>
-          <div>{{ missingFriendship[$index] }}</div>
+          <div><b>Missing points per level:</b></div>
+          @for (points of missingFriendship[$index]; track $index) {
+            <div>Level {{$index + 1}}: <b [class.c-new]="points===0" [class.c-old]="points>0">{{ points }}</b></div>
+          }
+          <div><b>Missing total:</b></div>
+          <div>
+            @let total = missingFriendshipTotals[$index];
+            <b [class.c-new]="total===0" [class.c-old]="total>0">{{ total }}</b>
+          </div>
         </div>
       </div>
     </div>
@@ -77,7 +84,7 @@
       You still need <b class="c-old">{{ missingFriendshipTotal }}</b> friendship points to reach all of the items you've highlighted.<br/>
       @if (missingFriendshipTotal > daysFriendshipLeft) {
         <b class="c-old">You can't get all of the items you've highlighted through daily spirit adventures alone.</b><br/>
-        To get the items you want, <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft }}</b> friendship points will need to be obtained by buying items you've not highlighted.<br/>
+        <!-- To get the items you want, <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft }}</b> friendship points will need to be obtained by buying items you've not highlighted.<br/> -->
         Look for the largest green numbers to prioritize which items to buy!
       } @else {
         <b class="c-new">You can get all of the items you've highlighted through daily spirit adventures alone!</b>
