@@ -11,7 +11,7 @@
       <p>
         The green number above each item shows the friendship points you get per seasonal candle spent on the item.<br/>
         The grey number next to it shows the total friendship points you get from buying the item.<br/>
-        For example, if a blessing costs 4 <mat-icon style="vertical-align: middle;" [svgIcon]="'season-candle'"></mat-icon> and gives <span class="node-value">(30)</span> friendship points, the efficiency is <span class="node-efficiency">7.5</span> friendship points per season candle.<br/>
+        For example, if a blessing costs 4 <mat-icon style="vertical-align: text-bottom;" [svgIcon]="'season-candle'"></mat-icon> and gives <span class="node-value">(30)</span> friendship points, the efficiency is <span class="node-efficiency">7.5</span> friendship points per season candle.<br/>
         The higher the green number, the better.
       </p>
       <p>
@@ -21,7 +21,7 @@
       </p>
       <p>
         A simple example:<br/>
-        Buying a 4 <mat-icon style="vertical-align: middle;" [svgIcon]="'season-candle'"></mat-icon>
+        Buying a 4 <mat-icon style="vertical-align: text-bottom;" [svgIcon]="'season-candle'"></mat-icon>
         blessing from the Jelly Whisperer is twice as efficient as buying the same blessing from the Manta Whisperer, since it gives more friendship points for the same cost.<br/>
         Buying the Jelly Whisperer blessing practically saves you 6 days of spirit adventures whereas buying the Manta Whisperer blessing only saves you 3 days.
       </p>
@@ -42,6 +42,7 @@
       <div class="sky-flex">
         <button type="button" class="" (click)="highlightCosmetics()">Highlight cosmetics</button>
         <button type="button" class="" (click)="highlightSeasonHearts()">Highlight season hearts</button>
+        <button type="button" class="" (click)="highlightSeasonPass()">Highlight season pass</button>
         <button type="button" class="button-danger" (click)="promptResetHighlight()">Reset highlighted items</button>
       </div>
     </div>
@@ -89,7 +90,23 @@
       @if (missingFriendshipTotal > daysFriendshipLeft) {
         <b class="c-old">You can't get all of the items you've highlighted through daily spirit adventures alone.</b><br/>
         You've selected items that require <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft }}</b> more friendship points than you can get through daily adventures.<br/>
-        Look for the largest green numbers to prioritize which items to buy!
+        @if (knapsackNodes.length > 0) {
+          <hr/>
+          To reach all of the items you've highlighted, consider buying the following additional items:
+          <ul>
+            @for (node of knapsackNodes; track node.guid) {
+              <li>
+                {{ node.root?.spiritTree?.spirit?.name }} - {{ node.item!.name }} -
+                {{ node.sc }} <mat-icon style="vertical-align: text-bottom;" [svgIcon]="'season-candle'"></mat-icon><br/>
+                Efficiency: <span class="node-efficiency">{{ nodeEfficiency[node.guid] }}</span>&nbsp;
+                <span class="node-value">({{ nodeValues[node.guid] }})</span>
+              </li>
+            }
+          </ul>
+          This will give you an additional <b class="c-new">{{ knapsackTotalPoints }}</b> friendship points for {{ knapsackTotalSc }} <mat-icon style="vertical-align: text-bottom;" [svgIcon]="'season-candle'"></mat-icon>.
+        } @else {
+          Look for the largest green numbers to prioritize which items to buy!
+        }
       } @else {
         <b class="c-new">You can get all of the items you've highlighted through daily spirit adventures alone!</b>
       }

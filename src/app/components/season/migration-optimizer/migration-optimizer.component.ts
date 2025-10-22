@@ -50,6 +50,10 @@ export class MigrationOptimizerComponent {
   missingFriendshipTotal = 0;
   showingFriendshipHelp = false;
 
+  knapsackNodes: Array<INode> = [];
+  knapsackTotalSc = 0;
+  knapsackTotalPoints = 0;
+
   constructor() {
     const savedWantNodes = JSON.parse(this.storageService.getKey('migration.optimizer') || '[]') as string[];
     if (savedWantNodes.length > 0) {
@@ -119,6 +123,7 @@ export class MigrationOptimizerComponent {
     });
     if (changed) {
       this.want.set(want);
+      this.storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
       this.calculate();
     }
   }
@@ -137,6 +142,26 @@ export class MigrationOptimizerComponent {
     });
     if (changed) {
       this.want.set(want);
+      this.storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
+      this.calculate();
+    }
+  }
+
+  highlightSeasonPass(): void {
+    let changed = false;
+    const want = { ...this.want() };
+    this.trees.forEach(tree => {
+      const nodes = TreeHelper.getNodes(tree);
+      nodes.forEach(node => {
+        if (!node?.item) { return; }
+        if (node.item.group !== 'SeasonPass') { return; }
+        want[node.guid] = node;
+        changed = true;
+      });
+    });
+    if (changed) {
+      this.want.set(want);
+      this.storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
       this.calculate();
     }
   }
@@ -150,6 +175,7 @@ export class MigrationOptimizerComponent {
 
   calculate(): void {
     const wantNodeGuids = this.wantNodeGuids();
+    const knapsackNodes: Array<INode> = [];
     this.missingFriendshipTotals = [ 0, 0, 0, 0, 0 ];
     this.missingFriendship = [ [], [], [], [], [] ];
 
@@ -174,10 +200,12 @@ export class MigrationOptimizerComponent {
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
 
-        // Add guaranteed nodes.
+        // Add guaranteed nodes. Undesired nodes go into knapsack algorithm.
         tierAvailableNodes.forEach(node => {
           if (wantNodeGuids.includes(node.guid)) {
-            currentFriendship += friendshipPerNode;
+          currentFriendship += friendshipPerNode;
+          } else {
+            knapsackNodes.push(node);
           }
         });
 
@@ -189,12 +217,54 @@ export class MigrationOptimizerComponent {
             currentFriendship = friendshipNeeded;
           }
         }
-
-        // const missingPoints = requiredFriendship - currentFriendship;
       });
 
       this.missingFriendshipTotals[iTree] = this.missingFriendship[iTree].reduce((a, b) => a + b, 0);
     });
+
     this.missingFriendshipTotal = this.missingFriendshipTotals.reduce((a, b) => a + b, 0);
+    const knapsackFriendship = this.missingFriendshipTotal - this.daysFriendshipLeft;
+    this.knapsackNodes = this.knapsack(knapsackNodes, knapsackFriendship) ?? [];
+    this.knapsackTotalSc = this.knapsackNodes.reduce((sum, n) => sum + (n.sc ?? 0), 0);
+    this.knapsackTotalPoints = this.knapsackNodes.reduce((sum, n) => sum + this.nodeValues[n.guid], 0);
+    console.log(this.knapsackNodes);
+  }
+
+  knapsack(nodes: Array<INode>, target: number): Array<INode> | undefined {
+    if (target <= 0 || nodes.length === 0) { return undefined; }
+    const max = nodes.reduce((sum, node) => sum + this.nodeValues[node.guid], 0);
+    const dp = Array(max + 1).fill(null) as Array<INode>[] | null[];
+    dp[0] = [];
+
+    for (const node of nodes) {
+      for (let p = max; p >= this.nodeValues[node.guid]; p--) {
+        const prev = dp[p - this.nodeValues[node.guid]];
+        if (prev !== null) {
+          const newSet = [...prev, node];
+          const newCost = newSet.reduce((sum, n) => sum + (n.sc ?? 0), 0);
+          const oldCost = dp[p]?.reduce((sum, n) => sum + (n.sc ?? 0), 0) ?? Infinity;
+
+          if (newCost < oldCost) {
+            dp[p] = newSet;
+          }
+        }
+      }
+    }
+
+    let best: Array<INode> | undefined = undefined;
+    let bestCost = Infinity;
+
+    for (let p = target; p <= max; p++) {
+      const set = dp[p];
+      if (set) {
+        const cost = set.reduce((sum, n) => sum + (n.sc ?? 0), 0);
+        if (cost < bestCost) {
+          best = set;
+          bestCost = cost;
+        }
+      }
+    }
+
+    return best;
   }
 }
