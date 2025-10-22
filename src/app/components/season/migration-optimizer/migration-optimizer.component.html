@@ -5,6 +5,10 @@
 
       <hr/>
       <p>
+        This page refers to friendship points in the form of numbers. What does that mean?<br/>
+        <a class="text-link" (click)="showingFriendshipHelp=true">Click here</a> for more information.
+      </p>
+      <p>
         The green number above each item shows the friendship points you get per seasonal candle spent on the item.<br/>
         The grey number next to it shows the total friendship points you get from buying the item.<br/>
         For example, if a blessing costs 4 <mat-icon style="vertical-align: middle;" [svgIcon]="'season-candle'"></mat-icon> and gives <span class="node-value">(30)</span> friendship points, the efficiency is <span class="node-efficiency">7.5</span> friendship points per season candle.<br/>
@@ -106,15 +110,22 @@
 @if (showingFriendshipHelp) {
   <app-overlay (close)="showingFriendshipHelp=false">
     <p>
-      The 'current friendship points' initial value is based on the items you've unlocked on the Sky Planner.<br/>
-      You can manually adjust this number to match your actual in-game friendship points.<br/>
-      The calculation will update accordingly.
+      Friendship with spirits can be represented by a numerical value, which we label as  "friendship points" on this page.<br/>
+      Each friendship level requires a specific amount of friendship points.
     </p>
     <p>
       Here's how to read your friendship points in-game.
       Each star represents a total number of points.<br/>
-      In the below example I have 30 points because my line is filled three quarters towards the first star.<br/>
+      In the below screenshot I have 30 points because my line is filled three quarters towards the first star.<br/>
+    </p>
+    <p>
+      The 'current friendship points' value below each spirit tree is based on the items you've unlocked on the Sky Planner.<br/>
+      You can manually adjust this number to match your actual in-game friendship points.<br/>
+      The calculation will update accordingly.
+    </p>
+    <p>
       <img style="margin-left: 10px;" src="/assets/game/seasons/migration/friendship-guide.webp" />
     </p>
+
   </app-overlay>
 }
