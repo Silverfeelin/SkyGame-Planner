@@ -171,7 +171,7 @@ export class MigrationOptimizerComponent {
 
         const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
         const tierAvailableNodes = tierFriendshipNodes.filter(node => !node.unlocked);
-        const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierAvailableNodes.length;
+        const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
 
         // Add guaranteed nodes.
