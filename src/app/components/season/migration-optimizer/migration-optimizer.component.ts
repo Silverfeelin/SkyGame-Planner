@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from '@app/components/spirit-tree/spirit-tree.component';
@@ -12,33 +12,46 @@ import { MatIcon } from "@angular/material/icon";
 import { StorageService } from '@app/services/storage.service';
 import { ItemType } from '@app/interfaces/item.interface';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
+import { CheckboxComponent } from "@app/components/layout/checkbox/checkbox.component";
+import { CurrencyService } from '@app/services/currency.service';
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-migration-optimizer',
     templateUrl: './migration-optimizer.component.html',
     styleUrls: ['./migration-optimizer.component.less'],
-    imports: [SpiritTreeComponent, OverlayComponent, ReactiveFormsModule, MatIcon]
+    imports: [SpiritTreeComponent, OverlayComponent, ReactiveFormsModule, MatIcon, CheckboxComponent, RouterLink]
 })
 export class MigrationOptimizerComponent {
   dataService = inject(DataService);
   storageService = inject(StorageService);
+  currencyService = inject(CurrencyService);
 
   trees = [
     "ko9lr8M4J5", "zK7AFf0rvZ", "nCGzsegB0l", "iFANrbgSY4", "nrvSEyff0h"
   ].map(id => this.dataService.guidMap.get(id) as ISpiritTree);
   season = this.dataService.guidMap.get('wslfxJ5HZJ') as ISeason;
+  hasSeasonPass = signal(this.storageService.hasSeasonPass(this.season.guid));
+  hasDoneDailiesToday = false;
 
   want = signal<{ [guid: string]: INode }>({});
   wantNodeGuids = computed(() => Object.values(this.want()).map(n => n.guid));
 
   tierUnlockCost = [ 0, 40, 60, 80, 100 ];
   tierUnlockCostCumulative = [ 0, 40, 100, 180, 280 ];
+
   today = DateHelper.todaySky();
-  daysLeft =  DateHelper.daysBetween(this.today, this.season.endDate!);
-  daysFriendshipLeft = this.daysLeft * 10;
+  daysLeftSeason = DateHelper.daysBetween(this.today, this.season.endDate!);
+  daysLeft = signal(this.daysLeftSeason);
+  daysFriendshipLeft = computed(() => this.daysLeft() * 10);
+
+  candleControl = new FormControl(this.storageService.getCurrencies().seasonCurrencies[this.season.guid]?.candles || 0);
+  candlesOwned = toSignal(this.candleControl.valueChanges, { initialValue: this.candleControl.value });
+  candlesLeft = computed(() => this.hasSeasonPass() ? this.daysLeft() * 6  : this.daysLeft() * 5);
+  candlesRequired = signal(0);
+  candlesFinal = computed(() => (this.candlesOwned() ?? 0) + this.candlesLeft() - this.candlesRequired());
 
   nodeValues: { [ guid: string]: number } = {};
-  nodeEfficiency: { [ guid: string]: number } = {};
 
   friendshipControls = this.trees.map(_ => new FormControl(0));
   friendshipValues = this.friendshipControls.map((c) => {
@@ -55,6 +68,11 @@ export class MigrationOptimizerComponent {
   knapsackTotalPoints = 0;
 
   constructor() {
+    this.candleControl.valueChanges.subscribe(c => {
+      if (typeof c !== 'number' || isNaN(c) || c < 0) { return; }
+      this.currencyService.setSeasonCurrency(this.season.guid, c);
+    });
+
     const savedWantNodes = JSON.parse(this.storageService.getKey('migration.optimizer') || '[]') as string[];
     if (savedWantNodes.length > 0) {
       const mapped = Object.fromEntries(
@@ -73,7 +91,6 @@ export class MigrationOptimizerComponent {
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         tierFriendshipNodes.forEach(node => {
           this.nodeValues[node.guid] = friendshipPerNode;
-          this.nodeEfficiency[node.guid] = +(node.sc ? friendshipPerNode / node.sc : 99).toFixed(2);
           if (node.unlocked) {
             if (currentFriendship < this.tierUnlockCostCumulative[iTier]) {
               currentFriendship = this.tierUnlockCostCumulative[iTier];
@@ -110,36 +127,35 @@ export class MigrationOptimizerComponent {
       ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
       ItemType.Held, ItemType.Furniture, ItemType.Prop
     ]);
-    let changed = false;
-    const want = { ...this.want() };
-    this.trees.forEach(tree => {
-      const nodes = TreeHelper.getNodes(tree);
-      nodes.forEach(node => {
-        if (!node?.item) { return; }
-        if (!itemTypeSet.has(node.item.type)) { return; }
-        want[node.guid] = node;
-        changed = true;
-      });
-    });
-    if (changed) {
-      this.want.set(want);
-      this.storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
-      this.calculate();
-    }
+
+    this.highlightFunc(node => node.item ? itemTypeSet.has(node.item.type) : false);
+  }
+
+  highlightEmotes(): void {
+    this.highlightFunc(node => node.item?.type === ItemType.Emote);
+  }
+
+  highlightMusic(): void {
+    this.highlightFunc(node => node.item?.type === ItemType.Music);
   }
 
   highlightSeasonHearts(): void {
+    this.highlightFunc(node => node.item?.name === 'Season Heart');
+  }
+
+  highlightSeasonPass(): void {
+    this.highlightFunc(node => node.item?.group === 'SeasonPass');
+  }
+
+  highlightKnapsack(): void {
     let changed = false;
     const want = { ...this.want() };
-    this.trees.forEach(tree => {
-      const nodes = TreeHelper.getNodes(tree);
-      nodes.forEach(node => {
-        if (!node?.item) { return; }
-        if (node.item.name !== 'Season Heart') { return; }
-        want[node.guid] = node;
-        changed = true;
-      });
+    this.knapsackNodes?.forEach(node => {
+      if (!node?.item) { return; }
+      want[node.guid] = node;
+      changed = true;
     });
+
     if (changed) {
       this.want.set(want);
       this.storageService.setKey('migration.optimizer', JSON.stringify(Object.keys(this.want())));
@@ -147,16 +163,17 @@ export class MigrationOptimizerComponent {
     }
   }
 
-  highlightSeasonPass(): void {
+  private highlightFunc(predicate: (node: INode) => boolean): void {
     let changed = false;
     const want = { ...this.want() };
     this.trees.forEach(tree => {
       const nodes = TreeHelper.getNodes(tree);
       nodes.forEach(node => {
         if (!node?.item) { return; }
-        if (node.item.group !== 'SeasonPass') { return; }
-        want[node.guid] = node;
-        changed = true;
+        if (predicate(node)) {
+          want[node.guid] = node;
+          changed = true;
+        }
       });
     });
     if (changed) {
@@ -173,12 +190,28 @@ export class MigrationOptimizerComponent {
     this.calculate();
   }
 
+  toggleHaveSeasonPass(): void {
+    this.hasSeasonPass.set(!this.hasSeasonPass());
+    this.hasSeasonPass()
+      ? this.storageService.addSeasonPasses(this.season.guid)
+      : this.storageService.removeSeasonPasses(this.season.guid);
+    this.storageService.removeGifted(this.season.guid);
+    this.calculate();
+  }
+
+  toggleToday(): void {
+    this.hasDoneDailiesToday = !this.hasDoneDailiesToday;
+    this.daysLeft.set(this.hasDoneDailiesToday ? this.daysLeftSeason - 1 : this.daysLeftSeason);
+    this.calculate();
+  }
+
   calculate(): void {
     const wantNodeGuids = this.wantNodeGuids();
     const knapsackNodes: Array<INode> = [];
     this.missingFriendshipTotals = [ 0, 0, 0, 0, 0 ];
     this.missingFriendship = [ [], [], [], [], [] ];
 
+    let candlesRequired = 0;
     this.trees.forEach((tree, iTree) => {
       const tiers = TreeHelper.getTiers(tree);
 
@@ -203,7 +236,8 @@ export class MigrationOptimizerComponent {
         // Add guaranteed nodes. Undesired nodes go into knapsack algorithm.
         tierAvailableNodes.forEach(node => {
           if (wantNodeGuids.includes(node.guid)) {
-          currentFriendship += friendshipPerNode;
+            currentFriendship += friendshipPerNode;
+            candlesRequired += (node.sc ?? 0);
           } else {
             knapsackNodes.push(node);
           }
@@ -222,8 +256,9 @@ export class MigrationOptimizerComponent {
       this.missingFriendshipTotals[iTree] = this.missingFriendship[iTree].reduce((a, b) => a + b, 0);
     });
 
+    this.candlesRequired.set(candlesRequired);
     this.missingFriendshipTotal = this.missingFriendshipTotals.reduce((a, b) => a + b, 0);
-    const knapsackFriendship = this.missingFriendshipTotal - this.daysFriendshipLeft;
+    const knapsackFriendship = this.missingFriendshipTotal - this.daysFriendshipLeft();
     this.knapsackNodes = this.knapsack(knapsackNodes, knapsackFriendship) ?? [];
     this.knapsackTotalSc = this.knapsackNodes.reduce((sum, n) => sum + (n.sc ?? 0), 0);
     this.knapsackTotalPoints = this.knapsackNodes.reduce((sum, n) => sum + this.nodeValues[n.guid], 0);
