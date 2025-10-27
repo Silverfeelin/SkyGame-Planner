@@ -883,8 +883,7 @@
       "name": "Days of Mischief",
       "shortName": "Mischief",
       "recurring": true,
-      "imageUrl": "https://img2.storyblok.com/fit-in/0x540/filters:format(webp)/f/108104/1920x1080/8715bbf50b/mischief24header.jpg",
-      "imagePosition": "top",
+      "imageUrl": "https://image.thatskygame.com/cdn-cgi/image/w=1280,h=1000,f=webp/https://a.storyblok.com/f/108104/1920x1080/849532cfbc/domi_blog-header-puzzlekey_sls_na_na_2510.jpg",
       "instances": [
         {
           "guid": "PIL2A60uh2",
@@ -981,14 +980,13 @@
               { "guid": "OBdZhisWO_", "date": "2025-10-27", "endDate": "2025-11-16", "amount": 15, "description": "Bonus event currency" }
             ]
           },
-          "draft": true
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2828261c87dd801a8620e566848652b9&pm=c"
+          }
         },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief"
-      },
-      "_calendar": {
-        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2828261c87dd801a8620e566848652b9&pm=c"
       }
     },
     // Days of Giving

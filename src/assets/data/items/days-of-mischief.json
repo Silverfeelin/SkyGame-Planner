@@ -515,6 +515,7 @@
     "guid": "4wA4nwGZUM",
     "type": "Prop",
     "name": "Red Dye Sticker",
+    "icon": "/assets/game/items/2845.png",
     "order": 624
   },
   {
@@ -522,6 +523,7 @@
     "guid": "HUjA3utlNd",
     "type": "Prop",
     "name": "Purple Dye Sticker",
+    "icon": "/assets/game/items/2846.png",
     "order": 625
   },
   {
@@ -529,6 +531,7 @@
     "guid": "G9RHsCv5AB",
     "type": "Prop",
     "name": "Black Dye Sticker",
+    "icon": "/assets/game/items/2847.png",
     "order": 626
   },
   {
@@ -536,6 +539,7 @@
     "guid": "hrH037AVN5",
     "type": "Prop",
     "name": "White Dye Sticker",
+    "icon": "/assets/game/items/2848.png",
     "order": 627
   },
   {
