@@ -1045,6 +1045,44 @@
         ]
       },
     // #endregion
+    // #region Days of Mischief (2025)
+    {
+      "guid": "EjA3EokYoz",
+      "type": "Object",
+      "name": "IAP Prop Box",
+      "itemList": "Q1km9ckoH-"
+    },
+    {
+      "guid": "mhn5l2qzol",
+      "type": "Store",
+      "iaps": [
+        "jh1HAJhsh-",
+        "x1qjYi8ew4"
+      ]
+    },
+    {
+        "guid": "oHvSscaCRO",
+        "type": "Object",
+        "name": "IAP Prop Box",
+        "iaps": [
+          "Wr_BX6VAho",
+          "zek4nLkOx2",
+          "FwadomhrU9",
+          "XrdSxb_uRA",
+          "d88ZewW9jn",
+          "Dc_csapXsW",
+          "Eab1J-Zp7H",
+          "yR9nsMWbTC",
+          "bDB0L4YVvX",
+          "hKeD6VUXjB",
+          "ttxVA6OcHP",
+          "8J8E3NsR2j",
+          "9lVPErJE6c",
+          "78KZ1oho5x",
+          "BWMYIynKIO"
+        ]
+      },
+    // #endregion
     // #region Days of Feast (2019)
     {
       "guid": "eWS8HsX6SC",

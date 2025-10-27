@@ -962,10 +962,33 @@
           "_calendar": {
             "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=11b8261c87dd804a8768d8f0f426a792"
           }
-        }
+        },
+        {
+          "guid": "kJeNJe-4Jq",
+          "date": "2025-10-27",
+          "endDate": "2025-11-16",
+          "spirits": [
+            { "guid": "B4C5a7cCLE", "spirit": "ihZx_rVl70", "tree": "EEU4caBgcq" }
+          ],
+          "shops": [
+            "EjA3EokYoz",
+            "mhn5l2qzol",
+            "oHvSscaCRO"
+          ],
+          "calculatorData": {
+            "dailyCurrencyAmount": 5,
+            "timedCurrency": [
+              { "guid": "OBdZhisWO_", "date": "2025-10-27", "endDate": "2025-11-16", "amount": 15, "description": "Bonus event currency" }
+            ]
+          },
+          "draft": true
+        },
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2828261c87dd801a8620e566848652b9&pm=c"
       }
     },
     // Days of Giving

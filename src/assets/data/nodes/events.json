@@ -1631,6 +1631,27 @@
     "h": 33
   },
   // #endregion
+  // #region Days of Mischief (2025)
+  { "guid": "T8L7f4pFlA", "item": "jP6vp1JxGK", "n": "jYLvJJF3wx", "nw": "dY_hg8OjDm", "ne": "-4I67I926P" },
+  { "guid": "dY_hg8OjDm", "item": "Gz58JrTFXu", "ec": 22 },
+  { "guid": "-4I67I926P", "item": "7dNyh36odp", "ec": 12 },
+  { "guid": "jYLvJJF3wx", "item": "PbmKwGDAAD", "c": 5, "nw": "MyACn9KQn6", "n": "b1nIkgCWmw", "ne": "FZm6TcRXMP" },
+  { "guid": "MyACn9KQn6", "item": "sYMa2yGm-a", "ec": 50 },
+  { "guid": "FZm6TcRXMP", "item": "5wLqxZqnGM", "c": 24 },
+  { "guid": "b1nIkgCWmw", "item": "J5uxoYsHgL", "c": 5, "nw": "xDOkKANyaR", "n": "m1Xohl4yAx", "ne": "3q1ry0Ki9q" },
+  { "guid": "xDOkKANyaR", "item": "CCT1qLLxKN", "c": 36 },
+  { "guid": "3q1ry0Ki9q", "item": "kSphDUSrju", "c": 48 },
+  { "guid": "m1Xohl4yAx", "item": "NRmIGIjJ-q", "c": 5, "nw": "sMEgiLYgbb", "n": "nXJWhf7QuE", "ne": "05i5pDu9zJ" },
+  { "guid": "sMEgiLYgbb", "item": "MnzYzRK9sY", "c": 44 },
+  { "guid": "05i5pDu9zJ", "item": "I6OEa38GXJ", "c": 36 },
+  { "guid": "nXJWhf7QuE", "item": "2nErLmJWvk", "c": 5, "nw": "xl1ptDCqsx", "n": "bhsCYgnwbB", "ne": "P-THm6-Uak" },
+  { "guid": "xl1ptDCqsx", "item": "MyVdnRoxY0", "h": 33 },
+  { "guid": "P-THm6-Uak", "item": "-HtIAPjYsa", "c": 99 },
+  { "guid": "bhsCYgnwbB", "item": "VFeHTgImrJ", "c": 5, "nw": "TC-DaW-zi_", "n": "sQ947lg23y", "ne": "ZnHUlOAWzq" },
+  { "guid": "TC-DaW-zi_", "item": "si_8YhNtmr", "c": 66 },
+  { "guid": "ZnHUlOAWzq", "item": "Aq3FhT_OYr", "c": 38 },
+  { "guid": "sQ947lg23y", "item": "p-lbmuULv5", "c": 58 },
+  // #endregion
   // #region Days of Feast (2020)
   {
     "guid": "2h8cqvVNaS",
