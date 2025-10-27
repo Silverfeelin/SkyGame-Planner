@@ -427,6 +427,12 @@
     "name": "Mischief Beak Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Beak-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Mischief-Beak-Mask-front.png",
+    "dye": {
+      "primary": {},
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/mask/Mischief_crowmask.jpg",
+      "infoUrl": "/assets/game/dyes/mask/2slots_Mischief_crowmask.jpg"
+    },
     "order": 501
   },
   {
@@ -436,6 +442,10 @@
     "name": "Mischief Goth Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/89/Days-of-Mischief-Goth-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/Days-of-Mischief-Goth-Cape-back.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/Mischief_curtaincape.jpg"
+    },
     "order": 10000
   },
   {
