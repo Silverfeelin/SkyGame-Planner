@@ -38,7 +38,7 @@
     "name": "Treasure Shovel",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Days-of-Treasure-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bc/Days-of-Treasure-Prop.png",
-    "order": 611,
+    "order": 615,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Treasure#Treasure_Shovel"
     }
@@ -50,7 +50,7 @@
     "name": "Treasure Seeker's Bounty Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5e/Days-of-Treasure-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Days-of-Treasure-Mask.png",
-    "order": 499,
+    "order": 503,
     "dye": {
       "primary": {},
       "secondary": {},

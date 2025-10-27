@@ -6,7 +6,7 @@
     "name": "Mischief Puzzlewright's Brimmed Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Days-of-Mischief-Puzzlewright-Brimmed-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Days-of-Mischief-Puzzlewright-Brimmed-Hat-front.png",
-    "order": 10000
+    "order": 305
   },
   {
     "id": 2833,
@@ -24,7 +24,7 @@
     "name": "Mischief Feline Ears",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Days-of-Mischief-Feline-Accessory-Ear-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Days-of-Mischief-Feline-Accessory-Ear-front.png",
-    "order": 10000
+    "order": 367
   },
   {
     "id": 2835,
@@ -33,7 +33,7 @@
     "name": "Mischief Beak Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e2/Days-of-Mischief-Beak-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Days-of-Mischief-Beak-Mask-front.png",
-    "order": 10000
+    "order": 501
   },
   {
     "id": 2836,
@@ -51,7 +51,7 @@
     "name": "Mischief Leaf Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Days-of-Mischief-Leaf-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c4/Days-of-Mischief-Leaf-Hat-front.png",
-    "order": 10000
+    "order": 368
   },
   {
     "id": 2838,
@@ -60,7 +60,7 @@
     "name": "Mischief Crabkin Lamp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Days-of-Mischief-Crabkin-Lamp-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Days-of-Mischief-Crabkin-Lamp.png",
-    "order": 10000
+    "order": 680
   },
   {
     "id": 2839,
@@ -69,7 +69,7 @@
     "name": "Mischief Cobweb Decor",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Days-of-Mischief-Cobweb-Decor-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Days-of-Mischief-Cobweb-Decor.png",
-    "order": 10000
+    "order": 681
   },
   {
     "id": 2840,
@@ -78,7 +78,7 @@
     "name": "Mischief Dark Dragon Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Mischief-Dark-Dragon-Rug-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Days-of-Mischief-Dark-Dragon-Rug.png",
-    "order": 10000
+    "order": 679
   },
   {
     "id": 2841,
@@ -87,7 +87,7 @@
     "name": "Mischief Withered Sapling",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Days-of-Mischief-Withered-Sapling-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Days-of-Mischief-Withered-Sapling.png",
-    "order": 10000
+    "order": 682
   },
   {
     "id": 2842,
@@ -96,7 +96,7 @@
     "name": "Puzzle Box",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Days-of-Mischief-Puzzle-Box-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Days-of-Mischief-Puzzle-Box.png",
-    "order": 10000
+    "order": 724
   },
   {
     "id": 2843,
@@ -105,7 +105,7 @@
     "name": "Puzzle Chest",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Days-of-Mischief-Puzzle-Chest-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Days-of-Mischief-Puzzle-Chest.png",
-    "order": 10000
+    "order": 723
   },
   {
     "id": 2844,
@@ -114,35 +114,35 @@
     "name": "Puzzle Cage",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Days-of-Mischief-Puzzle-Cage-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Days-of-Mischief-Puzzle-Cage.png",
-    "order": 10000
+    "order": 725
   },
   {
     "id": 2845,
     "guid": "4wA4nwGZUM",
     "type": "Prop",
     "name": "Red Dye Sticker",
-    "order": 10000
+    "order": 624
   },
   {
     "id": 2846,
     "guid": "HUjA3utlNd",
     "type": "Prop",
     "name": "Purple Dye Sticker",
-    "order": 10000
+    "order": 625
   },
   {
     "id": 2847,
     "guid": "G9RHsCv5AB",
     "type": "Prop",
     "name": "Black Dye Sticker",
-    "order": 10000
+    "order": 626
   },
   {
     "id": 2848,
     "guid": "hrH037AVN5",
     "type": "Prop",
     "name": "White Dye Sticker",
-    "order": 10000
+    "order": 627
   },
   {
     "id": 2849,
@@ -171,5 +171,5 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
-  },
+  }
 ]

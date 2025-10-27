@@ -87,7 +87,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Top_Hat"
     },
-    "order": 363,
+    "order": 364,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Style_tophat.jpg",
       "primary": {}
@@ -107,7 +107,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Runway_Makeup_Mask"
     },
-    "order": 495
+    "order": 498
   },
   {
     "id": 1849,
@@ -146,7 +146,7 @@
     "name": "Style Fascinator",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Style-Darkness-Fascinator-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Style-Darkness-Fascinator.png",
-    "order": 364,
+    "order": 365,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair-accessory/Style_veil.jpg"
@@ -199,7 +199,7 @@
     "name": "Style Dapper Necktie",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Style-Dapper-Necktie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5d/Style-Dapper-Necktie.png",
-    "order": 548,
+    "order": 552,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Style#Style_Dapper_Necktie"
     }

@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Starter_Pack"
     },
-    "order": 812,
+    "order": 827,
     "dye": {
       "previewUrl": "/assets/game/dyes/cape/Base_starter.jpg",
       "primary": {}
@@ -25,7 +25,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Founder%27s_Pack"
     },
-    "order": 811
+    "order": 826
   },
   {
     "id": 1938,
@@ -38,7 +38,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beta_Cape"
     },
-    "order": 810
+    "order": 825
   },
   {
     "id": 1939,
@@ -51,7 +51,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Fledgling_Harp"
     },
-    "order": 557
+    "order": 561
   },
   {
     "id": 2406,
@@ -60,7 +60,7 @@
     "name": "Fledgling Upright Piano",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Fledgling-upright-Piano-instrument-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9b/Fledgling-upright-Piano-instrument.png",
-    "order": 806,
+    "order": 821,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Music#Fledgling_Upright_Piano"
     }
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guitar"
     },
-    "order": 566
+    "order": 570
   },
   {
     "id": 1941,
@@ -89,7 +89,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Triumph_Handpan"
     },
-    "order": 571
+    "order": 575
   },
   {
     "id": 1942,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_Anniversary#Blue_Electric_Guitar"
     },
-    "order": 577
+    "order": 581
   },
   {
     "id": 1943,
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 969
+    "order": 984
   },
   {
     "id": 1944,
@@ -126,7 +126,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nintendo_Pack"
     },
-    "order": 968
+    "order": 983
   },
   {
     "id": 1945,
@@ -138,7 +138,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_Nintendo_Switch#Nintendo_Pack"
     },
-    "order": 313
+    "order": 314
   },
   {
     "id": 1946,
@@ -151,7 +151,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Vessel_Flute"
     },
-    "order": 585
+    "order": 589
   },
   {
     "id": 1959,
@@ -163,7 +163,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary%27s_Firework_Festival#Sparrow_Appreciation_Pack"
     },
-    "order": 965
+    "order": 980
   },
   {
     "id": 1960,
@@ -175,7 +175,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary%27s_Firework_Festival#Sparrow_Appreciation_Pack"
     },
-    "order": 500
+    "order": 504
   },
   {
     "id": 1961,
@@ -187,7 +187,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary%27s_Firework_Festival#Moth_Appreciation_Pack"
     },
-    "order": 378
+    "order": 381
   },
   {
     "id": 1962,
@@ -199,7 +199,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Aviary%27s_Firework_Festival#Moth_Appreciation_Pack"
     },
-    "order": 966
+    "order": 981
   },
   {
     "id": 1947,
@@ -211,7 +211,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 501
+    "order": 505
   },
   {
     "id": 1948,
@@ -223,7 +223,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 970
+    "order": 985
   },
   {
     "id": 1949,
@@ -235,7 +235,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Journey_Pack"
     },
-    "order": 314
+    "order": 315
   },
   {
     "id": 2408,
@@ -246,7 +246,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nesting_Workshop#Mask_Hanger"
     },
-    "order": 762
+    "order": 777
   },
   {
     "id": 2543,
@@ -258,7 +258,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
     },
-    "order": 971
+    "order": 986
   },
   {
     "id": 2544,
@@ -270,7 +270,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
     },
-    "order": 315
+    "order": 316
   },
   {
     "id": 2545,
@@ -282,6 +282,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_for_PlayStation#Transcendent_Journey_Pack"
     },
-    "order": 502
+    "order": 506
   }
 ]

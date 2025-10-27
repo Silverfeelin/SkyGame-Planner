@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Camera_Prop"
     },
-    "order": 595
+    "order": 599
   },
   {
     "id": 623,
@@ -106,7 +106,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 521
+    "order": 525
   },
   {
     "id": 636,
@@ -136,7 +136,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 594
+    "order": 598
   },
   {
     "id": 638,
@@ -149,7 +149,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 327,
+    "order": 328,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Moments_ulthat.jpg",
       "primary": {}
@@ -214,7 +214,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
-    "order": 474
+    "order": 477
   },
   {
     "id": 1655,
@@ -247,7 +247,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },
-    "order": 893,
+    "order": 908,
     "group": "SeasonPass"
   },
   {
@@ -260,7 +260,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory"
     },
-    "order": 325,
+    "order": 326,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Moments_rangerhat.jpg",
       "infoUrl": "/assets/game/dyes/hair-accessory/2slots_Moments_rangerhat.jpg",
@@ -399,7 +399,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Prop"
     },
-    "order": 644,
+    "order": 652,
     "group": "SeasonPass"
   },
   {
@@ -469,7 +469,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
-    "order": 475,
+    "order": 478,
     "group": "SeasonPass"
   },
   {
@@ -601,7 +601,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory"
     },
-    "order": 326,
+    "order": 327,
     "group": "SeasonPass"
   },
   {
@@ -671,5 +671,5 @@
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
-  },
+  }
 ]

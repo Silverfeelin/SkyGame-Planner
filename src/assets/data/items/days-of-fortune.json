@@ -13,7 +13,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Bull_Mask"
     },
-    "order": 486
+    "order": 489
   },
   {
     "id": 1724,
@@ -37,7 +37,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Orange"
     },
-    "order": 345
+    "order": 346
   },
   {
     "id": 1726,
@@ -65,7 +65,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Cape"
     },
-    "order": 924
+    "order": 939
   },
   {
     "id": 1728,
@@ -83,7 +83,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Blushing_Mask"
     },
-    "order": 485
+    "order": 488
   },
   {
     "id": 1729,
@@ -111,7 +111,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Tiger_Mask"
     },
-    "order": 487
+    "order": 490
   },
   {
     "id": 1731,
@@ -123,7 +123,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Accessory"
     },
-    "order": 346,
+    "order": 347,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Fortune_fish.jpg",
       "primary": {}
@@ -139,7 +139,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Fish_Cape"
     },
-    "order": 925
+    "order": 940
   },
   {
     "id": 1733,
@@ -183,7 +183,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Enchanted_Umbrella"
     },
-    "order": 601
+    "order": 605
   },
   {
     "id": 1736,
@@ -199,7 +199,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Rabbit_Mask"
     },
-    "order": 488
+    "order": 491
   },
   {
     "id": 1737,
@@ -305,7 +305,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Fortune_DragonCape.jpg"
     },
-    "order": 926,
+    "order": 941,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Days_of_Fortune_Dragon_Stole"
     }
@@ -317,7 +317,7 @@
     "name": "Days of Fortune Dragon Bangles",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Fortune-Dragon-Bangles-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/69/Fortune-Dragon-Bangles.png",
-    "order": 392,
+    "order": 395,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/head-accessory/Fortune_dragonearrings.jpg"
@@ -337,7 +337,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/mask/Fortune_dragon.jpg"
     },
-    "order": 489,
+    "order": 492,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Dragon_Mask"
     }
@@ -350,7 +350,7 @@
     "name": "Days of Fortune Drum",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/28/Days-of-Fortune-Drum-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Days-of-Fortune-Drum.png",
-    "order": 589,
+    "order": 593,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Drum"
     }
@@ -387,7 +387,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Fortune_snek.jpg"
     },
-    "order": 972,
+    "order": 987,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Snake_Coif_and_Cloak"
     }
@@ -399,7 +399,7 @@
     "name": "Days of Fortune Snake Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/87/Days-of-Fortune-Snake-Cloak-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6e/Days-of-Fortune-Snake-Cloak-back.png",
-    "order": 973,
+    "order": 988,
     "dye": {
       "primary": {},
       "secondary": {},
@@ -417,7 +417,7 @@
     "name": "Days of Fortune Hand Fan",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f2/Days-of-Fortune-Hand-Fan-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Days-of-Fortune-Hand-Fan-Prop.png",
-    "order": 974,
+    "order": 989,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Hand_Fan"
     }
@@ -432,7 +432,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Candle_Flags_Prop"
     },
-    "order": 977
+    "order": 992
   },
   {
     "id": 2505,
@@ -472,7 +472,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Plant_Prop"
     },
-    "order": 975
+    "order": 990
   },
   {
     "id": 2510,
@@ -484,7 +484,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Fortune#Fortune_Vertical_Poster_Prop"
     },
-    "order": 976
+    "order": 991
   },
   {
     "id": 2511,
@@ -511,7 +511,7 @@
     "name": "Fortune Snake Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e0/Days-of-Fortune-Snake-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Days-of-Fortune-Snake-Mask.png",
-    "order": 978,
+    "order": 993,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/mask/Fortune_snake.jpg"
