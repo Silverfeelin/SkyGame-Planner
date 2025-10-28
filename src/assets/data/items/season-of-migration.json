@@ -72,9 +72,9 @@
   {
     "id": 2829,
     "guid": "7TtaA7y6DH",
-    "type": "Special",
-    "name": "Placeholder",
-    "icon": ""
+    "type": "Quest",
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
   },
   {
     "id": 2766,
@@ -628,5 +628,33 @@
     "name": "Season Heart",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Season-of-Migration-Heart.png"
+  },
+  {
+    "id": 2853,
+    "guid": "muha_qJwpZ",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2854,
+    "guid": "0f_K0ZZDvt",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2855,
+    "guid": "eO59rVUk-J",
+    "type": "Special",
+    "name": "Placeholder",
+    "icon": ""
+  },
+  {
+    "id": 2856,
+    "guid": "QGqFI8P5eX",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
   }
 ]
