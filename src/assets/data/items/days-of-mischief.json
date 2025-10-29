@@ -13,7 +13,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Spooky_Bat_Cape"
     },
-    "order": 964
+    "order": 965
   },
   {
     "id": 1852,
@@ -53,7 +53,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Web_Cape"
     },
-    "order": 965
+    "order": 966
   },
   {
     "id": 1855,
@@ -86,7 +86,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Spooky_Dining_Set"
     },
-    "order": 702
+    "order": 703
   },
   {
     "id": 1859,
@@ -98,7 +98,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Cape"
     },
-    "order": 966
+    "order": 967
   },
   {
     "id": 1860,
@@ -122,7 +122,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Pumpkin_Prop"
     },
-    "order": 703
+    "order": 704
   },
   {
     "id": 1862,
@@ -220,7 +220,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Cat_Cape"
     },
-    "order": 967
+    "order": 968
   },
   {
     "id": 1869,
@@ -232,7 +232,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Feline_Familiar_Prop"
     },
-    "order": 704
+    "order": 705
   },
   {
     "id": 1870,
@@ -241,7 +241,7 @@
     "name": "Mischief Gossamer Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/53/Mischief-Gossamer-Cape-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Mischief-Gossamer-Cape-back.png",
-    "order": 968,
+    "order": 970,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Gossamer_Cape"
     }
@@ -253,7 +253,7 @@
     "name": "Mischief Crabula Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/39/Mischief-Crabula-Cloak-Icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Mischief-Crabula-Cloak-back.png",
-    "order": 969,
+    "order": 971,
     "dye": {
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Mischef_crabulacape.webp"
@@ -328,7 +328,7 @@
     "name": "Mischief Raven-Feathered Cloak",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Mischief-Raven-Feathered-Cloak-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Mischief-Raven-Feathered-Cloak-back.png",
-    "order": 970,
+    "order": 972,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Raven-Feathered_Cloak"
     }
@@ -340,7 +340,7 @@
     "name": "Mischief Withered Broom",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/21/Mischief-Withered-Broom-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7d/Mischief-Withered-Broom.png",
-    "order": 614,
+    "order": 615,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Withered_Broom"
     }
@@ -364,7 +364,7 @@
     "name": "Mischief Cauldron",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d3/Mischief-Cauldron-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e3/Mischief-Cauldron.png",
-    "order": 818,
+    "order": 819,
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Mischief#Mischief_Cauldron"
     }
@@ -392,7 +392,6 @@
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
   },
-  // 2025
   {
     "id": 2832,
     "guid": "rA-RHusWvS",
@@ -417,7 +416,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/Mischief_cattail.jpg"
     },
-    "order": 10000
+    "order": 559
   },
   {
     "id": 2834,
@@ -458,7 +457,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/cape/Mischief_curtaincape.jpg"
     },
-    "order": 10000
+    "order": 969
   },
   {
     "id": 2837,
@@ -476,7 +475,7 @@
     "name": "Mischief Crabkin Lamp",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Days-of-Mischief-Crabkin-Lamp-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5b/Days-of-Mischief-Crabkin-Lamp.png",
-    "order": 680
+    "order": 681
   },
   {
     "id": 2839,
@@ -485,7 +484,7 @@
     "name": "Mischief Cobweb Decor",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Days-of-Mischief-Cobweb-Decor-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/52/Days-of-Mischief-Cobweb-Decor.png",
-    "order": 681
+    "order": 682
   },
   {
     "id": 2840,
@@ -494,7 +493,7 @@
     "name": "Mischief Dark Dragon Rug",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d0/Days-of-Mischief-Dark-Dragon-Rug-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a4/Days-of-Mischief-Dark-Dragon-Rug.png",
-    "order": 679
+    "order": 680
   },
   {
     "id": 2841,
@@ -503,7 +502,7 @@
     "name": "Mischief Withered Sapling",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Days-of-Mischief-Withered-Sapling-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Days-of-Mischief-Withered-Sapling.png",
-    "order": 682
+    "order": 683
   },
   {
     "id": 2842,
@@ -512,7 +511,7 @@
     "name": "Puzzle Box",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f5/Days-of-Mischief-Puzzle-Box-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/93/Days-of-Mischief-Puzzle-Box.png",
-    "order": 724
+    "order": 725
   },
   {
     "id": 2843,
@@ -521,7 +520,7 @@
     "name": "Puzzle Chest",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Days-of-Mischief-Puzzle-Chest-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/04/Days-of-Mischief-Puzzle-Chest.png",
-    "order": 723
+    "order": 724
   },
   {
     "id": 2844,
@@ -530,7 +529,7 @@
     "name": "Puzzle Cage",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/Days-of-Mischief-Puzzle-Cage-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f9/Days-of-Mischief-Puzzle-Cage.png",
-    "order": 725
+    "order": 726
   },
   {
     "id": 2845,
@@ -538,7 +537,7 @@
     "type": "Prop",
     "name": "Red Dye Sticker",
     "icon": "/assets/game/items/2845.png",
-    "order": 624
+    "order": 625
   },
   {
     "id": 2846,
@@ -546,7 +545,7 @@
     "type": "Prop",
     "name": "Purple Dye Sticker",
     "icon": "/assets/game/items/2846.png",
-    "order": 625
+    "order": 626
   },
   {
     "id": 2847,
@@ -554,7 +553,7 @@
     "type": "Prop",
     "name": "Black Dye Sticker",
     "icon": "/assets/game/items/2847.png",
-    "order": 626
+    "order": 627
   },
   {
     "id": 2848,
@@ -562,7 +561,7 @@
     "type": "Prop",
     "name": "White Dye Sticker",
     "icon": "/assets/game/items/2848.png",
-    "order": 627
+    "order": 628
   },
   {
     "id": 2849,
