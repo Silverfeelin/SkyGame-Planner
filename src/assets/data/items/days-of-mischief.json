@@ -400,6 +400,10 @@
     "name": "Mischief Puzzlewright's Brimmed Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3d/Days-of-Mischief-Puzzlewright-Brimmed-Hat-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Days-of-Mischief-Puzzlewright-Brimmed-Hat-front.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair/Mischief_crowhat.jpg"
+    },
     "order": 305
   },
   {
@@ -409,6 +413,10 @@
     "name": "Mischief Feline Tail",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Days-of-Mischief-Feline-Accessory-Tail-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b4/Days-of-Mischief-Feline-Accessory-Tail-back.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/Mischief_cattail.jpg"
+    },
     "order": 10000
   },
   {
@@ -418,6 +426,10 @@
     "name": "Mischief Feline Ears",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Days-of-Mischief-Feline-Accessory-Ear-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ad/Days-of-Mischief-Feline-Accessory-Ear-front.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/hair-accessory/Mischief_catears.jpg"
+    },
     "order": 367
   },
   {
