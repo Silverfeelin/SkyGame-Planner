@@ -120,6 +120,10 @@ export class MigrationOptimizerComponent {
     this.calculate();
   }
 
+  highlightEverything(): void {
+    this.highlightFunc(node => !!node.item);
+  }
+
   highlightCosmetics(): void {
     const itemTypeSet = new Set<ItemType>([
       ItemType.Outfit, ItemType.Shoes, ItemType.Mask,
@@ -226,7 +230,15 @@ export class MigrationOptimizerComponent {
       // Check how many points are guaranteed through desired nodes.
       let currentFriendship = this.friendshipValues[iTree]() ?? 0;
       tiers.forEach((tier, iTier) => {
-        if (iTier === tiers.length - 1) { return; } // No need to check last tier.
+        // Last tier
+        if (iTier === tiers.length - 1) {
+          // Add SP cost nodes (#434)
+          tier.rows
+            .flatMap(r => r)
+            .filter(n => n && !n.unlocked && wantNodeGuids.includes(n.guid))
+            .forEach(n => { candlesRequired += (n!.sc ?? 0); });
+          return;
+        }
 
         const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
         const tierAvailableNodes = tierFriendshipNodes.filter(node => !node.unlocked);
@@ -262,7 +274,6 @@ export class MigrationOptimizerComponent {
     this.knapsackNodes = this.knapsack(knapsackNodes, knapsackFriendship) ?? [];
     this.knapsackTotalSc = this.knapsackNodes.reduce((sum, n) => sum + (n.sc ?? 0), 0);
     this.knapsackTotalPoints = this.knapsackNodes.reduce((sum, n) => sum + this.nodeValues[n.guid], 0);
-    console.log(this.knapsackNodes);
   }
 
   knapsack(nodes: Array<INode>, target: number): Array<INode> | undefined {
