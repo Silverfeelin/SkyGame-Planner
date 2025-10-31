@@ -87,14 +87,19 @@ export class MigrationOptimizerComponent {
       let currentFriendship = 0;
       tiers.forEach((tier, iTier) => {
         if (iTier === tiers.length - 1) { return; } // No need to check last tier.
+
+        // Assign minimum points based on unlock within tier (#434)
+        const tierNodes = tier.rows.flatMap(r => r).filter(n => n) as INode[];
+        if (currentFriendship < this.tierUnlockCostCumulative[iTier] && tierNodes.some(n => n.unlocked)) {
+          currentFriendship = this.tierUnlockCostCumulative[iTier];
+        }
+
+        // Add points from this tier.
         const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         tierFriendshipNodes.forEach(node => {
           this.nodeValues[node.guid] = friendshipPerNode;
           if (node.unlocked) {
-            if (currentFriendship < this.tierUnlockCostCumulative[iTier]) {
-              currentFriendship = this.tierUnlockCostCumulative[iTier];
-            }
             currentFriendship += friendshipPerNode;
           }
         });
