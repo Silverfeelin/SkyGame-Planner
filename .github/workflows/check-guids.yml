@@ -1,0 +1,21 @@
+name: Check GUIDs
+
+on:
+  pull_request:
+    branches: [ master, feature/* ]
+
+jobs:
+  check-duplicate-guids:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Run GUID check
+        run: node /scripts/build/guid-check.js
