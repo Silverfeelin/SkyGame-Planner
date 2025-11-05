@@ -56,6 +56,7 @@ import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.compon
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
 import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
 import { MigrationOptimizerComponent } from './components/season/migration-optimizer/migration-optimizer.component';
+import { ShopCinemaComponent } from './components/shops/shop-cinema/shop-cinema.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -108,8 +109,9 @@ export const routes: Routes = [
           { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
           { path: 'settings', component: SettingsComponent, title: title('Settings') },
           { path: 'shop', component: ShopsComponent, title: title('Shops') },
-          { path: 'shop/event', component: ShopEventStoreComponent, title: title('Aviary Event Store') },
+          { path: 'shop/cinema', component: ShopCinemaComponent, title: title('Cinema') },
           { path: 'shop/concert-hall', component: ShopConcertHallComponent, title: title('Concert Hall') },
+          { path: 'shop/event', component: ShopEventStoreComponent, title: title('Aviary Event Store') },
           { path: 'shop/harmony', component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
           { path: 'shop/nesting', component: ShopNestingComponent, title: title('Nesting Workshop') },
           { path: 'shop/office', component: ShopOfficeComponent, title: title('Office') },

@@ -78,6 +78,15 @@
       "permanent": "event",
       "itemList": "6AS-92sc6t"
     },
+    {
+      "guid": "vzNxDn2Nru",
+      "type": "Object",
+      "name": "Cinema Mannequin",
+      "permanent": "cinema",
+      "iaps": [
+        "rY0Zs2qcDM"
+      ]
+    },
     // #endregion
     // #region Season of The Little Prince
     {
