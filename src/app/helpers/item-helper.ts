@@ -4,11 +4,11 @@ import { IItem, IItemSource, IItemSourceOrigin, ItemType } from '../interfaces/i
 import { TreeHelper } from './tree-helper';
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([
-  [ItemType.Outfit, 1], [ItemType.Shoes, 2], [ItemType.Mask, 3], [ItemType.FaceAccessory, 4],
-  [ItemType.Necklace, 5], [ItemType.Hair, 6], [ItemType.HairAccessory, 7], [ItemType.HeadAccessory, 8],
-  [ItemType.Cape, 9], [ItemType.Held, 10], [ItemType.Furniture, 11], [ItemType.Prop, 12],
-  [ItemType.Emote, 13], [ItemType.Stance, 14], [ItemType.Call, 15], [ItemType.Music, 16],
-  [ItemType.WingBuff, 17], [ItemType.Quest, 18], [ItemType.Spell, 19], [ItemType.Special, 20]
+  [ItemType.Outfit, 1], [ItemType.Shoes, 2], [ItemType.OutfitShoes, 3], [ItemType.Mask, 4], [ItemType.FaceAccessory, 5],
+  [ItemType.Necklace, 6], [ItemType.Hair, 7], [ItemType.HairAccessory, 8], [ItemType.HeadAccessory, 9],
+  [ItemType.Cape, 10], [ItemType.Held, 11], [ItemType.Furniture, 12], [ItemType.Prop, 13],
+  [ItemType.Emote, 14], [ItemType.Stance, 15], [ItemType.Call, 16], [ItemType.Music, 17],
+  [ItemType.WingBuff, 18], [ItemType.Quest, 19], [ItemType.Spell, 20], [ItemType.Special, 21]
 ]);
 
 export class ItemHelper {

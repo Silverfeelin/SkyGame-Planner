@@ -25,7 +25,7 @@ export class EditorTodoComponent {
     const spirits = _dataService.spiritConfig.items;
 
     const previewItemTypes = new Set<ItemType>([
-      ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
+      ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
       ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
       ItemType.Held, ItemType.Furniture, ItemType.Prop
     ]);

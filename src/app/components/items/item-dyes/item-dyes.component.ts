@@ -19,7 +19,7 @@ import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 export class ItemDyesComponent {
   type: ItemType = ItemType.Outfit;
   types: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape

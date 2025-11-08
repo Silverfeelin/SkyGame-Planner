@@ -80,6 +80,8 @@ export enum ItemType {
   Outfit = 'Outfit',
   /** All cosmetics in the shoes category. */
   Shoes = 'Shoes',
+  /** All cosmetics in the outfit with shoes category. */
+  OutfitShoes = 'OutfitShoes',
   /** All cosmetics in the cape category. */
   Cape = 'Cape',
   /** All items in the held category. */

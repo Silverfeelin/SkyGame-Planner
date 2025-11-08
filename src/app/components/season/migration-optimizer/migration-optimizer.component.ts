@@ -131,7 +131,7 @@ export class MigrationOptimizerComponent {
 
   highlightCosmetics(): void {
     const itemTypeSet = new Set<ItemType>([
-      ItemType.Outfit, ItemType.Shoes, ItemType.Mask,
+      ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask,
       ItemType.FaceAccessory, ItemType.Necklace, ItemType.Hair,
       ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
       ItemType.Held, ItemType.Furniture, ItemType.Prop

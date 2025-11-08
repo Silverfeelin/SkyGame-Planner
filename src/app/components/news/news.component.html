@@ -15,6 +15,22 @@
 <div class="grid grid-1 mt">
   <app-card [foldable]="true" [folded]="false">
     <div header>
+      <h2 class="h3 mb-0">November 2025</h2>
+    </div>
+    <div>
+      <div class="container">
+        <ul class="m-0">
+          <li>
+            Outfit closet split into <a class="text-link" [routerLink]="['/item']" [queryParams]="{ type: 'Outfit' }">Outfits</a>
+            and <a class="text-link" [routerLink]="['/item']" [queryParams]="{ type: 'OutfitShoes' }">Outfits with shoes</a>
+            to match the in-game closets.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-card>
+  <app-card [foldable]="true" [folded]="true">
+    <div header>
       <h2 class="h3 mb-0">October 2025</h2>
     </div>
     <div>
