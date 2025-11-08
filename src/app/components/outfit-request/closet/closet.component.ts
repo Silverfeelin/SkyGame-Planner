@@ -82,7 +82,7 @@ export class ClosetComponent implements OnDestroy {
 
   // Item type data
   itemTypes: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape,
@@ -92,6 +92,7 @@ export class ClosetComponent implements OnDestroy {
   itemIcons: { [key: string]: string } = {
     'Outfit': 'outfit',
     'Shoes': 'shoes',
+    'OutfitShoes': 'outfit-shoes',
     'Mask': 'mask',
     'FaceAccessory': 'face-acc',
     'Necklace': 'necklace',
@@ -1015,6 +1016,7 @@ export class ClosetComponent implements OnDestroy {
     const getSelectedPerType = (selection: ISelection) => Object.values(selection).reduce((map, item) => {
       let type = item.type;
       if (type === ItemType.Furniture || type === ItemType.Held) { type = ItemType.Prop; }
+      if (type === ItemType.OutfitShoes) { type = ItemType.Outfit; }
       if (!map[type]) { map[type] = item; }
       return map;
     }, {} as { [key: string]: IItem });
@@ -1169,6 +1171,7 @@ export class ClosetComponent implements OnDestroy {
 
     const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
     const cShoes = Math.ceil(this.items[ItemType.Shoes].length / cols[0]);
+    const cOutfitShoes = Math.ceil(this.items[ItemType.OutfitShoes].length / cols[0]);
     const cMask = Math.ceil(this.items[ItemType.Mask].length / cols[0]);
     const cFaceAcc = Math.ceil(this.items[ItemType.FaceAccessory].length / cols[0]);
     const cNecklace = Math.ceil(this.items[ItemType.Necklace].length / cols[0]);
@@ -1179,7 +1182,7 @@ export class ClosetComponent implements OnDestroy {
     const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
     const cFurniture = Math.ceil(this.items[ItemType.Furniture].length / cols[3]);
     const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
-    const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
+    const h1 = (cOutfit + cShoes + cOutfitShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 7 -_wGap;
     const h2 = (cHair + cHairAcc + cHeadAcc) * _wBox + _wPad * 4 - _wGap;
     const h3 = cCape * _wBox + _wPad * 2 - _wGap;
     const h4 = (cHeld + cFurniture + cProp) * _wBox + _wPad * 4 - _wGap;
@@ -1206,10 +1209,12 @@ export class ClosetComponent implements OnDestroy {
     sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Shoes], itemImgs);
     sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.OutfitShoes], itemImgs);
+    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cOutfitShoes) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Mask], itemImgs);
-    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
+    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cOutfitShoes + cMask) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.FaceAccessory], itemImgs);
-    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
+    sx = _wPad;  sy = _wPad * 6 + (cOutfit + cShoes + cOutfitShoes + cMask + cFaceAcc) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Necklace], itemImgs);
 
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
