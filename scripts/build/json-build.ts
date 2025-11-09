@@ -1,4 +1,4 @@
-import { mergeItemFiles, checkFileItemIds } from './json-lib';
+import { mergeItemFiles, checkFileItemIds, mergeAll } from './json-lib';
 
 const path = require('path');
 const fs = require('fs');
@@ -18,3 +18,5 @@ folderPaths.forEach((folderName: string) => {
     checkFileItemIds(outPath);
   }
 });
+
+mergeAll(dataDirPath, path.join(dataDirPath, 'everything.json'));

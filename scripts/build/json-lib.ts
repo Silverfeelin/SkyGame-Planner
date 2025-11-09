@@ -15,7 +15,7 @@ export const getFilePaths = (dirPath: string): string[] => {
   return files.map(f => path.join(dirPath, f));
 }
 
-/** Merges all JSON arrays from a directory into a new file at `outPath`.
+/** Merges all JSON arrays from a directory into a new file `outPath`.
  * The input files should be a JSONC-compatible array of objects.
  * The output file will be formatted { "items": [ ... ] }.
  */
@@ -31,6 +31,24 @@ export const mergeItemFiles = (dirPath: string, outPath: string): void => {
   const mergedData = JSON.stringify(output, null, 0);
   fs.writeFileSync(outPath, mergedData, 'utf8');
 };
+
+/** Merges all JSON files from a directory into a new file `outPath`.
+ * The input folder should only contain JSONC-compatible files.
+ * The output file will be formatted as `{ "filename": data, ... }`.
+*/
+export const mergeAll = (dirPath: string, outPath: string): void => {
+  const filePaths = getFilePaths(dirPath);
+  const data = {};
+  for (const filePath of filePaths) {
+    if (!filePath.endsWith('.json')) continue;
+    const fileName = path.basename(filePath, path.extname(filePath));
+    const name = fileName.replace('.json', '');
+    data[name] = readJsoncFile(filePath);
+
+  }
+  const mergedData = JSON.stringify(data, null, 0);
+  fs.writeFileSync(outPath, mergedData, 'utf8');
+}
 
 /** Checks the given file for item ID presence and uniqueness. */
 export const checkFileItemIds = (filePath: string): void => {

@@ -1,4 +1,4 @@
-import { checkFileItemIds, mergeItemFiles } from './json-lib';
+import { checkFileItemIds, mergeAll, mergeItemFiles } from './json-lib';
 
 const path = require('path');
 const chokidar = require('chokidar');
@@ -24,6 +24,7 @@ const onFileChanged = (filePath: string) => {
     if (outName === 'items.json') {
       checkFileItemIds(outPath);
     }
+    mergeAll(dataPath, path.resolve(dataPath, 'everything.json'));
     console.log('Merged:', outName);
   }
   catch (error) {
