@@ -52,8 +52,11 @@
     "id": 479,
     "guid": "TI-CpaXFhK",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#1"
+    }
   },
   {
     "id": 480,
@@ -66,8 +69,11 @@
     "id": 481,
     "guid": "Bg_bDXCpyl",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#2"
+    }
   },
   {
     "id": 482,
@@ -87,8 +93,11 @@
     "id": 484,
     "guid": "WrBllT55vV",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#3"
+    }
   },
   {
     "id": 485,
@@ -101,8 +110,11 @@
     "id": 486,
     "guid": "W51TEfrNbi",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#4"
+    }
   },
   {
     "id": 487,
@@ -115,8 +127,11 @@
     "id": 488,
     "guid": "17es70sy2v",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#5"
+    }
   },
   {
     "id": 489,

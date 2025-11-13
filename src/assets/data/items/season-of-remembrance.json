@@ -56,7 +56,10 @@
     "guid": "lia3qGhqvA",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#1"
+    }
   },
   {
     "id": 579,
@@ -70,7 +73,10 @@
     "guid": "vOXpY0l3FA",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#2"
+    }
   },
   {
     "id": 581,
@@ -103,7 +109,10 @@
     "guid": "uMOURZju5o",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#3"
+    }
   },
   {
     "id": 585,
@@ -117,7 +126,10 @@
     "guid": "LHvJcN3c1o",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#4"
+    }
   },
   {
     "id": 587,
@@ -150,7 +162,10 @@
     "guid": "TMVanCtb1T",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#5"
+    }
   },
   {
     "id": 591,
@@ -164,7 +179,10 @@
     "guid": "Pf7HGPSK2I",
     "type": "Quest",
     "name": "Quest 6",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#6"
+    }
   },
   {
     "id": 593,
@@ -183,7 +201,10 @@
     "guid": "2pixQYfTCD",
     "type": "Quest",
     "name": "Quest 7",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#7"
+    }
   },
   {
     "id": 595,
@@ -197,7 +218,10 @@
     "guid": "xpntoR6DSl",
     "type": "Quest",
     "name": "Quest 8",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#8"
+    }
   },
   {
     "id": 597,
@@ -242,7 +266,10 @@
     "guid": "bU0whqWAde",
     "type": "Quest",
     "name": "Quest 9",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#9"
+    }
   },
   {
     "id": 602,
@@ -256,7 +283,10 @@
     "guid": "4a7FBf31jp",
     "type": "Quest",
     "name": "Quest 10",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#10"
+    }
   },
   {
     "id": 1564,

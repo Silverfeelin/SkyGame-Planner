@@ -72,8 +72,11 @@
     "id": 511,
     "guid": "zEvxnuBJf1",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#1"
+    }
   },
   {
     "id": 512,
@@ -100,8 +103,11 @@
     "id": 515,
     "guid": "so8M_6pkle",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#2"
+    }
   },
   {
     "id": 516,
@@ -119,8 +125,11 @@
     "id": 517,
     "guid": "WKPWSGukRo",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#3"
+    }
   },
   {
     "id": 518,
@@ -147,8 +156,11 @@
     "id": 521,
     "guid": "NERbBLZV7z",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#4"
+    }
   },
   {
     "id": 522,
@@ -175,8 +187,11 @@
     "id": 525,
     "guid": "sldyWGHPcu",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#5"
+    }
   },
   {
     "id": 526,
