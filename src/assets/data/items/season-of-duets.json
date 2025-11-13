@@ -85,7 +85,10 @@
     "guid": "g5if_hfGQ-",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets#Quest_#1"
+    }
   },
   {
     "id": 2243,
@@ -541,7 +544,10 @@
     "guid": "25PSOB8TyZ",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets#Quest_#2"
+    }
   },
   {
     "id": 2299,
@@ -555,7 +561,10 @@
     "guid": "kSUpmc7BGK",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets#Quest_#3"
+    }
   },
   {
     "id": 2301,
@@ -574,7 +583,10 @@
     "guid": "a2jmBtI7SB",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets#Quest_#4"
+    }
   },
   {
     "id": 2303,
@@ -593,7 +605,10 @@
     "guid": "pronMA7m25",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Duets#Quest_#5"
+    }
   },
   {
     "id": 2319,

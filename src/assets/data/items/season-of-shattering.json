@@ -49,8 +49,11 @@
     "id": 534,
     "guid": "AGUEuqLXVv",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#1"
+    }
   },
   {
     "id": 535,
@@ -63,8 +66,11 @@
     "id": 536,
     "guid": "WaDZqenOgo",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#2"
+    }
   },
   {
     "id": 537,
@@ -77,8 +83,11 @@
     "id": 538,
     "guid": "B2K9a5WdCy",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#3"
+    }
   },
   {
     "id": 539,
@@ -91,8 +100,11 @@
     "id": 540,
     "guid": "YVHc6de8iq",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#4"
+    }
   },
   {
     "id": 541,
@@ -105,8 +117,11 @@
     "id": 542,
     "guid": "TU0elaQAVo",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#5"
+    }
   },
   {
     "id": 543,
@@ -119,8 +134,11 @@
     "id": 544,
     "guid": "DWsvdTqFbu",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 6",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#6"
+    }
   },
   {
     "id": 545,

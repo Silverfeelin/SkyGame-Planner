@@ -69,7 +69,10 @@
     "guid": "wR4TWPuEyR",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#1"
+    }
   },
   {
     "id": 463,
@@ -83,7 +86,10 @@
     "guid": "JfTzg2wE_D",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#2"
+    }
   },
   {
     "id": 465,
@@ -97,7 +103,10 @@
     "guid": "xPgHPO9vgx",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#3"
+    }
   },
   {
     "id": 467,
@@ -111,7 +120,10 @@
     "guid": "9TVb-6wg42",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#4"
+    }
   },
   {
     "id": 469,
@@ -125,7 +137,10 @@
     "guid": "ew2cXMYp1M",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#5"
+    }
   },
   {
     "id": 471,
@@ -139,7 +154,10 @@
     "guid": "cam2MsfMpk",
     "type": "Quest",
     "name": "Quest 6",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#6"
+    }
   },
   {
     "id": 473,
@@ -153,7 +171,10 @@
     "guid": "YMx3PU8Czn",
     "type": "Quest",
     "name": "Quest 7",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#7"
+    }
   },
   {
     "id": 475,

@@ -23,7 +23,10 @@
     "guid": "bZLp8uDLBH",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#1"
+    }
   },
   {
     "id": 625,
@@ -37,7 +40,10 @@
     "guid": "tPSfwv25tD",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#2"
+    }
   },
   {
     "id": 627,
@@ -58,7 +64,10 @@
     "guid": "Bt81wczcyz",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#3"
+    }
   },
   {
     "id": 630,
@@ -72,7 +81,10 @@
     "guid": "QYqOsJH08k",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#4"
+    }
   },
   {
     "id": 632,
@@ -86,7 +98,10 @@
     "guid": "RGIkrdzAHQ",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#5"
+    }
   },
   {
     "id": 634,
