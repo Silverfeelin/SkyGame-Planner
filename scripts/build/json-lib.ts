@@ -41,6 +41,7 @@ export const mergeAll = (dirPath: string, outPath: string): void => {
   const data = {};
   for (const filePath of filePaths) {
     if (!filePath.endsWith('.json')) continue;
+    if (filePath.endsWith('everything.json')) continue;
     const fileName = path.basename(filePath, path.extname(filePath));
     const name = fileName.replace('.json', '');
     data[name] = readJsoncFile(filePath);
