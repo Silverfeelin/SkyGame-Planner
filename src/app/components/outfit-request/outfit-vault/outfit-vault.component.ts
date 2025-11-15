@@ -5,7 +5,6 @@ import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { WindowHelper } from 'src/app/helpers/window-helper';
-import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -15,6 +14,7 @@ import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { readFingerprint } from '../closet-fingerprint';
+import { IItem, ItemType, ItemSize } from 'skygame-data';
 
 interface IApiOutfits {
   items: Array<IApiOutfit>

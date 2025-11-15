@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemHelper } from 'src/app/helpers/item-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IItem, ItemSubtype, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
+import { IItem, ItemType, ItemSubtype } from 'skygame-data';
 
 interface ISwap {item: IItem, prev?: IItem, old: number, new: number};
 

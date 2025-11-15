@@ -1,11 +1,10 @@
 import { Component, ChangeDetectionStrategy, output, input, effect, inject } from '@angular/core';
-import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ItemType, ItemSubtype, IItem, ItemGroup } from '@app/interfaces/item.interface';
 import { nanoid } from 'nanoid';
 import { EditorItemComponent } from './editor-item.component';
 import { DataService } from '@app/services/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { CardComponent } from "../../../components/layout/card/card.component";
+import { IItem, ItemType } from 'skygame-data';
 
 @Component({
   selector: 'app-editor-item-page',

@@ -4,10 +4,10 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { IItem } from '@app/interfaces/item.interface';
 import { ItemClickEvent, ItemsComponent } from '@app/components/items/items.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { DataService } from '@app/services/data.service';
+import { IItem } from 'skygame-data';
 
 const fileNames = [
   '/assets/game/dyes/Mischief_cattail.jpg',

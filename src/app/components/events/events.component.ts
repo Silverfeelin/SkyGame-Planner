@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventCardComponent } from '../event-card/event-card.component';
 import { NgFor } from '@angular/common';
@@ -9,6 +8,7 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { IEvent, IEventInstance } from 'skygame-data';
 
 @Component({
     selector: 'app-events',

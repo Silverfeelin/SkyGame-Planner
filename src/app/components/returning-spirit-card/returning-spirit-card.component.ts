@@ -1,8 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { CostComponent } from '../util/cost/cost.component';
 import { DaysLeftComponent } from '../util/days-left/days-left.component';
 import { DateComponent } from '../util/date/date.component';
@@ -11,6 +8,7 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { NgIf, NgFor } from '@angular/common';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISpecialVisit, ICost } from 'skygame-data';
 
 type Section = 'img' | 'wiki' | 'date' | 'overview' | 'cost';
 export interface ReturningSpiritCardOptions {
@@ -25,7 +23,7 @@ export interface ReturningSpiritCardOptions {
     imports: [NgIf, NgFor, RouterLink, MatIcon, WikiLinkComponent, DateComponent, DaysLeftComponent, CostComponent]
 })
 export class ReturningSpiritCardComponent implements OnInit, OnChanges {
-  @Input() return?: IReturningSpirits;
+  @Input() return?: ISpecialVisit;
   @Input() options: ReturningSpiritCardOptions = { show: ['img', 'overview', 'date', 'wiki', 'cost'] };
 
   sections: {[key: string]: number} = {};
@@ -33,6 +31,7 @@ export class ReturningSpiritCardComponent implements OnInit, OnChanges {
   remainingCost?: ICost;
 
   imgUrls?: Array<string>;
+
 
   ngOnInit(): void {
     this.updateSections();

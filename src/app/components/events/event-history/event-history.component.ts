@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TableColumnDirective } from '@app/components/table/table-column/table-column.directive';
 import { TableHeaderDirective } from '@app/components/table/table-column/table-header.directive';
 import { TableComponent } from '@app/components/table/table.component';
-import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
 import { DataService } from '@app/services/data.service';
 import { DateTime } from 'luxon';
 import { DateTimePipe } from "../../../pipes/date-time.pipe";
 import { RouterLink } from '@angular/router';
+import { IEvent, IEventInstance } from 'skygame-data';
 
 interface IRow {
   event: IEvent;

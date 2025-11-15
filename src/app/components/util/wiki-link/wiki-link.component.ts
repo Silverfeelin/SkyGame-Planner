@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { IWiki } from 'src/app/interfaces/wiki.interface';
 import { SettingService } from 'src/app/services/setting.service';
 import { MatIcon } from '@angular/material/icon';
+import { IWiki } from 'skygame-data';
 
 @Component({
     selector: 'app-wiki-link',

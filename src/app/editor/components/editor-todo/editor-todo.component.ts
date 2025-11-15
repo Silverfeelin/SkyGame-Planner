@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { CardComponent } from '@app/components/layout/card/card.component';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { IItem, ItemType } from '@app/interfaces/item.interface';
-import { ISpirit } from '@app/interfaces/spirit.interface';
 import { DataService } from '@app/services/data.service';
+import { IItem, ISpirit, ItemType } from 'skygame-data';
 
 @Component({
     selector: 'app-editor-todo',

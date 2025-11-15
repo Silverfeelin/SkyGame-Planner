@@ -1,8 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import L from 'leaflet';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { IRealm } from 'src/app/interfaces/realm.interface';
 import { DataService } from 'src/app/services/data.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
 import { IMapInit } from 'src/app/services/map.service';
@@ -11,6 +9,7 @@ import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent, CardFoldEvent } from '../layout/card/card.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { IRealm, IArea } from 'skygame-data';
 
 @Component({
     selector: 'app-realms',

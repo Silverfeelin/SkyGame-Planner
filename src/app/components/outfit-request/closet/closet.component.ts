@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
@@ -10,12 +9,8 @@ import { EventService } from 'src/app/services/event.service';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
 import { DateHelper, PeriodState } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
-import { IEventInstance } from 'src/app/interfaces/event.interface';
-import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
 import { CardComponent } from '../../layout/card/card.component';
@@ -25,6 +20,8 @@ import { IconService } from '@app/services/icon.service';
 import { drawFingerprint } from '../closet-fingerprint';
 import { OverlayComponent } from "../../layout/overlay/overlay.component";
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { IItem, ItemType, ItemSize, ITravelingSpirit, IEventInstance, ISpecialVisit } from 'skygame-data';
+import { ISpecialVisitSpirit } from 'skygame-data/dist/interfaces/special-visit-spirit.interface';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; d?: string; };
@@ -154,8 +151,8 @@ export class ClosetComponent implements OnDestroy {
   tsState?: PeriodState;
   tsItems?: Array<IItem>;
   // Returning Spirits
-  rs?: IReturningSpirits;
-  rsSpirits: Array<{ returning: IReturningSpirit, items: Array<IItem> }> = [];
+  rs?: ISpecialVisit;
+  rsSpirits: Array<{ returning: ISpecialVisitSpirit, items: Array<IItem> }> = [];
   // Event
   events: Array<{instance: IEventInstance, items: Array<IItem>, iapItems: Array<IItem>}> = [];
 

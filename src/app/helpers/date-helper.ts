@@ -1,5 +1,4 @@
-import { IDate } from "../interfaces/date.interface";
-import { IPeriod } from '../interfaces/base.interface';
+import { IPeriod } from 'skygame-data';
 import { DateTime } from 'luxon';
 
 export type PeriodState = 'ended' | 'active' | 'future';
@@ -37,18 +36,6 @@ export class DateHelper {
   static fromIso(iso: string): DateTime | undefined {
     if (!iso) { return; }
     return DateTime.fromISO(iso);
-  }
-
-  static fromInterfaceLocal(date: IDate | DateTime): DateTime | undefined {
-    if (!date) { return; }
-    if (date instanceof DateTime) { return date; }
-    return DateTime.fromObject({ year: date.year, month: date.month, day: date.day });
-  }
-
-  static fromInterfaceSky(date: IDate | DateTime): DateTime | undefined {
-    if (!date) { return; }
-    if (date instanceof DateTime) { return date; }
-    return DateTime.fromObject({ year: date.year, month: date.month, day: date.day }, { zone: this.skyTimeZone });
   }
 
   static fromStringLocal(date: string | DateTime): DateTime | undefined {

@@ -1,10 +1,10 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from '@app/services/data.service';
 import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DateTime } from 'luxon';
 import { Chart } from 'chart.js/auto';
 import { ChartHelper } from '@app/helpers/chart-helper';
+import { IItem, ItemType } from 'skygame-data';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
@@ -161,7 +161,7 @@ export class ItemInflationComponent implements AfterViewInit {
       returnSeason ??= returnItemList?.shop?.season;
       returnEvent ??= returnItemList?.shop?.event;
 
-      const returned = DateTime.min(...[returnSeason?.date, returnEvent?.date, returnTs?.date, returnVisit?.return?.date].filter(d => d) as DateTime[]);
+      const returned = DateTime.min(...[returnSeason?.date, returnEvent?.date, returnTs?.date, returnVisit?.visit?.date].filter(d => d) as DateTime[]);
       returnDates.push(returned);
       const candles = returnNode?.c || returnListNode?.c || 0;
 

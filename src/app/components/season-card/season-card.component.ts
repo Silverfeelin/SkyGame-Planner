@@ -3,10 +3,7 @@ import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
 import { EventService } from 'src/app/services/event.service';
 import { CostComponent } from '../util/cost/cost.component';
 import { DaysLeftComponent } from '../util/days-left/days-left.component';
@@ -18,6 +15,7 @@ import { DiscordLinkComponent } from "../util/discord-link/discord-link.componen
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISeason, ICost } from 'skygame-data';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {

@@ -4,17 +4,14 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from '@app/components/spirit-tree/spirit-tree.component';
 import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
-import { INode } from '@app/interfaces/node.interface';
-import { ISeason } from '@app/interfaces/season.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { MatIcon } from "@angular/material/icon";
 import { StorageService } from '@app/services/storage.service';
-import { ItemType } from '@app/interfaces/item.interface';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { CheckboxComponent } from "@app/components/layout/checkbox/checkbox.component";
 import { CurrencyService } from '@app/services/currency.service';
 import { RouterLink } from "@angular/router";
+import { ISpiritTree, ISeason, INode, ItemType } from 'skygame-data';
 
 @Component({
     selector: 'app-migration-optimizer',

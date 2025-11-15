@@ -1,8 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DataService } from '@app/services/data.service';
-import { DateTime } from 'luxon';
+import { ItemType, IItem } from 'skygame-data';
 
 const imageMap: { [key: string]: HTMLImageElement } = {};
 const loadImage = (url: string): Promise<HTMLImageElement> => (new Promise((resolve, reject) => {

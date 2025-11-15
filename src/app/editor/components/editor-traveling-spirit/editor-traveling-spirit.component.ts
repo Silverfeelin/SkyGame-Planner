@@ -2,16 +2,12 @@ import { Component } from '@angular/core';
 import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataJsonService } from 'src/app/services/data-json.service';
 import { DataService } from 'src/app/services/data.service';
 import { MatIcon } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ISpirit, IItem, ITravelingSpirit, INode, ItemType, ISpiritTree } from 'skygame-data';
 
 interface IFormNode {
   nw?: boolean;

@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { ICost } from 'src/app/interfaces/cost.interface';
 import { MatIcon } from '@angular/material/icon';
 import { NgTemplateOutlet, DecimalPipe } from '@angular/common';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { ICost } from 'skygame-data';
 
 @Component({
     selector: 'app-cost',

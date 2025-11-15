@@ -1,26 +1,22 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../components/spirit-tree/spirit-tree.component";
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { CardComponent } from "../../../components/layout/card/card.component";
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
-import { INode } from '@app/interfaces/node.interface';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { MatIcon } from '@angular/material/icon';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { ICost } from '@app/interfaces/cost.interface';
-import { ISpirit, SpiritType } from '@app/interfaces/spirit.interface';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
 import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
 import { TabDirective } from '@app/components/layout/tabs/tab.directive';
+import { INode, IItem, ICost, ISpiritTree, ISpirit, ItemType, SpiritType } from 'skygame-data';
 
 type TreeNodeArray = Array<TreeNode | undefined>;
 type TreeNode = { node: INode; x: number; y: number; };
@@ -333,7 +329,7 @@ export class SpiritTreeEditorComponent {
     if (spirit.tree) { trees.add(spirit.tree); }
     if (spirit.treeRevisions) { spirit.treeRevisions.forEach(t => trees.add(t)); }
     if (spirit.ts) { spirit.ts.map(ts => ts.tree).forEach(t => trees.add(t)); }
-    if (spirit.returns) { spirit.returns.map(r => r.tree).forEach(t => trees.add(t)); }
+    if (spirit.visits) { spirit.visits.map(r => r.tree).forEach(t => trees.add(t)); }
     if (spirit.events) { spirit.events.map(e => e.tree).forEach(t => trees.add(t)); }
     this.spiritTrees = Array.from(trees).reverse();
   }
@@ -378,13 +374,13 @@ export class SpiritTreeEditorComponent {
     this.selectedItem = this.selectedTreeNode.node.item!;
 
     const tsDate = tree.ts?.date;
-    const rsDate = tree.visit?.return?.date;
+    const rsDate = tree.visit?.visit?.date;
 
     let title = tree.eventInstanceSpirit?.name ?? tree.eventInstanceSpirit?.spirit?.name
       ?? tree.visit?.spirit?.name ?? tree.ts?.spirit?.name ?? tree.spirit?.name ?? '';
     let subtitle = tree.name;
     if (tsDate || rsDate) {
-      subtitle = tsDate ? `TS #${tree.ts!.number}` : `${tree.visit!.return.name}`;
+      subtitle = tsDate ? `TS #${tree.ts!.number}` : `${tree.visit!.visit.name}`;
       subtitle += ` (${(tsDate || rsDate)!.toFormat('dd-MM-yyyy')})`;
     }
 

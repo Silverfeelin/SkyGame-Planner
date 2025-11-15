@@ -1,27 +1,24 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { ISpirit } from '@app/interfaces/spirit.interface';
 import { DataService } from '@app/services/data.service';
 import { CardComponent } from "../../layout/card/card.component";
 import { SpiritTreeComponent } from "../../spirit-tree/spirit-tree.component";
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
 import { ItemListComponent } from "../../item-list/item-list/item-list.component";
 import { ParamMap } from '@angular/router';
-import { IItemList, IItemListNode } from '@app/interfaces/item-list.interface';
 import { nanoid } from 'nanoid';
 import { DateTime } from 'luxon';
 import { CostHelper } from '@app/helpers/cost-helper';
-import { ICost } from '@app/interfaces/cost.interface';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { StorageService } from '@app/services/storage.service';
 import { DateComponent } from "../../util/date/date.component";
 import { ItemIconComponent } from "../../items/item-icon/item-icon.component";
-import { IItem } from '@app/interfaces/item.interface';
 import { ItemListNodeClickEvent } from '@app/components/item-list/item-list-node/item-list-node.component';
 import { EventService } from '@app/services/event.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { INestingStorageData, nestingStorageKey } from './shop-nesting.interface';
 import { NgTemplateOutlet } from '@angular/common';
 import { DateHelper } from '@app/helpers/date-helper';
+import { ICost, IItem, ISpirit, IItemList, IItemListNode } from 'skygame-data';
 
 interface IRotationItem extends ICost {
   /** Item guid */

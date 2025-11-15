@@ -1,10 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, signal, SimpleChanges, TemplateRef } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { ISpiritTree, ISpiritTreeTier } from 'src/app/interfaces/spirit-tree.interface';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IItem } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { NodeAction, NodeComponent } from '../node/node.component';
@@ -23,6 +19,7 @@ import { Router } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { INode, ISpiritTree, ISpiritTreeTier, ICost, IItem } from 'skygame-data';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -132,7 +129,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.calculateRemainingCosts();
 
       this.tsDate = this.tree.ts?.date;
-      this.rsDate = this.tree.visit?.return?.date;
+      this.rsDate = this.tree.visit?.visit?.date;
     }
 
     if (changes['opaqueNodes']) {
@@ -337,7 +334,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       const title = spiritName;
       let subtitle = this.visibleName;
       if (this.tsDate || this.rsDate) {
-        subtitle = this.tsDate ? `TS #${this.tree.ts!.number}` : this.rsDate ? `${this.tree.visit!.return.name}` : '';
+        subtitle = this.tsDate ? `TS #${this.tree.ts!.number}` : this.rsDate ? `${this.tree.visit!.visit.name}` : '';
         subtitle += ` (${(this.tsDate || this.rsDate)!.toFormat('dd-MM-yyyy')})`;
       } else if (subtitle === title || subtitle === 'Spirit tree') { subtitle = undefined; }
 

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { MatIcon } from '@angular/material/icon';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
 import { RouterLink } from '@angular/router';
+import { SpiritType } from 'skygame-data';
 
 @Component({
     selector: 'app-spirits-overview',
