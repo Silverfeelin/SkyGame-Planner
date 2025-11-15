@@ -62,8 +62,11 @@
     "id": 552,
     "guid": "0vCi-aJZlj",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Quest_#1"
+    }
   },
   {
     "id": 553,
@@ -103,8 +106,11 @@
     "id": 556,
     "guid": "hwdDrpL-K5",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Quest_#2"
+    }
   },
   {
     "id": 557,
@@ -155,8 +161,11 @@
     "id": 561,
     "guid": "GL-0kVxHfU",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Quest_#3"
+    }
   },
   {
     "id": 562,
@@ -214,8 +223,11 @@
     "id": 567,
     "guid": "KJ846bsf8j",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Quest_#4"
+    }
   },
   {
     "id": 568,
@@ -244,8 +256,11 @@
     "id": 570,
     "guid": "a1zSVQ8GlN",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_AURORA#Quest_#5_-_Musical_Voyage"
+    }
   },
   {
     "id": 571,

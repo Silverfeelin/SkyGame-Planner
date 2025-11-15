@@ -11,7 +11,10 @@
     "guid": "KRB8s8fxSC",
     "name": "Quest 1",
     "type": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Quest_#1"
+    }
   },
   {
     "id": 2663,
@@ -25,7 +28,10 @@
     "guid": "HAmMhK2wEA",
     "name": "Quest 2",
     "type": "Special",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Quest_#2"
+    }
   },
   {
     "id": 2665,
@@ -39,7 +45,10 @@
     "guid": "1xt66A1og9",
     "name": "Quest 3",
     "type": "Special",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Quest_#3"
+    }
   },
   {
     "id": 2667,
@@ -53,7 +62,10 @@
     "guid": "rCjkMHHCz3",
     "name": "Quest 4",
     "type": "Special",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Quest_#4"
+    }
   },
   {
     "id": 2669,
@@ -67,7 +79,10 @@
     "guid": "mzR2yfcMzf",
     "name": "Quest 5",
     "type": "Special",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Two_Embers_-_Part_1#Quest_#5"
+    }
   },
   {
     "id": 2671,

@@ -67,8 +67,11 @@
     "id": 495,
     "guid": "q_hFj239P3",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#1"
+    }
   },
   {
     "id": 496,
@@ -81,8 +84,11 @@
     "id": 497,
     "guid": "WmIBNGUBOM",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#2"
+    }
   },
   {
     "id": 498,
@@ -95,8 +101,11 @@
     "id": 499,
     "guid": "UDBLLL_RkX",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#3"
+    }
   },
   {
     "id": 500,
@@ -109,8 +118,11 @@
     "id": 501,
     "guid": "0p1PuMa1qF",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#4"
+    }
   },
   {
     "id": 502,
@@ -123,8 +135,11 @@
     "id": 503,
     "guid": "emplzik5B0",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#5"
+    }
   },
   {
     "id": 504,
