@@ -19,8 +19,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemUnlockCalculatorSeasonsComponent } from "./item-unlock-calculator-seasons/item-unlock-calculator-seasons.component";
 import { Router } from '@angular/router';
 import { TreeHelper } from '@app/helpers/tree-helper';
-import { IItem, ICost, IItemListNode, INode, IIAP, IEventInstance, ITravelingSpirit, ItemType, ISpiritTree, ISpirit, IRevisedSpiritTree, ISeason, IEvent, ISpiritTreeTier, IItemSource, IItemSourceNode, IItemSourceListNode, IItemSourceIap } from 'skygame-data';
-import { ISpecialVisitSpirit } from 'skygame-data/dist/interfaces/special-visit-spirit.interface';
+import { IItem, ICost, IItemListNode, INode, IIAP, IEventInstance, ITravelingSpirit, ItemType, ISpiritTree, ISpirit, IRevisedSpiritTree, ISeason, IEvent, ISpiritTreeTier, IItemSource, IItemSourceNode, IItemSourceListNode, IItemSourceIap, ISpecialVisitSpirit } from 'skygame-data';
 
 interface IItemResult {
   item: IItem;

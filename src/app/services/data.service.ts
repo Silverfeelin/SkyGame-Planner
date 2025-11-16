@@ -9,8 +9,7 @@ import { ItemHelper } from '../helpers/item-helper';
 import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { ArrayHelper } from '../helpers/array-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
-import { IArea, IEvent, IGuid, IIAP, IItem, IItemList, IMapShrine, INode, IRealm, ISeason, IShop, ISpecialVisit, ISpirit, ISpiritTree, ISpiritTreeTier, ITravelingSpirit, IWingedLight, SkyDataResolver } from 'skygame-data';
-import { ISkyData } from 'skygame-data/dist/interfaces/sky-data.interface';
+import { IArea, IEvent, IGuid, IIAP, IItem, IItemList, IMapShrine, INode, IRealm, ISeason, IShop, ISkyData, ISpecialVisit, ISpirit, ISpiritTree, ISpiritTreeTier, ITravelingSpirit, IWingedLight, SkyDataResolver } from 'skygame-data';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
