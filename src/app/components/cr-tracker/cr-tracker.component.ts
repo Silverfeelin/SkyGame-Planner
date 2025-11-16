@@ -136,7 +136,7 @@ export class CrTrackerComponent implements AfterViewInit {
 
   constructor() {
     disableKeyboardShortcutsUntilDestroyed();
-    this.http.get('/assets/data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
+    this.http.get('/assets/skygame-data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
       this.data = parsed;
 
