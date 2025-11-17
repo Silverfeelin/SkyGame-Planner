@@ -203,6 +203,21 @@
       "_calendar": {
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2348261c87dd80fe8c1bd8183898d1b2&pm=c"
       }
+    },
+    {
+      "guid": "LAOJ50QR7P",
+      "name": "Special Visit #11",
+      "date": { "day": 17, "month": 11, "year": 2025 },
+      "endDate": { "day": 30, "month": 11, "year": 2025 },
+      "spirits": [
+        { "guid": "r4UQqanXXe", "spirit": "Jd8rEzWHVg", "tree": "gqf9paZVEy" },
+        { "guid": "yFy97eBh0E", "spirit": "4iotcmsn0K", "tree": "Uew4A5VBxF" },
+        { "guid": "Cfm2LGHWwS", "spirit": "KhFZE8z0-I", "tree": "Ng3zGFAGql" },
+        { "guid": "NFp-TXTUKD", "spirit": "KYhwsjTkp-", "tree": "_TwWCLOFZ9" }
+      ],
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2a18261c87dd80a3bf2bf0fe2f4e1b56&pm=c"
+      }
     }
   ]
 }
