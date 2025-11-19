@@ -7,12 +7,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Moonlight-Frock-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Moonlight-Frock-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Moonlight_robe.jpg",
-      "infoUrl": "/assets/game/dyes/outfit/2slots_Moonlight_robe.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Moonlight_robe.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Moonlight_robe.jpg"
     },
-    "order": 76
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Frock_and_Updo"
+    },
+    "order": 85
   },
   {
     "id": 2305,
@@ -21,7 +24,10 @@
     "name": "Moonlight Updo",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Moonlight-Updo-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/38/Moonlight-Updo-front.png",
-    "order": 276
+    "order": 298,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Frock_and_Updo"
+    }
   },
   {
     "id": 2306,
@@ -30,7 +36,10 @@
     "name": "Moonlight Earrings",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e6/Moonlight-Earrings-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c9/Moonlight-Earrings.png",
-    "order": 368
+    "order": 401,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Earrings"
+    }
   },
   {
     "id": 2307,
@@ -39,7 +48,10 @@
     "name": "Moonlight Lantern",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Moonlight-Lantern-Decoration-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b5/Moonlight-Lantern-Decoration.png",
-    "order": 739
+    "order": 816,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Lantern_Decoration"
+    }
   },
   {
     "id": 2308,
@@ -48,7 +60,10 @@
     "name": "Moonlight Blossom Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/19/Moonlight-Blossom-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/Moonlight-Blossom-Accessory.png",
-    "order": 335
+    "order": 363,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Blossom_Accessory"
+    }
   },
   {
     "id": 2309,
@@ -56,5 +71,60 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2757,
+    "guid": "xObCoMqwCd",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
+  },
+  {
+    "id": 2758,
+    "guid": "inAM509HYO",
+    "name": "Moonlight Tufted Tail",
+    "type": "Necklace",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4b/Moonlight-Bunny-Tail-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Moonlight-Bunny-Tail-side.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Tufted_Tail_Accessory"
+    },
+    "order": 560
+  },
+  {
+    "id": 2759,
+    "guid": "_cE3iO4UG4",
+    "name": "Moonlight Banner",
+    "type": "Prop",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Moonlight-Banner-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a7/Moonlight-Banner.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Banner"
+    },
+    "order": 674
+  },
+  {
+    "id": 2760,
+    "guid": "5k-f_eevZd",
+    "name": "Moonlight Garland Cape",
+    "type": "Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Moonlight-Garland-Cape-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2b/Moonlight-Garland-Cape-exterior.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Garland_Cape"
+    },
+    "order": 964
+  },
+  {
+    "id": 2761,
+    "guid": "WSk90oPjru",
+    "name": "Moonlight Basin",
+    "type": "Furniture",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Moonlight-Basin-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Moonlight-Basin.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Moonlight#Moonlight_Basin"
+    },
+    "order": 673
   }
 ]

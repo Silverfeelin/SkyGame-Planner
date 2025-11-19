@@ -38,6 +38,9 @@
               <button type="button" [class.td-u]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
                 Right
               </button>
+              @if (tn.node === tree.node) {
+                <button type="button" (click)="addRootNode()">Below</button>
+              }
             </div>
           </div>
           <!-- Node cost -->

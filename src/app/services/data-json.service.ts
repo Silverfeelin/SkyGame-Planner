@@ -27,7 +27,7 @@ export class DataJsonService {
     return this.stringify(trees.map(tree => {
       return {
         guid: tree.guid,
-        node: tree.node.guid
+        node: tree.node?.guid
       };
     }));
   }

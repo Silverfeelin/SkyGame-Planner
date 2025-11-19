@@ -7,7 +7,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/24/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Cinnamoroll-Pop-Up-Cafe-Mini-Companion-front.png",
-    "order": 347
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cinnamoroll_Pop-Up_Cafe_Mini_Companion"
+    },
+    "order": 377
   },
   {
     "id": 2142,
@@ -17,7 +20,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Cinnamoroll-Pop-Up-Cafe-Bowtie-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Cinnamoroll-Pop-Up-Cafe-Bowtie.png",
-    "order": 517
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cinnamoroll_Pop-Up_Cafe_Bowtie_and_Cloud_Cape"
+    },
+    "order": 555
   },
   {
     "id": 2143,
@@ -27,7 +33,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Cinnamoroll-Pop-Up-Cafe-Cloud-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Cinnamoroll-Pop-Up-Cafe-Cloud-Cape-back.png",
-    "order": 892
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cinnamoroll_Pop-Up_Cafe_Bowtie_and_Cloud_Cape"
+    },
+    "order": 979
   },
   {
     "id": 2144,
@@ -37,7 +46,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Cinnamoroll-Pop-Up-Cafe-Combo-Swirled-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Cinnamoroll-Pop-Up-Cafe-Combo-Swirled-Hair-front.png",
-    "order": 289
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cinnamoroll_Pop-Up_Cafe_Combo"
+    },
+    "order": 312
   },
   {
     "id": 2145,
@@ -47,7 +59,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/84/Cinnamoroll-Pop-Up-Cafe-Combo-Ears-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c2/Cinnamoroll-Pop-Up-Cafe-Combo-Ears.png",
-    "order": 345
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cinnamoroll_Pop-Up_Cafe_Combo"
+    },
+    "order": 375
   },
   {
     "id": 2146,
@@ -57,7 +72,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Cinnamoroll-Pop-Up-Cafe-Plushie-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ca/Cinnamoroll-Pop-Up-Cafe-Plushie-Prop-front.png",
-    "order": 740
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cinnamoroll_Pop-Up_Cafe_Plushie"
+    },
+    "order": 817
   },
   {
     "id": 2147,
@@ -67,7 +85,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Cozy-Teacup-Headband-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d8/Cozy-Teacup-Headband.png",
-    "order": 346
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cozy_Teacup_Headband"
+    },
+    "order": 376
   },
   {
     "id": 2148,
@@ -77,6 +98,9 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Cozy-Cafe-Table-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Cozy-Cafe-Table-Prop.png",
-    "order": 741
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Sky_%C3%97_Cinnamoroll_Pop-Up_Cafe#Cozy_Cafe_Table"
+    },
+    "order": 818
   }
 ]

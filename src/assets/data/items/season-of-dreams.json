@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 479
+    "order": 515
   },
   {
     "id": 422,
@@ -27,7 +27,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 410
+    "order": 443
   },
   {
     "id": 423,
@@ -44,14 +44,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dreams_Guide#Ultimate_Gifts"
     },
-    "order": 795
+    "order": 872
   },
   {
     "id": 424,
     "guid": "IEocuR75Kz",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Dreams#Quest_#1"
+    }
   },
   {
     "id": 425,
@@ -65,7 +68,10 @@
     "guid": "Ee2bEKMr-j",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Dreams#Quest_#2"
+    }
   },
   {
     "id": 427,
@@ -79,7 +85,10 @@
     "guid": "AxqrNrIvYZ",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Dreams#Quest_#3"
+    }
   },
   {
     "id": 429,
@@ -93,7 +102,10 @@
     "guid": "lgkuCpwOmm",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Dreams#Quest_#4"
+    }
   },
   {
     "id": 431,
@@ -107,7 +119,10 @@
     "guid": "fLXHdJRrG8",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Dreams#Quest_#5"
+    }
   },
   {
     "id": 433,
@@ -159,7 +174,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Face_Accessory"
     },
-    "order": 354,
+    "order": 385,
     "group": "SeasonPass",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Dreams_yetihorns.jpg",
@@ -177,7 +192,10 @@
     "id": 1128,
     "guid": "s_79maNypQ",
     "type": "Music",
-    "name": "Music Sheet #19",
+    "name": "Forgotten Dance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bearhug_Hermit#Music_Sheet"
+    },
     "sheet": "19",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 19,
@@ -219,12 +237,12 @@
       "previewUrl": "/assets/game/dyes/hair/Dreams_yeti.jpg",
       "infoUrl": "/assets/game/dyes/hair/2slots_Dreams_yeti.jpg"
     },
-    "order": 199
+    "order": 215
   },
   {
     "id": 1132,
     "guid": "n4sSWlUIbO",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Bearhug Hermit Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Icon_pants_dreams_bearhug.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0f/Dreams_pants_bearhug_v2.png",
@@ -307,7 +325,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Dreams_DP.jpg"
     },
-    "order": 200,
+    "order": 216,
     "group": "SeasonPass"
   },
   {
@@ -354,7 +372,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Mask"
     },
-    "order": 408,
+    "order": 441,
     "group": "SeasonPass"
   },
   {
@@ -371,7 +389,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Cape"
     },
-    "order": 793
+    "order": 870
   },
   {
     "id": 1145,
@@ -384,7 +402,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Dancing_Performer#Instrument"
     },
-    "order": 536,
+    "order": 578,
     "group": "SeasonPass"
   },
   {
@@ -444,7 +462,10 @@
     "id": 1149,
     "guid": "P0s-2sxeCo",
     "type": "Music",
-    "name": "Music Sheet #18",
+    "name": "Springing Step",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Music_Sheet"
+    },
     "sheet": "18",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 18
@@ -506,7 +527,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Outfit"
     },
-    "order": 110
+    "order": 123
   },
   {
     "id": 1154,
@@ -530,7 +551,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Cape"
     },
-    "order": 792
+    "order": 869
   },
   {
     "id": 1156,
@@ -546,7 +567,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Peeking_Postman#Mask"
     },
-    "order": 407,
+    "order": 440,
     "group": "SeasonPass"
   },
   {
@@ -609,7 +630,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Dreams_mentor.jpg"
     },
-    "order": 201
+    "order": 217
   },
   {
     "id": 1163,
@@ -656,7 +677,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Mask"
     },
-    "order": 409
+    "order": 442
   },
   {
     "id": 1167,
@@ -687,7 +708,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Spinning_Mentor#Cape"
     },
-    "order": 794,
+    "order": 871,
     "group": "SeasonPass"
   },
   {

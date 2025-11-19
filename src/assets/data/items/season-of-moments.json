@@ -9,7 +9,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Camera_Prop"
     },
-    "order": 558
+    "order": 600
   },
   {
     "id": 623,
@@ -23,7 +23,10 @@
     "guid": "bZLp8uDLBH",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#1"
+    }
   },
   {
     "id": 625,
@@ -37,7 +40,10 @@
     "guid": "tPSfwv25tD",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#2"
+    }
   },
   {
     "id": 627,
@@ -58,7 +64,10 @@
     "guid": "Bt81wczcyz",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#3"
+    }
   },
   {
     "id": 630,
@@ -72,7 +81,10 @@
     "guid": "QYqOsJH08k",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#4"
+    }
   },
   {
     "id": 632,
@@ -86,7 +98,10 @@
     "guid": "RGIkrdzAHQ",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments#Quest_#5"
+    }
   },
   {
     "id": 634,
@@ -106,7 +121,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 489
+    "order": 525
   },
   {
     "id": 636,
@@ -119,7 +134,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 96,
+    "order": 107,
     "dye": {
       "previewUrl": "/assets/game/dyes/Moments_ultglasses.jpg",
       "primary": {}
@@ -136,7 +151,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 557
+    "order": 599
   },
   {
     "id": 638,
@@ -149,7 +164,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Moments_Guide#Ultimate_Gifts"
     },
-    "order": 305,
+    "order": 328,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Moments_ulthat.jpg",
       "primary": {}
@@ -197,7 +212,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Face_Accessory"
     },
-    "order": 97,
+    "order": 108,
     "group": "SeasonPass"
   },
   {
@@ -214,7 +229,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Mask"
     },
-    "order": 444
+    "order": 477
   },
   {
     "id": 1655,
@@ -247,7 +262,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Cape"
     },
-    "order": 832,
+    "order": 909,
     "group": "SeasonPass"
   },
   {
@@ -260,7 +275,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Reassuring_Ranger#Hair_Accessory"
     },
-    "order": 303,
+    "order": 326,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Moments_rangerhat.jpg",
       "infoUrl": "/assets/game/dyes/hair-accessory/2slots_Moments_rangerhat.jpg",
@@ -318,7 +333,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Face_Accessory"
     },
-    "order": 98
+    "order": 109
   },
   {
     "id": 1664,
@@ -336,7 +351,7 @@
       "previewUrl": "/assets/game/dyes/hair/Moments_geologist.jpg",
       "infoUrl": "/assets/game/dyes/hair/2slots_Moments_geologist.jpg"
     },
-    "order": 244,
+    "order": 260,
     "group": "SeasonPass"
   },
   {
@@ -381,7 +396,10 @@
     "id": 1669,
     "guid": "1T0D06zFUX",
     "type": "Music",
-    "name": "Music Sheet #37",
+    "name": "Waltz of the Plains",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Music_Sheet"
+    },
     "sheet": "37",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 37
@@ -396,7 +414,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Jolly_Geologist#Prop"
     },
-    "order": 603,
+    "order": 653,
     "group": "SeasonPass"
   },
   {
@@ -466,7 +484,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ascetic_Monk#Mask"
     },
-    "order": 445,
+    "order": 478,
     "group": "SeasonPass"
   },
   {
@@ -483,7 +501,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Moments_monk.jpg"
     },
-    "order": 243
+    "order": 259
   },
   {
     "id": 1677,
@@ -571,7 +589,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair"
     },
-    "order": 242
+    "order": 258
   },
   {
     "id": 1685,
@@ -598,7 +616,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Hair_Accessory"
     },
-    "order": 304,
+    "order": 327,
     "group": "SeasonPass"
   },
   {
@@ -644,7 +662,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Nightbird_Whisperer#Shoes"
     },
-    "order": 113,
+    "order": 126,
     "group": "SeasonPass"
   },
   {
@@ -654,5 +672,19 @@
     "name": "Season Heart",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/SOMoments-seasonal-heart-icon-Credit-Morybel.png",
     "group": "SeasonPass"
+  },
+  {
+    "id": 2830,
+    "guid": "K-CuHIzbLW",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2831,
+    "guid": "QTswVTW5ZI",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
   }
 ]

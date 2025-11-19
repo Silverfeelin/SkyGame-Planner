@@ -24,6 +24,7 @@ import { NgIf, NgFor, NgTemplateOutlet, NgClass } from '@angular/common';
 import { IconService } from '@app/services/icon.service';
 import { drawFingerprint } from '../closet-fingerprint';
 import { OverlayComponent } from "../../layout/overlay/overlay.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 interface ISelection { [guid: string]: IItem; }
 interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; d?: string; };
@@ -81,7 +82,7 @@ export class ClosetComponent implements OnDestroy {
 
   // Item type data
   itemTypes: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape,
@@ -91,6 +92,7 @@ export class ClosetComponent implements OnDestroy {
   itemIcons: { [key: string]: string } = {
     'Outfit': 'outfit',
     'Shoes': 'shoes',
+    'OutfitShoes': 'outfit-shoes',
     'Mask': 'mask',
     'FaceAccessory': 'face-acc',
     'Necklace': 'necklace',
@@ -605,7 +607,7 @@ export class ClosetComponent implements OnDestroy {
     this.tsState = state;
 
     const types = new Set<ItemType>(this.itemTypes);
-    const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
+    const items = TreeHelper.getItems(ts.tree).filter(item => types.has(item.type));
     items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
     this.tsItems = items;
   }
@@ -621,7 +623,7 @@ export class ClosetComponent implements OnDestroy {
 
     const types = new Set<ItemType>(this.itemTypes);
     this.rs.spirits?.forEach(spirit => {
-      const items = NodeHelper.getItems(spirit.tree.node).filter(item => types.has(item.type));
+      const items = TreeHelper.getItems(spirit.tree).filter(item => types.has(item.type));
       items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
       this.rsSpirits.push({ returning: spirit, items });
     });
@@ -636,7 +638,7 @@ export class ClosetComponent implements OnDestroy {
       if (!instance) { return; }
       const spirits = instance.spirits || [];
 
-      const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
+      const items = spirits.map(s => TreeHelper.getItems(s.tree)).flat().filter(i => types.has(i.type));
       const shops = instance.shops || [];
       const listItems = shops.map(s => s.itemList?.items || []).flat();
       const iapItems = shops.map(s => (s.iaps || []).map(a => a.items || [])).flat().flat();
@@ -674,11 +676,11 @@ export class ClosetComponent implements OnDestroy {
     // Get ongoing items.
     const regularSpirits = this._dataService.spiritConfig.items.filter(s => s.type === 'Regular' || s.type === 'Elder');
     regularSpirits.forEach(spirit => {
-      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
     });
     const season = DateHelper.getActive(this._dataService.seasonConfig.items);
     season?.spirits?.forEach(spirit => {
-      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
     });
     season?.shops?.forEach(shop => {
       shop.iaps?.forEach(iap => iap.items?.forEach(item => this.ongoingItems[item.guid] = item));
@@ -687,16 +689,17 @@ export class ClosetComponent implements OnDestroy {
     this._dataService.eventConfig.items.forEach(event => {
       const instance = DateHelper.getActive(event.instances);
       instance?.spirits?.forEach(spirit => {
-        NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+        TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
       });
       instance?.shops?.forEach(shop => {
         shop.iaps?.forEach(iap => iap.items?.forEach(item => this.ongoingItems[item.guid] = item));
         shop.itemList?.items?.forEach(node => this.ongoingItems[node.item.guid] = node.item);
       });
     });
-    NodeHelper.getItems(DateHelper.getActive(this._dataService.travelingSpiritConfig.items)?.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    const activeTsTree = DateHelper.getActive(this._dataService.travelingSpiritConfig.items)?.tree;
+    TreeHelper.getItems(activeTsTree).forEach(item => this.ongoingItems[item.guid] = item);
     DateHelper.getActive(this._dataService.returningSpiritsConfig.items)?.spirits?.forEach(spirit => {
-      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
     });
 
     // Add items to closets.
@@ -1013,6 +1016,7 @@ export class ClosetComponent implements OnDestroy {
     const getSelectedPerType = (selection: ISelection) => Object.values(selection).reduce((map, item) => {
       let type = item.type;
       if (type === ItemType.Furniture || type === ItemType.Held) { type = ItemType.Prop; }
+      if (type === ItemType.OutfitShoes) { type = ItemType.Outfit; }
       if (!map[type]) { map[type] = item; }
       return map;
     }, {} as { [key: string]: IItem });
@@ -1167,6 +1171,7 @@ export class ClosetComponent implements OnDestroy {
 
     const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
     const cShoes = Math.ceil(this.items[ItemType.Shoes].length / cols[0]);
+    const cOutfitShoes = Math.ceil(this.items[ItemType.OutfitShoes].length / cols[0]);
     const cMask = Math.ceil(this.items[ItemType.Mask].length / cols[0]);
     const cFaceAcc = Math.ceil(this.items[ItemType.FaceAccessory].length / cols[0]);
     const cNecklace = Math.ceil(this.items[ItemType.Necklace].length / cols[0]);
@@ -1177,7 +1182,7 @@ export class ClosetComponent implements OnDestroy {
     const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
     const cFurniture = Math.ceil(this.items[ItemType.Furniture].length / cols[3]);
     const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
-    const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
+    const h1 = (cOutfit + cShoes + cOutfitShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 7 -_wGap;
     const h2 = (cHair + cHairAcc + cHeadAcc) * _wBox + _wPad * 4 - _wGap;
     const h3 = cCape * _wBox + _wPad * 2 - _wGap;
     const h4 = (cHeld + cFurniture + cProp) * _wBox + _wPad * 4 - _wGap;
@@ -1204,10 +1209,12 @@ export class ClosetComponent implements OnDestroy {
     sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Shoes], itemImgs);
     sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.OutfitShoes], itemImgs);
+    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cOutfitShoes) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Mask], itemImgs);
-    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
+    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cOutfitShoes + cMask) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.FaceAccessory], itemImgs);
-    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
+    sx = _wPad;  sy = _wPad * 6 + (cOutfit + cShoes + cOutfitShoes + cMask + cFaceAcc) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Necklace], itemImgs);
 
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
@@ -1407,7 +1414,7 @@ export class ClosetComponent implements OnDestroy {
 
     steps.push(...[
       { sStep: s.ITEM, title: 'Sky cosmetics', intro: 'Here you can see all cosmetics from Sky. You can create a request simply by clicking the icons to select them.' },
-      { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
+      { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. You can select items here. Cosmetics that can be dyed have palette icons below them which you can click on.' },
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
       { sStep: s.COPY, title: 'Share request', intro: 'When you are done selecting items you can share your request.' },
       { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 1 week.' },

@@ -18,7 +18,7 @@ import { CostComponent } from "../../util/cost/cost.component";
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { DecimalPipe, LowerCasePipe } from '@angular/common';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
-import { IRevisedSpiritTree, ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { IRevisedSpiritTree, ISpiritTree, ISpiritTreeTier } from '@app/interfaces/spirit-tree.interface';
 import { nanoid } from 'nanoid';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../spirit-tree/spirit-tree.component";
 import { ItemUnlockCalculatorSpiritsComponent } from "./item-unlock-calculator-spirits/item-unlock-calculator-spirits.component";
@@ -29,6 +29,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemUnlockCalculatorSeasonsComponent } from "./item-unlock-calculator-seasons/item-unlock-calculator-seasons.component";
 import { ISeason } from '@app/interfaces/season.interface';
 import { Router } from '@angular/router';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 interface IItemResult {
   item: IItem;
@@ -73,7 +74,7 @@ export class ItemUnlockCalculatorComponent {
 
   itemType: ItemType = ItemType.Outfit;
   itemTypes: Array<string> = [
-    ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
     ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
     ItemType.Stance, ItemType.Call, ItemType.Music
@@ -210,7 +211,7 @@ export class ItemUnlockCalculatorComponent {
       return;
     }
 
-    const items = NodeHelper.getItems(tree.node);
+    const items = TreeHelper.getItems(tree);
     this.addFilteredKeyItems(items);
   }
 
@@ -222,13 +223,13 @@ export class ItemUnlockCalculatorComponent {
       return;
     }
 
-    const items = trees.flatMap(t => NodeHelper.getItems(t.node));
+    const items = trees.flatMap(t => TreeHelper.getItems(t));
     this.addFilteredKeyItems(items);
   }
 
   onSeasonGuideSelected(season: ISeason): void {
     const spirit = season.spirits.find(s => s.type === 'Guide');
-    const items = spirit?.tree ? NodeHelper.getItems(spirit.tree.node) : [];
+    const items = spirit?.tree ? TreeHelper.getItems(spirit.tree) : [];
     if (!items.length) {
       alert('This season guide does not items that can be added.');
       return;
@@ -243,7 +244,7 @@ export class ItemUnlockCalculatorComponent {
 
     const items: Array<IItem> = [];
     for (const spirit of instance.spirits || []) {
-      items.push(...NodeHelper.getItems(spirit.tree.node));
+      items.push(...TreeHelper.getItems(spirit.tree));
     }
 
     for (const shop of instance.shops || []) {
@@ -299,9 +300,22 @@ export class ItemUnlockCalculatorComponent {
       let srcSeason: ISeason | undefined;
       let srcEvent: IEventInstance | undefined;
       switch (src?.type) {
-        case 'iap': srcSeason = src.source.shop?.season; srcEvent = src.source.shop?.event; break;
-        case 'list': srcSeason = src.source.itemList.shop?.season; srcEvent = src.source.itemList.shop?.event; break;
-        case 'node': srcSeason = src.source.root?.spiritTree?.spirit?.season; srcEvent = src.source.root?.spiritTree?.eventInstanceSpirit?.eventInstance; break;
+        case 'iap': {
+          srcSeason = src.source.shop?.season;
+          srcEvent = src.source.shop?.event;
+          break;
+        }
+        case 'list': {
+          srcSeason = src.source.itemList.shop?.season;
+          srcEvent = src.source.itemList.shop?.event;
+          break;
+        }
+        case 'node': {
+          const tree = src.source.root?.spiritTree;
+          srcSeason = tree?.spirit?.season;
+          srcEvent = tree?.eventInstanceSpirit?.eventInstance;
+          break;
+        }
       }
 
       if (!DateHelper.isActivePeriod(srcSeason) && !DateHelper.isActivePeriod(srcEvent)) {
@@ -415,22 +429,68 @@ export class ItemUnlockCalculatorComponent {
     };
 
     for (const tree of Object.values(this.checkedTrees)) {
-      treeOpaqueNodes = [];
-      treeHighlightItems = [];
-      const name = tree.eventInstanceSpirit?.eventInstance?.name
-        ?? tree.eventInstanceSpirit?.eventInstance?.event?.name
-        ?? tree.ts?.spirit?.name
-        ?? tree.visit?.spirit?.name
-        ?? tree?.spirit?.name;
-      const newTree = {
-        guid: nanoid(10), name, node: { guid: nanoid(10) }
-      } as ISpiritTree;
-      const node = tree.node;
-      addNode(newTree.node, node);
+      if (tree.node) {
+        treeOpaqueNodes = [];
+        treeHighlightItems = [];
+        const name = tree.eventInstanceSpirit?.eventInstance?.name
+          ?? tree.eventInstanceSpirit?.eventInstance?.event?.name
+          ?? tree.ts?.spirit?.name
+          ?? tree.visit?.spirit?.name
+          ?? tree?.spirit?.name;
+        const newTree = {
+          guid: nanoid(10), name, node: { guid: nanoid(10) }
+        } as ISpiritTree;
+        const node = tree.node;
+        node && addNode(newTree.node!, node);
 
-      this.treeOpaqueNodes[newTree.guid] = treeOpaqueNodes;
-      this.treeHighlightItems[newTree.guid] = treeHighlightItems;
-      this.trees.push(newTree);
+        this.treeOpaqueNodes[newTree.guid] = treeOpaqueNodes;
+        this.treeHighlightItems[newTree.guid] = treeHighlightItems;
+        this.trees.push(newTree);
+      } else if (tree.tier) {
+        treeOpaqueNodes = [];
+        treeHighlightItems = [];
+        const newTree = {
+          guid: nanoid(10), name: tree.name
+        } as ISpiritTree;
+        const tiers = TreeHelper.getTiers(tree);
+        let prevTier: ISpiritTreeTier | undefined = undefined;
+        for (const tier of tiers) {
+          const newTier = { guid: nanoid(10), rows: [] } as ISpiritTreeTier;
+          for (const row of tier.rows) {
+            const newRow = [] as Array<INode | undefined>;
+            newTier.rows.push(newRow as [INode | undefined, INode | undefined, INode | undefined]);
+            for (const node of row) {
+              if (node == undefined) {
+                newRow.push(undefined);
+              } else {
+                const newNode = { guid: nanoid(10), item: node.item } as INode;
+                newRow.push(newNode);
+                if (this.checkedNodes[node.guid] && !node.item?.unlocked) {
+                  copyNodeCost(newNode, node);
+                  treeOpaqueNodes.push(newNode.guid);
+                }
+
+                if (node.item && this.itemSet.has(node.item)) {
+                  treeHighlightItems.push(node.item.guid);
+                }
+
+              }
+            }
+          }
+          if (prevTier) {
+            prevTier.next = newTier;
+            newTier.prev = prevTier;
+            newTier.root = prevTier.root;
+          } else {
+            newTier.root = newTier;
+          }
+          prevTier = newTier;
+        }
+        newTree.tier = prevTier?.root;
+        this.treeHighlightItems[newTree.guid] = treeHighlightItems;
+        this.treeOpaqueNodes[newTree.guid] = treeOpaqueNodes;
+        this.trees.push(newTree);
+      }
     }
   }
 
@@ -530,7 +590,10 @@ export class ItemUnlockCalculatorComponent {
     if (itemType === ItemType.Spell) { return { c: 5 }; }
 
     const items = this._dataService.itemConfig.items.filter(i => {
-      return i.type === itemType && i.nodes?.at(0)?.root?.spiritTree?.spirit?.type !== 'Regular'
+      if (i.type !== itemType) { return false; }
+      const node = i.nodes?.at(0);
+      const tree = node?.root?.spiritTree;
+      return tree?.spirit?.type !== 'Regular'
     });
     let countCandles = 0;
     const totalCandles = items.reduce((acc, item) => {

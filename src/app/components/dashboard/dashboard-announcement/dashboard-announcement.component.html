@@ -1,0 +1,26 @@
+@if (isAnnouncementVisible()) {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">Season of Migration</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        <p>
+          The new Season of Migration brings a different way to interact with season spirits and unlock their season items.<br/>
+          This change has had a large impact on the Sky Planner.
+        </p>
+        <p>
+          Please report any problems you find on our
+          <a href="https://github.com/Silverfeelin/SkyGame-Planner/issues" target="_blank" class="text-link">GitHub issues page</a>
+          and we'll try to get them fixed as soon as we can!
+        </p>
+        <div class="sky-flex flex-wrap mt-half">
+          <button type="button" class="button-danger" (click)="dismiss()">
+            <mat-icon class="menu-icon">close</mat-icon>
+            <span class="menu-label">Dismiss</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

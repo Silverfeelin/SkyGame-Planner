@@ -11,7 +11,10 @@
     "guid": "wUo9ZKVEpq",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Passage#Quest_#1"
+    }
   },
   {
     "id": 606,
@@ -25,7 +28,10 @@
     "guid": "WUiJnkBm0n",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Passage#Quest_#2"
+    }
   },
   {
     "id": 608,
@@ -41,14 +47,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Serow_Mask"
     },
-    "order": 440
+    "order": 473
   },
   {
     "id": 609,
     "guid": "gM93l96JzS",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Passage#Quest_#3"
+    }
   },
   {
     "id": 610,
@@ -71,21 +80,27 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Boar_Mask"
     },
-    "order": 441
+    "order": 474
   },
   {
     "id": 612,
     "guid": "YoluGOPKvu",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Passage#Quest_#4"
+    }
   },
   {
     "id": 613,
     "guid": "86bhs1nb7d",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Passage#Quest_#5"
+    }
   },
   {
     "id": 614,
@@ -108,7 +123,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Monkey_Mask"
     },
-    "order": 443
+    "order": 476
   },
   {
     "id": 616,
@@ -127,7 +142,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Hacky_Sack"
     },
-    "order": 602
+    "order": 652
   },
   {
     "id": 618,
@@ -143,7 +158,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Raccoon_Mask"
     },
-    "order": 442
+    "order": 475
   },
   {
     "id": 619,
@@ -156,7 +171,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 488
+    "order": 524
   },
   {
     "id": 620,
@@ -174,7 +189,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 439
+    "order": 472
   },
   {
     "id": 621,
@@ -187,7 +202,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Passage_Guide#Ultimate_Gifts"
     },
-    "order": 831
+    "order": 908
   },
   {
     "id": 1606,
@@ -223,7 +238,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Hair"
     },
-    "order": 241
+    "order": 257
   },
   {
     "id": 1609,
@@ -250,7 +265,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Oddball_Outcast#Neck_Accessory"
     },
-    "order": 503,
+    "order": 541,
     "group": "SeasonPass"
   },
   {
@@ -279,7 +294,7 @@
   {
     "id": 1614,
     "guid": "Py6sIw6EvE",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Oddball Outcast Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9a/Passage-Oddball-Outcast-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Passage-Oddball-Outcast-outfit-front.png",
@@ -355,7 +370,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Passage_tumble.jpg"
     },
-    "order": 238,
+    "order": 254,
     "group": "SeasonPass"
   },
   {
@@ -402,7 +417,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Cape"
     },
-    "order": 829,
+    "order": 906,
     "group": "SeasonPass"
   },
   {
@@ -422,7 +437,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tumbling_Troublemaker#Face_Accessory"
     },
-    "order": 358,
+    "order": 389,
     "group": "SeasonPass",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Passage_tassels.jpg",
@@ -487,7 +502,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Face_Accessory"
     },
-    "order": 357
+    "order": 388
   },
   {
     "id": 1631,
@@ -514,7 +529,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Melancholy_Mope#Hair"
     },
-    "order": 239,
+    "order": 255,
     "group": "SeasonPass"
   },
   {
@@ -543,7 +558,7 @@
   {
     "id": 1636,
     "guid": "aaYJbWm6oV",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Melancholy Mope Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1d/Passage-Melancholy-Mope-Outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8f/Passage-Melancholy-Mope-Outfit-front.png",
@@ -616,7 +631,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Instrument"
     },
-    "order": 543,
+    "order": 585,
     "group": "SeasonPass"
   },
   {
@@ -658,7 +673,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Overactive_Overachiever#Cape"
     },
-    "order": 830
+    "order": 907
   },
   {
     "id": 1646,
@@ -689,7 +704,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Passage_overachiever.jpg"
     },
-    "order": 240,
+    "order": 256,
     "group": "SeasonPass"
   },
   {

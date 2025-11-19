@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 480
+    "order": 516
   },
   {
     "id": 436,
@@ -27,7 +27,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 411
+    "order": 444
   },
   {
     "id": 437,
@@ -46,7 +46,7 @@
       "previewUrl": "/assets/game/dyes/hair/Assembly_ultpot.jpg",
       "infoUrl": "/assets/game/dyes/hair/2slots_Assembly_ultpot.jpg"
     },
-    "order": 202
+    "order": 218
   },
   {
     "id": 438,
@@ -60,7 +60,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 537
+    "order": 579
   },
   {
     "id": 439,
@@ -77,14 +77,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Ultimate_Gifts"
     },
-    "order": 796
+    "order": 873
   },
   {
     "id": 440,
     "guid": "srvkkR75YW",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly#Quest_#1"
+    }
   },
   {
     "id": 441,
@@ -105,7 +108,10 @@
     "guid": "lT9zT9m0fm",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly#Quest_#2"
+    }
   },
   {
     "id": 444,
@@ -117,14 +123,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Pillow"
     },
-    "order": 587
+    "order": 637
   },
   {
     "id": 445,
     "guid": "zvNA-aFO_N",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly#Quest_#3"
+    }
   },
   {
     "id": 446,
@@ -145,7 +154,10 @@
     "guid": "W1uCIbviNd",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly#Quest_#4"
+    }
   },
   {
     "id": 449,
@@ -157,14 +169,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Jar"
     },
-    "order": 586
+    "order": 636
   },
   {
     "id": 450,
     "guid": "kUyRgMkRv4",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly#Quest_#5"
+    }
   },
   {
     "id": 451,
@@ -176,7 +191,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Brazier"
     },
-    "order": 583
+    "order": 633
   },
   {
     "id": 452,
@@ -190,7 +205,10 @@
     "guid": "iJ4O7SASJW",
     "type": "Quest",
     "name": "Quest 6",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Assembly#Quest_#6"
+    }
   },
   {
     "id": 454,
@@ -209,7 +227,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Bookcase"
     },
-    "order": 584
+    "order": 634
   },
   {
     "id": 456,
@@ -221,7 +239,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Assembly_Guide#Tent"
     },
-    "order": 589
+    "order": 639
   },
   {
     "id": 1173,
@@ -264,7 +282,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Hair"
     },
-    "order": 205,
+    "order": 221,
     "group": "SeasonPass"
   },
   {
@@ -304,7 +322,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Mask"
     },
-    "order": 416
+    "order": 449
   },
   {
     "id": 1180,
@@ -331,7 +349,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Baffled_Botanist#Prop"
     },
-    "order": 590,
+    "order": 640,
     "group": "SeasonPass"
   },
   {
@@ -394,7 +412,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scolding_Student#Mask"
     },
-    "order": 415
+    "order": 448
   },
   {
     "id": 1189,
@@ -441,7 +459,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Assembly_scold.jpg"
     },
-    "order": 206
+    "order": 222
   },
   {
     "id": 1193,
@@ -472,7 +490,7 @@
       "previewUrl": "/assets/game/dyes/cape/Assembly_student.jpg",
       "primary": {}
     },
-    "order": 797,
+    "order": 874,
     "group": "SeasonPass"
   },
   {
@@ -535,7 +553,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Mask"
     },
-    "order": 417
+    "order": 450
   },
   {
     "id": 1202,
@@ -572,7 +590,10 @@
     "id": 1205,
     "guid": "gEKj_Dz9vX",
     "type": "Music",
-    "name": "Music Sheet #21",
+    "name": "Keeping Myself Together",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Music_Sheet"
+    },
     "sheet": "21",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 21
@@ -591,7 +612,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Assembly_cadet.jpg"
     },
-    "order": 207,
+    "order": 223,
     "group": "SeasonPass"
   },
   {
@@ -604,7 +625,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Scaredy_Cadet#Prop"
     },
-    "order": 585
+    "order": 635
   },
   {
     "id": 1208,
@@ -676,7 +697,7 @@
       "previewUrl": "/assets/game/dyes/hair/Assembly_march.jpg",
       "infoUrl": "/assets/game/dyes/hair/2slots_Assembly_march.jpg"
     },
-    "order": 204
+    "order": 220
   },
   {
     "id": 1215,
@@ -730,7 +751,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Mask"
     },
-    "order": 412,
+    "order": 445,
     "group": "SeasonPass"
   },
   {
@@ -743,7 +764,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Marching_Adventurer#Prop"
     },
-    "order": 588
+    "order": 638
   },
   {
     "id": 1221,
@@ -813,7 +834,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Mask"
     },
-    "order": 413
+    "order": 446
   },
   {
     "id": 1228,
@@ -882,7 +903,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Outfit"
     },
-    "order": 111
+    "order": 124
   },
   {
     "id": 1234,
@@ -894,7 +915,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Chuckling_Scout#Prop"
     },
-    "order": 591
+    "order": 641
   },
   {
     "id": 1235,
@@ -964,7 +985,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Mask"
     },
-    "order": 414
+    "order": 447
   },
   {
     "id": 1242,
@@ -1001,7 +1022,10 @@
     "id": 1245,
     "guid": "2DIgMTKaK6",
     "type": "Music",
-    "name": "Music Sheet #20",
+    "name": "Forest Walk",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Daydream_Forester#Music_Sheet"
+    },
     "sheet": "20",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 20
@@ -1035,7 +1059,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Assembly_daydream.jpg"
     },
-    "order": 203,
+    "order": 219,
     "group": "SeasonPass"
   },
   {

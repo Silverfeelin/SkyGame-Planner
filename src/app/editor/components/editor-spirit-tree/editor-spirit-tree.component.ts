@@ -22,7 +22,7 @@ import { StorageService } from '@app/services/storage.service';
 import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
 import { TabDirective } from '@app/components/layout/tabs/tab.directive';
 
-type TreeNodeArray = Array<TreeNode>;
+type TreeNodeArray = Array<TreeNode | undefined>;
 type TreeNode = { node: INode; x: number; y: number; };
 type CostType = { id: string; label: string; }
 type SpecialItemNames = 'placeholder' | 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
@@ -125,11 +125,11 @@ export class SpiritTreeEditorComponent {
       node: { guid: nanoid(10), item: this.cloneItem(this.specialItemMap.placeholder.item) }
     };
 
-    const treeNode = { x: 1, y: 0, node: this.tree.node };
+    const treeNode = { x: 1, y: 0, node: this.tree.node! };
     this.nodeTable[1][0] = treeNode;
-    this.nodeMap[this.tree.node.guid] = treeNode;
+    this.nodeMap[this.tree.node!.guid] = treeNode;
     this.selectedTreeNode = treeNode;
-    this.selectedItem = this.tree.node.item!;
+    this.selectedItem = this.tree.node!.item!;
 
     // Load spirits
     const spiritTypes = new Set<SpiritType>(['Elder', 'Guide', 'Season', 'Event', 'Regular']);
@@ -165,6 +165,33 @@ export class SpiritTreeEditorComponent {
     }
 
     this.onItemClicked({ item, event: new MouseEvent('click') });
+  }
+
+  addRootNode(): void {
+    // Create new placeholder node.
+    const node: INode = {
+      guid: nanoid(10),
+      item: this.cloneItem(this.specialItemMap.placeholder.item)
+    };
+
+    // Shift every existing node up one.
+    const treeNode: TreeNode = { x: 1, y: 0, node };
+    this.nodeMap[node.guid] = treeNode;
+    this.nodeTable.forEach(row => {
+      row.forEach(node => {
+        if (!node) { return; }
+        node.y++;
+      });
+    });
+    this.nodeTable[0].unshift(undefined);
+    this.nodeTable[1].unshift(treeNode);
+    this.nodeTable[2].unshift(undefined);
+
+    // Replace root node.
+    this.tree.node!.prev = node;
+    node.n = this.tree.node;
+    this.tree.node = node;
+    this.reloadTree();
   }
 
   addNode(direction: 'nw'|'n'|'ne') {
@@ -319,6 +346,7 @@ export class SpiritTreeEditorComponent {
   }
 
   promptCopySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
+    if (tree.tier) { alert('Spirit trees with friendship tiers are not supported.'); return; }
     if (!confirm('Are you sure you want to copy this spirit tree? Your current tree will be replaced.')) { return; }
     this.copySpiritTree(tree, preserveGuid);
   }
@@ -326,7 +354,7 @@ export class SpiritTreeEditorComponent {
   copySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
     this.tree = {
       guid: preserveGuid ? tree.guid : nanoid(10),
-      node: NodeHelper.clone(tree.node, preserveGuid)
+      node: NodeHelper.clone(tree.node!, preserveGuid)
     };
     this.nodeTable = [[], [], []];
     this.nodeMap = {};
@@ -344,9 +372,9 @@ export class SpiritTreeEditorComponent {
       if (n.ne) { addNode(n.ne, x + 1, y); }
     };
 
-    addNode(this.tree.node, 1, 0);
+    addNode(this.tree.node!, 1, 0);
     this.items = Object.values(this.itemMap);
-    this.selectedTreeNode = this.nodeMap[this.tree.node.guid];
+    this.selectedTreeNode = this.nodeMap[this.tree.node!.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
 
     const tsDate = tree.ts?.date;
@@ -458,7 +486,7 @@ export class SpiritTreeEditorComponent {
   exportJson(): void {
     const jsonTree = {
       guid: this.tree.guid,
-      node: this.tree.node.guid
+      node: this.tree.node!.guid
     };
 
     const nodes = NodeHelper.all(this.tree.node);

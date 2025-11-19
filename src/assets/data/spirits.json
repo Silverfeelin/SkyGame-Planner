@@ -1785,7 +1785,7 @@
       "name": "Duets Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/eb/Duets-Ultimate-Guide.png",
       "tree": "voApj8nmhQ",
-      "treeRevisions": ["RSUBTRhzHf"],
+      "treeRevisions": ["RSUBTRhzHf"]
     },
     {
       "guid": "o4ZuAa_Q8u",
@@ -1892,6 +1892,7 @@
       "type": "Guide",
       "name": "Radiance Guide",
       "tree": "QveGTQI48L",
+      "treeRevisions": [ "Vvd8vzwFLd" ],
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Radiance-Ultimate-Guide.png"
     },
     {
@@ -1923,6 +1924,7 @@
       "name": "Blue Bird Guide",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6f/Blue-Bird-Ultimate-Guide.png",
       "tree": "9ZMGsZeH1U",
+      "treeRevisions": [ "Z-lDboKqdB" ]
     },
     {
       "guid": "2iDZqeJXTf",
@@ -1958,6 +1960,91 @@
       "name": "Woodcutting Pleaful Parent",
       "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Woodcutting-Pleaful-Parent-cutout.png",
       "tree": "qLiBf_BpI4"
+    },
+    // #endregion
+    // #region Two Embers - Part 1
+    {
+      "guid": "gy_EzmMKxF",
+      "type": "Guide",
+      "name": "Vault Elder's Lantern",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/df/Vault-Elder-Lantern-Ultimate-Guide-cutout.png",
+      "tree": "lHlnmVDICn",
+      "treeRevisions": [ "GpcMalckm5" ]
+    },
+    {
+      "guid": "aO0n7dAWvc",
+      "type": "Season",
+      "name": "Tender Toymaker",
+      "tree": "SI9Q8J2Fm-"
+    },
+    {
+      "guid": "2FQrdh4aCQ",
+      "type": "Season",
+      "name": "Stern Shepherd",
+      "tree": "RDergQu3Vd"
+    },
+    {
+      "guid": "Jq1bIftHV5",
+      "type": "Season",
+      "name": "Resourceful Recluse",
+      "tree": "fdQpzNAjCw"
+    },
+    {
+      "guid": "zdstJkDMg5",
+      "type": "Season",
+      "name": "Scarred Sentry",
+      "tree": "r-emIwzMih"
+    },
+    {
+      "guid": "TDQC4wg3G9",
+      "type": "Season",
+      "name": "Caring Companion",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/86/Caring-Companion-cutout.png",
+      "tree": "PzoY-Wkk8O"
+    },
+    // #endregion
+    // #region Migration
+    {
+      "guid": "rpBWF2PFJc",
+      "type": "Guide",
+      "name": "Migration Guide",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/91/Migration-Ultimate-Guide.png",
+      "tree": "IVb8WCKt8D"
+    },
+    {
+      "guid": "1mYa5Pnpdy",
+      "type": "Season",
+      "name": "Migrating Jelly Whisperer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Migrating-Jelly-Whisperer-Spirit-cutout.png",
+      "tree": "zK7AFf0rvZ"
+    },
+    {
+      "guid": "Mxs_zZGt7y",
+      "type": "Season",
+      "name": "Migrating Butterfly Charmer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/29/Migrating-Butterfly-Charmer-cutout.png",
+      "tree": "nCGzsegB0l"
+    },
+    {
+      "guid": "k9ZI3GoyPE",
+      "type": "Season",
+      "name": "Migrating Manta Whisperer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/55/Migrating-Manta-Whisperer-Spirit-cutout.png",
+      "tree": "iFANrbgSY4"
+    },
+    {
+      "guid": "yfmzfJGyRp",
+      "type": "Season",
+      "name": "Migrating Bird Whisperer",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Migrating-Bird-Whisperer-cutout.png",
+      "tree": "nrvSEyff0h"
+    },
+    {
+      "guid": "gHhy04B7r9",
+      "type": "Season",
+      "name": "Migrating Bellmaker",
+      "imageUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/cf/Migrating-Bellmaker-cutout.png",
+      "tree": "ko9lr8M4J5"
     },
     // #endregion
 
@@ -2176,7 +2263,7 @@
       "guid": "tKeCcn57So",
       "type": "Event",
       "name": "Aviary Event Store"
-    },
+    }
     // #endregion
   ]
 }

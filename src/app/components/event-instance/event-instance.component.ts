@@ -21,6 +21,7 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { DateComponent } from '../util/date/date.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 import { IapCardComponent } from "../iap/iap-card/iap-card.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-event-instance',
@@ -121,7 +122,7 @@ export class EventInstanceComponent implements OnDestroy {
 
     this.instance.spirits?.map(s => s.tree).forEach(tree => {
       if (!tree) { return; }
-      NodeHelper.all(tree.node).forEach(n => {
+      TreeHelper.getNodes(tree).forEach(n => {
         this.c += n.c || 0;
         this.ec += n.ec || 0;
         if (!n.unlocked && !n.item?.unlocked) {

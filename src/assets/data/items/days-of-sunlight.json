@@ -16,7 +16,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Jelly_Shoulder_Buddy"
     },
-    "order": 513
+    "order": 551
   },
   {
     "id": 1914,
@@ -28,7 +28,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Tent"
     },
-    "order": 616
+    "order": 689
   },
   {
     "id": 1915,
@@ -40,7 +40,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Campfire_Snack_Kit"
     },
-    "order": 636
+    "order": 710
   },
   {
     "id": 1916,
@@ -52,7 +52,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Pink_Beach_Towel_Cape"
     },
-    "order": 876
+    "order": 960
   },
   {
     "id": 1917,
@@ -64,7 +64,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Yellow_Beach_Towel_Cape"
     },
-    "order": 877
+    "order": 961
   },
   {
     "id": 1918,
@@ -76,7 +76,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Blue_Beach_Towel_Cape"
     },
-    "order": 875
+    "order": 959
   },
   {
     "id": 1919,
@@ -102,7 +102,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Chunky_Sandals"
     },
-    "order": 123
+    "order": 138
   },
   {
     "id": 1922,
@@ -114,7 +114,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Surfboard"
     },
-    "order": 646
+    "order": 720
   },
   {
     "id": 2289,
@@ -124,12 +124,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/da/Sunlight-Woven-Wrap-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Sunlight-Woven-Wrap-back.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
-      "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/cape/Sunlight_manta.jpg",
+      "infoUrl": "/assets/game/dyes/cape/2slots_Sunlight_manta.jpg"
     },
-    "order": 878
+    "order": 963,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Woven_Wrap"
+    }
   },
   {
     "id": 2290,
@@ -138,7 +141,10 @@
     "name": "Sunlight Helios Hoops",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Sunlight-Helios-Hoops-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Sunlight-Helios-Hoops.png",
-    "order": 367
+    "order": 400,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Helios_Hoops"
+    }
   },
   {
     "id": 2291,
@@ -147,7 +153,10 @@
     "name": "Sunlight Manta Float",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/03/Sunlight-Manta-Float-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7e/Sunlight-Manta-Float.png",
-    "order": 566
+    "order": 612,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Manta_Float"
+    }
   },
   {
     "id": 2292,
@@ -157,12 +166,15 @@
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f8/Sunlight-Beach-Shorts-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d2/Sunlight-Beach-Shorts-front.png",
     "dye": {
-      "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg",
-      "infoUrl": "/assets/game/dyes/outfit/2slots_Sunlight_dadpants.jpg",
       "primary": {},
-      "secondary": {}
+      "secondary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_dadpants.jpg",
+      "infoUrl": "/assets/game/dyes/outfit/2slots_Sunlight_dadpants.jpg"
     },
-    "order": 75
+    "order": 83,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Beach_Shorts"
+    }
   },
   {
     "id": 2293,
@@ -170,5 +182,152 @@
     "type": "Special",
     "name": "Blessing",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8e/5CandlesSpell.png"
+  },
+  {
+    "id": 2739,
+    "guid": "NiwM8bgdxk",
+    "type": "HairAccessory",
+    "name": "Sunlight Bonnet",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f4/Sunlight-Bonnet-Hat-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/57/Sunlight-Bonnet-Hat-front.png",
+    "order": 382,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Bonnet"
+    }
+  },
+  {
+    "id": 2740,
+    "guid": "ysIdvX8oC7",
+    "type": "Outfit",
+    "name": "Sunlight Sun Dress",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Sunlight-Sun-Dress-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ac/Sunlight-Sun-Dress-front.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/outfit/Sunlight_toga.jpg"
+    },
+    "order": 84,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Sun_Dress"
+    }
+  },
+  {
+    "id": 2741,
+    "guid": "T5PJETWmC-",
+    "type": "Prop",
+    "name": "Sunlight Wave Projector",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bd/Sunlight-Wave-Projector-Icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/ce/Sunlight-Wave-Projector.png",
+    "order": 665,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Wave_Projector"
+    }
+  },
+  {
+    "id": 2742,
+    "guid": "iPnHAbmuQr",
+    "type": "Cape",
+    "name": "Sunlight Shawl Cape",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/08/Sunlight-Shawl-Cape-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/56/Sunlight-Shawl-Cape-back.png",
+    "dye": {
+      "primary": {},
+      "previewUrl": "/assets/game/dyes/cape/Sunlight_teenycape.jpg"
+    },
+    "order": 962,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sunlight_Shawl_Cape"
+    }
+  },
+  {
+    "id": 2743,
+    "guid": "6w_qh-oE2k",
+    "type": "Prop",
+    "name": "Sandcastle Small Tower",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Sancastle-Small-Tower-Piece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0b/Sancastle-Small-Tower-Piece.png",
+    "order": 666,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Small_Tower_Piece"
+    }
+  },
+  {
+    "id": 2744,
+    "guid": "G5sW47Twex",
+    "type": "Prop",
+    "name": "Sandcastle Large Tower",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/64/Sancastle-Large-Tower-Piece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Sancastle-Large-Tower-Piece.png",
+    "order": 667,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Large_Tower_Piece"
+    }
+  },
+  {
+    "id": 2745,
+    "guid": "wlTd7h9_Rc",
+    "type": "Prop",
+    "name": "Sandcastle Small Gate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4f/Sancastle-Small-Gate-Piece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Sancastle-Small-Gate-Piece.png",
+    "order": 668,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Small_Gate_Piece"
+    }
+  },
+  {
+    "id": 2746,
+    "guid": "Wii_7x7ezQ",
+    "type": "Prop",
+    "name": "Sandcastle Wall",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/17/Sancastle-Wall-Piece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/92/Sancastle-Wall-Piece.png",
+    "order": 669,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Wall_Piece"
+    }
+  },
+  {
+    "id": 2747,
+    "guid": "fkiyxCyMN7",
+    "type": "Prop",
+    "name": "Sandcastle Large Gate",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b9/Sancastle-Large-Gate-Piece-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e4/Sancastle-Large-Gate-Piece.png",
+    "order": 670,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Large_Gate_Piece"
+    }
+  },
+  {
+    "id": 2748,
+    "guid": "JVyQRl-B8m",
+    "type": "Prop",
+    "name": "Sandcastle Sand Lot",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Sancastle-Sand-Lot-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ab/Sancastle-Sand-Lot.png",
+    "order": 671,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Sand_Lot"
+    }
+  },
+  {
+    "id": 2749,
+    "guid": "4VFezhFHqw",
+    "type": "Prop",
+    "name": "Sandcastle Flag",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/18/Sandcastle-Flag-icon.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/ba/Sandcastle-Flag.png",
+    "order": 672,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Days_of_Sunlight#Sandcastle_Flag"
+    }
+  },
+  {
+    "id": 2750,
+    "guid": "jEpC3PXdht",
+    "type": "Special",
+    "name": "Cutscene",
+    "icon": "/assets/icons/question.webp"
   }
 ]

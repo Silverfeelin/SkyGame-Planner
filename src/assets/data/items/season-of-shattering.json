@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 485
+    "order": 521
   },
   {
     "id": 532,
@@ -30,7 +30,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 818
+    "order": 895
   },
   {
     "id": 533,
@@ -43,14 +43,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Void_of_Shattering#Ultimate_Gifts"
     },
-    "order": 815
+    "order": 892
   },
   {
     "id": 534,
     "guid": "AGUEuqLXVv",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#1"
+    }
   },
   {
     "id": 535,
@@ -63,8 +66,11 @@
     "id": 536,
     "guid": "WaDZqenOgo",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#2"
+    }
   },
   {
     "id": 537,
@@ -77,8 +83,11 @@
     "id": 538,
     "guid": "B2K9a5WdCy",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#3"
+    }
   },
   {
     "id": 539,
@@ -91,8 +100,11 @@
     "id": 540,
     "guid": "YVHc6de8iq",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#4"
+    }
   },
   {
     "id": 541,
@@ -105,8 +117,11 @@
     "id": 542,
     "guid": "TU0elaQAVo",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#5"
+    }
   },
   {
     "id": 543,
@@ -119,8 +134,11 @@
     "id": 544,
     "guid": "DWsvdTqFbu",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 6",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Shattering#Quest_#6"
+    }
   },
   {
     "id": 545,
@@ -146,7 +164,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
     },
-    "order": 228
+    "order": 244
   },
   {
     "id": 1471,
@@ -173,7 +191,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair_Accessory"
     },
-    "order": 302,
+    "order": 325,
     "group": "SeasonPass"
   },
   {
@@ -186,7 +204,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
     },
-    "order": 816
+    "order": 893
   },
   {
     "id": 1475,
@@ -208,7 +226,10 @@
     "id": 1477,
     "guid": "SL_uFHTqjm",
     "type": "Music",
-    "name": "Music Sheet #31",
+    "name": "Searching for Questions",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Music_Sheet"
+    },
     "sheet": "31",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 31
@@ -238,7 +259,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Hair"
     },
-    "order": 227,
+    "order": 243,
     "group": "SeasonPass"
   },
   {
@@ -251,7 +272,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Light#Cape"
     },
-    "order": 817
+    "order": 894
   },
   {
     "id": 1482,
@@ -299,7 +320,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair_Accessory"
     },
-    "order": 301
+    "order": 324
   },
   {
     "id": 1487,
@@ -326,14 +347,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Mask"
     },
-    "order": 431,
+    "order": 464,
     "group": "SeasonPass"
   },
   {
     "id": 1490,
     "guid": "ORKBuwdSG2",
     "type": "Music",
-    "name": "Music Sheet #30",
+    "name": "Earnest Looks",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Music_Sheet"
+    },
     "sheet": "30",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 30
@@ -363,7 +387,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Cape"
     },
-    "order": 814,
+    "order": 891,
     "group": "SeasonPass"
   },
   {
@@ -384,7 +408,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Neck_Accessory"
     },
-    "order": 500
+    "order": 538
   },
   {
     "id": 1496,
@@ -412,7 +436,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Prop"
     },
-    "order": 541,
+    "order": 583,
     "group": "SeasonPass"
   },
   {
@@ -425,7 +449,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ancient_Darkness#Hair"
     },
-    "order": 226
+    "order": 242
   },
   {
     "id": 1500,

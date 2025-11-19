@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 478
+    "order": 514
   },
   {
     "id": 410,
@@ -24,7 +24,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 535
+    "order": 577
   },
   {
     "id": 411,
@@ -41,14 +41,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophecy_Guide#Ultimate_Gifts"
     },
-    "order": 406
+    "order": 439
   },
   {
     "id": 412,
     "guid": "C__QqZMFNy",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Prophecy#The_Trial_of_Water"
+    }
   },
   {
     "id": 413,
@@ -62,7 +65,10 @@
     "guid": "4BLJ-WV8ex",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Prophecy#The_Trial_of_Earth"
+    }
   },
   {
     "id": 415,
@@ -76,7 +82,10 @@
     "guid": "phnJrWRFNt",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Prophecy#The_Trial_of_Air"
+    }
   },
   {
     "id": 417,
@@ -90,7 +99,10 @@
     "guid": "vW_bfSM4YI",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Prophecy#The_Trial_of_Fire"
+    }
   },
   {
     "id": 419,
@@ -147,7 +159,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Hair"
     },
-    "order": 195,
+    "order": 211,
     "group": "SeasonPass"
   },
   {
@@ -194,7 +206,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Cape"
     },
-    "order": 790,
+    "order": 867,
     "group": "SeasonPass"
   },
   {
@@ -211,7 +223,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Mask"
     },
-    "order": 402
+    "order": 435
   },
   {
     "id": 1075,
@@ -239,7 +251,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Water#Prop"
     },
-    "order": 575
+    "order": 621
   },
   {
     "id": 1078,
@@ -289,7 +301,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Hair"
     },
-    "order": 196
+    "order": 212
   },
   {
     "id": 1083,
@@ -326,7 +338,10 @@
     "id": 1086,
     "guid": "cCVggJ8g_b",
     "type": "Music",
-    "name": "Music Sheet #16",
+    "name": "Soft Blanket",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Music_Sheet"
+    },
     "sheet": "16",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 16
@@ -355,7 +370,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Cape"
     },
-    "order": 791
+    "order": 868
   },
   {
     "id": 1089,
@@ -371,7 +386,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Mask"
     },
-    "order": 403,
+    "order": 436,
     "group": "SeasonPass"
   },
   {
@@ -392,7 +407,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Earth#Prop"
     },
-    "order": 576
+    "order": 622
   },
   {
     "id": 1092,
@@ -449,7 +464,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Hair"
     },
-    "order": 197
+    "order": 213
   },
   {
     "id": 1098,
@@ -503,7 +518,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Mask"
     },
-    "order": 404,
+    "order": 437,
     "group": "SeasonPass"
   },
   {
@@ -522,7 +537,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Cape"
     },
-    "order": 789
+    "order": 866
   },
   {
     "id": 1104,
@@ -550,7 +565,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Air#Prop"
     },
-    "order": 577
+    "order": 623
   },
   {
     "id": 1107,
@@ -607,7 +622,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Hair"
     },
-    "order": 198,
+    "order": 214,
     "group": "SeasonPass"
   },
   {
@@ -644,7 +659,10 @@
     "id": 1116,
     "guid": "lKskRU-rAW",
     "type": "Music",
-    "name": "Music Sheet #17",
+    "name": "Disappearing Ashes",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Music_Sheet"
+    },
     "sheet": "17",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 17,
@@ -664,12 +682,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Mask"
     },
-    "order": 405
+    "order": 438
   },
   {
     "id": 1118,
     "guid": "V9HhQcek_9",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Prophet of Fire Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Mimi-4117_08_prophet_of_fire_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Prophecy-Prophet_of_Fire_Leggings.png",
@@ -717,7 +735,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 582
+    "order": 632
   },
   {
     "id": 1123,
@@ -729,6 +747,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Prophet_of_Fire#Prop"
     },
-    "order": 578
+    "order": 624
   }
 ]

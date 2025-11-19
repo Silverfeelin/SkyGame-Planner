@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
     },
-    "order": 481
+    "order": 517
   },
   {
     "id": 458,
@@ -23,12 +23,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
     },
-    "order": 213
+    "order": 229
   },
   {
     "id": 459,
     "guid": "BD7KBFgGf0",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "group": "Ultimate",
     "name": "Little Prince Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2c/Icon_pants_prince_pjs.png",
@@ -49,12 +49,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/The_Rose#Ultimate_Gifts"
     },
-    "order": 593
+    "order": 643
   },
   {
     "id": 461,
     "guid": "l_C7GM60an",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Sword Outfit",
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a6/Icon_pants_prince_sword.png",
@@ -69,7 +69,10 @@
     "guid": "wR4TWPuEyR",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#1"
+    }
   },
   {
     "id": 463,
@@ -83,7 +86,10 @@
     "guid": "JfTzg2wE_D",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#2"
+    }
   },
   {
     "id": 465,
@@ -97,7 +103,10 @@
     "guid": "xPgHPO9vgx",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#3"
+    }
   },
   {
     "id": 467,
@@ -111,7 +120,10 @@
     "guid": "9TVb-6wg42",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#4"
+    }
   },
   {
     "id": 469,
@@ -125,7 +137,10 @@
     "guid": "ew2cXMYp1M",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#5"
+    }
   },
   {
     "id": 471,
@@ -139,7 +154,10 @@
     "guid": "cam2MsfMpk",
     "type": "Quest",
     "name": "Quest 6",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#6"
+    }
   },
   {
     "id": 473,
@@ -153,7 +171,10 @@
     "guid": "YMx3PU8Czn",
     "type": "Quest",
     "name": "Quest 7",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Quest_#7"
+    }
   },
   {
     "id": 475,
@@ -203,7 +224,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Hair"
     },
-    "order": 211,
+    "order": 227,
     "group": "SeasonPass"
   },
   {
@@ -239,7 +260,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Beckoning_Ruler#Mask"
     },
-    "order": 418
+    "order": 451
   },
   {
     "id": 1259,
@@ -306,7 +327,10 @@
     "id": 1266,
     "guid": "IlbDThInaP",
     "type": "Music",
-    "name": "Music Sheet #22",
+    "name": "Looking Up to the Stars",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Music_Sheet"
+    },
     "sheet": "22",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 22,
@@ -365,7 +389,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gloating_Narcissist#Hair"
     },
-    "order": 209
+    "order": 225
   },
   {
     "id": 1272,
@@ -438,7 +462,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Hair"
     },
-    "order": 210,
+    "order": 226,
     "group": "SeasonPass"
   },
   {
@@ -474,7 +498,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Lamplighter#Cape"
     },
-    "order": 800
+    "order": 877
   },
   {
     "id": 1283,
@@ -547,7 +571,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Hair"
     },
-    "order": 208,
+    "order": 224,
     "group": "SeasonPass"
   },
   {
@@ -584,7 +608,10 @@
     "id": 1292,
     "guid": "JygPyVo177",
     "type": "Music",
-    "name": "Music Sheet #23",
+    "name": "A Glimpse Within",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Music_Sheet"
+    },
     "sheet": "23",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 23,
@@ -600,7 +627,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slouching_Soldier#Cape"
     },
-    "order": 799
+    "order": 876
   },
   {
     "id": 1294,
@@ -666,7 +693,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Hair"
     },
-    "order": 212
+    "order": 228
   },
   {
     "id": 1301,
@@ -716,7 +743,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sneezing_Geographer#Cape"
     },
-    "order": 801,
+    "order": 878,
     "group": "SeasonPass"
   },
   {
@@ -775,7 +802,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Neck_Accessory"
     },
-    "order": 498
+    "order": 536
   },
   {
     "id": 1312,
@@ -825,7 +852,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Cape"
     },
-    "order": 798,
+    "order": 875,
     "group": "SeasonPass"
   },
   {
@@ -838,7 +865,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Star_Collector#Prop"
     },
-    "order": 592
+    "order": 642
   },
   {
     "id": 1318,
@@ -881,7 +908,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Scarf_Cape"
     },
-    "order": 802
+    "order": 879
   },
   {
     "id": 1323,
@@ -894,7 +921,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Asteroid_Jacket"
     },
-    "order": 803
+    "order": 880
   },
   {
     "id": 1324,
@@ -907,6 +934,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_The_Little_Prince#Little_Prince_Fox_Prop"
     },
-    "order": 594
+    "order": 644
   }
 ]

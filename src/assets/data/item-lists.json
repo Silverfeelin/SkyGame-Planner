@@ -106,6 +106,56 @@
         { "guid": "XkW27KVni1", "item": "VV-svxaQrp", "c": 15 },
         { "guid": "J-w1UfxOZo", "item": "P4PpAo47Ad", "h": 1 },
       ]
+    },
+    // 6th Anniversary
+    {
+      "guid": "6xcRtS6B4f",
+      "items": [
+        { "guid": "USRpPDaWLC", "item": "h8I7obBDzf", "c": 20 },
+      ]
+    },
+    // Sunlight 2025
+    {
+      "guid": "mp6_RorWOs",
+      "items": [
+        { "guid": "pzLV8IxT5W", "item": "6w_qh-oE2k", "c": 5 },
+        { "guid": "UsDm0QGLrB", "item": "G5sW47Twex", "c": 5 },
+        { "guid": "Nyr50KNNLH", "item": "wlTd7h9_Rc", "c": 6 },
+        { "guid": "pSGnaPNXBQ", "item": "Wii_7x7ezQ", "c": 7 },
+        { "guid": "DD9dgLOkms", "item": "fkiyxCyMN7", "c": 5 },
+        { "guid": "H_npEbXh6z", "item": "JVyQRl-B8m", "c": 8 },
+        { "guid": "oAD2aDyii1", "item": "4VFezhFHqw", "c": 5 }
+      ]
+    },
+    // Moonlight 2025
+    {
+      "guid": "JzRcGZHtCQ",
+      "items": [
+        { "guid": "Dqd5uFFTXN", "item": "WSk90oPjru", "c": 75 }
+      ]
+    },
+    // #region Mischief (2025)
+    {
+      "guid": "Q1km9ckoH-",
+      "items": [
+        { "guid": "zVGrYq995U", "item": "vu_PdLP82M", "c": 10 },
+        { "guid": "jptSz3HP29", "item": "dl3FZAnMyu", "c": 15 },
+        { "guid": "6eft_NQ4nK", "item": "gfQTU53Vni", "c": 20 },
+        { "guid": "MlnV7rJuG2", "item": "PatMBfIqRy", "h": 5 },
+        { "guid": "BPOIe7xD3K", "item": "mVz5FujV6y", "c": 5 },
+        { "guid": "V59uaG9kc8", "item": "P5Ww3-YvYp", "ac": 10 },
+        { "guid": "B770oV1xu6", "item": "Ex9NeE4FR5", "c": 20 },
+        { "guid": "LcgQVpxNaC", "item": "5HoXo6DF--", "c": 15 },
+        { "guid": "kcsymsirJr", "item": "DecMXt7qEo", "c": 15 },
+        { "guid": "jkizkuvAE7", "item": "GivrsXeHVe", "c": 15 },
+        { "guid": "VYmNknqi7z", "item": "c3sT_itCFa", "c": 15 },
+        { "guid": "oUzDRL4G05", "item": "4wA4nwGZUM", "c": 4 },
+        { "guid": "49RQbNQ3e9", "item": "HUjA3utlNd", "c": 4 },
+        { "guid": "cXNvRyepN5", "item": "G9RHsCv5AB", "c": 4 },
+        { "guid": "3SyUUfh1sU", "item": "hrH037AVN5", "c": 4 },
+      ]
     }
+
+    // #endregion
   ]
 }

@@ -30,6 +30,53 @@
   padding: 4px 4px 4px 4px;
 }
 
+// #region Tiers
+
+.spirit-tree-tiers {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--padding-content);
+  align-items: center;
+}
+
+.spirit-tree-tier {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--padding-content);
+  align-items: center;
+}
+
+.spirit-tree-tier:first-child {
+  margin-bottom: 10px;
+}
+
+.spirit-tree-tier:not(:last-child) {
+  border-top: 1px solid var(--color-tree-line);
+  padding-top: var(--padding-content);
+}
+
+.spirit-tree-tier-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--padding-content-half);
+  white-space: nowrap;
+}
+
+.tier-node {
+  position: relative;
+  padding: 12px 6px 16px 6px;
+}
+
+.tier-node-missing {
+  display: inline-block;
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+// #endregion
+
 /** Contains column nodes */
 .column {
   display: flex;

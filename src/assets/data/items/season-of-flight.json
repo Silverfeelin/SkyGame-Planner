@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 482
+    "order": 518
   },
   {
     "id": 477,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Flight_Guide#Ultimate_Gifts"
     },
-    "order": 299,
+    "order": 322,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Flight_ultfeathers.jpg",
       "primary": {}
@@ -32,7 +32,7 @@
   {
     "id": 478,
     "guid": "SxX0bNDJaR",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "group": "Ultimate",
     "name": "Flight Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Icon_season_of_flight_pants_1_ult.png",
@@ -52,8 +52,11 @@
     "id": 479,
     "guid": "TI-CpaXFhK",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#1"
+    }
   },
   {
     "id": 480,
@@ -66,8 +69,11 @@
     "id": 481,
     "guid": "Bg_bDXCpyl",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#2"
+    }
   },
   {
     "id": 482,
@@ -87,8 +93,11 @@
     "id": 484,
     "guid": "WrBllT55vV",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#3"
+    }
   },
   {
     "id": 485,
@@ -101,8 +110,11 @@
     "id": 486,
     "guid": "W51TEfrNbi",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#4"
+    }
   },
   {
     "id": 487,
@@ -115,8 +127,11 @@
     "id": 488,
     "guid": "17es70sy2v",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Flight#Quest_#5"
+    }
   },
   {
     "id": 489,
@@ -177,7 +192,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Flight_navi.jpg"
     },
-    "order": 217,
+    "order": 233,
     "group": "SeasonPass"
   },
   {
@@ -190,7 +205,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Hair_Accessory"
     },
-    "order": 298,
+    "order": 321,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Flight_navifeathers.jpg",
       "primary": {}
@@ -232,8 +247,7 @@
     "guid": "zB6NpyvK6q",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
-    "group": "SeasonPass"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
   },
   {
     "id": 1334,
@@ -251,17 +265,28 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Cape"
     },
-    "order": 805,
+    "order": 882,
     "group": "SeasonPass"
   },
   {
     "id": 1335,
     "guid": "ygAEEh8bZ5",
     "type": "Music",
-    "name": "Music Sheet #24",
+    "name": "Everything Around Us",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Lively_Navigator#Music_Sheet"
+    },
     "sheet": "24",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 24
+  },
+  {
+    "id": 2754,
+    "guid": "qDekV1a6yP",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1336,
@@ -313,7 +338,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Hair_Accessory"
     },
-    "order": 296,
+    "order": 319,
     "group": "SeasonPass"
   },
   {
@@ -330,7 +355,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Flight_LW.jpg"
     },
-    "order": 216
+    "order": 232
   },
   {
     "id": 1343,
@@ -345,8 +370,7 @@
     "guid": "5D_d1xwmfQ",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
-    "group": "SeasonPass"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
   },
   {
     "id": 1345,
@@ -362,13 +386,13 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Cape"
     },
-    "order": 804,
+    "order": 881,
     "group": "SeasonPass"
   },
   {
     "id": 1346,
     "guid": "Y7j3ljNdYp",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Light Whisperer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/9f/Icon_season_of_flight_pants_4_light_whisperer.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/aa/Season_of_flight_pants_4_light_whisperer.png",
@@ -382,6 +406,14 @@
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Light_Whisperer#Outfit"
     },
     "order": 27
+  },
+  {
+    "id": 2755,
+    "guid": "LPkTfhyyNP",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1347,
@@ -426,7 +458,7 @@
   {
     "id": 1350,
     "guid": "5Z5JqDkAtl",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Tinkering Chimesmith Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/81/Icon_season_of_flight_pants_3_tinkering_chimesmith.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b3/Season_of_flight_pants_3_tinkering_chimesmith_gs.PNG",
@@ -452,7 +484,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Hair_Accessory"
     },
-    "order": 297,
+    "order": 320,
     "dye": {
       "previewUrl": "/assets/game/dyes/hair-accessory/Flight_chimefeather.jpg",
       "primary": {}
@@ -471,8 +503,7 @@
     "guid": "EaKDVLQYcH",
     "type": "Spell",
     "name": "Color Trail",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
-    "group": "SeasonPass"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png"
   },
   {
     "id": 1354,
@@ -485,7 +516,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tinkering_Chimesmith#Instrument"
     },
-    "order": 538,
+    "order": 580,
     "group": "SeasonPass"
   },
   {
@@ -502,7 +533,15 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Flight_chimesmith.jpg"
     },
-    "order": 215
+    "order": 231
+  },
+  {
+    "id": 2756,
+    "guid": "mL4hbLcaT_",
+    "type": "Spell",
+    "name": "Color Trail",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/74/Color-trail.png",
+    "group": "SeasonPass"
   },
   {
     "id": 1356,
@@ -561,7 +600,10 @@
     "id": 1362,
     "guid": "sTi8F25qWL",
     "type": "Music",
-    "name": "Music Sheet #25",
+    "name": "Flying Among the Stars",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Music_Sheet"
+    },
     "sheet": "25",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 25,
@@ -577,7 +619,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Talented_Builder#Neck_Accessory"
     },
-    "order": 499
+    "order": 537
   },
   {
     "id": 1364,
@@ -620,7 +662,7 @@
   {
     "id": 1368,
     "guid": "g-vZeE8cmg",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Talented Builder Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Icon_season_of_flight_pants_2_talented_builder.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/45/Season_of_flight_pants_2_talented_builder_gs.PNG",
@@ -650,7 +692,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Flight_builder.jpg"
     },
-    "order": 214
+    "order": 230
   },
   {
     "id": 1953,

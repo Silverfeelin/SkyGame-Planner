@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 483
+    "order": 519
   },
   {
     "id": 492,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 355
+    "order": 386
   },
   {
     "id": 493,
@@ -42,7 +42,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 810
+    "order": 887
   },
   {
     "id": 494,
@@ -61,14 +61,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Ultimate_Gifts"
     },
-    "order": 422
+    "order": 455
   },
   {
     "id": 495,
     "guid": "q_hFj239P3",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#1"
+    }
   },
   {
     "id": 496,
@@ -81,8 +84,11 @@
     "id": 497,
     "guid": "WmIBNGUBOM",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#2"
+    }
   },
   {
     "id": 498,
@@ -95,8 +101,11 @@
     "id": 499,
     "guid": "UDBLLL_RkX",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#3"
+    }
   },
   {
     "id": 500,
@@ -109,8 +118,11 @@
     "id": 501,
     "guid": "0p1PuMa1qF",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#4"
+    }
   },
   {
     "id": 502,
@@ -123,8 +135,11 @@
     "id": 503,
     "guid": "emplzik5B0",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Abyss#Quest_#5"
+    }
   },
   {
     "id": 504,
@@ -149,7 +164,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Abyss_Guide#Oxygen_Mask"
     },
-    "order": 423
+    "order": 456
   },
   {
     "id": 1371,
@@ -192,7 +207,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Mask"
     },
-    "order": 424,
+    "order": 457,
     "group": "SeasonPass"
   },
   {
@@ -209,7 +224,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Abyss_angler.jpg"
     },
-    "order": 220
+    "order": 236
   },
   {
     "id": 1376,
@@ -263,13 +278,13 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Anxious_Angler#Cape"
     },
-    "order": 808,
+    "order": 885,
     "group": "SeasonPass"
   },
   {
     "id": 1381,
     "guid": "xCPJYG39hD",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Anxious Angler Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/SOAbyss-Anxious-Angler-outfit.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2d/SOAbyss-Anxious-Angler-Cape-outfit.png",
@@ -355,7 +370,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Hair"
     },
-    "order": 219,
+    "order": 235,
     "group": "SeasonPass"
   },
   {
@@ -374,7 +389,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Mask"
     },
-    "order": 420
+    "order": 453
   },
   {
     "id": 1389,
@@ -421,7 +436,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Ceasing_Commodore#Cape"
     },
-    "order": 806
+    "order": 883
   },
   {
     "id": 1393,
@@ -494,14 +509,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Mask"
     },
-    "order": 419,
+    "order": 452,
     "group": "SeasonPass"
   },
   {
     "id": 1399,
     "guid": "_FVDOa59ap",
     "type": "Music",
-    "name": "Music Sheet #27",
+    "name": "Without a Paddle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Music_Sheet"
+    },
     "sheet": "27",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 27
@@ -560,7 +578,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Cape"
     },
-    "order": 809,
+    "order": 886,
     "group": "SeasonPass"
   },
   {
@@ -573,7 +591,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bumbling_Boatswain#Hair_Accessory"
     },
-    "order": 300
+    "order": 323
   },
   {
     "id": 1406,
@@ -626,7 +644,10 @@
     "id": 1411,
     "guid": "a4LXqflNKy",
     "type": "Music",
-    "name": "Music Sheet #26",
+    "name": "Sowing Mischief",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Music_Sheet"
+    },
     "sheet": "26",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 26,
@@ -642,7 +663,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Mask"
     },
-    "order": 421
+    "order": 454
   },
   {
     "id": 1413,
@@ -691,7 +712,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Cape"
     },
-    "order": 807
+    "order": 884
   },
   {
     "id": 1417,
@@ -718,7 +739,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cackling_Cannoneer#Hair"
     },
-    "order": 218,
+    "order": 234,
     "group": "SeasonPass"
   },
   {

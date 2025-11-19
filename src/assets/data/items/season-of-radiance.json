@@ -6,7 +6,10 @@
     "name": "Cartwheel",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Radiance-Leaping-Dancer-Cartwheel-expression-icon.png",
     "level": 1,
-    "order": 1301
+    "order": 1301,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Expression"
+    }
   },
   {
     "id": 2435,
@@ -15,7 +18,10 @@
     "name": "Cartwheel",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Radiance-Leaping-Dancer-Cartwheel-expression-icon.png",
-    "level": 2
+    "level": 2,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Expression"
+    }
   },
   {
     "id": 2436,
@@ -23,7 +29,10 @@
     "type": "Emote",
     "name": "Cartwheel",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Radiance-Leaping-Dancer-Cartwheel-expression-icon.png",
-    "level": 3
+    "level": 3,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Expression"
+    }
   },
   {
     "id": 2437,
@@ -32,7 +41,10 @@
     "name": "Cartwheel",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Radiance-Leaping-Dancer-Cartwheel-expression-icon.png",
-    "level": 4
+    "level": 4,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Expression"
+    }
   },
   {
     "id": 2446,
@@ -48,7 +60,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 61
+    "order": 62,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Outfit"
+    }
   },
   {
     "id": 2447,
@@ -62,7 +77,10 @@
       "previewUrl": "/assets/game/dyes/shoes/Radiance_Leaping.jpg",
       "primary": {}
     },
-    "order": 120
+    "order": 133,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Shoes"
+    }
   },
   {
     "id": 2448,
@@ -71,7 +89,10 @@
     "name": "Radiance Leaping Dancer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6a/Radiance-Leaping-Dancer-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b8/Radiance-Leaping-Dancer-Hair.png",
-    "order": 259
+    "order": 275,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Hair"
+    }
   },
   {
     "id": 2449,
@@ -86,7 +107,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 850
+    "order": 927,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Cape"
+    }
   },
   {
     "id": 2450,
@@ -96,7 +120,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/11/Radiance-Leaping-Dancer-prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Radiance-Leaping-Dancer-prop.png",
-    "order": 607
+    "order": 657,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Leaping_Dancer#Prop"
+    }
   },
   {
     "id": 2451,
@@ -150,7 +177,10 @@
     "name": "Hype Dance",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Radiance-Provoking-Performer-Expression-icon.png",
     "level": 1,
-    "order": 1321
+    "order": 1321,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Expression"
+    }
   },
   {
     "id": 2439,
@@ -159,7 +189,10 @@
     "name": "Hype Dance",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Radiance-Provoking-Performer-Expression-icon.png",
-    "level": 2
+    "level": 2,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Expression"
+    }
   },
   {
     "id": 2440,
@@ -167,7 +200,10 @@
     "type": "Emote",
     "name": "Hype Dance",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Radiance-Provoking-Performer-Expression-icon.png",
-    "level": 3
+    "level": 3,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Expression"
+    }
   },
   {
     "id": 2441,
@@ -176,7 +212,10 @@
     "name": "Hype Dance",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c6/Radiance-Provoking-Performer-Expression-icon.png",
-    "level": 4
+    "level": 4,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Expression"
+    }
   },
   {
     "id": 2458,
@@ -191,7 +230,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 60
+    "order": 61,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Outfit"
+    }
   },
   {
     "id": 2459,
@@ -204,7 +246,10 @@
       "previewUrl": "/assets/game/dyes/shoes/Radiance_Provoking.jpg",
       "primary": {}
     },
-    "order": 119
+    "order": 132,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Shoes"
+    }
   },
   {
     "id": 2460,
@@ -213,12 +258,15 @@
     "name": "Radiance Provoking Performer Head Accessory",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/23/Radiance-Provoking-Performer-Headpiece-icon.png",
-    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4c/Radiance-Provoking-Performer-Headpiece-side.png",
+    "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3f/Radiance-Provoking-Performer-Headpiece.png",
     "dye": {
       "previewUrl": "/assets/game/dyes/head-accessory/Radiance_Provoking.jpg",
       "primary": {}
     },
-    "order": 360
+    "order": 391,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Head_Accessory"
+    }
   },
   {
     "id": 2461,
@@ -234,7 +282,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 849
+    "order": 926,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Cape"
+    }
   },
   {
     "id": 2462,
@@ -244,7 +295,10 @@
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-Greeting-Shaman-instrument-Cymbals-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dd/Radiance-Greeting-Shaman-instrument-Cymbals.png",
-    "order": 547
+    "order": 589,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Provoking_Performer#Instrument"
+    }
   },
   {
     "id": 2463,
@@ -298,7 +352,10 @@
     "name": "Heart Gesture",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Radiance-Greeting-Shaman-Expression-icon.png",
     "level": 1,
-    "order": 1311
+    "order": 1311,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Expression"
+    }
   },
   {
     "id": 2443,
@@ -307,7 +364,10 @@
     "name": "Heart Gesture",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Radiance-Greeting-Shaman-Expression-icon.png",
-    "level": 2
+    "level": 2,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Expression"
+    }
   },
   {
     "id": 2444,
@@ -315,7 +375,10 @@
     "type": "Emote",
     "name": "Heart Gesture",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Radiance-Greeting-Shaman-Expression-icon.png",
-    "level": 3
+    "level": 3,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Expression"
+    }
   },
   {
     "id": 2445,
@@ -324,7 +387,10 @@
     "name": "Heart Gesture",
     "group": "SeasonPass",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a8/Radiance-Greeting-Shaman-Expression-icon.png",
-    "level": 4
+    "level": 4,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Expression"
+    }
   },
   {
     "id": 2469,
@@ -340,7 +406,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 62
+    "order": 63,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Outfit"
+    }
   },
   {
     "id": 2470,
@@ -353,7 +422,10 @@
       "previewUrl": "/assets/game/dyes/hair/Radiance_Greeting.jpg",
       "primary": {}
     },
-    "order": 258
+    "order": 274,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Hair"
+    }
   },
   {
     "id": 2471,
@@ -366,7 +438,10 @@
       "previewUrl": "/assets/game/dyes/hair-accessory/Radiance_Greeting.jpg",
       "primary": {}
     },
-    "order": 315
+    "order": 338,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Greeting_Shaman#Hair_Accessory"
+    }
   },
   {
     "id": 2472,
@@ -437,7 +512,10 @@
     "group": "Ultimate",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Season-of-Radiance-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d7/Season-of-Radiance-Pendant.png",
-    "order": 495
+    "order": 531,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Guide#Seasonal_Pendant"
+    }
   },
   {
     "id": 2481,
@@ -453,7 +531,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 451
+    "order": 484,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Guide#Ultimate_Mask"
+    }
   },
   {
     "id": 2482,
@@ -469,7 +550,10 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 851
+    "order": 928,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Guide#Ultimate_Cape"
+    }
   },
   {
     "id": 2483,
@@ -484,42 +568,60 @@
       "primary": {},
       "secondary": {}
     },
-    "order": 770
+    "order": 847,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Radiance_Guide#Cape"
+    }
   },
   {
     "id": 2484,
     "guid": "KW23zNIOAB",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance#Quest_#1"
+    }
   },
   {
     "id": 2485,
     "guid": "PSYGfoPTf4",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance#Quest_#2"
+    }
   },
   {
     "id": 2486,
     "guid": "mkm_4wXBUW",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance#Quest_#3"
+    }
   },
   {
     "id": 2487,
     "guid": "qrQ95DxuiF",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance#Quest_#4"
+    }
   },
   {
     "id": 2488,
     "guid": "BUrJCAml11",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Radiance#Quest_#5"
+    }
   },
   {
     "id": 2489,

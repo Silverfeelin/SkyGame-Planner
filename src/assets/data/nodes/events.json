@@ -1318,19 +1318,22 @@
   { "guid": "GNFh2wSha5", "item": "FjtQU-Da97", "nw": "Od5yxX7aVf", "n": "26ySax5RVl", "ne": "hfDVWhcHnQ", "c": 2 },
   { "guid": "Od5yxX7aVf", "item": "y54CllfiMA", "ec": 32 },
   { "guid": "hfDVWhcHnQ", "item": "P09UDA73qQ", "ec": 36 },
-  { "guid": "26ySax5RVl", "item": "0hJ9DXTWh2", "nw": "8nzbNLH8T4", "n": "5v03SJHSJq", "c": 2 },
+  { "guid": "26ySax5RVl", "item": "0hJ9DXTWh2", "nw": "8nzbNLH8T4", "n": "5v03SJHSJq", "ne": "GS2zGjN25p", "c": 2 },
   { "guid": "8nzbNLH8T4", "item": "hYV1zHavPH", "ec": 16 },
-  { "guid": "5v03SJHSJq", "item": "FlObyU1ojU", "n": "Pw9OnCorQ2", "c": 2 },
+  { "guid": "GS2zGjN25p", "item": "HLi0DXNlFu", "ec": 26 },
+  { "guid": "5v03SJHSJq", "item": "FlObyU1ojU", "n": "Pw9OnCorQ2", "ne": "_hb3n5_cQU", "nw": "vkRaqgXCdW", "c": 2 },
+  { "guid": "vkRaqgXCdW", "item": "gOGjcPJJok", "ec": 66 },
+  { "guid": "_hb3n5_cQU", "item": "IKHiSSA9oN", "ec": 16 },
   { "guid": "Pw9OnCorQ2", "item": "RcLEVI3BIH", "nw": "Xs5kTVp4X7", "n": "zT0mWmmsCG", "ne": "AcYP3KgMj3", "c": 2 },
   { "guid": "Xs5kTVp4X7", "item": "nFWJUG7K6q", "c": 21 },
   { "guid": "AcYP3KgMj3", "item": "uvCLDVex2L", "c": 35 },
-  { "guid": "zT0mWmmsCG", "item": "mXj0pVv9FA", "nw": "gJA8bXIzdG", "n": "15LJzpYFk0", "c": 4, "ne": "jVRUcQLs4p" },
+  { "guid": "zT0mWmmsCG", "item": "mXj0pVv9FA", "nw": "gJA8bXIzdG", "n": "15LJzpYFk0", "ne": "jVRUcQLs4p", "c": 4 },
   { "guid": "gJA8bXIzdG", "item": "9jMnZ23AYP", "h": 10 },
   { "guid": "jVRUcQLs4p", "item": "ktsAnnjGgb", "c": 20 },
-  { "guid": "15LJzpYFk0", "item": "GZAz1Z3nxB", "n": "e4J2CI4wKu", "c": 4, "nw": "N3SHrR5Z0i", "ne": "o4iFzx6GXe" },
+  { "guid": "15LJzpYFk0", "item": "GZAz1Z3nxB", "nw": "N3SHrR5Z0i", "n": "e4J2CI4wKu", "ne": "o4iFzx6GXe", "c": 4 },
   { "guid": "N3SHrR5Z0i", "item": "9jISGFNSLT", "ac": 33 },
   { "guid": "o4iFzx6GXe", "item": "ADtwifMcnN", "c": 20 },
-  { "guid": "e4J2CI4wKu", "item": "pOhVennRp0", "n": "yn_yEdHGAI", "c": 4, "ne": "3FmxDsSFYp", "nw": "0cvGP4_JIh" },
+  { "guid": "e4J2CI4wKu", "item": "pOhVennRp0", "nw": "0cvGP4_JIh", "n": "yn_yEdHGAI", "ne": "3FmxDsSFYp", "c": 4 },
   { "guid": "0cvGP4_JIh", "item": "8A96KlMPQC", "c": 30 },
   { "guid": "3FmxDsSFYp", "item": "Xbb3BpzDZT", "h": 20 },
   { "guid": "yn_yEdHGAI", "item": "BQi3QIoOwq", "h": 33 },
@@ -1627,6 +1630,27 @@
     "item": "MyVdnRoxY0",
     "h": 33
   },
+  // #endregion
+  // #region Days of Mischief (2025)
+  { "guid": "T8L7f4pFlA", "item": "jP6vp1JxGK", "n": "jYLvJJF3wx", "nw": "dY_hg8OjDm", "ne": "-4I67I926P" },
+  { "guid": "dY_hg8OjDm", "item": "Gz58JrTFXu", "ec": 22 },
+  { "guid": "-4I67I926P", "item": "7dNyh36odp", "ec": 12 },
+  { "guid": "jYLvJJF3wx", "item": "PbmKwGDAAD", "c": 5, "nw": "MyACn9KQn6", "n": "b1nIkgCWmw", "ne": "FZm6TcRXMP" },
+  { "guid": "MyACn9KQn6", "item": "sYMa2yGm-a", "ec": 50 },
+  { "guid": "FZm6TcRXMP", "item": "5wLqxZqnGM", "c": 24 },
+  { "guid": "b1nIkgCWmw", "item": "J5uxoYsHgL", "c": 5, "nw": "xDOkKANyaR", "n": "m1Xohl4yAx", "ne": "3q1ry0Ki9q" },
+  { "guid": "xDOkKANyaR", "item": "CCT1qLLxKN", "c": 36 },
+  { "guid": "3q1ry0Ki9q", "item": "kSphDUSrju", "c": 48 },
+  { "guid": "m1Xohl4yAx", "item": "NRmIGIjJ-q", "c": 5, "nw": "sMEgiLYgbb", "n": "nXJWhf7QuE", "ne": "05i5pDu9zJ" },
+  { "guid": "sMEgiLYgbb", "item": "MnzYzRK9sY", "c": 44 },
+  { "guid": "05i5pDu9zJ", "item": "I6OEa38GXJ", "c": 36 },
+  { "guid": "nXJWhf7QuE", "item": "2nErLmJWvk", "c": 5, "nw": "xl1ptDCqsx", "n": "bhsCYgnwbB", "ne": "P-THm6-Uak" },
+  { "guid": "xl1ptDCqsx", "item": "MyVdnRoxY0", "h": 33 },
+  { "guid": "P-THm6-Uak", "item": "-HtIAPjYsa", "c": 99 },
+  { "guid": "bhsCYgnwbB", "item": "VFeHTgImrJ", "c": 5, "nw": "TC-DaW-zi_", "n": "sQ947lg23y", "ne": "ZnHUlOAWzq" },
+  { "guid": "TC-DaW-zi_", "item": "si_8YhNtmr", "c": 66 },
+  { "guid": "ZnHUlOAWzq", "item": "Aq3FhT_OYr", "c": 38 },
+  { "guid": "sQ947lg23y", "item": "p-lbmuULv5", "c": 58 },
   // #endregion
   // #region Days of Feast (2020)
   {
@@ -2159,10 +2183,33 @@
     "c": 110
   },
   // #endregion
+  // #region Days of Sunlight (2025)
+  { "guid": "BfFrc98Kea", "item": "jEpC3PXdht", "n": "hVCV4e0OT_", "nw": "dGaN4EAWam", "ne": "xqBzrembF1" },
+  { "guid": "dGaN4EAWam", "item": "T5PJETWmC-", "ec": 45 },
+  { "guid": "xqBzrembF1", "item": "iPnHAbmuQr", "ec": 22 },
+  { "guid": "hVCV4e0OT_", "item": "03n8xOK3J3", "c": 5, "nw": "s4vVNu6mAH", "n": "uuZriPyfGq", "ne": "-2eiG2pt2C" },
+  { "guid": "s4vVNu6mAH", "item": "WHZ443yFkG", "c": 65 },
+  { "guid": "-2eiG2pt2C", "item": "_DzSz5REUk", "c": 70 },
+  { "guid": "uuZriPyfGq", "item": "SPf60927Mk", "c": 5, "nw": "mqqoWPcsYJ", "n": "enfU2rnnKd", "ne": "tccmeQ639o" },
+  { "guid": "mqqoWPcsYJ", "item": "JNgfLtgLfc", "c": 90 },
+  { "guid": "tccmeQ639o", "item": "E_yfCZYU5C", "c": 44 },
+  { "guid": "enfU2rnnKd", "item": "iA01zJOF-r", "c": 5, "nw": "jgN5NVkHwZ", "n": "8WSQ6H5P_g", "ne": "Saor8_myTz" },
+  { "guid": "jgN5NVkHwZ", "item": "QjK8cvBTfX", "h": 30 },
+  { "guid": "Saor8_myTz", "item": "NBkEtlvG6-", "c": 140 },
+  { "guid": "8WSQ6H5P_g", "item": "FaGQYktG04", "c": 110 },
+  // #endregion
   // #region Days of Moonlight (2024)
   { "guid": "y1mrONbyUB", "item": "r1m91XOLgd", "c": 5, "nw": "I_tLpZs8XA", "n": "zFJoiRuNsZ" },
   { "guid": "I_tLpZs8XA", "item": "vx4vxVJ0L1", "ec": 32 },
   { "guid": "zFJoiRuNsZ", "item": "A4CTK7T9ea", "ec": 17 },
+  // #endregion
+  // #region Days of Moonlight (2025)
+  { "guid": "XLtugqdh-y", "item": "xObCoMqwCd", "nw": "qQxtzzKv4u", "n": "8cbI0pN5Cc", "ne": "cTCI7WWSU8" },
+  { "guid": "qQxtzzKv4u", "item": "inAM509HYO", "ec": 42 },
+  { "guid": "cTCI7WWSU8", "item": "_cE3iO4UG4", "ec": 18 },
+  { "guid": "8cbI0pN5Cc", "item": "r1m91XOLgd", "c": 5, "nw": "8p7-L_9W8u", "n": "zIuBpp1Bhs" },
+  { "guid": "8p7-L_9W8u", "item": "vx4vxVJ0L1", "c": 70 },
+  { "guid": "zIuBpp1Bhs", "item": "A4CTK7T9ea", "c": 35 },
   // #endregion
   // #region Harmony Hall Grand Opening (2022)
   {

@@ -1,0 +1,188 @@
+<div class="sky-card mb">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Season of Migration Calculator</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p>
+        This tool helps you plan ahead for the Season of Migration.
+        It was inspired by StrangeStiffy's <a href="https://reddit.com/r/SkyGame/comments/1oc7s0a/psa_spirit_friendship_minmaxing/" target="_blank" class="text-link">post on Reddit</a>.<br/>
+        You can also have a look at
+        <a href="https://sky-season-calculator.netlify.app/" target="_blank" class="text-link">Stoat's Season Calculator</a>
+        or
+        <a href="https://korea-sky-planner.com/sky/candlecalculator" target="_blank" class="text-link">Realdeer's Season Calculator</a> (in Korean and English).
+      </p>
+      <hr/>
+      <p>
+        To enter the items you already own, please go back to the <a class="text-link" [routerLink]="['/season', season.guid]">Season of Migration</a> page.<br/>
+        There you can click on the items and track your progress as usual.
+      </p>
+      <hr/>
+      <p>
+        This page refers to friendship points in the form of numbers. What does that mean?<br/>
+        <a class="text-link" (click)="showingFriendshipHelp=true">Click here</a> for more information.
+      </p>
+      <p>
+        A daily spirit adventure gives you 10 friendship points in their spirit tree.<br/>
+        The grey number <span class="node-value">(30)</span> next to each item shows the total friendship points you get from buying the item.<br/>
+        If you can't unlock all the items you want during the season the calculator will help you figure out which items are most efficient to buy.
+      </p>
+      <p>
+        A simple example:<br/>
+        Buying a
+        4 <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon> <span class="node-value">(60)</span>
+        blessing from the Jelly Whisperer is twice as efficient as buying a
+        4 <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon> <span class="node-value">(30)</span>
+        blessing from the Manta Whisperer, since it gives double the friendship points for the same cost.<br/>
+        Buying the Jelly Whisperer blessing practically saves you 6 days of spirit adventures (6 x 10) whereas buying the Manta Whisperer blessing only saves you 3 days (3 x 10).
+      </p>
+      <hr/>
+      <p>
+        You can click on the items that you want to highlight them.<br/>
+        Below each spirit tree you will then see the remaining friendship points that you need to gain through daily adventures or by buying items you are not interested in.<br/>
+        You can quickly highlight items with the buttons below.
+      </p>
+      <div class="sky-flex flex-wrap gap-half">
+        <button type="button" class="" (click)="highlightEverything()">Everything</button>
+        <button type="button" class="" (click)="highlightCosmetics()">Cosmetics</button>
+        <button type="button" class="" (click)="highlightEmotes()">Emotes</button>
+        <button type="button" class="" (click)="highlightMusic()">Music</button>
+        <button type="button" class="" (click)="highlightSeasonHearts()">Season hearts</button>
+        <button type="button" class="" (click)="highlightSeasonPass()">Season pass</button>
+        <button type="button" class="button-danger" (click)="promptResetHighlight()">Reset highlighted</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sky-flex scroll-x">
+  @for (tree of trees; track tree.guid) {
+    <div>
+      <app-spirit-tree
+        [tree]="tree"
+        [enableControls]="false"
+        [nodeOverlayTemplate]="tNode"
+        [highlightNode]="wantNodeGuids()"
+        [forceNodeAction]="'emit'"
+        (nodeClicked)="onNodeClicked($event)"
+      ></app-spirit-tree>
+      <div class="sky-card">
+        <div class="container">
+          <div><b>Current friendship points:</b> <mat-icon (click)="showingFriendshipHelp=true" class="action">question_mark</mat-icon></div>
+          <input type="number" min="0" max="280" step="10" [formControl]="friendshipControls[$index]">
+          <div><b>Missing points per level:</b></div>
+          @for (points of missingFriendship[$index]; track $index) {
+            <div>Level {{$index + 1}}: <b [class.c-new]="points===0" [class.c-old]="points>0">{{ points }}</b></div>
+          }
+          <div><b>Missing total:</b></div>
+          <div>
+            @let total = missingFriendshipTotals[$index];
+            <b [class.c-new]="total===0" [class.c-old]="total>0">{{ total }}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Results</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <div class="sky-flex mb">
+        <button (click)="toggleHaveSeasonPass()">
+          <mat-icon class="menu-icon"><app-checkbox [state]="hasSeasonPass()" [useColors]="true"></app-checkbox></mat-icon>
+          <span class="menu-label">Have Season Pass</span>
+        </button>
+        <button (click)="toggleToday()">
+          <mat-icon class="menu-icon"><app-checkbox [state]="hasDoneDailiesToday" [useColors]="true"></app-checkbox></mat-icon>
+          <span class="menu-label">Have done dailies today</span>
+        </button>
+      </div>
+      There are <b class="c-new">{{ daysLeft() }}</b> dailies left in this season.
+
+      <hr/>
+      <div>
+        Your current season candles:
+        <input type="number" step="1" min="-999" max="999" [formControl]="candleControl" class="d-inline-block" style="width: 120px;"><br/>
+        You can get <b class="c-new">{{ candlesLeft() }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon> more during the season.<br/>
+        It will cost a total of <b class="c-old">{{ candlesRequired() }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>
+        to buy the items you highlighted.<br/>
+        If you don't miss any day you should end with
+        <b [class.c-new]="candlesFinal() >= 0" [class.c-old]="candlesFinal() < 0">{{ candlesFinal() }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>.<br/>
+        @if (candlesFinal() < 0) {
+          <b class="c-old">You don't have enough seasonal candles to buy all of the items you've highlighted.</b>
+        } @else {
+          <b class="c-new">You will have enough seasonal candles to buy all of the items you've highlighted.</b>
+        }
+      </div>
+      <hr/>
+
+      <p>
+        If you complete daily spirit adventures you can get a total of <b class="c-new">{{ daysFriendshipLeft() }}</b> friendship points without spending candles.<br/>
+        You still need <b class="c-old">{{ missingFriendshipTotal }}</b> friendship points to reach all of the items you've highlighted.
+      </p>
+      @if (missingFriendshipTotal > daysFriendshipLeft()) {
+        <p>
+          You've selected items that require <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft() }}</b> more friendship points than you can get through daily adventures.<br/>
+          <b class="c-old">You can't get all of the items you've highlighted through daily spirit adventures.</b>
+        </p>
+        @if (knapsackNodes.length > 0) {
+          <p>
+            To reach all of the items you've highlighted, consider adding the following additional items.
+          </p>
+          <ul>
+            @for (node of knapsackNodes; track node.guid) {
+              <li>
+                {{ node.root?.spiritTree?.spirit?.name }} - {{ node.item!.name }} -
+                {{ node.sc }} <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>
+                <span class="node-value">({{ nodeValues[node.guid] }})</span>
+              </li>
+            }
+          </ul>
+          These items would give you an additional <b class="c-new">{{ knapsackTotalPoints }}</b> friendship points for <b class="c-old">{{ knapsackTotalSc }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>.<br/>
+          Please highlight the items you'd like to add to update the calculation!
+          <div><button type="button" (click)="highlightKnapsack()">Highlight suggested items</button></div>
+        } @else {
+          Look for the largest green numbers to prioritize which items to buy!
+        }
+      } @else {
+        <b class="c-new">You can reach all of the items you've highlighted through daily spirit adventures alone!</b>
+      }
+    </div>
+  </div>
+</div>
+
+
+<ng-template #tNode let-node>
+  <div class="node-overlay">
+    @if (node && !node.unlocked && !want()[node.guid] && nodeValues[node.guid]) {
+      <span class="node-value">({{ nodeValues[node.guid] }})</span>
+    }
+  </div>
+</ng-template>
+
+@if (showingFriendshipHelp) {
+  <app-overlay (close)="showingFriendshipHelp=false">
+    <p>
+      Friendship with spirits can be represented by a numerical value, which we label as  "friendship points" on this page.<br/>
+      Each friendship level requires a specific amount of friendship points.
+    </p>
+    <p>
+      Here's how to read your friendship points in-game.
+      Each star represents a total number of points.<br/>
+      In the below screenshot I have 30 points because my line is filled three quarters towards the first star.<br/>
+    </p>
+    <p>
+      The 'current friendship points' value below each spirit tree is based on the items you've unlocked on the Sky Planner.<br/>
+      You can manually adjust this number to match your actual in-game friendship points.<br/>
+      The calculation will update accordingly.
+    </p>
+    <p>
+      <img style="margin-left: 10px;" src="/assets/game/seasons/migration/friendship-guide.webp" />
+    </p>
+
+  </app-overlay>
+}

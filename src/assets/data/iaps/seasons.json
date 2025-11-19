@@ -146,4 +146,64 @@
     ]
   },
   // #endregion
+  // #region Season of The Two Embers - Part 1
+  {
+    "guid": "5VbG3ZfzVO",
+    "name": "Butterfly Blossom Memento",
+    "price": 2.99,
+    "items": [
+      "jc8Pyt7eLR"
+    ]
+  },
+  {
+    "guid": "bnRL7DM1P4",
+    "name": "Cloak of Darkness",
+    "price": 14.99,
+    "items": [
+      "EK5ApidEe_"
+    ]
+  },
+  {
+    "guid": "RPj9qYoMDk",
+    "name": "Mini Manatee Accessory",
+    "price": 3.99,
+    "items": [
+      "7oYZyU491f"
+    ]
+  },
+  {
+    "guid": "G-ONZpBF7V",
+    "name": "Manatee Plush",
+    "price": 6.99,
+    "items": [
+      "bXyztrTj5R"
+    ]
+  },
+  {
+    "guid": "4Eps86CzXw",
+    "name": "Spirited Manatee Ensemble",
+    "price": 9.99,
+    "items": [
+      "y69WKTTyw7",
+      "cXaPt2zi0Q",
+    ]
+  },
+  {
+    "guid": "7pMdXAFM4r",
+    "name": "Vestige of Dark Dragons",
+    "price": 11.99,
+    "items": [
+      "nBIm3PkDea",
+      "Io4R50c-s1",
+    ]
+  },
+  {
+    "guid": "qq-8NACu43",
+    "name": "Projector of Memories",
+    "price": 24.99,
+    "items": [
+      "JmFT0Q3IZ2"
+    ]
+  },
+  // #endregion
 ]

@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
     },
-    "order": 472
+    "order": 508
   },
   {
     "id": 369,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Gratitude_Guide#Ultimate_Gifts"
     },
-    "order": 380,
+    "order": 413,
     "dye": {
       "primary": {},
       "secondary": {},
@@ -56,7 +56,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Gratitude_Sassy.jpg"
     },
-    "order": 169
+    "order": 185
   },
   {
     "id": 652,
@@ -87,7 +87,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Sassy_Drifter#Mask"
     },
-    "order": 381,
+    "order": 414,
     "group": "SeasonPass"
   },
   {
@@ -142,7 +142,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Gratitude_yoga.jpg"
     },
-    "order": 171
+    "order": 187
   },
   {
     "id": 660,
@@ -196,7 +196,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Stretching_Guru#Cape"
     },
-    "order": 772,
+    "order": 849,
     "group": "SeasonPass"
   },
   {
@@ -241,7 +241,10 @@
     "id": 669,
     "guid": "kWs-MLO3ZE",
     "type": "Music",
-    "name": "Music Sheet #7",
+    "name": "Wide Stance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Music_Sheet"
+    },
     "sheet": "7",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 7
@@ -291,7 +294,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Gratitude_Provoke.jpg"
     },
-    "order": 170
+    "order": 186
   },
   {
     "id": 674,
@@ -307,7 +310,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Provoking_Performer#Mask"
     },
-    "order": 376,
+    "order": 409,
     "group": "SeasonPass"
   },
   {
@@ -366,7 +369,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Instrument"
     },
-    "order": 524
+    "order": 566
   },
   {
     "id": 681,
@@ -420,7 +423,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Leaping_Dancer#Mask"
     },
-    "order": 377,
+    "order": 410,
     "group": "SeasonPass"
   },
   {
@@ -465,7 +468,10 @@
     "id": 690,
     "guid": "_hk1ya3nj0",
     "type": "Music",
-    "name": "Music Sheet #8",
+    "name": "Waltzing in the Rain",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Music_Sheet"
+    },
     "sheet": "8",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 8
@@ -517,7 +523,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Cape"
     },
-    "order": 771
+    "order": 848
   },
   {
     "id": 695,
@@ -533,7 +539,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Saluting_Protector#Mask"
     },
-    "order": 378,
+    "order": 411,
     "group": "SeasonPass"
   },
   {
@@ -599,7 +605,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Instrument"
     },
-    "order": 525,
+    "order": 567,
     "group": "SeasonPass"
   },
   {
@@ -646,7 +652,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Greeting_Shaman#Mask"
     },
-    "order": 379,
+    "order": 412,
     "group": "SeasonPass"
   },
   {

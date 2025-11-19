@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 475
+    "order": 511
   },
   {
     "id": 375,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 392
+    "order": 425
   },
   {
     "id": 376,
@@ -36,7 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Rhythm_Guide#Ultimate_Gifts"
     },
-    "order": 182
+    "order": 198
   },
   {
     "id": 845,
@@ -103,12 +103,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Mask"
     },
-    "order": 393
+    "order": 426
   },
   {
     "id": 852,
     "guid": "T4suf1MdTj",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Troupe Greeter Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ef/Troupe-Greeter-Icon-pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Season_of_rhythm_pants_isle_welcome_v2.png",
@@ -136,7 +136,10 @@
     "id": 854,
     "guid": "ixu-bQFMqR",
     "type": "Music",
-    "name": "Music Sheet #4",
+    "name": "Floating Bubbles",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Greeter#Music_Sheet"
+    },
     "sheet": "4",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 4
@@ -226,12 +229,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Hair"
     },
-    "order": 179
+    "order": 195
   },
   {
     "id": 865,
     "guid": "kmgKsVBs4o",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Festival Spin Dancer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4e/Mimi-4117_05_festive_spin_dancer_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/Season_of_rhythm_pants_prairie_dance_v2.png",
@@ -259,7 +262,10 @@
     "id": 867,
     "guid": "4XuHymnqlr",
     "type": "Music",
-    "name": "Music Sheet #5",
+    "name": "Spinning Thoughts",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Music_Sheet"
+    },
     "sheet": "5",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 5,
@@ -296,7 +302,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Festival_Spin_Dancer#Prop"
     },
-    "order": 572
+    "order": 618
   },
   {
     "id": 872,
@@ -333,7 +339,10 @@
     "id": 875,
     "guid": "GEC1VNDUG2",
     "type": "Music",
-    "name": "Music Sheet #6",
+    "name": "Lighting the Way",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Music_Sheet"
+    },
     "sheet": "6",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
     "order": 6,
@@ -365,7 +374,7 @@
   {
     "id": 878,
     "guid": "uMURxUHDKr",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Admiring Actor Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/16/Mimi-4117_05_admiring_actor_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c7/Season_of_rhythm_pants_forest_kisses_v2.png",
@@ -390,7 +399,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Admiring_Actor#Mask"
     },
-    "order": 394,
+    "order": 427,
     "group": "SeasonPass"
   },
   {
@@ -456,7 +465,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Hair"
     },
-    "order": 180
+    "order": 196
   },
   {
     "id": 887,
@@ -510,13 +519,13 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Cape"
     },
-    "order": 779,
+    "order": 856,
     "group": "SeasonPass"
   },
   {
     "id": 892,
     "guid": "52NbrdHrAf",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Troupe Juggler Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1b/Mimi-4117_05_troupe_juggler_pants.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/de/Season_of_rhythm_pants_valley_juggle_v2.png",
@@ -557,7 +566,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Troupe_Juggler#Prop"
     },
-    "order": 581
+    "order": 631
   },
   {
     "id": 896,
@@ -607,7 +616,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Hair"
     },
-    "order": 181
+    "order": 197
   },
   {
     "id": 901,
@@ -658,7 +667,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Instrument"
     },
-    "order": 532,
+    "order": 574,
     "group": "SeasonPass"
   },
   {
@@ -671,7 +680,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Respectful_Pianist#Mask"
     },
-    "order": 396
+    "order": 429
   },
   {
     "id": 907,
@@ -744,7 +753,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Mask"
     },
-    "order": 395,
+    "order": 428,
     "group": "SeasonPass"
   },
   {
@@ -781,7 +790,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Instrument"
     },
-    "order": 531
+    "order": 573
   },
   {
     "id": 918,
@@ -808,7 +817,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Thoughtful_Director#Cape"
     },
-    "order": 780,
+    "order": 857,
     "group": "SeasonPass"
   },
   {

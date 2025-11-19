@@ -16,6 +16,7 @@ import { CardComponent, CardFoldEvent } from "../../layout/card/card.component";
 import { MatIcon } from '@angular/material/icon';
 import { TableFooterDirective } from '@app/components/table/table-column/table-footer.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-item-hearts',
@@ -85,7 +86,7 @@ export class ItemHeartsComponent {
       if (spirit.type !== 'Regular') { return; }
       const tree = spirit.tree;
       if (!tree) { return; }
-      const items = NodeHelper.getItems(tree.node);
+      const items = TreeHelper.getItems(tree);
       const hearts = items.filter(i => i.type === 'Special' && i.name === 'Heart');
 
       this.tables.regular.push({
@@ -119,7 +120,7 @@ export class ItemHeartsComponent {
 
         const tree = rs?.tree ?? ts?.tree ?? spirit.tree;
         if (!tree) { return; }
-        const items = NodeHelper.getItems(tree.node);
+        const items = TreeHelper.getItems(tree);
         const hearts = items.filter(i => i.type === 'Special' && i.name === 'Heart');
 
         this.tables.season.push({
@@ -150,7 +151,7 @@ export class ItemHeartsComponent {
       tree ??= spirit.tree;
 
       if (!tree) { return; }
-      const items = NodeHelper.getItems(tree.node);
+      const items = TreeHelper.getItems(tree);
       const hearts = items.filter(i => i.type === 'Special' && i.name === 'Heart');
 
       this.tables.guide.push({
@@ -181,7 +182,7 @@ export class ItemHeartsComponent {
       spirits.forEach(eventSpirit => {
         const tree = eventSpirit.tree;
         if (!tree) { return; }
-        const items = NodeHelper.getItems(tree.node);
+        const items = TreeHelper.getItems(tree);
         const treeHearts = items.filter(i => i.type === 'Special' && i.name === 'Heart' && this.missingHearts.has(i));
 
         tableCount[0] += treeHearts.length;

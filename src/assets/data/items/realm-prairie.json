@@ -43,7 +43,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
-    "order": 752
+    "order": 829
   },
   {
     "id": 42,
@@ -121,7 +121,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Butterfly_Charmer#Cape"
     },
-    "order": 761
+    "order": 838
   },
   {
     "id": 50,
@@ -163,7 +163,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Applauding_Bellmaker#Hair"
     },
-    "order": 137
+    "order": 153
   },
   {
     "id": 54,
@@ -248,7 +248,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Hair"
     },
-    "order": 140
+    "order": 156
   },
   {
     "id": 63,
@@ -309,7 +309,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Waving_Bellmaker#Mask"
     },
-    "order": 374
+    "order": 407
   },
   {
     "id": 69,
@@ -380,7 +380,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Slumbering_Shipwright#Hair"
     },
-    "order": 143
+    "order": 159
   },
   {
     "id": 74,
@@ -466,7 +466,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Instrument"
     },
-    "order": 519
+    "order": 561
   },
   {
     "id": 83,
@@ -514,7 +514,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laughing_Light_Catcher#Hair"
     },
-    "order": 161
+    "order": 177
   },
   {
     "id": 88,
@@ -538,7 +538,10 @@
     "id": 90,
     "guid": "EhvbJDQHCw",
     "type": "Music",
-    "name": "Music Sheet #1",
+    "name": "Bounding About",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Music_Sheet"
+    },
     "sheet": "1",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 1
@@ -581,7 +584,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bird_Whisperer#Hair"
     },
-    "order": 136
+    "order": 152
   },
   {
     "id": 96,
@@ -666,7 +669,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Exhausted_Dock_Worker#Mask"
     },
-    "order": 86
+    "order": 97
   },
   {
     "id": 105,

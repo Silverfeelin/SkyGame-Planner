@@ -346,7 +346,10 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance"
-      }
+      },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Season-of-Remembrance-2408261c87dd8023a536c886640c6ebb?pvs=25"
+          }
     },
     {
       "guid": "qOT2jY-2K7",
@@ -366,7 +369,10 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Passage"
-      }
+      },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Season-of-Passage-2408261c87dd80f38c99eaefcbd6b90d?pvs=25"
+          }
     },
     {
       "guid": "ZdB46Y0OGE",
@@ -386,7 +392,10 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Moments"
-      }
+      },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Season-of-Moments-2408261c87dd80869f1df85d72b97542?pvs=25"
+          }
     },
     {
       "guid": "oRUJf1BbPY",
@@ -406,7 +415,10 @@
       ],
       "_wiki": {
         "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Revival"
-      }
+      },
+          "_calendar": {
+            "href": "https://skydreamers.notion.site/Season-of-Revival-2408261c87dd80b7b02fd546551e43f8?pvs=25"
+          }
     },
     // #endregion
     // #region 2024
@@ -586,6 +598,66 @@
         "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=1cf8261c87dd80bc9944fb4ac9b1d5ab&pm=c"
       }
     },
+    {
+      "guid": "WARyR3Qtb1",
+      "name": "Season of The Two Embers - Part 1",
+      "shortName": "Two Embers - Part 1",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Season-of-the-Two-Embers-icon.png",
+      "imageUrl": "https://a.storyblok.com/f/108104/1920x1080/222b5bb80f/s27_walkwithtoymaker-cosmetics_sls_na_na_2507.jpg",
+      "year": 2025,
+      "date": "2025-07-21",
+      "endDate": "2025-10-05",
+      "_wiki": {
+        "href": "https://antifandom.com/sky-children-of-the-light/wiki/Season_of_The_Two_Embers_-_Part_1"
+      },
+      "spirits": [
+        "gy_EzmMKxF",
+        "aO0n7dAWvc",
+        "Jq1bIftHV5",
+        "zdstJkDMg5",
+        "2FQrdh4aCQ",
+        "TDQC4wg3G9",
+      ],
+      "shops": [
+        "qa1g8CbXqg",
+      ],
+      "calculatorData": {
+        "timedCurrency": [
+          { "guid": "MCSGj8K4g9", "date": "2025-08-19", "endDate": "2025-09-01", "amount": 14, "description": "Bonus daily Seasonal Light" },
+          { "guid": "xAC8Uc_5nt", "date": "2025-09-22", "endDate": "2025-09-28", "amount": 7, "description": "Bonus daily Seasonal Light" },
+          { "guid": "d0ozzbEKu7", "date": "2025-09-25", "endDate": "2025-09-25", "amount": 6, "description": "Compensation in Inbox" }
+        ]
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=22d8261c87dd80418568fb01053bd2b1&pm=c"
+      }
+    },
+    {
+      "guid": "wslfxJ5HZJ",
+      "name": "Season of Migration",
+      "shortName": "Migration",
+      "iconUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/59/Season-of-Migration-icon.png",
+      "imageUrl": "https://image.thatskygame.com/cdn-cgi/image/w=1280,h=1200,f=webp/https://a.storyblok.com/f/108104/1920x1080/f161b1b21f/tmis_s28-lightcreatures-wide_sls_na_na_2510.jpg",
+      "year": 2025,
+      "date": "2025-10-20",
+      "endDate": "2026-01-04",
+      "spirits": [
+        "rpBWF2PFJc",
+        "gHhy04B7r9",
+        "1mYa5Pnpdy",
+        "Mxs_zZGt7y",
+        "k9ZI3GoyPE",
+        "yfmzfJGyRp",
+      ],
+      "shops": [
+      ],
+      "_wiki": {
+        "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Migration"
+      },
+      "_calendar": {
+        "href": "https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d?p=2828261c87dd80819d77d8d2309a9228&pm=c"
+      }
+    }
     // #endregion
   ],
   "_wiki": {

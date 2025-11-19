@@ -15,6 +15,7 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
 import { NgIf } from '@angular/common';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 type Section = 'select' | 'img' | 'overview' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost' | 'content';
 export interface SpiritCardOptions {
@@ -77,7 +78,7 @@ export class SpiritCardComponent implements OnInit, OnChanges {
   private updateCosts(): void {
     this.cost = this.remainingCost = undefined;
     if (!this.tree) { return; }
-    const nodes = NodeHelper.all(this.tree.node);
+    const nodes = TreeHelper.getNodes(this.tree);
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);

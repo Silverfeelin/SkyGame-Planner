@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { EditorDashboardComponent } from './components/dashboard/editor-dashboard.component';
 import { EditorTravelingSpiritComponent } from './components/editor-traveling-spirit/editor-traveling-spirit.component';
-import { EditorTreeComponent } from './components/editor-tree/editor-tree.component';
 import { EditorShopComponent } from './components/editor-shop/editor-shop.component';
 import { EditorOrderComponent } from './components/editor-order/editor-order.component';
 import { EditorEventInstanceComponent } from './components/editor-event-instance/editor-event-instance.component';
@@ -18,7 +17,6 @@ export const routes: Routes = [
   { path: 'item/:guid', component: EditorItemPageComponent },
   { path: 'todo', component: EditorTodoComponent },
   { path: 'ts', component: EditorTravelingSpiritComponent },
-  { path: 'tree', component: EditorTreeComponent },
   { path: 'spirit-tree', component: SpiritTreeEditorComponent, title: 'Spirit Tree Editor' },
   { path: 'shop', component: EditorShopComponent },
   { path: 'order', component: EditorOrderComponent },

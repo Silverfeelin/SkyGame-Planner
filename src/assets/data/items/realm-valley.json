@@ -20,7 +20,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Confident_Sightseer#Hair"
     },
-    "order": 146
+    "order": 162
   },
   {
     "id": 191,
@@ -149,7 +149,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
-    "order": 758
+    "order": 835
   },
   {
     "id": 205,
@@ -172,7 +172,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Handstanding_Thrillseeker#Cape"
     },
-    "order": 767
+    "order": 844
   },
   {
     "id": 207,
@@ -217,7 +217,10 @@
     "id": 212,
     "guid": "-ax0YjoCqc",
     "type": "Music",
-    "name": "Music Sheet #3",
+    "name": "Aperture",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Manta_Whisperer#Music_Sheet"
+    },
     "sheet": "3",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/70/MusicSheetD-Ray.png",
     "order": 3
@@ -262,7 +265,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Hair"
     },
-    "order": 158
+    "order": 174
   },
   {
     "id": 217,
@@ -317,7 +320,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Backflipping_Champion#Mask"
     },
-    "order": 88
+    "order": 99
   },
   {
     "id": 223,
@@ -359,7 +362,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Hair"
     },
-    "order": 159
+    "order": 175
   },
   {
     "id": 227,
@@ -415,7 +418,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Cheerful_Spectator#Instrument"
     },
-    "order": 522
+    "order": 564
   },
   {
     "id": 233,
@@ -457,7 +460,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Hair"
     },
-    "order": 157
+    "order": 173
   },
   {
     "id": 237,
@@ -512,7 +515,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bowing_Medalist#Mask"
     },
-    "order": 89
+    "order": 100
   },
   {
     "id": 243,
@@ -539,7 +542,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
-    "order": 753
+    "order": 830
   },
   {
     "id": 245,
@@ -579,7 +582,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Mask"
     },
-    "order": 471
+    "order": 507
   },
   {
     "id": 250,
@@ -602,6 +605,6 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Proud_Victor#Cape"
     },
-    "order": 762
+    "order": 839
   }
 ]

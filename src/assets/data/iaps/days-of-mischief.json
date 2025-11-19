@@ -503,4 +503,162 @@
     ]
   },
   // #endregion
+  // #region Days of Mischief (2025)
+  {
+    "guid": "jh1HAJhsh-",
+    "name": "Mischief Puzzlewright's Brimmed Hat",
+    "price": 4.99,
+    "items": [
+      "rA-RHusWvS"
+    ]
+  },
+  {
+    "guid": "x1qjYi8ew4",
+    "name": "Mischief Feline Accessory Duo",
+    "price": 11.99,
+    "items": [
+      "Dhkf_3dAhf",
+      "wXLGNti3db"
+    ]
+  },
+  {
+      "guid": "Wr_BX6VAho",
+      "name": "Mischief Raven-Feathered Cloak",
+      "price": 17.99,
+      "returning": true,
+      "items": [
+        "uvx7_B9OyH"
+      ]
+    },
+    {
+      "guid": "zek4nLkOx2",
+      "name": "Mischief Withered Broom",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "8rYQfi8VP3"
+      ]
+    },
+    {
+      "guid": "FwadomhrU9",
+      "name": "Mischief Withered Antlers",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "evuvua13dC"
+      ]
+    },
+    {
+      "guid": "XrdSxb_uRA",
+      "name": "Mischief Witch Jumper",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "CZ4aNN-JZV",
+        "h-fwwT4T5y"
+      ]
+    },
+    {
+      "guid": "d88ZewW9jn",
+      "name": "Mischief Spider Quiff",
+      "price": 4.99,
+      "returning": true,
+      "items": [
+        "ARZC1Eg2jx"
+      ]
+    },
+    {
+      "guid": "Dc_csapXsW",
+      "name": "Mischief Pumpkin Prop",
+      "price": 1.99,
+      "returning": true,
+      "items": [
+        "nMt5KsLO6Y"
+      ]
+    },
+    {
+      "guid": "Eab1J-Zp7H",
+      "name": "Feline Familiar Prop",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "nz4W7amLch"
+      ]
+    },
+    {
+      "guid": "yR9nsMWbTC",
+      "name": "Cat Costume Pack",
+      "price": 19.99,
+      "returning": true,
+      "items": [
+        "QeNQhxg3mv",
+        "pG1_D61KMT"
+      ]
+    },
+    {
+      "guid": "bDB0L4YVvX",
+      "name": "Mischief Gossamer Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "bcKjyS-_p3"
+      ]
+    },
+    {
+      "guid": "hKeD6VUXjB",
+      "name": "Mischief Crabula Cloak",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "txwX8D1yKh"
+      ]
+    },
+    {
+      "guid": "ttxVA6OcHP",
+      "name": "Mischief Crabula Mask",
+      "price": 2.99,
+      "returning": true,
+      "items": [
+        "-8P_vR8bBw"
+      ]
+    },
+    {
+      "guid": "8J8E3NsR2j",
+      "name": "Mischief Web Cape",
+      "price": 14.99,
+      "returning": true,
+      "items": [
+        "gEGMIX0DMp"
+      ]
+    },
+    {
+      "guid": "9lVPErJE6c",
+      "name": "Mischief Witch Hat",
+      "price": 9.99,
+      "returning": true,
+      "items": [
+        "cMNnwUbQed"
+      ]
+    },
+    {
+      "guid": "78KZ1oho5x",
+      "name": "Hungry Pumpkin Hat",
+      "price": 11.99,
+      "returning": true,
+      "c": 8,
+      "items": [
+        "Dlp71JdHg2"
+      ]
+    },
+    {
+      "guid": "BWMYIynKIO",
+      "name": "Spooky Bat Cape",
+      "price": 17.99,
+      "returning": true,
+      "c": 12,
+      "items": [
+        "4D33RG4tNB"
+      ]
+    },
+  // #endregion
 ]

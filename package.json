@@ -5,8 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod": "npm run json-build && npm run sitemap-build && ng build --configuration production",
+    "build-prod": "npm run json-build && npm run sitemap-build && ng build --configuration production && npm run license-move",
     "watch": "ng build --watch --configuration development",
+    "license-move": "node ./scripts/build/license-move.mjs",
     "listen-data": "tsx ./scripts/data-listener.js",
     "json-watch": "tsx ./scripts/build/json-watch.ts",
     "json-build": "tsx ./scripts/build/json-build.ts",
@@ -14,6 +15,7 @@
     "sitemap-build": "node ./scripts/build/sitemap.js",
     "icon-sheet": "tsx ./scripts/icon-sheet.ts",
     "item-id": "node ./scripts/item-id.js",
+    "apply-guid": "node ./scripts/data/apply-guid.mjs",
     "test": "ng test"
   },
   "private": true,

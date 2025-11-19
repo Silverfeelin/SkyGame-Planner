@@ -11,7 +11,10 @@
     "guid": "MNCU8eU8DD",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Quest_#1"
+    }
   },
   {
     "id": 2036,
@@ -25,7 +28,10 @@
     "guid": "34QZ7XGmqQ",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Quest_#2"
+    }
   },
   {
     "id": 2038,
@@ -39,7 +45,10 @@
     "guid": "fQy562ANnr",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Quest_#3"
+    }
   },
   {
     "id": 2040,
@@ -48,14 +57,20 @@
     "name": "Spirit of Mural Hair Accessory",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/c/c0/Nine-Colored-Deer-Hair-Accessory-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e1/Nine-Colored-Deer-Hair-Accessory.png",
-    "order": 308
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural#Hair_Accessory"
+    },
+    "order": 331
   },
   {
     "id": 2041,
     "guid": "6XaS3dbRqt",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Quest_#4"
+    }
   },
   {
     "id": 2042,
@@ -69,7 +84,10 @@
     "guid": "dhfAgLzgAw",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Quest_#5"
+    }
   },
   {
     "id": 2044,
@@ -79,7 +97,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/dc/Nine-Colored-Deer-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a3/Nine-Colored-Deer-Mask.png",
-    "order": 448
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural#Mask"
+    },
+    "order": 481
   },
   {
     "id": 2045,
@@ -89,7 +110,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/75/Gift-of-the-Nine-Colored-Deer-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/79/Gift-of-the-Nine-Colored-Deer-Mask.png",
-    "order": 449
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Gift_of_the_Nine-Colored_Deer"
+    },
+    "order": 482
   },
   {
     "id": 2046,
@@ -99,7 +123,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/77/Gift-of-the-Nine-Colored-Deer-Facepiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/Gift-of-the-Nine-Colored-Deer-Facepiece.png",
-    "order": 359
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Gift_of_the_Nine-Colored_Deer"
+    },
+    "order": 390
   },
   {
     "id": 2047,
@@ -109,7 +136,10 @@
     "group": "Limited",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a0/Radiance-of-the-Nine-Colored-Deer-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/be/Radiance-of-the-Nine-Colored-Deer-back.png",
-    "order": 842
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_the_Nine-Colored_Deer#Radiance_of_the_Nine-Colored_Deer"
+    },
+    "order": 919
   },
   {
     "id": 2031,
@@ -119,7 +149,10 @@
     "name": "Nine-Colored Deer Ultimate Pendant",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/5a/Season-of-The-Nine-Colored-Deer-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/ed/Season-of-The-Nine-Colored-Deer-Pendant.png",
-    "order": 491
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural#Ultimate_Pendant"
+    },
+    "order": 527
   },
   {
     "id": 2032,
@@ -129,7 +162,10 @@
     "name": "Nine-Colored Deer Ultimate Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/3c/Nine-Colored-Deer-Ultimate-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0d/Nine-Colored-Deer-Ultimate-Hair-front.png",
-    "order": 249
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural#Nine-Colored_Deer_Ultimate_Hair"
+    },
+    "order": 265
   },
   {
     "id": 2033,
@@ -139,6 +175,9 @@
     "name": "Nine-Colored Deer Ultimate Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/34/Nine-Colored-Deer-Ultimate-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b0/Nine-Colored-Deer-Ultimate-Outfit.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural#Nine-Colored_Deer_Ultimate_Outfit"
+    },
     "order": 46
   },
   {
@@ -149,13 +188,19 @@
     "name": "Nine-Colored Deer Ultimate Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/bb/Nine-Colored-Deer-Ultimate-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/9/98/Nine-Colored-Deer-Ultimate-Cape-back.png",
-    "order": 838
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Spirit_of_Mural#Nine-Colored_Deer_Ultimate_Cape"
+    },
+    "order": 915
   },
   {
     "id": 1986,
     "guid": "JghaoDBzL-",
     "type": "Emote",
     "name": "Whistle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png",
     "order": 1101
@@ -165,6 +210,9 @@
     "guid": "fRqeU-viVI",
     "type": "Emote",
     "name": "Whistle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png",
     "group": "SeasonPass"
@@ -183,6 +231,9 @@
     "name": "Herb Gatherer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/05/Herb-Gatherer-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Herb-Gatherer-Outfit.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Outfit"
+    },
     "order": 47,
     "group": "SeasonPass"
   },
@@ -193,7 +244,10 @@
     "name": "Herb Gatherer Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/44/Herb-Gatherer-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/0a/Herb-Gatherer-Hair.png",
-    "order": 250
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Hair"
+    },
+    "order": 266
   },
   {
     "id": 1991,
@@ -208,6 +262,9 @@
     "guid": "brs2b0XtiY",
     "type": "Emote",
     "name": "Whistle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png"
   },
@@ -216,6 +273,9 @@
     "guid": "fB-Akhop3K",
     "type": "Emote",
     "name": "Whistle",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e5/Herb-Gatherer-Emote-icon.png",
     "group": "SeasonPass"
@@ -227,7 +287,10 @@
     "name": "Herb Gatherer Prop",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8a/Herb-Gatherer-Prop-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e9/Herb-Gatherer-Prop.png",
-    "order": 604
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Herb_Gatherer#Prop"
+    },
+    "order": 654
   },
   {
     "id": 1995,
@@ -250,6 +313,9 @@
     "guid": "AR-MFu1bih",
     "type": "Emote",
     "name": "Flex",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png",
     "order": 1111
@@ -259,6 +325,9 @@
     "guid": "F_3lTFwBoE",
     "type": "Emote",
     "name": "Flex",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png",
     "group": "SeasonPass"
@@ -266,10 +335,13 @@
   {
     "id": 1999,
     "guid": "X_2wqYzEu5",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Hunter Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/fc/Hunter-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/36/Hunter-Outfit.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Outfit"
+    },
     "order": 49
   },
   {
@@ -285,6 +357,9 @@
     "guid": "QJq0kW8j2S",
     "type": "Emote",
     "name": "Flex",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png"
   },
@@ -293,6 +368,9 @@
     "guid": "zBw4EnSXM1",
     "type": "Emote",
     "name": "Flex",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Hunter-Emote-icon.png",
     "group": "SeasonPass"
@@ -311,7 +389,10 @@
     "name": "Hunter Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/Hunter-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/ae/Hunter-Hair.png",
-    "order": 252,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Hair"
+    },
+    "order": 268,
     "group": "SeasonPass"
   },
   {
@@ -321,7 +402,10 @@
     "name": "Hunter Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/4a/Hunter-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/Hunter-Cape-back.png",
-    "order": 840
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Hunter#Cape"
+    },
+    "order": 917
   },
   {
     "id": 2048,
@@ -345,6 +429,9 @@
     "type": "Emote",
     "subtype": "FriendEmote",
     "name": "Cradle Carry",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord#Friend_Action"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Feudal-Lord-Action-icon.png"
   },
@@ -354,6 +441,9 @@
     "type": "Emote",
     "subtype": "FriendEmote",
     "name": "Cradle Carry",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord#Friend_Action"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d5/Feudal-Lord-Action-icon.png",
     "group": "SeasonPass"
@@ -372,7 +462,10 @@
     "name": "Feudal Lord Hat",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/01/Feudal-Lord-Headpiece-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a1/Feudal-Lord-Headpiece.png",
-    "order": 309,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord#Hair_Accessory"
+    },
+    "order": 332,
     "group": "SeasonPass"
   },
   {
@@ -382,7 +475,10 @@
     "name": "Feudal Lord Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/b/b2/Feudal-Lord-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/6c/Feudal-Lord-Mask.png",
-    "order": 447
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord#Mask"
+    },
+    "order": 480
   },
   {
     "id": 2012,
@@ -406,16 +502,22 @@
     "name": "Feudal Lord Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/06/Feudal-Lord-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7c/Feudal-Lord-Cape-front.png",
-    "order": 841,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord#Cape"
+    },
+    "order": 918,
     "group": "SeasonPass"
   },
   {
     "id": 2015,
     "guid": "H3IbNNMgeI",
     "type": "Music",
-    "name": "Music Sheet #39",
+    "name": "Deer Song",
     "sheet": "39",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Feudal_Lord#Music_Sheet"
+    },
     "order": 39
   },
   {
@@ -439,6 +541,9 @@
     "guid": "UVSUO7K0pg",
     "type": "Emote",
     "name": "Float Spin",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Expression"
+    },
     "level": 1,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png",
     "order": 1121
@@ -448,6 +553,9 @@
     "guid": "c2ogGO4e6t",
     "type": "Emote",
     "name": "Float Spin",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Expression"
+    },
     "level": 2,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png",
     "group": "SeasonPass"
@@ -459,7 +567,10 @@
     "name": "Princess Mask",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/5/51/Princess-Mask-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/7a/Princess-Mask.png",
-    "order": 446
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Mask"
+    },
+    "order": 479
   },
   {
     "id": 2021,
@@ -483,7 +594,10 @@
     "name": "Princess Hair",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/e/e8/Princess-Hair-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Hair.png",
-    "order": 251,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Hair"
+    },
+    "order": 267,
     "group": "SeasonPass"
   },
   {
@@ -491,6 +605,9 @@
     "guid": "UcG0zDem_M",
     "type": "Emote",
     "name": "Float Spin",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Expression"
+    },
     "level": 3,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png"
   },
@@ -499,6 +616,9 @@
     "guid": "8hRD36UT6n",
     "type": "Emote",
     "name": "Float Spin",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Expression"
+    },
     "level": 4,
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/07/Princess-Emote-icon.png",
     "group": "SeasonPass"
@@ -510,6 +630,9 @@
     "name": "Princess Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/71/Princess-Outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/6/68/Princess-Outfit.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Outfit"
+    },
     "order": 48
   },
   {
@@ -534,7 +657,10 @@
     "name": "Princess Cape",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/42/Princess-Cape-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/30/Princess-Cape-back.png",
-    "order": 839,
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Princess#Cape"
+    },
+    "order": 916,
     "group": "SeasonPass"
   },
   {

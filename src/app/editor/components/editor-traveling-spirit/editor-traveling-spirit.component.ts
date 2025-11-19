@@ -75,7 +75,7 @@ export class EditorTravelingSpiritComponent {
 
     if (lastTs) {
       existingNodes = NodeHelper.all(lastTs.tree.node);
-      this.formNodes = this.nodeToFormNodes(lastTs.tree.node);
+      this.formNodes = this.nodeToFormNodes(lastTs.tree.node!);
     } else if (spiritTree) {
       // Filter out season-specifics.
       existingNodes = NodeHelper.all(spiritTree.node).filter(s => {

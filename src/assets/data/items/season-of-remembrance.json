@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 487
+    "order": 523
   },
   {
     "id": 576,
@@ -30,7 +30,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 502,
+    "order": 540,
     "dye": {
       "previewUrl": "/assets/game/dyes/Remembrance_ultsash.jpg",
       "infoUrl": "/assets/game/dyes/2slots_Remembrance_ultsash.jpg",
@@ -49,14 +49,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Ultimate_Gifts"
     },
-    "order": 599
+    "order": 649
   },
   {
     "id": 578,
     "guid": "lia3qGhqvA",
     "type": "Quest",
     "name": "Quest 1",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#1"
+    }
   },
   {
     "id": 579,
@@ -70,7 +73,10 @@
     "guid": "vOXpY0l3FA",
     "type": "Quest",
     "name": "Quest 2",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#2"
+    }
   },
   {
     "id": 581,
@@ -82,7 +88,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Chimes"
     },
-    "order": 596
+    "order": 646
   },
   {
     "id": 582,
@@ -103,7 +109,10 @@
     "guid": "uMOURZju5o",
     "type": "Quest",
     "name": "Quest 3",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#3"
+    }
   },
   {
     "id": 585,
@@ -117,7 +126,10 @@
     "guid": "LHvJcN3c1o",
     "type": "Quest",
     "name": "Quest 4",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#4"
+    }
   },
   {
     "id": 587,
@@ -129,7 +141,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Kettle"
     },
-    "order": 598
+    "order": 648
   },
   {
     "id": 588,
@@ -150,7 +162,10 @@
     "guid": "TMVanCtb1T",
     "type": "Quest",
     "name": "Quest 5",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#5"
+    }
   },
   {
     "id": 591,
@@ -164,7 +179,10 @@
     "guid": "Pf7HGPSK2I",
     "type": "Quest",
     "name": "Quest 6",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#6"
+    }
   },
   {
     "id": 593,
@@ -176,14 +194,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Potted_Plant"
     },
-    "order": 597
+    "order": 647
   },
   {
     "id": 594,
     "guid": "2pixQYfTCD",
     "type": "Quest",
     "name": "Quest 7",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#7"
+    }
   },
   {
     "id": 595,
@@ -197,7 +218,10 @@
     "guid": "xpntoR6DSl",
     "type": "Quest",
     "name": "Quest 8",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#8"
+    }
   },
   {
     "id": 597,
@@ -209,7 +233,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Crab_Plush"
     },
-    "order": 600
+    "order": 650
   },
   {
     "id": 598,
@@ -221,7 +245,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Remembrance_Guide#Manta_Plush"
     },
-    "order": 601
+    "order": 651
   },
   {
     "id": 599,
@@ -242,7 +266,10 @@
     "guid": "bU0whqWAde",
     "type": "Quest",
     "name": "Quest 9",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#9"
+    }
   },
   {
     "id": 602,
@@ -256,7 +283,10 @@
     "guid": "4a7FBf31jp",
     "type": "Quest",
     "name": "Quest 10",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Remembrance#Quest_#10"
+    }
   },
   {
     "id": 1564,
@@ -296,7 +326,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Mask"
     },
-    "order": 437
+    "order": 470
   },
   {
     "id": 1567,
@@ -323,7 +353,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Hair"
     },
-    "order": 236,
+    "order": 252,
     "group": "SeasonPass"
   },
   {
@@ -365,7 +395,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Bereft_Veteran#Cape"
     },
-    "order": 826
+    "order": 903
   },
   {
     "id": 1573,
@@ -417,7 +447,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Neck_Accessory"
     },
-    "order": 501,
+    "order": 539,
     "dye": {
       "previewUrl": "/assets/game/dyes/Remembrance_childscarf.jpg",
       "primary": {}
@@ -452,7 +482,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Remembrance_child.jpg"
     },
-    "order": 235,
+    "order": 251,
     "group": "SeasonPass"
   },
   {
@@ -506,7 +536,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Pleading_Child#Outfit"
     },
-    "order": 112
+    "order": 125
   },
   {
     "id": 1585,
@@ -569,7 +599,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Remembrance_tiptoe.jpg"
     },
-    "order": 237,
+    "order": 253,
     "group": "SeasonPass"
   },
   {
@@ -605,7 +635,7 @@
   {
     "id": 1594,
     "guid": "4tYFGTPkMo",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Tiptoeing Tea-Brewer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/40/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/2a/SoRemembrance-Tiptoeing-Tea-Brewer-Outfit.png",
@@ -637,7 +667,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Tiptoeing_Tea-Brewer#Cape"
     },
-    "order": 828
+    "order": 905
   },
   {
     "id": 1596,
@@ -683,13 +713,13 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Mask"
     },
-    "order": 438,
+    "order": 471,
     "group": "SeasonPass"
   },
   {
     "id": 1601,
     "guid": "XPEhyUKiiy",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Wounded Warrior Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/1a/SoRemembrance-Wounded-Warrior-Outfit-Icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/4/41/SoRemembrance-Wounded-Warrior-Outfit.png",
@@ -733,7 +763,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Wounded_Warrior#Cape"
     },
-    "order": 827,
+    "order": 904,
     "group": "SeasonPass"
   },
   {
@@ -768,6 +798,34 @@
   {
     "id": 2629,
     "guid": "vW-FqchJ6Z",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2733,
+    "guid": "oCHrIFKBfA",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2734,
+    "guid": "xJTcpGbUys",
+    "type": "WingBuff",
+    "name": "Wing Buff",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"
+  },
+  {
+    "id": 2735,
+    "guid": "aw5NtaaXCU",
+    "type": "Special",
+    "name": "Heart",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/d/d9/Heart.png"
+  },
+  {
+    "id": 2736,
+    "guid": "WLoAdVsvIW",
     "type": "WingBuff",
     "name": "Wing Buff",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/3/31/Winglight.png"

@@ -296,6 +296,110 @@
     ]
   },
   // #endregion
+  // #region Days of Sunlight (2025)
+  {
+    "guid": "h3cw_n8g-Z",
+    "name": "Sunlight Bonnet Bundle",
+    "price": 14.99,
+    "items": [
+      "NiwM8bgdxk",
+      "ysIdvX8oC7"
+    ]
+  },
+  {
+    "guid": "3GcMI-M31g",
+    "name": "Sunlight Woven Wrap",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "vNSMly5D9b"
+    ]
+  },
+  {
+    "guid": "af8EXlZ_4K",
+    "name": "Sunlight Helios Hoops",
+    "price": 2.99,
+    "returning": true,
+    "items": [
+      "lv_MnKorJN"
+    ]
+  },
+  {
+    "guid": "LfIfvQNi06",
+    "name": "Sunlight Surfboard",
+    "price": 14.99,
+    "returning": true,
+    "items": [
+      "NEmfcbHb-I"
+    ]
+  },
+  {
+    "guid": "0yLbT5Ob1R",
+    "name": "Sunlight Chunky Sandals",
+    "price": 9.99,
+    "returning": true,
+    "items": [
+      "gsACsrp16_"
+    ]
+  },
+  {
+    "guid": "TrmG80sjvZ",
+    "name": "Campfire Snack Kit",
+    "price": 19.99,
+    "returning": true,
+    "sc": 35,
+    "items": [
+      "TXYOTW9Qyn"
+    ]
+  },
+  {
+    "guid": "Tcf83N28HD",
+    "name": "Jelly Shoulder Buddy",
+    "price": 2.99,
+    "returning": true,
+    "items": [
+      "Ay3g-0JAeW"
+    ]
+  },
+  {
+    "guid": "ah-45-2DIG",
+    "name": "Seashell Hairpin",
+    "price": 0.99,
+    "returning": true,
+    "items": [
+      "eruG9WiyJZ"
+    ]
+  },
+  {
+    "guid": "vCXzmylE9Y",
+    "name": "Bunny Accessory",
+    "price": 2.99,
+    "returning": true,
+    "items": [
+      "EEFIpR6x7Q"
+    ]
+  },
+  {
+    "guid": "j2lWym3xxW",
+    "name": "Lantern Pack",
+    "price": 19.99,
+    "returning": true,
+    "c": 35,
+    "items": [
+      "5xJ_mCzZQy"
+    ]
+  },
+  {
+    "guid": "bEjUQmxgOa",
+    "name": "Summer Parasol",
+    "price": 19.99,
+    "returning": true,
+    "sc": 35,
+    "items": [
+      "4CYafmMUql"
+    ]
+  },
+  // #endregion
   // #region AURORA Encore Concerts
   {
     "guid": "SE1PMpYNqc",

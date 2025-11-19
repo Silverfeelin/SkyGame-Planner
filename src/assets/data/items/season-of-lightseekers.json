@@ -10,7 +10,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts"
     },
-    "order": 473
+    "order": 509
   },
   {
     "id": 371,
@@ -23,7 +23,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Lightseekers_Guide#Ultimate_Gifts"
     },
-    "order": 556
+    "order": 598
   },
   {
     "id": 709,
@@ -51,7 +51,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Mask"
     },
-    "order": 382
+    "order": 415
   },
   {
     "id": 711,
@@ -95,7 +95,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Lightseeker_piggyback.jpg"
     },
-    "order": 174
+    "order": 190
   },
   {
     "id": 715,
@@ -113,7 +113,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Piggyback_Lightseeker#Cape"
     },
-    "order": 774,
+    "order": 851,
     "group": "SeasonPass"
   },
   {
@@ -163,7 +163,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Lightseeker_doublefive.jpg"
     },
-    "order": 176,
+    "order": 192,
     "group": "SeasonPass"
   },
   {
@@ -180,7 +180,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Mask"
     },
-    "order": 383
+    "order": 416
   },
   {
     "id": 722,
@@ -213,7 +213,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Doublefive_Light_Catcher#Instrument"
     },
-    "order": 526,
+    "order": 568,
     "group": "SeasonPass"
   },
   {
@@ -255,7 +255,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Mask"
     },
-    "order": 384
+    "order": 417
   },
   {
     "id": 729,
@@ -276,7 +276,10 @@
     "id": 731,
     "guid": "4sdZPgk41b",
     "type": "Music",
-    "name": "Music Sheet #9",
+    "name": "Finding the Horizon",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Music_Sheet"
+    },
     "sheet": "9",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 9,
@@ -292,7 +295,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Hair"
     },
-    "order": 175
+    "order": 191
   },
   {
     "id": 733,
@@ -319,7 +322,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Laidback_Pioneer#Prop"
     },
-    "order": 554,
+    "order": 596,
     "group": "SeasonPass"
   },
   {
@@ -381,7 +384,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Mask"
     },
-    "order": 385,
+    "order": 418,
     "group": "SeasonPass"
   },
   {
@@ -417,7 +420,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Hair"
     },
-    "order": 173
+    "order": 189
   },
   {
     "id": 745,
@@ -430,7 +433,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Twirling_Champion#Instrument"
     },
-    "order": 527,
+    "order": 569,
     "group": "SeasonPass"
   },
   {
@@ -479,7 +482,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Mask"
     },
-    "order": 386
+    "order": 419
   },
   {
     "id": 751,
@@ -500,7 +503,10 @@
     "id": 753,
     "guid": "NqdFQpeUSh",
     "type": "Music",
-    "name": "Music Sheet #10",
+    "name": "Relaxed Steps",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Music_Sheet"
+    },
     "sheet": "10",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 10,
@@ -535,7 +541,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Lightseeker_crab.jpg"
     },
-    "order": 172
+    "order": 188
   },
   {
     "id": 757,
@@ -551,7 +557,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Cape"
     },
-    "order": 773,
+    "order": 850,
     "group": "SeasonPass"
   },
   {
@@ -564,7 +570,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Crab_Whisperer#Prop"
     },
-    "order": 579
+    "order": 629
   },
   {
     "id": 759,
@@ -625,7 +631,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Mask"
     },
-    "order": 387,
+    "order": 420,
     "group": "SeasonPass"
   },
   {
@@ -674,7 +680,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Shushing_Light_Scholar#Cape"
     },
-    "order": 775,
+    "order": 852,
     "group": "SeasonPass"
   },
   {

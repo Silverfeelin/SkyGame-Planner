@@ -304,6 +304,7 @@
     },
     {
       "guid": "WKeFg1cVbG",
+      "revisionType": "AfterSeason",
       "node": "Udd-_n5nht"
     },
     // The Rose
@@ -313,6 +314,7 @@
     },
     {
       "guid": "hdM4etUDWo",
+      "revisionType": "AfterSeason",
       "node": "XxQuKwlte6"
     },
     // Flight Guide
@@ -322,6 +324,7 @@
     },
     {
       "guid": "HvBGzwY6Wp",
+      "revisionType": "AfterSeason",
       "node": "Xqts61Civ9"
     },
     // Abyss Guide
@@ -364,7 +367,7 @@
       "guid": "gu5doPh4OB",
       "revisionType": "AfterSeason",
       "name": "AURORA Guide - After season",
-      "node": "tminhzzv09"
+      "node": "xG-pgBHsGb"
     },
     // Remembrance Guide
     {
@@ -383,6 +386,7 @@
     },
     {
       "guid": "4jNOVPFy1Q",
+      "revisionType": "AfterSeason",
       "node": "am4QK-t3g_"
     },
     // Moments Guide
@@ -494,10 +498,17 @@
       "guid": "yB8WfHNA3d",
       "node": "Uk7fZ4cqe_"
     },
+    // TS 84
+    {
+      "guid": "T6wagFF_ls",
+      "node": "TfqS8fRZYJ"
+    },
+    // TS Error
     {
       "guid": "JHT-EOASCu",
       "node": "4iDQf4wkrh"
     },
+    // TS 148
     {
       "guid": "KcxP_uWRx_",
       "node": "O8QA3nIMbC"
@@ -839,6 +850,11 @@
       "guid": "4irRoUtak2",
       "node": "8KWiZVp4dY"
     },
+    // TS 150
+    {
+      "guid": "LE5r3qPBkG",
+      "node": "9cObx0iibd"
+    },
     // Troupe Juggler
     {
       "guid": "XBUCLd5Dbw",
@@ -868,6 +884,11 @@
     {
       "guid": "Z_9kLMM40B",
       "node": "LcfK6L-cii"
+    },
+    //TS 152
+    {
+      "guid": "pSd7bhut9N", 
+      "node": "nxwar7btHn"
     },
     // Thoughtful Director
     {
@@ -1111,6 +1132,7 @@
       "guid": "zRK07kSmcG",
       "node": "BBGCStYaGJ"
     },
+    { "guid": "-lshQtF-0t", "node": "y3eJJ6CsFn" },
     // Prophet of Air
     {
       "guid": "llk8KwqtQo",
@@ -1123,6 +1145,11 @@
     {
       "guid": "_l09Yw8HoO",
       "node": "5q6cX7B5Dv"
+    },
+    // TS #148
+    {
+      "guid": "GpYYTOc43d",
+      "node": "WKWTdL8PrE"
     },
     // Prophet of Fire
     {
@@ -1152,6 +1179,11 @@
       "guid": "hQi54Pqru3",
       "node": "IRu0px7jxG"
     },
+    // SV 11
+    {
+      "guid": "Ng3zGFAGql",
+      "node": "MYGxrRz1dX"
+    },
     // Dancing Performer
     {
       "guid": "zUy1Dlkzbl",
@@ -1169,6 +1201,11 @@
     {
       "guid": "aMvUAm6DsJ",
       "node": "_fxwGV2qpQ"
+    },
+    // SV 11
+    {
+      "guid": "gqf9paZVEy",
+      "node": "rfwstakJR_"
     },
     // Spinning Mentor
     {
@@ -1229,6 +1266,11 @@
     {
       "guid": "Yy0m8oXKyK",
       "node": "I-40Dn5_LO"
+    },
+    //TS 147
+    {
+      "guid": "Tdv2NuULDT",
+      "node": "favqmKiY2h"
     },
     // Marching Adventurer
     {
@@ -1337,12 +1379,12 @@
       "node": "C04G6KylaW"
     },
     {
-      "guid": "C7q6_1idl7",
-      "node": "0AwW-9AjqL"
-    },
-    {
       "guid": "hUotcSKXmu",
       "node": "GIrL3sC7qC"
+    },
+    {
+      "guid": "H4P1PDRMQa",
+      "node": "FRhBcTNbYT"
     },
     // Light Whisperer
     {
@@ -1353,10 +1395,6 @@
       "guid": "shrYC9Vd3i",
       "node": "MGUE9PoBTC"
     },
-    {
-      "guid": "H4P1PDRMQa",
-      "node": "FRhBcTNbYT"
-    },
     // Tinkering Chimesmith
     {
       "guid": "66idlQe3mK",
@@ -1365,6 +1403,11 @@
     {
       "guid": "rPT8vTD06j",
       "node": "lvTfufFX7Q"
+    },
+    // TS 146
+    {
+      "guid": "CEzPLl5Qq2",
+      "node": "hdn9q9Iv4g"
     },
     // Talented Builder
     {
@@ -1386,6 +1429,7 @@
       "guid": "NdB6VF6E1G",
       "node": "w7O7kFaQ4l"
     },
+    { "guid": "R2WmeZDMqd", "node": "WsJjGE_da0" },
     // Ceasing Commodore
     {
       "guid": "1c2RnFkkmb",
@@ -1404,6 +1448,7 @@
       "guid": "MW9CCZ_Kb4",
       "node": "Q5-a10kPfB"
     },
+    { "guid": "eodAzj6E3z",  "node": "pVBm48V0So" },
     // Cackling Cannoneer
     {
       "guid": "ag2kvsRKRN",
@@ -1424,6 +1469,11 @@
       "guid": "IWACETtZdN",
       "node": "JZ0vOui6V-"
     },
+    // SV 11
+    {
+      "guid": "Uew4A5VBxF",
+      "node": "QNcTqD-4ie"
+    },
     // Forgetful Storyteller
     {
       "guid": "UEf6UQn_yl",
@@ -1441,6 +1491,11 @@
     {
       "guid": "e6_iEz7I4N",
       "node": "yQlOeNoT-7"
+    },
+    // SV 11
+    {
+      "guid": "_TwWCLOFZ9",
+      "node": "xgPlf1s2f6"
     },
     // Modest Dancer
     {
@@ -1548,11 +1603,13 @@
       "guid": "gOAqpgTH4R",
       "node": "FAsuN4N2hI"
     },
+    { "guid": "IC3TtVJ-YG", "node": "-ZhSv-b7rD" },
     // Wounded Warrior
     {
       "guid": "Cze45b5NuK",
       "node": "6nhyx0XwCf"
     },
+    { "guid": "t8rUtsegue", "node": "zMb4Br_Xjk" },
     // #endregion
     // #region Passage
     // Oddball Outcast
@@ -1603,6 +1660,8 @@
       "guid": "jj9mjfGi30",
       "node": "m08hmEsLt4"
     },
+    // TS 151
+    { "guid": "QdLvIDChI8", "node": "wb3LVVQETb" },
     // #endregion
     // #region Revival
     // #region Vestige of a Deserted Oasis
@@ -1688,7 +1747,11 @@
       "guid": "voApj8nmhQ",
       "node": "RTwKtxkvqi"
     },
-    { "guid": "RSUBTRhzHf", "node": "Qf34nNDqQ_" },
+    {
+      "guid": "RSUBTRhzHf",
+      "revisionType": "AfterSeason",
+      "node": "Qf34nNDqQ_"
+    },
     {
       "guid": "FKLImPk5vB",
       "node": "MhQW8_5oJe"
@@ -1737,9 +1800,15 @@
     },
     // #endregion
     // #region Radiance
+    // Radiaance Guide
     {
       "guid": "QveGTQI48L",
       "node": "30o85y24PC"
+    },
+    {
+      "guid": "Vvd8vzwFLd",
+      "node": "hxvdB3Qxe4",
+      "revisionType": "AfterSeason"
     },
     {
       "guid": "s8oDPElH2z",
@@ -1756,11 +1825,29 @@
     // #endregion
     // #region Blue Bird
     { "guid": "9ZMGsZeH1U", "node": "RzXXb9widZ" },
+    { "guid": "Z-lDboKqdB", "node": "kRv4PPU3CT", "revisionType": "AfterSeason" },
     { "guid": "me0kc6RN7J", "node": "yjs2ofd4bI" },
     { "guid": "GEOf9iPZiz", "node": "Mab8ePYPvs" },
     { "guid": "DU7kdfkbq7", "node": "qdSLwtMlKg" },
     { "guid": "O7hDEtXXLQ", "node": "r_3ANSlteU" },
     { "guid": "qLiBf_BpI4", "node": "nc8Qjghjoy" },
+    // #endregion
+    // #region Two Embers - Part 1
+    { "guid": "lHlnmVDICn", "node": "7NYZEkjI3A" },
+    { "guid": "GpcMalckm5", "node": "GaoOaDHlpc", "revisionType": "AfterSeason" },
+    { "guid": "SI9Q8J2Fm-", "node": "opxcbxYIfJ" },
+    { "guid": "RDergQu3Vd", "node": "BxVl336GE7" },
+    { "guid": "fdQpzNAjCw", "node": "gSpR4Ktq8n" },
+    { "guid": "r-emIwzMih", "node": "oZL55_0hI5" },
+    { "guid": "PzoY-Wkk8O", "node": "ataTovLcTn" },
+    // #endregion
+    // #region Migration
+    { "guid": "IVb8WCKt8D", "tier": "9nkruKKfE7" },
+    { "guid": "zK7AFf0rvZ", "tier": "5xc-2tXUAT" },
+    { "guid": "nCGzsegB0l", "tier": "tCeG5a_2u0" },
+    { "guid": "iFANrbgSY4", "tier": "aXYjAZqvIr" },
+    { "guid": "nrvSEyff0h", "tier": "neQv9N0Pk5" },
+    { "guid": "ko9lr8M4J5", "tier": "kXNj5sSsss" },
     // #endregion
 
     // #region Nesting Challenges
@@ -1998,11 +2085,17 @@
       "node": "1mezfgzjRi"
     },
     // #endregion
+    // #region Days of Sunlight (2025)
+    { "guid": "WvS399OTqy", "node": "BfFrc98Kea" },
+    // #endregion
     // #region Days of Moonlight (2024)
     {
       "guid": "i_k3DZGBKo",
       "node": "y1mrONbyUB"
     },
+    // #endregion
+    // #region Days of Moonlight (2025)
+    { "guid": "CX1CIWT9Vw", "node": "XLtugqdh-y" },
     // #endregion
     // #region Lazy Days
     // Lazy Days 2022
@@ -2040,6 +2133,12 @@
       "guid": "OvltVBKe--",
       "node": "DdcPH9g4AB"
     },
+    // #region Days of Mischief (2025)
+    {
+        "guid": "EEU4caBgcq",
+        "node": "T8L7f4pFlA"
+      },
+    // #endregion
     // #region Days of Mischief (2024)
     {
       "guid": "fqxSeHyZf1",
@@ -2149,7 +2248,7 @@
       "node": "fpoTvUXTAi",
       "name": "Equipment Rack",
       "permanent": "event"
-    },
+    }
     // #endregion
   ]
 }

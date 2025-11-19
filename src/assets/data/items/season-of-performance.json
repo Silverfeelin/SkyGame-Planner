@@ -17,7 +17,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 484
+    "order": 520
   },
   {
     "id": 508,
@@ -36,7 +36,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 425
+    "order": 458
   },
   {
     "id": 509,
@@ -53,7 +53,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 811
+    "order": 888
   },
   {
     "id": 510,
@@ -66,14 +66,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Ultimate_Gifts"
     },
-    "order": 221
+    "order": 237
   },
   {
     "id": 511,
     "guid": "zEvxnuBJf1",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 1",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#1"
+    }
   },
   {
     "id": 512,
@@ -100,8 +103,11 @@
     "id": 515,
     "guid": "so8M_6pkle",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 2",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#2"
+    }
   },
   {
     "id": 516,
@@ -113,14 +119,17 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Mask"
     },
-    "order": 428
+    "order": 461
   },
   {
     "id": 517,
     "guid": "WKPWSGukRo",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 3",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#3"
+    }
   },
   {
     "id": 518,
@@ -147,8 +156,11 @@
     "id": 521,
     "guid": "NERbBLZV7z",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 4",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#4"
+    }
   },
   {
     "id": 522,
@@ -175,8 +187,11 @@
     "id": 525,
     "guid": "sldyWGHPcu",
     "type": "Quest",
-    "name": "Quest",
-    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png"
+    "name": "Quest 5",
+    "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/8/8b/Exclamation-mark-Ray.png",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Season_of_Performance#Quest_#5"
+    }
   },
   {
     "id": 526,
@@ -209,7 +224,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Performance_Guide#Prop"
     },
-    "order": 595
+    "order": 645
   },
   {
     "id": 1424,
@@ -244,14 +259,17 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Performance_stagehand.jpg"
     },
-    "order": 223,
+    "order": 239,
     "group": "SeasonPass"
   },
   {
     "id": 1427,
     "guid": "LE-qwy-wie",
     "type": "Music",
-    "name": "Music Sheet #29",
+    "name": "Step by Step",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Music_Sheet"
+    },
     "sheet": "29",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f7/MusicSheetW-Ray.png",
     "order": 29
@@ -294,12 +312,12 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Frantic_Stagehand#Mask"
     },
-    "order": 427
+    "order": 460
   },
   {
     "id": 1432,
     "guid": "xoEQI_2ykm",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Frantic Stagehand Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/73/SoPerformance_-_Frantic_Stagehand-outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/0/02/SoPerformance_-_Frantic_Stagehand-outfit.png",
@@ -376,7 +394,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Mask"
     },
-    "order": 429,
+    "order": 462,
     "group": "SeasonPass"
   },
   {
@@ -395,7 +413,7 @@
       "previewUrl": "/assets/game/dyes/hair/Performance_storyteller.jpg",
       "infoUrl": "/assets/game/dyes/hair/2slots_Performance_storyteller.jpg"
     },
-    "order": 224
+    "order": 240
   },
   {
     "id": 1439,
@@ -438,7 +456,7 @@
   {
     "id": 1443,
     "guid": "no0xArAFGq",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Forgetful Storyteller Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/1/10/SOPerformance_-Forgetful_Storyteller_-_Outfit-icon-Morybel-0146.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/7/76/SOPerformance_-Forgetful_Storyteller_-_Outfit.png",
@@ -470,7 +488,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Forgetful_Storyteller#Cape"
     },
-    "order": 812
+    "order": 889
   },
   {
     "id": 1445,
@@ -536,7 +554,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Mask"
     },
-    "order": 430
+    "order": 463
   },
   {
     "id": 1450,
@@ -567,7 +585,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Cape"
     },
-    "order": 813,
+    "order": 890,
     "group": "SeasonPass"
   },
   {
@@ -611,7 +629,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Mellow_Musician#Instrument"
     },
-    "order": 539,
+    "order": 581,
     "group": "SeasonPass"
   },
   {
@@ -628,7 +646,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Performance_mellow.jpg"
     },
-    "order": 225
+    "order": 241
   },
   {
     "id": 2287,
@@ -683,7 +701,10 @@
     "id": 1462,
     "guid": "Gv945yQObD",
     "type": "Music",
-    "name": "Music Sheet #28",
+    "name": "Hidden Dance",
+    "_wiki": {
+      "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Music_Sheet"
+    },
     "sheet": "28",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/f/f0/MusicSheetN-Ray.png",
     "order": 28,
@@ -699,7 +720,7 @@
     "_wiki": {
       "href": "https://sky-children-of-the-light.fandom.com/wiki/Modest_Dancer#Mask"
     },
-    "order": 426
+    "order": 459
   },
   {
     "id": 1464,
@@ -732,7 +753,7 @@
   {
     "id": 1467,
     "guid": "DFn3TnXyGw",
-    "type": "Outfit",
+    "type": "OutfitShoes",
     "name": "Modest Dancer Outfit",
     "icon": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/2/26/SOPerformance-Modest-Dancer-_outfit-icon.png",
     "previewUrl": "https://static.wikia.nocookie.net/sky-children-of-the-light/images/a/a9/SOPerformance-Modest-Dancer-_Outfit.png",
@@ -761,7 +782,7 @@
       "primary": {},
       "previewUrl": "/assets/game/dyes/hair/Performance_modest.jpg"
     },
-    "order": 222,
+    "order": 238,
     "group": "SeasonPass"
   },
   {

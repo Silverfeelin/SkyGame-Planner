@@ -14,7 +14,7 @@ body > .map { display: none !important; }
   flex-direction: row;
   gap: var(--padding-content-half);
 
-  button {
+  button, .button {
     position: relative;
     padding: var(--padding-content);
     color: var(--color-map-tooltip);
@@ -40,6 +40,11 @@ body > .map { display: none !important; }
 .map-controls-tl {
   top: var(--padding-content);
   left: var(--padding-content);
+}
+
+.map-controls-tr {
+  top: var(--padding-content);
+  right: var(--padding-content);
 }
 
 .map-controls-bl {
