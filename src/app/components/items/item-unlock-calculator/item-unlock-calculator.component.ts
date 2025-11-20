@@ -1,35 +1,25 @@
 import { ChangeDetectionStrategy, Component, HostListener, isDevMode } from '@angular/core';
-import { IItem, IItemSource, IItemSourceIap, IItemSourceListNode, IItemSourceNode, ItemType } from '@app/interfaces/item.interface';
 import { CardComponent } from "../../layout/card/card.component";
 import { DataService } from '@app/services/data.service';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
-import { INode } from '@app/interfaces/node.interface';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
-import { ITravelingSpirit } from '@app/interfaces/traveling-spirit.interface';
-import { ICost } from '@app/interfaces/cost.interface';
-import { IReturningSpirit } from '@app/interfaces/returning-spirits.interface';
 import { CostHelper } from '@app/helpers/cost-helper';
-import { IItemListNode } from '@app/interfaces/item-list.interface';
-import { IIAP } from '@app/interfaces/iap.interface';
 import { CostComponent } from "../../util/cost/cost.component";
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { DecimalPipe, LowerCasePipe } from '@angular/common';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
-import { IRevisedSpiritTree, ISpiritTree, ISpiritTreeTier } from '@app/interfaces/spirit-tree.interface';
 import { nanoid } from 'nanoid';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../spirit-tree/spirit-tree.component";
 import { ItemUnlockCalculatorSpiritsComponent } from "./item-unlock-calculator-spirits/item-unlock-calculator-spirits.component";
-import { ISpirit } from '@app/interfaces/spirit.interface';
 import { ItemUnlockCalculatorEventsComponent } from "./item-unlock-calculator-events/item-unlock-calculator-events.component";
 import { DateHelper } from '@app/helpers/date-helper';
 import { MatIcon } from '@angular/material/icon';
 import { ItemUnlockCalculatorSeasonsComponent } from "./item-unlock-calculator-seasons/item-unlock-calculator-seasons.component";
-import { ISeason } from '@app/interfaces/season.interface';
 import { Router } from '@angular/router';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { IItem, ICost, IItemListNode, INode, IIAP, IEventInstance, ITravelingSpirit, ItemType, ISpiritTree, ISpirit, IRevisedSpiritTree, ISeason, IEvent, ISpiritTreeTier, IItemSource, IItemSourceNode, IItemSourceListNode, IItemSourceIap, ISpecialVisitSpirit } from 'skygame-data';
 
 interface IItemResult {
   item: IItem;
@@ -48,7 +38,7 @@ interface IItemResult {
   price?: number;
   eventInstance?: IEventInstance;
   ts?: ITravelingSpirit;
-  rs?: IReturningSpirit;
+  rs?: ISpecialVisitSpirit;
 }
 
 @Component({

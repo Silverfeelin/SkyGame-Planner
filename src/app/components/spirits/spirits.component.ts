@@ -2,14 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { IItem } from 'src/app/interfaces/item.interface';
-import { IRealm } from 'src/app/interfaces/realm.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { MatIcon } from '@angular/material/icon';
 import { TableFooterDirective } from '../table/table-column/table-footer.directive';
@@ -20,6 +13,7 @@ import { TableHeaderDirective } from '../table/table-column/table-header.directi
 import { TableComponent } from '../table/table.component';
 import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISpirit, ISpiritTree, IRealm, IArea, ISeason, IItem } from 'skygame-data';
 
 type ViewMode = 'grid' | 'cards';
 type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';

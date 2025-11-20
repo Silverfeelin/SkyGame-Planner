@@ -1,12 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { INode } from 'src/app/interfaces/node.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
-import { IRevisedSpiritTree, ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
@@ -25,6 +19,7 @@ import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 import { IapCardComponent } from "../iap/iap-card/iap-card.component";
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISeason, ISpirit, ISpiritTree, IShop, INode, IRevisedSpiritTree } from 'skygame-data';
 
 @Component({
     selector: 'app-season',

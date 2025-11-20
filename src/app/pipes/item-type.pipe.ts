@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ItemType } from '../interfaces/item.interface';
+import { ItemType } from 'skygame-data';
 
 @Pipe({
     name: 'itemType',

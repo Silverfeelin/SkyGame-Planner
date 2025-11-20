@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router, RouterLink } from '@angular/router';
-import { ItemHelper } from '@app/helpers/item-helper';
 import { INavigationTarget, NavigationHelper } from '@app/helpers/navigation-helper';
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DataService } from '@app/services/data.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { ItemSubIconsComponent } from '../item-icon/item-subicons/item-subicons.component';
 import { ItemTypeSelectorComponent } from '../item-type-selector/item-type-selector.component';
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
+import { ItemType, IItem } from 'skygame-data';
 
 @Component({
     selector: 'app-item-dyes',

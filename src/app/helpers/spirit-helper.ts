@@ -1,6 +1,5 @@
-import { ISpiritTree } from "../interfaces/spirit-tree.interface";
-import { ISpirit } from "../interfaces/spirit.interface";
 import { DateTime } from 'luxon';
+import { ISpirit, ISpiritTree } from 'skygame-data';
 
 export class SpiritHelper {
   static getTrees(spirit: ISpirit): Array<ISpiritTree> {
@@ -10,8 +9,8 @@ export class SpiritHelper {
     spirit.ts?.forEach(t => {
       treeDates.push({ date: t.date, tree: t.tree });
     });
-    spirit.returns?.forEach(r => {
-      treeDates.push({ date: r.return.date, tree: r.tree });
+    spirit.visits?.forEach(r => {
+      treeDates.push({ date: r.visit.date, tree: r.tree });
     });
 
     // Sort TS and revisits by date.

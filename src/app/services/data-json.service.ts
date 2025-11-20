@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IItem } from '../interfaces/item.interface';
-import { INode } from '../interfaces/node.interface';
-import { ISpiritTree } from '../interfaces/spirit-tree.interface';
-import { ITravelingSpirit } from '../interfaces/traveling-spirit.interface';
+import { ITravelingSpirit, ISpiritTree, INode, IItem } from 'skygame-data';
 
 @Injectable({
   providedIn: 'root'

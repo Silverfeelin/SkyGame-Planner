@@ -2,8 +2,6 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, E
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import L, { LeafletKeyboardEvent } from 'leaflet';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
@@ -13,6 +11,7 @@ import { TableColumnDirective } from '../table/table-column/table-column.directi
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
 import { MatIcon } from '@angular/material/icon';
+import { IArea, IWingedLight } from 'skygame-data';
 
 interface IRow {
   area: IArea;

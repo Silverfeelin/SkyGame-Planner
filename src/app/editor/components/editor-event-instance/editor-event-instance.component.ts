@@ -3,15 +3,11 @@ import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
 import { JsonHelper } from 'src/app/helpers/json-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IEvent, IEventInstance, IEventInstanceSpirit } from 'src/app/interfaces/event.interface';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DataJsonService } from '@app/services/data-json.service';
+import { IEvent, IEventInstance, ISpirit, IEventInstanceSpirit, ISpiritTree, IShop, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-editor-event-instance',

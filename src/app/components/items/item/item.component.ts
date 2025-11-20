@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
-import { IItem } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -14,6 +13,7 @@ import { NgIf } from '@angular/common';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { SettingService } from '@app/services/setting.service';
 import { EditorItemComponent } from '@app/editor/components/editor-item/editor-item.component';
+import { IItem } from 'skygame-data';
 
 @Component({
     selector: 'app-item',

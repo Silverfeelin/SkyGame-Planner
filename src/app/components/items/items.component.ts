@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ItemHelper } from 'src/app/helpers/item-helper';
-import { IItem, IItemSource, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { ItemIconComponent } from './item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
@@ -10,18 +9,12 @@ import { ItemTypeSelectorComponent } from './item-type-selector/item-type-select
 import { MatIcon } from '@angular/material/icon';
 import { CheckboxComponent } from "../layout/checkbox/checkbox.component";
 import { IconComponent } from '../icon/icon.component';
-import { ISeason } from '@app/interfaces/season.interface';
-import { IIAP } from '@app/interfaces/iap.interface';
-import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
-import { INode } from '@app/interfaces/node.interface';
-import { IItemListNode } from '@app/interfaces/item-list.interface';
-import { IRealm } from '@app/interfaces/realm.interface';
 import { SearchService } from '@app/services/search.service';
 import { Maybe } from '@app/types/maybe';
 import { ItemTypePipe } from "../../pipes/item-type.pipe";
 import { CostHelper } from '@app/helpers/cost-helper';
-import { ICost } from '@app/interfaces/cost.interface';
 import { CardComponent, CardFoldEvent } from "../layout/card/card.component";
+import { IItem, INode, IItemListNode, IIAP, IItemSource, ISeason, IEvent, IEventInstance, IRealm, ItemType, ICost } from 'skygame-data';
 
 export type ItemAction = 'navigate' | 'emit';
 export type ItemClickEvent = { event: MouseEvent, item: IItem };

@@ -1,15 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { IShop } from '@app/interfaces/shop.interface';
 import { DataService } from '@app/services/data.service';
 import { CardComponent } from "../../layout/card/card.component";
 import { ItemListComponent } from "../../item-list/item-list/item-list.component";
-import { IIAP } from '@app/interfaces/iap.interface';
 import { IAPService } from '@app/services/iap.service';
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
 import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { SpiritTreeComponent } from "../../spirit-tree/spirit-tree.component";
+import { IShop, ISpiritTree, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-shop-event-store',

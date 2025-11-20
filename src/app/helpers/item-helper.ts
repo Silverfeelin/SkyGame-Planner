@@ -1,6 +1,4 @@
-import { ISeason } from '@app/interfaces/season.interface';
-import { IEvent, IEventInstance } from '../interfaces/event.interface';
-import { IItem, IItemSource, IItemSourceOrigin, ItemType } from '../interfaces/item.interface';
+import { ItemType, IItem, IEvent, IItemSource, IItemSourceOrigin, IEventInstance, ISeason } from 'skygame-data';
 import { TreeHelper } from './tree-helper';
 
 export const itemTypeOrder: Map<ItemType, number> = new Map([

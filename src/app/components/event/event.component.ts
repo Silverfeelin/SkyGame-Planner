@@ -1,8 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { TitleService } from 'src/app/services/title.service';
@@ -14,6 +12,7 @@ import { TableColumnDirective } from '../table/table-column/table-column.directi
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { IEvent, IEventInstance } from 'skygame-data';
 
 interface IRow {
   number: number;

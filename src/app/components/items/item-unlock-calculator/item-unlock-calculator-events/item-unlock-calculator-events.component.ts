@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
-import { IEvent } from '@app/interfaces/event.interface';
 import { DataService } from '@app/services/data.service';
 import { SearchService } from '@app/services/search.service';
 import { CardComponent, CardFoldEvent } from "../../../layout/card/card.component";
+import { IEvent } from 'skygame-data';
 
 @Component({
     selector: 'app-item-unlock-calculator-events',

@@ -3,17 +3,6 @@ import { CostHelper } from 'src/app/helpers/cost-helper';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IEventInstance } from 'src/app/interfaces/event.interface';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IItemListNode } from 'src/app/interfaces/item-list.interface';
-import { IItem } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
-import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -23,6 +12,7 @@ import { RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent } from '../../layout/card/card.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { IItem, ISeason, IEventInstance, ITravelingSpirit, ICost, IIAP, INode, IItemListNode, ISpiritTree, IShop, ISpecialVisit } from 'skygame-data';
 
 type Bag = { [guid: string]: IItem };
 
@@ -38,7 +28,7 @@ export class DashboardWishlistComponent implements OnChanges, OnDestroy {
   @Input() season?: ISeason;
   @Input() eventInstances?: Array<IEventInstance>;
   @Input() ts?: ITravelingSpirit;
-  @Input() rs?: IReturningSpirits;
+  @Input() rs?: ISpecialVisit;
 
   items: Array<IItem> = [];
   itemMap: Bag = {};

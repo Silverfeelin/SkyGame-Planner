@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
 import { CardComponent, CardFoldEvent } from '@app/components/layout/card/card.component';
-import { ISeason } from '@app/interfaces/season.interface';
 import { DataService } from '@app/services/data.service';
+import { ISeason } from 'skygame-data';
 
 @Component({
     selector: 'app-item-unlock-calculator-seasons',

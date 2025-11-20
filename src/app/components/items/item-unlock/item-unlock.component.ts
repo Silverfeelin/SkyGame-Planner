@@ -1,15 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemHelper } from 'src/app/helpers/item-helper';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IItemListNode } from 'src/app/interfaces/item-list.interface';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgTemplateOutlet, NgFor } from '@angular/common';
+import { IItem, ItemType, INode, IIAP, IItemListNode } from 'skygame-data';
 
 @Component({
     selector: 'app-item-unlock',

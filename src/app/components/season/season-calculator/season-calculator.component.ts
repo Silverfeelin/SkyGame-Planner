@@ -2,9 +2,6 @@ import { ChangeDetectionStrategy, Component, ElementRef, OnInit, QueryList, View
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { INode } from 'src/app/interfaces/node.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
@@ -12,8 +9,8 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
-import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
 import { DateTimePipe } from "../../../pipes/date-time.pipe";
+import { ISeason, ISpiritTree, INode, ICalculatorData, ICalculatorDataTimedCurrency } from 'skygame-data';
 
 @Component({
     selector: 'app-season-calculator',

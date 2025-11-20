@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { NodeHelper } from '@app/helpers/node-helper';
-import { ICost } from '@app/interfaces/cost.interface';
-import { INode } from '@app/interfaces/node.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { ISpiritTree, INode, ICost } from 'skygame-data';
 
 interface RenderOptions {
   title?: string;

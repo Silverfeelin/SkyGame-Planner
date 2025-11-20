@@ -3,10 +3,9 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CardComponent } from '@app/components/layout/card/card.component';
 import { SpiritTreeComponent } from '@app/components/spirit-tree/spirit-tree.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
-import { IIAP } from '@app/interfaces/iap.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
+import { ISpiritTree, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-shop-concert-hall',

@@ -3,21 +3,16 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IEvent, IEventInstance, IEventInstanceSpirit } from 'src/app/interfaces/event.interface';
-import { IItemListNode } from 'src/app/interfaces/item-list.interface';
-import { INode } from 'src/app/interfaces/node.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
 import { ItemListComponent } from '../../item-list/item-list/item-list.component';
 import { MatIcon } from '@angular/material/icon';
-import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import { CurrencyService } from '@app/services/currency.service';
 import { StorageService } from '@app/services/storage.service';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { IEvent, IEventInstance, IEventInstanceSpirit, ISpiritTree, INode, IShop, IItemListNode, ICalculatorDataTimedCurrency, ICalculatorData } from 'skygame-data';
 
 @Component({
     selector: 'app-event-calculator',
@@ -117,7 +112,7 @@ export class EventCalculatorComponent {
       this.timedCurrencyCount[timedCurrency.guid] = 0;
     }
 
-    this.spirits = this.eventInstance.spirits.filter(s => s.tree);
+    this.spirits = this.eventInstance.spirits!.filter(s => s.tree);
     this.trees = this.spirits.map(s => s.tree!);
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {

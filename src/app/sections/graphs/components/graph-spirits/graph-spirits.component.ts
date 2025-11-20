@@ -136,10 +136,10 @@ export class GraphSpiritsComponent implements AfterViewInit {
 
         const seasonEndDate = spirit.season!.endDate;
         const firstTs = spirit.ts?.at(0);
-        const firstReturn = spirit.returns?.at(0);
+        const firstReturn = spirit.visits?.at(0);
         let returnDate = firstTs?.date;
-        if (!returnDate || (returnDate && firstReturn && firstReturn.return.date < returnDate)) {
-          returnDate = firstReturn?.return.date;
+        if (!returnDate || (returnDate && firstReturn && firstReturn.visit.date < returnDate)) {
+          returnDate = firstReturn?.visit.date;
         }
 
         // Add return date.
@@ -155,10 +155,10 @@ export class GraphSpiritsComponent implements AfterViewInit {
 
         // Add absence days.
         const lastTs = spirit.ts?.at(spirit.ts.length - 1);
-        const lastReturn = spirit.returns?.at(spirit.returns.length - 1);
+        const lastReturn = spirit.visits?.at(spirit.visits.length - 1);
         let lastDate = lastTs?.endDate;
-        if (!lastDate || (lastReturn && lastReturn.return.endDate > lastDate)) {
-          lastDate = lastReturn?.return.endDate;
+        if (!lastDate || (lastReturn && lastReturn.visit.endDate > lastDate)) {
+          lastDate = lastReturn?.visit.endDate;
         }
         lastDate ??= seasonEndDate;
 

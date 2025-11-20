@@ -1,7 +1,5 @@
-import { ISpiritTree, ISpiritTreeTier } from '@app/interfaces/spirit-tree.interface';
+import { ISpiritTree, INode, ISpiritTreeTier, IItem } from 'skygame-data';
 import { NodeHelper } from './node-helper';
-import { INode } from '@app/interfaces/node.interface';
-import { IItem } from '@app/interfaces/item.interface';
 
 export class TreeHelper {
   static getNodes(tree?: ISpiritTree): Array<INode> {

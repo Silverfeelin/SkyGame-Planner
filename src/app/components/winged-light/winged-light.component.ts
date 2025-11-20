@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
@@ -8,6 +6,7 @@ import { MatIcon } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { ItemType } from 'skygame-data';
 
 @Component({
     selector: 'app-winged-light',

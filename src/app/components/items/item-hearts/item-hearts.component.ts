@@ -9,14 +9,12 @@ import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.comp
 import { DateHelper } from '@app/helpers/date-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { NavigationHelper } from '@app/helpers/navigation-helper';
-import { IItem } from '@app/interfaces/item.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { CardComponent, CardFoldEvent } from "../../layout/card/card.component";
 import { MatIcon } from '@angular/material/icon';
 import { TableFooterDirective } from '@app/components/table/table-column/table-footer.directive';
-import { NodeHelper } from '@app/helpers/node-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { IItem, ISpiritTree } from 'skygame-data';
 
 @Component({
     selector: 'app-item-hearts',
@@ -108,10 +106,10 @@ export class ItemHeartsComponent {
     this._dataService.seasonConfig.items.forEach(season => {
       season.spirits?.forEach(spirit => {
         if (spirit.type !== 'Season') { return; }
-        let rs = spirit.returns?.at(-1);
+        let rs = spirit.visits?.at(-1);
         let ts = spirit.ts?.at(-1);
         if (rs && ts) {
-          if (rs.return.date > ts.date) {
+          if (rs.visit.date > ts.date) {
             ts = undefined;
           } else {
             rs = undefined;

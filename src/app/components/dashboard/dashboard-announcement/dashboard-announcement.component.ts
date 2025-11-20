@@ -3,8 +3,8 @@ import { MatIcon } from "@angular/material/icon";
 import { DateTime } from "luxon";
 
 const announcement = {
-  guid: 'UancMoW12R',
-  endDate: DateTime.local(2025, 10, 27)
+  guid: 'wJuf0SyLA8',
+  endDate: DateTime.local(2025, 11, 27)
 }
 
 @Component({

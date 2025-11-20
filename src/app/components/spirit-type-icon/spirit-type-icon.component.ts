@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { MatIcon } from '@angular/material/icon';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { SpiritType } from 'skygame-data';
 
 @Component({
     selector: 'app-spirit-type-icon',

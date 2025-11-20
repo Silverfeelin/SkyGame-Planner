@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
-import { ICost } from '@app/interfaces/cost.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DateHelper } from '@app/helpers/date-helper';
-import { ISeason } from '@app/interfaces/season.interface';
-import { IEventInstance } from '@app/interfaces/event.interface';
+import { ISpiritTree, ISeason, IEventInstance, ICost } from 'skygame-data';
 
 @Injectable({
   providedIn: 'root'
