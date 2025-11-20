@@ -4,9 +4,9 @@ import { DateTime } from 'luxon';
 import { DiscordLinkComponent } from '../util/discord-link/discord-link.component';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
-import { IRealm } from '@app/interfaces/realm.interface';
 import { RouterLink } from '@angular/router';
 import { CurrencyService } from '@app/services/currency.service';
+import { IRealm } from 'skygame-data';
 
 @Component({
     selector: 'app-daily-card',

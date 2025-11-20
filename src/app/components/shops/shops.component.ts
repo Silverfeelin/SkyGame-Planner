@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
 import { IAPService } from 'src/app/services/iap.service';
 import { ItemListComponent } from '../item-list/item-list/item-list.component';
 import { CardComponent } from '../layout/card/card.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { IapCardComponent } from '../iap/iap-card/iap-card.component';
+import { IShop, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-shops',

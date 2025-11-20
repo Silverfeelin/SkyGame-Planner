@@ -3,10 +3,9 @@ import { MatIcon } from '@angular/material/icon';
 import { Router, RouterLink } from '@angular/router';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { NavigationHelper } from '@app/helpers/navigation-helper';
-import { IIAP } from '@app/interfaces/iap.interface';
-import { IShop } from '@app/interfaces/shop.interface';
 import { IAPService } from '@app/services/iap.service';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { IIAP, IShop } from 'skygame-data';
 
 @Component({
     selector: 'app-iap-card',

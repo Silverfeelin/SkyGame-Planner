@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { DateTimePipe } from '../../../pipes/date-time.pipe';
 import { MatIcon } from '@angular/material/icon';
 import { SpiritCardComponent } from '../../spirit-card/spirit-card.component';
 import { RouterLink } from '@angular/router';
+import { ISpirit } from 'skygame-data';
 
 interface ILastVisit {
   spirit: ISpirit;
@@ -59,10 +59,10 @@ export class ElusiveSpiritsComponent {
     }
 
     // Check for most recent special visit.
-    const rs = spirit.returns?.at(-1);
-    if (rs && rs.return.date > lastVisit.date) {
-      lastVisit.date = rs.return.date;
-      lastVisit.endDate = rs.return.endDate;
+    const rs = spirit.visits?.at(-1);
+    if (rs && rs.visit.date > lastVisit.date) {
+      lastVisit.date = rs.visit.date;
+      lastVisit.endDate = rs.visit.endDate;
       lastVisit.type = 'Special Visit';
     }
 

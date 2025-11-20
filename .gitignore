@@ -54,8 +54,10 @@ Thumbs.db
 /src/assets/data/items.json
 /src/assets/data/nodes.json
 /src/assets/data/iaps.json
+/src/assets/data/everything.json
 /src/assets/data/x.json
 
 # Other
 #/scripts
 /scripts/temp/**
+/scripts/data/temp/**

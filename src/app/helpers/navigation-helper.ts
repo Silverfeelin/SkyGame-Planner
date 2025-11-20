@@ -1,8 +1,6 @@
 import { NavigationExtras, Params } from '@angular/router';
-import { NodeHelper } from './node-helper';
-import { IItem } from '../interfaces/item.interface';
-import { INode } from '../interfaces/node.interface';
 import { DateTime } from 'luxon';
+import { IItem, INode } from 'skygame-data';
 
 export interface INavigationTarget {
   route: Array<any>;
@@ -93,7 +91,7 @@ export class NavigationHelper {
 
       const date = tree?.eventInstanceSpirit?.eventInstance ? tree.eventInstanceSpirit.eventInstance.date
         : tree?.ts ? tree.ts.date
-        : tree?.visit ? tree.visit.return.date
+        : tree?.visit ? tree.visit.visit.date
         : DateTime.fromFormat('2000-01-02', 'yyyy-MM-dd');
 
       if (date < lastDate) { continue; }

@@ -11,6 +11,12 @@
     (click)="changeType('Shoes')">
     <mat-icon svgIcon="shoes"></mat-icon>
   </div>
+  <!-- Outfit Shoes -->
+  <div class="item-icon category" *ngIf="_showTypes['OutfitShoes']" [class.highlight]="type === 'OutfitShoes'"
+  [ngbTooltip]="'Outfits with shoes'" container="body"
+    (click)="changeType('OutfitShoes')">
+    <mat-icon svgIcon="outfit-shoes"></mat-icon>
+  </div>
   <!-- Masks -->
   <div class="item-icon category" *ngIf="_showTypes['Mask']" [class.highlight]="type === 'Mask'"
   [ngbTooltip]="'Masks'" container="body"

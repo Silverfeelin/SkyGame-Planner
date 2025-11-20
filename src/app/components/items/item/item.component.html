@@ -16,6 +16,18 @@
           <app-item-icon [item]="item" [size]="'large'" [opaque]="true" [hoverGlow]="false"></app-item-icon>
           <app-item-subicons [item]="item" [showTooltips]="true" [icons]="[ 'type', 'elder', 'season', 'iap', 'favourite', 'unlock']"></app-item-subicons>
         </div>
+        <!-- Guid -->
+        @if (debugVisible) {
+          <div class="container">
+            <mat-icon class="menu-icon">code</mat-icon>
+            <span class="menu-label">
+              ID:
+              <code (click)="copy(item.id)">{{ item.id }}</code>
+              GUID:
+              <code (click)="copy(item.guid)">{{ item.guid }}</code>
+            </span>
+          </div>
+        }
         <!-- Wiki -->
         <app-wiki-link *ngIf="item._wiki?.href" [wiki]="item._wiki" [aClass]="'container'"></app-wiki-link>
         <!-- Favourite -->
@@ -63,6 +75,12 @@
             <span class="menu-label">This is a season ultimate; it will likely not return.</span>
           </div>
         }
+
+        <!-- Edit -->
+        <a class="container" [routerLink]="['/editor/item', item.guid]">
+          <mat-icon class="menu-icon">edit</mat-icon>
+          <span class="menu-label">Suggest changes</span>
+        </a>
       </div>
     </div>
   </div>

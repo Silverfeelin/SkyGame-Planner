@@ -10,6 +10,20 @@
       </div>
     </div>
   </div>
+} @else if (hasTiers) {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">{{ season.name }} Calculator</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        <p>
+          For this season please have a look at the dedicated
+          <a routerLink="/season/migration-optimizer" class="text-link">Migration Season Calculator</a>.
+        </p>
+      </div>
+    </div>
+  </div>
 } @else {
   <div class="sky-card">
     <div class="sky-card-header">
@@ -37,7 +51,7 @@
         <div class="container mt">
           <mat-icon class="menu-icon">warning</mat-icon>
           <span class="menu-label">
-            This data has not yet been checked on the live version of Sky. Data may be incomplete or inaccurate.
+            We're still working on this content. Thank you for your patience.
           </span>
         </div>
       }

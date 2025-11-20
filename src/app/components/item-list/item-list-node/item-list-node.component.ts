@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, TemplateRef } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
-import { IItemListNode } from 'src/app/interfaces/item-list.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { NgTemplateOutlet, NgIf } from '@angular/common';
@@ -9,6 +8,7 @@ import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CurrencyService } from '@app/services/currency.service';
 import { CostHelper } from '@app/helpers/cost-helper';
+import { IItemListNode } from 'skygame-data';
 
 
 export type ItemListNodeClickEvent = {

@@ -3,20 +3,16 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IEvent, IEventInstance, IEventInstanceSpirit } from 'src/app/interfaces/event.interface';
-import { IItemListNode } from 'src/app/interfaces/item-list.interface';
-import { INode } from 'src/app/interfaces/node.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
 import { ItemListComponent } from '../../item-list/item-list/item-list.component';
 import { MatIcon } from '@angular/material/icon';
-import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import { CurrencyService } from '@app/services/currency.service';
 import { StorageService } from '@app/services/storage.service';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { IEvent, IEventInstance, IEventInstanceSpirit, ISpiritTree, INode, IShop, IItemListNode, ICalculatorDataTimedCurrency, ICalculatorData } from 'skygame-data';
 
 @Component({
     selector: 'app-event-calculator',
@@ -105,7 +101,7 @@ export class EventCalculatorComponent {
     if (!this.hasSpirits) { return; }
 
     this.calculatorData = instance.calculatorData;
-    this.currencyPerDay = instance.calculatorData?.dailyCurrencyAmount || undefined;
+    this.currencyPerDay = instance.calculatorData?.dailyCurrencyAmount ?? 0;
     this.concluded = this.eventInstance.endDate < DateTime.now();
 
     // Load timed currencies.
@@ -116,12 +112,12 @@ export class EventCalculatorComponent {
       this.timedCurrencyCount[timedCurrency.guid] = 0;
     }
 
-    this.spirits = this.eventInstance.spirits.filter(s => s.tree);
+    this.spirits = this.eventInstance.spirits!.filter(s => s.tree);
     this.trees = this.spirits.map(s => s.tree!);
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {
-      this.allNodes.push(...NodeHelper.all(t.node));
-      acc[t.node.guid] = t.node;
+      this.allNodes.push(...TreeHelper.getNodes(t));
+      acc[t.node!.guid] = t.node!;
       return acc;
     }, {} as { [guid: string]: INode });
 
@@ -213,15 +209,21 @@ export class EventCalculatorComponent {
     }
   }
 
-  onCurrencyInput(): void {
-    this.currencyInputChanged();
+  onCurrencyInput(evt: Event): void {
+    this.currencyInputChanged(evt);
     this.calculate();
     this.saveSettings();
   }
 
-  onCurrencyInputBlur(evt: Event): void {
+  onCurrencyInputBlur(evt: Event, isAsc = false): void {
     const target = evt.target as HTMLInputElement;
-    const value = parseInt(target.value, 10) || 0;
+    let value = isAsc ? this.parseDecimal(target.value) : this.parseInt(target.value);
+
+    if (isAsc && value % 0.25 !== 0) {
+      value = Math.round(value * 4) / 4;
+      target.value = value.toString();
+    }
+
     if (value <= 0) {
       target.value = '0';
     } else if (value > 99999) {
@@ -230,20 +232,26 @@ export class EventCalculatorComponent {
       target.value = '';
     }
 
-    this.currencyInputChanged();
+    this.currencyInputChanged(evt);
     this.calculate();
     this.saveSettings();
   }
 
-  currencyInputChanged(): void {
-    const targetEc = this.inpEc.nativeElement;
-    this.currencyCount = this._currencyService.clamp(parseInt(targetEc.value, 10) || 0);
-    const targetC = this.inpC.nativeElement;
-    this.candleCount = this._currencyService.clamp(parseInt(targetC.value, 10) || 0);
-    const targetH = this.inpH.nativeElement;
-    this.heartCount = this._currencyService.clamp(parseInt(targetH.value, 10) || 0);
-    const targetAc = this.inpAc.nativeElement;
-    this.acCount = this._currencyService.clamp(parseInt(targetAc.value, 10) || 0);
+  currencyInputChanged(evt: Event): void {
+    const target = evt.target as HTMLInputElement;
+    if (target === this.inpEc.nativeElement) {
+      this.currencyCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    }
+    if (target === this.inpC.nativeElement) {
+      this.candleCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    }
+    if (target === this.inpH.nativeElement) {
+      this.heartCount = this._currencyService.clamp(parseInt(target.value, 10) || 0);
+    }
+    if (target === this.inpAc.nativeElement && target.value !== '') {
+      this.acCount = this._currencyService.clamp(this.parseDecimal(target.value) || 0);
+      this.acCount = Math.round(this.acCount * 100) / 100;
+    }
 
     this.inpTimed?.forEach(inp => {
       const value = parseInt(inp.nativeElement.value, 10) || 0;
@@ -443,5 +451,8 @@ export class EventCalculatorComponent {
     const newWantedSet = new Set(newWantedValues);
     this.hasSkippedNode = requiredNodes.some(n => !newWantedSet.has(n) && !n.item?.unlocked);
   }
+
+  private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }
+  private parseDecimal(value?: string): number { return +(value?.replace(',', '') || 0) || 0; }
 }
 

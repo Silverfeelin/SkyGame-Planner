@@ -1,18 +1,11 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
-import L from 'leaflet';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IRealm } from 'src/app/interfaces/realm.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
-import { IMapInit } from 'src/app/services/map.service';
 import { TitleService } from 'src/app/services/title.service';
 import { PercentagePipe } from '../../../pipes/percentage.pipe';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
@@ -21,6 +14,7 @@ import { NgIf, NgFor } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
 import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
+import { IRealm, ISpirit, ICost, ISpiritTree } from 'skygame-data';
 
 @Component({
     selector: 'app-realm',
@@ -152,7 +146,7 @@ export class RealmComponent implements OnInit, OnDestroy {
   }
 
   private addTierCosts(tree: ISpiritTree): void {
-    if (!tree) { return; }
+    if (!tree?.node) { return; }
     for (const node of  NodeHelper.allTier(tree.node)) {
       if (typeof node.tier !== 'number') { continue; }
 

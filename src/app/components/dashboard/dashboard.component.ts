@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { IEventInstance } from 'src/app/interfaces/event.interface';
-import { IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { ReturningSpiritCardComponent } from '../returning-spirit-card/returning-spirit-card.component';
 import { SpiritCardComponent } from '../spirit-card/spirit-card.component';
@@ -12,16 +8,17 @@ import { SeasonCardComponent } from '../season-card/season-card.component';
 import { DashboardWishlistComponent } from './dashboard-wishlist/dashboard-wishlist.component';
 import { NgIf, NgFor } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
-import { MatIcon } from '@angular/material/icon';
 import { ClockComponent } from '../clock/clock.component';
 import { CardComponent } from "../layout/card/card.component";
 import { DailyCardComponent } from "../daily-card/daily-card.component";
+import { DashboardAnnouncementComponent } from './dashboard-announcement/dashboard-announcement.component';
+import { ISeason, ITravelingSpirit, IEventInstance, ISpecialVisit } from 'skygame-data';
 
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.less'],
-    imports: [ClockComponent, MatIcon, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, CardComponent, DailyCardComponent]
+    imports: [DashboardAnnouncementComponent, ClockComponent, SearchComponent, NgIf, DashboardWishlistComponent, SeasonCardComponent, NgFor, EventCardComponent, SpiritCardComponent, ReturningSpiritCardComponent, CardComponent, DailyCardComponent]
 })
 export class DashboardComponent implements OnInit {
 
@@ -29,8 +26,8 @@ export class DashboardComponent implements OnInit {
   futureSeason?: ISeason;
   ts?: ITravelingSpirit;
   futureTs?: ITravelingSpirit;
-  rs?: IReturningSpirits;
-  futureRs?: IReturningSpirits;
+  rs?: ISpecialVisit;
+  futureRs?: ISpecialVisit;
   eventInstances: Array<IEventInstance> = [];
   futureEventInstance?: IEventInstance;
 

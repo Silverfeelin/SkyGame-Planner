@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SeasonCardComponent } from '../season-card/season-card.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
@@ -11,6 +9,7 @@ import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { IconComponent } from "../icon/icon.component";
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { ISeason } from 'skygame-data';
 
 @Component({
     selector: 'app-seasons',

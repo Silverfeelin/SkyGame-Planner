@@ -3,10 +3,7 @@ import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
 import { EventService } from 'src/app/services/event.service';
 import { CostComponent } from '../util/cost/cost.component';
 import { RouterLink } from '@angular/router';
@@ -16,6 +13,8 @@ import { MatIcon } from '@angular/material/icon';
 import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { CurrencyService } from '@app/services/currency.service';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { IEvent, IEventInstance, ICost } from 'skygame-data';
 
 type Section = 'select' | 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface EventCardOptions {
@@ -121,7 +120,7 @@ export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
     this.cost = this.remainingCost = undefined;
 
     if (!this.instance?.spirits?.length) { return; }
-    const nodes = this.instance.spirits.map(s => NodeHelper.all(s.tree?.node)).flat();
+    const nodes = this.instance.spirits.map(s => TreeHelper.getNodes(s.tree)).flat();
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);

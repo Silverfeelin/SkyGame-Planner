@@ -3,7 +3,7 @@
   "short_name": "Sky Planner",
   "theme_color": "#000",
   "background_color": "#223",
-  "display": "standalone",
+  "display": "minimal-ui",
   "scope": "./",
   "start_url": "./",
   "icons": [

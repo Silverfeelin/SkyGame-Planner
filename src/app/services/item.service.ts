@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
-import { IItem, ItemType } from '@app/interfaces/item.interface';
+import { IItem, ItemType } from 'skygame-data';
 
 @Injectable({
   providedIn: 'root'

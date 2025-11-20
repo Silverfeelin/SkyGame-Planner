@@ -3,14 +3,13 @@ import { CardComponent } from "../layout/card/card.component";
 import { MatIcon } from '@angular/material/icon';
 import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
-import { ISeason } from '@app/interfaces/season.interface';
-import { IEventInstance } from '@app/interfaces/event.interface';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { CurrencyService } from '@app/services/currency.service';
+import { ISeason, IEventInstance } from 'skygame-data';
 
 @Component({
     selector: 'app-currency',
@@ -66,7 +65,7 @@ export class CurrencyComponent {
       this.inpCurrencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
       this.currencies.eventCurrencies[instance.guid] ??= { tickets: 0 };
 
-      this.dailyEventCurrency[instance.guid] = instance.calculatorData?.dailyCurrencyAmount || 5;
+      this.dailyEventCurrency[instance.guid] = instance.calculatorData?.dailyCurrencyAmount ?? 5;
     }
 
     // Convert old season currency. This might be better suited to run on site load.

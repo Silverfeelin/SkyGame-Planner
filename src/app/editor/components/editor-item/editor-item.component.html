@@ -1,0 +1,102 @@
+<form [formGroup]="form" style="min-width: 300px;" (ngSubmit)="save()">
+  <div>
+    <label for="name">Item name</label>
+    <input id="name" formControlName="name" class="" placeholder="Name">
+    @if (form.get('name')?.hasError('required')) {
+      <span class="c-warn-accent">Name is required</span>
+    }
+  </div>
+  <div>
+    <label for="type">Item type</label>
+    <select id="type" formControlName="type" class="">
+      @for (type of typeOptions; track $index) {
+        <option [value]="type">{{ type | itemType }}</option>
+      }
+    </select>
+    @if (form.get('type')?.hasError('required')) {
+      <span class="c-warn-accent">Type is required</span>
+    }
+  </div>
+  @if (form.get('type')?.value === typeEmote) {
+    <div>
+      <label for="level">Emote level</label>
+      <div>
+        <label><input type="radio" formControlName="level" value="1" />1</label>
+        <label><input type="radio" formControlName="level" value="2" />2</label>
+        <label><input type="radio" formControlName="level" value="3" />3</label>
+        <label><input type="radio" formControlName="level" value="4" />4</label>
+      </div>
+    </div>
+  }
+  <div>
+    <label for="subtype">Item subtype</label>
+    <select id="subtype" formControlName="subtype" class="">
+      @for (subtype of subtypeOptions; track $index) {
+        <option [value]="subtype">{{ subtype }}</option>
+      }
+    </select>
+  </div>
+  <div>
+    <label for="group">Item group</label>
+    <select id="group" formControlName="group" class="">
+      @for (group of groupOptions; track $index) {
+        <option [value]="group">{{ group }}</option>
+      }
+    </select>
+  </div>
+  <div>
+    <label for="icon">Icon link</label>
+    <input id="icon" formControlName="icon" class=""/>
+    @let icon = form.get('icon')?.value;
+    @if (icon) {
+      <img [src]="icon" class="img-preview"/>
+    }
+  </div>
+  <div>
+    <label for="previewUrl">Preview image link</label>
+    <input id="previewUrl" formControlName="previewUrl" class=""/>
+    @let previewUrl = form.get('previewUrl')?.value;
+    @if (previewUrl) {
+      <img [src]="previewUrl" class="img-preview"/>
+    }
+  </div>
+  <div>
+    <label for="description">Dye slots</label>
+    <div>
+      <label><input type="radio" formControlName="dyes" value="0" />0</label>
+      <label><input type="radio" formControlName="dyes" value="1" />1</label>
+      <label><input type="radio" formControlName="dyes" value="2" />2</label>
+    </div>
+    @let dyes = form.get('dyes')?.value;
+    @if (dyes === '1' || dyes === '2') {
+      <div>
+        <label for="dyePreview">Dye preview link</label>
+        <input id="dyePreview" formControlName="dyePreview" class="" placeholder="Dye preview link">
+        @let dyePreview = form.get('dyePreview')?.value;
+        @if (dyePreview) {
+          <img [src]="dyePreview" class="img-preview"/>
+        }
+      </div>
+      <div>
+        <label for="dyeInfo">Dye info link</label>
+        <input id="dyeInfo" formControlName="dyeInfo" class="" placeholder="Dye info link">
+        @let dyeInfo = form.get('dyeInfo')?.value;
+        @if (dyeInfo) {
+          <img [src]="dyeInfo" class="img-preview"/>
+        }
+      </div>
+    }
+  </div>
+  <div>
+    <label for="wiki">Wiki link</label>
+    <input id="wiki" formControlName="wiki" class="" placeholder="Wiki link"/>
+    @let wiki = form.get('wiki')?.value;
+    @if (wiki) {
+      <a [href]="wiki" target="_blank" rel="noopener">Open Wiki</a>
+    }
+  </div>
+  <div class="mt">
+    <button type="submit" class="">Save</button>
+    <button type="button" class="button-danger float-right" (click)="cancel()">Cancel</button>
+  </div>
+</form>

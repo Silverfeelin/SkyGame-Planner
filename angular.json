@@ -31,7 +31,12 @@
               "src/robots.txt",
               "src/sitemap.xml",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "node_modules/skygame-data/assets",
+                "output": "/assets/skygame-data/"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -47,7 +52,6 @@
             "allowedCommonJsDependencies": [
               "dropbox",
               "fuzzysort",
-              "json5",
               "leaflet",
               "panzoom"
             ],

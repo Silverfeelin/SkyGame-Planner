@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { ItemType } from 'src/app/interfaces/item.interface';
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
+import { ItemType } from 'skygame-data';
 
 @Component({
     selector: 'app-item-type-selector',
@@ -34,7 +34,7 @@ export class ItemTypeSelectorComponent implements OnInit, OnChanges {
   }
 
   private setTypes(types?: Array<string>): void {
-    types ??= ['Outfit', 'Shoes', 'Mask', 'FaceAccessory', 'Necklace', 'Hair', 'HairAccessory', 'HeadAccessory', 'Cape', 'Held', 'Furniture', 'Prop', 'Emote', 'Stance', 'Call', 'Music'];
+    types ??= ['Outfit', 'Shoes', 'OutfitShoes', 'Mask', 'FaceAccessory', 'Necklace', 'Hair', 'HairAccessory', 'HeadAccessory', 'Cape', 'Held', 'Furniture', 'Prop', 'Emote', 'Stance', 'Call', 'Music'];
     this._showTypes = {};
     for (const type of types) { this._showTypes[type] = true; }
   }

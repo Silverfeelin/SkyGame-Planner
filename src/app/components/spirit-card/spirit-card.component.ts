@@ -1,11 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IEvent } from 'src/app/interfaces/event.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
 import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 import { CostComponent } from '../util/cost/cost.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
@@ -15,6 +9,8 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
 import { NgIf } from '@angular/common';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISpirit, ITravelingSpirit, ISpiritTree, IEvent, ICost } from 'skygame-data';
 
 type Section = 'select' | 'img' | 'overview' | 'wiki' | 'ts' | 'season' | 'event' | 'regular' | 'realm' | 'area' | 'cost' | 'content';
 export interface SpiritCardOptions {
@@ -77,7 +73,7 @@ export class SpiritCardComponent implements OnInit, OnChanges {
   private updateCosts(): void {
     this.cost = this.remainingCost = undefined;
     if (!this.tree) { return; }
-    const nodes = NodeHelper.all(this.tree.node);
+    const nodes = TreeHelper.getNodes(this.tree);
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);
