@@ -112,7 +112,7 @@ export class EventCalculatorComponent {
       this.timedCurrencyCount[timedCurrency.guid] = 0;
     }
 
-    this.spirits = this.eventInstance.spirits.filter(s => s.tree);
+    this.spirits = this.eventInstance.spirits!.filter(s => s.tree);
     this.trees = this.spirits.map(s => s.tree!);
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {
