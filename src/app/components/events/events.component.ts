@@ -56,5 +56,19 @@ export class EventsComponent {
       if (!this.lastInstances[b.guid]) { return -1; }
       return this.lastInstances[b.guid]!.date.diff(this.lastInstances[a.guid]!.date).as('milliseconds');
     });
+
+    // Sort recurring events within the year by their last date.
+    this.recurring.sort((a, b) => {
+      const getLastDateInYear = (event: IEvent) => {
+        const lastInstance = this.lastInstances[event.guid];
+        if (!lastInstance) return Infinity;
+        return DateTime.fromObject({
+          month: lastInstance.date.month,
+          day: lastInstance.date.day
+        }).toMillis();
+      };
+
+      return getLastDateInYear(a) - getLastDateInYear(b);
+    });
   }
 }
