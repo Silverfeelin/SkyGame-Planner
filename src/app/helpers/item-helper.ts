@@ -54,8 +54,8 @@ export class ItemHelper {
     let season: ISeason | undefined;
     switch (itemSource.type) {
       case 'node':
-        eventInstance = itemSource.source.root?.spiritTree?.eventInstanceSpirit?.eventInstance;
-        season = itemSource.source.root?.spiritTree?.spirit?.season;
+        eventInstance = itemSource.source.root?.tree?.eventInstanceSpirit?.eventInstance;
+        season = itemSource.source.root?.tree?.spirit?.season;
         break;
       case 'list':
         eventInstance = itemSource.source.itemList.shop?.event;

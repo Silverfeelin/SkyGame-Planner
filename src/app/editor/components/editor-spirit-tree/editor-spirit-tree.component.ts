@@ -328,9 +328,9 @@ export class SpiritTreeEditorComponent {
     const trees = new Set<ISpiritTree>();
     if (spirit.tree) { trees.add(spirit.tree); }
     if (spirit.treeRevisions) { spirit.treeRevisions.forEach(t => trees.add(t)); }
-    if (spirit.ts) { spirit.ts.map(ts => ts.tree).forEach(t => trees.add(t)); }
-    if (spirit.visits) { spirit.visits.map(r => r.tree).forEach(t => trees.add(t)); }
-    if (spirit.events) { spirit.events.map(e => e.tree).forEach(t => trees.add(t)); }
+    if (spirit.travelingSpirits) { spirit.travelingSpirits.map(ts => ts.tree).forEach(t => trees.add(t)); }
+    if (spirit.specialVisitSpirits) { spirit.specialVisitSpirits.map(r => r.tree).forEach(t => trees.add(t)); }
+    if (spirit.eventInstanceSpirits) { spirit.eventInstanceSpirits.map(e => e.tree).forEach(t => trees.add(t)); }
     this.spiritTrees = Array.from(trees).reverse();
   }
 
@@ -373,14 +373,14 @@ export class SpiritTreeEditorComponent {
     this.selectedTreeNode = this.nodeMap[this.tree.node!.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
 
-    const tsDate = tree.ts?.date;
-    const rsDate = tree.visit?.visit?.date;
+    const tsDate = tree.travelingSpirit?.date;
+    const rsDate = tree.specialVisitSpirit?.visit?.date;
 
     let title = tree.eventInstanceSpirit?.name ?? tree.eventInstanceSpirit?.spirit?.name
-      ?? tree.visit?.spirit?.name ?? tree.ts?.spirit?.name ?? tree.spirit?.name ?? '';
+      ?? tree.specialVisitSpirit?.spirit?.name ?? tree.travelingSpirit?.spirit?.name ?? tree.spirit?.name ?? '';
     let subtitle = tree.name;
     if (tsDate || rsDate) {
-      subtitle = tsDate ? `TS #${tree.ts!.number}` : `${tree.visit!.visit.name}`;
+      subtitle = tsDate ? `TS #${tree.travelingSpirit!.number}` : `${tree.specialVisitSpirit!.visit.name}`;
       subtitle += ` (${(tsDate || rsDate)!.toFormat('dd-MM-yyyy')})`;
     }
 

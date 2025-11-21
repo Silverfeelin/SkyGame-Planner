@@ -106,8 +106,8 @@ export class ItemHeartsComponent {
     this._dataService.seasonConfig.items.forEach(season => {
       season.spirits?.forEach(spirit => {
         if (spirit.type !== 'Season') { return; }
-        let rs = spirit.visits?.at(-1);
-        let ts = spirit.ts?.at(-1);
+        let rs = spirit.specialVisitSpirits?.at(-1);
+        let ts = spirit.travelingSpirits?.at(-1);
         if (rs && ts) {
           if (rs.visit.date > ts.date) {
             ts = undefined;
@@ -210,7 +210,7 @@ export class ItemHeartsComponent {
       const source = ItemHelper.getItemSource(heart);
       if (source?.type !== 'node') { continue; }
 
-      const tree = source.source.root?.spiritTree;
+      const tree = source.source.root?.tree;
       if (!tree) { continue; }
 
       let row = treeRows.get(tree);
@@ -220,8 +220,8 @@ export class ItemHeartsComponent {
           name: tree.name
             ?? tree.spirit?.name
             ?? tree.eventInstanceSpirit?.name ?? tree.eventInstanceSpirit?.spirit?.name
-            ?? tree.ts?.spirit?.name
-            ?? tree.visit?.spirit?.name,
+            ?? tree.travelingSpirit?.spirit?.name
+            ?? tree.specialVisitSpirit?.spirit?.name,
           hearts: [],
           heartLinks: [],
           total: 0,

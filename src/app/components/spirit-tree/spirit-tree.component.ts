@@ -128,8 +128,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.subscribeItemChanged();
       this.calculateRemainingCosts();
 
-      this.tsDate = this.tree.ts?.date;
-      this.rsDate = this.tree.visit?.visit?.date;
+      this.tsDate = this.tree.travelingSpirit?.date;
+      this.rsDate = this.tree.specialVisitSpirit?.visit?.date;
     }
 
     if (changes['opaqueNodes']) {
@@ -330,11 +330,11 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (mode === 'clipboard' &&  typeof(ClipboardItem) === 'undefined') { alert('Copying to clipboard is not supported by this browser.'); return; }
 
     try {
-      const spiritName = this.tree?.spirit?.name ?? this.tree?.eventInstanceSpirit?.spirit?.name ?? this.tree?.ts?.spirit?.name ?? this.tree?.visit?.spirit?.name;
+      const spiritName = this.tree?.spirit?.name ?? this.tree?.eventInstanceSpirit?.spirit?.name ?? this.tree?.travelingSpirit?.spirit?.name ?? this.tree?.specialVisitSpirit?.spirit?.name;
       const title = spiritName;
       let subtitle = this.visibleName;
       if (this.tsDate || this.rsDate) {
-        subtitle = this.tsDate ? `TS #${this.tree.ts!.number}` : this.rsDate ? `${this.tree.visit!.visit.name}` : '';
+        subtitle = this.tsDate ? `TS #${this.tree.travelingSpirit!.number}` : this.rsDate ? `${this.tree.specialVisitSpirit!.visit.name}` : '';
         subtitle += ` (${(this.tsDate || this.rsDate)!.toFormat('dd-MM-yyyy')})`;
       } else if (subtitle === title || subtitle === 'Spirit tree') { subtitle = undefined; }
 
@@ -357,8 +357,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   private updateName(): void {
     this.visibleName = this.name ?? this.tree.name
       ?? this.tree.eventInstanceSpirit?.name ?? this.tree.eventInstanceSpirit?.spirit?.name
-      ?? this.tree.ts?.spirit?.name
-      ?? this.tree.visit?.spirit?.name
+      ?? this.tree.travelingSpirit?.spirit?.name
+      ?? this.tree.specialVisitSpirit?.spirit?.name
       ?? this.tree.spirit?.name;
   }
 }

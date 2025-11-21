@@ -135,7 +135,7 @@ export class ItemInflationComponent implements AfterViewInit {
 
       // Find the add date.
       const node = item.nodes?.at(0);
-      const tree = node?.root?.spiritTree;
+      const tree = node?.root?.tree;
       let season = tree?.spirit?.season;
       let eventInstance = tree?.eventInstanceSpirit?.eventInstance;
       const itemList = item.listNodes?.at(0)?.itemList;
@@ -150,12 +150,12 @@ export class ItemInflationComponent implements AfterViewInit {
       addDates.push(added);
 
       // Find the return date
-      const returnTree = returnNode?.root?.spiritTree;
+      const returnTree = returnNode?.root?.tree;
       let returnSeason = returnTree?.spirit?.season;
       let returnEvent = returnTree?.eventInstanceSpirit?.eventInstance;
       if (returnEvent && returnSeason) { returnSeason = undefined; }
-      let returnTs = returnTree?.ts;
-      let returnVisit = returnTree?.visit;
+      let returnTs = returnTree?.travelingSpirit;
+      let returnVisit = returnTree?.specialVisitSpirit;
 
       const returnItemList = returnListNode?.itemList;
       returnSeason ??= returnItemList?.shop?.season;

@@ -53,12 +53,12 @@ export class SpiritComponent {
     this._titleService.setTitle(this.spirit.name || 'Spirit');
     this.typeName = new SpiritTypePipe().transform(this.spirit.type);
 
-    this.event = this.spirit?.events?.at(-1)?.eventInstance?.event;
+    this.event = this.spirit?.eventInstanceSpirits?.at(-1)?.eventInstance?.event;
 
     this.trees = [];
 
     // Sort TS and returns by date.
-    const ts = (this.spirit.ts || []).map(ts => {
+    const ts = (this.spirit.travelingSpirits || []).map(ts => {
       return {
         date: ts.date,
         name: 'Traveling Spirit #' + ts.number,
@@ -66,7 +66,7 @@ export class SpiritComponent {
       };
     });
 
-    const visits = (this.spirit.visits || []).map((v, vi) => {
+    const visits = (this.spirit.specialVisitSpirits || []).map((v, vi) => {
       return {
         date: v.visit.date,
         name: v.visit.name || 'Visit #' + (vi+1),

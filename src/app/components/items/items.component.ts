@@ -333,7 +333,7 @@ export class ItemsComponent {
         if (filters['free'] === false) {
           if (item.autoUnlocked) { return false; }
           const isFree = cost && CostHelper.isEmpty(cost);
-          const isSeasonNode = metadata.lastNode?.root?.spiritTree?.spirit?.type === 'Season';
+          const isSeasonNode = metadata.lastNode?.root?.tree?.spirit?.type === 'Season';
           const isSeasonRootNode = isSeasonNode && metadata.lastNode!.root === metadata.lastNode;
           if (isFree && (!isSeasonNode || isSeasonRootNode)) { return false; }
         }
@@ -414,12 +414,12 @@ export class ItemsComponent {
       const lastSource = ItemHelper.geSourceOrigin(last);
 
       // Account for new TS items. Consider them as season items.
-      if (!originSource && origin?.type === 'node' && origin.source.root?.spiritTree?.ts?.spirit?.season) {
-        originSource = { type: 'season', source: origin.source.root.spiritTree.ts.spirit.season };
+      if (!originSource && origin?.type === 'node' && origin.source.root?.tree?.travelingSpirit?.spirit?.season) {
+        originSource = { type: 'season', source: origin.source.root.tree.travelingSpirit.spirit.season };
       }
 
       // Only apply realm filters to regular spirits & elders.
-      const lastNodeSpirit = last?.type === 'node' ? last.source.root?.spiritTree?.spirit : undefined;
+      const lastNodeSpirit = last?.type === 'node' ? last.source.root?.tree?.spirit : undefined;
       const realm = lastNodeSpirit?.type === 'Regular' || lastNodeSpirit?.type === 'Elder' ? lastNodeSpirit.area?.realm : undefined;
 
       // Note: picking event by last instance, to account for the weird cases like all the different Summer events.

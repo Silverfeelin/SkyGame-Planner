@@ -136,7 +136,7 @@
           <ul>
             @for (node of knapsackNodes; track node.guid) {
               <li>
-                {{ node.root?.spiritTree?.spirit?.name }} - {{ node.item!.name }} -
+                {{ node.root?.tree?.spirit?.name }} - {{ node.item!.name }} -
                 {{ node.sc }} <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>
                 <span class="node-value">({{ nodeValues[node.guid] }})</span>
               </li>

@@ -301,7 +301,7 @@ export class ItemUnlockCalculatorComponent {
           break;
         }
         case 'node': {
-          const tree = src.source.root?.spiritTree;
+          const tree = src.source.root?.tree;
           srcSeason = tree?.spirit?.season;
           srcEvent = tree?.eventInstanceSpirit?.eventInstance;
           break;
@@ -424,8 +424,8 @@ export class ItemUnlockCalculatorComponent {
         treeHighlightItems = [];
         const name = tree.eventInstanceSpirit?.eventInstance?.name
           ?? tree.eventInstanceSpirit?.eventInstance?.event?.name
-          ?? tree.ts?.spirit?.name
-          ?? tree.visit?.spirit?.name
+          ?? tree.travelingSpirit?.spirit?.name
+          ?? tree.specialVisitSpirit?.spirit?.name
           ?? tree?.spirit?.name;
         const newTree = {
           guid: nanoid(10), name, node: { guid: nanoid(10) }
@@ -494,11 +494,11 @@ export class ItemUnlockCalculatorComponent {
 
   private handleNode(src: IItemSourceNode): IItemResult {
     const node = src.source;
-    const tree = node.root?.spiritTree;
+    const tree = node.root?.tree;
     if (!tree) { return { item: src.item, found: false }; }
 
     // Event tree.
-    const eventInstance = node.root?.spiritTree?.eventInstanceSpirit?.eventInstance;
+    const eventInstance = node.root?.tree?.eventInstanceSpirit?.eventInstance;
     const isOngoingEvent = eventInstance && DateHelper.isActivePeriod(eventInstance);
     if (eventInstance && !isOngoingEvent && node.ec) {
       const result: IItemResult = { item: src.item, found: true, estimatedCost: this.findAverageByItem(src.item) };
@@ -582,7 +582,7 @@ export class ItemUnlockCalculatorComponent {
     const items = this._dataService.itemConfig.items.filter(i => {
       if (i.type !== itemType) { return false; }
       const node = i.nodes?.at(0);
-      const tree = node?.root?.spiritTree;
+      const tree = node?.root?.tree;
       return tree?.spirit?.type !== 'Regular'
     });
     let countCandles = 0;

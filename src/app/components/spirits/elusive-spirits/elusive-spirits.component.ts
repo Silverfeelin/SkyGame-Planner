@@ -51,7 +51,7 @@ export class ElusiveSpiritsComponent {
     };
 
     // Check for most recent TS.
-    const ts = spirit.ts?.at(-1);
+    const ts = spirit.travelingSpirits?.at(-1);
     if (ts && ts?.date > lastVisit.date) {
       lastVisit.date = ts.date;
       lastVisit.endDate = ts.endDate;
@@ -59,7 +59,7 @@ export class ElusiveSpiritsComponent {
     }
 
     // Check for most recent special visit.
-    const rs = spirit.visits?.at(-1);
+    const rs = spirit.specialVisitSpirits?.at(-1);
     if (rs && rs.visit.date > lastVisit.date) {
       lastVisit.date = rs.visit.date;
       lastVisit.endDate = rs.visit.endDate;

@@ -60,7 +60,7 @@ export class SpiritCardComponent implements OnInit, OnChanges {
 
   private updateSpirit(): void {
     this.typeName = new SpiritTypePipe().transform(this.spirit!.type);
-    this.event = this.spirit?.events?.at(-1)?.eventInstance?.event;
+    this.event = this.spirit?.eventInstanceSpirits?.at(-1)?.eventInstance?.event;
   }
 
   private updateSections(): void {

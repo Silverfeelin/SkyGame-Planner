@@ -198,7 +198,7 @@ export class SpiritsComponent {
     const dateA = DateTime.fromFormat('2019-01-01', 'yyyy-MM-dd');
     const dateB = DateTime.fromFormat('2999-01-01', 'yyyy-MM-dd');
     const dates = this.spirits.reduce((acc, s) => {
-      let date = s.season?.date || s.events?.at(-1)?.eventInstance?.date;
+      let date = s.season?.date || s.eventInstanceSpirits?.at(-1)?.eventInstance?.date;
       switch (s.type) {
         case 'Regular':
         case 'Elder':
@@ -209,7 +209,7 @@ export class SpiritsComponent {
           date = s.season?.date;
           break;
         case 'Event':
-          date = s.events?.at(0)?.eventInstance?.date;
+          date = s.eventInstanceSpirits?.at(0)?.eventInstance?.date;
           break;
       }
 

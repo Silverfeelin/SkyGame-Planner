@@ -57,8 +57,8 @@ export class WingedLightComponent {
     wb.forEach(item => {
       const node = item.nodes?.at(0);
       if (!node) { return; }
-      const tree = node.root?.spiritTree;
-      const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
+      const tree = node.root?.tree;
+      const spirit = tree?.spirit ?? tree?.travelingSpirit?.spirit ?? tree?.specialVisitSpirit?.spirit;
       if (!spirit) { return; }
       if (spirit.type === 'Regular') {
         this.regularCount++;
