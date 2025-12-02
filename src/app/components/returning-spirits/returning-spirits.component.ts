@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
 import { DateComponent } from '../util/date/date.component';
 import { IconComponent } from '../icon/icon.component';
@@ -30,8 +28,8 @@ export class ReturningSpiritsComponent {
       // Count items.
       let unlockedItems = 0, totalItems = 0;
       rs.spirits.forEach(s => {
-        TreeHelper.getNodes(s.tree).forEach(item => {
-          if (item.unlocked) { unlockedItems++; }
+        TreeHelper.getNodes(s.tree).forEach(node => {
+          if (node.unlocked || node.item?.unlocked) { unlockedItems++; }
           totalItems++;
         });
       });
