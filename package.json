@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-proxy": "ng serve --configuration development,proxy",
     "build": "ng build",
     "build-prod": "npm run sitemap-build && ng build --configuration production && npm run license-move",
     "watch": "ng build --watch --configuration development",

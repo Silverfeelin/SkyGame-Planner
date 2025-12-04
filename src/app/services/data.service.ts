@@ -10,6 +10,7 @@ import { IOutfitRequestConfig } from '../interfaces/outfit-request.interface';
 import { ArrayHelper } from '../helpers/array-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { IArea, IEvent, IGuid, IIAP, IItem, IItemList, IMapShrine, INode, IRealm, ISeason, IShop, ISkyData, ISpecialVisit, ISpirit, ISpiritTree, ISpiritTreeTier, ITravelingSpirit, IWingedLight, SkyDataResolver } from 'skygame-data';
+import { environment } from 'src/environments/environment';
 
 export interface ITrackables {
   unlocked?: ReadonlySet<string>;
@@ -58,7 +59,7 @@ export class DataService {
       return this._httpClient.get(`assets/data/${asset}`, { headers: { 'ngsw-bypass': '' }, responseType: 'text' });
     }
 
-    const $everything = this._httpClient.get('/assets/skygame-data/everything.json', {
+    const $everything = this._httpClient.get(environment.urls.everything, {
       headers: { 'ngsw-bypass': '' }, responseType: 'text'
     });
 
