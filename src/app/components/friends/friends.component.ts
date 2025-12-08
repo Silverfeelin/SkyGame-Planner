@@ -6,10 +6,10 @@ import { nanoid } from 'nanoid';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { StorageService } from '@app/services/storage.service';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../spirit-tree/spirit-tree.component";
 import { WikiLinkComponent } from "../util/wiki-link/wiki-link.component";
+import { ISpiritTree } from 'skygame-data';
 
 interface IFriendshipData {
   friends: Array<{ date: string, name: string, unlocked: string }>;
@@ -67,7 +67,7 @@ export class FriendsComponent {
 
   cloneFriendTree(unlocked: string): ISpiritTree {
     const unlockedIds = new Set(unlocked.match(/.{1,3}/g)?.map(s => parseInt(s, 36)) ?? []);
-    const node = NodeHelper.clone(this.treeTemplate.node);
+    const node = NodeHelper.clone(this.treeTemplate.node!);
     const nodes = NodeHelper.all(node);
     nodes.forEach(n => {
       if (!n.item) { return; }
