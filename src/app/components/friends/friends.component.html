@@ -34,8 +34,8 @@
     </div>
     <div class="sky-card-body">
       <div class="mb sky-flex">
-        <button type="button" class="button">Rename</button>
-        <button type="button" class="button button-danger">Delete</button>
+        <button type="button" class="button" (click)="promptRename(friend)">Rename</button>
+        <button type="button" class="button button-danger" (click)="promptDelete(friend)">Delete</button>
       </div>
       <app-spirit-tree [tree]="friend.tree" [forceNodeAction]="'emit'" [enableControls]="false" (nodeClicked)="nodeClicked($event)"></app-spirit-tree>
     </div>

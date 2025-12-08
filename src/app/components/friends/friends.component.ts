@@ -43,9 +43,10 @@ export class FriendsComponent {
   private searchTimeout?: number;
 
   constructor() {
-    const data = this.storageService.getKey('friends') as IFriendshipData ?? {
-      friends: [ { date: DateTime.now().toISO(), name: 'Example', unlocked: (2753).toString(36).padStart(3, '0') } ]
-    };
+    let data = this.storageService.getKey('friends') as IFriendshipData;
+    if (!data?.friends?.length) {
+      data = { friends: [ { date: DateTime.now().toISO(), name: 'Example', unlocked: (2753).toString(36).padStart(3, '0') } ] };
+    }
 
     this.friends = data.friends.map(f => ({
       date: DateTime.fromISO(f.date),
@@ -93,6 +94,19 @@ export class FriendsComponent {
     evt.node.unlocked = !evt.node.unlocked;
     evt.node.item && (evt.node.item.unlocked = evt.node.unlocked);
     this.eventService.itemToggled.next(evt.node.item!);
+    this.changeDetectorRef.markForCheck();
+    this.save();
+  }
+
+  promptRename(friend: IFriend) {
+    friend.name = prompt('Enter new name:', friend.name) ?? friend.name;
+    this.changeDetectorRef.markForCheck();
+    this.save();
+  }
+
+  promptDelete(friend: IFriend) {
+    if (!confirm(`Are you sure you want to delete ${friend.name}?`)) { return; }
+    this.friends = this.friends.filter(f => f !== friend);
     this.changeDetectorRef.markForCheck();
     this.save();
   }
