@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid';
-import { IItem, ItemType } from "../interfaces/item.interface";
-import { INode, ITierNode } from "../interfaces/node.interface";
 import { CostHelper } from './cost-helper';
+import { INode, ITierNode, ItemType, IItem } from 'skygame-data';
 
 export class NodeHelper {
   /** Finds the first node that satisfies the predicate.

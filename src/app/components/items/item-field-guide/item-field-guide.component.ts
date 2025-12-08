@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params, Router, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
-import { IItem, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
 import { ItemSubIconsComponent } from '../item-icon/item-subicons/item-subicons.component';
@@ -9,6 +8,7 @@ import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor, NgIf } from '@angular/common';
 import { ItemTypeSelectorComponent } from '../item-type-selector/item-type-selector.component';
+import { ItemType, IItem } from 'skygame-data';
 
 @Component({
     selector: 'app-item-field-guide',
@@ -20,7 +20,7 @@ import { ItemTypeSelectorComponent } from '../item-type-selector/item-type-selec
 export class ItemFieldGuideComponent {
   type: ItemType = ItemType.Outfit;
   types: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape, ItemType.Held, ItemType.Furniture, ItemType.Prop

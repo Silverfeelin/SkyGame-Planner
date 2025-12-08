@@ -15,6 +15,38 @@
 <div class="grid grid-1 mt">
   <app-card [foldable]="true" [folded]="false">
     <div header>
+      <h2 class="h3 mb-0">November 2025</h2>
+    </div>
+    <div>
+      <div class="container">
+        <ul class="m-0">
+          <li>
+            Outfit closet split into <a class="text-link" [routerLink]="['/item']" [queryParams]="{ type: 'Outfit' }">Outfits</a>
+            and <a class="text-link" [routerLink]="['/item']" [queryParams]="{ type: 'OutfitShoes' }">Outfits with shoes</a>
+            to match the in-game closets.
+          </li>
+          <li>
+            Data has been moved to a separate repository: <a class="text-link" href="https://github.com/Silverfeelin/SkyGame-Data" target="_blank">https://github.com/SkyPlanner/SkyPlanner-Data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-card>
+  <app-card [foldable]="true" [folded]="true">
+    <div header>
+      <h2 class="h3 mb-0">October 2025</h2>
+    </div>
+    <div>
+      <div class="container">
+        <ul class="m-0">
+          <li>New <a routerLink="/season/migration-optimizer">Migration Friendship Point Optimizer</a> page. Similar to a season calculator, but for the new friendship level system.</li>
+          <li><a routerLink="/cr-tracker">Candle Run Tracker</a> now includes data for Valley of Triumph.</li>
+        </ul>
+      </div>
+    </div>
+  </app-card>
+  <app-card [foldable]="true" [folded]="true">
+    <div header>
       <h2 class="h3 mb-0">August 2025</h2>
     </div>
     <div>

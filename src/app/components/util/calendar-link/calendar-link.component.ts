@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { ICalendarFm } from '@app/interfaces/wiki.interface';
 import { SettingService } from '@app/services/setting.service';
+import { ICalendarFm } from 'skygame-data';
 
 @Component({
     selector: 'app-calendar-link',

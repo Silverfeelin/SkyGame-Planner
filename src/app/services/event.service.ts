@@ -1,7 +1,7 @@
 import { DestroyRef, inject, Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { IItem } from '../interfaces/item.interface';
 import { Router } from '@angular/router';
+import { IItem } from 'skygame-data';
 
 export function disableKeyboardShortcutsUntilDestroyed(): void {
   const service = inject(EventService);

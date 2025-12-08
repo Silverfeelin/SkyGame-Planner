@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Host
 import { MatIcon } from '@angular/material/icon';
 import { CardComponent, CardFoldEvent } from '@app/components/layout/card/card.component';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { StorageService } from '@app/services/storage.service';
@@ -12,6 +11,7 @@ import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { Router } from '@angular/router';
 import { ItemHelper } from '@app/helpers/item-helper';
+import { IItem, ItemType } from 'skygame-data';
 
 interface IItemCollection {
   guid: string;

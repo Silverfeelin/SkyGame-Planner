@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
@@ -8,6 +6,7 @@ import { MatIcon } from '@angular/material/icon';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { ItemType } from 'skygame-data';
 
 @Component({
     selector: 'app-winged-light',
@@ -58,8 +57,8 @@ export class WingedLightComponent {
     wb.forEach(item => {
       const node = item.nodes?.at(0);
       if (!node) { return; }
-      const tree = node.root?.spiritTree;
-      const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
+      const tree = node.root?.tree;
+      const spirit = tree?.spirit ?? tree?.travelingSpirit?.spirit ?? tree?.specialVisitSpirit?.spirit;
       if (!spirit) { return; }
       if (spirit.type === 'Regular') {
         this.regularCount++;

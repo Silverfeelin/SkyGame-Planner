@@ -9,13 +9,12 @@ import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.comp
 import { DateHelper } from '@app/helpers/date-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { NavigationHelper } from '@app/helpers/navigation-helper';
-import { IItem } from '@app/interfaces/item.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { CardComponent, CardFoldEvent } from "../../layout/card/card.component";
 import { MatIcon } from '@angular/material/icon';
 import { TableFooterDirective } from '@app/components/table/table-column/table-footer.directive';
-import { NodeHelper } from '@app/helpers/node-helper';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { IItem, ISpiritTree } from 'skygame-data';
 
 @Component({
     selector: 'app-item-hearts',
@@ -85,7 +84,7 @@ export class ItemHeartsComponent {
       if (spirit.type !== 'Regular') { return; }
       const tree = spirit.tree;
       if (!tree) { return; }
-      const items = NodeHelper.getItems(tree.node);
+      const items = TreeHelper.getItems(tree);
       const hearts = items.filter(i => i.type === 'Special' && i.name === 'Heart');
 
       this.tables.regular.push({
@@ -107,10 +106,10 @@ export class ItemHeartsComponent {
     this._dataService.seasonConfig.items.forEach(season => {
       season.spirits?.forEach(spirit => {
         if (spirit.type !== 'Season') { return; }
-        let rs = spirit.returns?.at(-1);
-        let ts = spirit.ts?.at(-1);
+        let rs = spirit.specialVisitSpirits?.at(-1);
+        let ts = spirit.travelingSpirits?.at(-1);
         if (rs && ts) {
-          if (rs.return.date > ts.date) {
+          if (rs.visit.date > ts.date) {
             ts = undefined;
           } else {
             rs = undefined;
@@ -119,7 +118,7 @@ export class ItemHeartsComponent {
 
         const tree = rs?.tree ?? ts?.tree ?? spirit.tree;
         if (!tree) { return; }
-        const items = NodeHelper.getItems(tree.node);
+        const items = TreeHelper.getItems(tree);
         const hearts = items.filter(i => i.type === 'Special' && i.name === 'Heart');
 
         this.tables.season.push({
@@ -150,7 +149,7 @@ export class ItemHeartsComponent {
       tree ??= spirit.tree;
 
       if (!tree) { return; }
-      const items = NodeHelper.getItems(tree.node);
+      const items = TreeHelper.getItems(tree);
       const hearts = items.filter(i => i.type === 'Special' && i.name === 'Heart');
 
       this.tables.guide.push({
@@ -181,7 +180,7 @@ export class ItemHeartsComponent {
       spirits.forEach(eventSpirit => {
         const tree = eventSpirit.tree;
         if (!tree) { return; }
-        const items = NodeHelper.getItems(tree.node);
+        const items = TreeHelper.getItems(tree);
         const treeHearts = items.filter(i => i.type === 'Special' && i.name === 'Heart' && this.missingHearts.has(i));
 
         tableCount[0] += treeHearts.length;
@@ -211,7 +210,7 @@ export class ItemHeartsComponent {
       const source = ItemHelper.getItemSource(heart);
       if (source?.type !== 'node') { continue; }
 
-      const tree = source.source.root?.spiritTree;
+      const tree = source.source.root?.tree;
       if (!tree) { continue; }
 
       let row = treeRows.get(tree);
@@ -221,8 +220,8 @@ export class ItemHeartsComponent {
           name: tree.name
             ?? tree.spirit?.name
             ?? tree.eventInstanceSpirit?.name ?? tree.eventInstanceSpirit?.spirit?.name
-            ?? tree.ts?.spirit?.name
-            ?? tree.visit?.spirit?.name,
+            ?? tree.travelingSpirit?.spirit?.name
+            ?? tree.specialVisitSpirit?.spirit?.name,
           hearts: [],
           heartLinks: [],
           total: 0,

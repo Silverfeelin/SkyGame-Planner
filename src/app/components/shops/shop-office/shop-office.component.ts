@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
 import { CardComponent } from '@app/components/layout/card/card.component';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { IShop } from '@app/interfaces/shop.interface';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
-import { IIAP } from '@app/interfaces/iap.interface';
 import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
+import { IShop, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-shop-office',

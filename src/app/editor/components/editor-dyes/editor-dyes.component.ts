@@ -4,19 +4,17 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { IItem } from '@app/interfaces/item.interface';
 import { ItemClickEvent, ItemsComponent } from '@app/components/items/items.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { DataService } from '@app/services/data.service';
+import { IItem } from 'skygame-data';
 
 const fileNames = [
-  '/assets/game/dyes/outfit/Anniversary_jellydress.jpg',
+  '/assets/game/dyes/Mischief_cattail.jpg',
   '/assets/game/dyes/mask/Base_sleepy.jpg',
-  '/assets/game/dyes/hair/2slots_Bloom_rosebraid.jpg',
-  '/assets/game/dyes/hair/Bloom_rosebraid.jpg',
-  '/assets/game/dyes/cape/2slot_Anniversary_tuxedocape.jpg',
-  '/assets/game/dyes/cape/Anniversary_tuxedocape.jpg'
-]
+  '/assets/game/dyes/hair-accessory/Mischief_catears.jpg',
+  '/assets/game/dyes/hair/Mischief_crowhat.jpg'
+];
 
 @Component({
     selector: 'app-editor-dyes',

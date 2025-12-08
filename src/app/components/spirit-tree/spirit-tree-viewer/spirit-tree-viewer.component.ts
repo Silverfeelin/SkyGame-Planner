@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { SpiritTreeComponent } from '../spirit-tree.component';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '@app/services/data.service';
+import { ISpiritTree } from 'skygame-data';
 
 @Component({
     selector: 'app-spirit-tree-viewer',

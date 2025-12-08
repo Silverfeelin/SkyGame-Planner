@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { INode } from '../interfaces/node.interface';
 import { StorageService } from './storage.service';
 import { EventService } from './event.service';
-import { IItemListNode } from '../interfaces/item-list.interface';
+import { INode, IItemListNode } from 'skygame-data';
 
 @Injectable({
   providedIn: 'root'

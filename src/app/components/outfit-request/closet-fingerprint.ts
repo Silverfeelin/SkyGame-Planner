@@ -1,4 +1,4 @@
-import { ItemType } from '@app/interfaces/item.interface';
+import { ItemType } from 'skygame-data';
 
 const borderSize = 1;
 const tileSize = 3;

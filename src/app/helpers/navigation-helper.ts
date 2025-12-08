@@ -1,8 +1,6 @@
 import { NavigationExtras, Params } from '@angular/router';
-import { NodeHelper } from './node-helper';
-import { IItem } from '../interfaces/item.interface';
-import { INode } from '../interfaces/node.interface';
 import { DateTime } from 'luxon';
+import { IItem, INode } from 'skygame-data';
 
 export interface INavigationTarget {
   route: Array<any>;
@@ -83,7 +81,7 @@ export class NavigationHelper {
         break;
       }
 
-      const tree = node.root?.spiritTree;
+      const tree = node.root?.tree;
       if (!tree) { continue; }
 
       if (tree.permanent) {
@@ -92,8 +90,8 @@ export class NavigationHelper {
       }
 
       const date = tree?.eventInstanceSpirit?.eventInstance ? tree.eventInstanceSpirit.eventInstance.date
-        : tree?.ts ? tree.ts.date
-        : tree?.visit ? tree.visit.return.date
+        : tree?.travelingSpirit ? tree.travelingSpirit.date
+        : tree?.specialVisitSpirit ? tree.specialVisitSpirit.visit.date
         : DateTime.fromFormat('2000-01-02', 'yyyy-MM-dd');
 
       if (date < lastDate) { continue; }
@@ -104,14 +102,14 @@ export class NavigationHelper {
     if (!isUnlocked) { lastNode = permanentNode || lastNode; }
     if (!lastNode) { return undefined; }
 
-    const tree = lastNode.root?.spiritTree;
+    const tree = lastNode.root?.tree;
     const extras: NavigationExtras = { queryParams: { highlightItem: item.guid }};
 
     if (lastNode === permanentNode && tree?.permanent) {
       return { route: this.getPermanentRoute(tree.permanent), extras };
     }
 
-    const spirit = tree?.spirit ?? tree?.ts?.spirit ?? tree?.visit?.spirit;
+    const spirit = tree?.spirit ?? tree?.travelingSpirit?.spirit ?? tree?.specialVisitSpirit?.spirit;
     if (tree?.eventInstanceSpirit) { return { route: ['/event-instance', tree.eventInstanceSpirit.eventInstance!.guid], extras }; }
     if (spirit) { return { route: ['/spirit', spirit.guid], extras }; }
     return undefined;

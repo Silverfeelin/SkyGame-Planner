@@ -1,13 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IItem, ItemSubicon } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { IconComponent } from '../../../icon/icon.component';
-import { IItemListNode } from '@app/interfaces/item-list.interface';
+import { IItem, INode, IIAP, IItemListNode, ItemSubicon } from 'skygame-data';
 
 @Component({
     selector: 'app-item-subicons',

@@ -1,26 +1,22 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../components/spirit-tree/spirit-tree.component";
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { CardComponent } from "../../../components/layout/card/card.component";
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
-import { INode } from '@app/interfaces/node.interface';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { MatIcon } from '@angular/material/icon';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { ICost } from '@app/interfaces/cost.interface';
-import { ISpirit, SpiritType } from '@app/interfaces/spirit.interface';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
 import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
 import { TabDirective } from '@app/components/layout/tabs/tab.directive';
+import { INode, IItem, ICost, ISpiritTree, ISpirit, ItemType, SpiritType } from 'skygame-data';
 
 type TreeNodeArray = Array<TreeNode | undefined>;
 type TreeNode = { node: INode; x: number; y: number; };
@@ -125,11 +121,11 @@ export class SpiritTreeEditorComponent {
       node: { guid: nanoid(10), item: this.cloneItem(this.specialItemMap.placeholder.item) }
     };
 
-    const treeNode = { x: 1, y: 0, node: this.tree.node };
+    const treeNode = { x: 1, y: 0, node: this.tree.node! };
     this.nodeTable[1][0] = treeNode;
-    this.nodeMap[this.tree.node.guid] = treeNode;
+    this.nodeMap[this.tree.node!.guid] = treeNode;
     this.selectedTreeNode = treeNode;
-    this.selectedItem = this.tree.node.item!;
+    this.selectedItem = this.tree.node!.item!;
 
     // Load spirits
     const spiritTypes = new Set<SpiritType>(['Elder', 'Guide', 'Season', 'Event', 'Regular']);
@@ -188,7 +184,7 @@ export class SpiritTreeEditorComponent {
     this.nodeTable[2].unshift(undefined);
 
     // Replace root node.
-    this.tree.node.prev = node;
+    this.tree.node!.prev = node;
     node.n = this.tree.node;
     this.tree.node = node;
     this.reloadTree();
@@ -332,9 +328,9 @@ export class SpiritTreeEditorComponent {
     const trees = new Set<ISpiritTree>();
     if (spirit.tree) { trees.add(spirit.tree); }
     if (spirit.treeRevisions) { spirit.treeRevisions.forEach(t => trees.add(t)); }
-    if (spirit.ts) { spirit.ts.map(ts => ts.tree).forEach(t => trees.add(t)); }
-    if (spirit.returns) { spirit.returns.map(r => r.tree).forEach(t => trees.add(t)); }
-    if (spirit.events) { spirit.events.map(e => e.tree).forEach(t => trees.add(t)); }
+    if (spirit.travelingSpirits) { spirit.travelingSpirits.map(ts => ts.tree).forEach(t => trees.add(t)); }
+    if (spirit.specialVisitSpirits) { spirit.specialVisitSpirits.map(r => r.tree).forEach(t => trees.add(t)); }
+    if (spirit.eventInstanceSpirits) { spirit.eventInstanceSpirits.map(e => e.tree).forEach(t => trees.add(t)); }
     this.spiritTrees = Array.from(trees).reverse();
   }
 
@@ -346,6 +342,7 @@ export class SpiritTreeEditorComponent {
   }
 
   promptCopySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
+    if (tree.tier) { alert('Spirit trees with friendship tiers are not supported.'); return; }
     if (!confirm('Are you sure you want to copy this spirit tree? Your current tree will be replaced.')) { return; }
     this.copySpiritTree(tree, preserveGuid);
   }
@@ -353,7 +350,7 @@ export class SpiritTreeEditorComponent {
   copySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
     this.tree = {
       guid: preserveGuid ? tree.guid : nanoid(10),
-      node: NodeHelper.clone(tree.node, preserveGuid)
+      node: NodeHelper.clone(tree.node!, preserveGuid)
     };
     this.nodeTable = [[], [], []];
     this.nodeMap = {};
@@ -371,19 +368,19 @@ export class SpiritTreeEditorComponent {
       if (n.ne) { addNode(n.ne, x + 1, y); }
     };
 
-    addNode(this.tree.node, 1, 0);
+    addNode(this.tree.node!, 1, 0);
     this.items = Object.values(this.itemMap);
-    this.selectedTreeNode = this.nodeMap[this.tree.node.guid];
+    this.selectedTreeNode = this.nodeMap[this.tree.node!.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
 
-    const tsDate = tree.ts?.date;
-    const rsDate = tree.visit?.return?.date;
+    const tsDate = tree.travelingSpirit?.date;
+    const rsDate = tree.specialVisitSpirit?.visit?.date;
 
     let title = tree.eventInstanceSpirit?.name ?? tree.eventInstanceSpirit?.spirit?.name
-      ?? tree.visit?.spirit?.name ?? tree.ts?.spirit?.name ?? tree.spirit?.name ?? '';
+      ?? tree.specialVisitSpirit?.spirit?.name ?? tree.travelingSpirit?.spirit?.name ?? tree.spirit?.name ?? '';
     let subtitle = tree.name;
     if (tsDate || rsDate) {
-      subtitle = tsDate ? `TS #${tree.ts!.number}` : `${tree.visit!.return.name}`;
+      subtitle = tsDate ? `TS #${tree.travelingSpirit!.number}` : `${tree.specialVisitSpirit!.visit.name}`;
       subtitle += ` (${(tsDate || rsDate)!.toFormat('dd-MM-yyyy')})`;
     }
 
@@ -485,7 +482,7 @@ export class SpiritTreeEditorComponent {
   exportJson(): void {
     const jsonTree = {
       guid: this.tree.guid,
-      node: this.tree.node.guid
+      node: this.tree.node!.guid
     };
 
     const nodes = NodeHelper.all(this.tree.node);

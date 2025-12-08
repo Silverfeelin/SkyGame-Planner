@@ -5,7 +5,6 @@ import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { WindowHelper } from 'src/app/helpers/window-helper';
-import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -15,6 +14,7 @@ import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgTemplateOutlet, NgFor, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { readFingerprint } from '../closet-fingerprint';
+import { IItem, ItemType, ItemSize } from 'skygame-data';
 
 interface IApiOutfits {
   items: Array<IApiOutfit>
@@ -84,17 +84,17 @@ export class OutfitVaultComponent {
   lightings = [ 'Unknown lighting', 'Day', 'Sunset', 'Night', 'Forest' ];
 
   itemTypes: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
-  selectionTypes = this.itemTypes.filter(type => type !== ItemType.Held && type !== ItemType.Furniture);
+  selectionTypes = this.itemTypes.filter(type => type !== ItemType.Held && type !== ItemType.Furniture && type !== ItemType.OutfitShoes);
   typeFolded: { [key: string]: boolean } = {};
 
   sections: Array<Array<ItemType>> = [
-    [ItemType.Outfit, ItemType.Shoes],
+    [ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes],
     [ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace],
     [ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory],
     [ItemType.Cape],
@@ -103,7 +103,7 @@ export class OutfitVaultComponent {
   sectionFolded: Array<boolean> = [];
 
   itemIcons: { [key: string]: string } = {
-    ['Outfit']: 'outfit', ['Shoes']: 'shoes',
+    ['Outfit']: 'outfit', ['Shoes']: 'shoes', ['OutfitShoes']: 'outfit-shoes',
     ['Mask']: 'mask', ['FaceAccessory']: 'face-acc', ['Necklace']: 'necklace',
     ['Hair']: 'hair', ['HairAccessory']: 'hair-acc', ['HeadAccessory']: 'head-acc',
     ['Cape']: 'cape',
@@ -191,6 +191,11 @@ export class OutfitVaultComponent {
       type = ItemType.Held;
     }
 
+    if (type === ItemType.OutfitShoes) {
+      this.typeFolded[ItemType.Outfit] && this.foldType(ItemType.Outfit, false);
+      type = ItemType.Outfit;
+    }
+
     setTimeout(() => {
       const el = this._elementRef.nativeElement.querySelector(`.closet-items[data-type="${type}"]`);
       const elSelection = this._elementRef.nativeElement.querySelector(`.selection-sticky`);
@@ -219,6 +224,7 @@ export class OutfitVaultComponent {
     if (!item) { return; }
     let type = item.type;
     if (type === ItemType.Held || type === ItemType.Furniture) { type = ItemType.Prop; }
+    if (type === ItemType.OutfitShoes) { type = ItemType.Outfit; }
 
     // Remove selection.
     if (this.selection[type] === item) {

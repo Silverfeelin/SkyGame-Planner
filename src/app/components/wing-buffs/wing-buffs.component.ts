@@ -1,9 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IItem } from 'src/app/interfaces/item.interface';
-import { ItemType } from 'src/app/interfaces/item.interface';
-import { ISpirit, SpiritType } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SpiritTypePipe } from '../../pipes/spirit-type.pipe';
 import { TableFooterDirective } from '../table/table-column/table-footer.directive';
@@ -13,6 +9,7 @@ import { TableHeaderDirective } from '../table/table-column/table-header.directi
 import { TableComponent } from '../table/table.component';
 import { NgIf } from '@angular/common';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { SpiritType, IItem, ItemType, ISpirit } from 'skygame-data';
 
 @Component({
     selector: 'app-wing-buffs',
@@ -56,16 +53,16 @@ export class WingBuffsComponent implements OnInit {
     for (const item of itemSet) {
       if (!item.nodes?.length) { continue; }
       const rootNode = item.nodes[0].root;
-      const spiritTree = rootNode!.spiritTree;
+      const spiritTree = rootNode!.tree;
       let spirit: ISpirit | undefined;
       let isSeasonal = false;
       if (spiritTree?.spirit) {
         spirit = spiritTree.spirit;
-      } else if (spiritTree?.ts) {
-        spirit = spiritTree.ts.spirit;
+      } else if (spiritTree?.travelingSpirit) {
+        spirit = spiritTree.travelingSpirit.spirit;
         isSeasonal = true;
-      } else if (spiritTree?.visit) {
-        spirit = spiritTree.visit.spirit;
+      } else if (spiritTree?.specialVisitSpirit) {
+        spirit = spiritTree.specialVisitSpirit.spirit;
         isSeasonal = true;
       }
 

@@ -31,7 +31,12 @@
               "src/robots.txt",
               "src/sitemap.xml",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              {
+                "glob": "**/*",
+                "input": "node_modules/skygame-data/assets",
+                "output": "/assets/skygame-data/"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -75,18 +80,32 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "proxy": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.proxy.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "SkyGame-Planner:build:production"
             },
             "development": {
               "buildTarget": "SkyGame-Planner:build:development"
+            },
+            "proxy": {
+              "buildTarget": "SkyGame-Planner:build:proxy"
             }
           },
           "defaultConfiguration": "development"

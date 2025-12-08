@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy, output, input, effect } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ItemType, ItemSubtype, IItem, ItemGroup } from '@app/interfaces/item.interface';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { nanoid } from 'nanoid';
+import { IItem, ItemType, ItemSubtype, ItemGroup } from 'skygame-data';
 
 @Component({
   selector: 'app-editor-item',

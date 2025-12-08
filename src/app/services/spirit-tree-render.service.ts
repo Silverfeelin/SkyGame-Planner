@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { NodeHelper } from '@app/helpers/node-helper';
-import { ICost } from '@app/interfaces/cost.interface';
-import { INode } from '@app/interfaces/node.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
+import { ISpiritTree, INode, ICost } from 'skygame-data';
 
 interface RenderOptions {
   title?: string;
@@ -41,7 +39,7 @@ export class SpiritTreeRenderService {
       return Math.max(h, calculateHeight(h + wOffsetSide, node.nw), calculateHeight(h + wOffsetSide, node.ne), calculateHeight(h + wItem + wGapY, node.n));
     }
 
-    const hasRootCost = !CostHelper.isEmpty(tree.node);
+    const hasRootCost = tree.node && !CostHelper.isEmpty(tree.node);
     const width = wItem * 3 + wGapX * 2 + wPadding * 2;
     const height = calculateHeight(64, tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0) + hCredit + hFooter;
     const canvas = document.createElement('canvas');
@@ -224,7 +222,7 @@ export class SpiritTreeRenderService {
     // Node coordinates (top left corner).
     let x = wGapX + wItem + wPadding;
     let y = height - wPadding - wItem - (hasRootCost ? wCost : 0) - hFooter;
-    drawNode(tree.node, x, y);
+    tree.node && drawNode(tree.node, x, y);
 
     // Footer
     x = 0; y = height - hFooter;

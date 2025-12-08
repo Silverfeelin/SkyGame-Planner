@@ -1,14 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Input, OnChanges, OnDestroy, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { SubscriptionLike } from 'rxjs';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IItem, ItemSize, ItemSubicon, ItemType } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { HighlightType } from 'src/app/types/highlight';
 import { ItemSubIconsComponent } from './item-subicons/item-subicons.component';
 import { IconComponent } from '../../icon/icon.component';
-import { IItemListNode } from '@app/interfaces/item-list.interface';
+import { IItem, INode, IIAP, IItemListNode, ItemSize, ItemSubicon } from 'skygame-data';
 
 @Component({
     selector: 'app-item-icon',

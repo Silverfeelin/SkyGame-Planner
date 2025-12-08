@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { CardComponent } from '@app/components/layout/card/card.component';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { IItem, ItemType } from '@app/interfaces/item.interface';
-import { ISpirit } from '@app/interfaces/spirit.interface';
 import { DataService } from '@app/services/data.service';
+import { IItem, ISpirit, ItemType } from 'skygame-data';
 
 @Component({
     selector: 'app-editor-todo',
@@ -25,7 +24,7 @@ export class EditorTodoComponent {
     const spirits = _dataService.spiritConfig.items;
 
     const previewItemTypes = new Set<ItemType>([
-      ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
+      ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
       ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
       ItemType.Held, ItemType.Furniture, ItemType.Prop
     ]);

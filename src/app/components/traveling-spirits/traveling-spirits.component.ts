@@ -10,6 +10,7 @@ import { TableHeaderDirective } from '../table/table-column/table-header.directi
 import { TableComponent } from '../table/table.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-traveling-spirits',
@@ -26,7 +27,7 @@ export class TravelingSpiritsComponent {
     this.rows = this._dataService.travelingSpiritConfig.items.map(ts => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;
-      NodeHelper.getItems(ts.tree.node).forEach(item => {
+      TreeHelper.getItems(ts.tree).forEach(item => {
         if (item.unlocked) { unlockedItems++; }
         totalItems++;
       });

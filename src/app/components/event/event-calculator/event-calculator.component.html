@@ -25,6 +25,7 @@
         {{event.name}} {{year}} <span class="c-accent h3">Calculator</span>
       </h1>
     </div>
+
     <div class="sky-card-body">
       <div class="sky-flex flex-wrap">
         <a class="button" [routerLink]="['/event-instance', eventInstance.guid]">
@@ -43,6 +44,14 @@
         <div class="container mt">
           <mat-icon class="result-warn">priority_high</mat-icon>
           <b class="c-old">This event has concluded!</b>
+        </div>
+      }
+      @if (eventInstance.draft) {
+        <div class="container mt mb">
+          <mat-icon class="menu-icon">warning</mat-icon>
+          <span class="menu-label">
+            We're still working on this content. Thank you for your patience.
+          </span>
         </div>
       }
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">

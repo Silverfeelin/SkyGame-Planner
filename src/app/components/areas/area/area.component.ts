@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { IRealm } from 'src/app/interfaces/realm.interface';
 import { DataService } from 'src/app/services/data.service';
 import { TitleService } from 'src/app/services/title.service';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
 import { MatIcon } from '@angular/material/icon';
 import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
+import { IArea, IRealm } from 'skygame-data';
 
 @Component({
     selector: 'app-area',

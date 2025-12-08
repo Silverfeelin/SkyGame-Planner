@@ -2,7 +2,6 @@ import { Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleC
 import { Router, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { NodeService } from 'src/app/services/node.service';
@@ -11,9 +10,9 @@ import { HighlightType } from 'src/app/types/highlight';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf } from '@angular/common';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { CurrencyService } from '@app/services/currency.service';
+import { INode } from 'skygame-data';
 
 export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
 
@@ -149,7 +148,7 @@ export class NodeComponent implements OnChanges {
 
     // Modify currencies.
     // TODO: this does not track the cost when locking nodes outside of this tree.
-    const tree = this.node.root?.spiritTree;
+    const tree = this.node.root?.tree;
     tree && this._currencyService.addTreeCost(unlockCost, tree);
   }
 

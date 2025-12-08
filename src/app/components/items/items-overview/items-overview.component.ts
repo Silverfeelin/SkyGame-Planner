@@ -2,12 +2,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { ItemsComponent } from "../items.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { NavigationHelper } from '@app/helpers/navigation-helper';
 import { ItemService } from '@app/services/item.service';
 import { DataService } from '@app/services/data.service';
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
 import { LowerCasePipe } from '@angular/common';
+import { ItemType, IItem } from 'skygame-data';
 
 @Component({
     selector: 'app-items-overview',

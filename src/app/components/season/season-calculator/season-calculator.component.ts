@@ -2,9 +2,6 @@ import { ChangeDetectionStrategy, Component, ElementRef, OnInit, QueryList, View
 import { DateTime } from 'luxon';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { INode } from 'src/app/interfaces/node.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
 import { DataService } from 'src/app/services/data.service';
 import { NodeService } from 'src/app/services/node.service';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
@@ -12,8 +9,8 @@ import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
-import { ICalculatorData, ICalculatorDataTimedCurrency } from '@app/interfaces/calculator-data.interface';
 import { DateTimePipe } from "../../../pipes/date-time.pipe";
+import { ISeason, ISpiritTree, INode, ICalculatorData, ICalculatorDataTimedCurrency } from 'skygame-data';
 
 @Component({
     selector: 'app-season-calculator',
@@ -54,6 +51,8 @@ export class SeasonCalculatorComponent implements OnInit {
   nodeShowButtons?: INode;
   toggleConnected = false;
 
+  hasTiers = false;
+
   constructor(
     private readonly _currencyService: CurrencyService,
     private readonly _dataService: DataService,
@@ -62,11 +61,17 @@ export class SeasonCalculatorComponent implements OnInit {
   ) {
     const seasons = _dataService.seasonConfig.items;
     const season = DateHelper.getActive(seasons) || seasons.at(-1)!;
+    if (season.spirits.some(s => s.tree?.tier)) {
+      this.season = season;
+      this.hasTiers = true;
+      return;
+    }
     if (season.endDate < DateTime.now()) { return; }
+
 
     this.toggleConnected = this._storageService.getKey('tree.unlock-connected') !== '0';
 
-    this.season = season!;
+    this.season = season;
     this.hasSeasonPass = this._storageService.hasSeasonPass(this.season.guid);
     this.hasSeasonPassGifted = this._storageService.hasGifted(this.season.guid);
     this.calculatorData = this.season.calculatorData;
@@ -82,8 +87,8 @@ export class SeasonCalculatorComponent implements OnInit {
     this.trees = this.season.spirits.filter(s => s.type === 'Season').map(s => s.tree!);
     this.allNodes = [];
     this.firstNodes = this.trees.reduce((acc, t) => {
-      this.allNodes.push(...NodeHelper.all(t.node));
-      acc[t.node.guid] = t.node;
+      this.allNodes.push(...NodeHelper.all(t.node!));
+      acc[t.node!.guid] = t.node!;
       return acc;
     }, {} as { [guid: string]: INode });
   }

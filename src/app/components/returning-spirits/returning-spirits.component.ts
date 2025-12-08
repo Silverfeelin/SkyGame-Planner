@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
 import { DateComponent } from '../util/date/date.component';
 import { IconComponent } from '../icon/icon.component';
@@ -12,6 +10,7 @@ import { TableHeaderDirective } from '../table/table-column/table-header.directi
 import { TableComponent } from '../table/table.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-returning-spirits',
@@ -29,8 +28,8 @@ export class ReturningSpiritsComponent {
       // Count items.
       let unlockedItems = 0, totalItems = 0;
       rs.spirits.forEach(s => {
-        NodeHelper.getItems(s.tree.node).forEach(item => {
-          if (item.unlocked) { unlockedItems++; }
+        TreeHelper.getNodes(s.tree).forEach(node => {
+          if (node.unlocked || node.item?.unlocked) { unlockedItems++; }
           totalItems++;
         });
       });

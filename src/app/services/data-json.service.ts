@@ -1,8 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IItem } from '../interfaces/item.interface';
-import { INode } from '../interfaces/node.interface';
-import { ISpiritTree } from '../interfaces/spirit-tree.interface';
-import { ITravelingSpirit } from '../interfaces/traveling-spirit.interface';
+import { ITravelingSpirit, ISpiritTree, INode, IItem } from 'skygame-data';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +24,7 @@ export class DataJsonService {
     return this.stringify(trees.map(tree => {
       return {
         guid: tree.guid,
-        node: tree.node.guid
+        node: tree.node?.guid
       };
     }));
   }

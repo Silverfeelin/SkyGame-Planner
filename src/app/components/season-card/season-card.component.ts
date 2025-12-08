@@ -3,10 +3,7 @@ import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
 import { EventService } from 'src/app/services/event.service';
 import { CostComponent } from '../util/cost/cost.component';
 import { DaysLeftComponent } from '../util/days-left/days-left.component';
@@ -17,6 +14,8 @@ import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISeason, ICost } from 'skygame-data';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {
@@ -70,7 +69,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   private updateSeason(): void {
     this.cost = this.remainingCost = undefined;
     if (!this.season) { return; }
-    const nodes = this.season.spirits.map(s => NodeHelper.all(s.tree?.node)).flat();
+    const nodes = this.season.spirits.map(s => TreeHelper.getNodes(s.tree)).flat();
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);

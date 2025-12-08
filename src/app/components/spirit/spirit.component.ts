@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
-import { IEvent } from 'src/app/interfaces/event.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { SpiritTypePipe } from 'src/app/pipes/spirit-type.pipe';
 import { DataService } from 'src/app/services/data.service';
 import { TitleService } from 'src/app/services/title.service';
@@ -12,6 +9,7 @@ import { MatIcon } from '@angular/material/icon';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { NgIf, NgFor } from '@angular/common';
 import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
+import { ISpiritTree, ISpirit, IEvent } from 'skygame-data';
 
 interface ITree {
   date?: DateTime;
@@ -55,12 +53,12 @@ export class SpiritComponent {
     this._titleService.setTitle(this.spirit.name || 'Spirit');
     this.typeName = new SpiritTypePipe().transform(this.spirit.type);
 
-    this.event = this.spirit?.events?.at(-1)?.eventInstance?.event;
+    this.event = this.spirit?.eventInstanceSpirits?.at(-1)?.eventInstance?.event;
 
     this.trees = [];
 
     // Sort TS and returns by date.
-    const ts = (this.spirit.ts || []).map(ts => {
+    const ts = (this.spirit.travelingSpirits || []).map(ts => {
       return {
         date: ts.date,
         name: 'Traveling Spirit #' + ts.number,
@@ -68,10 +66,10 @@ export class SpiritComponent {
       };
     });
 
-    const visits = (this.spirit.returns || []).map((v, vi) => {
+    const visits = (this.spirit.specialVisitSpirits || []).map((v, vi) => {
       return {
-        date: v.return.date,
-        name: v.return.name || 'Visit #' + (vi+1),
+        date: v.visit.date,
+        name: v.visit.name || 'Visit #' + (vi+1),
         tree: v.tree
       };
     });

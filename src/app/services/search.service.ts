@@ -3,13 +3,7 @@ import { Params } from '@angular/router';
 import fuzzysort from 'fuzzysort';
 import { DataService } from './data.service';
 import { NavigationHelper } from '../helpers/navigation-helper';
-import { IItem, ItemType } from '../interfaces/item.interface';
-import { ISpirit } from '../interfaces/spirit.interface';
-import { ISeason } from '../interfaces/season.interface';
-import { IEvent } from '../interfaces/event.interface';
-import { IRealm } from '../interfaces/realm.interface';
-import { IArea } from '../interfaces/area.interface';
-import { IGuid } from '@app/interfaces/base.interface';
+import { IItem, ItemType, IGuid, ISpirit, ISeason, IEvent, IRealm, IArea } from 'skygame-data';
 
 export type SearchType = 'Item' | 'Spirit' | 'Season' | 'Event' | 'Realm' | 'Area' | 'Page';
 
