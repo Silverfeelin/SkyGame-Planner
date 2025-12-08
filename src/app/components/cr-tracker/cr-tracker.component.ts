@@ -11,6 +11,7 @@ import { HostListener } from '@angular/core';
 import { OverlayComponent } from "../layout/overlay/overlay.component";
 import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.service';
 import { DateHelper } from '@app/helpers/date-helper';
+import { nanoid } from 'nanoid';
 
 interface ICandlesData {
   items: Array<ICandleArea>;
@@ -134,11 +135,25 @@ export class CrTrackerComponent implements AfterViewInit {
   router = inject(Router);
   route = inject(ActivatedRoute);
 
+  addedMarkers: Array<any> = [];
+
   constructor() {
     disableKeyboardShortcutsUntilDestroyed();
     this.http.get('/assets/skygame-data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
       this.data = parsed;
+
+      ['vault', 'office', 'reef', 'refuge', 'wasteland'].forEach(areaName => {
+        this.data.items.push({
+          guid: areaName,
+          name: areaName,
+          imageUrl: `/assets/external/solsuga/${areaName}.webp`,
+          imageSize: [3508, 2480],
+          imageAttribution: 'Map by @sky_solsuga',
+          groups: [],
+          connections: []
+        });
+      });
 
       this.data.items.forEach((area: ICandleArea) => {
         // Map areas.
@@ -214,9 +229,30 @@ export class CrTrackerComponent implements AfterViewInit {
       this._navCurrentZoom = this.map?.getZoom() ?? 0;
     });
 
-    if (isDevMode()) {
-      this._debugClickCoord();
-    }
+    this.map.on('click', (e) => {
+      if (!e.originalEvent.shiftKey) { return; }
+      const waxAmount = parseInt(prompt('Enter wax amount:', '1') || '', 10);
+      if (!isNaN(waxAmount) && waxAmount > 0) {
+        const obj: any = {};
+        const marker = L.marker(e.latlng, { icon: markerIcon }).addTo(this.layer);
+        marker.bindTooltip(`${waxAmount} wax`, { permanent: false, direction: 'top' });
+
+        obj.marker = marker;
+        obj.p = e.latlng;
+        obj.c = waxAmount;
+
+        marker.addEventListener('click', e => {
+          if (!e.originalEvent.shiftKey) { return; }
+          this.layer.removeLayer(marker);
+          this.addedMarkers = this.addedMarkers.filter(m => m !== obj);
+        });
+
+        this.addedMarkers.push(obj);
+        navigator.clipboard.writeText(JSON.stringify(this.addedMarkers.map(m => ({ p: [parseFloat(m.p.lat.toFixed(2)), parseFloat(m.p.lng.toFixed(2))], c: m.c }))));
+      } else {
+        alert('Invalid number entered. Please enter a positive integer.');
+      }
+    });
 
     // Add zoom controls.
     this.map.zoomControl?.remove();
