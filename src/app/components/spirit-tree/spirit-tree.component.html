@@ -140,6 +140,7 @@
   @if (node) {
     @let shouldHighlight = (highlightItem && highlightItemMap[node.item?.guid]) || (highlightNode && highlightNodeMap[node.guid]) || false;
     <app-node [node]="node" [action]="forceNodeAction ?? nodeAction" [position]="position" (nodeClicked)="onNodeClicked($event, node)"
+      [enableNavigation]="enableNavigation"
       [highlight]="shouldHighlight"
       [showTooltips]="showNodeTooltips"
       [opaque]="opaqueNodesAll || opaqueNodesMap[node.guid]"

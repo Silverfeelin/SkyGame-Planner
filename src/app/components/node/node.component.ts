@@ -28,6 +28,7 @@ export class NodeComponent implements OnChanges {
   @Input() highlight?: boolean;
   @Input() glowType?: HighlightType = 'default';
   @Input() action: NodeAction = 'unlock';
+  @Input() enableNavigation = true;
   @Input() opaque?: boolean;
   @Input() showTooltips = true;
 

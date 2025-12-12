@@ -10,6 +10,7 @@ import { NodeHelper } from '@app/helpers/node-helper';
 import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../spirit-tree/spirit-tree.component";
 import { WikiLinkComponent } from "../util/wiki-link/wiki-link.component";
 import { ISpiritTree } from 'skygame-data';
+import { CardComponent } from "../layout/card/card.component";
 
 interface IFriendshipData {
   friends: Array<{ date: string, name: string, unlocked: string }>;
@@ -20,6 +21,7 @@ interface IFriend {
   name: string;
   tree: ISpiritTree;
   visible: boolean;
+  loaded?: boolean;
 }
 
 @Component({
@@ -27,7 +29,7 @@ interface IFriend {
   templateUrl: './friends.component.html',
   styleUrls: ['./friends.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, WikiLinkComponent, SpiritTreeComponent, CommonModule]
+  imports: [MatIcon, WikiLinkComponent, SpiritTreeComponent, CommonModule, CardComponent]
 })
 export class FriendsComponent {
   searchInput = viewChild<ElementRef<HTMLInputElement>>('input');
@@ -52,7 +54,8 @@ export class FriendsComponent {
       date: DateTime.fromISO(f.date),
       name: f.name,
       tree: this.cloneFriendTree(f.unlocked),
-      visible: true
+      visible: true,
+      loaded: false
     }));
   }
 
@@ -90,10 +93,26 @@ export class FriendsComponent {
     };
   }
 
+  onBeforeFold(friend: IFriend) {
+    friend.loaded = true;
+  }
+
   nodeClicked(evt: SpiritTreeNodeClickEvent) {
     evt.node.unlocked = !evt.node.unlocked;
     evt.node.item && (evt.node.item.unlocked = evt.node.unlocked);
     this.eventService.itemToggled.next(evt.node.item!);
+    this.changeDetectorRef.markForCheck();
+    this.save();
+  }
+
+  promptAdd(): void {
+    const name = prompt('Enter friend name:');
+    if (!name) { return; }
+    this.friends.push({
+      name,
+      tree: this.cloneFriendTree(''),
+      visible: true
+    });
     this.changeDetectorRef.markForCheck();
     this.save();
   }
