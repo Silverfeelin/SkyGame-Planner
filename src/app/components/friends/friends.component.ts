@@ -13,10 +13,11 @@ import { ISpiritTree } from 'skygame-data';
 import { CardComponent } from "../layout/card/card.component";
 
 interface IFriendshipData {
-  friends: Array<{ date: string, name: string, unlocked: string }>;
+  friends: Array<{ guid?: string, date: string, name: string, unlocked: string }>;
 }
 
 interface IFriend {
+  guid: string;
   date?: DateTime;
   name: string;
   tree: ISpiritTree;
@@ -51,6 +52,7 @@ export class FriendsComponent {
     }
 
     this.friends = data.friends.map(f => ({
+      guid: f.guid ?? nanoid(10),
       date: DateTime.fromISO(f.date),
       name: f.name,
       tree: this.cloneFriendTree(f.unlocked),
@@ -109,6 +111,7 @@ export class FriendsComponent {
     const name = prompt('Enter friend name:');
     if (!name) { return; }
     this.friends.push({
+      guid: nanoid(10),
       name,
       tree: this.cloneFriendTree(''),
       visible: true
@@ -133,12 +136,13 @@ export class FriendsComponent {
   private save(): void {
     const data: IFriendshipData = {
       friends: this.friends.map(f => ({
-      date: f.date?.toISO() ?? DateTime.now().toISO(),
-      name: f.name,
-      unlocked: NodeHelper.all(f.tree.node)
-        .filter(n => n.unlocked)
-        .map(n => n.item!.id!.toString(36).padStart(3, '0'))
-        .join('')
+        guid: f.guid,
+        date: f.date?.toISO() ?? DateTime.now().toISO(),
+        name: f.name,
+        unlocked: NodeHelper.all(f.tree.node)
+          .filter(n => n.unlocked)
+          .map(n => n.item!.id!.toString(36).padStart(3, '0'))
+          .join('')
       }))
     };
     this.storageService.setKey('friends', data);
