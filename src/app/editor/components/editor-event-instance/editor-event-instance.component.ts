@@ -5,25 +5,25 @@ import { JsonHelper } from 'src/app/helpers/json-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
 import { NgFor, NgIf } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { DataJsonService } from '@app/services/data-json.service';
-import { IEvent, IEventInstance, ISpirit, IEventInstanceSpirit, ISpiritTree, IShop, IIAP } from 'skygame-data';
+import { IEvent, IEventInstance, ISpirit, IEventInstanceSpirit, ISpiritTree, IShop, IIAP, INode } from 'skygame-data';
 
 @Component({
     selector: 'app-editor-event-instance',
     templateUrl: './editor-event-instance.component.html',
     styleUrls: ['./editor-event-instance.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [FormsModule, NgFor, NgIf]
+    imports: [ReactiveFormsModule, NgFor, NgIf]
 })
 export class EditorEventInstanceComponent {
-  usePlaceholder = true;
-  isDraft = true;
+  isDraft = new FormControl(true);
 
   events: Array<IEvent>;
-  eventGuid = '';
-  date = new Date().toISOString().split('T')[0];
-  endDate = new Date().toISOString().split('T')[0];
+  eventGuid = new FormControl('');
+  date = new FormControl(new Date().toISOString().split('T')[0]);
+  endDate = new FormControl(new Date().toISOString().split('T')[0]);
+  calendarLink = new FormControl('');
   event?: IEvent;
   lastInstance?: IEventInstance;
 
@@ -38,13 +38,14 @@ export class EditorEventInstanceComponent {
     private readonly _dataJsonService: DataJsonService
   ) {
     this.events = this._dataService.eventConfig.items.filter(e => e.instances?.length);
+    this.eventGuid.valueChanges.subscribe(() => this.eventChanged());
   }
 
   eventChanged(): void {
     this.clear();
 
-    this.event = this.eventGuid
-      ? this._dataService.guidMap.get(this.eventGuid) as IEvent
+    this.event = this.eventGuid.value
+      ? this._dataService.guidMap.get(this.eventGuid.value) as IEvent
       : undefined;
 
     if (!this.event) { return; }
@@ -59,46 +60,37 @@ export class EditorEventInstanceComponent {
   private clear(): void {
     this.lastInstance = undefined;
     this.instance = undefined;
-    // this.shops = undefined;
-    // this.spirits = undefined;
-    // this.trees = undefined;
-    // this.nodes = undefined;
   }
 
-  private generate(): void {
+  generate(): void {
     const placeholderSpirit = this._dataService.guidMap.get('U9vUspUuRp') as ISpirit;
 
     // Parse dates.
-    const date = DateTime.fromFormat(this.date, 'yyyy-MM-dd');
-    const endDate = DateTime.fromFormat(this.endDate, 'yyyy-MM-dd');
+    const date = DateTime.fromFormat(this.date.value!, 'yyyy-MM-dd');
+    const endDate = DateTime.fromFormat(this.endDate.value!, 'yyyy-MM-dd');
 
     // Copy spirit trees.
     const spirits: Array<IEventInstanceSpirit> = [];
-    this.lastInstance?.spirits?.forEach(s => {
-      const treeNode = NodeHelper.clone(s.tree.node!);
+    const treeSpirit = this.lastInstance?.spirits?.at(0)?.spirit
+      ?? placeholderSpirit;
 
-      const tree: ISpiritTree = {
-        guid: nanoid(10),
-        node: treeNode
-      };
+    const tree: ISpiritTree = {
+      guid: nanoid(10),
+      node: this._dataService.guidMap.get('qzYl3ywsFd') as INode
+    };
 
-      const newSpirit: IEventInstanceSpirit = {
-        guid: nanoid(10),
-        spirit: s.spirit,
-        tree
-      };
+    const newSpirit: IEventInstanceSpirit = {
+      guid: nanoid(10),
+      spirit: treeSpirit,
+      tree
+    };
 
-      if (this.usePlaceholder) {
-        newSpirit.spirit = placeholderSpirit;
-      }
-
-      spirits.push(newSpirit);
-    });
+    spirits.push(newSpirit);
 
     // Copy shops.
     const shops: Array<IShop> = [];
+    const iaps: Array<IIAP> = [];
     this.lastInstance?.shops?.forEach(shop => {
-      const iaps: Array<IIAP> = [];
       shop.iaps?.forEach(iap => {
         const clonedIap: IIAP = {
           guid: nanoid(10),
@@ -112,27 +104,29 @@ export class EditorEventInstanceComponent {
         if (iap.items?.length) { clonedIap.items = [...iap.items]; }
         iaps.push(clonedIap);
       });
-
-      const clonedShop: IShop = {
-        ...shop,
-        guid: nanoid(10),
-        iaps
-      };
-
-      if (this.usePlaceholder) {
-        clonedShop.type = 'Spirit';
-        clonedShop.spirit = placeholderSpirit;
-        delete clonedShop.name;
-      }
-
-      shops.push(clonedShop);
     });
+
+
+    const newShop: IShop = {
+      guid: nanoid(10),
+      type: 'Object',
+      name: 'Placeholder',
+      iaps
+    };
+    shops.push(newShop);
+
 
     this.instance = {
       guid: nanoid(10),
       date,
       endDate
     };
+
+    if (this.calendarLink.value) {
+      this.instance._calendar = {
+        href: this.calendarLink.value
+      };
+    }
 
     if (spirits.length) { this.instance.spirits = spirits; }
     if (shops.length) { this.instance.shops = shops; }
@@ -141,6 +135,22 @@ export class EditorEventInstanceComponent {
   copyInstance(): void {
     if (!this.instance) { return; }
 
+    const obj: any = {
+      guid: this.instance.guid,
+      date: this.instance.date!.toFormat('yyyy-MM-dd'),
+      endDate: this.instance.endDate!.toFormat('yyyy-MM-dd'),
+      spirits: this.instance.spirits?.map(s => s.guid),
+      shops: this.instance.shops?.map(s => s.guid)
+    };
+
+    if (this.isDraft) { obj.draft = true; }
+
+    const json = JSON.stringify(obj, null, 2);
+    navigator.clipboard.writeText(`,\n${json}`);
+  }
+
+  copyInstanceSpirits(): void {
+    if (!this.instance) { return; }
     const jSpirits = JSON.stringify(this.instance.spirits?.map(s => {
       return {
         guid: s.guid,
@@ -149,20 +159,7 @@ export class EditorEventInstanceComponent {
       };
     }), null, 2).replace(/\s+/g, ' ').replace('{', '\n    {').replace(/\}\,/g, '},\n   ').replace(']', '\n  ]');
 
-    const obj: any = {
-      guid: this.instance.guid,
-      date: this.instance.date!.toFormat('yyyy-MM-dd'),
-      endDate: this.instance.endDate!.toFormat('yyyy-MM-dd'),
-      spirits: 'REPLACE_SPIRITS',
-      shops: this.instance.shops?.map(s => s.guid)
-    };
-
-    if (this.isDraft) { obj.draft = true; }
-
-    let json = JSON.stringify(obj, null, 2);
-    json = json.replace('"REPLACE_SPIRITS"', jSpirits);
-
-    navigator.clipboard.writeText(`,\n${json}`);
+    navigator.clipboard.writeText(jSpirits);
   }
 
   copyShops(): void {
