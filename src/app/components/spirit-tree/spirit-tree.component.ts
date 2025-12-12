@@ -40,6 +40,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   @Input() highlightItem?: string | Array<string>;
   @Input() highlightNode?: string | Array<string>;
   @Input() enableControls = true;
+  @Input() enableNavigation = true;
   @Input() showNodeTooltips = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean | Array<string>;

@@ -1,7 +1,7 @@
 <div [attr.data-position]="position" [class.highlight]="highlight">
   @if (node.item) {
     <a class="item-container"
-      [routerLink]="link?.route" [queryParams]="link?.extras?.queryParams"
+      [routerLink]="enableNavigation ? link?.route : undefined" [queryParams]="link?.extras?.queryParams"
       [ngbTooltip]="showTooltips ? nodeHover : undefined" [placement]="tooltipPlacement" container="body">
       <app-item-icon [item]="node.item" [node]="node" [opaque]="hover || opaque" [glowType]="glowType" [subIcons]="['favourite', 'unlock', 'seasonPass']"
         (click)="nodeClick($event)" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)"></app-item-icon>

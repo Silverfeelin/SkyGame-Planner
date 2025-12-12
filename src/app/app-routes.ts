@@ -57,6 +57,7 @@ import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.compon
 import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
 import { MigrationOptimizerComponent } from './components/season/migration-optimizer/migration-optimizer.component';
 import { ShopCinemaComponent } from './components/shops/shop-cinema/shop-cinema.component';
+import { FriendsComponent } from './components/friends/friends.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -130,6 +131,7 @@ export const routes: Routes = [
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
           { path: 'pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
+          { path: 'friends', component: FriendsComponent, title: title('Friends') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
           { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
           { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },

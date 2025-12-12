@@ -68,6 +68,11 @@
         <mat-icon>shopping_cart</mat-icon>
         <span class="name">Shops</span>
       </a>
+      <!-- Friends -->
+      <a class="item" [routerLink]="'friends'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Friends'" placement="right" container="body">
+        <mat-icon>people</mat-icon>
+        <span class="name">Friends</span>
+      </a>
       <!-- Tools -->
       <a class="item" [routerLink]="'tools'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Tools'" placement="right" container="body">
         <mat-icon>build</mat-icon>
