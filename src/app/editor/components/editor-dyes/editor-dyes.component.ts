@@ -10,11 +10,14 @@ import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
 
 const fileNames = [
-  '/assets/game/dyes/Mischief_cattail.jpg',
-  '/assets/game/dyes/mask/Base_sleepy.jpg',
-  '/assets/game/dyes/hair-accessory/Mischief_catears.jpg',
-  '/assets/game/dyes/hair/Mischief_crowhat.jpg'
-];
+  'https://sky-planner.com/assets/game/dyes/shoes/Feast_legwarmers.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/Feast_snowmanfit.jpg',
+  'https://sky-planner.com/assets/game/dyes/mask/Base_sleepy.jpg',
+  'https://sky-planner.com/assets/game/dyes/hair-accessory/Feast_fluffyhat.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/2slots_Feast_babycape.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/Feast_babycape.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/Feast_snowflakescarf.webp'
+]
 
 @Component({
     selector: 'app-editor-dyes',
