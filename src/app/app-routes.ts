@@ -58,6 +58,7 @@ import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-trac
 import { MigrationOptimizerComponent } from './components/season/migration-optimizer/migration-optimizer.component';
 import { ShopCinemaComponent } from './components/shops/shop-cinema/shop-cinema.component';
 import { FriendsComponent } from './components/friends/friends.component';
+import { ShopWonderlandComponent } from './components/shops/shop-wonderland/shop-wonderland.component';
 
 const title = (title: string) => `${title} - Sky Planner`;
 
@@ -116,6 +117,7 @@ export const routes: Routes = [
           { path: 'shop/harmony', component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
           { path: 'shop/nesting', component: ShopNestingComponent, title: title('Nesting Workshop') },
           { path: 'shop/office', component: ShopOfficeComponent, title: title('Office') },
+          { path: 'shop/wonderland-cafe', component: ShopWonderlandComponent, title: title('Wonderland Cafe') },
           { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
           { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
