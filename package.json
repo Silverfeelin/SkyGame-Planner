@@ -43,7 +43,7 @@
     "nanoid": "^4.0.2",
     "panzoom": "^9.4.3",
     "rxjs": "~7.8.0",
-    "skygame-data": "~1.0.1",
+    "skygame-data": "~1.1.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
