@@ -14,35 +14,37 @@ import { RouterLink } from "@angular/router";
 import { ISpiritTree, ISeason, INode, ItemType } from 'skygame-data';
 
 @Component({
-    selector: 'app-migration-optimizer',
-    templateUrl: './migration-optimizer.component.html',
-    styleUrls: ['./migration-optimizer.component.less'],
+    selector: 'app-season-optimizer',
+    templateUrl: './season-optimizer.component.html',
+    styleUrls: ['./season-optimizer.component.less'],
     imports: [SpiritTreeComponent, OverlayComponent, ReactiveFormsModule, MatIcon, CheckboxComponent, RouterLink]
 })
-export class MigrationOptimizerComponent {
+export class SeasonOptimizerComponent {
   dataService = inject(DataService);
   storageService = inject(StorageService);
   currencyService = inject(CurrencyService);
 
-  trees = [
-    "ko9lr8M4J5", "zK7AFf0rvZ", "nCGzsegB0l", "iFANrbgSY4", "nrvSEyff0h"
-  ].map(id => this.dataService.guidMap.get(id) as ISpiritTree);
-  season = this.dataService.guidMap.get('wslfxJ5HZJ') as ISeason;
-  hasSeasonPass = signal(this.storageService.hasSeasonPass(this.season.guid));
+  season = DateHelper.getActive(this.dataService.seasonConfig.items);
+  trees = (this.season?.spirits.filter(s => s.type === 'Season').map(s => s.tree).filter(t => t?.tier) ?? []) as ISpiritTree[];
+  nodes = this.trees.flatMap(t => TreeHelper.getNodes(t)).filter(n => n) as INode[];
+  nodeGuids = new Set(this.nodes.map(n => n.guid));
+
+  hasSeasonPass = signal(!!this.season && this.storageService.hasSeasonPass(this.season.guid));
   hasDoneDailiesToday = false;
 
   want = signal<{ [guid: string]: INode }>({});
   wantNodeGuids = computed(() => Object.values(this.want()).map(n => n.guid));
 
+  // This is hardcoded and might change in future seasons.
   tierUnlockCost = [ 0, 40, 60, 80, 100 ];
   tierUnlockCostCumulative = [ 0, 40, 100, 180, 280 ];
 
   today = DateHelper.todaySky();
-  daysLeftSeason = DateHelper.daysBetween(this.today, this.season.endDate!);
+  daysLeftSeason = this.season ? DateHelper.daysBetween(this.today, this.season.endDate!) : 0;
   daysLeft = signal(this.daysLeftSeason);
   daysFriendshipLeft = computed(() => this.daysLeft() * 10);
 
-  candleControl = new FormControl(this.storageService.getCurrencies().seasonCurrencies[this.season.guid]?.candles || 0);
+  candleControl = new FormControl(this.storageService.getCurrencies().seasonCurrencies[this.season?.guid ?? '']?.candles || 0);
   candlesOwned = toSignal(this.candleControl.valueChanges, { initialValue: this.candleControl.value });
   candlesLeft = computed(() => this.hasSeasonPass() ? this.daysLeft() * 6  : this.daysLeft() * 5);
   candlesRequired = signal(0);
@@ -66,14 +68,15 @@ export class MigrationOptimizerComponent {
 
   constructor() {
     this.candleControl.valueChanges.subscribe(c => {
-      if (typeof c !== 'number' || isNaN(c) || c < 0) { return; }
+      if (!this.season || typeof c !== 'number' || isNaN(c) || c < 0) { return; }
       this.currencyService.setSeasonCurrency(this.season.guid, c);
     });
 
     const savedWantNodes = JSON.parse(this.storageService.getKey('migration.optimizer') || '[]') as string[];
     if (savedWantNodes.length > 0) {
+      const nodes = savedWantNodes.filter(guid => this.nodeGuids.has(guid));
       const mapped = Object.fromEntries(
-        savedWantNodes.map(guid => [guid, this.dataService.guidMap.get(guid) as INode])
+        nodes.map(guid => [guid, this.dataService.guidMap.get(guid) as INode])
       );
       this.want.set(mapped);
     }
@@ -197,6 +200,7 @@ export class MigrationOptimizerComponent {
   }
 
   toggleHaveSeasonPass(): void {
+    if (!this.season) { return; }
     this.hasSeasonPass.set(!this.hasSeasonPass());
     this.hasSeasonPass()
       ? this.storageService.addSeasonPasses(this.season.guid)
@@ -214,8 +218,8 @@ export class MigrationOptimizerComponent {
   calculate(): void {
     const wantNodeGuids = this.wantNodeGuids();
     const knapsackNodes: Array<INode> = [];
-    this.missingFriendshipTotals = [ 0, 0, 0, 0, 0 ];
-    this.missingFriendship = [ [], [], [], [], [] ];
+    this.missingFriendshipTotals = Array(this.trees.length).fill(0);
+    this.missingFriendship = Array(this.trees.length).fill([]).map(() => []);
 
     let candlesRequired = 0;
     this.trees.forEach((tree, iTree) => {

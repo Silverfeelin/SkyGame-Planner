@@ -55,7 +55,7 @@ import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.
 import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
 import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
 import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
-import { MigrationOptimizerComponent } from './components/season/migration-optimizer/migration-optimizer.component';
+import { SeasonOptimizerComponent } from './components/season/season-optimizer/season-optimizer.component';
 import { ShopCinemaComponent } from './components/shops/shop-cinema/shop-cinema.component';
 import { FriendsComponent } from './components/friends/friends.component';
 import { ShopWonderlandComponent } from './components/shops/shop-wonderland/shop-wonderland.component';
@@ -106,7 +106,8 @@ export const routes: Routes = [
           { path: 'area', component: AreasComponent, title: title('Areas') },
           { path: 'area/:guid', component: AreaComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
-          { path: 'season/migration-optimizer', component: MigrationOptimizerComponent, title: title('Migration Calculator') },
+          { path: 'season/migration-optimizer', redirectTo: 'season/optimizer' }, // old route
+          { path: 'season/optimizer', component: SeasonOptimizerComponent, title: title('Season Optimizer') },
           { path: 'season/:guid', component: SeasonComponent },
           { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
           { path: 'settings', component: SettingsComponent, title: title('Settings') },
