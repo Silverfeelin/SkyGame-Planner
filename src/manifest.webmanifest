@@ -55,5 +55,27 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Seasons",
+      "description": "Go to seasons",
+      "url": "/season"
+    },
+    {
+      "name": "Events",
+      "description": "Go to shops",
+      "url": "/event"
+    },
+    {
+      "name": "Realms",
+      "description": "Go to realms",
+      "url": "/realm"
+    },
+    {
+      "name": "Shops",
+      "description": "Go to shops",
+      "url": "/shop"
+    }
   ]
 }
