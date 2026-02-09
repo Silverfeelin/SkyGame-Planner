@@ -3,24 +3,26 @@
     <div class="sky-card mb">
       <div class="sky-card-body">
         <div class="container">
-          <h2>Sky Planner has moved to a new home!</h2>
-          <hr/>
-          <span class="h4">If you have saved any data without linking to a cloud storage account, please export your data on the settings page and import it in the new Sky Planner.</span>
-          <hr/>
-          <!-- Link to new site -->
-          @if (pagesRedirectUrl) {
-            <a class="h5" [href]="pagesRedirectUrl.href">
-              <mat-icon class="menu-icon">open_in_new</mat-icon>
-              <span class="menu-label">{{ pagesRedirectUrl.origin + pagesRedirectUrl.pathname }}</span>
-            </a>
-            <hr/>
-          }
-          <span>
-            For those wondering why the site moved:<br/>
-            It was recently brought to my (Silverfeelin's) attention by Laila that some users were not able to access the website.<br/>
-            The entire Cloudflare Pages domain is blocked in some countries, making the website unavailable to those users.<br/>
-            With the new domain name the website should be and stay available for everyone. Sorry for the inconvenience!
-          </span>
+          <h4 class="mb-0">
+            Oops. You're using an old link to the Sky Planner.<br/>
+            Please visit the official <a href="https://sky-planner.com/">https://sky-planner.com/</a>.
+          </h4>
+        </div>
+      </div>
+    </div>
+  }
+
+  @if (isSandbox) {
+    <div class="sky-card mb">
+      <div class="sky-card-body">
+        <div class="container">
+          <h4 class="mb-0">
+            You're on the sandbox version of the Sky Planner.<br/>
+          </h4>
+          <p>
+            This version supports loading unverified content from other users. This should only be used for testing purposes.<br/>
+            If you are simply trying to use the Sky Planner, please return to <a href="https://sky-planner.com/">https://sky-planner.com/</a>.
+          </p>
         </div>
       </div>
     </div>

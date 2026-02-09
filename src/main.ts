@@ -9,10 +9,14 @@ import { routes } from './app/app-routes';
 import { provideServiceWorker } from '@angular/service-worker';
 import { isDevMode } from '@angular/core';
 import { loadTheme } from './themes';
+import { loadDataUrl } from './data-url';
 // #endregion
 
 // Load theme.
 loadTheme();
+
+// Load custom data.
+loadDataUrl();
 
 addEventListener('beforeinstallprompt', evt => {
   evt.preventDefault();

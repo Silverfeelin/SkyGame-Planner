@@ -6,7 +6,7 @@ import { EventService } from './services/event.service';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { BroadcastService } from './services/broadcast.service';
-import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
 import { CanonicalService } from './services/canonical.service';
 import { OverlayComponent } from "./components/layout/overlay/overlay.component";
 import { KeyboardShortcutsComponent } from "./components/settings/keyboard-shortcuts/keyboard-shortcuts.component";
@@ -23,7 +23,7 @@ export class AppComponent {
   showDataLoss = false;
   showKeyboardShortcuts = false;
   isPagesDev = location.host === 'sky-planner.pages.dev'; // only target main deployment.
-  pagesRedirectUrl?: URL;
+  isSandbox = location.host === 'sandbox.sky-planner.com';
 
   constructor(
     private readonly _broadcastService: BroadcastService,
@@ -66,10 +66,6 @@ export class AppComponent {
       this.showDataLoss = true;
     });
 
-    if (this.isPagesDev) {
-      this.subscribePagesDev();
-    }
-
     (window as any).DateTime = DateTime;
   }
 
@@ -91,13 +87,5 @@ export class AppComponent {
     if (evt.key === '?') {
       this.showKeyboardShortcuts = !this.showKeyboardShortcuts;
     }
-  }
-
-  private subscribePagesDev(): void {
-    this.pagesRedirectUrl = new URL('https://sky-planner.com');
-    this._router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(e => {
-      this.pagesRedirectUrl = new URL('https://sky-planner.com');
-      this.pagesRedirectUrl.pathname = location.pathname;
-    });
   }
 }
