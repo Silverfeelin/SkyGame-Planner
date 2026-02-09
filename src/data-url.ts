@@ -5,7 +5,7 @@ import { environment } from './environments/environment';
  * Only functions when executed within the sandbox or locally.
  */
 export function loadDataUrl(): void {
-  const isSandbox = location.host === 'sandbox.sky-planner.com';
+  const isSandbox = location.host === 'sandbox.sky-planner.com' || location.host === 'localhost:4200';
   if (!isSandbox) { return; }
 
   const url = new URL(window.location.href);

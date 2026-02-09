@@ -59,8 +59,10 @@ export class DataService {
       return this._httpClient.get(`assets/data/${asset}`, { headers: { 'ngsw-bypass': '' }, responseType: 'text' });
     }
 
+    const useBypassHeaders = !environment.urls.everything.startsWith('http');
+    const headers = useBypassHeaders ? { 'ngsw-bypass': '' } : undefined;
     const $everything = this._httpClient.get(environment.urls.everything, {
-      headers: { 'ngsw-bypass': '' }, responseType: 'text'
+      headers, responseType: 'text'
     });
 
     return forkJoin({
