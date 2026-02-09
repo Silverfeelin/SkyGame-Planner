@@ -13,7 +13,7 @@ export function loadDataUrl(): void {
   if (!dataUrl) { return; }
 
   if (/\d+/g.test(dataUrl)) {
-    dataUrl = `https:/bucket.sky-planner.com/assets/${dataUrl}-everything.json`;
+    dataUrl = `https://bucket.sky-planner.com/assets/${dataUrl}-everything.json`;
     environment.urls.everything = dataUrl;
   }
 }
