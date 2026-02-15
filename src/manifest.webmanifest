@@ -64,18 +64,18 @@
     },
     {
       "name": "Events",
-      "description": "Go to shops",
+      "description": "Go to events",
       "url": "/event"
     },
     {
-      "name": "Realms",
-      "description": "Go to realms",
-      "url": "/realm"
+      "name": "Items",
+      "description": "Go to items",
+      "url": "/item"
     },
     {
-      "name": "Shops",
-      "description": "Go to shops",
-      "url": "/shop"
+      "name": "Spirits",
+      "description": "Go to spirits",
+      "url": "/spirits"
     }
   ]
 }
