@@ -120,7 +120,7 @@
         <div>
           Your current season candles:
           <input type="number" step="1" min="-999" max="999" [formControl]="candleControl" class="d-inline-block" style="width: 120px;"><br/>
-          You can get <b class="c-new">{{ candlesLeft() }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon> more during the season.<br/>
+          You can get <b class="c-new">{{ candlesLeft() }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon> more during the season (not including double light events).<br/>
           It will cost a total of <b class="c-old">{{ candlesRequired() }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>
           to buy the items you highlighted.<br/>
           If you don't miss any day you should end with
