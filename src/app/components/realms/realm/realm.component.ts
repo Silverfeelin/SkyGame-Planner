@@ -22,7 +22,7 @@ import { IRealm, ISpirit, ICost, ISpiritTree } from 'skygame-data';
     styleUrls: ['./realm.component.less'],
     providers: [MapInstanceService],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [WikiLinkComponent, RouterLink, SpiritTypeIconComponent, MatIcon, NgIf, RealmConstellationComponent, NgFor, SpiritTreeComponent, PercentagePipe]
+    imports: [WikiLinkComponent, RouterLink, SpiritTypeIconComponent, MatIcon, NgIf, RealmConstellationComponent, SpiritTreeComponent, PercentagePipe]
 })
 export class RealmComponent implements OnInit, OnDestroy {
   @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef;

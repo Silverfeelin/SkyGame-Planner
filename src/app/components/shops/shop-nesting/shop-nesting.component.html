@@ -10,8 +10,14 @@
 <div class="mt">
   <app-card [foldable]="true" [folded]="false" [title]="'Nesting Challenges'">
     <div class="sky-flex scroll-x">
-      @for (spirit of challengeSpirits; track spirit.guid) {
-        <app-spirit-tree [tree]="spirit.tree!" [name]="spirit.name"></app-spirit-tree>
+      @for (data of challengeSpirits; track data.spirit.guid) {
+        <app-spirit-tree [tree]="data.tree" [name]="data.spirit.name">
+          <div name>
+            <a [routerLink]="['/spirit', data.spirit.guid]" [queryParams]="{ highlightTree: data.tree.guid }">
+              {{ data.spirit.name }}
+            </a>
+          </div>
+        </app-spirit-tree>
       }
     </div>
   </app-card>

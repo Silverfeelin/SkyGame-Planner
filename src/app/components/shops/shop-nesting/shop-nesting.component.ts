@@ -4,7 +4,7 @@ import { CardComponent } from "../../layout/card/card.component";
 import { SpiritTreeComponent } from "../../spirit-tree/spirit-tree.component";
 import { WikiLinkComponent } from "../../util/wiki-link/wiki-link.component";
 import { ItemListComponent } from "../../item-list/item-list/item-list.component";
-import { ParamMap } from '@angular/router';
+import { ParamMap, RouterLink } from '@angular/router';
 import { nanoid } from 'nanoid';
 import { DateTime } from 'luxon';
 import { CostHelper } from '@app/helpers/cost-helper';
@@ -18,7 +18,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { INestingStorageData, nestingStorageKey } from './shop-nesting.interface';
 import { NgTemplateOutlet } from '@angular/common';
 import { DateHelper } from '@app/helpers/date-helper';
-import { ICost, IItem, ISpirit, IItemList, IItemListNode } from 'skygame-data';
+import { ICost, IItem, ISpirit, IItemList, IItemListNode, ISpiritTree } from 'skygame-data';
 
 interface IRotationItem extends ICost {
   /** Item guid */
@@ -116,13 +116,13 @@ const rotations: IRotations = [
 
 @Component({
     selector: 'app-shop-nesting',
-    imports: [CardComponent, SpiritTreeComponent, WikiLinkComponent, ItemListComponent, CostComponent, DateComponent, ItemIconComponent, NgTemplateOutlet],
+    imports: [CardComponent, SpiritTreeComponent, WikiLinkComponent, ItemListComponent, CostComponent, DateComponent, ItemIconComponent, NgTemplateOutlet, RouterLink],
     templateUrl: './shop-nesting.component.html',
     styleUrl: './shop-nesting.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopNestingComponent {
-  challengeSpirits: Array<ISpirit>;
+  challengeSpirits: Array<{ spirit: ISpirit, tree: ISpiritTree }> = [];
   workshopItemList: IItemList;
 
   highlightNode?: string;
@@ -147,7 +147,10 @@ export class ShopNestingComponent {
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.initializeRotations();
-    this.challengeSpirits = [ 'os6ryCdFZ5', 'Gp-hW_NCv_', 'IhAh5oTvF8' ].map(g => this._dataService.guidMap.get(g)!) as Array<ISpirit>;
+    this.challengeSpirits = [ 'os6ryCdFZ5', 'Gp-hW_NCv_', 'IhAh5oTvF8' ].map(g => {
+      const spirit = this._dataService.guidMap.get(g) as ISpirit;
+      return { spirit, tree: spirit.treeRevisions?.at(-1) || spirit.tree! };
+    });
     this.workshopItemList = _dataService.guidMap.get('AKNI67tVW-') as IItemList;
     this.initializeWorkshop();
     this.loadData();
