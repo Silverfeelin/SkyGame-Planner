@@ -30,7 +30,7 @@ export class RealmComponent implements OnInit, OnDestroy {
   realm!: IRealm;
 
   highlightTree?: string;
-  spirits: Array<ISpirit> = [];
+  spirits: Array<{ spirit: ISpirit, tree: ISpiritTree }> = [];
   spiritCount = 0;
   seasonSpiritCount = 0;
   seasonGuideCount = 0;
@@ -111,7 +111,7 @@ export class RealmComponent implements OnInit, OnDestroy {
     this.realm?.areas?.forEach(area => {
       area.spirits?.forEach(spirit => {
         if (spirit.type === 'Regular' || spirit.type === 'Elder') {
-          this.spirits.push(spirit);
+          this.spirits.push({ spirit, tree: spirit.treeRevisions?.at(-1) || spirit.tree! });
           this.spiritCount++;
         } else if (spirit.type === 'Season') {
           this.seasonSpiritCount++;
@@ -122,7 +122,7 @@ export class RealmComponent implements OnInit, OnDestroy {
     });
 
     if (this.realm.elder) {
-      this.spirits.push(this.realm.elder);
+      this.spirits.push({ spirit: this.realm.elder, tree: this.realm.elder.treeRevisions?.at(-1) || this.realm.elder.tree! });
     }
 
     this.calculateTierCosts();
@@ -134,9 +134,9 @@ export class RealmComponent implements OnInit, OnDestroy {
     this.tier1Cost = {}; this.tier1Spent = {}; this.tier1Remaining = {};
     this.tier2Cost = {}; this.tier2Spent = {}; this.tier2Remaining = {};
 
-    this.spirits.forEach(spirit => {
-      if (spirit.type === 'Elder') { return; }
-      this.addTierCosts(spirit.tree!);
+    this.spirits.forEach(data => {
+      if (data.spirit.type === 'Elder') { return; }
+      this.addTierCosts(data.tree);
     });
 
     this.tier1Pct = CostHelper.percentage(this.tier1Spent, this.tier1Cost);
