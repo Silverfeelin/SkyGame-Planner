@@ -4,19 +4,23 @@ import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { ItemIconComponent } from '../item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgTemplateOutlet, NgFor } from '@angular/common';
 import { IItem, ItemType, INode, IIAP, IItemListNode } from 'skygame-data';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
     selector: 'app-item-unlock',
     templateUrl: './item-unlock.component.html',
     styleUrls: ['./item-unlock.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgTemplateOutlet, NgFor, NgbTooltip, ItemIconComponent]
+    imports: [ReactiveFormsModule, ItemIconComponent]
 })
 export class ItemUnlockComponent {
+  inputColumns = new FormControl(5);
+  columns = toSignal(this.inputColumns.valueChanges, { initialValue: this.inputColumns.value });
+
   typeItems: { [key: string]: Array<IItem> } = {};
+  previewItems: Array<IItem> = [];
 
   constructor(
     private readonly _dataService: DataService,
@@ -24,6 +28,7 @@ export class ItemUnlockComponent {
     private readonly _storageService: StorageService
   ) {
     this.initializeItems();
+    this.previewItems = this.typeItems[ItemType.Outfit].slice(0, 20);
   }
 
   toggleItem(item: IItem, unlock?: boolean): void {

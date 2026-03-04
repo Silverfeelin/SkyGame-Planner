@@ -1,9 +1,8 @@
-.items-grid {
-  display: flex;
-  flex-wrap: wrap;
-  grid-template-columns: repeat(6, 1fr);
+.item-grid {
+  display: grid;
   margin-top: var(--padding-content-half);
   gap: var(--padding-content-half);
+
 }
 
 .item {
@@ -12,7 +11,9 @@
   vertical-align: top;
   cursor: pointer;
   background-color: var(--color-background);
+  border: 1px solid #888;
   border-radius: var(--border-radius);
+  padding: 2px;
 }
 
 .item-inner {

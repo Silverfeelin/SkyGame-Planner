@@ -1,16 +1,52 @@
 <div class="sky-card">
   <div class="sky-card-header">
-    <h1 class="h2 mb-0">Items</h1>
+    <h1 class="h2 mb-0">Quick start</h1>
   </div>
   <div class="sky-card-body">
     <div class="container">
       <p>
-        Unlock items you own by clicking on them.<br/>
-        For limited items the last appearance of the item will be unlocked. Because some items come in bundles this may unlock multiple items at once.
+        This page will help you get started with the Sky Planner. It is recommended to have the game open on another device and keep it next to you.
+      </p>
+      <p>
+        We'll go through your closets to figure out what items you have.<br/>
+        To get started, go to the outfit closet and check how many columns of outfits your game displays.<br/>
+        This will make it easier to compare your closet to the website.
+      </p>
+      <p>
+        Columns:
+        <input style="display: inline-block; width:200px;" type="number" min="1" max="20" step="1" [formControl]="inputColumns"/>
+      </p>
+      Closet preview:
+      <div class="item-grid" [style.grid-template-columns]="'repeat(' + columns() + ', 68px)'">
+        @for (item of previewItems; track $index) {
+          <div class="item">
+            <app-item-icon class="v-top" [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['season']"></app-item-icon>
+          </div>
+        }
+      </div>
+      <hr/>
+      <p>
+        <button type="button" class="">Continue</button>
       </p>
     </div>
+    <div class="container mt">
+      Now, click on the items you do NOT own below to remove them from this list.<br/>
+      Just keep clicking until the website lines up with what you see in-game.<br/>
+      If you make a mistake, press the Undo button to get the item back.
+    </div>
     <hr/>
-    <div class="items-grids">
+    <div class="item-grid" [style.grid-template-columns]="'repeat(' + columns() + ', 68px)'">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+
+    <!-- <div class="items-grids">
       <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Outfit'}"></ng-container>
       <hr/>
       <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Shoes'}"></ng-container>
@@ -44,11 +80,11 @@
       <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Call'}"></ng-container>
       <hr/>
       <ng-container [ngTemplateOutlet]="items" [ngTemplateOutletContext]="{type: 'Music'}"></ng-container>
-    </div>
+    </div> -->
   </div>
 </div>
 
-<ng-template #items let-type="type">
+<!-- <ng-template #items let-type="type">
   <div class="">
     <div class="button-group">
       <button type="button" (click)="unlockAll(type)">
@@ -70,4 +106,4 @@
       </div>
     </ng-container>
   </div>
-</ng-template>
+</ng-template> -->
