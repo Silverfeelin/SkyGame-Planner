@@ -1,3 +1,10 @@
+.unlock-step {
+  display: inline-block;
+  position: absolute;
+  top: var(--padding-content);
+  right: var(--padding-content);
+}
+
 .item-grid {
   display: grid;
   margin-top: var(--padding-content-half);
@@ -9,17 +16,17 @@
   position: relative;
   display: inline-block;
   vertical-align: top;
-  cursor: pointer;
   background-color: var(--color-background);
   border: 1px solid #888;
   border-radius: var(--border-radius);
   padding: 2px;
 }
 
-.item-inner {
-  position: relative;
-}
+.item-visible { background: #4d3000; }
+.item-locked { background: #5a1818; }
+.item-unlocked { background: #0c370c; }
 
-.unlocked {
-  background: var(--color-unlock-check-background);
+.music-locked {
+  color: red;
+  text-decoration: line-through;
 }

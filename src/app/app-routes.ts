@@ -24,7 +24,7 @@ import { CollageComponent } from './components/outfit-request/collage/collage.co
 import { ClosetComponent } from './components/outfit-request/closet/closet.component';
 import { ToolsComponent } from './components/tools/tools.component';
 import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
-import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
+import { canDeactivateItemUnlock, ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
 import { ItemComponent } from './components/items/item/item.component';
 import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
 import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
@@ -98,7 +98,7 @@ export const routes: Routes = [
           { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
           { path: 'item/heart', component: ItemHeartsComponent, title: title('Hearts') },
           { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
-          { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
+          { path: 'item/unlock', component: ItemUnlockComponent, canDeactivate: [canDeactivateItemUnlock], title: title('Items') },
           { path: 'item/unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Item unlock calculator') },
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
