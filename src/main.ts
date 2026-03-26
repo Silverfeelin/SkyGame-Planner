@@ -4,7 +4,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 
 // #region Extensions
 import './app/extensions/array';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app/app-routes';
 import { provideServiceWorker } from '@angular/service-worker';
 import { isDevMode } from '@angular/core';
@@ -25,7 +25,7 @@ addEventListener('beforeinstallprompt', evt => {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes, withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })),
     provideHttpClient(withInterceptorsFromDi()),
     provideServiceWorker('ngsw-worker.js', {
       enabled: !isDevMode(),

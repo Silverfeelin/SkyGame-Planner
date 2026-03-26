@@ -20,6 +20,7 @@ import { ItemUnlockCalculatorSeasonsComponent } from "./item-unlock-calculator-s
 import { Router } from '@angular/router';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { IItem, ICost, IItemListNode, INode, IIAP, IEventInstance, ITravelingSpirit, ItemType, ISpiritTree, ISpirit, IRevisedSpiritTree, ISeason, IEvent, ISpiritTreeTier, IItemSource, IItemSourceNode, IItemSourceListNode, IItemSourceIap, ISpecialVisitSpirit } from 'skygame-data';
+import { ItemUnlockCalculatorFavouritesComponent } from "./item-unlock-calculator-favourites/item-unlock-calculator-favourites.component";
 
 interface IItemResult {
   item: IItem;
@@ -44,11 +45,12 @@ interface IItemResult {
 @Component({
     selector: 'app-item-unlock-calculator',
     imports: [
-        CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe,
-        LowerCasePipe, ItemsComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent,
-        ItemUnlockCalculatorEventsComponent, MatIcon,
-        ItemUnlockCalculatorSeasonsComponent
-    ],
+    CardComponent, ItemIconComponent, NgbTooltip, CostComponent, ItemTypePipe, DecimalPipe,
+    LowerCasePipe, ItemsComponent, SpiritTreeComponent, ItemUnlockCalculatorSpiritsComponent,
+    ItemUnlockCalculatorEventsComponent, MatIcon,
+    ItemUnlockCalculatorSeasonsComponent,
+    ItemUnlockCalculatorFavouritesComponent
+],
     templateUrl: './item-unlock-calculator.component.html',
     styleUrl: './item-unlock-calculator.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -71,6 +73,7 @@ export class ItemUnlockCalculatorComponent {
   ];
   itemTypeSet = new Set(this.itemTypes);
 
+  showAddFavourites = false;
   showAddSpirits = false;
   showAddSeasons = false;
   showAddEvents = false;
@@ -175,6 +178,16 @@ export class ItemUnlockCalculatorComponent {
     const err = this.tryAddItem(item);
     if (err) { alert(err); }
     else { this.calculate(); }
+  }
+
+  onItemsClicked(events: Array<ItemClickEvent>) {
+    const errors: Array<string> = [];
+    events.filter(e => !this.itemSet.has(e.item)).forEach(e => {
+      const err = this.tryAddItem(e.item);
+      if (err) { errors.push(`${e.item.name}: ${err}`); }
+    });
+
+    if (errors.length) { alert(errors.join('\n')); }
   }
 
   onItemsChanged(items: Array<IItem>): void {

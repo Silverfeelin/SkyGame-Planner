@@ -273,7 +273,7 @@
 </div>
 
 <ng-template #templateSelection let-wrap="wrap" let-items="items" let-warn="warn" let-isResult="isResult">
-  <div class="selection-icons scroll-x" [class.flex-wrap]="wrap">
+  <div class="selection-icons" [class.flex-wrap]="wrap">
     <ng-container *ngFor="let type of selectionTypes">
       <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{ item: items[type], type, warn: warn && requiredParams[type], isResult }"></ng-container>
     </ng-container>
@@ -284,7 +284,7 @@
       [class.selected]="!isResult && item" [class.warn]="warn && !item" [class.no-point]="isResult"
       [ngbTooltip]="templateSelectionHover" container="body"
     >
-      <app-item-icon *ngIf="item" [item]="item" [size]="'auto'" class="selection-icon-img" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+      <app-item-icon *ngIf="item" [item]="item" [size]="'default'" class="selection-icon-img" [opaque]="true" [hoverGlow]="false"></app-item-icon>
       <mat-icon *ngIf="!item" [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
     </div>
     <!-- Tooltip -->

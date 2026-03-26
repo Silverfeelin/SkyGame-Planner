@@ -1,0 +1,13 @@
+<app-card [title]="'Add favourites'" [foldable]="true" [folded]="false" (beforeFold)="onBeforeFold($event)">
+  <div class="container">
+    Select an item from your favourites to add it to the calculator. Only items you don't already have are displayed below.
+    <div class="mt"><button type="button" (click)="addAll($event)">Add all</button></div>
+  </div>
+  <div class="mt sky-flex flex-wrap">
+    @for (item of items; track item.guid) {
+      <div class="item-icon point" [ngbTooltip]="item.name" container="body" (click)="onItemSelected($event, item)">
+        <app-item-icon [item]="item" [opaque]="true"></app-item-icon>
+      </div>
+    }
+  </div>
+</app-card>
