@@ -1,44 +1,47 @@
 <div class="container p-rel">
-  <h1 class="mb-0">Quick start</h1>
-  <div class="c-accent unlock-step">Step {{step()}}</div>
-  <hr/>
   @switch(step()) {
     <!-- Step 1: Setup -->
     @case (1) {
-        <p>
-          This page will help you get add your items to the Sky Planner.<br/>
-          Keep in mind that nothing is saved until the final step.
-        </p>
-        <p>When using this page, it is recommended to first:</p>
-        <ul>
-          <li>Open this page on a larger screen, a computer is preferred. Have the game open to view your in-game closets side by side.</li>
-          <li>Go to the <a class="text-link" [routerLink]="'/storage'">Storage</a> page and connect to cloud storage so you won't lose your data and can access it across devices.</li>
-          <li>Not your first time on the website? Go to the <a class="text-link" [routerLink]="'/settings'">Settings</a> page and export your data as a backup.</li>
-        </ul>
-        <hr/>
-        <p>
-          Go to the outfit closet and check how many columns of outfits your game displays.<br/>
-          Enter it below to make comparing easier. Then press Continue at the bottom of the page.
-        </p>
-        <p>
-          Columns:
-          <input style="display: inline-block; width:200px;" type="number" min="1" max="20" step="1" [formControl]="inputColumns"/>
-        </p>
-        Preview:
-        <div class="item-grid scroll-x" [style.grid-template-columns]="'repeat(' + columns() + ', 68px)'">
-          @for (item of previewItems(); track item.guid) {
-            <div class="item">
-              <app-item-icon class="v-top" [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['season']"></app-item-icon>
-            </div>
-          }
-        </div>
-        <hr/>
-        <p>
-          <button type="button" class="" (click)="nextStep()">Continue</button>
-        </p>
+      <h1 class="mb-0">Quick start</h1>
+      <div class="c-accent unlock-step">Step {{step()}}</div>
+      <hr/>
+      <p>
+        This page will help you get add your items to the Sky Planner.<br/>
+        Keep in mind that nothing is saved until the final step.
+      </p>
+      <p>When using this page, it is recommended to first:</p>
+      <ul>
+        <li>Open this page on a larger screen, a computer is preferred. Have the game open to view your in-game closets side by side.</li>
+        <li>Go to the <a class="text-link" [routerLink]="'/storage'">Storage</a> page and connect to cloud storage so you won't lose your data and can access it across devices.</li>
+        <li>Not your first time on the website? Go to the <a class="text-link" [routerLink]="'/settings'">Settings</a> page and export your data as a backup.</li>
+      </ul>
+      <hr/>
+      <p>
+        Go to the outfit closet and check how many columns of outfits your game displays.<br/>
+        Enter it below to make comparing easier. Then press Continue at the bottom of the page.
+      </p>
+      <p>
+        Columns:
+        <input style="display: inline-block; width:200px;" type="number" min="1" max="20" step="1" [formControl]="inputColumns"/>
+      </p>
+      Preview:
+      <div class="item-grid scroll-x" [style.grid-template-columns]="'repeat(' + columns() + ', 68px)'">
+        @for (item of previewItems(); track item.guid) {
+          <div class="item">
+            <app-item-icon class="v-top" [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['season']"></app-item-icon>
+          </div>
+        }
+      </div>
+      <hr/>
+      <p>
+        <button type="button" class="" (click)="nextStep()">Continue</button>
+      </p>
     }
     <!-- Step 2: Closets -->
     @case (2) {
+      <h1 class="mb-0">Quick start - Closets</h1>
+      <div class="c-accent unlock-step">Step {{step()}}</div>
+      <hr/>
       <div>
         Click on the items to add or remove them from your collection. The closet on the right side will show the items you have.<br/>
         Keep clicking on items until the right side matches your in-game closet. Do this for all of your closets and then press Continue at the bottom of the page.<br/>
@@ -49,14 +52,14 @@
       <app-item-type-selector [showTypes]="itemTypes" [type]="itemType()" (typeChanged)="setItemType($event)"></app-item-type-selector>
       <hr/>
       <div class="sky-flex flex-wrap">
-        <button type="button" (click)="markAllLocked()">Remove all</button>
         <button type="button" (click)="markAllUnlocked()">Add all</button>
+        <button type="button" (click)="markAllLocked()">Remove all</button>
       </div>
       <hr/>
       <div class="sky-flex flex-nowrap flex-align-start scroll-x">
         <div class="item-grid" [style.grid-template-columns]="'repeat(' + columns() + ', 68px)'">
           @for (item of items(); track item.guid) {
-            <div class="item point" (click)="toggleItem(item, $event); saveCache();"
+            <div class="item point" (click)="toggleItem(item, $event); saveCache();" [ngbTooltip]="item.name" container="body"
               [class.item-unlocked]="unlocked[item.guid]" [class.item-visible]="visible[item.guid]" [class.item-locked]="!unlocked[item.guid]">
               <app-item-icon class="v-top" [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['season']"></app-item-icon>
             </div>
@@ -65,7 +68,7 @@
         <div style="width: 20px;"></div>
         <div class="item-grid" [style.grid-template-columns]="'repeat(' + columns() + ', 68px)'">
           @for (item of items(); track item.guid) {
-            <div class="item point" (click)="toggleItem(item, $event); saveCache();"
+            <div class="item point" (click)="toggleItem(item, $event); saveCache();" [ngbTooltip]="item.name" container="body"
               [class.item-unlocked]="unlocked[item.guid]" [class.item-visible]="visible[item.guid]" [hidden]="!unlocked[item.guid] && !visible[item.guid]">
               <app-item-icon class="v-top" [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['season']"></app-item-icon>
             </div>
@@ -83,26 +86,69 @@
     }
     <!-- Step 3: Music -->
     @case (3) {
+      <h1 class="mb-0">Quick start - Music</h1>
+      <div class="c-accent unlock-step">Step {{step()}}</div>
+      <hr/>
       <div>
         Now, check your music sheets by using an instrument and opening the music sheet menu.<br/>
         Click on sheets below to remove them from your collection.
       </div>
       <hr/>
       <div class="sky-flex flex-wrap">
-        <button type="button" (click)="markAllMusicLocked()">Remove all</button>
         <button type="button" (click)="markAllMusicUnlocked()">Add all</button>
+        <button type="button" (click)="markAllMusicLocked()">Remove all</button>
       </div>
       <hr/>
       @for (item of musicItems; track item.guid) {
-        <div class="point" (click)="toggleMusic(item)" [class.music-locked]="!musicUnlocked[item.guid]">
-          <span>{{ item.name }}</span>
-          @if (item.season?.iconUrl) { <img [src]="item.season!.iconUrl" style="width:24px;height:24px;vertical-align:top;"/> }
+        <div>
+          <div class="d-inline-block point" (click)="toggleMusic(item)" [class.music-locked]="!musicUnlocked[item.guid]">
+            <span>{{ item.name }}</span>
+            @if (item.season?.iconUrl) { <img [src]="item.season!.iconUrl" style="width:24px;height:24px;vertical-align:top;"/> }
+          </div>
         </div>
       }
       <hr/>
       <div class="sky-flex flex-wrap">
         <button type="button" class="button-danger" (click)="previousStep()">Back</button>
         <button type="button" (click)="nextStep()">Next step</button>
+      </div>
+    }
+    <!-- Step 4: Summary -->
+    @case (4) {
+      <h1 class="mb-0">Quick start - Summary</h1>
+      <div class="c-accent unlock-step">Step {{step()}}</div>
+      <hr/>
+      <div>
+        <p>
+          Below is a summary of your items.
+          If you are satisfied with your selection, press Confirm at the bottom of the page.
+          This will unlock the items you see on this page and lock the items you don't see!
+          <br/>
+          Again, make sure you have made a backup of your data if this is not your first time on the website.
+        </p>
+      </div>
+      <hr/>
+      <div>
+        @for (itemType of summaryData().itemTypes; track $index) {
+          @if (itemType.items.length > 0) {
+            <h4 class="mt">{{ itemType.type | itemType:true }}</h4>
+            <div class="sky-flex flex-wrap">
+              @for (item of itemType.items; track item.guid) {
+                <div class="item">
+                  <app-item-icon
+                    class="v-top" [item]="item" [opaque]="true" [hoverGlow]="false" [subIcons]="['season']"
+                    [ngbTooltip]="item.name" container="body">
+                  </app-item-icon>
+                </div>
+              }
+            </div>
+          }
+        }
+      </div>
+      <hr/>
+      <div class="sky-flex flex-wrap">
+        <button type="button" class="button-danger" (click)="previousStep()">Back</button>
+        <button type="button" (click)="submit()">Confirm</button>
       </div>
     }
   }

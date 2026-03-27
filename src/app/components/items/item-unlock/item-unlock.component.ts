@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, Signal, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, isDevMode, Signal, signal, WritableSignal } from '@angular/core';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
@@ -10,6 +10,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { CanDeactivateFn, RouterLink } from "@angular/router";
 import { ItemTypeSelectorComponent } from '../item-type-selector/item-type-selector.component';
 import { ItemTypePipe } from "../../../pipes/item-type.pipe";
+import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 
 export const canDeactivateItemUnlock: CanDeactivateFn<ItemUnlockComponent> = () => {
   return confirm('Are you sure you want to leave Quick Start without applying any changes?');
@@ -20,7 +21,7 @@ export const canDeactivateItemUnlock: CanDeactivateFn<ItemUnlockComponent> = () 
     templateUrl: './item-unlock.component.html',
     styleUrls: ['./item-unlock.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [ReactiveFormsModule, ItemIconComponent, RouterLink, ItemTypeSelectorComponent, ItemTypePipe]
+    imports: [ReactiveFormsModule, ItemIconComponent, RouterLink, ItemTypeSelectorComponent, ItemTypePipe, NgbTooltip]
 })
 export class ItemUnlockComponent {
   inputColumns = new FormControl(6);
@@ -58,12 +59,19 @@ export class ItemUnlockComponent {
   musicItems = ItemHelper.sortItems(this._dataService.itemConfig.items.filter(i => i.type === ItemType.Music));
   musicUnlocked: { [guid: string]: IItem } = {};
 
+  summaryData: WritableSignal<{
+    itemTypes: Array<{ type: ItemType, items: Array<IItem> }>
+  }> = signal({
+    itemTypes: []
+  });
+
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event: Event): void {
     this.saveCache();
-    event.preventDefault();
+    if (!isDevMode()) {
+      event.preventDefault();
+    }
   }
-
 
   private _itemCache = new Map<ItemType, Array<IItem>>();
 
@@ -129,11 +137,14 @@ export class ItemUnlockComponent {
     }
   }
 
+  submit(): void {
+
+  }
+
   previousStep(): void {
-    switch (this.step()) {
-      case 2: return this.setStep(1);
-      case 3: return this.setStep(2);
-    }
+    const step = this.step();
+    if (step <= 1) { return; }
+    this.setStep(step - 1);
   }
 
   nextStep(): void {
@@ -142,16 +153,40 @@ export class ItemUnlockComponent {
       case 2:
         if (!confirm('Have you finished all of your closets?')) { return; }
         return this.setStep(3);
+      case 3: return this.setStep(4);
     }
   }
 
   private setStep(step: number): void {
     this.step.set(step);
     this.scrollTop();
+
+    switch (step) {
+      case 4: this.updateSummaryData(); break;
+    }
   }
 
+  private updateSummaryData(): void {
+    const typeMap = new Map<ItemType, Array<IItem>>();
+    this.itemTypes.forEach(type => { typeMap.set(type, []); });
+    typeMap.set(ItemType.Music, []);
+
+    const add = (item: IItem) => {
+      const items = typeMap.get(item.type);
+      if (items) { items.push(item); }
+    };
+
+    Object.values(this.unlocked).forEach(add);
+    Object.values(this.musicUnlocked).forEach(add);
+
+    this.summaryData.set({
+      itemTypes: Array.from(typeMap.entries()).map(([type, items]) => ({ type, items }))
+    });
+  }
+
+
   scrollTop(): void {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   setItemType(type: ItemType): void {
@@ -174,6 +209,7 @@ export class ItemUnlockComponent {
   saveCache(): void {
     try {
       sessionStorage.setItem('item-unlock.unlocked', JSON.stringify(Object.keys(this.unlocked)));
+      sessionStorage.setItem('item-unlock.music', JSON.stringify(Object.keys(this.musicUnlocked)));
       sessionStorage.setItem('item-unlock.visible', JSON.stringify(Object.keys(this.visible)));
     } catch { /**/ }
   }
@@ -182,20 +218,23 @@ export class ItemUnlockComponent {
     try {
       const cachedUnlocked = sessionStorage.getItem('item-unlock.unlocked') || '[]';
       const cachedVisible = sessionStorage.getItem('item-unlock.visible') || '[]';
+      const cachedMusic = sessionStorage.getItem('item-unlock.music') || '[]';
+
+      const addParsed = (json: string, target: { [guid: string]: IItem }) => {
+        JSON.parse(json).forEach((guid: string) => {
+          if (typeof guid !== 'string') { return; }
+          const item = this._dataService.guidMap.get(guid) as IItem | undefined;
+          if (item) { target[guid] = item; }
+        });
+      };
 
       this.unlocked = {};
-      JSON.parse(cachedUnlocked).forEach((guid: string) => {
-        if (typeof guid !== 'string') { return; }
-        const item = this._dataService.guidMap.get(guid) as IItem | undefined;
-        if (item) { this.unlocked[guid] = item; }
-      });
-
       this.visible = {};
-      JSON.parse(cachedVisible).forEach((guid: string) => {
-        if (typeof guid !== 'string') { return; }
-        const item = this._dataService.guidMap.get(guid) as IItem | undefined;
-        if (item) { this.visible[guid] = item; }
-      });
+      this.musicUnlocked = {};
+
+      addParsed(cachedUnlocked, this.unlocked);
+      addParsed(cachedVisible, this.visible);
+      addParsed(cachedMusic, this.musicUnlocked);
     } catch { /**/ }
   }
 
