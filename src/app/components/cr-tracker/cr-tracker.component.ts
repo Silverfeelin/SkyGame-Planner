@@ -11,6 +11,7 @@ import { HostListener } from '@angular/core';
 import { OverlayComponent } from "../layout/overlay/overlay.component";
 import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.service';
 import { DateHelper } from '@app/helpers/date-helper';
+import { environment } from 'src/environments/environment';
 
 interface ICandlesData {
   items: Array<ICandleArea>;
@@ -136,7 +137,7 @@ export class CrTrackerComponent implements AfterViewInit {
 
   constructor() {
     disableKeyboardShortcutsUntilDestroyed();
-    this.http.get('/assets/skygame-data/candles.json', { responseType: 'text' }).subscribe((data: string) => {
+    this.http.get(environment.urls.candles, { responseType: 'text' }).subscribe((data: string) => {
       const parsed = jsoncParse(data);
       this.data = parsed;
 
