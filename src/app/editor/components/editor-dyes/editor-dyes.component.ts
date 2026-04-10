@@ -10,14 +10,27 @@ import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
 
 const fileNames = [
-  'https://sky-planner.com/assets/game/dyes/shoes/Feast_legwarmers.jpg',
-  'https://sky-planner.com/assets/game/dyes/outfit/Feast_snowmanfit.jpg',
+  'https://sky-planner.com/assets/game/dyes/Carnival_jugglerruffle.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/2slots_Carnival_dancerpants.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/2slots_Carnival_stuntpants.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/Carnival_dancerpants.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/Carnival_directorpants.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/Carnival_jugglerpants.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/Carnival_stuntpants.jpg',
+  'https://sky-planner.com/assets/game/dyes/outfit/Treasure_fempants.jpg',
   'https://sky-planner.com/assets/game/dyes/mask/Base_sleepy.jpg',
-  'https://sky-planner.com/assets/game/dyes/hair-accessory/Feast_fluffyhat.jpg',
-  'https://sky-planner.com/assets/game/dyes/cape/2slots_Feast_babycape.jpg',
-  'https://sky-planner.com/assets/game/dyes/cape/Feast_babycape.jpg',
-  'https://sky-planner.com/assets/game/dyes/cape/Feast_snowflakescarf.webp'
-]
+  'https://sky-planner.com/assets/game/dyes/mask/Carnival_dancermask.jpg',
+  'https://sky-planner.com/assets/game/dyes/mask/Carnival_jugglermask.jpg',
+  'https://sky-planner.com/assets/game/dyes/hair-accessory/Carnival_stuntgoggles.jpg',
+  'https://sky-planner.com/assets/game/dyes/hair-accessory/Treasure_hat.jpg',
+  'https://sky-planner.com/assets/game/dyes/hair/Carnival_stunthat.jpg',
+  'https://sky-planner.com/assets/game/dyes/hair/Treasure_bandannahair.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/2slots_Treasure_coincape.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/Carnival_dancercape.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/Carnival_stuntcape.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/Carnival_ultcape.jpg',
+  'https://sky-planner.com/assets/game/dyes/cape/Treasure_coincape.jpg'
+];
 
 @Component({
     selector: 'app-editor-dyes',
