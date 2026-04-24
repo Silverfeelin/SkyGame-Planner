@@ -67,7 +67,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
       },
       options: {
         maintainAspectRatio: false,
-        responsive: true,
+        responsive: false,
         indexAxis: 'y',
         plugins:{
           legend: {
