@@ -67,7 +67,8 @@ export class GraphSpiritsComponent implements AfterViewInit {
       },
       options: {
         maintainAspectRatio: false,
-        responsive: false,
+        responsive: true,
+        indexAxis: 'y',
         plugins:{
           legend: {
             position: 'top',
@@ -81,6 +82,11 @@ export class GraphSpiritsComponent implements AfterViewInit {
         },
         scales: {
           x: {
+            position: 'top',
+            beginAtZero: true,
+            max: 250
+          },
+          y: {
             ticks: {
               color: ctx => {
                 const isSeasonLabel = typeof ctx.tick.label === 'string' && ctx.tick.label.startsWith('Season');
@@ -91,13 +97,8 @@ export class GraphSpiritsComponent implements AfterViewInit {
                   const isSeasonLabel = typeof ctx.tick.label === 'string' && ctx.tick.label.startsWith('Season');
                   return isSeasonLabel ? 'normal' : 'lighter';
                 }
-              },
-              maxRotation: 90, minRotation: 90
+              }
             }
-          },
-          y: {
-            beginAtZero: true,
-            max: 250
           }
         }
       }
@@ -209,7 +210,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
     };
     this.chartReturn.data.labels = returnLabels;
     const returnScales = this.chartReturn.options.scales! as any;
-    returnScales.y.max = Math.ceil((returnMaxDays + 1) / 10) * 10;
+    returnScales.x.max = Math.ceil((returnMaxDays + 1) / 10) * 10;
     this.chartReturn.update();
 
     // Absence chart
@@ -222,7 +223,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
     (this.chartAbsence.data.datasets[0] as any).backgroundColor = absenceColors;
     this.chartAbsence.data.labels = absenceLabels;
     const absenceScales = this.chartAbsence.options.scales! as any;
-    absenceScales.y.max = Math.ceil((absenceMaxDays + 1) / 10) * 10;
+    absenceScales.x.max = Math.ceil((absenceMaxDays + 1) / 10) * 10;
     this.chartAbsence.update();
 
     // Cost chart
@@ -239,7 +240,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
     });
     this.chartCost.data.labels = costLabels;
     const costScales = this.chartCost.options.scales! as any;
-    costScales.y.max = Math.ceil((costMax + 1) / 100) * 100;
+    costScales.x.max = Math.ceil((costMax + 1) / 100) * 100;
     this.chartCost.update();
 
     setTimeout(() => {
