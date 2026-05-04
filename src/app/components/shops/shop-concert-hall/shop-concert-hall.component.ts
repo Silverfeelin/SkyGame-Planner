@@ -25,7 +25,7 @@ export class ShopConcertHallComponent {
     _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
-    this.tree = this._dataService.guidMap.get('4uhy67a14a') as ISpiritTree;
+    this.tree = this._dataService.guidMap.get('g3xQG0GfCH') as ISpiritTree;
   }
 
   onQueryChanged(p: ParamMap): void {
