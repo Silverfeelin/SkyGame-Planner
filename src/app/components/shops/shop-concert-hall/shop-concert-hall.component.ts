@@ -5,7 +5,7 @@ import { SpiritTreeComponent } from '@app/components/spirit-tree/spirit-tree.com
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
-import { ISpiritTree, IIAP } from 'skygame-data';
+import { ISpiritTree, IIAP, ISpirit } from 'skygame-data';
 
 @Component({
     selector: 'app-shop-concert-hall',
@@ -25,7 +25,9 @@ export class ShopConcertHallComponent {
     _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
-    this.tree = this._dataService.guidMap.get('g3xQG0GfCH') as ISpiritTree;
+    const spirit = this._dataService.guidMap.get('kavln3oyNl') as ISpirit;
+    const tree = spirit.treeRevisions?.at(-1) ?? spirit.tree!;
+    this.tree = tree;
   }
 
   onQueryChanged(p: ParamMap): void {
