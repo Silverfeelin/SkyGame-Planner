@@ -15,6 +15,7 @@ import { DiscordLinkComponent } from "../util/discord-link/discord-link.componen
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
 import { ISeason, ICost } from 'skygame-data';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
@@ -27,7 +28,7 @@ export interface SeasonCardOptions {
     templateUrl: './season-card.component.html',
     styleUrls: ['./season-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent, DiscordLinkComponent]
+    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent, DiscordLinkComponent, DailyCheckinComponent]
 })
 export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() season?: ISeason;

@@ -7,10 +7,11 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { RouterLink } from '@angular/router';
 import { CurrencyService } from '@app/services/currency.service';
 import { IRealm } from 'skygame-data';
+import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
 
 @Component({
     selector: 'app-daily-card',
-    imports: [DiscordLinkComponent, RouterLink, MatIcon],
+    imports: [DiscordLinkComponent, RouterLink, MatIcon, DailyCheckinComponent],
     templateUrl: './daily-card.component.html',
     styleUrl: './daily-card.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

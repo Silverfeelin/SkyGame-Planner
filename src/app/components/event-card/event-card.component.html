@@ -67,13 +67,8 @@
         </div>
       }
       <!-- Check-in -->
-      <div *ngIf="sections['checkin']" (click)="checkin($event)"
-        class="item checkin" [class.active]="checkedIn" [style.order]="sections['checkin']"
-      >
-        <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-        <span class="menu-label">
-          I have done my dailies.
-        </span>
+      <div *ngIf="sections['checkin']" [style.order]="sections['checkin']">
+        <app-daily-checkin [checkedIn]="checkedIn" (checkin)="checkin($event)"></app-daily-checkin>
       </div>
       <!-- Calculator -->
       <a *ngIf="sections['calculator'] && instance?.calculatorData" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"

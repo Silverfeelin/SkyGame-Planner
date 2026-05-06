@@ -1,0 +1,13 @@
+<div class="item checkin-row">
+  <div (click)="onCheckinClick($event)" class="action checkin-action" [class.active]="checkedIn()">
+    <mat-icon class="menu-icon">{{checkedIn() ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+    <span class="menu-label">I have done my dailies.</span>
+  </div>
+  <div class="button-group">
+    <a class="button" [routerLink]="['/currency']" [ngbTooltip]="'Currency'" container="body">
+      <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>
+    </a>
+    <button type="button" (click)="addCandles(10, $event)">+10</button>
+    <button type="button" (click)="addCandles(20, $event)">+20</button>
+  </div>
+</div>

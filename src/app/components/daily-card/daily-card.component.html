@@ -25,12 +25,6 @@
       <mat-icon class="menu-icon">language</mat-icon>
       <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens thatskyapplication)</span>
     </a>
-    <!-- Check-in -->
-    <div (click)="checkin($event)" class="item action" [class.active]="checkedIn">
-      <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-      <span class="menu-label">
-        I have done my dailies.
-      </span>
-    </div>
+    <app-daily-checkin [checkedIn]="checkedIn" (checkin)="checkin($event)"></app-daily-checkin>
   </div>
 </div>

@@ -14,6 +14,7 @@ import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { CurrencyService } from '@app/services/currency.service';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
 import { IEvent, IEventInstance, ICost } from 'skygame-data';
 
 type Section = 'select' | 'img' | 'date' | 'overview' | 'list' | 'recent' | 'upcoming' | 'cost' | 'dailies' | 'checkin' | 'calculator';
@@ -26,7 +27,7 @@ export interface EventCardOptions {
     templateUrl: './event-card.component.html',
     styleUrls: ['./event-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent, DiscordLinkComponent]
+    imports: [NgIf, MatIcon, DateComponent, DaysLeftComponent, RouterLink, CostComponent, DiscordLinkComponent, DailyCheckinComponent]
 })
 export class EventCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() event?: IEvent;
