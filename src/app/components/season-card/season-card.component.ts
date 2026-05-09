@@ -14,6 +14,7 @@ import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { SettingService } from '@app/services/setting.service';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
 import { ISeason, ICost } from 'skygame-data';
@@ -45,6 +46,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   constructor(
     private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
+    private readonly _settingService: SettingService,
     private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
@@ -92,7 +94,15 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
     let dailyCurrency = this._storageService.hasSeasonPass(this.season!.guid) ? 6 : 5;
     if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
     this._currencyService.addSeasonCurrency(this.season!.guid, dailyCurrency);
-    this._currencyService.animateCurrencyGained(evt, dailyCurrency);
+
+    const candleAmount = this._settingService.dailyCandleAmount;
+    let delta = 0;
+    if (candleAmount) {
+      delta = this.checkedIn ? candleAmount : -candleAmount;
+      this._currencyService.addCost({ c: delta });
+    }
+
+    this._currencyService.animateCurrencyGained(evt, dailyCurrency, delta);
   }
 
   /** Update checked in status from storage. */

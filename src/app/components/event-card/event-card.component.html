@@ -68,7 +68,7 @@
       }
       <!-- Check-in -->
       <div *ngIf="sections['checkin']" [style.order]="sections['checkin']">
-        <app-daily-checkin [checkedIn]="checkedIn" (checkin)="checkin($event)"></app-daily-checkin>
+        <app-daily-checkin [checkedIn]="checkedIn" [label]="'I have collected my daily event currency.'" (checkin)="checkin($event)"></app-daily-checkin>
       </div>
       <!-- Calculator -->
       <a *ngIf="sections['calculator'] && instance?.calculatorData" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"

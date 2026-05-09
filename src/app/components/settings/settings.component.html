@@ -65,6 +65,31 @@
   </app-card>
 </div>
 
+<!-- Daily quests -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      <mat-icon>today</mat-icon>
+      Daily candles
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
+      <p>
+        Enter a number here to add regular candles to your <a class="text-link" routerLink="/currency">Currency</a> page when you check that you've done your dailies on the dashboard.<br/>
+        These candles will be added on top of the rewards for daily quests. For example, entering 20 will give you 6 season candles plus 20 regular candles.<br/>
+        Set to 0 to disable.
+      </p>
+      <div class="mt">
+        <label for="daily-candle-amount">Candles per daily check-in:</label>
+        <input id="daily-candle-amount" type="number" min="0" max="99" style="width:5em"
+          [value]="dailyCandleAmount"
+          (change)="setDailyCandleAmount(+$any($event.target).value)">
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Spirit trees -->
 <div class="sky-card mt">
   <div class="sky-card-header">

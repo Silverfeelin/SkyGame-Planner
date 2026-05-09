@@ -38,6 +38,7 @@ export class SettingsComponent implements OnDestroy {
   themes = themes;
   wikiNewTab = false;
   debugVisible = false;
+  dailyCandleAmount: number;
 
   pwaInstallPrompt?: any = (window as any).pwaInstallPrompt;
 
@@ -52,6 +53,7 @@ export class SettingsComponent implements OnDestroy {
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
     this.debugVisible = _settingService.debugVisible;
+    this.dailyCandleAmount = _settingService.dailyCandleAmount;
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
@@ -227,5 +229,10 @@ export class SettingsComponent implements OnDestroy {
   toggleDebugInfo(): void {
     this.debugVisible = !this.debugVisible;
     this._settingService.debugVisible = this.debugVisible;
+  }
+
+  setDailyCandleAmount(value: number): void {
+    this.dailyCandleAmount = value;
+    this._settingService.dailyCandleAmount = value;
   }
 }

@@ -6,6 +6,7 @@ import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { RouterLink } from '@angular/router';
 import { CurrencyService } from '@app/services/currency.service';
+import { SettingService } from '@app/services/setting.service';
 import { IRealm } from 'skygame-data';
 import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
 
@@ -22,7 +23,8 @@ export class DailyCardComponent {
 
   constructor(
     private readonly _currencyService: CurrencyService,
-    private readonly _dataService: DataService
+    private readonly _dataService: DataService,
+    private readonly _settingService: SettingService
   ) {
     this.checkRealm();
     this.updateCheckin();
@@ -36,10 +38,12 @@ export class DailyCardComponent {
       localStorage.removeItem('daily.checkin');
     }
 
-    let dailyCurrency = 4;
-    if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
-    this._currencyService.addCost({ c: dailyCurrency });
-    this._currencyService.animateCurrencyGained(evt, dailyCurrency);
+    const amount = this._settingService.dailyCandleAmount;
+    if (amount) {
+      const delta = this.checkedIn ? amount : -amount;
+      this._currencyService.addCost({ c: delta });
+      this._currencyService.animateCurrencyGained(evt, delta);
+    }
   }
 
   private checkRealm(): void {

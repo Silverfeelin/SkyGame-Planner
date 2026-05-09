@@ -18,9 +18,8 @@
 <app-dashboard-wishlist [season]="season" [eventInstances]="eventInstances" [ts]="ts" [rs]="rs"></app-dashboard-wishlist>
 
 <div class="grid grid-2 mt">
-  <!-- No ongoing events, backup card for dailies -->
-  @if (!season) { <app-daily-card></app-daily-card> }
-  <!-- Ongoing -->
+  <!-- Dailies / Ongoing season -->
+  <app-daily-card *ngIf="!season"></app-daily-card>
   <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-season-card>
   <ng-container *ngFor="let eventInstance of eventInstances">
     <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-event-card>
