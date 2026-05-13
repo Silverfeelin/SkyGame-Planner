@@ -1,3 +1,7 @@
+<ng-template #tGain let-g="gain">
+  <span class="gain-today" [class.c-new]="g > 0" [class.c-old]="g < 0" [class.c-accent]="g === 0">{{ g || '+0' }} today</span>
+</ng-template>
+
 <div class="sky-card">
   <div class="sky-card-header">
     <h1 class="h2 mb-0">In-game currency</h1>
@@ -51,6 +55,7 @@
           <button type="button" class="button-currency br-l-0 br-r-0" (click)="addCurrency('candles', 5)">+5</button>
           <button type="button" class="button-currency br-l-0" (click)="addCurrency('candles', 10)">+10</button>
         </div>
+        <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().candles }"></ng-container>
       </div>
       <div class="sky-flex flex-wrap">
         <div>
@@ -62,6 +67,7 @@
           <button type="button" class="button-currency br-l-0 br-r-0" (click)="addCurrency('hearts', 5)">+5</button>
           <button type="button" class="button-currency br-l-0" (click)="addCurrency('hearts', 10)">+10</button>
         </div>
+        <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().hearts }"></ng-container>
       </div>
       <div class="sky-flex flex-wrap">
         <div>
@@ -73,12 +79,14 @@
           <button type="button" class="button-currency br-l-0 br-r-0" (click)="addCurrency('ascendedCandles', 1)">+1</button>
           <button type="button" class="button-currency br-l-0" (click)="addCurrency('ascendedCandles', 15.75)">+15.75</button>
         </div>
+        <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().ascendedCandles }"></ng-container>
       </div>
       <div class="sky-flex flex-wrap">
         <div>
           <mat-icon [svgIcon]="'gift'" class="v-middle seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>&nbsp;x&nbsp;
           <input #inpSp (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" step="1" (input)="onCurrencyInput()" [value]="inpCurrencies.giftPasses" class="d-inline-block" style="width: 120px;"/>
         </div>
+        <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().giftPasses }"></ng-container>
       </div>
     </div>
   </app-card>
@@ -105,6 +113,7 @@
             <button type="button" class="button-currency br-r-0" (click)="addSeasonCurrency(1)">+1</button>
             <button type="button" class="button-currency br-l-0" (click)="addSeasonCurrency(dailySeasonCandles)">+{{dailySeasonCandles}}</button>
           </div>
+          <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().season }"></ng-container>
         </div>
         <a class="button mt" routerLink="/season-calculator">
           <mat-icon class="menu-icon">calculate</mat-icon>
@@ -137,6 +146,7 @@
                   +{{ dailyEventCurrency[instance.guid] || 5 }}
                 </button>
               </div>
+              <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().events[instance.guid] }"></ng-container>
             </div>
             <a class="button mt" routerLink="/event-calculator" [queryParams]="{ guid: instance.guid }">
               <mat-icon class="menu-icon">calculate</mat-icon>

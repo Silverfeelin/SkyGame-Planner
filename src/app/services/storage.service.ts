@@ -1,8 +1,9 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subject, SubscriptionLike } from 'rxjs';
-import { IStorageCurrencies, IStorageEvent, IStorageExport, IStorageProvider } from './storage/storage-provider.interface';
+import { IDailyCurrencies, IStorageCurrencies, IStorageEvent, IStorageExport, IStorageProvider } from './storage/storage-provider.interface';
 import { StorageProviderFactory } from './storage/storage-provider-factory';
 import { BroadcastService } from './broadcast.service';
+import { DateHelper } from '@app/helpers/date-helper';
 
 @Injectable({
   providedIn: 'root'
@@ -42,8 +43,24 @@ export class StorageService implements OnDestroy {
     return JSON.parse(JSON.stringify(this.provider.getCurrencies()));
   }
   setCurrencies(currency: IStorageCurrencies): void {
+    this.captureDailyBaseline();
     this.provider.setCurrencies(currency);
     this.notifyChange();
+  }
+
+  getDailyCurrencies(): IDailyCurrencies | undefined {
+    const daily = this.provider.getKey<IDailyCurrencies>('daily.currencies');
+    if (!daily) { return undefined; }
+    const today = DateHelper.todaySky().toFormat('yyyy-MM-dd');
+    return daily.date === today ? daily : undefined;
+  }
+
+  private captureDailyBaseline(): void {
+    const today = DateHelper.todaySky().toFormat('yyyy-MM-dd');
+    const existing = this.provider.getKey<IDailyCurrencies>('daily.currencies');
+    if (existing?.date === today) { return; }
+    const baseline: IStorageCurrencies = JSON.parse(JSON.stringify(this.provider.getCurrencies()));
+    this.provider.setKey<IDailyCurrencies>('daily.currencies', { date: today, baseline });
   }
 
   getUnlocked(): ReadonlySet<string> { return this.provider.getUnlocked(); }

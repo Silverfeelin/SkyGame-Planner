@@ -4,5 +4,9 @@
       "Bash(Get-ChildItem -Path \"c:\\\\GitHub\\\\SkyGame-Planner\" -Force)",
       "Bash(Select-Object Name, Mode)"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "playwright"
+  ],
+  "enableAllProjectMcpServers": true
 }
