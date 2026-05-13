@@ -195,6 +195,9 @@ export class SpiritsComponent {
   }
 
   private sortByAge(direction: number): void {
+    const realmOrder = new Map<string, number>(
+      this._dataService.realmConfig.items.map((r, i) => [r.guid, i])
+    );
     const dateA = DateTime.fromFormat('2019-01-01', 'yyyy-MM-dd');
     const dateB = DateTime.fromFormat('2999-01-01', 'yyyy-MM-dd');
     const dates = this.spirits.reduce((acc, s) => {
@@ -220,8 +223,21 @@ export class SpiritsComponent {
     this.spirits.sort((a, b) => {
       const dateA = dates[a.guid];
       const dateB = dates[b.guid];
-      const diff = dateA.diff(dateB);
-      return !diff.as('milliseconds') ? (a._index - b._index) * direction : diff.as('milliseconds') * direction;
+      const diff = dateA.diff(dateB).as('milliseconds');
+      if (diff !== 0) { return diff * direction; }
+
+      const aIsAgeless = a.type === 'Regular' || a.type === 'Elder';
+      const bIsAgeless = b.type === 'Regular' || b.type === 'Elder';
+      if (aIsAgeless && bIsAgeless) {
+        const realmA = realmOrder.get(a.area?.realm?.guid ?? '') ?? Infinity;
+        const realmB = realmOrder.get(b.area?.realm?.guid ?? '') ?? Infinity;
+        if (realmA !== realmB) { return (realmA - realmB) * direction; }
+        const areaA = a.area?.realm?.areas?.indexOf(a.area) ?? Infinity;
+        const areaB = b.area?.realm?.areas?.indexOf(b.area) ?? Infinity;
+        if (areaA !== areaB) { return (areaA - areaB) * direction; }
+      }
+
+      return (a._index - b._index) * direction;
     });
   }
 
