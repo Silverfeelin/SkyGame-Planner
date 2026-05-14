@@ -4,6 +4,7 @@ import { EventInstanceComponent } from './components/event-instance/event-instan
 import { EventComponent } from './components/event/event.component';
 import { EventsComponent } from './components/events/events.component';
 import { RealmsComponent } from './components/realms/realms.component';
+import { SharedCreationsComponent } from './components/shared-creations/shared-creations.component';
 import { SeasonComponent } from './components/season/season.component';
 import { SeasonsComponent } from './components/seasons/seasons.component';
 import { SpiritComponent } from './components/spirit/spirit.component';
@@ -75,6 +76,8 @@ export const routes: Routes = [
     // canActivate: [canActivateData],
     // canActivateChild: [canActivateStorageFn],
     children: [
+      /* Routes without menu. */
+      { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },
       /* Routes with menu. */
       {
         path: '',
@@ -102,7 +105,12 @@ export const routes: Routes = [
           { path: 'item/unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Item unlock calculator') },
           { path: 'item/:guid', component: ItemComponent },
           { path: 'realm', component: RealmsComponent, title: title('Realms') },
+          { path: 'realm/shared-creations', component: SharedCreationsComponent, title: title('Shared Creations') },
+          { path: 'realm/pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
+          { path: 'realm/cr-tracker', component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
           { path: 'realm/:guid', component: RealmComponent },
+          { path: 'pnr-tracker', redirectTo: 'realm/pnr-tracker' }, // old route
+          { path: 'cr-tracker', redirectTo: 'realm/cr-tracker' }, // old route
           { path: 'area', component: AreasComponent, title: title('Areas') },
           { path: 'area/:guid', component: AreaComponent },
           { path: 'season', component: SeasonsComponent, title: title('Seasons') },
@@ -132,7 +140,6 @@ export const routes: Routes = [
           { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
           { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
           { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
-          { path: 'pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
           { path: 'tools', component: ToolsComponent, title: title('Tools') },
           { path: 'friends', component: FriendsComponent, title: title('Friends') },
           { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
@@ -142,10 +149,7 @@ export const routes: Routes = [
           { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) },
           { path: 'experiment', loadChildren: () => import('./sections/experiments/experiments-routes').then(m => m.routes) }
         ]
-      },
-      /* Routes without menu. */
-      { path: 'cr-tracker', component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
-      { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') }
+      }
     ]
   }
 ];

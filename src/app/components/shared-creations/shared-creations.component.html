@@ -1,0 +1,39 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Shared Creations</h1>
+  </div>
+  <div class="sky-card-body">
+    <p class="mb-0 container">
+      Track where you placed your shared spells.
+      Click a spell icon in the toolbar, then click the map to place a marker.
+      Drag to reposition.</p>
+  </div>
+</div>
+
+<div class="sky-card mt">
+  <div class="sky-card-body p-0">
+    <div class="map-container" #mapContainer>
+      <div class="map-controls map-controls-tl">
+        <button type="button"
+          [class.highlight]="placementType() === 'message'"
+          [ngbTooltip]="'Place Shared Message'" container="body" placement="bottom-start"
+          (click)="togglePlacement('message')">
+          <mat-icon [svgIcon]="iconIds['message']"></mat-icon>
+        </button>
+        <button type="button"
+          [class.highlight]="placementType() === 'memory'"
+          [ngbTooltip]="'Place Shared Memory'" container="body" placement="bottom-start"
+          (click)="togglePlacement('memory')">
+          <mat-icon [svgIcon]="iconIds['memory']"></mat-icon>
+        </button>
+        <button type="button"
+          [class.highlight]="placementType() === 'space'"
+          [ngbTooltip]="'Place Shared Space'" container="body" placement="bottom-start"
+          (click)="togglePlacement('space')">
+          <mat-icon [svgIcon]="iconIds['space']"></mat-icon>
+        </button>
+      </div>
+      <div class="map" [class.placement-armed]="placementType()"></div>
+    </div>
+  </div>
+</div>

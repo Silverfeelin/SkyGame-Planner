@@ -1,0 +1,49 @@
+.map-container {
+  position: relative;
+
+  ::ng-deep .map {
+    min-height: 200px;
+    height: 800px;
+    max-height: calc(100vh - 20px);
+
+    &.placement-armed {
+      cursor: crosshair;
+    }
+  }
+}
+
+::ng-deep .shared-creation-marker {
+  color: #fff;
+  filter: drop-shadow(0 0 4px rgba(0, 128, 128, 1));
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    pointer-events: none;
+  }
+}
+
+::ng-deep .shared-creation-marker.shared-creation-expired {
+  opacity: 0.5;
+  filter: grayscale(1) drop-shadow(0 0 2px rgba(128, 0, 0, 1));
+}
+
+::ng-deep .shared-creation-label-input {
+  background: transparent;
+  border: 1px solid var(--color-map-tooltip-border);
+  border-radius: var(--border-radius);
+  color: var(--color-map-tooltip);
+  font-size: 13px;
+  padding: 2px 6px;
+  width: 180px;
+  outline: none;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    border-color: var(--color-map-tooltip);
+  }
+}
