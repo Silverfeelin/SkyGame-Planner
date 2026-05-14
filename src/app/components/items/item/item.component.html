@@ -25,6 +25,9 @@
               <code (click)="copy(item.id)">{{ item.id }}</code>
               GUID:
               <code (click)="copy(item.guid)">{{ item.guid }}</code>
+              @if (item.order) {
+                Order: <code (click)="copy(item.order)">{{ item.order }}</code>
+              }
             </span>
           </div>
         }

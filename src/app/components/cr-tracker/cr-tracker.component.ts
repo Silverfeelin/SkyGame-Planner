@@ -78,8 +78,7 @@ export const canDeactivateCrTracker: CanDeactivateFn<CrTrackerComponent> = compo
 @Component({
   selector: 'app-cr-tracker',
   imports: [
-    NgbTooltip, MatIcon, RouterLink,
-    OverlayComponent
+    NgbTooltip, MatIcon, OverlayComponent
 ],
   templateUrl: './cr-tracker.component.html',
   styleUrl: './cr-tracker.component.scss'
