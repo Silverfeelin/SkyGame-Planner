@@ -27,6 +27,11 @@
         <span class="name header">Sky Planner</span>
       </a>
       <hr/>
+      <!-- Daily -->
+      <a class="item" [routerLink]="'daily'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Daily'" placement="right" container="body">
+        <mat-icon>today</mat-icon>
+        <span class="name">Daily</span>
+      </a>
       <!-- Currency -->
       <a class="item" [routerLink]="'currency'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Currency'" placement="right" container="body">
         <app-icon [src]="'#candle'" [width]="'24px'" [height]="'24px'" [verticalAlign]="'top'"></app-icon>

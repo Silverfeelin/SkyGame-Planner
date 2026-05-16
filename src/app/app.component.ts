@@ -43,12 +43,13 @@ export class AppComponent {
       if (_eventService.keyboardShortcutDisabledCount > 0) { return; }
       if (evt.ctrlKey || evt.shiftKey || evt.altKey || evt.metaKey) { return; }
       switch (evt.key) {
+        case 'd': _router.navigate(['/daily']); break;
         case 'c': _router.navigate(['/currency']); break;
         case 'h': _router.navigate(['/']); break;
         case 'e': _router.navigate(['/event']); break;
         case 'i': _router.navigate(['/item']); break;
         case 'r': _router.navigate(['/realm']); break;
-        case 'p': _router.navigate(['/spirit']); break;
+        case 'p': _router.navigate(['/spirits']); break;
         case 's': _router.navigate(['/season']); break;
         case 'w': _router.navigate(['/winged-light']); break;
         default: return;

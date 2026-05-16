@@ -1,0 +1,23 @@
+.daily-status {
+  gap: 0.5rem;
+}
+
+.daily-countdown {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-right {
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.btn-show-hidden {
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+
+  mat-icon { font-size: 16px; line-height: 16px; width: 16px; height: 16px; }
+}
