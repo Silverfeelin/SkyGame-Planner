@@ -44,6 +44,7 @@ import { ShopHarmonyHallComponent } from './components/shops/shop-harmony-hall/s
 import { ShopEventStoreComponent } from './components/shops/shop-event-store/shop-event-store.component';
 import { ShopOfficeComponent } from './components/shops/shop-office/shop-office.component';
 import { CurrencyComponent } from './components/currency/currency.component';
+import { DailyComponent } from './components/daily/daily.component';
 import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
 import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
 import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
@@ -90,6 +91,7 @@ export const routes: Routes = [
           { path: 'credits', component: CreditsComponent, title: title('Credits') },
           { path: 'currency', component: CurrencyComponent, title: title('In-game currency') },
           { path: 'currency/spent', component: CurrencySpentComponent, title: title('Spent currency') },
+          { path: 'daily', component: DailyComponent, title: title('Daily') },
           { path: 'event', component: EventsComponent, title: title('Events') },
           { path: 'event/history', component: EventHistoryComponent, title: title('Event History') },
           { path: 'event/:guid', component: EventComponent },

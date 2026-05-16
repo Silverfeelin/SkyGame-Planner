@@ -1,0 +1,152 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Daily tracker</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="container">
+      <p class="m-0">
+        Track your daily activities here. Don't forget to update your candles on the <a routerLink="/currency" class="text-link">Currency</a> page!<br/>
+        <span class="c-accent">Suggestions? Feel free to DM or ping Silverfeelin on Discord!</span>
+      </p>
+    </div>
+
+    <!-- Timers -->
+    <div class="grid grid-3 daily-status mt">
+      <div class="container d-block">
+        <div class="muted">Daily reset in</div>
+        <div class="daily-countdown">{{ dailyCountdown() }}</div>
+      </div>
+      <div class="container d-block">
+        <div class="muted">{{ nextTimed().task.name }} &middot; {{ nextTimed().date }} Sky time</div>
+        <div class="daily-countdown">{{ nextTimed().countdown }}</div>
+      </div>
+      <div class="container d-block">
+        <div class="muted">Eden reset in</div>
+        <div class="daily-countdown">{{ weeklyCountdown() }}</div>
+      </div>
+    </div>
+    <!-- Quick links -->
+    <div class="grid grid-3 mt">
+      <a class="container d-block" routerLink="/currency">
+        <mat-icon class="menu-icon" [svgIcon]="'candle'"></mat-icon>
+        <span class="menu-label">Currency</span>
+      </a>
+      <a class="container d-block" routerLink="/realm/cr-tracker">
+        <mat-icon class="menu-icon">local_fire_department</mat-icon>
+        <span class="menu-label">Candle Run Tracker</span>
+      </a>
+      <a class="container d-block" routerLink="/realm/pnr-tracker">
+        <mat-icon class="menu-icon">flag</mat-icon>
+        <span class="menu-label">Eden Statue Tracker</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="mt">
+  @if (activeSeason) {
+    <app-season-card [season]="activeSeason" [options]="{ show: ['dailies', 'checkin'] }"></app-season-card>
+  } @else {
+    <app-daily-card [options]="{ show: ['dailies', 'checkin'] }"></app-daily-card>
+  }
+</div>
+
+<!-- Today — fixed reward -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      Today &middot; Fixed reward
+      @if (hiddenFixedCount() > 0) {
+        <button class="btn-show-hidden float-right" (click)="showHidden.set(!showHidden())" [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'">
+          <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      }
+    </h2>
+    <div class="header-right muted">
+      Remaining: {{ remainingLight() }} / {{ totalLight() }} light
+    </div>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-2">
+      @for (task of dailyFixed; track task.id) {
+        @if (!isHidden(task.id) || showHidden()) {
+          <app-daily-task [task]="task" [checked]="isDailyChecked(task.id)" [light]="formatLight(task)" [hidden]="isHidden(task.id)" (toggle)="toggleDaily(task)" (toggleHide)="toggleHide(task)" />
+        }
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Today — variable reward -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      Today &middot; Variable reward
+      @if (hiddenVariableCount() > 0) {
+        <button class="btn-show-hidden float-right" (click)="showHidden.set(!showHidden())" [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'">
+          <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      }
+    </h2>
+    <div class="header-right muted">Wax amounts vary per day</div>
+  </div>
+  <div class="sky-card-body">
+    <div class="task-list">
+      @for (task of dailyVariable; track task.id) {
+        @if (!isHidden(task.id) || showHidden()) {
+          <app-daily-task [task]="task" [checked]="isDailyChecked(task.id)" [light]="formatLight(task)" [hidden]="isHidden(task.id)" (toggle)="toggleDaily(task)" (toggleHide)="toggleHide(task)" />
+        }
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Timed -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      Timed events
+      @if (hiddenTimedCount() > 0) {
+        <button class="btn-show-hidden float-right" (click)="showHidden.set(!showHidden())" [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'">
+          <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      }
+    </h2>
+    <div class="header-right muted">Next: {{ nextTimed().task.name }} &middot; {{ nextTimed().date }} Sky time ({{ nextTimed().countdown }})</div>
+  </div>
+  <div class="sky-card-body">
+    <ul class="task-list task-list-info">
+      @for (task of timed; track task.id) {
+        @if (!isHidden(task.id) || showHidden()) {
+          <li class="task" [class.task-hidden]="isHidden(task.id)">
+            <div class="task-row">
+              <mat-icon class="task-info-icon">schedule</mat-icon>
+              <span class="task-name">{{ task.name }}</span>
+              @if (task.location) { <span class="task-realm">{{ task.location }}</span> }
+              @if (formatLight(task)) { <span class="task-light">{{ formatLight(task) }} light</span> }
+              @if (task.note) { <span class="task-note muted">{{ task.note }}</span> }
+              <button class="task-hide-btn" (click)="toggleHide(task); $event.stopPropagation()" [title]="isHidden(task.id) ? 'Show task' : 'Hide task'">
+                <mat-icon>{{ isHidden(task.id) ? 'visibility' : 'visibility_off' }}</mat-icon>
+              </button>
+            </div>
+          </li>
+        }
+      }
+    </ul>
+  </div>
+</div>
+
+<!-- This week — Eden -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">This week</h2>
+    <div class="header-right muted">Resets Sunday in Sky time</div>
+  </div>
+  <div class="sky-card-body">
+    <ul class="task-list">
+      @for (task of weekly; track task.id) {
+        <app-daily-task [task]="task" [checked]="isWeeklyChecked(task.id)" [showHide]="false" (toggle)="toggleWeekly(task)" />
+      }
+    </ul>
+  </div>
+</div>

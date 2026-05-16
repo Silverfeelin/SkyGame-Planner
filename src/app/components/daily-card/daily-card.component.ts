@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 import { DiscordLinkComponent } from '../util/discord-link/discord-link.component';
@@ -10,6 +10,11 @@ import { SettingService } from '@app/services/setting.service';
 import { IRealm } from 'skygame-data';
 import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
 
+type Section = 'img' | 'realm' | 'dailies' | 'checkin';
+export interface DailyCardOptions {
+  show?: Array<Section>;
+}
+
 @Component({
     selector: 'app-daily-card',
     imports: [DiscordLinkComponent, RouterLink, MatIcon, DailyCheckinComponent],
@@ -17,7 +22,10 @@ import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component'
     styleUrl: './daily-card.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DailyCardComponent {
+export class DailyCardComponent implements OnChanges {
+  options = input<DailyCardOptions>({ show: [ 'img', 'realm', 'dailies', 'checkin' ] });
+
+  sections: {[key: string]: number} = {};
   checkedIn?: boolean;
   realm?: IRealm;
 
@@ -27,7 +35,12 @@ export class DailyCardComponent {
     private readonly _settingService: SettingService
   ) {
     this.checkRealm();
+    this.updateSections();
     this.updateCheckin();
+  }
+
+  ngOnChanges(): void {
+    this.updateSections();
   }
 
   checkin(evt: MouseEvent): void {
@@ -38,12 +51,10 @@ export class DailyCardComponent {
       localStorage.removeItem('daily.checkin');
     }
 
-    const amount = this._settingService.dailyCandleAmount;
-    if (amount) {
-      const delta = this.checkedIn ? amount : -amount;
-      this._currencyService.addCost({ c: delta });
-      this._currencyService.animateCurrencyGained(evt, delta);
-    }
+    const amount = 4 + (this._settingService.dailyCandleAmount ?? 0);
+    const delta = this.checkedIn ? amount : -amount;
+    this._currencyService.addCost({ c: delta });
+    this._currencyService.animateCurrencyGained(evt, delta);
   }
 
   private checkRealm(): void {
@@ -61,5 +72,12 @@ export class DailyCardComponent {
     if (!checkinDate) { return; }
     const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
     this.checkedIn = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
+  }
+
+  private updateSections(): void {
+    this.sections = {};
+    this.options().show?.forEach((section, i) => {
+      this.sections[section] = i + 2;
+    });
   }
 }

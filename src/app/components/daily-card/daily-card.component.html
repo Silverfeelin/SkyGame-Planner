@@ -3,28 +3,39 @@
     <h1 class="h2 mb-0">Daily quests</h1>
   </div>
   <div class="sky-card-body grid grid-1">
-    @if (realm?.imageUrl) {
+    @if (realm?.imageUrl && sections['img']) {
       <div class="p-rel realm-img sky-border-solid"
+        [style.order]="sections['img']"
         [style.background-image]="'url('+realm!.imageUrl+')'"
         [style.background-position]="realm!.imagePosition || undefined">
       </div>
     }
-    @if (realm?.name) {
-      <a class="item" [routerLink]="['/realm', realm!.guid]">
+    @if (realm?.name && sections['realm']) {
+      <a class="item" [routerLink]="['/realm', realm!.guid]"
+        [style.order]="sections['realm']">
         <mat-icon class="menu-icon">map</mat-icon>
         <span class="menu-label">{{realm!.name}}</span>
       </a>
     }
-    <app-discord-link [link]="'https://discord.com/channels/736912435654688868/801778605486374943'"
-      [aStyle]="'text-decoration: none;'" [aClass]="'item link'"
-    >
-      <img class="menu-icon icon" src="assets/external/discord-mark-white.svg" loading="lazy">
-      <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
-    </app-discord-link>
-    <a href="https://thatskyapplication.com/daily-guides" target="_blank" class="item" style="text-decoration: none;">
-      <mat-icon class="menu-icon">language</mat-icon>
-      <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens thatskyapplication)</span>
-    </a>
-    <app-daily-checkin [checkedIn]="checkedIn" (checkin)="checkin($event)"></app-daily-checkin>
+    @if (sections['dailies']) {
+      <app-discord-link [link]="'https://discord.com/channels/736912435654688868/801778605486374943'"
+        [aStyle]="'text-decoration: none;'" [aClass]="'item link'"
+        [style.order]="sections['dailies']"
+      >
+        <img class="menu-icon icon" src="assets/external/discord-mark-white.svg" loading="lazy">
+        <span class="menu-label" style="text-decoration: underline;">View daily quests</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
+      </app-discord-link>
+      <a href="https://thatskyapplication.com/daily-guides" target="_blank" class="item"
+        style="text-decoration: none;"
+        [style.order]="sections['dailies']">
+        <mat-icon class="menu-icon">language</mat-icon>
+        <span class="menu-label" style="text-decoration: underline;">View daily quests</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens thatskyapplication)</span>
+      </a>
+    }
+    @if (sections['checkin']) {
+      <div [style.order]="sections['checkin']">
+        <app-daily-checkin [checkedIn]="checkedIn" (checkin)="checkin($event)"></app-daily-checkin>
+      </div>
+    }
   </div>
 </div>

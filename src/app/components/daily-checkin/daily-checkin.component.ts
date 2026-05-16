@@ -10,7 +10,7 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class DailyCheckinComponent {
   readonly checkedIn = input<boolean>();
-  readonly label = input('I have done my dailies.');
+  readonly label = input('I have done my daily quests.');
   readonly checkin = output<MouseEvent>();
 
   onCheckinClick(evt: MouseEvent): void {
