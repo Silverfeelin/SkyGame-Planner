@@ -4,32 +4,28 @@ import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 import { DateHelper } from '@app/helpers/date-helper';
 import { StorageService } from '@app/services/storage.service';
-import { BroadcastService } from '@app/services/broadcast.service';
-import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { DAILY_TASKS, IDailyTask } from './daily-tasks';
 import { DailyCardComponent } from "../daily-card/daily-card.component";
 import { DataService } from '@app/services/data.service';
 import { SeasonCardComponent } from "../season-card/season-card.component";
 import { DailyTaskComponent } from './daily-task/daily-task.component';
+import { DateTimePipe } from "../../pipes/date-time.pipe";
 
 interface IDailyTaskState {
-  /** 'yyyy-MM-dd' of the Sky day the daily checks belong to. */
   dailyDate: string;
   dailyChecked: string[];
-  /** 'yyyy-MM-dd' of the Sunday that starts the Eden week the weekly checks belong to. */
   weeklyDate: string;
   weeklyChecked: string[];
-  /** Task IDs the user has chosen to hide permanently (survives daily/weekly resets). */
   hiddenTasks?: string[];
 }
 
 const STORAGE_KEY = 'daily.tasks';
 
-function emptyState(dailyDate: string, weeklyDate: string): IDailyTaskState {
+function createEmptyState(dailyDate: string, weeklyDate: string): IDailyTaskState {
   return { dailyDate, dailyChecked: [], weeklyDate, weeklyChecked: [], hiddenTasks: [] };
 }
 
-function weeklyAnchor(today: DateTime): string {
+function getWeeklyAnchor(today: DateTime): string {
   const sunday = today.weekday === 7 ? today : today.minus({ days: today.weekday });
   return sunday.toFormat('yyyy-MM-dd');
 }
@@ -39,12 +35,11 @@ function weeklyAnchor(today: DateTime): string {
   templateUrl: './daily.component.html',
   styleUrl: './daily.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DailyCardComponent, SeasonCardComponent, DailyTaskComponent],
+  imports: [RouterLink, MatIcon, DailyCardComponent, SeasonCardComponent, DailyTaskComponent, DateTimePipe],
 })
 export class DailyComponent implements OnInit, OnDestroy {
   private readonly _storageService = inject(StorageService);
   private readonly _dataService = inject(DataService);
-  private readonly _broadcastService = inject(BroadcastService);
 
   readonly activeSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
 
@@ -55,7 +50,7 @@ export class DailyComponent implements OnInit, OnDestroy {
   readonly timed = this.tasks.filter(t => t.cadence === 'timed');
   readonly weekly = this.tasks.filter(t => t.cadence === 'weekly');
 
-  readonly state = signal<IDailyTaskState>(emptyState('', ''));
+  readonly state = signal<IDailyTaskState>(createEmptyState('', ''));
   readonly now = signal<DateTime>(DateTime.now());
 
   readonly checkedDaily = computed(() => new Set(this.state().dailyChecked));
@@ -83,32 +78,23 @@ export class DailyComponent implements OnInit, OnDestroy {
     const nextTask = this._nextTimedEvent();
     return {
       task: nextTask!,
-      date: this._formatTime(nextTask.nextTime!),
       countdown: this._formatCountdown(nextTask.nextTime!),
     }
   });
 
-  private readonly _subs = new SubscriptionBag();
-  private _tickInterval?: ReturnType<typeof setInterval>;
+  private _tickInterval?: number;
 
   ngOnInit(): void {
     this._loadState();
 
-    this._tickInterval = setInterval(() => {
+    this._tickInterval = window.setInterval(() => {
       this.now.set(DateTime.now());
       this._refreshIfRolledOver();
     }, 1000);
-
-    this._subs.add(
-      this._broadcastService.subject.subscribe(msg => {
-        if (msg.type === 'storage.changed') { this._loadState(); }
-      })
-    );
   }
 
   ngOnDestroy(): void {
-    clearInterval(this._tickInterval);
-    this._subs.unsubscribe();
+    window.clearInterval(this._tickInterval);
   }
 
   toggleDaily(task: IDailyTask): void {
@@ -145,36 +131,36 @@ export class DailyComponent implements OnInit, OnDestroy {
   private _loadState(): void {
     const today = DateHelper.todaySky();
     const todayKey = today.toFormat('yyyy-MM-dd');
-    const weekKey = weeklyAnchor(today);
+    const weekKey = getWeeklyAnchor(today);
 
     const stored = this._storageService.getKey<IDailyTaskState>(STORAGE_KEY);
     if (!stored) {
-      this.state.set(emptyState(todayKey, weekKey));
+      this.state.set(createEmptyState(todayKey, weekKey));
       return;
     }
 
-    let next: IDailyTaskState = { ...stored };
-    let dirty = false;
-    if (stored.dailyDate !== todayKey) {
-      next = { ...next, dailyDate: todayKey, dailyChecked: [] };
-      dirty = true;
-    }
-    if (!stored.weeklyDate || stored.weeklyDate < weekKey) {
-      next = { ...next, weeklyDate: weekKey, weeklyChecked: [] };
-      dirty = true;
+    const dailyExpired = stored.dailyDate !== todayKey;
+    const weeklyExpired = !stored.weeklyDate || stored.weeklyDate !== weekKey;
+
+    if (!dailyExpired && !weeklyExpired) {
+      this.state.set(stored);
+      return;
     }
 
+    const next: IDailyTaskState = {
+      ...stored,
+      ...(dailyExpired ? { dailyDate: todayKey, dailyChecked: [] } : {}),
+      ...(weeklyExpired ? { weeklyDate: weekKey, weeklyChecked: [] } : {}),
+    };
     this.state.set(next);
-    if (dirty) {
-      this._storageService.setKey<IDailyTaskState>(STORAGE_KEY, next);
-    }
+    this._storageService.setKey<IDailyTaskState>(STORAGE_KEY, next);
   }
 
   /** Detect day/week rollover while the tab stays open. */
   private _refreshIfRolledOver(): void {
     const today = DateHelper.todaySky();
     const todayKey = today.toFormat('yyyy-MM-dd');
-    const weekKey = weeklyAnchor(today);
+    const weekKey = getWeeklyAnchor(today);
     const s = this.state();
     if (s.dailyDate !== todayKey || s.weeklyDate < weekKey) {
       this._loadState();
@@ -196,24 +182,40 @@ export class DailyComponent implements OnInit, OnDestroy {
     return today.plus({ days: daysUntilSunday });
   }
 
+  private _cachedNextTimed?: IDailyTask;
   private _nextTimedEvent(): IDailyTask {
     const now = this.now();
+
+    // Reuse cached.
+    if (this._cachedNextTimed?.nextTime && this._cachedNextTimed.nextTime > now) {
+      return this._cachedNextTimed;
+    }
+
+    // Update nextTime.
     this.timed.forEach(t => {
       if (!t.nextFn) { return; }
       if (!t.nextTime || t.nextTime < now) {
-        t.nextTime = t.nextFn!();
+        t.nextTime = t.nextFn().toLocal();
       }
     });
 
-    // TODO: Get the first next event from this.timed based on t.nextTime.
-    return this.timed.at(0)!;
-  }
+    // Find next task.
+    const next = this.timed.reduce((a, b) => {
+      if (!a.nextTime) { return b; }
+      if (!b.nextTime) { return a; }
+      return a.nextTime < b.nextTime ? a : b;
+    });
 
-  private _formatTime(dt: DateTime): string {
-    return dt.toLocal().toFormat(`hh:mm`);
+    this._cachedNextTimed = next;
+    return next;
   }
 
   private _formatCountdown(target: DateTime): string {
-    return target.diff(this.now()).toFormat('hh:mm:ss');
+    const duration = target.diff(this.now());
+    const days = Math.floor(duration.as('days'));
+    const time = duration.minus({ days }).toFormat('hh:mm:ss');
+    return days > 0
+      ? `${days}d ${time}`
+      : time;
   }
 }

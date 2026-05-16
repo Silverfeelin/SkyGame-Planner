@@ -2,19 +2,14 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IDailyTask } from '../daily-tasks';
+import { DateTimePipe } from "../../../pipes/date-time.pipe";
 
 @Component({
   selector: 'app-daily-task',
   templateUrl: './daily-task.component.html',
   styleUrl: './daily-task.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    class: 'task',
-    '[class.task-checked]': 'checked()',
-    '[class.task-hidden]': 'hidden()',
-    '(click)': 'toggle.emit()',
-  },
-  imports: [RouterLink, MatIcon],
+  imports: [RouterLink, MatIcon, DateTimePipe],
 })
 export class DailyTaskComponent {
   readonly task = input.required<IDailyTask>();

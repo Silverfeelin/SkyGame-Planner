@@ -1,24 +1,33 @@
-<div class="task-row">
-  <mat-icon class="task-check-icon">{{ checked() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-  <span class="task-name">{{ task().name }}</span>
-  @if (task().location) { <span class="task-realm">{{ task().location }}</span> }
-  @if (light()) { <span class="task-light">{{ light() }} light</span> }
-  @if (task().note) { <span class="task-note muted">{{ task().note }}</span> }
-  @if (showHide()) {
-    <button class="task-hide-btn" (click)="toggleHide.emit(); $event.stopPropagation()" [title]="hidden() ? 'Show task' : 'Hide task'">
-      <mat-icon>{{ hidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
-    </button>
+<div class="task" [class.task-checked]="checked()" [class.c-new]="checked()" [class.task-hidden]="hidden()" [class.c-old]="hidden()" (click)="toggle.emit()">
+  <div class="task-row">
+    <mat-icon class="task-check-icon">{{ checked() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+    <span class="task-name">
+      {{ task().name }}
+      @if (task().nextTime) {
+        &#64; {{ task().nextTime! | datetime:'HH:mm' }}
+      }
+    </span>
+    <div class="task-meta sky-flex flex-wrap">
+      @if (task().location) { <span class="task-location">{{ task().location }}</span> }
+      @if (light()) { <span class="task-light">{{ light() }} light</span> }
+      @if (task().note) { <span class="task-note">{{ task().note }}</span> }
+    </div>
+    @if (showHide()) {
+      <button class="task-hide-btn" (click)="toggleHide.emit(); $event.stopPropagation()" [title]="hidden() ? 'Show task' : 'Hide task'">
+        <mat-icon>{{ hidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+      </button>
+    }
+  </div>
+  @if (task().link) {
+    <a class="task-link" [routerLink]="task().link" (click)="$event.stopPropagation()">
+      <mat-icon>open_in_new</mat-icon>
+      <span>Open tracker</span>
+    </a>
+  }
+  @if (task().externalLink) {
+    <a class="task-link" [href]="task().externalLink" target="_blank" (click)="$event.stopPropagation()">
+      <mat-icon>open_in_new</mat-icon>
+      <span>Open link</span>
+    </a>
   }
 </div>
-@if (task().link) {
-  <a class="task-link" [routerLink]="task().link" (click)="$event.stopPropagation()">
-    <mat-icon>open_in_new</mat-icon>
-    <span>Open tracker</span>
-  </a>
-}
-@if (task().externalLink) {
-  <a class="task-link" [href]="task().externalLink" target="_blank" (click)="$event.stopPropagation()">
-    <mat-icon>open_in_new</mat-icon>
-    <span>Open link</span>
-  </a>
-}

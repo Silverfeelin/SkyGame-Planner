@@ -1,3 +1,4 @@
+import { DateHelper } from '@app/helpers/date-helper';
 import { DateTime } from 'luxon';
 
 export type DailyCadence = 'daily' | 'daily-variable' | 'timed' | 'weekly';
@@ -40,38 +41,48 @@ export const DAILY_TASKS: ReadonlyArray<IDailyTask> = [
   { id: 'cloud-tunnel', name: 'Cloud Tunnel', cadence: 'daily', location: 'Wind Paths', light: 250 },
 
   // Daily, variable reward
-  // { id: 'sanctuary-clams', name: 'Sunset Sanctuary Clams', cadence: 'daily-variable', location: 'Daylight Prairie', lightRange: [159, 337] },
   { id: 'treasure-reef-clams', name: 'Treasure Reef Clams', cadence: 'daily-variable', location: 'Treasure Reef', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Treasure_Reef', lightRange: [159, 245] },
   { id: 'village-theater-bouquets', name: 'Village Theater Bouquets', cadence: 'daily-variable', location: 'Village Theatre', lightRange: [21, 44] },
   { id: 'yeti-race', name: 'Yeti Race', cadence: 'daily-variable', location: 'Hermit Valley', note: 'Fragments increase light', lightRange: [150, 300] },
   { id: 'shards', name: 'Black shard eruptions', cadence: 'daily-variable', note: 'Location and time varies', externalLink: 'https://sky-shards.pages.dev/en', light: 200 },
 
   // Timed
-  { id: 'geyser', name: 'Polluted Geyser', cadence: 'timed', nextFn: nextGeyser, location: 'Sanctuary Island', light: 1000, note: 'XX:05 Sky time' },
-  { id: 'grandma', name: "Grandma's Dinner", cadence: 'timed', nextFn: nextGrandma, location: 'Elevated Clearing', light: 1000, note: 'XX:35 Sky time' },
-  { id: 'sanctuary-turtle-event', name: 'Sanctuary Turtle', cadence: 'timed', nextFn: nextTurtle, location: 'Daylight Prairie', note: 'Includes random clams', lightRange: [310, 488] },
-  { id: 'dreams-skater', name: 'Dreams Skater', cadence: 'timed', nextFn: nextSkater, location: 'Village of Dreams', light: 400 },
+  { id: 'geyser', name: 'Polluted Geyser', cadence: 'timed', nextFn: nextGeyser, location: 'Sanctuary Island', light: 1000 },
+  { id: 'grandma', name: "Grandma's Dinner", cadence: 'timed', nextFn: nextGrandma, location: 'Elevated Clearing', light: 1000 },
+  { id: 'sanctuary-turtle-event', name: 'Sanctuary Turtle', cadence: 'timed', nextFn: nextTurtle, location: 'Sanctuary Island', note: 'Includes random clams', lightRange: [310, 488] },
+  { id: 'dreams-skater', name: 'Dreams Skater', cadence: 'timed', nextFn: nextSkater, location: 'Village of Dreams', note: 'Only Friday to Sunday', light: 400 },
 
   // Weekly — Eye of Eden
   { id: 'eden-run', name: 'Eye of Eden run', cadence: 'weekly', link: '/realm/pnr-tracker' },
 ];
 
+function nextEvenTime(offsetMinutes: number): DateTime {
+  const now = DateTime.now().setZone(DateHelper.skyTimeZone);
+  let candidate = now.startOf('hour');
+  if (candidate.hour % 2 == 1) { candidate = candidate.plus({ hours: 1 }); }
+  candidate = candidate.plus({ minutes: offsetMinutes });
+  if (candidate <= now) { candidate = candidate.plus({ hours: 2 }); }
+  return candidate;
+}
+
 function nextGeyser(): DateTime {
-  // TODO: Get the first next "5 past even hour" in DateHelper.skyTimeZone.
-  return DateTime.now().plus({ hour: 1 });
+  return nextEvenTime(5);
 }
 
 function nextGrandma(): DateTime {
-  // TODO: Get the first next "35 past even hour" in DateHelper.skyTimeZone.
-  return DateTime.now().plus({ hour: 1 });;
+  return nextEvenTime(35);
 }
 
 function nextTurtle(): DateTime {
-  // TODO: Get the first next "50 past even hour" in DateHelper.skyTimeZone.
-  return DateTime.now().plus({ hour: 1 });
+  return nextEvenTime(50);
 }
 
 function nextSkater(): DateTime {
-  // TODO: Get the first next "uneven hour" in DateHelper.skyTimeZone, limited to Fri-Sun.
-  return DateTime.now().plus({ hour: 1 });
+  const now = DateTime.now().setZone(DateHelper.skyTimeZone);
+  const hour = now.hour;
+
+  let candidate = now.startOf('hour').plus({ hours: hour % 2 === 0 ? 1 : 2 });
+  return candidate.weekday >= 5
+    ? candidate
+    : candidate.plus({ days: 5 - candidate.weekday }).startOf('day').plus({ hours: 1 });
 }

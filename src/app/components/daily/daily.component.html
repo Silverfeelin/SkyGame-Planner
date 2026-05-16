@@ -17,11 +17,11 @@
         <div class="daily-countdown">{{ dailyCountdown() }}</div>
       </div>
       <div class="container d-block">
-        <div class="muted">{{ nextTimed().task.name }} &middot; {{ nextTimed().date }} Sky time</div>
+        <div class="muted">{{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | datetime:'HH:mm' }} Sky time</div>
         <div class="daily-countdown">{{ nextTimed().countdown }}</div>
       </div>
       <div class="container d-block">
-        <div class="muted">Eden reset in</div>
+        <div class="muted">Eden (weekly) reset in</div>
         <div class="daily-countdown">{{ weeklyCountdown() }}</div>
       </div>
     </div>
@@ -91,7 +91,7 @@
     <div class="header-right muted">Wax amounts vary per day</div>
   </div>
   <div class="sky-card-body">
-    <div class="task-list">
+    <div class="grid grid-2">
       @for (task of dailyVariable; track task.id) {
         @if (!isHidden(task.id) || showHidden()) {
           <app-daily-task [task]="task" [checked]="isDailyChecked(task.id)" [light]="formatLight(task)" [hidden]="isHidden(task.id)" (toggle)="toggleDaily(task)" (toggleHide)="toggleHide(task)" />
@@ -112,27 +112,16 @@
         </button>
       }
     </h2>
-    <div class="header-right muted">Next: {{ nextTimed().task.name }} &middot; {{ nextTimed().date }} Sky time ({{ nextTimed().countdown }})</div>
+    <div class="header-right muted">Next: {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | datetime:'HH:mm' }} ({{ nextTimed().countdown }})</div>
   </div>
   <div class="sky-card-body">
-    <ul class="task-list task-list-info">
+    <div class="grid grid-2">
       @for (task of timed; track task.id) {
         @if (!isHidden(task.id) || showHidden()) {
-          <li class="task" [class.task-hidden]="isHidden(task.id)">
-            <div class="task-row">
-              <mat-icon class="task-info-icon">schedule</mat-icon>
-              <span class="task-name">{{ task.name }}</span>
-              @if (task.location) { <span class="task-realm">{{ task.location }}</span> }
-              @if (formatLight(task)) { <span class="task-light">{{ formatLight(task) }} light</span> }
-              @if (task.note) { <span class="task-note muted">{{ task.note }}</span> }
-              <button class="task-hide-btn" (click)="toggleHide(task); $event.stopPropagation()" [title]="isHidden(task.id) ? 'Show task' : 'Hide task'">
-                <mat-icon>{{ isHidden(task.id) ? 'visibility' : 'visibility_off' }}</mat-icon>
-              </button>
-            </div>
-          </li>
+          <app-daily-task [task]="task" [checked]="isDailyChecked(task.id)" [light]="formatLight(task)" [hidden]="isHidden(task.id)" (toggle)="toggleDaily(task)" (toggleHide)="toggleHide(task)" />
         }
       }
-    </ul>
+    </div>
   </div>
 </div>
 
@@ -143,10 +132,10 @@
     <div class="header-right muted">Resets Sunday in Sky time</div>
   </div>
   <div class="sky-card-body">
-    <ul class="task-list">
+    <div class="grid grid-1">
       @for (task of weekly; track task.id) {
         <app-daily-task [task]="task" [checked]="isWeeklyChecked(task.id)" [showHide]="false" (toggle)="toggleWeekly(task)" />
       }
-    </ul>
+    </div>
   </div>
 </div>
