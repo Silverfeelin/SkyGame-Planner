@@ -4,7 +4,7 @@
     <span class="task-name">
       {{ task().name }}
       @if (task().nextTime) {
-        &#64; {{ task().nextTime! | datetime:'HH:mm' }}
+        <span class="muted">{{ task().nextTime! | datetime:'HH:mm' }}</span>
       }
     </span>
     <div class="task-meta sky-flex flex-wrap">

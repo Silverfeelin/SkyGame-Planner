@@ -42,15 +42,15 @@ export const DAILY_TASKS: ReadonlyArray<IDailyTask> = [
 
   // Daily, variable reward
   { id: 'treasure-reef-clams', name: 'Treasure Reef Clams', cadence: 'daily-variable', location: 'Treasure Reef', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Treasure_Reef', lightRange: [159, 245] },
-  { id: 'village-theater-bouquets', name: 'Village Theater Bouquets', cadence: 'daily-variable', location: 'Village Theatre', lightRange: [21, 44] },
-  { id: 'yeti-race', name: 'Yeti Race', cadence: 'daily-variable', location: 'Hermit Valley', note: 'Fragments increase light', lightRange: [150, 300] },
+  { id: 'village-theater-bouquets', name: 'Village Theater Bouquets', cadence: 'daily-variable', location: 'Village Theatre', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Village_Theater', lightRange: [21, 44] },
+  { id: 'yeti-race', name: 'Yeti Race', cadence: 'daily-variable', location: 'Hermit Valley', note: 'Fragments increase light', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Yeti_Race', lightRange: [150, 300] },
   { id: 'shards', name: 'Black shard eruptions', cadence: 'daily-variable', note: 'Location and time varies', externalLink: 'https://sky-shards.pages.dev/en', light: 200 },
 
   // Timed
-  { id: 'geyser', name: 'Polluted Geyser', cadence: 'timed', nextFn: nextGeyser, location: 'Sanctuary Island', light: 1000 },
-  { id: 'grandma', name: "Grandma's Dinner", cadence: 'timed', nextFn: nextGrandma, location: 'Elevated Clearing', light: 1000 },
-  { id: 'sanctuary-turtle-event', name: 'Sanctuary Turtle', cadence: 'timed', nextFn: nextTurtle, location: 'Sanctuary Island', note: 'Includes random clams', lightRange: [310, 488] },
-  { id: 'dreams-skater', name: 'Dreams Skater', cadence: 'timed', nextFn: nextSkater, location: 'Village of Dreams', note: 'Only Friday to Sunday', light: 400 },
+  { id: 'geyser', name: 'Polluted Geyser', cadence: 'timed', nextFn: nextGeyser, location: 'Sanctuary Island', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Polluted_Geyser', light: 1000 },
+  { id: 'grandma', name: "Grandma's Dinner", cadence: 'timed', nextFn: nextGrandma, location: 'Elevated Clearing', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Grandma\'s_Dinner_Event', light: 1000 },
+  { id: 'sanctuary-turtle-event', name: 'Sanctuary Turtle', cadence: 'timed', nextFn: nextTurtle, location: 'Sanctuary Island', note: 'Includes random clams', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Sunset_Sanctuary_Turtle', lightRange: [310, 488] },
+  { id: 'dreams-skater', name: 'Dreams Skater', cadence: 'timed', nextFn: nextSkater, location: 'Village of Dreams', note: 'Only Friday to Sunday', externalLink: 'https://sky-children-of-the-light.fandom.com/wiki/Additional_Light_Sources#Dreams_Skater', light: 400 },
 
   // Weekly — Eye of Eden
   { id: 'eden-run', name: 'Eye of Eden run', cadence: 'weekly', link: '/realm/pnr-tracker' },
