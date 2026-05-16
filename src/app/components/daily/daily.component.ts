@@ -194,7 +194,7 @@ export class DailyComponent implements OnInit, OnDestroy {
     // Update nextTime.
     this.timed.forEach(t => {
       if (!t.nextFn) { return; }
-      if (!t.nextTime || t.nextTime < now) {
+      if (!t.nextTime || t.nextTime <= now) {
         t.nextTime = t.nextFn().toLocal();
       }
     });
