@@ -32,6 +32,7 @@
     "@badgateway/oauth2-client": "^2.3.0",
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@popperjs/core": "^2.11.6",
+    "ag-charts-types": "^13.3.0",
     "ag-grid-angular": "^35.3.0",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.4.3",

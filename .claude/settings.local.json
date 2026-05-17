@@ -2,11 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(Get-ChildItem -Path \"c:\\\\GitHub\\\\SkyGame-Planner\" -Force)",
-      "Bash(Select-Object Name, Mode)"
+      "Bash(Select-Object Name, Mode)",
+      "WebFetch(domain:www.ag-grid.com)",
+      "Bash(Select-String -Pattern)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "playwright"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }

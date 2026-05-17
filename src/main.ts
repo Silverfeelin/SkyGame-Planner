@@ -10,6 +10,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { isDevMode } from '@angular/core';
 import { loadTheme } from './themes';
 import { loadDataUrl } from './data-url';
+import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
 // #endregion
 
 // Load theme.
@@ -22,6 +23,8 @@ addEventListener('beforeinstallprompt', evt => {
   evt.preventDefault();
   (window as any).pwaInstallPrompt = evt;
 });
+
+ModuleRegistry.registerModules([ AllCommunityModule ]);
 
 bootstrapApplication(AppComponent, {
   providers: [
