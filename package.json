@@ -19,7 +19,6 @@
   },
   "private": true,
   "dependencies": {
-    "@ag-grid-community/theming": "^32.3.9",
     "@angular/animations": "^19.2.1",
     "@angular/common": "^19.2.1",
     "@angular/compiler": "^19.2.1",

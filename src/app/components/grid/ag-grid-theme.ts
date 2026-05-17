@@ -1,17 +1,17 @@
 
-import { Theme, themeQuartz } from '@ag-grid-community/theming';
+import { themeQuartz } from 'ag-grid-community';
 import { getCurrentTheme } from 'src/themes';
 
-const themeCache: { [key: string]: Theme<unknown> } = {};
+const themeCache: { [key: string]: ReturnType<typeof createTheme> } = {};
 
 /** Gets an AG Grid theme styled to the current website theme. */
-export const getAgTheme = (): Theme<unknown> => {
+export const getAgTheme = (): ReturnType<typeof createTheme> => {
   const currentTheme = getCurrentTheme();
   return themeCache[currentTheme.value]
     ?? createTheme(currentTheme.value);
 }
 
-const createTheme = (id: string): Theme<unknown> => {
+const createTheme = (id: string): ReturnType<typeof themeQuartz.withParams> => {
   const docStyles = getComputedStyle(document.documentElement);
   const bodyStyles = getComputedStyle(document.body);
   const theme = themeQuartz.withParams({
