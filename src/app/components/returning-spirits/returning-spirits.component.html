@@ -10,48 +10,6 @@
   </div>
 </div>
 
-<div class="sky-card p-0 mt">
-  <div class="sky-card-body scroll-x">
-    <app-table [rows]="rows">
-      <ng-template [appTableHeader]>Name</ng-template>
-      <ng-template [appTableHeader]>Spirits</ng-template>
-      <ng-template [appTableHeader]>Start</ng-template>
-      <ng-template [appTableHeader]>End</ng-template>
-      <ng-template [appTableHeader]>Unlocked</ng-template>
-      <ng-template [appTableColumn] let-row="row">
-        <a  [routerLink]="['/rs', row.guid]">
-          {{ row.name }}
-        </a>
-      </ng-template>
-      <ng-template [appTableColumn] let-row="row" [tdClass]="'ws-nw'">
-        <!--Spirit images -->
-        <a class="sky-card spirit-img t-center" *ngFor="let spiritVisit of row.spirits"
-          [routerLink]="['/spirit', spiritVisit.spirit.guid]" [queryParams]="{ highlightTree: spiritVisit.tree.guid }"
-          [ngbTooltip]="spiritVisit.spirit.name" container="body" placement="bottom"
-        >
-          <app-icon *ngIf="spiritVisit.spirit.imageUrl" [src]="spiritVisit.spirit.imageUrl" [width]="'auto'" [lazy]="true"></app-icon>
-        </a>
-        <!-- Spirit count for small devices -->
-        <div class="spirit-count">
-          {{ row.spirits?.length || 0 }}
-        </div>
-      </ng-template>
-      <!-- <ng-template [appTableColumn] let-row="row">
-        <a  [routerLink]="['/spirits']" [queryParams]="{ highlightTree: row.treeGuid }">
-          {{ spiritVisit.spirit.name }}
-        </a>
-      </ng-template> -->
-      <ng-template [appTableColumn] let-row="row">
-        <span class="ws-nw"><app-date [date]="row.date"></app-date></span>
-      </ng-template>
-      <ng-template [appTableColumn] let-row="row">
-        <span class="ws-nw"><app-date [date]="row.endDate"></app-date></span>
-      </ng-template>
-      <ng-template [appTableColumn] let-row="row">
-        <span *ngIf="row.totalItems" [class.completed]="row.unlockedItems === row.totalItems">
-          {{ row.unlockedItems }} / {{ row.totalItems }}
-        </span>
-      </ng-template>
-    </app-table>
-  </div>
+<div class="mt">
+  <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme" [getRowHeight]="getRowHeight" [suppressDragLeaveHidesColumns]="true" (gridReady)="onGridReady($event)" />
 </div>

@@ -5,5 +5,5 @@
 </div>
 
 <div class="mt">
-  <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme" [getRowHeight]="getRowHeight" (gridReady)="onGridReady($event)" />
+  <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme" [getRowHeight]="getRowHeight" [suppressDragLeaveHidesColumns]="true" (gridReady)="onGridReady($event)" />
 </div>

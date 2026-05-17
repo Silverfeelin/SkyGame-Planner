@@ -1,31 +1,85 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { DateComponent } from '../util/date/date.component';
-import { IconComponent } from '../icon/icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgFor, NgIf } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { TableColumnDirective } from '../table/table-column/table-column.directive';
-import { TableHeaderDirective } from '../table/table-column/table-header.directive';
-import { TableComponent } from '../table/table.component';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
-import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
+import { CalendarLinkComponent } from '../util/calendar-link/calendar-link.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
+import { AgGridAngular } from 'ag-grid-angular';
+import { ColDef, GridApi, GridReadyEvent, ValueFormatterParams, ValueGetterParams } from 'ag-grid-community';
+import { DateTime } from 'luxon';
+import { getAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgRouteRendererComponent } from '../grid/renderers/ag-route-renderer/ag-route-renderer.component';
+import { AgDateRendererComponent } from '../grid/renderers/ag-date-renderer/ag-date-renderer.component';
+import { AgSpiritsRendererComponent } from '../grid/renderers/ag-spirits-renderer/ag-spirits-renderer.component';
 
 @Component({
     selector: 'app-returning-spirits',
     templateUrl: './returning-spirits.component.html',
     styleUrls: ['./returning-spirits.component.less'],
-    imports: [WikiLinkComponent, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, NgFor, NgbTooltip, NgIf, IconComponent, DateComponent, CalendarLinkComponent]
+    imports: [WikiLinkComponent, CalendarLinkComponent, AgGridAngular]
 })
 export class ReturningSpiritsComponent {
-  rows: Array<any> = [];
+  theme = getAgTheme();
+  rowData: any[] = [];
+  api?: GridApi;
+
+  colDefs: ColDef[] = [
+    {
+      field: 'name', headerName: 'Name', filter: 'agTextColumnFilter',
+      flex: 1, minWidth: 200,
+      cellRenderer: AgRouteRendererComponent,
+      valueFormatter: (p: ValueFormatterParams) => p.value?.label ?? '',
+      comparator: (a: any, b: any) => (a?.label ?? '').localeCompare(b?.label ?? ''),
+      filterValueGetter: (p: ValueGetterParams) => p.data.name?.label ?? ''
+    },
+    {
+      field: 'spirits', headerName: 'Spirits',
+      flex: 1, minWidth: 200,
+      sortable: false, filter: false,
+      cellRenderer: AgSpiritsRendererComponent
+    },
+    {
+      field: 'date', headerName: 'Start', width: 140,
+      cellRenderer: AgDateRendererComponent,
+      filter: 'agDateColumnFilter',
+      initialSort: 'desc',
+      sortingOrder: ['desc', 'asc'],
+      filterValueGetter: (p: ValueGetterParams) => p.data.date ? (p.data.date as DateTime).toLocal().startOf('day').toJSDate() : null,
+      valueFormatter: (p: ValueFormatterParams) => p.value ?? '',
+      comparator: (a: DateTime | undefined, b: DateTime | undefined) => {
+        if (!a && !b) { return 0; }
+        if (!a) { return 1; }
+        if (!b) { return -1; }
+        return a.diff(b).as('milliseconds');
+      }
+    },
+    {
+      field: 'endDate', headerName: 'End', width: 140,
+      cellRenderer: AgDateRendererComponent,
+      filter: 'agDateColumnFilter',
+      filterValueGetter: (p: ValueGetterParams) => p.data.endDate ? (p.data.endDate as DateTime).toLocal().startOf('day').toJSDate() : null,
+      valueFormatter: (p: ValueFormatterParams) => p.value ?? '',
+      comparator: (a: DateTime | undefined, b: DateTime | undefined) => {
+        if (!a && !b) { return 0; }
+        if (!a) { return 1; }
+        if (!b) { return -1; }
+        return a.diff(b).as('milliseconds');
+      }
+    },
+    {
+      field: 'unlocked', headerName: 'Unlocked', width: 150,
+      filter: 'agNumberColumnFilter',
+      cellRenderer: (p: any) => {
+        if (!p.data.total) { return ''; }
+        const cls = p.data.completed ? 'completed' : '';
+        return `<span class="${cls}">${p.value} / ${p.data.total}</span>`;
+      }
+    }
+  ];
 
   constructor(
     private readonly _dataService: DataService
   ) {
-    this.rows = this._dataService.returningSpiritsConfig.items.map(rs => {
-      // Count items.
+    this.rowData = this._dataService.returningSpiritsConfig.items.map(rs => {
       let unlockedItems = 0, totalItems = 0;
       rs.spirits.forEach(s => {
         TreeHelper.getNodes(s.tree).forEach(node => {
@@ -35,23 +89,26 @@ export class ReturningSpiritsComponent {
       });
 
       return {
-        ...rs,
-        spiritGuids: rs.spirits.map(s => s.guid),
-        unlockedItems,
-        totalItems
+        guid: rs.guid,
+        name: { label: rs.name, route: ['/rs', rs.guid] },
+        spirits: rs.spirits.map(s => ({
+          label: s.spirit.name,
+          imageUrl: s.spirit.imageUrl,
+          route: ['/spirit', s.spirit.guid],
+          queryParams: { highlightTree: s.tree.guid }
+        })),
+        date: rs.date,
+        endDate: rs.endDate,
+        unlocked: unlockedItems,
+        total: totalItems,
+        completed: totalItems > 0 && unlockedItems === totalItems
       };
-    }).reverse();
-
-    // const tsSet = new Set<string>();
-    // const reverseTs = this._dataService.travelingSpiritConfig.items.slice().reverse();
-    // const cost: ICost = {};
-    // for (const ts of reverseTs) {
-    //   if (tsSet.has(ts.spirit.guid)) continue;
-    //   tsSet.add(ts.spirit.guid);
-    //   const nodes = NodeHelper.all(ts.tree.node);
-    //   nodes.forEach(n => CostHelper.add(cost, n));
-    // }
-
-    // console.log('cost', cost, 'spirits', tsSet.size);
+    });
   }
+
+  onGridReady(evt: GridReadyEvent<any, any>) {
+    this.api = evt.api;
+  }
+
+  getRowHeight = (): number | undefined => 96;
 }
