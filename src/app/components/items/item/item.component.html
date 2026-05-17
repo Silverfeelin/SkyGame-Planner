@@ -1,3 +1,10 @@
+<!-- Tip for unlocking item list nodes, since the default click behaviour changed. -->
+@if (showTipUnlock()) {
+  <div class="container mb">
+    Tip: Did you mean to {{ item?.unlocked ? 'lock' : 'unlock' }} the item? Go <a (click)="goBack()" class="text-link">back</a> and click on the price below the item!
+  </div>
+}
+
 <div *ngIf="item" class="item-info">
   <div class="sky-card" *ngIf="item">
     <div class="sky-card-header">

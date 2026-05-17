@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { DataService } from 'src/app/services/data.service';
@@ -12,7 +12,6 @@ import { ItemIconComponent } from '../item-icon/item-icon.component';
 import { NgIf } from '@angular/common';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { SettingService } from '@app/services/setting.service';
-import { EditorItemComponent } from '@app/editor/components/editor-item/editor-item.component';
 import { IItem } from 'skygame-data';
 
 @Component({
@@ -33,6 +32,8 @@ export class ItemComponent implements OnInit {
   settingService = inject(SettingService);
   debugVisible = this.settingService.debugVisible;
 
+  showTipUnlock = signal(false);
+
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
@@ -42,6 +43,11 @@ export class ItemComponent implements OnInit {
   ) {
     _route.paramMap.subscribe(params => {
       this.onParamsChanged(params);
+    });
+
+    _route.queryParamMap.subscribe(params => {
+      const showTipUnlock = params.get('showTipUnlock');
+      this.showTipUnlock.set(showTipUnlock === '1');
     });
   }
 
@@ -77,5 +83,9 @@ export class ItemComponent implements OnInit {
   copy(text: string | number | undefined): void {
     if (!text) { return; }
     navigator.clipboard.writeText(`${text}`);
+  }
+
+  goBack(): void {
+    window.history.back();
   }
 }
