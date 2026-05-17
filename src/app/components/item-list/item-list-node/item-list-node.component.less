@@ -19,12 +19,23 @@
   top: 0;
 }
 
-.cost {
+.bar {
+  position: relative;
   border-top: 1px solid var(--color-border-highlight);
   padding: 2px;
   text-align: center;
+  cursor: pointer;
 
-  > mat-icon {
+  mat-icon {
     vertical-align: top;
   }
+}
+
+.unlock {
+  display: none;
+}
+
+.bar:hover {
+  .cost { display: none; }
+  .unlock { display: block; }
 }

@@ -2,13 +2,14 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, In
 import { SubscriptionLike } from 'rxjs';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
-import { NgTemplateOutlet, NgIf } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { CurrencyService } from '@app/services/currency.service';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { IItemListNode } from 'skygame-data';
+import { RouterLink } from '@angular/router';
 
 
 export type ItemListNodeClickEvent = {
@@ -21,7 +22,7 @@ export type ItemListNodeClickEvent = {
     templateUrl: './item-list-node.component.html',
     styleUrl: './item-list-node.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgbTooltip, ItemIconComponent, MatIcon, NgTemplateOutlet, NgIf]
+    imports: [NgbTooltip, ItemIconComponent, MatIcon, NgTemplateOutlet, RouterLink]
 })
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() node!: IItemListNode;
@@ -61,6 +62,9 @@ export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   nodeClick(event: MouseEvent): void {
     if (!this.node.item) { return; }
     const item = this.node.item;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
 
     let prevented = false;
     const evt: ItemListNodeClickEvent = { node: this.node, prevent: () => prevented = true };
