@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { DataService } from 'src/app/services/data.service';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
@@ -12,7 +11,6 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AgRouteRendererComponent } from '../grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { DateTime } from 'luxon';
-import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
@@ -25,11 +23,15 @@ export class TravelingSpiritsComponent {
   theme = getAgTheme();
   rows: Array<any> = [];
 
+  readonly WIDE_WIDTH = 992
+
   colDefs: ColDef[] = [
     { field: 'nr', headerName: '#', width: 100, filter: 'agNumberColumnFilter', initialSort: 'desc', sortingOrder: ['asc', 'desc'] },
-    { field: 'img', headerName: '', sortable: false, cellRenderer: AgImageRendererComponent },
+    { field: 'img', headerName: 'Image', sortable: false, cellRenderer: AgImageRendererComponent },
     {
       field: 'spirit', headerName: 'Spirit', filter: 'agTextColumnFilter',
+      flex: 1,
+      minWidth: 200,
       cellRenderer: AgRouteRendererComponent,
       valueFormatter: (p: any) => p.value.label,
       comparator: (a: any, b: any) => a.label.localeCompare(b.label),
@@ -57,7 +59,7 @@ export class TravelingSpiritsComponent {
     private readonly _dataService: DataService,
     private readonly _breakpointObserver: BreakpointObserver
   ) {
-    this._breakpointObserver.observe(['(min-width: 720px)']).pipe(takeUntilDestroyed()).subscribe(s => {
+    this._breakpointObserver.observe([`(min-width: ${this.WIDE_WIDTH}px)`]).pipe(takeUntilDestroyed()).subscribe(s => {
       this.updateColumns(s.matches);
     });
 
@@ -81,18 +83,20 @@ export class TravelingSpiritsComponent {
     });
   }
 
+  private wide = false;
   onGridReady(evt: GridReadyEvent<any,any>) {
     this.api = evt.api;
-    this.updateColumns(this._breakpointObserver.isMatched('(min-width: 720px)'));
+    this.updateColumns(this._breakpointObserver.isMatched(`(min-width: ${this.WIDE_WIDTH}px)`));
   }
 
-  getRowHeight = (params: RowHeightParams): number | undefined => {
-    return this.api?.getColumn('img')?.isVisible() ? 128 : undefined;
+  getRowHeight = (): number | undefined => {
+    return this.wide ? 128 : 64;
   }
 
   private updateColumns(wide: boolean): void {
+    this.wide = wide;
     if (!this.api) return;
-    this.api.setColumnsVisible(['img'], wide);
     this.api.resetRowHeights();
+    this.api.autoSizeColumns(['img']);
   }
 }
