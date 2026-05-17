@@ -1,1 +1,3 @@
-<a [routerLink]="route" [queryParams]="queryParams">{{label}}</a>
+@if (label) {
+  <a [routerLink]="route" [queryParams]="queryParams">{{label}}</a>
+}

@@ -1,124 +1,255 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DateTime } from 'luxon';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
 import { DataService } from 'src/app/services/data.service';
-import { MatIcon } from '@angular/material/icon';
-import { TableFooterDirective } from '../table/table-column/table-footer.directive';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { SpiritTypeIconComponent } from '../spirit-type-icon/spirit-type-icon.component';
-import { TableColumnDirective } from '../table/table-column/table-column.directive';
-import { TableHeaderDirective } from '../table/table-column/table-header.directive';
-import { TableComponent } from '../table/table.component';
-import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { AgGridAngular } from 'ag-grid-angular';
+import { ColDef, GridApi, GridReadyEvent, ValueFormatterParams, ValueGetterParams } from 'ag-grid-community';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { getAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgImageRendererComponent } from '../grid/renderers/ag-image-renderer/ag-image-renderer.component';
+import { AgRouteRendererComponent } from '../grid/renderers/ag-route-renderer/ag-route-renderer.component';
+import { AgDateRendererComponent } from '../grid/renderers/ag-date-renderer/ag-date-renderer.component';
+import { AgSpiritTypeRendererComponent } from '../grid/renderers/ag-spirit-type-renderer/ag-spirit-type-renderer.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
-import { ISpirit, ISpiritTree, IRealm, IArea, ISeason, IItem } from 'skygame-data';
-
-type ViewMode = 'grid' | 'cards';
-type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
+import { ISpirit, ISpiritTree, IRealm, IArea, ISeason, IItem, SpiritType } from 'skygame-data';
 
 @Component({
     selector: 'app-spirits',
     templateUrl: './spirits.component.html',
     styleUrls: ['./spirits.component.less'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, NgbTooltip, TableFooterDirective, NgFor, MatIcon, NgSwitch, NgSwitchCase, NgSwitchDefault]
+    imports: [AgGridAngular]
 })
 export class SpiritsComponent {
-  mode: ViewMode = 'cards';
+  theme = getAgTheme();
+  rowData: any[] = [];
+  api?: GridApi;
 
-  spirits: Array<ISpirit> = [];
-  spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
-  rows: Array<any> = [];
-  unlockedItems = 0;
-  totalItems = 0;
+  readonly WIDE_WIDTH = 992;
+
+  colDefs: ColDef[] = [
+    { field: 'nr', headerName: '#', width: 90, filter: 'agNumberColumnFilter', initialSort: 'asc', sortingOrder: ['asc', 'desc'] },
+    { field: 'img', headerName: 'Image', width: 100, sortable: false, filter: false, cellRenderer: AgImageRendererComponent },
+    {
+      field: 'spirit', headerName: 'Spirit', filter: 'agTextColumnFilter',
+      flex: 1,
+      minWidth: 200,
+      cellRenderer: AgRouteRendererComponent,
+      valueFormatter: (p: ValueFormatterParams) => p.value.label,
+      comparator: (a: any, b: any) => a.label.localeCompare(b.label),
+      filterValueGetter: (p: ValueGetterParams) => p.data.spirit.label
+    },
+    {
+      field: 'type', headerName: 'Type', width: 100,
+      filter: 'agTextColumnFilter',
+      filterParams: {
+        filterOptions: ['equals', 'notEqual', 'contains', 'notContains'],
+        defaultOption: 'contains',
+        maxNumConditions: 6,
+        buttons: ['reset']
+      },
+      cellRenderer: AgSpiritTypeRendererComponent
+    },
+    {
+      field: 'area', headerName: 'Location', filter: 'agTextColumnFilter',
+      flex: 1,
+      minWidth: 150,
+      cellRenderer: AgRouteRendererComponent,
+      valueFormatter: (p: ValueFormatterParams) => p.value?.label ?? '',
+      comparator: (a: any, b: any) => (a?.label ?? '').localeCompare(b?.label ?? ''),
+      filterValueGetter: (p: ValueGetterParams) => p.data.area?.label ?? ''
+    },
+    {
+      field: 'date', headerName: 'Date', width: 120,
+      cellRenderer: AgDateRendererComponent,
+      filter: 'agDateColumnFilter',
+      filterValueGetter: (p: ValueGetterParams) => p.data.date ? (p.data.date as DateTime).toLocal().startOf('day').toJSDate() : null,
+      valueFormatter: (p: ValueFormatterParams) => p.value ?? '',
+      comparator: (a: DateTime | undefined, b: DateTime | undefined) => {
+        if (!a && !b) { return 0; }
+        if (!a) { return 1; }
+        if (!b) { return -1; }
+        return a.diff(b).as('milliseconds');
+      }
+    },
+    {
+      field: 'unlocked', headerName: 'Unlocked', width: 150,
+      filter: 'agNumberColumnFilter',
+      cellRenderer: (p: any) => {
+        if (!p.data.total) { return ''; }
+        const cls = p.data.completed ? 'completed' : p.data.partial ? 'partial' : '';
+        return `<span class="${cls}">${p.value} / ${p.data.total}</span>`;
+      },
+      tooltipValueGetter: (p: any) => p.data.unlockTooltip
+    }
+  ];
 
   constructor(
     private readonly _dataService: DataService,
-    private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _route: ActivatedRoute,
+    private readonly _breakpointObserver: BreakpointObserver
   ) {
-    this.mode = localStorage.getItem('spirits.mode') as ViewMode || 'grid';
+    this._breakpointObserver.observe([`(min-width: ${this.WIDE_WIDTH}px)`]).pipe(takeUntilDestroyed()).subscribe(s => {
+      this.updateColumns(s.matches);
+    });
+
     _route.queryParamMap.subscribe(q => { this.onQueryChanged(q); });
   }
 
-  changeMode(): void {
-    this.mode = this.mode === 'grid' ? 'cards' : 'grid';
-    localStorage.setItem('spirits.mode', this.mode);
+  onGridReady(evt: GridReadyEvent<any, any>) {
+    this.api = evt.api;
+    this.updateColumns(this._breakpointObserver.isMatched(`(min-width: ${this.WIDE_WIDTH}px)`));
+    this.updateDateColumnVisibility();
+    this.api.autoSizeColumns(['type']);
+    this.applyInitialTypeFilter();
   }
 
-  onQueryChanged(q: ParamMap): void {
-    this.spirits = [];
-    this.spiritTrees = {};
+  private applyInitialTypeFilter(): void {
+    const type = this._route.snapshot.queryParamMap.get('type');
+    if (!type || !this.api) { return; }
+    const values = type.split(',').map(v => v.trim()).filter(v => v);
+    if (!values.length) { return; }
 
-    // Filter by type
-    const type = q.get('type');
-    const typeSet = type ? new Set<string>(type.split(',')) : undefined;
+    const condition = (v: string) => ({ filterType: 'text', type: 'equals', filter: v });
+    const typeModel = values.length === 1
+      ? condition(values[0])
+      : { filterType: 'text', operator: 'OR', conditions: values.map(condition) };
 
-    const addSpirit = (s: ISpirit): boolean => {
-      this.spirits.push(s);
-      this.spiritTrees[s.guid] = SpiritHelper.getTrees(s);
+    this.api.setColumnFilterModel('type', typeModel).then(() => this.api?.onFilterChanged());
+  }
 
-      return true;
-    };
+  getRowHeight = (): number | undefined => {
+    return this.wide ? 128 : 64;
+  }
 
+  private wide = false;
+  private updateColumns(wide: boolean): void {
+    this.wide = wide;
+    if (!this.api) return;
+    this.api.resetRowHeights();
+    this.api.autoSizeColumns(['img']);
+  }
+
+  private onQueryChanged(q: ParamMap): void {
+    let spirits = this.filterSpirits(q);
+    const order = this.getSpiritOrderMap();
+    spirits = spirits.slice().sort((a, b) =>
+      (order.get(a.guid) ?? Infinity) - (order.get(b.guid) ?? Infinity)
+    );
+    const spiritTrees: {[guid: string]: Array<ISpiritTree>} = {};
+    spirits.forEach(s => { spiritTrees[s.guid] = SpiritHelper.getTrees(s); });
+    this.rowData = this.buildRows(spirits, spiritTrees);
+    this.updateDateColumnVisibility();
+    this.applyInitialTypeFilter();
+  }
+
+  private _spiritOrderMap?: Map<string, number>;
+  private getSpiritOrderMap(): Map<string, number> {
+    if (this._spiritOrderMap) { return this._spiritOrderMap; }
+    const order = new Map<string, number>();
+    let n = 0;
+
+    // 1: Regular and Elder by realm -> area -> spirit.
+    for (const realm of this._dataService.realmConfig.items) {
+      for (const area of realm.areas || []) {
+        for (const spirit of area.spirits || []) {
+          if (order.has(spirit.guid)) { continue; }
+          if (spirit.type === 'Regular' || spirit.type === 'Elder') {
+            order.set(spirit.guid, n++);
+          }
+        }
+      }
+    }
+
+    // 2: Season spirits (Season and Guide) by season order.
+    for (const season of this._dataService.seasonConfig.items) {
+      for (const spirit of season.spirits || []) {
+        if (order.has(spirit.guid)) { continue; }
+        if (spirit.type === 'Season' || spirit.type === 'Guide') {
+          order.set(spirit.guid, n++);
+        }
+      }
+    }
+
+    // 3: Event spirits by first event instance date.
+    const eventSpirits = this._dataService.spiritConfig.items
+      .filter(s => s.type === 'Event' && !order.has(s.guid))
+      .sort((a, b) => {
+        const da = a.eventInstanceSpirits?.at(0)?.eventInstance?.date;
+        const db = b.eventInstanceSpirits?.at(0)?.eventInstance?.date;
+        if (!da && !db) { return 0; }
+        if (!da) { return 1; }
+        if (!db) { return -1; }
+        return da.diff(db).as('milliseconds');
+      });
+    for (const spirit of eventSpirits) { order.set(spirit.guid, n++); }
+
+    // 4: Special.
+    for (const spirit of this._dataService.spiritConfig.items) {
+      if (order.has(spirit.guid)) { continue; }
+      if (spirit.type === 'Special') { order.set(spirit.guid, n++); }
+    }
+
+    // Catch-all for any spirit not matched above.
+    for (const spirit of this._dataService.spiritConfig.items) {
+      if (!order.has(spirit.guid)) { order.set(spirit.guid, n++); }
+    }
+
+    this._spiritOrderMap = order;
+    return order;
+  }
+
+  private updateDateColumnVisibility(): void {
+    const hasDate = this.rowData.some(r => !!r.date);
+    this.api?.setColumnsVisible(['date'], hasDate);
+  }
+
+  private getSpiritDate(s: ISpirit): DateTime | undefined {
+    switch (s.type as SpiritType) {
+      case 'Regular':
+      case 'Elder':
+        return undefined;
+      case 'Guide':
+      case 'Season':
+        return s.season?.date;
+      case 'Event':
+        return s.eventInstanceSpirits?.at(0)?.eventInstance?.date;
+      default:
+        return s.season?.date || s.eventInstanceSpirits?.at(-1)?.eventInstance?.date;
+    }
+  }
+
+  private filterSpirits(q: ParamMap): Array<ISpirit> {
     const searchArrays: Array<Array<ISpirit>> = [];
 
-    // Load from realm.
     const realmGuid = q.get('realm');
     const realm = realmGuid ? this._dataService.guidMap.get(realmGuid) as IRealm : undefined;
     if (realm) {
-      const spirits = new Set(realm.areas?.flatMap(a => a.spirits || []) || []);
-      const ordered = this._dataService.spiritConfig.items.filter(s => spirits.has(s));
-      searchArrays.push(ordered);
+      const set = new Set(realm.areas?.flatMap(a => a.spirits || []) || []);
+      searchArrays.push(this._dataService.spiritConfig.items.filter(s => set.has(s)));
     }
 
-    // Load from area
     const areaGuid = q.get('area');
     const area = areaGuid ? this._dataService.guidMap.get(areaGuid) as IArea : undefined;
-    if (area) {
-      const spirits = area.spirits || [];
-      searchArrays.push(spirits);
-    }
+    if (area) { searchArrays.push(area.spirits || []); }
 
-    // Load from season.
     const seasonGuid = q.get('season');
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;
-    if (season) {
-      const spirits = season.spirits || [];
-      searchArrays.push(spirits);
-    }
+    if (season) { searchArrays.push(season.spirits || []); }
 
-    // Get intersection using all search parameters.
-    let spirits = searchArrays.length
+    return searchArrays.length
       ? ArrayHelper.intersection(...searchArrays)
       : this._dataService.spiritConfig.items;
-
-    // Filter by type.
-    spirits = typeSet ? spirits.filter(s => typeSet.has(s.type)) : spirits;
-
-    // Add spirits to list.
-    spirits.forEach(addSpirit);
-
-    switch (q.get('sort') as SortMode) {
-      case 'age-asc': this.sortAge(1); break;
-      case 'age-desc': this.sortAge(-1); break;
-      case 'name-asc': this.sortName(); break;
-    }
-    this.initTable();
   }
 
-  initTable(): void {
-    this.unlockedItems = 0;
-    this.totalItems = 0;
-    this.rows = this.spirits.map(s => {
-      // Count items from all spirit trees.
+  private buildRows(spirits: Array<ISpirit>, spiritTrees: {[guid: string]: Array<ISpiritTree>}): any[] {
+    return spirits.map((s, i) => {
       let unlockedItems = 0, totalItems = 0;
-      const trees = this.spiritTrees[s.guid]!;
+      const trees = spiritTrees[s.guid]!;
       const itemSet = new Set<IItem>();
       trees.forEach(tree => {
-        // Get all nodes
         TreeHelper.getItems(tree).forEach(item => {
           if (itemSet.has(item)) { return; }
           itemSet.add(item);
@@ -127,17 +258,14 @@ export class SpiritsComponent {
         });
       });
 
-      // Count items from last spirit tree.
       let unlockedLast = 0, totalLast = 0;
       let unlockedFree = 0, totalFree = 0;
       let unlockedPass = 0, totalPass = 0;
       const lastTree = trees.at(-1);
       if (lastTree) {
-        // Count items from last tree.
         TreeHelper.getItems(lastTree).forEach(item => {
           if (item.unlocked) { unlockedLast++; }
           totalLast++;
-
           if (item.group === 'Ultimate') {
             item.unlocked && unlockedPass++;
             totalPass++;
@@ -148,102 +276,30 @@ export class SpiritsComponent {
         });
       }
 
-      const unlockTooltip = unlockedItems === totalItems ? 'All items unlocked.'
+      const completed = totalItems > 0 && unlockedItems === totalItems;
+      const partial = !completed && (
+        (!!unlockedLast && unlockedLast === totalLast)
+        || ((!!unlockedFree || !!totalPass) && unlockedFree === totalFree)
+      );
+      const unlockTooltip = completed ? 'All items unlocked.'
         : unlockedLast && unlockedLast === totalLast ? 'All items unlocked in most recent visit.'
         : (unlockedFree || totalPass) && unlockedFree === totalFree ? 'All free items unlocked.'
         : undefined;
 
-      this.unlockedItems += unlockedItems;
-      this.totalItems += totalItems;
-
       return {
-        ...s,
-        areaGuid: s.area?.guid,
-        unlockedItems, totalItems,
-        unlockedFree, totalFree,
-        unlockedPass, totalPass,
-        unlockedLast, totalLast,
+        nr: i + 1,
+        guid: s.guid,
+        img: s.imageUrl,
+        spirit: { label: s.name, route: ['/spirit', s.guid] },
+        type: s.type,
+        area: s.area ? { label: s.area.name, route: ['/area', s.area.guid] } : undefined,
+        date: this.getSpiritDate(s),
+        unlocked: unlockedItems,
+        total: totalItems,
+        completed,
+        partial,
         unlockTooltip
-      }
+      };
     });
-  }
-
-  sortDefault(): void {
-    this.sortByDefault();
-    this.updateSortUrl('default');
-    this.initTable();
-  }
-
-  sortName(): void {
-    this.sortByName();
-    this.updateSortUrl('name-asc');
-    this.initTable();
-  }
-
-  sortAge(direction: number): void {
-    this.sortByAge(direction);
-    this.updateSortUrl(direction > 0 ? 'age-asc' : 'age-desc');
-    this.initTable();
-  }
-
-  private sortByDefault(): void {
-    this.spirits.sort((a, b) => a._index - b._index);
-  }
-
-  private sortByName(): void {
-    this.spirits.sort((a, b) => a.name.localeCompare(b.name));
-  }
-
-  private sortByAge(direction: number): void {
-    const realmOrder = new Map<string, number>(
-      this._dataService.realmConfig.items.map((r, i) => [r.guid, i])
-    );
-    const dateA = DateTime.fromFormat('2019-01-01', 'yyyy-MM-dd');
-    const dateB = DateTime.fromFormat('2999-01-01', 'yyyy-MM-dd');
-    const dates = this.spirits.reduce((acc, s) => {
-      let date = s.season?.date || s.eventInstanceSpirits?.at(-1)?.eventInstance?.date;
-      switch (s.type) {
-        case 'Regular':
-        case 'Elder':
-          date = dateA;
-          break;
-        case 'Guide':
-        case 'Season':
-          date = s.season?.date;
-          break;
-        case 'Event':
-          date = s.eventInstanceSpirits?.at(0)?.eventInstance?.date;
-          break;
-      }
-
-      acc[s.guid] = date ?? dateB;
-      return acc;
-    }, {} as {[guid: string]: DateTime});
-
-    this.spirits.sort((a, b) => {
-      const dateA = dates[a.guid];
-      const dateB = dates[b.guid];
-      const diff = dateA.diff(dateB).as('milliseconds');
-      if (diff !== 0) { return diff * direction; }
-
-      const aIsAgeless = a.type === 'Regular' || a.type === 'Elder';
-      const bIsAgeless = b.type === 'Regular' || b.type === 'Elder';
-      if (aIsAgeless && bIsAgeless) {
-        const realmA = realmOrder.get(a.area?.realm?.guid ?? '') ?? Infinity;
-        const realmB = realmOrder.get(b.area?.realm?.guid ?? '') ?? Infinity;
-        if (realmA !== realmB) { return (realmA - realmB) * direction; }
-        const areaA = a.area?.realm?.areas?.indexOf(a.area) ?? Infinity;
-        const areaB = b.area?.realm?.areas?.indexOf(b.area) ?? Infinity;
-        if (areaA !== areaB) { return (areaA - areaB) * direction; }
-      }
-
-      return (a._index - b._index) * direction;
-    });
-  }
-
-  private updateSortUrl(type: SortMode): void {
-    const url = new URL(location.href);
-    url.searchParams.set('sort', type);
-    history.replaceState(history.state, '', url.pathname + url.search);
   }
 }

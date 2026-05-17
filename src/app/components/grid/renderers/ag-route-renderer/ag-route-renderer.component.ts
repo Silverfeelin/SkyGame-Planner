@@ -20,8 +20,8 @@ export class AgRouteRendererComponent implements ICellRendererAngularComp {
   }
 
   refresh(params: any): boolean {
-    const { label, route, queryParams } = params.value;
-    this.label = label
+    const { label, route, queryParams } = params.value ?? {};
+    this.label = label;
     this.route = route;
     this.queryParams = queryParams;
     return false;
