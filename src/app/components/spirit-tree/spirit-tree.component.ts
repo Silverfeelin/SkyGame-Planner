@@ -1,10 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, Output, signal, SimpleChanges, TemplateRef } from '@angular/core';
 import { filter, SubscriptionLike } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IItem } from 'src/app/interfaces/item.interface';
-import { INode } from 'src/app/interfaces/node.interface';
 import { EventService } from 'src/app/services/event.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { NodeAction, NodeComponent } from '../node/node.component';
@@ -19,9 +15,11 @@ import { CurrencyService } from '@app/services/currency.service';
 import { IconService } from '@app/services/icon.service';
 import { DataService } from '@app/services/data.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { INode, ISpiritTree, ISpiritTreeTier, ICost, IItem } from 'skygame-data';
 
 export type SpiritTreeNodeClickEvent = { node: INode, event: MouseEvent };
 const signalAction = signal<NodeAction>('unlock');
@@ -33,15 +31,16 @@ type ShareMode = 'share' | 'clipboard';
     templateUrl: './spirit-tree.component.html',
     styleUrls: ['./spirit-tree.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, RouterLink, DateComponent, CostComponent, NodeComponent]
+    imports: [MatIcon, NgbTooltip, NgFor, NgTemplateOutlet, DateComponent, CostComponent, NodeComponent]
 })
 export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit {
   @Input() tree!: ISpiritTree;
   @Input() name?: string | undefined;
   @Input() highlight?: boolean;
   @Input() highlightItem?: string | Array<string>;
+  @Input() highlightNode?: string | Array<string>;
   @Input() enableControls = true;
+  @Input() enableNavigation = true;
   @Input() showNodeTooltips = true;
   @Input() nodeOverlayTemplate?: TemplateRef<unknown>;
   @Input() opaqueNodes?: boolean | Array<string>;
@@ -50,13 +49,17 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
   @Output() readonly nodeClicked = new EventEmitter<SpiritTreeNodeClickEvent>();
 
+  hasNodes = false;
+  hasTiers = false;
   nodes: Array<INode> = [];
   left: Array<INode> = [];
   center: Array<INode> = [];
   right: Array<INode> = [];
+  tiers?: Array<ISpiritTreeTier>;
   opaqueNodesAll: boolean = false;
   opaqueNodesMap: { [guid: string]: boolean } = {};
   highlightItemMap: { [guid: string]: boolean } = {};
+  highlightNodeMap: { [guid: string]: boolean } = {};
 
   hasCostAtRoot = false;
   toggleUnlock = false;
@@ -85,7 +88,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     private readonly _spiritTreeRenderService: SpiritTreeRenderService,
     private readonly _storageService: StorageService,
     private readonly _elementRef: ElementRef,
-    private readonly _changeDetectorRef: ChangeDetectorRef
+    private readonly _changeDetectorRef: ChangeDetectorRef,
+    private readonly _router: Router
   ) {
     effect(() => {
       this.nodeAction = signalAction();
@@ -94,6 +98,7 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
     _eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
       if (this.forceNodeAction || !this.enableControls) { return; }
+      if (evt.shiftKey || evt.ctrlKey || evt.altKey || evt.metaKey) { return; }
 
       let action: NodeAction | undefined;
       switch (evt.key?.toLocaleLowerCase()) {
@@ -124,8 +129,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
       this.subscribeItemChanged();
       this.calculateRemainingCosts();
 
-      this.tsDate = this.tree.ts?.date;
-      this.rsDate = this.tree.visit?.return?.date;
+      this.tsDate = this.tree.travelingSpirit?.date;
+      this.rsDate = this.tree.specialVisitSpirit?.visit?.date;
     }
 
     if (changes['opaqueNodes']) {
@@ -147,6 +152,18 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
         }
       }
     }
+
+    if (changes['highlightNode']) {
+      this.highlightNodeMap = {};
+      if (this.highlightNode) {
+        if (typeof this.highlightNode === 'string') {
+          this.highlightNodeMap[this.highlightNode] = true;
+        } else {
+          this.highlightNode.forEach(guid => this.highlightNodeMap[guid] = true);
+        }
+      }
+    }
+
 
     this.updateName();
   }
@@ -182,12 +199,21 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this.totalCost = CostHelper.create();
     this.remainingCost = CostHelper.create();
     this.nodes = []; this.left = []; this.center = []; this.right = [];
+    this.tiers = undefined;
     this.hasCost = false;
 
-    if (!this.tree) { return; }
-    this.initializeNode(this.tree.node, 0, 0);
-    this.hasCost = !CostHelper.isEmpty(this.totalCost);
-    this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node);
+    this.hasNodes = !!(this.tree && this.tree.node);
+    this.hasTiers = !!(this.tree && this.tree.tier);
+
+    if (this.hasNodes) {
+      this.initializeNode(this.tree.node!, 0, 0);
+      this.hasCost = !CostHelper.isEmpty(this.totalCost);
+      this.hasCostAtRoot = !CostHelper.isEmpty(this.tree.node!);
+    } else if (this.hasTiers) {
+      this.initializeTiers(this.tree);
+      this.hasCost = !CostHelper.isEmpty(this.totalCost);
+      this.hasCostAtRoot = false;
+    }
   }
 
   subscribeItemChanged(): void {
@@ -218,6 +244,21 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     if (node.nw) { this.initializeNode(node.nw, direction -1, level); }
     if (node.ne) { this.initializeNode(node.ne, direction + 1, level); }
     if (node.n) { this.initializeNode(node.n, direction, level + 1); }
+  }
+
+  initializeTiers(tree: ISpiritTree): void {
+    let level = -1;
+    const tiers = TreeHelper.getTiers(this.tree);
+    this.tiers = tiers;
+    for (const tier of tiers) {
+      for (const row of tier.rows) {
+        level++;
+        row.forEach((node, i) => {
+          if (!node) { return; }
+          this.initializeNode(node, i - 1, level);
+        });
+      }
+    }
   }
 
   calculateRemainingCosts(): void {
@@ -280,16 +321,21 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
     this._currencyService.addTreeCost(unlockCost, this.tree);
   }
 
+  editTree(): void {
+    const result = confirm('Do you want to clone this tree as a new tree? [Yes] Clone [No] Modify');
+    void this._router.navigate(['/spirit-tree/editor'], { queryParams: { tree: this.tree.guid, modify: !result } });
+  }
+
   async export(mode: ShareMode): Promise<void> {
     if (mode === 'share' && !navigator.share) { alert('Sharing is not supported by this browser.'); return; }
     if (mode === 'clipboard' &&  typeof(ClipboardItem) === 'undefined') { alert('Copying to clipboard is not supported by this browser.'); return; }
 
     try {
-      const spiritName = this.tree?.spirit?.name ?? this.tree?.eventInstanceSpirit?.spirit?.name ?? this.tree?.ts?.spirit?.name ?? this.tree?.visit?.spirit?.name;
+      const spiritName = this.tree?.spirit?.name ?? this.tree?.eventInstanceSpirit?.spirit?.name ?? this.tree?.travelingSpirit?.spirit?.name ?? this.tree?.specialVisitSpirit?.spirit?.name;
       const title = spiritName;
       let subtitle = this.visibleName;
       if (this.tsDate || this.rsDate) {
-        subtitle = this.tsDate ? `TS #${this.tree.ts!.number}` : this.rsDate ? `${this.tree.visit!.return.name}` : '';
+        subtitle = this.tsDate ? `TS #${this.tree.travelingSpirit!.number}` : this.rsDate ? `${this.tree.specialVisitSpirit!.visit.name}` : '';
         subtitle += ` (${(this.tsDate || this.rsDate)!.toFormat('dd-MM-yyyy')})`;
       } else if (subtitle === title || subtitle === 'Spirit tree') { subtitle = undefined; }
 
@@ -312,8 +358,8 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
   private updateName(): void {
     this.visibleName = this.name ?? this.tree.name
       ?? this.tree.eventInstanceSpirit?.name ?? this.tree.eventInstanceSpirit?.spirit?.name
-      ?? this.tree.ts?.spirit?.name
-      ?? this.tree.visit?.spirit?.name
+      ?? this.tree.travelingSpirit?.spirit?.name
+      ?? this.tree.specialVisitSpirit?.spirit?.name
       ?? this.tree.spirit?.name;
   }
 }

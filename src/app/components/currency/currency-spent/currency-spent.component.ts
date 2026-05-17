@@ -1,21 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CostHelper } from '@app/helpers/cost-helper';
-import { ICost } from '@app/interfaces/cost.interface';
-import { IIAP } from '@app/interfaces/iap.interface';
-import { IItemListNode } from '@app/interfaces/item-list.interface';
-import { INode } from '@app/interfaces/node.interface';
 import { DataService } from '@app/services/data.service';
 import { CardComponent } from "../../layout/card/card.component";
 import { MatIcon } from '@angular/material/icon';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { ISeason } from '@app/interfaces/season.interface';
-import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
 import { DecimalPipe, NgTemplateOutlet } from '@angular/common';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { StorageService } from '@app/services/storage.service';
 import { nanoid } from 'nanoid';
 import { INestingStorageData, nestingStorageKey } from '@app/components/shops/shop-nesting/shop-nesting.interface';
-import { IItem } from '@app/interfaces/item.interface';
+import { ICost, INode, IItemListNode, IIAP, ISeason, IEvent, IEventInstance, IItem } from 'skygame-data';
 
 interface IOtherCost {
   name: string;
@@ -40,12 +33,11 @@ interface IInstanceCostData {
 };
 
 @Component({
-  selector: 'app-currency-spent',
-  standalone: true,
-  imports: [CardComponent, ItemIconComponent, MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe],
-  templateUrl: './currency-spent.component.html',
-  styleUrl: './currency-spent.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-currency-spent',
+    imports: [CardComponent, MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe],
+    templateUrl: './currency-spent.component.html',
+    styleUrl: './currency-spent.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CurrencySpentComponent {
   total: IInstanceCost = { cost: CostHelper.create(), price: 0, nodes: [], listNodes: [], iaps: [] };
@@ -83,7 +75,7 @@ export class CurrencySpentComponent {
   private checkNodes(): void {
     for (const node of this._dataService.nodeConfig.items) {
       if (!node.unlocked) { continue; }
-      const tree = node.root?.spiritTree;
+      const tree = node.root?.tree;
       const eventInstance = tree?.eventInstanceSpirit?.eventInstance;
       const season = tree?.spirit?.season;
 
@@ -144,7 +136,9 @@ export class CurrencySpentComponent {
       const isGifted = this._storageService.hasGifted(season.guid);
       const boughtPass = !isGifted && this._storageService.hasSeasonPass(season.guid);
       if (boughtPass) {
-        this.addSeasonCost(season, { iap: { guid: nanoid(10), name: 'Season Pass', price: 9.99 } });
+        const iap = { guid: nanoid(10), name: `Season Pass (${season.shortName})`, price: 9.99 };
+        this.addSeasonCost(season, { iap });
+        this.addInstanceCost(this.total, { iap });
       }
     }
   }

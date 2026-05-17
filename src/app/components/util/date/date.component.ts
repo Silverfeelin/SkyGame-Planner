@@ -10,7 +10,6 @@ import { DateTimePipe } from '../../../pipes/date-time.pipe';
     templateUrl: './date.component.html',
     styleUrls: ['./date.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [DateTimePipe]
 })
 export class DateComponent implements OnChanges, OnDestroy {

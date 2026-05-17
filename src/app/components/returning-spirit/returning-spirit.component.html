@@ -44,6 +44,15 @@
           {{ rs.area!.name }}
         </span>
       </div>
+      <!-- Draft -->
+      @if (rs.draft) {
+        <div class="container colspan-2">
+          <mat-icon class="menu-icon">warning</mat-icon>
+          <span class="menu-label">
+            We're still working on this content. Thank you for your patience.
+          </span>
+        </div>
+      }
     </div>
   </div>
 </div>

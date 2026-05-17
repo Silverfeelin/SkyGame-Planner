@@ -42,6 +42,54 @@
   </div>
 </div>
 
+<!-- App -->
+<div class="mt">
+  <app-card [foldable]="true" [folded]="true" [title]="'App'">
+    <div class="container">
+      <p>
+        Sky Planner can be installed as a PWA (Progressive Web App) on supported browsers.<br/>
+        All that really means is that the website can live on your device like an app, making it easier to access than a bookmark.
+      </p>
+      <p>
+        If you don't see the install button below, please try refreshing the page.<br/>
+        The button on this page isn't always reliable and may be unavailable due to reasons unknown to me.<br/>
+        It is also possible to install the app from the icons at the end of the address bar (on desktop) or from the browser menu (on mobile).
+      </p>
+      @if (pwaInstallPrompt) {
+        <button (click)="promptPwa()">
+          <mat-icon class="menu-icon">install_mobile</mat-icon>
+          <span class="menu-label">Install</span>
+        </button>
+      }
+    </div>
+  </app-card>
+</div>
+
+<!-- Daily quests -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">
+      <mat-icon>today</mat-icon>
+      Daily candles
+    </h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
+      <p>
+        Enter a number here to add regular candles to your <a class="text-link" routerLink="/currency">Currency</a> page when you check that you've done your daily quests on the dashboard.<br/>
+        These candles will be added on top of the rewards for daily quests. For example, entering 20 will give you 6 season candles plus 20 regular candles.<br/>
+        Set to 0 to disable.
+      </p>
+      <div class="mt">
+        <label for="daily-candle-amount">Candles per daily check-in:</label>
+        <input id="daily-candle-amount" type="number" min="0" max="99" style="width:5em"
+          [value]="dailyCandleAmount"
+          (change)="setDailyCandleAmount(+$any($event.target).value)">
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Spirit trees -->
 <div class="sky-card mt">
   <div class="sky-card-header">
@@ -135,6 +183,24 @@
       <button (click)="viewKeyboardShortcuts()">
         <mat-icon class="menu-icon">keyboard</mat-icon>
         <span class="menu-label">View</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Debug info -->
+<div class="sky-card mt">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Debug info</h2>
+  </div>
+  <div class="sky-card-body">
+    <div class="container ws-pl">
+      <p>
+        This option adds debugging information to various pages. It is only relevant if you actively contribute to the project.
+      </p>
+      <button (click)="toggleDebugInfo()">
+        <mat-icon class="menu-icon">{{debugVisible ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+        <span class="menu-label">Show debug info</span>
       </button>
     </div>
   </div>

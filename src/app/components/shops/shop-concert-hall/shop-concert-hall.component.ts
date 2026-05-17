@@ -3,18 +3,16 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { CardComponent } from '@app/components/layout/card/card.component';
 import { SpiritTreeComponent } from '@app/components/spirit-tree/spirit-tree.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
-import { IIAP } from '@app/interfaces/iap.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
+import { ISpiritTree, IIAP, ISpirit } from 'skygame-data';
 
 @Component({
-  selector: 'app-shop-concert-hall',
-  standalone: true,
-  imports: [CardComponent,  WikiLinkComponent, SpiritTreeComponent],
-  templateUrl: './shop-concert-hall.component.html',
-  styleUrl: './shop-concert-hall.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-shop-concert-hall',
+    imports: [CardComponent, WikiLinkComponent, SpiritTreeComponent],
+    templateUrl: './shop-concert-hall.component.html',
+    styleUrl: './shop-concert-hall.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopConcertHallComponent {
   tree: ISpiritTree;
@@ -27,7 +25,9 @@ export class ShopConcertHallComponent {
     _route: ActivatedRoute
   ) {
     _route.queryParamMap.subscribe(p => this.onQueryChanged(p));
-    this.tree = this._dataService.guidMap.get('4uhy67a14a') as ISpiritTree;
+    const spirit = this._dataService.guidMap.get('kavln3oyNl') as ISpirit;
+    const tree = spirit.treeRevisions?.at(-1) ?? spirit.tree!;
+    this.tree = tree;
   }
 
   onQueryChanged(p: ParamMap): void {

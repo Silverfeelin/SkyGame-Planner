@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ItemType } from '../interfaces/item.interface';
+import { ItemType } from 'skygame-data';
 
 @Pipe({
     name: 'itemType',
@@ -16,6 +16,7 @@ export class ItemTypePipe implements PipeTransform {
       case ItemType.Necklace: return plural ? 'Necklaces' : 'Necklace';
       case ItemType.Outfit: return plural ? 'Outfits' : 'Outfit';
       case ItemType.Shoes: return 'Shoes';
+      case ItemType.OutfitShoes: return plural ? 'Outfits with shoes' : 'Outfit with shoes';
       case ItemType.Cape: return plural ? 'Capes' : 'Cape';
       case ItemType.Held: return plural ? 'Held props' : 'Held prop';
       case ItemType.Furniture: return 'Furniture';

@@ -67,8 +67,8 @@ footer {
 
 @media screen and (min-width: 720px) {
   .content {
-    min-height: calc(100vh - 41px); // Height of footer
-    min-height: calc(100dvh - 41px);
+    min-height: calc(100vh - var(--padding-content) * 2 - 24px); // Height of footer
+    min-height: calc(100dvh - var(--padding-content) * 2 - 24px);
   }
 
   .footer-flex {

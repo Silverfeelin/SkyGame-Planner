@@ -1,18 +1,11 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router, RouterLink } from '@angular/router';
-import L from 'leaflet';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { IRealm } from 'src/app/interfaces/realm.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { EventService } from 'src/app/services/event.service';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
-import { IMapInit } from 'src/app/services/map.service';
 import { TitleService } from 'src/app/services/title.service';
 import { PercentagePipe } from '../../../pipes/percentage.pipe';
 import { SpiritTreeComponent } from '../../spirit-tree/spirit-tree.component';
@@ -21,6 +14,7 @@ import { NgIf, NgFor } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
 import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
+import { IRealm, ISpirit, ICost, ISpiritTree } from 'skygame-data';
 
 @Component({
     selector: 'app-realm',
@@ -28,8 +22,7 @@ import { WikiLinkComponent } from '../../util/wiki-link/wiki-link.component';
     styleUrls: ['./realm.component.less'],
     providers: [MapInstanceService],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [WikiLinkComponent, RouterLink, SpiritTypeIconComponent, MatIcon, NgIf, RealmConstellationComponent, NgFor, SpiritTreeComponent, PercentagePipe]
+    imports: [WikiLinkComponent, RouterLink, SpiritTypeIconComponent, MatIcon, NgIf, RealmConstellationComponent, SpiritTreeComponent, PercentagePipe]
 })
 export class RealmComponent implements OnInit, OnDestroy {
   @ViewChild('divSpiritTrees', { static: false }) divSpiritTrees?: ElementRef;
@@ -37,7 +30,7 @@ export class RealmComponent implements OnInit, OnDestroy {
   realm!: IRealm;
 
   highlightTree?: string;
-  spirits: Array<ISpirit> = [];
+  spirits: Array<{ spirit: ISpirit, tree: ISpiritTree }> = [];
   spiritCount = 0;
   seasonSpiritCount = 0;
   seasonGuideCount = 0;
@@ -118,7 +111,7 @@ export class RealmComponent implements OnInit, OnDestroy {
     this.realm?.areas?.forEach(area => {
       area.spirits?.forEach(spirit => {
         if (spirit.type === 'Regular' || spirit.type === 'Elder') {
-          this.spirits.push(spirit);
+          this.spirits.push({ spirit, tree: spirit.treeRevisions?.at(-1) || spirit.tree! });
           this.spiritCount++;
         } else if (spirit.type === 'Season') {
           this.seasonSpiritCount++;
@@ -129,7 +122,7 @@ export class RealmComponent implements OnInit, OnDestroy {
     });
 
     if (this.realm.elder) {
-      this.spirits.push(this.realm.elder);
+      this.spirits.push({ spirit: this.realm.elder, tree: this.realm.elder.treeRevisions?.at(-1) || this.realm.elder.tree! });
     }
 
     this.calculateTierCosts();
@@ -141,9 +134,9 @@ export class RealmComponent implements OnInit, OnDestroy {
     this.tier1Cost = {}; this.tier1Spent = {}; this.tier1Remaining = {};
     this.tier2Cost = {}; this.tier2Spent = {}; this.tier2Remaining = {};
 
-    this.spirits.forEach(spirit => {
-      if (spirit.type === 'Elder') { return; }
-      this.addTierCosts(spirit.tree!);
+    this.spirits.forEach(data => {
+      if (data.spirit.type === 'Elder') { return; }
+      this.addTierCosts(data.tree);
     });
 
     this.tier1Pct = CostHelper.percentage(this.tier1Spent, this.tier1Cost);
@@ -153,7 +146,7 @@ export class RealmComponent implements OnInit, OnDestroy {
   }
 
   private addTierCosts(tree: ISpiritTree): void {
-    if (!tree) { return; }
+    if (!tree?.node) { return; }
     for (const node of  NodeHelper.allTier(tree.node)) {
       if (typeof node.tier !== 'number') { continue; }
 

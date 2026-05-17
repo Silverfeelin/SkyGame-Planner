@@ -4,6 +4,10 @@
   </div>
 </div>
 
+<div class="mt">
+  <app-dashboard-announcement></app-dashboard-announcement>
+</div>
+
 <!-- Search -->
 <div class="mt">
   <app-card [title]="'Search'">
@@ -11,21 +15,11 @@
   </app-card>
 </div>
 
-<div class="sky-card mt" *ngIf="!season && !eventInstances.length && !ts">
-  <div class="sky-card-body">
-    <div class="container">
-      There is currently no season or event active.<br/>
-      You can view items, seasons, events and more in the menu on the left.
-    </div>
-  </div>
-</div>
-
 <app-dashboard-wishlist [season]="season" [eventInstances]="eventInstances" [ts]="ts" [rs]="rs"></app-dashboard-wishlist>
 
 <div class="grid grid-2 mt">
-  <!-- No ongoing events, backup card for dailies -->
-  @if (!season) { <app-daily-card></app-daily-card> }
-  <!-- Ongoing -->
+  <!-- Dailies / Ongoing season -->
+  <app-daily-card *ngIf="!season"></app-daily-card>
   <app-season-card *ngIf="season" [season]="season" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-season-card>
   <ng-container *ngFor="let eventInstance of eventInstances">
     <app-event-card *ngIf="eventInstance" [event]="eventInstance.event" [instance]="eventInstance" [options]="{show: ['img', 'overview', 'date', 'dailies', 'checkin', 'calculator', 'cost']}"></app-event-card>
@@ -36,7 +30,7 @@
   <app-returning-spirit-card *ngIf="rs" [return]="rs"></app-returning-spirit-card>
   <!-- Future -->
   <app-season-card *ngIf="!season && futureSeason" [season]="futureSeason" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-season-card>
-  <app-event-card *ngIf="futureEventInstance" [event]="futureEventInstance.event" [instance]="futureEventInstance" [options]="{show: ['img', 'overview', 'date', 'checkin', 'cost']}"></app-event-card>
+  <app-event-card *ngIf="futureEventInstance" [event]="futureEventInstance.event" [instance]="futureEventInstance" [options]="{show: ['img', 'overview', 'date', 'cost']}"></app-event-card>
   <app-spirit-card *ngIf="futureTs" [spirit]="futureTs.spirit" [ts]="futureTs" [tsSpoiler]="true" [tree]="futureTs.tree" [options]="{homeBackground: true, show: ['img', 'ts', 'cost']}">
     <div title><h2 class="h3 mb-0">Traveling Spirit <span class="c-accent h4">(#{{futureTs.number}})</span></h2></div>
   </app-spirit-card>

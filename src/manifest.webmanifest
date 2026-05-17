@@ -3,7 +3,7 @@
   "short_name": "Sky Planner",
   "theme_color": "#000",
   "background_color": "#223",
-  "display": "standalone",
+  "display": "minimal-ui",
   "scope": "./",
   "start_url": "./",
   "icons": [
@@ -54,6 +54,28 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Seasons",
+      "description": "Go to seasons",
+      "url": "/season"
+    },
+    {
+      "name": "Events",
+      "description": "Go to events",
+      "url": "/event"
+    },
+    {
+      "name": "Items",
+      "description": "Go to items",
+      "url": "/item"
+    },
+    {
+      "name": "Spirits",
+      "description": "Go to spirits",
+      "url": "/spirits"
     }
   ]
 }

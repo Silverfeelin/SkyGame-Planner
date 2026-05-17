@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, HostBinding, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { INavigationTarget, NavigationHelper } from 'src/app/helpers/navigation-helper';
 import { NodeHelper } from 'src/app/helpers/node-helper';
-import { INode } from 'src/app/interfaces/node.interface';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { NodeService } from 'src/app/services/node.service';
@@ -11,9 +10,9 @@ import { HighlightType } from 'src/app/types/highlight';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../items/item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf } from '@angular/common';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { CurrencyService } from '@app/services/currency.service';
+import { INode } from 'skygame-data';
 
 export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
 
@@ -21,7 +20,6 @@ export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
     selector: 'app-node',
     templateUrl: './node.component.html',
     styleUrls: ['./node.component.less'],
-    standalone: true,
     imports: [NgbTooltip, RouterLink, ItemIconComponent, MatIcon]
 })
 export class NodeComponent implements OnChanges {
@@ -30,10 +28,14 @@ export class NodeComponent implements OnChanges {
   @Input() highlight?: boolean;
   @Input() glowType?: HighlightType = 'default';
   @Input() action: NodeAction = 'unlock';
+  @Input() enableNavigation = true;
   @Input() opaque?: boolean;
   @Input() showTooltips = true;
 
   @Output() readonly nodeClicked = new EventEmitter<MouseEvent>();
+
+  @HostBinding('attr.guid')
+  guid?: string;
 
   hover?: boolean;
   tooltipPlacement = 'bottom';
@@ -57,6 +59,7 @@ export class NodeComponent implements OnChanges {
 
     if (changes['node']) {
       this.link = this.node?.item ? NavigationHelper.getItemLink(this.node.item) : undefined;
+      this.guid = this.node?.guid;
     }
   }
 
@@ -146,7 +149,7 @@ export class NodeComponent implements OnChanges {
 
     // Modify currencies.
     // TODO: this does not track the cost when locking nodes outside of this tree.
-    const tree = this.node.root?.spiritTree;
+    const tree = this.node.root?.tree;
     tree && this._currencyService.addTreeCost(unlockCost, tree);
   }
 

@@ -1,0 +1,24 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Cinema</h1>
+  </div>
+  <div class="sky-card-body">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Collaboration_Room'}"></app-wiki-link>
+  </div>
+</div>
+
+<!-- IAPs -->
+@if (iapShops.length) {
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="false" [title]="'In-app purchases'">
+      <div class="grid grid-4">
+        @for (shop of iapShops; track shop.guid) {
+          @for (iap of shop.iaps; track iap.guid) {
+            <app-iap-card [iap]="iap" [highlightIap]="highlightIap"></app-iap-card>
+          }
+        }
+      </div>
+    </app-card>
+  </div>
+}
+

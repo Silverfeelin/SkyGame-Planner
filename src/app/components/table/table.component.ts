@@ -8,7 +8,6 @@ import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
     selector: 'app-table',
     templateUrl: './table.component.html',
     styleUrls: ['./table.component.less'],
-    standalone: true,
     imports: [NgIf, NgFor, NgTemplateOutlet]
 })
 export class TableComponent {

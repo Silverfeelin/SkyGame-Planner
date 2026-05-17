@@ -12,7 +12,6 @@ import { IconComponent } from "../icon/icon.component";
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.less'],
-    standalone: true,
     imports: [NgIf, NgbTooltip, MatIcon, RouterLinkActive, RouterLink, IconComponent],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

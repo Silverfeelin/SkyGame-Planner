@@ -7,7 +7,6 @@ import { MatIcon } from '@angular/material/icon';
     templateUrl: './tools.component.html',
     styleUrls: ['./tools.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [MatIcon, RouterLink]
 })
 export class ToolsComponent {

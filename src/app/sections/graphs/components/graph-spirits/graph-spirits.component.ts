@@ -4,22 +4,19 @@ import { ChartHelper } from '@app/helpers/chart-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
 import { Chart, ChartConfiguration, ScriptableLineSegmentContext } from 'chart.js';
-import { RouterLink } from '@angular/router';
-import { ISeason } from '@app/interfaces/season.interface';
-import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
 
 @Component({
-  selector: 'app-graph-spirits',
-  standalone: true,
-  imports: [CardComponent, WikiLinkComponent, RouterLink],
-  templateUrl: './graph-spirits.component.html',
-  styleUrl: './graph-spirits.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-graph-spirits',
+    imports: [CardComponent, WikiLinkComponent],
+    templateUrl: './graph-spirits.component.html',
+    styleUrl: './graph-spirits.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphSpiritsComponent implements AfterViewInit {
   @ViewChild('chartReturn', { static: true }) chartReturnDiv!: ElementRef<HTMLCanvasElement>;
@@ -71,6 +68,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
       options: {
         maintainAspectRatio: false,
         responsive: false,
+        indexAxis: 'y',
         plugins:{
           legend: {
             position: 'top',
@@ -84,6 +82,11 @@ export class GraphSpiritsComponent implements AfterViewInit {
         },
         scales: {
           x: {
+            position: 'top',
+            beginAtZero: true,
+            max: 250
+          },
+          y: {
             ticks: {
               color: ctx => {
                 const isSeasonLabel = typeof ctx.tick.label === 'string' && ctx.tick.label.startsWith('Season');
@@ -94,13 +97,8 @@ export class GraphSpiritsComponent implements AfterViewInit {
                   const isSeasonLabel = typeof ctx.tick.label === 'string' && ctx.tick.label.startsWith('Season');
                   return isSeasonLabel ? 'normal' : 'lighter';
                 }
-              },
-              maxRotation: 90, minRotation: 90
+              }
             }
-          },
-          y: {
-            beginAtZero: true,
-            max: 250
           }
         }
       }
@@ -138,11 +136,11 @@ export class GraphSpiritsComponent implements AfterViewInit {
         if (spirit.type !== 'Season') { continue; }
 
         const seasonEndDate = spirit.season!.endDate;
-        const firstTs = spirit.ts?.at(0);
-        const firstReturn = spirit.returns?.at(0);
+        const firstTs = spirit.travelingSpirits?.at(0);
+        const firstReturn = spirit.specialVisitSpirits?.at(0);
         let returnDate = firstTs?.date;
-        if (!returnDate || (returnDate && firstReturn && firstReturn.return.date < returnDate)) {
-          returnDate = firstReturn?.return.date;
+        if (!returnDate || (returnDate && firstReturn && firstReturn.visit.date < returnDate)) {
+          returnDate = firstReturn?.visit.date;
         }
 
         // Add return date.
@@ -157,11 +155,11 @@ export class GraphSpiritsComponent implements AfterViewInit {
         }
 
         // Add absence days.
-        const lastTs = spirit.ts?.at(spirit.ts.length - 1);
-        const lastReturn = spirit.returns?.at(spirit.returns.length - 1);
+        const lastTs = spirit.travelingSpirits?.at(spirit.travelingSpirits.length - 1);
+        const lastReturn = spirit.specialVisitSpirits?.at(spirit.specialVisitSpirits.length - 1);
         let lastDate = lastTs?.endDate;
-        if (!lastDate || (lastReturn && lastReturn.return.endDate > lastDate)) {
-          lastDate = lastReturn?.return.endDate;
+        if (!lastDate || (lastReturn && lastReturn.visit.endDate > lastDate)) {
+          lastDate = lastReturn?.visit.endDate;
         }
         lastDate ??= seasonEndDate;
 
@@ -176,7 +174,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
         if (lastReturn || lastTs) {
           const tree = lastDate === lastTs?.endDate ? lastTs?.tree : lastReturn?.tree;
           if (tree) {
-            const nodes = NodeHelper.all(tree.node);
+            const nodes = TreeHelper.getNodes(tree);
             const cost = CostHelper.add(CostHelper.create(), ...nodes);
             costLabels.push(spirit.name);
             costDataC.push(cost.c || 0);
@@ -212,7 +210,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
     };
     this.chartReturn.data.labels = returnLabels;
     const returnScales = this.chartReturn.options.scales! as any;
-    returnScales.y.max = Math.ceil((returnMaxDays + 1) / 10) * 10;
+    returnScales.x.max = Math.ceil((returnMaxDays + 1) / 10) * 10;
     this.chartReturn.update();
 
     // Absence chart
@@ -225,7 +223,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
     (this.chartAbsence.data.datasets[0] as any).backgroundColor = absenceColors;
     this.chartAbsence.data.labels = absenceLabels;
     const absenceScales = this.chartAbsence.options.scales! as any;
-    absenceScales.y.max = Math.ceil((absenceMaxDays + 1) / 10) * 10;
+    absenceScales.x.max = Math.ceil((absenceMaxDays + 1) / 10) * 10;
     this.chartAbsence.update();
 
     // Cost chart
@@ -242,7 +240,7 @@ export class GraphSpiritsComponent implements AfterViewInit {
     });
     this.chartCost.data.labels = costLabels;
     const costScales = this.chartCost.options.scales! as any;
-    costScales.y.max = Math.ceil((costMax + 1) / 100) * 100;
+    costScales.x.max = Math.ceil((costMax + 1) / 100) * 100;
     this.chartCost.update();
 
     setTimeout(() => {

@@ -1,4 +1,4 @@
-@if (!event || !currencyPerDay) {
+@if (!event || currencyPerDay === undefined) {
   <div class="sky-card">
     <div class="sky-card-header">
       <h1 class="h2 mb-0">Event Calculator</h1>
@@ -8,6 +8,9 @@
         @if (!event) {
           There is no ongoing event and the website hasn't been updated to include any upcoming events yet.<br/><br/>
           Please check back later.
+        } @else if (!hasSpirits) {
+          @if (eventInstance && eventInstance.draft) { The Sky Planner has no data for this event yet! }
+          @else { This event has no cosmetics, so there is nothing to calculate! }
         } @else {
           There is no event currency data available for the event.<br/><br/>
           Please check back later or report this the URL of this page on <a href="https://github.com/Silverfeelin/SkyGame-Planner">GitHub</a> if it's taking too long.
@@ -22,6 +25,7 @@
         {{event.name}} {{year}} <span class="c-accent h3">Calculator</span>
       </h1>
     </div>
+
     <div class="sky-card-body">
       <div class="sky-flex flex-wrap">
         <a class="button" [routerLink]="['/event-instance', eventInstance.guid]">
@@ -31,11 +35,23 @@
         <a class="button" routerLink="/currency">
           Currencies
         </a>
+        <a class="button" href="https://sky-event-calculator.netlify.app/" target="_blank">
+          <mat-icon class="menu-icon">open_in_new</mat-icon>
+          <span class="menu-label">Stoat's Calculator</span>
+        </a>
       </div>
       @if (concluded) {
         <div class="container mt">
           <mat-icon class="result-warn">priority_high</mat-icon>
           <b class="c-old">This event has concluded!</b>
+        </div>
+      }
+      @if (eventInstance.draft) {
+        <div class="container mt mb">
+          <mat-icon class="menu-icon">warning</mat-icon>
+          <span class="menu-label">
+            We're still working on this content. Thank you for your patience.
+          </span>
         </div>
       }
       <div class="container mt sky-flex flex-cols flex-align-start gap-half">
@@ -44,7 +60,7 @@
         <div>
           Your current event currency:
           <mat-icon [svgIcon]="'ticket'" class="v-middle"></mat-icon>
-          <input #inpEc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="currencyCount" class="d-inline-block br-r-0 input-no-arrows" style="width: 64px;"/>
+          <input #inpEc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput($event)" [value]="currencyCount" class="d-inline-block br-r-0 input-no-arrows" style="width: 64px;"/>
           <button type="button" class="button-sc br-l-0 br-r-0" (click)="addCurrency(1)">+1</button>
           <button type="button" class="button-sc br-l-0" (click)="addCurrency()">+{{currencyPerDay}} (daily)</button>
         </div>
@@ -58,17 +74,17 @@
         <div>
           Your current candles:
           <mat-icon [svgIcon]="'candle'" class="v-middle"></mat-icon>
-          <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="candleCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+          <input #inpC (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput($event)" [value]="candleCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
         </div>
         <div>
           Your current hearts:
           <mat-icon [svgIcon]="'heart'" class="v-middle"></mat-icon>
-          <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="heartCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+          <input #inpH (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput($event)" [value]="heartCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
         </div>
         <div>
           Your current ascended candles:
           <mat-icon [svgIcon]="'ascended-candle'" class="v-middle"></mat-icon>
-          <input #inpAc (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="acCount" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+          <input #inpAc (blur)="onCurrencyInputBlur($event, true)" type="number" min="0" max="99999" step="0.25" (input)="onCurrencyInput($event)" [value]="acCount" class="d-inline-block" style="width: 100px;"/>
         </div>
 
         @if (timedCurrencies.length) {
@@ -83,22 +99,25 @@
               <hr class="mt mb"/>
               <div>
                 @if (timedCurrency.endDate < now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-old">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-old">{{ timedCurrency.endDate | datetime }}</b>
                   you were able to get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
                   Please enter how much you collected during this period:
                 } @else if (timedCurrency.date > now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b>{{ timedCurrency.date | datetime }}</b>
                   and <b>{{ timedCurrency.endDate | datetime }}</b>
                   you will be able to get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
                   Please keep this value at <b>0</b> until the currency becomes available:
                 } @else {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-new">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-new">{{ timedCurrency.endDate | datetime }}</b>
                   you can get <b>{{ timedCurrency.amount}}</b> extra event currency.<br/>
                   Please enter how much you have collected so far:
                 }
-                <input #inpTimed [attr.data-guid]="timedCurrency.guid" (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput()" [value]="timedCurrencyCount[timedCurrency.guid]" class="d-inline-block input-no-arrows" style="width: 64px;"/>
+                <input #inpTimed [attr.data-guid]="timedCurrency.guid" (blur)="onCurrencyInputBlur($event)" type="number" min="0" max="99999" (input)="onCurrencyInput($event)" [value]="timedCurrencyCount[timedCurrency.guid]" class="d-inline-block input-no-arrows" style="width: 64px;"/>
               </div>
             }
           </div>
@@ -273,7 +292,7 @@
         <div class="sky-flex scroll-x tree-scroll">
           @for (spiritInstance of spirits; track spiritInstance.guid) {
             <app-spirit-tree [tree]="spiritInstance.tree" [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
-              [enableControls]="false" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
+              [enableControls]="false" [forceNodeAction]="'emit'" [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
             </app-spirit-tree>
           }
         </div>

@@ -7,7 +7,6 @@ import { MatIcon } from '@angular/material/icon';
     selector: 'app-credits',
     templateUrl: './credits.component.html',
     styleUrls: ['./credits.component.less'],
-    standalone: true,
     imports: [MatIcon, RouterLink, NgTemplateOutlet]
 })
 export class CreditsComponent {

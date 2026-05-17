@@ -21,7 +21,6 @@ interface DropboxAuthResponse {
     templateUrl: './dropbox-auth.component.html',
     styleUrls: ['./dropbox-auth.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [RouterLink, MatIcon, NgIf]
 })
 export class DropboxAuthComponent implements OnInit {

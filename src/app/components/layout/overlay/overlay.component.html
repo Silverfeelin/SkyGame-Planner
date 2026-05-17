@@ -6,7 +6,8 @@
     </div>
     @if (dismissable) {
       <div class="overlay-close">
-        <span class="link" (click)="onClose($event)">Dismiss</span>
+        <ng-content select="[close]"></ng-content>
+        <span class="link" (click)="onClose($event)">{{ closeText }}</span>
       </div>
     }
   </div>

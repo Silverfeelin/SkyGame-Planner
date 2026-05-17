@@ -1,0 +1,44 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Friends</h1>
+  </div>
+  <div class="sky-card-body">
+    <div class="grid grid-1">
+      <app-wiki-link
+        [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Friendship_Menu'}"></app-wiki-link>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="sky-card mt spirit-trees">
+  <div class="sky-card-header">
+    <h2 class="h3 mb-0">Friendship trees</h2>
+  </div>
+  <div class="sky-card-body pad-0">
+    <div class="pad">
+      <div class="search">
+        <input #input type="search" class="input" (input)="search()" [attr.placeholder]="'Search'">
+        <mat-icon>search</mat-icon>
+      </div>
+      <div class="mt">
+        <button type="button" (click)="promptAdd()">Add friend</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt sky-flex flex-wrap flex-align-start">
+  @for (friend of friends; track friend) {
+  <app-card class="card-friend" [title]="friend.name" [foldable]="true" [folded]="true" [hidden]="!friend.visible || undefined" (beforeFold)="onBeforeFold(friend)">
+    <div class="mb sky-flex">
+      <button type="button" class="button" (click)="promptRename(friend)">Rename</button>
+      <button type="button" class="button button-danger" (click)="promptDelete(friend)">Delete</button>
+    </div>
+    @if (friend.loaded) {
+      <app-spirit-tree [tree]="friend.tree" [forceNodeAction]="'emit'" [enableControls]="false" [enableNavigation]="false" (nodeClicked)="nodeClicked($event)"></app-spirit-tree>
+    }
+  </app-card>
+  }
+</div>

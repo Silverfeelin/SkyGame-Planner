@@ -5,15 +5,22 @@
       <h1 class="h2 mb-0">Outfit vault</h1>
     </div>
     <div class="sky-card-body">
-      <div class="container">
+      <div class="container mb">
         On this page you can search for outfits submitted to the vault by other players.
         All outfits on this page will link to a message in the official <a href="https://discord.com/invite/thatskygame" target="_blank">Sky Discord server</a>.
+        <p><i class="c-accent">The outfit vault does not currently support dyes. This is a feature I want to add at some point, but it will take some time. Thank you for your patience!</i></p>
 
         <div class="mt">
-          <button type="button" (click)="toggleItemSize()">
-            <mat-icon class="menu-icon">{{ itemSize === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
-            <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
-          </button>
+          <div class="sky-flex flex-wrap">
+            <button type="button" (click)="toggleItemSize()">
+              <mat-icon class="menu-icon">{{ itemSize === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
+              <span class="menu-label">{{ itemSize === 'small' ? 'Show large icons': 'Show small icons' }}</span>
+            </button>
+            <button (click)="requestPaste.focus(); pasting=true;" [class.highlight]="pasting">
+              @if (pasting) { Paste now... } @else { Paste request }
+            </button>
+          </div>
+          <input type="text" class="input-hidden" #requestPaste (paste)="paste($event)" (blur)="pasting=false;">
         </div>
         <div class="search mt" data-step="126" data-position="bottom-left-aligned">
           <input tabindex="0" #searchInput class="search-input" type="search" (input)="search()" placeholder="Search for items">
@@ -75,12 +82,12 @@
   <ng-template #templateItems let-items let-type="type">
     <ng-container *ngFor="let item of items; let i = index;">
       <div class="closet-item-container" [hidden]="typeFolded[type]">
-        <div class="closet-item" (click)="selectItem(item, type)" [attr.data-guid]="item.guid"
+        <div class="closet-item" (click)="selectItem(item)" [attr.data-guid]="item.guid"
           [ngbTooltip]="templateItemHover" container="body"
           [class.selected]="selectionMap[item.guid]"
           [class.search-match]="searchText && searchResults?.[item.guid]" [class.no-search-match]="searchText && !searchResults?.[item.guid]"
         >
-          <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+          <app-item-icon class="v-top" [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false"></app-item-icon>
         </div>
       </div>
 
@@ -266,7 +273,7 @@
 </div>
 
 <ng-template #templateSelection let-wrap="wrap" let-items="items" let-warn="warn" let-isResult="isResult">
-  <div class="selection-icons scroll-x" [class.flex-wrap]="wrap">
+  <div class="selection-icons" [class.flex-wrap]="wrap">
     <ng-container *ngFor="let type of selectionTypes">
       <ng-container [ngTemplateOutlet]="templateSelection" [ngTemplateOutletContext]="{ item: items[type], type, warn: warn && requiredParams[type], isResult }"></ng-container>
     </ng-container>
@@ -277,7 +284,7 @@
       [class.selected]="!isResult && item" [class.warn]="warn && !item" [class.no-point]="isResult"
       [ngbTooltip]="templateSelectionHover" container="body"
     >
-      <app-item-icon *ngIf="item" [item]="item" [size]="'auto'" class="selection-icon-img" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+      <app-item-icon *ngIf="item" [item]="item" [size]="'default'" class="selection-icon-img" [opaque]="true" [hoverGlow]="false"></app-item-icon>
       <mat-icon *ngIf="!item" [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
     </div>
     <!-- Tooltip -->

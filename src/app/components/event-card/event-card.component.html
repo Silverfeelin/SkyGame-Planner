@@ -56,21 +56,22 @@
             [aStyle]="'text-decoration: none;'" [aClass]="'item link'"
           >
             <img class="menu-icon icon" src="assets/external/discord-mark-white.svg" loading="lazy">
-            <span class="menu-label" style="text-decoration: underline;">View dailies</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
+            <span class="menu-label" style="text-decoration: underline;">View daily quests</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens Sky:CoTL Infographics Database)</span>
           </app-discord-link>
+        </div>
+        <div [style.order]="sections['dailies']">
+          <a href="https://thatskyapplication.com/daily-guides" target="_blank" class="item d-block" style="text-decoration: none;">
+            <mat-icon class="menu-icon">language</mat-icon>
+            <span class="menu-label" style="text-decoration: underline;">View daily quests</span>&nbsp;<span class="c-accent" style="text-decoration: none;">(opens thatskyapplication)</span>
+          </a>
         </div>
       }
       <!-- Check-in -->
-      <div *ngIf="sections['checkin']" (click)="checkin($event)"
-        class="item checkin" [class.active]="checkedIn" [style.order]="sections['checkin']"
-      >
-        <mat-icon class="menu-icon">{{checkedIn ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
-        <span class="menu-label">
-          I have done my dailies.
-        </span>
+      <div *ngIf="sections['checkin']" [style.order]="sections['checkin']">
+        <app-daily-checkin [checkedIn]="checkedIn" [label]="'I have collected my daily event currency.'" (checkin)="checkin($event)"></app-daily-checkin>
       </div>
       <!-- Calculator -->
-      <a *ngIf="sections['calculator']" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"
+      <a *ngIf="sections['calculator'] && instance?.calculatorData" [routerLink]="['/event-calculator']" [queryParams]="{ guid: instance?.guid }"
         class="item link" [style.order]="sections['calculator']">
         <mat-icon class="menu-icon">calculate</mat-icon>
         <span class="menu-label">Calculator</span>

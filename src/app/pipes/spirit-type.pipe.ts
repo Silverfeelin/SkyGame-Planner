@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { SpiritType } from '../interfaces/spirit.interface';
+import { SpiritType } from 'skygame-data';
 
 @Pipe({
     name: 'spiritType',

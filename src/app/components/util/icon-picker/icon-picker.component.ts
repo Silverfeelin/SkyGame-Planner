@@ -1,18 +1,16 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { IItem } from 'src/app/interfaces/item.interface';
 import { ISearchItem, SearchService } from 'src/app/services/search.service';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { ItemIconComponent } from "../../items/item-icon/item-icon.component";
+import { IItem } from 'skygame-data';
 
 @Component({
     selector: 'app-icon-picker',
     templateUrl: './icon-picker.component.html',
     styleUrls: ['./icon-picker.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgFor, NgbTooltip, MatIcon, ItemIconComponent]
+    imports: [NgFor, MatIcon, ItemIconComponent]
 })
 export class IconPickerComponent implements AfterViewInit {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;

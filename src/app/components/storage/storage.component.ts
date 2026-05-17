@@ -9,7 +9,6 @@ import { MatIcon } from '@angular/material/icon';
     templateUrl: './storage.component.html',
     styleUrl: './storage.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [MatIcon, RouterLink]
 })
 export class StorageComponent {

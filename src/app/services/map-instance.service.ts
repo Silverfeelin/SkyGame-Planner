@@ -1,16 +1,12 @@
 import { Injectable, NgZone, OnDestroy } from '@angular/core';
 import { IMapInit, MapService } from './map.service';
 import L from 'leaflet';
-import { IRealm } from '../interfaces/realm.interface';
 import { EventService } from './event.service';
 import { SubscriptionBag } from '../helpers/subscription-bag';
-import { IArea } from '../interfaces/area.interface';
 import { Router } from '@angular/router';
-import { IMapShrine } from '../interfaces/map-shrine.interface';
 import { StorageService } from './storage.service';
-import { ISpirit } from '../interfaces/spirit.interface';
-import { IWingedLight } from '../interfaces/winged-light.interface';
 import { Maybe } from '../types/maybe';
+import { IRealm, IArea, IMapShrine, IWingedLight, ISpirit } from 'skygame-data';
 
 const opacityFound = 0.4;
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, effect, OnDestroy, signal } from '@angular/core';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
@@ -10,6 +10,7 @@ import { NgFor, LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
+import { CardComponent } from "../layout/card/card.component";
 
 interface IExport {
   version: string;
@@ -19,14 +20,15 @@ interface IExport {
   };
 }
 
+const signalPwa = signal<any>(undefined);
+
 @Component({
     selector: 'app-settings',
     templateUrl: './settings.component.html',
     styleUrls: ['./settings.component.less'],
-    standalone: true,
-    imports: [MatIcon, RouterLink, NgFor, LowerCasePipe, DateTimePipe]
+    imports: [MatIcon, RouterLink, NgFor, LowerCasePipe, DateTimePipe, CardComponent]
 })
-export class SettingsComponent {
+export class SettingsComponent implements OnDestroy {
   storageProviderName: string;
   unlockConnectedNodes: boolean;
   today = DateTime.now();
@@ -35,18 +37,48 @@ export class SettingsComponent {
   currentTheme: string;
   themes = themes;
   wikiNewTab = false;
+  debugVisible = false;
+  dailyCandleAmount: number;
+
+  pwaInstallPrompt?: any = (window as any).pwaInstallPrompt;
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService,
-    private readonly _settingService: SettingService
+    private readonly _settingService: SettingService,
+    private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.storageProviderName = this._storageService.getProviderName();
     this.dateFormats = DateHelper.displayFormats;
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
+    this.debugVisible = _settingService.debugVisible;
+    this.dailyCandleAmount = _settingService.dailyCandleAmount;
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
+
+    addEventListener('beforeinstallprompt', this.beforeInstallPrompt);
+
+    effect(() => {
+      this.pwaInstallPrompt ??= signalPwa();
+      _changeDetectorRef.markForCheck();
+    });
+  }
+
+  ngOnDestroy(): void {
+    removeEventListener('beforeinstallprompt', this.beforeInstallPrompt);
+  }
+
+  beforeInstallPrompt(evt: Event): void {
+    evt.preventDefault();
+    (window as any).pwaInstallPrompt = evt;
+    signalPwa.set(evt);
+  }
+
+  async promptPwa(): Promise<void> {
+    if (!this.pwaInstallPrompt) { return; }
+    const result = await this.pwaInstallPrompt.prompt();
+    console.log(result);
   }
 
   import(): void {
@@ -192,5 +224,15 @@ export class SettingsComponent {
   viewKeyboardShortcuts(): void {
     const event = new KeyboardEvent('keydown', { key: '?', ctrlKey: true, shiftKey: true });
     document.dispatchEvent(event);
+  }
+
+  toggleDebugInfo(): void {
+    this.debugVisible = !this.debugVisible;
+    this._settingService.debugVisible = this.debugVisible;
+  }
+
+  setDailyCandleAmount(value: number): void {
+    this.dailyCandleAmount = value;
+    this._settingService.dailyCandleAmount = value;
   }
 }

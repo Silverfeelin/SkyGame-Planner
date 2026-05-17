@@ -1,0 +1,30 @@
+<div class="sky-card">
+  <div class="sky-card-header">
+    <h1 class="h2 mb-0">Wonderland Cafe</h1>
+  </div>
+  <div class="sky-card-body">
+    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast/2024#Wonderland_Cafe_Corridor'}"></app-wiki-link>
+  </div>
+</div>
+
+<!-- IGC -->
+@if (igcShops.length) {
+  <div class="mt">
+    <app-card [foldable]="true" [folded]="false" [title]="'In-game currency'">
+      <div class="sky-flex flex-wrap">
+        @for (shop of igcShops; track shop.guid) {
+          <div class="sky-card">
+            <div class="sky-card-header">
+              <h3 class="h4 mb-0">
+                <span>{{ shop.name }}</span>
+              </h3>
+            </div>
+            <div class="sky-card-body">
+              <app-item-list [itemList]="shop.itemList!" [highlightNode]="highlightNode"></app-item-list>
+            </div>
+          </div>
+        }
+      </div>
+    </app-card>
+  </div>
+}

@@ -1,5 +1,3 @@
-<app-firefox-clipboard-item></app-firefox-clipboard-item>
-
 <div class="sky-card">
   <div class="sky-card-header">
     <h2 class="h3 mb-0 title">{{ requesting ? 'Sky outfit request' : 'Sky closet' }}</h2>
@@ -124,7 +122,7 @@
           <div class="container">
             <h4 class="mb-0 mt-0">{{ section.label }}</h4>
           </div>
-          <div class="grid grid-4 mt">
+          <div class="background-picker-items mt">
             <img src="/assets/game/background/random.webp" class="background-picker-item" (click)="setBackground(section.guid)"/>
             <ng-container *ngFor="let bg of section.backgrounds">
               <img [src]="bg.url" class="background-picker-item" (click)="setBackground(bg.guid)"/>
@@ -157,7 +155,7 @@
     </div>
     <div class="container mt" data-step="104" data-position="bottom-left-aligned">
       <p class="mb-0">
-        During seasons and events you can preview items in-game before you own them. Include these in the closet when showing your own items?
+        You can preview some cosmetics before you own them. Include these in the closet when showing your own items?
       </p>
       <div class="sky-flex flex-wrap mt">
         <button type="button" (click)="toggleOngoing()">
@@ -296,7 +294,6 @@
 
 </app-card>
 
-
 <!-- Item list -->
 <div class="sky-card mt" data-step="1" data-position="top-left-aligned">
   <div class="sky-card-header header-items header-sticky">
@@ -308,7 +305,7 @@
         <button type="button" class="btn-copy btn-copy-image" (click)="showCopyImagePicker($event)" [disabled]="isRendering" data-step="6" data-position="bottom-left-aligned"
           ngbTooltip="Copied!" #ttCopyImg="ngbTooltip" triggers="manual" container="body" placement="bottom" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
           <mat-icon class="menu-icon" [class.spin]="isRendering === 2">{{ isRendering === 2 ? 'cached' : 'file_copy' }}</mat-icon>
-          <span class="menu-label">Copy</span>
+          <span class="menu-label">Share</span>
         </button>
         <!-- Copy link -->
         <button type="button" class="btn-copy btn-copy-link" (click)="copyLink()" [disabled]="isRendering" data-step="5" data-position="bottom-left-aligned"
@@ -326,44 +323,44 @@
         <div #divCopyImagePicker class="copy-image-picker">
           @if (!requesting) {
             <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy-img" (click)="copyImage('closet')" data-step="7" data-position="top-left-aligned">
+              <button type="button" class="btn-copy-img" (click)="shareImage('closet')" data-step="7" data-position="top-left-aligned">
                 <mat-icon class="menu-icon">image</mat-icon>
-                <span class="menu-label">Copy closet</span>
+                <span class="menu-label">Share closet</span>
               </button>
-              <button type="button" class="" (click)="shareImage('closet')">
-                <mat-icon class="menu-icon">share</mat-icon>
+              <button type="button" class="" (click)="copyImage('closet')">
+                <mat-icon class="menu-icon">file_copy</mat-icon>
                 <span class="menu-no-label"></span>
               </button>
             </div>
           }
           <div class="button-group btn-group-img">
-            <button type="button" class="btn-copy-img" (click)="copyImage('request')" data-step="8" data-position="top-left-aligned">
+            <button type="button" class="btn-copy-img" (click)="shareImage('request')" data-step="8" data-position="top-left-aligned">
               <mat-icon class="menu-icon">background_grid_small</mat-icon>
-              <span class="menu-label">Copy request</span>
+              <span class="menu-label">Share request</span>
             </button>
-            <button type="button" class="" (click)="shareImage('request')">
-              <mat-icon class="menu-icon">share</mat-icon>
+            <button type="button" class="" (click)="copyImage('request')">
+              <mat-icon class="menu-icon">file_copy</mat-icon>
               <span class="menu-no-label"></span>
             </button>
           </div>
           <div class="button-group btn-group-img">
-            <button type="button" class="btn-copy-img" (click)="copyImage('square')" data-step="9" data-position="top-left-aligned">
+            <button type="button" class="btn-copy-img" (click)="shareImage('square')" data-step="9" data-position="top-left-aligned">
               <mat-icon class="menu-icon">grid_on</mat-icon>
-              <span class="menu-label">Copy one fit</span>
+              <span class="menu-label">Share one fit</span>
             </button>
-            <button type="button" class="" (click)="shareImage('square')">
-              <mat-icon class="menu-icon">share</mat-icon>
+            <button type="button" class="" (click)="copyImage('square')">
+              <mat-icon class="menu-icon">file_copy</mat-icon>
               <span class="menu-no-label"></span>
             </button>
           </div>
           @if (!requesting) {
             <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy-img" (click)="copyImage('template')" data-step="10" data-position="top-left-aligned">
+              <button type="button" class="btn-copy-img" (click)="shareImage('template')" data-step="10" data-position="top-left-aligned">
                 <mat-icon class="menu-icon">image</mat-icon>
-                <span class="menu-label">Copy template</span>
+                <span class="menu-label">Share template</span>
               </button>
-              <button type="button" class="" (click)="shareImage('template')">
-                <mat-icon class="menu-icon">share</mat-icon>
+              <button type="button" class="" (click)="copyImage('template')">
+                <mat-icon class="menu-icon">file_copy</mat-icon>
                 <span class="menu-no-label"></span>
               </button>
             </div>
@@ -376,7 +373,7 @@
       <div class="btn-color-active">
         <button type="button" class="btn-color btn-b-r" (click)="showColorPicker($event)" [class]="{ 'btn-b-r':color==='r', 'btn-b-y':color==='y', 'btn-b-g':color==='g', 'btn-b-b':color==='b'}"
           ngbTooltip="Change selection color" container="body" placement="top-right">
-          &nbsp;<mat-icon>palette</mat-icon>
+          &nbsp;<mat-icon>border_color</mat-icon>
         </button>
       </div>
       <div #divColorPicker class="btn-colors" [hidden]="!showingColorPicker">
@@ -408,6 +405,7 @@
       <div class="closet-grid-section">
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Outfit' }"></ng-container>
         <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'Shoes' }"></ng-container>
+        <ng-container [ngTemplateOutlet]="templateItemsType" [ngTemplateOutletContext]="{ type: 'OutfitShoes' }"></ng-container>
       </div>
       <div class="closet-grid-section-divider"></div>
       <div class="closet-grid-section">
@@ -453,9 +451,9 @@
 
 <!-- Items -->
 <ng-template #templateItems let-items let-type="type">
-  <ng-container *ngFor="let item of items; let i = index;">
+  @if (!requesting) {
     <!-- Closet display. -->
-    <ng-container *ngIf="!requesting">
+    @for (item of items; let i = $index; track item.guid) {
       <!-- When modifying closet, show all items regardless of other checks. -->
       <!-- Hide all items regardless of other checks if the closet is folded. -->
       <!-- When showing only selected items, hide all other items. -->
@@ -469,12 +467,22 @@
           [ngbTooltip]="templateItemHover" container="body"
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+          <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
+            @if (!item.dye?.primary) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dye?.primary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dye?.secondary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+          </div>
         </div>
       </div>
-    </ng-container>
 
+      <!-- Tooltip -->
+      <ng-template #templateItemHover>
+        @if (item) { <span class="ws-nw">{{item.name}}</span> }
+      </ng-template>
+    }
+  } @else {
     <!-- Request display. -->
-    @if (requesting) {
+    @for (item of items; let i = $index; track item.guid) {
       <div class="closet-item-container" [hidden]="typeFolded[type]">
         <div class="closet-item" (click)="toggleItem(item)"
           [class.r]="selected.r[item.guid]" [class.y]="selected.y[item.guid]" [class.g]="selected.g[item.guid]" [class.b]="selected.b[item.guid]"
@@ -483,15 +491,71 @@
           [ngbTooltip]="templateItemHover" container="body"
         >
           <app-item-icon [item]="item" [size]="itemSize" [opaque]="true" [hoverGlow]="false" [lazy]="false"></app-item-icon>
+          <div class="d-inline-block w-100 t-center" (click)="showDyePicker(item, $event)">
+            @if (!item.dye?.primary) { <mat-icon class="dye-icon dye-icon-inactive">palette</mat-icon> }
+            @if (item.dye?.primary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[0]">palette</mat-icon> }
+            @if (item.dye?.secondary) { <mat-icon class="dye-icon dye-icon-active" [ngClass]="dyeClasses[item.guid]?.[1]">palette</mat-icon> }
+          </div>
         </div>
       </div>
-    }
 
-    <!-- Tooltip -->
-    <ng-template #templateItemHover>
-      <ng-container *ngIf="item">
-        <span class="ws-nw">{{item.name}}</span>
-      </ng-container>
-    </ng-template>
-  </ng-container>
+      <!-- Tooltip -->
+      <ng-template #templateItemHover>
+        @if (item) { <span class="ws-nw">{{item.name}}</span> }
+      </ng-template>
+    }
+  }
 </ng-template>
+
+@if (showingDyePicker && dyeItem) {
+  <app-overlay [closeText]="'Close'" (close)="closeDyePicker()">
+    <div #divDyePicker class="dye-picker t-center">
+      <div class="">
+        <app-item-icon [item]="dyeItem" [hoverGlow]="false" [opaque]="true" [size]="'default'"></app-item-icon>
+      </div>
+      <!-- Preview -->
+      @if (dyeItem.dye?.previewUrl) {
+        <img [src]="dyeItem.dye!.previewUrl" class="dye-preview" (click)="openDyePreview(dyeItem.dye!.previewUrl!)"/><br/>
+        <sub (click)="openDyePreview(dyeItem.dye!.previewUrl!)">(Click to enlarge preview)</sub>
+      }
+
+      @if (dyeItem.dye?.primary) {
+        <div><b>Primary dye</b></div>
+        <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 0 }"></ng-container>
+      }
+      @if (dyeItem.dye?.secondary) {
+        <div class="mt"><b>Secondary dye</b></div>
+        <ng-container [ngTemplateOutlet]="tDyeGrid" [ngTemplateOutletContext]="{ i: 1 }"></ng-container>
+      }
+
+      <ng-template #tDyeGrid let-i="i">
+        @let dye = dyes[dyeItem.guid][i];
+        <div class="c-accent">Main color</div>
+        <div class="dye-grid">
+          <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.primary" (click)="selectDye(i, 'primary', undefined)"><mat-icon [svgIcon]="'none'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='red'" (click)="selectDye(i, 'primary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='yellow'" (click)="selectDye(i, 'primary', 'yellow')"><mat-icon class="dye-yellow" [svgIcon]="'dye-yellow'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='green'" (click)="selectDye(i, 'primary', 'green')"><mat-icon class="dye-green" [svgIcon]="'dye-green'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='cyan'" (click)="selectDye(i, 'primary', 'cyan')"><mat-icon class="dye-cyan" [svgIcon]="'dye-cyan'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='blue'" (click)="selectDye(i, 'primary', 'blue')"><mat-icon class="dye-blue" [svgIcon]="'dye-blue'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='purple'" (click)="selectDye(i, 'primary', 'purple')"><mat-icon class="dye-purple" [svgIcon]="'dye-purple'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='black'" (click)="selectDye(i, 'primary', 'black')"><mat-icon class="dye-black" [svgIcon]="'dye-black'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.primary==='white'" (click)="selectDye(i, 'primary', 'white')"><mat-icon class="dye-white" [svgIcon]="'dye-white'"></mat-icon></div>
+        </div>
+        <div class="c-accent">Blend color</div>
+        <div class="dye-grid">
+          <div class="dye-grid-color dye-grid-blank" [class.highlight]="!dye.secondary" (click)="selectDye(i, 'secondary', undefined)"><mat-icon class="" [svgIcon]="'none'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='red'" (click)="selectDye(i, 'secondary', 'red')"><mat-icon class="dye-red" [svgIcon]="'dye-red'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='yellow'" (click)="selectDye(i, 'secondary', 'yellow')"><mat-icon class="dye-yellow" [svgIcon]="'dye-yellow'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='green'" (click)="selectDye(i, 'secondary', 'green')"><mat-icon class="dye-green" [svgIcon]="'dye-green'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='cyan'" (click)="selectDye(i, 'secondary', 'cyan')"><mat-icon class="dye-cyan" [svgIcon]="'dye-cyan'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='blue'" (click)="selectDye(i, 'secondary', 'blue')"><mat-icon class="dye-blue" [svgIcon]="'dye-blue'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='purple'" (click)="selectDye(i, 'secondary', 'purple')"><mat-icon class="dye-purple" [svgIcon]="'dye-purple'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='black'" (click)="selectDye(i, 'secondary', 'black')"><mat-icon class="dye-black" [svgIcon]="'dye-black'"></mat-icon></div>
+          <div class="dye-grid-color" [class.highlight]="dye.secondary==='white'" (click)="selectDye(i, 'secondary', 'white')"><mat-icon class="dye-white" [svgIcon]="'dye-white'"></mat-icon></div>
+        </div>
+      </ng-template>
+    </div>
+
+  </app-overlay>
+}

@@ -44,11 +44,23 @@ Thumbs.db
 
 # Wrangler
 /.wrangler
+.dev.vars
+
+# Playwright
+/.playwright-mcp
 
 # Diagrams
 /diagrams/*.bkp
 /diagrams/*.dtmp
 
+# Compiled files
+/src/assets/data/items.json
+/src/assets/data/nodes.json
+/src/assets/data/iaps.json
+/src/assets/data/everything.json
+/src/assets/data/x.json
+
 # Other
 #/scripts
 /scripts/temp/**
+/scripts/data/temp/**

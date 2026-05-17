@@ -1,7 +1,6 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { IItem, ItemSize, ItemType } from 'src/app/interfaces/item.interface';
 import { DataService } from 'src/app/services/data.service';
 import { SearchService } from 'src/app/services/search.service';
 import { HttpClient } from '@angular/common/http';
@@ -10,22 +9,22 @@ import { EventService } from 'src/app/services/event.service';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from 'src/app/interfaces/outfit-request.interface';
 import { DateHelper, PeriodState } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import introJs from 'intro.js';
 import { IntroStep, TooltipPosition } from 'intro.js/src/core/steps';
-import { ITravelingSpirit } from 'src/app/interfaces/traveling-spirit.interface';
-import { IEvent, IEventInstance } from 'src/app/interfaces/event.interface';
-import { IReturningSpirit, IReturningSpirits } from 'src/app/interfaces/returning-spirits.interface';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
 import { SpiritTypeIconComponent } from '../../spirit-type-icon/spirit-type-icon.component';
 import { CardComponent } from '../../layout/card/card.component';
-import { MatIcon } from '@angular/material/icon';
-import { NgIf, NgFor, NgTemplateOutlet } from '@angular/common';
-import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
+import { MatIcon, MatIconRegistry } from '@angular/material/icon';
+import { NgIf, NgFor, NgTemplateOutlet, NgClass } from '@angular/common';
 import { IconService } from '@app/services/icon.service';
+import { drawFingerprint } from '../closet-fingerprint';
+import { OverlayComponent } from "../../layout/overlay/overlay.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { IItem, ItemType, ItemSize, ITravelingSpirit, IEventInstance, ISpecialVisit } from 'skygame-data';
+import { ISpecialVisitSpirit } from 'skygame-data/dist/interfaces/special-visit-spirit.interface';
 
 interface ISelection { [guid: string]: IItem; }
-interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; };
+interface IOutfitRequest { a?: string; r: string; y: string; g: string; b: string; d?: string; };
 
 type RequestColor = 'r' | 'y' | 'g' | 'b';
 type ClosetMode = 'all' | 'closet';
@@ -35,6 +34,8 @@ type CopyImageMode = 'request' | 'square' | 'closet' | 'template';
 const _wPad = 24;
 /** Size of item icon */
 const _wItem = 64;
+/** Size of dye icon */
+const _wDye = 32;
 /** Size of gap between items. */
 const _wGap = 8;
 /** Size of item with gap. */
@@ -43,13 +44,20 @@ const _wBox = _wItem + _wGap;
 const _aHide = 0.1;
 const _aHalfHide = 0.4;
 
+interface IDye {
+  primary?: DyeColor;
+  secondary?: DyeColor;
+}
+
+type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
+const dyeColors = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
+
 @Component({
     selector: 'app-closet',
     templateUrl: './closet.component.html',
     styleUrls: ['./closet.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FirefoxClipboardItemComponent, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet]
+    imports: [NgClass, NgIf, RouterLink, MatIcon, NgFor, CardComponent, SpiritTypeIconComponent, ItemIconComponent, NgbTooltip, NgTemplateOutlet, OverlayComponent]
 })
 export class ClosetComponent implements OnDestroy {
   @ViewChild('input', { static: true }) input!: ElementRef<HTMLInputElement>;
@@ -59,6 +67,7 @@ export class ClosetComponent implements OnDestroy {
   @ViewChild('divColorPicker', { static: false }) private readonly _divColorPicker?: ElementRef<HTMLElement>;
   @ViewChild('divCopyImagePicker', { static: false }) private readonly _divCopyImagePicker?: ElementRef<HTMLElement>;
   @ViewChild('divClosetContainer', { static: false }) private readonly _divClosetContainer?: ElementRef<HTMLElement>;
+  @ViewChild('divDyePicker', { static: true }) private readonly _divDyePicker!: ElementRef<HTMLElement>;
 
   // Background
   _bgImg!: HTMLImageElement;
@@ -70,7 +79,7 @@ export class ClosetComponent implements OnDestroy {
 
   // Item type data
   itemTypes: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory,
     ItemType.Cape,
@@ -80,6 +89,7 @@ export class ClosetComponent implements OnDestroy {
   itemIcons: { [key: string]: string } = {
     'Outfit': 'outfit',
     'Shoes': 'shoes',
+    'OutfitShoes': 'outfit-shoes',
     'Mask': 'mask',
     'FaceAccessory': 'face-acc',
     'Necklace': 'necklace',
@@ -101,10 +111,14 @@ export class ClosetComponent implements OnDestroy {
   showingColorPicker = false;
   showingBackgroundPicker = false;
   showingImagePicker = false;
+  showingDyePicker = false;
+  dyeItem?: IItem;
 
   // Item selection
   color?: RequestColor = 'r';
   selected: { all: ISelection, r: ISelection, y: ISelection, g: ISelection, b: ISelection } = { all: {}, r: {}, y: {}, g: {}, b: {}};
+  dyes: { [guid: string]: Array<IDye> } = {};
+  dyeClasses: { [key: string]: Array<string> | undefined } = {};
   hidden: { [guid: string]: boolean } = {};
   available?: ISelection;
 
@@ -137,8 +151,8 @@ export class ClosetComponent implements OnDestroy {
   tsState?: PeriodState;
   tsItems?: Array<IItem>;
   // Returning Spirits
-  rs?: IReturningSpirits;
-  rsSpirits: Array<{ returning: IReturningSpirit, items: Array<IItem> }> = [];
+  rs?: ISpecialVisit;
+  rsSpirits: Array<{ returning: ISpecialVisitSpirit, items: Array<IItem> }> = [];
   // Event
   events: Array<{instance: IEventInstance, items: Array<IItem>, iapItems: Array<IItem>}> = [];
 
@@ -148,12 +162,14 @@ export class ClosetComponent implements OnDestroy {
   _imgNone = new Image();
   _imgUnknown = new Image();
   _imgSheets: { [key: string]: HTMLImageElement } = {};
+  _svgDyes: { [key: string]: SVGElement } = {};
 
   constructor(
     private readonly _dataService: DataService,
     private readonly _eventService: EventService,
     private readonly _iconService: IconService,
     private readonly _searchService: SearchService,
+    private readonly _matIconRegistry: MatIconRegistry,
     private readonly _changeDetectorRef: ChangeDetectorRef,
     private readonly _elementRef: ElementRef<HTMLElement>,
     private readonly _http: HttpClient,
@@ -167,6 +183,11 @@ export class ClosetComponent implements OnDestroy {
       const img = new Image();
       img.src = `/assets/game/${sheet}`;
       this._imgSheets[sheet] = img;
+    });
+
+    // Load dye SVGs
+    ['none', ...dyeColors].forEach(d => {
+      _matIconRegistry.getNamedSvgIcon(`dye-${d}`).subscribe(svg => { this._svgDyes[d] = svg; });
     });
 
     // Load user preferences.
@@ -194,6 +215,41 @@ export class ClosetComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this._clickSub.unsubscribe();
+  }
+
+  showDyePicker(item: IItem, evt: MouseEvent): void {
+    if (!item.dye) { return; }
+    evt.preventDefault();
+    evt.stopImmediatePropagation();
+    this.showingDyePicker = true;
+    this.dyeItem = item;
+    const dyeSlots = item.dye?.secondary ? 2 : 1;
+    this.dyes[item.guid] ??= Array.from({ length: dyeSlots }, () => ({}));
+  }
+
+  closeDyePicker(): void {
+    if (this.dyeItem && !this.selected.all[this.dyeItem.guid]) {
+      this.toggleItem(this.dyeItem);
+    }
+    this.showingDyePicker = false;
+    this.dyeItem = undefined;
+    this.updateUrlFromSelection();
+  }
+
+  openDyePreview(url: string): void {
+    window.open(url, '_blank');
+  }
+
+  selectDye(index: number, type: 'primary' | 'secondary', color: DyeColor | undefined): void {
+    if (!this.dyeItem) { return; }
+    const dye = this.dyes[this.dyeItem.guid];
+    if (!dye[index]) { dye[index] = {}; }
+    dye[index][type] = color;
+
+    if (type === 'primary') {
+      if (!this.dyeClasses[this.dyeItem.guid]) { this.dyeClasses[this.dyeItem.guid] = []; }
+      this.dyeClasses[this.dyeItem.guid]![index] = color ? `dye-${color}` : '';
+    }
   }
 
   /** Toggles item selection. */
@@ -498,7 +554,7 @@ export class ClosetComponent implements OnDestroy {
       return;
     }
 
-    const items = this._searchService.searchItems(this.searchText, { limit: 50, hasIcon: true });
+    const items = this._searchService.searchItems(this.searchText, { limit: 100, hasIcon: true });
     this.searchResults = items.reduce((map, item) => (map[item.data.guid] = item.data, map), {} as { [guid: string]: IItem });
     this._changeDetectorRef.markForCheck();
   }
@@ -520,6 +576,12 @@ export class ClosetComponent implements OnDestroy {
     url.searchParams.set('y', y);
     url.searchParams.set('g', g);
     url.searchParams.set('b', b);
+
+    // Serialize dyes if the URL doesn't get too long.
+    const d = this.serializeDyes();
+    if (d.length <= 400) { url.searchParams.set('d', d); }
+
+    // Update URL.
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
@@ -542,7 +604,7 @@ export class ClosetComponent implements OnDestroy {
     this.tsState = state;
 
     const types = new Set<ItemType>(this.itemTypes);
-    const items = NodeHelper.getItems(ts.tree.node).filter(item => types.has(item.type));
+    const items = TreeHelper.getItems(ts.tree).filter(item => types.has(item.type));
     items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
     this.tsItems = items;
   }
@@ -558,7 +620,7 @@ export class ClosetComponent implements OnDestroy {
 
     const types = new Set<ItemType>(this.itemTypes);
     this.rs.spirits?.forEach(spirit => {
-      const items = NodeHelper.getItems(spirit.tree.node).filter(item => types.has(item.type));
+      const items = TreeHelper.getItems(spirit.tree).filter(item => types.has(item.type));
       items.sort((a, b) => this.itemTypeOrder[a.type] - this.itemTypeOrder[b.type]);
       this.rsSpirits.push({ returning: spirit, items });
     });
@@ -573,7 +635,7 @@ export class ClosetComponent implements OnDestroy {
       if (!instance) { return; }
       const spirits = instance.spirits || [];
 
-      const items = spirits.map(s => NodeHelper.getItems(s.tree?.node)).flat().filter(i => types.has(i.type));
+      const items = spirits.map(s => TreeHelper.getItems(s.tree)).flat().filter(i => types.has(i.type));
       const shops = instance.shops || [];
       const listItems = shops.map(s => s.itemList?.items || []).flat();
       const iapItems = shops.map(s => (s.iaps || []).map(a => a.items || [])).flat().flat();
@@ -609,9 +671,13 @@ export class ClosetComponent implements OnDestroy {
     }
 
     // Get ongoing items.
+    const regularSpirits = this._dataService.spiritConfig.items.filter(s => s.type === 'Regular' || s.type === 'Elder');
+    regularSpirits.forEach(spirit => {
+      TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
+    });
     const season = DateHelper.getActive(this._dataService.seasonConfig.items);
     season?.spirits?.forEach(spirit => {
-      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
     });
     season?.shops?.forEach(shop => {
       shop.iaps?.forEach(iap => iap.items?.forEach(item => this.ongoingItems[item.guid] = item));
@@ -620,16 +686,17 @@ export class ClosetComponent implements OnDestroy {
     this._dataService.eventConfig.items.forEach(event => {
       const instance = DateHelper.getActive(event.instances);
       instance?.spirits?.forEach(spirit => {
-        NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+        TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
       });
       instance?.shops?.forEach(shop => {
         shop.iaps?.forEach(iap => iap.items?.forEach(item => this.ongoingItems[item.guid] = item));
         shop.itemList?.items?.forEach(node => this.ongoingItems[node.item.guid] = node.item);
       });
     });
-    NodeHelper.getItems(DateHelper.getActive(this._dataService.travelingSpiritConfig.items)?.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+    const activeTsTree = DateHelper.getActive(this._dataService.travelingSpiritConfig.items)?.tree;
+    TreeHelper.getItems(activeTsTree).forEach(item => this.ongoingItems[item.guid] = item);
     DateHelper.getActive(this._dataService.returningSpiritsConfig.items)?.spirits?.forEach(spirit => {
-      NodeHelper.getItems(spirit.tree?.node).forEach(item => this.ongoingItems[item.guid] = item);
+      TreeHelper.getItems(spirit.tree).forEach(item => this.ongoingItems[item.guid] = item);
     });
 
     // Add items to closets.
@@ -661,7 +728,8 @@ export class ClosetComponent implements OnDestroy {
         r: queryParams.get('r') || '',
         y: queryParams.get('y') || '',
         g: queryParams.get('g') || '',
-        b: queryParams.get('b') || ''
+        b: queryParams.get('b') || '',
+        d: queryParams.get('d') || ''
       });
     }
   }
@@ -703,6 +771,18 @@ export class ClosetComponent implements OnDestroy {
     const b = this.deserializeItems(data.b);
     for (const item of b) { this.selected.b[item.guid] = item; this.selected.all[item.guid] = item; }
 
+    this.dyes = {};
+    this.dyeClasses = {};
+    const dyes = this.deserializeDyes(data.d);
+    if (dyes.length) {
+      Object.keys(this.selected.all).forEach((guid, i) => {
+        this.dyes[guid] = dyes[i] || {};
+        if (!this.dyeClasses[guid]) { this.dyeClasses[guid] = []; }
+        if (dyes[i][0]?.primary) { this.dyeClasses[guid]![0] = `dye-${dyes[i][0].primary}`; }
+        if (dyes[i][1]?.primary) { this.dyeClasses[guid]![1] = `dye-${dyes[i][1].primary}`; }
+      });
+    }
+
     this.updateSelectionWarnings();
   }
 
@@ -715,7 +795,8 @@ export class ClosetComponent implements OnDestroy {
       r: this.serializeItems(Object.values(this.selected.r)),
       y: this.serializeItems(Object.values(this.selected.y)),
       g: this.serializeItems(Object.values(this.selected.g)),
-      b: this.serializeItems(Object.values(this.selected.b))
+      b: this.serializeItems(Object.values(this.selected.b)),
+      d: this.serializeDyes()
     };
   }
 
@@ -741,6 +822,77 @@ export class ClosetComponent implements OnDestroy {
     }
 
     return selected;
+  }
+
+
+  private serializeDyes(): string {
+    // Get dyes in order or r/y/g/b, skipping duplicates.
+    const guids = new Set<string>();
+    const dyes: Array<Array<IDye>> = [
+      ...Object.values(this.selected.r).filter(item => !guids.has(item.guid) && guids.add(item.guid)).map(item => this.dyes[item.guid] || []),
+      ...Object.values(this.selected.y).filter(item => !guids.has(item.guid) && guids.add(item.guid)).map(item => this.dyes[item.guid] || []),
+      ...Object.values(this.selected.g).filter(item => !guids.has(item.guid) && guids.add(item.guid)).map(item => this.dyes[item.guid] || []),
+      ...Object.values(this.selected.b).filter(item => !guids.has(item.guid) && guids.add(item.guid)).map(item => this.dyes[item.guid] || [])
+    ];
+
+    // No dyes, skip serializing a bunch of zeroes.
+    if (!dyes.some(d => d.length && d.some(c => c.primary || c.secondary))) { return ''; }
+
+    // Map dyes to 4 characters (2 dyes per slot).
+    return dyes.map(dye => {
+      const a = this.getDyeIndex(dye[0]?.primary);
+      const b = this.getDyeIndex(dye[0]?.secondary);
+      const c = this.getDyeIndex(dye[1]?.primary);
+      const d = this.getDyeIndex(dye[1]?.secondary);
+      return a.toString(36) + b.toString(36) + c.toString(36) + d.toString(36);
+    }).join('');
+  }
+
+  private deserializeDyes(serialized: string | undefined): Array<Array<IDye>> {
+    if (!serialized?.length) { return []; }
+    const dyes = serialized?.match(/.{4}/g) || [];
+    const deserializedDyes: Array<Array<IDye>> = [];
+    // Read every pair of dyes.
+    for (const dye of dyes) {
+      const a = parseInt(dye[0], 36);
+      const b = parseInt(dye[1], 36);
+      const c = parseInt(dye[2], 36);
+      const d = parseInt(dye[3], 36);
+      deserializedDyes.push([
+        { primary: this.getDye(a), secondary: this.getDye(b) },
+        { primary: this.getDye(c), secondary: this.getDye(d) }
+      ]);
+    }
+    return deserializedDyes;
+  }
+
+
+  private getDyeIndex(color: DyeColor | undefined): number {
+    switch (color) {
+      case 'red': return 1;
+      case 'purple': return 2;
+      case 'blue': return 3;
+      case 'cyan': return 4;
+      case 'green': return 5;
+      case 'yellow': return 6;
+      case 'black': return 7;
+      case 'white': return 8;
+      default: return 0;
+    }
+  };
+
+  private getDye(index: number): DyeColor | undefined {
+    switch (index) {
+      case 1: return 'red';
+      case 2: return 'purple';
+      case 3: return 'blue';
+      case 4: return 'cyan';
+      case 5: return 'green';
+      case 6: return 'yellow';
+      case 7: return 'black';
+      case 8: return 'white';
+      default: return undefined;
+    }
   }
 
   // #endregion
@@ -790,6 +942,7 @@ export class ClosetComponent implements OnDestroy {
         link.searchParams.set('y', request.y);
         link.searchParams.set('g', request.g);
         link.searchParams.set('b', request.b);
+        link.searchParams.set('d', request.d || '');
       }
 
       this.lastLink = link.href;
@@ -860,6 +1013,7 @@ export class ClosetComponent implements OnDestroy {
     const getSelectedPerType = (selection: ISelection) => Object.values(selection).reduce((map, item) => {
       let type = item.type;
       if (type === ItemType.Furniture || type === ItemType.Held) { type = ItemType.Prop; }
+      if (type === ItemType.OutfitShoes) { type = ItemType.Outfit; }
       if (!map[type]) { map[type] = item; }
       return map;
     }, {} as { [key: string]: IItem });
@@ -881,9 +1035,9 @@ export class ClosetComponent implements OnDestroy {
     const items = itemTypes.map(getItemByType);
 
     const canvas = document.createElement('canvas');
-    canvas.width = _wItem * 4 + _wGap * 5;
-    canvas.height = _wItem * 3 + _wGap * 4 + 24;
-    const ctx = canvas.getContext('2d')!;
+    canvas.width = _wItem * 5 + _wGap * 6;
+    canvas.height = _wItem * 2 + _wGap * 3 + _wDye * 4 + 24;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true })!;
 
     this.cvsDrawBackground(ctx);
 
@@ -915,16 +1069,13 @@ export class ClosetComponent implements OnDestroy {
     }, {} as { [guid: string]: HTMLImageElement });
 
     items.forEach((item, i) => {
-      const x = i < 3
-        ? _wGap + i * (_wItem + _wGap) + (_wItem / 2) + (_wGap / 2) : i >= 7
-        ? _wGap + (i - 7) * (_wItem + _wGap) + (_wItem / 2) + (_wGap / 2)
-        : _wGap + (i - 3) * (_wItem + _wGap);
-      const row = i < 3 ? 0 : i < 7 ? 1 : 2;
-      const y = _wGap + row * (_wItem + _wGap) + 12;
+      const x = _wGap + (i % 5) * (_wItem + _wGap);
+      const row = Math.floor(i / 5);
+      const y = _wGap + row * (_wItem + _wGap + (_wDye * 2)) + 12;
 
       // Draw item box
       ctx.fillStyle = '#0006';
-      ctx.beginPath(); ctx.roundRect(x, y, _wItem, _wItem, 4); ctx.fill();
+      ctx.beginPath(); ctx.roundRect(x, y, _wItem, _wItem + _wDye * 2, 4); ctx.fill();
 
       const drawPlaceholder = () => {
         const mappedIcon = placeholderItems[i].icon ? this._iconService.getIcon(placeholderItems[i].icon!) : undefined;
@@ -951,12 +1102,61 @@ export class ClosetComponent implements OnDestroy {
         } else {
           ctx.drawImage(img, x, y, _wItem, _wItem);
         }
+
+
+        // Draw dyes
+        if (item.dye?.primary) {
+          const drawDye = (dye: DyeColor | undefined, dx: number, dy: number) => {
+            ctx.save();
+            const color = dye || 'none';
+            const path = new Path2D(this._svgDyes[color].querySelector('path')!.getAttribute('d')!);
+
+            ctx.translate(dx, dy);
+            ctx.scale(32 / 300, 32 / 300); // SVG icon has 300x300 viewBox
+            if (color === 'black') {
+              ctx.fillStyle = '#232323';
+              ctx.strokeStyle = '#fff';
+              ctx.lineWidth = 3;
+              ctx.setLineDash([]);
+              ctx.fill(path);
+              ctx.stroke(path);
+            } else {
+              ctx.fillStyle = getComputedStyle(document.body).getPropertyValue(`--dye-${color}`).trim();
+              ctx.fill(path);
+            }
+            ctx.restore();
+          };
+
+          const drawLine = (dy: number) => {
+            ctx.save();
+            ctx.beginPath();
+            ctx.globalAlpha = 1;
+            ctx.strokeStyle = '#999';
+            ctx.lineWidth = 1;
+            ctx.moveTo(x + 8, dy + _wItem + 0.5);
+            ctx.lineTo(x + _wItem - 8, dy + _wItem + 0.5);
+            ctx.stroke();
+            ctx.restore();
+          };
+
+          const dyes = this.dyes[item.guid];
+          if (item.dye?.primary && dyes?.[0]) {
+            drawDye(dyes[0]?.primary, x + 4, y + _wItem);
+            drawDye(dyes[0]?.secondary, x + (_wDye - 4) * 1, y + _wItem);
+          }
+          if (item.dye?.secondary && dyes?.[1]) {
+            drawLine(y + _wDye);
+            drawDye(dyes[1]?.primary, x + 4, y + _wItem + _wDye);
+            drawDye(dyes[1]?.secondary, x + (_wDye - 4) * 1, y + _wItem + _wDye);
+          }
+        }
       } else {
         drawPlaceholder();
         ctx.drawImage(this._imgUnknown, x, y, _wItem, _wItem);
       }
     });
 
+    drawFingerprint(ctx, [2, canvas.height - 2], items.map(i => i?.id || 0));
     return canvas;
   }
 
@@ -968,6 +1168,7 @@ export class ClosetComponent implements OnDestroy {
 
     const cOutfit = Math.ceil(this.items[ItemType.Outfit].length / cols[0]);
     const cShoes = Math.ceil(this.items[ItemType.Shoes].length / cols[0]);
+    const cOutfitShoes = Math.ceil(this.items[ItemType.OutfitShoes].length / cols[0]);
     const cMask = Math.ceil(this.items[ItemType.Mask].length / cols[0]);
     const cFaceAcc = Math.ceil(this.items[ItemType.FaceAccessory].length / cols[0]);
     const cNecklace = Math.ceil(this.items[ItemType.Necklace].length / cols[0]);
@@ -978,7 +1179,7 @@ export class ClosetComponent implements OnDestroy {
     const cHeld = Math.ceil(this.items[ItemType.Held].length / cols[3]);
     const cFurniture = Math.ceil(this.items[ItemType.Furniture].length / cols[3]);
     const cProp = Math.ceil(this.items[ItemType.Prop].length / cols[3]);
-    const h1 = (cOutfit + cShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 6 -_wGap;
+    const h1 = (cOutfit + cShoes + cOutfitShoes + cMask + cFaceAcc + cNecklace) * _wBox + _wPad * 7 -_wGap;
     const h2 = (cHair + cHairAcc + cHeadAcc) * _wBox + _wPad * 4 - _wGap;
     const h3 = cCape * _wBox + _wPad * 2 - _wGap;
     const h4 = (cHeld + cFurniture + cProp) * _wBox + _wPad * 4 - _wGap;
@@ -1005,10 +1206,12 @@ export class ClosetComponent implements OnDestroy {
     sx = _wPad;  sy = _wPad * 2 + cOutfit * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Shoes], itemImgs);
     sx = _wPad;  sy = _wPad * 3 + (cOutfit + cShoes) * _wBox;
+    this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.OutfitShoes], itemImgs);
+    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cOutfitShoes) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Mask], itemImgs);
-    sx = _wPad;  sy = _wPad * 4 + (cOutfit + cShoes + cMask) * _wBox;
+    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cOutfitShoes + cMask) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.FaceAccessory], itemImgs);
-    sx = _wPad;  sy = _wPad * 5 + (cOutfit + cShoes + cMask + cFaceAcc) * _wBox;
+    sx = _wPad;  sy = _wPad * 6 + (cOutfit + cShoes + cOutfitShoes + cMask + cFaceAcc) * _wBox;
     this.cvsDrawSection(ctx, sx, sy, cols[0], mode, this.items[ItemType.Necklace], itemImgs);
 
     sx = _wPad * 2 + cols[0] * _wBox; sy = _wPad;
@@ -1208,17 +1411,17 @@ export class ClosetComponent implements OnDestroy {
 
     steps.push(...[
       { sStep: s.ITEM, title: 'Sky cosmetics', intro: 'Here you can see all cosmetics from Sky. You can create a request simply by clicking the icons to select them.' },
-      { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. Try clicking an icon now!' },
+      { sStep: s.ITEM_SECTION, title: 'Closets', intro: 'Each closet is organized as it appears in Sky. You can select items here. Cosmetics that can be dyed have palette icons below them which you can click on.' },
       { sStep: s.ITEM_COLOR, title: 'Selection color', intro: 'If you want to select items with different colors you can click here. Use this when marking alternative items or when you want to see multiple outfits in one request.' },
-      { sStep: s.COPY, title: 'Copy request', intro: 'When you are done selecting items you can copy your request.' },
+      { sStep: s.COPY, title: 'Share request', intro: 'When you are done selecting items you can share your request.' },
       { sStep: s.COPY_LINK, title: 'Copy link', intro: 'A shareable link will be copied to your clipboard. You can paste this link in Discord. The link allows other players to easily see if they have the items for your request and lasts 1 week.' },
-      { sStep: s.COPY_IMAGE, title: 'Copy image', intro: 'There are multiple options available when copying an image. You can paste the image in Discord using your keyboard.' },
+      { sStep: s.COPY_IMAGE, title: 'Share image', intro: 'There are multiple options available when sharing an image.' },
     ]);
 
-    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Copy closet', intro: 'Copying your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
-    steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Copy full request', intro: 'Copying a full request will hide items you haven\'t selected on the full template. This can be useful when requesting one or multiple outfits.' });
-    steps.push({ sStep: s.COPY_IMAGE_SQUARE, title: 'Copy fit request', intro: 'Copying a fit request will create a smaller square with just the icons of one outfit.' });
-    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Copy template', intro: 'Copying the template will show all items.' });
+    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_CLOSET, title: 'Share closet', intro: 'Sharing your closet will hide items you do not own. This can be useful when asking for outfit suggestions or when opening your closet for requests.' });
+    steps.push({ sStep: s.COPY_IMAGE_REQUEST, title: 'Share full request', intro: 'Sharing a full request will hide items you haven\'t selected on the full template. This can be useful when requesting one or multiple outfits.' });
+    steps.push({ sStep: s.COPY_IMAGE_SQUARE, title: 'Share fit request', intro: 'Sharing a fit request will create a smaller square with just the icons of one outfit.' });
+    !this.requesting && steps.push({ sStep: s.COPY_IMAGE_TEMPLATE, title: 'Share template', intro: 'Sharing the template will show all items.' });
 
     steps.push({ sStep:s.OPTIONS, title: 'Options', intro: 'Various options to change what\'s displayed can be found here.' })
     if (!this.requesting) {

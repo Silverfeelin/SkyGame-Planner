@@ -1,4 +1,4 @@
-import { ICost } from "../interfaces/cost.interface";
+import { ICost } from 'skygame-data';
 
 export class CostHelper {
   /** Creates a simple Cost object with all currencies set to 0. */

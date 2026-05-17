@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Host
 import { MatIcon } from '@angular/material/icon';
 import { CardComponent, CardFoldEvent } from '@app/components/layout/card/card.component';
 import { ItemClickEvent, ItemsComponent } from "../items.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { ItemIconComponent } from "../item-icon/item-icon.component";
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { StorageService } from '@app/services/storage.service';
@@ -10,9 +9,9 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Maybe } from '@app/types/maybe';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
 import { Router } from '@angular/router';
 import { ItemHelper } from '@app/helpers/item-helper';
+import { IItem, ItemType } from 'skygame-data';
 
 interface IItemCollection {
   guid: string;
@@ -27,12 +26,11 @@ interface IStorageData {
 }
 
 @Component({
-  selector: 'app-item-collection',
-  standalone: true,
-  imports: [MatIcon, NgbTooltip, NgTemplateOutlet, CardComponent, ItemsComponent, ItemIconComponent, ItemTypeSelectorComponent],
-  templateUrl: './item-collection.component.html',
-  styleUrl: './item-collection.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-collection',
+    imports: [MatIcon, NgbTooltip, NgTemplateOutlet, CardComponent, ItemsComponent, ItemIconComponent],
+    templateUrl: './item-collection.component.html',
+    styleUrl: './item-collection.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemCollectionComponent {
   showEdit = false;

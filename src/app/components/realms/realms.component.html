@@ -2,8 +2,20 @@
   <div class="sky-card-header">
     <h1 class="h2 mb-0">Realms</h1>
   </div>
-  <div class="sky-card-body">
+  <div class="sky-card-body grid grid-2">
     <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Realms'}"></app-wiki-link>
+    <a class="item link" [routerLink]="['/realm/shared-creations']">
+      <mat-icon class="menu-icon">place</mat-icon>
+      <span class="menu-label">Shared Creations</span>
+    </a>
+    <a class="item link" [routerLink]="['/realm/cr-tracker']">
+      <mat-icon class="menu-icon">candle</mat-icon>
+      <span class="menu-label">Candle Run Tracker</span>
+    </a>
+    <a class="item link" [routerLink]="['/realm/pnr-tracker']">
+      <mat-icon class="menu-icon">arrow_forward</mat-icon>
+      <span class="menu-label">Eden Statue Tracker</span>
+    </a>
   </div>
 </div>
 

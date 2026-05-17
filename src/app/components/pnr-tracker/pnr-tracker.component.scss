@@ -1,0 +1,22 @@
+.map-container {
+  position: relative;
+}
+
+.map-container .map {
+  height: calc(100vh - 20px);
+  max-height: calc(100vh - 20px);
+}
+
+:host ::ng-deep {
+  .leaflet-popup-content-wrapper {
+    opacity: 0.7;
+  }
+}
+
+.pnr-count {
+  text-shadow:
+  -1px -1px 2px #000,
+  1px -1px 2px #000,
+  -1px 1px 2px #000,
+  1px 1px 2px #000;
+}

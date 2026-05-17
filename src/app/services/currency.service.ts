@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
-import { ICost } from '@app/interfaces/cost.interface';
-import { ISpiritTree } from '@app/interfaces/spirit-tree.interface';
 import { DateHelper } from '@app/helpers/date-helper';
-import { ISeason } from '@app/interfaces/season.interface';
-import { IEventInstance } from '@app/interfaces/event.interface';
+import { ISpiritTree, ISeason, IEventInstance, ICost } from 'skygame-data';
 
 @Injectable({
   providedIn: 'root'
@@ -121,11 +118,14 @@ export class CurrencyService {
     this._storageService.setCurrencies(currencies);
   }
 
-  animateCurrencyGained(evt: MouseEvent, value: number): void {
+  animateCurrencyGained(evt: MouseEvent, value: number, value2?: number): void {
     if (!value) { return; }
     const span = document.createElement('span');
     span.classList.add('currency-gained');
     span.textContent = value >= 0 ? `+${value}` : `${value}`;
+    if (value2) {
+      span.textContent += value2 >= 0 ? ` (+${value2})` : ` (${value2})`;
+    }
     span.style.top = `${evt.clientY}px`;
     span.style.left = `${evt.clientX}px`;
     span.classList.add(value < 0 ? 'c-old' : 'c-new');

@@ -2,8 +2,6 @@ import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, E
 import { ActivatedRoute } from '@angular/router';
 import { BreakpointState, BreakpointObserver } from '@angular/cdk/layout';
 import L, { LeafletKeyboardEvent } from 'leaflet';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { IWingedLight } from 'src/app/interfaces/winged-light.interface';
 import { DataService } from 'src/app/services/data.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
@@ -13,6 +11,7 @@ import { TableColumnDirective } from '../table/table-column/table-column.directi
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
 import { MatIcon } from '@angular/material/icon';
+import { IArea, IWingedLight } from 'skygame-data';
 
 interface IRow {
   area: IArea;
@@ -23,6 +22,8 @@ interface IRow {
 interface IMapWingedLight {
   wl: IWingedLight;
   marker?: L.Marker;
+  prev?: IMapWingedLight;
+  next?: IMapWingedLight;
 }
 
 @Component({
@@ -31,7 +32,6 @@ interface IMapWingedLight {
     styleUrls: ['./children-of-light.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [MapInstanceService],
-    standalone: true,
     imports: [MatIcon, TableComponent, TableHeaderDirective, TableColumnDirective]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
@@ -109,7 +109,9 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(layerGroup);
 
     // Create markers for all Children of Light
-    this._dataService.wingedLightConfig.items.forEach(wl => {
+    const wingedLights = this._dataService.wingedLightConfig.items.filter(wl => wl.mapData?.position);
+    wingedLights.sort((a, b) => (a.order - b.order));
+    wingedLights.forEach(wl => {
       if (!wl.mapData) { return; }
       const obj: IMapWingedLight = { wl };
 
@@ -131,7 +133,13 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       this.lightMap[wl.guid] = obj;
     });
 
-    if (wl ){
+    for (let i = 0; i < this.light.length; i++) {
+      const obj = this.light[i];
+      obj.prev = this.light[i - 1] || this.light[this.light.length - 1];
+      obj.next = this.light[i + 1] || this.light[0];
+    }
+
+    if (wl) {
       setTimeout(() => {
         this.flyAndOpen(wl);
       });
@@ -409,33 +417,35 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   }
 
   private prevCol(guid: string): void {
-    const wl = this._dataService.guidMap.get(guid) as IWingedLight;
-    const i = this._dataService.wingedLightConfig.items.findIndex(w => w === wl);
-    const prevWl = this._dataService.wingedLightConfig.items[i - 1] || this._dataService.wingedLightConfig.items[this._dataService.wingedLightConfig.items.length - 1];
+    const current = this.lightMap[guid];
+    const prev = current?.prev;
+    if (!prev?.wl) { return; }
 
-    if (!this.lightMap[prevWl.guid]?.marker) { alert('Missing marker for previous Child of Light!'); return; }
-    this.flyAndOpen(prevWl);
+    if (!prev.marker) { alert('Missing marker for previous Child of Light!'); return; }
+    this.flyAndOpen(prev.wl);
   }
 
   private nextCol(guid: string, skipFound = false): void {
-    const wl = this._dataService.guidMap.get(guid) as IWingedLight;
-    const i = this._dataService.wingedLightConfig.items.findIndex(w => w === wl);
-    let j = (i + 1) % this._dataService.wingedLightConfig.items.length;
-    let nextWl: IWingedLight | undefined;
-    while (j !== i) {
-      nextWl = this._dataService.wingedLightConfig.items[j];
-      if (!nextWl.unlocked || !skipFound) { break; }
-      j += 1; j %= this._dataService.wingedLightConfig.items.length;
+    const wl = this.lightMap[guid];
+    if (!wl) { return; }
+
+    let next = wl.next;
+    if (!next?.wl) { return; }
+
+    if (skipFound) {
+      while (next && next !== wl) {
+        if (next.wl && !next.wl.unlocked) { break; }
+        next = next.next;
+      }
+
+      if (!next || next === wl) {
+        this.allDone();
+        return;
+      }
     }
 
-    if (j === i) {
-      this.allDone();
-      return;
-    }
-
-    if (!nextWl) { return; }
-    if (!this.lightMap[nextWl.guid]?.marker) { alert('Missing marker for next Child of Light!'); return; }
-    this.flyAndOpen(nextWl);
+    if (!this.lightMap[next.wl.guid]?.marker) { alert('Missing marker for next Child of Light!'); return; }
+    this.flyAndOpen(next.wl);
   }
   // #endregion
 }

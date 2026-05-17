@@ -183,6 +183,19 @@
   </div>
 }
 
+<!-- Add favourites -->
+<div class="mt" [hidden]="showAddFavourites">
+  <button type="button" (click)="showAddFavourites=!showAddFavourites" [class.highlight]="showAddFavourites">
+    Add favourite items
+  </button>
+</div>
+
+@if (showAddFavourites) {
+  <div class="mt">
+    <app-item-unlock-calculator-favourites (itemClicked)="onItemClicked($event)" (itemsClicked)="onItemsClicked($event)"></app-item-unlock-calculator-favourites>
+  </div>
+}
+
 <!-- Add spirits -->
 <div class="mt" [hidden]="showAddSpirits">
   <button type="button" (click)="showAddSpirits=!showAddSpirits" [class.highlight]="showAddSpirits">

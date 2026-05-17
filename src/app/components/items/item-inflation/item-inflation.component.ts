@@ -1,10 +1,10 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { DataService } from '@app/services/data.service';
 import { ItemTypeSelectorComponent } from "../item-type-selector/item-type-selector.component";
-import { IItem, ItemType } from '@app/interfaces/item.interface';
 import { DateTime } from 'luxon';
 import { Chart } from 'chart.js/auto';
 import { ChartHelper } from '@app/helpers/chart-helper';
+import { IItem, ItemType } from 'skygame-data';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
@@ -17,12 +17,11 @@ interface IChartItem {
 };
 
 @Component({
-  selector: 'app-item-inflation',
-  standalone: true,
-  imports: [ItemTypeSelectorComponent],
-  templateUrl: './item-inflation.component.html',
-  styleUrl: './item-inflation.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-inflation',
+    imports: [ItemTypeSelectorComponent],
+    templateUrl: './item-inflation.component.html',
+    styleUrl: './item-inflation.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemInflationComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartDiv!: ElementRef<HTMLCanvasElement>;
@@ -37,7 +36,7 @@ export class ItemInflationComponent implements AfterViewInit {
   includeEvents = true;
 
   showTypes: ItemType[] = [
-    ItemType.Outfit, ItemType.Shoes,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes,
     ItemType.Mask, ItemType.FaceAccessory, ItemType.Necklace,
     ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop
@@ -136,7 +135,7 @@ export class ItemInflationComponent implements AfterViewInit {
 
       // Find the add date.
       const node = item.nodes?.at(0);
-      const tree = node?.root?.spiritTree;
+      const tree = node?.root?.tree;
       let season = tree?.spirit?.season;
       let eventInstance = tree?.eventInstanceSpirit?.eventInstance;
       const itemList = item.listNodes?.at(0)?.itemList;
@@ -151,18 +150,18 @@ export class ItemInflationComponent implements AfterViewInit {
       addDates.push(added);
 
       // Find the return date
-      const returnTree = returnNode?.root?.spiritTree;
+      const returnTree = returnNode?.root?.tree;
       let returnSeason = returnTree?.spirit?.season;
       let returnEvent = returnTree?.eventInstanceSpirit?.eventInstance;
       if (returnEvent && returnSeason) { returnSeason = undefined; }
-      let returnTs = returnTree?.ts;
-      let returnVisit = returnTree?.visit;
+      let returnTs = returnTree?.travelingSpirit;
+      let returnVisit = returnTree?.specialVisitSpirit;
 
       const returnItemList = returnListNode?.itemList;
       returnSeason ??= returnItemList?.shop?.season;
       returnEvent ??= returnItemList?.shop?.event;
 
-      const returned = DateTime.min(...[returnSeason?.date, returnEvent?.date, returnTs?.date, returnVisit?.return?.date].filter(d => d) as DateTime[]);
+      const returned = DateTime.min(...[returnSeason?.date, returnEvent?.date, returnTs?.date, returnVisit?.visit?.date].filter(d => d) as DateTime[]);
       returnDates.push(returned);
       const candles = returnNode?.c || returnListNode?.c || 0;
 
@@ -221,22 +220,28 @@ export class ItemInflationComponent implements AfterViewInit {
       spanGaps: true,
       hidden: true
     });
-    (this.chart.data.datasets[0] as any).trendlineLinear = {
-      style: '#8e5ea2',
-      lineStyle: 'line',
-      width: 1
-    };
+
+    if (dataAdd.length > 1) {
+      (this.chart.data.datasets[0] as any).trendlineLinear = {
+        style: '#8e5ea2',
+        lineStyle: 'line',
+        width: 1
+      };
+    }
 
     this.chart.data.datasets.push({
       label: 'Items by first return date',
       data: dataReturn,
       spanGaps: true
     });
-    (this.chart.data.datasets[1] as any).trendlineLinear = {
-      style: '#3e95cd',
-      lineStyle: 'line',
-      width: 1
-    };
+
+    if (dataReturn.length > 1) {
+      (this.chart.data.datasets[1] as any).trendlineLinear = {
+        style: '#3e95cd',
+        lineStyle: 'line',
+        width: 1
+      };
+    }
 
     while (currentDate <= maxDate.endOf('month')) {
       const sDate = currentDate.toFormat('MMM yy').replace(' ', " '");

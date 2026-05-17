@@ -50,6 +50,7 @@ export class MapService {
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(map);
 
+    // document.cookie='mapcopy=1';
     const mapcopy = document.cookie.split(';').find(c => c.includes('mapcopy='));
     if (mapcopy !== undefined) {
       map.on('click', e => {

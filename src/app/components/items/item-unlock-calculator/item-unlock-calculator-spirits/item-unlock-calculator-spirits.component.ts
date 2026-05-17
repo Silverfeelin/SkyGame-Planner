@@ -3,16 +3,15 @@ import { CardComponent, CardFoldEvent } from "../../../layout/card/card.componen
 import { DataService } from '@app/services/data.service';
 import { ISearchItem, SearchService } from '@app/services/search.service';
 import { MatIcon } from '@angular/material/icon';
-import { ISpirit } from '@app/interfaces/spirit.interface';
 import { SpiritCardComponent } from "../../../spirit-card/spirit-card.component";
+import { ISpirit } from 'skygame-data';
 
 @Component({
-  selector: 'app-item-unlock-calculator-spirits',
-  standalone: true,
-  imports: [CardComponent, MatIcon, SpiritCardComponent],
-  templateUrl: './item-unlock-calculator-spirits.component.html',
-  styleUrl: './item-unlock-calculator-spirits.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-item-unlock-calculator-spirits',
+    imports: [CardComponent, MatIcon, SpiritCardComponent],
+    templateUrl: './item-unlock-calculator-spirits.component.html',
+    styleUrl: './item-unlock-calculator-spirits.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemUnlockCalculatorSpiritsComponent {
   @Output() readonly spiritSelected = new EventEmitter<ISpirit>();

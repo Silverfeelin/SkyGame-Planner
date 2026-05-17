@@ -1,0 +1,40 @@
+::ng-deep {
+  .dye-popup {
+    max-height: 320px;
+    width: 100%;
+    overflow: auto;
+  }
+
+  .dye-popup-grid {
+    margin-top: 4px;
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr 1fr repeat(4, 40px) repeat(8, 30px);
+    max-width: 100%;
+    overflow: auto;
+    gap: 1px;
+    background: var(--color-background-solid-light);
+  }
+
+  .dye-popup-cell {
+    padding: 4px;
+    white-space: nowrap;
+    background: var(--color-background);
+  }
+
+  .dye-popup-results {
+    display: contents;
+  }
+}
+
+.plant-size {
+  width: 80px;
+}
+
+.plant-size-inactive {
+  filter: grayscale(100%);
+}
+
+.plant-input {
+  display: inline-block;
+  width: 60px;
+}

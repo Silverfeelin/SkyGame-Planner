@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid';
-import { IItem, ItemType } from "../interfaces/item.interface";
-import { INode, ITierNode } from "../interfaces/node.interface";
 import { CostHelper } from './cost-helper';
+import { INode, ITierNode, ItemType, IItem } from 'skygame-data';
 
 export class NodeHelper {
   /** Finds the first node that satisfies the predicate.
@@ -113,9 +112,9 @@ export class NodeHelper {
     CostHelper.add(nodeB, a);
   }
 
-  static clone(node: INode): INode {
+  static clone(node: INode, preserveGuid = false): INode {
     const newNode: INode = {
-      guid: nanoid(10),
+      guid: preserveGuid ? node.guid : nanoid(10),
       item: node.item,
     };
     if (node.hiddenItems) { newNode.hiddenItems = [...node.hiddenItems]; }
@@ -127,17 +126,17 @@ export class NodeHelper {
     if (node.ec) { newNode.ec = node.ec; }
 
     if (node.nw) {
-      newNode.nw = this.clone(node.nw);
+      newNode.nw = this.clone(node.nw, preserveGuid);
       newNode.nw.prev = newNode;
     }
 
     if (node.n) {
-      newNode.n = this.clone(node.n);
+      newNode.n = this.clone(node.n, preserveGuid);
       newNode.n.prev = newNode;
     }
 
     if (node.ne) {
-      newNode.ne = this.clone(node.ne);
+      newNode.ne = this.clone(node.ne, preserveGuid);
       newNode.ne.prev = newNode;
     }
 

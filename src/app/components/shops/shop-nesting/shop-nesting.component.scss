@@ -5,16 +5,29 @@
   border: var(--border-solid);
 }
 
-.shop-rotation-grid {
+.shop-rotation-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shop-rotation-item {
   display: grid;
   gap: 10px;
+  padding: 10px;
   grid-template-columns: 64px auto;
   grid-template-areas:
     'icon name'
     'icon cost'
     'amount amount';
-}
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border-highlight);
 
+    // &:not(:last-child) {
+    //   border-right: 1px solid var(--color-border-highlight);
+    // }
+}
 
 .shop-rotation-icon {
   grid-area: icon;

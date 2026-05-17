@@ -1,12 +1,11 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import createPanZoom, { PanZoom } from 'panzoom';
-import { IItem } from 'src/app/interfaces/item.interface';
 import { IconPickerComponent } from '../../util/icon-picker/icon-picker.component';
 import { NgFor, NgIf } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
-import { FirefoxClipboardItemComponent } from '../../util/firefox-clipboard-item/firefox-clipboard-item.component';
+import { IItem } from 'skygame-data';
 
 interface IImage {
   x: number;
@@ -25,8 +24,7 @@ interface ICoord {
     templateUrl: './collage.component.html',
     styleUrls: ['./collage.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [FirefoxClipboardItemComponent, RouterLink, MatIcon, NgFor, NgbTooltip, NgIf, IconPickerComponent]
+    imports: [RouterLink, MatIcon, NgFor, NgbTooltip, NgIf, IconPickerComponent]
 })
 export class CollageComponent implements AfterViewInit {
   @ViewChild('ttCopy', { static: true }) private readonly _ttCopy!: NgbTooltip;

@@ -1,4 +1,4 @@
-import { ICost } from '@app/interfaces/cost.interface';
+import { ICost } from 'skygame-data';
 
 export interface INestingStorageData {
   unlocked: { [guid: string]: INestingStorageDataUnlock | undefined };

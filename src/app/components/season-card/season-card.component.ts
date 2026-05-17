@@ -3,10 +3,7 @@ import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
-import { ICost } from 'src/app/interfaces/cost.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
 import { EventService } from 'src/app/services/event.service';
 import { CostComponent } from '../util/cost/cost.component';
 import { DaysLeftComponent } from '../util/days-left/days-left.component';
@@ -17,6 +14,10 @@ import { NgIf } from '@angular/common';
 import { DiscordLinkComponent } from "../util/discord-link/discord-link.component";
 import { StorageService } from '@app/services/storage.service';
 import { CurrencyService } from '@app/services/currency.service';
+import { SettingService } from '@app/services/setting.service';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
+import { ISeason, ICost } from 'skygame-data';
 
 type Section = 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
 export interface SeasonCardOptions {
@@ -28,8 +29,7 @@ export interface SeasonCardOptions {
     templateUrl: './season-card.component.html',
     styleUrls: ['./season-card.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent, DiscordLinkComponent]
+    imports: [NgIf, RouterLink, MatIcon, DateComponent, DaysLeftComponent, CostComponent, DiscordLinkComponent, DailyCheckinComponent]
 })
 export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   @Input() season?: ISeason;
@@ -46,6 +46,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   constructor(
     private readonly _currencyService: CurrencyService,
     private readonly _eventService: EventService,
+    private readonly _settingService: SettingService,
     private readonly _storageService: StorageService,
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
@@ -71,7 +72,7 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
   private updateSeason(): void {
     this.cost = this.remainingCost = undefined;
     if (!this.season) { return; }
-    const nodes = this.season.spirits.map(s => NodeHelper.all(s.tree?.node)).flat();
+    const nodes = this.season.spirits.map(s => TreeHelper.getNodes(s.tree)).flat();
     this.cost = CostHelper.add(CostHelper.create(), ...nodes);
 
     const locked = nodes.filter(n => !n.unlocked && !n.item?.unlocked);
@@ -93,7 +94,15 @@ export class SeasonCardComponent implements OnInit, OnChanges, OnDestroy {
     let dailyCurrency = this._storageService.hasSeasonPass(this.season!.guid) ? 6 : 5;
     if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
     this._currencyService.addSeasonCurrency(this.season!.guid, dailyCurrency);
-    this._currencyService.animateCurrencyGained(evt, dailyCurrency);
+
+    const candleAmount = this._settingService.dailyCandleAmount;
+    let delta = 0;
+    if (candleAmount) {
+      delta = this.checkedIn ? candleAmount : -candleAmount;
+      this._currencyService.addCost({ c: delta });
+    }
+
+    this._currencyService.animateCurrencyGained(evt, dailyCurrency, delta);
   }
 
   /** Update checked in status from storage. */

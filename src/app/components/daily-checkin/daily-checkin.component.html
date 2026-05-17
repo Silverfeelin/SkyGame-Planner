@@ -1,0 +1,4 @@
+<div (click)="onCheckinClick($event)" class="item action" [class.active]="checkedIn()">
+  <mat-icon class="menu-icon">{{checkedIn() ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+  <span class="menu-label">{{label()}}</span>
+</div>

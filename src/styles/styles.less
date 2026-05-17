@@ -13,7 +13,7 @@
 }
 
 html {
-  background: #000;
+  background: var(--color-background);
 }
 
 .background::after {
@@ -206,6 +206,12 @@ input[type="date"].input-date-click {
   }
 }
 
+.input-hidden {
+  width: 0; height: 0;
+  padding: 0; margin: 0;
+  border: 0;
+}
+
 .input-search {
   position: relative;
 
@@ -359,6 +365,23 @@ body { scrollbar-width: thin; }
 .flex-wrap { flex-wrap: wrap !important; }
 .flex-nowrap { flex-wrap: nowrap !important; }
 .flex-justify-center { justify-content: center !important; }
+
+.muted {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.dye-red { color: #93362f; }
+.dye-purple { color: #af76ad; }
+.dye-blue { color: #4f81b4; }
+.dye-cyan { color: #73c1c1; }
+.dye-green { color: #7f9558; }
+.dye-yellow { color: #bc9d53; }
+.dye-black {
+  color: #232323;
+  filter: drop-shadow(1px 0px 0px #666) drop-shadow(0px 1px 0px #666) drop-shadow(-1px 0px 0px #666) drop-shadow(0px -1px 0px #666)
+}
+.dye-white { color: #c1c1c1; }
 
 // Global layout
 @import "flex.less";
@@ -528,4 +551,8 @@ ngb-tooltip-window {
 @media screen and (min-width: 720px) {
   .show-desktop { display: unset; }
   .show-mobile { display: none; }
+}
+
+[hidden] {
+  display: none !important;
 }

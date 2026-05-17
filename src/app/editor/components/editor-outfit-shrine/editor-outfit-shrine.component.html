@@ -1,0 +1,13 @@
+<div class="mb">
+  Subtitle: <textarea #inpSubtitle style="height: 120px;"></textarea>
+</div>
+<div class="mb">
+  <button (click)="generateSheet(0)">Generate sheet 1</button>
+  <button (click)="generateSheet(1)">Generate sheet 2</button>
+  <button (click)="generateSheet(2)">Generate sheet 3</button>
+</div>
+<div class="container mb">
+  If the Outfit Shrine font is weird, wait a second and try again. The font is loaded asynchronously.<br/>
+  First render will take a while because of all the icons.
+</div>
+<div id="outfit-shrine-output"></div>

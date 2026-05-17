@@ -3,12 +3,11 @@ import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Output 
 const ignoreKeys = new Set(['Control', 'Shift', 'Alt', 'Meta']);
 
 @Component({
-  selector: 'app-keyboard-shortcuts',
-  standalone: true,
-  imports: [],
-  templateUrl: './keyboard-shortcuts.component.html',
-  styleUrl: './keyboard-shortcuts.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-keyboard-shortcuts',
+    imports: [],
+    templateUrl: './keyboard-shortcuts.component.html',
+    styleUrl: './keyboard-shortcuts.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class KeyboardShortcutsComponent {
   @Output() readonly close = new EventEmitter<void>();

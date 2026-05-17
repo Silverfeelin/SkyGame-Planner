@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
-import { IItemList } from 'src/app/interfaces/item-list.interface';
 import { ItemListNodeClickEvent, ItemListNodeComponent } from '../item-list-node/item-list-node.component';
+import { IItemList } from 'skygame-data';
 
 @Component({
     selector: 'app-item-list',
     templateUrl: './item-list.component.html',
     styleUrl: './item-list.component.less',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [ItemListNodeComponent]
 })
 export class ItemListComponent {

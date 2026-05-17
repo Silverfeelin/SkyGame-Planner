@@ -1,27 +1,20 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { ItemHelper, itemTypeOrder } from 'src/app/helpers/item-helper';
-import { IItem, IItemSource, ItemType } from 'src/app/interfaces/item.interface';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ItemHelper } from 'src/app/helpers/item-helper';
 import { DataService } from 'src/app/services/data.service';
 import { ItemIconComponent } from './item-icon/item-icon.component';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf, NgFor, NgTemplateOutlet, LowerCasePipe } from '@angular/common';
+import { NgTemplateOutlet, LowerCasePipe } from '@angular/common';
 import { ItemTypeSelectorComponent } from './item-type-selector/item-type-selector.component';
 import { MatIcon } from '@angular/material/icon';
 import { CheckboxComponent } from "../layout/checkbox/checkbox.component";
 import { IconComponent } from '../icon/icon.component';
-import { ISeason } from '@app/interfaces/season.interface';
-import { IIAP } from '@app/interfaces/iap.interface';
-import { IEvent, IEventInstance } from '@app/interfaces/event.interface';
-import { INode } from '@app/interfaces/node.interface';
-import { IItemListNode } from '@app/interfaces/item-list.interface';
-import { IRealm } from '@app/interfaces/realm.interface';
 import { SearchService } from '@app/services/search.service';
 import { Maybe } from '@app/types/maybe';
 import { ItemTypePipe } from "../../pipes/item-type.pipe";
 import { CostHelper } from '@app/helpers/cost-helper';
-import { ICost } from '@app/interfaces/cost.interface';
 import { CardComponent, CardFoldEvent } from "../layout/card/card.component";
+import { IItem, INode, IItemListNode, IIAP, IItemSource, ISeason, IEvent, IEventInstance, IRealm, ItemType, ICost } from 'skygame-data';
 
 export type ItemAction = 'navigate' | 'emit';
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -51,7 +44,7 @@ type FilterMap = { [key: string]: boolean };
 
 let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
 const defaultFilters = {
-  filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, unsorted: undefined },
+  filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, dyeable: undefined, unsorted: undefined },
   currencies: { free: true, candles: true, hearts: true, ascendedCandles: true, eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true }
 };
 
@@ -60,8 +53,7 @@ const defaultFilters = {
     templateUrl: './items.component.html',
     styleUrls: ['./items.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgIf, NgbTooltip, NgFor, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
+    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgbTooltip, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
 })
 export class ItemsComponent {
   @Input() title = 'Items';
@@ -78,7 +70,7 @@ export class ItemsComponent {
   @Output() readonly onItemsChanged = new EventEmitter<Array<IItem>>();
 
   types: Array<string> = [
-    ItemType.Outfit, ItemType.Shoes, ItemType.Mask, ItemType.FaceAccessory,
+    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
     ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
     ItemType.Stance, ItemType.Call, ItemType.Music
@@ -315,6 +307,11 @@ export class ItemsComponent {
         if (this.filters['returned'] !== returned) { return false; }
       }
 
+      if (this.filters['dyeable'] !== undefined) {
+        const dyeable = !!item.dye;
+        if (this.filters['dyeable'] !== dyeable) { return false; }
+      }
+
       // Filter by IAP
       if (this.filterCurrencies.first['iap'] === false && metadata.last?.type === 'iap') { return false; }
       if (this.filterCurrencies.last['iap'] === false && metadata.last?.type === 'iap') { return false; }
@@ -336,7 +333,7 @@ export class ItemsComponent {
         if (filters['free'] === false) {
           if (item.autoUnlocked) { return false; }
           const isFree = cost && CostHelper.isEmpty(cost);
-          const isSeasonNode = metadata.lastNode?.root?.spiritTree?.spirit?.type === 'Season';
+          const isSeasonNode = metadata.lastNode?.root?.tree?.spirit?.type === 'Season';
           const isSeasonRootNode = isSeasonNode && metadata.lastNode!.root === metadata.lastNode;
           if (isFree && (!isSeasonNode || isSeasonRootNode)) { return false; }
         }
@@ -417,12 +414,12 @@ export class ItemsComponent {
       const lastSource = ItemHelper.geSourceOrigin(last);
 
       // Account for new TS items. Consider them as season items.
-      if (!originSource && origin?.type === 'node' && origin.source.root?.spiritTree?.ts?.spirit?.season) {
-        originSource = { type: 'season', source: origin.source.root.spiritTree.ts.spirit.season };
+      if (!originSource && origin?.type === 'node' && origin.source.root?.tree?.travelingSpirit?.spirit?.season) {
+        originSource = { type: 'season', source: origin.source.root.tree.travelingSpirit.spirit.season };
       }
 
       // Only apply realm filters to regular spirits & elders.
-      const lastNodeSpirit = last?.type === 'node' ? last.source.root?.spiritTree?.spirit : undefined;
+      const lastNodeSpirit = last?.type === 'node' ? last.source.root?.tree?.spirit : undefined;
       const realm = lastNodeSpirit?.type === 'Regular' || lastNodeSpirit?.type === 'Elder' ? lastNodeSpirit.area?.realm : undefined;
 
       // Note: picking event by last instance, to account for the weird cases like all the different Summer events.

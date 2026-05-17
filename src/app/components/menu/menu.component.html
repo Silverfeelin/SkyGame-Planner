@@ -22,11 +22,16 @@
       </a>
       <hr/>
       <!-- Home-->
-      <a class="item" href="/" (click)="gotoHome($event)" [ngbTooltip]="wide ? '' : 'Home'" placement="right" container="body">
+      <a class="item" routerLink="/" (click)="gotoHome($event)" [ngbTooltip]="wide ? '' : 'Home'" placement="right" container="body">
         <mat-icon>home</mat-icon>
         <span class="name header">Sky Planner</span>
       </a>
       <hr/>
+      <!-- Daily -->
+      <a class="item" [routerLink]="'daily'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Daily'" placement="right" container="body">
+        <mat-icon>today</mat-icon>
+        <span class="name">Daily</span>
+      </a>
       <!-- Currency -->
       <a class="item" [routerLink]="'currency'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Currency'" placement="right" container="body">
         <app-icon [src]="'#candle'" [width]="'24px'" [height]="'24px'" [verticalAlign]="'top'"></app-icon>
@@ -67,6 +72,11 @@
       <a class="item" [routerLink]="'shop'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Shop'" placement="right" container="body">
         <mat-icon>shopping_cart</mat-icon>
         <span class="name">Shops</span>
+      </a>
+      <!-- Friends -->
+      <a class="item" [routerLink]="'friends'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Friends'" placement="right" container="body">
+        <mat-icon>people</mat-icon>
+        <span class="name">Friends</span>
       </a>
       <!-- Tools -->
       <a class="item" [routerLink]="'tools'" routerLinkActive="menu-active" [ngbTooltip]="wide ? '' : 'Tools'" placement="right" container="body">

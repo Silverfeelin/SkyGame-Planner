@@ -2,17 +2,11 @@ import { ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { SubscriptionLike } from 'rxjs';
 import { DateHelper } from 'src/app/helpers/date-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
-import { IEventInstance } from 'src/app/interfaces/event.interface';
-import { IIAP } from 'src/app/interfaces/iap.interface';
-import { IShop } from 'src/app/interfaces/shop.interface';
 import { DataService } from 'src/app/services/data.service';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
 import { IAPService } from 'src/app/services/iap.service';
 import { TitleService } from 'src/app/services/title.service';
-import { ItemIconComponent } from '../items/item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { ItemListComponent } from '../item-list/item-list/item-list.component';
 import { SpiritTreeComponent } from '../spirit-tree/spirit-tree.component';
 import { DurationComponent } from '../util/duration/duration.component';
@@ -23,13 +17,14 @@ import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
 import { DateComponent } from '../util/date/date.component';
 import { CalendarLinkComponent } from "../util/calendar-link/calendar-link.component";
 import { IapCardComponent } from "../iap/iap-card/iap-card.component";
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { IEventInstance, IShop, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-event-instance',
     templateUrl: './event-instance.component.html',
     styleUrls: ['./event-instance.component.less'],
-    standalone: true,
-    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, NgbTooltip, ItemIconComponent, CalendarLinkComponent, IapCardComponent]
+    imports: [DateComponent, WikiLinkComponent, NgIf, RouterLink, MatIcon, DaysLeftComponent, DurationComponent, NgFor, SpiritTreeComponent, ItemListComponent, CalendarLinkComponent, IapCardComponent]
 })
 export class EventInstanceComponent implements OnDestroy {
   instance!: IEventInstance;
@@ -124,7 +119,7 @@ export class EventInstanceComponent implements OnDestroy {
 
     this.instance.spirits?.map(s => s.tree).forEach(tree => {
       if (!tree) { return; }
-      NodeHelper.all(tree.node).forEach(n => {
+      TreeHelper.getNodes(tree).forEach(n => {
         this.c += n.c || 0;
         this.ec += n.ec || 0;
         if (!n.unlocked && !n.item?.unlocked) {
@@ -138,7 +133,7 @@ export class EventInstanceComponent implements OnDestroy {
       shop.itemList?.items.forEach(i => {
         this.c += i.c || 0;
         this.ec += i.ec || 0;
-        if (!i.unlocked) {
+        if (i.item && !i.item.unlocked) {
           this.cLeft += i.c || 0;
           this.ecLeft += i.ec || 0;
         }

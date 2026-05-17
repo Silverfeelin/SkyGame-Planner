@@ -10,8 +10,7 @@ import { IconService } from '@app/services/icon.service';
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [ MatIcon]
+    imports: [MatIcon]
 })
 export class IconComponent implements OnChanges {
   @Input() src?: string;

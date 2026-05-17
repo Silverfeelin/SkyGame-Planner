@@ -13,12 +13,12 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AgRouteRendererComponent } from '../grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { DateTime } from 'luxon';
 import { DateHelper } from '@app/helpers/date-helper';
+import { TreeHelper } from '@app/helpers/tree-helper';
 
 @Component({
     selector: 'app-traveling-spirits',
     templateUrl: './traveling-spirits.component.html',
     styleUrls: ['./traveling-spirits.component.less'],
-    standalone: true,
     imports: [WikiLinkComponent, CalendarLinkComponent, AgGridAngular]
 })
 export class TravelingSpiritsComponent {
@@ -64,7 +64,7 @@ export class TravelingSpiritsComponent {
     this.rowData = this._dataService.travelingSpiritConfig.items.map((ts, i) => {
       // Count items.
       let unlockedItems = 0, totalItems = 0;
-      NodeHelper.getItems(ts.tree.node).forEach(item => {
+      TreeHelper.getItems(ts.tree).forEach(item => {
         if (item.unlocked) { unlockedItems++; }
         totalItems++;
       });

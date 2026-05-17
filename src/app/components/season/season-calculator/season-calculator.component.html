@@ -10,6 +10,20 @@
       </div>
     </div>
   </div>
+} @else if (hasTiers) {
+  <div class="sky-card">
+    <div class="sky-card-header">
+      <h1 class="h2 mb-0">{{ season.name }} Calculator</h1>
+    </div>
+    <div class="sky-card-body">
+      <div class="container">
+        <p>
+          Since this season has spirits with friendship levels, please have a look at the
+          <a routerLink="/season/optimizer" class="text-link">Season Optimizer</a>.
+        </p>
+      </div>
+    </div>
+  </div>
 } @else {
   <div class="sky-card">
     <div class="sky-card-header">
@@ -27,13 +41,17 @@
         <a class="button" routerLink="/currency">
           Currencies
         </a>
+        <a class="button" href="https://sky-season-calculator.netlify.app/" target="_blank">
+          <mat-icon class="menu-icon">open_in_new</mat-icon>
+          <span class="menu-label">Stoat's Calculator</span>
+        </a>
       </div>
       <!-- Draft -->
       @if (season.draft) {
         <div class="container mt">
           <mat-icon class="menu-icon">warning</mat-icon>
           <span class="menu-label">
-            This data has not yet been checked on the live version of Sky. Data may be incomplete or inaccurate.
+            We're still working on this content. Thank you for your patience.
           </span>
         </div>
       }
@@ -74,16 +92,19 @@
               <hr class="mt mb"/>
               <div>
                 @if (timedCurrency.endDate < now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-old">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-old">{{ timedCurrency.endDate | datetime }}</b>
                   you were able to get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
                   Please enter how much you collected during this period:
                 } @else if (timedCurrency.date > now) {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b>{{ timedCurrency.date | datetime }}</b>
                   and <b>{{ timedCurrency.endDate | datetime }}</b>
                   you will be able to get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
                   Please keep this value at <b>0</b> until the currency becomes available:
                 } @else {
+                  @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b> <br/> }
                   Between <b class="c-new">{{ timedCurrency.date | datetime }}</b>
                   and <b class="c-new">{{ timedCurrency.endDate | datetime }}</b>
                   you can get <b>{{ timedCurrency.amount}}</b> extra season candles.<br/>
@@ -231,7 +252,7 @@
       <div class="sky-flex scroll-x tree-scroll">
         @for (tree of trees; track tree.guid) {
           <app-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
-            [enableControls]="false"
+            [enableControls]="false" [forceNodeAction]="'emit'"
             [nodeOverlayTemplate]="tNode" [opaqueNodes]="true">
           </app-spirit-tree>
         }

@@ -2,14 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { ArrayHelper } from 'src/app/helpers/array-helper';
-import { NodeHelper } from 'src/app/helpers/node-helper';
 import { SpiritHelper } from 'src/app/helpers/spirit-helper';
-import { IArea } from 'src/app/interfaces/area.interface';
-import { IItem } from 'src/app/interfaces/item.interface';
-import { IRealm } from 'src/app/interfaces/realm.interface';
-import { ISeason } from 'src/app/interfaces/season.interface';
-import { ISpiritTree } from 'src/app/interfaces/spirit-tree.interface';
-import { ISpirit } from 'src/app/interfaces/spirit.interface';
 import { DataService } from 'src/app/services/data.service';
 import { MatIcon } from '@angular/material/icon';
 import { TableFooterDirective } from '../table/table-column/table-footer.directive';
@@ -19,6 +12,8 @@ import { TableColumnDirective } from '../table/table-column/table-column.directi
 import { TableHeaderDirective } from '../table/table-column/table-header.directive';
 import { TableComponent } from '../table/table.component';
 import { NgIf, NgFor, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { ISpirit, ISpiritTree, IRealm, IArea, ISeason, IItem } from 'skygame-data';
 
 type ViewMode = 'grid' | 'cards';
 type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
@@ -28,7 +23,6 @@ type SortMode = 'default' | 'name-asc' | 'age-asc' | 'age-desc';
     templateUrl: './spirits.component.html',
     styleUrls: ['./spirits.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgIf, TableComponent, TableHeaderDirective, TableColumnDirective, RouterLink, SpiritTypeIconComponent, NgbTooltip, TableFooterDirective, NgFor, MatIcon, NgSwitch, NgSwitchCase, NgSwitchDefault]
 })
 export class SpiritsComponent {
@@ -125,7 +119,7 @@ export class SpiritsComponent {
       const itemSet = new Set<IItem>();
       trees.forEach(tree => {
         // Get all nodes
-        NodeHelper.getItems(tree!.node).forEach(item => {
+        TreeHelper.getItems(tree).forEach(item => {
           if (itemSet.has(item)) { return; }
           itemSet.add(item);
           if (item.unlocked) { unlockedItems++; }
@@ -140,7 +134,7 @@ export class SpiritsComponent {
       const lastTree = trees.at(-1);
       if (lastTree) {
         // Count items from last tree.
-        NodeHelper.getItems(lastTree!.node).forEach(item => {
+        TreeHelper.getItems(lastTree).forEach(item => {
           if (item.unlocked) { unlockedLast++; }
           totalLast++;
 
@@ -201,10 +195,13 @@ export class SpiritsComponent {
   }
 
   private sortByAge(direction: number): void {
+    const realmOrder = new Map<string, number>(
+      this._dataService.realmConfig.items.map((r, i) => [r.guid, i])
+    );
     const dateA = DateTime.fromFormat('2019-01-01', 'yyyy-MM-dd');
     const dateB = DateTime.fromFormat('2999-01-01', 'yyyy-MM-dd');
     const dates = this.spirits.reduce((acc, s) => {
-      let date = s.season?.date || s.events?.at(-1)?.eventInstance?.date;
+      let date = s.season?.date || s.eventInstanceSpirits?.at(-1)?.eventInstance?.date;
       switch (s.type) {
         case 'Regular':
         case 'Elder':
@@ -215,7 +212,7 @@ export class SpiritsComponent {
           date = s.season?.date;
           break;
         case 'Event':
-          date = s.events?.at(0)?.eventInstance?.date;
+          date = s.eventInstanceSpirits?.at(0)?.eventInstance?.date;
           break;
       }
 
@@ -226,8 +223,21 @@ export class SpiritsComponent {
     this.spirits.sort((a, b) => {
       const dateA = dates[a.guid];
       const dateB = dates[b.guid];
-      const diff = dateA.diff(dateB);
-      return !diff.as('milliseconds') ? (a._index - b._index) * direction : diff.as('milliseconds') * direction;
+      const diff = dateA.diff(dateB).as('milliseconds');
+      if (diff !== 0) { return diff * direction; }
+
+      const aIsAgeless = a.type === 'Regular' || a.type === 'Elder';
+      const bIsAgeless = b.type === 'Regular' || b.type === 'Elder';
+      if (aIsAgeless && bIsAgeless) {
+        const realmA = realmOrder.get(a.area?.realm?.guid ?? '') ?? Infinity;
+        const realmB = realmOrder.get(b.area?.realm?.guid ?? '') ?? Infinity;
+        if (realmA !== realmB) { return (realmA - realmB) * direction; }
+        const areaA = a.area?.realm?.areas?.indexOf(a.area) ?? Infinity;
+        const areaB = b.area?.realm?.areas?.indexOf(b.area) ?? Infinity;
+        if (areaA !== areaB) { return (areaA - areaB) * direction; }
+      }
+
+      return (a._index - b._index) * direction;
     });
   }
 

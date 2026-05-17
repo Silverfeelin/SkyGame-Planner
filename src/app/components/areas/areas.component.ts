@@ -1,18 +1,16 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
-import { IArea } from '@app/interfaces/area.interface';
-import { IRealm } from '@app/interfaces/realm.interface';
 import { DataService } from '@app/services/data.service';
 import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
+import { IRealm, IArea } from 'skygame-data';
 
 @Component({
-  selector: 'app-areas',
-  standalone: true,
-  imports: [WikiLinkComponent, RouterLink, MatIcon],
-  templateUrl: './areas.component.html',
-  styleUrl: './areas.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-areas',
+    imports: [WikiLinkComponent, RouterLink, MatIcon],
+    templateUrl: './areas.component.html',
+    styleUrl: './areas.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreasComponent {
   realm?: IRealm;

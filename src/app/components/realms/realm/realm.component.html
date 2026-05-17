@@ -129,25 +129,28 @@
 </div>
 
 <!-- Spirits -->
-<div #divSpiritTrees class="sky-card mt" *ngIf="spirits?.length">
-  <div class="sky-card-header">
-    <h2 class="h3">Spirit trees</h2>
-  </div>
-  <div class="sky-card-body pad-0">
-    <div class="sky-flex scroll-x pad">
-      <!-- Spirit trees -->
-      <ng-container *ngFor="let spirit of spirits;">
-        <div class="tree-wrapper" *ngIf="spirit.tree">
-          <app-spirit-tree [tree]="spirit.tree" [name]="spirit.name" [highlight]="highlightTree === spirit.tree.guid">
-            <!-- Link to spirit -->
-            <div name>
-              <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: spirit.tree.guid }">
-                {{ spirit.name }}
-              </a>
-            </div>
-          </app-spirit-tree>
-        </div>
-      </ng-container>
+@if (spirits.length) {
+  <div #divSpiritTrees class="sky-card mt">
+    <div class="sky-card-header">
+      <h2 class="h3">Spirit trees</h2>
+    </div>
+    <div class="sky-card-body pad-0">
+      <div class="sky-flex scroll-x pad">
+        <!-- Spirit trees -->
+        @for (data of spirits; track data.spirit.guid) {
+          @let spirit = data.spirit;
+          <div class="tree-wrapper">
+            <app-spirit-tree [tree]="data.tree" [name]="spirit.name" [highlight]="highlightTree === data.tree.guid">
+              <!-- Link to spirit -->
+              <div name>
+                <a [routerLink]="['/spirit', spirit.guid]" [queryParams]="{ highlightTree: data.tree.guid }">
+                  {{ spirit.name }}
+                </a>
+              </div>
+            </app-spirit-tree>
+          </div>
+        }
+      </div>
     </div>
   </div>
-</div>
+}

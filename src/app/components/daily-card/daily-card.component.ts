@@ -1,31 +1,46 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, OnChanges, SimpleChanges } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 import { DiscordLinkComponent } from '../util/discord-link/discord-link.component';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
-import { IRealm } from '@app/interfaces/realm.interface';
 import { RouterLink } from '@angular/router';
 import { CurrencyService } from '@app/services/currency.service';
+import { SettingService } from '@app/services/setting.service';
+import { IRealm } from 'skygame-data';
+import { DailyCheckinComponent } from '../daily-checkin/daily-checkin.component';
+
+type Section = 'img' | 'realm' | 'dailies' | 'checkin';
+export interface DailyCardOptions {
+  show?: Array<Section>;
+}
 
 @Component({
-  selector: 'app-daily-card',
-  standalone: true,
-  imports: [DiscordLinkComponent, RouterLink, MatIcon],
-  templateUrl: './daily-card.component.html',
-  styleUrl: './daily-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-daily-card',
+    imports: [DiscordLinkComponent, RouterLink, MatIcon, DailyCheckinComponent],
+    templateUrl: './daily-card.component.html',
+    styleUrl: './daily-card.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DailyCardComponent {
+export class DailyCardComponent implements OnChanges {
+  options = input<DailyCardOptions>({ show: [ 'img', 'realm', 'dailies', 'checkin' ] });
+
+  sections: {[key: string]: number} = {};
   checkedIn?: boolean;
   realm?: IRealm;
 
   constructor(
     private readonly _currencyService: CurrencyService,
-    private readonly _dataService: DataService
+    private readonly _dataService: DataService,
+    private readonly _settingService: SettingService
   ) {
     this.checkRealm();
+    this.updateSections();
     this.updateCheckin();
+  }
+
+  ngOnChanges(): void {
+    this.updateSections();
   }
 
   checkin(evt: MouseEvent): void {
@@ -36,10 +51,10 @@ export class DailyCardComponent {
       localStorage.removeItem('daily.checkin');
     }
 
-    let dailyCurrency = 4;
-    if (!this.checkedIn) { dailyCurrency = -dailyCurrency; }
-    this._currencyService.addCost({ c: dailyCurrency });
-    this._currencyService.animateCurrencyGained(evt, dailyCurrency);
+    const amount = 4 + (this._settingService.dailyCandleAmount ?? 0);
+    const delta = this.checkedIn ? amount : -amount;
+    this._currencyService.addCost({ c: delta });
+    this._currencyService.animateCurrencyGained(evt, delta);
   }
 
   private checkRealm(): void {
@@ -57,5 +72,12 @@ export class DailyCardComponent {
     if (!checkinDate) { return; }
     const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
     this.checkedIn = d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
+  }
+
+  private updateSections(): void {
+    this.sections = {};
+    this.options().show?.forEach((section, i) => {
+      this.sections[section] = i + 2;
+    });
   }
 }
