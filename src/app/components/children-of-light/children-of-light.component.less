@@ -43,16 +43,9 @@ input.map-input {
   display: inline-block;
 }
 
-.map-icon {
-  position: relative;
-  display: inline-block;
-  width: 24px;
-
-  mat-icon {
-    position: absolute;
-    top: -17px;
-    left: 0;
-  }
+// ag-grid cell renderer HTML isn't view-encapsulated, so target via ::ng-deep scoped to the grid.
+:host ::ng-deep ag-grid-angular .maticon {
+  vertical-align: sub;
 }
 
 .row-unlocked {
@@ -66,9 +59,4 @@ input.map-input {
   cursor: pointer;
   top: -3px;
   right: 0;
-}
-
-.completed {
-  color: var(--color-unlock-check);
-  font-weight: bold;
 }

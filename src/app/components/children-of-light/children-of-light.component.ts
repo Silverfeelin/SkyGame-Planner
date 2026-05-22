@@ -7,11 +7,12 @@ import { StorageService } from 'src/app/services/storage.service';
 import { SubscriptionLike } from 'rxjs';
 import { MapInstanceService } from 'src/app/services/map-instance.service';
 import { IMapInit } from 'src/app/services/map.service';
-import { TableColumnDirective } from '../table/table-column/table-column.directive';
-import { TableHeaderDirective } from '../table/table-column/table-header.directive';
-import { TableComponent } from '../table/table.component';
 import { MatIcon } from '@angular/material/icon';
 import { IArea, IWingedLight } from 'skygame-data';
+import { AgGridAngular } from 'ag-grid-angular';
+import { ColDef, GridApi, GridReadyEvent, ValueGetterParams } from 'ag-grid-community';
+import { getAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 
 interface IRow {
   area: IArea;
@@ -32,14 +33,62 @@ interface IMapWingedLight {
     styleUrls: ['./children-of-light.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [MapInstanceService],
-    imports: [MatIcon, TableComponent, TableHeaderDirective, TableColumnDirective]
+    imports: [MatIcon, AgGridAngular]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;
   @ViewChild('table', { static: true }) table!: ElementRef;
 
+  theme = getAgTheme();
+  rowData: any[] = [];
+  api?: GridApi;
+
+  colDefs: ColDef[] = [
+    {
+      headerName: '',
+      width: 60,
+      sortable: false,
+      filter: false,
+      cellRenderer: (p: any) => {
+        const row: IRow = p.data.row;
+        return `<span class="map-icon" onclick="colShowArea('${row.area.guid}')"><span class="maticon">location_on</span></span>`;
+      }
+    },
+    {
+      headerName: 'Found',
+      width: 130,
+      filter: 'agNumberColumnFilter',
+      valueGetter: (p: ValueGetterParams) => p.data.row.unlocked,
+      cellRenderer: (p: any) => {
+        const row: IRow = p.data.row;
+        const cls = row.unlocked === row.wl.length
+        ? 'c-new fw-bold' : row.unlocked ? 'c-old fw-bold' : '';
+        return `<span class="row-unlocked ${cls}">${row.unlocked} / ${row.wl.length}</span><span class="maticon row-toggle" onclick="colToggleRow('${row.area.guid}')">lock_open</span>`;
+      }
+    },
+    {
+      field: 'area',
+      headerName: 'Area',
+      flex: 1,
+      minWidth: 150,
+      filter: 'agTextColumnFilter',
+      cellRenderer: AgRouteRendererComponent,
+      filterValueGetter: (p: ValueGetterParams) => p.data.area?.label ?? ''
+    },
+    {
+      field: 'realm',
+      headerName: 'Realm',
+      flex: 1,
+      minWidth: 150,
+      filter: 'agTextColumnFilter',
+      cellRenderer: AgRouteRendererComponent,
+      filterValueGetter: (p: ValueGetterParams) => p.data.realm?.label ?? ''
+    }
+  ];
+
   unlockedCol = 0; totalCol = 0;
 
+  private readonly wingedLights: Array<IWingedLight>;
   light: Array<IMapWingedLight> = [];
   lightMap: { [wlGuid: string]: IMapWingedLight } = {};
   rows: Array<IRow>;
@@ -64,9 +113,11 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     this.unlockedCol = _storageService.getWingedLights().size;
     this.totalCol = this._dataService.wingedLightConfig.items.length;
 
+    this.wingedLights = [...this._dataService.wingedLightConfig.items].sort((a, b) => a.order - b.order);
+
     const areaSet = new Set<string>();
     this.rows = [];
-    this._dataService.wingedLightConfig.items.forEach(wl => {
+    this.wingedLights.forEach(wl => {
       const area = wl.area;
       if (!area || areaSet.has(area.guid)) { return; }
       areaSet.add(area.guid);
@@ -80,6 +131,12 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       });
       this.rows.push(row);
     });
+
+    this.rowData = this.rows.map(row => ({
+      row,
+      area: { label: row.area.name, route: ['/area', row.area.guid] },
+      realm: row.area.realm ? { label: row.area.realm.name, route: ['/realm', row.area.realm.guid] } : {}
+    }));
   }
 
   ngAfterViewInit(): void {
@@ -109,9 +166,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(layerGroup);
 
     // Create markers for all Children of Light
-    const wingedLights = this._dataService.wingedLightConfig.items.filter(wl => wl.mapData?.position);
-    wingedLights.sort((a, b) => (a.order - b.order));
-    wingedLights.forEach(wl => {
+    this.wingedLights.filter(wl => wl.mapData?.position).forEach(wl => {
       if (!wl.mapData) { return; }
       const obj: IMapWingedLight = { wl };
 
@@ -154,12 +209,33 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       this._zone.run(() => { direction < 0 ? this.prevCol(guid) : this.nextCol(guid); });
     };
 
+    (window as any).colShowArea = (areaGuid: string) => {
+      this._zone.run(() => {
+        const row = this.rows.find(r => r.area.guid === areaGuid);
+        if (row) { this.showArea(row); }
+      });
+    };
+
+    (window as any).colToggleRow = (areaGuid: string) => {
+      this._zone.run(() => {
+        const row = this.rows.find(r => r.area.guid === areaGuid);
+        if (row) {
+          this.toggleRow(row);
+          this.api?.refreshCells({ force: true });
+        }
+      });
+    };
+
     // Events
     this._mapInstanceService.on('popupopen', (e: L.PopupEvent) => { this.onPopupOpen(e); })
     this._mapInstanceService.on('moveend', () => { this.onMoveEnd(); });
     this._mapInstanceService.on('keydown', (e: LeafletKeyboardEvent) => { this.onKeydown(e); });
 
     this._subWidth = this._breakpointObserver.observe(['(min-width: 720px)']).subscribe(s => this.onResponsive(s));
+  }
+
+  onGridReady(evt: GridReadyEvent): void {
+    this.api = evt.api;
   }
 
   onResponsive(s: BreakpointState): void {
@@ -190,6 +266,8 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       this.updateMarker(wl);
       this.updateTable(wl);
     });
+
+    this.api?.refreshCells({ force: true });
   }
 
   reset(): void {
@@ -207,6 +285,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     this.light.forEach(l => { l.marker?.setOpacity(1); });
     this.map.closePopup();
 
+    this.api?.refreshCells({ force: true });
     this._changeDetectorRef.markForCheck();
   }
 
@@ -233,6 +312,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       this.updateTable(orbitWl);
     }
 
+    this.api?.refreshCells({ force: true });
     this._changeDetectorRef.markForCheck();
   }
 
@@ -366,6 +446,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     row.unlocked = (row.wl || []).filter(wl => wl.unlocked).length;
     this.unlockedCol = this._storageService.getWingedLights().size;
     this._changeDetectorRef.markForCheck();
+    this.api?.refreshCells({ force: true });
   }
 
   private flyAndOpen(wl: IWingedLight, scroll = false): void {
