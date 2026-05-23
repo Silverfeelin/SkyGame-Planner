@@ -10,14 +10,39 @@
 @if (drawerOpen()) {
   <div class="atmos-drawer" (click)="closeDrawer()">
     <nav class="atmos-drawer__panel" (click)="$event.stopPropagation()" aria-label="Primary">
-      @for (item of nav; track item.link) {
+      @for (item of mainNav; track item.link) {
         <a
           class="atmos-drawer__item"
           [routerLink]="item.link"
           routerLinkActive="is-active"
           [routerLinkActiveOptions]="{ exact: !!item.exact }"
           (click)="closeDrawer()">
-          <mat-icon>{{ item.icon }}</mat-icon>
+          @if (item.iconUrl) {
+            <img class="atmos-drawer__img" [src]="item.iconUrl" alt="" />
+          } @else if (item.svgIcon) {
+            <mat-icon [svgIcon]="item.svgIcon"></mat-icon>
+          } @else {
+            <mat-icon>{{ item.icon }}</mat-icon>
+          }
+          <span>{{ item.label }}</span>
+        </a>
+      }
+
+      <hr class="atmos-drawer__divider" />
+
+      @for (item of footNav; track item.link) {
+        <a
+          class="atmos-drawer__item"
+          [routerLink]="item.link"
+          routerLinkActive="is-active"
+          (click)="closeDrawer()">
+          @if (item.iconUrl) {
+            <img class="atmos-drawer__img" [src]="item.iconUrl" alt="" />
+          } @else if (item.svgIcon) {
+            <mat-icon [svgIcon]="item.svgIcon"></mat-icon>
+          } @else {
+            <mat-icon>{{ item.icon }}</mat-icon>
+          }
           <span>{{ item.label }}</span>
         </a>
       }

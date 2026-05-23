@@ -1,9 +1,72 @@
-/* Atmospheric (redesign) global styles.
-   These rules rely on the --atmos-* tokens declared on the atmospheric
-   shell host, so they only render correctly inside the redesign tree. */
-
+/* Atmospheric (redesign) global styles. */
 /* Base card surface — frosted-glass panel used as the container for
    feature cards, list cards, and any other atmospheric card layout. */
+:root {
+  --atmos-hue: 160;
+
+  /* Surfaces. */
+  --atmos-bg:        oklch(0.18 0.02 var(--atmos-hue));
+  --atmos-bg-elev:   oklch(0.235 0.028 var(--atmos-hue));
+  --atmos-bg-elev-2: oklch(0.285 0.035 var(--atmos-hue));
+  --atmos-bg-elev-3: oklch(0.34 0.04 var(--atmos-hue));
+
+  /* Text. */
+  --atmos-text:      oklch(0.97 0.005 var(--atmos-hue));
+  --atmos-text-dim:  oklch(0.78 0.015 var(--atmos-hue));
+  --atmos-text-mute: oklch(0.58 0.02 var(--atmos-hue));
+
+  /* Accents. */
+  --atmos-accent:   oklch(0.82 0.11 var(--atmos-hue));
+  --atmos-accent-2: oklch(0.74 0.12 calc(var(--atmos-hue) + 40));
+  --atmos-warm:     oklch(0.78 0.13 65);
+  --atmos-pink:     oklch(0.78 0.13 350);
+  --atmos-good:     oklch(0.80 0.13 150);
+
+  /* Lines / dividers. */
+  --atmos-line:      oklch(0.32 0.025 var(--atmos-hue));
+  --atmos-line-soft: oklch(0.95 0.01 var(--atmos-hue) / 0.10);
+
+  /* Interaction. */
+  --atmos-hover-bg:        oklch(0.95 0.01 var(--atmos-hue) / 0.10);
+  --atmos-hover-bg-strong: oklch(0.95 0.01 var(--atmos-hue) / 0.16);
+  --atmos-hover-tint:      oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+  --atmos-transition:      120ms ease;
+
+  /* Cards. */
+  --atmos-card-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
+  --atmos-card-border: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
+  --atmos-card-shadow:
+    0 30px 60px -30px oklch(0.04 0.02 var(--atmos-hue) / 0.7),
+    inset 0 1px 0 oklch(1 0 0 / 0.04);
+  --atmos-card-radius: 16px;
+
+  /* Pills / chips. */
+  --atmos-pill-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
+  --atmos-pill-border: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
+  --atmos-chip-bg:     oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+
+  /* Effects. */
+  --atmos-blur:      blur(18px);
+  --atmos-blur-soft: blur(14px);
+  --atmos-blur-pill: blur(10px);
+
+  /* Geometry. */
+  --atmos-pad: 24px;
+  --atmos-pad-compact: 14px;
+  --atmos-gap: 20px;
+  --atmos-gap-compact: 12px;
+  --atmos-radius-sm: 8px;
+  --atmos-radius-pill: 999px;
+
+  /* Background tuning */
+  --atmos-bg-brightness: 70%;
+  --atmos-bg-blur: 6px;
+
+  /* Text shadows for type floating over the bg image. */
+  --atmos-text-shadow:       0 1px 8px oklch(0.05 0.02 var(--atmos-hue) / 0.6);
+  --atmos-text-shadow-large: 0 2px 16px oklch(0.05 0.02 var(--atmos-hue) / 0.75);
+}
+
 .atmos-card {
   display: flex;
   flex-direction: column;
@@ -63,6 +126,21 @@
 .atmos-btn.is-disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* Default atmospheric inline link. Use on anchors that sit inside prose
+   or other text — produces a subtle underlined link that lifts to the
+   accent colour on hover. */
+.atmos-text-link {
+  color: var(--atmos-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--atmos-line-soft);
+  transition: color var(--atmos-transition), border-color var(--atmos-transition);
+}
+
+.atmos-text-link:hover {
+  color: var(--atmos-accent);
+  border-bottom-color: var(--atmos-accent);
 }
 
 /* Shared atmospheric focus ring. Apply to any interactive surface

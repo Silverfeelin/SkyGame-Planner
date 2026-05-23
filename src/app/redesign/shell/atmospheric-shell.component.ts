@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AtmosphericFooterComponent } from './atmospheric-footer.component';
 import { AtmosphericSidebarComponent } from './atmospheric-sidebar.component';
 import { AtmosphericTopbarComponent } from './atmospheric-topbar.component';
 
@@ -9,6 +10,6 @@ import { AtmosphericTopbarComponent } from './atmospheric-topbar.component';
   styleUrl: './atmospheric-shell.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: { 'class': 'atmospheric' },
-  imports: [RouterOutlet, AtmosphericSidebarComponent, AtmosphericTopbarComponent]
+  imports: [RouterOutlet, AtmosphericSidebarComponent, AtmosphericTopbarComponent, AtmosphericFooterComponent]
 })
 export class AtmosphericShellComponent {}

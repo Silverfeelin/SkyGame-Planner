@@ -1,0 +1,50 @@
+:host {
+  display: block;
+  /* Push footer to the bottom of the flex column when content is short.
+     When content overflows, it sits at the end of the content instead. */
+  margin-top: auto;
+  font-size: 13px;
+  color: var(--atmos-text-dim);
+  padding: var(--atmos-pad-compact) 0 4px;
+  border-top: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+  text-align: center;
+}
+
+.atmos-footer-sep {
+  display: none;
+  color: var(--atmos-text-mute);
+}
+
+.atmos-footer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  opacity: 0.85;
+  transition: opacity var(--atmos-transition);
+
+  &:hover { opacity: 1; }
+
+  img {
+    display: block;
+    filter: drop-shadow(var(--atmos-text-shadow));
+  }
+}
+
+.atmos-footer-text { text-shadow: var(--atmos-text-shadow); }
+
+@media (min-width: 720px) {
+  .atmos-footer-inner {
+    flex-direction: row;
+    gap: var(--atmos-gap);
+  }
+  .atmos-footer-sep { display: inline; }
+  .atmos-footer-privacy { margin-left: auto; }
+}

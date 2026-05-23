@@ -55,6 +55,8 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .atmos-drawer__item {
@@ -78,4 +80,18 @@
     color: var(--atmos-text);
     font-weight: 600;
   }
+}
+
+.atmos-drawer__img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.atmos-drawer__divider {
+  margin: 8px 4px;
+  border: 0;
+  border-top: 1px solid var(--atmos-line-soft);
+  opacity: 0.6;
 }
