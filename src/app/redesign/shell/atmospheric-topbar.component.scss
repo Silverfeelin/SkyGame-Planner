@@ -1,0 +1,81 @@
+:host {
+  display: block;
+}
+
+.atmos-topbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: oklch(0.16 0.025 var(--atmos-hue) / 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-topbar__button {
+  background: transparent;
+  border: 0;
+  color: var(--atmos-text);
+  padding: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.atmos-topbar__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+}
+
+.atmos-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: oklch(0.04 0.02 var(--atmos-hue) / 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.atmos-drawer__panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+  background: oklch(0.16 0.025 var(--atmos-hue) / 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.atmos-drawer__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--atmos-text-dim);
+  text-decoration: none;
+
+  &:hover {
+    background: oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+    color: var(--atmos-text);
+  }
+
+  &.is-active {
+    background: oklch(0.28 0.04 var(--atmos-hue) / 0.7);
+    color: var(--atmos-text);
+    font-weight: 600;
+  }
+}

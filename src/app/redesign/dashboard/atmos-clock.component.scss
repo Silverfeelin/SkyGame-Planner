@@ -1,0 +1,54 @@
+.atmos-clock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 4px 8px;
+  align-items: flex-start;
+}
+
+.atmos-clock--right {
+  align-items: flex-end;
+}
+
+.atmos-clock__label {
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.65);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-clock__time {
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: -1.2px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--atmos-text);
+  text-shadow:
+    0 2px 30px oklch(0.05 0.02 var(--atmos-hue) / 0.6),
+    0 0 24px oklch(0.7 0.12 var(--atmos-hue) / 0.2);
+}
+
+.atmos-clock__subtle {
+  font-size: 12px;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.65);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+@media (max-width: 639px) {
+  .atmos-clock {
+    gap: 3px;
+    padding: 2px 4px;
+  }
+  .atmos-clock__label {
+    font-size: 10px;
+  }
+  .atmos-clock__time {
+    font-size: 30px;
+  }
+  .atmos-clock__subtle {
+    font-size: 11px;
+  }
+}

@@ -18,6 +18,14 @@
   min-height: calc(100dvh - 93px);
 }
 
+/* When the atmospheric redesign shell is mounted, let it own the viewport: drop
+   the legacy content padding and hide the app footer so the immersive bg fills
+   the screen. */
+:host:has(app-atmospheric-shell) {
+  .content { padding: 0; min-height: 100vh; min-height: 100dvh; }
+  footer { display: none; }
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }

@@ -1,0 +1,30 @@
+<nav class="atmos-sidebar" aria-label="Primary">
+  <div class="atmos-sidebar__group">
+    @for (item of mainNav; track item.link) {
+      <a
+        class="atmos-nav-item"
+        [routerLink]="item.link"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: !!item.exact }"
+        [attr.title]="item.label">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span class="atmos-nav-item__label">{{ item.label }}</span>
+      </a>
+    }
+  </div>
+
+  <div class="atmos-sidebar__spacer"></div>
+
+  <div class="atmos-sidebar__group atmos-sidebar__group--foot">
+    @for (item of footNav; track item.link) {
+      <a
+        class="atmos-nav-item atmos-nav-item--small"
+        [routerLink]="item.link"
+        routerLinkActive="is-active"
+        [attr.title]="item.label">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span class="atmos-nav-item__label">{{ item.label }}</span>
+      </a>
+    }
+  </div>
+</nav>

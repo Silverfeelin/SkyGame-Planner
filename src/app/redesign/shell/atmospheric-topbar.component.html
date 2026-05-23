@@ -1,0 +1,27 @@
+<header class="atmos-topbar">
+  <button class="atmos-topbar__button" type="button" (click)="toggleDrawer()" aria-label="Menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="atmos-topbar__title">
+    <mat-icon>home</mat-icon>
+    <span>Sky Planner</span>
+  </div>
+</header>
+
+@if (drawerOpen()) {
+  <div class="atmos-drawer" (click)="closeDrawer()">
+    <nav class="atmos-drawer__panel" (click)="$event.stopPropagation()" aria-label="Primary">
+      @for (item of nav; track item.link) {
+        <a
+          class="atmos-drawer__item"
+          [routerLink]="item.link"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: !!item.exact }"
+          (click)="closeDrawer()">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </nav>
+  </div>
+}

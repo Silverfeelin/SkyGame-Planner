@@ -1,0 +1,65 @@
+:host {
+  display: contents;
+}
+
+.atmos-dashboard__clocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 8px 18px;
+  border-bottom: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-dashboard__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--atmos-gap);
+}
+
+@media (max-width: 639px) {
+  .atmos-dashboard__clocks {
+    padding: 4px 4px 12px;
+  }
+  .atmos-dashboard__features {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rs-spirits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.rs-spirit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: var(--atmos-text);
+  flex-shrink: 0;
+  width: 72px;
+  border-radius: var(--atmos-radius-sm);
+  padding: 6px;
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+  &:focus-visible { outline: 2px solid var(--atmos-accent); outline-offset: 2px; }
+}
+
+.rs-spirit__img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.rs-spirit__name {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.3;
+  opacity: 0.85;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

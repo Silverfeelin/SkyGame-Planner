@@ -47,7 +47,8 @@
               "src/styles/styles.less",
               "src/styles/charts.scss",
               "src/styles/map.less",
-              "src/styles/icons.less"
+              "src/styles/icons.less",
+              "src/styles/atmospheric.scss"
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [

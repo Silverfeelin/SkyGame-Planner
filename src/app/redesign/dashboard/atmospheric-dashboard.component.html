@@ -1,0 +1,71 @@
+<section class="atmos-dashboard__clocks">
+  <app-atmos-clock label="Local time" zone="local" />
+  <app-atmos-clock label="Sky time" zone="sky" [rightAlign]="true" />
+</section>
+
+<app-atmos-search-bar [favouriteCount]="favouriteCount()" />
+
+<section class="atmos-dashboard__features">
+  @if (season(); as s) {
+    <app-atmos-feature-card
+      [kicker]="seasonKicker()"
+      kickerColor="var(--atmos-accent)"
+      [title]="s.name"
+      [bannerUrl]="s.imageUrl"
+      [bannerHue]="20"
+      [timeRow]="seasonTimeRow()"
+      [links]="seasonLinks()"
+      [currency]="seasonCurrency()" />
+  }
+  @for (card of eventCards(); track card.instance.guid) {
+    <app-atmos-feature-card
+      [kicker]="card.kicker"
+      kickerColor="var(--atmos-warm)"
+      [title]="card.title"
+      [bannerUrl]="card.bannerUrl"
+      [bannerHue]="card.bannerHue"
+      [timeRow]="card.timeRow"
+      [links]="card.links"
+      [currency]="card.currency"
+      [checkLabel]="card.showCheckin ? 'Daily event currency collected' : ''"
+      [checked]="card.checked"
+      (checkToggle)="onEventCheckinToggle(card, $event)" />
+  }
+  @if (ts(); as t) {
+    <app-atmos-feature-card
+      [kicker]="tsKicker()"
+      kickerColor="var(--atmos-accent-2)"
+      [title]="tsTitle()"
+      [bannerUrl]="tsBannerUrl()"
+      [bannerContain]="true"
+      [bannerSilhouette]="tsIsFuture()"
+      [bannerHue]="170"
+      [timeRow]="tsTimeRow()"
+      [links]="tsLinks()"
+      [currency]="tsCurrency()" />
+  }
+  @if (rs(); as r) {
+    <app-atmos-feature-card
+      [kicker]="rsKicker()"
+      kickerColor="var(--atmos-pink)"
+      [title]="rsTitle()"
+      [bannerUrl]="rsBannerUrl()"
+      [bannerContain]="rsBannerContain()"
+      [bannerSilhouette]="rsIsFuture()"
+      [bannerHue]="320"
+      [timeRow]="rsTimeRow()"
+      [links]="rsLinks()"
+      [currency]="rsCurrency()">
+      @if (r.spirits.length > 1) {
+        <div class="rs-spirits">
+          @for (sp of r.spirits; track sp.spirit.guid) {
+            <a class="rs-spirit" [routerLink]="'/spirit/' + sp.spirit.guid">
+              <img class="rs-spirit__img" [src]="sp.spirit.imageUrl" [alt]="sp.spirit.name">
+              <span class="rs-spirit__name">{{ sp.spirit.name }}</span>
+            </a>
+          }
+        </div>
+      }
+    </app-atmos-feature-card>
+  }
+</section>

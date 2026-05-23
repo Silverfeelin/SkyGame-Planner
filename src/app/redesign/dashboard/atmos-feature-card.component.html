@@ -1,0 +1,92 @@
+<article class="atmos-card">
+  <div class="atmos-card__banner">
+    @if (bannerUrl()) {
+      <div class="atmos-card__banner-img"
+        [class.is-contain]="bannerContain()"
+        [class.is-silhouette]="bannerSilhouette()"
+        [style.background-image]="'url(&quot;' + bannerUrl() + '&quot;)'"></div>
+    } @else {
+      <div class="atmos-card__banner-fallback" [style.--banner-hue]="bannerHue()"></div>
+    }
+    <div class="atmos-card__banner-fade"></div>
+
+    <div class="atmos-card__heading">
+      @if (kicker()) {
+        <div class="atmos-card__kicker" [style.color]="kickerColor()">{{ kicker() }}</div>
+      }
+      <h2 class="atmos-card__title">
+        @if (links()[0].link; as titleLink) {
+          <a [routerLink]="titleLink">{{ title() }}</a>
+        } @else {
+          {{ title() }}
+        }
+      </h2>
+    </div>
+  </div>
+
+  <div class="atmos-card__body">
+    @if (timeRow()) {
+      <div class="atmos-card__time">
+        <mat-icon>event</mat-icon>
+        <span>{{ timeRow() }}</span>
+      </div>
+    }
+
+    @if (links().length) {
+      <div class="atmos-card__links">
+        @for (l of links(); track $index) {
+          @if (l.link) {
+            <a class="atmos-card__link" [routerLink]="l.link" [queryParams]="l.queryParams ?? null">
+              @if (l.imgSrc) { <img class="atmos-card__link-img" [src]="l.imgSrc" aria-hidden="true"> }
+              @else if (l.icon) { <mat-icon>{{ l.icon }}</mat-icon> }
+              <span>{{ l.label }}</span>
+            </a>
+          } @else if (l.href) {
+            <a class="atmos-card__link" [href]="isWindows && l.hrefDesktop || l.href"
+              [attr.target]="isWindows && l.hrefDesktop ? undefined : '_blank'" rel="noopener">
+              @if (l.imgSrc) { <img class="atmos-card__link-img" [src]="l.imgSrc" aria-hidden="true"> }
+              @else if (l.icon) { <mat-icon>{{ l.icon }}</mat-icon> }
+              <span>{{ l.label }}</span>
+            </a>
+          } @else {
+            <span class="atmos-card__link">
+              @if (l.imgSrc) { <img class="atmos-card__link-img" [src]="l.imgSrc" aria-hidden="true"> }
+              @else if (l.icon) { <mat-icon>{{ l.icon }}</mat-icon> }
+              <span>{{ l.label }}</span>
+            </span>
+          }
+        }
+      </div>
+    }
+
+    <ng-content />
+
+    @if (checkLabel()) {
+      <button
+        type="button"
+        class="atmos-card__check"
+        [class.is-checked]="checked()"
+        [attr.aria-pressed]="checked()"
+        (click)="checkToggle.emit($event)">
+        <span class="atmos-card__check-box">
+          @if (checked()) {
+            <mat-icon>check</mat-icon>
+          }
+        </span>
+        <span>{{ checkLabel() }}</span>
+      </button>
+    }
+
+    @if (currency().length) {
+      <div class="atmos-card__currency">
+        @for (c of currency(); track $index) {
+          <span class="atmos-card__chip" [attr.data-kind]="c.kind" [class.is-complete]="c.owned >= c.total">
+            <mat-icon class="atmos-card__mark" [svgIcon]="kindIcon(c.kind)"></mat-icon>
+            <strong>{{ c.owned }}</strong>
+            <span class="atmos-card__chip-total">/ {{ c.total }}</span>
+          </span>
+        }
+      </div>
+    }
+  </div>
+</article>

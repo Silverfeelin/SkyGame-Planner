@@ -1,0 +1,43 @@
+.atmos-search {
+  display: flex;
+  gap: var(--atmos-gap);
+  align-items: stretch;
+}
+
+.atmos-search__input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+  padding: 11px 20px;
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: var(--atmos-text);
+    font-size: 14px;
+    font-family: inherit;
+  }
+}
+
+.atmos-search__count {
+  color: var(--atmos-text-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 639px) {
+  .atmos-search {
+    flex-direction: column;
+    gap: var(--atmos-gap-compact);
+  }
+  .atmos-search__favourite {
+    justify-content: flex-start;
+  }
+}

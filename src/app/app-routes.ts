@@ -79,6 +79,7 @@ export const routes: Routes = [
     children: [
       /* Routes without menu. */
       { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },
+      { path: 'r', loadChildren: () => import('./redesign/redesign-routes').then(m => m.REDESIGN_ROUTES) },
       /* Routes with menu. */
       {
         path: '',

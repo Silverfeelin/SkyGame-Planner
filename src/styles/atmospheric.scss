@@ -1,0 +1,54 @@
+/* Atmospheric (redesign) global styles.
+   These rules rely on the --atmos-* tokens declared on the atmospheric
+   shell host, so they only render correctly inside the redesign tree. */
+
+.atmos-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+  padding: 11px 22px;
+  color: var(--atmos-text);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  outline: 0;
+  transition:
+    background var(--atmos-transition),
+    color var(--atmos-transition),
+    border-color var(--atmos-transition),
+    box-shadow var(--atmos-transition),
+    transform var(--atmos-transition);
+}
+
+.atmos-btn:hover {
+  background: var(--atmos-hover-bg-strong);
+  color: var(--atmos-text);
+}
+
+.atmos-btn:active {
+  transform: translateY(1px);
+}
+
+.atmos-btn[disabled],
+.atmos-btn.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Shared atmospheric focus ring. Apply to any interactive surface
+   (buttons, links, pill-shaped containers) to get a consistent focus state. */
+.atmos-focus-ring:focus-visible,
+.atmos-btn:focus-visible,
+.atmos-focus-ring:has(:focus-visible) {
+  outline: 2px solid var(--atmos-accent);
+  outline-offset: 2px;
+}

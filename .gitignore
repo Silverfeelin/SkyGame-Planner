@@ -60,6 +60,9 @@ Thumbs.db
 /src/assets/data/everything.json
 /src/assets/data/x.json
 
+# Claude
+.claude/data/**
+
 # Other
 #/scripts
 /scripts/temp/**
