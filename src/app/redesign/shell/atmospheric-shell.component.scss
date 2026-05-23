@@ -57,8 +57,9 @@
   --atmos-radius-sm: 8px;
   --atmos-radius-pill: 999px;
 
-  /* Background tuning (per-page overridable). */
+  /* Background tuning */
   --atmos-bg-brightness: 70%;
+  --atmos-bg-blur: 6px;
 
   /* Text shadows for type floating over the bg image. */
   --atmos-text-shadow:       0 1px 8px oklch(0.05 0.02 var(--atmos-hue) / 0.6);
@@ -71,8 +72,8 @@
   grid-template-columns: 220px 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: 'sidebar main';
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   background: #0c0a10;
   position: relative;
   overflow: hidden;
@@ -85,7 +86,7 @@
   background-image: var(--atmos-bg-image, url(/assets/game/realms/Aviary.webp));
   background-size: cover;
   background-position: center;
-  filter: brightness(var(--atmos-bg-brightness, 50%));
+  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
   pointer-events: none;
 }
 
@@ -111,10 +112,11 @@
 
 .atmos-sidebar-slot {
   grid-area: sidebar;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 2;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .atmos-main {
@@ -126,26 +128,16 @@
   flex-direction: column;
   gap: var(--atmos-gap);
   padding: calc(var(--atmos-pad) + 4px) calc(var(--atmos-pad) + 14px);
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 0;
+  height: 100%;
 
   /* router-outlet renders an empty <router-outlet> tag as a flex child, which
      consumes one `gap` slot before the actual routed content. Hide it. */
   > router-outlet { display: none; }
 }
 
-/* Tablet: collapse sidebar to icon rail. */
+/* Tablet & mobile: hide sidebar, show topbar. */
 @media (max-width: 1023px) {
-  :host {
-    grid-template-columns: 60px 1fr;
-  }
-  .atmos-main {
-    padding: 16px;
-  }
-}
-
-/* Mobile: hide sidebar, show topbar. */
-@media (max-width: 639px) {
   :host {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -163,4 +155,35 @@
     padding: 12px;
     gap: var(--atmos-gap-compact);
   }
+}
+
+/* Global thin scrollbar styling for the atmospheric tree. */
+:host ::ng-deep {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.55 0.03 var(--atmos-hue, 160) / 0.8);
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
 }

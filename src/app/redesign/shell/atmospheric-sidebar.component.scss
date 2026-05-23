@@ -12,6 +12,8 @@
   background: oklch(0.16 0.025 var(--atmos-hue) / 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .atmos-sidebar__group {
@@ -69,17 +71,3 @@
   text-overflow: ellipsis;
 }
 
-/* Tablet — collapse to icon-only rail. */
-@media (max-width: 1023px) {
-  .atmos-sidebar {
-    padding: 14px 6px 10px;
-    gap: 14px;
-  }
-  .atmos-nav-item {
-    padding: 9px 0;
-    justify-content: center;
-  }
-  .atmos-nav-item__label {
-    display: none;
-  }
-}

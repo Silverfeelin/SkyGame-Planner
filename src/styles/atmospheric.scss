@@ -2,6 +2,27 @@
    These rules rely on the --atmos-* tokens declared on the atmospheric
    shell host, so they only render correctly inside the redesign tree. */
 
+/* Base card surface — frosted-glass panel used as the container for
+   feature cards, list cards, and any other atmospheric card layout. */
+.atmos-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur);
+  -webkit-backdrop-filter: var(--atmos-blur);
+  border: var(--atmos-card-border);
+  box-shadow: var(--atmos-card-shadow);
+}
+
+.atmos-card__body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .atmos-btn {
   display: inline-flex;
   align-items: center;

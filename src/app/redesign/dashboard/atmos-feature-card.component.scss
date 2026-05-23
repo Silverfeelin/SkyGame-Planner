@@ -1,15 +1,3 @@
-.atmos-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--atmos-card-radius);
-  overflow: hidden;
-  background: var(--atmos-card-bg);
-  backdrop-filter: var(--atmos-blur);
-  -webkit-backdrop-filter: var(--atmos-blur);
-  border: var(--atmos-card-border);
-  box-shadow: var(--atmos-card-shadow);
-}
-
 .atmos-card__banner {
   position: relative;
   height: 220px;
@@ -85,13 +73,6 @@
     text-decoration: none;
     &:hover { text-decoration: underline; }
   }
-}
-
-.atmos-card__body {
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 
 .atmos-card__time {
