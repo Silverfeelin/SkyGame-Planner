@@ -7,8 +7,10 @@ const themeCache: { [key: string]: ReturnType<typeof createTheme> } = {};
 /** Gets an AG Grid theme styled to the current website theme. */
 export const getAgTheme = (): ReturnType<typeof createTheme> => {
   const currentTheme = getCurrentTheme();
-  return themeCache[currentTheme.value]
-    ?? createTheme(currentTheme.value);
+  const cacheKey = currentTheme.value === 'surprise'
+    ? (document.documentElement.getAttribute('data-theme') ?? '')
+    : currentTheme.value;
+  return themeCache[cacheKey] ?? createTheme(cacheKey);
 }
 
 const createTheme = (id: string): ReturnType<typeof themeQuartz.withParams> => {

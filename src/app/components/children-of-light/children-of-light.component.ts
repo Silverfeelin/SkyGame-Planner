@@ -250,6 +250,10 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._subWidth?.unsubscribe();
+    delete (window as any).colShowArea;
+    delete (window as any).colToggleRow;
+    delete (window as any).markCol;
+    delete (window as any).nextCol;
   }
 
   scrollToList(): void {

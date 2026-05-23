@@ -88,7 +88,7 @@ export class ElusiveSpiritsComponent {
     });
 
     const lastVisits = this._dataService.spiritConfig.items
-      .filter(s => s.type === 'Season')
+      .filter(s => s.type === 'Season' && !!s.season)
       .map(s => this.getLastVisitBySpirit(s));
 
     this.rowData = lastVisits.map(v => ({

@@ -47,7 +47,10 @@ export class TravelingSpiritsComponent {
     { field: 'visit', headerName: 'Visit', width: 120, filter: 'agNumberColumnFilter' },
     {
       field: 'unlocked', headerName: 'Unlocked', width: 150,
-      cellRenderer: (p: any) => `<span class="${p.data.unlocked === p.data.total ? 'c-completed fw-bold' : ''}">${p.value} / ${p.data.total}</span>`,
+      cellRenderer: (p: any) => {
+        if (!p.data.total) { return ''; }
+        return `<span class="${p.data.unlocked === p.data.total ? 'c-completed fw-bold' : ''}">${p.value} / ${p.data.total}</span>`;
+      },
       filter: 'agNumberColumnFilter'
     }
   ];
@@ -74,7 +77,7 @@ export class TravelingSpiritsComponent {
       return {
         nr: i + 1,
         img: ts.spirit.imageUrl,
-        spirit: { label: ts.spirit.name, route: ['/spirit', ts.spirit.guid], queryParams: { highlighTree: ts.tree.guid } },
+        spirit: { label: ts.spirit.name, route: ['/spirit', ts.spirit.guid], queryParams: { highlightTree: ts.tree.guid } },
         date: ts.date,
         visit: ts.visit,
         total: totalItems,
