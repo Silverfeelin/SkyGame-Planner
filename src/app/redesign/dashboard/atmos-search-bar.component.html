@@ -1,13 +1,66 @@
 <div class="atmos-search">
-  <div class="atmos-search__input atmos-focus-ring">
-    <mat-icon>search</mat-icon>
-    <input
-      type="search"
-      placeholder="Something Sky on your mind?" />
+  <div class="atmos-search__row">
+    <div class="atmos-search__input atmos-focus-ring">
+      <mat-icon class="atmos-search__icon">search</mat-icon>
+      <input
+        #input
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Something Sky on your mind?"
+        (input)="onInput()"
+        (keydown.escape)="clear()" />
+      @if (query()) {
+        <button type="button" class="atmos-search__clear" (click)="clear()" aria-label="Clear search">
+          <mat-icon>close</mat-icon>
+        </button>
+      }
+    </div>
+    <a class="atmos-btn atmos-search__favourite" routerLink="/r/item">
+      <mat-icon>new_releases</mat-icon>
+      <span>Favourite items</span>
+      <span class="atmos-search__count">{{ favouriteCount() }}</span>
+    </a>
   </div>
-  <a class="atmos-btn atmos-search__favourite" routerLink="/r/item">
-    <mat-icon>new_releases</mat-icon>
-    <span>Favourite items</span>
-    <span class="atmos-search__count">{{ favouriteCount() }}</span>
-  </a>
+
+  @if (results(); as r) {
+    <div class="atmos-search__panel">
+      @if (r.length) {
+        <ul class="atmos-search__list">
+          @for (row of r; track $index) {
+            <li>
+              <a class="atmos-search__result" [routerLink]="row.route" [queryParams]="row.queryParams">
+                <span class="atmos-search__result-thumb">
+                  @if (iconSrc(row); as src) {
+                    <app-icon [src]="src" width="40" height="40" />
+                  } @else {
+                    <mat-icon>category</mat-icon>
+                  }
+                </span>
+                <span class="atmos-search__result-text">
+                  <span class="atmos-search__result-name" [innerHTML]="row.highlighted || row.name"></span>
+                  <span class="atmos-search__result-type">
+                    @if (row.type === 'Item') {
+                      {{ asItem(row).type | itemType }}
+                    } @else {
+                      {{ row.type }}
+                    }
+                  </span>
+                </span>
+                <mat-icon class="atmos-search__result-chev">chevron_right</mat-icon>
+              </a>
+            </li>
+          }
+        </ul>
+        @if (r.length >= 25) {
+          <div class="atmos-search__refine">Refine your search for more results.</div>
+        }
+      } @else {
+        <div class="atmos-search__empty">
+          No results. Try searching for
+          <a class="atmos-text-link" (click)="searchDemo()">{{ demoText() }}</a>.
+        </div>
+      }
+    </div>
+  }
 </div>
