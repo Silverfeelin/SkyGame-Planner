@@ -41,15 +41,15 @@ export class AtmosItemsComponent {
     { field: 'type', headerName: 'Type', width: 160, filter: 'agTextColumnFilter', filterParams: textFilterParams },
     { field: 'group', headerName: 'Group', width: 130, filter: 'agTextColumnFilter', filterParams: textFilterParams },
     { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },
-    { field: 'favourited', headerName: 'Favourited', width: 130, hide: true, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
-    { field: 'starter', headerName: 'Starter', width: 110, hide: true, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
-    { field: 'dyeSlots', headerName: 'Dye slots', width: 120, hide: true, filter: 'agNumberColumnFilter' },
-    { field: 'returned', headerName: 'Returned', width: 120, hide: true, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
-    { field: 'spirit', headerName: 'Spirit', width: 200, hide: true, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'season', headerName: 'Season', width: 200, hide: true, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'event', headerName: 'Event', width: 200, hide: true, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'realm', headerName: 'Realm', width: 160, hide: true, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'iap', headerName: 'IAP', width: 130, hide: true, filter: 'agTextColumnFilter', filterParams: textFilterParams }
+    { field: 'favourited', headerName: 'Favourited', width: 130, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
+    { field: 'starter', headerName: 'Starter', width: 110, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
+    { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: 'agNumberColumnFilter' },
+    { field: 'returned', headerName: 'Returned', width: 120, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
+    { field: 'spirit', headerName: 'Spirit', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'season', headerName: 'Season', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'event', headerName: 'Event', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'realm', headerName: 'Realm', width: 160, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'iap', headerName: 'IAP', width: 130, filter: 'agTextColumnFilter', filterParams: textFilterParams }
   ];
 
   private readonly _items: IItem[];
