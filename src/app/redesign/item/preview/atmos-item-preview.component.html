@@ -1,0 +1,19 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Item previews</h1>
+</header>
+
+<atmos-item-quick-actions/>
+
+<atmos-item-grid-layout [items]="items" [itemTemplate]="previewTpl" [initialCategory]="initialCategory"/>
+<ng-template #previewTpl let-item>
+  <a class="atmos-item-preview__item"
+     [routerLink]="['/item', item.guid]"
+     [title]="item.name">
+    <img class="atmos-item-preview__img" [src]="item.previewUrl" loading="lazy" draggable="false"/>
+    <app-icon class="atmos-item-preview__icon"
+              [src]="item.icon || '/assets/icons/question.webp'"
+              width="64px" height="64px"
+              [lazy]="true" [draggable]="false">
+    </app-icon>
+  </a>
+</ng-template>

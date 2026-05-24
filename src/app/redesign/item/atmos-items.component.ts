@@ -7,8 +7,7 @@ import { AgUnlockedRendererComponent } from '@app/components/grid/renderers/ag-u
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
-import { MatIcon } from "@angular/material/icon";
-import { RouterLink } from '@angular/router';
+import { AtmosItemQuickActionsComponent } from './quick-actions/atmos-item-quick-actions.component';
 
 const boolFilterParams = {
   filterOptions: ['equals', 'notEqual', 'blank', 'notBlank'],
@@ -27,7 +26,7 @@ const textFilterParams = {
   templateUrl: './atmos-items.component.html',
   styleUrl: './atmos-items.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, MatIcon, RouterLink]
+  imports: [AgGridAngular, AtmosItemQuickActionsComponent]
 })
 export class AtmosItemsComponent {
   theme = getAtmosAgTheme();

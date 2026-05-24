@@ -1,0 +1,18 @@
+<section class="atmos-page__quick-actions">
+  @if (firstAction() === 'table') {
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/item/table"><mat-icon>table_chart</mat-icon> View as table</a>
+  } @else {
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/item"><mat-icon>grid_view</mat-icon> Back to grid</a>
+  }
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/item/preview"><mat-icon>image</mat-icon> Item previews</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/field-guide"><mat-icon>menu_book</mat-icon> Field guide</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/dye"><mat-icon>palette</mat-icon> Dye previews</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/collection"><mat-icon>collections</mat-icon> Collections</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/heart"><mat-icon>favorite</mat-icon> Hearts</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/unlock-calculator"><mat-icon>calculate</mat-icon> Cost calculator</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/inflation"><mat-icon>trending_up</mat-icon> Item inflation</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/unlock"><mat-icon>lock_open</mat-icon> Quick unlock</a>
+  <a class="atmos-btn atmos-btn--sm" href="https://github.com/Silverfeelin/SkyGame-Planner/issues" target="_blank" rel="noopener">
+    <mat-icon>add_circle</mat-icon> Suggest new item
+  </a>
+</section>

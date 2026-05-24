@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-preview__item {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 12px 32px 12px 12px;
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-tint);
+  }
+}
+
+.atmos-item-preview__img {
+  display: block;
+  max-width: 128px;
+  max-height: 192px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.atmos-item-preview__icon {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 64px;
+  height: 64px;
+}

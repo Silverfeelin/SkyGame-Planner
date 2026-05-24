@@ -1,0 +1,48 @@
+<section class="atmos-card atmos-item-grid__card">
+  <div class="atmos-item-grid__rail-wrap">
+  <nav class="atmos-item-grid__rail">
+    <div class="atmos-item-grid__rail-label">Category</div>
+    @for (c of visibleCategories(); track c.type) {
+      <button class="atmos-item-grid__rail-item"
+              [class.is-active]="active() === c.type"
+              (click)="active.set(c.type)">
+        <mat-icon class="atmos-item-grid__rail-icon" [svgIcon]="c.svgIcon"></mat-icon>
+        <span class="atmos-item-grid__rail-name">{{ c.type | itemType:true }}</span>
+        <span class="atmos-item-grid__rail-count">{{ categoryCounts().get(c.type)?.unlocked }}/{{ categoryCounts().get(c.type)?.total }}</span>
+      </button>
+    }
+  </nav>
+  </div>
+
+  <div class="atmos-item-grid__column">
+    <div class="atmos-item-grid__nav-strip">
+      @for (c of visibleCategories(); track c.type) {
+        <button class="atmos-item-grid__nav-pill"
+                [class.is-active]="active() === c.type"
+                (click)="active.set(c.type)">
+          <mat-icon [svgIcon]="c.svgIcon"></mat-icon>{{ c.type | itemType:true }}
+        </button>
+      }
+    </div>
+
+    <div class="atmos-item-grid__card-header">
+      <div class="atmos-item-grid__card-title">
+        <mat-icon [svgIcon]="activeCategory().svgIcon"></mat-icon>
+        <h2>{{ activeCategory().type | itemType:true }}</h2>
+        <span class="atmos-item-grid__card-subtitle">· in-game order</span>
+      </div>
+      <div class="atmos-item-grid__count">
+        <strong>{{ activeUnlocked() }}</strong>
+        <span> / {{ activeItems().length }}</span>
+        <span> unlocked</span>
+      </div>
+    </div>
+
+    <div class="atmos-item-grid__items">
+      @for (item of activeItems(); track item.guid) {
+        <ng-container [ngTemplateOutlet]="itemTemplate()"
+                      [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+      }
+    </div>
+  </div>
+</section>
