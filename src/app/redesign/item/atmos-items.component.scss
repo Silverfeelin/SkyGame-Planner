@@ -1,36 +1,10 @@
 :host { display: contents; }
 
-.atmos-items__header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.atmos-items__title {
-  margin: 0;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--atmos-text);
-  text-shadow: var(--atmos-text-shadow-large);
-}
-
 .atmos-items__actions {
   display: flex;
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-}
-
-.atmos-items__count {
-  font-size: 13px;
-  color: var(--atmos-text-dim);
-  font-variant-numeric: tabular-nums;
-  text-shadow: var(--atmos-text-shadow);
-
-  strong { color: var(--atmos-text); font-weight: 600; }
 }
 
 .atmos-items__count-sep,

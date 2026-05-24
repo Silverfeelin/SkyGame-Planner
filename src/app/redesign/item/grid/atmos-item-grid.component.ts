@@ -7,25 +7,24 @@ import { DataService } from '@app/services/data.service';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { IItem, ItemType } from 'skygame-data';
 
-const CATEGORIES: ReadonlyArray<{ type: ItemType; icon: string }> = [
-  { type: ItemType.Outfit,        icon: 'checkroom' },
-  { type: ItemType.Shoes,         icon: 'footprint' },
-  { type: ItemType.OutfitShoes,   icon: 'checkroom' },
-  { type: ItemType.Mask,          icon: 'theater_comedy' },
-  { type: ItemType.FaceAccessory, icon: 'face' },
-  { type: ItemType.Necklace,      icon: 'diamond' },
-  { type: ItemType.Hair,          icon: 'person' },
-  { type: ItemType.HairAccessory, icon: 'face_retouching_natural' },
-  { type: ItemType.HeadAccessory, icon: 'sports_baseball' },
-  { type: ItemType.Cape,          icon: 'dry_cleaning' },
-  { type: ItemType.Held,          icon: 'back_hand' },
-  { type: ItemType.Furniture,     icon: 'chair' },
-  { type: ItemType.Prop,          icon: 'extension' },
-  { type: ItemType.Emote,         icon: 'sentiment_satisfied' },
-  { type: ItemType.Stance,        icon: 'accessibility_new' },
-  { type: ItemType.Call,          icon: 'campaign' },
-  { type: ItemType.Music,         icon: 'music_note' },
-  { type: ItemType.Spell,         icon: 'auto_fix_high' },
+const CATEGORIES: ReadonlyArray<{ type: ItemType; svgIcon: string }> = [
+  { type: ItemType.Outfit,        svgIcon: 'outfit' },
+  { type: ItemType.Shoes,         svgIcon: 'shoes' },
+  { type: ItemType.OutfitShoes,   svgIcon: 'outfit-shoes' },
+  { type: ItemType.Mask,          svgIcon: 'mask' },
+  { type: ItemType.FaceAccessory, svgIcon: 'face-acc' },
+  { type: ItemType.Necklace,      svgIcon: 'necklace' },
+  { type: ItemType.Hair,          svgIcon: 'hair' },
+  { type: ItemType.HairAccessory, svgIcon: 'hair-acc' },
+  { type: ItemType.HeadAccessory, svgIcon: 'head-acc' },
+  { type: ItemType.Cape,          svgIcon: 'cape' },
+  { type: ItemType.Held,          svgIcon: 'held' },
+  { type: ItemType.Furniture,     svgIcon: 'cup' },
+  { type: ItemType.Prop,          svgIcon: 'prop' },
+  { type: ItemType.Emote,         svgIcon: 'emote' },
+  { type: ItemType.Stance,        svgIcon: 'stance' },
+  { type: ItemType.Call,          svgIcon: 'call' },
+  { type: ItemType.Music,         svgIcon: 'sheet' },
 ];
 
 @Component({

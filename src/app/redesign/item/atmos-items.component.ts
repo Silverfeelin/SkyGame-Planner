@@ -7,6 +7,8 @@ import { AgUnlockedRendererComponent } from '@app/components/grid/renderers/ag-u
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
+import { MatIcon } from "@angular/material/icon";
+import { RouterLink } from '@angular/router';
 
 const boolFilterParams = {
   filterOptions: ['equals', 'notEqual', 'blank', 'notBlank'],
@@ -25,16 +27,12 @@ const textFilterParams = {
   templateUrl: './atmos-items.component.html',
   styleUrl: './atmos-items.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular]
+  imports: [AgGridAngular, MatIcon, RouterLink]
 })
 export class AtmosItemsComponent {
   theme = getAtmosAgTheme();
   rowData: any[] = [];
   api?: GridApi;
-
-  private static readonly ADVANCED_COLS = ['favourited', 'starter', 'dyeSlots', 'returned', 'spirit', 'season', 'event', 'realm', 'iap'];
-
-  readonly showAdvanced = signal(false);
 
   colDefs: ColDef[] = [
     { field: 'nr', headerName: '#', width: 90, filter: 'agNumberColumnFilter', initialSort: 'asc', sortingOrder: ['asc', 'desc'] },
@@ -68,12 +66,6 @@ export class AtmosItemsComponent {
 
   onGridReady(evt: GridReadyEvent<any, any>): void {
     this.api = evt.api;
-  }
-
-  toggleAdvanced(): void {
-    const next = !this.showAdvanced();
-    this.showAdvanced.set(next);
-    this.api?.setColumnsVisible(AtmosItemsComponent.ADVANCED_COLS, next);
   }
 
   getRowHeight = (): number => 48;

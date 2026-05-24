@@ -5,8 +5,7 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
   selector: 'app-ag-unlocked-renderer',
   standalone: true,
   imports: [],
-  template: `<span class="ag-unlocked-pill" [class.is-unlocked]="value">{{ value ? 'Yes' : 'No' }}</span>`,
-  styleUrls: ['./ag-unlocked-renderer.component.scss'],
+  template: `<span class="atmos-pill" [class.atmos-pill--active]="value">{{ value ? 'Yes' : 'No' }}</span>`,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AgUnlockedRendererComponent implements ICellRendererAngularComp {

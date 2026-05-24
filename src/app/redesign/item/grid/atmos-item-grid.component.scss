@@ -1,28 +1,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 24px;
-}
-
-.atmos-item-grid__title {
-  font-size: 2rem;
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
-}
-
-.atmos-item-grid__quick-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-@media (max-width: 720px) {
-  .atmos-item-grid__quick-actions {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
+  gap: var(--atmos-gap);
 }
 
 /* Card becomes a shell containing the rail + items column. */

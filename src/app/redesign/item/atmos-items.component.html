@@ -1,19 +1,27 @@
-<header class="atmos-items__header">
-  <h1 class="atmos-items__title">Items</h1>
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Items</h1>
   <div class="atmos-items__actions">
-    <button type="button" class="atmos-btn"
-      [class.atmos-btn-active]="showAdvanced()"
-      [attr.aria-pressed]="showAdvanced()"
-      (click)="toggleAdvanced()">
-      Advanced columns
-    </button>
-    <div class="atmos-items__count" aria-live="polite">
+    <div class="atmos-items__count"aria-live="polite">
       <strong>{{ unlockedCount() }}</strong>
       <span class="atmos-items__count-sep"> / {{ totalCount() }}</span>
       <span class="atmos-items__count-label"> unlocked</span>
     </div>
   </div>
 </header>
+
+<section class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/item"><mat-icon>grid_view</mat-icon> View as grid</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/field-guide"><mat-icon>menu_book</mat-icon> Field guide</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/dye"><mat-icon>palette</mat-icon> Dye previews</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/collection"><mat-icon>collections</mat-icon> Collections</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/heart"><mat-icon>favorite</mat-icon> Hearts</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/unlock-calculator"><mat-icon>calculate</mat-icon> Cost calculator</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/inflation"><mat-icon>trending_up</mat-icon> Item inflation</a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/item/unlock"><mat-icon>lock_open</mat-icon> Quick unlock</a>
+  <a class="atmos-btn atmos-btn--sm" href="https://github.com/Silverfeelin/SkyGame-Planner/issues" target="_blank" rel="noopener">
+    <mat-icon>add_circle</mat-icon> Suggest new item
+  </a>
+</section>
 
 <div class="atmos-card atmos-items__grid-card">
   <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme"
