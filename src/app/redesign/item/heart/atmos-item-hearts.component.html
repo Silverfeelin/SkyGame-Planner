@@ -1,0 +1,105 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Hearts</h1>
+</header>
+
+<atmos-item-quick-actions/>
+
+<!-- Regular Spirits -->
+<details class="atmos-card atmos-fold" [open]="!folded['r']" (toggle)="onToggle($event, 'r')">
+  <summary class="atmos-fold__summary">
+    <mat-icon class="atmos-fold__chevron">expand_more</mat-icon>
+    <span class="atmos-fold__title">Regular spirits</span>
+    <span class="atmos-fold__count">{{ tables.regularCount[1] }} / {{ tables.regularCount[0] }}</span>
+  </summary>
+  <div class="atmos-fold__body">
+    <p class="atmos-fold__desc">
+      Regular spirit memories can be relived at any time.
+      These spirits have a heart that can be obtained through the constellations after reliving their memory.
+    </p>
+    <ag-grid-angular [theme]="theme" [columnDefs]="spiritColDefs" [rowData]="tables.regular" [domLayout]="'autoHeight'"/>
+  </div>
+</details>
+
+<!-- Season Spirits -->
+<details class="atmos-card atmos-fold" [open]="!folded['s']" (toggle)="onToggle($event, 's')">
+  <summary class="atmos-fold__summary">
+    <mat-icon class="atmos-fold__chevron">expand_more</mat-icon>
+    <span class="atmos-fold__title">Season spirits</span>
+    <span class="atmos-fold__count">{{ tables.seasonCount[1] }} / {{ tables.seasonCount[0] }}</span>
+  </summary>
+  <div class="atmos-fold__body">
+    <p class="atmos-fold__desc">
+      Season spirits offer a heart when they return as a <a class="atmos-text-link" routerLink="/ts">Traveling Spirit</a> or in a <a class="atmos-text-link" routerLink="/rs">Special Visit</a>.<br/>
+      All season spirits are listed below. Spirits that have never returned do not (yet) have a regular heart.
+    </p>
+    <p class="atmos-fold__desc">
+      Keep in mind that the regular heart is not available if you've already unlocked the season heart during the season. This heart counts as one and the same!
+    </p>
+    <ag-grid-angular [theme]="theme" [columnDefs]="spiritColDefs" [rowData]="tables.season" [domLayout]="'autoHeight'"/>
+  </div>
+</details>
+
+<!-- Season Guides -->
+<details class="atmos-card atmos-fold" [open]="!folded['g']" (toggle)="onToggle($event, 'g')">
+  <summary class="atmos-fold__summary">
+    <mat-icon class="atmos-fold__chevron">expand_more</mat-icon>
+    <span class="atmos-fold__title">Season guides</span>
+    <span class="atmos-fold__count">{{ tables.guideCount[1] }} / {{ tables.guideCount[0] }}</span>
+  </summary>
+  <div class="atmos-fold__body">
+    <p class="atmos-fold__desc">Season guides usually offer a heart after completing certain quests. During (and for a while after) a season these are free. After that, the hearts cost 3 candles.</p>
+    <ag-grid-angular [theme]="theme" [columnDefs]="spiritColDefs" [rowData]="tables.guide" [domLayout]="'autoHeight'"/>
+  </div>
+</details>
+
+<!-- Recurring Events -->
+<details class="atmos-card atmos-fold" [open]="!folded['er']" (toggle)="onToggle($event, 'er')">
+  <summary class="atmos-fold__summary">
+    <mat-icon class="atmos-fold__chevron">expand_more</mat-icon>
+    <span class="atmos-fold__title">Recurring events</span>
+    <span class="atmos-fold__count">{{ tables.recurringEventCount[1] }} / {{ tables.recurringEventCount[0] }}</span>
+  </summary>
+  <div class="atmos-fold__body">
+    <p class="atmos-fold__desc">Some hearts are available only during events. Below the events are listed that are expected to return. Hearts are only shown for the last instance of the event.</p>
+    <ag-grid-angular [theme]="theme" [columnDefs]="eventColDefs" [rowData]="tables.recurringEvent" [domLayout]="'autoHeight'"/>
+  </div>
+</details>
+
+<!-- Other Events -->
+@if (tables.otherEventCount[0] > 0) {
+  <details class="atmos-card atmos-fold" [open]="!folded['eo']" (toggle)="onToggle($event, 'eo')">
+    <summary class="atmos-fold__summary">
+      <mat-icon class="atmos-fold__chevron">expand_more</mat-icon>
+      <span class="atmos-fold__title">Other events</span>
+      <span class="atmos-fold__count">{{ tables.otherEventCount[1] }} / {{ tables.otherEventCount[0] }}</span>
+    </summary>
+    <div class="atmos-fold__body">
+      <p class="atmos-fold__desc">Some hearts are only available during limited events. Below the events are listed that are not expected to return.</p>
+      <ag-grid-angular [theme]="theme" [columnDefs]="eventColDefs" [rowData]="tables.otherEvent" [domLayout]="'autoHeight'"/>
+    </div>
+  </details>
+}
+
+<!-- Other -->
+<details class="atmos-card atmos-fold" [open]="!folded['o']" (toggle)="onToggle($event, 'o')">
+  <summary class="atmos-fold__summary">
+    <mat-icon class="atmos-fold__chevron">expand_more</mat-icon>
+    <span class="atmos-fold__title">Other</span>
+    <span class="atmos-fold__count">{{ tables.otherCount[1] }} / {{ tables.otherCount[0] }}</span>
+  </summary>
+  <div class="atmos-fold__body">
+    <p class="atmos-fold__desc">
+      There are some hearts that haven't been categorized. These could be from limited events or old versions of spirit trees, and are probably not available anymore.
+      You can still find the source by clicking on the heart icons below.
+    </p>
+    <ag-grid-angular [theme]="theme" [columnDefs]="otherColDefs" [rowData]="tables.other" [domLayout]="'autoHeight'"/>
+  </div>
+</details>
+
+<!-- Total -->
+<section class="atmos-card atmos-card__body">
+  @let total = tables.regularCount[0] + tables.seasonCount[0] + tables.guideCount[0] + tables.recurringEventCount[0] + tables.otherEventCount[0] + tables.otherCount[0];
+  @let unlocked = tables.regularCount[1] + tables.seasonCount[1] + tables.guideCount[1] + tables.recurringEventCount[1] + tables.otherEventCount[1] + tables.otherCount[1];
+  <h2 class="atmos-fold__title">Total</h2>
+  <p>You have unlocked {{ unlocked }} of the {{ total }} hearts the Sky Planner tracks.</p>
+</section>

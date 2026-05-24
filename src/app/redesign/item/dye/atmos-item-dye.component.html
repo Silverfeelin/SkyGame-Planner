@@ -1,0 +1,19 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Dye previews</h1>
+</header>
+
+<atmos-item-quick-actions/>
+
+<atmos-item-grid-layout [items]="items" [itemTemplate]="dyeTpl" [initialCategory]="initialCategory"/>
+<ng-template #dyeTpl let-item>
+  <a class="atmos-item-dye__item"
+     [routerLink]="['/item', item.guid]"
+     [title]="item.name">
+    <img class="atmos-item-dye__img" [src]="item.dye!.previewUrl" loading="lazy" draggable="false"/>
+    <app-icon class="atmos-item-dye__icon"
+              [src]="item.icon || '/assets/icons/question.webp'"
+              width="64px" height="64px"
+              [lazy]="true" [draggable]="false">
+    </app-icon>
+  </a>
+</ng-template>

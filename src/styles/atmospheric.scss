@@ -26,7 +26,7 @@
 
   /* Lines / dividers. */
   --atmos-line:      oklch(0.32 0.025 var(--atmos-hue));
-  --atmos-line-soft: oklch(0.95 0.01 var(--atmos-hue) / 0.10);
+  --atmos-line-soft: oklch(0.95 0.01 var(--atmos-hue) / 0.30);
 
   /* Interaction. */
   --atmos-hover-bg:        oklch(0.95 0.01 var(--atmos-hue) / 0.10);

@@ -1,0 +1,38 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-dye__item {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 12px 32px 12px 12px;
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-tint);
+  }
+}
+
+.atmos-item-dye__img {
+  display: block;
+  max-width: 256px;
+  max-height: 256px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--atmos-line);
+  object-fit: contain;
+}
+
+.atmos-item-dye__icon {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 64px;
+  height: 64px;
+}

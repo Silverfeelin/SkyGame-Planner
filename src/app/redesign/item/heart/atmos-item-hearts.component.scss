@@ -1,0 +1,61 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+/* Remove default <details> marker. */
+.atmos-fold > summary {
+  list-style: none;
+  &::-webkit-details-marker { display: none; }
+}
+
+.atmos-fold__summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--atmos-card-radius);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+  }
+}
+
+.atmos-fold__chevron {
+  flex-shrink: 0;
+  transition: transform var(--atmos-transition);
+  color: var(--atmos-text-dim);
+}
+
+.atmos-fold:not([open]) .atmos-fold__chevron {
+  transform: rotate(-90deg);
+}
+
+.atmos-fold__title {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.atmos-fold__count {
+  font-size: 13px;
+  color: var(--atmos-text-dim);
+  flex-shrink: 0;
+}
+
+.atmos-fold__body {
+  border-top: var(--atmos-card-border);
+}
+
+.atmos-fold__desc {
+  padding: 14px 20px 4px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--atmos-text-dim);
+  line-height: 1.6;
+}
