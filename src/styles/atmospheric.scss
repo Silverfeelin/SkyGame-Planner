@@ -1,4 +1,6 @@
 /* Atmospheric (redesign) global styles. */
+/* Redesign responsive breakpoint: max-width 1023px = tablet/mobile, min-width 1024px = desktop.
+   Used by atmospheric-shell (sidebar ↔ topbar) and atmos-item-grid (rail ↔ top-bar). */
 /* Base card surface — frosted-glass panel used as the container for
    feature cards, list cards, and any other atmospheric card layout. */
 :root {
@@ -126,6 +128,23 @@
 .atmos-btn.is-disabled {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* Toggled-on / selected state for .atmos-btn. Uses a tinted accent fill
+   with an accent border and accent text — clearly "on" without the
+   loudness of a full accent fill. */
+.atmos-btn-active,
+.atmos-btn.atmos-btn-active {
+  background: oklch(0.82 0.11 var(--atmos-hue) / 0.18);
+  border-color: oklch(0.82 0.11 var(--atmos-hue) / 0.55);
+  color: var(--atmos-accent);
+  box-shadow: inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.25);
+}
+
+.atmos-btn-active:hover,
+.atmos-btn.atmos-btn-active:hover {
+  background: oklch(0.82 0.11 var(--atmos-hue) / 0.26);
+  color: var(--atmos-accent);
 }
 
 /* Default atmospheric inline link. Use on anchors that sit inside prose

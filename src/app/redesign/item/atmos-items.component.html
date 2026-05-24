@@ -1,0 +1,22 @@
+<header class="atmos-items__header">
+  <h1 class="atmos-items__title">Items</h1>
+  <div class="atmos-items__actions">
+    <button type="button" class="atmos-btn"
+      [class.atmos-btn-active]="showAdvanced()"
+      [attr.aria-pressed]="showAdvanced()"
+      (click)="toggleAdvanced()">
+      Advanced columns
+    </button>
+    <div class="atmos-items__count" aria-live="polite">
+      <strong>{{ unlockedCount() }}</strong>
+      <span class="atmos-items__count-sep"> / {{ totalCount() }}</span>
+      <span class="atmos-items__count-label"> unlocked</span>
+    </div>
+  </div>
+</header>
+
+<div class="atmos-card atmos-items__grid-card">
+  <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme"
+    [getRowHeight]="getRowHeight" [suppressDragLeaveHidesColumns]="true"
+    (gridReady)="onGridReady($event)" />
+</div>

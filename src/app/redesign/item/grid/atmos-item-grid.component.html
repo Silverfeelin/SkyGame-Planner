@@ -1,0 +1,73 @@
+<header class="atmos-item-grid__header">
+  <h1 class="atmos-item-grid__title">Items</h1>
+</header>
+
+<section class="atmos-item-grid__quick-actions">
+  <a class="atmos-btn" routerLink="/r/item-table"><mat-icon>table_chart</mat-icon> View as table</a>
+  <a class="atmos-btn" routerLink="/item/field-guide"><mat-icon>menu_book</mat-icon> Field guide</a>
+  <a class="atmos-btn" routerLink="/item/dye"><mat-icon>palette</mat-icon> Dyes</a>
+  <a class="atmos-btn" routerLink="/item/collection"><mat-icon>collections</mat-icon> Collections</a>
+  <a class="atmos-btn" routerLink="/item/heart"><mat-icon>favorite</mat-icon> Hearts</a>
+  <a class="atmos-btn" routerLink="/item/unlock-calculator"><mat-icon>calculate</mat-icon> Unlock cost calculator</a>
+  <a class="atmos-btn" routerLink="/item/inflation"><mat-icon>trending_up</mat-icon> Item inflation</a>
+  <a class="atmos-btn" routerLink="/item/unlock"><mat-icon>lock_open</mat-icon> Quick unlock</a>
+  <a class="atmos-btn" href="https://github.com/Silverfeelin/SkyGame-Planner/issues" target="_blank" rel="noopener">
+    <mat-icon>add_circle</mat-icon> Suggest new item
+  </a>
+</section>
+
+<section class="atmos-card atmos-item-grid__card">
+  <nav class="atmos-item-grid__rail">
+    <div class="atmos-item-grid__rail-label">Category</div>
+    @for (c of categories; track c.type) {
+      <button class="atmos-item-grid__rail-item"
+              [class.is-active]="active() === c.type"
+              (click)="active.set(c.type)">
+        <mat-icon class="atmos-item-grid__rail-icon">{{ c.icon }}</mat-icon>
+        <span class="atmos-item-grid__rail-name">{{ c.label }}</span>
+        <span class="atmos-item-grid__rail-count">{{ categoryCounts().get(c.type)?.unlocked }}/{{ categoryCounts().get(c.type)?.total }}</span>
+      </button>
+    }
+  </nav>
+
+  <div class="atmos-item-grid__column">
+    <div class="atmos-item-grid__nav-strip">
+      @for (c of categories; track c.type) {
+        <button class="atmos-item-grid__nav-pill"
+                [class.is-active]="active() === c.type"
+                (click)="active.set(c.type)">
+          <mat-icon>{{ c.icon }}</mat-icon>{{ c.label }}
+        </button>
+      }
+    </div>
+
+    <div class="atmos-item-grid__card-header">
+      <div class="atmos-item-grid__card-title">
+        <mat-icon>{{ activeCategory().icon }}</mat-icon>
+        <h2>{{ activeCategory().label }}</h2>
+        <span class="atmos-item-grid__card-subtitle">· in-game order</span>
+      </div>
+      <div class="atmos-item-grid__count">
+        <strong>{{ activeUnlocked() }}</strong>
+        <span> / {{ activeItems().length }}</span>
+        <span> unlocked</span>
+      </div>
+    </div>
+
+    <div class="atmos-item-grid__items">
+      @for (item of activeItems(); track item.guid) {
+        <a class="atmos-item-grid__item"
+           [class.is-locked]="!item.unlocked"
+           [routerLink]="['/item', item.guid]"
+           [title]="item.name ?? ''">
+          <app-icon
+            [src]="item.icon || '/assets/icons/question.webp'"
+            width="64px" height="64px"
+            [lazy]="true" [draggable]="false">
+          </app-icon>
+          @if (item.unlocked) { <span class="atmos-item-grid__dot"></span> }
+        </a>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,263 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+.atmos-item-grid__title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+}
+
+.atmos-item-grid__quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 720px) {
+  .atmos-item-grid__quick-actions {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+}
+
+/* Card becomes a shell containing the rail + items column. */
+.atmos-item-grid__card {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  overflow: hidden;
+  gap: 0;
+}
+
+/* Vertical rail (desktop). */
+.atmos-item-grid__rail {
+  flex-shrink: 0;
+  width: 200px;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-right: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
+  background: oklch(0.95 0.01 var(--atmos-hue) / 0.03);
+}
+
+.atmos-item-grid__rail-label {
+  padding: 0 10px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.5);
+}
+
+.atmos-item-grid__rail-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.7);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  &:hover {
+    background: oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+    color: var(--atmos-text);
+  }
+
+  &.is-active {
+    background: oklch(0.95 0.01 var(--atmos-hue) / 0.14);
+    color: var(--atmos-text);
+    font-weight: 600;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 8px;
+      bottom: 8px;
+      width: 3px;
+      border-radius: 2px;
+      background: var(--atmos-accent);
+    }
+  }
+}
+
+.atmos-item-grid__rail-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.atmos-item-grid__rail-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.atmos-item-grid__rail-count {
+  font-size: 11px;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.45);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+/* Items column (right side on desktop, full width on tablet/mobile). */
+.atmos-item-grid__column {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Horizontal pill strip — tablet/mobile only. */
+.atmos-item-grid__nav-strip {
+  display: none;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 6px;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.atmos-item-grid__nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.7);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background var(--atmos-transition), color var(--atmos-transition), border-color var(--atmos-transition);
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    color: var(--atmos-text);
+    background: oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+  }
+
+  &.is-active {
+    background: oklch(0.95 0.01 var(--atmos-hue) / 0.16);
+    border-color: oklch(0.95 0.02 var(--atmos-hue) / 0.28);
+    color: var(--atmos-text);
+    font-weight: 600;
+  }
+}
+
+.atmos-item-grid__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
+}
+
+.atmos-item-grid__card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}
+
+.atmos-item-grid__card-subtitle {
+  color: var(--atmos-text-dim);
+  font-size: 0.85rem;
+}
+
+.atmos-item-grid__count {
+  font-size: 0.9rem;
+  color: var(--atmos-text-dim);
+  font-variant-numeric: tabular-nums;
+
+  strong {
+    color: var(--atmos-text);
+  }
+}
+
+.atmos-item-grid__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.atmos-item-grid__item {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.15s ease;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &.is-locked {
+    opacity: 0.35;
+  }
+}
+
+.atmos-item-grid__dot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--atmos-good);
+}
+
+/* Tablet & mobile: hide rail, switch card to column flow, show pill strip. */
+@media (max-width: 1023px) {
+  .atmos-item-grid__card {
+    flex-direction: column;
+  }
+
+  .atmos-item-grid__rail {
+    display: none;
+  }
+
+  .atmos-item-grid__column {
+    padding: 16px 14px 18px;
+  }
+
+  .atmos-item-grid__nav-strip {
+    display: flex;
+  }
+}
