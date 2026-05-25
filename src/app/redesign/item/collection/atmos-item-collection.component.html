@@ -4,6 +4,10 @@
 
 <atmos-item-quick-actions/>
 
+<p class="atmos-paragraph">
+  On this page you can save your own item collections. Use these to keep track of your favourite outfits, plan for upcoming items or anything else!
+</p>
+
 <div class="atmos-coll__actions">
   <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleShowAdd()" [class.atmos-btn-active]="showEdit && !editGuid">
     <mat-icon>add</mat-icon> Add collection
@@ -83,7 +87,7 @@
     </button>
   </ng-template>
 
- }
+}
 
 <!-- Collections list -->
 <div [hidden]="showEdit">

@@ -5,6 +5,7 @@
    feature cards, list cards, and any other atmospheric card layout. */
 :root {
   --atmos-hue: 160;
+  --atmos-bg-image: url(/assets/game/realms/Aviary.webp);
 
   /* Surfaces. */
   --atmos-bg:        oklch(0.18 0.02 var(--atmos-hue));
@@ -114,9 +115,21 @@
     box-shadow var(--atmos-transition),
     transform var(--atmos-transition);
 
+  > mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
   &.atmos-btn--sm {
     padding: 6px 16px;
     font-size: 13px;
+
+    > mat-icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 
@@ -230,3 +243,66 @@
     color: oklch(0.88 0.15 145);
   }
 }
+
+
+/* Paragraph */
+.atmos-paragraph {
+  margin: 0;
+  color: var(--atmos-text);
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+// #region Themes
+
+:root[data-theme="isle"] {
+  --atmos-hue: 240;
+  --atmos-bg-image: url(/assets/game/background/isle.webp);
+}
+
+:root[data-theme="cozy"] {
+  --atmos-hue: 140;
+  --atmos-bg-image: url(/assets/game/realms/Aviary.webp);
+}
+
+:root[data-theme="peaks"] {
+  --atmos-hue: 330;
+  --atmos-bg-image: url(/assets/game/background/peaks.webp);
+}
+
+:root[data-theme="reef"] {
+  --atmos-hue: 230;
+  --atmos-bg-image: url(/assets/game/background/reef.webp);
+}
+
+:root[data-theme="cold"] {
+  --atmos-hue: 190;
+  --atmos-bg-image: url(/assets/game/background/village.webp);
+}
+
+:root[data-theme="sandy"] {
+  --atmos-hue: 25;
+  --atmos-bg-image: url(/assets/game/background/oasis.webp);
+}
+
+:root[data-theme="dark"] {
+  --atmos-hue: 240;
+  --atmos-bg-image: url(/assets/game/background/void_jelly.webp);
+}
+
+:root[data-theme="love"] {
+  --atmos-hue: 205;
+  --atmos-bg-image: url(/assets/game/background/love2024.webp);
+}
+
+:root[data-theme="moomin"] {
+  --atmos-hue: 205;
+  --atmos-bg-image: url(/assets/game/background/moomin.webp);
+}
+
+:root[data-theme="wonderland"] {
+  --atmos-hue: 0;
+  --atmos-bg-image: url(/assets/game/background/feast2024.webp);
+}
+
+// #endregion

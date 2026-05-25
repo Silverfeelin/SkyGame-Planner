@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { AtmosphericShellComponent } from './shell/atmospheric-shell.component';
 import { AtmosphericDashboardComponent } from './dashboard/atmospheric-dashboard.component';
 import { AtmosPrivacyComponent } from './privacy/atmos-privacy.component';
+import { AtmosSettingsComponent } from './settings/atmos-settings.component';
 import { AtmosItemsComponent } from './item/atmos-items.component';
 import { AtmosItemGridComponent } from './item/grid/atmos-item-grid.component';
 import { AtmosItemPreviewComponent } from './item/preview/atmos-item-preview.component';
@@ -16,6 +17,7 @@ export const REDESIGN_ROUTES: Routes = [
     children: [
       { path: '', component: AtmosphericDashboardComponent, title: 'Sky Planner' },
       { path: 'privacy', component: AtmosPrivacyComponent, title: 'Privacy Policy' },
+      { path: 'settings', component: AtmosSettingsComponent, title: 'Settings' },
       {
         path: 'item',
         children: [

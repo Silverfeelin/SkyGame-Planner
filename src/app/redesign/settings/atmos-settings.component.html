@@ -1,0 +1,154 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Settings</h1>
+</header>
+
+<!-- Storage -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>storage</mat-icon> Storage</h2>
+    <p class="atmos-paragraph">
+      Your data is currently stored in <strong>{{ storageProviderName }}</strong>.
+      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">Storage page</a>.
+      If you want to transfer your data, export it first, then switch storage and import it back.
+    </p>
+    <div class="atmos-settings__btn-row">
+      <a class="atmos-btn" routerLink="/storage">
+        <mat-icon>database</mat-icon> Storage
+      </a>
+      <button type="button" class="atmos-btn" (click)="import()">
+        <mat-icon>download</mat-icon> Import
+      </button>
+      <button type="button" class="atmos-btn" (click)="export()">
+        <mat-icon>upload</mat-icon> Export
+      </button>
+      <button type="button" class="atmos-btn" (click)="clear()">
+        <mat-icon>delete</mat-icon> Clear
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- App (PWA) — only shown when the install prompt is available -->
+@if (pwaInstallPrompt) {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <h2 class="atmos-settings__section-title"><mat-icon>apps</mat-icon> App</h2>
+      <p class="atmos-paragraph">
+        Sky Planner can be installed as a PWA (Progressive Web App) on supported browsers,
+        making it easier to access than a bookmark.
+      </p>
+      <div class="atmos-settings__btn-row">
+        <button type="button" class="atmos-btn" (click)="promptPwa()">
+          <mat-icon>install_mobile</mat-icon> Install
+        </button>
+      </div>
+    </div>
+  </section>
+}
+
+<!-- Daily candles -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>wb_sunny</mat-icon> Daily candles</h2>
+    <p class="atmos-paragraph">
+      Enter a number to add regular candles to your
+      <a class="atmos-text-link" routerLink="/currency">Currency</a> page
+      when you complete daily quests on the dashboard. Set to 0 to disable.
+    </p>
+    <label class="atmos-settings__label">
+      Candles per daily check-in
+      <input class="atmos-settings__input" type="number" min="0" max="99"
+        [value]="dailyCandleAmount"
+        (change)="setDailyCandleAmount(+$any($event.target).value)">
+    </label>
+  </div>
+</section>
+
+<!-- Spirit trees -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>account_tree</mat-icon> Spirit trees</h2>
+    <p class="atmos-paragraph">
+      @if (unlockConnectedNodes) {
+        All items leading up to the one you unlock will also be unlocked.
+        Likewise, locking an item will lock the ones beyond it.
+      } @else {
+        When you unlock an item only that item will be unlocked.
+        You can choose to also unlock all preceding items.
+      }
+    </p>
+    <div class="atmos-settings__btn-row">
+      <button type="button" class="atmos-btn" [class.atmos-btn-active]="unlockConnectedNodes" (click)="toggleConnectedNodes()">
+        <mat-icon>{{ unlockConnectedNodes ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Unlock connected items
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Date -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>calendar_today</mat-icon> Date</h2>
+    <p class="atmos-paragraph">Change the date format. Today is {{ today | datetime: dateFormat }}.</p>
+    <div class="atmos-settings__btn-row">
+      @for (format of dateFormats; track format) {
+        <button type="button" class="atmos-btn" [class.atmos-btn-active]="dateFormat === format" (click)="setDateFormat(format)">
+          {{ format | lowercase }}
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Theme -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>palette</mat-icon> Theme</h2>
+    <div class="atmos-settings__btn-row">
+      @for (theme of themes; track theme.value) {
+        <button type="button" class="atmos-btn" [class.atmos-btn-active]="currentTheme === theme.value" (click)="selectTheme(theme)">
+          {{ theme.name }}
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Wiki -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>menu_book</mat-icon> Wiki</h2>
+    <div class="atmos-settings__btn-row">
+      <button type="button" class="atmos-btn" [class.atmos-btn-active]="wikiNewTab" (click)="toggleWikiTab()">
+        <mat-icon>{{ wikiNewTab ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Open wiki in new tab
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Keyboard shortcuts -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>keyboard</mat-icon> Keyboard shortcuts</h2>
+    <div class="atmos-settings__btn-row">
+      <button type="button" class="atmos-btn" (click)="viewKeyboardShortcuts()">
+        <mat-icon>keyboard</mat-icon> View shortcuts
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Debug info -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>bug_report</mat-icon> Debug info</h2>
+    <p class="atmos-paragraph">
+      Adds debugging information to various pages. Only relevant if you actively contribute to the project.
+    </p>
+    <div class="atmos-settings__btn-row">
+      <button type="button" class="atmos-btn" [class.atmos-btn-active]="debugVisible" (click)="toggleDebugInfo()">
+        <mat-icon>{{ debugVisible ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show debug info
+      </button>
+    </div>
+  </div>
+</section>
