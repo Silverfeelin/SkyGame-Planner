@@ -1,0 +1,133 @@
+<!-- TODO: Redo this page layout/styling according to new design -->
+@if (showTipUnlock()) {
+  <div class="atmos-card">
+    <div class="atmos-card__body">
+      Tip: Did you mean to {{ item()?.unlocked ? 'lock' : 'unlock' }} the item?
+      Go <a (click)="goBack()" class="atmos-text-link">back</a> and click on the price below the item!
+    </div>
+  </div>
+}
+
+@if (item(); as itm) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ itm.name }}</h1>
+  </header>
+
+  <section class="atmos-card">
+    <div class="atmos-card__body atmos-item-detail__body">
+      <!-- Media column -->
+      <div class="atmos-item-detail__media">
+        @if (itm.previewUrl) {
+          <div class="atmos-item-detail__preview-frame">
+            <img class="atmos-item-detail__preview-img" [src]="itm.previewUrl" loading="eager"/>
+            <app-item-icon class="atmos-item-detail__floating-icon" [item]="itm" [opaque]="true" [hoverGlow]="false"/>
+            <app-item-subicons [item]="itm" [showTooltips]="true" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']"/>
+          </div>
+        } @else {
+          <div class="atmos-item-detail__icon-frame">
+            <app-item-icon [item]="itm" [size]="'large'" [opaque]="true" [hoverGlow]="false"/>
+            <app-item-subicons [item]="itm" [showTooltips]="true" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']"/>
+          </div>
+        }
+      </div>
+
+      <!-- Info column -->
+      <ul class="atmos-item-detail__info">
+        @if (debugVisible) {
+          <li class="atmos-item-detail__row">
+            <mat-icon class="atmos-item-detail__icon">code</mat-icon>
+            <span>
+              ID: <code (click)="copy(itm.id)" class="atmos-item-detail__code">{{ itm.id }}</code>
+              GUID: <code (click)="copy(itm.guid)" class="atmos-item-detail__code">{{ itm.guid }}</code>
+              @if (itm.order) {
+                Order: <code (click)="copy(itm.order)" class="atmos-item-detail__code">{{ itm.order }}</code>
+              }
+            </span>
+          </li>
+        }
+        @if (itm._wiki?.href) {
+          <li class="atmos-item-detail__row">
+            <app-wiki-link [wiki]="itm._wiki"/>
+          </li>
+        }
+        <li class="atmos-item-detail__row atmos-item-detail__row--clickable" (click)="toggleFavourite()">
+          <mat-icon class="atmos-item-detail__icon" [class.is-favourited]="favourited()">star</mat-icon>
+          <span>{{ favourited() ? 'Unfavourite' : 'Favourite' }}</span>
+        </li>
+        @if (navSource(); as src) {
+          <li class="atmos-item-detail__row">
+            <a class="atmos-item-detail__link" [routerLink]="src.route" [queryParams]="src.extras?.queryParams">
+              <mat-icon class="atmos-item-detail__icon">search</mat-icon>
+              <span>Find item</span>
+            </a>
+          </li>
+        }
+        @if (navList(); as list) {
+          <li class="atmos-item-detail__row">
+            <a class="atmos-item-detail__link" [routerLink]="list.route" [queryParams]="list.extras?.queryParams">
+              <mat-icon class="atmos-item-detail__icon">list</mat-icon>
+              <span>Show in item list</span>
+            </a>
+          </li>
+        }
+        @if (itm.dye) {
+          <li class="atmos-item-detail__row">
+            <mat-icon class="atmos-item-detail__icon">palette</mat-icon>
+            <span>This item can be dyed.</span>
+            @if (itm.dye.previewUrl || itm.dye.infoUrl) {
+              <a class="atmos-text-link" (click)="dyePreviewMode.set(1)">Preview</a>
+            }
+          </li>
+          @if (itm.dye.primary?.cost || itm.dye.secondary?.cost) {
+            <li class="atmos-item-detail__row">
+              @if (itm.dye.primary?.cost) {
+                <mat-icon svgIcon="dye"/>
+                <span>Primary dye cost: {{ itm.dye.primary!.cost }} / {{ itm.dye.primary!.cost! * 2 }}</span>
+              }
+              @if (itm.dye.secondary?.cost) {
+                <mat-icon svgIcon="dye"/>
+                <span>Secondary dye cost: {{ itm.dye.secondary!.cost }} / {{ itm.dye.secondary!.cost! * 2 }}</span>
+              }
+            </li>
+          }
+        }
+        @if (itm.group === 'Limited') {
+          <li class="atmos-item-detail__row">
+            <mat-icon class="atmos-item-detail__icon">update_disabled</mat-icon>
+            <span>This is a limited item; it will likely not return.</span>
+          </li>
+        } @else if (itm.group === 'Ultimate') {
+          <li class="atmos-item-detail__row">
+            <mat-icon class="atmos-item-detail__icon">update_disabled</mat-icon>
+            <span>This is a season ultimate; it will likely not return.</span>
+          </li>
+        }
+        <li class="atmos-item-detail__row">
+          <a class="atmos-item-detail__link" [routerLink]="['/editor/item', itm.guid]">
+            <mat-icon class="atmos-item-detail__icon">edit</mat-icon>
+            <span>Suggest changes</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+} @else {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      Item not found. <a class="atmos-text-link" [routerLink]="['/r/item/grid']">Back to grid</a>
+    </div>
+  </section>
+}
+
+@if (dyePreviewMode() > 0) {
+  @let itm = item()!;
+  <app-overlay (close)="dyePreviewMode.set(0)">
+    @let src = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
+    <img [src]="src" (dblclick)="openSrc($event)"/>
+    @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
+      <span close class="link" (click)="preventDefault($event); dyePreviewMode.set(2)">Show dyeable parts</span>
+    } @else if (dyePreviewMode() === 2) {
+      <span close class="link" (click)="preventDefault($event); dyePreviewMode.set(1)">Show preview</span>
+    }
+  </app-overlay>
+}

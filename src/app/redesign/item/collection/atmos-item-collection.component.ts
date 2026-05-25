@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
@@ -29,7 +30,7 @@ interface IStorageData {
   templateUrl: './atmos-item-collection.component.html',
   styleUrl: './atmos-item-collection.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, IconComponent, AtmosItemGridLayoutComponent, AtmosItemQuickActionsComponent]
+  imports: [RouterLink, MatIcon, ReactiveFormsModule, IconComponent, AtmosItemGridLayoutComponent, AtmosItemQuickActionsComponent]
 })
 export class AtmosItemCollectionComponent {
   readonly allItems: ReadonlyArray<IItem>;
@@ -45,14 +46,16 @@ export class AtmosItemCollectionComponent {
 
   collections: Array<IItemCollection> = [];
 
+  readonly editForm = new FormGroup({
+    name: new FormControl('', { nonNullable: true }),
+    description: new FormControl('', { nonNullable: true }),
+    imageUrl: new FormControl('', { nonNullable: true }),
+  });
+
   @HostListener('window:beforeunload', ['$event'])
   beforeUnloadHandler(event: Event): void {
     if (this.editItems.length > 0) { event.preventDefault(); }
   }
-
-  @ViewChild('inpAddName', { static: true }) inpAddName?: ElementRef<HTMLInputElement>;
-  @ViewChild('inpAddDescription', { static: true }) inpAddDescription?: ElementRef<HTMLTextAreaElement>;
-  @ViewChild('inpAddImage', { static: true }) inpAddImage?: ElementRef<HTMLInputElement>;
 
   constructor(
     private readonly _storageService: StorageService,
@@ -61,6 +64,7 @@ export class AtmosItemCollectionComponent {
     private readonly _router: Router
   ) {
     this.allItems = this._dataService.itemConfig.items;
+    this.editForm.controls.imageUrl.valueChanges.subscribe(v => this.updateImgAdd(v ?? ''));
     this.loadStorage();
     this.readItemsFromUrl();
   }
@@ -122,12 +126,6 @@ export class AtmosItemCollectionComponent {
     this.editItems = Array.from(this.editItemSet);
   }
 
-  onInputImgAdd(evt: Event): void {
-    const target = evt.target as HTMLInputElement;
-    const value = target.value || '';
-    this.updateImgAdd(value);
-  }
-
   updateImgAdd(value: string): void {
     const regexHttp = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
     this.editImgSrc = regexHttp.test(value) ? value : '';
@@ -155,10 +153,11 @@ export class AtmosItemCollectionComponent {
   }
 
   saveCollection(): void {
+    const formValue = this.editForm.getRawValue();
     const collection: IItemCollection = {
       guid: this.editGuid || nanoid(10),
-      name: this.inpAddName?.nativeElement?.value || '',
-      description: this.inpAddDescription?.nativeElement?.value || '',
+      name: formValue.name,
+      description: formValue.description,
       imageUrl: this.editImgSrc || '',
       items: this.editItems
     };
@@ -209,10 +208,7 @@ export class AtmosItemCollectionComponent {
   clearEditForm(): void {
     this.editItems = [];
     this.editItemSet.clear();
-    if (this.inpAddName?.nativeElement) { this.inpAddName.nativeElement.value = ''; }
-    if (this.inpAddDescription?.nativeElement) { this.inpAddDescription.nativeElement.value = ''; }
-    if (this.inpAddImage?.nativeElement) { this.inpAddImage.nativeElement.value = ''; }
-    this.updateImgAdd('');
+    this.editForm.reset({ name: '', description: '', imageUrl: '' });
   }
 
   updateEditForm(collection: IItemCollection, evt?: Event): void {
@@ -221,10 +217,11 @@ export class AtmosItemCollectionComponent {
     if (this.editItems.length && !confirm('Copying this collection will overwrite your current selection to create a new collection. Continue?')) { return; }
     this.editItems = [...collection.items];
     this.editItemSet = new Set(this.editItems);
-    if (this.inpAddName?.nativeElement) { this.inpAddName.nativeElement.value = collection.name; }
-    if (this.inpAddDescription?.nativeElement) { this.inpAddDescription.nativeElement.value = collection.description; }
-    if (this.inpAddImage?.nativeElement) { this.inpAddImage.nativeElement.value = collection.imageUrl; }
-    this.updateImgAdd(collection.imageUrl || '');
+    this.editForm.setValue({
+      name: collection.name || '',
+      description: collection.description || '',
+      imageUrl: collection.imageUrl || ''
+    });
   }
 
   exportCollection(collection: IItemCollection, evt?: Event): void {

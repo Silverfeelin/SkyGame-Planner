@@ -9,10 +9,10 @@
 </p>
 
 <div class="atmos-coll__actions">
-  <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleShowAdd()" [class.atmos-btn-active]="showEdit && !editGuid">
+  <button type="button" class="atmos-btn" (click)="toggleShowAdd()" [class.atmos-btn-active]="showEdit && !editGuid">
     <mat-icon>add</mat-icon> Add collection
   </button>
-  <button type="button" class="atmos-btn atmos-btn--sm" (click)="importCollectionFile()">
+  <button type="button" class="atmos-btn" (click)="importCollectionFile()">
     <mat-icon>download</mat-icon> Import
   </button>
 </div>
@@ -22,19 +22,19 @@
   <section class="atmos-card atmos-card__body">
     <h2 class="atmos-coll__section-title">{{ editGuid ? 'Edit collection' : 'New collection' }}</h2>
 
-    <div class="atmos-coll__form">
+    <form class="atmos-coll__form" [formGroup]="editForm">
       <div class="atmos-coll__form-fields">
         <label class="atmos-coll__label">
           Name
-          <input #inpAddName class="atmos-coll__input" type="text" maxlength="100" placeholder="Collection name">
+          <input class="atmos-coll__input" type="text" maxlength="100" placeholder="Collection name" formControlName="name">
         </label>
         <label class="atmos-coll__label">
           Description
-          <textarea #inpAddDescription class="atmos-coll__input atmos-coll__textarea" maxlength="2000" placeholder="Optional description"></textarea>
+          <textarea class="atmos-coll__input atmos-coll__textarea" maxlength="2000" placeholder="Optional description" formControlName="description"></textarea>
         </label>
         <label class="atmos-coll__label">
           Image URL
-          <input #inpAddImage class="atmos-coll__input" type="text" (input)="onInputImgAdd($event)" placeholder="https://…">
+          <input class="atmos-coll__input" type="text" placeholder="https://…" formControlName="imageUrl">
           @if (editImgError) { <span class="atmos-coll__input-error">Please enter a valid https:// URL</span> }
         </label>
       </div>
@@ -43,7 +43,7 @@
           <img [src]="editImgSrc" class="atmos-coll__preview-img" alt="Preview">
         </div>
       }
-    </div>
+    </form>
 
     <!-- Selected items strip -->
     <div>
@@ -90,7 +90,7 @@
 }
 
 <!-- Collections list -->
-<div [hidden]="showEdit">
+<div [hidden]="showEdit" style="display: contents;">
   @if (collections.length === 0) {
     <section class="atmos-card atmos-card__body">
       <p class="atmos-coll__empty-hint">No collections yet. Click <strong>Add collection</strong> to get started.</p>
@@ -146,7 +146,7 @@
       @if (collection.items.length) {
         <div class="atmos-coll__items-strip atmos-card__body">
           @for (item of collection.items; track item.guid) {
-            <a class="atmos-coll__strip-item" [routerLink]="['/item', item.guid]" [title]="item.name">
+            <a class="atmos-coll__strip-item" [routerLink]="['/r/item', item.guid]" [title]="item.name">
               <app-icon [src]="item.icon || '/assets/icons/question.webp'"
                         width="48px" height="48px"
                         [lazy]="true" [draggable]="false"/>

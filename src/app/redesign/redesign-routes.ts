@@ -9,6 +9,7 @@ import { AtmosItemPreviewComponent } from './item/preview/atmos-item-preview.com
 import { AtmosItemDyeComponent } from './item/dye/atmos-item-dye.component';
 import { AtmosItemHeartsComponent } from './item/heart/atmos-item-hearts.component';
 import { AtmosItemCollectionComponent } from './item/collection/atmos-item-collection.component';
+import { AtmosItemDetailComponent } from './item/detail/atmos-item-detail.component';
 
 export const REDESIGN_ROUTES: Routes = [
   {
@@ -28,6 +29,7 @@ export const REDESIGN_ROUTES: Routes = [
           { path: 'dye',        component: AtmosItemDyeComponent,        title: 'Dye previews' },
           { path: 'heart',      component: AtmosItemHeartsComponent,     title: 'Hearts' },
           { path: 'collection', component: AtmosItemCollectionComponent, title: 'Collections' },
+          { path: ':guid',      component: AtmosItemDetailComponent,    title: 'Item' },
         ]
       }
     ]

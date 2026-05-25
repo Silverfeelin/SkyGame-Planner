@@ -1,0 +1,113 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-detail__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--atmos-gap);
+  align-items: start;
+}
+
+.atmos-item-detail__media {
+  display: flex;
+  justify-content: center;
+}
+
+.atmos-item-detail__preview-frame,
+.atmos-item-detail__icon-frame {
+  position: relative;
+  padding: var(--atmos-pad-compact);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  width: 100%;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.atmos-item-detail__preview-img {
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  display: block;
+}
+
+.atmos-item-detail__floating-icon {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+.atmos-item-detail__info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-detail__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &--clickable {
+    cursor: pointer;
+    border-radius: var(--atmos-radius-sm);
+    padding: 4px 6px;
+    margin: -4px -6px;
+    transition: background var(--atmos-transition);
+
+    &:hover {
+      background: var(--atmos-hover-tint);
+    }
+  }
+}
+
+.atmos-item-detail__icon {
+  flex-shrink: 0;
+
+  &.is-favourited {
+    color: var(--atmos-warm);
+  }
+}
+
+.atmos-item-detail__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--atmos-transition);
+
+  &:hover {
+    color: var(--atmos-accent);
+  }
+}
+
+.atmos-item-detail__code {
+  cursor: pointer;
+  transition: opacity var(--atmos-transition);
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .atmos-item-detail__body {
+    grid-template-columns: minmax(240px, 280px) 1fr;
+    gap: var(--atmos-pad);
+  }
+
+  .atmos-item-detail__media {
+    justify-content: flex-start;
+  }
+}

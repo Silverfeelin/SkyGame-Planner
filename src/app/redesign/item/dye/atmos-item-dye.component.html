@@ -7,7 +7,7 @@
 <atmos-item-grid-layout [items]="items" [itemTemplate]="dyeTpl" [initialCategory]="initialCategory"/>
 <ng-template #dyeTpl let-item>
   <a class="atmos-item-dye__item"
-     [routerLink]="['/item', item.guid]"
+     [routerLink]="['/r/item', item.guid]"
      [title]="item.name">
     <img class="atmos-item-dye__img" [src]="item.dye!.previewUrl" loading="lazy" draggable="false"/>
     <app-icon class="atmos-item-dye__icon"

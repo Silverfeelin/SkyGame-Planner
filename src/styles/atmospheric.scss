@@ -4,8 +4,8 @@
 /* Base card surface — frosted-glass panel used as the container for
    feature cards, list cards, and any other atmospheric card layout. */
 :root {
-  --atmos-hue: 160;
-  --atmos-bg-image: url(/assets/game/realms/Aviary.webp);
+  --atmos-hue: 240;
+  --atmos-bg-image: url(/assets/game/background/isle.webp);
 
   /* Surfaces. */
   --atmos-bg:        oklch(0.18 0.02 var(--atmos-hue));
@@ -261,7 +261,7 @@
 }
 
 :root[data-theme="cozy"] {
-  --atmos-hue: 140;
+  --atmos-hue: 150;
   --atmos-bg-image: url(/assets/game/realms/Aviary.webp);
 }
 

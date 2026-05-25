@@ -8,7 +8,7 @@
 <ng-template #iconTpl let-item>
   <a class="atmos-item-grid__item"
      [class.is-locked]="!item.unlocked"
-     [routerLink]="['/item', item.guid]"
+     [routerLink]="['/r/item', item.guid]"
      [title]="item.name">
     <app-icon
       [src]="item.icon || '/assets/icons/question.webp'"
