@@ -37,6 +37,7 @@
 
   /* Cards. */
   --atmos-card-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
+  --atmos-card-bg-solid: oklch(0.20 0.035 var(--atmos-hue));
   --atmos-card-border: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
   --atmos-card-shadow:
     0 30px 60px -30px oklch(0.04 0.02 var(--atmos-hue) / 0.7),
