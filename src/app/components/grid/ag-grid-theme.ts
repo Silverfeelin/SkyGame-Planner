@@ -43,5 +43,6 @@ export const getAtmosAgTheme = (): ReturnType<typeof themeQuartz.withParams> => 
     borderColor: v('--atmos-line-soft'),
     accentColor: v('--atmos-accent'),
     menuBackgroundColor: v('--atmos-card-bg-solid'),
+    pickerListBackgroundColor: v('--atmos-card-bg-solid'),
   });
 };
