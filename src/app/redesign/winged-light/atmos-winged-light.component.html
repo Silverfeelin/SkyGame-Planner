@@ -7,20 +7,7 @@
   </div>
 </header>
 
-<div class="atmos-page__quick-actions">
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/col">
-    <mat-icon svgIcon="flaps"></mat-icon>
-    <span>Children of Light ({{ col() }} / {{ totalCol() }})</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/wing-buff">
-    <mat-icon>air</mat-icon>
-    <span>Wing Buffs ({{ wb() }} / {{ totalWb() }})</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Winged_Light" target="_blank" rel="noopener">
-    <mat-icon>open_in_new</mat-icon>
-    <span>Wiki</span>
-  </a>
-</div>
+<atmos-winged-light-quick-actions/>
 
 <section class="atmos-card atmos-card__body atmos-winged-light__overview">
   <p class="atmos-paragraph">
@@ -56,8 +43,7 @@
           <mat-icon>{{ b.icon }}</mat-icon>
         }
         @if (b.link) {
-          <a class="atmos-text-link" [routerLink]="b.link"
-            [queryParams]="b.queryType ? { type: b.queryType } : null">
+          <a class="atmos-text-link" [routerLink]="b.link">
             {{ b.label }}
           </a>
         } @else {

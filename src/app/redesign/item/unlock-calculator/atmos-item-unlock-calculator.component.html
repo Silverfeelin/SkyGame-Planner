@@ -1,8 +1,8 @@
+<atmos-item-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Unlock calculator</h1>
 </header>
-
-<atmos-item-quick-actions/>
 
 <section class="atmos-card">
   <div class="atmos-card__body">
@@ -80,7 +80,7 @@
       @if (trees.length) {
         <div>
           <button type="button" class="atmos-btn atmos-btn--sm"
-            [class.atmos-btn-active]="showAsTrees" (click)="toggleShowAsTrees()">
+            [class.atmos-btn--active]="showAsTrees" (click)="toggleShowAsTrees()">
             <mat-icon>account_tree</mat-icon> Show spirit trees
           </button>
           <p class="atmos-paragraph">
@@ -233,7 +233,7 @@
 
 <!-- Add items -->
 <div class="atmos-item-unlock-calc__expand">
-  <button type="button" class="atmos-btn" [class.atmos-btn-active]="showAddItems()" (click)="toggleSection('items')">
+  <button type="button" class="atmos-btn" [class.atmos-btn--active]="showAddItems()" (click)="toggleSection('items')">
     <mat-icon>{{ showAddItems() ? 'expand_less' : 'add' }}</mat-icon> Add items
   </button>
 </div>

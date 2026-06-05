@@ -57,7 +57,7 @@
       <div class="atmos-calc__row">
         <span class="atmos-calc__label">Season Pass:</span>
         <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn-active]="hasSeasonPass"
+                [class.atmos-btn--active]="hasSeasonPass"
                 (click)="toggleSeasonPass()">
           <mat-icon>{{ hasSeasonPass ? 'check' : 'close' }}</mat-icon>
           {{ hasSeasonPass ? 'owned' : 'not owned' }}
@@ -80,7 +80,7 @@
       <div class="atmos-calc__row">
         <span class="atmos-calc__label">Today's candles:</span>
         <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn-active]="includesToday"
+                [class.atmos-btn--active]="includesToday"
                 (click)="toggleIncludesToday()">
           <mat-icon>{{ includesToday ? 'check' : 'close' }}</mat-icon>
           {{ includesToday ? 'obtained' : 'not obtained' }}

@@ -10,7 +10,7 @@ export interface INavItem {
 export const REDESIGN_NAV: ReadonlyArray<INavItem> = [
   { icon: 'home',                            label: 'Sky Planner',  link: '/r',             exact: true },
   { icon: 'today',                           label: 'Daily',        link: '/r/daily' },
-  { icon: 'wallet',       svgIcon: 'candle', label: 'Currency',     link: '/r/currency' },
+  { icon: 'wallet',       svgIcon: 'candle', label: 'Currencies',   link: '/r/currency' },
   { icon: 'checkroom',                       label: 'Items',        link: '/r/item' },
   { icon: 'person',                          label: 'Spirits',      link: '/r/spirit' },
   { icon: 'air',          svgIcon: 'flaps',  label: 'Winged Light', link: '/r/winged-light' },

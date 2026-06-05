@@ -10,6 +10,7 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
 import { DateHelper } from '@app/helpers/date-helper';
+import { AtmosCurrencyQuickActionsComponent } from './quick-actions/atmos-currency-quick-actions.component';
 
 interface IGains {
   candles: string;
@@ -25,7 +26,7 @@ interface IGains {
   templateUrl: './atmos-currency.component.html',
   styleUrl: './atmos-currency.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, RouterLink, NgTemplateOutlet]
+  imports: [MatIcon, NgbTooltip, RouterLink, NgTemplateOutlet, AtmosCurrencyQuickActionsComponent]
 })
 export class AtmosCurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;

@@ -1,15 +1,15 @@
+<atmos-item-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Item collections</h1>
 </header>
-
-<atmos-item-quick-actions/>
 
 <p class="atmos-paragraph">
   On this page you can save your own item collections. Use these to keep track of your favourite outfits, plan for upcoming items or anything else!
 </p>
 
 <div class="atmos-coll__actions">
-  <button type="button" class="atmos-btn" (click)="toggleShowAdd()" [class.atmos-btn-active]="showEdit && !editGuid">
+  <button type="button" class="atmos-btn" (click)="toggleShowAdd()" [class.atmos-btn--active]="showEdit && !editGuid">
     <mat-icon>add</mat-icon> Add collection
   </button>
   <button type="button" class="atmos-btn" (click)="importCollectionFile()">

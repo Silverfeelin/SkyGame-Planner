@@ -1,0 +1,11 @@
+<section class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/r/spirit"><mat-icon>person</mat-icon> All spirits</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/r/spirit" [queryParams]="{ type: 'Regular' }"><mat-icon svgIcon="candle"></mat-icon> Regular spirits</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/r/spirit" [queryParams]="{ type: 'Elder' }"><mat-icon svgIcon="ascended-candle"></mat-icon> Elder spirits</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/r/spirit" [queryParams]="{ type: 'Season' }"><mat-icon svgIcon="season-candle"></mat-icon> Season spirits</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/r/spirit" [queryParams]="{ type: 'Guide' }"><mat-icon svgIcon="season-heart"></mat-icon> Season guides</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/r/ts"><mat-icon>hiking</mat-icon> Traveling spirits</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/r/rs"><mat-icon>flight</mat-icon> Special visits</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/r/spirit/elusive"><mat-icon>timer</mat-icon> Elusive spirits</a>
+  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Spirits" target="_blank" rel="noopener"><mat-icon>menu_book</mat-icon> Wiki</a>
+</section>

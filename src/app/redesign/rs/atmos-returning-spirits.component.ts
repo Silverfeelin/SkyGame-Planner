@@ -8,8 +8,7 @@ import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { AgSpiritsRendererComponent } from '@app/components/grid/renderers/ag-spirits-renderer/ag-spirits-renderer.component';
-import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
-import { CalendarLinkComponent } from '@app/components/util/calendar-link/calendar-link.component';
+import { AtmosSpiritQuickActionsComponent } from '@app/redesign/spirit/quick-actions/atmos-spirit-quick-actions.component';
 
 /**
  * Atmospheric returning-spirits (Special Visits) list. Port of legacy
@@ -20,7 +19,7 @@ import { CalendarLinkComponent } from '@app/components/util/calendar-link/calend
   templateUrl: './atmos-returning-spirits.component.html',
   styleUrl: './atmos-returning-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, WikiLinkComponent, CalendarLinkComponent]
+  imports: [AgGridAngular, AtmosSpiritQuickActionsComponent]
 })
 export class AtmosReturningSpiritsComponent {
   private readonly _dataService = inject(DataService);

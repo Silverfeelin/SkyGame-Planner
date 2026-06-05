@@ -1,8 +1,8 @@
+<atmos-item-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Item inflation</h1>
 </header>
-
-<atmos-item-quick-actions/>
 
 <section class="atmos-card">
   <div class="atmos-card__body">
@@ -27,11 +27,11 @@
     </app-item-type-selector>
     <div class="atmos-item-inflation__toggles">
       <button type="button" class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="includeSeasons" (click)="toggleIncludeSeasons()">
+        [class.atmos-btn--active]="includeSeasons" (click)="toggleIncludeSeasons()">
         Show season items
       </button>
       <button type="button" class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="includeEvents" (click)="toggleIncludeEvents()">
+        [class.atmos-btn--active]="includeEvents" (click)="toggleIncludeEvents()">
         Show event items
       </button>
     </div>

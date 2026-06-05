@@ -1,7 +1,11 @@
+:host {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 img {
   height: 100%;
-  width: 100%;
-  max-width: 48px;
-  max-height: 48px;
+  width: auto;
   object-fit: contain;
 }

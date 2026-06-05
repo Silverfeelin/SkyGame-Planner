@@ -2,18 +2,18 @@ import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/c
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgAtmosItemIconRendererComponent } from '@app/redesign/grid/renderers/ag-atmos-item-icon-renderer/ag-atmos-item-icon-renderer.component';
 import { AgUnlockedRendererComponent } from '@app/components/grid/renderers/ag-unlocked-renderer/ag-unlocked-renderer.component';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
-import { IItem } from 'skygame-data';
+import { IItem, ItemType } from 'skygame-data';
+import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { AtmosItemQuickActionsComponent } from './quick-actions/atmos-item-quick-actions.component';
 
-const boolFilterParams = {
-  filterOptions: ['equals', 'notEqual', 'blank', 'notBlank'],
-  maxNumConditions: 2,
-  buttons: ['reset' as const]
-};
+const itemTypePipe = new ItemTypePipe();
+const typeFilterValues = Object.values(ItemType).map(t => ({ value: t, label: itemTypePipe.transform(t) }));
+const boolFilterValues = ['Yes', 'No'];
 
 const textFilterParams = {
   filterOptions: ['equals', 'notEqual', 'contains', 'notContains', 'blank', 'notBlank'],
@@ -37,17 +37,17 @@ export class AtmosItemsComponent {
     { field: 'nr', headerName: '#', width: 90, filter: 'agNumberColumnFilter', initialSort: 'asc', sortingOrder: ['asc', 'desc'] },
     { field: 'item', headerName: 'Image', width: 80, sortable: false, filter: false, cellRenderer: AgAtmosItemIconRendererComponent },
     { field: 'name', headerName: 'Name', filter: 'agTextColumnFilter', filterParams: textFilterParams, flex: 1, minWidth: 200 },
-    { field: 'type', headerName: 'Type', width: 160, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'group', headerName: 'Group', width: 130, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },
-    { field: 'favourited', headerName: 'Favourited', width: 130, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
-    { field: 'starter', headerName: 'Starter', width: 110, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
+    { field: 'type', headerName: 'Type', width: 160, filter: AgSetFilterComponent, filterParams: { values: typeFilterValues } },
+    { field: 'group', headerName: 'Group', width: 130, filter: AgSetFilterComponent, filterParams: { values: ['Elder', 'SeasonPass', 'Ultimate', 'Limited'], includeBlanks: true } },
+    { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },
+    { field: 'favourited', headerName: 'Favourited', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
+    { field: 'starter', headerName: 'Starter', width: 110, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
     { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: 'agNumberColumnFilter' },
-    { field: 'returned', headerName: 'Returned', width: 120, filter: 'agTextColumnFilter', filterParams: boolFilterParams, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
+    { field: 'returned', headerName: 'Returned', width: 120, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
     { field: 'spirit', headerName: 'Spirit', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
     { field: 'season', headerName: 'Season', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
     { field: 'event', headerName: 'Event', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'realm', headerName: 'Realm', width: 160, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'realm', headerName: 'Realm', width: 160, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
     { field: 'iap', headerName: 'IAP', width: 130, filter: 'agTextColumnFilter', filterParams: textFilterParams }
   ];
 
@@ -57,6 +57,9 @@ export class AtmosItemsComponent {
   readonly unlockedCount: ReturnType<typeof computed<number>>;
 
   constructor(private readonly _dataService: DataService) {
+    const realmColDef = this.colDefs.find(c => c.field === 'realm')!;
+    realmColDef.filterParams.values = this._dataService.realmConfig.items.map(r => r.name);
+
     this._items = ItemHelper.sortItems(this._dataService.itemConfig.items.slice());
     this.rowData = this._items.map((item, i) => this.buildRow(item, i));
     this.totalCount = signal(this._items.length);

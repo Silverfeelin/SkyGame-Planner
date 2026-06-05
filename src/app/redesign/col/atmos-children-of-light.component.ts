@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, NgZone, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { MatIcon } from '@angular/material/icon';
 import { SubscriptionLike } from 'rxjs';
@@ -7,12 +7,14 @@ import L, { LeafletKeyboardEvent } from 'leaflet';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridApi, GridReadyEvent, ValueGetterParams } from 'ag-grid-community';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { MapInstanceService } from '@app/services/map-instance.service';
 import { IMapInit } from '@app/services/map.service';
 import { IArea, IWingedLight } from 'skygame-data';
+import { AtmosWingedLightQuickActionsComponent } from '../winged-light/quick-actions/atmos-winged-light-quick-actions.component';
 
 interface IRow {
   area: IArea;
@@ -33,7 +35,7 @@ interface IMapWingedLight {
   styleUrl: './atmos-children-of-light.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [MapInstanceService],
-  imports: [MatIcon, RouterLink, AgGridAngular]
+  imports: [MatIcon, AgGridAngular, AtmosWingedLightQuickActionsComponent]
 })
 export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;
@@ -80,7 +82,8 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       headerName: 'Realm',
       flex: 1,
       minWidth: 150,
-      filter: 'agTextColumnFilter',
+      filter: AgSetFilterComponent,
+      filterParams: { values: [] as string[], includeBlanks: true },
       cellRenderer: AgRouteRendererComponent,
       filterValueGetter: (p: ValueGetterParams) => p.data.realm?.label ?? ''
     }
@@ -110,6 +113,9 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     private readonly _breakpointObserver: BreakpointObserver,
     private readonly _zone: NgZone,
   ) {
+    const realmColDef = this.colDefs.find(c => c.field === 'realm')!;
+    realmColDef.filterParams.values = this._dataService.realmConfig.items.map(r => r.name);
+
     this.unlockedCol = _storageService.getWingedLights().size;
     this.totalCol = this._dataService.wingedLightConfig.items.length;
 

@@ -11,10 +11,12 @@ import { SpiritHelper } from '@app/helpers/spirit-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DataService } from '@app/services/data.service';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgImageRendererComponent } from '@app/components/grid/renderers/ag-image-renderer/ag-image-renderer.component';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
 import { AgSpiritTypeRendererComponent } from '@app/components/grid/renderers/ag-spirit-type-renderer/ag-spirit-type-renderer.component';
+import { AtmosSpiritQuickActionsComponent } from '../quick-actions/atmos-spirit-quick-actions.component';
 
 /**
  * Atmospheric spirits list (AG-Grid). Port of legacy `SpiritsComponent`.
@@ -24,7 +26,7 @@ import { AgSpiritTypeRendererComponent } from '@app/components/grid/renderers/ag
   templateUrl: './atmos-spirits.component.html',
   styleUrl: './atmos-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular]
+  imports: [AgGridAngular, AtmosSpiritQuickActionsComponent]
 })
 export class AtmosSpiritsComponent {
   private readonly _dataService = inject(DataService);
@@ -34,6 +36,7 @@ export class AtmosSpiritsComponent {
   readonly theme = getAtmosAgTheme();
   readonly rowData = signal<any[]>([]);
   readonly totalCount = signal<number>(0);
+  readonly filteredCount = signal<number>(0);
 
   private readonly WIDE_WIDTH = 992;
   private _api?: GridApi;
@@ -53,13 +56,8 @@ export class AtmosSpiritsComponent {
     },
     {
       field: 'type', headerName: 'Type', width: 100,
-      filter: 'agTextColumnFilter',
-      filterParams: {
-        filterOptions: ['equals', 'notEqual', 'contains', 'notContains'],
-        defaultOption: 'contains',
-        maxNumConditions: 6,
-        buttons: ['reset']
-      },
+      filter: AgSetFilterComponent,
+      filterParams: { values: ['Regular', 'Elder', 'Season', 'Guide', 'Event', 'Special'] },
       cellRenderer: AgSpiritTypeRendererComponent
     },
     {
@@ -110,22 +108,28 @@ export class AtmosSpiritsComponent {
     this.updateDateColumnVisibility();
     this._api.autoSizeColumns(['type']);
     this.applyInitialTypeFilter();
+    this.onModelUpdated();
   }
 
   getRowHeight = (): number | undefined => (this._wide ? 128 : 64);
 
+  /** Fires on row data changes and filter changes; keeps the visible count in sync. */
+  onModelUpdated(): void {
+    if (!this._api) { return; }
+    this.filteredCount.set(this._api.getDisplayedRowCount());
+  }
+
+  /** Resets all column filters, then applies the type filter from the query params (if any). */
   private applyInitialTypeFilter(): void {
+    if (!this._api) { return; }
     const type = this._route.snapshot.queryParamMap.get('type');
-    if (!type || !this._api) { return; }
-    const values = type.split(',').map(v => v.trim()).filter(v => v);
-    if (!values.length) { return; }
+    const values = type?.split(',').map(v => v.trim()).filter(v => v) ?? [];
+    if (!values.length) {
+      this._api.setFilterModel(null);
+      return;
+    }
 
-    const condition = (v: string) => ({ filterType: 'text', type: 'equals', filter: v });
-    const typeModel = values.length === 1
-      ? condition(values[0])
-      : { filterType: 'text', operator: 'OR', conditions: values.map(condition) };
-
-    this._api.setColumnFilterModel('type', typeModel).then(() => this._api?.onFilterChanged());
+    this._api.setFilterModel({ type: { values } });
   }
 
   private updateColumns(wide: boolean): void {

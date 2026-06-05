@@ -10,8 +10,7 @@ import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgImageRendererComponent } from '@app/components/grid/renderers/ag-image-renderer/ag-image-renderer.component';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
-import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
-import { CalendarLinkComponent } from '@app/components/util/calendar-link/calendar-link.component';
+import { AtmosSpiritQuickActionsComponent } from '@app/redesign/spirit/quick-actions/atmos-spirit-quick-actions.component';
 
 /**
  * Atmospheric traveling spirits list. Port of legacy `TravelingSpiritsComponent`.
@@ -21,7 +20,7 @@ import { CalendarLinkComponent } from '@app/components/util/calendar-link/calend
   templateUrl: './atmos-traveling-spirits.component.html',
   styleUrl: './atmos-traveling-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, WikiLinkComponent, CalendarLinkComponent]
+  imports: [AgGridAngular, AtmosSpiritQuickActionsComponent]
 })
 export class AtmosTravelingSpiritsComponent {
   private readonly _dataService = inject(DataService);

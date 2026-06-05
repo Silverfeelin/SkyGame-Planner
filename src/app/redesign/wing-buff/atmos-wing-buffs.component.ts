@@ -1,14 +1,14 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { MatIcon } from '@angular/material/icon';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AgGridAngular, ICellRendererAngularComp } from 'ag-grid-angular';
 import { ColDef, GridApi, GridReadyEvent, ValueGetterParams } from 'ag-grid-community';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgSpiritTypeRendererComponent } from '@app/components/grid/renderers/ag-spirit-type-renderer/ag-spirit-type-renderer.component';
 import { AgAtmosSpiritLinkRendererComponent } from '@app/redesign/grid/renderers/ag-atmos-spirit-link-renderer/ag-atmos-spirit-link-renderer.component';
 import { DataService } from '@app/services/data.service';
 import { IItem, ISpirit, ItemType, SpiritType } from 'skygame-data';
+import { AtmosWingedLightQuickActionsComponent } from '../winged-light/quick-actions/atmos-winged-light-quick-actions.component';
 
 interface IOriginLink { name: string; route: Array<string>; }
 
@@ -37,18 +37,12 @@ class AgAtmosWingBuffOriginRendererComponent implements ICellRendererAngularComp
   templateUrl: './atmos-wing-buffs.component.html',
   styleUrl: './atmos-wing-buffs.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular, RouterLink, MatIcon]
+  imports: [AgGridAngular, AtmosWingedLightQuickActionsComponent]
 })
 export class AtmosWingBuffsComponent {
   readonly theme = getAtmosAgTheme();
-  readonly type = signal<SpiritType | undefined>(undefined);
-  readonly allRows = signal<ReadonlyArray<IRow>>([]);
-  readonly rows = computed<ReadonlyArray<IRow>>(() => {
-    const t = this.type();
-    return t ? this.allRows().filter(r => r.type === t) : this.allRows();
-  });
-  readonly unlocked = computed(() => this.rows().reduce((sum, r) => sum + r.unlocked, 0));
-  readonly total = computed(() => this.rows().reduce((sum, r) => sum + r.total, 0));
+  unlocked = 0;
+  total = 0;
 
   api?: GridApi;
 
@@ -65,8 +59,10 @@ export class AtmosWingBuffsComponent {
     {
       headerName: 'Type',
       width: 100,
-      sortable: false,
+      filter: AgSetFilterComponent,
+      filterParams: { values: ['Regular', 'Elder', 'Season', 'Guide', 'Event', 'Special'] },
       valueGetter: (p: ValueGetterParams) => p.data.type,
+      filterValueGetter: (p: ValueGetterParams) => p.data.type ?? '',
       cellRenderer: AgSpiritTypeRendererComponent
     },
     {
@@ -93,7 +89,7 @@ export class AtmosWingBuffsComponent {
 
   rowData: IRow[] = [];
 
-  constructor(dataService: DataService, route: ActivatedRoute) {
+  constructor(dataService: DataService) {
     const wingBuffs = dataService.itemConfig.items.filter(item => item.type === ItemType.WingBuff);
 
     const regularSpirits = new Set<ISpirit>();
@@ -147,16 +143,9 @@ export class AtmosWingBuffsComponent {
       };
     });
 
-    this.allRows.set(rows);
     this.rowData = rows;
-
-    route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(params => {
-      const t = params.get('type') as SpiritType | null;
-      this.type.set(t ?? undefined);
-      // Re-bind row data after filter changes.
-      this.rowData = this.rows() as IRow[];
-      this.api?.setGridOption('rowData', this.rowData);
-    });
+    this.unlocked = rows.reduce((sum, r) => sum + r.unlocked, 0);
+    this.total = rows.reduce((sum, r) => sum + r.total, 0);
   }
 
   onGridReady(evt: GridReadyEvent): void {

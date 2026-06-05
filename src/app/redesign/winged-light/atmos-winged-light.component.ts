@@ -4,6 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemType } from 'skygame-data';
+import { AtmosWingedLightQuickActionsComponent } from './quick-actions/atmos-winged-light-quick-actions.component';
 
 interface IBreakdown {
   label: string;
@@ -12,7 +13,6 @@ interface IBreakdown {
   icon?: string;
   svgIcon?: string;
   link?: string;
-  queryType?: 'Regular' | 'Season';
 }
 
 @Component({
@@ -20,7 +20,7 @@ interface IBreakdown {
   templateUrl: './atmos-winged-light.component.html',
   styleUrl: './atmos-winged-light.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon]
+  imports: [RouterLink, MatIcon, AtmosWingedLightQuickActionsComponent]
 })
 export class AtmosWingedLightComponent {
   readonly wedges: ReadonlyArray<number> = [1, 2, 5, 10, 20, 35, 55, 75, 100, 120, 150, 200, 250, 300];
@@ -56,16 +56,14 @@ export class AtmosWingedLightComponent {
       unlocked: this.regularUnlocked(),
       total: this.regularCount(),
       icon: 'person',
-      link: '/r/wing-buff',
-      queryType: 'Regular'
+      link: '/r/wing-buff'
     },
     {
       label: 'Wing buffs from seasonal spirits',
       unlocked: this.seasonUnlocked(),
       total: this.seasonCount(),
       icon: 'event',
-      link: '/r/wing-buff',
-      queryType: 'Season'
+      link: '/r/wing-buff'
     }
   ]);
 

@@ -52,7 +52,7 @@
     <h2 class="atmos-settings__section-title"><mat-icon>wb_sunny</mat-icon> Daily candles</h2>
     <p class="atmos-paragraph">
       Enter a number to add regular candles to your
-      <a class="atmos-text-link" routerLink="/currency">Currency</a> page
+      <a class="atmos-text-link" routerLink="/r/currency">Currency</a> page
       when you complete daily quests on the dashboard. Set to 0 to disable.
     </p>
     <label class="atmos-settings__label">
@@ -78,7 +78,7 @@
       }
     </p>
     <div class="atmos-settings__btn-row">
-      <button type="button" class="atmos-btn" [class.atmos-btn-active]="unlockConnectedNodes" (click)="toggleConnectedNodes()">
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="unlockConnectedNodes" (click)="toggleConnectedNodes()">
         <mat-icon>{{ unlockConnectedNodes ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Unlock connected items
       </button>
     </div>
@@ -92,7 +92,7 @@
     <p class="atmos-paragraph">Change the date format. Today is {{ today | datetime: dateFormat }}.</p>
     <div class="atmos-settings__btn-row">
       @for (format of dateFormats; track format) {
-        <button type="button" class="atmos-btn" [class.atmos-btn-active]="dateFormat === format" (click)="setDateFormat(format)">
+        <button type="button" class="atmos-btn" [class.atmos-btn--active]="dateFormat === format" (click)="setDateFormat(format)">
           {{ format | lowercase }}
         </button>
       }
@@ -106,7 +106,7 @@
     <h2 class="atmos-settings__section-title"><mat-icon>palette</mat-icon> Theme</h2>
     <div class="atmos-settings__btn-row">
       @for (theme of themes; track theme.value) {
-        <button type="button" class="atmos-btn" [class.atmos-btn-active]="currentTheme === theme.value" (click)="selectTheme(theme)">
+        <button type="button" class="atmos-btn" [class.atmos-btn--active]="currentTheme === theme.value" (click)="selectTheme(theme)">
           {{ theme.name }}
         </button>
       }
@@ -119,7 +119,7 @@
   <div class="atmos-card__body">
     <h2 class="atmos-settings__section-title"><mat-icon>menu_book</mat-icon> Wiki</h2>
     <div class="atmos-settings__btn-row">
-      <button type="button" class="atmos-btn" [class.atmos-btn-active]="wikiNewTab" (click)="toggleWikiTab()">
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="wikiNewTab" (click)="toggleWikiTab()">
         <mat-icon>{{ wikiNewTab ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Open wiki in new tab
       </button>
     </div>
@@ -146,7 +146,7 @@
       Adds debugging information to various pages. Only relevant if you actively contribute to the project.
     </p>
     <div class="atmos-settings__btn-row">
-      <button type="button" class="atmos-btn" [class.atmos-btn-active]="debugVisible" (click)="toggleDebugInfo()">
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugVisible" (click)="toggleDebugInfo()">
         <mat-icon>{{ debugVisible ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show debug info
       </button>
     </div>

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DateTime } from 'luxon';
@@ -8,9 +9,11 @@ import { ISpirit } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgImageRendererComponent } from '@app/components/grid/renderers/ag-image-renderer/ag-image-renderer.component';
 import { AgRouteRendererComponent } from '@app/components/grid/renderers/ag-route-renderer/ag-route-renderer.component';
 import { AgDateRendererComponent } from '@app/components/grid/renderers/ag-date-renderer/ag-date-renderer.component';
+import { AtmosSpiritQuickActionsComponent } from '../quick-actions/atmos-spirit-quick-actions.component';
 
 interface ILastVisit {
   spirit: ISpirit;
@@ -28,7 +31,7 @@ interface ILastVisit {
   templateUrl: './atmos-elusive-spirits.component.html',
   styleUrl: './atmos-elusive-spirits.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AgGridAngular]
+  imports: [AgGridAngular, RouterLink, AtmosSpiritQuickActionsComponent]
 })
 export class AtmosElusiveSpiritsComponent {
   private readonly _dataService = inject(DataService);
@@ -56,7 +59,7 @@ export class AtmosElusiveSpiritsComponent {
       initialSort: 'desc', sortingOrder: ['desc', 'asc'],
       cellRenderer: (p: any) => `<span class="c-old fw-bold">${p.value}</span>`
     },
-    { field: 'type', headerName: 'Last visit', width: 150, filter: 'agTextColumnFilter' },
+    { field: 'type', headerName: 'Last visit', width: 150, filter: AgSetFilterComponent, filterParams: { values: ['Season', 'Traveling Spirit', 'Special Visit'] } },
     {
       field: 'date', headerName: 'Start', width: 120,
       cellRenderer: AgDateRendererComponent,

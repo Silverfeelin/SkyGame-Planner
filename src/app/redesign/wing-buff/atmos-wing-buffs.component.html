@@ -1,25 +1,13 @@
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Wing Buffs</h1>
   <div class="atmos-wing-buffs__count" aria-live="polite">
-    @if (type(); as t) {
-      <span class="atmos-wing-buffs__count-type">{{ t }}:</span>
-    }
-    <strong [class.atmos-wing-buffs__count-complete]="unlocked() === total() && total() > 0">{{ unlocked() }}</strong>
-    <span class="atmos-wing-buffs__count-sep"> / {{ total() }}</span>
+    <strong [class.atmos-wing-buffs__count-complete]="unlocked === total && total > 0">{{ unlocked }}</strong>
+    <span class="atmos-wing-buffs__count-sep"> / {{ total }}</span>
     <span class="atmos-wing-buffs__count-label"> wing buffs</span>
   </div>
 </header>
 
-<div class="atmos-page__quick-actions">
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/winged-light">
-    <mat-icon>arrow_back</mat-icon>
-    <span>Winged Light</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Wing_Buffs" target="_blank" rel="noopener">
-    <mat-icon>open_in_new</mat-icon>
-    <span>Wiki</span>
-  </a>
-</div>
+<atmos-winged-light-quick-actions/>
 
 <div class="atmos-card atmos-wing-buffs__grid-card">
   <ag-grid-angular

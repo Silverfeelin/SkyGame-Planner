@@ -3,9 +3,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'atmos-item-quick-actions',
-  templateUrl: './atmos-item-quick-actions.component.html',
+  selector: 'atmos-currency-quick-actions',
+  templateUrl: './atmos-currency-quick-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink, RouterLinkActive, MatIcon]
 })
-export class AtmosItemQuickActionsComponent {}
+export class AtmosCurrencyQuickActionsComponent {}

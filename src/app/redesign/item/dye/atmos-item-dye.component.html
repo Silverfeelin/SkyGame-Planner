@@ -1,8 +1,12 @@
+<atmos-item-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Dye previews</h1>
 </header>
 
-<atmos-item-quick-actions/>
+<p class="atmos-paragraph">
+  This page shows dye previews for items that support dyeing. You can view more details on the item page by clicking on an item below.
+</p>
 
 <atmos-item-grid-layout [items]="items" [itemTemplate]="dyeTpl" [initialCategory]="initialCategory"/>
 <ng-template #dyeTpl let-item>

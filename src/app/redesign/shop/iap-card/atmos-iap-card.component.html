@@ -61,14 +61,14 @@
     <div class="atmos-iap-card__actions">
       <button type="button"
         class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="iap().bought"
+        [class.atmos-btn--active]="iap().bought"
         (click)="onPurchasedClick($event)">
         <mat-icon>shopping_cart</mat-icon>
         <span>Bought</span>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="iap().gifted"
+        [class.atmos-btn--active]="iap().gifted"
         (click)="onGiftedClick($event)">
         <mat-icon>card_giftcard</mat-icon>
         <span>Gifted</span>

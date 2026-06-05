@@ -8,6 +8,7 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { INestingStorageData, nestingStorageKey } from '@app/components/shops/shop-nesting/shop-nesting.interface';
 import { ICost, INode, IItemListNode, IIAP, ISeason, IEvent, IEventInstance, IItem } from 'skygame-data';
+import { AtmosCurrencyQuickActionsComponent } from '../quick-actions/atmos-currency-quick-actions.component';
 
 interface IOtherCost {
   name: string;
@@ -36,7 +37,7 @@ interface IInstanceCostData {
   templateUrl: './atmos-currency-spent.component.html',
   styleUrl: './atmos-currency-spent.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe]
+  imports: [MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe, AtmosCurrencyQuickActionsComponent]
 })
 export class AtmosCurrencySpentComponent {
   readonly total: IInstanceCost = { cost: CostHelper.create(), price: 0, nodes: [], listNodes: [], iaps: [] };

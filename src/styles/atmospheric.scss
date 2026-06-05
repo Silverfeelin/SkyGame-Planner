@@ -120,6 +120,9 @@
     font-size: 20px;
     width: 20px;
     height: 20px;
+
+    /* SVG icons sit on the text baseline by default, shifting them down. */
+    svg { display: block; }
   }
 
   &.atmos-btn--sm {
@@ -152,16 +155,16 @@
 /* Toggled-on / selected state for .atmos-btn. Uses a tinted accent fill
    with an accent border and accent text — clearly "on" without the
    loudness of a full accent fill. */
-.atmos-btn-active,
-.atmos-btn.atmos-btn-active {
+.atmos-btn--active,
+.atmos-btn.atmos-btn--active {
   background: oklch(0.82 0.11 var(--atmos-hue) / 0.18);
   border-color: oklch(0.82 0.11 var(--atmos-hue) / 0.55);
   color: var(--atmos-accent);
   box-shadow: inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.25);
 }
 
-.atmos-btn-active:hover,
-.atmos-btn.atmos-btn-active:hover {
+.atmos-btn--active:hover,
+.atmos-btn.atmos-btn--active:hover {
   background: oklch(0.82 0.11 var(--atmos-hue) / 0.26);
   color: var(--atmos-accent);
 }
@@ -204,6 +207,19 @@
   font-size: 32px;
   font-weight: 600;
   letter-spacing: -0.01em;
+}
+
+/* Reusable intro text block below a page header. Wrap one or more
+   paragraphs in `.atmos-page__intro`; add `.atmos-page__hint` to
+   paragraphs to dim them relative to regular text. */
+.atmos-page__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.atmos-page__hint {
+  color: var(--atmos-text-dim);
 }
 
 /* Reusable quick-action link row below a page header. */

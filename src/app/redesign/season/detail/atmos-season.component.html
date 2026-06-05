@@ -89,13 +89,13 @@
       </div>
       <div class="atmos-season__pass">
         <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn-active]="hasBoughtSeasonPass()"
+                [class.atmos-btn--active]="hasBoughtSeasonPass()"
                 (click)="toggleSeasonPass(false)">
           <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
           Bought Season Pass
         </button>
         <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn-active]="hasGiftedSeasonPass()"
+                [class.atmos-btn--active]="hasGiftedSeasonPass()"
                 (click)="toggleSeasonPass(true)">
           <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
           Received Season Pass

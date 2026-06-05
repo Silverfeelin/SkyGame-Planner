@@ -1,8 +1,13 @@
+<atmos-item-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Hearts</h1>
 </header>
 
-<atmos-item-quick-actions/>
+
+<p class="atmos-paragraph">
+  This page will help you find (most) regular hearts you can get from spirits in Sky.
+</p>
 
 <!-- Regular Spirits -->
 <details class="atmos-card atmos-fold" [open]="!folded['r']" (toggle)="onToggle($event, 'r')">
@@ -29,7 +34,7 @@
   </summary>
   <div class="atmos-fold__body">
     <p class="atmos-fold__desc">
-      Season spirits offer a heart when they return as a <a class="atmos-text-link" routerLink="/ts">Traveling Spirit</a> or in a <a class="atmos-text-link" routerLink="/rs">Special Visit</a>.<br/>
+      Season spirits offer a heart when they return as a <a class="atmos-text-link" routerLink="/r/ts">Traveling Spirit</a> or in a <a class="atmos-text-link" routerLink="/r/rs">Special Visit</a>.<br/>
       All season spirits are listed below. Spirits that have never returned do not (yet) have a regular heart.
     </p>
     <p class="atmos-fold__desc">

@@ -7,6 +7,7 @@ import { DateTime } from 'luxon';
 import { IEvent, IEventInstance } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
+import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgAtmosEventLinkRendererComponent } from '@app/redesign/grid/renderers/ag-atmos-event-link-renderer/ag-atmos-event-link-renderer.component';
 
 interface IRow {
@@ -55,7 +56,7 @@ export class AtmosEventHistoryComponent {
       filterValueGetter: p => (p.data.instance.name ?? p.data.event.name) + (p.data.active ? ' (ongoing)' : ''),
       cellRenderer: AgAtmosEventLinkRendererComponent
     },
-    { field: 'recurring', headerName: 'Repeats', width: 120, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'recurring', headerName: 'Repeats', width: 120, filter: AgSetFilterComponent, filterParams: { values: ['Yes', 'No', 'Unknown'] } },
     {
       field: 'startDateLabel', headerName: 'Start', width: 140,
       filter: 'agTextColumnFilter', filterParams: textFilterParams,

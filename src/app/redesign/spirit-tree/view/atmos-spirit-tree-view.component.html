@@ -5,21 +5,21 @@
 
   <nav class="atmos-tree-view__toolbar" aria-label="Spirit tree actions">
     <button type="button" class="atmos-btn atmos-btn--sm"
-            [class.atmos-btn-active]="nodeAction() === 'unlock'"
+            [class.atmos-btn--active]="nodeAction() === 'unlock'"
             (click)="setAction('unlock')"
             title="Unlock / lock items (U)">
       <mat-icon>lock_open</mat-icon>
       <span>Unlock</span>
     </button>
     <button type="button" class="atmos-btn atmos-btn--sm"
-            [class.atmos-btn-active]="nodeAction() === 'favourite'"
+            [class.atmos-btn--active]="nodeAction() === 'favourite'"
             (click)="setAction('favourite')"
             title="Toggle favourite (F)">
       <mat-icon>favorite</mat-icon>
       <span>Favourite</span>
     </button>
     <button type="button" class="atmos-btn atmos-btn--sm"
-            [class.atmos-btn-active]="nodeAction() === 'navigate'"
+            [class.atmos-btn--active]="nodeAction() === 'navigate'"
             (click)="setAction('navigate')"
             title="Open item page (N)">
       <mat-icon>open_in_new</mat-icon>

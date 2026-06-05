@@ -110,11 +110,11 @@
     </header>
     <div class="atmos-card__body">
       <div class="atmos-optimizer__toggles">
-        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn-active]="hasSeasonPass()" (click)="toggleHaveSeasonPass()">
+        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="hasSeasonPass()" (click)="toggleHaveSeasonPass()">
           <mat-icon><app-checkbox [state]="hasSeasonPass()" [useColors]="true"></app-checkbox></mat-icon>
           Have Season Pass
         </button>
-        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn-active]="hasDoneDailiesToday()" (click)="toggleToday()">
+        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="hasDoneDailiesToday()" (click)="toggleToday()">
           <mat-icon><app-checkbox [state]="hasDoneDailiesToday()" [useColors]="true"></app-checkbox></mat-icon>
           Have done dailies today
         </button>

@@ -15,21 +15,21 @@
     <div class="atmos-shared-creations__controls">
       <button type="button"
         class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="placementType() === 'message'"
+        [class.atmos-btn--active]="placementType() === 'message'"
         [ngbTooltip]="'Place Shared Message'" container="body" placement="bottom-start"
         (click)="togglePlacement('message')">
         <mat-icon [svgIcon]="iconIds['message']"></mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="placementType() === 'memory'"
+        [class.atmos-btn--active]="placementType() === 'memory'"
         [ngbTooltip]="'Place Shared Memory'" container="body" placement="bottom-start"
         (click)="togglePlacement('memory')">
         <mat-icon [svgIcon]="iconIds['memory']"></mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
-        [class.atmos-btn-active]="placementType() === 'space'"
+        [class.atmos-btn--active]="placementType() === 'space'"
         [ngbTooltip]="'Place Shared Space'" container="body" placement="bottom-start"
         (click)="togglePlacement('space')">
         <mat-icon [svgIcon]="iconIds['space']"></mat-icon>
