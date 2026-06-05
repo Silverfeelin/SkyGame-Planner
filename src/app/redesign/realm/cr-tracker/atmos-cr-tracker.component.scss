@@ -1,0 +1,100 @@
+:host {
+  display: block;
+}
+
+.atmos-cr-tracker__container {
+  position: relative;
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
+  border: var(--atmos-card-border);
+}
+
+.atmos-cr-tracker__map {
+  height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.atmos-cr-tracker__controls {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  > .atmos-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+}
+
+.atmos-cr-tracker__wax {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 500;
+  padding: 6px 14px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-pill);
+  -webkit-backdrop-filter: var(--atmos-blur-pill);
+  border: var(--atmos-card-border);
+  color: var(--atmos-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-cr-tracker__overlay {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--atmos-gap);
+  row-gap: 6px;
+  min-width: 280px;
+  color: var(--atmos-text);
+}
+
+.atmos-cr-tracker__overlay-head {
+  display: contents;
+}
+
+.atmos-cr-tracker__overlay-row {
+  display: contents;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+
+  > .atmos-cr-tracker__overlay-name {
+    text-decoration: underline;
+    text-decoration-color: var(--atmos-line-soft);
+    transition: color var(--atmos-transition), text-decoration-color var(--atmos-transition);
+  }
+
+  &:hover .atmos-cr-tracker__overlay-name {
+    color: var(--atmos-accent);
+    text-decoration-color: var(--atmos-accent);
+  }
+}
+
+.atmos-cr-tracker__overlay-wax {
+  &.is-complete {
+    color: var(--atmos-good);
+    font-weight: 700;
+  }
+}
+
+.atmos-cr-tracker__overlay-total {
+  display: contents;
+
+  > span.is-complete {
+    color: var(--atmos-good);
+    font-weight: 700;
+  }
+}

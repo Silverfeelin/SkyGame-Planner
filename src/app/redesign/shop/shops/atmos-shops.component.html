@@ -1,0 +1,73 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Permanent shops</h1>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Premium_Candle_Shop"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+<p class="atmos-paragraph atmos-shops__intro">
+  Permanent shops in Sky. Pick a venue to view its in-app purchases and item lists.
+</p>
+
+<section class="atmos-shops__venues" aria-label="Shop venues">
+  @for (venue of venues; track venue.link) {
+    <a class="atmos-card atmos-shops__venue atmos-focus-ring" [routerLink]="venue.link">
+      <div class="atmos-card__body atmos-shops__venue-body">
+        <div class="atmos-shops__venue-heading">
+          <h2 class="atmos-shops__venue-title">{{ venue.title }}</h2>
+          <mat-icon class="atmos-shops__venue-chevron">chevron_right</mat-icon>
+        </div>
+        <p class="atmos-paragraph atmos-shops__venue-desc">{{ venue.description }}</p>
+      </div>
+    </a>
+  }
+</section>
+
+@if (igcShops.length) {
+  <section class="atmos-card atmos-shops__section">
+    <header class="atmos-shops__section-header">
+      <h2 class="atmos-shops__section-title">Other shops for in-game currency</h2>
+    </header>
+    <div class="atmos-card__body atmos-shops__section-body">
+      <div class="atmos-shops__igc-grid">
+        @for (shop of igcShops; track shop.guid) {
+          <div class="atmos-card atmos-shops__igc">
+            <div class="atmos-card__body">
+              <h3 class="atmos-shops__igc-title">{{ shop.name }}</h3>
+              <app-atmos-item-list
+                [itemList]="shop.itemList!"
+                [highlightNode]="highlightNode()"></app-atmos-item-list>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}
+
+@if (iapShops.length) {
+  <section class="atmos-card atmos-shops__section">
+    <header class="atmos-shops__section-header">
+      <h2 class="atmos-shops__section-title">Other in-app purchases</h2>
+    </header>
+    <div class="atmos-card__body atmos-shops__section-body">
+      <div class="atmos-shops__iap-grid">
+        @for (shop of iapShops; track shop.guid) {
+          @for (iap of shop.iaps; track iap.guid) {
+            <app-atmos-iap-card
+              [iap]="iap"
+              [highlightIap]="highlightIap()"
+              (purchasedToggle)="togglePurchased(iap)"
+              (giftedToggle)="toggleGifted(iap)"></app-atmos-iap-card>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}

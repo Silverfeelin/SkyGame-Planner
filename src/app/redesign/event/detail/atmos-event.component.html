@@ -1,0 +1,28 @@
+@if (event(); as e) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ e.name }}</h1>
+  </header>
+
+  <section class="atmos-page__quick-actions">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/event">
+      <mat-icon>arrow_back</mat-icon> Events
+    </a>
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/event/history">
+      <mat-icon>history</mat-icon> History
+    </a>
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/event-calculator">
+      <mat-icon>calculate</mat-icon> Event Calculator
+    </a>
+  </section>
+
+  <div class="atmos-card atmos-event__grid-card">
+    <ag-grid-angular [rowData]="rowData()" [columnDefs]="colDefs" [theme]="theme"
+      [getRowHeight]="getRowHeight" [suppressDragLeaveHidesColumns]="true"
+      (gridReady)="onGridReady($event)" />
+  </div>
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Event</h1>
+  </header>
+  <p class="atmos-paragraph">Event not found. <a class="atmos-text-link" routerLink="/r/event">Back to events</a></p>
+}

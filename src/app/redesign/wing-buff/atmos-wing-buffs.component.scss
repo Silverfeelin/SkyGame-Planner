@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-wing-buffs__count {
+  font-size: 18px;
+  color: var(--atmos-text);
+}
+
+.atmos-wing-buffs__count-type {
+  color: var(--atmos-accent);
+  margin-right: 6px;
+}
+
+.atmos-wing-buffs__count-sep,
+.atmos-wing-buffs__count-label {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-wing-buffs__count-complete {
+  color: var(--atmos-good);
+}
+
+.atmos-wing-buffs__grid-card {
+  padding: 8px;
+
+  ag-grid-angular {
+    width: 100%;
+  }
+}
+
+:host ::ng-deep .atmos-wing-buffs__cell-complete {
+  color: var(--atmos-good);
+  font-weight: 600;
+}

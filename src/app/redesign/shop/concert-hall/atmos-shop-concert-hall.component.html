@@ -1,0 +1,30 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Concert Hall</h1>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/shop">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Shops</span>
+  </a>
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Concert%20Hall"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+<section class="atmos-card atmos-shop-concert-hall__section">
+  <header class="atmos-shop-concert-hall__section-header">
+    <h2 class="atmos-shop-concert-hall__section-title">Spirit trees</h2>
+  </header>
+  <div class="atmos-card__body atmos-shop-concert-hall__section-body">
+    <div class="atmos-shop-concert-hall__tree-scroll">
+      <app-atmos-spirit-tree
+        [tree]="tree"
+        [name]="tree.name ?? tree.spirit?.name"
+        [highlightNode]="highlightNode()"></app-atmos-spirit-tree>
+    </div>
+  </div>
+</section>

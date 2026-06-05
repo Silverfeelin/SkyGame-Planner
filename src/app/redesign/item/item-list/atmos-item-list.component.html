@@ -1,0 +1,31 @@
+<div class="atmos-item-list">
+  @for (node of nodes(); track node.guid) {
+    <button
+      type="button"
+      class="atmos-item-list__node"
+      [class.is-unlocked]="node.unlocked || node.item.unlocked"
+      [class.is-highlighted]="isHighlighted(node)"
+      [class.is-opaque]="opaqueNodes()"
+      [title]="node.item.name"
+      (click)="onNodeClick($event, node)">
+      <app-item-icon
+        class="atmos-item-list__icon"
+        [item]="node.item"
+        [listNode]="node"
+        [opaque]="opaqueNodes() || node.unlocked || node.item.unlocked"
+        [hoverGlow]="false"
+        size="default"></app-item-icon>
+
+      @if (costFor(node); as c) {
+        <span class="atmos-item-list__cost" [attr.data-kind]="c.kind">
+          <mat-icon [svgIcon]="c.icon"></mat-icon>
+          <strong>{{ c.amount }}</strong>
+        </span>
+      }
+
+      @if (node.quantity && node.quantity > 1) {
+        <span class="atmos-item-list__quantity">x{{ node.quantity }}</span>
+      }
+    </button>
+  }
+</div>

@@ -1,0 +1,40 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Shared Creations</h1>
+</header>
+
+<section class="atmos-card atmos-card__body">
+  <p class="atmos-paragraph">
+    Track where you placed your shared spells.
+    Click a spell icon in the toolbar, then click the map to place a marker.
+    Drag a marker to reposition. Markers expire after 7 days unless refreshed.
+  </p>
+</section>
+
+<section class="atmos-card atmos-shared-creations__map-card">
+  <div class="atmos-shared-creations__map-container" #mapContainer>
+    <div class="atmos-shared-creations__controls">
+      <button type="button"
+        class="atmos-btn atmos-btn--sm"
+        [class.atmos-btn-active]="placementType() === 'message'"
+        [ngbTooltip]="'Place Shared Message'" container="body" placement="bottom-start"
+        (click)="togglePlacement('message')">
+        <mat-icon [svgIcon]="iconIds['message']"></mat-icon>
+      </button>
+      <button type="button"
+        class="atmos-btn atmos-btn--sm"
+        [class.atmos-btn-active]="placementType() === 'memory'"
+        [ngbTooltip]="'Place Shared Memory'" container="body" placement="bottom-start"
+        (click)="togglePlacement('memory')">
+        <mat-icon [svgIcon]="iconIds['memory']"></mat-icon>
+      </button>
+      <button type="button"
+        class="atmos-btn atmos-btn--sm"
+        [class.atmos-btn-active]="placementType() === 'space'"
+        [ngbTooltip]="'Place Shared Space'" container="body" placement="bottom-start"
+        (click)="togglePlacement('space')">
+        <mat-icon [svgIcon]="iconIds['space']"></mat-icon>
+      </button>
+    </div>
+    <div class="map" [class.is-placement-armed]="placementType()"></div>
+  </div>
+</section>

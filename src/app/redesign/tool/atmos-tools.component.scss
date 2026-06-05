@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  width: 100%;
+}
+
+.atmos-tools__header {
+  align-items: center;
+}
+
+.atmos-tools__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--atmos-gap);
+}
+
+@media (max-width: 720px) {
+  .atmos-tools__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atmos-tools__card {
+  height: 100%;
+}
+
+.atmos-tools__body {
+  gap: 14px;
+  height: 100%;
+}
+
+.atmos-tools__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-tools__title-icon {
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--atmos-accent);
+}
+
+.atmos-tools__desc {
+  color: var(--atmos-text-dim);
+  font-size: 14px;
+}
+
+.atmos-tools__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.atmos-tools__link {
+  flex: 0 1 auto;
+}

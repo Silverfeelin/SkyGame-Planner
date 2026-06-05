@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  width: 100%;
+}
+
+.atmos-collage {
+  display: contents;
+}

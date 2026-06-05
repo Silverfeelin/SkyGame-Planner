@@ -1,0 +1,24 @@
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-item-unlock-calc-sub__title">Add spirit trees</h2>
+    <p class="atmos-paragraph">
+      Add a spirit tree to quickly add all important items from a spirit to the calculator.
+    </p>
+    <label class="atmos-item-unlock-calc-sub__search atmos-focus-ring">
+      <mat-icon>search</mat-icon>
+      <input #input type="search" (input)="search()" placeholder="Spirit name">
+    </label>
+
+    @if (results() && results()!.length === 0) {
+      <p class="atmos-paragraph">No spirits found by that name.</p>
+    } @else if (results()) {
+      <div class="atmos-item-unlock-calc-sub__cards">
+        @for (result of results(); track result.data.guid) {
+          <app-atmos-spirit-card [spirit]="result.data" [options]="{show: ['img', 'select']}"
+            (spiritSelected)="onSpiritSelected($event)">
+          </app-atmos-spirit-card>
+        }
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,143 @@
+@if (realm) {
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">{{ realm.name }}</h1>
+</header>
+
+<div class="atmos-page__quick-actions">
+  @if (realm._wiki?.href; as wikiHref) {
+    <a class="atmos-btn atmos-btn--sm" [href]="wikiHref" target="_blank" rel="noopener">
+      <mat-icon>open_in_new</mat-icon>
+      <span>Wiki</span>
+    </a>
+  }
+  @if (spiritCount) {
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+      <app-spirit-type-icon type="Regular"></app-spirit-type-icon>
+      <span>Spirits ({{ spiritCount }})</span>
+    </a>
+  }
+  @if (seasonSpiritCount || seasonGuideCount) {
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+      <app-spirit-type-icon type="Season"></app-spirit-type-icon>
+      <span>Season Spirits ({{ seasonSpiritCount }})</span>
+    </a>
+  }
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm">
+    <mat-icon>map</mat-icon>
+    <span>Other realms</span>
+  </a>
+  @if (realm.areas?.length) {
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/area" [queryParams]="{ realm: realm.guid }">
+      <mat-icon>location_on</mat-icon>
+      <span>Areas</span>
+    </a>
+  }
+</div>
+
+<!-- Constellation + progress -->
+@if (realm.constellation) {
+  <section class="atmos-realm__constellation-row">
+    <div class="atmos-card atmos-realm__progress">
+      <div class="atmos-card__body">
+        <h2 class="atmos-realm__progress-title">Constellation</h2>
+        <div class="atmos-realm__tier">
+          <span class="atmos-realm__tier-label">Tier 1</span>
+          <div class="atmos-realm__tier-grid">
+            <mat-icon svgIcon="candle"></mat-icon>
+            <div class="atmos-realm__bar" [class.is-full]="tier1Pct.c === 100">
+              <div class="atmos-realm__bar-fill" [style.width.%]="tier1Pct.c || 0"></div>
+              <div class="atmos-realm__bar-text">
+                {{ tier1Remaining.c || 0 }} left / {{ tier1Cost.c || 0 }}
+                <span class="atmos-realm__bar-pct">({{ (tier1Spent.c || 0) | percentage:0:(tier1Cost.c || 0) }}%)</span>
+              </div>
+            </div>
+            <mat-icon svgIcon="heart"></mat-icon>
+            <div class="atmos-realm__bar" [class.is-full]="tier1Pct.h === 100">
+              <div class="atmos-realm__bar-fill" [style.width.%]="tier1Pct.h || 0"></div>
+              <div class="atmos-realm__bar-text">
+                {{ tier1Remaining.h || 0 }} left / {{ tier1Cost.h || 0 }}
+                <span class="atmos-realm__bar-pct">({{ (tier1Spent.h || 0) | percentage:0:(tier1Cost.h || 0) }}%)</span>
+              </div>
+            </div>
+            <mat-icon svgIcon="ascended-candle"></mat-icon>
+            <div class="atmos-realm__bar" [class.is-full]="tier1Pct.ac === 100">
+              <div class="atmos-realm__bar-fill" [style.width.%]="tier1Pct.ac || 0"></div>
+              <div class="atmos-realm__bar-text">
+                {{ tier1Remaining.ac || 0 }} left / {{ tier1Cost.ac || 0 }}
+                <span class="atmos-realm__bar-pct">({{ (tier1Spent.ac || 0) | percentage:0:(tier1Cost.ac || 0) }}%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        @if (tier2Cost.ac) {
+          <div class="atmos-realm__tier">
+            <span class="atmos-realm__tier-label">Tier 2</span>
+            <div class="atmos-realm__tier-grid">
+              @if (tier2Cost.c) {
+                <mat-icon svgIcon="candle"></mat-icon>
+                <div class="atmos-realm__bar" [class.is-full]="tier2Pct.c === 100">
+                  <div class="atmos-realm__bar-fill" [style.width.%]="tier2Pct.c || 0"></div>
+                  <div class="atmos-realm__bar-text">
+                    {{ tier2Spent.c || 0 }} / {{ tier2Cost.c || 0 }}
+                    <span class="atmos-realm__bar-pct">({{ (tier2Spent.c || 0) | percentage:0:(tier2Cost.c || 0) }}%)</span>
+                  </div>
+                </div>
+              }
+              @if (tier2Cost.h) {
+                <mat-icon svgIcon="heart"></mat-icon>
+                <div class="atmos-realm__bar" [class.is-full]="tier2Pct.h === 100">
+                  <div class="atmos-realm__bar-fill" [style.width.%]="tier2Pct.h || 0"></div>
+                  <div class="atmos-realm__bar-text">
+                    {{ tier2Spent.h || 0 }} / {{ tier2Cost.h || 0 }}
+                    <span class="atmos-realm__bar-pct">({{ (tier2Spent.h || 0) | percentage:0:(tier2Cost.h || 0) }}%)</span>
+                  </div>
+                </div>
+              }
+              @if (tier2Cost.ac) {
+                <mat-icon svgIcon="ascended-candle"></mat-icon>
+                <div class="atmos-realm__bar" [class.is-full]="tier2Pct.ac === 100">
+                  <div class="atmos-realm__bar-fill" [style.width.%]="tier2Pct.ac || 0"></div>
+                  <div class="atmos-realm__bar-text">
+                    {{ tier2Spent.ac || 0 }} / {{ tier2Cost.ac || 0 }}
+                    <span class="atmos-realm__bar-pct">({{ (tier2Spent.ac || 0) | percentage:0:(tier2Cost.ac || 0) }}%)</span>
+                  </div>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <app-atmos-realm-constellation
+      [realm]="realm"
+      [realms]="visibleRealms"
+      [completed]="!tier1Remaining.c && !tier1Remaining.h && !tier1Remaining.ac"
+      (spiritClicked)="constellationSpiritClicked($event)"
+      (realmChanged)="constellationRealmChanged($event)">
+    </app-atmos-realm-constellation>
+  </section>
+}
+
+@if (spirits.length) {
+  <section class="atmos-card atmos-realm__trees" #divSpiritTrees>
+    <div class="atmos-card__body atmos-realm__trees-body">
+      <h2 class="atmos-realm__trees-title">Spirit trees</h2>
+      <div class="atmos-realm__trees-scroll">
+        @for (data of spirits; track data.spirit.guid) {
+          <div class="atmos-realm__tree-wrapper">
+            <app-atmos-spirit-tree [tree]="data.tree" [name]="data.spirit.name" [highlight]="highlightTree === data.tree.guid">
+              <div name>
+                <a class="atmos-text-link" [routerLink]="['/r/spirit', data.spirit.guid]" [queryParams]="{ highlightTree: data.tree.guid }">
+                  {{ data.spirit.name }}
+                </a>
+              </div>
+            </app-atmos-spirit-tree>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}
+}

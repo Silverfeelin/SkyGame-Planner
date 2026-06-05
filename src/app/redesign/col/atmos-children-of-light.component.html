@@ -1,0 +1,44 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Children of Light</h1>
+  <div class="atmos-col__count" aria-live="polite">
+    <strong [class.atmos-col__count-complete]="unlockedCol === totalCol && totalCol > 0">{{ unlockedCol }}</strong>
+    <span class="atmos-col__count-sep"> / {{ totalCol }}</span>
+    <span class="atmos-col__count-label"> found</span>
+  </div>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/winged-light">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Winged Light</span>
+  </a>
+  <button type="button" class="atmos-btn atmos-btn--sm" (click)="unlockAll()">
+    <mat-icon>done_all</mat-icon>
+    <span>Mark all found</span>
+  </button>
+  <button type="button" class="atmos-btn atmos-btn--sm" (click)="reset()">
+    <mat-icon>restart_alt</mat-icon>
+    <span>Reset</span>
+  </button>
+  <button type="button" class="atmos-btn atmos-btn--sm" (click)="resetOrbit()">
+    <mat-icon>flight_takeoff</mat-icon>
+    <span>Left Orbit</span>
+  </button>
+</div>
+
+<div class="atmos-card atmos-col__map-card" #mapContainer>
+  <button type="button" class="atmos-col__map-control" (click)="scrollToList()" title="Scroll to list">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
+  <div class="atmos-col__map"></div>
+</div>
+
+<div #table class="atmos-card atmos-col__grid-card">
+  <ag-grid-angular
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [theme]="theme"
+    [domLayout]="'autoHeight'"
+    [suppressDragLeaveHidesColumns]="true"
+    (gridReady)="onGridReady($event)"/>
+</div>

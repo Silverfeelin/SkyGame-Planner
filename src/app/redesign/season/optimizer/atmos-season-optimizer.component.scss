@@ -1,0 +1,126 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-optimizer__rule {
+  border: 0;
+  border-top: 1px solid var(--atmos-line);
+  margin: 12px 0;
+}
+
+.atmos-optimizer__inline-icon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.atmos-optimizer__inline-action {
+  cursor: pointer;
+  color: var(--atmos-accent);
+}
+
+.atmos-optimizer__value {
+  color: var(--atmos-text-mute);
+  font-weight: 600;
+}
+
+.atmos-optimizer__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+  margin-top: 12px;
+}
+
+.atmos-optimizer__reset {
+  color: var(--atmos-warm);
+}
+
+.atmos-optimizer__trees {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--atmos-gap);
+  overflow-x: auto;
+}
+
+.atmos-optimizer__tree {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+  min-width: 0;
+}
+
+.atmos-optimizer__tree-stats {
+  display: flex;
+}
+
+.atmos-optimizer__tree-stats-body {
+  gap: 6px;
+}
+
+.atmos-optimizer__stat-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.atmos-optimizer__input {
+  background: var(--atmos-card-bg-solid);
+  color: var(--atmos-text);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  padding: 6px 10px;
+  font: inherit;
+  width: 100%;
+
+  &--inline {
+    width: 90px;
+    display: inline-block;
+  }
+}
+
+.atmos-optimizer__candles-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.atmos-optimizer__results-header {
+  padding: var(--atmos-pad);
+  padding-bottom: 0;
+}
+
+.atmos-optimizer__results-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-optimizer__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-optimizer__knapsack {
+  margin: 0;
+  padding-left: 22px;
+  color: var(--atmos-text);
+
+  li { margin-bottom: 4px; }
+}
+
+// State helpers — reuse semantic accent colours from tokens.
+.is-met { color: var(--atmos-good); }
+.is-lacking { color: var(--atmos-warm); }

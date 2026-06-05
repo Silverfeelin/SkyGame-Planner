@@ -1,0 +1,261 @@
+@if (!season) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Season Calculator</h1>
+  </header>
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <p class="atmos-paragraph">
+        There is no ongoing season and the website hasn't been updated to include the upcoming season yet.<br/><br/>
+        Please check back later.
+      </p>
+    </div>
+  </section>
+} @else if (hasTiers) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ season.name }} Calculator</h1>
+  </header>
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <p class="atmos-paragraph">
+        Since this season has spirits with friendship levels, please have a look at the
+        <a routerLink="/r/season/optimizer" class="atmos-text-link">Season Optimizer</a>.
+      </p>
+    </div>
+  </section>
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ season.name }} <span class="atmos-calc__title-suffix">Calculator</span></h1>
+  </header>
+
+  <section class="atmos-page__quick-actions">
+    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', season.guid]">
+      <mat-icon>arrow_back</mat-icon> Season
+    </a>
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/currency">
+      <mat-icon>account_balance_wallet</mat-icon> Currencies
+    </a>
+    <a class="atmos-btn atmos-btn--sm" href="https://sky-season-calculator.netlify.app/" target="_blank" rel="noopener">
+      <mat-icon>open_in_new</mat-icon> Stoat's Calculator
+    </a>
+  </section>
+
+  @if (season.draft) {
+    <section class="atmos-card atmos-calc__draft">
+      <div class="atmos-card__body atmos-calc__draft-body">
+        <mat-icon>warning</mat-icon>
+        <span>We're still working on this content. Thank you for your patience.</span>
+      </div>
+    </section>
+  }
+
+  <!-- Settings -->
+  <section class="atmos-card">
+    <header class="atmos-calc__section-header">
+      <h2 class="atmos-calc__section-title">Settings</h2>
+    </header>
+    <div class="atmos-card__body atmos-calc__settings">
+      <div class="atmos-calc__row">
+        <span class="atmos-calc__label">Season Pass:</span>
+        <button type="button" class="atmos-btn atmos-btn--sm"
+                [class.atmos-btn-active]="hasSeasonPass"
+                (click)="toggleSeasonPass()">
+          <mat-icon>{{ hasSeasonPass ? 'check' : 'close' }}</mat-icon>
+          {{ hasSeasonPass ? 'owned' : 'not owned' }}
+        </button>
+      </div>
+
+      <div class="atmos-calc__row">
+        <span class="atmos-calc__label">Your season candles:</span>
+        <mat-icon class="atmos-calc__inline-icon" svgIcon="candle"></mat-icon>
+        <input #inpSc type="number" min="0" max="99999"
+               class="atmos-calc__input atmos-calc__input--inline"
+               (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
+               [value]="candleCount"/>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency()">
+          +{{ hasSeasonPass ? '6' : '5' }} (daily)
+        </button>
+      </div>
+
+      <div class="atmos-calc__row">
+        <span class="atmos-calc__label">Today's candles:</span>
+        <button type="button" class="atmos-btn atmos-btn--sm"
+                [class.atmos-btn-active]="includesToday"
+                (click)="toggleIncludesToday()">
+          <mat-icon>{{ includesToday ? 'check' : 'close' }}</mat-icon>
+          {{ includesToday ? 'obtained' : 'not obtained' }}
+        </button>
+      </div>
+
+      @if (timedCurrencies.length) {
+        <hr class="atmos-calc__rule"/>
+        <p class="atmos-paragraph">
+          This season includes some activities that reward extra season candles.<br/>
+          Please enter how much you have collected from these activities below.<br/>
+          Your current season candles should always be entered at the top of the page, including the ones from these activities!
+        </p>
+        @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
+          <hr class="atmos-calc__rule"/>
+          <div class="atmos-paragraph">
+            @if (timedCurrency.endDate < now) {
+              @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
+              Between <b class="is-lacking">{{ timedCurrency.date | datetime }}</b>
+              and <b class="is-lacking">{{ timedCurrency.endDate | datetime }}</b>
+              you were able to get <b>{{ timedCurrency.amount }}</b> extra season candles.<br/>
+              Please enter how much you collected during this period:
+            } @else if (timedCurrency.date > now) {
+              @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
+              Between <b>{{ timedCurrency.date | datetime }}</b>
+              and <b>{{ timedCurrency.endDate | datetime }}</b>
+              you will be able to get <b>{{ timedCurrency.amount }}</b> extra season candles.<br/>
+              Please keep this value at <b>0</b> until the currency becomes available:
+            } @else {
+              @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
+              Between <b class="is-met">{{ timedCurrency.date | datetime }}</b>
+              and <b class="is-met">{{ timedCurrency.endDate | datetime }}</b>
+              you can get <b>{{ timedCurrency.amount }}</b> extra season candles.<br/>
+              Please enter how much you have collected so far:
+            }
+            <input #inpTimed [attr.data-guid]="timedCurrency.guid"
+                   class="atmos-calc__input atmos-calc__input--inline"
+                   (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
+                   type="number" min="0" max="99999" [value]="timedCurrencyCount[timedCurrency.guid]"/>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- Wants -->
+  <section class="atmos-card">
+    <header class="atmos-calc__section-header">
+      <h2 class="atmos-calc__section-title">Choose items</h2>
+    </header>
+    <div class="atmos-card__body">
+      <div class="atmos-calc__row atmos-calc__row--wrap">
+        <span class="atmos-calc__label">You want:</span>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectEverything()">everything</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectFreeAll()">free items</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectFree()">free without spells</button>
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-calc__danger" (click)="selectNothing()">nothing</button>
+      </div>
+      <p class="atmos-paragraph">
+        Click items below to toggle want / have. The first click marks an item as "want",
+        the second unlocks it as "have", and the third clears it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Result -->
+  <section class="atmos-card">
+    <header class="atmos-calc__section-header">
+      <h2 class="atmos-calc__section-title">Result</h2>
+    </header>
+    <div class="atmos-card__body atmos-calc__results">
+      @if (!hasNodes) {
+        <blockquote class="atmos-calc__note atmos-calc__note--warn">
+          <mat-icon>priority_high</mat-icon>
+          You have not selected any items! These results imply you're only collecting candles.
+        </blockquote>
+      }
+      @if (hasSkippedNode) {
+        <blockquote class="atmos-calc__note atmos-calc__note--warn">
+          <mat-icon>priority_high</mat-icon>
+          Required items leading up to the items you want are included in the calculations!
+        </blockquote>
+      }
+      @if (!hasSeasonPass && hasSeasonPassNode) {
+        <blockquote class="atmos-calc__note atmos-calc__note--warn">
+          <mat-icon>priority_high</mat-icon>
+          You have selected items that require the <b class="is-lacking">Season Pass</b>!
+        </blockquote>
+      }
+
+      <div>
+        You currently have <b class="is-met">{{ candleCount || 0 }}</b>
+        season {{ candleCount === 1 ? 'candle' : 'candles' }}.
+      </div>
+      <div>
+        Because you
+        <b [class.is-met]="hasSeasonPass" [class.is-lacking]="!hasSeasonPass">
+          {{ hasSeasonPass ? 'own' : 'do not own' }}
+        </b>
+        the Season Pass, you will be able to get
+        <b class="is-met">{{ hasSeasonPass ? '6' : '5' }}</b>
+        season candles every day for
+        <b class="is-met">{{ daysLeft }}</b>
+        more {{ daysLeft === 1 ? 'day' : 'days' }}
+        @if (timedCurrencies.length) {
+          (<b class="is-met">{{ daysLeft * (hasSeasonPass ? 6 : 5) }}</b>).
+        }
+      </div>
+
+      @if (timedCurrencies.length) {
+        @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
+          @if (!timedCurrencyRemaining[timedCurrency.guid]) {
+            <div>
+              You got all <b class="is-met">{{ timedCurrency.amount }}</b>
+              extra candles between <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+            </div>
+          } @else if (timedCurrency.endDate < now) {
+            <div>
+              You missed <b class="is-lacking">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+              extra candles between <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+            </div>
+          } @else {
+            <div>
+              You will also be able to get <b class="is-met">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+              extra candles between <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+            </div>
+          }
+        }
+      }
+
+      <div>
+        If you do not miss any, you will be able to get
+        <b class="is-met">{{ candlesAvailable }}</b>
+        more candles before the season concludes.
+      </div>
+      <div>
+        You still need to collect
+        <b class="is-met">{{ candlesRequired }}</b>
+        season candles.
+        @if (daysRequired > 0) {
+          This will take approximately <b class="is-met">{{ daysRequired }}</b>
+          {{ daysRequired === 1 ? 'day' : 'days' }} without any extra candles.
+        }
+      </div>
+
+      @if (candlesRequired > candlesAvailable) {
+        <b class="is-lacking">You will not be able to collect enough candles before the season concludes.</b>
+        <div>
+          There would have to be
+          <b class="is-lacking">{{ candlesRequired - candlesAvailable }}</b>
+          bonus {{ (candlesRequired - candlesAvailable === 1 ? 'candle' : 'candles') }} to still make it.
+        </div>
+      } @else {
+        @if (hasNodes) {
+          <b class="is-met">You will be able to collect enough candles before the season concludes.</b>
+        }
+        @if (candlesAvailable > candlesRequired) {
+          <div>
+            You can get <b class="is-met">{{ candlesAvailable - candlesRequired }}</b>
+            spare season {{ (candlesAvailable - candlesRequired === 1 ? 'candle' : 'candles') }} that will be converted to regular candles.
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- Trees -->
+  <section class="atmos-card">
+    <div class="atmos-card__body atmos-calc__trees">
+      @for (tree of trees; track tree.guid) {
+        <app-atmos-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
+          [enableControls]="false" [forceNodeAction]="'emit'"
+          [highlightNode]="highlightedGuids()" [opaqueNodes]="true"
+          (nodeClicked)="onNodeClicked($event)"></app-atmos-spirit-tree>
+      }
+    </div>
+  </section>
+}

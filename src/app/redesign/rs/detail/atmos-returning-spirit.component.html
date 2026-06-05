@@ -1,0 +1,88 @@
+@if (rs(); as r) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ r.name }}</h1>
+  </header>
+
+  <section class="atmos-card atmos-rs-detail__summary">
+    <div class="atmos-card__body atmos-rs-detail__meta">
+      @if (r._wiki) {
+        <app-wiki-link [wiki]="r._wiki"></app-wiki-link>
+      }
+      @if (r._calendar) {
+        <app-calendar-link [cal]="r._calendar"></app-calendar-link>
+      }
+
+      <div class="atmos-rs-detail__meta-item" [class.is-ended]="state() === 'ended'">
+        <mat-icon class="atmos-rs-detail__icon">calendar_month</mat-icon>
+        <span>
+          <app-date [date]="r.date"></app-date>
+          <span class="atmos-rs-detail__sep">to</span>
+          <app-date [date]="r.endDate"></app-date>
+        </span>
+        @if (state() === 'future') {
+          <span class="atmos-rs-detail__pill atmos-pill">
+            <app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>
+          </span>
+        }
+      </div>
+
+      <div class="atmos-rs-detail__meta-item" [class.is-ended]="state() === 'ended'">
+        <mat-icon class="atmos-rs-detail__icon">schedule</mat-icon>
+        <span>
+          <app-duration [start]="r.date" [end]="r.endDate"></app-duration>
+        </span>
+        @if (state() === 'active') {
+          <span class="atmos-rs-detail__pill atmos-pill atmos-pill--active">
+            <app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>
+          </span>
+        }
+      </div>
+
+      @if (r.area?.realm) {
+        <a class="atmos-rs-detail__meta-item atmos-text-link"
+           [routerLink]="['/r/realm', r.area!.realm!.guid]">
+          <mat-icon class="atmos-rs-detail__icon">map</mat-icon>
+          <span>{{ r.area!.realm!.name }}</span>
+        </a>
+      }
+
+      @if (r.area) {
+        <div class="atmos-rs-detail__meta-item">
+          <mat-icon class="atmos-rs-detail__icon">location_on</mat-icon>
+          <span>{{ r.area.name }}</span>
+        </div>
+      }
+
+      @if (r.draft) {
+        <div class="atmos-rs-detail__meta-item atmos-rs-detail__meta-item--wide">
+          <mat-icon class="atmos-rs-detail__icon">warning</mat-icon>
+          <span>We're still working on this content. Thank you for your patience.</span>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section class="atmos-card atmos-rs-detail__trees-card">
+    <div class="atmos-card__body atmos-rs-detail__trees-body">
+      <h2 class="atmos-rs-detail__trees-title">Spirits</h2>
+      <div class="atmos-rs-detail__trees-scroll">
+        @for (spirit of r.spirits; track spirit.tree.guid) {
+          @if (spirit.tree) {
+            <div class="atmos-rs-detail__tree">
+              <a class="atmos-rs-detail__tree-name atmos-text-link"
+                 [routerLink]="['/r/spirit', spirit.spirit.guid]"
+                 [queryParams]="{ highlightTree: spirit.tree.guid }">
+                {{ spirit.spirit.name }}
+              </a>
+              <app-atmos-spirit-tree
+                [tree]="spirit.tree"
+                [name]="spirit.spirit.name"
+                (nodeClicked)="onNodeClicked(spirit.tree, $event)">
+              </app-atmos-spirit-tree>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}

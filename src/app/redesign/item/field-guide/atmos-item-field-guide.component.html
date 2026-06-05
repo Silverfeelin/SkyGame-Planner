@@ -1,0 +1,56 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Field guide</h1>
+</header>
+
+<atmos-item-quick-actions/>
+
+<section class="atmos-card atmos-item-field-guide__intro">
+  <div class="atmos-card__body">
+    <p class="atmos-paragraph">
+      Please keep in mind that all images you see here are created by contributors of the
+      <a class="atmos-text-link" href="https://sky-children-of-the-light.fandom.com/" target="_blank" rel="noopener">Sky: Children of the Light Wiki</a>.
+      To view the source of an image press
+      <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn-active]="viewingSource()" (click)="toggleViewingSource()">
+        <mat-icon>open_in_new</mat-icon> View source
+      </button>
+      and then click on an image.
+    </p>
+  </div>
+</section>
+
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <app-item-type-selector
+      [type]="type()" [showTypes]="$any(types)"
+      (typeChanged)="onTypeChanged($event)">
+    </app-item-type-selector>
+  </div>
+</section>
+
+@for (t of types; track t) {
+  <section class="atmos-card atmos-item-field-guide__panel" [hidden]="type() !== t">
+    <div class="atmos-card__body">
+      @if (isTypeLoaded(t)) {
+        <div class="atmos-item-field-guide__grid">
+          @for (typeItem of typeItems[t]; track typeItem.item.guid) {
+            <a class="atmos-item-field-guide__card atmos-focus-ring"
+               (click)="checkViewSource(typeItem.item.previewUrl)"
+               [routerLink]="!viewingSource() ? typeItem.nav?.route : undefined"
+               [queryParams]="typeItem.nav?.extras?.queryParams"
+               [ngbTooltip]="typeItem.item.name" container="body" placement="auto">
+              <div class="atmos-item-field-guide__icon">
+                <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+              </div>
+              <div class="atmos-item-field-guide__preview">
+                <img [src]="typeItem.item.previewUrl" class="atmos-item-field-guide__preview-img" loading="lazy">
+                <app-item-subicons [item]="typeItem.item"
+                  [icons]="['type', 'elder', 'season', 'iap', 'unlock', 'favourite', 'limited']">
+                </app-item-subicons>
+              </div>
+            </a>
+          }
+        </div>
+      }
+    </div>
+  </section>
+}

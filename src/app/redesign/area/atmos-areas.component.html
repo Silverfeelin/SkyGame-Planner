@@ -1,0 +1,62 @@
+<header class="atmos-page__header">
+  @if (realm(); as r) {
+    <h1 class="atmos-page__title">Areas — {{ r.name }}</h1>
+  } @else {
+    <h1 class="atmos-page__title">Areas</h1>
+  }
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Category:Locations" target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+  @if (realm(); as r) {
+    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', r.guid]">
+      <mat-icon>map</mat-icon>
+      <span>{{ r.name }}</span>
+    </a>
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/area">
+      <mat-icon>location_on</mat-icon>
+      <span>All areas</span>
+    </a>
+  } @else {
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm">
+      <mat-icon>map</mat-icon>
+      <span>Realms</span>
+    </a>
+  }
+</div>
+
+<section class="atmos-areas__grid">
+  @for (area of areas(); track area.guid) {
+    <article class="atmos-card atmos-areas__card">
+      @if (area.imageUrl) {
+        <div class="atmos-areas__card-img"
+          [style.background-image]="'url(' + area.imageUrl + ')'"
+          [style.background-position]="area.imagePosition || null"></div>
+      }
+      <div class="atmos-card__body atmos-areas__card-body">
+        <h2 class="atmos-areas__card-title">{{ area.name }}</h2>
+        <div class="atmos-areas__card-links">
+          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/area', area.guid]">
+            <mat-icon>article</mat-icon>
+            <span>Overview</span>
+          </a>
+          @if (!realm() && area.realm) {
+            <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', area.realm.guid]">
+              <mat-icon>map</mat-icon>
+              <span>{{ area.realm.name }}</span>
+            </a>
+          }
+          @if (area.mapData?.position) {
+            <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm" [queryParams]="{ map: 3, area: area.guid }">
+              <mat-icon>location_on</mat-icon>
+              <span>View on map</span>
+            </a>
+          }
+        </div>
+      </div>
+    </article>
+  }
+</section>

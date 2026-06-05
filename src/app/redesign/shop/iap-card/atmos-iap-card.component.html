@@ -1,0 +1,78 @@
+<article class="atmos-iap-card atmos-card"
+  [class.is-highlighted]="isHighlighted()"
+  [class.is-bought]="iap().bought"
+  [class.is-gifted]="iap().gifted">
+  <div class="atmos-iap-card__body atmos-card__body">
+    <header class="atmos-iap-card__header">
+      <div class="atmos-iap-card__heading">
+        <h3 class="atmos-iap-card__title">{{ iap().name || 'Pack' }}</h3>
+        @if (iap().price !== undefined) {
+          <span class="atmos-iap-card__price">${{ iap().price }}</span>
+        }
+      </div>
+
+      <div class="atmos-iap-card__flags">
+        @if (iap().returning) {
+          <span class="atmos-pill">Returning</span>
+        }
+        @if (iap().bought) {
+          <span class="atmos-pill atmos-pill--active">Bought</span>
+        }
+        @if (iap().gifted) {
+          <span class="atmos-pill atmos-pill--active">Gifted</span>
+        }
+      </div>
+    </header>
+
+    @if (iap().c || iap().sc || iap().sp) {
+      <ul class="atmos-iap-card__currency">
+        @if (iap().c) {
+          <li class="atmos-iap-card__currency-chip">
+            <mat-icon svgIcon="candle"></mat-icon>
+            <strong>{{ iap().c }}</strong>
+            <span>candles</span>
+          </li>
+        }
+        @if (iap().sc) {
+          <li class="atmos-iap-card__currency-chip">
+            <mat-icon svgIcon="season-candle"></mat-icon>
+            <strong>{{ iap().sc }}</strong>
+            <span>season candles</span>
+          </li>
+        }
+        @if (iap().sp) {
+          <li class="atmos-iap-card__currency-chip">
+            <mat-icon>card_giftcard</mat-icon>
+            <strong>{{ iap().sp }}</strong>
+            <span>season passes</span>
+          </li>
+        }
+      </ul>
+    }
+
+    @if (iap().items?.length) {
+      <div class="atmos-iap-card__items">
+        @for (item of iap().items; track item.guid) {
+          <app-item-icon [item]="item" [iap]="iap()" size="small"></app-item-icon>
+        }
+      </div>
+    }
+
+    <div class="atmos-iap-card__actions">
+      <button type="button"
+        class="atmos-btn atmos-btn--sm"
+        [class.atmos-btn-active]="iap().bought"
+        (click)="onPurchasedClick($event)">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Bought</span>
+      </button>
+      <button type="button"
+        class="atmos-btn atmos-btn--sm"
+        [class.atmos-btn-active]="iap().gifted"
+        (click)="onGiftedClick($event)">
+        <mat-icon>card_giftcard</mat-icon>
+        <span>Gifted</span>
+      </button>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,17 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Elusive Spirits</h1>
+</header>
+
+<p class="atmos-paragraph atmos-elusive__hint">
+  Season spirits sorted by how long it's been since they last visited.
+</p>
+
+<div class="atmos-card atmos-elusive__grid-card">
+  <ag-grid-angular
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [theme]="theme"
+    [getRowHeight]="getRowHeight"
+    [suppressDragLeaveHidesColumns]="true"
+    (gridReady)="onGridReady($event)" />
+</div>

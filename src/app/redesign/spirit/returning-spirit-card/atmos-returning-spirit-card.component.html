@@ -1,0 +1,61 @@
+@if (return(); as r) {
+  <article class="atmos-returning-spirit-card atmos-card">
+    @if (sections()['img'] && imageUrls().length) {
+      <div class="atmos-returning-spirit-card__media">
+        <div class="atmos-returning-spirit-card__images">
+          @for (url of imageUrls(); track $index) {
+            <img class="atmos-returning-spirit-card__image" [src]="url" alt="" loading="lazy" />
+          }
+        </div>
+        <div class="atmos-returning-spirit-card__fade"></div>
+      </div>
+    }
+
+    <div class="atmos-returning-spirit-card__body atmos-card__body">
+      <header class="atmos-returning-spirit-card__header">
+        <h3 class="atmos-returning-spirit-card__title">
+          <a class="atmos-returning-spirit-card__title-link" [routerLink]="['/rs', r.guid]">
+            {{ r.name || 'Returning Spirits' }}
+          </a>
+        </h3>
+        <span class="atmos-pill">RS</span>
+      </header>
+
+      @if (sections()['overview'] && r.spirits.length) {
+        <ul class="atmos-returning-spirit-card__spirits">
+          @for (s of r.spirits; track s.guid) {
+            <li class="atmos-returning-spirit-card__spirit">
+              <a class="atmos-text-link" [routerLink]="['/spirit', s.spirit.guid]">{{ s.spirit.name }}</a>
+            </li>
+          }
+        </ul>
+      }
+
+      @if (sections()['date']) {
+        <div class="atmos-returning-spirit-card__row">
+          <mat-icon>calendar_month</mat-icon>
+          <span>
+            <app-date [date]="r.date"></app-date> – <app-date [date]="r.endDate"></app-date>
+            <span class="atmos-returning-spirit-card__days">
+              (<app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>)
+            </span>
+          </span>
+        </div>
+      }
+
+      @if (sections()['cost'] && cost()) {
+        <div class="atmos-returning-spirit-card__cost">
+          <app-cost [cost]="cost()" [remaining]="remainingCost()"></app-cost>
+        </div>
+      }
+
+      @if (sections()['wiki'] && r._wiki) {
+        <div class="atmos-returning-spirit-card__row">
+          <app-wiki-link [wiki]="r._wiki"></app-wiki-link>
+        </div>
+      }
+
+      <ng-content />
+    </div>
+  </article>
+}

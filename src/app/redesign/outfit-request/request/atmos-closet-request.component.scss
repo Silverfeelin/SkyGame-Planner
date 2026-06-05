@@ -1,0 +1,51 @@
+/* Chromeless host: no shell, sidebar, or footer. Recreate the
+   atmospheric backdrop on this page so the legacy closet renders against
+   the same frosted surface as the rest of the redesign. */
+:host {
+  display: block;
+  color: var(--atmos-text);
+  font-family: 'Manrope', 'Roboto', system-ui, sans-serif;
+  background: #0c0a10;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.atmos-closet-request__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--atmos-bg-image, url(/assets/game/background/isle.webp));
+  background-size: cover;
+  background-position: center;
+  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
+  pointer-events: none;
+}
+
+.atmos-closet-request__vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    transparent 42%,
+    oklch(0.05 0.02 var(--atmos-hue) / 0.55)
+  );
+  pointer-events: none;
+}
+
+.atmos-closet-request__main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--atmos-pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+@media (max-width: 720px) {
+  .atmos-closet-request__main { padding: var(--atmos-pad-compact); }
+}

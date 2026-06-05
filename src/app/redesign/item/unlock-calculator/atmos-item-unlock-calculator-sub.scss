@@ -1,0 +1,85 @@
+.atmos-item-unlock-calc-sub__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-item-unlock-calc-sub__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-item-unlock-calc-sub__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock-calc-sub__icon {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+  }
+}
+
+.atmos-item-unlock-calc-sub__search {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  width: 100%;
+  max-width: 320px;
+
+  mat-icon {
+    color: var(--atmos-text-mute);
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    color: var(--atmos-text);
+    border: 0;
+    outline: 0;
+    font: inherit;
+  }
+}
+
+.atmos-item-unlock-calc-sub__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock-calc-sub__season-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-item-unlock-calc-sub__season-row {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.atmos-item-unlock-calc-sub__season-btn {
+  app-icon {
+    display: inline-flex;
+    align-items: center;
+  }
+}

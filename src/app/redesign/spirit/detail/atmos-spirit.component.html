@@ -1,0 +1,88 @@
+@if (spirit(); as s) {
+  <header class="atmos-page__header atmos-spirit__header">
+    <app-spirit-type-icon class="atmos-spirit__type" [type]="s.type"></app-spirit-type-icon>
+    <h1 class="atmos-page__title">{{ s.name }}</h1>
+    @if (typeName()) {
+      <span class="atmos-pill atmos-spirit__kind">{{ typeName() }}</span>
+    }
+  </header>
+
+  <section class="atmos-card atmos-spirit__summary">
+    <div class="atmos-card__body atmos-spirit__summary-body">
+      @if (s.imageUrl) {
+        <div class="atmos-spirit__image">
+          <img [src]="s.imageUrl" [alt]="s.name" loading="lazy" />
+        </div>
+      }
+
+      <div class="atmos-spirit__meta">
+        @if (s._wiki) {
+          <app-wiki-link [wiki]="s._wiki"></app-wiki-link>
+        }
+
+        @if ((s.type === 'Season' || s.type === 'Guide') && s.season) {
+          <a class="atmos-spirit__meta-item atmos-text-link"
+             [routerLink]="['/r/season', s.season.guid]"
+             [queryParams]="{ highlightTree: s.tree?.guid }">
+            @if (s.season.iconUrl) {
+              <img class="atmos-spirit__meta-icon" [src]="s.season.iconUrl" alt="" />
+            } @else {
+              <mat-icon class="atmos-spirit__meta-icon">ac_unit</mat-icon>
+            }
+            <span>{{ s.season.name }}</span>
+          </a>
+        }
+
+        @if (s.type === 'Event' && event(); as ev) {
+          <a class="atmos-spirit__meta-item atmos-text-link" [routerLink]="['/r/event', ev.guid]">
+            <mat-icon class="atmos-spirit__meta-icon">event</mat-icon>
+            <span>{{ ev.name }}</span>
+          </a>
+        }
+
+        @if (s.type === 'Regular' || s.type === 'Elder' || s.type === 'Special') {
+          <a class="atmos-spirit__meta-item atmos-text-link"
+             [routerLink]="['/r/spirit']" [queryParams]="{ type: s.type }">
+            <mat-icon class="atmos-spirit__meta-icon">person</mat-icon>
+            <span>{{ s.type === 'Regular' ? 'Regular Spirit' : s.type }}</span>
+          </a>
+        }
+
+        @if (s.area?.realm) {
+          <a class="atmos-spirit__meta-item atmos-text-link"
+             [routerLink]="['/r/realm', s.area!.realm!.guid]"
+             [queryParams]="{ highlightTree: s.tree?.guid }">
+            <mat-icon class="atmos-spirit__meta-icon">map</mat-icon>
+            <span>{{ s.area!.realm!.name }}</span>
+          </a>
+        }
+
+        @if (s.area) {
+          <a class="atmos-spirit__meta-item atmos-text-link" [routerLink]="['/r/area', s.area.guid]">
+            <mat-icon class="atmos-spirit__meta-icon">location_on</mat-icon>
+            <span>{{ s.area.name }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="atmos-card atmos-spirit__trees-card">
+    <div class="atmos-card__body atmos-spirit__trees-body">
+      <h2 class="atmos-spirit__trees-title">Spirit trees</h2>
+      <div class="atmos-spirit__trees-scroll">
+        @for (item of trees(); track item.tree.guid) {
+          <div class="atmos-spirit__tree">
+            <app-atmos-spirit-tree
+              [tree]="item.tree"
+              [name]="item.name"
+              [highlight]="highlightTree() === item.tree.guid"
+              [highlightItem]="highlightItem()"
+              (nodeClicked)="onNodeClicked(item.tree, $event)">
+            </app-atmos-spirit-tree>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

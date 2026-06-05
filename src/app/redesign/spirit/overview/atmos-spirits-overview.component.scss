@@ -1,0 +1,54 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-spirits-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-spirits-overview__tile {
+  display: flex;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+  padding: var(--atmos-pad-compact) var(--atmos-pad);
+  color: var(--atmos-text);
+  text-decoration: none;
+  transition: background var(--atmos-transition), transform var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    transform: translateY(-1px);
+  }
+}
+
+.atmos-spirits-overview__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+
+  mat-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.atmos-spirits-overview__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.atmos-spirits-overview__count {
+  color: var(--atmos-accent);
+  font-size: 13px;
+}

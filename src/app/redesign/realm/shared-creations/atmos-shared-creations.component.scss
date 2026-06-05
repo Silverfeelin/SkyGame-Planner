@@ -1,0 +1,76 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-shared-creations__map-card {
+  overflow: hidden;
+}
+
+.atmos-shared-creations__map-container {
+  position: relative;
+  width: 100%;
+
+  ::ng-deep .map {
+    min-height: 200px;
+    height: 800px;
+    max-height: calc(100vh - 80px);
+
+    &.is-placement-armed {
+      cursor: crosshair;
+    }
+  }
+}
+
+.atmos-shared-creations__controls {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  > .atmos-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+}
+
+::ng-deep .shared-creation-marker {
+  color: var(--atmos-text);
+  filter: drop-shadow(0 0 4px oklch(0.7 0.1 var(--atmos-hue) / 0.9));
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    pointer-events: none;
+  }
+}
+
+::ng-deep .shared-creation-marker.shared-creation-expired {
+  opacity: 0.5;
+  filter: grayscale(1) drop-shadow(0 0 2px oklch(0.5 0.15 25 / 0.9));
+}
+
+::ng-deep .shared-creation-label-input {
+  background: transparent;
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  font-size: 13px;
+  padding: 2px 6px;
+  width: 180px;
+  outline: none;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    border-color: var(--atmos-accent);
+  }
+}

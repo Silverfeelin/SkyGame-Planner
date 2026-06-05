@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.atmos-pnr-tracker__container {
+  position: relative;
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
+  border: var(--atmos-card-border);
+}
+
+.atmos-pnr-tracker__map {
+  height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
+  width: 100%;
+}
+
+.atmos-pnr-tracker__controls {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  > .atmos-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
+}
+
+.atmos-pnr-tracker__count {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  height: 28px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-pill);
+  -webkit-backdrop-filter: var(--atmos-blur-pill);
+  border: var(--atmos-card-border);
+  color: var(--atmos-text);
+  font-size: 13px;
+  font-weight: 600;
+  text-shadow: var(--atmos-text-shadow);
+
+  &.is-complete {
+    color: var(--atmos-good);
+  }
+}

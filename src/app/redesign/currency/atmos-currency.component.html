@@ -1,0 +1,181 @@
+<ng-template #tGain let-g="gain">
+  <span class="atmos-currency__gain"
+    [class.atmos-currency__gain--pos]="g && g.charAt(0) === '+' && g !== '+0'"
+    [class.atmos-currency__gain--neg]="g && g.charAt(0) === '-'">
+    {{ g || '+0' }} today
+  </span>
+</ng-template>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">In-game currency</h1>
+</header>
+
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <p class="atmos-paragraph">
+      Keep track of your in-game currencies. These values change automatically when you unlock items,
+      check in your dailies, or use the calculator.
+    </p>
+    <div class="atmos-currency__quick-links">
+      <a class="atmos-btn" href="https://sky-children-of-the-light.fandom.com/wiki/Currency" target="_blank" rel="noopener">
+        <mat-icon>menu_book</mat-icon>
+        <span>Wiki</span>
+      </a>
+      <a class="atmos-btn" routerLink="/r/currency/spent">
+        <mat-icon>wallet</mat-icon>
+        <span>Spent currencies</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+@if (converted) {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <h2 class="atmos-currency__section-title"><mat-icon>swap_horiz</mat-icon> Converted currencies</h2>
+      <p class="atmos-paragraph">
+        You had leftover season candles from the previous season. These have been converted into regular currencies.
+      </p>
+      <div class="atmos-currency__row">
+        <mat-icon svgIcon="candle"></mat-icon>
+        <strong class="atmos-currency__gain atmos-currency__gain--pos">+ {{ converted.candles }}</strong>
+      </div>
+      <div class="atmos-currency__btn-row">
+        <button type="button" class="atmos-btn" (click)="dismissConverted()">Dismiss</button>
+      </div>
+    </div>
+  </section>
+}
+
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-currency__section-title"><mat-icon>paid</mat-icon> Regular currency</h2>
+
+    <div class="atmos-currency__row">
+      <div class="atmos-currency__field">
+        <mat-icon svgIcon="candle" [ngbTooltip]="'Candles'" container="body"></mat-icon>
+        <span class="atmos-currency__times">x</span>
+        <input #inpC class="atmos-currency__input" type="number" min="0" max="99999" step="1"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
+          [value]="inpCurrencies.candles"/>
+      </div>
+      <div class="atmos-currency__btn-group">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('candles', 1)">+1</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('candles', 5)">+5</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('candles', 10)">+10</button>
+      </div>
+      <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().candles }"></ng-container>
+    </div>
+
+    <div class="atmos-currency__row">
+      <div class="atmos-currency__field">
+        <mat-icon svgIcon="heart" [ngbTooltip]="'Hearts'" container="body"></mat-icon>
+        <span class="atmos-currency__times">x</span>
+        <input #inpH class="atmos-currency__input" type="number" min="0" max="99999" step="1"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
+          [value]="inpCurrencies.hearts"/>
+      </div>
+      <div class="atmos-currency__btn-group">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('hearts', 1)">+1</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('hearts', 5)">+5</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('hearts', 10)">+10</button>
+      </div>
+      <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().hearts }"></ng-container>
+    </div>
+
+    <div class="atmos-currency__row">
+      <div class="atmos-currency__field">
+        <mat-icon svgIcon="ascended-candle" [ngbTooltip]="'Ascended candles'" container="body"></mat-icon>
+        <span class="atmos-currency__times">x</span>
+        <input #inpAc class="atmos-currency__input" type="number" min="0" max="99999" step="0.25"
+          (blur)="onCurrencyInputBlur($event, true)" (input)="onCurrencyInput()"
+          [value]="inpCurrencies.ascendedCandles"/>
+      </div>
+      <div class="atmos-currency__btn-group">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('ascendedCandles', 0.25)">+0.25</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('ascendedCandles', 1)">+1</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency('ascendedCandles', 15.75)">+15.75</button>
+      </div>
+      <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().ascendedCandles }"></ng-container>
+    </div>
+
+    <div class="atmos-currency__row">
+      <div class="atmos-currency__field">
+        <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>
+        <span class="atmos-currency__times">x</span>
+        <input #inpSp class="atmos-currency__input" type="number" min="0" max="99999" step="1"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
+          [value]="inpCurrencies.giftPasses"/>
+      </div>
+      <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().giftPasses }"></ng-container>
+    </div>
+  </div>
+</section>
+
+@if (ongoingSeason) {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <h2 class="atmos-currency__section-title">
+        @if (ongoingSeason.iconUrl) {
+          <img [src]="ongoingSeason.iconUrl" class="atmos-currency__season-icon" alt=""/>
+        }
+        {{ ongoingSeason.name }}
+      </h2>
+      <div class="atmos-currency__row">
+        <div class="atmos-currency__field">
+          <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [ngbTooltip]="'Season candles'"></mat-icon>
+          <span class="atmos-currency__times">x</span>
+          <input #inpSc class="atmos-currency__input atmos-currency__input--narrow" type="number" min="0" max="99999"
+            [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
+            (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+        </div>
+        <div class="atmos-currency__btn-group">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addSeasonCurrency(1)">+1</button>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addSeasonCurrency(dailySeasonCandles)">+{{ dailySeasonCandles }}</button>
+        </div>
+        <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().season }"></ng-container>
+      </div>
+      <div class="atmos-currency__btn-row">
+        <a class="atmos-btn" routerLink="/season-calculator">
+          <mat-icon>calculate</mat-icon>
+          <span>Go to Calculator</span>
+        </a>
+      </div>
+    </div>
+  </section>
+}
+
+@if (ongoingEventInstances.length) {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <h2 class="atmos-currency__section-title"><mat-icon>celebration</mat-icon> Event currency</h2>
+      @for (instance of ongoingEventInstances; track instance.guid) {
+        <div class="atmos-currency__event">
+          <div class="atmos-currency__event-name">{{ instance.name ?? instance.event.name }}</div>
+          <div class="atmos-currency__row">
+            <div class="atmos-currency__field">
+              <mat-icon svgIcon="ticket" [ngbTooltip]="'Event currency'"></mat-icon>
+              <span class="atmos-currency__times">x</span>
+              <input #inpEc class="atmos-currency__input atmos-currency__input--narrow" type="number" min="0" max="99999"
+                [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"
+                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
+            </div>
+            <div class="atmos-currency__btn-group">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="addEventCurrency(instance.guid, 1)">+1</button>
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="addEventCurrency(instance.guid, dailyEventCurrency[instance.guid] || 5)">
+                +{{ dailyEventCurrency[instance.guid] || 5 }}
+              </button>
+            </div>
+            <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().events[instance.guid] }"></ng-container>
+          </div>
+          <div class="atmos-currency__btn-row">
+            <a class="atmos-btn" routerLink="/event-calculator" [queryParams]="{ guid: instance.guid }">
+              <mat-icon>calculate</mat-icon>
+              <span>Go to Calculator</span>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+}

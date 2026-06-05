@@ -1,0 +1,63 @@
+@if (season(); as s) {
+  <article class="atmos-season-card atmos-card">
+    @if (sections()['img']) {
+      <div class="atmos-season-card__media">
+        @if (s.imageUrl) {
+          <div class="atmos-season-card__image" [style.background-image]="imageStyle()"></div>
+        } @else {
+          <div class="atmos-season-card__image atmos-season-card__image--fallback"></div>
+        }
+        <div class="atmos-season-card__fade"></div>
+        <div class="atmos-season-card__heading">
+          <div class="atmos-season-card__kicker">Season {{ s.number }} · {{ s.year }}</div>
+          <h2 class="atmos-season-card__title">
+            <a class="atmos-season-card__title-link" [routerLink]="['/season', s.guid]">{{ s.name }}</a>
+          </h2>
+        </div>
+      </div>
+    }
+
+    <div class="atmos-season-card__body atmos-card__body">
+      @if (sections()['date']) {
+        <div class="atmos-season-card__row">
+          <mat-icon>calendar_month</mat-icon>
+          <span>
+            <app-date [date]="s.date"></app-date> – <app-date [date]="s.endDate"></app-date>
+            <span class="atmos-season-card__days">
+              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
+            </span>
+          </span>
+        </div>
+      }
+
+      @if (sections()['spirits'] && s.spirits.length) {
+        <div class="atmos-season-card__row">
+          <mat-icon>groups</mat-icon>
+          <span>{{ s.spirits.length }} spirits</span>
+        </div>
+      }
+
+      @if (sections()['cost'] && cost()) {
+        <div class="atmos-season-card__cost">
+          <app-cost [cost]="cost()" [remaining]="remainingCost()"></app-cost>
+        </div>
+      }
+
+      @if (sections()['checkin']) {
+        <button
+          type="button"
+          class="atmos-season-card__checkin"
+          [class.is-checked]="checkedIn()"
+          [attr.aria-pressed]="checkedIn()"
+          (click)="onCheckin($event)">
+          <span class="atmos-season-card__checkbox">
+            @if (checkedIn()) { <mat-icon>check</mat-icon> }
+          </span>
+          <span>I have done my season quest.</span>
+        </button>
+      }
+
+      <ng-content />
+    </div>
+  </article>
+}

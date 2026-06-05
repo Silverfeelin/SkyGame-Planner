@@ -1,0 +1,116 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-currency__section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+
+  > mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: var(--atmos-accent);
+  }
+}
+
+.atmos-currency__season-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.atmos-currency__quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-currency__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.atmos-currency__btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-currency__btn-group {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.atmos-currency__field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--atmos-text);
+
+  > mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.atmos-currency__times {
+  color: var(--atmos-text-mute);
+  font-weight: 500;
+}
+
+.atmos-currency__input {
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 12px;
+  outline: none;
+  width: 7em;
+  transition: border-color var(--atmos-transition);
+
+  &:focus { border-color: var(--atmos-accent); }
+  &--narrow { width: 5em; }
+}
+
+.atmos-currency__icon--seasonal {
+  color: var(--atmos-warm);
+}
+
+.atmos-currency__gain {
+  font-size: 13px;
+  color: var(--atmos-text-mute);
+
+  &--pos { color: var(--atmos-good); }
+  &--neg { color: var(--atmos-pink); }
+}
+
+.atmos-currency__event {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--atmos-line);
+
+  &:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
+}
+
+.atmos-currency__event-name {
+  font-weight: 600;
+  color: var(--atmos-text);
+}

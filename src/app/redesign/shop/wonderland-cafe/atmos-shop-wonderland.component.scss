@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-shop-wonderland__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-shop-wonderland__section-header {
+  padding: var(--atmos-pad-compact) var(--atmos-pad);
+  border-bottom: 1px solid var(--atmos-line);
+}
+
+.atmos-shop-wonderland__section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-shop-wonderland__igc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap);
+}
+
+.atmos-shop-wonderland__igc {
+  flex: 0 1 auto;
+  min-width: 240px;
+}
+
+.atmos-shop-wonderland__igc-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}

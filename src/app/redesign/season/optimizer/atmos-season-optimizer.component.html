@@ -1,0 +1,216 @@
+@if (!season) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Season Optimizer</h1>
+  </header>
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <p class="atmos-paragraph">
+        There is no ongoing season and the website hasn't been updated to include the upcoming season yet.<br/><br/>
+        Please check back later.
+      </p>
+    </div>
+  </section>
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ season.name }} Optimizer</h1>
+  </header>
+
+  <section class="atmos-card atmos-optimizer__intro">
+    <div class="atmos-card__body">
+      <p class="atmos-paragraph">
+        This tool helps you plan ahead for the {{ season.name }}.
+        It was inspired by StrangeStiffy's
+        <a href="https://reddit.com/r/SkyGame/comments/1oc7s0a/psa_spirit_friendship_minmaxing/" target="_blank" rel="noopener" class="atmos-text-link">post on Reddit</a>.<br/>
+        You can also have a look at
+        <a href="https://sky-season-calculator.netlify.app/" target="_blank" rel="noopener" class="atmos-text-link">Stoat's Season Calculator</a>
+        or
+        <a href="https://korea-sky-planner.com/sky/candlecalculator" target="_blank" rel="noopener" class="atmos-text-link">Realdeer's Season Calculator</a>
+        (in Korean and English).
+      </p>
+      <hr class="atmos-optimizer__rule"/>
+      <p class="atmos-paragraph">
+        To enter the items you already own, please go back to the
+        <a class="atmos-text-link" [routerLink]="['/r/season', season.guid]">{{ season.name }}</a> page.<br/>
+        There you can click on the items and track your progress as usual.
+      </p>
+      <hr class="atmos-optimizer__rule"/>
+      <p class="atmos-paragraph">
+        This page refers to friendship points in the form of numbers. What does that mean?
+        <a class="atmos-text-link atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">Click here</a> for more information.
+      </p>
+      <p class="atmos-paragraph">
+        A daily spirit adventure gives you 10 friendship points in their spirit tree.<br/>
+        The grey number <span class="atmos-optimizer__value">(30)</span> next to each item shows the total friendship points you get from buying the item.<br/>
+        If you can't unlock all the items you want during the season the calculator will help you figure out which items are most efficient to buy.
+      </p>
+      <p class="atmos-paragraph">
+        A simple example: buying a
+        4 <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(60)</span>
+        blessing is twice as efficient as buying a
+        4 <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(30)</span>
+        blessing — same cost, double the friendship.
+      </p>
+      <hr class="atmos-optimizer__rule"/>
+      <p class="atmos-paragraph">
+        You can click on the items that you want to highlight them.<br/>
+        Below each spirit tree you will then see the remaining friendship points that you need to gain through daily adventures or by buying items you are not interested in.
+      </p>
+      <div class="atmos-optimizer__filters">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightEverything()">Everything</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightCosmetics()">Cosmetics</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightEmotes()">Emotes</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightMusic()">Music</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightSeasonHearts()">Season hearts</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightSeasonPass()">Season pass</button>
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-optimizer__reset" (click)="promptResetHighlight()">Reset highlighted</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="atmos-optimizer__trees">
+    @for (tree of trees; track tree.guid; let iTree = $index) {
+      <div class="atmos-optimizer__tree">
+        <app-atmos-spirit-tree
+          [tree]="tree"
+          [enableControls]="false"
+          [highlightNode]="wantNodeGuids()"
+          [forceNodeAction]="'emit'"
+          (nodeClicked)="onNodeClicked($event)"></app-atmos-spirit-tree>
+        <div class="atmos-card atmos-optimizer__tree-stats">
+          <div class="atmos-card__body atmos-optimizer__tree-stats-body">
+            <div class="atmos-optimizer__stat-label">
+              <b>Current friendship points</b>
+              <mat-icon class="atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">question_mark</mat-icon>
+            </div>
+            <input class="atmos-optimizer__input" type="number" min="0" max="280" step="10"
+                   [formControl]="friendshipControls[iTree]"/>
+            <div><b>Missing points per level</b></div>
+            @for (points of missingFriendship()[iTree]; track $index) {
+              <div>
+                Level {{ $index + 1 }}:
+                <b [class.is-met]="points === 0" [class.is-lacking]="points > 0">{{ points }}</b>
+              </div>
+            }
+            <div>
+              <b>Missing total:</b>
+              <b [class.is-met]="missingFriendshipTotals()[iTree] === 0"
+                 [class.is-lacking]="missingFriendshipTotals()[iTree] > 0">
+                {{ missingFriendshipTotals()[iTree] }}
+              </b>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <section class="atmos-card atmos-optimizer__results">
+    <header class="atmos-optimizer__results-header">
+      <h2 class="atmos-optimizer__results-title">Results</h2>
+    </header>
+    <div class="atmos-card__body">
+      <div class="atmos-optimizer__toggles">
+        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn-active]="hasSeasonPass()" (click)="toggleHaveSeasonPass()">
+          <mat-icon><app-checkbox [state]="hasSeasonPass()" [useColors]="true"></app-checkbox></mat-icon>
+          Have Season Pass
+        </button>
+        <button class="atmos-btn atmos-btn--sm" [class.atmos-btn-active]="hasDoneDailiesToday()" (click)="toggleToday()">
+          <mat-icon><app-checkbox [state]="hasDoneDailiesToday()" [useColors]="true"></app-checkbox></mat-icon>
+          Have done dailies today
+        </button>
+      </div>
+
+      <p class="atmos-paragraph">
+        There are <b class="is-met">{{ daysLeft() }}</b> dailies left in this season.
+      </p>
+
+      <hr class="atmos-optimizer__rule"/>
+
+      <div class="atmos-paragraph">
+        <div class="atmos-optimizer__candles-row">
+          Your current season candles:
+          <input class="atmos-optimizer__input atmos-optimizer__input--inline" type="number"
+                 step="1" min="-999" max="999" [formControl]="candleControl"/>
+        </div>
+        You can get <b class="is-met">{{ candlesLeft() }}</b>
+        <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
+        more during the season (not including double light events).<br/>
+        It will cost a total of <b class="is-lacking">{{ candlesRequired() }}</b>
+        <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
+        to buy the items you highlighted.<br/>
+        If you don't miss any day you should end with
+        <b [class.is-met]="candlesFinal() >= 0" [class.is-lacking]="candlesFinal() < 0">{{ candlesFinal() }}</b>
+        <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>.
+        @if (candlesFinal() < 0) {
+          <div><b class="is-lacking">You don't have enough seasonal candles to buy all of the items you've highlighted.</b></div>
+        } @else {
+          <div><b class="is-met">You will have enough seasonal candles to buy all of the items you've highlighted.</b></div>
+        }
+      </div>
+
+      <hr class="atmos-optimizer__rule"/>
+
+      <p class="atmos-paragraph">
+        If you complete daily spirit adventures you can get a total of
+        <b class="is-met">{{ daysFriendshipLeft() }}</b>
+        friendship points without spending candles.<br/>
+        You still need <b class="is-lacking">{{ missingFriendshipTotal() }}</b> friendship points to reach all of the items you've highlighted.
+      </p>
+
+      @if (missingFriendshipTotal() > daysFriendshipLeft()) {
+        <p class="atmos-paragraph">
+          You've selected items that require <b class="is-lacking">{{ missingFriendshipTotal() - daysFriendshipLeft() }}</b> more friendship points than you can get through daily adventures.<br/>
+          <b class="is-lacking">You can't get all of the items you've highlighted through daily spirit adventures.</b>
+        </p>
+        @if (knapsackNodes().length > 0) {
+          <p class="atmos-paragraph">
+            To reach all of the items you've highlighted, consider adding the following additional items.
+          </p>
+          <ul class="atmos-optimizer__knapsack">
+            @for (node of knapsackNodes(); track node.guid) {
+              <li>
+                {{ node.root?.tree?.spirit?.name }} – {{ node.item!.name }} –
+                {{ node.sc }}
+                <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
+                <span class="atmos-optimizer__value">({{ nodeValues[node.guid] }})</span>
+              </li>
+            }
+          </ul>
+          <p class="atmos-paragraph">
+            These items would give you an additional <b class="is-met">{{ knapsackTotalPoints() }}</b> friendship points for
+            <b class="is-lacking">{{ knapsackTotalSc() }}</b>
+            <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>.<br/>
+            Please highlight the items you'd like to add to update the calculation!
+          </p>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightKnapsack()">Highlight suggested items</button>
+        } @else {
+          <p class="atmos-paragraph">Look for the largest green numbers to prioritize which items to buy!</p>
+        }
+      } @else {
+        <p class="atmos-paragraph"><b class="is-met">You can reach all of the items you've highlighted through daily spirit adventures alone!</b></p>
+      }
+    </div>
+  </section>
+}
+
+@if (showingFriendshipHelp()) {
+  <app-overlay (close)="showingFriendshipHelp.set(false)">
+    <p>
+      Friendship with spirits can be represented by a numerical value, which we label as "friendship points" on this page.<br/>
+      Each friendship level requires a specific amount of friendship points.
+    </p>
+    <p>
+      Here's how to read your friendship points in-game.
+      Each star represents a total number of points.<br/>
+      In the below screenshot I have 30 points because my line is filled three quarters towards the first star.
+    </p>
+    <p>
+      The 'current friendship points' value below each spirit tree is based on the items you've unlocked on the Sky Planner.<br/>
+      You can manually adjust this number to match your actual in-game friendship points.<br/>
+      The calculation will update accordingly.
+    </p>
+    <p>
+      <img style="margin-left: 10px;" src="/assets/game/seasons/migration/friendship-guide.webp" />
+    </p>
+  </app-overlay>
+}

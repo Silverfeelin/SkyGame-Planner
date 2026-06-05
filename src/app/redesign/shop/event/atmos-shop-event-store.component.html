@@ -1,0 +1,62 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Aviary Event Store</h1>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/shop">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Shops</span>
+  </a>
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Aviary_Village#Aviary_Event_Store"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+@if (igcShops.length) {
+  <section class="atmos-card atmos-shop-event__section">
+    <header class="atmos-shop-event__section-header">
+      <h2 class="atmos-shop-event__section-title">In-game currency</h2>
+    </header>
+    <div class="atmos-card__body atmos-shop-event__section-body">
+      <div class="atmos-shop-event__igc-grid">
+        @for (shop of igcShops; track shop.guid) {
+          <div class="atmos-card atmos-shop-event__igc">
+            <div class="atmos-card__body">
+              <h3 class="atmos-shop-event__igc-title">{{ shop.name }}</h3>
+              <app-atmos-item-list
+                [itemList]="shop.itemList!"
+                [highlightNode]="highlightNode()"></app-atmos-item-list>
+            </div>
+          </div>
+        }
+      </div>
+      <app-atmos-spirit-tree
+        [tree]="propShop"
+        [highlightItem]="highlightItem()"></app-atmos-spirit-tree>
+    </div>
+  </section>
+}
+
+@if (iapShops.length) {
+  <section class="atmos-card atmos-shop-event__section">
+    <header class="atmos-shop-event__section-header">
+      <h2 class="atmos-shop-event__section-title">In-app purchases</h2>
+    </header>
+    <div class="atmos-card__body atmos-shop-event__section-body">
+      <div class="atmos-shop-event__iap-grid">
+        @for (shop of iapShops; track shop.guid) {
+          @for (iap of shop.iaps; track iap.guid) {
+            <app-atmos-iap-card
+              [iap]="iap"
+              [highlightIap]="highlightIap()"
+              (purchasedToggle)="togglePurchased(iap)"
+              (giftedToggle)="toggleGifted(iap)"></app-atmos-iap-card>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}

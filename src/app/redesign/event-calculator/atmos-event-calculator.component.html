@@ -1,0 +1,351 @@
+@if (!event || currencyPerDay === undefined) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Event Calculator</h1>
+  </header>
+  <div class="atmos-card">
+    <div class="atmos-card__body atmos-event-calc__empty">
+      @if (!event) {
+        <p class="atmos-paragraph">There is no ongoing event and the website hasn't been updated to include any upcoming events yet.</p>
+        <p class="atmos-paragraph">Please check back later.</p>
+      } @else if (!hasSpirits) {
+        @if (eventInstance && eventInstance.draft) {
+          <p class="atmos-paragraph">The Sky Planner has no data for this event yet!</p>
+        } @else {
+          <p class="atmos-paragraph">This event has no cosmetics, so there is nothing to calculate!</p>
+        }
+      } @else {
+        <p class="atmos-paragraph">There is no event currency data available for the event.</p>
+        <p class="atmos-paragraph">Please check back later or report the URL of this page on <a class="atmos-text-link" href="https://github.com/Silverfeelin/SkyGame-Planner" target="_blank" rel="noopener">GitHub</a> if it's taking too long.</p>
+      }
+    </div>
+  </div>
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">
+      {{ event.name }} {{ year }} <span class="atmos-event-calc__kicker">Calculator</span>
+    </h1>
+  </header>
+
+  <section class="atmos-page__quick-actions">
+    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event-instance', eventInstance.guid]">
+      <mat-icon>arrow_back</mat-icon> Event
+    </a>
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/currency">
+      <mat-icon svgIcon="candle"></mat-icon> Currencies
+    </a>
+    <a class="atmos-btn atmos-btn--sm" href="https://sky-event-calculator.netlify.app/" target="_blank" rel="noopener">
+      <mat-icon>open_in_new</mat-icon> Stoat's Calculator
+    </a>
+  </section>
+
+  @if (concluded) {
+    <div class="atmos-event-calc__warning">
+      <mat-icon>priority_high</mat-icon>
+      <span>This event has concluded!</span>
+    </div>
+  }
+
+  @if (eventInstance.draft) {
+    <div class="atmos-event-calc__warning">
+      <mat-icon>warning</mat-icon>
+      <span>We're still working on this content. Thank you for your patience.</span>
+    </div>
+  }
+
+  <section class="atmos-card atmos-event-calc__section">
+    <header class="atmos-event-calc__section-header">
+      <h2 class="atmos-event-calc__section-title">Settings</h2>
+    </header>
+    <div class="atmos-card__body atmos-event-calc__settings">
+      <div class="atmos-event-calc__row">
+        <span>Your current event currency:</span>
+        <mat-icon svgIcon="ticket"></mat-icon>
+        <input #inpEc type="number" min="0" max="99999" class="atmos-event-calc__input"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="currencyCount" />
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency()">+{{ currencyPerDay }} (daily)</button>
+      </div>
+
+      <div class="atmos-event-calc__row">
+        <span>Today's daily currency:</span>
+        <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn-active]="includesToday" (click)="toggleIncludesToday()">
+          <mat-icon>{{ includesToday ? 'check' : 'close' }}</mat-icon>
+          <span>{{ includesToday ? 'obtained' : 'not obtained' }}</span>
+        </button>
+      </div>
+
+      <div class="atmos-event-calc__row">
+        <span>Your current candles:</span>
+        <mat-icon svgIcon="candle"></mat-icon>
+        <input #inpC type="number" min="0" max="99999" class="atmos-event-calc__input"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="candleCount" />
+      </div>
+
+      <div class="atmos-event-calc__row">
+        <span>Your current hearts:</span>
+        <mat-icon svgIcon="heart"></mat-icon>
+        <input #inpH type="number" min="0" max="99999" class="atmos-event-calc__input"
+          (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="heartCount" />
+      </div>
+
+      <div class="atmos-event-calc__row">
+        <span>Your current ascended candles:</span>
+        <mat-icon svgIcon="ascended-candle"></mat-icon>
+        <input #inpAc type="number" min="0" max="99999" step="0.25" class="atmos-event-calc__input atmos-event-calc__input--wide"
+          (blur)="onCurrencyInputBlur($event, true)" (input)="onCurrencyInput($event)" [value]="acCount" />
+      </div>
+
+      @if (timedCurrencies.length) {
+        <hr class="atmos-event-calc__divider" />
+        <p class="atmos-paragraph">
+          This event includes some activities that reward extra event currency.
+          Please enter how much you have collected from these activities below.
+          Your current event currency should always be entered at the top of the page, including the ones from these activities!
+        </p>
+        @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
+          <hr class="atmos-event-calc__divider" />
+          <div class="atmos-event-calc__timed">
+            @if (timedCurrency.endDate < now) {
+              @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
+              Between <b class="atmos-event-calc__date is-old">{{ timedCurrency.date | datetime }}</b>
+              and <b class="atmos-event-calc__date is-old">{{ timedCurrency.endDate | datetime }}</b>
+              you were able to get <b>{{ timedCurrency.amount }}</b> extra event currency.<br/>
+              Please enter how much you collected during this period:
+            } @else if (timedCurrency.date > now) {
+              @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
+              Between <b>{{ timedCurrency.date | datetime }}</b>
+              and <b>{{ timedCurrency.endDate | datetime }}</b>
+              you will be able to get <b>{{ timedCurrency.amount }}</b> extra event currency.<br/>
+              Please keep this value at <b>0</b> until the currency becomes available:
+            } @else {
+              @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
+              Between <b class="atmos-event-calc__date is-new">{{ timedCurrency.date | datetime }}</b>
+              and <b class="atmos-event-calc__date is-new">{{ timedCurrency.endDate | datetime }}</b>
+              you can get <b>{{ timedCurrency.amount }}</b> extra event currency.<br/>
+              Please enter how much you have collected so far:
+            }
+            <input #inpTimed [attr.data-guid]="timedCurrency.guid" type="number" min="0" max="99999"
+              class="atmos-event-calc__input"
+              (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)"
+              [value]="timedCurrencyCount[timedCurrency.guid]" />
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <section class="atmos-card atmos-event-calc__section">
+    <header class="atmos-event-calc__section-header">
+      <h2 class="atmos-event-calc__section-title">Selection</h2>
+    </header>
+    <div class="atmos-card__body atmos-event-calc__settings">
+      <div class="atmos-event-calc__row">
+        <span>You want:</span>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectEverything()">everything</button>
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectNothing()">nothing</button>
+      </div>
+      <p class="atmos-paragraph">
+        You can also choose what items you want by clicking on the items below and then clicking "Want".<br/>
+        If you already own the item, you should click "Have" to mark it as owned.
+      </p>
+    </div>
+  </section>
+
+  <section class="atmos-card atmos-event-calc__section">
+    <header class="atmos-event-calc__section-header">
+      <h2 class="atmos-event-calc__section-title">Result</h2>
+    </header>
+    <div class="atmos-card__body atmos-event-calc__settings">
+      @if (!hasNodes) {
+        <blockquote class="atmos-event-calc__quote">
+          <mat-icon>priority_high</mat-icon>
+          You have not selected any items!
+        </blockquote>
+      }
+      @if (hasSkippedNode) {
+        <blockquote class="atmos-event-calc__quote">
+          <mat-icon>priority_high</mat-icon>
+          Required items leading up to the items you want are included in the calculations!
+        </blockquote>
+      }
+
+      <div>
+        You currently have
+        <mat-icon svgIcon="ticket"></mat-icon>&nbsp;<b class="atmos-event-calc__num is-new">{{ currencyCount || 0 }}</b> event currency,
+        <mat-icon svgIcon="candle"></mat-icon>&nbsp;<b class="atmos-event-calc__num is-new">{{ candleCount || 0 }}</b>
+        {{ candleCount === 1 ? 'candle' : 'candles' }},
+        <mat-icon svgIcon="heart"></mat-icon>&nbsp;<b class="atmos-event-calc__num is-new">{{ heartCount || 0 }}</b>
+        {{ heartCount === 1 ? 'heart' : 'hearts' }} and
+        <mat-icon svgIcon="ascended-candle"></mat-icon>&nbsp;<b class="atmos-event-calc__num is-new">{{ acCount || 0 }}</b>
+        {{ acCount === 1 ? 'ascended candle' : 'ascended candles' }}.
+      </div>
+
+      <div>
+        You will be able to get
+        <b class="atmos-event-calc__num is-new">{{ currencyPerDay }}</b>
+        event currency every day for <b class="atmos-event-calc__num is-new">{{ daysLeft }}</b> more {{ daysLeft === 1 ? 'day' : 'days' }}.
+      </div>
+
+      @if (timedCurrencies.length) {
+        @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
+          @if (!timedCurrencyRemaining[timedCurrency.guid]) {
+            <div>
+              You got all <b class="atmos-event-calc__num is-new">{{ timedCurrency.amount }}</b>
+              extra event currency between
+              <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+            </div>
+          } @else if (timedCurrency.endDate < now) {
+            <div>
+              You missed <b class="atmos-event-calc__num is-old">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+              extra event currency between
+              <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+            </div>
+          } @else {
+            <div>
+              You will be able to get <b class="atmos-event-calc__num is-new">{{ timedCurrencyRemaining[timedCurrency.guid] || 0 }}</b>
+              extra event currency between
+              <b>{{ timedCurrency.date | datetime }}</b> and <b>{{ timedCurrency.endDate | datetime }}</b>.
+            </div>
+          }
+        }
+      }
+
+      <div>
+        If you do not miss any, you will be able to get
+        <b class="atmos-event-calc__num is-new">{{ currencyAvailable }}</b>
+        more event currency before the event concludes.
+      </div>
+      <div>
+        You still need to collect
+        <b class="atmos-event-calc__num is-new">{{ currencyRequired }}</b>
+        event currency to get the items you want.
+      </div>
+
+      @if (currencyRequired > currencyAvailable) {
+        <b class="atmos-event-calc__num is-old">
+          You will not be able to collect enough event currency before the event concludes.<br/>You should prioritize the items you want most or check if you can get extra event currency from shops.
+        </b>
+        <div>
+          You will be short <b class="atmos-event-calc__num is-old">{{ currencyRequired - currencyAvailable }}</b> event currency.
+        </div>
+      } @else {
+        @if (hasNodes) {
+          <b class="atmos-event-calc__num is-new">
+            You will be able to collect enough event currency before the event concludes.
+          </b>
+          @if (currencyAvailable > currencyRequired) {
+            <div>
+              You can miss out on <b class="atmos-event-calc__num is-new">{{ currencyAvailable - currencyRequired }}</b>
+              event currency and still have enough to get these items.
+            </div>
+          }
+        }
+      }
+
+      @if (candlesRequired > 0) {
+        <hr class="atmos-event-calc__divider" />
+        <div>
+          You will also need to collect
+          <mat-icon svgIcon="candle"></mat-icon>&nbsp;
+          <b class="atmos-event-calc__num is-new">{{ candlesRequired }}</b>
+          {{ candlesRequired === 1 ? 'candle' : 'candles' }} to get the items you want.
+        </div>
+        <div>
+          In <b class="atmos-event-calc__num is-new">{{ daysLeft }}</b>
+          {{ daysLeft === 1 ? 'day' : 'days' }} you should be able to get around
+          <mat-icon svgIcon="candle"></mat-icon>&nbsp;
+          <b class="atmos-event-calc__num is-new">{{ candlesAvailable }}</b> candles, which is
+          @if (candlesAvailable >= candlesRequired) {
+            <b class="atmos-event-calc__num is-new">enough</b>
+          } @else {
+            <b class="atmos-event-calc__num is-old">not enough</b>
+          }.
+        </div>
+      }
+      @if (heartsRequired > 0) {
+        <hr class="atmos-event-calc__divider" />
+        <div>
+          You will also need to collect
+          <mat-icon svgIcon="heart"></mat-icon>&nbsp;
+          <b class="atmos-event-calc__num is-new">{{ heartsRequired }}</b>
+          {{ heartsRequired === 1 ? 'heart' : 'hearts' }} to get the items you want.
+        </div>
+      }
+      @if (acRequired > 0) {
+        <hr class="atmos-event-calc__divider" />
+        <div>
+          You will also need to collect
+          <mat-icon svgIcon="ascended-candle"></mat-icon>&nbsp;
+          <b class="atmos-event-calc__num is-new">{{ acRequired }}</b>
+          {{ acRequired === 1 ? 'ascended candle' : 'ascended candles' }} to get the items you want.
+        </div>
+      }
+    </div>
+  </section>
+
+  @if (shops.length) {
+    <section class="atmos-card atmos-event-calc__section">
+      <div class="atmos-card__body">
+        <div class="atmos-event-calc__trees">
+          @for (shop of shops; track shop.guid) {
+            <app-item-list [itemList]="shop.itemList!" [opaqueNodes]="true" [nodeOverlayTemplate]="tShopNode"></app-item-list>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  @if (spirits.length) {
+    <section class="atmos-card atmos-event-calc__section">
+      <div class="atmos-card__body">
+        <div class="atmos-event-calc__trees">
+          @for (spiritInstance of spirits; track spiritInstance.guid) {
+            <app-atmos-spirit-tree [tree]="spiritInstance.tree"
+              [name]="spiritInstance.name || spiritInstance.spirit.name || ''"
+              [enableControls]="false" [forceNodeAction]="'emit'"
+              [nodeOverlayTemplate]="tNode" [opaqueNodes]="true" [padBottom]="true">
+            </app-atmos-spirit-tree>
+          }
+        </div>
+      </div>
+    </section>
+  }
+}
+
+<ng-template #tShopNode let-node>
+  <div class="atmos-event-calc__overlay"
+    [class.is-have]="node.item?.unlocked" [class.is-want]="wantListNodes[node.guid]"
+    (click)="toggleListButtons(node)">
+    <div class="atmos-event-calc__overlay-inner" [class.is-active]="listNodeShowButtons === node">
+      <div class="atmos-event-calc__overlay-buttons">
+        <button class="atmos-btn atmos-btn--sm" type="button" (click)="wantListNode(node, $event)">
+          <mat-icon>{{ wantListNodes[node.guid] ? 'check' : 'close' }}</mat-icon>
+          <span>Want</span>
+        </button>
+        <button class="atmos-btn atmos-btn--sm" type="button" (click)="haveListNode(node, $event)">
+          <mat-icon>{{ node.item?.unlocked ? 'check' : 'close' }}</mat-icon>
+          <span>Have</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #tNode let-node>
+  <div class="atmos-event-calc__overlay"
+    [class.is-have]="node.item?.unlocked" [class.is-want]="wantNodes[node.guid]"
+    (click)="toggleButtons(node)">
+    <div class="atmos-event-calc__overlay-inner" [class.is-active]="nodeShowButtons === node">
+      <div class="atmos-event-calc__overlay-buttons" [class.is-top]="firstNodes[node.guid]">
+        <button class="atmos-btn atmos-btn--sm" type="button" (click)="wantNode(node, $event)">
+          <mat-icon>{{ wantNodes[node.guid] ? 'check' : 'close' }}</mat-icon>
+          <span>Want</span>
+        </button>
+        <button class="atmos-btn atmos-btn--sm" type="button" (click)="haveNode(node, $event)">
+          <mat-icon>{{ node.item?.unlocked ? 'check' : 'close' }}</mat-icon>
+          <span>Have</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

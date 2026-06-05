@@ -1,0 +1,116 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-col__count {
+  font-size: 18px;
+  color: var(--atmos-text);
+}
+
+.atmos-col__count-sep,
+.atmos-col__count-label {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-col__count-complete {
+  color: var(--atmos-good);
+}
+
+.atmos-col__map-card {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.atmos-col__map {
+  width: 100%;
+  height: 60vh;
+  min-height: 360px;
+}
+
+.atmos-col__map-control {
+  position: absolute;
+  z-index: 9999;
+  bottom: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--atmos-text);
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg-strong);
+  }
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.atmos-col__grid-card {
+  padding: 8px;
+}
+
+// ag-grid cell renderer HTML isn't view-encapsulated, so target via ::ng-deep.
+:host ::ng-deep ag-grid-angular .maticon {
+  vertical-align: sub;
+}
+
+:host ::ng-deep .atmos-col__map-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  color: var(--atmos-accent);
+  border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+  }
+}
+
+:host ::ng-deep .atmos-col__row-unlocked {
+  position: relative;
+  white-space: nowrap;
+  padding-right: 30px;
+}
+
+:host ::ng-deep .atmos-col__row-toggle {
+  position: absolute;
+  cursor: pointer;
+  top: -3px;
+  right: 0;
+  color: var(--atmos-text-dim);
+  transition: color var(--atmos-transition);
+
+  &:hover {
+    color: var(--atmos-accent);
+  }
+}
+
+:host ::ng-deep .atmos-col__row-complete {
+  color: var(--atmos-good);
+  font-weight: 600;
+}
+
+:host ::ng-deep .atmos-col__row-partial {
+  color: var(--atmos-warm);
+  font-weight: 600;
+}

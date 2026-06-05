@@ -1,0 +1,38 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Wonderland Café</h1>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/shop">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Shops</span>
+  </a>
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Days_of_Feast/2024#Wonderland_Cafe_Corridor"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+@if (igcShops.length) {
+  <section class="atmos-card atmos-shop-wonderland__section">
+    <header class="atmos-shop-wonderland__section-header">
+      <h2 class="atmos-shop-wonderland__section-title">In-game currency</h2>
+    </header>
+    <div class="atmos-card__body atmos-shop-wonderland__section-body">
+      <div class="atmos-shop-wonderland__igc-grid">
+        @for (shop of igcShops; track shop.guid) {
+          <div class="atmos-card atmos-shop-wonderland__igc">
+            <div class="atmos-card__body">
+              <h3 class="atmos-shop-wonderland__igc-title">{{ shop.name }}</h3>
+              <app-atmos-item-list
+                [itemList]="shop.itemList!"
+                [highlightNode]="highlightNode()"></app-atmos-item-list>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

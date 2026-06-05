@@ -1,0 +1,145 @@
+@if (instance(); as inst) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">
+      {{ inst.name ?? inst.event.name }}
+      <span class="atmos-event-instance__year"><app-date [date]="inst.date" [format]="'yyyy'"></app-date></span>
+    </h1>
+  </header>
+
+  @if (inst.draft) {
+    <div class="atmos-card atmos-event-instance__draft">
+      <div class="atmos-card__body atmos-event-instance__draft-body">
+        <mat-icon>warning</mat-icon>
+        <span>We're still working on this content. Thank you for your patience.</span>
+      </div>
+    </div>
+  }
+
+  <section class="atmos-page__quick-actions">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/event">
+      <mat-icon>arrow_back</mat-icon> Events
+    </a>
+    @if (inst.event) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event', inst.event.guid]">
+        <mat-icon>event</mat-icon> {{ inst.event.name }}
+      </a>
+    }
+    @if (previousInstance(); as prev) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event-instance', prev.guid]">
+        <mat-icon>arrow_back</mat-icon> Previous year
+      </a>
+    }
+    @if (nextInstance(); as nxt) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event-instance', nxt.guid]">
+        <mat-icon>arrow_forward</mat-icon> Next year
+      </a>
+    }
+    @if (inst.calculatorData && (state() === 'active' || state() === 'future')) {
+      <a class="atmos-btn atmos-btn--sm" routerLink="/r/event-calculator" [queryParams]="{ guid: inst.guid }">
+        <mat-icon>calculate</mat-icon> Event Calculator
+      </a>
+    }
+  </section>
+
+  <section class="atmos-card atmos-event-instance__summary">
+    <div class="atmos-card__body atmos-event-instance__summary-body">
+      <div class="atmos-event-instance__meta">
+        <mat-icon>calendar_month</mat-icon>
+        <span class="atmos-event-instance__meta-text" [class.is-expired]="state() === 'ended'">
+          <app-date [date]="inst.date"></app-date>
+          to
+          <app-date [date]="inst.endDate"></app-date>
+          @if (state() !== 'active') {
+            <span class="atmos-event-instance__days-left">
+              (<app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
+            </span>
+          }
+        </span>
+      </div>
+      <div class="atmos-event-instance__meta">
+        <mat-icon>schedule</mat-icon>
+        <span class="atmos-event-instance__meta-text" [class.is-expired]="state() === 'ended'">
+          <app-duration [start]="inst.date" [end]="inst.endDate"></app-duration>
+          @if (state() === 'active') {
+            <span class="atmos-event-instance__days-left">
+              (<app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
+            </span>
+          }
+        </span>
+      </div>
+      <div class="atmos-event-instance__meta">
+        <mat-icon svgIcon="ticket"></mat-icon>
+        <span class="atmos-event-instance__meta-text">
+          {{ ec() }} event currency
+          @if (ecLeft()) { <span class="atmos-event-instance__days-left">({{ ecLeft() }} needed)</span> }
+        </span>
+      </div>
+      <div class="atmos-event-instance__meta">
+        <mat-icon svgIcon="candle"></mat-icon>
+        <span class="atmos-event-instance__meta-text">
+          {{ c() }} candles
+          @if (cLeft()) { <span class="atmos-event-instance__days-left">({{ cLeft() }} needed)</span> }
+        </span>
+      </div>
+    </div>
+  </section>
+
+  @if (inst.spirits?.length) {
+    <section class="atmos-card atmos-event-instance__section">
+      <header class="atmos-event-instance__section-header">
+        <h2 class="atmos-event-instance__section-title">Spirits</h2>
+      </header>
+      <div class="atmos-card__body atmos-event-instance__section-body">
+        <div class="atmos-event-instance__trees">
+          @for (spirit of inst.spirits; track spirit.guid) {
+            <div class="atmos-event-instance__tree">
+              <app-atmos-spirit-tree
+                [tree]="spirit.tree"
+                [name]="spirit.name || spirit.tree.name || spirit.spirit.name"
+                [highlightItem]="highlightItem()"></app-atmos-spirit-tree>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  }
+
+  @if (shops().length) {
+    <section class="atmos-card atmos-event-instance__section">
+      <header class="atmos-event-instance__section-header">
+        <h2 class="atmos-event-instance__section-title">Shops</h2>
+      </header>
+      <div class="atmos-card__body atmos-event-instance__section-body">
+        @for (shop of shops(); track shop.guid) {
+          <app-item-list [itemList]="shop.itemList!"></app-item-list>
+        }
+      </div>
+    </section>
+  }
+
+  @if (iapShops().length) {
+    <section class="atmos-card atmos-event-instance__section">
+      <header class="atmos-event-instance__section-header">
+        <h2 class="atmos-event-instance__section-title">In-App Purchases</h2>
+      </header>
+      <div class="atmos-card__body atmos-event-instance__section-body">
+        <div class="atmos-event-instance__iap-grid">
+          @for (shop of iapShops(); track shop.guid) {
+            @for (iap of shop.iaps; track iap.guid) {
+              <app-atmos-iap-card
+                [iap]="iap"
+                [highlightIap]="highlightIap()"
+                (purchasedToggle)="togglePurchased(iap)"
+                (giftedToggle)="toggleGifted(iap)"></app-atmos-iap-card>
+            }
+          }
+        </div>
+      </div>
+    </section>
+  }
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Event instance</h1>
+  </header>
+  <p class="atmos-paragraph">Event instance not found. <a class="atmos-text-link" routerLink="/r/event">Back to events</a></p>
+}

@@ -1,0 +1,82 @@
+.atmos-daily-card {
+  position: relative;
+}
+
+.atmos-daily-card__media {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.atmos-daily-card__image {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    oklch(0.45 0.09 var(--atmos-hue)),
+    oklch(0.35 0.07 calc(var(--atmos-hue) + 40))
+  );
+}
+
+.atmos-daily-card__fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+  );
+}
+
+.atmos-daily-card__heading {
+  position: absolute;
+  left: var(--atmos-pad-compact);
+  right: var(--atmos-pad-compact);
+  bottom: 14px;
+}
+
+.atmos-daily-card__kicker {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--atmos-accent);
+  text-shadow: var(--atmos-text-shadow);
+  margin-bottom: 4px;
+}
+
+.atmos-daily-card__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow-large);
+  letter-spacing: -0.4px;
+}
+
+.atmos-daily-card__body {
+  padding: var(--atmos-pad-compact);
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-daily-card__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--atmos-text);
+  text-decoration: none;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--atmos-text-dim);
+  }
+}

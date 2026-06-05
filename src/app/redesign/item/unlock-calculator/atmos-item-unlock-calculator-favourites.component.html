@@ -1,0 +1,26 @@
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-item-unlock-calc-sub__title">Add favourites</h2>
+    <p class="atmos-paragraph">
+      Select an item from your favourites to add it to the calculator. Only items you don't already have are displayed below.
+    </p>
+    @if (items.length) {
+      <div class="atmos-item-unlock-calc-sub__buttons">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addAll($event)">
+          <mat-icon>playlist_add</mat-icon> Add all
+        </button>
+      </div>
+      <div class="atmos-item-unlock-calc-sub__grid">
+        @for (item of items; track item.guid) {
+          <div class="atmos-item-unlock-calc-sub__icon"
+            [ngbTooltip]="item.name" container="body"
+            (click)="onItemSelected($event, item)">
+            <app-item-icon [item]="item" [opaque]="true"></app-item-icon>
+          </div>
+        }
+      </div>
+    } @else {
+      <p class="atmos-paragraph">You haven't favourited any items yet, or you already own them all.</p>
+    }
+  </div>
+</section>

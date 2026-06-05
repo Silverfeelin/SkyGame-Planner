@@ -1,0 +1,210 @@
+@if (season(); as s) {
+  @if (s.draft) {
+    <section class="atmos-card atmos-season__draft">
+      <div class="atmos-card__body atmos-season__draft-body">
+        <mat-icon>warning</mat-icon>
+        <span>We're still working on this content. Thank you for your patience.</span>
+      </div>
+    </section>
+  }
+
+  <header class="atmos-page__header atmos-season__header">
+    <h1 class="atmos-page__title">{{ s.name }}</h1>
+    <span class="atmos-season__number">#{{ s.number }}</span>
+  </header>
+
+  <section class="atmos-page__quick-actions atmos-season__quick-actions">
+    @if (s._wiki?.href) {
+      <a class="atmos-btn atmos-btn--sm" [href]="s._wiki!.href" target="_blank" rel="noopener">
+        <mat-icon>menu_book</mat-icon> Wiki
+      </a>
+    }
+    @if (s._calendar?.href) {
+      <a class="atmos-btn atmos-btn--sm" [href]="s._calendar!.href" target="_blank" rel="noopener">
+        <mat-icon>event</mat-icon> Calendar
+      </a>
+    }
+    @if (previousSeason(); as p) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', p.guid]">
+        <mat-icon>arrow_back</mat-icon> {{ p.name }}
+      </a>
+    }
+    @if (nextSeason(); as n) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', n.guid]">
+        <mat-icon>arrow_forward</mat-icon> {{ n.name }}
+      </a>
+    }
+    @if (showCalculator()) {
+      <a class="atmos-btn atmos-btn--sm" routerLink="/r/season-calculator">
+        <mat-icon>calculate</mat-icon> Calculator
+      </a>
+    }
+    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ season: s.guid, type: 'Season,Guide' }">
+      <mat-icon>list</mat-icon> Spirits ({{ s.spirits.length - 1 }})
+    </a>
+  </section>
+
+  <!-- Overview / facts -->
+  <section class="atmos-card atmos-season__overview">
+    <div class="atmos-card__body atmos-season__facts">
+      <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
+        <mat-icon>calendar_month</mat-icon>
+        <div>
+          <app-date [date]="s.date"></app-date> – <app-date [date]="s.endDate"></app-date>
+          @if (state() !== 'active') {
+            <span class="atmos-season__fact-meta">
+              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
+            </span>
+          }
+        </div>
+      </div>
+      <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
+        <mat-icon>schedule</mat-icon>
+        <div>
+          <app-duration [start]="s.date" [end]="s.endDate"></app-duration>
+          @if (state() === 'active') {
+            <span class="atmos-season__fact-meta">
+              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
+            </span>
+          }
+        </div>
+      </div>
+      <div class="atmos-season__fact">
+        <mat-icon svgIcon="season-candle"></mat-icon>
+        <div>
+          {{ sc() }} season candles
+          @if (scLeft()) {
+            <span class="atmos-season__fact-meta">({{ scLeft() }} needed)</span>
+          }
+        </div>
+      </div>
+      <div class="atmos-season__fact">
+        <mat-icon svgIcon="season-heart"></mat-icon>
+        <div>
+          {{ sh() }} season hearts
+          @if (shLeft()) {
+            <span class="atmos-season__fact-meta">({{ shLeft() }} needed)</span>
+          }
+        </div>
+      </div>
+      <div class="atmos-season__pass">
+        <button type="button" class="atmos-btn atmos-btn--sm"
+                [class.atmos-btn-active]="hasBoughtSeasonPass()"
+                (click)="toggleSeasonPass(false)">
+          <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          Bought Season Pass
+        </button>
+        <button type="button" class="atmos-btn atmos-btn--sm"
+                [class.atmos-btn-active]="hasGiftedSeasonPass()"
+                (click)="toggleSeasonPass(true)">
+          <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+          Received Season Pass
+        </button>
+      </div>
+    </div>
+  </section>
+
+  @if (state() === 'ended' && guide() && guideTreePostSeason(); as postTree) {
+    <section class="atmos-card atmos-season__section">
+      <header class="atmos-season__section-header">
+        <h2 class="atmos-season__section-title">Post-season guide tree</h2>
+      </header>
+      <div class="atmos-card__body atmos-season__trees">
+        <div class="atmos-season__tree">
+          <div class="atmos-season__tree-name">
+            <a class="atmos-text-link" [routerLink]="['/r/spirit', guide()!.guid]"
+               [queryParams]="{ highlightTree: postTree.guid }">{{ guide()!.name }}</a>
+          </div>
+          <app-atmos-spirit-tree [tree]="postTree" [name]="guide()!.name"
+            [highlight]="highlightTree() === postTree.guid"></app-atmos-spirit-tree>
+        </div>
+      </div>
+    </section>
+  }
+
+  <!-- Trees -->
+  <section class="atmos-card atmos-season__section">
+    <header class="atmos-season__section-header">
+      <h2 class="atmos-season__section-title">
+        {{ state() === 'ended' ? 'Season spirit trees' : 'Spirit trees' }}
+      </h2>
+    </header>
+    <div class="atmos-card__body atmos-season__trees">
+      @if (guide(); as g) {
+        @if (guideTree(); as gt) {
+          <div class="atmos-season__tree">
+            <div class="atmos-season__tree-name">
+              <a class="atmos-text-link" [routerLink]="['/r/spirit', g.guid]"
+                 [queryParams]="{ highlightTree: gt.guid }">{{ g.name }}</a>
+              <span class="atmos-season__tree-tag">Guide</span>
+            </div>
+            <app-atmos-spirit-tree [tree]="gt" [name]="g.name"
+              [highlight]="highlightTree() === gt.guid"></app-atmos-spirit-tree>
+          </div>
+        }
+      }
+      @for (entry of seasonTrees(); track entry.spirit.guid) {
+        <div class="atmos-season__tree">
+          <div class="atmos-season__tree-name">
+            <a class="atmos-text-link" [routerLink]="['/r/spirit', entry.spirit.guid]"
+               [queryParams]="{ highlightTree: entry.tree.guid }">{{ entry.spirit.name }}</a>
+          </div>
+          <app-atmos-spirit-tree [tree]="entry.tree" [name]="entry.spirit.name"
+            [highlight]="highlightTree() === entry.tree.guid"></app-atmos-spirit-tree>
+        </div>
+      }
+    </div>
+  </section>
+
+  @if (includedTrees()?.length) {
+    <section class="atmos-card atmos-season__section">
+      <header class="atmos-season__section-header">
+        <h2 class="atmos-season__section-title">Related spirit trees</h2>
+      </header>
+      <div class="atmos-card__body atmos-season__trees">
+        @for (tree of includedTrees(); track tree.guid) {
+          <div class="atmos-season__tree">
+            @if (tree.spirit) {
+              <div class="atmos-season__tree-name">
+                <a class="atmos-text-link" [routerLink]="['/r/spirit', tree.spirit.guid]">{{ tree.spirit.name }}</a>
+              </div>
+            }
+            <app-atmos-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'"></app-atmos-spirit-tree>
+          </div>
+        }
+      </div>
+    </section>
+  }
+
+  @if (shops().length) {
+    <section class="atmos-card atmos-season__section">
+      <header class="atmos-season__section-header">
+        <h2 class="atmos-season__section-title">Shops</h2>
+      </header>
+      <div class="atmos-card__body">
+        @for (shop of shops(); track shop.guid) {
+          @if (shop.itemList) {
+            <app-atmos-item-list [itemList]="shop.itemList"></app-atmos-item-list>
+          }
+        }
+      </div>
+    </section>
+  }
+
+  @if (iapShops().length) {
+    <section class="atmos-card atmos-season__section">
+      <header class="atmos-season__section-header">
+        <h2 class="atmos-season__section-title">In-App Purchases</h2>
+      </header>
+      <div class="atmos-card__body">
+        <div class="atmos-season__iap-grid">
+          @for (shop of iapShops(); track shop.guid) {
+            @for (iap of shop.iaps; track iap.guid) {
+              <app-atmos-iap-card [iap]="iap" [highlightIap]="highlightIap()"></app-atmos-iap-card>
+            }
+          }
+        </div>
+      </div>
+    </section>
+  }
+}

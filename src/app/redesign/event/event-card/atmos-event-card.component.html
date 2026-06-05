@@ -1,0 +1,113 @@
+@if (event(); as e) {
+  <article class="atmos-event-card atmos-card">
+    @if (sections()['img']) {
+      <div class="atmos-event-card__media">
+        @if (e.imageUrl) {
+          <div class="atmos-event-card__image" [style.background-image]="imageStyle()"></div>
+        } @else {
+          <div class="atmos-event-card__image atmos-event-card__image--fallback"></div>
+        }
+        <div class="atmos-event-card__fade"></div>
+        <div class="atmos-event-card__heading">
+          <div class="atmos-event-card__kicker">Event</div>
+          <h2 class="atmos-event-card__title">
+            <a class="atmos-event-card__title-link" [routerLink]="['/event', e.guid]">{{ e.name }}</a>
+          </h2>
+        </div>
+      </div>
+    }
+
+    <div class="atmos-event-card__body atmos-card__body">
+      @if (instance(); as inst) {
+        @if (sections()['date']) {
+          <div class="atmos-event-card__row">
+            <mat-icon>calendar_month</mat-icon>
+            <span>
+              <app-date [date]="inst.date"></app-date> – <app-date [date]="inst.endDate"></app-date>
+              <span class="atmos-event-card__days">
+                (<app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
+              </span>
+            </span>
+          </div>
+        }
+
+        @if (sections()['cost'] && cost()) {
+          <div class="atmos-event-card__cost">
+            <app-cost [cost]="cost()" [remaining]="remainingCost()"></app-cost>
+          </div>
+        }
+      }
+
+      @if (sections()['select']) {
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectEvent()">
+          <mat-icon>radio_button_checked</mat-icon>
+          <span>Select</span>
+        </button>
+      }
+
+      @if (sections()['overview'] && instance(); as inst) {
+        <a class="atmos-event-card__link" [routerLink]="['/r/event-instance', inst.guid]">
+          <mat-icon>article</mat-icon>
+          <span>Overview</span>
+        </a>
+      }
+
+      @if (sections()['list']) {
+        <a class="atmos-event-card__link" [routerLink]="['/r/event', e.guid]">
+          <mat-icon>list</mat-icon>
+          <span>List</span>
+        </a>
+      }
+
+      @if (sections()['recent'] && lastInstance(); as last) {
+        <a class="atmos-event-card__link" [routerLink]="['/r/event-instance', last.guid]">
+          <mat-icon>schedule</mat-icon>
+          <span>Most recent <span class="atmos-event-card__days">(<app-date [date]="last.date" format="yyyy"></app-date>)</span></span>
+        </a>
+      }
+
+      @if (sections()['upcoming'] && nextInstance(); as next) {
+        <a class="atmos-event-card__link" [routerLink]="['/r/event-instance', next.guid]">
+          <mat-icon>schedule</mat-icon>
+          <span>Upcoming <span class="atmos-event-card__days">(<app-date [date]="next.date" format="yyyy"></app-date>)</span></span>
+        </a>
+      }
+
+      @if (sections()['calculator'] && instance(); as inst) {
+        @if (inst.calculatorData) {
+          <a class="atmos-event-card__link" [routerLink]="['/r/event-calculator']" [queryParams]="{ guid: inst.guid }">
+            <mat-icon>calculate</mat-icon>
+            <span>Calculator</span>
+          </a>
+        }
+      }
+
+      @if (sections()['dailies']) {
+        <app-discord-link link="https://discord.com/channels/736912435654688868/801778605486374943" aClass="atmos-event-card__link">
+          <img class="atmos-event-card__discord-icon" src="assets/external/discord-mark-white.svg" loading="lazy" alt="">
+          <span>View daily quests <span class="atmos-event-card__days">(Sky:CoTL Infographics Database)</span></span>
+        </app-discord-link>
+        <a class="atmos-event-card__link" href="https://thatskyapplication.com/daily-guides" target="_blank" rel="noopener">
+          <mat-icon>language</mat-icon>
+          <span>View daily quests <span class="atmos-event-card__days">(thatskyapplication)</span></span>
+        </a>
+      }
+
+      @if (sections()['checkin']) {
+        <button
+          type="button"
+          class="atmos-event-card__checkin"
+          [class.is-checked]="checkedIn()"
+          [attr.aria-pressed]="checkedIn()"
+          (click)="onCheckin($event)">
+          <span class="atmos-event-card__checkbox">
+            @if (checkedIn()) { <mat-icon>check</mat-icon> }
+          </span>
+          <span>I have done my event quests.</span>
+        </button>
+      }
+
+      <ng-content />
+    </div>
+  </article>
+}

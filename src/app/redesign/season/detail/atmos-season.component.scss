@@ -1,0 +1,130 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-season__draft {
+  display: flex;
+}
+
+.atmos-season__draft-body {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  color: var(--atmos-warm);
+
+  mat-icon { color: var(--atmos-warm); }
+}
+
+.atmos-season__header {
+  align-items: baseline;
+}
+
+.atmos-season__number {
+  color: var(--atmos-accent);
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-season__overview {
+  display: flex;
+}
+
+.atmos-season__facts {
+  display: grid;
+  gap: var(--atmos-gap-compact);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atmos-season__fact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--atmos-text);
+
+  mat-icon {
+    flex-shrink: 0;
+    color: var(--atmos-accent);
+  }
+
+  &.is-expired {
+    color: var(--atmos-text-mute);
+
+    mat-icon { color: var(--atmos-text-mute); }
+  }
+}
+
+.atmos-season__fact-meta {
+  color: var(--atmos-text-dim);
+  margin-left: 6px;
+}
+
+.atmos-season__pass {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-season__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-season__section-header {
+  padding: var(--atmos-pad);
+  padding-bottom: 0;
+}
+
+.atmos-season__section-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-season__trees {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+
+.atmos-season__tree {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.atmos-season__tree-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-season__tree-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0 8px;
+  line-height: 18px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-chip-bg);
+  color: var(--atmos-text-dim);
+}
+
+.atmos-season__iap-grid {
+  display: grid;
+  gap: var(--atmos-gap);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}

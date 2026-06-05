@@ -1,0 +1,18 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Special Visits</h1>
+</header>
+
+<div class="atmos-rs__links">
+  <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Special_Visits'}"></app-wiki-link>
+  <app-calendar-link [cal]="{href: 'https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d'}"></app-calendar-link>
+</div>
+
+<div class="atmos-card atmos-rs__grid-card">
+  <ag-grid-angular
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [theme]="theme"
+    [getRowHeight]="getRowHeight"
+    [suppressDragLeaveHidesColumns]="true"
+    (gridReady)="onGridReady($event)" />
+</div>

@@ -1,0 +1,50 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Events</h1>
+</header>
+
+<p class="atmos-paragraph atmos-events__intro">
+  Track Sky's special events, view their history, and plan your event currency spending.
+</p>
+
+<section class="atmos-page__quick-actions atmos-events__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/event/history">
+    <mat-icon>history</mat-icon> History
+  </a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/event-calculator">
+    <mat-icon>calculate</mat-icon> Event Calculator
+  </a>
+  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Special_Events" target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon> Wiki
+  </a>
+  <a class="atmos-btn atmos-btn--sm" href="https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d" target="_blank" rel="noopener">
+    <mat-icon>calendar_month</mat-icon> Event Calendar
+  </a>
+</section>
+
+<section class="atmos-events__section">
+  <header class="atmos-events__section-header">
+    <h2 class="atmos-events__section-title">Recurring events</h2>
+  </header>
+  <div class="atmos-events__grid">
+    @for (row of recurring(); track row.event.guid) {
+      <app-atmos-event-card
+        [event]="row.event"
+        [instance]="row.instance"
+        [options]="{ show: ['img', 'date'] }"></app-atmos-event-card>
+    }
+  </div>
+</section>
+
+<section class="atmos-events__section">
+  <header class="atmos-events__section-header">
+    <h2 class="atmos-events__section-title">Other events</h2>
+  </header>
+  <div class="atmos-events__grid">
+    @for (row of old(); track row.event.guid) {
+      <app-atmos-event-card
+        [event]="row.event"
+        [instance]="row.instance"
+        [options]="{ show: ['img', 'date'] }"></app-atmos-event-card>
+    }
+  </div>
+</section>

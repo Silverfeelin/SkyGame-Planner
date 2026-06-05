@@ -1,0 +1,51 @@
+<div class="atmos-cr-tracker__container">
+  <div class="atmos-cr-tracker__controls">
+    <button type="button" class="atmos-btn atmos-btn--sm"
+      [ngbTooltip]="'Return to Aviary Village'" container="body" placement="bottom-start"
+      (click)="navigateToArea(defaultArea)">
+      <mat-icon>house</mat-icon>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm"
+      [ngbTooltip]="'Choose map'" container="body" placement="bottom-start"
+      (click)="isAreaOverlayVisible.set(true)">
+      <mat-icon>globe</mat-icon>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm"
+      [ngbTooltip]="'Restart'" container="body" placement="bottom-start"
+      (click)="promptRestart()">
+      <mat-icon>restart_alt</mat-icon>
+    </button>
+  </div>
+
+  <div class="atmos-cr-tracker__wax">
+    {{ waxInAreaFound() }} / {{ waxInArea() }} wax
+  </div>
+
+  <div #map id="atmos-cr-map" class="atmos-cr-tracker__map"></div>
+</div>
+
+@if (isAreaOverlayVisible()) {
+  <app-overlay (close)="isAreaOverlayVisible.set(false)">
+    <div class="atmos-cr-tracker__overlay">
+      <div class="atmos-cr-tracker__overlay-head">
+        <b>Map</b><b>Wax</b>
+      </div>
+      @for (item of areaOverlayData().areas; track item.area.guid) {
+        <button type="button" class="atmos-cr-tracker__overlay-row"
+          (click)="navigateToArea(item.area); isAreaOverlayVisible.set(false)">
+          <span class="atmos-cr-tracker__overlay-name">{{ item.area.name }}</span>
+          @let completed = item.found === item.total;
+          <span class="atmos-cr-tracker__overlay-wax" [class.is-complete]="completed">
+            {{ item.found }} / {{ item.total }}
+          </span>
+        </button>
+      }
+      <div class="atmos-cr-tracker__overlay-total">
+        <b>Total</b>
+        <span [class.is-complete]="areaOverlayData().total.found === areaOverlayData().total.total">
+          {{ areaOverlayData().total.found }} / {{ areaOverlayData().total.total }}
+        </span>
+      </div>
+    </div>
+  </app-overlay>
+}

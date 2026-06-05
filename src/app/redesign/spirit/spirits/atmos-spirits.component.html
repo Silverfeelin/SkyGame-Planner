@@ -1,0 +1,17 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Spirits</h1>
+  <div class="atmos-spirits__count" aria-live="polite">
+    <strong>{{ totalCount() }}</strong>
+    <span class="atmos-spirits__count-label"> spirit{{ totalCount() === 1 ? '' : 's' }}</span>
+  </div>
+</header>
+
+<div class="atmos-card atmos-spirits__grid-card">
+  <ag-grid-angular
+    [rowData]="rowData()"
+    [columnDefs]="colDefs"
+    [theme]="theme"
+    [getRowHeight]="getRowHeight"
+    [suppressDragLeaveHidesColumns]="true"
+    (gridReady)="onGridReady($event)" />
+</div>

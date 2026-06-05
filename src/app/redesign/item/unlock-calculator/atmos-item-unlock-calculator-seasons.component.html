@@ -1,0 +1,25 @@
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-item-unlock-calc-sub__title">Add season</h2>
+    <p class="atmos-paragraph">
+      Select a season to quickly add all items from the season spirits to the calculator.<br/>
+      Please note that the guide needs to be added separately.
+    </p>
+    <div class="atmos-item-unlock-calc-sub__season-list">
+      @for (season of seasons; track season.guid) {
+        <div class="atmos-item-unlock-calc-sub__season-row">
+          <button type="button" class="atmos-btn atmos-btn--sm atmos-item-unlock-calc-sub__season-btn"
+            (click)="onSeasonSelected(season)">
+            @if (season.iconUrl) {
+              <app-icon [src]="season.iconUrl" width="20px" height="20px"></app-icon>
+            }
+            <span>{{ season.shortName }}</span>
+          </button>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="onGuideSelected(season)">
+            Guide
+          </button>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+@if (spirit(); as s) {
+  <article class="atmos-spirit-card atmos-card">
+    @if (sections()['img']) {
+      <div class="atmos-spirit-card__media">
+        @if (s.imageUrl) {
+          <img class="atmos-spirit-card__image" [src]="s.imageUrl" [alt]="s.name" loading="lazy" />
+        } @else {
+          <div class="atmos-spirit-card__image atmos-spirit-card__image--fallback"></div>
+        }
+        <div class="atmos-spirit-card__fade"></div>
+      </div>
+    }
+
+    <div class="atmos-spirit-card__body atmos-card__body">
+      <header class="atmos-spirit-card__header">
+        <app-spirit-type-icon class="atmos-spirit-card__type" [type]="s.type"></app-spirit-type-icon>
+        <div class="atmos-spirit-card__heading">
+          <h3 class="atmos-spirit-card__title">
+            @if (sections()['select']) {
+              <button type="button" class="atmos-spirit-card__title-btn" (click)="selectSpirit()">{{ s.name }}</button>
+            } @else {
+              <a class="atmos-spirit-card__title-link" [routerLink]="['/spirit', s.guid]">{{ s.name }}</a>
+            }
+          </h3>
+          @if (typeName()) {
+            <span class="atmos-pill atmos-spirit-card__kind">{{ typeName() }}</span>
+          }
+        </div>
+      </header>
+
+      @if (sections()['overview']) {
+        <div class="atmos-spirit-card__meta">
+          @if (s.area) {
+            <span class="atmos-spirit-card__meta-item">
+              <mat-icon>place</mat-icon>
+              <span>{{ s.area.name }}</span>
+            </span>
+          }
+          @if (s.area?.realm) {
+            <span class="atmos-spirit-card__meta-item">
+              <mat-icon>landscape</mat-icon>
+              <span>{{ s.area!.realm!.name }}</span>
+            </span>
+          }
+        </div>
+      }
+
+      @if (sections()['ts'] && ts(); as t) {
+        <div class="atmos-spirit-card__row">
+          <mat-icon>flight_takeoff</mat-icon>
+          @if (tsSpoiler()) {
+            <span class="atmos-spirit-card__spoiler">Spoiler hidden</span>
+          } @else {
+            <span>TS #{{ t.number }} · <app-date [date]="t.date"></app-date> · <app-days-left [date]="t.date"></app-days-left></span>
+          }
+        </div>
+      }
+
+      @if (sections()['event'] && event(); as ev) {
+        <div class="atmos-spirit-card__row">
+          <mat-icon>celebration</mat-icon>
+          <a class="atmos-text-link" [routerLink]="['/event', ev.guid]">{{ ev.name }}</a>
+        </div>
+      }
+
+      @if (sections()['season'] && s.season; as sn) {
+        <div class="atmos-spirit-card__row">
+          <mat-icon>auto_awesome</mat-icon>
+          <a class="atmos-text-link" [routerLink]="['/season', sn.guid]">{{ sn.name }}</a>
+        </div>
+      }
+
+      @if (sections()['cost'] && cost()) {
+        <div class="atmos-spirit-card__cost">
+          <app-cost [cost]="cost()" [remaining]="remainingCost()"></app-cost>
+        </div>
+      }
+
+      @if (sections()['wiki'] && s._wiki) {
+        <div class="atmos-spirit-card__row">
+          <app-wiki-link [wiki]="s._wiki"></app-wiki-link>
+        </div>
+      }
+
+      <ng-content />
+    </div>
+  </article>
+}

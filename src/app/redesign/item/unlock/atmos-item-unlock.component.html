@@ -1,0 +1,45 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Quick unlock</h1>
+</header>
+
+<atmos-item-quick-actions/>
+
+<section class="atmos-card atmos-item-unlock__intro">
+  <div class="atmos-card__body">
+    <p class="atmos-paragraph">
+      Unlock items you own by clicking on them.<br/>
+      For limited items the last appearance of the item will be unlocked.
+      Because some items come in bundles this may unlock multiple items at once.
+    </p>
+  </div>
+</section>
+
+@for (section of sections; track section.type) {
+  <section class="atmos-card atmos-item-unlock__section">
+    <div class="atmos-card__body">
+      <header class="atmos-item-unlock__header">
+        <h2 class="atmos-item-unlock__title">{{ section.label }}</h2>
+        <div class="atmos-item-unlock__buttons">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="unlockAll(section.type)">
+            <mat-icon>lock_open</mat-icon> Unlock all
+          </button>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="lockAll(section.type)">
+            <mat-icon>lock</mat-icon> Remove all
+          </button>
+        </div>
+      </header>
+      <div class="atmos-item-unlock__grid">
+        @for (item of section.items; track item.guid) {
+          <div class="atmos-item-unlock__item"
+            [class.is-unlocked]="item.unlocked"
+            [ngbTooltip]="item.name" container="body"
+            (click)="toggleItem(item)">
+            <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"
+              [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock', 'limited']">
+            </app-item-icon>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

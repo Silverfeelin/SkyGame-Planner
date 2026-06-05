@@ -1,0 +1,143 @@
+.atmos-spirit-card {
+  position: relative;
+}
+
+.atmos-spirit-card__media {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.atmos-spirit-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+
+  &--fallback {
+    background: linear-gradient(
+      135deg,
+      var(--atmos-bg-elev-2),
+      var(--atmos-bg-elev-3)
+    );
+  }
+}
+
+.atmos-spirit-card__fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+  );
+}
+
+.atmos-spirit-card__body {
+  padding: var(--atmos-pad-compact);
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-spirit-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.atmos-spirit-card__type {
+  flex-shrink: 0;
+  font-size: 22px;
+}
+
+.atmos-spirit-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  flex: 1;
+}
+
+.atmos-spirit-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.atmos-spirit-card__title-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover { color: var(--atmos-accent); }
+}
+
+.atmos-spirit-card__title-btn {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover { color: var(--atmos-accent); }
+}
+
+.atmos-spirit-card__kind {
+  align-self: flex-start;
+}
+
+.atmos-spirit-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--atmos-text-dim);
+  font-size: 13px;
+}
+
+.atmos-spirit-card__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.atmos-spirit-card__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--atmos-text);
+  font-size: 13.5px;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--atmos-text-dim);
+  }
+}
+
+.atmos-spirit-card__spoiler {
+  color: var(--atmos-text-mute);
+  font-style: italic;
+}
+
+.atmos-spirit-card__cost {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: var(--atmos-gap-compact);
+  border-top: 1px solid var(--atmos-line-soft);
+}

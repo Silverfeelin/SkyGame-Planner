@@ -1,0 +1,28 @@
+:host { display: contents; }
+
+.atmos-events__intro {
+  margin-bottom: 4px;
+}
+
+.atmos-events__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-events__section-header {
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-events__section-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.atmos-events__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--atmos-gap);
+}

@@ -1,0 +1,60 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-field-guide__intro {
+  .atmos-btn {
+    vertical-align: middle;
+  }
+}
+
+.atmos-item-field-guide__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-field-guide__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  padding: var(--atmos-pad-compact);
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  text-decoration: none;
+  color: var(--atmos-text);
+  cursor: pointer;
+  transition:
+    background var(--atmos-transition),
+    border-color var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+  }
+}
+
+.atmos-item-field-guide__icon {
+  position: absolute;
+  top: var(--atmos-pad-compact);
+  right: var(--atmos-pad-compact);
+  z-index: 1;
+}
+
+.atmos-item-field-guide__preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+  min-height: 192px;
+}
+
+.atmos-item-field-guide__preview-img {
+  max-width: 100%;
+  max-height: 192px;
+  object-fit: scale-down;
+}

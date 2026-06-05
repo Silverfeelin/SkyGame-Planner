@@ -1,0 +1,35 @@
+<header class="atmos-page__header atmos-news__header">
+  <h1 class="atmos-page__title">What's new</h1>
+</header>
+
+<section class="atmos-card atmos-news__intro">
+  <div class="atmos-card__body">
+    <p class="atmos-paragraph">
+      On this page you can see what new features have been added to the Sky Planner website.<br/>
+      If you want to see what's new and upcoming in Sky, consider checking out the fantastic
+      <a class="atmos-text-link" href="https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d" target="_blank" rel="noopener">Sky Event Calendar | FM</a>
+      website by AL!
+    </p>
+  </div>
+</section>
+
+<ol class="atmos-news__list">
+  @for (entry of entries(); track entry.title; let i = $index) {
+    <li class="atmos-card atmos-news__entry" [class.atmos-news__entry--open]="isOpen(i)">
+      <button
+        type="button"
+        class="atmos-news__entry-head"
+        [attr.aria-expanded]="isOpen(i)"
+        [attr.aria-controls]="'atmos-news-body-' + i"
+        (click)="toggle(i)">
+        <h2 class="atmos-news__entry-title">{{ entry.title }}</h2>
+        <mat-icon class="atmos-news__entry-chev" aria-hidden="true">
+          {{ isOpen(i) ? 'expand_less' : 'expand_more' }}
+        </mat-icon>
+      </button>
+      @if (isOpen(i)) {
+        <div class="atmos-news__entry-body" [id]="'atmos-news-body-' + i" [innerHTML]="entry.bodyHtml"></div>
+      }
+    </li>
+  }
+</ol>

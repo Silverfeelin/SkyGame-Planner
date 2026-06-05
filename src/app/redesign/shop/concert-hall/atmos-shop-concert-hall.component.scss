@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-shop-concert-hall__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-shop-concert-hall__section-header {
+  padding: var(--atmos-pad-compact) var(--atmos-pad);
+  border-bottom: 1px solid var(--atmos-line);
+}
+
+.atmos-shop-concert-hall__section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-shop-concert-hall__tree-scroll {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap);
+  overflow-x: auto;
+}

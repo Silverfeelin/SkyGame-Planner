@@ -1,0 +1,9 @@
+:host { display: contents; }
+
+.atmos-event-history__grid-card {
+  flex: 1;
+  min-height: 480px;
+  overflow: hidden;
+
+  ag-grid-angular { height: 100%; min-height: 480px; }
+}

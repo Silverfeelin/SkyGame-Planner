@@ -1,0 +1,74 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Winged Light</h1>
+  <div class="atmos-winged-light__count" aria-live="polite">
+    <strong>{{ wl() }}</strong>
+    <span class="atmos-winged-light__count-sep"> / {{ totalWl() }}</span>
+    <span class="atmos-winged-light__count-label"> total</span>
+  </div>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/col">
+    <mat-icon svgIcon="flaps"></mat-icon>
+    <span>Children of Light ({{ col() }} / {{ totalCol() }})</span>
+  </a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/wing-buff">
+    <mat-icon>air</mat-icon>
+    <span>Wing Buffs ({{ wb() }} / {{ totalWb() }})</span>
+  </a>
+  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Winged_Light" target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+<section class="atmos-card atmos-card__body atmos-winged-light__overview">
+  <p class="atmos-paragraph">
+    You have <strong>{{ wl() }}</strong> out of <strong>{{ totalWl() }}</strong> winged light, giving you a total of
+    <strong>{{ wedgeCount() }}</strong> wing wedges.
+  </p>
+
+  <div class="atmos-winged-light__bar" [class.is-full]="wl() === totalWl()">
+    <div class="atmos-winged-light__bar-fill" [style.width.%]="wlPercent()"></div>
+    @for (wedge of wedgesReverse; track wedge) {
+      <div class="atmos-winged-light__bar-segment"
+        [class.is-full]="wl() >= wedge"
+        [style.width.%]="segmentWidth(wedge)"></div>
+    }
+    <div class="atmos-winged-light__bar-text">
+      {{ wl() }} / {{ totalWl() }}
+      @if (wedgeNext(); as next) {
+        <span class="atmos-winged-light__bar-next">(next at {{ next }})</span>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="atmos-card atmos-card__body atmos-winged-light__breakdown">
+  <h2 class="atmos-winged-light__heading">Breakdown</h2>
+
+  @for (b of breakdowns(); track b.label) {
+    <div class="atmos-winged-light__group">
+      <div class="atmos-winged-light__group-head">
+        @if (b.svgIcon) {
+          <mat-icon [svgIcon]="b.svgIcon"></mat-icon>
+        } @else if (b.icon) {
+          <mat-icon>{{ b.icon }}</mat-icon>
+        }
+        @if (b.link) {
+          <a class="atmos-text-link" [routerLink]="b.link"
+            [queryParams]="b.queryType ? { type: b.queryType } : null">
+            {{ b.label }}
+          </a>
+        } @else {
+          <span>{{ b.label }}</span>
+        }
+      </div>
+      <div class="atmos-winged-light__bar atmos-winged-light__bar--single"
+        [class.is-full]="b.total > 0 && b.unlocked === b.total">
+        <div class="atmos-winged-light__bar-fill" [style.width.%]="percent(b.unlocked, b.total)"></div>
+        <div class="atmos-winged-light__bar-text">{{ b.unlocked }} / {{ b.total }}</div>
+      </div>
+    </div>
+  }
+</section>

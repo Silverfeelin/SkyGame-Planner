@@ -1,0 +1,51 @@
+<div
+  class="atmos-daily-task"
+  [class.is-checked]="checked()"
+  [class.is-hidden]="hidden()"
+  (click)="onToggle()">
+  <div class="atmos-daily-task__row">
+    <mat-icon class="atmos-daily-task__check">{{ checked() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+
+    <div class="atmos-daily-task__heading">
+      <span class="atmos-daily-task__name">{{ task().name }}</span>
+      @if (task().nextTime) {
+        <span class="atmos-daily-task__time">{{ task().nextTime! | datetime:'HH:mm' }}</span>
+      }
+    </div>
+
+    <div class="atmos-daily-task__meta">
+      @if (task().location) {
+        <span class="atmos-pill atmos-daily-task__location">{{ task().location }}</span>
+      }
+      @if (light()) {
+        <span class="atmos-pill atmos-daily-task__light">{{ light() }} light</span>
+      }
+      @if (task().note) {
+        <span class="atmos-daily-task__note">{{ task().note }}</span>
+      }
+    </div>
+
+    @if (showHide()) {
+      <button
+        type="button"
+        class="atmos-daily-task__hide"
+        [title]="hidden() ? 'Show task' : 'Hide task'"
+        (click)="onToggleHide($event)">
+        <mat-icon>{{ hidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+      </button>
+    }
+  </div>
+
+  @if (task().link) {
+    <a class="atmos-text-link atmos-daily-task__link" [routerLink]="task().link" (click)="$event.stopPropagation()">
+      <mat-icon>open_in_new</mat-icon>
+      <span>Open tracker</span>
+    </a>
+  }
+  @if (task().externalLink) {
+    <a class="atmos-text-link atmos-daily-task__link" [href]="task().externalLink" target="_blank" rel="noopener" (click)="$event.stopPropagation()">
+      <mat-icon>open_in_new</mat-icon>
+      <span>Open link</span>
+    </a>
+  }
+</div>

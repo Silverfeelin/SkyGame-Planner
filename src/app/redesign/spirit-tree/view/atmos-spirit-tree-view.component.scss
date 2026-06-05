@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-tree-view__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.atmos-tree-view__spacer {
+  flex: 1 1 auto;
+}
+
+.atmos-tree-view__card {
+  align-items: center;
+}
+
+.atmos-tree-view__inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--atmos-pad);
+  overflow-x: auto;
+}

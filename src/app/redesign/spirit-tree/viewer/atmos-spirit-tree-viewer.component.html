@@ -1,0 +1,18 @@
+@if (trees().length) {
+  <div class="atmos-tree-viewer">
+    @for (tree of trees(); track tree.guid) {
+      <div class="atmos-tree-viewer__tree">
+        <app-atmos-spirit-tree [tree]="tree"></app-atmos-spirit-tree>
+      </div>
+    }
+  </div>
+} @else {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">Spirit tree viewer</h1>
+  </header>
+  <p class="atmos-paragraph">
+    No trees to view. Append a <code>?trees=</code> query parameter with one or more
+    10-character spirit-tree GUIDs concatenated together, or set
+    <code>window.setTrees(trees)</code> from the browser console.
+  </p>
+}

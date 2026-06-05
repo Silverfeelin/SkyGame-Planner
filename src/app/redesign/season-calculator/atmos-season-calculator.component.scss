@@ -1,0 +1,119 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-calc__title-suffix {
+  color: var(--atmos-accent);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.atmos-calc__draft {
+  display: flex;
+}
+
+.atmos-calc__draft-body {
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  color: var(--atmos-warm);
+
+  mat-icon { color: var(--atmos-warm); }
+}
+
+.atmos-calc__section-header {
+  padding: var(--atmos-pad);
+  padding-bottom: 0;
+}
+
+.atmos-calc__section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-calc__settings {
+  gap: 12px;
+}
+
+.atmos-calc__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.atmos-calc__label {
+  color: var(--atmos-text);
+  font-weight: 500;
+}
+
+.atmos-calc__rule {
+  border: 0;
+  border-top: 1px solid var(--atmos-line);
+  margin: 8px 0;
+  width: 100%;
+}
+
+.atmos-calc__inline-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.atmos-calc__input {
+  background: var(--atmos-card-bg-solid);
+  color: var(--atmos-text);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  padding: 6px 10px;
+  font: inherit;
+  width: 100%;
+
+  &--inline {
+    width: 90px;
+    display: inline-block;
+  }
+}
+
+.atmos-calc__danger {
+  color: var(--atmos-warm);
+}
+
+.atmos-calc__results {
+  gap: 12px;
+  color: var(--atmos-text);
+}
+
+.atmos-calc__note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-hover-tint);
+
+  mat-icon {
+    flex-shrink: 0;
+    color: var(--atmos-warm);
+  }
+
+  &--warn { color: var(--atmos-text); }
+}
+
+.atmos-calc__trees {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  overflow-x: auto;
+}
+
+.is-met { color: var(--atmos-good); }
+.is-lacking { color: var(--atmos-warm); }

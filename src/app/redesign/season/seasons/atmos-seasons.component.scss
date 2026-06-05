@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-seasons__intro {
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-seasons__jump {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-seasons__jump-title {
+  font-size: 13px;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-seasons__jump-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-seasons__jump-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-card-border);
+  transition: background var(--atmos-transition), transform var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg-strong);
+    transform: translateY(-1px);
+  }
+}
+
+.atmos-seasons__year {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-seasons__year-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-seasons__year-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.atmos-seasons__grid {
+  display: grid;
+  gap: var(--atmos-gap);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}

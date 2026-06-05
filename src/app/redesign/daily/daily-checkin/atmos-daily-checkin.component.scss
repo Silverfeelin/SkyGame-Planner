@@ -1,0 +1,52 @@
+.atmos-daily-checkin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  padding: 6px 8px;
+  margin: -6px -8px;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  font-family: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  text-align: left;
+  align-self: flex-start;
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 2px;
+  }
+}
+
+.atmos-daily-checkin__box {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1.5px solid oklch(0.95 0.01 var(--atmos-hue) / 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--atmos-transition), background var(--atmos-transition);
+
+  mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.atmos-daily-checkin.is-checked .atmos-daily-checkin__box {
+  background: var(--atmos-accent);
+  border-color: var(--atmos-accent);
+  color: oklch(0.15 0.02 var(--atmos-hue));
+}
+
+.atmos-daily-checkin__label {
+  line-height: 1.3;
+}

@@ -1,0 +1,137 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-currency-spent__section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+
+  > mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: var(--atmos-accent);
+  }
+}
+
+.atmos-currency-spent__folder {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  display: block;
+  width: 100%;
+}
+
+.atmos-currency-spent__costs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.atmos-currency-spent__field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--atmos-text);
+
+  > mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.atmos-currency-spent__times {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-currency-spent__value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  min-width: 4ch;
+  text-align: right;
+}
+
+.atmos-currency-spent__icon--seasonal {
+  color: var(--atmos-warm);
+}
+
+.atmos-currency-spent__btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-currency-spent__breakdown-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+}
+
+.atmos-currency-spent__breakdown-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-currency-spent__breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px 12px;
+}
+
+.atmos-currency-spent__breakdown-item {
+  font-size: 13px;
+  color: var(--atmos-text);
+}
+
+.atmos-currency-spent__abbr {
+  color: var(--atmos-text-mute);
+  margin-left: 2px;
+}
+
+.atmos-currency-spent__group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.atmos-currency-spent__group--divided {
+  padding-top: 12px;
+  border-top: 1px solid var(--atmos-line);
+}
+
+.atmos-currency-spent__group-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--atmos-text);
+}
+
+.atmos-currency-spent__icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.atmos-currency-spent__muted {
+  color: var(--atmos-text-mute);
+  font-size: 13px;
+}

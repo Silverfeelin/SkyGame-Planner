@@ -1,0 +1,81 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  max-width: 880px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.atmos-info__header {
+  align-items: center;
+}
+
+.atmos-info__version {
+  font-variant-numeric: tabular-nums;
+}
+
+.atmos-info__section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: var(--atmos-accent);
+  }
+}
+
+.atmos-info__credits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.atmos-info__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-pill-border);
+  border-radius: var(--atmos-radius-pill);
+  font-size: 13px;
+  color: var(--atmos-text);
+}
+
+.atmos-info__credit-name {
+  font-weight: 600;
+}
+
+.atmos-info__credit-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--atmos-accent);
+}
+
+.atmos-info__credit-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.atmos-info__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 720px) {
+  .atmos-info__section-title { font-size: 16px; }
+}

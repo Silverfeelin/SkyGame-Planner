@@ -1,0 +1,67 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Friends</h1>
+</header>
+
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <p class="atmos-paragraph">
+      Track which friendship tree items you've unlocked with your in-game friends.
+    </p>
+    <div class="atmos-friends__actions">
+      <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Friendship_Menu'}"></app-wiki-link>
+    </div>
+  </div>
+</section>
+
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-friends__section-title"><mat-icon>group</mat-icon> Friendship trees</h2>
+    <div class="atmos-friends__toolbar">
+      <label class="atmos-friends__search atmos-focus-ring">
+        <mat-icon>search</mat-icon>
+        <input #input type="search" class="atmos-friends__search-input"
+          (input)="search()" placeholder="Search">
+      </label>
+      <button type="button" class="atmos-btn" (click)="promptAdd()">
+        <mat-icon>person_add</mat-icon> Add friend
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="atmos-friends__list">
+  @for (friend of friends(); track friend.guid) {
+    @if (friend.visible) {
+      <section class="atmos-card atmos-friends__item">
+        <button type="button" class="atmos-friends__item-header atmos-focus-ring"
+          [attr.aria-expanded]="friend.expanded"
+          (click)="toggleExpand(friend)">
+          <span class="atmos-friends__item-title">{{ friend.name }}</span>
+          <mat-icon class="atmos-friends__item-chevron"
+            [class.is-expanded]="friend.expanded">expand_more</mat-icon>
+        </button>
+        @if (friend.expanded) {
+          <div class="atmos-friends__item-body">
+            <div class="atmos-friends__item-actions">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptRename(friend)">
+                <mat-icon>edit</mat-icon> Rename
+              </button>
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptDelete(friend)">
+                <mat-icon>delete</mat-icon> Delete
+              </button>
+            </div>
+            @if (friend.loaded) {
+              <app-atmos-spirit-tree
+                [tree]="friend.tree"
+                [forceNodeAction]="'emit'"
+                [enableControls]="false"
+                [enableNavigation]="false"
+                (nodeClicked)="nodeClicked(friend, $event)">
+              </app-atmos-spirit-tree>
+            }
+          </div>
+        }
+      </section>
+    }
+  }
+</div>

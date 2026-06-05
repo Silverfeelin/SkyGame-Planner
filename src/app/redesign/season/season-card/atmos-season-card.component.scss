@@ -1,0 +1,146 @@
+.atmos-season-card {
+  position: relative;
+}
+
+.atmos-season-card__media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.atmos-season-card__image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+
+  &--fallback {
+    background: linear-gradient(
+      135deg,
+      var(--atmos-bg-elev-2),
+      var(--atmos-bg-elev-3)
+    );
+  }
+}
+
+.atmos-season-card__fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+  );
+}
+
+.atmos-season-card__heading {
+  position: absolute;
+  left: var(--atmos-pad-compact);
+  right: var(--atmos-pad-compact);
+  bottom: 14px;
+}
+
+.atmos-season-card__kicker {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--atmos-accent);
+  text-shadow: var(--atmos-text-shadow);
+  margin-bottom: 4px;
+}
+
+.atmos-season-card__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow-large);
+  letter-spacing: -0.4px;
+}
+
+.atmos-season-card__title-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+.atmos-season-card__body {
+  padding: var(--atmos-pad-compact);
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-season-card__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: var(--atmos-text);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--atmos-text-dim);
+  }
+}
+
+.atmos-season-card__days {
+  color: var(--atmos-text-dim);
+  margin-left: 4px;
+}
+
+.atmos-season-card__cost {
+  padding-top: var(--atmos-gap-compact);
+  border-top: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-season-card__checkin {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  padding: 6px 8px;
+  margin: -6px -8px;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  font-family: inherit;
+  font-size: 13.5px;
+  cursor: pointer;
+  text-align: left;
+  align-self: flex-start;
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 2px;
+  }
+}
+
+.atmos-season-card__checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1.5px solid oklch(0.95 0.01 var(--atmos-hue) / 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--atmos-transition), background var(--atmos-transition);
+
+  mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.atmos-season-card__checkin.is-checked .atmos-season-card__checkbox {
+  background: var(--atmos-accent);
+  border-color: var(--atmos-accent);
+  color: oklch(0.15 0.02 var(--atmos-hue));
+}

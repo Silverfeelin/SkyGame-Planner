@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-inflation__section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-item-inflation__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-item-inflation__chart-wrap {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.atmos-item-inflation__chart {
+  width: 100% !important;
+  height: 100% !important;
+}

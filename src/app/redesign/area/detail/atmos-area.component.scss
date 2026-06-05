@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-area__hero {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.atmos-area__heading {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-area__connections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

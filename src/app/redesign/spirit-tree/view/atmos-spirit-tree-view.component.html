@@ -1,0 +1,58 @@
+@if (tree(); as t) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ title() || 'Spirit tree' }}</h1>
+  </header>
+
+  <nav class="atmos-tree-view__toolbar" aria-label="Spirit tree actions">
+    <button type="button" class="atmos-btn atmos-btn--sm"
+            [class.atmos-btn-active]="nodeAction() === 'unlock'"
+            (click)="setAction('unlock')"
+            title="Unlock / lock items (U)">
+      <mat-icon>lock_open</mat-icon>
+      <span>Unlock</span>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm"
+            [class.atmos-btn-active]="nodeAction() === 'favourite'"
+            (click)="setAction('favourite')"
+            title="Toggle favourite (F)">
+      <mat-icon>favorite</mat-icon>
+      <span>Favourite</span>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm"
+            [class.atmos-btn-active]="nodeAction() === 'navigate'"
+            (click)="setAction('navigate')"
+            title="Open item page (N)">
+      <mat-icon>open_in_new</mat-icon>
+      <span>Navigate</span>
+    </button>
+
+    <span class="atmos-tree-view__spacer"></span>
+
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="unlockAll()" title="Unlock or lock every item in this tree">
+      <mat-icon>done_all</mat-icon>
+      <span>Unlock all</span>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="editTree()" title="Edit / clone tree">
+      <mat-icon>edit</mat-icon>
+      <span>Edit</span>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="exportPng('clipboard')" title="Copy as image">
+      <mat-icon>content_copy</mat-icon>
+      <span>Copy</span>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="exportPng('share')" title="Share image">
+      <mat-icon>share</mat-icon>
+      <span>Share</span>
+    </button>
+  </nav>
+
+  <section class="atmos-card atmos-tree-view__card">
+    <div class="atmos-tree-view__inner">
+      <app-atmos-spirit-tree
+        [tree]="t"
+        [forceNodeAction]="'emit'"
+        (nodeClicked)="onNodeClicked($event)">
+      </app-atmos-spirit-tree>
+    </div>
+  </section>
+}

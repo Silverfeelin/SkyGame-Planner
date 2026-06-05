@@ -1,0 +1,99 @@
+.atmos-iap-card {
+  transition: box-shadow var(--atmos-transition);
+
+  &.is-highlighted {
+    box-shadow: var(--atmos-card-shadow),
+      0 0 0 2px oklch(0.82 0.11 var(--atmos-hue) / 0.55);
+  }
+
+  &.is-bought,
+  &.is-gifted {
+    .atmos-iap-card__title {
+      color: var(--atmos-text-dim);
+    }
+  }
+}
+
+.atmos-iap-card__body {
+  padding: var(--atmos-pad-compact);
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-iap-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.atmos-iap-card__heading {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.atmos-iap-card__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-iap-card__price {
+  color: var(--atmos-text-dim);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.atmos-iap-card__flags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.atmos-iap-card__currency {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-iap-card__currency-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-chip-bg);
+  font-size: 13px;
+  color: var(--atmos-text-dim);
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  strong {
+    color: var(--atmos-text);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.atmos-iap-card__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.atmos-iap-card__actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}

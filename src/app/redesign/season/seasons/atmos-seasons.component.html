@@ -1,0 +1,61 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Seasons</h1>
+</header>
+
+<p class="atmos-paragraph atmos-seasons__intro">
+  Browse every Sky season — past, present, and upcoming.
+  Open a season to see its spirit trees, cosmetics, and progress.
+</p>
+
+<section class="atmos-page__quick-actions atmos-seasons__quick-actions">
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events"
+     target="_blank" rel="noopener">
+    <mat-icon>menu_book</mat-icon> Sky Wiki
+  </a>
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d"
+     target="_blank" rel="noopener">
+    <mat-icon>event</mat-icon> Calendar
+  </a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/season-calculator">
+    <mat-icon>calculate</mat-icon> Season calculator
+  </a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/season/optimizer">
+    <mat-icon>tune</mat-icon> Season optimizer
+  </a>
+</section>
+
+<!-- Quick jump strip -->
+<section class="atmos-card atmos-seasons__jump">
+  <div class="atmos-card__body">
+    <div class="atmos-seasons__jump-title">Jump to season</div>
+    <div class="atmos-seasons__jump-list">
+      @for (season of reverseSeasons; track season.guid) {
+        <a class="atmos-seasons__jump-item atmos-focus-ring"
+           [routerLink]="['/r/season', season.guid]"
+           [ngbTooltip]="season.name" placement="bottom" container="body">
+          <app-icon [width]="'56px'" [height]="'56px'" [src]="season.iconUrl"></app-icon>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Year-grouped season cards -->
+@for (group of yearGroups(); track group.year) {
+  <section class="atmos-seasons__year">
+    <header class="atmos-seasons__year-header">
+      <h2 class="atmos-seasons__year-title">{{ group.year }}</h2>
+    </header>
+    <div class="atmos-seasons__grid">
+      @for (season of group.seasons; track season.guid) {
+        <app-atmos-season-card
+          [season]="season"
+          [options]="{ show: ['img', 'overview', 'date', 'spirits'] }"
+          [checkedIn]="isCheckedIn(season)"
+          (checkinToggle)="onSeasonCheckin(season, $event)" />
+      }
+    </div>
+  </section>
+}

@@ -1,0 +1,182 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Daily tracker</h1>
+</header>
+
+<p class="atmos-paragraph atmos-daily__intro">
+  Track your daily activities here. Don't forget to update your candles on the
+  <a routerLink="/r/currency" class="atmos-text-link">Currency</a> page!<br>
+  Find more recurring events on the
+  <a href="https://sky-clock.netlify.app/" target="_blank" rel="noopener" class="atmos-text-link">Sky Clock</a> by Chris Stead.
+</p>
+
+<section class="atmos-page__quick-actions atmos-daily__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/currency">
+    <mat-icon svgIcon="candle"></mat-icon> Currency
+  </a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/realm/cr-tracker">
+    <mat-icon>local_fire_department</mat-icon> Candle Run Tracker
+  </a>
+  <a class="atmos-btn atmos-btn--sm" routerLink="/realm/pnr-tracker">
+    <mat-icon>flag</mat-icon> Eden Statue Tracker
+  </a>
+</section>
+
+<!-- Timers -->
+<section class="atmos-daily__timers">
+  <div class="atmos-card atmos-daily__timer">
+    <div class="atmos-card__body">
+      <div class="atmos-daily__timer-label">Daily reset in</div>
+      <div class="atmos-daily__countdown">{{ dailyCountdown() }}</div>
+    </div>
+  </div>
+  <div class="atmos-card atmos-daily__timer">
+    <div class="atmos-card__body">
+      <div class="atmos-daily__timer-label">
+        {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | datetime:'HH:mm' }} Sky time
+      </div>
+      <div class="atmos-daily__countdown">{{ nextTimed().countdown }}</div>
+    </div>
+  </div>
+  <div class="atmos-card atmos-daily__timer">
+    <div class="atmos-card__body">
+      <div class="atmos-daily__timer-label">Eden (weekly) reset in</div>
+      <div class="atmos-daily__countdown">{{ weeklyCountdown() }}</div>
+    </div>
+  </div>
+</section>
+
+<!-- Summary card: season-aware (matches legacy behaviour) -->
+<section class="atmos-daily__summary">
+  @if (activeSeason) {
+    <app-atmos-season-card
+      [season]="activeSeason"
+      [options]="{ show: ['img', 'date', 'checkin'] }"
+      [checkedIn]="checkedIn()"
+      (checkinToggle)="onCheckin($event)"></app-atmos-season-card>
+  } @else {
+    <app-atmos-daily-card
+      [options]="{ show: ['img', 'realm', 'checkin'] }"
+      [realm]="dailyRealm"
+      [checkedIn]="checkedIn()"
+      (checkinToggle)="onCheckin($event)"></app-atmos-daily-card>
+  }
+</section>
+
+<!-- Today — fixed reward -->
+<section class="atmos-card atmos-daily__section">
+  <header class="atmos-daily__section-header">
+    <h2 class="atmos-daily__section-title">
+      Today &middot; Fixed reward
+      @if (hiddenFixedCount() > 0) {
+        <button type="button" class="atmos-daily__toggle-hidden"
+                [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                (click)="showHidden.set(!showHidden())">
+          <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      }
+    </h2>
+    <div class="atmos-daily__section-meta">
+      Remaining: {{ remainingLight() }} / {{ totalLight() }} light
+    </div>
+  </header>
+  <div class="atmos-card__body atmos-daily__section-body">
+    <div class="atmos-daily__grid">
+      @for (task of dailyFixed; track task.id) {
+        @if (!isHidden(task.id) || showHidden()) {
+          <app-atmos-daily-task
+            [task]="task"
+            [checked]="isDailyChecked(task.id)"
+            [light]="formatLight(task)"
+            [hidden]="isHidden(task.id)"
+            (toggle)="toggleDaily(task)"
+            (toggleHide)="toggleHide(task)" />
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Today — variable reward -->
+<section class="atmos-card atmos-daily__section">
+  <header class="atmos-daily__section-header">
+    <h2 class="atmos-daily__section-title">
+      Today &middot; Variable reward
+      @if (hiddenVariableCount() > 0) {
+        <button type="button" class="atmos-daily__toggle-hidden"
+                [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                (click)="showHidden.set(!showHidden())">
+          <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      }
+    </h2>
+    <div class="atmos-daily__section-meta">Wax amounts vary per day</div>
+  </header>
+  <div class="atmos-card__body atmos-daily__section-body">
+    <div class="atmos-daily__grid">
+      @for (task of dailyVariable; track task.id) {
+        @if (!isHidden(task.id) || showHidden()) {
+          <app-atmos-daily-task
+            [task]="task"
+            [checked]="isDailyChecked(task.id)"
+            [light]="formatLight(task)"
+            [hidden]="isHidden(task.id)"
+            (toggle)="toggleDaily(task)"
+            (toggleHide)="toggleHide(task)" />
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Timed events -->
+<section class="atmos-card atmos-daily__section">
+  <header class="atmos-daily__section-header">
+    <h2 class="atmos-daily__section-title">
+      Timed events
+      @if (hiddenTimedCount() > 0) {
+        <button type="button" class="atmos-daily__toggle-hidden"
+                [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                (click)="showHidden.set(!showHidden())">
+          <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      }
+    </h2>
+    <div class="atmos-daily__section-meta">
+      Next: {{ nextTimed().task.name }} &middot; {{ nextTimed().task.nextTime! | datetime:'HH:mm' }} ({{ nextTimed().countdown }})
+    </div>
+  </header>
+  <div class="atmos-card__body atmos-daily__section-body">
+    <div class="atmos-daily__grid">
+      @for (task of timed; track task.id) {
+        @if (!isHidden(task.id) || showHidden()) {
+          <app-atmos-daily-task
+            [task]="task"
+            [checked]="isDailyChecked(task.id)"
+            [light]="formatLight(task)"
+            [hidden]="isHidden(task.id)"
+            (toggle)="toggleDaily(task)"
+            (toggleHide)="toggleHide(task)" />
+        }
+      }
+    </div>
+  </div>
+</section>
+
+<!-- This week — Eden -->
+<section class="atmos-card atmos-daily__section">
+  <header class="atmos-daily__section-header">
+    <h2 class="atmos-daily__section-title">This week</h2>
+    <div class="atmos-daily__section-meta">Resets Sunday in Sky time</div>
+  </header>
+  <div class="atmos-card__body atmos-daily__section-body">
+    <div class="atmos-daily__grid atmos-daily__grid--single">
+      @for (task of weekly; track task.id) {
+        <app-atmos-daily-task
+          [task]="task"
+          [checked]="isWeeklyChecked(task.id)"
+          [showHide]="false"
+          (toggle)="toggleWeekly(task)" />
+      }
+    </div>
+  </div>
+</section>

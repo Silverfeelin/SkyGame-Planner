@@ -1,0 +1,62 @@
+<section class="atmos-spirit-tree atmos-card" [class.has-pad-bottom]="padBottom()" [class.is-highlighted]="highlight()" [attr.data-tree]="tree().guid">
+  <div class="atmos-spirit-tree__body atmos-card__body">
+    @if (visibleName()) {
+      <header class="atmos-spirit-tree__header">
+        <h3 class="atmos-spirit-tree__title">
+          <ng-content select="[name]">{{ visibleName() }}</ng-content>
+        </h3>
+        <app-cost
+          class="atmos-spirit-tree__cost"
+          [cost]="totalCost()"
+          [remaining]="remainingCost()"
+          [borderLeft]="false"></app-cost>
+      </header>
+    }
+
+    <div class="atmos-spirit-tree__grid">
+      @for (row of rows(); track $index) {
+        <div class="atmos-spirit-tree__row">
+          <div class="atmos-spirit-tree__cell">
+            @if (row.left; as n) {
+              <app-atmos-node
+                [node]="n"
+                position="left"
+                [action]="action()"
+                [opaque]="isNodeOpaque(n)"
+                [highlight]="isNodeHighlighted(n)"
+                [showTooltips]="showNodeTooltips()"
+                [overlayTemplate]="nodeOverlayTemplate()"
+                (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+            }
+          </div>
+          <div class="atmos-spirit-tree__cell">
+            @if (row.center; as n) {
+              <app-atmos-node
+                [node]="n"
+                position="center"
+                [action]="action()"
+                [opaque]="isNodeOpaque(n)"
+                [highlight]="isNodeHighlighted(n)"
+                [showTooltips]="showNodeTooltips()"
+                [overlayTemplate]="nodeOverlayTemplate()"
+                (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+            }
+          </div>
+          <div class="atmos-spirit-tree__cell">
+            @if (row.right; as n) {
+              <app-atmos-node
+                [node]="n"
+                position="right"
+                [action]="action()"
+                [opaque]="isNodeOpaque(n)"
+                [highlight]="isNodeHighlighted(n)"
+                [showTooltips]="showNodeTooltips()"
+                [overlayTemplate]="nodeOverlayTemplate()"
+                (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

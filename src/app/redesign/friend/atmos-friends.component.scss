@@ -1,0 +1,130 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-friends__section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    color: var(--atmos-accent);
+  }
+}
+
+.atmos-friends__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.atmos-friends__search {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 240px;
+  max-width: 360px;
+
+  mat-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--atmos-text-mute);
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+  }
+}
+
+.atmos-friends__search-input {
+  width: 100%;
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+  color: var(--atmos-text);
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 14px 8px 38px;
+  outline: none;
+  transition: border-color var(--atmos-transition);
+
+  &::placeholder {
+    color: var(--atmos-text-mute);
+  }
+
+  &:focus {
+    border-color: var(--atmos-accent);
+  }
+}
+
+.atmos-friends__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-friends__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-friends__item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 22px;
+  background: transparent;
+  border: 0;
+  color: var(--atmos-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-tint);
+  }
+}
+
+.atmos-friends__item-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.atmos-friends__item-chevron {
+  color: var(--atmos-text-dim);
+  transition: transform var(--atmos-transition);
+
+  &.is-expanded {
+    transform: rotate(180deg);
+  }
+}
+
+.atmos-friends__item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 22px 22px;
+  border-top: 1px solid var(--atmos-line);
+  padding-top: 16px;
+}
+
+.atmos-friends__item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

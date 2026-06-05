@@ -1,0 +1,133 @@
+.atmos-realm-constellation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-realm-constellation__stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur);
+  -webkit-backdrop-filter: var(--atmos-blur);
+  border: var(--atmos-card-border);
+}
+
+.atmos-realm-constellation__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.atmos-realm-constellation__spirit,
+.atmos-realm-constellation__flag {
+  position: absolute;
+  width: 12%;
+  height: 12%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 1;
+  transition:
+    transform var(--atmos-transition),
+    filter var(--atmos-transition),
+    opacity 180ms ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 2px;
+  }
+}
+
+.atmos-realm-constellation__stage.is-swapping {
+  .atmos-realm-constellation__spirit,
+  .atmos-realm-constellation__flag {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.atmos-realm-constellation__flag {
+  width: 10%;
+  height: 10%;
+
+  &.is-completed img {
+    filter: drop-shadow(0 0 6px var(--atmos-good));
+  }
+}
+
+.atmos-realm-constellation__scroll {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--atmos-radius-pill);
+  border: var(--atmos-card-border);
+  background: var(--atmos-card-bg);
+  color: var(--atmos-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg-strong);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 2px;
+  }
+
+  &[hidden] { display: none; }
+
+  &--left { left: 8px; }
+  &--right { right: 8px; }
+}
+
+.atmos-realm-constellation__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.atmos-realm-constellation__dot {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--atmos-text-mute);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--atmos-transition), transform var(--atmos-transition);
+
+  &.is-active {
+    background: var(--atmos-accent);
+    transform: scale(1.3);
+  }
+
+  &:hover { background: var(--atmos-text-dim); }
+}

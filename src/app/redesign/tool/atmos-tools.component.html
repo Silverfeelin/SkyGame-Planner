@@ -1,0 +1,36 @@
+<header class="atmos-page__header atmos-tools__header">
+  <h1 class="atmos-page__title">Tools</h1>
+</header>
+
+<section class="atmos-tools__grid">
+  @for (card of cards; track card.title) {
+    <article class="atmos-card atmos-tools__card">
+      <div class="atmos-card__body atmos-tools__body">
+        <h2 class="atmos-tools__title">
+          <mat-icon class="atmos-tools__title-icon">{{ card.icon }}</mat-icon>
+          <span>{{ card.title }}</span>
+        </h2>
+        <p class="atmos-paragraph atmos-tools__desc">{{ card.description }}</p>
+
+        <div class="atmos-tools__links">
+          @for (link of card.links; track link.label) {
+            @if (link.link) {
+              <a class="atmos-btn atmos-btn--sm atmos-tools__link"
+                 [routerLink]="link.link"
+                 [queryParams]="link.queryParams ?? null">
+                <mat-icon>{{ link.icon }}</mat-icon>
+                <span>{{ link.label }}</span>
+              </a>
+            } @else if (link.href) {
+              <a class="atmos-btn atmos-btn--sm atmos-tools__link"
+                 [href]="link.href" target="_blank" rel="noopener">
+                <mat-icon>{{ link.icon }}</mat-icon>
+                <span>{{ link.label }}</span>
+              </a>
+            }
+          }
+        </div>
+      </div>
+    </article>
+  }
+</section>

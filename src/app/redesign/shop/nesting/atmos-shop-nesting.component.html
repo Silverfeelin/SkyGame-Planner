@@ -1,0 +1,136 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Nesting Workshop</h1>
+</header>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/r/shop">
+    <mat-icon>arrow_back</mat-icon>
+    <span>Shops</span>
+  </a>
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Nesting_Workshop"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+<section class="atmos-card atmos-shop-nesting__section">
+  <header class="atmos-shop-nesting__section-header">
+    <h2 class="atmos-shop-nesting__section-title">Nesting Challenges</h2>
+  </header>
+  <div class="atmos-card__body atmos-shop-nesting__section-body">
+    <div class="atmos-shop-nesting__scroll">
+      @for (data of challengeSpirits; track data.spirit.guid) {
+        <app-atmos-spirit-tree [tree]="data.tree" [name]="data.spirit.name"></app-atmos-spirit-tree>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="atmos-card atmos-shop-nesting__section">
+  <header class="atmos-shop-nesting__section-header">
+    <h2 class="atmos-shop-nesting__section-title">Workshop Props</h2>
+  </header>
+  <div class="atmos-card__body atmos-shop-nesting__section-body">
+    <p class="atmos-paragraph atmos-shop-nesting__note">
+      The Nesting Workshop rotates between available props every week. Note that props from multiple rotations may be available at the same time —
+      see <a class="atmos-text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/issues/265" target="_blank" rel="noopener">issue #265</a> for details.
+    </p>
+    <p class="atmos-paragraph atmos-shop-nesting__warn">
+      Please report any inconsistencies to Silverfeelin on GitHub or Skycord. TGC has a tendency to change rotations.
+    </p>
+
+    <div class="atmos-shop-nesting__rotations">
+      <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: permanentRotation, title: 'Permanent Items' }"></ng-container>
+      @for (rotation of rotations; let i = $index; track i) {
+        <ng-container [ngTemplateOutlet]="tRotation" [ngTemplateOutletContext]="{ $implicit: rotation, i: i, title: 'Rotation #' + (i + 1) }"></ng-container>
+      }
+
+      <ng-template #tRotation let-rotation let-title="title" let-i="i">
+        <div class="atmos-shop-nesting__rotation" [class.is-current]="i === iRotation">
+          <header class="atmos-shop-nesting__rotation-header">
+            <strong class="atmos-shop-nesting__rotation-title">{{ title }}</strong>
+            @let expectedDate = rotation[0]?.expectedDate;
+            @if (expectedDate) {
+              @if (i === iRotation) {
+                <span class="atmos-pill atmos-pill--active">Current rotation</span>
+              } @else {
+                <span class="atmos-shop-nesting__rotation-date">
+                  Expected: <app-date [date]="expectedDate"></app-date>
+                </span>
+              }
+            }
+          </header>
+          <div class="atmos-shop-nesting__rotation-items">
+            @for (r of rotation; track r.item) {
+              <div class="atmos-shop-nesting__rotation-item">
+                <div class="atmos-shop-nesting__rotation-icon">
+                  <app-item-icon [item]="r.item!" [hoverGlow]="false" [subIcons]="['unlock']"></app-item-icon>
+                </div>
+                <div class="atmos-shop-nesting__rotation-name">{{ r.item!.name }}</div>
+                <div class="atmos-shop-nesting__rotation-amount">
+                  <div class="atmos-shop-nesting__qty-buttons">
+                    <button type="button" class="atmos-btn atmos-btn--sm" (click)="addQuantity(r.item!.guid, -1)">-1</button>
+                    <button type="button" class="atmos-btn atmos-btn--sm" (click)="addQuantity(r.item!.guid, 1)">+1</button>
+                  </div>
+                  @let unlock = unlockedFor(r.item!.guid);
+                  <span class="atmos-shop-nesting__qty-count">
+                    &times; {{ unlock?.q || 0 }}
+                    @if (unlock?.lq) {
+                      <span class="atmos-shop-nesting__qty-legacy"> (+{{ unlock!.lq }})</span>
+                    }
+                  </span>
+                  @if (unlock?.q) {
+                    <span class="atmos-shop-nesting__qty-eq">=</span>
+                    <app-cost [cost]="unlock!.cost"></app-cost>
+                  }
+                </div>
+                <div class="atmos-shop-nesting__rotation-cost">
+                  <app-cost [cost]="r"></app-cost>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</section>
+
+<section class="atmos-card atmos-shop-nesting__section">
+  <header class="atmos-shop-nesting__section-header">
+    <h2 class="atmos-shop-nesting__section-title">Workshop Props (legacy)</h2>
+  </header>
+  <div class="atmos-card__body atmos-shop-nesting__section-body">
+    <p class="atmos-paragraph atmos-shop-nesting__note">
+      Before patch 0.27.0 (<app-date [date]="'2024-10-10'"></app-date>), the Nesting Workshop sold some items in a quantity.
+      If you purchased items before this patch, mark them as purchased here.
+    </p>
+    <div class="atmos-shop-nesting__legacy">
+      <div class="atmos-shop-nesting__legacy-block">
+        <strong class="atmos-shop-nesting__legacy-title">Introduction</strong>
+        <app-atmos-item-list
+          [itemList]="legacyFreeItemList"
+          [highlightNode]="highlightNode()"
+          (nodeClick)="onBeforeLegacy($event)"></app-atmos-item-list>
+      </div>
+      @for (itemList of itemLists; let i = $index; track i) {
+        <div class="atmos-shop-nesting__legacy-block">
+          <strong class="atmos-shop-nesting__legacy-title">Rotation {{ i + 1 }}</strong>
+          <app-atmos-item-list
+            [itemList]="itemList"
+            [highlightNode]="highlightNode()"
+            (nodeClick)="onBeforeLegacy($event)"></app-atmos-item-list>
+        </div>
+      }
+      <div class="atmos-shop-nesting__legacy-block">
+        <strong class="atmos-shop-nesting__legacy-title">Corrections</strong>
+        <app-atmos-item-list
+          [itemList]="legacyCorrectionItemList"
+          [highlightNode]="highlightNode()"
+          (nodeClick)="onBeforeLegacy($event)"></app-atmos-item-list>
+      </div>
+    </div>
+  </div>
+</section>

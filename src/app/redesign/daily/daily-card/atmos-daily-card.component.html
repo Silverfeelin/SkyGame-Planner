@@ -1,0 +1,36 @@
+<article class="atmos-daily-card atmos-card">
+  @if (sections()['img']) {
+    <div class="atmos-daily-card__media">
+      <div class="atmos-daily-card__image"></div>
+      <div class="atmos-daily-card__fade"></div>
+      <div class="atmos-daily-card__heading">
+        <div class="atmos-daily-card__kicker">Today</div>
+        <h2 class="atmos-daily-card__title">Daily quests</h2>
+      </div>
+    </div>
+  }
+
+  <div class="atmos-daily-card__body atmos-card__body">
+    @if (sections()['realm'] && realm(); as r) {
+      <a class="atmos-daily-card__row" [routerLink]="['/realm', r.guid]">
+        <mat-icon>landscape</mat-icon>
+        <span>{{ r.name }}</span>
+      </a>
+    }
+
+    @if (sections()['dailies']) {
+      <a class="atmos-daily-card__row" routerLink="/daily">
+        <mat-icon>list_alt</mat-icon>
+        <span>View daily tasks</span>
+      </a>
+    }
+
+    <ng-content />
+
+    @if (sections()['checkin']) {
+      <app-atmos-daily-checkin
+        [checkedIn]="checkedIn()"
+        (checkin)="onCheckin($event)"></app-atmos-daily-checkin>
+    }
+  </div>
+</article>

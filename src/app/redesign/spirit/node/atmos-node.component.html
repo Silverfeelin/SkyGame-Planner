@@ -1,0 +1,35 @@
+<button
+  type="button"
+  class="atmos-node"
+  [class.is-unlocked]="unlocked()"
+  [class.is-highlighted]="highlight()"
+  [class.is-opaque]="opaque()"
+  [attr.data-position]="position()"
+  [attr.aria-pressed]="unlocked()"
+  [title]="showTooltips() ? node().item?.name : null"
+  (click)="onClick($event)">
+  @if (node().item; as item) {
+    <app-item-icon
+      class="atmos-node__icon"
+      [item]="item"
+      [node]="node()"
+      [opaque]="opaque() || unlocked()"
+      [hoverGlow]="false"
+      size="default"></app-item-icon>
+  } @else {
+    <span class="atmos-node__placeholder"></span>
+  }
+
+  @if (cost(); as c) {
+    <span class="atmos-node__cost" [attr.data-kind]="c.kind">
+      <mat-icon [svgIcon]="c.icon" class="atmos-node__cost-icon"></mat-icon>
+      <strong>{{ c.amount }}</strong>
+    </span>
+  }
+
+  @if (overlayTemplate(); as tpl) {
+    <span class="atmos-node__overlay">
+      <ng-container [ngTemplateOutlet]="tpl" [ngTemplateOutletContext]="{ $implicit: node() }"></ng-container>
+    </span>
+  }
+</button>

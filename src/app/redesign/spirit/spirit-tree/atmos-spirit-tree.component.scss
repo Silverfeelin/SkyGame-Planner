@@ -1,0 +1,61 @@
+.atmos-spirit-tree {
+  display: block;
+
+  &.has-pad-bottom {
+    padding-bottom: var(--atmos-pad);
+  }
+
+  &.is-highlighted {
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 2px;
+  }
+}
+
+.atmos-spirit-tree__body {
+  padding: var(--atmos-pad);
+}
+
+.atmos-spirit-tree__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.atmos-spirit-tree__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-spirit-tree__cost {
+  font-size: 13px;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-spirit-tree__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.atmos-spirit-tree__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.atmos-spirit-tree__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+}
