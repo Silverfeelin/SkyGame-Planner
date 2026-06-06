@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { NgTemplateOutlet } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -21,6 +21,7 @@ import { StorageService } from '@app/services/storage.service';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateComponent } from '@app/components/util/date/date.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
 import {
   AtmosItemListComponent,
   AtmosItemListNodeClickEvent,
@@ -132,14 +133,14 @@ const rotations: IRotations = [
   styleUrl: './atmos-shop-nesting.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    RouterLink,
     MatIcon,
     NgTemplateOutlet,
     CostComponent,
     DateComponent,
     ItemIconComponent,
     AtmosItemListComponent,
-    AtmosSpiritTreeComponent
+    AtmosSpiritTreeComponent,
+    AtmosShopQuickActionsComponent
   ]
 })
 export class AtmosShopNestingComponent {

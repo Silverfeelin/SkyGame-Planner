@@ -1,15 +1,8 @@
+<atmos-event-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Event history</h1>
 </header>
-
-<section class="atmos-page__quick-actions">
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/event">
-    <mat-icon>arrow_back</mat-icon> Events
-  </a>
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/event-calculator">
-    <mat-icon>calculate</mat-icon> Event Calculator
-  </a>
-</section>
 
 <div class="atmos-card atmos-event-history__grid-card">
   <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme"

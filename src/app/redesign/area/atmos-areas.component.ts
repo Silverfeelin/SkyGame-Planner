@@ -3,13 +3,14 @@ import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DataService } from '@app/services/data.service';
 import { IArea, IRealm } from 'skygame-data';
+import { AtmosRealmQuickActionsComponent } from '../realm/quick-actions/atmos-realm-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-areas',
   templateUrl: './atmos-areas.component.html',
   styleUrl: './atmos-areas.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon]
+  imports: [RouterLink, MatIcon, AtmosRealmQuickActionsComponent]
 })
 export class AtmosAreasComponent {
   readonly realm = signal<IRealm | undefined>(undefined);

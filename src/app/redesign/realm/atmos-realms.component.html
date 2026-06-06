@@ -1,28 +1,10 @@
+<atmos-realm-quick-actions/>
+
 <header class="atmos-page__header">
   <h1 class="atmos-page__title">Realms</h1>
 </header>
 
 <div class="atmos-page__quick-actions">
-  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Realms" target="_blank" rel="noopener">
-    <mat-icon>open_in_new</mat-icon>
-    <span>Wiki</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/area">
-    <mat-icon>location_on</mat-icon>
-    <span>Areas</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm/shared-creations">
-    <mat-icon>place</mat-icon>
-    <span>Shared Creations</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm/cr-tracker">
-    <mat-icon>candle</mat-icon>
-    <span>Candle Run Tracker</span>
-  </a>
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm/pnr-tracker">
-    <mat-icon>arrow_forward</mat-icon>
-    <span>Eden Statue Tracker</span>
-  </a>
   <button type="button" class="atmos-btn atmos-btn--sm"
     [class.atmos-btn--active]="showMap()" (click)="toggleShowMap()">
     <mat-icon>map</mat-icon>

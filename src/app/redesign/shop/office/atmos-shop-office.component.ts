@@ -1,17 +1,18 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IIAP, IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { AtmosIapCardComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-office',
   templateUrl: './atmos-shop-office.component.html',
   styleUrl: './atmos-shop-office.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosIapCardComponent]
+  imports: [MatIcon, AtmosIapCardComponent, AtmosShopQuickActionsComponent]
 })
 export class AtmosShopOfficeComponent {
   private readonly _iapService = inject(IAPService);

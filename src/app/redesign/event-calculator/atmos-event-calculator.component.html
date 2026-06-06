@@ -1,4 +1,6 @@
 @if (!event || currencyPerDay === undefined) {
+  <atmos-event-quick-actions/>
+
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">Event Calculator</h1>
   </header>
@@ -20,6 +22,8 @@
     </div>
   </div>
 } @else {
+  <atmos-event-quick-actions/>
+
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">
       {{ event.name }} {{ year }} <span class="atmos-event-calc__kicker">Calculator</span>

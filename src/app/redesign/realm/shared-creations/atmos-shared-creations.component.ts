@@ -9,6 +9,7 @@ import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { BroadcastService } from '@app/services/broadcast.service';
 import { MapService } from '@app/services/map.service';
 import { StorageService } from '@app/services/storage.service';
+import { AtmosRealmQuickActionsComponent } from '../quick-actions/atmos-realm-quick-actions.component';
 
 type SharedCreationType = 'message' | 'memory' | 'space';
 
@@ -41,7 +42,7 @@ const TYPE_LABELS: Record<SharedCreationType, string> = {
   templateUrl: './atmos-shared-creations.component.html',
   styleUrl: './atmos-shared-creations.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip]
+  imports: [MatIcon, NgbTooltip, AtmosRealmQuickActionsComponent]
 })
 export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLElement>;

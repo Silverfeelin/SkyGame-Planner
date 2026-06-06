@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { AtmosToolQuickActionsComponent } from './quick-actions/atmos-tool-quick-actions.component';
 
 interface IToolCard {
   readonly title: string;
@@ -22,7 +23,7 @@ interface IToolLink {
   templateUrl: './atmos-tools.component.html',
   styleUrl: './atmos-tools.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon]
+  imports: [RouterLink, MatIcon, AtmosToolQuickActionsComponent]
 })
 export class AtmosToolsComponent {
   readonly cards: ReadonlyArray<IToolCard> = [

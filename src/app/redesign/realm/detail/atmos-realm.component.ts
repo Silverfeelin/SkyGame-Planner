@@ -11,6 +11,7 @@ import { PercentagePipe } from '@app/pipes/percentage.pipe';
 import { SpiritTypeIconComponent } from '@app/components/spirit-type-icon/spirit-type-icon.component';
 import { AtmosSpiritTreeComponent } from '@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component';
 import { AtmosRealmConstellationComponent } from '../constellation/atmos-realm-constellation.component';
+import { AtmosRealmQuickActionsComponent } from '../quick-actions/atmos-realm-quick-actions.component';
 import { ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
 
 interface ISpiritEntry {
@@ -25,7 +26,7 @@ interface ISpiritEntry {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink, MatIcon, SpiritTypeIconComponent, AtmosSpiritTreeComponent,
-    AtmosRealmConstellationComponent, PercentagePipe
+    AtmosRealmConstellationComponent, AtmosRealmQuickActionsComponent, PercentagePipe
   ]
 })
 export class AtmosRealmComponent implements OnInit, OnDestroy {

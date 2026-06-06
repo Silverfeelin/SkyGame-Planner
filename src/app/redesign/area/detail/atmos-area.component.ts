@@ -5,13 +5,14 @@ import { DataService } from '@app/services/data.service';
 import { TitleService } from '@app/services/title.service';
 import { SpiritTypeIconComponent } from '@app/components/spirit-type-icon/spirit-type-icon.component';
 import { IArea, IRealm } from 'skygame-data';
+import { AtmosRealmQuickActionsComponent } from '../../realm/quick-actions/atmos-realm-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-area',
   templateUrl: './atmos-area.component.html',
   styleUrl: './atmos-area.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, SpiritTypeIconComponent]
+  imports: [RouterLink, MatIcon, SpiritTypeIconComponent, AtmosRealmQuickActionsComponent]
 })
 export class AtmosAreaComponent {
   area!: IArea;

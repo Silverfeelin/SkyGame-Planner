@@ -7,6 +7,7 @@ import { DataService } from '@app/services/data.service';
 import { MapInstanceService } from '@app/services/map-instance.service';
 import { IMapInit } from '@app/services/map.service';
 import { IArea, IRealm } from 'skygame-data';
+import { AtmosRealmQuickActionsComponent } from './quick-actions/atmos-realm-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-realms',
@@ -14,7 +15,7 @@ import { IArea, IRealm } from 'skygame-data';
   styleUrl: './atmos-realms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [MapInstanceService],
-  imports: [RouterLink, MatIcon, NgbTooltip]
+  imports: [RouterLink, MatIcon, NgbTooltip, AtmosRealmQuickActionsComponent]
 })
 export class AtmosRealmsComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef<HTMLElement>;
@@ -64,8 +65,12 @@ export class AtmosRealmsComponent implements AfterViewInit {
     localStorage.setItem('realms.map.folded', next ? '0' : '1');
     this.updateMapUrl();
     if (next) {
-      // Map container becomes visible; ensure leaflet resizes after layout.
-      queueMicrotask(() => this._map?.invalidateSize());
+      // Map container becomes visible; fix view.
+      setTimeout(() => {
+        this._map?.invalidateSize();
+        const params = this._mapInstanceService.loadParamsFromQuery();
+        this._map?.setView(params.view!, params.zoom, { animate: false, duration: 0 });
+      });
     }
   }
 

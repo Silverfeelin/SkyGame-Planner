@@ -24,7 +24,7 @@
 }
 
 .atmos-wing-buffs__grid-card {
-  padding: 8px;
+  overflow: hidden;
 
   ag-grid-angular {
     width: 100%;

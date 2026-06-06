@@ -30,5 +30,5 @@ export const REDESIGN_FOOT_NAV: ReadonlyArray<INavItem> = [
 
 export function withSeasonIcon(items: ReadonlyArray<INavItem>, seasonIconUrl: string | undefined): ReadonlyArray<INavItem> {
   if (!seasonIconUrl) return items;
-  return items.map(i => i.link === '/r/seasons' ? { ...i, iconUrl: seasonIconUrl } : i);
+  return items.map(i => i.link === '/r/season' ? { ...i, iconUrl: seasonIconUrl } : i);
 }

@@ -1,16 +1,17 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ISpirit, ISpiritTree } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-concert-hall',
   templateUrl: './atmos-shop-concert-hall.component.html',
   styleUrl: './atmos-shop-concert-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosSpiritTreeComponent]
+  imports: [MatIcon, AtmosSpiritTreeComponent, AtmosShopQuickActionsComponent]
 })
 export class AtmosShopConcertHallComponent {
   readonly tree: ISpiritTree;

@@ -49,6 +49,21 @@
   --atmos-pill-border: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
   --atmos-chip-bg:     oklch(0.95 0.01 var(--atmos-hue) / 0.06);
 
+  /* Map controls (Leaflet). */
+  --atmos-map-control-bg:            var(--atmos-card-bg);
+  --atmos-map-control-bg-hover:      var(--atmos-hover-bg-strong);
+  --atmos-map-control-text:          var(--atmos-text);
+  --atmos-map-control-text-disabled: var(--atmos-text-mute);
+  --atmos-map-control-border:        var(--atmos-card-border);
+
+  /* Map popups (Leaflet). More opaque than the card bg so popup content
+     stays readable over busy map tiles. */
+  --atmos-map-popup-bg:            oklch(0.20 0.035 var(--atmos-hue) / 0.85);
+  --atmos-map-popup-border:        var(--atmos-card-border);
+  --atmos-map-popup-text:          var(--atmos-text);
+  --atmos-map-popup-item-bg:       var(--atmos-chip-bg);
+  --atmos-map-popup-item-bg-hover: var(--atmos-hover-bg-strong);
+
   /* Effects. */
   --atmos-blur:      blur(18px);
   --atmos-blur-soft: blur(14px);
@@ -268,6 +283,128 @@
   color: var(--atmos-text);
   line-height: 1.5;
   font-size: 15px;
+}
+
+/* Leaflet zoom control, atmos-themed. Scoped to the redesign shell
+   (.atmospheric) so the legacy styling in map.less keeps applying to the
+   old pages. `!important` is needed to beat map.less, which also uses it. */
+.atmospheric .leaflet-control-zoom.leaflet-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--atmos-map-control-text) !important;
+    background: var(--atmos-map-control-bg) !important;
+    backdrop-filter: var(--atmos-blur-soft);
+    -webkit-backdrop-filter: var(--atmos-blur-soft);
+    border: var(--atmos-map-control-border) !important;
+    border-radius: var(--atmos-radius-sm) !important;
+    transition: background var(--atmos-transition);
+
+    &:hover {
+      background: var(--atmos-map-control-bg-hover) !important;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--atmos-accent);
+      outline-offset: 2px;
+    }
+
+    &.leaflet-disabled {
+      color: var(--atmos-map-control-text-disabled) !important;
+      background: var(--atmos-map-control-bg) !important;
+    }
+  }
+}
+
+/* Leaflet popup, atmos-themed. Same scoping/!important rationale as the
+   zoom control above. Covers both the popup chrome (wrapper, tip, close
+   button) and the shared row classes the popup builders use
+   (.container.s-leaflet-item, .link, button), so every atmos map page
+   (realms, shared creations, winged light, …) picks this up. */
+.atmospheric .leaflet-popup {
+  .leaflet-popup-content-wrapper {
+    color: var(--atmos-map-popup-text) !important;
+    background: var(--atmos-map-popup-bg) !important;
+    backdrop-filter: var(--atmos-blur-soft);
+    -webkit-backdrop-filter: var(--atmos-blur-soft);
+    border: var(--atmos-map-popup-border) !important;
+    border-radius: var(--atmos-card-radius) !important;
+    box-shadow: var(--atmos-card-shadow);
+  }
+
+  .leaflet-popup-tip {
+    background: var(--atmos-map-popup-bg) !important;
+    backdrop-filter: var(--atmos-blur-soft);
+    -webkit-backdrop-filter: var(--atmos-blur-soft);
+    box-shadow: none;
+  }
+
+  .leaflet-popup-close-button {
+    color: var(--atmos-text-dim) !important;
+    transition: color var(--atmos-transition);
+
+    &:hover {
+      color: var(--atmos-accent) !important;
+    }
+  }
+
+  /* Content rows. The popup builders emit .container/.link/button rows
+     styled by the legacy globals (container.less, styles.less) — restyle
+     them into atmos chips here. */
+  .s-leaflet-tooltip {
+    .container,
+    button,
+    .button {
+      color: var(--atmos-map-popup-text);
+      background: var(--atmos-map-popup-item-bg);
+      border: none;
+      border-radius: var(--atmos-radius-sm);
+      transition: background var(--atmos-transition), color var(--atmos-transition);
+    }
+
+    .link,
+    .point {
+      text-decoration: none;
+    }
+
+    button,
+    .button {
+      cursor: pointer;
+    }
+
+    .container.link:hover,
+    .container.point:hover,
+    button:hover,
+    .button:hover {
+      color: var(--atmos-map-popup-text);
+      background: var(--atmos-map-popup-item-bg-hover);
+    }
+
+    /* Inline links follow .atmos-text-link (colors need !important to
+       beat the map.less anchor rule). */
+    a {
+      color: var(--atmos-map-popup-text) !important;
+      text-decoration: none;
+      border-bottom: 1px solid var(--atmos-line-soft);
+      transition: color var(--atmos-transition), border-color var(--atmos-transition);
+
+      &:hover {
+        color: var(--atmos-accent) !important;
+        border-bottom-color: var(--atmos-accent);
+      }
+    }
+  }
 }
 
 // #region Themes

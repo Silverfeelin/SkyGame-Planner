@@ -5,6 +5,7 @@ import { IIAP, IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { AtmosIapCardComponent, AtmosItemListComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
 
 interface IVenue {
   readonly link: string;
@@ -56,7 +57,7 @@ const VENUES: ReadonlyArray<IVenue> = [
   templateUrl: './atmos-shops.component.html',
   styleUrl: './atmos-shops.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosIapCardComponent, AtmosItemListComponent]
+  imports: [RouterLink, MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosShopQuickActionsComponent]
 })
 export class AtmosShopsComponent {
   private readonly _iapService = inject(IAPService);

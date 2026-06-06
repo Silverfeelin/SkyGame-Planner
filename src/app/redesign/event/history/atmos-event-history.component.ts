@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { MatIcon } from '@angular/material/icon';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { DateTime } from 'luxon';
@@ -9,6 +7,7 @@ import { DataService } from '@app/services/data.service';
 import { getAtmosAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgAtmosEventLinkRendererComponent } from '@app/redesign/grid/renderers/ag-atmos-event-link-renderer/ag-atmos-event-link-renderer.component';
+import { AtmosEventQuickActionsComponent } from '../quick-actions/atmos-event-quick-actions.component';
 
 interface IRow {
   event: IEvent;
@@ -39,7 +38,7 @@ const numFilterParams = {
   templateUrl: './atmos-event-history.component.html',
   styleUrl: './atmos-event-history.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AgGridAngular]
+  imports: [AgGridAngular, AtmosEventQuickActionsComponent]
 })
 export class AtmosEventHistoryComponent {
   private readonly _dataService = inject(DataService);

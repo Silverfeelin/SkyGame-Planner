@@ -1,16 +1,17 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { AtmosItemListComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-wonderland',
   templateUrl: './atmos-shop-wonderland.component.html',
   styleUrl: './atmos-shop-wonderland.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosItemListComponent]
+  imports: [MatIcon, AtmosItemListComponent, AtmosShopQuickActionsComponent]
 })
 export class AtmosShopWonderlandComponent {
   readonly igcShops: ReadonlyArray<IShop>;

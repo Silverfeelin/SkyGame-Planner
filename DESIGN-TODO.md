@@ -35,13 +35,15 @@ For reference — these are the pages and shared atmos components that already e
 - Nav tables: `src/app/redesign/shell/nav-items.ts` (`REDESIGN_NAV`, `REDESIGN_FOOT_NAV`)
 - Design tokens & utility classes: `src/styles/atmospheric.scss`
 
-### Pages
+### Pages (built **and** routed in `redesign-routes.ts`)
 
 | Route             | Component                              |
 |-------------------|----------------------------------------|
 | `/r`              | `AtmosphericDashboardComponent`        |
 | `/r/privacy`      | `AtmosPrivacyComponent`                |
 | `/r/settings`     | `AtmosSettingsComponent`               |
+| `/r/currency`     | `AtmosCurrencyComponent`               |
+| `/r/currency/spent` | `AtmosCurrencySpentComponent`        |
 | `/r/item`         | `AtmosItemGridComponent` (redirect target) |
 | `/r/item/grid`    | `AtmosItemGridComponent`               |
 | `/r/item/table`   | `AtmosItemsComponent`                  |
@@ -49,15 +51,88 @@ For reference — these are the pages and shared atmos components that already e
 | `/r/item/dye`     | `AtmosItemDyeComponent`                |
 | `/r/item/heart`   | `AtmosItemHeartsComponent`             |
 | `/r/item/collection` | `AtmosItemCollectionComponent`      |
+| `/r/item/field-guide` | `AtmosItemFieldGuideComponent`     |
+| `/r/item/inflation` | `AtmosItemInflationComponent`        |
+| `/r/item/unlock`  | `AtmosItemUnlockComponent`             |
+| `/r/item/unlock-calculator` | `AtmosItemUnlockCalculatorComponent` (+ events/seasons/spirits/favourites sub-cards) |
 | `/r/item/:guid`   | `AtmosItemDetailComponent`             |
+| `/r/spirit`       | `AtmosSpiritsComponent`                |
+| `/r/spirit/elusive` | `AtmosElusiveSpiritsComponent`       |
+| `/r/spirit/:guid` | `AtmosSpiritComponent`                 |
+| `/r/spirit-tree/viewer` | `AtmosSpiritTreeViewerComponent` |
+| `/r/spirit-tree/:guid` | `AtmosSpiritTreeViewComponent`    |
+| `/r/ts`           | `AtmosTravelingSpiritsComponent`       |
+| `/r/rs`           | `AtmosReturningSpiritsComponent`       |
+| `/r/rs/:guid`     | `AtmosReturningSpiritComponent`        |
+| `/r/winged-light` | `AtmosWingedLightComponent`            |
+| `/r/wing-buff`    | `AtmosWingBuffsComponent`              |
+| `/r/col`          | `AtmosChildrenOfLightComponent`        |
+| `/r/season`       | `AtmosSeasonsComponent`                |
+| `/r/season/optimizer` | `AtmosSeasonOptimizerComponent`    |
+| `/r/season/:guid` | `AtmosSeasonComponent`                 |
+| `/r/season-calculator` | `AtmosSeasonCalculatorComponent`  |
+| `/r/event`        | `AtmosEventsComponent`                 |
+| `/r/event/history` | `AtmosEventHistoryComponent`          |
+| `/r/event/:guid`  | `AtmosEventComponent`                  |
+| `/r/event-calculator` | `AtmosEventCalculatorComponent`    |
+| `/r/event-instance/:guid` | `AtmosEventInstanceComponent`  |
+| `/r/daily`        | `AtmosDailyComponent`                  |
+| `/r/realm`        | `AtmosRealmsComponent`                 |
+| `/r/realm/shared-creations` | `AtmosSharedCreationsComponent` |
+| `/r/realm/pnr-tracker` | `AtmosPnrTrackerComponent`        |
+| `/r/realm/cr-tracker` | `AtmosCrTrackerComponent` (with `canDeactivateAtmosCrTracker` guard) |
+| `/r/realm/:guid`  | `AtmosRealmComponent`                  |
+| `/r/area`         | `AtmosAreasComponent`                  |
+| `/r/area/:guid`   | `AtmosAreaComponent`                   |
+| `/r/shop`         | `AtmosShopsComponent`                  |
+| `/r/shop/cinema`  | `AtmosShopCinemaComponent`             |
+| `/r/shop/concert-hall` | `AtmosShopConcertHallComponent`   |
+| `/r/shop/event`   | `AtmosShopEventStoreComponent`         |
+| `/r/shop/harmony` | `AtmosShopHarmonyHallComponent`        |
+| `/r/shop/nesting` | `AtmosShopNestingComponent`            |
+| `/r/shop/office`  | `AtmosShopOfficeComponent`             |
+| `/r/shop/wonderland-cafe` | `AtmosShopWonderlandComponent` |
+| `/r/friend`       | `AtmosFriendsComponent`                |
+| `/r/tool`         | `AtmosToolsComponent`                  |
+| `/r/outfit-request/closet` | `AtmosClosetComponent`        |
+| `/r/outfit-request/collage` | `AtmosCollageComponent`      |
+| `/r/outfit-request/vault` | `AtmosOutfitVaultComponent`    |
+| `/r/outfit-request/request` | `AtmosClosetRequestComponent` (chromeless — outside `AtmosphericShellComponent`) |
+| `/r/news`         | `AtmosNewsComponent`                   |
+| `/r/info`         | `AtmosInfoComponent`                   |
+| `/r/no-data`      | `AtmosNoDataComponent`                 |
+| `/r/dropbox-auth` | `AtmosDropboxAuthComponent` (chromeless) |
+
+Resolved decisions:
+
+- Legacy `/spirits` (`SpiritsOverviewComponent`) is superseded by the grid at `/r/spirit` — no separate overview page in the redesign.
+- Legacy `/blank` (`BlankComponent`) is not needed in the redesign.
+- `/r/no-data` mirrors the legacy page's title and intro text. Note: the data/icon guards still redirect to the legacy `/no-data` — pointing them at `/r/no-data` is part of making the redesign the default shell.
+
+The `nav-items.ts` `withSeasonIcon` mismatch (`/r/seasons` vs `/r/season`) has been fixed — the canonical link is `/r/season`.
 
 ### Shared atmos building blocks
 
 - Dashboard: `AtmosClockComponent`, `AtmosFeatureCardComponent`, `AtmosSearchBarComponent`
 - Item grid layout: `AtmosItemGridLayoutComponent`
-- Item quick-actions: `AtmosItemQuickActionsComponent`
+- Item list: `AtmosItemListComponent` (`item/item-list/`)
+- Empty state: `AtmosEmptyStateComponent` (`shared/empty-state/`) — also covers the `/no-data` use case
+- Shared widget registry/demo: `shared/atmos-shared-widgets.ts`, `AtmosSharedDemoComponent`
+- Section quick-actions (sub-nav pill bars, selector pattern `atmos-<section>-quick-actions` — note: no `app-` prefix):
+  - `AtmosItemQuickActionsComponent`
+  - `AtmosCurrencyQuickActionsComponent`
+  - `AtmosSpiritQuickActionsComponent`
+  - `AtmosWingedLightQuickActionsComponent`
+  - `AtmosEventQuickActionsComponent`
+  - `AtmosRealmQuickActionsComponent` (realms, areas, shared creations — intentionally not on the fullscreen PNR/CR tracker pages, which have their own floating control bars)
+  - `AtmosShopQuickActionsComponent` (shop index + all venues)
+  - `AtmosToolQuickActionsComponent` (tools index + closet/collage/vault)
+- Cards: `AtmosSpiritCardComponent`, `AtmosSeasonCardComponent`, `AtmosEventCardComponent`, `AtmosReturningSpiritCardComponent`, `AtmosIapCardComponent`, `AtmosDailyCardComponent`/`AtmosDailyTaskComponent`/`AtmosDailyCheckinComponent`
+- Spirit tree: `AtmosSpiritTreeComponent`, `AtmosNodeComponent`
+- Realm constellation: `AtmosRealmConstellationComponent`
 - AG-Grid renderers under `src/app/redesign/grid/renderers/`:
   - `AgAtmosItemIconRendererComponent`
+  - `AgAtmosItemLinkRendererComponent`
   - `AgAtmosEventLinkRendererComponent`
   - `AgAtmosAreaLinkRendererComponent`
   - `AgAtmosSpiritLinkRendererComponent`
@@ -65,172 +140,33 @@ For reference — these are the pages and shared atmos components that already e
 
 ---
 
-## To do — pages
+## To do — verification
 
-Pages are grouped by sidebar section. Each row lists the legacy route, the legacy component, and the target redesign route. **Agents may work on different sections in parallel** — within a section, build the index/landing page before the detail pages because the index usually defines shared list-card / filter patterns the detail pages can reuse.
+All built pages are now routed (see "Already done"). Remaining follow-ups:
 
-### Daily — sidebar `Daily` (`/r/daily`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/daily` | `DailyComponent` (`components/daily/daily.component.ts`) | `/r/daily` |
-
-Supporting components to consider redesigning or reusing as-is: `DailyTaskComponent`, `DailyCardComponent`, `DailyCheckinComponent`.
-
-### Currency — sidebar `Currency` (`/r/currency`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/currency` | `CurrencyComponent` | `/r/currency` |
-| `/currency/spent` | `CurrencySpentComponent` | `/r/currency/spent` |
-
-### Items — sidebar `Items` (`/r/item`)
-
-Item table/grid/preview/dye/heart/collection/detail are already done. **Still missing:**
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/item/field-guide` | `ItemFieldGuideComponent` | `/r/item/field-guide` |
-| `/item/inflation` | `ItemInflationComponent` (lazy) | `/r/item/inflation` |
-| `/item/unlock` | `ItemUnlockComponent` | `/r/item/unlock` |
-| `/item/unlock-calculator` | `ItemUnlockCalculatorComponent` (+ events/seasons/spirits/favourites sub-cards) | `/r/item/unlock-calculator` |
-
-### Spirits — sidebar `Spirits` (`/r/spirit`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/spirits` | `SpiritsOverviewComponent` | `/r/spirits` |
-| `/spirit` | `SpiritsComponent` | `/r/spirit` |
-| `/spirit/elusive` | `ElusiveSpiritsComponent` | `/r/spirit/elusive` |
-| `/spirit/:guid` | `SpiritComponent` | `/r/spirit/:guid` |
-| `/spirit-tree/:guid` | `SpiritTreeViewComponent` | `/r/spirit-tree/:guid` |
-| `/spirit-tree/viewer` | `SpiritTreeViewerComponent` (lazy) | `/r/spirit-tree/viewer` |
-| `/ts` | `TravelingSpiritsComponent` | `/r/ts` |
-| `/rs` | `ReturningSpiritsComponent` | `/r/rs` |
-| `/rs/:guid` | `ReturningSpiritComponent` | `/r/rs/:guid` |
-
-Shared widgets the redesign will likely want atmospheric variants of: `SpiritCardComponent`, `SpiritTreeComponent`, `ReturningSpiritCardComponent`, `SpiritTypeIconComponent`, `NodeComponent`.
-
-### Winged Light — sidebar `Winged Light` (`/r/winged-light`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/winged-light` | `WingedLightComponent` | `/r/winged-light` |
-| `/wing-buff` | `WingBuffsComponent` | `/r/wing-buff` |
-| `/col` | `ChildrenOfLightComponent` | `/r/col` |
-
-### Realms — sidebar `Realms` (`/r/realm`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/realm` | `RealmsComponent` | `/r/realm` |
-| `/realm/:guid` | `RealmComponent` | `/r/realm/:guid` |
-| `/realm/shared-creations` | `SharedCreationsComponent` | `/r/realm/shared-creations` |
-| `/realm/pnr-tracker` | `PnrTrackerComponent` | `/r/realm/pnr-tracker` |
-| `/realm/cr-tracker` | `CrTrackerComponent` (uses `canDeactivateCrTracker`) | `/r/realm/cr-tracker` |
-| `/area` | `AreasComponent` | `/r/area` |
-| `/area/:guid` | `AreaComponent` | `/r/area/:guid` |
-
-Shared widget: `RealmConstellationComponent` may need an atmospheric variant if it carries legacy styling.
-
-### Seasons — sidebar `Seasons` (`/r/season`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/season` | `SeasonsComponent` | `/r/season` |
-| `/season/:guid` | `SeasonComponent` | `/r/season/:guid` |
-| `/season/optimizer` | `SeasonOptimizerComponent` | `/r/season/optimizer` |
-| `/season-calculator` | `SeasonCalculatorComponent` | `/r/season-calculator` |
-
-Shared widget: `SeasonCardComponent`.
-
-Also wire the season icon into the sidebar via `withSeasonIcon` once an active season exists; `nav-items.ts` references `/r/seasons` but the canonical link is `/r/season` — pick one and update both.
-
-### Events — sidebar `Events` (`/r/event`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/event` | `EventsComponent` | `/r/event` |
-| `/event/history` | `EventHistoryComponent` | `/r/event/history` |
-| `/event/:guid` | `EventComponent` | `/r/event/:guid` |
-| `/event-calculator` | `EventCalculatorComponent` | `/r/event-calculator` |
-| `/event-instance/:guid` | `EventInstanceComponent` | `/r/event-instance/:guid` |
-
-Shared widget: `EventCardComponent`.
-
-### Shops — sidebar `Shops` (`/r/shop`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/shop` | `ShopsComponent` | `/r/shop` |
-| `/shop/cinema` | `ShopCinemaComponent` | `/r/shop/cinema` |
-| `/shop/concert-hall` | `ShopConcertHallComponent` | `/r/shop/concert-hall` |
-| `/shop/event` | `ShopEventStoreComponent` | `/r/shop/event` |
-| `/shop/harmony` | `ShopHarmonyHallComponent` | `/r/shop/harmony` |
-| `/shop/nesting` | `ShopNestingComponent` | `/r/shop/nesting` |
-| `/shop/office` | `ShopOfficeComponent` | `/r/shop/office` |
-| `/shop/wonderland-cafe` | `ShopWonderlandComponent` | `/r/shop/wonderland-cafe` |
-
-Shared widget: `IapCardComponent` — likely needs an atmospheric variant.
-
-### Friends — sidebar `Friends` (`/r/friend`)
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/friends` | `FriendsComponent` | `/r/friend` (note singular in nav; align URL or nav) |
-
-### Tools — sidebar `Tools` (`/r/tool`)
-
-The legacy `/tools` page is an index that links into many features. The redesign should likely surface only the tools whose target pages have already been redesigned and gate the rest.
-
-| Legacy route | Legacy component | Target redesign route |
-|---|---|---|
-| `/tools` | `ToolsComponent` | `/r/tool` (note singular in nav; align URL or nav) |
-| `/outfit-request/collage` | `CollageComponent` | `/r/outfit-request/collage` |
-| `/outfit-request/closet` | `ClosetComponent` | `/r/outfit-request/closet` |
-| `/outfit-request/vault` | `OutfitVaultComponent` | `/r/outfit-request/vault` |
-| `/outfit-request/request` | `ClosetComponent` (chromeless) | `/r/outfit-request/request` (no sidebar — sits outside `AtmosphericShellComponent`) |
-
-### Footer nav
-
-| Footer item | Legacy route | Legacy component | Target redesign route |
-|---|---|---|---|
-| `What's new` | `/news` | `NewsComponent` | `/r/news` |
-| `Settings` | done — `/settings` | `SettingsComponent` | `/r/settings` ✅ |
-| `Info` | (closest legacy is `/credits`) | `CreditsComponent` | `/r/info` — decide scope (credits + about + version + links) |
-
-### Out-of-shell / utility pages
-
-These don't sit under `AtmosphericShellComponent` but still need atmospheric treatment if a user can land on them while using the redesign.
-
-| Legacy route | Legacy component | Target redesign route / location |
-|---|---|---|
-| `/no-data` | `NoDataComponent` | atmospheric error/empty state — likely a shared component, not its own route |
-| `/storage` | `StorageComponent` | `/r/storage` (or integrate into `/r/settings`) |
-| `/dropbox-auth` | `DropboxAuthComponent` | `/r/dropbox-auth` (chromeless) |
-| `/blank` | `BlankComponent` | not needed in redesign |
+- **Visual pass** (`npm start`): every newly routed page renders inside the shell, sidebar/footer links resolve, and the new quick-actions bars (`realm`, `shop`, `tool`) highlight the active page correctly.
+- **Outfit-request wrappers** are thin wrappers around the legacy closet/collage/vault components — verify they render acceptably inside the atmos shell.
+- **PNR/CR trackers** intentionally have no section quick-actions bar (fullscreen map tools with their own floating control bars) — revisit if a section bar is wanted there.
 
 ---
 
-## To do — shared / supporting components
+## To do — not yet built
 
-These are reused by many pages. Build them as agents touch the first page that needs them so they emerge from real usage rather than being designed in isolation, but the list is captured here so two agents don't reinvent the same widget under different names.
-
-| Legacy component | Suggested atmos location | Used by |
+| Legacy route | Legacy component | Target |
 |---|---|---|
-| `SpiritCardComponent` | `redesign/spirit/spirit-card/atmos-spirit-card.component.*` | spirits list, season detail, event detail |
-| `SpiritTreeComponent` | `redesign/spirit/spirit-tree/atmos-spirit-tree.component.*` | spirit detail, spirit-tree view, TS/RS |
-| `NodeComponent` | `redesign/spirit/node/atmos-node.component.*` | inside spirit tree |
-| `SeasonCardComponent` | `redesign/season/season-card/atmos-season-card.component.*` | seasons list, dashboard |
-| `EventCardComponent` | `redesign/event/event-card/atmos-event-card.component.*` | events list, dashboard |
-| `ReturningSpiritCardComponent` | `redesign/spirit/returning-spirit-card/atmos-returning-spirit-card.component.*` | RS list |
-| `RealmConstellationComponent` | `redesign/realm/constellation/atmos-realm-constellation.component.*` | realm detail |
-| `IapCardComponent` | `redesign/shop/iap-card/atmos-iap-card.component.*` | every shop page |
-| `DailyCardComponent`, `DailyTaskComponent`, `DailyCheckinComponent` | `redesign/daily/...` | daily, dashboard |
-| `ItemListComponent` | `redesign/item/item-list/atmos-item-list.component.*` | many — spirit tree, shop, season etc. |
-| `KeyboardShortcutsComponent` | `redesign/settings/keyboard-shortcuts/...` | settings |
-| `DashboardAnnouncementComponent`, `DashboardWishlistComponent` | already conceptually covered by `AtmosFeatureCardComponent` — verify before duplicating |
-| `SearchComponent` | already covered by `AtmosSearchBarComponent` |
+| `/storage` | `StorageComponent` | `/r/storage`, or integrate into `/r/settings` |
+
+---
+
+## Shared / supporting components — status
+
+All of the previously planned shared widgets now exist (see "Already done" above). Remaining notes:
+
+| Legacy component | Status |
+|---|---|
+| `KeyboardShortcutsComponent` | settings page handles keyboard prefs inline — verify parity with the legacy shortcuts list |
+| `DashboardAnnouncementComponent`, `DashboardWishlistComponent` | conceptually covered by `AtmosFeatureCardComponent` — verify before duplicating |
+| `SearchComponent` | covered by `AtmosSearchBarComponent` |
 | `MenuComponent` | replaced by `AtmosphericSidebarComponent` / `AtmosphericTopbarComponent` |
 | `ClockComponent` | replaced by `AtmosClockComponent` |
 
@@ -248,20 +184,11 @@ Util components that are visually neutral and can be reused as-is (no atmos vari
 
 ## Suggested agent fan-out
 
-Independent sections that can be worked on in parallel by separate agents:
+All built pages are routed. Remaining independent chunks:
 
-1. **Daily** — single page, small surface, good warmup.
-2. **Currency** — two pages, mostly tabular.
-3. **Items / remaining** — field guide, unlock, unlock calculator, inflation. Shares idioms with the already-redesigned item table.
-4. **Spirits** — large surface; build `atmos-spirit-card` and `atmos-spirit-tree` first, then list pages, then detail pages, then TS/RS.
-5. **Winged Light + Wing Buffs + COL** — closely related, one agent.
-6. **Realms + Areas + trackers** — one agent; PNR/CR trackers are heavy interactive pages, handle last.
-7. **Seasons** — including optimizer/calculator. Build `atmos-season-card` first.
-8. **Events** — including history/calculator/instance. Build `atmos-event-card` first.
-9. **Shops** — index + 7 venue pages; build `atmos-iap-card` first, then fan out per venue.
-10. **Friends** — single page.
-11. **Tools + outfit-request (collage / closet / vault)** — one agent.
-12. **Footer: News + Info** — one agent (both are content-only pages).
+1. **Visual verification pass** — `npm start`, click through every newly routed section (daily, realms/areas/trackers, shops, friends, tools/outfit-request, news/info).
+2. **Not-yet-built leftovers** — `/r/storage` (or fold into `/r/settings`).
+3. **Conventions sweep** — pass over the bulk-committed pages for token usage and OnPush/signals. (Legacy-route links missing the `/r` prefix have already been swept — a grep finds none after the season-card fix.)
 
 Each agent should:
 

@@ -1,3 +1,5 @@
+<atmos-realm-quick-actions/>
+
 <header class="atmos-page__header">
   @if (realm(); as r) {
     <h1 class="atmos-page__title">Areas — {{ r.name }}</h1>
@@ -6,12 +8,8 @@
   }
 </header>
 
-<div class="atmos-page__quick-actions">
-  <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Category:Locations" target="_blank" rel="noopener">
-    <mat-icon>open_in_new</mat-icon>
-    <span>Wiki</span>
-  </a>
-  @if (realm(); as r) {
+@if (realm(); as r) {
+  <div class="atmos-page__quick-actions">
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', r.guid]">
       <mat-icon>map</mat-icon>
       <span>{{ r.name }}</span>
@@ -20,13 +18,8 @@
       <mat-icon>location_on</mat-icon>
       <span>All areas</span>
     </a>
-  } @else {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm">
-      <mat-icon>map</mat-icon>
-      <span>Realms</span>
-    </a>
-  }
-</div>
+  </div>
+}
 
 <section class="atmos-areas__grid">
   @for (area of areas(); track area.guid) {

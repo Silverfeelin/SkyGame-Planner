@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 import { IEvent, IEventInstance } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { AtmosEventCardComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosEventQuickActionsComponent } from '../quick-actions/atmos-event-quick-actions.component';
 
 interface IEventRow {
   event: IEvent;
@@ -17,7 +16,7 @@ interface IEventRow {
   templateUrl: './atmos-events.component.html',
   styleUrl: './atmos-events.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosEventCardComponent]
+  imports: [AtmosEventCardComponent, AtmosEventQuickActionsComponent]
 })
 export class AtmosEventsComponent {
   private readonly _dataService = inject(DataService);

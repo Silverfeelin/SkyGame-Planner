@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IIAP, IShop, ISpiritTree } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
@@ -9,13 +9,14 @@ import {
   AtmosItemListComponent,
   AtmosSpiritTreeComponent
 } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-harmony-hall',
   templateUrl: './atmos-shop-harmony-hall.component.html',
   styleUrl: './atmos-shop-harmony-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent]
+  imports: [MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent, AtmosShopQuickActionsComponent]
 })
 export class AtmosShopHarmonyHallComponent {
   private readonly _iapService = inject(IAPService);
