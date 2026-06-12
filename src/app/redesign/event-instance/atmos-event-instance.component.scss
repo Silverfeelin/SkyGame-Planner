@@ -7,13 +7,6 @@
   margin-left: 8px;
 }
 
-.atmos-event-instance__draft .atmos-event-instance__draft-body {
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  color: var(--atmos-warm);
-}
-
 .atmos-event-instance__summary-body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

@@ -1,3 +1,5 @@
+<atmos-season-quick-actions/>
+
 @if (!season) {
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">Season Calculator</h1>
@@ -23,10 +25,6 @@
     </div>
   </section>
 } @else {
-  <header class="atmos-page__header">
-    <h1 class="atmos-page__title">{{ season.name }} <span class="atmos-calc__title-suffix">Calculator</span></h1>
-  </header>
-
   <section class="atmos-page__quick-actions">
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', season.guid]">
       <mat-icon>arrow_back</mat-icon> Season
@@ -39,13 +37,12 @@
     </a>
   </section>
 
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ season.name }} <span class="atmos-calc__title-suffix">Calculator</span></h1>
+  </header>
+
   @if (season.draft) {
-    <section class="atmos-card atmos-calc__draft">
-      <div class="atmos-card__body atmos-calc__draft-body">
-        <mat-icon>warning</mat-icon>
-        <span>We're still working on this content. Thank you for your patience.</span>
-      </div>
-    </section>
+    <app-atmos-draft-warning />
   }
 
   <!-- Settings -->

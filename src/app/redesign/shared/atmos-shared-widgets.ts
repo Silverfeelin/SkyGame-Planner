@@ -10,6 +10,8 @@
 
 export { AtmosEmptyStateComponent } from './empty-state/atmos-empty-state.component';
 
+export { AtmosDraftWarningComponent } from './draft-warning/atmos-draft-warning.component';
+
 export {
   AtmosSpiritCardComponent,
   type AtmosSpiritCardOptions,

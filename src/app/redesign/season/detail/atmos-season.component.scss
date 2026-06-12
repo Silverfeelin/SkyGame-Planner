@@ -4,19 +4,6 @@
   gap: var(--atmos-gap);
 }
 
-.atmos-season__draft {
-  display: flex;
-}
-
-.atmos-season__draft-body {
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  color: var(--atmos-warm);
-
-  mat-icon { color: var(--atmos-warm); }
-}
-
 .atmos-season__header {
   align-items: baseline;
 }

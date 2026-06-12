@@ -14,10 +14,12 @@ import { DateComponent } from '@app/components/util/date/date.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import {
+  AtmosDraftWarningComponent,
   AtmosIapCardComponent,
   AtmosItemListComponent,
   AtmosSpiritTreeComponent
 } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosSeasonQuickActionsComponent } from '../quick-actions/atmos-season-quick-actions.component';
 
 interface ITreeEntry {
   readonly spirit: ISpirit;
@@ -32,7 +34,8 @@ interface ITreeEntry {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink, MatIcon, DateComponent, DaysLeftComponent, DurationComponent,
-    AtmosSpiritTreeComponent, AtmosItemListComponent, AtmosIapCardComponent
+    AtmosSpiritTreeComponent, AtmosItemListComponent, AtmosIapCardComponent,
+    AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent
   ]
 })
 export class AtmosSeasonComponent implements OnInit {

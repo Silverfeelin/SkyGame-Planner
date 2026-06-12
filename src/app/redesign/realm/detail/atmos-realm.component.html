@@ -1,10 +1,6 @@
 <atmos-realm-quick-actions/>
 
 @if (realm) {
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">{{ realm.name }}</h1>
-</header>
-
 <div class="atmos-page__quick-actions">
   @if (realm._wiki?.href; as wikiHref) {
     <a class="atmos-btn atmos-btn--sm" [href]="wikiHref" target="_blank" rel="noopener">
@@ -35,6 +31,10 @@
     </a>
   }
 </div>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">{{ realm.name }}</h1>
+</header>
 
 <!-- Constellation + progress -->
 @if (realm.constellation) {

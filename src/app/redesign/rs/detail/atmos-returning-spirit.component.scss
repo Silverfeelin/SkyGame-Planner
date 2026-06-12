@@ -23,10 +23,6 @@
     color: var(--atmos-text-mute);
   }
 
-  &.atmos-rs-detail__meta-item--wide {
-    grid-column: 1 / -1;
-  }
-
   &:is(a):hover { color: var(--atmos-accent); }
 }
 

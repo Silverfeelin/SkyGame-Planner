@@ -1,13 +1,5 @@
 <atmos-realm-quick-actions/>
 
-<header class="atmos-page__header">
-  @if (realm(); as r) {
-    <h1 class="atmos-page__title">Areas — {{ r.name }}</h1>
-  } @else {
-    <h1 class="atmos-page__title">Areas</h1>
-  }
-</header>
-
 @if (realm(); as r) {
   <div class="atmos-page__quick-actions">
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', r.guid]">
@@ -20,6 +12,14 @@
     </a>
   </div>
 }
+
+<header class="atmos-page__header">
+  @if (realm(); as r) {
+    <h1 class="atmos-page__title">Areas — {{ r.name }}</h1>
+  } @else {
+    <h1 class="atmos-page__title">Areas</h1>
+  }
+</header>
 
 <section class="atmos-areas__grid">
   @for (area of areas(); track area.guid) {

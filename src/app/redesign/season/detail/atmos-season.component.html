@@ -1,48 +1,26 @@
 @if (season(); as s) {
+  <atmos-season-quick-actions [wikiHref]="s._wiki?.href" [calendarHref]="s._calendar?.href">
+    @if (previousSeason(); as p) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', p.guid]">
+        <mat-icon>arrow_back</mat-icon> Previous
+      </a>
+    }
+    @if (nextSeason(); as n) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', n.guid]">
+        <mat-icon>arrow_forward</mat-icon> Next
+      </a>
+    }
+  </atmos-season-quick-actions>
+
   @if (s.draft) {
-    <section class="atmos-card atmos-season__draft">
-      <div class="atmos-card__body atmos-season__draft-body">
-        <mat-icon>warning</mat-icon>
-        <span>We're still working on this content. Thank you for your patience.</span>
-      </div>
-    </section>
+    <app-atmos-draft-warning />
   }
+
 
   <header class="atmos-page__header atmos-season__header">
     <h1 class="atmos-page__title">{{ s.name }}</h1>
     <span class="atmos-season__number">#{{ s.number }}</span>
   </header>
-
-  <section class="atmos-page__quick-actions atmos-season__quick-actions">
-    @if (s._wiki?.href) {
-      <a class="atmos-btn atmos-btn--sm" [href]="s._wiki!.href" target="_blank" rel="noopener">
-        <mat-icon>menu_book</mat-icon> Wiki
-      </a>
-    }
-    @if (s._calendar?.href) {
-      <a class="atmos-btn atmos-btn--sm" [href]="s._calendar!.href" target="_blank" rel="noopener">
-        <mat-icon>event</mat-icon> Calendar
-      </a>
-    }
-    @if (previousSeason(); as p) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', p.guid]">
-        <mat-icon>arrow_back</mat-icon> {{ p.name }}
-      </a>
-    }
-    @if (nextSeason(); as n) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', n.guid]">
-        <mat-icon>arrow_forward</mat-icon> {{ n.name }}
-      </a>
-    }
-    @if (showCalculator()) {
-      <a class="atmos-btn atmos-btn--sm" routerLink="/r/season-calculator">
-        <mat-icon>calculate</mat-icon> Calculator
-      </a>
-    }
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ season: s.guid, type: 'Season,Guide' }">
-      <mat-icon>list</mat-icon> Spirits ({{ s.spirits.length - 1 }})
-    </a>
-  </section>
 
   <!-- Overview / facts -->
   <section class="atmos-card atmos-season__overview">

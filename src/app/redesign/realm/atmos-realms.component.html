@@ -1,9 +1,5 @@
 <atmos-realm-quick-actions/>
 
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">Realms</h1>
-</header>
-
 <div class="atmos-page__quick-actions">
   <button type="button" class="atmos-btn atmos-btn--sm"
     [class.atmos-btn--active]="showMap()" (click)="toggleShowMap()">
@@ -11,6 +7,10 @@
     <span>{{ showMap() ? 'Hide map' : 'Show map' }}</span>
   </button>
 </div>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Realms</h1>
+</header>
 
 <section class="atmos-card atmos-realms__map" [class.is-hidden]="!showMap()">
   <div class="atmos-realms__map-container" #mapContainer>

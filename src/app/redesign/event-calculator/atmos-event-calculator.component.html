@@ -24,12 +24,6 @@
 } @else {
   <atmos-event-quick-actions/>
 
-  <header class="atmos-page__header">
-    <h1 class="atmos-page__title">
-      {{ event.name }} {{ year }} <span class="atmos-event-calc__kicker">Calculator</span>
-    </h1>
-  </header>
-
   <section class="atmos-page__quick-actions">
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event-instance', eventInstance.guid]">
       <mat-icon>arrow_back</mat-icon> Event
@@ -42,6 +36,12 @@
     </a>
   </section>
 
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">
+      {{ event.name }} {{ year }} <span class="atmos-event-calc__kicker">Calculator</span>
+    </h1>
+  </header>
+
   @if (concluded) {
     <div class="atmos-event-calc__warning">
       <mat-icon>priority_high</mat-icon>
@@ -50,10 +50,7 @@
   }
 
   @if (eventInstance.draft) {
-    <div class="atmos-event-calc__warning">
-      <mat-icon>warning</mat-icon>
-      <span>We're still working on this content. Thank you for your patience.</span>
-    </div>
+    <app-atmos-draft-warning />
   }
 
   <section class="atmos-card atmos-event-calc__section">

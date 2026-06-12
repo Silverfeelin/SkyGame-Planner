@@ -16,7 +16,7 @@ import { CalendarLinkComponent } from '@app/components/util/calendar-link/calend
 import { DateComponent } from '@app/components/util/date/date.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
-import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosDraftWarningComponent, AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from '@app/redesign/shared/atmos-shared-widgets';
 
 /**
  * Atmospheric returning-spirit (Special Visit) detail. Port of legacy
@@ -31,7 +31,7 @@ import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from '@app/re
     RouterLink, MatIcon,
     WikiLinkComponent, CalendarLinkComponent,
     DateComponent, DaysLeftComponent, DurationComponent,
-    AtmosSpiritTreeComponent
+    AtmosSpiritTreeComponent, AtmosDraftWarningComponent
   ]
 })
 export class AtmosReturningSpiritComponent {

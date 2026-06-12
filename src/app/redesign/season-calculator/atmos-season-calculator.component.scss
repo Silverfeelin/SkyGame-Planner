@@ -10,19 +10,6 @@
   font-weight: 600;
 }
 
-.atmos-calc__draft {
-  display: flex;
-}
-
-.atmos-calc__draft-body {
-  flex-direction: row;
-  align-items: center;
-  gap: 12px;
-  color: var(--atmos-warm);
-
-  mat-icon { color: var(--atmos-warm); }
-}
-
 .atmos-calc__section-header {
   padding: var(--atmos-pad);
   padding-bottom: 0;

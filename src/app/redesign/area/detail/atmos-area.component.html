@@ -1,10 +1,6 @@
 <atmos-realm-quick-actions/>
 
 @if (area) {
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">{{ area.name }}</h1>
-</header>
-
 <div class="atmos-page__quick-actions">
   @if (area._wiki?.href; as wikiHref) {
     <a class="atmos-btn atmos-btn--sm" [href]="wikiHref" target="_blank" rel="noopener">
@@ -41,6 +37,10 @@
     </a>
   }
 </div>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">{{ area.name }}</h1>
+</header>
 
 @if (area.imageUrl) {
   <div class="atmos-card atmos-area__hero"

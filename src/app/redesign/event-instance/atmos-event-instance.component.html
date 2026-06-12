@@ -1,20 +1,4 @@
 @if (instance(); as inst) {
-  <header class="atmos-page__header">
-    <h1 class="atmos-page__title">
-      {{ inst.name ?? inst.event.name }}
-      <span class="atmos-event-instance__year"><app-date [date]="inst.date" [format]="'yyyy'"></app-date></span>
-    </h1>
-  </header>
-
-  @if (inst.draft) {
-    <div class="atmos-card atmos-event-instance__draft">
-      <div class="atmos-card__body atmos-event-instance__draft-body">
-        <mat-icon>warning</mat-icon>
-        <span>We're still working on this content. Thank you for your patience.</span>
-      </div>
-    </div>
-  }
-
   <section class="atmos-page__quick-actions">
     <a class="atmos-btn atmos-btn--sm" routerLink="/r/event">
       <mat-icon>arrow_back</mat-icon> Events
@@ -40,6 +24,17 @@
       </a>
     }
   </section>
+
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">
+      {{ inst.name ?? inst.event.name }}
+      <span class="atmos-event-instance__year"><app-date [date]="inst.date" [format]="'yyyy'"></app-date></span>
+    </h1>
+  </header>
+
+  @if (inst.draft) {
+    <app-atmos-draft-warning />
+  }
 
   <section class="atmos-card atmos-event-instance__summary">
     <div class="atmos-card__body atmos-event-instance__summary-body">

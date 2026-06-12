@@ -1,14 +1,5 @@
 <atmos-winged-light-quick-actions/>
 
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">Children of Light</h1>
-  <div class="atmos-col__count" aria-live="polite">
-    <strong [class.atmos-col__count-complete]="unlockedCol === totalCol && totalCol > 0">{{ unlockedCol }}</strong>
-    <span class="atmos-col__count-sep"> / {{ totalCol }}</span>
-    <span class="atmos-col__count-label"> found</span>
-  </div>
-</header>
-
 <div class="atmos-page__quick-actions">
   <button type="button" class="atmos-btn atmos-btn--sm" (click)="unlockAll()">
     <mat-icon>done_all</mat-icon>
@@ -23,6 +14,15 @@
     <span>Left Orbit</span>
   </button>
 </div>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Children of Light</h1>
+  <div class="atmos-col__count" aria-live="polite">
+    <strong [class.atmos-col__count-complete]="unlockedCol === totalCol && totalCol > 0">{{ unlockedCol }}</strong>
+    <span class="atmos-col__count-sep"> / {{ totalCol }}</span>
+    <span class="atmos-col__count-label"> found</span>
+  </div>
+</header>
 
 <div class="atmos-card atmos-col__map-card" #mapContainer>
   <button type="button" class="atmos-col__map-control" (click)="scrollToList()" title="Scroll to list">

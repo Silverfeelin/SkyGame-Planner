@@ -14,16 +14,18 @@ import { NodeService } from '@app/services/node.service';
 import { StorageService } from '@app/services/storage.service';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import {
+  AtmosDraftWarningComponent,
   AtmosSpiritTreeComponent,
   AtmosSpiritTreeNodeClickEvent
 } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosSeasonQuickActionsComponent } from '../season/quick-actions/atmos-season-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-season-calculator',
   templateUrl: './atmos-season-calculator.component.html',
   styleUrl: './atmos-season-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe, AtmosSpiritTreeComponent]
+  imports: [RouterLink, MatIcon, DateTimePipe, AtmosSpiritTreeComponent, AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent]
 })
 export class AtmosSeasonCalculatorComponent implements OnInit {
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;
