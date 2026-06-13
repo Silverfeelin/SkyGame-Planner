@@ -1,0 +1,49 @@
+.content {
+  padding: var(--atmos-pad);
+  min-height: 100dvh;
+}
+
+:host:has(app-main-layout) {
+  .content { padding: 0; min-height: 100dvh; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fade-in 2s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.notice-banner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--atmos-card-bg-solid);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  padding: var(--atmos-pad-compact) var(--atmos-pad);
+  margin-bottom: var(--atmos-gap);
+  color: var(--atmos-text);
+
+  &__title { margin: 0; font-size: 1rem; font-weight: 500; }
+  &__body { margin: 0; color: var(--atmos-text-dim); }
+
+  &--danger {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--atmos-gap-compact);
+    background: oklch(0.22 0.07 25 / 0.9);
+    border-color: oklch(0.50 0.15 25 / 0.5);
+    color: oklch(0.88 0.10 25);
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+  }
+}
+
+.map-container {
+  display: none;
+}

@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.foldable {
+  > .atmos-card__header {
+    position: relative;
+    cursor: pointer;
+  }
+
+  > .atmos-card__header > ::ng-deep *:not(.atmos-card__fold) {
+    padding-left: 28px;
+  }
+}
+
+.atmos-card__fold {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+
+  mat-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.atmos-card__body {
+  transition: height 0.3s;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.card-body-pad {
+  padding: calc(var(--atmos-pad-compact) - 5px) var(--atmos-pad-compact);
+}

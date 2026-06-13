@@ -1,0 +1,41 @@
+.node {
+  position: relative;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+}
+
+.item {
+  position: relative;
+  padding: 4px;
+  box-sizing: content-box;
+  cursor: pointer;
+  width: var(--item-size);
+  height: var(--item-size);
+}
+
+.quantity {
+  position: absolute;
+  right: 4px;
+  top: 0;
+}
+
+.bar {
+  position: relative;
+  border-top: 1px solid var(--atmos-line);
+  padding: 2px;
+  text-align: center;
+  cursor: pointer;
+
+  mat-icon {
+    vertical-align: top;
+  }
+}
+
+.unlock {
+  display: none;
+}
+
+.bar:hover {
+  .cost { display: none; }
+  .unlock { display: block; }
+}

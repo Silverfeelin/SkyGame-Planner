@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 @Component({
     selector: 'app-editor-dashboard',
     templateUrl: './editor-dashboard.component.html',
-    styleUrls: ['./editor-dashboard.component.less'],
+    styleUrl: './editor-dashboard.component.scss',
     imports: [RouterLink]
 })
 export class EditorDashboardComponent {

@@ -20,7 +20,7 @@
 <!-- Add / Edit form -->
 @if (showEdit) {
   <section class="atmos-card atmos-card__body">
-    <h2 class="atmos-coll__section-title">{{ editGuid ? 'Edit collection' : 'New collection' }}</h2>
+    <h2 class="atmos-section__title">{{ editGuid ? 'Edit collection' : 'New collection' }}</h2>
 
     <form class="atmos-coll__form" [formGroup]="editForm">
       <div class="atmos-coll__form-fields">

@@ -17,7 +17,7 @@
 <!-- Selection -->
 <section class="atmos-card">
   <div class="atmos-card__body">
-    <h2 class="atmos-item-unlock-calc__title">Selection</h2>
+    <h2 class="atmos-section__title">Selection</h2>
     @if (!items.length) {
       <p class="atmos-paragraph">No items selected. Search for items below.</p>
     } @else {
@@ -56,7 +56,7 @@
 @if (items.length) {
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-item-unlock-calc__title">Breakdown</h2>
+      <h2 class="atmos-section__title">Breakdown</h2>
 
       @if (ownedItems.length) {
         <div>
@@ -150,7 +150,7 @@
   <!-- Total -->
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-item-unlock-calc__title">Total</h2>
+      <h2 class="atmos-section__title">Total</h2>
       <p class="atmos-paragraph">
         Total cost:
         <app-cost [cost]="totalCost" [showZeroes]="true" [showTooltip]="false" [price]="totalPrice || 0"></app-cost>

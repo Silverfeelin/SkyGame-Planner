@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy } from '@angular/core';
-import { GuardResult, Router, UrlTree, RouterOutlet, RouterLink } from '@angular/router';
-import { Observable, SubscriptionLike, delay, forkJoin, of } from 'rxjs';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnDestroy, signal } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { GuardResult, NavigationEnd, Router, UrlTree, RouterOutlet, RouterLink } from '@angular/router';
+import { Observable, SubscriptionLike, delay, filter, forkJoin, of } from 'rxjs';
 import { canActivateData } from 'src/app/guards/can-activate-data';
 import { canActivateStorage } from 'src/app/guards/can-activate-storage';
 import { DataService, ITrackables } from 'src/app/services/data.service';
@@ -9,13 +10,17 @@ import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storag
 import { MatIcon } from '@angular/material/icon';
 import { canActivateIcons } from '@app/guards/can-activate-icons';
 import { OverlayComponent } from "../overlay/overlay.component";
+import { AtmosphericTopbarComponent } from '@app/redesign/shell/atmospheric-topbar.component';
+import { AtmosphericSidebarComponent } from '@app/redesign/shell/atmospheric-sidebar.component';
+import { AtmosphericFooterComponent } from '@app/redesign/shell/atmospheric-footer.component';
 
 @Component({
     selector: 'app-main-layout',
     templateUrl: './main-layout.component.html',
-    styleUrl: './main-layout.component.less',
+    styleUrl: './main-layout.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent]
+    host: { class: 'atmospheric' },
+    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, AtmosphericTopbarComponent, AtmosphericSidebarComponent, AtmosphericFooterComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 
@@ -32,6 +37,7 @@ export class MainLayoutComponent implements OnDestroy {
   storageSaveError?: Error;
   storageSaveState?: StorageEventType;
   showSaveIndicator = false;
+  showChrome = signal(true);
 
   _storageSub?: SubscriptionLike;
 
@@ -41,6 +47,10 @@ export class MainLayoutComponent implements OnDestroy {
     private readonly _dataService: DataService,
     private readonly _storageService: StorageService
   ) {
+    this._updateChrome();
+    _router.events.pipe(filter(e => e instanceof NavigationEnd), takeUntilDestroyed()).subscribe(() => {
+      this._updateChrome();
+    });
     of(undefined).pipe(delay(100)).subscribe(() => {
       if (this.ready || this.err) { return; }
       this.loading = true;
@@ -127,6 +137,18 @@ export class MainLayoutComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this._storageSub?.unsubscribe();
+  }
+
+  private _updateChrome(): void {
+    let route = this._router.routerState.snapshot.root;
+    while (route.firstChild) {
+      route = route.firstChild;
+      if (route.data['chrome'] === false) {
+        this.showChrome.set(false);
+        return;
+      }
+    }
+    this.showChrome.set(true);
   }
 
   private updateDataWithStorage(): void {

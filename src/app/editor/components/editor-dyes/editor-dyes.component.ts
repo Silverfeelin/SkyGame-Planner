@@ -35,7 +35,7 @@ const fileNames = [
 @Component({
     selector: 'app-editor-dyes',
     templateUrl: './editor-dyes.component.html',
-    styleUrls: ['./editor-dyes.component.scss'],
+    styleUrl: './editor-dyes.component.scss',
     imports: [ItemsComponent, ItemIconComponent]
 })
 export class EditorDyesComponent {

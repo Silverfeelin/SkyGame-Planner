@@ -1,0 +1,108 @@
+<!-- Traveling Spirit -->
+@if (ts) {
+  <app-card class="mt" [foldable]="true" [folded]="true">
+    <div header>
+      <h4 class="h5 mb-0 ts-title">
+        <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
+        @if (tsState === 'future') { <span>Upcoming Traveling Spirit</span> }
+        @if (tsState === 'active') { <span>{{ ts.spirit.name }}</span> }
+      </h4>
+    </div>
+    <div class="sky-flex flex-wrap gap-half">
+      @for (item of tsItems; track item.guid) {
+        <div class="atmos-closet-item-container d-inline-block">
+          <div class="atmos-closet-item"
+            (click)="itemToggled.emit(item)"
+            [class.r]="state.selectedR()[item.guid]"
+            [class.y]="state.selectedY()[item.guid]"
+            [class.g]="state.selectedG()[item.guid]"
+            [class.b]="state.selectedB()[item.guid]"
+            [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
+            <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+          </div>
+        </div>
+      }
+    </div>
+  </app-card>
+}
+
+<!-- Returning Spirits -->
+@if (rs) {
+  <app-card class="mt" [foldable]="true" [folded]="true">
+    <div header>
+      <h4 class="h5 mb-0 ts-title">
+        <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
+        <span>{{ rs.name }}</span>
+      </h4>
+    </div>
+    <div class="sky-flex flex-wrap gap-half">
+      @for (s of rsSpirits; track s.returning.spirit?.guid) {
+        <div class="sky-flex flex-cols flex-align-start gap-half">
+          <div class="atmos-pill ws-nw">{{ s.returning.spirit.name }}</div>
+          <div class="sky-flex flex-wrap gap-half">
+            @for (item of s.items; track item.guid) {
+              <div class="atmos-closet-item-container d-inline-block">
+                <div class="atmos-closet-item"
+                  (click)="itemToggled.emit(item)"
+                  [class.r]="state.selectedR()[item.guid]"
+                  [class.y]="state.selectedY()[item.guid]"
+                  [class.g]="state.selectedG()[item.guid]"
+                  [class.b]="state.selectedB()[item.guid]"
+                  [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
+                  <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </app-card>
+}
+
+<!-- Events -->
+@for (event of events; track event.instance.guid) {
+  <app-card class="mt" [foldable]="true" [folded]="true">
+    <div header>
+      <h4 class="h5 mb-0">{{ event.instance.event.name }}</h4>
+    </div>
+    <div class="sky-flex flex-wrap gap-half">
+      <div class="sky-flex flex-cols flex-align-start gap-half">
+        <div class="atmos-pill ws-nw">In-game currency</div>
+        <div class="sky-flex flex-wrap gap-half">
+          @for (item of event.items; track item.guid) {
+            <div class="atmos-closet-item-container d-inline-block">
+              <div class="atmos-closet-item"
+                (click)="itemToggled.emit(item)"
+                [class.r]="state.selectedR()[item.guid]"
+                [class.y]="state.selectedY()[item.guid]"
+                [class.g]="state.selectedG()[item.guid]"
+                [class.b]="state.selectedB()[item.guid]"
+                [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
+                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="sky-flex flex-cols flex-align-start gap-half">
+        <div class="atmos-pill ws-nw">In-App Purchase</div>
+        <div class="sky-flex flex-wrap gap-half">
+          @for (item of event.iapItems; track item.guid) {
+            <div class="atmos-closet-item-container d-inline-block">
+              <div class="atmos-closet-item"
+                (click)="itemToggled.emit(item)"
+                [class.r]="state.selectedR()[item.guid]"
+                [class.y]="state.selectedY()[item.guid]"
+                [class.g]="state.selectedG()[item.guid]"
+                [class.b]="state.selectedB()[item.guid]"
+                [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
+                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </app-card>
+}

@@ -20,7 +20,7 @@ export type ItemListNodeClickEvent = {
 @Component({
     selector: 'app-item-list-node',
     templateUrl: './item-list-node.component.html',
-    styleUrl: './item-list-node.component.less',
+    styleUrl: './item-list-node.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgbTooltip, ItemIconComponent, MatIcon, NgTemplateOutlet, RouterLink]
 })

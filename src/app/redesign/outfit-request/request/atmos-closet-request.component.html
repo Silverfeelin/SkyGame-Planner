@@ -2,5 +2,118 @@
 <div class="atmos-closet-request__vignette" aria-hidden="true"></div>
 
 <main class="atmos-closet-request__main">
-  <app-closet></app-closet>
+  <div class="atmos-request-page">
+    <!-- Page header -->
+    <div class="atmos-card">
+      <div class="atmos-card__header">
+        <h2 class="atmos-section__title mb-0">Sky outfit request</h2>
+        <div class="atmos-header-actions">
+          <a class="atmos-icon-btn" [routerLink]="'/'" data-step="904" data-position="bottom-right-aligned">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+          </a>
+        </div>
+      </div>
+      <div class="atmos-card__body">
+        <div data-step="0" data-position="bottom-left-aligned">
+          Please visit the
+          <a class="atmos-icon-btn" [routerLink]="'/outfit-request/closet'">
+            <mat-icon>checkroom</mat-icon>
+            <span>Closet</span>
+          </a>
+          page if you want to customize and share your closet.
+        </div>
+      </div>
+    </div>
+
+    <!-- Ongoing items (TS / RS / events) — request mode only -->
+    <atmos-closet-ongoing (itemToggled)="toggleItem($event)" />
+
+    <!-- Toolbar -->
+    <atmos-closet-toolbar
+      [isRequesting]="requesting"
+      (resetRequest)="resetSelected()"
+      (randomRequest)="randomSelection()"
+      (copyLinkRequest)="copyLink()"
+      (calculateCostRequest)="calculateCost()" />
+
+    <!-- Background picker -->
+    <atmos-closet-background-picker />
+
+    <!-- Warning: problematic items -->
+    @if (state.selectionHasUnavailable()) {
+      <div class="atmos-card mt atmos-warn-hidden">
+        <div class="atmos-card__body">
+          <div class="atmos-warn-box">
+            <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
+            <span class="menu-label">This selection has items not available in the shared closet.</span>
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Item grid header with copy controls -->
+    <div class="atmos-card mt" data-step="1" data-position="top-left-aligned">
+      <div class="atmos-card__header header-sticky">
+        <h2 class="atmos-section__title mb-0 d-inline-block">Items</h2>&nbsp;
+        <div class="atmos-copy-controls d-inline-block v-top" data-step="4" data-position="bottom-left-aligned">
+          <div class="button-group">
+            <button type="button" class="btn-copy"
+              (click)="toggleImagePicker()"
+              [disabled]="state.isRendering()"
+              data-step="6" data-position="bottom-left-aligned">
+              <mat-icon [class.spin]="state.isRendering() === 2">
+                {{ state.isRendering() === 2 ? 'cached' : 'file_copy' }}
+              </mat-icon>
+              <span class="menu-label">Share</span>
+            </button>
+            <button type="button" class="btn-copy"
+              (click)="copyLink()"
+              [disabled]="state.isRendering()"
+              data-step="5" data-position="bottom-left-aligned">
+              <mat-icon [class.spin]="state.isRendering() === 1">
+                {{ state.isRendering() === 1 ? 'cached' : 'link' }}
+              </mat-icon>
+            </button>
+          </div>
+          @if (state.selectionHasUnavailable()) {
+            <span class="atmos-warn-badge" (click)="scrollToWarning()">
+              <mat-icon>priority_high</mat-icon>
+            </span>
+          }
+          @if (state.showingImagePicker()) {
+            <div class="atmos-image-picker">
+              <div class="button-group btn-group-img">
+                <button type="button" class="btn-copy-img" (click)="shareImage('request')" data-step="8" data-position="top-left-aligned">
+                  <mat-icon>background_grid_small</mat-icon>
+                  <span class="menu-label">Share request</span>
+                </button>
+                <button type="button" (click)="copyImage('request')">
+                  <mat-icon>file_copy</mat-icon>
+                </button>
+              </div>
+              <div class="button-group btn-group-img">
+                <button type="button" class="btn-copy-img" (click)="shareImage('square')" data-step="9" data-position="top-left-aligned">
+                  <mat-icon>grid_on</mat-icon>
+                  <span class="menu-label">Share one fit</span>
+                </button>
+                <button type="button" (click)="copyImage('square')">
+                  <mat-icon>file_copy</mat-icon>
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Closet grid -->
+      <atmos-closet-grid
+        [requesting]="requesting"
+        (itemToggled)="toggleItem($event)"
+        (dyeClicked)="showDyePicker($event.item, $event.event)" />
+    </div>
+
+    <!-- Dye picker overlay -->
+    <atmos-closet-dye-picker (closed)="closeDyePicker()" />
+  </div>
 </main>

@@ -8,7 +8,7 @@ import { DateTimePipe } from '../../../pipes/date-time.pipe';
 @Component({
     selector: 'app-date',
     templateUrl: './date.component.html',
-    styleUrls: ['./date.component.less'],
+
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [DateTimePipe]
 })

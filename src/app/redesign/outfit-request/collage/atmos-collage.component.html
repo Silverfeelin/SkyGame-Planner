@@ -1,5 +1,50 @@
-<atmos-tool-quick-actions/>
+<atmos-tool-quick-actions />
 
 <div class="atmos-collage">
-  <app-collage></app-collage>
+
+  <!-- Toolbar -->
+  <div class="atmos-collage__toolbar">
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="saveCollage()">
+      <mat-icon class="atmos-icon--18">save</mat-icon>
+      Save
+    </button>
+
+    <button
+      type="button"
+      class="atmos-btn atmos-btn--sm"
+      (click)="copyCollage(ttCopy)"
+      [disabled]="isRendering()"
+      ngbTooltip="Copied!"
+      #ttCopy="ngbTooltip"
+      triggers="manual"
+      container="body"
+      placement="top"
+      [closeDelay]="1000"
+      [autoClose]="true"
+      tooltipClass="show"
+    >
+      <mat-icon class="atmos-icon--18" [class.spin]="isRendering()">
+        {{ isRendering() ? 'cached' : 'image' }}
+      </mat-icon>
+      Copy
+    </button>
+
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-collage__btn-danger" (click)="reset()">
+      <mat-icon class="atmos-icon--18">delete_forever</mat-icon>
+      Reset
+    </button>
+  </div>
+
+  <!-- 2×2 slot grid -->
+  <div class="atmos-collage__grid">
+    @for (idx of slotIndices; track idx) {
+      <atmos-collage-slot
+        class="atmos-collage-slot"
+        [attr.data-slot-index]="idx"
+        [slotIndex]="idx"
+        (imageChanged)="onSlotImageChanged($event)"
+      />
+    }
+  </div>
+
 </div>

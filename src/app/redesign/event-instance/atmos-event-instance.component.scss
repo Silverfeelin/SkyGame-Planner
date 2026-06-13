@@ -1,4 +1,8 @@
-:host { display: contents; }
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
 
 .atmos-event-instance__year {
   color: var(--atmos-accent);
@@ -47,11 +51,6 @@
   text-shadow: var(--atmos-text-shadow);
 }
 
-.atmos-event-instance__section-title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-}
 
 .atmos-event-instance__section-body {
   /* override card body padding-top for section header above */

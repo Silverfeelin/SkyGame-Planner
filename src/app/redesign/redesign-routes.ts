@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { AtmosphericShellComponent } from './shell/atmospheric-shell.component';
 import { AtmosphericDashboardComponent } from './dashboard/atmospheric-dashboard.component';
 import { AtmosPrivacyComponent } from './privacy/atmos-privacy.component';
 import { AtmosSettingsComponent } from './settings/atmos-settings.component';
@@ -63,135 +62,133 @@ import { AtmosInfoComponent } from './info/atmos-info.component';
 import { AtmosDropboxAuthComponent } from './dropbox-auth/atmos-dropbox-auth.component';
 import { AtmosNoDataComponent } from './no-data/atmos-no-data.component';
 
+const title = (t: string) => `${t} - Sky Planner`;
+
 export const REDESIGN_ROUTES: Routes = [
-  /* Routes without the atmospheric shell (chromeless). */
-  { path: 'outfit-request/request', component: AtmosClosetRequestComponent, title: 'Outfit request' },
-  { path: 'dropbox-auth', component: AtmosDropboxAuthComponent, title: 'Dropbox' },
+  /* Chromeless routes — rendered without the atmos sidebar/footer. */
+  { path: 'outfit-request/request', component: AtmosClosetRequestComponent, data: { chrome: false }, title: title('Outfit request') },
+  { path: 'dropbox-auth', component: AtmosDropboxAuthComponent, data: { chrome: false }, title: title('Dropbox') },
+  /* Routes rendered inside the atmos shell (chrome). */
+  { path: '', component: AtmosphericDashboardComponent, title: 'Sky Planner' },
+  { path: 'privacy', component: AtmosPrivacyComponent, title: title('Privacy Policy') },
+  { path: 'settings', component: AtmosSettingsComponent, title: title('Settings') },
+  { path: 'daily', component: AtmosDailyComponent, title: title('Daily') },
+  { path: 'news', component: AtmosNewsComponent, title: title(`What's new`) },
+  { path: 'info', component: AtmosInfoComponent, title: title('Info') },
+  { path: 'no-data', component: AtmosNoDataComponent, title: title('Data error') },
   {
-    path: '',
-    component: AtmosphericShellComponent,
+    path: 'currency',
     children: [
-      { path: '', component: AtmosphericDashboardComponent, title: 'Sky Planner' },
-      { path: 'privacy', component: AtmosPrivacyComponent, title: 'Privacy Policy' },
-      { path: 'settings', component: AtmosSettingsComponent, title: 'Settings' },
-      { path: 'daily', component: AtmosDailyComponent, title: 'Daily' },
-      { path: 'news', component: AtmosNewsComponent, title: `What's new` },
-      { path: 'info', component: AtmosInfoComponent, title: 'Info' },
-      { path: 'no-data', component: AtmosNoDataComponent, title: 'Data error' },
-      {
-        path: 'currency',
-        children: [
-          { path: '', component: AtmosCurrencyComponent, title: 'In-game currency' },
-          { path: 'spent', component: AtmosCurrencySpentComponent, title: 'Spent currency' },
-        ]
-      },
-      {
-        path: 'season',
-        children: [
-          { path: '',          component: AtmosSeasonsComponent,         title: 'Seasons' },
-          { path: 'optimizer', component: AtmosSeasonOptimizerComponent, title: 'Season optimizer' },
-          { path: ':guid',     component: AtmosSeasonComponent,          title: 'Season' },
-        ]
-      },
-      { path: 'season-calculator', component: AtmosSeasonCalculatorComponent, title: 'Season calculator' },
-      { path: 'event-calculator', component: AtmosEventCalculatorComponent, title: 'Event calculator' },
-      {
-        path: 'event',
-        children: [
-          { path: '',        component: AtmosEventsComponent,       title: 'Events' },
-          { path: 'history', component: AtmosEventHistoryComponent, title: 'Event history' },
-          { path: ':guid',   component: AtmosEventComponent,        title: 'Event' },
-        ]
-      },
-      {
-        path: 'event-instance',
-        children: [
-          { path: ':guid', component: AtmosEventInstanceComponent, title: 'Event' },
-        ]
-      },
-      {
-        path: 'item',
-        children: [
-          { path: '', redirectTo: 'grid', pathMatch: 'full' },
-          { path: 'grid',       component: AtmosItemGridComponent,       title: 'Items' },
-          { path: 'table',      component: AtmosItemsComponent,          title: 'Item table' },
-          { path: 'preview',    component: AtmosItemPreviewComponent,    title: 'Item previews' },
-          { path: 'dye',        component: AtmosItemDyeComponent,        title: 'Dye previews' },
-          { path: 'heart',      component: AtmosItemHeartsComponent,     title: 'Hearts' },
-          { path: 'collection', component: AtmosItemCollectionComponent, title: 'Collections' },
-          { path: 'field-guide', component: AtmosItemFieldGuideComponent, title: 'Field guide' },
-          { path: 'inflation',  component: AtmosItemInflationComponent,  title: 'Item inflation' },
-          { path: 'unlock',     component: AtmosItemUnlockComponent,     title: 'Quick unlock' },
-          { path: 'unlock-calculator', component: AtmosItemUnlockCalculatorComponent, title: 'Cost calculator' },
-          { path: ':guid',      component: AtmosItemDetailComponent,    title: 'Item' },
-        ]
-      },
-      {
-        path: 'spirit',
-        children: [
-          { path: '',        component: AtmosSpiritsComponent,        title: 'Spirits' },
-          { path: 'elusive', component: AtmosElusiveSpiritsComponent, title: 'Elusive Spirits' },
-          { path: ':guid',   component: AtmosSpiritComponent,         title: 'Spirit' },
-        ]
-      },
-      { path: 'ts', component: AtmosTravelingSpiritsComponent, title: 'Traveling Spirits' },
-      {
-        path: 'rs',
-        children: [
-          { path: '',      component: AtmosReturningSpiritsComponent, title: 'Special Visits' },
-          { path: ':guid', component: AtmosReturningSpiritComponent,  title: 'Special Visit' },
-        ]
-      },
-      { path: 'winged-light', component: AtmosWingedLightComponent, title: 'Winged Light' },
-      { path: 'col', component: AtmosChildrenOfLightComponent, title: 'Children of Light' },
-      { path: 'wing-buff', component: AtmosWingBuffsComponent, title: 'Wing Buffs' },
-      {
-        path: 'realm',
-        children: [
-          { path: '',                 component: AtmosRealmsComponent,          title: 'Realms' },
-          { path: 'shared-creations', component: AtmosSharedCreationsComponent, title: 'Shared Creations' },
-          { path: 'pnr-tracker',      component: AtmosPnrTrackerComponent,      title: 'Eden Statue Tracker' },
-          { path: 'cr-tracker',       component: AtmosCrTrackerComponent, canDeactivate: [canDeactivateAtmosCrTracker], title: 'Candle Run Tracker' },
-          { path: ':guid',            component: AtmosRealmComponent,           title: 'Realm' },
-        ]
-      },
-      {
-        path: 'area',
-        children: [
-          { path: '',      component: AtmosAreasComponent, title: 'Areas' },
-          { path: ':guid', component: AtmosAreaComponent,  title: 'Area' },
-        ]
-      },
-      {
-        path: 'shop',
-        children: [
-          { path: '',                component: AtmosShopsComponent,           title: 'Shops' },
-          { path: 'cinema',          component: AtmosShopCinemaComponent,      title: 'Cinema' },
-          { path: 'concert-hall',    component: AtmosShopConcertHallComponent, title: 'Concert Hall' },
-          { path: 'event',           component: AtmosShopEventStoreComponent,  title: 'Aviary Event Store' },
-          { path: 'harmony',         component: AtmosShopHarmonyHallComponent, title: 'Harmony Hall' },
-          { path: 'nesting',         component: AtmosShopNestingComponent,     title: 'Nesting Workshop' },
-          { path: 'office',          component: AtmosShopOfficeComponent,      title: 'Office' },
-          { path: 'wonderland-cafe', component: AtmosShopWonderlandComponent,  title: 'Wonderland Cafe' },
-        ]
-      },
-      { path: 'friend', component: AtmosFriendsComponent, title: 'Friends' },
-      { path: 'tool', component: AtmosToolsComponent, title: 'Tools' },
-      {
-        path: 'outfit-request',
-        children: [
-          { path: 'closet',  component: AtmosClosetComponent,      title: 'Closet' },
-          { path: 'collage', component: AtmosCollageComponent,     title: 'Collage' },
-          { path: 'vault',   component: AtmosOutfitVaultComponent, title: 'Outfit vault' },
-        ]
-      },
-      {
-        path: 'spirit-tree',
-        children: [
-          { path: 'viewer', component: AtmosSpiritTreeViewerComponent, title: 'Spirit tree viewer' },
-          { path: ':guid',  component: AtmosSpiritTreeViewComponent,   title: 'Spirit tree' },
-        ]
-      }
+      { path: '', component: AtmosCurrencyComponent, title: title('In-game currency') },
+      { path: 'spent', component: AtmosCurrencySpentComponent, title: title('Spent currency') },
     ]
-  }
+  },
+  {
+    path: 'season',
+    children: [
+      { path: '',          component: AtmosSeasonsComponent,         title: title('Seasons') },
+      { path: 'optimizer', component: AtmosSeasonOptimizerComponent, title: title('Season optimizer') },
+      { path: ':guid',     component: AtmosSeasonComponent,          title: title('Season') },
+    ]
+  },
+  { path: 'season-calculator', component: AtmosSeasonCalculatorComponent, title: title('Season calculator') },
+  { path: 'event-calculator', component: AtmosEventCalculatorComponent, title: title('Event calculator') },
+  {
+    path: 'event',
+    children: [
+      { path: '',        component: AtmosEventsComponent,       title: title('Events') },
+      { path: 'history', component: AtmosEventHistoryComponent, title: title('Event history') },
+      { path: ':guid',   component: AtmosEventComponent,        title: title('Event') },
+    ]
+  },
+  {
+    path: 'event-instance',
+    children: [
+      { path: ':guid', component: AtmosEventInstanceComponent, title: title('Event') },
+    ]
+  },
+  {
+    path: 'item',
+    children: [
+      { path: '', redirectTo: 'grid', pathMatch: 'full' },
+      { path: 'grid',       component: AtmosItemGridComponent,       title: title('Items') },
+      { path: 'table',      component: AtmosItemsComponent,          title: title('Item table') },
+      { path: 'preview',    component: AtmosItemPreviewComponent,    title: title('Item previews') },
+      { path: 'dye',        component: AtmosItemDyeComponent,        title: title('Dye previews') },
+      { path: 'heart',      component: AtmosItemHeartsComponent,     title: title('Hearts') },
+      { path: 'collection', component: AtmosItemCollectionComponent, title: title('Collections') },
+      { path: 'field-guide', component: AtmosItemFieldGuideComponent, title: title('Field guide') },
+      { path: 'inflation',  component: AtmosItemInflationComponent,  title: title('Item inflation') },
+      { path: 'unlock',     component: AtmosItemUnlockComponent,     title: title('Quick unlock') },
+      { path: 'unlock-calculator', component: AtmosItemUnlockCalculatorComponent, title: title('Cost calculator') },
+      { path: ':guid',      component: AtmosItemDetailComponent,    title: title('Item') },
+    ]
+  },
+  {
+    path: 'spirit',
+    children: [
+      { path: '',        component: AtmosSpiritsComponent,        title: title('Spirits') },
+      { path: 'elusive', component: AtmosElusiveSpiritsComponent, title: title('Elusive Spirits') },
+      { path: ':guid',   component: AtmosSpiritComponent,         title: title('Spirit') },
+    ]
+  },
+  { path: 'ts', component: AtmosTravelingSpiritsComponent, title: title('Traveling Spirits') },
+  {
+    path: 'rs',
+    children: [
+      { path: '',      component: AtmosReturningSpiritsComponent, title: title('Special Visits') },
+      { path: ':guid', component: AtmosReturningSpiritComponent,  title: title('Special Visit') },
+    ]
+  },
+  { path: 'winged-light', component: AtmosWingedLightComponent, title: title('Winged Light') },
+  { path: 'col', component: AtmosChildrenOfLightComponent, title: title('Children of Light') },
+  { path: 'wing-buff', component: AtmosWingBuffsComponent, title: title('Wing Buffs') },
+  {
+    path: 'realm',
+    children: [
+      { path: '',                 component: AtmosRealmsComponent,          title: title('Realms') },
+      { path: 'shared-creations', component: AtmosSharedCreationsComponent, title: title('Shared Creations') },
+      { path: 'pnr-tracker',      component: AtmosPnrTrackerComponent,      title: title('Eden Statue Tracker') },
+      { path: 'cr-tracker',       component: AtmosCrTrackerComponent, canDeactivate: [canDeactivateAtmosCrTracker], title: title('Candle Run Tracker') },
+      { path: ':guid',            component: AtmosRealmComponent,           title: title('Realm') },
+    ]
+  },
+  {
+    path: 'area',
+    children: [
+      { path: '',      component: AtmosAreasComponent, title: title('Areas') },
+      { path: ':guid', component: AtmosAreaComponent,  title: title('Area') },
+    ]
+  },
+  {
+    path: 'shop',
+    children: [
+      { path: '',                component: AtmosShopsComponent,           title: title('Shops') },
+      { path: 'cinema',          component: AtmosShopCinemaComponent,      title: title('Cinema') },
+      { path: 'concert-hall',    component: AtmosShopConcertHallComponent, title: title('Concert Hall') },
+      { path: 'event',           component: AtmosShopEventStoreComponent,  title: title('Aviary Event Store') },
+      { path: 'harmony',         component: AtmosShopHarmonyHallComponent, title: title('Harmony Hall') },
+      { path: 'nesting',         component: AtmosShopNestingComponent,     title: title('Nesting Workshop') },
+      { path: 'office',          component: AtmosShopOfficeComponent,      title: title('Office') },
+      { path: 'wonderland-cafe', component: AtmosShopWonderlandComponent,  title: title('Wonderland Cafe') },
+    ]
+  },
+  { path: 'friend', component: AtmosFriendsComponent, title: title('Friends') },
+  { path: 'tool', component: AtmosToolsComponent, title: title('Tools') },
+  {
+    path: 'outfit-request',
+    children: [
+      { path: 'closet',  component: AtmosClosetComponent,      title: title('Closet') },
+      { path: 'collage', component: AtmosCollageComponent,     title: title('Collage') },
+      { path: 'vault',   component: AtmosOutfitVaultComponent, title: title('Outfit vault') },
+    ]
+  },
+  {
+    path: 'spirit-tree',
+    children: [
+      { path: 'viewer', component: AtmosSpiritTreeViewerComponent, title: title('Spirit tree viewer') },
+      { path: ':guid',  component: AtmosSpiritTreeViewComponent,   title: title('Spirit tree') },
+    ]
+  },
+  { path: 'graph', loadChildren: () => import('../sections/graphs/graphs-routes').then(m => m.routes), title: title('Graphs') },
 ];

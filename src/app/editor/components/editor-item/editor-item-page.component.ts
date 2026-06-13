@@ -3,7 +3,6 @@ import { nanoid } from 'nanoid';
 import { EditorItemComponent } from './editor-item.component';
 import { DataService } from '@app/services/data.service';
 import { ActivatedRoute } from '@angular/router';
-import { CardComponent } from "../../../components/layout/card/card.component";
 import { IItem, ItemType } from 'skygame-data';
 
 @Component({
@@ -11,7 +10,7 @@ import { IItem, ItemType } from 'skygame-data';
   templateUrl: './editor-item-page.component.html',
   styleUrl: './editor-item-page.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [EditorItemComponent, CardComponent],
+  imports: [EditorItemComponent],
 })
 export class EditorItemPageComponent {
   item?: IItem;

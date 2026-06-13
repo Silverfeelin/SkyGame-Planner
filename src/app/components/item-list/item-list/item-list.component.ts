@@ -5,7 +5,7 @@ import { IItemList } from 'skygame-data';
 @Component({
     selector: 'app-item-list',
     templateUrl: './item-list.component.html',
-    styleUrl: './item-list.component.less',
+
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [ItemListNodeComponent]
 })

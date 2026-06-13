@@ -1,48 +1,45 @@
-<div class="sky-card">
-  <div class="sky-card-header">
-    <h1 class="h2 mb-0">Graphs - Spirits</h1>
-  </div>
-</div>
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Graphs - Spirits</h1>
+</header>
 
-<div class="mt">
-  <app-card [foldable]="true" [folded]="true" [title]="'Season spirit return time'">
-    <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Spirit_Visits'}"></app-wiki-link>
-    <div class="container mt">
-      <p>
-        The below graph shows the days it takes for season spirits to return. Spirits that have visited at least once are shown, in order of season.<br/>
-        The return time is the amount of days between the end of the season and the first visit as a Traveling Spirit or a Returning Spirit.
-      </p>
-    </div>
-    <div class="mt container chart-container">
+<section class="atmos-card">
+  <div class="atmos-card__header">
+    Season spirit return time
+    <app-wiki-link style="margin-left: auto" [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Spirit_Visits'}"></app-wiki-link>
+  </div>
+  <div class="atmos-card__body">
+    <p>
+      The below graph shows the days it takes for season spirits to return. Spirits that have visited at least once are shown, in order of season.<br/>
+      The return time is the amount of days between the end of the season and the first visit as a Traveling Spirit or a Returning Spirit.
+    </p>
+    <div class="chart-container">
       <canvas #chartReturn class="chart" width="700" height="1500"></canvas>
     </div>
-  </app-card>
-</div>
+  </div>
+</section>
 
-<div class="mt">
-  <app-card [foldable]="true" [folded]="true" [title]="'Season spirit absence'">
-    <div class="container">
-      <p>
-        The below graph shows the days since each season spirit has last visited. Spirits are shown in order of season.
-        Spirits in orange have not visited since their season departure.
-      </p>
-    </div>
-    <div class="mt container chart-container">
+<section class="atmos-card">
+  <div class="atmos-card__header">Season spirit absence</div>
+  <div class="atmos-card__body">
+    <p>
+      The below graph shows the days since each season spirit has last visited. Spirits are shown in order of season.
+      Spirits in orange have not visited since their season departure.
+    </p>
+    <div class="chart-container">
       <canvas #chartAbsence class="chart" width="700" height="2200"></canvas>
     </div>
-  </app-card>
-</div>
+  </div>
+</section>
 
-<div class="mt">
-  <app-card [foldable]="true" [folded]="true" [title]="'Season spirit cost'">
-    <div class="container mt">
-      <p>
-        The below graph shows the cost of each season spirit based on their last visit. Spirits are shown in order of season.
-        The blue bar represents the cost in candles, the red bar represents the cost in hearts.
-      </p>
-    </div>
-    <div class="mt container chart-container">
+<section class="atmos-card">
+  <div class="atmos-card__header">Season spirit cost</div>
+  <div class="atmos-card__body">
+    <p>
+      The below graph shows the cost of each season spirit based on their last visit. Spirits are shown in order of season.
+      The blue bar represents the cost in candles, the red bar represents the cost in hearts.
+    </p>
+    <div class="chart-container">
       <canvas #chartCost class="chart" width="700" height="2000"></canvas>
     </div>
-  </app-card>
-</div>
+  </div>
+</section>

@@ -1,0 +1,217 @@
+.atmos-shell {
+  color: var(--atmos-text);
+  font-family: 'Manrope', 'Roboto', system-ui, sans-serif;
+
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'sidebar main';
+  height: 100vh;
+  height: 100dvh;
+  background: var(--atmos-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.atmos-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--atmos-bg-image, url(/assets/game/realms/Aviary.webp));
+  background-size: cover;
+  background-position: center;
+  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
+  pointer-events: none;
+}
+
+.atmos-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    transparent 42%,
+    oklch(0.05 0.02 var(--atmos-hue) / 0.55)
+  );
+  pointer-events: none;
+}
+
+.atmos-topbar-slot {
+  display: none;
+  grid-area: topbar;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.atmos-sidebar-slot {
+  grid-area: sidebar;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.atmos-main {
+  --atmos-main-pad-y: calc(var(--atmos-pad) + 4px);
+
+  grid-area: main;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  padding: var(--atmos-main-pad-y) calc(var(--atmos-pad) + 14px);
+  min-height: 0;
+  height: 100%;
+
+  /* router-outlet renders an empty <router-outlet> tag as a flex child, which
+     consumes one `gap` slot before the actual routed content. Hide it. */
+  > router-outlet { display: none; }
+}
+
+/* Tablet & mobile: hide sidebar, show topbar. */
+@media (max-width: 1023px) {
+  .atmos-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      'topbar'
+      'main';
+  }
+  .atmos-sidebar-slot {
+    display: none;
+  }
+  .atmos-topbar-slot {
+    display: block;
+  }
+  .atmos-main {
+    --atmos-main-pad-y: 12px;
+    padding: var(--atmos-main-pad-y);
+    gap: var(--atmos-gap-compact);
+  }
+}
+
+/* Global thin scrollbar styling. */
+:host ::ng-deep {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6);
+    border-radius: 3px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.55 0.03 var(--atmos-hue, 160) / 0.8);
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+.loader {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.loader-loading {
+  opacity: 1;
+}
+
+.loader-icon {
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.load-body {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.save-indicator {
+  $size: 32px;
+  $pad: 4px;
+
+  position: fixed;
+  z-index: 99999;
+  background: var(--atmos-card-bg-solid);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  padding: $pad;
+  top: 12px;
+  right: 12px;
+  box-sizing: content-box;
+  width: $size;
+  height: $size;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  mat-icon {
+    position: absolute;
+    top: $pad;
+    right: $pad;
+    font-size: $size;
+    width: $size;
+    height: $size;
+  }
+}
+
+.save-indicator.show-save {
+  opacity: 1;
+}
+
+.pulse {
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { filter: brightness(1); }
+  50% { filter: brightness(0.4); }
+  100% { filter: brightness(1); }
+}
+
+.error-pre {
+  background: oklch(0.06 0.01 var(--atmos-hue) / 0.9);
+  border-radius: var(--atmos-radius-sm);
+  padding: var(--atmos-pad-compact);
+  white-space: pre-wrap;
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.save-error-pre {
+  color: oklch(0.80 0.14 55);
+  white-space: pre-wrap;
+  margin: 0;
+  font-size: 13px;
+}
+
+.save-error-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--atmos-gap-compact);
+}

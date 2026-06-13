@@ -1,0 +1,101 @@
+<div class="vault-results">
+  <!-- Current selection -->
+  <div class="atmos-card">
+    <div class="atmos-card__header">
+      <h2 class="h3 mb-0">Selection</h2>
+    </div>
+    <div class="atmos-card__body pad-0">
+      <div class="selection-inner pad">
+        <div class="selection-icons flex-wrap">
+          @for (type of selectionTypes; track type) {
+            @let item = currentSelection()[type];
+            @if (item) {
+              <div class="selection-icon selected no-point" [title]="item.name">
+                <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
+                  [opaque]="true" [hoverGlow]="false"></app-item-icon>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results list -->
+  <div class="atmos-card mt">
+    <div class="atmos-card__header">
+      <h2 class="h3 mb-0">Results</h2>
+    </div>
+    <div class="atmos-card__body" style="display: flex; flex-direction: column; gap: var(--atmos-gap)">
+      @if (apiData()) {
+        @for (result of results; track result.data.id) {
+          <div>
+            <!-- Result items -->
+            <div class="mt">
+              <div class="selection-icons flex-wrap">
+                @for (type of selectionTypes; track type) {
+                  @let item = result.items[type];
+                  @if (item) {
+                    <div class="selection-icon no-point" [class.selected]="item" [title]="item?.name || (type | itemType)">
+                      <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
+                        [opaque]="true" [hoverGlow]="false"></app-item-icon>
+                    </div>
+                  }
+                }
+              </div>
+            </div>
+
+            <hr class="mt mb-0"/>
+
+            <!-- Metadata -->
+            <div class="sky-flex flex-wrap mt">
+              <div title="Player size">
+                <mat-icon svgIcon="resize" class="menu-icon"></mat-icon>
+                <span class="menu-label">{{ result.data.sizeId && sizes[result.data.sizeId] || sizes[0] }}</span>
+              </div>
+              |
+              <div title="Lighting">
+                <mat-icon svgIcon="bonfire" class="menu-icon"></mat-icon>
+                <span class="menu-label">{{ result.data.lightingId && lightings[result.data.lightingId] || lightings[0] }}</span>
+              </div>
+            </div>
+
+            <!-- Links -->
+            <div class="sky-flex flex-wrap gap-half mt">
+              @if (result.data.protocolLink) {
+                <a [href]="result.data.protocolLink" target="_blank" class="button">
+                  <mat-icon class="menu-icon">desktop_windows</mat-icon>
+                  <span class="menu-label">Open on PC</span>
+                </a>
+              }
+              <a [href]="result.data.link" target="_blank" class="button">
+                <mat-icon class="menu-icon">open_in_browser</mat-icon>
+                <span class="menu-label">Go to message</span>
+              </a>
+              <button type="button" class="button" (click)="copyLink(result)">
+                <mat-icon class="menu-icon">link</mat-icon>
+                <span class="menu-label">Copy message link</span>
+              </button>
+              @if (result.canDelete) {
+                <button class="button button-danger" (click)="onDelete(result)">
+                  <mat-icon class="menu-icon">delete</mat-icon>
+                  <span class="menu-label">Delete</span>
+                </button>
+              } @else {
+                <button class="button button-danger" (click)="onReport(result)">
+                  <mat-icon class="menu-icon">report</mat-icon>
+                  <span class="menu-label">Report</span>
+                </button>
+              }
+            </div>
+          </div>
+        }
+        @if (!apiData()?.items?.length) {
+          <div>
+            No outfits found for this selection.
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>

@@ -1,15 +1,15 @@
 :host {
   display: inline-block;
-  backdrop-filter: var(--backdrop-blur);
+  backdrop-filter: var(--atmos-blur);
 }
 
 .content {
-  border-radius: var(--border-radius);
+  border-radius: var(--atmos-radius-sm);
   overflow: hidden;
 }
 
 .spirit-tree-scroll {
-  background: var(--color-tree-background);
+  background: var(--atmos-card-bg);
   position: relative;
   // max-height: 600px;
   overflow-y: auto;
@@ -35,14 +35,14 @@
 .spirit-tree-tiers {
   display: flex;
   flex-direction: column-reverse;
-  gap: var(--padding-content);
+  gap: var(--atmos-gap);
   align-items: center;
 }
 
 .spirit-tree-tier {
   display: flex;
   flex-direction: column-reverse;
-  gap: var(--padding-content);
+  gap: var(--atmos-gap);
   align-items: center;
 }
 
@@ -51,8 +51,8 @@
 }
 
 .spirit-tree-tier:not(:last-child) {
-  border-top: 1px solid var(--color-tree-line);
-  padding-top: var(--padding-content);
+  border-top: 1px solid var(--atmos-line-soft);
+  padding-top: var(--atmos-gap);
 }
 
 .spirit-tree-tier-row {
@@ -60,7 +60,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--padding-content-half);
+  gap: var(--atmos-gap-compact);
   white-space: nowrap;
 }
 
@@ -106,7 +106,7 @@
   width: 32px;
   height: 32px;
   transform: translate(-50%, -50%);
-  transition: opacity var(--animation-short);
+  transition: opacity var(--atmos-transition);
   opacity: 0;
   text-shadow:
     -1px -1px 2px #000,
@@ -116,13 +116,13 @@
 }
 
 .st-item:hover .st-item-icon {
-  transition: opacity var(--animation-short);
+  transition: opacity var(--atmos-transition);
   opacity: 1;
 }
 
 .arrow {
   position: absolute;
-  background: var(--color-tree-line);
+  background: var(--atmos-line-soft);
   width: 1px;
 }
 
@@ -176,9 +176,9 @@
   line-height: 30px;
   padding-left: 36px;
   padding-right: 5px;
-  border-radius: var(--border-radius);
-  background-color: var(--color-tree-unlock-background);
-  box-shadow: 0 0 1px 1px var(--color-border);
+  border-radius: var(--atmos-radius-sm);
+  background-color: var(--atmos-bg-elev);
+  box-shadow: 0 0 1px 1px var(--atmos-line);
 }
 
 .tree-sub-action {
@@ -187,9 +187,9 @@
   height: 30px;
   width: 30px;
   line-height: 30px;
-  border-radius: var(--border-radius);
-  background-color: var(--color-tree-unlock-background);
-  box-shadow: 0 0 1px 1px var(--color-border);
+  border-radius: var(--atmos-radius-sm);
+  background-color: var(--atmos-bg-elev);
+  box-shadow: 0 0 1px 1px var(--atmos-line);
 }
 
 .tree-action-background {
@@ -220,8 +220,8 @@
   left: 0;
   width: 30px;
   height: 30px;
-  border: 1px solid var(--color-input-border);
-  border-radius: var(--border-radius);
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-sm);
 
   mat-icon {
     position: absolute;
@@ -234,9 +234,9 @@
   position: relative;
   width: 30px;
   height: 30px;
-  border: 1px solid var(--color-input-border);
-  border-radius: var(--border-radius);
-  background-color: var(--color-tree-unlock-background);
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-sm);
+  background-color: var(--atmos-bg-elev);
 
   mat-icon {
     position: absolute;
@@ -249,7 +249,7 @@
 
 .footer {
   text-align: center;
-  background: var(--color-tree-footer-background);
+  background: var(--atmos-card-bg-solid);
 }
 
 .name {
@@ -274,7 +274,7 @@
   height: 1px;
   width: var(--width);
   margin-left: calc((100% - var(--width)) / 2);
-  background: var(--color-tree-footer-border);
+  background: var(--atmos-line);
 }
 
 .costs {
@@ -293,5 +293,5 @@
 }
 
 .remaining-cost {
-  color: var(--color-accent);
+  color: var(--atmos-accent);
 }

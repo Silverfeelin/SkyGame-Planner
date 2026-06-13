@@ -6,7 +6,7 @@ import { NgTemplateOutlet } from '@angular/common';
   selector: 'app-tabs',
   imports: [ NgTemplateOutlet ],
   templateUrl: './tabs.component.html',
-  styleUrl: './tabs.component.less'
+  styleUrl: './tabs.component.scss'
 })
 export class TabsComponent {
   tabs = contentChildren(TabDirective);

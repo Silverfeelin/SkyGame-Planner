@@ -1,0 +1,86 @@
+<div class="vault-item-picker">
+  <!-- Toolbar -->
+  <div class="atmos-card__header header-items">
+    <h2 class="h3 mb-0">Items</h2>
+    <div class="sky-flex gap-half">
+      <button type="button" (click)="toggleItemSize()">
+        <mat-icon class="menu-icon">{{ itemSize() === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
+        <span class="menu-label">{{ itemSize() === 'small' ? 'Large icons' : 'Small icons' }}</span>
+      </button>
+      <button type="button" class="button-danger" (click)="reset()">
+        <mat-icon class="menu-icon">delete_forever</mat-icon>
+        <span class="menu-label">Reset</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="pad">
+    <div class="search">
+      <input #searchInput class="search-input" type="search"
+        (input)="search(searchInput.value)" placeholder="Search items">
+      <mat-icon (click)="searchInput.select()">search</mat-icon>
+    </div>
+  </div>
+
+  <!-- Selection preview (sticky) -->
+  <div class="selection-sticky">
+    <div class="selection-inner pad">
+      <div class="selection-icons">
+        @for (type of selectionTypes; track type) {
+          @let item = selection()[type];
+          <div class="selection-icon"
+            (click)="gotoType(type)"
+            [class.selected]="item"
+            [class.warn]="requiredParams[type] && !item"
+            title="{{ item?.name || (type | itemType) }}">
+            @if (item) {
+              <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
+                [opaque]="true" [hoverGlow]="false"></app-item-icon>
+            } @else {
+              <mat-icon [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Item grid -->
+  <div class="closet-grid pad scroll-x">
+    @for (section of sections; track $index) {
+      @if ($index > 0) {
+        <div class="closet-grid-section-divider"></div>
+      }
+      <div class="closet-grid-section" [class.section-folded]="sectionFolded()[$index]">
+        @for (type of section; track type) {
+          <div class="closet-items" [attr.data-type]="type"
+            [style.grid-template-columns]="'repeat(' + columns + ', ' + (itemSizePx()+8) + 'px)'">
+            <!-- Type header -->
+            <div [style.gridColumn]="'1/' + (columns+1)" class="closet-type t-center" (click)="foldType(type)">
+              <mat-icon [svgIcon]="itemIcons[type]"></mat-icon>
+              <div class="closet-type-fold">
+                <mat-icon>{{ typeFolded()[type] ? 'add' : 'remove' }}</mat-icon>
+              </div>
+            </div>
+            <!-- Items -->
+            @for (item of items[type]; track item.guid) {
+              <div class="closet-item-container" [hidden]="typeFolded()[type]">
+                <div class="closet-item"
+                  (click)="selectItem(item)"
+                  [attr.data-guid]="item.guid"
+                  [class.selected]="selectionMap()[item.guid]"
+                  [class.search-match]="searchText() && searchResults()?.[item.guid]"
+                  [class.no-search-match]="searchText() && !searchResults()?.[item.guid]"
+                  [title]="item.name">
+                  <app-item-icon class="v-top" [item]="item" [size]="itemSize()"
+                    [opaque]="true" [hoverGlow]="false"></app-item-icon>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>

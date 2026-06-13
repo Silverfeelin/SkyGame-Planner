@@ -1,73 +1,24 @@
 import { Routes } from '@angular/router';
-import { CreditsComponent } from './components/credits/credits.component';
-import { EventInstanceComponent } from './components/event-instance/event-instance.component';
-import { EventComponent } from './components/event/event.component';
-import { EventsComponent } from './components/events/events.component';
-import { RealmsComponent } from './components/realms/realms.component';
-import { SharedCreationsComponent } from './components/shared-creations/shared-creations.component';
-import { SeasonComponent } from './components/season/season.component';
-import { SeasonsComponent } from './components/seasons/seasons.component';
-import { SpiritComponent } from './components/spirit/spirit.component';
-import { SpiritsComponent } from './components/spirits/spirits.component';
-import { TravelingSpiritsComponent } from './components/traveling-spirits/traveling-spirits.component';
-import { ShopsComponent } from './components/shops/shops.component';
-import { WingBuffsComponent } from './components/wing-buffs/wing-buffs.component';
-import { SettingsComponent } from './components/settings/settings.component';
-import { RealmComponent } from './components/realms/realm/realm.component';
-import { ReturningSpiritsComponent } from './components/returning-spirits/returning-spirits.component';
-import { ReturningSpiritComponent } from './components/returning-spirit/returning-spirit.component';
-import { SpiritsOverviewComponent } from './components/spirits-overview/spirits-overview.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { BlankComponent } from './components/blank/blank.component';
-import { WingedLightComponent } from './components/winged-light/winged-light.component';
-import { ChildrenOfLightComponent } from './components/children-of-light/children-of-light.component';
-import { CollageComponent } from './components/outfit-request/collage/collage.component';
-import { ClosetComponent } from './components/outfit-request/closet/closet.component';
-import { ToolsComponent } from './components/tools/tools.component';
-import { ItemFieldGuideComponent } from './components/items/item-field-guide/item-field-guide.component';
-import { ItemUnlockComponent } from './components/items/item-unlock/item-unlock.component';
-import { ItemComponent } from './components/items/item/item.component';
-import { SeasonCalculatorComponent } from './components/season/season-calculator/season-calculator.component';
-import { EventCalculatorComponent } from './components/event/event-calculator/event-calculator.component';
-import { DropboxAuthComponent } from './components/dropbox/dropbox-auth/dropbox-auth.component';
-import { MenuLayoutComponent } from './components/layout/menu-layout/menu-layout.component';
-import { StorageComponent } from './components/storage/storage.component';
 import { MainLayoutComponent } from './components/layout/main-layout/main-layout.component';
-import { NoDataComponent } from './components/layout/no-data/no-data.component';
-import { OutfitVaultComponent } from './components/outfit-request/outfit-vault/outfit-vault.component';
-import { AreaComponent } from './components/areas/area/area.component';
-import { PrivacyComponent } from './components/privacy/privacy.component';
-import { ElusiveSpiritsComponent } from './components/spirits/elusive-spirits/elusive-spirits.component';
-import { SpiritTreeViewComponent } from './components/spirit-tree-view/spirit-tree-view.component';
-import { ShopNestingComponent } from './components/shops/shop-nesting/shop-nesting.component';
-import { ShopHarmonyHallComponent } from './components/shops/shop-harmony-hall/shop-harmony-hall.component';
-import { ShopEventStoreComponent } from './components/shops/shop-event-store/shop-event-store.component';
-import { ShopOfficeComponent } from './components/shops/shop-office/shop-office.component';
-import { CurrencyComponent } from './components/currency/currency.component';
-import { DailyComponent } from './components/daily/daily.component';
-import { CurrencySpentComponent } from './components/currency/currency-spent/currency-spent.component';
-import { ShopConcertHallComponent } from './components/shops/shop-concert-hall/shop-concert-hall.component';
-import { ItemUnlockCalculatorComponent } from './components/items/item-unlock-calculator/item-unlock-calculator.component';
-import { ItemsOverviewComponent } from './components/items/items-overview/items-overview.component';
-import { NewsComponent } from './components/news/news.component';
-import { ItemCollectionComponent } from './components/items/item-collection/item-collection.component';
-import { AreasComponent } from './components/areas/areas.component';
-import { EventHistoryComponent } from './components/events/event-history/event-history.component';
-import { ItemHeartsComponent } from './components/items/item-hearts/item-hearts.component';
-import { ItemDyesComponent } from './components/items/item-dyes/item-dyes.component';
-import { PnrTrackerComponent } from './components/pnr-tracker/pnr-tracker.component';
-import { CrTrackerComponent, canDeactivateCrTracker } from './components/cr-tracker/cr-tracker.component';
-import { SeasonOptimizerComponent } from './components/season/season-optimizer/season-optimizer.component';
-import { ShopCinemaComponent } from './components/shops/shop-cinema/shop-cinema.component';
-import { FriendsComponent } from './components/friends/friends.component';
-import { ShopWonderlandComponent } from './components/shops/shop-wonderland/shop-wonderland.component';
+import { AtmosNoDataComponent } from './redesign/no-data/atmos-no-data.component';
+import { AtmosDropboxAuthComponent } from './redesign/dropbox-auth/atmos-dropbox-auth.component';
+import { AtmosStorageComponent } from './redesign/storage/atmos-storage.component';
+import { REDESIGN_ROUTES } from './redesign/redesign-routes';
+import { EditorLayoutComponent } from './editor/editor-layout/editor-layout.component';
 
-const title = (title: string) => `${title} - Sky Planner`;
+const title = (t: string) => `${t} - Sky Planner`;
 
 export const routes: Routes = [
-  { path: 'no-data', component: NoDataComponent },
-  { path: 'storage', component: StorageComponent },
-  { path: 'dropbox-auth', component: DropboxAuthComponent, title: title('Dropbox') },
+  /* Slug redirects for bookmark compatibility. */
+  { path: 'r', redirectTo: '', pathMatch: 'prefix' },
+  { path: 'spirits', redirectTo: 'spirit' },
+  { path: 'tools', redirectTo: 'tool' },
+  { path: 'friends', redirectTo: 'friend' },
+  { path: 'credits', redirectTo: 'info' },
+  { path: 'blank', redirectTo: '' },
+  { path: 'no-data', component: AtmosNoDataComponent },
+  { path: 'storage', component: AtmosStorageComponent },
+  { path: 'dropbox-auth', component: AtmosDropboxAuthComponent, title: title('Dropbox') },
   /* Routes that require data. */
   {
     path: '',
@@ -77,82 +28,20 @@ export const routes: Routes = [
     // canActivate: [canActivateData],
     // canActivateChild: [canActivateStorageFn],
     children: [
-      /* Routes without menu. */
-      { path: 'outfit-request/request', component: ClosetComponent, title: title('Outfit request') },
-      { path: 'r', loadChildren: () => import('./redesign/redesign-routes').then(m => m.REDESIGN_ROUTES) },
-      /* Routes with menu. */
+      /* Legacy redirects — kept here so they resolve inside the data gate. */
+      { path: 'pnr-tracker', redirectTo: 'realm/pnr-tracker' },
+      { path: 'cr-tracker', redirectTo: 'realm/cr-tracker' },
+      { path: 'spirit-tree/editor', redirectTo: 'editor/spirit-tree' },
+      { path: 'season/migration-optimizer', redirectTo: 'season/optimizer' },
+      /* Editor — atmos editor layout (no atmos chrome). */
       {
-        path: '',
-        component: MenuLayoutComponent,
-        children: [
-          { path: '', component: DashboardComponent, title: 'Sky Planner' },
-          { path: 'blank', component: BlankComponent, title: 'Sky Planner' },
-          { path: 'privacy', component: PrivacyComponent },
-          { path: 'news', component: NewsComponent, title: title(`What's new`) },
-          { path: 'credits', component: CreditsComponent, title: title('Credits') },
-          { path: 'currency', component: CurrencyComponent, title: title('In-game currency') },
-          { path: 'currency/spent', component: CurrencySpentComponent, title: title('Spent currency') },
-          { path: 'daily', component: DailyComponent, title: title('Daily') },
-          { path: 'event', component: EventsComponent, title: title('Events') },
-          { path: 'event/history', component: EventHistoryComponent, title: title('Event History') },
-          { path: 'event/:guid', component: EventComponent },
-          { path: 'event-calculator', component: EventCalculatorComponent, title: title('Event Calculator') },
-          { path: 'event-instance/:guid', component: EventInstanceComponent },
-          { path: 'item', component: ItemsOverviewComponent, title: title('Items') },
-          { path: 'item/collection', component: ItemCollectionComponent, title: title('Item collections') },
-          { path: 'item/dye', component: ItemDyesComponent, title: title('Dyes') },
-          { path: 'item/field-guide', component: ItemFieldGuideComponent, title: title('Field guide') },
-          { path: 'item/heart', component: ItemHeartsComponent, title: title('Hearts') },
-          { path: 'item/inflation', loadComponent: () => import('./components/items/item-inflation/item-inflation.component').then(m => m.ItemInflationComponent), title: title('Item inflation') },
-          { path: 'item/unlock', component: ItemUnlockComponent, title: title('Items') },
-          { path: 'item/unlock-calculator', component: ItemUnlockCalculatorComponent, title: title('Item unlock calculator') },
-          { path: 'item/:guid', component: ItemComponent },
-          { path: 'realm', component: RealmsComponent, title: title('Realms') },
-          { path: 'realm/shared-creations', component: SharedCreationsComponent, title: title('Shared Creations') },
-          { path: 'realm/pnr-tracker', component: PnrTrackerComponent, title: title('Eden Statue Tracker') },
-          { path: 'realm/cr-tracker', component: CrTrackerComponent, canDeactivate: [canDeactivateCrTracker], title: title('Candle Run Tracker') },
-          { path: 'realm/:guid', component: RealmComponent },
-          { path: 'pnr-tracker', redirectTo: 'realm/pnr-tracker' }, // old route
-          { path: 'cr-tracker', redirectTo: 'realm/cr-tracker' }, // old route
-          { path: 'area', component: AreasComponent, title: title('Areas') },
-          { path: 'area/:guid', component: AreaComponent },
-          { path: 'season', component: SeasonsComponent, title: title('Seasons') },
-          { path: 'season/migration-optimizer', redirectTo: 'season/optimizer' }, // old route
-          { path: 'season/optimizer', component: SeasonOptimizerComponent, title: title('Season Optimizer') },
-          { path: 'season/:guid', component: SeasonComponent },
-          { path: 'season-calculator', component: SeasonCalculatorComponent, title: title('Season Calculator') },
-          { path: 'settings', component: SettingsComponent, title: title('Settings') },
-          { path: 'shop', component: ShopsComponent, title: title('Shops') },
-          { path: 'shop/cinema', component: ShopCinemaComponent, title: title('Cinema') },
-          { path: 'shop/concert-hall', component: ShopConcertHallComponent, title: title('Concert Hall') },
-          { path: 'shop/event', component: ShopEventStoreComponent, title: title('Aviary Event Store') },
-          { path: 'shop/harmony', component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
-          { path: 'shop/nesting', component: ShopNestingComponent, title: title('Nesting Workshop') },
-          { path: 'shop/office', component: ShopOfficeComponent, title: title('Office') },
-          { path: 'shop/wonderland-cafe', component: ShopWonderlandComponent, title: title('Wonderland Cafe') },
-          { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
-          { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
-          { path: 'spirit/elusive', component: ElusiveSpiritsComponent, title: title('Elusive Spirits') },
-          { path: 'spirit/:guid', component: SpiritComponent },
-          { path: 'spirit-tree/editor', redirectTo: 'editor/spirit-tree' }, // old route
-          { path: 'spirit-tree/viewer', loadComponent: () => import('./components/spirit-tree/spirit-tree-viewer/spirit-tree-viewer.component').then(m => m.SpiritTreeViewerComponent), title: title('Spirit Tree Viewer') },
-          { path: 'spirit-tree/:guid', component: SpiritTreeViewComponent, title: title('Spirit Tree') },
-          { path: 'ts', component: TravelingSpiritsComponent, title: title('Traveling Spirits') },
-          { path: 'rs', component: ReturningSpiritsComponent, title: title('Special Visits') },
-          { path: 'rs/:guid', component: ReturningSpiritComponent },
-          { path: 'winged-light', component: WingedLightComponent, title: title('Winged Light') },
-          { path: 'wing-buff', component: WingBuffsComponent, title: title('Wing Buffs') },
-          { path: 'col', component: ChildrenOfLightComponent, title: title('Children of Light') },
-          { path: 'tools', component: ToolsComponent, title: title('Tools') },
-          { path: 'friends', component: FriendsComponent, title: title('Friends') },
-          { path: 'outfit-request/collage', component: CollageComponent, title: title('Collage') },
-          { path: 'outfit-request/closet', component: ClosetComponent, title: title('Closet') },
-          { path: 'outfit-request/vault', component: OutfitVaultComponent, title: title('Outfit vault') },
-          { path: 'editor', loadChildren: () => import('./editor/editor-routes').then(m => m.routes) },
-          { path: 'graph', loadChildren: () => import('./sections/graphs/graphs-routes').then(m => m.routes) },
-          { path: 'experiment', loadChildren: () => import('./sections/experiments/experiments-routes').then(m => m.routes) }
-        ]
-      }
+        path: 'editor',
+        component: EditorLayoutComponent,
+        data: { chrome: false },
+        loadChildren: () => import('./editor/editor-routes').then(m => m.routes),
+      },
+      /* Redesign atmospheric shell — default for all /-rooted pages. */
+      ...REDESIGN_ROUTES,
     ]
   }
 ];

@@ -2,14 +2,20 @@
   position: relative;
   width: var(--item-size);
   height: var(--item-size);
-  background: var(--color-background);
-  border-radius: var(--border-radius)
+  background: var(--atmos-card-bg);
+  border-radius: var(--atmos-radius-sm);
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
 }
 
 .editor-grid {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: var(--padding-content);
+  gap: var(--atmos-gap);
   align-items: end;
 }
 

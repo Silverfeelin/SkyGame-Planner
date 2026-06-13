@@ -1,0 +1,63 @@
+<div class="atmos-closet-container" #closetContainer
+  [attr.data-mode]="state.color()"
+  [attr.data-modifying]="state.modifyingCloset() || undefined"
+  [attr.data-size]="state.itemSize()"
+  data-step="1" data-position="top-left-aligned">
+
+  <div class="atmos-closet-grid">
+    @for (section of gridSections; track $index) {
+      <div class="atmos-closet-grid__section">
+        @for (type of section; track type) {
+          <div class="atmos-closet-items" [attr.data-type]="type"
+            [style.grid-template-columns]="'repeat(' + state.columns() + ', ' + (state.itemSizePx() + 8) + 'px)'"
+            [attr.data-step]="type === 'Outfit' ? 2 : undefined"
+            data-position="top-left-aligned">
+
+            <!-- Section header -->
+            <div [style.gridColumn]="'1/' + (state.columns() + 1)"
+              class="atmos-closet-type t-center"
+              (click)="toggleSection(type)">
+              <mat-icon [svgIcon]="itemIcons[type]"></mat-icon>
+              <div class="atmos-closet-type__fold">
+                <mat-icon>{{ state.typeFolded()[type] ? 'add' : 'remove' }}</mat-icon>
+              </div>
+            </div>
+
+            <!-- Items -->
+            @for (item of getItemsForType(type); track item.guid) {
+              <div class="atmos-closet-item-container" [hidden]="isItemHidden(item)">
+                <div class="atmos-closet-item"
+                  (click)="itemToggled.emit(item)"
+                  [class.r]="state.selectedR()[item.guid]"
+                  [class.y]="state.selectedY()[item.guid]"
+                  [class.g]="state.selectedG()[item.guid]"
+                  [class.b]="state.selectedB()[item.guid]"
+                  [class.atmos-closet-hide]="isItemFaded(item)"
+                  [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]"
+                  [attr.data-guid]="item.guid">
+                  <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                  <div class="atmos-closet-dye-row" (click)="dyeClicked.emit({ item, event: $event })">
+                    @if (!item.dye?.primary) {
+                      <mat-icon class="atmos-dye-icon atmos-dye-icon--inactive">palette</mat-icon>
+                    }
+                    @if (item.dye?.primary) {
+                      <mat-icon class="atmos-dye-icon atmos-dye-icon--active"
+                        [ngClass]="state.dyeClasses()[item.guid]?.[0]">palette</mat-icon>
+                    }
+                    @if (item.dye?.secondary) {
+                      <mat-icon class="atmos-dye-icon atmos-dye-icon--active"
+                        [ngClass]="state.dyeClasses()[item.guid]?.[1]">palette</mat-icon>
+                    }
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+      @if (!$last) {
+        <div class="atmos-closet-grid__divider"></div>
+      }
+    }
+  </div>
+</div>

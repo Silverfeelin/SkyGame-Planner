@@ -1,4 +1,8 @@
-:host { display: contents; }
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
 
 .atmos-events__intro {
   margin-bottom: 4px;
@@ -15,11 +19,6 @@
   text-shadow: var(--atmos-text-shadow);
 }
 
-.atmos-events__section-title {
-  margin: 0;
-  font-size: 22px;
-  font-weight: 600;
-}
 
 .atmos-events__grid {
   display: grid;

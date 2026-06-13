@@ -6,7 +6,7 @@ import { IWiki } from 'skygame-data';
 @Component({
     selector: 'app-wiki-link',
     templateUrl: './wiki-link.component.html',
-    styleUrls: ['./wiki-link.component.less'],
+    styleUrl: './wiki-link.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [MatIcon]
 })

@@ -1,0 +1,81 @@
+@if (state.showingDyePicker() && state.dyeItem()) {
+  <app-overlay [closeText]="'Close'" (close)="close()">
+    <div class="atmos-dye-picker t-center">
+      <app-item-icon [item]="state.dyeItem()!" [hoverGlow]="false" [opaque]="true" [size]="'default'" />
+
+      @if (state.dyeItem()!.dye?.previewUrl) {
+        <img [src]="state.dyeItem()!.dye!.previewUrl" class="atmos-dye-preview"
+          (click)="openPreview(state.dyeItem()!.dye!.previewUrl!)" /><br/>
+        <sub (click)="openPreview(state.dyeItem()!.dye!.previewUrl!)">(Click to enlarge)</sub>
+      }
+
+      @if (state.dyeItem()!.dye?.primary) {
+        <div><b>Primary dye</b></div>
+        <div class="c-accent">Main color</div>
+        <div class="atmos-dye-grid">
+          <div class="atmos-dye-grid__color atmos-dye-grid__blank"
+            [class.highlight]="!getDye(0).primary"
+            (click)="selectDye(0, 'primary', undefined)">
+            <mat-icon svgIcon="none"></mat-icon>
+          </div>
+          @for (color of dyeColorList; track color) {
+            <div class="atmos-dye-grid__color"
+              [class.highlight]="getDye(0).primary === color"
+              (click)="selectDye(0, 'primary', color)">
+              <mat-icon [class]="'dye-' + color" [svgIcon]="'dye-' + color"></mat-icon>
+            </div>
+          }
+        </div>
+        <div class="c-accent">Blend color</div>
+        <div class="atmos-dye-grid">
+          <div class="atmos-dye-grid__color atmos-dye-grid__blank"
+            [class.highlight]="!getDye(0).secondary"
+            (click)="selectDye(0, 'secondary', undefined)">
+            <mat-icon svgIcon="none"></mat-icon>
+          </div>
+          @for (color of dyeColorList; track color) {
+            <div class="atmos-dye-grid__color"
+              [class.highlight]="getDye(0).secondary === color"
+              (click)="selectDye(0, 'secondary', color)">
+              <mat-icon [class]="'dye-' + color" [svgIcon]="'dye-' + color"></mat-icon>
+            </div>
+          }
+        </div>
+      }
+
+      @if (state.dyeItem()!.dye?.secondary) {
+        <div class="mt"><b>Secondary dye</b></div>
+        <div class="c-accent">Main color</div>
+        <div class="atmos-dye-grid">
+          <div class="atmos-dye-grid__color atmos-dye-grid__blank"
+            [class.highlight]="!getDye(1).primary"
+            (click)="selectDye(1, 'primary', undefined)">
+            <mat-icon svgIcon="none"></mat-icon>
+          </div>
+          @for (color of dyeColorList; track color) {
+            <div class="atmos-dye-grid__color"
+              [class.highlight]="getDye(1).primary === color"
+              (click)="selectDye(1, 'primary', color)">
+              <mat-icon [class]="'dye-' + color" [svgIcon]="'dye-' + color"></mat-icon>
+            </div>
+          }
+        </div>
+        <div class="c-accent">Blend color</div>
+        <div class="atmos-dye-grid">
+          <div class="atmos-dye-grid__color atmos-dye-grid__blank"
+            [class.highlight]="!getDye(1).secondary"
+            (click)="selectDye(1, 'secondary', undefined)">
+            <mat-icon svgIcon="none"></mat-icon>
+          </div>
+          @for (color of dyeColorList; track color) {
+            <div class="atmos-dye-grid__color"
+              [class.highlight]="getDye(1).secondary === color"
+              (click)="selectDye(1, 'secondary', color)">
+              <mat-icon [class]="'dye-' + color" [svgIcon]="'dye-' + color"></mat-icon>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </app-overlay>
+}

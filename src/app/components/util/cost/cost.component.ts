@@ -8,7 +8,7 @@ import { ICost } from 'skygame-data';
 @Component({
     selector: 'app-cost',
     templateUrl: './cost.component.html',
-    styleUrls: ['./cost.component.less'],
+    styleUrl: './cost.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgbTooltip, NgTemplateOutlet, MatIcon, DecimalPipe]
 })

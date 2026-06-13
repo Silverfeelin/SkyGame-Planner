@@ -8,48 +8,54 @@
       @case ('data_changed') { <mat-icon class="pulse">cloud</mat-icon> }
     }
   </div>
-  <router-outlet></router-outlet>
+  @if (showChrome()) {
+    <div class="atmos-shell">
+      <div class="atmos-bg" aria-hidden="true"></div>
+      <div class="atmos-vignette" aria-hidden="true"></div>
+      <app-atmospheric-topbar class="atmos-topbar-slot"></app-atmospheric-topbar>
+      <app-atmospheric-sidebar class="atmos-sidebar-slot"></app-atmospheric-sidebar>
+      <main class="atmos-main">
+        <router-outlet></router-outlet>
+        <app-atmospheric-footer class="atmos-footer-slot"></app-atmospheric-footer>
+      </main>
+    </div>
+  } @else {
+    <router-outlet></router-outlet>
+  }
 }
 @else if (err) {
   <app-overlay [dismissable]="false">
     <span>Something went wrong...</span>
     <span>Please report this error.</span>
-    <pre class="br pad ws-pl mb-0" style="background: #000;" (click)="copy($event)">{{ err }}</pre>
+    <pre class="error-pre" (click)="copy($event)">{{ err }}</pre>
   </app-overlay>
 } @else {
   <app-overlay class="loader" [class.loader-loading]="loading" [dismissable]="false">
-    <div class="grid grid-1 t-center" style="width: 240px;">
+    <div class="load-body">
       <span>Loading data...</span>
-      <div>
-        <mat-icon class="loader-icon">autorenew</mat-icon>
-      </div>
-      <a class="c-accent" [routerLink]="'/storage'">Taking too long?</a>
+      <mat-icon class="loader-icon">autorenew</mat-icon>
+      <a class="atmos-text-link" [routerLink]="'/storage'">Taking too long?</a>
     </div>
   </app-overlay>
 }
 
 @if (storageSaveError) {
-  <div class="overlay">
-    <div class="overlay-body">
-      <h1 class="h2">Saving to storage failed!</h1>
-      <span>The error message is shown below.</span>
-
-      <pre class="mt mb c-warn-accent ws-pl">{{ storageSaveError }}</pre>
-
-      <div class="sky-flex flex-wrap flex-justify-center">
-        <button type="button" (click)="retrySaveStorage()">
-          <mat-icon class="menu-icon">sync</mat-icon>
-          <span class="menu-label">Retry (force overwrite)</span>
-        </button>
-        <a class="button" [routerLink]="'/storage'">
-          <mat-icon class="menu-icon">database</mat-icon>
-          <span class="menu-label">Return to Storage</span>
-        </a>
-        <button type="button" (click)="refresh()">
-          <mat-icon class="menu-icon">refresh</mat-icon>
-          <span class="menu-label">Refresh page</span>
-        </button>
-      </div>
+  <app-overlay [dismissable]="false" [title]="'Saving to storage failed!'">
+    <span>The error message is shown below.</span>
+    <pre class="save-error-pre">{{ storageSaveError }}</pre>
+    <div class="save-error-actions">
+      <button class="atmos-btn" type="button" (click)="retrySaveStorage()">
+        <mat-icon>sync</mat-icon>
+        Retry (force overwrite)
+      </button>
+      <a class="atmos-btn" [routerLink]="'/storage'">
+        <mat-icon>database</mat-icon>
+        Return to Storage
+      </a>
+      <button class="atmos-btn" type="button" (click)="refresh()">
+        <mat-icon>refresh</mat-icon>
+        Refresh page
+      </button>
     </div>
-  </div>
+  </app-overlay>
 }

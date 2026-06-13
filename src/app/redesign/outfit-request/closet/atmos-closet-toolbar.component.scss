@@ -1,0 +1,82 @@
+$red: #f00;
+$yellow: #ff0;
+$green: #0f0;
+$blue: #0aa0ff;
+
+.atmos-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact, 12px);
+}
+
+.atmos-toolbar__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.atmos-search {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+
+  &__icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--atmos-text-mute);
+  }
+
+  &__input {
+    width: 100%;
+    padding-left: 36px;
+  }
+}
+
+// Color picker
+.atmos-color-picker {
+  position: relative;
+}
+
+.atmos-color-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 2px solid transparent;
+
+  mat-icon {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
+
+  &--active { }
+  &--fill { }
+  &--r { background: $red; }
+  &--y { background: $yellow; }
+  &--g { background: $green; }
+  &--b { background: $blue; }
+}
+
+.atmos-color-btn--active {
+  &.atmos-color-btn--r { border-color: $red; }
+  &.atmos-color-btn--y { border-color: $yellow; }
+  &.atmos-color-btn--g { border-color: $green; }
+  &.atmos-color-btn--b { border-color: $blue; }
+}
+
+.atmos-color-picker__dropdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}

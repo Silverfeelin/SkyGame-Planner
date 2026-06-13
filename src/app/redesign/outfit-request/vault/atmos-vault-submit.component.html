@@ -1,0 +1,108 @@
+<div class="vault-submit atmos-card">
+  <div class="atmos-card__header">
+    <h2 class="h3 mb-0">Add outfit</h2>
+  </div>
+  <div class="atmos-card__body">
+    <!-- Selection preview -->
+    <div class="selection-icons flex-wrap">
+      @for (type of selectionTypes; track type) {
+        @let item = selection()[type];
+        <div class="selection-icon no-point"
+          [class.selected]="item"
+          [class.warn]="requiredParams[type] && !item"
+          [title]="item?.name || (type | itemType)">
+          @if (item) {
+            <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
+              [opaque]="true" [hoverGlow]="false"></app-item-icon>
+          } @else {
+            <mat-icon [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
+          }
+        </div>
+      }
+    </div>
+
+    @if (!hasRequiredItems()) {
+      <div class="danger mt" style="padding: var(--atmos-gap-compact); border-radius: var(--atmos-radius-sm)">
+        You have not selected a full outfit. Some required items are missing.<br/>
+        If necessary, please submit multiple versions (i.e. multiple capes) individually instead of leaving the item blank.
+      </div>
+    }
+
+    @if (!submitUnderstood()) {
+      <div>
+        By submitting an outfit to the vault other players will be able to find it on this page.
+        <ul class="mb-half">
+          <li>Please make sure you select <b>all</b> items used in the outfit.</li>
+          <li>If a message or collage contains multiple outfits, please submit them separately.</li>
+          <li>If you think you did something wrong you can contact Silverfeelin on Discord.</li>
+        </ul>
+        <button type="button" (click)="submitUnderstood.set(true)">
+          <mat-icon class="menu-icon">done</mat-icon>
+          <span class="menu-label">I understand</span>
+        </button>
+      </div>
+    }
+
+    @if (submitUnderstood()) {
+      <div>
+        <div style="display: flex; flex-direction: column; gap: var(--atmos-gap)">
+          <!-- Link -->
+          <div>
+            <label for="txtDiscordLink">
+              Discord message link:
+              <span class="text-link" title="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures.">(help)</span>
+            </label>
+            <input id="txtDiscordLink" type="text"
+              [value]="sDiscordLink()"
+              (input)="onDiscordLinkChange($any($event.target).value)"
+              autocomplete="off">
+            <div class="mt-half">
+              Please verify the link works before submitting!<br/>
+              @if (pDiscordLink()) {
+                <a [href]="pDiscordLink()">
+                  <mat-icon class="menu-icon">open_in_browser</mat-icon>
+                  <span class="menu-label">Open in Discord</span>
+                </a><br/>
+                <a [href]="sDiscordLink()" target="_blank">
+                  <mat-icon class="menu-icon">link</mat-icon>
+                  <span class="menu-label">Open in browser</span>
+                </a>
+              }
+            </div>
+          </div>
+
+          <!-- Size -->
+          <div>
+            <label for="selSize">Size:</label>
+            <select id="selSize" [value]="sSize()" (change)="sSize.set($any($event.target).value)">
+              <option value="0"></option>
+              @for (size of sizes; track $index) {
+                @if ($index > 0) {
+                  <option [value]="$index">{{ size }}</option>
+                }
+              }
+            </select>
+          </div>
+
+          <!-- Lighting -->
+          <div>
+            <label for="selLight">Lighting:</label>
+            <select id="selLight" [value]="sLight()" (change)="sLight.set($any($event.target).value)">
+              <option value="0"></option>
+              @for (light of lightings; track $index) {
+                @if ($index > 0) {
+                  <option [value]="$index">{{ light }}</option>
+                }
+              }
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button type="button" (click)="onSubmit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

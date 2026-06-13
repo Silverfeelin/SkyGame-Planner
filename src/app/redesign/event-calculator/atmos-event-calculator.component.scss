@@ -1,4 +1,8 @@
-:host { display: contents; }
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
 
 .atmos-event-calc__kicker {
   color: var(--atmos-accent);
@@ -31,11 +35,6 @@
   text-shadow: var(--atmos-text-shadow);
 }
 
-.atmos-event-calc__section-title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-}
 
 .atmos-event-calc__settings {
   gap: 12px;

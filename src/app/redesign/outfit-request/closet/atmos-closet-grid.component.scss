@@ -1,0 +1,144 @@
+$red: #f00;
+$reda: #f006;
+$yellow: #ff0;
+$yellowa: #ff06;
+$green: #0f0;
+$greena: #0f06;
+$blue: #0aa0ff;
+$bluea: #0aa0ff66;
+
+// Closet grid layout
+.atmos-closet-container {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--atmos-line) transparent;
+}
+
+.atmos-closet-grid {
+  display: flex;
+  gap: 8px;
+}
+
+.atmos-closet-grid__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.atmos-closet-grid__divider {
+  height: auto;
+  border-left: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-closet-items {
+  position: relative;
+  scroll-margin-top: 71px;
+  display: grid;
+  gap: 4px;
+  user-select: none;
+}
+
+.atmos-closet-type {
+  position: relative;
+  cursor: pointer;
+  background-color: var(--atmos-bg-elev);
+  border-radius: var(--atmos-radius-sm);
+  padding: 4px;
+
+  mat-icon { vertical-align: top; }
+}
+
+.atmos-closet-type__fold {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.atmos-closet-item {
+  position: relative;
+  display: inline-block;
+  padding: 1px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-bg-elev);
+  border: 3px solid transparent;
+  border-width: 3px !important;
+  cursor: pointer;
+  vertical-align: top;
+
+  app-item-icon { vertical-align: top; }
+}
+
+.atmos-closet-item-container {
+  border-radius: var(--atmos-radius-sm);
+  vertical-align: top;
+  line-height: 0px;
+}
+
+// Dye icons
+.atmos-dye-row {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.atmos-dye-icon {
+  vertical-align: top;
+  font-size: 24px !important;
+  line-height: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.atmos-dye-icon:not(.atmos-dye-icon--inactive):hover {
+  filter: brightness(0.7);
+}
+
+.atmos-dye-icon--inactive {
+  color: var(--atmos-accent);
+}
+
+// Small item size
+.atmos-closet-container[data-size="small"] {
+  .atmos-dye-icon {
+    font-size: 16px !important;
+    line-height: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+// Fading for hidden/unavailable items
+.atmos-closet-hide {
+  app-item-icon { opacity: 0.2; }
+}
+
+// Search highlight
+.atmos-closet-highlight {
+  outline: 2px solid var(--atmos-accent);
+  outline-offset: 1px;
+}
+
+// Hover hints per color mode
+.atmos-closet-container[data-mode="r"] .atmos-closet-item:hover { border-color: $reda; }
+.atmos-closet-container[data-mode="y"] .atmos-closet-item:hover { border-color: $yellowa; }
+.atmos-closet-container[data-mode="g"] .atmos-closet-item:hover { border-color: $greena; }
+.atmos-closet-container[data-mode="b"] .atmos-closet-item:hover { border-color: $bluea; }
+
+// Selection borders
+.atmos-closet-item.r { border-color: $red !important; border-radius: 0; }
+.atmos-closet-item.y { border-color: $yellow !important; border-radius: 0; }
+.atmos-closet-item.g { border-color: $green !important; border-radius: 0; }
+.atmos-closet-item.b { border-color: $blue !important; border-radius: 0; }
+.atmos-closet-item.r.y { border-image: conic-gradient(from -90deg, $red 90deg 180deg, $yellow 180deg) 3; }
+.atmos-closet-item.r.g { border-image: conic-gradient(from -90deg, $red 90deg 180deg, $green 180deg) 3; }
+.atmos-closet-item.r.b { border-image: conic-gradient(from -90deg, $red 90deg 180deg, $blue 180deg) 3; }
+.atmos-closet-item.y.g { border-image: conic-gradient(from -90deg, $yellow 90deg 180deg, $green 180deg) 3; }
+.atmos-closet-item.y.b { border-image: conic-gradient(from -90deg, $yellow 90deg 180deg, $blue 180deg) 3; }
+.atmos-closet-item.g.b { border-image: conic-gradient(from -90deg, $green 90deg 180deg, $blue 180deg) 3; }
+.atmos-closet-item.r.y.g { border-image: conic-gradient(from -60deg, $red 0deg 120deg, $yellow 120deg 240deg, $green 240deg 360deg) 3; }
+.atmos-closet-item.r.y.b { border-image: conic-gradient(from -60deg, $red 0deg 120deg, $yellow 120deg 240deg, $blue 240deg 360deg) 3; }
+.atmos-closet-item.r.g.b { border-image: conic-gradient(from -60deg, $red 0deg 120deg, $green 120deg 240deg, $blue 240deg 360deg) 3; }
+.atmos-closet-item.y.g.b { border-image: conic-gradient(from -60deg, $yellow 0deg 120deg, $green 120deg 240deg, $blue 240deg 360deg) 3; }
+.atmos-closet-item.r.y.g.b { border-image: conic-gradient(from -90deg, $red 90deg, $yellow 90deg 180deg, $green 180deg 270deg, $blue 270deg) 3; }

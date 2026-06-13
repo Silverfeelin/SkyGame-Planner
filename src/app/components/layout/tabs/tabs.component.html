@@ -1,14 +1,12 @@
-<div class="sky-card">
-  <div class="sky-card-header">
-    <div class="sky-flex flex-wrap">
-      @for (tab of tabs(); track $index) {
-        <button type="button" class="sky-card-header-button" (click)="activeTab=tab" [class.active]="activeTab === tab">
-          <span>{{ tab.title }}</span>
-        </button>
-      }
-    </div>
+<div class="atmos-card atmos-tabs">
+  <div class="atmos-tabs__nav">
+    @for (tab of tabs(); track $index) {
+      <button type="button" class="atmos-tabs__btn" (click)="activeTab=tab" [class.is-active]="activeTab === tab">
+        {{ tab.title }}
+      </button>
+    }
   </div>
-  <div class="sky-card-body">
+  <div class="atmos-tabs__body">
     @for (tab of tabs(); track $index) {
       <div [hidden]="activeTab !== tab">
         <ng-container *ngTemplateOutlet="tab.template"></ng-container>

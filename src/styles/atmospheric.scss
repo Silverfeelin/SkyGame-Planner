@@ -25,6 +25,19 @@
   --atmos-pink:     oklch(0.78 0.13 350);
   --atmos-good:     oklch(0.80 0.13 150);
 
+  /* Semantic status / game-item colours. */
+  --atmos-danger:        oklch(0.78 0.16 22);
+  --atmos-danger-bg:     oklch(0.20 0.07 22 / 0.55);
+  --atmos-danger-accent: oklch(0.44 0.18 22);
+  --atmos-warn-accent:   oklch(0.80 0.16 45);
+  --atmos-currency:      oklch(0.90 0.01 var(--atmos-hue));
+  --atmos-seasonal:      oklch(0.78 0.14 65);
+  --atmos-favourite:     oklch(0.87 0.18 93);
+  --atmos-highlight:     oklch(0.80 0.18 290);
+  --atmos-attention:     oklch(0.88 0.20 190);
+  --atmos-wing-buff:     oklch(0.95 0.16 102);
+  --atmos-shadow:        0 0 5px 2px;
+
   /* Lines / dividers. */
   --atmos-line:      oklch(0.32 0.025 var(--atmos-hue));
   --atmos-line-soft: oklch(0.95 0.01 var(--atmos-hue) / 0.30);
@@ -460,3 +473,117 @@
 }
 
 // #endregion
+
+// ===== Shared Utilities (S1) =====
+
+// 1. Section title
+.atmos-section__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--atmos-text);
+  margin: 0 0 0.5rem;
+}
+.atmos-section__title--lg { font-size: 1.25rem; }
+.atmos-section__meta {
+  font-size: 0.8rem;
+  color: var(--atmos-text-mute);
+}
+
+// 2. Icon size classes + mixin
+@mixin atmos-icon-size($px) { font-size: #{$px}px !important; }
+.atmos-icon--16 { @include atmos-icon-size(16); }
+.atmos-icon--18 { @include atmos-icon-size(18); }
+.atmos-icon--20 { @include atmos-icon-size(20); }
+.atmos-icon--22 { @include atmos-icon-size(22); }
+.atmos-icon--24 { @include atmos-icon-size(24); }
+
+// 3. Ghost icon button
+.atmos-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.25rem;
+  color: inherit;
+  opacity: 0.7;
+  transition: opacity var(--atmos-transition), background var(--atmos-transition);
+  &:hover {
+    opacity: 1;
+    background: var(--atmos-hover-bg);
+  }
+}
+
+// 4. Auto-fill grid
+.atmos-auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--atmos-grid-min, 260px), 1fr));
+  gap: var(--atmos-grid-gap, 1rem);
+}
+.atmos-cols-2,
+.atmos-cols-3 {
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+// 5. Form input
+.atmos-input {
+  background: var(--atmos-bg-elev);
+  border: 1px solid var(--atmos-line);
+  border-radius: 0.375rem;
+  color: var(--atmos-text);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.9rem;
+  &:focus {
+    outline: 2px solid var(--atmos-accent);
+    outline-offset: 2px;
+  }
+}
+
+// 6. Horizontal scroller
+.atmos-scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--atmos-line) transparent;
+}
+
+// 7. Card header
+.atmos-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--atmos-line-soft);
+  font-weight: 600;
+}
+
+// 8. AG-Grid host card
+.atmos-grid-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
+  background: var(--atmos-card-bg);
+  ag-grid-angular {
+    flex: 1;
+    min-height: 400px;
+  }
+}
+
+// 9. Pill size modifier
+.atmos-pill--sm {
+  font-size: 0.7rem !important;
+  padding: 0.1rem 0.4rem !important;
+  height: auto !important;
+}
+
+// 10. Page host mixin
+@mixin atmos-page-host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}

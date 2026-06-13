@@ -7,7 +7,7 @@ import { ItemType } from 'skygame-data';
 @Component({
     selector: 'app-item-type-selector',
     templateUrl: './item-type-selector.component.html',
-    styleUrls: ['./item-type-selector.component.less'],
+    styleUrl: './item-type-selector.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgIf, NgbTooltip, MatIcon]
 })

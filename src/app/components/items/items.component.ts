@@ -51,7 +51,7 @@ const defaultFilters = {
 @Component({
     selector: 'app-items',
     templateUrl: './items.component.html',
-    styleUrls: ['./items.component.less'],
+    styleUrl: './items.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgbTooltip, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
 })

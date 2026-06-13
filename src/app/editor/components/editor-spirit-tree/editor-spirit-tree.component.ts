@@ -3,7 +3,6 @@ import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../componen
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
-import { CardComponent } from "../../../components/layout/card/card.component";
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { NodeHelper } from '@app/helpers/node-helper';
@@ -28,7 +27,7 @@ type SpecialItem = { item: IItem; cost?: ICost; }
     selector: 'app-editor-spirit-tree',
     imports: [
     NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent,
-    CardComponent, ItemIconComponent, OverlayComponent,
+    ItemIconComponent, OverlayComponent,
     EditorItemComponent, TabsComponent, TabDirective
 ],
     templateUrl: './editor-spirit-tree.component.html',

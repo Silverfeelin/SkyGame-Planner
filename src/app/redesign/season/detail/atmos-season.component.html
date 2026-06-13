@@ -85,7 +85,7 @@
   @if (state() === 'ended' && guide() && guideTreePostSeason(); as postTree) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-season__section-title">Post-season guide tree</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">Post-season guide tree</h2>
       </header>
       <div class="atmos-card__body atmos-season__trees">
         <div class="atmos-season__tree">
@@ -103,7 +103,7 @@
   <!-- Trees -->
   <section class="atmos-card atmos-season__section">
     <header class="atmos-season__section-header">
-      <h2 class="atmos-season__section-title">
+      <h2 class="atmos-section__title atmos-section__title--lg">
         {{ state() === 'ended' ? 'Season spirit trees' : 'Spirit trees' }}
       </h2>
     </header>
@@ -137,7 +137,7 @@
   @if (includedTrees()?.length) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-season__section-title">Related spirit trees</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">Related spirit trees</h2>
       </header>
       <div class="atmos-card__body atmos-season__trees">
         @for (tree of includedTrees(); track tree.guid) {
@@ -157,7 +157,7 @@
   @if (shops().length) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-season__section-title">Shops</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">Shops</h2>
       </header>
       <div class="atmos-card__body">
         @for (shop of shops(); track shop.guid) {
@@ -172,7 +172,7 @@
   @if (iapShops().length) {
     <section class="atmos-card atmos-season__section">
       <header class="atmos-season__section-header">
-        <h2 class="atmos-season__section-title">In-App Purchases</h2>
+        <h2 class="atmos-section__title atmos-section__title--lg">In-App Purchases</h2>
       </header>
       <div class="atmos-card__body">
         <div class="atmos-season__iap-grid">

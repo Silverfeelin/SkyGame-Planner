@@ -10,7 +10,7 @@ import { IItem, INode, IIAP, IItemListNode, ItemSize, ItemSubicon } from 'skygam
 @Component({
     selector: 'app-item-icon',
     templateUrl: './item-icon.component.html',
-    styleUrls: ['./item-icon.component.less'],
+    styleUrl: './item-icon.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [IconComponent, ItemSubIconsComponent]
 })

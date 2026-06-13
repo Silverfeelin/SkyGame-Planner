@@ -1,7 +1,7 @@
 <!-- Info -->
-<div class="container mb">
+<div style="margin-bottom: var(--atmos-gap)">
   Not quite sure what to do here? Please have a look at the wiki page
-  <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees" target="_blank" class="text-link">Contributing: Spirit trees</a>.
+  <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees" target="_blank" class="atmos-text-link">Contributing: Spirit trees</a>.
 </div>
 
 <div class="editor-grid">
@@ -11,20 +11,20 @@
     [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
     [highlightNode]="selectedTreeNode.node.guid"
   ></app-spirit-tree>
-  <div class="editor-grid-selection sky-card">
-    <div class="sky-card-header">
-      <h1 class="h2 mb-0">Selected item</h1>
+  <div class="editor-grid-selection atmos-card">
+    <div class="atmos-card__header">
+      Selected item
     </div>
-    <div class="sky-card-body">
+    <div class="atmos-card__body">
       @let tn = selectedTreeNode;
-      <div class="grid grid-1">
+      <div class="form-stack">
         <!-- Item name -->
-        <div class="container">
+        <div>
           {{ selectedItem.name }}
           @if (selectedItem.level) { <span class="c-accent">(Level {{ selectedItem.level }})</span> }
           <button type="button" (click)="promptItemCode()">Item code</button>
         </div>
-        <div class="container grid grid-1">
+        <div class="form-stack">
           <!-- Node connections -->
           <div class="">
             Connections:
@@ -70,45 +70,48 @@
   </div>
 </div>
 
-<div class="mt">
-  <app-card [title]="'Save'" [foldable]="true" [folded]="false">
-    <div class="container grid grid-1">
-      <div>
-        Title: <input #inpTitle type="text" class="d-inline-block" style="width: 200px;">
+<div style="margin-top: var(--atmos-gap)">
+  <div class="atmos-card">
+    <div class="atmos-card__header">Save</div>
+    <div class="atmos-card__body">
+      <div class="form-stack">
+        <div>
+          Title: <input #inpTitle type="text" class="d-inline-block" style="width: 200px;">
+        </div>
+        <div>
+          Subtitle: <input #inpSubtitle type="text" class="d-inline-block" style="width: 200px;">
+        </div>
       </div>
-      <div>
-        Subtitle: <input #inpSubtitle type="text" class="d-inline-block" style="width: 200px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--atmos-gap)">
+        <div class="button-group" ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+          <button type="button" (click)="copyImage()">
+            <mat-icon class="menu-icon">file_copy</mat-icon>
+            <span class="menu-label">Copy image</span>
+          </button>
+          <button type="button" (click)="copyImage(false)">
+            (no background)
+          </button>
+        </div>
+        <button type="button" (click)="shareImage()">
+          <mat-icon class="menu-icon">share</mat-icon>
+          <span class="menu-label">Share image</span>
+        </button>
+        <div class="button-group">
+          <button type="button" (click)="importJson()">
+            <mat-icon class="menu-icon">download</mat-icon>
+            <span class="menu-label">Import data</span>
+          </button>
+          <button type="button" (click)="exportJson()">
+            <mat-icon class="menu-icon">upload</mat-icon>
+            <span class="menu-label">Export data</span>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="sky-flex flex-wrap mt">
-      <div class="button-group" ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
-        <button type="button" (click)="copyImage()">
-          <mat-icon class="menu-icon">file_copy</mat-icon>
-          <span class="menu-label">Copy image</span>
-        </button>
-        <button type="button" (click)="copyImage(false)">
-          (no background)
-        </button>
-      </div>
-      <button type="button" (click)="shareImage()">
-        <mat-icon class="menu-icon">share</mat-icon>
-        <span class="menu-label">Share image</span>
-      </button>
-      <div class="button-group">
-        <button type="button" (click)="importJson()">
-          <mat-icon class="menu-icon">download</mat-icon>
-          <span class="menu-label">Import data</span>
-        </button>
-        <button type="button" (click)="exportJson()">
-          <mat-icon class="menu-icon">upload</mat-icon>
-          <span class="menu-label">Export data</span>
-        </button>
-      </div>
-    </div>
-  </app-card>
+  </div>
 </div>
 
-<div class="mt">
+<div style="margin-top: var(--atmos-gap)">
   <app-tabs>
     <!-- Items -->
     <ng-template [appTab]="'Items'">
@@ -117,7 +120,7 @@
 
     <!-- Special items -->
     <ng-template [appTab]="'Special items'">
-      <div class="sky-flex flex-wrap">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px">
         @for (specialItem of specialItems; track $index) {
           <div class="item-icon">
             <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true" [hoverGlow]="true"
@@ -129,7 +132,7 @@
     </ng-template>
 
     <ng-template [appTab]="'Custom items'">
-      <div class="container mb sky-flex flex-wrap">
+      <div style="margin-bottom: var(--atmos-gap); display: flex; flex-wrap: wrap; gap: 8px">
         <button type="button" (click)="addCustomItem()">Add</button>
         @if (selectedCustomItem) {
           <button type="button" (click)="applyCustomItem($event, selectedCustomItem)">Select</button>
@@ -138,7 +141,7 @@
           <button type="button" class="button-danger" (click)="deleteCustomItem(selectedCustomItem)">Delete</button>
         }
       </div>
-      <div class="sky-flex flex-wrap">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px">
         @for (customItem of customItems; track $index) {
           <div class="item-icon">
             <app-item-icon class="point" [item]="customItem" [opaque]="true" [hoverGlow]="true"
@@ -160,9 +163,9 @@
         </select>
 
         @if (spiritTrees.length) {
-          <div class="sky-flex scroll-x mt">
+          <div style="display: flex; overflow-x: auto; margin-top: var(--atmos-gap)">
             @for (spiritTree of spiritTrees; track spiritTree.guid) {
-              <div class="grid grid-1 gap-half">
+              <div class="form-stack gap-half">
                 <button (click)="promptCopySpiritTree(spiritTree, false)">Copy as new tree</button>
                 <button (click)="promptCopySpiritTree(spiritTree, true)">Modify this tree</button>
                 <app-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
@@ -179,10 +182,10 @@
 
 @if (isCustomEditorVisible) {
   <app-overlay [dismissable]="false">
-    <h2 class="h3 mb-0">Edit custom item</h2>
+    <h2 style="margin: 0 0 var(--atmos-gap); font-size: 1.1rem; font-weight: 600">Edit custom item</h2>
 
-    <div class="mb">
-      <a target="_blank" class="text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees">Help</a>
+    <div style="margin-bottom: var(--atmos-gap)">
+      <a target="_blank" class="atmos-text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees">Help</a>
     </div>
 
     <app-editor-item [item]="selectedCustomItem"

@@ -1,0 +1,53 @@
+@if (state.modifyingCloset()) {
+  <div class="atmos-card mt">
+    <div class="atmos-card__header">
+      <h2 class="atmos-section__title mb-0">Modify closet</h2>
+    </div>
+    <div class="atmos-card__body">
+      <!-- Columns -->
+      <div data-step="103" data-position="bottom-left-aligned">
+        Show items in columns. Recommended to match your in-game closet.
+        <div class="mt">
+          <div class="button-group">
+            @for (n of [3,4,5,6,7,8]; track n) {
+              <button type="button"
+                [class.btn-column-active]="state.columns() === n"
+                (click)="setColumns(n)">{{ n }}</button>
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- Ongoing items -->
+      <div data-step="104" data-position="bottom-left-aligned">
+        <p class="mb-0">Include ongoing cosmetics (slightly darkened) when showing your items?</p>
+        <div class="sky-flex flex-wrap mt">
+          <button type="button" (click)="toggleOngoing()">
+            <mat-icon>{{ state.showOngoing() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            <span class="menu-label">Include ongoing items</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Sync -->
+      <div data-step="105" data-position="bottom-left-aligned">
+        <p class="mb-0">
+          Sync this closet with your tracked Sky Planner items, or click items below to manually toggle them.
+        </p>
+        <div class="sky-flex flex-wrap mt">
+          <div class="button-group">
+            <button type="button" (click)="toggleSync()">
+              <mat-icon>{{ state.shouldSync() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+              <span class="menu-label">Sync closet</span>
+            </button>
+            <button type="button" class="button-danger" (click)="resetSync()">Reset</button>
+          </div>
+          <button type="button" (click)="closePanel()" data-step="106" data-position="bottom-right-aligned">
+            <mat-icon>done</mat-icon>
+            <span class="menu-label">Done</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

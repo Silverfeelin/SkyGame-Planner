@@ -67,3 +67,6 @@ Thumbs.db
 #/scripts
 /scripts/temp/**
 /scripts/data/temp/**
+
+# Agent worktrees
+.worktrees/

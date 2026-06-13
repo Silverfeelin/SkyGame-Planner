@@ -1,15 +1,15 @@
 .keyboard-grid {
   display: grid;
   grid-template-columns: 1 1fr;
-  gap: var(--padding-content-half);
+  gap: var(--atmos-gap-compact);
 
   text-align: left;
 
   > * {
-    padding: var(--padding-content-half) var(--padding-content);
-    border: 1px solid var(--color-input-border);
-    border-radius: var(--border-radius);
-    background-color: var(--color-card-solid-background);
+    padding: var(--atmos-gap-compact) var(--atmos-gap);
+    border: 1px solid var(--atmos-line);
+    border-radius: var(--atmos-radius-sm);
+    background-color: var(--atmos-card-bg-solid);
   }
 }
 

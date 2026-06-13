@@ -1,0 +1,10 @@
+<nav class="editor-nav atmos-card">
+  <a [routerLink]="['/editor']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+  <a [routerLink]="['/editor/todo']" routerLinkActive="is-active">Todo</a>
+  <a [routerLink]="['/editor/spirit-tree']" routerLinkActive="is-active">Spirit Tree</a>
+  <a [routerLink]="['/editor/dye']" routerLinkActive="is-active">Dyes</a>
+  <a [routerLink]="['/editor/outfit-shrine']" routerLinkActive="is-active">Outfit Shrine</a>
+</nav>
+<div class="editor-content">
+  <router-outlet></router-outlet>
+</div>

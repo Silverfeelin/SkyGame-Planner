@@ -1,0 +1,41 @@
+.atmos-dye-picker {
+  padding: var(--atmos-pad-compact);
+}
+
+.atmos-dye-preview {
+  max-width: min(100%, 280px);
+  max-height: 280px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.atmos-dye-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4px;
+  padding: 4px;
+  line-height: 14px;
+
+  @media screen and (max-width: 719px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.atmos-dye-grid__color {
+  cursor: pointer;
+  background: var(--atmos-bg-elev);
+  padding: 4px;
+  border-radius: var(--atmos-radius-sm);
+  border: var(--atmos-card-border);
+
+  mat-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+
+.atmos-dye-grid__blank {
+  @media screen and (max-width: 719px) { grid-column: span 4; }
+}

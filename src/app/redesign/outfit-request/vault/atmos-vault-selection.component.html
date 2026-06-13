@@ -1,0 +1,17 @@
+<div class="vault-mode-switcher sky-flex flex-wrap gap">
+  <button type="button" class="button"
+    [class.active]="mode() === 'picking'"
+    (click)="selectMode('picking')">
+    <span class="menu-label">Find outfits</span>
+  </button>
+  <button type="button" class="button"
+    [class.active]="mode() === 'submit'"
+    (click)="selectMode('submit')">
+    <span class="menu-label">Submit outfit</span>
+  </button>
+  <button type="button" class="button"
+    [class.active]="mode() === 'results'"
+    (click)="selectMode('results')">
+    <span class="menu-label">My vault</span>
+  </button>
+</div>

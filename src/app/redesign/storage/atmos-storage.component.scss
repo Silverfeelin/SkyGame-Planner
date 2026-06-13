@@ -1,0 +1,183 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: var(--atmos-text);
+  font-family: 'Manrope', 'Roboto', system-ui, sans-serif;
+  background: var(--atmos-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.atmos-storage__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--atmos-bg-image, url(/assets/game/realms/Aviary.webp));
+  background-size: cover;
+  background-position: center;
+  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
+  pointer-events: none;
+}
+
+.atmos-storage__vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    transparent 42%,
+    oklch(0.05 0.02 var(--atmos-hue) / 0.55)
+  );
+  pointer-events: none;
+}
+
+.atmos-storage__main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--atmos-gap);
+  padding: var(--atmos-pad);
+}
+
+.atmos-storage__card {
+  width: 100%;
+}
+
+.atmos-storage__body {
+  padding: 28px;
+  gap: 14px;
+}
+
+.atmos-storage__header {
+  margin-bottom: 4px;
+}
+
+.atmos-storage__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow-large);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.atmos-storage__title-icon {
+  color: var(--atmos-warm);
+}
+
+.atmos-storage__error-code {
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-pill-border);
+  border-radius: var(--atmos-radius-sm);
+  padding: 8px 12px;
+  color: var(--atmos-warm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+.provider-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.atmos-storage__provider-card {
+  transition: border-color 0.2s;
+}
+
+.atmos-storage__provider-card--active {
+  border-color: var(--atmos-accent, var(--atmos-text));
+}
+
+.atmos-storage__provider-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.atmos-storage__provider-icon {
+  color: var(--atmos-accent, var(--atmos-text-muted));
+}
+
+.atmos-storage__provider-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  flex: 1;
+}
+
+.atmos-storage__badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--atmos-accent, oklch(0.7 0.15 var(--atmos-hue)));
+  color: oklch(0.1 0.02 var(--atmos-hue));
+  border-radius: var(--atmos-radius-sm);
+  padding: 2px 8px;
+}
+
+.atmos-storage__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.atmos-storage__nav {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.atmos-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.error-card {
+  border-color: var(--atmos-warm);
+}
+
+@media (max-width: 600px) {
+  .provider-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .atmos-storage__main {
+    padding: var(--atmos-pad-compact);
+  }
+
+  .atmos-storage__body {
+    padding: 22px;
+  }
+
+  .atmos-storage__title {
+    font-size: 20px;
+  }
+}

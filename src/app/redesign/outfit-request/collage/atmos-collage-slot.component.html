@@ -1,0 +1,98 @@
+<div class="slot__container" #imgContainer>
+  <!-- Paste overlay -->
+  @if (isPasting()) {
+    <div class="slot__paste-overlay" (click)="onPasteAreaClick($event)">
+      <input
+        type="text"
+        class="slot__paste-input"
+        #pasteInput
+        (paste)="onPaste($event)"
+      />
+      <span class="slot__paste-label">Press <kbd>Ctrl+V</kbd> with<br/>an image in clipboard.</span>
+      <span class="slot__paste-focus">Click to focus<br/>before pasting.</span>
+      <button type="button" class="slot__paste-close atmos-icon-btn" (click)="onClosePaste($event)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  }
+
+  <!-- Action buttons (top row) -->
+  <div class="slot__actions slot__actions--top">
+    <button
+      type="button"
+      class="slot__action-btn atmos-icon-btn"
+      (click)="onPickFile()"
+      ngbTooltip="Select image file"
+      container="body"
+    >
+      <mat-icon>upload_file</mat-icon>
+    </button>
+
+    <button
+      type="button"
+      class="slot__action-btn atmos-icon-btn"
+      (click)="activatePaste()"
+      ngbTooltip="Paste image"
+      container="body"
+    >
+      <mat-icon>content_paste</mat-icon>
+    </button>
+  </div>
+
+  <!-- Action buttons (bottom row) -->
+  <div class="slot__actions slot__actions--bottom">
+    @if (!iconUrl()) {
+      <button
+        type="button"
+        class="slot__action-btn atmos-icon-btn"
+        (click)="onOpenIconPicker()"
+        ngbTooltip="Add icon to corner"
+        container="body"
+      >
+        <mat-icon>checkroom</mat-icon>
+      </button>
+    }
+
+    <button
+      type="button"
+      class="slot__action-btn atmos-icon-btn"
+      (click)="onClear()"
+      ngbTooltip="Remove image"
+      container="body"
+    >
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+
+  <!-- Image with panzoom -->
+  <div class="slot__img-wrapper">
+    <img
+      #imgEl
+      class="slot__img"
+      [src]="imageUrl()"
+      crossorigin="anonymous"
+      (load)="onImageLoaded()"
+      draggable="false"
+    />
+  </div>
+
+  <!-- Icon overlay badge -->
+  @if (iconUrl()) {
+    <div class="slot__icon-badge">
+      <img
+        [src]="iconUrl()"
+        class="slot__icon-img"
+        crossorigin="anonymous"
+        (click)="onIconClick()"
+      />
+    </div>
+  }
+</div>
+
+<!-- Icon picker (outside container so it overlays correctly) -->
+@if (showIconPicker()) {
+  <app-icon-picker
+    (closed)="onIconPickerClosed()"
+    (selected)="onIconPickerSelected($event)"
+  />
+}

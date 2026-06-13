@@ -1,0 +1,104 @@
+<div class="atmos-storage__bg" aria-hidden="true"></div>
+<div class="atmos-storage__vignette" aria-hidden="true"></div>
+
+<main class="atmos-storage__main">
+  @if (errorParam()) {
+    <article class="atmos-card atmos-storage__card error-card">
+      <div class="atmos-card__body atmos-storage__body">
+        <header class="atmos-storage__header">
+          <h2 class="atmos-storage__title">
+            <mat-icon class="atmos-storage__title-icon">priority_high</mat-icon>
+            Storage problem
+          </h2>
+        </header>
+        <p class="atmos-paragraph">
+          You have been redirected to the storage page because loading data failed.
+          The error message is shown below — more details are logged in the console.
+        </p>
+        <pre class="atmos-storage__error-code">{{ errorParam() }}</pre>
+        <p class="atmos-paragraph">
+          You can try to link your account again or switch to local storage which should always work.
+        </p>
+      </div>
+    </article>
+  }
+
+  <article class="atmos-card atmos-storage__card">
+    <div class="atmos-card__body atmos-storage__body">
+      <header class="atmos-storage__header">
+        <h1 class="atmos-storage__title">Storage</h1>
+      </header>
+      <p class="atmos-paragraph">
+        Choose where your tracked data is stored. Every storage location is completely separate —
+        think of each as its own save file.
+      </p>
+      <p class="atmos-paragraph">
+        Before switching, it is recommended to <strong>export</strong> your data from the Settings
+        page. After switching you can <strong>import</strong> it back.
+      </p>
+    </div>
+  </article>
+
+  <div class="provider-grid">
+    <!-- Local Storage -->
+    <article class="atmos-card atmos-storage__provider-card" [class.atmos-storage__provider-card--active]="storageType() === ''">
+      <div class="atmos-card__body atmos-storage__body">
+        <header class="atmos-storage__provider-header">
+          <mat-icon class="atmos-storage__provider-icon">database</mat-icon>
+          <h2 class="atmos-storage__provider-title">Local Storage</h2>
+          @if (storageType() === '') {
+            <span class="atmos-storage__badge">Active</span>
+          }
+        </header>
+        <p class="atmos-paragraph">
+          Free, no account needed. Your data is saved in this browser on this device only.
+          It will be lost if you clear browsing data.
+        </p>
+        <div class="atmos-storage__actions">
+          <button type="button" class="atmos-btn" [class.atmos-btn--active]="storageType() === ''" (click)="useLocalStorage()">
+            <mat-icon>{{ storageType() === '' ? 'done' : 'check_box_outline_blank' }}</mat-icon>
+            <span>Use local storage</span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Dropbox -->
+    <article class="atmos-card atmos-storage__provider-card" [class.atmos-storage__provider-card--active]="storageType() === 'dropbox'">
+      <div class="atmos-card__body atmos-storage__body">
+        <header class="atmos-storage__provider-header">
+          <mat-icon class="atmos-storage__provider-icon">cloud</mat-icon>
+          <h2 class="atmos-storage__provider-title">Dropbox</h2>
+          @if (storageType() === 'dropbox') {
+            <span class="atmos-storage__badge">Active</span>
+          }
+        </header>
+        <p class="atmos-paragraph">
+          Cloud sync across devices. Requires a free Dropbox account.
+          Sky Planner only accesses its own folder in your Dropbox.
+        </p>
+        <div class="atmos-storage__actions">
+          <button type="button" class="atmos-btn" [class.atmos-btn--active]="storageType() === 'dropbox'" (click)="useDropbox()">
+            <mat-icon>{{ storageType() === 'dropbox' ? 'done' : 'check_box_outline_blank' }}</mat-icon>
+            <span>Use Dropbox</span>
+          </button>
+          <button type="button" class="atmos-btn" (click)="linkDropbox()">
+            <mat-icon>link</mat-icon>
+            <span>Connect to Dropbox</span>
+          </button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <nav class="atmos-storage__nav">
+    <a class="atmos-text-link" routerLink="/">
+      <mat-icon>home</mat-icon>
+      <span>Go to Dashboard</span>
+    </a>
+    <a class="atmos-text-link" routerLink="/r/settings">
+      <mat-icon>arrow_back</mat-icon>
+      <span>Back to Settings</span>
+    </a>
+  </nav>
+</main>

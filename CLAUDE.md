@@ -40,15 +40,14 @@ Tracked data is keyed by GUID: unlocked nodes/items, winged lights, favourites, 
 
 ### Routing / layout
 
-Two nested layout shells:
+The shell is built around the **atmospheric redesign** (`--atmos-*` token system in `src/styles/atmospheric.scss`):
 
-1. `MainLayoutComponent` — outer shell, enforces data-loaded and storage-ready guards
-2. `MenuLayoutComponent` — adds the side navigation menu
+- `MainLayoutComponent` — bootstrap gate; runs `forkJoin(canActivateData, canActivateIcons, canActivateStorage)` and shows loading/error/save-state overlays. Sits *above* all routes so editor and graph are also gated. Does **not** own visible chrome.
+- `AtmosphericShellComponent` — the visible shell (header, nav, footer) for all public-facing pages; rendered inside the gate.
 
-Three lazy-loaded sections live outside the main component tree:
-- `/editor` — data-entry editor for contributors (spirit trees, traveling spirits, shops, etc.)
+Two lazy-loaded sections sit outside the atmos shell but still inside the gate:
+- `/editor` — data-entry editor for contributors (spirit trees, outfit shrines, items, dyes)
 - `/graph` — analytics/graphs
-- `/experiment` — experimental features
 
 ### Key services
 
@@ -77,7 +76,7 @@ Do not rewrite existing code to these APIs unless the task specifically asks for
 
 ### Styling
 
-Components use either `.less` or `.scss` (inconsistent across the codebase—use scss for new code, do not rewrite less to scss unless the task specifically asks for it).
+Components use **`.scss`** — the codebase was migrated from `.less` as part of the atmospheric redesign. Use `.scss` for all new components. Do not convert surviving `.less` files unless the task specifically asks for it.
 
 ### Scripts
 

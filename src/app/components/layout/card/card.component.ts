@@ -10,7 +10,7 @@ export type CardFoldEvent = {
 @Component({
     selector: 'app-card',
     templateUrl: './card.component.html',
-    styleUrls: ['./card.component.less'],
+    styleUrl: './card.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgIf, MatIcon]
 })

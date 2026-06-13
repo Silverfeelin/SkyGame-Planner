@@ -1,52 +1,52 @@
-<div class="grid grid-1">
-  <div class="sky-card">
-    <div class="sky-card-body">
-      <div class="container">
-        This page lists a few common tasks like missing item and spirit data or missing links to the wiki.<br/>
-        Generally caused by preparing content before a game update is live.
-      </div>
-    </div>
+<div class="atmos-card">
+  <div class="atmos-card__body">
+    This page lists a few common tasks like missing item and spirit data or missing links to the wiki.<br/>
+    Generally caused by preparing content before a game update is live.
   </div>
+</div>
 
-  <app-card [title]="'Missing preview icon'">
-    <div class="grid grid-1">
-      @for (item of itemsWithoutPreview; track item.guid) {
-        <div class="container">
-          <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
-          <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<span>{{ item.name }}</span>
-        </div>
-      }
-    </div>
-  </app-card>
+<div class="atmos-card">
+  <div class="atmos-card__header">Missing preview icon</div>
+  <div class="atmos-card__body" style="gap: 8px">
+    @for (item of itemsWithoutPreview; track item.guid) {
+      <div>
+        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<span>{{ item.name }}</span>
+      </div>
+    }
+  </div>
+</div>
 
-  <app-card [title]="'Missing item wiki link'">
-    <div class="grid grid-1">
-      @for (item of itemsWithoutWiki; track item.guid) {
-        <div class="container">
-          <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
-          <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<span>{{ item.name }}</span>
-        </div>
-      }
-    </div>
-  </app-card>
+<div class="atmos-card">
+  <div class="atmos-card__header">Missing item wiki link</div>
+  <div class="atmos-card__body" style="gap: 8px">
+    @for (item of itemsWithoutWiki; track item.guid) {
+      <div>
+        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<span>{{ item.name }}</span>
+      </div>
+    }
+  </div>
+</div>
 
-  <app-card [title]="'Missing spirit image'">
-    <div class="grid grid-1">
-      @for (spirit of spiritsWithoutPreview; track spirit.guid) {
-        <div class="container">
-          <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
-        </div>
-      }
-    </div>
-  </app-card>
+<div class="atmos-card">
+  <div class="atmos-card__header">Missing spirit image</div>
+  <div class="atmos-card__body" style="gap: 8px">
+    @for (spirit of spiritsWithoutPreview; track spirit.guid) {
+      <div>
+        <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
+      </div>
+    }
+  </div>
+</div>
 
-  <app-card [title]="'Missing spirit wiki link'">
-    <div class="grid grid-1">
-      @for (spirit of spiritsWithoutWiki; track spirit.guid) {
-        <div class="container">
-          <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
-        </div>
-      }
-    </div>
-  </app-card>
+<div class="atmos-card">
+  <div class="atmos-card__header">Missing spirit wiki link</div>
+  <div class="atmos-card__body" style="gap: 8px">
+    @for (spirit of spiritsWithoutWiki; track spirit.guid) {
+      <div>
+        <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
+      </div>
+    }
+  </div>
 </div>

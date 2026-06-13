@@ -1,0 +1,170 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+// Slot preview dimensions
+$slot-w: 192px;
+$slot-h: 288px;
+
+.slot__container {
+  position: relative;
+  width: $slot-w;
+  height: $slot-h;
+  overflow: hidden;
+  border-radius: var(--atmos-card-radius);
+  border: var(--atmos-card-border);
+  background: var(--atmos-bg-elev);
+  cursor: grab;
+
+  &:active { cursor: grabbing; }
+}
+
+// ── Image wrapper ─────────────────────────────────────────────────────
+
+.slot__img-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.slot__img {
+  // panzoom controls transform — initial position fills container
+  display: block;
+  max-width: none;
+  max-height: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+// ── Action buttons ────────────────────────────────────────────────────
+
+.slot__actions {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--atmos-transition);
+
+  .slot__container:hover & {
+    opacity: 1;
+  }
+
+  &--top {
+    top: 6px;
+    left: 6px;
+  }
+
+  &--bottom {
+    bottom: 6px;
+    right: 6px;
+  }
+}
+
+.slot__action-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: oklch(0.12 0.02 240 / 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--atmos-text);
+  font-size: 16px;
+  opacity: 1 !important; // override .atmos-icon-btn base opacity
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: oklch(0.22 0.04 240 / 0.85);
+  }
+}
+
+// ── Paste overlay ─────────────────────────────────────────────────────
+
+.slot__paste-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: oklch(0.10 0.02 240 / 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  cursor: default;
+}
+
+.slot__paste-input {
+  // Hidden but focusable — receives paste events.
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.slot__paste-label {
+  color: var(--atmos-text);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.5;
+
+  kbd {
+    display: inline-block;
+    padding: 1px 5px;
+    border-radius: 4px;
+    border: 1px solid var(--atmos-line);
+    background: var(--atmos-bg-elev);
+    font-size: 11px;
+    font-family: inherit;
+  }
+}
+
+.slot__paste-focus {
+  display: none; // shown in legacy only when focus is lost; not needed in signals version
+}
+
+.slot__paste-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: oklch(0.20 0.03 240 / 0.6);
+  color: var(--atmos-text);
+  opacity: 1 !important;
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ── Icon badge ────────────────────────────────────────────────────────
+
+.slot__icon-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 10;
+  padding: 2px;
+  border-radius: 8px;
+  background: oklch(0.10 0.02 240 / 0.65);
+  cursor: pointer;
+}
+
+.slot__icon-img {
+  display: block;
+  width: 42px; // previewIconWidth = 64 * 2/3
+  height: 42px;
+  object-fit: contain;
+}

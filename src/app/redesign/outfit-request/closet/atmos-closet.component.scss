@@ -5,6 +5,63 @@
   width: 100%;
 }
 
-.atmos-closet {
-  display: contents;
+.atmos-closet-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+  background: var(--atmos-card-bg-solid);
+  z-index: 2;
+  backdrop-filter: var(--atmos-blur);
+}
+
+// Copy controls
+.atmos-copy-controls {
+  position: relative;
+  display: inline-block;
+}
+
+.atmos-image-picker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  padding: var(--atmos-pad-compact);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (max-width: 480px) { width: 100%; }
+}
+
+.btn-group-img {
+  display: flex;
+  button { text-align: left; }
+}
+
+.btn-copy-img { flex: 1; }
+
+// Warnings
+.atmos-warn-badge {
+  color: #f44;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+
+.color-warn { color: #f44; }
+.border-warn { border: 2px solid #f44; }
+
+.atmos-warn-box {
+  background: var(--atmos-bg-elev);
+  padding: var(--atmos-gap-compact);
+  border-radius: var(--atmos-radius-sm);
+  border: 2px solid #f44;
 }

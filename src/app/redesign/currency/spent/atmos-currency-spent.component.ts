@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
-import { INestingStorageData, nestingStorageKey } from '@app/components/shops/shop-nesting/shop-nesting.interface';
+import { INestingStorageData, nestingStorageKey } from '@app/redesign/shop/nesting/shop-nesting.interface';
 import { ICost, INode, IItemListNode, IIAP, ISeason, IEvent, IEventInstance, IItem } from 'skygame-data';
 import { AtmosCurrencyQuickActionsComponent } from '../quick-actions/atmos-currency-quick-actions.component';
 

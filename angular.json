@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "scss"
         }
       },
       "root": "",
@@ -25,7 +25,7 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "less",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/robots.txt",
@@ -39,15 +39,21 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/leaflet/dist/leaflet.css",
-              "node_modules/intro.js/minified/introjs.min.css",
-              "src/styles/styles-grid.less",
-              "src/styles/vars.scss",
-              "src/styles/styles.less",
+              {
+                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "bundleName": "vendor"
+              },
+              {
+                "input": "node_modules/leaflet/dist/leaflet.css",
+                "bundleName": "vendor"
+              },
+              {
+                "input": "node_modules/intro.js/minified/introjs.min.css",
+                "bundleName": "vendor"
+              },
+              "src/styles/styles.scss",
               "src/styles/charts.scss",
-              "src/styles/map.less",
-              "src/styles/icons.less",
+              "src/styles/map.scss",
               "src/styles/atmospheric.scss"
             ],
             "scripts": [],

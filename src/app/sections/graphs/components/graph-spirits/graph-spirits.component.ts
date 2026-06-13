@@ -1,5 +1,4 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
-import { CardComponent } from '@app/components/layout/card/card.component';
 import { ChartHelper } from '@app/helpers/chart-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
@@ -13,7 +12,7 @@ ChartHelper.registerTrendline();
 
 @Component({
     selector: 'app-graph-spirits',
-    imports: [CardComponent, WikiLinkComponent],
+    imports: [WikiLinkComponent],
     templateUrl: './graph-spirits.component.html',
     styleUrl: './graph-spirits.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush

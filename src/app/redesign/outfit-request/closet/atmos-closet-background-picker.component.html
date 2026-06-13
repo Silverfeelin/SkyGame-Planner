@@ -1,0 +1,24 @@
+@if (state.showingBackgroundPicker()) {
+  <div class="atmos-card mt">
+    <div class="atmos-card__header">
+      <h1 class="atmos-section__title mb-0">Background</h1>
+    </div>
+    <div class="atmos-card__body">
+      <div class="atmos-bg-picker">
+        @for (section of sections; track section.guid) {
+          <div class="atmos-bg-picker__section-label">{{ section.label }}</div>
+          <div class="atmos-bg-picker__items">
+            <img src="/assets/game/background/random.webp"
+              class="atmos-bg-picker__item"
+              (click)="select(section.guid)" />
+            @for (bg of section.backgrounds; track bg.guid) {
+              <img [src]="bg.url"
+                class="atmos-bg-picker__item"
+                (click)="select(bg.guid)" />
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

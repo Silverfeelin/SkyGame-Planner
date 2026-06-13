@@ -10,7 +10,7 @@
 
 <section class="atmos-events__section">
   <header class="atmos-events__section-header">
-    <h2 class="atmos-events__section-title">Recurring events</h2>
+    <h2 class="atmos-section__title atmos-section__title--lg">Recurring events</h2>
   </header>
   <div class="atmos-events__grid">
     @for (row of recurring(); track row.event.guid) {
@@ -24,7 +24,7 @@
 
 <section class="atmos-events__section">
   <header class="atmos-events__section-header">
-    <h2 class="atmos-events__section-title">Other events</h2>
+    <h2 class="atmos-section__title atmos-section__title--lg">Other events</h2>
   </header>
   <div class="atmos-events__grid">
     @for (row of old(); track row.event.guid) {

@@ -30,7 +30,7 @@ import {
 import {
   INestingStorageData,
   nestingStorageKey
-} from '@app/components/shops/shop-nesting/shop-nesting.interface';
+} from '@app/redesign/shop/nesting/shop-nesting.interface';
 
 interface IRotationItem extends ICost {
   guid: string;

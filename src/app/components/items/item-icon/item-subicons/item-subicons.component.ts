@@ -9,7 +9,7 @@ import { IItem, INode, IIAP, IItemListNode, ItemSubicon } from 'skygame-data';
 @Component({
     selector: 'app-item-subicons',
     templateUrl: './item-subicons.component.html',
-    styleUrls: ['./item-subicons.component.less'],
+    styleUrl: './item-subicons.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [IconComponent, NgbTooltip, MatIcon]
 })

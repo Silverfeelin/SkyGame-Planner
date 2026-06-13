@@ -13,11 +13,11 @@
   </div>
 
   <div class="">
-    <div class="container mb">
+    <div class="mb">
       <app-item-type-selector [type]="type" (typeChanged)="onTypeChanged($event)"></app-item-type-selector>
     </div>
     @if (showFilters) {
-      <div class="container mb">
+      <div class="mb">
         <!-- General filters -->
         <div class="search">
           <mat-icon>search</mat-icon>
@@ -163,11 +163,11 @@
     }
     <div class="sky-flex flex-wrap" [style.max-height]="maxHeight" [style.overflow-y]="maxHeight ? 'auto' : undefined">
       @if (shownCount && !unfilteredItemCount) {
-        <div class="container">
+        <div>
           No items match the selected <a class="link" (click)="toggleFilters($event)">filters</a>.
         </div>
       } @else if (shownCount && shownCount !== unfilteredItemCount) {
-        <div class="container">
+        <div>
           @if (unfilteredItemCount === 1) {
             There is <b>1</b> {{ type | itemType | lowercase }}
           } @else {
@@ -178,7 +178,7 @@
       }
       @for (type of types; track $index) {
         <!-- @if (showFilters) {
-          <div class="container">{{ type | itemType }}</div>
+          <div>{{ type | itemType }}</div>
         } -->
         @if (typesLoaded[type]) {
           @for (item of typeItems[type]; track item.guid; let i = $index) {

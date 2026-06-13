@@ -6,5 +6,45 @@
 }
 
 .atmos-collage {
-  display: contents;
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+// ── Toolbar ────────────────────────────────────────────────────────────
+
+.atmos-collage__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.atmos-collage__btn-danger {
+  &:hover {
+    background: oklch(0.40 0.15 25 / 0.30);
+    border-color: oklch(0.60 0.18 25 / 0.55);
+    color: oklch(0.85 0.18 25);
+  }
+}
+
+// ── 2×2 slot grid ─────────────────────────────────────────────────────
+
+.atmos-collage__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 192px);
+  grid-template-rows:    repeat(2, 288px);
+  gap: 8px;
+}
+
+// ── Spin animation (used on copy button while rendering) ───────────────
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
 }

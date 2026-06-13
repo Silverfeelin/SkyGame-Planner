@@ -1,5 +1,65 @@
-<atmos-tool-quick-actions/>
-
 <div class="atmos-vault">
-  <app-outfit-vault></app-outfit-vault>
+  <!-- Header card -->
+  <div class="atmos-card">
+    <div class="atmos-card__header">
+      <h1 class="h2 mb-0">Outfit vault</h1>
+    </div>
+    <div class="atmos-card__body">
+      On this page you can search for outfits submitted to the vault by other players.
+      All outfits on this page will link to a message in the official
+      <a href="https://discord.com/invite/thatskygame" target="_blank">Sky Discord server</a>.
+      <p><i class="c-accent">The outfit vault does not currently support dyes. This is a feature I want to add at some point, but it will take some time. Thank you for your patience!</i></p>
+      <div class="sky-flex flex-wrap gap-half">
+        <button (click)="pasteInput.focus(); pasting.set(true)" [class.highlight]="pasting()">
+          @if (pasting()) { Paste now... } @else { Paste request }
+        </button>
+      </div>
+      <input type="text" class="input-hidden" #pasteInput (paste)="paste($event)" (blur)="pasting.set(false)">
+    </div>
+  </div>
+
+  @switch (mode()) {
+    @case ('picking') {
+      <!-- Item picker -->
+      <div class="atmos-card mt">
+        <atmos-vault-item-picker
+          [selectionInput]="selection()"
+          (selectionChange)="onSelectionChange($event)">
+        </atmos-vault-item-picker>
+      </div>
+    }
+    @case ('results') {
+      <atmos-vault-results
+        [apiData]="resultData()"
+        [currentSelection]="selection()"
+        (deleteResult)="onDeleteResult($event)"
+        (reportResult)="onReportResult($event)">
+      </atmos-vault-results>
+    }
+    @case ('submit') {
+      <atmos-vault-submit
+        [selection]="selection()"
+        [nonItems]="nonItems"
+        (submitted)="onSubmitted($event)">
+      </atmos-vault-submit>
+    }
+  }
+</div>
+
+<!-- Floating action buttons -->
+<div class="vault-actions">
+  <div class="sky-flex flex-nowrap mt">
+    <button type="button" class="button-action button-add" (click)="showSubmit()" [disabled]="isSubmitting()">
+      <mat-icon>add</mat-icon>
+    </button>
+    @if (mode() === 'picking') {
+      <button type="button" class="button-action button-search" (click)="findOutfits()" [disabled]="isFinding()">
+        <mat-icon>search</mat-icon>
+      </button>
+    } @else {
+      <button type="button" class="button-action button-search" (click)="showPicking()" [disabled]="isFinding()">
+        <mat-icon>apps</mat-icon>
+      </button>
+    }
+  </div>
 </div>

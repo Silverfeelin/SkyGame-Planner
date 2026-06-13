@@ -8,7 +8,7 @@ import { IItem } from 'skygame-data';
 @Component({
     selector: 'app-icon-picker',
     templateUrl: './icon-picker.component.html',
-    styleUrls: ['./icon-picker.component.less'],
+    styleUrl: './icon-picker.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgFor, MatIcon, ItemIconComponent]
 })
