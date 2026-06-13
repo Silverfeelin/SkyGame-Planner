@@ -63,7 +63,7 @@ export class SpiritTreeRenderService {
 
     let imageUrlBackground = '';
     if (options.background === true) {
-      imageUrlBackground = getComputedStyle(document.body).getPropertyValue('--background').match(/url\(([^)]+)\)/)?.[1] || '';
+      imageUrlBackground = getComputedStyle(document.body).getPropertyValue('--atmos-bg-image').match(/url\(['"]?([^'")\s]+)['"]?\)/)?.[1] || '';
     } else if (typeof options.background === 'string') {
       imageUrlBackground = options.background;
     }

@@ -1,21 +1,25 @@
-<button
-  type="button"
+<a
   class="atmos-node"
   [class.is-unlocked]="unlocked()"
   [class.is-highlighted]="highlight()"
   [class.is-opaque]="opaque()"
+  [class.is-empty]="!node().item"
   [attr.data-position]="position()"
-  [attr.aria-pressed]="unlocked()"
-  [title]="showTooltips() ? node().item?.name : null"
-  (click)="onClick($event)">
+  [attr.data-action]="action()"
+  [attr.aria-pressed]="node().item ? unlocked() : null"
+  [routerLink]="(node().item && enableNavigation()) ? link()?.route : null"
+  [queryParams]="link()?.extras?.queryParams ?? null"
+  [title]="showTooltips() ? node().item?.name : null">
   @if (node().item; as item) {
     <app-item-icon
       class="atmos-node__icon"
       [item]="item"
       [node]="node()"
       [opaque]="opaque() || unlocked()"
+      [glowType]="glowType()"
       [hoverGlow]="false"
-      size="default"></app-item-icon>
+      size="default"
+      (click)="onClick($event)"></app-item-icon>
   } @else {
     <span class="atmos-node__placeholder"></span>
   }
@@ -27,9 +31,16 @@
     </span>
   }
 
+  <!-- Connector arrows toward linked neighbours (tier trees only). -->
+  @if (drawConnectors()) {
+    @if (node().n) { <span class="atmos-node__arrow atmos-node__arrow--up" aria-hidden="true"></span> }
+    @if (node().nw) { <span class="atmos-node__arrow atmos-node__arrow--left" aria-hidden="true"></span> }
+    @if (node().ne) { <span class="atmos-node__arrow atmos-node__arrow--right" aria-hidden="true"></span> }
+  }
+
   @if (overlayTemplate(); as tpl) {
     <span class="atmos-node__overlay">
       <ng-container [ngTemplateOutlet]="tpl" [ngTemplateOutletContext]="{ $implicit: node() }"></ng-container>
     </span>
   }
-</button>
+</a>

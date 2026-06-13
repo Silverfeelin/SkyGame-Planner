@@ -36,6 +36,68 @@
   color: var(--atmos-text-dim);
 }
 
+.atmos-spirit-tree__date {
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--atmos-accent);
+}
+
+.atmos-spirit-tree__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.atmos-spirit-tree__controls-spacer {
+  flex: 1 1 auto;
+}
+
+// Square, icon-only variant for the overflow actions on the control bar.
+.atmos-spirit-tree__controls .atmos-btn--icon {
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+}
+
+// More-actions dropdown container.
+.atmos-spirit-tree__menu {
+  position: relative;
+  display: inline-flex;
+}
+
+// Dropdown panel — floats below the trigger button, does not widen the control bar.
+.atmos-spirit-tree__menu-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  background: var(--atmos-bg-elev);
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-sm);
+  box-shadow: 0 4px 16px oklch(0 0 0 / 0.3);
+  overflow: hidden;
+}
+
+.atmos-spirit-tree__menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 0;
+  justify-content: flex-start;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--atmos-line);
+  }
+}
+
 .atmos-spirit-tree__grid {
   display: flex;
   flex-direction: column;
@@ -58,4 +120,92 @@
   align-items: center;
   justify-content: center;
   min-height: 64px;
+}
+
+// ── Columns-first layout for node trees ──────────────────────────────────────
+//
+// Layout constants — must stay in sync across all three classes below.
+// dx = --item-size + col-gap = 64 + 32 = 96px
+// dy = side-offset = 48px
+// diag-length = sqrt(96² + 48²) = sqrt(11520) = 48√5 ≈ 107.33px
+// diag-angle = 90° + atan2(48, 96) ≈ 90° + 26.57° = 116.57° (CW from down → points upper-left)
+$st-col-gap: 32px;
+$st-row-gap: 40px;
+$st-side-offset: 48px;
+$st-item-size: 64px;
+$st-diag-length: 107.33px;
+$st-diag-angle: 116.57deg;
+
+.atmos-spirit-tree__columns {
+  display: inline-flex;
+  gap: $st-col-gap;
+  align-items: flex-end; // root row aligns at the bottom of the flex box
+}
+
+.atmos-spirit-tree__column {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $st-row-gap;
+  width: $st-item-size;
+  align-items: center;
+
+  // Shift side columns up so branches read as diagonal limbs off the trunk.
+  &.is-left,
+  &.is-right {
+    padding-bottom: $st-side-offset;
+  }
+}
+
+// Fixed-size slot: the connector lines are positioned relative to this box,
+// keeping the geometry stable regardless of the node's label overflow.
+.atmos-spirit-tree__slot {
+  position: relative;
+  width: $st-item-size;
+  height: $st-item-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Node sits centered; cost label overflows into the gap below.
+  app-atmos-node {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Thin connector lines between nodes.
+.atmos-conn {
+  position: absolute;
+  width: 1px;
+  background: var(--atmos-line-soft);
+  pointer-events: none;
+}
+
+// Vertical line upward to the N neighbour.
+.atmos-conn--up {
+  height: $st-row-gap;
+  top: -$st-row-gap;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Diagonal line to the NW neighbour (upper-left column, one level up).
+.atmos-conn--nw {
+  height: $st-diag-length;
+  left: 50%;
+  top: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate($st-diag-angle);
+}
+
+// Diagonal line to the NE neighbour (upper-right column, one level up).
+.atmos-conn--ne {
+  height: $st-diag-length;
+  left: 50%;
+  top: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(-$st-diag-angle);
 }

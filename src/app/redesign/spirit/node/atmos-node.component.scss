@@ -14,6 +14,7 @@
   border: 0;
   cursor: pointer;
   color: var(--atmos-text);
+  text-decoration: none;
   transition: background var(--atmos-transition), transform var(--atmos-transition);
 
   &:hover {
@@ -33,6 +34,45 @@
   &.is-opaque .atmos-node__icon {
     opacity: 0.45;
   }
+
+  &.is-empty {
+    cursor: default;
+  }
+}
+
+// Small chevrons hinting at the connections between nodes.
+.atmos-node__arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  --atmos-node-arrow-size: 5px;
+  border: var(--atmos-node-arrow-size) solid transparent;
+}
+
+.atmos-node__arrow--up {
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-color: var(--atmos-text-dim);
+  border-top-width: 0;
+}
+
+.atmos-node__arrow--left {
+  left: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-right-color: var(--atmos-text-dim);
+  border-left-width: 0;
+}
+
+.atmos-node__arrow--right {
+  right: -7px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left-color: var(--atmos-text-dim);
+  border-right-width: 0;
 }
 
 .atmos-node__icon {

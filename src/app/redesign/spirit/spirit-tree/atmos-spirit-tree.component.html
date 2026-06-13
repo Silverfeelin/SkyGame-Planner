@@ -4,6 +4,9 @@
       <header class="atmos-spirit-tree__header">
         <h3 class="atmos-spirit-tree__title">
           <ng-content select="[name]">{{ visibleName() }}</ng-content>
+          @if (eventDate(); as d) {
+            <span class="atmos-spirit-tree__date">(<app-date [date]="d"></app-date>)</span>
+          }
         </h3>
         <app-cost
           class="atmos-spirit-tree__cost"
@@ -13,50 +16,142 @@
       </header>
     }
 
-    <div class="atmos-spirit-tree__grid">
-      @for (row of rows(); track $index) {
-        <div class="atmos-spirit-tree__row">
-          <div class="atmos-spirit-tree__cell">
-            @if (row.left; as n) {
-              <app-atmos-node
-                [node]="n"
-                position="left"
-                [action]="action()"
-                [opaque]="isNodeOpaque(n)"
-                [highlight]="isNodeHighlighted(n)"
-                [showTooltips]="showNodeTooltips()"
-                [overlayTemplate]="nodeOverlayTemplate()"
-                (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+    @if (showControls()) {
+      <nav class="atmos-spirit-tree__controls" aria-label="Spirit tree actions">
+        <button type="button" class="atmos-btn atmos-btn--sm"
+                [class.atmos-btn--active]="currentAction() === 'unlock'"
+                (click)="setAction('unlock')"
+                title="Unlock / lock items (U)">
+          <mat-icon>lock_open</mat-icon>
+          <span>Unlock</span>
+        </button>
+        <button type="button" class="atmos-btn atmos-btn--sm"
+                [class.atmos-btn--active]="currentAction() === 'navigate'"
+                (click)="setAction('navigate')"
+                title="Open item page (N)">
+          <mat-icon>search</mat-icon>
+          <span>Navigate</span>
+        </button>
+
+        <span class="atmos-spirit-tree__controls-spacer"></span>
+
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--icon"
+                (click)="unlockAll()"
+                [title]="hasLocked() ? 'Unlock all items' : 'Lock all items'">
+          <mat-icon>enhanced_encryption</mat-icon>
+        </button>
+        @if (tree().node) {
+          <span class="atmos-spirit-tree__menu">
+            <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--icon"
+                    [class.atmos-btn--active]="showMenu()"
+                    (click)="toggleMenu()" title="More actions">
+              <mat-icon>menu</mat-icon>
+            </button>
+            @if (showMenu()) {
+              <div class="atmos-spirit-tree__menu-panel" role="menu">
+                <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                        (click)="exportPng('clipboard')">
+                  <mat-icon>file_copy</mat-icon><span>Copy image</span>
+                </button>
+                <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                        (click)="exportPng('share')">
+                  <mat-icon>share</mat-icon><span>Share image</span>
+                </button>
+                <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                        (click)="editTree()">
+                  <mat-icon>edit</mat-icon><span>Edit tree</span>
+                </button>
+              </div>
+            }
+          </span>
+        }
+      </nav>
+    }
+
+    @if (tree().node) {
+      <!-- Columns-first layout for node trees: left / center / right columns,
+           root at bottom (flex-direction: column-reverse), side columns shifted
+           up to form diagonal branches. Connector lines live in the slot. -->
+      <div class="atmos-spirit-tree__columns">
+        @for (col of [columns().left, columns().center, columns().right]; track $index) {
+          <div class="atmos-spirit-tree__column" [class.is-left]="$index === 0" [class.is-right]="$index === 2">
+            @for (n of col; track $index) {
+              <div class="atmos-spirit-tree__slot">
+                @if (n) {
+                  <app-atmos-node
+                    [node]="n"
+                    [position]="$index === 0 ? 'left' : $index === 2 ? 'right' : 'center'"
+                    [action]="action()"
+                    [enableNavigation]="enableNavigation()"
+                    [opaque]="isNodeOpaque(n)"
+                    [highlight]="isNodeHighlighted(n)"
+                    [showTooltips]="showNodeTooltips()"
+                    [overlayTemplate]="nodeOverlayTemplate()"
+                    [drawConnectors]="false"
+                    (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+                  @if (n.n)  { <span class="atmos-conn atmos-conn--up"  aria-hidden="true"></span> }
+                  @if (n.nw) { <span class="atmos-conn atmos-conn--nw" aria-hidden="true"></span> }
+                  @if (n.ne) { <span class="atmos-conn atmos-conn--ne" aria-hidden="true"></span> }
+                }
+              </div>
             }
           </div>
-          <div class="atmos-spirit-tree__cell">
-            @if (row.center; as n) {
-              <app-atmos-node
-                [node]="n"
-                position="center"
-                [action]="action()"
-                [opaque]="isNodeOpaque(n)"
-                [highlight]="isNodeHighlighted(n)"
-                [showTooltips]="showNodeTooltips()"
-                [overlayTemplate]="nodeOverlayTemplate()"
-                (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
-            }
+        }
+      </div>
+    } @else if (tree().tier) {
+      <!-- Rows-first grid for tier trees (unchanged). -->
+      <div class="atmos-spirit-tree__grid">
+        @for (row of rows(); track $index) {
+          <div class="atmos-spirit-tree__row">
+            <div class="atmos-spirit-tree__cell">
+              @if (row.left; as n) {
+                <app-atmos-node
+                  [node]="n"
+                  position="left"
+                  [action]="action()"
+                  [enableNavigation]="enableNavigation()"
+                  [opaque]="isNodeOpaque(n)"
+                  [highlight]="isNodeHighlighted(n)"
+                  [showTooltips]="showNodeTooltips()"
+                  [overlayTemplate]="nodeOverlayTemplate()"
+                  (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+              }
+            </div>
+            <div class="atmos-spirit-tree__cell">
+              @if (row.center; as n) {
+                <app-atmos-node
+                  [node]="n"
+                  position="center"
+                  [action]="action()"
+                  [enableNavigation]="enableNavigation()"
+                  [opaque]="isNodeOpaque(n)"
+                  [highlight]="isNodeHighlighted(n)"
+                  [showTooltips]="showNodeTooltips()"
+                  [overlayTemplate]="nodeOverlayTemplate()"
+                  (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+              }
+            </div>
+            <div class="atmos-spirit-tree__cell">
+              @if (row.right; as n) {
+                <app-atmos-node
+                  [node]="n"
+                  position="right"
+                  [action]="action()"
+                  [enableNavigation]="enableNavigation()"
+                  [opaque]="isNodeOpaque(n)"
+                  [highlight]="isNodeHighlighted(n)"
+                  [showTooltips]="showNodeTooltips()"
+                  [overlayTemplate]="nodeOverlayTemplate()"
+                  (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
+              }
+            </div>
           </div>
-          <div class="atmos-spirit-tree__cell">
-            @if (row.right; as n) {
-              <app-atmos-node
-                [node]="n"
-                position="right"
-                [action]="action()"
-                [opaque]="isNodeOpaque(n)"
-                [highlight]="isNodeHighlighted(n)"
-                [showTooltips]="showNodeTooltips()"
-                [overlayTemplate]="nodeOverlayTemplate()"
-                (nodeClicked)="onNodeClicked($event, n)"></app-atmos-node>
-            }
-          </div>
-        </div>
-      }
-    </div>
+        }
+      </div>
+    }
+
+    @if (tree().draft) {
+      <app-atmos-draft-warning />
+    }
   </div>
 </section>

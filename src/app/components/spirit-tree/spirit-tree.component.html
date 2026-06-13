@@ -4,7 +4,6 @@
     <div class="tree-action-background">
       @switch (forceNodeAction ?? nodeAction) {
         @case ('navigate') { <mat-icon>search</mat-icon> }
-        @case ('favourite') { <mat-icon>star</mat-icon> }
       }
     </div>
     <!-- Controls -->
@@ -25,14 +24,6 @@
               <mat-icon>search</mat-icon>
             </div>
             <span [class.active]="showingNodeActions && nodeAction === 'navigate'">Navigate</span>
-          </div>
-        }
-        @if (showingNodeActions || nodeAction === 'favourite') {
-          <div class="tree-action point" (click)="setNodeAction($event, 'favourite')">
-            <div class="tree-action-icon find-item">
-              <mat-icon>star</mat-icon>
-            </div>
-            <span [class.active]="showingNodeActions && nodeAction === 'favourite'">Favourite</span>
           </div>
         }
       </div>

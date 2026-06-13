@@ -120,6 +120,18 @@
   opacity: 1;
 }
 
+// Layout constants — must stay in sync with column gap, row gap, side offset and item size.
+// dx = $item-size + $col-gap = 64 + 32 = 96px
+// dy = $side-offset = 48px
+// diag-length = sqrt(96² + 48²) = sqrt(11520) = 48√5 ≈ 107.33px
+// diag-angle = 90° + atan2(48, 96) ≈ 90° + 26.57° = 116.57° (CW from down → points upper-left)
+$col-gap: 32px;
+$row-gap: 40px;
+$side-offset: 48px;
+$item-size: 64px;
+$diag-length: 107.33px;
+$diag-angle: 116.57deg;
+
 .arrow {
   position: absolute;
   background: var(--atmos-line-soft);
@@ -127,24 +139,29 @@
 }
 
 .arrow-left {
-  transform: rotate(-45deg);
-  height: 32px;
-  left: -18px;
-  top: 0;
+  // From this node's center to NW neighbor's center: dx=-96px dy=-48px
+  height: $diag-length;
+  left: 50%;
+  top: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate($diag-angle);
 }
 
 .arrow-up {
-  height: 24px;
-  top: -30px;
+  // From this node's top-center to bottom-center of N neighbor above (row gap = 40px)
+  height: $row-gap;
+  top: -$row-gap;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .arrow-right {
-  transform: rotate(45deg);
-  height: 32px;
-  right: -18px;
-  top: 0;
+  // From this node's center to NE neighbor's center: dx=96px dy=-48px
+  height: $diag-length;
+  left: 50%;
+  top: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(-$diag-angle);
 }
 
 /* Buttons */

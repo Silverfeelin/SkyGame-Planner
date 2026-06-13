@@ -102,7 +102,6 @@ export class SpiritTreeComponent implements OnChanges, OnDestroy, AfterViewInit 
 
       let action: NodeAction | undefined;
       switch (evt.key?.toLocaleLowerCase()) {
-        case 'f': action = 'favourite'; break;
         case 'n': action = 'navigate'; break;
         case 'u': action = 'unlock'; break;
         default: return;
