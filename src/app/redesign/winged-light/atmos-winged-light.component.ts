@@ -49,21 +49,21 @@ export class AtmosWingedLightComponent {
       unlocked: this.col(),
       total: this.totalCol(),
       svgIcon: 'flaps',
-      link: '/r/col'
+      link: '/col'
     },
     {
       label: 'Wing buffs from regular spirits',
       unlocked: this.regularUnlocked(),
       total: this.regularCount(),
       icon: 'person',
-      link: '/r/wing-buff'
+      link: '/wing-buff'
     },
     {
       label: 'Wing buffs from seasonal spirits',
       unlocked: this.seasonUnlocked(),
       total: this.seasonCount(),
       icon: 'event',
-      link: '/r/wing-buff'
+      link: '/wing-buff'
     }
   ]);
 

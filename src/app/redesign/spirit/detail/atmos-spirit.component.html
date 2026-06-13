@@ -22,7 +22,7 @@
 
         @if ((s.type === 'Season' || s.type === 'Guide') && s.season) {
           <a class="atmos-spirit__meta-item atmos-text-link"
-             [routerLink]="['/r/season', s.season.guid]"
+             [routerLink]="['/season', s.season.guid]"
              [queryParams]="{ highlightTree: s.tree?.guid }">
             @if (s.season.iconUrl) {
               <img class="atmos-spirit__meta-icon" [src]="s.season.iconUrl" alt="" />
@@ -34,7 +34,7 @@
         }
 
         @if (s.type === 'Event' && event(); as ev) {
-          <a class="atmos-spirit__meta-item atmos-text-link" [routerLink]="['/r/event', ev.guid]">
+          <a class="atmos-spirit__meta-item atmos-text-link" [routerLink]="['/event', ev.guid]">
             <mat-icon class="atmos-spirit__meta-icon">event</mat-icon>
             <span>{{ ev.name }}</span>
           </a>
@@ -42,7 +42,7 @@
 
         @if (s.type === 'Regular' || s.type === 'Elder' || s.type === 'Special') {
           <a class="atmos-spirit__meta-item atmos-text-link"
-             [routerLink]="['/r/spirit']" [queryParams]="{ type: s.type }">
+             [routerLink]="['/spirit']" [queryParams]="{ type: s.type }">
             <mat-icon class="atmos-spirit__meta-icon">person</mat-icon>
             <span>{{ s.type === 'Regular' ? 'Regular Spirit' : s.type }}</span>
           </a>
@@ -50,7 +50,7 @@
 
         @if (s.area?.realm) {
           <a class="atmos-spirit__meta-item atmos-text-link"
-             [routerLink]="['/r/realm', s.area!.realm!.guid]"
+             [routerLink]="['/realm', s.area!.realm!.guid]"
              [queryParams]="{ highlightTree: s.tree?.guid }">
             <mat-icon class="atmos-spirit__meta-icon">map</mat-icon>
             <span>{{ s.area!.realm!.name }}</span>
@@ -58,7 +58,7 @@
         }
 
         @if (s.area) {
-          <a class="atmos-spirit__meta-item atmos-text-link" [routerLink]="['/r/area', s.area.guid]">
+          <a class="atmos-spirit__meta-item atmos-text-link" [routerLink]="['/area', s.area.guid]">
             <mat-icon class="atmos-spirit__meta-icon">location_on</mat-icon>
             <span>{{ s.area.name }}</span>
           </a>

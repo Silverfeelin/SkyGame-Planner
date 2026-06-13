@@ -1,25 +1,25 @@
 @if (instance(); as inst) {
   <section class="atmos-page__quick-actions">
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/event">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/event">
       <mat-icon>arrow_back</mat-icon> Events
     </a>
     @if (inst.event) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event', inst.event.guid]">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event', inst.event.guid]">
         <mat-icon>event</mat-icon> {{ inst.event.name }}
       </a>
     }
     @if (previousInstance(); as prev) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event-instance', prev.guid]">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', prev.guid]">
         <mat-icon>arrow_back</mat-icon> Previous year
       </a>
     }
     @if (nextInstance(); as nxt) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/event-instance', nxt.guid]">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', nxt.guid]">
         <mat-icon>arrow_forward</mat-icon> Next year
       </a>
     }
     @if (inst.calculatorData && (state() === 'active' || state() === 'future')) {
-      <a class="atmos-btn atmos-btn--sm" routerLink="/r/event-calculator" [queryParams]="{ guid: inst.guid }">
+      <a class="atmos-btn atmos-btn--sm" routerLink="/event-calculator" [queryParams]="{ guid: inst.guid }">
         <mat-icon>calculate</mat-icon> Event Calculator
       </a>
     }
@@ -136,5 +136,5 @@
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">Event instance</h1>
   </header>
-  <p class="atmos-paragraph">Event instance not found. <a class="atmos-text-link" routerLink="/r/event">Back to events</a></p>
+  <p class="atmos-paragraph">Event instance not found. <a class="atmos-text-link" routerLink="/event">Back to events</a></p>
 }

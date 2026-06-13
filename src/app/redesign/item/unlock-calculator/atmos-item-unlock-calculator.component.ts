@@ -144,7 +144,7 @@ export class AtmosItemUnlockCalculatorComponent {
   createCollection(): void {
     if (!this.items.length) { return alert('No items selected.'); }
     const queryParams = { items: ItemHelper.serializeQuery(this.items) };
-    this._router.navigate(['/r/item/collection'], { queryParams });
+    this._router.navigate(['/item/collection'], { queryParams });
   }
 
   showCostBreakdown(result: IItemResult): void {
@@ -254,7 +254,7 @@ export class AtmosItemUnlockCalculatorComponent {
   }
 
   viewItem(item: IItem): void {
-    const url = `${location.origin}/r/item/${item.guid}`;
+    const url = `${location.origin}/item/${item.guid}`;
     window.open(url, '_blank');
   }
 

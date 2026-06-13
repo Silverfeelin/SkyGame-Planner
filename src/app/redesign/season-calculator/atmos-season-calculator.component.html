@@ -20,16 +20,16 @@
     <div class="atmos-card__body">
       <p class="atmos-paragraph">
         Since this season has spirits with friendship levels, please have a look at the
-        <a routerLink="/r/season/optimizer" class="atmos-text-link">Season Optimizer</a>.
+        <a routerLink="/season/optimizer" class="atmos-text-link">Season Optimizer</a>.
       </p>
     </div>
   </section>
 } @else {
   <section class="atmos-page__quick-actions">
-    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', season.guid]">
+    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', season.guid]">
       <mat-icon>arrow_back</mat-icon> Season
     </a>
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/currency">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/currency">
       <mat-icon>account_balance_wallet</mat-icon> Currencies
     </a>
     <a class="atmos-btn atmos-btn--sm" href="https://sky-season-calculator.netlify.app/" target="_blank" rel="noopener">

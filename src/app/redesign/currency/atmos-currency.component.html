@@ -128,7 +128,7 @@
         <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().season }"></ng-container>
       </div>
       <div class="atmos-currency__btn-row">
-        <a class="atmos-btn" routerLink="/r/season-calculator">
+        <a class="atmos-btn" routerLink="/season-calculator">
           <mat-icon>calculate</mat-icon>
           <span>Go to Calculator</span>
         </a>
@@ -161,7 +161,7 @@
             <ng-container [ngTemplateOutlet]="tGain" [ngTemplateOutletContext]="{ gain: gains().events[instance.guid] }"></ng-container>
           </div>
           <div class="atmos-currency__btn-row">
-            <a class="atmos-btn" routerLink="/r/event-calculator" [queryParams]="{ guid: instance.guid }">
+            <a class="atmos-btn" routerLink="/event-calculator" [queryParams]="{ guid: instance.guid }">
               <mat-icon>calculate</mat-icon>
               <span>Go to Calculator</span>
             </a>

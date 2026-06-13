@@ -32,10 +32,10 @@ export class AtmosToolsComponent {
       icon: 'checkroom',
       description: 'Pick items from your closet, share an outfit request link or build a collage to show off your style.',
       links: [
-        { icon: 'checkroom', label: 'Sky closet',     link: '/r/outfit-request/closet' },
-        { icon: 'add',       label: 'Create request', link: '/r/outfit-request/request' },
-        { icon: 'image',     label: 'Create collage', link: '/r/outfit-request/collage' },
-        { icon: 'link',      label: 'Outfit vault',   link: '/r/outfit-request/vault' }
+        { icon: 'checkroom', label: 'Sky closet',     link: '/outfit-request/closet' },
+        { icon: 'add',       label: 'Create request', link: '/outfit-request/request' },
+        { icon: 'image',     label: 'Create collage', link: '/outfit-request/collage' },
+        { icon: 'link',      label: 'Outfit vault',   link: '/outfit-request/vault' }
       ]
     },
     {
@@ -43,7 +43,7 @@ export class AtmosToolsComponent {
       icon: 'calculate',
       description: 'Pick items to unlock and see exactly how much candle, heart and ascended-candle you still need.',
       links: [
-        { icon: 'calculate', label: 'Open calculator', link: '/r/item/unlock-calculator' }
+        { icon: 'calculate', label: 'Open calculator', link: '/item/unlock-calculator' }
       ]
     },
     {
@@ -51,7 +51,7 @@ export class AtmosToolsComponent {
       icon: 'trending_up',
       description: 'See how item costs have changed over time across spirits, events and seasons.',
       links: [
-        { icon: 'trending_up', label: 'View inflation', link: '/r/item/inflation' }
+        { icon: 'trending_up', label: 'View inflation', link: '/item/inflation' }
       ]
     },
     {
@@ -59,7 +59,7 @@ export class AtmosToolsComponent {
       icon: 'menu_book',
       description: 'Group items by location, type or other facets to plan your collection.',
       links: [
-        { icon: 'menu_book', label: 'Open field guide', link: '/r/item/field-guide' }
+        { icon: 'menu_book', label: 'Open field guide', link: '/item/field-guide' }
       ]
     },
     {
@@ -67,7 +67,7 @@ export class AtmosToolsComponent {
       icon: 'auto_awesome',
       description: 'Track Children of Light collected across realms.',
       links: [
-        { icon: 'auto_awesome', label: 'Open tracker', link: '/r/col' }
+        { icon: 'auto_awesome', label: 'Open tracker', link: '/col' }
       ]
     },
     {
@@ -75,7 +75,7 @@ export class AtmosToolsComponent {
       icon: 'air',
       description: 'Track wing buffs collected from elder spirits.',
       links: [
-        { icon: 'air', label: 'Open tracker', link: '/r/wing-buff' }
+        { icon: 'air', label: 'Open tracker', link: '/wing-buff' }
       ]
     },
     {
@@ -83,7 +83,7 @@ export class AtmosToolsComponent {
       icon: 'wallet',
       description: 'Log currency you have spent outside of tracked items.',
       links: [
-        { icon: 'wallet', label: 'View ledger', link: '/r/currency/spent' }
+        { icon: 'wallet', label: 'View ledger', link: '/currency/spent' }
       ]
     },
     {

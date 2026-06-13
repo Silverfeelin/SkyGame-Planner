@@ -98,8 +98,8 @@ export class AtmosElusiveSpiritsComponent {
 
     this.rowData = lastVisits.map(v => ({
       img: v.spirit.imageUrl,
-      spirit: { label: v.spirit.name, route: ['/r/spirit', v.spirit.guid] },
-      season: v.spirit.season ? { label: v.spirit.season.name, route: ['/r/season', v.spirit.season.guid] } : undefined,
+      spirit: { label: v.spirit.name, route: ['/spirit', v.spirit.guid] },
+      season: v.spirit.season ? { label: v.spirit.season.name, route: ['/season', v.spirit.season.guid] } : undefined,
       type: v.type,
       date: v.date,
       endDate: v.endDate,

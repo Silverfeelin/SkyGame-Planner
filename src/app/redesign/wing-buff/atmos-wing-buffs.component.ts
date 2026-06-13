@@ -130,9 +130,9 @@ export class AtmosWingBuffsComponent {
       const count = spiritCount.get(spirit.guid)!;
       let origin: IRow['origin'];
       if (spirit.season) {
-        origin = { name: spirit.season.name, route: ['/r/season', spirit.season.guid] };
+        origin = { name: spirit.season.name, route: ['/season', spirit.season.guid] };
       } else if (spirit.type === 'Regular' && spirit.area?.realm) {
-        origin = { name: spirit.area.realm.name, route: ['/r/realm', spirit.area.realm.guid] };
+        origin = { name: spirit.area.realm.name, route: ['/realm', spirit.area.realm.guid] };
       }
       return {
         spirit,

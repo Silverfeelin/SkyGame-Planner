@@ -16,37 +16,37 @@ interface IVenue {
 
 const VENUES: ReadonlyArray<IVenue> = [
   {
-    link: '/r/shop/event',
+    link: '/shop/event',
     title: 'Aviary Event Store',
     description: 'Introduced in the Season of Revival. Accessed through Aviary Village.'
   },
   {
-    link: '/r/shop/cinema',
+    link: '/shop/cinema',
     title: 'Cinema',
     description: 'Introduced in the Season of Two Embers - Part One. Reached via the Collaboration Room from Aviary Village.'
   },
   {
-    link: '/r/shop/concert-hall',
+    link: '/shop/concert-hall',
     title: 'Concert Hall',
     description: 'Introduced in the Season of Duets. Accessed through Aviary Village.'
   },
   {
-    link: '/r/shop/harmony',
+    link: '/shop/harmony',
     title: 'Harmony Hall',
     description: 'Introduced in the Season of Performance. Reached from Aviary Village, the Village of Dreams or the Village Theatre.'
   },
   {
-    link: '/r/shop/nesting',
+    link: '/shop/nesting',
     title: 'Nesting Workshop',
     description: 'Introduced in the Season of Nesting. Accessed through Aviary Village.'
   },
   {
-    link: '/r/shop/office',
+    link: '/shop/office',
     title: 'Secret Area',
     description: 'Only available with a certain cape or during some events. Accessed through the Vault of Knowledge.'
   },
   {
-    link: '/r/shop/wonderland-cafe',
+    link: '/shop/wonderland-cafe',
     title: 'Wonderland Cafe',
     description: 'Introduced during Days of Feast in 2024. Accessed through the Wonderland Cafe Corridor.'
   }

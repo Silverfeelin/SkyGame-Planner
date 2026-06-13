@@ -95,11 +95,11 @@ export class AtmosReturningSpiritsComponent {
 
       return {
         guid: rs.guid,
-        name: { label: rs.name, route: ['/r/rs', rs.guid] },
+        name: { label: rs.name, route: ['/rs', rs.guid] },
         spirits: rs.spirits.map(s => ({
           label: s.spirit.name,
           imageUrl: s.spirit.imageUrl,
-          route: ['/r/spirit', s.spirit.guid],
+          route: ['/spirit', s.spirit.guid],
           queryParams: { highlightTree: s.tree.guid }
         })),
         date: rs.date,

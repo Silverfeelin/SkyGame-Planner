@@ -152,7 +152,7 @@ export class AtmosRealmsComponent implements AfterViewInit {
     this.realms.forEach(realm => {
       this._mapInstanceService.addRealm(realm, { showLabel: true, onClick: () => {
         if (this.showAreas() || this.showMapShrines() || this.showWingedLight()) { return; }
-        void this._router.navigateByUrl(`/r/realm/${realm.guid}`);
+        void this._router.navigateByUrl(`/realm/${realm.guid}`);
       }});
     });
   }

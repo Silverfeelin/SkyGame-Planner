@@ -45,7 +45,7 @@ export class AtmosStorageComponent implements OnInit {
   }
 
   linkDropbox(): void {
-    void this._router.navigate(['/r/dropbox-auth']);
+    void this._router.navigate(['/dropbox-auth']);
   }
 
   private setStorageType(type: string): void {

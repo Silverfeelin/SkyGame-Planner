@@ -9,8 +9,6 @@ import { EditorLayoutComponent } from './editor/editor-layout/editor-layout.comp
 const title = (t: string) => `${t} - Sky Planner`;
 
 export const routes: Routes = [
-  /* Slug redirects for bookmark compatibility. */
-  { path: 'r', redirectTo: '', pathMatch: 'prefix' },
   { path: 'spirits', redirectTo: 'spirit' },
   { path: 'tools', redirectTo: 'tool' },
   { path: 'friends', redirectTo: 'friend' },

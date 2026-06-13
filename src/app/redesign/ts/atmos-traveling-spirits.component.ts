@@ -78,7 +78,7 @@ export class AtmosTravelingSpiritsComponent {
       return {
         nr: i + 1,
         img: ts.spirit.imageUrl,
-        spirit: { label: ts.spirit.name, route: ['/r/spirit', ts.spirit.guid], queryParams: { highlightTree: ts.tree.guid } },
+        spirit: { label: ts.spirit.name, route: ['/spirit', ts.spirit.guid], queryParams: { highlightTree: ts.tree.guid } },
         date: ts.date,
         visit: ts.visit,
         total: totalItems,

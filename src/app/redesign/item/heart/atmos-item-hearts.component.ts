@@ -109,7 +109,7 @@ export class AtmosItemHeartsComponent {
         spirit, type: spirit.type,
         tree, area: spirit.area,
         hearts,
-        heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/r/item', h.guid] } as INavigationTarget))
+        heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/item', h.guid] } as INavigationTarget))
       });
 
       this.tables.regularCount[0] += hearts.length;
@@ -143,7 +143,7 @@ export class AtmosItemHeartsComponent {
           spirit, type: spirit.type,
           tree, area: spirit.area,
           hearts,
-          heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/r/item', h.guid] } as INavigationTarget))
+          heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/item', h.guid] } as INavigationTarget))
         });
 
         this.tables.seasonCount[0] += hearts.length;
@@ -174,7 +174,7 @@ export class AtmosItemHeartsComponent {
         spirit, type: spirit.type,
         tree, area: spirit.area,
         hearts,
-        heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/r/item', h.guid] } as INavigationTarget))
+        heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/item', h.guid] } as INavigationTarget))
       });
 
       this.tables.guideCount[0] += hearts.length;
@@ -214,7 +214,7 @@ export class AtmosItemHeartsComponent {
       table.push({
         instance,
         hearts,
-        heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/r/item', h.guid] } as INavigationTarget)),
+        heartLinks: hearts.map(h => NavigationHelper.getItemSource(h) ?? ({ route: ['/item', h.guid] } as INavigationTarget)),
         total: hearts.length,
         unlocked: hearts.filter(h => h.unlocked).length
       });
@@ -250,7 +250,7 @@ export class AtmosItemHeartsComponent {
       }
 
       row['hearts'].push(heart);
-      row['heartLinks'].push(NavigationHelper.getItemSource(heart) ?? ({ route: ['/r/item', heart.guid] } as INavigationTarget));
+      row['heartLinks'].push(NavigationHelper.getItemSource(heart) ?? ({ route: ['/item', heart.guid] } as INavigationTarget));
       handled.add(heart);
 
       this.tables.otherCount[0]++;

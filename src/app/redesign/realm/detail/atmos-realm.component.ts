@@ -96,7 +96,7 @@ export class AtmosRealmComponent implements OnInit, OnDestroy {
   constellationRealmChanged(realm: IRealm): void {
     this.initializeRealm(realm.guid);
     document.title = `${realm.name} - Sky Planner`;
-    window.history.replaceState(window.history.state, '', `/r/realm/${realm.guid}`);
+    window.history.replaceState(window.history.state, '', `/realm/${realm.guid}`);
   }
 
   private initializeRealm(guid: string): void {

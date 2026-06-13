@@ -9,23 +9,23 @@
     </a>
   }
   @if (spiritCount) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/spirit" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
       <app-spirit-type-icon type="Regular"></app-spirit-type-icon>
       <span>Spirits ({{ spiritCount }})</span>
     </a>
   }
   @if (seasonSpiritCount || seasonGuideCount) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/spirit" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
       <app-spirit-type-icon type="Season"></app-spirit-type-icon>
       <span>Season Spirits ({{ seasonSpiritCount }})</span>
     </a>
   }
-  <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm">
+  <a class="atmos-btn atmos-btn--sm" routerLink="/realm">
     <mat-icon>map</mat-icon>
     <span>Other realms</span>
   </a>
   @if (realm.areas?.length) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/area" [queryParams]="{ realm: realm.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/area" [queryParams]="{ realm: realm.guid }">
       <mat-icon>location_on</mat-icon>
       <span>Areas</span>
     </a>
@@ -131,7 +131,7 @@
           <div class="atmos-realm__tree-wrapper">
             <app-atmos-spirit-tree [tree]="data.tree" [name]="data.spirit.name" [highlight]="highlightTree === data.tree.guid">
               <div name>
-                <a class="atmos-text-link" [routerLink]="['/r/spirit', data.spirit.guid]" [queryParams]="{ highlightTree: data.tree.guid }">
+                <a class="atmos-text-link" [routerLink]="['/spirit', data.spirit.guid]" [queryParams]="{ highlightTree: data.tree.guid }">
                   {{ data.spirit.name }}
                 </a>
               </div>

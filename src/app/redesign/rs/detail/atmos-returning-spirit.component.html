@@ -44,7 +44,7 @@
 
       @if (r.area?.realm) {
         <a class="atmos-rs-detail__meta-item atmos-text-link"
-           [routerLink]="['/r/realm', r.area!.realm!.guid]">
+           [routerLink]="['/realm', r.area!.realm!.guid]">
           <mat-icon class="atmos-rs-detail__icon">map</mat-icon>
           <span>{{ r.area!.realm!.name }}</span>
         </a>
@@ -67,7 +67,7 @@
           @if (spirit.tree) {
             <div class="atmos-rs-detail__tree">
               <a class="atmos-rs-detail__tree-name atmos-text-link"
-                 [routerLink]="['/r/spirit', spirit.spirit.guid]"
+                 [routerLink]="['/spirit', spirit.spirit.guid]"
                  [queryParams]="{ highlightTree: spirit.tree.guid }">
                 {{ spirit.spirit.name }}
               </a>

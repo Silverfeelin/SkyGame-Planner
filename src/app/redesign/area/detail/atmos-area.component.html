@@ -8,30 +8,30 @@
       <span>Wiki</span>
     </a>
   }
-  <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', realm.guid]">
+  <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', realm.guid]">
     <mat-icon>map</mat-icon>
     <span>{{ realm.name }}</span>
   </a>
   @if (area.mapData?.position) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm" [queryParams]="{ map: 3, area: area.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/realm" [queryParams]="{ map: 3, area: area.guid }">
       <mat-icon>location_on</mat-icon>
       <span>View on map</span>
     </a>
   }
   @if (spiritCount) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ type: 'Regular,Elder', area: area.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/spirit" [queryParams]="{ type: 'Regular,Elder', area: area.guid }">
       <app-spirit-type-icon type="Regular"></app-spirit-type-icon>
       <span>Spirits ({{ spiritCount }})</span>
     </a>
   }
   @if (seasonSpiritCount || seasonGuideCount) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/spirit" [queryParams]="{ type: 'Season,Guide', area: area.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/spirit" [queryParams]="{ type: 'Season,Guide', area: area.guid }">
       <app-spirit-type-icon type="Season"></app-spirit-type-icon>
       <span>Season Spirits ({{ seasonSpiritCount }})</span>
     </a>
   }
   @if (area.wingedLights?.length) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/col" [queryParams]="{ area: area.guid }">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/col" [queryParams]="{ area: area.guid }">
       <mat-icon svgIcon="flaps"></mat-icon>
       <span>Winged Lights ({{ area.wingedLights!.length }})</span>
     </a>
@@ -54,7 +54,7 @@
       <h2 class="atmos-area__heading">Connected Areas</h2>
       <div class="atmos-area__connections">
         @for (connection of area.connections; track connection.area.guid) {
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/area', connection.area.guid]">
+          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/area', connection.area.guid]">
             <mat-icon>location_on</mat-icon>
             <span>{{ connection.area.name }}</span>
           </a>

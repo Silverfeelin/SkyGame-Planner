@@ -146,7 +146,7 @@
       @if (collection.items.length) {
         <div class="atmos-coll__items-strip atmos-card__body">
           @for (item of collection.items; track item.guid) {
-            <a class="atmos-coll__strip-item" [routerLink]="['/r/item', item.guid]" [title]="item.name">
+            <a class="atmos-coll__strip-item" [routerLink]="['/item', item.guid]" [title]="item.name">
               <app-icon [src]="item.icon || '/assets/icons/question.webp'"
                         width="48px" height="48px"
                         [lazy]="true" [draggable]="false"/>

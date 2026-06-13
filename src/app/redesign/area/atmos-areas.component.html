@@ -2,11 +2,11 @@
 
 @if (realm(); as r) {
   <div class="atmos-page__quick-actions">
-    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', r.guid]">
+    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', r.guid]">
       <mat-icon>map</mat-icon>
       <span>{{ r.name }}</span>
     </a>
-    <a class="atmos-btn atmos-btn--sm" routerLink="/r/area">
+    <a class="atmos-btn atmos-btn--sm" routerLink="/area">
       <mat-icon>location_on</mat-icon>
       <span>All areas</span>
     </a>
@@ -32,18 +32,18 @@
       <div class="atmos-card__body atmos-areas__card-body">
         <h2 class="atmos-areas__card-title">{{ area.name }}</h2>
         <div class="atmos-areas__card-links">
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/area', area.guid]">
+          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/area', area.guid]">
             <mat-icon>article</mat-icon>
             <span>Overview</span>
           </a>
           @if (!realm() && area.realm) {
-            <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', area.realm.guid]">
+            <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', area.realm.guid]">
               <mat-icon>map</mat-icon>
               <span>{{ area.realm.name }}</span>
             </a>
           }
           @if (area.mapData?.position) {
-            <a class="atmos-btn atmos-btn--sm" routerLink="/r/realm" [queryParams]="{ map: 3, area: area.guid }">
+            <a class="atmos-btn atmos-btn--sm" routerLink="/realm" [queryParams]="{ map: 3, area: area.guid }">
               <mat-icon>location_on</mat-icon>
               <span>View on map</span>
             </a>

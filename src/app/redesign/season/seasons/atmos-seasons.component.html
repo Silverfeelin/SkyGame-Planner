@@ -16,7 +16,7 @@
     <div class="atmos-seasons__jump-list">
       @for (season of reverseSeasons; track season.guid) {
         <a class="atmos-seasons__jump-item atmos-focus-ring"
-           [routerLink]="['/r/season', season.guid]"
+           [routerLink]="['/season', season.guid]"
            [ngbTooltip]="season.name" placement="bottom" container="body">
           <app-icon [width]="'56px'" [height]="'56px'" [src]="season.iconUrl"></app-icon>
         </a>

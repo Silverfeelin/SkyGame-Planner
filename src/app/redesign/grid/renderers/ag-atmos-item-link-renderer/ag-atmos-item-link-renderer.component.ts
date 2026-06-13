@@ -5,7 +5,7 @@ import { IItem } from 'skygame-data';
 
 @Component({
   selector: 'ag-atmos-item-link-renderer',
-  template: `@if (item) { <a class="atmos-text-link" [routerLink]="['/r/item', item.guid]">{{ item.name }}</a> }`,
+  template: `@if (item) { <a class="atmos-text-link" [routerLink]="['/item', item.guid]">{{ item.name }}</a> }`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink]
 })

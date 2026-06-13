@@ -8,11 +8,11 @@
     <h2 class="atmos-settings__section-title"><mat-icon>storage</mat-icon> Storage</h2>
     <p class="atmos-paragraph">
       Your data is currently stored in <strong>{{ storageProviderName }}</strong>.
-      To change the storage location, visit the <a class="atmos-text-link" routerLink="/r/storage">Storage page</a>.
+      To change the storage location, visit the <a class="atmos-text-link" routerLink="/storage">Storage page</a>.
       If you want to transfer your data, export it first, then switch storage and import it back.
     </p>
     <div class="atmos-settings__btn-row">
-      <a class="atmos-btn" routerLink="/r/storage">
+      <a class="atmos-btn" routerLink="/storage">
         <mat-icon>database</mat-icon> Storage
       </a>
       <button type="button" class="atmos-btn" (click)="import()">
@@ -52,7 +52,7 @@
     <h2 class="atmos-settings__section-title"><mat-icon>wb_sunny</mat-icon> Daily candles</h2>
     <p class="atmos-paragraph">
       Enter a number to add regular candles to your
-      <a class="atmos-text-link" routerLink="/r/currency">Currency</a> page
+      <a class="atmos-text-link" routerLink="/currency">Currency</a> page
       when you complete daily quests on the dashboard. Set to 0 to disable.
     </p>
     <label class="atmos-settings__label">

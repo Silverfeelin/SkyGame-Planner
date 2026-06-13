@@ -46,28 +46,28 @@
       }
 
       @if (sections()['overview'] && instance(); as inst) {
-        <a class="atmos-event-card__link" [routerLink]="['/r/event-instance', inst.guid]">
+        <a class="atmos-event-card__link" [routerLink]="['/event-instance', inst.guid]">
           <mat-icon>article</mat-icon>
           <span>Overview</span>
         </a>
       }
 
       @if (sections()['list']) {
-        <a class="atmos-event-card__link" [routerLink]="['/r/event', e.guid]">
+        <a class="atmos-event-card__link" [routerLink]="['/event', e.guid]">
           <mat-icon>list</mat-icon>
           <span>List</span>
         </a>
       }
 
       @if (sections()['recent'] && lastInstance(); as last) {
-        <a class="atmos-event-card__link" [routerLink]="['/r/event-instance', last.guid]">
+        <a class="atmos-event-card__link" [routerLink]="['/event-instance', last.guid]">
           <mat-icon>schedule</mat-icon>
           <span>Most recent <span class="atmos-event-card__days">(<app-date [date]="last.date" format="yyyy"></app-date>)</span></span>
         </a>
       }
 
       @if (sections()['upcoming'] && nextInstance(); as next) {
-        <a class="atmos-event-card__link" [routerLink]="['/r/event-instance', next.guid]">
+        <a class="atmos-event-card__link" [routerLink]="['/event-instance', next.guid]">
           <mat-icon>schedule</mat-icon>
           <span>Upcoming <span class="atmos-event-card__days">(<app-date [date]="next.date" format="yyyy"></app-date>)</span></span>
         </a>
@@ -75,7 +75,7 @@
 
       @if (sections()['calculator'] && instance(); as inst) {
         @if (inst.calculatorData) {
-          <a class="atmos-event-card__link" [routerLink]="['/r/event-calculator']" [queryParams]="{ guid: inst.guid }">
+          <a class="atmos-event-card__link" [routerLink]="['/event-calculator']" [queryParams]="{ guid: inst.guid }">
             <mat-icon>calculate</mat-icon>
             <span>Calculator</span>
           </a>

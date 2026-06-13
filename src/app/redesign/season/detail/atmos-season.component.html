@@ -1,12 +1,12 @@
 @if (season(); as s) {
   <atmos-season-quick-actions [wikiHref]="s._wiki?.href" [calendarHref]="s._calendar?.href">
     @if (previousSeason(); as p) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', p.guid]">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', p.guid]">
         <mat-icon>arrow_back</mat-icon> Previous
       </a>
     }
     @if (nextSeason(); as n) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/season', n.guid]">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', n.guid]">
         <mat-icon>arrow_forward</mat-icon> Next
       </a>
     }
@@ -90,7 +90,7 @@
       <div class="atmos-card__body atmos-season__trees">
         <div class="atmos-season__tree">
           <div class="atmos-season__tree-name">
-            <a class="atmos-text-link" [routerLink]="['/r/spirit', guide()!.guid]"
+            <a class="atmos-text-link" [routerLink]="['/spirit', guide()!.guid]"
                [queryParams]="{ highlightTree: postTree.guid }">{{ guide()!.name }}</a>
           </div>
           <app-atmos-spirit-tree [tree]="postTree" [name]="guide()!.name"
@@ -112,7 +112,7 @@
         @if (guideTree(); as gt) {
           <div class="atmos-season__tree">
             <div class="atmos-season__tree-name">
-              <a class="atmos-text-link" [routerLink]="['/r/spirit', g.guid]"
+              <a class="atmos-text-link" [routerLink]="['/spirit', g.guid]"
                  [queryParams]="{ highlightTree: gt.guid }">{{ g.name }}</a>
               <span class="atmos-season__tree-tag">Guide</span>
             </div>
@@ -124,7 +124,7 @@
       @for (entry of seasonTrees(); track entry.spirit.guid) {
         <div class="atmos-season__tree">
           <div class="atmos-season__tree-name">
-            <a class="atmos-text-link" [routerLink]="['/r/spirit', entry.spirit.guid]"
+            <a class="atmos-text-link" [routerLink]="['/spirit', entry.spirit.guid]"
                [queryParams]="{ highlightTree: entry.tree.guid }">{{ entry.spirit.name }}</a>
           </div>
           <app-atmos-spirit-tree [tree]="entry.tree" [name]="entry.spirit.name"
@@ -144,7 +144,7 @@
           <div class="atmos-season__tree">
             @if (tree.spirit) {
               <div class="atmos-season__tree-name">
-                <a class="atmos-text-link" [routerLink]="['/r/spirit', tree.spirit.guid]">{{ tree.spirit.name }}</a>
+                <a class="atmos-text-link" [routerLink]="['/spirit', tree.spirit.guid]">{{ tree.spirit.name }}</a>
               </div>
             }
             <app-atmos-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'"></app-atmos-spirit-tree>

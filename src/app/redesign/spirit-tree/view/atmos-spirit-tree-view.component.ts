@@ -115,7 +115,7 @@ export class AtmosSpiritTreeViewComponent {
   private findNode(evt: AtmosSpiritTreeNodeClickEvent): void {
     const item = evt.node.item!;
     // Defer to the item route — keeps the legacy navigation behavior.
-    void this._router.navigate(['/r/item', item.guid]);
+    void this._router.navigate(['/item', item.guid]);
   }
 
   private toggleNode(tree: ISpiritTree, evt: AtmosSpiritTreeNodeClickEvent): void {

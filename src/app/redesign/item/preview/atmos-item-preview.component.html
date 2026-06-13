@@ -7,7 +7,7 @@
 <atmos-item-grid-layout [items]="items" [itemTemplate]="previewTpl" [initialCategory]="initialCategory"/>
 <ng-template #previewTpl let-item>
   <a class="atmos-item-preview__item"
-     [routerLink]="['/r/item', item.guid]"
+     [routerLink]="['/item', item.guid]"
      [title]="item.name">
     <img class="atmos-item-preview__img" [src]="item.previewUrl" loading="lazy" draggable="false"/>
     <app-icon class="atmos-item-preview__icon"

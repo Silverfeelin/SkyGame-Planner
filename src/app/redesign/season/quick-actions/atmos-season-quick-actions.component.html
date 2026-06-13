@@ -1,6 +1,6 @@
 <section class="atmos-page__quick-actions">
-  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/r/season"><mat-icon>ac_unit</mat-icon> Seasons</a>
-  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/r/season-calculator"><mat-icon>calculate</mat-icon> Season calculator</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/season"><mat-icon>ac_unit</mat-icon> Seasons</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/season-calculator"><mat-icon>calculate</mat-icon> Season calculator</a>
   <a class="atmos-btn atmos-btn--sm" [href]="wikiHref() || 'https://sky-children-of-the-light.fandom.com/wiki/Seasonal_Events'" target="_blank" rel="noopener"><mat-icon>menu_book</mat-icon> Wiki</a>
   <a class="atmos-btn atmos-btn--sm" [href]="calendarHref() || 'https://skydreamers.notion.site/Sky-Event-Calendar-FM-ec6e6134924048859b2a8410b0a8b20d'" target="_blank" rel="noopener"><mat-icon>calendar_month</mat-icon> Sky Event Calendar | FM</a>
   <ng-content></ng-content>

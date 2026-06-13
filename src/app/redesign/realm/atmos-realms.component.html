@@ -52,12 +52,12 @@
       <div class="atmos-card__body atmos-realms__card-body">
         <h2 class="atmos-realms__card-title">{{ realm.name }}</h2>
         <div class="atmos-realms__card-links">
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/r/realm', realm.guid]">
+          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', realm.guid]">
             <mat-icon>article</mat-icon>
             <span>Overview</span>
           </a>
           @if (realm.areas?.length) {
-            <a class="atmos-btn atmos-btn--sm" routerLink="/r/area" [queryParams]="{ realm: realm.guid }">
+            <a class="atmos-btn atmos-btn--sm" routerLink="/area" [queryParams]="{ realm: realm.guid }">
               <mat-icon>location_on</mat-icon>
               <span>Areas</span>
             </a>
