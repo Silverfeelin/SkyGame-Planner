@@ -197,6 +197,8 @@ export class AtmosItemUnlockCalculatorComponent {
       if (err) { errors.push(`${e.item.name}: ${err}`); }
     });
     if (errors.length) { alert(errors.join('\n')); }
+
+    this.calculate();
   }
 
   onItemsChanged(items: Array<IItem>): void {
