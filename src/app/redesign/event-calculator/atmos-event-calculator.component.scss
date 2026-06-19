@@ -101,6 +101,7 @@
   mat-icon { color: var(--atmos-warm); }
 }
 
+// Used for the item-list row above; the spirit-tree row uses shared .atmos-spirit-trees.
 .atmos-event-calc__trees {
   display: flex;
   overflow-x: auto;

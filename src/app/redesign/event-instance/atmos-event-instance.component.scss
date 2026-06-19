@@ -58,9 +58,7 @@
 }
 
 .atmos-event-instance__trees {
-  display: flex;
-  overflow-x: auto;
-  gap: var(--atmos-gap);
+  // Layout from shared .atmos-spirit-trees; only page-specific padding remains.
   padding-bottom: 8px;
 }
 

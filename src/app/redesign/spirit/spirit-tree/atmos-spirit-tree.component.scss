@@ -1,5 +1,16 @@
 .atmos-spirit-tree {
   display: block;
+  // Shrink the card to its content width (instead of stretching full-width and
+  // leaving large empty side gaps) and center it within the available space.
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  // Own panel styling instead of reusing .atmos-card — intentionally no box-shadow,
+  // so a tree nested inside a page section card doesn't add a competing shadow.
+  background: var(--atmos-card-bg);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
 
   &.has-pad-bottom {
     padding-bottom: var(--atmos-pad);
@@ -13,6 +24,10 @@
 
 .atmos-spirit-tree__body {
   padding: var(--atmos-pad);
+  // Vertical stack + gap previously supplied by .atmos-card__body.
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .atmos-spirit-tree__header {
@@ -29,6 +44,12 @@
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-spirit-tree__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--atmos-pad);
 }
 
 .atmos-spirit-tree__cost {
@@ -103,6 +124,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  margin-inline: auto;
 }
 
 .atmos-spirit-tree__row {
@@ -137,7 +159,9 @@ $st-diag-length: 107.33px;
 $st-diag-angle: 116.57deg;
 
 .atmos-spirit-tree__columns {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
   gap: $st-col-gap;
   align-items: flex-end; // root row aligns at the bottom of the flex box
 }

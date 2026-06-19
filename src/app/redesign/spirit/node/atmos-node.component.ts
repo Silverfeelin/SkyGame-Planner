@@ -28,6 +28,9 @@ export type AtmosNodePosition = 'left' | 'center' | 'right';
   templateUrl: './atmos-node.component.html',
   styleUrl: './atmos-node.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  // Expose the node GUID as a DOM attribute so consumers (e.g. the spirit-tree
+  // editor's drag-to-swap) can hit-test nodes via `elementsFromPoint`.
+  host: { '[attr.guid]': 'node().guid' },
   imports: [ItemIconComponent, MatIcon, NgTemplateOutlet, RouterLink]
 })
 export class AtmosNodeComponent {

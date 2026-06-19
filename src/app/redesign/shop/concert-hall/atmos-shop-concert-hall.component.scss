@@ -13,11 +13,3 @@
   padding: var(--atmos-pad-compact) var(--atmos-pad);
   border-bottom: 1px solid var(--atmos-line);
 }
-
-
-.atmos-shop-concert-hall__tree-scroll {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--atmos-gap);
-  overflow-x: auto;
-}

@@ -246,7 +246,7 @@
 
   <!-- Trees -->
   <section class="atmos-card">
-    <div class="atmos-card__body atmos-calc__trees">
+    <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
       @for (tree of trees; track tree.guid) {
         <app-atmos-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
           [enableControls]="false" [forceNodeAction]="'emit'"

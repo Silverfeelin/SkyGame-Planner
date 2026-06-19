@@ -1,5 +1,5 @@
-<section class="atmos-spirit-tree atmos-card" [class.has-pad-bottom]="padBottom()" [class.is-highlighted]="highlight()" [attr.data-tree]="tree().guid">
-  <div class="atmos-spirit-tree__body atmos-card__body">
+<section class="atmos-spirit-tree" [class.has-pad-bottom]="padBottom()" [class.is-highlighted]="highlight()" [attr.data-tree]="tree().guid">
+  <div class="atmos-spirit-tree__body">
     @if (visibleName()) {
       <header class="atmos-spirit-tree__header">
         <h3 class="atmos-spirit-tree__title">
@@ -8,11 +8,6 @@
             <span class="atmos-spirit-tree__date">(<app-date [date]="d"></app-date>)</span>
           }
         </h3>
-        <app-cost
-          class="atmos-spirit-tree__cost"
-          [cost]="totalCost()"
-          [remaining]="remainingCost()"
-          [borderLeft]="false"></app-cost>
       </header>
     }
 
@@ -153,5 +148,13 @@
     @if (tree().draft) {
       <app-atmos-draft-warning />
     }
+
+    <footer class="atmos-spirit-tree__footer">
+      <app-cost
+        class="atmos-spirit-tree__cost"
+        [cost]="totalCost()"
+        [remaining]="remainingCost()"
+        [borderLeft]="false"></app-cost>
+    </footer>
   </div>
 </section>

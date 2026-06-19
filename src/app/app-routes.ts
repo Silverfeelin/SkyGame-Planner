@@ -31,11 +31,10 @@ export const routes: Routes = [
       { path: 'cr-tracker', redirectTo: 'realm/cr-tracker' },
       { path: 'spirit-tree/editor', redirectTo: 'editor/spirit-tree' },
       { path: 'season/migration-optimizer', redirectTo: 'season/optimizer' },
-      /* Editor — atmos editor layout (no atmos chrome). */
+      /* Editor — rendered inside the atmos shell. */
       {
         path: 'editor',
         component: EditorLayoutComponent,
-        data: { chrome: false },
         loadChildren: () => import('./editor/editor-routes').then(m => m.routes),
       },
       /* Redesign atmospheric shell — default for all /-rooted pages. */

@@ -5,12 +5,12 @@
 </div>
 
 <div class="editor-grid">
-  <app-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
+  <app-atmos-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
     (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
     [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
     [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
     [highlightNode]="selectedTreeNode.node.guid"
-  ></app-spirit-tree>
+  ></app-atmos-spirit-tree>
   <div class="editor-grid-selection atmos-card">
     <div class="atmos-card__header">
       Selected item
@@ -168,10 +168,10 @@
               <div class="form-stack gap-half">
                 <button (click)="promptCopySpiritTree(spiritTree, false)">Copy as new tree</button>
                 <button (click)="promptCopySpiritTree(spiritTree, true)">Modify this tree</button>
-                <app-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
+                <app-atmos-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
                   [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
                   [opaqueNodes]="true" [showNodeTooltips]="true">
-                </app-spirit-tree>
+                </app-atmos-spirit-tree>
               </div>
             }
           </div>

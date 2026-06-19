@@ -89,12 +89,5 @@
   &--warn { color: var(--atmos-text); }
 }
 
-.atmos-calc__trees {
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  overflow-x: auto;
-}
-
 .is-met { color: var(--atmos-good); }
 .is-lacking { color: var(--atmos-warm); }

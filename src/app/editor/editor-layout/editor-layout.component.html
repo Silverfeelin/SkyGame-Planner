@@ -1,10 +1,9 @@
-<nav class="editor-nav atmos-card">
-  <a [routerLink]="['/editor']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
-  <a [routerLink]="['/editor/todo']" routerLinkActive="is-active">Todo</a>
-  <a [routerLink]="['/editor/spirit-tree']" routerLinkActive="is-active">Spirit Tree</a>
-  <a [routerLink]="['/editor/dye']" routerLinkActive="is-active">Dyes</a>
-  <a [routerLink]="['/editor/outfit-shrine']" routerLinkActive="is-active">Outfit Shrine</a>
-</nav>
+<section class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/editor/todo"><mat-icon>checklist</mat-icon> Todo</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/editor/spirit-tree"><mat-icon>account_tree</mat-icon> Spirit Tree</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/editor/dye"><mat-icon>palette</mat-icon> Dyes</a>
+  <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/editor/outfit-shrine"><mat-icon>checkroom</mat-icon> Outfit Shrine</a>
+</section>
 <div class="editor-content">
   <router-outlet></router-outlet>
 </div>

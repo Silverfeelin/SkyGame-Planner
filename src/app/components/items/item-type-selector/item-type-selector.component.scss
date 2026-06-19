@@ -28,5 +28,5 @@
   height: var(--item-size-medium);
   background: var(--atmos-bg);
   border-radius: var(--atmos-radius-sm);
-  filter: drop-shadow(1px 0px 1px #000);
+  filter: drop-shadow(1px 0px 1px var(--atmos-overlay-shadow));
 }

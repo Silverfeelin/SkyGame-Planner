@@ -43,7 +43,7 @@
   width: 100%;
   height: 100%;
   transition: var(--atmos-transition);
-  filter: drop-shadow(1px 0px 1px #000);
+  filter: drop-shadow(1px 0px 1px var(--atmos-overlay-shadow));
 }
 
 :host.hoverable:hover {

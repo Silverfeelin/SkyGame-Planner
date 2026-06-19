@@ -126,7 +126,7 @@
   <section class="atmos-card atmos-realm__trees" #divSpiritTrees>
     <div class="atmos-card__body atmos-realm__trees-body">
       <h2 class="atmos-realm__trees-title">Spirit trees</h2>
-      <div class="atmos-realm__trees-scroll">
+      <div class="atmos-spirit-trees atmos-realm__trees-scroll">
         @for (data of spirits; track data.spirit.guid) {
           <div class="atmos-realm__tree-wrapper">
             <app-atmos-spirit-tree [tree]="data.tree" [name]="data.spirit.name" [highlight]="highlightTree === data.tree.guid">

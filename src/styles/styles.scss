@@ -338,17 +338,17 @@ body { scrollbar-width: thin; }
   font-size: 0.9rem;
 }
 
-.dye-red { color: #93362f; }
-.dye-purple { color: #af76ad; }
-.dye-blue { color: #4f81b4; }
-.dye-cyan { color: #73c1c1; }
-.dye-green { color: #7f9558; }
-.dye-yellow { color: #bc9d53; }
+.dye-red { color: var(--atmos-dye-red); }
+.dye-purple { color: var(--atmos-dye-purple); }
+.dye-blue { color: var(--atmos-dye-blue); }
+.dye-cyan { color: var(--atmos-dye-cyan); }
+.dye-green { color: var(--atmos-dye-green); }
+.dye-yellow { color: var(--atmos-dye-yellow); }
 .dye-black {
-  color: #232323;
-  filter: drop-shadow(1px 0px 0px #666) drop-shadow(0px 1px 0px #666) drop-shadow(-1px 0px 0px #666) drop-shadow(0px -1px 0px #666)
+  color: var(--atmos-dye-black);
+  filter: drop-shadow(1px 0px 0px var(--atmos-dye-black-outline)) drop-shadow(0px 1px 0px var(--atmos-dye-black-outline)) drop-shadow(-1px 0px 0px var(--atmos-dye-black-outline)) drop-shadow(0px -1px 0px var(--atmos-dye-black-outline))
 }
-.dye-white { color: #c1c1c1; }
+.dye-white { color: var(--atmos-dye-white); }
 
 p:last-child {
   margin-bottom: 0;
@@ -362,7 +362,7 @@ p:last-child {
   opacity: 0;
   transition: opacity var(--atmos-transition);
   pointer-events: none;
-  text-shadow: #000 1px 1px 0;
+  text-shadow: var(--atmos-overlay-shadow) 1px 1px 0;
 
   &.unlocked {
     opacity: 1;
@@ -383,7 +383,7 @@ p:last-child {
   width: 38px;
   height: 38px;
   border-radius: var(--atmos-radius-sm);
-  background-color: #5ECCF2;
+  background-color: var(--atmos-wiki);
   background-image: url(/assets/external/sky-wiki-favicon-full.png);
   background-size: 32px 32px;
   background-position: center;
@@ -490,14 +490,15 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   transform: translate(-50%, -50%);
   line-height: 24px;
   font-size: 24px;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+  color: var(--atmos-on-overlay);
+  text-shadow: 2px 2px 4px var(--atmos-overlay-shadow);
   pointer-events: none;
 }
 
 /* Intro.js */
 .introjs-tooltip {
-  color: #000;
+  color: var(--atmos-intro-text);
+  background-color: var(--atmos-intro-bg);
   font-size: 16px;
 }
 .introjs-tooltiptext {
@@ -508,6 +509,10 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   padding-right: 10px;
   padding-top: 10px;
 }
+.introjs-arrow.top, .introjs-arrow.top-right, .introjs-arrow.top-middle { border-bottom-color: var(--atmos-intro-bg); }
+.introjs-arrow.bottom, .introjs-arrow.bottom-right, .introjs-arrow.bottom-middle { border-top-color: var(--atmos-intro-bg); }
+.introjs-arrow.left { border-right-color: var(--atmos-intro-bg); }
+.introjs-arrow.right { border-left-color: var(--atmos-intro-bg); }
 
 ngb-tooltip-window {
   z-index: 99999999 !important; // On top of Intro.js highlight.

@@ -4,12 +4,6 @@
   gap: var(--atmos-gap);
 }
 
-.atmos-tree-viewer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--atmos-gap);
-}
-
 .atmos-tree-viewer__tree {
   flex: 0 0 auto;
 }

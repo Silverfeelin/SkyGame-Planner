@@ -97,6 +97,31 @@
   /* Text shadows for type floating over the bg image. */
   --atmos-text-shadow:       0 1px 8px oklch(0.05 0.02 var(--atmos-hue) / 0.6);
   --atmos-text-shadow-large: 0 2px 16px oklch(0.05 0.02 var(--atmos-hue) / 0.75);
+
+  /* Dye swatch colours — fixed in-game dye colours, theme-independent. */
+  --atmos-dye-red:           #93362f;
+  --atmos-dye-purple:        #af76ad;
+  --atmos-dye-blue:          #4f81b4;
+  --atmos-dye-cyan:          #73c1c1;
+  --atmos-dye-green:         #7f9558;
+  --atmos-dye-yellow:        #bc9d53;
+  --atmos-dye-black:         #232323;
+  --atmos-dye-black-outline: #666;
+  --atmos-dye-white:         #c1c1c1;
+
+  /* Sky Wiki brand colour. */
+  --atmos-wiki: #5ECCF2;
+
+  /* Text/shadow over arbitrary overlays (e.g. floating currency gained). */
+  --atmos-on-overlay:     #fff;
+  --atmos-overlay-shadow: rgba(0, 0, 0, 1);
+
+  /* Dark translucent backdrop behind transparent image previews (editor). */
+  --atmos-preview-bg: rgba(0, 0, 0, 0.5);
+
+  /* Intro.js tour tooltip — themed onto atmos surfaces. */
+  --atmos-intro-bg:   var(--atmos-bg-elev-2);
+  --atmos-intro-text: var(--atmos-text);
 }
 
 .atmos-card {
@@ -586,4 +611,17 @@
   flex-direction: column;
   flex: 1;
   min-height: 0;
+}
+
+// 11. Spirit-tree row — flex container for one or more <app-atmos-spirit-tree>.
+//     Trees are bottom-aligned so they share a baseline and grow upward.
+.atmos-spirit-trees {
+  display: flex;
+  flex-direction: row; // explicit — some hosts also carry .atmos-card__body (column)
+  gap: var(--atmos-gap);
+  align-items: flex-end;
+  overflow-x: auto;
+}
+.atmos-spirit-trees--wrap {
+  flex-wrap: wrap;
 }

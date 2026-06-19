@@ -104,10 +104,7 @@
 }
 
 .atmos-realm__trees-scroll {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: var(--atmos-gap);
-  overflow-x: auto;
+  // Layout from shared .atmos-spirit-trees; only page-specific padding remains.
   padding-bottom: 4px;
 }
 

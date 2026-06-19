@@ -299,7 +299,7 @@
   @if (spirits.length) {
     <section class="atmos-card atmos-event-calc__section">
       <div class="atmos-card__body">
-        <div class="atmos-event-calc__trees">
+        <div class="atmos-spirit-trees">
           @for (spiritInstance of spirits; track spiritInstance.guid) {
             <app-atmos-spirit-tree [tree]="spiritInstance.tree"
               [name]="spiritInstance.name || spiritInstance.spirit.name || ''"

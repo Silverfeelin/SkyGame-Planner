@@ -87,7 +87,7 @@
       <header class="atmos-season__section-header">
         <h2 class="atmos-section__title atmos-section__title--lg">Post-season guide tree</h2>
       </header>
-      <div class="atmos-card__body atmos-season__trees">
+      <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
         <div class="atmos-season__tree">
           <div class="atmos-season__tree-name">
             <a class="atmos-text-link" [routerLink]="['/spirit', guide()!.guid]"
@@ -107,7 +107,7 @@
         {{ state() === 'ended' ? 'Season spirit trees' : 'Spirit trees' }}
       </h2>
     </header>
-    <div class="atmos-card__body atmos-season__trees">
+    <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
       @if (guide(); as g) {
         @if (guideTree(); as gt) {
           <div class="atmos-season__tree">
@@ -139,7 +139,7 @@
       <header class="atmos-season__section-header">
         <h2 class="atmos-section__title atmos-section__title--lg">Related spirit trees</h2>
       </header>
-      <div class="atmos-card__body atmos-season__trees">
+      <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
         @for (tree of includedTrees(); track tree.guid) {
           <div class="atmos-season__tree">
             @if (tree.spirit) {

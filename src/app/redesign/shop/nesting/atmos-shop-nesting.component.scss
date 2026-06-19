@@ -19,12 +19,6 @@
   gap: var(--atmos-gap);
 }
 
-.atmos-shop-nesting__scroll {
-  display: flex;
-  gap: var(--atmos-gap);
-  overflow-x: auto;
-}
-
 .atmos-shop-nesting__note {
   color: var(--atmos-text-dim);
   font-size: 14px;

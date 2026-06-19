@@ -26,7 +26,7 @@
   height: 20px;
   font-size: 20px;
   color: var(--atmos-warm);
-  text-shadow: #000 1px 1px 0;
+  text-shadow: var(--atmos-overlay-shadow) 1px 1px 0;
 }
 
 .img-bl-above {
@@ -54,7 +54,7 @@
 }
 
 .subicon-shadow {
-  filter: drop-shadow(1px 0px 1px #000);
+  filter: drop-shadow(1px 0px 1px var(--atmos-overlay-shadow));
 }
 
 .subicon-limited {

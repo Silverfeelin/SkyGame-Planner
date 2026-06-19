@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
-import { SpiritTreeComponent, SpiritTreeNodeClickEvent } from "../../../components/spirit-tree/spirit-tree.component";
+import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from "@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component";
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
@@ -26,7 +26,7 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    NgbTooltip, MatIcon, SpiritTreeComponent, ItemsComponent,
+    NgbTooltip, MatIcon, AtmosSpiritTreeComponent, ItemsComponent,
     ItemIconComponent, OverlayComponent,
     EditorItemComponent, TabsComponent, TabDirective
 ],
@@ -67,7 +67,7 @@ export class SpiritTreeEditorComponent {
   @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLInputElement>;
   @ViewChild('inpCost', { static: true }) inpCost!: ElementRef<HTMLInputElement>;
   @ViewChild('selCostType', { static: true }) selCostType!: ElementRef<HTMLSelectElement>;
-  @ViewChild('refTree', { static: true }) refTree!: SpiritTreeComponent;
+  @ViewChild('refTree', { static: true }) refTree!: AtmosSpiritTreeComponent;
   @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: NgbTooltip;
 
   tree: ISpiritTree;
@@ -242,7 +242,7 @@ export class SpiritTreeEditorComponent {
     this.reloadTree();
   }
 
-  onNodeClicked(event: SpiritTreeNodeClickEvent) {
+  onNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
     const treeNode = this.nodeMap[event.node.guid];
     this.selectTreeNode(treeNode);
   }
@@ -333,7 +333,7 @@ export class SpiritTreeEditorComponent {
     this.spiritTrees = Array.from(trees).reverse();
   }
 
-  onSpiritNodeClicked(event: SpiritTreeNodeClickEvent) {
+  onSpiritNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
     if (!event.node.item) { return; }
     this.onItemClicked({ item: event.node.item, event: event.event });
     this.setCostInputs(event.node);
@@ -532,7 +532,7 @@ export class SpiritTreeEditorComponent {
   draggingPreview?: HTMLImageElement;
   onTreePointerDown(event: PointerEvent): void {
     const target = event.target as HTMLElement;
-    const nodeEl = target.closest('app-node') as HTMLElement;
+    const nodeEl = target.closest('app-atmos-node') as HTMLElement;
     if (!nodeEl) { return; }
 
     this.draggingNode = nodeEl;
@@ -570,7 +570,7 @@ export class SpiritTreeEditorComponent {
     if (!this.draggingNode) { return; }
     const draggingNode = this.draggingNode;
     this.draggingNode = undefined;
-    const target = document.elementsFromPoint(event.clientX, event.clientY).find(e => e.tagName === 'APP-NODE');
+    const target = document.elementsFromPoint(event.clientX, event.clientY).find(e => e.tagName === 'APP-ATMOS-NODE');
     if (!target || target === draggingNode) { return; }
 
     // Swap nodes.
@@ -589,7 +589,7 @@ export class SpiritTreeEditorComponent {
 
   onTreeTouchStart(event: TouchEvent): void {
     const target = event.target as HTMLElement;
-    if (target?.closest('app-node')) { event.preventDefault(); }
+    if (target?.closest('app-atmos-node')) { event.preventDefault(); }
   }
 
   // #endregion

@@ -85,9 +85,7 @@ img.atmos-spirit__meta-icon {
 }
 
 .atmos-spirit__trees-scroll {
-  display: flex;
-  gap: var(--atmos-gap);
-  overflow-x: auto;
+  // Layout from shared .atmos-spirit-trees; only page-specific extras remain.
   padding: 0 var(--atmos-pad) var(--atmos-pad-compact) var(--atmos-pad);
   scroll-snap-type: x proximity;
 }

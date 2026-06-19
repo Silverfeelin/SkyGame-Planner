@@ -1,5 +1,5 @@
 @if (trees().length) {
-  <div class="atmos-tree-viewer">
+  <div class="atmos-spirit-trees atmos-spirit-trees--wrap">
     @for (tree of trees(); track tree.guid) {
       <div class="atmos-tree-viewer__tree">
         <app-atmos-spirit-tree [tree]="tree"></app-atmos-spirit-tree>

@@ -2,33 +2,5 @@
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap);
-  padding: var(--atmos-pad);
   min-height: 100%;
-}
-
-.editor-nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 4px;
-  padding: var(--atmos-pad-compact);
-
-  a {
-    padding: 6px 14px;
-    color: var(--atmos-text-dim);
-    text-decoration: none;
-    border-radius: var(--atmos-radius-sm);
-    font-size: 14px;
-    transition: background var(--atmos-transition), color var(--atmos-transition);
-
-    &:hover {
-      background: var(--atmos-hover-bg);
-      color: var(--atmos-text);
-    }
-
-    &.is-active {
-      background: var(--atmos-hover-bg-strong);
-      color: var(--atmos-text);
-    }
-  }
 }

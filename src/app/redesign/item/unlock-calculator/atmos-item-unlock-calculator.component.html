@@ -87,7 +87,7 @@
             The spirit trees show the cost of all the items you need to get your selection.
           </p>
           @if (showAsTrees) {
-            <div class="atmos-item-unlock-calc__trees">
+            <div class="atmos-spirit-trees atmos-spirit-trees--wrap">
               @for (tree of trees; track tree.guid) {
                 <app-atmos-spirit-tree [tree]="tree" [forceNodeAction]="'emit'"
                   [enableControls]="false"

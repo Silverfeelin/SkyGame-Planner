@@ -42,13 +42,6 @@
   display: inline-block;
 }
 
-.atmos-item-unlock-calc__trees {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--atmos-gap);
-  overflow-x: auto;
-}
-
 .atmos-item-unlock-calc__results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
