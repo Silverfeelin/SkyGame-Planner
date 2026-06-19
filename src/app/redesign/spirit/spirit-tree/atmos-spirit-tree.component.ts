@@ -191,13 +191,13 @@ export class AtmosSpiritTreeComponent {
     };
     build(t.node, 0, 0);
 
-    // Pad all columns to the same length with undefined so slots align.
-    const maxLen = Math.max(cols.left.length, cols.center.length, cols.right.length);
-    for (let i = 0; i < maxLen; i++) {
-      if (cols.left[i]   === undefined) { cols.left[i]   = undefined; }
-      if (cols.center[i] === undefined) { cols.center[i] = undefined; }
-      if (cols.right[i]  === undefined) { cols.right[i]  = undefined; }
-    }
+    // Trim trailing empty slots at the top.
+    const trimTop = (arr: Array<INode | undefined>) => {
+      while (arr.length && arr[arr.length - 1] === undefined) { arr.pop(); }
+    };
+    trimTop(cols.left);
+    trimTop(cols.center);
+    trimTop(cols.right);
 
     return cols;
   });

@@ -76,7 +76,7 @@
   <atmos-item-grid-layout [items]="allItems" [itemTemplate]="pickerTpl" [initialCategory]="initialCategory"/>
   <ng-template #pickerTpl let-item>
     <button type="button"
-            class="atmos-coll__picker-item"
+            class="atmos-coll__picker-item atmos-tile"
             [class.is-selected]="editItemSet.has(item)"
             [title]="item.name"
             (click)="onItemClickedPicker(item)">
@@ -146,7 +146,7 @@
       @if (collection.items.length) {
         <div class="atmos-coll__items-strip atmos-card__body">
           @for (item of collection.items; track item.guid) {
-            <a class="atmos-coll__strip-item" [routerLink]="['/item', item.guid]" [title]="item.name">
+            <a class="atmos-coll__strip-item atmos-tile" [routerLink]="['/item', item.guid]" [title]="item.name">
               <app-icon [src]="item.icon || '/assets/icons/question.webp'"
                         width="48px" height="48px"
                         [lazy]="true" [draggable]="false"/>

@@ -133,16 +133,11 @@
 /* Item picker */
 .atmos-coll__picker-item {
   position: relative;
-  background: transparent;
   border: 2px solid transparent;
   border-radius: var(--atmos-radius-sm);
   padding: 6px;
   cursor: pointer;
   transition: background var(--atmos-transition), border-color var(--atmos-transition);
-
-  &:hover {
-    background: var(--atmos-hover-tint);
-  }
 
   &.is-selected {
     border-color: var(--atmos-accent);
@@ -240,11 +235,6 @@
   text-decoration: none;
   border-radius: var(--atmos-radius-sm);
   padding: 4px;
-  transition: background var(--atmos-transition);
   width: 56px;
   height: 56px;
-
-  &:hover {
-    background: var(--atmos-hover-tint);
-  }
 }

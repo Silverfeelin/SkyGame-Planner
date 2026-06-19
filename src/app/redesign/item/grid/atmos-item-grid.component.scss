@@ -10,12 +10,7 @@
   height: 64px;
   border-radius: 10px;
   overflow: hidden;
-  transition: background var(--atmos-transition);
   text-decoration: none;
-
-  &:hover {
-    background: var(--atmos-hover-tint);
-  }
 
   &.is-locked app-icon {
     opacity: 0.35;

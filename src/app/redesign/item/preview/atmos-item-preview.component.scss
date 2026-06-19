@@ -11,11 +11,6 @@
   border-radius: 10px;
   overflow: hidden;
   padding: 12px 32px 12px 12px;
-  transition: background var(--atmos-transition);
-
-  &:hover {
-    background: var(--atmos-hover-tint);
-  }
 }
 
 .atmos-item-preview__img {

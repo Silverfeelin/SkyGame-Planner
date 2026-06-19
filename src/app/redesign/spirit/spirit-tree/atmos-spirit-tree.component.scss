@@ -49,7 +49,6 @@
 .atmos-spirit-tree__footer {
   display: flex;
   justify-content: center;
-  margin-top: var(--atmos-pad);
 }
 
 .atmos-spirit-tree__cost {
@@ -145,18 +144,14 @@
 }
 
 // ── Columns-first layout for node trees ──────────────────────────────────────
-//
-// Layout constants — must stay in sync across all three classes below.
-// dx = --item-size + col-gap = 64 + 32 = 96px
-// dy = side-offset = 48px
-// diag-length = sqrt(96² + 48²) = sqrt(11520) = 48√5 ≈ 107.33px
-// diag-angle = 90° + atan2(48, 96) ≈ 90° + 26.57° = 116.57° (CW from down → points upper-left)
 $st-col-gap: 32px;
-$st-row-gap: 40px;
+$st-row-gap: 44px;
 $st-side-offset: 48px;
 $st-item-size: 64px;
 $st-diag-length: 107.33px;
 $st-diag-angle: 116.57deg;
+$st-diag-trim: 40px;
+$st-up-trim: 12px;
 
 .atmos-spirit-tree__columns {
   display: flex;
@@ -203,33 +198,33 @@ $st-diag-angle: 116.57deg;
 // Thin connector lines between nodes.
 .atmos-conn {
   position: absolute;
-  width: 1px;
-  background: var(--atmos-line-soft);
+  width: 2px;
+  background: oklch(0.95 0.01 var(--atmos-hue) / 0.5);
   pointer-events: none;
 }
 
 // Vertical line upward to the N neighbour.
 .atmos-conn--up {
-  height: $st-row-gap;
-  top: -$st-row-gap;
+  height: $st-row-gap - 2 * $st-up-trim;
+  top: -$st-row-gap + $st-up-trim;
   left: 50%;
   transform: translateX(-50%);
 }
 
-// Diagonal line to the NW neighbour (upper-left column, one level up).
+// Diagonal line to the NW neighbour.
 .atmos-conn--nw {
-  height: $st-diag-length;
+  height: $st-diag-length - 2 * $st-diag-trim;
   left: 50%;
   top: 50%;
   transform-origin: top center;
-  transform: translateX(-50%) rotate($st-diag-angle);
+  transform: translateX(-50%) rotate($st-diag-angle) translateY($st-diag-trim);
 }
 
-// Diagonal line to the NE neighbour (upper-right column, one level up).
+// Diagonal line to the NE neighbour.
 .atmos-conn--ne {
-  height: $st-diag-length;
+  height: $st-diag-length - 2 * $st-diag-trim;
   left: 50%;
   top: 50%;
   transform-origin: top center;
-  transform: translateX(-50%) rotate(-$st-diag-angle);
+  transform: translateX(-50%) rotate(-$st-diag-angle) translateY($st-diag-trim);
 }

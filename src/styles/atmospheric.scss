@@ -48,6 +48,10 @@
   --atmos-hover-tint:      oklch(0.95 0.01 var(--atmos-hue) / 0.06);
   --atmos-transition:      120ms ease;
 
+  /* Interactive tile surface (persistent bg + hover). Reusable across icon-tile grids. */
+  --atmos-tile-bg:       var(--atmos-chip-bg);          /* 6% resting fill */
+  --atmos-tile-bg-hover: var(--atmos-hover-bg-strong);  /* 16% hover step */
+
   /* Cards. */
   --atmos-card-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
   --atmos-card-bg-solid: oklch(0.20 0.035 var(--atmos-hue));
@@ -197,6 +201,18 @@
 
 .atmos-btn:active {
   transform: translateY(1px);
+}
+
+/* Interactive tile surface — persistent background that brightens on hover.
+   Add to any icon-tile/cell that should always show a background. Geometry
+   (size, radius, overflow) stays on the component class. */
+.atmos-tile {
+  background: var(--atmos-tile-bg);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-tile-bg-hover);
+  }
 }
 
 .atmos-btn[disabled],

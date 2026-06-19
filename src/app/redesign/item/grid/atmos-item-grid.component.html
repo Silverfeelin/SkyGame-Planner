@@ -6,7 +6,7 @@
 
 <atmos-item-grid-layout [items]="items" [itemTemplate]="iconTpl"/>
 <ng-template #iconTpl let-item>
-  <a class="atmos-item-grid__item"
+  <a class="atmos-item-grid__item atmos-tile"
      [class.is-locked]="!item.unlocked"
      [routerLink]="['/item', item.guid]"
      [title]="item.name">
