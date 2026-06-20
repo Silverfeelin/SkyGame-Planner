@@ -21,8 +21,7 @@
   position: relative;
   padding: var(--atmos-pad-compact);
   border-radius: var(--atmos-radius-sm);
-  background: var(--atmos-bg-elev);
-  border: var(--atmos-card-border);
+  border: 2px solid var(--atmos-tile-bg);
   width: 100%;
   max-width: 280px;
   display: flex;
@@ -57,39 +56,63 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
 
-  &--clickable {
-    cursor: pointer;
-    border-radius: var(--atmos-radius-sm);
-    padding: 4px 6px;
-    margin: -4px -6px;
-    transition: background var(--atmos-transition);
+  &--clickable { cursor: pointer; }
 
-    &:hover {
-      background: var(--atmos-hover-tint);
-    }
+  // Highlight rows the user can act on: explicitly clickable rows (favourite)
+  // and any row that contains a link (incl. the child wiki-link anchor).
+  &--clickable:hover,
+  &:has(a):hover {
+    background: var(--atmos-hover-bg);
+  }
+
+  mat-icon {
+    flex-shrink: 0;
+    color: var(--atmos-accent);
   }
 }
 
-.atmos-item-detail__icon {
-  flex-shrink: 0;
-
-  &.is-favourited {
-    color: var(--atmos-warm);
-  }
+.atmos-item-detail__icon.is-favourited {
+  color: var(--atmos-warm);
 }
 
 .atmos-item-detail__link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
+  min-width: 0;
   text-decoration: none;
   color: inherit;
-  transition: color var(--atmos-transition);
+}
 
-  &:hover {
-    color: var(--atmos-accent);
-  }
+// The wiki link renders its own anchor in a child component; pierce
+// encapsulation so it matches the surrounding accent-icon fact rows.
+:host ::ng-deep .atmos-item-detail__row app-wiki-link a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: none;
+}
+
+:host ::ng-deep .atmos-item-detail__row app-wiki-link mat-icon {
+  flex-shrink: 0;
+  color: var(--atmos-accent);
+  // Undo the legacy absolute-positioned menu icon layout so it sits inline
+  // with the same gap as the other action rows.
+  position: static;
+}
+
+:host ::ng-deep .atmos-item-detail__row app-wiki-link .menu-label {
+  padding-left: 0;
 }
 
 .atmos-item-detail__code {

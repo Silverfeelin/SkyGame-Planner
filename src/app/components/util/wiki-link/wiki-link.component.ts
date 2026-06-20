@@ -11,7 +11,7 @@ import { IWiki } from 'skygame-data';
     imports: [MatIcon]
 })
 export class WikiLinkComponent {
-  @Input() aClass? = 'container d-inline-block';
+  @Input() aClass? = '';
   @Input() wiki?: IWiki;
   @Input() order?: number;
   label = input('Wiki');

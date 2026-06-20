@@ -32,7 +32,8 @@
 .atmos-spirit__image {
   border-radius: var(--atmos-radius-sm);
   overflow: hidden;
-  background: var(--atmos-hover-tint);
+  border: 2px solid var(--atmos-tile-bg);
+  padding: var(--atmos-pad-compact);
 
   img {
     display: block;
@@ -42,23 +43,32 @@
 }
 
 .atmos-spirit__meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: var(--atmos-gap-compact);
-  align-content: start;
 }
 
 .atmos-spirit__meta-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   color: var(--atmos-text);
   text-decoration: none;
-  padding: 6px 4px;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  border-radius: var(--atmos-radius-sm);
   border-bottom: none;
-  transition: color var(--atmos-transition);
+  transition: background var(--atmos-transition), color var(--atmos-transition);
 
-  &:hover { color: var(--atmos-accent); }
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+}
+
+.atmos-spirit__meta-item mat-icon {
+  flex: 0 0 auto;
+  color: var(--atmos-accent);
 }
 
 .atmos-spirit__meta-icon {
@@ -70,6 +80,34 @@
 
 img.atmos-spirit__meta-icon {
   object-fit: contain;
+}
+
+// The wiki link renders its own anchor in a child component; pierce
+// encapsulation so it matches the surrounding accent-icon fact rows.
+:host ::ng-deep .atmos-spirit__meta app-wiki-link a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text);
+  text-decoration: none;
+  border-bottom: none;
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  mat-icon {
+    flex: 0 0 auto;
+    color: var(--atmos-accent);
+    // Undo the legacy absolute-positioned menu icon layout so it sits inline.
+    position: static;
+  }
+
+  .menu-label {
+    padding-left: 0;
+  }
 }
 
 .atmos-spirit__trees-body {

@@ -8,7 +8,7 @@
   color: var(--atmos-text);
   transition: background var(--atmos-transition), opacity var(--atmos-transition);
 
-  &:hover { background: var(--atmos-hover-tint); }
+  &:hover { background: var(--atmos-tile-bg-hover); }
 
   &.is-checked {
     color: var(--atmos-text-dim);
