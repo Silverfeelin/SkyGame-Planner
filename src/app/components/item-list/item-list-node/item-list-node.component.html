@@ -1,4 +1,4 @@
-<div class="node" [ngbTooltip]="itemHover" placement="bottom" container="body">
+<div class="node" [skyTooltip]="itemHover" placement="bottom">
   <a class="item" [class.highlight]="highlight"
     [routerLink]="['/item', node.item.guid]" [queryParams]="{ showTipUnlock: '1' }" >
     <app-item-icon [item]="node.item" [opaque]="opaque" [listNode]="node" [subIcons]="['unlock']"></app-item-icon>

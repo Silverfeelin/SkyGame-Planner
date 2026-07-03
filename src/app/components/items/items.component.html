@@ -104,7 +104,7 @@
         @if (showRealmFilters) {
           <div class="sky-flex flex-wrap">
             @for (realm of realms; track realm.guid) {
-              <button (click)="toggleRealmFilter(realm)" [ngbTooltip]="realm.name" container="body" placement="top">
+              <button (click)="toggleRealmFilter(realm)" [skyTooltip]="realm.name" placement="top">
                 <mat-icon class="menu-icon"><app-checkbox [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
                 <span class="menu-label">
                   {{ realm.shortName }}
@@ -124,7 +124,7 @@
         @if (showSeasonFilters) {
           <div class="sky-flex flex-wrap">
             @for (season of seasons; track season.guid) {
-              <button (click)="toggleSeasonFilter(season)" [ngbTooltip]="season.name" container="body" placement="top">
+              <button (click)="toggleSeasonFilter(season)" [skyTooltip]="season.name" placement="top">
                 <mat-icon class="menu-icon"><app-checkbox [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
                 <span class="menu-label">
                   <app-icon class="d-inline-block v-top" [width]="'24px'" [height]="'24px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
@@ -145,7 +145,7 @@
         @if (showEventFilters) {
           <div class="sky-flex flex-wrap">
             @for (event of events; track event.guid) {
-              <button (click)="toggleEventFilter(event)" [ngbTooltip]="event.name" container="body" placement="top">
+              <button (click)="toggleEventFilter(event)" [skyTooltip]="event.name" placement="top">
                 <mat-icon class="menu-icon"><app-checkbox [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox></mat-icon>
                 <span class="menu-label">
                   {{ event.shortName ?? event.name }}
@@ -188,7 +188,7 @@
               <app-item-icon [item]="item" [subIcons]="['type', 'season', 'elder', 'iap', 'favourite', 'unlock', 'limited']"
                 [class.highlight]="item && item === highlightItem" [opaque]="opaqueItems"
                 [class.item-backlight]="backlightItemSet ? backlightItemSet[item.guid] : item.unlocked"
-                [ngbTooltip]="item.name" container="body" placement="auto" >
+                [skyTooltip]="item.name" placement="auto" >
               </app-item-icon>
             </a>
           }

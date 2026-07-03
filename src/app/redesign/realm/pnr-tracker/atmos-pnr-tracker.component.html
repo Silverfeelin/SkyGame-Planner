@@ -1,16 +1,16 @@
 <div class="atmos-pnr-tracker__container">
   <div class="atmos-pnr-tracker__controls">
-    <button type="button" class="atmos-btn atmos-btn--sm" [ngbTooltip]="'Help'" container="body" placement="bottom-start" (click)="showHelp()">
+    <button type="button" class="atmos-btn atmos-btn--sm" [skyTooltip]="'Help'" placement="bottom-start" (click)="showHelp()">
       <mat-icon>question_mark</mat-icon>
     </button>
     <button type="button"
       class="atmos-btn atmos-btn--sm"
       [class.atmos-btn--active]="isNavigationEnabled()"
-      [ngbTooltip]="'Navigate'" container="body" placement="bottom-start"
+      [skyTooltip]="'Navigate'" placement="bottom-start"
       (click)="toggleNavigation()">
       <mat-icon>navigation</mat-icon>
     </button>
-    <button type="button" class="atmos-btn atmos-btn--sm" [ngbTooltip]="'Restart'" container="body" placement="bottom-start" (click)="promptReset()">
+    <button type="button" class="atmos-btn atmos-btn--sm" [skyTooltip]="'Restart'" placement="bottom-start" (click)="promptReset()">
       <mat-icon>restart_alt</mat-icon>
     </button>
     <span class="atmos-pnr-tracker__count" [class.is-complete]="countFound() === countTotal">

@@ -1,4 +1,4 @@
-<div class="costs" [ngbTooltip]="showTooltip ? costHover : undefined" container="body" placement="top" [class.cost-border-left]="borderLeft">
+<div class="costs" [skyTooltip]="showTooltip ? costHover : undefined" placement="top" [class.cost-border-left]="borderLeft">
   @if (cost) {
     @if (cost.c || (showZeroes && cost.c === 0)) {
       <div class="cost">

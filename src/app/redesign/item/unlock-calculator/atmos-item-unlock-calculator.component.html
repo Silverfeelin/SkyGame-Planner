@@ -41,7 +41,7 @@
           <div class="atmos-item-unlock-calc__selection-item">
             <app-item-icon (click)="viewItem(item)"
               [item]="item" [opaque]="true" [hoverGlow]="false"
-              [ngbTooltip]="item.name" container="body" placement="top"
+              [skyTooltip]="item.name" placement="top"
               [subIcons]="['unlock']">
             </app-item-icon>
             <button type="button" class="atmos-item-unlock-calc__remove atmos-text-link" (click)="removeItem(item)">Remove</button>
@@ -68,7 +68,7 @@
               <div class="atmos-item-unlock-calc__owned-item">
                 <app-item-icon
                   [item]="item" [opaque]="true" [hoverGlow]="false"
-                  [ngbTooltip]="item.name" container="body" placement="top"
+                  [skyTooltip]="item.name" placement="top"
                   [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'limited']">
                 </app-item-icon>
               </div>
@@ -108,7 +108,7 @@
               <div class="atmos-item-unlock-calc__result-name">{{ result.item.name }}</div>
               <app-item-icon
                 [item]="result.item" [opaque]="true" [hoverGlow]="false"
-                [ngbTooltip]="result.item.name" container="body" placement="top"
+                [skyTooltip]="result.item.name" placement="top"
                 [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']">
               </app-item-icon>
               <div class="atmos-item-unlock-calc__result-detail">

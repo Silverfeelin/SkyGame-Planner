@@ -14,14 +14,14 @@
       class="atmos-btn atmos-btn--sm"
       (click)="copyCollage(ttCopy)"
       [disabled]="isRendering()"
-      ngbTooltip="Copied!"
-      #ttCopy="ngbTooltip"
-      triggers="manual"
-      container="body"
+      skyTooltip="Copied!"
+      #ttCopy="skyTooltip"
+      manual
+
       placement="top"
       [closeDelay]="1000"
-      [autoClose]="true"
-      tooltipClass="show"
+
+
     >
       <mat-icon class="atmos-icon--18" [class.spin]="isRendering()">
         {{ isRendering() ? 'cached' : 'image' }}

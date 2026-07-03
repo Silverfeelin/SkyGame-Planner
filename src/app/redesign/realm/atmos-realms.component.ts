@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, signal, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import L from 'leaflet';
 import { DataService } from '@app/services/data.service';
 import { MapInstanceService } from '@app/services/map-instance.service';
@@ -15,7 +15,7 @@ import { AtmosRealmQuickActionsComponent } from './quick-actions/atmos-realm-qui
   styleUrl: './atmos-realms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [MapInstanceService],
-  imports: [RouterLink, MatIcon, NgbTooltip, AtmosRealmQuickActionsComponent]
+  imports: [RouterLink, MatIcon, TooltipDirective, AtmosRealmQuickActionsComponent]
 })
 export class AtmosRealmsComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef<HTMLElement>;

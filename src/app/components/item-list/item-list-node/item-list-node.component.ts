@@ -5,7 +5,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../../items/item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { CurrencyService } from '@app/services/currency.service';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { IItemListNode } from 'skygame-data';
@@ -22,7 +22,7 @@ export type ItemListNodeClickEvent = {
     templateUrl: './item-list-node.component.html',
     styleUrl: './item-list-node.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgbTooltip, ItemIconComponent, MatIcon, NgTemplateOutlet, RouterLink]
+    imports: [TooltipDirective, ItemIconComponent, MatIcon, NgTemplateOutlet, RouterLink]
 })
 export class ItemListNodeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() node!: IItemListNode;

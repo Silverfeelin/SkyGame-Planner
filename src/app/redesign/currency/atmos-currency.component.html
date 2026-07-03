@@ -45,7 +45,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="candle" [ngbTooltip]="'Candles'" container="body"></mat-icon>
+        <mat-icon svgIcon="candle" [skyTooltip]="'Candles'"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpC class="atmos-currency__input" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -61,7 +61,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="heart" [ngbTooltip]="'Hearts'" container="body"></mat-icon>
+        <mat-icon svgIcon="heart" [skyTooltip]="'Hearts'"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpH class="atmos-currency__input" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -77,7 +77,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="ascended-candle" [ngbTooltip]="'Ascended candles'" container="body"></mat-icon>
+        <mat-icon svgIcon="ascended-candle" [skyTooltip]="'Ascended candles'"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpAc class="atmos-currency__input" type="number" min="0" max="99999" step="0.25"
           (blur)="onCurrencyInputBlur($event, true)" (input)="onCurrencyInput()"
@@ -93,7 +93,7 @@
 
     <div class="atmos-currency__row">
       <div class="atmos-currency__field">
-        <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [ngbTooltip]="'Gift season passes'" container="body"></mat-icon>
+        <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [skyTooltip]="'Gift season passes'"></mat-icon>
         <span class="atmos-currency__times">x</span>
         <input #inpSp class="atmos-currency__input" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -115,7 +115,7 @@
       </h2>
       <div class="atmos-currency__row">
         <div class="atmos-currency__field">
-          <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [ngbTooltip]="'Season candles'"></mat-icon>
+          <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
           <span class="atmos-currency__times">x</span>
           <input #inpSc class="atmos-currency__input atmos-currency__input--narrow" type="number" min="0" max="99999"
             [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
@@ -146,7 +146,7 @@
           <div class="atmos-currency__event-name">{{ instance.name ?? instance.event.name }}</div>
           <div class="atmos-currency__row">
             <div class="atmos-currency__field">
-              <mat-icon svgIcon="ticket" [ngbTooltip]="'Event currency'"></mat-icon>
+              <mat-icon svgIcon="ticket" [skyTooltip]="'Event currency'"></mat-icon>
               <span class="atmos-currency__times">x</span>
               <input #inpEc class="atmos-currency__input atmos-currency__input--narrow" type="number" min="0" max="99999"
                 [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"

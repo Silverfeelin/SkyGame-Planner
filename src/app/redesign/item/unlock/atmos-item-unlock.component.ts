@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { MatIcon } from '@angular/material/icon';
 import { IItem, IIAP, IItemListNode, INode, ItemType } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
@@ -48,7 +48,7 @@ const SECTION_TYPES: ReadonlyArray<ItemType> = [
   templateUrl: './atmos-item-unlock.component.html',
   styleUrl: './atmos-item-unlock.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgbTooltip, MatIcon, ItemIconComponent, AtmosItemQuickActionsComponent]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent, AtmosItemQuickActionsComponent]
 })
 export class AtmosItemUnlockComponent {
   private readonly _dataService = inject(DataService);

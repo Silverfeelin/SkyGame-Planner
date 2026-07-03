@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NgIf } from '@angular/common';
 import { ItemType } from 'skygame-data';
 
@@ -9,7 +9,7 @@ import { ItemType } from 'skygame-data';
     templateUrl: './item-type-selector.component.html',
     styleUrl: './item-type-selector.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgIf, NgbTooltip, MatIcon]
+    imports: [NgIf, TooltipDirective, MatIcon]
 })
 export class ItemTypeSelectorComponent implements OnInit, OnChanges {
   @Input() type?: ItemType;

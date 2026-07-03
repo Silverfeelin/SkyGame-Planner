@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import L from 'leaflet';
 import { pnrMarkers } from '@app/components/pnr-tracker/pnr-tracker-markers';
 
@@ -29,7 +29,7 @@ interface IStatueMarker {
   templateUrl: './atmos-pnr-tracker.component.html',
   styleUrl: './atmos-pnr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgbTooltip, MatIcon]
+  imports: [TooltipDirective, MatIcon]
 })
 export class AtmosPnrTrackerComponent implements AfterViewInit {
   @ViewChild('map', { static: true }) private mapDiv!: ElementRef<HTMLDivElement>;

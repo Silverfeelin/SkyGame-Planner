@@ -18,21 +18,21 @@
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="placementType() === 'message'"
-        [ngbTooltip]="'Place Shared Message'" container="body" placement="bottom-start"
+        [skyTooltip]="'Place Shared Message'" placement="bottom-start"
         (click)="togglePlacement('message')">
         <mat-icon [svgIcon]="iconIds['message']"></mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="placementType() === 'memory'"
-        [ngbTooltip]="'Place Shared Memory'" container="body" placement="bottom-start"
+        [skyTooltip]="'Place Shared Memory'" placement="bottom-start"
         (click)="togglePlacement('memory')">
         <mat-icon [svgIcon]="iconIds['memory']"></mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="placementType() === 'space'"
-        [ngbTooltip]="'Place Shared Space'" container="body" placement="bottom-start"
+        [skyTooltip]="'Place Shared Space'" placement="bottom-start"
         (click)="togglePlacement('space')">
         <mat-icon [svgIcon]="iconIds['space']"></mat-icon>
       </button>

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { SubscriptionBag } from 'src/app/helpers/subscription-bag';
 import { EventService } from 'src/app/services/event.service';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { IconComponent } from '../../../icon/icon.component';
 import { IItem, INode, IIAP, IItemListNode, ItemSubicon } from 'skygame-data';
 
@@ -11,7 +11,7 @@ import { IItem, INode, IIAP, IItemListNode, ItemSubicon } from 'skygame-data';
     templateUrl: './item-subicons.component.html',
     styleUrl: './item-subicons.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [IconComponent, NgbTooltip, MatIcon]
+    imports: [IconComponent, TooltipDirective, MatIcon]
 })
 export class ItemSubIconsComponent implements OnChanges, OnDestroy {
   @Input() item?: IItem;

@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import L from 'leaflet';
 import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
@@ -42,7 +42,7 @@ const TYPE_LABELS: Record<SharedCreationType, string> = {
   templateUrl: './atmos-shared-creations.component.html',
   styleUrl: './atmos-shared-creations.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, AtmosRealmQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, AtmosRealmQuickActionsComponent]
 })
 export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLElement>;

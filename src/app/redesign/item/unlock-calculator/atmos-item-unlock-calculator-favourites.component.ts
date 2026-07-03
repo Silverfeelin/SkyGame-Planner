@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { MatIcon } from '@angular/material/icon';
 import { IItem } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
@@ -13,7 +13,7 @@ import { ItemClickEvent } from '@app/components/items/items.component';
   templateUrl: './atmos-item-unlock-calculator-favourites.component.html',
   styleUrl: './atmos-item-unlock-calculator-sub.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgbTooltip, MatIcon, ItemIconComponent]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent]
 })
 export class AtmosItemUnlockCalculatorFavouritesComponent {
   readonly itemClicked = output<ItemClickEvent>();

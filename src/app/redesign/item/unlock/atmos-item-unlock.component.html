@@ -32,7 +32,7 @@
         @for (item of section.items; track item.guid) {
           <div class="atmos-item-unlock__item"
             [class.is-unlocked]="item.unlocked"
-            [ngbTooltip]="item.name" container="body"
+            [skyTooltip]="item.name"
             (click)="toggleItem(item)">
             <app-item-icon [item]="item" [opaque]="true" [hoverGlow]="false"
               [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock', 'limited']">

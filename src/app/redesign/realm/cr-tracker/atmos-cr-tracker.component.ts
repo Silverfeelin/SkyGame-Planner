@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, ChangeDetectionStrategy, Component, computed, ElementRef, HostListener, inject, isDevMode, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, CanDeactivateFn, Router } from '@angular/router';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { parse as jsoncParse } from 'jsonc-parser';
 import L from 'leaflet';
 import { DateHelper } from '@app/helpers/date-helper';
@@ -66,7 +66,7 @@ export const canDeactivateAtmosCrTracker: CanDeactivateFn<AtmosCrTrackerComponen
   templateUrl: './atmos-cr-tracker.component.html',
   styleUrl: './atmos-cr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgbTooltip, MatIcon, OverlayComponent]
+  imports: [TooltipDirective, MatIcon, OverlayComponent]
 })
 export class AtmosCrTrackerComponent implements AfterViewInit {
   @HostListener('window:beforeunload', ['$event'])

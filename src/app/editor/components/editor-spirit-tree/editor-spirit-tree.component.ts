@@ -4,7 +4,7 @@ import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
 import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { MatIcon } from '@angular/material/icon';
@@ -26,7 +26,7 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    NgbTooltip, MatIcon, AtmosSpiritTreeComponent, ItemsComponent,
+    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, ItemsComponent,
     ItemIconComponent, OverlayComponent,
     EditorItemComponent, TabsComponent, TabDirective
 ],
@@ -68,7 +68,7 @@ export class SpiritTreeEditorComponent {
   @ViewChild('inpCost', { static: true }) inpCost!: ElementRef<HTMLInputElement>;
   @ViewChild('selCostType', { static: true }) selCostType!: ElementRef<HTMLSelectElement>;
   @ViewChild('refTree', { static: true }) refTree!: AtmosSpiritTreeComponent;
-  @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: NgbTooltip;
+  @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: TooltipDirective;
 
   tree: ISpiritTree;
   items: Array<IItem> = [];

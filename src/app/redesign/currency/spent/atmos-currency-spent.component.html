@@ -4,49 +4,49 @@
   <div class="atmos-currency-spent__costs">
     @if (data.cost.c) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="candle" [ngbTooltip]="'Candles'"></mat-icon>
+        <mat-icon svgIcon="candle" [skyTooltip]="'Candles'"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.c | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.h) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="heart" [ngbTooltip]="'Hearts'"></mat-icon>
+        <mat-icon svgIcon="heart" [skyTooltip]="'Hearts'"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.h | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.ac) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="ascended-candle" [ngbTooltip]="'Ascended candles'"></mat-icon>
+        <mat-icon svgIcon="ascended-candle" [skyTooltip]="'Ascended candles'"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.ac | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.ec) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="ticket" [ngbTooltip]="'Event currency'"></mat-icon>
+        <mat-icon svgIcon="ticket" [skyTooltip]="'Event currency'"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.ec | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.sc) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="candle" class="atmos-currency-spent__icon--seasonal" [ngbTooltip]="'Season candles'"></mat-icon>
+        <mat-icon svgIcon="candle" class="atmos-currency-spent__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.sc | number:'1.' }}</span>
       </div>
     }
     @if (data.cost.sh) {
       <div class="atmos-currency-spent__field">
-        <mat-icon svgIcon="heart" class="atmos-currency-spent__icon--seasonal" [ngbTooltip]="'Season hearts'"></mat-icon>
+        <mat-icon svgIcon="heart" class="atmos-currency-spent__icon--seasonal" [skyTooltip]="'Season hearts'"></mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.cost.sh | number:'1.' }}</span>
       </div>
     }
     @if (data.price) {
       <div class="atmos-currency-spent__field">
-        <mat-icon [ngbTooltip]="'Price (USD)'">attach_money</mat-icon>
+        <mat-icon [skyTooltip]="'Price (USD)'">attach_money</mat-icon>
         <span class="atmos-currency-spent__times">x</span>
         <span class="atmos-currency-spent__value">{{ data.price | number:'1.00' }}</span>
       </div>

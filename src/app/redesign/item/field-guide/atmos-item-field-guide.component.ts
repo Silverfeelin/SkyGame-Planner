@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { ActivatedRoute, Params, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { inject, DestroyRef } from '@angular/core';
 import { IItem, ItemType } from 'skygame-data';
@@ -23,7 +23,7 @@ interface IFieldGuideItem {
   styleUrl: './atmos-item-field-guide.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    RouterLink, MatIcon, NgbTooltip,
+    RouterLink, MatIcon, TooltipDirective,
     ItemTypeSelectorComponent, ItemIconComponent, ItemSubIconsComponent,
     AtmosItemQuickActionsComponent
   ]

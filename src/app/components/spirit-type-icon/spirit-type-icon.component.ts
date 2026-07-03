@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { MatIcon } from '@angular/material/icon';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { SpiritType } from 'skygame-data';
@@ -9,7 +9,7 @@ import { SpiritType } from 'skygame-data';
     templateUrl: './spirit-type-icon.component.html',
 
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgSwitch, NgSwitchCase, MatIcon, NgbTooltip, NgSwitchDefault]
+    imports: [NgSwitch, NgSwitchCase, MatIcon, TooltipDirective, NgSwitchDefault]
 })
 export class SpiritTypeIconComponent {
   @Input() type?: SpiritType;

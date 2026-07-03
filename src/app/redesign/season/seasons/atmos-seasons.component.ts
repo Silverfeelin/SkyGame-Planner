@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { ISeason } from 'skygame-data';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
@@ -23,7 +23,7 @@ const CHECKIN_KEY = 'season.checkin';
   templateUrl: './atmos-seasons.component.html',
   styleUrl: './atmos-seasons.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, NgbTooltip, IconComponent, AtmosSeasonCardComponent, AtmosSeasonQuickActionsComponent]
+  imports: [RouterLink, TooltipDirective, IconComponent, AtmosSeasonCardComponent, AtmosSeasonQuickActionsComponent]
 })
 export class AtmosSeasonsComponent {
   private readonly _dataService = inject(DataService);

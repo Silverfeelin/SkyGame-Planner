@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, HostListener, inject, isDevMode, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { MatIcon } from '@angular/material/icon';
 import { DecimalPipe, LowerCasePipe } from '@angular/common';
 import { nanoid } from 'nanoid';
@@ -53,7 +53,7 @@ interface IItemResult {
   styleUrl: './atmos-item-unlock-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    NgbTooltip, MatIcon, DecimalPipe, LowerCasePipe,
+    TooltipDirective, MatIcon, DecimalPipe, LowerCasePipe,
     ItemIconComponent, CostComponent, ItemTypePipe,
     ItemsComponent, AtmosSpiritTreeComponent,
     AtmosItemQuickActionsComponent,

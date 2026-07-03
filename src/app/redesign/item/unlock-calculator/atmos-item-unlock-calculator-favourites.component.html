@@ -13,7 +13,7 @@
       <div class="atmos-item-unlock-calc-sub__grid">
         @for (item of items; track item.guid) {
           <div class="atmos-item-unlock-calc-sub__icon"
-            [ngbTooltip]="item.name" container="body"
+            [skyTooltip]="item.name"
             (click)="onItemSelected($event, item)">
             <app-item-icon [item]="item" [opaque]="true"></app-item-icon>
           </div>

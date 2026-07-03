@@ -9,7 +9,7 @@ import { StorageService } from 'src/app/services/storage.service';
 import { HighlightType } from 'src/app/types/highlight';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '../items/item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { CurrencyService } from '@app/services/currency.service';
 import { INode } from 'skygame-data';
@@ -20,7 +20,7 @@ export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
     selector: 'app-node',
     templateUrl: './node.component.html',
     styleUrls: ['./node.component.scss'],
-    imports: [NgbTooltip, RouterLink, ItemIconComponent, MatIcon]
+    imports: [TooltipDirective, RouterLink, ItemIconComponent, MatIcon]
 })
 export class NodeComponent implements OnChanges {
   @Input() node!: INode;

@@ -1,17 +1,17 @@
 <div class="atmos-cr-tracker__container">
   <div class="atmos-cr-tracker__controls">
     <button type="button" class="atmos-btn atmos-btn--sm"
-      [ngbTooltip]="'Return to Aviary Village'" container="body" placement="bottom-start"
+      [skyTooltip]="'Return to Aviary Village'" placement="bottom-start"
       (click)="navigateToArea(defaultArea)">
       <mat-icon>house</mat-icon>
     </button>
     <button type="button" class="atmos-btn atmos-btn--sm"
-      [ngbTooltip]="'Choose map'" container="body" placement="bottom-start"
+      [skyTooltip]="'Choose map'" placement="bottom-start"
       (click)="isAreaOverlayVisible.set(true)">
       <mat-icon>globe</mat-icon>
     </button>
     <button type="button" class="atmos-btn atmos-btn--sm"
-      [ngbTooltip]="'Restart'" container="body" placement="bottom-start"
+      [skyTooltip]="'Restart'" placement="bottom-start"
       (click)="promptRestart()">
       <mat-icon>restart_alt</mat-icon>
     </button>

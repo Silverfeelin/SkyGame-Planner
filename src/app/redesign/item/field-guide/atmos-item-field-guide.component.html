@@ -37,7 +37,7 @@
                (click)="checkViewSource(typeItem.item.previewUrl)"
                [routerLink]="!viewingSource() ? typeItem.nav?.route : undefined"
                [queryParams]="typeItem.nav?.extras?.queryParams"
-               [ngbTooltip]="typeItem.item.name" container="body" placement="auto">
+               [skyTooltip]="typeItem.item.name" placement="auto">
               <div class="atmos-item-field-guide__icon">
                 <app-item-icon [item]="typeItem.item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
               </div>

@@ -83,7 +83,7 @@
         </div>
       </div>
       <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--atmos-gap)">
-        <div class="button-group" ngbTooltip="Copied!" #ttCopy="ngbTooltip" triggers="manual" container="body" placement="top" [closeDelay]="1000" [autoClose]="true" tooltipClass="show">
+        <div class="button-group" skyTooltip="Copied!" #ttCopy="skyTooltip" manual placement="top" [closeDelay]="1000">
           <button type="button" (click)="copyImage()">
             <mat-icon class="menu-icon">file_copy</mat-icon>
             <span class="menu-label">Copy image</span>
@@ -124,7 +124,7 @@
         @for (specialItem of specialItems; track $index) {
           <div class="item-icon">
             <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true" [hoverGlow]="true"
-              [ngbTooltip]="specialItem.item.name" container="body" placement="top">
+              [skyTooltip]="specialItem.item.name" placement="top">
             </app-item-icon>
           </div>
         }
@@ -147,7 +147,7 @@
             <app-item-icon class="point" [item]="customItem" [opaque]="true" [hoverGlow]="true"
               [class.highlight]="selectedCustomItem?.guid === customItem.guid"
               (click)="onCustomItemClicked({ event: $event, item: customItem })"
-              [ngbTooltip]="customItem.name" container="body" placement="top">
+              [skyTooltip]="customItem.name" placement="top">
             </app-item-icon>
           </div>
         }

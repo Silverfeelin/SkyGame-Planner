@@ -3,7 +3,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ItemHelper } from 'src/app/helpers/item-helper';
 import { DataService } from 'src/app/services/data.service';
 import { ItemIconComponent } from './item-icon/item-icon.component';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NgTemplateOutlet, LowerCasePipe } from '@angular/common';
 import { ItemTypeSelectorComponent } from './item-type-selector/item-type-selector.component';
 import { MatIcon } from '@angular/material/icon';
@@ -53,7 +53,7 @@ const defaultFilters = {
     templateUrl: './items.component.html',
     styleUrl: './items.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, NgbTooltip, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
+    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, TooltipDirective, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
 })
 export class ItemsComponent {
   @Input() title = 'Items';

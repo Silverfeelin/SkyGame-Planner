@@ -18,21 +18,21 @@
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="showAreas()"
-        [ngbTooltip]="'Show areas'" container="body" placement="bottom-start"
+        [skyTooltip]="'Show areas'" placement="bottom-start"
         (click)="toggleShowAreas()">
         <mat-icon>location_on</mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="showMapShrines()"
-        [ngbTooltip]="'Show map shrines'" container="body" placement="bottom-start"
+        [skyTooltip]="'Show map shrines'" placement="bottom-start"
         (click)="toggleShowMapShrines()">
         <mat-icon svgIcon="map-shrine"></mat-icon>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="showWingedLight()"
-        [ngbTooltip]="'Show winged light'" container="body" placement="bottom-start"
+        [skyTooltip]="'Show winged light'" placement="bottom-start"
         (click)="toggleShowWingedLight()">
         <mat-icon svgIcon="flaps"></mat-icon>
       </button>
