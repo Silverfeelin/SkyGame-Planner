@@ -129,7 +129,7 @@ export const routes: Routes = [
           { path: 'shop/harmony', component: ShopHarmonyHallComponent, title: title('Harmony Hall') },
           { path: 'shop/nesting', component: ShopNestingComponent, title: title('Nesting Workshop') },
           { path: 'shop/office', component: ShopOfficeComponent, title: title('Office') },
-          { path: 'shop/prairie-heights', component: ShopPrairieHeightsComponent, title: title('Prairie Heights') },
+          { path: 'shop/prairieheights', component: ShopPrairieHeightsComponent, title: title('Prairie Heights') },
           { path: 'shop/wonderland-cafe', component: ShopWonderlandComponent, title: title('Wonderland Cafe') },
           { path: 'spirits', component: SpiritsOverviewComponent, title: title('Spirits') },
           { path: 'spirit', component: SpiritsComponent, title: title('Spirits') },
