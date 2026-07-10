@@ -200,6 +200,7 @@ export class SearchService {
       { name: 'Shops - Harmony Hall', type: 'Page', data: '/shop/harmony', search: 'Harmony Hall' },
       { name: 'Shops - Nesting Workshop', type: 'Page', data: '/shop/nesting', search: 'Nesting Workshop' },
       { name: 'Shops - Office', type: 'Page', data: '/shop/office', search: 'Office' },
+      { name: 'Shops - Prairie Heights', type: 'Page', data: '/shop/prairie-heights', search: 'Prairie Heights' },
       { name: 'Spirits', type: 'Page', data: '/spirits', search: 'Spirits' },
       { name: 'Elusive spirits', type: 'Page', data: '/spirit/elusive', search: 'Elusive spirits' },
       { name: 'Traveling spirits', type: 'Page', data: '/ts', search: 'Traveling spirits' },
