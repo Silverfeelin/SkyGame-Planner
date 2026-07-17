@@ -5,16 +5,18 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { IapCardComponent } from "../../iap/iap-card/iap-card.component";
+import { ItemListComponent } from "../../item-list/item-list/item-list.component";
 import { IShop, IIAP } from 'skygame-data';
 
 @Component({
     selector: 'app-shop-cinema',
-    imports: [CardComponent, WikiLinkComponent, IapCardComponent],
+    imports: [CardComponent, WikiLinkComponent, IapCardComponent, ItemListComponent],
     templateUrl: './shop-cinema.component.html',
     styleUrl: './shop-cinema.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopCinemaComponent {
+  igcShops: Array<IShop> = [];
   iapShops: Array<IShop> = [];
 
   highlightIap?: string;
@@ -29,6 +31,7 @@ export class ShopCinemaComponent {
 
     const shops =_dataService.shopConfig.items.filter(s => s.permanent === 'cinema');
     this.iapShops = shops.filter(s => s.iaps?.length);
+    this.igcShops = shops.filter(s => s.itemList);
   }
 
   onQueryChanged(p: ParamMap): void {
