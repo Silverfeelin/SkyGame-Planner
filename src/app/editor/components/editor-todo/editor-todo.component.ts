@@ -14,6 +14,7 @@ import { IItem, ISpirit, ItemType } from 'skygame-data';
 export class EditorTodoComponent {
   itemsWithoutPreview: Array<IItem> = [];
   itemsWithoutWiki: Array<IItem> = [];
+  itemsWithoutOrder: Array<IItem> = [];
   spiritsWithoutPreview: Array<ISpirit> = [];
   spiritsWithoutWiki: Array<ISpirit> = [];
 
@@ -33,11 +34,13 @@ export class EditorTodoComponent {
       if (previewItemTypes.has(i.type)) {
         if (!i.previewUrl) { this.itemsWithoutPreview.push(i); }
         if (!i._wiki?.href) { this.itemsWithoutWiki.push(i); }
+        if (i.order === 999999) { this.itemsWithoutOrder.push(i); }
       }
     });
 
     ItemHelper.sortItems(this.itemsWithoutPreview);
     ItemHelper.sortItems(this.itemsWithoutWiki);
+    ItemHelper.sortItems(this.itemsWithoutOrder);
 
     spirits.forEach(s => {
       if (!s.imageUrl) { this.spiritsWithoutPreview.push(s); }
