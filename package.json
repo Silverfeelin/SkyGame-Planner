@@ -10,11 +10,11 @@
     "watch": "ng build --watch --configuration development",
     "license-move": "node ./scripts/build/license-move.mjs",
     "listen-data": "tsx ./scripts/data-listener.js",
+    "update-data": "npm i skygame-data@latest",
     "wrangle": "npx wrangler pages dev ./dist/sky-game-planner/browser --kv=REQUESTS",
     "sitemap-build": "node ./scripts/build/sitemap.js",
     "icon-sheet": "tsx ./scripts/icon-sheet.ts",
     "item-id": "node ./scripts/item-id.js",
-    "apply-guid": "node ./scripts/data/apply-guid.mjs",
     "test": "ng test"
   },
   "private": true,
@@ -43,7 +43,7 @@
     "nanoid": "^4.0.2",
     "panzoom": "^9.4.3",
     "rxjs": "~7.8.0",
-    "skygame-data": "^1.2.35",
+    "skygame-data": "^1.2.36",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
