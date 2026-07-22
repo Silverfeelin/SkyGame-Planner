@@ -12,12 +12,13 @@ import { CheckboxComponent } from "@app/components/layout/checkbox/checkbox.comp
 import { CurrencyService } from '@app/services/currency.service';
 import { RouterLink } from "@angular/router";
 import { ISpiritTree, ISeason, INode, ItemType } from 'skygame-data';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
     selector: 'app-season-optimizer',
     templateUrl: './season-optimizer.component.html',
     styleUrls: ['./season-optimizer.component.less'],
-    imports: [SpiritTreeComponent, OverlayComponent, ReactiveFormsModule, MatIcon, CheckboxComponent, RouterLink]
+    imports: [SpiritTreeComponent, OverlayComponent, ReactiveFormsModule, MatIcon, CheckboxComponent, RouterLink, DecimalPipe]
 })
 export class SeasonOptimizerComponent {
   dataService = inject(DataService);
@@ -95,7 +96,7 @@ export class SeasonOptimizerComponent {
         }
 
         // Add points from this tier.
-        const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
+        const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         tierFriendshipNodes.forEach(node => {
           this.nodeValues[node.guid] = friendshipPerNode;
@@ -106,7 +107,7 @@ export class SeasonOptimizerComponent {
       });
 
       if (currentFriendship > 0) {
-        this.friendshipControls[iTree].setValue(currentFriendship, { emitEvent: true });
+        this.friendshipControls[iTree].setValue(Math.round(currentFriendship), { emitEvent: true });
       }
     });
 
@@ -246,7 +247,7 @@ export class SeasonOptimizerComponent {
           return;
         }
 
-        const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
+        const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
         const tierAvailableNodes = tierFriendshipNodes.filter(node => !node.unlocked);
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
@@ -284,13 +285,17 @@ export class SeasonOptimizerComponent {
 
   knapsack(nodes: Array<INode>, target: number): Array<INode> | undefined {
     if (target <= 0 || nodes.length === 0) { return undefined; }
-    const max = nodes.reduce((sum, node) => sum + this.nodeValues[node.guid], 0);
+
+    const points = (node: INode) => Math.round(this.nodeValues[node.guid]);
+    const roundedTarget = Math.ceil(target);
+    const max = nodes.reduce((sum, node) => sum + points(node), 0);
     const dp = Array(max + 1).fill(null) as Array<INode>[] | null[];
     dp[0] = [];
 
     for (const node of nodes) {
-      for (let p = max; p >= this.nodeValues[node.guid]; p--) {
-        const prev = dp[p - this.nodeValues[node.guid]];
+      const value = points(node);
+      for (let p = max; p >= value; p--) {
+        const prev = dp[p - value];
         if (prev !== null) {
           const newSet = [...prev, node];
           const newCost = newSet.reduce((sum, n) => sum + (n.sc ?? 0), 0);
@@ -306,7 +311,7 @@ export class SeasonOptimizerComponent {
     let best: Array<INode> | undefined = undefined;
     let bestCost = Infinity;
 
-    for (let p = target; p <= max; p++) {
+    for (let p = roundedTarget; p <= max; p++) {
       const set = dp[p];
       if (set) {
         const cost = set.reduce((sum, n) => sum + (n.sc ?? 0), 0);

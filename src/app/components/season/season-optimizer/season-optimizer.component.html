@@ -98,12 +98,12 @@
             <input type="number" min="0" max="280" step="10" [formControl]="friendshipControls[$index]">
             <div><b>Missing points per level:</b></div>
             @for (points of missingFriendship[$index]; track $index) {
-              <div>Level {{$index + 1}}: <b [class.c-new]="points===0" [class.c-old]="points>0">{{ points }}</b></div>
+              <div>Level {{$index + 1}}: <b [class.c-new]="points===0" [class.c-old]="points>0">{{ points | number:'1.0-0' }}</b></div>
             }
             <div><b>Missing total:</b></div>
             <div>
               @let total = missingFriendshipTotals[$index];
-              <b [class.c-new]="total===0" [class.c-old]="total>0">{{ total }}</b>
+              <b [class.c-new]="total===0" [class.c-old]="total>0">{{ total | number:'1.0-0' }}</b>
             </div>
           </div>
         </div>
@@ -148,11 +148,11 @@
 
         <p>
           If you complete daily spirit adventures you can get a total of <b class="c-new">{{ daysFriendshipLeft() }}</b> friendship points without spending candles.<br/>
-          You still need <b class="c-old">{{ missingFriendshipTotal }}</b> friendship points to reach all of the items you've highlighted.
+          You still need <b class="c-old">{{ missingFriendshipTotal | number:'1.0-0' }}</b> friendship points to reach all of the items you've highlighted.
         </p>
         @if (missingFriendshipTotal > daysFriendshipLeft()) {
           <p>
-            You've selected items that require <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft() }}</b> more friendship points than you can get through daily adventures.<br/>
+            You've selected items that require <b class="c-old">{{ missingFriendshipTotal - daysFriendshipLeft() | number:'1.0-0' }}</b> more friendship points than you can get through daily adventures.<br/>
             <b class="c-old">You can't get all of the items you've highlighted through daily spirit adventures.</b>
           </p>
           @if (knapsackNodes.length > 0) {
@@ -164,15 +164,15 @@
                 <li>
                   {{ node.root?.tree?.spirit?.name }} - {{ node.item!.name }} -
                   {{ node.sc }} <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>
-                  <span class="node-value">({{ nodeValues[node.guid] }})</span>
+                  <span class="node-value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
                 </li>
               }
             </ul>
-            These items would give you an additional <b class="c-new">{{ knapsackTotalPoints }}</b> friendship points for <b class="c-old">{{ knapsackTotalSc }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>.<br/>
+            These items would give you an additional <b class="c-new">{{ knapsackTotalPoints | number:'1.0-0' }}</b> friendship points for <b class="c-old">{{ knapsackTotalSc }}</b> <mat-icon class="ta-sc" [svgIcon]="'season-candle'"></mat-icon>.<br/>
             Please highlight the items you'd like to add to update the calculation!
             <div><button type="button" (click)="highlightKnapsack()">Highlight suggested items</button></div>
           } @else {
-            Look for the largest green numbers to prioritize which items to buy!
+            Look for the largest grey numbers to prioritize which items to buy!
           }
         } @else {
           <b class="c-new">You can reach all of the items you've highlighted through daily spirit adventures alone!</b>
@@ -185,7 +185,7 @@
 <ng-template #tNode let-node>
   <div class="node-overlay">
     @if (node && !node.unlocked && !want()[node.guid] && nodeValues[node.guid]) {
-      <span class="node-value">({{ nodeValues[node.guid] }})</span>
+      <span class="node-value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
     }
   </div>
 </ng-template>
