@@ -43,6 +43,7 @@ export class MapService {
     // Add images to map.
     L.tileLayer('assets/game/map/{z}/{x}_{y}.webp', {
       tileSize: 540,
+      maxNativeZoom: 3,
       bounds: [[0, 0], [-540, 540]]
     }).addTo(map);
 
