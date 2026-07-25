@@ -202,6 +202,13 @@
         <mat-icon class="menu-icon">{{debugVisible ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
         <span class="menu-label">Show debug info</span>
       </button>
+      <p class="mt">
+        This option copies the coordinates of the spot you click on a map to your clipboard, in <code>[lat, lng]</code> format rounded to 2 decimals.
+      </p>
+      <button (click)="toggleDebugMapCopyCoordinates()">
+        <mat-icon class="menu-icon">{{debugMapCopyCoordinates ? 'check_box' : 'check_box_outline_blank'}}</mat-icon>
+        <span class="menu-label">Copy map coordinates on click</span>
+      </button>
     </div>
   </div>
 </div>

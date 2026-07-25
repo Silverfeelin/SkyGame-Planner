@@ -106,7 +106,7 @@ export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     });
 
     // Add images to map.
-    L.imageOverlay('assets/game/map/void.webp', [[-141.87,185.63], [-116.88,210.63]]).addTo(layerGroup);
+    L.imageOverlay('assets/game/map/void.webp', [[-146.12,173.38], [-121.13,198.38]]).addTo(layerGroup);
 
     // Create markers for all Children of Light
     const wingedLights = this._dataService.wingedLightConfig.items.filter(wl => wl.mapData?.position);
