@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import L, { LatLngTuple } from 'leaflet';
+import { SettingService } from './setting.service';
 
 export interface IMapInit {
   /** Initializes the map from the URL query parameters. */
@@ -13,6 +14,8 @@ export interface IMapInit {
   providedIn: 'root'
 })
 export class MapService {
+  private readonly _settingService = inject(SettingService);
+
   createMap(htmlElement: HTMLElement, options?: IMapInit): L.Map {
     options ??= {
       view: [-270, 270],
@@ -51,18 +54,13 @@ export class MapService {
     const zoom = L.control.zoom({ position: 'bottomright' });
     zoom.addTo(map);
 
-    // document.cookie='mapcopy=1';
-    const mapcopy = document.cookie.split(';').find(c => c.includes('mapcopy='));
-    if (mapcopy !== undefined) {
-      map.on('click', e => {
-        console.log(e);
-        const f = 2;
-        const format = `,
-"mapData": { "position": {0} }`;
-        const coords = JSON.stringify([+e.latlng.lat.toFixed(f), +e.latlng.lng.toFixed(f)]);
-        navigator.clipboard.writeText(`${format.replace('{0}', coords)}`);
-      });
-    }
+    // Copy the clicked coordinates to the clipboard.
+    map.on('click', e => {
+      if (!this._settingService.debugMapCopyCoordinates) { return; }
+      const coords = JSON.stringify([+e.latlng.lat.toFixed(2), +e.latlng.lng.toFixed(2)]);
+      navigator.clipboard.writeText(coords);
+      console.log('Copied map coordinates:', coords);
+    });
 
     return map;
   }

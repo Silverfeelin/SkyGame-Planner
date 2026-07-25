@@ -38,6 +38,7 @@ export class SettingsComponent implements OnDestroy {
   themes = themes;
   wikiNewTab = false;
   debugVisible = false;
+  debugMapCopyCoordinates = false;
   dailyCandleAmount: number;
 
   pwaInstallPrompt?: any = (window as any).pwaInstallPrompt;
@@ -53,6 +54,7 @@ export class SettingsComponent implements OnDestroy {
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
     this.debugVisible = _settingService.debugVisible;
+    this.debugMapCopyCoordinates = _settingService.debugMapCopyCoordinates;
     this.dailyCandleAmount = _settingService.dailyCandleAmount;
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
@@ -229,6 +231,11 @@ export class SettingsComponent implements OnDestroy {
   toggleDebugInfo(): void {
     this.debugVisible = !this.debugVisible;
     this._settingService.debugVisible = this.debugVisible;
+  }
+
+  toggleDebugMapCopyCoordinates(): void {
+    this.debugMapCopyCoordinates = !this.debugMapCopyCoordinates;
+    this._settingService.debugMapCopyCoordinates = this.debugMapCopyCoordinates;
   }
 
   setDailyCandleAmount(value: number): void {
