@@ -21,7 +21,7 @@ interface ISharedCreation {
 }
 
 const STORAGE_KEY = 'shared-creations';
-const EXPIRY_DAYS = 7;
+const EXPIRY_DAYS = 14;
 const DATE_FORMAT = 'yyyy-MM-dd HH:mm';
 
 const ICON_IDS: Record<SharedCreationType, string> = {
