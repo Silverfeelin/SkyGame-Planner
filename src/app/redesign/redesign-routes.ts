@@ -50,6 +50,7 @@ import { AtmosShopEventStoreComponent } from './shop/event/atmos-shop-event-stor
 import { AtmosShopHarmonyHallComponent } from './shop/harmony/atmos-shop-harmony-hall.component';
 import { AtmosShopNestingComponent } from './shop/nesting/atmos-shop-nesting.component';
 import { AtmosShopOfficeComponent } from './shop/office/atmos-shop-office.component';
+import { AtmosShopPrairieHeightsComponent } from './shop/prairie-heights/atmos-shop-prairie-heights.component';
 import { AtmosShopWonderlandComponent } from './shop/wonderland-cafe/atmos-shop-wonderland.component';
 import { AtmosFriendsComponent } from './friend/atmos-friends.component';
 import { AtmosToolsComponent } from './tool/atmos-tools.component';
@@ -170,6 +171,7 @@ export const REDESIGN_ROUTES: Routes = [
       { path: 'harmony',         component: AtmosShopHarmonyHallComponent, title: title('Harmony Hall') },
       { path: 'nesting',         component: AtmosShopNestingComponent,     title: title('Nesting Workshop') },
       { path: 'office',          component: AtmosShopOfficeComponent,      title: title('Office') },
+      { path: 'prairieheights',  component: AtmosShopPrairieHeightsComponent, title: title('Prairie Heights') },
       { path: 'wonderland-cafe', component: AtmosShopWonderlandComponent,  title: title('Wonderland Cafe') },
     ]
   },

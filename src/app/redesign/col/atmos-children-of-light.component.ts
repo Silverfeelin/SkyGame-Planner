@@ -166,7 +166,7 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       popupAnchor: [0, -12],
     });
 
-    L.imageOverlay('assets/game/map/void.webp', [[-141.87, 185.63], [-116.88, 210.63]]).addTo(layerGroup);
+    L.imageOverlay('assets/game/map/void.webp', [[-146.12, 173.38], [-121.13, 198.38]]).addTo(layerGroup);
 
     this.wingedLights.filter(w => w.mapData?.position).forEach(w => {
       if (!w.mapData) { return; }

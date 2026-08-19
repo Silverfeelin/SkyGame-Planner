@@ -1,0 +1,36 @@
+<atmos-shop-quick-actions/>
+
+<div class="atmos-page__quick-actions">
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Prairie_Heights"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</div>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Prairie Heights</h1>
+</header>
+
+@if (igcShops.length) {
+  <section class="atmos-card atmos-shop-prairie-heights__section">
+    <header class="atmos-shop-prairie-heights__section-header">
+      <h2 class="atmos-section__title">In-game currency</h2>
+    </header>
+    <div class="atmos-card__body atmos-shop-prairie-heights__section-body">
+      <div class="atmos-shop-prairie-heights__igc-grid">
+        @for (shop of igcShops; track shop.guid) {
+          <div class="atmos-card atmos-shop-prairie-heights__igc">
+            <div class="atmos-card__body">
+              <h3 class="atmos-shop-prairie-heights__igc-title">{{ shop.name }}</h3>
+              <app-atmos-item-list
+                [itemList]="shop.itemList!"
+                [highlightNode]="highlightNode()"></app-atmos-item-list>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+}

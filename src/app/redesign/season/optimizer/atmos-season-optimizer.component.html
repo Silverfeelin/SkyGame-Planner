@@ -15,6 +15,10 @@
     <h1 class="atmos-page__title">{{ season.name }} Optimizer</h1>
   </header>
 
+  @if (isDraft) {
+    <app-atmos-draft-warning />
+  }
+
   <section class="atmos-card atmos-optimizer__intro">
     <div class="atmos-card__body">
       <p class="atmos-paragraph">
@@ -88,14 +92,14 @@
             @for (points of missingFriendship()[iTree]; track $index) {
               <div>
                 Level {{ $index + 1 }}:
-                <b [class.is-met]="points === 0" [class.is-lacking]="points > 0">{{ points }}</b>
+                <b [class.is-met]="points === 0" [class.is-lacking]="points > 0">{{ points | number:'1.0-0' }}</b>
               </div>
             }
             <div>
               <b>Missing total:</b>
               <b [class.is-met]="missingFriendshipTotals()[iTree] === 0"
                  [class.is-lacking]="missingFriendshipTotals()[iTree] > 0">
-                {{ missingFriendshipTotals()[iTree] }}
+                {{ missingFriendshipTotals()[iTree] | number:'1.0-0' }}
               </b>
             </div>
           </div>
@@ -154,12 +158,12 @@
         If you complete daily spirit adventures you can get a total of
         <b class="is-met">{{ daysFriendshipLeft() }}</b>
         friendship points without spending candles.<br/>
-        You still need <b class="is-lacking">{{ missingFriendshipTotal() }}</b> friendship points to reach all of the items you've highlighted.
+        You still need <b class="is-lacking">{{ missingFriendshipTotal() | number:'1.0-0' }}</b> friendship points to reach all of the items you've highlighted.
       </p>
 
       @if (missingFriendshipTotal() > daysFriendshipLeft()) {
         <p class="atmos-paragraph">
-          You've selected items that require <b class="is-lacking">{{ missingFriendshipTotal() - daysFriendshipLeft() }}</b> more friendship points than you can get through daily adventures.<br/>
+          You've selected items that require <b class="is-lacking">{{ missingFriendshipTotal() - daysFriendshipLeft() | number:'1.0-0' }}</b> more friendship points than you can get through daily adventures.<br/>
           <b class="is-lacking">You can't get all of the items you've highlighted through daily spirit adventures.</b>
         </p>
         @if (knapsackNodes().length > 0) {
@@ -172,19 +176,19 @@
                 {{ node.root?.tree?.spirit?.name }} – {{ node.item!.name }} –
                 {{ node.sc }}
                 <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
-                <span class="atmos-optimizer__value">({{ nodeValues[node.guid] }})</span>
+                <span class="atmos-optimizer__value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
               </li>
             }
           </ul>
           <p class="atmos-paragraph">
-            These items would give you an additional <b class="is-met">{{ knapsackTotalPoints() }}</b> friendship points for
+            These items would give you an additional <b class="is-met">{{ knapsackTotalPoints() | number:'1.0-0' }}</b> friendship points for
             <b class="is-lacking">{{ knapsackTotalSc() }}</b>
             <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>.<br/>
             Please highlight the items you'd like to add to update the calculation!
           </p>
           <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightKnapsack()">Highlight suggested items</button>
         } @else {
-          <p class="atmos-paragraph">Look for the largest green numbers to prioritize which items to buy!</p>
+          <p class="atmos-paragraph">Look for the largest grey numbers to prioritize which items to buy!</p>
         }
       } @else {
         <p class="atmos-paragraph"><b class="is-met">You can reach all of the items you've highlighted through daily spirit adventures alone!</b></p>

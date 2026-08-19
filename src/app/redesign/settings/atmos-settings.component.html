@@ -149,6 +149,12 @@
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugVisible" (click)="toggleDebugInfo()">
         <mat-icon>{{ debugVisible ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show debug info
       </button>
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugMapCopyCoordinates" (click)="toggleDebugMapCopyCoordinates()">
+        <mat-icon>{{ debugMapCopyCoordinates ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Copy map coordinates on click
+      </button>
     </div>
+    <p class="atmos-paragraph">
+      When enabled, clicking anywhere on a map copies the clicked <code>[lat, lng]</code> position to your clipboard.
+    </p>
   </div>
 </section>
