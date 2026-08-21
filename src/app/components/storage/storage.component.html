@@ -15,7 +15,16 @@
         <pre class="mt mb c-warn-accent">{{ errorMessage }}</pre>
         <hr/>
 
-        You can try to link your account again or switch to local storage which should always work.
+        <p>
+          You can try to link your account again or switch to local storage which should always work.
+        </p>
+
+        @if (storageType === 'dropbox') {
+          <p>
+            If this issue persists for your Dropbox account, please check their <a class="text-link" target="_blank" href="https://status.dropbox.com/">status page</a> for any outages.<br/>
+            Rest assured, your data can be safely found in your Dropbox folder at: <code>/Dropbox/Apps/Sky Planner/data.json</code>
+          </p>
+        }
       </div>
     </div>
   </div>
