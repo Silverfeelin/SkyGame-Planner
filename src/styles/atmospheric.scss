@@ -254,6 +254,7 @@
   text-decoration: none;
   border-bottom: 1px solid var(--atmos-line-soft);
   transition: color var(--atmos-transition), border-color var(--atmos-transition);
+  cursor: pointer;
 }
 
 .atmos-text-link:hover {
@@ -648,4 +649,14 @@
 }
 .atmos-spirit-trees--wrap {
   flex-wrap: wrap;
+}
+
+.atmos-code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+  padding: 0.15em 0.4em;
+  color: var(--atmos-accent-2);
 }
