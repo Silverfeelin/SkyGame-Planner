@@ -124,9 +124,9 @@
     @let src = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
     <img [src]="src" (dblclick)="openSrc($event)"/>
     @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
-      <span close class="link" (click)="preventDefault($event); dyePreviewMode.set(2)">Show dyeable parts</span>
+      <span overlayAction class="link" (click)="preventDefault($event); dyePreviewMode.set(2)">Show dyeable parts</span>
     } @else if (dyePreviewMode() === 2) {
-      <span close class="link" (click)="preventDefault($event); dyePreviewMode.set(1)">Show preview</span>
+      <span overlayAction class="link" (click)="preventDefault($event); dyePreviewMode.set(1)">Show preview</span>
     }
   </app-overlay>
 }
