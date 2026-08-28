@@ -94,6 +94,17 @@
   --atmos-radius-sm: 8px;
   --atmos-radius-pill: 999px;
 
+  /* Component geometry. */
+  --atmos-card-pad:        22px;          /* .atmos-card__body padding */
+  --atmos-card-gap:        16px;          /* .atmos-card__body gap */
+  --atmos-card-header-pad: 0.75rem 1rem;  /* .atmos-card__header padding */
+  --atmos-btn-pad:         11px 22px;
+  --atmos-btn-pad-sm:      6px 16px;
+  --atmos-btn-gap:         10px;
+  --atmos-page-title-size: 32px;
+  --atmos-page-header-gap: 16px;
+  --atmos-input-pad:       0.375rem 0.75rem;
+
   /* Heading scale. */
   --atmos-h1: 2rem;
   --atmos-h2: 1.5rem;
@@ -149,23 +160,23 @@
 }
 
 .atmos-card__body {
-  padding: 22px;
+  padding: var(--atmos-card-pad);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--atmos-card-gap);
 }
 
 .atmos-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: var(--atmos-btn-gap);
   background: var(--atmos-card-bg);
   backdrop-filter: var(--atmos-blur-soft);
   -webkit-backdrop-filter: var(--atmos-blur-soft);
   border: var(--atmos-card-border);
   border-radius: var(--atmos-radius-pill);
-  padding: 11px 22px;
+  padding: var(--atmos-btn-pad);
   color: var(--atmos-text);
   font-size: 14px;
   font-weight: 500;
@@ -191,7 +202,7 @@
   }
 
   &.atmos-btn--sm {
-    padding: 6px 16px;
+    padding: var(--atmos-btn-pad-sm);
     font-size: 13px;
 
     > mat-icon {
@@ -274,7 +285,7 @@
 .atmos-page__header {
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  gap: var(--atmos-page-header-gap);
   flex-wrap: wrap;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow-large);
@@ -282,7 +293,7 @@
 
 .atmos-page__title {
   margin: 0;
-  font-size: 32px;
+  font-size: var(--atmos-page-title-size);
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -585,7 +596,7 @@
   border: 1px solid var(--atmos-line);
   border-radius: 0.375rem;
   color: var(--atmos-text);
-  padding: 0.375rem 0.75rem;
+  padding: var(--atmos-input-pad);
   font-size: 0.9rem;
   &:focus {
     outline: 2px solid var(--atmos-accent);
@@ -605,7 +616,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1rem;
+  padding: var(--atmos-card-header-pad);
   border-bottom: 1px solid var(--atmos-line-soft);
   font-weight: 600;
 }
