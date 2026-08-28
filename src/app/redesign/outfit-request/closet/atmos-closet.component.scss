@@ -13,7 +13,7 @@
 
 .header-sticky {
   position: sticky;
-  top: 0;
+  top: var(--atmos-sticky-top, 0px);
   background: var(--atmos-card-bg-solid);
   z-index: 2;
   backdrop-filter: var(--atmos-blur);

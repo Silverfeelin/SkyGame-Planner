@@ -228,6 +228,20 @@ select {
 }
 
 // Scrollbar
+html {
+  scrollbar-gutter: stable; /* prevents horizontal shift between short/long pages */
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6) transparent;
+  background: var(--atmos-bg); /* overscroll matches theme */
+}
+html::-webkit-scrollbar { width: 6px; }
+html::-webkit-scrollbar-thumb {
+  background: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6);
+  border-radius: 3px;
+}
+html::-webkit-scrollbar-track,
+html::-webkit-scrollbar-corner { background: transparent; }
+
 body { scrollbar-width: thin; }
 ::-webkit-scrollbar {
   --size: 12px;
