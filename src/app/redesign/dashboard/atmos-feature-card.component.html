@@ -5,8 +5,6 @@
         [class.is-contain]="bannerContain()"
         [class.is-silhouette]="bannerSilhouette()"
         [style.background-image]="'url(&quot;' + bannerUrl() + '&quot;)'"></div>
-    } @else {
-      <div class="atmos-card__banner-fallback" [style.--banner-hue]="bannerHue()"></div>
     }
     <div class="atmos-card__banner-fade"></div>
 

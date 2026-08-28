@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
@@ -118,11 +118,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
     return r.name || r.spirits.map(s => s.spirit?.name).filter(Boolean).join(', ') || 'Special Visit';
   });
   readonly rsTimeRow = computed(() => this.formatPeriod(this.rs()));
-  readonly rsBannerUrl = computed(() => {
-    const r = this.rs();
-    if (!r) { return undefined; }
-    return r.imageUrl || r.spirits.find(s => s.spirit?.imageUrl)?.spirit?.imageUrl;
-  });
+  readonly rsBannerUrl = signal<string | undefined>(undefined);
   readonly rsBannerContain = computed(() => !this.rs()?.imageUrl);
   readonly rsLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const r = this.rs();
@@ -151,6 +147,18 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
     this._subs.add(this._eventService.storageChanged
       .pipe(filter(e => e.key?.startsWith('event.checkin.') == true))
       .subscribe(() => this.refreshEventCheckins()));
+
+    effect(() => {
+      const r = this.rs();
+      if (!r) { this.rsBannerUrl.set(undefined); return; }
+      if (r.imageUrl) { this.rsBannerUrl.set(r.imageUrl); return; }
+
+      const urls = r.spirits.map(sp => sp.spirit?.imageUrl).filter((u): u is string => !!u);
+      if (urls.length <= 1) { this.rsBannerUrl.set(urls[0]); return; }
+
+      this.rsBannerUrl.set(undefined);
+      this.mergeImagesSideBySide(urls).then(url => this.rsBannerUrl.set(url));
+    });
   }
 
   ngOnInit(): void {
@@ -268,6 +276,43 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
     const end = p.endDate.toFormat('dd LLL');
     const days = Math.max(0, Math.ceil(p.endDate.diffNow('days').days));
     return `${start} → ${end} · ${days} day${days === 1 ? '' : 's'} remaining`;
+  }
+
+  private async mergeImagesSideBySide(urls: ReadonlyArray<string>): Promise<string | undefined> {
+    const images = (await Promise.all(urls.map(url => this.loadImage(url))))
+      .filter((img): img is HTMLImageElement => !!img);
+    if (!images.length) { return undefined; }
+
+    const height = Math.max(...images.map(img => img.naturalHeight || img.height));
+    const scaled = images.map(img => {
+      const imgHeight = img.naturalHeight || img.height || height;
+      const imgWidth = img.naturalWidth || img.width || imgHeight;
+      return { img, width: imgWidth * (height / imgHeight) };
+    });
+    const totalWidth = scaled.reduce((sum, s) => sum + s.width, 0);
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.round(totalWidth);
+    canvas.height = Math.round(height);
+    const ctx = canvas.getContext('2d');
+    if (!ctx) { return undefined; }
+
+    let x = 0;
+    for (const { img, width } of scaled) {
+      ctx.drawImage(img, x, 0, width, height);
+      x += width;
+    }
+    return canvas.toDataURL('image/png');
+  }
+
+  private loadImage(url: string): Promise<HTMLImageElement | undefined> {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(undefined);
+      img.src = url;
+    });
   }
 
   private deriveSeasonCurrency(s: ISeason): ReadonlyArray<IFeatureCurrency> {

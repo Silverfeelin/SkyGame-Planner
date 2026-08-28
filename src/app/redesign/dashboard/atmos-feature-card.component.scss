@@ -24,16 +24,6 @@
   }
 }
 
-.atmos-card__banner-fallback {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    oklch(0.45 0.09 var(--banner-hue, 160)) 0 14px,
-    oklch(0.35 0.07 var(--banner-hue, 160)) 14px 28px
-  );
-}
-
 .atmos-card__banner-fade {
   position: absolute;
   inset: 0;
