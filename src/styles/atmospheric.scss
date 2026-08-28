@@ -664,10 +664,13 @@
   flex-direction: row; // explicit — some hosts also carry .atmos-card__body (column)
   gap: var(--atmos-gap);
   align-items: flex-end;
+  flex-wrap: nowrap;
   overflow-x: auto;
-}
-.atmos-spirit-trees--wrap {
-  flex-wrap: wrap;
+
+  // Trees keep their intrinsic width and scroll horizontally instead of wrapping.
+  > * {
+    flex: 0 0 auto;
+  }
 }
 
 .atmos-code {
