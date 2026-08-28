@@ -116,8 +116,8 @@
   &:hover { background: var(--atmos-hover-bg); }
 
   &:focus-visible {
-    outline: 2px solid var(--atmos-accent);
-    outline-offset: 2px;
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
   }
 }
 
@@ -170,8 +170,8 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--atmos-accent);
-    outline-offset: 2px;
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
   }
 }
 

@@ -116,7 +116,7 @@ $bluea: #0aa0ff66;
 
 // Search highlight
 .atmos-closet-highlight {
-  outline: 2px solid var(--atmos-accent);
+  outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
   outline-offset: 1px;
 }
 

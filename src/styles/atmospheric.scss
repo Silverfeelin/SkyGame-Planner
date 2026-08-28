@@ -48,6 +48,14 @@
   --atmos-hover-tint:      oklch(0.95 0.01 var(--atmos-hue) / 0.06);
   --atmos-transition:      120ms ease;
 
+  /* Focus ring. Overridable per component: set --atmos-focus-offset on an
+     element (negative to inset the ring) instead of re-declaring the outline.
+     An inset offset is needed when a rounded `overflow: hidden` ancestor would
+     otherwise clip the ring. */
+  --atmos-focus-width:  2px;
+  --atmos-focus-offset: 2px;
+  --atmos-focus-color:  var(--atmos-accent);
+
   /* Interactive tile surface (persistent bg + hover). Reusable across icon-tile grids. */
   --atmos-tile-bg:       var(--atmos-chip-bg);          /* 6% resting fill */
   --atmos-tile-bg-hover: var(--atmos-hover-bg-strong);  /* 16% hover step */
@@ -278,8 +286,8 @@
 .atmos-focus-ring:focus-visible,
 .atmos-btn:focus-visible,
 .atmos-focus-ring:has(:focus-visible) {
-  outline: 2px solid var(--atmos-accent);
-  outline-offset: 2px;
+  outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+  outline-offset: var(--atmos-focus-offset);
 }
 
 .atmos-page__header {
@@ -390,8 +398,8 @@
     }
 
     &:focus-visible {
-      outline: 2px solid var(--atmos-accent);
-      outline-offset: 2px;
+      outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+      outline-offset: var(--atmos-focus-offset);
     }
 
     &.leaflet-disabled {
@@ -599,8 +607,8 @@
   padding: var(--atmos-input-pad);
   font-size: 0.9rem;
   &:focus {
-    outline: 2px solid var(--atmos-accent);
-    outline-offset: 2px;
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
   }
 }
 

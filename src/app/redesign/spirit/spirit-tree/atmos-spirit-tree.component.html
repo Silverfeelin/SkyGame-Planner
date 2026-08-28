@@ -13,20 +13,24 @@
 
     @if (showControls()) {
       <nav class="atmos-spirit-tree__controls" aria-label="Spirit tree actions">
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="currentAction() === 'unlock'"
-                (click)="setAction('unlock')"
-                title="Unlock / lock items (U)">
-          <mat-icon>lock_open</mat-icon>
-          <span>Unlock</span>
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="currentAction() === 'navigate'"
-                (click)="setAction('navigate')"
-                title="Open item page (N)">
-          <mat-icon>search</mat-icon>
-          <span>Navigate</span>
-        </button>
+        <div class="atmos-spirit-tree__seg" role="group" aria-label="Node click action">
+          <button type="button" class="atmos-spirit-tree__seg-btn"
+                  [class.is-active]="currentAction() === 'unlock'"
+                  [attr.aria-pressed]="currentAction() === 'unlock'"
+                  (click)="setAction('unlock')"
+                  title="Unlock / lock items (U)">
+            <mat-icon>lock_open</mat-icon>
+            <span class="atmos-spirit-tree__seg-label"><span>Unlock</span></span>
+          </button>
+          <button type="button" class="atmos-spirit-tree__seg-btn"
+                  [class.is-active]="currentAction() === 'navigate'"
+                  [attr.aria-pressed]="currentAction() === 'navigate'"
+                  (click)="setAction('navigate')"
+                  title="Open item page (N)">
+            <mat-icon>search</mat-icon>
+            <span class="atmos-spirit-tree__seg-label"><span>Navigate</span></span>
+          </button>
+        </div>
 
         <span class="atmos-spirit-tree__controls-spacer"></span>
 
