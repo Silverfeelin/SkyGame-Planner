@@ -66,14 +66,11 @@
         @for (spirit of r.spirits; track spirit.tree.guid) {
           @if (spirit.tree) {
             <div class="atmos-rs-detail__tree">
-              <a class="atmos-rs-detail__tree-name atmos-text-link"
-                 [routerLink]="['/spirit', spirit.spirit.guid]"
-                 [queryParams]="{ highlightTree: spirit.tree.guid }">
-                {{ spirit.spirit.name }}
-              </a>
               <app-atmos-spirit-tree
                 [tree]="spirit.tree"
-                [name]="spirit.spirit.name">
+                [name]="spirit.spirit.name"
+                [nameLink]="['/spirit', spirit.spirit.guid]"
+                [nameQueryParams]="{ highlightTree: spirit.tree.guid }">
               </app-atmos-spirit-tree>
             </div>
           }

@@ -129,13 +129,9 @@
       <div class="atmos-spirit-trees atmos-realm__trees-scroll">
         @for (data of spirits; track data.spirit.guid) {
           <div class="atmos-realm__tree-wrapper">
-            <app-atmos-spirit-tree [tree]="data.tree" [name]="data.spirit.name" [highlight]="highlightTree === data.tree.guid">
-              <div name>
-                <a class="atmos-text-link" [routerLink]="['/spirit', data.spirit.guid]" [queryParams]="{ highlightTree: data.tree.guid }">
-                  {{ data.spirit.name }}
-                </a>
-              </div>
-            </app-atmos-spirit-tree>
+            <app-atmos-spirit-tree [tree]="data.tree" [name]="data.spirit.name"
+              [nameLink]="['/spirit', data.spirit.guid]" [nameQueryParams]="{ highlightTree: data.tree.guid }"
+              [highlight]="highlightTree === data.tree.guid"></app-atmos-spirit-tree>
           </div>
         }
       </div>

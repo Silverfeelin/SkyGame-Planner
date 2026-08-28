@@ -3,9 +3,16 @@
     @if (visibleName()) {
       <header class="atmos-spirit-tree__header">
         <h3 class="atmos-spirit-tree__title">
-          <ng-content select="[name]">{{ visibleName() }}</ng-content>
+          @if (nameLink(); as link) {
+            <a class="atmos-text-link" [routerLink]="link" [queryParams]="nameQueryParams()">{{ visibleName() }}</a>
+          } @else {
+            {{ visibleName() }}
+          }
           @if (eventDate(); as d) {
             <span class="atmos-spirit-tree__date">(<app-date [date]="d"></app-date>)</span>
+          }
+          @if (nameTag(); as tag) {
+            <span class="atmos-spirit-tree__tag">{{ tag }}</span>
           }
         </h3>
       </header>

@@ -89,11 +89,8 @@
       </header>
       <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
         <div class="atmos-season__tree">
-          <div class="atmos-season__tree-name">
-            <a class="atmos-text-link" [routerLink]="['/spirit', guide()!.guid]"
-               [queryParams]="{ highlightTree: postTree.guid }">{{ guide()!.name }}</a>
-          </div>
           <app-atmos-spirit-tree [tree]="postTree" [name]="guide()!.name"
+            [nameLink]="['/spirit', guide()!.guid]" [nameQueryParams]="{ highlightTree: postTree.guid }"
             [highlight]="highlightTree() === postTree.guid"></app-atmos-spirit-tree>
         </div>
       </div>
@@ -111,23 +108,17 @@
       @if (guide(); as g) {
         @if (guideTree(); as gt) {
           <div class="atmos-season__tree">
-            <div class="atmos-season__tree-name">
-              <a class="atmos-text-link" [routerLink]="['/spirit', g.guid]"
-                 [queryParams]="{ highlightTree: gt.guid }">{{ g.name }}</a>
-              <span class="atmos-season__tree-tag">Guide</span>
-            </div>
             <app-atmos-spirit-tree [tree]="gt" [name]="g.name"
+              [nameLink]="['/spirit', g.guid]" [nameQueryParams]="{ highlightTree: gt.guid }"
+              nameTag="Guide"
               [highlight]="highlightTree() === gt.guid"></app-atmos-spirit-tree>
           </div>
         }
       }
       @for (entry of seasonTrees(); track entry.spirit.guid) {
         <div class="atmos-season__tree">
-          <div class="atmos-season__tree-name">
-            <a class="atmos-text-link" [routerLink]="['/spirit', entry.spirit.guid]"
-               [queryParams]="{ highlightTree: entry.tree.guid }">{{ entry.spirit.name }}</a>
-          </div>
           <app-atmos-spirit-tree [tree]="entry.tree" [name]="entry.spirit.name"
+            [nameLink]="['/spirit', entry.spirit.guid]" [nameQueryParams]="{ highlightTree: entry.tree.guid }"
             [highlight]="highlightTree() === entry.tree.guid"></app-atmos-spirit-tree>
         </div>
       }
@@ -142,12 +133,8 @@
       <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
         @for (tree of includedTrees(); track tree.guid) {
           <div class="atmos-season__tree">
-            @if (tree.spirit) {
-              <div class="atmos-season__tree-name">
-                <a class="atmos-text-link" [routerLink]="['/spirit', tree.spirit.guid]">{{ tree.spirit.name }}</a>
-              </div>
-            }
-            <app-atmos-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'"></app-atmos-spirit-tree>
+            <app-atmos-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'"
+              [nameLink]="tree.spirit ? ['/spirit', tree.spirit.guid] : undefined"></app-atmos-spirit-tree>
           </div>
         }
       </div>

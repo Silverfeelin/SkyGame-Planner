@@ -17,8 +17,9 @@
   }
 
   &.is-highlighted {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
+    box-shadow:
+      inset 0 0 0 var(--atmos-focus-offset) var(--atmos-card-bg),
+      inset 0 0 0 calc(var(--atmos-focus-offset) + var(--atmos-focus-width)) var(--atmos-focus-color);
   }
 }
 
@@ -54,6 +55,20 @@
 .atmos-spirit-tree__cost {
   font-size: 13px;
   color: var(--atmos-text-dim);
+}
+
+.atmos-spirit-tree__tag {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0 8px;
+  line-height: 18px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-chip-bg);
+  color: var(--atmos-text-dim);
+  vertical-align: middle;
 }
 
 .atmos-spirit-tree__date {
