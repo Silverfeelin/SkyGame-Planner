@@ -19,6 +19,15 @@
         <p class="atmos-paragraph">
           You can try to link your account again or switch to local storage which should always work.
         </p>
+        @if (storageType() === 'dropbox') {
+          <p class="atmos-paragraph">
+            If this issue persists for your Dropbox account, please check their
+            <a class="atmos-text-link" href="https://status.dropbox.com/" target="_blank" rel="noopener">status page</a>
+            for any outages.<br/>
+            Rest assured, your data can be safely found in your Dropbox folder at:
+            <code>/Dropbox/Apps/Sky Planner/data.json</code>
+          </p>
+        }
       </div>
     </article>
   }
