@@ -267,6 +267,14 @@
   min-height: 64px;
 }
 
+// Divider between tiers in a tier-based tree.
+.atmos-spirit-tree__tier-separator {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  background: var(--atmos-line-soft);
+}
+
 // ── Columns-first layout for node trees ──────────────────────────────────────
 $st-col-gap: 32px;
 $st-row-gap: 44px;

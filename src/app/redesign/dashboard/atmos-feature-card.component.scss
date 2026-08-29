@@ -79,52 +79,6 @@
   }
 }
 
-.atmos-card__links {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 18px;
-  row-gap: 8px;
-}
-
-.atmos-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--atmos-text);
-  text-decoration: none;
-  font-size: 13.5px;
-  font-weight: 500;
-  opacity: 0.94;
-  padding: 4px 8px;
-  margin: -4px -8px;
-  border-radius: var(--atmos-radius-sm);
-  transition: background var(--atmos-transition), opacity var(--atmos-transition);
-
-  mat-icon {
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-  }
-}
-
-.atmos-card__link-img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-a.atmos-card__link {
-  &:hover {
-    background: var(--atmos-hover-bg);
-    opacity: 1;
-  }
-
-  &:focus-visible {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
-  }
-}
-
 .atmos-card__check {
   display: inline-flex;
   align-items: center;

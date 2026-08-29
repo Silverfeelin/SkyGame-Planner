@@ -4,13 +4,14 @@ import { MatIcon } from '@angular/material/icon';
 import { DataService } from '@app/services/data.service';
 import { IArea, IRealm } from 'skygame-data';
 import { AtmosRealmQuickActionsComponent } from '../realm/quick-actions/atmos-realm-quick-actions.component';
+import { AtmosFeatureCardComponent, IFeatureLink } from '../dashboard/atmos-feature-card.component';
 
 @Component({
   selector: 'app-atmos-areas',
   templateUrl: './atmos-areas.component.html',
   styleUrl: './atmos-areas.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, AtmosRealmQuickActionsComponent]
+  imports: [RouterLink, MatIcon, AtmosRealmQuickActionsComponent, AtmosFeatureCardComponent]
 })
 export class AtmosAreasComponent {
   readonly realm = signal<IRealm | undefined>(undefined);
@@ -21,6 +22,17 @@ export class AtmosAreasComponent {
     route: ActivatedRoute
   ) {
     route.queryParamMap.subscribe(p => this.onQueryChanged(p));
+  }
+
+  areaLinks(area: IArea): ReadonlyArray<IFeatureLink> {
+    const links: IFeatureLink[] = [];
+    if (!this.realm() && area.realm) {
+      links.push({ icon: 'map', label: area.realm.name, link: `/realm/${area.realm.guid}` });
+    }
+    if (area.mapData?.position) {
+      links.push({ icon: 'location_on', label: 'View on map', link: '/realm', queryParams: { map: '3', area: area.guid } });
+    }
+    return links;
   }
 
   private onQueryChanged(params: ParamMap): void {

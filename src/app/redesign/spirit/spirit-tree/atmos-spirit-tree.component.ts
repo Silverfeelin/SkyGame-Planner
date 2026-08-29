@@ -28,6 +28,8 @@ interface AtmosTreeRow {
   left?: INode;
   center?: INode;
   right?: INode;
+  /** True for the row bordering the tier below it, so a separator renders next to it. */
+  tierStart?: boolean;
 }
 
 interface AtmosTreeColumns {
@@ -163,16 +165,17 @@ export class AtmosSpiritTreeComponent {
     } else if (t.tier) {
       let level = -1;
       const tiers = TreeHelper.getTiers(t);
-      for (const tier of tiers) {
-        for (const tierRow of tier.rows) {
+      tiers.forEach((tier, tierIndex) => {
+        tier.rows.forEach((tierRow, rowIndex) => {
           level++;
           const row: AtmosTreeRow = {};
           row.left = tierRow[0] ?? undefined;
           row.center = tierRow[1] ?? undefined;
           row.right = tierRow[2] ?? undefined;
+          if (rowIndex === 0 && tierIndex > 0) { row.tierStart = true; }
           rows[level] = row;
-        }
-      }
+        });
+      });
       return rows.slice().reverse();
     }
 

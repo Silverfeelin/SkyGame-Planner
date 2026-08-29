@@ -12,7 +12,7 @@
 </header>
 
 <div class="atmos-card atmos-items__grid-card">
-  <ag-grid-angular [rowData]="rowData" [columnDefs]="colDefs" [theme]="theme"
+  <ag-grid-angular [rowData]="rowData()" [columnDefs]="colDefs" [theme]="theme"
     [getRowHeight]="getRowHeight" [suppressDragLeaveHidesColumns]="true"
     (gridReady)="onGridReady($event)" />
 </div>

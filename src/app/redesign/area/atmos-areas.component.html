@@ -23,33 +23,11 @@
 
 <section class="atmos-areas__grid">
   @for (area of areas(); track area.guid) {
-    <article class="atmos-card atmos-areas__card">
-      @if (area.imageUrl) {
-        <div class="atmos-areas__card-img"
-          [style.background-image]="'url(' + area.imageUrl + ')'"
-          [style.background-position]="area.imagePosition || null"></div>
-      }
-      <div class="atmos-card__body atmos-areas__card-body">
-        <h2 class="atmos-areas__card-title">{{ area.name }}</h2>
-        <div class="atmos-areas__card-links">
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/area', area.guid]">
-            <mat-icon>article</mat-icon>
-            <span>Overview</span>
-          </a>
-          @if (!realm() && area.realm) {
-            <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', area.realm.guid]">
-              <mat-icon>map</mat-icon>
-              <span>{{ area.realm.name }}</span>
-            </a>
-          }
-          @if (area.mapData?.position) {
-            <a class="atmos-btn atmos-btn--sm" routerLink="/realm" [queryParams]="{ map: 3, area: area.guid }">
-              <mat-icon>location_on</mat-icon>
-              <span>View on map</span>
-            </a>
-          }
-        </div>
-      </div>
-    </article>
+    <app-atmos-feature-card
+      [title]="area.name"
+      [titleLink]="'/area/' + area.guid"
+      [bannerUrl]="area.imageUrl"
+      [bannerPosition]="area.imagePosition"
+      [links]="areaLinks(area)" />
   }
 </section>

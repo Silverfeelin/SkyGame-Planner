@@ -116,6 +116,13 @@
   --atmos-input-pad:       8px 12px;
   --atmos-input-pad-pill:  8px 14px;
 
+  /* Item icon sizes. */
+  --item-size:        64px;
+  --item-size-large:  96px;
+  --item-size-medium: 48px;
+  --item-size-small:  32px;
+  --item-size-mini:   24px;
+
   /* Heading scale. */
   --atmos-h1: 2rem;
   --atmos-h2: 1.5rem;
@@ -282,6 +289,54 @@
 .atmos-text-link:hover {
   color: var(--atmos-accent);
   border-bottom-color: var(--atmos-accent);
+}
+
+/* Icon/image + label link chip. Use for link rows (feature card actions,
+   card footers) that pair a mat-icon or image with a label — gives a
+   small negative-margin hit area that reveals a hover background. */
+.atmos-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--atmos-text);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  opacity: 0.94;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition), opacity var(--atmos-transition);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-link__img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Wrapping row of .atmos-link chips — feature card actions, connected-area lists, etc. */
+.atmos-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 18px;
+  row-gap: 8px;
+}
+
+a.atmos-link:hover {
+  background: var(--atmos-hover-bg);
+  opacity: 1;
+}
+
+a.atmos-link:focus-visible {
+  outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+  outline-offset: var(--atmos-focus-offset);
 }
 
 /* Shared atmospheric focus ring. Apply to any interactive surface

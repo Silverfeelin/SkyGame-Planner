@@ -44,7 +44,9 @@ export class AtmosFeatureCardComponent {
   readonly kicker = input<string>('');
   readonly kickerColor = input<string>('var(--atmos-accent)');
   readonly title = input<string>('');
+  readonly titleLink = input<string | undefined>(undefined);
   readonly bannerUrl = input<string | undefined>(undefined);
+  readonly bannerPosition = input<string | undefined>(undefined);
   readonly bannerContain = input<boolean>(false);
   readonly bannerSilhouette = input<boolean>(false);
   readonly bannerHue = input<number>(160);

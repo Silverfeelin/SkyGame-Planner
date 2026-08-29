@@ -52,9 +52,9 @@
   <section class="atmos-card">
     <div class="atmos-card__body">
       <h2 class="atmos-area__heading">Connected Areas</h2>
-      <div class="atmos-area__connections">
+      <div class="atmos-card__links">
         @for (connection of area.connections; track connection.area.guid) {
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/area', connection.area.guid]">
+          <a class="atmos-link" [routerLink]="['/area', connection.area.guid]">
             <mat-icon>location_on</mat-icon>
             <span>{{ connection.area.name }}</span>
           </a>

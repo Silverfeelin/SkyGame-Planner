@@ -1,5 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, signal, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import L from 'leaflet';
@@ -8,6 +8,7 @@ import { MapInstanceService } from '@app/services/map-instance.service';
 import { IMapInit } from '@app/services/map.service';
 import { IArea, IRealm } from 'skygame-data';
 import { AtmosRealmQuickActionsComponent } from './quick-actions/atmos-realm-quick-actions.component';
+import { AtmosFeatureCardComponent, IFeatureLink } from '../dashboard/atmos-feature-card.component';
 
 @Component({
   selector: 'app-atmos-realms',
@@ -15,7 +16,7 @@ import { AtmosRealmQuickActionsComponent } from './quick-actions/atmos-realm-qui
   styleUrl: './atmos-realms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [MapInstanceService],
-  imports: [RouterLink, MatIcon, TooltipDirective, AtmosRealmQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, AtmosRealmQuickActionsComponent, AtmosFeatureCardComponent]
 })
 export class AtmosRealmsComponent implements AfterViewInit {
   @ViewChild('mapContainer', { static: true }) mapContainer?: ElementRef<HTMLElement>;
@@ -177,6 +178,13 @@ export class AtmosRealmsComponent implements AfterViewInit {
       if (wingedLight.area?.realm?.name === 'Void') { return; }
       this._mapInstanceService.addWingedLight(wingedLight, {});
     });
+  }
+
+  realmLinks(realm: IRealm): ReadonlyArray<IFeatureLink> {
+    if (!realm.areas?.length) { return []; }
+    return [
+      { icon: 'location_on', label: 'Areas', link: '/area', queryParams: { realm: realm.guid } }
+    ];
   }
 
   private updateMapConnections(area?: IArea): void {

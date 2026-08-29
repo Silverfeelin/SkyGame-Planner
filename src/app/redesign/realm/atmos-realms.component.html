@@ -1,15 +1,12 @@
 <atmos-realm-quick-actions/>
 
-<div class="atmos-page__quick-actions">
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Realms</h1>
   <button type="button" class="atmos-btn atmos-btn--sm"
-    [class.atmos-btn--active]="showMap()" (click)="toggleShowMap()">
+    (click)="toggleShowMap()">
     <mat-icon>map</mat-icon>
     <span>{{ showMap() ? 'Hide map' : 'Show map' }}</span>
   </button>
-</div>
-
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">Realms</h1>
 </header>
 
 <section class="atmos-card atmos-realms__map" [class.is-hidden]="!showMap()">
@@ -43,27 +40,11 @@
 
 <section class="atmos-realms__grid">
   @for (realm of visibleRealms; track realm.guid) {
-    <article class="atmos-card atmos-realms__card">
-      @if (realm.imageUrl) {
-        <div class="atmos-realms__card-img"
-          [style.background-image]="'url(' + realm.imageUrl + ')'"
-          [style.background-position]="realm.imagePosition || null"></div>
-      }
-      <div class="atmos-card__body atmos-realms__card-body">
-        <h2 class="atmos-realms__card-title">{{ realm.name }}</h2>
-        <div class="atmos-realms__card-links">
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', realm.guid]">
-            <mat-icon>article</mat-icon>
-            <span>Overview</span>
-          </a>
-          @if (realm.areas?.length) {
-            <a class="atmos-btn atmos-btn--sm" routerLink="/area" [queryParams]="{ realm: realm.guid }">
-              <mat-icon>location_on</mat-icon>
-              <span>Areas</span>
-            </a>
-          }
-        </div>
-      </div>
-    </article>
+    <app-atmos-feature-card
+      [title]="realm.name"
+      [titleLink]="'/realm/' + realm.guid"
+      [bannerUrl]="realm.imageUrl"
+      [bannerPosition]="realm.imagePosition"
+      [links]="realmLinks(realm)" />
   }
 </section>
