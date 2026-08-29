@@ -57,7 +57,7 @@
     </p>
     <label class="atmos-settings__label">
       Candles per daily check-in
-      <input class="atmos-settings__input" type="number" min="0" max="99"
+      <input class="atmos-input atmos-input--narrow" type="number" min="0" max="99"
         [value]="dailyCandleAmount"
         (change)="setDailyCandleAmount(+$any($event.target).value)">
     </label>

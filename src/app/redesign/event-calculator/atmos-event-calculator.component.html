@@ -61,7 +61,7 @@
       <div class="atmos-event-calc__row">
         <span>Your current event currency:</span>
         <mat-icon svgIcon="ticket"></mat-icon>
-        <input #inpEc type="number" min="0" max="99999" class="atmos-event-calc__input"
+        <input #inpEc type="number" min="0" max="99999" class="atmos-input atmos-event-calc__input"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="currencyCount" />
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency()">+{{ currencyPerDay }} (daily)</button>
@@ -78,21 +78,21 @@
       <div class="atmos-event-calc__row">
         <span>Your current candles:</span>
         <mat-icon svgIcon="candle"></mat-icon>
-        <input #inpC type="number" min="0" max="99999" class="atmos-event-calc__input"
+        <input #inpC type="number" min="0" max="99999" class="atmos-input atmos-event-calc__input"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="candleCount" />
       </div>
 
       <div class="atmos-event-calc__row">
         <span>Your current hearts:</span>
         <mat-icon svgIcon="heart"></mat-icon>
-        <input #inpH type="number" min="0" max="99999" class="atmos-event-calc__input"
+        <input #inpH type="number" min="0" max="99999" class="atmos-input atmos-event-calc__input"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="heartCount" />
       </div>
 
       <div class="atmos-event-calc__row">
         <span>Your current ascended candles:</span>
         <mat-icon svgIcon="ascended-candle"></mat-icon>
-        <input #inpAc type="number" min="0" max="99999" step="0.25" class="atmos-event-calc__input atmos-event-calc__input--wide"
+        <input #inpAc type="number" min="0" max="99999" step="0.25" class="atmos-input atmos-event-calc__input atmos-event-calc__input--wide"
           (blur)="onCurrencyInputBlur($event, true)" (input)="onCurrencyInput($event)" [value]="acCount" />
       </div>
 
@@ -126,7 +126,7 @@
               Please enter how much you have collected so far:
             }
             <input #inpTimed [attr.data-guid]="timedCurrency.guid" type="number" min="0" max="99999"
-              class="atmos-event-calc__input"
+              class="atmos-input atmos-event-calc__input"
               (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)"
               [value]="timedCurrencyCount[timedCurrency.guid]" />
           </div>

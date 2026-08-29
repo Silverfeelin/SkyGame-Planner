@@ -41,26 +41,6 @@
   color: var(--atmos-text-dim);
 }
 
-.atmos-coll__input {
-  background: var(--atmos-bg-elev);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-sm);
-  color: var(--atmos-text);
-  font: inherit;
-  font-size: 14px;
-  padding: 8px 12px;
-  outline: none;
-  transition: border-color var(--atmos-transition);
-
-  &:focus {
-    border-color: var(--atmos-accent);
-  }
-}
-
-.atmos-coll__textarea {
-  resize: vertical;
-  min-height: 80px;
-}
 
 .atmos-coll__input-error {
   font-size: 12px;

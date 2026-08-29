@@ -65,7 +65,7 @@
         <span class="atmos-calc__label">Your season candles:</span>
         <mat-icon class="atmos-calc__inline-icon" svgIcon="candle"></mat-icon>
         <input #inpSc type="number" min="0" max="99999"
-               class="atmos-calc__input atmos-calc__input--inline"
+               class="atmos-input atmos-input--inline"
                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
                [value]="candleCount"/>
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
@@ -114,7 +114,7 @@
               Please enter how much you have collected so far:
             }
             <input #inpTimed [attr.data-guid]="timedCurrency.guid"
-                   class="atmos-calc__input atmos-calc__input--inline"
+                   class="atmos-input atmos-input--inline"
                    (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
                    type="number" min="0" max="99999" [value]="timedCurrencyCount[timedCurrency.guid]"/>
           </div>

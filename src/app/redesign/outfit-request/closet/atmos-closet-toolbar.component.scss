@@ -30,9 +30,9 @@ $blue: #0aa0ff;
     color: var(--atmos-text-mute);
   }
 
-  &__input {
+  &__field {
     width: 100%;
-    padding-left: 36px;
+    padding-left: 36px; // clears the absolutely positioned search icon
   }
 }
 

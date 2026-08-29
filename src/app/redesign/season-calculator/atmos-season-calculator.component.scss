@@ -48,20 +48,6 @@
   height: 18px;
 }
 
-.atmos-calc__input {
-  background: var(--atmos-card-bg-solid);
-  color: var(--atmos-text);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-sm);
-  padding: 6px 10px;
-  font: inherit;
-  width: 100%;
-
-  &--inline {
-    width: 90px;
-    display: inline-block;
-  }
-}
 
 .atmos-calc__danger {
   color: var(--atmos-warm);

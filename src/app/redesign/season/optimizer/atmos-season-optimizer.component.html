@@ -86,7 +86,7 @@
               <b>Current friendship points</b>
               <mat-icon class="atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">question_mark</mat-icon>
             </div>
-            <input class="atmos-optimizer__input" type="number" min="0" max="280" step="10"
+            <input class="atmos-input" type="number" min="0" max="280" step="10"
                    [formControl]="friendshipControls[iTree]"/>
             <div><b>Missing points per level</b></div>
             @for (points of missingFriendship()[iTree]; track $index) {
@@ -133,7 +133,7 @@
       <div class="atmos-paragraph">
         <div class="atmos-optimizer__candles-row">
           Your current season candles:
-          <input class="atmos-optimizer__input atmos-optimizer__input--inline" type="number"
+          <input class="atmos-input atmos-input--inline" type="number"
                  step="1" min="-999" max="999" [formControl]="candleControl"/>
         </div>
         You can get <b class="is-met">{{ candlesLeft() }}</b>

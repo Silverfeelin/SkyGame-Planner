@@ -50,21 +50,8 @@
 
 .atmos-event-calc__input {
   width: 80px;
-  background: var(--atmos-card-bg);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-sm);
-  padding: 6px 10px;
-  color: var(--atmos-text);
-  font-family: inherit;
-  font-size: 14px;
-  outline: 0;
 
   &--wide { width: 110px; }
-
-  &:focus-visible {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
-  }
 }
 
 .atmos-event-calc__divider {

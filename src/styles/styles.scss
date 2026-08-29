@@ -136,19 +136,17 @@ input, select, textarea {
   background: var(--atmos-bg-elev);
   border: 1px solid var(--atmos-line);
 
-  &:focus {
-    outline: none;
-    border-color: var(--atmos-line);
+  /* Never remove the ring without replacing it — a field that forgets to
+     opt into .atmos-input still has to be keyboard-navigable. */
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
   }
 }
 
 input[type="checkbox"] {
   width: auto;
   display: inline-block;
-}
-
-input[type="date"] {
-  color-scheme: dark;
 }
 
 input[type="date"].input-date-click {

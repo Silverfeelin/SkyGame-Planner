@@ -47,7 +47,7 @@
       <div class="atmos-currency__field">
         <mat-icon svgIcon="candle" [skyTooltip]="'Candles'"></mat-icon>
         <span class="atmos-currency__times">x</span>
-        <input #inpC class="atmos-currency__input" type="number" min="0" max="99999" step="1"
+        <input #inpC class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
           [value]="inpCurrencies.candles"/>
       </div>
@@ -63,7 +63,7 @@
       <div class="atmos-currency__field">
         <mat-icon svgIcon="heart" [skyTooltip]="'Hearts'"></mat-icon>
         <span class="atmos-currency__times">x</span>
-        <input #inpH class="atmos-currency__input" type="number" min="0" max="99999" step="1"
+        <input #inpH class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
           [value]="inpCurrencies.hearts"/>
       </div>
@@ -79,7 +79,7 @@
       <div class="atmos-currency__field">
         <mat-icon svgIcon="ascended-candle" [skyTooltip]="'Ascended candles'"></mat-icon>
         <span class="atmos-currency__times">x</span>
-        <input #inpAc class="atmos-currency__input" type="number" min="0" max="99999" step="0.25"
+        <input #inpAc class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="0.25"
           (blur)="onCurrencyInputBlur($event, true)" (input)="onCurrencyInput()"
           [value]="inpCurrencies.ascendedCandles"/>
       </div>
@@ -95,7 +95,7 @@
       <div class="atmos-currency__field">
         <mat-icon svgIcon="gift" class="atmos-currency__icon--seasonal" [skyTooltip]="'Gift season passes'"></mat-icon>
         <span class="atmos-currency__times">x</span>
-        <input #inpSp class="atmos-currency__input" type="number" min="0" max="99999" step="1"
+        <input #inpSp class="atmos-input atmos-input--number" type="number" min="0" max="99999" step="1"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
           [value]="inpCurrencies.giftPasses"/>
       </div>
@@ -117,7 +117,7 @@
         <div class="atmos-currency__field">
           <mat-icon svgIcon="candle" class="atmos-currency__icon--seasonal" [skyTooltip]="'Season candles'"></mat-icon>
           <span class="atmos-currency__times">x</span>
-          <input #inpSc class="atmos-currency__input atmos-currency__input--narrow" type="number" min="0" max="99999"
+          <input #inpSc class="atmos-input atmos-input--narrow" type="number" min="0" max="99999"
             [value]="inpCurrencies.seasonCurrencies[ongoingSeason.guid].candles"
             (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
         </div>
@@ -148,7 +148,7 @@
             <div class="atmos-currency__field">
               <mat-icon svgIcon="ticket" [skyTooltip]="'Event currency'"></mat-icon>
               <span class="atmos-currency__times">x</span>
-              <input #inpEc class="atmos-currency__input atmos-currency__input--narrow" type="number" min="0" max="99999"
+              <input #inpEc class="atmos-input atmos-input--narrow" type="number" min="0" max="99999"
                 [value]="inpCurrencies.eventCurrencies[instance.guid].tickets"
                 (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"/>
             </div>

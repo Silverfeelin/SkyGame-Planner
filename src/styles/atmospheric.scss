@@ -4,6 +4,8 @@
 /* Base card surface — frosted-glass panel used as the container for
    feature cards, list cards, and any other atmospheric card layout. */
 :root {
+  color-scheme: dark;
+
   --atmos-hue: 240;
   --atmos-bg-image: url(/assets/game/background/isle.webp);
 
@@ -111,7 +113,8 @@
   --atmos-btn-gap:         10px;
   --atmos-page-title-size: 32px;
   --atmos-page-header-gap: 16px;
-  --atmos-input-pad:       0.375rem 0.75rem;
+  --atmos-input-pad:       8px 12px;
+  --atmos-input-pad-pill:  8px 14px;
 
   /* Heading scale. */
   --atmos-h1: 2rem;
@@ -599,17 +602,60 @@
 }
 
 // 5. Form input
+//    The single field treatment for the atmos design. Uses the translucent
+//    chip fill rather than an opaque elevation so fields sit *into* the
+//    frosted card they live on, matching .atmos-btn beside them.
 .atmos-input {
-  background: var(--atmos-bg-elev);
-  border: 1px solid var(--atmos-line);
-  border-radius: 0.375rem;
+  background: var(--atmos-chip-bg);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
   color: var(--atmos-text);
   padding: var(--atmos-input-pad);
-  font-size: 0.9rem;
-  &:focus {
+  font-family: inherit;
+  font-size: 14px;
+  outline: 0;
+  transition: background var(--atmos-transition), border-color var(--atmos-transition);
+
+  &::placeholder { color: var(--atmos-text-mute); }
+
+  &:hover { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
     outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
     outline-offset: var(--atmos-focus-offset);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &::-webkit-search-cancel-button { display: none; }
+
+  /* background-color is locked during autofill, so the fill has to be
+     repainted with an inset shadow instead. */
+  &:-webkit-autofill {
+    -webkit-text-fill-color: var(--atmos-text);
+    -webkit-box-shadow: inset 0 0 0 100px var(--atmos-bg-elev-2);
+    caret-color: var(--atmos-text);
+  }
+}
+
+/* Pill-shaped field, for search boxes. */
+.atmos-input--pill {
+  border-radius: var(--atmos-radius-pill);
+  padding: var(--atmos-input-pad-pill);
+}
+
+/* Width modifiers. The global `input` base stretches fields to 100%; these
+   pull them back for numeric and inline fields. */
+.atmos-input--narrow { width: 5em; }
+.atmos-input--number { width: 7em; }
+.atmos-input--inline { width: 90px; display: inline-block; }
+
+.atmos-input--textarea {
+  resize: vertical;
+  min-height: 80px;
 }
 
 // 6. Horizontal scroller

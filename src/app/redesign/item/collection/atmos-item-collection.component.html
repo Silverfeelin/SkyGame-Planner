@@ -26,15 +26,15 @@
       <div class="atmos-coll__form-fields">
         <label class="atmos-coll__label">
           Name
-          <input class="atmos-coll__input" type="text" maxlength="100" placeholder="Collection name" formControlName="name">
+          <input class="atmos-input" type="text" maxlength="100" placeholder="Collection name" formControlName="name">
         </label>
         <label class="atmos-coll__label">
           Description
-          <textarea class="atmos-coll__input atmos-coll__textarea" maxlength="2000" placeholder="Optional description" formControlName="description"></textarea>
+          <textarea class="atmos-input atmos-input--textarea" maxlength="2000" placeholder="Optional description" formControlName="description"></textarea>
         </label>
         <label class="atmos-coll__label">
           Image URL
-          <input class="atmos-coll__input" type="text" placeholder="https://…" formControlName="imageUrl">
+          <input class="atmos-input" type="text" placeholder="https://…" formControlName="imageUrl">
           @if (editImgError) { <span class="atmos-coll__input-error">Please enter a valid https:// URL</span> }
         </label>
       </div>

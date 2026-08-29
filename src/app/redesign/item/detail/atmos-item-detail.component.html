@@ -36,10 +36,10 @@
           <li class="atmos-item-detail__row">
             <mat-icon class="atmos-item-detail__icon">code</mat-icon>
             <span>
-              ID: <code (click)="copy(itm.id)" class="atmos-item-detail__code">{{ itm.id }}</code>
-              GUID: <code (click)="copy(itm.guid)" class="atmos-item-detail__code">{{ itm.guid }}</code>
+              ID: <code (click)="copy(itm.id)" class="atmos-code atmos-item-detail__code">{{ itm.id }}</code>
+              GUID: <code (click)="copy(itm.guid)" class="atmos-code atmos-item-detail__code">{{ itm.guid }}</code>
               @if (itm.order) {
-                Order: <code (click)="copy(itm.order)" class="atmos-item-detail__code">{{ itm.order }}</code>
+                Order: <code (click)="copy(itm.order)" class="atmos-code atmos-item-detail__code">{{ itm.order }}</code>
               }
             </span>
           </li>

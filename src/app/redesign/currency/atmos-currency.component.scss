@@ -63,21 +63,6 @@
   font-weight: 500;
 }
 
-.atmos-currency__input {
-  background: var(--atmos-bg-elev);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-sm);
-  color: var(--atmos-text);
-  font: inherit;
-  font-size: 14px;
-  padding: 8px 12px;
-  outline: none;
-  width: 7em;
-  transition: border-color var(--atmos-transition);
-
-  &:focus { border-color: var(--atmos-accent); }
-  &--narrow { width: 5em; }
-}
 
 .atmos-currency__icon--seasonal {
   color: var(--atmos-warm);

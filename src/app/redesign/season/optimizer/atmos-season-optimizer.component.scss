@@ -72,20 +72,6 @@
   }
 }
 
-.atmos-optimizer__input {
-  background: var(--atmos-card-bg-solid);
-  color: var(--atmos-text);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-sm);
-  padding: 6px 10px;
-  font: inherit;
-  width: 100%;
-
-  &--inline {
-    width: 90px;
-    display: inline-block;
-  }
-}
 
 .atmos-optimizer__candles-row {
   display: flex;
