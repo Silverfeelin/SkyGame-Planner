@@ -87,21 +87,24 @@ export const REDESIGN_ROUTES: Routes = [
   {
     path: 'season',
     children: [
-      { path: '',          component: AtmosSeasonsComponent,         title: title('Seasons') },
-      { path: 'optimizer', component: AtmosSeasonOptimizerComponent, title: title('Season optimizer') },
-      { path: ':guid',     component: AtmosSeasonComponent,          title: title('Season') },
+      { path: '',           component: AtmosSeasonsComponent,          title: title('Seasons') },
+      { path: 'optimizer',  component: AtmosSeasonOptimizerComponent,  title: title('Season optimizer') },
+      { path: 'calculator', component: AtmosSeasonCalculatorComponent, title: title('Season calculator') },
+      { path: ':guid',      component: AtmosSeasonComponent,           title: title('Season') },
     ]
   },
-  { path: 'season-calculator', component: AtmosSeasonCalculatorComponent, title: title('Season calculator') },
-  { path: 'event-calculator', component: AtmosEventCalculatorComponent, title: title('Event calculator') },
   {
     path: 'event',
     children: [
-      { path: '',        component: AtmosEventsComponent,       title: title('Events') },
-      { path: 'history', component: AtmosEventHistoryComponent, title: title('Event history') },
-      { path: ':guid',   component: AtmosEventComponent,        title: title('Event') },
+      { path: '',           component: AtmosEventsComponent,          title: title('Events') },
+      { path: 'history',    component: AtmosEventHistoryComponent,    title: title('Event history') },
+      { path: 'calculator', component: AtmosEventCalculatorComponent, title: title('Event calculator') },
+      { path: ':guid',      component: AtmosEventComponent,           title: title('Event') },
     ]
   },
+  /* Legacy top-level calculator paths. */
+  { path: 'season-calculator', redirectTo: 'season/calculator', pathMatch: 'full' },
+  { path: 'event-calculator', redirectTo: 'event/calculator', pathMatch: 'full' },
   {
     path: 'event-instance',
     children: [

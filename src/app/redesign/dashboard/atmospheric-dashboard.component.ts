@@ -9,6 +9,7 @@ import { TreeHelper } from '@app/helpers/tree-helper';
 import { CurrencyService } from '@app/services/currency.service';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
+import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { StorageService } from '@app/services/storage.service';
 import { IEventInstance, ISeason, ISpecialVisit, ISpiritTree, ITravelingSpirit } from 'skygame-data';
 import { AtmosClockComponent } from './atmos-clock.component';
@@ -57,6 +58,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
   private readonly _storageService = inject(StorageService);
   private readonly _currencyService = inject(CurrencyService);
   private readonly _eventService = inject(EventService);
+  private readonly _dailyCheckinService = inject(DailyCheckinService);
 
   readonly season = signal<ISeason | undefined>(undefined);
   readonly ts = signal<ITravelingSpirit | undefined>(undefined);
@@ -65,6 +67,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
   readonly rsIsFuture = signal(false);
   readonly favouriteCount = signal(0);
   readonly eventCards = signal<ReadonlyArray<IEventCard>>([]);
+  readonly checkedIn = signal(false);
 
   readonly seasonKicker = computed(() => {
     const s = this.season();
@@ -83,7 +86,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
     if (!s) { return []; }
     return [
       { icon: 'dashboard',  label: 'Overview',   link: `/season/${s.guid}` },
-      { icon: 'calculate', label: 'Calculator', link: '/season-calculator' },
+      { icon: 'calculate', label: 'Calculator', link: '/season/calculator' },
       DISCORD_DAILY_QUEST_LINK,
       THATSKY_DAILY_QUEST_LINK
     ];
@@ -148,6 +151,10 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
       .pipe(filter(e => e.key?.startsWith('event.checkin.') == true))
       .subscribe(() => this.refreshEventCheckins()));
 
+    this._subs.add(this._eventService.storageChanged
+      .pipe(filter(e => e.key === DailyCheckinService.key))
+      .subscribe(() => this.checkedIn.set(this._dailyCheckinService.isCheckedIn())));
+
     effect(() => {
       const r = this.rs();
       if (!r) { this.rsBannerUrl.set(undefined); return; }
@@ -164,6 +171,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     const seasonDates = DateHelper.groupByPeriod(this._dataService.seasonConfig.items);
     this.season.set(seasonDates.active?.at(-1));
+    this.checkedIn.set(this._dailyCheckinService.isCheckedIn());
 
     const tsDates = DateHelper.groupByPeriod(this._dataService.travelingSpiritConfig.items);
     const activeTs = tsDates.active?.at(-1);
@@ -184,6 +192,10 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._subs.unsubscribe();
+  }
+
+  onSeasonCheckinToggle(season: ISeason, evt: MouseEvent): void {
+    this.checkedIn.set(this._dailyCheckinService.toggle(evt, season));
   }
 
   onEventCheckinToggle(card: IEventCard, evt: MouseEvent): void {
@@ -235,7 +247,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
       { icon: 'list',      label: 'List',     link: `/event/${event.guid}` }
     ];
     if (isActive && instance.calculatorData) {
-      links.push({ icon: 'calculate', label: 'Calculator', link: '/event-calculator', queryParams: { guid: instance.guid } });
+      links.push({ icon: 'calculate', label: 'Calculator', link: '/event/calculator', queryParams: { guid: instance.guid } });
     }
     if (isActive) {
       links.push(DISCORD_DAILY_QUEST_LINK);

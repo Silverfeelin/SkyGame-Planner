@@ -22,7 +22,7 @@
         <div class="atmos-season-card__row">
           <mat-icon>calendar_month</mat-icon>
           <span>
-            <app-date [date]="s.date"></app-date> – <app-date [date]="s.endDate"></app-date>
+            <app-date-range [start]="s.date" [end]="s.endDate"></app-date-range>
             <span class="atmos-season-card__days">
               (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
             </span>
@@ -44,17 +44,10 @@
       }
 
       @if (sections()['checkin']) {
-        <button
-          type="button"
-          class="atmos-season-card__checkin"
-          [class.is-checked]="checkedIn()"
-          [attr.aria-pressed]="checkedIn()"
-          (click)="onCheckin($event)">
-          <span class="atmos-season-card__checkbox">
-            @if (checkedIn()) { <mat-icon>check</mat-icon> }
-          </span>
-          <span>I have done my season dailies.</span>
-        </button>
+        <app-atmos-daily-checkin
+          [checkedIn]="checkedIn()"
+          label="I have done my season dailies."
+          (checkin)="onCheckin($event)"></app-atmos-daily-checkin>
       }
 
       <ng-content />

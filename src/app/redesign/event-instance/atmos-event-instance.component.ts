@@ -10,6 +10,7 @@ import { TitleService } from '@app/services/title.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
@@ -22,7 +23,7 @@ import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosItemListCompone
   imports: [
     RouterLink,
     MatIcon,
-    DateComponent,
+    DateComponent, DateRangeComponent,
     DaysLeftComponent,
     DurationComponent,
     AtmosSpiritTreeComponent,

@@ -19,9 +19,7 @@
       <div class="atmos-rs-detail__meta-item" [class.is-ended]="state() === 'ended'">
         <mat-icon class="atmos-rs-detail__icon">calendar_month</mat-icon>
         <span>
-          <app-date [date]="r.date"></app-date>
-          <span class="atmos-rs-detail__sep">to</span>
-          <app-date [date]="r.endDate"></app-date>
+          <app-date-range [start]="r.date" [end]="r.endDate"></app-date-range>
         </span>
         @if (state() === 'future') {
           <span class="atmos-rs-detail__pill atmos-pill">

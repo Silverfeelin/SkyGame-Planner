@@ -28,9 +28,6 @@
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', eventInstance.guid]">
       <mat-icon>arrow_back</mat-icon> Event
     </a>
-    <a class="atmos-btn atmos-btn--sm" routerLink="/currency">
-      <mat-icon svgIcon="candle"></mat-icon> Currencies
-    </a>
     <a class="atmos-btn atmos-btn--sm" href="https://sky-event-calculator.netlify.app/" target="_blank" rel="noopener">
       <mat-icon>open_in_new</mat-icon> Stoat's Calculator
     </a>
@@ -63,14 +60,16 @@
         <mat-icon svgIcon="ticket"></mat-icon>
         <input #inpEc type="number" min="0" max="99999" class="atmos-input atmos-event-calc__input"
           (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput($event)" [value]="currencyCount" />
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency()">+{{ currencyPerDay }} (daily)</button>
+        <div class="atmos-btn-group">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency()">+{{ currencyPerDay }} (daily)</button>
+        </div>
       </div>
 
       <div class="atmos-event-calc__row">
         <span>Today's daily currency:</span>
         <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="includesToday" (click)="toggleIncludesToday()">
-          <mat-icon>{{ includesToday ? 'check' : 'close' }}</mat-icon>
+          <app-atmos-checkbox [state]="includesToday" [useColors]="true"></app-atmos-checkbox>
           <span>{{ includesToday ? 'obtained' : 'not obtained' }}</span>
         </button>
       </div>

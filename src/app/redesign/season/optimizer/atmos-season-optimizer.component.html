@@ -31,13 +31,13 @@
         <a href="https://korea-sky-planner.com/sky/candlecalculator" target="_blank" rel="noopener" class="atmos-text-link">Realdeer's Season Calculator</a>
         (in Korean and English).
       </p>
-      <hr class="atmos-optimizer__rule"/>
+      <hr class="atmos-rule"/>
       <p class="atmos-paragraph">
         To enter the items you already own, please go back to the
         <a class="atmos-text-link" [routerLink]="['/season', season.guid]">{{ season.name }}</a> page.<br/>
         There you can click on the items and track your progress as usual.
       </p>
-      <hr class="atmos-optimizer__rule"/>
+      <hr class="atmos-rule"/>
       <p class="atmos-paragraph">
         This page refers to friendship points in the form of numbers. What does that mean?
         <a class="atmos-text-link atmos-optimizer__inline-action" (click)="showingFriendshipHelp.set(true)">Click here</a> for more information.
@@ -54,19 +54,19 @@
         4 <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(30)</span>
         blessing — same cost, double the friendship.
       </p>
-      <hr class="atmos-optimizer__rule"/>
+      <hr class="atmos-rule"/>
       <p class="atmos-paragraph">
         You can click on the items that you want to highlight them.<br/>
         Below each spirit tree you will then see the remaining friendship points that you need to gain through daily adventures or by buying items you are not interested in.
       </p>
       <div class="atmos-optimizer__filters">
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightEverything()">Everything</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightCosmetics()">Cosmetics</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightEmotes()">Emotes</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightMusic()">Music</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightSeasonHearts()">Season hearts</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightSeasonPass()">Season pass</button>
-        <button type="button" class="atmos-btn atmos-btn--sm atmos-optimizer__reset" (click)="promptResetHighlight()">Reset highlighted</button>
+        <button type="button" class="atmos-btn" (click)="highlightEverything()">Everything</button>
+        <button type="button" class="atmos-btn" (click)="highlightCosmetics()">Cosmetics</button>
+        <button type="button" class="atmos-btn" (click)="highlightEmotes()">Emotes</button>
+        <button type="button" class="atmos-btn" (click)="highlightMusic()">Music</button>
+        <button type="button" class="atmos-btn" (click)="highlightSeasonHearts()">Season hearts</button>
+        <button type="button" class="atmos-btn" (click)="highlightSeasonPass()">Season pass</button>
+        <button type="button" class="atmos-btn atmos-btn--danger" (click)="promptResetHighlight()">Reset highlighted</button>
       </div>
     </div>
   </section>
@@ -115,11 +115,11 @@
     <div class="atmos-card__body">
       <div class="atmos-optimizer__toggles">
         <button class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="hasSeasonPass()" (click)="toggleHaveSeasonPass()">
-          <app-atmos-checkbox size="sm" [state]="hasSeasonPass()" [useColors]="true"></app-atmos-checkbox>
+          <app-atmos-checkbox [state]="hasSeasonPass()" [useColors]="true"></app-atmos-checkbox>
           Have Season Pass
         </button>
         <button class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="hasDoneDailiesToday()" (click)="toggleToday()">
-          <app-atmos-checkbox size="sm" [state]="hasDoneDailiesToday()" [useColors]="true"></app-atmos-checkbox>
+          <app-atmos-checkbox [state]="hasDoneDailiesToday()" [useColors]="true"></app-atmos-checkbox>
           Have done dailies today
         </button>
       </div>
@@ -128,7 +128,7 @@
         There are <b class="is-met">{{ daysLeft() }}</b> dailies left in this season.
       </p>
 
-      <hr class="atmos-optimizer__rule"/>
+      <hr class="atmos-rule"/>
 
       <div class="atmos-paragraph">
         <div class="atmos-optimizer__candles-row">
@@ -152,7 +152,7 @@
         }
       </div>
 
-      <hr class="atmos-optimizer__rule"/>
+      <hr class="atmos-rule"/>
 
       <p class="atmos-paragraph">
         If you complete daily spirit adventures you can get a total of
@@ -186,7 +186,7 @@
             <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>.<br/>
             Please highlight the items you'd like to add to update the calculation!
           </p>
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="highlightKnapsack()">Highlight suggested items</button>
+          <button type="button" class="atmos-btn atmos-optimizer__knapsack-action" (click)="highlightKnapsack()">Highlight suggested items</button>
         } @else {
           <p class="atmos-paragraph">Look for the largest grey numbers to prioritize which items to buy!</p>
         }

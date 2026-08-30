@@ -61,19 +61,10 @@
     <ng-content />
 
     @if (checkLabel()) {
-      <button
-        type="button"
-        class="atmos-card__check"
-        [class.is-checked]="checked()"
-        [attr.aria-pressed]="checked()"
-        (click)="checkToggle.emit($event)">
-        <span class="atmos-card__check-box">
-          @if (checked()) {
-            <mat-icon>check</mat-icon>
-          }
-        </span>
-        <span>{{ checkLabel() }}</span>
-      </button>
+      <app-atmos-daily-checkin
+        [checkedIn]="checked()"
+        [label]="checkLabel()"
+        (checkin)="checkToggle.emit($event)"></app-atmos-daily-checkin>
     }
 
     @if (currency().length) {

@@ -1,12 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { ISeason } from 'skygame-data';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
-import { StorageService } from '@app/services/storage.service';
-import { CurrencyService } from '@app/services/currency.service';
-import { SettingService } from '@app/services/setting.service';
+import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { IconComponent } from '@app/components/icon/icon.component';
 import { AtmosSeasonCardComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosSeasonQuickActionsComponent } from '../quick-actions/atmos-season-quick-actions.component';
@@ -15,8 +13,6 @@ interface IYearGroup {
   readonly year: number;
   readonly seasons: ReadonlyArray<ISeason>;
 }
-
-const CHECKIN_KEY = 'season.checkin';
 
 @Component({
   selector: 'app-atmos-seasons',
@@ -27,13 +23,12 @@ const CHECKIN_KEY = 'season.checkin';
 })
 export class AtmosSeasonsComponent {
   private readonly _dataService = inject(DataService);
-  private readonly _storageService = inject(StorageService);
-  private readonly _currencyService = inject(CurrencyService);
-  private readonly _settingService = inject(SettingService);
+  private readonly _dailyCheckinService = inject(DailyCheckinService);
 
   readonly seasons: ReadonlyArray<ISeason> = this._dataService.seasonConfig.items;
   readonly reverseSeasons: ReadonlyArray<ISeason> = this.seasons.slice().reverse();
   readonly currentSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
+  readonly checkedIn = signal(this._dailyCheckinService.isCheckedIn());
 
   readonly yearGroups = computed<ReadonlyArray<IYearGroup>>(() => {
     const map = new Map<number, ISeason[]>();
@@ -47,35 +42,12 @@ export class AtmosSeasonsComponent {
       .map<IYearGroup>(([year, seasons]) => ({ year, seasons }));
   });
 
-  /** Mirrors legacy SeasonCardComponent check-in: writes a per-season key
-   *  and applies the candle currency delta via CurrencyService. */
   onSeasonCheckin(season: ISeason, event: MouseEvent): void {
-    const key = `${CHECKIN_KEY}.${season.guid}`;
-    const checked = this.isCheckedIn(season);
-    const next = !checked;
-    if (next) {
-      localStorage.setItem(key, DateHelper.todaySky().toFormat('yyyy-MM-dd'));
-    } else {
-      localStorage.removeItem(key);
-    }
-
-    const dailyCurrency = this._storageService.hasSeasonPass(season.guid) ? 6 : 5;
-    const delta = next ? dailyCurrency : -dailyCurrency;
-    this._currencyService.addSeasonCurrency(season.guid, delta);
-
-    const candleAmount = this._settingService.dailyCandleAmount;
-    let candleDelta = 0;
-    if (candleAmount) {
-      candleDelta = next ? candleAmount : -candleAmount;
-      this._currencyService.addCost({ c: candleDelta });
-    }
-
-    this._currencyService.animateCurrencyGained(event, delta, candleDelta);
+    this.checkedIn.set(this._dailyCheckinService.toggle(event, season));
   }
 
+  /** There is a single daily check-in, so only the ongoing season can be checked in. */
   isCheckedIn(season: ISeason): boolean {
-    const stored = localStorage.getItem(`${CHECKIN_KEY}.${season.guid}`);
-    if (!stored) { return false; }
-    return stored === DateHelper.todaySky().toFormat('yyyy-MM-dd');
+    return season === this.currentSeason && this.checkedIn();
   }
 }

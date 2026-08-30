@@ -19,7 +19,7 @@
       </a>
     }
     @if (inst.calculatorData && (state() === 'active' || state() === 'future')) {
-      <a class="atmos-btn atmos-btn--sm" routerLink="/event-calculator" [queryParams]="{ guid: inst.guid }">
+      <a class="atmos-btn atmos-btn--sm" routerLink="/event/calculator" [queryParams]="{ guid: inst.guid }">
         <mat-icon>calculate</mat-icon> Event Calculator
       </a>
     }
@@ -41,9 +41,7 @@
       <div class="atmos-event-instance__meta">
         <mat-icon>calendar_month</mat-icon>
         <span class="atmos-event-instance__meta-text" [class.is-expired]="state() === 'ended'">
-          <app-date [date]="inst.date"></app-date>
-          to
-          <app-date [date]="inst.endDate"></app-date>
+          <app-date-range [start]="inst.date" [end]="inst.endDate"></app-date-range>
           @if (state() !== 'active') {
             <span class="atmos-event-instance__days-left">
               (<app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)

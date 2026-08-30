@@ -28,7 +28,7 @@
       <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
         <mat-icon>calendar_month</mat-icon>
         <div>
-          <app-date [date]="s.date"></app-date> – <app-date [date]="s.endDate"></app-date>
+          <app-date-range [start]="s.date" [end]="s.endDate"></app-date-range>
           @if (state() !== 'active') {
             <span class="atmos-season__fact-meta">
               (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)

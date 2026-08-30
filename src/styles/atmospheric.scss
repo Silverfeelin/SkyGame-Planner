@@ -873,7 +873,15 @@ a.atmos-link:focus-visible {
   scrollbar-color: var(--atmos-line) transparent;
 }
 
-// 7. Card header
+// 7. Horizontal rule inside a card. Uses the soft (light, translucent) line
+//    rather than --atmos-line, which all but disappears on a frosted card.
+.atmos-rule {
+  border: 0;
+  border-top: 1px solid var(--atmos-line-soft);
+  margin: 12px 0;
+}
+
+// 8. Card header
 .atmos-card__header {
   display: flex;
   align-items: center;
@@ -883,7 +891,7 @@ a.atmos-link:focus-visible {
   font-weight: 600;
 }
 
-// 8. AG-Grid host card
+// 9. AG-Grid host card
 .atmos-grid-card {
   display: flex;
   flex-direction: column;
@@ -896,14 +904,14 @@ a.atmos-link:focus-visible {
   }
 }
 
-// 9. Pill size modifier
+// 10. Pill size modifier
 .atmos-pill--sm {
   font-size: 0.7rem !important;
   padding: 0.1rem 0.4rem !important;
   height: auto !important;
 }
 
-// 10. Page host mixin
+// 11. Page host mixin
 @mixin atmos-page-host {
   display: flex;
   flex-direction: column;
@@ -911,7 +919,7 @@ a.atmos-link:focus-visible {
   min-height: 0;
 }
 
-// 11. Spirit-tree row — flex container for one or more <app-atmos-spirit-tree>.
+// 12. Spirit-tree row — flex container for one or more <app-atmos-spirit-tree>.
 //     Trees are bottom-aligned so they share a baseline and grow upward.
 .atmos-spirit-trees {
   display: flex;

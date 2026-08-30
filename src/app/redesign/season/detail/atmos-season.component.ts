@@ -10,7 +10,7 @@ import { EventService } from '@app/services/event.service';
 import { IAPService } from '@app/services/iap.service';
 import { StorageService } from '@app/services/storage.service';
 import { TitleService } from '@app/services/title.service';
-import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import {
@@ -33,7 +33,7 @@ interface ITreeEntry {
   styleUrl: './atmos-season.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    RouterLink, MatIcon, DateComponent, DaysLeftComponent, DurationComponent,
+    RouterLink, MatIcon, DateRangeComponent, DaysLeftComponent, DurationComponent,
     AtmosSpiritTreeComponent, AtmosItemListComponent, AtmosIapCardComponent,
     AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent
   ]

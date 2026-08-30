@@ -14,6 +14,7 @@ import { NodeService } from '@app/services/node.service';
 import { StorageService } from '@app/services/storage.service';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import {
+  AtmosCheckboxComponent,
   AtmosDraftWarningComponent,
   AtmosSpiritTreeComponent,
   AtmosSpiritTreeNodeClickEvent
@@ -25,7 +26,7 @@ import { AtmosSeasonQuickActionsComponent } from '../season/quick-actions/atmos-
   templateUrl: './atmos-season-calculator.component.html',
   styleUrl: './atmos-season-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe, AtmosSpiritTreeComponent, AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent]
+  imports: [RouterLink, MatIcon, DateTimePipe, AtmosCheckboxComponent, AtmosSpiritTreeComponent, AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent]
 })
 export class AtmosSeasonCalculatorComponent implements OnInit {
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;

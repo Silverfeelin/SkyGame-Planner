@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { WindowHelper } from '@app/helpers/window-helper';
+import { AtmosDailyCheckinComponent } from '../daily/daily-checkin/atmos-daily-checkin.component';
 
 export interface IFeatureLink {
   icon?: string;
@@ -34,7 +35,7 @@ const KIND_ICON: Record<CurrencyMarkKind, string> = {
   templateUrl: './atmos-feature-card.component.html',
   styleUrl: './atmos-feature-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon]
+  imports: [RouterLink, MatIcon, AtmosDailyCheckinComponent]
 })
 export class AtmosFeatureCardComponent {
   readonly isWindows = WindowHelper.isWindows();

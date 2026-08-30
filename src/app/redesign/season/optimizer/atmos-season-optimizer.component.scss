@@ -4,12 +4,6 @@
   gap: var(--atmos-gap);
 }
 
-.atmos-optimizer__rule {
-  border: 0;
-  border-top: 1px solid var(--atmos-line);
-  margin: 12px 0;
-}
-
 .atmos-optimizer__inline-icon {
   font-size: 16px;
   width: 16px;
@@ -32,10 +26,6 @@
   flex-wrap: wrap;
   gap: var(--atmos-gap-compact);
   margin-top: 12px;
-}
-
-.atmos-optimizer__reset {
-  color: var(--atmos-warm);
 }
 
 .atmos-optimizer__trees {
@@ -105,6 +95,12 @@
   color: var(--atmos-text);
 
   li { margin-bottom: 4px; }
+}
+
+/* The results card body is a column flex, which would otherwise stretch a
+   lone button to the full card width. */
+.atmos-optimizer__knapsack-action {
+  align-self: flex-start;
 }
 
 // State helpers — reuse semantic accent colours from tokens.

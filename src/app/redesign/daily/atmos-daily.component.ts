@@ -6,8 +6,7 @@ import { IRealm } from 'skygame-data';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
-import { CurrencyService } from '@app/services/currency.service';
-import { SettingService } from '@app/services/setting.service';
+import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { DAILY_TASKS, IDailyTask } from '@app/components/daily/daily-tasks';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import {
@@ -26,7 +25,6 @@ interface IDailyTaskState {
 }
 
 const STORAGE_KEY = 'daily.tasks';
-const CHECKIN_KEY = 'daily.checkin';
 
 function createEmptyState(dailyDate: string, weeklyDate: string): IDailyTaskState {
   return { dailyDate, dailyChecked: [], weeklyDate, weeklyChecked: [], hiddenTasks: [] };
@@ -66,8 +64,7 @@ function resolveDailyRealm(dataService: DataService): IRealm | undefined {
 export class AtmosDailyComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
-  private readonly _currencyService = inject(CurrencyService);
-  private readonly _settingService = inject(SettingService);
+  private readonly _dailyCheckinService = inject(DailyCheckinService);
 
   readonly activeSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
   readonly dailyRealm = resolveDailyRealm(this._dataService);
@@ -157,28 +154,12 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
     return '';
   }
 
-  /** Mirrors legacy DailyCardComponent.checkin — toggles daily check-in
-   *  and applies the candle currency delta. */
   onCheckin(evt: MouseEvent): void {
-    const next = !this.checkedIn();
-    this.checkedIn.set(next);
-    if (next) {
-      localStorage.setItem(CHECKIN_KEY, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
-    } else {
-      localStorage.removeItem(CHECKIN_KEY);
-    }
-
-    const amount = 4 + (this._settingService.dailyCandleAmount ?? 0);
-    const delta = next ? amount : -amount;
-    this._currencyService.addCost({ c: delta });
-    this._currencyService.animateCurrencyGained(evt, delta);
+    this.checkedIn.set(this._dailyCheckinService.toggle(evt, this.activeSeason));
   }
 
   private _updateCheckin(): void {
-    const checkinDate = localStorage.getItem(CHECKIN_KEY);
-    if (!checkinDate) { this.checkedIn.set(false); return; }
-    const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
-    this.checkedIn.set(d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day'));
+    this.checkedIn.set(this._dailyCheckinService.isCheckedIn());
   }
 
   private _loadState(): void {

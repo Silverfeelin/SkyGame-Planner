@@ -8,6 +8,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DiscordLinkComponent } from '@app/components/util/discord-link/discord-link.component';
 
@@ -27,7 +28,7 @@ export interface AtmosEventCardOptions {
   templateUrl: './atmos-event-card.component.html',
   styleUrl: './atmos-event-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, CostComponent, DateComponent, DaysLeftComponent, DiscordLinkComponent]
+  imports: [RouterLink, MatIcon, CostComponent, DateComponent, DateRangeComponent, DaysLeftComponent, DiscordLinkComponent]
 })
 export class AtmosEventCardComponent {
   readonly event = input<IEvent | undefined>(undefined);

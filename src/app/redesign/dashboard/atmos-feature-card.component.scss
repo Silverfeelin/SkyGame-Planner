@@ -79,58 +79,6 @@
   }
 }
 
-.atmos-card__check {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  padding: 4px 8px;
-  margin: -4px -8px;
-  border-radius: var(--atmos-radius-sm);
-  color: oklch(0.95 0.01 var(--atmos-hue) / 0.9);
-  font-family: inherit;
-  text-align: left;
-  align-self: flex-start;
-  transition: background var(--atmos-transition);
-
-  &:hover {
-    background: var(--atmos-hover-bg);
-  }
-
-  &:focus-visible {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
-  }
-}
-
-.atmos-card__check-box {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  border: 1.5px solid oklch(0.95 0.01 var(--atmos-hue) / 0.4);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background: transparent;
-  transition: border-color var(--atmos-transition), background var(--atmos-transition);
-
-  mat-icon {
-    font-size: 14px;
-    width: 14px;
-    height: 14px;
-  }
-}
-
-.atmos-card__check.is-checked .atmos-card__check-box {
-  background: var(--atmos-accent);
-  border-color: var(--atmos-accent);
-  color: oklch(0.15 0.02 var(--atmos-hue));
-}
-
 .atmos-card__currency {
   display: flex;
   flex-wrap: wrap;
