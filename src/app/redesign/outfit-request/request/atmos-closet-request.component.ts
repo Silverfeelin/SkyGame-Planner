@@ -11,7 +11,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { IItem, ItemType } from 'skygame-data';
 import { ClosetStateService } from '../closet/closet-state.service';
 import { ClosetSerializer, IOutfitRequest } from '../closet/closet-serializer';
-import { ClosetRenderer, CopyImageMode } from '../closet/closet-renderer';
+import { canvasToBlob, ClosetRenderer, CopyImageMode } from '../closet/closet-renderer';
 import { AtmosClosetToolbarComponent } from '../closet/atmos-closet-toolbar.component';
 import { AtmosClosetGridComponent } from '../closet/atmos-closet-grid.component';
 import { AtmosClosetDyePickerComponent } from '../closet/atmos-closet-dye-picker.component';
@@ -375,15 +375,16 @@ export class AtmosClosetRequestComponent implements OnDestroy {
   }
 
   private async _saveToClipboard(canvas: HTMLCanvasElement): Promise<void> {
-    const blob = await new Promise<Blob>((res, rej) => canvas.toBlob(b => b ? res(b) : rej()));
+    const blob = await canvasToBlob(canvas, 'image/png');
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
     } catch (e) { console.error(e); alert('Copying failed.'); }
   }
 
   private async _shareCanvas(canvas: HTMLCanvasElement): Promise<void> {
-    const blob = await new Promise<Blob>((res, rej) => canvas.toBlob(b => b ? res(b) : rej()));
-    const file = new File([blob], 'sky-outfit-request.png', { type: 'image/png' });
+    const blob = await canvasToBlob(canvas, 'image/webp');
+    const ext = blob.type === 'image/webp' ? 'webp' : 'png';
+    const file = new File([blob], `sky-outfit-request.${ext}`, { type: blob.type });
     const data: ShareData = { files: [file], title: 'Sky: CotL Outfit Request' };
     if (!navigator.canShare(data)) { alert('Sharing is not supported on this device.'); return; }
     try { await navigator.share(data); } catch { alert('Sharing failed.'); }
