@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ISeason, ICost } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
@@ -40,6 +41,11 @@ export class AtmosSeasonCardComponent {
     const map: Record<string, boolean> = {};
     for (const s of show) { map[s] = true; }
     return map;
+  });
+
+  readonly quarter = computed<number | undefined>(() => {
+    const number = this.season()?.number;
+    return number ? SeasonHelper.getQuarter(number) : undefined;
   });
 
   readonly imageStyle = computed<string | undefined>(() => {

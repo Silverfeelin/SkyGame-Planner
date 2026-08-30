@@ -9,7 +9,7 @@
         }
         <div class="atmos-season-card__fade"></div>
         <div class="atmos-season-card__heading">
-          <div class="atmos-season-card__kicker">Season {{ s.number }} · {{ s.year }}</div>
+          <div class="atmos-season-card__kicker">Season {{ s.number }} · {{ s.year }} Q{{ quarter() }}</div>
           <h2 class="atmos-season-card__title">
             <a class="atmos-season-card__title-link" [routerLink]="['/season', s.guid]">{{ s.name }}</a>
           </h2>

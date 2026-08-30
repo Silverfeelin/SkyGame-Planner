@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnDestroy, signal } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { SubscriptionLike } from 'rxjs';
@@ -52,6 +52,11 @@ export class AtmosEventInstanceComponent implements OnDestroy {
   readonly cLeft = signal(0);
   readonly ec = signal(0);
   readonly ecLeft = signal(0);
+
+  readonly imageStyle = computed<string | undefined>(() => {
+    const url = this.instance()?.event?.imageUrl;
+    return url ? `url('${url}')` : undefined;
+  });
 
   private _itemSub?: SubscriptionLike;
 

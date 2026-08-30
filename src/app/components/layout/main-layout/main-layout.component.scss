@@ -189,7 +189,7 @@
 }
 
 .error-pre {
-  background: oklch(0.06 0.01 var(--atmos-hue) / 0.9);
+  background: oklch(0.15 0.02 var(--atmos-hue) / 0.9);
   border-radius: var(--atmos-radius-sm);
   padding: var(--atmos-pad-compact);
   white-space: pre-wrap;

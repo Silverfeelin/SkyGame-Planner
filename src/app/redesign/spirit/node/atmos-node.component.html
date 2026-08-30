@@ -23,7 +23,7 @@
 
   @if (cost(); as c) {
     <span class="atmos-node__cost" [attr.data-kind]="c.kind">
-      <mat-icon [svgIcon]="c.icon" class="atmos-node__cost-icon"></mat-icon>
+      <mat-icon [svgIcon]="c.icon" [class]="'atmos-node__cost-icon ' + c.kind"></mat-icon>
       <strong>{{ c.amount }}</strong>
     </span>
   }

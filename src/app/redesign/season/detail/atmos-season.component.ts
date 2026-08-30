@@ -72,6 +72,11 @@ export class AtmosSeasonComponent implements OnInit {
   readonly highlightIap = signal<string | undefined>(undefined);
   readonly highlightTree = signal<string | undefined>(undefined);
 
+  readonly imageStyle = computed<string | undefined>(() => {
+    const url = this.season()?.imageUrl;
+    return url ? `url('${url}')` : undefined;
+  });
+
   readonly showCalculator = computed(() => {
     const s = this.state();
     return s === 'active' || s === 'future';

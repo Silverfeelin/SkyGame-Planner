@@ -24,61 +24,57 @@
 
   <!-- Overview / facts -->
   <section class="atmos-card atmos-season__overview">
-    <div class="atmos-card__body atmos-season__facts">
-      <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
-        <mat-icon>calendar_month</mat-icon>
-        <div>
-          <app-date-range [start]="s.date" [end]="s.endDate"></app-date-range>
-          @if (state() !== 'active') {
+    <div class="atmos-season__overview-grid">
+      <div class="atmos-card__body atmos-season__facts">
+        <div class="atmos-season__fact">
+          <mat-icon>calendar_month</mat-icon>
+          <div>
+            <app-date-range [start]="s.date" [end]="s.endDate"></app-date-range>
             <span class="atmos-season__fact-meta">
-              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
+              (<app-duration [start]="s.date" [end]="s.endDate"></app-duration> ·
+              <app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
             </span>
-          }
+          </div>
+        </div>
+        <div class="atmos-season__fact atmos-season__fact--split">
+          <div class="atmos-season__fact-item">
+            <mat-icon svgIcon="season-candle" class="seasonal"></mat-icon>
+            <div>
+              {{ sc() }} candles
+              @if (scLeft()) {
+                <span class="atmos-season__fact-meta">({{ scLeft() }} needed)</span>
+              }
+            </div>
+          </div>
+          <div class="atmos-season__fact-item">
+            <mat-icon svgIcon="season-heart" class="seasonal"></mat-icon>
+            <div>
+              {{ sh() }} hearts
+              @if (shLeft()) {
+                <span class="atmos-season__fact-meta">({{ shLeft() }} needed)</span>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="atmos-season__pass">
+          <button type="button" class="atmos-btn atmos-btn--sm"
+                  [class.atmos-btn--active]="hasBoughtSeasonPass()"
+                  (click)="toggleSeasonPass(false)">
+            <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            Bought Season Pass
+          </button>
+          <button type="button" class="atmos-btn atmos-btn--sm"
+                  [class.atmos-btn--active]="hasGiftedSeasonPass()"
+                  (click)="toggleSeasonPass(true)">
+            <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            Received Season Pass
+          </button>
         </div>
       </div>
-      <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
-        <mat-icon>schedule</mat-icon>
-        <div>
-          <app-duration [start]="s.date" [end]="s.endDate"></app-duration>
-          @if (state() === 'active') {
-            <span class="atmos-season__fact-meta">
-              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
-            </span>
-          }
-        </div>
-      </div>
-      <div class="atmos-season__fact">
-        <mat-icon svgIcon="season-candle"></mat-icon>
-        <div>
-          {{ sc() }} season candles
-          @if (scLeft()) {
-            <span class="atmos-season__fact-meta">({{ scLeft() }} needed)</span>
-          }
-        </div>
-      </div>
-      <div class="atmos-season__fact">
-        <mat-icon svgIcon="season-heart"></mat-icon>
-        <div>
-          {{ sh() }} season hearts
-          @if (shLeft()) {
-            <span class="atmos-season__fact-meta">({{ shLeft() }} needed)</span>
-          }
-        </div>
-      </div>
-      <div class="atmos-season__pass">
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="hasBoughtSeasonPass()"
-                (click)="toggleSeasonPass(false)">
-          <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-          Bought Season Pass
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="hasGiftedSeasonPass()"
-                (click)="toggleSeasonPass(true)">
-          <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-          Received Season Pass
-        </button>
-      </div>
+
+      @if (s.imageUrl) {
+        <div class="atmos-season__preview" [style.background-image]="imageStyle()"></div>
+      }
     </div>
   </section>
 

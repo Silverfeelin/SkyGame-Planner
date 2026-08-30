@@ -8,6 +8,7 @@
         autocomplete="off"
         spellcheck="false"
         placeholder="Something Sky on your mind?"
+        [value]="query()"
         (input)="onInput()"
         (keydown.escape)="clear()" />
       @if (query()) {

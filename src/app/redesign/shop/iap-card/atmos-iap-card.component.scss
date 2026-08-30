@@ -29,9 +29,8 @@
 
 .atmos-iap-card__heading {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .atmos-iap-card__title {
@@ -40,6 +39,13 @@
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-iap-card__subline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .atmos-iap-card__price {
