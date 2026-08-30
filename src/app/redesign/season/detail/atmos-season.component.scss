@@ -66,7 +66,7 @@
 
 .atmos-season__section-header {
   padding: var(--atmos-pad);
-  padding-bottom: 0;
+  padding-bottom: 0.5rem;
 }
 
 .atmos-season__tree {
@@ -79,5 +79,5 @@
 .atmos-season__iap-grid {
   display: grid;
   gap: var(--atmos-gap);
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }

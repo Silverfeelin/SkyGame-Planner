@@ -1,3 +1,18 @@
+.editor-item-form {
+  min-width: 300px;
+}
+
+.editor-item-form__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--atmos-gap);
+  margin-top: 12px;
+}
+
+.error {
+  color: var(--atmos-warn-accent);
+}
+
 .img-preview {
   width: 300px;
   height: 200px;

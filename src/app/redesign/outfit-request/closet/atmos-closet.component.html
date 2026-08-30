@@ -31,7 +31,7 @@
 
   <!-- Warning: problematic items -->
   @if (state.selectionHasUnavailable() || (!requesting && state.selectionHasHidden())) {
-    <div class="atmos-card mt atmos-warn-hidden">
+    <div class="atmos-card atmos-warn-hidden">
       <div class="atmos-card__body">
         @if (state.selectionHasUnavailable()) {
           <div class="atmos-warn-box">
@@ -40,7 +40,7 @@
           </div>
         }
         @if (!requesting && state.selectionHasHidden()) {
-          <div class="atmos-warn-box" [class.mt]="state.selectionHasUnavailable()">
+          <div class="atmos-warn-box">
             <mat-icon class="atmos-warn-box__icon">priority_high</mat-icon>
             <span>This selection has items hidden in your closet. You might be missing some items.</span>
           </div>
@@ -50,9 +50,9 @@
   }
 
   <!-- Item grid header with copy controls -->
-  <div class="atmos-card " data-step="1" data-position="top-left-aligned">
+  <div class="atmos-card" data-step="1" data-position="top-left-aligned">
     <div class="atmos-card__header header-sticky">
-      <h2 class="atmos-section__title mb-0">Items</h2>
+      <h2 class="atmos-section__title">Items</h2>
 
       <!-- Copy controls -->
       <div class="atmos-copy-controls" data-step="4" data-position="bottom-left-aligned">

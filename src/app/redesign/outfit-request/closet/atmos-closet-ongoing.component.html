@@ -8,9 +8,9 @@
         @if (tsState === 'active') { <span>{{ ts.spirit.name }}</span> }
       </h4>
     </div>
-    <div class="sky-flex flex-wrap gap-half">
+    <div class="item-row">
       @for (item of tsItems; track item.guid) {
-        <div class="atmos-closet-item-container d-inline-block">
+        <div class="atmos-closet-item-container">
           <div class="atmos-closet-item"
             (click)="itemToggled.emit(item)"
             [class.r]="state.selectedR()[item.guid]"
@@ -35,13 +35,13 @@
         <span>{{ rs.name }}</span>
       </h4>
     </div>
-    <div class="sky-flex flex-wrap gap-half">
+    <div class="item-row">
       @for (s of rsSpirits; track s.returning.spirit?.guid) {
         <div class="atmos-closet-ongoing__group">
-          <div class="atmos-pill ws-nw">{{ s.returning.spirit.name }}</div>
-          <div class="sky-flex flex-wrap gap-half">
+          <div class="atmos-pill group-label">{{ s.returning.spirit.name }}</div>
+          <div class="item-row">
             @for (item of s.items; track item.guid) {
-              <div class="atmos-closet-item-container d-inline-block">
+              <div class="atmos-closet-item-container">
                 <div class="atmos-closet-item"
                   (click)="itemToggled.emit(item)"
                   [class.r]="state.selectedR()[item.guid]"
@@ -66,12 +66,12 @@
     <div header>
       <h4 class="atmos-closet-ongoing__title">{{ event.instance.event.name }}</h4>
     </div>
-    <div class="sky-flex flex-wrap gap-half">
+    <div class="item-row">
       <div class="atmos-closet-ongoing__group">
-        <div class="atmos-pill ws-nw">In-game currency</div>
-        <div class="sky-flex flex-wrap gap-half">
+        <div class="atmos-pill group-label">In-game currency</div>
+        <div class="item-row">
           @for (item of event.items; track item.guid) {
-            <div class="atmos-closet-item-container d-inline-block">
+            <div class="atmos-closet-item-container">
               <div class="atmos-closet-item"
                 (click)="itemToggled.emit(item)"
                 [class.r]="state.selectedR()[item.guid]"
@@ -86,10 +86,10 @@
         </div>
       </div>
       <div class="atmos-closet-ongoing__group">
-        <div class="atmos-pill ws-nw">In-App Purchase</div>
-        <div class="sky-flex flex-wrap gap-half">
+        <div class="atmos-pill group-label">In-App Purchase</div>
+        <div class="item-row">
           @for (item of event.iapItems; track item.guid) {
-            <div class="atmos-closet-item-container d-inline-block">
+            <div class="atmos-closet-item-container">
               <div class="atmos-closet-item"
                 (click)="itemToggled.emit(item)"
                 [class.r]="state.selectedR()[item.guid]"

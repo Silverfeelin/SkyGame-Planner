@@ -13,7 +13,9 @@ import {
   AtmosItemListComponent,
   AtmosDailyCardComponent,
   AtmosDailyTaskComponent,
-  AtmosDailyCheckinComponent
+  AtmosDailyCheckinComponent,
+  AtmosTabsComponent,
+  AtmosTabDirective
 } from './atmos-shared-widgets';
 
 /**
@@ -59,6 +61,11 @@ import {
     @if (firstTask(); as t) {
       <app-atmos-daily-task [task]="t"></app-atmos-daily-task>
     }
+
+    <app-atmos-tabs>
+      <ng-template [atmosTab]="'One'">Tab one</ng-template>
+      <ng-template [atmosTab]="'Two'">Tab two</ng-template>
+    </app-atmos-tabs>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
@@ -74,7 +81,9 @@ import {
     AtmosItemListComponent,
     AtmosDailyCardComponent,
     AtmosDailyTaskComponent,
-    AtmosDailyCheckinComponent
+    AtmosDailyCheckinComponent,
+    AtmosTabsComponent,
+    AtmosTabDirective
   ]
 })
 export class AtmosSharedDemoComponent {

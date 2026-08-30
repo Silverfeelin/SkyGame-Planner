@@ -334,7 +334,7 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     grid.appendChild(this._mapInstanceService.ttRealm(wl.area.realm));
     grid.insertAdjacentHTML('beforeend', `
 <div class="container s-leaflet-item s-leaflet-desc">
-  <div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="menu-label">${wl.description || ''}</div>
+  <div class="s-leaflet-menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="s-leaflet-menu-label">${wl.description || ''}</div>
 </div>`);
 
     let videoUrl = wl.mapData?.videoUrl;

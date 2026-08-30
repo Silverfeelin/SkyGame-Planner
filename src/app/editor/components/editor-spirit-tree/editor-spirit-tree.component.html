@@ -1,5 +1,9 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Spirit tree editor</h1>
+</header>
+
 <!-- Info -->
-<div style="margin-bottom: var(--atmos-gap)">
+<div>
   Not quite sure what to do here? Please have a look at the wiki page
   <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees" target="_blank" class="atmos-text-link">Contributing: Spirit trees</a>.
 </div>
@@ -21,47 +25,46 @@
         <!-- Item name -->
         <div>
           {{ selectedItem.name }}
-          @if (selectedItem.level) { <span class="c-accent">(Level {{ selectedItem.level }})</span> }
-          <button type="button" (click)="promptItemCode()">Item code</button>
+          @if (selectedItem.level) { <span class="accent">(Level {{ selectedItem.level }})</span> }
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptItemCode()">Item code</button>
         </div>
         <div class="form-stack">
           <!-- Node connections -->
-          <div class="">
+          <div>
             Connections:
-            <div class="button-group">
-              <button type="button" [class.td-u]="tn.node.nw" [disabled]="tn.x !== 1" (click)="addNode('nw')">
+            <div class="atmos-btn-group">
+              <button type="button" class="atmos-btn" [class.td-u]="tn.node.nw" [disabled]="tn.x !== 1" (click)="addNode('nw')">
                 Left
               </button>
-              <button type="button" [class.td-u]="tn.node.n" [disabled]="" (click)="addNode('n')">
+              <button type="button" class="atmos-btn" [class.td-u]="tn.node.n" [disabled]="" (click)="addNode('n')">
                 Top
               </button>
-              <button type="button" [class.td-u]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
+              <button type="button" class="atmos-btn" [class.td-u]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
                 Right
               </button>
               @if (tn.node === tree.node) {
-                <button type="button" (click)="addRootNode()">Below</button>
+                <button type="button" class="atmos-btn" (click)="addRootNode()">Below</button>
               }
             </div>
           </div>
           <!-- Node cost -->
-          <div class="">
+          <div>
             Cost:
-            <div class="d-inline-block">
-              <button type="button" class="br-r-0" (click)="calculateCost()">
-                <mat-icon class="menu-icon">calculate</mat-icon>
-                <span class="menu-no-label"></span>
+            <div class="cost-row">
+              <button type="button" class="atmos-btn" aria-label="Calculate cost" (click)="calculateCost()">
+                <mat-icon>calculate</mat-icon>
               </button>
-              <input #inpCost type="number" min="0" max="999" step="1" (blur)="onCostInputBlur($event)" value="0" class="d-inline-block br-l-0 br-r-0" style="width: 80px;"/>
-              <select #selCostType class="d-inline-block br-l-0 br-r-0" style="width: 176px;">
+              <input #inpCost type="number" min="0" max="999" step="1" (blur)="onCostInputBlur($event)" value="0" class="cost-row__amount"/>
+              <select #selCostType class="cost-row__type">
                 @for (type of costTypes; track $index) {
                   <option [value]="type.id">{{ type.label }}</option>
                 }
               </select>
-              <button type="button" class="br-l-0" (click)="applyCost()">Apply</button>
+              <button type="button" class="atmos-btn" (click)="applyCost()">Apply</button>
             </div>
           </div>
           <!-- Swap -->
-          <div class="c-accent">
+          <div class="accent">
             Hint: swap nodes by dragging them in the tree.
           </div>
         </div>
@@ -70,40 +73,40 @@
   </div>
 </div>
 
-<div style="margin-top: var(--atmos-gap)">
+<div>
   <div class="atmos-card">
     <div class="atmos-card__header">Save</div>
     <div class="atmos-card__body">
       <div class="form-stack">
         <div>
-          Title: <input #inpTitle type="text" class="d-inline-block" style="width: 200px;">
+          Title: <input #inpTitle type="text" class="save-input">
         </div>
         <div>
-          Subtitle: <input #inpSubtitle type="text" class="d-inline-block" style="width: 200px;">
+          Subtitle: <input #inpSubtitle type="text" class="save-input">
         </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--atmos-gap)">
-        <div class="button-group" skyTooltip="Copied!" #ttCopy="skyTooltip" manual placement="top" [closeDelay]="1000">
-          <button type="button" (click)="copyImage()">
-            <mat-icon class="menu-icon">file_copy</mat-icon>
-            <span class="menu-label">Copy image</span>
+      <div class="save-actions">
+        <div class="atmos-btn-group" skyTooltip="Copied!" #ttCopy="skyTooltip" manual placement="top" [closeDelay]="1000">
+          <button type="button" class="atmos-btn" (click)="copyImage()">
+            <mat-icon>file_copy</mat-icon>
+            <span>Copy image</span>
           </button>
-          <button type="button" (click)="copyImage(false)">
+          <button type="button" class="atmos-btn" (click)="copyImage(false)">
             (no background)
           </button>
         </div>
-        <button type="button" (click)="shareImage()">
-          <mat-icon class="menu-icon">share</mat-icon>
-          <span class="menu-label">Share image</span>
+        <button type="button" class="atmos-btn" (click)="shareImage()">
+          <mat-icon>share</mat-icon>
+          <span>Share image</span>
         </button>
-        <div class="button-group">
-          <button type="button" (click)="importJson()">
-            <mat-icon class="menu-icon">download</mat-icon>
-            <span class="menu-label">Import data</span>
+        <div class="atmos-btn-group">
+          <button type="button" class="atmos-btn" (click)="importJson()">
+            <mat-icon>download</mat-icon>
+            <span>Import data</span>
           </button>
-          <button type="button" (click)="exportJson()">
-            <mat-icon class="menu-icon">upload</mat-icon>
-            <span class="menu-label">Export data</span>
+          <button type="button" class="atmos-btn" (click)="exportJson()">
+            <mat-icon>upload</mat-icon>
+            <span>Export data</span>
           </button>
         </div>
       </div>
@@ -111,19 +114,19 @@
   </div>
 </div>
 
-<div style="margin-top: var(--atmos-gap)">
-  <app-tabs>
+<div>
+  <app-atmos-tabs>
     <!-- Items -->
-    <ng-template [appTab]="'Items'">
+    <ng-template [atmosTab]="'Items'">
       <app-atmos-item-picker [action]="'emit'" [opaqueItems]="true" [selectedItems]="items" (itemClicked)="onItemClicked($event)"></app-atmos-item-picker>
     </ng-template>
 
     <!-- Special items -->
-    <ng-template [appTab]="'Special items'">
-      <div style="display: flex; flex-wrap: wrap; gap: 4px">
+    <ng-template [atmosTab]="'Special items'">
+      <div class="icon-row">
         @for (specialItem of specialItems; track $index) {
           <div class="item-icon">
-            <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true"
+            <app-item-icon (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true"
               [skyTooltip]="specialItem.item.name" placement="top">
             </app-item-icon>
           </div>
@@ -131,20 +134,20 @@
       </div>
     </ng-template>
 
-    <ng-template [appTab]="'Custom items'">
-      <div style="margin-bottom: var(--atmos-gap); display: flex; flex-wrap: wrap; gap: 8px">
-        <button type="button" (click)="addCustomItem()">Add</button>
+    <ng-template [atmosTab]="'Custom items'">
+      <div class="custom-item-actions">
+        <button type="button" class="atmos-btn" (click)="addCustomItem()">Add</button>
         @if (selectedCustomItem) {
-          <button type="button" (click)="applyCustomItem($event, selectedCustomItem)">Select</button>
-          <button type="button" (click)="editCustomItem(selectedCustomItem)">Edit</button>
-          <button type="button" (click)="duplicateCustomItem(selectedCustomItem)">Duplicate</button>
-          <button type="button" class="button-danger" (click)="deleteCustomItem(selectedCustomItem)">Delete</button>
+          <button type="button" class="atmos-btn" (click)="applyCustomItem($event, selectedCustomItem)">Select</button>
+          <button type="button" class="atmos-btn" (click)="editCustomItem(selectedCustomItem)">Edit</button>
+          <button type="button" class="atmos-btn" (click)="duplicateCustomItem(selectedCustomItem)">Duplicate</button>
+          <button type="button" class="atmos-btn atmos-btn--danger" (click)="deleteCustomItem(selectedCustomItem)">Delete</button>
         }
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 4px">
+      <div class="icon-row">
         @for (customItem of customItems; track $index) {
           <div class="item-icon">
-            <app-item-icon class="point" [item]="customItem" [opaque]="true"
+            <app-item-icon [item]="customItem" [opaque]="true"
               [class.highlight]="selectedCustomItem?.guid === customItem.guid"
               (click)="onCustomItemClicked({ event: $event, item: customItem })"
               [skyTooltip]="customItem.name" placement="top">
@@ -155,36 +158,36 @@
     </ng-template>
 
     <!-- Spirit trees -->
-    <ng-template [appTab]="'Spirit trees'">
+    <ng-template [atmosTab]="'Spirit trees'">
       <select #selSpirit (input)="onSpiritInput($event)">
         @for (spirit of spirits; track $index) {
           <option [value]="spirit.guid">{{ spirit.name }}</option>
         }
-        </select>
+      </select>
 
-        @if (spiritTrees.length) {
-          <div style="display: flex; overflow-x: auto; margin-top: var(--atmos-gap)">
-            @for (spiritTree of spiritTrees; track spiritTree.guid) {
-              <div class="form-stack gap-half">
-                <button (click)="promptCopySpiritTree(spiritTree, false)">Copy as new tree</button>
-                <button (click)="promptCopySpiritTree(spiritTree, true)">Modify this tree</button>
-                <app-atmos-spirit-tree class="tree-wrapper p-inline-block" [tree]="spiritTree" [enableControls]="false"
-                  [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
-                  [opaqueNodes]="true" [showNodeTooltips]="true">
-                </app-atmos-spirit-tree>
-              </div>
-            }
-          </div>
-        }
+      @if (spiritTrees.length) {
+        <div class="spirit-tree-row">
+          @for (spiritTree of spiritTrees; track spiritTree.guid) {
+            <div class="form-stack form-stack--compact">
+              <button type="button" class="atmos-btn" (click)="promptCopySpiritTree(spiritTree, false)">Copy as new tree</button>
+              <button type="button" class="atmos-btn" (click)="promptCopySpiritTree(spiritTree, true)">Modify this tree</button>
+              <app-atmos-spirit-tree [tree]="spiritTree" [enableControls]="false"
+                [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
+                [opaqueNodes]="true" [showNodeTooltips]="true">
+              </app-atmos-spirit-tree>
+            </div>
+          }
+        </div>
+      }
     </ng-template>
-  </app-tabs>
+  </app-atmos-tabs>
 </div>
 
 @if (isCustomEditorVisible) {
   <app-overlay [dismissable]="false">
-    <h2 style="margin: 0 0 var(--atmos-gap); font-size: 1.1rem; font-weight: 600">Edit custom item</h2>
+    <h2 class="atmos-section__title">Edit custom item</h2>
 
-    <div style="margin-bottom: var(--atmos-gap)">
+    <div class="overlay-help">
       <a target="_blank" class="atmos-text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees">Help</a>
     </div>
 

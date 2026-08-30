@@ -26,3 +26,16 @@
   align-items: flex-start;
   gap: var(--atmos-gap-compact);
 }
+
+/* Wrapping row of closet items. Bottom-aligned so groups of differing
+   heights line up on their item rows. */
+.item-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--atmos-gap-compact);
+}
+
+.group-label {
+  white-space: nowrap;
+}

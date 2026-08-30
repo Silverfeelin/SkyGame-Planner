@@ -6,7 +6,7 @@
     <!-- Page header -->
     <div class="atmos-card">
       <div class="atmos-card__header">
-        <h1 class="atmos-section__title atmos-section__title--lg mb-0">Sky outfit request</h1>
+        <h1 class="atmos-section__title atmos-section__title--lg">Sky outfit request</h1>
         <a class="atmos-btn atmos-btn--sm atmos-closet-request__home" [routerLink]="'/'" data-step="904" data-position="bottom-right-aligned">
           <mat-icon>home</mat-icon>
           <span>Home</span>
@@ -37,7 +37,7 @@
 
     <!-- Warning: problematic items -->
     @if (state.selectionHasUnavailable()) {
-      <div class="atmos-card mt atmos-warn-hidden">
+      <div class="atmos-card atmos-warn-hidden">
         <div class="atmos-card__body">
           <div class="atmos-warn-box">
             <mat-icon class="atmos-warn-box__icon">priority_high</mat-icon>
@@ -48,9 +48,9 @@
     }
 
     <!-- Item grid header with copy controls -->
-    <div class="atmos-card mt" data-step="1" data-position="top-left-aligned">
+    <div class="atmos-card" data-step="1" data-position="top-left-aligned">
       <div class="atmos-card__header header-sticky">
-        <h2 class="atmos-section__title mb-0">Items</h2>
+        <h2 class="atmos-section__title">Items</h2>
         <div class="atmos-copy-controls" data-step="4" data-position="bottom-left-aligned">
           <div class="atmos-btn-group">
             <button type="button" class="atmos-btn atmos-btn--sm"

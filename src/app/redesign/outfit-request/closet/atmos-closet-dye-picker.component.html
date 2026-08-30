@@ -1,6 +1,6 @@
 @if (state.showingDyePicker() && state.dyeItem()) {
   <app-overlay [closeText]="'Close'" (close)="close()">
-    <div class="atmos-dye-picker t-center">
+    <div class="atmos-dye-picker">
       <app-item-icon [item]="state.dyeItem()!"[opaque]="true" [size]="'default'" />
 
       @if (state.dyeItem()!.dye?.previewUrl) {
@@ -11,7 +11,7 @@
 
       @if (state.dyeItem()!.dye?.primary) {
         <div><b>Primary dye</b></div>
-        <div class="c-accent">Main color</div>
+        <div class="dye-label">Main color</div>
         <div class="atmos-dye-grid">
           <div class="atmos-dye-grid__color atmos-dye-grid__blank"
             [class.highlight]="!getDye(0).primary"
@@ -26,7 +26,7 @@
             </div>
           }
         </div>
-        <div class="c-accent">Blend color</div>
+        <div class="dye-label">Blend color</div>
         <div class="atmos-dye-grid">
           <div class="atmos-dye-grid__color atmos-dye-grid__blank"
             [class.highlight]="!getDye(0).secondary"
@@ -44,8 +44,8 @@
       }
 
       @if (state.dyeItem()!.dye?.secondary) {
-        <div class="mt"><b>Secondary dye</b></div>
-        <div class="c-accent">Main color</div>
+        <div class="dye-section"><b>Secondary dye</b></div>
+        <div class="dye-label">Main color</div>
         <div class="atmos-dye-grid">
           <div class="atmos-dye-grid__color atmos-dye-grid__blank"
             [class.highlight]="!getDye(1).primary"
@@ -60,7 +60,7 @@
             </div>
           }
         </div>
-        <div class="c-accent">Blend color</div>
+        <div class="dye-label">Blend color</div>
         <div class="atmos-dye-grid">
           <div class="atmos-dye-grid__color atmos-dye-grid__blank"
             [class.highlight]="!getDye(1).secondary"

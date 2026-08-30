@@ -10,7 +10,7 @@ import { ICalendarFm } from 'skygame-data';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarLinkComponent {
-  @Input() aClass? = 'container d-inline-block';
+  @Input() aClass? = '';
   @Input() cal?: ICalendarFm;
   @Input() order?: number;
 

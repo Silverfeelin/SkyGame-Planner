@@ -1,10 +1,14 @@
-<div style="margin-bottom: var(--atmos-gap)">
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Edit item</h1>
+</header>
+
+<div>
   Not quite sure what to do here? Please have a look at the wiki page
   <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Items" target="_blank" class="atmos-text-link">Contributing: Items</a>.
 </div>
 @if (item) {
   <div class="atmos-card">
-    <div class="atmos-card__header">Edit item</div>
+    <div class="atmos-card__header">{{ item.name }}</div>
     <div class="atmos-card__body">
       <app-editor-item [item]="item" (saved)="save($event)" (cancelled)="navigateBack()"></app-editor-item>
     </div>

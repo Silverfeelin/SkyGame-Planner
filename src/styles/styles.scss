@@ -94,39 +94,6 @@ button, .button {
   border-color: var(--atmos-danger-accent);
 }
 
-.button-danger {
-  color: var(--atmos-danger);
-  background: var(--atmos-danger-bg);
-  border-color: var(--atmos-danger-accent);
-
-  &:hover {
-    background: var(--atmos-danger-accent);
-  }
-}
-
-.button-group {
-  display: inline-block;
-
-  button, .button {
-    border: 1px solid var(--atmos-line);
-    border-radius: 0;
-
-    &:first-child {
-      border-top-left-radius: var(--atmos-radius-sm);
-      border-bottom-left-radius: var(--atmos-radius-sm);
-    }
-
-    &:last-child {
-      border-top-right-radius: var(--atmos-radius-sm);
-      border-bottom-right-radius: var(--atmos-radius-sm);
-    }
-
-    &:not(:last-child) {
-      border-right: none;
-    }
-  }
-}
-
 input, select, textarea {
   display: block;
   width: 100%;
@@ -216,15 +183,6 @@ select {
   font-style: italic;
 }
 
-.sky-flex {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-end;
-  gap: var(--atmos-gap);
-}
-
 // Scrollbar
 html {
   scrollbar-gutter: stable; /* prevents horizontal shift between short/long pages */
@@ -298,85 +256,21 @@ h6, .h6 { font-size: var(--atmos-h6); }
 }
 
 // Global classes
-.c-main { color: var(--atmos-text) !important; }
 .c-accent { color: var(--atmos-accent) !important; }
-.c-full { color: var(--atmos-good) !important; }
 .c-completed { color: var(--atmos-good) !important; }
-.c-partial { color: var(--atmos-warm) !important; }
-.c-wb { color: var(--atmos-wing-buff) !important; }
-.c-check { color: var(--atmos-good) !important; }
-.c-warn-accent { color: var(--atmos-warn-accent) !important; }
 .c-old { color: var(--atmos-warm) !important; }
 .c-new { color: var(--atmos-good) !important; }
 .p-rel { position: relative !important; }
-.p-abs { position: absolute !important; }
-.t-left { text-align: left !important; }
-.t-center { text-align: center !important; }
-.t-right { text-align: right !important; }
 .ws-nw { white-space: nowrap !important; }
-.ws-pw { white-space: pre-wrap !important; }
-.ws-pl { white-space: pre-line !important; }
-.d-inline-block { display: inline-block !important; }
 .fw-bold { font-weight: bold !important; }
-.v-top { vertical-align: top !important; }
-.v-middle { vertical-align: middle !important; }
-.us-none { user-select: none !important; }
 
-.mt { margin-top: var(--atmos-gap) !important; }
-.mr { margin-right: var(--atmos-gap) !important; }
-.mb { margin-bottom: var(--atmos-gap) !important; }
-.ml { margin-left: var(--atmos-gap) !important; }
-.pad-0 { padding: 0 !important; }
-.pad { padding: var(--atmos-gap) !important; }
-.pt { padding-top: var(--atmos-gap) !important; }
-.pr { padding-right: var(--atmos-gap) !important; }
-.pb { padding-bottom: var(--atmos-gap) !important; }
-.pl { padding-left: var(--atmos-gap) !important; }
-.margin { margin: var(--atmos-gap) !important; }
-.mt-half { margin-top: var(--atmos-gap-compact) !important; }
-.mr-half { margin-right: var(--atmos-gap-compact) !important; }
-.mb-half { margin-bottom: var(--atmos-gap-compact) !important; }
-.ml-half { margin-left: var(--atmos-gap-compact) !important; }
-.mt-auto { margin-top: auto !important; }
-.mr-auto { margin-right: auto !important; }
-.mb-auto { margin-bottom: auto !important; }
-.ml-auto { margin-left: auto !important; }
-.pad-half { padding: var(--atmos-gap-compact) !important; }
-.pt-half { padding-top: var(--atmos-gap-compact) !important; }
-.pr-half { padding-right: var(--atmos-gap-compact) !important; }
-.pb-half { padding-bottom: var(--atmos-gap-compact) !important; }
-.pl-half { padding-left: var(--atmos-gap-compact) !important; }
-.gap-half { gap: var(--atmos-gap-compact) !important; }
-.gap-0 { gap: 0 !important; }
-.w-100 { width: 100% !important; }
-.h-100 { height: 100% !important; }
 .o-0 { opacity: 0 !important; }
 .o-1 { opacity: 1 !important; }
 .td-u { text-decoration: underline !important; }
 
-.float-left { float: left !important; }
 .float-right { float: right !important; }
 
 .sky-border { border: 1px solid var(--atmos-line-soft); }
-.sky-border-solid { border: 1px solid var(--atmos-line); }
-
-.br { border-radius: var(--atmos-radius-sm) !important; }
-.br-0 { border-radius: 0 !important}
-.br-b-0 { border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important; }
-.br-t-0 { border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; }
-.br-l-0 { border-top-left-radius: 0 !important; border-bottom-left-radius: 0 !important; }
-.br-r-0 { border-top-right-radius: 0 !important; border-bottom-right-radius: 0 !important; }
-
-.of-hidden { overflow: hidden !important; }
-
-.flex-align-start { align-items: flex-start !important; }
-.flex-align-center { align-items: center !important; }
-.flex-align-end { align-items: flex-end !important; }
-.flex-rows { flex-direction: row !important; }
-.flex-cols { flex-direction: column !important; }
-.flex-wrap { flex-wrap: wrap !important; }
-.flex-nowrap { flex-wrap: nowrap !important; }
-.flex-justify-center { justify-content: center !important; }
 
 .muted {
   opacity: 0.7;
@@ -454,15 +348,14 @@ p:last-child {
   }
 }
 
-.menu-icon {
+/* Icon + label rows inside Leaflet popups and controls. These are built as
+   raw HTML strings in TypeScript, so they cannot use .atmos-btn like the
+   Angular templates do. Only the map layer may use these. */
+.s-leaflet-menu-icon {
   position: absolute;
 }
 
-.menu-no-label {
-  padding-left: 24px;
-}
-
-.menu-label {
+.s-leaflet-menu-label {
   padding-left: 32px;
 }
 

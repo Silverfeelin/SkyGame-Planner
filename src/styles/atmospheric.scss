@@ -50,6 +50,14 @@
   --atmos-hover-tint:      oklch(0.95 0.01 var(--atmos-hue) / 0.06);
   --atmos-transition:      120ms ease;
 
+  /* Toggled-on / selected state. Tinted accent fill, accent border and text —
+     clearly "on" without the loudness of a full accent fill. Shared by
+     .atmos-btn--active and the atmos tab strip. */
+  --atmos-active-bg:       oklch(0.82 0.11 var(--atmos-hue) / 0.18);
+  --atmos-active-bg-hover: oklch(0.82 0.11 var(--atmos-hue) / 0.26);
+  --atmos-active-border:   oklch(0.82 0.11 var(--atmos-hue) / 0.55);
+  --atmos-active-ring:     inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.25);
+
   /* Focus ring. Overridable per component: set --atmos-focus-offset on an
      element (negative to inset the ring) instead of re-declaring the outline.
      An inset offset is needed when a rounded `overflow: hidden` ancestor would
@@ -161,6 +169,8 @@
 
   /* Dark translucent backdrop behind transparent image previews (editor). */
   --atmos-preview-bg: rgba(0, 0, 0, 0.5);
+  /* Light counterpart, for previews that are themselves dark. */
+  --atmos-preview-bg-contrast: rgba(255, 255, 255, 0.53);
 
   /* Intro.js tour tooltip — themed onto atmos surfaces. */
   --atmos-intro-bg:   var(--atmos-bg-elev-2);
@@ -336,20 +346,18 @@
   pointer-events: none;
 }
 
-/* Toggled-on / selected state for .atmos-btn. Uses a tinted accent fill
-   with an accent border and accent text — clearly "on" without the
-   loudness of a full accent fill. */
+/* Toggled-on / selected state for .atmos-btn. */
 .atmos-btn--active,
 .atmos-btn.atmos-btn--active {
-  background: oklch(0.82 0.11 var(--atmos-hue) / 0.18);
-  border-color: oklch(0.82 0.11 var(--atmos-hue) / 0.55);
+  background: var(--atmos-active-bg);
+  border-color: var(--atmos-active-border);
   color: var(--atmos-accent);
-  box-shadow: inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.25);
+  box-shadow: var(--atmos-active-ring);
 }
 
 .atmos-btn--active:hover,
 .atmos-btn.atmos-btn--active:hover {
-  background: oklch(0.82 0.11 var(--atmos-hue) / 0.26);
+  background: var(--atmos-active-bg-hover);
   color: var(--atmos-accent);
 }
 
@@ -753,7 +761,7 @@ a.atmos-link:focus-visible {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--atmos-text);
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 .atmos-section__title--lg { font-size: 1.25rem; }
 .atmos-section__meta {

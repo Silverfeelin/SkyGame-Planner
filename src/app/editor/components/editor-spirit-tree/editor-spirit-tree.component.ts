@@ -13,8 +13,7 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
-import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
-import { TabDirective } from '@app/components/layout/tabs/tab.directive';
+import { AtmosTabsComponent, AtmosTabDirective } from '@app/redesign/shared/atmos-shared-widgets';
 import { INode, IItem, ICost, ISpiritTree, ISpirit, ItemType, SpiritType } from 'skygame-data';
 
 type TreeNodeArray = Array<TreeNode | undefined>;
@@ -28,7 +27,7 @@ type SpecialItem = { item: IItem; cost?: ICost; }
     imports: [
     TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemPickerComponent,
     ItemIconComponent, OverlayComponent,
-    EditorItemComponent, TabsComponent, TabDirective
+    EditorItemComponent, AtmosTabsComponent, AtmosTabDirective
 ],
     templateUrl: './editor-spirit-tree.component.html',
     styleUrl: './editor-spirit-tree.component.scss',
