@@ -76,7 +76,6 @@ export class AtmosSpiritTreeComponent {
   readonly highlightItem = input<string | ReadonlyArray<string> | undefined>(undefined);
   readonly highlightNode = input<string | ReadonlyArray<string> | undefined>(undefined);
   readonly enableControls = input<boolean>(true);
-  readonly enableNavigation = input<boolean>(true);
   readonly showNodeTooltips = input<boolean>(true);
   readonly opaqueNodes = input<boolean | ReadonlyArray<string> | undefined>(undefined);
   readonly padBottom = input<boolean>(false);

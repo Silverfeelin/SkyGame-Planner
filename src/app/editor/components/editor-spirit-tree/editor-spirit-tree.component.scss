@@ -65,9 +65,8 @@
 
   > .atmos-btn { flex: 0 0 auto; }
 
-  &__amount { flex: 0 0 80px; width: 80px; }
-  /* Shrinks first when the selection card is narrow. */
-  &__type { flex: 0 1 176px; width: 176px; min-width: 0; }
+  &__amount { flex: 0 0 80px; width: 80px; height: auto; }
+  &__type { flex: 0 1 176px; width: 176px; min-width: 0; height: auto; }
 }
 
 .save-input {

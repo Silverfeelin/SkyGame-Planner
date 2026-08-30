@@ -246,19 +246,6 @@ export class SpiritTreeEditorComponent {
     this.selectTreeNode(treeNode);
   }
 
-  swapNodes(targetNode: INode): void {
-    const targetTreeNode = this.nodeMap[targetNode.guid];
-    if (!targetTreeNode) { alert('Invalid target node.'); return; }
-    const selectedNode = this.selectedTreeNode.node;
-
-    // Swap nodes
-    NodeHelper.swap(selectedNode, targetNode);
-    this.selectedTreeNode = targetTreeNode;
-    this.selectedItem = targetNode.item!;
-
-    this.reloadTree();
-  }
-
   onItemClicked(event: ItemClickEvent) {
     delete this.itemMap[this.selectedItem.guid];
     this.selectedTreeNode.node.item = event.item;
@@ -546,8 +533,8 @@ export class SpiritTreeEditorComponent {
       document.body.appendChild(this.draggingPreview);
       this.draggingPreview.style.position = 'absolute';
       this.draggingPreview.style.zIndex = '1000';
-      this.draggingPreview.style.top = `${event.clientY-32}px`;
-      this.draggingPreview.style.left = `${event.clientX-32}px`;
+      this.draggingPreview.style.top = `${event.clientY - 32 + window.scrollY}px`;
+      this.draggingPreview.style.left = `${event.clientX - 32 + window.scrollX}px`;
     }
 
     event.preventDefault();
@@ -712,7 +699,26 @@ export class SpiritTreeEditorComponent {
     return true;
   }
 
-  private reloadTree(): void { this.tree = { guid: this.tree.guid, node: this.tree.node }; }
+  private reloadTree(): void {
+    const clones: { [guid: string]: INode } = {};
+    const cloneNode = (node: INode, prev?: INode): INode => {
+      const clone: INode = { ...node };
+      clones[clone.guid] = clone;
+      if (prev) { clone.prev = prev; } else { delete clone.prev; }
+      if (node.nw) { clone.nw = cloneNode(node.nw, clone); }
+      if (node.n) { clone.n = cloneNode(node.n, clone); }
+      if (node.ne) { clone.ne = cloneNode(node.ne, clone); }
+      return clone;
+    };
+
+    const root = cloneNode(this.tree.node!);
+    for (const treeNode of Object.values(this.nodeMap)) {
+      const clone = clones[treeNode.node.guid];
+      if (clone) { treeNode.node = clone; }
+    }
+
+    this.tree = { guid: this.tree.guid, node: root };
+  }
   private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }
   private cloneItem(item: IItem): IItem {
     const newItem = { ...item };
