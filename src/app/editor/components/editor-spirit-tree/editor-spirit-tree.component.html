@@ -115,7 +115,7 @@
   <app-tabs>
     <!-- Items -->
     <ng-template [appTab]="'Items'">
-      <app-items [action]="'emit'" [opaqueItems]="true" [backlightItems]="items" (onItemClicked)="onItemClicked($event)"></app-items>
+      <app-atmos-item-picker [action]="'emit'" [opaqueItems]="true" [selectedItems]="items" (itemClicked)="onItemClicked($event)"></app-atmos-item-picker>
     </ng-template>
 
     <!-- Special items -->
@@ -123,7 +123,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 4px">
         @for (specialItem of specialItems; track $index) {
           <div class="item-icon">
-            <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true" [hoverGlow]="true"
+            <app-item-icon class="point" (click)="onSpecialItemClicked($event, specialItem)" [item]="specialItem.item" [opaque]="true"
               [skyTooltip]="specialItem.item.name" placement="top">
             </app-item-icon>
           </div>
@@ -144,7 +144,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 4px">
         @for (customItem of customItems; track $index) {
           <div class="item-icon">
-            <app-item-icon class="point" [item]="customItem" [opaque]="true" [hoverGlow]="true"
+            <app-item-icon class="point" [item]="customItem" [opaque]="true"
               [class.highlight]="selectedCustomItem?.guid === customItem.guid"
               (click)="onCustomItemClicked({ event: $event, item: customItem })"
               [skyTooltip]="customItem.name" placement="top">

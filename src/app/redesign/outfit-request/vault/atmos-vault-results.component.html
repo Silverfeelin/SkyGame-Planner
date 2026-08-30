@@ -11,7 +11,7 @@
           @if (item) {
             <div class="selection-icon selected no-point" [title]="item.name">
               <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
-                [opaque]="true" [hoverGlow]="false"></app-item-icon>
+                [opaque]="true"></app-item-icon>
             </div>
           }
         }
@@ -35,7 +35,7 @@
                 @if (item) {
                   <div class="selection-icon no-point" [class.selected]="item" [title]="item?.name || (type | itemType)">
                     <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
-                      [opaque]="true" [hoverGlow]="false"></app-item-icon>
+                      [opaque]="true"></app-item-icon>
                   </div>
                 }
               }

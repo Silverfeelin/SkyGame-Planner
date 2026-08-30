@@ -13,7 +13,7 @@
           [title]="item?.name || (type | itemType)">
           @if (item) {
             <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
-              [opaque]="true" [hoverGlow]="false"></app-item-icon>
+              [opaque]="true"></app-item-icon>
           } @else {
             <mat-icon [svgIcon]="itemIcons[type]" class="selection-icon-img"></mat-icon>
           }

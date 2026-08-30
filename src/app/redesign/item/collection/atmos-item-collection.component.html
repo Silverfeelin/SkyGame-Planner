@@ -50,9 +50,10 @@
       <h3 class="atmos-coll__subsection-title">Selected items ({{ editItems.length }})</h3>
       <div class="atmos-coll__selected">
         @for (item of editItems; track item.guid) {
-          <button type="button" class="atmos-coll__selected-item" (click)="removeItem(item)" [title]="item.name + ' — click to remove'">
+          <button type="button" class="atmos-coll__selected-item atmos-tile atmos-tile--removable" (click)="removeItem(item)" [title]="item.name + ' — click to remove'">
             <app-icon [src]="item.icon || '/assets/icons/question.webp'" width="48px" height="48px" [lazy]="true" [draggable]="false"/>
-            <span class="atmos-coll__selected-remove">✕</span>
+            @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+            <span class="atmos-tile__remove">✕</span>
           </button>
         } @empty {
           <p class="atmos-coll__empty-hint">No items selected. Pick items from the grid below.</p>
@@ -76,14 +77,15 @@
   <atmos-item-grid-layout [items]="allItems" [itemTemplate]="pickerTpl" [initialCategory]="initialCategory"/>
   <ng-template #pickerTpl let-item>
     <button type="button"
-            class="atmos-coll__picker-item atmos-tile"
+            class="atmos-coll__picker-item atmos-tile atmos-tile--selectable"
             [class.is-selected]="editItemSet.has(item)"
             [title]="item.name"
             (click)="onItemClickedPicker(item)">
       <app-icon [src]="item.icon || '/assets/icons/question.webp'"
                 width="56px" height="56px"
                 [lazy]="true" [draggable]="false"/>
-      @if (editItemSet.has(item)) { <span class="atmos-coll__picker-check">✓</span> }
+      @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+      @if (editItemSet.has(item)) { <span class="atmos-tile__check">✓</span> }
     </button>
   </ng-template>
 
@@ -150,6 +152,7 @@
               <app-icon [src]="item.icon || '/assets/icons/question.webp'"
                         width="48px" height="48px"
                         [lazy]="true" [draggable]="false"/>
+              @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
             </a>
           }
         </div>

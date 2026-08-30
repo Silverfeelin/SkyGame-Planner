@@ -1,0 +1,46 @@
+$fold-duration: 300ms;
+
+:host {
+  display: block;
+}
+
+.atmos-foldable-card__header {
+  gap: var(--atmos-gap-compact);
+}
+
+.is-foldable > .atmos-foldable-card__header {
+  cursor: pointer;
+}
+
+.atmos-foldable-card__fold {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+  transition: color var(--atmos-transition);
+
+  &:hover {
+    color: var(--atmos-text);
+  }
+}
+
+.atmos-foldable-card__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-foldable-card__body {
+  overflow: hidden;
+  transition: height $fold-duration ease;
+}
+
+.is-folded > .atmos-foldable-card__body {
+  height: 0;
+  cursor: pointer;
+}

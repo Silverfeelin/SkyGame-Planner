@@ -4,6 +4,11 @@
   height: var(--item-size);
   background: var(--atmos-card-bg);
   border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-tile-bg-hover);
+  }
 }
 
 .form-stack {

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { IIAP } from 'skygame-data';
@@ -13,7 +14,7 @@ import { IIAP } from 'skygame-data';
   templateUrl: './atmos-iap-card.component.html',
   styleUrl: './atmos-iap-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemIconComponent]
+  imports: [MatIcon, ItemIconComponent, RouterLink]
 })
 export class AtmosIapCardComponent {
   readonly iap = input.required<IIAP>();

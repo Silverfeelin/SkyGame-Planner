@@ -59,8 +59,10 @@
   --atmos-focus-color:  var(--atmos-accent);
 
   /* Interactive tile surface (persistent bg + hover). Reusable across icon-tile grids. */
-  --atmos-tile-bg:       var(--atmos-chip-bg);          /* 6% resting fill */
-  --atmos-tile-bg-hover: var(--atmos-hover-bg-strong);  /* 16% hover step */
+  --atmos-tile-bg:          var(--atmos-chip-bg);          /* 6% resting fill */
+  --atmos-tile-bg-hover:    var(--atmos-hover-bg-strong);  /* 16% hover step */
+  --atmos-tile-bg-selected: oklch(0.82 0.11 var(--atmos-hue) / 0.12);
+  --atmos-tile-ring:        2px;                           /* selection ring width */
 
   /* Cards. */
   --atmos-card-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
@@ -250,6 +252,82 @@
   &:hover {
     background: var(--atmos-tile-bg-hover);
   }
+}
+
+/* Unlocked marker — the green dot pinned to the bottom-right of an item tile.
+   The tile needs `position: relative`; keep 10px of clearance from a rounded
+   `overflow: hidden` corner so the dot is not clipped. */
+.atmos-tile__dot {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--atmos-good);
+  pointer-events: none;
+}
+
+/* Selectable tile — pair with .atmos-tile on grids where tiles toggle in and
+   out of a selection. The ring is drawn inside the box so selecting an item
+   never resizes a fixed-size tile or shifts the grid. */
+.atmos-tile--selectable {
+  transition: background var(--atmos-transition), box-shadow var(--atmos-transition);
+
+  &.is-selected {
+    background: var(--atmos-tile-bg-selected);
+    box-shadow: inset 0 0 0 var(--atmos-tile-ring) var(--atmos-accent);
+
+    &:hover { background: var(--atmos-tile-bg-selected); }
+  }
+}
+
+/* Optional tick badge for .is-selected tiles. Sits in the top-right corner, so
+   only use it on tiles that don't render a subicon there. */
+.atmos-tile__check {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--atmos-accent);
+  color: var(--atmos-bg);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Removable tile — reveals its .atmos-tile__remove badge on hover. */
+.atmos-tile--removable:hover .atmos-tile__remove,
+.atmos-tile__remove:focus-visible {
+  opacity: 1;
+}
+
+.atmos-tile__remove {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--atmos-pink);
+  color: var(--atmos-text);
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--atmos-transition);
+}
+
+/* Hover reveal never fires on touch, so the badge stays visible there. */
+@media (hover: none) {
+  .atmos-tile__remove { opacity: 1; }
 }
 
 .atmos-btn[disabled],

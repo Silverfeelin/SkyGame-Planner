@@ -1,6 +1,6 @@
 <!-- Traveling Spirit -->
 @if (ts) {
-  <app-card class="mt" [foldable]="true" [folded]="true">
+  <app-atmos-foldable-card [folded]="true" [lazy]="true">
     <div header>
       <h4 class="atmos-closet-ongoing__title">
         <app-spirit-type-icon [type]="'Season'" class="atmos-closet-ongoing__title-icon"></app-spirit-type-icon>
@@ -18,17 +18,17 @@
             [class.g]="state.selectedG()[item.guid]"
             [class.b]="state.selectedB()[item.guid]"
             [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-            <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+            <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
           </div>
         </div>
       }
     </div>
-  </app-card>
+  </app-atmos-foldable-card>
 }
 
 <!-- Returning Spirits -->
 @if (rs) {
-  <app-card class="mt" [foldable]="true" [folded]="true">
+  <app-atmos-foldable-card [folded]="true" [lazy]="true">
     <div header>
       <h4 class="atmos-closet-ongoing__title">
         <app-spirit-type-icon [type]="'Season'" class="atmos-closet-ongoing__title-icon"></app-spirit-type-icon>
@@ -49,7 +49,7 @@
                   [class.g]="state.selectedG()[item.guid]"
                   [class.b]="state.selectedB()[item.guid]"
                   [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-                  <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                  <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
                 </div>
               </div>
             }
@@ -57,12 +57,12 @@
         </div>
       }
     </div>
-  </app-card>
+  </app-atmos-foldable-card>
 }
 
 <!-- Events -->
 @for (event of events; track event.instance.guid) {
-  <app-card class="mt" [foldable]="true" [folded]="true">
+  <app-atmos-foldable-card [folded]="true" [lazy]="true">
     <div header>
       <h4 class="atmos-closet-ongoing__title">{{ event.instance.event.name }}</h4>
     </div>
@@ -79,7 +79,7 @@
                 [class.g]="state.selectedG()[item.guid]"
                 [class.b]="state.selectedB()[item.guid]"
                 [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
               </div>
             </div>
           }
@@ -97,12 +97,12 @@
                 [class.g]="state.selectedG()[item.guid]"
                 [class.b]="state.selectedB()[item.guid]"
                 [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
               </div>
             </div>
           }
         </div>
       </div>
     </div>
-  </app-card>
+  </app-atmos-foldable-card>
 }

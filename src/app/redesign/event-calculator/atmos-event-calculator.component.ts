@@ -14,8 +14,7 @@ import { NodeService } from '@app/services/node.service';
 import { CurrencyService } from '@app/services/currency.service';
 import { StorageService } from '@app/services/storage.service';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
-import { ItemListComponent } from '@app/components/item-list/item-list/item-list.component';
-import { AtmosDraftWarningComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosDraftWarningComponent, AtmosItemListComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosEventQuickActionsComponent } from '@app/redesign/event/quick-actions/atmos-event-quick-actions.component';
 
 @Component({
@@ -23,7 +22,7 @@ import { AtmosEventQuickActionsComponent } from '@app/redesign/event/quick-actio
   templateUrl: './atmos-event-calculator.component.html',
   styleUrl: './atmos-event-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe, AtmosSpiritTreeComponent, ItemListComponent, AtmosEventQuickActionsComponent, AtmosDraftWarningComponent]
+  imports: [RouterLink, MatIcon, DateTimePipe, AtmosSpiritTreeComponent, AtmosItemListComponent, AtmosEventQuickActionsComponent, AtmosDraftWarningComponent]
 })
 export class AtmosEventCalculatorComponent implements OnInit {
   private readonly _currencyService = inject(CurrencyService);

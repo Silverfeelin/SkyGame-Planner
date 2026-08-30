@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Host
 import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from "@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component";
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
+import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
@@ -26,7 +26,7 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, ItemsComponent,
+    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemPickerComponent,
     ItemIconComponent, OverlayComponent,
     EditorItemComponent, TabsComponent, TabDirective
 ],

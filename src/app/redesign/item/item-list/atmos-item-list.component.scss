@@ -1,3 +1,8 @@
+.atmos-item-list__description {
+  margin: 0 0 var(--atmos-gap-compact);
+  color: var(--atmos-text-dim);
+}
+
 .atmos-item-list {
   display: flex;
   flex-wrap: wrap;
@@ -6,63 +11,37 @@
 
 .atmos-item-list__node {
   position: relative;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding: 6px;
-  border: 0;
   border-radius: var(--atmos-radius-sm);
-  background: transparent;
-  cursor: pointer;
-  color: var(--atmos-text);
-  transition: background var(--atmos-transition);
+  background: var(--atmos-tile-bg);
+  transition: background var(--atmos-transition), box-shadow var(--atmos-transition);
 
   &:hover {
-    background: var(--atmos-hover-tint);
-  }
-
-  &:focus-visible {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
+    background: var(--atmos-tile-bg-hover);
   }
 
   &.is-highlighted {
-    background: oklch(0.82 0.11 var(--atmos-hue) / 0.16);
-    box-shadow: inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.4);
+    box-shadow: inset 0 0 0 2px var(--atmos-highlight);
   }
+}
 
-  &.is-opaque .atmos-item-list__icon {
-    opacity: 0.45;
+.atmos-item-list__link {
+  position: relative;
+  display: block;
+  padding: 4px;
+  color: inherit;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: calc(var(--atmos-focus-offset) * -1);
+    border-radius: var(--atmos-radius-sm);
   }
 }
 
 .atmos-item-list__icon {
   display: block;
-}
-
-.atmos-item-list__cost {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: var(--atmos-text-dim);
-  font-variant-numeric: tabular-nums;
-
-  mat-icon {
-    font-size: 14px;
-    width: 14px;
-    height: 14px;
-  }
-
-  strong {
-    color: var(--atmos-text);
-    font-weight: 600;
-  }
-
-  &[data-kind='seasonal'] strong {
-    color: var(--atmos-accent);
-  }
 }
 
 .atmos-item-list__quantity {
@@ -75,4 +54,72 @@
   border-radius: var(--atmos-radius-pill);
   background: var(--atmos-chip-bg);
   color: var(--atmos-text-dim);
+}
+
+.atmos-item-list__bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: 0;
+  border-top: 1px solid var(--atmos-line);
+  border-radius: 0 0 var(--atmos-radius-sm) var(--atmos-radius-sm);
+  background: transparent;
+  color: var(--atmos-text-dim);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color var(--atmos-transition), background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+
+    .atmos-item-list__cost { display: none; }
+    .atmos-item-list__toggle { display: inline-flex; }
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: calc(var(--atmos-focus-offset) * -1);
+  }
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+
+    svg { display: block; }
+  }
+}
+
+.atmos-item-list__cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+
+  strong {
+    color: var(--atmos-text);
+    font-weight: 600;
+  }
+
+  &[data-kind='seasonal'] strong {
+    color: var(--atmos-seasonal);
+  }
+}
+
+.atmos-item-list__toggle {
+  display: none;
+  align-items: center;
+}
+
+.is-unlocked .atmos-item-list__toggle {
+  color: var(--atmos-good);
+}
+
+.atmos-item-list__overlay {
+  position: absolute;
+  inset: 0;
 }

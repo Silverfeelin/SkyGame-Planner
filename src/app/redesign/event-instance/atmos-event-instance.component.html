@@ -106,7 +106,7 @@
       </header>
       <div class="atmos-card__body atmos-event-instance__section-body">
         @for (shop of shops(); track shop.guid) {
-          <app-item-list [itemList]="shop.itemList!"></app-item-list>
+          <app-atmos-item-list [itemList]="shop.itemList!"></app-atmos-item-list>
         }
       </div>
     </section>

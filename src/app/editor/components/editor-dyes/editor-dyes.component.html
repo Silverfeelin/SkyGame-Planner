@@ -9,7 +9,7 @@
     @for (mapped of mappedFiles; track $index) {
       <div class="preview">
         @if (mapped.item) {
-          <app-item-icon class="item" [item]="mapped.item" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+          <app-item-icon class="item" [item]="mapped.item" [opaque]="true"></app-item-icon>
           <img class="preview-img" style="background:#fff8" [src]="mapped.item.previewUrl"/>
         }
         <img [src]="mapped.url" [attr.title]="mapped.url">
@@ -19,7 +19,7 @@
 }
 
 <div style="display:inline-block;width:800px;position: sticky; top: 0;">
-  <app-items [action]="'emit'" (onItemClicked)="onItemClicked($event)"></app-items>
+  <app-atmos-item-picker [action]="'emit'" (itemClicked)="onItemClicked($event)"></app-atmos-item-picker>
   <div><button (click)="export()">Export</button></div>
 </div>
 <div style="display: flex; gap: 8px;flex-wrap:wrap;margin-left:820px;">
@@ -27,7 +27,7 @@
     <div class="preview" [class.highlight]="previewFile === file">
       @if (previewFileMap[file]) {
         @let item = previewFileMap[file];
-        <app-item-icon class="item" [item]="item" [opaque]="true" [hoverGlow]="false"></app-item-icon>
+        <app-item-icon class="item" [item]="item" [opaque]="true"></app-item-icon>
         <img class="preview-img" [src]="item.previewUrl"/>
       }
       <img (click)="onPreviewClicked(file)" [src]="file" [attr.title]="file">

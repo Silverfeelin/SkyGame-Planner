@@ -19,12 +19,12 @@
         @if (itm.previewUrl) {
           <div class="atmos-item-detail__preview-frame">
             <img class="atmos-item-detail__preview-img" [src]="itm.previewUrl" loading="eager"/>
-            <app-item-icon class="atmos-item-detail__floating-icon" [item]="itm" [opaque]="true" [hoverGlow]="false"/>
+            <app-item-icon class="atmos-item-detail__floating-icon" [item]="itm" [opaque]="true"/>
             <app-item-subicons [item]="itm" [showTooltips]="true" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']"/>
           </div>
         } @else {
           <div class="atmos-item-detail__icon-frame">
-            <app-item-icon [item]="itm" [size]="'large'" [opaque]="true" [hoverGlow]="false"/>
+            <app-item-icon [item]="itm" [size]="'large'" [opaque]="true"/>
             <app-item-subicons [item]="itm" [showTooltips]="true" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']"/>
           </div>
         }

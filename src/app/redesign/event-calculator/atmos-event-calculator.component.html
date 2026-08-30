@@ -289,7 +289,7 @@
       <div class="atmos-card__body">
         <div class="atmos-event-calc__trees">
           @for (shop of shops; track shop.guid) {
-            <app-item-list [itemList]="shop.itemList!" [opaqueNodes]="true" [nodeOverlayTemplate]="tShopNode"></app-item-list>
+            <app-atmos-item-list [itemList]="shop.itemList!" [opaqueNodes]="true" [nodeOverlayTemplate]="tShopNode"></app-atmos-item-list>
           }
         </div>
       </div>

@@ -4,7 +4,7 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { ItemClickEvent, ItemsComponent } from '@app/components/items/items.component';
+import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
@@ -36,7 +36,7 @@ const fileNames = [
     selector: 'app-editor-dyes',
     templateUrl: './editor-dyes.component.html',
     styleUrl: './editor-dyes.component.scss',
-    imports: [ItemsComponent, ItemIconComponent]
+    imports: [AtmosItemPickerComponent, ItemIconComponent]
 })
 export class EditorDyesComponent {
   readonly _dataService = inject(DataService);

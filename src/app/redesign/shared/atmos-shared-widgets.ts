@@ -12,6 +12,12 @@ export { AtmosEmptyStateComponent } from './empty-state/atmos-empty-state.compon
 
 export { AtmosDraftWarningComponent } from './draft-warning/atmos-draft-warning.component';
 
+export { AtmosCheckboxComponent, type AtmosCheckboxSize } from './checkbox/atmos-checkbox.component';
+
+export { AtmosFoldableCardComponent } from './foldable-card/atmos-foldable-card.component';
+
+export { AtmosIconPickerComponent } from './icon-picker/atmos-icon-picker.component';
+
 export {
   AtmosSpiritCardComponent,
   type AtmosSpiritCardOptions,
@@ -55,6 +61,12 @@ export {
   AtmosItemListComponent,
   type AtmosItemListNodeClickEvent
 } from '../item/item-list/atmos-item-list.component';
+
+export {
+  AtmosItemPickerComponent,
+  type ItemAction,
+  type ItemClickEvent
+} from '../item/item-picker/atmos-item-picker.component';
 
 export {
   AtmosDailyCardComponent,

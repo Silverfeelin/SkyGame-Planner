@@ -19,7 +19,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
-import { ItemClickEvent, ItemsComponent } from '@app/components/items/items.component';
+import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
 import { AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosItemQuickActionsComponent } from '../quick-actions/atmos-item-quick-actions.component';
 import { AtmosItemUnlockCalculatorFavouritesComponent } from './atmos-item-unlock-calculator-favourites.component';
@@ -55,7 +55,7 @@ interface IItemResult {
   imports: [
     TooltipDirective, MatIcon, DecimalPipe, LowerCasePipe,
     ItemIconComponent, CostComponent, ItemTypePipe,
-    ItemsComponent, AtmosSpiritTreeComponent,
+    AtmosItemPickerComponent, AtmosSpiritTreeComponent,
     AtmosItemQuickActionsComponent,
     AtmosItemUnlockCalculatorFavouritesComponent,
     AtmosItemUnlockCalculatorSpiritsComponent,
@@ -83,10 +83,6 @@ export class AtmosItemUnlockCalculatorComponent {
   ];
   private readonly _itemTypeSet = new Set<string>(this.itemTypes);
 
-  readonly showAddFavourites = signal(false);
-  readonly showAddSpirits = signal(false);
-  readonly showAddSeasons = signal(false);
-  readonly showAddEvents = signal(false);
   readonly showAddItems = signal(false);
 
   itemListItems: Array<IItem> = [];
@@ -118,14 +114,8 @@ export class AtmosItemUnlockCalculatorComponent {
     if (this.items.length) { this.calculate(); }
   }
 
-  toggleSection(which: 'favourites' | 'spirits' | 'seasons' | 'events' | 'items'): void {
-    switch (which) {
-      case 'favourites': this.showAddFavourites.update(v => !v); break;
-      case 'spirits': this.showAddSpirits.update(v => !v); break;
-      case 'seasons': this.showAddSeasons.update(v => !v); break;
-      case 'events': this.showAddEvents.update(v => !v); break;
-      case 'items': this.showAddItems.update(v => !v); break;
-    }
+  toggleAddItems(): void {
+    this.showAddItems.update(v => !v);
   }
 
   shareSelection(): void {
@@ -334,6 +324,9 @@ export class AtmosItemUnlockCalculatorComponent {
   }
 
   calculate(): void {
+    /* Adds push into `items` in place, which a signal input on a child would never
+       see; every mutation ends here, so hand out a fresh reference from one place. */
+    this.items = [...this.items];
     this.updateUrl();
 
     this.totalCost = CostHelper.create();

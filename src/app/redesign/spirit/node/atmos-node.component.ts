@@ -7,17 +7,15 @@ import { MatIcon } from '@angular/material/icon';
 import { EventService } from '@app/services/event.service';
 import { DebugService } from '@app/services/debug.service';
 import { NavigationHelper, INavigationTarget } from '@app/helpers/navigation-helper';
-import { HighlightType } from '@app/types/highlight';
 import { INode } from 'skygame-data';
 
 export type AtmosNodeAction = 'emit' | 'unlock' | 'navigate';
 export type AtmosNodePosition = 'left' | 'center' | 'right';
 
 /**
- * Atmospheric node tile inside a spirit tree. Mirrors the legacy
- * `NodeComponent` input surface; click handling is delegated to the parent
- * (`AtmosSpiritTreeComponent` is responsible for unlock / lock / navigate
- * semantics).
+ * Atmospheric node tile inside a spirit tree. Click handling is delegated to
+ * the parent (`AtmosSpiritTreeComponent` is responsible for unlock / lock /
+ * navigate semantics).
  *
  * Rendered as an `<a routerLink>` to the item page so middle-click / ctrl-click
  * open the item in a new tab natively, while a plain left-click is intercepted
@@ -64,9 +62,6 @@ export class AtmosNodeComponent {
     const item = this.node().item;
     return item ? NavigationHelper.getItemLink(item) : undefined;
   });
-
-  /** Highlight border style; "attention" draws the eye in navigate mode. */
-  readonly glowType = computed<HighlightType>(() => this.action() === 'navigate' ? 'attention' : 'default');
 
   readonly unlocked = computed<boolean>(() => {
     this._refresh();

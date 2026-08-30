@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { IEvent } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
+import { MatIcon } from '@angular/material/icon';
+import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
 
 @Component({
   selector: 'app-atmos-item-unlock-calculator-events',
   templateUrl: './atmos-item-unlock-calculator-events.component.html',
   styleUrl: './atmos-item-unlock-calculator-sub.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatIcon, AtmosFoldableCardComponent]
 })
 export class AtmosItemUnlockCalculatorEventsComponent {
   readonly eventSelected = output<IEvent>();

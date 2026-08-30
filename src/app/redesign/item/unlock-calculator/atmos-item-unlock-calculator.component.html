@@ -38,13 +38,14 @@
       </div>
       <div class="atmos-item-unlock-calc__selection">
         @for (item of items; track item.guid) {
-          <div class="atmos-item-unlock-calc__selection-item">
+          <div class="atmos-item-unlock-calc__selection-item atmos-tile atmos-tile--removable">
             <app-item-icon (click)="viewItem(item)"
-              [item]="item" [opaque]="true" [hoverGlow]="false"
-              [skyTooltip]="item.name" placement="top"
-              [subIcons]="['unlock']">
+              [item]="item" [opaque]="true"
+              [skyTooltip]="item.name" placement="top">
             </app-item-icon>
-            <button type="button" class="atmos-item-unlock-calc__remove atmos-text-link" (click)="removeItem(item)">Remove</button>
+            @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+            <button type="button" class="atmos-tile__remove" (click)="removeItem(item)"
+              [attr.aria-label]="'Remove ' + item.name" [title]="'Remove ' + item.name">✕</button>
           </div>
         }
       </div>
@@ -67,10 +68,11 @@
             @for (item of ownedItems; track item.guid) {
               <div class="atmos-item-unlock-calc__owned-item">
                 <app-item-icon
-                  [item]="item" [opaque]="true" [hoverGlow]="false"
+                  [item]="item" [opaque]="true"
                   [skyTooltip]="item.name" placement="top"
                   [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'limited']">
                 </app-item-icon>
+                <span class="atmos-tile__dot"></span>
               </div>
             }
           </div>
@@ -106,11 +108,14 @@
           @for (result of results; track result.item.guid) {
             <div class="atmos-item-unlock-calc__result">
               <div class="atmos-item-unlock-calc__result-name">{{ result.item.name }}</div>
-              <app-item-icon
-                [item]="result.item" [opaque]="true" [hoverGlow]="false"
-                [skyTooltip]="result.item.name" placement="top"
-                [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']">
-              </app-item-icon>
+              <div class="atmos-item-unlock-calc__result-icon">
+                <app-item-icon
+                  [item]="result.item" [opaque]="true"
+                  [skyTooltip]="result.item.name" placement="top"
+                  [subIcons]="['type', 'elder', 'season', 'iap', 'favourite']">
+                </app-item-icon>
+                @if (result.item.unlocked) { <span class="atmos-tile__dot"></span> }
+              </div>
               <div class="atmos-item-unlock-calc__result-detail">
                 @if (result.item.unlocked) {
                   <span>You own this item.</span>
@@ -182,69 +187,38 @@
 }
 
 <!-- Add favourites -->
-@if (!showAddFavourites()) {
-  <div class="atmos-item-unlock-calc__expand">
-    <button type="button" class="atmos-btn" (click)="toggleSection('favourites')">
-      <mat-icon>favorite</mat-icon> Add favourite items
-    </button>
-  </div>
-} @else {
-  <app-atmos-item-unlock-calculator-favourites
-    (itemClicked)="onItemClicked($event)" (itemsClicked)="onItemsClicked($event)">
-  </app-atmos-item-unlock-calculator-favourites>
-}
+<app-atmos-item-unlock-calculator-favourites
+  (itemClicked)="onItemClicked($event)" (itemsClicked)="onItemsClicked($event)">
+</app-atmos-item-unlock-calculator-favourites>
 
 <!-- Add spirits -->
-@if (!showAddSpirits()) {
-  <div class="atmos-item-unlock-calc__expand">
-    <button type="button" class="atmos-btn" (click)="toggleSection('spirits')">
-      <mat-icon>person_search</mat-icon> Add spirit trees
-    </button>
-  </div>
-} @else {
-  <app-atmos-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)">
-  </app-atmos-item-unlock-calculator-spirits>
-}
+<app-atmos-item-unlock-calculator-spirits (spiritSelected)="onSpiritSelected($event)">
+</app-atmos-item-unlock-calculator-spirits>
 
 <!-- Add seasons -->
-@if (!showAddSeasons()) {
-  <div class="atmos-item-unlock-calc__expand">
-    <button type="button" class="atmos-btn" (click)="toggleSection('seasons')">
-      <mat-icon>auto_awesome</mat-icon> Add season items
-    </button>
-  </div>
-} @else {
-  <app-atmos-item-unlock-calculator-seasons
-    (seasonSelected)="onSeasonSelected($event)" (guideSelected)="onSeasonGuideSelected($event)">
-  </app-atmos-item-unlock-calculator-seasons>
-}
+<app-atmos-item-unlock-calculator-seasons
+  (seasonSelected)="onSeasonSelected($event)" (guideSelected)="onSeasonGuideSelected($event)">
+</app-atmos-item-unlock-calculator-seasons>
 
 <!-- Add events -->
-@if (!showAddEvents()) {
-  <div class="atmos-item-unlock-calc__expand">
-    <button type="button" class="atmos-btn" (click)="toggleSection('events')">
-      <mat-icon>celebration</mat-icon> Add event items
-    </button>
-  </div>
-} @else {
-  <app-atmos-item-unlock-calculator-events (eventSelected)="onEventSelected($event)">
-  </app-atmos-item-unlock-calculator-events>
-}
+<app-atmos-item-unlock-calculator-events (eventSelected)="onEventSelected($event)">
+</app-atmos-item-unlock-calculator-events>
 
 <!-- Add items -->
 <div class="atmos-item-unlock-calc__expand">
-  <button type="button" class="atmos-btn" [class.atmos-btn--active]="showAddItems()" (click)="toggleSection('items')">
+  <button type="button" class="atmos-btn" [class.atmos-btn--active]="showAddItems()" (click)="toggleAddItems()">
     <mat-icon>{{ showAddItems() ? 'expand_less' : 'add' }}</mat-icon> Add items
   </button>
 </div>
 
 @if (showAddItems()) {
   <div class="atmos-item-unlock-calc__items-wrap">
-    <app-items [title]="'Add items'" [type]="itemType" [action]="'emit'"
+    <app-atmos-item-picker [title]="'Add items'" [type]="itemType" [action]="'emit'"
+      [selectedItems]="items"
       (typeChanged)="onItemTypeChanged($event)"
-      (onItemClicked)="onItemClicked($event)"
-      (onItemsChanged)="onItemsChanged($event)">
-    </app-items>
+      (itemClicked)="onItemClicked($event)"
+      (itemsChanged)="onItemsChanged($event)">
+    </app-atmos-item-picker>
     <div class="atmos-item-unlock-calc__buttons">
       <button type="button" class="atmos-btn atmos-btn--sm" (click)="addItemsFromList()">
         @if (itemListItems.length === 1) {

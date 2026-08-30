@@ -71,24 +71,8 @@
   gap: var(--atmos-gap-compact);
 }
 
-.atmos-event-card__row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13.5px;
-  color: var(--atmos-text);
-
-  mat-icon {
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-    color: var(--atmos-text-dim);
-  }
-}
-
-.atmos-event-card__days {
-  color: var(--atmos-text-dim);
-  margin-left: 4px;
+.atmos-event-card__body > .atmos-link {
+  align-self: flex-start;
 }
 
 .atmos-event-card__cost {

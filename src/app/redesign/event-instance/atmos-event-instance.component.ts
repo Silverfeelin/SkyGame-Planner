@@ -12,8 +12,7 @@ import { TreeHelper } from '@app/helpers/tree-helper';
 import { DateComponent } from '@app/components/util/date/date.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
-import { ItemListComponent } from '@app/components/item-list/item-list/item-list.component';
-import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 
 @Component({
   selector: 'app-atmos-event-instance',
@@ -27,7 +26,7 @@ import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosSpiritTreeCompo
     DaysLeftComponent,
     DurationComponent,
     AtmosSpiritTreeComponent,
-    ItemListComponent,
+    AtmosItemListComponent,
     AtmosIapCardComponent,
     AtmosDraftWarningComponent
   ]

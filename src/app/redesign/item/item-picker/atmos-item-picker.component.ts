@@ -1,20 +1,20 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, input, linkedSignal, output, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { ItemHelper } from 'src/app/helpers/item-helper';
-import { DataService } from 'src/app/services/data.service';
-import { ItemIconComponent } from './item-icon/item-icon.component';
-import { TooltipDirective } from '@app/directives/tooltip.directive';
-import { NgTemplateOutlet, LowerCasePipe } from '@angular/common';
-import { ItemTypeSelectorComponent } from './item-type-selector/item-type-selector.component';
+import { LowerCasePipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { CheckboxComponent } from "../layout/checkbox/checkbox.component";
-import { IconComponent } from '../icon/icon.component';
+import { IconComponent } from '@app/components/icon/icon.component';
+import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { ItemTypeSelectorComponent } from '@app/components/items/item-type-selector/item-type-selector.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { CostHelper } from '@app/helpers/cost-helper';
+import { ItemHelper } from '@app/helpers/item-helper';
+import { ItemTypePipe } from '@app/pipes/item-type.pipe';
+import { DataService } from '@app/services/data.service';
 import { SearchService } from '@app/services/search.service';
 import { Maybe } from '@app/types/maybe';
-import { ItemTypePipe } from "../../pipes/item-type.pipe";
-import { CostHelper } from '@app/helpers/cost-helper';
-import { CardComponent, CardFoldEvent } from "../layout/card/card.component";
-import { IItem, INode, IItemListNode, IIAP, IItemSource, ISeason, IEvent, IEventInstance, IRealm, ItemType, ICost } from 'skygame-data';
+import { AtmosCheckboxComponent } from '@app/redesign/shared/checkbox/atmos-checkbox.component';
+import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
+import { ICost, IEvent, IEventInstance, IIAP, IItem, IItemListNode, IItemSource, INode, IRealm, ISeason, ItemSubicon, ItemType } from 'skygame-data';
 
 export type ItemAction = 'navigate' | 'emit';
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -37,64 +37,108 @@ interface IItemSearchMetadata {
   event?: IEvent;
   eventInstance?: IEventInstance;
   realm?: IRealm;
-};
+}
 
 type FilterMaybeMap = { [key: string]: Maybe<boolean> };
 type FilterMap = { [key: string]: boolean };
 
+/** Derived from immutable game data, so it is built once per session. */
 let itemSearchMetadata: { [key: string]: IItemSearchMetadata } | undefined;
+
 const defaultFilters = {
   filters: { owned: undefined, favourite: undefined, limited: undefined, returned: undefined, starter: undefined, dyeable: undefined, unsorted: undefined },
   currencies: { free: true, candles: true, hearts: true, ascendedCandles: true, eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true }
 };
 
+const generalFilters = [
+  { key: 'owned', label: 'Owned' },
+  { key: 'favourite', label: 'Favourited' },
+  { key: 'starter', label: 'Starter' },
+  { key: 'limited', label: 'Limited' },
+  { key: 'returned', label: 'Has returned' },
+  { key: 'dyeable', label: 'Dyeable' },
+  { key: 'unsorted', label: 'Unsorted' }
+];
+
+const currencyFilters = [
+  { key: 'free', label: 'Free' },
+  { key: 'candles', label: 'Candles' },
+  { key: 'hearts', label: 'Hearts' },
+  { key: 'ascendedCandles', label: 'Ascended candles' },
+  { key: 'eventCurrency', label: 'Event currency' },
+  { key: 'seasonCandles', label: 'Season candles' },
+  { key: 'seasonPass', label: 'Season pass' },
+  { key: 'seasonHearts', label: 'Season hearts' },
+  { key: 'iap', label: 'In-app purchase' }
+];
+
+const itemSubIcons: Array<ItemSubicon> = ['type', 'season', 'elder', 'iap', 'favourite', 'limited'];
+
+interface FilterResult {
+  shownCount: number;
+  shownUnlocked: number;
+  matched: ReadonlySet<string>;
+  matchedItems: Array<IItem>;
+}
+
+/**
+ * Atmospheric item browser / picker: a type selector, a filter panel and a grid
+ * of item icons. In `navigate` mode icons link to the item page; in `emit` mode
+ * clicks are surfaced through `(itemClicked)` so the host can consume them.
+ */
 @Component({
-    selector: 'app-items',
-    templateUrl: './items.component.html',
-    styleUrl: './items.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [RouterLink, IconComponent, MatIcon, ItemTypeSelectorComponent, TooltipDirective, NgTemplateOutlet, ItemIconComponent, CheckboxComponent, ItemTypePipe, LowerCasePipe, CardComponent]
+  selector: 'app-atmos-item-picker',
+  templateUrl: './atmos-item-picker.component.html',
+  styleUrl: './atmos-item-picker.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    RouterLink, MatIcon, LowerCasePipe, ItemTypePipe, TooltipDirective,
+    IconComponent, ItemIconComponent, ItemTypeSelectorComponent,
+    AtmosCheckboxComponent, AtmosFoldableCardComponent
+  ]
 })
-export class ItemsComponent {
-  @Input() title = 'Items';
-  @Input() type: ItemType = ItemType.Outfit;
-  @Input() highlightItem?: IItem;
-  @Input() backlightItems?: Array<IItem>;
-  @Input() opaqueItems = false;
-  @Input() action: ItemAction = 'navigate';
-  @Input() foldable = false;
-  @Input() maxHeight: string | undefined;
+export class AtmosItemPickerComponent {
+  readonly title = input<string>('Items');
+  readonly type = input<ItemType>(ItemType.Outfit);
+  readonly highlightItem = input<IItem | undefined>(undefined);
+  readonly selectedItems = input<ReadonlyArray<IItem> | undefined>(undefined);
+  readonly opaqueItems = input<boolean>(false);
+  readonly action = input<ItemAction>('navigate');
+  readonly foldable = input<boolean>(false);
+  readonly maxHeight = input<string | undefined>(undefined);
 
-  @Output() readonly typeChanged = new EventEmitter<ItemType>();
-  @Output() readonly onItemClicked = new EventEmitter<ItemClickEvent>();
-  @Output() readonly onItemsChanged = new EventEmitter<Array<IItem>>();
+  readonly typeChanged = output<ItemType>();
+  readonly itemClicked = output<ItemClickEvent>();
+  readonly itemsChanged = output<Array<IItem>>();
 
-  types: Array<string> = [
+  private readonly _dataService = inject(DataService);
+  private readonly _searchService = inject(SearchService);
+  private readonly _route = inject(ActivatedRoute);
+
+  /** Selected type; seeded from the input but owned by the type selector afterwards. */
+  readonly activeType = linkedSignal<ItemType>(() => this.type());
+
+  readonly generalFilters = generalFilters;
+  readonly currencyFilters = currencyFilters;
+  readonly itemSubIcons = itemSubIcons;
+
+  readonly types: Array<ItemType> = [
     ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
     ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
     ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
     ItemType.Stance, ItemType.Call, ItemType.Music
   ];
-  typeSet = new Set(this.types);
-  allItems: Array<IItem> = [];
-  typeItems: { [key: string]: Array<IItem> } = {};
-  typeUnlocked: { [key: string]: number } = {};
-  typesLoaded: { [key: string]: boolean } = {};
 
-  shownItems: { [key: string]: boolean } = {};
-  unfilteredItems: { [key: string]: boolean } = {};
-  unfilteredItemCount: number = 0;
-  shownUnlocked: number = 0;
-  shownCount: number = 0;
-  shownIncludesFav = false;
+  readonly folded = signal(false);
+  readonly showFilters = signal(false);
+  readonly showGeneralFilters = signal(true);
+  readonly showCurrencyFilters = signal(false);
+  readonly showSeasonFilters = signal(false);
+  readonly showEventFilters = signal(false);
+  readonly showRealmFilters = signal(false);
 
-  isFolded = false;
-  showFilters = false;
-  showGeneralFilters = true;
-  showCurrencyFilters = false;
-  showSeasonFilters = false;
-  showEventFilters = false;
-  showRealmFilters = false;
+  /** Bumped whenever a filter map changes, to recompute the shown items. */
+  private readonly _filterVersion = signal(0);
 
   filterName = '';
   filters: FilterMaybeMap = {};
@@ -102,80 +146,96 @@ export class ItemsComponent {
   filterSeasons: FilterMap = {};
   filterEvents: FilterMap = {};
   filterRealms: FilterMap = {};
+
   allGeneralFiltered: Maybe<boolean>;
   allCurrenciesFiltered: Maybe<boolean>;
   allSeasonsFiltered: Maybe<boolean>;
   allEventsFiltered: Maybe<boolean>;
   allRealmsFiltered: Maybe<boolean>;
-  seasons: Array<ISeason>;
-  events: Array<IEvent>;
-  realms: Array<IRealm>;
 
-  backlightItemSet?: { [key: string]: boolean };
+  readonly seasons: Array<ISeason>;
+  readonly events: Array<IEvent>;
+  readonly realms: Array<IRealm>;
 
-  constructor(
-    private readonly _dataService: DataService,
-    private readonly _searchService: SearchService,
-    private readonly _route: ActivatedRoute,
-    private readonly _changeDetectionRef: ChangeDetectorRef
-  ) {
+  private readonly _typeSet: Set<ItemType>;
+  private readonly _typeItems: { [key: string]: Array<IItem> } = {};
+  private readonly _typeUnlocked: { [key: string]: number } = {};
+
+  /** Types rendered at least once, so switching back to one is instant. */
+  readonly loadedTypes = signal<ReadonlySet<ItemType>>(new Set());
+
+  readonly selectedItemSet = computed<ReadonlySet<string>>(() => {
+    const items = this.selectedItems();
+    return items ? new Set(items.map(i => i.guid)) : new Set();
+  });
+
+  private readonly _result = computed<FilterResult>(() => {
+    this._filterVersion();
+    return this.computeShownItems(this.activeType());
+  });
+
+  readonly shownCount = computed<number>(() => this._result().shownCount);
+  readonly shownUnlocked = computed<number>(() => this._result().shownUnlocked);
+  readonly matchedCount = computed<number>(() => this._result().matched.size);
+  readonly matchedItems = computed<ReadonlySet<string>>(() => this._result().matched);
+  readonly hasActiveFilters = computed<boolean>(() => this.shownCount() !== this.matchedCount());
+
+  constructor() {
     this.seasons = this._dataService.seasonConfig.items;
     this.events = this._dataService.eventConfig.items;
     const realmGuids = new Set(['E1RwpAdA8l', 'tuaosLljJS', 'mz64Wq0_df', 'VtkTo1WWuD', 'rAjzHXfPpb', 'y-6n1F5E77', 'GKnbJhLIRi']);
     this.realms = this._dataService.realmConfig.items.filter(r => realmGuids.has(r.guid));
-    this.loadSettings();
+
+    this._typeSet = new Set(this.types);
     this.initializeItems();
+    this.loadSettings();
 
-    const query = _route.snapshot.queryParamMap;
-    this.showFilters = query.get('f') === '1';
+    this.showFilters.set(this._route.snapshot.queryParamMap.get('f') === '1');
+
+    effect(() => {
+      const type = this.activeType();
+      if (!this.loadedTypes().has(type)) {
+        this.loadedTypes.update(set => new Set(set).add(type));
+      }
+      this.itemsChanged.emit(this._result().matchedItems);
+    });
   }
 
-  ngOnInit(): void {
-    this.updateShownItems();
+  itemsOfType(type: ItemType): ReadonlyArray<IItem> {
+    return this._typeItems[type] ?? [];
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['type']) { this.updateShownItems(); }
-    if (changes['backlightItems']) { this.updateBacklightItems(); }
-  }
-
-  onTypeChanged(type: ItemType) {
-    this.type = type;
+  onTypeChanged(type: ItemType): void {
+    this.activeType.set(type);
     this.typeChanged.emit(type);
-    this.updateShownItems();
   }
 
-  clickItem(item: IItem, event: MouseEvent) {
-    if (this.action !== 'emit') { return; }
-      this.onItemClicked.emit({ event, item });
+  clickItem(item: IItem, event: MouseEvent): void {
+    if (this.action() !== 'emit') { return; }
+    this.itemClicked.emit({ event, item });
   }
 
-  beforeFold(evt: CardFoldEvent): void {
-    this.isFolded = evt.fold;
-  }
-
-  // #region Toggle filters
-
-  toggleFilters(evt: MouseEvent): void {
+  toggleFilters(evt: Event): void {
     evt.preventDefault();
     evt.stopImmediatePropagation();
 
-    this.showFilters = !this.showFilters;
+    const show = !this.showFilters();
+    this.showFilters.set(show);
+
     const url = new URL(location.href);
-    url.searchParams.set('f', this.showFilters ? '1' : '0');
+    url.searchParams.set('f', show ? '1' : '0');
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   onFilterNameInput(evt: Event): void {
     this.filterName = (evt.target as HTMLInputElement).value || '';
-    this.updateShownItems();
+    this.applyFilters(false);
   }
 
   toggleFilter(filter: string): void {
     this.filters[filter] = this.bumpBool(this.filters[filter]);
     this.allGeneralFiltered = this.checkAllFiltered(this.filters);
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
 
   toggleCurrencyFilters(show: boolean, filters?: FilterMap): void {
@@ -187,70 +247,66 @@ export class ItemsComponent {
         this.filterCurrencies.last[c] = show;
       }
     }
-    const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
-    const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
-    this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
-    this.saveSettings();
-    this.updateShownItems();
+    this.updateAllCurrenciesFiltered();
+    this.applyFilters();
   }
 
   toggleCurrencyFilter(filters: FilterMap, filter: string): void {
     filters[filter] = !filters[filter];
-    const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
-    const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
-    this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
-    this.saveSettings();
-    this.updateShownItems();
+    this.updateAllCurrenciesFiltered();
+    this.applyFilters();
   }
 
   toggleRealmFilters(show: boolean): void {
     this.allRealmsFiltered = show;
     for (const r of this.realms) { this.filterRealms[r.guid] = show; }
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
 
-  toggleRealmFilter(realm: IRealm) {
-    this.filterRealms[realm.guid] = !this.filterRealms[realm.guid]
+  toggleRealmFilter(realm: IRealm): void {
+    this.filterRealms[realm.guid] = !this.filterRealms[realm.guid];
     this.allRealmsFiltered = this.checkAllFiltered(this.filterRealms);
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
 
   toggleSeasonFilters(show: boolean): void {
     this.allSeasonsFiltered = show;
     for (const s of this.seasons) { this.filterSeasons[s.guid] = show; }
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
 
-  toggleSeasonFilter(season: ISeason) {
-    this.filterSeasons[season.guid] = !this.filterSeasons[season.guid]
+  toggleSeasonFilter(season: ISeason): void {
+    this.filterSeasons[season.guid] = !this.filterSeasons[season.guid];
     this.allSeasonsFiltered = this.checkAllFiltered(this.filterSeasons);
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
 
   toggleEventFilters(show: boolean): void {
     this.allEventsFiltered = show;
     for (const e of this.events) { this.filterEvents[e.guid] = show; }
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
 
-  toggleEventFilter(event: IEvent) {
+  toggleEventFilter(event: IEvent): void {
     this.filterEvents[event.guid] = !this.filterEvents[event.guid];
     this.allEventsFiltered = this.checkAllFiltered(this.filterEvents);
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
   }
-
-  // #endregion
 
   resetFilters(): void {
     this.resetFilterFields();
-    this.saveSettings();
-    this.updateShownItems();
+    this.applyFilters();
+  }
+
+  private applyFilters(save = true): void {
+    if (save) { this.saveSettings(); }
+    this._filterVersion.update(v => v + 1);
+  }
+
+  private updateAllCurrenciesFiltered(): void {
+    const first = this.checkAllFiltered(this.filterCurrencies.first);
+    const last = this.checkAllFiltered(this.filterCurrencies.last);
+    this.allCurrenciesFiltered = first === last ? first : undefined;
   }
 
   private bumpBool(val: Maybe<boolean>): Maybe<boolean> {
@@ -268,25 +324,11 @@ export class ItemsComponent {
     return same ? first : undefined;
   }
 
-  private updateShownItems(): void {
-    // Lazy load shown types
-    this.typesLoaded[this.type!] = true;
-
-    this.shownItems = {};
-    const items = this.typeItems[this.type!] ?? [];
-    for (const item of items) {
-      this.shownItems[item.guid] = true;
-      this.shownCount++;
-    }
-    this.shownCount = items.length;
-    this.shownUnlocked = this.typeUnlocked[this.type!] ?? 0;
-
-    this.unfilteredItemCount = 0;
-    this.unfilteredItems = {};
+  private computeShownItems(type: ItemType): FilterResult {
+    const items = this._typeItems[type] ?? [];
 
     this.initializeItemSearchMetadata();
     const matches = items.filter(item => {
-      // Check filters
       if (this.filters['favourite'] !== undefined) {
         if (this.filters['favourite'] !== !!item.favourited) { return false; }
       }
@@ -349,57 +391,46 @@ export class ItemsComponent {
       if (metadata.realm !== undefined && this.filterRealms[metadata.realm.guid] === false) { return false; }
 
       if (this.filters['unsorted'] !== undefined) {
-        const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.event && !metadata.realm
+        const isUnsorted = !item.autoUnlocked && !metadata.season && !metadata.event && !metadata.realm;
         if (isUnsorted !== this.filters['unsorted']) { return false; }
       }
 
       return true;
     });
 
+    // The name filter goes through the search service so results stay fuzzy-matched.
+    let matched: Set<string>;
     if (this.filterName) {
       const itemGuids = new Set(matches.map(item => item.guid));
-      const items = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
-      const searchResults = this._searchService.search(this.filterName, { limit: 999, items });
-      searchResults.forEach(result => this.unfilteredItems[(result.data as IItem).guid] = true);
-      this.unfilteredItemCount = searchResults.length;
+      const searchItems = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
+      const searchResults = this._searchService.search(this.filterName, { limit: 999, items: searchItems });
+      matched = new Set(searchResults.map(r => (r.data as IItem).guid));
     } else {
-      matches.forEach(item => this.unfilteredItems[item.guid] = true);
-      this.unfilteredItemCount = matches.length;
+      matched = new Set(matches.map(item => item.guid));
     }
 
-    // Notify listeners.
-    this.onItemsChanged.emit(matches);
-
-    this._changeDetectionRef.markForCheck();
-  }
-
-  private updateBacklightItems(): void {
-    this.backlightItemSet = this.backlightItems ? {} : undefined;
-    this.backlightItems?.forEach(item => this.backlightItemSet![item.guid] = true);
+    return {
+      shownCount: items.length,
+      shownUnlocked: this._typeUnlocked[type] ?? 0,
+      matched,
+      matchedItems: matches
+    };
   }
 
   private initializeItems(): void {
-    // Clear data.
-    this.typeItems = {};
-    this.typeUnlocked = {};
     for (const type in ItemType) {
-      this.typeItems[type] = [];
-      this.typeUnlocked[type] = 0;
+      this._typeItems[type] = [];
+      this._typeUnlocked[type] = 0;
     }
 
-    // Load all items.
-    const items = this._dataService.itemConfig.items;
-    this.allItems = [];
-    items.forEach(item => {
-      if (!this.typeSet.has(item.type)) { return; }
-      this.typeItems[item.type].push(item);
-      this.allItems.push(item);
-      if (item.unlocked) { this.typeUnlocked[item.type]++; }
-    });
+    for (const item of this._dataService.itemConfig.items) {
+      if (!this._typeSet.has(item.type)) { continue; }
+      this._typeItems[item.type].push(item);
+      if (item.unlocked) { this._typeUnlocked[item.type]++; }
+    }
 
-    // Sort by order.
     for (const type in ItemType) {
-      ItemHelper.sortItems(this.typeItems[type]);
+      ItemHelper.sortItems(this._typeItems[type]);
     }
   }
 
@@ -436,7 +467,7 @@ export class ItemsComponent {
         season: originSource?.type === 'season' ? originSource.source : undefined,
         realm
       };
-    };
+    }
   }
 
   private saveSettings(): void {
@@ -460,43 +491,37 @@ export class ItemsComponent {
 
     this.filters = parsed.filters || {};
     for (const filter in defaultFilters.filters) { this.filters[filter] ??= undefined; }
+    this.allGeneralFiltered = this.checkAllFiltered(this.filters);
+
     this.filterCurrencies = { first: {}, last: {}, ...parsed.currencies };
     for (const c in defaultFilters.currencies) {
       this.filterCurrencies.first[c] ??= true;
       this.filterCurrencies.last[c] ??= true;
     }
-    const firstCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.first);
-    const lastCurrenciesFiltered = this.checkAllFiltered(this.filterCurrencies.last);
-    this.allCurrenciesFiltered = firstCurrenciesFiltered === lastCurrenciesFiltered ? firstCurrenciesFiltered : undefined;
-    this.showCurrencyFilters = this.allCurrenciesFiltered === undefined;
+    this.updateAllCurrenciesFiltered();
+    this.showCurrencyFilters.set(this.allCurrenciesFiltered === undefined);
 
     this.filterRealms = parsed.realms || {};
     this.realms.forEach(realm => this.filterRealms[realm.guid] ??= true);
     this.allRealmsFiltered = this.checkAllFiltered(this.filterRealms);
-    this.showRealmFilters = this.allRealmsFiltered === undefined;
+    this.showRealmFilters.set(this.allRealmsFiltered === undefined);
 
     this.filterSeasons = parsed.seasons || {};
     this.seasons.forEach(season => this.filterSeasons[season.guid] ??= true);
     this.allSeasonsFiltered = this.checkAllFiltered(this.filterSeasons);
-    this.showSeasonFilters = this.allSeasonsFiltered === undefined;
+    this.showSeasonFilters.set(this.allSeasonsFiltered === undefined);
 
     this.filterEvents = parsed.events || {};
     this.events.forEach(event => this.filterEvents[event.guid] ??= true);
     this.allEventsFiltered = this.checkAllFiltered(this.filterEvents);
-    this.showEventFilters = this.allEventsFiltered === undefined;
+    this.showEventFilters.set(this.allEventsFiltered === undefined);
   }
 
   private resetFilterFields(): void {
     this.filters = { ...defaultFilters.filters };
     this.filterCurrencies = {
-      first: {
-        free: true, candles: true, hearts: true, ascendedCandles: true,
-        eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true
-      },
-      last: {
-        free: true, candles: true, hearts: true, ascendedCandles: true,
-        eventCurrency: true, seasonCandles: true, seasonPass: true, seasonHearts: true, iap: true
-      }
+      first: { ...defaultFilters.currencies },
+      last: { ...defaultFilters.currencies }
     };
     this.filterRealms = {};
     this.realms.forEach(realm => this.filterRealms[realm.guid] = true);

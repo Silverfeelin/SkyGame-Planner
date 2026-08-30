@@ -1,0 +1,22 @@
+<div class="atmos-icon-picker atmos-card" (keydown)="onKeydown($event)">
+  <button type="button" class="atmos-icon-btn atmos-icon-picker__close" aria-label="Close" (click)="close($event)">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <div class="atmos-icon-picker__grid">
+    @for (result of results(); track result.data.guid) {
+      <app-item-icon
+        class="atmos-icon-picker__icon"
+        [item]="result.data"
+        [opaque]="true"
+        [subIcons]="[]"
+        [title]="result.data.name"
+        (click)="select(result.data)"></app-item-icon>
+    }
+  </div>
+
+  <div class="atmos-icon-picker__search">
+    <mat-icon (click)="selectSearch()">search</mat-icon>
+    <input #input class="atmos-input" type="text" tabindex="0" placeholder="Search for icons" (input)="search()">
+  </div>
+</div>

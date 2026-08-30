@@ -11,7 +11,7 @@ import { CurrencyService } from '@app/services/currency.service';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
-import { CheckboxComponent } from '@app/components/layout/checkbox/checkbox.component';
+import { AtmosCheckboxComponent } from '@app/redesign/shared/checkbox/atmos-checkbox.component';
 import {
   AtmosDraftWarningComponent,
   AtmosSpiritTreeComponent,
@@ -25,7 +25,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink, ReactiveFormsModule, MatIcon, DecimalPipe,
-    OverlayComponent, CheckboxComponent, AtmosSpiritTreeComponent,
+    OverlayComponent, AtmosCheckboxComponent, AtmosSpiritTreeComponent,
     AtmosDraftWarningComponent
   ]
 })

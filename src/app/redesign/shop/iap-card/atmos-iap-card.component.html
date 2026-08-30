@@ -53,7 +53,11 @@
     @if (iap().items?.length) {
       <div class="atmos-iap-card__items">
         @for (item of iap().items; track item.guid) {
-          <app-item-icon [item]="item" [iap]="iap()" size="small"></app-item-icon>
+          <a class="atmos-iap-card__item"
+            [routerLink]="['/item', item.guid]"
+            [title]="item.name">
+            <app-item-icon [item]="item" [iap]="iap()" size="default"></app-item-icon>
+          </a>
         }
       </div>
     }

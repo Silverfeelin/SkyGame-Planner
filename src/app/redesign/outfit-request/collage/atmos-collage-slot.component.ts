@@ -10,7 +10,7 @@ import {
   signal,
 } from '@angular/core';
 import createPanZoom, { PanZoom } from 'panzoom';
-import { IconPickerComponent } from '@app/components/util/icon-picker/icon-picker.component';
+import { AtmosIconPickerComponent } from '@app/redesign/shared/icon-picker/atmos-icon-picker.component';
 import { MatIcon } from '@angular/material/icon';
 import { IItem } from 'skygame-data';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
@@ -26,7 +26,7 @@ export interface ICollageSlotImage {
   templateUrl: './atmos-collage-slot.component.html',
   styleUrl: './atmos-collage-slot.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, IconPickerComponent, TooltipDirective],
+  imports: [MatIcon, AtmosIconPickerComponent, TooltipDirective],
 })
 export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
   /** Zero-based index of this slot in the collage grid (0-3). */

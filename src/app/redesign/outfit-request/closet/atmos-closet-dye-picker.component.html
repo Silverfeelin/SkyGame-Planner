@@ -1,7 +1,7 @@
 @if (state.showingDyePicker() && state.dyeItem()) {
   <app-overlay [closeText]="'Close'" (close)="close()">
     <div class="atmos-dye-picker t-center">
-      <app-item-icon [item]="state.dyeItem()!" [hoverGlow]="false" [opaque]="true" [size]="'default'" />
+      <app-item-icon [item]="state.dyeItem()!"[opaque]="true" [size]="'default'" />
 
       @if (state.dyeItem()!.dye?.previewUrl) {
         <img [src]="state.dyeItem()!.dye!.previewUrl" class="atmos-dye-preview"

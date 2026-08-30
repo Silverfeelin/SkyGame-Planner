@@ -10,7 +10,7 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (item of itemsWithoutPreview; track item.guid) {
       <div>
-        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+        <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
         <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
         @if (item._wiki?.href) {
           <div><a [href]="item._wiki!.href" target="_blank">[wiki]</a></div>
@@ -25,7 +25,7 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (item of itemsWithoutOrder; track item.guid) {
       <div>
-        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+        <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
         <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
       </div>
     }
@@ -37,7 +37,7 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (item of itemsWithoutWiki; track item.guid) {
       <div>
-        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
+        <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
         <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
       </div>
     }

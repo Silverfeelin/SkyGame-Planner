@@ -6,14 +6,15 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
-import { ItemClickEvent } from '@app/components/items/items.component';
+import { ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
+import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
 
 @Component({
   selector: 'app-atmos-item-unlock-calculator-favourites',
   templateUrl: './atmos-item-unlock-calculator-favourites.component.html',
   styleUrl: './atmos-item-unlock-calculator-sub.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, MatIcon, ItemIconComponent]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent, AtmosFoldableCardComponent]
 })
 export class AtmosItemUnlockCalculatorFavouritesComponent {
   readonly itemClicked = output<ItemClickEvent>();
