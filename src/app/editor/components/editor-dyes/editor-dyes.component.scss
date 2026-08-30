@@ -1,3 +1,21 @@
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* The picker is sticky at the left edge; the unmapped grid clears its width. */
+.picker {
+  display: inline-block;
+  width: 800px;
+  position: sticky;
+  top: 0;
+}
+
+.preview-grid--unmapped {
+  margin-left: 820px;
+}
+
 .preview {
   position: relative;
   width: 300px;
@@ -25,5 +43,9 @@
     left: 0;
     width: 128px;
     height: 128px;
+
+    &--mapped {
+      background: var(--atmos-preview-bg-contrast);
+    }
   }
 }

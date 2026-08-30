@@ -45,15 +45,3 @@
   transition: var(--atmos-transition);
   filter: drop-shadow(1px 0px 1px var(--atmos-overlay-shadow));
 }
-
-:host.hoverable:hover {
-  img { transition: var(--atmos-transition); }
-
-  .img[data-glow-type="default"] {
-    filter: drop-shadow(0 0 4px #fffa73);
-  }
-
-  .img[data-glow-type="attention"] {
-    filter: drop-shadow(0 0 4px var(--atmos-accent-2));
-  }
-}

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, QueryList, ViewChild, ViewChildren, signal } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { RouterLink } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ISeason, IEventInstance } from 'skygame-data';
@@ -26,7 +26,7 @@ interface IGains {
   templateUrl: './atmos-currency.component.html',
   styleUrl: './atmos-currency.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, RouterLink, NgTemplateOutlet, AtmosCurrencyQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, AtmosCurrencyQuickActionsComponent]
 })
 export class AtmosCurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;

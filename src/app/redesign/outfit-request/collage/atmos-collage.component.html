@@ -1,5 +1,9 @@
 <atmos-tool-quick-actions />
 
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Collage</h1>
+</header>
+
 <div class="atmos-collage">
 
   <!-- Toolbar -->
@@ -14,14 +18,14 @@
       class="atmos-btn atmos-btn--sm"
       (click)="copyCollage(ttCopy)"
       [disabled]="isRendering()"
-      ngbTooltip="Copied!"
-      #ttCopy="ngbTooltip"
-      triggers="manual"
-      container="body"
+      skyTooltip="Copied!"
+      #ttCopy="skyTooltip"
+      manual
+
       placement="top"
       [closeDelay]="1000"
-      [autoClose]="true"
-      tooltipClass="show"
+
+
     >
       <mat-icon class="atmos-icon--18" [class.spin]="isRendering()">
         {{ isRendering() ? 'cached' : 'image' }}
@@ -29,7 +33,7 @@
       Copy
     </button>
 
-    <button type="button" class="atmos-btn atmos-btn--sm atmos-collage__btn-danger" (click)="reset()">
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="reset()">
       <mat-icon class="atmos-icon--18">delete_forever</mat-icon>
       Reset
     </button>

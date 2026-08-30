@@ -101,12 +101,6 @@ img.atmos-spirit__meta-icon {
   mat-icon {
     flex: 0 0 auto;
     color: var(--atmos-accent);
-    // Undo the legacy absolute-positioned menu icon layout so it sits inline.
-    position: static;
-  }
-
-  .menu-label {
-    padding-left: 0;
   }
 }
 

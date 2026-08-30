@@ -1,0 +1,64 @@
+@use 'closet-markers' as markers;
+
+/**
+ * Shared styling for a single closet item tile.
+ *
+ * Lives in a partial because the tile is rendered by two components with
+ * separate encapsulated stylesheets — `atmos-closet-grid` (the main grid) and
+ * `atmos-closet-ongoing` (the TS / RS / event rows on the request page).
+ *
+ *   @use '../closet-item' as closet-item;
+ *   :host { @include closet-item.tokens; }
+ *   @include closet-item.styles;
+ */
+@mixin tokens {
+  @include markers.tokens;
+}
+
+@mixin styles {
+  .atmos-closet-item {
+    position: relative;
+    display: inline-block;
+    padding: 1px;
+    border-radius: var(--atmos-radius-sm);
+    background: var(--atmos-bg-elev);
+    border: 3px solid transparent;
+    /* The marker rules below set only border-color, so the width has to win
+       against any border shorthand that lands on the element later. */
+    border-width: 3px !important;
+    cursor: pointer;
+    vertical-align: top;
+
+    app-item-icon { vertical-align: top; }
+  }
+
+  .atmos-closet-item-container {
+    border-radius: var(--atmos-radius-sm);
+    vertical-align: top;
+    line-height: 0px;
+  }
+
+  .atmos-closet-highlight {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: 1px;
+  }
+
+  /* One claim: a solid border. */
+  .atmos-closet-item.r { border-color: var(--closet-marker-r) !important; border-radius: 0; }
+  .atmos-closet-item.y { border-color: var(--closet-marker-y) !important; border-radius: 0; }
+  .atmos-closet-item.g { border-color: var(--closet-marker-g) !important; border-radius: 0; }
+  .atmos-closet-item.b { border-color: var(--closet-marker-b) !important; border-radius: 0; }
+
+  /* Several claims: the border is sliced between them with a conic gradient. */
+  .atmos-closet-item.r.y { border-image: conic-gradient(from -90deg, var(--closet-marker-r) 90deg 180deg, var(--closet-marker-y) 180deg) 3; }
+  .atmos-closet-item.r.g { border-image: conic-gradient(from -90deg, var(--closet-marker-r) 90deg 180deg, var(--closet-marker-g) 180deg) 3; }
+  .atmos-closet-item.r.b { border-image: conic-gradient(from -90deg, var(--closet-marker-r) 90deg 180deg, var(--closet-marker-b) 180deg) 3; }
+  .atmos-closet-item.y.g { border-image: conic-gradient(from -90deg, var(--closet-marker-y) 90deg 180deg, var(--closet-marker-g) 180deg) 3; }
+  .atmos-closet-item.y.b { border-image: conic-gradient(from -90deg, var(--closet-marker-y) 90deg 180deg, var(--closet-marker-b) 180deg) 3; }
+  .atmos-closet-item.g.b { border-image: conic-gradient(from -90deg, var(--closet-marker-g) 90deg 180deg, var(--closet-marker-b) 180deg) 3; }
+  .atmos-closet-item.r.y.g { border-image: conic-gradient(from -60deg, var(--closet-marker-r) 0deg 120deg, var(--closet-marker-y) 120deg 240deg, var(--closet-marker-g) 240deg 360deg) 3; }
+  .atmos-closet-item.r.y.b { border-image: conic-gradient(from -60deg, var(--closet-marker-r) 0deg 120deg, var(--closet-marker-y) 120deg 240deg, var(--closet-marker-b) 240deg 360deg) 3; }
+  .atmos-closet-item.r.g.b { border-image: conic-gradient(from -60deg, var(--closet-marker-r) 0deg 120deg, var(--closet-marker-g) 120deg 240deg, var(--closet-marker-b) 240deg 360deg) 3; }
+  .atmos-closet-item.y.g.b { border-image: conic-gradient(from -60deg, var(--closet-marker-y) 0deg 120deg, var(--closet-marker-g) 120deg 240deg, var(--closet-marker-b) 240deg 360deg) 3; }
+  .atmos-closet-item.r.y.g.b { border-image: conic-gradient(from -90deg, var(--closet-marker-r) 90deg, var(--closet-marker-y) 90deg 180deg, var(--closet-marker-g) 180deg 270deg, var(--closet-marker-b) 270deg) 3; }
+}

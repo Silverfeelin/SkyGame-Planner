@@ -50,6 +50,7 @@ import { AtmosShopEventStoreComponent } from './shop/event/atmos-shop-event-stor
 import { AtmosShopHarmonyHallComponent } from './shop/harmony/atmos-shop-harmony-hall.component';
 import { AtmosShopNestingComponent } from './shop/nesting/atmos-shop-nesting.component';
 import { AtmosShopOfficeComponent } from './shop/office/atmos-shop-office.component';
+import { AtmosShopPrairieHeightsComponent } from './shop/prairie-heights/atmos-shop-prairie-heights.component';
 import { AtmosShopWonderlandComponent } from './shop/wonderland-cafe/atmos-shop-wonderland.component';
 import { AtmosFriendsComponent } from './friend/atmos-friends.component';
 import { AtmosToolsComponent } from './tool/atmos-tools.component';
@@ -86,21 +87,24 @@ export const REDESIGN_ROUTES: Routes = [
   {
     path: 'season',
     children: [
-      { path: '',          component: AtmosSeasonsComponent,         title: title('Seasons') },
-      { path: 'optimizer', component: AtmosSeasonOptimizerComponent, title: title('Season optimizer') },
-      { path: ':guid',     component: AtmosSeasonComponent,          title: title('Season') },
+      { path: '',           component: AtmosSeasonsComponent,          title: title('Seasons') },
+      { path: 'optimizer',  component: AtmosSeasonOptimizerComponent,  title: title('Season optimizer') },
+      { path: 'calculator', component: AtmosSeasonCalculatorComponent, title: title('Season calculator') },
+      { path: ':guid',      component: AtmosSeasonComponent,           title: title('Season') },
     ]
   },
-  { path: 'season-calculator', component: AtmosSeasonCalculatorComponent, title: title('Season calculator') },
-  { path: 'event-calculator', component: AtmosEventCalculatorComponent, title: title('Event calculator') },
   {
     path: 'event',
     children: [
-      { path: '',        component: AtmosEventsComponent,       title: title('Events') },
-      { path: 'history', component: AtmosEventHistoryComponent, title: title('Event history') },
-      { path: ':guid',   component: AtmosEventComponent,        title: title('Event') },
+      { path: '',           component: AtmosEventsComponent,          title: title('Events') },
+      { path: 'history',    component: AtmosEventHistoryComponent,    title: title('Event history') },
+      { path: 'calculator', component: AtmosEventCalculatorComponent, title: title('Event calculator') },
+      { path: ':guid',      component: AtmosEventComponent,           title: title('Event') },
     ]
   },
+  /* Legacy top-level calculator paths. */
+  { path: 'season-calculator', redirectTo: 'season/calculator', pathMatch: 'full' },
+  { path: 'event-calculator', redirectTo: 'event/calculator', pathMatch: 'full' },
   {
     path: 'event-instance',
     children: [
@@ -170,6 +174,7 @@ export const REDESIGN_ROUTES: Routes = [
       { path: 'harmony',         component: AtmosShopHarmonyHallComponent, title: title('Harmony Hall') },
       { path: 'nesting',         component: AtmosShopNestingComponent,     title: title('Nesting Workshop') },
       { path: 'office',          component: AtmosShopOfficeComponent,      title: title('Office') },
+      { path: 'prairieheights',  component: AtmosShopPrairieHeightsComponent, title: title('Prairie Heights') },
       { path: 'wonderland-cafe', component: AtmosShopWonderlandComponent,  title: title('Wonderland Cafe') },
     ]
   },

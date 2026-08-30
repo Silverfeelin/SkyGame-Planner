@@ -62,7 +62,7 @@
 }
 
 .atmos-col__grid-card {
-  padding: 8px;
+  overflow: hidden;
 }
 
 // ag-grid cell renderer HTML isn't view-encapsulated, so target via ::ng-deep.

@@ -8,7 +8,7 @@ import {
   viewChildren,
 } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { AtmosToolQuickActionsComponent } from '@app/redesign/tool/quick-actions/atmos-tool-quick-actions.component';
 import { AtmosCollageSlotComponent } from './atmos-collage-slot.component';
 
@@ -33,7 +33,7 @@ const SLOT_INDICES = [0, 1, 2, 3] as const;
   templateUrl: './atmos-collage.component.html',
   styleUrl: './atmos-collage.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, AtmosToolQuickActionsComponent, AtmosCollageSlotComponent],
+  imports: [MatIcon, TooltipDirective, AtmosToolQuickActionsComponent, AtmosCollageSlotComponent],
 })
 export class AtmosCollageComponent implements OnInit, OnDestroy {
   /** Expose for template iteration. */
@@ -104,7 +104,7 @@ export class AtmosCollageComponent implements OnInit, OnDestroy {
     link.click();
   }
 
-  copyCollage(ttCopy: NgbTooltip): void {
+  copyCollage(ttCopy: TooltipDirective): void {
     this.isRendering.set(true);
     const canvas = this._render();
 

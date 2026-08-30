@@ -43,7 +43,7 @@ export class ClosetStateService {
   }));
 
   readonly dyes = signal<Record<string, IDye[]>>({});
-  readonly dyeClasses = signal<Record<string, (string | undefined)[]>>({});
+  readonly dyeClasses = signal<Record<string, (string | undefined)[] | undefined>>({});
 
   // ── Availability (from shared closet link) ────────────────────────────────
   readonly available = signal<ISelection | undefined>(undefined);

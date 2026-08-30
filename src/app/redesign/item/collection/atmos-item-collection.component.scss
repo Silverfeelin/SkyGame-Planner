@@ -41,26 +41,6 @@
   color: var(--atmos-text-dim);
 }
 
-.atmos-coll__input {
-  background: var(--atmos-bg-elev);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-sm);
-  color: var(--atmos-text);
-  font: inherit;
-  font-size: 14px;
-  padding: 8px 12px;
-  outline: none;
-  transition: border-color var(--atmos-transition);
-
-  &:focus {
-    border-color: var(--atmos-accent);
-  }
-}
-
-.atmos-coll__textarea {
-  resize: vertical;
-  min-height: 80px;
-}
 
 .atmos-coll__input-error {
   font-size: 12px;
@@ -88,34 +68,10 @@
 
 .atmos-coll__selected-item {
   position: relative;
-  background: var(--atmos-bg-elev);
   border: var(--atmos-card-border);
   border-radius: var(--atmos-radius-sm);
   padding: 4px;
   cursor: pointer;
-  transition: background var(--atmos-transition);
-
-  &:hover {
-    background: var(--atmos-hover-bg-strong);
-
-    .atmos-coll__selected-remove { opacity: 1; }
-  }
-}
-
-.atmos-coll__selected-remove {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background: var(--atmos-pink);
-  color: var(--atmos-text);
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  font-size: 10px;
-  line-height: 16px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity var(--atmos-transition);
 }
 
 .atmos-coll__form-actions {
@@ -133,31 +89,9 @@
 /* Item picker */
 .atmos-coll__picker-item {
   position: relative;
-  border: 2px solid transparent;
   border-radius: var(--atmos-radius-sm);
   padding: 6px;
   cursor: pointer;
-  transition: background var(--atmos-transition), border-color var(--atmos-transition);
-
-  &.is-selected {
-    border-color: var(--atmos-accent);
-    background: oklch(0.82 0.11 var(--atmos-hue) / 0.12);
-  }
-}
-
-.atmos-coll__picker-check {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  background: var(--atmos-accent);
-  color: var(--atmos-bg);
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 18px;
-  text-align: center;
 }
 
 /* Collection list rows */
@@ -228,6 +162,7 @@
 }
 
 .atmos-coll__strip-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

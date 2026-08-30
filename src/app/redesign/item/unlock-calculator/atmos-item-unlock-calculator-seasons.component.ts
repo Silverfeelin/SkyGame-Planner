@@ -1,14 +1,16 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { ISeason } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
+import { MatIcon } from '@angular/material/icon';
 import { IconComponent } from '@app/components/icon/icon.component';
+import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
 
 @Component({
   selector: 'app-atmos-item-unlock-calculator-seasons',
   templateUrl: './atmos-item-unlock-calculator-seasons.component.html',
   styleUrl: './atmos-item-unlock-calculator-sub.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [IconComponent]
+  imports: [MatIcon, IconComponent, AtmosFoldableCardComponent]
 })
 export class AtmosItemUnlockCalculatorSeasonsComponent {
   readonly seasonSelected = output<ISeason>();

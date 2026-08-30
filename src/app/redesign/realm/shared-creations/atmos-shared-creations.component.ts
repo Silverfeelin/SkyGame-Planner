@@ -1,6 +1,6 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnDestroy, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import L from 'leaflet';
 import { DateTime } from 'luxon';
 import { nanoid } from 'nanoid';
@@ -22,7 +22,7 @@ interface ISharedCreation {
 }
 
 const STORAGE_KEY = 'shared-creations';
-const EXPIRY_DAYS = 7;
+const EXPIRY_DAYS = 14;
 const DATE_FORMAT = 'yyyy-MM-dd HH:mm';
 
 const ICON_IDS: Record<SharedCreationType, string> = {
@@ -42,7 +42,7 @@ const TYPE_LABELS: Record<SharedCreationType, string> = {
   templateUrl: './atmos-shared-creations.component.html',
   styleUrl: './atmos-shared-creations.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, AtmosRealmQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, AtmosRealmQuickActionsComponent]
 })
 export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef<HTMLElement>;
@@ -179,7 +179,7 @@ export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
 
     const refreshBtn = document.createElement('div');
     refreshBtn.className = 'container link s-leaflet-item';
-    refreshBtn.innerHTML = `<div class="menu-icon s-leaflet-maticon">refresh</div><div class="menu-label">Refresh (reset timer)</div>`;
+    refreshBtn.innerHTML = `<div class="s-leaflet-menu-icon s-leaflet-maticon">refresh</div><div class="s-leaflet-menu-label">Refresh (reset timer)</div>`;
     refreshBtn.addEventListener('click', () => {
       creation.createdAt = DateTime.now().setZone(DateHelper.skyTimeZone).toFormat(DATE_FORMAT);
       this._save();
@@ -190,7 +190,7 @@ export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
 
     const removeBtn = document.createElement('div');
     removeBtn.className = 'container link s-leaflet-item';
-    removeBtn.innerHTML = `<div class="menu-icon s-leaflet-maticon">delete</div><div class="menu-label">Remove</div>`;
+    removeBtn.innerHTML = `<div class="s-leaflet-menu-icon s-leaflet-maticon">delete</div><div class="s-leaflet-menu-label">Remove</div>`;
     removeBtn.addEventListener('click', () => {
       marker.closePopup();
       this._removeCreation(creation.id, marker);

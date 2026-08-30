@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { NgTemplateOutlet } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -135,6 +135,7 @@ const rotations: IRotations = [
   imports: [
     MatIcon,
     NgTemplateOutlet,
+    RouterLink,
     CostComponent,
     DateComponent,
     ItemIconComponent,

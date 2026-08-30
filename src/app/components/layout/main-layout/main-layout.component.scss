@@ -2,15 +2,14 @@
   color: var(--atmos-text);
   font-family: 'Manrope', 'Roboto', system-ui, sans-serif;
 
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: 'sidebar main';
-  height: 100vh;
-  height: 100dvh;
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--atmos-bg);
   position: relative;
-  overflow: hidden;
+
+  --atmos-sticky-top: 0px;
 }
 
 .atmos-bg {
@@ -38,17 +37,18 @@
 
 .atmos-topbar-slot {
   display: none;
-  grid-area: topbar;
   position: sticky;
   top: 0;
   z-index: 5;
 }
 
 .atmos-sidebar-slot {
-  grid-area: sidebar;
   position: sticky;
   top: 0;
   z-index: 2;
+  flex: 0 0 220px;
+  width: 220px;
+  align-self: flex-start;
   height: 100vh;
   height: 100dvh;
 }
@@ -56,16 +56,14 @@
 .atmos-main {
   --atmos-main-pad-y: calc(var(--atmos-pad) + 4px);
 
-  grid-area: main;
   position: relative;
   z-index: 1;
-  overflow-y: auto;
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap);
   padding: var(--atmos-main-pad-y) calc(var(--atmos-pad) + 14px);
-  min-height: 0;
-  height: 100%;
 
   /* router-outlet renders an empty <router-outlet> tag as a flex child, which
      consumes one `gap` slot before the actual routed content. Hide it. */
@@ -75,11 +73,9 @@
 /* Tablet & mobile: hide sidebar, show topbar. */
 @media (max-width: 1023px) {
   .atmos-shell {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-      'topbar'
-      'main';
+    flex-direction: column;
+    /* Pinned topbar height: 32px content + 2×12px padding + 1px border. */
+    --atmos-sticky-top: 57px;
   }
   .atmos-sidebar-slot {
     display: none;
@@ -193,7 +189,7 @@
 }
 
 .error-pre {
-  background: oklch(0.06 0.01 var(--atmos-hue) / 0.9);
+  background: oklch(0.15 0.02 var(--atmos-hue) / 0.9);
   border-radius: var(--atmos-radius-sm);
   padding: var(--atmos-pad-compact);
   white-space: pre-wrap;

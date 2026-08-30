@@ -1,16 +1,16 @@
 <!-- Traveling Spirit -->
 @if (ts) {
-  <app-card class="mt" [foldable]="true" [folded]="true">
+  <app-atmos-foldable-card [folded]="true" [lazy]="true">
     <div header>
-      <h4 class="h5 mb-0 ts-title">
-        <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
+      <h4 class="atmos-closet-ongoing__title">
+        <app-spirit-type-icon [type]="'Season'" class="atmos-closet-ongoing__title-icon"></app-spirit-type-icon>
         @if (tsState === 'future') { <span>Upcoming Traveling Spirit</span> }
         @if (tsState === 'active') { <span>{{ ts.spirit.name }}</span> }
       </h4>
     </div>
-    <div class="sky-flex flex-wrap gap-half">
+    <div class="item-row">
       @for (item of tsItems; track item.guid) {
-        <div class="atmos-closet-item-container d-inline-block">
+        <div class="atmos-closet-item-container">
           <div class="atmos-closet-item"
             (click)="itemToggled.emit(item)"
             [class.r]="state.selectedR()[item.guid]"
@@ -18,30 +18,30 @@
             [class.g]="state.selectedG()[item.guid]"
             [class.b]="state.selectedB()[item.guid]"
             [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-            <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+            <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
           </div>
         </div>
       }
     </div>
-  </app-card>
+  </app-atmos-foldable-card>
 }
 
 <!-- Returning Spirits -->
 @if (rs) {
-  <app-card class="mt" [foldable]="true" [folded]="true">
+  <app-atmos-foldable-card [folded]="true" [lazy]="true">
     <div header>
-      <h4 class="h5 mb-0 ts-title">
-        <app-spirit-type-icon [type]="'Season'" class="ts-icon"></app-spirit-type-icon>
+      <h4 class="atmos-closet-ongoing__title">
+        <app-spirit-type-icon [type]="'Season'" class="atmos-closet-ongoing__title-icon"></app-spirit-type-icon>
         <span>{{ rs.name }}</span>
       </h4>
     </div>
-    <div class="sky-flex flex-wrap gap-half">
+    <div class="item-row">
       @for (s of rsSpirits; track s.returning.spirit?.guid) {
-        <div class="sky-flex flex-cols flex-align-start gap-half">
-          <div class="atmos-pill ws-nw">{{ s.returning.spirit.name }}</div>
-          <div class="sky-flex flex-wrap gap-half">
+        <div class="atmos-closet-ongoing__group">
+          <div class="atmos-pill group-label">{{ s.returning.spirit.name }}</div>
+          <div class="item-row">
             @for (item of s.items; track item.guid) {
-              <div class="atmos-closet-item-container d-inline-block">
+              <div class="atmos-closet-item-container">
                 <div class="atmos-closet-item"
                   (click)="itemToggled.emit(item)"
                   [class.r]="state.selectedR()[item.guid]"
@@ -49,7 +49,7 @@
                   [class.g]="state.selectedG()[item.guid]"
                   [class.b]="state.selectedB()[item.guid]"
                   [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-                  <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                  <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
                 </div>
               </div>
             }
@@ -57,21 +57,21 @@
         </div>
       }
     </div>
-  </app-card>
+  </app-atmos-foldable-card>
 }
 
 <!-- Events -->
 @for (event of events; track event.instance.guid) {
-  <app-card class="mt" [foldable]="true" [folded]="true">
+  <app-atmos-foldable-card [folded]="true" [lazy]="true">
     <div header>
-      <h4 class="h5 mb-0">{{ event.instance.event.name }}</h4>
+      <h4 class="atmos-closet-ongoing__title">{{ event.instance.event.name }}</h4>
     </div>
-    <div class="sky-flex flex-wrap gap-half">
-      <div class="sky-flex flex-cols flex-align-start gap-half">
-        <div class="atmos-pill ws-nw">In-game currency</div>
-        <div class="sky-flex flex-wrap gap-half">
+    <div class="item-row">
+      <div class="atmos-closet-ongoing__group">
+        <div class="atmos-pill group-label">In-game currency</div>
+        <div class="item-row">
           @for (item of event.items; track item.guid) {
-            <div class="atmos-closet-item-container d-inline-block">
+            <div class="atmos-closet-item-container">
               <div class="atmos-closet-item"
                 (click)="itemToggled.emit(item)"
                 [class.r]="state.selectedR()[item.guid]"
@@ -79,17 +79,17 @@
                 [class.g]="state.selectedG()[item.guid]"
                 [class.b]="state.selectedB()[item.guid]"
                 [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
               </div>
             </div>
           }
         </div>
       </div>
-      <div class="sky-flex flex-cols flex-align-start gap-half">
-        <div class="atmos-pill ws-nw">In-App Purchase</div>
-        <div class="sky-flex flex-wrap gap-half">
+      <div class="atmos-closet-ongoing__group">
+        <div class="atmos-pill group-label">In-App Purchase</div>
+        <div class="item-row">
           @for (item of event.iapItems; track item.guid) {
-            <div class="atmos-closet-item-container d-inline-block">
+            <div class="atmos-closet-item-container">
               <div class="atmos-closet-item"
                 (click)="itemToggled.emit(item)"
                 [class.r]="state.selectedR()[item.guid]"
@@ -97,12 +97,12 @@
                 [class.g]="state.selectedG()[item.guid]"
                 [class.b]="state.selectedB()[item.guid]"
                 [class.atmos-closet-highlight]="state.searchResults()?.[item.guid]">
-                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true" [hoverGlow]="false" [lazy]="false" />
+                <app-item-icon [item]="item" [size]="state.itemSize()" [opaque]="true"[lazy]="false" />
               </div>
             </div>
           }
         </div>
       </div>
     </div>
-  </app-card>
+  </app-atmos-foldable-card>
 }

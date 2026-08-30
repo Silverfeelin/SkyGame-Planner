@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, input, output } from '@angular/core
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { WindowHelper } from '@app/helpers/window-helper';
+import { AtmosDailyCheckinComponent } from '../daily/daily-checkin/atmos-daily-checkin.component';
 
 export interface IFeatureLink {
   icon?: string;
@@ -34,7 +35,7 @@ const KIND_ICON: Record<CurrencyMarkKind, string> = {
   templateUrl: './atmos-feature-card.component.html',
   styleUrl: './atmos-feature-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon]
+  imports: [RouterLink, MatIcon, AtmosDailyCheckinComponent]
 })
 export class AtmosFeatureCardComponent {
   readonly isWindows = WindowHelper.isWindows();
@@ -44,7 +45,9 @@ export class AtmosFeatureCardComponent {
   readonly kicker = input<string>('');
   readonly kickerColor = input<string>('var(--atmos-accent)');
   readonly title = input<string>('');
+  readonly titleLink = input<string | undefined>(undefined);
   readonly bannerUrl = input<string | undefined>(undefined);
+  readonly bannerPosition = input<string | undefined>(undefined);
   readonly bannerContain = input<boolean>(false);
   readonly bannerSilhouette = input<boolean>(false);
   readonly bannerHue = input<number>(160);

@@ -1,15 +1,105 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
 .item-icon {
   position: relative;
   width: var(--item-size);
   height: var(--item-size);
   background: var(--atmos-card-bg);
   border-radius: var(--atmos-radius-sm);
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-tile-bg-hover);
+  }
+
+  app-item-icon {
+    cursor: pointer;
+  }
+}
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.accent {
+  color: var(--atmos-accent);
 }
 
 .form-stack {
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap);
+
+  &--compact {
+    gap: var(--atmos-gap-compact);
+  }
+}
+
+/* Button + amount + cost type + apply, joined into one segmented control.
+   Not .atmos-btn-group: two of the four children are form fields, which are
+   display: block; width: 100% globally and need explicit widths here. */
+.cost-row {
+  display: flex;
+  align-items: stretch;
+  max-width: 100%;
+
+  > * {
+    border-radius: 0;
+
+    &:not(:first-child) { margin-left: -1px; }
+    &:first-child {
+      border-top-left-radius: var(--atmos-radius-sm);
+      border-bottom-left-radius: var(--atmos-radius-sm);
+    }
+    &:last-child {
+      border-top-right-radius: var(--atmos-radius-sm);
+      border-bottom-right-radius: var(--atmos-radius-sm);
+    }
+  }
+
+  > .atmos-btn { flex: 0 0 auto; }
+
+  &__amount { flex: 0 0 80px; width: 80px; height: auto; }
+  &__type { flex: 0 1 176px; width: 176px; min-width: 0; height: auto; }
+}
+
+.save-input {
+  display: inline-block;
+  width: 200px;
+}
+
+.save-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--atmos-gap);
+}
+
+.custom-item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: var(--atmos-gap);
+}
+
+h2.atmos-section__title {
+  margin-bottom: var(--atmos-gap);
+}
+
+.overlay-help {
+  margin-bottom: var(--atmos-gap);
+}
+
+.spirit-tree-row {
+  display: flex;
+  overflow-x: auto;
+  margin-top: var(--atmos-gap);
 }
 
 .editor-grid {

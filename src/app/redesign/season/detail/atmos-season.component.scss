@@ -19,14 +19,22 @@
   display: flex;
 }
 
-.atmos-season__facts {
+.atmos-season__overview-grid {
   display: grid;
-  gap: var(--atmos-gap-compact);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
+  align-items: stretch;
 
   @media (max-width: 720px) {
     grid-template-columns: 1fr;
   }
+}
+
+.atmos-season__facts {
+  display: grid;
+  gap: var(--atmos-gap-compact);
+  grid-template-rows: repeat(3, auto);
+  align-content: start;
 }
 
 .atmos-season__fact {
@@ -35,15 +43,9 @@
   gap: 10px;
   color: var(--atmos-text);
 
-  mat-icon {
+  > mat-icon {
     flex-shrink: 0;
     color: var(--atmos-accent);
-  }
-
-  &.is-expired {
-    color: var(--atmos-text-mute);
-
-    mat-icon { color: var(--atmos-text-mute); }
   }
 }
 
@@ -52,11 +54,34 @@
   margin-left: 6px;
 }
 
+.atmos-season__fact--split {
+  gap: 20px;
+
+  .atmos-season__fact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    mat-icon {
+      flex-shrink: 0;
+    }
+  }
+}
+
 .atmos-season__pass {
-  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   gap: var(--atmos-gap-compact);
+}
+
+.atmos-season__preview {
+  background-size: cover;
+  background-position: center;
+  min-height: 160px;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 }
 
 .atmos-season__section {
@@ -66,7 +91,7 @@
 
 .atmos-season__section-header {
   padding: var(--atmos-pad);
-  padding-bottom: 0;
+  padding-bottom: 0.5rem;
 }
 
 .atmos-season__tree {
@@ -76,28 +101,8 @@
   min-width: 0;
 }
 
-.atmos-season__tree-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-  color: var(--atmos-text);
-}
-
-.atmos-season__tree-tag {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  padding: 0 8px;
-  line-height: 18px;
-  border-radius: var(--atmos-radius-pill);
-  background: var(--atmos-chip-bg);
-  color: var(--atmos-text-dim);
-}
-
 .atmos-season__iap-grid {
   display: grid;
   gap: var(--atmos-gap);
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }

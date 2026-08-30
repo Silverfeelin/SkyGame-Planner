@@ -2,54 +2,54 @@
   <div class="atmos-toolbar__row atmos-toolbar__row--actions">
     @if (!isRequesting()) {
       <!-- Show my/all items -->
-      <button type="button" class="atmos-icon-btn" (click)="toggleCloset()" data-step="101">
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleCloset()" data-step="101">
         <mat-icon>checkroom</mat-icon>
         <span>{{ state.closetMode() === 'all' ? 'My items' : 'All items' }}</span>
       </button>
       <!-- Modify closet -->
-      <button type="button" class="atmos-icon-btn" [class.atmos-icon-btn--active]="state.modifyingCloset()" (click)="modifyCloset()" data-step="102" data-position="bottom-left-aligned">
+      <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="state.modifyingCloset()" (click)="modifyCloset()" data-step="102" data-position="bottom-left-aligned">
         <mat-icon>manufacturing</mat-icon>
         <span>Modify</span>
       </button>
       <!-- Filter selected -->
-      <button type="button" class="atmos-icon-btn" (click)="toggleHideUnselected()" data-step="121" data-position="bottom-left-aligned">
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleHideUnselected()" data-step="121" data-position="bottom-left-aligned">
         <mat-icon>filter_alt</mat-icon>
         <span>{{ state.hideUnselected() ? 'Show all' : 'Selected' }}</span>
       </button>
     }
     <!-- Icon size -->
-    <button type="button" class="atmos-icon-btn" (click)="toggleItemSize()" data-step="122" data-position="bottom-left-aligned">
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleItemSize()" data-step="122" data-position="bottom-left-aligned">
       <mat-icon>{{ state.itemSize() === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
       <span>{{ state.itemSize() === 'small' ? 'Large' : 'Small' }}</span>
     </button>
     @if (!isRequesting()) {
       <!-- IAP toggle -->
-      <button type="button" class="atmos-icon-btn" (click)="toggleIap()" data-step="123" data-position="bottom-left-aligned">
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleIap()" data-step="123" data-position="bottom-left-aligned">
         <mat-icon>{{ state.hideIap() ? 'attach_money' : 'money_off' }}</mat-icon>
         <span>{{ state.hideIap() ? 'Show IAP' : 'Hide IAP' }}</span>
       </button>
     }
     <!-- Background -->
-    <button type="button" class="atmos-icon-btn" [class.atmos-icon-btn--active]="state.showingBackgroundPicker()" (click)="showBackgroundPicker($event)">
+    <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="state.showingBackgroundPicker()" (click)="showBackgroundPicker($event)">
       <mat-icon>wallpaper</mat-icon>
       <span>Background</span>
     </button>
     <!-- Reset -->
-    <button type="button" class="atmos-icon-btn atmos-icon-btn--danger" (click)="resetRequest.emit()" data-step="124" data-position="bottom-left-aligned">
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetRequest.emit()" data-step="124" data-position="bottom-left-aligned">
       <mat-icon>delete_forever</mat-icon>
       <span>Reset</span>
     </button>
     <!-- Random -->
-    <button type="button" class="atmos-icon-btn atmos-icon-btn--danger" (click)="randomRequest.emit()" data-step="125" data-position="bottom-left-aligned">
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="randomRequest.emit()" data-step="125" data-position="bottom-left-aligned">
       <mat-icon>shuffle</mat-icon>
     </button>
     <!-- Calculate cost -->
-    <button type="button" class="atmos-icon-btn" (click)="calculateCostRequest.emit()" data-step="126" data-position="bottom-left-aligned">
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="calculateCostRequest.emit()" data-step="126" data-position="bottom-left-aligned">
       <mat-icon>calculate</mat-icon>
       <span>Costs</span>
     </button>
     <!-- Tour -->
-    <button type="button" class="atmos-icon-btn" (click)="startTourRequest.emit()">
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="startTourRequest.emit()">
       <mat-icon>explore</mat-icon>
       <span>Tour</span>
     </button>
@@ -59,7 +59,7 @@
     <!-- Search -->
     <div class="atmos-search" data-step="126" data-position="bottom-left-aligned">
       <mat-icon class="atmos-search__icon">search</mat-icon>
-      <input class="atmos-input atmos-search__input" type="search" placeholder="Search items…"
+      <input class="atmos-input atmos-search__field" type="search" placeholder="Search items…"
         (input)="search($any($event.target).value)" />
     </div>
 

@@ -20,15 +20,15 @@
     <div class="atmos-event-card__body atmos-card__body">
       @if (instance(); as inst) {
         @if (sections()['date']) {
-          <div class="atmos-event-card__row">
+          <a class="atmos-link" [routerLink]="['/event-instance', inst.guid]">
             <mat-icon>calendar_month</mat-icon>
             <span>
-              <app-date [date]="inst.date"></app-date> – <app-date [date]="inst.endDate"></app-date>
+              <app-date-range [start]="inst.date" [end]="inst.endDate"></app-date-range>
               <span class="atmos-event-card__days">
                 (<app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
               </span>
             </span>
-          </div>
+          </a>
         }
 
         @if (sections()['cost'] && cost()) {
@@ -75,7 +75,7 @@
 
       @if (sections()['calculator'] && instance(); as inst) {
         @if (inst.calculatorData) {
-          <a class="atmos-event-card__link" [routerLink]="['/event-calculator']" [queryParams]="{ guid: inst.guid }">
+          <a class="atmos-event-card__link" [routerLink]="['/event/calculator']" [queryParams]="{ guid: inst.guid }">
             <mat-icon>calculate</mat-icon>
             <span>Calculator</span>
           </a>

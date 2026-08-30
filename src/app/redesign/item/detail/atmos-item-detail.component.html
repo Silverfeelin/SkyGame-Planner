@@ -19,12 +19,12 @@
         @if (itm.previewUrl) {
           <div class="atmos-item-detail__preview-frame">
             <img class="atmos-item-detail__preview-img" [src]="itm.previewUrl" loading="eager"/>
-            <app-item-icon class="atmos-item-detail__floating-icon" [item]="itm" [opaque]="true" [hoverGlow]="false"/>
+            <app-item-icon class="atmos-item-detail__floating-icon" [item]="itm" [opaque]="true"/>
             <app-item-subicons [item]="itm" [showTooltips]="true" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']"/>
           </div>
         } @else {
           <div class="atmos-item-detail__icon-frame">
-            <app-item-icon [item]="itm" [size]="'large'" [opaque]="true" [hoverGlow]="false"/>
+            <app-item-icon [item]="itm" [size]="'large'" [opaque]="true"/>
             <app-item-subicons [item]="itm" [showTooltips]="true" [icons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock']"/>
           </div>
         }
@@ -36,10 +36,10 @@
           <li class="atmos-item-detail__row">
             <mat-icon class="atmos-item-detail__icon">code</mat-icon>
             <span>
-              ID: <code (click)="copy(itm.id)" class="atmos-item-detail__code">{{ itm.id }}</code>
-              GUID: <code (click)="copy(itm.guid)" class="atmos-item-detail__code">{{ itm.guid }}</code>
+              ID: <code (click)="copy(itm.id)" class="atmos-code atmos-item-detail__code">{{ itm.id }}</code>
+              GUID: <code (click)="copy(itm.guid)" class="atmos-code atmos-item-detail__code">{{ itm.guid }}</code>
               @if (itm.order) {
-                Order: <code (click)="copy(itm.order)" class="atmos-item-detail__code">{{ itm.order }}</code>
+                Order: <code (click)="copy(itm.order)" class="atmos-code atmos-item-detail__code">{{ itm.order }}</code>
               }
             </span>
           </li>
@@ -124,9 +124,9 @@
     @let src = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
     <img [src]="src" (dblclick)="openSrc($event)"/>
     @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
-      <span close class="link" (click)="preventDefault($event); dyePreviewMode.set(2)">Show dyeable parts</span>
+      <span overlayAction class="link" (click)="preventDefault($event); dyePreviewMode.set(2)">Show dyeable parts</span>
     } @else if (dyePreviewMode() === 2) {
-      <span close class="link" (click)="preventDefault($event); dyePreviewMode.set(1)">Show preview</span>
+      <span overlayAction class="link" (click)="preventDefault($event); dyePreviewMode.set(1)">Show preview</span>
     }
   </app-overlay>
 }

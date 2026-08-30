@@ -22,6 +22,7 @@ export interface IVaultResult {
 @Component({
   selector: 'atmos-vault-results',
   templateUrl: './atmos-vault-results.component.html',
+  styleUrl: './atmos-vault-results.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatIcon, ItemIconComponent, ItemTypePipe]

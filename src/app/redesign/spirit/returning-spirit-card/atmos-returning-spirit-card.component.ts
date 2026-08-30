@@ -5,7 +5,7 @@ import { ISpecialVisit, ICost } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
-import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 
@@ -24,7 +24,7 @@ export interface AtmosReturningSpiritCardOptions {
   templateUrl: './atmos-returning-spirit-card.component.html',
   styleUrl: './atmos-returning-spirit-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, CostComponent, DateComponent, DaysLeftComponent, WikiLinkComponent]
+  imports: [RouterLink, MatIcon, CostComponent, DateRangeComponent, DaysLeftComponent, WikiLinkComponent]
 })
 export class AtmosReturningSpiritCardComponent {
   readonly return = input<ISpecialVisit | undefined>(undefined);

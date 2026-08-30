@@ -2,45 +2,45 @@
   <!-- Season pass ultimate (top left) -->
   @if (iconsShown['season'] && item.group === 'Ultimate') {
     <app-icon class="img-tl seasonal" [src]="'#season-heart'"
-    [ngbTooltip]="showTooltips ? 'This item is a season ultimate.' : undefined" container="body">
+    [skyTooltip]="showTooltips ? 'This item is a season ultimate.' : undefined">
     </app-icon>
   }
   <!-- Season pass item (top left) -->
   @if (iconsShown['season'] && item.group === 'SeasonPass') {
     <app-icon class="img-tl seasonal" [src]="'#gift'"
-      [ngbTooltip]="showTooltips ? 'This item is or was in a season pass.' : undefined" container="body">
+      [skyTooltip]="showTooltips ? 'This item is or was in a season pass.' : undefined">
     </app-icon>
   }
   <!-- Elder item (top left) -->
   @if (iconsShown['elder'] && item.group === 'Elder') {
     <app-icon class="img-tl" [src]="'#ascended-candle'"
-      [ngbTooltip]="showTooltips ? 'This item is from an Elder.' : undefined" container="body">
+      [skyTooltip]="showTooltips ? 'This item is from an Elder.' : undefined">
     </app-icon>
   }
   <!-- IAP item (top left) -->
   @if (iconsShown['iap'] && item.iaps?.length) {
     <app-icon class="img-tl currency" [src]="'#gift'"
-      [ngbTooltip]="showTooltips ? 'This item is from an IAP.' : undefined" container="body">
+      [skyTooltip]="showTooltips ? 'This item is from an IAP.' : undefined">
     </app-icon>
   }
   <!-- Season pass icon (top left) -->
   @if (iconsShown['seasonPass'] && (item.group === 'SeasonPass' || item.group === 'Ultimate') && item.season?.iconUrl) {
     <app-icon class="img-tl subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'" [width]="'24px'" [height]="'24px'"
-      [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
+      [skyTooltip]="showTooltips ? (item.season?.name) : undefined">
     </app-icon>
   }
 
   <!-- Season icon (top right) -->
   @if (iconsShown['season'] && item.season?.iconUrl) {
     <app-icon class="img-tr subicon-shadow" [src]="item.season!.iconUrl || '#season-candle'" [width]="'24px'" [height]="'24px'"
-      [ngbTooltip]="showTooltips ? (item.season?.name) : undefined" container="body">
+      [skyTooltip]="showTooltips ? (item.season?.name) : undefined">
     </app-icon>
   }
 
   <!-- Favourite (bottom left) -->
   @if (iconsShown['favourite'] && item.favourited) {
     <mat-icon class="img-bl" [class.img-bl-above]="item.type === 'Emote'"
-      [ngbTooltip]="showTooltips ? 'You have favourited this item.' : undefined" container="body">
+      [skyTooltip]="showTooltips ? 'You have favourited this item.' : undefined">
       star
     </mat-icon>
   }
@@ -55,11 +55,11 @@
     <mat-icon class="unlock-check"
       [class.unlocked]="item.unlocked || node?.unlocked"
       [class.self]="(!node && !iap && !listNode) || node?.unlocked || iap?.bought || iap?.gifted || listNode?.unlocked"
-      [ngbTooltip]="showTooltips ? 'You own this item.' : undefined" container="body">
+      [skyTooltip]="showTooltips ? 'You own this item.' : undefined">
       done
     </mat-icon>
   } @else if (iconsShown['limited'] && (item.group === 'Limited' || item.group === 'Ultimate')) {
-    <mat-icon class="img-br subicon-shadow subicon-limited" [ngbTooltip]="showTooltips ? 'This item is limited and will not return.' : undefined" container="body">
+    <mat-icon class="img-br subicon-shadow subicon-limited" [skyTooltip]="showTooltips ? 'This item is limited and will not return.' : undefined">
       update_disabled
     </mat-icon>
   }

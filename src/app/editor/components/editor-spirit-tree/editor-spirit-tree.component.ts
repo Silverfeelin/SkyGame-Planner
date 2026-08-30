@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Host
 import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from "@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component";
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { ItemClickEvent, ItemsComponent } from "../../../components/items/items.component";
+import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { MatIcon } from '@angular/material/icon';
@@ -13,8 +13,7 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
-import { TabsComponent } from "../../../components/layout/tabs/tabs.component";
-import { TabDirective } from '@app/components/layout/tabs/tab.directive';
+import { AtmosTabsComponent, AtmosTabDirective } from '@app/redesign/shared/atmos-shared-widgets';
 import { INode, IItem, ICost, ISpiritTree, ISpirit, ItemType, SpiritType } from 'skygame-data';
 
 type TreeNodeArray = Array<TreeNode | undefined>;
@@ -26,9 +25,9 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    NgbTooltip, MatIcon, AtmosSpiritTreeComponent, ItemsComponent,
+    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemPickerComponent,
     ItemIconComponent, OverlayComponent,
-    EditorItemComponent, TabsComponent, TabDirective
+    EditorItemComponent, AtmosTabsComponent, AtmosTabDirective
 ],
     templateUrl: './editor-spirit-tree.component.html',
     styleUrl: './editor-spirit-tree.component.scss',
@@ -68,7 +67,7 @@ export class SpiritTreeEditorComponent {
   @ViewChild('inpCost', { static: true }) inpCost!: ElementRef<HTMLInputElement>;
   @ViewChild('selCostType', { static: true }) selCostType!: ElementRef<HTMLSelectElement>;
   @ViewChild('refTree', { static: true }) refTree!: AtmosSpiritTreeComponent;
-  @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: NgbTooltip;
+  @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: TooltipDirective;
 
   tree: ISpiritTree;
   items: Array<IItem> = [];
@@ -245,19 +244,6 @@ export class SpiritTreeEditorComponent {
   onNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
     const treeNode = this.nodeMap[event.node.guid];
     this.selectTreeNode(treeNode);
-  }
-
-  swapNodes(targetNode: INode): void {
-    const targetTreeNode = this.nodeMap[targetNode.guid];
-    if (!targetTreeNode) { alert('Invalid target node.'); return; }
-    const selectedNode = this.selectedTreeNode.node;
-
-    // Swap nodes
-    NodeHelper.swap(selectedNode, targetNode);
-    this.selectedTreeNode = targetTreeNode;
-    this.selectedItem = targetNode.item!;
-
-    this.reloadTree();
   }
 
   onItemClicked(event: ItemClickEvent) {
@@ -547,8 +533,8 @@ export class SpiritTreeEditorComponent {
       document.body.appendChild(this.draggingPreview);
       this.draggingPreview.style.position = 'absolute';
       this.draggingPreview.style.zIndex = '1000';
-      this.draggingPreview.style.top = `${event.clientY-32}px`;
-      this.draggingPreview.style.left = `${event.clientX-32}px`;
+      this.draggingPreview.style.top = `${event.clientY - 32 + window.scrollY}px`;
+      this.draggingPreview.style.left = `${event.clientX - 32 + window.scrollX}px`;
     }
 
     event.preventDefault();
@@ -713,7 +699,26 @@ export class SpiritTreeEditorComponent {
     return true;
   }
 
-  private reloadTree(): void { this.tree = { guid: this.tree.guid, node: this.tree.node }; }
+  private reloadTree(): void {
+    const clones: { [guid: string]: INode } = {};
+    const cloneNode = (node: INode, prev?: INode): INode => {
+      const clone: INode = { ...node };
+      clones[clone.guid] = clone;
+      if (prev) { clone.prev = prev; } else { delete clone.prev; }
+      if (node.nw) { clone.nw = cloneNode(node.nw, clone); }
+      if (node.n) { clone.n = cloneNode(node.n, clone); }
+      if (node.ne) { clone.ne = cloneNode(node.ne, clone); }
+      return clone;
+    };
+
+    const root = cloneNode(this.tree.node!);
+    for (const treeNode of Object.values(this.nodeMap)) {
+      const clone = clones[treeNode.node.guid];
+      if (clone) { treeNode.node = clone; }
+    }
+
+    this.tree = { guid: this.tree.guid, node: root };
+  }
   private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }
   private cloneItem(item: IItem): IItem {
     const newItem = { ...item };

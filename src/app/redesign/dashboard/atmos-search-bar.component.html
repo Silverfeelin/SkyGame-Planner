@@ -8,6 +8,7 @@
         autocomplete="off"
         spellcheck="false"
         placeholder="Something Sky on your mind?"
+        [value]="query()"
         (input)="onInput()"
         (keydown.escape)="clear()" />
       @if (query()) {
@@ -16,7 +17,7 @@
         </button>
       }
     </div>
-    <a class="atmos-btn atmos-search__favourite" routerLink="/item">
+    <a class="atmos-btn atmos-search__favourite" routerLink="/item/table" [queryParams]="{ favourite: 1 }">
       <mat-icon>new_releases</mat-icon>
       <span>Favourite items</span>
       <span class="atmos-search__count">{{ favouriteCount() }}</span>

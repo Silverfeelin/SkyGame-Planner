@@ -12,6 +12,7 @@ import { ItemSelection } from './atmos-vault-item-picker.component';
 @Component({
   selector: 'atmos-vault-submit',
   templateUrl: './atmos-vault-submit.component.html',
+  styleUrl: './atmos-vault-submit.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatIcon, ItemIconComponent, FormsModule, ItemTypePipe]

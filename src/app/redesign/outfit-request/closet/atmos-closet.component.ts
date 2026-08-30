@@ -11,7 +11,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { IItem, ItemType, ItemSize } from 'skygame-data';
 import { ClosetStateService, RequestColor } from './closet-state.service';
 import { ClosetSerializer, IOutfitRequest } from './closet-serializer';
-import { ClosetRenderer, CopyImageMode } from './closet-renderer';
+import { canvasToBlob, ClosetRenderer, CopyImageMode } from './closet-renderer';
 import { AtmosClosetToolbarComponent } from './atmos-closet-toolbar.component';
 import { AtmosClosetGridComponent } from './atmos-closet-grid.component';
 import { AtmosClosetDyePickerComponent } from './atmos-closet-dye-picker.component';
@@ -19,6 +19,7 @@ import { AtmosClosetBackgroundPickerComponent } from './atmos-closet-background-
 import { AtmosClosetModifyPanelComponent } from './atmos-closet-modify-panel.component';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
 import { drawFingerprint } from '@app/redesign/outfit-request/closet-fingerprint';
+import { AtmosToolQuickActionsComponent } from '@app/redesign/tool/quick-actions/atmos-tool-quick-actions.component';
 
 type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
 const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
@@ -36,7 +37,8 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
     AtmosClosetGridComponent,
     AtmosClosetDyePickerComponent,
     AtmosClosetBackgroundPickerComponent,
-    AtmosClosetModifyPanelComponent
+    AtmosClosetModifyPanelComponent,
+    AtmosToolQuickActionsComponent
   ]
 })
 export class AtmosClosetComponent implements OnDestroy {
@@ -500,15 +502,16 @@ export class AtmosClosetComponent implements OnDestroy {
   }
 
   private async _saveToClipboard(canvas: HTMLCanvasElement): Promise<void> {
-    const blob = await new Promise<Blob>((res, rej) => canvas.toBlob(b => b ? res(b) : rej('render failed')));
+    const blob = await canvasToBlob(canvas, 'image/png');
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
     } catch (e) { console.error(e); alert('Copying failed. Please make sure the document is focused.'); }
   }
 
   private async _shareCanvas(canvas: HTMLCanvasElement): Promise<void> {
-    const blob = await new Promise<Blob>((res, rej) => canvas.toBlob(b => b ? res(b) : rej('render failed')));
-    const file = new File([blob], 'sky-outfit-request.png', { type: 'image/png' });
+    const blob = await canvasToBlob(canvas, 'image/webp');
+    const ext = blob.type === 'image/webp' ? 'webp' : 'png';
+    const file = new File([blob], `sky-outfit-request.${ext}`, { type: blob.type });
     const data: ShareData = { files: [file], title: 'Sky: CotL Outfit Request' };
     if (!navigator.canShare(data)) { alert('Sharing is not supported on this device.'); return; }
     try { await navigator.share(data); } catch { alert('Sharing failed.'); }

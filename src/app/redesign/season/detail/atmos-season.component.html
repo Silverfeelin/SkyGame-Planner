@@ -24,61 +24,57 @@
 
   <!-- Overview / facts -->
   <section class="atmos-card atmos-season__overview">
-    <div class="atmos-card__body atmos-season__facts">
-      <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
-        <mat-icon>calendar_month</mat-icon>
-        <div>
-          <app-date [date]="s.date"></app-date> – <app-date [date]="s.endDate"></app-date>
-          @if (state() !== 'active') {
+    <div class="atmos-season__overview-grid">
+      <div class="atmos-card__body atmos-season__facts">
+        <div class="atmos-season__fact">
+          <mat-icon>calendar_month</mat-icon>
+          <div>
+            <app-date-range [start]="s.date" [end]="s.endDate"></app-date-range>
             <span class="atmos-season__fact-meta">
-              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
+              (<app-duration [start]="s.date" [end]="s.endDate"></app-duration> ·
+              <app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
             </span>
-          }
+          </div>
+        </div>
+        <div class="atmos-season__fact atmos-season__fact--split">
+          <div class="atmos-season__fact-item">
+            <mat-icon svgIcon="season-candle" class="seasonal"></mat-icon>
+            <div>
+              {{ sc() }} candles
+              @if (scLeft()) {
+                <span class="atmos-season__fact-meta">({{ scLeft() }} needed)</span>
+              }
+            </div>
+          </div>
+          <div class="atmos-season__fact-item">
+            <mat-icon svgIcon="season-heart" class="seasonal"></mat-icon>
+            <div>
+              {{ sh() }} hearts
+              @if (shLeft()) {
+                <span class="atmos-season__fact-meta">({{ shLeft() }} needed)</span>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="atmos-season__pass">
+          <button type="button" class="atmos-btn atmos-btn--sm"
+                  [class.atmos-btn--active]="hasBoughtSeasonPass()"
+                  (click)="toggleSeasonPass(false)">
+            <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            Bought Season Pass
+          </button>
+          <button type="button" class="atmos-btn atmos-btn--sm"
+                  [class.atmos-btn--active]="hasGiftedSeasonPass()"
+                  (click)="toggleSeasonPass(true)">
+            <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            Received Season Pass
+          </button>
         </div>
       </div>
-      <div class="atmos-season__fact" [class.is-expired]="state() === 'ended'">
-        <mat-icon>schedule</mat-icon>
-        <div>
-          <app-duration [start]="s.date" [end]="s.endDate"></app-duration>
-          @if (state() === 'active') {
-            <span class="atmos-season__fact-meta">
-              (<app-days-left [start]="s.date" [end]="s.endDate"></app-days-left>)
-            </span>
-          }
-        </div>
-      </div>
-      <div class="atmos-season__fact">
-        <mat-icon svgIcon="season-candle"></mat-icon>
-        <div>
-          {{ sc() }} season candles
-          @if (scLeft()) {
-            <span class="atmos-season__fact-meta">({{ scLeft() }} needed)</span>
-          }
-        </div>
-      </div>
-      <div class="atmos-season__fact">
-        <mat-icon svgIcon="season-heart"></mat-icon>
-        <div>
-          {{ sh() }} season hearts
-          @if (shLeft()) {
-            <span class="atmos-season__fact-meta">({{ shLeft() }} needed)</span>
-          }
-        </div>
-      </div>
-      <div class="atmos-season__pass">
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="hasBoughtSeasonPass()"
-                (click)="toggleSeasonPass(false)">
-          <mat-icon>{{ hasBoughtSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-          Bought Season Pass
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="hasGiftedSeasonPass()"
-                (click)="toggleSeasonPass(true)">
-          <mat-icon>{{ hasGiftedSeasonPass() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
-          Received Season Pass
-        </button>
-      </div>
+
+      @if (s.imageUrl) {
+        <div class="atmos-season__preview" [style.background-image]="imageStyle()"></div>
+      }
     </div>
   </section>
 
@@ -87,13 +83,10 @@
       <header class="atmos-season__section-header">
         <h2 class="atmos-section__title atmos-section__title--lg">Post-season guide tree</h2>
       </header>
-      <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
+      <div class="atmos-card__body atmos-spirit-trees">
         <div class="atmos-season__tree">
-          <div class="atmos-season__tree-name">
-            <a class="atmos-text-link" [routerLink]="['/spirit', guide()!.guid]"
-               [queryParams]="{ highlightTree: postTree.guid }">{{ guide()!.name }}</a>
-          </div>
           <app-atmos-spirit-tree [tree]="postTree" [name]="guide()!.name"
+            [nameLink]="['/spirit', guide()!.guid]" [nameQueryParams]="{ highlightTree: postTree.guid }"
             [highlight]="highlightTree() === postTree.guid"></app-atmos-spirit-tree>
         </div>
       </div>
@@ -107,27 +100,21 @@
         {{ state() === 'ended' ? 'Season spirit trees' : 'Spirit trees' }}
       </h2>
     </header>
-    <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
+    <div class="atmos-card__body atmos-spirit-trees">
       @if (guide(); as g) {
         @if (guideTree(); as gt) {
           <div class="atmos-season__tree">
-            <div class="atmos-season__tree-name">
-              <a class="atmos-text-link" [routerLink]="['/spirit', g.guid]"
-                 [queryParams]="{ highlightTree: gt.guid }">{{ g.name }}</a>
-              <span class="atmos-season__tree-tag">Guide</span>
-            </div>
             <app-atmos-spirit-tree [tree]="gt" [name]="g.name"
+              [nameLink]="['/spirit', g.guid]" [nameQueryParams]="{ highlightTree: gt.guid }"
+              nameTag="Guide"
               [highlight]="highlightTree() === gt.guid"></app-atmos-spirit-tree>
           </div>
         }
       }
       @for (entry of seasonTrees(); track entry.spirit.guid) {
         <div class="atmos-season__tree">
-          <div class="atmos-season__tree-name">
-            <a class="atmos-text-link" [routerLink]="['/spirit', entry.spirit.guid]"
-               [queryParams]="{ highlightTree: entry.tree.guid }">{{ entry.spirit.name }}</a>
-          </div>
           <app-atmos-spirit-tree [tree]="entry.tree" [name]="entry.spirit.name"
+            [nameLink]="['/spirit', entry.spirit.guid]" [nameQueryParams]="{ highlightTree: entry.tree.guid }"
             [highlight]="highlightTree() === entry.tree.guid"></app-atmos-spirit-tree>
         </div>
       }
@@ -139,15 +126,11 @@
       <header class="atmos-season__section-header">
         <h2 class="atmos-section__title atmos-section__title--lg">Related spirit trees</h2>
       </header>
-      <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
+      <div class="atmos-card__body atmos-spirit-trees">
         @for (tree of includedTrees(); track tree.guid) {
           <div class="atmos-season__tree">
-            @if (tree.spirit) {
-              <div class="atmos-season__tree-name">
-                <a class="atmos-text-link" [routerLink]="['/spirit', tree.spirit.guid]">{{ tree.spirit.name }}</a>
-              </div>
-            }
-            <app-atmos-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'"></app-atmos-spirit-tree>
+            <app-atmos-spirit-tree [tree]="tree" [name]="tree.name ?? tree.spirit?.name ?? 'Spirit tree'"
+              [nameLink]="tree.spirit ? ['/spirit', tree.spirit.guid] : undefined"></app-atmos-spirit-tree>
           </div>
         }
       </div>

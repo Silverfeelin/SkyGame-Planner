@@ -9,6 +9,7 @@ import { VaultApiService, IApiOutfits, IApiOutfit } from './vault-api.service';
 import { AtmosVaultItemPickerComponent, ItemSelection } from './atmos-vault-item-picker.component';
 import { AtmosVaultResultsComponent, IVaultResult } from './atmos-vault-results.component';
 import { AtmosVaultSubmitComponent } from './atmos-vault-submit.component';
+import { AtmosToolQuickActionsComponent } from '@app/redesign/tool/quick-actions/atmos-tool-quick-actions.component';
 
 export type VaultMode = 'selection' | 'picking' | 'results' | 'submit';
 
@@ -22,7 +23,8 @@ export type VaultMode = 'selection' | 'picking' | 'results' | 'submit';
     MatIcon,
     AtmosVaultItemPickerComponent,
     AtmosVaultResultsComponent,
-    AtmosVaultSubmitComponent
+    AtmosVaultSubmitComponent,
+    AtmosToolQuickActionsComponent
   ]
 })
 export class AtmosOutfitVaultComponent implements OnInit {

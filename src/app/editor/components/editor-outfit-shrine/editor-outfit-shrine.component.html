@@ -1,13 +1,17 @@
-<div class="mb">
-  Subtitle: <textarea #inpSubtitle style="height: 120px;"></textarea>
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Outfit shrine</h1>
+</header>
+
+<div>
+  Subtitle: <textarea #inpSubtitle class="subtitle-input"></textarea>
 </div>
-<div class="mb">
-  <button (click)="generateSheet(0)">Generate sheet 1</button>
-  <button (click)="generateSheet(1)">Generate sheet 2</button>
-  <button (click)="generateSheet(2)">Generate sheet 3</button>
+<div class="sheet-actions">
+  <button type="button" class="atmos-btn" (click)="generateSheet(0)">Generate sheet 1</button>
+  <button type="button" class="atmos-btn" (click)="generateSheet(1)">Generate sheet 2</button>
+  <button type="button" class="atmos-btn" (click)="generateSheet(2)">Generate sheet 3</button>
 </div>
-<div style="margin-bottom: var(--atmos-gap)">
+<p class="atmos-paragraph atmos-page__hint">
   If the Outfit Shrine font is weird, wait a second and try again. The font is loaded asynchronously.<br/>
   First render will take a while because of all the icons.
-</div>
+</p>
 <div id="outfit-shrine-output"></div>

@@ -46,6 +46,11 @@ const VENUES: ReadonlyArray<IVenue> = [
     description: 'Only available with a certain cape or during some events. Accessed through the Vault of Knowledge.'
   },
   {
+    link: '/shop/prairieheights',
+    title: 'Prairie Heights',
+    description: 'Kite shop introduced during Days of Color in 2026. Accessed through Prairie Village (8-player puzzle).'
+  },
+  {
     link: '/shop/wonderland-cafe',
     title: 'Wonderland Cafe',
     description: 'Introduced during Days of Feast in 2024. Accessed through the Wonderland Cafe Corridor.'

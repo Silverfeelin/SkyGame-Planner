@@ -19,9 +19,7 @@
       <div class="atmos-rs-detail__meta-item" [class.is-ended]="state() === 'ended'">
         <mat-icon class="atmos-rs-detail__icon">calendar_month</mat-icon>
         <span>
-          <app-date [date]="r.date"></app-date>
-          <span class="atmos-rs-detail__sep">to</span>
-          <app-date [date]="r.endDate"></app-date>
+          <app-date-range [start]="r.date" [end]="r.endDate"></app-date-range>
         </span>
         @if (state() === 'future') {
           <span class="atmos-rs-detail__pill atmos-pill">
@@ -66,14 +64,11 @@
         @for (spirit of r.spirits; track spirit.tree.guid) {
           @if (spirit.tree) {
             <div class="atmos-rs-detail__tree">
-              <a class="atmos-rs-detail__tree-name atmos-text-link"
-                 [routerLink]="['/spirit', spirit.spirit.guid]"
-                 [queryParams]="{ highlightTree: spirit.tree.guid }">
-                {{ spirit.spirit.name }}
-              </a>
               <app-atmos-spirit-tree
                 [tree]="spirit.tree"
-                [name]="spirit.spirit.name">
+                [name]="spirit.spirit.name"
+                [nameLink]="['/spirit', spirit.spirit.guid]"
+                [nameQueryParams]="{ highlightTree: spirit.tree.guid }">
               </app-atmos-spirit-tree>
             </div>
           }

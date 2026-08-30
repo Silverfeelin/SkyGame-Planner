@@ -43,8 +43,6 @@ export class AtmosSearchBarComponent {
     this._route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(params => {
       const q = params.get('q') ?? '';
       this.query.set(q);
-      const el = this.input()?.nativeElement;
-      if (el && el.value !== q) { el.value = q; }
       if (q) { this.runSearch(q); } else { this.results.set(undefined); }
     });
   }

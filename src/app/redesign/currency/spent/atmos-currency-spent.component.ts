@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DecimalPipe, NgTemplateOutlet } from '@angular/common';
 import { nanoid } from 'nanoid';
 import { CostHelper } from '@app/helpers/cost-helper';
@@ -37,7 +37,7 @@ interface IInstanceCostData {
   templateUrl: './atmos-currency-spent.component.html',
   styleUrl: './atmos-currency-spent.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, NgbTooltip, NgTemplateOutlet, DecimalPipe, AtmosCurrencyQuickActionsComponent]
+  imports: [MatIcon, TooltipDirective, NgTemplateOutlet, DecimalPipe, AtmosCurrencyQuickActionsComponent]
 })
 export class AtmosCurrencySpentComponent {
   readonly total: IInstanceCost = { cost: CostHelper.create(), price: 0, nodes: [], listNodes: [], iaps: [] };

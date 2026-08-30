@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, input, output, signal, TemplateRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DateTime } from 'luxon';
-import { Router } from '@angular/router';
+import { Params, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { AtmosNodeAction, AtmosNodeComponent } from '../node/atmos-node.component';
 import { AtmosDraftWarningComponent } from '@app/redesign/shared/draft-warning/atmos-draft-warning.component';
@@ -28,6 +28,8 @@ interface AtmosTreeRow {
   left?: INode;
   center?: INode;
   right?: INode;
+  /** True for the row bordering the tier below it, so a separator renders next to it. */
+  tierStart?: boolean;
 }
 
 interface AtmosTreeColumns {
@@ -59,16 +61,21 @@ const sharedNodeAction = signal<AtmosNodeAction>('unlock');
   templateUrl: './atmos-spirit-tree.component.html',
   styleUrl: './atmos-spirit-tree.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AtmosNodeComponent, CostComponent, DateComponent, MatIcon, AtmosDraftWarningComponent]
+  imports: [AtmosNodeComponent, CostComponent, DateComponent, MatIcon, RouterLink, AtmosDraftWarningComponent]
 })
 export class AtmosSpiritTreeComponent {
   readonly tree = input.required<ISpiritTree>();
   readonly name = input<string | undefined>(undefined);
+  /** Optional router link for the tree name, e.g. the spirit page this tree belongs to. */
+  readonly nameLink = input<string | unknown[] | undefined>(undefined);
+  /** Query params for `nameLink`, e.g. `{ highlightTree: tree.guid }`. */
+  readonly nameQueryParams = input<Params | undefined>(undefined);
+  /** Optional badge rendered next to the name, e.g. 'Guide'. */
+  readonly nameTag = input<string | undefined>(undefined);
   readonly highlight = input<boolean>(false);
   readonly highlightItem = input<string | ReadonlyArray<string> | undefined>(undefined);
   readonly highlightNode = input<string | ReadonlyArray<string> | undefined>(undefined);
   readonly enableControls = input<boolean>(true);
-  readonly enableNavigation = input<boolean>(true);
   readonly showNodeTooltips = input<boolean>(true);
   readonly opaqueNodes = input<boolean | ReadonlyArray<string> | undefined>(undefined);
   readonly padBottom = input<boolean>(false);
@@ -157,16 +164,17 @@ export class AtmosSpiritTreeComponent {
     } else if (t.tier) {
       let level = -1;
       const tiers = TreeHelper.getTiers(t);
-      for (const tier of tiers) {
-        for (const tierRow of tier.rows) {
+      tiers.forEach((tier, tierIndex) => {
+        tier.rows.forEach((tierRow, rowIndex) => {
           level++;
           const row: AtmosTreeRow = {};
           row.left = tierRow[0] ?? undefined;
           row.center = tierRow[1] ?? undefined;
           row.right = tierRow[2] ?? undefined;
+          if (rowIndex === 0 && tierIndex > 0) { row.tierStart = true; }
           rows[level] = row;
-        }
-      }
+        });
+      });
       return rows.slice().reverse();
     }
 

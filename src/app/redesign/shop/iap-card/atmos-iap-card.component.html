@@ -6,18 +6,17 @@
     <header class="atmos-iap-card__header">
       <div class="atmos-iap-card__heading">
         <h3 class="atmos-iap-card__title">{{ iap().name || 'Pack' }}</h3>
-        @if (iap().price !== undefined) {
-          <span class="atmos-iap-card__price">${{ iap().price }}</span>
-        }
+        <div class="atmos-iap-card__subline">
+          @if (iap().price !== undefined) {
+            <span class="atmos-iap-card__price">${{ iap().price }}</span>
+          }
+          @if (iap().returning) {
+            <span class="atmos-pill">Returning</span>
+          }
+        </div>
       </div>
 
       <div class="atmos-iap-card__flags">
-        @if (iap().returning) {
-          <span class="atmos-pill">Returning</span>
-        }
-        @if (iap().bought) {
-          <span class="atmos-pill atmos-pill--active">Bought</span>
-        }
         @if (iap().gifted) {
           <span class="atmos-pill atmos-pill--active">Gifted</span>
         }
@@ -53,7 +52,11 @@
     @if (iap().items?.length) {
       <div class="atmos-iap-card__items">
         @for (item of iap().items; track item.guid) {
-          <app-item-icon [item]="item" [iap]="iap()" size="small"></app-item-icon>
+          <a class="atmos-iap-card__item"
+            [routerLink]="['/item', item.guid]"
+            [title]="item.name">
+            <app-item-icon [item]="item" [iap]="iap()" size="default"></app-item-icon>
+          </a>
         }
       </div>
     }

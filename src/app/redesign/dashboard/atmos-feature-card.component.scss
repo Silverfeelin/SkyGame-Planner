@@ -24,16 +24,6 @@
   }
 }
 
-.atmos-card__banner-fallback {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    135deg,
-    oklch(0.45 0.09 var(--banner-hue, 160)) 0 14px,
-    oklch(0.35 0.07 var(--banner-hue, 160)) 14px 28px
-  );
-}
-
 .atmos-card__banner-fade {
   position: absolute;
   inset: 0;
@@ -87,104 +77,6 @@
     width: 18px;
     height: 18px;
   }
-}
-
-.atmos-card__links {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 18px;
-  row-gap: 8px;
-}
-
-.atmos-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--atmos-text);
-  text-decoration: none;
-  font-size: 13.5px;
-  font-weight: 500;
-  opacity: 0.94;
-  padding: 4px 8px;
-  margin: -4px -8px;
-  border-radius: var(--atmos-radius-sm);
-  transition: background var(--atmos-transition), opacity var(--atmos-transition);
-
-  mat-icon {
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-  }
-}
-
-.atmos-card__link-img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
-a.atmos-card__link {
-  &:hover {
-    background: var(--atmos-hover-bg);
-    opacity: 1;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--atmos-accent);
-    outline-offset: 2px;
-  }
-}
-
-.atmos-card__check {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  padding: 4px 8px;
-  margin: -4px -8px;
-  border-radius: var(--atmos-radius-sm);
-  color: oklch(0.95 0.01 var(--atmos-hue) / 0.9);
-  font-family: inherit;
-  text-align: left;
-  align-self: flex-start;
-  transition: background var(--atmos-transition);
-
-  &:hover {
-    background: var(--atmos-hover-bg);
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--atmos-accent);
-    outline-offset: 2px;
-  }
-}
-
-.atmos-card__check-box {
-  width: 18px;
-  height: 18px;
-  border-radius: 6px;
-  border: 1.5px solid oklch(0.95 0.01 var(--atmos-hue) / 0.4);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background: transparent;
-  transition: border-color var(--atmos-transition), background var(--atmos-transition);
-
-  mat-icon {
-    font-size: 14px;
-    width: 14px;
-    height: 14px;
-  }
-}
-
-.atmos-card__check.is-checked .atmos-card__check-box {
-  background: var(--atmos-accent);
-  border-color: var(--atmos-accent);
-  color: oklch(0.15 0.02 var(--atmos-hue));
 }
 
 .atmos-card__currency {

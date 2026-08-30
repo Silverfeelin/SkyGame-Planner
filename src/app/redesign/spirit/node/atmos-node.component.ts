@@ -1,25 +1,23 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input, output, signal, TemplateRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { NgTemplateOutlet } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { MatIcon } from '@angular/material/icon';
 import { EventService } from '@app/services/event.service';
 import { DebugService } from '@app/services/debug.service';
 import { NavigationHelper, INavigationTarget } from '@app/helpers/navigation-helper';
-import { HighlightType } from '@app/types/highlight';
 import { INode } from 'skygame-data';
 
 export type AtmosNodeAction = 'emit' | 'unlock' | 'navigate';
 export type AtmosNodePosition = 'left' | 'center' | 'right';
 
 /**
- * Atmospheric node tile inside a spirit tree. Mirrors the legacy
- * `NodeComponent` input surface; click handling is delegated to the parent
- * (`AtmosSpiritTreeComponent` is responsible for unlock / lock / navigate
- * semantics).
+ * Atmospheric node tile inside a spirit tree. Click handling is delegated to
+ * the parent (`AtmosSpiritTreeComponent` is responsible for unlock / lock /
+ * navigate semantics).
  *
- * Rendered as an `<a routerLink>` to the item page so middle-click / ctrl-click
+ * Rendered as an `<a href>` to the item page so middle-click / ctrl-click
  * open the item in a new tab natively, while a plain left-click is intercepted
  * and handed to the parent's action pipeline.
  */
@@ -31,14 +29,13 @@ export type AtmosNodePosition = 'left' | 'center' | 'right';
   // Expose the node GUID as a DOM attribute so consumers (e.g. the spirit-tree
   // editor's drag-to-swap) can hit-test nodes via `elementsFromPoint`.
   host: { '[attr.guid]': 'node().guid' },
-  imports: [ItemIconComponent, MatIcon, NgTemplateOutlet, RouterLink]
+  imports: [ItemIconComponent, MatIcon, NgTemplateOutlet]
 })
 export class AtmosNodeComponent {
   readonly node = input.required<INode>();
   readonly position = input<AtmosNodePosition>('center');
   readonly highlight = input<boolean>(false);
   readonly action = input<AtmosNodeAction>('unlock');
-  readonly enableNavigation = input<boolean>(true);
   readonly opaque = input<boolean>(false);
   readonly showTooltips = input<boolean>(true);
   readonly overlayTemplate = input<TemplateRef<unknown> | undefined>(undefined);
@@ -47,6 +44,7 @@ export class AtmosNodeComponent {
   readonly nodeClicked = output<MouseEvent>();
 
   private readonly _debug = inject(DebugService);
+  private readonly _router = inject(Router);
 
   /** Bumped on `itemToggled` so the in-place unlock mutation re-renders this tile. */
   private readonly _refresh = signal(0);
@@ -65,8 +63,12 @@ export class AtmosNodeComponent {
     return item ? NavigationHelper.getItemLink(item) : undefined;
   });
 
-  /** Highlight border style; "attention" draws the eye in navigate mode. */
-  readonly glowType = computed<HighlightType>(() => this.action() === 'navigate' ? 'attention' : 'default');
+  /** Item-page href; absent in emit mode, where the tile is a selection target only. */
+  readonly href = computed<string | null>(() => {
+    if (this.action() === 'emit') { return null; }
+    const link = this.link();
+    return link ? this._router.serializeUrl(this._router.createUrlTree(link.route, link.extras)) : null;
+  });
 
   readonly unlocked = computed<boolean>(() => {
     this._refresh();
@@ -96,6 +98,7 @@ export class AtmosNodeComponent {
     // Let the browser handle modifier / middle clicks (open item in new tab).
     if (event.ctrlKey || event.shiftKey || event.metaKey || event.button === 1) { return; }
 
+    event.preventDefault();
     this.nodeClicked.emit(event);
   }
 }

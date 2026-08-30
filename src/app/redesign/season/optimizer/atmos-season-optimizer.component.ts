@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink } from '@angular/router';
+import { DecimalPipe } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { INode, ISpiritTree, ItemType } from 'skygame-data';
 import { DateHelper } from '@app/helpers/date-helper';
@@ -10,8 +11,9 @@ import { CurrencyService } from '@app/services/currency.service';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
-import { CheckboxComponent } from '@app/components/layout/checkbox/checkbox.component';
+import { AtmosCheckboxComponent } from '@app/redesign/shared/checkbox/atmos-checkbox.component';
 import {
+  AtmosDraftWarningComponent,
   AtmosSpiritTreeComponent,
   AtmosSpiritTreeNodeClickEvent
 } from '@app/redesign/shared/atmos-shared-widgets';
@@ -22,8 +24,9 @@ import {
   styleUrl: './atmos-season-optimizer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    RouterLink, ReactiveFormsModule, MatIcon,
-    OverlayComponent, CheckboxComponent, AtmosSpiritTreeComponent
+    RouterLink, ReactiveFormsModule, MatIcon, DecimalPipe,
+    OverlayComponent, AtmosCheckboxComponent, AtmosSpiritTreeComponent,
+    AtmosDraftWarningComponent
   ]
 })
 export class AtmosSeasonOptimizerComponent {
@@ -46,6 +49,8 @@ export class AtmosSeasonOptimizerComponent {
   // Hardcoded tier costs (mirrors legacy).
   readonly tierUnlockCost: ReadonlyArray<number> = [0, 40, 60, 80, 100];
   readonly tierUnlockCostCumulative: ReadonlyArray<number> = [0, 40, 100, 180, 280];
+
+  readonly isDraft = !!this.season?.draft;
 
   readonly today = DateHelper.todaySky();
   readonly daysLeftSeason = this.season ? DateHelper.daysBetween(this.today, this.season.endDate!) : 0;
@@ -99,7 +104,7 @@ export class AtmosSeasonOptimizerComponent {
           currentFriendship = this.tierUnlockCostCumulative[iTier];
         }
 
-        const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
+        const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         tierFriendshipNodes.forEach(node => {
           this.nodeValues[node.guid] = friendshipPerNode;
@@ -108,7 +113,7 @@ export class AtmosSeasonOptimizerComponent {
       });
 
       if (currentFriendship > 0) {
-        this.friendshipControls[iTree].setValue(currentFriendship, { emitEvent: true });
+        this.friendshipControls[iTree].setValue(Math.round(currentFriendship), { emitEvent: true });
       }
     });
 
@@ -226,7 +231,7 @@ export class AtmosSeasonOptimizerComponent {
           return;
         }
 
-        const tierFriendshipNodes = tier.rows.flat().filter((node, iNode) => iNode < 2 && node) as INode[];
+        const tierFriendshipNodes = tier.rows.flat().filter(node => node && node.sc) as INode[];
         const tierAvailableNodes = tierFriendshipNodes.filter(node => !node.unlocked);
         const friendshipPerNode = this.tierUnlockCost[iTier + 1] / tierFriendshipNodes.length;
         const friendshipNeeded = this.tierUnlockCostCumulative[iTier + 1];
@@ -266,13 +271,17 @@ export class AtmosSeasonOptimizerComponent {
 
   private knapsack(nodes: Array<INode>, target: number): Array<INode> | undefined {
     if (target <= 0 || nodes.length === 0) { return undefined; }
-    const max = nodes.reduce((sum, n) => sum + this.nodeValues[n.guid], 0);
+
+    const points = (node: INode) => Math.round(this.nodeValues[node.guid]);
+    const roundedTarget = Math.ceil(target);
+    const max = nodes.reduce((sum, n) => sum + points(n), 0);
     const dp = Array(max + 1).fill(null) as Array<INode>[] | null[];
     dp[0] = [];
 
     for (const node of nodes) {
-      for (let p = max; p >= this.nodeValues[node.guid]; p--) {
-        const prev = dp[p - this.nodeValues[node.guid]];
+      const value = points(node);
+      for (let p = max; p >= value; p--) {
+        const prev = dp[p - value];
         if (prev !== null) {
           const newSet = [...prev, node];
           const newCost = newSet.reduce((sum, n) => sum + (n.sc ?? 0), 0);
@@ -284,7 +293,7 @@ export class AtmosSeasonOptimizerComponent {
 
     let best: Array<INode> | undefined;
     let bestCost = Infinity;
-    for (let p = target; p <= max; p++) {
+    for (let p = roundedTarget; p <= max; p++) {
       const set = dp[p];
       if (set) {
         const cost = set.reduce((sum, n) => sum + (n.sc ?? 0), 0);

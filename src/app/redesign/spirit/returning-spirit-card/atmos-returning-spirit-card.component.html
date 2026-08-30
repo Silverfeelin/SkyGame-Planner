@@ -35,7 +35,7 @@
         <div class="atmos-returning-spirit-card__row">
           <mat-icon>calendar_month</mat-icon>
           <span>
-            <app-date [date]="r.date"></app-date> – <app-date [date]="r.endDate"></app-date>
+            <app-date-range [start]="r.date" [end]="r.endDate"></app-date-range>
             <span class="atmos-returning-spirit-card__days">
               (<app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>)
             </span>

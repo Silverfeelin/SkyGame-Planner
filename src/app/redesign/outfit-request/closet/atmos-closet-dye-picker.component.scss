@@ -1,5 +1,20 @@
+/* The picker only renders while it is open, and renders into an overlay when
+   it is. `contents` keeps the host out of the page's flex gap either way. */
+:host { display: contents; }
+
 .atmos-dye-picker {
   padding: var(--atmos-pad-compact);
+  text-align: center;
+}
+
+/* Separates the secondary dye block from the primary one; the picker is a
+   plain block, so there is no parent gap to lean on. */
+.dye-section {
+  margin-top: var(--atmos-gap);
+}
+
+.dye-label {
+  color: var(--atmos-accent);
 }
 
 .atmos-dye-preview {

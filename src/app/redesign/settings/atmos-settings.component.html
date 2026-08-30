@@ -53,11 +53,13 @@
     <p class="atmos-paragraph">
       Enter a number to add regular candles to your
       <a class="atmos-text-link" routerLink="/currency">Currency</a> page
-      when you complete daily quests on the dashboard. Set to 0 to disable.
+      when you complete your (season) daily quests on the
+      <a class="atmos-text-link" routerLink="/">Dashboard</a> or <a class="atmos-text-link" routerLink="/daily">Daily tracker</a>.
+      Set to 0 to disable.
     </p>
     <label class="atmos-settings__label">
       Candles per daily check-in
-      <input class="atmos-settings__input" type="number" min="0" max="99"
+      <input class="atmos-input atmos-input--narrow" type="number" min="0" max="99"
         [value]="dailyCandleAmount"
         (change)="setDailyCandleAmount(+$any($event.target).value)">
     </label>
@@ -149,6 +151,12 @@
       <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugVisible" (click)="toggleDebugInfo()">
         <mat-icon>{{ debugVisible ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Show debug info
       </button>
+      <button type="button" class="atmos-btn" [class.atmos-btn--active]="debugMapCopyCoordinates" (click)="toggleDebugMapCopyCoordinates()">
+        <mat-icon>{{ debugMapCopyCoordinates ? 'check_box' : 'check_box_outline_blank' }}</mat-icon> Copy map coordinates on click
+      </button>
     </div>
+    <p class="atmos-paragraph">
+      When enabled, clicking anywhere on a map copies the clicked <code class="atmos-code">[lat, lng]</code> position to your clipboard.
+    </p>
   </div>
 </section>

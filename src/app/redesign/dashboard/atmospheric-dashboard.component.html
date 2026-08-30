@@ -15,7 +15,10 @@
       [bannerHue]="20"
       [timeRow]="seasonTimeRow()"
       [links]="seasonLinks()"
-      [currency]="seasonCurrency()" />
+      [currency]="seasonCurrency()"
+      checkLabel="I have done my season dailies."
+      [checked]="checkedIn()"
+      (checkToggle)="onSeasonCheckinToggle(s, $event)" />
   }
   @for (card of eventCards(); track card.instance.guid) {
     <app-atmos-feature-card

@@ -53,10 +53,10 @@
     <div class="atmos-card__body atmos-calc__settings">
       <div class="atmos-calc__row">
         <span class="atmos-calc__label">Season Pass:</span>
-        <button type="button" class="atmos-btn atmos-btn--sm"
+        <button type="button" class="atmos-btn"
                 [class.atmos-btn--active]="hasSeasonPass"
                 (click)="toggleSeasonPass()">
-          <mat-icon>{{ hasSeasonPass ? 'check' : 'close' }}</mat-icon>
+          <app-atmos-checkbox [state]="hasSeasonPass" [useColors]="true"></app-atmos-checkbox>
           {{ hasSeasonPass ? 'owned' : 'not owned' }}
         </button>
       </div>
@@ -65,21 +65,23 @@
         <span class="atmos-calc__label">Your season candles:</span>
         <mat-icon class="atmos-calc__inline-icon" svgIcon="candle"></mat-icon>
         <input #inpSc type="number" min="0" max="99999"
-               class="atmos-calc__input atmos-calc__input--inline"
+               class="atmos-input atmos-input--inline"
                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
                [value]="candleCount"/>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency(1)">+1</button>
-        <button type="button" class="atmos-btn atmos-btn--sm" (click)="addCurrency()">
-          +{{ hasSeasonPass ? '6' : '5' }} (daily)
-        </button>
+        <div class="atmos-btn-group">
+          <button type="button" class="atmos-btn" (click)="addCurrency(1)">+1</button>
+          <button type="button" class="atmos-btn" (click)="addCurrency()">
+            +{{ hasSeasonPass ? '6' : '5' }} (daily)
+          </button>
+        </div>
       </div>
 
       <div class="atmos-calc__row">
         <span class="atmos-calc__label">Today's candles:</span>
-        <button type="button" class="atmos-btn atmos-btn--sm"
+        <button type="button" class="atmos-btn"
                 [class.atmos-btn--active]="includesToday"
                 (click)="toggleIncludesToday()">
-          <mat-icon>{{ includesToday ? 'check' : 'close' }}</mat-icon>
+          <app-atmos-checkbox [state]="includesToday" [useColors]="true"></app-atmos-checkbox>
           {{ includesToday ? 'obtained' : 'not obtained' }}
         </button>
       </div>
@@ -114,7 +116,7 @@
               Please enter how much you have collected so far:
             }
             <input #inpTimed [attr.data-guid]="timedCurrency.guid"
-                   class="atmos-calc__input atmos-calc__input--inline"
+                   class="atmos-input atmos-input--inline"
                    (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
                    type="number" min="0" max="99999" [value]="timedCurrencyCount[timedCurrency.guid]"/>
           </div>
@@ -246,7 +248,7 @@
 
   <!-- Trees -->
   <section class="atmos-card">
-    <div class="atmos-card__body atmos-spirit-trees atmos-spirit-trees--wrap">
+    <div class="atmos-card__body atmos-spirit-trees">
       @for (tree of trees; track tree.guid) {
         <app-atmos-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
           [enableControls]="false" [forceNodeAction]="'emit'"

@@ -7,26 +7,23 @@
   [attr.data-position]="position()"
   [attr.data-action]="action()"
   [attr.aria-pressed]="node().item ? unlocked() : null"
-  [routerLink]="(node().item && enableNavigation()) ? link()?.route : null"
-  [queryParams]="link()?.extras?.queryParams ?? null"
-  [title]="showTooltips() ? node().item?.name : null">
+  [attr.href]="href()"
+  [title]="showTooltips() ? node().item?.name : null"
+  (click)="onClick($event)">
   @if (node().item; as item) {
     <app-item-icon
       class="atmos-node__icon"
       [item]="item"
       [node]="node()"
       [opaque]="opaque() || unlocked()"
-      [glowType]="glowType()"
-      [hoverGlow]="false"
-      size="default"
-      (click)="onClick($event)"></app-item-icon>
+      size="default"></app-item-icon>
   } @else {
     <span class="atmos-node__placeholder"></span>
   }
 
   @if (cost(); as c) {
     <span class="atmos-node__cost" [attr.data-kind]="c.kind">
-      <mat-icon [svgIcon]="c.icon" class="atmos-node__cost-icon"></mat-icon>
+      <mat-icon [svgIcon]="c.icon" [class]="'atmos-node__cost-icon ' + c.kind"></mat-icon>
       <strong>{{ c.amount }}</strong>
     </span>
   }

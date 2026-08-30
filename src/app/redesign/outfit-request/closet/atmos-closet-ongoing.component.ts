@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, output } from '@angular/core';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { SpiritTypeIconComponent } from '@app/components/spirit-type-icon/spirit-type-icon.component';
-import { CardComponent } from '@app/components/layout/card/card.component';
+import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
 import { DataService } from '@app/services/data.service';
 import { DateHelper, PeriodState } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
@@ -12,9 +12,10 @@ import { ISpecialVisitSpirit } from 'skygame-data/dist/interfaces/special-visit-
 @Component({
   selector: 'atmos-closet-ongoing',
   templateUrl: './atmos-closet-ongoing.component.html',
+  styleUrl: './atmos-closet-ongoing.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [ItemIconComponent, SpiritTypeIconComponent, CardComponent]
+  imports: [ItemIconComponent, SpiritTypeIconComponent, AtmosFoldableCardComponent]
 })
 export class AtmosClosetOngoingComponent {
   readonly state = inject(ClosetStateService);

@@ -7,7 +7,7 @@ import { TitleService } from '@app/services/title.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { CalendarLinkComponent } from '@app/components/util/calendar-link/calendar-link.component';
-import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import { AtmosDraftWarningComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
@@ -24,7 +24,7 @@ import { AtmosDraftWarningComponent, AtmosSpiritTreeComponent } from '@app/redes
   imports: [
     RouterLink, MatIcon,
     WikiLinkComponent, CalendarLinkComponent,
-    DateComponent, DaysLeftComponent, DurationComponent,
+    DateRangeComponent, DaysLeftComponent, DurationComponent,
     AtmosSpiritTreeComponent, AtmosDraftWarningComponent
   ]
 })

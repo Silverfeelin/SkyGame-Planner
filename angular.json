@@ -40,10 +40,6 @@
             ],
             "styles": [
               {
-                "input": "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                "bundleName": "vendor"
-              },
-              {
                 "input": "node_modules/leaflet/dist/leaflet.css",
                 "bundleName": "vendor"
               },

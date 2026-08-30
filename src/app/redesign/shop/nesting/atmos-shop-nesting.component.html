@@ -63,9 +63,11 @@
           <div class="atmos-shop-nesting__rotation-items">
             @for (r of rotation; track r.item) {
               <div class="atmos-shop-nesting__rotation-item">
-                <div class="atmos-shop-nesting__rotation-icon">
-                  <app-item-icon [item]="r.item!" [hoverGlow]="false" [subIcons]="['unlock']"></app-item-icon>
-                </div>
+                <a class="atmos-shop-nesting__rotation-icon"
+                  [routerLink]="['/item', r.item!.guid]"
+                  [title]="r.item!.name">
+                  <app-item-icon [item]="r.item!"[subIcons]="['unlock']"></app-item-icon>
+                </a>
                 <div class="atmos-shop-nesting__rotation-name">{{ r.item!.name }}</div>
                 <div class="atmos-shop-nesting__rotation-amount">
                   <div class="atmos-shop-nesting__qty-buttons">

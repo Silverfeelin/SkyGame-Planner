@@ -182,7 +182,7 @@ body > .map { display: none !important; }
 .s-leaflet-item .s-leaflet-maticon-desktop { display: none; }
 
 @media screen and (max-width: 719px) {
-  .s-leaflet-grid .menu-label { padding-left: unset !important; }
+  .s-leaflet-grid .s-leaflet-menu-label { padding-left: unset !important; }
   .s-leaflet-vid { max-height: 135px; }
 }
 

@@ -3,9 +3,16 @@
     @if (visibleName()) {
       <header class="atmos-spirit-tree__header">
         <h3 class="atmos-spirit-tree__title">
-          <ng-content select="[name]">{{ visibleName() }}</ng-content>
+          @if (nameLink(); as link) {
+            <a class="atmos-text-link" [routerLink]="link" [queryParams]="nameQueryParams()">{{ visibleName() }}</a>
+          } @else {
+            {{ visibleName() }}
+          }
           @if (eventDate(); as d) {
             <span class="atmos-spirit-tree__date">(<app-date [date]="d"></app-date>)</span>
+          }
+          @if (nameTag(); as tag) {
+            <span class="atmos-spirit-tree__tag">{{ tag }}</span>
           }
         </h3>
       </header>
@@ -13,20 +20,24 @@
 
     @if (showControls()) {
       <nav class="atmos-spirit-tree__controls" aria-label="Spirit tree actions">
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="currentAction() === 'unlock'"
-                (click)="setAction('unlock')"
-                title="Unlock / lock items (U)">
-          <mat-icon>lock_open</mat-icon>
-          <span>Unlock</span>
-        </button>
-        <button type="button" class="atmos-btn atmos-btn--sm"
-                [class.atmos-btn--active]="currentAction() === 'navigate'"
-                (click)="setAction('navigate')"
-                title="Open item page (N)">
-          <mat-icon>search</mat-icon>
-          <span>Navigate</span>
-        </button>
+        <div class="atmos-spirit-tree__seg" role="group" aria-label="Node click action">
+          <button type="button" class="atmos-spirit-tree__seg-btn"
+                  [class.is-active]="currentAction() === 'unlock'"
+                  [attr.aria-pressed]="currentAction() === 'unlock'"
+                  (click)="setAction('unlock')"
+                  title="Unlock / lock items (U)">
+            <mat-icon>lock_open</mat-icon>
+            <span class="atmos-spirit-tree__seg-label"><span>Unlock</span></span>
+          </button>
+          <button type="button" class="atmos-spirit-tree__seg-btn"
+                  [class.is-active]="currentAction() === 'navigate'"
+                  [attr.aria-pressed]="currentAction() === 'navigate'"
+                  (click)="setAction('navigate')"
+                  title="Open item page (N)">
+            <mat-icon>search</mat-icon>
+            <span class="atmos-spirit-tree__seg-label"><span>Navigate</span></span>
+          </button>
+        </div>
 
         <span class="atmos-spirit-tree__controls-spacer"></span>
 
@@ -77,7 +88,6 @@
                     [node]="n"
                     [position]="$index === 0 ? 'left' : $index === 2 ? 'right' : 'center'"
                     [action]="action()"
-                    [enableNavigation]="enableNavigation()"
                     [opaque]="isNodeOpaque(n)"
                     [highlight]="isNodeHighlighted(n)"
                     [showTooltips]="showNodeTooltips()"
@@ -104,7 +114,6 @@
                   [node]="n"
                   position="left"
                   [action]="action()"
-                  [enableNavigation]="enableNavigation()"
                   [opaque]="isNodeOpaque(n)"
                   [highlight]="isNodeHighlighted(n)"
                   [showTooltips]="showNodeTooltips()"
@@ -118,7 +127,6 @@
                   [node]="n"
                   position="center"
                   [action]="action()"
-                  [enableNavigation]="enableNavigation()"
                   [opaque]="isNodeOpaque(n)"
                   [highlight]="isNodeHighlighted(n)"
                   [showTooltips]="showNodeTooltips()"
@@ -132,7 +140,6 @@
                   [node]="n"
                   position="right"
                   [action]="action()"
-                  [enableNavigation]="enableNavigation()"
                   [opaque]="isNodeOpaque(n)"
                   [highlight]="isNodeHighlighted(n)"
                   [showTooltips]="showNodeTooltips()"
@@ -141,6 +148,9 @@
               }
             </div>
           </div>
+          @if (row.tierStart) {
+            <div class="atmos-spirit-tree__tier-separator" aria-hidden="true"></div>
+          }
         }
       </div>
     }

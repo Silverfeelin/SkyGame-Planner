@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnDestroy, signal } from '@angular/core';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { SubscriptionLike } from 'rxjs';
@@ -10,10 +10,10 @@ import { TitleService } from '@app/services/title.service';
 import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
-import { ItemListComponent } from '@app/components/item-list/item-list/item-list.component';
-import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 
 @Component({
   selector: 'app-atmos-event-instance',
@@ -23,11 +23,11 @@ import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosSpiritTreeCompo
   imports: [
     RouterLink,
     MatIcon,
-    DateComponent,
+    DateComponent, DateRangeComponent,
     DaysLeftComponent,
     DurationComponent,
     AtmosSpiritTreeComponent,
-    ItemListComponent,
+    AtmosItemListComponent,
     AtmosIapCardComponent,
     AtmosDraftWarningComponent
   ]
@@ -52,6 +52,11 @@ export class AtmosEventInstanceComponent implements OnDestroy {
   readonly cLeft = signal(0);
   readonly ec = signal(0);
   readonly ecLeft = signal(0);
+
+  readonly imageStyle = computed<string | undefined>(() => {
+    const url = this.instance()?.event?.imageUrl;
+    return url ? `url('${url}')` : undefined;
+  });
 
   private _itemSub?: SubscriptionLike;
 

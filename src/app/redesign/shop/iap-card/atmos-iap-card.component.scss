@@ -29,9 +29,8 @@
 
 .atmos-iap-card__heading {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .atmos-iap-card__title {
@@ -40,6 +39,13 @@
   font-weight: 600;
   color: var(--atmos-text);
   text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-iap-card__subline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .atmos-iap-card__price {
@@ -90,6 +96,25 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+}
+
+.atmos-iap-card__item {
+  display: block;
+  padding: 4px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-tile-bg);
+  color: inherit;
+  text-decoration: none;
+  transition: background var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-tile-bg-hover);
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
 }
 
 .atmos-iap-card__actions {

@@ -3,10 +3,12 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ISeason, ICost } from 'skygame-data';
 import { CostHelper } from '@app/helpers/cost-helper';
+import { SeasonHelper } from '@app/helpers/season-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
-import { DateComponent } from '@app/components/util/date/date.component';
+import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
+import { AtmosDailyCheckinComponent } from '@app/redesign/daily/daily-checkin/atmos-daily-checkin.component';
 
 export type AtmosSeasonCardSection =
   | 'img' | 'overview' | 'date' | 'spirits' | 'cost' | 'dailies' | 'checkin' | 'calculator';
@@ -18,14 +20,14 @@ export interface AtmosSeasonCardOptions {
 /**
  * Atmospheric season summary card. Mirrors `SeasonCardComponent` inputs.
  * Daily check-in / currency side-effects are intentionally not implemented;
- * pages can wire them up via the (checkinToggle) output if needed.
+ * pages wire them up via (checkinToggle), typically to `DailyCheckinService`.
  */
 @Component({
   selector: 'app-atmos-season-card',
   templateUrl: './atmos-season-card.component.html',
   styleUrl: './atmos-season-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, CostComponent, DateComponent, DaysLeftComponent]
+  imports: [RouterLink, MatIcon, CostComponent, DateRangeComponent, DaysLeftComponent, AtmosDailyCheckinComponent]
 })
 export class AtmosSeasonCardComponent {
   readonly season = input<ISeason | undefined>(undefined);
@@ -39,6 +41,11 @@ export class AtmosSeasonCardComponent {
     const map: Record<string, boolean> = {};
     for (const s of show) { map[s] = true; }
     return map;
+  });
+
+  readonly quarter = computed<number | undefined>(() => {
+    const number = this.season()?.number;
+    return number ? SeasonHelper.getQuarter(number) : undefined;
   });
 
   readonly imageStyle = computed<string | undefined>(() => {

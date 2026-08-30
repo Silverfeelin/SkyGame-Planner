@@ -33,6 +33,7 @@
 }
 
 .atmos-news__entry-head {
+  --atmos-focus-offset: -2px; /* clipped by the rounded, overflow-hidden entry card */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -52,8 +53,8 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--atmos-accent);
-    outline-offset: -2px;
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
   }
 }
 

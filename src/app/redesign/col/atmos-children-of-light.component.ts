@@ -166,7 +166,7 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
       popupAnchor: [0, -12],
     });
 
-    L.imageOverlay('assets/game/map/void.webp', [[-141.87, 185.63], [-116.88, 210.63]]).addTo(layerGroup);
+    L.imageOverlay('assets/game/map/void.webp', [[-146.12, 173.38], [-121.13, 198.38]]).addTo(layerGroup);
 
     this.wingedLights.filter(w => w.mapData?.position).forEach(w => {
       if (!w.mapData) { return; }
@@ -334,7 +334,7 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
     grid.appendChild(this._mapInstanceService.ttRealm(wl.area.realm));
     grid.insertAdjacentHTML('beforeend', `
 <div class="container s-leaflet-item s-leaflet-desc">
-  <div class="menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="menu-label">${wl.description || ''}</div>
+  <div class="s-leaflet-menu-icon s-leaflet-maticon s-leaflet-maticon-desktop">description</div><div class="s-leaflet-menu-label">${wl.description || ''}</div>
 </div>`);
 
     let videoUrl = wl.mapData?.videoUrl;

@@ -33,11 +33,6 @@
   flex: 0 0 auto;
 }
 
-.atmos-rs-detail__sep {
-  margin: 0 4px;
-  color: var(--atmos-text-mute);
-}
-
 .atmos-rs-detail__pill {
   margin-left: 4px;
 }
@@ -63,9 +58,4 @@
   flex-direction: column;
   gap: var(--atmos-gap-compact);
   flex: 0 0 auto;
-}
-
-.atmos-rs-detail__tree-name {
-  font-weight: 600;
-  text-align: center;
 }

@@ -15,7 +15,6 @@ export const themes: Array<ITheme> = [
   { name: 'Moomin', value: 'moomin' },
   { name: 'Wonderland', value: 'wonderland' },
   { name: 'Void', value: 'dark' },
-  { name: 'Compact', value: 'compact' },
   { name: 'Surprise', value: 'surprise' },
 ]
 

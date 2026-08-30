@@ -49,23 +49,7 @@
 
 .atmos-friends__search-input {
   width: 100%;
-  background: var(--atmos-bg-elev);
-  border: var(--atmos-card-border);
-  border-radius: var(--atmos-radius-pill);
-  color: var(--atmos-text);
-  font: inherit;
-  font-size: 14px;
-  padding: 8px 14px 8px 38px;
-  outline: none;
-  transition: border-color var(--atmos-transition);
-
-  &::placeholder {
-    color: var(--atmos-text-mute);
-  }
-
-  &:focus {
-    border-color: var(--atmos-accent);
-  }
+  padding-left: 38px; // clears the absolutely positioned search icon
 }
 
 .atmos-friends__actions {

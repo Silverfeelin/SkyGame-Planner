@@ -1,3 +1,7 @@
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Todo</h1>
+</header>
+
 <div class="atmos-card">
   <div class="atmos-card__body">
     This page lists a few common tasks like missing item and spirit data or missing links to the wiki.<br/>
@@ -10,8 +14,23 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (item of itemsWithoutPreview; track item.guid) {
       <div>
-        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
-        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<span>{{ item.name }}</span>
+        <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
+        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
+        @if (item._wiki?.href) {
+          <div><a [href]="item._wiki!.href" target="_blank">[wiki]</a></div>
+        }
+      </div>
+    }
+  </div>
+</div>
+
+<div class="atmos-card">
+  <div class="atmos-card__header">Missing item order</div>
+  <div class="atmos-card__body" style="gap: 8px">
+    @for (item of itemsWithoutOrder; track item.guid) {
+      <div>
+        <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
+        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
       </div>
     }
   </div>
@@ -22,8 +41,8 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (item of itemsWithoutWiki; track item.guid) {
       <div>
-        <app-item-icon [item]="item" [hoverGlow]="false" [opaque]="true"></app-item-icon>
-        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<span>{{ item.name }}</span>
+        <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
+        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
       </div>
     }
   </div>

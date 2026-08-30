@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, ChangeDetectionStrategy, Component, computed, ElementRef, HostListener, inject, isDevMode, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ActivatedRoute, CanDeactivateFn, Router } from '@angular/router';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { parse as jsoncParse } from 'jsonc-parser';
 import L from 'leaflet';
 import { DateHelper } from '@app/helpers/date-helper';
@@ -11,6 +11,7 @@ import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.serv
 import { SettingService } from '@app/services/setting.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { environment } from 'src/environments/environment';
+import { AtmosRealmQuickActionsComponent } from '@app/redesign/realm/quick-actions/atmos-realm-quick-actions.component';
 
 interface ICandlesData { items: Array<ICandleArea>; }
 interface ICandleArea {
@@ -66,7 +67,7 @@ export const canDeactivateAtmosCrTracker: CanDeactivateFn<AtmosCrTrackerComponen
   templateUrl: './atmos-cr-tracker.component.html',
   styleUrl: './atmos-cr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgbTooltip, MatIcon, OverlayComponent]
+  imports: [TooltipDirective, MatIcon, OverlayComponent, AtmosRealmQuickActionsComponent]
 })
 export class AtmosCrTrackerComponent implements AfterViewInit {
   @HostListener('window:beforeunload', ['$event'])

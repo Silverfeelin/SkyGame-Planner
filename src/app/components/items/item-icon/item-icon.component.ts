@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { SubscriptionLike } from 'rxjs';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
-import { HighlightType } from 'src/app/types/highlight';
 import { ItemSubIconsComponent } from './item-subicons/item-subicons.component';
 import { IconComponent } from '../../icon/icon.component';
 import { IItem, INode, IIAP, IItemListNode, ItemSize, ItemSubicon } from 'skygame-data';
@@ -25,11 +24,6 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
 
   /** Forces icon to be opaque instead of checking if it's unlocked. */
   @Input() opaque?: boolean;
-
-  @HostBinding('class.hoverable')
-  @Input() hoverGlow = true;
-  /** Type of highlight border */
-  @Input() glowType?: HighlightType = 'default';
 
   @HostBinding('attr.data-size')
   _size: ItemSize = 'default';
