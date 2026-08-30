@@ -1,0 +1,37 @@
+/* The picker only renders while it is open. `contents` keeps the empty host
+   from taking part in the page's flex gap the rest of the time. */
+:host { display: contents; }
+
+.atmos-bg-picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-bg-picker__section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--atmos-text-mute);
+}
+
+.atmos-bg-picker__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-bg-picker__item {
+  width: 96px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: var(--atmos-radius-sm);
+  border: var(--atmos-card-border);
+  cursor: pointer;
+  transition: border-color var(--atmos-transition), transform var(--atmos-transition);
+
+  &:hover {
+    border-color: var(--atmos-accent);
+    transform: translateY(-1px);
+  }
+}

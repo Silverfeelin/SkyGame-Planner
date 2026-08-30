@@ -12,6 +12,7 @@ import { ISpecialVisitSpirit } from 'skygame-data/dist/interfaces/special-visit-
 @Component({
   selector: 'atmos-closet-ongoing',
   templateUrl: './atmos-closet-ongoing.component.html',
+  styleUrl: './atmos-closet-ongoing.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [ItemIconComponent, SpiritTypeIconComponent, CardComponent]

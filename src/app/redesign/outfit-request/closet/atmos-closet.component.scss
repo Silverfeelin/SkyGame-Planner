@@ -22,7 +22,9 @@
 // Copy controls
 .atmos-copy-controls {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
 }
 
 .atmos-image-picker {
@@ -44,24 +46,34 @@
 
 .btn-group-img {
   display: flex;
-  button { text-align: left; }
+  .atmos-btn { justify-content: flex-start; }
 }
 
 .btn-copy-img { flex: 1; }
 
 // Warnings
 .atmos-warn-badge {
-  color: #f44;
+  color: var(--atmos-danger);
   cursor: pointer;
-  vertical-align: bottom;
+  display: inline-flex;
+  align-items: center;
 }
 
-.color-warn { color: #f44; }
-.border-warn { border: 2px solid #f44; }
+.atmos-warn-hidden {
+  scroll-margin-top: var(--atmos-sticky-top, 0px);
+}
 
 .atmos-warn-box {
-  background: var(--atmos-bg-elev);
+  display: flex;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+  background: var(--atmos-danger-bg);
   padding: var(--atmos-gap-compact);
   border-radius: var(--atmos-radius-sm);
-  border: 2px solid #f44;
+  border: 1px solid var(--atmos-danger-accent);
+}
+
+.atmos-warn-box__icon {
+  flex: 0 0 auto;
+  color: var(--atmos-danger);
 }

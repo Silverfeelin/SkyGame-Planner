@@ -1,0 +1,3 @@
+/* The panel only renders while it is open. `contents` keeps the empty host
+   from taking part in the page's flex gap the rest of the time. */
+:host { display: contents; }

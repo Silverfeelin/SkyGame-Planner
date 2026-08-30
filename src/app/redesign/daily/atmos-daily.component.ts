@@ -15,6 +15,7 @@ import {
   AtmosDailyTaskComponent,
   AtmosSeasonCardComponent
 } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosDailyQuickActionsComponent } from './quick-actions/atmos-daily-quick-actions.component';
 
 interface IDailyTaskState {
   dailyDate: string;
@@ -58,7 +59,8 @@ function resolveDailyRealm(dataService: DataService): IRealm | undefined {
     DateTimePipe,
     AtmosDailyCardComponent,
     AtmosDailyTaskComponent,
-    AtmosSeasonCardComponent
+    AtmosSeasonCardComponent,
+    AtmosDailyQuickActionsComponent
   ]
 })
 export class AtmosDailyComponent implements OnInit, OnDestroy {

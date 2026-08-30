@@ -1,5 +1,7 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
 }
 
 .atmos-pnr-tracker__container {
@@ -10,8 +12,10 @@
 }
 
 .atmos-pnr-tracker__map {
-  height: calc(100vh - 80px);
-  max-height: calc(100vh - 80px);
+  /* Leaves room for the shell chrome plus the quick-action row and page
+     header stacked above the map. */
+  height: calc(100vh - 190px);
+  max-height: calc(100vh - 190px);
   width: 100%;
 }
 

@@ -7,16 +7,11 @@
 
 .atmos-privacy__header {
   margin-bottom: var(--atmos-gap);
+  /* The policy is a centred document rather than a normal left-aligned page. */
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   text-align: center;
-}
-
-.atmos-privacy__title {
-  margin: 0 0 8px;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--atmos-text);
-  text-shadow: var(--atmos-text-shadow-large);
 }
 
 .atmos-privacy__meta {
@@ -72,7 +67,7 @@
 }
 
 @media (max-width: 720px) {
-  .atmos-privacy__title { font-size: 26px; }
+  .atmos-privacy__header { --atmos-page-title-size: 26px; }
   .atmos-privacy__body { padding: 20px; font-size: 14px; }
   .atmos-privacy__section { margin-top: 22px; }
 }

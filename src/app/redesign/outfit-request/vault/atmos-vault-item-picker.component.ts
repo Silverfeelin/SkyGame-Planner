@@ -16,6 +16,7 @@ export type ItemSelection = { [key in ItemType]?: IItem };
 @Component({
   selector: 'atmos-vault-item-picker',
   templateUrl: './atmos-vault-item-picker.component.html',
+  styleUrl: './atmos-vault-item-picker.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatIcon, ItemIconComponent, FormsModule, ItemTypePipe]

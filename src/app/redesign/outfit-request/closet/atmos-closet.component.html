@@ -1,22 +1,15 @@
+<atmos-tool-quick-actions />
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Sky closet</h1>
+</header>
+
 <div class="atmos-closet-page">
-  <!-- Page header -->
   <div class="atmos-card">
-    <div class="atmos-card__header">
-      <h2 class="atmos-section__title mb-0">Sky closet</h2>
-      <div class="atmos-header-actions">
-        <a class="atmos-icon-btn" [routerLink]="'/outfit-request/collage'" data-step="901" data-position="bottom-right-aligned">
-          <mat-icon>photo</mat-icon>
-          <span>Collage</span>
-        </a>
-      </div>
-    </div>
     <div class="atmos-card__body">
       <div data-step="0" data-position="bottom-left-aligned">
         Please visit the
-        <a class="atmos-icon-btn" [routerLink]="'/outfit-request/request'">
-          <mat-icon>add</mat-icon>
-          <span>Request</span>
-        </a>
+        <a class="atmos-text-link" [routerLink]="'/outfit-request/request'">Request</a>
         page if you want to create an outfit request.
       </div>
     </div>
@@ -42,14 +35,14 @@
       <div class="atmos-card__body">
         @if (state.selectionHasUnavailable()) {
           <div class="atmos-warn-box">
-            <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
-            <span class="menu-label">This selection has items not available in the shared closet.</span>
+            <mat-icon class="atmos-warn-box__icon">priority_high</mat-icon>
+            <span>This selection has items not available in the shared closet.</span>
           </div>
         }
         @if (!requesting && state.selectionHasHidden()) {
           <div class="atmos-warn-box" [class.mt]="state.selectionHasUnavailable()">
-            <mat-icon class="menu-icon color-warn">priority_high</mat-icon>
-            <span class="menu-label">This selection has items hidden in your closet. You might be missing some items.</span>
+            <mat-icon class="atmos-warn-box__icon">priority_high</mat-icon>
+            <span>This selection has items hidden in your closet. You might be missing some items.</span>
           </div>
         }
       </div>
@@ -57,22 +50,23 @@
   }
 
   <!-- Item grid header with copy controls -->
-  <div class="atmos-card mt" data-step="1" data-position="top-left-aligned">
+  <div class="atmos-card " data-step="1" data-position="top-left-aligned">
     <div class="atmos-card__header header-sticky">
-      <h2 class="atmos-section__title mb-0 d-inline-block">Items</h2>&nbsp;
+      <h2 class="atmos-section__title mb-0">Items</h2>
+
       <!-- Copy controls -->
-      <div class="atmos-copy-controls d-inline-block v-top" data-step="4" data-position="bottom-left-aligned">
-        <div class="button-group">
-          <button type="button" class="btn-copy"
+      <div class="atmos-copy-controls" data-step="4" data-position="bottom-left-aligned">
+        <div class="atmos-btn-group">
+          <button type="button" class="atmos-btn atmos-btn--sm"
             (click)="toggleImagePicker()"
             [disabled]="state.isRendering()"
             data-step="6" data-position="bottom-left-aligned">
             <mat-icon [class.spin]="state.isRendering() === 2">
               {{ state.isRendering() === 2 ? 'cached' : 'file_copy' }}
             </mat-icon>
-            <span class="menu-label">Share</span>
+            <span>Share</span>
           </button>
-          <button type="button" class="btn-copy"
+          <button type="button" class="atmos-btn atmos-btn--sm"
             (click)="copyLink()"
             [disabled]="state.isRendering()"
             data-step="5" data-position="bottom-left-aligned">
@@ -91,41 +85,41 @@
         @if (state.showingImagePicker()) {
           <div class="atmos-image-picker">
             @if (!requesting) {
-              <div class="button-group btn-group-img">
-                <button type="button" class="btn-copy-img" (click)="shareImage('closet')" data-step="7" data-position="top-left-aligned">
+              <div class="atmos-btn-group btn-group-img">
+                <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('closet')" data-step="7" data-position="top-left-aligned">
                   <mat-icon>image</mat-icon>
-                  <span class="menu-label">Share closet</span>
+                  <span>Share closet</span>
                 </button>
-                <button type="button" (click)="copyImage('closet')">
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('closet')">
                   <mat-icon>file_copy</mat-icon>
                 </button>
               </div>
             }
-            <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy-img" (click)="shareImage('request')" data-step="8" data-position="top-left-aligned">
+            <div class="atmos-btn-group btn-group-img">
+              <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('request')" data-step="8" data-position="top-left-aligned">
                 <mat-icon>background_grid_small</mat-icon>
-                <span class="menu-label">Share request</span>
+                <span>Share request</span>
               </button>
-              <button type="button" (click)="copyImage('request')">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('request')">
                 <mat-icon>file_copy</mat-icon>
               </button>
             </div>
-            <div class="button-group btn-group-img">
-              <button type="button" class="btn-copy-img" (click)="shareImage('square')" data-step="9" data-position="top-left-aligned">
+            <div class="atmos-btn-group btn-group-img">
+              <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('square')" data-step="9" data-position="top-left-aligned">
                 <mat-icon>grid_on</mat-icon>
-                <span class="menu-label">Share one fit</span>
+                <span>Share one fit</span>
               </button>
-              <button type="button" (click)="copyImage('square')">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('square')">
                 <mat-icon>file_copy</mat-icon>
               </button>
             </div>
             @if (!requesting) {
-              <div class="button-group btn-group-img">
-                <button type="button" class="btn-copy-img" (click)="shareImage('template')" data-step="10" data-position="top-left-aligned">
+              <div class="atmos-btn-group btn-group-img">
+                <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('template')" data-step="10" data-position="top-left-aligned">
                   <mat-icon>image</mat-icon>
-                  <span class="menu-label">Share template</span>
+                  <span>Share template</span>
                 </button>
-                <button type="button" (click)="copyImage('template')">
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('template')">
                   <mat-icon>file_copy</mat-icon>
                 </button>
               </div>

@@ -5,6 +5,7 @@ import { ClosetStateService } from './closet-state.service';
 @Component({
   selector: 'atmos-closet-modify-panel',
   templateUrl: './atmos-closet-modify-panel.component.html',
+  styleUrl: './atmos-closet-modify-panel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [MatIcon]

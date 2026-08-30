@@ -11,6 +11,7 @@ import { disableKeyboardShortcutsUntilDestroyed } from '@app/services/event.serv
 import { SettingService } from '@app/services/setting.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { environment } from 'src/environments/environment';
+import { AtmosRealmQuickActionsComponent } from '@app/redesign/realm/quick-actions/atmos-realm-quick-actions.component';
 
 interface ICandlesData { items: Array<ICandleArea>; }
 interface ICandleArea {
@@ -66,7 +67,7 @@ export const canDeactivateAtmosCrTracker: CanDeactivateFn<AtmosCrTrackerComponen
   templateUrl: './atmos-cr-tracker.component.html',
   styleUrl: './atmos-cr-tracker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [TooltipDirective, MatIcon, OverlayComponent]
+  imports: [TooltipDirective, MatIcon, OverlayComponent, AtmosRealmQuickActionsComponent]
 })
 export class AtmosCrTrackerComponent implements AfterViewInit {
   @HostListener('window:beforeunload', ['$event'])

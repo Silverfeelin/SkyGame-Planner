@@ -6,6 +6,7 @@ import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interf
 @Component({
   selector: 'atmos-closet-background-picker',
   templateUrl: './atmos-closet-background-picker.component.html',
+  styleUrl: './atmos-closet-background-picker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: []

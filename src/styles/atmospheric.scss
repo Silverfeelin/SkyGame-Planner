@@ -275,6 +275,73 @@
   color: var(--atmos-accent);
 }
 
+/* Destructive action. Same geometry as .atmos-btn, tinted red. */
+.atmos-btn--danger,
+.atmos-btn.atmos-btn--danger {
+  color: var(--atmos-danger);
+  background: var(--atmos-danger-bg);
+  border-color: var(--atmos-danger-accent);
+
+  &:hover {
+    background: var(--atmos-danger-accent);
+    color: var(--atmos-text);
+  }
+}
+
+/* Round floating action button. Pair with .atmos-btn. */
+.atmos-btn--fab {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: var(--atmos-overlay-shadow);
+
+  > mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Segmented row of .atmos-btn. Squares off the inner edges so the buttons
+   read as one control, and collapses the doubled borders between them. */
+.atmos-btn-group {
+  display: inline-flex;
+  align-items: stretch;
+
+  > .atmos-btn {
+    border-radius: 0;
+
+    &:not(:first-child) { margin-left: -1px; }
+    &:first-child {
+      border-top-left-radius: var(--atmos-radius-pill);
+      border-bottom-left-radius: var(--atmos-radius-pill);
+    }
+    &:last-child {
+      border-top-right-radius: var(--atmos-radius-pill);
+      border-bottom-right-radius: var(--atmos-radius-pill);
+    }
+    &:hover, &.atmos-btn--active { z-index: 1; }
+  }
+}
+
+/* Toggled-on state for .atmos-icon-btn. */
+.atmos-icon-btn--active {
+  opacity: 1;
+  color: var(--atmos-accent);
+  background: var(--atmos-hover-bg);
+}
+
+/* Destructive variant of .atmos-icon-btn. */
+.atmos-icon-btn--danger {
+  color: var(--atmos-danger);
+
+  &:hover {
+    color: var(--atmos-danger);
+    background: var(--atmos-danger-bg);
+  }
+}
+
 /* Default atmospheric inline link. Use on anchors that sit inside prose
    or other text — produces a subtle underlined link that lifts to the
    accent colour on hover. */

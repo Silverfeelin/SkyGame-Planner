@@ -1,7 +1,6 @@
-$red: #f00;
-$yellow: #ff0;
-$green: #0f0;
-$blue: #0aa0ff;
+@use 'closet-markers' as markers;
+
+:host { @include markers.tokens; }
 
 .atmos-toolbar {
   display: flex;
@@ -20,6 +19,13 @@ $blue: #0aa0ff;
   position: relative;
   flex: 1;
   min-width: 180px;
+  display: flex;
+  align-items: center;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  -webkit-backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
 
   &__icon {
     position: absolute;
@@ -33,6 +39,10 @@ $blue: #0aa0ff;
   &__field {
     width: 100%;
     padding-left: 36px; // clears the absolutely positioned search icon
+    background: transparent;
+    border: 0;
+
+    &:hover { background: transparent; }
   }
 }
 
@@ -55,17 +65,17 @@ $blue: #0aa0ff;
 
   &--active { }
   &--fill { }
-  &--r { background: $red; }
-  &--y { background: $yellow; }
-  &--g { background: $green; }
-  &--b { background: $blue; }
+  &--r { background: var(--closet-marker-r); }
+  &--y { background: var(--closet-marker-y); }
+  &--g { background: var(--closet-marker-g); }
+  &--b { background: var(--closet-marker-b); }
 }
 
 .atmos-color-btn--active {
-  &.atmos-color-btn--r { border-color: $red; }
-  &.atmos-color-btn--y { border-color: $yellow; }
-  &.atmos-color-btn--g { border-color: $green; }
-  &.atmos-color-btn--b { border-color: $blue; }
+  &.atmos-color-btn--r { border-color: var(--closet-marker-r); }
+  &.atmos-color-btn--y { border-color: var(--closet-marker-y); }
+  &.atmos-color-btn--g { border-color: var(--closet-marker-g); }
+  &.atmos-color-btn--b { border-color: var(--closet-marker-b); }
 }
 
 .atmos-color-picker__dropdown {

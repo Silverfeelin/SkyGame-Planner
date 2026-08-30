@@ -1,7 +1,7 @@
 <atmos-realm-quick-actions/>
 
 @if (realm(); as r) {
-  <div class="atmos-page__quick-actions">
+  <section class="atmos-page__quick-actions">
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/realm', r.guid]">
       <mat-icon>map</mat-icon>
       <span>{{ r.name }}</span>
@@ -10,7 +10,7 @@
       <mat-icon>location_on</mat-icon>
       <span>All areas</span>
     </a>
-  </div>
+  </section>
 }
 
 <header class="atmos-page__header">

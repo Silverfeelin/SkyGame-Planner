@@ -19,6 +19,7 @@ import { AtmosClosetBackgroundPickerComponent } from './atmos-closet-background-
 import { AtmosClosetModifyPanelComponent } from './atmos-closet-modify-panel.component';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
 import { drawFingerprint } from '@app/redesign/outfit-request/closet-fingerprint';
+import { AtmosToolQuickActionsComponent } from '@app/redesign/tool/quick-actions/atmos-tool-quick-actions.component';
 
 type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
 const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
@@ -36,7 +37,8 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
     AtmosClosetGridComponent,
     AtmosClosetDyePickerComponent,
     AtmosClosetBackgroundPickerComponent,
-    AtmosClosetModifyPanelComponent
+    AtmosClosetModifyPanelComponent,
+    AtmosToolQuickActionsComponent
   ]
 })
 export class AtmosClosetComponent implements OnDestroy {

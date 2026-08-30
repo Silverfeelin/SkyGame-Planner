@@ -1,0 +1,28 @@
+@use 'closet-item' as closet-item;
+
+:host {
+  @include closet-item.tokens;
+  display: contents;
+}
+
+@include closet-item.styles;
+
+.atmos-closet-ongoing__title {
+  display: flex;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.atmos-closet-ongoing__title-icon {
+  flex: 0 0 auto;
+}
+
+.atmos-closet-ongoing__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--atmos-gap-compact);
+}
