@@ -9,7 +9,6 @@ import { AtmosItemDyeComponent } from './item/dye/atmos-item-dye.component';
 import { AtmosItemHeartsComponent } from './item/heart/atmos-item-hearts.component';
 import { AtmosItemCollectionComponent } from './item/collection/atmos-item-collection.component';
 import { AtmosItemDetailComponent } from './item/detail/atmos-item-detail.component';
-import { AtmosItemFieldGuideComponent } from './item/field-guide/atmos-item-field-guide.component';
 import { AtmosItemInflationComponent } from './item/inflation/atmos-item-inflation.component';
 import { AtmosItemUnlockComponent } from './item/unlock/atmos-item-unlock.component';
 import { AtmosItemUnlockCalculatorComponent } from './item/unlock-calculator/atmos-item-unlock-calculator.component';
@@ -30,7 +29,6 @@ import { AtmosSpiritComponent } from './spirit/detail/atmos-spirit.component';
 import { AtmosTravelingSpiritsComponent } from './ts/atmos-traveling-spirits.component';
 import { AtmosReturningSpiritsComponent } from './rs/atmos-returning-spirits.component';
 import { AtmosReturningSpiritComponent } from './rs/detail/atmos-returning-spirit.component';
-import { AtmosSpiritTreeViewerComponent } from './spirit-tree/viewer/atmos-spirit-tree-viewer.component';
 import { AtmosSpiritTreeViewComponent } from './spirit-tree/view/atmos-spirit-tree-view.component';
 import { AtmosWingedLightComponent } from './winged-light/atmos-winged-light.component';
 import { AtmosChildrenOfLightComponent } from './col/atmos-children-of-light.component';
@@ -121,7 +119,8 @@ export const REDESIGN_ROUTES: Routes = [
       { path: 'dye',        component: AtmosItemDyeComponent,        title: title('Dye previews') },
       { path: 'heart',      component: AtmosItemHeartsComponent,     title: title('Hearts') },
       { path: 'collection', component: AtmosItemCollectionComponent, title: title('Collections') },
-      { path: 'field-guide', component: AtmosItemFieldGuideComponent, title: title('Field guide') },
+      /* Legacy path: the field guide was replaced by the item previews page. */
+      { path: 'field-guide', redirectTo: 'preview', pathMatch: 'full' },
       { path: 'inflation',  component: AtmosItemInflationComponent,  title: title('Item inflation') },
       { path: 'unlock',     component: AtmosItemUnlockComponent,     title: title('Quick unlock') },
       { path: 'unlock-calculator', component: AtmosItemUnlockCalculatorComponent, title: title('Cost calculator') },
@@ -191,7 +190,6 @@ export const REDESIGN_ROUTES: Routes = [
   {
     path: 'spirit-tree',
     children: [
-      { path: 'viewer', component: AtmosSpiritTreeViewerComponent, title: title('Spirit tree viewer') },
       { path: ':guid',  component: AtmosSpiritTreeViewComponent,   title: title('Spirit tree') },
     ]
   },

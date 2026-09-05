@@ -49,9 +49,9 @@
       </p>
       <p class="atmos-paragraph">
         A simple example: buying a
-        4 <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(60)</span>
+        4 <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(60)</span>
         blessing is twice as efficient as buying a
-        4 <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(30)</span>
+        4 <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon> <span class="atmos-optimizer__value">(30)</span>
         blessing — same cost, double the friendship.
       </p>
       <hr class="atmos-rule"/>
@@ -137,14 +137,14 @@
                  step="1" min="-999" max="999" [formControl]="candleControl"/>
         </div>
         You can get <b class="is-met">{{ candlesLeft() }}</b>
-        <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
+        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
         more during the season (not including double light events).<br/>
         It will cost a total of <b class="is-lacking">{{ candlesRequired() }}</b>
-        <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
+        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
         to buy the items you highlighted.<br/>
         If you don't miss any day you should end with
         <b [class.is-met]="candlesFinal() >= 0" [class.is-lacking]="candlesFinal() < 0">{{ candlesFinal() }}</b>
-        <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>.
+        <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>.
         @if (candlesFinal() < 0) {
           <div><b class="is-lacking">You don't have enough seasonal candles to buy all of the items you've highlighted.</b></div>
         } @else {
@@ -175,7 +175,7 @@
               <li>
                 {{ node.root?.tree?.spirit?.name }} – {{ node.item!.name }} –
                 {{ node.sc }}
-                <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>
+                <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
                 <span class="atmos-optimizer__value">({{ nodeValues[node.guid] | number:'1.0-0' }})</span>
               </li>
             }
@@ -183,7 +183,7 @@
           <p class="atmos-paragraph">
             These items would give you an additional <b class="is-met">{{ knapsackTotalPoints() | number:'1.0-0' }}</b> friendship points for
             <b class="is-lacking">{{ knapsackTotalSc() }}</b>
-            <mat-icon class="atmos-optimizer__inline-icon" svgIcon="season-candle"></mat-icon>.<br/>
+            <mat-icon class="atmos-optimizer__inline-icon seasonal" svgIcon="season-candle"></mat-icon>.<br/>
             Please highlight the items you'd like to add to update the calculation!
           </p>
           <button type="button" class="atmos-btn atmos-optimizer__knapsack-action" (click)="highlightKnapsack()">Highlight suggested items</button>

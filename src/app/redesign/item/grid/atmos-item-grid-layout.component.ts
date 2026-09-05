@@ -3,6 +3,7 @@ import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { ItemHelper } from '@app/helpers/item-helper';
+import { AtmosItemTypeNavComponent } from '../type-nav/atmos-item-type-nav.component';
 import { IItem, ItemType } from 'skygame-data';
 
 export const ITEM_GRID_CATEGORIES: ReadonlyArray<{ type: ItemType; svgIcon: string }> = [
@@ -30,7 +31,7 @@ export const ITEM_GRID_CATEGORIES: ReadonlyArray<{ type: ItemType; svgIcon: stri
   templateUrl: './atmos-item-grid-layout.component.html',
   styleUrl: './atmos-item-grid-layout.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, MatIcon, ItemTypePipe]
+  imports: [NgTemplateOutlet, MatIcon, ItemTypePipe, AtmosItemTypeNavComponent]
 })
 export class AtmosItemGridLayoutComponent implements OnInit {
   readonly categories = ITEM_GRID_CATEGORIES;

@@ -10,6 +10,15 @@ import { SpiritTypeIconComponent } from '@app/components/spirit-type-icon/spirit
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 
+interface IQuickAction {
+  label: string;
+  /** Material ligature icon, or `svgIcon` for a sprite icon. */
+  icon?: string;
+  svgIcon?: string;
+  route: string;
+  queryParams?: Record<string, string>;
+}
+
 interface ITree {
   date?: DateTime;
   name: string;
@@ -46,6 +55,47 @@ export class AtmosSpiritComponent {
   readonly typeName = computed<string | undefined>(() => {
     const s = this.spirit();
     return s ? new SpiritTypePipe().transform(s.type) : undefined;
+  });
+
+  /** Links back to the spirit lists this spirit appears on. */
+  readonly quickActions = computed<ReadonlyArray<IQuickAction>>(() => {
+    const s = this.spirit();
+    if (!s) { return []; }
+
+    const actions: IQuickAction[] = [
+      { label: 'All spirits', icon: 'person', route: '/spirit' }
+    ];
+
+    switch (s.type) {
+      case 'Regular':
+        actions.push({ label: 'Regular spirits', svgIcon: 'candle', route: '/spirit', queryParams: { type: 'Regular' } });
+        break;
+      case 'Elder':
+        actions.push({ label: 'Elder spirits', svgIcon: 'ascended-candle', route: '/spirit', queryParams: { type: 'Elder' } });
+        break;
+      case 'Season':
+        actions.push({ label: 'Season spirits', svgIcon: 'season-candle', route: '/spirit', queryParams: { type: 'Season' } });
+        actions.push({ label: 'Elusive spirits', icon: 'timer', route: '/spirit/elusive' });
+        break;
+      case 'Guide':
+        actions.push({ label: 'Season guides', svgIcon: 'season-heart', route: '/spirit', queryParams: { type: 'Guide' } });
+        break;
+      case 'Event':
+        actions.push({ label: 'Event spirits', icon: 'event', route: '/spirit', queryParams: { type: 'Event' } });
+        break;
+      case 'Special':
+        actions.push({ label: 'Special spirits', icon: 'star', route: '/spirit', queryParams: { type: 'Special' } });
+        break;
+    }
+
+    if (s.travelingSpirits?.length) {
+      actions.push({ label: 'Traveling spirits', icon: 'hiking', route: '/ts' });
+    }
+    if (s.specialVisitSpirits?.length) {
+      actions.push({ label: 'Special visits', icon: 'flight', route: '/rs' });
+    }
+
+    return actions;
   });
 
   readonly event = computed<IEvent | undefined>(() => {

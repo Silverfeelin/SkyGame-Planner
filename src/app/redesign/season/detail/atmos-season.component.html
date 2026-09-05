@@ -161,7 +161,11 @@
         <div class="atmos-season__iap-grid">
           @for (shop of iapShops(); track shop.guid) {
             @for (iap of shop.iaps; track iap.guid) {
-              <app-atmos-iap-card [iap]="iap" [highlightIap]="highlightIap()"></app-atmos-iap-card>
+              <app-atmos-iap-card
+                [iap]="iap"
+                [highlightIap]="highlightIap()"
+                (purchasedToggle)="togglePurchased(iap)"
+                (giftedToggle)="toggleGifted(iap)"></app-atmos-iap-card>
             }
           }
         </div>

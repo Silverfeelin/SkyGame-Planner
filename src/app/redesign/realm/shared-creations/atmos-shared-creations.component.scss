@@ -36,7 +36,26 @@
     width: 40px;
     height: 40px;
     padding: 0;
+
+    /* The spell SVGs carry a lot of transparent padding inside their 300x300
+       viewBox, so they need to render larger than a regular icon to read at
+       the same visual size. */
+    mat-icon {
+      width: 32px;
+      height: 32px;
+      font-size: 32px;
+    }
   }
+}
+
+/* Popup rows built through the DOM API, so they carry no encapsulation
+   attribute. */
+::ng-deep .shared-creation-action {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
 }
 
 ::ng-deep .shared-creation-marker {

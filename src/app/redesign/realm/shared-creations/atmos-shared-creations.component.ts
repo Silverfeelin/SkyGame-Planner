@@ -177,8 +177,9 @@ export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
     if (expired) { age.style.color = '#f87171'; }
     wrap.appendChild(age);
 
-    const refreshBtn = document.createElement('div');
-    refreshBtn.className = 'container link s-leaflet-item';
+    const refreshBtn = document.createElement('button');
+    refreshBtn.type = 'button';
+    refreshBtn.className = 'container link s-leaflet-item atmos-focus-ring shared-creation-action';
     refreshBtn.innerHTML = `<div class="s-leaflet-menu-icon s-leaflet-maticon">refresh</div><div class="s-leaflet-menu-label">Refresh (reset timer)</div>`;
     refreshBtn.addEventListener('click', () => {
       creation.createdAt = DateTime.now().setZone(DateHelper.skyTimeZone).toFormat(DATE_FORMAT);
@@ -188,8 +189,9 @@ export class AtmosSharedCreationsComponent implements AfterViewInit, OnDestroy {
     });
     wrap.appendChild(refreshBtn);
 
-    const removeBtn = document.createElement('div');
-    removeBtn.className = 'container link s-leaflet-item';
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'container link s-leaflet-item atmos-focus-ring shared-creation-action';
     removeBtn.innerHTML = `<div class="s-leaflet-menu-icon s-leaflet-maticon">delete</div><div class="s-leaflet-menu-label">Remove</div>`;
     removeBtn.addEventListener('click', () => {
       marker.closePopup();

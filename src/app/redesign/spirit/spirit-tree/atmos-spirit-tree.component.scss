@@ -305,6 +305,12 @@ $st-up-trim: 12px;
   &.is-right {
     padding-bottom: $st-side-offset;
   }
+
+  // The centre trunk is first in the DOM (tab order runs middle → left →
+  // right); `order` puts the columns back in their visual arrangement.
+  &.is-left   { order: 1; }
+  &.is-center { order: 2; }
+  &.is-right  { order: 3; }
 }
 
 // Fixed-size slot: the connector lines are positioned relative to this box,

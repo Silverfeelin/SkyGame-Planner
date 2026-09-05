@@ -257,6 +257,7 @@ h6, .h6 { font-size: var(--atmos-h6); }
 
 // Global classes
 .c-accent { color: var(--atmos-accent) !important; }
+.c-muted { color: var(--atmos-text-mute) !important; }
 .c-completed { color: var(--atmos-good) !important; }
 .c-old { color: var(--atmos-warm) !important; }
 .c-new { color: var(--atmos-good) !important; }
@@ -290,26 +291,6 @@ h6, .h6 { font-size: var(--atmos-h6); }
 
 p:last-child {
   margin-bottom: 0;
-}
-
-.unlock-check {
-  position: absolute;
-  right: 1px;
-  bottom: 0;
-  color: var(--atmos-warm);
-  opacity: 0;
-  transition: opacity var(--atmos-transition);
-  pointer-events: none;
-  text-shadow: var(--atmos-overlay-shadow) 1px 1px 0;
-
-  &.unlocked {
-    opacity: 1;
-    transition: opacity var(--atmos-transition);
-  }
-
-  &.self {
-    color: var(--atmos-good);
-  }
 }
 
 .point { cursor: pointer !important; }

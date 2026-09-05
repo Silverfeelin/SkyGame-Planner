@@ -48,7 +48,6 @@
     width: 20px;
     height: 20px;
     font-size: 20px;
-    color: var(--atmos-accent);
   }
 }
 
@@ -111,4 +110,11 @@
 .atmos-realm__tree-wrapper {
   display: inline-block;
   flex: 0 0 auto;
+}
+
+.atmos-realm__section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
 }

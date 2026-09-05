@@ -32,7 +32,8 @@
   --atmos-danger-bg:     oklch(0.20 0.07 22 / 0.55);
   --atmos-danger-accent: oklch(0.44 0.18 22);
   --atmos-warn-accent:   oklch(0.80 0.16 45);
-  --atmos-currency:      oklch(0.90 0.01 var(--atmos-hue));
+  /* Regular candles/hearts read as neutral white, never tinted by the theme hue. */
+  --atmos-currency:      oklch(0.92 0 0);
   --atmos-seasonal:      oklch(0.78 0.14 65);
   --atmos-favourite:     oklch(0.87 0.18 93);
   --atmos-highlight:     oklch(0.80 0.18 290);
@@ -601,7 +602,8 @@ a.atmos-link:focus-visible {
     backdrop-filter: var(--atmos-blur-soft);
     -webkit-backdrop-filter: var(--atmos-blur-soft);
     border: var(--atmos-map-control-border) !important;
-    border-radius: var(--atmos-radius-sm) !important;
+    /* Round, matching the round buttons used elsewhere in the UI. */
+    border-radius: 50% !important;
     transition: background var(--atmos-transition);
 
     &:hover {
@@ -879,6 +881,64 @@ a.atmos-link:focus-visible {
   border: 0;
   border-top: 1px solid var(--atmos-line-soft);
   margin: 12px 0;
+}
+
+// 7b. Progress bar. A filled track with a centered label drawn on top:
+//
+//   <div class="atmos-progress" [class.is-full]="done === total">
+//     <div class="atmos-progress__fill" [style.width.%]="percent"></div>
+//     <div class="atmos-progress__text">3 / 10 <span class="atmos-progress__note">(…)</span></div>
+//   </div>
+//
+// Add zero or more `.atmos-progress__divider` elements (width positions the
+// divider) to mark milestones along the track.
+.atmos-progress {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  border-radius: var(--atmos-radius-sm);
+  border: var(--atmos-card-border);
+  background: var(--atmos-chip-bg);
+  overflow: hidden;
+
+  &.is-full .atmos-progress__fill {
+    background: var(--atmos-good);
+  }
+}
+
+.atmos-progress__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--atmos-accent);
+  transition: width var(--atmos-transition);
+}
+
+.atmos-progress__divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-right: 2px solid var(--atmos-line-soft);
+  pointer-events: none;
+}
+
+.atmos-progress__text {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-progress__note {
+  margin-left: 6px;
+  color: var(--atmos-text-dim);
+  font-weight: 500;
 }
 
 // 8. Card header

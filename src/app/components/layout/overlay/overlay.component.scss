@@ -41,5 +41,9 @@
 
 .overlay-close {
   flex: 0 0 auto;
-  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
 }

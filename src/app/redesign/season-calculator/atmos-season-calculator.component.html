@@ -29,9 +29,6 @@
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', season.guid]">
       <mat-icon>arrow_back</mat-icon> Season
     </a>
-    <a class="atmos-btn atmos-btn--sm" routerLink="/currency">
-      <mat-icon>account_balance_wallet</mat-icon> Currencies
-    </a>
     <a class="atmos-btn atmos-btn--sm" href="https://sky-season-calculator.netlify.app/" target="_blank" rel="noopener">
       <mat-icon>open_in_new</mat-icon> Stoat's Calculator
     </a>
@@ -63,7 +60,7 @@
 
       <div class="atmos-calc__row">
         <span class="atmos-calc__label">Your season candles:</span>
-        <mat-icon class="atmos-calc__inline-icon" svgIcon="candle"></mat-icon>
+        <mat-icon class="atmos-calc__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
         <input #inpSc type="number" min="0" max="99999"
                class="atmos-input atmos-input--inline"
                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"

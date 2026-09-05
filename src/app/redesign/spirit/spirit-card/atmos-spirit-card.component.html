@@ -19,7 +19,7 @@
             @if (sections()['select']) {
               <button type="button" class="atmos-spirit-card__title-btn" (click)="selectSpirit()">{{ s.name }}</button>
             } @else {
-              <a class="atmos-spirit-card__title-link" [routerLink]="['/spirit', s.guid]">{{ s.name }}</a>
+              <a class="atmos-spirit-card__title-link atmos-focus-ring" [routerLink]="['/spirit', s.guid]">{{ s.name }}</a>
             }
           </h3>
           @if (typeName()) {

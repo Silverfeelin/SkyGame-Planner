@@ -11,7 +11,7 @@
         <div class="atmos-season-card__heading">
           <div class="atmos-season-card__kicker">Season {{ s.number }} · {{ s.year }} Q{{ quarter() }}</div>
           <h2 class="atmos-season-card__title">
-            <a class="atmos-season-card__title-link" [routerLink]="['/season', s.guid]">{{ s.name }}</a>
+            <a class="atmos-season-card__title-link atmos-focus-ring" [routerLink]="['/season', s.guid]">{{ s.name }}</a>
           </h2>
         </div>
       </div>
@@ -46,7 +46,7 @@
       @if (sections()['checkin']) {
         <app-atmos-daily-checkin
           [checkedIn]="checkedIn()"
-          label="I have done my season dailies."
+          label="I have done my season dailies"
           (checkin)="onCheckin($event)"></app-atmos-daily-checkin>
       }
 

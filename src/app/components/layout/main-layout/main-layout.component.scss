@@ -16,7 +16,7 @@
   position: fixed;
   inset: 0;
   z-index: 0;
-  background-image: var(--atmos-bg-image, url(/assets/game/realms/Aviary.webp));
+  background-image: var(--atmos-bg-image, url(/assets/game/background/isle.webp));
   background-size: cover;
   background-position: center;
   filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));

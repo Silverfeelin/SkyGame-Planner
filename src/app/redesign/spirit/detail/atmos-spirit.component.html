@@ -1,4 +1,17 @@
 @if (spirit(); as s) {
+  <section class="atmos-page__quick-actions">
+    @for (action of quickActions(); track action.label) {
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="action.route" [queryParams]="action.queryParams">
+        @if (action.svgIcon) {
+          <mat-icon [svgIcon]="action.svgIcon"></mat-icon>
+        } @else {
+          <mat-icon>{{ action.icon }}</mat-icon>
+        }
+        {{ action.label }}
+      </a>
+    }
+  </section>
+
   <header class="atmos-page__header atmos-spirit__header">
     <app-spirit-type-icon class="atmos-spirit__type" [type]="s.type"></app-spirit-type-icon>
     <h1 class="atmos-page__title">{{ s.name }}</h1>

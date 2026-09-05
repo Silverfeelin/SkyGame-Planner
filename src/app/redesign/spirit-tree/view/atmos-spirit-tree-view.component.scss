@@ -5,12 +5,12 @@
 }
 
 .atmos-tree-view__card {
-  align-items: center;
+  align-items: stretch;
 }
 
 .atmos-tree-view__inner {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding: var(--atmos-pad);
   overflow-x: auto;

@@ -6,7 +6,7 @@
 
 .atmos-shops__venues {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--atmos-gap);
 }
 
@@ -53,12 +53,14 @@
 }
 
 .atmos-shops__section-header {
-  padding: var(--atmos-pad-compact) var(--atmos-pad);
-  border-bottom: 1px solid var(--atmos-line);
+  padding: var(--atmos-pad-compact) var(--atmos-pad) 0.5rem;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
 }
 
 
 .atmos-shops__section-body {
+  padding-top: 12px;
   gap: var(--atmos-gap);
 }
 

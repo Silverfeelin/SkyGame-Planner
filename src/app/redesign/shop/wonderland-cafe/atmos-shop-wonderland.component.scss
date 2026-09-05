@@ -10,8 +10,13 @@
 }
 
 .atmos-shop-wonderland__section-header {
-  padding: var(--atmos-pad-compact) var(--atmos-pad);
-  border-bottom: 1px solid var(--atmos-line);
+  padding: var(--atmos-pad-compact) var(--atmos-pad) 0.5rem;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-shop-wonderland__section-body {
+  padding-top: 12px;
 }
 
 

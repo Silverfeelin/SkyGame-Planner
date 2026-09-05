@@ -31,11 +31,9 @@
 </div>
 
 @if (isAreaOverlayVisible()) {
-  <app-overlay (close)="isAreaOverlayVisible.set(false)">
+  <app-overlay (close)="isAreaOverlayVisible.set(false)" [title]="'Choose map'">
     <div class="atmos-cr-tracker__overlay">
-      <div class="atmos-cr-tracker__overlay-head">
-        <b>Map</b><b>Wax</b>
-      </div>
+      <h3 class="atmos-cr-tracker__overlay-section">Maps</h3>
       @for (item of areaOverlayData().areas; track item.area.guid) {
         <button type="button" class="atmos-cr-tracker__overlay-row"
           (click)="navigateToArea(item.area); isAreaOverlayVisible.set(false)">
@@ -46,12 +44,13 @@
           </span>
         </button>
       }
-      <div class="atmos-cr-tracker__overlay-total">
-        <b>Total</b>
-        <span [class.is-complete]="areaOverlayData().total.found === areaOverlayData().total.total">
-          {{ areaOverlayData().total.found }} / {{ areaOverlayData().total.total }}
-        </span>
-      </div>
+
+      <h3 class="atmos-cr-tracker__overlay-section">Total</h3>
+      <span class="atmos-cr-tracker__overlay-name">All maps</span>
+      <span class="atmos-cr-tracker__overlay-wax"
+        [class.is-complete]="areaOverlayData().total.found === areaOverlayData().total.total">
+        {{ areaOverlayData().total.found }} / {{ areaOverlayData().total.total }}
+      </span>
     </div>
   </app-overlay>
 }

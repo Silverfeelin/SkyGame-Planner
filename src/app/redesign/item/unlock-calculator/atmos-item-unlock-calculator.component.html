@@ -132,14 +132,14 @@
                     }
                   </span>
                 } @else if (result.cost) {
-                  <span>Unlock cost</span>
+                  <span>Unlock cost</span>&ngsp;
                   @if ((result.nodes?.length || 0) > 1) {
                     <button type="button" class="atmos-text-link" (click)="showCostBreakdown(result)">(breakdown)</button>
                   } @else if (result.isEmptyCost) {
                     <button type="button" class="atmos-text-link" (click)="showNoCostInfo(result)">(?)</button>
                   }
                   <br/>
-                  <app-cost [cost]="result.cost" [showZeroes]="true" [showTooltip]="false"></app-cost>
+                  <app-cost [cost]="result.cost" [showZeroes]="false" [showTooltip]="false"></app-cost>
                 } @else if ($any(result).price >= 0) {
                   <span>Price (USD)</span><br/>
                   $ {{ result.price | number: '1.2-2' }}

@@ -4,8 +4,9 @@ import { Chart } from 'chart.js/auto';
 import { IItem, ItemType } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { ChartHelper } from '@app/helpers/chart-helper';
-import { ItemTypeSelectorComponent } from '@app/components/items/item-type-selector/item-type-selector.component';
 import { AtmosItemQuickActionsComponent } from '../quick-actions/atmos-item-quick-actions.component';
+import { AtmosItemTypeNavComponent } from '../type-nav/atmos-item-type-nav.component';
+import { ITEM_GRID_CATEGORIES } from '../grid/atmos-item-grid-layout.component';
 
 ChartHelper.setDefaults();
 ChartHelper.registerTrendline();
@@ -22,7 +23,7 @@ interface IChartItem {
   templateUrl: './atmos-item-inflation.component.html',
   styleUrl: './atmos-item-inflation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ItemTypeSelectorComponent, AtmosItemQuickActionsComponent]
+  imports: [AtmosItemQuickActionsComponent, AtmosItemTypeNavComponent]
 })
 export class AtmosItemInflationComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartDiv!: ElementRef<HTMLCanvasElement>;
@@ -47,6 +48,8 @@ export class AtmosItemInflationComponent implements AfterViewInit {
     ItemType.Held, ItemType.Furniture, ItemType.Prop
   ];
   private readonly _showTypeSet = new Set(this.showTypes);
+
+  readonly typeEntries = ITEM_GRID_CATEGORIES.filter(c => this._showTypeSet.has(c.type));
 
   ngAfterViewInit(): void {
     this.initChart();

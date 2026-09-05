@@ -10,7 +10,7 @@ import { INavigationTarget } from '@app/helpers/navigation-helper';
   template: `
     @for (heart of hearts; let ih = $index; track heart.guid) {
       <a [routerLink]="heartLinks[ih]?.route" [queryParams]="heartLinks[ih]?.extras?.queryParams">
-        <mat-icon [class.c-new]="heart.unlocked" [class.c-accent]="!heart.unlocked">favorite</mat-icon>
+        <mat-icon [class.c-new]="heart.unlocked" [class.c-muted]="!heart.unlocked">favorite</mat-icon>
       </a>
     }
   `,

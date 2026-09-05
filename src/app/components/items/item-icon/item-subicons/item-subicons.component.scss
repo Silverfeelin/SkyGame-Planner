@@ -42,8 +42,15 @@
   height: 24px;
 }
 
-.unlock-check {
+// Unlocked marker. Shares the global `.atmos-tile__dot` geometry; amber when the
+// item is owned through something other than this node/IAP, green when owned here.
+.unlock-dot {
   pointer-events: all;
+  background: var(--atmos-warm);
+
+  &.unlock-dot--self {
+    background: var(--atmos-good);
+  }
 }
 
 .emote-level {

@@ -1,6 +1,10 @@
 <atmos-realm-quick-actions/>
 
 @if (realm) {
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">{{ realm.name }}</h1>
+</header>
+
 <div class="atmos-page__quick-actions">
   @if (realm._wiki?.href; as wikiHref) {
     <a class="atmos-btn atmos-btn--sm" [href]="wikiHref" target="_blank" rel="noopener">
@@ -32,10 +36,6 @@
   }
 </div>
 
-<header class="atmos-page__header">
-  <h1 class="atmos-page__title">{{ realm.name }}</h1>
-</header>
-
 <!-- Constellation + progress -->
 @if (realm.constellation) {
   <section class="atmos-realm__constellation-row">
@@ -45,7 +45,7 @@
         <div class="atmos-realm__tier">
           <span class="atmos-realm__tier-label">Tier 1</span>
           <div class="atmos-realm__tier-grid">
-            <mat-icon svgIcon="candle"></mat-icon>
+            <mat-icon class="currency" svgIcon="candle"></mat-icon>
             <div class="atmos-realm__bar" [class.is-full]="tier1Pct.c === 100">
               <div class="atmos-realm__bar-fill" [style.width.%]="tier1Pct.c || 0"></div>
               <div class="atmos-realm__bar-text">
@@ -53,7 +53,7 @@
                 <span class="atmos-realm__bar-pct">({{ (tier1Spent.c || 0) | percentage:0:(tier1Cost.c || 0) }}%)</span>
               </div>
             </div>
-            <mat-icon svgIcon="heart"></mat-icon>
+            <mat-icon class="currency" svgIcon="heart"></mat-icon>
             <div class="atmos-realm__bar" [class.is-full]="tier1Pct.h === 100">
               <div class="atmos-realm__bar-fill" [style.width.%]="tier1Pct.h || 0"></div>
               <div class="atmos-realm__bar-text">
@@ -61,7 +61,7 @@
                 <span class="atmos-realm__bar-pct">({{ (tier1Spent.h || 0) | percentage:0:(tier1Cost.h || 0) }}%)</span>
               </div>
             </div>
-            <mat-icon svgIcon="ascended-candle"></mat-icon>
+            <mat-icon class="currency" svgIcon="ascended-candle"></mat-icon>
             <div class="atmos-realm__bar" [class.is-full]="tier1Pct.ac === 100">
               <div class="atmos-realm__bar-fill" [style.width.%]="tier1Pct.ac || 0"></div>
               <div class="atmos-realm__bar-text">
@@ -77,7 +77,7 @@
             <span class="atmos-realm__tier-label">Tier 2</span>
             <div class="atmos-realm__tier-grid">
               @if (tier2Cost.c) {
-                <mat-icon svgIcon="candle"></mat-icon>
+                <mat-icon class="currency" svgIcon="candle"></mat-icon>
                 <div class="atmos-realm__bar" [class.is-full]="tier2Pct.c === 100">
                   <div class="atmos-realm__bar-fill" [style.width.%]="tier2Pct.c || 0"></div>
                   <div class="atmos-realm__bar-text">
@@ -87,7 +87,7 @@
                 </div>
               }
               @if (tier2Cost.h) {
-                <mat-icon svgIcon="heart"></mat-icon>
+                <mat-icon class="currency" svgIcon="heart"></mat-icon>
                 <div class="atmos-realm__bar" [class.is-full]="tier2Pct.h === 100">
                   <div class="atmos-realm__bar-fill" [style.width.%]="tier2Pct.h || 0"></div>
                   <div class="atmos-realm__bar-text">
@@ -97,7 +97,7 @@
                 </div>
               }
               @if (tier2Cost.ac) {
-                <mat-icon svgIcon="ascended-candle"></mat-icon>
+                <mat-icon class="currency" svgIcon="ascended-candle"></mat-icon>
                 <div class="atmos-realm__bar" [class.is-full]="tier2Pct.ac === 100">
                   <div class="atmos-realm__bar-fill" [style.width.%]="tier2Pct.ac || 0"></div>
                   <div class="atmos-realm__bar-text">
@@ -119,6 +119,23 @@
       (spiritClicked)="constellationSpiritClicked($event)"
       (realmChanged)="constellationRealmChanged($event)">
     </app-atmos-realm-constellation>
+  </section>
+}
+
+
+@if (realm.areas?.length) {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      <h2 class="atmos-realm__section-title">Areas</h2>
+      <div class="atmos-card__links">
+        @for (area of realm.areas; track area.guid) {
+          <a class="atmos-link" [routerLink]="['/area', area.guid]">
+            <mat-icon>location_on</mat-icon>
+            <span>{{ area.name }}</span>
+          </a>
+        }
+      </div>
+    </div>
   </section>
 }
 

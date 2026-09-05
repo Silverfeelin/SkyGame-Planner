@@ -3,7 +3,7 @@
   <nav class="atmos-item-grid__rail">
     <div class="atmos-item-grid__rail-label">Category</div>
     @for (c of visibleCategories(); track c.type) {
-      <button class="atmos-item-grid__rail-item"
+      <button class="atmos-item-grid__rail-item atmos-focus-ring"
               [class.is-active]="active() === c.type"
               (click)="active.set(c.type)">
         <mat-icon class="atmos-item-grid__rail-icon" [svgIcon]="c.svgIcon"></mat-icon>
@@ -15,21 +15,13 @@
   </div>
 
   <div class="atmos-item-grid__column">
-    <div class="atmos-item-grid__nav-strip">
-      @for (c of visibleCategories(); track c.type) {
-        <button class="atmos-item-grid__nav-pill"
-                [class.is-active]="active() === c.type"
-                (click)="active.set(c.type)">
-          <mat-icon [svgIcon]="c.svgIcon"></mat-icon>{{ c.type | itemType:true }}
-        </button>
-      }
-    </div>
+    <atmos-item-type-nav [entries]="visibleCategories()" [active]="active()"
+                         (typeSelected)="active.set($event)"/>
 
     <div class="atmos-item-grid__card-header">
       <div class="atmos-item-grid__card-title">
         <mat-icon [svgIcon]="activeCategory().svgIcon"></mat-icon>
         <h2>{{ activeCategory().type | itemType:true }}</h2>
-        <span class="atmos-item-grid__card-subtitle">· in-game order</span>
       </div>
       <div class="atmos-item-grid__count">
         <strong>{{ activeUnlocked() }}</strong>

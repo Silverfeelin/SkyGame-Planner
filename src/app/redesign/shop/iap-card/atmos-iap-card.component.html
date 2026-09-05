@@ -27,14 +27,14 @@
       <ul class="atmos-iap-card__currency">
         @if (iap().c) {
           <li class="atmos-iap-card__currency-chip">
-            <mat-icon svgIcon="candle"></mat-icon>
+            <mat-icon svgIcon="candle" class="currency"></mat-icon>
             <strong>{{ iap().c }}</strong>
             <span>candles</span>
           </li>
         }
         @if (iap().sc) {
           <li class="atmos-iap-card__currency-chip">
-            <mat-icon svgIcon="season-candle"></mat-icon>
+            <mat-icon svgIcon="season-candle" class="seasonal"></mat-icon>
             <strong>{{ iap().sc }}</strong>
             <span>season candles</span>
           </li>
@@ -66,14 +66,14 @@
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="iap().bought"
         (click)="onPurchasedClick($event)">
-        <mat-icon>shopping_cart</mat-icon>
+        <app-atmos-checkbox [state]="iap().bought" size="sm"></app-atmos-checkbox>
         <span>Bought</span>
       </button>
       <button type="button"
         class="atmos-btn atmos-btn--sm"
         [class.atmos-btn--active]="iap().gifted"
         (click)="onGiftedClick($event)">
-        <mat-icon>card_giftcard</mat-icon>
+        <app-atmos-checkbox [state]="iap().gifted" size="sm"></app-atmos-checkbox>
         <span>Gifted</span>
       </button>
     </div>
