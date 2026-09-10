@@ -88,3 +88,11 @@
   flex-direction: column;
   gap: var(--atmos-gap-compact);
 }
+
+.atmos-item-unlock-calc__pick {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+}

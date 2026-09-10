@@ -5,7 +5,7 @@
     @for (c of visibleCategories(); track c.type) {
       <button class="atmos-item-grid__rail-item atmos-focus-ring"
               [class.is-active]="active() === c.type"
-              (click)="active.set(c.type)">
+              (click)="selectCategory(c.type)">
         <mat-icon class="atmos-item-grid__rail-icon" [svgIcon]="c.svgIcon"></mat-icon>
         <span class="atmos-item-grid__rail-name">{{ c.type | itemType:true }}</span>
         <span class="atmos-item-grid__rail-count">{{ categoryCounts().get(c.type)?.unlocked }}/{{ categoryCounts().get(c.type)?.total }}</span>
@@ -16,19 +16,51 @@
 
   <div class="atmos-item-grid__column">
     <atmos-item-type-nav [entries]="visibleCategories()" [active]="active()"
-                         (typeSelected)="active.set($event)"/>
+                         (typeSelected)="selectCategory($event)"/>
 
     <div class="atmos-item-grid__card-header">
       <div class="atmos-item-grid__card-title">
         <mat-icon [svgIcon]="activeCategory().svgIcon"></mat-icon>
         <h2>{{ activeCategory().type | itemType:true }}</h2>
       </div>
-      <div class="atmos-item-grid__count">
-        <strong>{{ activeUnlocked() }}</strong>
-        <span> / {{ activeItems().length }}</span>
-        <span> unlocked</span>
+      <div class="atmos-item-grid__card-actions">
+        <div class="atmos-item-grid__count">
+          <strong>{{ activeUnlocked() }}</strong>
+          <span> / {{ activeItems().length }}</span>
+          <span> unlocked</span>
+        </div>
+        @if (filterable()) {
+          <button type="button" class="atmos-btn atmos-btn--sm atmos-item-grid__filter-toggle"
+            [class.atmos-btn--active]="showFilters()"
+            [class.has-active-filters]="hasActiveFilters()"
+            (click)="toggleFilters($event)">
+            <span>Filter</span>
+            <mat-icon>filter_alt</mat-icon>
+          </button>
+        }
       </div>
     </div>
+
+    @if (filterable()) {
+      <atmos-item-filters [items]="items()" [visible]="showFilters()"
+                         (matchedChange)="onMatchedChange($event)"
+                         (hideRequested)="toggleFilters($event)"/>
+
+      @if (!activeItems().length) {
+        <p class="atmos-item-grid__summary">
+          No {{ activeCategory().type | itemType:true | lowercase }} match the selected filters.
+        </p>
+      } @else if (isFiltered()) {
+        <p class="atmos-item-grid__summary">
+          @if (activeItems().length === 1) {
+            There is <b>1</b> {{ activeCategory().type | itemType | lowercase }}
+          } @else {
+            There are <b>{{ activeItems().length }}</b> {{ activeCategory().type | itemType:true | lowercase }}
+          }
+          <span class="atmos-item-grid__summary-total">(out of {{ categoryItems().length }})</span> matching the selected filters.
+        </p>
+      }
+    }
 
     <div class="atmos-item-grid__items">
       @for (item of activeItems(); track item.guid) {

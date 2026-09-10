@@ -9,7 +9,7 @@
   <a class="atmos-item-preview__item atmos-tile"
      [routerLink]="['/item', item.guid]"
      [title]="item.name">
-    <img class="atmos-item-preview__img" [src]="item.previewUrl" loading="lazy" draggable="false"/>
+    <img class="atmos-item-preview__img atmos-img-box" [src]="item.previewUrl" loading="lazy" draggable="false"/>
     <app-icon class="atmos-item-preview__icon"
               [src]="item.icon || '/assets/icons/question.webp'"
               width="64px" height="64px"

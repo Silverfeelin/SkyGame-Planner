@@ -8,7 +8,7 @@ import { MapInstanceService } from '@app/services/map-instance.service';
 import { IMapInit } from '@app/services/map.service';
 import { IArea, IRealm } from 'skygame-data';
 import { AtmosRealmQuickActionsComponent } from './quick-actions/atmos-realm-quick-actions.component';
-import { AtmosFeatureCardComponent, IFeatureLink } from '../dashboard/atmos-feature-card.component';
+import { AtmosFeatureCardComponent } from '../dashboard/atmos-feature-card.component';
 
 @Component({
   selector: 'app-atmos-realms',
@@ -178,13 +178,6 @@ export class AtmosRealmsComponent implements AfterViewInit {
       if (wingedLight.area?.realm?.name === 'Void') { return; }
       this._mapInstanceService.addWingedLight(wingedLight, {});
     });
-  }
-
-  realmLinks(realm: IRealm): ReadonlyArray<IFeatureLink> {
-    if (!realm.areas?.length) { return []; }
-    return [
-      { icon: 'location_on', label: 'Areas', link: '/area', queryParams: { realm: realm.guid } }
-    ];
   }
 
   private updateMapConnections(area?: IArea): void {

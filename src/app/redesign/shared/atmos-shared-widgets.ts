@@ -66,10 +66,11 @@ export {
 } from '../item/item-list/atmos-item-list.component';
 
 export {
-  AtmosItemPickerComponent,
-  type ItemAction,
+  AtmosItemGridLayoutComponent,
   type ItemClickEvent
-} from '../item/item-picker/atmos-item-picker.component';
+} from '../item/grid/atmos-item-grid-layout.component';
+
+export { AtmosItemFiltersComponent } from '../item/filters/atmos-item-filters.component';
 
 export {
   AtmosDailyCardComponent,

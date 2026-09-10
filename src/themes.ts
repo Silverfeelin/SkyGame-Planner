@@ -5,7 +5,6 @@ export interface ITheme {
 
 export const themes: Array<ITheme> = [
   { name: 'Default', value: '' },
-  { name: 'Isle of Dawn', value: 'isle' },
   { name: 'Aviary Village', value: 'cozy' },
   { name: 'Prairie Peaks', value: 'peaks' },
   { name: 'Treasure Reef', value: 'reef' },

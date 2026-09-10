@@ -51,7 +51,7 @@
 @if (area.connections?.length) {
   <section class="atmos-card">
     <div class="atmos-card__body">
-      <h2 class="atmos-area__heading">Connected Areas</h2>
+      <h2 class="atmos-section-title">Connected Areas</h2>
       <div class="atmos-card__links">
         @for (connection of area.connections; track connection.area.guid) {
           <a class="atmos-link" [routerLink]="['/area', connection.area.guid]">

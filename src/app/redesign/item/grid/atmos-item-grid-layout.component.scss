@@ -141,6 +141,16 @@ atmos-item-type-nav {
   }
 }
 
+.atmos-item-grid__card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.atmos-item-grid__filter-toggle.has-active-filters {
+  color: var(--atmos-warm);
+}
+
 .atmos-item-grid__count {
   font-size: 0.9rem;
   color: var(--atmos-text-dim);
@@ -149,6 +159,15 @@ atmos-item-type-nav {
   strong {
     color: var(--atmos-text);
   }
+}
+
+.atmos-item-grid__summary {
+  margin: 0;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-item-grid__summary-total {
+  color: var(--atmos-accent);
 }
 
 .atmos-item-grid__items {

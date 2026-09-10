@@ -8,10 +8,8 @@
    resolves. Below 1023px the shell becomes a column flex and every ancestor
    height is only resolved by flexing, which leaves it indefinite: `height: 100%`
    then resolves to 0 and the grid renders blank. Sizing the host by flexing it
-   inside its card works in both layouts.
-   The doubled class beats the `.atmos-*__grid-card ag-grid-angular` rules in the
-   component stylesheets, which are injected after the global stylesheets. */
-.atmos-card.atmos-card > ag-grid-angular {
+   inside its card works in both layouts. */
+.atmos-card > ag-grid-angular {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;

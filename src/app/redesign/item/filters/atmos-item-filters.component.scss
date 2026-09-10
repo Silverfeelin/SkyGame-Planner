@@ -1,24 +1,21 @@
 :host {
-  display: block;
-}
-
-.atmos-item-picker__header {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1 1 auto;
-}
-
-.atmos-item-picker__filter-toggle.has-active-filters {
-  color: var(--atmos-warm);
-}
-
-.atmos-item-picker__filters {
   display: flex;
   flex-direction: column;
   gap: var(--atmos-gap-compact);
 }
 
-.atmos-item-picker__search {
+/* The panel is collapsed by default; an empty host must not add a column gap. */
+:host:empty {
+  display: none;
+}
+
+.atmos-item-filters__filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-filters__search {
   position: relative;
 
   mat-icon {
@@ -36,20 +33,20 @@
   }
 }
 
-.atmos-item-picker__group {
+.atmos-item-filters__group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.atmos-item-picker__group-header {
+.atmos-item-filters__group-header {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.atmos-item-picker__group-toggle {
+.atmos-item-filters__group-toggle {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -72,9 +69,8 @@
   &[data-state='off'] { color: var(--atmos-warm); }
 }
 
-.atmos-item-picker__group-header,
-.atmos-item-picker__subgroup-header,
-.atmos-item-picker__summary {
+.atmos-item-filters__group-header,
+.atmos-item-filters__subgroup-header {
   /* The (All) / (None) shortcuts are buttons, so the shared link style needs the
      browser button chrome stripped off. */
   button.atmos-text-link {
@@ -87,24 +83,24 @@
   }
 }
 
-.atmos-item-picker__group-body {
+.atmos-item-filters__group-body {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.atmos-item-picker__group-body--stacked {
+.atmos-item-filters__group-body--stacked {
   flex-direction: column;
   align-items: stretch;
 }
 
-.atmos-item-picker__subgroup {
+.atmos-item-filters__subgroup {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.atmos-item-picker__subgroup-header {
+.atmos-item-filters__subgroup-header {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -113,48 +109,15 @@
   font-size: 13px;
 }
 
-.atmos-item-picker__season-icon {
+.atmos-item-filters__season-icon {
   display: block;
   flex: 0 0 auto;
 }
 
-.atmos-item-picker__filter-actions {
+.atmos-item-filters__filter-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   padding-top: var(--atmos-gap-compact);
   border-top: 1px solid var(--atmos-line-soft);
-}
-
-.atmos-item-picker__summary {
-  margin: 0;
-  color: var(--atmos-text-dim);
-}
-
-.atmos-item-picker__summary-total {
-  color: var(--atmos-accent);
-}
-
-.atmos-item-picker__grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-}
-
-.atmos-item-picker__item {
-  position: relative;
-  width: var(--item-size);
-  height: var(--item-size);
-  border-radius: var(--atmos-radius-sm);
-  color: inherit;
-  cursor: pointer;
-
-  &:focus-visible {
-    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
-    outline-offset: var(--atmos-focus-offset);
-  }
-}
-
-app-item-icon.is-highlighted {
-  box-shadow: inset 0 0 0 2px var(--atmos-highlight);
 }

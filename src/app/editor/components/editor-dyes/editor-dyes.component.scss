@@ -7,13 +7,13 @@
 /* The picker is sticky at the left edge; the unmapped grid clears its width. */
 .picker {
   display: inline-block;
-  width: 800px;
+  width: 1000px;
   position: sticky;
   top: 0;
 }
 
 .preview-grid--unmapped {
-  margin-left: 820px;
+  margin-left: 1020px;
 }
 
 .preview {
@@ -48,4 +48,12 @@
       background: var(--atmos-preview-bg-contrast);
     }
   }
+}
+
+.picker-item {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
 }

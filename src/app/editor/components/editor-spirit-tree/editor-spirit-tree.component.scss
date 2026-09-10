@@ -123,3 +123,11 @@ h2.atmos-section__title {
     align-self: start;
   }
 }
+
+.picker-item {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+}

@@ -253,6 +253,14 @@
   transform: translateY(1px);
 }
 
+/* Section heading inside a page — the h2 above a card grid or a card's body. */
+.atmos-section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
 /* Interactive tile surface — persistent background that brightens on hover.
    Add to any icon-tile/cell that should always show a background. Geometry
    (size, radius, overflow) stays on the component class. */
@@ -263,6 +271,20 @@
   &:hover {
     background: var(--atmos-tile-bg-hover);
   }
+}
+
+/* Reserved image box — item artwork has no known intrinsic size, so the layout
+   box is pinned to --atmos-img-box before the image loads and `contain`
+   letterboxes whatever arrives. Override the var for a different square, or
+   raise max-height on the component class for taller art. */
+.atmos-img-box {
+  --atmos-img-box: 128px;
+  display: block;
+  min-width: var(--atmos-img-box);
+  min-height: var(--atmos-img-box);
+  max-width: var(--atmos-img-box);
+  max-height: var(--atmos-img-box);
+  object-fit: contain;
 }
 
 /* Unlocked marker — the green dot pinned to the bottom-right of an item tile.
@@ -703,11 +725,6 @@ a.atmos-link:focus-visible {
 }
 
 // #region Themes
-
-:root[data-theme="isle"] {
-  --atmos-hue: 240;
-  --atmos-bg-image: url(/assets/game/background/isle.webp);
-}
 
 :root[data-theme="cozy"] {
   --atmos-hue: 150;

@@ -4,8 +4,9 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
+import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
 
@@ -36,7 +37,7 @@ const fileNames = [
     selector: 'app-editor-dyes',
     templateUrl: './editor-dyes.component.html',
     styleUrl: './editor-dyes.component.scss',
-    imports: [AtmosItemPickerComponent, ItemIconComponent]
+    imports: [AtmosItemGridLayoutComponent, ItemIconComponent, TooltipDirective]
 })
 export class EditorDyesComponent {
   readonly _dataService = inject(DataService);
@@ -47,6 +48,9 @@ export class EditorDyesComponent {
   previewFile = '';
   previewFileMap: { [file: string]: IItem } = {};
 
+  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  readonly pickerItems: ReadonlyArray<IItem>;
+
   isShowingMapped = false;
   mappedFiles: Array<{guid: string, item: IItem, url: string}> = [];
   unmappedFiles:  Array<string> = [];
@@ -55,6 +59,7 @@ export class EditorDyesComponent {
    *
    */
   constructor() {
+    this.pickerItems = this._dataService.itemConfig.items.filter(i => ITEM_GRID_TYPES.has(i.type));
     this.mappedFiles = this._dataService.itemConfig.items.filter(item => item.dye).map(item => {
       if (item.dye && !item.dye.previewUrl && !item.dye.infoUrl) {
         console.warn('No preview or info url for:', item.guid);

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Host
 import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from "@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component";
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
+import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
 import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
@@ -25,7 +25,7 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemPickerComponent,
+    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemGridLayoutComponent,
     ItemIconComponent, OverlayComponent,
     EditorItemComponent, AtmosTabsComponent, AtmosTabDirective
 ],
@@ -72,6 +72,9 @@ export class SpiritTreeEditorComponent {
   tree: ISpiritTree;
   items: Array<IItem> = [];
   itemMap: { [guid: string]: IItem } = {};
+
+  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  readonly pickerItems: ReadonlyArray<IItem>;
   nodeTable: [TreeNodeArray, TreeNodeArray, TreeNodeArray] = [[], [], []];
   nodeMap: { [guid: string]: TreeNode } = {};
 
@@ -124,6 +127,8 @@ export class SpiritTreeEditorComponent {
     this.nodeMap[this.tree.node!.guid] = treeNode;
     this.selectedTreeNode = treeNode;
     this.selectedItem = this.tree.node!.item!;
+
+    this.pickerItems = _dataService.itemConfig.items.filter(i => ITEM_GRID_TYPES.has(i.type));
 
     // Load spirits
     const spiritTypes = new Set<SpiritType>(['Elder', 'Guide', 'Season', 'Event', 'Regular']);
