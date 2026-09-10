@@ -14,14 +14,9 @@
 }
 
 .atmos-item-dye__img {
-  display: block;
-  max-width: 256px;
-  max-height: 256px;
-  width: auto;
-  height: auto;
+  --atmos-img-box: 256px;
   border-radius: 8px;
   border: 1px solid var(--atmos-line);
-  object-fit: contain;
 }
 
 .atmos-item-dye__icon {

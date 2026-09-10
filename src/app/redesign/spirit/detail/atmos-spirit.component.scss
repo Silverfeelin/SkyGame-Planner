@@ -12,96 +12,16 @@
   font-size: 28px;
 }
 
-.atmos-spirit__kind {
-  margin-left: 4px;
+// A spirit render is a tall portrait, so its column is a fixed width rather
+// than the fraction wide key art gets on the season and event pages.
+.atmos-spirit__summary {
+  --atmos-summary-media: 170px;
 }
 
-.atmos-spirit__summary-body {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: var(--atmos-gap);
-  align-items: start;
-}
-
-@media (max-width: 720px) {
-  .atmos-spirit__summary-body {
-    grid-template-columns: 1fr;
-  }
-}
-
-.atmos-spirit__image {
-  border-radius: var(--atmos-radius-sm);
-  overflow: hidden;
-  border: 2px solid var(--atmos-tile-bg);
-  padding: var(--atmos-pad-compact);
-
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-}
-
-.atmos-spirit__meta {
-  display: flex;
-  flex-direction: column;
-  gap: var(--atmos-gap-compact);
-}
-
-.atmos-spirit__meta-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--atmos-text);
-  text-decoration: none;
-  padding: 6px 8px;
-  margin: 0 -8px;
-  border-radius: var(--atmos-radius-sm);
-  border-bottom: none;
-  transition: background var(--atmos-transition), color var(--atmos-transition);
-
-  &:hover {
-    background: var(--atmos-hover-bg);
-    color: var(--atmos-text);
-  }
-}
-
-.atmos-spirit__meta-item mat-icon {
-  flex: 0 0 auto;
-  color: var(--atmos-accent);
-}
-
-.atmos-spirit__meta-icon {
-  font-size: 22px;
+.atmos-spirit__season-icon {
   width: 22px;
   height: 22px;
-  flex: 0 0 auto;
-}
-
-img.atmos-spirit__meta-icon {
   object-fit: contain;
-}
-
-// The wiki link renders its own anchor in a child component; pierce
-// encapsulation so it matches the surrounding accent-icon fact rows.
-:host ::ng-deep .atmos-spirit__meta app-wiki-link a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 8px;
-  margin: 0 -8px;
-  border-radius: var(--atmos-radius-sm);
-  color: var(--atmos-text);
-  text-decoration: none;
-  border-bottom: none;
-  transition: background var(--atmos-transition), color var(--atmos-transition);
-
-  &:hover { background: var(--atmos-hover-bg); }
-
-  mat-icon {
-    flex: 0 0 auto;
-    color: var(--atmos-accent);
-  }
 }
 
 .atmos-spirit__trees-body {

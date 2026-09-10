@@ -114,49 +114,9 @@
   gap: 14px;
 }
 
-/* Horizontal pill strip — tablet/mobile only. */
-.atmos-item-grid__nav-strip {
+/* Horizontal type nav — tablet/mobile only; the desktop rail replaces it. */
+atmos-item-type-nav {
   display: none;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 6px;
-  padding-bottom: 4px;
-  scrollbar-width: thin;
-}
-
-.atmos-item-grid__nav-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  background: transparent;
-  color: oklch(0.95 0.01 var(--atmos-hue) / 0.7);
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: background var(--atmos-transition), color var(--atmos-transition), border-color var(--atmos-transition);
-
-  mat-icon {
-    font-size: 16px;
-    width: 16px;
-    height: 16px;
-  }
-
-  &:hover {
-    color: var(--atmos-text);
-    background: oklch(0.95 0.01 var(--atmos-hue) / 0.06);
-  }
-
-  &.is-active {
-    background: oklch(0.95 0.01 var(--atmos-hue) / 0.16);
-    border-color: oklch(0.95 0.02 var(--atmos-hue) / 0.28);
-    color: var(--atmos-text);
-    font-weight: 600;
-  }
 }
 
 .atmos-item-grid__card-header {
@@ -181,9 +141,14 @@
   }
 }
 
-.atmos-item-grid__card-subtitle {
-  color: var(--atmos-text-dim);
-  font-size: 0.85rem;
+.atmos-item-grid__card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.atmos-item-grid__filter-toggle.has-active-filters {
+  color: var(--atmos-warm);
 }
 
 .atmos-item-grid__count {
@@ -194,6 +159,15 @@
   strong {
     color: var(--atmos-text);
   }
+}
+
+.atmos-item-grid__summary {
+  margin: 0;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-item-grid__summary-total {
+  color: var(--atmos-accent);
 }
 
 .atmos-item-grid__items {
@@ -216,7 +190,7 @@
     padding: 16px 14px 18px;
   }
 
-  .atmos-item-grid__nav-strip {
-    display: flex;
+  atmos-item-type-nav {
+    display: block;
   }
 }

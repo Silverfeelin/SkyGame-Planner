@@ -53,17 +53,33 @@
   text-shadow: var(--atmos-text-shadow);
 }
 
+/* Mirrors the keyboard shortcut overlay: a two-column grid with full-width
+   section headings, a label column and a dim value column. */
 .atmos-cr-tracker__overlay {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
   column-gap: var(--atmos-gap);
-  row-gap: 6px;
+  row-gap: var(--atmos-gap-compact);
   min-width: 280px;
   color: var(--atmos-text);
+  text-align: left;
+  text-wrap: initial;
 }
 
-.atmos-cr-tracker__overlay-head {
-  display: contents;
+.atmos-cr-tracker__overlay-section {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-bottom: var(--atmos-gap-compact);
+  border-bottom: 1px solid var(--atmos-line);
+  font-size: var(--atmos-h5);
+  color: var(--atmos-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  &:not(:first-child) {
+    margin-top: var(--atmos-gap);
+  }
 }
 
 .atmos-cr-tracker__overlay-row {
@@ -85,19 +101,24 @@
     color: var(--atmos-accent);
     text-decoration-color: var(--atmos-accent);
   }
-}
 
-.atmos-cr-tracker__overlay-wax {
-  &.is-complete {
-    color: var(--atmos-good);
-    font-weight: 700;
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible .atmos-cr-tracker__overlay-name {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+    border-radius: var(--atmos-radius-sm);
   }
 }
 
-.atmos-cr-tracker__overlay-total {
-  display: contents;
+.atmos-cr-tracker__overlay-wax {
+  color: var(--atmos-text-dim);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 
-  > span.is-complete {
+  &.is-complete {
     color: var(--atmos-good);
     font-weight: 700;
   }

@@ -24,14 +24,14 @@
 } @else {
   <atmos-event-quick-actions/>
 
-  <section class="atmos-page__quick-actions">
+  <atmos-quick-actions>
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', eventInstance.guid]">
       <mat-icon>arrow_back</mat-icon> Event
     </a>
     <a class="atmos-btn atmos-btn--sm" href="https://sky-event-calculator.netlify.app/" target="_blank" rel="noopener">
       <mat-icon>open_in_new</mat-icon> Stoat's Calculator
     </a>
-  </section>
+  </atmos-quick-actions>
 
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">
@@ -96,14 +96,14 @@
       </div>
 
       @if (timedCurrencies.length) {
-        <hr class="atmos-event-calc__divider" />
+        <hr class="atmos-rule atmos-event-calc__divider" />
         <p class="atmos-paragraph">
           This event includes some activities that reward extra event currency.
           Please enter how much you have collected from these activities below.
           Your current event currency should always be entered at the top of the page, including the ones from these activities!
         </p>
         @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
-          <hr class="atmos-event-calc__divider" />
+          <hr class="atmos-rule atmos-event-calc__divider" />
           <div class="atmos-event-calc__timed">
             @if (timedCurrency.endDate < now) {
               @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
@@ -243,7 +243,7 @@
       }
 
       @if (candlesRequired > 0) {
-        <hr class="atmos-event-calc__divider" />
+        <hr class="atmos-rule atmos-event-calc__divider" />
         <div>
           You will also need to collect
           <mat-icon svgIcon="candle"></mat-icon>&nbsp;
@@ -263,7 +263,7 @@
         </div>
       }
       @if (heartsRequired > 0) {
-        <hr class="atmos-event-calc__divider" />
+        <hr class="atmos-rule atmos-event-calc__divider" />
         <div>
           You will also need to collect
           <mat-icon svgIcon="heart"></mat-icon>&nbsp;
@@ -272,7 +272,7 @@
         </div>
       }
       @if (acRequired > 0) {
-        <hr class="atmos-event-calc__divider" />
+        <hr class="atmos-rule atmos-event-calc__divider" />
         <div>
           You will also need to collect
           <mat-icon svgIcon="ascended-candle"></mat-icon>&nbsp;

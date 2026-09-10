@@ -21,7 +21,13 @@
 }
 
 <div class="picker">
-  <app-atmos-item-picker [action]="'emit'" (itemClicked)="onItemClicked($event)"></app-atmos-item-picker>
+  <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
+  <ng-template #pickTpl let-item>
+    <div class="picker-item atmos-tile" (click)="onItemClicked({ event: $event, item })">
+      <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
+        [skyTooltip]="item.name" placement="auto"></app-item-icon>
+    </div>
+  </ng-template>
   <div><button type="button" class="atmos-btn" (click)="export()">Export</button></div>
 </div>
 <div class="preview-grid preview-grid--unmapped">

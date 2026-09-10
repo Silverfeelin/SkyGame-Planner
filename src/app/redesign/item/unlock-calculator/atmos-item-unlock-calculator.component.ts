@@ -19,7 +19,7 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
-import { AtmosItemPickerComponent, ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
+import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
 import { AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosItemQuickActionsComponent } from '../quick-actions/atmos-item-quick-actions.component';
 import { AtmosItemUnlockCalculatorFavouritesComponent } from './atmos-item-unlock-calculator-favourites.component';
@@ -55,7 +55,7 @@ interface IItemResult {
   imports: [
     TooltipDirective, MatIcon, DecimalPipe, LowerCasePipe,
     ItemIconComponent, CostComponent, ItemTypePipe,
-    AtmosItemPickerComponent, AtmosSpiritTreeComponent,
+    AtmosItemGridLayoutComponent, AtmosSpiritTreeComponent,
     AtmosItemQuickActionsComponent,
     AtmosItemUnlockCalculatorFavouritesComponent,
     AtmosItemUnlockCalculatorSpiritsComponent,
@@ -75,13 +75,11 @@ export class AtmosItemUnlockCalculatorComponent {
   private readonly _router = inject(Router);
 
   itemType: ItemType = ItemType.Outfit;
-  readonly itemTypes: ReadonlyArray<string> = [
-    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
-    ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
-    ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
-    ItemType.Stance, ItemType.Call, ItemType.Music
-  ];
-  private readonly _itemTypeSet = new Set<string>(this.itemTypes);
+  private readonly _itemTypeSet = ITEM_GRID_TYPES;
+
+  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  /** Pool the embedded browser draws from — every type the grid layout can show. */
+  readonly pickerItems: ReadonlyArray<IItem>;
 
   readonly showAddItems = signal(false);
 
@@ -110,6 +108,7 @@ export class AtmosItemUnlockCalculatorComponent {
   trees: Array<ISpiritTree> = [];
 
   constructor() {
+    this.pickerItems = this._dataService.itemConfig.items.filter(i => this._itemTypeSet.has(i.type));
     this.readItemsFromUrl();
     if (this.items.length) { this.calculate(); }
   }
@@ -172,7 +171,6 @@ export class AtmosItemUnlockCalculatorComponent {
   onItemClicked(evt: ItemClickEvent): void {
     const item = evt.item;
     if (this.itemSet.has(item)) {
-      if (!confirm(`You already added this item. Remove '${item.name}' from the calculator?`)) { return; }
       return this.removeItem(item);
     }
     const err = this.tryAddItem(item);
@@ -191,8 +189,8 @@ export class AtmosItemUnlockCalculatorComponent {
     this.calculate();
   }
 
-  onItemsChanged(items: Array<IItem>): void {
-    this.itemListItems = items;
+  onItemsChanged(items: ReadonlyArray<IItem>): void {
+    this.itemListItems = [...items];
   }
 
   addItemsFromList(): void {

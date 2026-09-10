@@ -20,13 +20,14 @@ import {
   AtmosSpiritTreeNodeClickEvent
 } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosSeasonQuickActionsComponent } from '../season/quick-actions/atmos-season-quick-actions.component';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-season-calculator',
   templateUrl: './atmos-season-calculator.component.html',
   styleUrl: './atmos-season-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe, AtmosCheckboxComponent, AtmosSpiritTreeComponent, AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent]
+  imports: [RouterLink, MatIcon, DateTimePipe, AtmosCheckboxComponent, AtmosSpiritTreeComponent, AtmosSeasonQuickActionsComponent, AtmosDraftWarningComponent, AtmosQuickActionsComponent]
 })
 export class AtmosSeasonCalculatorComponent implements OnInit {
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;

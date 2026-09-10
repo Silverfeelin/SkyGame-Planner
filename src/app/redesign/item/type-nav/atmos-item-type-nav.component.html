@@ -1,0 +1,10 @@
+<div class="atmos-item-type-nav" [class.is-wrap]="wrap()">
+  @for (entry of entries(); track entry.type) {
+    <button type="button" class="atmos-item-type-nav__pill atmos-focus-ring"
+            [class.is-active]="active() === entry.type"
+            [attr.aria-pressed]="active() === entry.type"
+            (click)="typeSelected.emit(entry.type)">
+      <mat-icon [svgIcon]="entry.svgIcon"></mat-icon>{{ entry.type | itemType:true }}
+    </button>
+  }
+</div>

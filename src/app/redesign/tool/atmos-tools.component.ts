@@ -55,14 +55,6 @@ export class AtmosToolsComponent {
       ]
     },
     {
-      title: 'Field guide',
-      icon: 'menu_book',
-      description: 'Group items by location, type or other facets to plan your collection.',
-      links: [
-        { icon: 'menu_book', label: 'Open field guide', link: '/item/field-guide' }
-      ]
-    },
-    {
       title: 'Children of Light',
       icon: 'auto_awesome',
       description: 'Track Children of Light collected across realms.',

@@ -11,6 +11,7 @@ import { DateRangeComponent } from '@app/components/util/date-range/date-range.c
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import { AtmosDraftWarningComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosSpiritQuickActionsComponent } from '@app/redesign/spirit/quick-actions/atmos-spirit-quick-actions.component';
 
 /**
  * Atmospheric returning-spirit (Special Visit) detail. Port of legacy
@@ -25,7 +26,8 @@ import { AtmosDraftWarningComponent, AtmosSpiritTreeComponent } from '@app/redes
     RouterLink, MatIcon,
     WikiLinkComponent, CalendarLinkComponent,
     DateRangeComponent, DaysLeftComponent, DurationComponent,
-    AtmosSpiritTreeComponent, AtmosDraftWarningComponent
+    AtmosSpiritTreeComponent, AtmosDraftWarningComponent,
+    AtmosSpiritQuickActionsComponent
   ]
 })
 export class AtmosReturningSpiritComponent {

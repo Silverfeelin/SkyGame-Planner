@@ -6,7 +6,7 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
-import { ItemClickEvent } from '@app/redesign/item/item-picker/atmos-item-picker.component';
+import { ItemClickEvent } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
 import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
 
 @Component({

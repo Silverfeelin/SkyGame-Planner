@@ -106,5 +106,9 @@
   @let total = tables.regularCount[0] + tables.seasonCount[0] + tables.guideCount[0] + tables.recurringEventCount[0] + tables.otherEventCount[0] + tables.otherCount[0];
   @let unlocked = tables.regularCount[1] + tables.seasonCount[1] + tables.guideCount[1] + tables.recurringEventCount[1] + tables.otherEventCount[1] + tables.otherCount[1];
   <h2 class="atmos-fold__title">Total</h2>
-  <p>You have unlocked {{ unlocked }} of the {{ total }} hearts the Sky Planner tracks.</p>
+  <p class="atmos-paragraph">You have unlocked {{ unlocked }} of the {{ total }} hearts the Sky Planner tracks.</p>
+  <div class="atmos-progress" [class.is-full]="total > 0 && unlocked === total">
+    <div class="atmos-progress__fill" [style.width.%]="total ? unlocked / total * 100 : 0"></div>
+    <div class="atmos-progress__text">{{ unlocked }} / {{ total }}</div>
+  </div>
 </section>

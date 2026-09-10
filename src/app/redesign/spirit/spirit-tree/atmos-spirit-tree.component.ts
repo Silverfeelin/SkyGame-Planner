@@ -3,7 +3,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DateTime } from 'luxon';
 import { Params, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { AtmosNodeAction, AtmosNodeComponent } from '../node/atmos-node.component';
+import { AtmosNodeAction, AtmosNodeComponent, AtmosNodePosition } from '../node/atmos-node.component';
 import { AtmosDraftWarningComponent } from '@app/redesign/shared/draft-warning/atmos-draft-warning.component';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateComponent } from '@app/components/util/date/date.component';
@@ -208,6 +208,20 @@ export class AtmosSpiritTreeComponent {
     trimTop(cols.right);
 
     return cols;
+  });
+
+  /**
+   * Columns in DOM order. The centre trunk comes first so tab order runs
+   * middle → left → right; CSS `order` restores the visual left/centre/right
+   * arrangement.
+   */
+  readonly orderedColumns = computed<ReadonlyArray<{ position: AtmosNodePosition; nodes: ReadonlyArray<INode | undefined> }>>(() => {
+    const c = this.columns();
+    return [
+      { position: 'center' as const, nodes: c.center },
+      { position: 'left' as const, nodes: c.left },
+      { position: 'right' as const, nodes: c.right }
+    ];
   });
 
   readonly action = computed<AtmosNodeAction>(() => this.forceNodeAction() ?? sharedNodeAction());

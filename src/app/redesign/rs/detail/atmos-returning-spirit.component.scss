@@ -4,37 +4,13 @@
   gap: var(--atmos-gap);
 }
 
-.atmos-rs-detail__meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--atmos-gap-compact);
-}
+// A visit that is over is still worth reading, but not at full contrast.
+.atmos-fact__value.is-ended {
+  color: var(--atmos-text-mute);
 
-.atmos-rs-detail__meta-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--atmos-text);
-  text-decoration: none;
-  border-bottom: none;
-  padding: 4px 0;
-
-  &.is-ended {
-    color: var(--atmos-text-mute);
+  .atmos-fact__icon {
+    color: inherit;
   }
-
-  &:is(a):hover { color: var(--atmos-accent); }
-}
-
-.atmos-rs-detail__icon {
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
-  flex: 0 0 auto;
-}
-
-.atmos-rs-detail__pill {
-  margin-left: 4px;
 }
 
 .atmos-rs-detail__trees-body {

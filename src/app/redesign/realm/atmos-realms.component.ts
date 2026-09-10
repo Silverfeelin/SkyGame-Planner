@@ -23,6 +23,7 @@ export class AtmosRealmsComponent implements AfterViewInit {
 
   readonly realms: ReadonlyArray<IRealm>;
   readonly visibleRealms: ReadonlyArray<IRealm>;
+  readonly realmLinks = new Map<string, ReadonlyArray<IFeatureLink>>();
 
   readonly showMap = signal(false);
   readonly showAreas = signal(false);
@@ -40,6 +41,7 @@ export class AtmosRealmsComponent implements AfterViewInit {
   ) {
     this.realms = _dataService.realmConfig.items;
     this.visibleRealms = this.realms.filter(r => !r.hidden);
+    this.visibleRealms.forEach(realm => this.realmLinks.set(realm.guid, this.createRealmLinks(realm)));
 
     if (_route.snapshot.queryParamMap.has('map')) {
       const nMap = +_route.snapshot.queryParamMap.get('map')!;
@@ -54,6 +56,38 @@ export class AtmosRealmsComponent implements AfterViewInit {
       this.showWingedLight.set(localStorage.getItem('realms.map.wl') === '1');
       this.updateMapUrl();
     }
+  }
+
+  private createRealmLinks(realm: IRealm): ReadonlyArray<IFeatureLink> {
+    let spiritCount = 0;
+    let seasonSpiritCount = 0;
+    realm.areas?.forEach(area => {
+      area.spirits?.forEach(spirit => {
+        if (spirit.type === 'Regular' || spirit.type === 'Elder') { spiritCount++; }
+        else if (spirit.type === 'Season' || spirit.type === 'Guide') { seasonSpiritCount++; }
+      });
+    });
+
+    const links: Array<IFeatureLink> = [];
+    if (realm.areas?.length) {
+      links.push({ icon: 'location_on', label: 'Areas', link: `/realm/${realm.guid}` });
+    }
+    if (spiritCount) {
+      links.push({
+        icon: 'person', label: 'Spirits',
+        link: '/spirit', queryParams: { type: 'Regular,Elder', realm: realm.guid }
+      });
+    }
+    if (seasonSpiritCount) {
+      links.push({
+        icon: 'ac_unit', label: 'Season spirits',
+        link: '/spirit', queryParams: { type: 'Season,Guide', realm: realm.guid }
+      });
+    }
+    if (realm.elder) {
+      links.push({ icon: 'elderly', label: realm.elder.name, link: `/spirit/${realm.elder.guid}` });
+    }
+    return links;
   }
 
   ngAfterViewInit(): void {
@@ -178,13 +212,6 @@ export class AtmosRealmsComponent implements AfterViewInit {
       if (wingedLight.area?.realm?.name === 'Void') { return; }
       this._mapInstanceService.addWingedLight(wingedLight, {});
     });
-  }
-
-  realmLinks(realm: IRealm): ReadonlyArray<IFeatureLink> {
-    if (!realm.areas?.length) { return []; }
-    return [
-      { icon: 'location_on', label: 'Areas', link: '/area', queryParams: { realm: realm.guid } }
-    ];
   }
 
   private updateMapConnections(area?: IArea): void {

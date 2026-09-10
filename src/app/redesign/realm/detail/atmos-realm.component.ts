@@ -12,7 +12,9 @@ import { SpiritTypeIconComponent } from '@app/components/spirit-type-icon/spirit
 import { AtmosSpiritTreeComponent } from '@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component';
 import { AtmosRealmConstellationComponent } from '../constellation/atmos-realm-constellation.component';
 import { AtmosRealmQuickActionsComponent } from '../quick-actions/atmos-realm-quick-actions.component';
-import { ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
+import { AtmosFeatureCardComponent, IFeatureLink } from '../../dashboard/atmos-feature-card.component';
+import { IArea, ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 interface ISpiritEntry {
   spirit: ISpirit;
@@ -26,7 +28,8 @@ interface ISpiritEntry {
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     RouterLink, MatIcon, SpiritTypeIconComponent, AtmosSpiritTreeComponent,
-    AtmosRealmConstellationComponent, AtmosRealmQuickActionsComponent, PercentagePipe
+    AtmosRealmConstellationComponent, AtmosRealmQuickActionsComponent, PercentagePipe,
+    AtmosFeatureCardComponent, AtmosQuickActionsComponent
   ]
 })
 export class AtmosRealmComponent implements OnInit, OnDestroy {
@@ -34,6 +37,12 @@ export class AtmosRealmComponent implements OnInit, OnDestroy {
 
   realm!: IRealm;
   highlightTree?: string;
+
+  areaLinks(area: IArea): ReadonlyArray<IFeatureLink> {
+    if (!area.mapData?.position) { return []; }
+    return [{ icon: 'location_on', label: 'View on map', link: '/realm', queryParams: { map: '3', area: area.guid } }];
+  }
+
   spirits: Array<ISpiritEntry> = [];
   spiritCount = 0;
   seasonSpiritCount = 0;

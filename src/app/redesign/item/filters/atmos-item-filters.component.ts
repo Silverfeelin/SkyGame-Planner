@@ -1,23 +1,14 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject, input, linkedSignal, output, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { LowerCasePipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, computed, effect, inject, input, output, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { IconComponent } from '@app/components/icon/icon.component';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
-import { ItemTypeSelectorComponent } from '@app/components/items/item-type-selector/item-type-selector.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { CostHelper } from '@app/helpers/cost-helper';
 import { ItemHelper } from '@app/helpers/item-helper';
-import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { DataService } from '@app/services/data.service';
 import { SearchService } from '@app/services/search.service';
 import { Maybe } from '@app/types/maybe';
 import { AtmosCheckboxComponent } from '@app/redesign/shared/checkbox/atmos-checkbox.component';
-import { AtmosFoldableCardComponent } from '@app/redesign/shared/foldable-card/atmos-foldable-card.component';
-import { ICost, IEvent, IEventInstance, IIAP, IItem, IItemListNode, IItemSource, INode, IRealm, ISeason, ItemSubicon, ItemType } from 'skygame-data';
-
-export type ItemAction = 'navigate' | 'emit';
-export type ItemClickEvent = { event: MouseEvent, item: IItem };
+import { ICost, IEvent, IEventInstance, IIAP, IItem, IItemListNode, IItemSource, INode, IRealm, ISeason } from 'skygame-data';
 
 interface IItemSearchMetadata {
   item: IItem;
@@ -72,72 +63,40 @@ const currencyFilters = [
   { key: 'iap', label: 'In-app purchase' }
 ];
 
-const itemSubIcons: Array<ItemSubicon> = ['type', 'season', 'elder', 'iap', 'favourite', 'limited'];
-
-interface FilterResult {
-  shownCount: number;
-  shownUnlocked: number;
-  matched: ReadonlySet<string>;
-  matchedItems: Array<IItem>;
-}
-
 /**
- * Atmospheric item browser / picker: a type selector, a filter panel and a grid
- * of item icons. In `navigate` mode icons link to the item page; in `emit` mode
- * clicks are surfaced through `(itemClicked)` so the host can consume them.
+ * Item filter panel: a name search plus the general, currency, season, event and
+ * realm groups. It only decides which of the given items pass; what to do with
+ * them is the host's business. Filter state is shared by every host through the
+ * single `items.filters` localStorage entry, as it always has been.
  */
 @Component({
-  selector: 'app-atmos-item-picker',
-  templateUrl: './atmos-item-picker.component.html',
-  styleUrl: './atmos-item-picker.component.scss',
+  selector: 'atmos-item-filters',
+  templateUrl: './atmos-item-filters.component.html',
+  styleUrl: './atmos-item-filters.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
-    RouterLink, MatIcon, LowerCasePipe, ItemTypePipe, TooltipDirective,
-    IconComponent, ItemIconComponent, ItemTypeSelectorComponent,
-    AtmosCheckboxComponent, AtmosFoldableCardComponent
-  ]
+  imports: [MatIcon, TooltipDirective, IconComponent, AtmosCheckboxComponent]
 })
-export class AtmosItemPickerComponent {
-  readonly title = input<string>('Items');
-  readonly type = input<ItemType>(ItemType.Outfit);
-  readonly highlightItem = input<IItem | undefined>(undefined);
-  readonly selectedItems = input<ReadonlyArray<IItem> | undefined>(undefined);
-  readonly opaqueItems = input<boolean>(false);
-  readonly action = input<ItemAction>('navigate');
-  readonly foldable = input<boolean>(false);
-  readonly maxHeight = input<string | undefined>(undefined);
+export class AtmosItemFiltersComponent {
+  readonly items = input.required<ReadonlyArray<IItem>>();
+  /** The host owns the open/closed state so it can place the toggle itself. */
+  readonly visible = input<boolean>(false);
 
-  readonly typeChanged = output<ItemType>();
-  readonly itemClicked = output<ItemClickEvent>();
-  readonly itemsChanged = output<Array<IItem>>();
+  readonly matchedChange = output<ReadonlySet<string>>();
+  readonly hideRequested = output<Event>();
 
   private readonly _dataService = inject(DataService);
   private readonly _searchService = inject(SearchService);
-  private readonly _route = inject(ActivatedRoute);
-
-  /** Selected type; seeded from the input but owned by the type selector afterwards. */
-  readonly activeType = linkedSignal<ItemType>(() => this.type());
 
   readonly generalFilters = generalFilters;
   readonly currencyFilters = currencyFilters;
-  readonly itemSubIcons = itemSubIcons;
 
-  readonly types: Array<ItemType> = [
-    ItemType.Outfit, ItemType.Shoes, ItemType.OutfitShoes, ItemType.Mask, ItemType.FaceAccessory,
-    ItemType.Necklace, ItemType.Hair, ItemType.HairAccessory, ItemType.HeadAccessory, ItemType.Cape,
-    ItemType.Held, ItemType.Furniture, ItemType.Prop, ItemType.Emote,
-    ItemType.Stance, ItemType.Call, ItemType.Music
-  ];
-
-  readonly folded = signal(false);
-  readonly showFilters = signal(false);
   readonly showGeneralFilters = signal(true);
   readonly showCurrencyFilters = signal(false);
   readonly showSeasonFilters = signal(false);
   readonly showEventFilters = signal(false);
   readonly showRealmFilters = signal(false);
 
-  /** Bumped whenever a filter map changes, to recompute the shown items. */
+  /** Bumped whenever a filter map changes, to recompute the matched items. */
   private readonly _filterVersion = signal(0);
 
   filterName = '';
@@ -157,74 +116,24 @@ export class AtmosItemPickerComponent {
   readonly events: Array<IEvent>;
   readonly realms: Array<IRealm>;
 
-  private readonly _typeSet: Set<ItemType>;
-  private readonly _typeItems: { [key: string]: Array<IItem> } = {};
-  private readonly _typeUnlocked: { [key: string]: number } = {};
-
-  /** Types rendered at least once, so switching back to one is instant. */
-  readonly loadedTypes = signal<ReadonlySet<ItemType>>(new Set());
-
-  readonly selectedItemSet = computed<ReadonlySet<string>>(() => {
-    const items = this.selectedItems();
-    return items ? new Set(items.map(i => i.guid)) : new Set();
-  });
-
-  private readonly _result = computed<FilterResult>(() => {
+  readonly matched = computed<ReadonlySet<string>>(() => {
     this._filterVersion();
-    return this.computeShownItems(this.activeType());
+    return this.computeMatched(this.items());
   });
-
-  readonly shownCount = computed<number>(() => this._result().shownCount);
-  readonly shownUnlocked = computed<number>(() => this._result().shownUnlocked);
-  readonly matchedCount = computed<number>(() => this._result().matched.size);
-  readonly matchedItems = computed<ReadonlySet<string>>(() => this._result().matched);
-  readonly hasActiveFilters = computed<boolean>(() => this.shownCount() !== this.matchedCount());
 
   constructor() {
     this.seasons = this._dataService.seasonConfig.items;
     this.events = this._dataService.eventConfig.items;
+    // Curated subset — Isle of Dawn through Eye of Eden. Not derivable from the
+    // data, which also carries realms that were never worth filtering on.
     const realmGuids = new Set(['E1RwpAdA8l', 'tuaosLljJS', 'mz64Wq0_df', 'VtkTo1WWuD', 'rAjzHXfPpb', 'y-6n1F5E77', 'GKnbJhLIRi']);
     this.realms = this._dataService.realmConfig.items.filter(r => realmGuids.has(r.guid));
 
-    this._typeSet = new Set(this.types);
-    this.initializeItems();
     this.loadSettings();
 
-    this.showFilters.set(this._route.snapshot.queryParamMap.get('f') === '1');
-
     effect(() => {
-      const type = this.activeType();
-      if (!this.loadedTypes().has(type)) {
-        this.loadedTypes.update(set => new Set(set).add(type));
-      }
-      this.itemsChanged.emit(this._result().matchedItems);
+      this.matchedChange.emit(this.matched());
     });
-  }
-
-  itemsOfType(type: ItemType): ReadonlyArray<IItem> {
-    return this._typeItems[type] ?? [];
-  }
-
-  onTypeChanged(type: ItemType): void {
-    this.activeType.set(type);
-    this.typeChanged.emit(type);
-  }
-
-  clickItem(item: IItem, event: MouseEvent): void {
-    if (this.action() !== 'emit') { return; }
-    this.itemClicked.emit({ event, item });
-  }
-
-  toggleFilters(evt: Event): void {
-    evt.preventDefault();
-    evt.stopImmediatePropagation();
-
-    const show = !this.showFilters();
-    this.showFilters.set(show);
-
-    const url = new URL(location.href);
-    url.searchParams.set('f', show ? '1' : '0');
-    window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   onFilterNameInput(evt: Event): void {
@@ -324,9 +233,7 @@ export class AtmosItemPickerComponent {
     return same ? first : undefined;
   }
 
-  private computeShownItems(type: ItemType): FilterResult {
-    const items = this._typeItems[type] ?? [];
-
+  private computeMatched(items: ReadonlyArray<IItem>): ReadonlySet<string> {
     this.initializeItemSearchMetadata();
     const matches = items.filter(item => {
       if (this.filters['favourite'] !== undefined) {
@@ -399,39 +306,12 @@ export class AtmosItemPickerComponent {
     });
 
     // The name filter goes through the search service so results stay fuzzy-matched.
-    let matched: Set<string>;
-    if (this.filterName) {
-      const itemGuids = new Set(matches.map(item => item.guid));
-      const searchItems = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
-      const searchResults = this._searchService.search(this.filterName, { limit: 999, items: searchItems });
-      matched = new Set(searchResults.map(r => (r.data as IItem).guid));
-    } else {
-      matched = new Set(matches.map(item => item.guid));
-    }
+    if (!this.filterName) { return new Set(matches.map(item => item.guid)); }
 
-    return {
-      shownCount: items.length,
-      shownUnlocked: this._typeUnlocked[type] ?? 0,
-      matched,
-      matchedItems: matches
-    };
-  }
-
-  private initializeItems(): void {
-    for (const type in ItemType) {
-      this._typeItems[type] = [];
-      this._typeUnlocked[type] = 0;
-    }
-
-    for (const item of this._dataService.itemConfig.items) {
-      if (!this._typeSet.has(item.type)) { continue; }
-      this._typeItems[item.type].push(item);
-      if (item.unlocked) { this._typeUnlocked[item.type]++; }
-    }
-
-    for (const type in ItemType) {
-      ItemHelper.sortItems(this._typeItems[type]);
-    }
+    const itemGuids = new Set(matches.map(item => item.guid));
+    const searchItems = this._searchService.items.filter(s => s.type === 'Item' && itemGuids.has((s.data as IItem).guid));
+    const searchResults = this._searchService.search(this.filterName, { limit: 999, items: searchItems });
+    return new Set(searchResults.map(r => (r.data as IItem).guid));
   }
 
   private initializeItemSearchMetadata(): void {

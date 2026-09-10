@@ -10,13 +10,14 @@ import {
   AtmosSpiritTreeComponent
 } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-harmony-hall',
   templateUrl: './atmos-shop-harmony-hall.component.html',
   styleUrl: './atmos-shop-harmony-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent, AtmosShopQuickActionsComponent]
+  imports: [MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent, AtmosShopQuickActionsComponent, AtmosQuickActionsComponent]
 })
 export class AtmosShopHarmonyHallComponent {
   private readonly _iapService = inject(IAPService);

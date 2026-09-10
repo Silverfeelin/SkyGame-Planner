@@ -16,7 +16,7 @@
       [timeRow]="seasonTimeRow()"
       [links]="seasonLinks()"
       [currency]="seasonCurrency()"
-      checkLabel="I have done my season dailies."
+      checkLabel="I have done my season dailies"
       [checked]="checkedIn()"
       (checkToggle)="onSeasonCheckinToggle(s, $event)" />
   }
@@ -30,7 +30,7 @@
       [timeRow]="card.timeRow"
       [links]="card.links"
       [currency]="card.currency"
-      [checkLabel]="card.showCheckin ? 'Daily event currency collected' : ''"
+      [checkLabel]="card.showCheckin ? 'I have collected my daily event currency' : ''"
       [checked]="card.checked"
       (checkToggle)="onEventCheckinToggle(card, $event)" />
   }

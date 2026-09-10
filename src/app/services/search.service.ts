@@ -186,7 +186,6 @@ export class SearchService {
       { name: 'Event calculator', type: 'Page', data: '/event/calculator', search: 'Event calculator' },
       { name: 'Items', type: 'Page', data: '/item', search: 'Items' },
       { name: 'Item collections', type: 'Page', data: '/item/collection', search: 'Item collections' },
-      { name: 'Item field guide', type: 'Page', data: '/item/field-guide', search: 'Item field guide' },
       { name: 'Item inflation', type: 'Page', data: '/item/inflation', search: 'Item inflation' },
       { name: 'Item unlock calculator', type: 'Page', data: '/item/unlock-calculator', search: 'Item unlock calculator' },
       { name: 'Hearts', type: 'Page', data: '/item/heart', search: 'Hearts' },

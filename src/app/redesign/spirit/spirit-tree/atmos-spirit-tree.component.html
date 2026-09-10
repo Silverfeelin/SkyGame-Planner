@@ -79,14 +79,17 @@
            root at bottom (flex-direction: column-reverse), side columns shifted
            up to form diagonal branches. Connector lines live in the slot. -->
       <div class="atmos-spirit-tree__columns">
-        @for (col of [columns().left, columns().center, columns().right]; track $index) {
-          <div class="atmos-spirit-tree__column" [class.is-left]="$index === 0" [class.is-right]="$index === 2">
-            @for (n of col; track $index) {
+        @for (col of orderedColumns(); track col.position) {
+          <div class="atmos-spirit-tree__column"
+               [class.is-left]="col.position === 'left'"
+               [class.is-center]="col.position === 'center'"
+               [class.is-right]="col.position === 'right'">
+            @for (n of col.nodes; track $index) {
               <div class="atmos-spirit-tree__slot">
                 @if (n) {
                   <app-atmos-node
                     [node]="n"
-                    [position]="$index === 0 ? 'left' : $index === 2 ? 'right' : 'center'"
+                    [position]="col.position"
                     [action]="action()"
                     [opaque]="isNodeOpaque(n)"
                     [highlight]="isNodeHighlighted(n)"

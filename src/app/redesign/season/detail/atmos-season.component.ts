@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, DestroyRef, OnInit, computed, injec
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import { INode, IRevisedSpiritTree, ISeason, IShop, ISpirit, ISpiritTree } from 'skygame-data';
+import { IIAP, INode, IRevisedSpiritTree, ISeason, IShop, ISpirit, ISpiritTree } from 'skygame-data';
 import { DateHelper } from '@app/helpers/date-helper';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { DataService } from '@app/services/data.service';
@@ -95,6 +95,9 @@ export class AtmosSeasonComponent implements OnInit {
       this.hasBoughtSeasonPass.set(!gifted && this._storageService.hasSeasonPass(s.guid));
     });
   }
+
+  togglePurchased(iap: IIAP): void { this._iapService.togglePurchased(iap); }
+  toggleGifted(iap: IIAP): void { this._iapService.toggleGifted(iap); }
 
   toggleSeasonPass(gifted: boolean): void {
     const s = this.season();

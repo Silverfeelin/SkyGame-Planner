@@ -25,17 +25,14 @@
     </div>
   </section>
 } @else {
-  <section class="atmos-page__quick-actions">
+  <atmos-quick-actions>
     <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', season.guid]">
       <mat-icon>arrow_back</mat-icon> Season
-    </a>
-    <a class="atmos-btn atmos-btn--sm" routerLink="/currency">
-      <mat-icon>account_balance_wallet</mat-icon> Currencies
     </a>
     <a class="atmos-btn atmos-btn--sm" href="https://sky-season-calculator.netlify.app/" target="_blank" rel="noopener">
       <mat-icon>open_in_new</mat-icon> Stoat's Calculator
     </a>
-  </section>
+  </atmos-quick-actions>
 
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">{{ season.name }} <span class="atmos-calc__title-suffix">Calculator</span></h1>
@@ -63,7 +60,7 @@
 
       <div class="atmos-calc__row">
         <span class="atmos-calc__label">Your season candles:</span>
-        <mat-icon class="atmos-calc__inline-icon" svgIcon="candle"></mat-icon>
+        <mat-icon class="atmos-calc__inline-icon seasonal" svgIcon="season-candle"></mat-icon>
         <input #inpSc type="number" min="0" max="99999"
                class="atmos-input atmos-input--inline"
                (blur)="onCurrencyInputBlur($event)" (input)="onCurrencyInput()"
@@ -87,14 +84,14 @@
       </div>
 
       @if (timedCurrencies.length) {
-        <hr class="atmos-calc__rule"/>
+        <hr class="atmos-rule atmos-calc__rule"/>
         <p class="atmos-paragraph">
           This season includes some activities that reward extra season candles.<br/>
           Please enter how much you have collected from these activities below.<br/>
           Your current season candles should always be entered at the top of the page, including the ones from these activities!
         </p>
         @for (timedCurrency of timedCurrencies; track timedCurrency.guid) {
-          <hr class="atmos-calc__rule"/>
+          <hr class="atmos-rule atmos-calc__rule"/>
           <div class="atmos-paragraph">
             @if (timedCurrency.endDate < now) {
               @if (timedCurrency.description) { <b>{{ timedCurrency.description }}</b><br/> }
@@ -136,7 +133,7 @@
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectEverything()">everything</button>
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectFreeAll()">free items</button>
         <button type="button" class="atmos-btn atmos-btn--sm" (click)="selectFree()">free without spells</button>
-        <button type="button" class="atmos-btn atmos-btn--sm atmos-calc__danger" (click)="selectNothing()">nothing</button>
+        <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="selectNothing()">nothing</button>
       </div>
       <p class="atmos-paragraph">
         Click items below to toggle want / have. The first click marks an item as "want",

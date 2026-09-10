@@ -15,17 +15,15 @@
     <strong>{{ wedgeCount() }}</strong> wing wedges.
   </p>
 
-  <div class="atmos-winged-light__bar" [class.is-full]="wl() === totalWl()">
-    <div class="atmos-winged-light__bar-fill" [style.width.%]="wlPercent()"></div>
+  <div class="atmos-progress" [class.is-full]="wl() === totalWl()">
+    <div class="atmos-progress__fill" [style.width.%]="wlPercent()"></div>
     @for (wedge of wedgesReverse; track wedge) {
-      <div class="atmos-winged-light__bar-segment"
-        [class.is-full]="wl() >= wedge"
-        [style.width.%]="segmentWidth(wedge)"></div>
+      <div class="atmos-progress__divider" [style.width.%]="segmentWidth(wedge)"></div>
     }
-    <div class="atmos-winged-light__bar-text">
+    <div class="atmos-progress__text">
       {{ wl() }} / {{ totalWl() }}
       @if (wedgeNext(); as next) {
-        <span class="atmos-winged-light__bar-next">(next at {{ next }})</span>
+        <span class="atmos-progress__note">(next at {{ next }})</span>
       }
     </div>
   </div>
@@ -50,10 +48,9 @@
           <span>{{ b.label }}</span>
         }
       </div>
-      <div class="atmos-winged-light__bar atmos-winged-light__bar--single"
-        [class.is-full]="b.total > 0 && b.unlocked === b.total">
-        <div class="atmos-winged-light__bar-fill" [style.width.%]="percent(b.unlocked, b.total)"></div>
-        <div class="atmos-winged-light__bar-text">{{ b.unlocked }} / {{ b.total }}</div>
+      <div class="atmos-progress" [class.is-full]="b.total > 0 && b.unlocked === b.total">
+        <div class="atmos-progress__fill" [style.width.%]="percent(b.unlocked, b.total)"></div>
+        <div class="atmos-progress__text">{{ b.unlocked }} / {{ b.total }}</div>
       </div>
     </div>
   }

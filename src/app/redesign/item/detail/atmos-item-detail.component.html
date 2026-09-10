@@ -1,10 +1,8 @@
 @if (showTipUnlock()) {
-  <div class="atmos-card">
-    <div class="atmos-card__body">
-      Tip: Did you mean to {{ item()?.unlocked ? 'lock' : 'unlock' }} the item?
-      Go <a (click)="goBack()" class="atmos-text-link">back</a> and click on the price below the item!
-    </div>
-  </div>
+  <p class="atmos-paragraph atmos-page__hint">
+    Tip: Did you mean to {{ item()?.unlocked ? 'lock' : 'unlock' }} the item?
+    Go <a (click)="goBack()" class="atmos-text-link">back</a> and click on the price below the item!
+  </p>
 }
 
 @if (item(); as itm) {
@@ -120,13 +118,19 @@
 
 @if (dyePreviewMode() > 0) {
   @let itm = item()!;
-  <app-overlay (close)="dyePreviewMode.set(0)">
+  <app-overlay class="atmos-item-detail__dye-overlay" (close)="dyePreviewMode.set(0)">
     @let src = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
     <img [src]="src" (dblclick)="openSrc($event)"/>
     @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
-      <span overlayAction class="link" (click)="preventDefault($event); dyePreviewMode.set(2)">Show dyeable parts</span>
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
+        (click)="preventDefault($event); dyePreviewMode.set(2)">
+        <mat-icon>palette</mat-icon> Show dyeable parts
+      </button>
     } @else if (dyePreviewMode() === 2) {
-      <span overlayAction class="link" (click)="preventDefault($event); dyePreviewMode.set(1)">Show preview</span>
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
+        (click)="preventDefault($event); dyePreviewMode.set(1)">
+        <mat-icon>image</mat-icon> Show preview
+      </button>
     }
   </app-overlay>
 }

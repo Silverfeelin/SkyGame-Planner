@@ -5,13 +5,14 @@ import { ISpirit, ISpiritTree } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-concert-hall',
   templateUrl: './atmos-shop-concert-hall.component.html',
   styleUrl: './atmos-shop-concert-hall.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, AtmosSpiritTreeComponent, AtmosShopQuickActionsComponent]
+  imports: [MatIcon, AtmosSpiritTreeComponent, AtmosShopQuickActionsComponent, AtmosQuickActionsComponent]
 })
 export class AtmosShopConcertHallComponent {
   readonly tree: ISpiritTree;

@@ -32,7 +32,8 @@
   --atmos-danger-bg:     oklch(0.20 0.07 22 / 0.55);
   --atmos-danger-accent: oklch(0.44 0.18 22);
   --atmos-warn-accent:   oklch(0.80 0.16 45);
-  --atmos-currency:      oklch(0.90 0.01 var(--atmos-hue));
+  /* Regular candles/hearts read as neutral white, never tinted by the theme hue. */
+  --atmos-currency:      oklch(0.92 0 0);
   --atmos-seasonal:      oklch(0.78 0.14 65);
   --atmos-favourite:     oklch(0.87 0.18 93);
   --atmos-highlight:     oklch(0.80 0.18 290);
@@ -125,6 +126,20 @@
   --atmos-page-header-gap: 16px;
   --atmos-input-pad:       8px 12px;
   --atmos-input-pad-pill:  8px 14px;
+  --atmos-grid-min-h:      400px;
+
+  /* Summary card (see section 13). Media width is a fraction of the card so
+     the artwork keeps its share of the width as the window narrows; pages with
+     a fixed-width portrait override it with a length. */
+  --atmos-summary-media:     minmax(0, 0.5fr);
+  --atmos-summary-preview-h: 160px;
+  --atmos-summary-art-h:     190px;
+  --atmos-fact-min:          170px;  /* narrowest a fact column may get before dropping one */
+  --atmos-fact-gap:          var(--atmos-gap-compact) var(--atmos-gap);
+  --atmos-fact-label-size:   0.6875rem;
+  --atmos-fact-label-track:  0.13em;
+  --atmos-fact-label-gap:    6px;
+  --atmos-fact-value-size:   1rem;
 
   /* Item icon sizes. */
   --item-size:        64px;
@@ -252,6 +267,14 @@
   transform: translateY(1px);
 }
 
+/* Section heading inside a page — the h2 above a card grid or a card's body. */
+.atmos-section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
 /* Interactive tile surface — persistent background that brightens on hover.
    Add to any icon-tile/cell that should always show a background. Geometry
    (size, radius, overflow) stays on the component class. */
@@ -262,6 +285,20 @@
   &:hover {
     background: var(--atmos-tile-bg-hover);
   }
+}
+
+/* Reserved image box — item artwork has no known intrinsic size, so the layout
+   box is pinned to --atmos-img-box before the image loads and `contain`
+   letterboxes whatever arrives. Override the var for a different square, or
+   raise max-height on the component class for taller art. */
+.atmos-img-box {
+  --atmos-img-box: 128px;
+  display: block;
+  min-width: var(--atmos-img-box);
+  min-height: var(--atmos-img-box);
+  max-width: var(--atmos-img-box);
+  max-height: var(--atmos-img-box);
+  object-fit: contain;
 }
 
 /* Unlocked marker — the green dot pinned to the bottom-right of an item tile.
@@ -530,7 +567,9 @@ a.atmos-link:focus-visible {
   color: var(--atmos-text-dim);
 }
 
-/* Reusable quick-action link row below a page header. */
+/* Reusable quick-action link row below a page header. Wrap it in
+   `atmos-quick-actions`, which collapses long rows behind a single pill on
+   narrow windows — five wrapped rows otherwise eat the top of the screen. */
 .atmos-page__quick-actions {
   display: flex;
   flex-wrap: wrap;
@@ -538,16 +577,10 @@ a.atmos-link:focus-visible {
 }
 
 @media (max-width: 720px) {
-  .atmos-page__quick-actions {
-    white-space: nowrap;
-    overflow-x: auto;
-    padding-bottom: 4px;
-
-    mat-icon {
-      font-size: 16px;
-      width: 16px;
-      height: 16px;
-    }
+  .atmos-page__quick-actions mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -601,7 +634,8 @@ a.atmos-link:focus-visible {
     backdrop-filter: var(--atmos-blur-soft);
     -webkit-backdrop-filter: var(--atmos-blur-soft);
     border: var(--atmos-map-control-border) !important;
-    border-radius: var(--atmos-radius-sm) !important;
+    /* Round, matching the round buttons used elsewhere in the UI. */
+    border-radius: 50% !important;
     transition: background var(--atmos-transition);
 
     &:hover {
@@ -701,11 +735,6 @@ a.atmos-link:focus-visible {
 }
 
 // #region Themes
-
-:root[data-theme="isle"] {
-  --atmos-hue: 240;
-  --atmos-bg-image: url(/assets/game/background/isle.webp);
-}
 
 :root[data-theme="cozy"] {
   --atmos-hue: 150;
@@ -881,6 +910,64 @@ a.atmos-link:focus-visible {
   margin: 12px 0;
 }
 
+// 7b. Progress bar. A filled track with a centered label drawn on top:
+//
+//   <div class="atmos-progress" [class.is-full]="done === total">
+//     <div class="atmos-progress__fill" [style.width.%]="percent"></div>
+//     <div class="atmos-progress__text">3 / 10 <span class="atmos-progress__note">(…)</span></div>
+//   </div>
+//
+// Add zero or more `.atmos-progress__divider` elements (width positions the
+// divider) to mark milestones along the track.
+.atmos-progress {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+  border-radius: var(--atmos-radius-sm);
+  border: var(--atmos-card-border);
+  background: var(--atmos-chip-bg);
+  overflow: hidden;
+
+  &.is-full .atmos-progress__fill {
+    background: var(--atmos-good);
+  }
+}
+
+.atmos-progress__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--atmos-accent);
+  transition: width var(--atmos-transition);
+}
+
+.atmos-progress__divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-right: 2px solid var(--atmos-line-soft);
+  pointer-events: none;
+}
+
+.atmos-progress__text {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-progress__note {
+  margin-left: 6px;
+  color: var(--atmos-text-dim);
+  font-weight: 500;
+}
+
 // 8. Card header
 .atmos-card__header {
   display: flex;
@@ -900,7 +987,7 @@ a.atmos-link:focus-visible {
   background: var(--atmos-card-bg);
   ag-grid-angular {
     flex: 1;
-    min-height: 400px;
+    min-height: var(--atmos-grid-min-h);
   }
 }
 
@@ -933,6 +1020,144 @@ a.atmos-link:focus-visible {
   > * {
     flex: 0 0 auto;
   }
+}
+
+// 13. Summary card — the overview at the top of a detail page. A sheet of
+//     labelled facts beside the subject's artwork. Labels carry the meaning
+//     that four identical accent icons cannot, and the facts wrap into as many
+//     columns as fit, so a page with three facts and one with six share a
+//     layout without either stretching over dead space.
+//
+//     <section class="atmos-card">
+//       <div class="atmos-summary__grid">
+//         <div class="atmos-card__body atmos-summary__main">
+//           <div class="atmos-facts"> .atmos-fact* </div>
+//         </div>
+//         <div class="atmos-summary__preview"></div>   <!-- or __art -->
+//       </div>
+//     </section>
+.atmos-summary__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--atmos-summary-media);
+  width: 100%;
+  align-items: stretch;
+
+  @media (max-width: 720px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Fact column. Centred against the artwork, which is usually the taller of the two. */
+.atmos-summary__main {
+  justify-content: center;
+}
+
+/* Wide key art (season/event banners) bleeds to the card edge. Cropping is safe
+   here; on narrow windows there is no room for it beside anything, so it goes. */
+.atmos-summary__preview {
+  background-size: cover;
+  background-position: center;
+  min-height: var(--atmos-summary-preview-h);
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+/* Tall artwork (spirit renders) cannot be cropped, so it is contained on a
+   tile rather than bled, and moves above the facts on narrow windows. */
+.atmos-summary__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--atmos-pad-compact);
+  background: var(--atmos-tile-bg);
+
+  img {
+    max-width: 100%;
+    max-height: var(--atmos-summary-art-h);
+    width: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 720px) {
+    order: -1;
+  }
+}
+
+.atmos-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--atmos-fact-min), 1fr));
+  gap: var(--atmos-fact-gap);
+}
+
+.atmos-fact {
+  min-width: 0;
+}
+
+/* Full-width fact, for values too long to share a row (a date range and its duration). */
+.atmos-fact--wide {
+  grid-column: 1 / -1;
+}
+
+.atmos-fact__label {
+  font-size: var(--atmos-fact-label-size);
+  font-weight: 500;
+  letter-spacing: var(--atmos-fact-label-track);
+  text-transform: uppercase;
+  color: var(--atmos-text-mute);
+  margin-bottom: var(--atmos-fact-label-gap);
+}
+
+.atmos-fact__value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--atmos-text);
+  font-size: var(--atmos-fact-value-size);
+  line-height: 1.35;
+
+  mat-icon,
+  img {
+    flex: 0 0 auto;
+  }
+
+  // Beats Material's own `.mat-icon` sizing on specificity.
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+a.atmos-fact__value {
+  text-decoration: none;
+  border-bottom: none;
+  transition: color var(--atmos-transition);
+}
+
+/* Values that carry a trailing note wrap instead of clipping it. */
+.atmos-fact__value--wrap {
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
+
+/* Opt-in accent tint. Left off icons that already carry a currency or seasonal
+   colour, which the accent would otherwise win against on specificity. */
+.atmos-fact__icon {
+  color: var(--atmos-accent);
+}
+
+.atmos-fact__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.atmos-fact__meta {
+  color: var(--atmos-text-dim);
+  font-size: 0.875rem;
 }
 
 .atmos-code {

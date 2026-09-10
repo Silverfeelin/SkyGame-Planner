@@ -22,6 +22,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--atmos-radius-pill);
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  &:hover:not([disabled]) {
+    background: var(--atmos-hover-bg);
+  }
+
+  &[disabled] {
+    color: var(--atmos-text-mute);
+    cursor: default;
+  }
 }
 
 .atmos-topbar__title {

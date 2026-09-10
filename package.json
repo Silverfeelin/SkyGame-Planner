@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --no-hmr",
-    "start-proxy": "ng serve --configuration development,proxy --no-hmr",
+    "start": "ng serve --no-hmr --host 127.0.0.1",
+    "start-proxy": "ng serve --configuration development,proxy --no-hmr --host 127.0.0.1",
     "build": "ng build",
     "build-prod": "npm run sitemap-build && ng build --configuration production && npm run license-move",
     "watch": "ng build --watch --configuration development",

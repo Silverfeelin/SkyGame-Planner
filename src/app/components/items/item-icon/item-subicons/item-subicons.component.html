@@ -52,12 +52,10 @@
 
   <!-- Unlocked (bottom right) -->
   @if (iconsShown['unlock'] && item.unlocked) {
-    <mat-icon class="unlock-check"
-      [class.unlocked]="item.unlocked || node?.unlocked"
-      [class.self]="(!node && !iap && !listNode) || node?.unlocked || iap?.bought || iap?.gifted || listNode?.unlocked"
+    <span class="atmos-tile__dot unlock-dot"
+      [class.unlock-dot--self]="(!node && !iap && !listNode) || node?.unlocked || iap?.bought || iap?.gifted || listNode?.unlocked"
       [skyTooltip]="showTooltips ? 'You own this item.' : undefined">
-      done
-    </mat-icon>
+    </span>
   } @else if (iconsShown['limited'] && (item.group === 'Limited' || item.group === 'Ultimate')) {
     <mat-icon class="img-br subicon-shadow subicon-limited" [skyTooltip]="showTooltips ? 'This item is limited and will not return.' : undefined">
       update_disabled

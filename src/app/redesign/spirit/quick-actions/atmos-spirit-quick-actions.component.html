@@ -1,4 +1,4 @@
-<section class="atmos-page__quick-actions">
+<atmos-quick-actions>
   <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/spirit"><mat-icon>person</mat-icon> All spirits</a>
   <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/spirit" [queryParams]="{ type: 'Regular' }"><mat-icon svgIcon="candle"></mat-icon> Regular spirits</a>
   <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" [routerLinkActiveOptions]="activeOptions" routerLink="/spirit" [queryParams]="{ type: 'Elder' }"><mat-icon svgIcon="ascended-candle"></mat-icon> Elder spirits</a>
@@ -8,4 +8,5 @@
   <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/rs"><mat-icon>flight</mat-icon> Special visits</a>
   <a class="atmos-btn atmos-btn--sm" routerLinkActive="atmos-btn--active" routerLink="/spirit/elusive"><mat-icon>timer</mat-icon> Elusive spirits</a>
   <a class="atmos-btn atmos-btn--sm" href="https://sky-children-of-the-light.fandom.com/wiki/Spirits" target="_blank" rel="noopener"><mat-icon>open_in_new</mat-icon> Wiki</a>
-</section>
+  <ng-content></ng-content>
+</atmos-quick-actions>

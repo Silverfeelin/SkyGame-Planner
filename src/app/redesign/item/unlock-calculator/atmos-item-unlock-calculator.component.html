@@ -132,14 +132,14 @@
                     }
                   </span>
                 } @else if (result.cost) {
-                  <span>Unlock cost</span>
+                  <span>Unlock cost</span>&ngsp;
                   @if ((result.nodes?.length || 0) > 1) {
                     <button type="button" class="atmos-text-link" (click)="showCostBreakdown(result)">(breakdown)</button>
                   } @else if (result.isEmptyCost) {
                     <button type="button" class="atmos-text-link" (click)="showNoCostInfo(result)">(?)</button>
                   }
                   <br/>
-                  <app-cost [cost]="result.cost" [showZeroes]="true" [showTooltip]="false"></app-cost>
+                  <app-cost [cost]="result.cost" [showZeroes]="false" [showTooltip]="false"></app-cost>
                 } @else if ($any(result).price >= 0) {
                   <span>Price (USD)</span><br/>
                   $ {{ result.price | number: '1.2-2' }}
@@ -213,12 +213,19 @@
 
 @if (showAddItems()) {
   <div class="atmos-item-unlock-calc__items-wrap">
-    <app-atmos-item-picker [title]="'Add items'" [type]="itemType" [action]="'emit'"
-      [selectedItems]="items"
-      (typeChanged)="onItemTypeChanged($event)"
-      (itemClicked)="onItemClicked($event)"
-      (itemsChanged)="onItemsChanged($event)">
-    </app-atmos-item-picker>
+    <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"
+      [initialCategory]="itemType"
+      (categoryChanged)="onItemTypeChanged($event)"
+      (shownItemsChanged)="onItemsChanged($event)"/>
+    <ng-template #pickTpl let-item>
+      <div class="atmos-item-unlock-calc__pick atmos-tile atmos-tile--selectable"
+        [class.is-selected]="itemSet.has(item)"
+        (click)="onItemClicked({ event: $event, item })">
+        <app-item-icon [item]="item" [subIcons]="itemSubIcons" [skyTooltip]="item.name" placement="auto"></app-item-icon>
+        @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+        @if (itemSet.has(item)) { <span class="atmos-tile__check">✓</span> }
+      </div>
+    </ng-template>
     <div class="atmos-item-unlock-calc__buttons">
       <button type="button" class="atmos-btn atmos-btn--sm" (click)="addItemsFromList()">
         @if (itemListItems.length === 1) {

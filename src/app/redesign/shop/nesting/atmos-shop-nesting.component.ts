@@ -31,6 +31,7 @@ import {
   INestingStorageData,
   nestingStorageKey
 } from '@app/redesign/shop/nesting/shop-nesting.interface';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 interface IRotationItem extends ICost {
   guid: string;
@@ -141,7 +142,8 @@ const rotations: IRotations = [
     ItemIconComponent,
     AtmosItemListComponent,
     AtmosSpiritTreeComponent,
-    AtmosShopQuickActionsComponent
+    AtmosShopQuickActionsComponent,
+    AtmosQuickActionsComponent
   ]
 })
 export class AtmosShopNestingComponent {

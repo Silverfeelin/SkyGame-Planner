@@ -118,7 +118,16 @@
   <app-atmos-tabs>
     <!-- Items -->
     <ng-template [atmosTab]="'Items'">
-      <app-atmos-item-picker [action]="'emit'" [opaqueItems]="true" [selectedItems]="items" (itemClicked)="onItemClicked($event)"></app-atmos-item-picker>
+      <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
+      <ng-template #pickTpl let-item>
+        <div class="picker-item atmos-tile atmos-tile--selectable"
+          [class.is-selected]="!!itemMap[item.guid]"
+          (click)="onItemClicked({ event: $event, item })">
+          <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
+            [skyTooltip]="item.name" placement="auto"></app-item-icon>
+          @if (itemMap[item.guid]) { <span class="atmos-tile__check">✓</span> }
+        </div>
+      </ng-template>
     </ng-template>
 
     <!-- Special items -->
