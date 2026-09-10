@@ -17,6 +17,6 @@
 
 .atmos-spirits__grid-card {
   flex: 1;
-  min-height: 0;
+  min-height: var(--atmos-grid-min-h);
   overflow: hidden;
 }

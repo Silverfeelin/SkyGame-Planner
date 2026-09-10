@@ -2,6 +2,6 @@
 
 .atmos-event__grid-card {
   flex: 1;
-  min-height: 480px;
+  min-height: var(--atmos-grid-min-h);
   overflow: hidden;
 }

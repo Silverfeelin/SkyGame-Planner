@@ -126,6 +126,7 @@
   --atmos-page-header-gap: 16px;
   --atmos-input-pad:       8px 12px;
   --atmos-input-pad-pill:  8px 14px;
+  --atmos-grid-min-h:      400px;
 
   /* Item icon sizes. */
   --item-size:        64px;
@@ -977,7 +978,7 @@ a.atmos-link:focus-visible {
   background: var(--atmos-card-bg);
   ag-grid-angular {
     flex: 1;
-    min-height: 400px;
+    min-height: var(--atmos-grid-min-h);
   }
 }
 
