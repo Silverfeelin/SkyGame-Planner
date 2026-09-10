@@ -14,6 +14,7 @@ import { DateRangeComponent } from '@app/components/util/date-range/date-range.c
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DurationComponent } from '@app/components/util/duration/duration.component';
 import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosItemListComponent, AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-event-instance',
@@ -29,7 +30,8 @@ import { AtmosDraftWarningComponent, AtmosIapCardComponent, AtmosItemListCompone
     AtmosSpiritTreeComponent,
     AtmosItemListComponent,
     AtmosIapCardComponent,
-    AtmosDraftWarningComponent
+    AtmosDraftWarningComponent,
+    AtmosQuickActionsComponent
   ]
 })
 export class AtmosEventInstanceComponent implements OnDestroy {

@@ -9,6 +9,7 @@ import { SpiritTypePipe } from '@app/pipes/spirit-type.pipe';
 import { SpiritTypeIconComponent } from '@app/components/spirit-type-icon/spirit-type-icon.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { AtmosSpiritTreeComponent } from '@app/redesign/shared/atmos-shared-widgets';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 interface IQuickAction {
   label: string;
@@ -39,7 +40,7 @@ interface ITree {
   imports: [
     RouterLink, MatIcon,
     SpiritTypeIconComponent, WikiLinkComponent,
-    AtmosSpiritTreeComponent
+    AtmosSpiritTreeComponent, AtmosQuickActionsComponent
   ]
 })
 export class AtmosSpiritComponent {

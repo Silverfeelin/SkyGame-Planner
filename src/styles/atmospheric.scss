@@ -554,7 +554,9 @@ a.atmos-link:focus-visible {
   color: var(--atmos-text-dim);
 }
 
-/* Reusable quick-action link row below a page header. */
+/* Reusable quick-action link row below a page header. Wrap it in
+   `atmos-quick-actions`, which collapses long rows behind a single pill on
+   narrow windows — five wrapped rows otherwise eat the top of the screen. */
 .atmos-page__quick-actions {
   display: flex;
   flex-wrap: wrap;
@@ -562,16 +564,10 @@ a.atmos-link:focus-visible {
 }
 
 @media (max-width: 720px) {
-  .atmos-page__quick-actions {
-    white-space: nowrap;
-    overflow-x: auto;
-    padding-bottom: 4px;
-
-    mat-icon {
-      font-size: 16px;
-      width: 16px;
-      height: 16px;
-    }
+  .atmos-page__quick-actions mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
   }
 }
 

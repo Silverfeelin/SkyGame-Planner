@@ -5,13 +5,14 @@ import { IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { AtmosItemListComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-prairie-heights',
   templateUrl: './atmos-shop-prairie-heights.component.html',
   styleUrl: './atmos-shop-prairie-heights.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, AtmosItemListComponent, AtmosShopQuickActionsComponent]
+  imports: [MatIcon, AtmosItemListComponent, AtmosShopQuickActionsComponent, AtmosQuickActionsComponent]
 })
 export class AtmosShopPrairieHeightsComponent {
   readonly igcShops: ReadonlyArray<IShop>;

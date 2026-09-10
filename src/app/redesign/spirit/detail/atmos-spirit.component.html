@@ -1,5 +1,5 @@
 @if (spirit(); as s) {
-  <section class="atmos-page__quick-actions">
+  <atmos-quick-actions>
     @for (action of quickActions(); track action.label) {
       <a class="atmos-btn atmos-btn--sm" [routerLink]="action.route" [queryParams]="action.queryParams">
         @if (action.svgIcon) {
@@ -10,7 +10,7 @@
         {{ action.label }}
       </a>
     }
-  </section>
+  </atmos-quick-actions>
 
   <header class="atmos-page__header atmos-spirit__header">
     <app-spirit-type-icon class="atmos-spirit__type" [type]="s.type"></app-spirit-type-icon>

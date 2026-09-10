@@ -5,13 +5,14 @@ import { IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { AtmosItemListComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-wonderland',
   templateUrl: './atmos-shop-wonderland.component.html',
   styleUrl: './atmos-shop-wonderland.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, AtmosItemListComponent, AtmosShopQuickActionsComponent]
+  imports: [MatIcon, AtmosItemListComponent, AtmosShopQuickActionsComponent, AtmosQuickActionsComponent]
 })
 export class AtmosShopWonderlandComponent {
   readonly igcShops: ReadonlyArray<IShop>;

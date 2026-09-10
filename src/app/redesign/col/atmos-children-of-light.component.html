@@ -9,7 +9,7 @@
   </div>
 </header>
 
-<div class="atmos-page__quick-actions">
+<atmos-quick-actions>
   <button type="button" class="atmos-btn atmos-btn--sm" (click)="unlockAll()">
     <mat-icon>done_all</mat-icon>
     <span>Mark all found</span>
@@ -22,7 +22,7 @@
     <mat-icon>flight_takeoff</mat-icon>
     <span>Left Orbit</span>
   </button>
-</div>
+</atmos-quick-actions>
 
 <div class="atmos-card atmos-col__map-card" #mapContainer>
   <button type="button" class="atmos-col__map-control" (click)="scrollToList()" title="Scroll to list">

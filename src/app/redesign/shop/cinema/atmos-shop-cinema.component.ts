@@ -6,13 +6,14 @@ import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { AtmosIapCardComponent, AtmosItemListComponent } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosShopQuickActionsComponent } from '../quick-actions/atmos-shop-quick-actions.component';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'app-atmos-shop-cinema',
   templateUrl: './atmos-shop-cinema.component.html',
   styleUrl: './atmos-shop-cinema.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosShopQuickActionsComponent]
+  imports: [MatIcon, AtmosIapCardComponent, AtmosItemListComponent, AtmosShopQuickActionsComponent, AtmosQuickActionsComponent]
 })
 export class AtmosShopCinemaComponent {
   private readonly _iapService = inject(IAPService);

@@ -3,12 +3,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DateHelper } from '@app/helpers/date-helper';
 import { DataService } from '@app/services/data.service';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 @Component({
   selector: 'atmos-season-quick-actions',
   templateUrl: './atmos-season-quick-actions.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, RouterLinkActive, MatIcon]
+  imports: [RouterLink, RouterLinkActive, MatIcon, AtmosQuickActionsComponent]
 })
 export class AtmosSeasonQuickActionsComponent {
   private readonly _dataService = inject(DataService);

@@ -14,6 +14,7 @@ import { AtmosRealmConstellationComponent } from '../constellation/atmos-realm-c
 import { AtmosRealmQuickActionsComponent } from '../quick-actions/atmos-realm-quick-actions.component';
 import { AtmosFeatureCardComponent, IFeatureLink } from '../../dashboard/atmos-feature-card.component';
 import { IArea, ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
+import { AtmosQuickActionsComponent } from '@app/redesign/shared/quick-actions/atmos-quick-actions.component';
 
 interface ISpiritEntry {
   spirit: ISpirit;
@@ -28,7 +29,7 @@ interface ISpiritEntry {
   imports: [
     RouterLink, MatIcon, SpiritTypeIconComponent, AtmosSpiritTreeComponent,
     AtmosRealmConstellationComponent, AtmosRealmQuickActionsComponent, PercentagePipe,
-    AtmosFeatureCardComponent
+    AtmosFeatureCardComponent, AtmosQuickActionsComponent
   ]
 })
 export class AtmosRealmComponent implements OnInit, OnDestroy {

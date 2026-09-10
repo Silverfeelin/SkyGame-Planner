@@ -18,6 +18,9 @@ export { AtmosFoldableCardComponent } from './foldable-card/atmos-foldable-card.
 
 export { AtmosIconPickerComponent } from './icon-picker/atmos-icon-picker.component';
 
+export { AtmosQuickActionsComponent } from './quick-actions/atmos-quick-actions.component';
+export { AtmosQuickActionsService } from './quick-actions/atmos-quick-actions.service';
+
 export { AtmosTabsComponent } from './tabs/atmos-tabs.component';
 export { AtmosTabDirective } from './tabs/atmos-tab.directive';
 
