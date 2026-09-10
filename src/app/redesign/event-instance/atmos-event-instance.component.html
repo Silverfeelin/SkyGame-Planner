@@ -37,38 +37,41 @@
   }
 
   <section class="atmos-card atmos-event-instance__summary">
-    <div class="atmos-event-instance__overview-grid">
-      <div class="atmos-card__body atmos-event-instance__summary-body">
-        <div class="atmos-event-instance__meta">
-          <mat-icon>calendar_month</mat-icon>
-          <span class="atmos-event-instance__meta-text">
-            <app-date-range [start]="inst.date" [end]="inst.endDate"></app-date-range>
-            <span class="atmos-event-instance__days-left">
-              (<app-duration [start]="inst.date" [end]="inst.endDate"></app-duration> ·
-              <app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
-            </span>
-          </span>
-        </div>
-        <div class="atmos-event-instance__meta atmos-event-instance__meta--split">
-          <div class="atmos-event-instance__meta-item">
-            <mat-icon svgIcon="ticket" class="currency"></mat-icon>
-            <span class="atmos-event-instance__meta-text">
-              {{ ec() }} currency
-              @if (ecLeft()) { <span class="atmos-event-instance__days-left">({{ ecLeft() }} needed)</span> }
-            </span>
+    <div class="atmos-summary__grid">
+      <div class="atmos-card__body atmos-summary__main">
+        <div class="atmos-facts">
+          <div class="atmos-fact atmos-fact--wide">
+            <div class="atmos-fact__label">Duration</div>
+            <div class="atmos-fact__value atmos-fact__value--wrap">
+              <mat-icon class="atmos-fact__icon">calendar_month</mat-icon>
+              <span><app-date-range [start]="inst.date" [end]="inst.endDate"></app-date-range></span>
+              <span class="atmos-fact__meta">
+                (<app-duration [start]="inst.date" [end]="inst.endDate"></app-duration> ·
+                <app-days-left [start]="inst.date" [end]="inst.endDate"></app-days-left>)
+              </span>
+            </div>
           </div>
-          <div class="atmos-event-instance__meta-item">
-            <mat-icon svgIcon="candle" class="currency"></mat-icon>
-            <span class="atmos-event-instance__meta-text">
-              {{ c() }} candles
-              @if (cLeft()) { <span class="atmos-event-instance__days-left">({{ cLeft() }} needed)</span> }
-            </span>
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Event currency</div>
+            <div class="atmos-fact__value">
+              <mat-icon svgIcon="ticket" class="currency"></mat-icon>
+              <span>{{ ec() }}</span>
+              @if (ecLeft()) { <span class="atmos-fact__meta">({{ ecLeft() }} needed)</span> }
+            </div>
+          </div>
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Candles</div>
+            <div class="atmos-fact__value">
+              <mat-icon svgIcon="candle" class="currency"></mat-icon>
+              <span>{{ c() }}</span>
+              @if (cLeft()) { <span class="atmos-fact__meta">({{ cLeft() }} needed)</span> }
+            </div>
           </div>
         </div>
       </div>
 
       @if (inst.event.imageUrl) {
-        <div class="atmos-event-instance__preview" [style.background-image]="imageStyle()"></div>
+        <div class="atmos-summary__preview" [style.background-image]="imageStyle()"></div>
       }
     </div>
   </section>

@@ -19,69 +19,10 @@
   display: flex;
 }
 
-.atmos-season__overview-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  width: 100%;
-  align-items: stretch;
-
-  @media (max-width: 720px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.atmos-season__facts {
-  display: grid;
-  gap: var(--atmos-gap-compact);
-  grid-template-rows: repeat(3, auto);
-  align-content: start;
-}
-
-.atmos-season__fact {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--atmos-text);
-
-  > mat-icon {
-    flex-shrink: 0;
-    color: var(--atmos-accent);
-  }
-}
-
-.atmos-season__fact-meta {
-  color: var(--atmos-text-dim);
-  margin-left: 6px;
-}
-
-.atmos-season__fact--split {
-  gap: 20px;
-
-  .atmos-season__fact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    mat-icon {
-      flex-shrink: 0;
-    }
-  }
-}
-
 .atmos-season__pass {
   display: flex;
   flex-wrap: wrap;
   gap: var(--atmos-gap-compact);
-}
-
-.atmos-season__preview {
-  background-size: cover;
-  background-position: center;
-  min-height: 160px;
-
-  @media (max-width: 720px) {
-    display: none;
-  }
 }
 
 .atmos-season__section {

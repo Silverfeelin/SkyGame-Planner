@@ -128,6 +128,19 @@
   --atmos-input-pad-pill:  8px 14px;
   --atmos-grid-min-h:      400px;
 
+  /* Summary card (see section 13). Media width is a fraction of the card so
+     the artwork keeps its share of the width as the window narrows; pages with
+     a fixed-width portrait override it with a length. */
+  --atmos-summary-media:     minmax(0, 0.5fr);
+  --atmos-summary-preview-h: 160px;
+  --atmos-summary-art-h:     190px;
+  --atmos-fact-min:          170px;  /* narrowest a fact column may get before dropping one */
+  --atmos-fact-gap:          var(--atmos-gap-compact) var(--atmos-gap);
+  --atmos-fact-label-size:   0.6875rem;
+  --atmos-fact-label-track:  0.13em;
+  --atmos-fact-label-gap:    6px;
+  --atmos-fact-value-size:   1rem;
+
   /* Item icon sizes. */
   --item-size:        64px;
   --item-size-large:  96px;
@@ -1007,6 +1020,144 @@ a.atmos-link:focus-visible {
   > * {
     flex: 0 0 auto;
   }
+}
+
+// 13. Summary card — the overview at the top of a detail page. A sheet of
+//     labelled facts beside the subject's artwork. Labels carry the meaning
+//     that four identical accent icons cannot, and the facts wrap into as many
+//     columns as fit, so a page with three facts and one with six share a
+//     layout without either stretching over dead space.
+//
+//     <section class="atmos-card">
+//       <div class="atmos-summary__grid">
+//         <div class="atmos-card__body atmos-summary__main">
+//           <div class="atmos-facts"> .atmos-fact* </div>
+//         </div>
+//         <div class="atmos-summary__preview"></div>   <!-- or __art -->
+//       </div>
+//     </section>
+.atmos-summary__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--atmos-summary-media);
+  width: 100%;
+  align-items: stretch;
+
+  @media (max-width: 720px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Fact column. Centred against the artwork, which is usually the taller of the two. */
+.atmos-summary__main {
+  justify-content: center;
+}
+
+/* Wide key art (season/event banners) bleeds to the card edge. Cropping is safe
+   here; on narrow windows there is no room for it beside anything, so it goes. */
+.atmos-summary__preview {
+  background-size: cover;
+  background-position: center;
+  min-height: var(--atmos-summary-preview-h);
+
+  @media (max-width: 720px) {
+    display: none;
+  }
+}
+
+/* Tall artwork (spirit renders) cannot be cropped, so it is contained on a
+   tile rather than bled, and moves above the facts on narrow windows. */
+.atmos-summary__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--atmos-pad-compact);
+  background: var(--atmos-tile-bg);
+
+  img {
+    max-width: 100%;
+    max-height: var(--atmos-summary-art-h);
+    width: auto;
+    object-fit: contain;
+  }
+
+  @media (max-width: 720px) {
+    order: -1;
+  }
+}
+
+.atmos-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--atmos-fact-min), 1fr));
+  gap: var(--atmos-fact-gap);
+}
+
+.atmos-fact {
+  min-width: 0;
+}
+
+/* Full-width fact, for values too long to share a row (a date range and its duration). */
+.atmos-fact--wide {
+  grid-column: 1 / -1;
+}
+
+.atmos-fact__label {
+  font-size: var(--atmos-fact-label-size);
+  font-weight: 500;
+  letter-spacing: var(--atmos-fact-label-track);
+  text-transform: uppercase;
+  color: var(--atmos-text-mute);
+  margin-bottom: var(--atmos-fact-label-gap);
+}
+
+.atmos-fact__value {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--atmos-text);
+  font-size: var(--atmos-fact-value-size);
+  line-height: 1.35;
+
+  mat-icon,
+  img {
+    flex: 0 0 auto;
+  }
+
+  // Beats Material's own `.mat-icon` sizing on specificity.
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+a.atmos-fact__value {
+  text-decoration: none;
+  border-bottom: none;
+  transition: color var(--atmos-transition);
+}
+
+/* Values that carry a trailing note wrap instead of clipping it. */
+.atmos-fact__value--wrap {
+  flex-wrap: wrap;
+  row-gap: 2px;
+}
+
+/* Opt-in accent tint. Left off icons that already carry a currency or seasonal
+   colour, which the accent would otherwise win against on specificity. */
+.atmos-fact__icon {
+  color: var(--atmos-accent);
+}
+
+.atmos-fact__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.atmos-fact__meta {
+  color: var(--atmos-text-dim);
+  font-size: 0.875rem;
 }
 
 .atmos-code {

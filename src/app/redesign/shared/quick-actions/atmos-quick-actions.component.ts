@@ -60,7 +60,9 @@ export class AtmosQuickActionsComponent {
   }
 
   private readCount(): void {
-    const actions = this._host.nativeElement.querySelectorAll('.atmos-page__quick-actions > .atmos-btn');
+    // Descendant, not child: some actions are rendered by a wrapper component
+    // whose host is `display: contents`, so the button is a grandchild.
+    const actions = this._host.nativeElement.querySelectorAll('.atmos-page__quick-actions .atmos-btn');
     this._count.set(actions.length);
   }
 }
