@@ -1,5 +1,12 @@
 @if (rs(); as r) {
-  <atmos-spirit-quick-actions/>
+  <atmos-spirit-quick-actions>
+    @if (r._wiki) {
+      <app-wiki-link [wiki]="r._wiki" aClass="atmos-btn atmos-btn--sm"></app-wiki-link>
+    }
+    @if (r._calendar) {
+      <app-calendar-link [cal]="r._calendar" aClass="atmos-btn atmos-btn--sm"></app-calendar-link>
+    }
+  </atmos-spirit-quick-actions>
 
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">{{ r.name }}</h1>
@@ -10,52 +17,54 @@
   }
 
   <section class="atmos-card atmos-rs-detail__summary">
-    <div class="atmos-card__body atmos-rs-detail__meta">
-      @if (r._wiki) {
-        <app-wiki-link [wiki]="r._wiki"></app-wiki-link>
-      }
-      @if (r._calendar) {
-        <app-calendar-link [cal]="r._calendar"></app-calendar-link>
-      }
-
-      <div class="atmos-rs-detail__meta-item" [class.is-ended]="state() === 'ended'">
-        <mat-icon class="atmos-rs-detail__icon">calendar_month</mat-icon>
-        <span>
-          <app-date-range [start]="r.date" [end]="r.endDate"></app-date-range>
-        </span>
-        @if (state() === 'future') {
-          <span class="atmos-rs-detail__pill atmos-pill">
-            <app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>
-          </span>
-        }
-      </div>
-
-      <div class="atmos-rs-detail__meta-item" [class.is-ended]="state() === 'ended'">
-        <mat-icon class="atmos-rs-detail__icon">schedule</mat-icon>
-        <span>
-          <app-duration [start]="r.date" [end]="r.endDate"></app-duration>
-        </span>
-        @if (state() === 'active') {
-          <span class="atmos-rs-detail__pill atmos-pill atmos-pill--active">
-            <app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>
-          </span>
-        }
-      </div>
-
-      @if (r.area?.realm) {
-        <a class="atmos-rs-detail__meta-item atmos-text-link"
-           [routerLink]="['/realm', r.area!.realm!.guid]">
-          <mat-icon class="atmos-rs-detail__icon">map</mat-icon>
-          <span>{{ r.area!.realm!.name }}</span>
-        </a>
-      }
-
-      @if (r.area) {
-        <div class="atmos-rs-detail__meta-item">
-          <mat-icon class="atmos-rs-detail__icon">location_on</mat-icon>
-          <span>{{ r.area.name }}</span>
+    <div class="atmos-card__body">
+      <div class="atmos-facts">
+        <div class="atmos-fact">
+          <div class="atmos-fact__label">Dates</div>
+          <div class="atmos-fact__value atmos-fact__value--wrap" [class.is-ended]="state() === 'ended'">
+            <mat-icon class="atmos-fact__icon">calendar_month</mat-icon>
+            <span><app-date-range [start]="r.date" [end]="r.endDate"></app-date-range></span>
+            @if (state() === 'future') {
+              <span class="atmos-pill">
+                <app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>
+              </span>
+            }
+          </div>
         </div>
-      }
+
+        <div class="atmos-fact">
+          <div class="atmos-fact__label">Duration</div>
+          <div class="atmos-fact__value atmos-fact__value--wrap" [class.is-ended]="state() === 'ended'">
+            <mat-icon class="atmos-fact__icon">schedule</mat-icon>
+            <span><app-duration [start]="r.date" [end]="r.endDate"></app-duration></span>
+            @if (state() === 'active') {
+              <span class="atmos-pill atmos-pill--active">
+                <app-days-left [start]="r.date" [end]="r.endDate"></app-days-left>
+              </span>
+            }
+          </div>
+        </div>
+
+        @if (r.area?.realm) {
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Realm</div>
+            <a class="atmos-fact__value" [routerLink]="['/realm', r.area!.realm!.guid]">
+              <mat-icon class="atmos-fact__icon">map</mat-icon>
+              <span class="atmos-fact__text">{{ r.area!.realm!.name }}</span>
+            </a>
+          </div>
+        }
+
+        @if (r.area) {
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Area</div>
+            <div class="atmos-fact__value">
+              <mat-icon class="atmos-fact__icon">location_on</mat-icon>
+              <span class="atmos-fact__text">{{ r.area.name }}</span>
+            </div>
+          </div>
+        }
+      </div>
     </div>
   </section>
 
