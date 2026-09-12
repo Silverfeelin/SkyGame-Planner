@@ -33,13 +33,13 @@
           <div>
             Connections:
             <div class="atmos-btn-group">
-              <button type="button" class="atmos-btn" [class.td-u]="tn.node.nw" [disabled]="tn.x !== 1" (click)="addNode('nw')">
+              <button type="button" class="atmos-btn" [class.has-connection]="tn.node.nw" [disabled]="tn.x !== 1" (click)="addNode('nw')">
                 Left
               </button>
-              <button type="button" class="atmos-btn" [class.td-u]="tn.node.n" [disabled]="" (click)="addNode('n')">
+              <button type="button" class="atmos-btn" [class.has-connection]="tn.node.n" [disabled]="" (click)="addNode('n')">
                 Top
               </button>
-              <button type="button" class="atmos-btn" [class.td-u]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
+              <button type="button" class="atmos-btn" [class.has-connection]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
                 Right
               </button>
               @if (tn.node === tree.node) {

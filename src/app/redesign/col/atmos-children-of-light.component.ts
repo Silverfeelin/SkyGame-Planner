@@ -371,7 +371,7 @@ export class AtmosChildrenOfLightComponent implements AfterViewInit, OnDestroy {
 </button>`);
 
     if (wl._wiki?.href) {
-      divButtons.insertAdjacentHTML('beforeend', `<a href="${wl._wiki.href}" class="button link float-right" target="_blank">Wiki</a>`);
+      divButtons.insertAdjacentHTML('beforeend', `<a href="${wl._wiki.href}" class="button link s-leaflet-right" target="_blank">Wiki</a>`);
     }
 
     return div;

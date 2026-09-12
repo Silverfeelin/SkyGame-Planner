@@ -709,7 +709,7 @@ a.atmos-link:focus-visible {
     }
 
     .link,
-    .point {
+    .s-leaflet-clickable {
       text-decoration: none;
     }
 
@@ -719,7 +719,7 @@ a.atmos-link:focus-visible {
     }
 
     .container.link:hover,
-    .container.point:hover,
+    .container.s-leaflet-clickable:hover,
     button:hover,
     .button:hover {
       color: var(--atmos-map-popup-text);
@@ -806,7 +806,16 @@ a.atmos-link:focus-visible {
   color: var(--atmos-text-mute);
 }
 
-// 2. Icon size classes + mixin
+// 2. Text colour utilities
+// Global rather than component-scoped because AG-Grid cell renderers,
+// the Leaflet popup builders and CurrencyService build DOM outside any
+// component's style encapsulation.
+.atmos-text-accent { color: var(--atmos-accent) !important; }
+.atmos-text-mute   { color: var(--atmos-text-mute) !important; }
+.atmos-text-good   { color: var(--atmos-good) !important; }
+.atmos-text-warm   { color: var(--atmos-warm) !important; }
+
+// 3. Icon size classes + mixin
 @mixin atmos-icon-size($px) { font-size: #{$px}px !important; }
 .atmos-icon--16 { @include atmos-icon-size(16); }
 .atmos-icon--18 { @include atmos-icon-size(18); }
@@ -814,7 +823,7 @@ a.atmos-link:focus-visible {
 .atmos-icon--22 { @include atmos-icon-size(22); }
 .atmos-icon--24 { @include atmos-icon-size(24); }
 
-// 3. Ghost icon button
+// 4. Ghost icon button
 .atmos-icon-btn {
   display: inline-flex;
   align-items: center;
@@ -833,7 +842,7 @@ a.atmos-link:focus-visible {
   }
 }
 
-// 4. Auto-fill grid
+// 5. Auto-fill grid
 .atmos-auto-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--atmos-grid-min, 260px), 1fr));
@@ -846,7 +855,7 @@ a.atmos-link:focus-visible {
   }
 }
 
-// 5. Form input
+// 6. Form input
 //    The single field treatment for the atmos design. Uses the translucent
 //    chip fill rather than an opaque elevation so fields sit *into* the
 //    frosted card they live on, matching .atmos-btn beside them.
@@ -903,14 +912,14 @@ a.atmos-link:focus-visible {
   min-height: 80px;
 }
 
-// 6. Horizontal scroller
+// 7. Horizontal scroller
 .atmos-scroll-x {
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--atmos-line) transparent;
 }
 
-// 7. Horizontal rule inside a card. Uses the soft (light, translucent) line
+// 8. Horizontal rule inside a card. Uses the soft (light, translucent) line
 //    rather than --atmos-line, which all but disappears on a frosted card.
 .atmos-rule {
   border: 0;
@@ -976,7 +985,7 @@ a.atmos-link:focus-visible {
   font-weight: 500;
 }
 
-// 8. Card header
+// 9. Card header
 .atmos-card__header {
   display: flex;
   align-items: center;
@@ -986,7 +995,7 @@ a.atmos-link:focus-visible {
   font-weight: 600;
 }
 
-// 9. AG-Grid host card
+// 10. AG-Grid host card
 .atmos-grid-card {
   display: flex;
   flex-direction: column;
@@ -999,14 +1008,14 @@ a.atmos-link:focus-visible {
   }
 }
 
-// 10. Pill size modifier
+// 11. Pill size modifier
 .atmos-pill--sm {
   font-size: 0.7rem !important;
   padding: 0.1rem 0.4rem !important;
   height: auto !important;
 }
 
-// 11. Page host mixin
+// 12. Page host mixin
 @mixin atmos-page-host {
   display: flex;
   flex-direction: column;
@@ -1014,7 +1023,7 @@ a.atmos-link:focus-visible {
   min-height: 0;
 }
 
-// 12. Spirit-tree row — flex container for one or more <app-atmos-spirit-tree>.
+// 13. Spirit-tree row — flex container for one or more <app-atmos-spirit-tree>.
 //     Trees are bottom-aligned so they share a baseline and grow upward.
 .atmos-spirit-trees {
   display: flex;
@@ -1030,7 +1039,7 @@ a.atmos-link:focus-visible {
   }
 }
 
-// 13. Summary card — the overview at the top of a detail page. A sheet of
+// 14. Summary card — the overview at the top of a detail page. A sheet of
 //     labelled facts beside the subject's artwork. Labels carry the meaning
 //     that four identical accent icons cannot, and the facts wrap into as many
 //     columns as fit, so a page with three facts and one with six share a

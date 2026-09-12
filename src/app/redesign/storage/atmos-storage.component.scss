@@ -1,7 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  flex: 1;
   justify-content: center;
   align-items: center;
   color: var(--atmos-text);
@@ -46,10 +45,6 @@
   align-items: stretch;
   gap: var(--atmos-gap);
   padding: var(--atmos-pad);
-}
-
-.atmos-storage__card {
-  width: 100%;
 }
 
 .atmos-storage__body {
@@ -100,7 +95,7 @@
 }
 
 .atmos-storage__provider-card--active {
-  border-color: var(--atmos-accent, var(--atmos-text));
+  border-color: var(--atmos-accent);
 }
 
 .atmos-storage__provider-header {
@@ -111,7 +106,7 @@
 }
 
 .atmos-storage__provider-icon {
-  color: var(--atmos-accent, var(--atmos-text-muted));
+  color: var(--atmos-accent);
 }
 
 .atmos-storage__provider-title {
@@ -127,7 +122,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  background: var(--atmos-accent, oklch(0.7 0.15 var(--atmos-hue)));
+  background: var(--atmos-accent);
   color: oklch(0.1 0.02 var(--atmos-hue));
   border-radius: var(--atmos-radius-sm);
   padding: 2px 8px;

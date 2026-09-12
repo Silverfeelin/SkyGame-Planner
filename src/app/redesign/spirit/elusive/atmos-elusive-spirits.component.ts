@@ -57,7 +57,7 @@ export class AtmosElusiveSpiritsComponent {
     {
       field: 'days', headerName: 'Days ago', width: 140, filter: 'agNumberColumnFilter',
       initialSort: 'desc', sortingOrder: ['desc', 'asc'],
-      cellRenderer: (p: any) => `<span class="c-old fw-bold">${p.value}</span>`
+      cellRenderer: (p: any) => `<span class="atmos-text-warm ag-atmos-strong">${p.value}</span>`
     },
     { field: 'type', headerName: 'Last visit', width: 150, filter: AgSetFilterComponent, filterParams: { values: ['Season', 'Traveling Spirit', 'Special Visit'] } },
     {

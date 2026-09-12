@@ -131,3 +131,8 @@ h2.atmos-section__title {
   border-radius: var(--atmos-radius-sm);
   cursor: pointer;
 }
+
+/* Direction button for a connection the node already has. */
+.atmos-btn.has-connection {
+  text-decoration: underline;
+}

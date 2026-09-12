@@ -107,7 +107,7 @@ export class AtmosSpiritsComponent {
     this.updateColumns(this._breakpointObserver.isMatched(`(min-width: ${this.WIDE_WIDTH}px)`));
     this.updateDateColumnVisibility();
     this._api.autoSizeColumns(['type']);
-    this.applyInitialTypeFilter();
+    this.applyQueryFilters();
     this.onModelUpdated();
   }
 
@@ -119,17 +119,25 @@ export class AtmosSpiritsComponent {
     this.filteredCount.set(this._api.getDisplayedRowCount());
   }
 
-  /** Resets all column filters, then applies the type filter from the query params (if any). */
-  private applyInitialTypeFilter(): void {
+  /** Replaces the column filters with the ones described by the query params. */
+  private applyQueryFilters(): void {
     if (!this._api) { return; }
-    const type = this._route.snapshot.queryParamMap.get('type');
-    const values = type?.split(',').map(v => v.trim()).filter(v => v) ?? [];
-    if (!values.length) {
-      this._api.setFilterModel(null);
-      return;
+    const q = this._route.snapshot.queryParamMap;
+    const model: { [field: string]: unknown } = {};
+
+    const values = q.get('type')?.split(',').map(v => v.trim()).filter(v => v) ?? [];
+    if (values.length) {
+      model['type'] = { values };
     }
 
-    this._api.setFilterModel({ type: { values } });
+    // The area guid is resolved to a name filter so the filter stays visible and editable in the grid.
+    const areaGuid = q.get('area')?.trim();
+    const areaName = areaGuid ? (this._dataService.guidMap.get(areaGuid) as IArea | undefined)?.name : undefined;
+    if (areaName) {
+      model['area'] = { filterType: 'text', type: 'equals', filter: areaName };
+    }
+
+    this._api.setFilterModel(Object.keys(model).length ? model : null);
   }
 
   private updateColumns(wide: boolean): void {
@@ -150,7 +158,7 @@ export class AtmosSpiritsComponent {
     this.rowData.set(this.buildRows(spirits, spiritTrees));
     this.totalCount.set(spirits.length);
     this.updateDateColumnVisibility();
-    this.applyInitialTypeFilter();
+    this.applyQueryFilters();
   }
 
   private getSpiritOrderMap(): Map<string, number> {
@@ -232,10 +240,6 @@ export class AtmosSpiritsComponent {
       const set = new Set(realm.areas?.flatMap(a => a.spirits || []) || []);
       searchArrays.push(this._dataService.spiritConfig.items.filter(s => set.has(s)));
     }
-
-    const areaGuid = q.get('area');
-    const area = areaGuid ? this._dataService.guidMap.get(areaGuid) as IArea : undefined;
-    if (area) { searchArrays.push(area.spirits || []); }
 
     const seasonGuid = q.get('season');
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;

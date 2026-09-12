@@ -7,7 +7,7 @@
     <div class="selection-icons">
       @for (type of selectionTypes; track type) {
         @let item = selection()[type];
-        <div class="selection-icon no-point"
+        <div class="selection-icon is-static"
           [class.selected]="item"
           [class.warn]="requiredParams[type] && !item"
           [title]="item?.name || (type | itemType)">

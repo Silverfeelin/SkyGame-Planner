@@ -9,7 +9,7 @@
         @for (type of selectionTypes; track type) {
           @let item = currentSelection()[type];
           @if (item) {
-            <div class="selection-icon selected no-point" [title]="item.name">
+            <div class="selection-icon selected is-static" [title]="item.name">
               <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
                 [opaque]="true"></app-item-icon>
             </div>
@@ -33,7 +33,7 @@
               @for (type of selectionTypes; track type) {
                 @let item = result.items[type];
                 @if (item) {
-                  <div class="selection-icon no-point" [class.selected]="item" [title]="item?.name || (type | itemType)">
+                  <div class="selection-icon is-static" [class.selected]="item" [title]="item?.name || (type | itemType)">
                     <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
                       [opaque]="true"></app-item-icon>
                   </div>

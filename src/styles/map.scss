@@ -148,6 +148,13 @@ body > .map { display: none !important; }
   }
 }
 
+/* Presentational helpers for popup content. The popups are built imperatively
+   by MapInstanceService and the CoL component, so they cannot reach a
+   component stylesheet and need named classes here. */
+.s-leaflet-nowrap { white-space: nowrap; }
+.s-leaflet-clickable { cursor: pointer; }
+.s-leaflet-right { float: right; }
+
 .s-leaflet-hasicon {
   position: relative;
   min-width: 32px;

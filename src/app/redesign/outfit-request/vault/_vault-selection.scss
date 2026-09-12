@@ -46,7 +46,7 @@
     }
 
     /* Read-only rows (results, submit preview) are not clickable. */
-    &.no-point {
+    &.is-static {
       cursor: default;
       &:hover { background: var(--atmos-tile-bg); }
     }

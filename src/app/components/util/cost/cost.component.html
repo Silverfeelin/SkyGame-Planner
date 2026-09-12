@@ -33,7 +33,7 @@
   }
   @if (price || (showZeroes && price !== undefined)) {
     <div class="cost">
-      <mat-icon class="cost-icon cost-icon-mat icon-middle c-new">attach_money</mat-icon><div><span>{{ price | number:'1.2-2' }}</span></div>
+      <mat-icon class="cost-icon cost-icon-mat icon-middle atmos-text-good">attach_money</mat-icon><div><span>{{ price | number:'1.2-2' }}</span></div>
     </div>
   }
 </div>
@@ -44,9 +44,9 @@
     @if (cost) {
       @if (remaining) {
         <span> {{ remaining || 0 }}</span>
-        <span class="c-accent"> ({{ cost || 0 }})</span>
+        <span class="atmos-text-accent"> ({{ cost || 0 }})</span>
       } @else if (remaining === 0) {
-        <b class="c-completed"> {{ cost || 0 }}</b>
+        <b class="atmos-text-good"> {{ cost || 0 }}</b>
       } @else {
         <span> {{ cost || 0 }}</span>
       }
@@ -60,8 +60,8 @@
   <div style="text-align: left;">
     <span>■ Cost of items not yet unlocked.</span><br/>
     @if (remaining) {
-      <span class="c-accent">■ Total cost of all items.</span><br/>
+      <span class="atmos-text-accent">■ Total cost of all items.</span><br/>
     }
-    <span class="c-completed">■ All items unlocked.</span>
+    <span class="atmos-text-good">■ All items unlocked.</span>
   </div>
 </ng-template>

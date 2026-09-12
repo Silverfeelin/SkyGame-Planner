@@ -56,7 +56,7 @@ export class AtmosTravelingSpiritsComponent {
       field: 'unlocked', headerName: 'Unlocked', width: 150,
       cellRenderer: (p: any) => {
         if (!p.data.total) { return ''; }
-        return `<span class="${p.value === p.data.total ? 'c-completed fw-bold' : ''}">${p.value} / ${p.data.total}</span>`;
+        return `<span class="${p.value === p.data.total ? 'atmos-text-good ag-atmos-strong' : ''}">${p.value} / ${p.data.total}</span>`;
       },
       filter: 'agNumberColumnFilter'
     }
