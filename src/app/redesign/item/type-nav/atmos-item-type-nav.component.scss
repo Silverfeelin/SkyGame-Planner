@@ -15,6 +15,28 @@
     flex-wrap: wrap;
     overflow-x: visible;
   }
+
+  /* Button variant: give the unselected entries the same surface as .atmos-btn
+     so they read as a row of filter buttons rather than plain labels. */
+  &.is-buttons .atmos-item-type-nav__pill {
+    background: var(--atmos-card-bg);
+    border: var(--atmos-card-border);
+    backdrop-filter: var(--atmos-blur-soft);
+    -webkit-backdrop-filter: var(--atmos-blur-soft);
+    color: var(--atmos-text);
+
+    &:hover {
+      background: var(--atmos-hover-bg);
+    }
+
+    &.is-active {
+      background: var(--atmos-active-bg);
+      border-color: var(--atmos-active-border);
+      color: var(--atmos-accent);
+
+      &:hover { background: var(--atmos-active-bg-hover); }
+    }
+  }
 }
 
 /* Unselected pills are text-only; selecting one gives it the shared

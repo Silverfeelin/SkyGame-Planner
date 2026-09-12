@@ -2,8 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
-  OnInit,
-  OnDestroy,
   signal,
   viewChildren,
 } from '@angular/core';
@@ -12,9 +10,10 @@ import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { AtmosToolQuickActionsComponent } from '@app/redesign/tool/quick-actions/atmos-tool-quick-actions.component';
 import { AtmosCollageSlotComponent } from './atmos-collage-slot.component';
 
-/** Fixed 2×2 collage layout — 4 slots total. */
-const COLS = 2;
-const ROWS = 2;
+/** Largest collage the page offers; the visible size is picked within these bounds. */
+const BLOCK_COLS = 6;
+const BLOCK_ROWS = 3;
+const BLOCK_COUNT = BLOCK_COLS * BLOCK_ROWS;
 
 /** Preview / render dimensions — MUST match legacy render() math. */
 const SIZES = {
@@ -25,8 +24,7 @@ const SIZES = {
   renderIconWidth: 64,
 } as const;
 
-/** Convenience tuple for iteration. */
-const SLOT_INDICES = [0, 1, 2, 3] as const;
+interface ICoord { x: number; y: number; }
 
 @Component({
   selector: 'app-atmos-collage',
@@ -35,62 +33,70 @@ const SLOT_INDICES = [0, 1, 2, 3] as const;
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatIcon, TooltipDirective, AtmosToolQuickActionsComponent, AtmosCollageSlotComponent],
 })
-export class AtmosCollageComponent implements OnInit, OnDestroy {
-  /** Expose for template iteration. */
-  readonly slotIndices = SLOT_INDICES;
+export class AtmosCollageComponent {
+  readonly blockCols = BLOCK_COLS;
+  /** Every block of the maximum grid; slots outside the chosen size are dimmed. */
+  readonly blockIndices = Array.from({ length: BLOCK_COUNT }, (_, i) => i);
+
+  /** Chosen collage size, in blocks. */
+  readonly collageSize = signal<ICoord>({ x: 4, y: 1 });
 
   readonly isRendering = signal<boolean>(false);
 
-  /** Track icon URLs per slot for canvas render. */
-  readonly iconUrls = signal<string[]>(['', '', '', '']);
+  /** Icon URLs per slot, mirrored from the slots for the canvas render. */
+  readonly iconUrls = signal<string[]>(Array(BLOCK_COUNT).fill(''));
 
-  /** Track image URLs per slot for canvas render state. */
-  readonly imageUrls = signal<string[]>(['', '', '', '']);
+  /** Image URLs per slot, mirrored from the slots for the canvas render. */
+  readonly imageUrls = signal<string[]>(Array(BLOCK_COUNT).fill(''));
 
-  /** Reference to all 4 slot components. */
   readonly slots = viewChildren(AtmosCollageSlotComponent);
 
-  /** Index of the slot currently in paste mode (for document-level paste listener). */
+  /** Slot currently in paste mode, and whether it continues to the next slot. */
   private _pasteSlotIndex?: number;
   private _bulkPaste = false;
-  private _pasteHandler?: (e: ClipboardEvent) => void;
 
   @HostListener('window:focus')
   onWindowFocus(): void {
     if (this._pasteSlotIndex !== undefined) {
-      this.slots()[this._pasteSlotIndex]?.activatePaste();
+      this.slots()[this._pasteSlotIndex]?.focusPasteInput();
     }
   }
 
-  ngOnInit(): void {
-    // Document-level paste listener (matches legacy window.addEventListener pattern).
-    this._pasteHandler = (evt: ClipboardEvent) => this._onDocumentPaste(evt);
-    document.addEventListener('paste', this._pasteHandler);
+  /** True while the block at this index is part of the chosen collage size. */
+  isInCollage(index: number): boolean {
+    const size = this.collageSize();
+    return index % BLOCK_COLS < size.x && Math.floor(index / BLOCK_COLS) < size.y;
   }
 
-  ngOnDestroy(): void {
-    if (this._pasteHandler) {
-      document.removeEventListener('paste', this._pasteHandler);
-    }
+  setCollageSize(x: number, y: number): void {
+    this.collageSize.set({ x, y });
+    this._stopPaste();
   }
 
-  // ── Slot output handler ─────────────────────────────────────────────
+  // ── Slot output handlers ────────────────────────────────────────────
 
   onSlotImageChanged(event: { index: number; url: string | null }): void {
     const urls = [...this.imageUrls()];
     urls[event.index] = event.url ?? '';
     this.imageUrls.set(urls);
 
-    // Advance bulk paste to next slot if needed.
-    if (this._bulkPaste && this._pasteSlotIndex === event.index && event.url) {
-      this._advanceBulkPaste(event.index);
+    if (this._pasteSlotIndex === event.index && event.url) {
+      this._bulkPaste ? this._advanceBulkPaste(event.index) : this._stopPaste();
     }
   }
 
-  onSlotIconChanged(index: number, url: string): void {
+  onSlotIconChanged(event: { index: number; url: string }): void {
     const icons = [...this.iconUrls()];
-    icons[index] = url;
+    icons[event.index] = event.url;
     this.iconUrls.set(icons);
+  }
+
+  onSlotPasteRequested(event: { index: number; bulk: boolean }): void {
+    this._startPaste(event.index, event.bulk);
+  }
+
+  onSlotPasteClosed(): void {
+    this._stopPaste();
   }
 
   // ── Export actions ──────────────────────────────────────────────────
@@ -120,7 +126,6 @@ export class AtmosCollageComponent implements OnInit, OnDestroy {
       navigator.clipboard.write([item]).then(() => {
         done();
         ttCopy.open();
-        setTimeout(() => { ttCopy.close(); }, 1000);
       }).catch(err => {
         console.error(err);
         alert('Copying failed. Please make sure the document is focused.');
@@ -131,48 +136,58 @@ export class AtmosCollageComponent implements OnInit, OnDestroy {
 
   reset(): void {
     if (!confirm('Are you sure you want to reset all images?')) { return; }
-    this.imageUrls.set(['', '', '', '']);
-    this.iconUrls.set(['', '', '', '']);
+    this.imageUrls.set(Array(BLOCK_COUNT).fill(''));
+    this.iconUrls.set(Array(BLOCK_COUNT).fill(''));
+    this._stopPaste();
+    this.slots().forEach(slot => slot.clearSlot());
+  }
+
+  // ── Paste coordination ──────────────────────────────────────────────
+
+  private _startPaste(index: number, bulk: boolean): void {
+    if (this._pasteSlotIndex !== undefined && this._pasteSlotIndex !== index) {
+      this.slots()[this._pasteSlotIndex]?.deactivatePaste();
+    }
+    this._pasteSlotIndex = index;
+    this._bulkPaste = bulk;
+    this.slots()[index]?.activatePaste();
+  }
+
+  private _stopPaste(): void {
+    if (this._pasteSlotIndex !== undefined) {
+      this.slots()[this._pasteSlotIndex]?.deactivatePaste();
+    }
     this._pasteSlotIndex = undefined;
     this._bulkPaste = false;
-    this.slots().forEach(slot => {
-      slot.setImageUrl('');
-      slot.deactivatePaste();
-    });
   }
 
-  // ── Private helpers ─────────────────────────────────────────────────
-
-  private _onDocumentPaste(_evt: ClipboardEvent): void {
-    // Paste is handled by the slot's own paste input element — nothing to do here
-    // at the document level. This listener mirrors the legacy pattern but the
-    // actual paste processing lives in AtmosCollageSlotComponent.onPaste().
-  }
-
+  /** Moves paste mode to the next block inside the chosen collage size. */
   private _advanceBulkPaste(currentIndex: number): void {
-    const next = currentIndex + 1;
-    if (next >= COLS * ROWS) {
-      this._pasteSlotIndex = undefined;
-      this._bulkPaste = false;
-      return;
+    const size = this.collageSize();
+    for (let i = currentIndex + 1; i < BLOCK_COUNT; i++) {
+      if (i % BLOCK_COLS < size.x && Math.floor(i / BLOCK_COLS) < size.y) {
+        this._startPaste(i, true);
+        return;
+      }
     }
-    this._pasteSlotIndex = next;
-    this.slots()[next]?.activatePaste();
+    this._stopPaste();
   }
+
+  // ── Render ──────────────────────────────────────────────────────────
 
   /**
    * Renders the collage to an offscreen canvas.
-   * Verbatim port of the legacy render() method, adjusted for 2×2 fixed layout.
-   * Attribution text: "Images from the Sky Wiki, used with permission."
+   * Port of the legacy render() method.
    */
   private _render(): HTMLCanvasElement {
     const _wBorder = 0;
+    const size = this.collageSize();
     const iconUrls = this.iconUrls();
-    const hasIcons = iconUrls.some(u => u.length > 0);
+    const hasIcons = this.blockIndices.some(i => this.isInCollage(i) && !!iconUrls[i]);
 
     const canvas = document.createElement('canvas');
-    canvas.width  = SIZES.renderWidth  * COLS + _wBorder * (COLS + 1);
-    canvas.height = SIZES.renderHeight * ROWS + _wBorder * (ROWS + 1) + (hasIcons ? 13 : 0);
+    canvas.width  = SIZES.renderWidth  * size.x + _wBorder * (size.x + 1);
+    canvas.height = SIZES.renderHeight * size.y + _wBorder * (size.y + 1) + (hasIcons ? 13 : 0);
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     const drawSlot = (slotComp: AtmosCollageSlotComponent, col: number, row: number) => {
@@ -185,6 +200,7 @@ export class AtmosCollageComponent implements OnInit, OnDestroy {
       const imgBounds  = img.getBoundingClientRect();
       const clipBounds = clipDiv.getBoundingClientRect();
 
+      // Starting coordinates of the clipped (panned/zoomed) part of the image.
       const fx = (clipBounds.left - imgBounds.left) / imgBounds.width;
       const fy = (clipBounds.top  - imgBounds.top)  / imgBounds.height;
       const sx = fx * img.naturalWidth;
@@ -197,41 +213,35 @@ export class AtmosCollageComponent implements OnInit, OnDestroy {
 
       ctx.drawImage(img, sx, sy, w, h, dx, dy, SIZES.renderWidth, SIZES.renderHeight);
 
-      // Draw icon badge
-      const slotIndex = row * COLS + col;
-      if (iconUrls[slotIndex]) {
-        const iconEl = document.querySelector(
-          `.atmos-collage-slot[data-slot-index="${slotIndex}"] .slot__icon-img`
-        ) as HTMLImageElement | null;
-        if (iconEl && iconEl.naturalWidth > 0) {
-          const iw = SIZES.renderIconWidth;
-          ctx.fillStyle = '#0008';
-          ctx.beginPath();
-          ctx.roundRect(dx + 4, dy + SIZES.renderHeight - iw - 4, iw, iw, 8);
-          ctx.fill();
-          ctx.drawImage(iconEl, 0, 0, iconEl.naturalWidth, iconEl.naturalHeight, dx + 4, dy + SIZES.renderHeight - iw - 4, iw, iw);
-        }
+      const iconEl = slotComp.iconElement;
+      if (iconEl && iconEl.naturalWidth > 0) {
+        const iw = SIZES.renderIconWidth;
+        ctx.fillStyle = '#0008';
+        ctx.beginPath();
+        ctx.roundRect(dx + 4, dy + SIZES.renderHeight - iw - 4, iw, iw, 8);
+        ctx.fill();
+        ctx.drawImage(iconEl, 0, 0, iconEl.naturalWidth, iconEl.naturalHeight, dx + 4, dy + SIZES.renderHeight - iw - 4, iw, iw);
       }
     };
 
-    // Draw all slots
     const slotComps = this.slots();
-    for (let row = 0; row < ROWS; row++) {
-      for (let col = 0; col < COLS; col++) {
-        const idx = row * COLS + col;
-        const comp = slotComps[idx];
+    for (let row = 0; row < size.y; row++) {
+      for (let col = 0; col < size.x; col++) {
+        const comp = slotComps[row * BLOCK_COLS + col];
         if (comp) { drawSlot(comp, col, row); }
       }
     }
 
-    // Draw attribution footer (wiki attribution text — verbatim)
+    // Wiki attribution, required when item icons are shown.
     if (hasIcons) {
       ctx.fillStyle = '#fff';
       ctx.fillRect(0, canvas.height - 13, canvas.width, canvas.height);
       ctx.fillStyle = '#446';
       ctx.font = '12px Roboto, sans-serif';
       ctx.textAlign = 'right';
-      const msg = 'Images from the Sky Wiki, used with permission.';
+      const msg = size.x === 1
+        ? 'Icons from Sky: Children of the Light Wiki'
+        : 'Icons by contributors of the Sky: Children of the Light Wiki';
       ctx.fillText(msg, canvas.width - 4, canvas.height - 3);
     }
 

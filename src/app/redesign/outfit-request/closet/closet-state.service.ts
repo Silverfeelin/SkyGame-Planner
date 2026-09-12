@@ -67,7 +67,6 @@ export class ClosetStateService {
       .reduce((m, g) => (m[g] = true, m), {} as Record<string, boolean>)
   );
 
-  readonly hideUnselected = signal(localStorage.getItem('closet.hide-unselected') === '1');
   readonly showOngoing = signal(localStorage.getItem('closet.show-ongoing') === '1');
   readonly columns = signal(+(localStorage.getItem('closet.columns') ?? 0) || 6);
   readonly closetMode = signal<ClosetMode>((localStorage.getItem('closet.show-mode') as ClosetMode) || 'all');
@@ -101,7 +100,6 @@ export class ClosetStateService {
   }
 
   persistPrefs(): void {
-    localStorage.setItem('closet.hide-unselected', this.hideUnselected() ? '1' : '0');
     localStorage.setItem('closet.show-ongoing', this.showOngoing() ? '1' : '0');
     localStorage.setItem('closet.columns', `${this.columns()}`);
     localStorage.setItem('closet.show-mode', this.closetMode());

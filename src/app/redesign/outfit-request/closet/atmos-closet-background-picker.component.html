@@ -10,10 +10,12 @@
           <div class="atmos-bg-picker__items">
             <img src="/assets/game/background/random.webp"
               class="atmos-bg-picker__item"
+              [class.is-selected]="selected() === section.guid"
               (click)="select(section.guid)" />
             @for (bg of section.backgrounds; track bg.guid) {
               <img [src]="bg.url"
                 class="atmos-bg-picker__item"
+                [class.is-selected]="selected() === bg.guid"
                 (click)="select(bg.guid)" />
             }
           </div>

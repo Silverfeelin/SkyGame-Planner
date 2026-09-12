@@ -20,6 +20,8 @@ export class AtmosItemTypeNavComponent {
   readonly active = input<ItemType | undefined>(undefined);
   /** Wrap onto multiple lines instead of scrolling horizontally on one line. */
   readonly wrap = input(false);
+  /** Render the entries as regular buttons instead of borderless text pills. */
+  readonly buttons = input(false);
 
   readonly typeSelected = output<ItemType>();
 }

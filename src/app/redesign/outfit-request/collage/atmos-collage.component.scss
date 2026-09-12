@@ -20,13 +20,66 @@
   align-items: center;
 }
 
-// ── 2×2 slot grid ─────────────────────────────────────────────────────
+// ── Size picker ───────────────────────────────────────────────────────
+
+.atmos-collage__size {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-collage__size-label {
+  color: var(--atmos-text-dim);
+}
+
+.atmos-collage__size-blocks {
+  display: grid;
+  grid-template-columns: repeat(6, 32px);
+  width: max-content;
+  /* One-off square grid, matching the square collage slots. */
+  border: 1px solid var(--atmos-line);
+}
+
+.atmos-collage__size-block {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid var(--atmos-line);
+  border-bottom: 1px solid var(--atmos-line);
+  background: var(--atmos-tile-bg);
+  cursor: pointer;
+  transition: background var(--atmos-transition);
+
+  &:nth-of-type(6n) { border-right: 0; }
+  &:nth-last-of-type(-n+6) { border-bottom: 0; }
+
+  &:hover { background: var(--atmos-tile-bg-hover); }
+
+  &.is-active {
+    background: var(--atmos-active-bg);
+    box-shadow: inset 0 0 0 1px var(--atmos-active-border);
+  }
+}
+
+// ── Slot grid ─────────────────────────────────────────────────────────
+
+.atmos-collage__scroll {
+  width: 100%;
+  overflow-x: auto;
+}
 
 .atmos-collage__grid {
   display: grid;
-  grid-template-columns: repeat(2, 192px);
-  grid-template-rows:    repeat(2, 288px);
+  grid-template-columns: repeat(6, 192px);
+  grid-auto-rows: 288px;
   gap: 8px;
+  width: max-content;
+}
+
+/* Blocks outside the chosen collage size stay usable but recede. */
+.atmos-collage-slot.is-outside {
+  opacity: 0.3;
 }
 
 // ── Spin animation (used on copy button while rendering) ───────────────

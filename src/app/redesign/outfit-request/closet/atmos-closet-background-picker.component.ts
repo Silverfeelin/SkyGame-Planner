@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { DataService } from '@app/services/data.service';
 import { ClosetStateService } from './closet-state.service';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
@@ -14,6 +14,9 @@ import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interf
 export class AtmosClosetBackgroundPickerComponent {
   readonly state = inject(ClosetStateService);
   private readonly _data = inject(DataService);
+
+  /** Guid of the picked entry — either a background or a section (random). */
+  readonly selected = signal<string | undefined>(localStorage.getItem('closet.background') ?? undefined);
 
   readonly sections: IOutfitRequestBackgrounds[];
   private readonly _sectionMap: Record<string, IOutfitRequestBackgrounds>;
@@ -43,6 +46,7 @@ export class AtmosClosetBackgroundPickerComponent {
     if (!resolved) { return; }
 
     localStorage.setItem('closet.background', guid);
+    this.selected.set(guid);
     // Emit the resolved background so the host can update canvas bg
     this.state.showingBackgroundPicker.set(false);
     // Store bg details in state for use by renderer

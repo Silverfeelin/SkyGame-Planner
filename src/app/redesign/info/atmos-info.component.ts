@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
-import packageJson from '../../../../package.json';
 
 interface ICreditPerson {
   readonly name: string;
@@ -21,8 +20,6 @@ interface ICreditGroup {
   imports: [MatIcon, RouterLink]
 })
 export class AtmosInfoComponent {
-  readonly version: string = (packageJson as { version: string }).version;
-
   readonly wikiCredits: ICreditGroup = {
     intro: 'Many icons on the wiki are contributed to the wiki by:',
     people: [

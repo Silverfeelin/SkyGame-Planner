@@ -20,6 +20,8 @@ import { AtmosClosetModifyPanelComponent } from './atmos-closet-modify-panel.com
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
 import { drawFingerprint } from '@app/redesign/outfit-request/closet-fingerprint';
 import { AtmosToolQuickActionsComponent } from '@app/redesign/tool/quick-actions/atmos-tool-quick-actions.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { startClosetTour } from './closet-tour';
 
 type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
 const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
@@ -38,7 +40,8 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
     AtmosClosetDyePickerComponent,
     AtmosClosetBackgroundPickerComponent,
     AtmosClosetModifyPanelComponent,
-    AtmosToolQuickActionsComponent
+    AtmosToolQuickActionsComponent,
+    TooltipDirective
   ]
 })
 export class AtmosClosetComponent implements OnDestroy {
@@ -404,13 +407,15 @@ export class AtmosClosetComponent implements OnDestroy {
     window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
-  async copyLink(): Promise<void> {
+  async copyLink(tooltip?: TooltipDirective): Promise<void> {
     const state = this.state;
     if (state.lastLink()) {
-      navigator.clipboard.writeText(state.lastLink()!).catch(e => {
-        console.error(e);
-        alert('Copying link failed. Please make sure the document is focused.');
-      });
+      navigator.clipboard.writeText(state.lastLink()!)
+        .then(() => tooltip?.open())
+        .catch(e => {
+          console.error(e);
+          alert('Copying link failed. Please make sure the document is focused.');
+        });
       return;
     }
 
@@ -443,6 +448,7 @@ export class AtmosClosetComponent implements OnDestroy {
     try {
       const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
       navigator.clipboard.write([item])
+        .then(() => tooltip?.open())
         .catch(e => { console.error(e); alert('Copying failed. Please make sure the document is focused.'); })
         .finally(() => state.isRendering.set(0));
     } catch (e) { console.error(e); state.isRendering.set(0); }
@@ -576,5 +582,13 @@ export class AtmosClosetComponent implements OnDestroy {
 
   toggleImagePicker(): void {
     this.state.showingImagePicker.update(v => !v);
+  }
+
+  startTour(): void {
+    startClosetTour({
+      root: this._el.nativeElement,
+      requesting: this.requesting,
+      state: this.state
+    });
   }
 }

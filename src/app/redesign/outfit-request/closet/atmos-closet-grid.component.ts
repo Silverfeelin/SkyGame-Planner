@@ -64,7 +64,6 @@ export class AtmosClosetGridComponent {
     if (modifying) { return false; }
     const folded = state.typeFolded()[item.type];
     if (folded) { return true; }
-    if (state.hideUnselected() && !state.selectedAll()[item.guid]) { return true; }
     if (state.closetMode() === 'closet' && state.hidden()[item.guid]
         && !state.selectedAll()[item.guid]
         && !(state.showOngoing() && state.ongoingItems()[item.guid])) {

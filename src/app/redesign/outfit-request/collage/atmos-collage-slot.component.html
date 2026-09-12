@@ -31,11 +31,19 @@
     <button
       type="button"
       class="slot__action-btn atmos-icon-btn"
-      (click)="activatePaste()"
+      (click)="onStartPaste(false, $event)"
       skyTooltip="Paste image"
-
     >
       <mat-icon>content_paste</mat-icon>
+    </button>
+
+    <button
+      type="button"
+      class="slot__action-btn atmos-icon-btn"
+      (click)="onStartPaste(true, $event)"
+      skyTooltip="Paste images in bulk"
+    >
+      <mat-icon>start</mat-icon>
     </button>
   </div>
 
@@ -80,6 +88,7 @@
   @if (iconUrl()) {
     <div class="slot__icon-badge">
       <img
+        #iconEl
         [src]="iconUrl()"
         class="slot__icon-img"
         crossorigin="anonymous"

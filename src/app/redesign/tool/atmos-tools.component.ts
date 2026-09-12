@@ -65,7 +65,7 @@ export class AtmosToolsComponent {
     {
       title: 'Wing buffs',
       icon: 'air',
-      description: 'Track wing buffs collected from elder spirits.',
+      description: 'Track wing buffs collected from spirits.',
       links: [
         { icon: 'air', label: 'Open tracker', link: '/wing-buff' }
       ]
@@ -75,7 +75,7 @@ export class AtmosToolsComponent {
       icon: 'wallet',
       description: 'Log currency you have spent outside of tracked items.',
       links: [
-        { icon: 'wallet', label: 'View ledger', link: '/currency/spent' }
+        { icon: 'wallet', label: 'View spent currencies', link: '/currency/spent' }
       ]
     },
     {
@@ -83,7 +83,7 @@ export class AtmosToolsComponent {
       icon: 'local_florist',
       description: 'A collaborative tracker for dye plants in Sky.',
       links: [
-        { icon: 'language', label: 'Go to website', href: 'https://dyes.sky-planner.com/' }
+        { icon: 'open_in_new', label: 'Go to website', href: 'https://dyes.sky-planner.com/' }
       ]
     },
     {
@@ -91,7 +91,7 @@ export class AtmosToolsComponent {
       icon: 'auto_awesome_motion',
       description: 'A website by Plutoy to view the time and location of shards.',
       links: [
-        { icon: 'language', label: 'Go to website', href: 'https://sky-shards.pages.dev/' }
+        { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-shards.pages.dev/' }
       ]
     },
     {
@@ -99,7 +99,7 @@ export class AtmosToolsComponent {
       icon: 'schedule',
       description: 'A website by Chris Stead to view the time of events such as the geyser in Sky.',
       links: [
-        { icon: 'schedule', label: 'Go to website', href: 'https://sky-clock.netlify.app/' }
+        { icon: 'open_in_new', label: 'Go to website', href: 'https://sky-clock.netlify.app/' }
       ]
     }
   ];

@@ -1,4 +1,4 @@
-<div class="atmos-item-type-nav" [class.is-wrap]="wrap()">
+<div class="atmos-item-type-nav" [class.is-wrap]="wrap()" [class.is-buttons]="buttons()">
   @for (entry of entries(); track entry.type) {
     <button type="button" class="atmos-item-type-nav__pill atmos-focus-ring"
             [class.is-active]="active() === entry.type"

@@ -11,16 +11,11 @@
         <mat-icon>manufacturing</mat-icon>
         <span>Modify</span>
       </button>
-      <!-- Filter selected -->
-      <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleHideUnselected()" data-step="121" data-position="bottom-left-aligned">
-        <mat-icon>filter_alt</mat-icon>
-        <span>{{ state.hideUnselected() ? 'Show all' : 'Selected' }}</span>
-      </button>
     }
     <!-- Icon size -->
     <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleItemSize()" data-step="122" data-position="bottom-left-aligned">
       <mat-icon>{{ state.itemSize() === 'small' ? 'zoom_in' : 'zoom_out' }}</mat-icon>
-      <span>{{ state.itemSize() === 'small' ? 'Large' : 'Small' }}</span>
+      <span>{{ state.itemSize() === 'small' ? 'Large icons' : 'Small icons' }}</span>
     </button>
     @if (!isRequesting()) {
       <!-- IAP toggle -->
@@ -30,7 +25,7 @@
       </button>
     }
     <!-- Background -->
-    <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="state.showingBackgroundPicker()" (click)="showBackgroundPicker($event)">
+    <button type="button" class="atmos-btn atmos-btn--sm" [class.atmos-btn--active]="state.showingBackgroundPicker()" (click)="showBackgroundPicker($event)" data-step="128" data-position="bottom-left-aligned">
       <mat-icon>wallpaper</mat-icon>
       <span>Background</span>
     </button>
@@ -44,7 +39,7 @@
       <mat-icon>shuffle</mat-icon>
     </button>
     <!-- Calculate cost -->
-    <button type="button" class="atmos-btn atmos-btn--sm" (click)="calculateCostRequest.emit()" data-step="126" data-position="bottom-left-aligned">
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="calculateCostRequest.emit()" data-step="127" data-position="bottom-left-aligned">
       <mat-icon>calculate</mat-icon>
       <span>Costs</span>
     </button>

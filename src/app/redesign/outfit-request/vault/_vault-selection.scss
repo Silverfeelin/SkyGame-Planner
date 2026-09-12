@@ -21,8 +21,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    /* Sized around a full 'default' item icon plus the 2px selection border, so a
+       picked item fills the slot instead of overflowing it. */
+    width: calc(var(--item-size) + 4px);
+    height: calc(var(--item-size) + 4px);
     border-radius: var(--atmos-radius-sm);
     background: var(--atmos-tile-bg);
     border: 2px solid transparent;
@@ -54,5 +56,13 @@
     display: block;
     max-width: 100%;
     max-height: 100%;
+  }
+
+  /* The empty-slot category glyph is a mat-icon, which sizes off font-size
+     rather than the box — scale it up to match the item icons. */
+  mat-icon.selection-icon-img {
+    font-size: var(--item-size);
+    width: var(--item-size);
+    height: var(--item-size);
   }
 }

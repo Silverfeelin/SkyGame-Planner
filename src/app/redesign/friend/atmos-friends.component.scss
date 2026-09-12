@@ -112,3 +112,9 @@
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* The tree centres itself by default, which leaves a ragged left edge against the
+   friend card's own content. Pin it to the start instead. */
+:host ::ng-deep .atmos-friends__item-body .atmos-spirit-tree {
+  margin-inline: 0;
+}

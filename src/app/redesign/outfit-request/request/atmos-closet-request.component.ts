@@ -18,6 +18,8 @@ import { AtmosClosetDyePickerComponent } from '../closet/atmos-closet-dye-picker
 import { AtmosClosetBackgroundPickerComponent } from '../closet/atmos-closet-background-picker.component';
 import { AtmosClosetOngoingComponent } from '../closet/atmos-closet-ongoing.component';
 import { IOutfitRequestBackground, IOutfitRequestBackgrounds } from '@app/interfaces/outfit-request.interface';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { startClosetTour } from '../closet/closet-tour';
 
 type DyeColor = 'red' | 'purple' | 'blue' | 'cyan' | 'green' | 'yellow' | 'black' | 'white';
 const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yellow', 'black', 'white'];
@@ -41,7 +43,8 @@ const DYE_COLORS: DyeColor[] = ['red', 'purple', 'blue', 'cyan', 'green', 'yello
     AtmosClosetGridComponent,
     AtmosClosetDyePickerComponent,
     AtmosClosetBackgroundPickerComponent,
-    AtmosClosetOngoingComponent
+    AtmosClosetOngoingComponent,
+    TooltipDirective
   ]
 })
 export class AtmosClosetRequestComponent implements OnDestroy {
@@ -301,12 +304,14 @@ export class AtmosClosetRequestComponent implements OnDestroy {
     this._updateUrl();
   }
 
-  async copyLink(): Promise<void> {
+  async copyLink(tooltip?: TooltipDirective): Promise<void> {
     const state = this.state;
     if (state.lastLink()) {
-      navigator.clipboard.writeText(state.lastLink()!).catch(e => {
-        console.error(e); alert('Copying link failed.');
-      });
+      navigator.clipboard.writeText(state.lastLink()!)
+        .then(() => tooltip?.open())
+        .catch(e => {
+          console.error(e); alert('Copying link failed.');
+        });
       return;
     }
     state.isRendering.set(1);
@@ -328,6 +333,7 @@ export class AtmosClosetRequestComponent implements OnDestroy {
     try {
       const item = new ClipboardItem({ ['text/plain']: fetchPromise() });
       navigator.clipboard.write([item])
+        .then(() => tooltip?.open())
         .catch(e => { console.error(e); alert('Copying failed.'); })
         .finally(() => state.isRendering.set(0));
     } catch (e) { console.error(e); state.isRendering.set(0); }
@@ -441,5 +447,13 @@ export class AtmosClosetRequestComponent implements OnDestroy {
 
   toggleImagePicker(): void {
     this.state.showingImagePicker.update(v => !v);
+  }
+
+  startTour(): void {
+    startClosetTour({
+      root: this._el.nativeElement,
+      requesting: this.requesting,
+      state: this.state
+    });
   }
 }

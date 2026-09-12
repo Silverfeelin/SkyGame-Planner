@@ -21,7 +21,8 @@
     (resetRequest)="resetSelected()"
     (randomRequest)="randomSelection()"
     (copyLinkRequest)="copyLink()"
-    (calculateCostRequest)="calculateCost()" />
+    (calculateCostRequest)="calculateCost()"
+    (startTourRequest)="startTour()" />
 
   <!-- Background picker -->
   <atmos-closet-background-picker />
@@ -67,8 +68,9 @@
             <span>Share</span>
           </button>
           <button type="button" class="atmos-btn atmos-btn--sm"
-            (click)="copyLink()"
+            (click)="copyLink(ttCopyLink)"
             [disabled]="state.isRendering()"
+            skyTooltip="Copied!" #ttCopyLink="skyTooltip" manual placement="top" [closeDelay]="1000"
             data-step="5" data-position="bottom-left-aligned">
             <mat-icon [class.spin]="state.isRendering() === 1">
               {{ state.isRendering() === 1 ? 'cached' : 'link' }}

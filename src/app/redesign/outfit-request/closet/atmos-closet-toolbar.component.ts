@@ -48,12 +48,6 @@ export class AtmosClosetToolbarComponent {
     this.state.showingColorPicker.update(v => !v);
   }
 
-  toggleHideUnselected(): void {
-    this.state.hideUnselected.update(v => !v);
-    this.state.typeFolded.set({});
-    localStorage.setItem('closet.hide-unselected', this.state.hideUnselected() ? '1' : '0');
-  }
-
   toggleItemSize(): void {
     this.state.itemSize.update(v => v === 'small' ? 'default' : 'small');
     localStorage.setItem('closet.item-size', this.state.itemSize());

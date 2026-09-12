@@ -12,7 +12,9 @@ $slot-h: 288px;
   width: $slot-w;
   height: $slot-h;
   overflow: hidden;
-  border-radius: var(--atmos-card-radius);
+  /* Square by design — the collage renders as a plain grid of screenshots, so
+     rounded corners would not survive the export anyway. One-off, no token. */
+  border-radius: 0;
   border: var(--atmos-card-border);
   background: var(--atmos-bg-elev);
   cursor: grab;
@@ -99,6 +101,11 @@ $slot-h: 288px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   cursor: default;
+
+  /* Pasting only reaches the hidden input while it holds focus, so tell the
+     user which of the two states they are in. */
+  &:not(:focus-within) .slot__paste-label { display: none; }
+  &:focus-within .slot__paste-focus { display: none; }
 }
 
 .slot__paste-input {
@@ -128,7 +135,10 @@ $slot-h: 288px;
 }
 
 .slot__paste-focus {
-  display: none; // shown in legacy only when focus is lost; not needed in signals version
+  color: var(--atmos-text-dim);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.5;
 }
 
 .slot__paste-close {

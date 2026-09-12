@@ -34,4 +34,11 @@
     border-color: var(--atmos-accent);
     transform: translateY(-1px);
   }
+
+  /* Same treatment as .atmos-btn--active so the picked background reads as
+     selected alongside the rest of the toolbar. */
+  &.is-selected {
+    border-color: var(--atmos-active-border);
+    box-shadow: var(--atmos-active-ring);
+  }
 }

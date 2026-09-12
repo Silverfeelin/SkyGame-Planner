@@ -35,9 +35,17 @@ export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
   /** Output when the image URL for this slot changes (null = cleared). */
   readonly imageChanged = output<{ index: number; url: string | null }>();
 
+  /** Output when the corner icon for this slot changes ('' = cleared). */
+  readonly iconChanged = output<{ index: number; url: string }>();
+
+  /** The host owns paste mode so only one slot listens at a time. */
+  readonly pasteRequested = output<{ index: number; bulk: boolean }>();
+  readonly pasteClosed = output<void>();
+
   @ViewChild('imgEl') private readonly _imgEl!: ElementRef<HTMLImageElement>;
   @ViewChild('imgContainer') private readonly _imgContainer!: ElementRef<HTMLElement>;
-  @ViewChild('pasteInput') private readonly _pasteInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('pasteInput') private readonly _pasteInput?: ElementRef<HTMLInputElement>;
+  @ViewChild('iconEl') private readonly _iconEl?: ElementRef<HTMLImageElement>;
 
   // Slot state
   readonly imageUrl = signal<string>('');
@@ -58,6 +66,11 @@ export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
     return this._imgContainer?.nativeElement ?? null;
   }
 
+  /** Expose the corner icon element for canvas render access. */
+  get iconElement(): HTMLImageElement | null {
+    return this._iconEl?.nativeElement ?? null;
+  }
+
   ngAfterViewInit(): void {
     const el = this._imgEl.nativeElement;
     this.panZoom = createPanZoom(el, {
@@ -74,19 +87,25 @@ export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
 
   // ── Public API (called by host) ────────────────────────────────────────
 
-  /** Set image URL externally (used for bulk-paste coordination from host). */
-  setImageUrl(url: string): void {
-    this.imageUrl.set(url);
-    this.imageChanged.emit({ index: this.slotIndex(), url: url || null });
-  }
-
-  /** Start paste mode: focus the hidden textarea. */
+  /** Start paste mode: focus the hidden input that receives the paste event. */
   activatePaste(): void {
     this.isPasting.set(true);
     setTimeout(() => {
       const el = this._pasteInput?.nativeElement;
       if (el) { el.value = ''; el.focus(); }
     });
+  }
+
+  /** Refocus the paste input without changing paste mode. */
+  focusPasteInput(): void {
+    this._refocusPasteInput();
+  }
+
+  /** Drop the image, icon and paste mode of this slot. */
+  clearSlot(): void {
+    this.imageUrl.set('');
+    this.iconUrl.set('');
+    this.isPasting.set(false);
   }
 
   /** Deactivate paste mode. */
@@ -137,15 +156,22 @@ export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
   onClosePaste(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    this.deactivatePaste();
+    this.pasteClosed.emit();
+  }
+
+  /** Ask the host to put this slot in paste mode. */
+  onStartPaste(bulk: boolean, event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.pasteRequested.emit({ index: this.slotIndex(), bulk });
   }
 
   onPaste(event: ClipboardEvent): void {
     const url = this._imgUrlFromClipboard(event);
     if (!url) { return; }
     this.imageUrl.set(url);
+    // The host decides whether paste mode ends here or moves to the next slot.
     this.imageChanged.emit({ index: this.slotIndex(), url });
-    this.deactivatePaste();
   }
 
   onPickFile(): void {
@@ -169,6 +195,7 @@ export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
     this.imageUrl.set('');
     this.iconUrl.set('');
     this.imageChanged.emit({ index: this.slotIndex(), url: null });
+    this.iconChanged.emit({ index: this.slotIndex(), url: '' });
   }
 
   onImageLoaded(): void {
@@ -182,6 +209,7 @@ export class AtmosCollageSlotComponent implements AfterViewInit, OnDestroy {
   onIconPickerSelected(item: IItem): void {
     this.iconUrl.set(item?.icon ?? '');
     this.showIconPicker.set(false);
+    this.iconChanged.emit({ index: this.slotIndex(), url: this.iconUrl() });
   }
 
   onIconPickerClosed(): void {

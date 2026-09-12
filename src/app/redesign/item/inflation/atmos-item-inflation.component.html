@@ -21,7 +21,7 @@
 <section class="atmos-card">
   <div class="atmos-card__body">
     <h2 class="atmos-section__title">Filters</h2>
-    <atmos-item-type-nav [entries]="typeEntries" [active]="itemType" [wrap]="true"
+    <atmos-item-type-nav [entries]="typeEntries" [active]="itemType" [wrap]="true" [buttons]="true"
       (typeSelected)="onTypeChanged($event)"/>
     <div class="atmos-item-inflation__toggles">
       <button type="button" class="atmos-btn atmos-btn--sm"
