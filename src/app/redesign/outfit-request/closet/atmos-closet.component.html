@@ -61,6 +61,7 @@
           <button type="button" class="atmos-btn atmos-btn--sm"
             (click)="toggleImagePicker()"
             [disabled]="state.isRendering()"
+            skyTooltip="Copied!" #ttCopyImage="skyTooltip" manual placement="bottom" [closeDelay]="1000"
             data-step="6" data-position="bottom-left-aligned">
             <mat-icon [class.spin]="state.isRendering() === 2">
               {{ state.isRendering() === 2 ? 'cached' : 'file_copy' }}
@@ -92,7 +93,7 @@
                   <mat-icon>image</mat-icon>
                   <span>Share closet</span>
                 </button>
-                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('closet')">
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('closet', ttCopyImage)">
                   <mat-icon>file_copy</mat-icon>
                 </button>
               </div>
@@ -102,7 +103,7 @@
                 <mat-icon>background_grid_small</mat-icon>
                 <span>Share request</span>
               </button>
-              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('request')">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('request', ttCopyImage)">
                 <mat-icon>file_copy</mat-icon>
               </button>
             </div>
@@ -111,7 +112,7 @@
                 <mat-icon>grid_on</mat-icon>
                 <span>Share one fit</span>
               </button>
-              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('square')">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('square', ttCopyImage)">
                 <mat-icon>file_copy</mat-icon>
               </button>
             </div>
@@ -121,7 +122,7 @@
                   <mat-icon>image</mat-icon>
                   <span>Share template</span>
                 </button>
-                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('template')">
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('template', ttCopyImage)">
                   <mat-icon>file_copy</mat-icon>
                 </button>
               </div>

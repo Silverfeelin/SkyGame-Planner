@@ -367,10 +367,10 @@ export class SpiritTreeRenderService {
     });
   }
 
-  copyCanvas(canvas: HTMLCanvasElement): void {
-    canvas.toBlob(blob => {
-      if (!blob) { alert('Rendering canvas failed.'); return; }
-      navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-    });
+  /** Rejects when rendering or the clipboard write fails, so callers can hold back success feedback. */
+  copyCanvas(canvas: HTMLCanvasElement): Promise<void> {
+    return new Promise<Blob>((resolve, reject) => {
+      canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error('Rendering canvas failed.')));
+    }).then(blob => navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]));
   }
 }

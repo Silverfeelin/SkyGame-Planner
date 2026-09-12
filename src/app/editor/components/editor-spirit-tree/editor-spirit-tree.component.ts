@@ -72,8 +72,6 @@ export class SpiritTreeEditorComponent {
 
   @ViewChild('inpTitle', { static: true }) inpTitle!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLInputElement>;
-  @ViewChild('inpCost', { static: true }) inpCost!: ElementRef<HTMLInputElement>;
-  @ViewChild('selCostType', { static: true }) selCostType!: ElementRef<HTMLSelectElement>;
   @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: TooltipDirective;
 
   mode: EditorMode = 'node';
@@ -102,6 +100,9 @@ export class SpiritTreeEditorComponent {
 
   /** In-tree add/move/remove affordances around the selected node. */
   treeEditSlots: Array<AtmosTreeEditSlot> = [];
+
+  costTypeId: string = 'c';
+  costValue: number = 0;
 
   costTypes: Array<CostType> = [
     { id: 'c', label: 'Candles' },
@@ -343,9 +344,7 @@ export class SpiritTreeEditorComponent {
     const item = this.cloneItem(specialItem.item);
     this.onItemClicked({ item, event });
 
-    if (specialItem.cost) {
-      this.setCostInputs(specialItem.cost);
-    }
+    this.setCostInputs(specialItem.cost);
     this.applyCost();
   }
 
@@ -358,31 +357,30 @@ export class SpiritTreeEditorComponent {
     this.setCostInputs(cost);
   }
 
-  private setCostInputs(cost: ICost): void {
-    const costType = this.costTypes.find(t => (cost as any)[t.id] > 0) || this.costTypes[0];
-    this.inpCost.nativeElement.value = (cost as any)[costType?.id || 'c'] || '0';
-    this.selCostType.nativeElement.value = costType?.id || 'c';
+  private setCostInputs(cost: ICost | undefined): void {
+    const costType = cost && this.costTypes.find(t => (cost as any)[t.id] > 0);
+    this.costTypeId = costType?.id ?? this.costTypes[0].id;
+    this.costValue = costType ? this.parseInt(`${(cost as any)[costType.id]}`) : 0;
+    this._changeDetectorRef.markForCheck();
   }
 
-  onCostInputBlur(evt: Event): void {
+  onCostInput(evt: Event): void {
     const target = evt.target as HTMLInputElement;
-    const value = this.parseInt(target.value);
-    if (value <= 0) {
-      target.value = '0';
-    } else if (value > 999) {
-      target.value = '999';
-    } else if (!value) {
-      target.value = '';
-    }
+    const value = Math.min(999, Math.max(0, this.parseInt(target.value)));
+    this.costValue = value;
+    if (target.value !== `${value}`) { target.value = `${value}`; }
+  }
+
+  onCostTypeInput(evt: Event): void {
+    this.costTypeId = (evt.target as HTMLSelectElement).value;
   }
 
   applyCost(): void {
     const node = this.activeNode;
     if (!node) { return; }
     CostHelper.clear(node);
-    const costType = this.costTypes.find(t => t.id === this.selCostType.nativeElement.value) || this.costTypes[0];
-    const costValue = this.parseInt(this.inpCost.nativeElement.value) || 0;
-    (node as any)[costType.id] = costValue;
+    const costType = this.costTypes.find(t => t.id === this.costTypeId) || this.costTypes[0];
+    (node as any)[costType.id] = this.costValue;
     this.reloadTree();
   }
 
@@ -464,6 +462,7 @@ export class SpiritTreeEditorComponent {
     this.selectedCell = cell;
     this.selectedTierNode = node;
     if (node?.item) { this.selectedItem = node.item; }
+    this.setCostInputs(node);
   }
 
   /**
@@ -545,6 +544,7 @@ export class SpiritTreeEditorComponent {
       this.nodeTable[1][0] = treeNode;
       this.nodeMap[node.guid] = treeNode;
       this.selectedTreeNode = treeNode;
+      this.setCostInputs(node);
       this.updateEditSlots();
     } else {
       this.tiers = [{ guid: nanoid(10), rows: [[undefined, node, undefined]] }];
@@ -603,6 +603,7 @@ export class SpiritTreeEditorComponent {
     this.indexNodeTree();
     this.selectedTreeNode = this.nodeMap[this.tree.node!.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
+    this.setCostInputs(this.selectedTreeNode.node);
     this.updateEditSlots();
 
     this.applyTreeTitle(tree);
@@ -683,8 +684,13 @@ export class SpiritTreeEditorComponent {
       subtitle: this.inpSubtitle.nativeElement.value.trim(),
       background: bg
     });
-    this._spiritTreeRenderService.copyCanvas(canvas);
-    this._ttCopy?.open();
+    try {
+      await this._spiritTreeRenderService.copyCanvas(canvas);
+      this._ttCopy?.open();
+    } catch (e) {
+      console.error(e);
+      alert('Copying failed. Please make sure the document is focused.');
+    }
   }
 
   async shareImage(): Promise<void> {
@@ -924,6 +930,7 @@ export class SpiritTreeEditorComponent {
     NodeHelper.swap(firstNode.node, secondNode.node);
     this.selectedTreeNode = firstNode;
     this.selectedItem = this.selectedTreeNode.node.item!;
+    this.setCostInputs(this.selectedTreeNode.node);
     this.reloadTree();
   }
 
@@ -1067,6 +1074,7 @@ export class SpiritTreeEditorComponent {
   private selectTreeNode(treeNode: TreeNode): void {
     this.selectedTreeNode = treeNode;
     this.selectedItem = treeNode.node.item!;
+    this.setCostInputs(treeNode.node);
     this.updateEditSlots();
   }
 

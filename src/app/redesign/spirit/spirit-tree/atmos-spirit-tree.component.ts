@@ -17,6 +17,7 @@ import { NodeService } from '@app/services/node.service';
 import { CurrencyService } from '@app/services/currency.service';
 import { DebugService } from '@app/services/debug.service';
 import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.service';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { cancellableEvent, noInputs } from '@app/rxjs/operators';
 import { INode, ISpiritTree, ISpiritTreeTier, ICost, IItem } from 'skygame-data';
 
@@ -94,7 +95,7 @@ const sharedNodeAction = signal<AtmosNodeAction>('unlock');
   templateUrl: './atmos-spirit-tree.component.html',
   styleUrl: './atmos-spirit-tree.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AtmosNodeComponent, CostComponent, DateComponent, MatIcon, RouterLink, AtmosDraftWarningComponent, NgTemplateOutlet]
+  imports: [AtmosNodeComponent, CostComponent, DateComponent, MatIcon, RouterLink, AtmosDraftWarningComponent, NgTemplateOutlet, TooltipDirective]
 })
 export class AtmosSpiritTreeComponent {
   readonly tree = input.required<ISpiritTree>();
@@ -490,7 +491,7 @@ export class AtmosSpiritTreeComponent {
     void this._router.navigate(['/spirit-tree/editor'], { queryParams: { tree: tree.guid, modify: !result } });
   }
 
-  async exportPng(mode: ShareMode): Promise<void> {
+  async exportPng(mode: ShareMode, tooltip?: TooltipDirective): Promise<void> {
     this.showMenu.set(false);
     const tree = this.tree();
     if (mode === 'share' && !navigator.share) { alert('Sharing is not supported by this browser.'); return; }
@@ -521,7 +522,8 @@ export class AtmosSpiritTreeComponent {
       if (mode === 'share') {
         this._renderService.shareCanvas(canvas, 'spirit-tree.png');
       } else {
-        this._renderService.copyCanvas(canvas);
+        await this._renderService.copyCanvas(canvas);
+        tooltip?.open();
       }
     } catch (e: any) {
       alert(`Failed to copy the spirit tree: ${e?.message ?? e}`);

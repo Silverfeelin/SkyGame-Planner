@@ -107,10 +107,10 @@
               <button type="button" class="atmos-btn" aria-label="Calculate cost" (click)="calculateCost()">
                 <mat-icon>calculate</mat-icon>
               </button>
-              <input #inpCost type="number" min="0" max="999" step="1" (blur)="onCostInputBlur($event)" value="0" class="cost-row__amount"/>
-              <select #selCostType class="cost-row__type">
-                @for (type of costTypes; track $index) {
-                  <option [value]="type.id">{{ type.label }}</option>
+              <input type="number" min="0" max="999" step="1" [value]="costValue" (input)="onCostInput($event)" class="cost-row__amount"/>
+              <select class="cost-row__type" (change)="onCostTypeInput($event)">
+                @for (type of costTypes; track type.id) {
+                  <option [value]="type.id" [selected]="type.id === costTypeId">{{ type.label }}</option>
                 }
               </select>
               <button type="button" class="atmos-btn" (click)="applyCost()">Apply</button>

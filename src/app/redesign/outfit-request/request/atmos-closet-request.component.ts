@@ -339,13 +339,15 @@ export class AtmosClosetRequestComponent implements OnDestroy {
     } catch (e) { console.error(e); state.isRendering.set(0); }
   }
 
-  copyImage(mode: CopyImageMode): void {
+  copyImage(mode: CopyImageMode, tooltip?: TooltipDirective): void {
     const state = this.state;
     state.showingImagePicker.set(false);
     state.isRendering.set(2);
     setTimeout(() => {
       const canvas = mode === 'square' ? this._renderer().renderSquare() : this._renderer().renderImage(mode);
-      this._saveToClipboard(canvas).finally(() => state.isRendering.set(0));
+      this._saveToClipboard(canvas)
+        .then(copied => { if (copied) { tooltip?.open(); } })
+        .finally(() => state.isRendering.set(0));
     });
   }
 
@@ -380,11 +382,12 @@ export class AtmosClosetRequestComponent implements OnDestroy {
     });
   }
 
-  private async _saveToClipboard(canvas: HTMLCanvasElement): Promise<void> {
+  private async _saveToClipboard(canvas: HTMLCanvasElement): Promise<boolean> {
     const blob = await canvasToBlob(canvas, 'image/png');
     try {
       await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-    } catch (e) { console.error(e); alert('Copying failed.'); }
+      return true;
+    } catch (e) { console.error(e); alert('Copying failed.'); return false; }
   }
 
   private async _shareCanvas(canvas: HTMLCanvasElement): Promise<void> {
