@@ -51,8 +51,7 @@
       <div class="atmos-coll__selected">
         @for (item of editItems; track item.guid) {
           <button type="button" class="atmos-coll__selected-item atmos-tile atmos-tile--removable" (click)="removeItem(item)" [title]="item.name + ' — click to remove'">
-            <app-icon [src]="item.icon || '/assets/icons/question.webp'" width="48px" height="48px" [lazy]="true" [draggable]="false"/>
-            @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+            <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
             <span class="atmos-tile__remove">✕</span>
           </button>
         } @empty {
@@ -81,10 +80,7 @@
             [class.is-selected]="editItemSet.has(item)"
             [title]="item.name"
             (click)="onItemClickedPicker(item)">
-      <app-icon [src]="item.icon || '/assets/icons/question.webp'"
-                width="56px" height="56px"
-                [lazy]="true" [draggable]="false"/>
-      @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+      <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
       @if (editItemSet.has(item)) { <span class="atmos-tile__check">✓</span> }
     </button>
   </ng-template>
@@ -149,10 +145,7 @@
         <div class="atmos-coll__items-strip atmos-card__body">
           @for (item of collection.items; track item.guid) {
             <a class="atmos-coll__strip-item atmos-tile" [routerLink]="['/item', item.guid]" [title]="item.name">
-              <app-icon [src]="item.icon || '/assets/icons/question.webp'"
-                        width="48px" height="48px"
-                        [lazy]="true" [draggable]="false"/>
-              @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+              <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
             </a>
           }
         </div>

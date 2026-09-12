@@ -4,11 +4,12 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 const fileNames = [
   'https://sky-planner.com/assets/game/dyes/Carnival_jugglerruffle.jpg',
@@ -48,7 +49,7 @@ export class EditorDyesComponent {
   previewFile = '';
   previewFileMap: { [file: string]: IItem } = {};
 
-  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly pickerItems: ReadonlyArray<IItem>;
 
   mappedFiles: Array<{guid: string, item: IItem, url: string}> = [];

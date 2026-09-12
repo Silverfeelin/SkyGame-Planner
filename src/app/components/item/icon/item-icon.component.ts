@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { SubscriptionLike } from 'rxjs';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
-import { ItemSubIconsComponent } from './subicons/item-subicons.component';
+import { ItemSubIconsComponent, ItemSubicon } from './subicons/item-subicons.component';
 import { IconComponent } from '../../icon/icon.component';
-import { IItem, INode, IIAP, IItemListNode, ItemSize, ItemSubicon } from 'skygame-data';
+import { IItem, INode, IIAP, IItemListNode, ItemSize } from 'skygame-data';
 
 @Component({
     selector: 'app-item-icon',
@@ -19,7 +19,7 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
   @Input() iap?: IIAP;
   @Input() listNode?: IItemListNode;
   @Input() size: ItemSize = 'default';
-  @Input() subIcons: Array<ItemSubicon> = [];
+  @Input() subIcons: ReadonlyArray<ItemSubicon> = [];
   @Input() lazy = true;
 
   /** Forces icon to be opaque instead of checking if it's unlocked. */
@@ -30,6 +30,7 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
 
   iconWidth = '64px';
   iconHeight = '64px';
+  subIconSize = 20;
 
   _sub?: SubscriptionLike;
 
@@ -52,11 +53,11 @@ export class ItemIconComponent implements OnInit, OnChanges, OnDestroy {
     if (changes['size']) {
       this._size = changes['size'].currentValue;
       switch (this._size) {
-        case 'mini': this.iconWidth = this.iconHeight = '24px'; break;
-        case 'small': this.iconWidth = this.iconHeight = '32px'; break;
-        case 'medium': this.iconWidth = this.iconHeight = '48px'; break;
-        case 'large': this.iconWidth = this.iconHeight = '96px'; break;
-        default: this.iconWidth = this.iconHeight = '64px'; break;
+        case 'mini': this.iconWidth = this.iconHeight = '24px'; this.subIconSize = 13; break;
+        case 'small': this.iconWidth = this.iconHeight = '32px'; this.subIconSize = 13; break;
+        case 'medium': this.iconWidth = this.iconHeight = '48px'; this.subIconSize = 18; break;
+        case 'large': this.iconWidth = this.iconHeight = '96px'; this.subIconSize = 24; break;
+        default: this.iconWidth = this.iconHeight = '64px'; this.subIconSize = 20; break;
       }
     }
   }

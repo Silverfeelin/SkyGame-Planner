@@ -3,7 +3,8 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { IconComponent } from '@app/components/icon/icon.component';
+import { ItemIconComponent } from '../icon/item-icon.component';
+import { SUBICONS_ALL } from '../icon/subicons/item-subicons.component';
 import { ItemGridLayoutComponent } from '../grid/item-grid-layout.component';
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
 import { DataService } from '@app/services/data.service';
@@ -30,9 +31,10 @@ interface IStorageData {
   templateUrl: './item-collection.component.html',
   styleUrl: './item-collection.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ReactiveFormsModule, IconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [RouterLink, MatIcon, ReactiveFormsModule, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
 })
 export class ItemCollectionComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly allItems: ReadonlyArray<IItem>;
   readonly initialCategory = ItemType.Outfit;
 

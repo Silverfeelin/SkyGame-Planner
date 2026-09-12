@@ -12,6 +12,7 @@ import { StorageService } from '@app/services/storage.service';
 import { TitleService } from '@app/services/title.service';
 import { SettingService } from '@app/services/setting.service';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
+import { ItemSubIconsComponent, SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
@@ -32,9 +33,11 @@ const GROUP_FACTS: { [key in ItemGroup]: IItemGroupFact } = {
   templateUrl: './item-detail.component.html',
   styleUrl: './item-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ItemIconComponent, WikiLinkComponent, OverlayComponent, ItemTypePipe, ItemQuickActionsComponent]
+  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, OverlayComponent, ItemTypePipe, ItemQuickActionsComponent]
 })
 export class ItemDetailComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
+
   private readonly _route = inject(ActivatedRoute);
   private readonly _dataService = inject(DataService);
   private readonly _eventService = inject(EventService);

@@ -4,6 +4,7 @@ import { IconComponent } from '@app/components/icon/icon.component';
 import { DataService } from '@app/services/data.service';
 import { ItemGridLayoutComponent, ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { ItemSubIconsComponent, SUBICONS_ALL } from '../icon/subicons/item-subicons.component';
 import { IItem, ItemType } from 'skygame-data';
 
 @Component({
@@ -11,9 +12,10 @@ import { IItem, ItemType } from 'skygame-data';
   templateUrl: './item-dye.component.html',
   styleUrl: './item-dye.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, IconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [RouterLink, IconComponent, ItemSubIconsComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
 })
 export class ItemDyeComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly items: ReadonlyArray<IItem>;
   readonly initialCategory: ItemType;
 

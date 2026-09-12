@@ -3,7 +3,7 @@ import { SpiritTreeComponent, SpiritTreeNodeClickEvent, TreeEditSlot, TreeEditSl
 import { NodePosition } from '@app/components/spirit/node/node.component';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
 import { ItemIconComponent } from "../../../components/item/icon/item-icon.component";
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
@@ -18,6 +18,7 @@ import { TabsComponent, TabDirective } from '@app/components/shared/shared-widge
 import { NodeComponent } from '@app/components/spirit/node/node.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { INode, IItem, ICost, ISpiritTree, ISpiritTreeTier, SpiritTreeTierRow, ISpirit, ItemType, SpiritType } from 'skygame-data';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 /** Normal trees are a chain of linked nodes; tiered trees are a stack of fixed 3-column rows. */
 type EditorMode = 'node' | 'tier';
@@ -87,7 +88,7 @@ export class SpiritTreeEditorComponent {
   selectedTierNode?: INode;
   readonly cols: ReadonlyArray<number> = [0, 1, 2];
 
-  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly pickerItems: ReadonlyArray<IItem>;
   nodeTable: [TreeNodeArray, TreeNodeArray, TreeNodeArray] = [[], [], []];
   nodeMap: { [guid: string]: TreeNode } = {};

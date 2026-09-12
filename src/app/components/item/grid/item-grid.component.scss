@@ -12,7 +12,8 @@
   overflow: hidden;
   text-decoration: none;
 
-  &.is-locked app-icon {
+  // Only the artwork dims; the subicons stay readable on a locked item.
+  &.is-locked .item-icon {
     opacity: 0.35;
   }
 }

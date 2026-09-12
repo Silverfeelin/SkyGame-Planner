@@ -55,7 +55,7 @@
           <a class="atmos-iap-card__item"
             [routerLink]="['/item', item.guid]"
             [title]="item.name">
-            <app-item-icon [item]="item" [iap]="iap()" size="default"></app-item-icon>
+            <app-item-icon [item]="item" [iap]="iap()" [subIcons]="SUBICONS_BASE" size="default"></app-item-icon>
           </a>
         }
       </div>

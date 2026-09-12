@@ -32,6 +32,7 @@ import {
   nestingStorageKey
 } from '@app/components/shop/nesting/shop-nesting.interface';
 import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
+import { SUBICONS_BASE } from '@app/components/item/icon/subicons/item-subicons.component';
 
 interface IRotationItem extends ICost {
   guid: string;
@@ -147,6 +148,7 @@ const rotations: IRotations = [
   ]
 })
 export class ShopNestingComponent {
+  readonly SUBICONS_BASE = SUBICONS_BASE;
   private readonly _dataService = inject(DataService);
   private readonly _eventService = inject(EventService);
   private readonly _storageService = inject(StorageService);

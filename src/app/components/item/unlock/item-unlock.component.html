@@ -35,7 +35,7 @@
             [skyTooltip]="item.name"
             (click)="toggleItem(item)">
             <app-item-icon [item]="item" [opaque]="true"
-              [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'unlock', 'limited']">
+              [subIcons]="SUBICONS_ALL">
             </app-item-icon>
             @if (item.unlocked) { <span class="atmos-tile__check">✓</span> }
           </div>

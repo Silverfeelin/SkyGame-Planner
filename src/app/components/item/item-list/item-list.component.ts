@@ -9,6 +9,7 @@ import { CurrencyService } from '@app/services/currency.service';
 import { EventService } from '@app/services/event.service';
 import { StorageService } from '@app/services/storage.service';
 import { IItemList, IItemListNode } from 'skygame-data';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 export interface ItemListNodeClickEvent {
   node: IItemListNode;
@@ -45,6 +46,7 @@ interface RenderNode {
   imports: [MatIcon, ItemIconComponent, RouterLink, NgTemplateOutlet]
 })
 export class ItemListComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly itemList = input.required<IItemList>();
   readonly highlightNode = input<string | undefined>(undefined);
   readonly opaqueNodes = input<boolean>(false);

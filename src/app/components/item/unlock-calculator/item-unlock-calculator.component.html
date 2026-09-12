@@ -40,10 +40,9 @@
         @for (item of items; track item.guid) {
           <div class="atmos-item-unlock-calc__selection-item atmos-tile atmos-tile--removable">
             <app-item-icon (click)="viewItem(item)"
-              [item]="item" [opaque]="true"
+              [item]="item" [opaque]="true" [subIcons]="SUBICONS_ALL"
               [skyTooltip]="item.name" placement="top">
             </app-item-icon>
-            @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
             <button type="button" class="atmos-tile__remove" (click)="removeItem(item)"
               [attr.aria-label]="'Remove ' + item.name" [title]="'Remove ' + item.name">✕</button>
           </div>
@@ -70,9 +69,8 @@
                 <app-item-icon
                   [item]="item" [opaque]="true"
                   [skyTooltip]="item.name" placement="top"
-                  [subIcons]="['type', 'elder', 'season', 'iap', 'favourite', 'limited']">
+                  [subIcons]="SUBICONS_ALL">
                 </app-item-icon>
-                <span class="atmos-tile__dot"></span>
               </div>
             }
           </div>
@@ -112,9 +110,8 @@
                 <app-item-icon
                   [item]="result.item" [opaque]="true"
                   [skyTooltip]="result.item.name" placement="top"
-                  [subIcons]="['type', 'elder', 'season', 'iap', 'favourite']">
+                  [subIcons]="SUBICONS_ALL">
                 </app-item-icon>
-                @if (result.item.unlocked) { <span class="atmos-tile__dot"></span> }
               </div>
               <div class="atmos-item-unlock-calc__result-detail">
                 @if (result.item.unlocked) {
@@ -221,8 +218,7 @@
       <div class="atmos-item-unlock-calc__pick atmos-tile atmos-tile--selectable"
         [class.is-selected]="itemSet.has(item)"
         (click)="onItemClicked({ event: $event, item })">
-        <app-item-icon [item]="item" [subIcons]="itemSubIcons" [skyTooltip]="item.name" placement="auto"></app-item-icon>
-        @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+        <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [skyTooltip]="item.name" placement="auto"></app-item-icon>
         @if (itemSet.has(item)) { <span class="atmos-tile__check">✓</span> }
       </div>
     </ng-template>

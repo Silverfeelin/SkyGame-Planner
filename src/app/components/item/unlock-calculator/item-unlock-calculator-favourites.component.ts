@@ -8,6 +8,7 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemClickEvent } from '@app/components/item/grid/item-grid-layout.component';
 import { FoldableCardComponent } from '@app/components/shared/foldable-card/foldable-card.component';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 @Component({
   selector: 'app-item-unlock-calculator-favourites',
@@ -17,6 +18,7 @@ import { FoldableCardComponent } from '@app/components/shared/foldable-card/fold
   imports: [TooltipDirective, MatIcon, ItemIconComponent, FoldableCardComponent]
 })
 export class ItemUnlockCalculatorFavouritesComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly itemClicked = output<ItemClickEvent>();
   readonly itemsClicked = output<Array<ItemClickEvent>>();
 

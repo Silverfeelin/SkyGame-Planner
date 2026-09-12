@@ -6,7 +6,7 @@ import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemTypeNavComponent } from '../type-nav/item-type-nav.component';
 import { ItemFiltersComponent } from '../filters/item-filters.component';
-import { IItem, ItemSubicon, ItemType } from 'skygame-data';
+import { IItem, ItemType } from 'skygame-data';
 
 /** Emitted by hosts that let their item template be clicked rather than followed. */
 export type ItemClickEvent = { event: MouseEvent, item: IItem };
@@ -33,9 +33,6 @@ export const ITEM_GRID_CATEGORIES: ReadonlyArray<{ type: ItemType; svgIcon: stri
 
 /** The item types the layout can show, for hosts that build their own pool. */
 export const ITEM_GRID_TYPES: ReadonlySet<ItemType> = new Set(ITEM_GRID_CATEGORIES.map(c => c.type));
-
-/** Subicon set used by the pickers embedded in the calculator and the editors. */
-export const ITEM_GRID_SUBICONS: Array<ItemSubicon> = ['type', 'season', 'elder', 'iap', 'favourite', 'limited'];
 
 @Component({
   selector: 'app-item-grid-layout',

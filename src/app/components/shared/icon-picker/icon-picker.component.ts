@@ -3,6 +3,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ISearchItem, SearchService } from '@app/services/search.service';
 import { IItem } from 'skygame-data';
+import { SUBICONS_NONE } from '@app/components/item/icon/subicons/item-subicons.component';
 
 /** Item-icon search overlay. Emits the picked item, or closes. */
 @Component({
@@ -13,6 +14,7 @@ import { IItem } from 'skygame-data';
   imports: [MatIcon, ItemIconComponent]
 })
 export class IconPickerComponent implements AfterViewInit {
+  readonly SUBICONS_NONE = SUBICONS_NONE;
   readonly closed = output<void>();
   readonly selected = output<IItem>();
 

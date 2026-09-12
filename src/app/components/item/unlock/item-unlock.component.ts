@@ -8,6 +8,7 @@ import { StorageService } from '@app/services/storage.service';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 interface ITypeSection {
   type: ItemType;
@@ -51,6 +52,7 @@ const SECTION_TYPES: ReadonlyArray<ItemType> = [
   imports: [TooltipDirective, MatIcon, ItemIconComponent, ItemQuickActionsComponent]
 })
 export class ItemUnlockComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   private readonly _dataService = inject(DataService);
   private readonly _eventService = inject(EventService);
   private readonly _storageService = inject(StorageService);

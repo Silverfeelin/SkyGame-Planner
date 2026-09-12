@@ -8,6 +8,7 @@ import { EventService } from '@app/services/event.service';
 import { DebugService } from '@app/services/debug.service';
 import { NavigationHelper, INavigationTarget } from '@app/helpers/navigation-helper';
 import { INode } from 'skygame-data';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 export type NodeAction = 'emit' | 'unlock' | 'navigate';
 export type NodePosition = 'left' | 'center' | 'right';
@@ -32,6 +33,7 @@ export type NodePosition = 'left' | 'center' | 'right';
   imports: [ItemIconComponent, MatIcon, NgTemplateOutlet]
 })
 export class NodeComponent {
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly node = input.required<INode>();
   readonly position = input<NodePosition>('center');
   readonly highlight = input<boolean>(false);

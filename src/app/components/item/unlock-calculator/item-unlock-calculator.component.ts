@@ -19,13 +19,14 @@ import { DateHelper } from '@app/helpers/date-helper';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
-import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
 import { SpiritTreeComponent } from '@app/components/shared/shared-widgets';
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
 import { ItemUnlockCalculatorFavouritesComponent } from './item-unlock-calculator-favourites.component';
 import { ItemUnlockCalculatorSpiritsComponent } from './item-unlock-calculator-spirits.component';
 import { ItemUnlockCalculatorSeasonsComponent } from './item-unlock-calculator-seasons.component';
 import { ItemUnlockCalculatorEventsComponent } from './item-unlock-calculator-events.component';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 interface IItemResult {
   item: IItem;
@@ -77,7 +78,7 @@ export class ItemUnlockCalculatorComponent {
   itemType: ItemType = ItemType.Outfit;
   private readonly _itemTypeSet = ITEM_GRID_TYPES;
 
-  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   /** Pool the embedded browser draws from — every type the grid layout can show. */
   readonly pickerItems: ReadonlyArray<IItem>;
 

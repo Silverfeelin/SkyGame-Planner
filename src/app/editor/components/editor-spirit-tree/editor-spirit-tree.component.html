@@ -175,7 +175,7 @@
         <div class="picker-item atmos-tile atmos-tile--selectable"
           [class.is-selected]="!!itemMap[item.guid]"
           (click)="onItemClicked({ event: $event, item })">
-          <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
+          <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [opaque]="true"
             [skyTooltip]="item.name" placement="auto"></app-item-icon>
           @if (itemMap[item.guid]) { <span class="atmos-tile__check">✓</span> }
         </div>

@@ -4,6 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { CheckboxComponent } from '@app/components/shared/checkbox/checkbox.component';
 import { IIAP } from 'skygame-data';
+import { SUBICONS_BASE } from '@app/components/item/icon/subicons/item-subicons.component';
 
 /**
  * In-app-purchase summary card. Toggle handlers are surfaced as outputs so the
@@ -18,6 +19,7 @@ import { IIAP } from 'skygame-data';
   imports: [MatIcon, ItemIconComponent, RouterLink, CheckboxComponent]
 })
 export class IapCardComponent {
+  readonly SUBICONS_BASE = SUBICONS_BASE;
   readonly iap = input.required<IIAP>();
   readonly highlightIap = input<string | undefined>(undefined);
 

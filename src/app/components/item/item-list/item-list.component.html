@@ -15,7 +15,7 @@
           class="atmos-item-list__icon"
           [item]="n.node.item"
           [listNode]="n.node"
-          [subIcons]="['unlock']"
+          [subIcons]="SUBICONS_ALL"
           [opaque]="opaqueNodes() || n.unlocked"
           size="default"></app-item-icon>
         @if (n.node.quantity && n.node.quantity > 1) {

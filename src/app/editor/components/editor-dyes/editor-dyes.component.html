@@ -7,7 +7,7 @@
     <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
     <ng-template #pickTpl let-item>
       <div class="picker-item atmos-tile" (click)="onItemClicked({ event: $event, item })">
-        <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
+        <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [opaque]="true"
           [skyTooltip]="item.name" placement="auto"></app-item-icon>
       </div>
     </ng-template>
