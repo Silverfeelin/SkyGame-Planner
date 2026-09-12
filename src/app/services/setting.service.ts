@@ -9,10 +9,14 @@ export class SettingService {
 
   _wikiNewTab = false;
   _debugVisible = false;
+  _debugMapCopyCoordinates = false;
+  _dailyCandleAmount = 0;
 
   constructor() {
     this._wikiNewTab = localStorage.getItem('wiki.newtab') !== '0';
     this._debugVisible = localStorage.getItem('debug.visible') === '1';
+    this._debugMapCopyCoordinates = localStorage.getItem('debug.map-copy-coordinates') === '1';
+    this._dailyCandleAmount = parseInt(localStorage.getItem('setting.daily-candle-amount') || '0', 10) || 0;
   }
 
   get wikiNewTab(): boolean {
@@ -32,6 +36,26 @@ export class SettingService {
   set debugVisible(value: boolean) {
     this._debugVisible = value;
     localStorage.setItem('debug.visible', value ? '1' : '0');
+    this.settingChanged.next();
+  }
+
+  get debugMapCopyCoordinates(): boolean {
+    return this._debugMapCopyCoordinates;
+  }
+
+  set debugMapCopyCoordinates(value: boolean) {
+    this._debugMapCopyCoordinates = value;
+    localStorage.setItem('debug.map-copy-coordinates', value ? '1' : '0');
+    this.settingChanged.next();
+  }
+
+  get dailyCandleAmount(): number {
+    return this._dailyCandleAmount;
+  }
+
+  set dailyCandleAmount(value: number) {
+    this._dailyCandleAmount = Math.max(0, value);
+    localStorage.setItem('setting.daily-candle-amount', String(this._dailyCandleAmount));
     this.settingChanged.next();
   }
 }

@@ -1,0 +1,157 @@
+@if (visible()) {
+  <div class="atmos-item-filters__filters">
+    <!-- Name -->
+    <div class="atmos-item-filters__search">
+      <mat-icon>search</mat-icon>
+      <input class="atmos-input" type="text" placeholder="Item name" [value]="filterName" (input)="onFilterNameInput($event)">
+    </div>
+
+    <!-- General filters -->
+    <div class="atmos-item-filters__group">
+      <div class="atmos-item-filters__group-header">
+        <button type="button" class="atmos-item-filters__group-toggle"
+          [attr.data-state]="allGeneralFiltered === true ? 'on' : allGeneralFiltered === false ? 'off' : null"
+          (click)="showGeneralFilters.set(!showGeneralFilters())">
+          <mat-icon>{{ showGeneralFilters() ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <span>General</span>
+        </button>
+      </div>
+      @if (showGeneralFilters()) {
+        <div class="atmos-item-filters__group-body">
+          @for (filter of generalFilters; track filter.key) {
+            <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleFilter(filter.key)">
+              <app-checkbox size="sm" [state]="filters[filter.key]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox>
+              <span>{{ filter.label }}</span>
+            </button>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Currency filters -->
+    <div class="atmos-item-filters__group">
+      <div class="atmos-item-filters__group-header">
+        <button type="button" class="atmos-item-filters__group-toggle"
+          [attr.data-state]="allCurrenciesFiltered === true ? 'on' : allCurrenciesFiltered === false ? 'off' : null"
+          (click)="showCurrencyFilters.set(!showCurrencyFilters())">
+          <mat-icon>{{ showCurrencyFilters() ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <span>Currencies</span>
+        </button>
+        <button type="button" class="atmos-text-link" (click)="toggleCurrencyFilters(true)">All</button>
+        <button type="button" class="atmos-text-link" (click)="toggleCurrencyFilters(false)">None</button>
+      </div>
+      @if (showCurrencyFilters()) {
+        <div class="atmos-item-filters__group-body atmos-item-filters__group-body--stacked">
+          <div class="atmos-item-filters__subgroup">
+            <div class="atmos-item-filters__subgroup-header">
+              <span>By first time available</span>
+              <button type="button" class="atmos-text-link" (click)="toggleCurrencyFilters(true, filterCurrencies.first)">All</button>
+              <button type="button" class="atmos-text-link" (click)="toggleCurrencyFilters(false, filterCurrencies.first)">None</button>
+            </div>
+            <div class="atmos-item-filters__group-body">
+              @for (filter of currencyFilters; track filter.key) {
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleCurrencyFilter(filterCurrencies.first, filter.key)">
+                  <app-checkbox size="sm" [state]="filterCurrencies.first[filter.key]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox>
+                  <span>{{ filter.label }}</span>
+                </button>
+              }
+            </div>
+          </div>
+          <div class="atmos-item-filters__subgroup">
+            <div class="atmos-item-filters__subgroup-header">
+              <span>By last time available</span>
+              <button type="button" class="atmos-text-link" (click)="toggleCurrencyFilters(true, filterCurrencies.last)">All</button>
+              <button type="button" class="atmos-text-link" (click)="toggleCurrencyFilters(false, filterCurrencies.last)">None</button>
+            </div>
+            <div class="atmos-item-filters__group-body">
+              @for (filter of currencyFilters; track filter.key) {
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="toggleCurrencyFilter(filterCurrencies.last, filter.key)">
+                  <app-checkbox size="sm" [state]="filterCurrencies.last[filter.key]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox>
+                  <span>{{ filter.label }}</span>
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Realm filters -->
+    <div class="atmos-item-filters__group">
+      <div class="atmos-item-filters__group-header">
+        <button type="button" class="atmos-item-filters__group-toggle"
+          [attr.data-state]="allRealmsFiltered === true ? 'on' : allRealmsFiltered === false ? 'off' : null"
+          (click)="showRealmFilters.set(!showRealmFilters())">
+          <mat-icon>{{ showRealmFilters() ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <span>Realms</span>
+        </button>
+        <button type="button" class="atmos-text-link" (click)="toggleRealmFilters(true)">All</button>
+        <button type="button" class="atmos-text-link" (click)="toggleRealmFilters(false)">None</button>
+      </div>
+      @if (showRealmFilters()) {
+        <div class="atmos-item-filters__group-body">
+          @for (realm of realms; track realm.guid) {
+            <button type="button" class="atmos-btn atmos-btn--sm" [skyTooltip]="realm.name" placement="top" (click)="toggleRealmFilter(realm)">
+              <app-checkbox size="sm" [state]="filterRealms[realm.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox>
+              <span>{{ realm.shortName }}</span>
+            </button>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Season filters -->
+    <div class="atmos-item-filters__group">
+      <div class="atmos-item-filters__group-header">
+        <button type="button" class="atmos-item-filters__group-toggle"
+          [attr.data-state]="allSeasonsFiltered === true ? 'on' : allSeasonsFiltered === false ? 'off' : null"
+          (click)="showSeasonFilters.set(!showSeasonFilters())">
+          <mat-icon>{{ showSeasonFilters() ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <span>Seasons</span>
+        </button>
+        <button type="button" class="atmos-text-link" (click)="toggleSeasonFilters(true)">All</button>
+        <button type="button" class="atmos-text-link" (click)="toggleSeasonFilters(false)">None</button>
+      </div>
+      @if (showSeasonFilters()) {
+        <div class="atmos-item-filters__group-body">
+          @for (season of seasons; track season.guid) {
+            <button type="button" class="atmos-btn atmos-btn--sm" [skyTooltip]="season.name" placement="top" (click)="toggleSeasonFilter(season)">
+              <app-checkbox size="sm" [state]="filterSeasons[season.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox>
+              <app-icon class="atmos-item-filters__season-icon" [width]="'20px'" [height]="'20px'" [src]="season.iconUrl || '#season-candle'"></app-icon>
+              <span>{{ season.shortName }}</span>
+            </button>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Event filters -->
+    <div class="atmos-item-filters__group">
+      <div class="atmos-item-filters__group-header">
+        <button type="button" class="atmos-item-filters__group-toggle"
+          [attr.data-state]="allEventsFiltered === true ? 'on' : allEventsFiltered === false ? 'off' : null"
+          (click)="showEventFilters.set(!showEventFilters())">
+          <mat-icon>{{ showEventFilters() ? 'expand_less' : 'expand_more' }}</mat-icon>
+          <span>Events</span>
+        </button>
+        <button type="button" class="atmos-text-link" (click)="toggleEventFilters(true)">All</button>
+        <button type="button" class="atmos-text-link" (click)="toggleEventFilters(false)">None</button>
+      </div>
+      @if (showEventFilters()) {
+        <div class="atmos-item-filters__group-body">
+          @for (event of events; track event.guid) {
+            <button type="button" class="atmos-btn atmos-btn--sm" [skyTooltip]="event.name" placement="top" (click)="toggleEventFilter(event)">
+              <app-checkbox size="sm" [state]="filterEvents[event.guid]" [falseAsIndeterminate]="true" [useColors]="true"></app-checkbox>
+              <span>{{ event.shortName ?? event.name }}</span>
+            </button>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="atmos-item-filters__filter-actions">
+      <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetFilters()">Reset filters</button>
+      <button type="button" class="atmos-btn atmos-btn--sm" (click)="hideRequested.emit($event)">Hide filters</button>
+    </div>
+  </div>
+}

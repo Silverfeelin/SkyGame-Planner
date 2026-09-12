@@ -1,0 +1,46 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-winged-light__count {
+  font-size: 18px;
+  color: var(--atmos-text);
+}
+
+.atmos-winged-light__count-sep,
+.atmos-winged-light__count-label {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-winged-light__heading {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.atmos-winged-light__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atmos-winged-light__group-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--atmos-text);
+
+  mat-icon {
+    color: var(--atmos-accent);
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.atmos-winged-light__breakdown {
+  gap: 20px;
+}

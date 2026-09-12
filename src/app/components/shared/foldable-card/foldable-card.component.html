@@ -1,0 +1,20 @@
+<div class="atmos-card atmos-foldable-card" [class.is-foldable]="foldable()" [class.is-folded]="folded()">
+  <div class="atmos-card__header atmos-foldable-card__header" (click)="toggleFold()">
+    @if (foldable()) {
+      <button type="button" class="atmos-foldable-card__fold" [attr.aria-expanded]="!folded()">
+        <mat-icon>{{ folded() ? 'expand_more' : 'expand_less' }}</mat-icon>
+      </button>
+    }
+    @if (title(); as t) {
+      <h2 class="atmos-foldable-card__title">{{ t }}</h2>
+    }
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="atmos-foldable-card__body" #body (click)="unfold()">
+    <div class="atmos-card__body">
+      @if (renderBody()) {
+        <ng-content></ng-content>
+      }
+    </div>
+  </div>
+</div>

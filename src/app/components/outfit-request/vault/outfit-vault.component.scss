@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  width: 100%;
+}
+
+.atmos-vault {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  width: 100%;
+}
+
+.atmos-vault__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.vault-actions {
+  position: sticky;
+  bottom: 1rem;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--atmos-gap-compact);
+  pointer-events: none;
+
+  > * {
+    pointer-events: all;
+  }
+}
+
+.input-hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}

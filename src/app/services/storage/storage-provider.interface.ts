@@ -19,6 +19,11 @@ export interface IStorageCurrencies {
   seasonCurrencies: { [key: string]: { candles: number } };
 }
 
+export interface IDailyCurrencies {
+  date: string;
+  baseline: IStorageCurrencies;
+}
+
 export interface IStorageExport {
   date: string;
   currencies: IStorageCurrencies;

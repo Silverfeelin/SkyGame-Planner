@@ -1,0 +1,73 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-calc__title-suffix {
+  color: var(--atmos-accent);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.atmos-calc__section-header {
+  padding: var(--atmos-pad);
+  padding-bottom: 0.5rem;
+}
+
+
+.atmos-calc__settings {
+  gap: 12px;
+}
+
+.atmos-calc__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.atmos-calc__label {
+  color: var(--atmos-text);
+  font-weight: 500;
+}
+
+.atmos-calc__rule {
+  margin: 8px 0;
+  width: 100%;
+}
+
+.atmos-calc__inline-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+
+.atmos-calc__results {
+  gap: 12px;
+  color: var(--atmos-text);
+}
+
+.atmos-calc__note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--atmos-radius-sm);
+  background: var(--atmos-hover-tint);
+
+  mat-icon {
+    flex-shrink: 0;
+    color: var(--atmos-warm);
+  }
+
+  &--warn { color: var(--atmos-text); }
+}
+
+.is-met { color: var(--atmos-good); }
+.is-lacking { color: var(--atmos-warm); }

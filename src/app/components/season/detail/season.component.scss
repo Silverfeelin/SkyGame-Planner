@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-season__header {
+  align-items: baseline;
+}
+
+.atmos-season__number {
+  color: var(--atmos-accent);
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-season__overview {
+  display: flex;
+}
+
+.atmos-season__pass {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-season__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-season__section-header {
+  padding: var(--atmos-pad);
+  padding-bottom: 0.5rem;
+}
+
+.atmos-season__tree {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.atmos-season__iap-grid {
+  display: grid;
+  gap: var(--atmos-gap);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}

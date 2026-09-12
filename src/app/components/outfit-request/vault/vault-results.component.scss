@@ -1,0 +1,48 @@
+@use 'vault-selection' as vault-selection;
+
+@include vault-selection.styles;
+
+.vault-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.vault-result {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+  padding-bottom: var(--atmos-gap);
+  border-bottom: 1px solid var(--atmos-line-soft);
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.vault-result__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap);
+  color: var(--atmos-text-dim);
+  font-size: 0.9rem;
+
+  > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.vault-result__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}

@@ -5,7 +5,7 @@ import { DateHelper } from 'src/app/helpers/date-helper';
 @Component({
     selector: 'app-duration',
     templateUrl: './duration.component.html',
-    styleUrls: ['./duration.component.less'],
+
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true
 })

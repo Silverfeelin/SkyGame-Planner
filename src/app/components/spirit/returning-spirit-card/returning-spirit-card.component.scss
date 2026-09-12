@@ -1,0 +1,102 @@
+.atmos-returning-spirit-card {
+  position: relative;
+}
+
+.atmos-returning-spirit-card__media {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.atmos-returning-spirit-card__images {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  gap: 4px;
+}
+
+.atmos-returning-spirit-card__image {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.atmos-returning-spirit-card__fade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+  );
+}
+
+.atmos-returning-spirit-card__body {
+  padding: var(--atmos-pad-compact);
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-returning-spirit-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.atmos-returning-spirit-card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-returning-spirit-card__title-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover { color: var(--atmos-accent); }
+}
+
+.atmos-returning-spirit-card__spirits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 14px;
+}
+
+.atmos-returning-spirit-card__spirit {
+  display: inline-flex;
+  align-items: center;
+}
+
+.atmos-returning-spirit-card__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--atmos-text);
+  font-size: 13.5px;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--atmos-text-dim);
+  }
+}
+
+.atmos-returning-spirit-card__days {
+  color: var(--atmos-text-dim);
+  margin-left: 4px;
+}
+
+.atmos-returning-spirit-card__cost {
+  padding-top: var(--atmos-gap-compact);
+  border-top: 1px solid var(--atmos-line-soft);
+}

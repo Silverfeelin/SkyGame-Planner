@@ -1,0 +1,54 @@
+.set-filter {
+  min-width: 180px;
+  padding: 8px;
+  color: var(--atmos-text);
+}
+
+.set-filter-actions {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--atmos-line-soft);
+
+  button {
+    flex: 1;
+    padding: 4px 8px;
+    border: 1px solid var(--atmos-line-soft);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--atmos-accent);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--atmos-hover-bg);
+    }
+  }
+}
+
+.set-filter-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.set-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+  }
+
+  input[type='checkbox'] {
+    accent-color: var(--atmos-accent);
+    cursor: pointer;
+  }
+}

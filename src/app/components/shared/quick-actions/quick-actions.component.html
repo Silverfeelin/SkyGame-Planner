@@ -1,0 +1,11 @@
+@if (showToggle()) {
+  <button type="button" class="atmos-btn atmos-btn--sm atmos-quick-actions__toggle"
+          [attr.aria-expanded]="expanded()" [attr.aria-controls]="panelId" (click)="toggle()">
+    <mat-icon>bolt</mat-icon>
+    <span>{{ expanded() ? 'Hide' : 'Show' }} navigation</span>
+    <mat-icon class="atmos-quick-actions__caret">expand_more</mat-icon>
+  </button>
+}
+<section class="atmos-page__quick-actions" [id]="panelId" [class.is-collapsed]="showToggle() && !expanded()">
+  <ng-content></ng-content>
+</section>

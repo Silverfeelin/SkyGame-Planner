@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-unlock__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.atmos-item-unlock__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-item-unlock__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-item-unlock__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock__item {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: var(--atmos-radius-sm);
+}

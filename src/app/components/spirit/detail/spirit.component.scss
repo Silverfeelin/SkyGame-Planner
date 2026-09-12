@@ -1,0 +1,48 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-spirit__header {
+  align-items: center;
+}
+
+.atmos-spirit__type {
+  font-size: 28px;
+}
+
+// A spirit render is a tall portrait, so its column is a fixed width rather
+// than the fraction wide key art gets on the season and event pages.
+.atmos-spirit__summary {
+  --atmos-summary-media: 170px;
+}
+
+.atmos-spirit__season-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.atmos-spirit__trees-body {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.atmos-spirit__trees-title {
+  margin: 0 var(--atmos-pad);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-spirit__trees-scroll {
+  // Layout from shared .atmos-spirit-trees; only page-specific extras remain.
+  padding: 0 var(--atmos-pad) var(--atmos-pad-compact) var(--atmos-pad);
+  scroll-snap-type: x proximity;
+}
+
+.atmos-spirit__tree {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}

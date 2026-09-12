@@ -1,0 +1,52 @@
+:host {
+  display: block;
+}
+
+.atmos-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: var(--atmos-pad-compact);
+  border-bottom: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-tabs__tab {
+  padding: var(--atmos-btn-pad-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--atmos-radius-pill);
+  color: var(--atmos-text-dim);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--atmos-transition),
+    color var(--atmos-transition),
+    border-color var(--atmos-transition),
+    box-shadow var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+
+  &.is-active {
+    background: var(--atmos-active-bg);
+    border-color: var(--atmos-active-border);
+    box-shadow: var(--atmos-active-ring);
+    color: var(--atmos-accent);
+
+    &:hover { background: var(--atmos-active-bg-hover); }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.atmos-tabs__body {
+  padding: var(--atmos-pad-compact);
+}

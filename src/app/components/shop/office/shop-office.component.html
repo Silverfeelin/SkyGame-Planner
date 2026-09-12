@@ -1,0 +1,35 @@
+<app-shop-quick-actions/>
+
+<app-quick-actions>
+  <a class="atmos-btn atmos-btn--sm"
+     href="https://sky-children-of-the-light.fandom.com/wiki/Secret_Area"
+     target="_blank" rel="noopener">
+    <mat-icon>open_in_new</mat-icon>
+    <span>Wiki</span>
+  </a>
+</app-quick-actions>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Secret Area (Office)</h1>
+</header>
+
+@if (iapShops.length) {
+  <section class="atmos-card atmos-shop-office__section">
+    <header class="atmos-shop-office__section-header">
+      <h2 class="atmos-section__title">In-app purchases</h2>
+    </header>
+    <div class="atmos-card__body atmos-shop-office__section-body">
+      <div class="atmos-shop-office__iap-grid">
+        @for (shop of iapShops; track shop.guid) {
+          @for (iap of shop.iaps; track iap.guid) {
+            <app-iap-card
+              [iap]="iap"
+              [highlightIap]="highlightIap()"
+              (purchasedToggle)="togglePurchased(iap)"
+              (giftedToggle)="toggleGifted(iap)"></app-iap-card>
+          }
+        }
+      </div>
+    </div>
+  </section>
+}

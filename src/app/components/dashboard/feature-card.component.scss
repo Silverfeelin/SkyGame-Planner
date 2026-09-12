@@ -1,0 +1,133 @@
+.atmos-card__banner {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.atmos-card__banner-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+
+  &.is-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &.is-silhouette {
+    filter: brightness(0)
+      saturate(100%) invert(21%) sepia(11%) saturate(7118%) hue-rotate(195deg) brightness(96%) contrast(93%)
+      drop-shadow(1px 0 0 rgba(255 255 255 / 0.5)) drop-shadow(-1px 0 0 rgba(255 255 255 / 0.5))
+      drop-shadow(0 1px 0 rgba(255 255 255 / 0.5)) drop-shadow(0 -1px 0 rgba(255 255 255 / 0.5));
+  }
+}
+
+.atmos-card__banner-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+  );
+}
+
+.atmos-card__heading {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 16px;
+}
+
+.atmos-card__kicker {
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 8px oklch(0.05 0.02 var(--atmos-hue) / 0.8);
+}
+
+.atmos-card__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow-large);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+
+    &:focus-visible {
+      outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+      outline-offset: var(--atmos-focus-offset);
+    }
+  }
+}
+
+.atmos-card__time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.8);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-card__currency {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 14px;
+  row-gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--atmos-line-soft);
+}
+
+.atmos-card__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  padding: 4px 10px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-chip-bg);
+
+  strong {
+    font-weight: 600;
+    color: var(--atmos-text);
+  }
+}
+
+.atmos-card__chip-total {
+  color: oklch(0.95 0.01 var(--atmos-hue) / 0.55);
+}
+
+.atmos-card__chip.is-complete {
+  background: oklch(0.32 0.08 145 / 0.55);
+
+  strong {
+    color: oklch(0.88 0.15 145);
+  }
+
+  .atmos-card__chip-total {
+    color: oklch(0.75 0.1 145 / 0.7);
+  }
+}
+
+.atmos-card__mark {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}

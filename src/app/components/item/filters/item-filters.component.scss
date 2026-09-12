@@ -1,0 +1,123 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+/* The panel is collapsed by default; an empty host must not add a column gap. */
+:host:empty {
+  display: none;
+}
+
+.atmos-item-filters__filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-filters__search {
+  position: relative;
+
+  mat-icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--atmos-text-mute);
+    pointer-events: none;
+  }
+
+  .atmos-input {
+    width: 100%;
+    padding-left: 36px;
+  }
+}
+
+.atmos-item-filters__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atmos-item-filters__group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.atmos-item-filters__group-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--atmos-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &[data-state='on'] { color: var(--atmos-good); }
+  &[data-state='off'] { color: var(--atmos-warm); }
+}
+
+.atmos-item-filters__group-header,
+.atmos-item-filters__subgroup-header {
+  /* The (All) / (None) shortcuts are buttons, so the shared link style needs the
+     browser button chrome stripped off. */
+  button.atmos-text-link {
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--atmos-line-soft);
+    background: transparent;
+    font: inherit;
+    font-size: 13px;
+  }
+}
+
+.atmos-item-filters__group-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-item-filters__group-body--stacked {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.atmos-item-filters__subgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.atmos-item-filters__subgroup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--atmos-text-dim);
+  font-size: 13px;
+}
+
+.atmos-item-filters__season-icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.atmos-item-filters__filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: var(--atmos-gap-compact);
+  border-top: 1px solid var(--atmos-line-soft);
+}

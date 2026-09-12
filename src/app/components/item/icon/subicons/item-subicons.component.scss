@@ -1,0 +1,93 @@
+/* Overlay layer. The host only needs `position: relative` — that lets the
+   subicons sit on a whole preview container, not just the 64px item icon.
+   Badge sizes come from the four custom properties below, which any host may
+   restate for its own box (see app-item-icon's [data-size] tiers). */
+:host {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  --subicon-size:    20px;  /* top left / top right / bottom right glyph */
+  --subicon-size-sm: 17px;  /* favourite star */
+  --subicon-dot:     10px;  /* owned dot */
+  --subicon-level:   11px;  /* emote level */
+}
+
+:host:not(.show-tooltips) * {
+  pointer-events: none;
+}
+
+.subicon {
+  position: absolute;
+  width: var(--subicon-size);
+  height: var(--subicon-size);
+  font-size: var(--subicon-size);
+  line-height: var(--subicon-size);
+}
+
+.subicon--tl {
+  top: 1px;
+  left: 1px;
+}
+
+.subicon--tr {
+  top: 0;
+  right: 0;
+}
+
+.subicon--br {
+  bottom: 0;
+  right: 0;
+}
+
+/* Bottom left. The star stacks above the level rather than beside it, so an
+   emote can show both without either one drifting over the artwork. */
+.subicon-stack {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subicon-star {
+  width: var(--subicon-size-sm);
+  height: var(--subicon-size-sm);
+  font-size: var(--subicon-size-sm);
+  line-height: var(--subicon-size-sm);
+  color: var(--atmos-favourite);
+  text-shadow: var(--atmos-overlay-shadow) 1px 1px 0;
+}
+
+.subicon-level {
+  font-size: var(--subicon-level);
+  line-height: 1.1;
+  text-shadow: var(--atmos-overlay-shadow) 1px 1px 0;
+}
+
+/* Amber when the item is owned through something other than this node/IAP,
+   green when owned here. Keeps 4px of clearance so a rounded, clipping tile
+   corner does not cut it. */
+.subicon-dot {
+  position: absolute;
+  right: 4px;
+  bottom: 4px;
+  width: var(--subicon-dot);
+  height: var(--subicon-dot);
+  border-radius: 50%;
+  background: var(--atmos-warm);
+  pointer-events: all;
+
+  &.subicon-dot--self {
+    background: var(--atmos-good);
+  }
+}
+
+.subicon-shadow {
+  filter: drop-shadow(1px 0px 1px var(--atmos-overlay-shadow));
+}
+
+.subicon-limited {
+  color: var(--atmos-text-dim);
+}

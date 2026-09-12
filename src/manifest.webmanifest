@@ -55,5 +55,27 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Seasons",
+      "description": "Go to seasons",
+      "url": "/season"
+    },
+    {
+      "name": "Events",
+      "description": "Go to events",
+      "url": "/event"
+    },
+    {
+      "name": "Items",
+      "description": "Go to items",
+      "url": "/item"
+    },
+    {
+      "name": "Spirits",
+      "description": "Go to spirits",
+      "url": "/spirits"
+    }
   ]
 }

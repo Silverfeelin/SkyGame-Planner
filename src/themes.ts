@@ -5,7 +5,6 @@ export interface ITheme {
 
 export const themes: Array<ITheme> = [
   { name: 'Default', value: '' },
-  { name: 'Isle of Dawn', value: 'isle' },
   { name: 'Aviary Village', value: 'cozy' },
   { name: 'Prairie Peaks', value: 'peaks' },
   { name: 'Treasure Reef', value: 'reef' },
@@ -15,13 +14,17 @@ export const themes: Array<ITheme> = [
   { name: 'Moomin', value: 'moomin' },
   { name: 'Wonderland', value: 'wonderland' },
   { name: 'Void', value: 'dark' },
-  { name: 'Compact', value: 'compact' },
   { name: 'Surprise', value: 'surprise' },
 ]
 
-export const loadTheme = (): void => {
+export const getCurrentTheme = (): ITheme => {
   const theme = localStorage.getItem('theme') || '';
-  applyTheme(themes.find(t => t.value === theme) || themes[0]);
+  return themes.find(t => t.value === theme) || themes[0];
+}
+
+export const loadTheme = (): void => {
+  const theme = getCurrentTheme();
+  applyTheme(theme);
 }
 
 export const setTheme = (theme: ITheme): void => {

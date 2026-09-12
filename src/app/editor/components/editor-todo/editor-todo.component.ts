@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
-import { CardComponent } from '@app/components/layout/card/card.component';
+import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { IItem, ISpirit, ItemType } from 'skygame-data';
@@ -9,11 +8,12 @@ import { IItem, ISpirit, ItemType } from 'skygame-data';
     selector: 'app-editor-todo',
     templateUrl: './editor-todo.component.html',
     styleUrl: './editor-todo.component.scss',
-    imports: [ItemIconComponent, CardComponent]
+    imports: [ItemIconComponent]
 })
 export class EditorTodoComponent {
   itemsWithoutPreview: Array<IItem> = [];
   itemsWithoutWiki: Array<IItem> = [];
+  itemsWithoutOrder: Array<IItem> = [];
   spiritsWithoutPreview: Array<ISpirit> = [];
   spiritsWithoutWiki: Array<ISpirit> = [];
 
@@ -33,11 +33,13 @@ export class EditorTodoComponent {
       if (previewItemTypes.has(i.type)) {
         if (!i.previewUrl) { this.itemsWithoutPreview.push(i); }
         if (!i._wiki?.href) { this.itemsWithoutWiki.push(i); }
+        if (i.order === 999999) { this.itemsWithoutOrder.push(i); }
       }
     });
 
     ItemHelper.sortItems(this.itemsWithoutPreview);
     ItemHelper.sortItems(this.itemsWithoutWiki);
+    ItemHelper.sortItems(this.itemsWithoutOrder);
 
     spirits.forEach(s => {
       if (!s.imageUrl) { this.spiritsWithoutPreview.push(s); }

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, effect, OnDestroy, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, effect, OnDestroy, signal } from '@angular/core';
 import { DataService, ITrackables } from 'src/app/services/data.service';
 import { DateHelper } from 'src/app/helpers/date-helper';
 import { SettingService } from 'src/app/services/setting.service';
@@ -6,11 +6,10 @@ import { DateTime } from 'luxon';
 import { StorageService } from 'src/app/services/storage.service';
 import { IStorageExport } from 'src/app/services/storage/storage-provider.interface';
 import { DateTimePipe } from '../../pipes/date-time.pipe';
-import { NgFor, LowerCasePipe } from '@angular/common';
+import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
-import { CardComponent } from "../layout/card/card.component";
 
 interface IExport {
   version: string;
@@ -23,10 +22,11 @@ interface IExport {
 const signalPwa = signal<any>(undefined);
 
 @Component({
-    selector: 'app-settings',
-    templateUrl: './settings.component.html',
-    styleUrls: ['./settings.component.less'],
-    imports: [MatIcon, RouterLink, NgFor, LowerCasePipe, DateTimePipe, CardComponent]
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrl: './settings.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatIcon, RouterLink, LowerCasePipe, DateTimePipe]
 })
 export class SettingsComponent implements OnDestroy {
   storageProviderName: string;
@@ -38,6 +38,8 @@ export class SettingsComponent implements OnDestroy {
   themes = themes;
   wikiNewTab = false;
   debugVisible = false;
+  debugMapCopyCoordinates = false;
+  dailyCandleAmount: number;
 
   pwaInstallPrompt?: any = (window as any).pwaInstallPrompt;
 
@@ -52,6 +54,8 @@ export class SettingsComponent implements OnDestroy {
     this.dateFormat = DateHelper.displayFormat;
     this.wikiNewTab = _settingService.wikiNewTab;
     this.debugVisible = _settingService.debugVisible;
+    this.debugMapCopyCoordinates = _settingService.debugMapCopyCoordinates;
+    this.dailyCandleAmount = _settingService.dailyCandleAmount;
     this.currentTheme = localStorage.getItem('theme') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
@@ -87,7 +91,7 @@ export class SettingsComponent implements OnDestroy {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (!file) { return; }
       const reader = new FileReader();
-      reader.onload = (e) => {
+      reader.onload = () => {
         try {
           const data = JSON.parse(reader.result as string);
           this.handleImportJson(data);
@@ -99,7 +103,7 @@ export class SettingsComponent implements OnDestroy {
       reader.onerror = (e) => {
         console.error(e);
         alert('Failed to read file. If the selected file was exported by Sky Planner, please report this.');
-      }
+      };
       reader.readAsText(file);
     };
     input.click();
@@ -135,7 +139,7 @@ export class SettingsComponent implements OnDestroy {
 
     if (data.closetData) {
       localStorage.setItem('closet.hidden', JSON.stringify(data.closetData.hidden));
-      localStorage.setItem('closet.sync', '0')
+      localStorage.setItem('closet.sync', '0');
     }
 
     const trackables: ITrackables = {
@@ -209,7 +213,7 @@ export class SettingsComponent implements OnDestroy {
     localStorage.setItem('date.format', format);
   }
 
-  setTheme(theme: ITheme): void {
+  selectTheme(theme: ITheme): void {
     this.currentTheme = theme.value;
     setTheme(theme);
   }
@@ -227,5 +231,15 @@ export class SettingsComponent implements OnDestroy {
   toggleDebugInfo(): void {
     this.debugVisible = !this.debugVisible;
     this._settingService.debugVisible = this.debugVisible;
+  }
+
+  toggleDebugMapCopyCoordinates(): void {
+    this.debugMapCopyCoordinates = !this.debugMapCopyCoordinates;
+    this._settingService.debugMapCopyCoordinates = this.debugMapCopyCoordinates;
+  }
+
+  setDailyCandleAmount(value: number): void {
+    this.dailyCandleAmount = value;
+    this._settingService.dailyCandleAmount = value;
   }
 }

@@ -1,8 +1,10 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
   min-width: fit-content;
 }
-// .chart {
-//   height: 400px !important;
-//   width: 400px !important;
-// }
+
+.chart-container {
+  overflow-x: auto;
+}

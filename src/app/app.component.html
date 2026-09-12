@@ -1,39 +1,27 @@
 <div class="content">
   @if (isPagesDev) {
-    <div class="sky-card mb">
-      <div class="sky-card-body">
-        <div class="container">
-          <h2>Sky Planner has moved to a new home!</h2>
-          <hr/>
-          <span class="h4">If you have saved any data without linking to a cloud storage account, please export your data on the settings page and import it in the new Sky Planner.</span>
-          <hr/>
-          <!-- Link to new site -->
-          @if (pagesRedirectUrl) {
-            <a class="h5" [href]="pagesRedirectUrl.href">
-              <mat-icon class="menu-icon">open_in_new</mat-icon>
-              <span class="menu-label">{{ pagesRedirectUrl.origin + pagesRedirectUrl.pathname }}</span>
-            </a>
-            <hr/>
-          }
-          <span>
-            For those wondering why the site moved:<br/>
-            It was recently brought to my (Silverfeelin's) attention by Laila that some users were not able to access the website.<br/>
-            The entire Cloudflare Pages domain is blocked in some countries, making the website unavailable to those users.<br/>
-            With the new domain name the website should be and stay available for everyone. Sorry for the inconvenience!
-          </span>
-        </div>
-      </div>
+    <div class="notice-banner">
+      <h4 class="notice-banner__title">
+        Oops. You're using an old link to the Sky Planner.<br/>
+        Please visit the official <a class="atmos-text-link" href="https://sky-planner.com/">https://sky-planner.com/</a>.
+      </h4>
+    </div>
+  }
+
+  @if (isSandbox) {
+    <div class="notice-banner">
+      <h4 class="notice-banner__title">You're on the sandbox version of the Sky Planner.</h4>
+      <p class="notice-banner__body">
+        This version supports loading unverified content from other users. This should only be used for testing purposes.<br/>
+        If you are simply trying to use the Sky Planner, please return to <a class="atmos-text-link" href="https://sky-planner.com/">https://sky-planner.com/</a>.
+      </p>
     </div>
   }
 
   @if (showDataLoss) {
-    <div class="sky-card mb data-loss">
-      <div class="sky-card-body">
-        <div class="data-loss-inner container">
-          <mat-icon class="menu-icon">priority_high</mat-icon>
-          <span class="menu-label">Data was changed in another tab. Please refresh this tab to avoid losing changes!</span>
-        </div>
-      </div>
+    <div class="notice-banner notice-banner--danger">
+      <mat-icon>priority_high</mat-icon>
+      <span>Data was changed in another tab. Please refresh this tab to avoid losing changes!</span>
     </div>
   }
   <router-outlet></router-outlet>
@@ -44,14 +32,3 @@
     <app-keyboard-shortcuts (close)="showKeyboardShortcuts=false"></app-keyboard-shortcuts>
   </app-overlay>
 }
-
-<footer>
-  <div class="footer-flex">
-    <a class="text-link" href="https://github.com/Silverfeelin/SkyGame-Planner/" title="View on GitHub">
-      <img src="/assets/external/github-mark-white.svg" width="24" alt="View on GitHub">
-    </a>
-    <span class="show-desktop">|</span>
-    <span>Images from the <a class="ws-nw" href="https://sky-children-of-the-light.fandom.com/">Sky: Children of the Light Wiki</a></span>
-    <a class="footer-privacy" [routerLink]="'/privacy'">Privacy Policy</a>
-  </div>
-</footer>

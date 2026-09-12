@@ -2,15 +2,15 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/c
 import { CostHelper } from 'src/app/helpers/cost-helper';
 import { MatIcon } from '@angular/material/icon';
 import { NgTemplateOutlet, DecimalPipe } from '@angular/common';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { ICost } from 'skygame-data';
 
 @Component({
     selector: 'app-cost',
     templateUrl: './cost.component.html',
-    styleUrls: ['./cost.component.less'],
+    styleUrl: './cost.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgbTooltip, NgTemplateOutlet, MatIcon, DecimalPipe]
+    imports: [TooltipDirective, NgTemplateOutlet, MatIcon, DecimalPipe]
 })
 export class CostComponent implements OnChanges {
   @Input() cost?: ICost;

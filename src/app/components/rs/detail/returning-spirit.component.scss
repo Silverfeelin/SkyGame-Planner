@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+// A visit that is over is still worth reading, but not at full contrast.
+.atmos-fact__value.is-ended {
+  color: var(--atmos-text-mute);
+
+  .atmos-fact__icon {
+    color: inherit;
+  }
+}
+
+.atmos-rs-detail__trees-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.atmos-rs-detail__trees-title {
+  margin: 0 var(--atmos-pad);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.atmos-rs-detail__trees-scroll {
+  // Layout from shared .atmos-spirit-trees; only page-specific padding remains.
+  padding: 0 var(--atmos-pad) var(--atmos-pad-compact) var(--atmos-pad);
+}
+
+.atmos-rs-detail__tree {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+  flex: 0 0 auto;
+}

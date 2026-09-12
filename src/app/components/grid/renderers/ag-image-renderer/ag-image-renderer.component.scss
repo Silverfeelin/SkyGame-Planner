@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}

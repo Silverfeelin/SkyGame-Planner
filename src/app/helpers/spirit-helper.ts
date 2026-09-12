@@ -6,11 +6,11 @@ export class SpiritHelper {
     const treeDates: Array<{ date: DateTime, tree: ISpiritTree}> = [];
 
     // Add all trees that need sorting.
-    spirit.ts?.forEach(t => {
+    spirit.travelingSpirits?.forEach(t => {
       treeDates.push({ date: t.date, tree: t.tree });
     });
-    spirit.visits?.forEach(r => {
-      treeDates.push({ date: r.visit.date, tree: r.tree });
+    spirit.specialVisitSpirits?.forEach(s => {
+      treeDates.push({ date: s.visit.date, tree: s.tree });
     });
 
     // Sort TS and revisits by date.

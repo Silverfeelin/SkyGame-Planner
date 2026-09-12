@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-event-instance__year {
+  color: var(--atmos-accent);
+  font-size: 22px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.atmos-event-instance__section-header {
+  padding: var(--atmos-pad-compact) var(--atmos-pad) 0.5rem;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+
+.atmos-event-instance__section-body {
+  /* override card body padding-top for section header above */
+  padding-top: 12px;
+}
+
+.atmos-event-instance__trees {
+  // Layout from shared .atmos-spirit-trees; only page-specific padding remains.
+  padding-bottom: 8px;
+}
+
+.atmos-event-instance__tree {
+  flex: 0 0 auto;
+}
+
+.atmos-event-instance__iap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--atmos-gap);
+}

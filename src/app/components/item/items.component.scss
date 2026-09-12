@@ -1,0 +1,23 @@
+:host { display: contents; }
+
+.atmos-items__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.atmos-items__count-sep,
+.atmos-items__count-label {
+  color: var(--atmos-text-mute);
+}
+
+.atmos-items__grid-card {
+  flex: 1;
+  min-height: var(--atmos-grid-min-h);
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .atmos-items__title { font-size: 26px; }
+}

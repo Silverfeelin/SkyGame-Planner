@@ -1,88 +1,57 @@
-<div class="sky-card">
-  <div class="sky-card-header">
-    <h1 class="h2 mb-0">Winged Light</h1>
-  </div>
+<app-winged-light-quick-actions/>
 
-  <div class="sky-card-body">
-    <div class="grid grid-2">
-      <app-wiki-link [wiki]="{href: 'https://sky-children-of-the-light.fandom.com/wiki/Winged_Light'}" [aClass]="'container colspan-2'"></app-wiki-link>
-      <a class="container" [routerLink]="['/col']">
-        <span class="">
-          Children of Light <span class="c-accent">({{ col }} / {{ totalCol }})</span>
-        </span>
-      </a>
-      <a class="container" [routerLink]="['/wing-buff']">
-        <span class="">
-          Wing Buffs <span class="c-accent">({{ wb }} / {{ totalWb }})</span>
-        </span>
-      </a>
-    </div>
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Winged Light</h1>
+  <div class="atmos-winged-light__count" aria-live="polite">
+    <strong>{{ wl() }}</strong>
+    <span class="atmos-winged-light__count-sep"> / {{ totalWl() }}</span>
+    <span class="atmos-winged-light__count-label"> total</span>
   </div>
-</div>
+</header>
 
-<div class="sky-card mt">
-  <div class="sky-card-header">
-    <h1 class="h2 mb-0">Breakdown</h1>
-  </div>
-  <div class="sky-card-body">
-    <div class="container colspan-2">
-      <p>
-        You have <b>{{ wl }}</b> out of <b>{{ totalWl }}</b> winged light, giving you a total of <b>{{ wedgeCount }}</b> wing wedges.
-      </p>
-      <!-- Winged light bar -->
-      <div class="wl-bar" [class.wl-bar-full]="wl === totalWl">
-        <div class="bar-fill" [style.width.%]="wl / wedgeMax * 100"></div>
-        <ng-container *ngFor="let wedge of wedgesReverse">
-          <div class="wl-bar-segment" [class.segment-full]="wl >= wedge" [style.width.%]="wedge/wedgeMax*100">
-            <!-- <span class="c-accent" *ngIf="wedge > 5">{{ wedge }}&nbsp;</span> -->
-          </div>
-        </ng-container>
-        <div class="wl-text">
-          {{ wl }} / {{ totalWl }}
-          <span class="" *ngIf="wedgeNext">(next at {{ wedgeNext }})</span>
-        </div>
-      </div>
-    </div>
-    <div class="grid grid-2 mt">
-      <!-- CoL bar -->
-      <div class="container colspan-2">
-        <div class="">
-          <mat-icon [svgIcon]="'flaps'" class="v-top c-wb"></mat-icon>&nbsp;
-          <a [routerLink]="['/col']" class="text-link">Children of Light</a>
-        </div>
-        <div class="wl-bar" [class.wl-bar-full]="col === totalCol">
-          <div class="bar-fill" [style.width.%]="col / totalCol * 100"></div>
-          <div class="wl-text">
-            {{ col }} / {{ totalCol }}
-          </div>
-        </div>
-      </div>
-      <!-- Regular spirit bar -->
-      <div class="container colspan-2">
-        <div class="">
-          <app-spirit-type-icon class="v-top" [type]="'Regular'"></app-spirit-type-icon>&nbsp;
-          <a [routerLink]="['/wing-buff']" [queryParams]="{type: 'Regular'}" class="text-link">Wing buffs from regular spirits</a>
-        </div>
-        <div class="wl-bar" [class.wl-bar-full]="regularUnlocked === regularCount">
-          <div class="bar-fill" [style.width.%]="regularUnlocked / regularCount * 100"></div>
-          <div class="wl-text">
-            {{ regularUnlocked }} / {{ regularCount }}
-          </div>
-        </div>
-      </div>
-      <!-- Season spirit bar -->
-      <div class="container colspan-2">
-        <div class="">
-          <app-spirit-type-icon class="v-top" [type]="'Season'"></app-spirit-type-icon>&nbsp;
-          <a [routerLink]="['/wing-buff']" [queryParams]="{type: 'Season'}" class="text-link">Wing buffs from seasonal spirits</a>
-        </div>
-        <div class="wl-bar" [class.wl-bar-full]="seasonUnlocked === seasonCount">
-          <div class="bar-fill" [style.width.%]="seasonUnlocked / seasonCount * 100"></div>
-          <div class="wl-text">
-            {{ seasonUnlocked }} / {{ seasonCount }}
-          </div>
-        </div>
-      </div>
+<section class="atmos-card atmos-card__body atmos-winged-light__overview">
+  <p class="atmos-paragraph">
+    You have <strong>{{ wl() }}</strong> out of <strong>{{ totalWl() }}</strong> winged light, giving you a total of
+    <strong>{{ wedgeCount() }}</strong> wing wedges.
+  </p>
+
+  <div class="atmos-progress" [class.is-full]="wl() === totalWl()">
+    <div class="atmos-progress__fill" [style.width.%]="wlPercent()"></div>
+    @for (wedge of wedgesReverse; track wedge) {
+      <div class="atmos-progress__divider" [style.width.%]="segmentWidth(wedge)"></div>
+    }
+    <div class="atmos-progress__text">
+      {{ wl() }} / {{ totalWl() }}
+      @if (wedgeNext(); as next) {
+        <span class="atmos-progress__note">(next at {{ next }})</span>
+      }
     </div>
   </div>
-</div>
+</section>
+
+<section class="atmos-card atmos-card__body atmos-winged-light__breakdown">
+  <h2 class="atmos-winged-light__heading">Breakdown</h2>
+
+  @for (b of breakdowns(); track b.label) {
+    <div class="atmos-winged-light__group">
+      <div class="atmos-winged-light__group-head">
+        @if (b.svgIcon) {
+          <mat-icon [svgIcon]="b.svgIcon"></mat-icon>
+        } @else if (b.icon) {
+          <mat-icon>{{ b.icon }}</mat-icon>
+        }
+        @if (b.link) {
+          <a class="atmos-text-link" [routerLink]="b.link">
+            {{ b.label }}
+          </a>
+        } @else {
+          <span>{{ b.label }}</span>
+        }
+      </div>
+      <div class="atmos-progress" [class.is-full]="b.total > 0 && b.unlocked === b.total">
+        <div class="atmos-progress__fill" [style.width.%]="percent(b.unlocked, b.total)"></div>
+        <div class="atmos-progress__text">{{ b.unlocked }} / {{ b.total }}</div>
+      </div>
+    </div>
+  }
+</section>

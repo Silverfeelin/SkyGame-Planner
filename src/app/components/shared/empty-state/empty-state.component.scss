@@ -1,0 +1,31 @@
+.atmos-empty-state {
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.atmos-empty-state__body {
+  align-items: center;
+  padding: var(--atmos-pad);
+}
+
+.atmos-empty-state__icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: var(--atmos-text-dim);
+  margin-bottom: 4px;
+}
+
+.atmos-empty-state__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-empty-state__message {
+  color: var(--atmos-text-dim);
+}

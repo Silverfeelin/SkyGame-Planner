@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-item-preview__item {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 12px 32px 12px 12px;
+}
+
+.atmos-item-preview__img {
+  max-height: 192px;
+}
+
+.atmos-item-preview__icon {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 64px;
+  height: 64px;
+}

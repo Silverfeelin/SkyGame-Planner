@@ -6,7 +6,7 @@ import { readdir } from 'fs/promises';
 import clipboardy from 'node-clipboardy';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const filePath = join(__dirname, '../../src/assets/data/items.json');
+const filePath = join(__dirname, '../../node_modules/skygame-data/assets/items.json');
 
 async function getAllDyeFiles() {
   const dyeDir = join(__dirname, '../../src/assets/game/dyes');
@@ -15,7 +15,7 @@ async function getAllDyeFiles() {
   // Map to absolute paths
   return entries.filter(e => e.includes('.')).map(e => {
     e = e.replace(/\\/g, '/');
-    return `/assets/game/dyes/${e}`
+    return `https://sky-planner.com/assets/game/dyes/${e}`
   });
 }
 
@@ -36,7 +36,7 @@ async function main() {
     // Write to clipboard in the specified format
     const fileNames = Array.from(filePaths);
     const clipboardContent = `const fileNames = [\n  '${fileNames.join("',\n  '")}'\n]`;
-    
+
     await clipboardy.write(clipboardContent);
     console.log('File paths copied to clipboard in the specified format!');
 

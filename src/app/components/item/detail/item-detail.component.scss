@@ -1,0 +1,51 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+// An item preview is a character render in portrait, so its column is a fixed
+// width rather than the fraction wide key art gets on the season and event pages.
+.atmos-item-detail__summary {
+  --atmos-summary-media: 200px;
+}
+
+// Items without a preview fall back to the icon, which is far smaller than a
+// render and would otherwise leave the tile looking empty.
+.atmos-item-detail__art {
+  position: relative;
+  min-height: var(--atmos-summary-art-h);
+}
+
+// A preview shows the item worn rather than the inventory icon, so the icon is
+// pinned to the corner of the render to identify it.
+.atmos-item-detail__art-icon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.atmos-item-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-fact__icon.is-favourited {
+  color: var(--atmos-warm);
+}
+
+.atmos-item-detail__season-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.atmos-item-detail__code {
+  cursor: pointer;
+  transition: opacity var(--atmos-transition);
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

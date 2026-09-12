@@ -1,28 +1,38 @@
-import { ChangeDetectionStrategy, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { CardComponent } from "../layout/card/card.component";
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, QueryList, ViewChild, ViewChildren, signal } from '@angular/core';
+import { NgTemplateOutlet } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
+import { RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { ISeason, IEventInstance } from 'skygame-data';
+import { CurrencyService } from '@app/services/currency.service';
+import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { IStorageCurrencies } from '@app/services/storage/storage-provider.interface';
-import { DataService } from '@app/services/data.service';
 import { DateHelper } from '@app/helpers/date-helper';
-import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
-import { RouterLink } from '@angular/router';
-import { WikiLinkComponent } from '../util/wiki-link/wiki-link.component';
-import { CurrencyService } from '@app/services/currency.service';
-import { ISeason, IEventInstance } from 'skygame-data';
+import { CurrencyQuickActionsComponent } from './quick-actions/currency-quick-actions.component';
+
+interface IGains {
+  candles: string;
+  hearts: string;
+  ascendedCandles: string;
+  giftPasses: string;
+  season: string;
+  events: Record<string, string>;
+}
 
 @Component({
-    selector: 'app-currency',
-    imports: [CardComponent, WikiLinkComponent, MatIcon, NgbTooltip, RouterLink],
-    templateUrl: './currency.component.html',
-    styleUrl: './currency.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-currency',
+  templateUrl: './currency.component.html',
+  styleUrl: './currency.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [MatIcon, TooltipDirective, RouterLink, NgTemplateOutlet, CurrencyQuickActionsComponent]
 })
-export class CurrencyComponent {
+export class CurrencyComponent implements OnDestroy {
   @ViewChild('inpC', { static: true }) inpC!: ElementRef<HTMLInputElement>;
   @ViewChild('inpH', { static: true }) inpH!: ElementRef<HTMLInputElement>;
   @ViewChild('inpAc', { static: true }) inpAc!: ElementRef<HTMLInputElement>;
-  @ViewChild('inpSp', { static: false }) inpSp!: ElementRef<HTMLInputElement>;
+  @ViewChild('inpSp', { static: true }) inpSp!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;
   @ViewChildren('inpEc') inpEc!: QueryList<ElementRef<HTMLInputElement>>;
 
@@ -32,9 +42,13 @@ export class CurrencyComponent {
   ongoingEventInstances: Array<IEventInstance>;
 
   dailySeasonCandles = 5;
-  dailyEventCurrency: { [guid: string]: number; } = {};
+  dailyEventCurrency: { [guid: string]: number } = {};
 
-  converted?: { candles: number; };
+  converted?: { candles: number };
+
+  readonly gains = signal<IGains>({ candles: '', hearts: '', ascendedCandles: '', giftPasses: '', season: '', events: {} });
+
+  private readonly _storageSub: Subscription;
 
   constructor(
     private readonly _currencyService: CurrencyService,
@@ -68,13 +82,12 @@ export class CurrencyComponent {
       this.dailyEventCurrency[instance.guid] = instance.calculatorData?.dailyCurrencyAmount ?? 5;
     }
 
-    // Convert old season currency. This might be better suited to run on site load.
+    // Convert old season currency.
     for (const key of Object.keys(this.currencies.seasonCurrencies)) {
       if (key === this.ongoingSeason?.guid) { continue; }
       const value = this.currencies.seasonCurrencies[key];
       this.currencies.candles += value.candles;
       delete this.currencies.seasonCurrencies[key];
-
       this.converted = { candles: value.candles };
       changed = true;
     }
@@ -86,34 +99,51 @@ export class CurrencyComponent {
       changed = true;
     }
 
-    // Save converted and removed currencies.
     if (changed) {
       this._storageService.setCurrencies(this.currencies);
     }
+
+    this.gains.set(this.computeGains());
+    this._storageSub = this._storageService.events.subscribe(() => {
+      this.gains.set(this.computeGains());
+    });
   }
 
-  addCurrency(type: 'candles' | 'hearts' | 'ascendedCandles' | 'giftPasses' | 'seasonCandles' | 'eventTickets', amount: number): void {
+  ngOnDestroy(): void {
+    this._storageSub?.unsubscribe();
+  }
+
+  formatGain(value: number): string {
+    const s = Number.isInteger(value) ? value.toString() : value.toFixed(2).replace(/\.?0+$/, '');
+    return value >= 0 ? '+' + s : s;
+  }
+
+  addCurrency(type: 'candles' | 'hearts' | 'ascendedCandles' | 'giftPasses', amount: number): void {
     switch (type) {
-      case 'candles':
+      case 'candles': {
         const candles = this._currencyService.clamp((this.currencies.candles || 0) + amount);
         this.inpC.nativeElement.value = candles.toString();
         this.currencies.candles = candles;
         break;
-      case 'hearts':
+      }
+      case 'hearts': {
         const hearts = this._currencyService.clamp((this.currencies.hearts || 0) + amount);
         this.inpH.nativeElement.value = hearts.toString();
         this.currencies.hearts = hearts;
         break;
-      case 'ascendedCandles':
+      }
+      case 'ascendedCandles': {
         const ascendedCandles = this._currencyService.clamp((this.currencies.ascendedCandles || 0) + amount);
         this.inpAc.nativeElement.value = ascendedCandles.toString();
         this.currencies.ascendedCandles = ascendedCandles;
         break;
-      case 'giftPasses':
+      }
+      case 'giftPasses': {
         const giftPasses = this._currencyService.clamp((this.currencies.giftPasses || 0) + amount);
         this.inpSp.nativeElement.value = giftPasses.toString();
         this.currencies.giftPasses = giftPasses;
         break;
+      }
     }
 
     this._storageService.setCurrencies(this.currencies);
@@ -121,7 +151,7 @@ export class CurrencyComponent {
 
   addSeasonCurrency(amount: number): void {
     if (!this.ongoingSeason) { return; }
-    const seasonCurrency = this.currencies.seasonCurrencies[this.ongoingSeason?.guid];
+    const seasonCurrency = this.currencies.seasonCurrencies[this.ongoingSeason.guid];
     if (!seasonCurrency) { return; }
 
     const candles = this._currencyService.clamp((seasonCurrency.candles || 0) + amount);
@@ -169,25 +199,21 @@ export class CurrencyComponent {
   }
 
   currencyInputChanged(): void {
-    // Candles
     const targetC = this.inpC.nativeElement;
-    this.currencies.candles = Math.min(99999, Math.max(this.parseInt(targetC.value), 0));;
+    this.currencies.candles = Math.min(99999, Math.max(this.parseInt(targetC.value), 0));
     if (this.currencies.candles !== this.parseDecimal(targetC.value)) {
       targetC.value = this.currencies.candles.toString();
     }
-    // Hearts
     const targetH = this.inpH.nativeElement;
     this.currencies.hearts = Math.min(99999, Math.max(this.parseInt(targetH.value), 0));
     if (this.currencies.hearts !== this.parseDecimal(targetH.value)) {
       targetH.value = this.currencies.hearts.toString();
     }
-    // Ascended candles
     const targetAc = this.inpAc.nativeElement;
     this.currencies.ascendedCandles = Math.min(99999, Math.max(this.parseDecimal(targetAc.value), 0));
     if (this.currencies.ascendedCandles !== this.parseDecimal(targetAc.value)) {
       targetAc.value = this.currencies.ascendedCandles.toString();
     }
-    // Gift passes
     const targetSp = this.inpSp.nativeElement;
     this.currencies.giftPasses = Math.min(99999, Math.max(this.parseInt(targetSp.value), 0));
     if (this.currencies.giftPasses !== this.parseDecimal(targetSp.value)) {
@@ -214,6 +240,34 @@ export class CurrencyComponent {
     }
 
     this._storageService.setCurrencies(this.currencies);
+  }
+
+  dismissConverted(): void {
+    this.converted = undefined;
+  }
+
+  private computeGains(): IGains {
+    const baseline = this._storageService.getDailyCurrencies()?.baseline;
+    const currencies = this.currencies;
+
+    const sguid = this.ongoingSeason?.guid;
+    const sc = sguid ? currencies.seasonCurrencies[sguid]?.candles ?? 0 : 0;
+    const season = sguid ? sc - (baseline?.seasonCurrencies[sguid]?.candles ?? sc) : 0;
+
+    const events: Record<string, string> = {};
+    for (const i of this.ongoingEventInstances) {
+      const cur = currencies.eventCurrencies[i.guid]?.tickets ?? 0;
+      events[i.guid] = this.formatGain(cur - (baseline?.eventCurrencies[i.guid]?.tickets ?? cur));
+    }
+
+    return {
+      candles: this.formatGain(currencies.candles - (baseline?.candles ?? currencies.candles)),
+      hearts: this.formatGain(currencies.hearts - (baseline?.hearts ?? currencies.hearts)),
+      ascendedCandles: this.formatGain(currencies.ascendedCandles - (baseline?.ascendedCandles ?? currencies.ascendedCandles)),
+      giftPasses: this.formatGain(currencies.giftPasses - (baseline?.giftPasses ?? currencies.giftPasses)),
+      season: this.formatGain(season),
+      events,
+    };
   }
 
   private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }

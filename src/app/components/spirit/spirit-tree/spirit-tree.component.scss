@@ -1,0 +1,440 @@
+.atmos-spirit-tree {
+  display: block;
+  // Shrink the card to its content width (instead of stretching full-width and
+  // leaving large empty side gaps) and center it within the available space.
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  // Own panel styling instead of reusing .atmos-card — intentionally no box-shadow,
+  // so a tree nested inside a page section card doesn't add a competing shadow.
+  background: var(--atmos-card-bg);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  overflow: hidden;
+
+  &.has-pad-bottom {
+    padding-bottom: var(--atmos-pad);
+  }
+
+  &.is-highlighted {
+    box-shadow:
+      inset 0 0 0 var(--atmos-focus-offset) var(--atmos-card-bg),
+      inset 0 0 0 calc(var(--atmos-focus-offset) + var(--atmos-focus-width)) var(--atmos-focus-color);
+  }
+}
+
+.atmos-spirit-tree__body {
+  padding: var(--atmos-pad);
+  // Vertical stack + gap previously supplied by .atmos-card__body.
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.atmos-spirit-tree__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.atmos-spirit-tree__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+.atmos-spirit-tree__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.atmos-spirit-tree__cost {
+  font-size: 13px;
+  color: var(--atmos-text-dim);
+}
+
+.atmos-spirit-tree__tag {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0 8px;
+  line-height: 18px;
+  border-radius: var(--atmos-radius-pill);
+  background: var(--atmos-chip-bg);
+  color: var(--atmos-text-dim);
+  vertical-align: middle;
+}
+
+.atmos-spirit-tree__date {
+  margin-left: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--atmos-accent);
+}
+
+.atmos-spirit-tree__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.atmos-spirit-tree__controls-spacer {
+  flex: 1 1 auto;
+}
+
+// Segmented Unlock/Navigate toggle: only the active option shows its label, so
+// the accent fill appears to slide between the two halves as the widths swap.
+.atmos-spirit-tree__seg {
+  // Longer than the global 120ms token — a width slide needs time to read as
+  // motion. Colour/hover changes keep using --atmos-transition.
+  --atmos-seg-transition: 220ms ease;
+
+  display: inline-flex;
+  align-items: stretch;
+  background: var(--atmos-card-bg);
+  backdrop-filter: var(--atmos-blur-soft);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-pill);
+  overflow: hidden;
+
+  // Divider between the two halves.
+  > .atmos-spirit-tree__seg-btn + .atmos-spirit-tree__seg-btn {
+    border-left: 1px solid var(--atmos-line-soft);
+  }
+}
+
+.atmos-spirit-tree__seg-btn {
+  // Inset, or the pill group's rounded clip cuts the ring's corners.
+  --atmos-focus-offset: -2px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--atmos-btn-gap);
+  padding: var(--atmos-btn-pad-sm);
+  background: transparent;
+  border: 0;
+  // The global `button` rule (styles.scss) rounds every button. Inner edges stay
+  // square; the outer corners match the group's pill so the inset focus ring
+  // follows the same shape instead of being clipped by the container.
+  border-radius: 0;
+
+  &:first-child { border-start-start-radius: var(--atmos-radius-pill); border-end-start-radius: var(--atmos-radius-pill); }
+  &:last-child  { border-start-end-radius: var(--atmos-radius-pill); border-end-end-radius: var(--atmos-radius-pill); }
+  color: var(--atmos-text-dim);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: 0;
+  transition: background var(--atmos-transition), color var(--atmos-transition),
+              gap var(--atmos-seg-transition);
+
+  > mat-icon {
+    flex: none;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+
+    svg { display: block; }
+  }
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+
+  // Collapse the gap too, so a hidden label leaves no dead space beside the icon.
+  &:not(.is-active) { gap: 0; }
+
+  &.is-active {
+    background: oklch(0.82 0.11 var(--atmos-hue) / 0.18);
+    color: var(--atmos-accent);
+  }
+}
+
+// Collapsed by default (0fr), expanded for the active option (1fr). Animating
+// the grid track instead of a max-width avoids hard-coding the label width.
+.atmos-spirit-tree__seg-label {
+  display: grid;
+  grid-template-columns: 0fr;
+  opacity: 0;
+  overflow: hidden;
+  transition: grid-template-columns var(--atmos-seg-transition),
+              opacity var(--atmos-seg-transition);
+
+  > span {
+    min-width: 0;
+    overflow: hidden;
+  }
+}
+
+.atmos-spirit-tree__seg-btn.is-active .atmos-spirit-tree__seg-label {
+  grid-template-columns: 1fr;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atmos-spirit-tree__seg-btn,
+  .atmos-spirit-tree__seg-label {
+    transition: none;
+  }
+}
+
+// Square, icon-only variant for the overflow actions on the control bar.
+.atmos-spirit-tree__controls .atmos-btn--icon {
+  padding: 6px;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+}
+
+// More-actions dropdown container.
+.atmos-spirit-tree__menu {
+  position: relative;
+  display: inline-flex;
+}
+
+// Dropdown panel — floats below the trigger button, does not widen the control bar.
+.atmos-spirit-tree__menu-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  background: var(--atmos-bg-elev);
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-sm);
+  box-shadow: 0 4px 16px oklch(0 0 0 / 0.3);
+  overflow: hidden;
+}
+
+.atmos-spirit-tree__menu-item {
+  // The panel clips to its rounded corners, so the shared ring would be cut
+  // off on every side; inset it, and match the panel radius on the outer corners.
+  --atmos-focus-offset: -2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 0;
+  justify-content: flex-start;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--atmos-line);
+  }
+
+  &:first-child { border-start-start-radius: var(--atmos-radius-sm); border-start-end-radius: var(--atmos-radius-sm); }
+  &:last-child  { border-end-start-radius: var(--atmos-radius-sm); border-end-end-radius: var(--atmos-radius-sm); }
+}
+
+.atmos-spirit-tree__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-inline: auto;
+}
+
+.atmos-spirit-tree__row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  max-width: 320px;
+}
+
+.atmos-spirit-tree__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+}
+
+// Divider between tiers in a tier-based tree.
+.atmos-spirit-tree__tier-separator {
+  width: 100%;
+  max-width: 320px;
+  height: 1px;
+  background: var(--atmos-line-soft);
+}
+
+// ── Columns-first layout for node trees ──────────────────────────────────────
+$st-col-gap: 32px;
+$st-row-gap: 44px;
+$st-side-offset: 48px;
+$st-item-size: 64px;
+$st-diag-length: 107.33px;
+$st-diag-angle: 116.57deg;
+$st-diag-trim: 40px;
+$st-up-trim: 12px;
+
+.atmos-spirit-tree__columns {
+  display: flex;
+  width: fit-content;
+  margin-inline: auto;
+  gap: $st-col-gap;
+  align-items: flex-end; // root row aligns at the bottom of the flex box
+}
+
+.atmos-spirit-tree__column {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $st-row-gap;
+  width: $st-item-size;
+  align-items: center;
+
+  // Shift side columns up so branches read as diagonal limbs off the trunk.
+  &.is-left,
+  &.is-right {
+    padding-bottom: $st-side-offset;
+  }
+
+  // The centre trunk is first in the DOM (tab order runs middle → left →
+  // right); `order` puts the columns back in their visual arrangement.
+  &.is-left   { order: 1; }
+  &.is-center { order: 2; }
+  &.is-right  { order: 3; }
+}
+
+// Fixed-size slot: the connector lines are positioned relative to this box,
+// keeping the geometry stable regardless of the node's label overflow.
+.atmos-spirit-tree__slot {
+  position: relative;
+  width: $st-item-size;
+  height: $st-item-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // Node sits centered; cost label overflows into the gap below.
+  app-node {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Thin connector lines between nodes.
+.atmos-conn {
+  position: absolute;
+  width: 2px;
+  background: oklch(0.95 0.01 var(--atmos-hue) / 0.5);
+  pointer-events: none;
+}
+
+// Vertical line upward to the N neighbour.
+.atmos-conn--up {
+  height: $st-row-gap - 2 * $st-up-trim;
+  top: -$st-row-gap + $st-up-trim;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// Diagonal line to the NW neighbour.
+.atmos-conn--nw {
+  height: $st-diag-length - 2 * $st-diag-trim;
+  left: 50%;
+  top: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate($st-diag-angle) translateY($st-diag-trim);
+}
+
+// Diagonal line to the NE neighbour.
+.atmos-conn--ne {
+  height: $st-diag-length - 2 * $st-diag-trim;
+  left: 50%;
+  top: 50%;
+  transform-origin: top center;
+  transform: translateX(-50%) rotate(-$st-diag-angle) translateY($st-diag-trim);
+}
+
+// ── Editor affordances ───────────────────────────────────────────────────────
+
+.atmos-tree-edit {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+  // Above the neighbouring node, whose box overflows its own slot.
+  z-index: 2;
+
+  &:hover {
+    color: var(--atmos-text);
+    background: var(--atmos-tile-bg-hover);
+  }
+}
+
+// Ghost tile filling a free slot, matching the footprint of a node icon.
+.atmos-tree-edit--add {
+  inset: 0;
+  background: transparent;
+  border: 1px dashed var(--atmos-line-soft);
+  border-radius: var(--atmos-radius-sm);
+}
+
+// Chip on an occupied slot. Pushed well past that slot's edge toward the selected
+// node, clearing the neighbour's cost label instead of sitting on top of it.
+.atmos-tree-edit--chip {
+  width: 28px;
+  height: 28px;
+  background: var(--atmos-bg-elev);
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-pill);
+
+  > mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &.is-unlink:hover {
+    color: var(--atmos-danger);
+  }
+
+  &[data-direction='n'] {
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // The node below the selected one: chip on its top edge, in the same gap.
+  &[data-direction='below'] {
+    top: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // Side neighbours sit diagonally up from the selected node, so the chip goes
+  // on the lower corner pointing back at it.
+  &[data-direction='nw'] {
+    right: -18px;
+    bottom: -18px;
+  }
+
+  &[data-direction='ne'] {
+    left: -18px;
+    bottom: -18px;
+  }
+}

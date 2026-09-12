@@ -1,0 +1,16 @@
+<app-realm-quick-actions/>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Areas</h1>
+</header>
+
+<section class="atmos-areas__grid">
+  @for (area of areas; track area.guid) {
+    <app-feature-card
+      [title]="area.name"
+      [titleLink]="'/area/' + area.guid"
+      [bannerUrl]="area.imageUrl"
+      [bannerPosition]="area.imagePosition"
+      [links]="areaLinks(area)" />
+  }
+</section>

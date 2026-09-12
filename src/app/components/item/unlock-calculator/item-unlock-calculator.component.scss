@@ -1,0 +1,98 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+
+.atmos-item-unlock-calc__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.atmos-item-unlock-calc__selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock-calc__selection-item {
+  position: relative;
+  display: inline-flex;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.atmos-item-unlock-calc__owned {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock-calc__owned-item {
+  position: relative;
+  display: inline-flex;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.atmos-item-unlock-calc__results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock-calc__result {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--atmos-pad-compact);
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-radius-sm);
+
+  .atmos-item-unlock-calc__result-icon {
+    align-self: center;
+  }
+}
+
+.atmos-item-unlock-calc__result-icon {
+  position: relative;
+  display: inline-flex;
+  border-radius: var(--atmos-radius-sm);
+}
+
+.atmos-item-unlock-calc__result-name {
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-item-unlock-calc__result-detail {
+  color: var(--atmos-text-dim);
+  font-size: 14px;
+
+  button.atmos-text-link {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+.atmos-item-unlock-calc__expand {
+  display: flex;
+}
+
+.atmos-item-unlock-calc__items-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-item-unlock-calc__pick {
+  position: relative;
+  width: var(--item-size);
+  height: var(--item-size);
+  border-radius: var(--atmos-radius-sm);
+  cursor: pointer;
+}

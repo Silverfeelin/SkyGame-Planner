@@ -1,0 +1,9 @@
+@for (item of items; track $index) {
+  <a class="spirit-link" [routerLink]="item.route" [queryParams]="item.queryParams" [title]="item.label">
+    @if (item.imageUrl) {
+      <img [src]="item.imageUrl">
+    } @else {
+      <span>{{ item.label }}</span>
+    }
+  </a>
+}

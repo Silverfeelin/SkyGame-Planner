@@ -1,0 +1,91 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+
+.atmos-item-type-nav {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 6px;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+
+  &.is-wrap {
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  /* Button variant: give the unselected entries the same surface as .atmos-btn
+     so they read as a row of filter buttons rather than plain labels. */
+  &.is-buttons .atmos-item-type-nav__pill {
+    background: var(--atmos-card-bg);
+    border: var(--atmos-card-border);
+    backdrop-filter: var(--atmos-blur-soft);
+    -webkit-backdrop-filter: var(--atmos-blur-soft);
+    color: var(--atmos-text);
+
+    &:hover {
+      background: var(--atmos-hover-bg);
+    }
+
+    &.is-active {
+      background: var(--atmos-active-bg);
+      border-color: var(--atmos-active-border);
+      color: var(--atmos-accent);
+
+      &:hover { background: var(--atmos-active-bg-hover); }
+    }
+  }
+}
+
+/* Unselected pills are text-only; selecting one gives it the shared
+   .atmos-btn--active treatment used by the page quick actions. */
+.atmos-item-type-nav__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: var(--atmos-btn-pad-sm);
+  border-radius: var(--atmos-radius-pill);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--atmos-text-dim);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition:
+    background var(--atmos-transition),
+    color var(--atmos-transition),
+    border-color var(--atmos-transition),
+    box-shadow var(--atmos-transition);
+
+  mat-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+
+    svg { display: block; }
+  }
+
+  &:hover {
+    color: var(--atmos-text);
+    background: var(--atmos-hover-bg);
+  }
+
+  &.is-active {
+    background: var(--atmos-active-bg);
+    border-color: var(--atmos-active-border);
+    color: var(--atmos-accent);
+    box-shadow: var(--atmos-active-ring);
+    font-weight: 600;
+
+    &:hover {
+      background: var(--atmos-active-bg-hover);
+      color: var(--atmos-accent);
+    }
+  }
+}

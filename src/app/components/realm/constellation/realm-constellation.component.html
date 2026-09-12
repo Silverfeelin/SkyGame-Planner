@@ -1,0 +1,62 @@
+<div class="atmos-realm-constellation">
+  <div class="atmos-realm-constellation__stage" [class.is-swapping]="swapping()">
+    <canvas #canvas class="atmos-realm-constellation__canvas" width="295" height="295"></canvas>
+
+    @for (icon of icons(); track $index) {
+      @if (icon.spirit) {
+        @if (icon.flag) {
+          <button
+            type="button"
+            class="atmos-realm-constellation__flag"
+            [class.is-completed]="completed()"
+            [style.left.%]="icon.position[0]"
+            [style.top.%]="icon.position[1]"
+            [title]="icon.spirit.name"
+            (click)="onSpiritClick(icon.spirit)">
+            <img [src]="completed() ? '/assets/game/items/flag.webp' : '/assets/game/items/flag_q.webp'" alt="" />
+          </button>
+        } @else {
+          <button
+            type="button"
+            class="atmos-realm-constellation__spirit"
+            [style.left.%]="icon.position[0]"
+            [style.top.%]="icon.position[1]"
+            [title]="icon.spirit.name"
+            (click)="onSpiritClick(icon.spirit)">
+            <img [src]="icon.imageUrl" alt="" />
+          </button>
+        }
+      }
+    }
+
+    @if (realms().length > 1) {
+      <button
+        type="button"
+        class="atmos-realm-constellation__scroll atmos-realm-constellation__scroll--left"
+        [hidden]="!realmIndex()"
+        (click)="scroll(-1)">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+      <button
+        type="button"
+        class="atmos-realm-constellation__scroll atmos-realm-constellation__scroll--right"
+        [hidden]="realmIndex() >= maxRealmIndex()"
+        (click)="scroll(1)">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    }
+  </div>
+
+  @if (realms().length > 1) {
+    <div class="atmos-realm-constellation__dots">
+      @for (r of realms(); track r.guid; let i = $index) {
+        <button
+          type="button"
+          class="atmos-realm-constellation__dot"
+          [class.is-active]="i === realmIndex()"
+          [title]="r.name"
+          (click)="jumpTo(i)"></button>
+      }
+    </div>
+  }
+</div>

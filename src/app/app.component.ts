@@ -6,7 +6,7 @@ import { EventService } from './services/event.service';
 import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { BroadcastService } from './services/broadcast.service';
-import { NavigationEnd, Router, RouterOutlet, RouterLink } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CanonicalService } from './services/canonical.service';
 import { OverlayComponent } from "./components/layout/overlay/overlay.component";
 import { KeyboardShortcutsComponent } from "./components/settings/keyboard-shortcuts/keyboard-shortcuts.component";
@@ -16,14 +16,14 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less'],
-    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, KeyboardShortcutsComponent]
+    styleUrls: ['./app.component.scss'],
+    imports: [MatIcon, RouterOutlet, OverlayComponent, KeyboardShortcutsComponent]
 })
 export class AppComponent {
   showDataLoss = false;
   showKeyboardShortcuts = false;
   isPagesDev = location.host === 'sky-planner.pages.dev'; // only target main deployment.
-  pagesRedirectUrl?: URL;
+  isSandbox = location.host === 'sandbox.sky-planner.com';
 
   constructor(
     private readonly _broadcastService: BroadcastService,
@@ -43,12 +43,13 @@ export class AppComponent {
       if (_eventService.keyboardShortcutDisabledCount > 0) { return; }
       if (evt.ctrlKey || evt.shiftKey || evt.altKey || evt.metaKey) { return; }
       switch (evt.key) {
+        case 'd': _router.navigate(['/daily']); break;
         case 'c': _router.navigate(['/currency']); break;
         case 'h': _router.navigate(['/']); break;
         case 'e': _router.navigate(['/event']); break;
         case 'i': _router.navigate(['/item']); break;
         case 'r': _router.navigate(['/realm']); break;
-        case 'p': _router.navigate(['/spirit']); break;
+        case 'p': _router.navigate(['/spirits']); break;
         case 's': _router.navigate(['/season']); break;
         case 'w': _router.navigate(['/winged-light']); break;
         default: return;
@@ -65,10 +66,6 @@ export class AppComponent {
     _broadcastService.subject.pipe(filter(m => m.type === 'storage.changed')).subscribe(message => {
       this.showDataLoss = true;
     });
-
-    if (this.isPagesDev) {
-      this.subscribePagesDev();
-    }
 
     (window as any).DateTime = DateTime;
   }
@@ -91,13 +88,5 @@ export class AppComponent {
     if (evt.key === '?') {
       this.showKeyboardShortcuts = !this.showKeyboardShortcuts;
     }
-  }
-
-  private subscribePagesDev(): void {
-    this.pagesRedirectUrl = new URL('https://sky-planner.com');
-    this._router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(e => {
-      this.pagesRedirectUrl = new URL('https://sky-planner.com');
-      this.pagesRedirectUrl.pathname = location.pathname;
-    });
   }
 }
