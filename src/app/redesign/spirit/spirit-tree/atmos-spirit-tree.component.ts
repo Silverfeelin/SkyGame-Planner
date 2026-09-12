@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, input, output, signal, TemplateRef } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NgTemplateOutlet } from '@angular/common';
 import { DateTime } from 'luxon';
 import { Params, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
@@ -32,6 +33,38 @@ interface AtmosTreeRow {
   tierStart?: boolean;
 }
 
+/**
+ * Editor affordance rendered in a slot next to the node being edited: a ghost tile
+ * on a free direction, or a chip on an occupied one to move or drop its connection.
+ */
+export type AtmosTreeEditSlotKind = 'add' | 'link' | 'unlink';
+
+export interface AtmosTreeEditSlot {
+  position: AtmosNodePosition;
+  /** Level within the column, root = 0. -1 is the slot below the root. */
+  level: number;
+  kind: AtmosTreeEditSlotKind;
+  /** Direction relative to the node being edited, echoed back on click. */
+  direction: 'nw' | 'n' | 'ne' | 'below';
+}
+
+interface AtmosTreeRenderSlot {
+  node?: INode;
+  edit?: AtmosTreeEditSlot;
+}
+
+interface AtmosTreeRenderColumn {
+  position: AtmosNodePosition;
+  slots: ReadonlyArray<AtmosTreeRenderSlot>;
+  /**
+   * An extra slot below the root row, rendered first so column-reverse puts it at the
+   * bottom. Every column reserves it so the columns keep their relative alignment;
+   * only the centre one carries the ghost tile.
+   */
+  hasBelow: boolean;
+  below?: AtmosTreeEditSlot;
+}
+
 interface AtmosTreeColumns {
   left: (INode | undefined)[];
   center: (INode | undefined)[];
@@ -61,7 +94,7 @@ const sharedNodeAction = signal<AtmosNodeAction>('unlock');
   templateUrl: './atmos-spirit-tree.component.html',
   styleUrl: './atmos-spirit-tree.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [AtmosNodeComponent, CostComponent, DateComponent, MatIcon, RouterLink, AtmosDraftWarningComponent]
+  imports: [AtmosNodeComponent, CostComponent, DateComponent, MatIcon, RouterLink, AtmosDraftWarningComponent, NgTemplateOutlet]
 })
 export class AtmosSpiritTreeComponent {
   readonly tree = input.required<ISpiritTree>();
@@ -81,8 +114,11 @@ export class AtmosSpiritTreeComponent {
   readonly padBottom = input<boolean>(false);
   readonly forceNodeAction = input<AtmosNodeAction | undefined>(undefined);
   readonly nodeOverlayTemplate = input<TemplateRef<unknown> | undefined>(undefined);
+  /** Editor-only affordances placed in the tree layout; empty for a read-only tree. */
+  readonly editSlots = input<ReadonlyArray<AtmosTreeEditSlot>>([]);
 
   readonly nodeClicked = output<AtmosSpiritTreeNodeClickEvent>();
+  readonly editSlotClicked = output<AtmosTreeEditSlot>();
 
   private readonly _elementRef = inject(ElementRef);
   private readonly _router = inject(Router);
@@ -223,6 +259,43 @@ export class AtmosSpiritTreeComponent {
       { position: 'right' as const, nodes: c.right }
     ];
   });
+
+  /**
+   * Columns paired with their edit slots. Columns are padded up to the highest edit
+   * level so a ghost tile above the topmost node still gets a slot to live in.
+   */
+  readonly renderColumns = computed<ReadonlyArray<AtmosTreeRenderColumn>>(() => {
+    const slots = this.editSlots();
+    const byPosition = new Map<string, AtmosTreeEditSlot>();
+    slots.forEach(s => byPosition.set(`${s.position}:${s.level}`, s));
+
+    return this.orderedColumns().map(col => {
+      const maxEditLevel = slots.reduce((max, s) => s.position === col.position ? Math.max(max, s.level) : max, -1);
+      const length = Math.max(col.nodes.length, maxEditLevel + 1);
+      const rendered: Array<AtmosTreeRenderSlot> = [];
+      for (let level = 0; level < length; level++) {
+        rendered.push({ node: col.nodes[level], edit: byPosition.get(`${col.position}:${level}`) });
+      }
+      const hasBelow = slots.some(s => s.level === -1);
+      return { position: col.position, slots: rendered, hasBelow, below: byPosition.get(`${col.position}:-1`) };
+    });
+  });
+
+  onEditSlotClicked(slot: AtmosTreeEditSlot, event: MouseEvent): void {
+    event.preventDefault();
+    event.stopPropagation();
+    this.editSlotClicked.emit(slot);
+  }
+
+  editSlotTitle(slot: AtmosTreeEditSlot): string {
+    switch (slot.kind) {
+      case 'link': return 'Move this connection to the selected node';
+      case 'unlink': return slot.direction === 'below'
+        ? 'Disconnect here and make the selected node the root'
+        : 'Remove this connection and everything beyond it';
+      default: return 'Add a node here';
+    }
+  }
 
   readonly action = computed<AtmosNodeAction>(() => this.forceNodeAction() ?? sharedNodeAction());
 

@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { CostHelper } from '@app/helpers/cost-helper';
-import { NodeHelper } from '@app/helpers/node-helper';
+import { TreeHelper } from '@app/helpers/tree-helper';
 import { ISpiritTree, INode, ICost } from 'skygame-data';
+
+interface TierRenderRow {
+  nodes: [INode?, INode?, INode?];
+  separatorBelow: boolean;
+}
 
 interface RenderOptions {
   title?: string;
@@ -17,7 +22,8 @@ export class SpiritTreeRenderService {
   ) {}
 
   async render(tree: ISpiritTree, options: RenderOptions): Promise<HTMLCanvasElement> {
-    const nodes = NodeHelper.all(tree.node);
+    const nodes = TreeHelper.getNodes(tree);
+    const isTiered = !tree.node && !!tree.tier;
     const cost = CostHelper.add(CostHelper.create(), ...nodes);
     const hasCost = !CostHelper.isEmpty(cost);
     const wCost = 24;
@@ -39,9 +45,19 @@ export class SpiritTreeRenderService {
       return Math.max(h, calculateHeight(h + wOffsetSide, node.nw), calculateHeight(h + wOffsetSide, node.ne), calculateHeight(h + wItem + wGapY, node.n));
     }
 
+    // Tiered trees render as a fixed 3-column grid instead of a branching node chain,
+    // with a separator between tiers. Rows run top to bottom, tier 1 at the bottom.
+    const hTierRow = wItem + wCost + 12;
+    const hTierSeparator = 16;
+    const tierRows = isTiered ? this.getTierRows(tree) : [];
+    const tierSeparators = tierRows.filter(r => r.separatorBelow).length;
+
     const hasRootCost = tree.node && !CostHelper.isEmpty(tree.node);
     const width = wItem * 3 + wGapX * 2 + wPadding * 2;
-    const height = calculateHeight(64, tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0) + hCredit + hFooter;
+    const height = (isTiered
+        ? tierRows.length * hTierRow + tierSeparators * hTierSeparator + wPadding * 2
+        : calculateHeight(64, tree.node) + wPadding * 2 + (hasRootCost ? wCost : 0))
+      + hCredit + hFooter;
     const canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
@@ -189,20 +205,7 @@ export class SpiritTreeRenderService {
       ctx.restore();
     }
 
-    const drawNode = (node: INode, x: number, y: number) => {
-      if (node.nw) {
-        drawNode(node.nw, x - wItem - wGapX, y - wOffsetSide);
-        drawLine(x, y, 'nw');
-      }
-      if (node.ne) {
-        drawNode(node.ne, x + wItem + wGapX, y - wOffsetSide);
-        drawLine(x, y, 'ne');
-      }
-      if (node.n) {
-        drawNode(node.n, x, y - wItem - wGapY);
-        drawLine(x, y, 'n');
-      }
-
+    const drawNodeTile = (node: INode, x: number, y: number) => {
       const img = imageMap.get(node.item?.icon || '');
       if (img) {
         const costData = getCostData(node);
@@ -219,10 +222,52 @@ export class SpiritTreeRenderService {
       }
     };
 
+    const drawNode = (node: INode, x: number, y: number) => {
+      if (node.nw) {
+        drawNode(node.nw, x - wItem - wGapX, y - wOffsetSide);
+        drawLine(x, y, 'nw');
+      }
+      if (node.ne) {
+        drawNode(node.ne, x + wItem + wGapX, y - wOffsetSide);
+        drawLine(x, y, 'ne');
+      }
+      if (node.n) {
+        drawNode(node.n, x, y - wItem - wGapY);
+        drawLine(x, y, 'n');
+      }
+
+      drawNodeTile(node, x, y);
+    };
+
+    const drawTierSeparator = (y: number) => {
+      ctx.save();
+      ctx.strokeStyle = '#fff6';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(wPadding, y);
+      ctx.lineTo(canvas.width - wPadding, y);
+      ctx.stroke();
+      ctx.restore();
+    };
+
     // Node coordinates (top left corner).
     let x = wGapX + wItem + wPadding;
     let y = height - wPadding - wItem - (hasRootCost ? wCost : 0) - hFooter;
-    tree.node && drawNode(tree.node, x, y);
+    if (isTiered) {
+      y = wPadding;
+      for (const row of tierRows) {
+        row.nodes.forEach((node, i) => {
+          node && drawNodeTile(node, wPadding + i * (wItem + wGapX), y);
+        });
+        y += hTierRow;
+        if (row.separatorBelow) {
+          drawTierSeparator(y + hTierSeparator / 2);
+          y += hTierSeparator;
+        }
+      }
+    } else if (tree.node) {
+      drawNode(tree.node, x, y);
+    }
 
     // Footer
     x = 0; y = height - hFooter;
@@ -290,6 +335,23 @@ export class SpiritTreeRenderService {
     }
 
     return canvas;
+  }
+
+  /**
+   * Tier rows from top to bottom, matching the on-page grid: the last tier renders
+   * first and each tier's first row sits at its bottom.
+   */
+  private getTierRows(tree: ISpiritTree): Array<TierRenderRow> {
+    const rows: Array<TierRenderRow> = [];
+    TreeHelper.getTiers(tree).forEach((tier, tierIndex) => {
+      tier.rows.forEach((tierRow, rowIndex) => {
+        rows.push({
+          nodes: [tierRow[0] ?? undefined, tierRow[1] ?? undefined, tierRow[2] ?? undefined],
+          separatorBelow: rowIndex === 0 && tierIndex > 0
+        });
+      });
+    });
+    return rows.reverse();
   }
 
   shareCanvas(canvas: HTMLCanvasElement, fileName: string): void {

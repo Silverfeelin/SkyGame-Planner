@@ -8,19 +8,78 @@
   <a href="https://github.com/Silverfeelin/SkyGame-Planner/wiki/Contributing---Spirit-trees" target="_blank" class="atmos-text-link">Contributing: Spirit trees</a>.
 </div>
 
+<!-- Tree mode -->
+<div class="mode-row">
+  <span>Tree type:</span>
+  <div class="atmos-btn-group">
+    <button type="button" class="atmos-btn" [class.atmos-btn--active]="mode === 'node'" (click)="setMode('node')">
+      Friendship tree
+    </button>
+    <button type="button" class="atmos-btn" [class.atmos-btn--active]="mode === 'tier'" (click)="setMode('tier')">
+      Friendship tiers
+    </button>
+  </div>
+</div>
+
 <div class="editor-grid">
-  <app-atmos-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
-    (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
-    [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
-    [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
-    [highlightNode]="selectedTreeNode.node.guid"
-  ></app-atmos-spirit-tree>
+  @if (mode === 'node') {
+    <app-atmos-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
+      (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
+      [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
+      [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
+      [highlightNode]="selectedTreeNode.node.guid"
+      [editSlots]="treeEditSlots" (editSlotClicked)="onEditSlotClicked($event)"
+    ></app-atmos-spirit-tree>
+  } @else {
+    <div class="editor-grid-tree tier-grid"
+      (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)"
+      (pointerup)="onTreePointerUp($event)" (touchstart)="onTreeTouchStart($event)">
+      @for (tier of tierView; track tier.tierIndex) {
+        <div class="tier">
+          <div class="tier__header">
+            <span class="tier__label">{{ tier.label }}</span>
+            <div class="atmos-btn-group">
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="addRow(tier.tierIndex)">Add row</button>
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="removeRow(tier.tierIndex)">Remove row</button>
+            </div>
+          </div>
+          @for (row of tier.rows; track row.rowIndex) {
+            <div class="tier__row">
+              @for (col of cols; track col) {
+                <div class="tier__cell" [class.is-selected]="isCellSelected(tier.tierIndex, row.rowIndex, col)">
+                  @if (row.nodes[col]; as n) {
+                    <app-atmos-node [node]="n" action="emit" [opaque]="true" [showTooltips]="false"
+                      [drawConnectors]="false" [highlight]="isCellSelected(tier.tierIndex, row.rowIndex, col)"
+                      (nodeClicked)="onTierCellClicked(tier.tierIndex, row.rowIndex, col)"></app-atmos-node>
+                  } @else {
+                    <button type="button" class="tier__empty" aria-label="Add node"
+                      (click)="onTierCellClicked(tier.tierIndex, row.rowIndex, col)">
+                      <mat-icon>add</mat-icon>
+                    </button>
+                  }
+                </div>
+              }
+            </div>
+          }
+        </div>
+        @if (!$last) { <div class="tier__separator" aria-hidden="true"></div> }
+      }
+      <div class="tier__actions">
+        <div class="atmos-btn-group">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="addTier()">Add tier</button>
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="removeTier()">Remove tier</button>
+        </div>
+      </div>
+    </div>
+  }
   <div class="editor-grid-selection atmos-card">
     <div class="atmos-card__header">
       Selected item
     </div>
     <div class="atmos-card__body">
-      @let tn = selectedTreeNode;
+      @if (!activeNode) {
+        <div class="accent">Select a node in the tree to edit it.</div>
+      } @else {
       <div class="form-stack">
         <!-- Item name -->
         <div>
@@ -29,24 +88,18 @@
           <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptItemCode()">Item code</button>
         </div>
         <div class="form-stack">
-          <!-- Node connections -->
-          <div>
-            Connections:
-            <div class="atmos-btn-group">
-              <button type="button" class="atmos-btn" [class.has-connection]="tn.node.nw" [disabled]="tn.x !== 1" (click)="addNode('nw')">
-                Left
-              </button>
-              <button type="button" class="atmos-btn" [class.has-connection]="tn.node.n" [disabled]="" (click)="addNode('n')">
-                Top
-              </button>
-              <button type="button" class="atmos-btn" [class.has-connection]="tn.node.ne" [disabled]="tn.x !== 1" (click)="addNode('ne')">
-                Right
-              </button>
-              @if (tn.node === tree.node) {
-                <button type="button" class="atmos-btn" (click)="addRootNode()">Below</button>
-              }
+          @if (mode === 'node') {
+            <!-- Connections are edited in the tree itself, around the selected node. -->
+            <div class="accent">
+              Hint: add a node with the dashed slots next to the selected node. A
+              <mat-icon class="hint-icon">link</mat-icon> moves an existing connection to the selected
+              node; a <mat-icon class="hint-icon">link_off</mat-icon> removes it and everything beyond it.
             </div>
-          </div>
+          } @else {
+            <div>
+              <button type="button" class="atmos-btn atmos-btn--danger" (click)="clearTierNode()">Remove node</button>
+            </div>
+          }
           <!-- Node cost -->
           <div>
             Cost:
@@ -69,6 +122,7 @@
           </div>
         </div>
       </div>
+      }
     </div>
   </div>
 </div>
@@ -77,34 +131,32 @@
   <div class="atmos-card">
     <div class="atmos-card__header">Save</div>
     <div class="atmos-card__body">
-      <div class="form-stack">
-        <div>
-          Title: <input #inpTitle type="text" class="save-input">
-        </div>
-        <div>
-          Subtitle: <input #inpSubtitle type="text" class="save-input">
-        </div>
+      <div class="save-fields">
+        <label for="inpTitle">Title:</label>
+        <input #inpTitle id="inpTitle" type="text" class="save-input">
+        <label for="inpSubtitle">Subtitle:</label>
+        <input #inpSubtitle id="inpSubtitle" type="text" class="save-input">
       </div>
       <div class="save-actions">
         <div class="atmos-btn-group" skyTooltip="Copied!" #ttCopy="skyTooltip" manual placement="top" [closeDelay]="1000">
-          <button type="button" class="atmos-btn" (click)="copyImage()">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage()">
             <mat-icon>file_copy</mat-icon>
             <span>Copy image</span>
           </button>
-          <button type="button" class="atmos-btn" (click)="copyImage(false)">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage(false)">
             (no background)
           </button>
         </div>
-        <button type="button" class="atmos-btn" (click)="shareImage()">
+        <button type="button" class="atmos-btn atmos-btn--sm" (click)="shareImage()">
           <mat-icon>share</mat-icon>
           <span>Share image</span>
         </button>
         <div class="atmos-btn-group">
-          <button type="button" class="atmos-btn" (click)="importJson()">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="importJson()">
             <mat-icon>download</mat-icon>
             <span>Import data</span>
           </button>
-          <button type="button" class="atmos-btn" (click)="exportJson()">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="exportJson()">
             <mat-icon>upload</mat-icon>
             <span>Export data</span>
           </button>

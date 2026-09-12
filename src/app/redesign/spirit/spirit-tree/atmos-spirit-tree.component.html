@@ -46,31 +46,29 @@
                 [title]="hasLocked() ? 'Unlock all items' : 'Lock all items'">
           <mat-icon>enhanced_encryption</mat-icon>
         </button>
-        @if (tree().node) {
-          <span class="atmos-spirit-tree__menu">
-            <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--icon"
-                    [class.atmos-btn--active]="showMenu()"
-                    (click)="toggleMenu()" title="More actions">
-              <mat-icon>menu</mat-icon>
-            </button>
-            @if (showMenu()) {
-              <div class="atmos-spirit-tree__menu-panel" role="menu">
-                <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
-                        (click)="exportPng('clipboard')">
-                  <mat-icon>file_copy</mat-icon><span>Copy image</span>
-                </button>
-                <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
-                        (click)="exportPng('share')">
-                  <mat-icon>share</mat-icon><span>Share image</span>
-                </button>
-                <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
-                        (click)="editTree()">
-                  <mat-icon>edit</mat-icon><span>Edit tree</span>
-                </button>
-              </div>
-            }
-          </span>
-        }
+        <span class="atmos-spirit-tree__menu">
+          <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--icon"
+                  [class.atmos-btn--active]="showMenu()"
+                  (click)="toggleMenu()" title="More actions">
+            <mat-icon>menu</mat-icon>
+          </button>
+          @if (showMenu()) {
+            <div class="atmos-spirit-tree__menu-panel" role="menu">
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                      (click)="exportPng('clipboard')">
+                <mat-icon>file_copy</mat-icon><span>Copy image</span>
+              </button>
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                      (click)="exportPng('share')">
+                <mat-icon>share</mat-icon><span>Share image</span>
+              </button>
+              <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                      (click)="editTree()">
+                <mat-icon>edit</mat-icon><span>Edit tree</span>
+              </button>
+            </div>
+          }
+        </span>
       </nav>
     }
 
@@ -79,14 +77,21 @@
            root at bottom (flex-direction: column-reverse), side columns shifted
            up to form diagonal branches. Connector lines live in the slot. -->
       <div class="atmos-spirit-tree__columns">
-        @for (col of orderedColumns(); track col.position) {
+        @for (col of renderColumns(); track col.position) {
           <div class="atmos-spirit-tree__column"
                [class.is-left]="col.position === 'left'"
                [class.is-center]="col.position === 'center'"
                [class.is-right]="col.position === 'right'">
-            @for (n of col.nodes; track $index) {
+            @if (col.hasBelow) {
               <div class="atmos-spirit-tree__slot">
-                @if (n) {
+                @if (col.below; as slot) {
+                  <ng-container *ngTemplateOutlet="editSlotTpl; context: { $implicit: slot }"></ng-container>
+                }
+              </div>
+            }
+            @for (s of col.slots; track $index) {
+              <div class="atmos-spirit-tree__slot">
+                @if (s.node; as n) {
                   <app-atmos-node
                     [node]="n"
                     [position]="col.position"
@@ -100,6 +105,9 @@
                   @if (n.n)  { <span class="atmos-conn atmos-conn--up"  aria-hidden="true"></span> }
                   @if (n.nw) { <span class="atmos-conn atmos-conn--nw" aria-hidden="true"></span> }
                   @if (n.ne) { <span class="atmos-conn atmos-conn--ne" aria-hidden="true"></span> }
+                }
+                @if (s.edit; as slot) {
+                  <ng-container *ngTemplateOutlet="editSlotTpl; context: { $implicit: slot }"></ng-container>
                 }
               </div>
             }
@@ -171,3 +179,22 @@
     </footer>
   </div>
 </section>
+
+<!-- Editor affordances: a ghost tile on a free direction, a chip on an occupied one. -->
+<ng-template #editSlotTpl let-slot>
+  @if (slot.kind === 'add') {
+    <button type="button" class="atmos-tree-edit atmos-tree-edit--add"
+            [title]="editSlotTitle(slot)" [attr.aria-label]="editSlotTitle(slot)"
+            (click)="onEditSlotClicked(slot, $event)">
+      <mat-icon>add</mat-icon>
+    </button>
+  } @else {
+    <button type="button" class="atmos-tree-edit atmos-tree-edit--chip"
+            [class.is-unlink]="slot.kind === 'unlink'"
+            [attr.data-direction]="slot.direction"
+            [title]="editSlotTitle(slot)" [attr.aria-label]="editSlotTitle(slot)"
+            (click)="onEditSlotClicked(slot, $event)">
+      <mat-icon>{{ slot.kind === 'unlink' ? 'link_off' : 'link' }}</mat-icon>
+    </button>
+  }
+</ng-template>

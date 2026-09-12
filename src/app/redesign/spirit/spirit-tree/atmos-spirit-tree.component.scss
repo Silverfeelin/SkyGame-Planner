@@ -366,3 +366,75 @@ $st-up-trim: 12px;
   transform-origin: top center;
   transform: translateX(-50%) rotate(-$st-diag-angle) translateY($st-diag-trim);
 }
+
+// ── Editor affordances ───────────────────────────────────────────────────────
+
+.atmos-tree-edit {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--atmos-text-dim);
+  cursor: pointer;
+  // Above the neighbouring node, whose box overflows its own slot.
+  z-index: 2;
+
+  &:hover {
+    color: var(--atmos-text);
+    background: var(--atmos-tile-bg-hover);
+  }
+}
+
+// Ghost tile filling a free slot, matching the footprint of a node icon.
+.atmos-tree-edit--add {
+  inset: 0;
+  background: transparent;
+  border: 1px dashed var(--atmos-line-soft);
+  border-radius: var(--atmos-radius-sm);
+}
+
+// Chip on an occupied slot. Pushed well past that slot's edge toward the selected
+// node, clearing the neighbour's cost label instead of sitting on top of it.
+.atmos-tree-edit--chip {
+  width: 28px;
+  height: 28px;
+  background: var(--atmos-bg-elev);
+  border: 1px solid var(--atmos-line);
+  border-radius: var(--atmos-radius-pill);
+
+  > mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &.is-unlink:hover {
+    color: var(--atmos-danger);
+  }
+
+  &[data-direction='n'] {
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // The node below the selected one: chip on its top edge, in the same gap.
+  &[data-direction='below'] {
+    top: -34px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // Side neighbours sit diagonally up from the selected node, so the chip goes
+  // on the lower corner pointing back at it.
+  &[data-direction='nw'] {
+    right: -18px;
+    bottom: -18px;
+  }
+
+  &[data-direction='ne'] {
+    left: -18px;
+    bottom: -18px;
+  }
+}
