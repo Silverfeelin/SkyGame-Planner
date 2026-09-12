@@ -1,0 +1,129 @@
+/* Chromeless host: no shell, sidebar, or footer. Recreate the
+   atmospheric backdrop on this page so the legacy closet renders against
+   the same frosted surface as the rest of the redesign. */
+:host {
+  display: block;
+  color: var(--atmos-text);
+  font-family: 'Manrope', 'Roboto', system-ui, sans-serif;
+  background: var(--atmos-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  /* `clip` rather than `hidden`: hidden would make the host a scroll container
+     and trap the sticky items header inside it. */
+  overflow-x: clip;
+}
+
+.atmos-closet-request__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--atmos-bg-image, url(/assets/game/background/isle.webp));
+  background-size: cover;
+  background-position: center;
+  filter: brightness(var(--atmos-bg-brightness, 50%)) blur(var(--atmos-bg-blur, 6px));
+  pointer-events: none;
+}
+
+.atmos-closet-request__vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    transparent 42%,
+    oklch(0.05 0.02 var(--atmos-hue) / 0.55)
+  );
+  pointer-events: none;
+}
+
+.atmos-closet-request__main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--atmos-pad);
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+@media (max-width: 720px) {
+  .atmos-closet-request__main { padding: var(--atmos-pad-compact); }
+}
+
+// Request page layout
+.atmos-request-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.header-sticky {
+  position: sticky;
+  top: 0;
+  background: var(--atmos-card-bg-solid);
+  z-index: 2;
+  backdrop-filter: var(--atmos-blur);
+}
+
+.atmos-copy-controls {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+}
+
+.atmos-image-picker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;
+  background: var(--atmos-bg-elev);
+  border: var(--atmos-card-border);
+  border-radius: var(--atmos-card-radius);
+  padding: var(--atmos-pad-compact);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (max-width: 480px) { width: 100%; }
+}
+
+.btn-group-img {
+  display: flex;
+  .atmos-btn { justify-content: flex-start; }
+}
+
+.btn-copy-img { flex: 1; }
+
+.atmos-closet-request__home {
+  margin-left: auto;
+}
+
+.atmos-warn-badge {
+  color: var(--atmos-danger);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.atmos-warn-hidden {
+  scroll-margin-top: 0;
+}
+
+.atmos-warn-box {
+  display: flex;
+  align-items: center;
+  gap: var(--atmos-gap-compact);
+  background: var(--atmos-danger-bg);
+  padding: var(--atmos-gap-compact);
+  border-radius: var(--atmos-radius-sm);
+  border: 1px solid var(--atmos-danger-accent);
+}
+
+.atmos-warn-box__icon {
+  flex: 0 0 auto;
+  color: var(--atmos-danger);
+}

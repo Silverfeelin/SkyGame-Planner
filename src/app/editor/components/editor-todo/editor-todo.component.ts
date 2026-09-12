@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
 import { IItem, ISpirit, ItemType } from 'skygame-data';

@@ -4,11 +4,12 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
 const fileNames = [
   'https://sky-planner.com/assets/game/dyes/Carnival_jugglerruffle.jpg',
@@ -37,7 +38,7 @@ const fileNames = [
     selector: 'app-editor-dyes',
     templateUrl: './editor-dyes.component.html',
     styleUrl: './editor-dyes.component.scss',
-    imports: [AtmosItemGridLayoutComponent, ItemIconComponent, TooltipDirective]
+    imports: [ItemGridLayoutComponent, ItemIconComponent, TooltipDirective]
 })
 export class EditorDyesComponent {
   readonly _dataService = inject(DataService);
@@ -48,10 +49,9 @@ export class EditorDyesComponent {
   previewFile = '';
   previewFileMap: { [file: string]: IItem } = {};
 
-  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly pickerItems: ReadonlyArray<IItem>;
 
-  isShowingMapped = false;
   mappedFiles: Array<{guid: string, item: IItem, url: string}> = [];
   unmappedFiles:  Array<string> = [];
 
@@ -81,24 +81,5 @@ export class EditorDyesComponent {
   onPreviewClicked(file: string): void {
     this.previewFile = file;
     navigator.clipboard.writeText(file);
-  }
-
-  export(): void {
-    let csv = '';
-    Object.keys(this.previewFileMap).filter(k => k).forEach(previewFile => {
-      const item = this.previewFileMap[previewFile];
-      csv += `${item.guid},${previewFile}\n`;
-    });
-
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.setAttribute('hidden', '');
-    a.setAttribute('href', url);
-    a.setAttribute('download', 'previews.csv');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
   }
 }

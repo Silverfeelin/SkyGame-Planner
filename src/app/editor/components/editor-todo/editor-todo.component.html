@@ -15,7 +15,7 @@
     @for (item of itemsWithoutPreview; track item.guid) {
       <div>
         <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
-        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
+        <code (click)="copy(item.guid)" class="atmos-code editor-todo__code">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
         @if (item._wiki?.href) {
           <div><a [href]="item._wiki!.href" target="_blank">[wiki]</a></div>
         }
@@ -30,7 +30,7 @@
     @for (item of itemsWithoutOrder; track item.guid) {
       <div>
         <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
-        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
+        <code (click)="copy(item.guid)" class="atmos-code editor-todo__code">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
       </div>
     }
   </div>
@@ -42,7 +42,7 @@
     @for (item of itemsWithoutWiki; track item.guid) {
       <div>
         <app-item-icon [item]="item"[opaque]="true"></app-item-icon>
-        <code (click)="copy(item.guid)">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
+        <code (click)="copy(item.guid)" class="atmos-code editor-todo__code">{{item.guid}}</code>&nbsp;<a [href]="'/item/' + item.guid">{{ item.name }}</a>
       </div>
     }
   </div>
@@ -53,7 +53,7 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (spirit of spiritsWithoutPreview; track spirit.guid) {
       <div>
-        <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
+        <code (click)="copy(spirit.guid)" class="atmos-code editor-todo__code">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
       </div>
     }
   </div>
@@ -64,7 +64,7 @@
   <div class="atmos-card__body" style="gap: 8px">
     @for (spirit of spiritsWithoutWiki; track spirit.guid) {
       <div>
-        <code (click)="copy(spirit.guid)">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
+        <code (click)="copy(spirit.guid)" class="atmos-code editor-todo__code">{{spirit.guid}}</code>&nbsp;<span>{{ spirit.name }}</span>
       </div>
     }
   </div>

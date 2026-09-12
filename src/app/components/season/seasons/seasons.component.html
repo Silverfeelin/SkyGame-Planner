@@ -1,0 +1,44 @@
+<app-season-quick-actions/>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Seasons</h1>
+</header>
+
+<p class="atmos-paragraph atmos-seasons__intro">
+  Browse every Sky season — past, present, and upcoming.
+  Open a season to see its spirit trees, cosmetics, and progress.
+</p>
+
+<!-- Quick jump strip -->
+<section class="atmos-card atmos-seasons__jump">
+  <div class="atmos-card__body">
+    <div class="atmos-seasons__jump-title">Jump to season</div>
+    <div class="atmos-seasons__jump-list">
+      @for (season of reverseSeasons; track season.guid) {
+        <a class="atmos-seasons__jump-item atmos-focus-ring"
+           [routerLink]="['/season', season.guid]"
+           [skyTooltip]="season.name" placement="bottom">
+          <app-icon [width]="'56px'" [height]="'56px'" [src]="season.iconUrl"></app-icon>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Year-grouped season cards -->
+@for (group of yearGroups(); track group.year) {
+  <section class="atmos-seasons__year">
+    <header class="atmos-seasons__year-header">
+      <h2 class="atmos-seasons__year-title">{{ group.year }}</h2>
+    </header>
+    <div class="atmos-seasons__grid">
+      @for (season of group.seasons; track season.guid) {
+        <app-season-card
+          [season]="season"
+          [options]="{ show: ['img', 'overview', 'date', 'spirits'] }"
+          [checkedIn]="isCheckedIn(season)"
+          (checkinToggle)="onSeasonCheckin(season, $event)" />
+      }
+    </div>
+  </section>
+}

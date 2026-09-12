@@ -40,12 +40,12 @@ Tracked data is keyed by GUID: unlocked nodes/items, winged lights, favourites, 
 
 ### Routing / layout
 
-The shell is built around the **atmospheric redesign** (`--atmos-*` token system in `src/styles/atmospheric.scss`):
+Routes live in `src/app/app-routes.ts`. The UI is built on the `--atmos-*` token system in `src/styles/styles.scss`:
 
-- `MainLayoutComponent` — bootstrap gate; runs `forkJoin(canActivateData, canActivateIcons, canActivateStorage)` and shows loading/error/save-state overlays. Sits *above* all routes so editor and graph are also gated. Does **not** own visible chrome.
-- `AtmosphericShellComponent` — the visible shell (header, nav, footer) for all public-facing pages; rendered inside the gate.
+- `MainLayoutComponent` — bootstrap gate; runs `forkJoin(canActivateData, canActivateIcons, canActivateStorage)` and shows loading/error/save-state overlays. Sits *above* all routes so editor and graph are also gated. It also composes the visible chrome inline from `components/layout/shell/{topbar,sidebar,footer}`, and carries the `atmospheric` host class that scopes the global Leaflet overrides.
+- Routes with `data: { chrome: false }` (`outfit-request/request`, `dropbox-auth`) render inside the gate without that chrome.
 
-Two lazy-loaded sections sit outside the atmos shell but still inside the gate:
+Two lazy-loaded sections sit inside the gate as well:
 - `/editor` — data-entry editor for contributors (spirit trees, outfit shrines, items, dyes)
 - `/graph` — analytics/graphs
 
@@ -76,7 +76,7 @@ Do not rewrite existing code to these APIs unless the task specifically asks for
 
 ### Styling
 
-Components use **`.scss`** — the codebase was migrated from `.less` as part of the atmospheric redesign. Use `.scss` for all new components. Do not convert surviving `.less` files unless the task specifically asks for it.
+Components use **`.scss`**. `src/styles/styles.scss` is the global base + design-system sheet (`#region` markers split it into Base / Tokens / Components / Themes / Utilities); `charts.scss`, `map.scss` and `grid.scss` are separate entries in `angular.json`, loaded in that order.
 
 ### Scripts
 

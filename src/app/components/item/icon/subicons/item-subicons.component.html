@@ -1,0 +1,42 @@
+<!-- Top left: where the item came from. -->
+@if (slots.tl; as badge) {
+  <app-icon [class]="'subicon subicon--tl ' + (badge.cls || '')" [src]="badge.src"
+    [width]="sizePx" [height]="sizePx"
+    [skyTooltip]="showTooltips ? badge.tooltip : undefined">
+  </app-icon>
+}
+
+<!-- Top right: which season. -->
+@if (slots.tr; as badge) {
+  <app-icon [class]="'subicon subicon--tr ' + (badge.cls || '')" [src]="badge.src"
+    [width]="sizePx" [height]="sizePx"
+    [skyTooltip]="showTooltips ? badge.tooltip : undefined">
+  </app-icon>
+}
+
+<!-- Bottom left: the star sits above the emote level. -->
+@if (slots.star || slots.level) {
+  <span class="subicon-stack">
+    @if (slots.star) {
+      <mat-icon class="subicon-star"
+        [skyTooltip]="showTooltips ? 'You have favourited this item.' : undefined">
+        star
+      </mat-icon>
+    }
+    @if (slots.level) {
+      <span class="subicon-level">Lv{{ slots.level }}</span>
+    }
+  </span>
+}
+
+<!-- Bottom right: owned, or the limited marker while it is not. -->
+@if (slots.dot; as dot) {
+  <span class="subicon-dot" [class.subicon-dot--self]="dot === 'self'"
+    [skyTooltip]="showTooltips ? (dot === 'self' ? 'You own this item.' : 'You own this item through another source.') : undefined">
+  </span>
+} @else if (slots.br) {
+  <mat-icon [class]="'subicon subicon--br subicon-shadow ' + (slots.br.cls || '')"
+    [skyTooltip]="showTooltips ? slots.br.tooltip : undefined">
+    {{ slots.br.src }}
+  </mat-icon>
+}

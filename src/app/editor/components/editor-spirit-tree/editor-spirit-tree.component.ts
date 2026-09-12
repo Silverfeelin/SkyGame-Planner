@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
-import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent } from "@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component";
+import { SpiritTreeComponent, SpiritTreeNodeClickEvent, TreeEditSlot, TreeEditSlotKind } from "@app/components/spirit/spirit-tree/spirit-tree.component";
+import { NodePosition } from '@app/components/spirit/node/node.component';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
-import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemIconComponent } from "../../../components/item/icon/item-icon.component";
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
@@ -13,21 +14,29 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
-import { AtmosTabsComponent, AtmosTabDirective } from '@app/redesign/shared/atmos-shared-widgets';
-import { INode, IItem, ICost, ISpiritTree, ISpirit, ItemType, SpiritType } from 'skygame-data';
+import { TabsComponent, TabDirective } from '@app/components/shared/shared-widgets';
+import { NodeComponent } from '@app/components/spirit/node/node.component';
+import { TreeHelper } from '@app/helpers/tree-helper';
+import { INode, IItem, ICost, ISpiritTree, ISpiritTreeTier, SpiritTreeTierRow, ISpirit, ItemType, SpiritType } from 'skygame-data';
+import { SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 
+/** Normal trees are a chain of linked nodes; tiered trees are a stack of fixed 3-column rows. */
+type EditorMode = 'node' | 'tier';
 type TreeNodeArray = Array<TreeNode | undefined>;
 type TreeNode = { node: INode; x: number; y: number; };
+type TierCell = { tierIndex: number; rowIndex: number; col: number; };
+type TierViewRow = { rowIndex: number; nodes: [INode?, INode?, INode?]; };
+type TierView = { tierIndex: number; label: string; rows: Array<TierViewRow>; };
 type CostType = { id: string; label: string; }
-type SpecialItemNames = 'placeholder' | 'blessing' | 'wingBuff' | 'heart' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
+type SpecialItemNames = 'placeholder' | 'blessing' | 'wingBuff' | 'heart' | 'accompany' | 'dyeRed' | 'dyeYellow' | 'dyeGreen' | 'dyeCyan' | 'dyeBlue' | 'dyePurple' | 'dyeBlack' | 'dyeWhite';
 type SpecialItem = { item: IItem; cost?: ICost; }
 
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemGridLayoutComponent,
+    TooltipDirective, MatIcon, SpiritTreeComponent, ItemGridLayoutComponent,
     ItemIconComponent, OverlayComponent,
-    EditorItemComponent, AtmosTabsComponent, AtmosTabDirective
+    EditorItemComponent, TabsComponent, TabDirective, NodeComponent
 ],
     templateUrl: './editor-spirit-tree.component.html',
     styleUrl: './editor-spirit-tree.component.scss',
@@ -43,10 +52,10 @@ export class SpiritTreeEditorComponent {
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent): void {
     switch (event.key) {
-      case 'ArrowUp': this.switchTreeNode('up') && event.preventDefault(); break;
-      case 'ArrowRight': this.switchTreeNode('right') && event.preventDefault(); break
-      case 'ArrowDown': this.switchTreeNode('down') && event.preventDefault(); break;
-      case 'ArrowLeft': this.switchTreeNode('left') && event.preventDefault(); break;
+      case 'ArrowUp': this.switchSelection('up') && event.preventDefault(); break;
+      case 'ArrowRight': this.switchSelection('right') && event.preventDefault(); break
+      case 'ArrowDown': this.switchSelection('down') && event.preventDefault(); break;
+      case 'ArrowLeft': this.switchSelection('left') && event.preventDefault(); break;
       default: break;
     }
 
@@ -64,16 +73,22 @@ export class SpiritTreeEditorComponent {
 
   @ViewChild('inpTitle', { static: true }) inpTitle!: ElementRef<HTMLInputElement>;
   @ViewChild('inpSubtitle', { static: true }) inpSubtitle!: ElementRef<HTMLInputElement>;
-  @ViewChild('inpCost', { static: true }) inpCost!: ElementRef<HTMLInputElement>;
-  @ViewChild('selCostType', { static: true }) selCostType!: ElementRef<HTMLSelectElement>;
-  @ViewChild('refTree', { static: true }) refTree!: AtmosSpiritTreeComponent;
   @ViewChild('ttCopy', { static: false }) private readonly _ttCopy?: TooltipDirective;
 
-  tree: ISpiritTree;
+  mode: EditorMode = 'node';
+  tree!: ISpiritTree;
   items: Array<IItem> = [];
   itemMap: { [guid: string]: IItem } = {};
 
-  readonly itemSubIcons = ITEM_GRID_SUBICONS;
+  /** Tiers in data order (tier 1 first); `tierView` holds them in display order (top tier first). */
+  tiers: Array<ISpiritTreeTier> = [];
+  tierView: Array<TierView> = [];
+  tierCellMap: { [guid: string]: TierCell } = {};
+  selectedCell?: TierCell;
+  selectedTierNode?: INode;
+  readonly cols: ReadonlyArray<number> = [0, 1, 2];
+
+  readonly SUBICONS_ALL = SUBICONS_ALL;
   readonly pickerItems: ReadonlyArray<IItem>;
   nodeTable: [TreeNodeArray, TreeNodeArray, TreeNodeArray] = [[], [], []];
   nodeMap: { [guid: string]: TreeNode } = {};
@@ -81,8 +96,14 @@ export class SpiritTreeEditorComponent {
   spirits: Array<ISpirit>;
   spiritTrees: Array<ISpiritTree> = [];
 
-  selectedTreeNode: TreeNode;
-  selectedItem: IItem;
+  selectedTreeNode!: TreeNode;
+  selectedItem!: IItem;
+
+  /** In-tree add/move/remove affordances around the selected node. */
+  treeEditSlots: Array<TreeEditSlot> = [];
+
+  costTypeId: string = 'c';
+  costValue: number = 0;
 
   costTypes: Array<CostType> = [
     { id: 'c', label: 'Candles' },
@@ -98,6 +119,7 @@ export class SpiritTreeEditorComponent {
     blessing: { item: { id: -2, guid: nanoid(10), type: ItemType.Special, name: 'Blessing', icon: '/assets/icons/question.webp' }, cost: { c: 5 }},
     wingBuff: { item: { id: -3, guid: nanoid(10), type: ItemType.WingBuff, name: 'Wing Buff', icon: '/assets/icons/question.webp' }, cost: { ac: 2 }},
     heart: { item: { id: -4, guid: nanoid(10), type: ItemType.Special, name: 'Heart', icon: '/assets/icons/question.webp' }, cost: { c: 3 }},
+    accompany: { item: { id: -13, guid: nanoid(10), type: ItemType.Special, name: 'Accompany', icon: '/assets/icons/question.webp' }},
     dyeRed: { item: { id: -5, guid: nanoid(10), type: ItemType.Special, name: 'Red dye', icon: '/assets/icons/question.webp' }},
     dyeYellow: { item: { id: -6, guid: nanoid(10), type: ItemType.Special, name: 'Yellow dye', icon: '/assets/icons/question.webp' }},
     dyeGreen: { item: { id: -7, guid: nanoid(10), type: ItemType.Special, name: 'Green dye', icon: '/assets/icons/question.webp' }},
@@ -117,16 +139,7 @@ export class SpiritTreeEditorComponent {
     private readonly _changeDetectorRef: ChangeDetectorRef
   ) {
     this.initializeItemIcons();
-    this.tree = {
-      guid: nanoid(10),
-      node: { guid: nanoid(10), item: this.cloneItem(this.specialItemMap.placeholder.item) }
-    };
-
-    const treeNode = { x: 1, y: 0, node: this.tree.node! };
-    this.nodeTable[1][0] = treeNode;
-    this.nodeMap[this.tree.node!.guid] = treeNode;
-    this.selectedTreeNode = treeNode;
-    this.selectedItem = this.tree.node!.item!;
+    this.resetTree('node');
 
     this.pickerItems = _dataService.itemConfig.items.filter(i => ITEM_GRID_TYPES.has(i.type));
 
@@ -246,14 +259,82 @@ export class SpiritTreeEditorComponent {
     this.reloadTree();
   }
 
-  onNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
+  onEditSlotClicked(slot: TreeEditSlot): void {
+    if (slot.direction === 'below') {
+      slot.kind === 'unlink' ? this.detachSelectedNode() : this.addRootNode();
+      return;
+    }
+    this.addNode(slot.direction);
+  }
+
+  /** Cuts the trunk below the selected node, dropping that part and promoting it to root. */
+  private detachSelectedNode(): void {
+    const current = this.selectedTreeNode;
+    const parent = current?.node.prev;
+    if (!current || !parent) { return; }
+    if (!confirm('Are you sure you want to disconnect this node? The nodes below it are deleted and this node becomes the root.')) { return; }
+
+    if (parent.nw === current.node) { delete parent.nw; }
+    if (parent.n === current.node) { delete parent.n; }
+    if (parent.ne === current.node) { delete parent.ne; }
+    delete current.node.prev;
+
+    this.tree = { guid: this.tree.guid, node: current.node };
+    this.indexNodeTree();
+    this.selectTreeNode(this.nodeMap[current.node.guid]);
+    this.reloadTree();
+  }
+
+  /**
+   * Rebuilds the affordances shown around the selected node. They are anchored to the
+   * selection because an empty slot is reachable from two parents (a column node going
+   * up, or the trunk beside it branching sideways), so an unanchored slot would be
+   * ambiguous. An occupied target owned by another parent offers to move that
+   * connection here; one owned by the selection offers to drop it.
+   */
+  private updateEditSlots(): void {
+    const current = this.mode === 'node' ? this.selectedTreeNode : undefined;
+    if (!current) { this.treeEditSlots = []; return; }
+
+    const positions: ReadonlyArray<NodePosition> = ['left', 'center', 'right'];
+    const targets: Array<{ direction: 'nw' | 'n' | 'ne'; x: number; y: number }> = [
+      { direction: 'n', x: current.x, y: current.y + 1 }
+    ];
+
+    // Branches only fork off the trunk, matching the guard in addNode.
+    if (current.x === 1) {
+      targets.push({ direction: 'nw', x: 0, y: current.y });
+      targets.push({ direction: 'ne', x: 2, y: current.y });
+    }
+
+    const slots: Array<TreeEditSlot> = targets.map(t => {
+      const target = this.nodeTable[t.x]?.[t.y];
+      const kind: TreeEditSlotKind = !target ? 'add'
+        : target.node.prev === current.node ? 'unlink'
+        : 'link';
+      return { position: positions[t.x], level: t.y, kind, direction: t.direction };
+    });
+
+    if (current.node === this.tree.node) {
+      slots.push({ position: 'center', level: -1, kind: 'add', direction: 'below' });
+    } else if (current.x === 1 && this.nodeTable[1][current.y - 1]?.node.n === current.node) {
+      // Trunk node hanging off the node below it: offer to cut there and become the root.
+      slots.push({ position: 'center', level: current.y - 1, kind: 'unlink', direction: 'below' });
+    }
+
+    this.treeEditSlots = slots;
+  }
+
+  onNodeClicked(event: SpiritTreeNodeClickEvent) {
     const treeNode = this.nodeMap[event.node.guid];
     this.selectTreeNode(treeNode);
   }
 
   onItemClicked(event: ItemClickEvent) {
+    const node = this.activeNode;
+    if (!node) { return; }
     delete this.itemMap[this.selectedItem.guid];
-    this.selectedTreeNode.node.item = event.item;
+    node.item = event.item;
     this.selectedItem = event.item;
     this.itemMap[event.item.guid] = event.item;
     this.items = Object.values(this.itemMap);
@@ -264,9 +345,7 @@ export class SpiritTreeEditorComponent {
     const item = this.cloneItem(specialItem.item);
     this.onItemClicked({ item, event });
 
-    if (specialItem.cost) {
-      this.setCostInputs(specialItem.cost);
-    }
+    this.setCostInputs(specialItem.cost);
     this.applyCost();
   }
 
@@ -279,32 +358,204 @@ export class SpiritTreeEditorComponent {
     this.setCostInputs(cost);
   }
 
-  private setCostInputs(cost: ICost): void {
-    const costType = this.costTypes.find(t => (cost as any)[t.id] > 0) || this.costTypes[0];
-    this.inpCost.nativeElement.value = (cost as any)[costType?.id || 'c'] || '0';
-    this.selCostType.nativeElement.value = costType?.id || 'c';
+  private setCostInputs(cost: ICost | undefined): void {
+    const costType = cost && this.costTypes.find(t => (cost as any)[t.id] > 0);
+    this.costTypeId = costType?.id ?? this.costTypes[0].id;
+    this.costValue = costType ? this.parseInt(`${(cost as any)[costType.id]}`) : 0;
+    this._changeDetectorRef.markForCheck();
   }
 
-  onCostInputBlur(evt: Event): void {
+  onCostInput(evt: Event): void {
     const target = evt.target as HTMLInputElement;
-    const value = this.parseInt(target.value);
-    if (value <= 0) {
-      target.value = '0';
-    } else if (value > 999) {
-      target.value = '999';
-    } else if (!value) {
-      target.value = '';
-    }
+    const value = Math.min(999, Math.max(0, this.parseInt(target.value)));
+    this.costValue = value;
+    if (target.value !== `${value}`) { target.value = `${value}`; }
+  }
+
+  onCostTypeInput(evt: Event): void {
+    this.costTypeId = (evt.target as HTMLSelectElement).value;
   }
 
   applyCost(): void {
-    const node = this.selectedTreeNode.node;
+    const node = this.activeNode;
+    if (!node) { return; }
     CostHelper.clear(node);
-    const costType = this.costTypes.find(t => t.id === this.selCostType.nativeElement.value) || this.costTypes[0];
-    const costValue = this.parseInt(this.inpCost.nativeElement.value) || 0;
-    (node as any)[costType.id] = costValue;
+    const costType = this.costTypes.find(t => t.id === this.costTypeId) || this.costTypes[0];
+    (node as any)[costType.id] = this.costValue;
     this.reloadTree();
   }
+
+  // #region Tiers
+
+  /** The node the selected-item panel acts on, in either mode. */
+  get activeNode(): INode | undefined {
+    return this.mode === 'tier' ? this.selectedTierNode : this.selectedTreeNode?.node;
+  }
+
+  setMode(mode: EditorMode): void {
+    if (mode === this.mode) { return; }
+    if (!confirm('Switching tree modes discards the current tree. Are you sure?')) { return; }
+    this.resetTree(mode);
+  }
+
+  isCellSelected(tierIndex: number, rowIndex: number, col: number): boolean {
+    const cell = this.selectedCell;
+    return !!cell && cell.tierIndex === tierIndex && cell.rowIndex === rowIndex && cell.col === col;
+  }
+
+  onTierCellClicked(tierIndex: number, rowIndex: number, col: number): void {
+    const row = this.tiers[tierIndex]?.rows[rowIndex];
+    if (!row) { return; }
+    if (!row[col]) { row[col] = this.createPlaceholderNode(); }
+    this.reloadTierTree();
+    this.selectCell({ tierIndex, rowIndex, col });
+  }
+
+  clearTierNode(): void {
+    const cell = this.selectedCell;
+    if (!cell || !this.selectedTierNode) { return; }
+    if (!confirm('Are you sure you want to remove this node?')) { return; }
+    this.tiers[cell.tierIndex].rows[cell.rowIndex][cell.col] = undefined;
+    this.selectedTierNode = undefined;
+    this.reloadTierTree();
+  }
+
+  addTier(): void {
+    this.tiers.push({ guid: nanoid(10), rows: [[undefined, undefined, undefined]] });
+    this.reloadTierTree();
+  }
+
+  removeTier(): void {
+    if (this.tiers.length <= 1) { alert('A tiered tree needs at least one tier.'); return; }
+    const tier = this.tiers.at(-1)!;
+    if (this.tierHasNodes(tier) && !confirm('Are you sure you want to delete the last tier and all of its nodes?')) { return; }
+    this.tiers.pop();
+    this.reloadTierTree();
+  }
+
+  addRow(tierIndex: number): void {
+    const tier = this.tiers[tierIndex];
+    if (!tier) { return; }
+    tier.rows.push([undefined, undefined, undefined]);
+    this.reloadTierTree();
+  }
+
+  removeRow(tierIndex: number): void {
+    const tier = this.tiers[tierIndex];
+    if (!tier) { return; }
+    if (tier.rows.length <= 1) { alert('A tier needs at least one row.'); return; }
+    const row = tier.rows.at(-1)!;
+    if (row.some(n => n) && !confirm('Are you sure you want to delete the top row of this tier and all of its nodes?')) { return; }
+    tier.rows.pop();
+    this.reloadTierTree();
+  }
+
+  private tierHasNodes(tier: ISpiritTreeTier): boolean {
+    return tier.rows.some(row => row.some(n => n));
+  }
+
+  private createPlaceholderNode(): INode {
+    return { guid: nanoid(10), item: this.cloneItem(this.specialItemMap.placeholder.item) };
+  }
+
+  private selectCell(cell: TierCell): void {
+    const node = this.tiers[cell.tierIndex]?.rows[cell.rowIndex]?.[cell.col];
+    this.selectedCell = cell;
+    this.selectedTierNode = node;
+    if (node?.item) { this.selectedItem = node.item; }
+    this.setCostInputs(node);
+  }
+
+  /**
+   * Rebuilds the tier lookups and the display model. Nodes and tiers are shallow cloned
+   * so the OnPush node tiles pick up in-place edits, mirroring `reloadTree` for node trees.
+   */
+  private reloadTierTree(): void {
+    this.treeEditSlots = [];
+
+    this.tiers = this.tiers.map(tier => ({
+      ...tier,
+      rows: tier.rows.map(row => [
+        row[0] ? { ...row[0] } : undefined,
+        row[1] ? { ...row[1] } : undefined,
+        row[2] ? { ...row[2] } : undefined
+      ] as SpiritTreeTierRow)
+    }));
+
+    this.tierCellMap = {};
+    this.itemMap = {};
+    this.tiers.forEach((tier, tierIndex) => {
+      tier.prev = this.tiers[tierIndex - 1];
+      tier.next = this.tiers[tierIndex + 1];
+      tier.root = this.tiers[0];
+      tier.rows.forEach((row, rowIndex) => {
+        row.forEach((node, col) => {
+          if (!node) { return; }
+          this.tierCellMap[node.guid] = { tierIndex, rowIndex, col };
+          node.item && (this.itemMap[node.item.guid] = node.item);
+        });
+      });
+    });
+    this.items = Object.values(this.itemMap);
+
+    // Display order: highest tier on top, and within a tier the first row at the bottom.
+    this.tierView = this.tiers.map((tier, tierIndex) => ({
+      tierIndex,
+      label: `Tier ${tierIndex + 1}`,
+      rows: tier.rows
+        .map((row, rowIndex) => ({ rowIndex, nodes: [row[0], row[1], row[2]] as [INode?, INode?, INode?] }))
+        .reverse()
+    })).reverse();
+
+    this.tree = { guid: this.tree.guid, tier: this.tiers[0] };
+    this.tiers.forEach(tier => tier.tree = this.tree);
+
+    // Re-point the selection at the clone that replaced it, or drop it if its cell is gone.
+    const cell = this.selectedCell;
+    if (cell) {
+      if (!this.tiers[cell.tierIndex]?.rows[cell.rowIndex]) {
+        this.selectedCell = undefined;
+        this.selectedTierNode = undefined;
+      } else {
+        this.selectedTierNode = this.tiers[cell.tierIndex].rows[cell.rowIndex][cell.col];
+      }
+    }
+  }
+
+  private resetTree(mode: EditorMode): void {
+    this.mode = mode;
+    this.items = [];
+    this.itemMap = {};
+    this.nodeTable = [[], [], []];
+    this.nodeMap = {};
+    this.tiers = [];
+    this.tierView = [];
+    this.tierCellMap = {};
+    this.selectedCell = undefined;
+    this.selectedTierNode = undefined;
+
+    const node = this.createPlaceholderNode();
+    this.itemMap[node.item!.guid] = node.item!;
+    this.items = Object.values(this.itemMap);
+    this.selectedItem = node.item!;
+
+    if (mode === 'node') {
+      this.tree = { guid: nanoid(10), node };
+      const treeNode: TreeNode = { x: 1, y: 0, node };
+      this.nodeTable[1][0] = treeNode;
+      this.nodeMap[node.guid] = treeNode;
+      this.selectedTreeNode = treeNode;
+      this.setCostInputs(node);
+      this.updateEditSlots();
+    } else {
+      this.tiers = [{ guid: nanoid(10), rows: [[undefined, node, undefined]] }];
+      this.tree = { guid: nanoid(10), tier: this.tiers[0] };
+      this.reloadTierTree();
+      this.selectCell({ tierIndex: 0, rowIndex: 0, col: 1 });
+    }
+  }
+
+  // #endregion
 
   // #region Spirits
 
@@ -324,7 +575,7 @@ export class SpiritTreeEditorComponent {
     this.spiritTrees = Array.from(trees).reverse();
   }
 
-  onSpiritNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
+  onSpiritNodeClicked(event: SpiritTreeNodeClickEvent) {
     if (!event.node.item) { return; }
     this.onItemClicked({ item: event.node.item, event: event.event });
     this.setCostInputs(event.node);
@@ -332,37 +583,81 @@ export class SpiritTreeEditorComponent {
   }
 
   promptCopySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
-    if (tree.tier) { alert('Spirit trees with friendship tiers are not supported.'); return; }
     if (!confirm('Are you sure you want to copy this spirit tree? Your current tree will be replaced.')) { return; }
     this.copySpiritTree(tree, preserveGuid);
   }
 
   copySpiritTree(tree: ISpiritTree, preserveGuid: boolean): void {
+    // Copying a tiered tree switches modes without a prompt; the tree is replaced either way.
+    if (tree.tier) { this.copyTierTree(tree, preserveGuid); this.applyTreeTitle(tree); return; }
+
+    this.mode = 'node';
+    this.tiers = [];
+    this.tierView = [];
+    this.tierCellMap = {};
+    this.selectedCell = undefined;
+    this.selectedTierNode = undefined;
     this.tree = {
       guid: preserveGuid ? tree.guid : nanoid(10),
       node: NodeHelper.clone(tree.node!, preserveGuid)
     };
-    this.nodeTable = [[], [], []];
-    this.nodeMap = {};
-    this.items = [];
-    this.itemMap = {};
-
-    const addNode = (n: INode, x: number, y: number) => {
-      const treeNode: TreeNode = { x, y, node: n };
-      this.nodeTable[x][y] = treeNode;
-      this.nodeMap[n.guid] = treeNode;
-      n.item && (this.itemMap[n.item.guid] = n.item);
-
-      if (n.nw) { addNode(n.nw, x - 1, y); }
-      if (n.n) { addNode(n.n, x, y + 1); }
-      if (n.ne) { addNode(n.ne, x + 1, y); }
-    };
-
-    addNode(this.tree.node!, 1, 0);
-    this.items = Object.values(this.itemMap);
+    this.indexNodeTree();
     this.selectedTreeNode = this.nodeMap[this.tree.node!.guid];
     this.selectedItem = this.selectedTreeNode.node.item!;
+    this.setCostInputs(this.selectedTreeNode.node);
+    this.updateEditSlots();
 
+    this.applyTreeTitle(tree);
+  }
+
+  private copyTierTree(tree: ISpiritTree, preserveGuid: boolean): void {
+    this.mode = 'tier';
+    this.nodeTable = [[], [], []];
+    this.nodeMap = {};
+    this.selectedCell = undefined;
+    this.selectedTierNode = undefined;
+
+    const cloneNode = (node: INode): INode => {
+      const clone: INode = { ...node };
+      delete clone.tree; delete clone.root; delete clone.prev;
+      delete clone.nw; delete clone.n; delete clone.ne;
+      delete clone.unlocked;
+      if (!preserveGuid) { clone.guid = nanoid(10); }
+      return clone;
+    };
+
+    this.tiers = TreeHelper.getTiers(tree).map(tier => ({
+      guid: preserveGuid ? tier.guid : nanoid(10),
+      rows: tier.rows.map(row => [
+        row[0] ? cloneNode(row[0]) : undefined,
+        row[1] ? cloneNode(row[1]) : undefined,
+        row[2] ? cloneNode(row[2]) : undefined
+      ] as SpiritTreeTierRow)
+    }));
+    if (!this.tiers.length) { this.tiers = [{ guid: nanoid(10), rows: [[undefined, undefined, undefined]] }]; }
+
+    this.tree = { guid: preserveGuid ? tree.guid : nanoid(10), tier: this.tiers[0] };
+    this.reloadTierTree();
+    this.selectFirstTierNode();
+  }
+
+  /** Selects the first filled cell so the item panel has something to act on. */
+  private selectFirstTierNode(): void {
+    for (let tierIndex = 0; tierIndex < this.tiers.length; tierIndex++) {
+      const tier = this.tiers[tierIndex];
+      for (let rowIndex = 0; rowIndex < tier.rows.length; rowIndex++) {
+        for (let col = 0; col < 3; col++) {
+          if (tier.rows[rowIndex][col]) {
+            this.selectCell({ tierIndex, rowIndex, col });
+            return;
+          }
+        }
+      }
+    }
+    this.selectCell({ tierIndex: 0, rowIndex: 0, col: 1 });
+  }
+
+  private applyTreeTitle(tree: ISpiritTree): void {
     const tsDate = tree.travelingSpirit?.date;
     const rsDate = tree.specialVisitSpirit?.visit?.date;
 
@@ -390,8 +685,13 @@ export class SpiritTreeEditorComponent {
       subtitle: this.inpSubtitle.nativeElement.value.trim(),
       background: bg
     });
-    this._spiritTreeRenderService.copyCanvas(canvas);
-    this._ttCopy?.open();
+    try {
+      await this._spiritTreeRenderService.copyCanvas(canvas);
+      this._ttCopy?.open();
+    } catch (e) {
+      console.error(e);
+      alert('Copying failed. Please make sure the document is focused.');
+    }
   }
 
   async shareImage(): Promise<void> {
@@ -460,47 +760,36 @@ export class SpiritTreeEditorComponent {
       }
     }
 
-    const tree: ISpiritTree = {
-      guid: data.tree.guid,
-      node: nodeMap[data.tree.node]
-    };
+    const tree: ISpiritTree = data.tiers?.length
+      ? { guid: data.tree.guid, tier: this.importTiers(data.tiers, nodeMap) }
+      : { guid: data.tree.guid, node: nodeMap[data.tree.node] };
 
     this.copySpiritTree(tree, true);
     this._changeDetectorRef.markForCheck();
   }
 
+  /** Rebuilds the tier chain from exported rows of node GUIDs. */
+  private importTiers(jsonTiers: Array<any>, nodeMap: { [guid: string]: INode }): ISpiritTreeTier {
+    const tiers: Array<ISpiritTreeTier> = jsonTiers.map(jsonTier => ({
+      guid: jsonTier.guid,
+      rows: (jsonTier.rows || []).map((row: Array<string | null>) => [
+        row?.[0] ? nodeMap[row[0]] : undefined,
+        row?.[1] ? nodeMap[row[1]] : undefined,
+        row?.[2] ? nodeMap[row[2]] : undefined
+      ] as SpiritTreeTierRow)
+    }));
+
+    tiers.forEach((tier, i) => {
+      tier.prev = tiers[i - 1];
+      tier.next = tiers[i + 1];
+      tier.root = tiers[0];
+    });
+
+    return tiers[0];
+  }
+
   exportJson(): void {
-    const jsonTree = {
-      guid: this.tree.guid,
-      node: this.tree.node!.guid
-    };
-
-    const nodes = NodeHelper.all(this.tree.node);
-
-    const jsonItems = nodes.filter(n => {
-      return n.item?.guid && !this._dataService.guidMap.has(n.item.guid)
-    }).map(n => {
-      const item: any = { ...n.item };
-      delete item.id;
-      return item;
-    });
-
-    const jsonNodes = nodes.map(n => {
-      const node: any = { ...n };
-      delete node.prev;
-      node.nw && (node.nw = node.nw.guid);
-      node.n && (node.n = node.n.guid);
-      node.ne && (node.ne = node.ne.guid);
-      node.item && (node.item = node.item.guid);
-      node.hiddenItems && (node.hiddenItems = node.hiddenItems.map((i: IItem) => i.guid))
-      return node;
-    });
-
-    const jsonData = {
-      tree: jsonTree,
-      nodes: jsonNodes,
-      items: jsonItems
-    };
+    const jsonData = this.mode === 'tier' ? this.exportTierData() : this.exportNodeData();
 
     const json = JSON.stringify(jsonData, undefined, 2)
       .replace(/(?<![}\]])(,\s+)/gm, ', ') // remove linebreaks within objects
@@ -515,6 +804,67 @@ export class SpiritTreeEditorComponent {
     URL.revokeObjectURL(url);
   }
 
+  private exportTierData(): unknown {
+    const nodes = this.tiers.flatMap(tier => tier.rows.flat()).filter(n => n) as Array<INode>;
+
+    const jsonTiers = this.tiers.map((tier, i) => {
+      const jsonTier: any = { guid: tier.guid };
+      if (this.tiers[i + 1]) { jsonTier.next = this.tiers[i + 1].guid; }
+      jsonTier.rows = tier.rows.map(row => this.cols.map(col => row[col]?.guid ?? null));
+      return jsonTier;
+    });
+
+    return {
+      tree: { guid: this.tree.guid, tier: this.tiers[0].guid },
+      tiers: jsonTiers,
+      nodes: this.toJsonNodes(nodes, true),
+      items: this.toJsonItems(nodes)
+    };
+  }
+
+  private exportNodeData(): unknown {
+    const jsonTree = {
+      guid: this.tree.guid,
+      node: this.tree.node!.guid
+    };
+
+    const nodes = NodeHelper.all(this.tree.node);
+
+    return {
+      tree: jsonTree,
+      nodes: this.toJsonNodes(nodes, false),
+      items: this.toJsonItems(nodes)
+    };
+  }
+
+  private toJsonItems(nodes: Array<INode>): Array<any> {
+    return nodes.filter(n => {
+      return n.item?.guid && !this._dataService.guidMap.has(n.item.guid)
+    }).map(n => {
+      const item: any = { ...n.item };
+      delete item.id;
+      return item;
+    });
+  }
+
+  private toJsonNodes(nodes: Array<INode>, tiered: boolean): Array<any> {
+    return nodes.map(n => {
+      const node: any = { ...n };
+      delete node.prev;
+      if (tiered) {
+        // Tier rows carry the layout; the node itself only holds its item and cost.
+        delete node.tree; delete node.root; delete node.nw; delete node.n; delete node.ne;
+      } else {
+        node.nw && (node.nw = node.nw.guid);
+        node.n && (node.n = node.n.guid);
+        node.ne && (node.ne = node.ne.guid);
+      }
+      node.item && (node.item = node.item.guid);
+      node.hiddenItems && (node.hiddenItems = node.hiddenItems.map((i: IItem) => i.guid))
+      return node;
+    });
+  }
+
   // #endregion
 
   // #region Dragging
@@ -523,13 +873,13 @@ export class SpiritTreeEditorComponent {
   draggingPreview?: HTMLImageElement;
   onTreePointerDown(event: PointerEvent): void {
     const target = event.target as HTMLElement;
-    const nodeEl = target.closest('app-atmos-node') as HTMLElement;
+    const nodeEl = target.closest('app-node') as HTMLElement;
     if (!nodeEl) { return; }
 
     this.draggingNode = nodeEl;
     target.setPointerCapture(event.pointerId);
 
-    const item = this.nodeMap[nodeEl.getAttribute('guid') || '']?.node.item;
+    const item = this.getDraggedNode(nodeEl.getAttribute('guid') || '')?.item;
     if (item?.icon?.startsWith('http')) {
       this.draggingPreview = document.createElement('img');
       this.draggingPreview.src = item.icon;
@@ -567,6 +917,12 @@ export class SpiritTreeEditorComponent {
     // Swap nodes.
     const firstGuid = draggingNode.getAttribute('guid') || '';
     const secondGuid = target.getAttribute('guid') || '';
+
+    if (this.mode === 'tier') {
+      this.swapTierNodes(firstGuid, secondGuid);
+      return;
+    }
+
     const firstNode = this.nodeMap[firstGuid];
     const secondNode = this.nodeMap[secondGuid];
     if (!firstNode || !secondNode) { return; }
@@ -575,12 +931,37 @@ export class SpiritTreeEditorComponent {
     NodeHelper.swap(firstNode.node, secondNode.node);
     this.selectedTreeNode = firstNode;
     this.selectedItem = this.selectedTreeNode.node.item!;
+    this.setCostInputs(this.selectedTreeNode.node);
     this.reloadTree();
+  }
+
+  /** Tier nodes have no connections, so swapping is just exchanging the two cells. */
+  private swapTierNodes(firstGuid: string, secondGuid: string): void {
+    const first = this.tierCellMap[firstGuid];
+    const second = this.tierCellMap[secondGuid];
+    if (!first || !second) { return; }
+
+    const firstRow = this.tiers[first.tierIndex].rows[first.rowIndex];
+    const secondRow = this.tiers[second.tierIndex].rows[second.rowIndex];
+    const firstNode = firstRow[first.col];
+    firstRow[first.col] = secondRow[second.col];
+    secondRow[second.col] = firstNode;
+
+    this.reloadTierTree();
+    this.selectCell(second);
+  }
+
+  private getDraggedNode(guid: string): INode | undefined {
+    if (this.mode === 'tier') {
+      const cell = this.tierCellMap[guid];
+      return cell ? this.tiers[cell.tierIndex]?.rows[cell.rowIndex]?.[cell.col] : undefined;
+    }
+    return this.nodeMap[guid]?.node;
   }
 
   onTreeTouchStart(event: TouchEvent): void {
     const target = event.target as HTMLElement;
-    if (target?.closest('app-atmos-node')) { event.preventDefault(); }
+    if (target?.closest('app-node')) { event.preventDefault(); }
   }
 
   // #endregion
@@ -669,6 +1050,8 @@ export class SpiritTreeEditorComponent {
         this.specialItemMap.wingBuff.item.icon = item.icon;
       } else if (item.type === ItemType.Special && item.name === 'Heart' && item.nodes?.at(-1)?.c === 3) {
         this.specialItemMap.heart.item.icon = item.icon;
+      } else if (item.type === ItemType.Special && item.name?.startsWith('Accompany ')) {
+        this.specialItemMap.accompany.item.icon = item.icon;
       } else if (item.type === ItemType.Special && item.name === 'Red dye') {
         this.specialItemMap.dyeRed.item.icon = item.icon;
       } else if (item.type === ItemType.Special && item.name === 'Yellow dye') {
@@ -692,6 +1075,33 @@ export class SpiritTreeEditorComponent {
   private selectTreeNode(treeNode: TreeNode): void {
     this.selectedTreeNode = treeNode;
     this.selectedItem = treeNode.node.item!;
+    this.setCostInputs(treeNode.node);
+    this.updateEditSlots();
+  }
+
+  private switchSelection(direction: 'up'|'down'|'left'|'right'): boolean | undefined {
+    return this.mode === 'tier' ? this.switchTierCell(direction) : this.switchTreeNode(direction);
+  }
+
+  /** Moves the tier selection across the grid as it is displayed, empty cells included. */
+  private switchTierCell(direction: 'up'|'down'|'left'|'right'): boolean | undefined {
+    const cell = this.selectedCell;
+    if (!cell) { return; }
+
+    if (direction === 'left' || direction === 'right') {
+      const col = cell.col + (direction === 'left' ? -1 : 1);
+      if (col < 0 || col > 2) { return; }
+      this.selectCell({ ...cell, col });
+      return true;
+    }
+
+    const visualRows = this.tierView.flatMap(tier => tier.rows.map(row => ({ tierIndex: tier.tierIndex, rowIndex: row.rowIndex })));
+    const index = visualRows.findIndex(r => r.tierIndex === cell.tierIndex && r.rowIndex === cell.rowIndex);
+    if (index < 0) { return; }
+    const target = visualRows[index + (direction === 'up' ? -1 : 1)];
+    if (!target) { return; }
+    this.selectCell({ ...target, col: cell.col });
+    return true;
   }
 
   private switchTreeNode(direction: 'up'|'down'|'left'|'right'): boolean | undefined {
@@ -704,7 +1114,31 @@ export class SpiritTreeEditorComponent {
     return true;
   }
 
+  /** Rebuilds the coordinate table, node lookup and item list by walking from the root. */
+  private indexNodeTree(): void {
+    this.nodeTable = [[], [], []];
+    this.nodeMap = {};
+    this.items = [];
+    this.itemMap = {};
+
+    const addNode = (n: INode, x: number, y: number) => {
+      const treeNode: TreeNode = { x, y, node: n };
+      this.nodeTable[x][y] = treeNode;
+      this.nodeMap[n.guid] = treeNode;
+      n.item && (this.itemMap[n.item.guid] = n.item);
+
+      if (n.nw) { addNode(n.nw, x - 1, y); }
+      if (n.n) { addNode(n.n, x, y + 1); }
+      if (n.ne) { addNode(n.ne, x + 1, y); }
+    };
+
+    addNode(this.tree.node!, 1, 0);
+    this.items = Object.values(this.itemMap);
+  }
+
   private reloadTree(): void {
+    if (this.mode === 'tier') { this.reloadTierTree(); return; }
+
     const clones: { [guid: string]: INode } = {};
     const cloneNode = (node: INode, prev?: INode): INode => {
       const clone: INode = { ...node };
@@ -723,6 +1157,7 @@ export class SpiritTreeEditorComponent {
     }
 
     this.tree = { guid: this.tree.guid, node: root };
+    this.updateEditSlots();
   }
   private parseInt(value?: string): number { return parseInt(value || '', 10) || 0; }
   private cloneItem(item: IItem): IItem {

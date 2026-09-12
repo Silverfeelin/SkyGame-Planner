@@ -1,0 +1,71 @@
+<app-tool-quick-actions />
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Collage</h1>
+</header>
+
+<div class="atmos-collage">
+
+  <!-- Size picker -->
+  <div class="atmos-collage__size">
+    <span class="atmos-collage__size-label">Choose the size of your collage.</span>
+    <div class="atmos-collage__size-blocks">
+      @for (idx of blockIndices; track idx) {
+        <button type="button" class="atmos-collage__size-block"
+          [class.is-active]="isInCollage(idx)"
+          [attr.aria-label]="(idx % blockCols + 1) + ' by ' + ((idx - idx % blockCols) / blockCols + 1)"
+          (click)="setCollageSize(idx % blockCols + 1, (idx - idx % blockCols) / blockCols + 1)">
+        </button>
+      }
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="atmos-collage__toolbar">
+    <button type="button" class="atmos-btn atmos-btn--sm" (click)="saveCollage()">
+      <mat-icon class="atmos-icon--18">save</mat-icon>
+      Save
+    </button>
+
+    <button
+      type="button"
+      class="atmos-btn atmos-btn--sm"
+      (click)="copyCollage(ttCopy)"
+      [disabled]="isRendering()"
+      skyTooltip="Copied!"
+      #ttCopy="skyTooltip"
+      manual
+      placement="top"
+      [closeDelay]="1000"
+    >
+      <mat-icon class="atmos-icon--18" [class.spin]="isRendering()">
+        {{ isRendering() ? 'cached' : 'image' }}
+      </mat-icon>
+      Copy
+    </button>
+
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="reset()">
+      <mat-icon class="atmos-icon--18">delete_forever</mat-icon>
+      Reset
+    </button>
+  </div>
+
+  <!-- Slot grid -->
+  <div class="atmos-collage__scroll atmos-scroll-x">
+    <div class="atmos-collage__grid">
+      @for (idx of blockIndices; track idx) {
+        <app-collage-slot
+          class="app-collage-slot"
+          [class.is-outside]="!isInCollage(idx)"
+          [attr.data-slot-index]="idx"
+          [slotIndex]="idx"
+          (imageChanged)="onSlotImageChanged($event)"
+          (iconChanged)="onSlotIconChanged($event)"
+          (pasteRequested)="onSlotPasteRequested($event)"
+          (pasteClosed)="onSlotPasteClosed()"
+        />
+      }
+    </div>
+  </div>
+
+</div>

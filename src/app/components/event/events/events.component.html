@@ -1,0 +1,37 @@
+<app-event-quick-actions/>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Events</h1>
+</header>
+
+<p class="atmos-paragraph atmos-events__intro">
+  Track Sky's special events, view their history, and plan your event currency spending.
+</p>
+
+<section class="atmos-events__section">
+  <header class="atmos-events__section-header">
+    <h2 class="atmos-section__title atmos-section__title--lg">Recurring events</h2>
+  </header>
+  <div class="atmos-events__grid">
+    @for (row of recurring(); track row.event.guid) {
+      <app-event-card
+        [event]="row.event"
+        [instance]="row.instance"
+        [options]="{ show: ['img', 'date'] }"></app-event-card>
+    }
+  </div>
+</section>
+
+<section class="atmos-events__section">
+  <header class="atmos-events__section-header">
+    <h2 class="atmos-section__title atmos-section__title--lg">Other events</h2>
+  </header>
+  <div class="atmos-events__grid">
+    @for (row of old(); track row.event.guid) {
+      <app-event-card
+        [event]="row.event"
+        [instance]="row.instance"
+        [options]="{ show: ['img', 'date'] }"></app-event-card>
+    }
+  </div>
+</section>

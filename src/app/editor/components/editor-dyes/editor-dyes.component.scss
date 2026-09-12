@@ -4,16 +4,22 @@
   gap: 8px;
 }
 
-/* The picker is sticky at the left edge; the unmapped grid clears its width. */
+.dye-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
 .picker {
-  display: inline-block;
-  width: 1000px;
+  flex: 0 0 1000px;
+  max-width: 1000px;
   position: sticky;
   top: 0;
 }
 
 .preview-grid--unmapped {
-  margin-left: 1020px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .preview {
@@ -43,10 +49,6 @@
     left: 0;
     width: 128px;
     height: 128px;
-
-    &--mapped {
-      background: var(--atmos-preview-bg-contrast);
-    }
   }
 }
 
