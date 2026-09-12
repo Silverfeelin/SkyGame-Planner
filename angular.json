@@ -50,7 +50,6 @@
               "src/styles/styles.scss",
               "src/styles/charts.scss",
               "src/styles/map.scss",
-              "src/styles/atmospheric.scss",
               "src/styles/grid.scss"
             ],
             "scripts": [],
