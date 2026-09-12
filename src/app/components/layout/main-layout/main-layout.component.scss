@@ -90,36 +90,6 @@
   }
 }
 
-/* Global thin scrollbar styling. */
-:host ::ng-deep {
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6) transparent;
-  }
-
-  *::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background: oklch(0.45 0.025 var(--atmos-hue, 160) / 0.6);
-    border-radius: 3px;
-  }
-
-  *::-webkit-scrollbar-thumb:hover {
-    background: oklch(0.55 0.03 var(--atmos-hue, 160) / 0.8);
-  }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  *::-webkit-scrollbar-corner {
-    background: transparent;
-  }
-}
-
 .loader {
   opacity: 0;
   transition: opacity 0.3s;

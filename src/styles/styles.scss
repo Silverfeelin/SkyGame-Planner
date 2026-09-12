@@ -30,30 +30,10 @@ p {
   margin-bottom: var(--atmos-gap);
 }
 
-.text-link {
-  color: var(--atmos-accent);
-  text-decoration: underline;
-  cursor: pointer;
-  &:visited { color: var(--atmos-text-dim); }
-  &:hover, &:active, &:focus { color: var(--atmos-accent); }
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-}
-
 // a with link
 .link {
   text-decoration: underline;
   cursor: pointer;
-}
-
-.action {
-  cursor: pointer;
-  &:hover {
-    color: var(--atmos-accent);
-  }
 }
 
 button, .button {
@@ -71,29 +51,6 @@ button, .button {
   &:disabled {
     background: var(--atmos-hover-bg-strong);
   }
-}
-
-.button-action {
-  position: relative;
-  border-radius: 50%;
-  width: 64px;
-  height: 64px;
-
-  mat-icon {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    font-size: 32px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.danger {
-  color: var(--atmos-danger);
-  background: var(--atmos-danger-bg);
-  border-color: var(--atmos-danger-accent);
 }
 
 input, select, textarea {
@@ -118,53 +75,10 @@ input[type="checkbox"] {
   display: inline-block;
 }
 
-input[type="date"].input-date-click {
-  position: relative;
-
-  &::-webkit-calendar-picker-indicator {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    color: transparent;
-    background: transparent;
-  }
-}
-
-.input-no-arrows {
-  -moz-appearance: textfield;
-  appearance: textfield;
-
-  &::-webkit-inner-spin-button,
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-}
-
 .input-hidden {
   width: 0; height: 0;
   padding: 0; margin: 0;
   border: 0;
-}
-
-.input-search {
-  position: relative;
-
-  input {
-    padding-left: 36px;
-  }
-
-  mat-icon {
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 1;
-    transition: opacity var(--atmos-transition);
-  }
 }
 
 select {
@@ -172,17 +86,8 @@ select {
   height: 38px; // Match input height
 }
 
-.border {
-  border: 1px solid var(--atmos-line);
-}
-
 .active {
   color: var(--atmos-good);
-}
-
-.expired {
-  color: var(--atmos-text-mute);
-  font-style: italic;
 }
 
 // Scrollbar
@@ -224,18 +129,18 @@ body { scrollbar-width: thin; }
 }
 
 // Headings
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+h1, h2, h3, .h3, h4, h5, h6 {
   color: var(--atmos-text);
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 var(--atmos-gap-compact);
 }
-h1, .h1 { font-size: var(--atmos-h1); }
-h2, .h2 { font-size: var(--atmos-h2); }
+h1 { font-size: var(--atmos-h1); }
+h2 { font-size: var(--atmos-h2); }
 h3, .h3 { font-size: var(--atmos-h3); }
-h4, .h4 { font-size: var(--atmos-h4); }
-h5, .h5 { font-size: var(--atmos-h5); }
-h6, .h6 { font-size: var(--atmos-h6); }
+h4 { font-size: var(--atmos-h4); }
+h5 { font-size: var(--atmos-h5); }
+h6 { font-size: var(--atmos-h6); }
 
 // Tooltip (custom, native Popover API — see TooltipDirective).
 .sky-tooltip {
@@ -272,38 +177,6 @@ h6, .h6 { font-size: var(--atmos-h6); }
 
 p:last-child {
   margin-bottom: 0;
-}
-
-.wiki {
-  position: relative;
-  display: inline-block;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--atmos-radius-sm);
-  background-color: var(--atmos-wiki);
-  background-image: url(/assets/external/sky-wiki-favicon-full.png);
-  background-size: 32px 32px;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  a {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
-
-  mat-icon {
-    position: absolute;
-    top: 1px;
-    right: 3px;
-  }
-
-  img {
-    position: absolute;
-    top: 3px;
-    right: 4px;
-  }
 }
 
 /* Icon + label rows inside Leaflet popups and controls. These are built as
@@ -347,30 +220,6 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   box-shadow: var(--atmos-shadow) var(--atmos-highlight) !important;
 }
 
-.highlight-complete {
-  border: 1px solid var(--atmos-good) !important;
-  border-radius: var(--atmos-radius-sm) !important;
-  box-shadow: var(--atmos-shadow) var(--atmos-good) !important;
-}
-
-.highlight-attention {
-  border: 1px solid var(--atmos-attention) !important;
-  border-radius: var(--atmos-radius-sm) !important;
-  box-shadow: var(--atmos-shadow) var(--atmos-attention) !important;
-}
-
-.highlight-favourite {
-  border: 1px solid var(--atmos-favourite) !important;
-  border-radius: var(--atmos-radius-sm) !important;
-  box-shadow: var(--atmos-shadow) var(--atmos-favourite) !important;
-}
-
-.scroll-x {
-  overflow-x: auto;
-  width: min-content;
-  min-width: 100%;
-}
-
 /* Animations */
 @keyframes spin {
   from {transform: rotate(0deg);}
@@ -409,14 +258,6 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 .introjs-arrow.bottom, .introjs-arrow.bottom-right, .introjs-arrow.bottom-middle { border-top-color: var(--atmos-intro-bg); }
 .introjs-arrow.left { border-right-color: var(--atmos-intro-bg); }
 .introjs-arrow.right { border-left-color: var(--atmos-intro-bg); }
-
-/* Responsive */
-
-.show-desktop { display: none; }
-@media screen and (min-width: 720px) {
-  .show-desktop { display: unset; }
-  .show-mobile { display: none; }
-}
 
 [hidden] {
   display: none !important;
@@ -706,14 +547,6 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   transform: translateY(1px);
 }
 
-/* Section heading inside a page — the h2 above a card grid or a card's body. */
-.atmos-section-title {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--atmos-text);
-}
-
 /* Interactive tile surface — persistent background that brightens on hover.
    Add to any icon-tile/cell that should always show a background. Geometry
    (size, radius, overflow) stays on the component class. */
@@ -884,23 +717,6 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
       border-bottom-right-radius: var(--atmos-radius-pill);
     }
     &:hover, &.atmos-btn--active { z-index: 1; }
-  }
-}
-
-/* Toggled-on state for .atmos-icon-btn. */
-.atmos-icon-btn--active {
-  opacity: 1;
-  color: var(--atmos-accent);
-  background: var(--atmos-hover-bg);
-}
-
-/* Destructive variant of .atmos-icon-btn. */
-.atmos-icon-btn--danger {
-  color: var(--atmos-danger);
-
-  &:hover {
-    color: var(--atmos-danger);
-    background: var(--atmos-danger-bg);
   }
 }
 
@@ -1235,11 +1051,6 @@ a.atmos-link:focus-visible {
   margin: 0;
 }
 .atmos-section__title--lg { font-size: 1.25rem; }
-.atmos-section__meta {
-  font-size: 0.8rem;
-  color: var(--atmos-text-mute);
-}
-
 // 2. Text colour utilities
 // Global rather than component-scoped because AG-Grid cell renderers,
 // the Leaflet popup builders and CurrencyService build DOM outside any
@@ -1251,11 +1062,7 @@ a.atmos-link:focus-visible {
 
 // 3. Icon size classes + mixin
 @mixin atmos-icon-size($px) { font-size: #{$px}px !important; }
-.atmos-icon--16 { @include atmos-icon-size(16); }
 .atmos-icon--18 { @include atmos-icon-size(18); }
-.atmos-icon--20 { @include atmos-icon-size(20); }
-.atmos-icon--22 { @include atmos-icon-size(22); }
-.atmos-icon--24 { @include atmos-icon-size(24); }
 
 // 4. Ghost icon button
 .atmos-icon-btn {
@@ -1273,19 +1080,6 @@ a.atmos-link:focus-visible {
   &:hover {
     opacity: 1;
     background: var(--atmos-hover-bg);
-  }
-}
-
-// 5. Auto-fill grid
-.atmos-auto-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--atmos-grid-min, 260px), 1fr));
-  gap: var(--atmos-grid-gap, 1rem);
-}
-.atmos-cols-2,
-.atmos-cols-3 {
-  @media (max-width: 720px) {
-    grid-template-columns: 1fr !important;
   }
 }
 
@@ -1427,26 +1221,6 @@ a.atmos-link:focus-visible {
   padding: var(--atmos-card-header-pad);
   border-bottom: 1px solid var(--atmos-line-soft);
   font-weight: 600;
-}
-
-// 10. AG-Grid host card
-.atmos-grid-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--atmos-card-radius);
-  overflow: hidden;
-  background: var(--atmos-card-bg);
-  ag-grid-angular {
-    flex: 1;
-    min-height: var(--atmos-grid-min-h);
-  }
-}
-
-// 11. Pill size modifier
-.atmos-pill--sm {
-  font-size: 0.7rem !important;
-  padding: 0.1rem 0.4rem !important;
-  height: auto !important;
 }
 
 // 12. Page host mixin

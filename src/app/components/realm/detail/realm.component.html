@@ -119,7 +119,7 @@
 
 @if (realm.areas?.length) {
   <section>
-    <h2 class="atmos-section-title">Areas</h2>
+    <h2 class="atmos-section__title">Areas</h2>
     <div class="atmos-realm__areas">
       @for (area of realm.areas; track area.guid) {
         <app-feature-card
@@ -136,7 +136,7 @@
 @if (spirits.length) {
   <section class="atmos-card atmos-realm__trees" #divSpiritTrees>
     <div class="atmos-card__body atmos-realm__trees-body">
-      <h2 class="atmos-section-title">Spirit trees</h2>
+      <h2 class="atmos-section__title">Spirit trees</h2>
       <div class="atmos-spirit-trees atmos-realm__trees-scroll">
         @for (data of spirits; track data.spirit.guid) {
           <div class="atmos-realm__tree-wrapper">
