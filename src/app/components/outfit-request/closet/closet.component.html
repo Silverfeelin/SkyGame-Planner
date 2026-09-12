@@ -1,0 +1,144 @@
+<app-tool-quick-actions />
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Sky closet</h1>
+</header>
+
+<div class="atmos-closet-page">
+  <div class="atmos-card">
+    <div class="atmos-card__body">
+      <div data-step="0" data-position="bottom-left-aligned">
+        Please visit the
+        <a class="atmos-text-link" [routerLink]="'/outfit-request/request'">Request</a>
+        page if you want to create an outfit request.
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar -->
+  <app-closet-toolbar
+    [isRequesting]="requesting"
+    (resetRequest)="resetSelected()"
+    (randomRequest)="randomSelection()"
+    (copyLinkRequest)="copyLink()"
+    (calculateCostRequest)="calculateCost()"
+    (startTourRequest)="startTour()" />
+
+  <!-- Background picker -->
+  <app-closet-background-picker />
+
+  <!-- Modify panel (closet only) -->
+  <app-closet-modify-panel />
+
+  <!-- Warning: problematic items -->
+  @if (state.selectionHasUnavailable() || (!requesting && state.selectionHasHidden())) {
+    <div class="atmos-card atmos-warn-hidden">
+      <div class="atmos-card__body">
+        @if (state.selectionHasUnavailable()) {
+          <div class="atmos-warn-box">
+            <mat-icon class="atmos-warn-box__icon">priority_high</mat-icon>
+            <span>This selection has items not available in the shared closet.</span>
+          </div>
+        }
+        @if (!requesting && state.selectionHasHidden()) {
+          <div class="atmos-warn-box">
+            <mat-icon class="atmos-warn-box__icon">priority_high</mat-icon>
+            <span>This selection has items hidden in your closet. You might be missing some items.</span>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <!-- Item grid header with copy controls -->
+  <div class="atmos-card atmos-card--sticky-host" data-step="1" data-position="top-left-aligned">
+    <div class="atmos-card__header header-sticky">
+      <h2 class="atmos-section__title">Items</h2>
+
+      <!-- Copy controls -->
+      <div class="atmos-copy-controls" data-step="4" data-position="bottom-left-aligned">
+        <div class="atmos-btn-group">
+          <button type="button" class="atmos-btn atmos-btn--sm"
+            (click)="toggleImagePicker()"
+            [disabled]="state.isRendering()"
+            skyTooltip="Copied!" #ttCopyImage="skyTooltip" manual placement="bottom" [closeDelay]="1000"
+            data-step="6" data-position="bottom-left-aligned">
+            <mat-icon [class.spin]="state.isRendering() === 2">
+              {{ state.isRendering() === 2 ? 'cached' : 'file_copy' }}
+            </mat-icon>
+            <span>Share</span>
+          </button>
+          <button type="button" class="atmos-btn atmos-btn--sm"
+            (click)="copyLink(ttCopyLink)"
+            [disabled]="state.isRendering()"
+            skyTooltip="Copied!" #ttCopyLink="skyTooltip" manual placement="top" [closeDelay]="1000"
+            data-step="5" data-position="bottom-left-aligned">
+            <mat-icon [class.spin]="state.isRendering() === 1">
+              {{ state.isRendering() === 1 ? 'cached' : 'link' }}
+            </mat-icon>
+          </button>
+        </div>
+
+        @if (state.selectionHasUnavailable() || (!requesting && state.selectionHasHidden())) {
+          <span class="atmos-warn-badge" (click)="scrollToWarning()">
+            <mat-icon>priority_high</mat-icon>
+          </span>
+        }
+
+        @if (state.showingImagePicker()) {
+          <div class="atmos-image-picker">
+            @if (!requesting) {
+              <div class="atmos-btn-group btn-group-img">
+                <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('closet')" data-step="7" data-position="top-left-aligned">
+                  <mat-icon>image</mat-icon>
+                  <span>Share closet</span>
+                </button>
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('closet', ttCopyImage)">
+                  <mat-icon>file_copy</mat-icon>
+                </button>
+              </div>
+            }
+            <div class="atmos-btn-group btn-group-img">
+              <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('request')" data-step="8" data-position="top-left-aligned">
+                <mat-icon>background_grid_small</mat-icon>
+                <span>Share request</span>
+              </button>
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('request', ttCopyImage)">
+                <mat-icon>file_copy</mat-icon>
+              </button>
+            </div>
+            <div class="atmos-btn-group btn-group-img">
+              <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('square')" data-step="9" data-position="top-left-aligned">
+                <mat-icon>grid_on</mat-icon>
+                <span>Share one fit</span>
+              </button>
+              <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('square', ttCopyImage)">
+                <mat-icon>file_copy</mat-icon>
+              </button>
+            </div>
+            @if (!requesting) {
+              <div class="atmos-btn-group btn-group-img">
+                <button type="button" class="atmos-btn atmos-btn--sm btn-copy-img" (click)="shareImage('template')" data-step="10" data-position="top-left-aligned">
+                  <mat-icon>image</mat-icon>
+                  <span>Share template</span>
+                </button>
+                <button type="button" class="atmos-btn atmos-btn--sm" (click)="copyImage('template', ttCopyImage)">
+                  <mat-icon>file_copy</mat-icon>
+                </button>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Closet grid -->
+    <app-closet-grid
+      [requesting]="requesting"
+      (itemToggled)="toggleItem($event)"
+      (dyeClicked)="showDyePicker($event.item, $event.event)" />
+  </div>
+
+  <!-- Dye picker overlay -->
+  <app-closet-dye-picker (closed)="closeDyePicker()" />
+</div>

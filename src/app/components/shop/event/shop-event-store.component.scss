@@ -1,0 +1,51 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+}
+
+.atmos-shop-event__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.atmos-shop-event__section-header {
+  padding: var(--atmos-pad-compact) var(--atmos-pad) 0.5rem;
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
+
+.atmos-shop-event__section-body {
+  padding-top: 12px;
+  gap: var(--atmos-gap);
+
+  // Left align the prop-shop tree instead of letting it centre in the card.
+  > app-spirit-tree {
+    align-self: flex-start;
+  }
+}
+
+.atmos-shop-event__igc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--atmos-gap);
+}
+
+.atmos-shop-event__igc {
+  flex: 0 1 auto;
+  min-width: 240px;
+}
+
+.atmos-shop-event__igc-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-shop-event__iap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--atmos-gap);
+}

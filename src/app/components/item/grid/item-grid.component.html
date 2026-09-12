@@ -1,0 +1,20 @@
+<app-item-quick-actions/>
+
+<header class="atmos-page__header">
+  <h1 class="atmos-page__title">Items</h1>
+</header>
+
+<app-item-grid-layout [items]="items" [itemTemplate]="iconTpl"/>
+<ng-template #iconTpl let-item>
+  <a class="atmos-item-grid__item atmos-tile"
+     [class.is-locked]="!item.unlocked"
+     [routerLink]="['/item', item.guid]"
+     [title]="item.name">
+    <app-icon
+      [src]="item.icon || '/assets/icons/question.webp'"
+      width="64px" height="64px"
+      [lazy]="true" [draggable]="false">
+    </app-icon>
+    @if (item.unlocked) { <span class="atmos-tile__dot"></span> }
+  </a>
+</ng-template>

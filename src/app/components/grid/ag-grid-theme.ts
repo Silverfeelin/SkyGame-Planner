@@ -1,29 +1,8 @@
 
 import { themeQuartz } from 'ag-grid-community';
 
-/** Gets an AG Grid theme styled to the current website theme. */
+/** Gets an AG Grid theme styled to match the site's card style. */
 export const getAgTheme = (): ReturnType<typeof themeQuartz.withParams> => {
-  return createTheme();
-}
-
-const createTheme = (): ReturnType<typeof themeQuartz.withParams> => {
-  const docStyles = getComputedStyle(document.documentElement);
-  const bodyStyles = getComputedStyle(document.body);
-  return themeQuartz.withParams({
-    wrapperBorder: false,
-    fontFamily: bodyStyles.getPropertyValue('font-family'),
-    foregroundColor: docStyles.getPropertyValue('--color'),
-    backgroundColor: docStyles.getPropertyValue('--color-background'),
-    accentColor: docStyles.getPropertyValue('--color-link'),
-    headerFontWeight: 'bold',
-    headerBackgroundColor: docStyles.getPropertyValue('--color-card-header-background'),
-    browserColorScheme: "dark",
-    headerFontSize: 16
-  });
-}
-
-/** AG Grid theme matching the atmospheric (redesign) card style. */
-export const getAtmosAgTheme = (): ReturnType<typeof themeQuartz.withParams> => {
   const docStyles = getComputedStyle(document.documentElement);
   const bodyStyles = getComputedStyle(document.body);
   const v = (name: string) => docStyles.getPropertyValue(name).trim();

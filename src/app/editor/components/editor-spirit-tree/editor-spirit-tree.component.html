@@ -23,13 +23,13 @@
 
 <div class="editor-grid">
   @if (mode === 'node') {
-    <app-atmos-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
+    <app-spirit-tree #refTree class="editor-grid-tree" [tree]="tree" [enableControls]="false"
       (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)" (pointerup)="onTreePointerUp($event)"
       [forceNodeAction]="'emit'" (nodeClicked)="onNodeClicked($event)" (touchstart)="onTreeTouchStart($event)"
       [opaqueNodes]="true" [highlight]="false" [showNodeTooltips]="false"
       [highlightNode]="selectedTreeNode.node.guid"
       [editSlots]="treeEditSlots" (editSlotClicked)="onEditSlotClicked($event)"
-    ></app-atmos-spirit-tree>
+    ></app-spirit-tree>
   } @else {
     <div class="editor-grid-tree tier-grid"
       (pointerdown)="onTreePointerDown($event)" (pointermove)="onTreePointerMove($event)"
@@ -48,9 +48,9 @@
               @for (col of cols; track col) {
                 <div class="tier__cell" [class.is-selected]="isCellSelected(tier.tierIndex, row.rowIndex, col)">
                   @if (row.nodes[col]; as n) {
-                    <app-atmos-node [node]="n" action="emit" [opaque]="true" [showTooltips]="false"
+                    <app-node [node]="n" action="emit" [opaque]="true" [showTooltips]="false"
                       [drawConnectors]="false" [highlight]="isCellSelected(tier.tierIndex, row.rowIndex, col)"
-                      (nodeClicked)="onTierCellClicked(tier.tierIndex, row.rowIndex, col)"></app-atmos-node>
+                      (nodeClicked)="onTierCellClicked(tier.tierIndex, row.rowIndex, col)"></app-node>
                   } @else {
                     <button type="button" class="tier__empty" aria-label="Add node"
                       (click)="onTierCellClicked(tier.tierIndex, row.rowIndex, col)">
@@ -167,10 +167,10 @@
 </div>
 
 <div>
-  <app-atmos-tabs>
+  <app-tabs>
     <!-- Items -->
-    <ng-template [atmosTab]="'Items'">
-      <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
+    <ng-template [appTab]="'Items'">
+      <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
       <ng-template #pickTpl let-item>
         <div class="picker-item atmos-tile atmos-tile--selectable"
           [class.is-selected]="!!itemMap[item.guid]"
@@ -183,7 +183,7 @@
     </ng-template>
 
     <!-- Special items -->
-    <ng-template [atmosTab]="'Special items'">
+    <ng-template [appTab]="'Special items'">
       <div class="icon-row">
         @for (specialItem of specialItems; track $index) {
           <div class="item-icon">
@@ -195,7 +195,7 @@
       </div>
     </ng-template>
 
-    <ng-template [atmosTab]="'Custom items'">
+    <ng-template [appTab]="'Custom items'">
       <div class="custom-item-actions">
         <button type="button" class="atmos-btn" (click)="addCustomItem()">Add</button>
         @if (selectedCustomItem) {
@@ -219,7 +219,7 @@
     </ng-template>
 
     <!-- Spirit trees -->
-    <ng-template [atmosTab]="'Spirit trees'">
+    <ng-template [appTab]="'Spirit trees'">
       <select #selSpirit (input)="onSpiritInput($event)">
         @for (spirit of spirits; track $index) {
           <option [value]="spirit.guid">{{ spirit.name }}</option>
@@ -232,16 +232,16 @@
             <div class="form-stack form-stack--compact">
               <button type="button" class="atmos-btn" (click)="promptCopySpiritTree(spiritTree, false)">Copy as new tree</button>
               <button type="button" class="atmos-btn" (click)="promptCopySpiritTree(spiritTree, true)">Modify this tree</button>
-              <app-atmos-spirit-tree [tree]="spiritTree" [enableControls]="false"
+              <app-spirit-tree [tree]="spiritTree" [enableControls]="false"
                 [forceNodeAction]="'emit'" (nodeClicked)="onSpiritNodeClicked($event)"
                 [opaqueNodes]="true" [showNodeTooltips]="true">
-              </app-atmos-spirit-tree>
+              </app-spirit-tree>
             </div>
           }
         </div>
       }
     </ng-template>
-  </app-atmos-tabs>
+  </app-tabs>
 </div>
 
 @if (isCustomEditorVisible) {

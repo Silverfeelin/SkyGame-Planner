@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inp
 import { SubscriptionLike } from 'rxjs';
 import { DebugService } from 'src/app/services/debug.service';
 import { EventService } from 'src/app/services/event.service';
-import { ItemSubIconsComponent } from './item-subicons/item-subicons.component';
+import { ItemSubIconsComponent } from './subicons/item-subicons.component';
 import { IconComponent } from '../../icon/icon.component';
 import { IItem, INode, IIAP, IItemListNode, ItemSize, ItemSubicon } from 'skygame-data';
 

@@ -10,9 +10,9 @@ import { IStorageEvent, StorageEventType } from 'src/app/services/storage/storag
 import { MatIcon } from '@angular/material/icon';
 import { canActivateIcons } from '@app/guards/can-activate-icons';
 import { OverlayComponent } from "../overlay/overlay.component";
-import { AtmosphericTopbarComponent } from '@app/redesign/shell/atmospheric-topbar.component';
-import { AtmosphericSidebarComponent } from '@app/redesign/shell/atmospheric-sidebar.component';
-import { AtmosphericFooterComponent } from '@app/redesign/shell/atmospheric-footer.component';
+import { TopbarComponent } from '@app/components/layout/shell/topbar.component';
+import { SidebarComponent } from '@app/components/layout/shell/sidebar.component';
+import { FooterComponent } from '@app/components/layout/shell/footer.component';
 
 @Component({
     selector: 'app-main-layout',
@@ -20,7 +20,7 @@ import { AtmosphericFooterComponent } from '@app/redesign/shell/atmospheric-foot
     styleUrl: './main-layout.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
     host: { class: 'atmospheric' },
-    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, AtmosphericTopbarComponent, AtmosphericSidebarComponent, AtmosphericFooterComponent]
+    imports: [MatIcon, RouterOutlet, RouterLink, OverlayComponent, TopbarComponent, SidebarComponent, FooterComponent]
 })
 export class MainLayoutComponent implements OnDestroy {
 

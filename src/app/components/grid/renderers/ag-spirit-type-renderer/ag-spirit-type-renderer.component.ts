@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { SpiritType } from 'skygame-data';
-import { SpiritTypeIconComponent } from '../../../spirit-type-icon/spirit-type-icon.component';
+import { SpiritTypeIconComponent } from '../../../spirit/type-icon/spirit-type-icon.component';
 
 @Component({
   selector: 'app-ag-spirit-type-renderer',

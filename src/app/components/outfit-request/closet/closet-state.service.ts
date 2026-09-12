@@ -17,7 +17,7 @@ export interface ISelection {
 }
 
 /** Signal-based store for the closet/request pages.
- *  Provided by the host component (AtmosClosetComponent / AtmosClosetRequestComponent)
+ *  Provided by the host component (ClosetComponent / ClosetRequestComponent)
  *  so each page gets its own isolated instance. */
 @Injectable()
 export class ClosetStateService {

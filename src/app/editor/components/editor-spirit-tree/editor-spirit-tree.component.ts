@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, inject, isDevMode, ViewChild } from '@angular/core';
-import { AtmosSpiritTreeComponent, AtmosSpiritTreeNodeClickEvent, AtmosTreeEditSlot, AtmosTreeEditSlotKind } from "@app/redesign/spirit/spirit-tree/atmos-spirit-tree.component";
-import { AtmosNodePosition } from '@app/redesign/spirit/node/atmos-node.component';
+import { SpiritTreeComponent, SpiritTreeNodeClickEvent, TreeEditSlot, TreeEditSlotKind } from "@app/components/spirit/spirit-tree/spirit-tree.component";
+import { NodePosition } from '@app/components/spirit/node/node.component';
 import { DataService } from '@app/services/data.service';
 import { nanoid } from 'nanoid';
-import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
-import { ItemIconComponent } from "../../../components/items/item-icon/item-icon.component";
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemIconComponent } from "../../../components/item/icon/item-icon.component";
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { NodeHelper } from '@app/helpers/node-helper';
 import { CostHelper } from '@app/helpers/cost-helper';
@@ -14,8 +14,8 @@ import { SpiritTreeRenderService } from '@app/services/spirit-tree-render.servic
 import { OverlayComponent } from "../../../components/layout/overlay/overlay.component";
 import { EditorItemComponent } from '../editor-item/editor-item.component';
 import { StorageService } from '@app/services/storage.service';
-import { AtmosTabsComponent, AtmosTabDirective } from '@app/redesign/shared/atmos-shared-widgets';
-import { AtmosNodeComponent } from '@app/redesign/spirit/node/atmos-node.component';
+import { TabsComponent, TabDirective } from '@app/components/shared/shared-widgets';
+import { NodeComponent } from '@app/components/spirit/node/node.component';
 import { TreeHelper } from '@app/helpers/tree-helper';
 import { INode, IItem, ICost, ISpiritTree, ISpiritTreeTier, SpiritTreeTierRow, ISpirit, ItemType, SpiritType } from 'skygame-data';
 
@@ -33,9 +33,9 @@ type SpecialItem = { item: IItem; cost?: ICost; }
 @Component({
     selector: 'app-editor-spirit-tree',
     imports: [
-    TooltipDirective, MatIcon, AtmosSpiritTreeComponent, AtmosItemGridLayoutComponent,
+    TooltipDirective, MatIcon, SpiritTreeComponent, ItemGridLayoutComponent,
     ItemIconComponent, OverlayComponent,
-    EditorItemComponent, AtmosTabsComponent, AtmosTabDirective, AtmosNodeComponent
+    EditorItemComponent, TabsComponent, TabDirective, NodeComponent
 ],
     templateUrl: './editor-spirit-tree.component.html',
     styleUrl: './editor-spirit-tree.component.scss',
@@ -99,7 +99,7 @@ export class SpiritTreeEditorComponent {
   selectedItem!: IItem;
 
   /** In-tree add/move/remove affordances around the selected node. */
-  treeEditSlots: Array<AtmosTreeEditSlot> = [];
+  treeEditSlots: Array<TreeEditSlot> = [];
 
   costTypeId: string = 'c';
   costValue: number = 0;
@@ -258,7 +258,7 @@ export class SpiritTreeEditorComponent {
     this.reloadTree();
   }
 
-  onEditSlotClicked(slot: AtmosTreeEditSlot): void {
+  onEditSlotClicked(slot: TreeEditSlot): void {
     if (slot.direction === 'below') {
       slot.kind === 'unlink' ? this.detachSelectedNode() : this.addRootNode();
       return;
@@ -295,7 +295,7 @@ export class SpiritTreeEditorComponent {
     const current = this.mode === 'node' ? this.selectedTreeNode : undefined;
     if (!current) { this.treeEditSlots = []; return; }
 
-    const positions: ReadonlyArray<AtmosNodePosition> = ['left', 'center', 'right'];
+    const positions: ReadonlyArray<NodePosition> = ['left', 'center', 'right'];
     const targets: Array<{ direction: 'nw' | 'n' | 'ne'; x: number; y: number }> = [
       { direction: 'n', x: current.x, y: current.y + 1 }
     ];
@@ -306,9 +306,9 @@ export class SpiritTreeEditorComponent {
       targets.push({ direction: 'ne', x: 2, y: current.y });
     }
 
-    const slots: Array<AtmosTreeEditSlot> = targets.map(t => {
+    const slots: Array<TreeEditSlot> = targets.map(t => {
       const target = this.nodeTable[t.x]?.[t.y];
-      const kind: AtmosTreeEditSlotKind = !target ? 'add'
+      const kind: TreeEditSlotKind = !target ? 'add'
         : target.node.prev === current.node ? 'unlink'
         : 'link';
       return { position: positions[t.x], level: t.y, kind, direction: t.direction };
@@ -324,7 +324,7 @@ export class SpiritTreeEditorComponent {
     this.treeEditSlots = slots;
   }
 
-  onNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
+  onNodeClicked(event: SpiritTreeNodeClickEvent) {
     const treeNode = this.nodeMap[event.node.guid];
     this.selectTreeNode(treeNode);
   }
@@ -574,7 +574,7 @@ export class SpiritTreeEditorComponent {
     this.spiritTrees = Array.from(trees).reverse();
   }
 
-  onSpiritNodeClicked(event: AtmosSpiritTreeNodeClickEvent) {
+  onSpiritNodeClicked(event: SpiritTreeNodeClickEvent) {
     if (!event.node.item) { return; }
     this.onItemClicked({ item: event.node.item, event: event.event });
     this.setCostInputs(event.node);
@@ -872,7 +872,7 @@ export class SpiritTreeEditorComponent {
   draggingPreview?: HTMLImageElement;
   onTreePointerDown(event: PointerEvent): void {
     const target = event.target as HTMLElement;
-    const nodeEl = target.closest('app-atmos-node') as HTMLElement;
+    const nodeEl = target.closest('app-node') as HTMLElement;
     if (!nodeEl) { return; }
 
     this.draggingNode = nodeEl;
@@ -960,7 +960,7 @@ export class SpiritTreeEditorComponent {
 
   onTreeTouchStart(event: TouchEvent): void {
     const target = event.target as HTMLElement;
-    if (target?.closest('app-atmos-node')) { event.preventDefault(); }
+    if (target?.closest('app-node')) { event.preventDefault(); }
   }
 
   // #endregion

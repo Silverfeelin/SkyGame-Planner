@@ -4,8 +4,8 @@
  */
 
 import { Component, inject } from '@angular/core';
-import { AtmosItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/redesign/item/grid/atmos-item-grid-layout.component';
-import { ItemIconComponent } from '@app/components/items/item-icon/item-icon.component';
+import { ItemGridLayoutComponent, ItemClickEvent, ITEM_GRID_SUBICONS, ITEM_GRID_TYPES } from '@app/components/item/grid/item-grid-layout.component';
+import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 import { DataService } from '@app/services/data.service';
 import { IItem } from 'skygame-data';
@@ -37,7 +37,7 @@ const fileNames = [
     selector: 'app-editor-dyes',
     templateUrl: './editor-dyes.component.html',
     styleUrl: './editor-dyes.component.scss',
-    imports: [AtmosItemGridLayoutComponent, ItemIconComponent, TooltipDirective]
+    imports: [ItemGridLayoutComponent, ItemIconComponent, TooltipDirective]
 })
 export class EditorDyesComponent {
   readonly _dataService = inject(DataService);

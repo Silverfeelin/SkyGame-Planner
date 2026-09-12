@@ -1,0 +1,182 @@
+<app-item-quick-actions/>
+
+@if (showTipUnlock()) {
+  <p class="atmos-paragraph atmos-page__hint">
+    Tip: Did you mean to {{ item()?.unlocked ? 'lock' : 'unlock' }} the item?
+    Go <a (click)="goBack()" class="atmos-text-link">back</a> and click on the price below the item!
+  </p>
+}
+
+@if (item(); as itm) {
+  <header class="atmos-page__header">
+    <h1 class="atmos-page__title">{{ itm.name }}</h1>
+  </header>
+
+  <section class="atmos-card atmos-item-detail__summary">
+    <div class="atmos-summary__grid">
+      <div class="atmos-card__body atmos-summary__main">
+        <div class="atmos-facts">
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Type</div>
+            <div class="atmos-fact__value">
+              @if (typeIcon(); as icon) {
+                <mat-icon class="atmos-fact__icon" [svgIcon]="icon"></mat-icon>
+              } @else {
+                <mat-icon class="atmos-fact__icon">category</mat-icon>
+              }
+              <span class="atmos-fact__text">{{ itm.type | itemType }}</span>
+              @if (itm.level) { <span class="atmos-fact__meta">Level {{ itm.level }}</span> }
+            </div>
+          </div>
+
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Status</div>
+            <div class="atmos-fact__value">
+              <mat-icon class="atmos-fact__icon">{{ unlocked() ? 'check_circle' : 'radio_button_unchecked' }}</mat-icon>
+              <span class="atmos-fact__text">{{ unlocked() ? 'Owned' : 'Not owned' }}</span>
+            </div>
+          </div>
+
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Favourite</div>
+            <div class="atmos-fact__value">
+              <mat-icon class="atmos-fact__icon" [class.is-favourited]="favourited()">{{ favourited() ? 'star' : 'star_outline' }}</mat-icon>
+              <a class="atmos-fact__text atmos-text-link" (click)="toggleFavourite()">{{ favourited() ? 'Favourited' : 'Not favourited' }}</a>
+            </div>
+          </div>
+
+          @if (season(); as s) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Season</div>
+              <a class="atmos-fact__value" [routerLink]="['/season', s.guid]">
+                @if (s.iconUrl) {
+                  <img class="atmos-item-detail__season-icon" [src]="s.iconUrl" alt="" />
+                } @else {
+                  <mat-icon class="atmos-fact__icon">ac_unit</mat-icon>
+                }
+                <span class="atmos-fact__text atmos-text-link">{{ s.name }}</span>
+              </a>
+            </div>
+          }
+
+          @if (eventInstance(); as ev) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Event</div>
+              <a class="atmos-fact__value" [routerLink]="['/event-instance', ev.guid]"
+                 [queryParams]="{ highlightItem: itm.guid }">
+                <mat-icon class="atmos-fact__icon">event</mat-icon>
+                <span class="atmos-fact__text atmos-text-link">{{ ev.name ?? ev.event.name }}</span>
+              </a>
+            </div>
+          }
+
+          @if (iap(); as purchase) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">In-app purchase</div>
+              <div class="atmos-fact__value">
+                <mat-icon class="atmos-fact__icon">shopping_cart</mat-icon>
+                <span class="atmos-fact__text">{{ purchase.name || 'Purchasable' }}</span>
+                @if (purchase.price) { <span class="atmos-fact__meta">${{ purchase.price }}</span> }
+              </div>
+            </div>
+          }
+
+          @if (group(); as g) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Group</div>
+              <div class="atmos-fact__value atmos-fact__value--wrap">
+                <mat-icon class="atmos-fact__icon">{{ g.icon }}</mat-icon>
+                <span class="atmos-fact__text">{{ g.label }}</span>
+                <span class="atmos-fact__meta">{{ g.note }}</span>
+              </div>
+            </div>
+          }
+
+          @if (itm.dye) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Dyes</div>
+              <div class="atmos-fact__value atmos-fact__value--wrap">
+                <mat-icon svgIcon="dye"></mat-icon>
+                @if (itm.dye.previewUrl || itm.dye.infoUrl) {
+                  <a class="atmos-fact__text atmos-text-link" (click)="dyePreviewMode.set(1)">{{ dyeSlots() }}</a>
+                } @else {
+                  <span class="atmos-fact__text">{{ dyeSlots() }}</span>
+                }
+                @if (dyeCost(); as cost) { <span class="atmos-fact__meta">{{ cost }}</span> }
+              </div>
+            </div>
+          }
+
+          @if (debugVisible) {
+            <div class="atmos-fact atmos-fact--wide">
+              <div class="atmos-fact__label">Debug</div>
+              <div class="atmos-fact__value atmos-fact__value--wrap">
+                <mat-icon class="atmos-fact__icon">code</mat-icon>
+                <span>
+                  ID: <code (click)="copy(itm.id)" class="atmos-code atmos-item-detail__code">{{ itm.id }}</code>
+                  GUID: <code (click)="copy(itm.guid)" class="atmos-code atmos-item-detail__code">{{ itm.guid }}</code>
+                  @if (itm.order) {
+                    Order: <code (click)="copy(itm.order)" class="atmos-code atmos-item-detail__code">{{ itm.order }}</code>
+                  }
+                </span>
+              </div>
+            </div>
+          }
+        </div>
+
+        <div class="atmos-item-detail__actions">
+          @if (navSource(); as src) {
+            <a class="atmos-btn atmos-btn--sm" [routerLink]="src.route" [queryParams]="src.extras?.queryParams">
+              <mat-icon>search</mat-icon> Find item
+            </a>
+          }
+          @if (navList(); as list) {
+            <a class="atmos-btn atmos-btn--sm" [routerLink]="list.route" [queryParams]="list.extras?.queryParams">
+              <mat-icon>list</mat-icon> Show in item list
+            </a>
+          }
+          @if (itm._wiki?.href) {
+            <app-wiki-link [wiki]="itm._wiki" aClass="atmos-btn atmos-btn--sm"></app-wiki-link>
+          }
+          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/editor/item', itm.guid]">
+            <mat-icon>edit</mat-icon> Suggest changes
+          </a>
+        </div>
+      </div>
+
+      <div class="atmos-summary__art atmos-item-detail__art">
+        @if (itm.previewUrl) {
+          <img [src]="itm.previewUrl" [alt]="itm.name" loading="eager"/>
+          <app-item-icon class="atmos-item-detail__art-icon" [item]="itm" [opaque]="true"/>
+        } @else {
+          <app-item-icon [item]="itm" size="large" [opaque]="true"/>
+        }
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="atmos-card">
+    <div class="atmos-card__body">
+      Item not found. <a class="atmos-text-link" [routerLink]="['/item/grid']">Back to grid</a>
+    </div>
+  </section>
+}
+
+@if (dyePreviewMode() > 0) {
+  @let itm = item()!;
+  <app-overlay class="atmos-item-detail__dye-overlay" (close)="dyePreviewMode.set(0)">
+    @let src = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
+    <img [src]="src" (dblclick)="openSrc($event)"/>
+    @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
+        (click)="preventDefault($event); dyePreviewMode.set(2)">
+        <mat-icon>palette</mat-icon> Show dyeable parts
+      </button>
+    } @else if (dyePreviewMode() === 2) {
+      <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
+        (click)="preventDefault($event); dyePreviewMode.set(1)">
+        <mat-icon>image</mat-icon> Show preview
+      </button>
+    }
+  </app-overlay>
+}

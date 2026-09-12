@@ -4,8 +4,8 @@
  * Shared styling for a single closet item tile.
  *
  * Lives in a partial because the tile is rendered by two components with
- * separate encapsulated stylesheets — `atmos-closet-grid` (the main grid) and
- * `atmos-closet-ongoing` (the TS / RS / event rows on the request page).
+ * separate encapsulated stylesheets — `app-closet-grid` (the main grid) and
+ * `app-closet-ongoing` (the TS / RS / event rows on the request page).
  *
  *   @use '../closet-item' as closet-item;
  *   :host { @include closet-item.tokens; }

@@ -1,6 +1,6 @@
 /* Atmospheric (redesign) global styles. */
 /* Redesign responsive breakpoint: max-width 1023px = tablet/mobile, min-width 1024px = desktop.
-   Used by atmospheric-shell (sidebar ↔ topbar) and atmos-item-grid (rail ↔ top-bar). */
+   Used by atmospheric-shell (sidebar ↔ topbar) and app-item-grid (rail ↔ top-bar). */
 /* Base card surface — frosted-glass panel used as the container for
    feature cards, list cards, and any other atmospheric card layout. */
 :root {
@@ -576,7 +576,7 @@ a.atmos-link:focus-visible {
 }
 
 /* Reusable quick-action link row below a page header. Wrap it in
-   `atmos-quick-actions`, which collapses long rows behind a single pill on
+   `app-quick-actions`, which collapses long rows behind a single pill on
    narrow windows — five wrapped rows otherwise eat the top of the screen. */
 .atmos-page__quick-actions {
   display: flex;
@@ -1023,7 +1023,7 @@ a.atmos-link:focus-visible {
   min-height: 0;
 }
 
-// 13. Spirit-tree row — flex container for one or more <app-atmos-spirit-tree>.
+// 13. Spirit-tree row — flex container for one or more <app-spirit-tree>.
 //     Trees are bottom-aligned so they share a baseline and grow upward.
 .atmos-spirit-trees {
   display: flex;

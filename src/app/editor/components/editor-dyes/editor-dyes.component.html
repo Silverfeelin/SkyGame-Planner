@@ -4,7 +4,7 @@
 
 <div class="dye-layout">
   <div class="picker">
-    <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
+    <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
     <ng-template #pickTpl let-item>
       <div class="picker-item atmos-tile" (click)="onItemClicked({ event: $event, item })">
         <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
