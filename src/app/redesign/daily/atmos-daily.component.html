@@ -50,6 +50,15 @@
       [checkedIn]="checkedIn()"
       (checkinToggle)="onCheckin($event)"></app-atmos-daily-card>
   }
+
+  @for (instance of activeEvents; track instance.guid) {
+    <app-atmos-event-card
+      [event]="instance.event"
+      [instance]="instance"
+      [options]="{ show: ['img', 'date', 'checkin'] }"
+      [checkedIn]="isEventCheckedIn(instance)"
+      (checkinToggle)="onEventCheckin(instance, $event)"></app-atmos-event-card>
+  }
 </section>
 
 <!-- Today — fixed reward -->

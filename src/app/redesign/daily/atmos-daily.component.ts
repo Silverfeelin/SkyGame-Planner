@@ -2,16 +2,22 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, inject
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DateTime } from 'luxon';
-import { IRealm } from 'skygame-data';
+import { IEventInstance } from 'skygame-data';
+import { filter } from 'rxjs';
+import { DailyHelper } from '@app/helpers/daily-helper';
 import { DateHelper } from '@app/helpers/date-helper';
+import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { DataService } from '@app/services/data.service';
+import { EventService } from '@app/services/event.service';
 import { StorageService } from '@app/services/storage.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
+import { EventCheckinService } from '@app/services/event-checkin.service';
 import { DAILY_TASKS, IDailyTask } from '@app/components/daily/daily-tasks';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import {
   AtmosDailyCardComponent,
   AtmosDailyTaskComponent,
+  AtmosEventCardComponent,
   AtmosSeasonCardComponent
 } from '@app/redesign/shared/atmos-shared-widgets';
 import { AtmosDailyQuickActionsComponent } from './quick-actions/atmos-daily-quick-actions.component';
@@ -35,17 +41,6 @@ function getWeeklyAnchor(today: DateTime): string {
   return sunday.toFormat('yyyy-MM-dd');
 }
 
-/** Day-of-week realm rotation — pulled out of the legacy DailyCardComponent so the
- *  atmos card stays pure (per Phase 0 contract). */
-function resolveDailyRealm(dataService: DataService): IRealm | undefined {
-  const datePrairie = DateTime.fromFormat('2024-09-30', 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
-  const now = DateTime.now();
-  const days = Math.floor(now.diff(datePrairie, 'days').days);
-  const realmGuids = ['tuaosLljJS', 'mz64Wq0_df', 'VtkTo1WWuD', 'rAjzHXfPpb', 'y-6n1F5E77'];
-  const guid = realmGuids[((days % realmGuids.length) + realmGuids.length) % realmGuids.length];
-  return dataService.guidMap.get(guid) as IRealm | undefined;
-}
-
 @Component({
   selector: 'app-atmos-daily',
   templateUrl: './atmos-daily.component.html',
@@ -57,6 +52,7 @@ function resolveDailyRealm(dataService: DataService): IRealm | undefined {
     DateTimePipe,
     AtmosDailyCardComponent,
     AtmosDailyTaskComponent,
+    AtmosEventCardComponent,
     AtmosSeasonCardComponent,
     AtmosDailyQuickActionsComponent
   ]
@@ -65,9 +61,12 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
   private readonly _dailyCheckinService = inject(DailyCheckinService);
+  private readonly _eventCheckinService = inject(EventCheckinService);
+  private readonly _eventService = inject(EventService);
 
   readonly activeSeason = DateHelper.getActive(this._dataService.seasonConfig.items);
-  readonly dailyRealm = resolveDailyRealm(this._dataService);
+  readonly dailyRealm = DailyHelper.getDailyRealm(this._dataService.guidMap);
+  readonly activeEvents = this._eventCheckinService.getActiveInstances();
 
   readonly tasks = DAILY_TASKS;
   readonly dailyFixed = this.tasks.filter(t => t.cadence === 'daily');
@@ -78,6 +77,8 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
   readonly state = signal<IDailyTaskState>(createEmptyState('', ''));
   readonly now = signal<DateTime>(DateTime.now());
   readonly checkedIn = signal<boolean>(false);
+  /** Event guid -> checked in today. */
+  readonly eventCheckedIn = signal<ReadonlyMap<string, boolean>>(new Map());
 
   readonly checkedDaily = computed(() => new Set(this.state().dailyChecked));
   readonly checkedWeekly = computed(() => new Set(this.state().weeklyChecked));
@@ -108,10 +109,22 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
   });
 
   private _tickInterval?: number;
+  private readonly _subs = new SubscriptionBag();
+
+  constructor() {
+    this._subs.add(this._eventService.storageChanged
+      .pipe(filter(e => e.key?.startsWith(EventCheckinService.keyPrefix) === true))
+      .subscribe(() => this._updateEventCheckins()));
+
+    this._subs.add(this._eventService.storageChanged
+      .pipe(filter(e => e.key === DailyCheckinService.key))
+      .subscribe(() => this._updateCheckin()));
+  }
 
   ngOnInit(): void {
     this._loadState();
     this._updateCheckin();
+    this._updateEventCheckins();
 
     this._tickInterval = window.setInterval(() => {
       this.now.set(DateTime.now());
@@ -121,6 +134,7 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this._tickInterval) { window.clearInterval(this._tickInterval); }
+    this._subs.unsubscribe();
   }
 
   toggleDaily(task: IDailyTask): void {
@@ -158,8 +172,22 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
     this.checkedIn.set(this._dailyCheckinService.toggle(evt, this.activeSeason));
   }
 
+  onEventCheckin(instance: IEventInstance, evt: MouseEvent): void {
+    this._eventCheckinService.toggle(evt, instance);
+    this._updateEventCheckins();
+  }
+
+  isEventCheckedIn(instance: IEventInstance): boolean {
+    return this.eventCheckedIn().get(instance.event.guid) ?? false;
+  }
+
   private _updateCheckin(): void {
     this.checkedIn.set(this._dailyCheckinService.isCheckedIn());
+  }
+
+  private _updateEventCheckins(): void {
+    this.eventCheckedIn.set(new Map(this.activeEvents.map(i =>
+      [i.event.guid, this._eventCheckinService.isCheckedIn(i.event.guid)])));
   }
 
   private _loadState(): void {
@@ -198,6 +226,7 @@ export class AtmosDailyComponent implements OnInit, OnDestroy {
     if (s.dailyDate !== todayKey || s.weeklyDate < weekKey) {
       this._loadState();
       this._updateCheckin();
+      this._updateEventCheckins();
     }
   }
 

@@ -1,17 +1,17 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DateTime } from 'luxon';
 import { filter } from 'rxjs';
 import { CostHelper } from '@app/helpers/cost-helper';
+import { DailyHelper } from '@app/helpers/daily-helper';
 import { DateHelper } from '@app/helpers/date-helper';
 import { SubscriptionBag } from '@app/helpers/subscription-bag';
 import { TreeHelper } from '@app/helpers/tree-helper';
-import { CurrencyService } from '@app/services/currency.service';
 import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
+import { EventCheckinService } from '@app/services/event-checkin.service';
 import { StorageService } from '@app/services/storage.service';
-import { IEventInstance, ISeason, ISpecialVisit, ISpiritTree, ITravelingSpirit } from 'skygame-data';
+import { IEventInstance, IRealm, ISeason, ISpecialVisit, ISpiritTree, ITravelingSpirit } from 'skygame-data';
 import { AtmosClockComponent } from './atmos-clock.component';
 import { AtmosSearchBarComponent } from './atmos-search-bar.component';
 import {
@@ -56,9 +56,9 @@ interface IEventCard {
 export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
-  private readonly _currencyService = inject(CurrencyService);
   private readonly _eventService = inject(EventService);
   private readonly _dailyCheckinService = inject(DailyCheckinService);
+  private readonly _eventCheckinService = inject(EventCheckinService);
 
   readonly season = signal<ISeason | undefined>(undefined);
   readonly ts = signal<ITravelingSpirit | undefined>(undefined);
@@ -68,6 +68,18 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
   readonly favouriteCount = signal(0);
   readonly eventCards = signal<ReadonlyArray<IEventCard>>([]);
   readonly checkedIn = signal(false);
+  readonly dailyRealm = signal<IRealm | undefined>(undefined);
+
+  readonly dailyLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
+    const links: Array<IFeatureLink> = [
+      { icon: 'list_alt', label: 'Daily tracker', link: '/daily' }
+    ];
+    const realm = this.dailyRealm();
+    if (realm) { links.push({ icon: 'landscape', label: realm.name, link: `/realm/${realm.guid}` }); }
+    links.push(DISCORD_DAILY_QUEST_LINK);
+    links.push(THATSKY_DAILY_QUEST_LINK);
+    return links;
+  });
 
   readonly seasonKicker = computed(() => {
     const s = this.season();
@@ -148,7 +160,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
 
   constructor() {
     this._subs.add(this._eventService.storageChanged
-      .pipe(filter(e => e.key?.startsWith('event.checkin.') == true))
+      .pipe(filter(e => e.key?.startsWith(EventCheckinService.keyPrefix) === true))
       .subscribe(() => this.refreshEventCheckins()));
 
     this._subs.add(this._eventService.storageChanged
@@ -172,6 +184,7 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
     const seasonDates = DateHelper.groupByPeriod(this._dataService.seasonConfig.items);
     this.season.set(seasonDates.active?.at(-1));
     this.checkedIn.set(this._dailyCheckinService.isCheckedIn());
+    this.dailyRealm.set(DailyHelper.getDailyRealm(this._dataService.guidMap));
 
     const tsDates = DateHelper.groupByPeriod(this._dataService.travelingSpiritConfig.items);
     const activeTs = tsDates.active?.at(-1);
@@ -194,26 +207,16 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
     this._subs.unsubscribe();
   }
 
+  onDailyCheckinToggle(evt: MouseEvent): void {
+    this.checkedIn.set(this._dailyCheckinService.toggle(evt));
+  }
+
   onSeasonCheckinToggle(season: ISeason, evt: MouseEvent): void {
     this.checkedIn.set(this._dailyCheckinService.toggle(evt, season));
   }
 
   onEventCheckinToggle(card: IEventCard, evt: MouseEvent): void {
-    const event = card.instance.event;
-    const now = !card.checked;
-    if (now) {
-      localStorage.setItem(`event.checkin.${event.guid}`, DateTime.local({ zone: DateHelper.skyTimeZone }).toFormat('yyyy-MM-dd'));
-    } else {
-      localStorage.removeItem(`event.checkin.${event.guid}`);
-    }
-
-    let dailyCurrency = card.instance.calculatorData?.dailyCurrencyAmount || 0;
-    if (dailyCurrency) {
-      if (!now) { dailyCurrency = -dailyCurrency; }
-      this._currencyService.addEventCurrency(card.instance.guid, dailyCurrency);
-      this._currencyService.animateCurrencyGained(evt, dailyCurrency);
-    }
-
+    this._eventCheckinService.toggle(evt, card.instance);
     this.refreshEventCheckins();
   }
 
@@ -264,22 +267,15 @@ export class AtmosphericDashboardComponent implements OnInit, OnDestroy {
       links,
       currency: this.deriveEventCurrency(instance),
       showCheckin: isActive,
-      checked: isActive && this.isCheckedInToday(event.guid)
+      checked: isActive && this._eventCheckinService.isCheckedIn(event.guid)
     };
   }
 
   private refreshEventCheckins(): void {
     const updated = this.eventCards().map(c => c.showCheckin
-      ? { ...c, checked: this.isCheckedInToday(c.instance.event.guid) }
+      ? { ...c, checked: this._eventCheckinService.isCheckedIn(c.instance.event.guid) }
       : c);
     this.eventCards.set(updated);
-  }
-
-  private isCheckedInToday(eventGuid: string): boolean {
-    const checkinDate = localStorage.getItem(`event.checkin.${eventGuid}`);
-    if (!checkinDate) { return false; }
-    const d = DateTime.fromFormat(checkinDate, 'yyyy-MM-dd', { zone: DateHelper.skyTimeZone });
-    return d.hasSame(DateTime.now().setZone(DateHelper.skyTimeZone), 'day');
   }
 
   private formatPeriod(p: { date?: any; endDate?: any } | undefined): string {

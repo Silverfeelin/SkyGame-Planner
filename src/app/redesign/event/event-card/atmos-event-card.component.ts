@@ -11,6 +11,7 @@ import { DateComponent } from '@app/components/util/date/date.component';
 import { DateRangeComponent } from '@app/components/util/date-range/date-range.component';
 import { DaysLeftComponent } from '@app/components/util/days-left/days-left.component';
 import { DiscordLinkComponent } from '@app/components/util/discord-link/discord-link.component';
+import { AtmosDailyCheckinComponent } from '@app/redesign/daily/daily-checkin/atmos-daily-checkin.component';
 
 export type AtmosEventCardSection =
   | 'select' | 'img' | 'date' | 'overview' | 'list' | 'recent'
@@ -28,7 +29,7 @@ export interface AtmosEventCardOptions {
   templateUrl: './atmos-event-card.component.html',
   styleUrl: './atmos-event-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, CostComponent, DateComponent, DateRangeComponent, DaysLeftComponent, DiscordLinkComponent]
+  imports: [RouterLink, MatIcon, CostComponent, DateComponent, DateRangeComponent, DaysLeftComponent, DiscordLinkComponent, AtmosDailyCheckinComponent]
 })
 export class AtmosEventCardComponent {
   readonly event = input<IEvent | undefined>(undefined);

@@ -1,7 +1,13 @@
 <article class="atmos-daily-card atmos-card">
   @if (sections()['img']) {
     <div class="atmos-daily-card__media">
-      <div class="atmos-daily-card__image"></div>
+      @if (imageStyle(); as bg) {
+        <div class="atmos-daily-card__image"
+          [style.background-image]="bg"
+          [style.background-position]="realm()?.imagePosition || null"></div>
+      } @else {
+        <div class="atmos-daily-card__image atmos-daily-card__image--fallback"></div>
+      }
       <div class="atmos-daily-card__fade"></div>
       <div class="atmos-daily-card__heading">
         <div class="atmos-daily-card__kicker">Today</div>

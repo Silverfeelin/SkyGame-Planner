@@ -94,17 +94,10 @@
       }
 
       @if (sections()['checkin']) {
-        <button
-          type="button"
-          class="atmos-event-card__checkin"
-          [class.is-checked]="checkedIn()"
-          [attr.aria-pressed]="checkedIn()"
-          (click)="onCheckin($event)">
-          <span class="atmos-event-card__checkbox">
-            @if (checkedIn()) { <mat-icon>check</mat-icon> }
-          </span>
-          <span>I have done my event quests.</span>
-        </button>
+        <app-atmos-daily-checkin
+          [checkedIn]="checkedIn()"
+          label="I have collected my daily event currency"
+          (checkin)="onCheckin($event)"></app-atmos-daily-checkin>
       }
 
       <ng-content />

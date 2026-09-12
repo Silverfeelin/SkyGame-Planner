@@ -11,6 +11,11 @@
 .atmos-daily-card__image {
   position: absolute;
   inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.atmos-daily-card__image--fallback {
   background: linear-gradient(
     135deg,
     oklch(0.45 0.09 var(--atmos-hue)),
@@ -60,7 +65,8 @@
 }
 
 .atmos-daily-card__row {
-  display: flex;
+  display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   gap: 8px;
   font-size: 13.5px;
@@ -72,6 +78,11 @@
   transition: background var(--atmos-transition);
 
   &:hover { background: var(--atmos-hover-bg); }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
 
   mat-icon {
     font-size: 18px;

@@ -19,6 +19,18 @@
       checkLabel="I have done my season dailies"
       [checked]="checkedIn()"
       (checkToggle)="onSeasonCheckinToggle(s, $event)" />
+  } @else {
+    <app-atmos-feature-card
+      kicker="Today"
+      kickerColor="var(--atmos-accent)"
+      title="Daily quests"
+      [bannerUrl]="dailyRealm()?.imageUrl"
+      [bannerPosition]="dailyRealm()?.imagePosition"
+      [bannerHue]="45"
+      [links]="dailyLinks()"
+      checkLabel="I have done my daily quests"
+      [checked]="checkedIn()"
+      (checkToggle)="onDailyCheckinToggle($event)" />
   }
   @for (card of eventCards(); track card.instance.guid) {
     <app-atmos-feature-card

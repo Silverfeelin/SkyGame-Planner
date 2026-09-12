@@ -29,6 +29,11 @@ export class AtmosDailyCardComponent {
 
   readonly checkinToggle = output<MouseEvent>();
 
+  readonly imageStyle = computed<string | undefined>(() => {
+    const url = this.realm()?.imageUrl;
+    return url ? `url('${url}')` : undefined;
+  });
+
   readonly sections = computed<Record<string, boolean>>(() => {
     const show = this.options().show ?? [];
     const map: Record<string, boolean> = {};

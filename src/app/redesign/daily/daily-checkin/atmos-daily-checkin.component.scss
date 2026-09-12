@@ -1,3 +1,10 @@
+// Without an explicit display the host stays inline, so its height is a line
+// box rather than the button's. The inline-flex button's baseline then moves
+// when the check icon appears inside it, shifting the host height by ~2px.
+:host {
+  display: flex;
+}
+
 .atmos-daily-checkin {
   display: inline-flex;
   align-items: center;
