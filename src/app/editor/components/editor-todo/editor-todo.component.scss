@@ -3,3 +3,12 @@
   flex-direction: column;
   gap: var(--atmos-gap);
 }
+
+.editor-todo__code {
+  cursor: pointer;
+  transition: opacity var(--atmos-transition);
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

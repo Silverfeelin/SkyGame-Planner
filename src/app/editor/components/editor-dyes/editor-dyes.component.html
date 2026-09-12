@@ -2,43 +2,26 @@
   <h1 class="atmos-page__title">Dyes</h1>
 </header>
 
-<div>
-  <button type="button" class="atmos-btn" (click)="isShowingMapped=!isShowingMapped">Show mapped</button>
-</div>
-
-@if (isShowingMapped) {
-  <div class="preview-grid">
-    @for (mapped of mappedFiles; track $index) {
-      <div class="preview">
-        @if (mapped.item) {
-          <app-item-icon class="item" [item]="mapped.item" [opaque]="true"></app-item-icon>
-          <img class="preview-img preview-img--mapped" [src]="mapped.item.previewUrl"/>
+<div class="dye-layout">
+  <div class="picker">
+    <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
+    <ng-template #pickTpl let-item>
+      <div class="picker-item atmos-tile" (click)="onItemClicked({ event: $event, item })">
+        <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
+          [skyTooltip]="item.name" placement="auto"></app-item-icon>
+      </div>
+    </ng-template>
+  </div>
+  <div class="preview-grid preview-grid--unmapped">
+    @for (file of unmappedFiles; track $index) {
+      <div class="preview" [class.highlight]="previewFile === file">
+        @if (previewFileMap[file]) {
+          @let item = previewFileMap[file];
+          <app-item-icon class="item" [item]="item" [opaque]="true"></app-item-icon>
+          <img class="preview-img" [src]="item.previewUrl"/>
         }
-        <img [src]="mapped.url" [attr.title]="mapped.url">
+        <img (click)="onPreviewClicked(file)" [src]="file" [attr.title]="file">
       </div>
     }
   </div>
-}
-
-<div class="picker">
-  <atmos-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
-  <ng-template #pickTpl let-item>
-    <div class="picker-item atmos-tile" (click)="onItemClicked({ event: $event, item })">
-      <app-item-icon [item]="item" [subIcons]="itemSubIcons" [opaque]="true"
-        [skyTooltip]="item.name" placement="auto"></app-item-icon>
-    </div>
-  </ng-template>
-  <div><button type="button" class="atmos-btn" (click)="export()">Export</button></div>
-</div>
-<div class="preview-grid preview-grid--unmapped">
-  @for (file of unmappedFiles; track $index) {
-    <div class="preview" [class.highlight]="previewFile === file">
-      @if (previewFileMap[file]) {
-        @let item = previewFileMap[file];
-        <app-item-icon class="item" [item]="item" [opaque]="true"></app-item-icon>
-        <img class="preview-img" [src]="item.previewUrl"/>
-      }
-      <img (click)="onPreviewClicked(file)" [src]="file" [attr.title]="file">
-    </div>
-  }
 </div>

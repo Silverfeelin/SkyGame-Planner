@@ -51,7 +51,6 @@ export class EditorDyesComponent {
   readonly itemSubIcons = ITEM_GRID_SUBICONS;
   readonly pickerItems: ReadonlyArray<IItem>;
 
-  isShowingMapped = false;
   mappedFiles: Array<{guid: string, item: IItem, url: string}> = [];
   unmappedFiles:  Array<string> = [];
 
@@ -81,24 +80,5 @@ export class EditorDyesComponent {
   onPreviewClicked(file: string): void {
     this.previewFile = file;
     navigator.clipboard.writeText(file);
-  }
-
-  export(): void {
-    let csv = '';
-    Object.keys(this.previewFileMap).filter(k => k).forEach(previewFile => {
-      const item = this.previewFileMap[previewFile];
-      csv += `${item.guid},${previewFile}\n`;
-    });
-
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.setAttribute('hidden', '');
-    a.setAttribute('href', url);
-    a.setAttribute('download', 'previews.csv');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
   }
 }
