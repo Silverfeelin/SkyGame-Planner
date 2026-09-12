@@ -3,8 +3,6 @@ import { MatIcon } from '@angular/material/icon';
 
 interface INewsEntry {
   readonly title: string;
-  /** Pre-rendered HTML body (anchors / lists). RouterLink anchors are not used here because we want
-   *  redesign-relative paths to stay legacy until the rest of the routes are ported. */
   readonly bodyHtml: string;
 }
 
@@ -18,6 +16,17 @@ interface INewsEntry {
 export class AtmosNewsComponent {
   readonly entries = signal<ReadonlyArray<INewsEntry>>([
     {
+      title: 'June - September 2026',
+      bodyHtml: `
+        <ul>
+          <li>Sky Planner has a brand new look!</li>
+          <li>The items overview has been split into an <a class="atmos-text-link" href="/item/grid">Item grid</a> and a sortable <a class="atmos-text-link" href="/item/table">Item table</a>.</li>
+          <li>The field guide has been moved to the <a class="atmos-text-link" href="/item/preview">Item previews</a> page.</li>
+          <li>Added the permanent <a class="atmos-text-link" href="/shop/prairieheights">Prairie Heights</a> shop page for kites.</li>
+          <li>The map has been updated for the Van Gogh season, and several realms and areas received new maps and images.</li>
+        </ul>`
+    },
+    {
       title: 'March - May 2026',
       bodyHtml: `
         <ul>
@@ -29,14 +38,14 @@ export class AtmosNewsComponent {
           <li>Moved the <a class="atmos-text-link" href="/cr-tracker">Candle Run Tracker</a> and <a class="atmos-text-link" href="/pnr-tracker">Eden Statue Tracker</a> to the Realms page.</li>
           <li>Added a new <a class="atmos-text-link" href="/daily">Daily</a> page to track your daily activities in one place.</li>
           <li>In-game currency shop items can now be navigated to by clicking on them. To unlock, click on the price below the item. This better matches the behaviour of in-app purchase items.</li>
-          <li>A new table format has been applied to all the spirits on the <a class="atmos-text-link" href="/spirits">Spirits</a> page. More pages will follow.</li>
+          <li>A new table format has been applied to all the spirits on the <a class="atmos-text-link" href="/spirit">Spirits</a> page. More pages will follow.</li>
         </ul>`
     },
     {
       title: 'December 2025',
       bodyHtml: `
         <ul>
-          <li>New <a class="atmos-text-link" href="/friends">Friends</a> page to manage your friendship trees.</li>
+          <li>New <a class="atmos-text-link" href="/friend">Friends</a> page to manage your friendship trees.</li>
           <li>Added the permanent <a class="atmos-text-link" href="/shop/wonderland-cafe">Wonderland Cafe</a> shop page.</li>
         </ul>`
     },
@@ -74,7 +83,7 @@ export class AtmosNewsComponent {
       title: 'January 2025',
       bodyHtml: `
         <ul>
-          <li>New dye plant tracker available from the <a class="atmos-text-link" href="/tools">Tools page</a>.</li>
+          <li>New dye plant tracker available from the <a class="atmos-text-link" href="/tool">Tools page</a>.</li>
           <li>New dye filter for items.</li>
           <li>Dye previews, with many screenshots provided by cysketch, kotoeri and JustAMoff.</li>
           <li>New Outfit Request changes to support requests with dyes.</li>

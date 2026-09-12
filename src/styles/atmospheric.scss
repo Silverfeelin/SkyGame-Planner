@@ -204,6 +204,14 @@
   box-shadow: var(--atmos-card-shadow);
 }
 
+/* For a card holding a `position: sticky` child. `overflow: hidden` makes the
+   card a scroll container, which pins the sticky child to the card instead of
+   the viewport — and offsets it by its own `top`, leaving a gap above it.
+   `clip` keeps the rounded-corner clipping without becoming a scrollport. */
+.atmos-card--sticky-host {
+  overflow: clip;
+}
+
 .atmos-card__body {
   padding: var(--atmos-card-pad);
   display: flex;

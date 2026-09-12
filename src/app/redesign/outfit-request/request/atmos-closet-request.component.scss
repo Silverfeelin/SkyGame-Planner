@@ -9,7 +9,9 @@
   min-height: 100vh;
   min-height: 100dvh;
   position: relative;
-  overflow-x: hidden;
+  /* `clip` rather than `hidden`: hidden would make the host a scroll container
+     and trap the sticky items header inside it. */
+  overflow-x: clip;
 }
 
 .atmos-closet-request__bg {
