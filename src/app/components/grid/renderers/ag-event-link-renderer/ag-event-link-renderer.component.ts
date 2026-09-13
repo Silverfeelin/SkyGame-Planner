@@ -5,7 +5,7 @@ import { IEventInstance } from 'skygame-data';
 
 @Component({
   selector: 'app-ag-event-link-renderer',
-  template: `@if (instance) { <a [routerLink]="['/event-instance', instance.guid]">{{ instance.name ?? instance.event.name }}</a> }`,
+  template: `@if (instance) { <a class="atmos-text-link" [routerLink]="['/event-instance', instance.guid]">{{ instance.name ?? instance.event.name }}</a> }`,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterLink]
 })

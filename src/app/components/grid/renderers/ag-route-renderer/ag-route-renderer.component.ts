@@ -7,7 +7,6 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './ag-route-renderer.component.html',
-  styleUrl: './ag-route-renderer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AgRouteRendererComponent implements ICellRendererAngularComp {

@@ -5,6 +5,7 @@ import { ColDef, GridApi, GridReadyEvent } from 'ag-grid-community';
 import { getAgTheme } from '@app/components/grid/ag-grid-theme';
 import { AgSetFilterComponent } from '@app/components/grid/filters/ag-set-filter/ag-set-filter.component';
 import { AgItemIconRendererComponent } from '@app/components/grid/renderers/ag-item-icon-renderer/ag-item-icon-renderer.component';
+import { AgItemLinkRendererComponent } from '@app/components/grid/renderers/ag-item-link-renderer/ag-item-link-renderer.component';
 import { AgUnlockedRendererComponent } from '@app/components/grid/renderers/ag-unlocked-renderer/ag-unlocked-renderer.component';
 import { ItemHelper } from '@app/helpers/item-helper';
 import { DataService } from '@app/services/data.service';
@@ -40,7 +41,7 @@ export class ItemsComponent {
   colDefs: ColDef[] = [
     { field: 'nr', headerName: '#', width: 90, filter: 'agNumberColumnFilter', initialSort: 'asc', sortingOrder: ['asc', 'desc'] },
     { field: 'item', headerName: 'Image', width: 80, sortable: false, filter: false, cellRenderer: AgItemIconRendererComponent },
-    { field: 'name', headerName: 'Name', filter: 'agTextColumnFilter', filterParams: textFilterParams, flex: 1, minWidth: 200 },
+    { field: 'name', headerName: 'Name', filter: 'agTextColumnFilter', filterParams: textFilterParams, flex: 1, minWidth: 200, cellRenderer: AgItemLinkRendererComponent },
     { field: 'type', headerName: 'Type', width: 160, filter: AgSetFilterComponent, filterParams: { values: typeFilterValues }, valueFormatter: p => itemTypePipe.transform(p.value) },
     { field: 'group', headerName: 'Group', width: 130, filter: AgSetFilterComponent, filterParams: { values: groupFilterValues, includeBlanks: true }, valueFormatter: p => groupLabels[p.value] ?? p.value },
     { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },
