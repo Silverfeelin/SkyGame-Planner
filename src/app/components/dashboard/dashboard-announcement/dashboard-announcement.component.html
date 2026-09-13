@@ -1,21 +1,25 @@
 @if (isAnnouncementVisible()) {
   <div class="sky-card">
     <div class="sky-card-header">
-      <h1 class="h2 mb-0">Website update</h1>
+      <h1 class="h2 mb-0">New design preview</h1>
     </div>
     <div class="sky-card-body">
       <div class="container">
-        <p>The website has been updated behind the scenes to make it future-proof for maintainers.</p>
         <p>
-          Although you shouldn't see any differences, it is possible we missed something.<br/>
-          If something does not work correctly, please DM or ping &#64;silverfeelin on Skycord and we'll try to fix it as soon as we can.
+          Please try out the new design at <a class="text-link" href="https://preview.sky-planner.com/" target="_blank" rel="noopener">https://preview.sky-planner.com</a>!<br/>
+          A lot of work went into it, and I'd love to hear your feedback. Look for "Design feedback" in the menu.
         </p>
-        <div class="sky-flex flex-wrap mt-half">
-          <button type="button" class="button-danger" (click)="dismiss()">
-            <mat-icon class="menu-icon">close</mat-icon>
-            <span class="menu-label">Dismiss</span>
-          </button>
-        </div>
+        <p>
+          I am planning on releasing the new design within a week or two, and will use the coming days to fix as many problems as I can.
+        </p>
+        @if (dismissable()) {
+          <div class="sky-flex flex-wrap mt-half">
+            <button type="button" class="button-danger" (click)="dismiss()">
+              <mat-icon class="menu-icon">close</mat-icon>
+              <span class="menu-label">Dismiss</span>
+            </button>
+          </div>
+        }
       </div>
     </div>
   </div>

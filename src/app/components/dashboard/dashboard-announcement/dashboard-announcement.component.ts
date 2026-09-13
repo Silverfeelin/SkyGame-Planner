@@ -3,8 +3,9 @@ import { MatIcon } from "@angular/material/icon";
 import { DateTime } from "luxon";
 
 const announcement = {
-  guid: 'wJuf0SyLA8',
-  endDate: DateTime.local(2025, 11, 27)
+  guid: 'pR7kNzT4Xq',
+  endDate: DateTime.local(2026, 9, 27),
+  dismissable: false
 }
 
 @Component({
@@ -15,6 +16,7 @@ const announcement = {
 })
 export class DashboardAnnouncementComponent {
   isAnnouncementVisible = signal(false);
+  dismissable = signal(announcement.dismissable);
 
   constructor() {
     this.isAnnouncementVisible.set(localStorage.getItem('announcement.dismissed') !== announcement.guid
