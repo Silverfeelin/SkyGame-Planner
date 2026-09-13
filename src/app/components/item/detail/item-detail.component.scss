@@ -25,12 +25,6 @@
   right: 4px;
 }
 
-.atmos-item-detail__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--atmos-gap-compact);
-}
-
 .atmos-fact__icon.is-favourited {
   color: var(--atmos-warm);
 }

@@ -1260,6 +1260,7 @@ a.atmos-link:focus-visible {
 //         </div>
 //         <div class="atmos-summary__preview"></div>   <!-- or __art; leads the row -->
 //       </div>
+//       <div class="atmos-summary__actions"> .atmos-summary__action* </div>  <!-- optional -->
 //     </section>
 .atmos-summary__grid {
   display: grid;
@@ -1306,6 +1307,65 @@ a.atmos-link:focus-visible {
     width: auto;
     object-fit: contain;
   }
+}
+
+/* Action bar along the bottom edge of the summary card. It spans the whole card
+   instead of sitting in the fact column, where the links share the facts' indent
+   and rhythm and read as one more fact. The rule and tint are what separate it,
+   so the links inside drop the .atmos-btn pill and its frame-within-a-frame. */
+.atmos-summary__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border-top: var(--atmos-card-border);
+  background: var(--atmos-hover-tint);
+}
+
+/* Scoped one level deeper so it outweighs the `a` rule inside app-wiki-link,
+   which is `display: contents` and drops its anchor straight into the bar. */
+.atmos-summary__actions .atmos-summary__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text-dim);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--atmos-text-mute);
+    transition: color var(--atmos-transition);
+
+    /* SVG icons sit on the text baseline by default, shifting them down. */
+    svg { display: block; }
+  }
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+
+    mat-icon { color: var(--atmos-accent); }
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: calc(var(--atmos-focus-offset) * -1);
+  }
+}
+
+/* Trailing action, pushed to the far end of the bar. */
+.atmos-summary__action--end {
+  margin-inline-start: auto;
 }
 
 .atmos-facts {

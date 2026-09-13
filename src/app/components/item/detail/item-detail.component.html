@@ -123,25 +123,6 @@
             </div>
           }
         </div>
-
-        <div class="atmos-item-detail__actions">
-          @if (navSource(); as src) {
-            <a class="atmos-btn atmos-btn--sm" [routerLink]="src.route" [queryParams]="src.extras?.queryParams">
-              <mat-icon>search</mat-icon> Find item
-            </a>
-          }
-          @if (navList(); as list) {
-            <a class="atmos-btn atmos-btn--sm" [routerLink]="list.route" [queryParams]="list.extras?.queryParams">
-              <mat-icon>list</mat-icon> Show in item list
-            </a>
-          }
-          @if (itm._wiki?.href) {
-            <app-wiki-link [wiki]="itm._wiki" aClass="atmos-btn atmos-btn--sm"></app-wiki-link>
-          }
-          <a class="atmos-btn atmos-btn--sm" [routerLink]="['/editor/item', itm.guid]">
-            <mat-icon>edit</mat-icon> Suggest changes
-          </a>
-        </div>
       </div>
 
       <div class="atmos-summary__art atmos-item-detail__art">
@@ -153,6 +134,25 @@
           <app-item-icon [item]="itm" size="large" [opaque]="true" [subIcons]="SUBICONS_ALL"/>
         }
       </div>
+    </div>
+
+    <div class="atmos-summary__actions">
+      @if (navSource(); as src) {
+        <a class="atmos-summary__action" [routerLink]="src.route" [queryParams]="src.extras?.queryParams">
+          <mat-icon>search</mat-icon> Find item
+        </a>
+      }
+      @if (navList(); as list) {
+        <a class="atmos-summary__action" [routerLink]="list.route" [queryParams]="list.extras?.queryParams">
+          <mat-icon>list</mat-icon> Show in item list
+        </a>
+      }
+      @if (itm._wiki?.href) {
+        <app-wiki-link [wiki]="itm._wiki" aClass="atmos-summary__action"></app-wiki-link>
+      }
+      <a class="atmos-summary__action atmos-summary__action--end" [routerLink]="['/editor/item', itm.guid]">
+        <mat-icon>edit</mat-icon> Suggest changes
+      </a>
     </div>
   </section>
 } @else {
