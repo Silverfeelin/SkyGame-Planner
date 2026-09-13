@@ -42,6 +42,19 @@ export class SearchBarComponent {
       const q = params.get('q') ?? '';
       this.query.set(q);
       if (q) { this.runSearch(q); } else { this.results.set(undefined); }
+
+      // Other pages answer the focus shortcut by navigating here with ?focus=1.
+      // The flag is consumed right away so a refresh doesn't steal focus again,
+      // and focusing is deferred until the input has been rendered.
+      if (params.get('focus') === '1') {
+        this._router.navigate([], {
+          relativeTo: this._route,
+          queryParams: { focus: null },
+          queryParamsHandling: 'merge',
+          replaceUrl: true
+        });
+        setTimeout(() => this.focusInput());
+      }
     });
   }
 
@@ -78,8 +91,8 @@ export class SearchBarComponent {
   focusInput(): void {
     const el = this.input()?.nativeElement;
     if (!el) { return; }
-    el.setSelectionRange(0, el.value.length);
     el.focus();
+    el.select();
   }
 
   iconSrc(row: ISearchItem<unknown>): string | undefined {

@@ -80,7 +80,10 @@ export class AppComponent {
   private onKeydown(evt: KeyboardEvent): void {
     if (this._eventService.keyboardShortcutDisabledCount > 0) { return; }
     if (evt.ctrlKey && evt.shiftKey && evt.key.toUpperCase() === 'F') {
+      // On the dashboard the search bar focuses itself; elsewhere navigate there
+      // and let it pick up the focus flag.
       if ((this._router.url.split('?')[0] || '/') === '/') { return; }
+      evt.preventDefault();
       void this._router.navigate(['/'], { skipLocationChange: false, queryParams: { focus: '1' } });
       return;
     }

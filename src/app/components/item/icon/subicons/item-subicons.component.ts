@@ -166,7 +166,7 @@ export class ItemSubIconsComponent implements OnChanges, OnDestroy {
       const self = (!this.node && !this.iap && !this.listNode)
         || !!this.node?.unlocked || !!this.iap?.bought || !!this.iap?.gifted || !!this.listNode?.unlocked;
       slots.dot = self ? 'self' : 'other';
-    } else if (allowed.has('limited') && !item.unlocked && (item.group === 'Limited' || item.group === 'Ultimate')) {
+    } else if (allowed.has('limited') && !item.unlocked && item.group === 'Limited') {
       slots.br = { src: 'update_disabled', cls: 'subicon-limited', tooltip: 'This item is limited and will not return.' };
     }
 

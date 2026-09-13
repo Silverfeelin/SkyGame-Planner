@@ -22,9 +22,9 @@ import { ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
 interface IItemGroupFact { label: string; icon: string; note: string; }
 
 const GROUP_FACTS: { [key in ItemGroup]: IItemGroupFact } = {
-  Elder: { label: 'Elder', icon: 'auto_awesome', note: 'Unlocked from an elder spirit.' },
-  SeasonPass: { label: 'Season Pass', icon: 'workspace_premium', note: 'Requires the season pass.' },
-  Ultimate: { label: 'Season ultimate', icon: 'update_disabled', note: 'Will likely not return.' },
+  Elder: { label: 'Elder', icon: 'auto_awesome', note: '' },
+  SeasonPass: { label: 'Season Pass', icon: 'workspace_premium', note: '' },
+  Ultimate: { label: 'Season ultimate', icon: 'favorite', note: '' },
   Limited: { label: 'Limited', icon: 'update_disabled', note: 'Will likely not return.' }
 };
 
