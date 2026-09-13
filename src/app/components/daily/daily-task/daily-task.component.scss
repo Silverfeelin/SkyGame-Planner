@@ -21,6 +21,23 @@
   &.is-hidden {
     opacity: 0.55;
   }
+
+  /* Stays readable and keeps its place in the grid; only the checkbox is off-limits. */
+  &.is-disabled {
+    cursor: default;
+    color: var(--atmos-text-mute);
+
+    &:hover { background: transparent; }
+
+    .atmos-daily-task__check {
+      color: var(--atmos-text-mute);
+      opacity: 0.5;
+    }
+
+    .atmos-pill {
+      opacity: 0.6;
+    }
+  }
 }
 
 .atmos-daily-task__row {
@@ -69,6 +86,10 @@
   color: var(--atmos-text-dim);
   font-style: italic;
   text-align: right;
+}
+
+.atmos-daily-task__note--disabled {
+  color: var(--atmos-text-mute);
 }
 
 .atmos-daily-task__hide {

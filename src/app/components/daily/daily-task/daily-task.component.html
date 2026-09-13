@@ -2,6 +2,7 @@
   class="atmos-daily-task"
   [class.is-checked]="checked()"
   [class.is-hidden]="hidden()"
+  [class.is-disabled]="!!disabledReason()"
   (click)="onToggle()">
   <div class="atmos-daily-task__row">
     <mat-icon class="atmos-daily-task__check">{{ checked() ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
@@ -33,7 +34,9 @@
     }
   </div>
 
-  @if (task().note) {
+  @if (disabledReason()) {
+    <div class="atmos-daily-task__note atmos-daily-task__note--disabled">{{ disabledReason() }}</div>
+  } @else if (task().note) {
     <div class="atmos-daily-task__note">{{ task().note }}</div>
   }
 

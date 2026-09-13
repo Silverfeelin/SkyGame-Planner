@@ -84,6 +84,17 @@ export class DailyComponent implements OnInit, OnDestroy {
   readonly checkedWeekly = computed(() => new Set(this.state().weeklyChecked));
   readonly hiddenTasks = computed(() => new Set(this.state().hiddenTasks ?? []));
 
+  /** Task id -> why it cannot be done today. Re-evaluated on every tick so it follows the sky day. */
+  readonly disabledReasons = computed(() => {
+    const now = this.now();
+    const reasons = new Map<string, string>();
+    for (const task of this.tasks) {
+      const reason = task.disabledFn?.(now);
+      if (reason) { reasons.set(task.id, reason); }
+    }
+    return reasons;
+  });
+
   readonly showHidden = signal(false);
   readonly hiddenFixedCount = computed(() => this.dailyFixed.filter(t => this.hiddenTasks().has(t.id)).length);
   readonly hiddenVariableCount = computed(() => this.dailyVariable.filter(t => this.hiddenTasks().has(t.id)).length);
@@ -137,7 +148,10 @@ export class DailyComponent implements OnInit, OnDestroy {
     this._subs.unsubscribe();
   }
 
+  disabledReason(task: IDailyTask): string { return this.disabledReasons().get(task.id) ?? ''; }
+
   toggleDaily(task: IDailyTask): void {
+    if (this.disabledReason(task)) { return; }
     const s = this.state();
     const set = new Set(s.dailyChecked);
     if (set.has(task.id)) { set.delete(task.id); } else { set.add(task.id); }

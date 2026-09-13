@@ -87,6 +87,7 @@
             [checked]="isDailyChecked(task.id)"
             [light]="formatLight(task)"
             [hidden]="isHidden(task.id)"
+            [disabledReason]="disabledReason(task)"
             (toggle)="toggleDaily(task)"
             (toggleHide)="toggleHide(task)" />
         }
@@ -119,6 +120,7 @@
             [checked]="isDailyChecked(task.id)"
             [light]="formatLight(task)"
             [hidden]="isHidden(task.id)"
+            [disabledReason]="disabledReason(task)"
             (toggle)="toggleDaily(task)"
             (toggleHide)="toggleHide(task)" />
         }
@@ -153,6 +155,7 @@
             [checked]="isDailyChecked(task.id)"
             [light]="formatLight(task)"
             [hidden]="isHidden(task.id)"
+            [disabledReason]="disabledReason(task)"
             (toggle)="toggleDaily(task)"
             (toggleHide)="toggleHide(task)" />
         }

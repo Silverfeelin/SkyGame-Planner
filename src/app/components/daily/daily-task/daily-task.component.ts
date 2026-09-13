@@ -20,11 +20,16 @@ export class DailyTaskComponent {
   readonly showHide = input<boolean>(true);
   readonly hidden = input<boolean>(false);
   readonly light = input<string>('');
+  /** Reason the task cannot be done today; empty when it can. */
+  readonly disabledReason = input<string>('');
 
   readonly toggle = output<void>();
   readonly toggleHide = output<void>();
 
-  onToggle(): void { this.toggle.emit(); }
+  onToggle(): void {
+    if (this.disabledReason()) { return; }
+    this.toggle.emit();
+  }
   onToggleHide(event: MouseEvent): void {
     event.stopPropagation();
     this.toggleHide.emit();
