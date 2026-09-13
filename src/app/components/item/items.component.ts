@@ -15,6 +15,7 @@ import { ItemQuickActionsComponent } from './quick-actions/item-quick-actions.co
 const itemTypePipe = new ItemTypePipe();
 const typeFilterValues = Object.values(ItemType).map(t => ({ value: t, label: itemTypePipe.transform(t) }));
 const boolFilterValues = ['Yes', 'No'];
+const dyeSlotFilterValues = ['0', '1', '2'];
 const groupLabels: { [group: string]: string } = { Elder: 'Elder', SeasonPass: 'Season Pass', Ultimate: 'Ultimate', Limited: 'Limited' };
 const groupFilterValues = ['Elder', 'SeasonPass', 'Ultimate', 'Limited'].map(v => ({ value: v, label: groupLabels[v] }));
 
@@ -45,11 +46,11 @@ export class ItemsComponent {
     { field: 'unlocked', headerName: 'Unlocked', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.unlocked ? 'Yes' : 'No' },
     { field: 'favourited', headerName: 'Favourited', width: 130, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.favourited ? 'Yes' : 'No' },
     { field: 'starter', headerName: 'Starter', width: 110, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.starter ? 'Yes' : 'No' },
-    { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: 'agNumberColumnFilter' },
+    { field: 'dyeSlots', headerName: 'Dye slots', width: 120, filter: AgSetFilterComponent, filterParams: { values: dyeSlotFilterValues } },
     { field: 'returned', headerName: 'Returned', width: 120, filter: AgSetFilterComponent, filterParams: { values: boolFilterValues }, cellRenderer: AgUnlockedRendererComponent, filterValueGetter: p => p.data.returned ? 'Yes' : 'No' },
     { field: 'spirit', headerName: 'Spirit', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'season', headerName: 'Season', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
-    { field: 'event', headerName: 'Event', width: 200, filter: 'agTextColumnFilter', filterParams: textFilterParams },
+    { field: 'season', headerName: 'Season', width: 200, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
+    { field: 'event', headerName: 'Event', width: 200, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
     { field: 'realm', headerName: 'Realm', width: 160, filter: AgSetFilterComponent, filterParams: { values: [] as string[], includeBlanks: true } },
     { field: 'iap', headerName: 'IAP', width: 130, filter: 'agTextColumnFilter', filterParams: textFilterParams }
   ];
@@ -65,6 +66,10 @@ export class ItemsComponent {
   constructor() {
     const realmColDef = this.colDefs.find(c => c.field === 'realm')!;
     realmColDef.filterParams.values = this._dataService.realmConfig.items.map(r => r.name);
+    const seasonColDef = this.colDefs.find(c => c.field === 'season')!;
+    seasonColDef.filterParams.values = this._dataService.seasonConfig.items.map(s => s.name);
+    const eventColDef = this.colDefs.find(c => c.field === 'event')!;
+    eventColDef.filterParams.values = [...new Set(this._dataService.eventConfig.items.map(e => e.name))];
 
     this._items = ItemHelper.sortItems(this._dataService.itemConfig.items.slice());
     this.rowData.set(this._items.map((item, i) => this.buildRow(item, i)));

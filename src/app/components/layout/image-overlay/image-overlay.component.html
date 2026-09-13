@@ -1,0 +1,10 @@
+<dialog #dialog class="image-overlay" [attr.aria-label]="alt()" (click)="onClose($event)" (cancel)="onCancel($event)">
+  <img class="image-overlay__img" [src]="src()" [alt]="alt()" draggable="false"/>
+
+  <div class="image-overlay__top">
+    <div class="image-overlay__actions" (click)="$event.stopPropagation()">
+      <ng-content select="[overlayAction]"></ng-content>
+    </div>
+    <div class="image-overlay__hint">Tap anywhere to close</div>
+  </div>
+</dialog>

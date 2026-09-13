@@ -1,0 +1,71 @@
+:host {
+  display: contents;
+}
+
+/* Top-layer dialog, so it covers the sidebar and topbar. */
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--atmos-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  overscroll-behavior: contain;
+
+  &::backdrop {
+    background-color: oklch(0.04 0.01 250 / 0.88);
+    backdrop-filter: blur(6px);
+  }
+}
+
+.image-overlay__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* Floats over the image so it never steals height from it. Kept at the top:
+   preview renders usually carry their artist credit along the bottom edge. */
+.image-overlay__top {
+  position: absolute;
+  left: 50%;
+  top: max(12px, env(safe-area-inset-top));
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.image-overlay__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  cursor: default;
+  pointer-events: auto;
+
+  &:empty {
+    display: none;
+  }
+}
+
+/* Reads against whatever the image puts behind it. */
+.image-overlay__hint {
+  font-size: 12px;
+  color: #fff;
+  text-shadow: 0 1px 3px oklch(0 0 0 / 0.9);
+}

@@ -14,7 +14,7 @@ import { SettingService } from '@app/services/setting.service';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemSubIconsComponent, SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
-import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
+import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
 import { ITEM_GRID_CATEGORIES } from '../grid/item-grid-layout.component';
@@ -33,7 +33,7 @@ const GROUP_FACTS: { [key in ItemGroup]: IItemGroupFact } = {
   templateUrl: './item-detail.component.html',
   styleUrl: './item-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, OverlayComponent, ItemTypePipe, ItemQuickActionsComponent]
+  imports: [RouterLink, MatIcon, ItemIconComponent, ItemSubIconsComponent, WikiLinkComponent, ImageOverlayComponent, ItemTypePipe, ItemQuickActionsComponent]
 })
 export class ItemDetailComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;
@@ -149,12 +149,6 @@ export class ItemDetailComponent {
   copy(text: string | number | undefined): void {
     if (text == null) { return; }
     navigator.clipboard.writeText(`${text}`);
-  }
-
-  openSrc(event: Event): void {
-    this.preventDefault(event);
-    const src = (event.target as HTMLImageElement).src;
-    window.open(src, '_blank');
   }
 
   goBack(): void {

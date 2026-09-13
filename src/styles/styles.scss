@@ -1258,12 +1258,12 @@ a.atmos-link:focus-visible {
 //         <div class="atmos-card__body atmos-summary__main">
 //           <div class="atmos-facts"> .atmos-fact* </div>
 //         </div>
-//         <div class="atmos-summary__preview"></div>   <!-- or __art -->
+//         <div class="atmos-summary__preview"></div>   <!-- or __art; leads the row -->
 //       </div>
 //     </section>
 .atmos-summary__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) var(--atmos-summary-media);
+  grid-template-columns: var(--atmos-summary-media) minmax(0, 1fr);
   width: 100%;
   align-items: stretch;
 
@@ -1280,6 +1280,7 @@ a.atmos-link:focus-visible {
 /* Wide key art (season/event banners) bleeds to the card edge. Cropping is safe
    here; on narrow windows there is no room for it beside anything, so it goes. */
 .atmos-summary__preview {
+  order: -1;
   background-size: cover;
   background-position: center;
   min-height: var(--atmos-summary-preview-h);
@@ -1290,8 +1291,9 @@ a.atmos-link:focus-visible {
 }
 
 /* Tall artwork (spirit renders) cannot be cropped, so it is contained on a
-   tile rather than bled, and moves above the facts on narrow windows. */
+   tile rather than bled. It stacks above the facts on narrow windows. */
 .atmos-summary__art {
+  order: -1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1303,10 +1305,6 @@ a.atmos-link:focus-visible {
     max-height: var(--atmos-summary-art-h);
     width: auto;
     object-fit: contain;
-  }
-
-  @media (max-width: 720px) {
-    order: -1;
   }
 }
 

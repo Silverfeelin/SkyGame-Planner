@@ -165,9 +165,8 @@
 
 @if (dyePreviewMode() > 0) {
   @let itm = item()!;
-  <app-overlay class="atmos-item-detail__dye-overlay" (close)="dyePreviewMode.set(0)">
-    @let src = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
-    <img [src]="src" (dblclick)="openSrc($event)"/>
+  @let dyeSrc = dyePreviewMode() === 2 && itm.dye!.infoUrl ? itm.dye!.infoUrl : itm.dye!.previewUrl;
+  <app-image-overlay [src]="dyeSrc!" [alt]="itm.name" (close)="dyePreviewMode.set(0)">
     @if (dyePreviewMode() === 1 && itm.dye!.infoUrl) {
       <button overlayAction type="button" class="atmos-btn atmos-btn--sm"
         (click)="preventDefault($event); dyePreviewMode.set(2)">
@@ -179,5 +178,5 @@
         <mat-icon>image</mat-icon> Show preview
       </button>
     }
-  </app-overlay>
+  </app-image-overlay>
 }

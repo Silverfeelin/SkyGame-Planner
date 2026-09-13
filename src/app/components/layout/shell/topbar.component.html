@@ -5,14 +5,13 @@
   <button
     class="atmos-topbar__button atmos-focus-ring"
     type="button"
-    [disabled]="!canGoBack()"
     (click)="goBack()"
     aria-label="Go back">
     <mat-icon>arrow_back</mat-icon>
   </button>
-  <div class="atmos-topbar__title">
+  <a class="atmos-topbar__title atmos-focus-ring" routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">
     <span>Sky Planner</span>
-  </div>
+  </a>
 </header>
 
 @if (drawerOpen()) {

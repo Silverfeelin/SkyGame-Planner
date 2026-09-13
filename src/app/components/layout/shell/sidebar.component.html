@@ -1,5 +1,13 @@
 <nav class="atmos-sidebar" aria-label="Primary">
   <div class="atmos-sidebar__group">
+    <button
+      class="atmos-nav-item atmos-nav-item--back"
+      type="button"
+      (click)="goBack()"
+      title="Go back">
+      <mat-icon>arrow_back</mat-icon>
+      <span class="atmos-nav-item__label">Back</span>
+    </button>
     @for (item of mainNav; track item.link) {
       <a
         class="atmos-nav-item"

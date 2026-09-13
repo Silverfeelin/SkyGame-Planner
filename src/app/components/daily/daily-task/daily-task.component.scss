@@ -1,7 +1,14 @@
+/* The row sits in a 1- or 2-column list, so its own width - not the viewport -
+   decides when the meta has to drop below the name. */
+:host {
+  display: block;
+  container-type: inline-size;
+}
+
 .atmos-daily-task {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   padding: 8px 10px;
   border-radius: var(--atmos-radius-sm);
   cursor: pointer;
@@ -21,16 +28,41 @@
   &.is-hidden {
     opacity: 0.55;
   }
+
+  /* Stays readable and keeps its place in the grid; only the checkbox is off-limits. */
+  &.is-disabled {
+    cursor: default;
+    color: var(--atmos-text-mute);
+
+    &:hover { background: transparent; }
+
+    .atmos-daily-task__check {
+      color: var(--atmos-text-mute);
+      opacity: 0.5;
+    }
+
+    .atmos-pill {
+      opacity: 0.6;
+    }
+  }
 }
 
+/* Own grid so the footer below cannot inflate the meta track and drag the
+   hide button inwards on tasks that have no pills. */
 .atmos-daily-task__row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto 26px;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 2px;
+  /* Every child is placed by hand below: auto-placement would shuffle the
+     remaining fields whenever one of them is absent. */
+  grid-auto-columns: 0;
 }
 
 .atmos-daily-task__check {
+  grid-column: 1;
+  grid-row: 1;
   font-size: 22px;
   width: 22px;
   height: 22px;
@@ -39,42 +71,72 @@
 }
 
 .atmos-daily-task__heading {
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
   align-items: baseline;
   gap: 8px;
-  flex: 1 1 auto;
   min-width: 0;
 }
 
 .atmos-daily-task__name {
   font-size: 14px;
   font-weight: 500;
+  /* Truncating here is what keeps the pills from being shoved onto another line. */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .atmos-daily-task__time {
   font-size: 12px;
   color: var(--atmos-text-mute);
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 
 .atmos-daily-task__meta {
+  grid-column: 3;
+  grid-row: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  gap: 6px;
   align-items: center;
+
+  &:empty { display: none; }
+}
+
+.atmos-daily-task__footer {
+  /* Lines up under the name: checkbox track + column gap. */
+  padding-left: 32px;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
 }
 
 .atmos-daily-task__note {
+  /* Pushes right in the footer row, with or without a preceding link. */
+  margin-left: auto;
   font-size: 12px;
   color: var(--atmos-text-dim);
   font-style: italic;
   text-align: right;
 }
 
+.atmos-daily-task__note--disabled {
+  color: var(--atmos-text-mute);
+}
+
 .atmos-daily-task__hide {
+  grid-column: 4;
+  grid-row: 1;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
   background: transparent;
   border: 0;
-  padding: 4px;
+  padding: 0;
   border-radius: var(--atmos-radius-sm);
   color: var(--atmos-text-dim);
   cursor: pointer;
@@ -96,13 +158,32 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex: 0 0 auto;
   font-size: 13px;
-  padding-left: 32px;
   border-bottom: 0;
 
   mat-icon {
     font-size: 16px;
     width: 16px;
     height: 16px;
+  }
+}
+
+/* One deliberate switch to a two-row template, instead of each field wrapping
+   on its own as the row narrows. */
+@container (max-width: 520px) {
+  .atmos-daily-task__row {
+    grid-template-columns: 22px minmax(0, 1fr) 26px;
+  }
+
+  .atmos-daily-task__hide {
+    grid-column: 3;
+  }
+
+  .atmos-daily-task__meta {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    flex-wrap: wrap;
+    gap: 4px 6px;
   }
 }

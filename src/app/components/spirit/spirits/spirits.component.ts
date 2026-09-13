@@ -61,12 +61,24 @@ export class SpiritsComponent {
       cellRenderer: AgSpiritTypeRendererComponent
     },
     {
-      field: 'area', headerName: 'Location', filter: 'agTextColumnFilter',
+      field: 'area', headerName: 'Area',
+      filter: AgSetFilterComponent,
+      filterParams: { values: [] as string[], includeBlanks: true },
       flex: 1, minWidth: 150,
       cellRenderer: AgRouteRendererComponent,
       valueFormatter: (p: ValueFormatterParams) => p.value?.label ?? '',
       comparator: (a: any, b: any) => (a?.label ?? '').localeCompare(b?.label ?? ''),
       filterValueGetter: (p: ValueGetterParams) => p.data.area?.label ?? ''
+    },
+    {
+      field: 'realm', headerName: 'Realm',
+      filter: AgSetFilterComponent,
+      filterParams: { values: [] as string[], includeBlanks: true },
+      flex: 1, minWidth: 150,
+      cellRenderer: AgRouteRendererComponent,
+      valueFormatter: (p: ValueFormatterParams) => p.value?.label ?? '',
+      comparator: (a: any, b: any) => (a?.label ?? '').localeCompare(b?.label ?? ''),
+      filterValueGetter: (p: ValueGetterParams) => p.data.realm?.label ?? ''
     },
     {
       field: 'date', headerName: 'Date', width: 120,
@@ -94,6 +106,11 @@ export class SpiritsComponent {
   ];
 
   constructor() {
+    const realmColDef = this.colDefs.find(c => c.field === 'realm')!;
+    realmColDef.filterParams.values = this._dataService.realmConfig.items.map(r => r.name);
+    const areaColDef = this.colDefs.find(c => c.field === 'area')!;
+    areaColDef.filterParams.values = this._dataService.areaConfig.items.map(a => a.name);
+
     this._breakpointObserver
       .observe([`(min-width: ${this.WIDE_WIDTH}px)`])
       .pipe(takeUntilDestroyed())
@@ -130,11 +147,17 @@ export class SpiritsComponent {
       model['type'] = { values };
     }
 
-    // The area guid is resolved to a name filter so the filter stays visible and editable in the grid.
+    // The realm and area guids are resolved to name filters so the filters stay visible and editable in the grid.
+    const realmGuid = q.get('realm')?.trim();
+    const realmName = realmGuid ? (this._dataService.guidMap.get(realmGuid) as IRealm | undefined)?.name : undefined;
+    if (realmName) {
+      model['realm'] = { values: [realmName] };
+    }
+
     const areaGuid = q.get('area')?.trim();
     const areaName = areaGuid ? (this._dataService.guidMap.get(areaGuid) as IArea | undefined)?.name : undefined;
     if (areaName) {
-      model['area'] = { filterType: 'text', type: 'equals', filter: areaName };
+      model['area'] = { values: [areaName] };
     }
 
     this._api.setFilterModel(Object.keys(model).length ? model : null);
@@ -234,13 +257,6 @@ export class SpiritsComponent {
   private filterSpirits(q: ParamMap): Array<ISpirit> {
     const searchArrays: Array<Array<ISpirit>> = [];
 
-    const realmGuid = q.get('realm');
-    const realm = realmGuid ? this._dataService.guidMap.get(realmGuid) as IRealm : undefined;
-    if (realm) {
-      const set = new Set(realm.areas?.flatMap(a => a.spirits || []) || []);
-      searchArrays.push(this._dataService.spiritConfig.items.filter(s => set.has(s)));
-    }
-
     const seasonGuid = q.get('season');
     const season = seasonGuid ? this._dataService.guidMap.get(seasonGuid) as ISeason : undefined;
     if (season) { searchArrays.push(season.spirits || []); }
@@ -297,6 +313,7 @@ export class SpiritsComponent {
         img: s.imageUrl,
         spirit: { label: s.name, route: ['/spirit', s.guid] },
         type: s.type,
+        realm: s.area?.realm ? { label: s.area.realm.name, route: ['/realm', s.area.realm.guid] } : undefined,
         area: s.area ? { label: s.area.name, route: ['/area', s.area.guid] } : undefined,
         date: this.getSpiritDate(s),
         unlocked: unlockedItems,
