@@ -91,6 +91,14 @@ export class ItemCollectionComponent {
     this.editGuid = undefined;
   }
 
+  addCollectionFromBottom(): void {
+    const wasEditing = this.showEdit;
+    this.toggleShowAdd();
+    if (this.showEdit && !wasEditing) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+  }
+
   importCollectionFile(): void {
     const input = document.createElement('input');
     input.type = 'file';
@@ -175,10 +183,21 @@ export class ItemCollectionComponent {
       this.collections.push(collection);
     }
 
+    const isNew = !this.editGuid;
     this.saveStorage();
     this.editGuid = undefined;
     this.showEdit = false;
     this.clearEditForm();
+
+    // Wait for the list to render again before it can be scrolled to.
+    setTimeout(() => {
+      if (isNew) {
+        window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'instant' });
+      } else {
+        const el = document.querySelector(`[data-collection="${collection.guid}"]`);
+        el?.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+      }
+    });
   }
 
   cancelEdit(): void {

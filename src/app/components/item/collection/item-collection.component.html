@@ -96,7 +96,7 @@
   }
 
   @for (collection of collections; track collection.guid; let i = $index; let first = $first; let last = $last) {
-    <section class="atmos-card">
+    <section class="atmos-card" [attr.data-collection]="collection.guid">
       <div class="atmos-coll__row-header atmos-card__body">
         <div class="atmos-coll__row-info">
           @if (collection.imageUrl) {
@@ -124,11 +124,10 @@
           <button type="button" class="atmos-btn atmos-btn--sm" (click)="showEditCollection(collection)" title="Edit">
             <mat-icon>edit</mat-icon>
           </button>
-          @if (collection.items.length) {
-            <button type="button" class="atmos-btn atmos-btn--sm" (click)="gotoCalculator(collection)" title="Calculate cost">
-              <mat-icon>calculate</mat-icon>
-            </button>
-          }
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="gotoCalculator(collection)" title="Calculate cost"
+            [disabled]="!collection.items.length">
+            <mat-icon>calculate</mat-icon>
+          </button>
           <button type="button" class="atmos-btn atmos-btn--sm" (click)="showCopyCollection(collection)" title="Copy">
             <mat-icon>content_copy</mat-icon>
           </button>
@@ -151,5 +150,13 @@
         </div>
       }
     </section>
+  }
+
+  @if (collections.length) {
+    <div class="atmos-coll__actions">
+      <button type="button" class="atmos-btn" (click)="addCollectionFromBottom()">
+        <mat-icon>add</mat-icon> Add collection
+      </button>
+    </div>
   }
 </div>
