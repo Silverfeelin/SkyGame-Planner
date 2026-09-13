@@ -5,7 +5,13 @@
   </app-clock>
 </section>
 
-<app-search-bar [favouriteCount]="favouriteCount()" />
+<app-search-bar />
+
+<app-dashboard-favourites
+  [season]="season()"
+  [eventInstances]="activeEventInstances()"
+  [ts]="activeTs()"
+  [rs]="activeRs()" />
 
 <section class="atmos-dashboard__features">
   @if (season(); as s) {

@@ -1,0 +1,48 @@
+<article class="atmos-card atmos-favourites" [class.atmos-favourites--empty]="!isActive()">
+  <div class="atmos-favourites__head">
+    <div class="atmos-favourites__heading">
+      <div class="atmos-favourites__kicker">
+        <mat-icon>new_releases</mat-icon>
+        <span>{{ isActive() ? 'Available now' : 'Favourites' }}</span>
+        <button
+          type="button"
+          class="atmos-favourites__help"
+          aria-label="What does this section show?"
+          (click)="showHelp()">
+          <mat-icon>help_outline</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <a class="atmos-btn atmos-favourites__cta" routerLink="/item/table" [queryParams]="{ favourite: 1 }">
+      <mat-icon>table_rows</mat-icon>
+      <span>View favourites</span>
+    </a>
+  </div>
+
+  @if (isActive()) {
+    <div class="atmos-favourites__grid">
+      @for (row of rows(); track row.item.guid) {
+        <a class="atmos-favourites__item atmos-tile"
+          [skyTooltip]="row.item.name"
+          [routerLink]="row.target.route"
+          [queryParams]="row.target.extras?.queryParams ?? null">
+          <app-item-icon [item]="row.item" [opaque]="true" [subIcons]="SUBICONS_ALL" />
+          @if (row.source) {
+            <span class="atmos-favourites__source">{{ row.source }}</span>
+          }
+        </a>
+      }
+    </div>
+
+    <div class="atmos-favourites__foot">
+      <span class="atmos-favourites__foot-label">Price</span>
+      <app-cost [cost]="cost()" [price]="price()" [showZeroes]="false" />
+    </div>
+  } @else {
+    <p class="atmos-favourites__empty">
+      None of your favourite items are available right now. Anything you favourite that shows up in
+      the current season, an ongoing event, the traveling spirit or a special visit will be listed here.
+    </p>
+  }
+</article>

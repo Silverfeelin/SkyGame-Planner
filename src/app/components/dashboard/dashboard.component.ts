@@ -10,10 +10,10 @@ import { DataService } from '@app/services/data.service';
 import { EventService } from '@app/services/event.service';
 import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { EventCheckinService } from '@app/services/event-checkin.service';
-import { StorageService } from '@app/services/storage.service';
 import { IEventInstance, IRealm, ISeason, ISpecialVisit, ISpiritTree, ITravelingSpirit } from 'skygame-data';
 import { ShardIndicatorComponent } from '@app/components/shared/shared-widgets';
 import { ClockComponent } from './clock.component';
+import { DashboardFavouritesComponent } from './favourites-card.component';
 import { SearchBarComponent } from './search-bar.component';
 import {
   FeatureCardComponent,
@@ -52,11 +52,10 @@ interface IEventCard {
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ClockComponent, ShardIndicatorComponent, SearchBarComponent, FeatureCardComponent, RouterLink]
+  imports: [ClockComponent, ShardIndicatorComponent, SearchBarComponent, DashboardFavouritesComponent, FeatureCardComponent, RouterLink]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);
-  private readonly _storageService = inject(StorageService);
   private readonly _eventService = inject(EventService);
   private readonly _dailyCheckinService = inject(DailyCheckinService);
   private readonly _eventCheckinService = inject(EventCheckinService);
@@ -66,10 +65,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
   readonly tsIsFuture = signal(true);
   readonly rs = signal<ISpecialVisit | undefined>(undefined);
   readonly rsIsFuture = signal(false);
-  readonly favouriteCount = signal(0);
   readonly eventCards = signal<ReadonlyArray<IEventCard>>([]);
   readonly checkedIn = signal(false);
   readonly dailyRealm = signal<IRealm | undefined>(undefined);
+
+  /** Only what is obtainable today; the upcoming-event card and future TS/RS are excluded. */
+  readonly activeEventInstances = computed<ReadonlyArray<IEventInstance>>(() =>
+    this.eventCards().filter(c => c.showCheckin).map(c => c.instance));
+  readonly activeTs = computed(() => this.tsIsFuture() ? undefined : this.ts());
+  readonly activeRs = computed(() => this.rsIsFuture() ? undefined : this.rs());
 
   readonly dailyLinks = computed<ReadonlyArray<IFeatureLink>>(() => {
     const links: Array<IFeatureLink> = [
@@ -198,8 +202,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     const futureRs = !activeRs ? rsDates.future?.at(0) : undefined;
     this.rs.set(activeRs ?? futureRs);
     this.rsIsFuture.set(!activeRs && !!futureRs);
-
-    this.favouriteCount.set(this._storageService.getFavourites().size);
 
     this.eventCards.set(this.buildEventCards());
   }

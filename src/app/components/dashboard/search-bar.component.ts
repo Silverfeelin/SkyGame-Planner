@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, input, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -22,8 +22,6 @@ export class SearchBarComponent {
   private readonly _eventService = inject(EventService);
   private readonly _router = inject(Router);
   private readonly _route = inject(ActivatedRoute);
-
-  readonly favouriteCount = input<number>(0);
 
   readonly input = viewChild<ElementRef<HTMLInputElement>>('input');
 
