@@ -34,22 +34,26 @@
     }
   </div>
 
-  @if (disabledReason()) {
-    <div class="atmos-daily-task__note atmos-daily-task__note--disabled">{{ disabledReason() }}</div>
-  } @else if (task().note) {
-    <div class="atmos-daily-task__note">{{ task().note }}</div>
-  }
+  @if (disabledReason() || task().note || task().link || task().externalLink) {
+    <div class="atmos-daily-task__footer">
+      @if (task().link) {
+        <a class="atmos-text-link atmos-daily-task__link" [routerLink]="task().link" (click)="$event.stopPropagation()">
+          <mat-icon>open_in_new</mat-icon>
+          <span>Open tracker</span>
+        </a>
+      }
+      @if (task().externalLink) {
+        <a class="atmos-text-link atmos-daily-task__link" [href]="task().externalLink" target="_blank" rel="noopener" (click)="$event.stopPropagation()">
+          <mat-icon>open_in_new</mat-icon>
+          <span>Open link</span>
+        </a>
+      }
 
-  @if (task().link) {
-    <a class="atmos-text-link atmos-daily-task__link" [routerLink]="task().link" (click)="$event.stopPropagation()">
-      <mat-icon>open_in_new</mat-icon>
-      <span>Open tracker</span>
-    </a>
-  }
-  @if (task().externalLink) {
-    <a class="atmos-text-link atmos-daily-task__link" [href]="task().externalLink" target="_blank" rel="noopener" (click)="$event.stopPropagation()">
-      <mat-icon>open_in_new</mat-icon>
-      <span>Open link</span>
-    </a>
+      @if (disabledReason()) {
+        <div class="atmos-daily-task__note atmos-daily-task__note--disabled">{{ disabledReason() }}</div>
+      } @else if (task().note) {
+        <div class="atmos-daily-task__note">{{ task().note }}</div>
+      }
+    </div>
   }
 </div>

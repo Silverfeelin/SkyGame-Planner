@@ -81,7 +81,16 @@
   align-items: center;
 }
 
+.atmos-daily-task__footer {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+}
+
 .atmos-daily-task__note {
+  /* Pushes right in the footer row, with or without a preceding link. */
+  margin-left: auto;
   font-size: 12px;
   color: var(--atmos-text-dim);
   font-style: italic;
@@ -119,6 +128,7 @@
   gap: 6px;
   font-size: 13px;
   padding-left: 32px;
+  flex: 0 0 auto;
   border-bottom: 0;
 
   mat-icon {
