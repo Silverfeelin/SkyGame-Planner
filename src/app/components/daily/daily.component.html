@@ -8,7 +8,8 @@
   Track your daily activities here. Don't forget to update your candles on the
   <a routerLink="/currency" class="atmos-text-link">Currency</a> page!<br>
   Find more recurring events on the
-  <a href="https://sky-clock.netlify.app/" target="_blank" rel="noopener" class="atmos-text-link">Sky Clock</a> by Chris Stead.
+  <a href="https://sky-clock.netlify.app/" target="_blank" rel="noopener" class="atmos-text-link">Sky Clock</a> by Chris Stead,
+  and shards on <a href="https://sky-shards.pages.dev/en" target="_blank" rel="noopener" class="atmos-text-link">Sky Shards</a> by Plutoy.
 </p>
 
 <!-- Timers -->
@@ -33,6 +34,7 @@
       <div class="atmos-daily__countdown">{{ weeklyCountdown() }}</div>
     </div>
   </div>
+  <app-shard-indicator variant="tile" class="atmos-daily__timer" />
 </section>
 
 <!-- Summary card: season-aware (matches legacy behaviour) -->

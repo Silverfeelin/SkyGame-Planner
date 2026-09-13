@@ -1,0 +1,145 @@
+/* Chromeless at rest like .atmos-link — the hover background is the only surface. */
+.atmos-shard {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  border-radius: var(--atmos-radius-sm);
+  color: var(--atmos-text-dim);
+  text-decoration: none;
+  text-shadow: var(--atmos-text-shadow);
+  transition: background var(--atmos-transition), color var(--atmos-transition);
+
+  &:hover {
+    background: var(--atmos-hover-bg);
+    color: var(--atmos-text);
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+}
+
+/* Icon-only variant sits flush against a label; tighter hit area. */
+.atmos-shard--icon {
+  padding: 2px;
+  margin: 0;
+}
+
+.atmos-shard__glyph {
+  position: relative;
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.atmos-shard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Dim while no shard is running, so "active" reads at a glance. */
+  opacity: 0.45;
+  transition: opacity var(--atmos-transition);
+}
+
+.atmos-shard--active .atmos-shard__img {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px var(--glow));
+}
+
+.atmos-shard--muted .atmos-shard__img {
+  opacity: 0.3;
+  filter: grayscale(0.6);
+}
+
+/* Hue follows the shard colour rather than the theme hue. */
+.atmos-shard { --glow: oklch(0.75 0.05 var(--atmos-hue)); }
+.atmos-shard--red { --glow: var(--atmos-danger); }
+
+.atmos-shard--active .atmos-shard__label {
+  color: var(--atmos-text);
+  font-weight: 600;
+}
+
+.atmos-shard__label {
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  .atmos-shard {
+    gap: 6px;
+    padding: 3px 6px;
+    margin: -3px -6px;
+  }
+  .atmos-shard__glyph {
+    width: 18px;
+    height: 18px;
+  }
+  .atmos-shard__label {
+    font-size: 11px;
+  }
+}
+
+/* Tile variant — matches the /daily countdown tiles (13px caption, 22px value). */
+.atmos-shard-tile {
+  position: relative;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  transition: background var(--atmos-transition);
+
+  &:hover { background: var(--atmos-hover-bg); }
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+}
+
+.atmos-shard-tile__link-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  color: var(--atmos-text-dim);
+  opacity: 0.7;
+  transition: opacity var(--atmos-transition), color var(--atmos-transition);
+}
+
+.atmos-shard-tile:hover .atmos-shard-tile__link-icon {
+  color: var(--atmos-accent);
+  opacity: 1;
+}
+
+.atmos-shard-tile__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--atmos-text-dim);
+  font-size: 13px;
+
+  /* Keep the caption row the height of the neighbouring text-only captions. */
+  .atmos-shard__glyph {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.atmos-shard-tile__value {
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--atmos-text);
+}
+
+.atmos-shard-tile.atmos-shard--muted .atmos-shard-tile__value {
+  color: var(--atmos-text-dim);
+}

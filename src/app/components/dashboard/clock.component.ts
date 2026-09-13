@@ -32,10 +32,6 @@ export class ClockComponent implements OnInit, OnDestroy {
     const now = this.zone() === 'sky' ? local.setZone(DateHelper.skyTimeZone) : local;
     this.time.set(now.toFormat('HH:mm:ss'));
 
-    if (this.zone() === 'sky') {
-      this.subtle.set(now.toFormat('ZZZZ'));
-    } else {
-      this.subtle.set(now.toFormat('cccc · dd LLLL yyyy'));
-    }
+    this.subtle.set(this.zone() === 'sky' ? '' : now.toFormat('cccc · dd LLLL yyyy'));
   }
 }

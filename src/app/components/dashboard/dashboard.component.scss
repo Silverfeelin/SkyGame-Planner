@@ -9,6 +9,12 @@
   border-bottom: 1px solid var(--atmos-line-soft);
 }
 
+/* Projected into the sky clock, in place of the timezone line. The right margin
+   cancels the chip's own link-style negative margin so it lines up with the time. */
+.atmos-dashboard__shard {
+  margin-right: 8px;
+}
+
 .atmos-dashboard__features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -18,6 +24,9 @@
 @media (max-width: 639px) {
   .atmos-dashboard__clocks {
     padding: 4px 4px 12px;
+  }
+  .atmos-dashboard__shard {
+    margin-right: 6px;
   }
   .atmos-dashboard__features {
     grid-template-columns: 1fr;

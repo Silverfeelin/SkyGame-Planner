@@ -21,6 +21,8 @@ export { IconPickerComponent } from './icon-picker/icon-picker.component';
 export { QuickActionsComponent } from './quick-actions/quick-actions.component';
 export { QuickActionsService } from './quick-actions/quick-actions.service';
 
+export { ShardIndicatorComponent, type ShardState } from './shard-indicator/shard-indicator.component';
+
 export { TabsComponent } from './tabs/tabs.component';
 export { TabDirective } from './tabs/tab.directive';
 

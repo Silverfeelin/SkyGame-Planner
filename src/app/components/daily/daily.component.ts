@@ -18,7 +18,8 @@ import {
   DailyCardComponent,
   DailyTaskComponent,
   EventCardComponent,
-  SeasonCardComponent
+  SeasonCardComponent,
+  ShardIndicatorComponent
 } from '@app/components/shared/shared-widgets';
 import { DailyQuickActionsComponent } from './quick-actions/daily-quick-actions.component';
 
@@ -54,6 +55,7 @@ function getWeeklyAnchor(today: DateTime): string {
     DailyTaskComponent,
     EventCardComponent,
     SeasonCardComponent,
+    ShardIndicatorComponent,
     DailyQuickActionsComponent
   ]
 })

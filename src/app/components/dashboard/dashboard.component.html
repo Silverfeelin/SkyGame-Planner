@@ -1,6 +1,8 @@
 <section class="atmos-dashboard__clocks">
   <app-clock label="Local time" zone="local" />
-  <app-clock label="Sky time" zone="sky" [rightAlign]="true" />
+  <app-clock label="Sky time" zone="sky" [rightAlign]="true">
+    <app-shard-indicator class="atmos-dashboard__shard" />
+  </app-clock>
 </section>
 
 <app-search-bar [favouriteCount]="favouriteCount()" />

@@ -12,6 +12,7 @@ import { DailyCheckinService } from '@app/services/daily-checkin.service';
 import { EventCheckinService } from '@app/services/event-checkin.service';
 import { StorageService } from '@app/services/storage.service';
 import { IEventInstance, IRealm, ISeason, ISpecialVisit, ISpiritTree, ITravelingSpirit } from 'skygame-data';
+import { ShardIndicatorComponent } from '@app/components/shared/shared-widgets';
 import { ClockComponent } from './clock.component';
 import { SearchBarComponent } from './search-bar.component';
 import {
@@ -51,7 +52,7 @@ interface IEventCard {
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ClockComponent, SearchBarComponent, FeatureCardComponent, RouterLink]
+  imports: [ClockComponent, ShardIndicatorComponent, SearchBarComponent, FeatureCardComponent, RouterLink]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   private readonly _dataService = inject(DataService);

@@ -1,0 +1,42 @@
+@if (variant() === 'tile') {
+  <a
+    class="atmos-card atmos-shard-tile"
+    [class.atmos-shard--active]="state() === 'active'"
+    [class.atmos-shard--muted]="state() === 'none' || state() === 'over'"
+    [class.atmos-shard--red]="isRed()"
+    [href]="href"
+    target="_blank"
+    rel="noopener"
+    [title]="tooltip()">
+    <mat-icon class="atmos-shard-tile__link-icon" aria-hidden="true">open_in_new</mat-icon>
+    <div class="atmos-card__body">
+      <div class="atmos-shard-tile__label">
+        <span class="atmos-shard__glyph">
+          <img class="atmos-shard__img" [src]="imgSrc()" [alt]="shardName() + ' shard'">
+        </span>
+        <span>{{ tileLabel() }}</span>
+      </div>
+      <div class="atmos-shard-tile__value">{{ tileValue() }}</div>
+    </div>
+  </a>
+} @else {
+  <a
+    class="atmos-shard"
+    [class.atmos-shard--icon]="variant() === 'icon'"
+    [class.atmos-shard--active]="state() === 'active'"
+    [class.atmos-shard--muted]="state() === 'none' || state() === 'over'"
+    [class.atmos-shard--red]="isRed()"
+    [href]="href"
+    target="_blank"
+    rel="noopener"
+    [title]="tooltip()">
+
+    <span class="atmos-shard__glyph">
+      <img class="atmos-shard__img" [src]="imgSrc()" [alt]="shardName() + ' shard'">
+    </span>
+
+    @if (variant() === 'chip') {
+      <span class="atmos-shard__label">{{ label() }}</span>
+    }
+  </a>
+}
