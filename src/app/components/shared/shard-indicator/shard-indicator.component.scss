@@ -56,7 +56,7 @@
 }
 
 /* Hue follows the shard colour rather than the theme hue. */
-.atmos-shard { --glow: oklch(0.75 0.05 var(--atmos-hue)); }
+.atmos-shard { --glow: oklch(0.75 calc(0.05 * var(--atmos-chroma)) var(--atmos-hue)); }
 .atmos-shard--red { --glow: var(--atmos-danger); }
 
 .atmos-shard--active .atmos-shard__label {

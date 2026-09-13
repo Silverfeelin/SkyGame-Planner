@@ -50,8 +50,8 @@
   -webkit-backdrop-filter: var(--atmos-blur-soft);
 
   &.is-current {
-    border-color: oklch(0.82 0.11 var(--atmos-hue) / 0.55);
-    box-shadow: inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.2);
+    border-color: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.55);
+    box-shadow: inset 0 0 0 1px oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.2);
   }
 }
 

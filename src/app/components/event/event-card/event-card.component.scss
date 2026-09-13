@@ -29,7 +29,7 @@
   background: linear-gradient(
     180deg,
     transparent 30%,
-    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+    oklch(0.16 calc(0.03 * var(--atmos-chroma)) var(--atmos-hue) / 0.85)
   );
 }
 

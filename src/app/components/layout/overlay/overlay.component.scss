@@ -7,7 +7,7 @@
   height: 100%;
   z-index: 9999;
   display: flex;
-  background-color: oklch(0.04 0.01 var(--atmos-hue) / 0.6);
+  background-color: oklch(0.04 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
   justify-content: center;
   align-items: center;
   text-wrap: balance;

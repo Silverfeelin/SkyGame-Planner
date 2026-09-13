@@ -159,7 +159,7 @@
   &:not(.is-active) { gap: 0; }
 
   &.is-active {
-    background: oklch(0.82 0.11 var(--atmos-hue) / 0.18);
+    background: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.18);
     color: var(--atmos-accent);
   }
 }
@@ -337,7 +337,7 @@ $st-up-trim: 12px;
 .atmos-conn {
   position: absolute;
   width: 2px;
-  background: oklch(0.95 0.01 var(--atmos-hue) / 0.5);
+  background: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.5);
   pointer-events: none;
 }
 

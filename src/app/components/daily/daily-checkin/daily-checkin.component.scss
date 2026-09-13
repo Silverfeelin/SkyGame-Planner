@@ -34,7 +34,7 @@
   width: 18px;
   height: 18px;
   border-radius: 6px;
-  border: 1.5px solid oklch(0.95 0.01 var(--atmos-hue) / 0.4);
+  border: 1.5px solid oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.4);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +51,7 @@
 .atmos-daily-checkin.is-checked .atmos-daily-checkin__box {
   background: var(--atmos-accent);
   border-color: var(--atmos-accent);
-  color: oklch(0.15 0.02 var(--atmos-hue));
+  color: oklch(0.15 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue));
 }
 
 .atmos-daily-checkin__label {

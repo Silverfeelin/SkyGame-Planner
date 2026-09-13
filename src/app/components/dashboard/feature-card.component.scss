@@ -30,7 +30,7 @@
   background: linear-gradient(
     180deg,
     transparent 30%,
-    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+    oklch(0.16 calc(0.03 * var(--atmos-chroma)) var(--atmos-hue) / 0.85)
   );
 }
 
@@ -47,7 +47,7 @@
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 4px;
-  text-shadow: 0 1px 8px oklch(0.05 0.02 var(--atmos-hue) / 0.8);
+  text-shadow: 0 1px 8px oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.8);
 }
 
 .atmos-card__title {
@@ -75,7 +75,7 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: oklch(0.95 0.01 var(--atmos-hue) / 0.8);
+  color: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.8);
 
   mat-icon {
     font-size: 18px;
@@ -110,7 +110,7 @@
 }
 
 .atmos-card__chip-total {
-  color: oklch(0.95 0.01 var(--atmos-hue) / 0.55);
+  color: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.55);
 }
 
 .atmos-card__chip.is-complete {

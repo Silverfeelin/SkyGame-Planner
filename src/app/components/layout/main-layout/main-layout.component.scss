@@ -30,7 +30,7 @@
   background: radial-gradient(
     ellipse at 50% 60%,
     transparent 42%,
-    oklch(0.05 0.02 var(--atmos-hue) / 0.55)
+    oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.55)
   );
   pointer-events: none;
 }
@@ -159,7 +159,7 @@
 }
 
 .error-pre {
-  background: oklch(0.15 0.02 var(--atmos-hue) / 0.9);
+  background: oklch(0.15 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.9);
   border-radius: var(--atmos-radius-sm);
   padding: var(--atmos-pad-compact);
   white-space: pre-wrap;

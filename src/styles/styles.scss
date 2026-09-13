@@ -273,22 +273,26 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   color-scheme: dark;
 
   --atmos-hue: 240;
+  /* Scales the chroma of every hue-derived colour, so a theme can be muted or
+     near-greyscale without redefining each token. Theme-independent colours
+     (dyes, currencies, status) are unaffected. */
+  --atmos-chroma: 1;
   --atmos-bg-image: url(/assets/game/background/isle.webp);
 
   /* Surfaces. */
-  --atmos-bg:        oklch(0.18 0.02 var(--atmos-hue));
-  --atmos-bg-elev:   oklch(0.235 0.028 var(--atmos-hue));
-  --atmos-bg-elev-2: oklch(0.285 0.035 var(--atmos-hue));
-  --atmos-bg-elev-3: oklch(0.34 0.04 var(--atmos-hue));
+  --atmos-bg:        oklch(0.18 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg-elev:   oklch(0.235 calc(0.028 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg-elev-2: oklch(0.285 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-bg-elev-3: oklch(0.34 calc(0.04 * var(--atmos-chroma)) var(--atmos-hue));
 
   /* Text. */
-  --atmos-text:      oklch(0.97 0.005 var(--atmos-hue));
-  --atmos-text-dim:  oklch(0.78 0.015 var(--atmos-hue));
-  --atmos-text-mute: oklch(0.58 0.02 var(--atmos-hue));
+  --atmos-text:      oklch(0.97 calc(0.005 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-text-dim:  oklch(0.78 calc(0.015 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-text-mute: oklch(0.58 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue));
 
   /* Accents. */
-  --atmos-accent:   oklch(0.82 0.11 var(--atmos-hue));
-  --atmos-accent-2: oklch(0.74 0.12 calc(var(--atmos-hue) + 40));
+  --atmos-accent:   oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-accent-2: oklch(0.74 calc(0.12 * var(--atmos-chroma)) calc(var(--atmos-hue) + 40));
   --atmos-warm:     oklch(0.78 0.13 65);
   --atmos-pink:     oklch(0.78 0.13 350);
   --atmos-good:     oklch(0.80 0.13 150);
@@ -308,22 +312,22 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-shadow:        0 0 5px 2px;
 
   /* Lines / dividers. */
-  --atmos-line:      oklch(0.32 0.025 var(--atmos-hue));
-  --atmos-line-soft: oklch(0.95 0.01 var(--atmos-hue) / 0.30);
+  --atmos-line:      oklch(0.32 calc(0.025 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-line-soft: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.30);
 
   /* Interaction. */
-  --atmos-hover-bg:        oklch(0.95 0.01 var(--atmos-hue) / 0.10);
-  --atmos-hover-bg-strong: oklch(0.95 0.01 var(--atmos-hue) / 0.16);
-  --atmos-hover-tint:      oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+  --atmos-hover-bg:        oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
+  --atmos-hover-bg-strong: oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.16);
+  --atmos-hover-tint:      oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.06);
   --atmos-transition:      120ms ease;
 
   /* Toggled-on / selected state. Tinted accent fill, accent border and text —
      clearly "on" without the loudness of a full accent fill. Shared by
      .atmos-btn--active and the atmos tab strip. */
-  --atmos-active-bg:       oklch(0.82 0.11 var(--atmos-hue) / 0.18);
-  --atmos-active-bg-hover: oklch(0.82 0.11 var(--atmos-hue) / 0.26);
-  --atmos-active-border:   oklch(0.82 0.11 var(--atmos-hue) / 0.55);
-  --atmos-active-ring:     inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.25);
+  --atmos-active-bg:       oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.18);
+  --atmos-active-bg-hover: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.26);
+  --atmos-active-border:   oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.55);
+  --atmos-active-ring:     inset 0 0 0 1px oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.25);
 
   /* Focus ring. Overridable per component: set --atmos-focus-offset on an
      element (negative to inset the ring) instead of re-declaring the outline.
@@ -336,22 +340,22 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   /* Interactive tile surface (persistent bg + hover). Reusable across icon-tile grids. */
   --atmos-tile-bg:          var(--atmos-chip-bg);          /* 6% resting fill */
   --atmos-tile-bg-hover:    var(--atmos-hover-bg-strong);  /* 16% hover step */
-  --atmos-tile-bg-selected: oklch(0.82 0.11 var(--atmos-hue) / 0.12);
+  --atmos-tile-bg-selected: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.12);
   --atmos-tile-ring:        2px;                           /* selection ring width */
 
   /* Cards. */
-  --atmos-card-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
-  --atmos-card-bg-solid: oklch(0.20 0.035 var(--atmos-hue));
-  --atmos-card-border: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
+  --atmos-card-bg:     oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);
+  --atmos-card-bg-solid: oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue));
+  --atmos-card-border: 1px solid oklch(0.95 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
   --atmos-card-shadow:
-    0 30px 60px -30px oklch(0.04 0.02 var(--atmos-hue) / 0.7),
+    0 30px 60px -30px oklch(0.04 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.7),
     inset 0 1px 0 oklch(1 0 0 / 0.04);
   --atmos-card-radius: 16px;
 
   /* Pills / chips. */
-  --atmos-pill-bg:     oklch(0.20 0.035 var(--atmos-hue) / 0.60);
-  --atmos-pill-border: 1px solid oklch(0.95 0.02 var(--atmos-hue) / 0.10);
-  --atmos-chip-bg:     oklch(0.95 0.01 var(--atmos-hue) / 0.06);
+  --atmos-pill-bg:     oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.60);
+  --atmos-pill-border: 1px solid oklch(0.95 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.10);
+  --atmos-chip-bg:     oklch(0.95 calc(0.01 * var(--atmos-chroma)) var(--atmos-hue) / 0.06);
 
   /* Map controls (Leaflet). */
   --atmos-map-control-bg:            var(--atmos-card-bg);
@@ -362,7 +366,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 
   /* Map popups (Leaflet). More opaque than the card bg so popup content
      stays readable over busy map tiles. */
-  --atmos-map-popup-bg:            oklch(0.20 0.035 var(--atmos-hue) / 0.85);
+  --atmos-map-popup-bg:            oklch(0.20 calc(0.035 * var(--atmos-chroma)) var(--atmos-hue) / 0.85);
   --atmos-map-popup-border:        var(--atmos-card-border);
   --atmos-map-popup-text:          var(--atmos-text);
   --atmos-map-popup-item-bg:       var(--atmos-chip-bg);
@@ -427,8 +431,8 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-bg-blur: 6px;
 
   /* Text shadows for type floating over the bg image. */
-  --atmos-text-shadow:       0 1px 8px oklch(0.05 0.02 var(--atmos-hue) / 0.6);
-  --atmos-text-shadow-large: 0 2px 16px oklch(0.05 0.02 var(--atmos-hue) / 0.75);
+  --atmos-text-shadow:       0 1px 8px oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
+  --atmos-text-shadow-large: 0 2px 16px oklch(0.05 calc(0.02 * var(--atmos-chroma)) var(--atmos-hue) / 0.75);
 
   /* Dye swatch colours — fixed in-game dye colours, theme-independent. */
   --atmos-dye-red:           #93362f;
@@ -1008,7 +1012,8 @@ a.atmos-link:focus-visible {
 }
 
 :root[data-theme="cold"] {
-  --atmos-hue: 190;
+  --atmos-hue: 250;
+  --atmos-chroma: 0.5;
   --atmos-bg-image: url(/assets/game/background/village.webp);
 }
 
@@ -1019,21 +1024,24 @@ a.atmos-link:focus-visible {
 
 :root[data-theme="dark"] {
   --atmos-hue: 240;
+  --atmos-chroma: 0.5;
   --atmos-bg-image: url(/assets/game/background/void_jelly.webp);
 }
 
 :root[data-theme="love"] {
-  --atmos-hue: 205;
+  --atmos-hue: 240;
   --atmos-bg-image: url(/assets/game/background/love2024.webp);
 }
 
 :root[data-theme="moomin"] {
   --atmos-hue: 205;
+  --atmos-chroma: 0.12;
   --atmos-bg-image: url(/assets/game/background/moomin.webp);
 }
 
 :root[data-theme="wonderland"] {
   --atmos-hue: 0;
+  --atmos-chroma: 0.8;
   --atmos-bg-image: url(/assets/game/background/feast2024.webp);
 }
 

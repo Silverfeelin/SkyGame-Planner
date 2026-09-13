@@ -3,7 +3,7 @@
 
   &.is-highlighted {
     box-shadow: var(--atmos-card-shadow),
-      0 0 0 2px oklch(0.82 0.11 var(--atmos-hue) / 0.55);
+      0 0 0 2px oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.55);
   }
 
   &.is-bought,

@@ -27,8 +27,8 @@
   }
 
   &.is-highlighted {
-    background: oklch(0.82 0.11 var(--atmos-hue) / 0.16);
-    box-shadow: inset 0 0 0 1px oklch(0.82 0.11 var(--atmos-hue) / 0.4);
+    background: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.16);
+    box-shadow: inset 0 0 0 1px oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.4);
   }
 
   &.is-opaque .atmos-node__icon {

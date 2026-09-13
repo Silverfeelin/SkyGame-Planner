@@ -60,7 +60,7 @@
 
 ::ng-deep .shared-creation-marker {
   color: var(--atmos-text);
-  filter: drop-shadow(0 0 4px oklch(0.7 0.1 var(--atmos-hue) / 0.9));
+  filter: drop-shadow(0 0 4px oklch(0.7 calc(0.1 * var(--atmos-chroma)) var(--atmos-hue) / 0.9));
 
   svg {
     width: 100%;

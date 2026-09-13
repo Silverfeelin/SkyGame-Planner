@@ -18,8 +18,8 @@
 .atmos-daily-card__image--fallback {
   background: linear-gradient(
     135deg,
-    oklch(0.45 0.09 var(--atmos-hue)),
-    oklch(0.35 0.07 calc(var(--atmos-hue) + 40))
+    oklch(0.45 calc(0.09 * var(--atmos-chroma)) var(--atmos-hue)),
+    oklch(0.35 calc(0.07 * var(--atmos-chroma)) calc(var(--atmos-hue) + 40))
   );
 }
 
@@ -29,7 +29,7 @@
   background: linear-gradient(
     180deg,
     transparent 30%,
-    oklch(0.16 0.03 var(--atmos-hue) / 0.85)
+    oklch(0.16 calc(0.03 * var(--atmos-chroma)) var(--atmos-hue) / 0.85)
   );
 }
 
