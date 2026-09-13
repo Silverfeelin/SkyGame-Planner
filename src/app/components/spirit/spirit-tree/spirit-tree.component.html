@@ -96,6 +96,7 @@
                   <app-node
                     [node]="n"
                     [position]="col.position"
+                    [subIcons]="nodeSubIcons()"
                     [action]="action()"
                     [opaque]="isNodeOpaque(n)"
                     [highlight]="isNodeHighlighted(n)"
@@ -125,6 +126,7 @@
                 <app-node
                   [node]="n"
                   position="left"
+                  [subIcons]="nodeSubIcons()"
                   [action]="action()"
                   [opaque]="isNodeOpaque(n)"
                   [highlight]="isNodeHighlighted(n)"
@@ -138,6 +140,7 @@
                 <app-node
                   [node]="n"
                   position="center"
+                  [subIcons]="nodeSubIcons()"
                   [action]="action()"
                   [opaque]="isNodeOpaque(n)"
                   [highlight]="isNodeHighlighted(n)"
@@ -151,6 +154,7 @@
                 <app-node
                   [node]="n"
                   position="right"
+                  [subIcons]="nodeSubIcons()"
                   [action]="action()"
                   [opaque]="isNodeOpaque(n)"
                   [highlight]="isNodeHighlighted(n)"

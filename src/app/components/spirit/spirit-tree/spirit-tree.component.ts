@@ -5,6 +5,7 @@ import { DateTime } from 'luxon';
 import { Params, Router, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { NodeAction, NodeComponent, NodePosition } from '../node/node.component';
+import { ItemSubicon, SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { DraftWarningComponent } from '@app/components/shared/draft-warning/draft-warning.component';
 import { CostComponent } from '@app/components/util/cost/cost.component';
 import { DateComponent } from '@app/components/util/date/date.component';
@@ -115,6 +116,8 @@ export class SpiritTreeComponent {
   readonly padBottom = input<boolean>(false);
   readonly forceNodeAction = input<NodeAction | undefined>(undefined);
   readonly nodeOverlayTemplate = input<TemplateRef<unknown> | undefined>(undefined);
+  /** Subicons drawn on every node; narrow it where a marker is redundant for the host page. */
+  readonly nodeSubIcons = input<ReadonlyArray<ItemSubicon>>(SUBICONS_ALL);
   /** Editor-only affordances placed in the tree layout; empty for a read-only tree. */
   readonly editSlots = input<ReadonlyArray<TreeEditSlot>>([]);
 

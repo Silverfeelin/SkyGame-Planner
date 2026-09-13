@@ -21,6 +21,7 @@ import {
 } from '@app/components/shared/shared-widgets';
 import { SeasonQuickActionsComponent } from '../quick-actions/season-quick-actions.component';
 import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
+import { SUBICONS_NO_SEASON } from '@app/components/item/icon/subicons/item-subicons.component';
 
 @Component({
   selector: 'app-season-calculator',
@@ -30,6 +31,9 @@ import { QuickActionsComponent } from '@app/components/shared/quick-actions/quic
   imports: [RouterLink, MatIcon, DateTimePipe, CheckboxComponent, SpiritTreeComponent, SeasonQuickActionsComponent, DraftWarningComponent, QuickActionsComponent]
 })
 export class SeasonCalculatorComponent implements OnInit {
+  /** Every tree here belongs to the season being calculated, so the season badge is noise. */
+  readonly SUBICONS_NO_SEASON = SUBICONS_NO_SEASON;
+
   @ViewChild('inpSc', { static: false }) inpSc!: ElementRef<HTMLInputElement>;
   @ViewChildren('inpTimed', { read: ElementRef }) inpTimed!: QueryList<ElementRef<HTMLInputElement>>;
 

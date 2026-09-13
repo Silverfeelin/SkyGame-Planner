@@ -20,6 +20,7 @@ import {
   SpiritTreeComponent
 } from '@app/components/shared/shared-widgets';
 import { SeasonQuickActionsComponent } from '../quick-actions/season-quick-actions.component';
+import { SUBICONS_NO_SEASON } from '@app/components/item/icon/subicons/item-subicons.component';
 
 interface ITreeEntry {
   readonly spirit: ISpirit;
@@ -39,6 +40,9 @@ interface ITreeEntry {
   ]
 })
 export class SeasonComponent implements OnInit {
+  /** Every tree on this page is this season's, so the per-node season badge is noise. */
+  readonly SUBICONS_NO_SEASON = SUBICONS_NO_SEASON;
+
   private readonly _route = inject(ActivatedRoute);
   private readonly _dataService = inject(DataService);
   private readonly _eventService = inject(EventService);

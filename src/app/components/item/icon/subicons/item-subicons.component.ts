@@ -16,6 +16,8 @@ export type ItemSubicon = 'source' | 'season' | 'favourite' | 'level' | 'unlock'
 
 /** Everything the item has to say about itself. */
 export const SUBICONS_ALL: ReadonlyArray<ItemSubicon> = ['source', 'season', 'favourite', 'level', 'unlock', 'limited'];
+/** For hosts that are already scoped to one season, where the marker says nothing new. */
+export const SUBICONS_NO_SEASON: ReadonlyArray<ItemSubicon> = ['source', 'favourite', 'level', 'unlock', 'limited'];
 /** Only what is true of *your* copy of the item; drops where it came from. */
 export const SUBICONS_BASE: ReadonlyArray<ItemSubicon> = ['favourite', 'level', 'unlock', 'limited'];
 /** Artwork only. */

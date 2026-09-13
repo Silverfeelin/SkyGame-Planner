@@ -12,6 +12,7 @@ import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
 import { OverlayComponent } from '@app/components/layout/overlay/overlay.component';
 import { CheckboxComponent } from '@app/components/shared/checkbox/checkbox.component';
+import { SUBICONS_NO_SEASON } from '@app/components/item/icon/subicons/item-subicons.component';
 import {
   DraftWarningComponent,
   SpiritTreeComponent,
@@ -30,6 +31,9 @@ import {
   ]
 })
 export class SeasonOptimizerComponent {
+  /** Every tree here belongs to the season being optimized, so the season badge is noise. */
+  readonly SUBICONS_NO_SEASON = SUBICONS_NO_SEASON;
+
   private readonly _dataService = inject(DataService);
   private readonly _storageService = inject(StorageService);
   private readonly _currencyService = inject(CurrencyService);

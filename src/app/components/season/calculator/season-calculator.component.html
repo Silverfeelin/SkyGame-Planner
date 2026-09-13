@@ -249,6 +249,7 @@
       @for (tree of trees; track tree.guid) {
         <app-spirit-tree [tree]="tree" [name]="tree.spirit!.name"
           [enableControls]="false" [forceNodeAction]="'emit'"
+          [nodeSubIcons]="SUBICONS_NO_SEASON"
           [highlightNode]="highlightedGuids()" [opaqueNodes]="true"
           (nodeClicked)="onNodeClicked($event)"></app-spirit-tree>
       }

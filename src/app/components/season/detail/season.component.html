@@ -90,6 +90,7 @@
         <div class="atmos-season__tree">
           <app-spirit-tree [tree]="postTree" [name]="guide()!.name"
             [nameLink]="['/spirit', guide()!.guid]" [nameQueryParams]="{ highlightTree: postTree.guid }"
+            [nodeSubIcons]="SUBICONS_NO_SEASON"
             [highlight]="highlightTree() === postTree.guid"></app-spirit-tree>
         </div>
       </div>
@@ -110,6 +111,7 @@
             <app-spirit-tree [tree]="gt" [name]="g.name"
               [nameLink]="['/spirit', g.guid]" [nameQueryParams]="{ highlightTree: gt.guid }"
               nameTag="Guide"
+              [nodeSubIcons]="SUBICONS_NO_SEASON"
               [highlight]="highlightTree() === gt.guid"></app-spirit-tree>
           </div>
         }
@@ -118,6 +120,7 @@
         <div class="atmos-season__tree">
           <app-spirit-tree [tree]="entry.tree" [name]="entry.spirit.name"
             [nameLink]="['/spirit', entry.spirit.guid]" [nameQueryParams]="{ highlightTree: entry.tree.guid }"
+            [nodeSubIcons]="SUBICONS_NO_SEASON"
             [highlight]="highlightTree() === entry.tree.guid"></app-spirit-tree>
         </div>
       }

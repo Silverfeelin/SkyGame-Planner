@@ -402,7 +402,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-summary-art-h:     190px;
   --atmos-fact-min:          170px;  /* narrowest a fact column may get before dropping one */
   --atmos-fact-gap:          var(--atmos-gap-compact) var(--atmos-gap);
-  --atmos-fact-label-size:   0.6875rem;
+  --atmos-fact-label-size:   0.72rem;
   --atmos-fact-label-track:  0.13em;
   --atmos-fact-label-gap:    6px;
   --atmos-fact-value-size:   1rem;
@@ -503,7 +503,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   border-radius: var(--atmos-radius-pill);
   padding: var(--atmos-btn-pad);
   color: var(--atmos-text);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   font-family: inherit;
   line-height: 1;
@@ -528,7 +528,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
 
   &.atmos-btn--sm {
     padding: var(--atmos-btn-pad-sm);
-    font-size: 13px;
+    font-size: 14px;
 
     > mat-icon {
       font-size: 16px;
@@ -745,7 +745,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   gap: 7px;
   color: var(--atmos-text);
   text-decoration: none;
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-weight: 500;
   opacity: 0.94;
   padding: 4px 8px;
@@ -863,7 +863,7 @@ a.atmos-link:focus-visible {
   margin: 0;
   color: var(--atmos-text);
   line-height: 1.5;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 /* Leaflet zoom control, atmos-themed. Scoped to `.atmospheric` (set on
