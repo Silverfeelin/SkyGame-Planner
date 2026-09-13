@@ -15,16 +15,6 @@
     inset 0 0 0 1px oklch(0.87 0.18 93 / 0.10);
 }
 
-/* Nothing to act on, so the warm "look here" edge is dropped back to the neutral card. */
-.atmos-favourites--empty {
-  border-color: var(--atmos-line-soft);
-  box-shadow: var(--atmos-card-shadow);
-
-  .atmos-favourites__kicker {
-    color: var(--atmos-text-mute);
-  }
-}
-
 .atmos-favourites__head {
   display: flex;
   align-items: center;
@@ -78,12 +68,6 @@
 
 .atmos-favourites__cta {
   flex-shrink: 0;
-}
-
-.atmos-favourites__empty {
-  margin: 0;
-  color: var(--atmos-text-mute);
-  line-height: 1.5;
 }
 
 .atmos-favourites__grid {
