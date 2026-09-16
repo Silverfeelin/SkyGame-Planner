@@ -8,6 +8,7 @@ import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { IItem, ItemType } from 'skygame-data';
 import { IApiOutfit } from './vault-api.service';
 import { ItemSelection } from './vault-item-picker.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 @Component({
   selector: 'app-vault-submit',
@@ -15,7 +16,7 @@ import { ItemSelection } from './vault-item-picker.component';
   styleUrl: './vault-submit.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemIconComponent, FormsModule, ItemTypePipe]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent, FormsModule, ItemTypePipe]
 })
 export class VaultSubmitComponent implements OnInit {
   readonly selection = input<ItemSelection>({});

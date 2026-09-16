@@ -44,7 +44,7 @@
               [skyTooltip]="item.name" placement="top">
             </app-item-icon>
             <button type="button" class="atmos-tile__remove" (click)="removeItem(item)"
-              [attr.aria-label]="'Remove ' + item.name" [title]="'Remove ' + item.name">✕</button>
+              [attr.aria-label]="'Remove ' + item.name" [skyTooltip]="'Remove ' + item.name">✕</button>
           </div>
         }
       </div>
@@ -210,7 +210,7 @@
 
 @if (showAddItems()) {
   <div class="atmos-item-unlock-calc__items-wrap">
-    <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"
+    <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl"
       [initialCategory]="itemType"
       (categoryChanged)="onItemTypeChanged($event)"
       (shownItemsChanged)="onItemsChanged($event)"/>

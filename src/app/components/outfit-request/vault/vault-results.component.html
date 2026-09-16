@@ -9,7 +9,7 @@
         @for (type of selectionTypes; track type) {
           @let item = currentSelection()[type];
           @if (item) {
-            <div class="selection-icon selected is-static" [title]="item.name">
+            <div class="selection-icon selected is-static" [skyTooltip]="item.name">
               <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
                 [opaque]="true"></app-item-icon>
             </div>
@@ -33,7 +33,7 @@
               @for (type of selectionTypes; track type) {
                 @let item = result.items[type];
                 @if (item) {
-                  <div class="selection-icon is-static" [class.selected]="item" [title]="item?.name || (type | itemType)">
+                  <div class="selection-icon is-static" [class.selected]="item" [skyTooltip]="item?.name || (type | itemType)">
                     <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
                       [opaque]="true"></app-item-icon>
                   </div>
@@ -43,11 +43,11 @@
 
             <!-- Metadata -->
             <div class="vault-result__meta">
-              <span title="Player size">
+              <span skyTooltip="Player size">
                 <mat-icon svgIcon="resize"></mat-icon>
                 {{ result.data.sizeId && sizes[result.data.sizeId] || sizes[0] }}
               </span>
-              <span title="Lighting">
+              <span skyTooltip="Lighting">
                 <mat-icon svgIcon="bonfire"></mat-icon>
                 {{ result.data.lightingId && lightings[result.data.lightingId] || lightings[0] }}
               </span>

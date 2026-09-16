@@ -27,7 +27,7 @@
       <button
         type="button"
         class="atmos-daily-task__hide"
-        [title]="hidden() ? 'Show task' : 'Hide task'"
+        [attr.aria-label]="hidden() ? 'Show task' : 'Hide task'" [skyTooltip]="hidden() ? 'Show task' : 'Hide task'"
         (click)="onToggleHide($event)">
         <mat-icon>{{ hidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
       </button>

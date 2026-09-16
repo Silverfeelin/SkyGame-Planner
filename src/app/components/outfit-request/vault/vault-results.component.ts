@@ -9,6 +9,7 @@ import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { IItem, ItemType } from 'skygame-data';
 import { IApiOutfit, IApiOutfits } from './vault-api.service';
 import { ItemSelection } from './vault-item-picker.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 type Selection<T> = { [key in ItemType]?: T };
 
@@ -25,7 +26,7 @@ export interface IVaultResult {
   styleUrl: './vault-results.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemIconComponent, ItemTypePipe]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent, ItemTypePipe]
 })
 export class VaultResultsComponent {
   private readonly _dataService = inject(DataService);

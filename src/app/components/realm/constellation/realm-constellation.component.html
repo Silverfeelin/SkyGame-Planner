@@ -11,7 +11,7 @@
             [class.is-completed]="completed()"
             [style.left.%]="icon.position[0]"
             [style.top.%]="icon.position[1]"
-            [title]="icon.spirit.name"
+            [skyTooltip]="icon.spirit.name" [attr.aria-label]="icon.spirit.name"
             (click)="onSpiritClick(icon.spirit)">
             <img [src]="completed() ? '/assets/game/items/flag.webp' : '/assets/game/items/flag_q.webp'" alt="" />
           </button>
@@ -21,7 +21,7 @@
             class="atmos-realm-constellation__spirit"
             [style.left.%]="icon.position[0]"
             [style.top.%]="icon.position[1]"
-            [title]="icon.spirit.name"
+            [skyTooltip]="icon.spirit.name" [attr.aria-label]="icon.spirit.name"
             (click)="onSpiritClick(icon.spirit)">
             <img [src]="icon.imageUrl" alt="" />
           </button>
@@ -54,7 +54,7 @@
           type="button"
           class="atmos-realm-constellation__dot"
           [class.is-active]="i === realmIndex()"
-          [title]="r.name"
+          [skyTooltip]="r.name" [attr.aria-label]="r.name"
           (click)="jumpTo(i)"></button>
       }
     </div>

@@ -72,10 +72,14 @@
 .atmos-item-filters__group-header,
 .atmos-item-filters__subgroup-header {
   /* The (All) / (None) shortcuts are buttons, so the shared link style needs the
-     browser button chrome stripped off. */
+     browser button chrome stripped off — including the radius, which on a label
+     this narrow curves the underline in far enough to look like a broken pill. */
   button.atmos-text-link {
+    flex: 0 0 auto;
+    white-space: nowrap;
     padding: 0;
     border: 0;
+    border-radius: 0;
     border-bottom: 1px solid var(--atmos-line-soft);
     background: transparent;
     font: inherit;

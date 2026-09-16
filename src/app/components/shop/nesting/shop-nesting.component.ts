@@ -33,6 +33,7 @@ import {
 } from '@app/components/shop/nesting/shop-nesting.interface';
 import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 import { SUBICONS_BASE } from '@app/components/item/icon/subicons/item-subicons.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 interface IRotationItem extends ICost {
   guid: string;
@@ -134,7 +135,7 @@ const rotations: IRotations = [
   templateUrl: './shop-nesting.component.html',
   styleUrl: './shop-nesting.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
+  imports: [TooltipDirective, 
     MatIcon,
     NgTemplateOutlet,
     RouterLink,

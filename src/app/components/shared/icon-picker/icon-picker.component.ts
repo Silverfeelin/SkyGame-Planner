@@ -4,6 +4,7 @@ import { ItemIconComponent } from '@app/components/item/icon/item-icon.component
 import { ISearchItem, SearchService } from '@app/services/search.service';
 import { IItem } from 'skygame-data';
 import { SUBICONS_NONE } from '@app/components/item/icon/subicons/item-subicons.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 /** Item-icon search overlay. Emits the picked item, or closes. */
 @Component({
@@ -11,7 +12,7 @@ import { SUBICONS_NONE } from '@app/components/item/icon/subicons/item-subicons.
   templateUrl: './icon-picker.component.html',
   styleUrl: './icon-picker.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemIconComponent]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent]
 })
 export class IconPickerComponent implements AfterViewInit {
   readonly SUBICONS_NONE = SUBICONS_NONE;

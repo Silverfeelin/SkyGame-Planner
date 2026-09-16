@@ -22,6 +22,7 @@ import {
   ShardIndicatorComponent
 } from '@app/components/shared/shared-widgets';
 import { DailyQuickActionsComponent } from './quick-actions/daily-quick-actions.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 interface IDailyTaskState {
   dailyDate: string;
@@ -47,7 +48,7 @@ function getWeeklyAnchor(today: DateTime): string {
   templateUrl: './daily.component.html',
   styleUrl: './daily.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [
+  imports: [TooltipDirective, 
     RouterLink,
     MatIcon,
     DateTimePipe,

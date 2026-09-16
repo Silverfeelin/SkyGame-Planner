@@ -9,7 +9,7 @@
   <a class="atmos-item-grid__item atmos-tile"
      [class.is-locked]="!item.unlocked"
      [routerLink]="['/item', item.guid]"
-     [title]="item.name">
+     [skyTooltip]="item.name" [attr.aria-label]="item.name">
     <app-item-icon [item]="item" [subIcons]="SUBICONS_ALL" [opaque]="true" size="default"/>
   </a>
 </ng-template>

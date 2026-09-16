@@ -10,6 +10,7 @@ import { SearchService } from '@app/services/search.service';
 import { ItemIconComponent } from '@app/components/item/icon/item-icon.component';
 import { ItemTypePipe } from '@app/pipes/item-type.pipe';
 import { IItem, ItemSize, ItemType } from 'skygame-data';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 export type ItemSelection = { [key in ItemType]?: IItem };
 
@@ -19,7 +20,7 @@ export type ItemSelection = { [key in ItemType]?: IItem };
   styleUrl: './vault-item-picker.component.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemIconComponent, FormsModule, ItemTypePipe]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent, FormsModule, ItemTypePipe]
 })
 export class VaultItemPickerComponent implements OnInit {
   @ViewChild('searchInput') searchInputRef!: ElementRef<HTMLInputElement>;

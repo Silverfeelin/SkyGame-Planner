@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { IDailyTask } from '@app/components/daily/daily-tasks';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 /**
  * Daily-task row.
@@ -12,7 +13,7 @@ import { DateTimePipe } from '@app/pipes/date-time.pipe';
   templateUrl: './daily-task.component.html',
   styleUrl: './daily-task.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe]
+  imports: [TooltipDirective, RouterLink, MatIcon, DateTimePipe]
 })
 export class DailyTaskComponent {
   readonly task = input.required<IDailyTask>();

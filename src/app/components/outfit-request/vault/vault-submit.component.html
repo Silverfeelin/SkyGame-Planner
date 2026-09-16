@@ -10,7 +10,7 @@
         <div class="selection-icon is-static"
           [class.selected]="item"
           [class.warn]="requiredParams[type] && !item"
-          [title]="item?.name || (type | itemType)">
+          [skyTooltip]="item?.name || (type | itemType)">
           @if (item) {
             <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
               [opaque]="true"></app-item-icon>
@@ -53,7 +53,7 @@
         <div class="vault-submit__field">
           <label for="txtDiscordLink">
             Discord message link:
-            <span class="atmos-text-link" title="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures.">(help)</span>
+            <span class="atmos-text-link" skyTooltip="To copy the &quot;Message Link&quot;, right click or long press the Discord message that contains the pictures.">(help)</span>
           </label>
           <input id="txtDiscordLink" type="text" class="atmos-input"
             [value]="sDiscordLink()"

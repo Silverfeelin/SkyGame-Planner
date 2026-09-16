@@ -65,7 +65,7 @@
               <div class="atmos-shop-nesting__rotation-item">
                 <a class="atmos-shop-nesting__rotation-icon"
                   [routerLink]="['/item', r.item!.guid]"
-                  [title]="r.item!.name">
+                  [skyTooltip]="r.item!.name" [attr.aria-label]="r.item!.name">
                   <app-item-icon [item]="r.item!" [subIcons]="SUBICONS_BASE"></app-item-icon>
                 </a>
                 <div class="atmos-shop-nesting__rotation-name">{{ r.item!.name }}</div>

@@ -70,7 +70,7 @@
       Today &middot; Fixed reward
       @if (hiddenFixedCount() > 0) {
         <button type="button" class="atmos-daily__toggle-hidden"
-                [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                [attr.aria-label]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'" [skyTooltip]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
                 (click)="showHidden.set(!showHidden())">
           <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>
@@ -105,7 +105,7 @@
       Today &middot; Variable reward
       @if (hiddenVariableCount() > 0) {
         <button type="button" class="atmos-daily__toggle-hidden"
-                [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                [attr.aria-label]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'" [skyTooltip]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
                 (click)="showHidden.set(!showHidden())">
           <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>
@@ -138,7 +138,7 @@
       Timed events
       @if (hiddenTimedCount() > 0) {
         <button type="button" class="atmos-daily__toggle-hidden"
-                [title]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
+                [attr.aria-label]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'" [skyTooltip]="showHidden() ? 'Hide hidden tasks' : 'Show hidden tasks'"
                 (click)="showHidden.set(!showHidden())">
           <mat-icon>{{ showHidden() ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>

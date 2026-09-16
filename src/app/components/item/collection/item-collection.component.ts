@@ -13,6 +13,7 @@ import { ItemHelper } from '@app/helpers/item-helper';
 import { Maybe } from '@app/types/maybe';
 import { IItem, ItemType } from 'skygame-data';
 import { nanoid } from 'nanoid';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 interface IItemCollection {
   guid: string;
@@ -31,7 +32,7 @@ interface IStorageData {
   templateUrl: './item-collection.component.html',
   styleUrl: './item-collection.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, ReactiveFormsModule, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [TooltipDirective, RouterLink, MatIcon, ReactiveFormsModule, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
 })
 export class ItemCollectionComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

@@ -398,6 +398,7 @@ export class ItemFiltersComponent {
   }
 
   private resetFilterFields(): void {
+    this.filterName = '';
     this.filters = { ...defaultFilters.filters };
     this.filterCurrencies = {
       first: { ...defaultFilters.currencies },

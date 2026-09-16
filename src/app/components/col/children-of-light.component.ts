@@ -16,6 +16,7 @@ import { IMapInit } from '@app/services/map.service';
 import { IArea, IWingedLight } from 'skygame-data';
 import { WingedLightQuickActionsComponent } from '../winged-light/quick-actions/winged-light-quick-actions.component';
 import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 interface IRow {
   area: IArea;
@@ -36,7 +37,7 @@ interface IMapWingedLight {
   styleUrl: './children-of-light.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [MapInstanceService],
-  imports: [MatIcon, AgGridAngular, WingedLightQuickActionsComponent, QuickActionsComponent]
+  imports: [TooltipDirective, MatIcon, AgGridAngular, WingedLightQuickActionsComponent, QuickActionsComponent]
 })
 export class ChildrenOfLightComponent implements AfterViewInit, OnDestroy {
   @ViewChild('mapContainer', { static: true }) mapContainer!: ElementRef;

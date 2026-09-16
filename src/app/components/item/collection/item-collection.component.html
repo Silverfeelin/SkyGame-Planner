@@ -50,7 +50,7 @@
       <h3 class="atmos-coll__subsection-title">Selected items ({{ editItems.length }})</h3>
       <div class="atmos-coll__selected">
         @for (item of editItems; track item.guid) {
-          <button type="button" class="atmos-coll__selected-item atmos-tile atmos-tile--removable" (click)="removeItem(item)" [title]="item.name + ' — click to remove'">
+          <button type="button" class="atmos-coll__selected-item atmos-tile atmos-tile--removable" (click)="removeItem(item)" [attr.aria-label]="item.name" [skyTooltip]="item.name + ' — click to remove'">
             <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
             <span class="atmos-tile__remove">✕</span>
           </button>
@@ -78,7 +78,7 @@
     <button type="button"
             class="atmos-coll__picker-item atmos-tile atmos-tile--selectable"
             [class.is-selected]="editItemSet.has(item)"
-            [title]="item.name"
+            [skyTooltip]="item.name" [attr.aria-label]="item.name"
             (click)="onItemClickedPicker(item)">
       <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
       @if (editItemSet.has(item)) { <span class="atmos-tile__check">✓</span> }
@@ -115,26 +115,26 @@
         </div>
 
         <div class="atmos-coll__row-actions">
-          <button type="button" class="atmos-btn atmos-btn--sm" [class.is-disabled]="first" (click)="moveCollectionUp(i)" title="Move up">
+          <button type="button" class="atmos-btn atmos-btn--sm" [class.is-disabled]="first" (click)="moveCollectionUp(i)" skyTooltip="Move up" aria-label="Move up">
             <mat-icon>arrow_upward</mat-icon>
           </button>
-          <button type="button" class="atmos-btn atmos-btn--sm" [class.is-disabled]="last" (click)="moveCollectionDown(i)" title="Move down">
+          <button type="button" class="atmos-btn atmos-btn--sm" [class.is-disabled]="last" (click)="moveCollectionDown(i)" skyTooltip="Move down" aria-label="Move down">
             <mat-icon>arrow_downward</mat-icon>
           </button>
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="showEditCollection(collection)" title="Edit">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="showEditCollection(collection)" skyTooltip="Edit" aria-label="Edit">
             <mat-icon>edit</mat-icon>
           </button>
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="gotoCalculator(collection)" title="Calculate cost"
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="gotoCalculator(collection)" skyTooltip="Calculate cost" aria-label="Calculate cost"
             [disabled]="!collection.items.length">
             <mat-icon>calculate</mat-icon>
           </button>
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="showCopyCollection(collection)" title="Copy">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="showCopyCollection(collection)" skyTooltip="Copy" aria-label="Copy">
             <mat-icon>content_copy</mat-icon>
           </button>
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="exportCollection(collection)" title="Export">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="exportCollection(collection)" skyTooltip="Export" aria-label="Export">
             <mat-icon>upload</mat-icon>
           </button>
-          <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptDeleteCollection(collection)" title="Delete">
+          <button type="button" class="atmos-btn atmos-btn--sm" (click)="promptDeleteCollection(collection)" skyTooltip="Delete" aria-label="Delete">
             <mat-icon>delete</mat-icon>
           </button>
         </div>
@@ -143,7 +143,7 @@
       @if (collection.items.length) {
         <div class="atmos-coll__items-strip atmos-card__body">
           @for (item of collection.items; track item.guid) {
-            <a class="atmos-coll__strip-item atmos-tile" [routerLink]="['/item', item.guid]" [title]="item.name">
+            <a class="atmos-coll__strip-item atmos-tile" [routerLink]="['/item', item.guid]" [skyTooltip]="item.name" [attr.aria-label]="item.name">
               <app-item-icon [item]="item" size="medium" [subIcons]="SUBICONS_ALL"/>
             </a>
           }

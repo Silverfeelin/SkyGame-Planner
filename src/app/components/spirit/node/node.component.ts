@@ -9,6 +9,7 @@ import { DebugService } from '@app/services/debug.service';
 import { NavigationHelper, INavigationTarget } from '@app/helpers/navigation-helper';
 import { INode } from 'skygame-data';
 import { ItemSubicon, SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 export type NodeAction = 'emit' | 'unlock' | 'navigate';
 export type NodePosition = 'left' | 'center' | 'right';
@@ -30,7 +31,7 @@ export type NodePosition = 'left' | 'center' | 'right';
   // Expose the node GUID as a DOM attribute so consumers (e.g. the spirit-tree
   // editor's drag-to-swap) can hit-test nodes via `elementsFromPoint`.
   host: { '[attr.guid]': 'node().guid' },
-  imports: [ItemIconComponent, MatIcon, NgTemplateOutlet]
+  imports: [TooltipDirective, ItemIconComponent, MatIcon, NgTemplateOutlet]
 })
 export class NodeComponent {
   readonly node = input.required<INode>();

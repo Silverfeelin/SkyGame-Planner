@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 interface SpiritLink {
   label?: string;
@@ -12,7 +13,7 @@ interface SpiritLink {
 @Component({
   selector: 'app-ag-spirits-renderer',
   standalone: true,
-  imports: [RouterLink],
+  imports: [TooltipDirective, RouterLink],
   templateUrl: './ag-spirits-renderer.component.html',
   styleUrl: './ag-spirits-renderer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, computed, effect, ElementRef, input, OnDestroy, output, signal, ViewChild } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { IRealm, ISpirit } from 'skygame-data';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 const KEYFRAMES = [0, 10, 22, 34, 45, 55] as const;
 const FRAME_COUNT = (KEYFRAMES.at(-1) ?? 0) + 1;
@@ -14,7 +15,7 @@ const FRAME_INTERVAL_MS = 20;
   templateUrl: './realm-constellation.component.html',
   styleUrl: './realm-constellation.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon]
+  imports: [TooltipDirective, MatIcon]
 })
 export class RealmConstellationComponent implements AfterViewInit, OnDestroy {
   @ViewChild('canvas', { static: true }) canvasRef!: ElementRef<HTMLCanvasElement>;

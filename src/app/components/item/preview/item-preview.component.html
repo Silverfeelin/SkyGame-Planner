@@ -8,7 +8,7 @@
 <ng-template #previewTpl let-item>
   <a class="atmos-item-preview__item atmos-tile"
      [routerLink]="['/item', item.guid]"
-     [title]="item.name">
+     [skyTooltip]="item.name" [attr.aria-label]="item.name">
     <img class="atmos-item-preview__img atmos-img-box" [src]="item.previewUrl" loading="lazy" draggable="false"/>
     <app-icon class="atmos-item-preview__icon"
               [src]="item.icon || '/assets/icons/question.webp'"

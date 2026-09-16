@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DateTime } from 'luxon';
 import { DateHelper } from '@app/helpers/date-helper';
 import { getShardInfo } from '@app/helpers/shard-helper';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 export type ShardState = 'none' | 'upcoming' | 'active' | 'over';
 
@@ -11,7 +12,7 @@ const _DEBUG_OFFSET = isDevMode() ? { hour: 0, minute: 0, second: 0 } : {};
 
 @Component({
   selector: 'app-shard-indicator',
-  imports: [MatIconModule],
+  imports: [TooltipDirective, MatIconModule],
   templateUrl: './shard-indicator.component.html',
   styleUrl: './shard-indicator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -8,7 +8,8 @@
   [attr.data-action]="action()"
   [attr.aria-pressed]="node().item ? unlocked() : null"
   [attr.href]="href()"
-  [attr.title]="showTooltips() ? node().item?.name : null"
+  [attr.aria-label]="node().item?.name ?? null"
+  [skyTooltip]="showTooltips() ? node().item?.name : null"
   (click)="onClick($event)">
   @if (node().item; as item) {
     <app-item-icon

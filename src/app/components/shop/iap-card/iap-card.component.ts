@@ -5,6 +5,7 @@ import { ItemIconComponent } from '@app/components/item/icon/item-icon.component
 import { CheckboxComponent } from '@app/components/shared/checkbox/checkbox.component';
 import { IIAP } from 'skygame-data';
 import { SUBICONS_BASE } from '@app/components/item/icon/subicons/item-subicons.component';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 /**
  * In-app-purchase summary card. Toggle handlers are surfaced as outputs so the
@@ -16,7 +17,7 @@ import { SUBICONS_BASE } from '@app/components/item/icon/subicons/item-subicons.
   templateUrl: './iap-card.component.html',
   styleUrl: './iap-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemIconComponent, RouterLink, CheckboxComponent]
+  imports: [TooltipDirective, MatIcon, ItemIconComponent, RouterLink, CheckboxComponent]
 })
 export class IapCardComponent {
   readonly SUBICONS_BASE = SUBICONS_BASE;

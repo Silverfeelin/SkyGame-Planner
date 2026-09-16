@@ -25,7 +25,7 @@
                   [class.is-active]="currentAction() === 'unlock'"
                   [attr.aria-pressed]="currentAction() === 'unlock'"
                   (click)="setAction('unlock')"
-                  title="Unlock / lock items (U)">
+                  skyTooltip="Unlock / lock items (U)">
             <mat-icon>lock_open</mat-icon>
             <span class="atmos-spirit-tree__seg-label"><span>Unlock</span></span>
           </button>
@@ -33,7 +33,7 @@
                   [class.is-active]="currentAction() === 'navigate'"
                   [attr.aria-pressed]="currentAction() === 'navigate'"
                   (click)="setAction('navigate')"
-                  title="Open item page (N)">
+                  skyTooltip="Open item page (N)">
             <mat-icon>search</mat-icon>
             <span class="atmos-spirit-tree__seg-label"><span>Navigate</span></span>
           </button>
@@ -43,7 +43,7 @@
 
         <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--icon"
                 (click)="unlockAll()"
-                [title]="hasLocked() ? 'Unlock all items' : 'Lock all items'">
+                [attr.aria-label]="hasLocked() ? 'Unlock all items' : 'Lock all items'" [skyTooltip]="hasLocked() ? 'Unlock all items' : 'Lock all items'">
           <mat-icon>enhanced_encryption</mat-icon>
         </button>
         <span class="atmos-spirit-tree__menu">
@@ -189,7 +189,7 @@
 <ng-template #editSlotTpl let-slot>
   @if (slot.kind === 'add') {
     <button type="button" class="atmos-tree-edit atmos-tree-edit--add"
-            [title]="editSlotTitle(slot)" [attr.aria-label]="editSlotTitle(slot)"
+            [skyTooltip]="editSlotTitle(slot)" [attr.aria-label]="editSlotTitle(slot)"
             (click)="onEditSlotClicked(slot, $event)">
       <mat-icon>add</mat-icon>
     </button>
@@ -197,7 +197,7 @@
     <button type="button" class="atmos-tree-edit atmos-tree-edit--chip"
             [class.is-unlink]="slot.kind === 'unlink'"
             [attr.data-direction]="slot.direction"
-            [title]="editSlotTitle(slot)" [attr.aria-label]="editSlotTitle(slot)"
+            [skyTooltip]="editSlotTitle(slot)" [attr.aria-label]="editSlotTitle(slot)"
             (click)="onEditSlotClicked(slot, $event)">
       <mat-icon>{{ slot.kind === 'unlink' ? 'link_off' : 'link' }}</mat-icon>
     </button>

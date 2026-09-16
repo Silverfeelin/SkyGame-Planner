@@ -4,7 +4,7 @@
       class="atmos-nav-item atmos-nav-item--back"
       type="button"
       (click)="goBack()"
-      title="Go back">
+      skyTooltip="Go back">
       <mat-icon>arrow_back</mat-icon>
       <span class="atmos-nav-item__label">Back</span>
     </button>
@@ -14,7 +14,7 @@
         [routerLink]="item.link"
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: !!item.exact }"
-        [attr.title]="item.label">
+        [skyTooltip]="item.label">
         @if (item.iconUrl) {
           <img class="atmos-nav-item__img" [src]="item.iconUrl" alt="" />
         } @else if (item.svgIcon) {
@@ -37,7 +37,7 @@
           [href]="item.link"
           target="_blank"
           rel="noopener"
-          [attr.title]="item.label">
+          [skyTooltip]="item.label">
           <mat-icon>{{ item.icon }}</mat-icon>
           <span class="atmos-nav-item__label">{{ item.label }}</span>
         </a>
@@ -46,7 +46,7 @@
           class="atmos-nav-item atmos-nav-item--small"
           [routerLink]="item.link"
           routerLinkActive="is-active"
-          [attr.title]="item.label">
+          [skyTooltip]="item.label">
           <mat-icon>{{ item.icon }}</mat-icon>
           <span class="atmos-nav-item__label">{{ item.label }}</span>
         </a>

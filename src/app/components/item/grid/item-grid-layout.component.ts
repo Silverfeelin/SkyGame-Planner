@@ -48,7 +48,7 @@ export class ItemGridLayoutComponent implements OnInit {
   readonly itemTemplate = input.required<TemplateRef<{ $implicit: IItem }>>();
   readonly initialCategory = input<ItemType>(ItemType.Outfit);
   /** Opt in to the filter panel; hosts that only browse leave it off. */
-  readonly filterable = input<boolean>(false);
+  readonly filterable = input<boolean>(true);
 
   readonly categoryChanged = output<ItemType>();
   /** The items of the active category that survive the filters, in display order. */

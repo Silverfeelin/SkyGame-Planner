@@ -6,13 +6,14 @@ import { DataService } from '@app/services/data.service';
 import { ItemGridLayoutComponent } from './item-grid-layout.component';
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
 import { IItem } from 'skygame-data';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 @Component({
   selector: 'app-item-grid',
   templateUrl: './item-grid.component.html',
   styleUrl: './item-grid.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [TooltipDirective, RouterLink, ItemIconComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
 })
 export class ItemGridComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

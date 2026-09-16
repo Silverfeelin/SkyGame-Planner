@@ -10,7 +10,7 @@
         [item]="result.data"
         [opaque]="true"
         [subIcons]="SUBICONS_NONE"
-        [title]="result.data.name"
+        [skyTooltip]="result.data.name" [attr.aria-label]="result.data.name"
         (click)="select(result.data)"></app-item-icon>
     }
   </div>

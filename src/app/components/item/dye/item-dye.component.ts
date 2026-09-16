@@ -6,13 +6,14 @@ import { ItemGridLayoutComponent, ITEM_GRID_CATEGORIES } from '../grid/item-grid
 import { ItemQuickActionsComponent } from '../quick-actions/item-quick-actions.component';
 import { ItemSubIconsComponent, SUBICONS_ALL } from '../icon/subicons/item-subicons.component';
 import { IItem, ItemType } from 'skygame-data';
+import { TooltipDirective } from '@app/directives/tooltip.directive';
 
 @Component({
   selector: 'app-item-dye',
   templateUrl: './item-dye.component.html',
   styleUrl: './item-dye.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, IconComponent, ItemSubIconsComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
+  imports: [TooltipDirective, RouterLink, IconComponent, ItemSubIconsComponent, ItemGridLayoutComponent, ItemQuickActionsComponent]
 })
 export class ItemDyeComponent {
   readonly SUBICONS_ALL = SUBICONS_ALL;

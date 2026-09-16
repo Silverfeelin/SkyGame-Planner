@@ -10,7 +10,7 @@
       <a class="atmos-item-list__link"
         [routerLink]="['/item', n.node.item.guid]"
         [queryParams]="{ showTipUnlock: '1' }"
-        [title]="n.node.item.name">
+        [skyTooltip]="n.node.item.name" [attr.aria-label]="n.node.item.name">
         <app-item-icon
           class="atmos-item-list__icon"
           [item]="n.node.item"

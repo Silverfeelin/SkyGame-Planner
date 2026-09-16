@@ -33,7 +33,7 @@
             (click)="gotoType(type)"
             [class.selected]="item"
             [class.warn]="requiredParams[type] && !item"
-            title="{{ item?.name || (type | itemType) }}">
+            skyTooltip="{{ item?.name || (type | itemType) }}">
             @if (item) {
               <app-item-icon [item]="item" [size]="'default'" class="selection-icon-img"
                 [opaque]="true"></app-item-icon>
@@ -72,7 +72,7 @@
                   [class.selected]="selectionMap()[item.guid]"
                   [class.search-match]="searchText() && searchResults()?.[item.guid]"
                   [class.no-search-match]="searchText() && !searchResults()?.[item.guid]"
-                  [title]="item.name">
+                  [skyTooltip]="item.name">
                   <app-item-icon [item]="item" [size]="itemSize()"
                     [opaque]="true"></app-item-icon>
                 </div>
