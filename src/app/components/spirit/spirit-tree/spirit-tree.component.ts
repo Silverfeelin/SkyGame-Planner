@@ -495,7 +495,8 @@ export class SpiritTreeComponent {
   }
 
   async exportPng(mode: ShareMode, tooltip?: TooltipDirective): Promise<void> {
-    this.showMenu.set(false);
+    // Copy keeps the menu open — its "Copied!" tooltip hangs off the menu item.
+    if (mode !== 'clipboard') { this.showMenu.set(false); }
     const tree = this.tree();
     if (mode === 'share' && !navigator.share) { alert('Sharing is not supported by this browser.'); return; }
     if (mode === 'clipboard' && typeof ClipboardItem === 'undefined') {

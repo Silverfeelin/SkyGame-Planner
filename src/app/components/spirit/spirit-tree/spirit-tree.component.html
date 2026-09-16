@@ -49,13 +49,13 @@
         <span class="atmos-spirit-tree__menu">
           <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--icon"
                   [class.atmos-btn--active]="showMenu()"
-                  (click)="toggleMenu()" title="More actions"
-                  skyTooltip="Copied!" #ttCopyImage="skyTooltip" manual placement="top" [closeDelay]="1000">
+                  (click)="toggleMenu()" skyTooltip="More actions">
             <mat-icon>menu</mat-icon>
           </button>
           @if (showMenu()) {
             <div class="atmos-spirit-tree__menu-panel" role="menu">
               <button type="button" class="atmos-btn atmos-btn--sm atmos-spirit-tree__menu-item"
+                      skyTooltip="Copied!" #ttCopyImage="skyTooltip" manual placement="top" [closeDelay]="1000"
                       (click)="exportPng('clipboard', ttCopyImage)">
                 <mat-icon>file_copy</mat-icon><span>Copy image</span>
               </button>

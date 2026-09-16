@@ -15,7 +15,9 @@ export class AreasComponent {
   readonly areas: ReadonlyArray<IArea> = inject(DataService).areaConfig.items;
 
   areaLinks(area: IArea): ReadonlyArray<IFeatureLink> {
-    const links: IFeatureLink[] = [];
+    const links: IFeatureLink[] = [
+      { icon: 'dashboard', label: 'Overview', link: `/area/${area.guid}` }
+    ];
     if (area.realm) {
       links.push({ icon: 'map', label: area.realm.name, link: `/realm/${area.realm.guid}` });
     }

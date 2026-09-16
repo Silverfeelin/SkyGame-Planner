@@ -17,6 +17,11 @@
 @if (drawerOpen()) {
   <div class="atmos-drawer" (click)="closeDrawer()">
     <nav class="atmos-drawer__panel" (click)="$event.stopPropagation()" aria-label="Primary">
+      <button class="atmos-drawer__item atmos-drawer__close" type="button" (click)="closeDrawer()">
+        <mat-icon>close</mat-icon>
+        <span>Close menu</span>
+      </button>
+
       @for (item of mainNav; track item.link) {
         <a
           class="atmos-drawer__item"

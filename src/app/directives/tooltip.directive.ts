@@ -1,4 +1,4 @@
-import { booleanAttribute, Directive, ElementRef, EmbeddedViewRef, inject, input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
+import { booleanAttribute, Directive, effect, ElementRef, EmbeddedViewRef, inject, input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
 
 type TooltipPlacement = 'top' | 'bottom' | 'bottom-start' | 'auto';
 
@@ -41,6 +41,19 @@ export class TooltipDirective implements OnDestroy {
   private _popover?: HTMLElement;
   private _view?: EmbeddedViewRef<unknown>;
   private _closeTimer?: ReturnType<typeof setTimeout>;
+
+  constructor() {
+    // The text can change while the tooltip is on screen — a toggle button whose
+    // label flips on click, for instance. Without this the popover would keep
+    // showing the old text until the pointer leaves.
+    effect(() => {
+      const content = this.text();
+      if (!this._popover) { return; }
+      if (content == null || content === '') { this._hide(); return; }
+      this._hide();
+      this._show();
+    });
+  }
 
   ngOnDestroy(): void {
     this._hide();

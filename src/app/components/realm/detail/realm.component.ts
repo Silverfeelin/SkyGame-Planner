@@ -39,8 +39,13 @@ export class RealmComponent implements OnInit, OnDestroy {
   highlightTree?: string;
 
   areaLinks(area: IArea): ReadonlyArray<IFeatureLink> {
-    if (!area.mapData?.position) { return []; }
-    return [{ icon: 'location_on', label: 'View on map', link: '/realm', queryParams: { map: '3', area: area.guid } }];
+    const links: Array<IFeatureLink> = [
+      { icon: 'dashboard', label: 'Overview', link: `/area/${area.guid}` }
+    ];
+    if (area.mapData?.position) {
+      links.push({ icon: 'location_on', label: 'View on map', link: '/realm', queryParams: { map: '3', area: area.guid } });
+    }
+    return links;
   }
 
   spirits: Array<ISpiritEntry> = [];

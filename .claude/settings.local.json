@@ -4,7 +4,9 @@
       "Bash(Get-ChildItem -Path \"c:\\\\GitHub\\\\SkyGame-Planner\" -Force)",
       "Bash(Select-Object Name, Mode)",
       "WebFetch(domain:www.ag-grid.com)",
-      "Bash(Select-String -Pattern)"
+      "Bash(Select-String -Pattern)",
+      "mcp__playwright__browser_run_code_unsafe",
+      "mcp__playwright__browser_navigate"
     ]
   },
   "enableAllProjectMcpServers": true,

@@ -18,6 +18,13 @@
     }
 
     <div class="atmos-season-card__body atmos-card__body">
+      @if (sections()['overview']) {
+        <a class="atmos-link" [routerLink]="['/season', s.guid]">
+          <mat-icon>dashboard</mat-icon>
+          <span>Overview</span>
+        </a>
+      }
+
       @if (sections()['date']) {
         <div class="atmos-season-card__row">
           <mat-icon>calendar_month</mat-icon>

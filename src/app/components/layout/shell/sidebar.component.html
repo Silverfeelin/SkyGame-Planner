@@ -1,10 +1,20 @@
 <nav class="atmos-sidebar" aria-label="Primary">
   <div class="atmos-sidebar__group">
     <button
+      class="atmos-nav-item atmos-nav-item--toggle"
+      type="button"
+      (click)="toggleCollapsed()"
+      [attr.aria-expanded]="!collapsed()"
+      [attr.aria-label]="collapsed() ? 'Expand menu' : 'Collapse menu'"
+      [skyTooltip]="collapsed() ? 'Expand menu' : ''">
+      <mat-icon>{{ collapsed() ? 'menu' : 'menu_open' }}</mat-icon>
+      <span class="atmos-nav-item__label">Collapse menu</span>
+    </button>
+    <button
       class="atmos-nav-item atmos-nav-item--back"
       type="button"
       (click)="goBack()"
-      skyTooltip="Go back">
+      [skyTooltip]="collapsed() ? 'Go back' : ''">
       <mat-icon>arrow_back</mat-icon>
       <span class="atmos-nav-item__label">Back</span>
     </button>
@@ -14,7 +24,7 @@
         [routerLink]="item.link"
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: !!item.exact }"
-        [skyTooltip]="item.label">
+        [skyTooltip]="collapsed() ? item.label : ''">
         @if (item.iconUrl) {
           <img class="atmos-nav-item__img" [src]="item.iconUrl" alt="" />
         } @else if (item.svgIcon) {
@@ -37,7 +47,7 @@
           [href]="item.link"
           target="_blank"
           rel="noopener"
-          [skyTooltip]="item.label">
+          [skyTooltip]="collapsed() ? item.label : ''">
           <mat-icon>{{ item.icon }}</mat-icon>
           <span class="atmos-nav-item__label">{{ item.label }}</span>
         </a>
@@ -46,7 +56,7 @@
           class="atmos-nav-item atmos-nav-item--small"
           [routerLink]="item.link"
           routerLinkActive="is-active"
-          [skyTooltip]="item.label">
+          [skyTooltip]="collapsed() ? item.label : ''">
           <mat-icon>{{ item.icon }}</mat-icon>
           <span class="atmos-nav-item__label">{{ item.label }}</span>
         </a>

@@ -70,7 +70,7 @@ export class RealmsComponent implements AfterViewInit {
 
     const links: Array<IFeatureLink> = [];
     if (realm.areas?.length) {
-      links.push({ icon: 'location_on', label: 'Areas', link: `/realm/${realm.guid}` });
+      links.push({ icon: 'dashboard', label: 'Overview', link: `/realm/${realm.guid}` });
     }
     if (spiritCount) {
       links.push({

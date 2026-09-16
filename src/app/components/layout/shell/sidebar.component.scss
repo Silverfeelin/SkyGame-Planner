@@ -1,13 +1,21 @@
+/* The host owns the width so the shell's flex row follows it; the slot in
+   main-layout is sized `auto` for exactly this reason. */
 :host {
   display: block;
   height: 100%;
+  width: 220px;
+  transition: width var(--atmos-transition);
+}
+
+:host(.is-collapsed) {
+  width: 48px;
 }
 
 .atmos-sidebar {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 18px 12px 14px;
+  padding: 18px 6px 14px;
   gap: 18px;
   background: oklch(0.16 calc(0.025 * var(--atmos-chroma)) var(--atmos-hue) / 0.6);
   backdrop-filter: blur(12px);
@@ -34,7 +42,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 9px 12px;
+  padding: 9px 6px;
   background: transparent;
   color: var(--atmos-text-dim);
   border: 0;
@@ -66,20 +74,36 @@
 }
 
 .atmos-nav-item--small {
-  padding: 7px 12px;
+  padding: 7px 6px;
   color: var(--atmos-text-mute);
 }
 
+.atmos-nav-item--toggle {
+  color: var(--atmos-text-mute);
+}
+
+/* Item padding stays constant in both states: 6px sidebar + 6px item padding
+   leaves a 24px content box in the rail, exactly one icon, so the icon never
+   shifts. The label absorbs the entire width change instead. */
 .atmos-nav-item__label {
+  min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+:host(.is-collapsed) .atmos-nav-item__label {
+  display: none;
 }
 
 .atmos-nav-item__img {
   width: 24px;
   height: 24px;
   object-fit: contain;
+  flex-shrink: 0;
+}
+
+mat-icon {
   flex-shrink: 0;
 }
 
