@@ -10,6 +10,7 @@ import { LowerCasePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { ITheme, setTheme, themes } from 'src/themes';
+import { densities, IDensity, setDensity } from 'src/density';
 
 interface IExport {
   version: string;
@@ -36,6 +37,8 @@ export class SettingsComponent implements OnDestroy {
   dateFormats: Array<string>;
   currentTheme: string;
   themes = themes;
+  currentDensity: string;
+  densities = densities;
   wikiNewTab = false;
   debugVisible = false;
   debugMapCopyCoordinates = false;
@@ -57,6 +60,7 @@ export class SettingsComponent implements OnDestroy {
     this.debugMapCopyCoordinates = _settingService.debugMapCopyCoordinates;
     this.dailyCandleAmount = _settingService.dailyCandleAmount;
     this.currentTheme = localStorage.getItem('theme') || '';
+    this.currentDensity = localStorage.getItem('density') || '';
     this.unlockConnectedNodes = _storageService.getKey('tree.unlock-connected') !== '0';
 
     addEventListener('beforeinstallprompt', this.beforeInstallPrompt);
@@ -216,6 +220,11 @@ export class SettingsComponent implements OnDestroy {
   selectTheme(theme: ITheme): void {
     this.currentTheme = theme.value;
     setTheme(theme);
+  }
+
+  selectDensity(density: IDensity): void {
+    this.currentDensity = density.value;
+    setDensity(density);
   }
 
   toggleWikiTab(): void {

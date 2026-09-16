@@ -4,7 +4,7 @@
 
 .atmos-season-card__media {
   position: relative;
-  height: 220px;
+  height: var(--atmos-card-media-h);
   overflow: hidden;
 }
 

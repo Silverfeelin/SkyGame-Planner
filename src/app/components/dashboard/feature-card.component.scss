@@ -1,6 +1,6 @@
 .atmos-card__banner {
   position: relative;
-  height: 220px;
+  height: var(--atmos-card-media-h);
   overflow: hidden;
 }
 

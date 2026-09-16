@@ -394,6 +394,8 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-btn-gap:         10px;
   --atmos-page-title-size: 32px;
   --atmos-page-header-gap: 16px;
+  --atmos-card-media-h:    220px;         /* card banner/media height */
+  --atmos-card-media-h-sm: 180px;         /* ...for the shorter spirit/daily cards */
   --atmos-input-pad:       8px 12px;
   --atmos-input-pad-pill:  8px 14px;
   --atmos-grid-min-h:      400px;
@@ -1043,6 +1045,37 @@ a.atmos-link:focus-visible {
   --atmos-hue: 0;
   --atmos-chroma: 0.8;
   --atmos-bg-image: url(/assets/game/background/feast2024.webp);
+}
+
+/* Compact trades spacing for content density. It is a separate axis from the
+   colour themes, so `data-density` rather than `data-theme` — the two compose.
+   It deliberately leaves the type scale alone, since the readers asking for it
+   want more rows on screen, not smaller text, and it keeps control padding
+   between the comfortable value and a bare minimum so tap targets stay usable
+   (smallest here is the 25px tab strip). */
+:root[data-density="compact"] {
+  --atmos-pad: 12px;
+  --atmos-pad-compact: 8px;
+  --atmos-gap: 10px;
+  --atmos-gap-compact: 8px;
+
+  --atmos-card-pad: 12px;
+  --atmos-card-gap: 10px;
+  --atmos-card-header-pad: 0.4rem 0.7rem;
+  --atmos-btn-pad: 9px 16px;
+  --atmos-btn-pad-sm: 5px 12px;
+  --atmos-btn-gap: 8px;
+  --atmos-page-title-size: 24px;
+  --atmos-page-header-gap: 10px;
+  --atmos-input-pad: 6px 10px;
+  --atmos-input-pad-pill: 6px 12px;
+  --atmos-grid-min-h: 240px;
+
+  --atmos-card-media-h: 160px;
+  --atmos-card-media-h-sm: 130px;
+  --atmos-summary-preview-h: 130px;
+  --atmos-summary-art-h: 150px;
+  --atmos-fact-gap: 6px var(--atmos-gap);
 }
 
 // #endregion

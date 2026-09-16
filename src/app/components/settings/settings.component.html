@@ -116,6 +116,21 @@
   </div>
 </section>
 
+<!-- Density -->
+<section class="atmos-card">
+  <div class="atmos-card__body">
+    <h2 class="atmos-settings__section-title"><mat-icon>density_medium</mat-icon> Density</h2>
+    <p class="atmos-paragraph">Compact tightens spacing to fit more on screen. Text size is unchanged.</p>
+    <div class="atmos-settings__btn-row">
+      @for (density of densities; track density.value) {
+        <button type="button" class="atmos-btn" [class.atmos-btn--active]="currentDensity === density.value" (click)="selectDensity(density)">
+          {{ density.name }}
+        </button>
+      }
+    </div>
+  </div>
+</section>
+
 <!-- Wiki -->
 <section class="atmos-card">
   <div class="atmos-card__body">

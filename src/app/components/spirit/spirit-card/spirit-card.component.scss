@@ -4,7 +4,7 @@
 
 .atmos-spirit-card__media {
   position: relative;
-  height: 180px;
+  height: var(--atmos-card-media-h-sm);
   overflow: hidden;
 }
 

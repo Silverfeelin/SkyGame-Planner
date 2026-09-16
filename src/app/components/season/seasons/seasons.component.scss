@@ -65,5 +65,5 @@
 .atmos-seasons__grid {
   display: grid;
   gap: var(--atmos-gap);
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr));
 }
