@@ -86,7 +86,11 @@
 
       @if (s.imageUrl) {
         <div class="atmos-summary__art">
-          <img [src]="s.imageUrl" [alt]="s.name" loading="lazy" />
+          <button type="button" class="atmos-summary__art-zoom"
+            [attr.aria-label]="'View ' + s.name + ' preview'"
+            (click)="showPreview.set(true)">
+            <img [src]="s.imageUrl" [alt]="s.name" loading="lazy" />
+          </button>
         </div>
       }
     </div>
@@ -109,4 +113,8 @@
       </div>
     </div>
   </section>
+
+  @if (showPreview() && s.imageUrl) {
+    <app-image-overlay [src]="s.imageUrl" [alt]="s.name" (close)="showPreview.set(false)"/>
+  }
 }

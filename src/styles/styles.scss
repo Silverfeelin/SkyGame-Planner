@@ -1301,6 +1301,29 @@ a.atmos-link:focus-visible {
 
 /* Tall artwork (spirit renders) cannot be cropped, so it is contained on a
    tile rather than bled. It stacks above the facts on narrow windows. */
+/* The preview image doubles as the trigger for the full-screen viewer. A button
+   keeps it keyboard-reachable; the global button chrome is stripped so nothing
+   but the image shows. */
+.atmos-summary__art-zoom {
+  display: flex;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  line-height: 0;
+  cursor: zoom-in;
+
+  &:hover {
+    background: none;
+  }
+
+  &:focus-visible {
+    outline: var(--atmos-focus-width) solid var(--atmos-focus-color);
+    outline-offset: var(--atmos-focus-offset);
+  }
+}
+
 .atmos-summary__art {
   order: -1;
   display: flex;

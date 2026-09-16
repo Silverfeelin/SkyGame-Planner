@@ -1,11 +1,19 @@
 <article class="atmos-card">
   <div class="atmos-card__banner">
-    @if (bannerUrl()) {
-      <div class="atmos-card__banner-img"
-        [class.is-contain]="bannerContain()"
-        [class.is-silhouette]="bannerSilhouette()"
-        [style.background-image]="'url(&quot;' + bannerUrl() + '&quot;)'"
-        [style.background-position]="bannerPosition() || null"></div>
+    @if (backdropUrl(); as backdrop) {
+      <div class="atmos-card__banner-backdrop"
+        [style.background-image]="'url(&quot;' + backdrop + '&quot;)'"></div>
+    }
+    @if (banners().length) {
+      <div class="atmos-card__banner-imgs">
+        @for (banner of banners(); track $index) {
+          <div class="atmos-card__banner-img"
+            [class.is-contain]="bannerContain()"
+            [class.is-silhouette]="bannerSilhouette()"
+            [style.background-image]="'url(&quot;' + banner + '&quot;)'"
+            [style.background-position]="bannerPosition() || null"></div>
+        }
+      </div>
     }
     <div class="atmos-card__banner-fade"></div>
 

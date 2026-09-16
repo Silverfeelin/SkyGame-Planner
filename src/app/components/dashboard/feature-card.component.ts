@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { WindowHelper } from '@app/helpers/window-helper';
@@ -47,6 +47,8 @@ export class FeatureCardComponent {
   readonly title = input<string>('');
   readonly titleLink = input<string | undefined>(undefined);
   readonly bannerUrl = input<string | undefined>(undefined);
+  readonly bannerUrls = input<ReadonlyArray<string>>([]);
+  readonly backdropUrl = input<string | undefined>(undefined);
   readonly bannerPosition = input<string | undefined>(undefined);
   readonly bannerContain = input<boolean>(false);
   readonly bannerSilhouette = input<boolean>(false);
@@ -56,5 +58,12 @@ export class FeatureCardComponent {
   readonly currency = input<ReadonlyArray<IFeatureCurrency>>([]);
   readonly checkLabel = input<string>('');
   readonly checked = input<boolean>(false);
+
+  readonly banners = computed<ReadonlyArray<string>>(() => {
+    const many = this.bannerUrls();
+    if (many.length) { return many; }
+    const one = this.bannerUrl();
+    return one ? [one] : [];
+  });
   readonly checkToggle = output<MouseEvent>();
 }

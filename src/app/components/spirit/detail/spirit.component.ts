@@ -10,6 +10,7 @@ import { SpiritTypeIconComponent } from '@app/components/spirit/type-icon/spirit
 import { WikiLinkComponent } from '@app/components/util/wiki-link/wiki-link.component';
 import { SpiritTreeComponent } from '@app/components/shared/shared-widgets';
 import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
+import { ImageOverlayComponent } from '@app/components/layout/image-overlay/image-overlay.component';
 
 interface IQuickAction {
   label: string;
@@ -40,7 +41,7 @@ interface ITree {
   imports: [
     RouterLink, MatIcon,
     SpiritTypeIconComponent, WikiLinkComponent,
-    SpiritTreeComponent, QuickActionsComponent
+    SpiritTreeComponent, QuickActionsComponent, ImageOverlayComponent
   ]
 })
 export class SpiritComponent {
@@ -49,6 +50,7 @@ export class SpiritComponent {
   private readonly _route = inject(ActivatedRoute);
 
   readonly spirit = signal<ISpirit | undefined>(undefined);
+  readonly showPreview = signal(false);
   readonly trees = signal<ReadonlyArray<ITree>>([]);
   readonly highlightTree = signal<string | undefined>(undefined);
   readonly highlightItem = signal<string | undefined>(undefined);

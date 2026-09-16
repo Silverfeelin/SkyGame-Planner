@@ -4,9 +4,24 @@
   overflow: hidden;
 }
 
-.atmos-card__banner-img {
+.atmos-card__banner-backdrop {
   position: absolute;
   inset: 0;
+  background-size: cover;
+  background-position: bottom;
+  filter: brightness(0.6) blur(4px);
+  transform: scale(1.06);
+}
+
+.atmos-card__banner-imgs {
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+.atmos-card__banner-img {
+  flex: 1 1 0;
+  min-width: 0;
   background-size: cover;
   background-position: center;
 

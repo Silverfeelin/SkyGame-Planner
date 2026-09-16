@@ -127,7 +127,11 @@
 
       <div class="atmos-summary__art atmos-item-detail__art">
         @if (itm.previewUrl) {
-          <img [src]="itm.previewUrl" [alt]="itm.name" loading="eager"/>
+          <button type="button" class="atmos-summary__art-zoom"
+            [attr.aria-label]="'View ' + itm.name + ' preview'"
+            (click)="showPreview.set(true)">
+            <img [src]="itm.previewUrl" [alt]="itm.name" loading="eager"/>
+          </button>
           <app-item-icon class="atmos-item-detail__art-icon" [item]="itm" [opaque]="true"/>
           <app-item-subicons [item]="itm" [icons]="SUBICONS_ALL" [size]="24"/>
         } @else {
@@ -161,6 +165,11 @@
       Item not found. <a class="atmos-text-link" [routerLink]="['/item/grid']">Back to grid</a>
     </div>
   </section>
+}
+
+@if (showPreview()) {
+  @let itm = item()!;
+  <app-image-overlay [src]="itm.previewUrl!" [alt]="itm.name" (close)="showPreview.set(false)"/>
 }
 
 @if (dyePreviewMode() > 0) {

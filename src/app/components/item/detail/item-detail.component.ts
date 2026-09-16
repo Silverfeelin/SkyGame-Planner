@@ -52,6 +52,7 @@ export class ItemDetailComponent {
   readonly favourited = signal(false);
   readonly unlocked = signal(false);
   readonly dyePreviewMode = signal<0 | 1 | 2>(0);
+  readonly showPreview = signal(false);
   readonly showTipUnlock = signal(false);
   readonly debugVisible = this._settingService.debugVisible;
 
