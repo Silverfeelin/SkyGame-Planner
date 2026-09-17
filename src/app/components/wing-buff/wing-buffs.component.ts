@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { AgGridAngular, ICellRendererAngularComp } from 'ag-grid-angular';
 import { ColDef, GridApi, GridReadyEvent, ValueGetterParams } from 'ag-grid-community';
 import { getAgTheme } from '@app/components/grid/ag-grid-theme';
@@ -58,6 +59,7 @@ export class WingBuffsComponent {
     },
     {
       headerName: 'Type',
+      colId: 'type',
       width: 100,
       filter: AgSetFilterComponent,
       filterParams: { values: ['Regular', 'Elder', 'Season', 'Guide', 'Event', 'Special'] },
@@ -89,7 +91,11 @@ export class WingBuffsComponent {
 
   rowData: IRow[] = [];
 
+  private readonly _route = inject(ActivatedRoute);
+
   constructor(dataService: DataService) {
+    this._route.queryParamMap.pipe(takeUntilDestroyed()).subscribe(() => this.applyQueryFilters());
+
     const wingBuffs = dataService.itemConfig.items.filter(item => item.type === ItemType.WingBuff);
 
     const regularSpirits = new Set<ISpirit>();
@@ -150,5 +156,13 @@ export class WingBuffsComponent {
 
   onGridReady(evt: GridReadyEvent): void {
     this.api = evt.api;
+    this.applyQueryFilters();
+  }
+
+  /** Replaces the column filters with the ones described by the query params. */
+  private applyQueryFilters(): void {
+    if (!this.api) { return; }
+    const values = this._route.snapshot.queryParamMap.get('type')?.split(',').map(v => v.trim()).filter(v => v) ?? [];
+    this.api.setFilterModel(values.length ? { type: { values } } : null);
   }
 }

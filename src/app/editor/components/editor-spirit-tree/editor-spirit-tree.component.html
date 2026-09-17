@@ -170,7 +170,7 @@
   <app-tabs>
     <!-- Items -->
     <ng-template [appTab]="'Items'">
-      <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true"/>
+      <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl" [filterable]="true" [syncCategoryToUrl]="false"/>
       <ng-template #pickTpl let-item>
         <div class="picker-item atmos-tile atmos-tile--selectable"
           [class.is-selected]="!!itemMap[item.guid]"

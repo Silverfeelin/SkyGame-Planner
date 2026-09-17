@@ -25,19 +25,35 @@
                   [class.is-active]="currentAction() === 'unlock'"
                   [attr.aria-pressed]="currentAction() === 'unlock'"
                   (click)="setAction('unlock')"
+                  aria-label="Unlock / lock items"
                   skyTooltip="Unlock / lock items (U)">
             <mat-icon>lock_open</mat-icon>
-            <span class="atmos-spirit-tree__seg-label"><span>Unlock</span></span>
           </button>
           <button type="button" class="atmos-spirit-tree__seg-btn"
                   [class.is-active]="currentAction() === 'navigate'"
                   [attr.aria-pressed]="currentAction() === 'navigate'"
                   (click)="setAction('navigate')"
+                  aria-label="Open item page"
                   skyTooltip="Open item page (N)">
             <mat-icon>search</mat-icon>
-            <span class="atmos-spirit-tree__seg-label"><span>Navigate</span></span>
+          </button>
+          <button type="button" class="atmos-spirit-tree__seg-btn"
+                  [class.is-active]="currentAction() === 'favourite'"
+                  [attr.aria-pressed]="currentAction() === 'favourite'"
+                  (click)="setAction('favourite')"
+                  aria-label="Add / remove wishlist item"
+                  skyTooltip="Add / remove wishlist item (F)">
+            <mat-icon>star</mat-icon>
           </button>
         </div>
+
+        <!-- Every label is rendered, stacked in one grid cell, so the box is as wide
+             as the longest one and switching modes moves nothing. -->
+        <span class="atmos-spirit-tree__seg-name" aria-hidden="true">
+          <span [class.is-shown]="currentAction() === 'unlock'">Unlock</span>
+          <span [class.is-shown]="currentAction() === 'navigate'">Navigate</span>
+          <span [class.is-shown]="currentAction() === 'favourite'">Wishlist</span>
+        </span>
 
         <span class="atmos-spirit-tree__controls-spacer"></span>
 

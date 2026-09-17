@@ -89,13 +89,12 @@
   flex: 1 1 auto;
 }
 
-// Segmented Unlock/Navigate toggle: only the active option shows its label, so
-// the accent fill appears to slide between the two halves as the widths swap.
+// Segmented Unlock/Navigate/Wishlist toggle. Every option is icon-only and the
+// active one's name sits beside the group, so the control keeps one width in
+// every mode: it shares a row with the tree, whose container is sized to its
+// contents, and a strip that grew on toggle shifted the nodes and the trees
+// next to it.
 .atmos-spirit-tree__seg {
-  // Longer than the global 120ms token — a width slide needs time to read as
-  // motion. Colour/hover changes keep using --atmos-transition.
-  --atmos-seg-transition: 220ms ease;
-
   display: inline-flex;
   align-items: stretch;
   background: var(--atmos-card-bg);
@@ -104,7 +103,7 @@
   border-radius: var(--atmos-radius-pill);
   overflow: hidden;
 
-  // Divider between the two halves.
+  // Divider between the options.
   > .atmos-spirit-tree__seg-btn + .atmos-spirit-tree__seg-btn {
     border-left: 1px solid var(--atmos-line-soft);
   }
@@ -115,8 +114,7 @@
   --atmos-focus-offset: -2px;
   display: inline-flex;
   align-items: center;
-  gap: var(--atmos-btn-gap);
-  padding: var(--atmos-btn-pad-sm);
+  padding: 6px 12px;
   background: transparent;
   border: 0;
   // The global `button` rule (styles.scss) rounds every button. Inner edges stay
@@ -127,14 +125,10 @@
   &:first-child { border-start-start-radius: var(--atmos-radius-pill); border-end-start-radius: var(--atmos-radius-pill); }
   &:last-child  { border-start-end-radius: var(--atmos-radius-pill); border-end-end-radius: var(--atmos-radius-pill); }
   color: var(--atmos-text-dim);
-  font-size: 13px;
-  font-weight: 500;
   line-height: 1;
-  white-space: nowrap;
   cursor: pointer;
   outline: 0;
-  transition: background var(--atmos-transition), color var(--atmos-transition),
-              gap var(--atmos-seg-transition);
+  transition: background var(--atmos-transition), color var(--atmos-transition);
 
   > mat-icon {
     flex: none;
@@ -155,39 +149,36 @@
     outline-offset: var(--atmos-focus-offset);
   }
 
-  // Collapse the gap too, so a hidden label leaves no dead space beside the icon.
-  &:not(.is-active) { gap: 0; }
-
   &.is-active {
     background: oklch(0.82 calc(0.11 * var(--atmos-chroma)) var(--atmos-hue) / 0.18);
     color: var(--atmos-accent);
   }
 }
 
-// Collapsed by default (0fr), expanded for the active option (1fr). Animating
-// the grid track instead of a max-width avoids hard-coding the label width.
-.atmos-spirit-tree__seg-label {
+// Name of the active mode. All three are stacked in the same grid cell, so the
+// cell is as wide as the longest and only visibility changes between modes.
+.atmos-spirit-tree__seg-name {
   display: grid;
-  grid-template-columns: 0fr;
-  opacity: 0;
-  overflow: hidden;
-  transition: grid-template-columns var(--atmos-seg-transition),
-              opacity var(--atmos-seg-transition);
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--atmos-accent);
+  pointer-events: none;
 
   > span {
-    min-width: 0;
-    overflow: hidden;
+    grid-area: 1 / 1;
+    visibility: hidden;
+  }
+
+  > span.is-shown {
+    visibility: visible;
   }
 }
 
-.atmos-spirit-tree__seg-btn.is-active .atmos-spirit-tree__seg-label {
-  grid-template-columns: 1fr;
-  opacity: 1;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .atmos-spirit-tree__seg-btn,
-  .atmos-spirit-tree__seg-label {
+  .atmos-spirit-tree__seg-btn {
     transition: none;
   }
 }

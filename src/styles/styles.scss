@@ -398,7 +398,7 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   --atmos-card-media-h-sm: 180px;         /* ...for the shorter spirit/daily cards */
   --atmos-input-pad:       8px 12px;
   --atmos-input-pad-pill:  8px 14px;
-  --atmos-grid-min-h:      400px;
+  --atmos-grid-min-h:      90vh;
 
   /* Summary card (see section 13). Media width is a fraction of the card so
      the artwork keeps its share of the width as the window narrows; pages with
@@ -462,6 +462,13 @@ mat-icon.seasonal { fill: var(--atmos-seasonal); }
   /* Intro.js tour tooltip — themed onto atmos surfaces. */
   --atmos-intro-bg:   var(--atmos-bg-elev-2);
   --atmos-intro-text: var(--atmos-text);
+}
+
+/* Tokens that differ on the tablet/mobile layout */
+@media (max-width: 1023px) {
+  :root {
+    --atmos-grid-min-h: 85vh;
+  }
 }
 
 // #endregion
@@ -1069,7 +1076,6 @@ a.atmos-link:focus-visible {
   --atmos-page-header-gap: 10px;
   --atmos-input-pad: 6px 10px;
   --atmos-input-pad-pill: 6px 12px;
-  --atmos-grid-min-h: 240px;
 
   --atmos-card-media-h: 160px;
   --atmos-card-media-h-sm: 130px;

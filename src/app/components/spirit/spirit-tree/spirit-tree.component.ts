@@ -153,7 +153,7 @@ export class SpiritTreeComponent {
       }
     });
 
-    // Page-wide u / n shortcuts. Skipped for forced-action (emit) trees and
+    // Page-wide u / n / f shortcuts. Skipped for forced-action (emit) trees and
     // when controls are disabled, mirroring legacy.
     this._eventService.keydown.pipe(takeUntilDestroyed(), cancellableEvent(), noInputs()).subscribe(evt => {
       if (this.forceNodeAction() || !this.enableControls()) { return; }
@@ -163,6 +163,7 @@ export class SpiritTreeComponent {
       switch (evt.key?.toLocaleLowerCase()) {
         case 'n': action = 'navigate'; break;
         case 'u': action = 'unlock'; break;
+        case 'f': action = 'favourite'; break;
         default: return;
       }
 
@@ -382,6 +383,7 @@ export class SpiritTreeComponent {
     switch (this.action()) {
       case 'unlock': this.toggleNode(node); break;
       case 'navigate': this.findNode(node); break;
+      case 'favourite': this.toggleFavourite(node); break;
     }
 
     // Cancel the anchor's native navigation — we handled the click ourselves.
@@ -391,6 +393,16 @@ export class SpiritTreeComponent {
 
   private findNode(node: INode): void {
     void this._router.navigate(['/item', node.item!.guid]);
+  }
+
+  /** Mirrors the item page's toggle: the subicon star redraws on `itemFavourited`. */
+  private toggleFavourite(node: INode): void {
+    const item = node.item!;
+    item.favourited = !item.favourited;
+    item.favourited
+      ? this._storageService.addFavourites(item.guid)
+      : this._storageService.removeFavourites(item.guid);
+    this._eventService.itemFavourited.next(item);
   }
 
   private toggleNode(node: INode): void {

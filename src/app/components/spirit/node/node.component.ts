@@ -11,7 +11,7 @@ import { INode } from 'skygame-data';
 import { ItemSubicon, SUBICONS_ALL } from '@app/components/item/icon/subicons/item-subicons.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 
-export type NodeAction = 'emit' | 'unlock' | 'navigate';
+export type NodeAction = 'emit' | 'unlock' | 'navigate' | 'favourite';
 export type NodePosition = 'left' | 'center' | 'right';
 
 /**

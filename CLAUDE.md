@@ -78,6 +78,16 @@ Do not rewrite existing code to these APIs unless the task specifically asks for
 
 Components use **`.scss`**. `src/styles/styles.scss` is the global base + design-system sheet (`#region` markers split it into Base / Tokens / Components / Themes / Utilities); `charts.scss`, `map.scss` and `grid.scss` are separate entries in `angular.json`, loaded in that order.
 
+#### Breakpoints vs. themes vs. density
+
+Three independent axes:
+
+- **Responsive breakpoint** — `@media (max-width: 1023px)` is the tablet/mobile layout, `min-width: 1024px` desktop.
+- **Colour theme** — `:root[data-theme="..."]` in the Themes region (default, sandy, dark, love, moomin, wonderland). Colour only.
+- **Density** — `:root[data-density="compact"]`, also in the Themes region. Geometry only (padding, gaps, media heights).
+
+A token that should change with screen size belongs in the `@media` block, never in the `compact` block.
+
 ### Scripts
 
 - `scripts/data/` — one-off data manipulation (add events, apply GUIDs, etc.)

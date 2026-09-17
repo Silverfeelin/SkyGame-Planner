@@ -49,6 +49,8 @@ export class ItemGridLayoutComponent implements OnInit {
   readonly initialCategory = input<ItemType>(ItemType.Outfit);
   /** Opt in to the filter panel; hosts that only browse leave it off. */
   readonly filterable = input<boolean>(true);
+  /*** Mirror the active category in the `type` query parameter. */
+  readonly syncCategoryToUrl = input<boolean>(true);
 
   readonly categoryChanged = output<ItemType>();
   /** The items of the active category that survive the filters, in display order. */
@@ -108,17 +110,29 @@ export class ItemGridLayoutComponent implements OnInit {
   });
 
   ngOnInit() {
-    this.showFilters.set(this._route.snapshot.queryParamMap.get('f') === '1');
-    const initial = this.initialCategory();
+    const query = this._route.snapshot.queryParamMap;
+    this.showFilters.set(query.get('f') === '1');
     const visible = this.visibleCategories();
+    const fromQuery = this.syncCategoryToUrl() ? query.get('type') as ItemType | null : null;
+    const initial = fromQuery && visible.some(c => c.type === fromQuery)
+      ? fromQuery
+      : this.initialCategory();
     const hasInitial = visible.some(c => c.type === initial);
     this.active.set(hasInitial ? initial : (visible[0]?.type ?? initial));
   }
 
   selectCategory(type: ItemType): void {
     this.active.set(type);
+    this.writeCategoryQuery(type);
     this.categoryChanged.emit(type);
     this.shownItemsChanged.emit(this.activeItems());
+  }
+
+  private writeCategoryQuery(type: ItemType): void {
+    if (!this.syncCategoryToUrl()) { return; }
+    const url = new URL(location.href);
+    url.searchParams.set('type', type);
+    window.history.replaceState(window.history.state, '', url.pathname + url.search);
   }
 
   toggleFilters(evt: Event): void {

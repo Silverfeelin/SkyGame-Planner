@@ -211,7 +211,7 @@
 @if (showAddItems()) {
   <div class="atmos-item-unlock-calc__items-wrap">
     <app-item-grid-layout [items]="pickerItems" [itemTemplate]="pickTpl"
-      [initialCategory]="itemType"
+      [initialCategory]="itemType" [syncCategoryToUrl]="false"
       (categoryChanged)="onItemTypeChanged($event)"
       (shownItemsChanged)="onItemsChanged($event)"/>
     <ng-template #pickTpl let-item>

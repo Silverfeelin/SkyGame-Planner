@@ -41,7 +41,7 @@
           <mat-icon>{{ b.icon }}</mat-icon>
         }
         @if (b.link) {
-          <a class="atmos-text-link" [routerLink]="b.link">
+          <a class="atmos-text-link" [routerLink]="b.link" [queryParams]="b.linkQuery">
             {{ b.label }}
           </a>
         } @else {

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Params, RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DataService } from '@app/services/data.service';
 import { StorageService } from '@app/services/storage.service';
@@ -13,6 +13,7 @@ interface IBreakdown {
   icon?: string;
   svgIcon?: string;
   link?: string;
+  linkQuery?: Params;
 }
 
 @Component({
@@ -56,14 +57,16 @@ export class WingedLightComponent {
       unlocked: this.regularUnlocked(),
       total: this.regularCount(),
       icon: 'person',
-      link: '/wing-buff'
+      link: '/wing-buff',
+      linkQuery: { type: 'Regular' }
     },
     {
       label: 'Wing buffs from seasonal spirits',
       unlocked: this.seasonUnlocked(),
       total: this.seasonCount(),
       icon: 'event',
-      link: '/wing-buff'
+      link: '/wing-buff',
+      linkQuery: { type: 'Season' }
     }
   ]);
 
