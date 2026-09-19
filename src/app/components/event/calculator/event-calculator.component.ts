@@ -16,14 +16,13 @@ import { StorageService } from '@app/services/storage.service';
 import { DateTimePipe } from '@app/pipes/date-time.pipe';
 import { CheckboxComponent, DraftWarningComponent, ItemListComponent, SpiritTreeComponent } from '@app/components/shared/shared-widgets';
 import { EventQuickActionsComponent } from '@app/components/event/quick-actions/event-quick-actions.component';
-import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 
 @Component({
   selector: 'app-event-calculator',
   templateUrl: './event-calculator.component.html',
   styleUrl: './event-calculator.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, MatIcon, DateTimePipe, CheckboxComponent, SpiritTreeComponent, ItemListComponent, EventQuickActionsComponent, DraftWarningComponent, QuickActionsComponent]
+  imports: [RouterLink, MatIcon, DateTimePipe, CheckboxComponent, SpiritTreeComponent, ItemListComponent, EventQuickActionsComponent, DraftWarningComponent]
 })
 export class EventCalculatorComponent implements OnInit {
   private readonly _currencyService = inject(CurrencyService);

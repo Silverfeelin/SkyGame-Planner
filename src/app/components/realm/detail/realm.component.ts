@@ -14,7 +14,6 @@ import { RealmConstellationComponent } from '../constellation/realm-constellatio
 import { RealmQuickActionsComponent } from '../quick-actions/realm-quick-actions.component';
 import { FeatureCardComponent, IFeatureLink } from '../../dashboard/feature-card.component';
 import { IArea, ICost, IRealm, ISpirit, ISpiritTree } from 'skygame-data';
-import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 
 interface ISpiritEntry {
   spirit: ISpirit;
@@ -29,7 +28,7 @@ interface ISpiritEntry {
   imports: [
     RouterLink, MatIcon, SpiritTypeIconComponent, SpiritTreeComponent,
     RealmConstellationComponent, RealmQuickActionsComponent, PercentagePipe,
-    FeatureCardComponent, QuickActionsComponent
+    FeatureCardComponent
   ]
 })
 export class RealmComponent implements OnInit, OnDestroy {

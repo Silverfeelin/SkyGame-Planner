@@ -5,30 +5,68 @@
   <h1 class="atmos-page__title">{{ realm.name }}</h1>
 </header>
 
-<app-quick-actions>
+<section class="atmos-card atmos-realm__summary">
+  <div class="atmos-summary__grid" [class.atmos-realm__summary--no-media]="!realm.imageUrl">
+    <div class="atmos-card__body atmos-summary__main">
+      <div class="atmos-facts">
+        @if (realm.areas?.length) {
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Areas</div>
+            <div class="atmos-fact__value">
+              <mat-icon class="atmos-fact__icon">location_on</mat-icon>
+              <span class="atmos-fact__text">{{ realm.areas!.length }}</span>
+            </div>
+          </div>
+        }
+
+        @if (realm.elder; as elder) {
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Elder</div>
+            <a class="atmos-fact__value" [routerLink]="['/spirit', elder.guid]">
+              <app-spirit-type-icon type="Elder"></app-spirit-type-icon>
+              <span class="atmos-fact__text atmos-text-link">{{ elder.name }}</span>
+            </a>
+          </div>
+        }
+
+        @if (spiritCount) {
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Spirits</div>
+            <a class="atmos-fact__value" routerLink="/spirit" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
+              <app-spirit-type-icon type="Regular"></app-spirit-type-icon>
+              <span class="atmos-fact__text atmos-text-link">{{ spiritCount }}</span>
+            </a>
+          </div>
+        }
+
+        @if (seasonSpiritCount || seasonGuideCount) {
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Season spirits</div>
+            <a class="atmos-fact__value" routerLink="/spirit" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
+              <app-spirit-type-icon type="Season"></app-spirit-type-icon>
+              <span class="atmos-fact__text atmos-text-link">{{ seasonSpiritCount }}@if (seasonGuideCount) { (+{{ seasonGuideCount }} guide{{ seasonGuideCount > 1 ? 's' : '' }})}</span>
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+
+    @if (realm.imageUrl) {
+      <div class="atmos-summary__preview"
+        [style.background-image]="'url(' + realm.imageUrl + ')'"
+        [style.background-position]="realm.imagePosition || null"></div>
+    }
+  </div>
+
   @if (realm._wiki?.href; as wikiHref) {
-    <a class="atmos-btn atmos-btn--sm" [href]="wikiHref" target="_blank" rel="noopener">
-      <mat-icon>open_in_new</mat-icon>
-      <span>Wiki</span>
-    </a>
+    <div class="atmos-summary__actions">
+      <a class="atmos-summary__action" [href]="wikiHref" target="_blank" rel="noopener">
+        <mat-icon>open_in_new</mat-icon>
+        <span>Wiki</span>
+      </a>
+    </div>
   }
-  @if (spiritCount) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/spirit" [queryParams]="{ type: 'Regular,Elder', realm: realm.guid }">
-      <app-spirit-type-icon type="Regular"></app-spirit-type-icon>
-      <span>Spirits ({{ spiritCount }})</span>
-    </a>
-  }
-  @if (seasonSpiritCount || seasonGuideCount) {
-    <a class="atmos-btn atmos-btn--sm" routerLink="/spirit" [queryParams]="{ type: 'Season,Guide', realm: realm.guid }">
-      <app-spirit-type-icon type="Season"></app-spirit-type-icon>
-      <span>Season Spirits ({{ seasonSpiritCount }})</span>
-    </a>
-  }
-  <a class="atmos-btn atmos-btn--sm" routerLink="/realm">
-    <mat-icon>map</mat-icon>
-    <span>Other realms</span>
-  </a>
-</app-quick-actions>
+</section>
 
 <!-- Constellation + progress -->
 @if (realm.constellation) {
@@ -118,7 +156,7 @@
 
 
 @if (realm.areas?.length) {
-  <section>
+  <section class="atmos-page__section">
     <h2 class="atmos-section__title">Areas</h2>
     <div class="atmos-realm__areas">
       @for (area of realm.areas; track area.guid) {

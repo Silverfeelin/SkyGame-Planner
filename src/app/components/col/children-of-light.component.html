@@ -14,14 +14,16 @@
     <mat-icon>done_all</mat-icon>
     <span>Mark all found</span>
   </button>
-  <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="reset()">
-    <mat-icon>restart_alt</mat-icon>
-    <span>Reset</span>
-  </button>
-  <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetOrbit()">
-    <mat-icon>flight_takeoff</mat-icon>
-    <span>Left Orbit</span>
-  </button>
+  <div class="atmos-btn-group">
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="reset()">
+      <mat-icon>restart_alt</mat-icon>
+      <span>Reset</span>
+    </button>
+    <button type="button" class="atmos-btn atmos-btn--sm atmos-btn--danger" (click)="resetOrbit()">
+      <mat-icon>flight_takeoff</mat-icon>
+      <span>Left Orbit</span>
+    </button>
+  </div>
 </app-quick-actions>
 
 <div class="atmos-card atmos-col__map-card" #mapContainer>

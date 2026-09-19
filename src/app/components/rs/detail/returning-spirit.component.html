@@ -1,12 +1,5 @@
 @if (rs(); as r) {
-  <app-spirit-quick-actions>
-    @if (r._wiki) {
-      <app-wiki-link [wiki]="r._wiki" aClass="atmos-btn atmos-btn--sm"></app-wiki-link>
-    }
-    @if (r._calendar) {
-      <app-calendar-link [cal]="r._calendar" aClass="atmos-btn atmos-btn--sm"></app-calendar-link>
-    }
-  </app-spirit-quick-actions>
+  <app-spirit-quick-actions/>
 
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">{{ r.name }}</h1>
@@ -66,6 +59,17 @@
         }
       </div>
     </div>
+
+    @if (r._wiki || r._calendar) {
+      <div class="atmos-summary__actions">
+        @if (r._wiki) {
+          <app-wiki-link [wiki]="r._wiki" aClass="atmos-summary__action"></app-wiki-link>
+        }
+        @if (r._calendar) {
+          <app-calendar-link [cal]="r._calendar" aClass="atmos-summary__action"></app-calendar-link>
+        }
+      </div>
+    }
   </section>
 
   <section class="atmos-card atmos-rs-detail__trees-card">

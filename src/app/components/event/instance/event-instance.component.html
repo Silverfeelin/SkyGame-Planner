@@ -1,29 +1,5 @@
 @if (instance(); as inst) {
-  <app-quick-actions>
-    <a class="atmos-btn atmos-btn--sm" routerLink="/event">
-      <mat-icon>arrow_back</mat-icon> Events
-    </a>
-    @if (inst.event) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event', inst.event.guid]">
-        <mat-icon>event</mat-icon> {{ inst.event.name }}
-      </a>
-    }
-    @if (previousInstance(); as prev) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', prev.guid]">
-        <mat-icon>arrow_back</mat-icon> Previous year
-      </a>
-    }
-    @if (nextInstance(); as nxt) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', nxt.guid]">
-        <mat-icon>arrow_forward</mat-icon> Next year
-      </a>
-    }
-    @if (inst.calculatorData && (state() === 'active' || state() === 'future')) {
-      <a class="atmos-btn atmos-btn--sm" routerLink="/event/calculator" [queryParams]="{ guid: inst.guid }">
-        <mat-icon>calculate</mat-icon> Event Calculator
-      </a>
-    }
-  </app-quick-actions>
+  <app-event-quick-actions/>
 
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">
@@ -40,6 +16,14 @@
     <div class="atmos-summary__grid">
       <div class="atmos-card__body atmos-summary__main">
         <div class="atmos-facts">
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Year</div>
+            <div class="atmos-fact__value">
+              <mat-icon class="atmos-fact__icon">event_repeat</mat-icon>
+              <span class="atmos-fact__text"><app-date [date]="inst.date" [format]="'yyyy'"></app-date></span>
+            </div>
+          </div>
+
           <div class="atmos-fact atmos-fact--wide">
             <div class="atmos-fact__label">Duration</div>
             <div class="atmos-fact__value atmos-fact__value--wrap">
@@ -51,6 +35,16 @@
               </span>
             </div>
           </div>
+          @if (inst.event) {
+            <div class="atmos-fact">
+              <div class="atmos-fact__label">Event</div>
+              <a class="atmos-fact__value" [routerLink]="['/event', inst.event.guid]">
+                <mat-icon class="atmos-fact__icon">event</mat-icon>
+                <span class="atmos-fact__text atmos-text-link">{{ inst.event.name }}</span>
+              </a>
+            </div>
+          }
+
           <div class="atmos-fact">
             <div class="atmos-fact__label">Event currency</div>
             <div class="atmos-fact__value">
@@ -74,6 +68,37 @@
         <div class="atmos-summary__preview" [style.background-image]="imageStyle()"></div>
       }
     </div>
+
+    @if (previousInstance() || nextInstance() || (inst.calculatorData && (state() === 'active' || state() === 'future')) || inst.event._wiki?.href || inst._calendar?.href) {
+      <div class="atmos-summary__actions">
+        @if (previousInstance(); as prev) {
+          <a class="atmos-summary__action" [routerLink]="['/event-instance', prev.guid]">
+            <mat-icon>arrow_back</mat-icon> Previous year
+          </a>
+        }
+        @if (nextInstance(); as nxt) {
+          <a class="atmos-summary__action" [routerLink]="['/event-instance', nxt.guid]">
+            <mat-icon>arrow_forward</mat-icon> Next year
+          </a>
+        }
+        @if (inst.calculatorData && (state() === 'active' || state() === 'future')) {
+          <a class="atmos-summary__action" routerLink="/event/calculator" [queryParams]="{ guid: inst.guid }">
+            <mat-icon>calculate</mat-icon> Event Calculator
+          </a>
+        }
+        @if (inst.event._wiki?.href; as wikiHref) {
+          <a class="atmos-summary__action atmos-summary__action--end" [href]="wikiHref" target="_blank" rel="noopener">
+            <mat-icon>open_in_new</mat-icon> Wiki
+          </a>
+        }
+        @if (inst._calendar?.href; as calendarHref) {
+          <a class="atmos-summary__action" [class.atmos-summary__action--end]="!inst.event._wiki?.href"
+             [href]="calendarHref" target="_blank" rel="noopener">
+            <mat-icon>open_in_new</mat-icon> Sky Event Calendar | FM
+          </a>
+        }
+      </div>
+    }
   </section>
 
   @if (inst.spirits?.length) {

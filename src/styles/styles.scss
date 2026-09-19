@@ -822,6 +822,25 @@ a.atmos-link:focus-visible {
   letter-spacing: -0.01em;
 }
 
+/* Actions that belong to the page's subject rather than to its section. */
+.atmos-page__header-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--atmos-btn-gap);
+  margin-inline-start: auto;
+}
+
+/* Page-level section: a heading with its content, sitting directly on the page
+   background. */
+.atmos-page__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--atmos-gap);
+  color: var(--atmos-text);
+  text-shadow: var(--atmos-text-shadow);
+}
+
 /* Reusable intro text block below a page header. Wrap one or more
    paragraphs in `.atmos-page__intro`; add `.atmos-page__hint` to
    paragraphs to dim them relative to regular text. */

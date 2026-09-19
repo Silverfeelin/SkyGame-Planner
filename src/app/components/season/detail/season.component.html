@@ -1,16 +1,5 @@
 @if (season(); as s) {
-  <app-season-quick-actions [wikiHref]="s._wiki?.href" [calendarHref]="s._calendar?.href">
-    @if (previousSeason(); as p) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', p.guid]">
-        <mat-icon>arrow_back</mat-icon> Previous
-      </a>
-    }
-    @if (nextSeason(); as n) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/season', n.guid]">
-        <mat-icon>arrow_forward</mat-icon> Next
-      </a>
-    }
-  </app-season-quick-actions>
+  <app-season-quick-actions/>
 
   @if (s.draft) {
     <app-draft-warning />
@@ -27,6 +16,14 @@
     <div class="atmos-summary__grid">
       <div class="atmos-card__body atmos-summary__main">
         <div class="atmos-facts">
+          <div class="atmos-fact">
+            <div class="atmos-fact__label">Year</div>
+            <div class="atmos-fact__value">
+              <mat-icon class="atmos-fact__icon">event_repeat</mat-icon>
+              <span class="atmos-fact__text">{{ s.year }}</span>
+            </div>
+          </div>
+
           <div class="atmos-fact atmos-fact--wide">
             <div class="atmos-fact__label">Duration</div>
             <div class="atmos-fact__value atmos-fact__value--wrap">
@@ -79,6 +76,32 @@
         <div class="atmos-summary__preview" [style.background-image]="imageStyle()"></div>
       }
     </div>
+
+    @if (previousSeason() || nextSeason() || s._wiki?.href || s._calendar?.href) {
+      <div class="atmos-summary__actions">
+        @if (previousSeason(); as p) {
+          <a class="atmos-summary__action" [routerLink]="['/season', p.guid]">
+            <mat-icon>arrow_back</mat-icon> Previous season
+          </a>
+        }
+        @if (nextSeason(); as n) {
+          <a class="atmos-summary__action" [routerLink]="['/season', n.guid]">
+            <mat-icon>arrow_forward</mat-icon> Next season
+          </a>
+        }
+        @if (s._wiki?.href; as wikiHref) {
+          <a class="atmos-summary__action atmos-summary__action--end" [href]="wikiHref" target="_blank" rel="noopener">
+            <mat-icon>open_in_new</mat-icon> Wiki
+          </a>
+        }
+        @if (s._calendar?.href; as calendarHref) {
+          <a class="atmos-summary__action" [class.atmos-summary__action--end]="!s._wiki?.href"
+             [href]="calendarHref" target="_blank" rel="noopener">
+            <mat-icon>open_in_new</mat-icon> Sky Event Calendar | FM
+          </a>
+        }
+      </div>
+    }
   </section>
 
   @if (state() === 'ended' && guide() && guideTreePostSeason(); as postTree) {

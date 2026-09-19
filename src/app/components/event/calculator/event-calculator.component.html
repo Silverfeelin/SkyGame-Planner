@@ -24,19 +24,18 @@
 } @else {
   <app-event-quick-actions/>
 
-  <app-quick-actions>
-    <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', eventInstance.guid]">
-      <mat-icon>arrow_back</mat-icon> Event
-    </a>
-    <a class="atmos-btn atmos-btn--sm" href="https://sky-event-calculator.netlify.app/" target="_blank" rel="noopener">
-      <mat-icon>open_in_new</mat-icon> Stoat's Calculator
-    </a>
-  </app-quick-actions>
-
   <header class="atmos-page__header">
     <h1 class="atmos-page__title">
       {{ event.name }} {{ year }} <span class="atmos-event-calc__kicker">Calculator</span>
     </h1>
+    <div class="atmos-page__header-actions">
+      <a class="atmos-btn atmos-btn--sm" [routerLink]="['/event-instance', eventInstance.guid]">
+        <mat-icon>arrow_back</mat-icon> Back to Event
+      </a>
+      <a class="atmos-btn atmos-btn--sm" href="https://sky-event-calculator.netlify.app/" target="_blank" rel="noopener">
+        <mat-icon>open_in_new</mat-icon> Stoat's Calculator
+      </a>
+    </div>
   </header>
 
   @if (concluded) {

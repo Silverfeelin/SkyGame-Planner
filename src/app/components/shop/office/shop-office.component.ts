@@ -6,14 +6,13 @@ import { DataService } from '@app/services/data.service';
 import { IAPService } from '@app/services/iap.service';
 import { IapCardComponent } from '@app/components/shared/shared-widgets';
 import { ShopQuickActionsComponent } from '../quick-actions/shop-quick-actions.component';
-import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 
 @Component({
   selector: 'app-shop-office',
   templateUrl: './shop-office.component.html',
   styleUrl: './shop-office.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, IapCardComponent, ShopQuickActionsComponent, QuickActionsComponent]
+  imports: [MatIcon, IapCardComponent, ShopQuickActionsComponent]
 })
 export class ShopOfficeComponent {
   private readonly _iapService = inject(IAPService);

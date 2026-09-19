@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { DateHelper } from '@app/helpers/date-helper';
@@ -13,9 +13,6 @@ import { QuickActionsComponent } from '@app/components/shared/quick-actions/quic
 })
 export class SeasonQuickActionsComponent {
   private readonly _dataService = inject(DataService);
-
-  wikiHref = input<string>();
-  calendarHref = input<string>();
 
   /** Seasons with friendship levels are handled by the optimizer instead of the calculator. */
   readonly hasTiers = computed(() => {

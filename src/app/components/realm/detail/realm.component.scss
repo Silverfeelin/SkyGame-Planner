@@ -4,6 +4,15 @@
   gap: var(--atmos-gap);
 }
 
+.atmos-realm__summary {
+  // Realm screenshots are wide, so they get more of the card than a portrait render.
+  --atmos-summary-media: minmax(0, 0.7fr);
+}
+
+.atmos-realm__summary--no-media {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .atmos-realm__constellation-row {
   display: grid;
   grid-template-columns: 1fr;

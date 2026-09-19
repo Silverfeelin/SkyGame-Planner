@@ -5,14 +5,13 @@ import { IShop } from 'skygame-data';
 import { DataService } from '@app/services/data.service';
 import { ItemListComponent } from '@app/components/shared/shared-widgets';
 import { ShopQuickActionsComponent } from '../quick-actions/shop-quick-actions.component';
-import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 
 @Component({
   selector: 'app-shop-wonderland',
   templateUrl: './shop-wonderland.component.html',
   styleUrl: './shop-wonderland.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, ItemListComponent, ShopQuickActionsComponent, QuickActionsComponent]
+  imports: [MatIcon, ItemListComponent, ShopQuickActionsComponent]
 })
 export class ShopWonderlandComponent {
   readonly igcShops: ReadonlyArray<IShop>;

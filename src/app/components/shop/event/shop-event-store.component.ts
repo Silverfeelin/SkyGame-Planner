@@ -10,14 +10,13 @@ import {
   SpiritTreeComponent
 } from '@app/components/shared/shared-widgets';
 import { ShopQuickActionsComponent } from '../quick-actions/shop-quick-actions.component';
-import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 
 @Component({
   selector: 'app-shop-event-store',
   templateUrl: './shop-event-store.component.html',
   styleUrl: './shop-event-store.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIcon, IapCardComponent, ItemListComponent, SpiritTreeComponent, ShopQuickActionsComponent, QuickActionsComponent]
+  imports: [MatIcon, IapCardComponent, ItemListComponent, SpiritTreeComponent, ShopQuickActionsComponent]
 })
 export class ShopEventStoreComponent {
   private readonly _iapService = inject(IAPService);

@@ -1,19 +1,5 @@
 @if (spirit(); as s) {
-  <app-quick-actions>
-    @for (action of quickActions(); track action.label) {
-      <a class="atmos-btn atmos-btn--sm" [routerLink]="action.route" [queryParams]="action.queryParams">
-        @if (action.svgIcon) {
-          <mat-icon [svgIcon]="action.svgIcon"></mat-icon>
-        } @else {
-          <mat-icon>{{ action.icon }}</mat-icon>
-        }
-        {{ action.label }}
-      </a>
-    }
-    @if (s._wiki) {
-      <app-wiki-link [wiki]="s._wiki" aClass="atmos-btn atmos-btn--sm"></app-wiki-link>
-    }
-  </app-quick-actions>
+  <app-spirit-quick-actions/>
 
   <header class="atmos-page__header atmos-spirit__header">
     <app-spirit-type-icon class="atmos-spirit__type" [type]="s.type"></app-spirit-type-icon>
@@ -94,6 +80,12 @@
         </div>
       }
     </div>
+
+    @if (s._wiki?.href) {
+      <div class="atmos-summary__actions">
+        <app-wiki-link [wiki]="s._wiki" aClass="atmos-summary__action"></app-wiki-link>
+      </div>
+    }
   </section>
 
   <section class="atmos-card atmos-spirit__trees-card">

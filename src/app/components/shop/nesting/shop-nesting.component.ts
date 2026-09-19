@@ -31,7 +31,6 @@ import {
   INestingStorageData,
   nestingStorageKey
 } from '@app/components/shop/nesting/shop-nesting.interface';
-import { QuickActionsComponent } from '@app/components/shared/quick-actions/quick-actions.component';
 import { SUBICONS_BASE } from '@app/components/item/icon/subicons/item-subicons.component';
 import { TooltipDirective } from '@app/directives/tooltip.directive';
 
@@ -144,8 +143,7 @@ const rotations: IRotations = [
     ItemIconComponent,
     ItemListComponent,
     SpiritTreeComponent,
-    ShopQuickActionsComponent,
-    QuickActionsComponent
+    ShopQuickActionsComponent
   ]
 })
 export class ShopNestingComponent {
